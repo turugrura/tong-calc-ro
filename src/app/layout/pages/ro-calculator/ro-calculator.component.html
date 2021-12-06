@@ -1,0 +1,929 @@
+<div class="grid">
+  <div class="col-fixed">
+    <button pButton type="button" label="Calculate" (click)="logModel()"></button>
+  </div>
+  <div class="col-fixed">
+    <button
+      pButton
+      type="button"
+      [disabled]="isLoadingItemSet || !hasItemChanged"
+      label="Save"
+      (click)="saveItemSet()"
+    ></button>
+  </div>
+  <div class="col-fixed">
+    <button pButton type="button" [disabled]="isLoadingItemSet" label="Load" (click)="loadItemSet()"></button>
+  </div>
+  <div class="col-2">
+    <p-dropdown
+      inputId="character"
+      [autoDisplayFirst]="false"
+      [options]="characterList"
+      [(ngModel)]="selectedCharacter"
+      placeholder="Class"
+    ></p-dropdown>
+  </div>
+</div>
+<div class="grid">
+  <div class="p-fluid col-7">
+    <!-- Status -->
+    <div class="grid">
+      <div class="col-4">
+        <div class="grid">
+          <div class="col-12">
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon" style="width: 55px">Level</span>
+              <p-inputNumber
+                [(ngModel)]="model.level"
+                mode="decimal"
+                [showButtons]="true"
+                inputId="level"
+                [min]="1"
+                [max]="200"
+                (ngModelChange)="onBaseStatusChange()"
+              >
+              </p-inputNumber>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon" style="width: 55px">Job</span>
+              <p-inputNumber
+                [(ngModel)]="model.jobLevel"
+                mode="decimal"
+                [showButtons]="true"
+                inputId="jobLevel"
+                [min]="1"
+                [max]="65"
+              >
+              </p-inputNumber>
+            </div>
+          </div>
+          <div class="col-12">Ponts: {{ availablePoints }}</div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="grid">
+          <div class="col-12">
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon" style="width: 55px">Str</span>
+              <p-inputNumber
+                [(ngModel)]="model.str"
+                mode="decimal"
+                [showButtons]="true"
+                inputId="str"
+                [min]="1"
+                [max]="135"
+                (ngModelChange)="onBaseStatusChange()"
+              >
+              </p-inputNumber>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon" style="width: 55px">Agi</span>
+              <p-inputNumber
+                [(ngModel)]="model.agi"
+                mode="decimal"
+                [showButtons]="true"
+                inputId="agi"
+                [min]="1"
+                [max]="135"
+                (ngModelChange)="onBaseStatusChange()"
+              >
+              </p-inputNumber>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon" style="width: 55px">Vit</span>
+              <p-inputNumber
+                [(ngModel)]="model.vit"
+                mode="decimal"
+                [showButtons]="true"
+                inputId="vit"
+                [min]="1"
+                [max]="135"
+                (ngModelChange)="onBaseStatusChange()"
+              >
+              </p-inputNumber>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="grid">
+          <div class="col-12">
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon" style="width: 55px">Int</span>
+              <p-inputNumber
+                [(ngModel)]="model.int"
+                mode="decimal"
+                [showButtons]="true"
+                inputId="int"
+                [min]="1"
+                [max]="135"
+                (ngModelChange)="onBaseStatusChange()"
+              >
+              </p-inputNumber>
+              <p-chip label="120" styleClass="mr-2"></p-chip>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon" style="width: 55px">Dex</span>
+              <p-inputNumber
+                [(ngModel)]="model.dex"
+                mode="decimal"
+                [showButtons]="true"
+                inputId="dex"
+                [min]="1"
+                [max]="135"
+                (ngModelChange)="onBaseStatusChange()"
+              >
+              </p-inputNumber>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon" style="width: 55px">Luk</span>
+              <p-inputNumber
+                [(ngModel)]="model.luk"
+                mode="decimal"
+                [showButtons]="true"
+                inputId="luk"
+                [min]="1"
+                [max]="135"
+                (ngModelChange)="onBaseStatusChange()"
+              >
+              </p-inputNumber>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Weapon -->
+    <div class="grid">
+      <div class="col-3">
+        <span class="p-float-label">
+          <p-dropdown
+            inputId="weapon"
+            [autoDisplayFirst]="false"
+            [options]="weaponList"
+            [(ngModel)]="model.weapon"
+            [showClear]="true"
+            (onChange)="setEnchantList($event.value)"
+            (onChange)="onSelectItem('weapon', $event.value, model.weaponRefine)"
+            (onClear)="onClearItem('weapon')"
+          ></p-dropdown>
+          <label for="weapon">Weapon</label>
+        </span>
+      </div>
+      <div class="col-fixed" style="width: 80px">
+        <p-dropdown
+          inputId="weaponRefine"
+          [options]="refineList"
+          [(ngModel)]="model.weaponRefine"
+          [disabled]="!model.weapon"
+          (onChange)="onSelectItem('weapon', model.weapon, $event.value)"
+        ></p-dropdown>
+      </div>
+      <div class="col">
+        <span class="p-float-label">
+          <p-dropdown
+            inputId="weaponCard1"
+            [autoDisplayFirst]="false"
+            [options]="weaponCardList"
+            [(ngModel)]="model.weaponCard1"
+            [disabled]="!model.weapon"
+            [showClear]="true"
+            (onChange)="onSelectItem('weaponCard1', $event.value)"
+          ></p-dropdown>
+          <label for="weaponCard1">Card1</label>
+        </span>
+      </div>
+      <div class="col">
+        <span class="p-float-label">
+          <p-dropdown
+            inputId="weaponCard2"
+            [autoDisplayFirst]="false"
+            [options]="weaponCardList"
+            [(ngModel)]="model.weaponCard2"
+            [disabled]="!model.weapon"
+            [showClear]="true"
+            (onChange)="onSelectItem('weaponCard2', $event.value)"
+          ></p-dropdown>
+          <label for="weaponCard2">Card2</label>
+        </span>
+      </div>
+      <div class="col">
+        <span class="p-float-label">
+          <p-dropdown
+            inputId="weaponCard3"
+            [autoDisplayFirst]="false"
+            [options]="weaponCardList"
+            [(ngModel)]="model.weaponCard3"
+            [disabled]="!model.weapon"
+            [showClear]="true"
+            (onChange)="onSelectItem('weaponCard3', $event.value)"
+          ></p-dropdown>
+          <label for="weaponCard3">Card3</label>
+        </span>
+      </div>
+    </div>
+
+    <!-- Shield -->
+    <div class="grid" *ngIf="isShowShield()">
+      <div class="col-3">
+        <span class="p-float-label">
+          <p-dropdown
+            inputId="shield"
+            [autoDisplayFirst]="false"
+            [options]="shieldList"
+            [(ngModel)]="model.shield"
+            [showClear]="true"
+            (onChange)="setEnchantList($event.value)"
+            (onChange)="onSelectItem('shield', $event.value, model.shieldRefine)"
+          ></p-dropdown>
+          <label for="shield">Shield</label>
+        </span>
+      </div>
+      <div class="col-fixed" style="width: 80px">
+        <p-dropdown [options]="refineList" [(ngModel)]="model.shieldRefine"></p-dropdown>
+      </div>
+      <div class="col-3">
+        <span class="p-float-label">
+          <p-dropdown
+            inputId="shieldCard"
+            [autoDisplayFirst]="false"
+            [options]="shieldCardList"
+            [(ngModel)]="model.shieldCard"
+            [disabled]="!model.shield"
+            [showClear]="true"
+          ></p-dropdown>
+          <label for="shieldCard">Card</label>
+        </span>
+      </div>
+    </div>
+
+    <!-- Head Upper -->
+    <div class="grid">
+      <div class="col-3">
+        <span class="p-float-label">
+          <p-dropdown
+            inputId="headUpper"
+            [autoDisplayFirst]="false"
+            [options]="headUpperList"
+            [(ngModel)]="model.headUpper"
+            [showClear]="true"
+            (onChange)="setEnchantList($event.value)"
+            (onChange)="onSelectItem('headUpper', $event.value, model.headUpperRefine)"
+            (onClear)="onClearItem('headUpper')"
+          ></p-dropdown>
+          <label for="headUpper">Head Upper</label>
+        </span>
+      </div>
+      <div class="col-fixed" style="width: 80px">
+        <p-dropdown
+          [options]="refineList"
+          [(ngModel)]="model.headUpperRefine"
+          [disabled]="!model.headUpper"
+          (onChange)="onSelectItem('headUpper', model.headUpper, $event.value)"
+        ></p-dropdown>
+      </div>
+      <div class="col-3">
+        <span class="p-float-label">
+          <p-dropdown
+            inputId="headUpperCard"
+            [autoDisplayFirst]="false"
+            [options]="headCardList"
+            [(ngModel)]="model.headUpperCard"
+            [disabled]="!model.headUpper"
+            [showClear]="true"
+            (onChange)="onSelectItem('headUpperCard', $event.value)"
+          ></p-dropdown>
+          <label for="headUpperCard">Card</label>
+        </span>
+      </div>
+    </div>
+
+    <!-- Head Middle -->
+    <div class="grid">
+      <div class="col-3">
+        <span class="p-float-label">
+          <p-dropdown
+            inputId="headMiddle"
+            [autoDisplayFirst]="false"
+            [options]="headMiddleList"
+            [(ngModel)]="model.headMiddle"
+            [showClear]="true"
+            (onChange)="setEnchantList($event.value)"
+            (onChange)="onSelectItem('headMiddle', $event.value)"
+            (onClear)="onClearItem('headMiddle')"
+          ></p-dropdown>
+          <label for="headMiddle">Middle</label>
+        </span>
+      </div>
+      <div class="col-3">
+        <span class="p-float-label">
+          <p-dropdown
+            inputId="headMiddleCard"
+            [autoDisplayFirst]="false"
+            [options]="headCardList"
+            [(ngModel)]="model.headMiddleCard"
+            [disabled]="!model.headMiddle"
+            [showClear]="true"
+            (onChange)="onSelectItem('headMiddleCard', $event.value)"
+          ></p-dropdown>
+          <label for="headMiddleCard">Card</label>
+        </span>
+      </div>
+      <div class="col-12">
+        <div class="grid">
+          <div class="col-3"></div>
+          <div class="col-3">
+            <span class="p-float-label">
+              <p-dropdown
+                inputId="headMiddleEnchant1"
+                [autoDisplayFirst]="false"
+                [options]="headMiddleEnchant1List"
+                [(ngModel)]="model.headMiddleEnchant1"
+                [showClear]="true"
+                [disabled]="headMiddleEnchant1List.length === 0"
+                (onChange)="onSelectItem('headMiddleEnchant1', $event.value)"
+              ></p-dropdown>
+              <label for="headMiddleEnchant1">Enchant 2</label>
+            </span>
+          </div>
+          <div class="col-3">
+            <span class="p-float-label">
+              <p-dropdown
+                inputId="headMiddleEnchant2"
+                [autoDisplayFirst]="false"
+                [options]="headMiddleEnchant2List"
+                [(ngModel)]="model.headMiddleEnchant2"
+                [showClear]="true"
+                [disabled]="headMiddleEnchant2List.length === 0"
+                (onChange)="onSelectItem('headMiddleEnchant2', $event.value)"
+              ></p-dropdown>
+              <label for="headMiddleEnchant2">Enchant 3</label>
+            </span>
+          </div>
+          <div class="col-3">
+            <span class="p-float-label">
+              <p-dropdown
+                inputId="headMiddleEnchant3"
+                [autoDisplayFirst]="false"
+                [options]="headMiddleEnchant3List"
+                [(ngModel)]="model.headMiddleEnchant3"
+                [showClear]="true"
+                [disabled]="headMiddleEnchant3List.length === 0"
+                (onChange)="onSelectItem('headMiddleEnchant3', $event.value)"
+              ></p-dropdown>
+              <label for="headMiddleEnchant3">Enchant 4</label>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Head Lower -->
+    <div class="grid">
+      <div class="col-3">
+        <span class="p-float-label">
+          <p-dropdown
+            inputId="headLower"
+            [autoDisplayFirst]="false"
+            [options]="headLowerList"
+            [(ngModel)]="model.headLower"
+            [showClear]="true"
+            (onChange)="setEnchantList($event.value)"
+            (onChange)="onSelectItem('headLower', $event.value)"
+            (onClear)="onClearItem('headLower')"
+          ></p-dropdown>
+          <label for="headLower">Lower</label>
+        </span>
+      </div>
+      <div class="col-3">
+        <span class="p-float-label">
+          <p-dropdown
+            inputId="headLowerEnchant1"
+            [autoDisplayFirst]="false"
+            [options]="headLowerEnchant1List"
+            [(ngModel)]="model.headLowerEnchant1"
+            [showClear]="true"
+            [disabled]="headLowerEnchant1List.length === 0 || !model.headLower"
+            (onChange)="onSelectItem('headLowerEnchant1', $event.value)"
+          ></p-dropdown>
+          <label for="headLowerEnchant1">Enchant 2</label>
+        </span>
+      </div>
+      <div class="col-3">
+        <span class="p-float-label">
+          <p-dropdown
+            inputId="headLowerEnchant2"
+            [autoDisplayFirst]="false"
+            [options]="headLowerEnchant2List"
+            [(ngModel)]="model.headLowerEnchant2"
+            [showClear]="true"
+            [disabled]="headLowerEnchant2List.length === 0 || !model.headLower"
+            (onChange)="onSelectItem('headLowerEnchant2', $event.value)"
+          ></p-dropdown>
+          <label for="headLowerEnchant2">Enchant 3</label>
+        </span>
+      </div>
+      <div class="col-3">
+        <span class="p-float-label">
+          <p-dropdown
+            inputId="headLowerEnchant3"
+            [autoDisplayFirst]="false"
+            [options]="headLowerEnchant3List"
+            [(ngModel)]="model.headLowerEnchant3"
+            [showClear]="true"
+            [disabled]="headLowerEnchant3List.length === 0 || !model.headLower"
+            (onChange)="onSelectItem('headLowerEnchant3', $event.value)"
+          ></p-dropdown>
+          <label for="headLowerEnchant3">Enchant 4</label>
+        </span>
+      </div>
+    </div>
+
+    <!-- Armor -->
+    <div class="grid">
+      <div class="col-3">
+        <span class="p-float-label">
+          <p-dropdown
+            inputId="armor"
+            [autoDisplayFirst]="false"
+            [options]="armorList"
+            [(ngModel)]="model.armor"
+            [showClear]="true"
+            (onChange)="setEnchantList($event.value)"
+            (onChange)="onSelectItem('armor', $event.value, model.armorRefine)"
+            (onClear)="onClearItem('armor')"
+          ></p-dropdown>
+          <label for="armor">Armor</label>
+        </span>
+      </div>
+      <div class="col-fixed" style="width: 80px">
+        <p-dropdown
+          [options]="refineList"
+          [(ngModel)]="model.armorRefine"
+          [disabled]="!model.armor"
+          (onChange)="onSelectItem('armor', model.armor, $event.value)"
+        ></p-dropdown>
+      </div>
+      <div class="col-3">
+        <span class="p-float-label">
+          <p-dropdown
+            inputId="armorCard"
+            [autoDisplayFirst]="false"
+            [options]="armorCardList"
+            [(ngModel)]="model.armorCard"
+            [disabled]="!model.armor"
+            [showClear]="true"
+            (onChange)="onSelectItem('armorCard', $event.value)"
+          ></p-dropdown>
+          <label for="armorCard">Card</label>
+        </span>
+      </div>
+      <div class="col-12">
+        <div class="grid">
+          <div class="col-3"></div>
+          <div class="col-3">
+            <span class="p-float-label">
+              <p-dropdown
+                inputId="armorEnchant1"
+                [autoDisplayFirst]="false"
+                [options]="armorEnchant1List"
+                [(ngModel)]="model.armorEnchant1"
+                [showClear]="true"
+                [disabled]="armorEnchant1List.length === 0 || !model.armor"
+                (onChange)="onSelectItem('armorEnchant1', $event.value)"
+              ></p-dropdown>
+              <label for="armorEnchant1">Enchant 2</label>
+            </span>
+          </div>
+          <div class="col-3">
+            <span class="p-float-label">
+              <p-dropdown
+                inputId="armorEnchant2"
+                [autoDisplayFirst]="false"
+                [options]="armorEnchant2List"
+                [(ngModel)]="model.armorEnchant2"
+                [showClear]="true"
+                [disabled]="armorEnchant2List.length === 0 || !model.armor"
+                (onChange)="onSelectItem('armorEnchant2', $event.value)"
+              ></p-dropdown>
+              <label for="armorEnchant2">Enchant 3</label>
+            </span>
+          </div>
+          <div class="col-3">
+            <span class="p-float-label">
+              <p-dropdown
+                inputId="armorEnchant3"
+                [autoDisplayFirst]="false"
+                [options]="armorEnchant3List"
+                [(ngModel)]="model.armorEnchant3"
+                [showClear]="true"
+                [disabled]="armorEnchant3List.length === 0 || !model.armor"
+                (onChange)="onSelectItem('armorEnchant3', $event.value)"
+              ></p-dropdown>
+              <label for="armorEnchant3">Enchant 4</label>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Garment -->
+    <div class="grid">
+      <div class="col-3">
+        <span class="p-float-label">
+          <p-dropdown
+            inputId="garment"
+            [autoDisplayFirst]="false"
+            [options]="garmentList"
+            [(ngModel)]="model.garment"
+            [showClear]="true"
+            (onChange)="setEnchantList($event.value)"
+            (onChange)="onSelectItem('garment', $event.value, model.garmentRefine)"
+            (onClear)="onClearItem('garment')"
+          ></p-dropdown>
+          <label for="garment">Garment</label>
+        </span>
+      </div>
+      <div class="col-fixed" style="width: 80px">
+        <p-dropdown
+          [options]="refineList"
+          [(ngModel)]="model.garmentRefine"
+          [disabled]="!model.garment"
+          (onChange)="onSelectItem('garment', model.garment, $event.value)"
+        ></p-dropdown>
+      </div>
+      <div class="col-3">
+        <span class="p-float-label">
+          <p-dropdown
+            inputId="garmentCard"
+            [autoDisplayFirst]="false"
+            [options]="garmentCardList"
+            [(ngModel)]="model.garmentCard"
+            [disabled]="!model.garment"
+            [showClear]="true"
+            (onChange)="onSelectItem('garmentCard', $event.value)"
+          ></p-dropdown>
+          <label for="garmentCard">Card</label>
+        </span>
+      </div>
+      <div class="col-12">
+        <div class="grid">
+          <div class="col-3"></div>
+          <div class="col-3">
+            <span class="p-float-label">
+              <p-dropdown
+                inputId="garmentEnchant1"
+                [autoDisplayFirst]="false"
+                [options]="garmentEnchant1List"
+                [(ngModel)]="model.garmentEnchant1"
+                [showClear]="true"
+                [disabled]="garmentEnchant1List.length === 0 || !model.garment"
+                (onChange)="onSelectItem('garmentEnchant1', $event.value)"
+              ></p-dropdown>
+              <label for="garmentEnchant1">Enchant 2</label>
+            </span>
+          </div>
+          <div class="col-3">
+            <span class="p-float-label">
+              <p-dropdown
+                inputId="garmentEnchant2"
+                [autoDisplayFirst]="false"
+                [options]="garmentEnchant2List"
+                [(ngModel)]="model.garmentEnchant2"
+                [showClear]="true"
+                [disabled]="garmentEnchant2List.length === 0 || !model.garment"
+                (onChange)="onSelectItem('garmentEnchant2', $event.value)"
+              ></p-dropdown>
+              <label for="garmentEnchant2">Enchant 3</label>
+            </span>
+          </div>
+          <div class="col-3">
+            <span class="p-float-label">
+              <p-dropdown
+                inputId="garmentEnchant3"
+                [autoDisplayFirst]="false"
+                [options]="garmentEnchant3List"
+                [(ngModel)]="model.garmentEnchant3"
+                [showClear]="true"
+                [disabled]="garmentEnchant3List.length === 0 || !model.garment"
+                (onChange)="onSelectItem('garmentEnchant3', $event.value)"
+              ></p-dropdown>
+              <label for="garmentEnchant3">Enchant 4</label>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Boot -->
+    <div class="grid">
+      <div class="col-3">
+        <span class="p-float-label">
+          <p-dropdown
+            inputId="boot"
+            [autoDisplayFirst]="false"
+            [options]="bootList"
+            [(ngModel)]="model.boot"
+            [showClear]="true"
+            (onChange)="setEnchantList($event.value)"
+            (onChange)="onSelectItem('boot', $event.value, model.bootRefine)"
+            (onClear)="onClearItem('boot')"
+          ></p-dropdown>
+          <label for="boot">Boot</label>
+        </span>
+      </div>
+      <div class="col-fixed" style="width: 80px">
+        <p-dropdown
+          [options]="refineList"
+          [(ngModel)]="model.bootRefine"
+          [disabled]="!model.boot"
+          (onChange)="onSelectItem('boot', model.boot, $event.value)"
+        ></p-dropdown>
+      </div>
+      <div class="col-3">
+        <span class="p-float-label">
+          <p-dropdown
+            inputId="bootCard"
+            [autoDisplayFirst]="false"
+            [options]="bootCardList"
+            [(ngModel)]="model.bootCard"
+            [disabled]="!model.boot"
+            [showClear]="true"
+            (onChange)="onSelectItem('bootCard', $event.value)"
+          ></p-dropdown>
+          <label for="bootCard">Card</label>
+        </span>
+      </div>
+      <div class="col-12">
+        <div class="grid">
+          <div class="col-3"></div>
+          <div class="col-3">
+            <span class="p-float-label">
+              <p-dropdown
+                inputId="bootEnchant1"
+                [autoDisplayFirst]="false"
+                [options]="bootEnchant1List"
+                [(ngModel)]="model.bootEnchant1"
+                [showClear]="true"
+                [disabled]="bootEnchant1List.length === 0 || !model.boot"
+                (onChange)="onSelectItem('bootEnchant1', $event.value)"
+              ></p-dropdown>
+              <label for="bootEnchant1">Enchant 2</label>
+            </span>
+          </div>
+          <div class="col-3">
+            <span class="p-float-label">
+              <p-dropdown
+                inputId="bootEnchant2"
+                [autoDisplayFirst]="false"
+                [options]="bootEnchant2List"
+                [(ngModel)]="model.bootEnchant2"
+                [showClear]="true"
+                [disabled]="bootEnchant2List.length === 0 || !model.boot"
+                (onChange)="onSelectItem('bootEnchant2', $event.value)"
+              ></p-dropdown>
+              <label for="bootEnchant2">Enchant 3</label>
+            </span>
+          </div>
+          <div class="col-3">
+            <span class="p-float-label">
+              <p-dropdown
+                inputId="bootEnchant3"
+                [autoDisplayFirst]="false"
+                [options]="bootEnchant3List"
+                [(ngModel)]="model.bootEnchant3"
+                [showClear]="true"
+                [disabled]="bootEnchant3List.length === 0 || !model.boot"
+                (onChange)="onSelectItem('bootEnchant3', $event.value)"
+              ></p-dropdown>
+              <label for="bootEnchant3">Enchant 4</label>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Acc Left -->
+    <div class="grid">
+      <div class="col-3">
+        <span class="p-float-label">
+          <p-dropdown
+            inputId="accLeft"
+            [autoDisplayFirst]="false"
+            [options]="accLeftList"
+            [(ngModel)]="model.accLeft"
+            [showClear]="true"
+            (onChange)="setEnchantList($event.value)"
+            (onChange)="onSelectItem('accLeft', $event.value)"
+            (onClear)="onClearItem('accLeft')"
+          ></p-dropdown>
+          <label for="accLeft">Acc L</label>
+        </span>
+      </div>
+      <div class="col-3">
+        <span class="p-float-label">
+          <p-dropdown
+            inputId="accLeftCard"
+            [autoDisplayFirst]="false"
+            [options]="accLeftCardList"
+            [(ngModel)]="model.accLeftCard"
+            [disabled]="!model.accLeft"
+            [showClear]="true"
+            (onChange)="onSelectItem('accLeftCard', $event.value)"
+          ></p-dropdown>
+          <label for="accLeftCard">Card</label>
+        </span>
+      </div>
+
+      <div class="col-12">
+        <div class="grid">
+          <div class="col-3"></div>
+          <div class="col-3">
+            <span class="p-float-label">
+              <p-dropdown
+                inputId="accLeftEnchant1"
+                [autoDisplayFirst]="false"
+                [options]="accLeftEnchant1List"
+                [(ngModel)]="model.accLeftEnchant1"
+                [showClear]="true"
+                [disabled]="accLeftEnchant1List.length === 0 || !model.accLeft"
+                (onChange)="onSelectItem('accLeftEnchant1', $event.value)"
+              ></p-dropdown>
+              <label for="accLeftEnchant1">Enchant 2</label>
+            </span>
+          </div>
+          <div class="col-3">
+            <span class="p-float-label">
+              <p-dropdown
+                inputId="accLeftEnchant2"
+                [autoDisplayFirst]="false"
+                [options]="accLeftEnchant2List"
+                [(ngModel)]="model.accLeftEnchant2"
+                [showClear]="true"
+                [disabled]="accLeftEnchant2List.length === 0 || !model.accLeft"
+                (onChange)="onSelectItem('accLeftEnchant2', $event.value)"
+              ></p-dropdown>
+              <label for="accLeftEnchant2">Enchant 3</label>
+            </span>
+          </div>
+          <div class="col-3">
+            <span class="p-float-label">
+              <p-dropdown
+                inputId="accLeftEnchant3"
+                [autoDisplayFirst]="false"
+                [options]="accLeftEnchant3List"
+                [(ngModel)]="model.accLeftEnchant3"
+                [showClear]="true"
+                [disabled]="accLeftEnchant3List.length === 0 || !model.accLeft"
+                (onChange)="onSelectItem('accLeftEnchant3', $event.value)"
+              ></p-dropdown>
+              <label for="accLeftEnchant3">Enchant 4</label>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Acc Right -->
+    <div class="grid">
+      <div class="col-3">
+        <span class="p-float-label">
+          <p-dropdown
+            inputId="accRight"
+            [autoDisplayFirst]="false"
+            [options]="accRightList"
+            [(ngModel)]="model.accRight"
+            [showClear]="true"
+            (onChange)="setEnchantList($event.value)"
+            (onChange)="onSelectItem('accRight', $event.value)"
+            (onClear)="onClearItem('accRight')"
+          ></p-dropdown>
+          <label for="accRight">Acc R</label>
+        </span>
+      </div>
+      <div class="col-3">
+        <span class="p-float-label">
+          <p-dropdown
+            inputId="accRightCard"
+            [autoDisplayFirst]="false"
+            [options]="accRightCardList"
+            [(ngModel)]="model.accRightCard"
+            [disabled]="!model.accRight"
+            [showClear]="true"
+            (onChange)="onSelectItem('accRightCard', $event.value)"
+          ></p-dropdown>
+          <label for="accRightCard">Card</label>
+        </span>
+      </div>
+      <div class="col-12">
+        <div class="grid">
+          <div class="col-3"></div>
+          <div class="col-3">
+            <span class="p-float-label">
+              <p-dropdown
+                inputId="accRightEnchant1"
+                [autoDisplayFirst]="false"
+                [options]="accRightEnchant1List"
+                [(ngModel)]="model.accRightEnchant1"
+                [disabled]="!model.accRight"
+                [showClear]="true"
+                (onChange)="onSelectItem('accRightEnchant1', $event.value)"
+                [disabled]="accRightEnchant1List.length === 0"
+              ></p-dropdown>
+              <label for="accRightEnchant1">Enchant 2</label>
+            </span>
+          </div>
+          <div class="col-3">
+            <span class="p-float-label">
+              <p-dropdown
+                inputId="accRightEnchant2"
+                [autoDisplayFirst]="false"
+                [options]="accRightEnchant2List"
+                [(ngModel)]="model.accRightEnchant2"
+                [disabled]="!model.accRight"
+                [showClear]="true"
+                (onChange)="onSelectItem('accRightEnchant2', $event.value)"
+                [disabled]="accRightEnchant2List.length === 0"
+              ></p-dropdown>
+              <label for="accRightEnchant2">Enchant 3</label>
+            </span>
+          </div>
+          <div class="col-3">
+            <span class="p-float-label">
+              <p-dropdown
+                inputId="accRightEnchant3"
+                [autoDisplayFirst]="false"
+                [options]="accRightEnchant3List"
+                [(ngModel)]="model.accRightEnchant3"
+                [disabled]="!model.accRight"
+                [showClear]="true"
+                [disabled]="accRightEnchant3List.length === 0"
+                (onChange)="onSelectItem('accRightEnchant3', $event.value)"
+              ></p-dropdown>
+              <label for="accRightEnchant3">Enchant 4</label>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pet -->
+    <div class="grid">
+      <div class="col-3">
+        <span class="p-float-label">
+          <p-dropdown
+            inputId="pet"
+            [autoDisplayFirst]="false"
+            [options]="petList"
+            [(ngModel)]="model.pet"
+            [showClear]="true"
+            (onChange)="onSelectItem('pet', $event.value)"
+          ></p-dropdown>
+          <label for="pet">Pet</label>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="p-fluid col-5">
+    <div class="grid">
+      <div class="col-12">
+        <span class="p-float-label">
+          <p-dropdown
+            inputId="monster"
+            [autoDisplayFirst]="false"
+            [options]="monsterList"
+            [(ngModel)]="selectedMonster"
+          ></p-dropdown>
+          <label for="monster">Monster</label>
+        </span>
+      </div>
+      <div class="col-12">minDamage: {{ minDamage }} maxDamage: {{ maxDamage }}</div>
+      <!-- <div class="col-12">{{ modelSummary | json }}</div> -->
+      <!-- <div class="col-12">{{ itemSummary | json }}</div>
+      <div class="col-12">{{ totalSummary | json }}</div> -->
+      <div class="col-6">
+        modelSummary
+        <pre [innerHTML]="modelSummary | prettyjson: [true, 3]"></pre>
+      </div>
+      <div class="col-6">
+        totalSummary
+        <pre [innerHTML]="totalSummary | prettyjson: [true, 3]"></pre>
+      </div>
+      <div class="col-6">
+        itemSummary
+        <pre [innerHTML]="itemSummary | prettyjson: [true, 3]"></pre>
+      </div>
+      <div class="col-12" [innerHTML]="weaponDesc"></div>
+    </div>
+  </div>
+</div>
