@@ -1,6 +1,11 @@
 <div class="grid">
   <div class="col-fixed">
-    <button pButton type="button" label="Calculate" (click)="logModel()"></button>
+    <button
+      pButton
+      type="button"
+      label="Calculate"
+      (click)="logModel()"
+    ></button>
   </div>
   <div class="col-fixed">
     <button
@@ -12,16 +17,54 @@
     ></button>
   </div>
   <div class="col-fixed">
-    <button pButton type="button" [disabled]="isLoadingItemSet" label="Load" (click)="loadItemSet()"></button>
+    <button
+      pButton
+      type="button"
+      [disabled]="isLoadingItemSet"
+      label="Load"
+      (click)="loadItemSet()"
+    ></button>
   </div>
   <div class="col-2">
     <p-dropdown
       inputId="character"
       [autoDisplayFirst]="false"
       [options]="characterList"
-      [(ngModel)]="selectedCharacter"
+      [(ngModel)]="selectedCharacterId"
       placeholder="Class"
     ></p-dropdown>
+  </div>
+  <div class="p-col-3">
+    <div class="p-inputgroup">
+      <span class="p-inputgroup-addon" style="width: 155px"
+        >Level Ponts: {{ availablePoints }}</span
+      >
+      <p-inputNumber
+        [(ngModel)]="model.level"
+        mode="decimal"
+        [showButtons]="true"
+        inputId="level"
+        [min]="1"
+        [max]="200"
+        (ngModelChange)="onBaseStatusChange()"
+      >
+      </p-inputNumber>
+    </div>
+  </div>
+  <div class="p-col-3">
+    <div class="p-inputgroup">
+      <span class="p-inputgroup-addon" style="width: 155px">Job</span>
+      <p-inputNumber
+        [(ngModel)]="model.jobLevel"
+        mode="decimal"
+        [showButtons]="true"
+        inputId="jobLevel"
+        [min]="1"
+        [max]="65"
+        (ngModelChange)="onBaseStatusChange()"
+      >
+      </p-inputNumber>
+    </div>
   </div>
 </div>
 <div class="grid">
@@ -30,40 +73,8 @@
     <div class="grid">
       <div class="col-4">
         <div class="grid">
-          <div class="col-12">
-            <div class="p-inputgroup">
-              <span class="p-inputgroup-addon" style="width: 55px">Level</span>
-              <p-inputNumber
-                [(ngModel)]="model.level"
-                mode="decimal"
-                [showButtons]="true"
-                inputId="level"
-                [min]="1"
-                [max]="200"
-                (ngModelChange)="onBaseStatusChange()"
-              >
-              </p-inputNumber>
-            </div>
-          </div>
-          <div class="col-12">
-            <div class="p-inputgroup">
-              <span class="p-inputgroup-addon" style="width: 55px">Job</span>
-              <p-inputNumber
-                [(ngModel)]="model.jobLevel"
-                mode="decimal"
-                [showButtons]="true"
-                inputId="jobLevel"
-                [min]="1"
-                [max]="65"
-              >
-              </p-inputNumber>
-            </div>
-          </div>
-          <div class="col-12">Ponts: {{ availablePoints }}</div>
-        </div>
-      </div>
-      <div class="col-4">
-        <div class="grid">
+          <div class="col-12">Status Point {{ availablePoints }}</div>
+          <!-- STR -->
           <div class="col-12">
             <div class="p-inputgroup">
               <span class="p-inputgroup-addon" style="width: 55px">Str</span>
@@ -77,8 +88,12 @@
                 (ngModelChange)="onBaseStatusChange()"
               >
               </p-inputNumber>
+              <div>next 20</div>
+              <div>+ {{ model.jobStr }}</div>
+              <div>item {{ totalSummary?.str || 0 }}</div>
             </div>
           </div>
+          <!-- AGI -->
           <div class="col-12">
             <div class="p-inputgroup">
               <span class="p-inputgroup-addon" style="width: 55px">Agi</span>
@@ -92,8 +107,12 @@
                 (ngModelChange)="onBaseStatusChange()"
               >
               </p-inputNumber>
+              <div>next 20</div>
+              <div>+ {{ model.jobAgi }}</div>
+              <div>item {{ totalSummary?.agi || 0 }}</div>
             </div>
           </div>
+          <!-- VIT -->
           <div class="col-12">
             <div class="p-inputgroup">
               <span class="p-inputgroup-addon" style="width: 55px">Vit</span>
@@ -107,12 +126,12 @@
                 (ngModelChange)="onBaseStatusChange()"
               >
               </p-inputNumber>
+              <div>next 20</div>
+              <div>+ {{ model.jobVit }}</div>
+              <div>item {{ totalSummary?.vit || 0 }}</div>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="col-4">
-        <div class="grid">
+          <!-- INT -->
           <div class="col-12">
             <div class="p-inputgroup">
               <span class="p-inputgroup-addon" style="width: 55px">Int</span>
@@ -126,9 +145,12 @@
                 (ngModelChange)="onBaseStatusChange()"
               >
               </p-inputNumber>
-              <p-chip label="120" styleClass="mr-2"></p-chip>
+              <div>next 20</div>
+              <div>+ {{ model.jobInt }}</div>
+              <div>item {{ totalSummary?.int || 0 }}</div>
             </div>
           </div>
+          <!-- DEX -->
           <div class="col-12">
             <div class="p-inputgroup">
               <span class="p-inputgroup-addon" style="width: 55px">Dex</span>
@@ -142,8 +164,12 @@
                 (ngModelChange)="onBaseStatusChange()"
               >
               </p-inputNumber>
+              <div>next 20</div>
+              <div>+ {{ model.jobDex }}</div>
+              <div>item {{ totalSummary?.dex || 0 }}</div>
             </div>
           </div>
+          <!-- LUK -->
           <div class="col-12">
             <div class="p-inputgroup">
               <span class="p-inputgroup-addon" style="width: 55px">Luk</span>
@@ -157,7 +183,41 @@
                 (ngModelChange)="onBaseStatusChange()"
               >
               </p-inputNumber>
+              <div>next 20</div>
+              <div>+ {{ model.jobLuk }}</div>
+              <div>item {{ totalSummary?.luk || 0 }}</div>
             </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="grid">
+          <div class="col-12">Atk: {{ totalSummary?.atk || 0 }}</div>
+          <div class="col-12">Atk %: {{ totalSummary?.["atk_%"] }}</div>
+          <div class="col-12">ASPD: {{ totalSummary?.aspd || 0 }}</div>
+          <div class="col-12">Hit: {{ totalSummary?.hit || 0 }}</div>
+          <div class="col-12">
+            Perfect Hit: {{ totalSummary?.perfectHit || 0 }}
+          </div>
+          <div class="col-12">Cri Rate: {{ totalSummary?.cri || 0 }}</div>
+          <div class="col-12">Cri Dmg: {{ totalSummary?.criDmg || 0 }}</div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="grid">
+          <div class="col-12">
+            Def: {{ totalSummary?.def || 0 }}, Mdef:
+            {{ totalSummary?.mdef || 0 }}
+          </div>
+          <div class="col-12">Flee: {{ totalSummary?.flee || 0 }}</div>
+          <div class="col-12">Matk: {{ totalSummary?.matk || 0 }}</div>
+          <div class="col-12">Matk %: {{ totalSummary?.["matk_%"] }}</div>
+          <div class="col-12">
+            After Cast Delay: {{ totalSummary?.acd || 0 }}
+          </div>
+          <div class="col-12">Fixe Cast Time: {{ totalSummary?.fct || 0 }}</div>
+          <div class="col-12">
+            Variable Cast Time: {{ totalSummary?.vct || 0 }}
           </div>
         </div>
       </div>
@@ -174,7 +234,9 @@
             [(ngModel)]="model.weapon"
             [showClear]="true"
             (onChange)="setEnchantList($event.value)"
-            (onChange)="onSelectItem('weapon', $event.value, model.weaponRefine)"
+            (onChange)="
+              onSelectItem('weapon', $event.value, model.weaponRefine)
+            "
             (onClear)="onClearItem('weapon')"
           ></p-dropdown>
           <label for="weapon">Weapon</label>
@@ -244,13 +306,18 @@
             [(ngModel)]="model.shield"
             [showClear]="true"
             (onChange)="setEnchantList($event.value)"
-            (onChange)="onSelectItem('shield', $event.value, model.shieldRefine)"
+            (onChange)="
+              onSelectItem('shield', $event.value, model.shieldRefine)
+            "
           ></p-dropdown>
           <label for="shield">Shield</label>
         </span>
       </div>
       <div class="col-fixed" style="width: 80px">
-        <p-dropdown [options]="refineList" [(ngModel)]="model.shieldRefine"></p-dropdown>
+        <p-dropdown
+          [options]="refineList"
+          [(ngModel)]="model.shieldRefine"
+        ></p-dropdown>
       </div>
       <div class="col-3">
         <span class="p-float-label">
@@ -278,7 +345,9 @@
             [(ngModel)]="model.headUpper"
             [showClear]="true"
             (onChange)="setEnchantList($event.value)"
-            (onChange)="onSelectItem('headUpper', $event.value, model.headUpperRefine)"
+            (onChange)="
+              onSelectItem('headUpper', $event.value, model.headUpperRefine)
+            "
             (onClear)="onClearItem('headUpper')"
           ></p-dropdown>
           <label for="headUpper">Head Upper</label>
@@ -548,7 +617,9 @@
             [(ngModel)]="model.garment"
             [showClear]="true"
             (onChange)="setEnchantList($event.value)"
-            (onChange)="onSelectItem('garment', $event.value, model.garmentRefine)"
+            (onChange)="
+              onSelectItem('garment', $event.value, model.garmentRefine)
+            "
             (onClear)="onClearItem('garment')"
           ></p-dropdown>
           <label for="garment">Garment</label>
@@ -893,6 +964,194 @@
         </span>
       </div>
     </div>
+
+    <!-- Shadow -->
+    <div class="grid">
+      <div class="col-3">
+        <span class="p-float-label">
+          <p-dropdown
+            inputId="shadowWeapon"
+            [autoDisplayFirst]="false"
+            [options]="shadowWeaponList"
+            [(ngModel)]="model.shadowWeapon"
+            [showClear]="true"
+            (onChange)="setEnchantList($event.value)"
+            (onChange)="onSelectItem('shadowWeapon', $event.value)"
+            (onClear)="onClearItem('shadowWeapon')"
+          ></p-dropdown>
+          <label for="shadowWeapon">shadowWeapon</label>
+        </span>
+      </div>
+      <div class="col-3">
+        <span class="p-float-label">
+          <p-dropdown
+            inputId="shadowWeaponEnchant1"
+            [autoDisplayFirst]="false"
+            [options]="basicEnchants"
+            [(ngModel)]="model.shadowWeaponEnchant1"
+            [showClear]="true"
+            [disabled]="basicEnchants.length === 0 || !model.shadowWeapon"
+            (onChange)="onSelectItem('shadowWeaponEnchant1', $event.value)"
+          ></p-dropdown>
+          <label for="shadowWeaponEnchant1">Enchant 1</label>
+        </span>
+      </div>
+    </div>
+    <div class="grid">
+      <div class="col-3">
+        <span class="p-float-label">
+          <p-dropdown
+            inputId="shadowArmor"
+            [autoDisplayFirst]="false"
+            [options]="shadowArmorList"
+            [(ngModel)]="model.shadowArmor"
+            [showClear]="true"
+            (onChange)="setEnchantList($event.value)"
+            (onChange)="onSelectItem('shadowArmor', $event.value)"
+            (onClear)="onClearItem('shadowArmor')"
+          ></p-dropdown>
+          <label for="shadowArmor">shadowArmor</label>
+        </span>
+      </div>
+      <div class="col-3">
+        <span class="p-float-label">
+          <p-dropdown
+            inputId="shadowArmorEnchant1"
+            [autoDisplayFirst]="false"
+            [options]="basicEnchants"
+            [(ngModel)]="model.shadowArmorEnchant1"
+            [showClear]="true"
+            [disabled]="basicEnchants.length === 0 || !model.shadowArmor"
+            (onChange)="onSelectItem('shadowArmorEnchant1', $event.value)"
+          ></p-dropdown>
+          <label for="shadowArmorEnchant1">Enchant 1</label>
+        </span>
+      </div>
+    </div>
+    <div class="grid">
+      <div class="col-3">
+        <span class="p-float-label">
+          <p-dropdown
+            inputId="shadowShield"
+            [autoDisplayFirst]="false"
+            [options]="shadowShieldList"
+            [(ngModel)]="model.shadowShield"
+            [showClear]="true"
+            (onChange)="setEnchantList($event.value)"
+            (onChange)="onSelectItem('shadowShield', $event.value)"
+            (onClear)="onClearItem('shadowShield')"
+          ></p-dropdown>
+          <label for="shadowShield">shadowShield</label>
+        </span>
+      </div>
+      <div class="col-3">
+        <span class="p-float-label">
+          <p-dropdown
+            inputId="shadowShieldEnchant1"
+            [autoDisplayFirst]="false"
+            [options]="basicEnchants"
+            [(ngModel)]="model.shadowShieldEnchant1"
+            [showClear]="true"
+            [disabled]="basicEnchants.length === 0 || !model.shadowShield"
+            (onChange)="onSelectItem('shadowShieldEnchant1', $event.value)"
+          ></p-dropdown>
+          <label for="shadowShieldEnchant1">Enchant 1</label>
+        </span>
+      </div>
+    </div>
+    <div class="grid">
+      <div class="col-3">
+        <span class="p-float-label">
+          <p-dropdown
+            inputId="shadowBoot"
+            [autoDisplayFirst]="false"
+            [options]="shadowBootList"
+            [(ngModel)]="model.shadowBoot"
+            [showClear]="true"
+            (onChange)="setEnchantList($event.value)"
+            (onChange)="onSelectItem('shadowBoot', $event.value)"
+            (onClear)="onClearItem('shadowBoot')"
+          ></p-dropdown>
+          <label for="shadowBoot">shadowBoot</label>
+        </span>
+      </div>
+      <div class="col-3">
+        <span class="p-float-label">
+          <p-dropdown
+            inputId="shadowBootEnchant1"
+            [autoDisplayFirst]="false"
+            [options]="basicEnchants"
+            [(ngModel)]="model.shadowBootEnchant1"
+            [showClear]="true"
+            [disabled]="basicEnchants.length === 0 || !model.shadowBoot"
+            (onChange)="onSelectItem('shadowBootEnchant1', $event.value)"
+          ></p-dropdown>
+          <label for="shadowBootEnchant1">Enchant 1</label>
+        </span>
+      </div>
+    </div>
+    <div class="grid">
+      <div class="col-3">
+        <span class="p-float-label">
+          <p-dropdown
+            inputId="shadowEarning"
+            [autoDisplayFirst]="false"
+            [options]="shadowEarningList"
+            [(ngModel)]="model.shadowEarning"
+            [showClear]="true"
+            (onChange)="setEnchantList($event.value)"
+            (onChange)="onSelectItem('shadowEarning', $event.value)"
+            (onClear)="onClearItem('shadowEarning')"
+          ></p-dropdown>
+          <label for="shadowEarning">shadowEarning</label>
+        </span>
+      </div>
+      <div class="col-3">
+        <span class="p-float-label">
+          <p-dropdown
+            inputId="shadowEarningEnchant1"
+            [autoDisplayFirst]="false"
+            [options]="basicEnchants"
+            [(ngModel)]="model.shadowEarningEnchant1"
+            [showClear]="true"
+            [disabled]="basicEnchants.length === 0 || !model.shadowEarning"
+            (onChange)="onSelectItem('shadowEarningEnchant1', $event.value)"
+          ></p-dropdown>
+          <label for="shadowEarningEnchant1">Enchant 1</label>
+        </span>
+      </div>
+    </div>
+    <div class="grid">
+      <div class="col-3">
+        <span class="p-float-label">
+          <p-dropdown
+            inputId="shadowPendant"
+            [autoDisplayFirst]="false"
+            [options]="shadowPendantList"
+            [(ngModel)]="model.shadowPendant"
+            [showClear]="true"
+            (onChange)="setEnchantList($event.value)"
+            (onChange)="onSelectItem('shadowPendant', $event.value)"
+            (onClear)="onClearItem('shadowPendant')"
+          ></p-dropdown>
+          <label for="shadowPendant">shadowPendant</label>
+        </span>
+      </div>
+      <div class="col-3">
+        <span class="p-float-label">
+          <p-dropdown
+            inputId="shadowPendantEnchant1"
+            [autoDisplayFirst]="false"
+            [options]="basicEnchants"
+            [(ngModel)]="model.shadowPendantEnchant1"
+            [showClear]="true"
+            [disabled]="basicEnchants.length === 0 || !model.shadowPendant"
+            (onChange)="onSelectItem('shadowPendantEnchant1', $event.value)"
+          ></p-dropdown>
+          <label for="shadowPendantEnchant1">Enchant 1</label>
+        </span>
+      </div>
+    </div>
   </div>
   <div class="p-fluid col-5">
     <div class="grid">
@@ -907,21 +1166,23 @@
           <label for="monster">Monster</label>
         </span>
       </div>
-      <div class="col-12">minDamage: {{ minDamage }} maxDamage: {{ maxDamage }}</div>
+      <div class="col-12">
+        minDamage: {{ minDamage }} maxDamage: {{ maxDamage }}
+      </div>
       <!-- <div class="col-12">{{ modelSummary | json }}</div> -->
       <!-- <div class="col-12">{{ itemSummary | json }}</div>
       <div class="col-12">{{ totalSummary | json }}</div> -->
       <div class="col-6">
         modelSummary
-        <pre [innerHTML]="modelSummary | prettyjson: [true, 3]"></pre>
+        <pre [innerHTML]="modelSummary | prettyjson : [true, 3]"></pre>
       </div>
       <div class="col-6">
         totalSummary
-        <pre [innerHTML]="totalSummary | prettyjson: [true, 3]"></pre>
+        <pre [innerHTML]="totalSummary | prettyjson : [true, 3]"></pre>
       </div>
       <div class="col-6">
         itemSummary
-        <pre [innerHTML]="itemSummary | prettyjson: [true, 3]"></pre>
+        <pre [innerHTML]="itemSummary | prettyjson : [true, 3]"></pre>
       </div>
       <div class="col-12" [innerHTML]="weaponDesc"></div>
     </div>

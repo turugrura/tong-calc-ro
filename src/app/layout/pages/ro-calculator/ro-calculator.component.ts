@@ -12,6 +12,7 @@ import { ItemTypeEnum } from './item-type.enum';
 import { ItemTypeId } from './item.const';
 import { monsterData } from './monster-data';
 import { RoService } from 'src/app/demo/service/ro.service';
+import { Rebelion } from './rebellion';
 
 interface ItemModel {
   id: number;
@@ -57,6 +58,18 @@ enum ItemSubTypeId {
   Special = 768,
   Pet = 518,
   Enchant = 0,
+
+  ShadowEnhUpper = 71,
+  ShadowEnhMiddle = 72,
+  ShadowEnhLower = 73,
+  ShadowEnhGarment = 74,
+
+  ShadowWeapon = 280,
+  ShadowArmor = 526,
+  ShadowShield = 527,
+  ShadowBoot = 528,
+  ShadowEarning = 529,
+  ShadowPendant = 530,
 }
 enum HeadLocation {
   Middle = 'Middle',
@@ -92,6 +105,17 @@ interface DropdownModel {
   value: string | number;
 }
 
+const toDropdownList = <T extends {}>(
+  list: T[],
+  labelKey: keyof T,
+  valueKey: keyof T
+): DropdownModel[] => {
+  return list.map((a) => ({
+    label: a[labelKey],
+    value: a[valueKey],
+  }));
+};
+
 @Component({
   selector: 'app-ro-calculator',
   templateUrl: './ro-calculator.component.html',
@@ -102,22 +126,28 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
   items!: Record<number, ItemModel>;
   mapEnchant!: Map<string, ItemModel>;
 
-  model: any = {
+  model = {
     class: undefined,
     level: 1,
     jobLevel: 1,
     str: 1,
-    extraStr: undefined,
+    itemStr: undefined,
+    jobStr: undefined,
     agi: 1,
-    extraAgi: undefined,
+    itemAgi: undefined,
+    jobAgi: undefined,
     vit: 1,
-    extraVit: undefined,
+    itemVit: undefined,
+    jobVit: undefined,
     int: 1,
-    extraInt: undefined,
+    itemInt: undefined,
+    jobInt: undefined,
     dex: 1,
-    extraDex: undefined,
+    itemDex: undefined,
+    jobDex: undefined,
     luk: 1,
-    extraLuk: undefined,
+    itemLuk: undefined,
+    jobLuk: undefined,
     weapon: undefined,
     weaponRefine: undefined,
     weaponCard1: undefined,
@@ -176,6 +206,23 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
     accRightEnchant2: undefined,
     accRightEnchant3: undefined,
     pet: undefined,
+
+    shadowEnhUpper: undefined,
+    shadowEnhMiddle: undefined,
+    shadowEnhLower: undefined,
+    shadowEnhGarment: undefined,
+    shadowWeapon: undefined,
+    shadowWeaponEnchant1: undefined,
+    shadowArmor: undefined,
+    shadowArmorEnchant1: undefined,
+    shadowShield: undefined,
+    shadowShieldEnchant1: undefined,
+    shadowBoot: undefined,
+    shadowBootEnchant1: undefined,
+    shadowEarning: undefined,
+    shadowEarningEnchant1: undefined,
+    shadowPendant: undefined,
+    shadowPendantEnchant1: undefined,
   };
 
   refineList = [
@@ -184,6 +231,8 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
     label: a.toString(),
     value: a,
   }));
+
+  basicEnchants: DropdownModel[] = []; // atk atk%, aspd, state
 
   weaponList: DropdownModel[] = [];
   weaponCardList: DropdownModel[] = [];
@@ -235,8 +284,21 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
   accRightEnchant3List: DropdownModel[] = [];
   petList: DropdownModel[] = [];
 
+  shadowEnhUpperList: DropdownModel[] = [];
+  shadowEnhMiddleList: DropdownModel[] = [];
+  shadowEnhLowerList: DropdownModel[] = [];
+  shadowEnhGarmentList: DropdownModel[] = [];
+
+  shadowWeaponList: DropdownModel[] = [];
+  shadowArmorList: DropdownModel[] = [];
+  shadowShieldList: DropdownModel[] = [];
+  shadowBootList: DropdownModel[] = [];
+  shadowEarningList: DropdownModel[] = [];
+  shadowPendantList: DropdownModel[] = [];
+
   characterList = Characters;
-  selectedCharacter = 1;
+  selectedCharacterId = 1;
+  selectedCharacter = new Rebelion();
   totalPoints = 0;
   availablePoints = 0;
   monsterList: DropdownModel[] = [];
@@ -270,11 +332,13 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   isShowShield() {
-    return this.selectedCharacter === 10;
+    return this.selectedCharacterId === 10;
   }
 
   logModel() {
     // console.log({ model: { ...this.model } });
+    this.setJobBonus();
+
     const calc = this.calculator
       .setModel(this.model)
       .setMonster(monsterData[this.selectedMonster]);
@@ -291,6 +355,8 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
     this.isLoadingItemSet = true;
     const str = localStorage.getItem('ro-set');
     this.model = JSON.parse(str || '{}');
+    this.setJobBonus();
+
     setTimeout(() => {
       try {
         if (str) {
@@ -341,7 +407,19 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
         })
       );
       this.setDropdownList();
+      this.loadItemSet();
     });
+  }
+
+  private setJobBonus() {
+    const { str, agi, vit, int, dex, luk } =
+      this.selectedCharacter.getJobBonusStatus(this.model.jobLevel);
+    this.model.jobStr = str;
+    this.model.jobAgi = agi;
+    this.model.jobVit = vit;
+    this.model.jobInt = int;
+    this.model.jobDex = dex;
+    this.model.jobLuk = luk;
   }
 
   private setDropdownList() {
@@ -364,6 +442,18 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
     const accRightList = [];
     const accRightCardList = [];
     const petList = [];
+
+    const shadowEnhUpperList = [];
+    const shadowEnhMiddleList = [];
+    const shadowEnhLowerList = [];
+    const shadowEnhGarmentList = [];
+
+    const shadowArmorList = [];
+    const shadowShieldList = [];
+    const shadowBootList = [];
+    const shadowEarningList = [];
+    const shadowPendantList = [];
+    const shadowWeaponList = [];
 
     for (const item of Object.values(this.items) as unknown as ItemModel[]) {
       const { itemTypeId, itemSubTypeId, compositionPos, location } = item;
@@ -408,6 +498,36 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
         case ItemSubTypeId.Pet:
           petList.push(item);
           continue;
+        case ItemSubTypeId.ShadowArmor:
+          shadowArmorList.push(item);
+          continue;
+        case ItemSubTypeId.ShadowShield:
+          shadowShieldList.push(item);
+          continue;
+        case ItemSubTypeId.ShadowBoot:
+          shadowBootList.push(item);
+          continue;
+        case ItemSubTypeId.ShadowEarning:
+          shadowEarningList.push(item);
+          continue;
+        case ItemSubTypeId.ShadowPendant:
+          shadowPendantList.push(item);
+          continue;
+        case ItemSubTypeId.ShadowWeapon:
+          shadowWeaponList.push(item);
+          continue;
+        case ItemSubTypeId.ShadowEnhUpper:
+          shadowEnhUpperList.push(item);
+          continue;
+        case ItemSubTypeId.ShadowEnhMiddle:
+          shadowEnhMiddleList.push(item);
+          continue;
+        case ItemSubTypeId.ShadowEnhLower:
+          shadowEnhLowerList.push(item);
+          continue;
+        case ItemSubTypeId.ShadowEnhGarment:
+          shadowEnhGarmentList.push(item);
+          continue;
       }
 
       if (itemTypeId === ItemTypeId.CARD) {
@@ -444,78 +564,47 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
       }
     }
 
-    this.weaponList = weaponList.map((a) => ({
-      label: a.name,
-      value: a.id,
-    }));
-    this.weaponCardList = weaponCardList.map((a) => ({
-      label: a.name,
-      value: a.id,
-    }));
-    this.headUpperList = headUpperList.map((a) => ({
-      label: a.name,
-      value: a.id,
-    }));
-    this.headMiddleList = headMiddleList.map((a) => ({
-      label: a.name,
-      value: a.id,
-    }));
-    this.headLowerList = headLowerList.map((a) => ({
-      label: a.name,
-      value: a.id,
-    }));
-    this.headCardList = headCardList.map((a) => ({
-      label: a.name,
-      value: a.id,
-    }));
-    this.armorList = armorList.map((a) => ({ label: a.name, value: a.id }));
-    this.armorCardList = armorCardList.map((a) => ({
-      label: a.name,
-      value: a.id,
-    }));
-    this.shieldList = shieldList.map((a) => ({
-      label: a.name,
-      value: a.id,
-    }));
-    this.shieldCardList = shieldCardList.map((a) => ({
-      label: a.name,
-      value: a.id,
-    }));
-    this.garmentList = garmentList.map((a) => ({
-      label: a.name,
-      value: a.id,
-    }));
-    this.garmentCardList = garmentCardList.map((a) => ({
-      label: a.name,
-      value: a.id,
-    }));
-    this.bootList = bootList.map((a) => ({ label: a.name, value: a.id }));
-    this.bootCardList = bootCardList.map((a) => ({
-      label: a.name,
-      value: a.id,
-    }));
-    this.accLeftList = accLeftList.map((a) => ({
-      label: a.name,
-      value: a.id,
-    }));
-    this.accLeftCardList = accLeftCardList.map((a) => ({
-      label: a.name,
-      value: a.id,
-    }));
-    this.accRightList = accRightList.map((a) => ({
-      label: a.name,
-      value: a.id,
-    }));
-    this.accRightCardList = accRightCardList.map((a) => ({
-      label: a.name,
-      value: a.id,
-    }));
+    this.weaponList = toDropdownList(weaponList, 'name', 'id');
+    this.weaponCardList = toDropdownList(weaponCardList, 'name', 'id');
+    this.headUpperList = toDropdownList(headUpperList, 'name', 'id');
+    this.headMiddleList = toDropdownList(headMiddleList, 'name', 'id');
+    this.headLowerList = toDropdownList(headLowerList, 'name', 'id');
+    this.headCardList = toDropdownList(headCardList, 'name', 'id');
+    this.armorList = toDropdownList(armorList, 'name', 'id');
+    this.armorCardList = toDropdownList(armorCardList, 'name', 'id');
+    this.shieldList = toDropdownList(shieldList, 'name', 'id');
+    this.shieldCardList = toDropdownList(shieldCardList, 'name', 'id');
+    this.garmentList = toDropdownList(garmentList, 'name', 'id');
+    this.garmentCardList = toDropdownList(garmentCardList, 'name', 'id');
+    this.bootList = toDropdownList(bootList, 'name', 'id');
+    this.bootCardList = toDropdownList(bootCardList, 'name', 'id');
+    this.accLeftList = toDropdownList(accLeftList, 'name', 'id');
+    this.accLeftCardList = toDropdownList(accLeftCardList, 'name', 'id');
+    this.accRightList = toDropdownList(accRightList, 'name', 'id');
+    this.accRightCardList = toDropdownList(accRightCardList, 'name', 'id');
     this.petList = petList.map((a) => ({ label: a.name, value: a.id }));
 
-    this.monsterList = Object.values(monsterData).map((a) => ({
-      label: a.name,
-      value: a.id,
-    }));
+    this.monsterList = toDropdownList(Object.values(monsterData), 'name', 'id');
+
+    this.shadowEnhUpperList = toDropdownList(shadowEnhUpperList, 'name', 'id');
+    this.shadowEnhMiddleList = toDropdownList(
+      shadowEnhMiddleList,
+      'name',
+      'id'
+    );
+    this.shadowEnhLowerList = toDropdownList(shadowEnhLowerList, 'name', 'id');
+    this.shadowEnhGarmentList = toDropdownList(
+      shadowEnhGarmentList,
+      'name',
+      'id'
+    );
+
+    this.shadowArmorList = toDropdownList(shadowArmorList, 'name', 'id');
+    this.shadowShieldList = toDropdownList(shadowShieldList, 'name', 'id');
+    this.shadowBootList = toDropdownList(shadowBootList, 'name', 'id');
+    this.shadowEarningList = toDropdownList(shadowEarningList, 'name', 'id');
+    this.shadowPendantList = toDropdownList(shadowPendantList, 'name', 'id');
+    this.shadowWeaponList = toDropdownList(shadowWeaponList, 'name', 'id');
   }
 
   setEnchantList(itemId: number) {
@@ -657,6 +746,8 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   onBaseStatusChange() {
+    this.setJobBonus();
+
     const { str, agi, vit, int, dex, luk } = this.model;
     const mainStatuses = [str, agi, vit, int, dex, luk];
     const { availablePoint } = this.stateCalculator

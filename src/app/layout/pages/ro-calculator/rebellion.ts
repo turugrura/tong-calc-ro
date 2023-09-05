@@ -1,4 +1,5 @@
 const jobBonusTable: [number, number, number, number, number, number][] = [
+  [0, 0, 0, 0, 0, 0], // job 0
   [0, 0, 0, 0, 0, 0],
   [0, 0, 0, 0, 1, 0],
   [0, 0, 0, 0, 1, 0],
@@ -72,8 +73,8 @@ export class Rebelion {
   private _buffSkillList = [];
   private _passiveSkillList = [];
 
-  getJobBonusStatus() {
-    const [str, agi, vit, int, dex, luk] = jobBonusTable[this._level];
+  getJobBonusStatus(jobLevel: number) {
+    const [str, agi, vit, int, dex, luk] = jobBonusTable[jobLevel];
 
     return {
       str,
