@@ -26,15 +26,18 @@
     ></button>
   </div>
   <div class="col-2">
-    <p-dropdown
-      inputId="character"
-      [autoDisplayFirst]="false"
-      [options]="characterList"
-      [(ngModel)]="selectedCharacterId"
-      placeholder="Class"
-    ></p-dropdown>
+    <div class="p-inputgroup">
+      <span class="p-inputgroup-addon" style="width: 80px">Class</span>
+      <p-dropdown
+        inputId="character"
+        [autoDisplayFirst]="false"
+        [options]="characterList"
+        [(ngModel)]="selectedCharacterId"
+        placeholder="Class"
+      ></p-dropdown>
+    </div>
   </div>
-  <div class="p-col-3">
+  <div class="col-2">
     <div class="p-inputgroup">
       <span class="p-inputgroup-addon" style="width: 155px"
         >Level Ponts: {{ availablePoints }}</span
@@ -51,7 +54,7 @@
       </p-inputNumber>
     </div>
   </div>
-  <div class="p-col-3">
+  <div class="col-2">
     <div class="p-inputgroup">
       <span class="p-inputgroup-addon" style="width: 155px">Job</span>
       <p-inputNumber
@@ -68,6 +71,7 @@
   </div>
 </div>
 <div class="grid">
+  <!-- Left Side -->
   <div class="p-fluid col-7">
     <!-- Status -->
     <div class="grid">
@@ -965,6 +969,123 @@
       </div>
     </div>
 
+    <!-- Costume -->
+    <div class="grid">
+      <div class="col-3">
+        <span class="p-float-label">
+          <p-dropdown
+            inputId="costumeUpper"
+            [autoDisplayFirst]="false"
+            [options]="[]"
+            [disabled]="true"
+            [showClear]="true"
+          ></p-dropdown>
+          <label for="costumeUpper">Costume Upper</label>
+        </span>
+      </div>
+      <div class="col-3">
+        <span class="p-float-label">
+          <p-dropdown
+            inputId="costumeEnchantUpper"
+            [autoDisplayFirst]="false"
+            [options]="costumeEnhUpperList"
+            [(ngModel)]="model.costumeEnchantUpper"
+            [showClear]="true"
+            [disabled]="costumeEnhUpperList.length === 0"
+            (onChange)="onSelectItem('costumeEnchantUpper', $event.value)"
+          ></p-dropdown>
+          <label for="costumeEnchantUpper">Enchant</label>
+        </span>
+      </div>
+    </div>
+    <!-- Middle -->
+    <div class="grid">
+      <div class="col-3">
+        <span class="p-float-label">
+          <p-dropdown
+            inputId="costumeMiddle"
+            [autoDisplayFirst]="false"
+            [options]="[]"
+            [disabled]="true"
+            [showClear]="true"
+          ></p-dropdown>
+          <label for="costumeMiddle">Costume Middle</label>
+        </span>
+      </div>
+      <div class="col-3">
+        <span class="p-float-label">
+          <p-dropdown
+            inputId="costumeEnchantMiddle"
+            [autoDisplayFirst]="false"
+            [options]="costumeEnhMiddleList"
+            [(ngModel)]="model.costumeEnchantMiddle"
+            [showClear]="true"
+            [disabled]="costumeEnhMiddleList.length === 0"
+            (onChange)="onSelectItem('costumeEnchantMiddle', $event.value)"
+          ></p-dropdown>
+          <label for="costumeEnchantMiddle">Enchant</label>
+        </span>
+      </div>
+    </div>
+    <!-- Lower -->
+    <div class="grid">
+      <div class="col-3">
+        <span class="p-float-label">
+          <p-dropdown
+            inputId="costumeLower"
+            [autoDisplayFirst]="false"
+            [options]="[]"
+            [disabled]="true"
+            [showClear]="true"
+          ></p-dropdown>
+          <label for="costumeLower">Costume Lower</label>
+        </span>
+      </div>
+      <div class="col-3">
+        <span class="p-float-label">
+          <p-dropdown
+            inputId="costumeEnchantLower"
+            [autoDisplayFirst]="false"
+            [options]="costumeEnhLowerList"
+            [(ngModel)]="model.costumeEnchantLower"
+            [showClear]="true"
+            [disabled]="costumeEnhLowerList.length === 0"
+            (onChange)="onSelectItem('costumeEnchantLower', $event.value)"
+          ></p-dropdown>
+          <label for="costumeEnchantLower">Enchant</label>
+        </span>
+      </div>
+    </div>
+    <!-- Garment -->
+    <div class="grid">
+      <div class="col-3">
+        <span class="p-float-label">
+          <p-dropdown
+            inputId="costumeGarment"
+            [autoDisplayFirst]="false"
+            [options]="[]"
+            [disabled]="true"
+            [showClear]="true"
+          ></p-dropdown>
+          <label for="costumeGarment">Costume Garment</label>
+        </span>
+      </div>
+      <div class="col-3">
+        <span class="p-float-label">
+          <p-dropdown
+            inputId="costumeEnchantGarment"
+            [autoDisplayFirst]="false"
+            [options]="costumeEnhGarmentList"
+            [(ngModel)]="model.costumeEnchantGarment"
+            [showClear]="true"
+            [disabled]="costumeEnhGarmentList.length === 0"
+            (onChange)="onSelectItem('costumeEnchantGarment', $event.value)"
+          ></p-dropdown>
+          <label for="costumeEnchantGarment">Enchant</label>
+        </span>
+      </div>
+    </div>
+
     <!-- Shadow -->
     <div class="grid">
       <div class="col-3">
@@ -979,7 +1100,7 @@
             (onChange)="onSelectItem('shadowWeapon', $event.value)"
             (onClear)="onClearItem('shadowWeapon')"
           ></p-dropdown>
-          <label for="shadowWeapon">shadowWeapon</label>
+          <label for="shadowWeapon">Shadow Weapon</label>
         </span>
       </div>
       <div class="col-3">
@@ -1010,7 +1131,7 @@
             (onChange)="onSelectItem('shadowArmor', $event.value)"
             (onClear)="onClearItem('shadowArmor')"
           ></p-dropdown>
-          <label for="shadowArmor">shadowArmor</label>
+          <label for="shadowArmor">Shadow Armor</label>
         </span>
       </div>
       <div class="col-3">
@@ -1041,7 +1162,7 @@
             (onChange)="onSelectItem('shadowShield', $event.value)"
             (onClear)="onClearItem('shadowShield')"
           ></p-dropdown>
-          <label for="shadowShield">shadowShield</label>
+          <label for="shadowShield">Shadow Shield</label>
         </span>
       </div>
       <div class="col-3">
@@ -1072,7 +1193,7 @@
             (onChange)="onSelectItem('shadowBoot', $event.value)"
             (onClear)="onClearItem('shadowBoot')"
           ></p-dropdown>
-          <label for="shadowBoot">shadowBoot</label>
+          <label for="shadowBoot">Shadow Boot</label>
         </span>
       </div>
       <div class="col-3">
@@ -1103,7 +1224,7 @@
             (onChange)="onSelectItem('shadowEarning', $event.value)"
             (onClear)="onClearItem('shadowEarning')"
           ></p-dropdown>
-          <label for="shadowEarning">shadowEarning</label>
+          <label for="shadowEarning">Shadow Earning</label>
         </span>
       </div>
       <div class="col-3">
@@ -1134,7 +1255,7 @@
             (onChange)="onSelectItem('shadowPendant', $event.value)"
             (onClear)="onClearItem('shadowPendant')"
           ></p-dropdown>
-          <label for="shadowPendant">shadowPendant</label>
+          <label for="shadowPendant">Shadow Pendant</label>
         </span>
       </div>
       <div class="col-3">
@@ -1152,19 +1273,103 @@
         </span>
       </div>
     </div>
+
+    <!-- Buff -->
+    <div class="grid">
+      <div class="col-3">
+        <div class="p-inputgroup">
+          <span class="p-inputgroup-addon" style="width: 130px">{{
+            skillBuffs["impositioManus"].label
+          }}</span>
+          <p-selectButton
+            [options]="skillBuffs['impositioManus'].dropdown"
+            [(ngModel)]="model.impositioManus"
+          ></p-selectButton>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="p-inputgroup">
+          <span class="p-inputgroup-addon" style="width: 110px">{{
+            skillBuffs["advBlessing"].label
+          }}</span>
+          <p-dropdown
+            inputId="advBlessing"
+            [autoDisplayFirst]="false"
+            [(ngModel)]="model.advBlessing"
+            [options]="skillBuffs['advBlessing'].dropdown"
+            [showClear]="true"
+          ></p-dropdown>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="p-inputgroup">
+          <span class="p-inputgroup-addon" style="width: 110px">{{
+            skillBuffs["advAgiUp"].label
+          }}</span>
+          <p-dropdown
+            inputId="advAgiUp"
+            [autoDisplayFirst]="false"
+            [(ngModel)]="model.advAgiUp"
+            [options]="skillBuffs['advAgiUp'].dropdown"
+            [showClear]="true"
+          ></p-dropdown>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="p-inputgroup">
+          <span class="p-inputgroup-addon" style="width: 110px">{{
+            skillBuffs["expiatio"].label
+          }}</span>
+          <p-selectButton
+            [options]="skillBuffs['expiatio'].dropdown"
+            [(ngModel)]="model.expiatio"
+          ></p-selectButton>
+        </div>
+      </div>
+
+      <!-- <div *ngFor="let skillBuff in skillBuffs" class="col-3">
+        <div class="p-inputgroup">
+          <span class="p-inputgroup-addon">www</span>
+          <p-dropdown
+            inputId="xxx"
+            [autoDisplayFirst]="false"
+            [options]="skillBuffs['advBlessing'].dropdown"
+            [showClear]="true"
+          ></p-dropdown>
+        </div>
+      </div> -->
+    </div>
   </div>
+
+  <!-- Right Side -->
   <div class="p-fluid col-5">
     <div class="grid">
+      <div
+        *ngFor="let activeSkill of activeSkills; let i = index"
+        class="col-4"
+      >
+        <div class="p-inputgroup">
+          <span class="p-inputgroup-addon" style="width: 110px">{{
+            activeSkill.label
+          }}</span>
+          <p-selectButton
+            [options]="activeSkill.dropdown"
+            [(ngModel)]="model.usedClassSkills[i]"
+          ></p-selectButton>
+        </div>
+      </div>
+    </div>
+    <div class="grid">
       <div class="col-12">
-        <span class="p-float-label">
+        <div class="p-inputgroup">
+          <span class="p-inputgroup-addon" style="width: 110px">Monster</span>
           <p-dropdown
             inputId="monster"
             [autoDisplayFirst]="false"
             [options]="monsterList"
             [(ngModel)]="selectedMonster"
           ></p-dropdown>
-          <label for="monster">Monster</label>
-        </span>
+        </div>
       </div>
       <div class="col-12">
         minDamage: {{ minDamage }} maxDamage: {{ maxDamage }}

@@ -70,8 +70,31 @@ const jobBonusTable: [number, number, number, number, number, number][] = [
 export class Rebelion {
   private _level = 1;
   private _atkSkillList = [];
-  private _buffSkillList = [];
+  private _buffSkillList = [
+    {
+      isEquip: true,
+      inputType: 'selectButton',
+      label: 'Platinum Altar',
+      dropdown: [
+        { label: 'Yes', value: 1, bonus: { atk: 150 } },
+        { label: 'No', value: 2 },
+      ],
+    },
+    {
+      isMastery: true,
+      inputType: 'selectButton',
+      label: "Rich's Coin",
+      dropdown: [
+        { label: 'Yes', value: 1, bonus: { atk: 30 } },
+        { label: 'No', value: 2 },
+      ],
+    },
+  ];
   private _passiveSkillList = [];
+
+  get activeSkills() {
+    return this._buffSkillList;
+  }
 
   getJobBonusStatus(jobLevel: number) {
     const [str, agi, vit, int, dex, luk] = jobBonusTable[jobLevel];

@@ -59,10 +59,10 @@ enum ItemSubTypeId {
   Pet = 518,
   Enchant = 0,
 
-  ShadowEnhUpper = 71,
-  ShadowEnhMiddle = 72,
-  ShadowEnhLower = 73,
-  ShadowEnhGarment = 74,
+  CostumeEnhUpper = 71,
+  CostumeEnhMiddle = 72,
+  CostumeEnhLower = 73,
+  CostumeEnhGarment = 74,
 
   ShadowWeapon = 280,
   ShadowArmor = 526,
@@ -116,6 +116,91 @@ const toDropdownList = <T extends {}>(
   }));
 };
 
+interface SkillBuff<
+  T extends DropdownModel | { bonus: Record<string, number> }
+> {
+  [key: string]: {
+    [key2 in 'checkbox' | 'dropdown']?: T[];
+  };
+  // Record
+}
+const skillBuffs: any = {
+  impositioManus: {
+    label: 'Impositio Manus',
+    dropdown: [
+      { label: 'Yes', value: 1, bonus: { atk: 25 } },
+      { label: 'No', value: 2 },
+    ],
+  },
+  advBlessing: {
+    label: 'Clementia',
+    dropdown: [
+      {
+        label: 'B +2',
+        value: 2,
+        bonus: { str: 12, int: 12, dex: 12, hit: 20 },
+      },
+      {
+        label: 'B +3',
+        value: 3,
+        bonus: { str: 13, int: 13, dex: 13, hit: 20 },
+      },
+      {
+        label: 'B +4',
+        value: 4,
+        bonus: { str: 14, int: 14, dex: 14, hit: 20 },
+      },
+      {
+        label: 'B +5',
+        value: 5,
+        bonus: { str: 15, int: 15, dex: 15, hit: 20 },
+      },
+      {
+        label: 'B +6',
+        value: 6,
+        bonus: { str: 16, int: 16, dex: 16, hit: 20 },
+      },
+    ],
+  },
+  advAgiUp: {
+    label: 'Cantocandidus',
+    dropdown: [
+      {
+        label: 'A +2',
+        value: 2,
+        bonus: { agi: 13, aspdPercent: 11 },
+      },
+      {
+        label: 'A +3',
+        value: 3,
+        bonus: { agi: 14, aspdPercent: 12 },
+      },
+      {
+        label: 'A +4',
+        value: 4,
+        bonus: { agi: 15, aspdPercent: 13 },
+      },
+      {
+        label: 'A +5',
+        value: 5,
+        bonus: { agi: 16, aspdPercent: 14 },
+      },
+      {
+        label: 'A +6',
+        value: 6,
+        bonus: { agi: 17, aspdPercent: 15 },
+      },
+    ],
+  },
+  expiatio: {
+    label: 'Expiatio',
+    dropdown: [
+      { label: 'Yes', value: 1, bonus: { p_pene_all: 25, m_pene_all: 25 } },
+      { label: 'No', value: 2 },
+    ],
+  },
+};
+
 @Component({
   selector: 'app-ro-calculator',
   templateUrl: './ro-calculator.component.html',
@@ -125,6 +210,7 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
   updateItemEvent = new Subject();
   items!: Record<number, ItemModel>;
   mapEnchant!: Map<string, ItemModel>;
+  skillBuffs = skillBuffs;
 
   model = {
     class: undefined,
@@ -207,10 +293,15 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
     accRightEnchant3: undefined,
     pet: undefined,
 
-    shadowEnhUpper: undefined,
-    shadowEnhMiddle: undefined,
-    shadowEnhLower: undefined,
-    shadowEnhGarment: undefined,
+    costumeEnchantUpper: undefined,
+    costumeEnchantMiddle: undefined,
+    costumeEnchantLower: undefined,
+    costumeEnchantGarment: undefined,
+
+    costumeEnhUpper: undefined,
+    costumeEnhMiddle: undefined,
+    costumeEnhLower: undefined,
+    costumeEnhGarment: undefined,
     shadowWeapon: undefined,
     shadowWeaponEnchant1: undefined,
     shadowArmor: undefined,
@@ -223,6 +314,13 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
     shadowEarningEnchant1: undefined,
     shadowPendant: undefined,
     shadowPendantEnchant1: undefined,
+
+    impositioManus: undefined,
+    advBlessing: undefined,
+    advAgiUp: undefined,
+    expiatio: undefined,
+
+    usedClassSkills: [],
   };
 
   refineList = [
@@ -284,10 +382,10 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
   accRightEnchant3List: DropdownModel[] = [];
   petList: DropdownModel[] = [];
 
-  shadowEnhUpperList: DropdownModel[] = [];
-  shadowEnhMiddleList: DropdownModel[] = [];
-  shadowEnhLowerList: DropdownModel[] = [];
-  shadowEnhGarmentList: DropdownModel[] = [];
+  costumeEnhUpperList: DropdownModel[] = [];
+  costumeEnhMiddleList: DropdownModel[] = [];
+  costumeEnhLowerList: DropdownModel[] = [];
+  costumeEnhGarmentList: DropdownModel[] = [];
 
   shadowWeaponList: DropdownModel[] = [];
   shadowArmorList: DropdownModel[] = [];
@@ -299,6 +397,9 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
   characterList = Characters;
   selectedCharacterId = 1;
   selectedCharacter = new Rebelion();
+  passiveSkills = [];
+  activeSkills = [];
+
   totalPoints = 0;
   availablePoints = 0;
   monsterList: DropdownModel[] = [];
@@ -393,6 +494,7 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   ngOnInit() {
+    this.activeSkills = this.selectedCharacter.activeSkills;
     this.updateItemEvent.pipe(debounceTime(750)).subscribe(() => {
       this.logModel();
       this.hasItemChanged = true;
@@ -443,10 +545,10 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
     const accRightCardList = [];
     const petList = [];
 
-    const shadowEnhUpperList = [];
-    const shadowEnhMiddleList = [];
-    const shadowEnhLowerList = [];
-    const shadowEnhGarmentList = [];
+    const costumeEnhUpperList = [];
+    const costumeEnhMiddleList = [];
+    const costumeEnhLowerList = [];
+    const costumeEnhGarmentList = [];
 
     const shadowArmorList = [];
     const shadowShieldList = [];
@@ -516,17 +618,17 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
         case ItemSubTypeId.ShadowWeapon:
           shadowWeaponList.push(item);
           continue;
-        case ItemSubTypeId.ShadowEnhUpper:
-          shadowEnhUpperList.push(item);
+        case ItemSubTypeId.CostumeEnhUpper:
+          costumeEnhUpperList.push(item);
           continue;
-        case ItemSubTypeId.ShadowEnhMiddle:
-          shadowEnhMiddleList.push(item);
+        case ItemSubTypeId.CostumeEnhMiddle:
+          costumeEnhMiddleList.push(item);
           continue;
-        case ItemSubTypeId.ShadowEnhLower:
-          shadowEnhLowerList.push(item);
+        case ItemSubTypeId.CostumeEnhLower:
+          costumeEnhLowerList.push(item);
           continue;
-        case ItemSubTypeId.ShadowEnhGarment:
-          shadowEnhGarmentList.push(item);
+        case ItemSubTypeId.CostumeEnhGarment:
+          costumeEnhGarmentList.push(item);
           continue;
       }
 
@@ -586,15 +688,23 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
 
     this.monsterList = toDropdownList(Object.values(monsterData), 'name', 'id');
 
-    this.shadowEnhUpperList = toDropdownList(shadowEnhUpperList, 'name', 'id');
-    this.shadowEnhMiddleList = toDropdownList(
-      shadowEnhMiddleList,
+    this.costumeEnhUpperList = toDropdownList(
+      costumeEnhUpperList,
       'name',
       'id'
     );
-    this.shadowEnhLowerList = toDropdownList(shadowEnhLowerList, 'name', 'id');
-    this.shadowEnhGarmentList = toDropdownList(
-      shadowEnhGarmentList,
+    this.costumeEnhMiddleList = toDropdownList(
+      costumeEnhMiddleList,
+      'name',
+      'id'
+    );
+    this.costumeEnhLowerList = toDropdownList(
+      costumeEnhLowerList,
+      'name',
+      'id'
+    );
+    this.costumeEnhGarmentList = toDropdownList(
+      costumeEnhGarmentList,
       'name',
       'id'
     );

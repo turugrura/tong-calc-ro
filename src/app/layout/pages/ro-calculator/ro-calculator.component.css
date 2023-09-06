@@ -20,3 +20,9 @@ pre {
       color: #fff;
     }
   }
+
+  .p-inputgroup p-dropdown {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
