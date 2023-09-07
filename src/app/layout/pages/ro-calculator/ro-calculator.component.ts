@@ -201,6 +201,19 @@ const skillBuffs: any = {
   },
 };
 
+const createNumberDropdownList = (
+  from: number,
+  to: number
+): DropdownModel[] => {
+  return Array.from({ length: to - from + 1 }, (_, k) => {
+    const num = k + 1;
+    return {
+      label: num.toString(),
+      value: num,
+    };
+  });
+};
+
 @Component({
   selector: 'app-ro-calculator',
   templateUrl: './ro-calculator.component.html',
@@ -213,6 +226,7 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
   skillBuffs = skillBuffs;
 
   model = {
+    selectedAtkSkill: undefined,
     class: undefined,
     level: 1,
     jobLevel: 1,
@@ -320,7 +334,9 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
     advAgiUp: undefined,
     expiatio: undefined,
 
-    usedClassSkills: [],
+    activeSkills: [],
+    passiveSkills: [],
+    consumables: [],
   };
 
   refineList = [
@@ -331,6 +347,9 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
   }));
 
   basicEnchants: DropdownModel[] = []; // atk atk%, aspd, state
+  mainStatusList = createNumberDropdownList(1, 130);
+  levelList = createNumberDropdownList(1, 200);
+  jobList = createNumberDropdownList(1, 65);
 
   weaponList: DropdownModel[] = [];
   weaponCardList: DropdownModel[] = [];
@@ -397,8 +416,10 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
   characterList = Characters;
   selectedCharacterId = 1;
   selectedCharacter = new Rebelion();
+  atkSkills = [];
   passiveSkills = [];
   activeSkills = [];
+  consumableList: DropdownModel[] = [];
 
   totalPoints = 0;
   availablePoints = 0;
@@ -438,13 +459,31 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
 
   logModel() {
     // console.log({ model: { ...this.model } });
-    this.setJobBonus();
+
+    const { activeSkills, passiveSkills, selectedAtkSkill } = this.model;
+    const { equipAtks, masteryAtks, skillNames } =
+      this.selectedCharacter.getSkillBonusAndName({
+        activeIds: activeSkills,
+        passiveIds: passiveSkills,
+      });
 
     const calc = this.calculator
       .setModel(this.model)
+      .setEquipAtkSkillAtk(equipAtks)
+      .setMasterySkillAtk(masteryAtks)
+      .setUsedSkillNames(skillNames)
       .setMonster(monsterData[this.selectedMonster]);
+
     // calc.setWeapon(this.model.weapon, this.model.weaponRefine).calculate();
-    const { minDamage, maxDamage } = calc.calculateDamage();
+    const skillFormular = this.atkSkills.find(
+      (a) => a.value === selectedAtkSkill
+    ).formular;
+
+    const { minDamage, maxDamage } = calc.calculateSkillDamage(
+      selectedAtkSkill,
+      10,
+      skillFormular
+    );
     this.minDamage = minDamage;
     this.maxDamage = maxDamage;
     this.itemSummary = calc.getItemSummary();
@@ -455,7 +494,10 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
   loadItemSet() {
     this.isLoadingItemSet = true;
     const str = localStorage.getItem('ro-set');
-    this.model = JSON.parse(str || '{}');
+    this.model = { ...this.model, ...JSON.parse(str || '{}') };
+    this.model.selectedAtkSkill =
+      this.model.selectedAtkSkill || this.atkSkills[0]?.value;
+
     this.setJobBonus();
 
     setTimeout(() => {
@@ -495,6 +537,8 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
 
   ngOnInit() {
     this.activeSkills = this.selectedCharacter.activeSkills;
+    this.passiveSkills = this.selectedCharacter.passiveSkills;
+    this.atkSkills = this.selectedCharacter.atkSkills;
     this.updateItemEvent.pipe(debounceTime(750)).subscribe(() => {
       this.logModel();
       this.hasItemChanged = true;
@@ -513,7 +557,7 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
     });
   }
 
-  private setJobBonus() {
+  setJobBonus() {
     const { str, agi, vit, int, dex, luk } =
       this.selectedCharacter.getJobBonusStatus(this.model.jobLevel);
     this.model.jobStr = str;
@@ -557,10 +601,17 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
     const shadowPendantList = [];
     const shadowWeaponList = [];
 
+    const consumableList = [];
+
     for (const item of Object.values(this.items) as unknown as ItemModel[]) {
       const { itemTypeId, itemSubTypeId, compositionPos, location } = item;
       if (itemTypeId === ItemTypeId.WEAPON) {
         weaponList.push(item);
+
+        continue;
+      }
+      if (itemTypeId === ItemTypeId.CONSUMABLE) {
+        consumableList.push(item);
 
         continue;
       }
@@ -687,6 +738,7 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
     this.petList = petList.map((a) => ({ label: a.name, value: a.id }));
 
     this.monsterList = toDropdownList(Object.values(monsterData), 'name', 'id');
+    this.consumableList = toDropdownList(consumableList, 'name', 'id');
 
     this.costumeEnhUpperList = toDropdownList(
       costumeEnhUpperList,
@@ -865,5 +917,6 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
       .setMainStatusLevels(mainStatuses)
       .calculate().summary;
     this.availablePoints = availablePoint;
+    this.updateItemEvent.next(1);
   }
 }

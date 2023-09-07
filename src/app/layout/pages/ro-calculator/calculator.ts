@@ -93,6 +93,10 @@ export class Calculator {
   };
   equipItem = new Map<ItemTypeEnum, ItemModel>();
   mapRefine = new Map<ItemTypeEnum, number>();
+  usedSkillNames: string[] = [];
+  equipAtkSkillBonus: any[] = [];
+  masteryAtkSkillBonus: any[] = [];
+
   allStatus = {
     exp: 0,
     drop: 0,
@@ -374,6 +378,24 @@ export class Calculator {
     return this;
   }
 
+  setUsedSkillNames(usedSkillNames: string[]) {
+    this.usedSkillNames = usedSkillNames;
+
+    return this;
+  }
+
+  setEquipAtkSkillAtk(equipSkillBonus: any[]) {
+    this.equipAtkSkillBonus = equipSkillBonus;
+
+    return this;
+  }
+
+  setMasterySkillAtk(masterySkillBonus: any[]) {
+    this.masteryAtkSkillBonus = masterySkillBonus;
+
+    return this;
+  }
+
   calcWeaponAtk() {
     const { totalStr, totalDex } = this.status;
     const { baseWeaponAtk, baseWeaponLevel, refineBonus, overUpgradeBonus } =
@@ -514,13 +536,15 @@ export class Calculator {
     return { basicRangeMinDamage, basicRangeMaxDamage };
   }
 
-  calcRangeSkillDamage(skillName: string) {
+  calcRangeSkillDamage(skillName: string, baseSkillDamage?: number) {
     const { totalMinAtk, totalMaxAtk } = this.calcTotalAtk();
     const { softDef, hardDef } = this.monsterData;
     const damageMultiplier = this.isRangeAtk()
       ? this.totalEquipStatus.range
       : this.totalEquipStatus.melee;
-    const skillBaseMultiplier = this.toPercent(this.baseSkillDamage);
+    const skillBaseMultiplier = this.toPercent(
+      baseSkillDamage || this.baseSkillDamage
+    );
     const skillItemMultiplier = this.toPercent(
       100 + (this.totalEquipStatus[skillName] || 0)
     );
@@ -761,6 +785,25 @@ export class Calculator {
     //     }
     //   }
     // }
+  }
+
+  calculateSkillDamage(
+    skillName: string,
+    skillLevel: number,
+    formular: (x: { baseLevel: number; skillLevel: number }) => number
+  ) {
+    this.calcAllEquipItems();
+    const baseSkillDamage = formular({
+      baseLevel: this.model.level,
+      skillLevel,
+    });
+    console.log({ baseSkillDamage });
+    const { minDamage, maxDamage } = this.calcRangeSkillDamage(
+      skillName,
+      baseSkillDamage
+    );
+
+    return { minDamage, maxDamage };
   }
 
   calculateDamage() {

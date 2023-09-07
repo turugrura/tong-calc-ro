@@ -69,8 +69,22 @@ const jobBonusTable: [number, number, number, number, number, number][] = [
 
 export class Rebelion {
   private _level = 1;
-  private _atkSkillList = [];
-  private _buffSkillList = [
+  private _atkSkillList = [
+    {
+      label: 'Round Trip',
+      value: 'Round Trip',
+      formular: ({
+        baseLevel,
+        skillLevel,
+      }: {
+        baseLevel: number;
+        skillLevel: number;
+      }): number => {
+        return (skillLevel * 200 + 500) * (baseLevel / 100);
+      },
+    },
+  ];
+  private _activeSkillList = [
     {
       isEquip: true,
       inputType: 'selectButton',
@@ -90,10 +104,70 @@ export class Rebelion {
       ],
     },
   ];
-  private _passiveSkillList = [];
+  private _passiveSkillList = [
+    {
+      isEquip: true,
+      isMastery: true,
+      inputType: 'selectButton',
+      label: 'Some Passive',
+      dropdown: [
+        { label: 'Yes', value: 1, bonus: undefined },
+        { label: 'No', value: 2 },
+      ],
+    },
+  ];
+
+  get atkSkills() {
+    return this._atkSkillList;
+  }
+
+  get passiveSkills() {
+    return this._passiveSkillList;
+  }
 
   get activeSkills() {
-    return this._buffSkillList;
+    return this._activeSkillList;
+  }
+
+  getSkillBonusAndName(params: { activeIds: number[]; passiveIds: number[] }) {
+    const equipAtks = [];
+    const masteryAtks = [];
+    const skillNames = [];
+
+    const { activeIds, passiveIds } = params;
+    this._activeSkillList.forEach((skill, index) => {
+      const { bonus } = skill.dropdown.find(
+        (x) => x.value === activeIds[index]
+      );
+      if (!bonus) return;
+
+      skillNames.push(skill.label);
+
+      const { isEquip, isMastery } = skill;
+      if (isEquip) {
+        equipAtks.push(bonus);
+      } else if (isMastery) {
+        masteryAtks.push(bonus);
+      }
+    });
+
+    this._passiveSkillList.forEach((skill, index) => {
+      const { bonus } = skill.dropdown.find(
+        (x) => x.value === passiveIds[index]
+      );
+      if (!bonus) return;
+
+      skillNames.push(skill.label);
+
+      const { isEquip, isMastery } = skill;
+      if (isEquip) {
+        equipAtks.push(bonus);
+      } else if (isMastery) {
+        masteryAtks.push(bonus);
+      }
+    });
+
+    return { skillNames, equipAtks, masteryAtks };
   }
 
   getJobBonusStatus(jobLevel: number) {
