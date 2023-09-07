@@ -90,6 +90,24 @@ const mapItemType: Partial<Record<ItemTypeEnum, ItemTypeEnum[]>> = {
   [ItemTypeEnum.boot]: [],
   [ItemTypeEnum.accLeft]: [],
   [ItemTypeEnum.accRight]: [],
+
+  [ItemTypeEnum.pet]: [],
+
+  [ItemTypeEnum.costumeEnchantUpper]: [],
+  [ItemTypeEnum.costumeEnchantMiddle]: [],
+  [ItemTypeEnum.costumeEnchantLower]: [],
+  [ItemTypeEnum.costumeEnchantGarment]: [],
+
+  [ItemTypeEnum.costumeEnhUpper]: [],
+  [ItemTypeEnum.costumeEnhMiddle]: [],
+  [ItemTypeEnum.costumeEnhLower]: [],
+  [ItemTypeEnum.costumeEnhGarment]: [],
+  [ItemTypeEnum.shadowWeapon]: [],
+  [ItemTypeEnum.shadowArmor]: [],
+  [ItemTypeEnum.shadowShield]: [],
+  [ItemTypeEnum.shadowBoot]: [],
+  [ItemTypeEnum.shadowEarning]: [],
+  [ItemTypeEnum.shadowPendant]: [],
 };
 for (const [_itemType, relatedItems] of Object.entries(mapItemType)) {
   relatedItems.push(
@@ -432,6 +450,7 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
   stateCalculator = new BaseStateCalculator();
 
   itemSummary: any;
+  itemSummary2: any;
   modelSummary: any;
   totalSummary: any;
 
@@ -486,9 +505,23 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
     );
     this.minDamage = minDamage;
     this.maxDamage = maxDamage;
-    this.itemSummary = calc.getItemSummary();
     this.totalSummary = calc.getTotalummary();
     this.modelSummary = calc.getModelSummary();
+    const x = calc.getItemSummary();
+    const part1 = Object.entries(x).filter((a, index) => {
+      return index < 13;
+    });
+    const part2 = Object.entries(x).filter((a, index) => {
+      return index >= 13;
+    });
+    this.itemSummary = part1.reduce((total, [key, value]) => {
+      total[key] = value;
+      return total;
+    }, {});
+    this.itemSummary2 = part2.reduce((total, [key, value]) => {
+      total[key] = value;
+      return total;
+    }, {});
   }
 
   loadItemSet() {

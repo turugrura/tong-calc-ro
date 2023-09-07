@@ -1191,94 +1191,111 @@
 
   <!-- Right Side -->
   <div class="p-fluid col-5">
-    <!-- Foods / Class Skills -->
-    <div class="grid grid-nogutter">
-      <div class="col-4">
-        <p-listbox
-          [options]="consumableList"
-          [(ngModel)]="model.consumables"
-          [multiple]="true"
-          [metaKeySelection]="false"
-        ></p-listbox>
-      </div>
-      <div class="col-4">
+    <p-accordion [multiple]="true" [activeIndex]="[3]">
+      <p-accordionTab header="Foods / Class Skills">
         <div class="grid grid-nogutter">
-          <div
-            *ngFor="let passiveSkill of passiveSkills; let i = index"
-            class="col-12"
-          >
-            <div class="p-inputgroup">
-              <span class="p-inputgroup-addon" style="width: 110px">{{
-                passiveSkill.label
-              }}</span>
-              <p-selectButton
-                [options]="passiveSkill.dropdown"
-                [(ngModel)]="model.passiveSkills[i]"
-              ></p-selectButton>
+          <div class="col-4">
+            <p-listbox
+              [options]="consumableList"
+              [(ngModel)]="model.consumables"
+              [multiple]="true"
+              [metaKeySelection]="false"
+            ></p-listbox>
+          </div>
+          <div class="col-4">
+            <div class="grid grid-nogutter">
+              <div
+                *ngFor="let passiveSkill of passiveSkills; let i = index"
+                class="col-12"
+              >
+                <div class="p-inputgroup">
+                  <span class="p-inputgroup-addon" style="width: 110px">{{
+                    passiveSkill.label
+                  }}</span>
+                  <p-selectButton
+                    [options]="passiveSkill.dropdown"
+                    [(ngModel)]="model.passiveSkills[i]"
+                  ></p-selectButton>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="grid grid-nogutter">
+              <div
+                *ngFor="let activeSkill of activeSkills; let i = index"
+                class="col-12"
+              >
+                <div class="p-inputgroup">
+                  <span class="p-inputgroup-addon" style="width: 110px">{{
+                    activeSkill.label
+                  }}</span>
+                  <p-selectButton
+                    [options]="activeSkill.dropdown"
+                    [(ngModel)]="model.activeSkills[i]"
+                  ></p-selectButton>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="col-4">
+      </p-accordionTab>
+      <p-accordionTab header="ATK Skill / Monster">
         <div class="grid grid-nogutter">
-          <div
-            *ngFor="let activeSkill of activeSkills; let i = index"
-            class="col-12"
-          >
+          <div class="col-6">
             <div class="p-inputgroup">
-              <span class="p-inputgroup-addon" style="width: 110px">{{
-                activeSkill.label
-              }}</span>
-              <p-selectButton
-                [options]="activeSkill.dropdown"
-                [(ngModel)]="model.activeSkills[i]"
-              ></p-selectButton>
+              <span class="p-inputgroup-addon" style="width: 80px">Skill</span>
+              <p-dropdown
+                inputId="monster"
+                [autoDisplayFirst]="false"
+                [options]="atkSkills"
+                [(ngModel)]="model.selectedAtkSkill"
+              ></p-dropdown>
             </div>
           </div>
+          <div class="col-6">
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon" style="width: 80px"
+                >Monster</span
+              >
+              <p-dropdown
+                inputId="monster"
+                [autoDisplayFirst]="false"
+                [options]="monsterList"
+                [(ngModel)]="selectedMonster"
+              ></p-dropdown>
+            </div>
+          </div>
+          <div class="col-12">
+            minDamage: {{ minDamage }} maxDamage: {{ maxDamage }}
+          </div>
         </div>
-      </div>
-    </div>
-
-    <!-- Monster -->
-    <div class="grid grid-nogutter">
-      <div class="col-6">
-        <div class="p-inputgroup">
-          <span class="p-inputgroup-addon" style="width: 80px">Skill</span>
-          <p-dropdown
-            inputId="monster"
-            [autoDisplayFirst]="false"
-            [options]="atkSkills"
-            [(ngModel)]="model.selectedAtkSkill"
-          ></p-dropdown>
+      </p-accordionTab>
+      <p-accordionTab header="Summary">
+        <div class="grid grid-nogutter">
+          <div class="col-6">
+            modelSummary
+            <pre [innerHTML]="modelSummary | prettyjson : [true, 3]"></pre>
+          </div>
+          <div class="col-6">
+            totalSummary
+            <pre [innerHTML]="totalSummary | prettyjson : [true, 3]"></pre>
+          </div>
         </div>
-      </div>
-      <div class="col-6">
-        <div class="p-inputgroup">
-          <span class="p-inputgroup-addon" style="width: 80px">Monster</span>
-          <p-dropdown
-            inputId="monster"
-            [autoDisplayFirst]="false"
-            [options]="monsterList"
-            [(ngModel)]="selectedMonster"
-          ></p-dropdown>
+      </p-accordionTab>
+      <p-accordionTab header="In-Detail Summary">
+        <div class="grid">
+          <div class="col-6">
+            <pre [innerHTML]="itemSummary | prettyjson : [true, 3]"></pre>
+          </div>
+          <div class="col-6">
+            <pre [innerHTML]="itemSummary2 | prettyjson : [true, 3]"></pre>
+          </div>
         </div>
-      </div>
-      <div class="col-12">
-        minDamage: {{ minDamage }} maxDamage: {{ maxDamage }}
-      </div>
-      <div class="col-6">
-        modelSummary
-        <pre [innerHTML]="modelSummary | prettyjson : [true, 3]"></pre>
-      </div>
-      <div class="col-6">
-        totalSummary
-        <pre [innerHTML]="totalSummary | prettyjson : [true, 3]"></pre>
-      </div>
-      <div class="col-6">
-        itemSummary
-        <pre [innerHTML]="itemSummary | prettyjson : [true, 3]"></pre>
-      </div>
-      <div class="col-12" [innerHTML]="weaponDesc"></div>
-    </div>
+      </p-accordionTab>
+      <p-accordionTab header="Item Desc">
+        <div [innerHTML]="weaponDesc"></div>
+      </p-accordionTab>
+    </p-accordion>
   </div>
 </div>
