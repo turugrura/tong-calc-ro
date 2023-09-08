@@ -218,7 +218,26 @@
           (onChange)="onSelectItem('weapon', $event.value, model.weaponRefine)"
           (onClear)="onClearItem('weapon')"
           placeholder="weapon"
-        ></p-dropdown>
+        >
+          <ng-template let-item pTemplate="selectedItem">
+            <div class="flex gap-1" *ngIf="model.weapon">
+              <img
+                src="assets/demo/images/items/{{ item.value }}.png"
+                style="width: 19px"
+              />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+          <ng-template let-item pTemplate="item">
+            <div class="flex gap-1">
+              <img
+                src="assets/demo/images/items/{{ item.value }}.png"
+                style="width: 19px"
+              />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
       </div>
       <div class="col-fixed" style="width: 80px">
         <p-dropdown
@@ -239,7 +258,17 @@
           [showClear]="true"
           (onChange)="onSelectItem('weaponCard1', $event.value)"
           placeholder="Card 1"
-        ></p-dropdown>
+        >
+          <ng-template let-item pTemplate="selectedItem">
+            <div class="flex gap-1" *ngIf="model.weaponCard1">
+              <img
+                src="assets/demo/images/items/300291.png"
+                style="width: 19px"
+              />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
       </div>
       <div class="col">
         <p-dropdown
@@ -251,7 +280,17 @@
           [showClear]="true"
           (onChange)="onSelectItem('weaponCard2', $event.value)"
           placeholder="Card2"
-        ></p-dropdown>
+        >
+          <ng-template let-item pTemplate="selectedItem">
+            <div class="flex gap-1" *ngIf="model.weaponCard2">
+              <img
+                src="assets/demo/images/items/300291.png"
+                style="width: 19px"
+              />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
       </div>
       <div class="col">
         <p-dropdown
@@ -263,7 +302,17 @@
           [showClear]="true"
           (onChange)="onSelectItem('weaponCard3', $event.value)"
           placeholder="Card3"
-        ></p-dropdown>
+        >
+          <ng-template let-item pTemplate="selectedItem">
+            <div class="flex gap-1" *ngIf="model.weaponCard3">
+              <img
+                src="assets/demo/images/items/300291.png"
+                style="width: 19px"
+              />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
       </div>
     </div>
 
@@ -315,7 +364,26 @@
           "
           (onClear)="onClearItem('headUpper')"
           placeholder="Head Upper"
-        ></p-dropdown>
+        >
+          <ng-template let-item pTemplate="selectedItem">
+            <div class="flex gap-1" *ngIf="model.headUpper">
+              <img
+                src="assets/demo/images/items/{{ item.value }}.png"
+                style="width: 19px"
+              />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+          <ng-template let-item pTemplate="item">
+            <div class="flex gap-1">
+              <img
+                src="assets/demo/images/items/{{ item.value }}.png"
+                style="width: 19px"
+              />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
       </div>
       <div class="col-fixed" style="width: 80px">
         <p-dropdown
@@ -335,7 +403,17 @@
           [showClear]="true"
           (onChange)="onSelectItem('headUpperCard', $event.value)"
           placeholder="Card"
-        ></p-dropdown>
+        >
+          <ng-template let-item pTemplate="selectedItem">
+            <div class="flex gap-1" *ngIf="model.headUpperCard">
+              <img
+                src="assets/demo/images/items/300291.png"
+                style="width: 19px"
+              />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
       </div>
     </div>
 
@@ -352,7 +430,26 @@
           (onChange)="onSelectItem('headMiddle', $event.value)"
           (onClear)="onClearItem('headMiddle')"
           placeholder="Middle"
-        ></p-dropdown>
+        >
+          <ng-template let-item pTemplate="selectedItem">
+            <div class="flex gap-1" *ngIf="model.headMiddle">
+              <img
+                src="assets/demo/images/items/{{ item.value }}.png"
+                style="width: 19px"
+              />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+          <ng-template let-item pTemplate="item">
+            <div class="flex gap-1">
+              <img
+                src="assets/demo/images/items/{{ item.value }}.png"
+                style="width: 19px"
+              />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
       </div>
       <div class="col-3">
         <p-dropdown
@@ -422,7 +519,26 @@
           (onChange)="onSelectItem('headLower', $event.value)"
           (onClear)="onClearItem('headLower')"
           placeholder="Lower"
-        ></p-dropdown>
+        >
+          <ng-template let-item pTemplate="selectedItem">
+            <div class="flex gap-1" *ngIf="model.headLower">
+              <img
+                src="assets/demo/images/items/{{ item.value }}.png"
+                style="width: 19px"
+              />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+          <ng-template let-item pTemplate="item">
+            <div class="flex gap-1">
+              <img
+                src="assets/demo/images/items/{{ item.value }}.png"
+                style="width: 19px"
+              />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
       </div>
       <div class="col-3">
         <p-dropdown
@@ -434,7 +550,26 @@
           [disabled]="headLowerEnchant1List.length === 0 || !model.headLower"
           (onChange)="onSelectItem('headLowerEnchant1', $event.value)"
           placeholder="Enchant 2"
-        ></p-dropdown>
+        >
+          <ng-template let-item pTemplate="selectedItem">
+            <div class="flex gap-1" *ngIf="model.headLowerEnchant1">
+              <img
+                src="assets/demo/images/items/{{ item.value }}.png"
+                style="width: 19px"
+              />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+          <ng-template let-item pTemplate="item">
+            <div class="flex gap-1">
+              <img
+                src="assets/demo/images/items/{{ item.value }}.png"
+                style="width: 19px"
+              />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
       </div>
       <div class="col-3">
         <p-dropdown
@@ -446,7 +581,26 @@
           [disabled]="headLowerEnchant2List.length === 0 || !model.headLower"
           (onChange)="onSelectItem('headLowerEnchant2', $event.value)"
           placeholder="Enchant 3"
-        ></p-dropdown>
+        >
+          <ng-template let-item pTemplate="selectedItem">
+            <div class="flex gap-1" *ngIf="model.headLowerEnchant2">
+              <img
+                src="assets/demo/images/items/{{ item.value }}.png"
+                style="width: 19px"
+              />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+          <ng-template let-item pTemplate="item">
+            <div class="flex gap-1">
+              <img
+                src="assets/demo/images/items/{{ item.value }}.png"
+                style="width: 19px"
+              />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
       </div>
       <div class="col-3">
         <p-dropdown
@@ -458,7 +612,26 @@
           [disabled]="headLowerEnchant3List.length === 0 || !model.headLower"
           (onChange)="onSelectItem('headLowerEnchant3', $event.value)"
           placeholder="Enchant 4"
-        ></p-dropdown>
+        >
+          <ng-template let-item pTemplate="selectedItem">
+            <div class="flex gap-1" *ngIf="model.headLowerEnchant3">
+              <img
+                src="assets/demo/images/items/{{ item.value }}.png"
+                style="width: 19px"
+              />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+          <ng-template let-item pTemplate="item">
+            <div class="flex gap-1">
+              <img
+                src="assets/demo/images/items/{{ item.value }}.png"
+                style="width: 19px"
+              />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
       </div>
     </div>
 
@@ -475,7 +648,26 @@
           (onChange)="onSelectItem('armor', $event.value, model.armorRefine)"
           (onClear)="onClearItem('armor')"
           placeholder="Armor"
-        ></p-dropdown>
+        >
+          <ng-template let-item pTemplate="selectedItem">
+            <div class="flex gap-1" *ngIf="model.armor">
+              <img
+                src="assets/demo/images/items/{{ item.value }}.png"
+                style="width: 19px"
+              />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+          <ng-template let-item pTemplate="item">
+            <div class="flex gap-1">
+              <img
+                src="assets/demo/images/items/{{ item.value }}.png"
+                style="width: 19px"
+              />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
       </div>
       <div class="col-fixed" style="width: 80px">
         <p-dropdown
@@ -495,7 +687,17 @@
           [showClear]="true"
           (onChange)="onSelectItem('armorCard', $event.value)"
           placeholder="Card"
-        ></p-dropdown>
+        >
+          <ng-template let-item pTemplate="selectedItem">
+            <div class="flex gap-1" *ngIf="model.armorCard">
+              <img
+                src="assets/demo/images/items/300291.png"
+                style="width: 19px"
+              />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
       </div>
       <div class="col-12">
         <div class="grid">
@@ -510,7 +712,26 @@
               [disabled]="armorEnchant1List.length === 0 || !model.armor"
               (onChange)="onSelectItem('armorEnchant1', $event.value)"
               placeholder="Enchant 2"
-            ></p-dropdown>
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1" *ngIf="model.armorEnchant1">
+                  <img
+                    src="assets/demo/images/items/{{ item.value }}.png"
+                    style="width: 19px"
+                  />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+              <ng-template let-item pTemplate="item">
+                <div class="flex gap-1">
+                  <img
+                    src="assets/demo/images/items/{{ item.value }}.png"
+                    style="width: 19px"
+                  />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
           </div>
           <div class="col-3">
             <p-dropdown
@@ -522,7 +743,26 @@
               [disabled]="armorEnchant2List.length === 0 || !model.armor"
               (onChange)="onSelectItem('armorEnchant2', $event.value)"
               placeholder="Enchant 3"
-            ></p-dropdown>
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1" *ngIf="model.armorEnchant2">
+                  <img
+                    src="assets/demo/images/items/{{ item.value }}.png"
+                    style="width: 19px"
+                  />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+              <ng-template let-item pTemplate="item">
+                <div class="flex gap-1">
+                  <img
+                    src="assets/demo/images/items/{{ item.value }}.png"
+                    style="width: 19px"
+                  />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
           </div>
           <div class="col-3">
             <p-dropdown
@@ -534,7 +774,26 @@
               [disabled]="armorEnchant3List.length === 0 || !model.armor"
               (onChange)="onSelectItem('armorEnchant3', $event.value)"
               placeholder="Enchant 4"
-            ></p-dropdown>
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1" *ngIf="model.armorEnchant3">
+                  <img
+                    src="assets/demo/images/items/{{ item.value }}.png"
+                    style="width: 19px"
+                  />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+              <ng-template let-item pTemplate="item">
+                <div class="flex gap-1">
+                  <img
+                    src="assets/demo/images/items/{{ item.value }}.png"
+                    style="width: 19px"
+                  />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
           </div>
         </div>
       </div>
@@ -555,7 +814,26 @@
           "
           (onClear)="onClearItem('garment')"
           placeholder="Garment"
-        ></p-dropdown>
+        >
+          <ng-template let-item pTemplate="selectedItem">
+            <div class="flex gap-1" *ngIf="model.garment">
+              <img
+                src="assets/demo/images/items/{{ item.value }}.png"
+                style="width: 19px"
+              />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+          <ng-template let-item pTemplate="item">
+            <div class="flex gap-1">
+              <img
+                src="assets/demo/images/items/{{ item.value }}.png"
+                style="width: 19px"
+              />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
       </div>
       <div class="col-fixed" style="width: 80px">
         <p-dropdown
@@ -575,7 +853,17 @@
           [showClear]="true"
           (onChange)="onSelectItem('garmentCard', $event.value)"
           placeholder="Card"
-        ></p-dropdown>
+        >
+          <ng-template let-item pTemplate="selectedItem">
+            <div class="flex gap-1" *ngIf="model.garmentCard">
+              <img
+                src="assets/demo/images/items/300291.png"
+                style="width: 19px"
+              />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
       </div>
       <div class="col-12">
         <div class="grid">
@@ -590,7 +878,26 @@
               [disabled]="garmentEnchant1List.length === 0 || !model.garment"
               (onChange)="onSelectItem('garmentEnchant1', $event.value)"
               placeholder="Enchant 2"
-            ></p-dropdown>
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1" *ngIf="model.garmentEnchant1">
+                  <img
+                    src="assets/demo/images/items/{{ item.value }}.png"
+                    style="width: 19px"
+                  />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+              <ng-template let-item pTemplate="item">
+                <div class="flex gap-1">
+                  <img
+                    src="assets/demo/images/items/{{ item.value }}.png"
+                    style="width: 19px"
+                  />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
           </div>
           <div class="col-3">
             <p-dropdown
@@ -602,7 +909,26 @@
               [disabled]="garmentEnchant2List.length === 0 || !model.garment"
               (onChange)="onSelectItem('garmentEnchant2', $event.value)"
               placeholder="Enchant 3"
-            ></p-dropdown>
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1" *ngIf="model.garmentEnchant2">
+                  <img
+                    src="assets/demo/images/items/{{ item.value }}.png"
+                    style="width: 19px"
+                  />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+              <ng-template let-item pTemplate="item">
+                <div class="flex gap-1">
+                  <img
+                    src="assets/demo/images/items/{{ item.value }}.png"
+                    style="width: 19px"
+                  />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
           </div>
           <div class="col-3">
             <p-dropdown
@@ -614,7 +940,26 @@
               [disabled]="garmentEnchant3List.length === 0 || !model.garment"
               (onChange)="onSelectItem('garmentEnchant3', $event.value)"
               placeholder="Enchant 4"
-            ></p-dropdown>
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1" *ngIf="model.garmentEnchant3">
+                  <img
+                    src="assets/demo/images/items/{{ item.value }}.png"
+                    style="width: 19px"
+                  />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+              <ng-template let-item pTemplate="item">
+                <div class="flex gap-1">
+                  <img
+                    src="assets/demo/images/items/{{ item.value }}.png"
+                    style="width: 19px"
+                  />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
           </div>
         </div>
       </div>
@@ -633,7 +978,26 @@
           (onChange)="onSelectItem('boot', $event.value, model.bootRefine)"
           (onClear)="onClearItem('boot')"
           placeholder="Boot"
-        ></p-dropdown>
+        >
+          <ng-template let-item pTemplate="selectedItem">
+            <div class="flex gap-1" *ngIf="model.boot">
+              <img
+                src="assets/demo/images/items/{{ item.value }}.png"
+                style="width: 19px"
+              />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+          <ng-template let-item pTemplate="item">
+            <div class="flex gap-1">
+              <img
+                src="assets/demo/images/items/{{ item.value }}.png"
+                style="width: 19px"
+              />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
       </div>
       <div class="col-fixed" style="width: 80px">
         <p-dropdown
@@ -653,7 +1017,17 @@
           [showClear]="true"
           (onChange)="onSelectItem('bootCard', $event.value)"
           placeholder="Card"
-        ></p-dropdown>
+        >
+          <ng-template let-item pTemplate="selectedItem">
+            <div class="flex gap-1" *ngIf="model.bootCard">
+              <img
+                src="assets/demo/images/items/300291.png"
+                style="width: 19px"
+              />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
       </div>
       <div class="col-12">
         <div class="grid">
@@ -668,7 +1042,26 @@
               [disabled]="bootEnchant1List.length === 0 || !model.boot"
               (onChange)="onSelectItem('bootEnchant1', $event.value)"
               placeholder="Enchant 2"
-            ></p-dropdown>
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1" *ngIf="model.bootEnchant1">
+                  <img
+                    src="assets/demo/images/items/{{ item.value }}.png"
+                    style="width: 19px"
+                  />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+              <ng-template let-item pTemplate="item">
+                <div class="flex gap-1">
+                  <img
+                    src="assets/demo/images/items/{{ item.value }}.png"
+                    style="width: 19px"
+                  />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
           </div>
           <div class="col-3">
             <p-dropdown
@@ -680,7 +1073,26 @@
               [disabled]="bootEnchant2List.length === 0 || !model.boot"
               (onChange)="onSelectItem('bootEnchant2', $event.value)"
               placeholder="Enchant 3"
-            ></p-dropdown>
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1" *ngIf="model.bootEnchant2">
+                  <img
+                    src="assets/demo/images/items/{{ item.value }}.png"
+                    style="width: 19px"
+                  />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+              <ng-template let-item pTemplate="item">
+                <div class="flex gap-1">
+                  <img
+                    src="assets/demo/images/items/{{ item.value }}.png"
+                    style="width: 19px"
+                  />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
           </div>
           <div class="col-3">
             <p-dropdown
@@ -692,7 +1104,26 @@
               [disabled]="bootEnchant3List.length === 0 || !model.boot"
               (onChange)="onSelectItem('bootEnchant3', $event.value)"
               placeholder="Enchant 4"
-            ></p-dropdown>
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1" *ngIf="model.bootEnchant3">
+                  <img
+                    src="assets/demo/images/items/{{ item.value }}.png"
+                    style="width: 19px"
+                  />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+              <ng-template let-item pTemplate="item">
+                <div class="flex gap-1">
+                  <img
+                    src="assets/demo/images/items/{{ item.value }}.png"
+                    style="width: 19px"
+                  />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
           </div>
         </div>
       </div>
@@ -711,7 +1142,26 @@
           (onChange)="onSelectItem('accLeft', $event.value)"
           (onClear)="onClearItem('accLeft')"
           placeholder="Acc L"
-        ></p-dropdown>
+        >
+          <ng-template let-item pTemplate="selectedItem">
+            <div class="flex gap-1" *ngIf="model.accLeft">
+              <img
+                src="assets/demo/images/items/{{ item.value }}.png"
+                style="width: 19px"
+              />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+          <ng-template let-item pTemplate="item">
+            <div class="flex gap-1">
+              <img
+                src="assets/demo/images/items/{{ item.value }}.png"
+                style="width: 19px"
+              />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
       </div>
       <div class="col-3">
         <p-dropdown
@@ -723,7 +1173,17 @@
           [showClear]="true"
           (onChange)="onSelectItem('accLeftCard', $event.value)"
           placeholder="Card"
-        ></p-dropdown>
+        >
+          <ng-template let-item pTemplate="selectedItem">
+            <div class="flex gap-1" *ngIf="model.accLeftCard">
+              <img
+                src="assets/demo/images/items/300291.png"
+                style="width: 19px"
+              />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
       </div>
 
       <div class="col-12">
@@ -739,7 +1199,26 @@
               [disabled]="accLeftEnchant1List.length === 0 || !model.accLeft"
               (onChange)="onSelectItem('accLeftEnchant1', $event.value)"
               placeholder="Enchant 2"
-            ></p-dropdown>
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1" *ngIf="model.accLeftEnchant1">
+                  <img
+                    src="assets/demo/images/items/{{ item.value }}.png"
+                    style="width: 19px"
+                  />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+              <ng-template let-item pTemplate="item">
+                <div class="flex gap-1">
+                  <img
+                    src="assets/demo/images/items/{{ item.value }}.png"
+                    style="width: 19px"
+                  />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
           </div>
           <div class="col-3">
             <p-dropdown
@@ -751,7 +1230,26 @@
               [disabled]="accLeftEnchant2List.length === 0 || !model.accLeft"
               (onChange)="onSelectItem('accLeftEnchant2', $event.value)"
               placeholder="Enchant 3"
-            ></p-dropdown>
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1" *ngIf="model.accLeftEnchant2">
+                  <img
+                    src="assets/demo/images/items/{{ item.value }}.png"
+                    style="width: 19px"
+                  />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+              <ng-template let-item pTemplate="item">
+                <div class="flex gap-1">
+                  <img
+                    src="assets/demo/images/items/{{ item.value }}.png"
+                    style="width: 19px"
+                  />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
           </div>
           <div class="col-3">
             <p-dropdown
@@ -763,7 +1261,26 @@
               [disabled]="accLeftEnchant3List.length === 0 || !model.accLeft"
               (onChange)="onSelectItem('accLeftEnchant3', $event.value)"
               placeholder="Enchant 4"
-            ></p-dropdown>
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1" *ngIf="model.accLeftEnchant3">
+                  <img
+                    src="assets/demo/images/items/{{ item.value }}.png"
+                    style="width: 19px"
+                  />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+              <ng-template let-item pTemplate="item">
+                <div class="flex gap-1">
+                  <img
+                    src="assets/demo/images/items/{{ item.value }}.png"
+                    style="width: 19px"
+                  />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
           </div>
         </div>
       </div>
@@ -782,7 +1299,26 @@
           (onChange)="onSelectItem('accRight', $event.value)"
           (onClear)="onClearItem('accRight')"
           placeholder="Acc R"
-        ></p-dropdown>
+        >
+          <ng-template let-item pTemplate="selectedItem">
+            <div class="flex gap-1" *ngIf="model.accRight">
+              <img
+                src="assets/demo/images/items/{{ item.value }}.png"
+                style="width: 19px"
+              />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+          <ng-template let-item pTemplate="item">
+            <div class="flex gap-1">
+              <img
+                src="assets/demo/images/items/{{ item.value }}.png"
+                style="width: 19px"
+              />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
       </div>
       <div class="col-3">
         <p-dropdown
@@ -794,7 +1330,17 @@
           [showClear]="true"
           (onChange)="onSelectItem('accRightCard', $event.value)"
           placeholder="Card"
-        ></p-dropdown>
+        >
+          <ng-template let-item pTemplate="selectedItem">
+            <div class="flex gap-1" *ngIf="model.accRightCard">
+              <img
+                src="assets/demo/images/items/300291.png"
+                style="width: 19px"
+              />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
       </div>
       <div class="col-12">
         <div class="grid">
@@ -810,7 +1356,26 @@
               (onChange)="onSelectItem('accRightEnchant1', $event.value)"
               [disabled]="accRightEnchant1List.length === 0"
               placeholder="Enchant 2"
-            ></p-dropdown>
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1" *ngIf="model.accRightEnchant1">
+                  <img
+                    src="assets/demo/images/items/{{ item.value }}.png"
+                    style="width: 19px"
+                  />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+              <ng-template let-item pTemplate="item">
+                <div class="flex gap-1">
+                  <img
+                    src="assets/demo/images/items/{{ item.value }}.png"
+                    style="width: 19px"
+                  />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
           </div>
           <div class="col-3">
             <p-dropdown
@@ -823,7 +1388,26 @@
               (onChange)="onSelectItem('accRightEnchant2', $event.value)"
               [disabled]="accRightEnchant2List.length === 0"
               placeholder="Enchant 3"
-            ></p-dropdown>
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1" *ngIf="model.accRightEnchant2">
+                  <img
+                    src="assets/demo/images/items/{{ item.value }}.png"
+                    style="width: 19px"
+                  />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+              <ng-template let-item pTemplate="item">
+                <div class="flex gap-1">
+                  <img
+                    src="assets/demo/images/items/{{ item.value }}.png"
+                    style="width: 19px"
+                  />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
           </div>
           <div class="col-3">
             <p-dropdown
@@ -836,7 +1420,26 @@
               [disabled]="accRightEnchant3List.length === 0"
               (onChange)="onSelectItem('accRightEnchant3', $event.value)"
               placeholder="Enchant 4"
-            ></p-dropdown>
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1" *ngIf="model.accRightEnchant3">
+                  <img
+                    src="assets/demo/images/items/{{ item.value }}.png"
+                    style="width: 19px"
+                  />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+              <ng-template let-item pTemplate="item">
+                <div class="flex gap-1">
+                  <img
+                    src="assets/demo/images/items/{{ item.value }}.png"
+                    style="width: 19px"
+                  />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
           </div>
         </div>
       </div>
@@ -879,7 +1482,26 @@
           [disabled]="costumeEnhUpperList.length === 0"
           (onChange)="onSelectItem('costumeEnchantUpper', $event.value)"
           placeholder="Enchant"
-        ></p-dropdown>
+        >
+          <ng-template let-item pTemplate="selectedItem">
+            <div class="flex gap-1" *ngIf="model.costumeEnchantUpper">
+              <img
+                src="assets/demo/images/items/{{ item.value }}.png"
+                style="width: 19px"
+              />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+          <ng-template let-item pTemplate="item">
+            <div class="flex gap-1">
+              <img
+                src="assets/demo/images/items/{{ item.value }}.png"
+                style="width: 19px"
+              />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
       </div>
     </div>
     <!-- Middle -->
@@ -904,7 +1526,26 @@
           [disabled]="costumeEnhMiddleList.length === 0"
           (onChange)="onSelectItem('costumeEnchantMiddle', $event.value)"
           placeholder="Enchant"
-        ></p-dropdown>
+        >
+          <ng-template let-item pTemplate="selectedItem">
+            <div class="flex gap-1" *ngIf="model.costumeEnchantMiddle">
+              <img
+                src="assets/demo/images/items/{{ item.value }}.png"
+                style="width: 19px"
+              />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+          <ng-template let-item pTemplate="item">
+            <div class="flex gap-1">
+              <img
+                src="assets/demo/images/items/{{ item.value }}.png"
+                style="width: 19px"
+              />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
       </div>
     </div>
     <!-- Lower -->
@@ -929,7 +1570,26 @@
           [disabled]="costumeEnhLowerList.length === 0"
           (onChange)="onSelectItem('costumeEnchantLower', $event.value)"
           placeholder="Enchant"
-        ></p-dropdown>
+        >
+          <ng-template let-item pTemplate="selectedItem">
+            <div class="flex gap-1" *ngIf="model.costumeEnchantLower">
+              <img
+                src="assets/demo/images/items/{{ item.value }}.png"
+                style="width: 19px"
+              />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+          <ng-template let-item pTemplate="item">
+            <div class="flex gap-1">
+              <img
+                src="assets/demo/images/items/{{ item.value }}.png"
+                style="width: 19px"
+              />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
       </div>
     </div>
     <!-- Garment -->
@@ -954,7 +1614,26 @@
           [disabled]="costumeEnhGarmentList.length === 0"
           (onChange)="onSelectItem('costumeEnchantGarment', $event.value)"
           placeholder="Enchant"
-        ></p-dropdown>
+        >
+          <ng-template let-item pTemplate="selectedItem">
+            <div class="flex gap-1" *ngIf="model.costumeEnchantGarment">
+              <img
+                src="assets/demo/images/items/{{ item.value }}.png"
+                style="width: 19px"
+              />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+          <ng-template let-item pTemplate="item">
+            <div class="flex gap-1">
+              <img
+                src="assets/demo/images/items/{{ item.value }}.png"
+                style="width: 19px"
+              />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
       </div>
     </div>
 
@@ -971,7 +1650,26 @@
           (onChange)="onSelectItem('shadowWeapon', $event.value)"
           (onClear)="onClearItem('shadowWeapon')"
           placeholder="Shadow Weapon"
-        ></p-dropdown>
+        >
+          <ng-template let-item pTemplate="selectedItem">
+            <div class="flex gap-1" *ngIf="model.shadowWeapon">
+              <img
+                src="assets/demo/images/items/{{ item.value }}.png"
+                style="width: 19px"
+              />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+          <ng-template let-item pTemplate="item">
+            <div class="flex gap-1">
+              <img
+                src="assets/demo/images/items/{{ item.value }}.png"
+                style="width: 19px"
+              />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
       </div>
       <div class="col-3">
         <p-dropdown
@@ -998,7 +1696,26 @@
           (onChange)="onSelectItem('shadowArmor', $event.value)"
           (onClear)="onClearItem('shadowArmor')"
           placeholder="Shadow Armor"
-        ></p-dropdown>
+        >
+          <ng-template let-item pTemplate="selectedItem">
+            <div class="flex gap-1" *ngIf="model.shadowArmor">
+              <img
+                src="assets/demo/images/items/{{ item.value }}.png"
+                style="width: 19px"
+              />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+          <ng-template let-item pTemplate="item">
+            <div class="flex gap-1">
+              <img
+                src="assets/demo/images/items/{{ item.value }}.png"
+                style="width: 19px"
+              />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
       </div>
       <div class="col-3">
         <p-dropdown
@@ -1025,7 +1742,26 @@
           (onChange)="onSelectItem('shadowShield', $event.value)"
           (onClear)="onClearItem('shadowShield')"
           placeholder="Shadow Shield"
-        ></p-dropdown>
+        >
+          <ng-template let-item pTemplate="selectedItem">
+            <div class="flex gap-1" *ngIf="model.shadowShield">
+              <img
+                src="assets/demo/images/items/{{ item.value }}.png"
+                style="width: 19px"
+              />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+          <ng-template let-item pTemplate="item">
+            <div class="flex gap-1">
+              <img
+                src="assets/demo/images/items/{{ item.value }}.png"
+                style="width: 19px"
+              />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
       </div>
       <div class="col-3">
         <p-dropdown
@@ -1052,7 +1788,26 @@
           (onChange)="onSelectItem('shadowBoot', $event.value)"
           (onClear)="onClearItem('shadowBoot')"
           placeholder="Shadow Boot"
-        ></p-dropdown>
+        >
+          <ng-template let-item pTemplate="selectedItem">
+            <div class="flex gap-1" *ngIf="model.shadowBoot">
+              <img
+                src="assets/demo/images/items/{{ item.value }}.png"
+                style="width: 19px"
+              />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+          <ng-template let-item pTemplate="item">
+            <div class="flex gap-1">
+              <img
+                src="assets/demo/images/items/{{ item.value }}.png"
+                style="width: 19px"
+              />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
       </div>
       <div class="col-3">
         <p-dropdown
@@ -1079,7 +1834,26 @@
           (onChange)="onSelectItem('shadowEarning', $event.value)"
           (onClear)="onClearItem('shadowEarning')"
           placeholder="Shadow Earning"
-        ></p-dropdown>
+        >
+          <ng-template let-item pTemplate="selectedItem">
+            <div class="flex gap-1" *ngIf="model.shadowEarning">
+              <img
+                src="assets/demo/images/items/{{ item.value }}.png"
+                style="width: 19px"
+              />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+          <ng-template let-item pTemplate="item">
+            <div class="flex gap-1">
+              <img
+                src="assets/demo/images/items/{{ item.value }}.png"
+                style="width: 19px"
+              />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
       </div>
       <div class="col-3">
         <p-dropdown
@@ -1106,7 +1880,26 @@
           (onChange)="onSelectItem('shadowPendant', $event.value)"
           (onClear)="onClearItem('shadowPendant')"
           placeholder="Shadow Pendant"
-        ></p-dropdown>
+        >
+          <ng-template let-item pTemplate="selectedItem">
+            <div class="flex gap-1" *ngIf="model.shadowPendant">
+              <img
+                src="assets/demo/images/items/{{ item.value }}.png"
+                style="width: 19px"
+              />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+          <ng-template let-item pTemplate="item">
+            <div class="flex gap-1">
+              <img
+                src="assets/demo/images/items/{{ item.value }}.png"
+                style="width: 19px"
+              />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
       </div>
       <div class="col-3">
         <p-dropdown
