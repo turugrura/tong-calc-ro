@@ -12,6 +12,15 @@ const refinableItemTypes = [
   ItemTypeEnum.garment,
   ItemTypeEnum.boot,
 ];
+const mainStatuses = ['str', 'dex', 'int', 'agi', 'luk', 'vit'];
+const extraStatuses = [
+  'extraStr',
+  'extraDex',
+  'extraInt',
+  'extraAgi',
+  'extraLuk',
+  'extraVit',
+];
 
 export class Calculator {
   private items!: Record<number, ItemModel>;
@@ -21,17 +30,24 @@ export class Calculator {
     level: 1,
     jobLevel: 1,
     str: 1,
+    jobStr: undefined,
     extraStr: undefined,
     agi: 1,
+    jobAgi: undefined,
     extraAgi: undefined,
     vit: 1,
+    jobVit: undefined,
     extraVit: undefined,
     int: 1,
+    jobInt: undefined,
     extraInt: undefined,
     dex: 1,
+    jobDex: undefined,
     extraDex: undefined,
     luk: 1,
+    jobLuk: undefined,
     extraLuk: undefined,
+    allStatus: 0,
     weapon: undefined,
     weaponRefine: undefined,
     weaponCard1: undefined,
@@ -276,35 +292,53 @@ export class Calculator {
 
   private buff: any[] = [];
 
+  private statusBonus = 0;
   private totalStatusAtk = 0;
   private totalWeaponAtkMin = 0;
   private totalWeaponAtkMax = 0;
+  private totalEquipAtk = 0;
   private totalAMin = 0;
   private totalAMax = 0;
   private totalBMin = 0;
   private totalBMax = 0;
   private totalMinAtk = 0;
   private totalMaxAtk = 0;
+  private ammu = 40;
 
   get status() {
+    const {
+      jobStr,
+      extraStr,
+      jobInt,
+      extraInt,
+      jobLuk,
+      extraLuk,
+      jobVit,
+      extraVit,
+      jobDex,
+      extraDex,
+      jobAgi,
+      extraAgi,
+    } = this.model;
+
     return {
       baseStr: this.model.str,
-      totalStr: this.model.str + (this.model.extraStr ?? 0),
+      totalStr: this.model.str + (jobStr ?? 0) + (extraStr ?? 0),
 
       baseInt: this.model.int,
-      totalInt: this.model.int + (this.model.extraInt ?? 0),
+      totalInt: this.model.int + (jobInt ?? 0) + (extraInt ?? 0),
 
       baseLuk: this.model.luk,
-      totalLuk: this.model.luk + (this.model.extraLuk ?? 0),
+      totalLuk: this.model.luk + (jobLuk ?? 0) + (extraLuk ?? 0),
 
       baseVit: this.model.vit,
-      totalVit: this.model.vit + (this.model.extraVit ?? 0),
+      totalVit: this.model.vit + (jobVit ?? 0) + (extraVit ?? 0),
 
       baseDex: this.model.dex,
-      totalDex: this.model.dex + (this.model.extraDex ?? 0),
+      totalDex: this.model.dex + (jobDex ?? 0) + (extraDex ?? 0),
 
       baseAgi: this.model.agi,
-      totalAgi: this.model.agi + (this.model.extraAgi ?? 0),
+      totalAgi: this.model.agi + (jobAgi ?? 0) + (extraAgi ?? 0),
     };
   }
 
@@ -398,18 +432,27 @@ export class Calculator {
     return this;
   }
 
-  private calcWeaponAtk() {
+  private isIncludingOverUpgrade() {
+    return false;
+  }
+
+  private calcStatusBonus() {
     const { totalStr, totalDex } = this.status;
+    const mainState = this.isRangeAtk() ? totalDex : totalStr;
+    this.statusBonus = (this.weaponData.data.baseWeaponAtk * mainState) / 200; // base on weapon type
+  }
+
+  private calcWeaponAtk() {
     const { baseWeaponAtk, baseWeaponLevel, refineBonus, overUpgradeBonus } =
       this.weaponData.data;
     const variant = baseWeaponAtk * baseWeaponLevel * 0.05;
-    const statusBonus =
-      (baseWeaponAtk * (this.isRangeAtk() ? totalDex : totalStr)) / 200; // base on weapon type
+
     const formular = (weaponAtk: number) => {
-      return Math.floor(
-        (weaponAtk + statusBonus + refineBonus + overUpgradeBonus) *
-          this.sizePenalty
-      );
+      const total = weaponAtk + this.statusBonus + refineBonus;
+      const total2 = this.isIncludingOverUpgrade()
+        ? total + overUpgradeBonus
+        : total;
+      return Math.floor(total2 * this.sizePenalty);
     };
     const totalMin = formular(baseWeaponAtk - variant);
     const totalMax = formular(baseWeaponAtk + variant);
@@ -420,20 +463,22 @@ export class Calculator {
   }
 
   private calcEquipAtk() {
-    return this.masteryAtkSkillBonus.reduce((sum, m) => sum + m.atk ?? 0, 0);
+    const e = this.totalEquipStatus.atk + this.ammu;
+    this.totalEquipAtk =
+      e + this.masteryAtkSkillBonus.reduce((sum, m) => sum + m.atk ?? 0, 0);
   }
 
   private calcAtkGroupA() {
-    const equipAtk = this.totalEquipStatus.atk;
     const atkPercent = this.toPercent(this.totalEquipStatus['atk_%']);
     const formular = (totalAtk: number) => {
       return Math.floor(
-        (totalAtk + equipAtk) * atkPercent * this.propertyMultiplier
+        (totalAtk + this.totalEquipAtk) * atkPercent * this.propertyMultiplier
       );
     };
     const totalAMin = formular(this.totalWeaponAtkMin);
     const totalAMax = formular(this.totalWeaponAtkMax);
-    // console.log({ totalMin, totalMax, equipAtk, atkPercent, totalAMin, totalAMax });
+    // console.log({ equipAtk, atkPercent, atk: this.totalWeaponAtkMin });
+
     this.totalAMin = totalAMin;
     this.totalAMax = totalAMax;
   }
@@ -479,7 +524,6 @@ export class Calculator {
   }
 
   private calcAtkGroupB() {
-    const equipAtk = this.totalEquipStatus.atk;
     const race = this.toPercent(this.calcRaceMultiplier());
     const size = this.toPercent(this.calcSizeMultiplier());
     const element = this.toPercent(this.calcElementMultiplier());
@@ -492,21 +536,21 @@ export class Calculator {
         ) * this.propertyMultiplier
       );
     };
-    const totalBMin = formular(this.totalWeaponAtkMin + equipAtk);
-    const totalBMax = formular(this.totalWeaponAtkMax + equipAtk);
+    const totalBMin = formular(this.totalWeaponAtkMin + this.totalEquipAtk);
+    const totalBMax = formular(this.totalWeaponAtkMax + this.totalEquipAtk);
 
     this.totalBMin = totalBMin;
     this.totalBMax = totalBMax;
   }
 
   private calcStatusAtk() {
-    const { baseStr, baseDex, baseLuk } = this.status;
+    const { totalStr, totalDex, totalLuk } = this.status;
     const baseLvl = this.model.level;
-    const mainStatus = this.isRangeAtk() ? baseDex : baseStr;
-    const secondStatus = this.isRangeAtk() ? baseStr : baseDex;
+    const mainStatus = this.isRangeAtk() ? totalDex : totalStr;
+    const secondStatus = this.isRangeAtk() ? totalStr : totalDex;
 
     this.totalStatusAtk = Math.floor(
-      baseLvl / 4 + secondStatus / 5 + mainStatus + baseLuk / 3
+      baseLvl / 4 + secondStatus / 5 + mainStatus + totalLuk / 3
     );
   }
 
@@ -536,7 +580,9 @@ export class Calculator {
   }
 
   calcRangeSkillDamage(skillName: string, baseSkillDamage?: number) {
+    this.calcEquipAtk();
     this.calcStatusAtk();
+    this.calcStatusBonus();
     this.calcWeaponAtk();
     this.calcAtkGroupA();
     this.calcAtkGroupB();
@@ -813,6 +859,22 @@ export class Calculator {
         }
       }
     }
+
+    const allStatus = this.totalEquipStatus.allStatus ?? 0;
+    for (const [index, status] of mainStatuses.entries()) {
+      if (this.totalEquipStatus[status]) {
+        this.totalEquipStatus[status] += allStatus;
+      } else {
+        this.totalEquipStatus[status] = allStatus;
+      }
+
+      const extra = extraStatuses[index];
+      if (this.model[extra]) {
+        this.model[extra] += this.totalEquipStatus[status];
+      } else {
+        this.model[extra] = this.totalEquipStatus[status];
+      }
+    }
   }
 
   calculateSkillDamage(
@@ -856,6 +918,8 @@ export class Calculator {
     return {
       ...this.getObjSummary(this.totalEquipStatus),
       weapon: this.weaponData.data,
+      statusBonus: this.statusBonus,
+      totalEquipAtk: this.totalEquipAtk,
       totalStatusAtk: this.totalStatusAtk,
       totalWeaponAtkMin: this.totalWeaponAtkMin,
       totalWeaponAtkMax: this.totalWeaponAtkMax,

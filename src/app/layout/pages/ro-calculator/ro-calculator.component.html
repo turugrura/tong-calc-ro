@@ -262,7 +262,7 @@
           <ng-template let-item pTemplate="selectedItem">
             <div class="flex gap-1" *ngIf="model.weaponCard1">
               <img
-                src="assets/demo/images/items/300291.png"
+                src="assets/demo/images/items/card.png"
                 style="width: 19px"
               />
               <div>{{ item.label }}</div>
@@ -284,7 +284,7 @@
           <ng-template let-item pTemplate="selectedItem">
             <div class="flex gap-1" *ngIf="model.weaponCard2">
               <img
-                src="assets/demo/images/items/300291.png"
+                src="assets/demo/images/items/card.png"
                 style="width: 19px"
               />
               <div>{{ item.label }}</div>
@@ -306,7 +306,7 @@
           <ng-template let-item pTemplate="selectedItem">
             <div class="flex gap-1" *ngIf="model.weaponCard3">
               <img
-                src="assets/demo/images/items/300291.png"
+                src="assets/demo/images/items/card.png"
                 style="width: 19px"
               />
               <div>{{ item.label }}</div>
@@ -407,7 +407,7 @@
           <ng-template let-item pTemplate="selectedItem">
             <div class="flex gap-1" *ngIf="model.headUpperCard">
               <img
-                src="assets/demo/images/items/300291.png"
+                src="assets/demo/images/items/card.png"
                 style="width: 19px"
               />
               <div>{{ item.label }}</div>
@@ -461,7 +461,17 @@
           [showClear]="true"
           (onChange)="onSelectItem('headMiddleCard', $event.value)"
           placeholder="Card"
-        ></p-dropdown>
+        >
+          <ng-template let-item pTemplate="selectedItem">
+            <div class="flex gap-1" *ngIf="model.headMiddleCard">
+              <img
+                src="assets/demo/images/items/card.png"
+                style="width: 19px"
+              />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
       </div>
       <div class="col-12">
         <div class="grid grid-nogutter">
@@ -691,7 +701,7 @@
           <ng-template let-item pTemplate="selectedItem">
             <div class="flex gap-1" *ngIf="model.armorCard">
               <img
-                src="assets/demo/images/items/300291.png"
+                src="assets/demo/images/items/card.png"
                 style="width: 19px"
               />
               <div>{{ item.label }}</div>
@@ -857,7 +867,7 @@
           <ng-template let-item pTemplate="selectedItem">
             <div class="flex gap-1" *ngIf="model.garmentCard">
               <img
-                src="assets/demo/images/items/300291.png"
+                src="assets/demo/images/items/card.png"
                 style="width: 19px"
               />
               <div>{{ item.label }}</div>
@@ -1021,7 +1031,7 @@
           <ng-template let-item pTemplate="selectedItem">
             <div class="flex gap-1" *ngIf="model.bootCard">
               <img
-                src="assets/demo/images/items/300291.png"
+                src="assets/demo/images/items/card.png"
                 style="width: 19px"
               />
               <div>{{ item.label }}</div>
@@ -1177,7 +1187,7 @@
           <ng-template let-item pTemplate="selectedItem">
             <div class="flex gap-1" *ngIf="model.accLeftCard">
               <img
-                src="assets/demo/images/items/300291.png"
+                src="assets/demo/images/items/card.png"
                 style="width: 19px"
               />
               <div>{{ item.label }}</div>
@@ -1334,7 +1344,7 @@
           <ng-template let-item pTemplate="selectedItem">
             <div class="flex gap-1" *ngIf="model.accRightCard">
               <img
-                src="assets/demo/images/items/300291.png"
+                src="assets/demo/images/items/card.png"
                 style="width: 19px"
               />
               <div>{{ item.label }}</div>
