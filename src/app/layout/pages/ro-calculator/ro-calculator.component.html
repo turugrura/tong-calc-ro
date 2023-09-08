@@ -1925,6 +1925,7 @@
           <p-selectButton
             [options]="skillBuffs['impositioManus'].dropdown"
             [(ngModel)]="model.impositioManus"
+            (onChange)="onSkillBuffChange()"
           ></p-selectButton>
         </div>
       </div>
@@ -1939,6 +1940,7 @@
             [(ngModel)]="model.advBlessing"
             [options]="skillBuffs['advBlessing'].dropdown"
             [showClear]="true"
+            (onChange)="onSkillBuffChange()"
           ></p-dropdown>
         </div>
       </div>
@@ -1953,6 +1955,7 @@
             [(ngModel)]="model.advAgiUp"
             [options]="skillBuffs['advAgiUp'].dropdown"
             [showClear]="true"
+            (onChange)="onSkillBuffChange()"
           ></p-dropdown>
         </div>
       </div>
@@ -1964,6 +1967,7 @@
           <p-selectButton
             [options]="skillBuffs['expiatio'].dropdown"
             [(ngModel)]="model.expiatio"
+            (onChange)="onSkillBuffChange()"
           ></p-selectButton>
         </div>
       </div>
@@ -1987,32 +1991,66 @@
     <p-accordion [multiple]="true" [activeIndex]="[3]">
       <p-accordionTab header="Foods / Class Skills">
         <div class="grid grid-nogutter">
+          <!-- Consumable -->
           <div class="col-4">
             <p-listbox
               [options]="consumableList"
               [(ngModel)]="model.consumables"
               [multiple]="true"
               [metaKeySelection]="false"
-            ></p-listbox>
+              (onChange)="onConsumableChange()"
+            >
+              <ng-template let-item pTemplate="item">
+                <div class="flex gap-2">
+                  <img
+                    src="assets/demo/images/items/{{ item.value }}.png"
+                    style="width: 19px"
+                  />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+            </p-listbox>
           </div>
+
+          <!-- Passive Skill -->
           <div class="col-4">
             <div class="grid grid-nogutter">
               <div
                 *ngFor="let passiveSkill of passiveSkills; let i = index"
                 class="col-12"
               >
-                <div class="p-inputgroup">
-                  <span class="p-inputgroup-addon" style="width: 110px">{{
-                    passiveSkill.label
-                  }}</span>
-                  <p-selectButton
-                    [options]="passiveSkill.dropdown"
-                    [(ngModel)]="model.passiveSkills[i]"
-                  ></p-selectButton>
+                <div [ngSwitch]="passiveSkill.inputType">
+                  <div *ngSwitchCase="'dropdown'">
+                    <div class="p-inputgroup">
+                      <span class="p-inputgroup-addon" style="width: 130px">{{
+                        passiveSkill.label
+                      }}</span>
+                      <p-dropdown
+                        [autoDisplayFirst]="false"
+                        [options]="passiveSkill.dropdown"
+                        [(ngModel)]="model.passiveSkills[i]"
+                        (onChange)="onSkillClassChange()"
+                      ></p-dropdown>
+                    </div>
+                  </div>
+                  <div *ngSwitchDefault>
+                    <div class="p-inputgroup">
+                      <span class="p-inputgroup-addon" style="width: 130px">{{
+                        passiveSkill.label
+                      }}</span>
+                      <p-selectButton
+                        [options]="passiveSkill.dropdown"
+                        [(ngModel)]="model.passiveSkills[i]"
+                        (ngModelChange)="onSkillClassChange()"
+                      ></p-selectButton>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+
+          <!-- Active Skill -->
           <div class="col-4">
             <div class="grid grid-nogutter">
               <div
@@ -2026,6 +2064,7 @@
                   <p-selectButton
                     [options]="activeSkill.dropdown"
                     [(ngModel)]="model.activeSkills[i]"
+                    (onChange)="onSkillClassChange()"
                   ></p-selectButton>
                 </div>
               </div>

@@ -480,7 +480,7 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
     // console.log({ model: { ...this.model } });
 
     const { activeSkills, passiveSkills, selectedAtkSkill } = this.model;
-    const { equipAtks, masteryAtks, skillNames } =
+    const { equipAtks, masteryAtks, skillNames, learnedSkillMap } =
       this.selectedCharacter.getSkillBonusAndName({
         activeIds: activeSkills,
         passiveIds: passiveSkills,
@@ -491,6 +491,7 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
       .setEquipAtkSkillAtk(equipAtks)
       .setMasterySkillAtk(masteryAtks)
       .setUsedSkillNames(skillNames)
+      .setLearnedSkills(learnedSkillMap)
       .setMonster(monsterData[this.selectedMonster]);
 
     // calc.setWeapon(this.model.weapon, this.model.weaponRefine).calculate();
@@ -524,6 +525,16 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
     }, {});
   }
 
+  initialSkillArray() {
+    const { activeSkills, passiveSkills } = this.selectedCharacter;
+    if (this.model.activeSkills?.length !== activeSkills.length) {
+      this.model.activeSkills = [];
+    }
+    if (this.model.passiveSkills?.length !== passiveSkills.length) {
+      this.model.passiveSkills = [];
+    }
+  }
+
   loadItemSet() {
     this.isLoadingItemSet = true;
     const str = localStorage.getItem('ro-set');
@@ -531,6 +542,7 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
     this.model.selectedAtkSkill =
       this.model.selectedAtkSkill || this.atkSkills[0]?.value;
 
+    this.initialSkillArray();
     this.setJobBonus();
 
     setTimeout(() => {
@@ -950,6 +962,18 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
       .setMainStatusLevels(mainStatuses)
       .calculate().summary;
     this.availablePoints = availablePoint;
+    this.updateItemEvent.next(1);
+  }
+
+  onConsumableChange() {
+    this.updateItemEvent.next(1);
+  }
+
+  onSkillClassChange() {
+    this.updateItemEvent.next(1);
+  }
+
+  onSkillBuffChange() {
     this.updateItemEvent.next(1);
   }
 }
