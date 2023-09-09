@@ -96,10 +96,10 @@ export class Calculator {
   private equipItemName = new Map<ItemTypeEnum, string>();
   private equipItemNameSet = new Set<string>();
   private mapRefine = new Map<ItemTypeEnum, number>();
-  private usedSkillNames: string[] = [];
+  private usedSkillNames = new Set<string>();
   private learnedSkillMap = new Map<string, number>();
-  private equipAtkSkillBonus: any[] = [];
-  private masteryAtkSkillBonus: any[] = [];
+  private equipAtkSkillBonus: Record<string, any> = {};
+  private masteryAtkSkillBonus: Record<string, any> = {};
   private consumableBonuses: any[] = [];
 
   private allStatus = {
@@ -351,7 +351,7 @@ export class Calculator {
   }
 
   private isUsedSkill(skillName: string) {
-    return [''].includes(skillName);
+    return this.usedSkillNames.has(skillName);
   }
 
   private isEquipItem(itemName: string) {
@@ -430,7 +430,7 @@ export class Calculator {
   }
 
   setUsedSkillNames(usedSkillNames: string[]) {
-    this.usedSkillNames = usedSkillNames;
+    this.usedSkillNames = new Set(usedSkillNames);
 
     return this;
   }
@@ -441,14 +441,14 @@ export class Calculator {
     return this;
   }
 
-  setEquipAtkSkillAtk(equipSkillBonus: any[]) {
-    this.equipAtkSkillBonus = [...equipSkillBonus];
+  setEquipAtkSkillAtk(equipSkillBonus: Record<string, any>) {
+    this.equipAtkSkillBonus = { ...equipSkillBonus };
 
     return this;
   }
 
-  setMasterySkillAtk(masterySkillBonus: any[]) {
-    this.masteryAtkSkillBonus = [...masterySkillBonus];
+  setMasterySkillAtk(masterySkillBonus: Record<string, any>) {
+    this.masteryAtkSkillBonus = { ...masterySkillBonus };
 
     return this;
   }
@@ -491,14 +491,8 @@ export class Calculator {
 
   private calcEquipAtk() {
     const extraAtk = this.totalEquipStatus.atk;
-    const skillAtk = this.equipAtkSkillBonus.reduce((sum, m) => {
-      if (!Number.isNaN(m.atk) && m.atk > 0) {
-        return sum + m.atk;
-      }
 
-      return sum;
-    }, 0);
-    this.totalEquipAtk = extraAtk + skillAtk;
+    this.totalEquipAtk = extraAtk;
   }
 
   private calcAtkGroupA() {
@@ -588,7 +582,7 @@ export class Calculator {
   }
 
   private calcMasteryAtk() {
-    const skillAtk = this.masteryAtkSkillBonus.reduce(
+    const skillAtk = Object.values(this.masteryAtkSkillBonus).reduce(
       (sum, m) => sum + m.atk ?? 0,
       0
     );
@@ -680,8 +674,9 @@ export class Calculator {
 
     // 9===SKILL[Platinum Altar]==50(90 วินาที)
     const [skillCond, extraBonus] = bonus.split('==');
+    // console.log({ miniScript, skillCond, extraBonus });
     if (skillCond && extraBonus) {
-      const skillName = skillCond.substring(6, -1);
+      const skillName = skillCond.substring(6, skillCond.length - 1);
 
       if (this.isUsedSkill(skillName)) {
         this.buff.push({ [skillName]: extraBonus });
@@ -849,6 +844,20 @@ export class Calculator {
   private calcAllEquipItems() {
     this.totalEquipStatus = { ...this.allStatus };
 
+    for (const [skillName, scripts] of Object.entries(
+      this.equipAtkSkillBonus
+    )) {
+      for (const [attr, value] of Object.entries(scripts)) {
+        this.equipStatus[skillName] = { ...this.allStatus, [attr]: value };
+
+        if (this.totalEquipStatus[attr]) {
+          this.totalEquipStatus[attr] += value;
+        } else {
+          this.totalEquipStatus[attr] = value;
+        }
+      }
+    }
+
     for (const [itemType, itemData] of this.equipItem) {
       this.equipStatus[itemType] = { ...this.allStatus };
       if (!itemData) {
@@ -980,9 +989,9 @@ export class Calculator {
 
     return {
       ...obj,
+      ...this.equipAtkSkillBonus,
+      ...this.masteryAtkSkillBonus,
       consumableBonuses: this.consumableBonuses,
-      equipAtkSkillBonus: this.equipAtkSkillBonus,
-      masteryAtkSkillBonus: this.masteryAtkSkillBonus,
     };
   }
 

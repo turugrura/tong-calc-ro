@@ -163,8 +163,8 @@ export class Rebelion {
   }
 
   getSkillBonusAndName(params: { activeIds: number[]; passiveIds: number[] }) {
-    const equipAtks = [];
-    const masteryAtks = [];
+    const equipAtks: Record<string, any> = {};
+    const masteryAtks: Record<string, any> = {};
     const skillNames = [];
     const learnedSkillMap = new Map<string, number>();
 
@@ -180,9 +180,9 @@ export class Rebelion {
 
       const { isEquip, isMastery } = skill;
       if (isEquip) {
-        equipAtks.push(bonus);
+        equipAtks[skill.name] = bonus;
       } else if (isMastery) {
-        masteryAtks.push(bonus);
+        masteryAtks[skill.name] = bonus;
       }
     });
 
@@ -197,9 +197,9 @@ export class Rebelion {
 
       const { isEquip, isMastery } = skill;
       if (isEquip) {
-        equipAtks.push(bonus);
+        equipAtks[skill.name] = bonus;
       } else if (isMastery) {
-        masteryAtks.push(bonus);
+        masteryAtks[skill.name] = bonus;
       }
     });
 
