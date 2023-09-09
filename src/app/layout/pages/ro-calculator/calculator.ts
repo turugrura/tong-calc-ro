@@ -120,17 +120,17 @@ export class Calculator {
     exp: 0,
     drop: 0,
     hp: 0,
-    'hp_%': 0,
+    hpPercent: 0,
     sp: 0,
-    'sp_%': 0,
+    spPercent: 0,
     def: 0,
     mdef: 0,
     aspd: 0,
-    'aspd_%': 0,
+    aspdPercent: 0,
     atk: 0,
-    'atk_%': 0,
+    atkPercent: 0,
     matk: 0,
-    'matk_%': 0,
+    matkPercent: 0,
     allStatus: 0,
     str: 0,
     int: 0,
@@ -469,7 +469,7 @@ export class Calculator {
   }
 
   private calcAtkGroupA() {
-    const atkPercent = this.toPercent(this.totalEquipStatus['atk_%']);
+    const atkPercent = this.toPercent(this.totalEquipStatus.atkPercent);
     const formular = (totalAtk: number) => {
       return Math.floor(
         (totalAtk + this.totalEquipAtk) * atkPercent * this.propertyMultiplier
