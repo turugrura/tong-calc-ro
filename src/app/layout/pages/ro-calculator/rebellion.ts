@@ -92,8 +92,14 @@ export class Rebelion {
       label: 'Platinum Altar',
       name: 'Platinum Altar',
       dropdown: [
-        { label: 'Yes', value: 1, bonus: { atk: 150 } },
-        { label: 'No', value: 2 },
+        {
+          label: 'Yes',
+          value: 1,
+          skillLv: 1,
+          isUse: true,
+          bonus: { atk: 150 },
+        },
+        { label: 'No', value: 2, isUse: false },
       ],
     },
     {
@@ -102,8 +108,8 @@ export class Rebelion {
       label: "Rich's Coin",
       name: "Rich's Coin",
       dropdown: [
-        { label: 'Yes', value: 1, bonus: { atk: 30 } },
-        { label: 'No', value: 2 },
+        { label: 'Yes', value: 1, skillLv: 5, isUse: true, bonus: { atk: 30 } },
+        { label: 'No', value: 2, isUse: false },
       ],
     },
   ];
@@ -115,25 +121,31 @@ export class Rebelion {
       label: 'Snake Eyes',
       name: 'Snake Eyes',
       dropdown: [
-        { label: '0', value: 0, bonus: undefined },
-        { label: '1', value: 1, bonus: { hit: 1 } },
-        { label: '2', value: 2, bonus: { hit: 2 } },
-        { label: '3', value: 3, bonus: { hit: 3 } },
-        { label: '4', value: 4, bonus: { hit: 4 } },
-        { label: '5', value: 5, bonus: { hit: 5 } },
-        { label: '6', value: 6, bonus: { hit: 6 } },
-        { label: '7', value: 7, bonus: { hit: 7 } },
-        { label: '8', value: 8, bonus: { hit: 8 } },
-        { label: '9', value: 9, bonus: { hit: 9 } },
-        { label: '10', value: 10, bonus: { hit: 10 } },
+        { label: '0', value: 0, isUse: false, bonus: undefined },
+        { label: '1', value: 1, skillLv: 1, isUse: true, bonus: { hit: 1 } },
+        { label: '2', value: 2, skillLv: 2, isUse: true, bonus: { hit: 2 } },
+        { label: '3', value: 3, skillLv: 3, isUse: true, bonus: { hit: 3 } },
+        { label: '4', value: 4, skillLv: 4, isUse: true, bonus: { hit: 4 } },
+        { label: '5', value: 5, skillLv: 5, isUse: true, bonus: { hit: 5 } },
+        { label: '6', value: 6, skillLv: 6, isUse: true, bonus: { hit: 6 } },
+        { label: '7', value: 7, skillLv: 7, isUse: true, bonus: { hit: 7 } },
+        { label: '8', value: 8, skillLv: 8, isUse: true, bonus: { hit: 8 } },
+        { label: '9', value: 9, skillLv: 9, isUse: true, bonus: { hit: 9 } },
+        {
+          label: '10',
+          value: 10,
+          skillLv: 10,
+          isUse: true,
+          bonus: { hit: 10 },
+        },
       ],
     },
     {
       label: 'Chain Action Lv10',
       name: 'Chain Action',
       dropdown: [
-        { label: 'Yes', value: 10, bonus: undefined },
-        { label: 'No', value: 0 },
+        { label: 'Yes', value: 10, skillLv: 10, isUse: true, bonus: undefined },
+        { label: 'No', value: 0, isUse: false },
       ],
     },
   ];
@@ -158,9 +170,10 @@ export class Rebelion {
 
     const { activeIds, passiveIds } = params;
     this._activeSkillList.forEach((skill, index) => {
-      const { bonus } = skill.dropdown.find(
+      const { bonus, isUse, skillLv } = skill.dropdown.find(
         (x) => x.value === activeIds[index]
       );
+      if (isUse) learnedSkillMap.set(skill.name, skillLv);
       if (!bonus) return;
 
       skillNames.push(skill.label);
@@ -174,9 +187,10 @@ export class Rebelion {
     });
 
     this._passiveSkillList.forEach((skill, index) => {
-      const { bonus, value } =
-        skill.dropdown.find((x) => x.value === passiveIds[index]) ?? {};
-      if (value > 0) learnedSkillMap.set(skill.name, value);
+      const { bonus, isUse, skillLv } =
+        (skill.dropdown as any[]).find((x) => x.value === passiveIds[index]) ??
+        {};
+      if (isUse) learnedSkillMap.set(skill.name, skillLv);
       if (!bonus) return;
 
       skillNames.push(skill.label);

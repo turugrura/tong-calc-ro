@@ -7,6 +7,7 @@ export enum ItemTypeEnum {
   weaponEnchant1 = 'weaponEnchant1',
   weaponEnchant2 = 'weaponEnchant2',
   weaponEnchant3 = 'weaponEnchant3',
+  ammo = 'ammo',
   headUpper = 'headUpper',
   headUpperRefine = 'headUpperRefine',
   headUpperCard = 'headUpperCard',

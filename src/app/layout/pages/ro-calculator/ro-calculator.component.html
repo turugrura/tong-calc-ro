@@ -316,6 +316,43 @@
       </div>
     </div>
 
+    <!-- Ammo -->
+    <div class="grid grid-nogutter" *ngIf="1">
+      <div class="col-3">
+        <p-dropdown
+          inputId="ammo"
+          [autoDisplayFirst]="false"
+          [options]="ammoList"
+          [(ngModel)]="model.ammo"
+          (onChange)="onSelectItem('ammo', $event.value)"
+          placeholder="Ammo"
+        >
+          <ng-template let-item pTemplate="selectedItem">
+            <div class="flex gap-1" *ngIf="model.ammo">
+              <img
+                src="assets/demo/images/items/{{ item.value }}.png"
+                style="width: 19px"
+              />
+              <div class="{{ 'property_' + item.element }}">
+                {{ item.label }}
+              </div>
+            </div>
+          </ng-template>
+          <ng-template let-item pTemplate="item">
+            <div class="flex gap-1">
+              <img
+                src="assets/demo/images/items/{{ item.value }}.png"
+                style="width: 19px"
+              />
+              <div class="{{ 'property_' + item.element }}">
+                {{ item.label }}
+              </div>
+            </div>
+          </ng-template>
+        </p-dropdown>
+      </div>
+    </div>
+
     <!-- Shield -->
     <div class="grid grid-nogutter" *ngIf="isShowShield()">
       <div class="col-3">
@@ -2082,6 +2119,7 @@
           </div>
         </div>
       </p-accordionTab>
+
       <p-accordionTab header="ATK Skill / Monster">
         <div class="grid grid-nogutter">
           <div class="col-6">
@@ -2105,7 +2143,30 @@
                 [autoDisplayFirst]="false"
                 [options]="monsterList"
                 [(ngModel)]="selectedMonster"
-              ></p-dropdown>
+              >
+                <ng-template let-item pTemplate="selectedItem">
+                  <div class="flex gap-1" *ngIf="selectedMonster">
+                    <!-- <img
+                    src="assets/demo/images/items/{{ item.value }}.png"
+                    style="width: 19px"
+                  /> -->
+                    <div class="{{ 'property_' + item.element }}">
+                      {{ item.label }}
+                    </div>
+                  </div>
+                </ng-template>
+                <ng-template let-item pTemplate="item">
+                  <div class="flex gap-1">
+                    <!-- <img
+                    src="assets/demo/images/items/{{ item.value }}.png"
+                    style="width: 19px"
+                  /> -->
+                    <div class="{{ 'property_' + item.element }}">
+                      {{ item.label }}
+                    </div>
+                  </div>
+                </ng-template>
+              </p-dropdown>
             </div>
           </div>
           <div class="col-12">
@@ -2113,6 +2174,7 @@
           </div>
         </div>
       </p-accordionTab>
+
       <p-accordionTab header="Summary">
         <div class="grid grid-nogutter">
           <div class="col-6">
@@ -2125,6 +2187,7 @@
           </div>
         </div>
       </p-accordionTab>
+
       <p-accordionTab header="In-Detail Summary">
         <div class="grid grid-nogutter">
           <div class="col-6">
@@ -2135,6 +2198,7 @@
           </div>
         </div>
       </p-accordionTab>
+
       <p-accordionTab header="Item Desc">
         <div [innerHTML]="weaponDesc"></div>
       </p-accordionTab>

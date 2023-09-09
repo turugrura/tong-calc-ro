@@ -13,14 +13,6 @@ const refinableItemTypes = [
   ItemTypeEnum.boot,
 ];
 const mainStatuses = ['str', 'dex', 'int', 'agi', 'luk', 'vit'];
-const extraStatuses = [
-  'extraStr',
-  'extraDex',
-  'extraInt',
-  'extraAgi',
-  'extraLuk',
-  'extraVit',
-];
 
 export class Calculator {
   private items!: Record<number, ItemModel>;
@@ -31,23 +23,16 @@ export class Calculator {
     jobLevel: 1,
     str: 1,
     jobStr: undefined,
-    extraStr: undefined,
     agi: 1,
     jobAgi: undefined,
-    extraAgi: undefined,
     vit: 1,
     jobVit: undefined,
-    extraVit: undefined,
     int: 1,
     jobInt: undefined,
-    extraInt: undefined,
     dex: 1,
     jobDex: undefined,
-    extraDex: undefined,
     luk: 1,
     jobLuk: undefined,
-    extraLuk: undefined,
-    allStatus: 0,
     weapon: undefined,
     weaponRefine: undefined,
     weaponCard1: undefined,
@@ -115,6 +100,7 @@ export class Calculator {
   private learnedSkillMap = new Map<string, number>();
   private equipAtkSkillBonus: any[] = [];
   private masteryAtkSkillBonus: any[] = [];
+  private consumableBonuses: any[] = [];
 
   private allStatus = {
     exp: 0,
@@ -293,6 +279,8 @@ export class Calculator {
   private buff: any[] = [];
 
   private statusBonus = 0;
+  private totalMasteryAtk = 0;
+  private totalBuffAtk = 0;
   private totalStatusAtk = 0;
   private totalWeaponAtkMin = 0;
   private totalWeaponAtkMax = 0;
@@ -303,42 +291,41 @@ export class Calculator {
   private totalBMax = 0;
   private totalMinAtk = 0;
   private totalMaxAtk = 0;
-  private ammu = 40;
 
   get status() {
     const {
+      str,
       jobStr,
-      extraStr,
+      int,
       jobInt,
-      extraInt,
+      luk,
       jobLuk,
-      extraLuk,
+      vit,
       jobVit,
-      extraVit,
+      dex,
       jobDex,
-      extraDex,
+      agi,
       jobAgi,
-      extraAgi,
     } = this.model;
 
     return {
-      baseStr: this.model.str,
-      totalStr: this.model.str + (jobStr ?? 0) + (extraStr ?? 0),
+      baseStr: str,
+      totalStr: str + (jobStr ?? 0) + (this.totalEquipStatus.str ?? 0),
 
-      baseInt: this.model.int,
-      totalInt: this.model.int + (jobInt ?? 0) + (extraInt ?? 0),
+      baseInt: int,
+      totalInt: int + (jobInt ?? 0) + (this.totalEquipStatus.int ?? 0),
 
-      baseLuk: this.model.luk,
-      totalLuk: this.model.luk + (jobLuk ?? 0) + (extraLuk ?? 0),
+      baseLuk: luk,
+      totalLuk: luk + (jobLuk ?? 0) + (this.totalEquipStatus.luk ?? 0),
 
-      baseVit: this.model.vit,
-      totalVit: this.model.vit + (jobVit ?? 0) + (extraVit ?? 0),
+      baseVit: vit,
+      totalVit: vit + (jobVit ?? 0) + (this.totalEquipStatus.vit ?? 0),
 
-      baseDex: this.model.dex,
-      totalDex: this.model.dex + (jobDex ?? 0) + (extraDex ?? 0),
+      baseDex: dex,
+      totalDex: dex + (jobDex ?? 0) + (this.totalEquipStatus.dex ?? 0),
 
-      baseAgi: this.model.agi,
-      totalAgi: this.model.agi + (jobAgi ?? 0) + (extraAgi ?? 0),
+      baseAgi: agi,
+      totalAgi: agi + (jobAgi ?? 0) + (this.totalEquipStatus.agi ?? 0),
     };
   }
 
@@ -408,6 +395,40 @@ export class Calculator {
     return this;
   }
 
+  setWeapon(itemId: number, refine: number) {
+    const itemData = this.getItem(itemId);
+    this.equipItem.set(ItemTypeEnum.weapon, itemData);
+    if (itemData) {
+      this.equipItemName.set(
+        ItemTypeEnum.weapon,
+        this.removeItemSlotName(itemData.name)
+      );
+    } else {
+      this.equipItemName.delete(ItemTypeEnum.weapon);
+    }
+    this.equipItemNameSet = new Set(this.equipItemName.values());
+    this.mapRefine.set(ItemTypeEnum.weapon, refine);
+    this.weaponData = new Weapon().set(itemData, refine);
+
+    return this;
+  }
+
+  setItem(itemType: ItemTypeEnum, itemId: number, refine?: number) {
+    const itemData = this.getItem(itemId);
+    this.equipItem.set(itemType, itemData);
+    if (itemData) {
+      this.equipItemName.set(itemType, this.removeItemSlotName(itemData.name));
+    } else {
+      this.equipItemName.delete(itemType);
+    }
+    this.equipItemNameSet = new Set(this.equipItemName.values());
+    if (refine != null) {
+      this.mapRefine.set(itemType, refine);
+    }
+
+    return this;
+  }
+
   setUsedSkillNames(usedSkillNames: string[]) {
     this.usedSkillNames = usedSkillNames;
 
@@ -428,6 +449,12 @@ export class Calculator {
 
   setMasterySkillAtk(masterySkillBonus: any[]) {
     this.masteryAtkSkillBonus = [...masterySkillBonus];
+
+    return this;
+  }
+
+  setConsumables(consumableBonuses: any[]) {
+    this.consumableBonuses = [...consumableBonuses];
 
     return this;
   }
@@ -463,9 +490,15 @@ export class Calculator {
   }
 
   private calcEquipAtk() {
-    const e = this.totalEquipStatus.atk + this.ammu;
-    this.totalEquipAtk =
-      e + this.masteryAtkSkillBonus.reduce((sum, m) => sum + m.atk ?? 0, 0);
+    const extraAtk = this.totalEquipStatus.atk;
+    const skillAtk = this.equipAtkSkillBonus.reduce((sum, m) => {
+      if (!Number.isNaN(m.atk) && m.atk > 0) {
+        return sum + m.atk;
+      }
+
+      return sum;
+    }, 0);
+    this.totalEquipAtk = extraAtk + skillAtk;
   }
 
   private calcAtkGroupA() {
@@ -555,17 +588,25 @@ export class Calculator {
   }
 
   private calcMasteryAtk() {
-    return 0;
+    const skillAtk = this.masteryAtkSkillBonus.reduce(
+      (sum, m) => sum + m.atk ?? 0,
+      0
+    );
+
+    this.totalMasteryAtk = skillAtk;
   }
 
   private calcBuffAtk() {
-    return 0;
+    // ex. camoflage
+    this.totalBuffAtk = 0;
   }
 
   private calcTotalAtk() {
-    const statusAtk = this.totalStatusAtk * 2 * this.propertyMultiplier;
-    const totalMinAtk = this.totalAMin + this.totalBMin + statusAtk;
-    const totalMaxAtk = this.totalAMax + this.totalBMax + statusAtk;
+    const statusAtk =
+      this.totalStatusAtk * 2 + this.totalMasteryAtk + this.totalBuffAtk;
+    const statusAtkPenaltied = statusAtk * this.propertyMultiplier;
+    const totalMinAtk = this.totalAMin + this.totalBMin + statusAtkPenaltied;
+    const totalMaxAtk = this.totalAMax + this.totalBMax + statusAtkPenaltied;
 
     this.totalMinAtk = totalMinAtk;
     this.totalMaxAtk = totalMaxAtk;
@@ -581,6 +622,8 @@ export class Calculator {
 
   calcRangeSkillDamage(skillName: string, baseSkillDamage?: number) {
     this.calcEquipAtk();
+    this.calcMasteryAtk();
+    this.calcBuffAtk();
     this.calcStatusAtk();
     this.calcStatusBonus();
     this.calcWeaponAtk();
@@ -793,40 +836,6 @@ export class Calculator {
     return itemName.replace(/\[\d]$/, '').trim();
   }
 
-  setWeapon(itemId: number, refine: number) {
-    const itemData = this.getItem(itemId);
-    this.equipItem.set(ItemTypeEnum.weapon, itemData);
-    if (itemData) {
-      this.equipItemName.set(
-        ItemTypeEnum.weapon,
-        this.removeItemSlotName(itemData.name)
-      );
-    } else {
-      this.equipItemName.delete(ItemTypeEnum.weapon);
-    }
-    this.equipItemNameSet = new Set(this.equipItemName.values());
-    this.mapRefine.set(ItemTypeEnum.weapon, refine);
-    this.weaponData = new Weapon().set(itemData, refine);
-
-    return this;
-  }
-
-  setItem(itemType: ItemTypeEnum, itemId: number, refine?: number) {
-    const itemData = this.getItem(itemId);
-    this.equipItem.set(itemType, itemData);
-    if (itemData) {
-      this.equipItemName.set(itemType, this.removeItemSlotName(itemData.name));
-    } else {
-      this.equipItemName.delete(itemType);
-    }
-    this.equipItemNameSet = new Set(this.equipItemName.values());
-    if (refine != null) {
-      this.mapRefine.set(itemType, refine);
-    }
-
-    return this;
-  }
-
   private getRefineLevelByItemType(itemType: ItemTypeEnum) {
     for (const _itemType of refinableItemTypes) {
       if (itemType.startsWith(_itemType)) {
@@ -846,6 +855,28 @@ export class Calculator {
         continue;
       }
 
+      if (itemType !== ItemTypeEnum.weapon) {
+        if (itemData.attack) {
+          this.equipStatus[itemType].atk = itemData.attack;
+          if (this.totalEquipStatus['atk']) {
+            this.totalEquipStatus['atk'] += itemData.attack;
+          } else {
+            this.totalEquipStatus['atk'] = itemData.attack;
+          }
+        } else if (itemData.matk) {
+          this.equipStatus[itemType].matk = itemData.matk;
+          if (this.totalEquipStatus['matk']) {
+            this.totalEquipStatus['matk'] += itemData.matk;
+          } else {
+            this.totalEquipStatus['matk'] = itemData.matk;
+          }
+        }
+      }
+
+      // if (itemData.defense) {
+      //   this.equipStatus[itemType].def = itemData.attack;
+      // }
+
       // console.log({ itemType, itemData });
       const refine = this.getRefineLevelByItemType(itemType);
       const calculatedItem = this.calcItemStatus(refine, itemData.script);
@@ -860,19 +891,23 @@ export class Calculator {
       }
     }
 
+    for (const cons of this.consumableBonuses) {
+      for (const [attr, value] of Object.entries(cons)) {
+        const valNum = Number(value);
+        if (this.totalEquipStatus[attr]) {
+          this.totalEquipStatus[attr] += valNum;
+        } else {
+          this.totalEquipStatus[attr] = valNum;
+        }
+      }
+    }
+
     const allStatus = this.totalEquipStatus.allStatus ?? 0;
-    for (const [index, status] of mainStatuses.entries()) {
+    for (const status of mainStatuses) {
       if (this.totalEquipStatus[status]) {
         this.totalEquipStatus[status] += allStatus;
       } else {
         this.totalEquipStatus[status] = allStatus;
-      }
-
-      const extra = extraStatuses[index];
-      if (this.model[extra]) {
-        this.model[extra] += this.totalEquipStatus[status];
-      } else {
-        this.model[extra] = this.totalEquipStatus[status];
       }
     }
   }
@@ -887,7 +922,7 @@ export class Calculator {
       baseLevel: this.model.level,
       skillLevel,
     });
-    console.log({ baseSkillDamage });
+    // console.log({ baseSkillDamage });
     const { minDamage, maxDamage } = this.calcRangeSkillDamage(
       skillName,
       baseSkillDamage
@@ -920,6 +955,8 @@ export class Calculator {
       weapon: this.weaponData.data,
       statusBonus: this.statusBonus,
       totalEquipAtk: this.totalEquipAtk,
+      totalMasteryAtk: this.totalMasteryAtk,
+      totalBuffAtk: this.totalBuffAtk,
       totalStatusAtk: this.totalStatusAtk,
       totalWeaponAtkMin: this.totalWeaponAtkMin,
       totalWeaponAtkMax: this.totalWeaponAtkMax,
@@ -930,8 +967,6 @@ export class Calculator {
       totalMinAtk: this.totalMinAtk,
       totalMaxAtk: this.totalMaxAtk,
       equipments: [...this.equipItemNameSet.keys()],
-      equipAtkSkillBonus: this.equipAtkSkillBonus,
-      masteryAtkSkillBonus: this.masteryAtkSkillBonus,
     };
   }
 
@@ -943,7 +978,12 @@ export class Calculator {
       obj[itemType] = this.getObjSummary(this.equipStatus[itemType]);
     }
 
-    return obj;
+    return {
+      ...obj,
+      consumableBonuses: this.consumableBonuses,
+      equipAtkSkillBonus: this.equipAtkSkillBonus,
+      masteryAtkSkillBonus: this.masteryAtkSkillBonus,
+    };
   }
 
   getModelSummary() {

@@ -26,12 +26,14 @@ interface ItemModel {
   itemSubTypeId: number;
   itemLevel: any;
   attack: any;
+  propertyAtk?: any;
   defense: any;
   weight: number;
   requiredLevel: any;
   location: any;
   compositionPos: number;
   enchants: [null, string[], string[], string[]];
+  script: Record<string, any[]>;
 }
 
 enum CardPosition {
@@ -47,6 +49,8 @@ enum CardPosition {
 }
 enum ItemSubTypeId {
   Gatling_Gun = 275,
+  Arrow = 1024,
+  Cannonball = 1025,
   Upper = 512,
   Shield = 514,
   Armor = 513,
@@ -81,6 +85,7 @@ const Characters = [{ label: 'Rebelion', value: 1 }];
 const itemTypes = Object.freeze(Object.values(ItemTypeEnum));
 const mapItemType: Partial<Record<ItemTypeEnum, ItemTypeEnum[]>> = {
   [ItemTypeEnum.weapon]: [],
+  [ItemTypeEnum.ammo]: [],
   [ItemTypeEnum.headUpper]: [],
   [ItemTypeEnum.headMiddle]: [],
   [ItemTypeEnum.headLower]: [],
@@ -121,16 +126,21 @@ for (const [_itemType, relatedItems] of Object.entries(mapItemType)) {
 interface DropdownModel {
   label: string;
   value: string | number;
+  element?: string;
 }
 
 const toDropdownList = <T extends {}>(
   list: T[],
   labelKey: keyof T,
-  valueKey: keyof T
+  valueKey: keyof T,
+  elementKey?: keyof T
 ): DropdownModel[] => {
   return list.map((a) => ({
     label: a[labelKey],
     value: a[valueKey],
+    element: elementKey
+      ? (a[elementKey] ?? a['stats']?.[elementKey] ?? '').replace('/s+d+/', '')
+      : undefined,
   }));
 };
 
@@ -274,6 +284,7 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
     weaponEnchant1: undefined,
     weaponEnchant2: undefined,
     weaponEnchant3: undefined,
+    ammo: undefined,
     headUpper: undefined,
     headUpperRefine: undefined,
     headUpperCard: undefined,
@@ -357,14 +368,8 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
     consumables: [],
   };
 
-  refineList = [
-    0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
-  ].map((a) => ({
-    label: a.toString(),
-    value: a,
-  }));
-
   basicEnchants: DropdownModel[] = []; // atk atk%, aspd, state
+  refineList = createNumberDropdownList(0, 20);
   mainStatusList = createNumberDropdownList(1, 130);
   levelList = createNumberDropdownList(1, 200);
   jobList = createNumberDropdownList(1, 65);
@@ -374,6 +379,7 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
   weaponEnchant1List: DropdownModel[] = [];
   weaponEnchant2List: DropdownModel[] = [];
   weaponEnchant3List: DropdownModel[] = [];
+  ammoList: DropdownModel[] = [];
   headUpperList: DropdownModel[] = [];
   headUpperEnchant1List: DropdownModel[] = [];
   headUpperEnchant2List: DropdownModel[] = [];
@@ -616,6 +622,7 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
   private setDropdownList() {
     const weaponList = [];
     const weaponCardList = [];
+    const ammoList: ItemModel[] = [];
     const headUpperList = [];
     const headMiddleList = [];
     const headLowerList = [];
@@ -650,15 +657,17 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
 
     for (const item of Object.values(this.items) as unknown as ItemModel[]) {
       const { itemTypeId, itemSubTypeId, compositionPos, location } = item;
-      if (itemTypeId === ItemTypeId.WEAPON) {
-        weaponList.push(item);
 
-        continue;
-      }
-      if (itemTypeId === ItemTypeId.CONSUMABLE) {
-        consumableList.push(item);
-
-        continue;
+      switch (itemTypeId) {
+        case ItemTypeId.WEAPON:
+          weaponList.push(item);
+          continue;
+        case ItemTypeId.CONSUMABLE:
+          consumableList.push(item);
+          continue;
+        case ItemTypeId.AMMO:
+          ammoList.push(item);
+          continue;
       }
 
       switch (itemSubTypeId) {
@@ -764,6 +773,7 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
 
     this.weaponList = toDropdownList(weaponList, 'name', 'id');
     this.weaponCardList = toDropdownList(weaponCardList, 'name', 'id');
+    this.ammoList = toDropdownList(ammoList, 'name', 'id', 'propertyAtk');
     this.headUpperList = toDropdownList(headUpperList, 'name', 'id');
     this.headMiddleList = toDropdownList(headMiddleList, 'name', 'id');
     this.headLowerList = toDropdownList(headLowerList, 'name', 'id');
@@ -782,7 +792,12 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
     this.accRightCardList = toDropdownList(accRightCardList, 'name', 'id');
     this.petList = petList.map((a) => ({ label: a.name, value: a.id }));
 
-    this.monsterList = toDropdownList(Object.values(monsterData), 'name', 'id');
+    this.monsterList = toDropdownList(
+      Object.values(monsterData),
+      'name',
+      'id',
+      'elementName' as any
+    );
     this.consumableList = toDropdownList(consumableList, 'name', 'id');
 
     this.costumeEnhUpperList = toDropdownList(
@@ -966,6 +981,11 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   onConsumableChange() {
+    const consumeData = this.model.consumables.map(
+      (id) => this.items[id].script
+    );
+    this.calculator.setConsumables(consumeData);
+
     this.updateItemEvent.next(1);
   }
 

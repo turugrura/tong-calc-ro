@@ -26,3 +26,48 @@ pre {
     align-items: center;
     justify-content: center;
   }
+  
+.property_Water {
+  background-color: #7ba7e1;
+  color: white;
+}
+
+.property_Earth {
+  background-color: #daaf85;
+  color: black;
+}
+
+.property_Fire {
+  background-color: #ff7575;
+  color: white;
+}
+
+.property_Wind {
+  background-color: #cafeb8;
+  color: black;
+}
+
+.property_Poison {
+  background-color: #4bfe78;
+  color: black;
+}
+
+.property_Holy {
+  background-color: #ffffaa;
+  color: black;
+}
+
+.property_Dark {
+  background-color: #a55feb;
+  color: white;
+}
+
+.property_Ghost {
+  background-color: #aaaaaa;
+  color: black;
+}
+
+.property_Undead {
+  background-color: black;
+  color: white;
+}
