@@ -152,8 +152,9 @@ interface SkillBuff<
   };
   // Record
 }
-const skillBuffs: any = {
+const skillBuffs = {
   impositioManus: {
+    name: 'Impositio Manus',
     label: 'Impositio Manus',
     dropdown: [
       { label: 'Yes', value: 1, bonus: { atk: 25 } },
@@ -161,6 +162,7 @@ const skillBuffs: any = {
     ],
   },
   advBlessing: {
+    name: 'Clementia',
     label: 'Clementia',
     dropdown: [
       {
@@ -191,6 +193,7 @@ const skillBuffs: any = {
     ],
   },
   advAgiUp: {
+    name: 'Cantocandidus',
     label: 'Cantocandidus',
     dropdown: [
       {
@@ -221,9 +224,14 @@ const skillBuffs: any = {
     ],
   },
   expiatio: {
+    name: 'Expiatio',
     label: 'Expiatio',
     dropdown: [
-      { label: 'Yes', value: 1, bonus: { p_pene_all: 25, m_pene_all: 25 } },
+      {
+        label: 'Yes',
+        value: 1,
+        bonus: { p_pene_race_all: 25, m_pene_race_all: 25 },
+      },
       { label: 'No', value: 2 },
     ],
   },
@@ -492,9 +500,22 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
         passiveIds: passiveSkills,
       });
 
+    const buffs = {};
+    const addBuffBonus = (buffKey: string) => {
+      if (!this.model[buffKey]) return;
+
+      const { bonus } = this.skillBuffs[buffKey].dropdown.find(
+        (a) => a.value === this.model[buffKey]
+      );
+      if (!bonus) return;
+
+      buffs[this.skillBuffs[buffKey].name] = bonus;
+    };
+    Object.keys(this.skillBuffs).forEach(addBuffBonus);
+
     const calc = this.calculator
       .setModel(this.model)
-      .setEquipAtkSkillAtk(equipAtks)
+      .setEquipAtkSkillAtk({ ...equipAtks, ...buffs })
       .setMasterySkillAtk(masteryAtks)
       .setUsedSkillNames(skillNames)
       .setLearnedSkills(learnedSkillMap)
@@ -994,6 +1015,10 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   onSkillBuffChange() {
+    this.updateItemEvent.next(1);
+  }
+
+  onMonsterChange() {
     this.updateItemEvent.next(1);
   }
 }

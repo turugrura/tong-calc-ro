@@ -203,6 +203,9 @@ export class Calculator {
     m_class_normal: 0,
     m_class_boss: 0,
     m_class_champion: 0,
+    p_pene_race_all: 0,
+    p_pene_size_all: 0,
+    p_pene_element_all: 0,
   };
   private totalEquipStatus = { ...this.allStatus };
   private equipStatus = {
@@ -265,6 +268,7 @@ export class Calculator {
   };
   private weaponData = new Weapon();
   private monsterData = {
+    name: '',
     race: '',
     size: '',
     element: '',
@@ -277,6 +281,9 @@ export class Calculator {
   private propertyMultiplier = 1;
 
   private buff: any[] = [];
+
+  private dmgReductionByHardDef = 0;
+  private totalPene = 0;
 
   private statusBonus = 0;
   private totalMasteryAtk = 0;
@@ -364,6 +371,7 @@ export class Calculator {
 
   setMonster(monster: MonsterModel) {
     const {
+      name,
       stats: {
         defense,
         vit,
@@ -376,11 +384,13 @@ export class Calculator {
     } = monster;
     const [pureElement] = elementName.split(' ');
 
+    this.monster = monster;
     this.monsterData = {
+      name,
       element: pureElement.toLowerCase(),
       elementLevel: elementName.toLowerCase(),
       race: raceName.toLowerCase(),
-      size: scaleName.substring(0, 1).toLowerCase(),
+      size: scaleName.at(0).toLowerCase(),
       type: monsterTypeId === 1 ? 'normal' : 'boss',
       hardDef: (4000 + defense) / (4000 + defense * 10),
       softDef: Math.floor((level + vit) / 2),
@@ -606,6 +616,35 @@ export class Calculator {
     this.totalMaxAtk = totalMaxAtk;
   }
 
+  private calcTotalPene() {
+    const { size, race, element } = this.monsterData;
+    const { p_pene_race_all, p_element_neutral, p_pene_size_all } =
+      this.totalEquipStatus;
+    const rawPene = p_pene_race_all + p_element_neutral + p_pene_size_all;
+    const byMonster =
+      (this.totalEquipStatus[`p_pene_size_${size}`] ?? 0) +
+      (this.totalEquipStatus[`p_pene_element_${element}`] ?? 0) +
+      (this.totalEquipStatus[`p_pene_race_${race}`] ?? 0);
+    const totalPene = rawPene + byMonster;
+
+    this.totalPene = totalPene >= 100 ? 100 : totalPene;
+  }
+
+  private calcMonsterHardDef() {
+    const def = this.monster.stats.defense;
+    const pene = this.totalPene;
+    console.log({
+      def,
+      pene,
+      up: 4000 + def * ((100 - pene) / 100),
+      down: 4000 + def * ((100 - pene) / 100) * 10,
+    });
+
+    this.dmgReductionByHardDef =
+      (4000 + def * ((100 - pene) / 100)) /
+      (4000 + def * ((100 - pene) / 100) * 10);
+  }
+
   calcBasicRangeDamage() {
     const range = this.totalEquipStatus.range;
     const basicRangeMinDamage = Math.floor(this.totalMinAtk * range);
@@ -624,7 +663,11 @@ export class Calculator {
     this.calcAtkGroupA();
     this.calcAtkGroupB();
     this.calcTotalAtk();
-    const { softDef, hardDef } = this.monsterData;
+
+    this.calcTotalPene();
+    this.calcMonsterHardDef();
+
+    const { softDef } = this.monsterData;
     const damageMultiplier = this.isRangeAtk()
       ? this.totalEquipStatus.range
       : this.totalEquipStatus.melee;
@@ -634,6 +677,8 @@ export class Calculator {
     const skillItemMultiplier = this.toPercent(
       100 + (this.totalEquipStatus[skillName] || 0)
     );
+    const hardDef = this.dmgReductionByHardDef;
+
     const formular = (totalAtk: number) => {
       const rawDamage = Math.floor(
         totalAtk * this.toPercent(damageMultiplier + 100)
@@ -961,8 +1006,11 @@ export class Calculator {
   getTotalummary() {
     return {
       ...this.getObjSummary(this.totalEquipStatus),
+      monster: { ...this.monsterData },
       weapon: this.weaponData.data,
+      dmgReductionByHardDef: this.dmgReductionByHardDef,
       statusBonus: this.statusBonus,
+      totalPene: this.totalPene,
       totalEquipAtk: this.totalEquipAtk,
       totalMasteryAtk: this.totalMasteryAtk,
       totalBuffAtk: this.totalBuffAtk,
