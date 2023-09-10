@@ -270,8 +270,6 @@
         <p-dropdown
           inputId="weaponRefine"
           [options]="refineList"
-          [filter]="true"
-          filterBy="label"
           [(ngModel)]="model.weaponRefine"
           [disabled]="!model.weapon"
           (onChange)="onSelectItem('weapon', model.weapon, $event.value)"
@@ -409,8 +407,6 @@
       <div class="col-fixed" style="width: 80px">
         <p-dropdown
           [options]="refineList"
-          [filter]="true"
-          filterBy="label"
           [(ngModel)]="model.shieldRefine"
         ></p-dropdown>
       </div>
@@ -470,8 +466,6 @@
       <div class="col-fixed" style="width: 80px">
         <p-dropdown
           [options]="refineList"
-          [filter]="true"
-          filterBy="label"
           [(ngModel)]="model.headUpperRefine"
           [disabled]="!model.headUpper"
           (onChange)="onSelectItem('headUpper', model.headUpper, $event.value)"
@@ -788,8 +782,6 @@
       <div class="col-fixed" style="width: 80px">
         <p-dropdown
           [options]="refineList"
-          [filter]="true"
-          filterBy="label"
           [(ngModel)]="model.armorRefine"
           [disabled]="!model.armor"
           (onChange)="onSelectItem('armor', model.armor, $event.value)"
@@ -966,8 +958,6 @@
       <div class="col-fixed" style="width: 80px">
         <p-dropdown
           [options]="refineList"
-          [filter]="true"
-          filterBy="label"
           [(ngModel)]="model.garmentRefine"
           [disabled]="!model.garment"
           (onChange)="onSelectItem('garment', model.garment, $event.value)"
@@ -1142,8 +1132,6 @@
       <div class="col-fixed" style="width: 80px">
         <p-dropdown
           [options]="refineList"
-          [filter]="true"
-          filterBy="label"
           [(ngModel)]="model.bootRefine"
           [disabled]="!model.boot"
           (onChange)="onSelectItem('boot', model.boot, $event.value)"
@@ -2367,8 +2355,42 @@
         </div>
       </p-accordionTab>
 
-      <p-accordionTab header="Item Desc">
-        <div [innerHTML]="weaponDesc"></div>
+      <p-accordionTab header="Item Desciption">
+        <div class="grid grid-nogutter">
+          <div class="col-4">
+            <p-listbox
+              [options]="equipItems"
+              [(ngModel)]="selectedItemDesc"
+              [metaKeySelection]="false"
+              [listStyle]="{ 'max-height': '500px' }"
+              (onChange)="onSelectItemDescription()"
+            >
+              <ng-template let-item pTemplate="item">
+                <div class="flex gap-1">
+                  <img
+                    src="assets/demo/images/items/{{ item.value }}.png"
+                    style="width: 19px"
+                  />
+                  <div style="overflow: hidden; height: 19px">
+                    {{ item.label }}
+                  </div>
+                </div>
+              </ng-template>
+            </p-listbox>
+          </div>
+          <div class="col-8">
+            <div class="grid grid-nogutter ml-2">
+              <div class="col-12">
+                <pre [innerHTML]="itemBonus | prettyjson : [true, 3]"></pre>
+              </div>
+              <div
+                class="col-12 px-2 py-2"
+                style="color: #000; background-color: #fff"
+                [innerHTML]="itemDescription"
+              ></div>
+            </div>
+          </div>
+        </div>
       </p-accordionTab>
     </p-accordion>
   </div>

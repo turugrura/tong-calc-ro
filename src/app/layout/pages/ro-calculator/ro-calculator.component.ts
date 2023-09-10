@@ -464,7 +464,13 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
   modelSummary: any;
   totalSummary: any;
 
-  weaponDesc = '';
+  private equipItemMap = new Map<ItemTypeEnum, number>();
+  private equipItemIdItemTypeMap = new Map<number, ItemTypeEnum>();
+  equipItems: DropdownModel[] = [];
+  selectedItemDesc = undefined;
+  itemBonus = {};
+  itemDescription = '';
+  hover = '';
 
   constructor(
     private roService: RoService,
@@ -481,6 +487,8 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
     this.updateItemEvent.pipe(debounceTime(750)).subscribe(() => {
       this.logModel();
       this.saveItemSet();
+      this.resetItemDescription();
+      this.onSelectItemDescription();
     });
 
     this.roService.getItems<Record<number, ItemModel>>().then((items) => {
@@ -572,6 +580,29 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
       total[key] = value;
       return total;
     }, {});
+  }
+
+  resetItemDescription() {
+    const equipItemIds: number[] = [];
+    const map = new Map<number, ItemTypeEnum>();
+    for (const [itemType, itemId] of this.equipItemMap.entries()) {
+      if (itemId) {
+        equipItemIds.push(itemId);
+        map.set(itemId, itemType);
+      }
+    }
+
+    this.equipItemIdItemTypeMap = map;
+
+    if (!equipItemIds.includes(this.selectedItemDesc)) {
+      this.selectedItemDesc = undefined;
+    }
+    this.equipItems = [...new Set(equipItemIds)].map((id) => {
+      return {
+        label: this.items[id].name,
+        value: id,
+      };
+    });
   }
 
   private initialSkillArray() {
@@ -1066,26 +1097,14 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
     }
   }
 
-  onSelectItem(
-    itemType: string,
-    itemId = 0,
-    refine = 0,
-    isClearRelated = false
-  ) {
-    this.weaponDesc = this.items[itemId]?.description
-      .replaceAll('\n', '<br>')
-      .replaceAll('^000000', '</font>')
-      .replaceAll('^777777', '<font color=`#777777`>');
+  onSelectItem(itemType: string, itemId = 0, refine = 0) {
+    this.equipItemMap.set(itemType as ItemTypeEnum, itemId);
 
     // console.log({ itemType, itemId, refine });
     if (itemType === ItemTypeEnum.weapon) {
       this.calculator.setWeapon(itemId, refine);
     } else {
       this.calculator.setItem(itemType as ItemTypeEnum, itemId, refine);
-    }
-
-    if (isClearRelated) {
-      this.onClearItem(itemType);
     }
 
     this.updateItemEvent.next(1);
@@ -1134,5 +1153,16 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
   onMonsterChange() {
     localStorage.setItem('monster', this.selectedMonster.toString());
     this.updateItemEvent.next(1);
+  }
+
+  onSelectItemDescription() {
+    const selectedId = this.selectedItemDesc;
+    const itemType = this.equipItemIdItemTypeMap.get(selectedId);
+
+    this.itemBonus =
+      this.itemSummary[itemType] || this.itemSummary2[itemType] || {};
+    this.itemDescription = this.items[selectedId]?.description
+      .replaceAll('\n', '<br>')
+      .replace(/\^(.{6})/g, '<font color="#$1">');
   }
 }
