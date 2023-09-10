@@ -14,6 +14,11 @@ import { monsterData } from './monster-data';
 import { RoService } from 'src/app/demo/service/ro.service';
 import { Rebelion } from './rebellion';
 import { ItemModel } from './item.model';
+import {
+  ConfirmEventType,
+  ConfirmationService,
+  MessageService,
+} from 'primeng/api';
 
 enum CardPosition {
   Weapon = 0,
@@ -106,6 +111,7 @@ interface DropdownModel {
   label: string;
   value: string | number;
   element?: string;
+  [key: string]: any;
 }
 
 const toDropdownList = <T extends {}>(
@@ -229,16 +235,27 @@ const createNumberDropdownList = (
   });
 };
 
+const wait = (second: number) =>
+  new Promise((resolve) =>
+    setTimeout(() => {
+      resolve(1);
+    }, second * 1000)
+  );
+
 @Component({
   selector: 'app-ro-calculator',
   templateUrl: './ro-calculator.component.html',
   styleUrls: ['./ro-calculator.component.css'],
+  providers: [ConfirmationService, MessageService],
 })
 export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
   updateItemEvent = new Subject();
   items!: Record<number, ItemModel>;
   mapEnchant!: Map<string, ItemModel>;
   skillBuffs = skillBuffs;
+  preSets: DropdownModel[] = [];
+  selectedPreset = undefined;
+  isInProcessingPreset = false;
 
   model = {
     selectedAtkSkill: undefined,
@@ -435,7 +452,7 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
   totalPoints = 0;
   availablePoints = 0;
   monsterList: DropdownModel[] = [];
-  selectedMonster = 21067;
+  selectedMonster = Number(localStorage.getItem('monster')) || 21067;
   minDamage = 0;
   maxDamage = 0;
 
@@ -449,11 +466,34 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
 
   weaponDesc = '';
 
-  isLoadingItemSet = false;
-  hasItemChanged = false;
+  constructor(
+    private roService: RoService,
+    private messageService: MessageService,
+    private confirmationService: ConfirmationService
+  ) {}
 
-  constructor(private roService: RoService) {
-    //
+  ngOnInit() {
+    this.loadPresetList();
+
+    this.activeSkills = this.selectedCharacter.activeSkills;
+    this.passiveSkills = this.selectedCharacter.passiveSkills;
+    this.atkSkills = this.selectedCharacter.atkSkills;
+    this.updateItemEvent.pipe(debounceTime(750)).subscribe(() => {
+      this.logModel();
+      this.saveItemSet();
+    });
+
+    this.roService.getItems<Record<number, ItemModel>>().then((items) => {
+      this.items = items;
+      this.calculator.setMasterItems(items);
+      this.mapEnchant = new Map(
+        Object.values(items).map((item) => {
+          return [item.aegisName, item];
+        })
+      );
+      this.setDropdownList();
+      this.loadItemSet();
+    });
   }
 
   ngOnDestroy(): void {
@@ -470,8 +510,6 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   logModel() {
-    // console.log({ model: { ...this.model } });
-
     const { activeSkills, passiveSkills, selectedAtkSkill } = this.model;
     const { equipAtks, masteryAtks, skillNames, learnedSkillMap } =
       this.selectedCharacter.getSkillBonusAndName({
@@ -536,7 +574,7 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
     }, {});
   }
 
-  initialSkillArray() {
+  private initialSkillArray() {
     const { activeSkills, passiveSkills } = this.selectedCharacter;
     if (this.model.activeSkills?.length !== activeSkills.length) {
       this.model.activeSkills = [];
@@ -546,71 +584,132 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
     }
   }
 
-  loadItemSet() {
-    this.isLoadingItemSet = true;
-    const str = localStorage.getItem('ro-set');
-    this.model = { ...this.model, ...JSON.parse(str || '{}') };
+  private loadPresetList() {
+    this.preSets = JSON.parse(localStorage.getItem('presets') || '[]');
+  }
+
+  updatePreset(name: string) {
+    this.isInProcessingPreset = true;
+
+    const currentPresets = JSON.parse(
+      localStorage.getItem('presets') || '[]'
+    ) as DropdownModel[];
+    const currentPreset = currentPresets.find((a) => a.value === name);
+    if (currentPreset) {
+      this.confirmationService.confirm({
+        message: `You already have it, are you sure that you want to update "${name}" ?`,
+        header: 'Confirmation',
+        icon: 'pi pi-exclamation-triangle',
+        accept: () => {
+          currentPreset['model'] = this.model;
+          localStorage.setItem('presets', JSON.stringify(this.preSets));
+          this.loadPresetList();
+
+          this.messageService.add({
+            severity: 'info',
+            summary: 'Confirmed',
+            detail: `"${name}" was updated.`,
+          });
+          this.isInProcessingPreset = false;
+        },
+        reject: (type) => {
+          // switch (type as ConfirmEventType) {
+          //   case ConfirmEventType.REJECT:
+          //     this.messageService.add({
+          //       severity: 'error',
+          //       summary: 'Rejected',
+          //       detail: 'You have rejected',
+          //     });
+          //     break;
+          //   default:
+          //     this.messageService.add({
+          //       severity: 'warn',
+          //       summary: 'Cancelled',
+          //       detail: 'You have cancelled',
+          //     });
+          //     break;
+          // }
+          this.isInProcessingPreset = false;
+        },
+      });
+    } else {
+      wait(0.5)
+        .then(() => {
+          currentPresets.push({
+            label: name,
+            value: name,
+            model: this.model,
+          });
+          localStorage.setItem('presets', JSON.stringify(currentPresets));
+          this.loadPresetList();
+
+          this.messageService.add({
+            severity: 'success',
+            summary: 'Confirmed',
+            detail: `"${name}" was added.`,
+          });
+        })
+        .finally(() => (this.isInProcessingPreset = false));
+    }
+  }
+
+  laodPreset() {
+    const selected = this.preSets.find((a) => a.value === this.selectedPreset);
+    this.model = {
+      ...selected['model'],
+    };
+    this.loadItemSet(true);
+  }
+
+  loadItemSet(fromCurrentModel = false) {
+    this.isInProcessingPreset = true;
+
+    let str = '';
+    if (!fromCurrentModel) {
+      str = localStorage.getItem('ro-set');
+      this.model = { ...this.model, ...JSON.parse(str || '{}') };
+    }
     this.model.selectedAtkSkill =
       this.model.selectedAtkSkill || this.atkSkills[0]?.value;
 
     this.initialSkillArray();
     this.setJobBonus();
 
-    setTimeout(() => {
-      try {
-        if (str) {
-          for (const itemType of Object.keys(mapItemType)) {
-            const refine = this.model[`${itemType}Refine`];
-            const itemId = this.model[itemType];
-            this.setEnchantList(itemId);
-            this.onSelectItem(itemType, itemId, refine);
-            for (const relatedItemType of mapItemType[
-              itemType as ItemTypeEnum
-            ] ?? []) {
-              this.onSelectItem(
-                relatedItemType,
-                this.model[relatedItemType],
-                refine
-              );
+    return wait(0.5)
+      .then(() => {
+        try {
+          if (str || fromCurrentModel) {
+            for (const itemType of Object.keys(mapItemType) as ItemTypeEnum[]) {
+              const refine = this.model[`${itemType}Refine`];
+              const itemId = this.model[itemType];
+              this.setEnchantList(itemId);
+              this.onSelectItem(itemType, itemId, refine);
+              for (const relatedItemType of mapItemType[itemType] ?? []) {
+                this.onSelectItem(
+                  relatedItemType,
+                  this.model[relatedItemType],
+                  refine
+                );
+              }
+            }
+            this.onBaseStatusChange();
+
+            if (fromCurrentModel) {
+              this.messageService.add({
+                severity: 'success',
+                summary: 'Loaded',
+              });
             }
           }
-          this.onBaseStatusChange();
+        } catch (error) {
+          console.error(error);
         }
-      } catch (error) {
-        console.error(error);
-      } finally {
-        this.isLoadingItemSet = false;
-      }
-    }, 500);
+      })
+      .finally(() => (this.isInProcessingPreset = false));
   }
 
   saveItemSet() {
-    this.isLoadingItemSet = true;
     localStorage.setItem('ro-set', JSON.stringify(this.model));
-    this.isLoadingItemSet = false;
-    this.hasItemChanged = false;
-  }
-
-  ngOnInit() {
-    this.activeSkills = this.selectedCharacter.activeSkills;
-    this.passiveSkills = this.selectedCharacter.passiveSkills;
-    this.atkSkills = this.selectedCharacter.atkSkills;
-    this.updateItemEvent.pipe(debounceTime(750)).subscribe(() => {
-      this.logModel();
-      this.hasItemChanged = true;
-    });
-
-    this.roService.getItems<Record<number, ItemModel>>().then((items) => {
-      this.items = items;
-      this.calculator.setMasterItems(items);
-      this.mapEnchant = new Map(
-        (Object.values(items) as unknown as ItemModel[]).map((item) => {
-          return [item.aegisName, item];
-        })
-      );
-      this.setDropdownList();
-      this.loadItemSet();
-    });
   }
 
   setJobBonus() {
@@ -1004,9 +1103,12 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
     }
   }
 
-  onBaseStatusChange() {
+  onJobLevelChange() {
     this.setJobBonus();
+    this.updateItemEvent.next(1);
+  }
 
+  onBaseStatusChange() {
     const { str, agi, vit, int, dex, luk } = this.model;
     const mainStatuses = [str, agi, vit, int, dex, luk];
     const { availablePoint } = this.stateCalculator
@@ -1030,6 +1132,7 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   onMonsterChange() {
+    localStorage.setItem('monster', this.selectedMonster.toString());
     this.updateItemEvent.next(1);
   }
 }

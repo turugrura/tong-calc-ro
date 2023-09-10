@@ -1,30 +1,7 @@
+<p-toast></p-toast>
+<p-confirmDialog [style]="{ width: '50vw' }"></p-confirmDialog>
+
 <div class="grid">
-  <div class="col-fixed">
-    <button
-      pButton
-      type="button"
-      label="Calculate"
-      (click)="logModel()"
-    ></button>
-  </div>
-  <div class="col-fixed">
-    <button
-      pButton
-      type="button"
-      [disabled]="isLoadingItemSet || !hasItemChanged"
-      label="Save"
-      (click)="saveItemSet()"
-    ></button>
-  </div>
-  <div class="col-fixed">
-    <button
-      pButton
-      type="button"
-      [disabled]="isLoadingItemSet"
-      label="Load"
-      (click)="loadItemSet()"
-    ></button>
-  </div>
   <div class="col-2">
     <div class="p-inputgroup">
       <span class="p-inputgroup-addon" style="width: 80px">Class</span>
@@ -65,6 +42,36 @@
         [(ngModel)]="model.jobLevel"
         (ngModelChange)="onBaseStatusChange()"
       ></p-dropdown>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="p-inputgroup">
+      <input #presetName type="text" pInputText placeholder="Name" />
+      <button
+        type="button"
+        class="p-button-success"
+        pButton
+        label="Save"
+        [loading]="isInProcessingPreset"
+        [disabled]="!presetName.value"
+        (click)="updatePreset(presetName.value)"
+      ></button>
+      <p-dropdown
+        [autoDisplayFirst]="false"
+        [options]="preSets"
+        [filter]="true"
+        filterBy="label"
+        placeholder="Presets"
+        [(ngModel)]="selectedPreset"
+      ></p-dropdown>
+      <p-button
+        type="button"
+        styleClass="p-button-secondary"
+        label="Load"
+        [loading]="isInProcessingPreset"
+        [disabled]="!selectedPreset"
+        (onClick)="laodPreset()"
+      ></p-button>
     </div>
   </div>
 </div>
