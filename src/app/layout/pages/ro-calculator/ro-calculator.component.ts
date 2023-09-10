@@ -13,28 +13,7 @@ import { ItemTypeId } from './item.const';
 import { monsterData } from './monster-data';
 import { RoService } from 'src/app/demo/service/ro.service';
 import { Rebelion } from './rebellion';
-
-interface ItemModel {
-  id: number;
-  aegisName: string;
-  name: string;
-  unidName: string;
-  resName: string;
-  description: string;
-  slots: number;
-  itemTypeId: number;
-  itemSubTypeId: number;
-  itemLevel: any;
-  attack: any;
-  propertyAtk?: any;
-  defense: any;
-  weight: number;
-  requiredLevel: any;
-  location: any;
-  compositionPos: number;
-  enchants: [null, string[], string[], string[]];
-  script: Record<string, any[]>;
-}
+import { ItemModel } from './item.model';
 
 enum CardPosition {
   Weapon = 0,
@@ -460,7 +439,7 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
   minDamage = 0;
   maxDamage = 0;
 
-  calculator = new Calculator(this.model, monsterData[this.selectedMonster]);
+  calculator = new Calculator();
   stateCalculator = new BaseStateCalculator();
 
   itemSummary: any;
@@ -499,6 +478,11 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
         activeIds: activeSkills,
         passiveIds: passiveSkills,
       });
+
+    const consumeData = this.model.consumables.map(
+      (id) => this.items[id].script
+    );
+    this.calculator.setConsumables(consumeData);
 
     const buffs = {};
     const addBuffBonus = (buffKey: string) => {
@@ -589,8 +573,8 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
                 refine
               );
             }
-            this.onBaseStatusChange();
           }
+          this.onBaseStatusChange();
         }
       } catch (error) {
         console.error(error);
@@ -856,7 +840,18 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
       this.items[itemId] ?? ({} as ItemModel);
 
     const [_, e2, e3, e4] = Array.isArray(enchants) ? enchants : [];
-    // console.log({ itemSubTypeId, e2, e3, e4 });
+    const clearModel = (prefix) => {
+      for (const idx of [1, 2, 3]) {
+        const enchantList = this[
+          `${prefix}Enchant${idx}List`
+        ] as DropdownModel[];
+        const itemType = `${prefix}Enchant${idx}` as ItemTypeEnum;
+        if (!enchantList.find((a) => a.value === this.model[itemType])) {
+          this.model[itemType] = undefined;
+          this.calculator.setItem(itemType, null);
+        }
+      }
+    };
 
     switch (itemSubTypeId) {
       case ItemSubTypeId.Upper:
@@ -870,6 +865,7 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
           this.headMiddleEnchant3List = (e4 ?? [])
             .map((a: any) => this.mapEnchant.get(a))
             .map((a: any) => ({ label: a.name, value: a.id }));
+          clearModel('headMiddle');
         } else if (location === HeadLocation.Lower) {
           this.headLowerEnchant1List = (e2 ?? [])
             .map((a: any) => this.mapEnchant.get(a))
@@ -880,6 +876,7 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
           this.headLowerEnchant3List = (e4 ?? [])
             .map((a: any) => this.mapEnchant.get(a))
             .map((a: any) => ({ label: a.name, value: a.id }));
+          clearModel('headLower');
         } else {
           this.headUpperEnchant1List = (e2 ?? [])
             .map((a: any) => this.mapEnchant.get(a))
@@ -890,6 +887,7 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
           this.headUpperEnchant3List = (e4 ?? [])
             .map((a: any) => this.mapEnchant.get(a))
             .map((a: any) => ({ label: a.name, value: a.id }));
+          clearModel('headUpper');
         }
         break;
       case ItemSubTypeId.Shield:
@@ -902,6 +900,7 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
         this.shieldEnchant3List = (e4 ?? [])
           .map((a: any) => this.mapEnchant.get(a))
           .map((a: any) => ({ label: a.name, value: a.id }));
+        clearModel('shield');
         break;
       case ItemSubTypeId.Armor:
         this.armorEnchant1List = (e2 ?? [])
@@ -913,6 +912,7 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
         this.armorEnchant3List = (e4 ?? [])
           .map((a: any) => this.mapEnchant.get(a))
           .map((a: any) => ({ label: a.name, value: a.id }));
+        clearModel('armor');
         break;
       case ItemSubTypeId.Garment:
         this.garmentEnchant1List = (e2 ?? [])
@@ -924,6 +924,7 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
         this.garmentEnchant3List = (e4 ?? [])
           .map((a: any) => this.mapEnchant.get(a))
           .map((a: any) => ({ label: a.name, value: a.id }));
+        clearModel('garment');
         break;
       case ItemSubTypeId.Boot:
         this.bootEnchant1List = (e2 ?? [])
@@ -935,6 +936,7 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
         this.bootEnchant3List = (e4 ?? [])
           .map((a: any) => this.mapEnchant.get(a))
           .map((a: any) => ({ label: a.name, value: a.id }));
+        clearModel('boot');
         break;
       case ItemSubTypeId.Acc:
       case ItemSubTypeId.Acc_L:
@@ -947,6 +949,7 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
         this.accLeftEnchant3List = (e4 ?? [])
           .map((a: any) => this.mapEnchant.get(a))
           .map((a: any) => ({ label: a.name, value: a.id }));
+        clearModel('accLeft');
         break;
       case ItemSubTypeId.Acc:
       case ItemSubTypeId.Acc_R:
@@ -959,11 +962,17 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
         this.accRightEnchant3List = (e4 ?? [])
           .map((a: any) => this.mapEnchant.get(a))
           .map((a: any) => ({ label: a.name, value: a.id }));
+        clearModel('accRight');
         break;
     }
   }
 
-  onSelectItem(itemType: string, itemId = 0, refine = 0) {
+  onSelectItem(
+    itemType: string,
+    itemId = 0,
+    refine = 0,
+    isClearRelated = false
+  ) {
     this.weaponDesc = this.items[itemId]?.description
       .replaceAll('\n', '<br>')
       .replaceAll('^000000', '</font>')
@@ -975,13 +984,20 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
     } else {
       this.calculator.setItem(itemType as ItemTypeEnum, itemId, refine);
     }
+
+    if (isClearRelated) {
+      this.onClearItem(itemType);
+    }
+
     this.updateItemEvent.next(1);
   }
 
   onClearItem(itemType: string) {
-    const item = mapItemType[itemType as ItemTypeEnum] as ItemTypeEnum[];
-    if (item) {
-      for (const _itemType of item) {
+    const relatedItems = mapItemType[
+      itemType as ItemTypeEnum
+    ] as ItemTypeEnum[];
+    if (relatedItems) {
+      for (const _itemType of relatedItems) {
         this.model[_itemType] = undefined;
         this.onSelectItem(_itemType);
       }
@@ -1002,11 +1018,6 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   onConsumableChange() {
-    const consumeData = this.model.consumables.map(
-      (id) => this.items[id].script
-    );
-    this.calculator.setConsumables(consumeData);
-
     this.updateItemEvent.next(1);
   }
 

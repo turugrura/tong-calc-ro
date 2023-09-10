@@ -62,9 +62,9 @@ const jobBonusTable: [number, number, number, number, number, number][] = [
   [3, 6, 6, 8, 8, 5],
   [3, 6, 6, 8, 8, 5],
   [3, 6, 6, 8, 8, 5],
-  [3, 6, 6, 8, 8, 5],
-  [3, 6, 6, 8, 8, 5],
-  [3, 6, 6, 8, 8, 5],
+  [3, 6, 10, 8, 10, 5],
+  [3, 6, 10, 8, 10, 5],
+  [3, 6, 10, 8, 10, 5],
 ];
 
 export class Rebelion {

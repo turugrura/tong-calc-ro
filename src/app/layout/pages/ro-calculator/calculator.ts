@@ -1,3 +1,5 @@
+import { ElementMapper } from './element-mapper';
+import { ElementType } from './element-type.const';
 import { ItemTypeEnum } from './item-type.enum';
 import { ItemModel } from './item.model';
 import { MonsterModel } from './monster.model';
@@ -275,8 +277,9 @@ export class Calculator {
     elementLevel: '',
     type: '',
     softDef: 1,
-    hardDef: 0.5,
   };
+  private monster: MonsterModel;
+  private propertyAtk = ElementType.Neutral;
   private sizePenalty = 1;
   private propertyMultiplier = 1;
 
@@ -340,11 +343,6 @@ export class Calculator {
     return 100;
   }
 
-  constructor(private _model: any, private monster: MonsterModel) {
-    this.model = this._model;
-    this.setMonster(monster);
-  }
-
   setMasterItems(items: any) {
     this.items = items;
   }
@@ -367,6 +365,10 @@ export class Calculator {
 
   private toPercent(n: number) {
     return n * 0.01;
+  }
+
+  setClass(c: any) {
+    //
   }
 
   setMonster(monster: MonsterModel) {
@@ -392,7 +394,6 @@ export class Calculator {
       race: raceName.toLowerCase(),
       size: scaleName.at(0).toLowerCase(),
       type: monsterTypeId === 1 ? 'normal' : 'boss',
-      hardDef: (4000 + defense) / (4000 + defense * 10),
       softDef: Math.floor((level + vit) / 2),
     };
 
@@ -400,7 +401,7 @@ export class Calculator {
   }
 
   setModel(model: any) {
-    this.model = model;
+    this.model = { ...model };
 
     return this;
   }
@@ -479,6 +480,19 @@ export class Calculator {
     this.statusBonus = (this.weaponData.data.baseWeaponAtk * mainState) / 200; // base on weapon type
   }
 
+  private calcSizePenalty() {
+    this.sizePenalty = 1;
+  }
+
+  private calcPropertyMultiplier() {
+    const ammo = this.equipItem.get(ItemTypeEnum.ammo);
+    this.propertyAtk = ammo?.propertyAtk ?? ElementType.Neutral;
+
+    const pMultiplier =
+      ElementMapper[this.monster.stats.elementName][this.propertyAtk];
+    this.propertyMultiplier = this.toPercent(pMultiplier);
+  }
+
   private calcWeaponAtk() {
     const { baseWeaponAtk, baseWeaponLevel, refineBonus, overUpgradeBonus } =
       this.weaponData.data;
@@ -508,13 +522,12 @@ export class Calculator {
   private calcAtkGroupA() {
     const atkPercent = this.toPercent(this.totalEquipStatus.atkPercent);
     const formular = (totalAtk: number) => {
-      return Math.floor(
-        (totalAtk + this.totalEquipAtk) * atkPercent * this.propertyMultiplier
-      );
+      const a = Math.floor((totalAtk + this.totalEquipAtk) * atkPercent);
+
+      return Math.floor(a * this.propertyMultiplier);
     };
     const totalAMin = formular(this.totalWeaponAtkMin);
     const totalAMax = formular(this.totalWeaponAtkMax);
-    // console.log({ equipAtk, atkPercent, atk: this.totalWeaponAtkMin });
 
     this.totalAMin = totalAMin;
     this.totalAMax = totalAMax;
@@ -608,9 +621,8 @@ export class Calculator {
   private calcTotalAtk() {
     const statusAtk =
       this.totalStatusAtk * 2 + this.totalMasteryAtk + this.totalBuffAtk;
-    const statusAtkPenaltied = statusAtk * this.propertyMultiplier;
-    const totalMinAtk = this.totalAMin + this.totalBMin + statusAtkPenaltied;
-    const totalMaxAtk = this.totalAMax + this.totalBMax + statusAtkPenaltied;
+    const totalMinAtk = this.totalAMin + this.totalBMin + statusAtk;
+    const totalMaxAtk = this.totalAMax + this.totalBMax + statusAtk;
 
     this.totalMinAtk = totalMinAtk;
     this.totalMaxAtk = totalMaxAtk;
@@ -633,12 +645,6 @@ export class Calculator {
   private calcMonsterHardDef() {
     const def = this.monster.stats.defense;
     const pene = this.totalPene;
-    console.log({
-      def,
-      pene,
-      up: 4000 + def * ((100 - pene) / 100),
-      down: 4000 + def * ((100 - pene) / 100) * 10,
-    });
 
     this.dmgReductionByHardDef =
       (4000 + def * ((100 - pene) / 100)) /
@@ -654,6 +660,9 @@ export class Calculator {
   }
 
   calcRangeSkillDamage(skillName: string, baseSkillDamage?: number) {
+    this.calcPropertyMultiplier();
+    this.calcSizePenalty();
+
     this.calcEquipAtk();
     this.calcMasteryAtk();
     this.calcBuffAtk();
@@ -909,21 +918,12 @@ export class Calculator {
         continue;
       }
 
-      if (itemType !== ItemTypeEnum.weapon) {
-        if (itemData.attack) {
-          this.equipStatus[itemType].atk = itemData.attack;
-          if (this.totalEquipStatus['atk']) {
-            this.totalEquipStatus['atk'] += itemData.attack;
-          } else {
-            this.totalEquipStatus['atk'] = itemData.attack;
-          }
-        } else if (itemData.matk) {
-          this.equipStatus[itemType].matk = itemData.matk;
-          if (this.totalEquipStatus['matk']) {
-            this.totalEquipStatus['matk'] += itemData.matk;
-          } else {
-            this.totalEquipStatus['matk'] = itemData.matk;
-          }
+      if (itemType !== ItemTypeEnum.weapon && itemData.attack) {
+        this.equipStatus[itemType].atk = itemData.attack;
+        if (this.totalEquipStatus['atk']) {
+          this.totalEquipStatus['atk'] += itemData.attack;
+        } else {
+          this.totalEquipStatus['atk'] = itemData.attack;
         }
       }
 
@@ -1007,22 +1007,26 @@ export class Calculator {
     return {
       ...this.getObjSummary(this.totalEquipStatus),
       monster: { ...this.monsterData },
+      propertyAtk: this.propertyAtk,
+      propertyMultiplier: this.propertyMultiplier,
       weapon: this.weaponData.data,
-      dmgReductionByHardDef: this.dmgReductionByHardDef,
-      statusBonus: this.statusBonus,
-      totalPene: this.totalPene,
-      totalEquipAtk: this.totalEquipAtk,
-      totalMasteryAtk: this.totalMasteryAtk,
-      totalBuffAtk: this.totalBuffAtk,
-      totalStatusAtk: this.totalStatusAtk,
-      totalWeaponAtkMin: this.totalWeaponAtkMin,
-      totalWeaponAtkMax: this.totalWeaponAtkMax,
-      totalAMin: this.totalAMin,
-      totalAMax: this.totalAMax,
-      totalBMin: this.totalBMin,
-      totalBMax: this.totalBMax,
-      totalMinAtk: this.totalMinAtk,
-      totalMaxAtk: this.totalMaxAtk,
+      calc: {
+        dmgReductionByHardDef: this.dmgReductionByHardDef,
+        statusBonus: this.statusBonus,
+        totalPene: this.totalPene,
+        totalEquipAtk: this.totalEquipAtk,
+        totalMasteryAtk: this.totalMasteryAtk,
+        totalBuffAtk: this.totalBuffAtk,
+        totalStatusAtk: this.totalStatusAtk,
+        totalWeaponAtkMin: this.totalWeaponAtkMin,
+        totalWeaponAtkMax: this.totalWeaponAtkMax,
+        totalAMin: this.totalAMin,
+        totalAMax: this.totalAMax,
+        totalBMin: this.totalBMin,
+        totalBMax: this.totalBMax,
+        totalMinAtk: this.totalMinAtk,
+        totalMaxAtk: this.totalMaxAtk,
+      },
       equipments: [...this.equipItemNameSet.keys()],
     };
   }
