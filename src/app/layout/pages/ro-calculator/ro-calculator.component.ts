@@ -227,7 +227,7 @@ const createNumberDropdownList = (
   to: number
 ): DropdownModel[] => {
   return Array.from({ length: to - from + 1 }, (_, k) => {
-    const num = k + 1;
+    const num = k + from;
     return {
       label: num.toString(),
       value: num,
@@ -1158,9 +1158,11 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
   onSelectItemDescription() {
     const selectedId = this.selectedItemDesc;
     const itemType = this.equipItemIdItemTypeMap.get(selectedId);
-
-    this.itemBonus =
+    const script = this.items[selectedId]?.script ?? {};
+    const bonus =
       this.itemSummary[itemType] || this.itemSummary2[itemType] || {};
+
+    this.itemBonus = bonus; //{ script, bonus };
     this.itemDescription = this.items[selectedId]?.description
       .replaceAll('\n', '<br>')
       .replace(/\^(.{6})/g, '<font color="#$1">');

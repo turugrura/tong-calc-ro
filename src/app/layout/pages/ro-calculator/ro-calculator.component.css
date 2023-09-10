@@ -30,6 +30,11 @@ pre {
 :host ::ng-deep .p-inputgroup p-dropdown .p-dropdown-filter {
   width: 100%;
 }
+
+:host ::ng-deep .p-accordion-header-link {
+  padding-top: 0.75rem !important;
+  padding-bottom: 0.75rem !important;
+}
   
 .property_Water {
   background-color: #7ba7e1;

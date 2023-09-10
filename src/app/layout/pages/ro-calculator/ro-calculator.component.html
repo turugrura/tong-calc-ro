@@ -1,7 +1,7 @@
 <p-toast></p-toast>
 <p-confirmDialog [style]="{ width: '50vw' }"></p-confirmDialog>
 
-<div class="grid">
+<!-- <div class="grid">
   <div class="col-2">
     <div class="p-inputgroup">
       <span class="p-inputgroup-addon" style="width: 80px">Class</span>
@@ -74,23 +74,111 @@
       ></p-button>
     </div>
   </div>
-</div>
+</div> -->
+
 <div class="grid grid-nogutter">
   <!-- Left Side -->
   <div class="p-fluid col-7">
     <!-- Status -->
     <div class="grid grid-nogutter">
-      <div class="col-4">
+      <div class="col-3">
         <div class="grid grid-nogutter">
           <div class="col-12">
-            <span class="p-inputgroup-addon" style="width: 250px"
+            <div class="p-inputgroup">
+              <input
+                #presetName
+                max="20"
+                type="text"
+                pInputText
+                placeholder="Name"
+              />
+              <button
+                type="button"
+                class="p-button-success"
+                pButton
+                label="Save"
+                [loading]="isInProcessingPreset"
+                [disabled]="!presetName.value"
+                (click)="updatePreset(presetName.value)"
+              ></button>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="p-inputgroup">
+              <p-dropdown
+                [autoDisplayFirst]="false"
+                [options]="preSets"
+                [filter]="true"
+                filterBy="label"
+                placeholder="Presets"
+                [(ngModel)]="selectedPreset"
+              ></p-dropdown>
+              <p-button
+                type="button"
+                styleClass="p-button-secondary"
+                label="Load"
+                [loading]="isInProcessingPreset"
+                [disabled]="!selectedPreset"
+                (onClick)="laodPreset()"
+              ></p-button>
+            </div>
+          </div>
+
+          <div class="col-12">
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon" style="width: 80px">Class</span>
+              <p-dropdown
+                inputId="character"
+                [autoDisplayFirst]="false"
+                [options]="characterList"
+                [filter]="true"
+                filterBy="label"
+                [(ngModel)]="selectedCharacterId"
+                placeholder="Class"
+              ></p-dropdown>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon" style="width: 80px">Level</span>
+              <p-dropdown
+                inputId="level"
+                [autoDisplayFirst]="false"
+                [options]="levelList"
+                [filter]="true"
+                filterBy="label"
+                [(ngModel)]="model.level"
+                (ngModelChange)="onBaseStatusChange()"
+              ></p-dropdown>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon" style="width: 80px">Job</span>
+              <p-dropdown
+                inputId="jobLevel"
+                [autoDisplayFirst]="false"
+                [options]="jobList"
+                [filter]="true"
+                filterBy="label"
+                [(ngModel)]="model.jobLevel"
+                (ngModelChange)="onBaseStatusChange()"
+              ></p-dropdown>
+            </div>
+          </div>
+          <div class="col-12">
+            <span class="p-inputgroup-addon"
               >Available Status Point: {{ availablePoints }}</span
             >
           </div>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="grid grid-nogutter">
           <!-- STR -->
           <div class="col-12">
             <div class="p-inputgroup">
-              <span class="p-inputgroup-addon" style="width: 55px">Str</span>
+              <span class="p-inputgroup-addon" style="width: 45px">Str</span>
               <p-dropdown
                 inputId="str"
                 [autoDisplayFirst]="false"
@@ -100,15 +188,22 @@
                 [(ngModel)]="model.str"
                 (ngModelChange)="onBaseStatusChange()"
               ></p-dropdown>
-              <div>need 20</div>
-              <div>+ {{ model.jobStr }}</div>
-              <div>item {{ totalSummary?.str || 0 }}</div>
+              <p-badge
+                value="Job {{ model.jobStr || 0 }}"
+                size="large"
+                severity="warning"
+              ></p-badge>
+              <p-badge
+                value="{{ totalSummary?.str || 0 }}"
+                size="large"
+                severity="danger"
+              ></p-badge>
             </div>
           </div>
           <!-- AGI -->
           <div class="col-12">
             <div class="p-inputgroup">
-              <span class="p-inputgroup-addon" style="width: 55px">Agi</span>
+              <span class="p-inputgroup-addon" style="width: 45px">Agi</span>
               <p-dropdown
                 inputId="agi"
                 [autoDisplayFirst]="false"
@@ -118,15 +213,22 @@
                 [(ngModel)]="model.agi"
                 (ngModelChange)="onBaseStatusChange()"
               ></p-dropdown>
-              <div>next 20</div>
-              <div>+ {{ model.jobAgi }}</div>
-              <div>item {{ totalSummary?.agi || 0 }}</div>
+              <p-badge
+                value="Job {{ model.jobAgi || 0 }}"
+                size="large"
+                severity="warning"
+              ></p-badge>
+              <p-badge
+                value="{{ totalSummary?.agi || 0 }}"
+                size="large"
+                severity="danger"
+              ></p-badge>
             </div>
           </div>
           <!-- VIT -->
           <div class="col-12">
             <div class="p-inputgroup">
-              <span class="p-inputgroup-addon" style="width: 55px">Vit</span>
+              <span class="p-inputgroup-addon" style="width: 45px">Vit</span>
               <p-dropdown
                 inputId="vit"
                 [autoDisplayFirst]="false"
@@ -136,15 +238,22 @@
                 [(ngModel)]="model.vit"
                 (ngModelChange)="onBaseStatusChange()"
               ></p-dropdown>
-              <div>next 20</div>
-              <div>+ {{ model.jobVit }}</div>
-              <div>item {{ totalSummary?.vit || 0 }}</div>
+              <p-badge
+                value="Job {{ model.jobVit || 0 }}"
+                size="large"
+                severity="warning"
+              ></p-badge>
+              <p-badge
+                value="{{ totalSummary?.vit || 0 }}"
+                size="large"
+                severity="danger"
+              ></p-badge>
             </div>
           </div>
           <!-- INT -->
           <div class="col-12">
             <div class="p-inputgroup">
-              <span class="p-inputgroup-addon" style="width: 55px">Int</span>
+              <span class="p-inputgroup-addon" style="width: 45px">Int</span>
               <p-dropdown
                 inputId="int"
                 [autoDisplayFirst]="false"
@@ -154,15 +263,22 @@
                 [(ngModel)]="model.int"
                 (ngModelChange)="onBaseStatusChange()"
               ></p-dropdown>
-              <div>next 20</div>
-              <div>+ {{ model.jobInt }}</div>
-              <div>item {{ totalSummary?.int || 0 }}</div>
+              <p-badge
+                value="Job {{ model.jobInt || 0 }}"
+                size="large"
+                severity="warning"
+              ></p-badge>
+              <p-badge
+                value="{{ totalSummary?.int || 0 }}"
+                size="large"
+                severity="danger"
+              ></p-badge>
             </div>
           </div>
           <!-- DEX -->
           <div class="col-12">
             <div class="p-inputgroup">
-              <span class="p-inputgroup-addon" style="width: 55px">Dex</span>
+              <span class="p-inputgroup-addon" style="width: 45px">Dex</span>
               <p-dropdown
                 inputId="dex"
                 [autoDisplayFirst]="false"
@@ -172,15 +288,22 @@
                 [(ngModel)]="model.dex"
                 (ngModelChange)="onBaseStatusChange()"
               ></p-dropdown>
-              <div>next 20</div>
-              <div>+ {{ model.jobDex }}</div>
-              <div>item {{ totalSummary?.dex || 0 }}</div>
+              <p-badge
+                value="Job {{ model.jobDex || 0 }}"
+                size="large"
+                severity="warning"
+              ></p-badge>
+              <p-badge
+                value="{{ totalSummary?.dex || 0 }}"
+                size="large"
+                severity="danger"
+              ></p-badge>
             </div>
           </div>
           <!-- LUK -->
           <div class="col-12">
             <div class="p-inputgroup">
-              <span class="p-inputgroup-addon" style="width: 55px">Luk</span>
+              <span class="p-inputgroup-addon" style="width: 45px">Luk</span>
               <p-dropdown
                 inputId="luk"
                 [autoDisplayFirst]="false"
@@ -190,15 +313,22 @@
                 [(ngModel)]="model.luk"
                 (ngModelChange)="onBaseStatusChange()"
               ></p-dropdown>
-              <div>next 20</div>
-              <div>+ {{ model.jobLuk }}</div>
-              <div>item {{ totalSummary?.luk || 0 }}</div>
+              <p-badge
+                value="Job {{ model.jobLuk || 0 }}"
+                size="large"
+                severity="warning"
+              ></p-badge>
+              <p-badge
+                value="{{ totalSummary?.luk || 0 }}"
+                size="large"
+                severity="danger"
+              ></p-badge>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-4">
-        <div class="grid grid-nogutter">
+      <div class="col-3">
+        <div class="grid grid-nogutter mx-2">
           <div class="col-12">Atk: {{ totalSummary?.atk || 0 }}</div>
           <div class="col-12">Atk %: {{ totalSummary?.atkPercent }}</div>
           <div class="col-12">ASPD: {{ totalSummary?.aspd || 0 }}</div>
@@ -208,10 +338,11 @@
           </div>
           <div class="col-12">Cri Rate: {{ totalSummary?.cri || 0 }}</div>
           <div class="col-12">Cri Dmg: {{ totalSummary?.criDmg || 0 }}</div>
+          <div class="col-12">Range: {{ totalSummary?.range || 0 }}</div>
         </div>
       </div>
-      <div class="col-4">
-        <div class="grid grid-nogutter">
+      <div class="col-3">
+        <div class="grid grid-nogutter mx-2">
           <div class="col-12">
             Def: {{ totalSummary?.def || 0 }}, Mdef:
             {{ totalSummary?.mdef || 0 }}
@@ -2118,7 +2249,7 @@
 
   <!-- Right Side -->
   <div class="p-fluid col-5">
-    <p-accordion [multiple]="true" [activeIndex]="[1, 3]">
+    <p-accordion [multiple]="true" [activeIndex]="[4]">
       <p-accordionTab header="Foods / Class Skills">
         <div class="grid grid-nogutter">
           <!-- Consumable -->
@@ -2381,6 +2512,7 @@
           <div class="col-8">
             <div class="grid grid-nogutter ml-2">
               <div class="col-12">
+                ItemID: {{ selectedItemDesc }}
                 <pre [innerHTML]="itemBonus | prettyjson : [true, 3]"></pre>
               </div>
               <div

@@ -801,12 +801,16 @@ export class Calculator {
     return 0;
   }
 
-  private validateCondition(script: string): {
+  private validateCondition(
+    itemRefine: number,
+    script: string
+  ): {
     isValid: boolean;
     restCondition: string;
   } {
     let restCondition = script;
-    const mainStatusRegex = /(str|int|dex|agi|vit|luk):(\d+)&&(\d+===.+)/;
+    const mainStatusRegex =
+      /^(str|int|dex|agi|vit|luk|level):(\d+)&&(\d+===.+)/;
     const [, status, statusCondition, raw] =
       script.match(mainStatusRegex) ?? [];
     if (status) {
@@ -829,15 +833,46 @@ export class Calculator {
     const [setCondition, itemSet] = script.match(/^EQUIP\[(.+?)]/) ?? [];
     if (itemSet) {
       const itemSets = itemSet.split('&&').filter(Boolean);
-      // console.log({ itemSet, itemSets });
+      // console.log({ itemRefine, itemSet, itemSets });
       const valid = itemSets.every((item) => {
-        const res = this.isEquipItem(item);
-        // console.log({ item, res });
+        const res = item.split('||').some((_item) => this.isEquipItem(_item));
+        // if (itemRefine === 9) {
+        //   console.log({ item, res });
+        // }
         return res;
       });
       if (!valid) return { isValid: false, restCondition };
 
       restCondition = restCondition.replace(setCondition, '');
+
+      // REFINE[garment,armor==20]===10
+      // REFINE[9]===25
+      const [unused, refineCombo, refineCond] =
+        restCondition.match(/^REFINE\[(\D*?)=*=*(\d+)]/) ?? [];
+      if (refineCombo) {
+        const totalRefine = refineCombo
+          .split(',')
+          .map((itemType) => this.mapRefine.get(itemType as ItemTypeEnum))
+          .reduce((sum, cur) => sum + (cur || 0), 0);
+        if (totalRefine >= Number(refineCond)) {
+          restCondition = restCondition.replace(unused, '');
+          if (!restCondition.startsWith('===')) {
+            return this.validateCondition(itemRefine, restCondition);
+          }
+        } else {
+          return { isValid: false, restCondition };
+        }
+      } else if (refineCond) {
+        if (itemRefine >= Number(refineCond)) {
+          restCondition = restCondition.replace(unused, '');
+        } else {
+          return {
+            isValid: false,
+            restCondition,
+          };
+        }
+      }
+
       if (restCondition.startsWith('===')) {
         restCondition = restCondition.replace('===', '');
       }
@@ -845,9 +880,22 @@ export class Calculator {
       return { isValid: true, restCondition };
     }
 
+    const [unused, refineCond] = restCondition.match(/^REFINE\[(\d+)?]/) ?? [];
+    if (refineCond && itemRefine >= Number(refineCond)) {
+      restCondition = restCondition.replace(unused, '');
+      if (restCondition.startsWith('===')) {
+        restCondition = restCondition.replace('===', '');
+      }
+
+      return {
+        isValid: true,
+        restCondition,
+      };
+    }
+
     return {
       isValid: true,
-      restCondition: restCondition.replace(setCondition, ''),
+      restCondition: restCondition,
     };
   }
 
@@ -856,9 +904,12 @@ export class Calculator {
 
     // console.log({ itemRefine, script });
     for (const [attr, attrScripts] of Object.entries(script)) {
-      total[attr] = attrScripts.reduce((sum, miniScript) => {
-        const { isValid, restCondition } = this.validateCondition(miniScript);
-        // console.log({ miniScript, restCondition, isValid });
+      total[attr] = attrScripts.reduce((sum, lineScript) => {
+        const { isValid, restCondition } = this.validateCondition(
+          itemRefine,
+          lineScript
+        );
+        // console.log({ lineScript, restCondition, isValid });
         if (!isValid) return sum;
 
         if (restCondition.includes('===')) {
@@ -869,7 +920,7 @@ export class Calculator {
         }
 
         if (Number.isNaN(Number(restCondition))) {
-          console.log('cannot turn to number', { restCondition });
+          console.log('cannot turn to number', { lineScript, restCondition });
 
           return sum;
         }
