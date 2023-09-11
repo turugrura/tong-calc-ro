@@ -1,81 +1,6 @@
 <p-toast></p-toast>
 <p-confirmDialog [style]="{ width: '50vw' }"></p-confirmDialog>
 
-<!-- <div class="grid">
-  <div class="col-2">
-    <div class="p-inputgroup">
-      <span class="p-inputgroup-addon" style="width: 80px">Class</span>
-      <p-dropdown
-        inputId="character"
-        [autoDisplayFirst]="false"
-        [options]="characterList"
-        [filter]="true"
-        filterBy="label"
-        [(ngModel)]="selectedCharacterId"
-        placeholder="Class"
-      ></p-dropdown>
-    </div>
-  </div>
-  <div class="col-2">
-    <div class="p-inputgroup">
-      <span class="p-inputgroup-addon" style="width: 80px">Level</span>
-      <p-dropdown
-        inputId="level"
-        [autoDisplayFirst]="false"
-        [options]="levelList"
-        [filter]="true"
-        filterBy="label"
-        [(ngModel)]="model.level"
-        (ngModelChange)="onBaseStatusChange()"
-      ></p-dropdown>
-    </div>
-  </div>
-  <div class="col-2">
-    <div class="p-inputgroup">
-      <span class="p-inputgroup-addon" style="width: 80px">Job</span>
-      <p-dropdown
-        inputId="jobLevel"
-        [autoDisplayFirst]="false"
-        [options]="jobList"
-        [filter]="true"
-        filterBy="label"
-        [(ngModel)]="model.jobLevel"
-        (ngModelChange)="onBaseStatusChange()"
-      ></p-dropdown>
-    </div>
-  </div>
-  <div class="col-4">
-    <div class="p-inputgroup">
-      <input #presetName type="text" pInputText placeholder="Name" />
-      <button
-        type="button"
-        class="p-button-success"
-        pButton
-        label="Save"
-        [loading]="isInProcessingPreset"
-        [disabled]="!presetName.value"
-        (click)="updatePreset(presetName.value)"
-      ></button>
-      <p-dropdown
-        [autoDisplayFirst]="false"
-        [options]="preSets"
-        [filter]="true"
-        filterBy="label"
-        placeholder="Presets"
-        [(ngModel)]="selectedPreset"
-      ></p-dropdown>
-      <p-button
-        type="button"
-        styleClass="p-button-secondary"
-        label="Load"
-        [loading]="isInProcessingPreset"
-        [disabled]="!selectedPreset"
-        (onClick)="laodPreset()"
-      ></p-button>
-    </div>
-  </div>
-</div> -->
-
 <div class="grid grid-nogutter">
   <!-- Left Side -->
   <div class="p-fluid col-7">
@@ -147,6 +72,7 @@
                 [options]="levelList"
                 [filter]="true"
                 filterBy="label"
+                [resetFilterOnHide]="true"
                 [(ngModel)]="model.level"
                 (ngModelChange)="onBaseStatusChange()"
               ></p-dropdown>
@@ -161,6 +87,7 @@
                 [options]="jobList"
                 [filter]="true"
                 filterBy="label"
+                [resetFilterOnHide]="true"
                 [(ngModel)]="model.jobLevel"
                 (ngModelChange)="onBaseStatusChange()"
               ></p-dropdown>
@@ -185,6 +112,7 @@
                 [options]="mainStatusList"
                 [filter]="true"
                 filterBy="label"
+                [resetFilterOnHide]="true"
                 [(ngModel)]="model.str"
                 (ngModelChange)="onBaseStatusChange()"
               ></p-dropdown>
@@ -210,6 +138,7 @@
                 [options]="mainStatusList"
                 [filter]="true"
                 filterBy="label"
+                [resetFilterOnHide]="true"
                 [(ngModel)]="model.agi"
                 (ngModelChange)="onBaseStatusChange()"
               ></p-dropdown>
@@ -235,6 +164,7 @@
                 [options]="mainStatusList"
                 [filter]="true"
                 filterBy="label"
+                [resetFilterOnHide]="true"
                 [(ngModel)]="model.vit"
                 (ngModelChange)="onBaseStatusChange()"
               ></p-dropdown>
@@ -260,6 +190,7 @@
                 [options]="mainStatusList"
                 [filter]="true"
                 filterBy="label"
+                [resetFilterOnHide]="true"
                 [(ngModel)]="model.int"
                 (ngModelChange)="onBaseStatusChange()"
               ></p-dropdown>
@@ -285,6 +216,7 @@
                 [options]="mainStatusList"
                 [filter]="true"
                 filterBy="label"
+                [resetFilterOnHide]="true"
                 [(ngModel)]="model.dex"
                 (ngModelChange)="onBaseStatusChange()"
               ></p-dropdown>
@@ -310,6 +242,7 @@
                 [options]="mainStatusList"
                 [filter]="true"
                 filterBy="label"
+                [resetFilterOnHide]="true"
                 [(ngModel)]="model.luk"
                 (ngModelChange)="onBaseStatusChange()"
               ></p-dropdown>
@@ -1747,7 +1680,26 @@
           [showClear]="true"
           (onChange)="onSelectItem('pet', $event.value)"
           placeholder="Pet"
-        ></p-dropdown>
+        >
+          <ng-template let-item pTemplate="selectedItem">
+            <div class="flex gap-1" *ngIf="model.pet">
+              <img
+                src="assets/demo/images/items/{{ item.value }}.png"
+                style="width: 19px"
+              />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+          <ng-template let-item pTemplate="item">
+            <div class="flex gap-1">
+              <img
+                src="assets/demo/images/items/{{ item.value }}.png"
+                style="width: 19px"
+              />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
       </div>
     </div>
 

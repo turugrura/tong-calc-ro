@@ -764,12 +764,13 @@ export class Calculator {
     return Number(bonusScript);
   }
 
-  private calcStepBonus(itemRefine: number, miniScript: string) {
-    const [condition, bonus] = miniScript.split('---');
+  private calcStepBonus(itemRefine: number, lineScript: string) {
+    const [condition, bonus] = lineScript.split('---');
     const conditionNum = Number(condition);
     const bonusNum = Number(bonus);
     const calc = (actual: number, cond: number) =>
       Math.floor(actual / cond) * bonusNum;
+    // console.log({ lineScript, conditionNum, bonusNum });
     if (conditionNum && bonusNum) {
       return Math.floor(itemRefine / conditionNum) * bonusNum;
     }
@@ -792,16 +793,27 @@ export class Calculator {
 
     // dex:10---1
     const [, status, statusCond] =
-      condition.match(/(str|int|dex|agi|vit|luk):(\d+)/) ?? [];
+      condition.match(/(str|int|dex|agi|vit|luk):(-*\d+)/) ?? [];
+    // console.log({ status, statusCond });
     if (status) {
       const myStatus = this.model[status];
       return calc(myStatus, Number(statusCond));
+    }
+
+    // SUM[str,luk==80]---6
+    const [, sumOf, sumCond] = condition.match(/SUM\[(\D+)==(\d+)]/) ?? [];
+    if (sumOf) {
+      const sum = sumOf
+        .split(',')
+        .reduce((total, stat) => total + (this.model[stat] || 0), 0);
+      return calc(sum, Number(sumCond));
     }
 
     return 0;
   }
 
   private validateCondition(
+    itemType: ItemTypeEnum,
     itemRefine: number,
     script: string
   ): {
@@ -857,7 +869,7 @@ export class Calculator {
         if (totalRefine >= Number(refineCond)) {
           restCondition = restCondition.replace(unused, '');
           if (!restCondition.startsWith('===')) {
-            return this.validateCondition(itemRefine, restCondition);
+            return this.validateCondition(itemType, itemRefine, restCondition);
           }
         } else {
           return { isValid: false, restCondition };
@@ -891,6 +903,21 @@ export class Calculator {
         isValid: true,
         restCondition,
       };
+    } else if (refineCond) {
+      return { isValid: false, restCondition };
+    }
+
+    // POS[accRight]50
+    const [unusedPos, position] = script.match(/POS\[(\D+)]/) ?? [];
+    if (position) {
+      if (position === itemType) {
+        return {
+          isValid: true,
+          restCondition: restCondition.replace(unusedPos, ''),
+        };
+      }
+
+      return { isValid: false, restCondition };
     }
 
     return {
@@ -899,13 +926,18 @@ export class Calculator {
     };
   }
 
-  private calcItemStatus(itemRefine: number, script: Record<string, string[]>) {
+  private calcItemStatus(
+    itemType: ItemTypeEnum,
+    itemRefine: number,
+    script: Record<string, string[]>
+  ) {
     const total: Record<string, number> = {};
 
     // console.log({ itemRefine, script });
     for (const [attr, attrScripts] of Object.entries(script)) {
       total[attr] = attrScripts.reduce((sum, lineScript) => {
         const { isValid, restCondition } = this.validateCondition(
+          itemType,
           itemRefine,
           lineScript
         );
@@ -984,7 +1016,11 @@ export class Calculator {
 
       // console.log({ itemType, itemData });
       const refine = this.getRefineLevelByItemType(itemType);
-      const calculatedItem = this.calcItemStatus(refine, itemData.script);
+      const calculatedItem = this.calcItemStatus(
+        itemType,
+        refine,
+        itemData.script
+      );
       for (const [attr, value] of Object.entries(calculatedItem)) {
         this.equipStatus[itemType][attr] = value;
 
