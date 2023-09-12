@@ -19,6 +19,8 @@ import {
   ConfirmationService,
   MessageService,
 } from 'primeng/api';
+import { RaceType } from './race-type.const';
+import { ElementType } from './element-type.const';
 
 enum CardPosition {
   Weapon = 0,
@@ -224,12 +226,13 @@ const skillBuffs = {
 
 const createNumberDropdownList = (
   from: number,
-  to: number
+  to: number,
+  prefixLabel?: string
 ): DropdownModel[] => {
   return Array.from({ length: to - from + 1 }, (_, k) => {
     const num = k + from;
     return {
-      label: num.toString(),
+      label: `${prefixLabel || ''}${num}`,
       value: num,
     };
   });
@@ -241,6 +244,75 @@ const wait = (second: number) =>
       resolve(1);
     }, second * 1000)
   );
+
+const getTree = () => {
+  const atkTypes = ['Physical', 'Magical'];
+  const atkProps = {
+    Race: ['All', ...Object.values(RaceType)],
+    Element: ['All', ...Object.values(ElementType)],
+    Size: ['All', 'Small', 'Medium', 'Large'],
+    Class: ['All', 'Monster', 'Boss'],
+  };
+
+  const items = [];
+  for (const atkType of atkTypes) {
+    const atk = atkType.at(0).toLowerCase();
+    const item = {
+      value: atk,
+      label: atkType,
+      children: [],
+    };
+    for (const [prop, finalProps] of Object.entries(atkProps)) {
+      const propLow = prop.toLowerCase();
+      item.children.push({
+        value: `${atk}_${prop}`,
+        label: prop,
+        children: finalProps.map((finalProp) => {
+          const finalPropLow = finalProp.toLowerCase();
+          return {
+            value: `${atk}_${prop}_${finalProp}`,
+            label: finalProp,
+            children: Array.from({ length: 25 }, (_, k) => {
+              const num = k + 1;
+              return {
+                value: `${atk}_${propLow}_${finalPropLow}:${num}`,
+                label: `${atk.toUpperCase()}. ${prop} ${finalProp} ${num}%`,
+              };
+            }),
+          };
+        }),
+      });
+    }
+
+    items.push(item);
+  }
+
+  const options: [string, string, number, number][] = [
+    ['Atk', 'atk', 10, 65],
+    ['Matk', 'matk', 10, 65],
+    ['Delay', 'acd', 1, 15],
+    ['VCT', 'vct', 1, 20],
+    ['CRI', 'cri', 1, 20],
+    ['Cri Dmg', 'criDmg', 1, 20],
+    ['ASPD %', 'aspdPercent', 1, 20],
+  ];
+  for (const [label, prop, min, max] of options) {
+    const item = {
+      value: label,
+      label,
+      children: Array.from({ length: max - min + 1 }, (_, k) => {
+        const num = k + min;
+        return {
+          label: `${label} ${num}`,
+          value: `${prop}:${num}`,
+        };
+      }),
+    };
+    items.push(item);
+  }
+
+  return items;
+};
 
 @Component({
   selector: 'app-ro-calculator',
@@ -377,6 +449,9 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
   mainStatusList = createNumberDropdownList(1, 130);
   levelList = createNumberDropdownList(1, 200);
   jobList = createNumberDropdownList(1, 65);
+
+  optionList: any[] = getTree();
+  selectedOption = undefined;
 
   weaponList: DropdownModel[] = [];
   weaponCardList: DropdownModel[] = [];
@@ -1166,5 +1241,9 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
     this.itemDescription = this.items[selectedId]?.description
       .replaceAll('\n', '<br>')
       .replace(/\^(.{6})/g, '<font color="#$1">');
+  }
+
+  onLog() {
+    console.log(this.selectedOption);
   }
 }

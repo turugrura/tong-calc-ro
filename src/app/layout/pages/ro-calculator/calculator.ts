@@ -809,6 +809,18 @@ export class Calculator {
       return calc(sum, Number(sumCond));
     }
 
+    // REFINE[boot==1]---2
+    const [, refineCombo, refineCond] =
+      condition.match(/^REFINE\[(\D*?)=*=*(\d+)]/) ?? [];
+    if (refineCombo) {
+      const totalRefine = refineCombo
+        .split(',')
+        .map((itemType) => this.mapRefine.get(itemType as ItemTypeEnum))
+        .reduce((sum, cur) => sum + (cur || 0), 0);
+
+      return calc(totalRefine, Number(refineCond));
+    }
+
     return 0;
   }
 
