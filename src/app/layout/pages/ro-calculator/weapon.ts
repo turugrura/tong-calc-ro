@@ -94,7 +94,17 @@ const weaponUpgradeTable: Record<
   },
 };
 
+const weaponSubType = {
+  Bow: 'bow',
+  'Gatling Gun': 'gun',
+  Pistol: 'gun',
+  Rifle: 'gun',
+  Shotgun: 'gun',
+  'Grenade Launcher': 'gun',
+};
+
 export class Weapon {
+  private _subTypeName = '';
   private _baseWeaponAtk = 0;
   private _baseWeaponLevel = 0;
   private _refineBonus = 0;
@@ -104,14 +114,19 @@ export class Weapon {
   set(itemData: ItemModel, refineLevel: number) {
     if (!itemData) return this;
 
-    const { itemLevel, attack } = itemData;
+    const { itemLevel, attack, unidName } = itemData;
     this._baseWeaponAtk = attack;
     this._baseWeaponLevel = itemLevel;
+    this._subTypeName = weaponSubType[unidName];
     if (refineLevel > 0) {
       const { bonus, highUpgrade, overUpgrade } = weaponUpgradeTable[itemLevel][refineLevel];
       this._refineBonus = bonus;
       this._overUpgradeBonus = overUpgrade;
       this._highUpgradeBonus = highUpgrade;
+    } else {
+      this._refineBonus = 0;
+      this._overUpgradeBonus = 0;
+      this._highUpgradeBonus = 0;
     }
 
     return this;
@@ -119,6 +134,7 @@ export class Weapon {
 
   get data() {
     return {
+      subTypeName: this._subTypeName,
       baseWeaponAtk: this._baseWeaponAtk,
       baseWeaponLevel: this._baseWeaponLevel,
       refineBonus: this._refineBonus,

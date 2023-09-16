@@ -1,3 +1,5 @@
+import { ActiveSkillModel, AtkSkillModel, CharacterBase, PassiveSkillModel } from './char-class.abstract';
+
 const jobBonusTable: [number, number, number, number, number, number][] = [
   [0, 0, 0, 0, 0, 0], // job 0
   [0, 0, 0, 0, 0, 0],
@@ -67,27 +69,26 @@ const jobBonusTable: [number, number, number, number, number, number][] = [
   [3, 6, 10, 8, 10, 5],
 ];
 
-export class Rebelion {
-  private _level = 1;
-  private _atkSkillList = [
+export class Rebelion extends CharacterBase {
+  protected initialStatusPoint = 100;
+  private _atkSkillList: AtkSkillModel[] = [
     {
       label: 'Round Trip',
       name: 'Round Trip',
-      value: 'Round Trip',
-      formular: ({
-        baseLevel,
-        skillLevel,
-      }: {
-        baseLevel: number;
-        skillLevel: number;
-      }): number => {
+      value: 'Round Trip==10',
+      acd: 0,
+      fct: 0,
+      vct: 0,
+      cd: 0,
+      levelList: [{ label: 'Lv 10', value: 'Round Trip==10' }],
+      formular: ({ baseLevel, skillLevel }: { baseLevel: number; skillLevel: number }): number => {
         return (skillLevel * 200 + 500) * (baseLevel / 100);
       },
     },
   ];
-  private _activeSkillList = [
+  private _activeSkillList: ActiveSkillModel[] = [
     {
-      isEquip: true,
+      isEquipAtk: true,
       inputType: 'selectButton',
       label: 'Platinum Altar',
       name: 'Platinum Altar',
@@ -103,7 +104,7 @@ export class Rebelion {
       ],
     },
     {
-      isMastery: true,
+      isMasteryAtk: true,
       inputType: 'selectButton',
       label: "Rich's Coin",
       name: "Rich's Coin",
@@ -113,15 +114,14 @@ export class Rebelion {
       ],
     },
   ];
-  private _passiveSkillList = [
+  private _passiveSkillList: PassiveSkillModel[] = [
     {
-      isEquip: true,
-      isMastery: false,
+      isEquipAtk: true,
       inputType: 'dropdown',
       label: 'Snake Eyes',
       name: 'Snake Eyes',
       dropdown: [
-        { label: '0', value: 0, isUse: false, bonus: undefined },
+        { label: '0', value: 0, isUse: false },
         { label: '1', value: 1, skillLv: 1, isUse: true, bonus: { hit: 1 } },
         { label: '2', value: 2, skillLv: 2, isUse: true, bonus: { hit: 2 } },
         { label: '3', value: 3, skillLv: 3, isUse: true, bonus: { hit: 3 } },
@@ -143,8 +143,9 @@ export class Rebelion {
     {
       label: 'Chain Action Lv10',
       name: 'Chain Action',
+      inputType: 'selectButton',
       dropdown: [
-        { label: 'Yes', value: 10, skillLv: 10, isUse: true, bonus: undefined },
+        { label: 'Yes', value: 10, skillLv: 10, isUse: true },
         { label: 'No', value: 0, isUse: false },
       ],
     },
@@ -170,35 +171,31 @@ export class Rebelion {
 
     const { activeIds, passiveIds } = params;
     this._activeSkillList.forEach((skill, index) => {
-      const { bonus, isUse, skillLv } = skill.dropdown.find(
-        (x) => x.value === activeIds[index]
-      );
+      const { bonus, isUse, skillLv } = skill.dropdown.find((x) => x.value === activeIds[index]);
       if (isUse) learnedSkillMap.set(skill.name, skillLv);
       if (!bonus) return;
 
       skillNames.push(skill.label);
 
-      const { isEquip, isMastery } = skill;
-      if (isEquip) {
+      const { isEquipAtk, isMasteryAtk } = skill;
+      if (isEquipAtk) {
         equipAtks[skill.name] = bonus;
-      } else if (isMastery) {
+      } else if (isMasteryAtk) {
         masteryAtks[skill.name] = bonus;
       }
     });
 
     this._passiveSkillList.forEach((skill, index) => {
-      const { bonus, isUse, skillLv } =
-        (skill.dropdown as any[]).find((x) => x.value === passiveIds[index]) ??
-        {};
+      const { bonus, isUse, skillLv } = (skill.dropdown as any[]).find((x) => x.value === passiveIds[index]) ?? {};
       if (isUse) learnedSkillMap.set(skill.name, skillLv);
       if (!bonus) return;
 
       skillNames.push(skill.label);
 
-      const { isEquip, isMastery } = skill;
-      if (isEquip) {
+      const { isEquipAtk, isMasteryAtk } = skill;
+      if (isEquipAtk) {
         equipAtks[skill.name] = bonus;
-      } else if (isMastery) {
+      } else if (isMasteryAtk) {
         masteryAtks[skill.name] = bonus;
       }
     });
