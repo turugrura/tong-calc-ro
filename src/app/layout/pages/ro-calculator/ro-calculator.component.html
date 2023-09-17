@@ -5,13 +5,13 @@
 <div class="grid grid-nogutter">
   <!-- Left Side -->
   <div class="p-fluid col-7">
-    <!-- Status -->
+    <!-- Create Update Class -->
     <div class="grid grid-nogutter">
-      <div class="col-3">
+      <div class="col-4">
         <div class="grid grid-nogutter">
           <div class="col-12">
             <div class="p-inputgroup">
-              <input #presetName [maxLength]="100" autocomplete="off" type="text" pInputText placeholder="Name" />
+              <input #presetName [maxLength]="100" [autocomplete]="false" type="text" pInputText placeholder="Name" />
               <button
                 type="button"
                 class="p-button-success"
@@ -33,14 +33,6 @@
                 placeholder="Presets"
                 [(ngModel)]="selectedPreset"
               ></p-dropdown>
-              <!-- <p-button
-                type="button"
-                styleClass="p-button-secondary"
-                label="Load"
-                [loading]="isInProcessingPreset"
-                [disabled]="!selectedPreset"
-                (onClick)="laodPreset()"
-              ></p-button> -->
               <p-splitButton
                 label="Load"
                 styleClass="p-button-secondary"
@@ -97,156 +89,184 @@
             </div>
           </div>
           <div class="col-12">
-            <span class="p-inputgroup-addon">Available Status Point: {{ availablePoints }}</span>
+            <span class="p-inputgroup-addon">Available Point: {{ availablePoints }}</span>
           </div>
         </div>
       </div>
-      <div class="col-3">
+
+      <!-- Status -->
+      <div class="col-8">
         <div class="grid grid-nogutter">
-          <!-- STR -->
-          <div class="col-12">
-            <div class="p-inputgroup">
-              <span class="p-inputgroup-addon" style="width: 45px">Str</span>
-              <p-dropdown
-                inputId="str"
-                [autoDisplayFirst]="false"
-                [options]="mainStatusList"
-                [filter]="true"
-                filterBy="label"
-                [resetFilterOnHide]="true"
-                [(ngModel)]="model.str"
-                (ngModelChange)="onBaseStatusChange()"
-              ></p-dropdown>
-              <p-badge value="Job {{ model.jobStr || 0 }}" size="large" severity="warning"></p-badge>
-              <p-badge value="{{ totalSummary?.str || 0 }}" size="large" severity="danger"></p-badge>
+          <div class="col-4">
+            <div class="grid grid-nogutter">
+              <!-- STR -->
+              <div class="col-12">
+                <div class="p-inputgroup">
+                  <span class="p-inputgroup-addon" style="width: 45px">Str</span>
+                  <p-dropdown
+                    inputId="str"
+                    [autoDisplayFirst]="false"
+                    [options]="mainStatusList"
+                    [filter]="true"
+                    filterBy="label"
+                    [resetFilterOnHide]="true"
+                    [(ngModel)]="model.str"
+                    (ngModelChange)="onBaseStatusChange()"
+                  ></p-dropdown>
+                  <p-badge
+                    value="+{{ (model.jobStr || 0) + (totalSummary?.str || 0) }}"
+                    size="large"
+                    severity="info"
+                  ></p-badge>
+                </div>
+              </div>
+              <!-- AGI -->
+              <div class="col-12">
+                <div class="p-inputgroup">
+                  <span class="p-inputgroup-addon" style="width: 45px">Agi</span>
+                  <p-dropdown
+                    inputId="agi"
+                    [autoDisplayFirst]="false"
+                    [options]="mainStatusList"
+                    [filter]="true"
+                    filterBy="label"
+                    [resetFilterOnHide]="true"
+                    [(ngModel)]="model.agi"
+                    (ngModelChange)="onBaseStatusChange()"
+                  ></p-dropdown>
+                  <p-badge
+                    value="+{{ (model.jobAgi || 0) + (totalSummary?.agi || 0) }}"
+                    size="large"
+                    severity="info"
+                  ></p-badge>
+                </div>
+              </div>
+              <!-- VIT -->
+              <div class="col-12">
+                <div class="p-inputgroup">
+                  <span class="p-inputgroup-addon" style="width: 45px">Vit</span>
+                  <p-dropdown
+                    inputId="vit"
+                    [autoDisplayFirst]="false"
+                    [options]="mainStatusList"
+                    [filter]="true"
+                    filterBy="label"
+                    [resetFilterOnHide]="true"
+                    [(ngModel)]="model.vit"
+                    (ngModelChange)="onBaseStatusChange()"
+                  ></p-dropdown>
+                  <p-badge
+                    value="+{{ (model.jobVit || 0) + (totalSummary?.vit || 0) }}"
+                    size="large"
+                    severity="info"
+                  ></p-badge>
+                </div>
+              </div>
+              <!-- INT -->
+              <div class="col-12">
+                <div class="p-inputgroup">
+                  <span class="p-inputgroup-addon" style="width: 45px">Int</span>
+                  <p-dropdown
+                    inputId="int"
+                    [autoDisplayFirst]="false"
+                    [options]="mainStatusList"
+                    [filter]="true"
+                    filterBy="label"
+                    [resetFilterOnHide]="true"
+                    [(ngModel)]="model.int"
+                    (ngModelChange)="onBaseStatusChange()"
+                  ></p-dropdown>
+                  <p-badge
+                    value="+{{ (model.jobInt || 0) + (totalSummary?.int || 0) }}"
+                    size="large"
+                    severity="info"
+                  ></p-badge>
+                </div>
+              </div>
+              <!-- DEX -->
+              <div class="col-12">
+                <div class="p-inputgroup">
+                  <span class="p-inputgroup-addon" style="width: 45px">Dex</span>
+                  <p-dropdown
+                    inputId="dex"
+                    [autoDisplayFirst]="false"
+                    [options]="mainStatusList"
+                    [filter]="true"
+                    filterBy="label"
+                    [resetFilterOnHide]="true"
+                    [(ngModel)]="model.dex"
+                    (ngModelChange)="onBaseStatusChange()"
+                  ></p-dropdown>
+                  <p-badge
+                    value="+{{ (model.jobDex || 0) + (totalSummary?.dex || 0) }}"
+                    size="large"
+                    severity="info"
+                  ></p-badge>
+                </div>
+              </div>
+              <!-- LUK -->
+              <div class="col-12">
+                <div class="p-inputgroup">
+                  <span class="p-inputgroup-addon" style="width: 45px">Luk</span>
+                  <p-dropdown
+                    inputId="luk"
+                    [autoDisplayFirst]="false"
+                    [options]="mainStatusList"
+                    [filter]="true"
+                    filterBy="label"
+                    [resetFilterOnHide]="true"
+                    [(ngModel)]="model.luk"
+                    (ngModelChange)="onBaseStatusChange()"
+                  ></p-dropdown>
+                  <p-badge
+                    value="+{{ (model.jobLuk || 0) + (totalSummary?.luk || 0) }}"
+                    size="large"
+                    severity="info"
+                  ></p-badge>
+                </div>
+              </div>
             </div>
           </div>
-          <!-- AGI -->
-          <div class="col-12">
-            <div class="p-inputgroup">
-              <span class="p-inputgroup-addon" style="width: 45px">Agi</span>
-              <p-dropdown
-                inputId="agi"
-                [autoDisplayFirst]="false"
-                [options]="mainStatusList"
-                [filter]="true"
-                filterBy="label"
-                [resetFilterOnHide]="true"
-                [(ngModel)]="model.agi"
-                (ngModelChange)="onBaseStatusChange()"
-              ></p-dropdown>
-              <p-badge value="Job {{ model.jobAgi || 0 }}" size="large" severity="warning"></p-badge>
-              <p-badge value="{{ totalSummary?.agi || 0 }}" size="large" severity="danger"></p-badge>
+
+          <!-- Summary -->
+          <div class="col-4">
+            <div class="grid grid-nogutter mx-2">
+              <div class="col-12">
+                Alt+Q:
+                {{ totalSummary?.calc?.totalStatusAtk || 0 }} +
+                {{
+                  totalSummary?.weapon?.baseWeaponAtk +
+                    totalSummary?.weapon?.refineBonus +
+                    totalSummary?.calc?.totalMasteryAtk +
+                    totalSummary?.calc?.totalEquipAtk || 0
+                }}
+              </div>
+              <div class="col-12">Atk: {{ totalSummary?.atk || 0 }} | Atk %: {{ totalSummary?.atkPercent }}</div>
+              <!-- <div class="col-12">Atk%: {{ totalSummary?.atkPercent }}</div> -->
+              <div class="col-12">Hit: {{ totalSummary?.hit || 0 }} | Perfect: {{ totalSummary?.perfectHit || 0 }}</div>
+              <!-- <div class="col-12">Perfect Hit: {{ totalSummary?.perfectHit || 0 }}</div> -->
+              <div class="col-12">
+                Cri Rate: {{ totalSummary?.calc?.totalCri || 0 }} | Dmg: {{ totalSummary?.criDmg || 0 }}
+              </div>
+              <div class="col-12">ASPD: {{ totalSummary?.calc?.totalAspd || 0 }}</div>
+              <!-- <div class="col-12">Cri Dmg: {{ totalSummary?.criDmg || 0 }}</div> -->
+              <div class="col-12">Range: {{ totalSummary?.range || 0 }}</div>
             </div>
           </div>
-          <!-- VIT -->
-          <div class="col-12">
-            <div class="p-inputgroup">
-              <span class="p-inputgroup-addon" style="width: 45px">Vit</span>
-              <p-dropdown
-                inputId="vit"
-                [autoDisplayFirst]="false"
-                [options]="mainStatusList"
-                [filter]="true"
-                filterBy="label"
-                [resetFilterOnHide]="true"
-                [(ngModel)]="model.vit"
-                (ngModelChange)="onBaseStatusChange()"
-              ></p-dropdown>
-              <p-badge value="Job {{ model.jobVit || 0 }}" size="large" severity="warning"></p-badge>
-              <p-badge value="{{ totalSummary?.vit || 0 }}" size="large" severity="danger"></p-badge>
+          <div class="col-4">
+            <div class="grid grid-nogutter mx-2">
+              <div class="col-12">
+                Def: {{ totalSummary?.def || 0 }}, Mdef:
+                {{ totalSummary?.mdef || 0 }}
+              </div>
+              <div class="col-12">Flee: {{ totalSummary?.flee || 0 }}</div>
+              <div class="col-12">Matk: {{ totalSummary?.matk || 0 }} | Matk %: {{ totalSummary?.Percent }}</div>
+              <!-- <div class="col-12">Matk %: {{ totalSummary?.Percent }}</div> -->
+              <div class="col-12">After Cast Delay: {{ totalSummary?.acd || 0 }}</div>
+              <div class="col-12">Fixe Cast Time: {{ totalSummary?.fct || 0 }}</div>
+              <div class="col-12">Variable Cast Time: {{ totalSummary?.vct || 0 }}</div>
             </div>
           </div>
-          <!-- INT -->
-          <div class="col-12">
-            <div class="p-inputgroup">
-              <span class="p-inputgroup-addon" style="width: 45px">Int</span>
-              <p-dropdown
-                inputId="int"
-                [autoDisplayFirst]="false"
-                [options]="mainStatusList"
-                [filter]="true"
-                filterBy="label"
-                [resetFilterOnHide]="true"
-                [(ngModel)]="model.int"
-                (ngModelChange)="onBaseStatusChange()"
-              ></p-dropdown>
-              <p-badge value="Job {{ model.jobInt || 0 }}" size="large" severity="warning"></p-badge>
-              <p-badge value="{{ totalSummary?.int || 0 }}" size="large" severity="danger"></p-badge>
-            </div>
-          </div>
-          <!-- DEX -->
-          <div class="col-12">
-            <div class="p-inputgroup">
-              <span class="p-inputgroup-addon" style="width: 45px">Dex</span>
-              <p-dropdown
-                inputId="dex"
-                [autoDisplayFirst]="false"
-                [options]="mainStatusList"
-                [filter]="true"
-                filterBy="label"
-                [resetFilterOnHide]="true"
-                [(ngModel)]="model.dex"
-                (ngModelChange)="onBaseStatusChange()"
-              ></p-dropdown>
-              <p-badge value="Job {{ model.jobDex || 0 }}" size="large" severity="warning"></p-badge>
-              <p-badge value="{{ totalSummary?.dex || 0 }}" size="large" severity="danger"></p-badge>
-            </div>
-          </div>
-          <!-- LUK -->
-          <div class="col-12">
-            <div class="p-inputgroup">
-              <span class="p-inputgroup-addon" style="width: 45px">Luk</span>
-              <p-dropdown
-                inputId="luk"
-                [autoDisplayFirst]="false"
-                [options]="mainStatusList"
-                [filter]="true"
-                filterBy="label"
-                [resetFilterOnHide]="true"
-                [(ngModel)]="model.luk"
-                (ngModelChange)="onBaseStatusChange()"
-              ></p-dropdown>
-              <p-badge value="Job {{ model.jobLuk || 0 }}" size="large" severity="warning"></p-badge>
-              <p-badge value="{{ totalSummary?.luk || 0 }}" size="large" severity="danger"></p-badge>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-3">
-        <div class="grid grid-nogutter mx-2">
-          <div class="col-12">
-            Alt + Q
-            {{ totalSummary?.calc?.totalStatusAtk || 0 }} +
-            {{
-              totalSummary?.weapon?.baseWeaponAtk +
-                totalSummary?.weapon?.refineBonus +
-                totalSummary?.calc?.totalMasteryAtk +
-                totalSummary?.calc?.totalEquipAtk || 0
-            }}
-          </div>
-          <div class="col-12">Atk: {{ totalSummary?.atk || 0 }}</div>
-          <div class="col-12">Atk %: {{ totalSummary?.atkPercent }}</div>
-          <div class="col-12">ASPD: {{ totalSummary?.aspd || 0 }}</div>
-          <div class="col-12">Hit: {{ totalSummary?.hit || 0 }}</div>
-          <div class="col-12">Perfect Hit: {{ totalSummary?.perfectHit || 0 }}</div>
-          <div class="col-12">Cri Rate: {{ totalSummary?.calc?.totalCri || 0 }}</div>
-          <div class="col-12">Cri Dmg: {{ totalSummary?.criDmg || 0 }}</div>
-          <div class="col-12">Range: {{ totalSummary?.range || 0 }}</div>
-        </div>
-      </div>
-      <div class="col-3">
-        <div class="grid grid-nogutter mx-2">
-          <div class="col-12">
-            Def: {{ totalSummary?.def || 0 }}, Mdef:
-            {{ totalSummary?.mdef || 0 }}
-          </div>
-          <div class="col-12">Flee: {{ totalSummary?.flee || 0 }}</div>
-          <div class="col-12">Matk: {{ totalSummary?.matk || 0 }}</div>
-          <div class="col-12">Matk %: {{ totalSummary?.Percent }}</div>
-          <div class="col-12">After Cast Delay: {{ totalSummary?.acd || 0 }}</div>
-          <div class="col-12">Fixe Cast Time: {{ totalSummary?.fct || 0 }}</div>
-          <div class="col-12">Variable Cast Time: {{ totalSummary?.vct || 0 }}</div>
         </div>
       </div>
     </div>
@@ -1210,7 +1230,7 @@
           filterBy="label"
           [(ngModel)]="model.accLeft"
           [showClear]="true"
-          (onChange)="setEnchantList($event.value)"
+          (onChange)="setEnchantList($event.value, 'accLeft')"
           (onChange)="onSelectItem('accLeft', $event.value)"
           (onClear)="onClearItem('accLeft')"
           placeholder="Acc L"
@@ -1350,7 +1370,7 @@
           filterBy="label"
           [(ngModel)]="model.accRight"
           [showClear]="true"
-          (onChange)="setEnchantList($event.value)"
+          (onChange)="setEnchantList($event.value, 'accRight')"
           (onChange)="onSelectItem('accRight', $event.value)"
           (onClear)="onClearItem('accRight')"
           placeholder="Acc R"
@@ -1988,8 +2008,6 @@
                     [autoDisplayFirst]="false"
                     [(ngModel)]="model.advBlessing"
                     [options]="skillBuffs['advBlessing'].dropdown"
-                    [filter]="true"
-                    filterBy="label"
                     [showClear]="true"
                     (onChange)="onSkillBuffChange()"
                     placeholder="Blessing"
@@ -2004,8 +2022,6 @@
                     [autoDisplayFirst]="false"
                     [(ngModel)]="model.advAgiUp"
                     [options]="skillBuffs['advAgiUp'].dropdown"
-                    [filter]="true"
-                    filterBy="label"
                     [showClear]="true"
                     (onChange)="onSkillBuffChange()"
                     placeholder="Agi Up"
@@ -2097,8 +2113,6 @@
                 inputId="monster"
                 [autoDisplayFirst]="false"
                 [options]="atkSkills"
-                [filter]="true"
-                filterBy="label"
                 [(ngModel)]="model.selectedAtkSkill"
                 (onChange)="onAtkSkillChange()"
               ></p-dropdown>

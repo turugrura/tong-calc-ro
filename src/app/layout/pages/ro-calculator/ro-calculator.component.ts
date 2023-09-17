@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { debounceTime, delay, finalize, forkJoin, of, Subject, take, tap } from 'rxjs';
+import { debounceTime, delay, finalize, forkJoin, mergeMap, of, Subject, take, tap } from 'rxjs';
 import { BaseStateCalculator } from './base-state-calculator';
 import { Calculator } from './calculator';
 import { ItemTypeEnum } from './item-type.enum';
@@ -7,7 +7,7 @@ import { ItemTypeId } from './item.const';
 import { RoService } from 'src/app/demo/service/ro.service';
 import { Rebelion } from './rebellion';
 import { ItemModel } from './item.model';
-import { ConfirmEventType, ConfirmationService, MenuItem, MessageService } from 'primeng/api';
+import { ConfirmEventType, ConfirmationService, MenuItem, MessageService, PrimeIcons } from 'primeng/api';
 import { RaceType } from './race-type.const';
 import { ElementType } from './element-type.const';
 import { ActiveSkillModel, AtkSkillModel, CharacterBase, PassiveSkillModel } from './char-class.abstract';
@@ -116,7 +116,7 @@ const toDropdownList = <T extends {}>(
   return list.map((a) => ({
     label: a[labelKey],
     value: a[valueKey],
-    element: elementKey ? (a[elementKey] ?? a['stats']?.[elementKey] ?? '').replace('/s+d+/', '') : undefined,
+    element: elementKey ? a[elementKey] || '' : undefined,
   }));
 };
 
@@ -310,7 +310,7 @@ const sortLabel = (a: DropdownModel, b: DropdownModel) => {
 export class RoCalculatorComponent implements OnInit, OnDestroy {
   updateItemEvent = new Subject();
   loadBtnItems: MenuItem[];
-  monsterData: Record<number, MonsterModel> = {};
+  monsterDataMap: Record<number, MonsterModel> = {};
   items!: Record<number, ItemModel>;
   mapEnchant!: Map<string, ItemModel>;
   skillBuffs = skillBuffs;
@@ -529,6 +529,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   maxDamagePerHit = 0;
   criDamage = 0;
 
+  isCalculating = false;
   calculator = new Calculator();
   stateCalculator = new BaseStateCalculator();
 
@@ -556,19 +557,25 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     this.initLoadItems();
     this.setPresetList();
 
-    this.updateItemEvent.pipe(debounceTime(750)).subscribe(() => {
-      this.calculate();
-      this.saveItemSet();
-      this.resetItemDescription();
-      this.onSelectItemDescription();
-    });
+    this.updateItemEvent
+      .pipe(
+        tap(() => (this.isCalculating = true)),
+        debounceTime(750),
+        finalize(() => (this.isCalculating = false)),
+      )
+      .subscribe(() => {
+        this.calculate();
+        this.saveItemSet();
+        this.resetItemDescription();
+        this.onSelectItemDescription();
+      });
 
     forkJoin([
       this.roService.getItems<Record<number, ItemModel>>(),
       this.roService.getMonsters<Record<number, MonsterModel>>(),
     ]).subscribe(([items, monsters]) => {
       this.items = items;
-      this.monsterData = monsters;
+      this.monsterDataMap = monsters;
 
       this.calculator.setMasterItems(items);
       this.mapEnchant = new Map(
@@ -578,6 +585,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
             return [item.aegisName, item];
           }),
       );
+      this.setMonsterDropdownList();
       this.setDropdownList();
       this.loadItemSet();
     });
@@ -588,7 +596,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     this.updateItemEvent?.unsubscribe();
   }
 
-  initLoadItems() {
+  private initLoadItems() {
     this.loadBtnItems = [
       {
         label: 'Load',
@@ -598,8 +606,15 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         },
       },
       {
+        label: 'Update',
+        icon: PrimeIcons.SYNC,
+        command: () => {
+          this.updatePreset(this.selectedPreset);
+        },
+      },
+      {
         label: 'Delete',
-        icon: 'pi pi-times',
+        icon: PrimeIcons.TRASH,
         command: () => {
           this.deletePreset();
         },
@@ -617,6 +632,217 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
   isShowShield() {
     return this.model.class === 10;
+  }
+
+  private getPresetList(): DropdownModel[] {
+    const presets = JSON.parse(localStorage.getItem('presets') || '[]') || [];
+
+    return Array.isArray(presets) ? presets : [];
+  }
+
+  private savePresetList(presets?: DropdownModel[]): void {
+    localStorage.setItem('presets', JSON.stringify(presets || this.preSets));
+  }
+
+  private setPresetList() {
+    this.preSets = this.getPresetList();
+  }
+
+  updatePreset(name: string) {
+    const currentPresets = this.getPresetList();
+    const currentPreset = currentPresets.find((a) => a.value === name);
+    if (currentPreset) {
+      this.confirmationService.confirm({
+        message: `Update "${name}" ?`,
+        header: 'Confirmation',
+        icon: 'pi pi-exclamation-triangle',
+        accept: () => {
+          this.isInProcessingPreset = true;
+          waitRxjs(0.1)
+            .pipe(
+              mergeMap(() => {
+                currentPreset['model'] = this.model;
+                this.savePresetList(currentPresets);
+                this.setPresetList();
+                return waitRxjs(0.5);
+              }),
+              take(1),
+              finalize(() => {
+                this.messageService.add({
+                  severity: 'info',
+                  summary: 'Confirmed',
+                  detail: `"${name}" was updated.`,
+                });
+                this.isInProcessingPreset = false;
+              }),
+            )
+            .subscribe();
+        },
+        reject: (type) => {
+          // switch (type as ConfirmEventType) {
+          //   case ConfirmEventType.REJECT:
+          //     this.messageService.add({
+          //       severity: 'error',
+          //       summary: 'Rejected',
+          //       detail: 'You have rejected',
+          //     });
+          //     break;
+          //   default:
+          //     this.messageService.add({
+          //       severity: 'warn',
+          //       summary: 'Cancelled',
+          //       detail: 'You have cancelled',
+          //     });
+          //     break;
+          // }
+          this.isInProcessingPreset = false;
+        },
+      });
+    } else {
+      this.isInProcessingPreset = true;
+      wait(0.5)
+        .then(() => {
+          currentPresets.push({
+            label: name,
+            value: name,
+            model: this.model,
+          });
+          this.savePresetList(currentPresets);
+          this.setPresetList();
+
+          this.messageService.add({
+            severity: 'success',
+            summary: 'Confirmed',
+            detail: `"${name}" was added.`,
+          });
+        })
+        .finally(() => (this.isInProcessingPreset = false));
+    }
+  }
+
+  loadPreset() {
+    const selected = this.getPresetList().find((a) => a.value === this.selectedPreset);
+    if (selected?.['model']) {
+      this.isInProcessingPreset = true;
+
+      waitRxjs(0.1)
+        .pipe(
+          mergeMap(() => {
+            this.setModelByJSONString(selected['model']);
+            this.loadItemSet(true);
+            return waitRxjs(0.1);
+          }),
+          take(1),
+        )
+        .subscribe();
+    }
+  }
+
+  deletePreset() {
+    this.confirmationService.confirm({
+      message: `Delete "${this.selectedPreset}" ?`,
+      header: 'Confirmation',
+      icon: 'pi pi-exclamation-triangle',
+      accept: () => {
+        this.isInProcessingPreset = true;
+
+        waitRxjs(0.2)
+          .pipe(
+            tap(() => {
+              const preSets = this.getPresetList();
+              const removedSets = preSets.filter((a) => a.value !== this.selectedPreset);
+              this.savePresetList(removedSets);
+            }),
+            delay(200),
+            tap(() => this.setPresetList()),
+            finalize(() => {
+              this.messageService.add({
+                severity: 'error',
+                summary: `"${this.selectedPreset}" was deleted`,
+              });
+              this.selectedPreset = '';
+              this.isInProcessingPreset = false;
+            }),
+          )
+          .subscribe();
+
+        this.isInProcessingPreset = false;
+      },
+      reject: (type) => {
+        this.isInProcessingPreset = false;
+      },
+    });
+  }
+
+  private setModelByJSONString(savedModel: string | any) {
+    const savedData = typeof savedModel === 'string' ? JSON.parse(savedModel || '{}') : savedModel;
+    const model = this.cloneModel(this.emptyModel);
+
+    for (const [key, initialValue] of Object.entries(this.emptyModel)) {
+      const isAttrArray = Array.isArray(initialValue);
+
+      const savedValue = savedData[key];
+      const validValue = isAttrArray ? (Array.isArray(savedValue) ? savedValue : []) : savedValue ?? initialValue;
+      model[key] = validValue;
+    }
+    this.model = model;
+    // console.log('model', { ...model });
+  }
+
+  loadItemSet(fromCurrentModel = false) {
+    this.isInProcessingPreset = true;
+
+    let str = '';
+    if (!fromCurrentModel) {
+      str = localStorage.getItem('ro-set');
+      this.setModelByJSONString(str);
+    }
+    this.model.selectedAtkSkill = this.model.selectedAtkSkill || this.atkSkills[0]?.value;
+
+    this.setClassInstant();
+    this.setClassSkill();
+    this.setSkillModelArray();
+    this.setJobBonus();
+
+    return waitRxjs(0.1)
+      .pipe(
+        take(1),
+        mergeMap(() => {
+          try {
+            if (str || fromCurrentModel) {
+              for (const itemType of Object.keys(mapRelatedItem) as ItemTypeEnum[]) {
+                const refine = this.model[`${itemType}Refine`];
+                const itemId = this.model[itemType];
+                this.setEnchantList(itemId, itemType);
+                this.onSelectItem(itemType, itemId, refine);
+                // console.log('Set Main Item', { itemType, itemId, refine });
+                for (const relatedItemType of mapRelatedItem[itemType] ?? []) {
+                  this.onSelectItem(relatedItemType, this.model[relatedItemType], refine);
+                }
+              }
+              this.onBaseStatusChange();
+            }
+          } catch (error) {
+            console.error(error);
+          }
+
+          return waitRxjs(1);
+        }),
+        finalize(() => {
+          this.isInProcessingPreset = false;
+          if (fromCurrentModel) {
+            this.messageService.add({
+              severity: 'success',
+              summary: 'Loaded',
+            });
+          }
+        }),
+      )
+      .subscribe();
+  }
+
+  saveItemSet() {
+    localStorage.setItem('ro-set', JSON.stringify(this.model));
   }
 
   private calculate() {
@@ -648,7 +874,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       .setExtraOptions(this.getOptionScripts())
       .setUsedSkillNames(skillNames)
       .setLearnedSkills(learnedSkillMap)
-      .setMonster(this.monsterData[this.selectedMonster]);
+      .setMonster(this.monsterDataMap[this.selectedMonster]);
 
     const calculated = calc.calculateSkillDamage(selectedAtkSkill);
     const { minDamage, maxDamage, rawMaxDamage, rawMinDamage, criMaxDamage, skillHit } = calculated;
@@ -731,182 +957,6 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     });
   }
 
-  private getPresetList(): DropdownModel[] {
-    const presets = JSON.parse(localStorage.getItem('presets') || '[]') || [];
-
-    return Array.isArray(presets) ? presets : [];
-  }
-
-  private savePresetList(presets?: DropdownModel[]): void {
-    localStorage.setItem('presets', JSON.stringify(presets || this.preSets));
-  }
-
-  private setPresetList() {
-    this.preSets = this.getPresetList();
-  }
-
-  updatePreset(name: string) {
-    const currentPresets = JSON.parse(localStorage.getItem('presets') || '[]') as DropdownModel[];
-    const currentPreset = currentPresets.find((a) => a.value === name);
-    if (currentPreset) {
-      this.confirmationService.confirm({
-        message: `You already have it, are you sure that you want to update "${name}" ?`,
-        header: 'Confirmation',
-        icon: 'pi pi-exclamation-triangle',
-        accept: () => {
-          this.isInProcessingPreset = true;
-          currentPreset['model'] = this.model;
-          this.savePresetList();
-          this.setPresetList();
-
-          this.messageService.add({
-            severity: 'info',
-            summary: 'Confirmed',
-            detail: `"${name}" was updated.`,
-          });
-          this.isInProcessingPreset = false;
-        },
-        reject: (type) => {
-          // switch (type as ConfirmEventType) {
-          //   case ConfirmEventType.REJECT:
-          //     this.messageService.add({
-          //       severity: 'error',
-          //       summary: 'Rejected',
-          //       detail: 'You have rejected',
-          //     });
-          //     break;
-          //   default:
-          //     this.messageService.add({
-          //       severity: 'warn',
-          //       summary: 'Cancelled',
-          //       detail: 'You have cancelled',
-          //     });
-          //     break;
-          // }
-          this.isInProcessingPreset = false;
-        },
-      });
-    } else {
-      this.isInProcessingPreset = true;
-      wait(0.5)
-        .then(() => {
-          currentPresets.push({
-            label: name,
-            value: name,
-            model: this.model,
-          });
-          this.savePresetList(currentPresets);
-          this.setPresetList();
-
-          this.messageService.add({
-            severity: 'success',
-            summary: 'Confirmed',
-            detail: `"${name}" was added.`,
-          });
-        })
-        .finally(() => (this.isInProcessingPreset = false));
-    }
-  }
-
-  loadPreset() {
-    const selected = this.preSets.find((a) => a.value === this.selectedPreset);
-    this.setModelByJSONString(selected['model']);
-    this.loadItemSet(true);
-  }
-
-  deletePreset() {
-    this.isInProcessingPreset = true;
-
-    waitRxjs(0.2)
-      .pipe(
-        tap(() => {
-          const preSets = this.getPresetList();
-          const removedSets = preSets.filter((a) => a.value !== this.selectedPreset);
-          this.savePresetList(removedSets);
-        }),
-        delay(200),
-        tap(() => this.setPresetList()),
-        finalize(() => {
-          this.messageService.add({
-            severity: 'error',
-            summary: `"${this.selectedPreset}" was removed`,
-          });
-          this.selectedPreset = '';
-          this.isInProcessingPreset = false;
-        }),
-      )
-      .subscribe();
-
-    // const preSets = this.getPresetList();
-    // const removedSets = preSets.filter((a) => a.value !== this.selectedPreset);
-    // this.savePresetList(removedSets);
-    // this.setPresetList()
-  }
-
-  private setModelByJSONString(savedModel: string | any) {
-    const savedData = typeof savedModel === 'string' ? JSON.parse(savedModel || '{}') : savedModel;
-    const model = this.cloneModel(this.emptyModel);
-
-    for (const [key, initialValue] of Object.entries(this.emptyModel)) {
-      const isAttrArray = Array.isArray(initialValue);
-
-      const savedValue = savedData[key];
-      const validValue = isAttrArray ? (Array.isArray(savedValue) ? savedValue : []) : savedValue ?? initialValue;
-      model[key] = validValue;
-    }
-    this.model = model;
-    console.log('model', { ...model });
-  }
-
-  loadItemSet(fromCurrentModel = false) {
-    this.isInProcessingPreset = true;
-
-    let str = '';
-    if (!fromCurrentModel) {
-      str = localStorage.getItem('ro-set');
-      this.setModelByJSONString(str);
-    }
-    this.model.selectedAtkSkill = this.model.selectedAtkSkill || this.atkSkills[0]?.value;
-
-    this.setClassInstant();
-    this.setClassSkill();
-    this.setSkillModelArray();
-    this.setJobBonus();
-
-    return wait(0.5)
-      .then(() => {
-        try {
-          if (str || fromCurrentModel) {
-            for (const itemType of Object.keys(mapRelatedItem) as ItemTypeEnum[]) {
-              const refine = this.model[`${itemType}Refine`];
-              const itemId = this.model[itemType];
-              this.setEnchantList(itemId);
-              this.onSelectItem(itemType, itemId, refine);
-              // console.log('Set Main Item', { itemType, itemId, refine });
-              for (const relatedItemType of mapRelatedItem[itemType] ?? []) {
-                this.onSelectItem(relatedItemType, this.model[relatedItemType], refine);
-              }
-            }
-            this.onBaseStatusChange();
-
-            if (fromCurrentModel) {
-              this.messageService.add({
-                severity: 'success',
-                summary: 'Loaded',
-              });
-            }
-          }
-        } catch (error) {
-          console.error(error);
-        }
-      })
-      .finally(() => (this.isInProcessingPreset = false));
-  }
-
-  saveItemSet() {
-    localStorage.setItem('ro-set', JSON.stringify(this.model));
-  }
-
   setJobBonus() {
     const { str, agi, vit, int, dex, luk } = this.selectedCharacter.getJobBonusStatus(this.model.jobLevel);
     this.model.jobStr = str;
@@ -915,6 +965,17 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     this.model.jobInt = int;
     this.model.jobDex = dex;
     this.model.jobLuk = luk;
+  }
+
+  private setMonsterDropdownList() {
+    const monsters = Object.values(this.monsterDataMap).map<DropdownModel>((a) => {
+      return {
+        label: `Lv ${a.stats.level} ${a.name}`,
+        value: a.id,
+        elementName: a.stats.elementName.replace('/s+d+/', ''),
+      };
+    });
+    this.monsterList = monsters;
   }
 
   private setDropdownList() {
@@ -1090,7 +1151,6 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     this.accRightCardList = toDropdownList(accRightCardList, 'name', 'id');
     this.petList = petList.map((a) => ({ label: a.name, value: a.id }));
 
-    this.monsterList = toDropdownList(Object.values(this.monsterData), 'name', 'id', 'elementName' as any);
     this.consumableList = toDropdownList(consumableList, 'name', 'id');
 
     this.costumeEnhUpperList = toDropdownList(costumeEnhUpperList, 'name', 'id');
@@ -1121,9 +1181,9 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       .filter(Boolean);
   }
 
-  setEnchantList(itemId: number) {
+  setEnchantList(itemId: number, positionEnum?: ItemTypeEnum | string) {
     // console.log({ itemId });
-    const { itemSubTypeId, enchants, location } = this.items[itemId] ?? ({} as ItemModel);
+    let { itemSubTypeId, enchants, location } = this.items[itemId] ?? ({} as ItemModel);
 
     const [_, e2, e3, e4] = Array.isArray(enchants) ? enchants : [];
     // console.log({ itemId, e2, e3, e4 });
@@ -1137,6 +1197,14 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         }
       }
     };
+
+    if (itemSubTypeId === ItemSubTypeId.Acc && positionEnum) {
+      if (positionEnum === ItemTypeEnum.accLeft) {
+        itemSubTypeId = ItemSubTypeId.Acc_L;
+      } else if (positionEnum === ItemTypeEnum.accRight) {
+        itemSubTypeId = ItemSubTypeId.Acc_R;
+      }
+    }
 
     switch (itemSubTypeId) {
       case ItemSubTypeId.Upper:
@@ -1224,7 +1292,6 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
           .map((a: any) => ({ label: a.name, value: a.id }));
         clearModel('boot');
         break;
-      case ItemSubTypeId.Acc:
       case ItemSubTypeId.Acc_L:
         this.accLeftEnchant1List = (e2 ?? [])
           .map((a: any) => this.mapEnchant.get(a))
@@ -1237,7 +1304,6 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
           .map((a: any) => ({ label: a.name, value: a.id }));
         clearModel('accLeft');
         break;
-      case ItemSubTypeId.Acc:
       case ItemSubTypeId.Acc_R:
         this.accRightEnchant1List = (e2 ?? [])
           .map((a: any) => this.mapEnchant.get(a))

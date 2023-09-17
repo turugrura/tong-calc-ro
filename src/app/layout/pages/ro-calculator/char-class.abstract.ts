@@ -48,6 +48,18 @@ export interface SkillBonusResult {
   learnedSkillMap: Map<string, number>;
 }
 
+export interface AspdInput {
+  weaponType: string;
+  aspd: number;
+  aspdPercent: number;
+  totalAgi: number;
+  totalDex: number;
+  potionAspd: number;
+  potionAspdPercent: number;
+  skillAspd: number;
+  skillAspdPercent: number;
+}
+
 export abstract class CharacterBase {
   protected abstract initialStatusPoint: number;
 
@@ -68,8 +80,35 @@ export abstract class CharacterBase {
     luk: number;
   };
 
-  calcSkillDmgByTotalHit(finalDamage: number, skillName: string): number {
-    const skillHit = this.atkSkills.find((a) => a.name === skillName)?.hit || 1;
+  protected abstract calcBaseAspd(weaponType: string): { baseAspd: number; shieldPenalty: number };
+
+  calcAspd(a: AspdInput): number {
+    const { weaponType, aspd, aspdPercent, totalAgi, totalDex, potionAspd, skillAspd } = a;
+    const { baseAspd, shieldPenalty } = this.calcBaseAspd(weaponType);
+    const statAspd = Math.sqrt((totalAgi * totalAgi) / 2 + (totalDex * totalDex) / 5) / 4;
+    const potionSkillAspd = ((potionAspd + skillAspd) * totalAgi) / 200;
+    const rawCalcAspd = Math.floor(statAspd + potionSkillAspd + shieldPenalty);
+    const baseAspd2 = baseAspd + rawCalcAspd;
+    const equip = Math.floor((200 - baseAspd2) * (aspdPercent * 0.01));
+    const final = baseAspd2 + equip + aspd;
+
+    console.log({
+      baseAspd,
+      aspd,
+      aspdPercent,
+      shieldPenalty,
+      statAspd,
+      potionSkillAspd,
+      rawCalcAspd,
+      baseAspd2,
+      equip,
+    });
+
+    return final;
+  }
+
+  calcSkillDmgByTotalHit(finalDamage: number, skill: AtkSkillModel): number {
+    const skillHit = skill?.hit || 1;
     if (skillHit > 1) {
       return Math.floor(finalDamage / skillHit) * skillHit;
     }

@@ -71,6 +71,7 @@ const jobBonusTable: [number, number, number, number, number, number][] = [
 
 export class Rebelion extends CharacterBase {
   protected initialStatusPoint = 100;
+  protected baseAspd = 156;
   private _atkSkillList: AtkSkillModel[] = [
     {
       label: 'Round Trip',
@@ -213,6 +214,13 @@ export class Rebelion extends CharacterBase {
       int,
       dex,
       luk,
+    };
+  }
+
+  calcBaseAspd(weaponType: string): { baseAspd: number; shieldPenalty: number } {
+    return {
+      baseAspd: this.baseAspd - 10,
+      shieldPenalty: 0,
     };
   }
 }

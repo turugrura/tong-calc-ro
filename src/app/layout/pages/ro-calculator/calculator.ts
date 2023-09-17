@@ -304,6 +304,7 @@ export class Calculator {
   private dmgReductionByHardDef = 0;
   private totalPene = 0;
 
+  private totalAspd = 0;
   private statusBonus = 0;
   private totalMasteryAtk = 0;
   private totalBuffAtk = 0;
@@ -728,17 +729,26 @@ export class Calculator {
       return finalApplied;
     };
 
+    const skillHit = skillData.hit || 1;
     this.possiblyDamages = Array.from({ length: this.totalWeaponAtkMax - this.totalWeaponAtkMin - 1 }).map((_, i) => {
       const atk = this.totalWeaponAtkMin + i + 1;
       const aAtk = this.calcAtkGroupA(atk) as number;
       const bAtk = this.calcAtkGroupB(atk) as number;
       const totalAtk = this.calcTotalAtk(aAtk, bAtk) as number;
-      const dmg = this._class.calcSkillDmgByTotalHit(skillFormula(totalAtk), skillName);
-      return `From:${atk} => ${dmg} (${dmg / 3} x 3)`;
+      const dmg = this._class.calcSkillDmgByTotalHit(skillFormula(totalAtk), skillData);
+
+      if (skillHit > 1) {
+        return `From:${atk} => ${dmg} (${dmg / skillHit} x ${skillHit})`;
+      }
+
+      return `From:${atk} => ${dmg}`;
     });
 
-    const maxDamage = skillFormula(this.totalMaxAtk);
-    const minDamage = canCri ? maxDamage : skillFormula(this.totalMinAtk);
+    const rawMaxDamage = skillFormula(this.totalMaxAtk);
+    const maxDamage = this._class.calcSkillDmgByTotalHit(rawMaxDamage, skillData);
+
+    const rawMinDamage = canCri ? maxDamage : skillFormula(this.totalMinAtk);
+    const minDamage = this._class.calcSkillDmgByTotalHit(rawMinDamage, skillData);
 
     return { minDamage, maxDamage };
   }
@@ -1171,6 +1181,8 @@ export class Calculator {
   calculateSkillDamage(skillValue: string) {
     this.calcAllEquipItems();
     this.calcAllAtk();
+    this.calcAspd();
+
     this.baseSkillDamage = 0;
 
     const [, skillName, skillLevel] = skillValue.match(/(.+)==(\d+)/) ?? [];
@@ -1200,16 +1212,26 @@ export class Calculator {
       rawMaxDamage: basicMaxDamage,
       criMinDamage: criDmg,
       criMaxDamage: criDmg,
-      minDamage: this._class.calcSkillDmgByTotalHit(minSkillDamage, skillName),
-      maxDamage: this._class.calcSkillDmgByTotalHit(maxSkillDamage, skillName),
+      minDamage: minSkillDamage,
+      maxDamage: maxSkillDamage,
       skillHit: skillData.hit || 1,
     };
   }
 
-  private calculateDamage() {
-    // this.calcAllEquipItems();
-    // const { minDamage, maxDamage } = this.calcRangeSkillDamage('Round Trip');
-    // return { minDamage, maxDamage };
+  private calcAspd() {
+    this.totalAspd = this._class.calcAspd({
+      potionAspd: 0,
+      potionAspdPercent: 0,
+      skillAspd: 0,
+      skillAspdPercent: 0,
+      totalAgi: this.model.agi + this.model.jobAgi + this.totalEquipStatus.agi,
+      totalDex: this.model.dex + this.model.jobDex + this.totalEquipStatus.dex,
+      weaponType: this.weaponData.data.subTypeName,
+      aspd: this.totalEquipStatus.aspd,
+      aspdPercent: this.totalEquipStatus.aspdPercent,
+    });
+
+    return this;
   }
 
   private getObjSummary(obj: Record<string, number>) {
@@ -1233,6 +1255,7 @@ export class Calculator {
       propertyMultiplier: this.propertyMultiplier,
       weapon: this.weaponData.data,
       calc: {
+        totalAspd: this.totalAspd,
         totalCri: 1 + cri + this.floor((luk + Number(this.model.luk) + Number(this.model.jobLuk)) / 3),
         dmgReductionByHardDef: this.dmgReductionByHardDef,
         statusBonus: this.statusBonus,
