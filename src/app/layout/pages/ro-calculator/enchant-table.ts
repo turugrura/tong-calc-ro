@@ -1,0 +1,279 @@
+enum EA {
+  _1 = 'Expert_Archer1',
+  _2 = 'Expert_Archer2',
+  _3 = 'Expert_Archer3',
+  _4 = 'Expert_Archer4',
+  _5 = 'Expert_Archer5',
+  _6 = 'Expert_Archer6',
+  _7 = 'Expert_Archer7',
+  _8 = 'Expert_Archer8',
+  _9 = 'Expert_Archer9',
+  _10 = 'Expert_Archer10',
+}
+enum FS {
+  _1 = 'Fighting_Spirit1',
+  _2 = 'Fighting_Spirit2',
+  _3 = 'Fighting_Spirit3',
+  _4 = 'Fighting_Spirit4',
+  _5 = 'Fighting_Spirit5',
+  _6 = 'Fighting_Spirit6',
+  _7 = 'Fighting_Spirit7',
+  _8 = 'Fighting_Spirit8',
+  _9 = 'Fighting_Spirit9',
+  _10 = 'Fighting_Spirit10',
+}
+enum AttackDelay {
+  _1 = 'Attack_Delay_1',
+  _2 = 'Attack_Delay_2',
+  _3 = 'Attack_Delay_3',
+  _4 = 'Attack_Delay_4',
+}
+enum Spell {
+  _4 = 'Spell4',
+  _5 = 'Spell5',
+}
+enum Cri {
+  _1 = 'Fatal1',
+  _2 = 'Fatal2',
+  _3 = 'Fatal3',
+  _4 = 'Fatal4',
+}
+enum Sharp {
+  _1 = 'Sharp1',
+  _2 = 'Sharp2',
+  _3 = 'Sharp3',
+  _4 = 'Sharp4',
+  _5 = 'Sharp5',
+}
+enum AtkPercent {
+  _1 = 'Atk1',
+  _2 = 'Atk2',
+  _3 = 'Atk3',
+}
+enum MatkPercent {
+  _1 = 'Matk1',
+  _2 = 'Matk2',
+  _3 = 'Matk3',
+}
+enum Str {
+  _1 = 'Strength1',
+  _2 = 'Strength2',
+  _3 = 'Strength3',
+  _4 = 'Strength4',
+  _5 = 'Strength5',
+}
+enum Int {
+  _1 = 'Inteligence1',
+  _2 = 'Inteligence2',
+  _3 = 'Inteligence3',
+  _4 = 'Inteligence4',
+  _5 = 'Inteligence5',
+}
+enum Dex {
+  _1 = 'Dexterity1',
+  _2 = 'Dexterity2',
+  _3 = 'Dexterity3',
+  _4 = 'Dexterity4',
+  _5 = 'Dexterity5',
+}
+enum Agi {
+  _1 = 'Agility1',
+  _2 = 'Agility2',
+  _3 = 'Agility3',
+  _4 = 'Agility4',
+  _5 = 'Agility5',
+}
+enum Vit {
+  _1 = 'Vitality1',
+  _2 = 'Vitality2',
+  _3 = 'Vitality3',
+  _4 = 'Vitality4',
+  _5 = 'Vitality5',
+}
+enum Luk {
+  _1 = 'Luck1',
+  _2 = 'Luck2',
+  _3 = 'Luck3',
+  _4 = 'Luck4',
+  _5 = 'Luck5',
+}
+enum Acute {
+  _2 = 'Acute2',
+  _3 = 'Acute3',
+  _4 = 'Acute4',
+  _5 = 'Acute5',
+  _6 = 'Acute6',
+  _7 = 'Acute7',
+}
+enum Mettle {
+  _2 = 'Mettle7',
+  _3 = 'Mettle3',
+  _4 = 'Mettle4',
+  _5 = 'Mettle5',
+  _6 = 'Mettle6',
+  _7 = 'Mettle7',
+}
+enum MasterArc {
+  _2 = 'MasterArcher2',
+  _3 = 'MasterArcher3',
+  _4 = 'MasterArcher4',
+  _5 = 'MasterArcher5',
+  _6 = 'MasterArcher6',
+  _7 = 'MasterArcher7',
+}
+enum MagicEess {
+  _2 = 'MagicEessence2',
+  _3 = 'MagicEessence3',
+  _4 = 'MagicEessence4',
+  _5 = 'MagicEessence5',
+  _6 = 'MagicEessence6',
+  _7 = 'MagicEessence7',
+}
+
+const BaseState = {
+  _1: ['Strength1', 'Inteligence1', 'Dexterity1', 'Agility1', 'Vitality1', 'Luck1'],
+  _2: ['Strength2', 'Inteligence2', 'Dexterity2', 'Agility2', 'Vitality2', 'Luck2'],
+  _3: ['Strength3', 'Inteligence3', 'Dexterity3', 'Agility3', 'Vitality3', 'Luck3'],
+  _1_3: [
+    Str._1,
+    Str._2,
+    Str._3,
+    Int._1,
+    Int._2,
+    Int._3,
+    Dex._1,
+    Dex._2,
+    Dex._3,
+    Agi._1,
+    Agi._2,
+    Agi._3,
+    Vit._1,
+    Vit._2,
+    Vit._3,
+    Luk._1,
+    Luk._2,
+    Luk._3,
+  ],
+  _3_5: [
+    Str._3,
+    Str._4,
+    Str._5,
+    Int._3,
+    Int._4,
+    Int._5,
+    Dex._3,
+    Dex._4,
+    Dex._5,
+    Agi._3,
+    Agi._4,
+    Agi._5,
+    Vit._3,
+    Vit._4,
+    Vit._5,
+    Luk._3,
+    Luk._4,
+    Luk._5,
+  ],
+  _4: ['Strength4', 'Inteligence4', 'Dexterity4', 'Agility4', 'Vitality4', 'Luck4'],
+  _5: ['Strength5', 'Inteligence5', 'Dexterity5', 'Agility5', 'Vitality5', 'Luck5'],
+  _6: ['Strength6', 'Inteligence6', 'Dexterity6', 'Agility6', 'Vitality6', 'Luck6'],
+};
+const TempOpts = {
+  _1: [EA._1, FS._1, Sharp._1],
+  _2: [EA._2, FS._2, Sharp._2],
+  _3: [EA._3, FS._3, Sharp._3],
+  _1_3: [EA._1, EA._2, EA._3, FS._1, FS._2, FS._3, Sharp._1, Sharp._2, Sharp._3],
+};
+const atkPer = [AtkPercent._1, AtkPercent._2, AtkPercent._3];
+const fs13 = [FS._1, FS._2, FS._3];
+
+const illusionArmor = ['Improve_Orb_Atk', 'Improve_Orb_Matk', 'Improve_Orb_Archer', 'Improve_Orb_Delay'];
+const illusionGarment = ['Improve_Orb_Speed', 'Improve_Orb_Cast', 'Improve_Orb_Cri', 'Improve_Orb_Above'];
+const illusionBoot = ['Improve_Orb_Fix', 'Improve_Orb_Heal'];
+const illusionAcc = [EA._5, FS._6, Spell._5, AttackDelay._4, Cri._4];
+
+const tempBoot_3 = ["Bear's_Power", 'Runaway_Magic', 'Speed_Of_Light', 'Muscle_Fool', 'Hawkeye', 'Lucky_Day'];
+const tempBoot_4 = [EA._4, FS._7, Spell._5, AttackDelay._4];
+const kingSmithAcc_2 = ['Gh_md_agi', 'Gh_md_str', 'Gh_md_dex', 'Gh_md_int', 'Gh_md_vit', 'Gh_md_luk'];
+const kingSmithAcc_3 = [EA._4, EA._5, FS._6, FS._7, Spell._4, Spell._5, Cri._2, Cri._3, Sharp._3, Sharp._4];
+const kingSmithAcc_4 = [...BaseState._3_5];
+
+const twinCannon = [Cri._3, AttackDelay._3, Spell._4, EA._3, ...BaseState._3];
+
+const whiteWingSuit = [...TempOpts._1_3, ...BaseState._1_3];
+
+const labHead2 = [
+  Acute._2,
+  Acute._3,
+  Acute._4,
+  Acute._5,
+  Acute._6,
+  Acute._7,
+  Mettle._2,
+  Mettle._3,
+  Mettle._4,
+  Mettle._5,
+  Mettle._6,
+  Mettle._7,
+  MasterArc._2,
+  MasterArc._3,
+  MasterArc._4,
+  MasterArc._5,
+  MasterArc._6,
+  MasterArc._7,
+  MagicEess._2,
+  MagicEess._3,
+  MagicEess._4,
+  MagicEess._5,
+  MagicEess._6,
+  MagicEess._7,
+];
+
+interface EntTable {
+  name: string;
+  enchants: [null, any[], any[], any[]];
+}
+
+const enchantTable: EntTable[] = [
+  { name: 'Illusion_Armor_A', enchants: [null, illusionArmor, illusionArmor, illusionArmor] },
+  { name: 'Illusion_Armor_B', enchants: [null, illusionArmor, illusionArmor, illusionArmor] },
+  { name: 'Illusion_Engine_A', enchants: [null, illusionGarment, illusionGarment, illusionGarment] },
+  { name: 'Illusion_Engine_B', enchants: [null, illusionGarment, illusionGarment, illusionGarment] },
+  { name: 'Illusion_Leg_A', enchants: [null, illusionBoot, illusionBoot, illusionBoot] },
+  { name: 'Illusion_Leg_B', enchants: [null, illusionBoot, illusionBoot, illusionBoot] },
+  { name: 'Illusion_B_R', enchants: [null, illusionAcc, illusionAcc, illusionAcc] },
+  { name: 'Illusion_B_L', enchants: [null, illusionAcc, illusionAcc, illusionAcc] },
+  { name: 'Illusion_BC_R', enchants: [null, illusionAcc, illusionAcc, illusionAcc] },
+  { name: 'Illusion_BC_L', enchants: [null, illusionAcc, illusionAcc, illusionAcc] },
+
+  { name: 'Temporal_Boots_TW', enchants: [null, null, tempBoot_3, tempBoot_4] },
+  { name: 'Modify_Str_Boots_', enchants: [null, null, tempBoot_3, tempBoot_4] },
+  { name: 'Modify_Int_Boots_', enchants: [null, null, tempBoot_3, tempBoot_4] },
+  { name: 'Modify_Agi_Boots_', enchants: [null, null, tempBoot_3, tempBoot_4] },
+  { name: 'Modify_Vit_Boots_', enchants: [null, null, tempBoot_3, tempBoot_4] },
+  { name: 'Modify_Dex_Boots_', enchants: [null, null, tempBoot_3, tempBoot_4] },
+  { name: 'Modify_Luk_Boots_', enchants: [null, null, tempBoot_3, tempBoot_4] },
+
+  { name: 'Schmidt_Insignia_Str', enchants: [null, kingSmithAcc_2, kingSmithAcc_3, kingSmithAcc_4] },
+  { name: 'Schmidt_Insignia_Int', enchants: [null, kingSmithAcc_2, kingSmithAcc_3, kingSmithAcc_4] },
+  { name: 'Schmidt_Insignia_Agi', enchants: [null, kingSmithAcc_2, kingSmithAcc_3, kingSmithAcc_4] },
+  { name: 'Schmidt_Insignia_Vit', enchants: [null, kingSmithAcc_2, kingSmithAcc_3, kingSmithAcc_4] },
+  { name: 'Schmidt_Insignia_Dex', enchants: [null, kingSmithAcc_2, kingSmithAcc_3, kingSmithAcc_4] },
+  { name: 'Schmidt_Insignia_Luk', enchants: [null, kingSmithAcc_2, kingSmithAcc_3, kingSmithAcc_4] },
+
+  { name: 'Twin Cannon', enchants: [null, twinCannon, twinCannon, twinCannon] },
+
+  { name: 'Temporal_Ring_TW', enchants: [null, null, null, [EA._5, EA._6, EA._7, EA._8, EA._9, EA._10]] },
+
+  { name: 'White_Wing_Suits', enchants: [null, whiteWingSuit, whiteWingSuit, whiteWingSuit] },
+  { name: 'White_Wing_Manteau', enchants: [null, [...atkPer, ...fs13], [...atkPer, ...fs13], [...atkPer, ...fs13]] },
+  { name: 'White_Wing_Brooch', enchants: [null, [], [], BaseState._1] },
+
+  { name: 'Old_Camo_RabbitHood', enchants: [null, labHead2, BaseState._3_5, BaseState._3_5] },
+];
+
+const map = new Map(enchantTable.map((a) => [a.name, a.enchants]));
+
+export const getEnchants = (name) => {
+  return map.get(name);
+};

@@ -13,6 +13,7 @@ import { ElementType } from './element-type.const';
 import { ActiveSkillModel, AtkSkillModel, CharacterBase, PassiveSkillModel } from './char-class.abstract';
 import { Ranger } from './ranger';
 import { MonsterModel } from './monster.model';
+import { getEnchants } from './enchant-table';
 enum CardPosition {
   Weapon = 0,
   Head = 769,
@@ -1183,7 +1184,8 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
   setEnchantList(itemId: number, positionEnum?: ItemTypeEnum | string) {
     // console.log({ itemId });
-    let { itemSubTypeId, enchants, location } = this.items[itemId] ?? ({} as ItemModel);
+    let { itemSubTypeId, location, aegisName, name } = this.items[itemId] ?? ({} as ItemModel);
+    const enchants = getEnchants(aegisName) ?? getEnchants(name);
 
     const [_, e2, e3, e4] = Array.isArray(enchants) ? enchants : [];
     // console.log({ itemId, e2, e3, e4 });

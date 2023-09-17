@@ -563,6 +563,92 @@
           </ng-template>
         </p-dropdown>
       </div>
+      <div class="col-12">
+        <div class="grid grid-nogutter">
+          <div class="col-3"></div>
+          <div class="col-3">
+            <p-dropdown
+              inputId="headUpperEnchant1"
+              [autoDisplayFirst]="false"
+              [options]="headUpperEnchant1List"
+              [filter]="true"
+              filterBy="label"
+              [(ngModel)]="model.headUpperEnchant1"
+              [showClear]="true"
+              [disabled]="headUpperEnchant1List.length === 0 || !model.headUpper"
+              (onChange)="onSelectItem('headUpperEnchant1', $event.value)"
+              placeholder="Enchant 2"
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1" *ngIf="model.headUpperEnchant1">
+                  <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+              <ng-template let-item pTemplate="item">
+                <div class="flex gap-1">
+                  <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
+          </div>
+          <div class="col-3">
+            <p-dropdown
+              inputId="headUpperEnchant2"
+              [autoDisplayFirst]="false"
+              [options]="headUpperEnchant2List"
+              [filter]="true"
+              filterBy="label"
+              [(ngModel)]="model.headUpperEnchant2"
+              [showClear]="true"
+              [disabled]="headUpperEnchant2List.length === 0 || !model.headUpper"
+              (onChange)="onSelectItem('headUpperEnchant2', $event.value)"
+              placeholder="Enchant 3"
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1" *ngIf="model.headUpperEnchant2">
+                  <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+              <ng-template let-item pTemplate="item">
+                <div class="flex gap-1">
+                  <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
+          </div>
+          <div class="col-3">
+            <p-dropdown
+              inputId="headUpperEnchant3"
+              [autoDisplayFirst]="false"
+              [options]="headUpperEnchant3List"
+              [filter]="true"
+              filterBy="label"
+              [(ngModel)]="model.headUpperEnchant3"
+              [showClear]="true"
+              [disabled]="headUpperEnchant3List.length === 0 || !model.headUpper"
+              (onChange)="onSelectItem('headUpperEnchant3', $event.value)"
+              placeholder="Enchant 4"
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1" *ngIf="model.headUpperEnchant3">
+                  <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+              <ng-template let-item pTemplate="item">
+                <div class="flex gap-1">
+                  <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Head Middle -->
