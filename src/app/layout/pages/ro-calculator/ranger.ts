@@ -74,8 +74,14 @@ const jobBonusTable: Record<number, [number, number, number, number, number, num
   65: [2, 11, 7, 9, 8, 3],
 };
 
+const ASPDTable = {
+  bow: 9,
+  dagger: 10,
+} as const;
+
 export class Ranger extends CharacterBase {
   protected initialStatusPoint = 100;
+  protected baseAspd = 156;
   private _atkSkillList: AtkSkillModel[] = [
     {
       label: 'Arrow Storm Lv10',
@@ -410,6 +416,13 @@ export class Ranger extends CharacterBase {
       int,
       dex,
       luk,
+    };
+  }
+
+  calcBaseAspd(weaponType: string): { baseAspd: number; shieldPenalty: number } {
+    return {
+      baseAspd: this.baseAspd - ASPDTable[weaponType],
+      shieldPenalty: 0,
     };
   }
 }
