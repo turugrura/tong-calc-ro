@@ -75,6 +75,7 @@ import { TooltipModule } from 'primeng/tooltip';
 import { TreeModule } from 'primeng/tree';
 import { TreeTableModule } from 'primeng/treetable';
 import { TreeSelectModule } from 'primeng/treeselect';
+import { BlockUIModule } from 'primeng/blockui';
 
 import { RoCalculatorComponent } from './ro-calculator.component';
 import { PrettyJsonPipe } from '../../prettier-json.pipe';
@@ -159,6 +160,7 @@ import { RoCalculatorRoutingModule } from './ro-calculator-routing.module';
     TreeModule,
     TreeTableModule,
     TreeSelectModule,
+    BlockUIModule,
     RoCalculatorRoutingModule,
   ],
   declarations: [RoCalculatorComponent, PrettyJsonPipe],

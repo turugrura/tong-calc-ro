@@ -1,4 +1,5 @@
 <p-toast></p-toast>
+<p-blockUI [blocked]="isInProcessingPreset"></p-blockUI>
 <p-confirmDialog [style]="{ width: '50vw' }"></p-confirmDialog>
 
 <div class="grid grid-nogutter">
@@ -10,7 +11,7 @@
         <div class="grid grid-nogutter">
           <div class="col-12">
             <div class="p-inputgroup">
-              <input #presetName max="20" type="text" pInputText placeholder="Name" />
+              <input #presetName [maxLength]="100" autocomplete="off" type="text" pInputText placeholder="Name" />
               <button
                 type="button"
                 class="p-button-success"
@@ -32,14 +33,21 @@
                 placeholder="Presets"
                 [(ngModel)]="selectedPreset"
               ></p-dropdown>
-              <p-button
+              <!-- <p-button
                 type="button"
                 styleClass="p-button-secondary"
                 label="Load"
                 [loading]="isInProcessingPreset"
                 [disabled]="!selectedPreset"
                 (onClick)="laodPreset()"
-              ></p-button>
+              ></p-button> -->
+              <p-splitButton
+                label="Load"
+                styleClass="p-button-secondary"
+                (onClick)="loadPreset()"
+                [disabled]="isInProcessingPreset || !selectedPreset"
+                [model]="loadBtnItems"
+              ></p-splitButton>
             </div>
           </div>
 
@@ -210,7 +218,11 @@
           <div class="col-12">
             Alt + Q
             {{ totalSummary?.calc?.totalStatusAtk || 0 }} +
-            {{ totalSummary?.weapon?.baseWeaponAtk + totalSummary?.weapon?.refineBonus + totalSummary?.atk || 0 }}
+            {{
+              totalSummary?.weapon?.baseWeaponAtk +
+                totalSummary?.weapon?.refineBonus +
+                totalSummary?.calc?.totalEquipAtk || 0
+            }}
           </div>
           <div class="col-12">Atk: {{ totalSummary?.atk || 0 }}</div>
           <div class="col-12">Atk %: {{ totalSummary?.atkPercent }}</div>
@@ -270,7 +282,32 @@
               </ng-template>
             </p-dropdown>
           </div>
-          <div class="col-fixed" style="width: 75px">
+          <div class="col-6" style="min-width: 100px">
+            <p-dropdown
+              [options]="propertyAtkList"
+              [(ngModel)]="model.propertyAtk"
+              [disabled]="!model.weapon"
+              [showClear]="true"
+              placeholder="Element"
+              (onChange)="onPropertyAtkChange()"
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1" *ngIf="model.propertyAtk">
+                  <div class="{{ 'property_' + item.element }}">
+                    {{ item.label }}
+                  </div>
+                </div>
+              </ng-template>
+              <ng-template let-item pTemplate="item">
+                <div class="flex gap-1">
+                  <div class="{{ 'property_' + item.element }}">
+                    {{ item.label }}
+                  </div>
+                </div>
+              </ng-template>
+            </p-dropdown>
+          </div>
+          <div class="col-4" style="min-width: 70px">
             <p-dropdown
               inputId="weaponRefine"
               [options]="refineList"
@@ -385,6 +422,7 @@
           inputId="ammo"
           [autoDisplayFirst]="false"
           [options]="ammoList"
+          [showClear]="true"
           [filter]="true"
           filterBy="label"
           [(ngModel)]="model.ammo"
@@ -1362,10 +1400,9 @@
               [filter]="true"
               filterBy="label"
               [(ngModel)]="model.accRightEnchant1"
-              [disabled]="!model.accRight"
               [showClear]="true"
               (onChange)="onSelectItem('accRightEnchant1', $event.value)"
-              [disabled]="accRightEnchant1List.length === 0"
+              [disabled]="accRightEnchant1List.length === 0 || !model.accRight"
               placeholder="Enchant 2"
             >
               <ng-template let-item pTemplate="selectedItem">
@@ -1390,10 +1427,9 @@
               [filter]="true"
               filterBy="label"
               [(ngModel)]="model.accRightEnchant2"
-              [disabled]="!model.accRight"
               [showClear]="true"
               (onChange)="onSelectItem('accRightEnchant2', $event.value)"
-              [disabled]="accRightEnchant2List.length === 0"
+              [disabled]="accRightEnchant2List.length === 0 || !model.accRight"
               placeholder="Enchant 3"
             >
               <ng-template let-item pTemplate="selectedItem">
@@ -1418,9 +1454,8 @@
               [filter]="true"
               filterBy="label"
               [(ngModel)]="model.accRightEnchant3"
-              [disabled]="!model.accRight"
               [showClear]="true"
-              [disabled]="accRightEnchant3List.length === 0"
+              [disabled]="accRightEnchant3List.length === 0 || !model.accRight"
               (onChange)="onSelectItem('accRightEnchant3', $event.value)"
               placeholder="Enchant 4"
             >
@@ -2093,9 +2128,16 @@
               </p-dropdown>
             </div>
           </div>
-          <div class="col-12">basic: {{ minBasicDamage }} Max: {{ maxBasicDamage }}</div>
+          <div class="col-8">
+            basic: {{ minBasicDamage | number }} - {{ maxBasicDamage | number }} / Cri: {{ criDamage | number }}
+          </div>
           <div class="col-12">
-            minDamage: {{ minDamage }}({{ minDamage / 3 }}x3) maxDamage: {{ maxDamage }}({{ maxDamage / 3 }}x3)
+            MinDamage: {{ minDamage | number }}
+            <span *ngIf="skillHit > 1">( {{ minDamagePerHit | number }} x {{ skillHit }} )</span>
+          </div>
+          <div class="col-12">
+            MaxDamage: {{ maxDamage | number }}
+            <span *ngIf="skillHit > 1">( {{ maxDamagePerHit | number }} x {{ skillHit }} )</span>
           </div>
         </div>
       </p-accordionTab>
@@ -2124,7 +2166,7 @@
         </div>
       </p-accordionTab>
 
-      <p-accordionTab header="Item Desciptions">
+      <p-accordionTab header="Item Descriptions">
         <div class="grid grid-nogutter">
           <div class="col-4">
             <p-listbox

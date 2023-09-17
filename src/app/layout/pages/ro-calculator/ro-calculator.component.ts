@@ -1,19 +1,18 @@
-import { Component, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
-import { debounceTime, Subject } from 'rxjs';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { debounceTime, delay, finalize, forkJoin, of, Subject, take, tap } from 'rxjs';
 import { BaseStateCalculator } from './base-state-calculator';
 import { Calculator } from './calculator';
 import { ItemTypeEnum } from './item-type.enum';
 import { ItemTypeId } from './item.const';
-import { monsterData } from './monster-data';
 import { RoService } from 'src/app/demo/service/ro.service';
 import { Rebelion } from './rebellion';
 import { ItemModel } from './item.model';
-import { ConfirmEventType, ConfirmationService, MessageService } from 'primeng/api';
+import { ConfirmEventType, ConfirmationService, MenuItem, MessageService } from 'primeng/api';
 import { RaceType } from './race-type.const';
 import { ElementType } from './element-type.const';
 import { ActiveSkillModel, AtkSkillModel, CharacterBase, PassiveSkillModel } from './char-class.abstract';
 import { Ranger } from './ranger';
-
+import { MonsterModel } from './monster.model';
 enum CardPosition {
   Weapon = 0,
   Head = 769,
@@ -223,6 +222,10 @@ const wait = (second: number) =>
     }, second * 1000),
   );
 
+const waitRxjs = (second: number) => {
+  return of(null).pipe(delay(1000 * second), take(1));
+};
+
 const createExtraOptionList = () => {
   const atkTypes = ['Physical', 'Magical'];
   const atkProps = {
@@ -304,17 +307,19 @@ const sortLabel = (a: DropdownModel, b: DropdownModel) => {
   styleUrls: ['./ro-calculator.component.css'],
   providers: [ConfirmationService, MessageService],
 })
-export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
+export class RoCalculatorComponent implements OnInit, OnDestroy {
   updateItemEvent = new Subject();
+  loadBtnItems: MenuItem[];
+  monsterData: Record<number, MonsterModel> = {};
   items!: Record<number, ItemModel>;
   mapEnchant!: Map<string, ItemModel>;
   skillBuffs = skillBuffs;
+
   preSets: DropdownModel[] = [];
   selectedPreset = undefined;
   isInProcessingPreset = false;
 
   model = {
-    selectedAtkSkill: undefined,
     class: 1,
     level: 1,
     jobLevel: 1,
@@ -336,6 +341,8 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
     luk: 1,
     itemLuk: undefined,
     jobLuk: undefined,
+    selectedAtkSkill: undefined,
+    propertyAtk: undefined,
     rawOptionTxts: [],
     weapon: undefined,
     weaponRefine: undefined,
@@ -428,13 +435,14 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
     passiveSkills: [],
     consumables: [],
   };
-  private modelKeySet = new Set(Object.keys(this.model));
+  private emptyModel = this.cloneModel(this.model);
 
   basicEnchants: DropdownModel[] = []; // atk atk%, aspd, state
   refineList = createNumberDropdownList(0, 20);
   mainStatusList = createNumberDropdownList(1, 130);
-  levelList = createNumberDropdownList(1, 200);
+  levelList = createNumberDropdownList(99, 200);
   jobList = createNumberDropdownList(1, 65);
+  propertyAtkList = Object.values(ElementType).map<DropdownModel>((a) => ({ label: a, value: a, element: a }));
 
   optionList: any[] = createExtraOptionList();
 
@@ -516,6 +524,10 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
   maxBasicDamage = 0;
   minDamage = 0;
   maxDamage = 0;
+  skillHit = 1;
+  minDamagePerHit = 0;
+  maxDamagePerHit = 0;
+  criDamage = 0;
 
   calculator = new Calculator();
   stateCalculator = new BaseStateCalculator();
@@ -541,17 +553,23 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
   ) {}
 
   ngOnInit() {
-    this.loadPresetList();
+    this.initLoadItems();
+    this.setPresetList();
 
     this.updateItemEvent.pipe(debounceTime(750)).subscribe(() => {
-      this.logModel();
+      this.calculate();
       this.saveItemSet();
       this.resetItemDescription();
       this.onSelectItemDescription();
     });
 
-    this.roService.getItems<Record<number, ItemModel>>().then((items) => {
+    forkJoin([
+      this.roService.getItems<Record<number, ItemModel>>(),
+      this.roService.getMonsters<Record<number, MonsterModel>>(),
+    ]).subscribe(([items, monsters]) => {
       this.items = items;
+      this.monsterData = monsters;
+
       this.calculator.setMasterItems(items);
       this.mapEnchant = new Map(
         Object.values(items)
@@ -570,15 +588,38 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
     this.updateItemEvent?.unsubscribe();
   }
 
-  ngOnChanges(_changes: SimpleChanges): void {
-    // console.log({ model: { ...this.model } });
+  initLoadItems() {
+    this.loadBtnItems = [
+      {
+        label: 'Load',
+        // icon: 'pi pi-refresh',
+        command: () => {
+          this.loadPreset();
+        },
+      },
+      {
+        label: 'Delete',
+        icon: 'pi pi-times',
+        command: () => {
+          this.deletePreset();
+        },
+      },
+    ];
+  }
+
+  private cloneModel(baseModel: any): any {
+    return Object.entries(baseModel).reduce((m, [key, val]) => {
+      m[key] = Array.isArray(val) ? [] : val;
+
+      return m;
+    }, {});
   }
 
   isShowShield() {
     return this.model.class === 10;
   }
 
-  logModel() {
+  private calculate() {
     const { activeSkills, passiveSkills, selectedAtkSkill } = this.model;
     const { equipAtks, masteryAtks, skillNames, learnedSkillMap } = this.selectedCharacter.getSkillBonusAndName({
       activeIds: activeSkills,
@@ -586,7 +627,6 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
     });
 
     const consumeData = this.model.consumables.map((id) => this.items[id].script);
-    this.calculator.setConsumables(consumeData);
 
     const buffs = {};
     const addBuffBonus = (buffKey: string) => {
@@ -604,16 +644,23 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
       .setClass(this.selectedCharacter)
       .setEquipAtkSkillAtk({ ...equipAtks, ...buffs })
       .setMasterySkillAtk(masteryAtks)
+      .setConsumables(consumeData)
       .setExtraOptions(this.getOptionScripts())
       .setUsedSkillNames(skillNames)
       .setLearnedSkills(learnedSkillMap)
-      .setMonster(monsterData[this.selectedMonster]);
+      .setMonster(this.monsterData[this.selectedMonster]);
 
-    const { minDamage, maxDamage, rawMaxDamage, rawMinDamage } = calc.calculateSkillDamage(selectedAtkSkill);
+    const calculated = calc.calculateSkillDamage(selectedAtkSkill);
+    const { minDamage, maxDamage, rawMaxDamage, rawMinDamage, criMaxDamage, skillHit } = calculated;
     this.minBasicDamage = rawMinDamage;
     this.maxBasicDamage = rawMaxDamage;
     this.minDamage = minDamage;
     this.maxDamage = maxDamage;
+    this.minDamagePerHit = minDamage / skillHit;
+    this.maxDamagePerHit = maxDamage / skillHit;
+    this.skillHit = skillHit;
+    this.criDamage = criMaxDamage;
+
     this.totalSummary = calc.getTotalummary();
     this.modelSummary = calc.getModelSummary();
     const x = calc.getItemSummary();
@@ -670,16 +717,32 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
 
   private setSkillModelArray() {
     const { activeSkills, passiveSkills } = this.selectedCharacter;
-    if (this.model.activeSkills?.length !== activeSkills.length) {
-      this.model.activeSkills = activeSkills.map(() => 0);
-    }
-    if (this.model.passiveSkills?.length !== passiveSkills.length) {
-      this.model.passiveSkills = passiveSkills.map(() => 0);
-    }
+    this.model.activeSkills = activeSkills.map((skill, i) => {
+      const savedVal = this.model.activeSkills[i];
+      const found = skill.dropdown.find((a) => a.value === savedVal);
+
+      return found ? savedVal : 0;
+    });
+    this.model.passiveSkills = passiveSkills.map((skill, i) => {
+      const savedVal = this.model.passiveSkills[i];
+      const found = skill.dropdown.find((a) => a.value === savedVal);
+
+      return found ? savedVal : 0;
+    });
   }
 
-  private loadPresetList() {
-    this.preSets = JSON.parse(localStorage.getItem('presets') || '[]');
+  private getPresetList(): DropdownModel[] {
+    const presets = JSON.parse(localStorage.getItem('presets') || '[]') || [];
+
+    return Array.isArray(presets) ? presets : [];
+  }
+
+  private savePresetList(presets?: DropdownModel[]): void {
+    localStorage.setItem('presets', JSON.stringify(presets || this.preSets));
+  }
+
+  private setPresetList() {
+    this.preSets = this.getPresetList();
   }
 
   updatePreset(name: string) {
@@ -694,8 +757,8 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
         icon: 'pi pi-exclamation-triangle',
         accept: () => {
           currentPreset['model'] = this.model;
-          localStorage.setItem('presets', JSON.stringify(this.preSets));
-          this.loadPresetList();
+          this.savePresetList();
+          this.setPresetList();
 
           this.messageService.add({
             severity: 'info',
@@ -732,8 +795,8 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
             value: name,
             model: this.model,
           });
-          localStorage.setItem('presets', JSON.stringify(currentPresets));
-          this.loadPresetList();
+          this.savePresetList(currentPresets);
+          this.setPresetList();
 
           this.messageService.add({
             severity: 'success',
@@ -745,24 +808,54 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
     }
   }
 
-  laodPreset() {
+  loadPreset() {
     const selected = this.preSets.find((a) => a.value === this.selectedPreset);
-    this.model = {
-      ...selected['model'],
-    };
+    this.setModelByJSONString(selected['model']);
     this.loadItemSet(true);
   }
 
-  private setModelByJSONString(jsonStr: string) {
-    const rawData = JSON.parse(jsonStr || '{}');
-    const model = {} as any;
+  deletePreset() {
+    this.isInProcessingPreset = true;
 
-    for (const [key, value] of Object.entries(rawData)) {
-      if (this.modelKeySet.has(key)) {
-        model[key] = value;
-      }
+    waitRxjs(0.2)
+      .pipe(
+        tap(() => {
+          const preSets = this.getPresetList();
+          const removedSets = preSets.filter((a) => a.value !== this.selectedPreset);
+          this.savePresetList(removedSets);
+        }),
+        delay(200),
+        tap(() => this.setPresetList()),
+        finalize(() => {
+          this.messageService.add({
+            severity: 'error',
+            summary: `"${this.selectedPreset}" was removed`,
+          });
+          this.selectedPreset = '';
+          this.isInProcessingPreset = false;
+        }),
+      )
+      .subscribe();
+
+    // const preSets = this.getPresetList();
+    // const removedSets = preSets.filter((a) => a.value !== this.selectedPreset);
+    // this.savePresetList(removedSets);
+    // this.setPresetList()
+  }
+
+  private setModelByJSONString(savedModel: string | any) {
+    const savedData = typeof savedModel === 'string' ? JSON.parse(savedModel || '{}') : savedModel;
+    const model = this.cloneModel(this.emptyModel);
+
+    for (const [key, initialValue] of Object.entries(this.emptyModel)) {
+      const isAttrArray = Array.isArray(initialValue);
+
+      const savedValue = savedData[key];
+      const validValue = isAttrArray ? (Array.isArray(savedValue) ? savedValue : []) : savedValue ?? initialValue;
+      model[key] = validValue;
     }
-    this.model = { ...model };
+    this.model = model;
+    console.log('model', { ...model });
   }
 
   loadItemSet(fromCurrentModel = false) {
@@ -997,7 +1090,7 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
     this.accRightCardList = toDropdownList(accRightCardList, 'name', 'id');
     this.petList = petList.map((a) => ({ label: a.name, value: a.id }));
 
-    this.monsterList = toDropdownList(Object.values(monsterData), 'name', 'id', 'elementName' as any);
+    this.monsterList = toDropdownList(Object.values(this.monsterData), 'name', 'id', 'elementName' as any);
     this.consumableList = toDropdownList(consumableList, 'name', 'id');
 
     this.costumeEnhUpperList = toDropdownList(costumeEnhUpperList, 'name', 'id');
@@ -1243,6 +1336,10 @@ export class RoCalculatorComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   onAtkSkillChange() {
+    this.updateItemEvent.next(1);
+  }
+
+  onPropertyAtkChange() {
     this.updateItemEvent.next(1);
   }
 }

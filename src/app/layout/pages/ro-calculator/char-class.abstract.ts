@@ -1,4 +1,4 @@
-export type AtkSkillFormulaInput<T extends {}> = T & {
+export type AtkSkillFormulaInput<T extends {} = {}> = T & {
   baseLevel: number;
   skillLevel: number;
   usedSkillSet?: Set<string>;
@@ -16,6 +16,7 @@ export interface AtkSkillModel<T = any> {
   formular: (input: AtkSkillFormulaInput<T>) => number;
   canCri?: boolean;
   cri?: number;
+  hit?: number;
 }
 [];
 
@@ -67,7 +68,12 @@ export abstract class CharacterBase {
     luk: number;
   };
 
-  calcSkillDmgByTotalHit(finalDamage: number, usingSkillName: string): number {
+  calcSkillDmgByTotalHit(finalDamage: number, skillName: string): number {
+    const skillHit = this.atkSkills.find((a) => a.name === skillName)?.hit || 1;
+    if (skillHit > 1) {
+      return Math.floor(finalDamage / skillHit) * skillHit;
+    }
+
     return finalDamage;
   }
 }

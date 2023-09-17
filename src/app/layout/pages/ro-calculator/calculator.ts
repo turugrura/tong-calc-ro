@@ -41,6 +41,7 @@ export class Calculator {
     jobDex: undefined,
     luk: 1,
     jobLuk: undefined,
+    propertyAtk: undefined,
     weapon: undefined,
     weaponRefine: undefined,
     weaponCard1: undefined,
@@ -49,6 +50,7 @@ export class Calculator {
     weaponEnchant1: undefined,
     weaponEnchant2: undefined,
     weaponEnchant3: undefined,
+    ammo: undefined,
     headUpper: undefined,
     headUpperRefine: undefined,
     headUpperCard: undefined,
@@ -226,6 +228,7 @@ export class Calculator {
     weaponEnchant3: { ...this.allStatus },
     weaponOptions1: { ...this.allStatus },
     weaponOptions2: { ...this.allStatus },
+    ammo: { ...this.allStatus },
     headUpper: { ...this.allStatus },
     headUpperRefine: { ...this.allStatus },
     headUpperCard: { ...this.allStatus },
@@ -483,7 +486,7 @@ export class Calculator {
 
   private calcPropertyMultiplier() {
     const ammo = this.equipItem.get(ItemTypeEnum.ammo);
-    this.propertyAtk = ammo?.propertyAtk ?? ElementType.Neutral;
+    this.propertyAtk = this.model.propertyAtk ?? ammo?.propertyAtk ?? ElementType.Neutral;
 
     const pMultiplier = ElementMapper[this.monster.stats.elementName][this.propertyAtk];
     this.propertyMultiplier = this.toPercent(pMultiplier);
@@ -593,7 +596,7 @@ export class Calculator {
       .filter((a) => Number.isNaN(a) === false)
       .reduce((sum, m) => sum + m, 0);
 
-    this.totalMasteryAtk = skillAtk;
+    this.totalMasteryAtk += skillAtk;
   }
 
   private calcBuffAtk() {
@@ -602,6 +605,13 @@ export class Calculator {
   }
 
   private calcTotalAtk(aAtk?: number, bAtk?: number) {
+    // const calcPropMulti = (atk: number) => Math.floor(atk * 1);
+    // const extraAtk = calcPropMulti(this.totalStatusAtk * 2);
+    // const totalMinAtk = calcPropMulti(this.totalAMin) + calcPropMulti(this.totalBMin) + extraAtk;
+    // const totalMaxAtk = calcPropMulti(this.totalAMax) + calcPropMulti(this.totalBMax) + extraAtk;
+    // const additionalAtk = this.totalMasteryAtk + this.totalBuffAtk;
+    // if (aAtk && bAtk) return calcPropMulti(aAtk) + calcPropMulti(bAtk) + extraAtk + additionalAtk;
+
     const statusAtk = this.totalStatusAtk * 2 + this.totalMasteryAtk + this.totalBuffAtk;
     const totalMinAtk = this.totalAMin + this.totalBMin + statusAtk;
     const totalMaxAtk = this.totalAMax + this.totalBMax + statusAtk;
@@ -681,7 +691,7 @@ export class Calculator {
     return criMaxDamage;
   }
 
-  private calcRangeSkillDamage(skillData: AtkSkillModel) {
+  private calcSkillDamage(skillData: AtkSkillModel) {
     const { name: skillName, canCri } = skillData;
     const { softDef } = this.monsterData;
     const hardDef = this.dmgReductionByHardDef;
@@ -691,13 +701,14 @@ export class Calculator {
     const baseSkillMultiplier = this.toPercent(this.baseSkillDamage);
     const equipSkillMultiplier = this.toPercent(100 + (this.totalEquipStatus[skillName] || 0));
     const criMultiplier = canCri ? this.toPercent((criDmg || 0) + 100) : 1;
-    // const dmgMultiplier = 0;
+    const dmgMultiplier = 0;
     const finalDmgMultiplier = 0;
 
     const skillFormula = (totalAtk: number) => {
       const criApplied = Math.floor(totalAtk * criMultiplier);
       const rangedApplied = Math.floor(criApplied * this.toPercent(rangedMultiplier + 100));
-      const baseSkillApplied = Math.floor(rangedApplied * baseSkillMultiplier) - softDef;
+      const dmgMultiApplied = Math.floor(rangedApplied * this.toPercent(dmgMultiplier + 100));
+      const baseSkillApplied = Math.floor(dmgMultiApplied * baseSkillMultiplier) - softDef;
       const equipSkillApplied = Math.floor(baseSkillApplied * equipSkillMultiplier);
       const hDefApplied = Math.floor(equipSkillApplied * hardDef);
       const baseCriApplied = canCri ? Math.floor(hDefApplied * this.BASE_CRI_DMG) : hDefApplied;
@@ -715,8 +726,8 @@ export class Calculator {
       return `From:${atk} => ${dmg} (${dmg / 3} x 3)`;
     });
 
-    const minDamage = skillFormula(this.totalMinAtk);
     const maxDamage = skillFormula(this.totalMaxAtk);
+    const minDamage = canCri ? maxDamage : skillFormula(this.totalMinAtk);
 
     return { minDamage, maxDamage };
   }
@@ -823,7 +834,7 @@ export class Calculator {
     }
 
     // dex:10---1
-    const [, status, statusCond] = condition.match(/(str|int|dex|agi|vit|luk):(-*\d+)/) ?? [];
+    const [, status, statusCond] = condition.match(/(level|str|int|dex|agi|vit|luk):(-*\d+)/) ?? [];
     // console.log({ status, statusCond });
     if (status) {
       const myStatus = this.model[status];
@@ -1041,6 +1052,7 @@ export class Calculator {
   }
 
   private calcAllEquipItems() {
+    this.totalMasteryAtk = 0;
     this.totalEquipStatus = { ...this.allStatus };
     this.equipStatus = {} as any;
 
@@ -1115,6 +1127,10 @@ export class Calculator {
     for (const cons of this.consumableBonuses) {
       for (const [attr, value] of Object.entries(cons)) {
         const valNum = Number(value);
+        if (attr === 'atk') {
+          this.totalMasteryAtk += valNum;
+          continue;
+        }
         if (this.totalEquipStatus[attr]) {
           this.totalEquipStatus[attr] += valNum;
         } else {
@@ -1140,6 +1156,10 @@ export class Calculator {
       const boost = this.totalEquipStatus['dexBoost'];
       this.totalEquipStatus.dex += this.calcStatBoost(Number(boost), 'dex');
     }
+
+    if (this.weaponData.data.subTypeName === 'bow') {
+      this.totalEquipStatus.range += this.totalEquipStatus.bowRange || 0;
+    }
   }
 
   calculateSkillDamage(skillValue: string) {
@@ -1161,7 +1181,7 @@ export class Calculator {
       });
       this.baseSkillDamage = baseSkillDamage;
 
-      let { minDamage, maxDamage } = this.calcRangeSkillDamage(skillData);
+      let { minDamage, maxDamage } = this.calcSkillDamage(skillData);
       minSkillDamage = minDamage;
       maxSkillDamage = maxDamage;
     }
@@ -1176,6 +1196,7 @@ export class Calculator {
       criMaxDamage: criDmg,
       minDamage: this._class.calcSkillDmgByTotalHit(minSkillDamage, skillName),
       maxDamage: this._class.calcSkillDmgByTotalHit(maxSkillDamage, skillName),
+      skillHit: skillData.hit || 1,
     };
   }
 
@@ -1207,7 +1228,8 @@ export class Calculator {
         dmgReductionByHardDef: this.dmgReductionByHardDef,
         statusBonus: this.statusBonus,
         totalPene: this.totalPene,
-        totalEquipAtk: this.totalEquipAtk,
+        totalEquipAtk: this.totalEquipAtk - (this.equipStatus.ammo?.atk || 0),
+        ammuAtk: this.equipStatus.ammo?.atk || 0,
         totalMasteryAtk: this.totalMasteryAtk,
         totalBuffAtk: this.totalBuffAtk,
         totalStatusAtk: this.totalStatusAtk,
@@ -1237,7 +1259,7 @@ export class Calculator {
       ...obj,
       ...this.equipAtkSkillBonus,
       ...this.masteryAtkSkillBonus,
-      ...{ extra: this.equipStatus['extra'] },
+      ...{ extra: this.getObjSummary(this.equipStatus['extra']) },
       consumableBonuses: this.consumableBonuses,
     };
   }
