@@ -221,6 +221,7 @@
             {{
               totalSummary?.weapon?.baseWeaponAtk +
                 totalSummary?.weapon?.refineBonus +
+                totalSummary?.calc?.totalMasteryAtk +
                 totalSummary?.calc?.totalEquipAtk || 0
             }}
           </div>
@@ -229,7 +230,7 @@
           <div class="col-12">ASPD: {{ totalSummary?.aspd || 0 }}</div>
           <div class="col-12">Hit: {{ totalSummary?.hit || 0 }}</div>
           <div class="col-12">Perfect Hit: {{ totalSummary?.perfectHit || 0 }}</div>
-          <div class="col-12">Cri Rate: {{ totalSummary?.cri || 0 }}</div>
+          <div class="col-12">Cri Rate: {{ totalSummary?.calc?.totalCri || 0 }}</div>
           <div class="col-12">Cri Dmg: {{ totalSummary?.criDmg || 0 }}</div>
           <div class="col-12">Range: {{ totalSummary?.range || 0 }}</div>
         </div>
@@ -1946,7 +1947,7 @@
   <!-- Right Side -->
   <div class="p-fluid col-5">
     <p-accordion [multiple]="true" [activeIndex]="[1, 4]">
-      <p-accordionTab header="Foods / Class Skills">
+      <p-accordionTab class="consumable" header="Foods / Class Skills">
         <div class="grid grid-nogutter">
           <!-- Consumable -->
           <div class="col-4">
@@ -2037,8 +2038,6 @@
                       <p-dropdown
                         [autoDisplayFirst]="false"
                         [options]="passiveSkill.dropdown"
-                        [filter]="true"
-                        filterBy="label"
                         [(ngModel)]="model.passiveSkills[i]"
                         (onChange)="onSkillClassChange()"
                       ></p-dropdown>
@@ -2060,13 +2059,28 @@
 
             <div class="grid grid-nogutter">
               <div *ngFor="let activeSkill of activeSkills; let i = index" class="col-12">
-                <div class="p-inputgroup">
-                  <span class="p-inputgroup-addon" style="width: 130px">{{ activeSkill.label }}</span>
-                  <p-selectButton
-                    [options]="activeSkill.dropdown"
-                    [(ngModel)]="model.activeSkills[i]"
-                    (onChange)="onSkillClassChange()"
-                  ></p-selectButton>
+                <div [ngSwitch]="activeSkill.inputType">
+                  <div *ngSwitchCase="'dropdown'">
+                    <div class="p-inputgroup">
+                      <span class="p-inputgroup-addon" style="width: 130px">{{ activeSkill.label }}</span>
+                      <p-dropdown
+                        [autoDisplayFirst]="false"
+                        [options]="activeSkill.dropdown"
+                        [(ngModel)]="model.activeSkills[i]"
+                        (onChange)="onSkillClassChange()"
+                      ></p-dropdown>
+                    </div>
+                  </div>
+                  <div *ngSwitchDefault>
+                    <div class="p-inputgroup">
+                      <span class="p-inputgroup-addon" style="width: 130px">{{ activeSkill.label }}</span>
+                      <p-selectButton
+                        [options]="activeSkill.dropdown"
+                        [(ngModel)]="model.activeSkills[i]"
+                        (onChange)="onSkillClassChange()"
+                      ></p-selectButton>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

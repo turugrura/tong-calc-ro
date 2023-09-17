@@ -144,6 +144,7 @@ export class Calculator {
     criDmg: 0,
     perfectHit: 0,
     hit: 0,
+    dmg: 0,
     p_size_all: 0,
     p_size_s: 0,
     p_size_m: 0,
@@ -369,6 +370,10 @@ export class Calculator {
     return n * 0.01;
   }
 
+  private floor(n: number) {
+    return Math.floor(n);
+  }
+
   setClass(c: CharacterBase) {
     this._class = c;
 
@@ -494,15 +499,20 @@ export class Calculator {
 
   private calcWeaponAtk() {
     const { baseWeaponAtk, baseWeaponLevel, refineBonus, overUpgradeBonus } = this.weaponData.data;
-    const variant = baseWeaponAtk * baseWeaponLevel * 0.05;
+    const weaponSizePenalty = baseWeaponAtk * this.sizePenalty;
+    const variant = weaponSizePenalty * baseWeaponLevel * 0.05;
 
     const formular = (weaponAtk: number, overUpg: number) => {
-      const total = weaponAtk + this.statusBonus + refineBonus;
+      const total =
+        this.floor(weaponAtk) +
+        this.floor(this.statusBonus * this.sizePenalty) +
+        this.floor(refineBonus * this.sizePenalty);
       const total2 = this.isIncludingOverUpgrade() ? total + overUpg : total;
-      return Math.floor(total2 * this.sizePenalty);
+      // return Math.floor(total2 * this.sizePenalty);
+      return this.floor(total2);
     };
-    const totalMin = formular(baseWeaponAtk - variant, 0);
-    const totalMax = formular(baseWeaponAtk + variant, 0);
+    const totalMin = formular(weaponSizePenalty - variant, 0);
+    const totalMax = formular(weaponSizePenalty + variant, 0);
     // console.log({ totalStr, totalDex });
 
     this.totalWeaponAtkMin = totalMin;
@@ -591,12 +601,13 @@ export class Calculator {
   }
 
   private calcMasteryAtk() {
+    const { race, element, size } = this.monsterData;
     const skillAtk = Object.values(this.masteryAtkSkillBonus)
-      .map((a) => Number(a.atk))
+      .map((a) => Number(a.atk || a[`atk_race_${race}`] || a[`atk_element_${element}`] || a[`atk_size_${size}`]))
       .filter((a) => Number.isNaN(a) === false)
       .reduce((sum, m) => sum + m, 0);
 
-    this.totalMasteryAtk += skillAtk;
+    this.totalMasteryAtk = skillAtk;
   }
 
   private calcBuffAtk() {
@@ -647,9 +658,9 @@ export class Calculator {
   private calcBasicDamage() {
     const { softDef } = this.monsterData;
     const hardDef = this.dmgReductionByHardDef;
-    const { range, melee } = this.totalEquipStatus;
+    const { range, melee, dmg } = this.totalEquipStatus;
     const rangedMultiplier = this.isRangeAtk() ? range : melee;
-    const dmgMultiplier = 0;
+    const dmgMultiplier = dmg;
     const finalDmgMultiplier = 0;
 
     const formula = (totalAtk: number) => {
@@ -670,19 +681,19 @@ export class Calculator {
   private calcCriDamage() {
     const { softDef } = this.monsterData;
     const hardDef = this.dmgReductionByHardDef;
-    const { range, melee, criDmg } = this.totalEquipStatus;
+    const { range, melee, criDmg, dmg } = this.totalEquipStatus;
     const rangedMultiplier = this.isRangeAtk() ? range : melee;
-    const dmgMultiplier = 0;
+    const dmgMultiplier = dmg;
     const finalDmgMultiplier = 0;
 
     const formula = (totalAtk: number) => {
-      const criApplied = Math.floor(totalAtk * this.toPercent((criDmg || 0) + 100));
-      const rangedApplied = Math.floor(criApplied * this.toPercent(rangedMultiplier + 100));
-      const dmgMultiApplied = Math.floor(rangedApplied * this.toPercent(dmgMultiplier + 100));
-      const dmgHdef = Math.floor(dmgMultiApplied * hardDef);
+      const criApplied = this.floor(totalAtk * this.toPercent((criDmg || 0) + 100));
+      const rangedApplied = this.floor(criApplied * this.toPercent(rangedMultiplier + 100));
+      const dmgMultiApplied = rangedApplied * this.toPercent(dmgMultiplier + 100);
+      const dmgHdef = hardDef ? this.floor(dmgMultiApplied * hardDef) : dmgMultiApplied;
       const dmgSdef = dmgHdef - softDef;
-      const baseCriApplied = Math.floor(dmgSdef * this.BASE_CRI_DMG);
-      const finalApplied = Math.floor(baseCriApplied * this.toPercent(finalDmgMultiplier + 100));
+      const baseCriApplied = dmgSdef * this.BASE_CRI_DMG;
+      const finalApplied = this.floor(baseCriApplied * this.toPercent(finalDmgMultiplier + 100));
       return finalApplied;
     };
 
@@ -1052,7 +1063,6 @@ export class Calculator {
   }
 
   private calcAllEquipItems() {
-    this.totalMasteryAtk = 0;
     this.totalEquipStatus = { ...this.allStatus };
     this.equipStatus = {} as any;
 
@@ -1127,10 +1137,6 @@ export class Calculator {
     for (const cons of this.consumableBonuses) {
       for (const [attr, value] of Object.entries(cons)) {
         const valNum = Number(value);
-        if (attr === 'atk') {
-          this.totalMasteryAtk += valNum;
-          continue;
-        }
         if (this.totalEquipStatus[attr]) {
           this.totalEquipStatus[attr] += valNum;
         } else {
@@ -1218,6 +1224,8 @@ export class Calculator {
   }
 
   getTotalummary() {
+    const { luk, cri } = this.totalEquipStatus;
+
     return {
       ...this.getObjSummary(this.totalEquipStatus),
       monster: { ...this.monsterData },
@@ -1225,6 +1233,7 @@ export class Calculator {
       propertyMultiplier: this.propertyMultiplier,
       weapon: this.weaponData.data,
       calc: {
+        totalCri: 1 + cri + this.floor((luk + Number(this.model.luk) + Number(this.model.jobLuk)) / 3),
         dmgReductionByHardDef: this.dmgReductionByHardDef,
         statusBonus: this.statusBonus,
         totalPene: this.totalPene,

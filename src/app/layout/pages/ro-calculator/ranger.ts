@@ -93,7 +93,7 @@ export class Ranger extends CharacterBase {
         const bonus = usedSkillSet?.has('Falcon Eyes') ? 20 : 0;
 
         // return (baseAtk + 180 * skillLevel) * (baseLevel / 100);
-        return (bonus + 1000 + 80 * skillLevel) * (baseLevel / 100);
+        return bonus + (1000 + 80 * skillLevel) * (baseLevel / 100);
       },
     },
     {
@@ -111,7 +111,7 @@ export class Ranger extends CharacterBase {
         const { baseLevel, skillLevel, usedSkillSet } = input;
         const bonus = usedSkillSet?.has('Falcon Eyes') ? 20 : 0;
 
-        return (bonus + 150 + skillLevel * 200) * (baseLevel / 100);
+        return bonus + (150 + skillLevel * 200) * (baseLevel / 100);
       },
     },
     {
@@ -174,6 +174,20 @@ export class Ranger extends CharacterBase {
         { label: 'No', value: 0, isUse: false },
       ],
     },
+    {
+      isEquipAtk: true,
+      inputType: 'dropdown',
+      label: 'No Limits',
+      name: 'No Limits',
+      dropdown: [
+        { label: '0', value: 0, isUse: false },
+        { label: 'Lv 1', value: 'No Limits==1', skillLv: 1, isUse: true, bonus: { range: 150 } },
+        { label: 'Lv 2', value: 'No Limits==2', skillLv: 2, isUse: true, bonus: { range: 200 } },
+        { label: 'Lv 3', value: 'No Limits==3', skillLv: 3, isUse: true, bonus: { range: 250 } },
+        { label: 'Lv 4', value: 'No Limits==4', skillLv: 4, isUse: true, bonus: { range: 300 } },
+        { label: 'Lv 5', value: 'No Limits==5', skillLv: 5, isUse: true, bonus: { range: 350 } },
+      ],
+    },
   ];
   private _passiveSkillList: PassiveSkillModel[] = [
     {
@@ -182,7 +196,7 @@ export class Ranger extends CharacterBase {
       inputType: 'selectButton',
       isEquipAtk: true,
       dropdown: [
-        { label: 'Yes', value: "Owl's Eye==10", skillLv: 10, isUse: true, bonus: { dex: 10 } },
+        { label: 'Yes', value: 10, skillLv: 10, isUse: true, bonus: { dex: 10 } },
         { label: 'No', value: 0, isUse: false },
       ],
     },
@@ -192,7 +206,7 @@ export class Ranger extends CharacterBase {
       inputType: 'selectButton',
       isEquipAtk: true,
       dropdown: [
-        { label: 'Yes', value: "Vulture's Eye==10", skillLv: 10, isUse: true, bonus: { hit: 10 } },
+        { label: 'Yes', value: 10, skillLv: 10, isUse: true, bonus: { hit: 10 } },
         { label: 'No', value: 0, isUse: false },
       ],
     },
@@ -203,22 +217,16 @@ export class Ranger extends CharacterBase {
       isMasteryAtk: true,
       dropdown: [
         { label: '0', value: 0, isUse: false },
-        { label: '1', value: 'Beast Bane==1', skillLv: 1, isUse: true, bonus: { atkRaceBrute: 4, atkRaceInsect: 4 } },
-        { label: '2', value: 'Beast Bane==2', skillLv: 2, isUse: true, bonus: { atkRaceBrute: 8, atkRaceInsect: 8 } },
-        { label: '3', value: 'Beast Bane==3', skillLv: 3, isUse: true, bonus: { atkRaceBrute: 12, atkRaceInsect: 12 } },
-        { label: '4', value: 'Beast Bane==4', skillLv: 4, isUse: true, bonus: { atkRaceBrute: 16, atkRaceInsect: 16 } },
-        { label: '5', value: 'Beast Bane==5', skillLv: 5, isUse: true, bonus: { atkRaceBrute: 20, atkRaceInsect: 20 } },
-        { label: '6', value: 'Beast Bane==6', skillLv: 6, isUse: true, bonus: { atkRaceBrute: 24, atkRaceInsect: 24 } },
-        { label: '7', value: 'Beast Bane==7', skillLv: 7, isUse: true, bonus: { atkRaceBrute: 28, atkRaceInsect: 28 } },
-        { label: '8', value: 'Beast Bane==8', skillLv: 8, isUse: true, bonus: { atkRaceBrute: 32, atkRaceInsect: 32 } },
-        { label: '9', value: 'Beast Bane==9', skillLv: 9, isUse: true, bonus: { atkRaceBrute: 36, atkRaceInsect: 36 } },
-        {
-          label: '10',
-          value: 'Beast Bane==10',
-          skillLv: 10,
-          isUse: true,
-          bonus: { atkRaceBrute: 40, atkRaceInsect: 40 },
-        },
+        { label: '1', value: 1, skillLv: 1, isUse: true, bonus: { atk_race_brute: 4, atk_race_insect: 4 } },
+        { label: '2', value: 2, skillLv: 2, isUse: true, bonus: { atk_race_brute: 8, atk_race_insect: 8 } },
+        { label: '3', value: 3, skillLv: 3, isUse: true, bonus: { atk_race_brute: 12, atk_race_insect: 12 } },
+        { label: '4', value: 4, skillLv: 4, isUse: true, bonus: { atk_race_brute: 16, atk_race_insect: 16 } },
+        { label: '5', value: 5, skillLv: 5, isUse: true, bonus: { atk_race_brute: 20, atk_race_insect: 20 } },
+        { label: '6', value: 6, skillLv: 6, isUse: true, bonus: { atk_race_brute: 24, atk_race_insect: 24 } },
+        { label: '7', value: 7, skillLv: 7, isUse: true, bonus: { atk_race_brute: 28, atk_race_insect: 28 } },
+        { label: '8', value: 8, skillLv: 8, isUse: true, bonus: { atk_race_brute: 32, atk_race_insect: 32 } },
+        { label: '9', value: 9, skillLv: 9, isUse: true, bonus: { atk_race_brute: 36, atk_race_insect: 36 } },
+        { label: '10', value: 10, skillLv: 10, isUse: true, bonus: { atk_race_brute: 40, atk_race_insect: 40 } },
       ],
     },
     {
@@ -228,16 +236,16 @@ export class Ranger extends CharacterBase {
       isMasteryAtk: true,
       dropdown: [
         { label: '0', value: 0, isUse: false },
-        { label: '1', value: 'Steel Crow==1', skillLv: 1, isUse: true, bonus: { falconDmg: 6 } },
-        { label: '2', value: 'Steel Crow==2', skillLv: 2, isUse: true, bonus: { falconDmg: 12 } },
-        { label: '3', value: 'Steel Crow==3', skillLv: 3, isUse: true, bonus: { falconDmg: 18 } },
-        { label: '4', value: 'Steel Crow==4', skillLv: 4, isUse: true, bonus: { falconDmg: 24 } },
-        { label: '5', value: 'Steel Crow==5', skillLv: 5, isUse: true, bonus: { falconDmg: 30 } },
-        { label: '6', value: 'Steel Crow==6', skillLv: 6, isUse: true, bonus: { falconDmg: 36 } },
-        { label: '7', value: 'Steel Crow==7', skillLv: 7, isUse: true, bonus: { falconDmg: 42 } },
-        { label: '8', value: 'Steel Crow==8', skillLv: 8, isUse: true, bonus: { falconDmg: 48 } },
-        { label: '9', value: 'Steel Crow==9', skillLv: 9, isUse: true, bonus: { falconDmg: 54 } },
-        { label: '10', value: 'Steel Crow==10', skillLv: 10, isUse: true, bonus: { falconDmg: 60 } },
+        { label: '1', value: 1, skillLv: 1, isUse: true, bonus: { falconDmg: 6 } },
+        { label: '2', value: 2, skillLv: 2, isUse: true, bonus: { falconDmg: 12 } },
+        { label: '3', value: 3, skillLv: 3, isUse: true, bonus: { falconDmg: 18 } },
+        { label: '4', value: 4, skillLv: 4, isUse: true, bonus: { falconDmg: 24 } },
+        { label: '5', value: 5, skillLv: 5, isUse: true, bonus: { falconDmg: 30 } },
+        { label: '6', value: 6, skillLv: 6, isUse: true, bonus: { falconDmg: 36 } },
+        { label: '7', value: 7, skillLv: 7, isUse: true, bonus: { falconDmg: 42 } },
+        { label: '8', value: 8, skillLv: 8, isUse: true, bonus: { falconDmg: 48 } },
+        { label: '9', value: 9, skillLv: 9, isUse: true, bonus: { falconDmg: 54 } },
+        { label: '10', value: 10, skillLv: 10, isUse: true, bonus: { falconDmg: 60 } },
       ],
     },
     {
@@ -247,16 +255,76 @@ export class Ranger extends CharacterBase {
       name: 'Main Ranger',
       dropdown: [
         { label: '0', value: 0, isUse: false },
-        { label: '1', value: 'Main Ranger==1', skillLv: 1, isUse: true, bonus: { atk: 5 } },
-        { label: '2', value: 'Main Ranger==2', skillLv: 2, isUse: true, bonus: { atk: 10 } },
-        { label: '3', value: 'Main Ranger==3', skillLv: 3, isUse: true, bonus: { atk: 15 } },
-        { label: '4', value: 'Main Ranger==4', skillLv: 4, isUse: true, bonus: { atk: 20 } },
-        { label: '5', value: 'Main Ranger==5', skillLv: 5, isUse: true, bonus: { atk: 25 } },
-        { label: '6', value: 'Main Ranger==6', skillLv: 6, isUse: true, bonus: { atk: 30 } },
-        { label: '7', value: 'Main Ranger==7', skillLv: 7, isUse: true, bonus: { atk: 35 } },
-        { label: '8', value: 'Main Ranger==8', skillLv: 8, isUse: true, bonus: { atk: 40 } },
-        { label: '9', value: 'Main Ranger==9', skillLv: 9, isUse: true, bonus: { atk: 45 } },
-        { label: '10', value: 'Main Ranger==10', skillLv: 10, isUse: true, bonus: { atk: 50 } },
+        {
+          label: '1',
+          value: 1,
+          skillLv: 1,
+          isUse: true,
+          bonus: { atk_race_brute: 5, atk_race_plant: 5, atk_race_fish: 5 },
+        },
+        {
+          label: '2',
+          value: 2,
+          skillLv: 2,
+          isUse: true,
+          bonus: { atk_race_brute: 10, atk_race_plant: 10, atk_race_fish: 10 },
+        },
+        {
+          label: '3',
+          value: 3,
+          skillLv: 3,
+          isUse: true,
+          bonus: { atk_race_brute: 15, atk_race_plant: 15, atk_race_fish: 15 },
+        },
+        {
+          label: '4',
+          value: 4,
+          skillLv: 4,
+          isUse: true,
+          bonus: { atk_race_brute: 20, atk_race_plant: 20, atk_race_fish: 20 },
+        },
+        {
+          label: '5',
+          value: 5,
+          skillLv: 5,
+          isUse: true,
+          bonus: { atk_race_brute: 25, atk_race_plant: 25, atk_race_fish: 25 },
+        },
+        {
+          label: '6',
+          value: 6,
+          skillLv: 6,
+          isUse: true,
+          bonus: { atk_race_brute: 30, atk_race_plant: 30, atk_race_fish: 30 },
+        },
+        {
+          label: '7',
+          value: 7,
+          skillLv: 7,
+          isUse: true,
+          bonus: { atk_race_brute: 35, atk_race_plant: 35, atk_race_fish: 35 },
+        },
+        {
+          label: '8',
+          value: 8,
+          skillLv: 8,
+          isUse: true,
+          bonus: { atk_race_brute: 40, atk_race_plant: 40, atk_race_fish: 40 },
+        },
+        {
+          label: '9',
+          value: 9,
+          skillLv: 9,
+          isUse: true,
+          bonus: { atk_race_brute: 45, atk_race_plant: 45, atk_race_fish: 45 },
+        },
+        {
+          label: '10',
+          value: 10,
+          skillLv: 10,
+          isUse: true,
+          bonus: { atk_race_brute: 50, atk_race_plant: 50, atk_race_fish: 50 },
+        },
       ],
     },
     {

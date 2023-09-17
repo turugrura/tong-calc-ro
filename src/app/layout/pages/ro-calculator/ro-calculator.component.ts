@@ -746,8 +746,6 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   }
 
   updatePreset(name: string) {
-    this.isInProcessingPreset = true;
-
     const currentPresets = JSON.parse(localStorage.getItem('presets') || '[]') as DropdownModel[];
     const currentPreset = currentPresets.find((a) => a.value === name);
     if (currentPreset) {
@@ -756,6 +754,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         header: 'Confirmation',
         icon: 'pi pi-exclamation-triangle',
         accept: () => {
+          this.isInProcessingPreset = true;
           currentPreset['model'] = this.model;
           this.savePresetList();
           this.setPresetList();
@@ -788,6 +787,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         },
       });
     } else {
+      this.isInProcessingPreset = true;
       wait(0.5)
         .then(() => {
           currentPresets.push({

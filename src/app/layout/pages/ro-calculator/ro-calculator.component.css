@@ -35,6 +35,10 @@ pre {
   padding-top: 0.75rem !important;
   padding-bottom: 0.75rem !important;
 }
+
+:host ::ng-deep .consumable .p-accordion-content {
+  padding: 0;
+}
   
 .property_Water {
   background-color: #7ba7e1;
