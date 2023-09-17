@@ -2096,7 +2096,7 @@
                     [options]="skillBuffs['advBlessing'].dropdown"
                     [showClear]="true"
                     (onChange)="onSkillBuffChange()"
-                    placeholder="Blessing"
+                    placeholder=""
                   ></p-dropdown>
                 </div>
               </div>
@@ -2110,7 +2110,7 @@
                     [options]="skillBuffs['advAgiUp'].dropdown"
                     [showClear]="true"
                     (onChange)="onSkillBuffChange()"
-                    placeholder="Agi Up"
+                    placeholder=""
                   ></p-dropdown>
                 </div>
               </div>
@@ -2292,8 +2292,8 @@
             >
               <ng-template let-item pTemplate="item">
                 <div class="flex gap-1">
-                  <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
-                  <div style="overflow: hidden; height: 19px">
+                  <img src="assets/demo/images/items/{{ item.id }}.png" style="width: 19px" />
+                  <div class="text_ellips">
                     {{ item.label }}
                   </div>
                 </div>
@@ -2303,7 +2303,7 @@
           <div class="col-8">
             <div class="grid grid-nogutter ml-2">
               <div class="col-12">
-                ItemID: {{ selectedItemDesc }}
+                ItemID: {{ itemId }}
                 <pre [innerHTML]="itemBonus | prettyjson : [true, 3]"></pre>
               </div>
               <div

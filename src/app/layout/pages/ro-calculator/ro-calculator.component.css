@@ -39,6 +39,12 @@ pre {
 :host ::ng-deep .consumable .p-accordion-content {
   padding: 0;
 }
+
+.text_ellips {
+  height: 19px;
+  overflow: hidden;
+  white-space: nowrap;
+}
   
 .property_Water {
   background-color: #7ba7e1;

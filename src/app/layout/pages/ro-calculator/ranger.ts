@@ -70,7 +70,7 @@ const jobBonusTable: Record<number, [number, number, number, number, number, num
   61: [2, 10, 6, 9, 8, 2],
   62: [2, 10, 6, 9, 8, 2],
   63: [2, 10, 6, 9, 8, 2],
-  64: [2, 10, 6, 9, 8, 2],
+  64: [2, 11, 7, 9, 8, 2],
   65: [2, 11, 7, 9, 8, 3],
 };
 

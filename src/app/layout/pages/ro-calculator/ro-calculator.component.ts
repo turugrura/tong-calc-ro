@@ -132,63 +132,83 @@ const skillBuffs = {
   },
   advBlessing: {
     name: 'Clementia',
-    label: 'Clementia',
+    label: 'Blessing',
     dropdown: [
       {
-        label: 'B +2',
-        value: 2,
+        label: 'Lv 10',
+        value: 10,
+        bonus: { str: 10, int: 10, dex: 10, hit: 20 },
+      },
+      {
+        label: 'Lv 11',
+        value: 11,
+        bonus: { str: 11, int: 11, dex: 11, hit: 20 },
+      },
+      {
+        label: 'Lv 12',
+        value: 12,
         bonus: { str: 12, int: 12, dex: 12, hit: 20 },
       },
       {
-        label: 'B +3',
-        value: 3,
+        label: 'Lv 13',
+        value: 13,
         bonus: { str: 13, int: 13, dex: 13, hit: 20 },
       },
       {
-        label: 'B +4',
-        value: 4,
+        label: 'Lv 14',
+        value: 14,
         bonus: { str: 14, int: 14, dex: 14, hit: 20 },
       },
       {
-        label: 'B +5',
-        value: 5,
+        label: 'Lv 15',
+        value: 15,
         bonus: { str: 15, int: 15, dex: 15, hit: 20 },
       },
       {
-        label: 'B +6',
-        value: 6,
+        label: 'Lv 16',
+        value: 16,
         bonus: { str: 16, int: 16, dex: 16, hit: 20 },
       },
     ],
   },
   advAgiUp: {
     name: 'Cantocandidus',
-    label: 'Cantocandidus',
+    label: 'Agi UP',
     dropdown: [
       {
-        label: 'A +2',
-        value: 2,
+        label: 'Lv 10',
+        value: 10,
+        bonus: { agi: 12, aspdPercent: 10 },
+      },
+      {
+        label: 'Lv 11',
+        value: 11,
         bonus: { agi: 13, aspdPercent: 11 },
       },
       {
-        label: 'A +3',
-        value: 3,
+        label: 'Lv 12',
+        value: 12,
         bonus: { agi: 14, aspdPercent: 12 },
       },
       {
-        label: 'A +4',
-        value: 4,
+        label: 'Lv 13',
+        value: 13,
         bonus: { agi: 15, aspdPercent: 13 },
       },
       {
-        label: 'A +5',
-        value: 5,
+        label: 'Lv 14',
+        value: 14,
         bonus: { agi: 16, aspdPercent: 14 },
       },
       {
-        label: 'A +6',
-        value: 6,
+        label: 'Lv 15',
+        value: 15,
         bonus: { agi: 17, aspdPercent: 15 },
+      },
+      {
+        label: 'Lv 16',
+        value: 16,
+        bonus: { agi: 18, aspdPercent: 16 },
       },
     ],
   },
@@ -296,10 +316,6 @@ const createExtraOptionList = () => {
   }
 
   return items;
-};
-
-const sortLabel = (a: DropdownModel, b: DropdownModel) => {
-  return a.label > b.label ? 1 : -1;
 };
 
 @Component({
@@ -541,9 +557,10 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   totalSummary: any;
 
   private equipItemMap = new Map<ItemTypeEnum, number>();
-  private equipItemIdItemTypeMap = new Map<number, ItemTypeEnum>();
+  private equipItemIdItemTypeMap = new Map<ItemTypeEnum, number>();
   equipItems: DropdownModel[] = [];
   selectedItemDesc = undefined;
+  itemId = 0;
   itemBonus = {};
   itemDescription = '';
   hover = '';
@@ -869,7 +886,8 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     const calc = this.calculator
       .setModel(this.model)
       .setClass(this.selectedCharacter)
-      .setEquipAtkSkillAtk({ ...equipAtks, ...buffs })
+      .setEquipAtkSkillAtk(equipAtks)
+      .setBuffBonus(buffs)
       .setMasterySkillAtk(masteryAtks)
       .setConsumables(consumeData)
       .setExtraOptions(this.getOptionScripts())
@@ -909,25 +927,27 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     this.possiblyDamages = calc.getPossiblyDamages().map((a) => ({ label: `${a}`, value: a }));
   }
 
-  resetItemDescription() {
-    const equipItemIds: number[] = [];
-    const map = new Map<number, ItemTypeEnum>();
+  private resetItemDescription() {
+    const equipItemTypes: string[] = [];
+    const map = new Map<ItemTypeEnum, number>();
     for (const [itemType, itemId] of this.equipItemMap.entries()) {
       if (itemId) {
-        equipItemIds.push(itemId);
-        map.set(itemId, itemType);
+        equipItemTypes.push(itemType);
+        // map.set(`${itemType}-${itemId}`, itemType);
+        map.set(itemType, itemId);
       }
     }
 
     this.equipItemIdItemTypeMap = map;
 
-    if (!equipItemIds.includes(this.selectedItemDesc)) {
+    if (!equipItemTypes.includes(this.selectedItemDesc)) {
       this.selectedItemDesc = undefined;
     }
-    this.equipItems = [...new Set(equipItemIds)].map((id) => {
+    this.equipItems = [...this.equipItemIdItemTypeMap.entries()].map(([itemType, id]) => {
       return {
         label: this.items[id].name,
-        value: id,
+        value: itemType,
+        id,
       };
     });
   }
@@ -1260,8 +1280,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       case ItemSubTypeId.Armor:
         this.armorEnchant1List = (e2 ?? [])
           .map((a: any) => this.mapEnchant.get(a))
-          .map((a: any) => ({ label: a.name, value: a.id }))
-          .sort(sortLabel);
+          .map((a: any) => ({ label: a.name, value: a.id }));
         this.armorEnchant2List = (e3 ?? [])
           .map((a: any) => this.mapEnchant.get(a))
           .map((a: any) => ({ label: a.name, value: a.id }));
@@ -1378,13 +1397,14 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   }
 
   onSelectItemDescription() {
-    const selectedId = this.selectedItemDesc;
-    const itemType = this.equipItemIdItemTypeMap.get(selectedId);
-    const script = this.items[selectedId]?.script ?? {};
-    const bonus = this.itemSummary[itemType] || this.itemSummary2[itemType] || {};
+    const selectedType = this.selectedItemDesc;
+    const itemId = this.equipItemIdItemTypeMap.get(selectedType);
+    // const script = this.items[selectedId]?.script ?? {};
+    const bonus = this.itemSummary[selectedType] || this.itemSummary2[selectedType] || {};
 
+    this.itemId = itemId; //{ script, bonus };
     this.itemBonus = bonus; //{ script, bonus };
-    this.itemDescription = this.items[selectedId]?.description
+    this.itemDescription = this.items[itemId]?.description
       .replaceAll('\n', '<br>')
       .replace(/\^(.{6})/g, '<font color="#$1">');
   }

@@ -1,7 +1,7 @@
 import { AtkSkillFormulaInput, AtkSkillModel, CharacterBase } from './char-class.abstract';
 import { ElementMapper } from './element-mapper';
 import { ElementType } from './element-type.const';
-import { ItemTypeEnum } from './item-type.enum';
+import { ItemTypeEnum, MainItemTypeSet } from './item-type.enum';
 import { ItemModel } from './item.model';
 import { MonsterModel } from './monster.model';
 import { Weapon } from './weapon';
@@ -109,6 +109,7 @@ export class Calculator {
   private usedSkillNames = new Set<string>();
   private learnedSkillMap = new Map<string, number>();
   private equipAtkSkillBonus: Record<string, any> = {};
+  private buffBonus: Record<string, any> = {};
   private masteryAtkSkillBonus: Record<string, any> = {};
   private consumableBonuses: any[] = [];
 
@@ -457,6 +458,12 @@ export class Calculator {
     return this;
   }
 
+  setBuffBonus(buffBonus: Record<string, any>) {
+    this.buffBonus = { ...buffBonus };
+
+    return this;
+  }
+
   setMasterySkillAtk(masterySkillBonus: Record<string, any>) {
     this.masteryAtkSkillBonus = { ...masterySkillBonus };
 
@@ -509,8 +516,12 @@ export class Calculator {
         this.floor(this.statusBonus * this.sizePenalty) +
         this.floor(refineBonus * this.sizePenalty);
       const total2 = this.isIncludingOverUpgrade() ? total + overUpg : total;
-      // return Math.floor(total2 * this.sizePenalty);
       return this.floor(total2);
+
+      // const total = weaponAtk + this.statusBonus * this.sizePenalty + refineBonus * this.sizePenalty;
+      // return this.floor(total);
+
+      // return Math.floor(total2 * this.sizePenalty);
     };
     const totalMin = formular(weaponSizePenalty - variant, 0);
     const totalMax = formular(weaponSizePenalty + variant, 0);
@@ -1007,7 +1018,7 @@ export class Calculator {
     };
   }
 
-  private updateBaseEquipStat(attr: string, lineScript: string) {
+  private updateBaseEquipStat(attr: string, lineScript: string | number) {
     const n = Number(lineScript);
     if (Number.isSafeInteger(n)) {
       this.baseEquipmentStat[attr] = n + (this.baseEquipmentStat[attr] || 0);
@@ -1019,7 +1030,9 @@ export class Calculator {
 
     // console.log({ itemRefine, script });
     for (const [attr, attrScripts] of Object.entries(script)) {
-      this.updateBaseEquipStat(attr, attrScripts[0]);
+      if (MainItemTypeSet.has(itemType)) {
+        this.updateBaseEquipStat(attr, attrScripts[0]);
+      }
 
       total[attr] = attrScripts.reduce((sum, lineScript) => {
         const { isValid, restCondition } = this.validateCondition(itemType, itemRefine, lineScript);
@@ -1140,7 +1153,22 @@ export class Calculator {
           this.totalEquipStatus[attr] = val;
         }
 
-        this.baseEquipmentStat[attr] = val + (this.baseEquipmentStat[attr] || 0);
+        this.updateBaseEquipStat(attr, val);
+      }
+    }
+
+    for (const [buffName, scripts] of Object.entries(this.buffBonus)) {
+      for (const [attr, value] of Object.entries(scripts)) {
+        let val = Number(value);
+        if (attr === 'atk' || attr === 'matk') val = 0;
+
+        this.equipStatus[buffName] = { ...this.allStatus, [attr]: val };
+
+        if (this.totalEquipStatus[attr]) {
+          this.totalEquipStatus[attr] += val;
+        } else {
+          this.totalEquipStatus[attr] = val;
+        }
       }
     }
 

@@ -81,3 +81,22 @@ export enum ItemTypeEnum {
   shadowPendant = 'shadowPendant',
   shadowPendantEnchant1 = 'shadowPendantEnchant1',
 }
+
+export const MainItemTypeSet = new Set([
+  ItemTypeEnum.weapon,
+  ItemTypeEnum.headUpper,
+  ItemTypeEnum.headMiddle,
+  ItemTypeEnum.headLower,
+  ItemTypeEnum.armor,
+  ItemTypeEnum.shield,
+  ItemTypeEnum.garment,
+  ItemTypeEnum.boot,
+  ItemTypeEnum.accLeft,
+  ItemTypeEnum.accRight,
+  ItemTypeEnum.shadowArmor,
+  ItemTypeEnum.shadowBoot,
+  ItemTypeEnum.shadowEarning,
+  ItemTypeEnum.shadowPendant,
+  ItemTypeEnum.shadowShield,
+  ItemTypeEnum.shadowWeapon,
+]);
