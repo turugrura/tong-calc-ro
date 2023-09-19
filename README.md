@@ -3,8 +3,8 @@
 | todo                                               | status |
 | -------------------------------------------------- | ------ |
 | refine and options for shadow equipments           | Done   |
-| split food and Skill section                       | -      |
-| add ASPD potion                                    | -      |
+| split food and Skill section                       | Done   |
+| add and support calc ASPD potions                  | Done   |
 | calc skill cooldown, cast time and after cast time | -      |
 | damage to multiple monster                         | -      |
 | item comparing                                     | -      |

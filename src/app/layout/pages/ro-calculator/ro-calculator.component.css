@@ -40,10 +40,37 @@ pre {
   padding: 0;
 }
 
+:host ::ng-deep .consumable p-selectbutton {
+  width: 100%;
+}
+
+:host ::ng-deep .column_list p-listbox .p-listbox-list {
+  columns: 2;
+  padding: 0;
+}
+
 .text_ellips {
   height: 19px;
   overflow: hidden;
   white-space: nowrap;
+}
+
+:host ::ng-deep .select_skill .p-accordion-content {
+  padding: 0;
+}
+
+.text_group_ellips {
+  width: 50%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+:host ::ng-deep .select_skill p-selectbutton {
+  width: 50%;
+}
+
+:host ::ng-deep .select_skill .p-tag-value {
+  font-size: 1rem;
 }
   
 .property_Water {

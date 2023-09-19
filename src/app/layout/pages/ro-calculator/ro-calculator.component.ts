@@ -485,6 +485,8 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     activeSkills: [],
     passiveSkills: [],
     consumables: [],
+    consumables2: [],
+    aspdPotion: undefined,
   };
   private emptyModel = this.cloneModel(this.model);
 
@@ -568,6 +570,37 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   passiveSkills: PassiveSkillModel[] = [];
   activeSkills: ActiveSkillModel[] = [];
   consumableList: DropdownModel[] = [];
+  consumableList2: DropdownModel[][] = [
+    [
+      { label: 'Str 10', value: 14854 },
+      { label: 'Str 15', value: 14616 },
+    ],
+    [
+      { label: 'Agi 10', value: 14853 },
+      { label: 'Agi 15', value: 14618 },
+    ],
+    [
+      { label: 'Vit 10', value: 14849 },
+      { label: 'Vit 15', value: 14617 },
+    ],
+    [
+      { label: 'Int 10', value: 14852 },
+      { label: 'Int 15', value: 14619 },
+    ],
+    [
+      { label: 'Dex 10', value: 14851 },
+      { label: 'Dex 15', value: 14620 },
+    ],
+    [
+      { label: 'Luk 10', value: 14850 },
+      { label: 'Luk 15', value: 14621 },
+    ],
+  ];
+  aspdPotionList: DropdownModel[] = [
+    { label: 'Concentration Potion', value: 645 },
+    { label: 'Awakening Potion', value: 656 },
+    { label: 'Berserk Potion', value: 657 },
+  ];
 
   totalPoints = 0;
   availablePoints = 0;
@@ -683,7 +716,8 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       passiveIds: passiveSkills,
     });
 
-    const consumeData = this.model.consumables.map((id) => this.items[id].script);
+    const { consumables, consumables2, aspdPotion } = this.model;
+    const consumeData = [...consumables, ...consumables2].filter(Boolean).map((id) => this.items[id].script);
 
     const buffs = {};
     const addBuffBonus = (buffKey: string) => {
@@ -703,6 +737,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       .setBuffBonus(buffs)
       .setMasterySkillAtk(masteryAtks)
       .setConsumables(consumeData)
+      .setAspdPotion(aspdPotion)
       .setExtraOptions(this.getOptionScripts())
       .setUsedSkillNames(skillNames)
       .setLearnedSkills(learnedSkillMap)

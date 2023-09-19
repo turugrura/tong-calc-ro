@@ -2119,8 +2119,8 @@
 
   <!-- Right Side -->
   <div class="p-fluid col-5">
-    <p-accordion [multiple]="true" [activeIndex]="[1, 4]">
-      <p-accordionTab class="consumable" header="Foods / Class Skills">
+    <p-accordion [multiple]="true" [activeIndex]="[2, 5]">
+      <p-accordionTab class="consumable" header="Consumables">
         <div class="grid grid-nogutter">
           <!-- Consumable -->
           <div class="col-4">
@@ -2134,18 +2134,61 @@
               <ng-template let-item pTemplate="item">
                 <div class="flex gap-2">
                   <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
-                  <div>{{ item.label }}</div>
+                  <div class="text_ellips">{{ item.label }}</div>
                 </div>
               </ng-template>
             </p-listbox>
           </div>
 
-          <!--  Bishop Buffs -->
           <div class="col-4">
+            <div class="grid grid-nogutter column_list">
+              <div *ngFor="let con of consumableList2; let i = index" class="col-12">
+                <p-listbox
+                  [options]="con"
+                  [(ngModel)]="model.consumables2[i]"
+                  [multiple]="false"
+                  [metaKeySelection]="false"
+                  (onChange)="onConsumableChange()"
+                >
+                  <ng-template let-item pTemplate="item">
+                    <div class="flex gap-2">
+                      <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
+                      <div class="text_ellips">{{ item.label }}</div>
+                    </div>
+                  </ng-template>
+                </p-listbox>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-4">
+            <p-listbox
+              [options]="aspdPotionList"
+              [(ngModel)]="model.aspdPotion"
+              [multiple]="false"
+              [metaKeySelection]="false"
+              (onChange)="onConsumableChange()"
+            >
+              <ng-template let-item pTemplate="item">
+                <div class="flex gap-2">
+                  <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
+                  <div class="text_ellips">{{ item.label }}</div>
+                </div>
+              </ng-template>
+            </p-listbox>
+          </div>
+        </div>
+      </p-accordionTab>
+
+      <p-accordionTab class="select_skill" header="Skills">
+        <div class="grid grid-nogutter">
+          <!--  Buffs -->
+          <div class="col-4">
+            <p-tag severity="info" value="Buffs"></p-tag>
             <div class="grid grid-nogutter">
               <div class="col-12">
                 <div class="p-inputgroup">
-                  <span class="p-inputgroup-addon" style="width: 130px">{{ skillBuffs['impositioManus'].label }}</span>
+                  <span class="p-inputgroup-addon text_group_ellips">{{ skillBuffs['impositioManus'].label }}</span>
                   <p-selectButton
                     [options]="skillBuffs['impositioManus'].dropdown"
                     [(ngModel)]="model.impositioManus"
@@ -2155,7 +2198,7 @@
               </div>
               <div class="col-12">
                 <div class="p-inputgroup">
-                  <span class="p-inputgroup-addon" style="width: 130px">{{ skillBuffs['advBlessing'].label }}</span>
+                  <span class="p-inputgroup-addon text_group_ellips">{{ skillBuffs['advBlessing'].label }}</span>
                   <p-dropdown
                     inputId="advBlessing"
                     [autoDisplayFirst]="false"
@@ -2164,12 +2207,13 @@
                     [showClear]="true"
                     (onChange)="onSkillBuffChange()"
                     placeholder=""
+                    styleClass="'width: 50%'"
                   ></p-dropdown>
                 </div>
               </div>
               <div class="col-12">
                 <div class="p-inputgroup">
-                  <span class="p-inputgroup-addon" style="min-width: 130px">{{ skillBuffs['advAgiUp'].label }}</span>
+                  <span class="p-inputgroup-addon text_group_ellips">{{ skillBuffs['advAgiUp'].label }}</span>
                   <p-dropdown
                     inputId="advAgiUp"
                     [autoDisplayFirst]="false"
@@ -2178,14 +2222,13 @@
                     [showClear]="true"
                     (onChange)="onSkillBuffChange()"
                     placeholder=""
+                    styleClass="'width: 50%'"
                   ></p-dropdown>
                 </div>
               </div>
               <div class="col-12">
                 <div class="p-inputgroup">
-                  <span class="p-inputgroup-addon" style="min-width: 130px; width: 100%">{{
-                    skillBuffs['expiatio'].label
-                  }}</span>
+                  <span class="p-inputgroup-addon text_group_ellips">{{ skillBuffs['expiatio'].label }}</span>
                   <p-selectButton
                     [options]="skillBuffs['expiatio'].dropdown"
                     [(ngModel)]="model.expiatio"
@@ -2196,57 +2239,66 @@
             </div>
           </div>
 
-          <!-- Passive/Active Skills -->
+          <!-- Passive Skills -->
           <div class="col-4">
+            <p-tag severity="warning" value="Passive skills"></p-tag>
             <div class="grid grid-nogutter">
               <div *ngFor="let passiveSkill of passiveSkills; let i = index" class="col-12">
                 <div [ngSwitch]="passiveSkill.inputType">
                   <div *ngSwitchCase="'dropdown'">
                     <div class="p-inputgroup">
-                      <span class="p-inputgroup-addon" style="width: 130px">{{ passiveSkill.label }}</span>
+                      <span class="p-inputgroup-addon text_group_ellips">{{ passiveSkill.label }}</span>
                       <p-dropdown
                         [autoDisplayFirst]="false"
                         [options]="passiveSkill.dropdown"
                         [(ngModel)]="model.passiveSkills[i]"
                         (onChange)="onSkillClassChange()"
+                        styleClass="'width: 50%'"
                       ></p-dropdown>
                     </div>
                   </div>
                   <div *ngSwitchDefault>
                     <div class="p-inputgroup">
-                      <span class="p-inputgroup-addon" style="width: 130px">{{ passiveSkill.label }}</span>
+                      <span class="p-inputgroup-addon text_group_ellips">{{ passiveSkill.label }}</span>
                       <p-selectButton
                         [options]="passiveSkill.dropdown"
                         [(ngModel)]="model.passiveSkills[i]"
                         (ngModelChange)="onSkillClassChange()"
+                        styleClass="'width: 50%'"
                       ></p-selectButton>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
 
+          <!-- Active SKills -->
+          <div class="col-4">
+            <p-tag severity="danger" value="Active skills"></p-tag>
             <div class="grid grid-nogutter">
               <div *ngFor="let activeSkill of activeSkills; let i = index" class="col-12">
                 <div [ngSwitch]="activeSkill.inputType">
                   <div *ngSwitchCase="'dropdown'">
                     <div class="p-inputgroup">
-                      <span class="p-inputgroup-addon" style="width: 130px">{{ activeSkill.label }}</span>
+                      <span class="p-inputgroup-addon text_group_ellips">{{ activeSkill.label }}</span>
                       <p-dropdown
                         [autoDisplayFirst]="false"
                         [options]="activeSkill.dropdown"
                         [(ngModel)]="model.activeSkills[i]"
                         (onChange)="onSkillClassChange()"
+                        styleClass="'width: 50%'"
                       ></p-dropdown>
                     </div>
                   </div>
                   <div *ngSwitchDefault>
                     <div class="p-inputgroup">
-                      <span class="p-inputgroup-addon" style="width: 130px">{{ activeSkill.label }}</span>
+                      <span class="p-inputgroup-addon text_group_ellips">{{ activeSkill.label }}</span>
                       <p-selectButton
                         [options]="activeSkill.dropdown"
                         [(ngModel)]="model.activeSkills[i]"
                         (onChange)="onSkillClassChange()"
+                        styleClass="'width: 50%'"
                       ></p-selectButton>
                     </div>
                   </div>
@@ -2257,7 +2309,7 @@
         </div>
       </p-accordionTab>
 
-      <p-accordionTab header="ATK Skill / Monster">
+      <p-accordionTab header="Damage to Monster">
         <div class="grid grid-nogutter">
           <div class="col-6">
             <div class="p-inputgroup">

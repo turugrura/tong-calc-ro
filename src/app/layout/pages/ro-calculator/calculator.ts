@@ -119,6 +119,7 @@ export class Calculator {
   private buffBonus: Record<string, any> = {};
   private masteryAtkSkillBonus: Record<string, any> = {};
   private consumableBonuses: any[] = [];
+  private aspdPotion: number = undefined;
 
   private allStatus = {
     exp: 0,
@@ -496,6 +497,12 @@ export class Calculator {
 
   setConsumables(consumableBonuses: any[]) {
     this.consumableBonuses = [...consumableBonuses];
+
+    return this;
+  }
+
+  setAspdPotion(aspdPotion: number) {
+    this.aspdPotion = aspdPotion;
 
     return this;
   }
@@ -1389,7 +1396,7 @@ export class Calculator {
 
   private calcAspd() {
     this.totalAspd = this._class.calcAspd({
-      potionAspd: 0,
+      potionAspd: this.aspdPotion,
       potionAspdPercent: 0,
       skillAspd: 0,
       skillAspdPercent: 0,

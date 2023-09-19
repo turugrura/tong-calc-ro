@@ -141,11 +141,13 @@ export abstract class CharacterBase {
   }
 
   calcAspd(a: AspdInput): number {
-    const potion = { yellow: 4, green: 6, red: 9 };
+    const potion = { 645: 4, 656: 6, 657: 9 };
     const { weaponType, aspd, aspdPercent, totalAgi, totalDex, potionAspd, skillAspd } = a;
+    const aspdByPotion = potion[potionAspd] || 0;
+
     const { baseAspd, shieldPenalty } = this.calcBaseAspd(weaponType);
     const statAspd = Math.sqrt((totalAgi * totalAgi) / 2 + (totalDex * totalDex) / 5) / 4;
-    const potionSkillAspd = ((potionAspd + skillAspd) * totalAgi) / 200;
+    const potionSkillAspd = ((aspdByPotion + skillAspd) * totalAgi) / 200;
     const rawCalcAspd = Math.floor(statAspd + potionSkillAspd + shieldPenalty);
     const baseAspd2 = baseAspd + rawCalcAspd;
     const equip = Math.floor((195 - (baseAspd2 + aspd)) * (aspdPercent * 0.01));
