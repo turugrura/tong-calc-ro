@@ -1820,19 +1820,29 @@
           </ng-template>
         </p-dropdown>
       </div>
-      <div class="col-3">
+      <div class="col-1" style="min-width: 70px">
         <p-dropdown
-          inputId="shadowWeaponEnchant1"
-          [autoDisplayFirst]="false"
-          [options]="basicEnchants"
-          [filter]="true"
-          filterBy="label"
-          [(ngModel)]="model.shadowWeaponEnchant1"
-          [showClear]="true"
-          [disabled]="basicEnchants.length === 0 || !model.shadowWeapon"
-          (onChange)="onSelectItem('shadowWeaponEnchant1', $event.value)"
-          placeholder="Enchant 1"
+          inputId="shadowWeaponRefine"
+          [options]="shadowRefineList"
+          [(ngModel)]="model.shadowWeaponRefine"
+          [disabled]="!model.shadowWeapon"
+          (onChange)="onSelectItem('shadowWeapon', model.shadowWeapon, $event.value)"
         ></p-dropdown>
+      </div>
+      <div class="col-3">
+        <p-cascadeSelect
+          [(ngModel)]="model.rawOptionTxts[51]"
+          [disabled]="!model.shadowWeapon"
+          [options]="basicOptions"
+          optionValue="value"
+          optionGroupLabel="label"
+          optionLabel="label"
+          [optionGroupChildren]="['children']"
+          placeholder="Options"
+          [showClear]="true"
+          (onChange)="onOptionChange()"
+          (onClear)="onOptionChange()"
+        ></p-cascadeSelect>
       </div>
     </div>
     <div class="grid grid-nogutter">
@@ -1864,19 +1874,29 @@
           </ng-template>
         </p-dropdown>
       </div>
-      <div class="col-3">
+      <div class="col-1" style="min-width: 70px">
         <p-dropdown
-          inputId="shadowArmorEnchant1"
-          [autoDisplayFirst]="false"
-          [options]="basicEnchants"
-          [filter]="true"
-          filterBy="label"
-          [(ngModel)]="model.shadowArmorEnchant1"
-          [showClear]="true"
-          [disabled]="basicEnchants.length === 0 || !model.shadowArmor"
-          (onChange)="onSelectItem('shadowArmorEnchant1', $event.value)"
-          placeholder="Enchant 1"
+          inputId="shadowArmorRefine"
+          [options]="shadowRefineList"
+          [(ngModel)]="model.shadowArmorRefine"
+          [disabled]="!model.shadowArmor"
+          (onChange)="onSelectItem('shadowArmor', model.shadowArmor, $event.value)"
         ></p-dropdown>
+      </div>
+      <div class="col-3">
+        <p-cascadeSelect
+          [(ngModel)]="model.rawOptionTxts[52]"
+          [disabled]="!model.shadowArmor"
+          [options]="basicOptions"
+          optionValue="value"
+          optionGroupLabel="label"
+          optionLabel="label"
+          [optionGroupChildren]="['children']"
+          placeholder="Options"
+          [showClear]="true"
+          (onChange)="onOptionChange()"
+          (onClear)="onOptionChange()"
+        ></p-cascadeSelect>
       </div>
     </div>
     <div class="grid grid-nogutter">
@@ -1908,19 +1928,29 @@
           </ng-template>
         </p-dropdown>
       </div>
-      <div class="col-3">
+      <div class="col-1" style="min-width: 70px">
         <p-dropdown
-          inputId="shadowShieldEnchant1"
-          [autoDisplayFirst]="false"
-          [options]="basicEnchants"
-          [filter]="true"
-          filterBy="label"
-          [(ngModel)]="model.shadowShieldEnchant1"
-          [showClear]="true"
-          [disabled]="basicEnchants.length === 0 || !model.shadowShield"
-          (onChange)="onSelectItem('shadowShieldEnchant1', $event.value)"
-          placeholder="Enchant 1"
+          inputId="shadowShieldRefine"
+          [options]="shadowRefineList"
+          [(ngModel)]="model.shadowShieldRefine"
+          [disabled]="!model.shadowShield"
+          (onChange)="onSelectItem('shadowShield', model.shadowShield, $event.value)"
         ></p-dropdown>
+      </div>
+      <div class="col-3">
+        <p-cascadeSelect
+          [(ngModel)]="model.rawOptionTxts[53]"
+          [disabled]="!model.shadowShield"
+          [options]="basicOptions"
+          optionValue="value"
+          optionGroupLabel="label"
+          optionLabel="label"
+          [optionGroupChildren]="['children']"
+          placeholder="Options"
+          [showClear]="true"
+          (onChange)="onOptionChange()"
+          (onClear)="onOptionChange()"
+        ></p-cascadeSelect>
       </div>
     </div>
     <div class="grid grid-nogutter">
@@ -1952,19 +1982,29 @@
           </ng-template>
         </p-dropdown>
       </div>
-      <div class="col-3">
+      <div class="col-1" style="min-width: 70px">
         <p-dropdown
-          inputId="shadowBootEnchant1"
-          [autoDisplayFirst]="false"
-          [options]="basicEnchants"
-          [filter]="true"
-          filterBy="label"
-          [(ngModel)]="model.shadowBootEnchant1"
-          [showClear]="true"
-          [disabled]="basicEnchants.length === 0 || !model.shadowBoot"
-          (onChange)="onSelectItem('shadowBootEnchant1', $event.value)"
-          placeholder="Enchant 1"
+          inputId="shadowBootRefine"
+          [options]="shadowRefineList"
+          [(ngModel)]="model.shadowBootRefine"
+          [disabled]="!model.shadowBoot"
+          (onChange)="onSelectItem('shadowBoot', model.shadowBoot, $event.value)"
         ></p-dropdown>
+      </div>
+      <div class="col-3">
+        <p-cascadeSelect
+          [(ngModel)]="model.rawOptionTxts[54]"
+          [disabled]="!model.shadowBoot"
+          [options]="basicOptions"
+          optionValue="value"
+          optionGroupLabel="label"
+          optionLabel="label"
+          [optionGroupChildren]="['children']"
+          placeholder="Options"
+          [showClear]="true"
+          (onChange)="onOptionChange()"
+          (onClear)="onOptionChange()"
+        ></p-cascadeSelect>
       </div>
     </div>
     <div class="grid grid-nogutter">
@@ -1996,19 +2036,29 @@
           </ng-template>
         </p-dropdown>
       </div>
-      <div class="col-3">
+      <div class="col-1" style="min-width: 70px">
         <p-dropdown
-          inputId="shadowEarningEnchant1"
-          [autoDisplayFirst]="false"
-          [options]="basicEnchants"
-          [filter]="true"
-          filterBy="label"
-          [(ngModel)]="model.shadowEarningEnchant1"
-          [showClear]="true"
-          [disabled]="basicEnchants.length === 0 || !model.shadowEarning"
-          (onChange)="onSelectItem('shadowEarningEnchant1', $event.value)"
-          placeholder="Enchant 1"
+          inputId="shadowEarningRefine"
+          [options]="shadowRefineList"
+          [(ngModel)]="model.shadowEarningRefine"
+          [disabled]="!model.shadowEarning"
+          (onChange)="onSelectItem('shadowEarning', model.shadowEarning, $event.value)"
         ></p-dropdown>
+      </div>
+      <div class="col-3">
+        <p-cascadeSelect
+          [(ngModel)]="model.rawOptionTxts[55]"
+          [disabled]="!model.shadowEarning"
+          [options]="basicOptions"
+          optionValue="value"
+          optionGroupLabel="label"
+          optionLabel="label"
+          [optionGroupChildren]="['children']"
+          placeholder="Options"
+          [showClear]="true"
+          (onChange)="onOptionChange()"
+          (onClear)="onOptionChange()"
+        ></p-cascadeSelect>
       </div>
     </div>
     <div class="grid grid-nogutter">
@@ -2040,19 +2090,29 @@
           </ng-template>
         </p-dropdown>
       </div>
-      <div class="col-3">
+      <div class="col-1" style="min-width: 70px">
         <p-dropdown
-          inputId="shadowPendantEnchant1"
-          [autoDisplayFirst]="false"
-          [options]="basicEnchants"
-          [filter]="true"
-          filterBy="label"
-          [(ngModel)]="model.shadowPendantEnchant1"
-          [showClear]="true"
-          [disabled]="basicEnchants.length === 0 || !model.shadowPendant"
-          (onChange)="onSelectItem('shadowPendantEnchant1', $event.value)"
-          placeholder="Enchant 1"
+          inputId="shadowPendantRefine"
+          [options]="shadowRefineList"
+          [(ngModel)]="model.shadowPendantRefine"
+          [disabled]="!model.shadowPendant"
+          (onChange)="onSelectItem('shadowPendant', model.shadowPendant, $event.value)"
         ></p-dropdown>
+      </div>
+      <div class="col-3">
+        <p-cascadeSelect
+          [(ngModel)]="model.rawOptionTxts[56]"
+          [disabled]="!model.shadowPendant"
+          [options]="basicOptions"
+          optionValue="value"
+          optionGroupLabel="label"
+          optionLabel="label"
+          [optionGroupChildren]="['children']"
+          placeholder="Options"
+          [showClear]="true"
+          (onChange)="onOptionChange()"
+          (onClear)="onOptionChange()"
+        ></p-cascadeSelect>
       </div>
     </div>
   </div>

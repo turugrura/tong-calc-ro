@@ -14,6 +14,13 @@ const refinableItemTypes = [
   ItemTypeEnum.armor,
   ItemTypeEnum.garment,
   ItemTypeEnum.boot,
+
+  ItemTypeEnum.shadowWeapon,
+  ItemTypeEnum.shadowArmor,
+  ItemTypeEnum.shadowBoot,
+  ItemTypeEnum.shadowEarning,
+  ItemTypeEnum.shadowPendant,
+  ItemTypeEnum.shadowShield,
 ];
 const mainStatuses = ['str', 'dex', 'int', 'agi', 'luk', 'vit'];
 

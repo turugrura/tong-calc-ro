@@ -296,8 +296,43 @@ const createExtraOptionList = () => {
     ['ASPD %', 'aspdPercent', 1, 20],
     ['Delay', 'acd', 1, 15],
     ['Matk', 'matk', 10, 65],
+    ['Matk %', 'matkPercent', 5, 30],
     ['VCT', 'vct', 1, 20],
     ['CRI', 'cri', 1, 20],
+  ];
+  for (const [label, prop, min, max] of options) {
+    const item = {
+      value: label,
+      label,
+      children: Array.from({ length: max - min + 1 }, (_, k) => {
+        const num = k + min;
+        return {
+          label: `${label} ${num}`,
+          value: `${prop}:${num}`,
+        };
+      }),
+    };
+    items.push(item);
+  }
+
+  return items;
+};
+
+const createMainStatOptionList = () => {
+  const items = [];
+
+  const options: [string, string, number, number][] = [
+    ['Atk', 'atk', 1, 15],
+    ['Matk', 'matk', 1, 15],
+    ['ASPD', 'aspd', 1, 1],
+    ['All Stat', 'allStatus', 1, 10],
+    ['Str', 'str', 1, 10],
+    ['Str', 'str', 1, 10],
+    ['Agi', 'agi', 1, 10],
+    ['Vit', 'vit', 1, 10],
+    ['Int', 'int', 1, 10],
+    ['Dex', 'dex', 1, 10],
+    ['Luk', 'luk', 1, 10],
   ];
   for (const [label, prop, min, max] of options) {
     const item = {
@@ -430,17 +465,17 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     costumeEnhLower: undefined,
     costumeEnhGarment: undefined,
     shadowWeapon: undefined,
-    shadowWeaponEnchant1: undefined,
+    shadowWeaponRefine: undefined,
     shadowArmor: undefined,
-    shadowArmorEnchant1: undefined,
+    shadowArmorRefine: undefined,
     shadowShield: undefined,
-    shadowShieldEnchant1: undefined,
+    shadowShieldRefine: undefined,
     shadowBoot: undefined,
-    shadowBootEnchant1: undefined,
+    shadowBootRefine: undefined,
     shadowEarning: undefined,
-    shadowEarningEnchant1: undefined,
+    shadowEarningRefine: undefined,
     shadowPendant: undefined,
-    shadowPendantEnchant1: undefined,
+    shadowPendantRefine: undefined,
 
     impositioManus: undefined,
     advBlessing: undefined,
@@ -453,8 +488,9 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   };
   private emptyModel = this.cloneModel(this.model);
 
-  basicEnchants: DropdownModel[] = [];
+  basicOptions = createMainStatOptionList();
   refineList = createNumberDropdownList(0, 20);
+  shadowRefineList = createNumberDropdownList(0, 10);
   mainStatusList = createNumberDropdownList(1, 130);
   levelList = createNumberDropdownList(99, 200);
   jobList = createNumberDropdownList(1, 65);
@@ -684,7 +720,8 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     this.criDamage = criMaxDamage;
 
     this.totalSummary = calc.getTotalummary();
-    this.modelSummary = calc.getModelSummary();
+    const modelSummary = calc.getModelSummary() as any;
+    this.modelSummary = { ...modelSummary, rawOptionTxts: modelSummary.rawOptionTxts.filter(Boolean) };
     const x = calc.getItemSummary();
     const splitNumber = Object.keys(x).length / 2;
     const part1 = Object.entries(x).filter((a, index) => {
