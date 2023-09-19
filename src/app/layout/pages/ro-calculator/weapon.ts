@@ -106,6 +106,7 @@ const weaponSubType = {
 export class Weapon {
   private _subTypeName = '';
   private _baseWeaponAtk = 0;
+  private _baseWeaponMatk = 0;
   private _baseWeaponLevel = 0;
   private _refineBonus = 0;
   private _overUpgradeBonus = 0;
@@ -114,8 +115,9 @@ export class Weapon {
   set(itemData: ItemModel, refineLevel: number) {
     if (!itemData) return this;
 
-    const { itemLevel, attack, unidName } = itemData;
+    const { itemLevel, attack, unidName, script } = itemData;
     this._baseWeaponAtk = attack;
+    this._baseWeaponMatk = Number(script?.['matk']?.[0]) || 0;
     this._baseWeaponLevel = itemLevel;
     this._subTypeName = weaponSubType[unidName];
     if (refineLevel > 0) {
@@ -136,6 +138,7 @@ export class Weapon {
     return {
       subTypeName: this._subTypeName,
       baseWeaponAtk: this._baseWeaponAtk,
+      baseWeaponMatk: this._baseWeaponMatk,
       baseWeaponLevel: this._baseWeaponLevel,
       refineBonus: this._refineBonus,
       overUpgradeBonus: this._overUpgradeBonus,

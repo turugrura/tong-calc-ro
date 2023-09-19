@@ -260,7 +260,12 @@
                 {{ totalSummary?.mdef || 0 }}
               </div>
               <div class="col-12">Flee: {{ totalSummary?.flee || 0 }}</div>
-              <div class="col-12">Matk: {{ totalSummary?.matk || 0 }} | Matk %: {{ totalSummary?.Percent }}</div>
+              <div class="col-12">
+                Matk: {{ totalSummary?.calc?.totalStatusMatk || 0 }} +
+                {{ totalSummary?.weapon?.baseWeaponMatk + totalSummary?.weapon?.refineBonus + totalSummary?.matk || 0 }}
+                | Matk %:
+                {{ totalSummary?.matkPercent }}
+              </div>
               <!-- <div class="col-12">Matk %: {{ totalSummary?.Percent }}</div> -->
               <div class="col-12">After Cast Delay: {{ totalSummary?.acd || 0 }}</div>
               <div class="col-12">Fixe Cast Time: {{ totalSummary?.fct || 0 }}</div>
@@ -407,6 +412,7 @@
           <div class="col-4">
             <p-cascadeSelect
               [(ngModel)]="model.rawOptionTxts[0]"
+              [disabled]="!model.weapon"
               [options]="optionList"
               optionValue="value"
               optionGroupLabel="label"
@@ -421,6 +427,7 @@
           <div class="col-4">
             <p-cascadeSelect
               [(ngModel)]="model.rawOptionTxts[1]"
+              [disabled]="!model.weapon"
               [options]="optionList"
               optionValue="value"
               optionGroupLabel="label"

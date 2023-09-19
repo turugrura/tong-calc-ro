@@ -1,3 +1,5 @@
+import { ElementType } from './element-type.const';
+
 export type AtkSkillFormulaInput<T extends {} = {}> = T & {
   baseLevel: number;
   skillLevel: number;
@@ -17,6 +19,8 @@ export interface AtkSkillModel<T = any> {
   canCri?: boolean;
   cri?: number;
   hit?: number;
+  isMatk?: boolean;
+  element?: ElementType;
 }
 [];
 
@@ -61,15 +65,13 @@ export interface AspdInput {
 }
 
 export abstract class CharacterBase {
+  private allClass = 'all';
+
   protected abstract initialStatusPoint: number;
-
-  abstract get atkSkills(): AtkSkillModel[];
-
-  abstract get passiveSkills(): ActiveSkillModel[];
-
-  abstract get activeSkills(): PassiveSkillModel[];
-
-  abstract getSkillBonusAndName(params: { activeIds: number[]; passiveIds: number[] }): SkillBonusResult;
+  protected abstract classNames: string[];
+  protected abstract _atkSkillList: AtkSkillModel[];
+  protected abstract _activeSkillList: ActiveSkillModel[];
+  protected abstract _passiveSkillList: PassiveSkillModel[];
 
   abstract getJobBonusStatus(jobLevel: number): {
     str: number;
@@ -82,6 +84,62 @@ export abstract class CharacterBase {
 
   protected abstract calcBaseAspd(weaponType: string): { baseAspd: number; shieldPenalty: number };
 
+  get classNameSet() {
+    return new Set([this.allClass, ...this.classNames]);
+  }
+
+  get atkSkills() {
+    return this._atkSkillList;
+  }
+
+  get passiveSkills() {
+    return this._passiveSkillList;
+  }
+
+  get activeSkills() {
+    return this._activeSkillList;
+  }
+
+  getSkillBonusAndName(params: { activeIds: number[]; passiveIds: number[] }) {
+    const equipAtks: Record<string, any> = {};
+    const masteryAtks: Record<string, any> = {};
+    const skillNames = [];
+    const learnedSkillMap = new Map<string, number>();
+
+    const { activeIds, passiveIds } = params;
+    this._activeSkillList.forEach((skill, index) => {
+      const { bonus, isUse, skillLv } = skill.dropdown.find((x) => x.value === activeIds[index]) ?? {};
+      if (isUse) learnedSkillMap.set(skill.name, skillLv);
+      if (!bonus) return;
+
+      skillNames.push(skill.label);
+
+      const { isEquipAtk, isMasteryAtk } = skill;
+      if (isEquipAtk) {
+        equipAtks[skill.name] = bonus;
+      } else if (isMasteryAtk) {
+        masteryAtks[skill.name] = bonus;
+      }
+    });
+
+    this._passiveSkillList.forEach((skill, index) => {
+      const { bonus, isUse, skillLv } = (skill.dropdown as any[]).find((x) => x.value === passiveIds[index]) ?? {};
+      if (isUse) learnedSkillMap.set(skill.name, skillLv);
+      if (!bonus) return;
+
+      skillNames.push(skill.label);
+
+      const { isEquipAtk, isMasteryAtk } = skill;
+      if (isEquipAtk) {
+        equipAtks[skill.name] = bonus;
+      } else if (isMasteryAtk) {
+        masteryAtks[skill.name] = bonus;
+      }
+    });
+
+    return { skillNames, equipAtks, masteryAtks, learnedSkillMap };
+  }
+
   calcAspd(a: AspdInput): number {
     const potion = { yellow: 4, green: 6, red: 9 };
     const { weaponType, aspd, aspdPercent, totalAgi, totalDex, potionAspd, skillAspd } = a;
@@ -93,17 +151,17 @@ export abstract class CharacterBase {
     const equip = Math.floor((195 - (baseAspd2 + aspd)) * (aspdPercent * 0.01));
     const final = baseAspd2 + equip + aspd;
 
-    console.log({
-      baseAspd,
-      aspd,
-      aspdPercent,
-      shieldPenalty,
-      statAspd,
-      potionSkillAspd,
-      rawCalcAspd,
-      baseAspd2,
-      equip,
-    });
+    // console.log({
+    //   baseAspd,
+    //   aspd,
+    //   aspdPercent,
+    //   shieldPenalty,
+    //   statAspd,
+    //   potionSkillAspd,
+    //   rawCalcAspd,
+    //   baseAspd2,
+    //   equip,
+    // });
 
     return final;
   }

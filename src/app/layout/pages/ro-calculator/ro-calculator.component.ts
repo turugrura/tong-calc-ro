@@ -14,6 +14,10 @@ import { ActiveSkillModel, AtkSkillModel, CharacterBase, PassiveSkillModel } fro
 import { Ranger } from './ranger';
 import { MonsterModel } from './monster.model';
 import { getEnchants } from './enchant-table';
+import { SoulReaper } from './soul-reaper';
+import { DropdownModel } from './dropdown.model';
+import { ItemListModel } from './item-list.model';
+
 enum CardPosition {
   Weapon = 0,
   Head = 769,
@@ -58,16 +62,10 @@ enum HeadLocation {
   Lower = 'Lower',
 }
 
-interface DropdownModel {
-  label: string;
-  value: string | number;
-  element?: string;
-  [key: string]: any;
-}
-
 const Characters: DropdownModel[] = [
   { label: 'Rebelion', value: 1, instant: new Rebelion() },
   { label: 'Ranger', value: 2, instant: new Ranger() },
+  { label: 'SoulReaper', value: 3, instant: new SoulReaper() },
 ];
 
 const itemTypes = Object.freeze(Object.values(ItemTypeEnum));
@@ -118,6 +116,7 @@ const toDropdownList = <T extends {}>(
     label: a[labelKey],
     value: a[valueKey],
     element: elementKey ? a[elementKey] || '' : undefined,
+    usableClass: a['usableClass'] || undefined,
   }));
 };
 
@@ -243,7 +242,7 @@ const wait = (second: number) =>
     }, second * 1000),
   );
 
-const waitRxjs = (second: number) => {
+const waitRxjs = (second: number = 0.1) => {
   return of(null).pipe(delay(1000 * second), take(1));
 };
 
@@ -454,7 +453,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   };
   private emptyModel = this.cloneModel(this.model);
 
-  basicEnchants: DropdownModel[] = []; // atk atk%, aspd, state
+  basicEnchants: DropdownModel[] = [];
   refineList = createNumberDropdownList(0, 20);
   mainStatusList = createNumberDropdownList(1, 130);
   levelList = createNumberDropdownList(99, 200);
@@ -462,6 +461,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   propertyAtkList = Object.values(ElementType).map<DropdownModel>((a) => ({ label: a, value: a, element: a }));
 
   optionList: any[] = createExtraOptionList();
+  itemList: ItemListModel = {} as any;
 
   weaponList: DropdownModel[] = [];
   weaponCardList: DropdownModel[] = [];
@@ -604,7 +604,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
           }),
       );
       this.setMonsterDropdownList();
-      this.setDropdownList();
+      this.setItemList();
       this.loadItemSet();
     });
   }
@@ -640,12 +640,81 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     ];
   }
 
+  private calculate() {
+    const { activeSkills, passiveSkills, selectedAtkSkill } = this.model;
+    const { equipAtks, masteryAtks, skillNames, learnedSkillMap } = this.selectedCharacter.getSkillBonusAndName({
+      activeIds: activeSkills,
+      passiveIds: passiveSkills,
+    });
+
+    const consumeData = this.model.consumables.map((id) => this.items[id].script);
+
+    const buffs = {};
+    const addBuffBonus = (buffKey: string) => {
+      if (!this.model[buffKey]) return;
+
+      const { bonus } = this.skillBuffs[buffKey].dropdown.find((a) => a.value === this.model[buffKey]);
+      if (!bonus) return;
+
+      buffs[this.skillBuffs[buffKey].name] = bonus;
+    };
+    Object.keys(this.skillBuffs).forEach(addBuffBonus);
+
+    const calc = this.calculator
+      .setModel(this.model)
+      .setClass(this.selectedCharacter)
+      .setEquipAtkSkillAtk(equipAtks)
+      .setBuffBonus(buffs)
+      .setMasterySkillAtk(masteryAtks)
+      .setConsumables(consumeData)
+      .setExtraOptions(this.getOptionScripts())
+      .setUsedSkillNames(skillNames)
+      .setLearnedSkills(learnedSkillMap)
+      .setMonster(this.monsterDataMap[this.selectedMonster]);
+
+    const calculated = calc.calculateSkillDamage(selectedAtkSkill);
+    const { minDamage, maxDamage, rawMaxDamage, rawMinDamage, criMaxDamage, skillHit } = calculated;
+    this.minBasicDamage = rawMinDamage;
+    this.maxBasicDamage = rawMaxDamage;
+    this.minDamage = minDamage;
+    this.maxDamage = maxDamage;
+    this.minDamagePerHit = minDamage / skillHit;
+    this.maxDamagePerHit = maxDamage / skillHit;
+    this.skillHit = skillHit;
+    this.criDamage = criMaxDamage;
+
+    this.totalSummary = calc.getTotalummary();
+    this.modelSummary = calc.getModelSummary();
+    const x = calc.getItemSummary();
+    const splitNumber = Object.keys(x).length / 2;
+    const part1 = Object.entries(x).filter((a, index) => {
+      return index < splitNumber;
+    });
+    const part2 = Object.entries(x).filter((a, index) => {
+      return index >= splitNumber;
+    });
+    this.itemSummary = part1.reduce((total, [key, value]) => {
+      total[key] = value;
+      return total;
+    }, {});
+    this.itemSummary2 = part2.reduce((total, [key, value]) => {
+      total[key] = value;
+      return total;
+    }, {});
+    this.possiblyDamages = calc.getPossiblyDamages().map((a) => ({ label: `${a}`, value: a }));
+  }
+
   private cloneModel(baseModel: any): any {
     return Object.entries(baseModel).reduce((m, [key, val]) => {
       m[key] = Array.isArray(val) ? [] : val;
 
       return m;
     }, {});
+  }
+
+  private resetModel() {
+    const { class: _class, level, jobLevel } = this.model;
+    this.model = { ...this.cloneModel(this.emptyModel), class: _class, level, jobLevel };
   }
 
   isShowShield() {
@@ -817,9 +886,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     }
     this.model.selectedAtkSkill = this.model.selectedAtkSkill || this.atkSkills[0]?.value;
 
-    this.setClassInstant();
-    this.setClassSkill();
-    this.setSkillModelArray();
+    this.onClassChange(false);
     this.setJobBonus();
 
     return waitRxjs(0.1)
@@ -861,70 +928,6 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
   saveItemSet() {
     localStorage.setItem('ro-set', JSON.stringify(this.model));
-  }
-
-  private calculate() {
-    const { activeSkills, passiveSkills, selectedAtkSkill } = this.model;
-    const { equipAtks, masteryAtks, skillNames, learnedSkillMap } = this.selectedCharacter.getSkillBonusAndName({
-      activeIds: activeSkills,
-      passiveIds: passiveSkills,
-    });
-
-    const consumeData = this.model.consumables.map((id) => this.items[id].script);
-
-    const buffs = {};
-    const addBuffBonus = (buffKey: string) => {
-      if (!this.model[buffKey]) return;
-
-      const { bonus } = this.skillBuffs[buffKey].dropdown.find((a) => a.value === this.model[buffKey]);
-      if (!bonus) return;
-
-      buffs[this.skillBuffs[buffKey].name] = bonus;
-    };
-    Object.keys(this.skillBuffs).forEach(addBuffBonus);
-
-    const calc = this.calculator
-      .setModel(this.model)
-      .setClass(this.selectedCharacter)
-      .setEquipAtkSkillAtk(equipAtks)
-      .setBuffBonus(buffs)
-      .setMasterySkillAtk(masteryAtks)
-      .setConsumables(consumeData)
-      .setExtraOptions(this.getOptionScripts())
-      .setUsedSkillNames(skillNames)
-      .setLearnedSkills(learnedSkillMap)
-      .setMonster(this.monsterDataMap[this.selectedMonster]);
-
-    const calculated = calc.calculateSkillDamage(selectedAtkSkill);
-    const { minDamage, maxDamage, rawMaxDamage, rawMinDamage, criMaxDamage, skillHit } = calculated;
-    this.minBasicDamage = rawMinDamage;
-    this.maxBasicDamage = rawMaxDamage;
-    this.minDamage = minDamage;
-    this.maxDamage = maxDamage;
-    this.minDamagePerHit = minDamage / skillHit;
-    this.maxDamagePerHit = maxDamage / skillHit;
-    this.skillHit = skillHit;
-    this.criDamage = criMaxDamage;
-
-    this.totalSummary = calc.getTotalummary();
-    this.modelSummary = calc.getModelSummary();
-    const x = calc.getItemSummary();
-    const splitNumber = Object.keys(x).length / 2;
-    const part1 = Object.entries(x).filter((a, index) => {
-      return index < splitNumber;
-    });
-    const part2 = Object.entries(x).filter((a, index) => {
-      return index >= splitNumber;
-    });
-    this.itemSummary = part1.reduce((total, [key, value]) => {
-      total[key] = value;
-      return total;
-    }, {});
-    this.itemSummary2 = part2.reduce((total, [key, value]) => {
-      total[key] = value;
-      return total;
-    }, {});
-    this.possiblyDamages = calc.getPossiblyDamages().map((a) => ({ label: `${a}`, value: a }));
   }
 
   private resetItemDescription() {
@@ -999,7 +1002,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     this.monsterList = monsters;
   }
 
-  private setDropdownList() {
+  private setItemList() {
     const weaponList = [];
     const weaponCardList = [];
     const ammoList: ItemModel[] = [];
@@ -1151,40 +1154,84 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       }
     }
 
-    this.weaponList = toDropdownList(weaponList, 'name', 'id');
-    this.weaponCardList = toDropdownList(weaponCardList, 'name', 'id');
-    this.ammoList = toDropdownList(ammoList, 'name', 'id', 'propertyAtk');
-    this.headUpperList = toDropdownList(headUpperList, 'name', 'id');
-    this.headMiddleList = toDropdownList(headMiddleList, 'name', 'id');
-    this.headLowerList = toDropdownList(headLowerList, 'name', 'id');
-    this.headCardList = toDropdownList(headCardList, 'name', 'id');
-    this.armorList = toDropdownList(armorList, 'name', 'id');
-    this.armorCardList = toDropdownList(armorCardList, 'name', 'id');
-    this.shieldList = toDropdownList(shieldList, 'name', 'id');
-    this.shieldCardList = toDropdownList(shieldCardList, 'name', 'id');
-    this.garmentList = toDropdownList(garmentList, 'name', 'id');
-    this.garmentCardList = toDropdownList(garmentCardList, 'name', 'id');
-    this.bootList = toDropdownList(bootList, 'name', 'id');
-    this.bootCardList = toDropdownList(bootCardList, 'name', 'id');
-    this.accLeftList = toDropdownList(accLeftList, 'name', 'id');
-    this.accLeftCardList = toDropdownList(accLeftCardList, 'name', 'id');
-    this.accRightList = toDropdownList(accRightList, 'name', 'id');
-    this.accRightCardList = toDropdownList(accRightCardList, 'name', 'id');
-    this.petList = petList.map((a) => ({ label: a.name, value: a.id }));
+    this.itemList.weaponList = toDropdownList(weaponList, 'name', 'id');
+    this.itemList.weaponCardList = toDropdownList(weaponCardList, 'name', 'id');
+    this.itemList.ammoList = toDropdownList(ammoList, 'name', 'id', 'propertyAtk');
+    this.itemList.headUpperList = toDropdownList(headUpperList, 'name', 'id');
+    this.itemList.headMiddleList = toDropdownList(headMiddleList, 'name', 'id');
+    this.itemList.headLowerList = toDropdownList(headLowerList, 'name', 'id');
+    this.itemList.headCardList = toDropdownList(headCardList, 'name', 'id');
+    this.itemList.armorList = toDropdownList(armorList, 'name', 'id');
+    this.itemList.armorCardList = toDropdownList(armorCardList, 'name', 'id');
+    this.itemList.shieldList = toDropdownList(shieldList, 'name', 'id');
+    this.itemList.shieldCardList = toDropdownList(shieldCardList, 'name', 'id');
+    this.itemList.garmentList = toDropdownList(garmentList, 'name', 'id');
+    this.itemList.garmentCardList = toDropdownList(garmentCardList, 'name', 'id');
+    this.itemList.bootList = toDropdownList(bootList, 'name', 'id');
+    this.itemList.bootCardList = toDropdownList(bootCardList, 'name', 'id');
+    this.itemList.accLeftList = toDropdownList(accLeftList, 'name', 'id');
+    this.itemList.accLeftCardList = toDropdownList(accLeftCardList, 'name', 'id');
+    this.itemList.accRightList = toDropdownList(accRightList, 'name', 'id');
+    this.itemList.accRightCardList = toDropdownList(accRightCardList, 'name', 'id');
+    this.itemList.petList = petList.map((a) => ({ label: a.name, value: a.id }));
+
+    this.itemList.costumeEnhUpperList = toDropdownList(costumeEnhUpperList, 'name', 'id');
+    this.itemList.costumeEnhMiddleList = toDropdownList(costumeEnhMiddleList, 'name', 'id');
+    this.itemList.costumeEnhLowerList = toDropdownList(costumeEnhLowerList, 'name', 'id');
+    this.itemList.costumeEnhGarmentList = toDropdownList(costumeEnhGarmentList, 'name', 'id');
+
+    this.itemList.shadowArmorList = toDropdownList(shadowArmorList, 'name', 'id');
+    this.itemList.shadowShieldList = toDropdownList(shadowShieldList, 'name', 'id');
+    this.itemList.shadowBootList = toDropdownList(shadowBootList, 'name', 'id');
+    this.itemList.shadowEarningList = toDropdownList(shadowEarningList, 'name', 'id');
+    this.itemList.shadowPendantList = toDropdownList(shadowPendantList, 'name', 'id');
+    this.itemList.shadowWeaponList = toDropdownList(shadowWeaponList, 'name', 'id');
 
     this.consumableList = toDropdownList(consumableList, 'name', 'id');
+  }
 
-    this.costumeEnhUpperList = toDropdownList(costumeEnhUpperList, 'name', 'id');
-    this.costumeEnhMiddleList = toDropdownList(costumeEnhMiddleList, 'name', 'id');
-    this.costumeEnhLowerList = toDropdownList(costumeEnhLowerList, 'name', 'id');
-    this.costumeEnhGarmentList = toDropdownList(costumeEnhGarmentList, 'name', 'id');
+  private setItemDropdownList() {
+    const classNameSet = this.selectedCharacter.classNameSet;
+    const onlyMe = (a: DropdownModel) => {
+      if (Array.isArray(a.usableClass)) {
+        return a.usableClass.some((x) => classNameSet.has(x));
+      }
 
-    this.shadowArmorList = toDropdownList(shadowArmorList, 'name', 'id');
-    this.shadowShieldList = toDropdownList(shadowShieldList, 'name', 'id');
-    this.shadowBootList = toDropdownList(shadowBootList, 'name', 'id');
-    this.shadowEarningList = toDropdownList(shadowEarningList, 'name', 'id');
-    this.shadowPendantList = toDropdownList(shadowPendantList, 'name', 'id');
-    this.shadowWeaponList = toDropdownList(shadowWeaponList, 'name', 'id');
+      return true;
+    };
+
+    this.weaponList = this.itemList.weaponList.filter(onlyMe);
+    this.weaponCardList = this.itemList.weaponCardList.filter(onlyMe);
+    this.ammoList = this.itemList.ammoList.filter(onlyMe);
+    this.headUpperList = this.itemList.headUpperList.filter(onlyMe);
+    this.headMiddleList = this.itemList.headMiddleList.filter(onlyMe);
+    this.headLowerList = this.itemList.headLowerList.filter(onlyMe);
+    this.headCardList = this.itemList.headCardList.filter(onlyMe);
+    this.armorList = this.itemList.armorList.filter(onlyMe);
+    this.armorCardList = this.itemList.armorCardList.filter(onlyMe);
+    this.shieldList = this.itemList.shieldList.filter(onlyMe);
+    this.shieldCardList = this.itemList.shieldCardList.filter(onlyMe);
+    this.garmentList = this.itemList.garmentList.filter(onlyMe);
+    this.garmentCardList = this.itemList.garmentCardList.filter(onlyMe);
+    this.bootList = this.itemList.bootList.filter(onlyMe);
+    this.bootCardList = this.itemList.bootCardList.filter(onlyMe);
+    this.accLeftList = this.itemList.accLeftList.filter(onlyMe);
+    this.accLeftCardList = this.itemList.accLeftCardList.filter(onlyMe);
+    this.accRightList = this.itemList.accRightList.filter(onlyMe);
+    this.accRightCardList = this.itemList.accRightCardList.filter(onlyMe);
+    this.petList = this.itemList.petList.filter(onlyMe);
+
+    this.costumeEnhUpperList = this.itemList.costumeEnhUpperList.filter(onlyMe);
+    this.costumeEnhMiddleList = this.itemList.costumeEnhMiddleList.filter(onlyMe);
+    this.costumeEnhLowerList = this.itemList.costumeEnhLowerList.filter(onlyMe);
+    this.costumeEnhGarmentList = this.itemList.costumeEnhGarmentList.filter(onlyMe);
+
+    this.shadowArmorList = this.itemList.shadowArmorList.filter(onlyMe);
+    this.shadowShieldList = this.itemList.shadowShieldList.filter(onlyMe);
+    this.shadowBootList = this.itemList.shadowBootList.filter(onlyMe);
+    this.shadowEarningList = this.itemList.shadowEarningList.filter(onlyMe);
+    this.shadowPendantList = this.itemList.shadowPendantList.filter(onlyMe);
+    this.shadowWeaponList = this.itemList.shadowWeaponList.filter(onlyMe);
   }
 
   private getOptionScripts() {
@@ -1202,9 +1249,9 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       .filter(Boolean);
   }
 
-  setEnchantList(itemId: number, positionEnum?: ItemTypeEnum | string) {
+  setEnchantList(mainItemId: number, positionEnum?: ItemTypeEnum | string) {
     // console.log({ itemId });
-    let { itemSubTypeId, location, aegisName, name } = this.items[itemId] ?? ({} as ItemModel);
+    let { itemSubTypeId, location, aegisName, name } = this.items[mainItemId] ?? ({} as ItemModel);
     const enchants = getEnchants(aegisName) ?? getEnchants(name);
 
     const [_, e2, e3, e4] = Array.isArray(enchants) ? enchants : [];
@@ -1417,10 +1464,42 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     this.updateItemEvent.next(1);
   }
 
-  onClassChange() {
-    this.setClassInstant();
-    this.setClassSkill();
-    this.setSkillModelArray();
+  onClassChange(isChangeByInput = true) {
+    if (isChangeByInput) {
+      this.isInProcessingPreset = true;
+
+      waitRxjs()
+        .pipe(
+          mergeMap(() => {
+            this.resetModel();
+            return waitRxjs();
+          }),
+          mergeMap(() => {
+            this.setClassInstant();
+            return waitRxjs();
+          }),
+          mergeMap(() => {
+            this.setClassSkill();
+            return waitRxjs();
+          }),
+          mergeMap(() => {
+            this.setSkillModelArray();
+            return waitRxjs();
+          }),
+          mergeMap(() => {
+            this.setItemDropdownList();
+            return waitRxjs(0.5);
+          }),
+          take(1),
+          finalize(() => (this.isInProcessingPreset = false)),
+        )
+        .subscribe(() => this.updateItemEvent.next(1));
+    } else {
+      this.setClassInstant();
+      this.setClassSkill();
+      this.setSkillModelArray();
+      this.setItemDropdownList();
+    }
   }
 
   onAtkSkillChange() {

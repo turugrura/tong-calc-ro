@@ -29,6 +29,7 @@ enum AttackDelay {
   _4 = 'Attack_Delay_4',
 }
 enum Spell {
+  _3 = 'Spell3',
   _4 = 'Spell4',
   _5 = 'Spell5',
 }
@@ -235,6 +236,8 @@ interface EntTable {
 }
 
 const enchantTable: EntTable[] = [
+  { name: 'Lush_Rose', enchants: [null, null, null, [Spell._3, Spell._4, Spell._5]] },
+
   { name: 'Illusion_Armor_A', enchants: [null, illusionArmor, illusionArmor, illusionArmor] },
   { name: 'Illusion_Armor_B', enchants: [null, illusionArmor, illusionArmor, illusionArmor] },
   { name: 'Illusion_Engine_A', enchants: [null, illusionGarment, illusionGarment, illusionGarment] },
@@ -247,6 +250,13 @@ const enchantTable: EntTable[] = [
   { name: 'Illusion_BC_L', enchants: [null, illusionAcc, illusionAcc, illusionAcc] },
 
   { name: 'Temporal_Boots_TW', enchants: [null, null, tempBoot_3, tempBoot_4] },
+  { name: 'Temporal_Str_Boots_', enchants: [null, null, tempBoot_3, tempBoot_4] },
+  { name: 'Temporal_Int_Boots_', enchants: [null, null, tempBoot_3, tempBoot_4] },
+  { name: 'Temporal_Agi_Boots_', enchants: [null, null, tempBoot_3, tempBoot_4] },
+  { name: 'Temporal_Vit_Boots_', enchants: [null, null, tempBoot_3, tempBoot_4] },
+  { name: 'Temporal_Dex_Boots_', enchants: [null, null, tempBoot_3, tempBoot_4] },
+  { name: 'Temporal_Luk_Boots_', enchants: [null, null, tempBoot_3, tempBoot_4] },
+
   { name: 'Modify_Str_Boots_', enchants: [null, null, tempBoot_3, tempBoot_4] },
   { name: 'Modify_Int_Boots_', enchants: [null, null, tempBoot_3, tempBoot_4] },
   { name: 'Modify_Agi_Boots_', enchants: [null, null, tempBoot_3, tempBoot_4] },
