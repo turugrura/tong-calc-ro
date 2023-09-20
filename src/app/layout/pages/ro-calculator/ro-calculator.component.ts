@@ -610,6 +610,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   maxBasicDamage = 0;
   minDamage = 0;
   maxDamage = 0;
+  dps = 0;
   skillHit = 1;
   minDamagePerHit = 0;
   maxDamagePerHit = 0;
@@ -744,11 +745,12 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       .setMonster(this.monsterDataMap[this.selectedMonster]);
 
     const calculated = calc.calculateSkillDamage(selectedAtkSkill);
-    const { minDamage, maxDamage, rawMaxDamage, rawMinDamage, criMaxDamage, skillHit } = calculated;
+    const { minDamage, maxDamage, rawMaxDamage, rawMinDamage, criMaxDamage, skillHit, dps } = calculated;
     this.minBasicDamage = rawMinDamage;
     this.maxBasicDamage = rawMaxDamage;
     this.minDamage = minDamage;
     this.maxDamage = maxDamage;
+    this.dps = dps;
     this.minDamagePerHit = minDamage / skillHit;
     this.maxDamagePerHit = maxDamage / skillHit;
     this.skillHit = skillHit;
@@ -1068,7 +1070,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       return {
         label: `Lv ${a.stats.level} ${a.name}`,
         value: a.id,
-        elementName: a.stats.elementName.replace('/s+d+/', ''),
+        elementName: a.stats.elementName.replace(/\s+\d+/, ''),
       };
     });
     this.monsterList = monsters;

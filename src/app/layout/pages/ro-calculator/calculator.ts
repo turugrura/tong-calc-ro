@@ -149,6 +149,7 @@ export class Calculator {
     vct: 0,
     acd: 0,
     fct: 0,
+    fctPercent: 0,
     cri: 0,
     criDmg: 0,
     perfectHit: 0,
@@ -344,6 +345,19 @@ export class Calculator {
   private totalMinMatk = 0;
   private totalMaxMatk = 0;
 
+  private skillFrequency = {
+    cd: 0,
+    reducedCd: 0,
+    vct: 0,
+    reducedVct: 0,
+    fct: 0,
+    reducedFct: 0,
+    acd: 0,
+    reducedAcd: 0,
+    hitPeriod: 0,
+    totalHitPerSec: 0,
+  } as any;
+
   private possiblyDamages: any[] = [];
 
   get status() {
@@ -395,7 +409,12 @@ export class Calculator {
     return n * 0.01;
   }
 
-  private floor(n: number) {
+  private floor(n: number, digit = 0) {
+    if (digit > 0) {
+      const pow = Math.pow(10, digit);
+      return Math.floor(n * pow) / pow;
+    }
+
     return Math.floor(n);
   }
 
@@ -1352,19 +1371,52 @@ export class Calculator {
     }
   }
 
+  calcSkillFrequency(skillValue: AtkSkillModel) {
+    const { name, acd: skillAcd, cd: skillCd, fct: skillFct, vct: skillVct } = skillValue;
+
+    const reduceSkillCd = this.totalEquipStatus[`cd__${name}`] || 0;
+    const reduceSkillVct = this.totalEquipStatus[`vct__${name}`] || 0;
+    const reduceSkillFct = this.totalEquipStatus[`fct__${name}`] || 0;
+    const reduceSkillAcd = this.totalEquipStatus[`acd__${name}`] || 0;
+
+    const { acd, vct, fct, fctPercent } = this.totalEquipStatus;
+    // console.log({ name, reduceSkillCd, reduceSkillVct, reduceSkillFct, reduceSkillAcd, ...this.totalEquipStatus });
+
+    this.skillFrequency = {
+      cd: skillCd,
+      reducedCd: this.floor(skillCd - reduceSkillCd, 2),
+      vct: skillVct,
+      reducedVct: this.floor((skillVct - reduceSkillVct) * (1 - vct * 0.01), 2),
+      fct: skillFct,
+      reducedFct: this.floor((skillFct - reduceSkillFct - fct) * (1 - fctPercent * 0.01), 2),
+      acd: skillAcd,
+      reducedAcd: this.floor((skillAcd - reduceSkillAcd) * (1 - acd * 0.01), 2),
+    };
+    const { reducedCd, reducedVct, reducedFct, reducedAcd } = this.skillFrequency;
+
+    const blockPeriod = Math.max(reducedCd, reducedAcd);
+    const castPeriod = reducedVct + reducedFct;
+    this.skillFrequency.hitPeriod = this.floor(blockPeriod + castPeriod, 3);
+    this.skillFrequency.totalHitPerSec = this.floor(1 / this.skillFrequency.hitPeriod, 2);
+
+    return this;
+  }
+
   calculateSkillDamage(skillValue: string) {
     this.calcAllEquipItems();
     this.calcAllAtk();
     this.calcAspd();
 
     this.baseSkillDamage = 0;
+    this.skillFrequency = {};
+
+    const { basicMinDamage, basicMaxDamage } = this.calcBasicDamage();
+    const criDmg = this.calcCriDamage();
 
     const [, skillName, skillLevel] = skillValue?.match(/(.+)==(\d+)/) ?? [];
     const skillData = this._class.atkSkills.find((a) => a.value === skillValue);
     const isValidSkill = !!skillName && !!skillLevel && typeof skillData?.formular === 'function';
 
-    let minSkillDamage = 0;
-    let maxSkillDamage = 0;
     if (isValidSkill) {
       const baseSkillDamage = skillData.formular({
         baseLevel: this.model.level,
@@ -1373,24 +1425,31 @@ export class Calculator {
       });
       this.baseSkillDamage = baseSkillDamage;
 
-      let { minDamage, maxDamage } = skillData.isMatk
+      const { minDamage, maxDamage } = skillData.isMatk
         ? this.calcMatkSkillDamage(skillData)
         : this.calcSkillDamage(skillData);
-      minSkillDamage = minDamage;
-      maxSkillDamage = maxDamage;
-    }
+      this.calcSkillFrequency(skillData);
 
-    const { basicMinDamage, basicMaxDamage } = this.calcBasicDamage();
-    const criDmg = this.calcCriDamage();
+      const { totalHitPerSec } = this.skillFrequency;
+      const dps = this.floor(((minDamage + maxDamage) * totalHitPerSec) / 2);
+
+      return {
+        rawMinDamage: basicMinDamage,
+        rawMaxDamage: basicMaxDamage,
+        criMinDamage: criDmg,
+        criMaxDamage: criDmg,
+        minDamage: minDamage,
+        maxDamage: maxDamage,
+        skillHit: skillData?.hit || 1,
+        dps,
+      };
+    }
 
     return {
       rawMinDamage: basicMinDamage,
       rawMaxDamage: basicMaxDamage,
       criMinDamage: criDmg,
       criMaxDamage: criDmg,
-      minDamage: minSkillDamage,
-      maxDamage: maxSkillDamage,
-      skillHit: skillData?.hit || 1,
     };
   }
 
@@ -1430,6 +1489,10 @@ export class Calculator {
       propertyAtk: this.propertyAtk,
       propertyMultiplier: this.propertyMultiplier,
       weapon: this.weaponData.data,
+      calcSkill: {
+        baseSkillDamage: this.baseSkillDamage,
+        ...this.skillFrequency,
+      },
       calc: {
         // softMDef: this.floor(int + vit/5 + dex/5 + level/4),
         totalAspd: this.totalAspd,
@@ -1455,7 +1518,6 @@ export class Calculator {
         weaponMaxMatk: this.weaponMaxMatk,
         totalMinMatk: this.totalMinMatk,
         totalMaxMatk: this.totalMaxMatk,
-        baseSkillDamage: this.baseSkillDamage,
       },
       equipments: [...this.equipItemNameSet.keys()],
     };

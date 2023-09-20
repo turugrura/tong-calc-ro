@@ -2361,16 +2361,24 @@
               </p-dropdown>
             </div>
           </div>
+          <div class="col-6">
+            <div>
+              CD: {{ totalSummary?.calcSkill?.reducedCd || 0 }} s | Delay:
+              {{ totalSummary?.calcSkill?.reducedAcd || 0 }} s | Vct: {{ totalSummary?.calcSkill?.reducedVct || 0 }} s |
+              Fct: {{ totalSummary?.calcSkill?.reducedFct || 0 }} s | 1 Hit: {{ totalSummary?.calcSkill?.hitPeriod }} s
+            </div>
+          </div>
           <div class="col-8">
-            basic: {{ minBasicDamage | number }} - {{ maxBasicDamage | number }} / Cri: {{ criDamage | number }}
+            Basic: {{ minBasicDamage | number }} - {{ maxBasicDamage | number }} | Cri: {{ criDamage | number }}
           </div>
           <div class="col-12">
-            MinDamage: {{ minDamage | number }}
+            Damage: {{ minDamage | number }}
             <span *ngIf="skillHit > 1">( {{ minDamagePerHit | number }} x {{ skillHit }} )</span>
+            - {{ maxDamage | number }}
+            <span *ngIf="skillHit > 1">( {{ maxDamagePerHit | number }} x {{ skillHit }} )</span>
           </div>
           <div class="col-12">
-            MaxDamage: {{ maxDamage | number }}
-            <span *ngIf="skillHit > 1">( {{ maxDamagePerHit | number }} x {{ skillHit }} )</span>
+            <div>DPS: {{ dps | number }}</div>
           </div>
         </div>
       </p-accordionTab>
