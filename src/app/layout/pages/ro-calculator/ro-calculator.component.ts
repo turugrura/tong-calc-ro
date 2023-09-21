@@ -1,5 +1,17 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { debounceTime, delay, finalize, forkJoin, mergeMap, of, Subject, take, tap } from 'rxjs';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import {
+  debounceTime,
+  delay,
+  finalize,
+  forkJoin,
+  mergeMap,
+  Observable,
+  of,
+  Subject,
+  Subscription,
+  take,
+  tap,
+} from 'rxjs';
 import { BaseStateCalculator } from './base-state-calculator';
 import { Calculator } from './calculator';
 import { ItemTypeEnum } from './item-type.enum';
@@ -7,7 +19,14 @@ import { ItemTypeId } from './item.const';
 import { RoService } from 'src/app/demo/service/ro.service';
 import { Rebelion } from './rebellion';
 import { ItemModel } from './item.model';
-import { ConfirmEventType, ConfirmationService, MenuItem, MessageService, PrimeIcons } from 'primeng/api';
+import {
+  ConfirmEventType,
+  ConfirmationService,
+  MenuItem,
+  MessageService,
+  PrimeIcons,
+  SelectItemGroup,
+} from 'primeng/api';
 import { RaceType } from './race-type.const';
 import { ElementType } from './element-type.const';
 import { ActiveSkillModel, AtkSkillModel, CharacterBase, PassiveSkillModel } from './char-class.abstract';
@@ -17,6 +36,7 @@ import { getEnchants } from './enchant-table';
 import { SoulReaper } from './soul-reaper';
 import { DropdownModel } from './dropdown.model';
 import { ItemListModel } from './item-list.model';
+import { getMonsterSpawnMap } from './monster-spawn-mapper';
 
 enum CardPosition {
   Weapon = 0,
@@ -60,6 +80,10 @@ enum ItemSubTypeId {
 enum HeadLocation {
   Middle = 'Middle',
   Lower = 'Lower',
+}
+
+interface MonsterSelectItemGroup extends SelectItemGroup {
+  items: any[];
 }
 
 const Characters: DropdownModel[] = [
@@ -360,6 +384,8 @@ const createMainStatOptionList = () => {
 })
 export class RoCalculatorComponent implements OnInit, OnDestroy {
   updateItemEvent = new Subject();
+  updateMonsterListEvent = new Subject();
+
   loadBtnItems: MenuItem[];
   monsterDataMap: Record<number, MonsterModel> = {};
   items!: Record<number, ItemModel>;
@@ -604,6 +630,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
   totalPoints = 0;
   availablePoints = 0;
+  groupMonsterList: MonsterSelectItemGroup[] = [];
   monsterList: DropdownModel[] = [];
   selectedMonster = Number(localStorage.getItem('monster')) || 21067;
   minBasicDamage = 0;
@@ -635,6 +662,14 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   itemDescription = '';
   hover = '';
 
+  cols: { field: string; header: string; default?: boolean }[] = [];
+  selectedColumns: { field: string; header: string }[] = [];
+  selectedMonsterIds: number[] = this.getCachedMonsterIdsForCalc();
+  calcDamages: any[] = [];
+
+  updateItemSubs: Subscription;
+  updateMonsterListSubs: Subscription;
+
   constructor(
     private roService: RoService,
     private messageService: MessageService,
@@ -643,21 +678,49 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.initLoadItems();
+    this.initCalcTableColumns();
     this.setPresetList();
+    this.initData();
 
-    this.updateItemEvent
+    this.updateItemSubs = this.updateItemEvent
       .pipe(
         tap(() => (this.isCalculating = true)),
         debounceTime(750),
-        finalize(() => (this.isCalculating = false)),
+        finalize(() => {
+          console.log('updateItemSubs finalize');
+        }),
       )
       .subscribe(() => {
         this.calculate();
         this.saveItemSet();
         this.resetItemDescription();
         this.onSelectItemDescription();
+        this.isCalculating = false;
       });
 
+    this.updateMonsterListSubs = this.updateMonsterListEvent
+      .pipe(
+        tap(() => (this.isCalculating = true)),
+        debounceTime(1000),
+        finalize(() => {
+          console.log('updateMonsterListSubs finalize');
+        }),
+      )
+      .subscribe(() => {
+        this.calculateToSelectedMonsters(false);
+        this.setCacheMonsterIdsForCalc();
+        this.isCalculating = false;
+      });
+  }
+
+  ngOnDestroy(): void {
+    const obs = [this.updateItemSubs, this.updateMonsterListSubs];
+    for (const ob of obs) {
+      ob?.unsubscribe();
+    }
+  }
+
+  private initData() {
     forkJoin([
       this.roService.getItems<Record<number, ItemModel>>(),
       this.roService.getMonsters<Record<number, MonsterModel>>(),
@@ -677,11 +740,6 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       this.setItemList();
       this.loadItemSet();
     });
-  }
-
-  ngOnDestroy(): void {
-    this.updateItemEvent?.complete();
-    this.updateItemEvent?.unsubscribe();
   }
 
   private initLoadItems() {
@@ -708,6 +766,31 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         },
       },
     ];
+  }
+
+  // @Input() get selectedColumns(): any[] {
+  //   return this._selectedColumns;
+  // }
+
+  // set selectedColumns(val: any[]) {
+  //   console.log({ val });
+  //   //restore original order
+  //   this._selectedColumns = this.cols.filter((col) => val.includes(col));
+  // }
+
+  private initCalcTableColumns() {
+    this.cols = [
+      { field: 'health', header: 'HP', default: true },
+      { field: 'criMaxDamage', header: 'CriDmg' },
+      { field: 'minDamage', header: 'Skill Min', default: true },
+      { field: 'maxDamage', header: 'Skill Max', default: true },
+      { field: 'dps', header: 'DPS', default: true },
+      { field: 'hitKill', header: 'Hit', default: true },
+      { field: 'monsterClass', header: 'Class' },
+      { field: 'rawMinDamage', header: 'Basic Min' },
+      { field: 'rawMaxDamage', header: 'Basic Max' },
+    ];
+    this.selectedColumns = [...this.cols.filter((a) => a.default).map((a) => a)];
   }
 
   private calculate() {
@@ -742,6 +825,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       .setExtraOptions(this.getOptionScripts())
       .setUsedSkillNames(skillNames)
       .setLearnedSkills(learnedSkillMap)
+      .prepareAllItemBonus()
       .setMonster(this.monsterDataMap[this.selectedMonster]);
 
     const calculated = calc.calculateSkillDamage(selectedAtkSkill);
@@ -776,6 +860,59 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       return total;
     }, {});
     this.possiblyDamages = calc.getPossiblyDamages().map((a) => ({ label: `${a}`, value: a }));
+
+    this.calculateToSelectedMonsters();
+  }
+
+  private getCachedMonsterIdsForCalc() {
+    try {
+      const ids = JSON.parse(localStorage.getItem('monsterIds'));
+
+      if (!Array.isArray(ids)) return [];
+
+      return ids.map(Number).filter((id) => Number.isInteger(id));
+    } catch (error) {
+      console.error(error);
+      return [];
+    }
+  }
+
+  private setCacheMonsterIdsForCalc() {
+    localStorage.setItem('monsterIds', JSON.stringify(this.selectedMonsterIds));
+  }
+
+  calculateToSelectedMonsters(needCalcAll = true) {
+    const classMap = ['Normal', 'Champion', 'Boss'];
+    const selectedMonsterIds = this.selectedMonsterIds || [];
+
+    if (!needCalcAll) {
+      const alreadyCalc = new Set(this.calcDamages.map((a) => a.id));
+      const noCalcs = selectedMonsterIds.filter((id) => !alreadyCalc.has(id));
+      if (noCalcs.length === 0) {
+        this.calcDamages = this.calcDamages.filter((a) => selectedMonsterIds.includes(a.id));
+        return;
+      }
+    }
+
+    this.calcDamages = selectedMonsterIds.map((monsterId) => {
+      const monster = this.monsterDataMap[monsterId];
+      const calculated = this.calculator.setMonster(monster).calculateSkillDamage(this.model.selectedAtkSkill);
+
+      const {
+        id,
+        name,
+        stats: { elementShortName, level, raceName, scaleName, health, class: _class },
+      } = monster;
+
+      return {
+        id,
+        label: `${level} ${name} (${raceName} ${scaleName.at(0)})`,
+        health,
+        monsterClass: classMap[_class],
+        elementName: elementShortName,
+        ...calculated,
+      };
+    });
   }
 
   private cloneModel(baseModel: any): any {
@@ -1066,14 +1203,38 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   }
 
   private setMonsterDropdownList() {
-    const monsters = Object.values(this.monsterDataMap).map<DropdownModel>((a) => {
-      return {
-        label: `Lv ${a.stats.level} ${a.name}`,
-        value: a.id,
-        elementName: a.stats.elementName.replace(/\s+\d+/, ''),
+    const groupMap = new Map<string, MonsterSelectItemGroup>();
+    const monsters: DropdownModel[] = [];
+
+    for (const mon of Object.values(this.monsterDataMap)) {
+      const { id, name, spawn, stats } = mon;
+      const { level, elementShortName, raceName, scaleName } = stats;
+
+      const spawnMap = getMonsterSpawnMap(spawn);
+      const group = groupMap.get(spawnMap);
+      const monster: DropdownModel = {
+        label: `${level} ${name} (${raceName} ${scaleName.at(0)})`,
+        value: id,
+        elementName: elementShortName,
+        searchVal: spawnMap,
       };
-    });
+
+      monsters.push(monster);
+
+      if (group) {
+        group.items.push(monster);
+      } else {
+        groupMap.set(spawnMap, {
+          label: spawnMap,
+          items: [monster],
+        });
+      }
+    }
+
     this.monsterList = monsters;
+    this.groupMonsterList = [...groupMap.values()].sort((a, b) => {
+      return a.label > b.label ? 1 : -1;
+    });
   }
 
   private setItemList() {
@@ -1582,5 +1743,9 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
   onPropertyAtkChange() {
     this.updateItemEvent.next(1);
+  }
+
+  onMonsterListChange() {
+    this.updateMonsterListEvent.next(1);
   }
 }

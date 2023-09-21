@@ -6,7 +6,10 @@
 | split food and Skill section                       | Done   |
 | add and support calc ASPD potions                  | Done   |
 | calc skill cooldown, cast time and after cast time | Done   |
-| damage to multiple monster                         | -      |
+| damage to multiple monster                         | Done   |
+| calc Hit/CRI to monster                            | -      |
+| grouping monster by spawn map                      | Done   |
+| calc dps by ASPD                                   | -      |
 | item comparing                                     | -      |
 | support two hand weapon                            | -      |
 | move refine to bottom of item                      | -      |

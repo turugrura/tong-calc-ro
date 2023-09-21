@@ -79,10 +79,10 @@ export class Rebelion extends CharacterBase {
       label: 'Round Trip',
       name: 'Round Trip',
       value: 'Round Trip==10',
-      acd: 0,
+      acd: 1,
       fct: 0,
       vct: 0,
-      cd: 0,
+      cd: 1,
       levelList: [{ label: 'Lv 10', value: 'Round Trip==10' }],
       formular: ({ baseLevel, skillLevel }: { baseLevel: number; skillLevel: number }): number => {
         return (skillLevel * 200 + 500) * (baseLevel / 100);

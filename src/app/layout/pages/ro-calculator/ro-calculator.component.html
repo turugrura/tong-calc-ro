@@ -2332,7 +2332,7 @@
                 [autoDisplayFirst]="false"
                 [options]="monsterList"
                 [filter]="true"
-                filterBy="label"
+                filterBy="label,searchVal"
                 [(ngModel)]="selectedMonster"
                 (onChange)="onMonsterChange()"
               >
@@ -2342,7 +2342,7 @@
                     src="assets/demo/images/items/{{ item.value }}.png"
                     style="width: 19px"
                   /> -->
-                    <div class="{{ 'property_' + item.element }}">
+                    <div class="{{ 'property_' + item.elementName }}">
                       {{ item.label }}
                     </div>
                   </div>
@@ -2353,7 +2353,7 @@
                     src="assets/demo/images/items/{{ item.value }}.png"
                     style="width: 19px"
                   /> -->
-                    <div class="{{ 'property_' + item.element }}">
+                    <div class="{{ 'property_' + item.elementName }}">
                       {{ item.label }}
                     </div>
                   </div>
@@ -2379,6 +2379,69 @@
           </div>
           <div class="col-12">
             <div>DPS: {{ dps | number }}</div>
+          </div>
+          <div class="col-12">
+            <p-table
+              styleClass="p-datatable-striped"
+              filterValue="label"
+              [columns]="selectedColumns"
+              [value]="calcDamages"
+              [loading]="isCalculating"
+              [tableStyle]="{ 'min-width': '40rem' }"
+            >
+              <ng-template pTemplate="caption">
+                <div class="grid grid-nogutter">
+                  <div class="col-6">
+                    <p-multiSelect
+                      [options]="groupMonsterList"
+                      [group]="true"
+                      [(ngModel)]="selectedMonsterIds"
+                      [filter]="true"
+                      filterBy="label,searchVal"
+                      [showClear]="true"
+                      [showToggleAll]="false"
+                      selectedItemsLabel="{0} monsters selected"
+                      placeholder="Choose Monsters"
+                      [maxSelectedLabels]="2"
+                      (onChange)="onMonsterListChange()"
+                      (onClear)="onMonsterListChange()"
+                    >
+                      <ng-template let-group pTemplate="group">
+                        <div class="flex align-items-center">
+                          <span>{{ group.label }}</span>
+                        </div>
+                      </ng-template>
+                    </p-multiSelect>
+                  </div>
+                  <div class="col-6">
+                    <p-multiSelect
+                      [options]="cols"
+                      [(ngModel)]="selectedColumns"
+                      optionLabel="header"
+                      selectedItemsLabel="{0} columns selected"
+                      placeholder="Choose Columns"
+                      [maxSelectedLabels]="5"
+                    ></p-multiSelect>
+                  </div>
+                </div>
+              </ng-template>
+              <ng-template pTemplate="header" let-columns>
+                <tr>
+                  <th>Name</th>
+                  <th *ngFor="let col of columns">
+                    {{ col.header }}
+                  </th>
+                </tr>
+              </ng-template>
+              <ng-template pTemplate="body" let-item let-columns="columns">
+                <tr>
+                  <td class="{{ 'property_' + item.elementName }}">{{ item.label }}</td>
+                  <td *ngFor="let col of columns">
+                    {{ item[col.field] > 0 ? (item[col.field] | number) : item[col.field] }}
+                  </td>
+                </tr>
+              </ng-template>
+            </p-table>
           </div>
         </div>
       </p-accordionTab>

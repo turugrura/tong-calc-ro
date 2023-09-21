@@ -1250,7 +1250,7 @@ export class Calculator {
     return Math.floor(base * (Number(boostPercent) / 100));
   }
 
-  private calcAllEquipItems() {
+  prepareAllItemBonus() {
     this.totalEquipStatus = { ...this.allStatus };
     this.equipStatus = {} as any;
 
@@ -1369,6 +1369,8 @@ export class Calculator {
     if (this.weaponData.data.subTypeName === 'bow') {
       this.totalEquipStatus.range += this.totalEquipStatus.bowRange || 0;
     }
+
+    return this;
   }
 
   calcSkillFrequency(skillValue: AtkSkillModel) {
@@ -1403,7 +1405,6 @@ export class Calculator {
   }
 
   calculateSkillDamage(skillValue: string) {
-    this.calcAllEquipItems();
     this.calcAllAtk();
     this.calcAspd();
 
@@ -1432,6 +1433,7 @@ export class Calculator {
 
       const { totalHitPerSec } = this.skillFrequency;
       const dps = this.floor(((minDamage + maxDamage) * totalHitPerSec) / 2);
+      const hitKill = Math.ceil(this.monster.stats.health / minDamage);
 
       return {
         rawMinDamage: basicMinDamage,
@@ -1442,6 +1444,7 @@ export class Calculator {
         maxDamage: maxDamage,
         skillHit: skillData?.hit || 1,
         dps,
+        hitKill,
       };
     }
 

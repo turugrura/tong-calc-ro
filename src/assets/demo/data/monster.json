@@ -3,6 +3,7 @@
     "id": 2408,
     "dbname": "DUMMY_10",
     "name": "Lv 10",
+    "spawn": "iz_ac01",
     "stats": {
       "attackRange": 0,
       "level": 10,
@@ -46,6 +47,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Neutral 1",
+      "elementShortName": "Neutral",
       "scaleName": "Medium",
       "raceName": "Formless"
     }
@@ -54,6 +56,7 @@
     "id": 2413,
     "dbname": "DUMMY_10_FIRE",
     "name": "Lv 10 (Fire)",
+    "spawn": "iz_ac01",
     "stats": {
       "attackRange": 0,
       "level": 10,
@@ -97,6 +100,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Fire 1",
+      "elementShortName": "Fire",
       "scaleName": "Medium",
       "raceName": "Formless"
     }
@@ -105,6 +109,7 @@
     "id": 3503,
     "dbname": "DR_BASILISK2",
     "name": "Charge Basilisk",
+    "spawn": "lasa_dun02",
     "stats": {
       "attackRange": 3,
       "level": 140,
@@ -148,6 +153,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Earth 2",
+      "elementShortName": "Earth",
       "scaleName": "Medium",
       "raceName": "Brute"
     }
@@ -156,6 +162,7 @@
     "id": 3504,
     "dbname": "DR_BASILISK3",
     "name": "Charge Basilisk",
+    "spawn": "lasa_dun03",
     "stats": {
       "attackRange": 3,
       "level": 148,
@@ -199,6 +206,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Earth 2",
+      "elementShortName": "Earth",
       "scaleName": "Medium",
       "raceName": "Brute"
     }
@@ -207,6 +215,7 @@
     "id": 3506,
     "dbname": "DR_MANDRAGORA",
     "name": "Jungle Mandragora",
+    "spawn": "lasa_dun02",
     "stats": {
       "attackRange": 4,
       "level": 144,
@@ -250,6 +259,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Earth 3",
+      "elementShortName": "Earth",
       "scaleName": "Medium",
       "raceName": "Plant"
     }
@@ -258,6 +268,7 @@
     "id": 3507,
     "dbname": "DR_POM_SPIDER",
     "name": "Fruit Pom Spider",
+    "spawn": "lasa_dun03",
     "stats": {
       "attackRange": 1,
       "level": 150,
@@ -301,6 +312,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Earth 3",
+      "elementShortName": "Earth",
       "scaleName": "Medium",
       "raceName": "Insect"
     }
@@ -309,6 +321,7 @@
     "id": 3799,
     "dbname": "ILL_ASSULTER",
     "name": "Ominous Assaulter",
+    "spawn": "tur_d04_i",
     "stats": {
       "attackRange": 2,
       "level": 160,
@@ -352,6 +365,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Wind 2",
+      "elementShortName": "Wind",
       "scaleName": "Small",
       "raceName": "Demon"
     }
@@ -360,6 +374,7 @@
     "id": 3800,
     "dbname": "ILL_PERMETER",
     "name": "Ominous Permeter",
+    "spawn": "tur_d03_i,tur_d04_i",
     "stats": {
       "attackRange": 2,
       "level": 157,
@@ -403,6 +418,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Neutral 2",
+      "elementShortName": "Neutral",
       "scaleName": "Small",
       "raceName": "Brute"
     }
@@ -411,6 +427,7 @@
     "id": 3801,
     "dbname": "ILL_FREEZER",
     "name": "Ominous Freezer",
+    "spawn": "tur_d04_i",
     "stats": {
       "attackRange": 2,
       "level": 159,
@@ -454,6 +471,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Water 2",
+      "elementShortName": "Water",
       "scaleName": "Small",
       "raceName": "Brute"
     }
@@ -462,6 +480,7 @@
     "id": 3802,
     "dbname": "ILL_SOLIDER",
     "name": "Ominous Solider",
+    "spawn": "tur_d03_i,tur_d04_i",
     "stats": {
       "attackRange": 2,
       "level": 161,
@@ -505,6 +524,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Earth 2",
+      "elementShortName": "Earth",
       "scaleName": "Small",
       "raceName": "Brute"
     }
@@ -513,6 +533,7 @@
     "id": 3803,
     "dbname": "ILL_HEATER",
     "name": "Ominous Heater",
+    "spawn": "tur_d04_i",
     "stats": {
       "attackRange": 2,
       "level": 162,
@@ -556,6 +577,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Fire 2",
+      "elementShortName": "Fire",
       "scaleName": "Small",
       "raceName": "Brute"
     }
@@ -564,6 +586,7 @@
     "id": 20372,
     "dbname": "BLAZZER_H",
     "name": "Rigid Blazer",
+    "spawn": "mag_dun03",
     "stats": {
       "attackRange": 1,
       "level": 178,
@@ -607,6 +630,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Neutral 2",
+      "elementShortName": "Neutral",
       "scaleName": "Medium",
       "raceName": "Demon"
     }
@@ -615,6 +639,7 @@
     "id": 20373,
     "dbname": "NIGHTMARE_TERROR_H",
     "name": "Rigid Nightmare Terror",
+    "spawn": "mag_dun03",
     "stats": {
       "attackRange": 1,
       "level": 179,
@@ -658,6 +683,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Dark 3",
+      "elementShortName": "Dark",
       "scaleName": "Large",
       "raceName": "Demon"
     }
@@ -666,6 +692,7 @@
     "id": 20374,
     "dbname": "DELETER1_H",
     "name": "Rigid Sky Deleter",
+    "spawn": "mag_dun03",
     "stats": {
       "attackRange": 1,
       "level": 174,
@@ -709,6 +736,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Neutral 2",
+      "elementShortName": "Neutral",
       "scaleName": "Medium",
       "raceName": "Dragon"
     }
@@ -717,6 +745,7 @@
     "id": 20375,
     "dbname": "DELETER2_H",
     "name": "Rigid Earth Deleter",
+    "spawn": "mag_dun03",
     "stats": {
       "attackRange": 1,
       "level": 173,
@@ -760,6 +789,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Neutral 2",
+      "elementShortName": "Neutral",
       "scaleName": "Medium",
       "raceName": "Dragon"
     }
@@ -768,6 +798,7 @@
     "id": 20376,
     "dbname": "EXPLOSION_H",
     "name": "Rigid Explosion",
+    "spawn": "mag_dun03",
     "stats": {
       "attackRange": 1,
       "level": 171,
@@ -811,6 +842,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Neutral 2",
+      "elementShortName": "Neutral",
       "scaleName": "Small",
       "raceName": "Brute"
     }
@@ -819,6 +851,7 @@
     "id": 20377,
     "dbname": "KAHO_H",
     "name": "Rigid Kaho",
+    "spawn": "mag_dun03",
     "stats": {
       "attackRange": 1,
       "level": 173,
@@ -862,6 +895,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Dark 2",
+      "elementShortName": "Dark",
       "scaleName": "Medium",
       "raceName": "Formless"
     }
@@ -870,6 +904,7 @@
     "id": 20378,
     "dbname": "LAVA_GOLEM_H",
     "name": "Rigid Lava Golem",
+    "spawn": "mag_dun03",
     "stats": {
       "attackRange": 1,
       "level": 177,
@@ -913,6 +948,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Neutral 2",
+      "elementShortName": "Neutral",
       "scaleName": "Large",
       "raceName": "Formless"
     }
@@ -921,6 +957,7 @@
     "id": 20525,
     "dbname": "ILL_BAPHOMET_J",
     "name": "Chaos Baphomet Jr.",
+    "spawn": "prt_mz03_i",
     "stats": {
       "attackRange": 1,
       "level": 177,
@@ -964,6 +1001,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Dark 1",
+      "elementShortName": "Dark",
       "scaleName": "Small",
       "raceName": "Formless"
     }
@@ -972,6 +1010,7 @@
     "id": 20526,
     "dbname": "ILL_SIDE_WINDER",
     "name": "Chaos Side Winder",
+    "spawn": "prt_mz03_i",
     "stats": {
       "attackRange": 1,
       "level": 176,
@@ -1015,6 +1054,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Poison 1",
+      "elementShortName": "Poison",
       "scaleName": "Medium",
       "raceName": "Brute"
     }
@@ -1023,6 +1063,7 @@
     "id": 20527,
     "dbname": "ILL_HUNTER_FLY",
     "name": "Chaos Hunter Fly",
+    "spawn": "prt_mz03_i",
     "stats": {
       "attackRange": 1,
       "level": 175,
@@ -1066,6 +1107,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Wind 2",
+      "elementShortName": "Wind",
       "scaleName": "Small",
       "raceName": "Formless"
     }
@@ -1074,6 +1116,7 @@
     "id": 20528,
     "dbname": "ILL_MANTIS",
     "name": "Chaos Mantis",
+    "spawn": "prt_mz03_i",
     "stats": {
       "attackRange": 1,
       "level": 174,
@@ -1117,6 +1160,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Earth 1",
+      "elementShortName": "Earth",
       "scaleName": "Medium",
       "raceName": "Insect"
     }
@@ -1125,6 +1169,7 @@
     "id": 20529,
     "dbname": "ILL_GHOSTRING",
     "name": "Chaos Ghostring",
+    "spawn": "prt_mz03_i",
     "stats": {
       "attackRange": 1,
       "level": 173,
@@ -1168,6 +1213,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Ghost 2",
+      "elementShortName": "Ghost",
       "scaleName": "Medium",
       "raceName": "Demon"
     }
@@ -1176,6 +1222,7 @@
     "id": 20530,
     "dbname": "ILL_KILLER_MANTIS",
     "name": "Chaos Killer Mantis",
+    "spawn": "prt_mz03_i",
     "stats": {
       "attackRange": 1,
       "level": 177,
@@ -1219,6 +1266,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Earth 1",
+      "elementShortName": "Earth",
       "scaleName": "Medium",
       "raceName": "Insect"
     }
@@ -1227,6 +1275,7 @@
     "id": 20531,
     "dbname": "ILL_POPORING",
     "name": "Chaos Poporing",
+    "spawn": "prt_mz03_i",
     "stats": {
       "attackRange": 1,
       "level": 173,
@@ -1270,6 +1319,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Poison 3",
+      "elementShortName": "Poison",
       "scaleName": "Medium",
       "raceName": "Plant"
     }
@@ -1278,6 +1328,7 @@
     "id": 20532,
     "dbname": "ILL_STEM_WORM",
     "name": "Chaotic Stem Worm",
+    "spawn": "prt_mz03_i",
     "stats": {
       "attackRange": 1,
       "level": 172,
@@ -1321,6 +1372,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Wind 1",
+      "elementShortName": "Wind",
       "scaleName": "Medium",
       "raceName": "Plant"
     }
@@ -1329,6 +1381,7 @@
     "id": 20592,
     "dbname": "POISONOUS",
     "name": "Poisonous",
+    "spawn": "ein_dun03",
     "stats": {
       "attackRange": 1,
       "level": 188,
@@ -1372,6 +1425,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Ghost 4",
+      "elementShortName": "Ghost",
       "scaleName": "Medium",
       "raceName": "Formless"
     }
@@ -1380,6 +1434,7 @@
     "id": 20593,
     "dbname": "TOXIOUS",
     "name": "Toxious",
+    "spawn": "ein_dun03",
     "stats": {
       "attackRange": 1,
       "level": 188,
@@ -1423,6 +1478,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Poison 4",
+      "elementShortName": "Poison",
       "scaleName": "Medium",
       "raceName": "Formless"
     }
@@ -1431,6 +1487,7 @@
     "id": 20594,
     "dbname": "MINERAL_G",
     "name": "Green Mineral",
+    "spawn": "ein_dun03",
     "stats": {
       "attackRange": 1,
       "level": 190,
@@ -1474,6 +1531,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Neutral 4",
+      "elementShortName": "Neutral",
       "scaleName": "Large",
       "raceName": "Formless"
     }
@@ -1482,6 +1540,7 @@
     "id": 20595,
     "dbname": "MINERAL_R",
     "name": "Red Mineral",
+    "spawn": "ein_dun03",
     "stats": {
       "attackRange": 1,
       "level": 190,
@@ -1525,6 +1584,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Neutral 4",
+      "elementShortName": "Neutral",
       "scaleName": "Large",
       "raceName": "Formless"
     }
@@ -1533,6 +1593,7 @@
     "id": 20596,
     "dbname": "MINERAL_W",
     "name": "White Mineral",
+    "spawn": "ein_dun03",
     "stats": {
       "attackRange": 1,
       "level": 190,
@@ -1576,6 +1637,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Neutral 4",
+      "elementShortName": "Neutral",
       "scaleName": "Large",
       "raceName": "Formless"
     }
@@ -1584,6 +1646,7 @@
     "id": 20597,
     "dbname": "MINERAL_P",
     "name": "Purple Mineral",
+    "spawn": "ein_dun03",
     "stats": {
       "attackRange": 1,
       "level": 190,
@@ -1627,6 +1690,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Neutral 4",
+      "elementShortName": "Neutral",
       "scaleName": "Large",
       "raceName": "Formless"
     }
@@ -1635,6 +1699,7 @@
     "id": 20598,
     "dbname": "JEWELIANT",
     "name": "Jeweliant",
+    "spawn": "ein_dun03",
     "stats": {
       "attackRange": 1,
       "level": 191,
@@ -1678,6 +1743,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Neutral 4",
+      "elementShortName": "Neutral",
       "scaleName": "Medium",
       "raceName": "Insect"
     }
@@ -1686,6 +1752,7 @@
     "id": 20602,
     "dbname": "PORCELLIO_W",
     "name": "White Porcellio",
+    "spawn": "ein_dun03",
     "stats": {
       "attackRange": 1,
       "level": 188,
@@ -1729,6 +1796,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Earth 4",
+      "elementShortName": "Earth",
       "scaleName": "Small",
       "raceName": "Insect"
     }
@@ -1737,6 +1805,7 @@
     "id": 20603,
     "dbname": "ABYSSMAN",
     "name": "Abyssman",
+    "spawn": "ein_dun03",
     "stats": {
       "attackRange": 1,
       "level": 190,
@@ -1780,6 +1849,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Neutral 4",
+      "elementShortName": "Neutral",
       "scaleName": "Large",
       "raceName": "Brute"
     }
@@ -1788,6 +1858,7 @@
     "id": 20801,
     "dbname": "ILL_SROPHO",
     "name": "Abysmal Sropho",
+    "spawn": "iz_d04_i",
     "stats": {
       "attackRange": 1,
       "level": 147,
@@ -1831,6 +1902,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Water 3",
+      "elementShortName": "Water",
       "scaleName": "Medium",
       "raceName": "Fish"
     }
@@ -1839,6 +1911,7 @@
     "id": 20802,
     "dbname": "ILL_OBEAUNE",
     "name": "Abysmal Obeaune",
+    "spawn": "iz_d04_i",
     "stats": {
       "attackRange": 1,
       "level": 149,
@@ -1882,6 +1955,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Water 2",
+      "elementShortName": "Water",
       "scaleName": "Medium",
       "raceName": "Fish"
     }
@@ -1890,6 +1964,7 @@
     "id": 20803,
     "dbname": "ILL_DEVIACE",
     "name": "Abysmal Deviace",
+    "spawn": "iz_d04_i",
     "stats": {
       "attackRange": 1,
       "level": 150,
@@ -1933,6 +2008,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Water 4",
+      "elementShortName": "Water",
       "scaleName": "Medium",
       "raceName": "Fish"
     }
@@ -1941,6 +2017,7 @@
     "id": 20804,
     "dbname": "ILL_MARSE",
     "name": "Abysmal Marse",
+    "spawn": "iz_d04_i",
     "stats": {
       "attackRange": 1,
       "level": 149,
@@ -1984,6 +2061,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Water 2",
+      "elementShortName": "Water",
       "scaleName": "Small",
       "raceName": "Fish"
     }
@@ -1992,6 +2070,7 @@
     "id": 20805,
     "dbname": "ILL_MERMAN",
     "name": "Abysmal Merman",
+    "spawn": "iz_d04_i",
     "stats": {
       "attackRange": 1,
       "level": 148,
@@ -2035,6 +2114,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Water 3",
+      "elementShortName": "Water",
       "scaleName": "Medium",
       "raceName": "Human"
     }
@@ -2043,6 +2123,7 @@
     "id": 20806,
     "dbname": "ILL_SEDORA",
     "name": "Abysmal Sedora",
+    "spawn": "iz_d05_i",
     "stats": {
       "attackRange": 1,
       "level": 199,
@@ -2086,6 +2167,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Wind 3",
+      "elementShortName": "Wind",
       "scaleName": "Medium",
       "raceName": "Fish"
     }
@@ -2094,6 +2176,7 @@
     "id": 20807,
     "dbname": "ILL_SWORD_FISH",
     "name": "Abysmal Swordfish",
+    "spawn": "iz_d05_i",
     "stats": {
       "attackRange": 1,
       "level": 199,
@@ -2137,6 +2220,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Water 3",
+      "elementShortName": "Water",
       "scaleName": "Large",
       "raceName": "Fish"
     }
@@ -2145,6 +2229,7 @@
     "id": 20808,
     "dbname": "ILL_STROUF",
     "name": "Abysmal Strouf",
+    "spawn": "iz_d05_i",
     "stats": {
       "attackRange": 1,
       "level": 201,
@@ -2188,6 +2273,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Water 3",
+      "elementShortName": "Water",
       "scaleName": "Large",
       "raceName": "Fish"
     }
@@ -2196,6 +2282,7 @@
     "id": 20809,
     "dbname": "ILL_PHEN",
     "name": "Abysmal Phen",
+    "spawn": "iz_d05_i",
     "stats": {
       "attackRange": 1,
       "level": 199,
@@ -2239,6 +2326,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Water 2",
+      "elementShortName": "Water",
       "scaleName": "Medium",
       "raceName": "Fish"
     }
@@ -2247,6 +2335,7 @@
     "id": 20810,
     "dbname": "ILL_KING_DRAMOH",
     "name": "Abysmal King Dramoh",
+    "spawn": "iz_d05_i",
     "stats": {
       "attackRange": 1,
       "level": 205,
@@ -2290,6 +2379,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Water 3",
+      "elementShortName": "Water",
       "scaleName": "Large",
       "raceName": "Fish"
     }
@@ -2297,7 +2387,8 @@
   "21064": {
     "id": 21064,
     "dbname": "S_DUMMY_100_SMALL",
-    "name": "Dummy (Small)",
+    "name": "Training Dummy (Small)",
+    "spawn": "hero_tra,tra_fild",
     "stats": {
       "attackRange": 1,
       "level": 100,
@@ -2341,6 +2432,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Neutral 1",
+      "elementShortName": "Neutral",
       "scaleName": "Small",
       "raceName": "Formless"
     }
@@ -2348,7 +2440,8 @@
   "21065": {
     "id": 21065,
     "dbname": "S_DUMMY_100_MEDIUM",
-    "name": "Dummy (Medium)",
+    "name": "Training Dummy (Medium)",
+    "spawn": "hero_tra,tra_fild",
     "stats": {
       "attackRange": 1,
       "level": 100,
@@ -2392,6 +2485,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Neutral 1",
+      "elementShortName": "Neutral",
       "scaleName": "Medium",
       "raceName": "Formless"
     }
@@ -2399,7 +2493,8 @@
   "21066": {
     "id": 21066,
     "dbname": "S_DUMMY_100_LARGE",
-    "name": "Dummy (Large)",
+    "name": "Training Dummy (Large)",
+    "spawn": "hero_tra,tra_fild",
     "stats": {
       "attackRange": 1,
       "level": 100,
@@ -2443,6 +2538,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Neutral 1",
+      "elementShortName": "Neutral",
       "scaleName": "Large",
       "raceName": "Formless"
     }
@@ -2451,6 +2547,7 @@
     "id": 21067,
     "dbname": "S_DUMMY_100_NOTHING",
     "name": "Training Dummy (Neutral)",
+    "spawn": "hero_tra,tra_fild",
     "stats": {
       "attackRange": 1,
       "level": 100,
@@ -2494,6 +2591,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Neutral 1",
+      "elementShortName": "Neutral",
       "scaleName": "Medium",
       "raceName": "Formless"
     }
@@ -2502,6 +2600,7 @@
     "id": 21068,
     "dbname": "S_DUMMY_100_DRAGON",
     "name": "Training Dummy (Dragon)",
+    "spawn": "hero_tra,tra_fild",
     "stats": {
       "attackRange": 1,
       "level": 100,
@@ -2545,6 +2644,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Neutral 1",
+      "elementShortName": "Neutral",
       "scaleName": "Medium",
       "raceName": "Dragon"
     }
@@ -2552,7 +2652,8 @@
   "21069": {
     "id": 21069,
     "dbname": "S_DUMMY_100_ANIMAL",
-    "name": "Dummy (Brute)",
+    "name": "Training Dummy (Brute)",
+    "spawn": "hero_tra,tra_fild",
     "stats": {
       "attackRange": 1,
       "level": 100,
@@ -2596,6 +2697,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Neutral 1",
+      "elementShortName": "Neutral",
       "scaleName": "Medium",
       "raceName": "Brute"
     }
@@ -2603,7 +2705,8 @@
   "21070": {
     "id": 21070,
     "dbname": "S_DUMMY_100_HUMAN",
-    "name": "Dummy (Human)",
+    "name": "Training Dummy (Human)",
+    "spawn": "hero_tra,tra_fild",
     "stats": {
       "attackRange": 1,
       "level": 100,
@@ -2647,6 +2750,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Neutral 1",
+      "elementShortName": "Neutral",
       "scaleName": "Medium",
       "raceName": "Human"
     }
@@ -2654,7 +2758,8 @@
   "21071": {
     "id": 21071,
     "dbname": "S_DUMMY_100_INSECT",
-    "name": "Dummy (Insect)",
+    "name": "Training Dummy (Insect)",
+    "spawn": "hero_tra,tra_fild",
     "stats": {
       "attackRange": 1,
       "level": 100,
@@ -2698,6 +2803,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Neutral 1",
+      "elementShortName": "Neutral",
       "scaleName": "Medium",
       "raceName": "Insect"
     }
@@ -2705,7 +2811,8 @@
   "21072": {
     "id": 21072,
     "dbname": "S_DUMMY_100_FISH",
-    "name": "Dummy (Fish)",
+    "name": "Training Dummy (Fish)",
+    "spawn": "hero_tra,tra_fild",
     "stats": {
       "attackRange": 1,
       "level": 100,
@@ -2749,6 +2856,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Neutral 1",
+      "elementShortName": "Neutral",
       "scaleName": "Medium",
       "raceName": "Fish"
     }
@@ -2756,7 +2864,8 @@
   "21073": {
     "id": 21073,
     "dbname": "S_DUMMY_100_DEMON",
-    "name": "Dummy (Demon)",
+    "name": "Training Dummy (Demon)",
+    "spawn": "hero_tra,tra_fild",
     "stats": {
       "attackRange": 1,
       "level": 100,
@@ -2800,6 +2909,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Neutral 1",
+      "elementShortName": "Neutral",
       "scaleName": "Medium",
       "raceName": "Demon"
     }
@@ -2807,7 +2917,8 @@
   "21074": {
     "id": 21074,
     "dbname": "S_DUMMY_100_PLANT",
-    "name": "Dummy (Plant)",
+    "name": "Training Dummy (Plant)",
+    "spawn": "hero_tra,tra_fild",
     "stats": {
       "attackRange": 1,
       "level": 100,
@@ -2851,6 +2962,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Neutral 1",
+      "elementShortName": "Neutral",
       "scaleName": "Medium",
       "raceName": "Plant"
     }
@@ -2858,7 +2970,8 @@
   "21075": {
     "id": 21075,
     "dbname": "S_DUMMY_100_ANGEL",
-    "name": "Dummy (Angel)",
+    "name": "Training Dummy (Angel)",
+    "spawn": "hero_tra,tra_fild",
     "stats": {
       "attackRange": 1,
       "level": 100,
@@ -2902,6 +3015,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Neutral 1",
+      "elementShortName": "Neutral",
       "scaleName": "Medium",
       "raceName": "Angel"
     }
@@ -2910,6 +3024,7 @@
     "id": 21076,
     "dbname": "S_DUMMY_100_UNDEAD",
     "name": "Training Dummy (Undead)",
+    "spawn": "hero_tra,tra_fild",
     "stats": {
       "attackRange": 1,
       "level": 100,
@@ -2953,6 +3068,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Neutral 1",
+      "elementShortName": "Neutral",
       "scaleName": "Medium",
       "raceName": "Undead"
     }
@@ -2961,6 +3077,7 @@
     "id": 21077,
     "dbname": "S_DUMMY_100_NOTHING2",
     "name": "Training Dummy (Neutral Lv1)",
+    "spawn": "hero_tra,tra_fild",
     "stats": {
       "attackRange": 1,
       "level": 100,
@@ -3004,6 +3121,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Neutral 1",
+      "elementShortName": "Neutral",
       "scaleName": "Medium",
       "raceName": "Formless"
     }
@@ -3012,6 +3130,7 @@
     "id": 21078,
     "dbname": "S_DUMMY_100_WATER",
     "name": "Training Dummy (Water Lv1)",
+    "spawn": "hero_tra,tra_fild",
     "stats": {
       "attackRange": 1,
       "level": 100,
@@ -3055,6 +3174,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Water 1",
+      "elementShortName": "Water",
       "scaleName": "Medium",
       "raceName": "Formless"
     }
@@ -3063,6 +3183,7 @@
     "id": 21079,
     "dbname": "S_DUMMY_100_GROUND",
     "name": "Training Dummy (Earth Lv1)",
+    "spawn": "hero_tra,tra_fild",
     "stats": {
       "attackRange": 1,
       "level": 100,
@@ -3106,6 +3227,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Earth 1",
+      "elementShortName": "Earth",
       "scaleName": "Medium",
       "raceName": "Formless"
     }
@@ -3114,6 +3236,7 @@
     "id": 21080,
     "dbname": "S_DUMMY_100_FIRE",
     "name": "Training Dummy (Fire Lv1)",
+    "spawn": "hero_tra,tra_fild",
     "stats": {
       "attackRange": 1,
       "level": 100,
@@ -3157,6 +3280,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Fire 1",
+      "elementShortName": "Fire",
       "scaleName": "Medium",
       "raceName": "Formless"
     }
@@ -3165,6 +3289,7 @@
     "id": 21081,
     "dbname": "S_DUMMY_100_WIND",
     "name": "Training Dummy (Wind Lv1)",
+    "spawn": "hero_tra,tra_fild",
     "stats": {
       "attackRange": 1,
       "level": 100,
@@ -3208,6 +3333,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Wind 1",
+      "elementShortName": "Wind",
       "scaleName": "Medium",
       "raceName": "Formless"
     }
@@ -3216,6 +3342,7 @@
     "id": 21082,
     "dbname": "S_DUMMY_100_POISON",
     "name": "Training Dummy (Poison Lv1)",
+    "spawn": "hero_tra,tra_fild",
     "stats": {
       "attackRange": 1,
       "level": 100,
@@ -3259,6 +3386,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Poison 1",
+      "elementShortName": "Poison",
       "scaleName": "Medium",
       "raceName": "Formless"
     }
@@ -3267,6 +3395,7 @@
     "id": 21083,
     "dbname": "S_DUMMY_100_SAINT",
     "name": "Training Dummy (Holy Lv1)",
+    "spawn": "hero_tra,tra_fild",
     "stats": {
       "attackRange": 1,
       "level": 100,
@@ -3310,6 +3439,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Holy 1",
+      "elementShortName": "Holy",
       "scaleName": "Medium",
       "raceName": "Formless"
     }
@@ -3318,6 +3448,7 @@
     "id": 21084,
     "dbname": "S_DUMMY_100_DARKNESS",
     "name": "Training Dummy (Dark Lv1)",
+    "spawn": "hero_tra,tra_fild",
     "stats": {
       "attackRange": 1,
       "level": 100,
@@ -3361,6 +3492,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Dark 1",
+      "elementShortName": "Dark",
       "scaleName": "Medium",
       "raceName": "Formless"
     }
@@ -3368,7 +3500,8 @@
   "21085": {
     "id": 21085,
     "dbname": "S_DUMMY_100_TELEKINESIS",
-    "name": "Dummy (Ghost Lv1)",
+    "name": "Training Dummy (Ghost Lv1)",
+    "spawn": "hero_tra,tra_fild",
     "stats": {
       "attackRange": 1,
       "level": 100,
@@ -3412,6 +3545,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Ghost 1",
+      "elementShortName": "Ghost",
       "scaleName": "Medium",
       "raceName": "Formless"
     }
@@ -3419,7 +3553,8 @@
   "21086": {
     "id": 21086,
     "dbname": "S_DUMMY_100_UNDEAD2",
-    "name": "Dummy (Undead Lv1)",
+    "name": "Training Dummy (Undead Lv1)",
+    "spawn": "hero_tra,tra_fild",
     "stats": {
       "attackRange": 1,
       "level": 100,
@@ -3463,6 +3598,7 @@
       "res": 0,
       "mres": 0,
       "elementName": "Undead 1",
+      "elementShortName": "Undead",
       "scaleName": "Medium",
       "raceName": "Formless"
     }

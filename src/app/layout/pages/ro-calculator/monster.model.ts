@@ -2,6 +2,7 @@ export interface MonsterModel {
   id: number;
   dbname: string;
   name: string;
+  spawn: string;
   stats: Stats;
 }
 
@@ -31,6 +32,7 @@ export interface Stats {
   attackedSpeed: number;
   element: number;
   elementName: string;
+  elementShortName: string;
   scale: number;
   scaleName: string;
   race: number;
