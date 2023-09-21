@@ -1394,6 +1394,11 @@ export class Calculator {
       acd: skillAcd,
       reducedAcd: this.floor((skillAcd - reduceSkillAcd) * (1 - acd * 0.01), 2),
     };
+    if (this.skillFrequency.reducedCd < 0) this.skillFrequency.reducedCd = 0;
+    if (this.skillFrequency.reducedVct < 0) this.skillFrequency.reducedVct = 0;
+    if (this.skillFrequency.reducedFct < 0) this.skillFrequency.reducedFct = 0;
+    if (this.skillFrequency.reducedAcd < 0) this.skillFrequency.reducedAcd = 0;
+
     const { reducedCd, reducedVct, reducedFct, reducedAcd } = this.skillFrequency;
 
     const blockPeriod = Math.max(reducedCd, reducedAcd);
