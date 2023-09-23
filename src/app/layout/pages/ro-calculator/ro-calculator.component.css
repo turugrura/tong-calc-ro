@@ -82,6 +82,12 @@ pre {
 :host ::ng-deep .p-datatable .p-datatable-header {
   padding: 0.25rem;
 }
+
+.battle_row_health {
+  color: var(--red-500);
+  background-color: var(--surface-0);
+  font-weight: bold;
+}
   
 .property_Water {
   background-color: #7ba7e1;

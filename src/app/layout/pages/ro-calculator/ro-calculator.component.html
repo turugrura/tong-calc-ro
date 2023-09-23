@@ -243,7 +243,9 @@
               </div>
               <div class="col-12">Atk: {{ totalSummary?.atk || 0 }} | Atk %: {{ totalSummary?.atkPercent }}</div>
               <!-- <div class="col-12">Atk%: {{ totalSummary?.atkPercent }}</div> -->
-              <div class="col-12">Hit: {{ totalSummary?.hit || 0 }} | Perfect: {{ totalSummary?.perfectHit || 0 }}</div>
+              <div class="col-12">
+                Hit: {{ totalSummary?.calc?.totalHit || 0 }} | Perfect: {{ totalSummary?.calc?.totalPerfectHit || 0 }}
+              </div>
               <!-- <div class="col-12">Perfect Hit: {{ totalSummary?.perfectHit || 0 }}</div> -->
               <div class="col-12">
                 Cri Rate: {{ totalSummary?.calc?.totalCri || 0 }} | Dmg: {{ totalSummary?.criDmg || 0 }}
@@ -259,7 +261,7 @@
                 Def: {{ totalSummary?.def || 0 }}, Mdef:
                 {{ totalSummary?.mdef || 0 }}
               </div>
-              <div class="col-12">Flee: {{ totalSummary?.flee || 0 }}</div>
+              <div class="col-12">Flee: {{ totalSummary?.calc?.totalFlee || 0 }}</div>
               <div class="col-12">
                 Matk: {{ totalSummary?.calc?.totalStatusMatk || 0 }} +
                 {{ totalSummary?.weapon?.baseWeaponMatk + totalSummary?.weapon?.refineBonus + totalSummary?.matk || 0 }}
@@ -2309,7 +2311,7 @@
         </div>
       </p-accordionTab>
 
-      <p-accordionTab header="Damage to Monster">
+      <p-accordionTab header="Battle Smuuary">
         <div class="grid grid-nogutter">
           <div class="col-6">
             <div class="p-inputgroup">
@@ -2421,6 +2423,8 @@
                       selectedItemsLabel="{0} columns selected"
                       placeholder="Choose Columns"
                       [maxSelectedLabels]="5"
+                      (onChange)="onSelectedColChange()"
+                      (onClear)="onSelectedColChange()"
                     ></p-multiSelect>
                   </div>
                 </div>
@@ -2436,7 +2440,7 @@
               <ng-template pTemplate="body" let-item let-columns="columns">
                 <tr>
                   <td class="{{ 'property_' + item.elementName }}">{{ item.label }}</td>
-                  <td *ngFor="let col of columns">
+                  <td *ngFor="let col of columns" class="battle_row_{{ col.field }}">
                     {{ item[col.field] > 0 ? (item[col.field] | number) : item[col.field] }}
                   </td>
                 </tr>

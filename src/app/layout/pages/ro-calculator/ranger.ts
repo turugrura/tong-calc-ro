@@ -371,7 +371,7 @@ export class Ranger extends CharacterBase {
 
   calcBaseAspd(weaponType: string): { baseAspd: number; shieldPenalty: number } {
     return {
-      baseAspd: this.baseAspd - ASPDTable[weaponType],
+      baseAspd: this.baseAspd - (ASPDTable[weaponType] || 0),
       shieldPenalty: 0,
     };
   }

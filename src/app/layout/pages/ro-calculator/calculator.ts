@@ -154,6 +154,7 @@ export class Calculator {
     criDmg: 0,
     perfectHit: 0,
     hit: 0,
+    flee: 0,
     dmg: 0,
     p_size_all: 0,
     p_size_s: 0,
@@ -305,6 +306,8 @@ export class Calculator {
     softDef: 1,
     mDef: 1,
     softMDef: 1,
+    hitRequireFor100: 1,
+    criShield: 1,
   };
   private monster: MonsterModel;
 
@@ -323,6 +326,14 @@ export class Calculator {
   private totalMagicalPene = 0;
 
   private totalAspd = 0;
+  private totalHit = 0;
+  private totalPerfectHit = 0;
+  private hitRate = 0;
+  private totalCri = 0;
+  private totalFlee = 0;
+  private criRateSkillToMonster = 0;
+  private criRateToMonster = 0;
+
   private weaponStatusAtk = 0;
   private totalMasteryAtk = 0;
   private totalBuffAtk = 0;
@@ -392,6 +403,15 @@ export class Calculator {
     return this.items[id];
   }
 
+  private getExtraCriRate() {
+    const { race, element, size } = this.monsterData;
+    const toRace = this.model[`cri_race_${race}`] || 0;
+    const toElement = this.model[`cri_element_${element}`] || 0;
+    const toSize = this.model[`cri_size_${size}`] || 0;
+
+    return toRace + toElement + toSize;
+  }
+
   private isRangeAtk() {
     const w = this.weaponData.data.subTypeName;
     return w === 'bow' || w === 'gun';
@@ -427,7 +447,7 @@ export class Calculator {
   setMonster(monster: MonsterModel) {
     const {
       name,
-      stats: { int, vit, dex, level, elementName, raceName, class: monsterTypeId, scaleName },
+      stats: { int, vit, agi, luk, level, elementName, raceName, class: monsterTypeId, scaleName },
     } = monster;
     const [pureElement] = elementName.split(' ');
 
@@ -442,6 +462,8 @@ export class Calculator {
       softDef: Math.floor((level + vit) / 2),
       mDef: 1,
       softMDef: this.floor((level + int) / 4),
+      criShield: this.floor(luk / 5),
+      hitRequireFor100: 200 + level + agi,
     };
 
     return this;
@@ -1411,7 +1433,6 @@ export class Calculator {
 
   calculateSkillDamage(skillValue: string) {
     this.calcAllAtk();
-    this.calcAspd();
 
     this.baseSkillDamage = 0;
     this.skillFrequency = {};
@@ -1422,9 +1443,16 @@ export class Calculator {
     const [, skillName, skillLevel] = skillValue?.match(/(.+)==(\d+)/) ?? [];
     const skillData = this._class.atkSkills.find((a) => a.value === skillValue);
     const isValidSkill = !!skillName && !!skillLevel && typeof skillData?.formular === 'function';
+    const criShield = this.monsterData.criShield;
+
+    this.criRateToMonster = Math.min(100, this.totalCri + this.getExtraCriRate() - criShield);
+    if (this.criRateToMonster < 0) {
+      this.criRateToMonster = 0;
+    }
 
     if (isValidSkill) {
-      const baseSkillDamage = skillData.formular({
+      const { formular, cri, canCri } = skillData;
+      const baseSkillDamage = formular({
         baseLevel: this.model.level,
         skillLevel: Number(skillLevel),
         usedSkillSet: this.usedSkillNames,
@@ -1440,16 +1468,21 @@ export class Calculator {
       const dps = this.floor(((minDamage + maxDamage) * totalHitPerSec) / 2);
       const hitKill = Math.ceil(this.monster.stats.health / minDamage);
 
+      this.criRateSkillToMonster = canCri ? Math.min(100, this.totalCri + (cri || 0) - criShield) : 0;
+
       return {
         rawMinDamage: basicMinDamage,
         rawMaxDamage: basicMaxDamage,
         criMinDamage: criDmg,
         criMaxDamage: criDmg,
+        basicCriRate: this.criRateToMonster,
         minDamage: minDamage,
         maxDamage: maxDamage,
         skillHit: skillData?.hit || 1,
         dps,
         hitKill,
+        criRate: this.criRateSkillToMonster,
+        hitRate: this.hitRate,
       };
     }
 
@@ -1458,10 +1491,11 @@ export class Calculator {
       rawMaxDamage: basicMaxDamage,
       criMinDamage: criDmg,
       criMaxDamage: criDmg,
+      basicCriRate: this.criRateToMonster,
     };
   }
 
-  private calcAspd() {
+  calcAspd() {
     this.totalAspd = this._class.calcAspd({
       potionAspd: this.aspdPotion,
       potionAspdPercent: 0,
@@ -1473,6 +1507,39 @@ export class Calculator {
       aspd: this.totalEquipStatus.aspd,
       aspdPercent: this.totalEquipStatus.aspdPercent,
     });
+
+    return this;
+  }
+
+  calcHitRate() {
+    const { totalLuk, totalDex, totalAgi } = this.status;
+    const { hit, perfectHit, flee } = this.totalEquipStatus;
+    const baseLvl = this.model.level;
+    const formula = () => {
+      return 175 + baseLvl + totalDex + this.floor(totalLuk / 3) + hit;
+    };
+
+    this.totalHit = formula();
+    this.totalPerfectHit = this.floor(totalLuk / 10) + perfectHit;
+
+    const { hitRequireFor100 } = this.monsterData;
+
+    const hitRate = this.floor(100 + this.totalHit - hitRequireFor100);
+    if (hitRate < 5) {
+      this.hitRate = 5;
+    } else {
+      this.hitRate = Math.min(hitRate, 100);
+    }
+
+    this.totalFlee = 100 + 0 + this.floor(baseLvl + totalAgi + totalLuk / 5 + flee) * 1;
+
+    return this;
+  }
+
+  calcCriRate() {
+    const { cri } = this.totalEquipStatus;
+    const { totalLuk } = this.status;
+    this.totalCri = 1 + cri + this.floor(totalLuk / 3);
 
     return this;
   }
@@ -1504,7 +1571,10 @@ export class Calculator {
       calc: {
         // softMDef: this.floor(int + vit/5 + dex/5 + level/4),
         totalAspd: this.totalAspd,
-        totalCri: 1 + cri + this.floor((luk + Number(this.model.luk) + Number(this.model.jobLuk)) / 3),
+        totalCri: this.totalCri,
+        totalHit: this.totalHit,
+        totalPerfectHit: this.totalPerfectHit,
+        totalFlee: this.totalFlee,
         dmgReductionByHardDef: this.dmgReductionByHardDef,
         statusBonus: this.weaponStatusAtk,
         totalPene: this.totalPhysicalPene,

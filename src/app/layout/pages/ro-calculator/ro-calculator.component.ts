@@ -781,16 +781,30 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   private initCalcTableColumns() {
     this.cols = [
       { field: 'health', header: 'HP', default: true },
-      { field: 'criMaxDamage', header: 'CriDmg' },
-      { field: 'minDamage', header: 'Skill Min', default: true },
-      { field: 'maxDamage', header: 'Skill Max', default: true },
+      { field: 'monsterClass', header: 'Class' },
+      { field: 'minDamage', header: 'SkillMin', default: true },
+      { field: 'maxDamage', header: 'SkillMax', default: true },
       { field: 'dps', header: 'DPS', default: true },
       { field: 'hitKill', header: 'Hit', default: true },
-      { field: 'monsterClass', header: 'Class' },
-      { field: 'rawMinDamage', header: 'Basic Min' },
-      { field: 'rawMaxDamage', header: 'Basic Max' },
+      { field: 'criRate', header: 'Cri%' },
+      { field: 'hitRate', header: 'Hit%' },
+      { field: 'rawMinDamage', header: 'BasicMin' },
+      { field: 'rawMaxDamage', header: 'BasicMax' },
+      { field: 'criMaxDamage', header: 'CriDmg' },
+      { field: 'basicCriRate', header: 'BasicCri%' },
     ];
-    this.selectedColumns = [...this.cols.filter((a) => a.default).map((a) => a)];
+    const availableCols = new Map(this.cols.map((a) => [a.field, a]));
+
+    const cached = this.getCachedBattleColNames()
+      .map((col) => availableCols.get(col))
+      .filter(Boolean);
+    if (cached.length > 0) {
+      this.selectedColumns = cached;
+      return;
+    }
+
+    const defaultCols = [...this.cols.filter((a) => a.default).map((a) => a)];
+    this.selectedColumns = defaultCols;
   }
 
   private calculate() {
@@ -826,6 +840,9 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       .setUsedSkillNames(skillNames)
       .setLearnedSkills(learnedSkillMap)
       .prepareAllItemBonus()
+      .calcAspd()
+      .calcHitRate()
+      .calcCriRate()
       .setMonster(this.monsterDataMap[this.selectedMonster]);
 
     const calculated = calc.calculateSkillDamage(selectedAtkSkill);
@@ -881,6 +898,23 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     localStorage.setItem('monsterIds', JSON.stringify(this.selectedMonsterIds));
   }
 
+  private getCachedBattleColNames() {
+    try {
+      const cached = JSON.parse(localStorage.getItem('battle_cols'));
+
+      if (!Array.isArray(cached)) return [];
+
+      return cached.filter((a) => typeof a === 'string');
+    } catch (error) {
+      console.error(error);
+      return [];
+    }
+  }
+
+  private setCacheBattleCols() {
+    localStorage.setItem('battle_cols', JSON.stringify(this.selectedColumns.map((a) => a.field)));
+  }
+
   calculateToSelectedMonsters(needCalcAll = true) {
     const classMap = ['Normal', 'Champion', 'Boss'];
     const selectedMonsterIds = this.selectedMonsterIds || [];
@@ -896,7 +930,10 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
     this.calcDamages = selectedMonsterIds.map((monsterId) => {
       const monster = this.monsterDataMap[monsterId];
-      const calculated = this.calculator.setMonster(monster).calculateSkillDamage(this.model.selectedAtkSkill);
+      const calculated = this.calculator
+        .setMonster(monster)
+        .calcHitRate()
+        .calculateSkillDamage(this.model.selectedAtkSkill);
 
       const {
         id,
@@ -1747,5 +1784,9 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
   onMonsterListChange() {
     this.updateMonsterListEvent.next(1);
+  }
+
+  onSelectedColChange() {
+    this.setCacheBattleCols();
   }
 }
