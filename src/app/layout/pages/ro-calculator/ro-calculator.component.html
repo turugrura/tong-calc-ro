@@ -346,7 +346,13 @@
               [(ngModel)]="model.weaponRefine"
               [disabled]="!model.weapon"
               (onChange)="onSelectItem('weapon', model.weapon, $event.value)"
-            ></p-dropdown>
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1">
+                  <div>{{ item.label > 0 ? '+ ' : '' }} {{ item.label || 0 }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
           </div>
         </div>
       </div>
@@ -520,66 +526,76 @@
     <!-- Head Upper -->
     <div class="grid grid-nogutter">
       <div class="col-3">
-        <p-dropdown
-          inputId="headUpper"
-          [autoDisplayFirst]="false"
-          [options]="headUpperList"
-          [filter]="true"
-          filterBy="label"
-          [(ngModel)]="model.headUpper"
-          [showClear]="true"
-          (onChange)="setEnchantList($event.value)"
-          (onChange)="onSelectItem('headUpper', $event.value, model.headUpperRefine)"
-          (onClear)="onClearItem('headUpper')"
-          placeholder="Head Upper"
-        >
-          <ng-template let-item pTemplate="selectedItem">
-            <div class="flex gap-1" *ngIf="model.headUpper">
-              <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
-              <div>{{ item.label }}</div>
-            </div>
-          </ng-template>
-          <ng-template let-item pTemplate="item">
-            <div class="flex gap-1">
-              <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
-              <div>{{ item.label }}</div>
-            </div>
-          </ng-template>
-        </p-dropdown>
+        <div class="grid grid-nogutter justify-content-end">
+          <div class="col-12">
+            <p-dropdown
+              inputId="headUpper"
+              [autoDisplayFirst]="false"
+              [options]="headUpperList"
+              [filter]="true"
+              filterBy="label"
+              [(ngModel)]="model.headUpper"
+              [showClear]="true"
+              (onChange)="setEnchantList($event.value)"
+              (onChange)="onSelectItem('headUpper', $event.value, model.headUpperRefine)"
+              (onClear)="onClearItem('headUpper')"
+              placeholder="Head Upper"
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1" *ngIf="model.headUpper">
+                  <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+              <ng-template let-item pTemplate="item">
+                <div class="flex gap-1">
+                  <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
+          </div>
+          <div class="col-4" style="min-width: 70px">
+            <p-dropdown
+              [options]="refineList"
+              [(ngModel)]="model.headUpperRefine"
+              [disabled]="!model.headUpper"
+              (onChange)="onSelectItem('headUpper', model.headUpper, $event.value)"
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1">
+                  <div>{{ item.label > 0 ? '+ ' : '' }} {{ item.label || 0 }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
+          </div>
+        </div>
       </div>
-      <div class="col-fixed" style="width: 80px">
-        <p-dropdown
-          [options]="refineList"
-          [(ngModel)]="model.headUpperRefine"
-          [disabled]="!model.headUpper"
-          (onChange)="onSelectItem('headUpper', model.headUpper, $event.value)"
-        ></p-dropdown>
-      </div>
-      <div class="col-3">
-        <p-dropdown
-          inputId="headUpperCard"
-          [autoDisplayFirst]="false"
-          [options]="headCardList"
-          [filter]="true"
-          filterBy="label"
-          [(ngModel)]="model.headUpperCard"
-          [disabled]="!model.headUpper"
-          [showClear]="true"
-          (onChange)="onSelectItem('headUpperCard', $event.value)"
-          placeholder="Card"
-        >
-          <ng-template let-item pTemplate="selectedItem">
-            <div class="flex gap-1" *ngIf="model.headUpperCard">
-              <img src="assets/demo/images/items/card.png" style="width: 19px" />
-              <div>{{ item.label }}</div>
-            </div>
-          </ng-template>
-        </p-dropdown>
-      </div>
-      <div class="col-12">
+      <div class="col-9">
         <div class="grid grid-nogutter">
-          <div class="col-3"></div>
-          <div class="col-3">
+          <div class="col-4">
+            <p-dropdown
+              inputId="headUpperCard"
+              [autoDisplayFirst]="false"
+              [options]="headCardList"
+              [filter]="true"
+              filterBy="label"
+              [(ngModel)]="model.headUpperCard"
+              [disabled]="!model.headUpper"
+              [showClear]="true"
+              (onChange)="onSelectItem('headUpperCard', $event.value)"
+              placeholder="Card"
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1" *ngIf="model.headUpperCard">
+                  <img src="assets/demo/images/items/card.png" style="width: 19px" />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
+          </div>
+          <div class="col-8"></div>
+          <div class="col-4">
             <p-dropdown
               inputId="headUpperEnchant1"
               [autoDisplayFirst]="false"
@@ -606,7 +622,7 @@
               </ng-template>
             </p-dropdown>
           </div>
-          <div class="col-3">
+          <div class="col-4">
             <p-dropdown
               inputId="headUpperEnchant2"
               [autoDisplayFirst]="false"
@@ -633,7 +649,7 @@
               </ng-template>
             </p-dropdown>
           </div>
-          <div class="col-3">
+          <div class="col-4">
             <p-dropdown
               inputId="headUpperEnchant3"
               [autoDisplayFirst]="false"
@@ -880,66 +896,76 @@
     <!-- Armor -->
     <div class="grid grid-nogutter">
       <div class="col-3">
-        <p-dropdown
-          inputId="armor"
-          [autoDisplayFirst]="false"
-          [options]="armorList"
-          [filter]="true"
-          filterBy="label"
-          [(ngModel)]="model.armor"
-          [showClear]="true"
-          (onChange)="setEnchantList($event.value)"
-          (onChange)="onSelectItem('armor', $event.value, model.armorRefine)"
-          (onClear)="onClearItem('armor')"
-          placeholder="Armor"
-        >
-          <ng-template let-item pTemplate="selectedItem">
-            <div class="flex gap-1" *ngIf="model.armor">
-              <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
-              <div>{{ item.label }}</div>
-            </div>
-          </ng-template>
-          <ng-template let-item pTemplate="item">
-            <div class="flex gap-1">
-              <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
-              <div>{{ item.label }}</div>
-            </div>
-          </ng-template>
-        </p-dropdown>
+        <div class="grid grid-nogutter justify-content-end">
+          <div class="col-12">
+            <p-dropdown
+              inputId="armor"
+              [autoDisplayFirst]="false"
+              [options]="armorList"
+              [filter]="true"
+              filterBy="label"
+              [(ngModel)]="model.armor"
+              [showClear]="true"
+              (onChange)="setEnchantList($event.value)"
+              (onChange)="onSelectItem('armor', $event.value, model.armorRefine)"
+              (onClear)="onClearItem('armor')"
+              placeholder="Head Upper"
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1" *ngIf="model.armor">
+                  <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+              <ng-template let-item pTemplate="item">
+                <div class="flex gap-1">
+                  <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
+          </div>
+          <div class="col-4" style="min-width: 70px">
+            <p-dropdown
+              [options]="refineList"
+              [(ngModel)]="model.armorRefine"
+              [disabled]="!model.armor"
+              (onChange)="onSelectItem('armor', model.armor, $event.value)"
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1">
+                  <div>{{ item.label > 0 ? '+ ' : '' }} {{ item.label || 0 }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
+          </div>
+        </div>
       </div>
-      <div class="col-fixed" style="width: 80px">
-        <p-dropdown
-          [options]="refineList"
-          [(ngModel)]="model.armorRefine"
-          [disabled]="!model.armor"
-          (onChange)="onSelectItem('armor', model.armor, $event.value)"
-        ></p-dropdown>
-      </div>
-      <div class="col-3">
-        <p-dropdown
-          inputId="armorCard"
-          [autoDisplayFirst]="false"
-          [options]="armorCardList"
-          [filter]="true"
-          filterBy="label"
-          [(ngModel)]="model.armorCard"
-          [disabled]="!model.armor"
-          [showClear]="true"
-          (onChange)="onSelectItem('armorCard', $event.value)"
-          placeholder="Card"
-        >
-          <ng-template let-item pTemplate="selectedItem">
-            <div class="flex gap-1" *ngIf="model.armorCard">
-              <img src="assets/demo/images/items/card.png" style="width: 19px" />
-              <div>{{ item.label }}</div>
-            </div>
-          </ng-template>
-        </p-dropdown>
-      </div>
-      <div class="col-12">
+      <div class="col-9">
         <div class="grid grid-nogutter">
-          <div class="col-3"></div>
-          <div class="col-3">
+          <div class="col-4">
+            <p-dropdown
+              inputId="armorCard"
+              [autoDisplayFirst]="false"
+              [options]="headCardList"
+              [filter]="true"
+              filterBy="label"
+              [(ngModel)]="model.armorCard"
+              [disabled]="!model.armor"
+              [showClear]="true"
+              (onChange)="onSelectItem('armorCard', $event.value)"
+              placeholder="Card"
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1" *ngIf="model.armorCard">
+                  <img src="assets/demo/images/items/card.png" style="width: 19px" />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
+          </div>
+          <div class="col-8"></div>
+          <div class="col-4">
             <p-dropdown
               inputId="armorEnchant1"
               [autoDisplayFirst]="false"
@@ -966,7 +992,7 @@
               </ng-template>
             </p-dropdown>
           </div>
-          <div class="col-3">
+          <div class="col-4">
             <p-dropdown
               inputId="armorEnchant2"
               [autoDisplayFirst]="false"
@@ -993,7 +1019,7 @@
               </ng-template>
             </p-dropdown>
           </div>
-          <div class="col-3">
+          <div class="col-4">
             <p-dropdown
               inputId="armorEnchant3"
               [autoDisplayFirst]="false"
@@ -1027,66 +1053,76 @@
     <!-- Garment -->
     <div class="grid grid-nogutter">
       <div class="col-3">
-        <p-dropdown
-          inputId="garment"
-          [autoDisplayFirst]="false"
-          [options]="garmentList"
-          [filter]="true"
-          filterBy="label"
-          [(ngModel)]="model.garment"
-          [showClear]="true"
-          (onChange)="setEnchantList($event.value)"
-          (onChange)="onSelectItem('garment', $event.value, model.garmentRefine)"
-          (onClear)="onClearItem('garment')"
-          placeholder="Garment"
-        >
-          <ng-template let-item pTemplate="selectedItem">
-            <div class="flex gap-1" *ngIf="model.garment">
-              <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
-              <div>{{ item.label }}</div>
-            </div>
-          </ng-template>
-          <ng-template let-item pTemplate="item">
-            <div class="flex gap-1">
-              <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
-              <div>{{ item.label }}</div>
-            </div>
-          </ng-template>
-        </p-dropdown>
+        <div class="grid grid-nogutter justify-content-end">
+          <div class="col-12">
+            <p-dropdown
+              inputId="garment"
+              [autoDisplayFirst]="false"
+              [options]="garmentList"
+              [filter]="true"
+              filterBy="label"
+              [(ngModel)]="model.garment"
+              [showClear]="true"
+              (onChange)="setEnchantList($event.value)"
+              (onChange)="onSelectItem('garment', $event.value, model.garmentRefine)"
+              (onClear)="onClearItem('garment')"
+              placeholder="Head Upper"
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1" *ngIf="model.garment">
+                  <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+              <ng-template let-item pTemplate="item">
+                <div class="flex gap-1">
+                  <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
+          </div>
+          <div class="col-4" style="min-width: 70px">
+            <p-dropdown
+              [options]="refineList"
+              [(ngModel)]="model.garmentRefine"
+              [disabled]="!model.garment"
+              (onChange)="onSelectItem('garment', model.garment, $event.value)"
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1">
+                  <div>{{ item.label > 0 ? '+ ' : '' }} {{ item.label || 0 }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
+          </div>
+        </div>
       </div>
-      <div class="col-fixed" style="width: 80px">
-        <p-dropdown
-          [options]="refineList"
-          [(ngModel)]="model.garmentRefine"
-          [disabled]="!model.garment"
-          (onChange)="onSelectItem('garment', model.garment, $event.value)"
-        ></p-dropdown>
-      </div>
-      <div class="col-3">
-        <p-dropdown
-          inputId="garmentCard"
-          [autoDisplayFirst]="false"
-          [options]="garmentCardList"
-          [filter]="true"
-          filterBy="label"
-          [(ngModel)]="model.garmentCard"
-          [disabled]="!model.garment"
-          [showClear]="true"
-          (onChange)="onSelectItem('garmentCard', $event.value)"
-          placeholder="Card"
-        >
-          <ng-template let-item pTemplate="selectedItem">
-            <div class="flex gap-1" *ngIf="model.garmentCard">
-              <img src="assets/demo/images/items/card.png" style="width: 19px" />
-              <div>{{ item.label }}</div>
-            </div>
-          </ng-template>
-        </p-dropdown>
-      </div>
-      <div class="col-12">
+      <div class="col-9">
         <div class="grid grid-nogutter">
-          <div class="col-3"></div>
-          <div class="col-3">
+          <div class="col-4">
+            <p-dropdown
+              inputId="garmentCard"
+              [autoDisplayFirst]="false"
+              [options]="headCardList"
+              [filter]="true"
+              filterBy="label"
+              [(ngModel)]="model.garmentCard"
+              [disabled]="!model.garment"
+              [showClear]="true"
+              (onChange)="onSelectItem('garmentCard', $event.value)"
+              placeholder="Card"
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1" *ngIf="model.garmentCard">
+                  <img src="assets/demo/images/items/card.png" style="width: 19px" />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
+          </div>
+          <div class="col-8"></div>
+          <div class="col-4">
             <p-dropdown
               inputId="garmentEnchant1"
               [autoDisplayFirst]="false"
@@ -1113,7 +1149,7 @@
               </ng-template>
             </p-dropdown>
           </div>
-          <div class="col-3">
+          <div class="col-4">
             <p-dropdown
               inputId="garmentEnchant2"
               [autoDisplayFirst]="false"
@@ -1140,7 +1176,7 @@
               </ng-template>
             </p-dropdown>
           </div>
-          <div class="col-3">
+          <div class="col-4">
             <p-dropdown
               inputId="garmentEnchant3"
               [autoDisplayFirst]="false"
@@ -1174,66 +1210,76 @@
     <!-- Boot -->
     <div class="grid grid-nogutter">
       <div class="col-3">
-        <p-dropdown
-          inputId="boot"
-          [autoDisplayFirst]="false"
-          [options]="bootList"
-          [filter]="true"
-          filterBy="label"
-          [(ngModel)]="model.boot"
-          [showClear]="true"
-          (onChange)="setEnchantList($event.value)"
-          (onChange)="onSelectItem('boot', $event.value, model.bootRefine)"
-          (onClear)="onClearItem('boot')"
-          placeholder="Boot"
-        >
-          <ng-template let-item pTemplate="selectedItem">
-            <div class="flex gap-1" *ngIf="model.boot">
-              <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
-              <div>{{ item.label }}</div>
-            </div>
-          </ng-template>
-          <ng-template let-item pTemplate="item">
-            <div class="flex gap-1">
-              <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
-              <div>{{ item.label }}</div>
-            </div>
-          </ng-template>
-        </p-dropdown>
+        <div class="grid grid-nogutter justify-content-end">
+          <div class="col-12">
+            <p-dropdown
+              inputId="boot"
+              [autoDisplayFirst]="false"
+              [options]="bootList"
+              [filter]="true"
+              filterBy="label"
+              [(ngModel)]="model.boot"
+              [showClear]="true"
+              (onChange)="setEnchantList($event.value)"
+              (onChange)="onSelectItem('boot', $event.value, model.bootRefine)"
+              (onClear)="onClearItem('boot')"
+              placeholder="Head Upper"
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1" *ngIf="model.boot">
+                  <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+              <ng-template let-item pTemplate="item">
+                <div class="flex gap-1">
+                  <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
+          </div>
+          <div class="col-4" style="min-width: 70px">
+            <p-dropdown
+              [options]="refineList"
+              [(ngModel)]="model.bootRefine"
+              [disabled]="!model.boot"
+              (onChange)="onSelectItem('boot', model.boot, $event.value)"
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1">
+                  <div>{{ item.label > 0 ? '+ ' : '' }} {{ item.label || 0 }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
+          </div>
+        </div>
       </div>
-      <div class="col-fixed" style="width: 80px">
-        <p-dropdown
-          [options]="refineList"
-          [(ngModel)]="model.bootRefine"
-          [disabled]="!model.boot"
-          (onChange)="onSelectItem('boot', model.boot, $event.value)"
-        ></p-dropdown>
-      </div>
-      <div class="col-3">
-        <p-dropdown
-          inputId="bootCard"
-          [autoDisplayFirst]="false"
-          [options]="bootCardList"
-          [filter]="true"
-          filterBy="label"
-          [(ngModel)]="model.bootCard"
-          [disabled]="!model.boot"
-          [showClear]="true"
-          (onChange)="onSelectItem('bootCard', $event.value)"
-          placeholder="Card"
-        >
-          <ng-template let-item pTemplate="selectedItem">
-            <div class="flex gap-1" *ngIf="model.bootCard">
-              <img src="assets/demo/images/items/card.png" style="width: 19px" />
-              <div>{{ item.label }}</div>
-            </div>
-          </ng-template>
-        </p-dropdown>
-      </div>
-      <div class="col-12">
+      <div class="col-9">
         <div class="grid grid-nogutter">
-          <div class="col-3"></div>
-          <div class="col-3">
+          <div class="col-4">
+            <p-dropdown
+              inputId="bootCard"
+              [autoDisplayFirst]="false"
+              [options]="headCardList"
+              [filter]="true"
+              filterBy="label"
+              [(ngModel)]="model.bootCard"
+              [disabled]="!model.boot"
+              [showClear]="true"
+              (onChange)="onSelectItem('bootCard', $event.value)"
+              placeholder="Card"
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1" *ngIf="model.bootCard">
+                  <img src="assets/demo/images/items/card.png" style="width: 19px" />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
+          </div>
+          <div class="col-8"></div>
+          <div class="col-4">
             <p-dropdown
               inputId="bootEnchant1"
               [autoDisplayFirst]="false"
@@ -1260,7 +1306,7 @@
               </ng-template>
             </p-dropdown>
           </div>
-          <div class="col-3">
+          <div class="col-4">
             <p-dropdown
               inputId="bootEnchant2"
               [autoDisplayFirst]="false"
@@ -1287,7 +1333,7 @@
               </ng-template>
             </p-dropdown>
           </div>
-          <div class="col-3">
+          <div class="col-4">
             <p-dropdown
               inputId="bootEnchant3"
               [autoDisplayFirst]="false"
@@ -1833,7 +1879,13 @@
           [(ngModel)]="model.shadowWeaponRefine"
           [disabled]="!model.shadowWeapon"
           (onChange)="onSelectItem('shadowWeapon', model.shadowWeapon, $event.value)"
-        ></p-dropdown>
+        >
+          <ng-template let-item pTemplate="selectedItem">
+            <div class="flex gap-1">
+              <div>{{ item.label > 0 ? '+ ' : '' }} {{ item.label || 0 }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
       </div>
       <div class="col-3">
         <p-cascadeSelect
@@ -1887,7 +1939,13 @@
           [(ngModel)]="model.shadowArmorRefine"
           [disabled]="!model.shadowArmor"
           (onChange)="onSelectItem('shadowArmor', model.shadowArmor, $event.value)"
-        ></p-dropdown>
+        >
+          <ng-template let-item pTemplate="selectedItem">
+            <div class="flex gap-1">
+              <div>{{ item.label > 0 ? '+ ' : '' }} {{ item.label || 0 }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
       </div>
       <div class="col-3">
         <p-cascadeSelect
@@ -1941,7 +1999,13 @@
           [(ngModel)]="model.shadowShieldRefine"
           [disabled]="!model.shadowShield"
           (onChange)="onSelectItem('shadowShield', model.shadowShield, $event.value)"
-        ></p-dropdown>
+        >
+          <ng-template let-item pTemplate="selectedItem">
+            <div class="flex gap-1">
+              <div>{{ item.label > 0 ? '+ ' : '' }} {{ item.label || 0 }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
       </div>
       <div class="col-3">
         <p-cascadeSelect
@@ -1995,7 +2059,13 @@
           [(ngModel)]="model.shadowBootRefine"
           [disabled]="!model.shadowBoot"
           (onChange)="onSelectItem('shadowBoot', model.shadowBoot, $event.value)"
-        ></p-dropdown>
+        >
+          <ng-template let-item pTemplate="selectedItem">
+            <div class="flex gap-1">
+              <div>{{ item.label > 0 ? '+ ' : '' }} {{ item.label || 0 }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
       </div>
       <div class="col-3">
         <p-cascadeSelect
@@ -2049,7 +2119,13 @@
           [(ngModel)]="model.shadowEarningRefine"
           [disabled]="!model.shadowEarning"
           (onChange)="onSelectItem('shadowEarning', model.shadowEarning, $event.value)"
-        ></p-dropdown>
+        >
+          <ng-template let-item pTemplate="selectedItem">
+            <div class="flex gap-1">
+              <div>{{ item.label > 0 ? '+ ' : '' }} {{ item.label || 0 }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
       </div>
       <div class="col-3">
         <p-cascadeSelect
@@ -2103,7 +2179,13 @@
           [(ngModel)]="model.shadowPendantRefine"
           [disabled]="!model.shadowPendant"
           (onChange)="onSelectItem('shadowPendant', model.shadowPendant, $event.value)"
-        ></p-dropdown>
+        >
+          <ng-template let-item pTemplate="selectedItem">
+            <div class="flex gap-1">
+              <div>{{ item.label > 0 ? '+ ' : '' }} {{ item.label || 0 }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
       </div>
       <div class="col-3">
         <p-cascadeSelect

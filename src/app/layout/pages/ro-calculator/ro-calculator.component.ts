@@ -688,9 +688,6 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       .pipe(
         tap(() => (this.isCalculating = true)),
         debounceTime(750),
-        finalize(() => {
-          console.log('updateItemSubs finalize');
-        }),
       )
       .subscribe(() => {
         this.calculate();
@@ -704,9 +701,6 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       .pipe(
         tap(() => (this.isCalculating = true)),
         debounceTime(1000),
-        finalize(() => {
-          console.log('updateMonsterListSubs finalize');
-        }),
       )
       .subscribe(() => {
         this.calculateToSelectedMonsters(false);
