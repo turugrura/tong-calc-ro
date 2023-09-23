@@ -264,7 +264,11 @@
               <div class="col-12">Flee: {{ totalSummary?.calc?.totalFlee || 0 }}</div>
               <div class="col-12">
                 Matk: {{ totalSummary?.calc?.totalStatusMatk || 0 }} +
-                {{ totalSummary?.weapon?.baseWeaponMatk + totalSummary?.weapon?.refineBonus + totalSummary?.matk || 0 }}
+                {{
+                  totalSummary?.weapon?.baseWeaponMatk +
+                    (totalSummary?.weapon?.baseWeaponMatk > 0 ? totalSummary?.weapon?.refineBonus : 0) +
+                    totalSummary?.matk || 0
+                }}
                 | Matk %:
                 {{ totalSummary?.matkPercent }}
               </div>

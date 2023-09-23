@@ -680,7 +680,9 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     this.initLoadItems();
     this.initCalcTableColumns();
     this.setPresetList();
-    this.initData();
+    this.initData().subscribe(() => {
+      this.loadItemSet();
+    });
 
     this.updateItemSubs = this.updateItemEvent
       .pipe(
@@ -721,25 +723,26 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   }
 
   private initData() {
-    forkJoin([
+    return forkJoin([
       this.roService.getItems<Record<number, ItemModel>>(),
       this.roService.getMonsters<Record<number, MonsterModel>>(),
-    ]).subscribe(([items, monsters]) => {
-      this.items = items;
-      this.monsterDataMap = monsters;
+    ]).pipe(
+      tap(([items, monsters]) => {
+        this.items = items;
+        this.monsterDataMap = monsters;
 
-      this.calculator.setMasterItems(items);
-      this.mapEnchant = new Map(
-        Object.values(items)
-          .filter((item) => item.itemTypeId === ItemTypeId.CARD)
-          .map((item) => {
-            return [item.aegisName, item];
-          }),
-      );
-      this.setMonsterDropdownList();
-      this.setItemList();
-      this.loadItemSet();
-    });
+        this.calculator.setMasterItems(items);
+        this.mapEnchant = new Map(
+          Object.values(items)
+            .filter((item) => item.itemTypeId === ItemTypeId.CARD)
+            .map((item) => {
+              return [item.aegisName, item];
+            }),
+        );
+        this.setMonsterDropdownList();
+        this.setItemList();
+      }),
+    );
   }
 
   private initLoadItems() {
@@ -1134,12 +1137,18 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     }
     this.model.selectedAtkSkill = this.model.selectedAtkSkill || this.atkSkills[0]?.value;
 
-    this.onClassChange(false);
+    this.setClassInstant();
+    this.setSkillModelArray();
     this.setJobBonus();
 
-    return waitRxjs(0.1)
+    return waitRxjs()
       .pipe(
         take(1),
+        mergeMap(() => {
+          this.setClassSkill();
+          this.setItemDropdownList();
+          return waitRxjs();
+        }),
         mergeMap(() => {
           try {
             if (str || fromCurrentModel) {
@@ -1766,11 +1775,6 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
           finalize(() => (this.isInProcessingPreset = false)),
         )
         .subscribe(() => this.updateItemEvent.next(1));
-    } else {
-      this.setClassInstant();
-      this.setClassSkill();
-      this.setSkillModelArray();
-      this.setItemDropdownList();
     }
   }
 

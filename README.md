@@ -27,4 +27,5 @@
 | ASPD not 100%                                 | -      |
 | ATK not 100%                                  | -      |
 | Monster property multipiler wrong calc        | -      |
+| formula not including Overupgrade             | -      |
 | x                                             | -      |
