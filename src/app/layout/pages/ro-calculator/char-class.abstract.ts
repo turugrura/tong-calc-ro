@@ -162,7 +162,7 @@ export abstract class CharacterBase {
     const rawCalcAspd = Math.floor(statAspd + potionSkillAspd + shieldPenalty);
     const baseAspd2 = baseAspd + rawCalcAspd;
     const equip = Math.floor((195 - baseAspd2) * (aspdPercent * 0.01));
-    const final = baseAspd2 + equip + aspd;
+    const final = Math.min(baseAspd2 + equip + aspd, 193);
 
     // console.log({
     //   weapon,
