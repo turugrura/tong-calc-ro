@@ -853,7 +853,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       .calcCriRate()
       .setMonster(this.monsterDataMap[this.selectedMonster]);
 
-    const calculated = calc.calculateSkillDamage(selectedAtkSkill);
+    const calculated = calc.calculateAllDamages(selectedAtkSkill);
     const { minDamage, maxDamage, basicMaxDamage, basicMinDamage, criMaxDamage, skillHit, skillDps } = calculated;
     this.minBasicDamage = basicMinDamage;
     this.maxBasicDamage = basicMaxDamage;
@@ -941,7 +941,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       const calculated = this.calculator
         .setMonster(monster)
         .calcHitRate()
-        .calculateSkillDamage(this.model.selectedAtkSkill);
+        .calculateAllDamages(this.model.selectedAtkSkill);
 
       const {
         id,

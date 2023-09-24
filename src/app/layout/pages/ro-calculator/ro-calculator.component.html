@@ -2620,11 +2620,25 @@
                 <span *ngIf="skillHit > 1">( {{ maxDamagePerHit | number }} x {{ skillHit }} )</span>
               </div> -->
               <div class="col-6">
-                Skill:
-                <span class="font-bold px-1 summary_damage">{{ minDamage | number }} - {{ maxDamage | number }}</span>
+                Skill <span [hidden]="totalSummary?.dmg?.criRate <= 0">Cri</span>:
+                <span [hidden]="totalSummary?.dmg?.criRate > 0" class="font-bold px-1 summary_damage"
+                  >{{ totalSummary?.dmg?.minDamage | number }} -</span
+                ><span class="font-bold px-1 summary_damage">{{ totalSummary?.dmg?.maxDamage | number }}</span>
+              </div>
+              <div class="col-6" [hidden]="totalSummary?.dmg?.criRate <= 0">
+                Cri:
+                <span class="font-bold px-1 summary_damage">{{ totalSummary?.dmg?.criRate || 0 | number }} %</span>
+              </div>
+              <div class="col-6" [hidden]="totalSummary?.dmg?.maxDamageHE <= 0">
+                HE
+                <span class="font-bold px-1 summary_highlight" [hidden]="totalSummary?.dmg?.criRate > 0"
+                  >{{ totalSummary?.dmg?.minDamageHE || 0 | number }} -</span
+                ><span class="font-bold px-1 summary_highlight">{{
+                  totalSummary?.dmg?.maxDamageHE || 0 | number
+                }}</span>
               </div>
               <div class="col-6">
-                Skill DPS:
+                DPS:
                 <span class="font-bold px-1 summary_highlight">{{ totalSummary?.calcSkill?.dps || 0 | number }}</span>
               </div>
               <div class="col-12">
@@ -2639,7 +2653,7 @@
                 <span class="font-bold px-1 summary_damage">{{ criDamage | number }}</span>
               </div>
               <div class="col-6">
-                Basic DPS:
+                DPS:
                 <span class="font-bold px-1 summary_highlight">{{ totalSummary?.calc?.dps || 0 | number }}</span>
               </div>
               <div class="col-6">
@@ -2780,7 +2794,7 @@
         </div>
       </p-accordionTab>
 
-      <p-accordionTab header="Possibility Damages">
+      <p-accordionTab header="Possible Damages">
         <div class="grid grid-nogutter">
           <div class="col-12">
             <p-listbox
