@@ -76,11 +76,13 @@ const jobBonusTable: Record<number, [number, number, number, number, number, num
 
 const ASPDTable = {
   bow: 9,
+  Bow: 9,
   dagger: 10,
 } as const;
 
 export class Ranger extends CharacterBase {
-  protected baseAspd = 156;
+  protected readonly BASE_ASPD = 156;
+  protected readonly ASPDTable = ASPDTable;
 
   protected initialStatusPoint = 100;
   protected classNames = ['Ranger', 'Ranger Cls', 'Sniper', 'Hunter', 'Archer Cls', 'Only 3rd Cls'];
@@ -366,13 +368,6 @@ export class Ranger extends CharacterBase {
       int,
       dex,
       luk,
-    };
-  }
-
-  calcBaseAspd(weaponType: string): { baseAspd: number; shieldPenalty: number } {
-    return {
-      baseAspd: this.baseAspd - (ASPDTable[weaponType] || 0),
-      shieldPenalty: 0,
     };
   }
 }

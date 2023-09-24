@@ -1,4 +1,5 @@
 import { ElementType } from './element-type.const';
+import { Weapon } from './weapon';
 
 export type AtkSkillFormulaInput<T extends {} = {}> = T & {
   baseLevel: number;
@@ -53,7 +54,7 @@ export interface SkillBonusResult {
 }
 
 export interface AspdInput {
-  weaponType: string;
+  weapon: Weapon;
   aspd: number;
   aspdPercent: number;
   totalAgi: number;
@@ -66,6 +67,9 @@ export interface AspdInput {
 
 export abstract class CharacterBase {
   private allClass = 'all';
+
+  protected abstract readonly BASE_ASPD: number;
+  protected abstract readonly ASPDTable: Record<string, number>;
 
   protected abstract initialStatusPoint: number;
   protected abstract classNames: string[];
@@ -81,8 +85,6 @@ export abstract class CharacterBase {
     dex: number;
     luk: number;
   };
-
-  protected abstract calcBaseAspd(weaponType: string): { baseAspd: number; shieldPenalty: number };
 
   get classNameSet() {
     return new Set([this.allClass, ...this.classNames]);
@@ -140,20 +142,30 @@ export abstract class CharacterBase {
     return { skillNames, equipAtks, masteryAtks, learnedSkillMap };
   }
 
+  private calcBaseAspd(weaponType: string): { baseAspd: number; shieldPenalty: number } {
+    return {
+      baseAspd: this.BASE_ASPD - (this.ASPDTable[weaponType] || 0),
+      shieldPenalty: 0,
+    };
+  }
+
   calcAspd(a: AspdInput): number {
     const potion = { 645: 4, 656: 6, 657: 9 };
-    const { weaponType, aspd, aspdPercent, totalAgi, totalDex, potionAspd, skillAspd } = a;
+    const { weapon, aspd, aspdPercent, totalAgi, totalDex, potionAspd, skillAspd } = a;
     const aspdByPotion = potion[potionAspd] || 0;
 
-    const { baseAspd, shieldPenalty } = this.calcBaseAspd(weaponType);
-    const statAspd = Math.sqrt((totalAgi * totalAgi) / 2 + (totalDex * totalDex) / 5) / 4;
+    const { rangeType, typeName } = weapon.data;
+    const { baseAspd, shieldPenalty } = this.calcBaseAspd(typeName);
+    const isRange = rangeType === 'range';
+    const statAspd = Math.sqrt((totalAgi * totalAgi) / 2 + (totalDex * totalDex) / (isRange ? 7 : 5)) / 4;
     const potionSkillAspd = ((aspdByPotion + skillAspd) * totalAgi) / 200;
     const rawCalcAspd = Math.floor(statAspd + potionSkillAspd + shieldPenalty);
     const baseAspd2 = baseAspd + rawCalcAspd;
-    const equip = Math.floor((195 - (baseAspd2 + aspd)) * (aspdPercent * 0.01));
+    const equip = Math.floor((195 - baseAspd2) * (aspdPercent * 0.01));
     const final = baseAspd2 + equip + aspd;
 
     // console.log({
+    //   weapon,
     //   baseAspd,
     //   aspd,
     //   aspdPercent,

@@ -229,53 +229,61 @@
           </div>
 
           <!-- Summary -->
-          <div class="col-4">
-            <div class="grid grid-nogutter mx-2">
-              <div class="col-12">
-                Alt+Q:
-                {{ totalSummary?.calc?.totalStatusAtk || 0 }} +
-                {{
-                  totalSummary?.weapon?.baseWeaponAtk +
-                    totalSummary?.weapon?.refineBonus +
-                    totalSummary?.calc?.totalMasteryAtk +
-                    totalSummary?.calc?.totalEquipAtk || 0
-                }}
+          <div class="col-8">
+            <div class="grid grid-nogutter">
+              <div class="col-6">
+                <div class="grid grid-nogutter mx-2">
+                  <div class="col-12">
+                    Alt+Q:
+                    {{ totalSummary?.calc?.totalStatusAtk || 0 }} +
+                    {{
+                      totalSummary?.weapon?.baseWeaponAtk +
+                        totalSummary?.weapon?.refineBonus +
+                        totalSummary?.calc?.totalMasteryAtk +
+                        totalSummary?.calc?.totalEquipAtk || 0
+                    }}
+                  </div>
+                  <div class="col-12">Atk: {{ totalSummary?.atk || 0 }} | Atk %: {{ totalSummary?.atkPercent }}</div>
+                  <!-- <div class="col-12">Atk%: {{ totalSummary?.atkPercent }}</div> -->
+                  <div class="col-12">
+                    ASPD: {{ totalSummary?.calc?.totalAspd || 0 }} ( {{ totalSummary?.calc?.hitPerSecs || 0 }} Hits/s )
+                  </div>
+                  <div class="col-12">
+                    Hit: {{ totalSummary?.calc?.totalHit || 0 }} | Perfect:
+                    {{ totalSummary?.calc?.totalPerfectHit || 0 }}
+                  </div>
+                  <!-- <div class="col-12">Perfect Hit: {{ totalSummary?.perfectHit || 0 }}</div> -->
+                  <div class="col-12">
+                    CriRate: {{ totalSummary?.calc?.totalCri || 0 }} | Dmg: {{ totalSummary?.criDmg || 0 }}
+                  </div>
+                  <!-- <div class="col-12">ASPD: {{ totalSummary?.calc?.totalAspd || 0 }}</div> -->
+                  <!-- <div class="col-12">Cri Dmg: {{ totalSummary?.criDmg || 0 }}</div> -->
+                  <div class="col-12">Range: {{ totalSummary?.range || 0 }}</div>
+                </div>
               </div>
-              <div class="col-12">Atk: {{ totalSummary?.atk || 0 }} | Atk %: {{ totalSummary?.atkPercent }}</div>
-              <!-- <div class="col-12">Atk%: {{ totalSummary?.atkPercent }}</div> -->
-              <div class="col-12">
-                Hit: {{ totalSummary?.calc?.totalHit || 0 }} | Perfect: {{ totalSummary?.calc?.totalPerfectHit || 0 }}
+              <div class="col-6">
+                <div class="grid grid-nogutter mx-2">
+                  <div class="col-12">
+                    Def: {{ totalSummary?.def || 0 }}, Mdef:
+                    {{ totalSummary?.mdef || 0 }}
+                  </div>
+                  <div class="col-12">Flee: {{ totalSummary?.calc?.totalFlee || 0 }}</div>
+                  <div class="col-12">
+                    Matk: {{ totalSummary?.calc?.totalStatusMatk || 0 }} +
+                    {{
+                      totalSummary?.weapon?.baseWeaponMatk +
+                        (totalSummary?.weapon?.baseWeaponMatk > 0 ? totalSummary?.weapon?.refineBonus : 0) +
+                        totalSummary?.matk || 0
+                    }}
+                    | Matk %:
+                    {{ totalSummary?.matkPercent }}
+                  </div>
+                  <!-- <div class="col-12">Matk %: {{ totalSummary?.Percent }}</div> -->
+                  <div class="col-12">After Cast Delay: {{ totalSummary?.acd || 0 }}</div>
+                  <div class="col-12">Fixed Cast Time: {{ totalSummary?.fct || 0 }}</div>
+                  <div class="col-12">Variable Cast Time: {{ totalSummary?.vct || 0 }}</div>
+                </div>
               </div>
-              <!-- <div class="col-12">Perfect Hit: {{ totalSummary?.perfectHit || 0 }}</div> -->
-              <div class="col-12">
-                Cri Rate: {{ totalSummary?.calc?.totalCri || 0 }} | Dmg: {{ totalSummary?.criDmg || 0 }}
-              </div>
-              <div class="col-12">ASPD: {{ totalSummary?.calc?.totalAspd || 0 }}</div>
-              <!-- <div class="col-12">Cri Dmg: {{ totalSummary?.criDmg || 0 }}</div> -->
-              <div class="col-12">Range: {{ totalSummary?.range || 0 }}</div>
-            </div>
-          </div>
-          <div class="col-4">
-            <div class="grid grid-nogutter mx-2">
-              <div class="col-12">
-                Def: {{ totalSummary?.def || 0 }}, Mdef:
-                {{ totalSummary?.mdef || 0 }}
-              </div>
-              <div class="col-12">Flee: {{ totalSummary?.calc?.totalFlee || 0 }}</div>
-              <div class="col-12">
-                Matk: {{ totalSummary?.calc?.totalStatusMatk || 0 }} +
-                {{
-                  totalSummary?.weapon?.baseWeaponMatk +
-                    (totalSummary?.weapon?.baseWeaponMatk > 0 ? totalSummary?.weapon?.refineBonus : 0) +
-                    totalSummary?.matk || 0
-                }}
-                | Matk %:
-                {{ totalSummary?.matkPercent }}
-              </div>
-              <!-- <div class="col-12">Matk %: {{ totalSummary?.Percent }}</div> -->
-              <div class="col-12">After Cast Delay: {{ totalSummary?.acd || 0 }}</div>
-              <div class="col-12">Fixe Cast Time: {{ totalSummary?.fct || 0 }}</div>
-              <div class="col-12">Variable Cast Time: {{ totalSummary?.vct || 0 }}</div>
             </div>
           </div>
         </div>
@@ -909,7 +917,7 @@
               (onChange)="setEnchantList($event.value)"
               (onChange)="onSelectItem('armor', $event.value, model.armorRefine)"
               (onClear)="onClearItem('armor')"
-              placeholder="Head Upper"
+              placeholder="Armor"
             >
               <ng-template let-item pTemplate="selectedItem">
                 <div class="flex gap-1" *ngIf="model.armor">
@@ -1066,7 +1074,7 @@
               (onChange)="setEnchantList($event.value)"
               (onChange)="onSelectItem('garment', $event.value, model.garmentRefine)"
               (onClear)="onClearItem('garment')"
-              placeholder="Head Upper"
+              placeholder="Garment"
             >
               <ng-template let-item pTemplate="selectedItem">
                 <div class="flex gap-1" *ngIf="model.garment">
@@ -1223,7 +1231,7 @@
               (onChange)="setEnchantList($event.value)"
               (onChange)="onSelectItem('boot', $event.value, model.bootRefine)"
               (onClear)="onClearItem('boot')"
-              placeholder="Head Upper"
+              placeholder="Boot"
             >
               <ng-template let-item pTemplate="selectedItem">
                 <div class="flex gap-1" *ngIf="model.boot">
@@ -2250,20 +2258,40 @@
           </div>
 
           <div class="col-4">
-            <p-listbox
-              [options]="aspdPotionList"
-              [(ngModel)]="model.aspdPotion"
-              [multiple]="false"
-              [metaKeySelection]="false"
-              (onChange)="onConsumableChange()"
-            >
-              <ng-template let-item pTemplate="item">
-                <div class="flex gap-2">
-                  <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
-                  <div class="text_ellips">{{ item.label }}</div>
-                </div>
-              </ng-template>
-            </p-listbox>
+            <div class="grid grid-nogutter">
+              <div class="col-12">
+                <p-listbox
+                  [options]="aspdPotionList"
+                  [(ngModel)]="model.aspdPotion"
+                  [multiple]="false"
+                  [metaKeySelection]="false"
+                  (onChange)="onConsumableChange()"
+                >
+                  <ng-template let-item pTemplate="item">
+                    <div class="flex gap-2">
+                      <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
+                      <div class="text_ellips">{{ item.label }}</div>
+                    </div>
+                  </ng-template>
+                </p-listbox>
+              </div>
+              <div class="col-12">
+                <p-listbox
+                  [options]="aspdPotionList2"
+                  [(ngModel)]="model.aspdPotions"
+                  [multiple]="true"
+                  [metaKeySelection]="false"
+                  (onChange)="onConsumableChange()"
+                >
+                  <ng-template let-item pTemplate="item">
+                    <div class="flex gap-2">
+                      <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
+                      <div class="text_ellips">{{ item.label }}</div>
+                    </div>
+                  </ng-template>
+                </p-listbox>
+              </div>
+            </div>
           </div>
         </div>
       </p-accordionTab>
@@ -2397,77 +2425,186 @@
         </div>
       </p-accordionTab>
 
-      <p-accordionTab header="Battle Smuuary">
+      <p-accordionTab header="Battle Summary">
         <div class="grid grid-nogutter">
-          <div class="col-6">
-            <div class="p-inputgroup">
-              <span class="p-inputgroup-addon" style="width: 80px">Skill</span>
-              <p-dropdown
-                inputId="monster"
-                [autoDisplayFirst]="false"
-                [options]="atkSkills"
-                [(ngModel)]="model.selectedAtkSkill"
-                (onChange)="onAtkSkillChange()"
-              ></p-dropdown>
-            </div>
-          </div>
-          <div class="col-6">
-            <div class="p-inputgroup">
-              <span class="p-inputgroup-addon" style="width: 80px">Monster</span>
-              <p-dropdown
-                inputId="monster"
-                styleClass="tong"
-                [autoDisplayFirst]="false"
-                [options]="monsterList"
-                [filter]="true"
-                filterBy="label,searchVal"
-                [(ngModel)]="selectedMonster"
-                (onChange)="onMonsterChange()"
-              >
-                <ng-template let-item pTemplate="selectedItem">
-                  <div class="flex gap-1" *ngIf="selectedMonster">
-                    <!-- <img
-                    src="assets/demo/images/items/{{ item.value }}.png"
-                    style="width: 19px"
-                  /> -->
-                    <div class="{{ 'property_' + item.elementName }}">
-                      {{ item.label }}
-                    </div>
+          <!-- Monster -->
+          <div class="col-5">
+            <div class="grid grid-nogutter">
+              <div class="col-12">
+                <div class="p-inputgroup">
+                  <span class="p-inputgroup-addon" style="width: 80px">Monster</span>
+                  <p-dropdown
+                    inputId="monster"
+                    styleClass="tong"
+                    [autoDisplayFirst]="false"
+                    [options]="monsterList"
+                    [filter]="true"
+                    filterBy="label,searchVal"
+                    [(ngModel)]="selectedMonster"
+                    (onChange)="onMonsterChange()"
+                  >
+                    <ng-template let-item pTemplate="selectedItem">
+                      <div class="flex gap-1" *ngIf="selectedMonster">
+                        <!-- <img
+                        src="assets/demo/images/items/{{ item.value }}.png"
+                        style="width: 19px"
+                      /> -->
+                        <div class="{{ 'property_' + item.elementName }}">
+                          {{ item.label }}
+                        </div>
+                      </div>
+                    </ng-template>
+                    <ng-template let-item pTemplate="item">
+                      <div class="flex gap-1">
+                        <!-- <img
+                        src="assets/demo/images/items/{{ item.value }}.png"
+                        style="width: 19px"
+                      /> -->
+                        <div class="{{ 'property_' + item.elementName }}">
+                          {{ item.label }}
+                        </div>
+                      </div>
+                    </ng-template>
+                  </p-dropdown>
+                </div>
+              </div>
+              <div class="col-5 flex align-items-center justify-content-center">
+                <div class="grid grid-nogutter" style="height: 100%">
+                  <div class="col-12 flex align-items-center justify-content-center">
+                    <img
+                      src="https://static.divine-pride.net/images/mobs/png/{{ selectedMonster }}.png"
+                      class="img_monster"
+                      alt="-"
+                    />
                   </div>
-                </ng-template>
-                <ng-template let-item pTemplate="item">
-                  <div class="flex gap-1">
-                    <!-- <img
-                    src="assets/demo/images/items/{{ item.value }}.png"
-                    style="width: 19px"
-                  /> -->
-                    <div class="{{ 'property_' + item.elementName }}">
-                      {{ item.label }}
-                    </div>
+                </div>
+              </div>
+              <div class="col-7">
+                <div class="grid grid-nogutter">
+                  <div class="col-12">
+                    HP
+                    <span class="summary_monster_value px-1 font-semibold">{{
+                      totalSummary?.monster?.hp | number
+                    }}</span>
                   </div>
-                </ng-template>
-              </p-dropdown>
+                  <div class="col-12">
+                    Def
+                    <span class="summary_monster_value px-1 font-semibold"
+                      >{{ totalSummary?.monster?.softDef }} + {{ totalSummary?.monster?.def }}</span
+                    >
+                  </div>
+                  <div class="col-12">
+                    Mdef
+                    <span class="summary_monster_value px-1 font-semibold"
+                      >{{ totalSummary?.monster?.softMDef }} + {{ totalSummary?.monster?.mdef }}</span
+                    >
+                  </div>
+                  <div class="col-12">
+                    Class
+                    <span class="summary_monster_value px-1 font-semibold">{{ totalSummary?.monster?.typeUpper }}</span>
+                  </div>
+                  <div class="col-12">
+                    <span class="summary_monster_value px-1 font-semibold" style="color: var(--yellow-300)">{{
+                      totalSummary?.monster?.raceUpper
+                    }}</span>
+                    <span class="summary_monster_value px-1 font-semibold" style="color: var(--bluegray-200)">{{
+                      totalSummary?.monster?.elementLevelUpper
+                    }}</span>
+                    <span class="summary_monster_value px-1 font-semibold" style="color: var(--cyan-300)">{{
+                      totalSummary?.monster?.sizeUpper
+                    }}</span>
+                  </div>
+                  <div class="col-12">
+                    RequireHit100
+                    <span class="summary_monster_value px-1">{{ totalSummary?.monster?.hitRequireFor100 }}</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="col-6">
-            <div>
-              CD: {{ totalSummary?.calcSkill?.reducedCd || 0 }} s | Delay:
-              {{ totalSummary?.calcSkill?.reducedAcd || 0 }} s | Vct: {{ totalSummary?.calcSkill?.reducedVct || 0 }} s |
-              Fct: {{ totalSummary?.calcSkill?.reducedFct || 0 }} s | 1 Hit: {{ totalSummary?.calcSkill?.hitPeriod }} s
+
+          <!-- Skill -->
+          <div class="col-7">
+            <div class="grid grid-nogutter">
+              <div class="col-12">
+                <div class="p-inputgroup">
+                  <span class="p-inputgroup-addon" style="width: 80px">Skill</span>
+                  <p-dropdown
+                    inputId="monster"
+                    [autoDisplayFirst]="false"
+                    [options]="atkSkills"
+                    [(ngModel)]="model.selectedAtkSkill"
+                    (onChange)="onAtkSkillChange()"
+                  ></p-dropdown>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="grid grid-nogutter">
+                  <div class="col-4">
+                    VCT:
+                    <span class="font-bold px-1 summary_value">{{ totalSummary?.calcSkill?.reducedVct || 0 }}</span>
+                  </div>
+                  <div class="col-4">
+                    FCT:
+                    <span class="font-bold px-1 summary_value">{{ totalSummary?.calcSkill?.reducedFct || 0 }}</span>
+                  </div>
+                  <div class="col-4">
+                    Cast:
+                    <span class="font-bold px-1 summary_damage">{{ totalSummary?.calcSkill?.castPeriod || 0 }}</span>
+                  </div>
+                  <div class="col-4">
+                    CD:
+                    <span class="font-bold px-1 summary_value">{{ totalSummary?.calcSkill?.reducedCd || 0 }}</span>
+                  </div>
+                  <div class="col-4">
+                    Delay:
+                    <span class="font-bold px-1 summary_value">{{ totalSummary?.calcSkill?.reducedAcd || 0 }}</span>
+                  </div>
+                  <div class="col-4">
+                    Hits/s:
+                    <span class="font-bold px-1 summary_highlight">{{
+                      totalSummary?.calcSkill?.totalHitPerSec || 0
+                    }}</span>
+                  </div>
+                </div>
+              </div>
+              <!-- <div class="col-12">
+                Skill: {{ minDamage | number }}
+                <span *ngIf="skillHit > 1">( {{ minDamagePerHit | number }} x {{ skillHit }} )</span>
+                - {{ maxDamage | number }}
+                <span *ngIf="skillHit > 1">( {{ maxDamagePerHit | number }} x {{ skillHit }} )</span>
+              </div> -->
+              <div class="col-6">
+                Skill:
+                <span class="font-bold px-1 summary_damage">{{ minDamage | number }} - {{ maxDamage | number }}</span>
+              </div>
+              <div class="col-6">
+                Skill DPS:
+                <span class="font-bold px-1 summary_highlight">{{ totalSummary?.calcSkill?.dps || 0 | number }}</span>
+              </div>
+              <div class="col-12">
+                Basic:
+                <span class="font-bold px-1 summary_damage"
+                  >{{ minBasicDamage | number }} - {{ maxBasicDamage | number }}</span
+                >
+              </div>
+              <div class="col-6">
+                Cri:
+                <span class="font-bold px-1 summary_damage">{{ totalSummary?.calc?.totalCri | number }}%</span> Dmg:
+                <span class="font-bold px-1 summary_damage">{{ criDamage | number }}</span>
+              </div>
+              <div class="col-6">
+                Basic DPS:
+                <span class="font-bold px-1 summary_highlight">{{ totalSummary?.calc?.dps || 0 | number }}</span>
+              </div>
+              <div class="col-6">
+                เจาะ:
+                <span class="font-bold px-1 summary_highlight">{{ totalSummary?.calc?.totalPene || 0 | number }}</span>
+              </div>
             </div>
           </div>
-          <div class="col-8">
-            Basic: {{ minBasicDamage | number }} - {{ maxBasicDamage | number }} | Cri: {{ criDamage | number }}
-          </div>
-          <div class="col-12">
-            Damage: {{ minDamage | number }}
-            <span *ngIf="skillHit > 1">( {{ minDamagePerHit | number }} x {{ skillHit }} )</span>
-            - {{ maxDamage | number }}
-            <span *ngIf="skillHit > 1">( {{ maxDamagePerHit | number }} x {{ skillHit }} )</span>
-          </div>
-          <div class="col-12">
-            <div>DPS: {{ dps | number }}</div>
-          </div>
+
+          <!-- Table -->
           <div class="col-12">
             <p-table
               styleClass="p-datatable-striped"

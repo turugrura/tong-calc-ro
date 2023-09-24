@@ -513,6 +513,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     consumables: [],
     consumables2: [],
     aspdPotion: undefined,
+    aspdPotions: [],
   };
   private emptyModel = this.cloneModel(this.model);
 
@@ -626,6 +627,10 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     { label: 'Concentration Potion', value: 645 },
     { label: 'Awakening Potion', value: 656 },
     { label: 'Berserk Potion', value: 657 },
+  ];
+  aspdPotionList2: DropdownModel[] = [
+    { label: 'Enrich Celermine', value: 12437 },
+    { label: 'Guarana Candy', value: 12414 },
   ];
 
   totalPoints = 0;
@@ -781,13 +786,15 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       { field: 'monsterClass', header: 'Class' },
       { field: 'minDamage', header: 'SkillMin', default: true },
       { field: 'maxDamage', header: 'SkillMax', default: true },
-      { field: 'dps', header: 'DPS', default: true },
+      { field: 'skillDps', header: 'DPS', default: true },
       { field: 'hitKill', header: 'Hit', default: true },
       { field: 'criRate', header: 'Cri%' },
       { field: 'hitRate', header: 'Hit%' },
-      { field: 'rawMinDamage', header: 'BasicMin' },
-      { field: 'rawMaxDamage', header: 'BasicMax' },
+      { field: 'pene', header: 'เจาะ' },
+      { field: 'basicMinDamage', header: 'BasicMin' },
+      { field: 'basicMaxDamage', header: 'BasicMax' },
       { field: 'criMaxDamage', header: 'CriDmg' },
+      { field: 'criMaxDamage', header: 'BasicDPS' },
       { field: 'basicCriRate', header: 'BasicCri%' },
     ];
     const availableCols = new Map(this.cols.map((a) => [a.field, a]));
@@ -811,8 +818,10 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       passiveIds: passiveSkills,
     });
 
-    const { consumables, consumables2, aspdPotion } = this.model;
-    const consumeData = [...consumables, ...consumables2].filter(Boolean).map((id) => this.items[id].script);
+    const { consumables, consumables2, aspdPotion, aspdPotions } = this.model;
+    const consumeData = [...consumables, ...consumables2, ...aspdPotions]
+      .filter(Boolean)
+      .map((id) => this.items[id].script);
 
     const buffs = {};
     const addBuffBonus = (buffKey: string) => {
@@ -843,12 +852,12 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       .setMonster(this.monsterDataMap[this.selectedMonster]);
 
     const calculated = calc.calculateSkillDamage(selectedAtkSkill);
-    const { minDamage, maxDamage, rawMaxDamage, rawMinDamage, criMaxDamage, skillHit, dps } = calculated;
-    this.minBasicDamage = rawMinDamage;
-    this.maxBasicDamage = rawMaxDamage;
+    const { minDamage, maxDamage, basicMaxDamage, basicMinDamage, criMaxDamage, skillHit, skillDps } = calculated;
+    this.minBasicDamage = basicMinDamage;
+    this.maxBasicDamage = basicMaxDamage;
     this.minDamage = minDamage;
     this.maxDamage = maxDamage;
-    this.dps = dps;
+    this.dps = skillDps;
     this.minDamagePerHit = minDamage / skillHit;
     this.maxDamagePerHit = maxDamage / skillHit;
     this.skillHit = skillHit;
@@ -1140,6 +1149,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         take(1),
         mergeMap(() => {
           this.setClassSkill();
+          this.setDefaultSkill();
           this.setItemDropdownList();
           return waitRxjs();
         }),
@@ -1214,6 +1224,15 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     this.activeSkills = this.selectedCharacter.activeSkills;
     this.passiveSkills = this.selectedCharacter.passiveSkills;
     this.atkSkills = this.selectedCharacter.atkSkills;
+  }
+
+  private setDefaultSkill() {
+    const defaultAtkSkill = this.atkSkills[0].value;
+    const selectedValidSkill = this.atkSkills.every((a) => a.value !== this.model.selectedAtkSkill);
+
+    if (!this.model.selectedAtkSkill || selectedValidSkill) {
+      this.model.selectedAtkSkill = defaultAtkSkill;
+    }
   }
 
   private setSkillModelArray() {
@@ -1755,6 +1774,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
           }),
           mergeMap(() => {
             this.setClassSkill();
+            this.setDefaultSkill();
             return waitRxjs();
           }),
           mergeMap(() => {

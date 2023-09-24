@@ -69,8 +69,14 @@ const jobBonusTable: [number, number, number, number, number, number][] = [
   [3, 6, 10, 8, 10, 5],
 ];
 
+const ASPDTable = {
+  priston: 4,
+  'Gatling Gun': 4,
+} as const;
+
 export class Rebelion extends CharacterBase {
-  protected baseAspd = 156;
+  protected readonly BASE_ASPD = 156;
+  protected readonly ASPDTable = ASPDTable;
 
   protected initialStatusPoint = 100;
   protected classNames = ['Gunslinger', 'Gunslinger Cls', 'Rebellion'];
@@ -164,13 +170,6 @@ export class Rebelion extends CharacterBase {
       int,
       dex,
       luk,
-    };
-  }
-
-  calcBaseAspd(weaponType: string): { baseAspd: number; shieldPenalty: number } {
-    return {
-      baseAspd: this.baseAspd - 10,
-      shieldPenalty: 0,
     };
   }
 }

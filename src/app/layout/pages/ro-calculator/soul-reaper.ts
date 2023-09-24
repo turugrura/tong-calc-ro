@@ -68,8 +68,14 @@ const jobBonusTable: Record<number, [number, number, number, number, number, num
   65: [2, 11, 7, 9, 8, 3],
 };
 
+const ASPDTable = {
+  priston: 4,
+  gatling: 6,
+} as const;
+
 export class SoulReaper extends CharacterBase {
-  private baseAspd = 156;
+  protected readonly BASE_ASPD = 156;
+  protected readonly ASPDTable = ASPDTable;
 
   protected initialStatusPoint = 48;
   protected classNames = ['Soul Reaper'];
@@ -136,13 +142,6 @@ export class SoulReaper extends CharacterBase {
       int,
       dex,
       luk,
-    };
-  }
-
-  calcBaseAspd(weaponType: string): { baseAspd: number; shieldPenalty: number } {
-    return {
-      baseAspd: this.baseAspd - 10,
-      shieldPenalty: 0,
     };
   }
 }
