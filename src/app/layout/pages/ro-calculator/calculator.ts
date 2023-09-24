@@ -868,11 +868,10 @@ export class Calculator {
     const dmgMultiplier = 0;
     const finalDmgMultiplier = 0;
 
-    let formula = 10;
     const skillFormula = (totalAtk: number) => {
-      if (formula === 10) {
-        const criApplied = this.floor(totalAtk * criMultiplier);
-        const baseSkillApplied = this.floor(criApplied * baseSkillMultiplier) - softDef;
+      if (canCri) {
+        const criApplied = this.floor(totalAtk * criMultiplier) - softDef;
+        const baseSkillApplied = this.floor(criApplied * baseSkillMultiplier);
         const equipSkillApplied = this.floor(baseSkillApplied * equipSkillMultiplier);
         const dmgMultiApplied = this.floor(equipSkillApplied * this.toPercent(dmgMultiplier + 100));
         const rangedApplied = this.floor(dmgMultiApplied * this.toPercent(rangedMultiplier + 100));
