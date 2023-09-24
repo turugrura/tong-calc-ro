@@ -1476,7 +1476,7 @@ export class Calculator {
     const { acd, vct, fct, fctPercent } = this.totalEquipStatus;
     const { totalDex, totalInt } = this.status;
 
-    const vctByStat = Math.max(0, 1 - Math.sqrt(this.floor((totalDex * 2 + totalInt) / 530)));
+    const vctByStat = Math.max(0, 1 - Math.sqrt(this.floor((totalDex * 2 + totalInt) / 530, 3)));
     const vctGlobal = Math.max(0, 1 - vct / 100);
     const vctSkill = Math.max(0, 1 - reduceSkillVct / 100);
     const reducedVct = this.floor((skillVct - reduceSkillVctFix) * vctByStat * vctGlobal * vctSkill, 2);
@@ -1486,6 +1486,8 @@ export class Calculator {
       reducedCd: this.floor(skillCd - reduceSkillCd, 2),
       vct: skillVct,
       sumDex2Int1: totalDex * 2 + totalInt,
+      vctByStat,
+      vctSkill,
       reducedVct,
       fct: skillFct,
       reducedFct: this.floor((skillFct - reduceSkillFct - fct) * (1 - fctPercent * 0.01), 2),

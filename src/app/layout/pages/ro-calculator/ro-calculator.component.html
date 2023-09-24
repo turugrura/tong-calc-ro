@@ -273,7 +273,7 @@
                   </div>
                   <div class="col-12">
                     Melee:
-                    <span class="font-semibold px-1 summary_stat_atk">{{ totalSummary?.range || 0 }} %</span> Range:
+                    <span class="font-semibold px-1 summary_stat_atk">{{ totalSummary?.melee || 0 }} %</span> Range:
                     <Span class="font-semibold px-1 summary_stat_atk">{{ totalSummary?.range || 0 }} %</Span>
                   </div>
                   <div class="col-12">
@@ -2558,8 +2558,10 @@
                     }}</span>
                   </div>
                   <div class="col-12">
-                    RequireHit100
-                    <span class="summary_monster_value px-1">{{ totalSummary?.monster?.hitRequireFor100 }}</span>
+                    Req.Hit100
+                    <span class="summary_monster_value px-1 font-semibold">{{
+                      totalSummary?.monster?.hitRequireFor100
+                    }}</span>
                   </div>
                 </div>
               </div>

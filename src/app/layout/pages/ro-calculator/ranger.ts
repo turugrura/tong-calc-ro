@@ -85,7 +85,7 @@ export class Ranger extends CharacterBase {
   protected readonly ASPDTable = ASPDTable;
 
   protected initialStatusPoint = 100;
-  protected classNames = ['Ranger', 'Ranger Cls', 'Sniper', 'Hunter', 'Archer Cls', 'Only 3rd Cls'];
+  protected classNames = ['Ranger', 'Ranger Cls', 'Sniper', 'Hunter', 'Archer', 'Archer Cls', 'Only 3rd Cls'];
   protected _atkSkillList: AtkSkillModel[] = [
     {
       label: 'Arrow Storm Lv10',

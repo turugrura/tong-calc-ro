@@ -14,6 +14,7 @@
 | item comparing                                                        | -      |
 | recalculate to prevent decimal digit problem like 0.1+0.2 = 0.3000001 | -      |
 | support two hand weapon                                               | -      |
+| calc Hawkeye damage                                                   | -      |
 | [Redesign] move refine to bottom of item                              | Done   |
 | disable refine for unrefinable item                                   | -      |
 | disable card following item slots                                     | -      |
