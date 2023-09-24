@@ -234,54 +234,97 @@
               <div class="col-6">
                 <div class="grid grid-nogutter mx-2">
                   <div class="col-12">
-                    Alt+Q:
-                    {{ totalSummary?.calc?.totalStatusAtk || 0 }} +
-                    {{
-                      totalSummary?.weapon?.baseWeaponAtk +
-                        totalSummary?.weapon?.refineBonus +
-                        totalSummary?.calc?.totalMasteryAtk +
-                        totalSummary?.calc?.totalEquipAtk || 0
-                    }}
-                  </div>
-                  <div class="col-12">Atk: {{ totalSummary?.atk || 0 }} | Atk %: {{ totalSummary?.atkPercent }}</div>
-                  <!-- <div class="col-12">Atk%: {{ totalSummary?.atkPercent }}</div> -->
-                  <div class="col-12">
-                    ASPD: {{ totalSummary?.calc?.totalAspd || 0 }} ( {{ totalSummary?.calc?.hitPerSecs || 0 }} Hits/s )
+                    Alt+Q Atk:
+                    <span class="font-semibold px-1 summary_stat_atk">
+                      {{ totalSummary?.calc?.totalStatusAtk || 0 }} +
+                      {{
+                        totalSummary?.weapon?.baseWeaponAtk +
+                          totalSummary?.weapon?.refineBonus +
+                          totalSummary?.calc?.totalMasteryAtk +
+                          totalSummary?.calc?.totalEquipAtk || 0
+                      }}
+                    </span>
                   </div>
                   <div class="col-12">
-                    Hit: {{ totalSummary?.calc?.totalHit || 0 }} | Perfect:
-                    {{ totalSummary?.calc?.totalPerfectHit || 0 }}
+                    Equip Atk:
+                    <span class="font-semibold px-1 summary_stat_atk"
+                      >{{ totalSummary?.atk || 0 }} + {{ totalSummary?.atkPercent || 0 }} %</span
+                    >
                   </div>
-                  <!-- <div class="col-12">Perfect Hit: {{ totalSummary?.perfectHit || 0 }}</div> -->
                   <div class="col-12">
-                    CriRate: {{ totalSummary?.calc?.totalCri || 0 }} | Dmg: {{ totalSummary?.criDmg || 0 }}
+                    ASPD:
+                    <span class="font-semibold px-1 summary_stat_atk">{{ totalSummary?.calc?.totalAspd || 0 }}</span>
+                    <span class="font-semibold px-1 summary_highlight"
+                      >( {{ totalSummary?.calc?.hitPerSecs || 0 }} Hits/s )</span
+                    >
                   </div>
-                  <!-- <div class="col-12">ASPD: {{ totalSummary?.calc?.totalAspd || 0 }}</div> -->
-                  <!-- <div class="col-12">Cri Dmg: {{ totalSummary?.criDmg || 0 }}</div> -->
-                  <div class="col-12">Range: {{ totalSummary?.range || 0 }}</div>
+                  <div class="col-12">
+                    Hit:
+                    <span class="font-semibold px-1 summary_stat_atk">{{ totalSummary?.calc?.totalHit || 0 }}</span>
+                    Perfect:
+                    <span class="font-semibold px-1 summary_stat_atk"
+                      >{{ totalSummary?.calc?.totalPerfectHit || 0 }} %</span
+                    >
+                  </div>
+                  <div class="col-12">
+                    CriRate:
+                    <span class="font-semibold px-1 summary_stat_atk">{{ totalSummary?.calc?.totalCri || 0 }} %</span>
+                    Dmg: <span class="font-semibold px-1 summary_stat_atk">{{ totalSummary?.criDmg || 0 }} %</span>
+                  </div>
+                  <div class="col-12">
+                    Melee:
+                    <span class="font-semibold px-1 summary_stat_atk">{{ totalSummary?.range || 0 }} %</span> Range:
+                    <Span class="font-semibold px-1 summary_stat_atk">{{ totalSummary?.range || 0 }} %</Span>
+                  </div>
+                  <div class="col-12">
+                    Def:
+                    <span class="font-semibold px-1 summary_stat_def"
+                      >{{ totalSummary?.softDef || 0 }} + {{ totalSummary?.def || 0 }}</span
+                    >
+                  </div>
+                  <div class="col-12">
+                    Mdef:
+                    <span class="font-semibold px-1 summary_stat_def"
+                      >{{ totalSummary?.softMdef || 0 }} + {{ totalSummary?.mdef || 0 }}</span
+                    >
+                  </div>
+                  <div class="col-12">
+                    Flee:
+                    <span class="font-semibold px-1 summary_stat_def">{{ totalSummary?.calc?.totalFlee || 0 }}</span>
+                  </div>
                 </div>
               </div>
               <div class="col-6">
                 <div class="grid grid-nogutter mx-2">
                   <div class="col-12">
-                    Def: {{ totalSummary?.def || 0 }}, Mdef:
-                    {{ totalSummary?.mdef || 0 }}
+                    Alt+Q Matk:
+                    <span class="font-semibold px-1 summary_stat_matk"
+                      >{{ totalSummary?.calc?.totalStatusMatk || 0 }} +
+                      {{
+                        totalSummary?.weapon?.baseWeaponMatk +
+                          (totalSummary?.weapon?.baseWeaponMatk > 0 ? totalSummary?.weapon?.refineBonus : 0) +
+                          totalSummary?.matk || 0
+                      }}</span
+                    >
                   </div>
-                  <div class="col-12">Flee: {{ totalSummary?.calc?.totalFlee || 0 }}</div>
                   <div class="col-12">
-                    Matk: {{ totalSummary?.calc?.totalStatusMatk || 0 }} +
-                    {{
-                      totalSummary?.weapon?.baseWeaponMatk +
-                        (totalSummary?.weapon?.baseWeaponMatk > 0 ? totalSummary?.weapon?.refineBonus : 0) +
-                        totalSummary?.matk || 0
-                    }}
-                    | Matk %:
-                    {{ totalSummary?.matkPercent }}
+                    Equip Matk:
+                    <span class="font-semibold px-1 summary_stat_matk"
+                      >{{ totalSummary?.matk || 0 }} + {{ totalSummary?.matkPercent || 0 }} %</span
+                    >
                   </div>
-                  <!-- <div class="col-12">Matk %: {{ totalSummary?.Percent }}</div> -->
-                  <div class="col-12">After Cast Delay: {{ totalSummary?.acd || 0 }}</div>
-                  <div class="col-12">Fixed Cast Time: {{ totalSummary?.fct || 0 }}</div>
-                  <div class="col-12">Variable Cast Time: {{ totalSummary?.vct || 0 }}</div>
+                  <div class="col-12">
+                    After Cast Delay:
+                    <span class="font-semibold px-1 summary_stat_matk">{{ totalSummary?.acd || 0 }}</span>
+                  </div>
+                  <div class="col-12">
+                    Fixed Cast Time:
+                    <span class="font-semibold px-1 summary_stat_matk">{{ totalSummary?.fct || 0 }}</span>
+                  </div>
+                  <div class="col-12">
+                    Variable Cast Time:
+                    <span class="font-semibold px-1 summary_stat_matk">{{ totalSummary?.vct || 0 }}</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -2599,7 +2642,9 @@
               </div>
               <div class="col-6">
                 เจาะ:
-                <span class="font-bold px-1 summary_highlight">{{ totalSummary?.calc?.totalPene || 0 | number }}</span>
+                <span class="font-bold px-1 summary_highlight"
+                  >{{ totalSummary?.calc?.totalPene || 0 | number }} %</span
+                >
               </div>
             </div>
           </div>

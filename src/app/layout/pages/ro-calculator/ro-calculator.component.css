@@ -89,6 +89,21 @@ pre {
   font-weight: bold;
 }
 
+.summary_stat_atk {
+  background-color: var(--surface-0);
+  color: var(--orange-300);
+}
+
+.summary_stat_matk {
+  background-color: var(--surface-0);
+  color: var(--blue-300);
+}
+
+.summary_stat_def {
+  background-color: var(--surface-0);
+  color: var(--purple-300);
+}
+
 .summary_value {
   background-color: var(--surface-0);
   color: var(--blue-500);
