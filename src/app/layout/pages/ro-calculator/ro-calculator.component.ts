@@ -636,7 +636,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   ];
   aspdPotionList2: DropdownModel[] = [
     { label: 'Enrich Celermine', value: 12437 },
-    { label: 'Guarana Candy', value: 12414 },
+    // { label: 'Guarana Candy', value: 12414 },
   ];
 
   totalPoints = 0;
