@@ -132,6 +132,10 @@ export class SoulReaper extends CharacterBase {
     },
   ];
 
+  get className(): string {
+    return 'SoulReaper';
+  }
+
   getJobBonusStatus(jobLevel: number) {
     const [str, agi, vit, int, dex, luk] = jobBonusTable[jobLevel];
 

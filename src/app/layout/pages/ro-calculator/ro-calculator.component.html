@@ -409,7 +409,7 @@
       </div>
       <div class="col-9">
         <div class="grid grid-nogutter">
-          <div class="col-4">
+          <div class="col-4" [hidden]="itemSlotsMap.weapon < 1">
             <p-dropdown
               inputId="weaponCard1"
               [autoDisplayFirst]="false"
@@ -430,7 +430,7 @@
               </ng-template>
             </p-dropdown>
           </div>
-          <div class="col-4">
+          <div class="col-4" [hidden]="itemSlotsMap.weapon < 2">
             <p-dropdown
               inputId="weaponCard2"
               [autoDisplayFirst]="false"
@@ -451,7 +451,7 @@
               </ng-template>
             </p-dropdown>
           </div>
-          <div class="col-4">
+          <div class="col-4" [hidden]="itemSlotsMap.weapon < 3">
             <p-dropdown
               inputId="weaponCard3"
               [autoDisplayFirst]="false"
@@ -2627,7 +2627,7 @@
               </div>
               <div class="col-6" [hidden]="totalSummary?.dmg?.criRate <= 0">
                 Cri:
-                <span class="font-bold px-1 summary_damage">{{ totalSummary?.dmg?.criRate || 0 | number }} %</span>
+                <span class="font-bold px-1 summary_damage">{{ totalSummary?.dmg?.criRate || 0 | number }}%</span>
               </div>
               <div class="col-6" [hidden]="totalSummary?.dmg?.maxDamageHE <= 0">
                 HE
@@ -2658,9 +2658,7 @@
               </div>
               <div class="col-6">
                 เจาะ:
-                <span class="font-bold px-1 summary_highlight"
-                  >{{ totalSummary?.calc?.totalPene || 0 | number }} %</span
-                >
+                <span class="font-bold px-1 summary_highlight">{{ totalSummary?.calc?.totalPene || 0 | number }}%</span>
               </div>
             </div>
           </div>

@@ -86,6 +86,8 @@ export abstract class CharacterBase {
     luk: number;
   };
 
+  abstract get className(): string;
+
   get classNameSet() {
     return new Set([this.allClass, ...this.classNames]);
   }
@@ -114,7 +116,7 @@ export abstract class CharacterBase {
       if (isUse) learnedSkillMap.set(skill.name, skillLv);
       if (!bonus) return;
 
-      skillNames.push(skill.label);
+      skillNames.push(skill.name);
 
       const { isEquipAtk, isMasteryAtk } = skill;
       if (isEquipAtk) {
@@ -129,7 +131,7 @@ export abstract class CharacterBase {
       if (isUse) learnedSkillMap.set(skill.name, skillLv);
       if (!bonus) return;
 
-      skillNames.push(skill.label);
+      skillNames.push(skill.name);
 
       const { isEquipAtk, isMasteryAtk } = skill;
       if (isEquipAtk) {

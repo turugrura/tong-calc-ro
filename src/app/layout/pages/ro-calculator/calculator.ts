@@ -1166,6 +1166,14 @@ export class Calculator {
       return { isValid: true, restCondition };
     }
 
+    const [toRemove, usedByClass] = script.match(/USED\[(.+?)\]/) ?? [];
+    if (usedByClass) {
+      const isUsed = usedByClass.split('||').some((className) => className === this._class.className);
+      if (!isUsed) return { isValid: false, restCondition };
+
+      restCondition = restCondition.replace(toRemove, '');
+    }
+
     // EQUIP[Bear's Power]===50
     const [setCondition, itemSet] = script.match(/^EQUIP\[(.+?)]/) ?? [];
     if (itemSet) {

@@ -160,6 +160,10 @@ export class Rebelion extends CharacterBase {
     },
   ];
 
+  get className(): string {
+    return 'Rebellion';
+  }
+
   getJobBonusStatus(jobLevel: number) {
     const [str, agi, vit, int, dex, luk] = jobBonusTable[jobLevel];
 

@@ -14,7 +14,7 @@ import {
 } from 'rxjs';
 import { BaseStateCalculator } from './base-state-calculator';
 import { Calculator } from './calculator';
-import { ItemTypeEnum } from './item-type.enum';
+import { ItemTypeEnum, MainItemTypeSet } from './item-type.enum';
 import { ItemTypeId } from './item.const';
 import { RoService } from 'src/app/demo/service/ro.service';
 import { Rebelion } from './rebellion';
@@ -661,6 +661,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   private equipItemMap = new Map<ItemTypeEnum, number>();
   private equipItemIdItemTypeMap = new Map<ItemTypeEnum, number>();
   equipItems: DropdownModel[] = [];
+  itemSlotsMap: Partial<Record<ItemTypeEnum, number>> = {};
   selectedItemDesc = undefined;
   itemId = 0;
   itemBonus = {};
@@ -769,16 +770,6 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       },
     ];
   }
-
-  // @Input() get selectedColumns(): any[] {
-  //   return this._selectedColumns;
-  // }
-
-  // set selectedColumns(val: any[]) {
-  //   console.log({ val });
-  //   //restore original order
-  //   this._selectedColumns = this.cols.filter((col) => val.includes(col));
-  // }
 
   private initCalcTableColumns() {
     this.cols = [
@@ -1686,6 +1677,10 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   onSelectItem(itemType: string, itemId = 0, refine = 0) {
     this.equipItemMap.set(itemType as ItemTypeEnum, itemId);
 
+    if (MainItemTypeSet.has(itemType as any)) {
+      this.itemSlotsMap[itemType] = this.items[itemId]?.slots || 0;
+    }
+
     // console.log({ itemType, itemId, refine });
     if (itemType === ItemTypeEnum.weapon) {
       this.calculator.setWeapon(itemId, refine);
@@ -1703,6 +1698,10 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         this.model[_itemType] = undefined;
         this.onSelectItem(_itemType);
       }
+    }
+
+    if (MainItemTypeSet.has(itemType as any)) {
+      this.itemSlotsMap[itemType] = 0;
     }
   }
 

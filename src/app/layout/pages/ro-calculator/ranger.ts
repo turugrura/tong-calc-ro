@@ -358,6 +358,10 @@ export class Ranger extends CharacterBase {
     },
   ];
 
+  get className(): string {
+    return 'Ranger';
+  }
+
   getJobBonusStatus(jobLevel: number) {
     const [str, agi, vit, int, dex, luk] = jobBonusTable[jobLevel];
 
