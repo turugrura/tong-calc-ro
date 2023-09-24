@@ -1409,14 +1409,33 @@ export class Calculator {
       }
     }
 
+    const consumableBonus: Record<string, number> = {};
     for (const cons of this.consumableBonuses) {
       for (const [attr, value] of Object.entries(cons)) {
         const valNum = Number(value);
-        if (this.totalEquipStatus[attr]) {
-          this.totalEquipStatus[attr] += valNum;
-        } else {
-          this.totalEquipStatus[attr] = valNum;
+        if (mainStatuses.includes(attr) && consumableBonus[attr]) {
+          consumableBonus[attr] = Math.max(consumableBonus[attr], valNum);
+          continue;
         }
+
+        if (consumableBonus[attr]) {
+          consumableBonus[attr] += valNum;
+        } else {
+          consumableBonus[attr] = valNum;
+        }
+      }
+    }
+    const consumAllStat = consumableBonus['allStatus'] || 0;
+    for (const [attr, value] of Object.entries(consumableBonus)) {
+      let newVal = value;
+      if (mainStatuses.includes(attr)) {
+        newVal = Math.max(value - consumAllStat, 0);
+      }
+
+      if (this.totalEquipStatus[attr]) {
+        this.totalEquipStatus[attr] += newVal;
+      } else {
+        this.totalEquipStatus[attr] = newVal;
       }
     }
 
