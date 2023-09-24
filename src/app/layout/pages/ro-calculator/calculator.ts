@@ -156,6 +156,7 @@ export class Calculator {
     hit: 0,
     flee: 0,
     dmg: 0,
+    ignore_size_penalty: 0,
     p_size_all: 0,
     p_size_s: 0,
     p_size_m: 0,
@@ -604,11 +605,19 @@ export class Calculator {
     const mainState = this.isRangeAtk() ? totalDex : totalStr;
 
     this.weaponStatusAtk = (this.weaponData.data.baseWeaponAtk * mainState) / 200;
+    return this;
   }
 
   private calcSizePenalty() {
+    if (this.totalEquipStatus.ignore_size_penalty > 0) {
+      this.sizePenalty = 1;
+      return this;
+    }
+
     const penalty = weaponSizePenalty[this.weaponData?.data?.subTypeName]?.[this.monsterData.size];
     this.sizePenalty = this.toPercent(penalty || 100);
+
+    return this;
   }
 
   private calcPropertyMultiplier(propertyAtk?: ElementType) {
@@ -649,12 +658,14 @@ export class Calculator {
 
     this.totalWeaponAtkMin = totalMin;
     this.totalWeaponAtkMax = totalMax;
+    return this;
   }
 
   private calcEquipAtk() {
     const extraAtk = this.totalEquipStatus.atk;
 
     this.totalEquipAtk = extraAtk;
+    return this;
   }
 
   private calcAtkGroupA(totalWeaponAtk?: number) {

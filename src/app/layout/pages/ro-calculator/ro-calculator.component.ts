@@ -1063,18 +1063,38 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   loadPreset() {
     const selected = this.getPresetList().find((a) => a.value === this.selectedPreset);
     if (selected?.['model']) {
-      this.isInProcessingPreset = true;
-
-      waitRxjs(0.1)
-        .pipe(
-          mergeMap(() => {
-            this.setModelByJSONString(selected['model']);
-            this.loadItemSet(true);
-            return waitRxjs(0.1);
-          }),
-          take(1),
-        )
-        .subscribe();
+      this.confirmationService.confirm({
+        message: `Load "${this.selectedPreset}" ?`,
+        header: 'Confirmation',
+        icon: 'pi pi-exclamation-triangle',
+        accept: () => {
+          this.isInProcessingPreset = true;
+          waitRxjs()
+            .pipe(
+              mergeMap(() => {
+                this.setModelByJSONString(selected['model']);
+                return waitRxjs();
+              }),
+              mergeMap(() => {
+                this.loadItemSet(true);
+                return waitRxjs(1);
+              }),
+              take(1),
+              finalize(() => {
+                this.messageService.add({
+                  severity: 'info',
+                  summary: 'Confirmed',
+                  detail: `"${this.selectedPreset}" was loaded.`,
+                });
+                this.isInProcessingPreset = false;
+              }),
+            )
+            .subscribe();
+        },
+        reject: (type) => {
+          this.isInProcessingPreset = false;
+        },
+      });
     }
   }
 
@@ -1777,6 +1797,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
           }),
           mergeMap(() => {
             this.setClassInstant();
+            this.equipItems = [];
             return waitRxjs();
           }),
           mergeMap(() => {
