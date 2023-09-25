@@ -94,6 +94,32 @@ export class Rebelion extends CharacterBase {
         return (skillLevel * 200 + 500) * (baseLevel / 100);
       },
     },
+    {
+      label: 'Fire Dance',
+      name: 'Fire Dance',
+      value: 'Fire Dance==10',
+      acd: 0.5,
+      fct: 0,
+      vct: 0,
+      cd: 0,
+      levelList: [{ label: 'Lv 10', value: 'Fire Dance==10' }],
+      formular: ({ baseLevel, skillLevel }: { baseLevel: number; skillLevel: number }): number => {
+        return (skillLevel * 100 + 200 + 200) * (baseLevel / 100);
+      },
+    },
+    {
+      label: 'Vanishing Buster',
+      name: 'Vanishing Buster',
+      value: 'Vanishing Buster==10',
+      acd: 0.4,
+      fct: 0.7,
+      vct: 1,
+      cd: 1.6,
+      levelList: [{ label: 'Lv 10', value: 'Vanishing Buster==10' }],
+      formular: ({ baseLevel, skillLevel }: { baseLevel: number; skillLevel: number }): number => {
+        return (skillLevel * 100 + 1500) * (baseLevel / 100);
+      },
+    },
   ];
   protected _activeSkillList: ActiveSkillModel[] = [
     {

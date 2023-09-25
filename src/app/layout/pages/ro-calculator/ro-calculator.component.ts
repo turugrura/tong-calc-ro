@@ -1700,6 +1700,16 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     }
   }
 
+  private updateAvailablePoints() {
+    const { str, agi, vit, int, dex, luk } = this.model;
+    const mainStatuses = [str, agi, vit, int, dex, luk];
+    const { availablePoint } = this.stateCalculator
+      .setLevel(this.model.level)
+      .setMainStatusLevels(mainStatuses)
+      .calculate().summary;
+    this.availablePoints = availablePoint;
+  }
+
   onSelectItem(itemType: string, itemId = 0, refine = 0) {
     this.equipItemMap.set(itemType as ItemTypeEnum, itemId);
 
@@ -1737,13 +1747,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   }
 
   onBaseStatusChange() {
-    const { str, agi, vit, int, dex, luk } = this.model;
-    const mainStatuses = [str, agi, vit, int, dex, luk];
-    const { availablePoint } = this.stateCalculator
-      .setLevel(this.model.level)
-      .setMainStatusLevels(mainStatuses)
-      .calculate().summary;
-    this.availablePoints = availablePoint;
+    this.updateAvailablePoints();
     this.updateItemEvent.next(1);
   }
 
@@ -1797,7 +1801,12 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
           }),
           mergeMap(() => {
             this.setClassInstant();
-            this.equipItems = [];
+            this.calculator = new Calculator();
+            this.calculator.setMasterItems(this.items);
+
+            this.updateAvailablePoints();
+            this.equipItemMap.clear();
+            this.resetItemDescription();
             return waitRxjs();
           }),
           mergeMap(() => {

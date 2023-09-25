@@ -661,10 +661,24 @@ export class Calculator {
     return this;
   }
 
+  private getEquipAtkFromSkills() {
+    let atk = 0;
+    for (const [skillName, scripts] of Object.entries(this.equipAtkSkillBonus)) {
+      for (const [attr, value] of Object.entries(scripts)) {
+        let val = Number(value);
+        if (attr === 'atk') {
+          atk += val;
+        }
+      }
+    }
+
+    return atk;
+  }
+
   private calcEquipAtk() {
     const extraAtk = this.totalEquipStatus.atk;
 
-    this.totalEquipAtk = extraAtk;
+    this.totalEquipAtk = extraAtk + this.getEquipAtkFromSkills();
     return this;
   }
 
@@ -741,8 +755,7 @@ export class Calculator {
   private calcStatusAtk() {
     const { totalStr, totalDex, totalLuk, totalInt } = this.status;
     const baseLvl = this.model.level;
-    const mainStatus = this.isRangeAtk() ? totalDex : totalStr;
-    const secondStatus = this.isRangeAtk() ? totalStr : totalDex;
+    const [mainStatus, secondStatus] = this.isRangeAtk() ? [totalDex, totalStr] : [totalStr, totalDex];
 
     this.totalStatusAtk = this.floor(baseLvl / 4 + secondStatus / 5 + mainStatus + totalLuk / 3);
 
@@ -1724,7 +1737,7 @@ export class Calculator {
         totalPhysicalPene: this.totalPhysicalPene,
         totalMagicalPene: this.totalMagicalPene,
         totalPene: this.isMagicalSkill ? this.totalMagicalPene : this.totalPhysicalPene,
-        totalEquipAtk: this.totalEquipAtk - (this.equipStatus.ammo?.atk || 0),
+        totalEquipAtk: this.totalEquipStatus.atk - (this.equipStatus.ammo?.atk || 0) - this.getEquipAtkFromSkills(),
         ammuAtk: this.equipStatus.ammo?.atk || 0,
         totalMasteryAtk: this.totalMasteryAtk,
         totalBuffAtk: this.totalBuffAtk,
