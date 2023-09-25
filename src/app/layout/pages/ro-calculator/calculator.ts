@@ -443,6 +443,33 @@ export class Calculator {
     return this.equipItemNameSet.has('Hawkeye'); //.equipItemNameSet.has('')
   }
 
+  isAllowAmmo() {
+    const allowMap = {
+      bow: true,
+      gun: true,
+    };
+
+    return allowMap[this.weaponData.data?.subTypeName] || false;
+  }
+
+  isAllowShield() {
+    const allowMap = {
+      knife: true,
+      dagger: true,
+    };
+
+    return allowMap[this.weaponData.data?.subTypeName] || false;
+  }
+
+  getAmmuSubTypeId() {
+    const map = {
+      bow: 1024,
+      gun: 1025,
+    };
+
+    return map[this.weaponData.data?.subTypeName];
+  }
+
   private toPercent(n: number) {
     return n * 0.01;
   }

@@ -89,7 +89,7 @@ interface MonsterSelectItemGroup extends SelectItemGroup {
 const Characters: DropdownModel[] = [
   { label: 'Rebelion', value: 1, instant: new Rebelion() },
   { label: 'Ranger', value: 2, instant: new Ranger() },
-  { label: 'SoulReaper', value: 3, instant: new SoulReaper() },
+  { label: 'Soul Reaper', value: 3, instant: new SoulReaper() },
 ];
 
 const itemTypes = Object.freeze(Object.values(ItemTypeEnum));
@@ -683,6 +683,8 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   updateItemSubs: Subscription;
   updateMonsterListSubs: Subscription;
 
+  hiddenMap = { ammu: true, shield: true };
+
   constructor(
     private roService: RoService,
     private messageService: MessageService,
@@ -703,6 +705,11 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         debounceTime(750),
       )
       .subscribe(() => {
+        this.hiddenMap = {
+          ammu: !this.calculator.isAllowAmmo(),
+          shield: !this.calculator.isAllowShield(),
+        };
+        this.setAmmoDropdownList();
         this.calculate();
         this.saveItemSet();
         this.resetItemDescription();
@@ -969,10 +976,6 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   private resetModel() {
     const { class: _class, level, jobLevel } = this.model;
     this.model = { ...this.cloneModel(this.emptyModel), class: _class, level, jobLevel };
-  }
-
-  isShowShield() {
-    return this.model.class === 10;
   }
 
   private getPresetList(): DropdownModel[] {
@@ -1519,7 +1522,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
     this.weaponList = this.itemList.weaponList.filter(onlyMe);
     this.weaponCardList = this.itemList.weaponCardList.filter(onlyMe);
-    this.ammoList = this.itemList.ammoList.filter(onlyMe);
+    // this.ammoList = this.itemList.ammoList.filter(onlyMe);
     this.headUpperList = this.itemList.headUpperList.filter(onlyMe);
     this.headMiddleList = this.itemList.headMiddleList.filter(onlyMe);
     this.headLowerList = this.itemList.headLowerList.filter(onlyMe);
@@ -1549,6 +1552,15 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     this.shadowEarningList = this.itemList.shadowEarningList.filter(onlyMe);
     this.shadowPendantList = this.itemList.shadowPendantList.filter(onlyMe);
     this.shadowWeaponList = this.itemList.shadowWeaponList.filter(onlyMe);
+  }
+
+  private setAmmoDropdownList() {
+    const myAmmoId = this.calculator.getAmmuSubTypeId();
+    const onlyMyAmmo = (a: DropdownModel) => {
+      return this.items[a.value]?.itemSubTypeId === myAmmoId;
+    };
+
+    this.ammoList = this.itemList.ammoList.filter(onlyMyAmmo);
   }
 
   private getOptionScripts() {
@@ -1716,12 +1728,24 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     this.availablePoints = availablePoint;
   }
 
+  private clearCard(itemType: string) {
+    const slots = this.itemSlotsMap[itemType];
+    const cardTypeName = `${itemType}Card` as ItemTypeEnum;
+    const seletedCard = this.model[cardTypeName];
+
+    if ((!slots || slots < 1) && seletedCard) {
+      this.model[cardTypeName] = undefined;
+      this.equipItemMap.set(cardTypeName, undefined);
+    }
+  }
+
   onSelectItem(itemType: string, itemId = 0, refine = 0) {
     this.equipItemMap.set(itemType as ItemTypeEnum, itemId);
 
     if (this.isMainItem(itemType)) {
       this.itemSlotsMap[itemType] = this.items[itemId]?.slots || 0;
       this.setEnchantList(itemId, itemType);
+      this.clearCard(itemType);
     }
 
     // console.log({ itemType, itemId, refine });
@@ -1746,16 +1770,12 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       this.model.rawOptionTxts[1] = undefined;
     }
 
-    const relatedItems = mapRelatedItem[itemType as ItemTypeEnum] as ItemTypeEnum[];
-    if (relatedItems) {
-      for (const _itemType of relatedItems) {
+    const relatedItems = mapRelatedItem[itemType as ItemTypeEnum] || [];
+    for (const _itemType of relatedItems) {
+      if (this.model[_itemType]) {
         this.model[_itemType] = undefined;
         this.onSelectItem(_itemType);
       }
-    }
-
-    if (this.isMainItem(itemType)) {
-      this.itemSlotsMap[itemType] = 0;
     }
 
     this.updateItemEvent.next(1);
@@ -1840,6 +1860,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
           }),
           mergeMap(() => {
             this.setItemDropdownList();
+            this.setAmmoDropdownList();
             return waitRxjs(0.5);
           }),
           take(1),

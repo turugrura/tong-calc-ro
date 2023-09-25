@@ -17,7 +17,7 @@
 | calc Hawkeye damage                                                   | 50%    |
 | [Redesign] move refine to bottom of item                              | Done   |
 | disable refine for unrefinable item                                   | -      |
-| disable card following item slots                                     | -      |
+| disable card following item slots                                     | DONE   |
 | calc HP/SP/DEF/MDEF                                                   | -      |
 | create CLASS for script reader                                        | -      |
 | x                                                                     | -      |

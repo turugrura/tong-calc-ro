@@ -333,7 +333,7 @@
       </div>
     </div>
 
-    <!-- Weapon -->
+    <!-- Weapon + Ammu -->
     <div class="grid grid-nogutter">
       <div class="col-3">
         <div class="grid grid-nogutter justify-content-end">
@@ -348,7 +348,7 @@
               [showClear]="true"
               (onChange)="onSelectItem('weapon', $event.value, model.weaponRefine)"
               (onClear)="onClearItem('weapon')"
-              placeholder="weapon"
+              placeholder="Weapon"
             >
               <ng-template let-item pTemplate="selectedItem">
                 <div class="flex gap-1" *ngIf="model.weapon">
@@ -404,11 +404,42 @@
               </ng-template>
             </p-dropdown>
           </div>
+          <div class="col-10" [hidden]="hiddenMap.ammu">
+            <p-dropdown
+              inputId="ammo"
+              [autoDisplayFirst]="false"
+              [options]="ammoList"
+              [showClear]="true"
+              [filter]="true"
+              filterBy="label"
+              [(ngModel)]="model.ammo"
+              (onChange)="onSelectItem('ammo', $event.value)"
+              placeholder="Ammo"
+              [disabled]="!model.weapon"
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1" *ngIf="model.ammo">
+                  <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
+                  <div class="{{ 'property_' + item.element }}">
+                    {{ item.label }}
+                  </div>
+                </div>
+              </ng-template>
+              <ng-template let-item pTemplate="item">
+                <div class="flex gap-1">
+                  <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
+                  <div class="{{ 'property_' + item.element }}">
+                    {{ item.label }}
+                  </div>
+                </div>
+              </ng-template>
+            </p-dropdown>
+          </div>
         </div>
       </div>
       <div class="col-9">
         <div class="grid grid-nogutter">
-          <div class="col-4" [hidden]="itemSlotsMap.weapon < 1">
+          <div class="col-4">
             <p-dropdown
               inputId="weaponCard1"
               [autoDisplayFirst]="false"
@@ -429,7 +460,7 @@
               </ng-template>
             </p-dropdown>
           </div>
-          <div class="col-4" [hidden]="itemSlotsMap.weapon < 2">
+          <div class="col-4">
             <p-dropdown
               inputId="weaponCard2"
               [autoDisplayFirst]="false"
@@ -526,43 +557,8 @@
       </div>
     </div>
 
-    <!-- Ammo -->
-    <div class="grid grid-nogutter" *ngIf="1">
-      <div class="col-3">
-        <p-dropdown
-          inputId="ammo"
-          [autoDisplayFirst]="false"
-          [options]="ammoList"
-          [showClear]="true"
-          [filter]="true"
-          filterBy="label"
-          [(ngModel)]="model.ammo"
-          (onChange)="onSelectItem('ammo', $event.value)"
-          placeholder="Ammo"
-          [disabled]="!model.weapon"
-        >
-          <ng-template let-item pTemplate="selectedItem">
-            <div class="flex gap-1" *ngIf="model.ammo">
-              <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
-              <div class="{{ 'property_' + item.element }}">
-                {{ item.label }}
-              </div>
-            </div>
-          </ng-template>
-          <ng-template let-item pTemplate="item">
-            <div class="flex gap-1">
-              <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
-              <div class="{{ 'property_' + item.element }}">
-                {{ item.label }}
-              </div>
-            </div>
-          </ng-template>
-        </p-dropdown>
-      </div>
-    </div>
-
     <!-- Shield -->
-    <div class="grid grid-nogutter" *ngIf="isShowShield()">
+    <div class="grid grid-nogutter" *ngIf="!hiddenMap.shield">
       <div class="col-3">
         <p-dropdown
           inputId="shield"
@@ -651,7 +647,7 @@
               [filter]="true"
               filterBy="label"
               [(ngModel)]="model.headUpperCard"
-              [disabled]="!model.headUpper"
+              [disabled]="!model.headUpper || itemSlotsMap.headUpper < 1"
               [showClear]="true"
               (onChange)="onSelectItem('headUpperCard', $event.value)"
               placeholder="Card"
@@ -787,7 +783,7 @@
           [filter]="true"
           filterBy="label"
           [(ngModel)]="model.headMiddleCard"
-          [disabled]="!model.headMiddle"
+          [disabled]="!model.headMiddle || itemSlotsMap.headMiddle < 1"
           [showClear]="true"
           (onChange)="onSelectItem('headMiddleCard', $event.value)"
           placeholder="Card"
@@ -1018,7 +1014,7 @@
               [filter]="true"
               filterBy="label"
               [(ngModel)]="model.armorCard"
-              [disabled]="!model.armor"
+              [disabled]="!model.armor || itemSlotsMap.armor < 1"
               [showClear]="true"
               (onChange)="onSelectItem('armorCard', $event.value)"
               placeholder="Card"
@@ -1174,7 +1170,7 @@
               [filter]="true"
               filterBy="label"
               [(ngModel)]="model.garmentCard"
-              [disabled]="!model.garment"
+              [disabled]="!model.garment || itemSlotsMap.garment < 1"
               [showClear]="true"
               (onChange)="onSelectItem('garmentCard', $event.value)"
               placeholder="Card"
@@ -1330,7 +1326,7 @@
               [filter]="true"
               filterBy="label"
               [(ngModel)]="model.bootCard"
-              [disabled]="!model.boot"
+              [disabled]="!model.boot || itemSlotsMap.boot < 1"
               [showClear]="true"
               (onChange)="onSelectItem('bootCard', $event.value)"
               placeholder="Card"
@@ -1466,7 +1462,7 @@
           [filter]="true"
           filterBy="label"
           [(ngModel)]="model.accLeftCard"
-          [disabled]="!model.accLeft"
+          [disabled]="!model.accLeft || itemSlotsMap.accLeft < 1"
           [showClear]="true"
           (onChange)="onSelectItem('accLeftCard', $event.value)"
           placeholder="Card"
@@ -1605,7 +1601,7 @@
           [filter]="true"
           filterBy="label"
           [(ngModel)]="model.accRightCard"
-          [disabled]="!model.accRight"
+          [disabled]="!model.accRight || itemSlotsMap.accRight < 1"
           [showClear]="true"
           (onChange)="onSelectItem('accRightCard', $event.value)"
           placeholder="Card"
