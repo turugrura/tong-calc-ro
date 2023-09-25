@@ -426,6 +426,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     weaponCard1: undefined,
     weaponCard2: undefined,
     weaponCard3: undefined,
+    weaponCard4: undefined,
     weaponEnchant1: undefined,
     weaponEnchant2: undefined,
     weaponEnchant3: undefined,
@@ -988,6 +989,10 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     this.preSets = this.getPresetList();
   }
 
+  private isMainItem(itemType: string) {
+    return MainItemTypeSet.has(itemType as any);
+  }
+
   updatePreset(name: string) {
     const currentPresets = this.getPresetList();
     const currentPreset = currentPresets.find((a) => a.value === name);
@@ -1178,7 +1183,6 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
               for (const itemType of Object.keys(mapRelatedItem) as ItemTypeEnum[]) {
                 const refine = this.model[`${itemType}Refine`];
                 const itemId = this.model[itemType];
-                this.setEnchantList(itemId, itemType);
                 this.onSelectItem(itemType, itemId, refine);
                 // console.log('Set Main Item', { itemType, itemId, refine });
                 for (const relatedItemType of mapRelatedItem[itemType] ?? []) {
@@ -1562,7 +1566,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       .filter(Boolean);
   }
 
-  setEnchantList(mainItemId: number, positionEnum?: ItemTypeEnum | string) {
+  private setEnchantList(mainItemId: number, positionEnum?: ItemTypeEnum | string) {
     // console.log({ itemId });
     let { itemSubTypeId, location, aegisName, name } = this.items[mainItemId] ?? ({} as ItemModel);
     const enchants = getEnchants(aegisName) ?? getEnchants(name);
@@ -1573,9 +1577,11 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       for (const idx of [1, 2, 3]) {
         const enchantList = this[`${prefix}Enchant${idx}List`] as DropdownModel[];
         const itemType = `${prefix}Enchant${idx}` as ItemTypeEnum;
-        if (!enchantList.find((a) => a.value === this.model[itemType])) {
+        const itemId = this.model[itemType];
+        if (itemId && !enchantList.find((a) => a.value === itemId)) {
           this.model[itemType] = undefined;
           this.calculator.setItem(itemType, null);
+          this.equipItemMap.set(itemType, null);
         }
       }
     };
@@ -1713,8 +1719,9 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   onSelectItem(itemType: string, itemId = 0, refine = 0) {
     this.equipItemMap.set(itemType as ItemTypeEnum, itemId);
 
-    if (MainItemTypeSet.has(itemType as any)) {
+    if (this.isMainItem(itemType)) {
       this.itemSlotsMap[itemType] = this.items[itemId]?.slots || 0;
+      this.setEnchantList(itemId, itemType);
     }
 
     // console.log({ itemType, itemId, refine });
@@ -1728,6 +1735,17 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   }
 
   onClearItem(itemType: string) {
+    if (this.model[`${itemType}Refine`] > 0) {
+      this.model[`${itemType}Refine`] = 0;
+    }
+
+    if (itemType === ItemTypeEnum.weapon) {
+      this.model.propertyAtk = undefined;
+      this.model.ammo = undefined;
+      this.model.rawOptionTxts[0] = undefined;
+      this.model.rawOptionTxts[1] = undefined;
+    }
+
     const relatedItems = mapRelatedItem[itemType as ItemTypeEnum] as ItemTypeEnum[];
     if (relatedItems) {
       for (const _itemType of relatedItems) {
@@ -1736,9 +1754,11 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       }
     }
 
-    if (MainItemTypeSet.has(itemType as any)) {
+    if (this.isMainItem(itemType)) {
       this.itemSlotsMap[itemType] = 0;
     }
+
+    this.updateItemEvent.next(1);
   }
 
   onJobLevelChange() {

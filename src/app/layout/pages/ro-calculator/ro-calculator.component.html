@@ -346,7 +346,6 @@
               filterBy="label"
               [(ngModel)]="model.weapon"
               [showClear]="true"
-              (onChange)="setEnchantList($event.value)"
               (onChange)="onSelectItem('weapon', $event.value, model.weaponRefine)"
               (onClear)="onClearItem('weapon')"
               placeholder="weapon"
@@ -441,7 +440,7 @@
               [disabled]="!model.weapon"
               [showClear]="true"
               (onChange)="onSelectItem('weaponCard2', $event.value)"
-              placeholder="Card2"
+              placeholder="Card 2"
             >
               <ng-template let-item pTemplate="selectedItem">
                 <div class="flex gap-1" *ngIf="model.weaponCard2">
@@ -466,6 +465,27 @@
             >
               <ng-template let-item pTemplate="selectedItem">
                 <div class="flex gap-1" *ngIf="model.weaponCard3">
+                  <img src="assets/demo/images/items/card.png" style="width: 19px" />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
+          </div>
+          <div class="col-4" [hidden]="itemSlotsMap.weapon < 4">
+            <p-dropdown
+              inputId="weaponCard3"
+              [autoDisplayFirst]="false"
+              [options]="weaponCardList"
+              [filter]="true"
+              filterBy="label"
+              [(ngModel)]="model.weaponCard4"
+              [disabled]="!model.weapon"
+              [showClear]="true"
+              (onChange)="onSelectItem('weaponCard4', $event.value)"
+              placeholder="Card 4"
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1" *ngIf="model.weaponCard4">
                   <img src="assets/demo/images/items/card.png" style="width: 19px" />
                   <div>{{ item.label }}</div>
                 </div>
@@ -519,6 +539,7 @@
           [(ngModel)]="model.ammo"
           (onChange)="onSelectItem('ammo', $event.value)"
           placeholder="Ammo"
+          [disabled]="!model.weapon"
         >
           <ng-template let-item pTemplate="selectedItem">
             <div class="flex gap-1" *ngIf="model.ammo">
@@ -551,7 +572,6 @@
           filterBy="label"
           [(ngModel)]="model.shield"
           [showClear]="true"
-          (onChange)="setEnchantList($event.value)"
           (onChange)="onSelectItem('shield', $event.value, model.shieldRefine)"
           placeholder="Shield"
         ></p-dropdown>
@@ -587,7 +607,6 @@
               filterBy="label"
               [(ngModel)]="model.headUpper"
               [showClear]="true"
-              (onChange)="setEnchantList($event.value)"
               (onChange)="onSelectItem('headUpper', $event.value, model.headUpperRefine)"
               (onClear)="onClearItem('headUpper')"
               placeholder="Head Upper"
@@ -742,7 +761,6 @@
           filterBy="label"
           [(ngModel)]="model.headMiddle"
           [showClear]="true"
-          (onChange)="setEnchantList($event.value)"
           (onChange)="onSelectItem('headMiddle', $event.value)"
           (onClear)="onClearItem('headMiddle')"
           placeholder="Middle"
@@ -842,7 +860,6 @@
           filterBy="label"
           [(ngModel)]="model.headLower"
           [showClear]="true"
-          (onChange)="setEnchantList($event.value)"
           (onChange)="onSelectItem('headLower', $event.value)"
           (onClear)="onClearItem('headLower')"
           placeholder="Lower"
@@ -957,7 +974,6 @@
               filterBy="label"
               [(ngModel)]="model.armor"
               [showClear]="true"
-              (onChange)="setEnchantList($event.value)"
               (onChange)="onSelectItem('armor', $event.value, model.armorRefine)"
               (onClear)="onClearItem('armor')"
               placeholder="Armor"
@@ -1114,7 +1130,6 @@
               filterBy="label"
               [(ngModel)]="model.garment"
               [showClear]="true"
-              (onChange)="setEnchantList($event.value)"
               (onChange)="onSelectItem('garment', $event.value, model.garmentRefine)"
               (onClear)="onClearItem('garment')"
               placeholder="Garment"
@@ -1271,7 +1286,6 @@
               filterBy="label"
               [(ngModel)]="model.boot"
               [showClear]="true"
-              (onChange)="setEnchantList($event.value)"
               (onChange)="onSelectItem('boot', $event.value, model.bootRefine)"
               (onClear)="onClearItem('boot')"
               placeholder="Boot"
@@ -1426,7 +1440,6 @@
           filterBy="label"
           [(ngModel)]="model.accLeft"
           [showClear]="true"
-          (onChange)="setEnchantList($event.value, 'accLeft')"
           (onChange)="onSelectItem('accLeft', $event.value)"
           (onClear)="onClearItem('accLeft')"
           placeholder="Acc L"
@@ -1566,7 +1579,6 @@
           filterBy="label"
           [(ngModel)]="model.accRight"
           [showClear]="true"
-          (onChange)="setEnchantList($event.value, 'accRight')"
           (onChange)="onSelectItem('accRight', $event.value)"
           (onClear)="onClearItem('accRight')"
           placeholder="Acc R"
@@ -1904,7 +1916,6 @@
           filterBy="label"
           [(ngModel)]="model.shadowWeapon"
           [showClear]="true"
-          (onChange)="setEnchantList($event.value)"
           (onChange)="onSelectItem('shadowWeapon', $event.value)"
           (onClear)="onClearItem('shadowWeapon')"
           placeholder="Shadow Weapon"
@@ -1964,7 +1975,6 @@
           filterBy="label"
           [(ngModel)]="model.shadowArmor"
           [showClear]="true"
-          (onChange)="setEnchantList($event.value)"
           (onChange)="onSelectItem('shadowArmor', $event.value)"
           (onClear)="onClearItem('shadowArmor')"
           placeholder="Shadow Armor"
@@ -2024,7 +2034,6 @@
           filterBy="label"
           [(ngModel)]="model.shadowShield"
           [showClear]="true"
-          (onChange)="setEnchantList($event.value)"
           (onChange)="onSelectItem('shadowShield', $event.value)"
           (onClear)="onClearItem('shadowShield')"
           placeholder="Shadow Shield"
@@ -2084,7 +2093,6 @@
           filterBy="label"
           [(ngModel)]="model.shadowBoot"
           [showClear]="true"
-          (onChange)="setEnchantList($event.value)"
           (onChange)="onSelectItem('shadowBoot', $event.value)"
           (onClear)="onClearItem('shadowBoot')"
           placeholder="Shadow Boot"
@@ -2144,7 +2152,6 @@
           filterBy="label"
           [(ngModel)]="model.shadowEarning"
           [showClear]="true"
-          (onChange)="setEnchantList($event.value)"
           (onChange)="onSelectItem('shadowEarning', $event.value)"
           (onClear)="onClearItem('shadowEarning')"
           placeholder="Shadow Earning"
@@ -2204,7 +2211,6 @@
           filterBy="label"
           [(ngModel)]="model.shadowPendant"
           [showClear]="true"
-          (onChange)="setEnchantList($event.value)"
           (onChange)="onSelectItem('shadowPendant', $event.value)"
           (onClear)="onClearItem('shadowPendant')"
           placeholder="Shadow Pendant"
