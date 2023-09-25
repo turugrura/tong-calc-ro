@@ -2597,19 +2597,25 @@
                     Cast:
                     <span class="font-bold px-1 summary_damage">{{ totalSummary?.calcSkill?.castPeriod || 0 }}</span>
                   </div>
-                  <div class="col-4">
+                  <div class="col-3">
                     CD:
                     <span class="font-bold px-1 summary_value">{{ totalSummary?.calcSkill?.reducedCd || 0 }}</span>
                   </div>
-                  <div class="col-4">
+                  <div class="col-3">
                     Delay:
                     <span class="font-bold px-1 summary_value">{{ totalSummary?.calcSkill?.reducedAcd || 0 }}</span>
                   </div>
-                  <div class="col-4">
+                  <div class="col-6">
                     Hits/s:
                     <span class="font-bold px-1 summary_highlight">{{
                       totalSummary?.calcSkill?.totalHitPerSec || 0
-                    }}</span>
+                    }}</span
+                    ><span
+                      style="color: var(--red-500)"
+                      *ngIf="totalSummary?.calcSkill?.totalHitPerSec > totalSummary?.calc?.hitPerSecs"
+                      class="font-semibold px-1 summary_highlight"
+                      >( ASPD {{ totalSummary?.calc?.hitPerSecs || 0 }} )</span
+                    >
                   </div>
                 </div>
               </div>

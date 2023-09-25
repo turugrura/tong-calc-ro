@@ -352,6 +352,7 @@ export class Calculator {
   private totalWeaponAtkMin = 0;
   private totalWeaponAtkMax = 0;
   private totalEquipAtk = 0;
+  private totalEquipMatk = 0;
   private totalAMin = 0;
   private totalAMax = 0;
   private totalBMin = 0;
@@ -1005,6 +1006,7 @@ export class Calculator {
     this.calcMonsterHardDef();
 
     this.calcEquipAtk();
+    this.calcEquipMatk();
     this.calcMasteryAtk();
     this.calcBuffAtk();
     this.calcStatusAtk();
@@ -1020,13 +1022,21 @@ export class Calculator {
     return this;
   }
 
+  private calcEquipMatk() {
+    const extraAtk = this.totalEquipStatus.matk;
+
+    this.totalEquipMatk = extraAtk;
+
+    return this;
+  }
+
   private calcWeaponMatk() {
     const { baseWeaponMatk, baseWeaponLevel, refineBonus, overUpgradeBonus } = this.weaponData.data;
-    const variance = 0.1 * baseWeaponLevel * (baseWeaponMatk + refineBonus);
     const rawWeaponMATK = baseWeaponMatk + refineBonus;
+    const variance = 0.1 * baseWeaponLevel * rawWeaponMATK;
 
     this.weaponMinMatk = rawWeaponMATK - variance;
-    this.weaponMaxMatk = rawWeaponMATK + overUpgradeBonus + variance;
+    this.weaponMaxMatk = rawWeaponMATK + variance + overUpgradeBonus;
   }
 
   private calcTotalMatk() {
@@ -1035,10 +1045,10 @@ export class Calculator {
     const element = this.toPercent(this.calcElementMultiplier('m'));
     const monsterType = this.toPercent(this.calcMonterTypeMultiplier());
     const mysticAmp = 1;
-    const { matk: equipMatk, matkPercent } = this.totalEquipStatus;
+    const { matkPercent } = this.totalEquipStatus;
 
     const formula = (atk: number) => {
-      const mysticAmpApplied = this.floor(atk * mysticAmp + equipMatk);
+      const mysticAmpApplied = this.floor(atk * mysticAmp + this.totalEquipMatk);
       const percentApplied = this.floor(mysticAmpApplied * this.toPercent(100 + matkPercent));
       const raceApplied = this.floor(percentApplied * race);
       const sizeApplied = this.floor(raceApplied * size);
@@ -1362,7 +1372,9 @@ export class Calculator {
   }
 
   prepareAllItemBonus() {
-    this.totalEquipStatus = { ...this.allStatus };
+    const baseMatk = Number(this.equipItem.get(ItemTypeEnum.weapon)?.script?.['matk']?.[0]) || 0;
+
+    this.totalEquipStatus = { ...this.allStatus, matk: 0 - baseMatk };
     this.equipStatus = {} as any;
 
     this.equipStatus['extra'] = { ...this.allStatus };
@@ -1419,7 +1431,7 @@ export class Calculator {
     for (const [skillName, scripts] of Object.entries(this.equipAtkSkillBonus)) {
       for (const [attr, value] of Object.entries(scripts)) {
         let val = Number(value);
-        if (attr === 'atk' || attr === 'matk') val = 0;
+        if (attr === 'atk') val = 0;
 
         this.equipStatus[skillName] = { ...this.allStatus, [attr]: val };
 
@@ -1541,7 +1553,7 @@ export class Calculator {
     const { reducedCd, reducedFct, reducedAcd } = this.skillFrequency;
 
     const blockPeriod = Math.max(reducedCd, reducedAcd);
-    const castPeriod = reducedVct + reducedFct;
+    const castPeriod = this.floor(reducedVct + reducedFct, 3);
     this.skillFrequency.castPeriod = castPeriod;
     this.skillFrequency.hitPeriod = this.floor(blockPeriod + castPeriod, 3);
     this.skillFrequency.totalHitPerSec = this.floor(1 / this.skillFrequency.hitPeriod, 2);
