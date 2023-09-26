@@ -104,6 +104,10 @@ export abstract class CharacterBase {
     return this._activeSkillList;
   }
 
+  get initialStatPoint() {
+    return this.initialStatusPoint;
+  }
+
   getSkillBonusAndName(params: { activeIds: number[]; passiveIds: number[] }) {
     const equipAtks: Record<string, any> = {};
     const masteryAtks: Record<string, any> = {};

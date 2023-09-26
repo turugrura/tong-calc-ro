@@ -1,3 +1,5 @@
+import { CharacterBase } from './char-class.abstract';
+
 /**
 =IFS(A2 <= 1, 100
 ,A2 < 100, FLOOR((A2-1) / 5) + 3
@@ -13,6 +15,7 @@
 export class BaseStateCalculator {
   private _baseLevel = 1;
   private _statuslevels: number[] = [];
+  private _initialPoint = 100;
   private _totalPoint = 100;
   private _usedPoint = 100;
   private cachedTotalPoint = new Map<number, number>();
@@ -28,6 +31,12 @@ export class BaseStateCalculator {
       usedPoint: this._usedPoint,
       availablePoint: this.availablePoint,
     };
+  }
+
+  setClass(_class: CharacterBase) {
+    this._initialPoint = _class.initialStatPoint;
+
+    return this;
   }
 
   setLevel(level: number) {
@@ -54,7 +63,7 @@ export class BaseStateCalculator {
   private calcTotalPoint(level: number) {
     if (this.cachedTotalPoint.has(level)) return this.cachedTotalPoint.get(level);
     if (level < 1) return 0;
-    if (level === 1) return 100;
+    if (level === 1) return this._initialPoint;
 
     const previousLevelPoint = this.calcTotalPoint(level - 1);
     this.cachedTotalPoint.set(level - 1, previousLevelPoint);

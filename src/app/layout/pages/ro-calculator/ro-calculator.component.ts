@@ -1723,6 +1723,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     const mainStatuses = [str, agi, vit, int, dex, luk];
     const { availablePoint } = this.stateCalculator
       .setLevel(this.model.level)
+      .setClass(this.selectedCharacter)
       .setMainStatusLevels(mainStatuses)
       .calculate().summary;
     this.availablePoints = availablePoint;
