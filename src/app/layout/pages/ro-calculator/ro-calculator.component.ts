@@ -1847,6 +1847,8 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
             this.updateAvailablePoints();
             this.equipItemMap.clear();
             this.resetItemDescription();
+
+            this.setJobBonus();
             return waitRxjs();
           }),
           mergeMap(() => {

@@ -230,6 +230,9 @@
 
           <!-- Summary -->
           <div class="col-8">
+            <div class="loading_block" *ngIf="isCalculating">
+              <i class="pi pi-spin pi-spinner" style="font-size: 2rem"></i>
+            </div>
             <div class="grid grid-nogutter">
               <div class="col-6">
                 <div class="grid grid-nogutter mx-2">

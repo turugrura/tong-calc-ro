@@ -52,6 +52,21 @@ pre {
   padding: 0.5rem 0rem;
 } */
 
+.loading_block {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.4);
+  transition-duration: 0.2s;
+  position: fixed;
+  /* top: 0;
+  left: 0; */
+  width: 23%;
+  height: 23%;
+}
+
 .text_ellips {
   height: 19px;
   overflow: hidden;
