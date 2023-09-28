@@ -95,6 +95,7 @@ const weaponUpgradeTable: Record<
 };
 
 const weaponSubType = {
+  Dagger: 'dagger',
   Bow: 'bow',
   'Gatling Gun': 'gun',
   Pistol: 'gun',

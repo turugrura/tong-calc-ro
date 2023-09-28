@@ -107,7 +107,7 @@ enum Acute {
   _7 = 'Acute7',
 }
 enum Mettle {
-  _2 = 'Mettle7',
+  _2 = 'Mettle2',
   _3 = 'Mettle3',
   _4 = 'Mettle4',
   _5 = 'Mettle5',
@@ -230,6 +230,43 @@ const labHead2 = [
   MagicEess._7,
 ];
 
+const tempHead4 = [
+  Str._1,
+  Str._2,
+  Str._3,
+  Str._4,
+  Int._1,
+  Int._2,
+  Int._3,
+  Int._4,
+  Vit._1,
+  Vit._2,
+  Vit._3,
+  Vit._4,
+  Luk._1,
+  Luk._2,
+  Luk._3,
+  Luk._4,
+];
+const tempHead3 = [
+  'Time_Jewely_Str_1',
+  'Time_Jewely_Str_2',
+  'Time_Jewely_Str_3',
+  'Time_Jewely_Agi_1',
+  'Time_Jewely_Agi_2',
+  'Time_Jewely_Agi_3',
+  'Time_Jewely_Vit_1',
+  'Time_Jewely_Vit_2',
+  'Time_Jewely_Vit_3',
+  'Time_Jewely_Int_1',
+  'Time_Jewely_Int_2',
+  'Time_Jewely_Int_3',
+  'Time_Jewely_Dex_1',
+  'Time_Jewely_Dex_2',
+  'Time_Jewely_Dex_3',
+  ...tempHead4,
+];
+
 interface EntTable {
   name: string;
   enchants: [null, any[], any[], any[]];
@@ -280,6 +317,13 @@ const enchantTable: EntTable[] = [
   { name: 'White_Wing_Brooch', enchants: [null, [], [], BaseState._1] },
 
   { name: 'Old_Camo_RabbitHood', enchants: [null, labHead2, BaseState._3_5, BaseState._3_5] },
+
+  { name: 'S_Circlet_Of_Time_GC', enchants: [null, labHead2, tempHead3, tempHead4] },
+  { name: 'S_Circlet_Of_Time_SC', enchants: [null, labHead2, tempHead3, tempHead4] },
+  { name: 'S_Circlet_Of_Time_AB', enchants: [null, labHead2, tempHead3, tempHead4] },
+  { name: 'S_Circlet_Of_Time_RA', enchants: [null, labHead2, tempHead3, tempHead4] },
+  { name: 'S_Circlet_Of_Time_SP', enchants: [null, labHead2, tempHead3, tempHead4] },
+  { name: 'S_Circlet_Of_Time_RL', enchants: [null, labHead2, tempHead3, tempHead4] },
 ];
 
 const map = new Map(enchantTable.map((a) => [a.name, a.enchants]));

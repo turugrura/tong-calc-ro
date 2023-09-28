@@ -230,10 +230,10 @@
 
           <!-- Summary -->
           <div class="col-8">
-            <div class="loading_block" *ngIf="isCalculating">
-              <i class="pi pi-spin pi-spinner" style="font-size: 2rem"></i>
-            </div>
-            <div class="grid grid-nogutter">
+            <div class="grid grid-nogutter" style="position: relative">
+              <div class="loading_block" *ngIf="isCalculating">
+                <i class="pi pi-spin pi-spinner" style="font-size: 2rem"></i>
+              </div>
               <div class="col-6">
                 <div class="grid grid-nogutter mx-2">
                   <div class="col-12">
@@ -563,20 +563,49 @@
     <!-- Shield -->
     <div class="grid grid-nogutter" *ngIf="!hiddenMap.shield">
       <div class="col-3">
-        <p-dropdown
-          inputId="shield"
-          [autoDisplayFirst]="false"
-          [options]="shieldList"
-          [filter]="true"
-          filterBy="label"
-          [(ngModel)]="model.shield"
-          [showClear]="true"
-          (onChange)="onSelectItem('shield', $event.value, model.shieldRefine)"
-          placeholder="Shield"
-        ></p-dropdown>
-      </div>
-      <div class="col-fixed" style="width: 80px">
-        <p-dropdown [options]="refineList" [(ngModel)]="model.shieldRefine"></p-dropdown>
+        <div class="grid grid-nogutter justify-content-end">
+          <div class="col-12">
+            <p-dropdown
+              inputId="shield"
+              [autoDisplayFirst]="false"
+              [options]="shieldList"
+              [filter]="true"
+              filterBy="label"
+              [(ngModel)]="model.shield"
+              [showClear]="true"
+              (onChange)="onSelectItem('shield', $event.value, model.shieldRefine)"
+              (onClear)="onClearItem('shield')"
+              placeholder="Head Upper"
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1" *ngIf="model.shield">
+                  <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+              <ng-template let-item pTemplate="item">
+                <div class="flex gap-1">
+                  <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
+          </div>
+          <div class="col-4" style="min-width: 70px">
+            <p-dropdown
+              [options]="refineList"
+              [(ngModel)]="model.shieldRefine"
+              [disabled]="!model.shield"
+              (onChange)="onSelectItem('shield', model.shield, $event.value)"
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1">
+                  <div>{{ item.label > 0 ? '+ ' : '' }} {{ item.label || 0 }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
+          </div>
+        </div>
       </div>
       <div class="col-3">
         <p-dropdown
@@ -586,10 +615,18 @@
           [filter]="true"
           filterBy="label"
           [(ngModel)]="model.shieldCard"
-          [disabled]="!model.shield"
+          [disabled]="!model.shield || itemSlotsMap.shield < 1"
           [showClear]="true"
+          (onChange)="onSelectItem('shieldCard', $event.value)"
           placeholder="Card"
-        ></p-dropdown>
+        >
+          <ng-template let-item pTemplate="selectedItem">
+            <div class="flex gap-1" *ngIf="model.shieldCard">
+              <img src="assets/demo/images/items/card.png" style="width: 19px" />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
       </div>
     </div>
 

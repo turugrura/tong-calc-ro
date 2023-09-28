@@ -17,7 +17,6 @@ import { Calculator } from './calculator';
 import { ItemTypeEnum, MainItemTypeSet } from './item-type.enum';
 import { ItemTypeId } from './item.const';
 import { RoService } from 'src/app/demo/service/ro.service';
-import { Rebelion } from './rebellion';
 import { ItemModel } from './item.model';
 import {
   ConfirmEventType,
@@ -29,14 +28,16 @@ import {
 } from 'primeng/api';
 import { RaceType } from './race-type.const';
 import { ElementType } from './element-type.const';
-import { ActiveSkillModel, AtkSkillModel, CharacterBase, PassiveSkillModel } from './char-class.abstract';
-import { Ranger } from './ranger';
+import { ActiveSkillModel, AtkSkillModel, CharacterBase, PassiveSkillModel } from './jobs/char-class.abstract';
+import { Ranger } from './jobs/ranger';
 import { MonsterModel } from './monster.model';
 import { getEnchants } from './enchant-table';
-import { SoulReaper } from './soul-reaper';
+import { SoulReaper } from './jobs/soul-reaper';
 import { DropdownModel } from './dropdown.model';
 import { ItemListModel } from './item-list.model';
 import { getMonsterSpawnMap } from './monster-spawn-mapper';
+import { Rebelion } from './jobs/rebellion';
+import { ShadowChaser } from './jobs/shadow-chaser';
 
 enum CardPosition {
   Weapon = 0,
@@ -90,6 +91,7 @@ const Characters: DropdownModel[] = [
   { label: 'Rebelion', value: 1, instant: new Rebelion() },
   { label: 'Ranger', value: 2, instant: new Ranger() },
   { label: 'Soul Reaper', value: 3, instant: new SoulReaper() },
+  { label: 'SC', value: 4, instant: new ShadowChaser() },
 ];
 
 const itemTypes = Object.freeze(Object.values(ItemTypeEnum));
@@ -709,6 +711,18 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
           ammu: !this.calculator.isAllowAmmo(),
           shield: !this.calculator.isAllowShield(),
         };
+        if (this.hiddenMap.ammu && this.model.ammo) {
+          this.model.ammo = undefined;
+          this.onSelectItem('ammo');
+          return;
+        }
+        if (this.hiddenMap.shield && this.model.shield) {
+          this.model.shield = undefined;
+          this.onSelectItem('shield');
+          this.onClearItem('shield');
+          return;
+        }
+
         this.setAmmoDropdownList();
         this.calculate();
         this.saveItemSet();

@@ -1,5 +1,5 @@
-import { ElementType } from './element-type.const';
-import { Weapon } from './weapon';
+import { ElementType } from '../element-type.const';
+import { Weapon } from '../weapon';
 
 export type AtkSkillFormulaInput<T extends {} = {}> = T & {
   baseLevel: number;
@@ -118,30 +118,30 @@ export abstract class CharacterBase {
     this._activeSkillList.forEach((skill, index) => {
       const { bonus, isUse, skillLv } = skill.dropdown.find((x) => x.value === activeIds[index]) ?? {};
       if (isUse) learnedSkillMap.set(skill.name, skillLv);
-      if (!bonus) return;
 
       skillNames.push(skill.name);
+      if (!bonus) return;
 
       const { isEquipAtk, isMasteryAtk } = skill;
-      if (isEquipAtk) {
-        equipAtks[skill.name] = bonus;
-      } else if (isMasteryAtk) {
+      if (isMasteryAtk) {
         masteryAtks[skill.name] = bonus;
+      } else {
+        equipAtks[skill.name] = bonus;
       }
     });
 
     this._passiveSkillList.forEach((skill, index) => {
       const { bonus, isUse, skillLv } = (skill.dropdown as any[]).find((x) => x.value === passiveIds[index]) ?? {};
       if (isUse) learnedSkillMap.set(skill.name, skillLv);
-      if (!bonus) return;
 
       skillNames.push(skill.name);
+      if (!bonus) return;
 
       const { isEquipAtk, isMasteryAtk } = skill;
-      if (isEquipAtk) {
-        equipAtks[skill.name] = bonus;
-      } else if (isMasteryAtk) {
+      if (isMasteryAtk) {
         masteryAtks[skill.name] = bonus;
+      } else {
+        equipAtks[skill.name] = bonus;
       }
     });
 

@@ -1,4 +1,4 @@
-import { AtkSkillFormulaInput, AtkSkillModel, CharacterBase } from './char-class.abstract';
+import { AtkSkillFormulaInput, AtkSkillModel, CharacterBase } from './jobs/char-class.abstract';
 import { ElementMapper } from './element-mapper';
 import { ElementType } from './element-type.const';
 import { ItemTypeEnum, MainItemTypeSet } from './item-type.enum';
@@ -625,7 +625,7 @@ export class Calculator {
   }
 
   private isIncludingOverUpgrade() {
-    return this.weaponData.data.subTypeName !== 'gun';
+    return this.isRangeAtk();
   }
 
   private calcWeaponStatusAtk() {
@@ -673,7 +673,7 @@ export class Calculator {
     const formular = (weaponAtk: number, overUpg: number) => {
       const total =
         weaponAtk + this.floor(this.weaponStatusAtk * this.sizePenalty) + this.floor(refineBonus * this.sizePenalty);
-      const total2 = this.isRangeAtk() ? total : total + overUpg;
+      const total2 = this.isIncludingOverUpgrade() ? total : total + overUpg;
       return this.floor(total2);
 
       // const total = weaponAtk + this.statusBonus * this.sizePenalty + refineBonus * this.sizePenalty;
@@ -681,7 +681,7 @@ export class Calculator {
 
       // return this.floor(total2 * this.sizePenalty);
     };
-    const totalMin = formular(weaponSizePenalty - variant, 0);
+    const totalMin = formular(weaponSizePenalty - variant, overUpgradeBonus);
     const totalMax = formular(weaponSizePenalty + variant, overUpgradeBonus);
 
     this.totalWeaponAtkMin = totalMin;
