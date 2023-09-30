@@ -147,6 +147,11 @@ pre {
   height: 100%;
 }
 
+.item_float_label {
+  background-color: var(--surface-0);
+  color: var(--purple-200);
+}
+
 .property_Water {
   background-color: #7ba7e1;
   color: white;

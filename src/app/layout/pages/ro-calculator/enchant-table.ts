@@ -187,6 +187,7 @@ const TempOpts = {
 };
 const atkPer = [AtkPercent._1, AtkPercent._2, AtkPercent._3];
 const fs13 = [FS._1, FS._2, FS._3];
+const ea35 = [EA._3, EA._4, EA._5];
 
 const illusionArmor = ['Improve_Orb_Atk', 'Improve_Orb_Matk', 'Improve_Orb_Archer', 'Improve_Orb_Delay'];
 const illusionGarment = ['Improve_Orb_Speed', 'Improve_Orb_Cast', 'Improve_Orb_Cri', 'Improve_Orb_Above'];
@@ -285,6 +286,7 @@ const enchantTable: EntTable[] = [
   { name: 'Illusion_B_L', enchants: [null, illusionAcc, illusionAcc, illusionAcc] },
   { name: 'Illusion_BC_R', enchants: [null, illusionAcc, illusionAcc, illusionAcc] },
   { name: 'Illusion_BC_L', enchants: [null, illusionAcc, illusionAcc, illusionAcc] },
+  { name: '[Upgrade] Illusion Ring [1]', enchants: [null, illusionAcc, illusionAcc, illusionAcc] },
 
   { name: 'Temporal_Boots_TW', enchants: [null, null, tempBoot_3, tempBoot_4] },
   { name: 'Temporal_Str_Boots_', enchants: [null, null, tempBoot_3, tempBoot_4] },
@@ -317,6 +319,7 @@ const enchantTable: EntTable[] = [
   { name: 'White_Wing_Brooch', enchants: [null, [], [], BaseState._1] },
 
   { name: 'Old_Camo_RabbitHood', enchants: [null, labHead2, BaseState._3_5, BaseState._3_5] },
+  { name: 'Old_Circlet_Of_Bone', enchants: [null, labHead2, BaseState._3_5, BaseState._3_5] },
 
   { name: 'S_Circlet_Of_Time_GC', enchants: [null, labHead2, tempHead3, tempHead4] },
   { name: 'S_Circlet_Of_Time_SC', enchants: [null, labHead2, tempHead3, tempHead4] },
@@ -324,6 +327,8 @@ const enchantTable: EntTable[] = [
   { name: 'S_Circlet_Of_Time_RA', enchants: [null, labHead2, tempHead3, tempHead4] },
   { name: 'S_Circlet_Of_Time_SP', enchants: [null, labHead2, tempHead3, tempHead4] },
   { name: 'S_Circlet_Of_Time_RL', enchants: [null, labHead2, tempHead3, tempHead4] },
+
+  { name: 'Katar_170', enchants: [null, null, ea35, ea35] },
 ];
 
 const map = new Map(enchantTable.map((a) => [a.name, a.enchants]));

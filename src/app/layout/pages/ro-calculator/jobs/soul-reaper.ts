@@ -74,8 +74,10 @@ const ASPDTable = {
 } as const;
 
 export class SoulReaper extends CharacterBase {
+  protected readonly CLASS_NAME = 'SoulReaper';
   protected readonly BASE_ASPD = 156;
   protected readonly ASPDTable = ASPDTable;
+  protected readonly JobBonusTable = jobBonusTable;
 
   protected initialStatusPoint = 48;
   protected classNames = ['Soul Reaper'];
@@ -131,21 +133,4 @@ export class SoulReaper extends CharacterBase {
       ],
     },
   ];
-
-  get className(): string {
-    return 'SoulReaper';
-  }
-
-  getJobBonusStatus(jobLevel: number) {
-    const [str, agi, vit, int, dex, luk] = jobBonusTable[jobLevel];
-
-    return {
-      str,
-      agi,
-      vit,
-      int,
-      dex,
-      luk,
-    };
-  }
 }

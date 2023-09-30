@@ -81,8 +81,10 @@ const ASPDTable = {
 } as const;
 
 export class Ranger extends CharacterBase {
+  protected readonly CLASS_NAME = 'Ranger';
   protected readonly BASE_ASPD = 156;
   protected readonly ASPDTable = ASPDTable;
+  protected readonly JobBonusTable = jobBonusTable;
 
   protected initialStatusPoint = 100;
   protected classNames = ['Ranger', 'Ranger Cls', 'Sniper', 'Hunter', 'Archer', 'Archer Cls', 'Only 3rd Cls'];
@@ -357,21 +359,4 @@ export class Ranger extends CharacterBase {
       ],
     },
   ];
-
-  get className(): string {
-    return 'Ranger';
-  }
-
-  getJobBonusStatus(jobLevel: number) {
-    const [str, agi, vit, int, dex, luk] = jobBonusTable[jobLevel];
-
-    return {
-      str,
-      agi,
-      vit,
-      int,
-      dex,
-      luk,
-    };
-  }
 }

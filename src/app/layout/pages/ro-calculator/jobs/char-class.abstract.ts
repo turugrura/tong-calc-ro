@@ -21,6 +21,7 @@ export interface AtkSkillModel<T = any> {
   cri?: number;
   hit?: number;
   isMatk?: boolean;
+  isMelee?: boolean;
   element?: ElementType;
 }
 [];
@@ -68,8 +69,10 @@ export interface AspdInput {
 export abstract class CharacterBase {
   private allClass = 'all';
 
+  protected abstract readonly CLASS_NAME: string;
   protected abstract readonly BASE_ASPD: number;
   protected abstract readonly ASPDTable: Record<string, number>;
+  protected abstract readonly JobBonusTable: Record<number, [number, number, number, number, number, number]>;
 
   protected abstract initialStatusPoint: number;
   protected abstract classNames: string[];
@@ -77,17 +80,16 @@ export abstract class CharacterBase {
   protected abstract _activeSkillList: ActiveSkillModel[];
   protected abstract _passiveSkillList: PassiveSkillModel[];
 
-  abstract getJobBonusStatus(jobLevel: number): {
-    str: number;
-    agi: number;
-    vit: number;
-    int: number;
-    dex: number;
-    luk: number;
-  };
+  /**
+   * For item bonus condition
+   */
+  get className(): string {
+    return this.CLASS_NAME;
+  }
 
-  abstract get className(): string;
-
+  /**
+   * For suitable item
+   */
   get classNameSet() {
     return new Set([this.allClass, ...this.classNames]);
   }
@@ -117,8 +119,9 @@ export abstract class CharacterBase {
     const { activeIds, passiveIds } = params;
     this._activeSkillList.forEach((skill, index) => {
       const { bonus, isUse, skillLv } = skill.dropdown.find((x) => x.value === activeIds[index]) ?? {};
-      if (isUse) learnedSkillMap.set(skill.name, skillLv);
+      if (!isUse) return;
 
+      learnedSkillMap.set(skill.name, skillLv);
       skillNames.push(skill.name);
       if (!bonus) return;
 
@@ -132,8 +135,9 @@ export abstract class CharacterBase {
 
     this._passiveSkillList.forEach((skill, index) => {
       const { bonus, isUse, skillLv } = (skill.dropdown as any[]).find((x) => x.value === passiveIds[index]) ?? {};
-      if (isUse) learnedSkillMap.set(skill.name, skillLv);
+      if (!isUse) return;
 
+      learnedSkillMap.set(skill.name, skillLv);
       skillNames.push(skill.name);
       if (!bonus) return;
 
@@ -153,6 +157,15 @@ export abstract class CharacterBase {
       baseAspd: this.BASE_ASPD - (this.ASPDTable[weaponType] || 0),
       shieldPenalty: 0,
     };
+  }
+
+  protected inheritBaseClass(baseClass: CharacterBase) {
+    const { _atkSkillList, _passiveSkillList, _activeSkillList, classNames } = baseClass;
+
+    this._atkSkillList = [..._atkSkillList, ...this._atkSkillList];
+    this._activeSkillList = [..._activeSkillList, ...this._activeSkillList];
+    this._passiveSkillList = [..._passiveSkillList, ...this._passiveSkillList];
+    this.classNames = [...classNames, ...this.classNames];
   }
 
   calcAspd(a: AspdInput): number {
@@ -193,5 +206,18 @@ export abstract class CharacterBase {
     }
 
     return finalDamage;
+  }
+
+  getJobBonusStatus(jobLevel: number) {
+    const [str, agi, vit, int, dex, luk] = this.JobBonusTable[jobLevel];
+
+    return {
+      str,
+      agi,
+      vit,
+      int,
+      dex,
+      luk,
+    };
   }
 }

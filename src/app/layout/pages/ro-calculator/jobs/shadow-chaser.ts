@@ -74,8 +74,10 @@ const ASPDTable = {
 } as const;
 
 export class ShadowChaser extends CharacterBase {
+  protected readonly CLASS_NAME = 'ShadowChaser';
   protected readonly BASE_ASPD = 156;
   protected readonly ASPDTable = ASPDTable;
+  protected readonly JobBonusTable = jobBonusTable;
 
   protected initialStatusPoint = 100;
   protected classNames = ['Shadow Chaser', 'Shadow Chaser Cls', 'Shadow Chaser Class', 'Rougue', 'Stalker'];
@@ -210,21 +212,4 @@ export class ShadowChaser extends CharacterBase {
       ],
     },
   ];
-
-  get className(): string {
-    return 'ShadowChaser';
-  }
-
-  getJobBonusStatus(jobLevel: number) {
-    const [str, agi, vit, int, dex, luk] = jobBonusTable[jobLevel];
-
-    return {
-      str,
-      agi,
-      vit,
-      int,
-      dex,
-      luk,
-    };
-  }
 }

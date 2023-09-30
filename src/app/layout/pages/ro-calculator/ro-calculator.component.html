@@ -526,6 +526,97 @@
               </ng-template>
             </p-dropdown>
           </div>
+          <div
+            class="col-12"
+            [hidden]="
+              (weaponEnchant1List.length === 0 && weaponEnchant2List.length === 0 && weaponEnchant3List.length === 0) ||
+              !model.weapon
+            "
+          >
+            <div class="grid grid-nogutter">
+              <div class="col-4">
+                <p-dropdown
+                  inputId="weaponEnchant1"
+                  [autoDisplayFirst]="false"
+                  [options]="weaponEnchant1List"
+                  [filter]="true"
+                  filterBy="label"
+                  [(ngModel)]="model.weaponEnchant1"
+                  [showClear]="true"
+                  [disabled]="weaponEnchant1List.length === 0 || !model.weapon"
+                  (onChange)="onSelectItem('weaponEnchant1', $event.value)"
+                  placeholder="Enchant 2"
+                >
+                  <ng-template let-item pTemplate="selectedItem">
+                    <div class="flex gap-1" *ngIf="model.weaponEnchant1">
+                      <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
+                      <div>{{ item.label }}</div>
+                    </div>
+                  </ng-template>
+                  <ng-template let-item pTemplate="item">
+                    <div class="flex gap-1">
+                      <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
+                      <div>{{ item.label }}</div>
+                    </div>
+                  </ng-template>
+                </p-dropdown>
+              </div>
+              <div class="col-4">
+                <p-dropdown
+                  inputId="weaponEnchant2"
+                  [autoDisplayFirst]="false"
+                  [options]="weaponEnchant2List"
+                  [filter]="true"
+                  filterBy="label"
+                  [(ngModel)]="model.weaponEnchant2"
+                  [showClear]="true"
+                  [disabled]="weaponEnchant2List.length === 0 || !model.weapon"
+                  (onChange)="onSelectItem('weaponEnchant2', $event.value)"
+                  placeholder="Enchant 3"
+                >
+                  <ng-template let-item pTemplate="selectedItem">
+                    <div class="flex gap-1" *ngIf="model.weaponEnchant2">
+                      <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
+                      <div>{{ item.label }}</div>
+                    </div>
+                  </ng-template>
+                  <ng-template let-item pTemplate="item">
+                    <div class="flex gap-1">
+                      <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
+                      <div>{{ item.label }}</div>
+                    </div>
+                  </ng-template>
+                </p-dropdown>
+              </div>
+              <div class="col-4">
+                <p-dropdown
+                  inputId="weaponEnchant3"
+                  [autoDisplayFirst]="false"
+                  [options]="weaponEnchant3List"
+                  [filter]="true"
+                  filterBy="label"
+                  [(ngModel)]="model.weaponEnchant3"
+                  [showClear]="true"
+                  [disabled]="weaponEnchant3List.length === 0 || !model.weapon"
+                  (onChange)="onSelectItem('weaponEnchant3', $event.value)"
+                  placeholder="Enchant 4"
+                >
+                  <ng-template let-item pTemplate="selectedItem">
+                    <div class="flex gap-1" *ngIf="model.weaponEnchant3">
+                      <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
+                      <div>{{ item.label }}</div>
+                    </div>
+                  </ng-template>
+                  <ng-template let-item pTemplate="item">
+                    <div class="flex gap-1">
+                      <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
+                      <div>{{ item.label }}</div>
+                    </div>
+                  </ng-template>
+                </p-dropdown>
+              </div>
+            </div>
+          </div>
           <div class="col-4">
             <p-cascadeSelect
               [(ngModel)]="model.rawOptionTxts[0]"
@@ -836,7 +927,7 @@
           </ng-template>
         </p-dropdown>
       </div>
-      <div class="col-12">
+      <!-- <div class="col-12">
         <div class="grid grid-nogutter">
           <div class="col-3"></div>
           <div class="col-3">
@@ -882,7 +973,7 @@
             ></p-dropdown>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
 
     <!-- Head Lower -->
@@ -1468,31 +1559,34 @@
     <!-- Acc Left -->
     <div class="grid grid-nogutter">
       <div class="col-3">
-        <p-dropdown
-          inputId="accLeft"
-          [autoDisplayFirst]="false"
-          [options]="accLeftList"
-          [filter]="true"
-          filterBy="label"
-          [(ngModel)]="model.accLeft"
-          [showClear]="true"
-          (onChange)="onSelectItem('accLeft', $event.value)"
-          (onClear)="onClearItem('accLeft')"
-          placeholder="Acc L"
-        >
-          <ng-template let-item pTemplate="selectedItem">
-            <div class="flex gap-1" *ngIf="model.accLeft">
-              <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
-              <div>{{ item.label }}</div>
-            </div>
-          </ng-template>
-          <ng-template let-item pTemplate="item">
-            <div class="flex gap-1">
-              <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
-              <div>{{ item.label }}</div>
-            </div>
-          </ng-template>
-        </p-dropdown>
+        <span class="p-float-label">
+          <p-dropdown
+            inputId="accLeft"
+            [autoDisplayFirst]="false"
+            [options]="accLeftList"
+            [filter]="true"
+            filterBy="label"
+            [(ngModel)]="model.accLeft"
+            [showClear]="true"
+            (onChange)="onSelectItem('accLeft', $event.value)"
+            (onClear)="onClearItem('accLeft')"
+            placeholder="Acc Left"
+          >
+            <ng-template let-item pTemplate="selectedItem">
+              <div class="flex gap-1" *ngIf="model.accLeft">
+                <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
+                <div>{{ item.label }}</div>
+              </div>
+            </ng-template>
+            <ng-template let-item pTemplate="item">
+              <div class="flex gap-1">
+                <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
+                <div>{{ item.label }}</div>
+              </div>
+            </ng-template>
+          </p-dropdown>
+          <label for="accLeft" class="item_float_label font-semibold">Left</label>
+        </span>
       </div>
       <div class="col-3">
         <p-dropdown
@@ -1607,31 +1701,34 @@
     <!-- Acc Right -->
     <div class="grid grid-nogutter">
       <div class="col-3">
-        <p-dropdown
-          inputId="accRight"
-          [autoDisplayFirst]="false"
-          [options]="accRightList"
-          [filter]="true"
-          filterBy="label"
-          [(ngModel)]="model.accRight"
-          [showClear]="true"
-          (onChange)="onSelectItem('accRight', $event.value)"
-          (onClear)="onClearItem('accRight')"
-          placeholder="Acc R"
-        >
-          <ng-template let-item pTemplate="selectedItem">
-            <div class="flex gap-1" *ngIf="model.accRight">
-              <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
-              <div>{{ item.label }}</div>
-            </div>
-          </ng-template>
-          <ng-template let-item pTemplate="item">
-            <div class="flex gap-1">
-              <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
-              <div>{{ item.label }}</div>
-            </div>
-          </ng-template>
-        </p-dropdown>
+        <span class="p-float-label">
+          <p-dropdown
+            inputId="accRight"
+            [autoDisplayFirst]="false"
+            [options]="accRightList"
+            [filter]="true"
+            filterBy="label"
+            [(ngModel)]="model.accRight"
+            [showClear]="true"
+            (onChange)="onSelectItem('accRight', $event.value)"
+            (onClear)="onClearItem('accRight')"
+            placeholder="Acc R"
+          >
+            <ng-template let-item pTemplate="selectedItem">
+              <div class="flex gap-1" *ngIf="model.accRight">
+                <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
+                <div>{{ item.label }}</div>
+              </div>
+            </ng-template>
+            <ng-template let-item pTemplate="item">
+              <div class="flex gap-1">
+                <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
+                <div>{{ item.label }}</div>
+              </div>
+            </ng-template>
+          </p-dropdown>
+          <label for="accRight" class="item_float_label font-semibold">Right</label>
+        </span>
       </div>
       <div class="col-3">
         <p-dropdown
@@ -2519,7 +2616,7 @@
                 <div class="p-inputgroup">
                   <span class="p-inputgroup-addon" style="width: 80px">Monster</span>
                   <p-dropdown
-                    inputId="monster"
+                    inputId="monsterOpponent"
                     styleClass="tong"
                     [autoDisplayFirst]="false"
                     [options]="monsterList"
@@ -2627,15 +2724,20 @@
               </div>
               <div class="col-12">
                 <div class="grid grid-nogutter">
-                  <div class="col-4">
+                  <div class="col-3">
+                    <span class="font-bold px-1 summary_highlight"
+                      >{{ totalSummary?.calcSkill?.baseSkillDamage || 0 }} %</span
+                    >
+                  </div>
+                  <div class="col-3">
                     VCT:
                     <span class="font-bold px-1 summary_value">{{ totalSummary?.calcSkill?.reducedVct || 0 }}</span>
                   </div>
-                  <div class="col-4">
+                  <div class="col-3">
                     FCT:
                     <span class="font-bold px-1 summary_value">{{ totalSummary?.calcSkill?.reducedFct || 0 }}</span>
                   </div>
-                  <div class="col-4">
+                  <div class="col-3">
                     Cast:
                     <span class="font-bold px-1 summary_damage">{{ totalSummary?.calcSkill?.castPeriod || 0 }}</span>
                   </div>
@@ -2661,12 +2763,6 @@
                   </div>
                 </div>
               </div>
-              <!-- <div class="col-12">
-                Skill: {{ minDamage | number }}
-                <span *ngIf="skillHit > 1">( {{ minDamagePerHit | number }} x {{ skillHit }} )</span>
-                - {{ maxDamage | number }}
-                <span *ngIf="skillHit > 1">( {{ maxDamagePerHit | number }} x {{ skillHit }} )</span>
-              </div> -->
               <div class="col-6">
                 Skill <span [hidden]="totalSummary?.dmg?.criRate <= 0">Cri</span>:
                 <span [hidden]="totalSummary?.dmg?.criRate > 0" class="font-bold px-1 summary_damage"
@@ -2689,7 +2785,7 @@
                 DPS:
                 <span class="font-bold px-1 summary_highlight">{{ totalSummary?.calcSkill?.dps || 0 | number }}</span>
               </div>
-              <div class="col-12">
+              <div class="col-6">
                 Basic:
                 <span class="font-bold px-1 summary_damage"
                   >{{ minBasicDamage | number }} - {{ maxBasicDamage | number }}</span
@@ -2697,8 +2793,12 @@
               </div>
               <div class="col-6">
                 Cri:
-                <span class="font-bold px-1 summary_damage">{{ totalSummary?.calc?.totalCri | number }}%</span> Dmg:
-                <span class="font-bold px-1 summary_damage">{{ criDamage | number }}</span>
+                <span class="font-bold px-1 summary_damage">{{ totalSummary?.calc?.totalCri | number }}%</span>
+              </div>
+              <div class="col-6">
+                CriDmg:<span class="font-bold px-1 summary_damage"
+                  >{{ totalSummary?.dmg?.criMinDamage | number }} - {{ totalSummary?.dmg?.criMaxDamage | number }}</span
+                >
               </div>
               <div class="col-6">
                 DPS:

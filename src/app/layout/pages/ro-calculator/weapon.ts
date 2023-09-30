@@ -102,6 +102,7 @@ const weaponSubType = {
   Rifle: 'gun',
   Shotgun: 'gun',
   'Grenade Launcher': 'gun',
+  Katar: 'katar',
 };
 
 export class Weapon {

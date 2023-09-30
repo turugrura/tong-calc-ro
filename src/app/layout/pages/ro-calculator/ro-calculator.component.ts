@@ -38,6 +38,7 @@ import { ItemListModel } from './item-list.model';
 import { getMonsterSpawnMap } from './monster-spawn-mapper';
 import { Rebelion } from './jobs/rebellion';
 import { ShadowChaser } from './jobs/shadow-chaser';
+import { GitCross } from './jobs/git-cross';
 
 enum CardPosition {
   Weapon = 0,
@@ -92,6 +93,7 @@ const Characters: DropdownModel[] = [
   { label: 'Ranger', value: 2, instant: new Ranger() },
   { label: 'Soul Reaper', value: 3, instant: new SoulReaper() },
   { label: 'SC', value: 4, instant: new ShadowChaser() },
+  { label: 'Git Cross', value: 5, instant: new GitCross() },
 ];
 
 const itemTypes = Object.freeze(Object.values(ItemTypeEnum));
@@ -701,9 +703,13 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       this.loadItemSet();
     });
 
+    const itemChanges = new Set<ItemTypeEnum>();
     this.updateItemSubs = this.updateItemEvent
       .pipe(
-        tap(() => (this.isCalculating = true)),
+        tap((itemChange: ItemTypeEnum) => {
+          this.isCalculating = true;
+          itemChanges.add(itemChange);
+        }),
         debounceTime(750),
       )
       .subscribe(() => {
@@ -722,13 +728,15 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
           this.onClearItem('shield');
           return;
         }
-
-        this.setAmmoDropdownList();
+        if (itemChanges.has(ItemTypeEnum.weapon)) {
+          this.setAmmoDropdownList();
+        }
         this.calculate();
         this.saveItemSet();
         this.resetItemDescription();
         this.onSelectItemDescription();
         this.isCalculating = false;
+        itemChanges.clear();
       });
 
     this.updateMonsterListSubs = this.updateMonsterListEvent
@@ -1594,7 +1602,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
   private setEnchantList(mainItemId: number, positionEnum?: ItemTypeEnum | string) {
     // console.log({ itemId });
-    let { itemSubTypeId, location, aegisName, name } = this.items[mainItemId] ?? ({} as ItemModel);
+    let { itemTypeId, itemSubTypeId, location, aegisName, name } = this.items[mainItemId] ?? ({} as ItemModel);
     const enchants = getEnchants(aegisName) ?? getEnchants(name);
 
     const [_, e2, e3, e4] = Array.isArray(enchants) ? enchants : [];
@@ -1611,6 +1619,21 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         }
       }
     };
+
+    if (itemTypeId === ItemTypeId.WEAPON) {
+      this.weaponEnchant1List = (e2 ?? [])
+        .map((a: any) => this.mapEnchant.get(a))
+        .map((a: any) => ({ label: a.name, value: a.id }));
+      this.weaponEnchant2List = (e3 ?? [])
+        .map((a: any) => this.mapEnchant.get(a))
+        .map((a: any) => ({ label: a.name, value: a.id }));
+      this.weaponEnchant3List = (e4 ?? [])
+        .map((a: any) => this.mapEnchant.get(a))
+        .map((a: any) => ({ label: a.name, value: a.id }));
+      clearModel('weapon');
+
+      return;
+    }
 
     if (itemSubTypeId === ItemSubTypeId.Acc && positionEnum) {
       if (positionEnum === ItemTypeEnum.accLeft) {
@@ -1770,7 +1793,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       this.calculator.setItem(itemType as ItemTypeEnum, itemId, refine);
     }
 
-    this.updateItemEvent.next(1);
+    this.updateItemEvent.next(itemType);
   }
 
   onClearItem(itemType: string) {
@@ -1793,7 +1816,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       }
     }
 
-    this.updateItemEvent.next(1);
+    this.updateItemEvent.next(itemType);
   }
 
   onJobLevelChange() {
@@ -1827,7 +1850,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     const selectedType = this.selectedItemDesc;
     const itemId = this.equipItemIdItemTypeMap.get(selectedType);
     // const script = this.items[selectedId]?.script ?? {};
-    const bonus = this.itemSummary[selectedType] || this.itemSummary2[selectedType] || {};
+    const bonus = this.itemSummary?.[selectedType] || this.itemSummary2?.[selectedType] || {};
 
     this.itemId = itemId; //{ script, bonus };
     this.itemBonus = bonus; //{ script, bonus };

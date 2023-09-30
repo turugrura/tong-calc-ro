@@ -75,8 +75,10 @@ const ASPDTable = {
 } as const;
 
 export class Rebelion extends CharacterBase {
+  protected readonly CLASS_NAME = 'Rebellion';
   protected readonly BASE_ASPD = 156;
   protected readonly ASPDTable = ASPDTable;
+  protected readonly JobBonusTable = jobBonusTable;
 
   protected initialStatusPoint = 100;
   protected classNames = ['Gunslinger', 'Gunslinger Cls', 'Rebellion'];
@@ -185,21 +187,4 @@ export class Rebelion extends CharacterBase {
       ],
     },
   ];
-
-  get className(): string {
-    return 'Rebellion';
-  }
-
-  getJobBonusStatus(jobLevel: number) {
-    const [str, agi, vit, int, dex, luk] = jobBonusTable[jobLevel];
-
-    return {
-      str,
-      agi,
-      vit,
-      int,
-      dex,
-      luk,
-    };
-  }
 }
