@@ -1,3 +1,4 @@
+import { ClassName } from './_class-name';
 import { ActiveSkillModel, AtkSkillModel, CharacterBase, PassiveSkillModel } from './char-class.abstract';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
@@ -68,15 +69,8 @@ const jobBonusTable: Record<number, [number, number, number, number, number, num
   65: [2, 11, 7, 9, 8, 3],
 };
 
-const ASPDTable = {
-  priston: 4,
-  gatling: 6,
-} as const;
-
 export class SoulReaper extends CharacterBase {
-  protected readonly CLASS_NAME = 'SoulReaper';
-  protected readonly BASE_ASPD = 156;
-  protected readonly ASPDTable = ASPDTable;
+  protected readonly CLASS_NAME = ClassName.SoulReaper;
   protected readonly JobBonusTable = jobBonusTable;
 
   protected initialStatusPoint = 48;

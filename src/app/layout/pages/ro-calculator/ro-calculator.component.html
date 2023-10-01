@@ -89,7 +89,12 @@
             </div>
           </div>
           <div class="col-12">
-            <span class="p-inputgroup-addon">Available Point: {{ availablePoints }}</span>
+            <span class="p-inputgroup-addon"
+              >Available Point:
+              <span [className]="availablePoints < 0 ? 'ml-2 summary_monster_value px-1 font-semibold' : 'ml-2'">
+                {{ availablePoints }}</span
+              ></span
+            >
           </div>
         </div>
       </div>
@@ -306,7 +311,7 @@
                       {{
                         totalSummary?.weapon?.baseWeaponMatk +
                           (totalSummary?.weapon?.baseWeaponMatk > 0 ? totalSummary?.weapon?.refineBonus : 0) +
-                          totalSummary?.matk || 0
+                          (totalSummary?.matk || 0)
                       }}</span
                     >
                   </div>

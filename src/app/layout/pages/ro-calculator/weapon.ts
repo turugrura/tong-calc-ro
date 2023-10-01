@@ -96,13 +96,25 @@ const weaponUpgradeTable: Record<
 
 const weaponSubType = {
   Dagger: 'dagger',
+
   Bow: 'bow',
+
   'Gatling Gun': 'gun',
   Pistol: 'gun',
   Rifle: 'gun',
   Shotgun: 'gun',
   'Grenade Launcher': 'gun',
+
   Katar: 'katar',
+  Jur: 'katar',
+
+  'Novice Rod': 'mace',
+  Rod: 'mace',
+  Mace: 'mace',
+  'One-Handed Staff': 'staff',
+  'Two-Handed Staff': 'staff2h',
+  Book: 'book',
+  Knuckle: 'knuckle',
 };
 
 export class Weapon {

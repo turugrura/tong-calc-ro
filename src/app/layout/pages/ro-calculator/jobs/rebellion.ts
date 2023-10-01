@@ -1,3 +1,4 @@
+import { ClassName } from './_class-name';
 import { ActiveSkillModel, AtkSkillModel, CharacterBase, PassiveSkillModel } from './char-class.abstract';
 
 const jobBonusTable: [number, number, number, number, number, number][] = [
@@ -69,15 +70,8 @@ const jobBonusTable: [number, number, number, number, number, number][] = [
   [3, 6, 10, 8, 10, 5],
 ];
 
-const ASPDTable = {
-  priston: 4,
-  'Gatling Gun': 4,
-} as const;
-
 export class Rebelion extends CharacterBase {
-  protected readonly CLASS_NAME = 'Rebellion';
-  protected readonly BASE_ASPD = 156;
-  protected readonly ASPDTable = ASPDTable;
+  protected readonly CLASS_NAME = ClassName.Rebellion;
   protected readonly JobBonusTable = jobBonusTable;
 
   protected initialStatusPoint = 100;

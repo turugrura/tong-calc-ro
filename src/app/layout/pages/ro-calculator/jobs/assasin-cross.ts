@@ -1,3 +1,4 @@
+import { ClassName } from './_class-name';
 import {
   ActiveSkillModel,
   AtkSkillFormulaInput,
@@ -75,15 +76,8 @@ const jobBonusTable: Record<number, [number, number, number, number, number, num
   65: [8, 7, 8, 6, 5, 6],
 };
 
-const ASPDTable = {
-  priston: 4,
-  gatling: 6,
-} as const;
-
 export class AssasinCross extends CharacterBase {
-  protected readonly CLASS_NAME = 'AssasinCross';
-  protected readonly BASE_ASPD = 156;
-  protected readonly ASPDTable = ASPDTable;
+  protected readonly CLASS_NAME = ClassName.AssasinCross;
   protected readonly JobBonusTable = jobBonusTable;
 
   protected initialStatusPoint = 100;

@@ -1,3 +1,4 @@
+import { ClassName } from './_class-name';
 import {
   ActiveSkillModel,
   AtkSkillFormulaInput,
@@ -74,16 +75,8 @@ const jobBonusTable: Record<number, [number, number, number, number, number, num
   65: [2, 11, 7, 9, 8, 3],
 };
 
-const ASPDTable = {
-  bow: 9,
-  Bow: 9,
-  dagger: 10,
-} as const;
-
 export class Ranger extends CharacterBase {
-  protected readonly CLASS_NAME = 'Ranger';
-  protected readonly BASE_ASPD = 156;
-  protected readonly ASPDTable = ASPDTable;
+  protected readonly CLASS_NAME = ClassName.Ranger;
   protected readonly JobBonusTable = jobBonusTable;
 
   protected initialStatusPoint = 100;

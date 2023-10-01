@@ -126,6 +126,8 @@ export class Calculator {
   private buffBonus: Record<string, any> = {};
   private masteryAtkSkillBonus: Record<string, any> = {};
   private consumableBonuses: any[] = [];
+  private activeSkillIds: number[] = [];
+  private passiveSkillIds: number[] = [];
   private aspdPotion: number = undefined;
 
   private allStatus = {
@@ -376,6 +378,7 @@ export class Calculator {
   private readonly BASE_CRI_DMG = 1.4;
 
   private totalStatusMatk = 0;
+  private totalMasteryMatk = 0;
   private weaponMinMatk = 0;
   private weaponMaxMatk = 0;
   private totalMinMatk = 0;
@@ -628,6 +631,13 @@ export class Calculator {
     return this;
   }
 
+  setSkillIds({ activeSkillIds, passiveSkillIds }: { activeSkillIds: number[]; passiveSkillIds: number[] }) {
+    this.activeSkillIds = [...activeSkillIds];
+    this.passiveSkillIds = [...passiveSkillIds];
+
+    return this;
+  }
+
   setAspdPotion(aspdPotion: number) {
     this.aspdPotion = aspdPotion;
 
@@ -709,12 +719,12 @@ export class Calculator {
     return this;
   }
 
-  private getEquipAtkFromSkills() {
+  private getEquipAtkFromSkills(atkType: 'atk' | 'matk' = 'atk') {
     let atk = 0;
     for (const [skillName, scripts] of Object.entries(this.equipAtkSkillBonus)) {
       for (const [attr, value] of Object.entries(scripts)) {
         let val = Number(value);
-        if (attr === 'atk') {
+        if (attr === atkType) {
           atk += val;
         }
       }
@@ -723,12 +733,12 @@ export class Calculator {
     return atk;
   }
 
-  private getMasteryAtkFromSkills() {
+  private getMasteryAtkFromSkills(atkType: 'atk' | 'matk' = 'atk') {
     let atk = 0;
     for (const [skillName, scripts] of Object.entries(this.masteryAtkSkillBonus)) {
       for (const [attr, value] of Object.entries(scripts)) {
         let val = Number(value);
-        if (attr === 'atk') {
+        if (attr === atkType) {
           atk += val;
         }
       }
@@ -737,11 +747,25 @@ export class Calculator {
     return atk;
   }
 
-  private calcEquipAtk() {
-    const extraAtk = this.totalEquipStatus.atk;
+  private getBuffAtk(atkType: 'atk' | 'matk' = 'atk') {
+    let atk = 0;
+    for (const [skillName, scripts] of Object.entries(this.buffBonus)) {
+      for (const [attr, value] of Object.entries(scripts)) {
+        let val = Number(value);
+        if (attr === atkType) {
+          atk += val;
+        }
+      }
+    }
+
+    return atk;
+  }
+
+  private calcExtraAtk() {
+    const equipaAtk = this.totalEquipStatus.atk;
     const skillAtk = this.getEquipAtkFromSkills();
 
-    this.totalEquipAtk = skillAtk + (this.isUsedEDP() ? extraAtk * 4 : extraAtk);
+    this.totalEquipAtk = skillAtk + (this.isUsedEDP() ? equipaAtk * 4 : equipaAtk);
 
     return this;
   }
@@ -788,10 +812,10 @@ export class Calculator {
     return 100 + base + (this.totalEquipStatus[`${prefix}_${this.monsterData.element}`] ?? 0);
   }
 
-  private calcMonterTypeMultiplier() {
-    const base = this.totalEquipStatus.p_class_all;
+  private calcMonterTypeMultiplier(atkType: 'p' | 'm' = 'p') {
+    const base = this.totalEquipStatus[`${atkType}_class_all`];
 
-    return 100 + base + (this.totalEquipStatus[`p_class_${this.monsterData.type}`] ?? 0);
+    return 100 + base + (this.totalEquipStatus[`${atkType}_class_${this.monsterData.type}`] ?? 0);
   }
 
   private calcAtkGroupB(totalWeaponAtk?: number) {
@@ -841,6 +865,16 @@ export class Calculator {
     this.totalMasteryAtk = skillAtk;
   }
 
+  private calcMasteryMatk() {
+    const { race, element, size } = this.monsterData;
+    const skillAtk = Object.values(this.masteryAtkSkillBonus)
+      .map((a) => Number(a.matk || a[`matk_race_${race}`] || a[`matk_element_${element}`] || a[`matk_size_${size}`]))
+      .filter((a) => Number.isNaN(a) === false)
+      .reduce((sum, m) => sum + m, 0);
+
+    this.totalMasteryMatk = skillAtk;
+  }
+
   private calcBuffAtk() {
     // ex. camoflage
     this.totalBuffAtk = 0;
@@ -854,7 +888,15 @@ export class Calculator {
     // const additionalAtk = this.totalMasteryAtk + this.totalBuffAtk;
     // if (aAtk && bAtk) return calcPropMulti(aAtk) + calcPropMulti(bAtk) + extraAtk + additionalAtk;
 
-    const statusAtk = this.totalStatusAtk * 2 + this.totalMasteryAtk + this.totalBuffAtk;
+    const { element, race } = this.monsterData;
+    const masteryPassiveSkill = this._class.getMasteryAtk({
+      weaponData: this.weaponData,
+      passiveSkillIds: this.passiveSkillIds,
+      element,
+      race,
+      level: this.model.level,
+    });
+    const statusAtk = this.totalStatusAtk * 2 + this.totalMasteryAtk + masteryPassiveSkill + this.totalBuffAtk;
     const totalMinAtk = this.totalAMin + this.totalBMin + statusAtk;
     const totalMaxAtk = this.totalAMax + this.totalBMax + statusAtk;
     const totalMaxAtkOver = this.totalAMaxOver + this.totalBMaxOver + statusAtk;
@@ -943,8 +985,9 @@ export class Calculator {
       const dmgMultiApplied = rangedApplied * this.toPercent(dmgMultiplier + 100);
       const dmgHdef = hardDef ? this.floor(dmgMultiApplied * hardDef) : dmgMultiApplied;
       const dmgSdef = dmgHdef - softDef;
-      const baseCriApplied = dmgSdef * this.BASE_CRI_DMG;
+      const baseCriApplied = this.floor(dmgSdef * this.BASE_CRI_DMG);
       const finalApplied = this.applyFinalMultiplier(baseCriApplied);
+
       return finalApplied;
     };
 
@@ -1048,19 +1091,17 @@ export class Calculator {
       return finalApplied;
     };
 
-    const skillHit = skillData.hit || 1;
-    // this.possiblyDamages = Array.from({ length: this.totalWeaponAtkMax - this.totalWeaponAtkMin - 1 }).map((_, i) => {
-    //   const atk = this.totalWeaponAtkMin + i + 1;
-    //   const aAtk = this.calcAtkGroupA(atk) as number;
-    //   const bAtk = this.calcAtkGroupB(atk) as number;
-    //   const totalAtk = this.calcTotalAtk(aAtk, bAtk) as number;
-    //   const dmg = this._class.calcSkillDmgByTotalHit(skillFormula(totalAtk), skillData);
+    // const skillHit = skillData.hit || 1;
+    // this.possiblyDamages = Array.from({ length: this.weaponMaxMatk - this.weaponMinMatk - 1 }).map((_, i) => {
+    //   const wMatk = this.weaponMinMatk + i + 1;
+    //   const totalMatk = this.calcTotalMatk(wMatk);
+    //   const dmg = this._class.calcSkillDmgByTotalHit(skillFormula(totalMatk), skillData);
 
     //   if (skillHit > 1) {
-    //     return `From:${atk} => ${dmg} (${dmg / skillHit} x ${skillHit})`;
+    //     return `From:${wMatk} => ${dmg} (${dmg / skillHit} x ${skillHit})`;
     //   }
 
-    //   return `From:${atk} => ${dmg}`;
+    //   return `From:${wMatk} => ${dmg}`;
     // });
 
     const rawMaxDamage = skillFormula(this.totalMaxMatk);
@@ -1078,9 +1119,10 @@ export class Calculator {
     this.calcTotalPene();
     this.calcMonsterHardDef();
 
-    this.calcEquipAtk();
-    this.calcEquipMatk();
+    this.calcExtraAtk();
+    this.calcExtraMatk();
     this.calcMasteryAtk();
+    this.calcMasteryMatk();
     this.calcBuffAtk();
     this.calcStatusAtk();
     this.calcWeaponStatusAtk();
@@ -1095,10 +1137,10 @@ export class Calculator {
     return this;
   }
 
-  private calcEquipMatk() {
-    const extraAtk = this.totalEquipStatus.matk;
+  private calcExtraMatk() {
+    const equipAtk = this.totalEquipStatus.matk;
 
-    this.totalEquipMatk = extraAtk;
+    this.totalEquipMatk = equipAtk;
 
     return this;
   }
@@ -1112,27 +1154,31 @@ export class Calculator {
     this.weaponMaxMatk = rawWeaponMATK + variance + overUpgradeBonus;
   }
 
-  private calcTotalMatk() {
+  private calcTotalMatk(weaponMatk?: number) {
     const race = this.toPercent(this.calcRaceMultiplier('m'));
     const size = this.toPercent(this.calcSizeMultiplier('m'));
     const element = this.toPercent(this.calcElementMultiplier('m'));
-    const monsterType = this.toPercent(this.calcMonterTypeMultiplier());
+    const monsterType = this.toPercent(this.calcMonterTypeMultiplier('m'));
     const mysticAmp = 1;
     const { matkPercent } = this.totalEquipStatus;
 
     const formula = (atk: number) => {
       const mysticAmpApplied = this.floor(atk * mysticAmp + this.totalEquipMatk);
-      const percentApplied = this.floor(mysticAmpApplied * this.toPercent(100 + matkPercent));
-      const raceApplied = this.floor(percentApplied * race);
+      const raceApplied = this.floor(mysticAmpApplied * race);
       const sizeApplied = this.floor(raceApplied * size);
       const elementApplied = this.floor(sizeApplied * element);
       const classApplied = this.floor(elementApplied * monsterType);
+      const percentApplied = this.floor(classApplied * this.toPercent(100 + matkPercent));
 
-      return classApplied;
+      return percentApplied;
     };
+
+    if (weaponMatk) return formula(this.totalStatusMatk + weaponMatk);
 
     this.totalMinMatk = formula(this.totalStatusMatk + this.weaponMinMatk + 1);
     this.totalMaxMatk = formula(this.totalStatusMatk + this.weaponMaxMatk);
+
+    return this;
   }
 
   private calcConstantBonus(itemRefine: number, miniScript: string) {
@@ -1339,12 +1385,26 @@ export class Calculator {
       return { isValid: true, restCondition };
     }
 
-    const [unused, refineCond] = restCondition.match(/^REFINE\[(\d+)?]/) ?? [];
-    if (refineCond && itemRefine >= Number(refineCond)) {
-      if (restCondition.includes('---')) {
-        return { isValid: true, restCondition };
-      }
+    // const [unused, refineCond] = restCondition.match(/^REFINE\[(\d+)?]/) ?? [];
+    // if (refineCond && itemRefine >= Number(refineCond)) {
+    //   if (restCondition.includes('---')) {
+    //     return { isValid: true, restCondition };
+    //   }
 
+    //   restCondition = restCondition.replace(unused, '');
+    //   if (restCondition.startsWith('===')) {
+    //     restCondition = restCondition.replace('===', '');
+    //   }
+
+    //   return {
+    //     isValid: true,
+    //     restCondition,
+    //   };
+    // } else if (refineCond) {
+    //   return { isValid: false, restCondition };
+    // }
+    const [, unused, refineCond] = restCondition.match(/^(REFINE\[(\d+)?])[^-]/) ?? [];
+    if (refineCond && itemRefine >= Number(refineCond)) {
       restCondition = restCondition.replace(unused, '');
       if (restCondition.startsWith('===')) {
         restCondition = restCondition.replace('===', '');
@@ -1526,7 +1586,7 @@ export class Calculator {
     for (const [buffName, scripts] of Object.entries(this.buffBonus)) {
       for (const [attr, value] of Object.entries(scripts)) {
         let val = Number(value);
-        if (attr === 'atk' || attr === 'matk') val = 0;
+        // if (attr === 'atk' || attr === 'matk') val = 0;
 
         this.equipStatus[buffName] = { ...this.allStatus, [attr]: val };
 
@@ -1829,7 +1889,7 @@ export class Calculator {
         totalPhysicalPene: this.totalPhysicalPene,
         totalMagicalPene: this.totalMagicalPene,
         totalPene: this.isMagicalSkill ? this.totalMagicalPene : this.totalPhysicalPene,
-        totalEquipAtk: this.totalEquipStatus.atk - (this.equipStatus.ammo?.atk || 0) - this.getMasteryAtkFromSkills(),
+        totalEquipAtk: this.totalEquipStatus.atk - (this.equipStatus.ammo?.atk || 0),
         ammuAtk: this.equipStatus.ammo?.atk || 0,
         totalMasteryAtk: this.totalMasteryAtk,
         totalBuffAtk: this.totalBuffAtk,
@@ -1844,6 +1904,7 @@ export class Calculator {
         totalMinAtk: this.totalMinAtk,
         totalMaxAtk: this.totalMaxAtk,
         totalStatusMatk: this.totalStatusMatk,
+        totalMasteryMatk: this.totalMasteryMatk,
         weaponMinMatk: this.weaponMinMatk,
         weaponMaxMatk: this.weaponMaxMatk,
         totalMinMatk: this.totalMinMatk,

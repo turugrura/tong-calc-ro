@@ -39,6 +39,9 @@ import { getMonsterSpawnMap } from './monster-spawn-mapper';
 import { Rebelion } from './jobs/rebellion';
 import { ShadowChaser } from './jobs/shadow-chaser';
 import { GitCross } from './jobs/git-cross';
+import { Mage } from './jobs/mage';
+import { Sage } from './jobs/sage';
+import { ArchBishop } from './jobs/arch-bishop';
 
 enum CardPosition {
   Weapon = 0,
@@ -94,6 +97,8 @@ const Characters: DropdownModel[] = [
   { label: 'Soul Reaper', value: 3, instant: new SoulReaper() },
   { label: 'SC', value: 4, instant: new ShadowChaser() },
   { label: 'Git Cross', value: 5, instant: new GitCross() },
+  { label: 'Sage', value: 6, instant: new Sage() },
+  { label: 'Arch Bishop', value: 7, instant: new ArchBishop() },
 ];
 
 const itemTypes = Object.freeze(Object.values(ItemTypeEnum));
@@ -151,9 +156,9 @@ const toDropdownList = <T extends {}>(
 const skillBuffs = {
   impositioManus: {
     name: 'Impositio Manus',
-    label: 'Impositio Manus',
+    label: 'Imp Lv 5',
     dropdown: [
-      { label: 'Yes', value: 1, bonus: { atk: 25 } },
+      { label: 'Yes', value: 1, bonus: { atk: 25, matk: 25 } },
       { label: 'No', value: 2 },
     ],
   },
@@ -166,35 +171,35 @@ const skillBuffs = {
         value: 10,
         bonus: { str: 10, int: 10, dex: 10, hit: 20 },
       },
+      // {
+      //   label: 'Job 10',
+      //   value: 11,
+      //   bonus: { str: 11, int: 11, dex: 11, hit: 21 },
+      // },
       {
-        label: 'Lv 11',
-        value: 11,
-        bonus: { str: 11, int: 11, dex: 11, hit: 20 },
-      },
-      {
-        label: 'Lv 12',
+        label: 'Job 20',
         value: 12,
-        bonus: { str: 12, int: 12, dex: 12, hit: 20 },
+        bonus: { str: 12, int: 12, dex: 12, hit: 22 },
       },
       {
-        label: 'Lv 13',
+        label: 'Job 30',
         value: 13,
-        bonus: { str: 13, int: 13, dex: 13, hit: 20 },
+        bonus: { str: 13, int: 13, dex: 13, hit: 23 },
       },
       {
-        label: 'Lv 14',
+        label: 'Job 40',
         value: 14,
-        bonus: { str: 14, int: 14, dex: 14, hit: 20 },
+        bonus: { str: 14, int: 14, dex: 14, hit: 24 },
       },
       {
-        label: 'Lv 15',
+        label: 'Job 50',
         value: 15,
-        bonus: { str: 15, int: 15, dex: 15, hit: 20 },
+        bonus: { str: 15, int: 15, dex: 15, hit: 25 },
       },
       {
-        label: 'Lv 16',
+        label: 'Job 60',
         value: 16,
-        bonus: { str: 16, int: 16, dex: 16, hit: 20 },
+        bonus: { str: 16, int: 16, dex: 16, hit: 26 },
       },
     ],
   },
@@ -207,33 +212,33 @@ const skillBuffs = {
         value: 10,
         bonus: { agi: 12, aspdPercent: 10 },
       },
+      // {
+      //   label: 'Job 10',
+      //   value: 11,
+      //   bonus: { agi: 13, aspdPercent: 11 },
+      // },
       {
-        label: 'Lv 11',
-        value: 11,
-        bonus: { agi: 13, aspdPercent: 11 },
-      },
-      {
-        label: 'Lv 12',
+        label: 'Job 20',
         value: 12,
         bonus: { agi: 14, aspdPercent: 12 },
       },
       {
-        label: 'Lv 13',
+        label: 'Job 30',
         value: 13,
         bonus: { agi: 15, aspdPercent: 13 },
       },
       {
-        label: 'Lv 14',
+        label: 'Job 40',
         value: 14,
         bonus: { agi: 16, aspdPercent: 14 },
       },
       {
-        label: 'Lv 15',
+        label: 'Job 50',
         value: 15,
         bonus: { agi: 17, aspdPercent: 15 },
       },
       {
-        label: 'Lv 16',
+        label: 'Job 60',
         value: 16,
         bonus: { agi: 18, aspdPercent: 16 },
       },
@@ -526,7 +531,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   refineList = createNumberDropdownList(0, 20);
   shadowRefineList = createNumberDropdownList(0, 10);
   mainStatusList = createNumberDropdownList(1, 130);
-  levelList = createNumberDropdownList(99, 200);
+  levelList = createNumberDropdownList(80, 185);
   jobList = createNumberDropdownList(1, 65);
   propertyAtkList = Object.values(ElementType).map<DropdownModel>((a) => ({ label: a, value: a, element: a }));
 
@@ -866,6 +871,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     const calc = this.calculator
       .setModel(this.model)
       .setClass(this.selectedCharacter)
+      .setSkillIds({ activeSkillIds: activeSkills, passiveSkillIds: passiveSkills })
       .setEquipAtkSkillAtk(equipAtks)
       .setBuffBonus(buffs)
       .setMasterySkillAtk(masteryAtks)

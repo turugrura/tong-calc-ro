@@ -1,5 +1,7 @@
 import { ElementType } from '../element-type.const';
 import { Weapon } from '../weapon';
+import { AspdTable } from './_aspd-table';
+import { ClassName } from './_class-name';
 
 export type AtkSkillFormulaInput<T extends {} = {}> = T & {
   baseLevel: number;
@@ -56,6 +58,7 @@ export interface SkillBonusResult {
 
 export interface AspdInput {
   weapon: Weapon;
+  isEquipShield?: boolean;
   aspd: number;
   aspdPercent: number;
   totalAgi: number;
@@ -69,9 +72,7 @@ export interface AspdInput {
 export abstract class CharacterBase {
   private allClass = 'all';
 
-  protected abstract readonly CLASS_NAME: string;
-  protected abstract readonly BASE_ASPD: number;
-  protected abstract readonly ASPDTable: Record<string, number>;
+  protected abstract readonly CLASS_NAME: ClassName;
   protected abstract readonly JobBonusTable: Record<number, [number, number, number, number, number, number]>;
 
   protected abstract initialStatusPoint: number;
@@ -83,7 +84,7 @@ export abstract class CharacterBase {
   /**
    * For item bonus condition
    */
-  get className(): string {
+  get className() {
     return this.CLASS_NAME;
   }
 
@@ -118,10 +119,10 @@ export abstract class CharacterBase {
 
     const { activeIds, passiveIds } = params;
     this._activeSkillList.forEach((skill, index) => {
-      const { bonus, isUse, skillLv } = skill.dropdown.find((x) => x.value === activeIds[index]) ?? {};
+      const { bonus, isUse, skillLv, value } = skill.dropdown.find((x) => x.value === activeIds[index]) ?? {};
       if (!isUse) return;
 
-      learnedSkillMap.set(skill.name, skillLv);
+      learnedSkillMap.set(skill.name, skillLv ?? Number(value));
       skillNames.push(skill.name);
       if (!bonus) return;
 
@@ -134,10 +135,11 @@ export abstract class CharacterBase {
     });
 
     this._passiveSkillList.forEach((skill, index) => {
-      const { bonus, isUse, skillLv } = (skill.dropdown as any[]).find((x) => x.value === passiveIds[index]) ?? {};
+      const { bonus, isUse, value, skillLv } =
+        (skill.dropdown as any[]).find((x) => x.value === passiveIds[index]) ?? {};
       if (!isUse) return;
 
-      learnedSkillMap.set(skill.name, skillLv);
+      learnedSkillMap.set(skill.name, skillLv ?? Number(value));
       skillNames.push(skill.name);
       if (!bonus) return;
 
@@ -152,10 +154,12 @@ export abstract class CharacterBase {
     return { skillNames, equipAtks, masteryAtks, learnedSkillMap };
   }
 
-  private calcBaseAspd(weaponType: string): { baseAspd: number; shieldPenalty: number } {
+  private calcBaseAspd(weaponSubType: string): { baseAspd: number; shieldPenalty: number } {
+    const data = AspdTable[this.className] || { base: 156, shield: 0 };
+
     return {
-      baseAspd: this.BASE_ASPD - (this.ASPDTable[weaponType] || 0),
-      shieldPenalty: 0,
+      baseAspd: data.base + (data[weaponSubType] || 0),
+      shieldPenalty: data.shield,
     };
   }
 
@@ -170,7 +174,7 @@ export abstract class CharacterBase {
 
   calcAspd(a: AspdInput): number {
     const potion = { 645: 4, 656: 6, 657: 9 };
-    const { weapon, aspd, aspdPercent, totalAgi, totalDex, potionAspd, skillAspd } = a;
+    const { weapon, isEquipShield, aspd, aspdPercent, totalAgi, totalDex, potionAspd, skillAspd } = a;
     const aspdByPotion = potion[potionAspd] || 0;
 
     const { rangeType, typeName } = weapon.data;
@@ -178,7 +182,7 @@ export abstract class CharacterBase {
     const isRange = rangeType === 'range';
     const statAspd = Math.sqrt((totalAgi * totalAgi) / 2 + (totalDex * totalDex) / (isRange ? 7 : 5)) / 4;
     const potionSkillAspd = ((aspdByPotion + skillAspd) * totalAgi) / 200;
-    const rawCalcAspd = Math.floor(statAspd + potionSkillAspd + shieldPenalty);
+    const rawCalcAspd = Math.floor(statAspd + potionSkillAspd + (isEquipShield ? shieldPenalty : 0));
     const baseAspd2 = baseAspd + rawCalcAspd;
     const equip = Math.floor((195 - baseAspd2) * (aspdPercent * 0.01));
     const final = Math.min(baseAspd2 + equip + aspd, 193);
@@ -219,5 +223,9 @@ export abstract class CharacterBase {
       dex,
       luk,
     };
+  }
+
+  getMasteryAtk(a: any) {
+    return 0;
   }
 }

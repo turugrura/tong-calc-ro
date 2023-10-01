@@ -1,3 +1,4 @@
+import { ClassName } from './_class-name';
 import { AssasinCross } from './assasin-cross';
 import { ActiveSkillModel, AtkSkillModel, CharacterBase, PassiveSkillModel } from './char-class.abstract';
 
@@ -69,15 +70,8 @@ const jobBonusTable: Record<number, [number, number, number, number, number, num
   '65': [8, 10, 6, 5, 8, 3],
 };
 
-const ASPDTable = {
-  priston: 4,
-  gatling: 6,
-} as const;
-
 export class GitCross extends CharacterBase {
-  protected readonly CLASS_NAME = 'GuillotineCross';
-  protected readonly BASE_ASPD = 156;
-  protected readonly ASPDTable = ASPDTable;
+  protected readonly CLASS_NAME = ClassName.GuillotineCross;
   protected readonly JobBonusTable = jobBonusTable;
 
   protected initialStatusPoint = 100;
