@@ -24,11 +24,9 @@
 
 # Issues
 
-| todo                                          | status |
-| --------------------------------------------- | ------ |
-| Ranger improve con and falcon eye, wrong calc | -      |
-| ASPD not 100%                                 | -      |
-| ATK not 100%                                  | -      |
-| Monster property multipiler wrong calc        | -      |
-| Related option dont reset after swith item    | -      |
-| x                                             | -      |
+| todo                   | status |
+| ---------------------- | ------ |
+| MATK สูตรยังไม่ตรง     | -      |
+| แพ้/ชนะ ธาตุดาเมจแกว่ง | -      |
+|                        | -      |
+| x                      | -      |
