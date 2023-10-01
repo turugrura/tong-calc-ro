@@ -26,7 +26,7 @@ export class LayoutService {
   config: AppConfig = {
     ripple: localStorage.getItem('ripple') === 'true',
     inputStyle: localStorage.getItem('inputStyle') || 'outlined',
-    menuMode: localStorage.getItem('menuMode') || 'static',
+    menuMode: localStorage.getItem('menuMode') || 'overlay',
     colorScheme: 'light',
     theme: 'lara-light-indigo',
     scale: +localStorage.getItem('scale') || 14,
@@ -62,8 +62,7 @@ export class LayoutService {
     }
 
     if (this.isDesktop()) {
-      this.state.staticMenuDesktopInactive =
-        !this.state.staticMenuDesktopInactive;
+      this.state.staticMenuDesktopInactive = !this.state.staticMenuDesktopInactive;
     } else {
       this.state.staticMenuMobileActive = !this.state.staticMenuMobileActive;
 

@@ -407,7 +407,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
   model = {
     class: 1,
-    level: 1,
+    level: 99,
     jobLevel: 1,
     str: 1,
     itemStr: undefined,
@@ -1173,6 +1173,10 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   private setModelByJSONString(savedModel: string | any) {
     const savedData = typeof savedModel === 'string' ? JSON.parse(savedModel || '{}') : savedModel;
     const model = this.cloneModel(this.emptyModel);
+    if (!savedData) {
+      this.model = model;
+      return;
+    }
 
     for (const [key, initialValue] of Object.entries(this.emptyModel)) {
       const isAttrArray = Array.isArray(initialValue);
@@ -1271,7 +1275,8 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   }
 
   private setClassInstant() {
-    this.selectedCharacter = Characters.find((a) => a.value === this.model.class)?.['instant'] as CharacterBase;
+    const c = Characters.find((a) => a.value === this.model.class)?.['instant'] as CharacterBase;
+    this.selectedCharacter = c || Characters[0]['instant'];
   }
 
   private setClassSkill() {
