@@ -1,7 +1,13 @@
 import { ElementType } from '../element-type.const';
 import { Weapon } from '../weapon';
 import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillModel, CharacterBase, PassiveSkillModel } from './char-class.abstract';
+import {
+  ActiveSkillModel,
+  AtkSkillFormulaInput,
+  AtkSkillModel,
+  CharacterBase,
+  PassiveSkillModel,
+} from './char-class.abstract';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   '1': [0, 0, 0, 1, 0, 0],
@@ -105,8 +111,56 @@ export class ArchBishop extends CharacterBase {
       },
       levelList: [{ label: 'Lv 1', value: 'Holy Light==1' }],
     },
+    {
+      label: 'Judex Lv 10',
+      name: 'Judex',
+      fct: 0.5,
+      vct: 2,
+      acd: 0.58,
+      cd: 0,
+      isMatk: true,
+      element: ElementType.Holy,
+      value: 'Judex==1',
+      formular: (a: AtkSkillFormulaInput): number => {
+        const { baseLevel, skillLevel, usedSkillSet } = a;
+
+        return (300 + skillLevel * 40) * (baseLevel / 100);
+      },
+      levelList: [{ label: 'Lv 10', value: 'Judex==10' }],
+    },
+    {
+      label: 'Adoramus Lv 10',
+      name: 'Adoramus',
+      fct: 0.5,
+      vct: 2,
+      acd: 0.5,
+      cd: 2.5,
+      isMatk: true,
+      element: ElementType.Holy,
+      value: 'Adoramus==10',
+      formular: (a: AtkSkillFormulaInput): number => {
+        const { baseLevel, skillLevel, usedSkillSet } = a;
+
+        return (330 + skillLevel * 70) * (baseLevel / 100);
+      },
+      levelList: [{ label: 'Lv 10', value: 'Adoramus==10' }],
+    },
   ];
-  protected readonly _activeSkillList: ActiveSkillModel[] = [];
+  protected readonly _activeSkillList: ActiveSkillModel[] = [
+    {
+      inputType: 'dropdown',
+      label: 'Magnificat',
+      name: 'Magnificat',
+      dropdown: [
+        { label: '-', isUse: false, value: 0 },
+        { label: 'Lv 1', isUse: true, value: 1 },
+        { label: 'Lv 2', isUse: true, value: 2 },
+        { label: 'Lv 3', isUse: true, value: 3 },
+        { label: 'Lv 4', isUse: true, value: 4 },
+        { label: 'Lv 5', isUse: true, value: 5 },
+      ],
+    },
+  ];
   protected readonly _passiveSkillList: PassiveSkillModel[] = [
     {
       inputType: 'dropdown',

@@ -29,6 +29,8 @@ enum AttackDelay {
   _4 = 'Attack_Delay_4',
 }
 enum Spell {
+  _1 = 'Spell1',
+  _2 = 'Spell2',
   _3 = 'Spell3',
   _4 = 'Spell4',
   _5 = 'Spell5',
@@ -268,6 +270,39 @@ const tempHead3 = [
   ...tempHead4,
 ];
 
+const edda4 = [
+  EA._1,
+  EA._2,
+  EA._3,
+  FS._4,
+  FS._5,
+  FS._6,
+  Sharp._1,
+  Sharp._2,
+  Sharp._3,
+  Spell._1,
+  Spell._2,
+  Spell._3,
+  Cri._1,
+  Cri._2,
+  Cri._3,
+];
+const edda3 = [
+  'Seyren_Memory',
+  'Harword_Memory',
+  'Eremes_Memory',
+  'Katrinn_Memory',
+  'Magaleta_Memory',
+  'Shecil_Memory',
+  'Randel_Memory',
+  'Flamel_Memory',
+  'Gertie_Memory',
+  'Celia_Memory',
+  'Chen_Memory',
+  'Tren_Memory',
+  'Alpho_Memory',
+];
+
 interface EntTable {
   name: string;
   enchants: [null, any[], any[], any[]];
@@ -320,6 +355,7 @@ const enchantTable: EntTable[] = [
 
   { name: 'Old_Camo_RabbitHood', enchants: [null, labHead2, BaseState._3_5, BaseState._3_5] },
   { name: 'Old_Circlet_Of_Bone', enchants: [null, labHead2, BaseState._3_5, BaseState._3_5] },
+  { name: 'Old_Mitra', enchants: [null, labHead2, BaseState._3_5, BaseState._3_5] },
 
   { name: 'S_Circlet_Of_Time_GC', enchants: [null, labHead2, tempHead3, tempHead4] },
   { name: 'S_Circlet_Of_Time_SC', enchants: [null, labHead2, tempHead3, tempHead4] },
@@ -329,6 +365,11 @@ const enchantTable: EntTable[] = [
   { name: 'S_Circlet_Of_Time_RL', enchants: [null, labHead2, tempHead3, tempHead4] },
 
   { name: 'Katar_170', enchants: [null, null, ea35, ea35] },
+
+  { name: 'Sharp_Star_Bow', enchants: [null, null, edda3, edda4] },
+  { name: 'Aiming_Bow', enchants: [null, null, edda3, edda4] },
+  { name: 'Falken_Shooter', enchants: [null, null, edda3, edda4] },
+  { name: 'Wind_Gale', enchants: [null, null, edda3, edda4] },
 ];
 
 const map = new Map(enchantTable.map((a) => [a.name, a.enchants]));

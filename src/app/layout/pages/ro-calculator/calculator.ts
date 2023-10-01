@@ -6,6 +6,7 @@ import { ItemModel } from './item.model';
 import { MonsterModel } from './monster.model';
 import { Weapon } from './weapon';
 import { PoisionPsoEleTable } from './poison-psdo-ele-table';
+import { AllowShieldTable } from './allow-shield-table';
 
 // const getItem = (id: number) => items[id] as ItemModel;
 const refinableItemTypes = [
@@ -120,6 +121,7 @@ export class Calculator {
   private equipItemName = new Map<ItemTypeEnum, string>();
   private equipItemNameSet = new Set<string>();
   private mapRefine = new Map<ItemTypeEnum, number>();
+  private mapItemNameRefine = new Map<string, number>();
   private usedSkillNames = new Set<string>();
   private learnedSkillMap = new Map<string, number>();
   private equipAtkSkillBonus: Record<string, any> = {};
@@ -472,12 +474,7 @@ export class Calculator {
   }
 
   isAllowShield() {
-    const allowMap = {
-      knife: true,
-      dagger: true,
-    };
-
-    return allowMap[this.weaponData.data?.subTypeName] || false;
+    return AllowShieldTable[this.weaponData.data?.subTypeName] || false;
   }
 
   getAmmuSubTypeId() {
@@ -575,6 +572,11 @@ export class Calculator {
     this.equipItemNameSet = new Set(this.equipItemName.values());
     this.mapRefine.set(ItemTypeEnum.weapon, refine);
     this.weaponData = new Weapon().set(itemData, refine);
+
+    this.mapItemNameRefine = new Map();
+    for (const [itemType, itemName] of this.equipItemName) {
+      this.mapItemNameRefine.set(itemName, this.mapRefine.get(itemType));
+    }
 
     return this;
   }
@@ -1289,6 +1291,17 @@ export class Calculator {
       return calc(totalRefine, Number(refineCond));
     }
 
+    // REFINE_NAME[Judgment Slasher,Repent Slasher==3]---5
+    const [, itemNames, refineCond2] = condition.match(/^REFINE_NAME\[(\D+)==(\d+)?]/) ?? [];
+    if (refineCond2) {
+      const totalRefine = itemNames
+        .split(',')
+        .map((itemName) => this.mapItemNameRefine.get(itemName))
+        .reduce((sum, cur) => sum + (cur || 0), 0);
+
+      return calc(totalRefine, Number(refineCond2));
+    }
+
     return 0;
   }
 
@@ -1307,6 +1320,17 @@ export class Calculator {
       const isPass = this.model[status] >= Number(statusCondition);
 
       return { isValid: isPass, restCondition: raw };
+    }
+
+    //WEAPON_LEVEL
+    const [toRemoveA, wLevel] = restCondition.match(/WEAPON_LEVEL\[(\d+)]/) ?? [];
+    if (wLevel) {
+      const wLv = Number(wLevel);
+      const isValid = this.weaponData.data.baseWeaponLevel === wLv;
+      if (!isValid) return { isValid, restCondition };
+
+      restCondition = restCondition.replace(toRemoveA, '');
+      if (restCondition.startsWith('===')) return { isValid, restCondition: restCondition.replace('===', '') };
     }
 
     const [_, weaponType] = script.match(/^\[weaponType=(.+?)\]/) ?? [];
