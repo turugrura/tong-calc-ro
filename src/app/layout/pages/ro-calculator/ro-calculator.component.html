@@ -1874,20 +1874,8 @@
       </div>
     </div>
 
-    <!-- Costume -->
+    <!-- Costume Upper / Shadow Weapon -->
     <div class="grid grid-nogutter">
-      <div class="col-3">
-        <p-dropdown
-          inputId="costumeUpper"
-          [autoDisplayFirst]="false"
-          [options]="[]"
-          [filter]="true"
-          filterBy="label"
-          [disabled]="true"
-          [showClear]="true"
-          placeholder="Costume Upper"
-        ></p-dropdown>
-      </div>
       <div class="col-3">
         <p-dropdown
           inputId="costumeEnchantUpper"
@@ -1899,7 +1887,7 @@
           [showClear]="true"
           [disabled]="costumeEnhUpperList.length === 0"
           (onChange)="onSelectItem('costumeEnchantUpper', $event.value)"
-          placeholder="Enchant"
+          placeholder="Upper Enchant"
         >
           <ng-template let-item pTemplate="selectedItem">
             <div class="flex gap-1" *ngIf="model.costumeEnchantUpper">
@@ -1915,137 +1903,7 @@
           </ng-template>
         </p-dropdown>
       </div>
-    </div>
-    <!-- Middle -->
-    <div class="grid grid-nogutter">
-      <div class="col-3">
-        <p-dropdown
-          inputId="costumeMiddle"
-          [autoDisplayFirst]="false"
-          [options]="[]"
-          [filter]="true"
-          filterBy="label"
-          [disabled]="true"
-          [showClear]="true"
-          placeholder="Costume Middle"
-        ></p-dropdown>
-      </div>
-      <div class="col-3">
-        <p-dropdown
-          inputId="costumeEnchantMiddle"
-          [autoDisplayFirst]="false"
-          [options]="costumeEnhMiddleList"
-          [filter]="true"
-          filterBy="label"
-          [(ngModel)]="model.costumeEnchantMiddle"
-          [showClear]="true"
-          [disabled]="costumeEnhMiddleList.length === 0"
-          (onChange)="onSelectItem('costumeEnchantMiddle', $event.value)"
-          placeholder="Enchant"
-        >
-          <ng-template let-item pTemplate="selectedItem">
-            <div class="flex gap-1" *ngIf="model.costumeEnchantMiddle">
-              <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
-              <div>{{ item.label }}</div>
-            </div>
-          </ng-template>
-          <ng-template let-item pTemplate="item">
-            <div class="flex gap-1">
-              <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
-              <div>{{ item.label }}</div>
-            </div>
-          </ng-template>
-        </p-dropdown>
-      </div>
-    </div>
-    <!-- Lower -->
-    <div class="grid grid-nogutter">
-      <div class="col-3">
-        <p-dropdown
-          inputId="costumeLower"
-          [autoDisplayFirst]="false"
-          [options]="[]"
-          [filter]="true"
-          filterBy="label"
-          [disabled]="true"
-          [showClear]="true"
-          placeholder="Costume Lower"
-        ></p-dropdown>
-      </div>
-      <div class="col-3">
-        <p-dropdown
-          inputId="costumeEnchantLower"
-          [autoDisplayFirst]="false"
-          [options]="costumeEnhLowerList"
-          [filter]="true"
-          filterBy="label"
-          [(ngModel)]="model.costumeEnchantLower"
-          [showClear]="true"
-          [disabled]="costumeEnhLowerList.length === 0"
-          (onChange)="onSelectItem('costumeEnchantLower', $event.value)"
-          placeholder="Enchant"
-        >
-          <ng-template let-item pTemplate="selectedItem">
-            <div class="flex gap-1" *ngIf="model.costumeEnchantLower">
-              <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
-              <div>{{ item.label }}</div>
-            </div>
-          </ng-template>
-          <ng-template let-item pTemplate="item">
-            <div class="flex gap-1">
-              <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
-              <div>{{ item.label }}</div>
-            </div>
-          </ng-template>
-        </p-dropdown>
-      </div>
-    </div>
-    <!-- Garment -->
-    <div class="grid grid-nogutter">
-      <div class="col-3">
-        <p-dropdown
-          inputId="costumeGarment"
-          [autoDisplayFirst]="false"
-          [options]="[]"
-          [filter]="true"
-          filterBy="label"
-          [disabled]="true"
-          [showClear]="true"
-          placeholder="Costume Garment"
-        ></p-dropdown>
-      </div>
-      <div class="col-3">
-        <p-dropdown
-          inputId="costumeEnchantGarment"
-          [autoDisplayFirst]="false"
-          [options]="costumeEnhGarmentList"
-          [filter]="true"
-          filterBy="label"
-          [(ngModel)]="model.costumeEnchantGarment"
-          [showClear]="true"
-          [disabled]="costumeEnhGarmentList.length === 0"
-          (onChange)="onSelectItem('costumeEnchantGarment', $event.value)"
-          placeholder="Enchant"
-        >
-          <ng-template let-item pTemplate="selectedItem">
-            <div class="flex gap-1" *ngIf="model.costumeEnchantGarment">
-              <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
-              <div>{{ item.label }}</div>
-            </div>
-          </ng-template>
-          <ng-template let-item pTemplate="item">
-            <div class="flex gap-1">
-              <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
-              <div>{{ item.label }}</div>
-            </div>
-          </ng-template>
-        </p-dropdown>
-      </div>
-    </div>
-
-    <!-- Shadow -->
-    <div class="grid grid-nogutter">
-      <div class="col-3">
+      <div class="col-3 ml-4">
         <p-dropdown
           inputId="shadowWeapon"
           [autoDisplayFirst]="false"
@@ -2103,8 +1961,37 @@
         ></p-cascadeSelect>
       </div>
     </div>
+
+    <!-- Costume Middle / Shadow Armor -->
     <div class="grid grid-nogutter">
       <div class="col-3">
+        <p-dropdown
+          inputId="costumeEnchantMiddle"
+          [autoDisplayFirst]="false"
+          [options]="costumeEnhMiddleList"
+          [filter]="true"
+          filterBy="label"
+          [(ngModel)]="model.costumeEnchantMiddle"
+          [showClear]="true"
+          [disabled]="costumeEnhMiddleList.length === 0"
+          (onChange)="onSelectItem('costumeEnchantMiddle', $event.value)"
+          placeholder="Middle Enchant"
+        >
+          <ng-template let-item pTemplate="selectedItem">
+            <div class="flex gap-1" *ngIf="model.costumeEnchantMiddle">
+              <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+          <ng-template let-item pTemplate="item">
+            <div class="flex gap-1">
+              <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
+      </div>
+      <div class="col-3 ml-4">
         <p-dropdown
           inputId="shadowArmor"
           [autoDisplayFirst]="false"
@@ -2162,8 +2049,37 @@
         ></p-cascadeSelect>
       </div>
     </div>
+
+    <!-- Costume Lower / Shadow Shield -->
     <div class="grid grid-nogutter">
       <div class="col-3">
+        <p-dropdown
+          inputId="costumeEnchantLower"
+          [autoDisplayFirst]="false"
+          [options]="costumeEnhLowerList"
+          [filter]="true"
+          filterBy="label"
+          [(ngModel)]="model.costumeEnchantLower"
+          [showClear]="true"
+          [disabled]="costumeEnhLowerList.length === 0"
+          (onChange)="onSelectItem('costumeEnchantLower', $event.value)"
+          placeholder="Lower Enchant"
+        >
+          <ng-template let-item pTemplate="selectedItem">
+            <div class="flex gap-1" *ngIf="model.costumeEnchantLower">
+              <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+          <ng-template let-item pTemplate="item">
+            <div class="flex gap-1">
+              <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
+      </div>
+      <div class="col-3 ml-4">
         <p-dropdown
           inputId="shadowShield"
           [autoDisplayFirst]="false"
@@ -2221,8 +2137,37 @@
         ></p-cascadeSelect>
       </div>
     </div>
+
+    <!-- Costume Garment / Shadow Boot -->
     <div class="grid grid-nogutter">
       <div class="col-3">
+        <p-dropdown
+          inputId="costumeEnchantGarment"
+          [autoDisplayFirst]="false"
+          [options]="costumeEnhGarmentList"
+          [filter]="true"
+          filterBy="label"
+          [(ngModel)]="model.costumeEnchantGarment"
+          [showClear]="true"
+          [disabled]="costumeEnhGarmentList.length === 0"
+          (onChange)="onSelectItem('costumeEnchantGarment', $event.value)"
+          placeholder="Garment Enchant"
+        >
+          <ng-template let-item pTemplate="selectedItem">
+            <div class="flex gap-1" *ngIf="model.costumeEnchantGarment">
+              <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+          <ng-template let-item pTemplate="item">
+            <div class="flex gap-1">
+              <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
+      </div>
+      <div class="col-3 ml-4">
         <p-dropdown
           inputId="shadowBoot"
           [autoDisplayFirst]="false"
@@ -2280,8 +2225,11 @@
         ></p-cascadeSelect>
       </div>
     </div>
+
+    <!-- Shadow Earring -->
     <div class="grid grid-nogutter">
-      <div class="col-3">
+      <div class="col-3"></div>
+      <div class="col-3 ml-4">
         <p-dropdown
           inputId="shadowEarning"
           [autoDisplayFirst]="false"
@@ -2292,7 +2240,7 @@
           [showClear]="true"
           (onChange)="onSelectItem('shadowEarning', $event.value)"
           (onClear)="onClearItem('shadowEarning')"
-          placeholder="Shadow Earning"
+          placeholder="Shadow Earring"
         >
           <ng-template let-item pTemplate="selectedItem">
             <div class="flex gap-1" *ngIf="model.shadowEarning">
@@ -2339,8 +2287,11 @@
         ></p-cascadeSelect>
       </div>
     </div>
+
+    <!-- Shadow Pendant -->
     <div class="grid grid-nogutter">
-      <div class="col-3">
+      <div class="col-3"></div>
+      <div class="col-3 ml-4">
         <p-dropdown
           inputId="shadowPendant"
           [autoDisplayFirst]="false"
