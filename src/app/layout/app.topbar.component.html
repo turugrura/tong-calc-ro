@@ -1,19 +1,23 @@
 <div class="layout-topbar">
-    <a class="layout-topbar-logo" routerLink="">
+  <!-- <a class="layout-topbar-logo" routerLink="">
         <img src="assets/layout/images/{{layoutService.config.colorScheme === 'light' ? 'logo-dark' : 'logo-white'}}.svg" alt="logo">
         <span>SAKAI</span>
-    </a>
+    </a> -->
 
-    <button #menubutton class="p-link layout-menu-button layout-topbar-button" (click)="layoutService.onMenuToggle()">
+  <!-- <button #menubutton class="p-link layout-menu-button layout-topbar-button" (click)="layoutService.onMenuToggle()">
         <i class="pi pi-bars"></i>
-    </button>
+    </button> -->
 
-    <button #topbarmenubutton class="p-link layout-topbar-menu-button layout-topbar-button" (click)="layoutService.showProfileSidebar()">
+  <!-- <button #topbarmenubutton class="p-link layout-topbar-menu-button layout-topbar-button" (click)="layoutService.showProfileSidebar()">
         <i class="pi pi-ellipsis-v"></i>
-    </button>
+    </button> -->
 
-    <div #topbarmenu class="layout-topbar-menu" [ngClass]="{'layout-topbar-menu-mobile-active': layoutService.state.profileSidebarVisible}">
-        <button class="p-link layout-topbar-button">
+  <div
+    #topbarmenu
+    class="layout-topbar-menu"
+    [ngClass]="{ 'layout-topbar-menu-mobile-active': layoutService.state.profileSidebarVisible }"
+  >
+    <!-- <button class="p-link layout-topbar-button">
             <i class="pi pi-calendar"></i>
             <span>Calendar</span>
         </button>
@@ -24,6 +28,27 @@
         <button class="p-link layout-topbar-button" [routerLink]="'/documentation'">
             <i class="pi pi-cog"></i>
             <span>Settings</span>
-        </button>
+        </button> -->
+    <button
+      class="p-button-info p-button-sm p-button-rounded p-button-outlined"
+      icon="pi pi-heart"
+      pButton
+      pRipple
+      label="สนับสนุน"
+      (click)="showDialog()"
+    ></button>
+  </div>
+  <p-dialog header="สนับสนุน" [(visible)]="visible" [style]="{ 'min-width': '250px' }">
+    <div class="card flex flex-column align-items-center gap-2 flex-wrap">
+      <div>
+        <img src="assets/demo/images/others/qr.jpg" alt="QR" style="width: 250px" />
+      </div>
+      <div class="font-bold" style="background-color: var(--surface-0); color: var(--green-400)">ขอบคุณครับบบบ</div>
+      <div>
+        <a href="https://web.facebook.com/zfehu.oivgwhy" target="_blank" rel="noreferrer noopener">
+          <p-chip label="Tong Aphisit" icon="pi pi-facebook"></p-chip>
+        </a>
+      </div>
     </div>
+  </p-dialog>
 </div>
