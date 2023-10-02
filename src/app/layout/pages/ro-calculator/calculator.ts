@@ -492,6 +492,10 @@ export class Calculator {
     return n * 0.01;
   }
 
+  private toPreventNegativeDmg(n: number) {
+    return n < 0 ? 1 : n;
+  }
+
   private floor(n: number, digit = 0) {
     if (digit > 0) {
       const pow = Math.pow(10, digit);
@@ -970,7 +974,8 @@ export class Calculator {
       const dmgHdef = this.floor(dmgMultiApplied * hardDef);
       const dmgSdef = dmgHdef - softDef;
       const finalApplied = this.applyFinalMultiplier(dmgSdef);
-      return finalApplied;
+
+      return this.toPreventNegativeDmg(finalApplied);
     };
 
     const basicMinDamage = formula(this.totalMinAtk);
@@ -995,7 +1000,7 @@ export class Calculator {
       const baseCriApplied = this.floor(dmgSdef * this.BASE_CRI_DMG);
       const finalApplied = this.applyFinalMultiplier(baseCriApplied);
 
-      return finalApplied;
+      return this.toPreventNegativeDmg(finalApplied);
     };
 
     const criMinDamage = formula(this.totalMaxAtk);
@@ -1027,7 +1032,7 @@ export class Calculator {
         const baseCriApplied = canCri ? this.floor(hDefApplied * this.BASE_CRI_DMG) : hDefApplied;
         const finalApplied = this.applyFinalMultiplier(baseCriApplied);
 
-        return finalApplied;
+        return this.toPreventNegativeDmg(finalApplied);
       }
 
       const criApplied = this.floor(totalAtk * criMultiplier);
@@ -1039,7 +1044,7 @@ export class Calculator {
       const baseCriApplied = canCri ? this.floor(hDefApplied * this.BASE_CRI_DMG) : hDefApplied;
       const finalApplied = this.applyFinalMultiplier(baseCriApplied);
 
-      return finalApplied;
+      return this.toPreventNegativeDmg(finalApplied);
     };
 
     const skillHit = skillData.hit || 1;
@@ -1095,7 +1100,7 @@ export class Calculator {
       const hDefApplied = this.floor(propertyApplied * hardDef);
       const finalApplied = this.floor(hDefApplied * this.toPercent(finalDmgMultiplier + 100));
 
-      return finalApplied;
+      return this.toPreventNegativeDmg(finalApplied);
     };
 
     // const skillHit = skillData.hit || 1;

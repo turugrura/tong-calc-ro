@@ -106,6 +106,43 @@
       ]
     }
   },
+  "1631": {
+    "id": 1631,
+    "aegisName": "Holy_Stick",
+    "name": "Holy Stick [1]",
+    "unidName": "Staff",
+    "resName": "홀리스틱",
+    "description": "ไม้เท้าศักดิ์สิทธิ์ที่ทำขึ้นจากหินแห่ง Odin เหมาะสำหรับนักบวช\nMATK + 140\nลด delay ในการร่ายสกิล Holy Light, Turn Undead, Magnus Exorcismus ลง 25%\nประเภท : ^777777Rod^000000\nพลังโจมตี : ^77777750^000000\nน้ำหนัก : ^77777750^000000\nธาตุ : ^777777Holy^000000\nLv ของอาวุธ : ^7777774^000000\nLv ที่ต้องการ : ^77777770^000000\nอาชีพ : ^777777Priest, Monk^000000",
+    "slots": 1,
+    "itemTypeId": 1,
+    "itemSubTypeId": 265,
+    "itemLevel": 4,
+    "attack": 50,
+    "propertyAtk": "Holy",
+    "defense": null,
+    "weight": 50,
+    "requiredLevel": 70,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Priest",
+      "Monk"
+    ],
+    "script": {
+      "matk": [
+        "140"
+      ],
+      "acd__Holy Light": [
+        "25"
+      ],
+      "acd__Turn Undead": [
+        "25"
+      ],
+      "acd__Magnus Exorcismus": [
+        "25"
+      ]
+    }
+  },
   "1639": {
     "id": 1639,
     "aegisName": "N_Rod",
@@ -326,6 +363,46 @@
     "usableClass": [
       "all"
     ]
+  },
+  "2186": {
+    "id": 2186,
+    "aegisName": "Encyclopedia_Revision",
+    "name": "Revised Encyclopedia [1]",
+    "unidName": "Book",
+    "resName": "대백과사전",
+    "description": "สารานุกรมฉบับปรับปรุงของสำนักพิมพ์ Prontera ที่มีชื่อเสียงจากสันหนังสือที่มีความแข็งแรง ใช้ความแข็งแกร่งนั้นหยุดยั้งการโจมตีของฝ่ายตรงข้ามได้ด้วย\nMATK +5, INT + 3, DEX + 2, CRI + 3\nCRI + 2 เมื่ออัปเกรดขั้น 7, MATK +5 เมื่ออัปเกรดขั้น 9\nเมื่อใช้งานพร้อมกับ Encyclopedia[2] ความเร็วในการโจมตีจะเพิ่มขึ้น (หลังจากโจมตี ดีเลย์ลดลง 1% ต่อขั้นอัปเกรดของ Encyclopedia[2])\nเมื่อใช้งานพร้อมกับ Encyclopedia (ไอเทมเช่า) ความเร็วในการโจมตีจะเพิ่มขึ้น (หลังจากโจมตี ดีเลย์ลดลง 15%)\nประเภท : ^777777Shield^000000 ป้องกัน : ^77777750^000000\nน้ำหนัก : ^77777720^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพ: ^777777Priest Jobs, Sage Jobs, Taekwon Master^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 514,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 50,
+    "weight": 20,
+    "requiredLevel": 99,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "matk": [
+        "5",
+        "9===5"
+      ],
+      "int": [
+        "3"
+      ],
+      "dex": [
+        "2"
+      ],
+      "cri": [
+        "3",
+        "7===2"
+      ],
+      "aspdPercent": [
+        "EQUIP[Encyclopedia]===1"
+      ]
+    }
   },
   "2201": {
     "id": 2201,
@@ -663,6 +740,38 @@
       ]
     }
   },
+  "2992": {
+    "id": 2992,
+    "aegisName": "Pendant_Of_Maelstorm",
+    "name": "Pendant of Maelstrom [1]",
+    "unidName": "Accessory",
+    "resName": "펜던트오브마엘슈트롬",
+    "description": "Pendant of Maelstrom\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกประเภท 6% MATK +6%\nAll Stats +1\nมีโอกาสเปิดใช้งาน Maelstrom เลเวล 1 โดยอัตโนมัติเมื่อโดนโจมตีเวทย์\nประเภท : ^777777Accessory^000000 ป้องกัน : ^7777770^000000\nน้ำหน้ก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777130^000000\nติดตั้ง: ^777777กลุ่มอาชีพคลาสสามเท่านั้น^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 517,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 130,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "p_class_all": [
+        "6"
+      ],
+      "matkPercent": [
+        "6"
+      ],
+      "allStatus": [
+        "1"
+      ]
+    }
+  },
   "4143": {
     "id": 4143,
     "aegisName": "Orc_Hero_Card",
@@ -815,6 +924,29 @@
       ]
     }
   },
+  "4403": {
+    "id": 4403,
+    "aegisName": "Kiel_Card",
+    "name": "Kiel-D-01 Card",
+    "unidName": "Kiel-D-01 Card",
+    "resName": "이름없는카드",
+    "description": "ลดดีเลย์จากการใช้\nสกิลลง 30%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Headgear^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 769,
+    "script": {
+      "acd": [
+        "30"
+      ]
+    }
+  },
   "4408": {
     "id": 4408,
     "aegisName": "Gloom_Under_Night_Card",
@@ -902,6 +1034,62 @@
       ]
     }
   },
+  "4441": {
+    "id": 4441,
+    "aegisName": "Fallen_Bishop_Card",
+    "name": "Fallen Bishop Card",
+    "unidName": "Fallen Bishop Card",
+    "resName": "이름없는카드",
+    "description": "MATK +10%, MaxSP -50%\nเพิ่ม Damage ทางเวทมนตร์ต่อมอนสเตอร์ประเภท Demi-Human, Angel 50%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Shoes^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 64,
+    "script": {
+      "matkPercent": [
+        "10"
+      ],
+      "m_race_demihuman": [
+        "10"
+      ],
+      "m_race_angel": [
+        "10"
+      ],
+      "spPercent": [
+        "-50"
+      ]
+    }
+  },
+  "4480": {
+    "id": 4480,
+    "aegisName": "Sealed_Kiel_Card",
+    "name": "Sealed Kiel Card",
+    "unidName": "Sealed Kiel Card",
+    "resName": "이름없는카드",
+    "description": "ลดดีเลย์จากการใช้ สกิลลง 15%\nหากอัพเกรดตั้งแต่ระดับ +15 ขึ้นไป ลดดีเลย์จากการใช้ สกิลลงอีก 5%\nประเภท : ^777777Card^000000\nตำแหน่ง : ^777777Headgear^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 769,
+    "script": {
+      "acd": [
+        "15",
+        "15===5"
+      ]
+    }
+  },
   "4485": {
     "id": 4485,
     "aegisName": "Sealed_Gloom_Card",
@@ -928,11 +1116,11 @@
         "20",
         "15===10"
       ],
-      "p_element_angel": [
+      "p_race_angel": [
         "20",
         "15===10"
       ],
-      "p_element_demon": [
+      "p_race_demon": [
         "20",
         "15===10"
       ]
@@ -984,9 +1172,9 @@
     "script": {
       "matk": [
         "50",
-        "5"
+        "1---5"
       ],
-      "ลดเวลาในการร่ายแบบ Fixed Cast Time ลดลง": [
+      "fctPercent": [
         "70"
       ]
     }
@@ -6043,6 +6231,65 @@
       "all"
     ]
   },
+  "19308": {
+    "id": 19308,
+    "aegisName": "Amistr_Beret",
+    "name": "Amistr Beret [1]",
+    "unidName": "Cap",
+    "resName": "아미스트르베레모",
+    "description": "หมวกberetที่ทำเลียนแบบจากรูปร่างหูของ Amistr\nทุกๆ อัพเกรด 2 ขั้น, MATK + 10, ATK + 10.\nเมื่ออัพเกรดขั้น 7, ลดระยะเวลาร่ายแบบแปรผัน 10%\nเมื่ออัพเกรดขั้น 9, เพิ่มพลังในโจมตีทางเวทย์ธาตุ Holy, ธาตุ Neutral 10%\nเมื่ออัพเกรดขั้น 11, MATK + 3%, ATK + 5%\nเมื่ออัพเกรดเกินขั้น 10, ทุกๆการอัพเกรดเพิ่ม 1 ขั้น ลดระยะเวลาการร่ายแบบคงตัวลง 0.1 วินาที (มากสุดได้จนถึงขั้น 15)\n\nเมื่อสวมใส่กับ Holy Stick, MATK + 10, ทุกๆอัพเกรด Holy Stick. 2 ขั้น จะเพิ่มความเสียหายของสกิล Adoramus 30%\nเพิ่มโจมตีทางเวทย์แบบไร้ธาตุ 5% ทุกๆ 2 อัพเกรดของ Wondrous Foxtail Staff\nเมื่อสวมใส่กับ Twin Edge of Naght Sieger( Blue ) ทุกๆอัพเกรดอาวุธ 2 ขั้น จะเพิ่มความเสียหายของสกิล Cart Cannon Damage ทีละ 10%\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^77777715^000000\nตำแหน่ง : ^777777Upper^000000 น้ำหนัก : ^77777720^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่สวมใส่ได้ : : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 15,
+    "weight": 20,
+    "requiredLevel": 1,
+    "location": "Upper",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "matk": [
+        "2---10",
+        "EQUIP[Holy Stick]===10"
+      ],
+      "atk": [
+        "2---10"
+      ],
+      "vct": [
+        "7===10"
+      ],
+      "m_my_element_holy": [
+        "9===10"
+      ],
+      "m_my_element_neutral": [
+        "9===10",
+        "EQUIP[Wondrous Foxtail Staff]REFINE[weapon==2]---5"
+      ],
+      "matkPercent": [
+        "11===3"
+      ],
+      "atkPercent": [
+        "11===5"
+      ],
+      "fct": [
+        "11===0.1",
+        "12===0.1",
+        "13===0.1",
+        "14===0.1",
+        "15===0.1"
+      ],
+      "Adoramus": [
+        "EQUIP[Holy Stick]REFINE[weapon==2]---30"
+      ],
+      "Cart Cannon Damage": [
+        "EQUIP[Twin Edge of Naght Sieger]REFINE[weapon==2]---10"
+      ]
+    }
+  },
   "19344": {
     "id": 19344,
     "aegisName": "Headband_Of_Power_IL",
@@ -9744,8 +9991,18 @@
       "def": [
         "30"
       ],
+      "mdef": [
+        "5"
+      ],
+      "reducdDamageTaken_size_all": [
+        "25",
+        "EQUIP[Turtle General Card]5"
+      ],
       "hit": [
         "EQUIP[Turtle General Card]25"
+      ],
+      "p_size_all": [
+        "EQUIP[Turtle General Card]20"
       ]
     }
   },
@@ -10302,8 +10559,14 @@
       "atkPercent": [
         "10"
       ],
+      "p_race_angel": [
+        "30"
+      ],
+      "p_race_demihuman": [
+        "30"
+      ],
       "hpPercent": [
-        "50"
+        "-50"
       ]
     }
   },
@@ -10455,6 +10718,35 @@
       ],
       "damageTaken_element_all": [
         "30"
+      ]
+    }
+  },
+  "27363": {
+    "id": 27363,
+    "aegisName": "Polluted_Dark_L_Card",
+    "name": "Corrupted Dark Lord Card",
+    "unidName": "Corrupted Dark Lord Card",
+    "resName": "이름없는카드",
+    "description": "ASPD + 1\nเมื่อใช้ร่วมกับ Dark Lord Card, เพิ่ม Damage ทางเวทมนตร์ธาตุ Fire และเพิ่ม Damage ของสกิล Meteor Storm 15%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Accessory (Right)^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 8,
+    "script": {
+      "aspd": [
+        "1"
+      ],
+      "m_my_element_fire": [
+        "EQUIP[Dark Lord Card]15"
+      ],
+      "Meteor storm": [
+        "EQUIP[Dark Lord Card]15"
       ]
     }
   },
@@ -15944,6 +16236,50 @@
       ],
       "mdef": [
         "EQUIP[Exotic Temporal Boots]5"
+      ]
+    }
+  },
+  "480307": {
+    "id": 480307,
+    "aegisName": null,
+    "name": "Fallen Angel Wing [1]",
+    "unidName": "Hood",
+    "resName": "타락천사의날개",
+    "description": "ปีกสีดำขนาดใหญ่ของทูตสวรรค์ที่ร่วงหล่น\nStat พื้นฐานทั้งหมด + 1\nทุก ๆ Base STR 20, ATK + 1\nทุก ๆ Base INT 20, MATK + 1,\nทุก ๆ Base VIT 20, เพิ่มความต้านทานการโจมตีธาตุ Neutral 1%,\nทุก ๆ Base AGI 20, ASPD + 1%,\nทุก ๆ Base DEX 20, เพิ่มพลังโจมตีระยะไกล 1%, \nทุก ๆ Base LUK 20, Critical Damage + 1%\n\nประเภท : ^777777Garment^000000  พลังป้องกัน : ^77777710^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 515,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 10,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "allStatus": [
+        "1"
+      ],
+      "atk": [
+        "str:20---1"
+      ],
+      "matk": [
+        "int:20---1"
+      ],
+      "เพิ่มความต้านทานการโจมตีธาตุ Neutral": [
+        "vit:20---1"
+      ],
+      "aspdPercent": [
+        "agi:20---1"
+      ],
+      "range": [
+        "dex:20---1"
+      ],
+      "criDmg": [
+        "luk:20---1"
       ]
     }
   },

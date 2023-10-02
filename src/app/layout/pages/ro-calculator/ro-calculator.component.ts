@@ -42,6 +42,7 @@ import { GitCross } from './jobs/git-cross';
 import { Mage } from './jobs/mage';
 import { Sage } from './jobs/sage';
 import { ArchBishop } from './jobs/arch-bishop';
+import { Warlock } from './jobs/warlock';
 
 enum CardPosition {
   Weapon = 0,
@@ -97,7 +98,7 @@ const Characters: DropdownModel[] = [
   { label: 'Soul Reaper', value: 3, instant: new SoulReaper() },
   { label: 'SC', value: 4, instant: new ShadowChaser() },
   { label: 'Git Cross', value: 5, instant: new GitCross() },
-  { label: 'Sage', value: 6, instant: new Sage() },
+  // { label: 'Warlock', value: 6, instant: new Warlock() },
   { label: 'Arch Bishop', value: 7, instant: new ArchBishop() },
 ];
 
@@ -819,9 +820,9 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       { field: 'minDamage', header: 'SkillMin', default: true },
       { field: 'maxDamage', header: 'SkillMax', default: true },
       { field: 'skillDps', header: 'DPS', default: true },
-      { field: 'hitKill', header: 'Hit', default: true },
+      { field: 'hitKill', header: 'Kill', default: true },
       { field: 'criRate', header: 'Cri%' },
-      { field: 'hitRate', header: 'Hit%' },
+      { field: 'hitRate', header: 'แม่น' },
       { field: 'pene', header: 'เจาะ' },
       { field: 'basicMinDamage', header: 'BasicMin' },
       { field: 'basicMaxDamage', header: 'BasicMax' },

@@ -189,7 +189,9 @@ const TempOpts = {
 };
 const atkPer = [AtkPercent._1, AtkPercent._2, AtkPercent._3];
 const fs13 = [FS._1, FS._2, FS._3];
+const fs35 = [FS._3, FS._4, FS._5];
 const ea35 = [EA._3, EA._4, EA._5];
+const sp25 = [Spell._2, Spell._3, Spell._4, Spell._5];
 
 const illusionArmor = ['Improve_Orb_Atk', 'Improve_Orb_Matk', 'Improve_Orb_Archer', 'Improve_Orb_Delay'];
 const illusionGarment = ['Improve_Orb_Speed', 'Improve_Orb_Cast', 'Improve_Orb_Cri', 'Improve_Orb_Above'];
@@ -310,6 +312,11 @@ interface EntTable {
 
 const enchantTable: EntTable[] = [
   { name: 'Lush_Rose', enchants: [null, null, null, [Spell._3, Spell._4, Spell._5]] },
+  { name: 'Holy_Stick', enchants: [null, null, sp25, sp25] },
+  {
+    name: 'Fallen Angel Wing [1]',
+    enchants: [null, [...ea35, ...fs35, ...sp25], [...ea35, ...fs35, ...sp25], [...ea35, ...fs35, ...sp25]],
+  },
 
   { name: 'Illusion_Armor_A', enchants: [null, illusionArmor, illusionArmor, illusionArmor] },
   { name: 'Illusion_Armor_B', enchants: [null, illusionArmor, illusionArmor, illusionArmor] },
