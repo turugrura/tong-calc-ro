@@ -1,4 +1,10 @@
 import { ItemModel } from './item.model';
+import {
+  WeaponSubTypeName,
+  WeaponSubTypeNameMapById,
+  WeaponTypeName,
+  WeaponTypeNameMapBySubTypeId,
+} from './weapon-type-mapper';
 
 const weaponUpgradeTable: Record<
   number,
@@ -94,33 +100,10 @@ const weaponUpgradeTable: Record<
   },
 };
 
-const weaponSubType = {
-  Dagger: 'dagger',
-
-  Bow: 'bow',
-
-  'Gatling Gun': 'gun',
-  Pistol: 'gun',
-  Rifle: 'gun',
-  Shotgun: 'gun',
-  'Grenade Launcher': 'gun',
-
-  Katar: 'katar',
-  Jur: 'katar',
-
-  'Novice Rod': 'mace',
-  Rod: 'mace',
-  Mace: 'mace',
-  'One-Handed Staff': 'staff',
-  'Two-Handed Staff': 'staff2h',
-  Book: 'book',
-  Knuckle: 'knuckle',
-};
-
 export class Weapon {
   private _rangeType = '';
-  private _typeName = '';
-  private _subTypeName = '';
+  private _typeName: WeaponTypeName;
+  private _subTypeName: WeaponSubTypeName;
   private _baseWeaponAtk = 0;
   private _baseWeaponMatk = 0;
   private _baseWeaponLevel = 0;
@@ -131,13 +114,13 @@ export class Weapon {
   set(itemData: ItemModel, refineLevel: number) {
     if (!itemData) return this;
 
-    const { itemLevel, attack, unidName, script } = itemData;
+    const { itemLevel, attack, script, itemSubTypeId } = itemData;
     this._baseWeaponAtk = attack;
     this._baseWeaponMatk = Number(script?.['matk']?.[0]) || 0;
     this._baseWeaponLevel = itemLevel;
-    this._typeName = unidName;
-    this._subTypeName = weaponSubType[unidName];
-    this._rangeType = this._subTypeName === 'gun' || this._subTypeName === 'bow' ? 'range' : 'melee';
+    this._subTypeName = WeaponSubTypeNameMapById[itemSubTypeId];
+    this._typeName = WeaponTypeNameMapBySubTypeId[itemSubTypeId];
+    this._rangeType = this._typeName === 'gun' || this._typeName === 'bow' ? 'range' : 'melee';
 
     if (refineLevel > 0) {
       const { bonus, highUpgrade, overUpgrade } = weaponUpgradeTable[itemLevel][refineLevel];

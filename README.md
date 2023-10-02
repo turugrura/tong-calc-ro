@@ -11,7 +11,7 @@
 | grouping monster by spawn map                                         | Done   |
 | calc dps by ASPD                                                      | DONE   |
 | calc only MAX stat bonus from consumables                             | DONE   |
-| categorize item sub type by itemSubTypeId                             | -      |
+| categorize item sub type by itemSubTypeId                             | DONE   |
 | item comparing                                                        | -      |
 | recalculate to prevent decimal digit problem like 0.1+0.2 = 0.3000001 | -      |
 | support two hand weapon                                               | -      |

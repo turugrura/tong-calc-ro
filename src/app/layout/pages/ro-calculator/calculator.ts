@@ -446,7 +446,7 @@ export class Calculator {
   }
 
   private isRangeAtk() {
-    const w = this.weaponData.data.subTypeName;
+    const w = this.weaponData.data.typeName;
     return w === 'bow' || w === 'gun';
   }
 
@@ -472,11 +472,11 @@ export class Calculator {
       gun: true,
     };
 
-    return allowMap[this.weaponData.data?.subTypeName] || false;
+    return allowMap[this.weaponData.data?.typeName] || false;
   }
 
   isAllowShield() {
-    return AllowShieldTable[this.weaponData.data?.subTypeName] || false;
+    return AllowShieldTable[this.weaponData.data?.typeName] || false;
   }
 
   getAmmuSubTypeId() {
@@ -485,7 +485,7 @@ export class Calculator {
       gun: 1025,
     };
 
-    return map[this.weaponData.data?.subTypeName];
+    return map[this.weaponData.data?.typeName];
   }
 
   private toPercent(n: number) {
@@ -680,7 +680,7 @@ export class Calculator {
       return this;
     }
 
-    const penalty = weaponSizePenalty[this.weaponData?.data?.subTypeName]?.[this.monsterData.size];
+    const penalty = weaponSizePenalty[this.weaponData?.data?.typeName]?.[this.monsterData.size];
     this.sizePenalty = this.toPercent(penalty || 100);
 
     return this;
@@ -1680,7 +1680,7 @@ export class Calculator {
       this.totalEquipStatus.dex += this.calcStatBoost(Number(boost), 'dex');
     }
 
-    if (this.weaponData.data.subTypeName === 'bow') {
+    if (this.weaponData.data.typeName === 'bow') {
       this.totalEquipStatus.range += this.totalEquipStatus.bowRange || 0;
     }
 

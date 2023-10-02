@@ -228,7 +228,7 @@ export class ArchBishop extends CharacterBase {
     race: string;
   }): number {
     const { weaponData, passiveSkillIds, element, race, level } = a;
-    const weaponType = weaponData?.data?.typeName;
+    const weaponSubType = weaponData?.data?.subTypeName;
     const bonusBaseLv = 0.05 * (level + 1);
     const bonuses = this._passiveSkillList
       .map((s, idx) => s.dropdown.find((d) => d.value === passiveSkillIds[idx])?.bonus)
@@ -237,7 +237,7 @@ export class ArchBishop extends CharacterBase {
     let totalAtk = 0;
     for (const bonus of bonuses) {
       const atk =
-        bonus?.[`atk_${weaponType}`] ||
+        bonus?.[`atk_${weaponSubType}`] ||
         Math.floor(bonus?.[`x_atk_race_${race}`] + bonusBaseLv || 0) ||
         Math.floor(bonus?.[`x_atk_element_${element}`] + bonusBaseLv || 0) ||
         0;

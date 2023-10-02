@@ -1,34 +1,9 @@
+import { WeaponSubTypeName } from '../weapon-type-mapper';
 import { ClassName } from './_class-name';
-
-type WSubType =
-  | 'Katar'
-  | 'Bow'
-  | 'Instrument'
-  | 'Whip'
-  | 'One-Handed Staff'
-  | 'Two-Handed Staff'
-  | 'Gatling Gun'
-  | 'Dagger'
-  | 'left-Dagger'
-  | 'Two-Handed Axe'
-  | 'Axe'
-  | 'left-Axe'
-  | 'Rod'
-  | 'Book'
-  | 'Knuckle'
-  | 'Mace'
-  | 'Sword'
-  | 'left-Sword'
-  | 'Two-Handed Sword'
-  | 'Jur'
-  | 'Pistol'
-  | 'Rifle'
-  | 'Shotgun'
-  | 'Grenade Launcher';
 
 type MainAspdEffect = 'base' | 'shield';
 type X = {
-  [key in WSubType]?: number;
+  [key in WeaponSubTypeName | 'left-Dagger' | 'left-Sword']?: number;
 };
 type Y = {
   [key in MainAspdEffect]: number;
@@ -45,12 +20,12 @@ export const AspdTable: Record<ClassName, XX> = {
     base: 151,
     shield: -5,
     Mace: 0,
-    'One-Handed Staff': -15,
-    'Two-Handed Staff': -10,
+    Rod: -15,
+    'Two-Handed Rod': -10,
     Book: 1,
-    Knuckle: -5,
+    Fistweapon: -5,
   },
-  [ClassName.Sura]: { base: 158, shield: -5, Mace: -5, 'One-Handed Staff': -10, 'Two-Handed Staff': -12, Knuckle: -1 },
+  [ClassName.Sura]: { base: 158, shield: -5, Mace: -5, Rod: -10, 'Two-Handed Rod': -12, Fistweapon: -1 },
   [ClassName.Thief]: { base: 156, shield: -5 },
   [ClassName.AssasinCross]: { base: 156, shield: -5 },
   [ClassName.GuillotineCross]: {
@@ -69,14 +44,14 @@ export const AspdTable: Record<ClassName, XX> = {
     base: 156,
     shield: -5,
     Dagger: -10,
-    'One-Handed Staff': -5,
-    'Two-Handed Staff': -5,
+    Rod: -5,
+    'Two-Handed Rod': -5,
     Book: -5,
   },
   [ClassName.Mage]: { base: 156, shield: -5 },
   [ClassName.Wizard]: { base: 156, shield: -5 },
-  [ClassName.Warlock]: { base: 151, shield: -5, Dagger: -7, 'One-Handed Staff': -5, 'Two-Handed Staff': -5 },
-  [ClassName.SoulReaper]: { base: 146, shield: -8, Dagger: 0, 'Two-Handed Staff': -3, 'One-Handed Staff': -3 },
+  [ClassName.Warlock]: { base: 151, shield: -5, Dagger: -7, Rod: -5, 'Two-Handed Rod': -5 },
+  [ClassName.SoulReaper]: { base: 146, shield: -8, Dagger: 0, 'Two-Handed Rod': -3, Rod: -3 },
   [ClassName.Rebellion]: {
     base: 146,
     shield: -6,

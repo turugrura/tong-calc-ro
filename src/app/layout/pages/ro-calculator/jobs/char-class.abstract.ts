@@ -177,8 +177,8 @@ export abstract class CharacterBase {
     const { weapon, isEquipShield, aspd, aspdPercent, totalAgi, totalDex, potionAspd, skillAspd } = a;
     const aspdByPotion = potion[potionAspd] || 0;
 
-    const { rangeType, typeName } = weapon.data;
-    const { baseAspd, shieldPenalty } = this.calcBaseAspd(typeName);
+    const { rangeType, subTypeName: subTypeName } = weapon.data;
+    const { baseAspd, shieldPenalty } = this.calcBaseAspd(subTypeName);
     const isRange = rangeType === 'range';
     const statAspd = Math.sqrt((totalAgi * totalAgi) / 2 + (totalDex * totalDex) / (isRange ? 7 : 5)) / 4;
     const potionSkillAspd = ((aspdByPotion + skillAspd) * totalAgi) / 200;
