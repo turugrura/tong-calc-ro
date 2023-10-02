@@ -10,7 +10,8 @@
         "test": "ng test",
         "lint": "ng lint",
         "e2e": "ng e2e",
-        "deploy": "ng build --output-path tong-calc-ro-host/docs --base-href /tong-calc-ro-host/"
+        "deploy": "ng build --output-path tong-calc-ro-host/docs --base-href /tong-calc-ro-host/",
+        "clone404": "cp ./tong-calc-ro-host/docs/index.html ./tong-calc-ro-host/docs/404.html"
     },
     "private": true,
     "dependencies": {
