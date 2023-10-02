@@ -881,11 +881,10 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       .setUsedSkillNames(skillNames)
       .setLearnedSkills(learnedSkillMap)
       .prepareAllItemBonus()
+      .setMonster(this.monsterDataMap[this.selectedMonster])
       .calcAspd()
       .calcHitRate()
-      .calcCriRate()
-      .setMonster(this.monsterDataMap[this.selectedMonster]);
-
+      .calcCriRate();
     const calculated = calc.calculateAllDamages(selectedAtkSkill);
     const { minDamage, maxDamage, basicMaxDamage, basicMinDamage, criMaxDamage, skillHit, skillDps } = calculated;
     this.minBasicDamage = basicMinDamage;

@@ -29,8 +29,17 @@
             <i class="pi pi-cog"></i>
             <span>Settings</span>
         </button> -->
+
     <button
-      class="p-button-info p-button-sm p-button-rounded p-button-outlined"
+      class="p-button-info p-button-rounded p-button-outlined"
+      icon="pi pi-info-circle"
+      pButton
+      pRipple
+      label="ข้อมูลเพิ่มเติม"
+      (click)="showInfoDialog()"
+    ></button>
+    <button
+      class="p-button-primary p-button-rounded p-button-outlined"
       icon="pi pi-heart"
       pButton
       pRipple
@@ -38,13 +47,42 @@
       (click)="showDialog()"
     ></button>
   </div>
-  <p-dialog header="สนับสนุน" [(visible)]="visible" [style]="{ 'min-width': '300px' }">
+  <p-dialog
+    header="สนับสนุน"
+    [draggable]="false"
+    [resizable]="false"
+    [modal]="true"
+    [(visible)]="visible"
+    [style]="{ 'min-width': '300px' }"
+  >
     <div class="card flex flex-column align-items-center gap-2 flex-wrap">
       <div>
         <img src="assets/demo/images/others/qr.jpg" alt="QR" style="width: 300px" />
       </div>
       <div class="font-bold" style="background-color: var(--surface-0); color: var(--green-400)">ขอบคุณครับบบบ</div>
       <div>
+        <a href="https://web.facebook.com/zfehu.oivgwhy" target="_blank" rel="noreferrer noopener">
+          <p-chip label="Tong Aphisit" icon="pi pi-facebook"></p-chip>
+        </a>
+      </div>
+    </div>
+  </p-dialog>
+
+  <p-dialog
+    header="ข้อมูลเพิ่มเติม"
+    [draggable]="false"
+    [resizable]="false"
+    [modal]="true"
+    [(visible)]="visibleInfo"
+    [style]="{ width: '50vw' }"
+  >
+    <div class="card flex flex-column align-items-center gap-2 flex-wrap">
+      <ul>
+        <li *ngFor="let info of infos">{{ info }}</li>
+      </ul>
+
+      <div>
+        แจ้งปัญหา IB
         <a href="https://web.facebook.com/zfehu.oivgwhy" target="_blank" rel="noreferrer noopener">
           <p-chip label="Tong Aphisit" icon="pi pi-facebook"></p-chip>
         </a>

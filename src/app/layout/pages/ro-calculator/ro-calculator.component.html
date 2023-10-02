@@ -2638,24 +2638,29 @@
                     >
                   </div>
                   <div class="col-12">
-                    Class
-                    <span class="summary_monster_value px-1 font-semibold">{{ totalSummary?.monster?.typeUpper }}</span>
+                    Req.Hit100
+                    <span class="summary_monster_value px-1 font-semibold">{{
+                      totalSummary?.monster?.hitRequireFor100
+                    }}</span>
+                  </div>
+                  <div class="col-12">
+                    <span class="summary_monster_value px-1 font-bold" style="color: var(--red-500)">{{
+                      totalSummary?.monster?.typeUpper
+                    }}</span>
+                    <span *ngIf="totalSummary?.monster?.isMvp" class="font-bold px-1">MVP</span>
+                    <span
+                      class="{{
+                        'property_' + totalSummary?.monster?.elementUpper
+                      }} summary_monster_value px-1 font-semibold"
+                      >{{ totalSummary?.monster?.elementLevelUpper }}</span
+                    >
                   </div>
                   <div class="col-12">
                     <span class="summary_monster_value px-1 font-semibold" style="color: var(--yellow-300)">{{
                       totalSummary?.monster?.raceUpper
                     }}</span>
-                    <span class="summary_monster_value px-1 font-semibold" style="color: var(--bluegray-200)">{{
-                      totalSummary?.monster?.elementLevelUpper
-                    }}</span>
                     <span class="summary_monster_value px-1 font-semibold" style="color: var(--cyan-300)">{{
                       totalSummary?.monster?.sizeUpper
-                    }}</span>
-                  </div>
-                  <div class="col-12">
-                    Req.Hit100
-                    <span class="summary_monster_value px-1 font-semibold">{{
-                      totalSummary?.monster?.hitRequireFor100
                     }}</span>
                   </div>
                 </div>
@@ -2763,6 +2768,8 @@
               <div class="col-6">
                 เจาะ:
                 <span class="font-bold px-1 summary_highlight">{{ totalSummary?.calc?.totalPene || 0 | number }}%</span>
+                แม่น:
+                <span class="font-bold px-1 summary_highlight">{{ totalSummary?.calc?.hitRate || 0 | number }}%</span>
               </div>
             </div>
           </div>
@@ -2839,11 +2846,9 @@
       <p-accordionTab header="Summary">
         <div class="grid grid-nogutter">
           <div class="col-6">
-            modelSummary
             <pre [innerHTML]="modelSummary | prettyjson : [true, 3]"></pre>
           </div>
           <div class="col-6">
-            totalSummary
             <pre [innerHTML]="totalSummary | prettyjson : [true, 3]"></pre>
           </div>
         </div>
@@ -2896,7 +2901,7 @@
         </div>
       </p-accordionTab>
 
-      <p-accordionTab header="Possible Damages">
+      <!-- <p-accordionTab header="Possible Damages">
         <div class="grid grid-nogutter">
           <div class="col-12">
             <p-listbox
@@ -2907,7 +2912,7 @@
             ></p-listbox>
           </div>
         </div>
-      </p-accordionTab>
+      </p-accordionTab> -->
     </p-accordion>
   </div>
 </div>

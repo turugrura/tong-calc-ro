@@ -136,7 +136,7 @@ pre {
 
 .summary_monster_value {
   background-color: var(--surface-0);
-  color: var(--red-500);
+  color: var(--red-300);
 }
 
 .img_monster {
@@ -153,32 +153,38 @@ pre {
 }
 
 .property_Water {
-  background-color: #7ba7e1;
+  /* background-color: #7ba7e1; */
+  background-color: var(--blue-600);
   color: white;
 }
 
 .property_Earth {
-  background-color: #daaf85;
+  /* background-color: #daaf85; */
+  background-color: var(--orange-200);
   color: black;
 }
 
 .property_Fire {
-  background-color: #ff7575;
+  /* background-color: #ff7575; */
+  background-color: var(--red-600);
   color: white;
 }
 
 .property_Wind {
-  background-color: #cafeb8;
+  /* background-color: #cafeb8; */
+  background-color: var(--green-400);
   color: black;
 }
 
 .property_Poison {
+  /* background-color: var(--green-600); */
   background-color: #4bfe78;
   color: black;
 }
 
 .property_Holy {
-  background-color: #ffffaa;
+  /* background-color: #ffffaa; */
+  background-color: var(--yellow-300);
   color: black;
 }
 

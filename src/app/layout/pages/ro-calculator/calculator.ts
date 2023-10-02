@@ -315,9 +315,11 @@ export class Calculator {
     size: '',
     sizeUpper: '',
     element: '',
+    elementUpper: '',
     elementLevel: '',
     elementLevelUpper: '',
     type: '',
+    isMvp: false,
     typeUpper: '',
     softDef: 1,
     softMDef: 1,
@@ -521,6 +523,7 @@ export class Calculator {
         raceName,
         class: monsterTypeId,
         scaleName,
+        mvp,
       },
     } = monster;
     const [pureElement] = elementName.split(' ');
@@ -535,6 +538,7 @@ export class Calculator {
     this.monsterData = {
       name,
       element: pureElement.toLowerCase(),
+      elementUpper: upperFirst(pureElement),
       elementLevel,
       elementLevelUpper: upperFirst(elementLevel),
       race: raceName.toLowerCase(),
@@ -542,6 +546,7 @@ export class Calculator {
       size: scaleName.at(0).toLowerCase(),
       sizeUpper: scaleName.at(0),
       type: _class,
+      isMvp: mvp === 1,
       typeUpper: upperFirst(_class),
       hp: health,
       def: defense,
@@ -1905,6 +1910,7 @@ export class Calculator {
         totalHit: this.totalHit,
         totalPerfectHit: this.totalPerfectHit,
         totalFlee: this.totalFlee,
+        hitRate: this.hitRate,
         dps: this.basicDps,
         dmgReductionByHardDef: this.dmgReductionByHardDef,
         sizePenalty: this.sizePenalty,

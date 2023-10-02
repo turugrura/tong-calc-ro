@@ -102,7 +102,7 @@
       "elementName": "Ghost 3",
       "elementShortName": "Ghost",
       "scaleName": "Medium",
-      "raceName": "Human"
+      "raceName": "DemiHuman"
     }
   },
   "1708": {
@@ -209,6 +209,59 @@
       "elementShortName": "Dark",
       "scaleName": "Large",
       "raceName": "Dragon"
+    }
+  },
+  "1734": {
+    "id": 1734,
+    "dbname": "KIEL_",
+    "name": "Kiel D-01",
+    "spawn": "kh_dun02",
+    "stats": {
+      "attackRange": 3,
+      "level": 125,
+      "health": 2502000,
+      "sp": 1,
+      "str": 166,
+      "int": 141,
+      "vit": 155,
+      "dex": 279,
+      "agi": 187,
+      "luk": 180,
+      "rechargeTime": 1152,
+      "atk1": 4112,
+      "atk2": 3580,
+      "attack": {
+        "minimum": 3580,
+        "maximum": 5225
+      },
+      "magicAttack": {
+        "minimum": 2772,
+        "maximum": 4920
+      },
+      "defense": 314,
+      "baseExperience": 1170000,
+      "jobExperience": 792000,
+      "aggroRange": 10,
+      "escapeRange": 12,
+      "movementSpeed": 130,
+      "attackSpeed": 576,
+      "attackedSpeed": 432,
+      "element": 47,
+      "scale": 1,
+      "race": 0,
+      "magicDefense": 232,
+      "hit": 512,
+      "flee": 574,
+      "ai": "MONSTER_TYPE_21",
+      "mvp": 1,
+      "class": 1,
+      "attr": 520,
+      "res": 0,
+      "mres": 0,
+      "elementName": "Dark 2",
+      "elementShortName": "Dark",
+      "scaleName": "Medium",
+      "raceName": "Formless"
     }
   },
   "1768": {
@@ -473,7 +526,7 @@
       "elementName": "Earth 3",
       "elementShortName": "Earth",
       "scaleName": "Large",
-      "raceName": "Human"
+      "raceName": "DemiHuman"
     }
   },
   "2408": {
@@ -685,7 +738,7 @@
       "elementName": "Ghost 2",
       "elementShortName": "Ghost",
       "scaleName": "Medium",
-      "raceName": "Human"
+      "raceName": "DemiHuman"
     }
   },
   "3097": {
@@ -844,7 +897,7 @@
       "elementName": "Poison 4",
       "elementShortName": "Poison",
       "scaleName": "Medium",
-      "raceName": "Human"
+      "raceName": "DemiHuman"
     }
   },
   "3223": {
@@ -897,7 +950,7 @@
       "elementName": "Water 4",
       "elementShortName": "Water",
       "scaleName": "Medium",
-      "raceName": "Human"
+      "raceName": "DemiHuman"
     }
   },
   "3240": {
@@ -950,7 +1003,7 @@
       "elementName": "Holy 4",
       "elementShortName": "Holy",
       "scaleName": "Medium",
-      "raceName": "Human"
+      "raceName": "DemiHuman"
     }
   },
   "3429": {
@@ -1003,7 +1056,7 @@
       "elementName": "Earth 2",
       "elementShortName": "Earth",
       "scaleName": "Large",
-      "raceName": "Human"
+      "raceName": "DemiHuman"
     }
   },
   "3430": {
@@ -3441,7 +3494,7 @@
       "elementName": "Water 3",
       "elementShortName": "Water",
       "scaleName": "Medium",
-      "raceName": "Human"
+      "raceName": "DemiHuman"
     }
   },
   "20806": {
@@ -4077,7 +4130,7 @@
       "elementName": "Neutral 1",
       "elementShortName": "Neutral",
       "scaleName": "Medium",
-      "raceName": "Human"
+      "raceName": "DemiHuman"
     }
   },
   "21071": {
