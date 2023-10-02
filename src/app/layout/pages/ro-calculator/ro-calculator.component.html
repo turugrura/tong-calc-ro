@@ -2440,54 +2440,31 @@
           <div class="col-4">
             <p-tag severity="info" value="Buffs"></p-tag>
             <div class="grid grid-nogutter">
-              <div class="col-12">
-                <div class="p-inputgroup">
-                  <span class="p-inputgroup-addon text_group_ellips">{{ skillBuffs['impositioManus'].label }}</span>
-                  <p-selectButton
-                    [options]="skillBuffs['impositioManus'].dropdown"
-                    [(ngModel)]="model.impositioManus"
-                    (onChange)="onSkillBuffChange()"
-                  ></p-selectButton>
-                </div>
-              </div>
-              <div class="col-12">
-                <div class="p-inputgroup">
-                  <span class="p-inputgroup-addon text_group_ellips">{{ skillBuffs['advBlessing'].label }}</span>
-                  <p-dropdown
-                    inputId="advBlessing"
-                    [autoDisplayFirst]="false"
-                    [(ngModel)]="model.advBlessing"
-                    [options]="skillBuffs['advBlessing'].dropdown"
-                    [showClear]="true"
-                    (onChange)="onSkillBuffChange()"
-                    placeholder=""
-                    styleClass="'width: 50%'"
-                  ></p-dropdown>
-                </div>
-              </div>
-              <div class="col-12">
-                <div class="p-inputgroup">
-                  <span class="p-inputgroup-addon text_group_ellips">{{ skillBuffs['advAgiUp'].label }}</span>
-                  <p-dropdown
-                    inputId="advAgiUp"
-                    [autoDisplayFirst]="false"
-                    [(ngModel)]="model.advAgiUp"
-                    [options]="skillBuffs['advAgiUp'].dropdown"
-                    [showClear]="true"
-                    (onChange)="onSkillBuffChange()"
-                    placeholder=""
-                    styleClass="'width: 50%'"
-                  ></p-dropdown>
-                </div>
-              </div>
-              <div class="col-12">
-                <div class="p-inputgroup">
-                  <span class="p-inputgroup-addon text_group_ellips">{{ skillBuffs['expiatio'].label }}</span>
-                  <p-selectButton
-                    [options]="skillBuffs['expiatio'].dropdown"
-                    [(ngModel)]="model.expiatio"
-                    (onChange)="onSkillBuffChange()"
-                  ></p-selectButton>
+              <div *ngFor="let bishopBuff of skillBuffs; let i = index" class="col-12">
+                <div [ngSwitch]="bishopBuff.inputType">
+                  <div *ngSwitchCase="'dropdown'">
+                    <div class="p-inputgroup">
+                      <span class="p-inputgroup-addon text_group_ellips">{{ bishopBuff.label }}</span>
+                      <p-dropdown
+                        [autoDisplayFirst]="false"
+                        [options]="bishopBuff.dropdown"
+                        [(ngModel)]="model.bishopBuffs[i]"
+                        (onChange)="onSkillClassChange()"
+                        styleClass="'width: 50%'"
+                      ></p-dropdown>
+                    </div>
+                  </div>
+                  <div *ngSwitchDefault>
+                    <div class="p-inputgroup">
+                      <span class="p-inputgroup-addon text_group_ellips">{{ bishopBuff.label }}</span>
+                      <p-selectButton
+                        [options]="bishopBuff.dropdown"
+                        [(ngModel)]="model.bishopBuffs[i]"
+                        (ngModelChange)="onSkillClassChange()"
+                        styleClass="'width: 50%'"
+                      ></p-selectButton>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

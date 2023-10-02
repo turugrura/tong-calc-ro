@@ -154,110 +154,54 @@ const toDropdownList = <T extends {}>(
   }));
 };
 
-const skillBuffs = {
-  impositioManus: {
-    name: 'Impositio Manus',
-    label: 'Imp Lv 5',
-    dropdown: [
-      { label: 'Yes', value: 1, bonus: { atk: 25, matk: 25 } },
-      { label: 'No', value: 2 },
-    ],
-  },
-  advBlessing: {
-    name: 'Clementia',
-    label: 'Blessing',
-    dropdown: [
-      {
-        label: 'Lv 10',
-        value: 10,
-        bonus: { str: 10, int: 10, dex: 10, hit: 20 },
-      },
-      // {
-      //   label: 'Job 10',
-      //   value: 11,
-      //   bonus: { str: 11, int: 11, dex: 11, hit: 21 },
-      // },
-      {
-        label: 'Job 20',
-        value: 12,
-        bonus: { str: 12, int: 12, dex: 12, hit: 22 },
-      },
-      {
-        label: 'Job 30',
-        value: 13,
-        bonus: { str: 13, int: 13, dex: 13, hit: 23 },
-      },
-      {
-        label: 'Job 40',
-        value: 14,
-        bonus: { str: 14, int: 14, dex: 14, hit: 24 },
-      },
-      {
-        label: 'Job 50',
-        value: 15,
-        bonus: { str: 15, int: 15, dex: 15, hit: 25 },
-      },
-      {
-        label: 'Job 60',
-        value: 16,
-        bonus: { str: 16, int: 16, dex: 16, hit: 26 },
-      },
-    ],
-  },
-  advAgiUp: {
+const bishopBuffs: ActiveSkillModel[] = [
+  {
+    inputType: 'dropdown',
+    label: 'Agi Up',
     name: 'Cantocandidus',
-    label: 'Agi UP',
     dropdown: [
-      {
-        label: 'Lv 10',
-        value: 10,
-        bonus: { agi: 12, aspdPercent: 10 },
-      },
-      // {
-      //   label: 'Job 10',
-      //   value: 11,
-      //   bonus: { agi: 13, aspdPercent: 11 },
-      // },
-      {
-        label: 'Job 20',
-        value: 12,
-        bonus: { agi: 14, aspdPercent: 12 },
-      },
-      {
-        label: 'Job 30',
-        value: 13,
-        bonus: { agi: 15, aspdPercent: 13 },
-      },
-      {
-        label: 'Job 40',
-        value: 14,
-        bonus: { agi: 16, aspdPercent: 14 },
-      },
-      {
-        label: 'Job 50',
-        value: 15,
-        bonus: { agi: 17, aspdPercent: 15 },
-      },
-      {
-        label: 'Job 60',
-        value: 16,
-        bonus: { agi: 18, aspdPercent: 16 },
-      },
+      { label: '-', value: 0, isUse: false },
+      { label: 'Lv 10', value: 10, isUse: true, bonus: { agi: 12, aspdPercent: 10 } },
+      { label: 'Job 20', value: 12, isUse: true, bonus: { agi: 14, aspdPercent: 12 } },
+      { label: 'Job 30', value: 13, isUse: true, bonus: { agi: 15, aspdPercent: 13 } },
+      { label: 'Job 40', value: 14, isUse: true, bonus: { agi: 16, aspdPercent: 14 } },
+      { label: 'Job 50', value: 15, isUse: true, bonus: { agi: 17, aspdPercent: 15 } },
+      { label: 'Job 60', value: 16, isUse: true, bonus: { agi: 18, aspdPercent: 16 } },
     ],
   },
-  expiatio: {
-    name: 'Expiatio',
+  {
+    inputType: 'dropdown',
+    label: 'Blessing',
+    name: 'Clementia',
+    dropdown: [
+      { label: '-', value: 0, isUse: false },
+      { label: 'Lv 10', value: 10, isUse: true, bonus: { str: 10, int: 10, dex: 10, hit: 20 } },
+      { label: 'Job 20', value: 12, isUse: true, bonus: { str: 12, int: 12, dex: 12, hit: 22 } },
+      { label: 'Job 30', value: 13, isUse: true, bonus: { str: 13, int: 13, dex: 13, hit: 23 } },
+      { label: 'Job 40', value: 14, isUse: true, bonus: { str: 14, int: 14, dex: 14, hit: 24 } },
+      { label: 'Job 50', value: 15, isUse: true, bonus: { str: 15, int: 15, dex: 15, hit: 25 } },
+      { label: 'Job 60', value: 16, isUse: true, bonus: { str: 16, int: 16, dex: 16, hit: 26 } },
+    ],
+  },
+  {
+    inputType: 'selectButton',
+    label: 'Impositio Lv5',
+    name: 'Impositio Manus',
+    dropdown: [
+      { label: 'Yes', isUse: true, value: 5, bonus: { atk: 25, matk: 25 } },
+      { label: 'No', isUse: false, value: 0 },
+    ],
+  },
+  {
+    inputType: 'selectButton',
     label: 'Expiatio',
+    name: 'Expiatio',
     dropdown: [
-      {
-        label: 'Yes',
-        value: 1,
-        bonus: { p_pene_race_all: 25, m_pene_race_all: 25 },
-      },
-      { label: 'No', value: 2 },
+      { label: 'Yes', isUse: true, value: 5, bonus: { p_pene_race_all: 25, m_pene_race_all: 25 } },
+      { label: 'No', isUse: false, value: 0 },
     ],
   },
-};
+];
 
 const createNumberDropdownList = (from: number, to: number, prefixLabel?: string): DropdownModel[] => {
   return Array.from({ length: to - from + 1 }, (_, k) => {
@@ -400,7 +344,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   monsterDataMap: Record<number, MonsterModel> = {};
   items!: Record<number, ItemModel>;
   mapEnchant!: Map<string, ItemModel>;
-  skillBuffs = skillBuffs;
+  skillBuffs = bishopBuffs;
 
   preSets: DropdownModel[] = [];
   selectedPreset = undefined;
@@ -514,10 +458,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     shadowPendant: undefined,
     shadowPendantRefine: undefined,
 
-    impositioManus: undefined,
-    advBlessing: undefined,
-    advAgiUp: undefined,
-    expiatio: undefined,
+    bishopBuffs: [],
 
     activeSkills: [],
     passiveSkills: [],
@@ -859,15 +800,13 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       .map((id) => this.items[id].script);
 
     const buffs = {};
-    const addBuffBonus = (buffKey: string) => {
-      if (!this.model[buffKey]) return;
-
-      const { bonus } = this.skillBuffs[buffKey].dropdown.find((a) => a.value === this.model[buffKey]);
-      if (!bonus) return;
-
-      buffs[this.skillBuffs[buffKey].name] = bonus;
-    };
-    Object.keys(this.skillBuffs).forEach(addBuffBonus);
+    this.skillBuffs.forEach((skillBuff, i) => {
+      const buffVal = this.model.bishopBuffs[i];
+      const buff = skillBuff.dropdown.find((a) => a.value === buffVal);
+      if (buff?.isUse) {
+        buffs[skillBuff.name] = buff.bonus;
+      }
+    });
 
     const calc = this.calculator
       .setModel(this.model)
