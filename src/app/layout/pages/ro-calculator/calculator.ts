@@ -1343,6 +1343,16 @@ export class Calculator {
       if (restCondition.startsWith('===')) return { isValid, restCondition: restCondition.replace('===', '') };
     }
 
+    //WEAPON_TYPE
+    const [toRemoveB, wType] = restCondition.match(/WEAPON_TYPE\[(\D+)]/) ?? [];
+    if (wType) {
+      const isValid = this.weaponData.data.typeName === wType;
+      if (!isValid) return { isValid, restCondition };
+
+      restCondition = restCondition.replace(toRemoveB, '');
+      if (restCondition.startsWith('===')) return { isValid, restCondition: restCondition.replace('===', '') };
+    }
+
     const [_, weaponType] = script.match(/^\[weaponType=(.+?)\]/) ?? [];
     if (weaponType) {
       const weapon = this.equipItem.get(ItemTypeEnum.weapon);

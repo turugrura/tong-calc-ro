@@ -1152,6 +1152,35 @@
       ]
     }
   },
+  "4550": {
+    "id": 4550,
+    "aegisName": "Upd_Bow_Guardian_Card",
+    "name": "Upgrade Bow Guardian Card",
+    "unidName": "Upgrade Bow Guardian Card",
+    "resName": "이름없는카드",
+    "description": "เมื่อใช้กับอาวุธประเภท Bow,\nCRI +5, HIT +5,\nเพิ่ม Damage สกิล Arrow Storm 50%,\nเมื่อโจมตีทางกายภาพระยะไกล เพิ่มโอกาสการติด Critical 20% และทุก ๆ การอัพเกรด 4 ขั้น เพิ่มโอกาสการติด Critical ขึ้นอีก 1%,\nมีโอกาสที่จะใช้งาน Phantasmic Arrow Lv. 1 โดยอัตโนมัติ\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "script": {
+      "cri": [
+        "WEAPON_TYPE[bow]5"
+      ],
+      "hit": [
+        "WEAPON_TYPE[bow]5"
+      ],
+      "Arrow Storm": [
+        "WEAPON_TYPE[bow]50"
+      ]
+    }
+  },
   "4556": {
     "id": 4556,
     "aegisName": "Fenrir_Card",
@@ -4754,6 +4783,44 @@
       ]
     }
   },
+  "15176": {
+    "id": 15176,
+    "aegisName": "Vigilante_Suits",
+    "name": "Vigilante Suit",
+    "unidName": "Cloth",
+    "resName": "자경단슈츠",
+    "description": "ชุดของกลุ่ม Vigilante ที่ปฏิบัติหน้าที่เพื่อหยุดยั้งอาชญากรในสมัยอดีต\nDEX + 5\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่มพลังโจมตีของธนู 3%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล [Triangle Shot] 20%\nเมื่อสวมใส่ร่วมกับ Vigilante Bow และ Vigilante Badge\nเพิ่ม Damage สกิล [Double Strafe] 50%\nลดปริมาณการใช้ SP 10 เมื่อใช้สกิล [Triangle Shot]\nประเภท : ^777777Armor^000000 พลังป้องกัน : ^77777750^000000\nน้ำหนัก : ^77777750^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Shadow Chaser^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 50,
+    "weight": 50,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Shadow Chaser"
+    ],
+    "script": {
+      "dex": [
+        "5"
+      ],
+      "bowRange": [
+        "2---3"
+      ],
+      "Triangle Shot": [
+        "9===20"
+      ],
+      "Double Strafe": [
+        "EQUIP[Vigilante Bow&&Vigilante Badge]50"
+      ],
+      "spCost__Triangle Shot": [
+        "EQUIP[Vigilante Bow&&Vigilante Badge]10"
+      ]
+    }
+  },
   "15280": {
     "id": 15280,
     "aegisName": "S_CriticalHit_Armor",
@@ -5768,6 +5835,56 @@
       ],
       "cd__Suicidal Destruction": [
         "4---10"
+      ]
+    }
+  },
+  "18975": {
+    "id": 18975,
+    "aegisName": "Old_Shadow_Handicraft",
+    "name": "Old Shadow Handicraft [1]",
+    "unidName": "Cap",
+    "resName": "그림자공작",
+    "description": "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้^000000\nAll State + 1 \nทุกๆ การอัพเกรด 1 ขั้น ATK + 4, MATK + 4\nทุกๆ การอัพเกรด 2 ขั้น เพิ่ม Max HP และ Max SP ทีละ 1%\nทุกๆ การอัพเกรด 2 ขั้น เพิ่มความแรงสกิล Triangle Shot 25%\nเมื่ออัพเกรดถึงขั้น 6 ขึ้นไป ลดคูลดาวน์สกิล Masquerade-Unlucky, Enervation 1 วินาที\nเมื่ออัพเกรดถึงขั้น 8 ขึ้นไป ลดคูลดาวน์สกิล Masquerade-Laziness, Weakness 1 วินาที\nเมื่ออัพเกรดถึงขั้น 10 ขึ้นไป ลดคูลดาวน์สกิล Masquerade-Ignorance, Groomy 1 วินาที\nประเภท : ^777777Helm^000000 พลังป้องกัน : ^77777710^000000\nตำแหน่ง : ^777777Upper ^000000น้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Shadow Chaser^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 10,
+    "weight": 10,
+    "requiredLevel": 170,
+    "location": "Upper",
+    "compositionPos": null,
+    "usableClass": [
+      "Shadow Chaser"
+    ],
+    "script": {
+      "allStatus": [
+        "1"
+      ],
+      "atk": [
+        "1---4"
+      ],
+      "matk": [
+        "1---4"
+      ],
+      "hpPercent": [
+        "2---1"
+      ],
+      "spPercent": [
+        "2---1"
+      ],
+      "Triangle Shot": [
+        "2---25"
+      ],
+      "cd__Masquerade-Enervation": [
+        "6===1"
+      ],
+      "cd__Masquerade-Weakness": [
+        "8===1"
+      ],
+      "cd__Masquerade-Groomy": [
+        "10===1"
       ]
     }
   },
@@ -11842,6 +11959,29 @@
       ]
     }
   },
+  "27086": {
+    "id": 27086,
+    "aegisName": "BitterArcherSk_Card",
+    "name": "Resentful Archer Skeleton Card",
+    "unidName": "Resentful Archer Skeleton Card",
+    "resName": "이름없는카드",
+    "description": "เมื่อโจมตีทางกายภาพทั่วไป หลังสวมใส่กับอาวุธประเภท Bow\nมีโอกาสเล็กน้อยที่จะใช้งาน Double Strafe Lv. 5 โดยอัตโนมัติ \nเมื่ออัปเกรดถึงขั้น 10 ขึ้นไป เพิ่มพลังโจมตีด้วยอาวุธประเภท Bow 20% \nเมื่อใช้กับ Archer Skeleton Card และโจมตี\nมีโอกาสที่จะแปลงร่างเป็น Archer Skeleton เป็นเวลา 5 วินาที (เมื่อแปลงร่าง ASPD +1) \nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "script": {
+      "bowRange": [
+        "10===20"
+      ]
+    }
+  },
   "27101": {
     "id": 27101,
     "aegisName": "SweetNightM_Card",
@@ -13213,6 +13353,35 @@
       "atk": [
         "1---10",
         "EQUIP[Thief Shadow Pendant]REFINE[10]===2"
+      ]
+    }
+  },
+  "28441": {
+    "id": 28441,
+    "aegisName": "Vigilante_Bedge",
+    "name": "Vigilante Badge",
+    "unidName": "Accessory",
+    "resName": "자경단뱃지",
+    "description": "เข็มกลัดของกลุ่ม Vigilante ที่ปฏิบัติหน้าที่เพื่อหยุดยั้งอาชญากรในสมัยอดีต\nFlee + 10, เพิ่มพลังโจมตีของธนู 5%\nประเภท : ^777777Accessory^000000 พลังป้องกัน : ^7777772^000000\nน้ำหนัก : ^77777720^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Shadow Chaser^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 517,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 2,
+    "weight": 20,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Shadow Chaser"
+    ],
+    "script": {
+      "flee": [
+        "10"
+      ],
+      "bowRange": [
+        "5"
       ]
     }
   },

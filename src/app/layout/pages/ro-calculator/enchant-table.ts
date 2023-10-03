@@ -360,9 +360,16 @@ const enchantTable: EntTable[] = [
   { name: 'White_Wing_Manteau', enchants: [null, [...atkPer, ...fs13], [...atkPer, ...fs13], [...atkPer, ...fs13]] },
   { name: 'White_Wing_Brooch', enchants: [null, [], [], BaseState._1] },
 
-  { name: 'Old_Camo_RabbitHood', enchants: [null, labHead2, BaseState._3_5, BaseState._3_5] },
-  { name: 'Old_Circlet_Of_Bone', enchants: [null, labHead2, BaseState._3_5, BaseState._3_5] },
+  { name: 'Vigilante_Bedge', enchants: [null, [], BaseState._1, BaseState._1] },
+
   { name: 'Old_Mitra', enchants: [null, labHead2, BaseState._3_5, BaseState._3_5] },
+  { name: 'Old_Driver_Band_R', enchants: [null, labHead2, BaseState._3_5, BaseState._3_5] },
+  { name: 'Old_Driver_Band_Y', enchants: [null, labHead2, BaseState._3_5, BaseState._3_5] },
+  { name: 'Old_Shadow_Handicraft', enchants: [null, labHead2, BaseState._3_5, BaseState._3_5] },
+  { name: 'Old_Magic_Stone_Hat', enchants: [null, labHead2, BaseState._3_5, BaseState._3_5] },
+  { name: 'Old_Wind_Whisper', enchants: [null, labHead2, BaseState._3_5, BaseState._3_5] },
+  { name: 'Old_Circlet_Of_Bone', enchants: [null, labHead2, BaseState._3_5, BaseState._3_5] },
+  { name: 'Old_Camo_RabbitHood', enchants: [null, labHead2, BaseState._3_5, BaseState._3_5] },
 
   { name: 'S_Circlet_Of_Time_GC', enchants: [null, labHead2, tempHead3, tempHead4] },
   { name: 'S_Circlet_Of_Time_SC', enchants: [null, labHead2, tempHead3, tempHead4] },
