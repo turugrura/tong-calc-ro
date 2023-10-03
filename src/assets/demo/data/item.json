@@ -4754,6 +4754,39 @@
       ]
     }
   },
+  "15280": {
+    "id": 15280,
+    "aegisName": "S_CriticalHit_Armor",
+    "name": "Critical Hit Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우3",
+    "description": "ชุดเกราะที่เพิ่มพลังป้องกันเมื่อสวมใส่เพิ่มบนเกราะอีกที สามารถใส่แบบชิ้นเดียวได้ แต่ความสามารถในการป้องกันจะลดลงไปอีก\nATK + 15, CRI + 7.\nทุกๆ การอัพเกรด 2 ขั้น เพิ่ม Critical Damage 1%\nเมื่ออัพเกรดถึงขั้น 7 ขึ้นไป CRI + 7 เพิ่มเติม\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Armor ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Armor",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atk": [
+        "15"
+      ],
+      "cri": [
+        "7",
+        "7===7"
+      ],
+      "criDmg": [
+        "2---1"
+      ]
+    }
+  },
   "15376": {
     "id": 15376,
     "aegisName": "Illusion_Armor_A",
@@ -5735,6 +5768,101 @@
       ],
       "cd__Suicidal Destruction": [
         "4---10"
+      ]
+    }
+  },
+  "18978": {
+    "id": 18978,
+    "aegisName": "Old_Magic_Stone_Hat",
+    "name": "Old Magic Stone Hat [1]",
+    "unidName": "Cap",
+    "resName": "마력의돌모자",
+    "description": "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้^000000\nAll State + 1, MDEF+ 5, เพิ่มการฟื้นฟู SP 20%\nทุกๆ การอัพเกรด 1 ขั้น MATK + 1%\nทุกๆ การอัพเกรด 2 ขั้น เพิ่ม Max HP และ Max SP ทีละ 1%\nทุกๆ การอัพเกรด 2 ขั้น เพิ่มความแรงสกิล Soul Expansion 5%\nลดคูลดาวน์สกิล Crimson Rock 1 วินาที\nลดคูลดาวน์สกิล Crimson Rock ลง 0.1 วินาที ตามขั้นอัพเกรด\nประเภท : ^777777Helm^000000 พลังป้องกัน : ^77777710^000000\nตำแหน่ง : ^777777Upper ^000000น้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Warlock^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 10,
+    "weight": 10,
+    "requiredLevel": 170,
+    "location": "Upper",
+    "compositionPos": null,
+    "usableClass": [
+      "Warlock"
+    ],
+    "script": {
+      "allStatus": [
+        "1"
+      ],
+      "mdef": [
+        "5"
+      ],
+      "spRegenPercent": [
+        "20"
+      ],
+      "matkPercent": [
+        "1---1"
+      ],
+      "hpPercent": [
+        "2---1"
+      ],
+      "spPercent": [
+        "2---1"
+      ],
+      "Soul Expansion": [
+        "2---5"
+      ],
+      "cd__Crimson Rock": [
+        "1",
+        "1---0.1"
+      ]
+    }
+  },
+  "18980": {
+    "id": 18980,
+    "aegisName": "Old_Wind_Whisper",
+    "name": "Old Wind Whisper [1]",
+    "unidName": "Headband",
+    "resName": "바람의속삭임",
+    "description": "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้^000000\nAll State + 1, MDEF+ 5 \nทุกๆ การอัพเกรด 1 ขั้น MATK + 1%, ATK + 4\nทุกๆ การอัพเกรด 2 ขั้น เพิ่ม Max HP และ Max SP ทีละ 1%\nทุกๆ การอัพเกรด 2 ขั้น เพิ่มความแรงสกิล Poison Burst 15%\nทุกๆ การอัพเกรด 2 ขั้น เพิ่มความแรงสกิล Varetyr Spear 20%\nประเภท : ^777777Helm^000000 พลังป้องกัน : ^77777710^000000\nตำแหน่ง : ^777777Upper ^000000น้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Sorcerer^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 10,
+    "weight": 10,
+    "requiredLevel": 170,
+    "location": "Upper",
+    "compositionPos": null,
+    "usableClass": [
+      "Sorcerer"
+    ],
+    "script": {
+      "allStatus": [
+        "1"
+      ],
+      "mdef": [
+        "5"
+      ],
+      "matkPercent": [
+        "1---1"
+      ],
+      "atk": [
+        "1---4"
+      ],
+      "hpPercent": [
+        "2---1"
+      ],
+      "spPercent": [
+        "2---1"
+      ],
+      "Poison Burst": [
+        "2---15"
+      ],
+      "Varetyr Spear": [
+        "2---20"
       ]
     }
   },
@@ -7828,6 +7956,122 @@
       ]
     }
   },
+  "24029": {
+    "id": 24029,
+    "aegisName": "S_Ancient_Armor",
+    "name": "Ancient Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우",
+    "description": "ใส่เสื้อเกราะ 2 ชั้นทำให้เพิ่มการป้องกันได้มากขึ้น หากใส่เพียงชั้นเดียวจะได้การป้องกันน้อย\nHIT + 10.\nเมื่ออัพเกรด +7, HIT เพิ่มขึ้น +10\nเมื่อสวมใส่กับ ^32CD32Ancient Shadow Armor^000000 และ^32CD32Kingbird's Shadow Weapon^000000, ATK เพิ่มขึ้นเท่ากับผลรวมของการอัพเกรด\nเมื่อผลรวมการอัพเกรดมากกว่า 15 จะเพิ่ม Range Damage ขึ้น 1%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Armor^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Armor",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "hit": [
+        "10",
+        "7===10"
+      ]
+    }
+  },
+  "24030": {
+    "id": 24030,
+    "aegisName": "S_Critical_Armor",
+    "name": "Critical Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우",
+    "description": "พลังป้องกันแข็งแกร่งมากขึ้นเมื่อสวมใส่ทับชุดเกราะอีกที แต่จะใส่เดี่ยวๆก็ได้แต่พลังป้องกันก็จะน้อยลง\nCRI + 5.\nเมื่ออัพเกรดขั้น 7 หรือมากกว่า เพิ่ม CRI + 5\n เมื่อสวมใส่ ^32CD32Critical Shadow Armor^000000 กับ ^32CD32Critical Hit Shadow Weapon^000000 ด้วยกัน, เพิ่ม ATK เท่ากับจำนวนรวมของขั้นอัพเกรด\nหากผลรวมอัพเกรดของเซตมากกว่า 15 ขึ้นไป เพิ่ม Critical Damage เพิ่มอีก 1%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Armor ^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ: ^7777771^000000\nอาชีพที่สวมใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Armor",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "cri": [
+        "5",
+        "7===5"
+      ]
+    }
+  },
+  "24031": {
+    "id": 24031,
+    "aegisName": "S_Kingbird_Weapon",
+    "name": "Kingbird's Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่มีการติดอาวุธช่วยเพิ่มศักยภาพที่ซ่อนอยู่ของผู้สวมใส่\nATK + 10.\nเมื่ออัพเกรด +7, Range Damage เพิ่มขึ้น 1%\nเมื่อสวมใส่กับ ^32CD32Kingbird's Shadow Weapon^000000 และ ^32CD32Ancient Shadow Armor^000000, ATK เพิ่มขึ้นเท่ากับผลรวมของการอัพเกรด\nเมื่อผลรวมการอัพเกรดมากกว่า 15 จะเพิ่ม Range Damage ขึ้น 1%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atk": [
+        "10",
+        "EQUIP[Ancient Shadow Armor]REFINE[shadowWeapon,shadowArmor==1]---1"
+      ],
+      "range": [
+        "7===1",
+        "EQUIP[Ancient Shadow Armor]REFINE[shadowWeapon,shadowArmor==15]===1"
+      ]
+    }
+  },
+  "24032": {
+    "id": 24032,
+    "aegisName": "S_Cri_Hit_Weapon",
+    "name": "Critical Hit Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่ติดแน่นอยู่กับมือเป็นอาวุธที่ดึงศักยภาพของผู้สวมใส่ออกมา\nATK + 10.\nเมื่ออัพเกรดขั้น 7 หรือมากกว่า , เพิ่ม Critical Damage 1%\nเมื่อสวมใส่ ^32CD32Critical Hit Shadow Weapon^000000 กับ ^32CD32Critical Shadow Armor^000000 ด้วยกัน, เพิ่ม ATK เท่ากับจำนวนรวมของขั้นอัพเกรด\nหากผลรวมอัพเกรดของเซตมากกว่า 15 ขึ้นไป เพิ่ม Critical Damage เพิ่มอีก 1%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ: ^7777771^000000\nอาชีพที่สวมใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atk": [
+        "10",
+        "EQUIP[Critical Shadow Armor]REFINE[shadowWeapon,shadowArmor==1]---1"
+      ],
+      "criDmg": [
+        "7===1",
+        "EQUIP[Critical Shadow Armor]REFINE[shadowWeapon,shadowArmor==15]1"
+      ]
+    }
+  },
   "24166": {
     "id": 24166,
     "aegisName": "S_Penetration_Earring",
@@ -7881,6 +8125,60 @@
     "usableClass": [
       "all"
     ]
+  },
+  "24168": {
+    "id": 24168,
+    "aegisName": "S_Tempest_Earring",
+    "name": "Tempest Shadow Earring",
+    "unidName": "Shadow Earring",
+    "resName": "이어링쉐도우",
+    "description": "ต่างหูมงคลที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา\nเพิกเฉยต่อพลังป้องกันทางเวทย์ของศัตรูทั่วไป 5%\nทุกการอัพเกรด 2 ขั้น เพิกเฉยต่อพลังป้องกันทางเวทย์ของศัตรูทั่วไปเพิ่มขึ้นอีก 1%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Earring^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 529,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Accessory",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "m_pene_class_normal": [
+        "5",
+        "2---1"
+      ]
+    }
+  },
+  "24169": {
+    "id": 24169,
+    "aegisName": "S_Tempest_Pendent",
+    "name": "Tempest Shadow Pendant",
+    "unidName": "Shadow Pendant",
+    "resName": "펜던트쉐도우",
+    "description": "สร้อยคอศักดิ์สิทธิ์ที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา\nเพิกเฉยต่อพลังป้องกันทางเวทย์ของศัตรูทั่วไป 5%\nทุกการอัพเกรด 2 ขั้น เพิกเฉยต่อพลังป้องกันทางเวทย์ของศัตรูทั่วไปเพิ่มขึ้นอีก 1%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Pandant^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 530,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Accessory",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "m_pene_class_normal": [
+        "5",
+        "2---1"
+      ]
+    }
   },
   "24217": {
     "id": 24217,
@@ -7946,6 +8244,92 @@
       ]
     }
   },
+  "24243": {
+    "id": 24243,
+    "aegisName": "S_Reload_Shoes",
+    "name": "Reload Shadow Shoes",
+    "unidName": "Shadow Shoes",
+    "resName": "슈즈쉐도우",
+    "description": "รองเท้าศักดิ์สิทธิ์ช่วยปกป้องผู้สวมใส่ สามารถใส่ชิ้นเดียวได้แต่พลังของมันจะลดลง\nลดดีเลย์หลังใช้สกิล 1%\nอัพเกรดถึง +7, ลดดีเลย์หลังใช้สกิลเพิ่มอีก 1%\nอัพเกรดถึง +9, ลดดีเลย์หลังใช้สกิลเพิ่มอีก 1%\nเมื่อสวมใส่ ^32CD32Reload (Shoes, Shield, Armor) Shadow^000000 ด้วยกัน, ลดดีเลย์หลังใช้สกิล 1%\nเมื่อขั้นอัพเกรดรวมกันมากกว่า 25 ขึ้นไป, ลดดีเลย์หลังใช้สกิล 5%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shoes^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ :^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 528,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Shoes",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "acd": [
+        "1",
+        "7===1",
+        "9===1"
+      ]
+    }
+  },
+  "24244": {
+    "id": 24244,
+    "aegisName": "S_Reload_Shield",
+    "name": "Reload Shadow Shield",
+    "unidName": "Shadow Shield",
+    "resName": "쉴드쉐도우",
+    "description": "เกราะขนาดเล็กศักดิ์สิทธิ์ช่วยปกป้องผู้สวมใส่ สามารถใส่ชิ้นเดียวได้แต่พลังของมันจะลดลง\nลดดีเลย์หลังใช้สกิล 1%\nอัพเกรดตั้งแต่ขั้น 7 ขึ้นไป, ลดดีเลย์หลังใช้สกิลเพิ่มอีก 1%\nอัพเกรดตั้งแต่ขั้น 9 ขึ้นไป , ลดดีเลย์หลังใช้สกิลเพิ่มอีก 1%\nเมื่อสวมใส่ ^32CD32Reload (Shoes, Shield, Armor) Shadow^000000 ด้วยกัน, ลดดีเลย์หลังใช้สกิล 1%\nเมื่อขั้นอัพเกรดรวมกันมากกว่า 25 ขึ้นไป, ลดดีเลย์หลังใช้สกิล 5%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shield^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ :^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 527,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Shield",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "acd": [
+        "1",
+        "7===1",
+        "9===1"
+      ]
+    }
+  },
+  "24245": {
+    "id": 24245,
+    "aegisName": "S_Reload_Armor",
+    "name": "Reload Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우",
+    "description": "เสื้อเกราะศักดิ์สิทธิ์ช่วยปกป้องผู้สวมใส่ สามารถใส่ชิ้นเดียวได้แต่พลังของมันจะลดลง\nลดดีเลย์หลังใช้สกิล 1%\nอัพเกรดตั้งแต่ขั้น 7 ขึ้นไป, ลดดีเลย์หลังใช้สกิลเพิ่มอีก 1%\nอัพเกรดตั้งแต่ขั้น 9 ขึ้นไป, ลดดีเลย์หลังใช้สกิลเพิ่มอีก 1%\nเมื่อสวมใส่ ^32CD32Reload (Shoes, Shield, Armor) Shadow^000000 ด้วยกัน, ลดดีเลย์หลังใช้สกิล 1%\nเมื่อขั้นอัพเกรดรวมกันมากกว่า 25 ขึ้นไป, ลดดีเลย์หลังใช้สกิล 5%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Armor^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ :^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Armor",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "acd": [
+        "1",
+        "7===1",
+        "9===1",
+        "EQUIP[Reload Shadow Shoes&&Reload Shadow Shield]===1",
+        "EQUIP[Reload Shadow Shoes&&Reload Shadow Shield]REFINE[shadowArmor,shadowShield,shadowBoot==25]===5"
+      ]
+    }
+  },
   "24248": {
     "id": 24248,
     "aegisName": "S_Acolyte_earring",
@@ -8008,6 +8392,60 @@
       ]
     }
   },
+  "24253": {
+    "id": 24253,
+    "aegisName": "S_Thief_Pendant",
+    "name": "Thief Shadow Pendant",
+    "unidName": "Shadow Pendant",
+    "resName": "펜던트쉐도우",
+    "description": "สร้อยคอศักดิ์สิทธิ์ที่กล่าวกันว่าปกป้องผู้สวมใส่ และดึงศักยภาพของผู้สวมใส่ออกมา\nเพิ่ม Damage ของ Envenom 20%\nทุกการอัพเกรด 1 ขั้น เพิ่ม Damage ของ Envenom อีก 5%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Pandant^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 530,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Accessory",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "Envenom": [
+        "20",
+        "1---5"
+      ]
+    }
+  },
+  "24255": {
+    "id": 24255,
+    "aegisName": "S_Archer_Pendant",
+    "name": "Archer Shadow Pendant",
+    "unidName": "Shadow Pendant",
+    "resName": "펜던트쉐도우",
+    "description": "สร้อยคอศักดิ์สิทธิ์ที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา\nเพิ่ม Damage ของ Arrow Shower 20%  \nทุกๆ การอัพเกรด 1 ขั้น เพิ่ม Damage ของ Arrow Shower เพิ่มเติม 5% \nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Pendant^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 530,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Accessory",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "Arrow Shower": [
+        "20",
+        "1---5"
+      ]
+    }
+  },
   "24260": {
     "id": 24260,
     "aegisName": "S_Priest_Shoes",
@@ -8036,6 +8474,59 @@
       "sp__Lex Aeterna": [
         "20",
         "1---3"
+      ]
+    }
+  },
+  "24263": {
+    "id": 24263,
+    "aegisName": "S_Rogue_Shoes",
+    "name": "Rogue Shadow Shoes",
+    "unidName": "Shadow Shoes",
+    "resName": "슈즈쉐도우",
+    "description": "รองเท้าที่สวมใส่เพิ่มเติม สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์ของมันจะลดน้อยลง\nเมื่อ Rogue Class สวมใส่ไอเท็มนี้ \nATK จะเพิ่มขึ้นตามเลเวลของสกิล Sword Mastery เมื่ออัพเกรดถึงขั้น 6 ขึ้นไป ทุกการอัพเกรด 1 ขั้น ATK จะเพิ่มขึ้นเพิ่มเติมตามเลเวลของสกิล Sword Mastery  \nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shoes^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 528,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Shoes",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atk": [
+        "20"
+      ]
+    }
+  },
+  "24266": {
+    "id": 24266,
+    "aegisName": "S_Hunter_Shoes",
+    "name": "Hunter Shadow Shoes",
+    "unidName": "Shadow Shoes",
+    "resName": "슈즈쉐도우",
+    "description": "เพิ่ม Damage ของ Blitz Beat 20% \nทุกๆ การอัพเกรด 1 ขั้น เพิ่ม Damage ของ Blitz Beat เพิ่มเติม 5%  \nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shoes^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 528,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Shoes",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "Blitz Beat": [
+        "20",
+        "1---5"
       ]
     }
   },
@@ -8072,6 +8563,115 @@
       ]
     }
   },
+  "24276": {
+    "id": 24276,
+    "aegisName": "S_Rogue_Armor",
+    "name": "Rogue Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우",
+    "description": "ชุดเกราะที่เพิ่มพลังป้องกันเมื่อสวมใส่เพิ่มบนเกราะอีกที สามารถใส่แบบชิ้นเดียวได้ แต่ความสามารถในการป้องกันจะลดลงไปอีก\nเพิ่ม Damage ของสกิล Sightless Mind 20% \nทุกๆ การอัพเกรด 1 ขั้น เพิ่ม Damage ของสกิล Sightless Mind เพิ่มเติม 5% \n\nเมื่อสวมใส่ร่วมกับ Rogue Shadow Shoes\nและเมื่อผู้ส่วมใส่เป็น Rogue Class เพิ่ม Damage ทางกายภาพและทางเวทแก่ศัตรูขนาดเล็ก/กลาง/ใหญ่ 3%  \nลดปริมาณการใช้ SP ในการใช้สกิล Sightless Mind 20%  \nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Armor ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "Sightless Mind": [
+        "20",
+        "1---5"
+      ],
+      "p_size_all": [
+        "USED[Rogue||ShadowChaser]EQUIP[Rogue Shadow Shoes]===3"
+      ],
+      "m_size_all": [
+        "USED[Rogue||ShadowChaser]EQUIP[Rogue Shadow Shoes]===3"
+      ],
+      "spPercentCost__Sightless Mind": [
+        "EQUIP[Rogue Shadow Shoes]20"
+      ]
+    }
+  },
+  "24279": {
+    "id": 24279,
+    "aegisName": "S_Hunter_Armor",
+    "name": "Hunter Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우",
+    "description": "ชุดเกราะที่เพิ่มพลังป้องกันเมื่อสวมใส่เพิ่มบนเกราะอีกที สามารถใส่แบบชิ้นเดียวได้ แต่ความสามารถในการป้องกันจะลดลงไปอีก \nเพิ่ม Damage ของ Claymore Trap, Land Mine 20%  \nทุกๆ การอัพเกรด 1 ขั้น เพิ่ม Damage ของ Claymore Trap, Land Mine เพิ่มเติม 5%  \nเมื่อสวมใส่ร่วมกับ Hunter Shadow Shoes  \nเมื่อ Hunter class สวมใส่ เพิ่ม Damage ทางกายภาพและทางเวทย์เมื่อโจมตีศัตรูขนาดเล็ก/กลาง/ใหญ่ 3%  \nลด SP ในการใช้สกิล Claymore Trap, Land Mine 20%  \nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Armor ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "Claymore Trap": [
+        "20",
+        "1---5"
+      ],
+      "Land Mine": [
+        "20",
+        "1---5"
+      ],
+      "p_size_all": [
+        "EQUIP[Hunter Shadow Shoes]3"
+      ],
+      "m_size_all": [
+        "EQUIP[Hunter Shadow Shoes]3"
+      ]
+    }
+  },
+  "24283": {
+    "id": 24283,
+    "aegisName": "S_Gunslinger_Weapon",
+    "name": "Gunslinger Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา\nGunslingerเท่านั้นที่สามารถสวมใส่ได้\n---------------------------------- \nASPD +1\nทุกๆ การเรียนรู้สกิล [Snake Eyes] 1 Level เพิกเฉยต่อพลังป้องกันทางกายภาพของศัตรูทั่วไป 3%\nทุกๆ การอัพเกรด 1 ขั้น เพิกเฉยต่อพลังป้องกันทางกายภาพของศัตรูทั่วไป 3%\nเมื่ออัพเกรดถึงขั้น 7 ขี้นไป ASPD +1 เพิ่มเติม, และเพิ่มพลังโจมตีทางกายภาพระยะไกลเพิ่มเติม 3%\nเมื่ออัพเกรดถึงขั้น 9 ขี้นไป ASPD +1 เพิ่มเติม, และเพิ่มพลังโจมตีทางกายภาพระยะไกลเพิ่มเติม 5%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777Gunslinger^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "Gunslinger"
+    ],
+    "script": {
+      "aspd": [
+        "1",
+        "7===1",
+        "9===1"
+      ],
+      "p_pene_class_normal": [
+        "LEARN_SKILL[Snake Eyes==1]---3",
+        "1--3"
+      ],
+      "range": [
+        "7===3",
+        "9===5"
+      ]
+    }
+  },
   "24292": {
     "id": 24292,
     "aegisName": "S_Archbishop_Weapon",
@@ -8094,6 +8694,60 @@
     ],
     "script": {
       "Duple Light": [
+        "20",
+        "1---5"
+      ]
+    }
+  },
+  "24295": {
+    "id": 24295,
+    "aegisName": "S_Shadowchaser_Weapon",
+    "name": "Shadow Chaser Weapon Shadow",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา \nมีเพียงอาชีพ Shadow Chaser เท่านั้นที่สามารถสวมใส่ได้ \nเพิ่ม Damage ของ Triangle Shot 20% \nทุกๆ การอัพเกรด 1 ขั้น เพิ่ม Damage ของ Triangle Shot เพิ่มเติม 5%  \nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon^000000 น้ำหนัก :  ^7777770^000000\nเลเวลที่ต้องการ: ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Shadow Chaser Class^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "Shadow Chaser Class"
+    ],
+    "script": {
+      "Triangle Shot": [
+        "20",
+        "1---5"
+      ]
+    }
+  },
+  "24298": {
+    "id": 24298,
+    "aegisName": "S_Ranger_Weapon",
+    "name": "Ranger Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา\nสำหรับ Ranger เท่านั้น \nเพิ่มดาเมจ Bomb Cluster 20%\nทุกๆ การอัพเกรด 1 ขั้น เพิ่มดาเมจ Bomb Cluster 5%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Ranger^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "Ranger"
+    ],
+    "script": {
+      "Bomb Cluster": [
         "20",
         "1---5"
       ]
@@ -8147,6 +8801,56 @@
       ]
     }
   },
+  "24308": {
+    "id": 24308,
+    "aegisName": "S_Shadowchaser_Shield",
+    "name": "Shadow Chaser Shield Shadow",
+    "unidName": "Shadow Shield",
+    "resName": "쉴드쉐도우",
+    "description": "โล่เล็กที่สามารถสวมใส่ที่แขนได้ สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์การป้องกันของมันจะลดน้อยลง\nมีเพียงอาชีพ Shadow Chaser เท่านั้นที่สามารถสวมใส่ได้ \nเมื่อใช้ Auto Shadow Spell Skill , ทุกๆ การอัพเกรด 1 ขั้น เพิ่ม ASPD 1% เป็นเวลา 50 วินาที\nเมื่ออัพเกรดถึงขั้น 7 ขึ้นไป เมื่อใช้ Auto Shadow Spell Skillเพิ่ม ASPD +1 เป็นเวลา 50 วินาที \nเมื่ออัพเกรดถึงขั้น 9 ขึ้นไป เมื่อใช้ Auto Shadow Spell Skillเพิ่ม ASPD +1 เป็นเวลา 50 วินาที\nเมื่อสวมใส่ร่วมกันกับ ^32CD32Shadow Chaser Shadow Weapon^000000, จะได้รับเอฟเฟกต์เพิ่มเติม\nเพิ่ม Damage Triangle Shot 20% , ATK + 2%, MATK + 2%, เพิ่ม Damage การโจมตีระยะไกล 2% \nเมื่อสวมใส่ ^32CD32Thief Shadow^000000 2 ประเภท, ^32CD32Rogue Shadow ^000000 2 ประเภท,  ^32CD32Shadow Chaser Shadow^000000 2 ประเภท ทั้งหมด, จะได้รับเอฟเฟกต์ดังนี้\nAll State + 10, MaxHP + 5%, MaxSP + 5%.\nเพิกเฉยต่อพลังป้องกันทางกายภาพและทางเวทย์ของศัตรูทั่วไป 50% \nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shield^000000 น้ำหนัก :  ^7777770^000000\nเลเวลที่ต้องการ: ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Shadow Chaser Class^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 527,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Shield",
+    "compositionPos": null,
+    "usableClass": [
+      "Shadow Chaser Class"
+    ],
+    "script": {
+      "Triangle Shot": [
+        "EQUIP[Shadow Chaser Shadow Weapon]20"
+      ],
+      "atkPercent": [
+        "EQUIP[Shadow Chaser Shadow Weapon]2"
+      ],
+      "matkPercent": [
+        "EQUIP[Shadow Chaser Shadow Weapon]2"
+      ],
+      "range": [
+        "EQUIP[Shadow Chaser Shadow Weapon]2"
+      ],
+      "allStatus": [
+        "EQUIP[Rogue Shadow Armor&&Rogue Shadow Shoes&&Shadow Chaser Weapon Shadow&&Thief Shadow Earring&&Thief Shadow Pendant]10"
+      ],
+      "hpPercent": [
+        "EQUIP[Rogue Shadow Armor&&Rogue Shadow Shoes&&Shadow Chaser Weapon Shadow&&Thief Shadow Earring&&Thief Shadow Pendant]5"
+      ],
+      "spPercent": [
+        "EQUIP[Rogue Shadow Armor&&Rogue Shadow Shoes&&Shadow Chaser Weapon Shadow&&Thief Shadow Earring&&Thief Shadow Pendant]5"
+      ],
+      "p_pene_class_normal": [
+        "EQUIP[Rogue Shadow Armor&&Rogue Shadow Shoes&&Shadow Chaser Weapon Shadow&&Thief Shadow Earring&&Thief Shadow Pendant]50"
+      ],
+      "m_pene_class_normal": [
+        "EQUIP[Rogue Shadow Armor&&Rogue Shadow Shoes&&Shadow Chaser Weapon Shadow&&Thief Shadow Earring&&Thief Shadow Pendant]50"
+      ]
+    }
+  },
   "24311": {
     "id": 24311,
     "aegisName": "S_Ranger_Shield",
@@ -8189,6 +8893,242 @@
       ],
       "p_pene_class_normal": [
         "EQUIP[Ranger Shadow Weapon&&Archer Shadow Earring&&Archer Shadow Pendant&&Hunter Shadow Armor&&Hunter Shadow Shoes]===50"
+      ]
+    }
+  },
+  "24319": {
+    "id": 24319,
+    "aegisName": "S_Gunslinger_Shield",
+    "name": "Gunslinger Shadow Shield",
+    "unidName": "Shadow Shield",
+    "resName": "쉴드쉐도우",
+    "description": "โล่เล็กที่สามารถสวมใส่ที่แขนได้ สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์การป้องกันของมันจะลดน้อยลง\nGunslinger เท่านั้นที่สามารถสวมใส่ได้\n---------------------------------- \nCritical Damage + 5%.\nทุกๆ การเรียนรู้สกิล [Single Action] 1 Level, CRI + 2.\nทุกๆ การอัพเกรด 1 ขั้น CRI + 1.\nเมื่ออัพเกรดถึงขั้น 7 ขี้นไป, Critical Damage + 2% เพิ่มเติม\nเมื่ออัพเกรดถึงขั้น 9 ขี้นไป, Critical Damage + 3% เพิ่มเติม\n---------------------------------- \nเมื่อสวมใส่ร่วมกับ Gunslinger Shadow Weapon จะได้รับเอฟเฟกต์ดังต่อไปนี้\nAll State + 3, MaxHP + 2%, MaxSP + 2%.\nเมื่อใช้สกิล ลดการปริมาณารใช้ SP ลง 10%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shield^000000 \nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777Gunslinger^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 527,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Shield",
+    "compositionPos": null,
+    "usableClass": [
+      "Gunslinger"
+    ],
+    "script": {
+      "criDmg": [
+        "5",
+        "7===2",
+        "9===3"
+      ],
+      "cri": [
+        "LEARN_SKILL[Single Action==1]---2",
+        "1---1"
+      ],
+      "allStatus": [
+        "EQUIP[Gunslinger Shadow Weapon]3"
+      ],
+      "hpPercent": [
+        "EQUIP[Gunslinger Shadow Weapon]2"
+      ],
+      "spPercent": [
+        "EQUIP[Gunslinger Shadow Weapon]2"
+      ],
+      "spPercentCost": [
+        "EQUIP[Gunslinger Shadow Weapon]10"
+      ]
+    }
+  },
+  "24332": {
+    "id": 24332,
+    "aegisName": "S_Critical_Shield",
+    "name": "Critical Shadow Shield",
+    "unidName": "Shadow Shield",
+    "resName": "쉴드쉐도우",
+    "description": "โล่เล็กที่สามารถสวมใส่ที่แขนได้ สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์การป้องกันของมันจะลดน้อยลง\nCRI + 5. \nทุกๆ การอัพเกรด 2 ขั้น CRI + 1.\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Critical Damage 1%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Critical Damage 1%\nเมื่อสวมใส่ Critical Shadow Shield ร่วมกับ Critical Shadow Shoes เพิ่ม ATK เท่ากับค่าอัพเกรดรวมกัน\nเมื่อค่าอัพเกรดรวมกัน มากกว่า 15 ขึ้นไป เพิ่ม Critical Damage 1% เพิ่มเติม\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shield ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 527,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Shield",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "cri": [
+        "5",
+        "2---1"
+      ],
+      "criDmg": [
+        "7===1",
+        "9===1",
+        "EQUIP[Critical Shadow Shoes]REFINE[shadowShield,shadowBoot==15]===1"
+      ],
+      "atk": [
+        "EQUIP[Critical Shadow Shoes]REFINE[shadowShield,shadowBoot==1]---1"
+      ]
+    }
+  },
+  "24333": {
+    "id": 24333,
+    "aegisName": "S_Critical_Shoes",
+    "name": "Critical Shadow Shoes",
+    "unidName": "Shadow Shoes",
+    "resName": "슈즈쉐도우",
+    "description": "รองเท้าที่สวมใส่เพิ่มเติม สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์ของมันจะลดน้อยลง\nFLEE + 5.\nทุกๆ การอัพเกรด 2 ขั้น FLEE + 1.\nเมื่ออัพเกรดถึงขั้น 7, CRI + 2.\nเมื่ออัพเกรดถึงขั้น 9, CRI + 2.\nเมื่อสวมใส่ Critical Shadow Shield ร่วมกับ Critical Shadow Shoes เพิ่ม ATK เท่ากับค่าอัพเกรดรวมกัน \nเมื่อค่าอัพเกรดรวมกันมากกว่า 15 ขึ้นไป เพิ่ม Critical Damage 1% เพิ่มเติม \nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shoes^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 528,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Shoes",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "flee": [
+        "5",
+        "2---1"
+      ],
+      "cri": [
+        "7===2",
+        "9===2"
+      ]
+    }
+  },
+  "24339": {
+    "id": 24339,
+    "aegisName": "S_AllMighty_Earring",
+    "name": "Almighty Shadow Earring",
+    "unidName": "Shadow Earring",
+    "resName": "이어링쉐도우3",
+    "description": "ต่างหูมงคลที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา\nทุกๆ 1 ขั้นอัพเกรด All State + 1.\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Earring ^000000 น้ำหนัก :  ^7777770^000000\nเลเวลที่ต้องการ: ^7777771^000000\nอาชีพที่สวมใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 529,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Accessory",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "allStatus": [
+        "1"
+      ]
+    }
+  },
+  "24340": {
+    "id": 24340,
+    "aegisName": "S_AllMighty_Pendant",
+    "name": "Almighty Shadow Pandant",
+    "unidName": "Shadow Pandant",
+    "resName": "펜던트쉐도우3",
+    "description": "สร้อยคอศักดิ์สิทธิ์ที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา\nทุกๆ 1 ขั้นอัพเกรด All State + 1.\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Pandant^000000 น้ำหนัก :  ^7777770^000000\nเลเวลที่ต้องการ: ^7777771^000000\nอาชีพที่สวมใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 530,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Accessory",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "allStatus": [
+        "1"
+      ]
+    }
+  },
+  "24343": {
+    "id": 24343,
+    "aegisName": "S_Blitz_Weapon",
+    "name": "Blitz Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา\nลดดีเลย์หลังโจมตี 5%\nทุกๆ การอัพเกรด 2 ขั้น ลดดีเลย์หลังโจมตีเพิ่ม 1%\nเมื่ออัพเกรดขั้น7 ASPD + 1\nเมื่ออัพเกรดขั้น 9 ลดดีเลย์หลังจากใช้สกิล 1%\nเมื่อสวมใส่ร่วมกับ ^32CD32Blitz Shadow Weapon^000000 และ\n^32CD32Blitz Shadow Armor^000000\nเพิ่ม MDEF เท่าขั้นที่อัพเกรด\nเมื่อขั้นอัพเกรดรวมกันได้ 15 ขึ้นไป ASPD + 1, ลดดีเลย์หลังจากใช้สกิล 1%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "aspdPercent": [
+        "5",
+        "2---1"
+      ],
+      "aspd": [
+        "7===1",
+        "EQUIP[Blitz Shadow Armor]REFINE[shadowWeapon,shadowArmor==15]1"
+      ],
+      "acd": [
+        "9===1",
+        "EQUIP[Blitz Shadow Armor]REFINE[shadowWeapon,shadowArmor==15]1"
+      ],
+      "mdef": [
+        "EQUIP[Blitz Shadow Armor]REFINE[shadowWeapon,shadowArmor==1]1"
+      ]
+    }
+  },
+  "24344": {
+    "id": 24344,
+    "aegisName": "S_Blitz_Armor",
+    "name": "Blitz Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우",
+    "description": "ชุดเกราะที่เพิ่มพลังป้องกันเมื่อสวมใส่เพิ่มบนเกราะอีกที สามารถใส่แบบชิ้นเดียวได้ แต่ความสามารถในการป้องกันจะลดลงไปอีก\nDEF + 25.\nทุกๆ การอัพเกรด 2 ขั้น DEF + 5.\nเมื่ออัพเกรดขั้น 7 ASPD + 1\nเมื่ออัพเกรดขั้น 9 ลดดีเลย์หลังจากใช้สกิล 1%\nเมื่อสวมใส่ร่วมกับ ^32CD32Blitz Shadow Weapon^000000 และ\n^32CD32Blitz Shadow Armor^000000\nเพิ่ม MDEF เท่าขั้นที่อัพเกรด\nเมื่อขั้นอัพเกรดรวมกันได้ 15 ขึ้นไป ASPD + 1, ความเร็วในการโจมตีเพิ่มขึ้น 1%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Armor^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Armor",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "def": [
+        "25",
+        "2---5"
+      ],
+      "aspd": [
+        "7===1"
+      ],
+      "acd": [
+        "9===1"
+      ],
+      "aspdPercent": [
+        "EQUIP[Blitz Shadow Armor]REFINE[shadowWeapon,shadowArmor==15]1"
       ]
     }
   },
@@ -8543,6 +9483,197 @@
       "all"
     ]
   },
+  "24396": {
+    "id": 24396,
+    "aegisName": "S_Magical_Shoes",
+    "name": "Magical Shadow Shoes",
+    "unidName": "Shadow Shoes",
+    "resName": "슈즈쉐도우3",
+    "description": "รองเท้าที่สวมใส่เพิ่มเติม สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์ของมันจะลดน้อยลง \nลด Variable Cast Time 2% \nเมื่ออัพเกรดถึงขั้น 7, ลด Variable Cast Time เพิ่มเติม 3% \nเมื่ออัพเกรดถึงขั้น 9, ลด Variable Cast Time เพิ่มเติม 3% \nประเภท : ^777777Shadow^000000 \nตำแหน่ง : ^777777Shoes^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 528,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Shoes",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "vct": [
+        "2",
+        "7===3",
+        "9===3"
+      ]
+    }
+  },
+  "24397": {
+    "id": 24397,
+    "aegisName": "S_Magical_Shield",
+    "name": "Magical Shadow Shield",
+    "unidName": "Shadow Shield",
+    "resName": "쉴드쉐도우3",
+    "description": "โล่เล็กที่สามารถสวมใส่ที่แขนได้ สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์การป้องกันของมันจะลดน้อยลง \nMSP + 100.\nเมื่ออัพเกรดถึงขั้น 7, เพิ่ม MSP + 2% \nเมื่ออัพเกรดถึงขั้น 9, เพิ่ม MSP + 3% เพิ่มเติม\nประเภท : ^777777Shadow^000000 \nตำแหน่ง : ^777777Shield^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 527,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Shield",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "sp": [
+        "100"
+      ],
+      "spPercent": [
+        "7===2",
+        "9===3"
+      ]
+    }
+  },
+  "24398": {
+    "id": 24398,
+    "aegisName": "S_Magical_Armor",
+    "name": "Magical Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우3",
+    "description": "ชุดเกราะที่เพิ่มพลังป้องกันเมื่อสวมใส่เพิ่มบนเกราะอีกที สามารถใส่แบบชิ้นเดียวได้ แต่ความสามารถในการป้องกันจะลดลงไปอีก \nMATK + 20.\nเมื่ออัพเกรดถึงขั้น 7, เพิ่ม MATK + 2%  \nเมื่ออัพเกรดถึงขั้น 9, เพิ่ม MATK + 3% เพิ่มเติม  \nเมื่อสวมใส่ร่วมกับ ^32CD32Magical Shadow (Armor, Shield, Shoes) ^000000, \nเพิ่ม MATK เท่ากับค่าอัพเกรดรวมกันคูณสอง\nเมื่อค่าอัพเกรดรวมกันมีค่ามากกว่า 23 ขึ้นไป เพิ่ม MATK + 2% ,\nเมื่อค่าอัพเกรดรวมกันมีค่ามากกว่า 25 ขึ้นไป เพิ่ม MATK + 3% เพิ่มเติม  \nประเภท : ^777777Shadow^000000 \nตำแหน่ง : ^777777Armor^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Armor",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "matk": [
+        "20",
+        "EQUIP[Magical Shadow Shield&&Magical Shadow Shoes]REFINE[shadowArmor,shadowShield,shadowBoot==1]---2"
+      ],
+      "matkPercent": [
+        "7===2",
+        "9===3",
+        "EQUIP[Magical Shadow Shield&&Magical Shadow Shoes]REFINE[shadowArmor,shadowShield,shadowBoot==23]===2",
+        "EQUIP[Magical Shadow Shield&&Magical Shadow Shoes]REFINE[shadowArmor,shadowShield,shadowBoot==25]===3"
+      ]
+    }
+  },
+  "24401": {
+    "id": 24401,
+    "aegisName": "S_KingbirdAncient_Armor",
+    "name": "Kingbird Ancient Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우3",
+    "description": "ชุดเกราะที่เพิ่มพลังป้องกันเมื่อสวมใส่เพิ่มบนเกราะอีกที สามารถใส่แบบชิ้นเดียวได้ แต่ความสามารถในการป้องกันจะลดลงไปอีก\nATK + 15, HIT + 15.\nทุกๆ การอัพเกรด 2 ขั้น เพิ่ม Damage การโจมตีระยะไกล 1% \nเมื่ออัพเกรดถึงขั้น 7, เพิ่ม HIT + 15  \nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Armor ^000000น้ำหนัก :  ^7777770^000000\nเลเวลที่ต้องการ: ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Armor",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atk": [
+        "15"
+      ],
+      "hit": [
+        "15",
+        "7===15"
+      ],
+      "range": [
+        "2---1"
+      ]
+    }
+  },
+  "24402": {
+    "id": 24402,
+    "aegisName": "S_Rebellion_Armor",
+    "name": "Rebellion Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우",
+    "description": "ชุดเกราะที่เพิ่มพลังป้องกันเมื่อสวมใส่เพิ่มบนเกราะอีกที สามารถใส่แบบชิ้นเดียวได้ แต่ความสามารถในการป้องกันจะลดลงไปอีก\nลดเวลา Cooltime ของ Hot Barrel ลง 1 วินาที\nทุกการอัพเกรด 2 ขั้น ลดเวลา Cooltime ของ Hot Barrel ทีละ 1 วินาที\nเมื่อสวมใส่กับ Rebellion Shadow Shoes, จะได้รับความสามารถเพิ่มเติม \nลดเวลา Cooltime ของ Hot Barrel 4 วินาที และ ลดเวลา Cooltime ของ God's Hammer 2 วินาที\nเมื่อสวมใส่ Gunslinger Shadow 2 ชนิด, Rebellion Shadow 2 ชนิด ครบทุกชิ้น,\nAll State + 7, MaxHP + 3%, MaxSP + 3%.\n\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Armor ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Gunslinger Class^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": "Armor",
+    "compositionPos": null,
+    "usableClass": [
+      "Gunslinger Class"
+    ],
+    "script": {
+      "cd__Hot Barrel": [
+        "1",
+        "2---1",
+        "EQUIP[Rebellion Shadow Shoes]===4"
+      ],
+      "cd__God's Hammer": [
+        "EQUIP[Rebellion Shadow Shoes]===2"
+      ],
+      "allStatus": [
+        "EQUIP[Gunslinger Shadow Shield&&Gunslinger Shadow Weapon&&Rebellion Shadow Shoes]===7"
+      ],
+      "hpPercent": [
+        "EQUIP[Gunslinger Shadow Shield&&Gunslinger Shadow Weapon&&Rebellion Shadow Shoes]===3"
+      ],
+      "spPercent": [
+        "EQUIP[Gunslinger Shadow Shield&&Gunslinger Shadow Weapon&&Rebellion Shadow Shoes]===3"
+      ]
+    }
+  },
+  "24405": {
+    "id": 24405,
+    "aegisName": "S_Rebellion_Shoes",
+    "name": "Rebellion Shadow Shoes",
+    "unidName": "Shadow Shoes",
+    "resName": "슈즈쉐도우",
+    "description": "รองเท้าที่สวมใส่เพิ่มเติม สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์ของมันจะลดน้อยลง \nเพิ่มดาเมจ God's Hammer 20%\nทุกการอัพเกรด 1 ขั้น เพิ่มดาเมจ God's Hammer อีกทีละ 5%\n\nประเภท : ^777777Shadow^000000 \nตำแหน่ง : ^777777Shoes ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000 \nอาชีพที่ใส่ได้ : ^777777Gunslinger Class^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 528,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": "Shoes",
+    "compositionPos": null,
+    "usableClass": [
+      "Gunslinger Class"
+    ],
+    "script": {
+      "God's Hammer": [
+        "20",
+        "1---5"
+      ]
+    }
+  },
   "24416": {
     "id": 24416,
     "aegisName": "S_Timeoverload_Weapon",
@@ -8708,6 +9839,206 @@
     "usableClass": [
       "all"
     ]
+  },
+  "24427": {
+    "id": 24427,
+    "aegisName": "S_M_Exo_Co_Weapon",
+    "name": "Magic Exorcist Corrupted Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우3",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา \nเพิกเฉยต่อพลังป้องกันทางเวทมนตร์ของมอนสเตอร์ประเภท Demon, Angel 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิกเฉยต่อพลังป้องกันทางเวทมนตร์ของมอนสเตอร์ประเภท Demon, Angel อีก 1%\nเมื่อสวมใส่ Magic Exorcist Corrupt Shadow Weapon และ Tempest Shadow(Earring, Pendant) ร่วมกัน MATK +5\nเมื่อค่าอัพเกรดรวมกันตั้งแต่ 25 ขึ้นไป เพิกเฉยต่อพลังป้องกันทางเวทมนตร์ของมอนสเตอร์ประเภท Demon, Angel 100%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "m_pene_race_demon": [
+        "5",
+        "2---1",
+        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]REFINE[shadowWeapon,shadowEarning,shadowPendant==25]===100"
+      ],
+      "m_pene_race_angel": [
+        "5",
+        "2---1",
+        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]REFINE[shadowWeapon,shadowEarning,shadowPendant==25]===100"
+      ],
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1",
+        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]===5"
+      ]
+    }
+  },
+  "24428": {
+    "id": 24428,
+    "aegisName": "S_M_Viv_Dr_Weapon",
+    "name": "Magic Vibration Dragon Killer Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우3",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา \nเพิกเฉยต่อพลังป้องกันทางเวทมนตร์ของมอนสเตอร์ประเภท Formless, Dragon 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิกเฉยต่อพลังป้องกันทางเวทมนตร์ของมอนสเตอร์ประเภท Formless, Dragon อีก 1%\nเมื่อสวมใส่ Magic Vibration Dragon Killer Shadow Weapon และ Tempest Shadow(Earring, Pendant) ร่วมกัน MATK +5\nเมื่อค่าอัพเกรดรวมกันตั้งแต่ 25 ขึ้นไป เพิกเฉยต่อพลังป้องกันทางเวทมนตร์ของมอนสเตอร์ประเภท Formless, Dragon 100%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "m_pene_race_dragon": [
+        "5",
+        "2---1",
+        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]REFINE[shadowWeapon,shadowEarning,shadowPendant==25]===100"
+      ],
+      "m_pene_race_formless": [
+        "5",
+        "2---1",
+        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]REFINE[shadowWeapon,shadowEarning,shadowPendant==25]===100"
+      ],
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1",
+        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]===5"
+      ]
+    }
+  },
+  "24429": {
+    "id": 24429,
+    "aegisName": "S_M_Sci_Hu_Weapon",
+    "name": "Magic Scissor Hunting Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우3",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา \nเพิกเฉยต่อพลังป้องกันทางเวทมนตร์ของมอนสเตอร์ประเภท Brute (ยกเว้น Player), Plant 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิกเฉยต่อพลังป้องกันทางเวทมนตร์ของมอนสเตอร์ประเภท Brute (ยกเว้น Player), Plant อีก 1%\nเมื่อสวมใส่ Magic Scissors Hunting Shadow Weapon และ Tempest Shadow(Earring, Pendant) ร่วมกัน MATK +5\nเมื่อค่าอัพเกรดรวมกันตั้งแต่ 25 ขึ้นไป เพิกเฉยต่อพลังป้องกันทางเวทมนตร์ของมอนสเตอร์ประเภท Brute (ยกเว้น Player), Plant 100%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "m_pene_race_brute": [
+        "5",
+        "2---1",
+        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]REFINE[shadowWeapon,shadowEarning,shadowPendant==25]===100"
+      ],
+      "m_pene_race_plant": [
+        "5",
+        "2---1",
+        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]REFINE[shadowWeapon,shadowEarning,shadowPendant==25]===100"
+      ],
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1",
+        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]===5"
+      ]
+    }
+  },
+  "24430": {
+    "id": 24430,
+    "aegisName": "S_M_Fis_In_Weapon",
+    "name": "Magic Fishing Insect Net Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우3",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา \nเพิกเฉยต่อพลังป้องกันทางเวทมนตร์ของมอนสเตอร์ประเภท Fish, Insect 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิกเฉยต่อพลังป้องกันทางเวทมนตร์ของมอนสเตอร์ประเภท Fish, Insect อีก 1%\nเมื่อสวมใส่ Magic Fishing Insect Shadow Weapon และ Tempest Shadow(Earring, Pendant) ร่วมกัน MATK +5\nเมื่อค่าอัพเกรดรวมกันตั้งแต่ 25 ขึ้นไป เพิกเฉยต่อพลังป้องกันทางเวทมนตร์ของมอนสเตอร์ประเภท Fish, Insect 100%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "m_pene_race_fish": [
+        "5",
+        "2---1",
+        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]REFINE[shadowWeapon,shadowEarning,shadowPendant==25]===100"
+      ],
+      "m_pene_race_insect": [
+        "5",
+        "2---1",
+        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]REFINE[shadowWeapon,shadowEarning,shadowPendant==25]===100"
+      ],
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1",
+        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]===5"
+      ]
+    }
+  },
+  "24431": {
+    "id": 24431,
+    "aegisName": "S_M_Exe_Ho_Weapon",
+    "name": "Magic Executioner Holy Water Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우3",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา \nเพิกเฉยต่อพลังป้องกันทางเวทมนตร์ของมอนสเตอร์ประเภท Demi-Human (ยกเว้น Player), Undead 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิกเฉยต่อพลังป้องกันทางเวทมนตร์ของมอนสเตอร์ประเภท Demi-Human (ยกเว้น Player), Undead อีก 1%\nเมื่อสวมใส่ Magic Executioner Holy Water Shadow Weapon และ Tempest Shadow(Earring, Pendant) ร่วมกัน MATK +5\nเมื่อค่าอัพเกรดรวมกันตั้งแต่ 25 ขึ้นไป เพิกเฉยต่อพลังป้องกันทางเวทมนตร์ของมอนสเตอร์ประเภท Demi-Human (ยกเว้น Player), Undead 100%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "m_pene_race_demihuman": [
+        "5",
+        "2---1",
+        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]REFINE[shadowWeapon,shadowEarning,shadowPendant==25]===100"
+      ],
+      "m_pene_race_undead": [
+        "5",
+        "2---1",
+        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]REFINE[shadowWeapon,shadowEarning,shadowPendant==25]===100"
+      ],
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1",
+        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]===5"
+      ]
+    }
   },
   "24432": {
     "id": 24432,
@@ -8949,6 +10280,95 @@
       ]
     }
   },
+  "24458": {
+    "id": 24458,
+    "aegisName": "S_Arrow_Armor",
+    "name": "Arrow Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우",
+    "description": "ชุดเกราะที่เพิ่มพลังป้องกันเมื่อสวมใส่เพิ่มบนเกราะอีกที สามารถใส่แบบชิ้นเดียวได้ แต่ความสามารถในการป้องกันจะลดลงไปอีก \nเพิ่ม Damage สกิล Arrow Storm 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage สกิล Arrow Storm ขึ้นอีก 2%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Armor^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Ranger Cls^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Armor",
+    "compositionPos": null,
+    "usableClass": [
+      "Ranger Cls"
+    ],
+    "script": {
+      "Arrow Storm": [
+        "5",
+        "2---2"
+      ]
+    }
+  },
+  "24459": {
+    "id": 24459,
+    "aegisName": "S_Arrow_Shield",
+    "name": "Arrow Shadow Shield",
+    "unidName": "Shadow Shield",
+    "resName": "쉴드쉐도우",
+    "description": "โล่เล็กที่สามารถสวมใส่ที่แขนได้ สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์การป้องกันของมันจะลดน้อยลง\nเพิ่ม Damage ทางกายภาพระยะไกล 3%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางกายภาพระยะไกลขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพระยะไกลขึ้นอีก 4%\nเมื่อสวมใส่ Arrow Shadow Armor/Shield/Shoes ร่วมกัน,\nเพิ่ม Damage สกิล Arrow Storm % เท่ากับค่าอัพเกรดรวมกัน\nเมื่อสวมใส่ร่วมกับ Ranger Shadow Weapon,\nเพิกเฉยต่อพลังป้องกันทางกายภาพของทุกเผ่ายกเว้น Player 40% และเพิกเฉยต่อพลังป้องกันทางกายภาพเพิ่มอีกตามค่าอัพเกรดรวมกันของ Arrow Shadow Shield และ Ranger Shadow Weapon\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shield^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Ranger Cls^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 527,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Shield",
+    "compositionPos": null,
+    "usableClass": [
+      "Ranger Cls"
+    ],
+    "script": {
+      "range": [
+        "3",
+        "7===3",
+        "9===4"
+      ],
+      "Arrow Storm": [
+        "EQUIP[Arrow Shadow Armor&&Arrow Shadow Shoes]REFINE[shadowArmor,shadowShield,shadowBoot==1]---1"
+      ],
+      "p_pene_race_all": [
+        "EQUIP[Ranger Shadow Weapon]===40",
+        "EQUIP[Ranger Shadow Weapon]REFINE[shadowWeapon,shadowShield==1]---1"
+      ]
+    }
+  },
+  "24460": {
+    "id": 24460,
+    "aegisName": "S_Arrow_Shoes",
+    "name": "Arrow Shadow Shoes",
+    "unidName": "Shadow Shoes",
+    "resName": "슈즈쉐도우",
+    "description": "รองเท้าที่สวมใส่เพิ่มเติม สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์ของมันจะลดน้อยลง\nลดปริมาณการใช้ SP สกิล Arrow Storm 2%\nทุก ๆ การอัพเกรด 2 ขั้น ลดปริมาณการใช้ SP สกิล Arrow Storm ลงอีก 1%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shoes^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Ranger Cls^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 528,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Shoes",
+    "compositionPos": null,
+    "usableClass": [
+      "Ranger Cls"
+    ],
+    "script": {
+      "spCost__Arrow Storm": [
+        "2",
+        "2---1"
+      ]
+    }
+  },
   "24461": {
     "id": 24461,
     "aegisName": "S_Shooting_Weapon",
@@ -9161,6 +10581,362 @@
       "m_race_all": [
         "EQUIP[Arch Bishop Shadow Shield]40",
         "EQUIP[Arch Bishop Shadow Shield]REFINE[shadowWeapon,shadowShield==1]---1"
+      ]
+    }
+  },
+  "24524": {
+    "id": 24524,
+    "aegisName": "S_Triangle_Armor",
+    "name": "Triangle Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우",
+    "description": "ชุดเกราะที่เพิ่มพลังป้องกันเมื่อสวมใส่เพิ่มบนเกราะอีกที สามารถใส่แบบชิ้นเดียวได้ แต่ความสามารถในการป้องกันจะลดลงไปอีก\nเพิ่ม Damage สกิล Triangle Shot 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage สกิล Triangle Shot ขึ้นอีก 2%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Armor^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Shadow Chaser^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Armor",
+    "compositionPos": null,
+    "usableClass": [
+      "Shadow Chaser"
+    ],
+    "script": {
+      "Triangle Shot": [
+        "5",
+        "2---2"
+      ]
+    }
+  },
+  "24525": {
+    "id": 24525,
+    "aegisName": "S_Triangle_Shield",
+    "name": "Triangle Shadow Shield",
+    "unidName": "Shadow Shield",
+    "resName": "쉴드쉐도우",
+    "description": "โล่เล็กที่สามารถสวมใส่ที่แขนได้ สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์การป้องกันของมันจะลดน้อยลง\nเพิ่ม Damage ทางกายภาพระยะไกล 3%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางกายภาพระยะไกลขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพระยะไกลขึ้นอีก 4%\nเมื่อสวมใส่ Triangle Shadow Armor/Shield/Shoes ร่วมกัน,\nลด Delay หลังใช้สกิล % เท่ากับครึ่งหนึ่งของค่าอัพเกรดรวมกัน\nเมื่อสวมใส่ร่วมกับ Shadow Chaser Weapon Shadow,\nเพิกเฉยต่อพลังป้องกันทางกายภาพของทุกเผ่ายกเว้น Player 40% และเพิกเฉยต่อพลังป้องกันทางกายภาพเพิ่มอีกตามค่าอัพเกรดรวมกันของ Triangle Shadow Shield และ Shadow Chaser Weapon Shadow\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shield^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Shadow Chaser^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 527,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Shield",
+    "compositionPos": null,
+    "usableClass": [
+      "Shadow Chaser"
+    ],
+    "script": {
+      "range": [
+        "3",
+        "7===3",
+        "9===4"
+      ],
+      "acd": [
+        "EQUIP[Triangle Shadow Armor&&Triangle Shadow Shoes]REFINE[shadowArmor,shadowShield,shadowBoot==2]---1"
+      ],
+      "p_pene_race_all": [
+        "EQUIP[Shadow Chaser Weapon Shadow]===40",
+        "EQUIP[Shadow Chaser Weapon Shadow]REFINE[shadowWeapon,shadowShield==1]---1"
+      ]
+    }
+  },
+  "24526": {
+    "id": 24526,
+    "aegisName": "S_Triangle_Shoes",
+    "name": "Triangle Shadow Shoes",
+    "unidName": "Shadow Shoes",
+    "resName": "슈즈쉐도우",
+    "description": "รองเท้าที่สวมใส่เพิ่มเติม สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์ของมันจะลดน้อยลง\nลดปริมาณการใช้ SP สกิล Triangle Shot 2%\nทุก ๆ การอัพเกรด 2 ขั้น ลดปริมาณการใช้ SP สกิล Triangle Shot ลงอีก 1%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shoes ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Shadow Chaser^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 528,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Shoes",
+    "compositionPos": null,
+    "usableClass": [
+      "Shadow Chaser"
+    ],
+    "script": {
+      "spPercentCost__Triangle Shot": [
+        "2",
+        "2---1"
+      ]
+    }
+  },
+  "24530": {
+    "id": 24530,
+    "aegisName": "S_Menace_Armor",
+    "name": "Menace Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우",
+    "description": "ชุดเกราะที่เพิ่มพลังป้องกันเมื่อสวมใส่เพิ่มบนเกราะอีกที สามารถใส่แบบชิ้นเดียวได้ แต่ความสามารถในการป้องกันจะลดลงไปอีก \nเพิ่ม Damage สกิล Fatal Manace 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage สกิล Fatal Manace ขึ้นอีก 2%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Armor^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Shadow Chaser Cls^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Armor",
+    "compositionPos": null,
+    "usableClass": [
+      "Shadow Chaser Cls"
+    ],
+    "script": {
+      "Fatal Manace": [
+        "5",
+        "2---2"
+      ]
+    }
+  },
+  "24531": {
+    "id": 24531,
+    "aegisName": "S_Menace_Shield",
+    "name": "Menace Shadow Shield",
+    "unidName": "Shadow Shield",
+    "resName": "쉴드쉐도우",
+    "description": "โล่เล็กที่สามารถสวมใส่ที่แขนได้ สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์การป้องกันของมันจะลดน้อยลง\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 3%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาดขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาดขึ้นอีก 4%\nเมื่อสวมใส่ Menace Shadow Armor/Shield/Shoes ร่วมกัน,\nลด Delay หลังใช้สกิล % เท่ากับครึ่งหนึ่งของค่าอัพเกรดรวมกัน\nเมื่อสวมใส่ร่วมกับ Shadow Chaser Shadow Weapon,\nเพิกเฉยต่อพลังป้องกันทางกายภาพของทุกเผ่ายกเว้น Player 40% และเพิกเฉยต่อพลังป้องกันทางกายภาพเพิ่มอีกตามค่าอัพเกรดรวมกันของ Menace Shadow Shield และ Shadow Chaser Shadow Weapon\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shield^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Shadow Chaser Cls^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 527,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Shield",
+    "compositionPos": null,
+    "usableClass": [
+      "Shadow Chaser Cls"
+    ],
+    "script": {
+      "p_size_all": [
+        "3",
+        "7===3",
+        "9===4"
+      ],
+      "acd": [
+        "EQUIP[Menace Shadow Armor&&Menace Shadow Shoes]REFINE[shadowArmor,shadowShield,shadowBoot==2]---1"
+      ],
+      "p_pene_race_all": [
+        "EQUIP[Shadow Chaser Shadow Weapon]===40",
+        "EQUIP[Shadow Chaser Shadow Weapon]REFINE[shadowWeapon,shadowShield==1]---1"
+      ]
+    }
+  },
+  "24532": {
+    "id": 24532,
+    "aegisName": "S_Menace_Shoes",
+    "name": "Menace Shadow Shoes",
+    "unidName": "Shadow Shoes",
+    "resName": "슈즈쉐도우",
+    "description": "รองเท้าที่สวมใส่เพิ่มเติม สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์ของมันจะลดน้อยลง\nลดปริมาณการใช้ SP สกิล Fatal Manace 2%\nทุก ๆ การอัพเกรด 2 ขั้น ลดปริมาณการใช้ SP สกิล Fatal Manace ลงอีก 1%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shoes ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Shadow Chaser Cls^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 528,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Shoes",
+    "compositionPos": null,
+    "usableClass": [
+      "Shadow Chaser Cls"
+    ],
+    "script": {
+      "spCost__Fatal Manace": [
+        "2",
+        "2---1"
+      ]
+    }
+  },
+  "24536": {
+    "id": 24536,
+    "aegisName": "S_Rolling_Armor",
+    "name": "Rolling Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우",
+    "description": "ชุดเกราะที่เพิ่มพลังป้องกันเมื่อสวมใส่เพิ่มบนเกราะอีกที สามารถใส่แบบชิ้นเดียวได้ แต่ความสามารถในการป้องกันจะลดลงไปอีก \nเพิ่ม Damage สกิล Rolling Cutter 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage สกิล Rolling Cutter ขึ้นอีก 2%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Armor^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Guillotine Cross Cls^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Armor",
+    "compositionPos": null,
+    "usableClass": [
+      "Guillotine Cross Cls"
+    ],
+    "script": {
+      "Rolling Cutter": [
+        "5",
+        "2---2"
+      ]
+    }
+  },
+  "24537": {
+    "id": 24537,
+    "aegisName": "S_Rolling_Shield",
+    "name": "Rolling Shadow Shield",
+    "unidName": "Shadow Shield",
+    "resName": "쉴드쉐도우",
+    "description": "โล่เล็กที่สามารถสวมใส่ที่แขนได้ สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์การป้องกันของมันจะลดน้อยลง\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 3%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาดขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาดขึ้นอีก 4%\nเมื่อสวมใส่ Rolling Shadow Armor/Shield/Shoes ร่วมกัน,\nเพิ่ม Damage สกิล Rolling Cutter % เท่ากับค่าอัพเกรดรวมกัน\nเมื่อสวมใส่ร่วมกับ Guillotine Cross Shadow Weapon,\nเพิกเฉยต่อพลังป้องกันทางกายภาพของทุกเผ่ายกเว้น Player 40% และเพิกเฉยต่อพลังป้องกันทางกายภาพเพิ่มอีกตามค่าอัพเกรดรวมกันของ Rolling Shadow Shield และ Guillotine Cross Shadow Weapon\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shield^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Guillotine Cross Cls^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 527,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Shield",
+    "compositionPos": null,
+    "usableClass": [
+      "Guillotine Cross Cls"
+    ],
+    "script": {
+      "p_size_all": [
+        "3",
+        "7===3",
+        "9===4"
+      ],
+      "Rolling Cutter": [
+        "EQUIP[Rolling Shadow Armor&&Rolling Shadow Shoes]REFINE[shadowArmor,shadowShield,shadowBoot==1]---1"
+      ],
+      "p_pene_race_all": [
+        "EQUIP[Guillotine Cross Shadow Weapon]===40",
+        "EQUIP[Guillotine Cross Shadow Weapon]REFINE[shadowWeapon,shadowShield==1]---1"
+      ]
+    }
+  },
+  "24538": {
+    "id": 24538,
+    "aegisName": "S_Rolling_Shoes",
+    "name": "Rolling Shadow Shoes",
+    "unidName": "Shadow Shoes",
+    "resName": "슈즈쉐도우",
+    "description": "รองเท้าที่สวมใส่เพิ่มเติม สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์ของมันจะลดน้อยลง\nลดปริมาณการใช้ SP สกิล Rolling Cutter 2%\nทุก ๆ การอัพเกรด 2 ขั้น ลดปริมาณการใช้ SP สกิล Rolling Cutter ลงอีก 1%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shoes ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Guillotine Cross Cls^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 528,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Shoes",
+    "compositionPos": null,
+    "usableClass": [
+      "Guillotine Cross Cls"
+    ],
+    "script": {
+      "spCostPercent__Rolling Cutter": [
+        "2",
+        "2---1"
+      ]
+    }
+  },
+  "24554": {
+    "id": 24554,
+    "aegisName": "S_Psychic_Armor",
+    "name": "Psychic Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우",
+    "description": "ชุดเกราะที่เพิ่มพลังป้องกันเมื่อสวมใส่เพิ่มบนเกราะอีกที สามารถใส่แบบชิ้นเดียวได้ แต่ความสามารถในการป้องกันจะลดลงไปอีก \nเพิ่ม Damage สกิล Psychic Wave 5%\nทุก ๆ การอัพเกรด 1 ขั้น เพิ่ม Damage สกิล Psychic Wave ขึ้นอีก 2%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Armor^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Sorcerer^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Armor",
+    "compositionPos": null,
+    "usableClass": [
+      "Sorcerer"
+    ],
+    "script": {
+      "Psychic Wave": [
+        "5",
+        "1---2"
+      ]
+    }
+  },
+  "24555": {
+    "id": 24555,
+    "aegisName": "S_Psychic_Shield",
+    "name": "Psychic Shadow Shield",
+    "unidName": "Shadow Shield",
+    "resName": "쉴드쉐도우",
+    "description": "โล่เล็กที่สามารถสวมใส่ที่แขนได้ สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์การป้องกันของมันจะลดน้อยลง\nเพิ่ม Damage ทางเวทมนตร์ธาตุ Neutral 3%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางเวทมนตร์ธาตุ Neutral ขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางเวทมนตร์ธาตุ Neutral ขึ้นอีก 4%\nเมื่อสวมใส่ Psychic Shadow Armor/Shield/Shoes ร่วมกัน,\nเพิ่ม Damage สกิล Psychic Wave % เท่ากับค่าอัพเกรดรวมกัน\nเมื่อสวมใส่ร่วมกับ Sorcerer Shadow Weapon,\nเพิกเฉยต่อพลังป้องกันทางเวทมนตร์ของทุกเผ่ายกเว้น Player 40% และเพิกเฉยต่อพลังป้องกันทางเวทมนตร์เพิ่มอีกตามค่าอัพเกรดรวมกันของ Psychic Shadow Shield และ Sorcerer Shadow Weapon\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shield^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Sorcerer^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 527,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Shield",
+    "compositionPos": null,
+    "usableClass": [
+      "Sorcerer"
+    ],
+    "script": {
+      "m_my_element_neutral": [
+        "3",
+        "7===3",
+        "9===4"
+      ],
+      "Psychic Wave": [
+        "EQUIP[Psychic Shadow Armor&&Psychic Shadow Shoes]REFINE[shadowShield,shadowArmor,shadowBoot==1]---1"
+      ],
+      "m_pene_race_all": [
+        "EQUIP[Sorcerer Shadow Weapon]===40",
+        "EQUIP[Sorcerer Shadow Weapon]REFINE[shadowShield,shadowWeapon==1]---1"
+      ]
+    }
+  },
+  "24556": {
+    "id": 24556,
+    "aegisName": "S_Psychic_Shoes",
+    "name": "Psychic Shadow Shoes",
+    "unidName": "Shadow Shoes",
+    "resName": "슈즈쉐도우",
+    "description": "รองเท้าที่สวมใส่เพิ่มเติม สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์ของมันจะลดน้อยลง\nลดปริมาณการใช้ SP สกิล Psychic Wave 4%\nทุก ๆ การอัพเกรด 2 ขั้น ลดปริมาณการใช้ SP สกิล Psychic Wave ลงอีก 1%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shoes ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Sorcerer^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 528,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Shoes",
+    "compositionPos": null,
+    "usableClass": [
+      "Sorcerer"
+    ],
+    "script": {
+      "spCost__Psychic Wave": [
+        "4",
+        "2---1"
       ]
     }
   },
@@ -9608,6 +11384,290 @@
       ],
       "m_pene_race_all": [
         "EQUIP[Booster Shadow Armor&&Booster Shadow Shield&&Booster Shadow Shoes&&Booster Shadow Earring&&Booster Shadow Pendant]70"
+      ]
+    }
+  },
+  "24604": {
+    "id": 24604,
+    "aegisName": "S_Flare_Dance_Earing",
+    "name": "Fire Dance Shadow Earring",
+    "unidName": "Shadow Earring",
+    "resName": "이어링쉐도우",
+    "description": "ต่างหูมงคลที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา\nMHP +5%\nเมื่ออัพเกรดถึงขั้น 7 MHP +5% เพิ่มเติม\nเมื่ออัพเกรดถึงขั้น 9 MHP +2000, MSP +200, เพิ่ม Damage ทางกายภาพระยะไกล 7%\nเมื่อสวมใส่ Fire Dance Shadow Earring/Pendant/Shoes ร่วมกัน,\nเพิ่ม Damage สกิล Fire Dance % เท่ากับครึ่งหนึ่งของค่าอัพเกรดรวมกัน\nเมื่อสวมใส่ร่วมกับ Rebellion Shadow Armor,\nเพิกเฉยต่อพลังป้องกันทางกายภาพของทุกเผ่ายกเว้น Player 40% และเพิกเฉยต่อพลังป้องกันทางกายภาพเพิ่มอีกตามค่าอัพเกรดรวมกันของ Fire Dance Shadow Earring และ Rebellion Shadow Armor\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Earring ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Gunslinger^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 529,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "AccessoryRight",
+    "compositionPos": null,
+    "usableClass": [
+      "Gunslinger"
+    ],
+    "script": {
+      "hpPercent": [
+        "5",
+        "7===5"
+      ],
+      "hp": [
+        "9===2000"
+      ],
+      "sp": [
+        "9===200"
+      ],
+      "range": [
+        "9===7"
+      ],
+      "Fire Dance": [
+        "EQUIP[Fire Dance Shadow Earring&&Fire Dance Shadow Pendant&&Fire Dance Shadow Shoes]REFINE[shadowWeapon,shadowEarning,shadowPendant==2]---1"
+      ],
+      "p_pene_race_all": [
+        "EQUIP[Rebellion Shadow Armor]===40",
+        "EQUIP[Rebellion Shadow Armor]REFINE[shadowWeapon,shadowEarring==1]---1"
+      ]
+    }
+  },
+  "24605": {
+    "id": 24605,
+    "aegisName": "S_Flare_Dance_Pendant",
+    "name": "Fire Dance Shadow Pendant",
+    "unidName": "Shadow Pendant",
+    "resName": "펜던트쉐도우",
+    "description": "สร้อยคอศักดิ์สิทธิ์ที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา\nเพิ่ม Damage สกิล Fire Dance 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage สกิล Fire Dance ขึ้นอีก 2%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Pendant ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Gunslinger^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 530,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "AccessoryLeft",
+    "compositionPos": null,
+    "usableClass": [
+      "Gunslinger"
+    ],
+    "script": {
+      "Fire Dance": [
+        "5",
+        "2---2"
+      ]
+    }
+  },
+  "24606": {
+    "id": 24606,
+    "aegisName": "S_Flare_Dance_Shoes",
+    "name": "Fire Dance Shadow Shoes",
+    "unidName": "Shadow Shoes",
+    "resName": "슈즈쉐도우",
+    "description": "รองเท้าที่สวมใส่เพิ่มเติม สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์ของมันจะลดน้อยลง\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาดขึ้นอีก 1%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shoes ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Gunslinger^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 528,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Shoes",
+    "compositionPos": null,
+    "usableClass": [
+      "Gunslinger"
+    ],
+    "script": {
+      "p_size_all": [
+        "5",
+        "2---1"
+      ]
+    }
+  },
+  "24610": {
+    "id": 24610,
+    "aegisName": "S_Shatter_Buster_Earing",
+    "name": "Shatter Buster Shadow Earring",
+    "unidName": "Shadow Earring",
+    "resName": "이어링쉐도우",
+    "description": "ต่างหูมงคลที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา\nMSP +5%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางกายภาพระยะไกล 7%\nเมื่ออัพเกรดถึงขั้น 9 ลดปริมาณการใช้ SP สกิล Vanishing Buster 15%\nเมื่อสวมใส่ Shatter Buster Shadow Earring/Pendant/Shoes ร่วมกัน,\nเพิ่ม Damage สกิล Shatter Storm, Vanishing Buster % เท่ากับครึ่งหนึ่งของค่าอัพเกรดรวมกัน\nเมื่อสวมใส่ร่วมกับ Rebellion Shadow Armor,\nเพิกเฉยต่อพลังป้องกันทางกายภาพของทุกเผ่ายกเว้น Player 40% และเพิกเฉยต่อพลังป้องกันทางกายภาพเพิ่มอีกตามค่าอัพเกรดรวมกันของ Shatter Buster Shadow Earring และ Rebellion Shadow Armor\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Earring ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Gunslinger^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 529,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "AccessoryRight",
+    "compositionPos": null,
+    "usableClass": [
+      "Gunslinger"
+    ],
+    "script": {
+      "spPercent": [
+        "5"
+      ],
+      "range": [
+        "7===7"
+      ],
+      "spPercent__Vanishing Buster": [
+        "9===15"
+      ],
+      "Shatter Storm": [
+        "EQUIP[Shatter Buster Shadow Pendant&&Shatter Buster Shadow Shoes]REFINE[shadowWeapon,shadowEarning,shadowPendant==2]---1"
+      ],
+      "Vanishing Buster": [
+        "EQUIP[Shatter Buster Shadow Pendant&&Shatter Buster Shadow Shoes]REFINE[shadowWeapon,shadowEarning,shadowPendant==2]---1"
+      ],
+      "p_pene_race_all": [
+        "EQUIP[Rebellion Shadow Armor]===40",
+        "EQUIP[Rebellion Shadow Armor]REFINE[shadowWeapon,shadowEarring==1]---1"
+      ]
+    }
+  },
+  "24611": {
+    "id": 24611,
+    "aegisName": "S_Shatter_B_Pendant",
+    "name": "Shatter Buster Shadow Pendant",
+    "unidName": "Shadow Pendant",
+    "resName": "펜던트쉐도우",
+    "description": "สร้อยคอศักดิ์สิทธิ์ที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา \nเพิ่ม Damage สกิล Shatter Storm 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage สกิล Shatter Storm ขึ้นอีก 2%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Pendant ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Gunslinger^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 530,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "AccessoryLeft",
+    "compositionPos": null,
+    "usableClass": [
+      "Gunslinger"
+    ],
+    "script": {
+      "Shatter Storm": [
+        "5",
+        "2---2"
+      ]
+    }
+  },
+  "24612": {
+    "id": 24612,
+    "aegisName": "S_Shatter_Buster_Shoes",
+    "name": "Shatter Buster Shadow Shoes",
+    "unidName": "Shadow Shoes",
+    "resName": "슈즈쉐도우",
+    "description": "รองเท้าที่สวมใส่เพิ่มเติม สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์ของมันจะลดน้อยลง\nเพิ่ม Damage สกิล Vanishing Buster 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage สกิล Vanishing Buster ขึ้นอีก 2%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shoes ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Gunslinger^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 528,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Shoes",
+    "compositionPos": null,
+    "usableClass": [
+      "Gunslinger"
+    ],
+    "script": {
+      "Vanishing Buster": [
+        "5",
+        "2---2"
+      ]
+    }
+  },
+  "24613": {
+    "id": 24613,
+    "aegisName": "S_Trip_Weapon",
+    "name": "Trip Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา\nเพิ่ม Damage ทางกายภาพระยะไกล 3%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางกายภาพระยะไกลขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 9, MHP +10%\nเมื่อสวมใส่ Trip Shadow Weapon/Shield/Armor ร่วมกัน,\nเพิ่ม Damage สกิล Round Trip % เท่ากับครึ่งหนึ่งของค่าอัพเกรดรวมกัน\nเมื่อสวมใส่ร่วมกับ Rebellion Shadow Shoes,\nเพิกเฉยต่อพลังป้องกันทางกายภาพของทุกเผ่ายกเว้น Player 40% และเพิกเฉยต่อพลังป้องกันทางกายภาพเพิ่มอีกตามค่าอัพเกรดรวมกันของ Trip Shadow Weapon และ Rebellion Shadow Shoes\nประเภท : ^777777Shadow^000000 \nตำแหน่ง : ^777777Weapon^000000 น้ำหนัก : ^7777770^000000 \nเลเวลที่ต้องการ : ^77777799^000000 \nอาชีพที่ใส่ได้ : ^777777Gunslinger^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "Gunslinger"
+    ],
+    "script": {
+      "range": [
+        "3",
+        "7===3"
+      ],
+      "hpPercent": [
+        "9===10"
+      ],
+      "Round Trip": [
+        "EQUIP[Trip Shadow Shield&&Trip Shadow Armor]REFINE[shadowWeapon,shadowShield,shadowArmor==2]---1"
+      ],
+      "p_pene_race_all": [
+        "EQUIP[Rebellion Shadow Shoes]===40",
+        "EQUIP[Rebellion Shadow Shoes]REFINE[shadowWeapon,shadowBoot==1]---1"
+      ]
+    }
+  },
+  "24614": {
+    "id": 24614,
+    "aegisName": "S_Trip_Shield",
+    "name": "Trip Shadow Shield",
+    "unidName": "Shadow Shield",
+    "resName": "쉴드쉐도우",
+    "description": "โล่เล็กที่สามารถสวมใส่ที่แขนได้ สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์การป้องกันของมันจะลดน้อยลง\nเพิ่ม Damage สกิล Round Trip 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage สกิล Round Trip ขึ้นอีก 2%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shield^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Gunsliger^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 527,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Shield",
+    "compositionPos": null,
+    "usableClass": [
+      "Gunsliger"
+    ],
+    "script": {
+      "Round Trip": [
+        "5",
+        "2---2"
+      ]
+    }
+  },
+  "24615": {
+    "id": 24615,
+    "aegisName": "S_Trip_Armor",
+    "name": "Trip Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우",
+    "description": "ชุดเกราะที่เพิ่มพลังป้องกันเมื่อสวมใส่เพิ่มบนเกราะอีกที สามารถใส่แบบชิ้นเดียวได้ แต่ความสามารถในการป้องกันจะลดลงไปอีก\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาดขึ้นอีก 1%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Armor^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Gunsliger^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Armor",
+    "compositionPos": null,
+    "usableClass": [
+      "Gunsliger"
+    ],
+    "script": {
+      "p_size_all": [
+        "5",
+        "2---1"
       ]
     }
   },
@@ -11118,6 +13178,109 @@
       ]
     }
   },
+  "28391": {
+    "id": 28391,
+    "aegisName": "S_Thief_earring",
+    "name": "Thief Shadow Earring",
+    "unidName": "Shadow Earring",
+    "resName": "이어링쉐도우",
+    "description": "ต่างหูมงคลที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา\nเมื่อใช้งาน Stone Fling มีโอกาส 20% ที่จะเพิ่ม ATK กับ FLEE 30 ทุกการอัพเกรด 1 ขั้น เพิ่ม ATK กับ FLEE 10\nเมื่อสวมใส่ Thief Shadow Earring และ Thief Shadow Pendant ATK +1%, MAXHP +1%.\nเมื่อค่าอัพเกรดรวมกันมากกว่าหรือเท่ากับ 10 ขึ้นไป จะเพิ่ม ATK +2%, MAXHP +2%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Earring^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 529,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Accessory",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atkPercent": [
+        "EQUIP[Thief Shadow Pendant]===1",
+        "10===2"
+      ],
+      "hpPercent": [
+        "EQUIP[Thief Shadow Pendant]===1",
+        "10===2"
+      ],
+      "flee": [
+        "1---10"
+      ],
+      "atk": [
+        "1---10",
+        "EQUIP[Thief Shadow Pendant]REFINE[10]===2"
+      ]
+    }
+  },
+  "28484": {
+    "id": 28484,
+    "aegisName": "Scarf_Of_Rebellion",
+    "name": "Rebellion's Scarf [1]",
+    "unidName": "Accessory",
+    "resName": "반역자의스카프",
+    "description": "เพิ่ม Damage ทางกายภาพ 5%, ลดระยะเวลาร่ายแบบแปรผัน 10%\n―――――――――――――\nลดปริมาณการใช้ SP สกิล Fire Dance 5 หน่วย\n―――――――――――――\nทุก ๆ การเรียนรู้สกิล Eternal Chain 1 เลเวล,\nเพิ่ม Damage สกิล Quick Draw Shot 5%\n―――――――――――――\nทุก ๆ การเรียนรู้สกิล Fire Rain 1 เลเวล,\nลดปริมาณการใช้ SP สกิล Fire Rain 4 หน่วย,\nเพิ่ม Damage สกิล Fire Rain 5%,\nลด Delay หลังใช้สกิล 1%\n―――――――――――――\nทุก ๆ การเรียนรู้สกิล Shatter Storm 1 เลเวล,\nเพิ่ม Damage สกิล Shatter Storm 10%,\nลด Cooldown สกิล Shatter Storm 0.1 วินาที,\nลด Cooldown สกิล Hot Barrel 4 วินาที\n―――――――――――――\nทุก ๆ การเรียนรู้สกิล Mass Spiral 1 เลเวล,\nลดปริมาณการใช้ SP สกิล Mass Spiral 2 หน่วย,\nเพิ่ม Damage สกิล Mass Spiral 5%,\nASPD +2%\n―――――――――――――\nทุก ๆ การเรียนรู้สกิล Dragon Tail 1 เลเวล,\nเมื่อใช้สกิล Crimson Marker เมื่อโจมตีทางกายภาพ มีโอกาส 1% ที่จะใช้สกิล Dragon Tail ตามเลเวลที่เรียนรู้\nทุก ๆ การเรียนรู้สกิล Dragon Tail 1 เลเวล,\nเพิ่มโอกาสใช้งานสกิล Dragon Tail และ Critical Damage +3%\n\nประเภท : ^777777Accessory^000000 พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^77777740^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 517,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 40,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atkPercent": [
+        "5"
+      ],
+      "vct": [
+        "10"
+      ],
+      "spCost__Fire Dance": [
+        "5"
+      ],
+      "Quick Draw Shot": [
+        "50"
+      ],
+      "spCost__Fire Rain": [
+        "20"
+      ],
+      "Fire Rain": [
+        "25"
+      ],
+      "acd": [
+        "5"
+      ],
+      "Shatter Storm": [
+        "50"
+      ],
+      "cd__Shatter Storm": [
+        "0.5"
+      ],
+      "cd__Hot Barrel": [
+        "20"
+      ],
+      "spCost__Mass Spiral": [
+        "10"
+      ],
+      "Mass Spiral": [
+        "25"
+      ],
+      "aspdPercent": [
+        "10"
+      ],
+      "criDmg": [
+        "15"
+      ]
+    }
+  },
   "28502": {
     "id": 28502,
     "aegisName": "Mob_Scarf",
@@ -12586,6 +14749,105 @@
       ],
       "range": [
         "EQUIP[Sniper Stone (Lower)]===SKILL[Wind Walk]==5(60 วินาที)"
+      ]
+    }
+  },
+  "29468": {
+    "id": 29468,
+    "aegisName": "Warlock_Top",
+    "name": "High Wizard Stone (Upper)",
+    "unidName": "High Wizard Stone (Upper)",
+    "resName": "마술사피규어",
+    "description": "ทุกๆ 1 Lv. ของ Mystical Amplification MATK + 2.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 71,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "matk": [
+        "20"
+      ]
+    }
+  },
+  "29469": {
+    "id": 29469,
+    "aegisName": "Warlock_Middle",
+    "name": "High Wizard Stone (Middle)",
+    "unidName": "High Wizard Stone (Middle)",
+    "resName": "마술사피규어",
+    "description": "เพิ่ม Damage Meteor Storm 20%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 72,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "Meteor Storm": [
+        "20"
+      ]
+    }
+  },
+  "29470": {
+    "id": 29470,
+    "aegisName": "Warlock_Bottom",
+    "name": "High Wizard Stone (Lower)",
+    "unidName": "High Wizard Stone (Lower)",
+    "resName": "마술사피규어",
+    "description": "เพิ่ม Damage Fire Pillar 20%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 73,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "Fire Pillar": [
+        "20"
+      ]
+    }
+  },
+  "29471": {
+    "id": 29471,
+    "aegisName": "Warlock_Robe",
+    "name": "Warlock Stone (Garment)",
+    "unidName": "Warlock Stone (Garment)",
+    "resName": "High_Wizard_Figure",
+    "description": "เพิ่ม Damage Crimson Rock 10%\nเมื่อสวมใส่กับ High Wizard Stone (Upper), เพิ่ม Damage Crimson Rock 15%\nเมื่อสวมใส่กับ High Wizard Stone (Middle), ทุกๆ 2 Lv. ของ Soul Drain ลด Fixed Cast Time ลงทีละ 0.1 วินาที\nเมื่อสวมใส่กับ High Wizard Stone (Lower), เพิ่ม Damage ทางเวทย์ธาตุ Fire 5%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 74,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "Crimson Rock": [
+        "10",
+        "EQUIP[High Wizard Stone (Upper)]===15"
+      ],
+      "fct": [
+        "EQUIP[High Wizard Stone (Middle)]===0.5"
+      ],
+      "m_my_element_fire": [
+        "EQUIP[High Wizard Stone (Lower)]===5"
       ]
     }
   },
@@ -14979,6 +17241,105 @@
       ]
     }
   },
+  "310000": {
+    "id": 310000,
+    "aegisName": "Ranger_Top2",
+    "name": "Sniper Stone II (Upper)",
+    "unidName": "Sniper Stone II (Upper)",
+    "resName": "궁수피규어",
+    "description": "ทุก ๆ การเรียนรู้สกิล Wind Walker 2 เลเวล ASPD +1%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 71,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "aspdPercent": [
+        "5"
+      ]
+    }
+  },
+  "310001": {
+    "id": 310001,
+    "aegisName": "Ranger_Middle2",
+    "name": "Sniper Stone II (Middle)",
+    "unidName": "Sniper Stone II (Middle)",
+    "resName": "궁수피규어",
+    "description": "ทุก ๆ การเรียนรู้สกิล Beastbane 2 เลเวล เพิ่ม Damage ทางกายภาพระยะไกล 1%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 72,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "range": [
+        "LEARN_SKILL[Beastbane==2]---1"
+      ]
+    }
+  },
+  "310002": {
+    "id": 310002,
+    "aegisName": "Ranger_Bottom2",
+    "name": "Sniper Stone II (Lower)",
+    "unidName": "Sniper Stone II (Lower)",
+    "resName": "궁수피규어",
+    "description": "ทุก ๆ การเรียนรู้สกิล Falcon Eyes 1 เลเวล ATK +2",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 73,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "atk": [
+        "10"
+      ]
+    }
+  },
+  "310003": {
+    "id": 310003,
+    "aegisName": "Ranger_Robe2",
+    "name": "Ranger Stone II (Garment)",
+    "unidName": "Ranger Stone II (Garment)",
+    "resName": "Sniper_Figure",
+    "description": "เพิ่ม Damage สกิล Aimed Bolt 15%\nเมื่อใช้กับ Sniper Stone II (Upper) เพิ่ม Damage สกิล Aimed Bolt ขึ้นอีก 15%\nเมื่อใช้กับ Sniper Stone II (Middle) ลดระยะเวลาร่ายแบบแปรผันสกิล Aimed Bolt 1 วินาที\nเมื่อใช้กับ Sniper Stone II (Lower) ลด Cooldown สกิล No Limits 45 วินาที",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 74,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "Aimed Bolt": [
+        "15",
+        "EQUIP[Sniper Stone II (Upper)]15"
+      ],
+      "vct__Aimed Bolt": [
+        "EQUIP[Sniper Stone II (Middle)]1"
+      ],
+      "cd__No Limits": [
+        "EQUIP[Sniper Stone II (Lower)]45"
+      ]
+    }
+  },
   "310008": {
     "id": 310008,
     "aegisName": "Highpriest_Top2",
@@ -16690,6 +19051,47 @@
       ]
     }
   },
+  "490288": {
+    "id": 490288,
+    "aegisName": null,
+    "name": "Record of Mage [1]",
+    "unidName": "Record of Mage",
+    "resName": "연구원기록표",
+    "description": "บันทึกการสำรวจของนักเวทที่เข้าไปสำรวจยังพื้นที่ Tomb of Honor เป็นรายการบันทึกที่ดูเหมือนว่าเนื้อหาจะขาดหายไปบางส่วน\n\nลดระยะเวลาร่ายแบบแปรผัน 10%\nทุก ๆ การเรียนรู้ Safety Wall 2 เลเวล,\nเพิกเฉยต่อพลังป้องกันทางเวทมนตร์ของมอนสเตอร์ทุกเผ่า (ยกเว้น Player) 10%\n\nเมื่อสวมใส่ร่วมกับ Old Magic Stone Hat,\nลดระยะเวลาร่ายแบบคงที่ 0.3 วินาที\nเพิ่ม Damage ทางเวทมนตร์ธาตุ Neutral 15%\nเพิ่ม Damage สกิล Comet 30%\n\nเมื่อสวมใส่ร่วมกับ Old Wind Whisper,\nเมื่อโจมตีทางเวทมนตร์ มีโอกาส 5% ที่จะใช้สกิล Mystical Amplification Lv. 5\nเพิ่ม Damage สกิล Psychic Wave 30%\nประเภท : ^777777Accessory(Right)^000000 พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Mage Cls^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 510,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "vct": [
+        "10"
+      ],
+      "m_pene_race_all": [
+        "50"
+      ],
+      "fct": [
+        "EQUIP[Old Magic Stone Hat]0.3"
+      ],
+      "m_my_element_neutral": [
+        "EQUIP[Old Magic Stone Hat]15"
+      ],
+      "Comet": [
+        "EQUIP[Old Magic Stone Hat]30"
+      ],
+      "Psychic Wave": [
+        "EQUIP[Old Wind Whisper]30"
+      ]
+    },
+    "usableClass": [
+      "Mage Cls"
+    ]
+  },
   "490309": {
     "id": 490309,
     "aegisName": null,
@@ -16862,6 +19264,54 @@
     },
     "usableClass": [
       "all"
+    ]
+  },
+  "490334": {
+    "id": 490334,
+    "aegisName": "",
+    "name": "Record of Acolyte [1]",
+    "unidName": "Record of Acolyte",
+    "resName": "연구원기록표",
+    "description": "บันทึกการสำรวจของนักบวชที่เข้าไปสำรวจยังพื้นที่ Tomb of Honor เป็นรายการบันทึกที่ดูเหมือนว่าเนื้อหาจะขาดหายไปบางส่วน\n\nเพิ่ม Damage ทางกายภาพระยะไกลต่อศัตรูทั้งหมด 5%\nASPD +5%\nทุก ๆ การเรียนรู้สกิล Heal 2 เลเวล ATK/MATK +10\n\nเมื่อสวมใส่ร่วมกับ Old Mitra,\nสามารถใช้สกิล Hell Inferno Lv. 5\nลด Damage สกิล Adoramus 200%\nเมื่อกำจัดมอนสเตอร์ ลด HP 300 หน่วย\nลด Delay หลังใช้สกิล 30%\nเมื่อใช้สกิล Offertorium เพิ่ม Damage สกิล Judex 400% และเพิ่มปริมาณการใช้ SP ทุกสกิล 100% เป็นเวลา 90 วินาที\n\nเมื่อสวมใส่ร่วมกับ Old Blazing Soul,\nเพิ่ม Damage ทางกายภาพระยะไกลต่อศัตรูทั้งหมด 15%\nเพิ่ม Damage สกิล Rampage Blast 30%\nเมื่อใช้สกิล Rampage Blast มีโอกาส 50% ที่จะใช้สกิล Zen โดยอัตโนมัติ\nประเภท : ^777777Accessory (Right)^000000 พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Acolyte Cls^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 510,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "range": [
+        "5",
+        "EQUIP[Old Blazing Soul]15"
+      ],
+      "aspdPercent": [
+        "5"
+      ],
+      "atk": [
+        "50"
+      ],
+      "matk": [
+        "50"
+      ],
+      "Adoramus": [
+        "EQUIP[Old Mitra]-200"
+      ],
+      "acd": [
+        "EQUIP[Old Mitra]30"
+      ],
+      "Judex": [
+        "EQUIP[Old Mitra]SKILL[Offertorium]===400(90 วินาที)"
+      ],
+      "Rampage Blast": [
+        "EQUIP[Old Blazing Soul]30"
+      ]
+    },
+    "usableClass": [
+      "Acolyte Cls"
     ]
   },
   "490394": {
@@ -17134,6 +19584,123 @@
       ]
     }
   },
+  "490418": {
+    "id": 490418,
+    "aegisName": null,
+    "name": "Record of Mage 2 [1]",
+    "unidName": "Record of Mage 2",
+    "resName": "Record_Mage2_TW",
+    "description": "บันทึกส่วนที่เหลือของกลุ่มนักเวทย์ที่เข้าไปสำรวจยังพื้นที่ Tomb of Honor\n\nลดระยะเวลาร่ายแบบแปรผัน 10%\nเพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกขนาด 6%\nเพิ่ม Damage สกิล Comet, Psychic Wave 30%\n\nเมื่อสวมใส่ร่วมกับ Old Magic Stone Hat,\nทุก ๆ การอัพเกรด Old Magic Stone Hat 1 ขั้น\nเพิ่ม Damage ทางเวทมนตร์ธาตุ Fire, Neutral 2%\n\nเมื่อสวมใส่ร่วมกับ Old Wind Whisper,\nทุก ๆ การอัพเกรด Old Wind Whisper 1 ขั้น\nเพิ่ม Damage ทางเวทมนตร์ธาตุ Wind, Neutral 2%\n\nเมื่อสวมใส่ร่วมกับ Record of Mage หรือ [Not For Sale] Record of Mage,\nเพิกเฉยต่อพลังป้องกันทางเวทมนตร์ของมอนสเตอร์ทุกเผ่า 50% (ยกเว้น Player)\n\nเมื่อสวมใส่ด้วย Warlock\nลดระยะเวลาร่ายแบบคงที่ 0.7 วินาที\nเมื่อ Base Lv. น้อยกว่า 170\nลด Cooldown สกิล Crimson Rock 4 วินาที\n\nเมื่อ Base Lv. ตั้งแต่ 170 ขึ้นไป\nลด Cooldown สกิล Crimson Rock 1 วินาที\nเพิ่ม Damage สกิล Crimson Rock 30%\n\nเมื่อสวมใส่ด้วย Sorcerer\nINT +30\nเมื่อ Base Lv. น้อยกว่า 170\nลด Cooldown สกิล Varetyr Spear 4 วินาที\n\nเมื่อ Base Lv. ตั้งแต่ 170 ขึ้นไป\nลด Cooldown สกิล Varetyr Spear 1 วินาที\nเพิ่ม Damage สกิล Varetyr Spear 30%\n\nเมื่อสวมใส่ร่วมกับ Record of Mage/[Not For Sale] Record of Mage และ Old Magic Stone Hat,\nทุก ๆ การอัพเกรด Old Magic Stone Hat 3 ขั้น,\nเพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกเผ่า 3%\nเพิ่ม Damage สกิล Comet 10% \n\nเมื่อสวมใส่ร่วมกับ Record of Mage/[Not For Sale] Record of Mage และ Old Wind Whisper,\nทุก ๆ การอัพเกรด Old Wind Whisper 3 ขั้น,\nเพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกเผ่า 3%\nเพิ่ม Damage สกิล Psychic Wave 10% \nประเภท : ^777777Accessory (Left)^000000 พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Mage Class 3^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 511,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Warlock",
+      "Sorcerer"
+    ],
+    "script": {
+      "vct": [
+        "10"
+      ],
+      "m_size_all": [
+        "6"
+      ],
+      "fct": [
+        "EQUIP[Record of Mage]USED[Warlock]0.7"
+      ],
+      "m_my_element_fire": [
+        "EQUIP[Old Magic Stone Hat]REFINE[headUpper==1]---2"
+      ],
+      "m_my_element_neutral": [
+        "EQUIP[Old Magic Stone Hat]REFINE[headUpper==1]---2",
+        "EQUIP[Old Wind Whisper]REFINE[headUpper==1]---2"
+      ],
+      "m_my_element_wind": [
+        "EQUIP[Old Wind Whisper]REFINE[headUpper==1]---2"
+      ],
+      "m_pene_race_all": [
+        "EQUIP[Record of Mage]50"
+      ],
+      "cd__Crimson Rock": [
+        "EQUIP[Record of Mage]USED[Warlock]4",
+        "EQUIP[Record of Mage]USED[Warlock]level:170===-3"
+      ],
+      "Crimson Rock": [
+        "EQUIP[Record of Mage]USED[Warlock]level:170===30"
+      ],
+      "int": [
+        "EQUIP[Record of Mage]USED[Sorcerer]30"
+      ],
+      "cd__Varetyr Spear": [
+        "EQUIP[Record of Mage]USED[Sorcerer]4",
+        "EQUIP[Record of Mage]USED[Sorcerer]level:170===-3"
+      ],
+      "Varetyr Spear": [
+        "EQUIP[Record of Mage]USED[Sorcerer]level:170===30"
+      ],
+      "m_race_all": [
+        "EQUIP[Record of Mage&&Old Magic Stone Hat]REFINE[headUpper==3]---3",
+        "EQUIP[Record of Mage&&Old Wind Whisper]REFINE[headUpper==3]---3"
+      ],
+      "Comet": [
+        "30",
+        "EQUIP[Record of Mage&&Old Magic Stone Hat]REFINE[headUpper==3]---10"
+      ],
+      "Psychic Wave": [
+        "30",
+        "EQUIP[Record of Mage&&Old Wind Whisper]REFINE[headUpper==3]---10"
+      ]
+    }
+  },
+  "490420": {
+    "id": 490420,
+    "aegisName": null,
+    "name": "Ring of Unknown Hero(Ranger) [1]",
+    "unidName": "Ring of Unknown Hero(Ranger)",
+    "resName": "Ullr_Bracelet",
+    "description": "แหวนของฮีโร่นิรนาม\n\nลด Delay หลังใช้สกิล 3%\nเพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูทุกประเภท 6%\n\nเมื่อสวมใส่ร่วมกับ Patent Royal Bow,\nเพิ่ม Damage ทางกายภาพระยะไกล 8%\nเมื่อ Patent Royal Bow อัพเกรดตั้งแต่ 11 ขึ้นไป,\nเมื่อ Base DEX และ LUK รวมกันได้ทุก ๆ 12 หน่วย เพิ่ม Damage สกิล Arrow Storm 1%\n\nเมื่อสวมใส่ร่วมกับ Patent Scarlet Dragon Leather Bow,\nเพิ่ม Damage ทางกายภาพระยะไกล 8%\nเมื่อ Patent Scarlet Dragon Leather Bow อัพเกรดตั้งแต่ 11 ขึ้นไป,\nเมื่อ Base DEX และ AGI รวมกันได้ทุก ๆ 12 หน่วย เพิ่ม Damage สกิล Aimed Bolt 1%\nประเภท : ^777777Accessory (Right)^000000 พลังป้องกัน : ^7777777^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Ranger^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 510,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 7,
+    "weight": 10,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Ranger"
+    ],
+    "script": {
+      "acd": [
+        "3"
+      ],
+      "p_class_all": [
+        "6"
+      ],
+      "m_class_all": [
+        "6"
+      ],
+      "range": [
+        "EQUIP[Patent Royal Bow]8",
+        "EQUIP[Patent Scarlet Dragon Leather Bow]8"
+      ],
+      "Arrow Storm": [
+        "EQUIP[Patent Royal Bow]REFINE[weapon==11]SUM[dex,luk==12]---1"
+      ],
+      "Aimed Bolt": [
+        "EQUIP[Patent Scarlet Dragon Leather Bow]REFINE[weapon==11]SUM[dex,agi==12]---1"
+      ]
+    }
+  },
   "490430": {
     "id": 490430,
     "aegisName": null,
@@ -17192,6 +19759,48 @@
       "Severe Rainstorm": [
         "30",
         "EQUIP[Record of Archer&&Old Maestro Song's Hat||Old Dying Swan]REFINE[headUpper==3]---10"
+      ]
+    }
+  },
+  "490434": {
+    "id": 490434,
+    "aegisName": null,
+    "name": "Ring of Unknown Hero(Warlock) [1]",
+    "unidName": "Ring of Unknown Hero(Warlock)",
+    "resName": "Ullr_Bracelet",
+    "description": "แหวนของฮีโร่นิรนาม\n\nลด Delay หลังใช้สกิล 3%\nเพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูทุกประเภท 6%\n\nเมื่อสวมใส่ร่วมกับ Patent Aeon Staff,\nเพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกเผ่า 8%\nเมื่อ Patent Aeon Staff อัพเกรดตั้งแต่ 11 ขึ้นไป,\nเมื่อ Base INT และ DEX รวมกันได้ทุก ๆ 12 หน่วย เพิ่ม Damage สกิล Earth Strain 1%\n\nเมื่อสวมใส่ร่วมกับ Patent Blue Crystal Staff,\nเพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกเผ่า 8%\nเมื่อ Patent Blue Crystal Staff อัพเกรดตั้งแต่ 11 ขึ้นไป,\nเมื่อ Base INT และ DEX รวมกันได้ทุก ๆ 12 หน่วย เพิ่ม Damage สกิล Jack Frost 1%\nประเภท : ^777777Accessory (Right)^000000 พลังป้องกัน : ^7777777^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Warlock^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 517,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 7,
+    "weight": 10,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Warlock"
+    ],
+    "script": {
+      "acd": [
+        "3"
+      ],
+      "p_class_all": [
+        "6"
+      ],
+      "m_class_all": [
+        "6"
+      ],
+      "m_race_all": [
+        "EQUIP[Patent Aeon Staff]8",
+        "EQUIP[Patent Blue Crystal Staff]8"
+      ],
+      "Earth Strain": [
+        "EQUIP[Patent Aeon Staff]REFINE[weapon==11]SUM[int,dex==12]---1"
+      ],
+      "Jack Frost": [
+        "EQUIP[Patent Blue Crystal Staff]REFINE[weapon==11]SUM[int,dex==12]---1"
       ]
     }
   },
