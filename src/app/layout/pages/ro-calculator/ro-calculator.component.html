@@ -344,7 +344,7 @@
     </div>
 
     <!-- Weapon + Ammu -->
-    <div class="grid grid-nogutter">
+    <div class="grid grid-nogutter item_label_weapon">
       <div class="col-3">
         <div class="grid grid-nogutter justify-content-end">
           <div class="col-12">
@@ -729,7 +729,7 @@
     </div>
 
     <!-- Head Upper -->
-    <div class="grid grid-nogutter">
+    <div class="grid grid-nogutter item_label_head">
       <div class="col-3">
         <div class="grid grid-nogutter justify-content-end">
           <div class="col-12">
@@ -885,7 +885,7 @@
     </div>
 
     <!-- Head Middle -->
-    <div class="grid grid-nogutter">
+    <div class="grid grid-nogutter item_label_head">
       <div class="col-3">
         <p-dropdown
           inputId="headMiddle"
@@ -984,7 +984,7 @@
     </div>
 
     <!-- Head Lower -->
-    <div class="grid grid-nogutter">
+    <div class="grid grid-nogutter item_label_head">
       <div class="col-3">
         <p-dropdown
           inputId="headLower"
@@ -1096,7 +1096,7 @@
     </div>
 
     <!-- Armor -->
-    <div class="grid grid-nogutter">
+    <div class="grid grid-nogutter item_label_def">
       <div class="col-3">
         <div class="grid grid-nogutter justify-content-end">
           <div class="col-12">
@@ -1252,7 +1252,7 @@
     </div>
 
     <!-- Garment -->
-    <div class="grid grid-nogutter">
+    <div class="grid grid-nogutter item_label_def">
       <div class="col-3">
         <div class="grid grid-nogutter justify-content-end">
           <div class="col-12">
@@ -1408,7 +1408,7 @@
     </div>
 
     <!-- Boot -->
-    <div class="grid grid-nogutter">
+    <div class="grid grid-nogutter item_label_def">
       <div class="col-3">
         <div class="grid grid-nogutter justify-content-end">
           <div class="col-12">
@@ -1564,7 +1564,7 @@
     </div>
 
     <!-- Acc Left -->
-    <div class="grid grid-nogutter">
+    <div class="grid grid-nogutter item_label_acc">
       <div class="col-3">
         <span class="p-float-label">
           <p-dropdown
@@ -1706,7 +1706,7 @@
     </div>
 
     <!-- Acc Right -->
-    <div class="grid grid-nogutter">
+    <div class="grid grid-nogutter item_label_acc">
       <div class="col-3">
         <span class="p-float-label">
           <p-dropdown
@@ -1847,7 +1847,7 @@
     </div>
 
     <!-- Pet -->
-    <div class="grid">
+    <div class="grid item_label_pet">
       <div class="col-3">
         <p-dropdown
           inputId="pet"
@@ -1878,7 +1878,7 @@
 
     <!-- Costume Upper / Shadow Weapon -->
     <div class="grid grid-nogutter">
-      <div class="col-3">
+      <div class="col-3 item_label_costume">
         <p-dropdown
           inputId="costumeEnchantUpper"
           [autoDisplayFirst]="false"
@@ -1905,7 +1905,7 @@
           </ng-template>
         </p-dropdown>
       </div>
-      <div class="col-3 ml-4">
+      <div class="col-3 ml-4 item_label_shadow">
         <p-dropdown
           inputId="shadowWeapon"
           [autoDisplayFirst]="false"
@@ -1932,7 +1932,7 @@
           </ng-template>
         </p-dropdown>
       </div>
-      <div class="col-1" style="min-width: 70px">
+      <div class="col-1 item_label_shadow" style="min-width: 70px">
         <p-dropdown
           inputId="shadowWeaponRefine"
           [options]="shadowRefineList"
@@ -1947,7 +1947,7 @@
           </ng-template>
         </p-dropdown>
       </div>
-      <div class="col-3">
+      <div class="col-3 item_label_shadow">
         <p-cascadeSelect
           [(ngModel)]="model.rawOptionTxts[51]"
           [disabled]="!model.shadowWeapon"
@@ -1966,7 +1966,7 @@
 
     <!-- Costume Middle / Shadow Armor -->
     <div class="grid grid-nogutter">
-      <div class="col-3">
+      <div class="col-3 item_label_costume">
         <p-dropdown
           inputId="costumeEnchantMiddle"
           [autoDisplayFirst]="false"
@@ -1993,7 +1993,7 @@
           </ng-template>
         </p-dropdown>
       </div>
-      <div class="col-3 ml-4">
+      <div class="col-3 ml-4 item_label_shadow">
         <p-dropdown
           inputId="shadowArmor"
           [autoDisplayFirst]="false"
@@ -2020,7 +2020,7 @@
           </ng-template>
         </p-dropdown>
       </div>
-      <div class="col-1" style="min-width: 70px">
+      <div class="col-1 item_label_shadow" style="min-width: 70px">
         <p-dropdown
           inputId="shadowArmorRefine"
           [options]="shadowRefineList"
@@ -2035,7 +2035,7 @@
           </ng-template>
         </p-dropdown>
       </div>
-      <div class="col-3">
+      <div class="col-3 item_label_shadow">
         <p-cascadeSelect
           [(ngModel)]="model.rawOptionTxts[52]"
           [disabled]="!model.shadowArmor"
@@ -2054,7 +2054,7 @@
 
     <!-- Costume Lower / Shadow Shield -->
     <div class="grid grid-nogutter">
-      <div class="col-3">
+      <div class="col-3 item_label_costume">
         <p-dropdown
           inputId="costumeEnchantLower"
           [autoDisplayFirst]="false"
@@ -2081,7 +2081,7 @@
           </ng-template>
         </p-dropdown>
       </div>
-      <div class="col-3 ml-4">
+      <div class="col-3 ml-4 item_label_shadow">
         <p-dropdown
           inputId="shadowShield"
           [autoDisplayFirst]="false"
@@ -2108,7 +2108,7 @@
           </ng-template>
         </p-dropdown>
       </div>
-      <div class="col-1" style="min-width: 70px">
+      <div class="col-1 item_label_shadow" style="min-width: 70px">
         <p-dropdown
           inputId="shadowShieldRefine"
           [options]="shadowRefineList"
@@ -2123,7 +2123,7 @@
           </ng-template>
         </p-dropdown>
       </div>
-      <div class="col-3">
+      <div class="col-3 item_label_shadow">
         <p-cascadeSelect
           [(ngModel)]="model.rawOptionTxts[53]"
           [disabled]="!model.shadowShield"
@@ -2142,7 +2142,7 @@
 
     <!-- Costume Garment / Shadow Boot -->
     <div class="grid grid-nogutter">
-      <div class="col-3">
+      <div class="col-3 item_label_costume">
         <p-dropdown
           inputId="costumeEnchantGarment"
           [autoDisplayFirst]="false"
@@ -2169,7 +2169,7 @@
           </ng-template>
         </p-dropdown>
       </div>
-      <div class="col-3 ml-4">
+      <div class="col-3 ml-4 item_label_shadow">
         <p-dropdown
           inputId="shadowBoot"
           [autoDisplayFirst]="false"
@@ -2196,7 +2196,7 @@
           </ng-template>
         </p-dropdown>
       </div>
-      <div class="col-1" style="min-width: 70px">
+      <div class="col-1 item_label_shadow" style="min-width: 70px">
         <p-dropdown
           inputId="shadowBootRefine"
           [options]="shadowRefineList"
@@ -2211,7 +2211,7 @@
           </ng-template>
         </p-dropdown>
       </div>
-      <div class="col-3">
+      <div class="col-3 item_label_shadow">
         <p-cascadeSelect
           [(ngModel)]="model.rawOptionTxts[54]"
           [disabled]="!model.shadowBoot"
@@ -2229,7 +2229,7 @@
     </div>
 
     <!-- Shadow Earring -->
-    <div class="grid grid-nogutter">
+    <div class="grid grid-nogutter item_label_shadow">
       <div class="col-3"></div>
       <div class="col-3 ml-4">
         <p-dropdown
@@ -2291,7 +2291,7 @@
     </div>
 
     <!-- Shadow Pendant -->
-    <div class="grid grid-nogutter">
+    <div class="grid grid-nogutter item_label_shadow">
       <div class="col-3"></div>
       <div class="col-3 ml-4">
         <p-dropdown
