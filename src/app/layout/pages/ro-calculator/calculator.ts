@@ -140,7 +140,13 @@ export class Calculator {
     sp: 0,
     spPercent: 0,
     def: 0,
+    defPercent: 0,
+    softDef: 0,
+    softDefPercent: 0,
     mdef: 0,
+    mdefPercent: 0,
+    softMdef: 0,
+    softMdefPercent: 0,
     aspd: 0,
     aspdPercent: 0,
     atk: 0,
@@ -166,6 +172,7 @@ export class Calculator {
     perfectHit: 0,
     hit: 0,
     flee: 0,
+    perfectDodge: 0,
     dmg: 0,
     ignore_size_penalty: 0,
     p_size_all: 0,
@@ -346,6 +353,11 @@ export class Calculator {
   private totalPhysicalPene = 0;
   private totalMagicalPene = 0;
 
+  private def = 0;
+  private softDef = 0;
+  private mdef = 0;
+  private softMdef = 0;
+
   private totalAspd = 0;
   private hitPerSecs = 0;
   private totalHit = 0;
@@ -353,6 +365,7 @@ export class Calculator {
   private hitRate = 0;
   private totalCri = 0;
   private totalFlee = 0;
+  private totalPerfectDodge = 0;
   private criRateSkillToMonster = 0;
   private criRateToMonster = 0;
   private basicDps = 0;
@@ -1588,9 +1601,10 @@ export class Calculator {
         }
       }
 
-      // if (itemData.defense) {
-      //   this.equipStatus[itemType].def = itemData.attack;
-      // }
+      if (itemData.defense) {
+        this.equipStatus[itemType].baseDef = itemData.defense;
+        this.totalEquipStatus.def = (this.totalEquipStatus.def || 0) + itemData.defense;
+      }
 
       // console.log({ itemType, itemData });
       const refine = this.getRefineLevelByItemType(itemType);
@@ -1863,7 +1877,7 @@ export class Calculator {
 
   calcHitRate() {
     const { totalLuk, totalDex, totalAgi } = this.status;
-    const { hit, perfectHit, flee } = this.totalEquipStatus;
+    const { hit, perfectHit, flee, perfectDodge } = this.totalEquipStatus;
     const baseLvl = this.model.level;
     const formula = () => {
       return 175 + baseLvl + totalDex + this.floor(totalLuk / 3) + hit;
@@ -1882,6 +1896,7 @@ export class Calculator {
     }
 
     this.totalFlee = 100 + 0 + this.floor(baseLvl + totalAgi + totalLuk / 5 + flee) * 1;
+    this.totalPerfectDodge = this.floor(1 + totalLuk * 0.1 + perfectDodge);
 
     return this;
   }
@@ -1905,6 +1920,34 @@ export class Calculator {
     return summary;
   }
 
+  calcAllDefs() {
+    const { level } = this.model;
+    const { def = 0, defPercent = 0, softDef = 0, softDefPercent = 0 } = this.totalEquipStatus;
+    const { totalVit, totalAgi } = this.status;
+
+    const rawSoftDef = this.floor(totalVit / 2 + totalAgi / 5 + level / 2);
+    this.softDef = this.floor((rawSoftDef + softDef) * this.toPercent(100 + softDefPercent));
+
+    const bonus = [1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5];
+    const calcDefByRefine = (refine: number) => {
+      return bonus.filter((_, i) => i + 1 <= refine).reduce((sum, val) => sum + val, 0);
+    };
+    const { headUpperRefine, armorRefine, shieldRefine, garmentRefine, bootRefine } = this.model;
+    const refines = [headUpperRefine, armorRefine, shieldRefine, garmentRefine, bootRefine].filter(
+      (a) => Number(a) > 0,
+    );
+    const bonusDefByRefine = refines.reduce((sum, refine) => sum + calcDefByRefine(refine), 0);
+    this.def = this.floor((def + bonusDefByRefine) * this.toPercent(100 + defPercent));
+
+    const { totalDex, totalInt } = this.status;
+    const { mdef = 0, mdefPercent = 0, softMdef = 0, softMdefPercent = 0 } = this.totalEquipStatus;
+    const rawSoftMdef = this.floor(totalInt + totalVit / 5 + totalDex / 5 + level / 4);
+    this.softMdef = this.floor((rawSoftMdef + softMdef) * this.toPercent(100 + softMdefPercent));
+    this.mdef = this.floor(mdef * this.toPercent(100 + mdefPercent));
+
+    return this;
+  }
+
   getTotalummary() {
     return {
       ...this.getObjSummary(this.totalEquipStatus),
@@ -1918,13 +1961,16 @@ export class Calculator {
         ...this.skillFrequency,
       },
       calc: {
-        // softMDef: this.floor(int + vit/5 + dex/5 + level/4),
-        totalAspd: this.totalAspd,
+        def: this.def,
+        softDef: this.softDef,
+        mdef: this.mdef,
+        softMdef: this.softMdef,
         hitPerSecs: this.hitPerSecs,
         totalCri: this.totalCri,
         totalHit: this.totalHit,
         totalPerfectHit: this.totalPerfectHit,
         totalFlee: this.totalFlee,
+        totalPerfectDodge: this.totalPerfectDodge,
         hitRate: this.hitRate,
         dps: this.basicDps,
         dmgReductionByHardDef: this.dmgReductionByHardDef,

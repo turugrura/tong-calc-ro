@@ -287,18 +287,20 @@
                   <div class="col-12">
                     Def:
                     <span class="font-semibold px-1 summary_stat_def"
-                      >{{ totalSummary?.softDef || 0 }} + {{ totalSummary?.def || 0 }}</span
+                      >{{ totalSummary?.calc?.softDef || 0 }} + {{ totalSummary?.calc?.def || 0 }}</span
                     >
                   </div>
                   <div class="col-12">
                     Mdef:
                     <span class="font-semibold px-1 summary_stat_def"
-                      >{{ totalSummary?.softMdef || 0 }} + {{ totalSummary?.mdef || 0 }}</span
+                      >{{ totalSummary?.calc?.softMdef || 0 }} + {{ totalSummary?.calc?.mdef || 0 }}</span
                     >
                   </div>
                   <div class="col-12">
                     Flee:
-                    <span class="font-semibold px-1 summary_stat_def">{{ totalSummary?.calc?.totalFlee || 0 }}</span>
+                    <span class="font-semibold px-1 summary_stat_def"
+                      >{{ totalSummary?.calc?.totalFlee || 0 }} + {{ totalSummary?.calc?.totalPerfectDodge || 0 }}</span
+                    >
                   </div>
                 </div>
               </div>

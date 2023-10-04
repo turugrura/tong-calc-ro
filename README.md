@@ -9,17 +9,17 @@
 | damage to multiple monster                                            | Done   |
 | calc Hit/CRI/Flee to monster                                          | Done   |
 | grouping monster by spawn map                                         | Done   |
-| calc dps by ASPD                                                      | DONE   |
-| calc only MAX stat bonus from consumables                             | DONE   |
-| categorize item sub type by itemSubTypeId                             | DONE   |
+| calc dps by ASPD                                                      | Done   |
+| calc only MAX stat bonus from consumables                             | Done   |
+| categorize item sub type by itemSubTypeId                             | Done   |
 | item comparing                                                        | -      |
 | recalculate to prevent decimal digit problem like 0.1+0.2 = 0.3000001 | -      |
 | support two hand weapon                                               | -      |
 | calc Hawkeye damage                                                   | 50%    |
 | [Redesign] move refine to bottom of item                              | Done   |
 | disable refine for unrefinable item                                   | -      |
-| disable card following item slots                                     | DONE   |
-| calc HP/SP/DEF/MDEF                                                   | -      |
+| disable card following item slots                                     | Done   |
+| calc HP/SP/DEF/MDEF                                                   | 50%    |
 | create CLASS for script reader                                        | -      |
 | x                                                                     | -      |
 

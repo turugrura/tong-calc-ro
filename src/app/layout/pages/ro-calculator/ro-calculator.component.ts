@@ -822,6 +822,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       .setLearnedSkills(learnedSkillMap)
       .prepareAllItemBonus()
       .setMonster(this.monsterDataMap[this.selectedMonster])
+      .calcAllDefs()
       .calcAspd()
       .calcHitRate()
       .calcCriRate();
