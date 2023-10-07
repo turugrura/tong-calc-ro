@@ -1,0 +1,18 @@
+<div class="grid grid-nogutter">
+  <div class="col-12">
+    {{ label }}
+    <span *ngIf="isDisplayRangeDmg" class="font-bold px-1 {{ styleClass }}"
+      >{{ _min | number }} - {{ _max | number }}{{ unit }}</span
+    >
+    <span *ngIf="!isDisplayRangeDmg" class="font-bold px-1 {{ styleClass }}">{{ _max | number }}{{ unit }}</span>
+    <span [hidden]="!isDisplayCompare">
+      <i class="pi pi-arrow-right vs_sign"></i>
+      <span *ngIf="isDisplayRangeDmg2" class="font-bold px-1  {{ compareStyleClass }}"
+        >{{ _min2 | number }} - {{ _max2 | number }}{{ unit }}</span
+      >
+      <span *ngIf="!isDisplayRangeDmg2" class="font-bold px-1  {{ compareStyleClass }}"
+        >{{ _max2 | number }}{{ unit }}</span
+      >
+    </span>
+  </div>
+</div>

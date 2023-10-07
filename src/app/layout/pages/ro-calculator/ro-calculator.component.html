@@ -337,6 +337,20 @@
                   </div>
                 </div>
               </div>
+              <div class="col-12 item_label_compare">
+                <p-multiSelect
+                  [options]="compareItemList"
+                  [(ngModel)]="compareItemNames"
+                  [showClear]="true"
+                  [showHeader]="false"
+                  [showToggleAll]="false"
+                  selectedItemsLabel="{0} compare selected"
+                  placeholder="Enable item slot to compare"
+                  [maxSelectedLabels]="6"
+                  (onChange)="onSelectComparingChange()"
+                  (onClear)="onSelectComparingChange(true)"
+                ></p-multiSelect>
+              </div>
             </div>
           </div>
         </div>
@@ -657,6 +671,33 @@
         </div>
       </div>
     </div>
+    <div class="grid grid-nogutter item_label_compare" *ngIf="showCompareItemMap.weapon">
+      <div class="col-12">
+        <app-equipment
+          [itemType]="'weapon'"
+          [placeholder]="'Weapon'"
+          [items]="items"
+          [mapEnchant]="mapEnchant"
+          [itemList]="weaponList"
+          [refineList]="refineList"
+          [cardList]="weaponCardList"
+          [optionList]="optionList"
+          [totalOptions]="2"
+          [(itemId)]="model2.weapon"
+          [(itemRefine)]="model2.weaponRefine"
+          [(card1Id)]="model2.weaponCard1"
+          [(card2Id)]="model2.weaponCard2"
+          [(card3Id)]="model2.weaponCard3"
+          [(card4Id)]="model2.weaponCard4"
+          [(enchant2Id)]="model2.weaponEnchant1"
+          [(enchant3Id)]="model2.weaponEnchant2"
+          [(enchant4Id)]="model2.weaponEnchant3"
+          [(option1Value)]="model2.rawOptionTxts[0]"
+          [(option2Value)]="model2.rawOptionTxts[1]"
+          (onSelectItemEvent)="onCompareItemChange()"
+        ></app-equipment>
+      </div>
+    </div>
 
     <!-- Shield -->
     <div class="grid grid-nogutter" *ngIf="!hiddenMap.shield">
@@ -883,6 +924,27 @@
         </div>
       </div>
     </div>
+    <div class="grid grid-nogutter item_label_compare" *ngIf="showCompareItemMap.headUpper">
+      <div class="col-12">
+        <app-equipment
+          [itemType]="'headUpper'"
+          [placeholder]="'Upper'"
+          [items]="items"
+          [mapEnchant]="mapEnchant"
+          [itemList]="headUpperList"
+          [refineList]="refineList"
+          [cardList]="headCardList"
+          [optionList]="optionList"
+          [(itemId)]="model2.headUpper"
+          [(itemRefine)]="model2.headUpperRefine"
+          [(card1Id)]="model2.headUpperCard"
+          [(enchant2Id)]="model2.headUpperEnchant1"
+          [(enchant3Id)]="model2.headUpperEnchant2"
+          [(enchant4Id)]="model2.headUpperEnchant3"
+          (onSelectItemEvent)="onCompareItemChange()"
+        ></app-equipment>
+      </div>
+    </div>
 
     <!-- Head Middle -->
     <div class="grid grid-nogutter item_label_head">
@@ -981,6 +1043,24 @@
           </div>
         </div>
       </div> -->
+    </div>
+    <div class="grid grid-nogutter item_label_compare" *ngIf="showCompareItemMap.headMiddle">
+      <div class="col-12">
+        <app-equipment
+          [itemType]="'headMiddle'"
+          [placeholder]="'Middle'"
+          [items]="items"
+          [itemList]="headMiddleList"
+          [cardList]="headCardList"
+          [optionList]="optionList"
+          [(itemId)]="model2.headMiddle"
+          [(card1Id)]="model2.headMiddleCard"
+          [(enchant2Id)]="model2.headMiddleEnchant1"
+          [(enchant3Id)]="model2.headMiddleEnchant2"
+          [(enchant4Id)]="model2.headMiddleEnchant3"
+          (onSelectItemEvent)="onCompareItemChange()"
+        ></app-equipment>
+      </div>
     </div>
 
     <!-- Head Lower -->
@@ -1092,6 +1172,22 @@
             </div>
           </ng-template>
         </p-dropdown>
+      </div>
+    </div>
+    <div class="grid grid-nogutter item_label_compare" *ngIf="showCompareItemMap.headLower">
+      <div class="col-12">
+        <app-equipment
+          [itemType]="'headLower'"
+          [placeholder]="'Lower'"
+          [items]="items"
+          [mapEnchant]="mapEnchant"
+          [itemList]="headLowerList"
+          [(itemId)]="model2.headLower"
+          [(enchant2Id)]="model2.headLowerEnchant1"
+          [(enchant3Id)]="model2.headLowerEnchant2"
+          [(enchant4Id)]="model2.headLowerEnchant3"
+          (onSelectItemEvent)="onCompareItemChange()"
+        ></app-equipment>
       </div>
     </div>
 
@@ -1250,6 +1346,27 @@
         </div>
       </div>
     </div>
+    <div class="grid grid-nogutter item_label_compare" *ngIf="showCompareItemMap.armor">
+      <div class="col-12">
+        <app-equipment
+          [itemType]="'armor'"
+          [placeholder]="'Armor'"
+          [items]="items"
+          [mapEnchant]="mapEnchant"
+          [itemList]="armorList"
+          [refineList]="refineList"
+          [cardList]="armorCardList"
+          [optionList]="optionList"
+          [(itemId)]="model2.armor"
+          [(itemRefine)]="model2.armorRefine"
+          [(card1Id)]="model2.armorCard"
+          [(enchant2Id)]="model2.armorEnchant1"
+          [(enchant3Id)]="model2.armorEnchant2"
+          [(enchant4Id)]="model2.armorEnchant3"
+          (onSelectItemEvent)="onCompareItemChange()"
+        ></app-equipment>
+      </div>
+    </div>
 
     <!-- Garment -->
     <div class="grid grid-nogutter item_label_def">
@@ -1404,6 +1521,27 @@
             </p-dropdown>
           </div>
         </div>
+      </div>
+    </div>
+    <div class="grid grid-nogutter item_label_compare" *ngIf="showCompareItemMap.garment">
+      <div class="col-12">
+        <app-equipment
+          [itemType]="'garment'"
+          [placeholder]="'Garment'"
+          [items]="items"
+          [mapEnchant]="mapEnchant"
+          [itemList]="garmentList"
+          [refineList]="refineList"
+          [cardList]="garmentCardList"
+          [optionList]="optionList"
+          [(itemId)]="model2.garment"
+          [(itemRefine)]="model2.garmentRefine"
+          [(card1Id)]="model2.garmentCard"
+          [(enchant2Id)]="model2.garmentEnchant1"
+          [(enchant3Id)]="model2.garmentEnchant2"
+          [(enchant4Id)]="model2.garmentEnchant3"
+          (onSelectItemEvent)="onCompareItemChange()"
+        ></app-equipment>
       </div>
     </div>
 
@@ -1562,6 +1700,27 @@
         </div>
       </div>
     </div>
+    <div class="grid grid-nogutter item_label_compare" *ngIf="showCompareItemMap.boot">
+      <div class="col-12">
+        <app-equipment
+          [itemType]="'Boot'"
+          [placeholder]="'boot'"
+          [items]="items"
+          [mapEnchant]="mapEnchant"
+          [itemList]="bootList"
+          [refineList]="refineList"
+          [cardList]="bootCardList"
+          [optionList]="optionList"
+          [(itemId)]="model2.boot"
+          [(itemRefine)]="model2.bootRefine"
+          [(card1Id)]="model2.bootCard"
+          [(enchant2Id)]="model2.bootEnchant1"
+          [(enchant3Id)]="model2.bootEnchant2"
+          [(enchant4Id)]="model2.bootEnchant3"
+          (onSelectItemEvent)="onCompareItemChange()"
+        ></app-equipment>
+      </div>
+    </div>
 
     <!-- Acc Left -->
     <div class="grid grid-nogutter item_label_acc">
@@ -1704,6 +1863,25 @@
         </div>
       </div>
     </div>
+    <div class="grid grid-nogutter item_label_compare" *ngIf="showCompareItemMap.accLeft">
+      <div class="col-12">
+        <app-equipment
+          [itemType]="'accLeft'"
+          [placeholder]="'AccLeft'"
+          [items]="items"
+          [mapEnchant]="mapEnchant"
+          [itemList]="accLeftList"
+          [cardList]="accLeftCardList"
+          [optionList]="optionList"
+          [(itemId)]="model2.accLeft"
+          [(card1Id)]="model2.accLeftCard"
+          [(enchant2Id)]="model2.accLeftEnchant1"
+          [(enchant3Id)]="model2.accLeftEnchant2"
+          [(enchant4Id)]="model2.accLeftEnchant3"
+          (onSelectItemEvent)="onCompareItemChange()"
+        ></app-equipment>
+      </div>
+    </div>
 
     <!-- Acc Right -->
     <div class="grid grid-nogutter item_label_acc">
@@ -1843,6 +2021,25 @@
             </p-dropdown>
           </div>
         </div>
+      </div>
+    </div>
+    <div class="grid grid-nogutter item_label_compare" *ngIf="showCompareItemMap.accRight">
+      <div class="col-12">
+        <app-equipment
+          [itemType]="'accRight'"
+          [placeholder]="'AccRight'"
+          [items]="items"
+          [mapEnchant]="mapEnchant"
+          [itemList]="accRightList"
+          [cardList]="accRightCardList"
+          [optionList]="optionList"
+          [(itemId)]="model2.accRight"
+          [(card1Id)]="model2.accRightCard"
+          [(enchant2Id)]="model2.accRightEnchant1"
+          [(enchant3Id)]="model2.accRightEnchant2"
+          [(enchant4Id)]="model2.accRightEnchant3"
+          (onSelectItemEvent)="onCompareItemChange()"
+        ></app-equipment>
       </div>
     </div>
 
@@ -2649,7 +2846,7 @@
 
           <!-- Skill -->
           <div class="col-7">
-            <div class="grid grid-nogutter">
+            <div class="grid grid-nogutter" style="position: relative">
               <div class="col-12">
                 <div class="p-inputgroup">
                   <span class="p-inputgroup-addon" style="width: 80px">Skill</span>
@@ -2664,91 +2861,242 @@
               </div>
               <div class="col-12">
                 <div class="grid grid-nogutter">
-                  <div class="col-3">
-                    <span class="font-bold px-1 summary_highlight"
-                      >{{ totalSummary?.calcSkill?.baseSkillDamage || 0 }} %</span
-                    >
+                  <div class="loading_block" *ngIf="isCalculating">
+                    <i class="pi pi-spin pi-spinner" style="font-size: 2rem"></i>
                   </div>
-                  <div class="col-3">
-                    VCT:
-                    <span class="font-bold px-1 summary_value">{{ totalSummary?.calcSkill?.reducedVct || 0 }}</span>
-                  </div>
-                  <div class="col-3">
-                    FCT:
-                    <span class="font-bold px-1 summary_value">{{ totalSummary?.calcSkill?.reducedFct || 0 }}</span>
-                  </div>
-                  <div class="col-3">
-                    Cast:
-                    <span class="font-bold px-1 summary_damage">{{ totalSummary?.calcSkill?.castPeriod || 0 }}</span>
-                  </div>
-                  <div class="col-3">
-                    CD:
-                    <span class="font-bold px-1 summary_value">{{ totalSummary?.calcSkill?.reducedCd || 0 }}</span>
-                  </div>
-                  <div class="col-3">
-                    Delay:
-                    <span class="font-bold px-1 summary_value">{{ totalSummary?.calcSkill?.reducedAcd || 0 }}</span>
+
+                  <div class="col-6">
+                    <app-calc-value
+                      [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+                      label="Skill:"
+                      styleClass="summary_highlight"
+                      styleClass2="summary_compare"
+                      [enableCompare]="true"
+                      [max]="totalSummary?.calcSkill?.baseSkillDamage"
+                      [max2]="totalSummary2?.calcSkill?.baseSkillDamage"
+                    ></app-calc-value>
                   </div>
                   <div class="col-6">
-                    Hits/s:
-                    <span class="font-bold px-1 summary_highlight">{{
-                      totalSummary?.calcSkill?.totalHitPerSec || 0
-                    }}</span
-                    ><span
-                      style="color: var(--red-500)"
-                      *ngIf="totalSummary?.calcSkill?.totalHitPerSec > totalSummary?.calc?.hitPerSecs"
-                      class="font-semibold px-1 summary_highlight"
-                      >( ASPD {{ totalSummary?.calc?.hitPerSecs || 0 }} )</span
-                    >
+                    <app-calc-value
+                      [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+                      label="ASPD:"
+                      styleClass="summary_highlight"
+                      styleClass2="summary_compare"
+                      [enableCompare]="true"
+                      [max]="totalSummary?.calc?.hitPerSecs"
+                      [max2]="totalSummary2?.calc?.hitPerSecs"
+                    ></app-calc-value>
+                  </div>
+                  <div class="col-6">
+                    <app-calc-value
+                      [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+                      label="เจาะ:"
+                      unit="%"
+                      styleClass="summary_highlight"
+                      styleClass2="summary_compare"
+                      [enableCompare]="true"
+                      [max]="totalSummary?.calc?.totalPene"
+                      [max2]="totalSummary2?.calc?.totalPene"
+                    ></app-calc-value>
+                  </div>
+                  <div class="col-6">
+                    <app-calc-value
+                      [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+                      label="แม่น:"
+                      unit="%"
+                      styleClass="summary_highlight"
+                      styleClass2="summary_compare"
+                      [enableCompare]="true"
+                      [max]="totalSummary?.calc?.hitRate"
+                      [max2]="totalSummary2?.calc?.hitRate"
+                    ></app-calc-value>
+                  </div>
+
+                  <!-- Skill Summary -->
+                  <div class="col-12">
+                    <div class="grid grid-nogutter">
+                      <div class="col-6">
+                        <app-calc-value
+                          [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+                          label="VCT:"
+                          styleClass="summary_value"
+                          styleClass2="summary_compare"
+                          [enableCompare]="true"
+                          [isGreaterIsBetter]="false"
+                          [max]="totalSummary?.calcSkill?.reducedVct"
+                          [max2]="totalSummary2?.calcSkill?.reducedVct"
+                        ></app-calc-value>
+                      </div>
+                      <div class="col-6">
+                        <app-calc-value
+                          [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+                          label="FCT:"
+                          styleClass="summary_value"
+                          styleClass2="summary_compare"
+                          [enableCompare]="true"
+                          [isGreaterIsBetter]="false"
+                          [max]="totalSummary?.calcSkill?.reducedFct"
+                          [max2]="totalSummary2?.calcSkill?.reducedFct"
+                        ></app-calc-value>
+                      </div>
+                      <div class="col-6">
+                        <app-calc-value
+                          [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+                          label="CD:"
+                          styleClass="summary_value"
+                          styleClass2="summary_compare"
+                          [enableCompare]="true"
+                          [isGreaterIsBetter]="false"
+                          [max]="totalSummary?.calcSkill?.reducedCd"
+                          [max2]="totalSummary2?.calcSkill?.reducedCd"
+                        ></app-calc-value>
+                      </div>
+                      <div class="col-6">
+                        <app-calc-value
+                          [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+                          label="Delay:"
+                          styleClass="summary_value"
+                          styleClass2="summary_compare"
+                          [enableCompare]="true"
+                          [isGreaterIsBetter]="false"
+                          [max]="totalSummary?.calcSkill?.reducedAcd"
+                          [max2]="totalSummary2?.calcSkill?.reducedAcd"
+                        ></app-calc-value>
+                      </div>
+                      <div class="col-6">
+                        <app-calc-value
+                          [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+                          label="Cast:"
+                          styleClass="summary_damage"
+                          styleClass2="summary_compare"
+                          [enableCompare]="true"
+                          [isGreaterIsBetter]="false"
+                          [max]="totalSummary?.calcSkill?.castPeriod"
+                          [max2]="totalSummary2?.calcSkill?.castPeriod"
+                        ></app-calc-value>
+                      </div>
+                      <div class="col-6">
+                        <app-calc-value
+                          [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+                          label="Skill/s:"
+                          styleClass="summary_highlight"
+                          styleClass2="summary_compare"
+                          [enableCompare]="true"
+                          [max]="totalSummary?.calcSkill?.totalHitPerSec"
+                          [max2]="totalSummary2?.calcSkill?.totalHitPerSec"
+                        ></app-calc-value>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-12 py-1 divider">
+                    <p-divider></p-divider>
+                  </div>
+
+                  <div class="col-12" [hidden]="totalSummary?.dmg?.criRate <= 0">
+                    <app-calc-value
+                      [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+                      label="Cri:"
+                      unit="%"
+                      styleClass="summary_damage"
+                      styleClass2="summary_compare"
+                      [enableCompare]="true"
+                      [max]="totalSummary?.dmg?.criRate"
+                      [max2]="totalSummary2?.dmg?.criRate"
+                    ></app-calc-value>
+                  </div>
+                  <div class="col-12">
+                    <app-calc-value
+                      [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+                      [label]="totalSummary?.dmg?.criRate <= 0 ? 'SkillDmg:' : 'SkillDmgCri:'"
+                      styleClass="summary_damage"
+                      styleClass2="summary_compare"
+                      [enableCompare]="true"
+                      [min]="totalSummary?.dmg?.minDamage"
+                      [max]="totalSummary?.dmg?.maxDamage"
+                      [min2]="totalSummary2?.dmg?.minDamage"
+                      [max2]="totalSummary2?.dmg?.maxDamage"
+                    ></app-calc-value>
+                  </div>
+                  <div class="col-12" [hidden]="totalSummary?.dmg?.maxDamageHE <= 0">
+                    <app-calc-value
+                      [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+                      label="HE:"
+                      styleClass="summary_damage"
+                      styleClass2="summary_compare"
+                      [enableCompare]="true"
+                      [min]="totalSummary?.dmg?.minDamageHE"
+                      [max]="totalSummary?.dmg?.maxDamageHE"
+                      [min2]="totalSummary2?.dmg?.minDamageHE"
+                      [max2]="totalSummary2?.dmg?.maxDamageHE"
+                    ></app-calc-value>
+                  </div>
+                  <div class="col-12">
+                    <app-calc-value
+                      [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+                      label="DPS:"
+                      styleClass="summary_highlight"
+                      styleClass2="summary_compare"
+                      [enableCompare]="true"
+                      [max]="totalSummary?.dmg?.skillDps"
+                      [max2]="totalSummary2?.dmg?.skillDps"
+                    ></app-calc-value>
+                  </div>
+
+                  <div class="col-12 py-1 divider">
+                    <p-divider></p-divider>
+                  </div>
+
+                  <div class="col-12">
+                    <app-calc-value
+                      [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+                      label="Basic:"
+                      styleClass="summary_damage"
+                      styleClass2="summary_compare"
+                      [enableCompare]="true"
+                      [min]="totalSummary?.dmg?.basicMinDamage"
+                      [max]="totalSummary?.dmg?.basicMaxDamage"
+                      [min2]="totalSummary2?.dmg?.basicMinDamage"
+                      [max2]="totalSummary2?.dmg?.basicMaxDamage"
+                    ></app-calc-value>
+                  </div>
+                  <div class="col-12">
+                    <app-calc-value
+                      [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+                      label="Cri:"
+                      unit="%"
+                      styleClass="summary_damage"
+                      styleClass2="summary_compare"
+                      [enableCompare]="true"
+                      [max]="totalSummary?.calc?.totalCri"
+                      [max2]="totalSummary2?.calc?.totalCri"
+                    ></app-calc-value>
+                  </div>
+                  <div class="col-12">
+                    <app-calc-value
+                      [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+                      label="DmgCri:"
+                      styleClass="summary_damage"
+                      styleClass2="summary_compare"
+                      [enableCompare]="true"
+                      [min]="totalSummary?.dmg?.criMinDamage"
+                      [max]="totalSummary?.dmg?.criMaxDamage"
+                      [min2]="totalSummary2?.dmg?.criMinDamage"
+                      [max2]="totalSummary2?.dmg?.criMaxDamage"
+                    ></app-calc-value>
+                  </div>
+                  <div class="col-12">
+                    <app-calc-value
+                      [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+                      label="DPS:"
+                      styleClass="summary_highlight"
+                      styleClass2="summary_compare"
+                      [enableCompare]="true"
+                      [max]="totalSummary?.dmg?.basicDps"
+                      [max2]="totalSummary2?.dmg?.basicDps"
+                    ></app-calc-value>
                   </div>
                 </div>
-              </div>
-              <div class="col-6">
-                Skill <span [hidden]="totalSummary?.dmg?.criRate <= 0">Cri</span>:
-                <span [hidden]="totalSummary?.dmg?.criRate > 0" class="font-bold px-1 summary_damage"
-                  >{{ totalSummary?.dmg?.minDamage | number }} -</span
-                ><span class="font-bold px-1 summary_damage">{{ totalSummary?.dmg?.maxDamage | number }}</span>
-              </div>
-              <div class="col-6" [hidden]="totalSummary?.dmg?.criRate <= 0">
-                Cri:
-                <span class="font-bold px-1 summary_damage">{{ totalSummary?.dmg?.criRate || 0 | number }}%</span>
-              </div>
-              <div class="col-6" [hidden]="totalSummary?.dmg?.maxDamageHE <= 0">
-                HE
-                <span class="font-bold px-1 summary_highlight" [hidden]="totalSummary?.dmg?.criRate > 0"
-                  >{{ totalSummary?.dmg?.minDamageHE || 0 | number }} -</span
-                ><span class="font-bold px-1 summary_highlight">{{
-                  totalSummary?.dmg?.maxDamageHE || 0 | number
-                }}</span>
-              </div>
-              <div class="col-6">
-                DPS:
-                <span class="font-bold px-1 summary_highlight">{{ totalSummary?.calcSkill?.dps || 0 | number }}</span>
-              </div>
-              <div class="col-6">
-                Basic:
-                <span class="font-bold px-1 summary_damage"
-                  >{{ minBasicDamage | number }} - {{ maxBasicDamage | number }}</span
-                >
-              </div>
-              <div class="col-6">
-                Cri:
-                <span class="font-bold px-1 summary_damage">{{ totalSummary?.calc?.totalCri | number }}%</span>
-              </div>
-              <div class="col-6">
-                CriDmg:<span class="font-bold px-1 summary_damage"
-                  >{{ totalSummary?.dmg?.criMinDamage | number }} - {{ totalSummary?.dmg?.criMaxDamage | number }}</span
-                >
-              </div>
-              <div class="col-6">
-                DPS:
-                <span class="font-bold px-1 summary_highlight">{{ totalSummary?.calc?.dps || 0 | number }}</span>
-              </div>
-              <div class="col-6">
-                เจาะ:
-                <span class="font-bold px-1 summary_highlight">{{ totalSummary?.calc?.totalPene || 0 | number }}%</span>
-                แม่น:
-                <span class="font-bold px-1 summary_highlight">{{ totalSummary?.calc?.hitRate || 0 | number }}%</span>
               </div>
             </div>
           </div>
@@ -2826,6 +3174,7 @@
         <div class="grid grid-nogutter">
           <div class="col-6">
             <pre [innerHTML]="modelSummary | prettyjson : [true, 3]"></pre>
+            <pre *ngIf="isEnableCompare" [innerHTML]="model2 | prettyjson : [true, 3]"></pre>
           </div>
           <div class="col-6">
             <pre [innerHTML]="totalSummary | prettyjson : [true, 3]"></pre>

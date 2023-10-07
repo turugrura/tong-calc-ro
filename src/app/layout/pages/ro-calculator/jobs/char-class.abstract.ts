@@ -198,6 +198,7 @@ export abstract class CharacterBase {
     //   rawCalcAspd,
     //   baseAspd2,
     //   equip,
+    //   final,
     // });
 
     return final;

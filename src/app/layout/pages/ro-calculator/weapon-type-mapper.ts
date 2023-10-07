@@ -1,27 +1,27 @@
 export const WeaponSubTypeNameMapById = {
-  Dagger: 256,
-  Sword: 257,
-  'Two-Handed Sword': 258,
-  Spear: 259,
-  'Two-Handed Spear': 260,
-  Axe: 261,
-  'Two-Handed Axe': 262,
-  Mace: 263,
-  'Two-Handed Mace': 264,
-  Rod: 265,
-  'Two-Handed Rod': 266,
-  Bow: 267,
-  Fistweapon: 268,
-  Instrument: 269,
-  Whip: 270,
-  Book: 271,
-  Katar: 272,
-  Pistol: 273,
-  Rifle: 274,
-  'Gatling Gun': 275,
-  Shotgun: 276,
-  'Grenade Launcher': 277,
-  Shuriken: 278,
+  256: 'Dagger',
+  257: 'Sword',
+  258: 'Two-Handed Sword',
+  259: 'Spear',
+  260: 'Two-Handed Spear',
+  261: 'Axe',
+  262: 'Two-Handed Axe',
+  263: 'Mace',
+  264: 'Two-Handed Mace',
+  265: 'Rod',
+  266: 'Two-Handed Rod',
+  267: 'Bow',
+  268: 'Fistweapon',
+  269: 'Instrument',
+  270: 'Whip',
+  271: 'Book',
+  272: 'Katar',
+  273: 'Pistol',
+  274: 'Rifle',
+  275: 'Gatling Gun',
+  276: 'Shotgun',
+  277: 'Grenade Launcher',
+  278: 'Shuriken',
 } as const;
 
 export const WeaponTypeNameMapBySubTypeId = {
@@ -52,4 +52,4 @@ export const WeaponTypeNameMapBySubTypeId = {
 
 type Keys = keyof typeof WeaponTypeNameMapBySubTypeId;
 export type WeaponTypeName = (typeof WeaponTypeNameMapBySubTypeId)[Keys];
-export type WeaponSubTypeName = keyof typeof WeaponSubTypeNameMapById;
+export type WeaponSubTypeName = (typeof WeaponSubTypeNameMapById)[Keys];

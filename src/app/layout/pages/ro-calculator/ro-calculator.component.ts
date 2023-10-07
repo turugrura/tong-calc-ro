@@ -14,7 +14,7 @@ import {
 } from 'rxjs';
 import { BaseStateCalculator } from './base-state-calculator';
 import { Calculator } from './calculator';
-import { ItemTypeEnum, MainItemTypeSet } from './item-type.enum';
+import { ItemTypeEnum, MainItemTypeSet, MainItemWithRelations } from './item-type.enum';
 import { ItemTypeId } from './item.const';
 import { RoService } from 'src/app/demo/service/ro.service';
 import { ItemModel } from './item.model';
@@ -123,10 +123,6 @@ const mapRelatedItem: Partial<Record<ItemTypeEnum, ItemTypeEnum[]>> = {
   [ItemTypeEnum.costumeEnchantLower]: [],
   [ItemTypeEnum.costumeEnchantGarment]: [],
 
-  [ItemTypeEnum.costumeEnhUpper]: [],
-  [ItemTypeEnum.costumeEnhMiddle]: [],
-  [ItemTypeEnum.costumeEnhLower]: [],
-  [ItemTypeEnum.costumeEnhGarment]: [],
   [ItemTypeEnum.shadowWeapon]: [],
   [ItemTypeEnum.shadowArmor]: [],
   [ItemTypeEnum.shadowShield]: [],
@@ -330,6 +326,10 @@ const createMainStatOptionList = () => {
   return items;
 };
 
+interface ClassModel extends Partial<Record<ItemTypeEnum, number>> {
+  rawOptionTxts: string[];
+}
+
 @Component({
   selector: 'app-ro-calculator',
   templateUrl: './ro-calculator.component.html',
@@ -339,6 +339,7 @@ const createMainStatOptionList = () => {
 export class RoCalculatorComponent implements OnInit, OnDestroy {
   updateItemEvent = new Subject();
   updateMonsterListEvent = new Subject();
+  updateCompareEvent = new Subject();
 
   loadBtnItems: MenuItem[];
   monsterDataMap: Record<number, MonsterModel> = {};
@@ -468,6 +469,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     aspdPotions: [],
   };
   private emptyModel = this.cloneModel(this.model);
+  model2: ClassModel = { rawOptionTxts: [] };
 
   basicOptions = createMainStatOptionList();
   refineList = createNumberDropdownList(0, 20);
@@ -596,18 +598,10 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   groupMonsterList: MonsterSelectItemGroup[] = [];
   monsterList: DropdownModel[] = [];
   selectedMonster = Number(localStorage.getItem('monster')) || 21067;
-  minBasicDamage = 0;
-  maxBasicDamage = 0;
-  minDamage = 0;
-  maxDamage = 0;
-  dps = 0;
-  skillHit = 1;
-  minDamagePerHit = 0;
-  maxDamagePerHit = 0;
-  criDamage = 0;
 
   isCalculating = false;
   calculator = new Calculator();
+  calculator2 = new Calculator();
   stateCalculator = new BaseStateCalculator();
 
   possiblyDamages: DropdownModel[];
@@ -615,6 +609,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   itemSummary2: any;
   modelSummary: any;
   totalSummary: any;
+  totalSummary2: any;
 
   private equipItemMap = new Map<ItemTypeEnum, number>();
   private equipItemIdItemTypeMap = new Map<ItemTypeEnum, number>();
@@ -631,10 +626,24 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   selectedMonsterIds: number[] = this.getCachedMonsterIdsForCalc();
   calcDamages: any[] = [];
 
-  updateItemSubs: Subscription;
-  updateMonsterListSubs: Subscription;
+  private allSubs: Subscription[] = [];
 
   hiddenMap = { ammu: true, shield: true };
+
+  isEnableCompare = false;
+  showCompareItemMap = {} as any;
+  compareItemNames = [] as ItemTypeEnum[];
+  compareItemList: (keyof typeof ItemTypeEnum)[] = [
+    'weapon',
+    'headUpper',
+    'headMiddle',
+    'headLower',
+    'armor',
+    'garment',
+    'boot',
+    'accLeft',
+    'accRight',
+  ];
 
   constructor(
     private roService: RoService,
@@ -651,13 +660,13 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     });
 
     const itemChanges = new Set<ItemTypeEnum>();
-    this.updateItemSubs = this.updateItemEvent
+    const updateItemSubs = this.updateItemEvent
       .pipe(
         tap((itemChange: ItemTypeEnum) => {
           this.isCalculating = true;
           itemChanges.add(itemChange);
         }),
-        debounceTime(750),
+        debounceTime(250),
       )
       .subscribe(() => {
         this.hiddenMap = {
@@ -679,28 +688,64 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
           this.setAmmoDropdownList();
         }
         this.calculate();
+        this.calcCompare();
         this.saveItemSet();
         this.resetItemDescription();
         this.onSelectItemDescription();
         this.isCalculating = false;
         itemChanges.clear();
       });
+    this.allSubs.push(updateItemSubs);
 
-    this.updateMonsterListSubs = this.updateMonsterListEvent
+    const updateMonsterListSubs = this.updateMonsterListEvent
       .pipe(
         tap(() => (this.isCalculating = true)),
-        debounceTime(1000),
+        debounceTime(250),
       )
       .subscribe(() => {
         this.calculateToSelectedMonsters(false);
         this.setCacheMonsterIdsForCalc();
         this.isCalculating = false;
       });
+    this.allSubs.push(updateMonsterListSubs);
+
+    const x = this.updateCompareEvent
+      .pipe(
+        tap(() => (this.isCalculating = true)),
+        debounceTime(250),
+      )
+      .subscribe(() => {
+        const model2 = {} as any;
+        this.showCompareItemMap = this.compareItemNames.reduce((agg, itemTypeName) => {
+          agg[itemTypeName] = true;
+
+          model2[itemTypeName] = this.model2[itemTypeName] || null;
+          if (itemTypeName === ItemTypeEnum.weapon) {
+            model2.rawOptionTxts = [...this.model2.rawOptionTxts];
+          }
+
+          const relatedItems = MainItemWithRelations[itemTypeName];
+          for (const relatedItem of relatedItems) {
+            model2[relatedItem] = this.model2[relatedItem] || null;
+          }
+
+          return agg;
+        }, {});
+
+        if (this.isEnableCompare) {
+          this.model2 = model2;
+          this.calcCompare();
+        } else {
+          this.model2 = { rawOptionTxts: [] };
+        }
+
+        this.isCalculating = false;
+      });
+    this.allSubs.push(x);
   }
 
   ngOnDestroy(): void {
-    const obs = [this.updateItemSubs, this.updateMonsterListSubs];
-    for (const ob of obs) {
+    for (const ob of this.allSubs) {
       ob?.unsubscribe();
     }
   }
@@ -715,6 +760,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         this.monsterDataMap = monsters;
 
         this.calculator.setMasterItems(items);
+        this.calculator2.setMasterItems(items);
         this.mapEnchant = new Map(
           Object.values(items)
             .filter((item) => item.itemTypeId === ItemTypeId.CARD)
@@ -785,7 +831,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     this.selectedColumns = defaultCols;
   }
 
-  private calculate() {
+  private prepare(calculator: Calculator, compareModel?: any) {
     const { activeSkills, passiveSkills, selectedAtkSkill } = this.model;
     const { equipAtks, masteryAtks, skillNames, learnedSkillMap } = this.selectedCharacter.getSkillBonusAndName({
       activeIds: activeSkills,
@@ -808,8 +854,15 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       }
     });
 
-    const calc = this.calculator
-      .setModel(this.model)
+    const calc = calculator;
+
+    if (compareModel) {
+      const model2 = { ...this.model, ...compareModel };
+      calc.loadItemFromModel(model2);
+    } else {
+      calc.setModel(this.model);
+    }
+    calc
       .setClass(this.selectedCharacter)
       .setSkillIds({ activeSkillIds: activeSkills, passiveSkillIds: passiveSkills })
       .setEquipAtkSkillAtk(equipAtks)
@@ -825,18 +878,14 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       .calcAllDefs()
       .calcAspd()
       .calcHitRate()
-      .calcCriRate();
-    const calculated = calc.calculateAllDamages(selectedAtkSkill);
-    const { minDamage, maxDamage, basicMaxDamage, basicMinDamage, criMaxDamage, skillHit, skillDps } = calculated;
-    this.minBasicDamage = basicMinDamage;
-    this.maxBasicDamage = basicMaxDamage;
-    this.minDamage = minDamage;
-    this.maxDamage = maxDamage;
-    this.dps = skillDps;
-    this.minDamagePerHit = minDamage / skillHit;
-    this.maxDamagePerHit = maxDamage / skillHit;
-    this.skillHit = skillHit;
-    this.criDamage = criMaxDamage;
+      .calcCriRate()
+      .calculateAllDamages(selectedAtkSkill);
+
+    return calc;
+  }
+
+  private calculate() {
+    const calc = this.prepare(this.calculator);
 
     this.totalSummary = calc.getTotalummary();
     const modelSummary = calc.getModelSummary() as any;
@@ -857,9 +906,17 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       total[key] = value;
       return total;
     }, {});
-    this.possiblyDamages = calc.getPossiblyDamages().map((a) => ({ label: `${a}`, value: a }));
+    // this.possiblyDamages = calc.getPossiblyDamages().map((a) => ({ label: `${a}`, value: a }));
 
     this.calculateToSelectedMonsters();
+  }
+
+  private calcCompare() {
+    if (this.compareItemNames.length > 0) {
+      const m2 = JSON.parse(JSON.stringify(this.model2));
+      const calc2 = this.prepare(this.calculator2, m2);
+      this.totalSummary2 = calc2.getTotalummary();
+    }
   }
 
   private getCachedMonsterIdsForCalc() {
@@ -1810,8 +1867,8 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       .replace(/\^(.{6})/g, '<font color="#$1">');
   }
 
-  onLog() {
-    this.updateItemEvent.next(1);
+  onLog(inputs) {
+    console.log({ inputs, model2: this.model2 });
   }
 
   onOptionChange() {
@@ -1875,5 +1932,19 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
   onSelectedColChange() {
     this.setCacheBattleCols();
+  }
+
+  onSelectComparingChange(isClear = false) {
+    if (isClear) {
+      this.compareItemNames = [];
+    }
+
+    this.isEnableCompare = this.compareItemNames.length > 0;
+
+    this.updateCompareEvent.next(1);
+  }
+
+  onCompareItemChange() {
+    this.updateCompareEvent.next(1);
   }
 }

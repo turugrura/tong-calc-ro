@@ -106,6 +106,7 @@ export class Weapon {
   private _subTypeName: WeaponSubTypeName;
   private _baseWeaponAtk = 0;
   private _baseWeaponMatk = 0;
+  private _itemSubTypeId = 0;
   private _baseWeaponLevel = 0;
   private _refineBonus = 0;
   private _overUpgradeBonus = 0;
@@ -117,9 +118,10 @@ export class Weapon {
     const { itemLevel, attack, script, itemSubTypeId } = itemData;
     this._baseWeaponAtk = attack;
     this._baseWeaponMatk = Number(script?.['matk']?.[0]) || 0;
+    this._itemSubTypeId = itemSubTypeId;
     this._baseWeaponLevel = itemLevel;
-    this._subTypeName = WeaponSubTypeNameMapById[itemSubTypeId];
     this._typeName = WeaponTypeNameMapBySubTypeId[itemSubTypeId];
+    this._subTypeName = WeaponSubTypeNameMapById[itemSubTypeId];
     this._rangeType = this._typeName === 'gun' || this._typeName === 'bow' ? 'range' : 'melee';
 
     if (refineLevel > 0) {
@@ -138,6 +140,7 @@ export class Weapon {
 
   get data() {
     return {
+      itemSubTypeId: this._itemSubTypeId,
       rangeType: this._rangeType,
       typeName: this._typeName,
       subTypeName: this._subTypeName,

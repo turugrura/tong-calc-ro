@@ -80,6 +80,8 @@ import { BlockUIModule } from 'primeng/blockui';
 import { RoCalculatorComponent } from './ro-calculator.component';
 import { PrettyJsonPipe } from '../../prettier-json.pipe';
 import { RoCalculatorRoutingModule } from './ro-calculator-routing.module';
+import { EquipmentComponent } from './equipment/equipment.component';
+import { CalcValueComponent } from './calc-value/calc-value.component';
 
 @NgModule({
   imports: [
@@ -163,6 +165,6 @@ import { RoCalculatorRoutingModule } from './ro-calculator-routing.module';
     BlockUIModule,
     RoCalculatorRoutingModule,
   ],
-  declarations: [RoCalculatorComponent, PrettyJsonPipe],
+  declarations: [RoCalculatorComponent, EquipmentComponent, CalcValueComponent, PrettyJsonPipe],
 })
 export class RoCalculatorModule {}

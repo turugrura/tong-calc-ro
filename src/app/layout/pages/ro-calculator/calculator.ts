@@ -1,7 +1,7 @@
 import { AtkSkillFormulaInput, AtkSkillModel, CharacterBase } from './jobs/char-class.abstract';
 import { ElementMapper } from './element-mapper';
 import { ElementType } from './element-type.const';
-import { ItemTypeEnum, MainItemTypeSet } from './item-type.enum';
+import { ItemTypeEnum, MainItemTypeSet, MainItemWithRelations } from './item-type.enum';
 import { ItemModel } from './item.model';
 import { MonsterModel } from './monster.model';
 import { Weapon } from './weapon';
@@ -36,6 +36,8 @@ const weaponSizePenalty: Record<string, { s: number; m: number; l: number }> = {
   whip: { s: 75, m: 100, l: 50 },
   gun: { s: 100, m: 100, l: 100 },
 };
+
+const isNumber = (n: unknown): n is number => !Number.isNaN(n);
 
 export class Calculator {
   private items!: Record<number, ItemModel>;
@@ -670,6 +672,34 @@ export class Calculator {
 
   setExtraOptions(extraOptions: any[]) {
     this.extraOptions = extraOptions;
+
+    return this;
+  }
+
+  loadItemFromModel(model: any) {
+    this.model = model;
+
+    const items = Object.entries(MainItemWithRelations) as [ItemTypeEnum, ItemTypeEnum[]][];
+
+    for (const [mainItemType, itemRelations] of items) {
+      const itemId = model[mainItemType];
+      if (!isNumber(itemId)) continue;
+
+      const refine = model[`${mainItemType}Refine`];
+      // console.log({itemId, refine, itemRelations})
+      if (mainItemType === ItemTypeEnum.weapon) {
+        this.setWeapon(itemId, refine);
+      } else {
+        this.setItem(mainItemType, itemId, refine);
+      }
+
+      for (const itemRelation of itemRelations) {
+        const itemId2 = model[itemRelation];
+        if (!isNumber(itemId2)) continue;
+
+        this.setItem(itemRelation, itemId2);
+      }
+    }
 
     return this;
   }
@@ -1766,7 +1796,7 @@ export class Calculator {
     return this.floor(hitPerSecs * avgBasicDamage2);
   }
 
-  calculateAllDamages(skillValue: string): any {
+  calculateAllDamages(skillValue: string) {
     this.calcAllAtk();
 
     this.baseSkillDamage = 0;
@@ -1851,11 +1881,9 @@ export class Calculator {
         criRate: this.criRateSkillToMonster,
         hitRate: this.hitRate,
       };
-
-      return this.damageSummary;
     }
 
-    return this.damageSummary;
+    return this;
   }
 
   calcAspd() {
@@ -1965,6 +1993,7 @@ export class Calculator {
         softDef: this.softDef,
         mdef: this.mdef,
         softMdef: this.softMdef,
+        totalAspd: this.totalAspd,
         hitPerSecs: this.hitPerSecs,
         totalCri: this.totalCri,
         totalHit: this.totalHit,

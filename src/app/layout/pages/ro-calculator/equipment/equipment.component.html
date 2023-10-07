@@ -1,0 +1,256 @@
+<div class="grid grid-nogutter">
+  <div class="col-3">
+    <div class="grid grid-nogutter justify-content-end">
+      <div class="col-12">
+        <p-dropdown
+          inputId="baseItem"
+          [autoDisplayFirst]="false"
+          [options]="itemList"
+          [filter]="true"
+          filterBy="label"
+          [(ngModel)]="itemId"
+          [showClear]="true"
+          (onChange)="onSelectItem('itemId', $event.value, itemRefine)"
+          (onClear)="onClearItem(itemType)"
+          placeholder="{{ placeholder }}"
+        >
+          <ng-template let-item pTemplate="selectedItem">
+            <div class="flex gap-1" *ngIf="itemId">
+              <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+          <ng-template let-item pTemplate="item">
+            <div class="flex gap-1">
+              <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
+      </div>
+      <div class="col-4" style="min-width: 70px" *ngIf="refineList.length > 0">
+        <p-dropdown
+          inputId="baseItemRefine"
+          [options]="refineList"
+          [(ngModel)]="itemRefine"
+          [disabled]="!itemId"
+          (onChange)="onSelectItem('itemRefine', itemId, $event.value)"
+        >
+          <ng-template let-item pTemplate="selectedItem">
+            <div class="flex gap-1">
+              <div>{{ item.label > 0 ? '+ ' : '' }} {{ item.label || 0 }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
+      </div>
+    </div>
+  </div>
+  <div class="col-9">
+    <div class="grid grid-nogutter">
+      <div class="col-4" [hidden]="totalCardSlots < 1">
+        <p-dropdown
+          inputId="baseItemCard1"
+          [autoDisplayFirst]="false"
+          [options]="cardList"
+          [filter]="true"
+          filterBy="label"
+          [(ngModel)]="card1Id"
+          [disabled]="!itemId"
+          [showClear]="true"
+          (onChange)="onSelectItem('card1Id', $event.value)"
+          placeholder="Card 1"
+        >
+          <ng-template let-item pTemplate="selectedItem">
+            <div class="flex gap-1" *ngIf="card1Id">
+              <img src="assets/demo/images/items/card.png" style="width: 19px" />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
+      </div>
+      <div class="col-4" [hidden]="totalCardSlots < 2">
+        <p-dropdown
+          inputId="baseItemCard2"
+          [autoDisplayFirst]="false"
+          [options]="cardList"
+          [filter]="true"
+          filterBy="label"
+          [(ngModel)]="card2Id"
+          [disabled]="!itemId"
+          [showClear]="true"
+          (onChange)="onSelectItem('card2Id', $event.value)"
+          placeholder="Card 2"
+        >
+          <ng-template let-item pTemplate="selectedItem">
+            <div class="flex gap-1" *ngIf="card2Id">
+              <img src="assets/demo/images/items/card.png" style="width: 19px" />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
+      </div>
+      <div class="col-4" [hidden]="totalCardSlots < 3">
+        <p-dropdown
+          inputId="baseItemCard3"
+          [autoDisplayFirst]="false"
+          [options]="cardList"
+          [filter]="true"
+          filterBy="label"
+          [(ngModel)]="card3Id"
+          [disabled]="!itemId"
+          [showClear]="true"
+          (onChange)="onSelectItem('card3Id', $event.value)"
+          placeholder="Card3"
+        >
+          <ng-template let-item pTemplate="selectedItem">
+            <div class="flex gap-1" *ngIf="card3Id">
+              <img src="assets/demo/images/items/card.png" style="width: 19px" />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
+      </div>
+      <div class="col-4" [hidden]="totalCardSlots < 4">
+        <p-dropdown
+          inputId="baseItemCard3"
+          [autoDisplayFirst]="false"
+          [options]="cardList"
+          [filter]="true"
+          filterBy="label"
+          [(ngModel)]="card4Id"
+          [disabled]="!itemId"
+          [showClear]="true"
+          (onChange)="onSelectItem('card4Id', $event.value)"
+          placeholder="Card 4"
+        >
+          <ng-template let-item pTemplate="selectedItem">
+            <div class="flex gap-1" *ngIf="card4Id">
+              <img src="assets/demo/images/items/card.png" style="width: 19px" />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
+      </div>
+
+      <div
+        class="col-12"
+        [hidden]="(enchant2List.length === 0 && enchant3List.length === 0 && enchant4List.length === 0) || !itemId"
+      >
+        <div class="grid grid-nogutter">
+          <div class="col-4">
+            <p-dropdown
+              inputId="baseItemEnchant1"
+              [autoDisplayFirst]="false"
+              [options]="enchant2List"
+              [filter]="true"
+              filterBy="label"
+              [(ngModel)]="enchant2Id"
+              [showClear]="true"
+              [disabled]="enchant2List.length === 0 || !itemId"
+              (onChange)="onSelectItem('enchant2Id', $event.value)"
+              placeholder="Enchant 2"
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1" *ngIf="enchant2Id">
+                  <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+              <ng-template let-item pTemplate="item">
+                <div class="flex gap-1">
+                  <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
+          </div>
+          <div class="col-4">
+            <p-dropdown
+              inputId="baseItemEnchant2"
+              [autoDisplayFirst]="false"
+              [options]="enchant3List"
+              [filter]="true"
+              filterBy="label"
+              [(ngModel)]="enchant3Id"
+              [showClear]="true"
+              [disabled]="enchant3List.length === 0 || !itemId"
+              (onChange)="onSelectItem('enchant3Id', $event.value)"
+              placeholder="Enchant 3"
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1" *ngIf="enchant3Id">
+                  <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+              <ng-template let-item pTemplate="item">
+                <div class="flex gap-1">
+                  <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
+          </div>
+          <div class="col-4">
+            <p-dropdown
+              inputId="baseItemEnchant3"
+              [autoDisplayFirst]="false"
+              [options]="enchant4List"
+              [filter]="true"
+              filterBy="label"
+              [(ngModel)]="enchant4Id"
+              [showClear]="true"
+              [disabled]="enchant4List.length === 0 || !itemId"
+              (onChange)="onSelectItem('enchant4Id', $event.value)"
+              placeholder="Enchant 4"
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1" *ngIf="enchant4Id">
+                  <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+              <ng-template let-item pTemplate="item">
+                <div class="flex gap-1">
+                  <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-4" [hidden]="totalOptions < 1">
+        <p-cascadeSelect
+          [(ngModel)]="option1Value"
+          [disabled]="!itemId"
+          [options]="optionList"
+          optionValue="value"
+          optionGroupLabel="label"
+          optionLabel="label"
+          [optionGroupChildren]="['children', 'children', 'children']"
+          placeholder="Options"
+          [showClear]="true"
+          (onChange)="onOptionChange('option1Value')"
+          (onClear)="onOptionChange($event)"
+        ></p-cascadeSelect>
+      </div>
+      <div class="col-4" [hidden]="totalOptions < 2">
+        <p-cascadeSelect
+          [(ngModel)]="option2Value"
+          [disabled]="!itemId"
+          [options]="optionList"
+          optionValue="value"
+          optionGroupLabel="label"
+          optionLabel="label"
+          [optionGroupChildren]="['children', 'children', 'children']"
+          placeholder="Options"
+          [showClear]="true"
+          (onChange)="onOptionChange('option2Value')"
+          (onClear)="onOptionChange($event)"
+        ></p-cascadeSelect>
+      </div>
+    </div>
+  </div>
+</div>
