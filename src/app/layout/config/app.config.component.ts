@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { LayoutService } from '../service/app.layout.service';
 import { MenuService } from '../app.menu.service';
-import { take } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-config',
@@ -11,17 +11,14 @@ export class AppConfigComponent implements OnInit {
   @Input() minimal: boolean = false;
 
   scales: number[] = [12, 13, 14, 15, 16];
+  isProd = environment.production;
 
-  constructor(
-    public layoutService: LayoutService,
-    public menuService: MenuService
-  ) {}
+  constructor(public layoutService: LayoutService, public menuService: MenuService) {}
 
   ngOnInit(): void {
     this.changeTheme(
       localStorage.getItem('theme') || this.layoutService.config.theme,
-      localStorage.getItem('colorScheme') ||
-        this.layoutService.config.colorScheme
+      localStorage.getItem('colorScheme') || this.layoutService.config.colorScheme,
     );
     this.applyScale();
   }
@@ -80,9 +77,7 @@ export class AppConfigComponent implements OnInit {
     localStorage.setItem('colorScheme', colorScheme);
 
     const themeLink = <HTMLLinkElement>document.getElementById('theme-css');
-    const newHref = themeLink
-      .getAttribute('href')!
-      .replace(this.layoutService.config.theme, theme);
+    const newHref = themeLink.getAttribute('href')!.replace(this.layoutService.config.theme, theme);
     this.layoutService.config.colorScheme;
     this.replaceThemeLink(newHref, () => {
       this.layoutService.config.theme = theme;

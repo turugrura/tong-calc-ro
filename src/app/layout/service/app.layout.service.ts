@@ -27,8 +27,8 @@ export class LayoutService {
     ripple: localStorage.getItem('ripple') === 'true',
     inputStyle: localStorage.getItem('inputStyle') || 'outlined',
     menuMode: localStorage.getItem('menuMode') || 'overlay',
-    colorScheme: 'light',
-    theme: 'lara-light-indigo',
+    colorScheme: 'dark',
+    theme: 'arya-green',
     scale: +localStorage.getItem('scale') || 14,
   };
 

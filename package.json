@@ -1,7 +1,7 @@
 {
     "name": "ro-calculator",
     "version": "16.0.0",
-    "license": "PrimeNG Commercial",
+    "license": "MIT",
     "scripts": {
         "ng": "ng",
         "start": "ng serve  --host 0.0.0.0 --hmr --port 4200",
