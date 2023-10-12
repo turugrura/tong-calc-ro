@@ -2,9 +2,11 @@
   <div class="col-12">
     {{ label }}
     <span *ngIf="isDisplayRangeDmg" class="font-bold px-1 {{ styleClass }}"
-      >{{ _min | number }} - {{ _max | number }}{{ unit }}</span
+      >{{ _min | number }} - {{ _max | number }}{{ isDisplayCompare ? '' : unit }}</span
     >
-    <span *ngIf="!isDisplayRangeDmg" class="font-bold px-1 {{ styleClass }}">{{ _max | number }}{{ unit }}</span>
+    <span *ngIf="!isDisplayRangeDmg" class="font-bold px-1 {{ styleClass }}"
+      >{{ _max | number }}{{ isDisplayCompare ? '' : unit }}</span
+    >
     <span [hidden]="!isDisplayCompare">
       <i class="pi pi-arrow-right vs_sign"></i>
       <span *ngIf="isDisplayRangeDmg2" class="font-bold px-1  {{ compareStyleClass }}"

@@ -2553,7 +2553,7 @@
   <!-- Right Side -->
   <div class="p-fluid col-5">
     <p-accordion [multiple]="true" [activeIndex]="[2, 5]">
-      <p-accordionTab class="consumable" header="Consumables">
+      <p-accordionTab header="Consumables" class="consumable">
         <div class="grid grid-nogutter">
           <!-- Consumable -->
           <div class="col-4">
@@ -2633,7 +2633,7 @@
         </div>
       </p-accordionTab>
 
-      <p-accordionTab class="select_skill" header="Skills">
+      <p-accordionTab header="Skills" class="select_skill">
         <div class="grid grid-nogutter">
           <!--  Buffs -->
           <div class="col-4">
@@ -2670,7 +2670,7 @@
           </div>
 
           <!-- Passive Skills -->
-          <div class="col-4">
+          <div class="col-4" [hidden]="passiveSkills.length === 0">
             <p-tag severity="warning" value="Passive skills"></p-tag>
             <div class="grid grid-nogutter">
               <div *ngFor="let passiveSkill of passiveSkills; let i = index" class="col-12">
@@ -2869,6 +2869,7 @@
                     <app-calc-value
                       [enableCompare]="isEnableCompare && totalSummary2?.dmg"
                       label="Skill:"
+                      unit="%"
                       styleClass="summary_highlight"
                       styleClass2="summary_compare"
                       [enableCompare]="true"
@@ -2880,6 +2881,7 @@
                     <app-calc-value
                       [enableCompare]="isEnableCompare && totalSummary2?.dmg"
                       label="ASPD:"
+                      unit=" Hits/s"
                       styleClass="summary_highlight"
                       styleClass2="summary_compare"
                       [enableCompare]="true"
@@ -2979,6 +2981,7 @@
                         <app-calc-value
                           [enableCompare]="isEnableCompare && totalSummary2?.dmg"
                           label="Skill/s:"
+                          unit=" Hits/s"
                           styleClass="summary_highlight"
                           styleClass2="summary_compare"
                           [enableCompare]="true"
