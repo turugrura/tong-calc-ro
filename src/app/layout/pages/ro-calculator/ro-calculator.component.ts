@@ -102,40 +102,6 @@ const Characters: DropdownModel[] = [
   { label: 'Arch Bishop', value: 7, instant: new ArchBishop() },
 ];
 
-const itemTypes = Object.freeze(Object.values(ItemTypeEnum));
-const mapRelatedItem: Partial<Record<ItemTypeEnum, ItemTypeEnum[]>> = {
-  [ItemTypeEnum.weapon]: [],
-  [ItemTypeEnum.ammo]: [],
-  [ItemTypeEnum.headUpper]: [],
-  [ItemTypeEnum.headMiddle]: [],
-  [ItemTypeEnum.headLower]: [],
-  [ItemTypeEnum.shield]: [],
-  [ItemTypeEnum.armor]: [],
-  [ItemTypeEnum.garment]: [],
-  [ItemTypeEnum.boot]: [],
-  [ItemTypeEnum.accLeft]: [],
-  [ItemTypeEnum.accRight]: [],
-
-  [ItemTypeEnum.pet]: [],
-
-  [ItemTypeEnum.costumeEnchantUpper]: [],
-  [ItemTypeEnum.costumeEnchantMiddle]: [],
-  [ItemTypeEnum.costumeEnchantLower]: [],
-  [ItemTypeEnum.costumeEnchantGarment]: [],
-
-  [ItemTypeEnum.shadowWeapon]: [],
-  [ItemTypeEnum.shadowArmor]: [],
-  [ItemTypeEnum.shadowShield]: [],
-  [ItemTypeEnum.shadowBoot]: [],
-  [ItemTypeEnum.shadowEarning]: [],
-  [ItemTypeEnum.shadowPendant]: [],
-};
-for (const [_itemType, relatedItems] of Object.entries(mapRelatedItem)) {
-  relatedItems.push(
-    ...itemTypes.filter((a) => a.startsWith(_itemType) && a !== _itemType && a !== `${_itemType}Refine`),
-  );
-}
-
 const toDropdownList = <T extends {}>(
   list: T[],
   labelKey: keyof T,
@@ -208,13 +174,6 @@ const createNumberDropdownList = (from: number, to: number, prefixLabel?: string
     };
   });
 };
-
-const wait = (second: number) =>
-  new Promise((resolve) =>
-    setTimeout(() => {
-      resolve(1);
-    }, second * 1000),
-  );
 
 const waitRxjs = (second: number = 0.1) => {
   return of(null).pipe(delay(1000 * second), take(1));
@@ -715,14 +674,15 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         debounceTime(250),
       )
       .subscribe(() => {
-        const model2 = {} as any;
+        const model2 = { rawOptionTxts: [] } as ClassModel;
         this.showCompareItemMap = this.compareItemNames.reduce((agg, itemTypeName) => {
           agg[itemTypeName] = true;
 
           model2[itemTypeName] = this.model2[itemTypeName] || null;
-          if (itemTypeName === ItemTypeEnum.weapon) {
-            model2.rawOptionTxts = [...this.model2.rawOptionTxts];
-          }
+          if (!model2[itemTypeName]) return agg;
+
+          model2.rawOptionTxts.push(...(this.model2.rawOptionTxts || []));
+          model2[`${itemTypeName}Refine`] = this.model2[`${itemTypeName}Refine`] || 0;
 
           const relatedItems = MainItemWithRelations[itemTypeName];
           for (const relatedItem of relatedItems) {
@@ -1073,8 +1033,11 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       });
     } else {
       this.isInProcessingPreset = true;
-      wait(0.5)
-        .then(() => {
+      waitRxjs(0.5)
+        .pipe(
+          finalize(() => (this.isInProcessingPreset = false))
+        )
+        .subscribe(() => {
           currentPresets.push({
             label: name,
             value: name,
@@ -1089,7 +1052,6 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
             detail: `"${name}" was added.`,
           });
         })
-        .finally(() => (this.isInProcessingPreset = false));
     }
   }
 
@@ -1212,12 +1174,12 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         mergeMap(() => {
           try {
             if (str || fromCurrentModel) {
-              for (const itemType of Object.keys(mapRelatedItem) as ItemTypeEnum[]) {
+              for (const itemType of Object.keys(MainItemWithRelations) as ItemTypeEnum[]) {
                 const refine = this.model[`${itemType}Refine`];
                 const itemId = this.model[itemType];
                 this.onSelectItem(itemType, itemId, refine);
                 // console.log('Set Main Item', { itemType, itemId, refine });
-                for (const relatedItemType of mapRelatedItem[itemType] ?? []) {
+                for (const relatedItemType of MainItemWithRelations[itemType] ?? []) {
                   this.onSelectItem(relatedItemType, this.model[relatedItemType], refine);
                 }
               }
@@ -1816,7 +1778,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       this.model.rawOptionTxts[1] = undefined;
     }
 
-    const relatedItems = mapRelatedItem[itemType as ItemTypeEnum] || [];
+    const relatedItems = MainItemWithRelations[itemType as ItemTypeEnum] || [];
     for (const _itemType of relatedItems) {
       if (this.model[_itemType]) {
         this.model[_itemType] = undefined;

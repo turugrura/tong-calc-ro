@@ -15,8 +15,8 @@
           placeholder="{{ placeholder }}"
         >
           <ng-template let-item pTemplate="selectedItem">
-            <div class="flex gap-1" *ngIf="itemId">
-              <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
+            <div class="flex gap-1 item_template" *ngIf="itemId">
+              <img src="assets/demo/images/items/{{ item.value }}.png" class="item_img" />
               <div>{{ item.label }}</div>
             </div>
           </ng-template>
@@ -61,8 +61,8 @@
           placeholder="Card 1"
         >
           <ng-template let-item pTemplate="selectedItem">
-            <div class="flex gap-1" *ngIf="card1Id">
-              <img src="assets/demo/images/items/card.png" style="width: 19px" />
+            <div class="flex gap-1 item_template" *ngIf="card1Id">
+              <img src="assets/demo/images/items/card.png" class="item_img" />
               <div>{{ item.label }}</div>
             </div>
           </ng-template>
@@ -82,8 +82,8 @@
           placeholder="Card 2"
         >
           <ng-template let-item pTemplate="selectedItem">
-            <div class="flex gap-1" *ngIf="card2Id">
-              <img src="assets/demo/images/items/card.png" style="width: 19px" />
+            <div class="flex gap-1 item_template" *ngIf="card2Id">
+              <img src="assets/demo/images/items/card.png" class="item_img" />
               <div>{{ item.label }}</div>
             </div>
           </ng-template>
@@ -103,8 +103,8 @@
           placeholder="Card3"
         >
           <ng-template let-item pTemplate="selectedItem">
-            <div class="flex gap-1" *ngIf="card3Id">
-              <img src="assets/demo/images/items/card.png" style="width: 19px" />
+            <div class="flex gap-1 item_template" *ngIf="card3Id">
+              <img src="assets/demo/images/items/card.png" class="item_img" />
               <div>{{ item.label }}</div>
             </div>
           </ng-template>
@@ -124,8 +124,8 @@
           placeholder="Card 4"
         >
           <ng-template let-item pTemplate="selectedItem">
-            <div class="flex gap-1" *ngIf="card4Id">
-              <img src="assets/demo/images/items/card.png" style="width: 19px" />
+            <div class="flex gap-1 item_template" *ngIf="card4Id">
+              <img src="assets/demo/images/items/card.png" class="item_img" />
               <div>{{ item.label }}</div>
             </div>
           </ng-template>
@@ -151,8 +151,8 @@
               placeholder="Enchant 2"
             >
               <ng-template let-item pTemplate="selectedItem">
-                <div class="flex gap-1" *ngIf="enchant2Id">
-                  <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
+                <div class="flex gap-1 item_template" *ngIf="enchant2Id">
+                  <img src="assets/demo/images/items/{{ item.value }}.png" class="item_img" />
                   <div>{{ item.label }}</div>
                 </div>
               </ng-template>
@@ -178,8 +178,8 @@
               placeholder="Enchant 3"
             >
               <ng-template let-item pTemplate="selectedItem">
-                <div class="flex gap-1" *ngIf="enchant3Id">
-                  <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
+                <div class="flex gap-1 item_template" *ngIf="enchant3Id">
+                  <img src="assets/demo/images/items/{{ item.value }}.png" class="item_img" />
                   <div>{{ item.label }}</div>
                 </div>
               </ng-template>
@@ -205,8 +205,8 @@
               placeholder="Enchant 4"
             >
               <ng-template let-item pTemplate="selectedItem">
-                <div class="flex gap-1" *ngIf="enchant4Id">
-                  <img src="assets/demo/images/items/{{ item.value }}.png" style="width: 19px" />
+                <div class="flex gap-1 item_template" *ngIf="enchant4Id">
+                  <img src="assets/demo/images/items/{{ item.value }}.png" class="item_img" />
                   <div>{{ item.label }}</div>
                 </div>
               </ng-template>

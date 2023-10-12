@@ -6,7 +6,7 @@ import { getEnchants } from '../enchant-table';
 @Component({
   selector: 'app-equipment',
   templateUrl: './equipment.component.html',
-  styleUrls: ['./equipment.component.css'],
+  styleUrls: ['../ro-calculator.component.css'],
 })
 export class EquipmentComponent implements OnInit {
   @Input({ required: true }) itemType: string;
@@ -63,9 +63,9 @@ export class EquipmentComponent implements OnInit {
   enchant3List: DropdownModel[] = [];
   enchant4List: DropdownModel[] = [];
 
-  constructor() {}
+  constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   private setEnchantList(mainItemId: number) {
     let { aegisName, name } = this.items[mainItemId] ?? ({} as ItemModel);
