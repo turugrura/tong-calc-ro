@@ -75,7 +75,7 @@ export class Mage extends CharacterBase {
   protected readonly JobBonusTable = jobBonusTable;
 
   protected readonly initialStatusPoint = 40;
-  protected readonly classNames = ['Mage'];
+  protected readonly classNames = ['Mage', 'Mage Class', 'Mage Cls'];
   protected readonly _atkSkillList: AtkSkillModel[] = [
     {
       label: 'Cold Bolt',

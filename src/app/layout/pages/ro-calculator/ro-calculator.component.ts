@@ -98,7 +98,7 @@ const Characters: DropdownModel[] = [
   { label: 'Soul Reaper', value: 3, instant: new SoulReaper() },
   { label: 'SC', value: 4, instant: new ShadowChaser() },
   { label: 'Git Cross', value: 5, instant: new GitCross() },
-  // { label: 'Warlock', value: 6, instant: new Warlock() },
+  { label: 'Warlock', value: 6, instant: new Warlock() },
   { label: 'Arch Bishop', value: 7, instant: new ArchBishop() },
 ];
 

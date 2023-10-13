@@ -128,11 +128,21 @@ export class Warlock extends CharacterBase {
   protected _activeSkillList: ActiveSkillModel[] = [
     {
       inputType: 'selectButton',
-      label: 'Recognized Spell',
+      label: 'Recogn Spell',
       name: 'Recognized Spell',
       isEquipAtk: true,
       dropdown: [
-        { label: 'Yes', isUse: true, value: 0 },
+        { label: 'Yes', isUse: true, value: 1 },
+        { label: 'No', isUse: false, value: 0 },
+      ],
+    },
+    {
+      inputType: 'selectButton',
+      label: 'Comet Amp',
+      name: 'Comet Amp',
+      isEquipAtk: true,
+      dropdown: [
+        { label: 'Yes', isUse: true, value: 1, bonus: { comet: 50 } },
         { label: 'No', isUse: false, value: 0 },
       ],
     },
