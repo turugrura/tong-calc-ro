@@ -8,7 +8,7 @@
       >{{ _max | number }}{{ isDisplayCompare ? '' : unit }}</span
     >
     <span [hidden]="!isDisplayCompare">
-      <i class="pi pi-arrow-right vs_sign"></i>
+      <i class="pi pi-arrow-right vs_sign px-1"></i>
       <span *ngIf="isDisplayRangeDmg2" class="font-bold px-1  {{ compareStyleClass }}"
         >{{ _min2 | number }} - {{ _max2 | number }}{{ unit }}</span
       >
