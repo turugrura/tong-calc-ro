@@ -249,7 +249,8 @@ pre {
 
 :host ::ng-deep .item_label_compare .p-dropdown-label,
 :host ::ng-deep .item_label_compare .p-cascadeselect-label,
-:host ::ng-deep .item_label_compare .p-multiselect-label {
+:host ::ng-deep .item_label_compare .p-multiselect-label,
+:host ::ng-deep .item_label_compare .p-listbox-item {
   /* background-color: var(--surface-50); */
   background-color: #2a2a2a;
   color: var(--yellow-300);

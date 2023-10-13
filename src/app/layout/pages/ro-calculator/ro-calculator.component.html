@@ -3199,6 +3199,24 @@
       <p-accordionTab header="Item Descriptions">
         <div class="grid grid-nogutter">
           <div class="col-4">
+            <div class="item_label_compare" *ngIf="isEnableCompare && equipCompareItems?.length">
+              <p-listbox
+                [options]="equipCompareItems"
+                [(ngModel)]="selectedCompareItemDesc"
+                [metaKeySelection]="false"
+                [listStyle]="{ 'max-height': '500px' }"
+                (onChange)="onSelectItemDescription(true)"
+              >
+                <ng-template let-item pTemplate="item">
+                  <div class="flex gap-1 item_template">
+                    <img src="assets/demo/images/items/{{ item.id }}.png" class="item_img" />
+                    <div class="text_ellips">
+                      {{ item.label }}
+                    </div>
+                  </div>
+                </ng-template>
+              </p-listbox>
+            </div>
             <p-listbox
               [options]="equipItems"
               [(ngModel)]="selectedItemDesc"
@@ -3207,8 +3225,8 @@
               (onChange)="onSelectItemDescription()"
             >
               <ng-template let-item pTemplate="item">
-                <div class="flex gap-1">
-                  <img src="assets/demo/images/items/{{ item.id }}.png" style="width: 19px" />
+                <div class="flex gap-1 item_template">
+                  <img src="assets/demo/images/items/{{ item.id }}.png" class="item_img" />
                   <div class="text_ellips">
                     {{ item.label }}
                   </div>

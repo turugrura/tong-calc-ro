@@ -568,13 +568,21 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   itemSummary2: any;
   modelSummary: any;
   totalSummary: any;
+
+  /**
+   * Model 2
+   */
   totalSummary2: any;
+  compareItemSummaryModel: any;
+  selectedCompareItemDesc: ItemTypeEnum;
+  private equipCompareItemIdItemTypeMap = new Map<ItemTypeEnum, number>();
+  equipCompareItems: DropdownModel[] = [];
 
   private equipItemMap = new Map<ItemTypeEnum, number>();
   private equipItemIdItemTypeMap = new Map<ItemTypeEnum, number>();
   equipItems: DropdownModel[] = [];
   itemSlotsMap: Partial<Record<ItemTypeEnum, number>> = {};
-  selectedItemDesc = undefined;
+  selectedItemDesc: ItemTypeEnum;
   itemId = 0;
   itemBonus = {};
   itemDescription = '';
@@ -608,7 +616,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     private roService: RoService,
     private messageService: MessageService,
     private confirmationService: ConfirmationService,
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.initLoadItems();
@@ -675,11 +683,15 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       )
       .subscribe(() => {
         const model2 = { rawOptionTxts: [] } as ClassModel;
+        const equipItemIdItemTypeMap2 = new Map<ItemTypeEnum, number>();
+
         this.showCompareItemMap = this.compareItemNames.reduce((agg, itemTypeName) => {
           agg[itemTypeName] = true;
 
           model2[itemTypeName] = this.model2[itemTypeName] || null;
           if (!model2[itemTypeName]) return agg;
+
+          equipItemIdItemTypeMap2.set(itemTypeName, model2[itemTypeName])
 
           model2.rawOptionTxts.push(...(this.model2.rawOptionTxts || []));
           model2[`${itemTypeName}Refine`] = this.model2[`${itemTypeName}Refine`] || 0;
@@ -691,6 +703,15 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
           return agg;
         }, {});
+
+        this.equipCompareItemIdItemTypeMap = equipItemIdItemTypeMap2;
+        this.equipCompareItems = [...this.equipCompareItemIdItemTypeMap.entries()].map(([itemType, id]) => {
+          return {
+            label: this.items[id].name,
+            value: itemType,
+            id,
+          };
+        });
 
         if (this.isEnableCompare) {
           this.model2 = model2;
@@ -876,6 +897,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       const m2 = JSON.parse(JSON.stringify(this.model2));
       const calc2 = this.prepare(this.calculator2, m2);
       this.totalSummary2 = calc2.getTotalummary();
+      this.compareItemSummaryModel = calc2.getItemSummary();
     }
   }
 
@@ -1816,13 +1838,26 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     this.updateItemEvent.next(1);
   }
 
-  onSelectItemDescription() {
-    const selectedType = this.selectedItemDesc;
-    const itemId = this.equipItemIdItemTypeMap.get(selectedType);
-    // const script = this.items[selectedId]?.script ?? {};
-    const bonus = this.itemSummary?.[selectedType] || this.itemSummary2?.[selectedType] || {};
+  onSelectItemDescription(isCompareItem = false) {
+    let selectedType: ItemTypeEnum;
+    let bonus: any;
+    let itemId: number;
 
-    this.itemId = itemId; //{ script, bonus };
+    if (isCompareItem) {
+      selectedType = this.selectedCompareItemDesc
+      bonus = this.compareItemSummaryModel?.[selectedType] || {};
+      itemId = this.equipCompareItemIdItemTypeMap.get(selectedType);
+
+      this.selectedItemDesc = undefined;
+    } else {
+      selectedType = this.selectedItemDesc
+      bonus = this.itemSummary?.[selectedType] || this.itemSummary2?.[selectedType] || {};
+      itemId = this.equipItemIdItemTypeMap.get(selectedType);
+
+      this.selectedCompareItemDesc = undefined;
+    }
+
+    this.itemId = itemId;
     this.itemBonus = bonus; //{ script, bonus };
     this.itemDescription = this.items[itemId]?.description
       .replaceAll('\n', '<br>')
