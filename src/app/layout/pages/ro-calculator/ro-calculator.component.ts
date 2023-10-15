@@ -201,28 +201,58 @@ const createExtraOptionList = () => {
   }
 
   const options: [string, string, number, number][] = [
-    ['Atk', 'atk', 10, 65],
-    ['Atk %', 'atkPercent', 5, 30],
-    ['Range', 'range', 1, 25],
-    ['Cri Dmg', 'criDmg', 1, 20],
-    ['ASPD %', 'aspdPercent', 1, 20],
-    ['Delay', 'acd', 1, 15],
-    ['Matk', 'matk', 10, 65],
-    ['Matk %', 'matkPercent', 5, 30],
-    ['VCT', 'vct', 1, 20],
-    ['CRI', 'cri', 1, 20],
+    ['Atk', 'atk', 1, 65],
+    ['Atk %', 'atkPercent', 1, 30],
+    ['Range', 'range', 1, 30],
+    ['Cri Dmg', 'criDmg', 1, 30],
+    ['ASPD %', 'aspdPercent', 1, 30],
+    ['Delay', 'acd', 1, 30],
+    ['Matk', 'matk', 1, 65],
+    ['Matk %', 'matkPercent', 1, 30],
+    ['VCT', 'vct', 1, 30],
+    ['CRI', 'cri', 1, 30],
   ];
-  for (const [label, prop, min, max] of options) {
-    const item = {
-      value: label,
-      label,
-      children: Array.from({ length: max - min + 1 }, (_, k) => {
+
+  const VAL_CAP = 10;
+  for (const [label, prop, rawMin, rawMax] of options) {
+    const values = [] as { label: string; min: number; max: number }[];
+    for (let i = rawMin; i < rawMax; i += VAL_CAP) {
+      const max = Math.min(i + VAL_CAP - 1, rawMax);
+      values.push({ label: `${i} - ${max}`, min: i, max: max });
+    }
+
+    let children = [];
+    if (values.length === 1) {
+      const { min, max } = values[0];
+      children = Array.from({ length: max - min + 1 }, (_, k) => {
         const num = k + min;
         return {
           label: `${label} ${num}`,
           value: `${prop}:${num}`,
         };
-      }),
+      });
+    } else {
+      children = values.map((value) => {
+        const { label: label2, min, max } = value;
+
+        return {
+          label: label2,
+          value: label2,
+          children: Array.from({ length: max - min + 1 }, (_, k) => {
+            const num = k + min;
+            return {
+              label: `${label} ${num}`,
+              value: `${prop}:${num}`,
+            };
+          }),
+        };
+      });
+    }
+
+    const item = {
+      value: label,
+      label,
+      children,
     };
     items.push(item);
   }
@@ -1281,16 +1311,19 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   private setMonsterDropdownList() {
     const groupMap = new Map<string, MonsterSelectItemGroup>();
     const monsters: DropdownModel[] = [];
+    const rawMonsters = Object.values(this.monsterDataMap).sort((a, b) => (a.stats.level > b.stats.level ? 1 : -1));
 
-    for (const mon of Object.values(this.monsterDataMap)) {
+    for (const mon of rawMonsters) {
       const { id, name, spawn, stats } = mon;
-      const { level, elementShortName, raceName, scaleName } = stats;
+      const { level, mvp, class: _class, elementShortName, raceName, scaleName } = stats;
 
-      const spawnMap = getMonsterSpawnMap(spawn);
+      const spawnMap = mvp === 1 ? ' Boss' : getMonsterSpawnMap(spawn) || (_class === 1 ? ' Boss' : 'Etc');
       const group = groupMap.get(spawnMap);
       const monster: DropdownModel = {
         label: `${level} ${name} (${raceName} ${scaleName.at(0)})`,
+        name,
         value: id,
+        level,
         elementName: elementShortName,
         searchVal: spawnMap,
       };

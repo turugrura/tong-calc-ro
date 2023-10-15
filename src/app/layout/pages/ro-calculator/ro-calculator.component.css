@@ -189,6 +189,11 @@ pre {
   color: var(--red-300);
 }
 
+.dropdown_monster_group_label {
+  background-color: var(--green-900);
+  color: white;
+}
+
 .img_monster {
   background-color: white;
   max-width: 7rem;

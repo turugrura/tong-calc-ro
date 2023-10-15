@@ -2750,34 +2750,17 @@
                   <span class="p-inputgroup-addon" style="width: 80px">Monster</span>
                   <p-dropdown
                     inputId="monsterOpponent"
-                    styleClass="tong"
                     [autoDisplayFirst]="false"
-                    [options]="monsterList"
+                    [options]="groupMonsterList"
                     [filter]="true"
                     filterBy="label,searchVal"
+                    [group]="true"
                     [(ngModel)]="selectedMonster"
                     (onChange)="onMonsterChange()"
                   >
-                    <ng-template let-item pTemplate="selectedItem">
-                      <div class="flex gap-1" *ngIf="selectedMonster">
-                        <!-- <img
-                        src="assets/demo/images/items/{{ item.value }}.png"
-                        style="width: 19px"
-                      /> -->
-                        <div class="{{ 'property_' + item.elementName }}">
-                          {{ item.label }}
-                        </div>
-                      </div>
-                    </ng-template>
-                    <ng-template let-item pTemplate="item">
-                      <div class="flex gap-1">
-                        <!-- <img
-                        src="assets/demo/images/items/{{ item.value }}.png"
-                        style="width: 19px"
-                      /> -->
-                        <div class="{{ 'property_' + item.elementName }}">
-                          {{ item.label }}
-                        </div>
+                    <ng-template let-group pTemplate="group">
+                      <div class="flex align-items-center font-bold dropdown_monster_group_label">
+                        <span>{{ group.label }}</span>
                       </div>
                     </ng-template>
                   </p-dropdown>
@@ -3137,7 +3120,7 @@
                       (onClear)="onMonsterListChange()"
                     >
                       <ng-template let-group pTemplate="group">
-                        <div class="flex align-items-center">
+                        <div class="flex align-items-center font-bold dropdown_monster_group_label">
                           <span>{{ group.label }}</span>
                         </div>
                       </ng-template>
