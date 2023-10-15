@@ -21,8 +21,6 @@ export class AppTopBarComponent {
   infos = [
     'เปลี่ยน Theme ทึ่ปุ่ม Config ตรงขวากลาง',
     'ข้อมูลที่บันทึกไว้จะถูกเก็บไว้ที่ browser, ถ้าล้างข้อมูล browser ก็จะถูกลบไปด้วย',
-    'สูตร ATK อิงจาก IRO',
-    'สูตร MATK อิงจาก "เจาะลึก Stat ต่างๆ ใน Renewal Part I : Matk & Mdef" ของ FB: Sigma the fallen',
     'เงื่อนไขที่เขียนไว้ว่า "ทุกๆการเรียนรู้สกิล" ถ้าเป็น Passive ต้องกดอัพในช่อง "Passive Skills" ถึงจะได้ bonus, แต่ถ้าเป็น Active จะให้เป็น bonus เป็น Lv MAX',
     'ยังไม่รองรับอาวุธ 2 มือ',
     'Tab "Summary" คือ ใส่อะไรบ้าง/อัพสกิลอะไรบ้าง/การคำนวนทั้งหมด',
