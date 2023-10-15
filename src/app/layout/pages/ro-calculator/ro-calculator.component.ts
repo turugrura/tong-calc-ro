@@ -664,7 +664,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         const model2 = { rawOptionTxts: [] } as ClassModel;
         const equipItemIdItemTypeMap2 = new Map<ItemTypeEnum, number>();
 
-        this.showCompareItemMap = this.compareItemNames.reduce((agg, itemTypeName) => {
+        this.showCompareItemMap = (this.compareItemNames || []).reduce((agg, itemTypeName) => {
           agg[itemTypeName] = true;
 
           model2[itemTypeName] = this.model2[itemTypeName] || null;
@@ -1909,7 +1909,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     this.setCacheBattleCols();
   }
 
-  onSelectComparingChange(isClear = false) {
+  onListItemComparingChange(isClear = false) {
     if (isClear) {
       this.compareItemNames = [];
     }

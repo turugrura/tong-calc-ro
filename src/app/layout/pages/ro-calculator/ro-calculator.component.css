@@ -82,7 +82,7 @@ pre {
 
 .item_template {
   position: relative;
-  height: 1.2rem;
+  /* height: 1.2rem; */
 }
 
 .item_img {
