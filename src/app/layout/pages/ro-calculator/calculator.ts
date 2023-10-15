@@ -1133,7 +1133,7 @@ export class Calculator {
     const baseSkillMultiplier = this.toPercent(this.baseSkillDamage);
     const equipSkillMultiplier = this.toPercent(100 + (this.totalEquipStatus[skillName] || 0));
     const dmgMultiplier = 0;
-    const finalDmgMultiplier = 0;
+    const finalDmgMultiplier = this.totalEquipStatus[`final_${element?.toLowerCase()}`] || 0;
 
     const skillFormula = (totalAtk: number) => {
       const dmgMultiApplied = this.floor(totalAtk * this.toPercent(dmgMultiplier + 100));
@@ -1390,7 +1390,7 @@ export class Calculator {
       if (restCondition.startsWith('===')) return { isValid, restCondition: restCondition.replace('===', '') };
     }
 
-    //WEAPON_TYPE
+    // WEAPON_TYPE[bow]5
     const [toRemoveB, wType] = restCondition.match(/WEAPON_TYPE\[(\D+)]/) ?? [];
     if (wType) {
       const isValid = this.weaponData.data.typeName === wType;
@@ -1400,18 +1400,22 @@ export class Calculator {
       if (restCondition.startsWith('===')) return { isValid, restCondition: restCondition.replace('===', '') };
     }
 
-    const [_, weaponType] = script.match(/^\[weaponType=(.+?)\]/) ?? [];
-    if (weaponType) {
-      const weapon = this.equipItem.get(ItemTypeEnum.weapon);
-      if (weaponType !== weapon?.unidName) return { isValid: false, restCondition };
-      restCondition = restCondition.replace(`[weaponType=${weaponType}]`, '');
+    // [weaponType=Pistol]20
+    const [_, wSubTypeName] = script.match(/^\[weaponType=(.+?)\]/) ?? [];
+    if (wSubTypeName) {
+      const subTypeName = this.weaponData?.data?.subTypeName;
+      if (wSubTypeName !== subTypeName) return { isValid: false, restCondition };
+      restCondition = restCondition.replace(`[weaponType=${wSubTypeName}]`, '');
 
       return { isValid: true, restCondition };
     }
 
+    // USED[Mechanic]20
     const [toRemove, usedByClass] = script.match(/USED\[(.+?)\]/) ?? [];
     if (usedByClass) {
-      const isUsed = usedByClass.split('||').some((className) => className === this._class.className);
+      const isUsed = usedByClass
+        .split('||')
+        .some((className) => className === this._class.className || this._class.classNameSet.has(className));
       if (!isUsed) return { isValid: false, restCondition };
 
       restCondition = restCondition.replace(toRemove, '');
@@ -1424,9 +1428,7 @@ export class Calculator {
       // console.log({ itemRefine, itemSet, itemSets });
       const valid = itemSets.every((item) => {
         const res = item.split('||').some((_item) => this.isEquipItem(_item));
-        // if (itemRefine === 9) {
-        //   console.log({ item, res });
-        // }
+
         return res;
       });
       if (!valid) return { isValid: false, restCondition };
@@ -1476,24 +1478,6 @@ export class Calculator {
       return { isValid: true, restCondition };
     }
 
-    // const [unused, refineCond] = restCondition.match(/^REFINE\[(\d+)?]/) ?? [];
-    // if (refineCond && itemRefine >= Number(refineCond)) {
-    //   if (restCondition.includes('---')) {
-    //     return { isValid: true, restCondition };
-    //   }
-
-    //   restCondition = restCondition.replace(unused, '');
-    //   if (restCondition.startsWith('===')) {
-    //     restCondition = restCondition.replace('===', '');
-    //   }
-
-    //   return {
-    //     isValid: true,
-    //     restCondition,
-    //   };
-    // } else if (refineCond) {
-    //   return { isValid: false, restCondition };
-    // }
     const [, unused, refineCond] = restCondition.match(/^(REFINE\[(\d+)?])[^-]/) ?? [];
     if (refineCond && itemRefine >= Number(refineCond)) {
       restCondition = restCondition.replace(unused, '');
@@ -1601,6 +1585,18 @@ export class Calculator {
     this.totalEquipStatus = { ...this.allStatus, matk: 0 - baseMatk };
     this.equipStatus = {} as any;
 
+    const updateTotalStatus = (attr, value) => {
+      if (this.totalEquipStatus[attr]) {
+        if (attr === 'fctPercent') {
+          this.totalEquipStatus[attr] = Math.max(this.totalEquipStatus[attr], value);
+        } else {
+          this.totalEquipStatus[attr] += value;
+        }
+      } else {
+        this.totalEquipStatus[attr] = value;
+      }
+    };
+
     this.equipStatus['extra'] = { ...this.allStatus };
     for (const scripts of this.extraOptions) {
       for (const [attr, value] of Object.entries(scripts)) {
@@ -1610,11 +1606,7 @@ export class Calculator {
           this.equipStatus['extra'][attr] = value;
         }
 
-        if (this.totalEquipStatus[attr]) {
-          this.totalEquipStatus[attr] += value;
-        } else {
-          this.totalEquipStatus[attr] = value;
-        }
+        updateTotalStatus(attr, value);
       }
     }
 
@@ -1628,11 +1620,7 @@ export class Calculator {
 
       if (itemType !== ItemTypeEnum.weapon && itemData.attack) {
         this.equipStatus[itemType].atk = itemData.attack;
-        if (this.totalEquipStatus['atk']) {
-          this.totalEquipStatus['atk'] += itemData.attack;
-        } else {
-          this.totalEquipStatus['atk'] = itemData.attack;
-        }
+        updateTotalStatus('atk', itemData.attack);
       }
 
       if (itemData.defense) {
@@ -1646,11 +1634,7 @@ export class Calculator {
       for (const [attr, value] of Object.entries(calculatedItem)) {
         this.equipStatus[itemType][attr] = value;
 
-        if (this.totalEquipStatus[attr]) {
-          this.totalEquipStatus[attr] += value;
-        } else {
-          this.totalEquipStatus[attr] = value;
-        }
+        updateTotalStatus(attr, value);
       }
     }
 
@@ -1665,11 +1649,7 @@ export class Calculator {
 
         this.equipStatus[skillName] = { ...this.allStatus, [attr]: val };
 
-        if (this.totalEquipStatus[attr]) {
-          this.totalEquipStatus[attr] += val;
-        } else {
-          this.totalEquipStatus[attr] = val;
-        }
+        updateTotalStatus(attr, value);
 
         this.updateBaseEquipStat(attr, val);
       }
@@ -1682,11 +1662,7 @@ export class Calculator {
 
         this.equipStatus[buffName] = { ...this.allStatus, [attr]: val };
 
-        if (this.totalEquipStatus[attr]) {
-          this.totalEquipStatus[attr] += val;
-        } else {
-          this.totalEquipStatus[attr] = val;
-        }
+        updateTotalStatus(attr, value);
       }
     }
 
@@ -1713,20 +1689,12 @@ export class Calculator {
         newVal = Math.max(value - consumAllStat, 0);
       }
 
-      if (this.totalEquipStatus[attr]) {
-        this.totalEquipStatus[attr] += newVal;
-      } else {
-        this.totalEquipStatus[attr] = newVal;
-      }
+      updateTotalStatus(attr, newVal);
     }
 
     const allStatus = this.totalEquipStatus.allStatus ?? 0;
     for (const status of mainStatuses) {
-      if (this.totalEquipStatus[status]) {
-        this.totalEquipStatus[status] += allStatus;
-      } else {
-        this.totalEquipStatus[status] = allStatus;
-      }
+      updateTotalStatus(status, allStatus);
     }
 
     if (this.totalEquipStatus['agiBoost'] > 0) {

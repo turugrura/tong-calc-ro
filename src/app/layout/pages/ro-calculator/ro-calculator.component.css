@@ -196,10 +196,11 @@ pre {
 
 .img_monster {
   background-color: white;
-  max-width: 7rem;
+  /* max-width: 7rem; */
   /* width: 7rem; */
-  max-height: 7rem;
-  height: 100%;
+  /* max-height: 7rem;
+  height: 100%; */
+  width: 95%;
 }
 
 :host ::ng-deep .item_label_weapon .p-dropdown-label,

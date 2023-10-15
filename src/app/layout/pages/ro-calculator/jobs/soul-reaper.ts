@@ -74,7 +74,7 @@ export class SoulReaper extends CharacterBase {
   protected readonly JobBonusTable = jobBonusTable;
 
   protected initialStatusPoint = 48;
-  protected classNames = ['Soul Reaper'];
+  protected classNames = ['Hi-Class', 'Soul Reaper', 'Soul Reaper Cls', 'Soul Reaper Class'];
   protected _atkSkillList: AtkSkillModel[] = [
     {
       label: 'Espa',

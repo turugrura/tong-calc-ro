@@ -85,6 +85,7 @@ export class ArchBishop extends CharacterBase {
   protected readonly initialStatusPoint = 100;
   protected readonly classNames = [
     'Only 3rd Cls',
+    'Hi-Class',
     'Acolyte',
     'Acolyte Cls',
     'Acolyte Class',

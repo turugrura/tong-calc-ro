@@ -74,7 +74,15 @@ export class ShadowChaser extends CharacterBase {
   protected readonly JobBonusTable = jobBonusTable;
 
   protected initialStatusPoint = 100;
-  protected classNames = ['Shadow Chaser', 'Shadow Chaser Cls', 'Shadow Chaser Class', 'Rougue', 'Stalker'];
+  protected classNames = [
+    'Hi-Class',
+    'Shadow Chaser',
+    'Shadow Chaser Cls',
+    'Shadow Chaser Class',
+    'Rougue',
+    'Stalker',
+    'Only 3rd Cls',
+  ];
   protected _atkSkillList: AtkSkillModel[] = [
     {
       label: 'Fatal Manace',

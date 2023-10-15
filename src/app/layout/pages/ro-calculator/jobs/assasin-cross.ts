@@ -81,7 +81,7 @@ export class AssasinCross extends CharacterBase {
   protected readonly JobBonusTable = jobBonusTable;
 
   protected initialStatusPoint = 100;
-  protected classNames = ['Assassin', 'Assassin Cross', 'Assassin Cross Cls', 'Assassin Cross Class'];
+  protected classNames = ['Hi-Class', 'Assassin', 'Assassin Cross', 'Assassin Cross Cls', 'Assassin Cross Class'];
   protected _atkSkillList: AtkSkillModel[] = [
     {
       name: 'Meteor Assault',

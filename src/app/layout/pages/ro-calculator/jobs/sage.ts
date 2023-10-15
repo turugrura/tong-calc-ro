@@ -75,7 +75,7 @@ export class Sage extends CharacterBase {
   protected readonly JobBonusTable = jobBonusTable;
 
   protected readonly initialStatusPoint = 48;
-  protected readonly classNames = ['Sage'];
+  protected readonly classNames = ['Hi-Class', 'Sage', 'Sage Cls', 'Sage Class'];
   protected readonly _atkSkillList: AtkSkillModel[] = [];
   protected readonly _activeSkillList: ActiveSkillModel[] = [];
   protected readonly _passiveSkillList: PassiveSkillModel[] = [];

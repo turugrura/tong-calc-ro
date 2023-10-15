@@ -58,6 +58,21 @@ enum MatkPercent {
   _2 = 'Matk2',
   _3 = 'Matk3',
 }
+enum RuneDex {
+  _1 = 'Neev_DEX_1',
+  _2 = 'Neev_DEX_2',
+  _3 = 'Neev_DEX_3',
+}
+enum RuneInt {
+  _1 = 'Neev_INT_1',
+  _2 = 'Neev_INT_2',
+  _3 = 'Neev_INT_3',
+}
+enum RuneStr {
+  _1 = 'Neev_STR_1',
+  _2 = 'Neev_STR_2',
+  _3 = 'Neev_STR_3',
+}
 enum Str {
   _1 = 'Strength1',
   _2 = 'Strength2',
@@ -305,6 +320,18 @@ const edda3 = [
   'Alpho_Memory',
 ];
 
+const allRunes = [
+  RuneStr._1,
+  RuneStr._2,
+  RuneStr._3,
+  RuneDex._1,
+  RuneDex._2,
+  RuneDex._3,
+  RuneInt._1,
+  RuneInt._2,
+  RuneInt._3,
+];
+
 interface EntTable {
   name: string;
   enchants: [null, any[], any[], any[]];
@@ -384,6 +411,11 @@ const enchantTable: EntTable[] = [
   { name: 'Aiming_Bow', enchants: [null, null, edda3, edda4] },
   { name: 'Falken_Shooter', enchants: [null, null, edda3, edda4] },
   { name: 'Wind_Gale', enchants: [null, null, edda3, edda4] },
+
+  { name: 'Headband_Of_Power_IL', enchants: [null, null, null, allRunes] },
+
+  { name: 'Robe_Of_Flattery', enchants: [null, null, allRunes, allRunes] },
+  { name: 'Robe_Of_Vituperation', enchants: [null, null, allRunes, allRunes] },
 ];
 
 const map = new Map(enchantTable.map((a) => [a.name, a.enchants]));

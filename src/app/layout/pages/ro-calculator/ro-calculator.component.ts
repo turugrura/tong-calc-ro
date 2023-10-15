@@ -23,6 +23,14 @@ import { GitCross } from './jobs/git-cross';
 import { ArchBishop } from './jobs/arch-bishop';
 import { Warlock } from './jobs/warlock';
 
+const sortObj = <T>(field: keyof T) => {
+  return (a: T, b: T) => {
+    if (a[field] > b[field]) return 1;
+
+    return -1;
+  };
+};
+
 enum CardPosition {
   Weapon = 0,
   Head = 769,
@@ -1382,7 +1390,8 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
     const consumableList = [];
 
-    for (const item of Object.values(this.items) as unknown as ItemModel[]) {
+    const sortedItems = Object.values(this.items).sort(sortObj('name'));
+    for (const item of sortedItems) {
       const { itemTypeId, itemSubTypeId, compositionPos, location } = item;
 
       switch (itemTypeId) {
@@ -1625,16 +1634,22 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       }
     };
 
+    const mapToEnchant = (enchantName) => {
+      const val = this.mapEnchant.get(enchantName);
+      if (!val) {
+        console.log({ mainItemId, positionEnum, enchantName, mapEnchant: this.mapEnchant });
+      }
+
+      return val;
+    };
+    const mapToOption = (a: any) => {
+      return { label: a.name, value: a.id };
+    };
+
     if (itemTypeId === ItemTypeId.WEAPON) {
-      this.weaponEnchant1List = (e2 ?? [])
-        .map((a: any) => this.mapEnchant.get(a))
-        .map((a: any) => ({ label: a.name, value: a.id }));
-      this.weaponEnchant2List = (e3 ?? [])
-        .map((a: any) => this.mapEnchant.get(a))
-        .map((a: any) => ({ label: a.name, value: a.id }));
-      this.weaponEnchant3List = (e4 ?? [])
-        .map((a: any) => this.mapEnchant.get(a))
-        .map((a: any) => ({ label: a.name, value: a.id }));
+      this.weaponEnchant1List = (e2 ?? []).map(mapToEnchant).map(mapToOption);
+      this.weaponEnchant2List = (e3 ?? []).map(mapToEnchant).map(mapToOption);
+      this.weaponEnchant3List = (e4 ?? []).map(mapToEnchant).map(mapToOption);
       clearModel('weapon');
 
       return;
@@ -1651,110 +1666,56 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     switch (itemSubTypeId) {
       case ItemSubTypeId.Upper:
         if (location === HeadLocation.Middle) {
-          this.headMiddleEnchant1List = (e2 ?? [])
-            .map((a: any) => this.mapEnchant.get(a))
-            .map((a: any) => ({ label: a.name, value: a.id }));
-          this.headMiddleEnchant2List = (e3 ?? [])
-            .map((a: any) => this.mapEnchant.get(a))
-            .map((a: any) => ({ label: a.name, value: a.id }));
-          this.headMiddleEnchant3List = (e4 ?? [])
-            .map((a: any) => this.mapEnchant.get(a))
-            .map((a: any) => ({ label: a.name, value: a.id }));
+          this.headMiddleEnchant1List = (e2 ?? []).map(mapToEnchant).map(mapToOption);
+          this.headMiddleEnchant2List = (e3 ?? []).map(mapToEnchant).map(mapToOption);
+          this.headMiddleEnchant3List = (e4 ?? []).map(mapToEnchant).map(mapToOption);
           clearModel('headMiddle');
         } else if (location === HeadLocation.Lower) {
-          this.headLowerEnchant1List = (e2 ?? [])
-            .map((a: any) => this.mapEnchant.get(a))
-            .map((a: any) => ({ label: a.name, value: a.id }));
-          this.headLowerEnchant2List = (e3 ?? [])
-            .map((a: any) => this.mapEnchant.get(a))
-            .map((a: any) => ({ label: a.name, value: a.id }));
-          this.headLowerEnchant3List = (e4 ?? [])
-            .map((a: any) => this.mapEnchant.get(a))
-            .map((a: any) => ({ label: a.name, value: a.id }));
+          this.headLowerEnchant1List = (e2 ?? []).map(mapToEnchant).map(mapToOption);
+          this.headLowerEnchant2List = (e3 ?? []).map(mapToEnchant).map(mapToOption);
+          this.headLowerEnchant3List = (e4 ?? []).map(mapToEnchant).map(mapToOption);
           clearModel('headLower');
         } else {
-          this.headUpperEnchant1List = (e2 ?? [])
-            .map((a: any) => this.mapEnchant.get(a))
-            .map((a: any) => ({ label: a.name, value: a.id }));
-          this.headUpperEnchant2List = (e3 ?? [])
-            .map((a: any) => this.mapEnchant.get(a))
-            .map((a: any) => ({ label: a.name, value: a.id }));
-          this.headUpperEnchant3List = (e4 ?? [])
-            .map((a: any) => this.mapEnchant.get(a))
-            .map((a: any) => ({ label: a.name, value: a.id }));
+          this.headUpperEnchant1List = (e2 ?? []).map(mapToEnchant).map(mapToOption);
+          this.headUpperEnchant2List = (e3 ?? []).map(mapToEnchant).map(mapToOption);
+          this.headUpperEnchant3List = (e4 ?? []).map(mapToEnchant).map(mapToOption);
           clearModel('headUpper');
         }
         break;
       case ItemSubTypeId.Shield:
-        this.shieldEnchant1List = (e2 ?? [])
-          .map((a: any) => this.mapEnchant.get(a))
-          .map((a: any) => ({ label: a.name, value: a.id }));
-        this.shieldEnchant2List = (e3 ?? [])
-          .map((a: any) => this.mapEnchant.get(a))
-          .map((a: any) => ({ label: a.name, value: a.id }));
-        this.shieldEnchant3List = (e4 ?? [])
-          .map((a: any) => this.mapEnchant.get(a))
-          .map((a: any) => ({ label: a.name, value: a.id }));
+        this.shieldEnchant1List = (e2 ?? []).map(mapToEnchant).map(mapToOption);
+        this.shieldEnchant2List = (e3 ?? []).map(mapToEnchant).map(mapToOption);
+        this.shieldEnchant3List = (e4 ?? []).map(mapToEnchant).map(mapToOption);
         clearModel('shield');
         break;
       case ItemSubTypeId.Armor:
-        this.armorEnchant1List = (e2 ?? [])
-          .map((a: any) => this.mapEnchant.get(a))
-          .map((a: any) => ({ label: a.name, value: a.id }));
-        this.armorEnchant2List = (e3 ?? [])
-          .map((a: any) => this.mapEnchant.get(a))
-          .map((a: any) => ({ label: a.name, value: a.id }));
-        this.armorEnchant3List = (e4 ?? [])
-          .map((a: any) => this.mapEnchant.get(a))
-          .map((a: any) => ({ label: a.name, value: a.id }));
+        this.armorEnchant1List = (e2 ?? []).map(mapToEnchant).map(mapToOption);
+        this.armorEnchant2List = (e3 ?? []).map(mapToEnchant).map(mapToOption);
+        this.armorEnchant3List = (e4 ?? []).map(mapToEnchant).map(mapToOption);
         clearModel('armor');
         break;
       case ItemSubTypeId.Garment:
-        this.garmentEnchant1List = (e2 ?? [])
-          .map((a: any) => this.mapEnchant.get(a))
-          .map((a: any) => ({ label: a.name, value: a.id }));
-        this.garmentEnchant2List = (e3 ?? [])
-          .map((a: any) => this.mapEnchant.get(a))
-          .map((a: any) => ({ label: a.name, value: a.id }));
-        this.garmentEnchant3List = (e4 ?? [])
-          .map((a: any) => this.mapEnchant.get(a))
-          .map((a: any) => ({ label: a.name, value: a.id }));
+        this.garmentEnchant1List = (e2 ?? []).map(mapToEnchant).map(mapToOption);
+        this.garmentEnchant2List = (e3 ?? []).map(mapToEnchant).map(mapToOption);
+        this.garmentEnchant3List = (e4 ?? []).map(mapToEnchant).map(mapToOption);
         clearModel('garment');
         break;
       case ItemSubTypeId.Boot:
-        this.bootEnchant1List = (e2 ?? [])
-          .map((a: any) => this.mapEnchant.get(a))
-          .map((a: any) => ({ label: a.name, value: a.id }));
-        this.bootEnchant2List = (e3 ?? [])
-          .map((a: any) => this.mapEnchant.get(a))
-          .map((a: any) => ({ label: a.name, value: a.id }));
-        this.bootEnchant3List = (e4 ?? [])
-          .map((a: any) => this.mapEnchant.get(a))
-          .map((a: any) => ({ label: a.name, value: a.id }));
+        this.bootEnchant1List = (e2 ?? []).map(mapToEnchant).map(mapToOption);
+        this.bootEnchant2List = (e3 ?? []).map(mapToEnchant).map(mapToOption);
+        this.bootEnchant3List = (e4 ?? []).map(mapToEnchant).map(mapToOption);
         clearModel('boot');
         break;
       case ItemSubTypeId.Acc_L:
-        this.accLeftEnchant1List = (e2 ?? [])
-          .map((a: any) => this.mapEnchant.get(a))
-          .map((a: any) => ({ label: a.name, value: a.id }));
-        this.accLeftEnchant2List = (e3 ?? [])
-          .map((a: any) => this.mapEnchant.get(a))
-          .map((a: any) => ({ label: a.name, value: a.id }));
-        this.accLeftEnchant3List = (e4 ?? [])
-          .map((a: any) => this.mapEnchant.get(a))
-          .map((a: any) => ({ label: a.name, value: a.id }));
+        this.accLeftEnchant1List = (e2 ?? []).map(mapToEnchant).map(mapToOption);
+        this.accLeftEnchant2List = (e3 ?? []).map(mapToEnchant).map(mapToOption);
+        this.accLeftEnchant3List = (e4 ?? []).map(mapToEnchant).map(mapToOption);
         clearModel('accLeft');
         break;
       case ItemSubTypeId.Acc_R:
-        this.accRightEnchant1List = (e2 ?? [])
-          .map((a: any) => this.mapEnchant.get(a))
-          .map((a: any) => ({ label: a.name, value: a.id }));
-        this.accRightEnchant2List = (e3 ?? [])
-          .map((a: any) => this.mapEnchant.get(a))
-          .map((a: any) => ({ label: a.name, value: a.id }));
-        this.accRightEnchant3List = (e4 ?? [])
-          .map((a: any) => this.mapEnchant.get(a))
-          .map((a: any) => ({ label: a.name, value: a.id }));
+        this.accRightEnchant1List = (e2 ?? []).map(mapToEnchant).map(mapToOption);
+        this.accRightEnchant2List = (e3 ?? []).map(mapToEnchant).map(mapToOption);
+        this.accRightEnchant3List = (e4 ?? []).map(mapToEnchant).map(mapToOption);
         clearModel('accRight');
         break;
     }

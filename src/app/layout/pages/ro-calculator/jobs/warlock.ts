@@ -124,6 +124,24 @@ export class Warlock extends CharacterBase {
         return (1000 + skillLevel * 300) * (baseLevel / 100);
       },
     },
+    {
+      label: 'Soul Expansion',
+      name: 'Soul Expansion',
+      value: 'Soul Expansion==5',
+      acd: 0.5,
+      fct: 0,
+      vct: 2,
+      cd: 0,
+      isMatk: true,
+      element: ElementType.Ghost,
+      hit: 2,
+      levelList: [{ label: 'Lv 5', value: 'Soul Expansion==5' }],
+      formular: ({ baseLevel, skillLevel, extra }: { baseLevel: number; skillLevel: number; extra: any }): number => {
+        const { totalInt } = extra;
+
+        return (totalInt + 1000 + skillLevel * 200) * (baseLevel / 100);
+      },
+    },
   ];
   protected _activeSkillList: ActiveSkillModel[] = [
     {
@@ -146,22 +164,54 @@ export class Warlock extends CharacterBase {
         { label: 'No', isUse: false, value: 0 },
       ],
     },
-    // {
-    //   inputType: 'dropdown',
-    //   label: 'Dark Claw',
-    //   name: 'Dark Claw',
-    //   isEquipAtk: true,
-    //   dropdown: [
-    //     { label: '-', isUse: false, value: 0 },
-    //     { label: 'Lv 1', isUse: true, value: 1, bonus: { final: 30 } },
-    //     { label: 'Lv 2', isUse: true, value: 2, bonus: { final: 60 } },
-    //     { label: 'Lv 3', isUse: true, value: 3, bonus: { final: 90 } },
-    //     { label: 'Lv 4', isUse: true, value: 4, bonus: { final: 120 } },
-    //     { label: 'Lv 5', isUse: true, value: 5, bonus: { final: 150 } },
-    //   ],
-    // },
+    {
+      inputType: 'dropdown',
+      label: 'Radius',
+      name: 'Radius',
+      isEquipAtk: true,
+      dropdown: [
+        { label: '-', isUse: false, value: 0 },
+        { label: 'Lv 1', isUse: true, value: 1, bonus: { fctPercent: 10 } },
+        { label: 'Lv 2', isUse: true, value: 2, bonus: { fctPercent: 20 } },
+        { label: 'Lv 3', isUse: true, value: 3, bonus: { fctPercent: 30 } },
+      ],
+    },
+    {
+      inputType: 'dropdown',
+      label: 'Intensification',
+      name: 'Intensification',
+      isEquipAtk: true,
+      dropdown: [
+        { label: '-', isUse: false, value: 0 },
+        { label: 'Lv 1', isUse: true, value: 1, bonus: { final_ghost: 40, vct: 10 } },
+        { label: 'Lv 2', isUse: true, value: 2, bonus: { final_ghost: 80, vct: 20 } },
+        { label: 'Lv 3', isUse: true, value: 3, bonus: { final_ghost: 120, vct: 30 } },
+        { label: 'Lv 4', isUse: true, value: 4, bonus: { final_ghost: 160, vct: 40 } },
+        { label: 'Lv 5', isUse: true, value: 5, bonus: { final_ghost: 200, vct: 50 } },
+      ],
+    },
   ];
-  protected _passiveSkillList: PassiveSkillModel[] = [];
+  protected _passiveSkillList: PassiveSkillModel[] = [
+    {
+      inputType: 'dropdown',
+      label: 'Freezing Spell',
+      name: 'Freezing Spell',
+      isEquipAtk: true,
+      dropdown: [
+        { label: '-', isUse: false, value: 0 },
+        { label: 'Lv 1', isUse: true, value: 1 },
+        { label: 'Lv 2', isUse: true, value: 2 },
+        { label: 'Lv 3', isUse: true, value: 3 },
+        { label: 'Lv 4', isUse: true, value: 4 },
+        { label: 'Lv 5', isUse: true, value: 5 },
+        { label: 'Lv 6', isUse: true, value: 6 },
+        { label: 'Lv 7', isUse: true, value: 7 },
+        { label: 'Lv 8', isUse: true, value: 8 },
+        { label: 'Lv 9', isUse: true, value: 9 },
+        { label: 'Lv 10', isUse: true, value: 10 },
+      ],
+    },
+  ];
 
   constructor() {
     super();

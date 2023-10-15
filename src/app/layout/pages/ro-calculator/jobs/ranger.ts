@@ -80,7 +80,16 @@ export class Ranger extends CharacterBase {
   protected readonly JobBonusTable = jobBonusTable;
 
   protected initialStatusPoint = 100;
-  protected classNames = ['Ranger', 'Ranger Cls', 'Sniper', 'Hunter', 'Archer', 'Archer Cls', 'Only 3rd Cls'];
+  protected classNames = [
+    'Hi-Class',
+    'Ranger',
+    'Ranger Cls',
+    'Sniper',
+    'Hunter',
+    'Archer',
+    'Archer Cls',
+    'Only 3rd Cls',
+  ];
   protected _atkSkillList: AtkSkillModel[] = [
     {
       label: 'Arrow Storm Lv10',

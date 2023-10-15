@@ -75,7 +75,7 @@ export class Wizard extends CharacterBase {
   protected readonly JobBonusTable = jobBonusTable;
 
   protected initialStatusPoint = 100;
-  protected classNames = ['Wizard', 'Wizard Class', 'Wizard Cls'];
+  protected classNames = ['Hi-Class', 'Wizard', 'Wizard Class', 'Wizard Cls'];
   protected _atkSkillList: AtkSkillModel[] = [];
   protected _activeSkillList: ActiveSkillModel[] = [
     {
