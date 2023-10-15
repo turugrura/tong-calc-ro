@@ -1,11 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-calc-value',
   templateUrl: './calc-value.component.html',
   styleUrls: ['./calc-value.component.css', '../ro-calculator.component.css'],
 })
-export class CalcValueComponent implements OnInit {
+export class CalcValueComponent {
   @Input({ required: true }) label: string;
   @Input() styleClass: string;
   @Input() unit: string;
@@ -19,8 +19,6 @@ export class CalcValueComponent implements OnInit {
   @Input() max2: number;
 
   constructor() {}
-
-  ngOnInit() {}
 
   get compareStyleClass() {
     if (!this.isDisplayCompare) return this.styleClass2;

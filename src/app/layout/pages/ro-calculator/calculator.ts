@@ -1,4 +1,4 @@
-import { AtkSkillFormulaInput, AtkSkillModel, CharacterBase } from './jobs/char-class.abstract';
+import { AtkSkillModel, CharacterBase } from './jobs/char-class.abstract';
 import { ElementMapper } from './element-mapper';
 import { ElementType } from './element-type.const';
 import { ItemTypeEnum, MainItemTypeSet, MainItemWithRelations } from './item-type.enum';
@@ -779,7 +779,7 @@ export class Calculator {
     let atk = 0;
     for (const [skillName, scripts] of Object.entries(this.equipAtkSkillBonus)) {
       for (const [attr, value] of Object.entries(scripts)) {
-        let val = Number(value);
+        const val = Number(value);
         if (attr === atkType) {
           atk += val;
         }
@@ -793,7 +793,7 @@ export class Calculator {
     let atk = 0;
     for (const [skillName, scripts] of Object.entries(this.masteryAtkSkillBonus)) {
       for (const [attr, value] of Object.entries(scripts)) {
-        let val = Number(value);
+        const val = Number(value);
         if (attr === atkType) {
           atk += val;
         }
@@ -807,7 +807,7 @@ export class Calculator {
     let atk = 0;
     for (const [skillName, scripts] of Object.entries(this.buffBonus)) {
       for (const [attr, value] of Object.entries(scripts)) {
-        let val = Number(value);
+        const val = Number(value);
         if (attr === atkType) {
           atk += val;
         }
@@ -882,7 +882,7 @@ export class Calculator {
     const formular = (atk: number) => {
       return this.floor(
         this.floor(this.floor(this.floor(this.floor(atk * race) * size) * element) * monsterType) *
-        this.propertyMultiplier,
+          this.propertyMultiplier,
       );
     };
     // console.log({ name: this.monster.name, race, size, element, _class: monsterType });
@@ -1218,7 +1218,7 @@ export class Calculator {
     const monsterType = this.toPercent(this.calcMonterTypeMultiplier('m'));
     const mysticAmp = 1 + this.toPercent(this.totalEquipStatus['mysticAmp'] || 0);
     const { matkPercent } = this.totalEquipStatus;
-    const comet = this.toPercent(100 + (this.totalEquipStatus['comet'] || 0))
+    const comet = this.toPercent(100 + (this.totalEquipStatus['comet'] || 0));
 
     const formula = (atk: number) => {
       const mysticAmpApplied = this.floor(atk * mysticAmp + this.totalEquipMatk);
@@ -1677,7 +1677,7 @@ export class Calculator {
 
     for (const [buffName, scripts] of Object.entries(this.buffBonus)) {
       for (const [attr, value] of Object.entries(scripts)) {
-        let val = Number(value);
+        const val = Number(value);
         // if (attr === 'atk' || attr === 'matk') val = 0;
 
         this.equipStatus[buffName] = { ...this.allStatus, [attr]: val };

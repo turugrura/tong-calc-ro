@@ -3,6 +3,7 @@ import { Weapon } from '../weapon';
 import { AspdTable } from './_aspd-table';
 import { ClassName } from './_class-name';
 
+// eslint-disable-next-line @typescript-eslint/ban-types
 export type AtkSkillFormulaInput<T extends {} = {}> = T & {
   baseLevel: number;
   skillLevel: number;

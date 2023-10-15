@@ -1,31 +1,12 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import {
-  debounceTime,
-  delay,
-  finalize,
-  forkJoin,
-  mergeMap,
-  Observable,
-  of,
-  Subject,
-  Subscription,
-  take,
-  tap,
-} from 'rxjs';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { debounceTime, delay, finalize, forkJoin, mergeMap, of, Subject, Subscription, take, tap } from 'rxjs';
 import { BaseStateCalculator } from './base-state-calculator';
 import { Calculator } from './calculator';
 import { ItemTypeEnum, MainItemTypeSet, MainItemWithRelations } from './item-type.enum';
 import { ItemTypeId } from './item.const';
 import { RoService } from 'src/app/demo/service/ro.service';
 import { ItemModel } from './item.model';
-import {
-  ConfirmEventType,
-  ConfirmationService,
-  MenuItem,
-  MessageService,
-  PrimeIcons,
-  SelectItemGroup,
-} from 'primeng/api';
+import { ConfirmationService, MenuItem, MessageService, PrimeIcons, SelectItemGroup } from 'primeng/api';
 import { RaceType } from './race-type.const';
 import { ElementType } from './element-type.const';
 import { ActiveSkillModel, AtkSkillModel, CharacterBase, PassiveSkillModel } from './jobs/char-class.abstract';
@@ -39,8 +20,6 @@ import { getMonsterSpawnMap } from './monster-spawn-mapper';
 import { Rebelion } from './jobs/rebellion';
 import { ShadowChaser } from './jobs/shadow-chaser';
 import { GitCross } from './jobs/git-cross';
-import { Mage } from './jobs/mage';
-import { Sage } from './jobs/sage';
 import { ArchBishop } from './jobs/arch-bishop';
 import { Warlock } from './jobs/warlock';
 
@@ -102,7 +81,7 @@ const Characters: DropdownModel[] = [
   { label: 'Arch Bishop', value: 7, instant: new ArchBishop() },
 ];
 
-const toDropdownList = <T extends {}>(
+const toDropdownList = <T extends Record<string, any>>(
   list: T[],
   labelKey: keyof T,
   valueKey: keyof T,
@@ -616,7 +595,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     private roService: RoService,
     private messageService: MessageService,
     private confirmationService: ConfirmationService,
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.initLoadItems();
@@ -691,7 +670,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
           model2[itemTypeName] = this.model2[itemTypeName] || null;
           if (!model2[itemTypeName]) return agg;
 
-          equipItemIdItemTypeMap2.set(itemTypeName, model2[itemTypeName])
+          equipItemIdItemTypeMap2.set(itemTypeName, model2[itemTypeName]);
 
           model2.rawOptionTxts.push(...(this.model2.rawOptionTxts || []));
           model2[`${itemTypeName}Refine`] = this.model2[`${itemTypeName}Refine`] || 0;
@@ -1056,9 +1035,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     } else {
       this.isInProcessingPreset = true;
       waitRxjs(0.5)
-        .pipe(
-          finalize(() => (this.isInProcessingPreset = false))
-        )
+        .pipe(finalize(() => (this.isInProcessingPreset = false)))
         .subscribe(() => {
           currentPresets.push({
             label: name,
@@ -1073,7 +1050,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
             summary: 'Confirmed',
             detail: `"${name}" was added.`,
           });
-        })
+        });
     }
   }
 
@@ -1594,7 +1571,8 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
   private setEnchantList(mainItemId: number, positionEnum?: ItemTypeEnum | string) {
     // console.log({ itemId });
-    let { itemTypeId, itemSubTypeId, location, aegisName, name } = this.items[mainItemId] ?? ({} as ItemModel);
+    const { itemTypeId, location, aegisName, name } = this.items[mainItemId] ?? ({} as ItemModel);
+    let { itemSubTypeId } = this.items[mainItemId] ?? ({} as ItemModel);
     const enchants = getEnchants(aegisName) ?? getEnchants(name);
 
     const [_, e2, e3, e4] = Array.isArray(enchants) ? enchants : [];
@@ -1844,13 +1822,13 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     let itemId: number;
 
     if (isCompareItem) {
-      selectedType = this.selectedCompareItemDesc
+      selectedType = this.selectedCompareItemDesc;
       bonus = this.compareItemSummaryModel?.[selectedType] || {};
       itemId = this.equipCompareItemIdItemTypeMap.get(selectedType);
 
       this.selectedItemDesc = undefined;
     } else {
-      selectedType = this.selectedItemDesc
+      selectedType = this.selectedItemDesc;
       bonus = this.itemSummary?.[selectedType] || this.itemSummary2?.[selectedType] || {};
       itemId = this.equipItemIdItemTypeMap.get(selectedType);
 

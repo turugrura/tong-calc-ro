@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
@@ -56,7 +57,7 @@ export class PrettyJsonPipe implements PipeTransform {
         }
 
         return '<span class="' + themeClass + '">' + match + '</span>';
-      }
+      },
     );
 
     /**

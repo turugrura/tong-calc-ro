@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { DropdownModel } from '../dropdown.model';
 import { ItemModel } from '../item.model';
 import { getEnchants } from '../enchant-table';
@@ -8,7 +8,7 @@ import { getEnchants } from '../enchant-table';
   templateUrl: './equipment.component.html',
   styleUrls: ['../ro-calculator.component.css'],
 })
-export class EquipmentComponent implements OnInit {
+export class EquipmentComponent {
   @Input({ required: true }) itemType: string;
   @Input({ required: true }) placeholder: string;
 
@@ -19,9 +19,9 @@ export class EquipmentComponent implements OnInit {
   @Input() mapEnchant!: Map<string, ItemModel>;
   @Input() optionList: any[] = [];
 
-  @Output() onSelectItemEvent = new EventEmitter<any>();
-  @Output() onClearItemEvent = new EventEmitter<string>();
-  @Output() onOptionChangeEvent = new EventEmitter<string>();
+  @Output() selectItemChange = new EventEmitter<any>();
+  @Output() clearItemEvent = new EventEmitter<string>();
+  @Output() optionChange = new EventEmitter<string>();
 
   @Input() totalOptions = 0;
 
@@ -63,12 +63,10 @@ export class EquipmentComponent implements OnInit {
   enchant3List: DropdownModel[] = [];
   enchant4List: DropdownModel[] = [];
 
-  constructor() { }
-
-  ngOnInit() { }
+  constructor() {}
 
   private setEnchantList(mainItemId: number) {
-    let { aegisName, name } = this.items[mainItemId] ?? ({} as ItemModel);
+    const { aegisName, name } = this.items[mainItemId] ?? ({} as ItemModel);
     const enchants = getEnchants(aegisName) ?? getEnchants(name);
 
     const [_, e2, e3, e4] = Array.isArray(enchants) ? enchants : [];
@@ -111,14 +109,14 @@ export class EquipmentComponent implements OnInit {
       }
     }
 
-    this.onSelectItemEvent.emit({ itemType, itemId, refine });
+    this.selectItemChange.emit({ itemType, itemId, refine });
   }
 
   onClearItem(itemType: string) {
-    this.onClearItemEvent.emit(itemType);
+    this.clearItemEvent.emit(itemType);
   }
 
   onOptionChange(optionValue: string) {
-    this.onOptionChangeEvent.emit(optionValue);
+    this.optionChange.emit(optionValue);
   }
 }
