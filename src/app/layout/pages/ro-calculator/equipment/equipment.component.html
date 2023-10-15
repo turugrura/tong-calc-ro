@@ -232,8 +232,8 @@
           [optionGroupChildren]="['children', 'children', 'children']"
           placeholder="Options"
           [showClear]="true"
-          (onChange)="onOptionChange('option1Value')"
-          (onClear)="onOptionChange($event)"
+          (onChange)="onOptionChange('option1Value', $event)"
+          (onClear)="onOptionChange('option1Value', $event)"
         ></p-cascadeSelect>
       </div>
       <div class="col-4" [hidden]="totalOptions < 2">
@@ -247,8 +247,8 @@
           [optionGroupChildren]="['children', 'children', 'children']"
           placeholder="Options"
           [showClear]="true"
-          (onChange)="onOptionChange('option2Value')"
-          (onClear)="onOptionChange($event)"
+          (onChange)="onOptionChange('option2Value', $event)"
+          (onClear)="onOptionChange('option2Value', $event)"
         ></p-cascadeSelect>
       </div>
     </div>

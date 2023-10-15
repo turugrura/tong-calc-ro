@@ -830,7 +830,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       .setMasterySkillAtk(masteryAtks)
       .setConsumables(consumeData)
       .setAspdPotion(aspdPotion)
-      .setExtraOptions(this.getOptionScripts())
+      .setExtraOptions(this.getOptionScripts(compareModel != null))
       .setUsedSkillNames(skillNames)
       .setLearnedSkills(learnedSkillMap)
       .prepareAllItemBonus()
@@ -1554,8 +1554,10 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     this.ammoList = this.itemList.ammoList.filter(onlyMyAmmo);
   }
 
-  private getOptionScripts() {
-    return this.model.rawOptionTxts
+  private getOptionScripts(isModel2 = false) {
+    const rawOptions = isModel2 ? this.model2.rawOptionTxts : this.model.rawOptionTxts;
+
+    return (rawOptions || [])
       .map((a) => {
         if (typeof a !== 'string' || a === '') return '';
 

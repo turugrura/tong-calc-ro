@@ -116,7 +116,12 @@ export class EquipmentComponent {
     this.clearItemEvent.emit(itemType);
   }
 
-  onOptionChange(optionValue: string) {
+  onOptionChange(optionType: string, optionValue: any) {
+    const e = this[`${optionType}Change`];
+    if (e instanceof EventEmitter) {
+      e.emit(optionValue?.value);
+    }
+
     this.optionChange.emit(optionValue);
   }
 }
