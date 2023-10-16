@@ -97,6 +97,19 @@ export class ShadowChaser extends CharacterBase {
         return (100 + skillLevel * 100) * (baseLevel / 100);
       },
     },
+    {
+      label: 'Triangle Shot',
+      name: 'Triangle Shot',
+      value: 'Triangle Shot==10',
+      acd: 0.32,
+      fct: 0,
+      vct: 0,
+      cd: 0.2,
+      levelList: [{ label: 'Lv 10', value: 'Triangle Shot==10' }],
+      formular: ({ baseLevel, skillLevel }: { baseLevel: number; skillLevel: number }): number => {
+        return skillLevel * 230 * (baseLevel / 100);
+      },
+    },
   ];
   protected _activeSkillList: ActiveSkillModel[] = [
     {

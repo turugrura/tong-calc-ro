@@ -332,6 +332,8 @@ const allRunes = [
   RuneInt._3,
 ];
 
+const specials = ['S_Str', 'S_Agi', 'S_Vital', 'S_Int', 'S_Dex', 'S_Luck'];
+
 interface EntTable {
   name: string;
   enchants: [null, any[], any[], any[]];
@@ -358,6 +360,12 @@ const enchantTable: EntTable[] = [
   { name: '[Upgrade] Illusion Ring [1]', enchants: [null, illusionAcc, illusionAcc, illusionAcc] },
 
   { name: 'Temporal_Boots_TW', enchants: [null, null, tempBoot_3, tempBoot_4] },
+  { name: 'Temporal_Str_Boots', enchants: [null, null, tempBoot_3, tempBoot_4] },
+  { name: 'Temporal_Int_Boots', enchants: [null, null, tempBoot_3, tempBoot_4] },
+  { name: 'Temporal_Agi_Boots', enchants: [null, null, tempBoot_3, tempBoot_4] },
+  { name: 'Temporal_Vit_Boots', enchants: [null, null, tempBoot_3, tempBoot_4] },
+  { name: 'Temporal_Dex_Boots', enchants: [null, null, tempBoot_3, tempBoot_4] },
+  { name: 'Temporal_Luk_Boots', enchants: [null, null, tempBoot_3, tempBoot_4] },
   { name: 'Temporal_Str_Boots_', enchants: [null, null, tempBoot_3, tempBoot_4] },
   { name: 'Temporal_Int_Boots_', enchants: [null, null, tempBoot_3, tempBoot_4] },
   { name: 'Temporal_Agi_Boots_', enchants: [null, null, tempBoot_3, tempBoot_4] },
@@ -365,6 +373,12 @@ const enchantTable: EntTable[] = [
   { name: 'Temporal_Dex_Boots_', enchants: [null, null, tempBoot_3, tempBoot_4] },
   { name: 'Temporal_Luk_Boots_', enchants: [null, null, tempBoot_3, tempBoot_4] },
 
+  { name: 'Modify_Str_Boots', enchants: [null, null, tempBoot_3, tempBoot_4] },
+  { name: 'Modify_Int_Boots', enchants: [null, null, tempBoot_3, tempBoot_4] },
+  { name: 'Modify_Agi_Boots', enchants: [null, null, tempBoot_3, tempBoot_4] },
+  { name: 'Modify_Vit_Boots', enchants: [null, null, tempBoot_3, tempBoot_4] },
+  { name: 'Modify_Dex_Boots', enchants: [null, null, tempBoot_3, tempBoot_4] },
+  { name: 'Modify_Luk_Boots', enchants: [null, null, tempBoot_3, tempBoot_4] },
   { name: 'Modify_Str_Boots_', enchants: [null, null, tempBoot_3, tempBoot_4] },
   { name: 'Modify_Int_Boots_', enchants: [null, null, tempBoot_3, tempBoot_4] },
   { name: 'Modify_Agi_Boots_', enchants: [null, null, tempBoot_3, tempBoot_4] },
@@ -378,6 +392,7 @@ const enchantTable: EntTable[] = [
   { name: 'Schmidt_Insignia_Vit', enchants: [null, kingSmithAcc_2, kingSmithAcc_3, kingSmithAcc_4] },
   { name: 'Schmidt_Insignia_Dex', enchants: [null, kingSmithAcc_2, kingSmithAcc_3, kingSmithAcc_4] },
   { name: 'Schmidt_Insignia_Luk', enchants: [null, kingSmithAcc_2, kingSmithAcc_3, kingSmithAcc_4] },
+  { name: 'TimeOverloadRing_TW', enchants: [null, kingSmithAcc_2, kingSmithAcc_3, kingSmithAcc_4] },
 
   { name: 'Twin Cannon', enchants: [null, twinCannon, twinCannon, twinCannon] },
 
@@ -387,7 +402,8 @@ const enchantTable: EntTable[] = [
   { name: 'White_Wing_Manteau', enchants: [null, [...atkPer, ...fs13], [...atkPer, ...fs13], [...atkPer, ...fs13]] },
   { name: 'White_Wing_Brooch', enchants: [null, [], [], BaseState._1] },
 
-  { name: 'Vigilante_Bedge', enchants: [null, [], BaseState._1, BaseState._1] },
+  { name: 'Vigilante_Bedge', enchants: [null, null, BaseState._1, BaseState._1] },
+  { name: 'Vigilante_Suits', enchants: [null, BaseState._1, BaseState._1, BaseState._1] },
 
   { name: 'Old_Mitra', enchants: [null, labHead2, BaseState._3_5, BaseState._3_5] },
   { name: 'Old_Driver_Band_R', enchants: [null, labHead2, BaseState._3_5, BaseState._3_5] },
@@ -416,6 +432,8 @@ const enchantTable: EntTable[] = [
 
   { name: 'Robe_Of_Flattery', enchants: [null, null, allRunes, allRunes] },
   { name: 'Robe_Of_Vituperation', enchants: [null, null, allRunes, allRunes] },
+
+  { name: 'FaceWorm_Skin_', enchants: [null, specials, BaseState._3_5, BaseState._3_5] },
 ];
 
 const map = new Map(enchantTable.map((a) => [a.name, a.enchants]));

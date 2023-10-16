@@ -1,3 +1,4 @@
+import { ElementType } from '../element-type.const';
 import { ClassName } from './_class-name';
 import { ActiveSkillModel, AtkSkillModel, CharacterBase, PassiveSkillModel } from './char-class.abstract';
 import { Mage } from './mage';
@@ -76,7 +77,52 @@ export class Wizard extends CharacterBase {
 
   protected initialStatusPoint = 100;
   protected classNames = ['Hi-Class', 'Wizard', 'Wizard Class', 'Wizard Cls'];
-  protected _atkSkillList: AtkSkillModel[] = [];
+  protected _atkSkillList: AtkSkillModel[] = [
+    {
+      label: 'Soul Drain',
+      name: 'Soul Drain',
+      value: 'Soul Drain==10',
+      acd: 0,
+      fct: 0,
+      vct: 0,
+      cd: 0,
+      isMatk: true,
+      levelList: [{ label: 'Lv 10', value: 'Soul Drain==10' }],
+      formular: ({ baseLevel, skillLevel }: { baseLevel: number; skillLevel: number }): number => {
+        return (95 + skillLevel * 15) * (baseLevel / 100);
+      },
+    },
+    {
+      label: 'Napalm Vulcan',
+      name: 'Napalm Vulcan',
+      value: 'Napalm Vulcan==5',
+      fct: 0.3,
+      vct: 0.5,
+      acd: 0.5,
+      cd: 1,
+      isMatk: true,
+      element: ElementType.Ghost,
+      levelList: [{ label: 'Lv 5', value: 'Napalm Vulcan==5' }],
+      formular: ({ baseLevel, skillLevel }: { baseLevel: number; skillLevel: number }): number => {
+        return skillLevel * 70 * (baseLevel / 100);
+      },
+    },
+    {
+      label: "Heaven's Drive",
+      name: "Heaven's Drive",
+      value: "Heaven's Drive==5",
+      fct: 0.8,
+      vct: 1.9,
+      acd: 0.5,
+      cd: 0,
+      isMatk: true,
+      element: ElementType.Earth,
+      levelList: [{ label: 'Lv 5', value: "Heaven's Drive==5" }],
+      formular: ({ baseLevel, skillLevel }: { baseLevel: number; skillLevel: number }): number => {
+        return 125 * (baseLevel / 100);
+      },
+    },
+  ];
   protected _activeSkillList: ActiveSkillModel[] = [
     {
       inputType: 'dropdown',

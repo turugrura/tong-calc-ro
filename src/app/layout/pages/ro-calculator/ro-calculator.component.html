@@ -365,6 +365,7 @@
             <p-dropdown
               inputId="weapon"
               [autoDisplayFirst]="false"
+              [resetFilterOnHide]="true"
               [options]="weaponList"
               [filter]="true"
               filterBy="label"
@@ -432,6 +433,7 @@
             <p-dropdown
               inputId="ammo"
               [autoDisplayFirst]="false"
+              [resetFilterOnHide]="true"
               [options]="ammoList"
               [showClear]="true"
               [filter]="true"
@@ -467,6 +469,7 @@
             <p-dropdown
               inputId="weaponCard1"
               [autoDisplayFirst]="false"
+              [resetFilterOnHide]="true"
               [options]="weaponCardList"
               [filter]="true"
               filterBy="label"
@@ -488,6 +491,7 @@
             <p-dropdown
               inputId="weaponCard2"
               [autoDisplayFirst]="false"
+              [resetFilterOnHide]="true"
               [options]="weaponCardList"
               [filter]="true"
               filterBy="label"
@@ -509,6 +513,7 @@
             <p-dropdown
               inputId="weaponCard3"
               [autoDisplayFirst]="false"
+              [resetFilterOnHide]="true"
               [options]="weaponCardList"
               [filter]="true"
               filterBy="label"
@@ -530,6 +535,7 @@
             <p-dropdown
               inputId="weaponCard3"
               [autoDisplayFirst]="false"
+              [resetFilterOnHide]="true"
               [options]="weaponCardList"
               [filter]="true"
               filterBy="label"
@@ -559,6 +565,7 @@
                 <p-dropdown
                   inputId="weaponEnchant1"
                   [autoDisplayFirst]="false"
+                  [resetFilterOnHide]="true"
                   [options]="weaponEnchant1List"
                   [filter]="true"
                   filterBy="label"
@@ -586,6 +593,7 @@
                 <p-dropdown
                   inputId="weaponEnchant2"
                   [autoDisplayFirst]="false"
+                  [resetFilterOnHide]="true"
                   [options]="weaponEnchant2List"
                   [filter]="true"
                   filterBy="label"
@@ -613,6 +621,7 @@
                 <p-dropdown
                   inputId="weaponEnchant3"
                   [autoDisplayFirst]="false"
+                  [resetFilterOnHide]="true"
                   [options]="weaponEnchant3List"
                   [filter]="true"
                   filterBy="label"
@@ -708,6 +717,7 @@
             <p-dropdown
               inputId="shield"
               [autoDisplayFirst]="false"
+              [resetFilterOnHide]="true"
               [options]="shieldList"
               [filter]="true"
               filterBy="label"
@@ -751,6 +761,7 @@
         <p-dropdown
           inputId="shieldCard"
           [autoDisplayFirst]="false"
+          [resetFilterOnHide]="true"
           [options]="shieldCardList"
           [filter]="true"
           filterBy="label"
@@ -778,6 +789,7 @@
             <p-dropdown
               inputId="headUpper"
               [autoDisplayFirst]="false"
+              [resetFilterOnHide]="true"
               [options]="headUpperList"
               [filter]="true"
               filterBy="label"
@@ -823,6 +835,7 @@
             <p-dropdown
               inputId="headUpperCard"
               [autoDisplayFirst]="false"
+              [resetFilterOnHide]="true"
               [options]="headCardList"
               [filter]="true"
               filterBy="label"
@@ -845,6 +858,7 @@
             <p-dropdown
               inputId="headUpperEnchant1"
               [autoDisplayFirst]="false"
+              [resetFilterOnHide]="true"
               [options]="headUpperEnchant1List"
               [filter]="true"
               filterBy="label"
@@ -872,6 +886,7 @@
             <p-dropdown
               inputId="headUpperEnchant2"
               [autoDisplayFirst]="false"
+              [resetFilterOnHide]="true"
               [options]="headUpperEnchant2List"
               [filter]="true"
               filterBy="label"
@@ -899,6 +914,7 @@
             <p-dropdown
               inputId="headUpperEnchant3"
               [autoDisplayFirst]="false"
+              [resetFilterOnHide]="true"
               [options]="headUpperEnchant3List"
               [filter]="true"
               filterBy="label"
@@ -953,6 +969,7 @@
         <p-dropdown
           inputId="headMiddle"
           [autoDisplayFirst]="false"
+          [resetFilterOnHide]="true"
           [options]="headMiddleList"
           [filter]="true"
           filterBy="label"
@@ -980,6 +997,7 @@
         <p-dropdown
           inputId="headMiddleCard"
           [autoDisplayFirst]="false"
+          [resetFilterOnHide]="true"
           [options]="headCardList"
           [filter]="true"
           filterBy="label"
@@ -997,53 +1015,6 @@
           </ng-template>
         </p-dropdown>
       </div>
-      <!-- <div class="col-12">
-        <div class="grid grid-nogutter">
-          <div class="col-3"></div>
-          <div class="col-3">
-            <p-dropdown
-              inputId="headMiddleEnchant1"
-              [autoDisplayFirst]="false"
-              [options]="headMiddleEnchant1List"
-              [filter]="true"
-              filterBy="label"
-              [(ngModel)]="model.headMiddleEnchant1"
-              [showClear]="true"
-              [disabled]="headMiddleEnchant1List.length === 0"
-              (onChange)="onSelectItem('headMiddleEnchant1', $event.value)"
-              placeholder="Enchant 2"
-            ></p-dropdown>
-          </div>
-          <div class="col-3">
-            <p-dropdown
-              inputId="headMiddleEnchant2"
-              [autoDisplayFirst]="false"
-              [options]="headMiddleEnchant2List"
-              [filter]="true"
-              filterBy="label"
-              [(ngModel)]="model.headMiddleEnchant2"
-              [showClear]="true"
-              [disabled]="headMiddleEnchant2List.length === 0"
-              (onChange)="onSelectItem('headMiddleEnchant2', $event.value)"
-              placeholder="Enchant 3"
-            ></p-dropdown>
-          </div>
-          <div class="col-3">
-            <p-dropdown
-              inputId="headMiddleEnchant3"
-              [autoDisplayFirst]="false"
-              [options]="headMiddleEnchant3List"
-              [filter]="true"
-              filterBy="label"
-              [(ngModel)]="model.headMiddleEnchant3"
-              [showClear]="true"
-              [disabled]="headMiddleEnchant3List.length === 0"
-              (onChange)="onSelectItem('headMiddleEnchant3', $event.value)"
-              placeholder="Enchant 4"
-            ></p-dropdown>
-          </div>
-        </div>
-      </div> -->
     </div>
     <div class="grid grid-nogutter item_label_compare" *ngIf="showCompareItemMap.headMiddle">
       <div class="col-12">
@@ -1070,6 +1041,7 @@
         <p-dropdown
           inputId="headLower"
           [autoDisplayFirst]="false"
+          [resetFilterOnHide]="true"
           [options]="headLowerList"
           [filter]="true"
           filterBy="label"
@@ -1097,6 +1069,7 @@
         <p-dropdown
           inputId="headLowerEnchant1"
           [autoDisplayFirst]="false"
+          [resetFilterOnHide]="true"
           [options]="headLowerEnchant1List"
           [filter]="true"
           filterBy="label"
@@ -1124,6 +1097,7 @@
         <p-dropdown
           inputId="headLowerEnchant2"
           [autoDisplayFirst]="false"
+          [resetFilterOnHide]="true"
           [options]="headLowerEnchant2List"
           [filter]="true"
           filterBy="label"
@@ -1151,6 +1125,7 @@
         <p-dropdown
           inputId="headLowerEnchant3"
           [autoDisplayFirst]="false"
+          [resetFilterOnHide]="true"
           [options]="headLowerEnchant3List"
           [filter]="true"
           filterBy="label"
@@ -1200,6 +1175,7 @@
             <p-dropdown
               inputId="armor"
               [autoDisplayFirst]="false"
+              [resetFilterOnHide]="true"
               [options]="armorList"
               [filter]="true"
               filterBy="label"
@@ -1245,6 +1221,7 @@
             <p-dropdown
               inputId="armorCard"
               [autoDisplayFirst]="false"
+              [resetFilterOnHide]="true"
               [options]="armorCardList"
               [filter]="true"
               filterBy="label"
@@ -1267,6 +1244,7 @@
             <p-dropdown
               inputId="armorEnchant1"
               [autoDisplayFirst]="false"
+              [resetFilterOnHide]="true"
               [options]="armorEnchant1List"
               [filter]="true"
               filterBy="label"
@@ -1294,6 +1272,7 @@
             <p-dropdown
               inputId="armorEnchant2"
               [autoDisplayFirst]="false"
+              [resetFilterOnHide]="true"
               [options]="armorEnchant2List"
               [filter]="true"
               filterBy="label"
@@ -1321,6 +1300,7 @@
             <p-dropdown
               inputId="armorEnchant3"
               [autoDisplayFirst]="false"
+              [resetFilterOnHide]="true"
               [options]="armorEnchant3List"
               [filter]="true"
               filterBy="label"
@@ -1377,6 +1357,7 @@
             <p-dropdown
               inputId="garment"
               [autoDisplayFirst]="false"
+              [resetFilterOnHide]="true"
               [options]="garmentList"
               [filter]="true"
               filterBy="label"
@@ -1422,6 +1403,7 @@
             <p-dropdown
               inputId="garmentCard"
               [autoDisplayFirst]="false"
+              [resetFilterOnHide]="true"
               [options]="garmentCardList"
               [filter]="true"
               filterBy="label"
@@ -1444,6 +1426,7 @@
             <p-dropdown
               inputId="garmentEnchant1"
               [autoDisplayFirst]="false"
+              [resetFilterOnHide]="true"
               [options]="garmentEnchant1List"
               [filter]="true"
               filterBy="label"
@@ -1471,6 +1454,7 @@
             <p-dropdown
               inputId="garmentEnchant2"
               [autoDisplayFirst]="false"
+              [resetFilterOnHide]="true"
               [options]="garmentEnchant2List"
               [filter]="true"
               filterBy="label"
@@ -1498,6 +1482,7 @@
             <p-dropdown
               inputId="garmentEnchant3"
               [autoDisplayFirst]="false"
+              [resetFilterOnHide]="true"
               [options]="garmentEnchant3List"
               [filter]="true"
               filterBy="label"
@@ -1554,6 +1539,7 @@
             <p-dropdown
               inputId="boot"
               [autoDisplayFirst]="false"
+              [resetFilterOnHide]="true"
               [options]="bootList"
               [filter]="true"
               filterBy="label"
@@ -1599,6 +1585,7 @@
             <p-dropdown
               inputId="bootCard"
               [autoDisplayFirst]="false"
+              [resetFilterOnHide]="true"
               [options]="bootCardList"
               [filter]="true"
               filterBy="label"
@@ -1621,6 +1608,7 @@
             <p-dropdown
               inputId="bootEnchant1"
               [autoDisplayFirst]="false"
+              [resetFilterOnHide]="true"
               [options]="bootEnchant1List"
               [filter]="true"
               filterBy="label"
@@ -1648,6 +1636,7 @@
             <p-dropdown
               inputId="bootEnchant2"
               [autoDisplayFirst]="false"
+              [resetFilterOnHide]="true"
               [options]="bootEnchant2List"
               [filter]="true"
               filterBy="label"
@@ -1675,6 +1664,7 @@
             <p-dropdown
               inputId="bootEnchant3"
               [autoDisplayFirst]="false"
+              [resetFilterOnHide]="true"
               [options]="bootEnchant3List"
               [filter]="true"
               filterBy="label"
@@ -1730,6 +1720,7 @@
           <p-dropdown
             inputId="accLeft"
             [autoDisplayFirst]="false"
+            [resetFilterOnHide]="true"
             [options]="accLeftList"
             [filter]="true"
             filterBy="label"
@@ -1759,6 +1750,7 @@
         <p-dropdown
           inputId="accLeftCard"
           [autoDisplayFirst]="false"
+          [resetFilterOnHide]="true"
           [options]="accLeftCardList"
           [filter]="true"
           filterBy="label"
@@ -1784,6 +1776,7 @@
             <p-dropdown
               inputId="accLeftEnchant1"
               [autoDisplayFirst]="false"
+              [resetFilterOnHide]="true"
               [options]="accLeftEnchant1List"
               [filter]="true"
               filterBy="label"
@@ -1811,6 +1804,7 @@
             <p-dropdown
               inputId="accLeftEnchant2"
               [autoDisplayFirst]="false"
+              [resetFilterOnHide]="true"
               [options]="accLeftEnchant2List"
               [filter]="true"
               filterBy="label"
@@ -1838,6 +1832,7 @@
             <p-dropdown
               inputId="accLeftEnchant3"
               [autoDisplayFirst]="false"
+              [resetFilterOnHide]="true"
               [options]="accLeftEnchant3List"
               [filter]="true"
               filterBy="label"
@@ -1891,6 +1886,7 @@
           <p-dropdown
             inputId="accRight"
             [autoDisplayFirst]="false"
+            [resetFilterOnHide]="true"
             [options]="accRightList"
             [filter]="true"
             filterBy="label"
@@ -1920,6 +1916,7 @@
         <p-dropdown
           inputId="accRightCard"
           [autoDisplayFirst]="false"
+          [resetFilterOnHide]="true"
           [options]="accRightCardList"
           [filter]="true"
           filterBy="label"
@@ -1944,6 +1941,7 @@
             <p-dropdown
               inputId="accRightEnchant1"
               [autoDisplayFirst]="false"
+              [resetFilterOnHide]="true"
               [options]="accRightEnchant1List"
               [filter]="true"
               filterBy="label"
@@ -1971,6 +1969,7 @@
             <p-dropdown
               inputId="accRightEnchant2"
               [autoDisplayFirst]="false"
+              [resetFilterOnHide]="true"
               [options]="accRightEnchant2List"
               [filter]="true"
               filterBy="label"
@@ -1998,6 +1997,7 @@
             <p-dropdown
               inputId="accRightEnchant3"
               [autoDisplayFirst]="false"
+              [resetFilterOnHide]="true"
               [options]="accRightEnchant3List"
               [filter]="true"
               filterBy="label"
@@ -2050,6 +2050,7 @@
         <p-dropdown
           inputId="pet"
           [autoDisplayFirst]="false"
+          [resetFilterOnHide]="true"
           [options]="petList"
           [filter]="true"
           filterBy="label"
@@ -2080,6 +2081,7 @@
         <p-dropdown
           inputId="costumeEnchantUpper"
           [autoDisplayFirst]="false"
+          [resetFilterOnHide]="true"
           [options]="costumeEnhUpperList"
           [filter]="true"
           filterBy="label"
@@ -2107,6 +2109,7 @@
         <p-dropdown
           inputId="shadowWeapon"
           [autoDisplayFirst]="false"
+          [resetFilterOnHide]="true"
           [options]="shadowWeaponList"
           [filter]="true"
           filterBy="label"
@@ -2168,6 +2171,7 @@
         <p-dropdown
           inputId="costumeEnchantMiddle"
           [autoDisplayFirst]="false"
+          [resetFilterOnHide]="true"
           [options]="costumeEnhMiddleList"
           [filter]="true"
           filterBy="label"
@@ -2195,6 +2199,7 @@
         <p-dropdown
           inputId="shadowArmor"
           [autoDisplayFirst]="false"
+          [resetFilterOnHide]="true"
           [options]="shadowArmorList"
           [filter]="true"
           filterBy="label"
@@ -2256,6 +2261,7 @@
         <p-dropdown
           inputId="costumeEnchantLower"
           [autoDisplayFirst]="false"
+          [resetFilterOnHide]="true"
           [options]="costumeEnhLowerList"
           [filter]="true"
           filterBy="label"
@@ -2283,6 +2289,7 @@
         <p-dropdown
           inputId="shadowShield"
           [autoDisplayFirst]="false"
+          [resetFilterOnHide]="true"
           [options]="shadowShieldList"
           [filter]="true"
           filterBy="label"
@@ -2344,6 +2351,7 @@
         <p-dropdown
           inputId="costumeEnchantGarment"
           [autoDisplayFirst]="false"
+          [resetFilterOnHide]="true"
           [options]="costumeEnhGarmentList"
           [filter]="true"
           filterBy="label"
@@ -2371,6 +2379,7 @@
         <p-dropdown
           inputId="shadowBoot"
           [autoDisplayFirst]="false"
+          [resetFilterOnHide]="true"
           [options]="shadowBootList"
           [filter]="true"
           filterBy="label"
@@ -2433,6 +2442,7 @@
         <p-dropdown
           inputId="shadowEarning"
           [autoDisplayFirst]="false"
+          [resetFilterOnHide]="true"
           [options]="shadowEarningList"
           [filter]="true"
           filterBy="label"
@@ -2495,6 +2505,7 @@
         <p-dropdown
           inputId="shadowPendant"
           [autoDisplayFirst]="false"
+          [resetFilterOnHide]="true"
           [options]="shadowPendantList"
           [filter]="true"
           filterBy="label"
@@ -2647,6 +2658,7 @@
                       <span class="p-inputgroup-addon text_group_ellips">{{ bishopBuff.label }}</span>
                       <p-dropdown
                         [autoDisplayFirst]="false"
+                        [resetFilterOnHide]="true"
                         [options]="bishopBuff.dropdown"
                         [(ngModel)]="model.bishopBuffs[i]"
                         (onChange)="onSkillClassChange()"
@@ -2681,6 +2693,7 @@
                       <span class="p-inputgroup-addon text_group_ellips">{{ passiveSkill.label }}</span>
                       <p-dropdown
                         [autoDisplayFirst]="false"
+                        [resetFilterOnHide]="true"
                         [options]="passiveSkill.dropdown"
                         [(ngModel)]="model.passiveSkills[i]"
                         (onChange)="onSkillClassChange()"
@@ -2715,6 +2728,7 @@
                       <span class="p-inputgroup-addon text_group_ellips">{{ activeSkill.label }}</span>
                       <p-dropdown
                         [autoDisplayFirst]="false"
+                        [resetFilterOnHide]="true"
                         [options]="activeSkill.dropdown"
                         [(ngModel)]="model.activeSkills[i]"
                         (onChange)="onSkillClassChange()"
@@ -2751,6 +2765,7 @@
                   <p-dropdown
                     inputId="monsterOpponent"
                     [autoDisplayFirst]="false"
+                    [resetFilterOnHide]="true"
                     [options]="groupMonsterList"
                     [filter]="true"
                     filterBy="label,searchVal"
@@ -2841,6 +2856,7 @@
                   <p-dropdown
                     inputId="monster"
                     [autoDisplayFirst]="false"
+                    [resetFilterOnHide]="true"
                     [options]="atkSkills"
                     [(ngModel)]="model.selectedAtkSkill"
                     (onChange)="onAtkSkillChange()"

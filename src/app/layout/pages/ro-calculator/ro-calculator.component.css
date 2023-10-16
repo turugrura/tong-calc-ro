@@ -271,6 +271,22 @@ pre {
   padding: 0;
 }
 
+:host ::ng-deep .p-accordion-tab .p-accordion-header > a {
+  font-weight: 800;
+  /* color: var(--highlight-text-color);
+  background: var(--highlight-bg); */
+  color: black;
+  background: var(--indigo-300);
+}
+
+:host ::ng-deep .p-accordion-tab .p-highlight > a,
+:host ::ng-deep .p-accordion-tab .p-accordion-header :hover {
+  /* color: var(--primary-color-text) !important;
+  background: var(--primary-color) !important; */
+  color: white !important;
+  background: var(--indigo-800) !important;
+}
+
 .property_Water {
   /* background-color: #7ba7e1; */
   background-color: var(--blue-600);

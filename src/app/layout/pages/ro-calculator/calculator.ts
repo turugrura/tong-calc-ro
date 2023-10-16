@@ -166,6 +166,7 @@ export class Calculator {
     range: 0,
     bowRange: 0,
     vct: 0,
+    vct_inc: 0,
     acd: 0,
     fct: 0,
     fctPercent: 0,
@@ -1321,6 +1322,18 @@ export class Calculator {
       return calc(learned, Number(skillLv));
     }
 
+    // level:1(125)---1
+    // level:1(1-125)---1
+    const [, everyBaseLv, range] = condition.match(/level:(-*\d+)\((.+)\)/) ?? [];
+    if (everyBaseLv && range) {
+      // console.log({ baseLv, range });
+      const [min, max = 999] = range.split('-').map(Number);
+      const everyNum = Number(everyBaseLv);
+      const cap = Math.min(max, this.model.level);
+
+      return calc(cap - min + 1, everyNum);
+    }
+
     // dex:10---1
     const [, status, statusCond] = condition.match(/(level|str|int|dex|agi|vit|luk):(-*\d+)/) ?? [];
     // console.log({ status, statusCond });
@@ -1421,6 +1434,17 @@ export class Calculator {
       restCondition = restCondition.replace(toRemove, '');
     }
 
+    // LEVEL[130]2---1
+    // LEVEL[1-129]2---1
+    const [toRemove2, lvCond] = script.match(/LEVEL\[(.+?)\]/) ?? [];
+    if (lvCond) {
+      const [minLv, maxLv = 999] = lvCond.split('-').map(Number);
+      const isPass = minLv <= this.model.level && this.model.level <= maxLv;
+      if (!isPass) return { isValid: true, restCondition };
+
+      restCondition = restCondition.replace(toRemove2, '');
+    }
+
     // EQUIP[Bear's Power]===50
     const [setCondition, itemSet] = script.match(/^EQUIP\[(.+?)]/) ?? [];
     if (itemSet) {
@@ -1439,6 +1463,7 @@ export class Calculator {
       // REFINE[9]===25
       const [unused, refineCombo, refineCond] = restCondition.match(/^REFINE\[(\D*?)=*=*(\d+)]/) ?? [];
       if (refineCombo) {
+        // console.log({ unused, refineCombo, restCondition });
         if (restCondition.includes('---')) {
           return { isValid: true, restCondition };
         }
@@ -1447,6 +1472,7 @@ export class Calculator {
           .split(',')
           .map((itemType) => this.mapRefine.get(itemType as ItemTypeEnum))
           .reduce((sum, cur) => sum + (cur || 0), 0);
+        // console.log({ totalRefine, refineCond });
         if (totalRefine >= Number(refineCond)) {
           restCondition = restCondition.replace(unused, '');
           if (!restCondition.startsWith('===')) {
@@ -1722,11 +1748,11 @@ export class Calculator {
     const reduceSkillFct = this.totalEquipStatus[`fct__${name}`] || 0;
     const reduceSkillAcd = this.totalEquipStatus[`acd__${name}`] || 0;
 
-    const { acd, vct, fct, fctPercent } = this.totalEquipStatus;
+    const { acd, vct, vct_inc = 0, fct, fctPercent } = this.totalEquipStatus;
     const { totalDex, totalInt } = this.status;
 
     const vctByStat = Math.max(0, 1 - Math.sqrt(this.floor((totalDex * 2 + totalInt) / 530, 3)));
-    const vctGlobal = Math.max(0, 1 - vct / 100);
+    const vctGlobal = Math.max(0, 1 - (vct - vct_inc) / 100);
     const vctSkill = Math.max(0, 1 - reduceSkillVct / 100);
     const reducedVct = this.floor((skillVct - reduceSkillVctFix) * vctByStat * vctGlobal * vctSkill, 2);
 
