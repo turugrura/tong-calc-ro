@@ -218,6 +218,21 @@ const tempBoot_4 = [EA._4, FS._7, Spell._5, AttackDelay._4];
 const kingSmithAcc_2 = ['Gh_md_agi', 'Gh_md_str', 'Gh_md_dex', 'Gh_md_int', 'Gh_md_vit', 'Gh_md_luk'];
 const kingSmithAcc_3 = [EA._4, EA._5, FS._6, FS._7, Spell._4, Spell._5, Cri._2, Cri._3, Sharp._3, Sharp._4];
 const kingSmithAcc_4 = [...BaseState._3_5];
+const kingSmithMan = [
+  EA._3,
+  EA._4,
+  EA._5,
+  FS._5,
+  FS._6,
+  FS._7,
+  Spell._3,
+  Spell._4,
+  Spell._5,
+  Cri._2,
+  Cri._3,
+  Sharp._3,
+  Sharp._4,
+];
 
 const twinCannon = [Cri._3, AttackDelay._3, Spell._4, EA._3, ...BaseState._3];
 
@@ -386,6 +401,7 @@ const enchantTable: EntTable[] = [
   { name: 'Modify_Dex_Boots_', enchants: [null, null, tempBoot_3, tempBoot_4] },
   { name: 'Modify_Luk_Boots_', enchants: [null, null, tempBoot_3, tempBoot_4] },
 
+  { name: 'Schmidt_Manteau', enchants: [null, kingSmithMan, kingSmithMan, kingSmithMan] },
   { name: 'Schmidt_Insignia_Str', enchants: [null, kingSmithAcc_2, kingSmithAcc_3, kingSmithAcc_4] },
   { name: 'Schmidt_Insignia_Int', enchants: [null, kingSmithAcc_2, kingSmithAcc_3, kingSmithAcc_4] },
   { name: 'Schmidt_Insignia_Agi', enchants: [null, kingSmithAcc_2, kingSmithAcc_3, kingSmithAcc_4] },

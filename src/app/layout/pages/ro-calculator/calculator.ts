@@ -20,7 +20,7 @@ const refinableItemTypes = [
   ItemTypeEnum.shadowWeapon,
   ItemTypeEnum.shadowArmor,
   ItemTypeEnum.shadowBoot,
-  ItemTypeEnum.shadowEarning,
+  ItemTypeEnum.shadowEaring,
   ItemTypeEnum.shadowPendant,
   ItemTypeEnum.shadowShield,
 ];
@@ -1504,6 +1504,7 @@ export class Calculator {
       return { isValid: true, restCondition };
     }
 
+    // REFINE[11]
     const [, unused, refineCond] = restCondition.match(/^(REFINE\[(\d+)?])[^-]/) ?? [];
     if (refineCond && itemRefine >= Number(refineCond)) {
       restCondition = restCondition.replace(unused, '');

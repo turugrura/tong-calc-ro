@@ -67,7 +67,7 @@ enum ItemSubTypeId {
   ShadowArmor = 526,
   ShadowShield = 527,
   ShadowBoot = 528,
-  ShadowEarning = 529,
+  ShadowEaring = 529,
   ShadowPendant = 530,
 }
 enum HeadLocation {
@@ -430,8 +430,8 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     shadowShieldRefine: undefined,
     shadowBoot: undefined,
     shadowBootRefine: undefined,
-    shadowEarning: undefined,
-    shadowEarningRefine: undefined,
+    shadowEaring: undefined,
+    shadowEaringRefine: undefined,
     shadowPendant: undefined,
     shadowPendantRefine: undefined,
 
@@ -518,7 +518,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   shadowArmorList: DropdownModel[] = [];
   shadowShieldList: DropdownModel[] = [];
   shadowBootList: DropdownModel[] = [];
-  shadowEarningList: DropdownModel[] = [];
+  shadowEaringList: DropdownModel[] = [];
   shadowPendantList: DropdownModel[] = [];
 
   characterList = Characters;
@@ -1385,7 +1385,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     const shadowArmorList = [];
     const shadowShieldList = [];
     const shadowBootList = [];
-    const shadowEarningList = [];
+    const shadowEaringList = [];
     const shadowPendantList = [];
     const shadowWeaponList = [];
 
@@ -1451,8 +1451,8 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         case ItemSubTypeId.ShadowBoot:
           shadowBootList.push(item);
           continue;
-        case ItemSubTypeId.ShadowEarning:
-          shadowEarningList.push(item);
+        case ItemSubTypeId.ShadowEaring:
+          shadowEaringList.push(item);
           continue;
         case ItemSubTypeId.ShadowPendant:
           shadowPendantList.push(item);
@@ -1537,7 +1537,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     this.itemList.shadowArmorList = toDropdownList(shadowArmorList, 'name', 'id');
     this.itemList.shadowShieldList = toDropdownList(shadowShieldList, 'name', 'id');
     this.itemList.shadowBootList = toDropdownList(shadowBootList, 'name', 'id');
-    this.itemList.shadowEarningList = toDropdownList(shadowEarningList, 'name', 'id');
+    this.itemList.shadowEaringList = toDropdownList(shadowEaringList, 'name', 'id');
     this.itemList.shadowPendantList = toDropdownList(shadowPendantList, 'name', 'id');
     this.itemList.shadowWeaponList = toDropdownList(shadowWeaponList, 'name', 'id');
 
@@ -1583,7 +1583,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     this.shadowArmorList = this.itemList.shadowArmorList.filter(onlyMe);
     this.shadowShieldList = this.itemList.shadowShieldList.filter(onlyMe);
     this.shadowBootList = this.itemList.shadowBootList.filter(onlyMe);
-    this.shadowEarningList = this.itemList.shadowEarningList.filter(onlyMe);
+    this.shadowEaringList = this.itemList.shadowEaringList.filter(onlyMe);
     this.shadowPendantList = this.itemList.shadowPendantList.filter(onlyMe);
     this.shadowWeaponList = this.itemList.shadowWeaponList.filter(onlyMe);
   }
