@@ -1464,7 +1464,7 @@ export class Calculator {
       const [unused, refineCombo, refineCond] = restCondition.match(/^REFINE\[(\D*?)=*=*(\d+)]/) ?? [];
       if (refineCombo) {
         // console.log({ unused, refineCombo, restCondition });
-        if (restCondition.includes('---')) {
+        if (restCondition.includes(`${unused}---`)) {
           return { isValid: true, restCondition };
         }
 
