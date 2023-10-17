@@ -22,6 +22,7 @@ import { ShadowChaser } from './jobs/shadow-chaser';
 import { GitCross } from './jobs/git-cross';
 import { ArchBishop } from './jobs/arch-bishop';
 import { Warlock } from './jobs/warlock';
+import { encryptionService } from '../../service/encryption.service';
 
 const sortObj = <T>(field: keyof T) => {
   return (a: T, b: T) => {
@@ -642,7 +643,9 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     this.initData().subscribe(() => {
       this.loadItemSet();
     });
-
+    const encrypted = encryptionService.encrypt(this.model);
+    const decrypted = encryptionService.decrypt(encrypted);
+    console.log({ model: this.model, encrypted, decrypted });
     const itemChanges = new Set<ItemTypeEnum>();
     const updateItemSubs = this.updateItemEvent
       .pipe(

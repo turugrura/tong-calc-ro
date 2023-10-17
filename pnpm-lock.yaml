@@ -50,6 +50,9 @@ dependencies:
   chart.js:
     specifier: ^3.3.2
     version: 3.9.1
+  crypto-js:
+    specifier: ~4.1.1
+    version: 4.1.1
   primeflex:
     specifier: ^3.3.1
     version: 3.3.1
@@ -94,6 +97,9 @@ devDependencies:
   '@angular/compiler-cli':
     specifier: ^16.1.0
     version: 16.2.3(@angular/compiler@16.2.3)(typescript@5.1.6)
+  '@types/crypto-js':
+    specifier: ~4.1.2
+    version: 4.1.2
   '@types/jasmine':
     specifier: ~4.3.0
     version: 4.3.5
@@ -2635,6 +2641,10 @@ packages:
       '@types/node': 20.5.9
     dev: true
 
+  /@types/crypto-js@4.1.2:
+    resolution: {integrity: sha512-t33RNmTu5ufG/sorROIafiCVJMx3jz95bXUMoPAZcUD14fxMXnuTzqzXZoxpR0tNx2xpw11Dlmem9vGCsrSOfA==}
+    dev: true
+
   /@types/eslint-scope@3.7.4:
     resolution: {integrity: sha512-9K4zoImiZc3HlIp6AVUDE4CWYx22a+lhSZMYNpbjW04+YF0KWj4pJXnEMjdnFTiQibFFmElcsasJXDbdI/EPhA==}
     dependencies:
@@ -3953,6 +3963,10 @@ packages:
       shebang-command: 2.0.0
       which: 2.0.2
     dev: true
+
+  /crypto-js@4.1.1:
+    resolution: {integrity: sha512-o2JlM7ydqd3Qk9CA0L4NL6mTzU2sdx96a+oOfPu8Mkl/PK51vSyoi8/rQ8NknZtk44vq15lmhAj9CIAGwgeWKw==}
+    dev: false
 
   /css-loader@6.8.1(webpack@5.88.2):
     resolution: {integrity: sha512-xDAXtEVGlD0gJ07iclwWVkLoZOpEvAWaSyf6W18S2pOC//K8+qUDIx8IIT3D+HjnmkJPQeesOPv5aiUaJsCM2g==}
