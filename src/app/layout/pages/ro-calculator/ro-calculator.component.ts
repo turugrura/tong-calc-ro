@@ -858,7 +858,8 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       const model2 = { ...this.model, ...compareModel };
       calc.loadItemFromModel(model2);
     } else {
-      calc.setModel(this.model);
+      // calc.setModel(this.model);
+      calc.loadItemFromModel(this.model);
     }
     calc
       .setClass(this.selectedCharacter)
@@ -1628,7 +1629,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         const itemId = this.model[itemType];
         if (itemId && !enchantList.find((a) => a.value === itemId)) {
           this.model[itemType] = undefined;
-          this.calculator.setItem(itemType, null);
+          // this.calculator.setItem(itemType, null);
           this.equipItemMap.set(itemType, null);
         }
       }
@@ -1753,11 +1754,11 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     }
 
     // console.log({ itemType, itemId, refine });
-    if (itemType === ItemTypeEnum.weapon) {
-      this.calculator.setWeapon(itemId, refine);
-    } else {
-      this.calculator.setItem(itemType as ItemTypeEnum, itemId, refine);
-    }
+    // if (itemType === ItemTypeEnum.weapon) {
+    //   this.calculator.setWeapon(itemId, refine);
+    // } else {
+    //   this.calculator.setItem(itemType as ItemTypeEnum, itemId, refine);
+    // }
 
     this.updateItemEvent.next(itemType);
   }
