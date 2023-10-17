@@ -461,6 +461,47 @@
       ]
     }
   },
+  "2055": {
+    "id": 2055,
+    "aegisName": "Staff_Of_Miracle",
+    "name": "Staff of Miracle [2]",
+    "unidName": "Rod",
+    "resName": "Staff_Of_Miracle",
+    "description": "ไม้เท้าที่มีพลังอันน่ามหัศจรรย์\n^ffffff_^000000 \nMATK + 270, ไม่สามารถทำลายได้\nเพิ่ม Damage เวทมนตร์ธาตุ Ghost 5%\nทุก ๆ การอัพเกรด 1 ขั้น MATK + 4\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Soul Strike, Napalm Vulcan, Soul Expansion 20%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Soul Strike, Napalm Vulcan ขึ้นอีก 30%\n\nประเภท : ^777777Two-Handed Staff^000000 พลังโจมตี : ^777777100^000000\nน้ำหนัก : ^777777120^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Warlock^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 266,
+    "itemLevel": 4,
+    "attack": 100,
+    "defense": null,
+    "weight": 120,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Warlock"
+    ],
+    "script": {
+      "matk": [
+        "270",
+        "1---4"
+      ],
+      "m_my_element_ghost": [
+        "5"
+      ],
+      "Soul Strike": [
+        "9===20",
+        "11===30"
+      ],
+      "Napalm Vulcan": [
+        "9===20",
+        "11===30"
+      ],
+      "Soul Expansion": [
+        "9===20"
+      ]
+    }
+  },
   "2057": {
     "id": 2057,
     "aegisName": "Adorare_Staff",
@@ -494,6 +535,55 @@
       ],
       "ลด Damage ทางกายภาพ/เวทมนตร์ที่ได้รับจากศัตรูทุกขนาด": [
         "11===25"
+      ]
+    }
+  },
+  "2060": {
+    "id": 2060,
+    "aegisName": "R_Magician_Staff",
+    "name": "Royal Magician Staff [2]",
+    "unidName": "Rod",
+    "resName": "R_Magician_Staff",
+    "description": "ไม้คทาที่นักเวทย์แห่ง Glast Heim ใช้กันอย่างแพร่หลาย\nแม้จะเป็นอาวุธธรรมดา แต่ก็มีพลังที่แข็งแกร่งซ่อนอยู่เนื่องจากได้รับผลกระทบจาก Himmelmez\n^ffffff_^000000 \nไม่สามารถทำลายได้, MATK +270, MATK +5%\nทุก ๆ การอัพเกรด 1 ขั้น MATK +5\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Chain Lightning, Earth Strain 20%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage ทางเวทมนตร์ต่อมอนสเตอร์ประเภท Undead, Angel 20%\n^ffffff_^000000 \nเมื่อสวมใส่ร่วมกับ ^32CD32King Schmidt's Suit และ King Schmidt's Manteau^000000, \nMATK +30, เมื่อโจมตีทางเวทมนตร์ มีโอกาสที่จะเพิ่ม Damage ทางเวทมนตร์ธาตุ Wind, Earth 10% เป็นเวลา 10 วินาที\nเมื่อค่าอัพเกรด ^32CD32King Schmidt's Suit, King Schmidt's Manteau, Royal Magician Staff^000000 รวมกันตั้งแต่ 30 ขึ้นไป เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูธาตุ Holy, Undead 20%\n^ffffff_^000000 \nประเภท : ^777777Two-Handed Staff^000000 พลังโจมตี : ^777777100^000000\nน้ำหนัก : ^777777150^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Warlock^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 266,
+    "itemLevel": 4,
+    "attack": 100,
+    "defense": null,
+    "weight": 150,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Warlock"
+    ],
+    "script": {
+      "matk": [
+        "270",
+        "1---5",
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]30"
+      ],
+      "matkPercent": [
+        "5"
+      ],
+      "Chain Lightning": [
+        "9===20"
+      ],
+      "Earth Strain": [
+        "9===20"
+      ],
+      "m_race_undead": [
+        "11===20"
+      ],
+      "m_race_angel": [
+        "11===20"
+      ],
+      "p_element_holy": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]REFINE[weapon,armor,garment==30]===20"
+      ],
+      "p_element_undead": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]REFINE[weapon,armor,garment==30]===20"
       ]
     }
   },
@@ -932,7 +1022,7 @@
     "description": "แหวนที่มีอักษรลึกลับเขียนอยู่ มันสวยงามและดึงดูดให้ผู้พบเห็นอยากครอบครอง\nMHP+100, MSP+100,\nเพิ่มผลสกิล Heal 5%\nเพิ่มความแรง 10% เมื่อโจมตี Lucifer Morocc\nประเภท : ^777777Accessory(Right)^000000 พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^7777775^000000\nอาชีพ : ^777777Hi-Class ขั้น 2 ขึ้นไป^000000",
     "slots": 1,
     "itemTypeId": 2,
-    "itemSubTypeId": 517,
+    "itemSubTypeId": 510,
     "itemLevel": null,
     "attack": null,
     "defense": 0,
@@ -1230,6 +1320,32 @@
       ]
     }
   },
+  "4168": {
+    "id": 4168,
+    "aegisName": "Dark_Lord_Card",
+    "name": "Dark Lord Card",
+    "unidName": "Dark Lord Card",
+    "resName": "이름없는카드",
+    "description": "มีโอกาสที่จะร่าย Level 5 Meteor Storm ใส่คู่ต่อสู้ เมื่อได้รับการโจมตีทางกายภาพ\nถ้าใช้ร่วมกับ Dark Illusion Card\nจะเพิ่ม Max HP, Max SP + 20%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Foot Gear^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 64,
+    "script": {
+      "hpPercent": [
+        "EQUIP[Dark Illusion Card]20"
+      ],
+      "spPercent": [
+        "EQUIP[Dark Illusion Card]20"
+      ]
+    }
+  },
   "4169": {
     "id": 4169,
     "aegisName": "Dark_Illusion_Card",
@@ -1321,6 +1437,32 @@
       ],
       "def": [
         "-5"
+      ]
+    }
+  },
+  "4352": {
+    "id": 4352,
+    "aegisName": "B_Ygnizem_Card",
+    "name": "Boss Egnigem Card",
+    "unidName": "Boss Egnigem Card",
+    "resName": "이름없는카드",
+    "description": "ฟื้น HP 50, SP 10\nทุกๆ 10 วินาที\nและเพิ่ม Max HP\nMax SP 10%.\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Footwear^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 64,
+    "script": {
+      "hpPercent": [
+        "10"
+      ],
+      "spPercent": [
+        "10"
       ]
     }
   },
@@ -1802,6 +1944,29 @@
       ]
     }
   },
+  "4604": {
+    "id": 4604,
+    "aegisName": "CorruptionRootH_Card",
+    "name": "Realized Corruption Root Card",
+    "unidName": "Realized Corruption Root Card",
+    "resName": "이름없는카드",
+    "description": "ATK + 30.\nเมื่อโจมตีทางกายภาพระยะใกล้, มีโอกาสสูงที่ศัตรูรอบตัวทั้งหมดภายในระยะ 11*11 ช่อง จะติดสถานะ Stone Curse, Sleep และ Curse\nประเภท : ^777777Card^000000\nใส่กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "script": {
+      "atk": [
+        "30"
+      ]
+    }
+  },
   "4608": {
     "id": 4608,
     "aegisName": "White_Knightage_Card",
@@ -2110,6 +2275,31 @@
     "compositionPos": 0,
     "script": {
       "Axe Tornado": [
+        "20",
+        "WEAPON_LEVEL[4]===20",
+        "10===20"
+      ]
+    }
+  },
+  "4691": {
+    "id": 4691,
+    "aegisName": "Real_Flamel_Card",
+    "name": "True Flamel Emure Card",
+    "unidName": "True Flamel Emure Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่มความแรงสกิล Cart Tornado 20% \nเพิ่มความแรงสกิล Cart Tornado อีก 20% เมื่ออาวุธเลเวล 4 \nเพิ่มความแรงสกิล Cart Tornado อีก 20% เมื่ออัพเกรดถึงขั้น 10 ขึ้นไป\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "script": {
+      "Cart Tornado": [
         "20",
         "WEAPON_LEVEL[4]===20",
         "10===20"
@@ -5921,6 +6111,109 @@
       ]
     }
   },
+  "15388": {
+    "id": 15388,
+    "aegisName": "Schmidt_Suits",
+    "name": "King Schmidt's Suit [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Schmidt_Suits",
+    "description": "เครื่องแบบที่ราชา Schmidt เคยใช้\nไม่สามารถทำลายได้\nเพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูขนาดกลางและใหญ่ 10%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูธาตุ Fire, Shadow 10%\nเมื่ออัพเกรดถึงขั้น 9 ลด Damage ทางกายภาพ/เวทมนตร์ที่ได้รับจากมอนสเตอร์เผ่า Dragon และมอนสเตอร์ประเภท Formless 15%\nเมื่ออัพเกรดถึงขั้น 11 ลด Damage ทางกายภาพ/เวทมนตร์ที่ได้รับจากมอนสเตอร์ขนาดกลางและใหญ่ 10%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ King Schmidt's Manteau,\nMHP +5%, MSP +5%\nเมื่อค่าอัพเกรดรวมกันของ King Schmidt's Suit และ King Schmidt's Manteau รวมกันตั้งแต่ 22 ขึ้นไป\nลด Delay หลังใช้สกิล 15%\nประเภท : ^777777Armor^000000 พลังป้องกัน : ^777777150^000000\nน้ำหนัก : ^77777790^000000\nเลเวลที่ต้องการ : ^777777130^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 150,
+    "weight": 90,
+    "requiredLevel": 130,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "p_size_m": [
+        "10"
+      ],
+      "p_size_l": [
+        "10"
+      ],
+      "m_size_m": [
+        "10"
+      ],
+      "m_size_l": [
+        "10"
+      ],
+      "p_element_fire": [
+        "7===10"
+      ],
+      "p_element_shadow": [
+        "7===10"
+      ],
+      "m_element_fire": [
+        "7===10"
+      ],
+      "m_element_shadow": [
+        "7===10"
+      ],
+      "hpPercent": [
+        "EQUIP[King Schmidt's Manteau]5"
+      ],
+      "spPercent": [
+        "EQUIP[King Schmidt's Manteau]5"
+      ],
+      "acd": [
+        "EQUIP[King Schmidt's Manteau]REFINE[armor,garment==22]15"
+      ]
+    }
+  },
+  "15389": {
+    "id": 15389,
+    "aegisName": "Schmidt_Manteau",
+    "name": "King Schmidt's Manteau [1]",
+    "unidName": "Hood",
+    "resName": "Schmidt_Manteau",
+    "description": "เสื้อคลุมที่ราชา Schmidt เคยใช้\n^ffffff_^000000\nทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage ทางกายภาพ/เวทมนตรต่อศัตรูธาตุ Fire, Shadow 2%\nเมื่ออัพเกรดถึงขั้น 7 ลด Damage ทางกายภาพที่ได้รับจากมอนสเตอร์เผ่า Dragon และมอนสเตอร์ประเภท Formless 5%,\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อมอนสเตอร์เผ่า Dragon และมอนสเตอร์ประเภท Formless 15%\nประเภท : ^777777Garment^000000 พลังป้องกัน : ^77777770^000000\nน้ำหนัก : ^77777760^000000\nเลเวลที่ต้องการ : ^777777130^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 515,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 70,
+    "weight": 60,
+    "requiredLevel": 130,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "p_element_fire": [
+        "3---2"
+      ],
+      "p_element_shadow": [
+        "3---2"
+      ],
+      "m_element_fire": [
+        "3---2"
+      ],
+      "m_element_shadow": [
+        "3---2"
+      ],
+      "p_race_dragon": [
+        "11===15"
+      ],
+      "p_race_formless": [
+        "11===15"
+      ],
+      "m_race_dragon": [
+        "11===15"
+      ],
+      "m_race_formless": [
+        "11===15"
+      ]
+    }
+  },
   "15943": {
     "id": 15943,
     "aegisName": null,
@@ -6094,6 +6387,38 @@
       ],
       "ลด Damage ทางกายภาพ/เวทมนตร์ที่ได้รับจากศัตรูทุกธาตุ": [
         "EQUIP[Modification Orb (Above All)]5"
+      ]
+    }
+  },
+  "15977": {
+    "id": 15977,
+    "aegisName": null,
+    "name": "Shrine Maiden Ribbon",
+    "unidName": "Ribbon",
+    "resName": "성자의리본모자",
+    "description": "โบว์ริบบิ้นสำหรับบาทหลวงระดับสูง\n\nลดระยะเวลาร่ายแบบแปรผันสกิล Magnus Exorcismus 100%\nลดระยะเวลาร่ายแบบคงที่สกิล Magnus Exorcismus 100%\nเมื่อ Base Lv. 130 ขึ้นไป,\nเพิ่ม Damage สกิล Magnus Exorcismus 120%\n\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^77777710^000000\nตำแหน่ง : ^777777Middle^000000 น้ำหนัก : ^77777730^000000\nเลเวลที่ต้องการ : ^77777750^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 10,
+    "weight": 30,
+    "requiredLevel": 50,
+    "location": "Middle",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "vct__Magnus Exorcismus": [
+        "100"
+      ],
+      "fctPercent__Magnus Exorcismus": [
+        "100"
+      ],
+      "Magnus Exorcismus": [
+        "level:130===120"
       ]
     }
   },
@@ -6549,6 +6874,102 @@
       ],
       "cd__Severe Rainstorm": [
         "11===2"
+      ]
+    }
+  },
+  "18191": {
+    "id": 18191,
+    "aegisName": "G_Knight_Bow",
+    "name": "Guardian Knight Bow [2]",
+    "unidName": "Bow",
+    "resName": "G_Knight_Bow",
+    "description": "อาวุธหน้าไม้ที่กองทัพทหารแห่ง Glast Heim ใช้\nแม้จะเป็นอาวุธธรรมดา แต่ก็มีพลังที่แข็งแกร่งซ่อนอยู่เนื่องจากได้รับผลกระทบจาก Himmelmez\n^ffffff_^000000 \nเพิ่ม Damage ทางกายภาพระยะไกล 15%\nทุก ๆ การอัพเกรด 1 ขั้น ATK +4\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Triangle Shot 20%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage ทางกายภาพต่อมอนสเตอร์ประเภท Undead, Angel 20%\n^ffffff_^000000 \nเมื่อสวมใส่ร่วมกับ ^32CD32King Schmidt's Suit และ King Schmidt's Manteau^000000, \nATK +30, เมื่อโจมตีทางกายภาพ มีโอกาสที่จะเพิ่ม Damage ทางกายภาพระยะไกล 10% เป็นเวลา 10 วินาที\nเมื่อค่าอัพเกรด ^32CD32King Schmidt's Suit, King Schmidt's Manteau, Guardian Knight Bow^000000 รวมกันตั้งแต่ 30 ขึ้นไป เพิ่ม Damage ทางกายภาพต่อศัตรูธาตุ Holy, Undead 20%\n^ffffff_^000000 \nประเภท : ^777777Bow^000000 พลังโจมตี : ^777777180^000000\nน้ำหนัก : ^777777150^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Shadow Chaser^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 267,
+    "itemLevel": 4,
+    "attack": 180,
+    "defense": null,
+    "weight": 150,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Shadow Chaser"
+    ],
+    "script": {
+      "range": [
+        "15"
+      ],
+      "atk": [
+        "1---4",
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]30"
+      ],
+      "Triangle Shot": [
+        "9===20"
+      ],
+      "p_race_undead": [
+        "11===20"
+      ],
+      "p_race_angel": [
+        "11===20"
+      ],
+      "p_element_holy": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]REFINE[weapon,armor,garment==30]===20"
+      ],
+      "p_element_undead": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]REFINE[weapon,armor,garment==30]===20"
+      ]
+    }
+  },
+  "18198": {
+    "id": 18198,
+    "aegisName": "G_Knight_Archer_Bow",
+    "name": "Guardian Knight Archer Bow [2]",
+    "unidName": "Bow",
+    "resName": "가디언나이츠아처보우",
+    "description": "อาวุธธนูที่กองทัพทหารแห่ง Glast Heim ใช้\nแม้จะเป็นอาวุธธรรมดา แต่ก็มีพลังที่แข็งแกร่งซ่อนอยู่เนื่องจากได้รับผลกระทบจาก Himmelmez\n^ffffff_^000000 \nเพิ่ม Damage ทางกายภาพระยะไกล 15%\nทุก ๆ การอัพเกรด 1 ขั้น ATK +4\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Aimed Bolt 25%, ลด Delay หลังใช้สกิล 12%\nเมื่ออัพเกรดถึงขั้น 11 ลด Cooldown สกิล Aimed Bolt 1 วินาที, เพิ่ม Damage ทางกายภาพต่อมอนสเตอร์ประเภท Undead, Angel 20%\n^ffffff_^000000 \nเมื่อสวมใส่ร่วมกับ ^32CD32King Schmidt's Suit และ King Schmidt's Manteau^000000, \nATK +30, เมื่อโจมตีทางกายภาพ มีโอกาสที่จะเพิ่ม Damage ทางกายภาพระยะไกล 10% เป็นเวลา 10 วินาที\nเมื่อค่าอัพเกรด ^32CD32King Schmidt's Suit, King Schmidt's Manteau, Guardian Knight Archer Bow^000000 รวมกันตั้งแต่ 30 ขึ้นไป\nเพิ่ม Damage ทางกายภาพต่อศัตรูธาตุ Holy, Undead 20%\n^ffffff_^000000 \nประเภท : ^777777Bow^000000 พลังโจมตี : ^777777190^000000\nน้ำหนัก : ^777777170^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Ranger^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 267,
+    "itemLevel": 4,
+    "attack": 190,
+    "defense": null,
+    "weight": 170,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Ranger"
+    ],
+    "script": {
+      "range": [
+        "15"
+      ],
+      "atk": [
+        "1---4",
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]30"
+      ],
+      "Aimed Bolt": [
+        "9===25"
+      ],
+      "acd": [
+        "9===12"
+      ],
+      "cd__Aimed Bolt": [
+        "11===1"
+      ],
+      "p_race_undead": [
+        "11===20"
+      ],
+      "p_race_angel": [
+        "11===20"
+      ],
+      "p_element_holy": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]REFINE[weapon,armor,garment==30]===20"
+      ],
+      "p_element_undead": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]REFINE[weapon,armor,garment==30]===20"
       ]
     }
   },
@@ -9983,6 +10404,57 @@
       ]
     }
   },
+  "22238": {
+    "id": 22238,
+    "aegisName": "Great_Hero_Boots",
+    "name": "Great Hero's Boots [1]",
+    "unidName": "Sandals",
+    "resName": "UpShoesOfGuardsman",
+    "description": "รองเท้าบูทที่ว่ากันว่าเหล่าวีรบุรุษผู้ยิ่งใหญ่เคยใช้สวมใส่\nซึ่งดูเหมือนว่ามันจะกลมกลืนไปกับอาวุธของพวกเขา\nMHP +1500, MSP +150\nทุก ๆ การอัพเกรด 3 ขั้น MHP +1%, MSP +1%\nเมื่ออัพเกรดถึงขั้น 7 ATK +5%, MATK +5%\nเมื่ออัพเกรดถึงขั้น 9 ลดระยะเวลาร่ายแบบคงที่ 0.5 วินาที\nเมื่ออัพเกรดถึงขั้น 11 ลดระยะเวลาร่ายแบบคงที่ลงอีก 0.2 วินาที\nเมื่ออัพเกรดถึงขั้น 13 ลด Delay หลังใช้สกิล 5%, ลดระยะเวลาร่ายแบบแปรผัน 5%\nประเภท : ^777777Shoes^000000  พลังป้องกัน : ^77777715^000000\nน้ำหนัก : ^77777760^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 516,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 15,
+    "weight": 60,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "hp": [
+        "1500"
+      ],
+      "sp": [
+        "150"
+      ],
+      "hpPercent": [
+        "3---1"
+      ],
+      "spPercent": [
+        "3---1"
+      ],
+      "atkPercent": [
+        "7===5"
+      ],
+      "matkPercent": [
+        "7===5"
+      ],
+      "fct": [
+        "9===0.5",
+        "11===0.2"
+      ],
+      "acd": [
+        "13===5"
+      ],
+      "vct": [
+        "13===5"
+      ]
+    }
+  },
   "22257": {
     "id": 22257,
     "aegisName": null,
@@ -10066,6 +10538,50 @@
     "usableClass": [
       "all"
     ]
+  },
+  "22264": {
+    "id": 22264,
+    "aegisName": null,
+    "name": "Nameless Swordsman's Boots [1]",
+    "unidName": "Nameless Swordsman's Boots",
+    "resName": "Arrogance_P_Shoes",
+    "description": "รองเท้าของนักดาบไร้ชื่อผู้น่าสะพรึง\nแต่ผู้ได้พบกลับไม่มีผู้ใดรอดกลับมาเพื่อบอกกล่าวถึงชื่อเธอ\n\nเพิ่ม Damage ทางกายภาพต่อมอนสเตอร์ประเภท Boss 15%\nทุก ๆ การอัพเกรด 2 ขั้น ATK +15, ASPD +2%, MaxHP/MaxSP +2%\n\nเมื่อใช้ร่วมกับ Boss Egnigem Card หรือ Sealed Boss Ygnizem Card,\nฟื้นฟู HP +5000, SP +50 ทุก ๆ 10 วินาที\nทุก ๆ การอัพเกรด 3 ขั้น STR +20, FLEE +15\nประเภท : ^777777Shoes^000000  พลังป้องกัน : ^77777760^000000\nน้ำหนัก : ^777777120^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 516,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 60,
+    "weight": 120,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "p_class_boss": [
+        "15"
+      ],
+      "atk": [
+        "2---15"
+      ],
+      "aspdPercent": [
+        "2---2"
+      ],
+      "hpPercent": [
+        "2---2"
+      ],
+      "spPercent": [
+        "2---2"
+      ],
+      "str": [
+        "EQUIP[Boss Egnigem Card||Sealed Boss Ygnizem Card]3---20"
+      ],
+      "flee": [
+        "EQUIP[Boss Egnigem Card||Sealed Boss Ygnizem Card]3---15"
+      ]
+    }
   },
   "23475": {
     "id": 23475,
@@ -10353,10 +10869,10 @@
       ],
       "aspd": [
         "7===1",
-        "EQUIP[Blitz Shadow Pendant]REFINE[shadowEarning,shadowPendant==15]===1"
+        "EQUIP[Blitz Shadow Pendant]REFINE[shadowEaring,shadowPendant==15]===1"
       ],
       "atk": [
-        "EQUIP[Blitz Shadow Pendant]REFINE[shadowEarning,shadowPendant==1]---1"
+        "EQUIP[Blitz Shadow Pendant]REFINE[shadowEaring,shadowPendant==1]---1"
       ]
     }
   },
@@ -10503,11 +11019,11 @@
       ],
       "matkPercent": [
         "EQUIP[Acolyte Shadow Pendant]===1",
-        "EQUIP[Acolyte Shadow Pendant]REFINE[shadowEarring,shadowPendant==10]===2"
+        "EQUIP[Acolyte Shadow Pendant]REFINE[shadowEaring,shadowPendant==10]===2"
       ],
       "spPercent": [
         "EQUIP[Acolyte Shadow Pendant]===1",
-        "EQUIP[Acolyte Shadow Pendant]REFINE[shadowEarring,shadowPendant==10]===2"
+        "EQUIP[Acolyte Shadow Pendant]REFINE[shadowEaring,shadowPendant==10]===2"
       ]
     }
   },
@@ -10546,11 +11062,11 @@
       ],
       "matkPercent": [
         "EQUIP[Magician Shadow Pendant]1",
-        "EQUIP[Magician Shadow Pendant]REFINE[shadowEarring,shadowPendant==10]2"
+        "EQUIP[Magician Shadow Pendant]REFINE[shadowEaring,shadowPendant==10]2"
       ],
       "spPercent": [
         "EQUIP[Magician Shadow Pendant]1",
-        "EQUIP[Magician Shadow Pendant]REFINE[shadowEarring,shadowPendant==10]2"
+        "EQUIP[Magician Shadow Pendant]REFINE[shadowEaring,shadowPendant==10]2"
       ]
     }
   },
@@ -10693,6 +11209,33 @@
       ]
     }
   },
+  "24262": {
+    "id": 24262,
+    "aegisName": "S_Assassin_Shoes",
+    "name": "Assassin Shadow Shoes",
+    "unidName": "Shadow Shoes",
+    "resName": "슈즈쉐도우",
+    "description": "รองเท้าศักดิ์สิทธิ์ช่วยปกป้องผู้สวมใส่ สามารถใส่ชิ้นเดียวได้แต่พลังของมันจะลดลง\nเพิ่ม Damage ของสกิล Grimtooth 20%\nทุกการอัพเกรด 1 ขั้น เพิ่ม Damage ของสกิล Grimtooth อีก 5%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shoes^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ :^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 528,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Shoes",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "สกิล Grimtooth": [
+        "20",
+        "1---5"
+      ]
+    }
+  },
   "24263": {
     "id": 24263,
     "aegisName": "S_Rogue_Shoes",
@@ -10811,6 +11354,39 @@
       ],
       "vct__Magnus Exorcismus": [
         "EQUIP[Priest Shadow Shoes]USED[ArchBishop]40"
+      ]
+    }
+  },
+  "24275": {
+    "id": 24275,
+    "aegisName": "S_Assassin_Armor",
+    "name": "Assassin Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우",
+    "description": "เสื้อเกราะศักดิ์สิทธิ์ช่วยปกป้องผู้สวมใส่ สามารถใส่ชิ้นเดียวได้แต่พลังของมันจะลดลง\nลดปริมาณการใช้ SP ของสกิล Sonic Blow 20%\nทุกการอัพเกรด 1 ขั้น ลดปริมาณการใช้ SP ของสกิล Sonic Blow ลงอีก 3%\n\nเมื่อสวมใส่กับ Assassin Shadow Shoes,\nลดปริมาณการใช้ SP ของสกิล Grimtooth 20%\nเพิ่ม Damage ของสกิล Sonic Blow 20%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Armor^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ :^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "spPercent__Sonic Blow": [
+        "20",
+        "1---3"
+      ],
+      "spPercent__Grimtooth": [
+        "EQUIP[Assassin Shadow Shoes]20"
+      ],
+      "Sonic Blow": [
+        "EQUIP[Assassin Shadow Shoes]20"
       ]
     }
   },
@@ -10989,6 +11565,33 @@
       ]
     }
   },
+  "24294": {
+    "id": 24294,
+    "aegisName": "S_Guillotine_Weapon",
+    "name": "Guillotine Cross Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา\nGuillotine Cross เท่านั้นที่สามารถใส่ได้\nลดปริมาณการใช้ SP ของสกิล Dark Illusion 20%\nทุกการอัพเกรด 1 ขั้นลดปริมาณการใช้ SP ของสกิล Dark Illusion อีก 3%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Guillotine Cross^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "Guillotine Cross"
+    ],
+    "script": {
+      "spPercent__Dark Illusion": [
+        "20",
+        "1---3"
+      ]
+    }
+  },
   "24295": {
     "id": 24295,
     "aegisName": "S_Shadowchaser_Weapon",
@@ -11115,6 +11718,51 @@
       ],
       "m_pene_class_normal": [
         "EQUIP[Acolyte Shadow Earring&&Acolyte Shadow Pendant&&Priest Shadow Shoes&&Priest Shadow Armor&&Arch Bishop Shadow Weapon]50"
+      ]
+    }
+  },
+  "24307": {
+    "id": 24307,
+    "aegisName": "S_Guillotine_Shield",
+    "name": "Guillotine Cross Shadow Shield",
+    "unidName": "Shadow Shield",
+    "resName": "쉴드쉐도우",
+    "description": "โล่เล็กที่สามารถสวมใส่ที่แขนได้ สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์การป้องกันของมันจะลดน้อยลง\nGuillotine Cross เท่านั้นที่สามารถใส่ได้\nลด Cooltime ของ Dark claw ลง 10 วินาที\nทุกการอัพเกรด 1 ขั้น ลด Cooltime ของ Dark claw ลงอีก 2 วินาที\n----------------\nเมื่อสวมใส่กับ ^32CD32Guillotine Cross Shadow Weapon^000000, จะได้รับเอฟเฟกต์เพิ่ม\nเพิ่ม Damage ของ Dark Illusion 20%, เมื่อทำการโจมตีทางกายภาพ มีโอกาสที่จะร่าย Dark claw Lv.1\n----------------\nเมื่อสวมใส่ ^32CD32Thief Shadow^000000 2 ชนิด, ^32CD32Assassin Shadow^000000 2 ชนิด, ^32CD32Guillotine Cross Shadow^000000 2 ชนิดทั้งหมด , จะได้รับเอฟเฟกต์ดังนี้\nAll State + 10, MaxHP + 5%, MaxSP + 5%.\nเพิกเฉยต่อพลังป้องกันทางเวทย์และทางกายภาพของศัตรูทั่วไป 50%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shield^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Guillotine Cross^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 527,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Shield",
+    "compositionPos": null,
+    "usableClass": [
+      "Guillotine Cross"
+    ],
+    "script": {
+      "cd__Dark claw": [
+        "10",
+        "1---2"
+      ],
+      "Dark Illusion": [
+        "EQUIP[Guillotine Cross Shadow Weapon]20"
+      ],
+      "allStatus": [
+        "EQUIP[Thief Shadow Earring&&Thief Shadow Pendant&&Assassin Shadow Shoes&&Assassin Shadow Armor&&Guillotine Cross Shadow Weapon]10"
+      ],
+      "hpPercent": [
+        "EQUIP[Thief Shadow Earring&&Thief Shadow Pendant&&Assassin Shadow Shoes&&Assassin Shadow Armor&&Guillotine Cross Shadow Weapon]5"
+      ],
+      "spPercent": [
+        "EQUIP[Thief Shadow Earring&&Thief Shadow Pendant&&Assassin Shadow Shoes&&Assassin Shadow Armor&&Guillotine Cross Shadow Weapon]5"
+      ],
+      "p_pene_class_normal": [
+        "EQUIP[Thief Shadow Earring&&Thief Shadow Pendant&&Assassin Shadow Shoes&&Assassin Shadow Armor&&Guillotine Cross Shadow Weapon]50"
+      ],
+      "m_pene_class_normal": [
+        "EQUIP[Thief Shadow Earring&&Thief Shadow Pendant&&Assassin Shadow Shoes&&Assassin Shadow Armor&&Guillotine Cross Shadow Weapon]50"
       ]
     }
   },
@@ -12229,12 +12877,12 @@
       "m_pene_race_demon": [
         "5",
         "2---1",
-        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]REFINE[shadowWeapon,shadowEarning,shadowPendant==25]===100"
+        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]REFINE[shadowWeapon,shadowEaring,shadowPendant==25]===100"
       ],
       "m_pene_race_angel": [
         "5",
         "2---1",
-        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]REFINE[shadowWeapon,shadowEarning,shadowPendant==25]===100"
+        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]REFINE[shadowWeapon,shadowEaring,shadowPendant==25]===100"
       ],
       "atk": [
         "1---1"
@@ -12269,12 +12917,12 @@
       "m_pene_race_dragon": [
         "5",
         "2---1",
-        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]REFINE[shadowWeapon,shadowEarning,shadowPendant==25]===100"
+        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]REFINE[shadowWeapon,shadowEaring,shadowPendant==25]===100"
       ],
       "m_pene_race_formless": [
         "5",
         "2---1",
-        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]REFINE[shadowWeapon,shadowEarning,shadowPendant==25]===100"
+        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]REFINE[shadowWeapon,shadowEaring,shadowPendant==25]===100"
       ],
       "atk": [
         "1---1"
@@ -12309,12 +12957,12 @@
       "m_pene_race_brute": [
         "5",
         "2---1",
-        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]REFINE[shadowWeapon,shadowEarning,shadowPendant==25]===100"
+        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]REFINE[shadowWeapon,shadowEaring,shadowPendant==25]===100"
       ],
       "m_pene_race_plant": [
         "5",
         "2---1",
-        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]REFINE[shadowWeapon,shadowEarning,shadowPendant==25]===100"
+        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]REFINE[shadowWeapon,shadowEaring,shadowPendant==25]===100"
       ],
       "atk": [
         "1---1"
@@ -12349,12 +12997,12 @@
       "m_pene_race_fish": [
         "5",
         "2---1",
-        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]REFINE[shadowWeapon,shadowEarning,shadowPendant==25]===100"
+        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]REFINE[shadowWeapon,shadowEaring,shadowPendant==25]===100"
       ],
       "m_pene_race_insect": [
         "5",
         "2---1",
-        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]REFINE[shadowWeapon,shadowEarning,shadowPendant==25]===100"
+        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]REFINE[shadowWeapon,shadowEaring,shadowPendant==25]===100"
       ],
       "atk": [
         "1---1"
@@ -12389,12 +13037,12 @@
       "m_pene_race_demihuman": [
         "5",
         "2---1",
-        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]REFINE[shadowWeapon,shadowEarning,shadowPendant==25]===100"
+        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]REFINE[shadowWeapon,shadowEaring,shadowPendant==25]===100"
       ],
       "m_pene_race_undead": [
         "5",
         "2---1",
-        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]REFINE[shadowWeapon,shadowEarning,shadowPendant==25]===100"
+        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]REFINE[shadowWeapon,shadowEaring,shadowPendant==25]===100"
       ],
       "atk": [
         "1---1"
@@ -12426,7 +13074,7 @@
       "p_pene_class_normal": [
         "5",
         "2---1",
-        "EQUIP[Penetration Shadow Armor&&Penetration Shadow Earring&&Penetration Shadow Pendant&&Penetration Shadow Shoes&&Penetration Shadow Shield]REFINE[shadowWeapon,shadowArmor,shadowShield,shadowBoot,shadowEarning,shadowPendant==54]===20"
+        "EQUIP[Penetration Shadow Armor&&Penetration Shadow Earring&&Penetration Shadow Pendant&&Penetration Shadow Shoes&&Penetration Shadow Shield]REFINE[shadowWeapon,shadowArmor,shadowShield,shadowBoot,shadowEaring,shadowPendant==54]===20"
       ]
     },
     "usableClass": [
@@ -12484,12 +13132,12 @@
       "p_pene_race_demihuman": [
         "5",
         "2---1",
-        "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]REFINE[shadowWeapon,shadowEarning,shadowPendant==25]===100"
+        "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]REFINE[shadowWeapon,shadowEaring,shadowPendant==25]===100"
       ],
       "p_pene_race_undead": [
         "5",
         "2---1",
-        "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]REFINE[shadowWeapon,shadowEarning,shadowPendant==25]===100"
+        "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]REFINE[shadowWeapon,shadowEaring,shadowPendant==25]===100"
       ],
       "atk": [
         "1---1",
@@ -12521,12 +13169,12 @@
       "p_pene_race_fish": [
         "5",
         "2---1",
-        "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]REFINE[shadowWeapon,shadowEarning,shadowPendant==25]===100"
+        "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]REFINE[shadowWeapon,shadowEaring,shadowPendant==25]===100"
       ],
       "p_pene_race_insect": [
         "5",
         "2---1",
-        "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]REFINE[shadowWeapon,shadowEarning,shadowPendant==25]===100"
+        "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]REFINE[shadowWeapon,shadowEaring,shadowPendant==25]===100"
       ],
       "atk": [
         "1---1",
@@ -12558,12 +13206,12 @@
       "p_pene_race_brute": [
         "5",
         "2---1",
-        "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]REFINE[shadowWeapon,shadowEarning,shadowPendant==25]===100"
+        "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]REFINE[shadowWeapon,shadowEaring,shadowPendant==25]===100"
       ],
       "p_pene_race_plant": [
         "5",
         "2---1",
-        "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]REFINE[shadowWeapon,shadowEarning,shadowPendant==25]===100"
+        "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]REFINE[shadowWeapon,shadowEaring,shadowPendant==25]===100"
       ],
       "atk": [
         "1---1",
@@ -12595,12 +13243,12 @@
       "p_pene_race_formless": [
         "5",
         "2---1",
-        "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]REFINE[shadowWeapon,shadowEarning,shadowPendant==25]===100"
+        "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]REFINE[shadowWeapon,shadowEaring,shadowPendant==25]===100"
       ],
       "p_pene_race_dragon": [
         "5",
         "2---1",
-        "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]REFINE[shadowWeapon,shadowEarning,shadowPendant==25]===100"
+        "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]REFINE[shadowWeapon,shadowEaring,shadowPendant==25]===100"
       ],
       "atk": [
         "1---1",
@@ -12632,12 +13280,12 @@
       "p_pene_race_demon": [
         "5",
         "2---1",
-        "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]REFINE[shadowWeapon,shadowEarning,shadowPendant==25]===100"
+        "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]REFINE[shadowWeapon,shadowEaring,shadowPendant==25]===100"
       ],
       "p_pene_race_angel": [
         "5",
         "2---1",
-        "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]REFINE[shadowWeapon,shadowEarning,shadowPendant==25]===100"
+        "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]REFINE[shadowWeapon,shadowEaring,shadowPendant==25]===100"
       ],
       "atk": [
         "1---1",
@@ -12767,7 +13415,7 @@
         "9===4"
       ],
       "criDmg": [
-        "EQUIP[Shooting Shadow Pendant&&Shooting Shadow Earring]REFINE[shadowWeapon,shadowEarning,shadowPendant==2]---1"
+        "EQUIP[Shooting Shadow Pendant&&Shooting Shadow Earring]REFINE[shadowWeapon,shadowEaring,shadowPendant==2]---1"
       ],
       "p_pene_race_all": [
         "EQUIP[Ranger Shadow Shield]===40",
@@ -12854,7 +13502,7 @@
         "3",
         "7===3",
         "9===4",
-        "EQUIP[Adora Shadow Pendant&&Adora Shadow Earring]REFINE[shadowWeapon,shadowEarning,shadowPendant==2]---1"
+        "EQUIP[Adora Shadow Pendant&&Adora Shadow Earring]REFINE[shadowWeapon,shadowEaring,shadowPendant==2]---1"
       ],
       "m_race_all": [
         "EQUIP[Arch Bishop Shadow Shield]40",
@@ -12941,7 +13589,7 @@
         "3",
         "7===3",
         "9===4",
-        "EQUIP[Magnus Shadow Pendant&&Magnus Shadow Earring]REFINE[shadowWeapon,shadowEarning,shadowPendant==1]---1"
+        "EQUIP[Magnus Shadow Pendant&&Magnus Shadow Earring]REFINE[shadowWeapon,shadowEaring,shadowPendant==1]---1"
       ],
       "m_race_all": [
         "EQUIP[Arch Bishop Shadow Shield]40",
@@ -13212,6 +13860,95 @@
     "script": {
       "spCostPercent__Rolling Cutter": [
         "2",
+        "2---1"
+      ]
+    }
+  },
+  "24545": {
+    "id": 24545,
+    "aegisName": "S_Ripper_Weapon",
+    "name": "Ripper Slasher Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา\nเพิ่ม Damage ทางกายภาพระยะไกล 3%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางกายภาพระยะไกลขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพระยะไกลขึ้นอีก 4%\nเมื่อสวมใส่ Ripper Slasher Shadow Weapon/Pendant/Earring ร่วมกัน,\nเพิ่ม Damage สกิล Cross Ripper Slasher % เท่ากับครึ่งหนึ่งของค่าอัพเกรดรวมกัน\nเมื่อสวมใส่ร่วมกับ Guillotine Cross Shadow Shield,\nเพิกเฉยต่อพลังป้องกันทางกายภาพของทุกเผ่ายกเว้น Player 40% และเพิกเฉยต่อพลังป้องกันทางกายภาพเพิ่มอีกตามค่าอัพเกรดรวมกันของ Ripper Slasher Shadow Weapon และ Guillotine Cross Shadow Shield\nประเภท : ^777777Shadow^000000 \nตำแหน่ง : ^777777Weapon^000000 น้ำหนัก : ^7777770^000000 \nเลเวลที่ต้องการ : ^77777799^000000 \nอาชีพที่ใส่ได้ : ^777777Guillotine Cross^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "Guillotine Cross"
+    ],
+    "script": {
+      "range": [
+        "3",
+        "7===3",
+        "9===4"
+      ],
+      "Cross Ripper Slasher": [
+        "EQUIP[Ripper Slasher Shadow Weapon&&Ripper Slasher Shadow Pendant&&Ripper Slasher Shadow Earring]REFINE[shadowWeapon,shadowPendant,shadowEaring==2]---1"
+      ],
+      "p_pene_race_all": [
+        "EQUIP[Guillotine Cross Shadow Shield]40",
+        "EQUIP[Guillotine Cross Shadow Shield]REFINE[shadowWeapon,shadowShield==1]---1"
+      ]
+    }
+  },
+  "24546": {
+    "id": 24546,
+    "aegisName": "S_Ripper_Pendant",
+    "name": "Ripper Slasher Shadow Pendant",
+    "unidName": "Shadow Pendant",
+    "resName": "펜던트쉐도우",
+    "description": "สร้อยคอศักดิ์สิทธิ์ที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา\nเพิ่ม Damage สกิล Cross Ripper Slasher 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage สกิล Cross Ripper Slasher ขึ้นอีก 2%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Pendant ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Guillotine Cross^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 530,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "AccessoryLeft",
+    "compositionPos": null,
+    "usableClass": [
+      "Guillotine Cross"
+    ],
+    "script": {
+      "Cross Ripper Slasher": [
+        "5",
+        "2---2"
+      ]
+    }
+  },
+  "24547": {
+    "id": 24547,
+    "aegisName": "S_Ripper_Earing",
+    "name": "Ripper Slasher Shadow Earring",
+    "unidName": "Shadow Earring",
+    "resName": "이어링쉐도우",
+    "description": "ต่างหูมงคลที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาดขึ้นอีก 1%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Earring ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Guillotine Cross^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 529,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "AccessoryRight",
+    "compositionPos": null,
+    "usableClass": [
+      "Guillotine Cross"
+    ],
+    "script": {
+      "p_size_all": [
+        "5",
         "2---1"
       ]
     }
@@ -13787,11 +14524,11 @@
         "9===7"
       ],
       "Fire Dance": [
-        "EQUIP[Fire Dance Shadow Earring&&Fire Dance Shadow Pendant&&Fire Dance Shadow Shoes]REFINE[shadowWeapon,shadowEarning,shadowPendant==2]---1"
+        "EQUIP[Fire Dance Shadow Earring&&Fire Dance Shadow Pendant&&Fire Dance Shadow Shoes]REFINE[shadowWeapon,shadowEaring,shadowPendant==2]---1"
       ],
       "p_pene_race_all": [
         "EQUIP[Rebellion Shadow Armor]===40",
-        "EQUIP[Rebellion Shadow Armor]REFINE[shadowWeapon,shadowEarring==1]---1"
+        "EQUIP[Rebellion Shadow Armor]REFINE[shadowWeapon,shadowEaring==1]---1"
       ]
     }
   },
@@ -13880,14 +14617,14 @@
         "9===15"
       ],
       "Shatter Storm": [
-        "EQUIP[Shatter Buster Shadow Pendant&&Shatter Buster Shadow Shoes]REFINE[shadowWeapon,shadowEarning,shadowPendant==2]---1"
+        "EQUIP[Shatter Buster Shadow Pendant&&Shatter Buster Shadow Shoes]REFINE[shadowWeapon,shadowEaring,shadowPendant==2]---1"
       ],
       "Vanishing Buster": [
-        "EQUIP[Shatter Buster Shadow Pendant&&Shatter Buster Shadow Shoes]REFINE[shadowWeapon,shadowEarning,shadowPendant==2]---1"
+        "EQUIP[Shatter Buster Shadow Pendant&&Shatter Buster Shadow Shoes]REFINE[shadowWeapon,shadowEaring,shadowPendant==2]---1"
       ],
       "p_pene_race_all": [
         "EQUIP[Rebellion Shadow Armor]===40",
-        "EQUIP[Rebellion Shadow Armor]REFINE[shadowWeapon,shadowEarring==1]---1"
+        "EQUIP[Rebellion Shadow Armor]REFINE[shadowWeapon,shadowEaring==1]---1"
       ]
     }
   },
@@ -14204,6 +14941,101 @@
       ],
       "cd__Crimson Rock": [
         "11===1"
+      ]
+    }
+  },
+  "26165": {
+    "id": 26165,
+    "aegisName": "R_Cleric_Staff",
+    "name": "Royal Cleric Staff [2]",
+    "unidName": "Rod",
+    "resName": "R_Cleric_Staff",
+    "description": "ไม้คทาสำหรับตกแต่งที่ซิสเตอร์และบาทหลวงแห่ง Glast Heim ใช้\nแม้จะเป็นอาวุธธรรมดา แต่ก็มีพลังที่แข็งแกร่งซ่อนอยู่เนื่องจากได้รับผลกระทบจาก Himmelmez\n^ffffff_^000000 \nไม่สามารถทำลายได้, MATK +170, MATK +5%\nทุก ๆ การอัพเกรด 1 ขั้น MATK +4\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Adoramus 20%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage ทางเวทมนตร์ต่อมอนสเตอร์ประเภท Undead, Angel 20%\n^ffffff_^000000 \nเมื่อสวมใส่ร่วมกับ ^32CD32King Schmidt's Suit และ King Schmidt's Manteau^000000, \nMATK +30, เมื่อโจมตีทางเวทมนตร์ มีโอกาสที่จะเพิ่ม Damage ทางเวทมนตร์ธาตุ Holy 10% เป็นเวลา 10 วินาที\nเมื่อค่าอัพเกรด ^32CD32King Schmidt's Suit, King Schmidt's Manteau, Royal Cleric Staff^000000 รวมกันตั้งแต่ 30 ขึ้นไป, เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูธาตุ Holy, Undead 20%\n^ffffff_^000000 \nประเภท : ^777777One-Handed Staff^000000 พลังโจมตี : ^777777100^000000\nน้ำหนัก : ^777777100^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Arch Bishop^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 265,
+    "itemLevel": 4,
+    "attack": 100,
+    "defense": null,
+    "weight": 100,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Arch Bishop"
+    ],
+    "script": {
+      "matk": [
+        "170",
+        "1---4",
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]30"
+      ],
+      "matkPercent": [
+        "5"
+      ],
+      "Adoramus": [
+        "9===20"
+      ],
+      "m_race_undead": [
+        "11===20"
+      ],
+      "m_race_angel": [
+        "11===20"
+      ],
+      "p_element_holy": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]REFINE[weapon,armor,garment==30]===20"
+      ],
+      "p_element_undead": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]REFINE[weapon,armor,garment==30]===20"
+      ]
+    }
+  },
+  "26166": {
+    "id": 26166,
+    "aegisName": "R_Magician_Wand",
+    "name": "Royal Magician Wand [2]",
+    "unidName": "Rod",
+    "resName": "R_Magician_Wand",
+    "description": "ไม้กายสิทธิ์ที่นักเวทย์แห่ง Glast Heim ใช้\nแม้จะเป็นอาวุธธรรมดา แต่ก็มีพลังที่แข็งแกร่งซ่อนอยู่เนื่องจากได้รับผลกระทบจาก Himmelmez\n^ffffff_^000000 \nไม่สามารถทำลายได้, MATK +180, เพิ่ม Damage ทางเวทมนตร์ธาตุ Fire 5%\nทุก ๆ การอัพเกรด 1 ขั้น MATK +4\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Hell Inferno, Crimson Rock 20%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage ทางเวทมนตร์ต่อมอนสเตอร์ประเภท Undead, Angel 20%\n^ffffff_^000000 \nเมื่อสวมใส่ร่วมกับ ^32CD32King Schmidt's Suit และ King Schmidt's Manteau^000000, \nMATK +30, เมื่อโจมตีทางเวทมนตร์ มีโอกาสที่จะเพิ่ม Damage ทางเวทมนตร์ธาตุ Fire, Shadow 10% เป็นเวลา 10 วินาที\nเมื่อค่าอัพเกรด ^32CD32King Schmidt's Suit, King Schmidt's Manteau, Royal Magician Wand^000000 รวมกันตั้งแต่ 30 ขึ้นไป, เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูธาตุ Holy, Undead 20%\n^ffffff_^000000 \nประเภท : ^777777One-Handed Staff^000000 พลังโจมตี : ^77777780^000000\nน้ำหนัก : ^77777780^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Warlock^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 265,
+    "itemLevel": 4,
+    "attack": 80,
+    "defense": null,
+    "weight": 80,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Warlock"
+    ],
+    "script": {
+      "matk": [
+        "180",
+        "1---4",
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]30"
+      ],
+      "m_my_element_fire": [
+        "5"
+      ],
+      "Hell Inferno": [
+        "9===20"
+      ],
+      "Crimson Rock": [
+        "9===20"
+      ],
+      "m_race_undead": [
+        "11===20"
+      ],
+      "m_race_angel": [
+        "11===20"
+      ],
+      "p_element_holy": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]REFINE[weapon,armor,garment==30]===20"
+      ],
+      "p_element_undead": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]REFINE[weapon,armor,garment==30]===20"
       ]
     }
   },
@@ -15096,6 +15928,36 @@
       ]
     }
   },
+  "27326": {
+    "id": 27326,
+    "aegisName": "MinionOfMorocc_Card",
+    "name": "Morocc Necromancer Card",
+    "unidName": "Morocc Necromancer Card",
+    "resName": "이름없는카드",
+    "description": "ATK +100, ASPD +25%\nMHP -20%\nเมื่อใช้ร่วมกับ Morroc of Despair Card, MHP +50%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Armor^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 16,
+    "script": {
+      "atk": [
+        "100"
+      ],
+      "aspdPercent": [
+        "25"
+      ],
+      "hpPercent": [
+        "-20",
+        "EQUIP[Morroc of Despair Card]50"
+      ]
+    }
+  },
   "27328": {
     "id": 27328,
     "aegisName": "LivingDeath_Card",
@@ -15276,6 +16138,67 @@
       ]
     }
   },
+  "27381": {
+    "id": 27381,
+    "aegisName": "C_Himel_Card",
+    "name": "Phantom of Himmelmez Card",
+    "unidName": "Phantom of Himmelmez Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่ม Damage ทางเวทมนตร์ธาตุ Holy, Neutral 100%\nลดความต้านทานต่อการโจมตีทุกธาตุ 30%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Garment^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 4,
+    "script": {
+      "m_my_element_holy": [
+        "100"
+      ],
+      "m_my_element_neutral": [
+        "100"
+      ],
+      "ลดความต้านทานต่อการโจมตีทุกธาตุ": [
+        "30"
+      ]
+    }
+  },
+  "27382": {
+    "id": 27382,
+    "aegisName": "C_CorruptionRoot_Card",
+    "name": "Fallen Root Card",
+    "unidName": "Fallen Root Card",
+    "resName": "이름없는카드",
+    "description": "ATK +30, MATK +30\nเมื่อใช้ร่วมกับ Realized Corruption Root Card เพิ่ม Damage ทางเวทมนตร์ธาตุ Fire, Neutral 30%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Garment^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 4,
+    "script": {
+      "atk": [
+        "30"
+      ],
+      "matk": [
+        "30"
+      ],
+      "m_my_element_fire": [
+        "EQUIP[Realized Corruption Root Card]30"
+      ],
+      "m_my_element_neutral": [
+        "EQUIP[Realized Corruption Root Card]30"
+      ]
+    }
+  },
   "27383": {
     "id": 27383,
     "aegisName": "C_Amdarais_Card",
@@ -15307,6 +16230,112 @@
       "matkPercent": [
         "EQUIP[Amdarais Card]5",
         "EQUIP[Realized Amdarais Card]10"
+      ]
+    }
+  },
+  "27384": {
+    "id": 27384,
+    "aegisName": "C_White_Knight_Card",
+    "name": "Mutating White Knight Card",
+    "unidName": "Mutating White Knight Card",
+    "resName": "이름없는카드",
+    "description": "MATK +15\nเพิ่ม Damage ทางเวทมนตร์ต่อศัตรูขนาดกลาง, ใหญ่ 20%\nเมื่อใช้ร่วมกับ Mutating Khalitzburg Card ลด Damage ทางกายภาพ/เวทมนตร์ที่ได้รับจากศัตรูขนาดกลาง, ใหญ่ลงอีก 5%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "script": {
+      "matk": [
+        "15"
+      ],
+      "m_size_m": [
+        "20"
+      ],
+      "m_size_l": [
+        "20"
+      ]
+    }
+  },
+  "27385": {
+    "id": 27385,
+    "aegisName": "C_Khaliz_Knight_Card",
+    "name": "Mutating Khalitzburg Card",
+    "unidName": "Mutating Khalitzburg Card",
+    "resName": "이름없는카드",
+    "description": "MDEF +10 \nลด Damage ทางกายภาพ/เวทมนตร์ที่ได้รับจากศัตรูขนาดกลาง, ใหญ่ 25%\nเมื่อใช้ร่วมกับ Mutating White Knight Card ลด Damage ทางกายภาพ/เวทมนตร์ที่ได้รับจากศัตรูขนาดกลาง, ใหญ่ลงอีก 5%\nเพิ่ม Damage ทางเวทมนตร์ต่อศัตรูขนาดกลาง, ใหญ่ขึ้นอีก 5%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Shield^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 32,
+    "script": {
+      "mdef": [
+        "10"
+      ],
+      "m_size_m": [
+        "EQUIP[Mutating White Knight Card]5"
+      ],
+      "m_size_l": [
+        "EQUIP[Mutating White Knight Card]5"
+      ]
+    }
+  },
+  "27386": {
+    "id": 27386,
+    "aegisName": "C_Raydric_Card",
+    "name": "Cursed Raydric Card",
+    "unidName": "Cursed Raydric Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่ม Damage ทางกายภาพต่อศัตรูประเภท Undead 5%\nเมื่อใช้ร่วมกับ Cursed Raydric Archer Card เพิ่ม Damage ทางกายภาพต่อศัตรูประเภท Undead ขึ้นอีก 5%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Accessory (Left)^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 128,
+    "script": {
+      "p_race_undead": [
+        "5",
+        "EQUIP[Cursed Raydric Archer Card]5"
+      ]
+    }
+  },
+  "27387": {
+    "id": 27387,
+    "aegisName": "C_Raydric_Archer_Card",
+    "name": "Cursed Raydric Archer Card",
+    "unidName": "Cursed Raydric Archer Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่ม Damage ทางกายภาพต่อศัตรูประเภท Demon 5%\nเมื่อใช้ร่วมกับ Cursed Raydric Card เพิ่ม Damage ทางกายภาพต่อศัตรูประเภท Demon ขึ้นอีก 5%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Accessory (Right)^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 8,
+    "script": {
+      "p_race_demon": [
+        "5",
+        "EQUIP[Cursed Raydric Card]5"
       ]
     }
   },
@@ -15560,6 +16589,54 @@
       ],
       "Cross Ripper Slasher": [
         "11===20"
+      ]
+    }
+  },
+  "28046": {
+    "id": 28046,
+    "aegisName": "R_Katar",
+    "name": "Royal Katar [2]",
+    "unidName": "Katar",
+    "resName": "R_Katar",
+    "description": "Katar ที่ดูสง่างาม ถูกใช้เป็นของตกแต่งภายใน Glast Heim\nแม้จะเป็นอาวุธธรรมดา แต่ก็มีพลังที่แข็งแกร่งซ่อนอยู่เนื่องจากได้รับผลกระทบจาก Himmelmez\n^ffffff_^000000 \nATK +5%\nทุก ๆ การอัพเกรด 1 ขั้น ATK +5\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Rolling Cutter, Cross Ripper Slasher 20%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage ทางกายภาพต่อมอนสเตอร์ประเภท Undead, Angel 20%\n^ffffff_^000000 \nเมื่อสวมใส่ร่วมกับ ^32CD32King Schmidt's Suit และ King Schmidt's Manteau^000000, \nATK +30, เมื่อโจมตีทางกายภาพ มีโอกาสที่จะเพิ่ม Damage ทางกายภาพระยะไกล 10% เป็นเวลา 10 วินาที\nเมื่อค่าอัพเกรด ^32CD32King Schmidt's Suit, King Schmidt's Manteau, Guardian Knight Claymore^000000 รวมกันตั้งแต่ 30 ขึ้นไป เพิ่ม Damage ทางกายภาพต่อศัตรูธาตุ Holy, Undead 20%\n^ffffff_^000000 \nประเภท : ^777777Katar^000000 พลังโจมตี : ^777777200^000000\nน้ำหนัก : ^777777150^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Guillotine Cross^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 272,
+    "itemLevel": 4,
+    "attack": 200,
+    "defense": null,
+    "weight": 150,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Guillotine Cross"
+    ],
+    "script": {
+      "atkPercent": [
+        "5"
+      ],
+      "atk": [
+        "1---5",
+        "EQUIP[ing Schmidt's Suit&&King Schmidt's Manteau]30"
+      ],
+      "Rolling Cutter": [
+        "9===20"
+      ],
+      "Cross Ripper Slasher": [
+        "9===20"
+      ],
+      "p_race_undead": [
+        "11===20"
+      ],
+      "p_race_angel": [
+        "11===20"
+      ],
+      "p_element_holy": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]REFINE[weapon,armor,garment==30]===20"
+      ],
+      "p_element_undead": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]REFINE[weapon,armor,garment==30]===20"
       ]
     }
   },
@@ -16173,6 +17250,58 @@
       ]
     }
   },
+  "28636": {
+    "id": 28636,
+    "aegisName": "R_Sage_Book",
+    "name": "Royal Sage Book [2]",
+    "unidName": "Book",
+    "resName": "R_Sage_Book",
+    "description": "หนังสือแห่งมนตราที่นักวิชาการแห่ง Glast Heim ใช้\nแม้จะเป็นอาวุธธรรมดา แต่ก็มีพลังที่แข็งแกร่งซ่อนอยู่เนื่องจากได้รับผลกระทบจาก Himmelmez\n^ffffff_^000000 \nไม่สามารถทำลายได้, MATK +170, เพิ่ม Damage ทางเวทมนตร์ธาตุ Wind, Water 5%\nทุก ๆ การอัพเกรด 1 ขั้น MATK +4\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Varetyr Spear, Diamond Dust 20%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage ทางเวทมนตร์ต่อมอนสเตอร์ประเภท Undead, Angel 20%\n^ffffff_^000000 \nเมื่อสวมใส่ร่วมกับ ^32CD32King Schmidt's Suit และ King Schmidt's Manteau^000000, \nMATK +30, เมื่อโจมตีทางเวทมนตร์ มีโอกาสที่จะเพิ่ม Damage ทางเวทมนตร์ธาตุ Water, Wind 10% เป็นเวลา 10 วินาที\nเมื่อค่าอัพเกรด ^32CD32King Schmidt's Suit, King Schmidt's Manteau, Royal Sage Book^000000 รวมกันตั้งแต่ 30 ขึ้นไป, เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูธาตุ Holy, Undead 20%\n^ffffff_^000000 \nประเภท : ^777777Book^000000 พลังโจมตี : ^77777790^000000\nน้ำหนัก : ^777777100^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Sorcerer^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 271,
+    "itemLevel": 4,
+    "attack": 90,
+    "defense": null,
+    "weight": 100,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Sorcerer"
+    ],
+    "script": {
+      "matk": [
+        "170",
+        "1---4",
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]30"
+      ],
+      "m_my_element_wind": [
+        "5"
+      ],
+      "m_my_element_water": [
+        "5"
+      ],
+      "Varetyr Spear": [
+        "9===20"
+      ],
+      "Diamond Dust": [
+        "9===20"
+      ],
+      "m_race_undead": [
+        "11===20"
+      ],
+      "m_race_angel": [
+        "11===20"
+      ],
+      "p_element_holy": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]REFINE[weapon,armor,garment==30]===20"
+      ],
+      "p_element_undead": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]REFINE[weapon,armor,garment==30]===20"
+      ]
+    }
+  },
   "28767": {
     "id": 28767,
     "aegisName": "Jack_The_Knife",
@@ -16327,6 +17456,47 @@
       ],
       "p_element_holy": [
         "EQUIP[Dark Cannon Ball]10"
+      ]
+    }
+  },
+  "28984": {
+    "id": 28984,
+    "aegisName": null,
+    "name": "Forbidden Grimoire [1]",
+    "unidName": "Forbidden Grimoire",
+    "resName": "금기의마도서",
+    "description": "คัมภีร์ต้องห้ามบันทึกศาสตร์ที่ไม่สมบูรณ์ ผู้ไม่รู้จริงมิควรศึกษามัน\n\nASPD +10%\nทุก ๆ การอัพเกรด 1 ขั้น MaxHP +100\nทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage ทางเวทมนตร์ธาตุ Water, Earth 4%\n\nเมื่ออัพเกรดตั้งแต่ 9 ขึ้นไป, \nDEX, INT +10\n\nเมื่ออัพเกรดตั้งแต่ 11 ขึ้นไป,\nเมื่อโจมตีทางเวทมนตร์ มีโอกาส 4% ที่จะลด Cooldown สกิล Diamond Dust และ Earth Grave 4.5 วินาที เป็นเวลา 10 วินาที\nและยังเพิ่ม INT +150 เป็นเวลา 10 วินาที แต่จะสูญเสีย HP และ SP 100 หน่วยต่อวินาที\nประเภท : ^777777Shield^000000  พลังป้องกัน : ^777777100^000000\nน้ำหนัก : ^77777750^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Sorcerer^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 514,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 100,
+    "weight": 50,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Sorcerer"
+    ],
+    "script": {
+      "aspdPercent": [
+        "10"
+      ],
+      "hp": [
+        "1---100"
+      ],
+      "m_my_element_water": [
+        "3---4"
+      ],
+      "m_my_element_earth": [
+        "3---4"
+      ],
+      "int": [
+        "9===10"
+      ],
+      "dex": [
+        "9===10"
       ]
     }
   },
@@ -19897,6 +21067,54 @@
       ]
     }
   },
+  "32304": {
+    "id": 32304,
+    "aegisName": "R_Revolver",
+    "name": "Royal Revolver [2]",
+    "unidName": "Pistol",
+    "resName": "로얄리볼버",
+    "description": "ปืนที่ถูกลักลอบนำเข้ามายังปราสาท Glast Heim\nแม้จะเป็นอาวุธธรรมดา แต่ก็มีพลังที่แข็งแกร่งซ่อนอยู่เนื่องจากได้รับผลกระทบจาก Himmelmez\n^ffffff_^000000 \nเพิ่ม Damage ทางกายภาพระยะไกล 15%\nทุก ๆ การอัพเกรด 1 ขั้น ATK +4\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Fire Dance 20%\nเมื่ออัพเกรดถึงขั้น 11 ลด Cooldown สกิล Hot Barrel 5 วินาที, เพิ่ม Damage ทางกายภาพต่อมอนสเตอร์ประเภท Undead, Angel 20%\n^ffffff_^000000 \nเมื่อสวมใส่ร่วมกับ ^32CD32King Schmidt's Suit และ King Schmidt's Manteau^000000, \nATK +30, เมื่อโจมตีทางกายภาพ มีโอกาสที่จะเพิ่ม Damage ทางกายภาพระยะไกล 10% เป็นเวลา 10 วินาที\nเมื่อค่าอัพเกรด ^32CD32King Schmidt's Suit, King Schmidt's Manteau, Royal Revolver^000000 รวมกันตั้งแต่ 30 ขึ้นไป,\nเพิ่ม Damage ทางกายภาพต่อศัตรูธาตุ Holy, Undead 20%\n^ffffff_^000000 \nประเภท : ^777777Pistol^000000 พลังโจมตี : ^777777150^000000\nน้ำหนัก : ^77777770^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Rebellion^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 273,
+    "itemLevel": 4,
+    "attack": 150,
+    "defense": null,
+    "weight": 70,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Rebellion"
+    ],
+    "script": {
+      "range": [
+        "15"
+      ],
+      "atk": [
+        "1---4",
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]30"
+      ],
+      "Fire Dance": [
+        "9===20"
+      ],
+      "cd__Hot Barrel": [
+        "11===5"
+      ],
+      "p_race_undead": [
+        "11===20"
+      ],
+      "p_race_angel": [
+        "11===20"
+      ],
+      "p_element_holy": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]REFINE[weapon,armor,garment==30]===20"
+      ],
+      "p_element_undead": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]REFINE[weapon,armor,garment==30]===20"
+      ]
+    }
+  },
   "300291": {
     "id": 300291,
     "aegisName": "1st_Anniver_Card",
@@ -20276,6 +21494,38 @@
       ]
     }
   },
+  "400002": {
+    "id": 400002,
+    "aegisName": "Victory_Wing_Ear_",
+    "name": "Victorious Wing Ears [1]",
+    "unidName": "Ribbon",
+    "resName": "승리의귀장식",
+    "description": "เครื่องประดับหูที่กล่าวขานกันว่ามอบให้แก่ผู้ชนะเท่านั้น\nเมื่อสวมใส่แล้ว แสดงถึงความสง่างามออกมา\nATK +5, MATK +5\nลด Delay หลังใช้สกิล 4%\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^7777770^000000\nตำแหน่ง : ^777777Middle ^000000น้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 1,
+    "location": "Middle",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atk": [
+        "5"
+      ],
+      "matk": [
+        "5"
+      ],
+      "acd": [
+        "4"
+      ]
+    }
+  },
   "400021": {
     "id": 400021,
     "aegisName": "Clock_Casket_RD",
@@ -20453,6 +21703,119 @@
       ],
       "Wind Blade": [
         "EQUIP[Kuroiro-OS]REFINE[weapon==2]---3"
+      ]
+    }
+  },
+  "400097": {
+    "id": 400097,
+    "aegisName": "Egirnion_Helm",
+    "name": "Aegirnian Helm [1]",
+    "unidName": "Hat",
+    "resName": "에길헬름",
+    "description": "หมวกเหล็กที่ถูกทำขึ้นมาใหม่โดยใช้หมวกเหล็กของ Aegir เป็นต้นแบบ   \nไม่สามารถทำลายได้  \nATK + 7%, MATK + 7%\nเมื่ออัพเกรดถึงขั้น 9, ATK + 40, MATK + 40  \nเมื่อสวมใส่ร่วมกับ Aegirnian Armor, Aegirnian Manteau, Aegirnian Shoes, ATK + 5%, MATK + 5%  \nเมื่อกำจัดศัตรูประเภท Fish,Demi-Human ได้ เพิ่มค่าประสบการณ์ที่ได้รับ 20%,  \nDamage ทางกายภาพ/เวทมนตร์ที่ทำต่อมอนสเตอร์ประเภท Fish, Demi-Human เพิ่มขึ้น 50%,  \nความต้านทานการโจมตีธาตุ Water, Wind เพิ่มขึ้น 25%  \nประเภท : ^777777Helm^000000 พลังป้องกัน : ^77777710^000000  \nตำแหน่ง : ^777777Upper^000000 น้ำหนัก : ^77777780^000000  \nเลเวลที่ต้องการ : ^777777140^000000  \nอาชีพที่ใส่ได้ :^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 10,
+    "weight": 80,
+    "requiredLevel": 140,
+    "location": "Upper",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atkPercent": [
+        "7",
+        "EQUIP[Aegirnian Armor&&Aegirnian Manteau&&Aegirnian Shoes]5"
+      ],
+      "matkPercent": [
+        "7",
+        "EQUIP[Aegirnian Armor&&Aegirnian Manteau&&Aegirnian Shoes]5"
+      ],
+      "atk": [
+        "9===40"
+      ],
+      "matk": [
+        "9===40"
+      ],
+      "exp__fish": [
+        "EQUIP[Aegirnian Armor&&Aegirnian Manteau&&Aegirnian Shoes]20"
+      ],
+      "exp__demihuman": [
+        "EQUIP[Aegirnian Armor&&Aegirnian Manteau&&Aegirnian Shoes]20"
+      ],
+      "p_race_fish": [
+        "EQUIP[Aegirnian Armor&&Aegirnian Manteau&&Aegirnian Shoes]50"
+      ],
+      "p_race_demihuman": [
+        "EQUIP[Aegirnian Armor&&Aegirnian Manteau&&Aegirnian Shoes]50"
+      ],
+      "m_race_fish": [
+        "EQUIP[Aegirnian Armor&&Aegirnian Manteau&&Aegirnian Shoes]50"
+      ],
+      "m_race_demihuman": [
+        "EQUIP[Aegirnian Armor&&Aegirnian Manteau&&Aegirnian Shoes]50"
+      ],
+      "ความต้านทานการโจมตีธาตุ Water, Wind": [
+        "25"
+      ]
+    }
+  },
+  "410017": {
+    "id": 410017,
+    "aegisName": "Battle_Processor_",
+    "name": "Battle Processor [1]",
+    "unidName": "Hat",
+    "resName": "가디언프로세서",
+    "description": "เครื่องประมวลผลพิเศษที่ช่วยในการเพิ่มประสิทธิภาพด้านการต่อสู้\nATK +10, MATK +10.\n\nสามารถใช้ Battle Processor Accelerator เพื่อเพิ่มความสามารถไอเท็มชิ้นนี้ได้\nซื้อได้ที่ ^ffffff^4D4DFF[Cat Hand Shop Assistant]^000000^000000 ด้วย Zeny หรือ Silvervine \nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^7777770^000000\nตำแหน่ง : ^777777Middle ^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Middle",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atk": [
+        "10"
+      ],
+      "matk": [
+        "10"
+      ]
+    }
+  },
+  "410080": {
+    "id": 410080,
+    "aegisName": "Deepblue_Sunglasses_",
+    "name": "Deep Blue Sunglasses [1]",
+    "unidName": "Glasses",
+    "resName": "퇴마의글래스",
+    "description": "แว่นตาดำสุดเท่ที่ถูกเคลือบด้วยสีน้ำเงินเข้ม\nโดดเด่นด้านการป้องกันแสง UV\n \nลดระยะเวลาร่ายแบบแปรผัน 5%\n \nสามารถใช้ Lens Craft Stone เพื่อเพิ่มความสามารถไอเท็มชิ้นนี้ได้\nซื้อได้ที่ ^ffffff^4D4DFF[Cat Hand Shop Assistant]^000000^000000 ด้วย Zeny หรือ Silvervine \nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^7777770^000000\nตำแหน่ง : ^777777Middle^000000 น้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 1,
+    "location": "Middle",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "vct": [
+        "5"
       ]
     }
   },
@@ -20889,6 +22252,37 @@
       ]
     }
   },
+  "450164": {
+    "id": 450164,
+    "aegisName": "Egirnion_Armor",
+    "name": "Aegirnian Armor [1]",
+    "unidName": "Wooden Mail",
+    "resName": "에길아머",
+    "description": "ชุดเกราะที่ถูกทำขึ้นมาใหม่โดยใช้ชุดเกราะของ Aegir เป็นต้นแบบ  \nMHP + 10%, MSP + 5%\nไม่สามารถทำลายได้  \nเมื่ออัพเกรดถึงขั้น 9, MHP เพิ่มอีก 5%, MSP เพิ่มอีก 2%  \nเมื่อสวมใส่ร่วมกับ Aegirnian Helm, ลด Damage ทางกายภาพ/เวทมนตร์ที่ได้รับจากมอนสเตอร์ประเภท Fish, Demi-Human 10%  \nทุก ๆ การอัพเกรด Armor 1 ขั้น, ลด Damage ทางกายภาพ/เวทมนตร์ที่ได้รับจากมอนสเตอร์ประเภท Fish, Demi-Human เพิ่มอีก 1%  \nประเภท : ^777777Armor^000000  พลังป้องกัน : ^77777780^000000  \nน้ำหนัก : ^777777100^000000  \nเลเวลที่ต้องการ : ^777777140^000000  \nอาชีพที่ใส่ได้ :^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 80,
+    "weight": 100,
+    "requiredLevel": 140,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "hpPercent": [
+        "10",
+        "9===5"
+      ],
+      "spPercent": [
+        "5",
+        "9===2"
+      ]
+    }
+  },
   "450175": {
     "id": 450175,
     "aegisName": "Temporal_Armor_TW",
@@ -20952,6 +22346,55 @@
       "p_pene_race_demon": [
         "9===30",
         "EQUIP[Exotic Temporal Boots]REFINE[armor,boot==22]===20"
+      ]
+    }
+  },
+  "450176": {
+    "id": 450176,
+    "aegisName": "Supplement_Part_Wing",
+    "name": "Improved Powered Wing",
+    "unidName": "Hood",
+    "resName": "Supplement_Part_Wing",
+    "description": "ปีกจักรกลที่สามารถขยายพลังกาย และเพิ่มทักษะการควบคุมของหุ่นยนต์จนถึงขีดสุด\n\nMaxHP +3%\nเพิ่มความต้านทานต่อการโจมตีธาตุ Fire, Wind 10%\n\nเมื่ออัพเกรดถึงขั้น 9, \nเพิ่มความต้านทานต่อการโจมตีธาตุ Fire, Wind 20%\nเพิ่ม Damage ทางกายภาพต่อมอนสเตอร์ประเภท Boss 10%\n\nเมื่ออัพเกรดถึงขั้น 11, \nเพิ่มความต้านทานต่อการโจมตีธาตุ Fire, Wind 20%\nเพิ่ม Damage ทางกายภาพต่อมอนสเตอร์ประเภท Boss 10%\n\nเมื่อเรียนรู้สกิล Arm Cannon ถึงเลเวล 5,\nลด Delay หลังใช้สกิล 20%\n\nเมื่อเรียนรู้สกิล Neutral Barrier ถึงเลเวล 3,\nลด Damage ทางกายภาพที่ได้รับจากมอนสเตอร์ประเภท Boss 5%\nเมื่อกำจัดศัตรูด้วยการโจมตีทางกายภาพ,\nฟื้นฟู HP 100 หน่วยและ SP 10 หน่วย\n\nทุก ๆ การเรียนรู้สกิล Pile Bunker 1 เลเวล,\nเพิ่ม Damage สกิล Arm Cannon, Cold Slower, Flame Launcher 25%\n\nเมื่อเรียนรู้สกิล Fire Earth Research ถึงเลเวล 5 ทำให้ไม่กระเด็น\n\nประเภท : ^777777Garment^000000  พลังป้องกัน : ^77777712^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 515,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 12,
+    "weight": 10,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "hpPercent": [
+        "3"
+      ],
+      "เพิ่มความต้านทานต่อการโจมตีธาตุ Fire, Wind": [
+        "9===20",
+        "11===20"
+      ],
+      "p_class_boss": [
+        "9===10",
+        "11===10"
+      ],
+      "acd": [
+        "20"
+      ],
+      "ลด Damage ทางกายภาพที่ได้รับจากมอนสเตอร์ประเภท Boss": [
+        "5"
+      ],
+      "Arm Cannon": [
+        "75"
+      ],
+      "Cold Slower": [
+        "75"
+      ],
+      "Flame Launcher": [
+        "75"
       ]
     }
   },
@@ -21274,6 +22717,54 @@
       ]
     }
   },
+  "470070": {
+    "id": 470070,
+    "aegisName": "Egirnion_Shoes",
+    "name": "Aegirnian Shoes [1]",
+    "unidName": "Sandal",
+    "resName": "에길슈즈",
+    "description": "รองเท้าที่ถูกทำขึ้นมาใหม่โดยใช้รองเท้าของ Aegir เป็นต้นแบบ  \nMHP + 10%, MSP + 5%\nเมื่ออัพเกรดถึงขั้น 9, ASPD + 10%  \nเมื่อสวมใส่ร่วมกับ Aegirnian Helm, เพิ่ม Damage ทางกายภาพ/เวทมนตร์ที่ทำต่อศัตรูธาตุ Water, Wind 10%  \nทุกๆการ อัพเกรด Shoes 1 ขั้น, Damage ทางกายภาพ และ เวทมนตรื ต่อ ศัตรูธาตุ Wind / Water เพิ่มขึ้นอีก 1%\nประเภท : ^777777Shoes^000000  พลังป้องกัน : ^77777735^000000  \nน้ำหนัก : ^77777730^000000  \nเลเวลที่ต้องการ : ^777777140^000000  \nอาชีพที่ใส่ได้ :^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 516,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 35,
+    "weight": 30,
+    "requiredLevel": 140,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "hpPercent": [
+        "10"
+      ],
+      "spPercent": [
+        "5"
+      ],
+      "aspdPercent": [
+        "9===10"
+      ],
+      "p_element_water": [
+        "EQUIP[Aegirnian Helm]10",
+        "EQUIP[Aegirnian Helm]1---1"
+      ],
+      "p_element_wind": [
+        "EQUIP[Aegirnian Helm]10",
+        "EQUIP[Aegirnian Helm]1---1"
+      ],
+      "m_element_water": [
+        "EQUIP[Aegirnian Helm]10",
+        "EQUIP[Aegirnian Helm]1---1"
+      ],
+      "m_element_wind": [
+        "EQUIP[Aegirnian Helm]10",
+        "EQUIP[Aegirnian Helm]1---1"
+      ]
+    }
+  },
   "470086": {
     "id": 470086,
     "aegisName": "Lapine_Pray_Shoes",
@@ -21314,6 +22805,72 @@
       ],
       "cd__Comet": [
         "EQUIP[Kardui Ear]20"
+      ]
+    }
+  },
+  "470095": {
+    "id": 470095,
+    "aegisName": "Destroy_World_Boots",
+    "name": "Destroyer Boots [1]",
+    "unidName": "Sandals",
+    "resName": "Hollow_Shoes",
+    "description": "MATK +30\n\nทุก ๆ การอัพเกรด 3 ขั้น,\nเพิ่ม Damage ทางเวทมนตร์ต่อมอนสเตอร์ประเภท Demon, Undead, Angel 4%\n\nเมื่ออัพเกรดถึงขั้น 7,\nเพิ่ม Damage ทางเวทมนตร์ธาตุ Shadow, Fire, Earth 10%\n\nเมื่ออัพเกรดถึงขั้น 9,\nลดระยะเวลาร่ายแบบคงที่ 0.5 วินาที\n\nเมื่ออัพเกรดถึงขั้น 11,\nลด Cooldown สกิล Hell Inferno 2 วินาที\nลด Cooldown สกิล Crimson Rock 1 วินาที\n\nเมื่ออัพเกรดถึงขั้น 12,\nเพิ่ม Damage สกิล Comet, Hell Inferno, Earth Grave 30%\n\nเมื่อใช้กับ Dark Lord Card หรือ Sealed Dark Lord Card,\nMATK +50\nเพิ่ม Damage ทางเวทมนตร์ต่อมอนสเตอร์ประเภท Boss 30%\nเมื่อถูกโจมตีทางกายภาพมีโอกาสที่สกิล Comet Lv. 1 จะทำงาน\nเมื่อโจมตีทางเวทมนตร์ มีโอกาสที่ INT +30, MATK +20% เป็นเวลา 10 วินาที\nประเภท : ^777777Shoes^000000  พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^77777720^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 516,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 20,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "matk": [
+        "30",
+        "EQUIP[Dark Lord Card||Sealed Dark Lord Card]50"
+      ],
+      "m_race_demon": [
+        "3---4"
+      ],
+      "m_race_undead": [
+        "3---4"
+      ],
+      "m_race_angel": [
+        "3---4"
+      ],
+      "m_my_element_shadow": [
+        "7===10"
+      ],
+      "m_my_element_fire": [
+        "7===10"
+      ],
+      "m_my_element_earth": [
+        "7===10"
+      ],
+      "fct": [
+        "9===0.5"
+      ],
+      "cd__Hell Inferno": [
+        "11===2"
+      ],
+      "cd__Crimson Rock": [
+        "11===1"
+      ],
+      "Comet": [
+        "12===30"
+      ],
+      "Hell Inferno": [
+        "12===30"
+      ],
+      "Earth Grave": [
+        "12===30"
+      ],
+      "m_class_boss": [
+        "EQUIP[Dark Lord Card||Sealed Dark Lord Card]30"
       ]
     }
   },
@@ -21610,6 +23167,103 @@
       ]
     }
   },
+  "480083": {
+    "id": 480083,
+    "aegisName": "Egirnion_Manteau",
+    "name": "Aegirnian Manteau [1]",
+    "unidName": "Hood",
+    "resName": "에길망토",
+    "description": "ชุดคลุมที่ถูกทำขึ้นมาใหม่โดยใช้ชุดคลุมของ Aegir เป็นต้นแบบ  \nMHP + 10%, MSP + 5%\nเมื่ออัพเกรดถึงขั้น 9, ลด Variable Cast Time 10%  \nเมื่อสวมใส่ร่วมกับ Aegirnian Helm, เพิ่ม Damage ทางกายภาพ/เวทมนตร์ที่ทำต่อมอนสเตอร์ประเภท Fish, Demi-Human 10%  \nทุก ๆ การอัพเกรด Manteau 1 ขั้น, Damage ทางกายภาพ/เวทมนตร์ที่ทำต่อมอนสเตอร์ประเภท Fish, Demi-Human เพิ่มขึ้นอีก 1%  \nประเภท : ^777777Garment^000000  พลังป้องกัน : ^77777740^000000  \nน้ำหนัก : ^77777730^000000  \nเลเวลที่ต้องการ : ^777777140^000000  \nอาชีพที่ใส่ได้ :^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 515,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 40,
+    "weight": 30,
+    "requiredLevel": 140,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "hpPercent": [
+        "10"
+      ],
+      "spPercent": [
+        "5"
+      ],
+      "vct": [
+        "9===10"
+      ],
+      "p_race_fish": [
+        "EQUIP[Aegirnian Helm]10",
+        "EQUIP[Aegirnian Helm]1---1"
+      ],
+      "p_race_demihuman": [
+        "EQUIP[Aegirnian Helm]10",
+        "EQUIP[Aegirnian Helm]1---1"
+      ],
+      "m_race_fish": [
+        "EQUIP[Aegirnian Helm]10",
+        "EQUIP[Aegirnian Helm]1---1"
+      ],
+      "m_race_demihuman": [
+        "EQUIP[Aegirnian Helm]10",
+        "EQUIP[Aegirnian Helm]1---1"
+      ]
+    }
+  },
+  "480125": {
+    "id": 480125,
+    "aegisName": "Cvt_Magical_Wing",
+    "name": "Convertible Magical Wing [1]",
+    "unidName": "Hood",
+    "resName": "Supplement_Part_Wing",
+    "description": "ปีกจักรกลอเนกประสงค์ที่ได้รับการพัฒนาอีกขั้นหนึ่ง ซึ่งมีเป้าหมายให้จ่ายพลังงานและมีประสิทธิภาพอย่างสูงสุด\nเครื่องประมวลผล Magical ถูกติดตั้งควบคู่ไปด้วย\nสามารถใช้งานร่วมกับไอเท็มต่าง ๆ ได้\n\nทุก ๆ การอัพเกรด 2 ขั้น MATK +5, MATK +1%\nทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกขนาด 3%\nเมื่ออัพเกรดถึงขั้น 7 ลดระยะเวลาร่ายแบบแปรผัน 7%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่มความต้านทานต่อการโจมตีธาตุ Neutral 7%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage ทางเวทมนตร์ทุกธาตุ 10%\n\nเมื่อสวมใส่ร่วมกับ Deep Blue Sunglasses [1], MATK +7%, ลดระยะเวลาร่ายแบบแปรผัน 15%\nเมื่อสวมใส่ร่วมกับ Victorious Wing Ears [1], MATK +7%, ลด Delay หลังใช้สกิล 15%\nเมื่อสวมใส่ร่วมกับ Battle Processor [1], MATK +7%, เพิ่ม Damage ทางเวทมนตร์ทุกธาตุ 5%\nประเภท : ^777777Garment^000000  พลังป้องกัน : ^77777738^000000\nน้ำหนัก : ^77777740^000000\nเลเวลของเกราะ : ^7777771^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 515,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 38,
+    "weight": 40,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "matk": [
+        "2---5"
+      ],
+      "matkPercent": [
+        "2---1",
+        "EQUIP[Deep Blue Sunglasses]===7",
+        "EQUIP[Victorious Wing Ears]===7",
+        "EQUIP[Battle Processor]===7"
+      ],
+      "m_size_all": [
+        "3---3"
+      ],
+      "vct": [
+        "7===7",
+        "EQUIP[Deep Blue Sunglasses]===15"
+      ],
+      "เพิ่มความต้านทานต่อการโจมตีธาตุ Neutral": [
+        "9===7"
+      ],
+      "m_my_element_all": [
+        "11===10",
+        "EQUIP[Battle Processor]===5"
+      ],
+      "acd": [
+        "EQUIP[Victorious Wing Ears]===15"
+      ]
+    }
+  },
   "480161": {
     "id": 480161,
     "aegisName": "Subject_CapeRange_TH",
@@ -21874,6 +23528,100 @@
       ]
     }
   },
+  "480358": {
+    "id": 480358,
+    "aegisName": null,
+    "name": "Dark Shadow Scarf [1]",
+    "unidName": "Dark Shadow Scarf",
+    "resName": "C에레메스스카프검정",
+    "description": "ผ้าพันคอสีดำที่นิยมขององค์กรที่ซ่อนตัวอยู่ในเงามืดที่ใส่เพื่อเสริมความแข็งแกร่งของตน\n\nเพิ่ม Damage ทางกายภาพระยะไกลต่อศัตรูทั้งหมด 5%\nลด Damage ทางกายภาพ/เวทมนตร์ที่ได้รับจากมอนสเตอร์ประเภท Angel, Demon 7%\nเพิ่ม Damage ทางกายภาพต่อมอนสเตอร์ประเภท Angel, Demon 7%\n\nทุก ๆ การเรียนรู้สกิล Maelstrom 1 เลเวล เพิ่ม Damage สกิล Arrow Storm 10%\n\nเมื่ออัพเกรดตั้งแต่ 7 ขึ้นไป,\nMaxHP/MaxSP +7%\n\nเมื่ออัพเกรดตั้งแต่ 9 ขึ้นไป,\nเพิ่ม Damage ทางกายภาพระยะไกลต่อศัตรูทั้งหมด 7%\n\nเมื่ออัพเกรดตั้งแต่ 11 ขึ้นไป,\nลด Delay หลังใช้สกิล 10% \n\nเมื่อสวมใส่ร่วมกับ Royal Bow/[Not For Sale] Royal Bow หรือ Patent Royal Bow,\nลด Cooldown สกิล Arrow Storm 2.5 วินาที\n\nเมื่อใช้กับ Arrow of Shadow,\nเพิ่ม Damage ทางกายภาพระยะไกลต่อศัตรูทั้งหมด 20%\nเพิ่ม Damage สกิล Arrow Storm 10%\nประเภท : ^777777Garment^000000  พลังป้องกัน : ^77777730^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Shadow Chaser^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 515,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 30,
+    "weight": 10,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Shadow Chaser"
+    ],
+    "script": {
+      "range": [
+        "5",
+        "9===7",
+        "EQUIP[Arrow of Shadow]20"
+      ],
+      "p_race_angel": [
+        "7"
+      ],
+      "p_race_demon": [
+        "7"
+      ],
+      "Arrow Storm": [
+        "30",
+        "EQUIP[Arrow of Shadow]10"
+      ],
+      "hpPercent": [
+        "7===7"
+      ],
+      "spPercent": [
+        "7===7"
+      ],
+      "acd": [
+        "11===10"
+      ],
+      "cd__Arrow Storm": [
+        "EQUIP[Royal Bow||Patent Royal Bow]2.5"
+      ]
+    }
+  },
+  "480370": {
+    "id": 480370,
+    "aegisName": null,
+    "name": "Revolver Red Cape [1]",
+    "unidName": "Revolver Red Cape",
+    "resName": "홍련의스톨",
+    "description": "ผ้าคลุมสีแดงของเหล่ามือปืนรับจ้าง พวกเขาจะใส่มันเพื่อปกปิดซ่อนอะไรบางอย่างบนร่างกาย\n\nลด Cooldown สกิล Rich's Coin 3 วินาที\n\nทุก ๆ การอัพเกรด 2 ขั้น ATK +20\nทุก ๆ การอัพเกรด 4 ขั้น เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 5%\n\nเมื่ออัพเกรดถึงขั้น 9,\nลดปริมาณการใช้ SP สกิล Fire Dance 50%\nASPD +10%\n\nเมื่ออัพเกรดถึงขั้น 11,\nเพิ่ม Damage สกิล Fire Dance 50%\nเพิกเฉยต่อพลังป้องกันทางกายภาพของทุกเผ่า 20% (ยกเว้น Player)\nประเภท : ^777777Garment^000000  พลังป้องกัน : ^77777755^000000\nน้ำหนัก : ^77777780^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Rebellion^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 515,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 55,
+    "weight": 80,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Rebellion"
+    ],
+    "script": {
+      "cd__Rich's Coin": [
+        "3"
+      ],
+      "atk": [
+        "2---20"
+      ],
+      "p_size_all": [
+        "4---5"
+      ],
+      "spPercent__Fire Dance": [
+        "9===50"
+      ],
+      "aspdPercent": [
+        "9===10"
+      ],
+      "Fire Dance": [
+        "11===50"
+      ],
+      "p_race_all": [
+        "11===20"
+      ]
+    }
+  },
   "490004": {
     "id": 490004,
     "aegisName": "Atker_Ring",
@@ -22083,6 +23831,70 @@
       ],
       "spPercent": [
         "EQUIP[Exotic Temporal Boots]5"
+      ]
+    }
+  },
+  "490092": {
+    "id": 490092,
+    "aegisName": "Egirnion_Ring",
+    "name": "Aegirnian Ring [1]",
+    "unidName": "Ring",
+    "resName": "EgirRing",
+    "description": "แหวนที่ถูกทำขึ้นมาใหม่โดยใช้แหวนของ Aegir เป็นต้นแบบ  \nMATK + 30, เพิ่ม Damage เวทมนตร์ทุกธาตุ 5%  \nเมื่อสวมใส่ร่วมกับ Aegirnian Helm, Aegirnian Armor, Aegirnian Manteau, Aegirnian Shoes,  \nDamage เวทมนตร์ทุกธาตุ เพิ่มขึ้นอีก 5%  \nประเภท : ^777777Accessory (Right)^000000 พลังป้องกัน : ^77777710^000000  \nน้ำหนัก : ^77777720^000000  \nเลเวลที่ต้องการ : ^777777140^000000  \nอาชีพที่ใส่ได้ :^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 510,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 10,
+    "weight": 20,
+    "requiredLevel": 140,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "matk": [
+        "30"
+      ],
+      "m_my_element_all": [
+        "5",
+        "EQUIP[Aegirnian Helm&&Aegirnian Armor&&Aegirnian Manteau&&Aegirnian Shoes]5"
+      ]
+    }
+  },
+  "490093": {
+    "id": 490093,
+    "aegisName": "Egirnion_Necklace",
+    "name": "Aegirnion Necklace [1]",
+    "unidName": "Ribbon",
+    "resName": "스피카의목걸이",
+    "description": "สร้อยคอที่ถูกทำขึ้นมาใหม่โดยใช้สร้อยคอของ Aegir เป็นต้นแบบ  \nATK + 30, เพิ่ม Damage ทางกายภาพระยะใกล้/ไกล 5%  \nเมื่อสวมใส่ร่วมกับ Aegirnian Helm, Aegirnian Armor, Aegirnian Manteau, Aegirnian Shoes  \nDamage ทางกายภาพระยะใกล้/ไกล เพิ่มขึ้นอีก 5%  \nประเภท : ^777777Accessory (Left)^000000 พลังป้องกัน : ^77777710^000000  \nน้ำหนัก : ^77777720^000000  \nเลเวลที่ต้องการ : ^777777140^000000  \nอาชีพที่ใส่ได้ :^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 511,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 10,
+    "weight": 20,
+    "requiredLevel": 140,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atk": [
+        "30"
+      ],
+      "melee": [
+        "5",
+        "EQUIP[Aegirnian Helm&&Aegirnian Armor&&Aegirnian Manteau&&Aegirnian Shoes]5"
+      ],
+      "range": [
+        "5",
+        "EQUIP[Aegirnian Helm&&Aegirnian Armor&&Aegirnian Manteau&&Aegirnian Shoes]5"
       ]
     }
   },
@@ -22338,7 +24150,7 @@
     "description": "แหวนลึกลับที่เปิดเผยต่อคนกลุ่มน้อยเท่านั้น\n\nINT, DEX + 6, \nSTR, AGI, VIT, LUK + 1 \nATK, MATK + 5%\nลด Global Cooldown 5%\nเมื่อโจมตีทางกายภาพ, มีโอกาส 1% ที่จะดูด SP 1% ของ Damage\nเพิ่ม Damage ทางเวทย์และกายภาพที่สร้างต่อมอนสเตอร์ประเภทบอส 10%\nMaxHP + 10%, MaxSP + 10%\nMdef + 15, ลดระยะเวลาร่ายคงตัว 0.3 วินาที\n\nเมื่อสวมใส่กับ Modification Orb (Unlimited Vitality),\nลดระยะเวลาร่ายแปรผัน 20%\n\nเมื่อสวมใส่กับ Modification Orb (Spell Buster),\nเพิกเฉยต่อพลังป้องกันทางเวทย์ 50%\nของศัตรูทุกเผ่า (ยกเว้น Player)\n\nเมื่อสวมใส่กับ Modification Orb (Fierce Shooter),\nมีโอกาสเพิ่มขึ้น 20% ที่จะเกิด Perfect Hit\n\nเมื่อสวมใส่กับ Modification Orb (Overpower),\nMaxHP + 15%\n\nเมื่อสวมใส่กับ Modification Module (Fatal Flash),\nเพิ่ม Damage ทางกายภาพระยะไกล 8%\n\nเมื่อสวมใส่กับ Modification Orb (Lucky Strike),\nFlee + 40\nประเภท : ^777777Accessory(Left)^000000 พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
     "slots": 1,
     "itemTypeId": 2,
-    "itemSubTypeId": 517,
+    "itemSubTypeId": 511,
     "itemLevel": null,
     "attack": null,
     "defense": 0,
@@ -22940,6 +24752,45 @@
       ]
     }
   },
+  "490432": {
+    "id": 490432,
+    "aegisName": null,
+    "name": "Toy Screw [1]",
+    "unidName": "Toy Screw",
+    "resName": "C_Mainspring_Screw",
+    "description": "เครื่องประดับที่ดัดแปลงมาจากน๊อตตัวผู้ เป็นหนึ่งในของเล่นสุดเท่ของเด็กช่าง\n\nHIT +30\nASPD +10%\nลด Delay หลังใช้สกิล 5%\n\nเมื่อสวมใส่ร่วมกับ Toy Ring หรือ [Not For Sale] Toy Ring,\nทุก ๆ การเรียนรู้สกิล Sword Mastery 1 เลเวล เพิ่ม Damage ทางกายภาพระยะใกล้ 4%\nทุก ๆ การเรียนรู้สกิล Fire Earth Research 1 เลเวล เพิ่ม Damage ทางกายภาพระยะใกล้ 2%\n\nเมื่อใช้ร่วมกับ True Howard Alt-Eisen Card หรือ True Flamel Emure Card,\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 25%\nประเภท : ^777777Accessory (Left)^000000 พลังป้องกัน : ^77777710^000000\nน้ำหนัก : ^777777100^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Merchant^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 511,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 10,
+    "weight": 100,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Merchant"
+    ],
+    "script": {
+      "hit": [
+        "30"
+      ],
+      "aspdPercent": [
+        "10"
+      ],
+      "acd": [
+        "5"
+      ],
+      "melee": [
+        "EQUIP[Toy Ring]LEARN_SKILL[Sword Mastery==1]---4",
+        "EQUIP[Toy Ring]LEARN_SKILL[Fire Earth Research==1]---2"
+      ],
+      "p_size_all": [
+        "EQUIP[True Howard Alt-Eisen Card||True Flamel Emure Card]25"
+      ]
+    }
+  },
   "490434": {
     "id": 490434,
     "aegisName": null,
@@ -22949,7 +24800,7 @@
     "description": "แหวนของฮีโร่นิรนาม\n\nลด Delay หลังใช้สกิล 3%\nเพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูทุกประเภท 6%\n\nเมื่อสวมใส่ร่วมกับ Patent Aeon Staff,\nเพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกเผ่า 8%\nเมื่อ Patent Aeon Staff อัพเกรดตั้งแต่ 11 ขึ้นไป,\nเมื่อ Base INT และ DEX รวมกันได้ทุก ๆ 12 หน่วย เพิ่ม Damage สกิล Earth Strain 1%\n\nเมื่อสวมใส่ร่วมกับ Patent Blue Crystal Staff,\nเพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกเผ่า 8%\nเมื่อ Patent Blue Crystal Staff อัพเกรดตั้งแต่ 11 ขึ้นไป,\nเมื่อ Base INT และ DEX รวมกันได้ทุก ๆ 12 หน่วย เพิ่ม Damage สกิล Jack Frost 1%\nประเภท : ^777777Accessory (Right)^000000 พลังป้องกัน : ^7777777^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Warlock^000000",
     "slots": 1,
     "itemTypeId": 2,
-    "itemSubTypeId": 517,
+    "itemSubTypeId": 510,
     "itemLevel": null,
     "attack": null,
     "defense": 7,
@@ -22979,6 +24830,50 @@
       ],
       "Jack Frost": [
         "EQUIP[Patent Blue Crystal Staff]REFINE[weapon==11]SUM[int,dex==12]---1"
+      ]
+    }
+  },
+  "490438": {
+    "id": 490438,
+    "aegisName": null,
+    "name": "Ring of Unknown Hero(Shadow Chaser) [1]",
+    "unidName": "Ring of Unknown Hero(Shadow Chaser)",
+    "resName": "Ullr_Bracelet",
+    "description": "แหวนของฮีโร่นิรนาม\n\nลด Delay หลังใช้สกิล 3%\nเพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูทุกประเภท 6%\n\nเมื่อสวมใส่ร่วมกับ Patent Madogum,\nเพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกเผ่า 8%\nเมื่อ Patent Madogum อัพเกรดตั้งแต่ 11 ขึ้นไป,\nเมื่อ Base INT และ AGI รวมกันได้ทุก ๆ 12 หน่วย เพิ่ม Damage สกิล Psychic Wave 1%\n\nเมื่อสวมใส่ร่วมกับ Patent Fatalist,\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกเผ่า 8%\nเมื่อ Patent Fatalist อัพเกรดตั้งแต่ 11 ขึ้นไป,\nเมื่อ Base STR และ AGI รวมกันได้ทุก ๆ 12 หน่วย เพิ่ม Damage สกิล Fatal Menace 1%\nประเภท : ^777777Accessory (Right)^000000 พลังป้องกัน : ^7777777^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Shadow Chaser^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 510,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 7,
+    "weight": 10,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Shadow Chaser"
+    ],
+    "script": {
+      "acd": [
+        "3"
+      ],
+      "p_class_all": [
+        "6"
+      ],
+      "m_class_all": [
+        "6"
+      ],
+      "m_race_formless": [
+        "EQUIP[Patent Madogum]8"
+      ],
+      "Psychic Wave": [
+        "EQUIP[Patent Madogum]REFINE[weapon==11]SUM[int,agi==12]---1"
+      ],
+      "p_race_all": [
+        "EQUIP[Patent Fatalist]8"
+      ],
+      "Fatal Menace": [
+        "EQUIP[Patent Fatalist]REFINE[weapon==11]SUM[str,agi==12]---1"
       ]
     }
   },
@@ -23038,6 +24933,95 @@
       "Fatal Manace": [
         "EQUIP[Attacker Booster Plate&&Attacker Booster Manteau&&Attacker Booster Greaves&&Attacker Booster Ring]level:15---1",
         "EQUIP[Attacker Booster Plate&&Attacker Booster Manteau&&Attacker Booster Greaves&&Attacker Booster Ring]===SKILL[Preserve]==20(60 วินาที)"
+      ]
+    }
+  },
+  "510006": {
+    "id": 510006,
+    "aegisName": "Fatalist",
+    "name": "Fatalist [2]",
+    "unidName": "Dagger",
+    "resName": "Taurus_Sword_J",
+    "description": "ดาบของนักเดินทางโบราณเหมาะสำหรับการแทง\nดูกลมกลืนเข้ากับ Ancient Hero Boots \nทุก ๆ การอัพเกรด 2 ขั้น ATK +10 \nทุก ๆ การอัพเกรด 3 ขั้น ASPD +2% \nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Fatal Manace 20%\nเมื่ออัพเกรดถึงขั้น 11 ลด Delay หลังใช้สกิล 7% \nเมื่อสวมใส่ร่วมกับ Ancient Hero Boots เมื่อโจมตีทางกายภาพ มีโอกาสที่ STR +20, ATK +15% เป็นเวลา 7 วินาที \nประเภท : ^777777Dagger^000000 พลังโจมตี : ^777777165^000000\nน้ำหนัก : ^77777790^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Shadow Chaser Cls^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 256,
+    "itemLevel": 4,
+    "attack": 165,
+    "defense": null,
+    "weight": 90,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Shadow Chaser Cls"
+    ],
+    "script": {
+      "atk": [
+        "2---10"
+      ],
+      "aspdPercent": [
+        "3---2"
+      ],
+      "Fatal Manace": [
+        "9===20"
+      ],
+      "acd": [
+        "11===7"
+      ],
+      "str": [
+        "EQUIP[Ancient Hero Boots]:AUTO:20(7 วินาที )"
+      ],
+      "atkPercent": [
+        "EQUIP[Ancient Hero Boots]:AUTO:15(7 วินาที )"
+      ]
+    }
+  },
+  "510020": {
+    "id": 510020,
+    "aegisName": "Up_Fatalist",
+    "name": "Patent Fatalist [2]",
+    "unidName": "Knife",
+    "resName": "Up_Fatalist",
+    "description": "ดาบของนักเดินทางโบราณเหมาะสำหรับการแทง\nด้วยประสบการณ์และความรู้ของนักเดินทางในอดีต มันจึงเริ่มเผยพลังอันแท้จริงออกมา\nดูกลมกลืนเข้ากับ Great Hero Boots\n\nทุก ๆ การอัพเกรด 2 ขั้น ATK +15\nทุก ๆ การอัพเกรด 3 ขั้น ASPD +2%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage สกิล Fatal Manace 25%\nเมื่ออัพเกรดถึงขั้น 9 ลดปริมาณการใช้ SP สกิล Fatal Manace 15%, ลด Delay หลังใช้สกิล 7%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage ทางกายภาพระยะใกล้ 10%, ลด Delay หลังใช้สกิลลงอีก 7%\nเมื่อสวมใส่ร่วมกับ Great Hero Boots, STR +10, ATK +7%\n \nประเภท : ^777777Dagger^000000 พลังโจมตี : ^777777205^000000\nน้ำหนัก : ^777777120^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Shadow Chaser^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 256,
+    "itemLevel": 4,
+    "attack": 205,
+    "defense": null,
+    "weight": 120,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Shadow Chaser"
+    ],
+    "script": {
+      "atk": [
+        "2---15"
+      ],
+      "aspdPercent": [
+        "3---2"
+      ],
+      "Fatal Manace": [
+        "7===25"
+      ],
+      "spPercent__Fatal Manace": [
+        "9===15"
+      ],
+      "acd": [
+        "9===7",
+        "11===7"
+      ],
+      "melee": [
+        "11===10"
+      ],
+      "str": [
+        "EQUIP[Great Hero Boots]===10"
+      ],
+      "atkPercent": [
+        "EQUIP[Great Hero Boots]===7"
       ]
     }
   },
@@ -23468,6 +25452,47 @@
       "Aimed Bolt": [
         "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]level:15---2",
         "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]===SKILL[Falcon Eyes]==35(60 วินาที)"
+      ]
+    }
+  },
+  "700003": {
+    "id": 700003,
+    "aegisName": "Scalet_Dragon_L_Bow",
+    "name": "Scarlet Dragon Leather Bow [2]",
+    "unidName": "Bow",
+    "resName": "아크오스다이모니쿠스",
+    "description": "ธนูที่ทำขึ้นโดยติดหนังของมังกรเพลิงซ้อนกับคันธนูอันทรงพลัง\nดูกลมกลืนเข้ากับ Ancient Hero Boots\nทุก ๆ การอัพเกรด 2 ขั้น ATK +10\nทุก ๆ การอัพเกรด 3 ขั้น ลด Delay หลังใช้สกิล 4%\nเมื่ออัพเกรดตั้งแต่ 9 ขึ้นไป เพิ่ม Damage สกิล Aimed Bolt 35%\nเมื่ออัพเกรดถึงขั้น 11, ลด Cooldown สกิล Aimed Bolt 1 วินาที\nเมื่อสวมใส่ร่วมกับ Ancient Hero Boots และทำการโจมตีทางกายภาพ\nมีโอกาสที่จะ DEX +20 และเพิ่มพลังโจมตีของอาวุธประเภท Bow 20% เป็นเวลา 7 วินาที\nประเภท : ^777777Bow^000000 พลังโจมตี : ^777777170^000000\nน้ำหนัก : ^77777780^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Ranger Cls^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 267,
+    "itemLevel": 4,
+    "attack": 170,
+    "defense": null,
+    "weight": 80,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Ranger Cls"
+    ],
+    "script": {
+      "atk": [
+        "2---10"
+      ],
+      "acd": [
+        "3---4"
+      ],
+      "Aimed Bolt": [
+        "9===35"
+      ],
+      "cd__Aimed Bolt": [
+        "11===1"
+      ],
+      "atkChance__dex": [
+        "EQUIP[Ancient Hero Boots]===20(7 วินาที)"
+      ],
+      "atkChance__bowRange": [
+        "EQUIP[Ancient Hero Boots]===20(7 วินาที)"
       ]
     }
   },
