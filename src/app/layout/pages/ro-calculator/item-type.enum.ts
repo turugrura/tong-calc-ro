@@ -168,6 +168,8 @@ export const MainItemWithRelations: Partial<Record<ItemTypeEnum, ItemTypeEnum[]>
     ItemTypeEnum.accRightEnchant3,
   ],
 
+  [ItemTypeEnum.pet]: [],
+
   [ItemTypeEnum.costumeEnchantUpper]: [ItemTypeEnum.shadowArmorEnchant1],
   [ItemTypeEnum.costumeEnchantMiddle]: [ItemTypeEnum.shadowArmorEnchant1],
   [ItemTypeEnum.costumeEnchantLower]: [ItemTypeEnum.shadowArmorEnchant1],
