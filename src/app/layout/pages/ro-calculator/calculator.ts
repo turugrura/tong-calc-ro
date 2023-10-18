@@ -1335,7 +1335,7 @@ export class Calculator {
     }
 
     // dex:10---1
-    const [, status, statusCond] = condition.match(/(level|str|int|dex|agi|vit|luk):(-*\d+)/) ?? [];
+    const [, status, statusCond] = condition.match(/(level|jobLevel|str|int|dex|agi|vit|luk):(-*\d+)/) ?? [];
     // console.log({ status, statusCond });
     if (status) {
       const myStatus = this.model[status];

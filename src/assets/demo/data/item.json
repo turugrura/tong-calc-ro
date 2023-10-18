@@ -1294,6 +1294,218 @@
       ]
     }
   },
+  "4007": {
+    "id": 4007,
+    "aegisName": "Pecopeco_Egg_Card",
+    "name": "Pecopeco Egg Card",
+    "unidName": "Card",
+    "resName": "이름없는카드",
+    "description": "โจมตี Monster Race Shapless แรงขึ้น 20%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "script": {
+      "p_race_formless": [
+        "20"
+      ]
+    }
+  },
+  "4047": {
+    "id": 4047,
+    "aegisName": "Ghostring_Card",
+    "name": "Ghostring Card",
+    "unidName": "Card",
+    "resName": "이름없는카드",
+    "description": "เปลี่ยนชุดเกราะให้เป็น ธาตุ Spiritual\nลดความเร็วในการฟื้นค่า HP 25%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Armor^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 16,
+    "script": {
+      "ลดความเร็วในการฟื้นค่า HP": [
+        "25"
+      ]
+    }
+  },
+  "4065": {
+    "id": 4065,
+    "aegisName": "Kaho_Card",
+    "name": "Kaho Card",
+    "unidName": "Card",
+    "resName": "이름없는카드",
+    "description": "โจมตีศัตรู ธาตุ Earth แรงขึ้น 20%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "script": {
+      "p_element_earth": [
+        "20"
+      ]
+    }
+  },
+  "4069": {
+    "id": 4069,
+    "aegisName": "Drainliar_Card",
+    "name": "Drainliar Card",
+    "unidName": "Card",
+    "resName": "이름없는카드",
+    "description": "โจมตีศัตรู ธาตุ Water แรงขึ้น 20%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "script": {
+      "p_element_water": [
+        "20"
+      ]
+    }
+  },
+  "4082": {
+    "id": 4082,
+    "aegisName": "Desert_Wolf_Card",
+    "name": "Desert Wolf Card",
+    "unidName": "Card",
+    "resName": "이름없는카드",
+    "description": "โจมตีศัตรูขนาดเล็กแรงขึ้น 15%\nพลังโจมตี + 5\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "script": {
+      "atk": [
+        "5"
+      ],
+      "p_size_s": [
+        "15"
+      ]
+    }
+  },
+  "4092": {
+    "id": 4092,
+    "aegisName": "Skel_Worker_Card",
+    "name": "Skel Worker Card",
+    "unidName": "Card",
+    "resName": "이름없는카드",
+    "description": "โจมตีศัตรูขนาดกลางแรงขึ้น 15%\nพลังโจมตี + 5\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "script": {
+      "atk": [
+        "5"
+      ],
+      "p_size_m": [
+        "15"
+      ]
+    }
+  },
+  "4094": {
+    "id": 4094,
+    "aegisName": "Archer_Skeleton_Card",
+    "name": "Archer Skeleton Card",
+    "unidName": "Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่มพลังโจมตีระยะไกล 10%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "script": {
+      "range": [
+        "10"
+      ]
+    }
+  },
+  "4129": {
+    "id": 4129,
+    "aegisName": "Baphomet__Card",
+    "name": "Bapho Jr. Card",
+    "unidName": "Card",
+    "resName": "이름없는카드",
+    "description": "AGI + 3\nCritical + 1%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Garment^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 4,
+    "script": {
+      "agi": [
+        "3"
+      ],
+      "cri": [
+        "1"
+      ]
+    }
+  },
+  "4131": {
+    "id": 4131,
+    "aegisName": "Moonlight_Flower_Card",
+    "name": "Moonlight Flower Card",
+    "unidName": "Card",
+    "resName": "이름없는카드",
+    "description": "ทำให้เดินเร็วขึ้น\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Foot Gear^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 64,
+    "script": {}
+  },
   "4143": {
     "id": 4143,
     "aegisName": "Orc_Hero_Card",
@@ -1394,7 +1606,7 @@
     "location": null,
     "compositionPos": 0,
     "script": {
-      "spCost": [
+      "sp": [
         "1"
       ],
       "aspdPercent": [
@@ -1411,6 +1623,29 @@
       ],
       "criDmg": [
         "20"
+      ]
+    }
+  },
+  "4290": {
+    "id": 4290,
+    "aegisName": "Cat_O_Nine_Tail_Card",
+    "name": "Cat O' Nine Tails Card",
+    "unidName": "Cat O' Nine Tails Card",
+    "resName": "이름없는카드",
+    "description": "MDEF +3\nมีโอกาส 5% ที่จะสะท้อนเวทมนตร์แบบกำหนดเป้าหมายกลับไปยังผู้ร่าย\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Shoes^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 64,
+    "script": {
+      "mdef": [
+        "3"
       ]
     }
   },
@@ -1664,6 +1899,30 @@
       ]
     }
   },
+  "4481": {
+    "id": 4481,
+    "aegisName": "Sealed_Ktullanux_Card",
+    "name": "Sealed Ktullanux Card",
+    "unidName": "Sealed Ktullanux Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่ม Damage ทางกายภาพต่อมอนสเตอร์ธาตุ Fire 25%\nเมื่อถูกโจมตีทางกายภาพ/เวทมนตร์ มีโอกาสที่จะใช้งานสกิล Frost Nova Lv. 10 โดยอัตโนมัติ \nเมื่ออัพเกรดตั้งแต่ 15 ขึ้นไป เพิ่ม Damage ทางกายภาพต่อมอนสเตอร์ธาตุ Fire ขึ้นอีก 10%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Armor^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 16,
+    "script": {
+      "p_element_fire": [
+        "25",
+        "15===10"
+      ]
+    }
+  },
   "4485": {
     "id": 4485,
     "aegisName": "Sealed_Gloom_Card",
@@ -1831,6 +2090,29 @@
       ],
       "damageTaken_element_all": [
         "30"
+      ]
+    }
+  },
+  "4588": {
+    "id": 4588,
+    "aegisName": "Wakwak_Card",
+    "name": "Wakwak Card",
+    "unidName": "Wakwak Card",
+    "resName": "이름없는카드",
+    "description": "ทุกๆ Base STR 10 จะเพิ่ม ATK ครั้งละ 5\nประเภท : ^777777Card^000000\nใส่กับ : ^777777Garment^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 4,
+    "script": {
+      "atk": [
+        "str:10---5"
       ]
     }
   },
@@ -2034,6 +2316,56 @@
       ]
     }
   },
+  "4625": {
+    "id": 4625,
+    "aegisName": "Timeholder_Card",
+    "name": "Time Holder Card",
+    "unidName": "Card",
+    "resName": "이름없는카드",
+    "description": "MATK+ 20%.\nเพิ่มปริมาณ SP สำหรับใช้สกิลทุกชนิด 10%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "script": {
+      "matkPercent": [
+        "20"
+      ],
+      "spPercentInc__all": [
+        "10"
+      ]
+    }
+  },
+  "4633": {
+    "id": 4633,
+    "aegisName": "P_Archer_Skeleton_Card",
+    "name": "Enchanted Archer Skeleton Card",
+    "unidName": "Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่มดาเมจกายภาพระยะไกล 10%\nเพิ่มดาเมจกายภาพระยะไกล 2% เมื่อ Base Level 100 ขึ้นไป\nประเภท : ^777777Card^000000\nติดตั้ง : ^777777อาวุธ^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "script": {
+      "range": [
+        "10",
+        "level:100===2"
+      ]
+    }
+  },
   "4636": {
     "id": 4636,
     "aegisName": "Bijou_Card",
@@ -2085,6 +2417,38 @@
         "10",
         "7===10",
         "9===15"
+      ]
+    }
+  },
+  "4652": {
+    "id": 4652,
+    "aegisName": "Grave_Amon_Ra_Card",
+    "name": "Nightmare Amon Ra Card",
+    "unidName": "Nightmare Amon Ra Card",
+    "resName": "이름없는카드",
+    "description": "โจมตีด้วยเวทมนตร์ต่อมอนสเตอร์เผ่า Demon, Undead และมอนสเตอร์ ธาตุ Undead ธาตุ Shadow แรงขึ้น 50%\n\nประเภท : ^777777Card^000000\nส่วนที่ใส่ : ^777777Armor^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 16,
+    "script": {
+      "m_element_undead": [
+        "50"
+      ],
+      "m_element_shadow": [
+        "50"
+      ],
+      "m_race_undead": [
+        "50"
+      ],
+      "m_race_demon": [
+        "50"
       ]
     }
   },
@@ -2140,6 +2504,36 @@
       ]
     }
   },
+  "4671": {
+    "id": 4671,
+    "aegisName": "Sorcerer_Card",
+    "name": "Sorcerer Celia Card",
+    "unidName": "Sorcerer Celia Card",
+    "resName": "이름없는카드",
+    "description": "MaxHP +10% และ MATK +10% ถ้าผู้สวมใส่เป็น Sorcerer \nเมื่อ BaseLv 175 ขึ้นไป All State +10\nเมื่ออัพเกรดถึงขั้น 10 ขึ้นไป All State +10\nเมื่อใช้คู่กับ True Celia Alde Card\nเมื่อโจมตีทางเวทย์ มีโอกาส 3% ที่จะเปลี่ยนร่างเป็น Celia Alde เป็นเวลา 6 วินาที\nMATK + 100 ตลอดระยะเวลาที่เปลี่ยนร่าง\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Garment^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 4,
+    "script": {
+      "hpPercent": [
+        "10"
+      ],
+      "allStatus": [
+        "level:175===10",
+        "10===10"
+      ],
+      "matk": [
+        "EQUIP[True Celia Alde Card]100"
+      ]
+    }
+  },
   "4677": {
     "id": 4677,
     "aegisName": "Mechanic_Card",
@@ -2173,6 +2567,36 @@
       ]
     }
   },
+  "4678": {
+    "id": 4678,
+    "aegisName": "Warlock_Card",
+    "name": "Warlock Kathryne Card",
+    "unidName": "Warlock Kathryne Card",
+    "resName": "이름없는카드",
+    "description": "MDEF +80 และ MATK +15% หากผู้สวมใส่เป็น Warlock\nเมื่อ BaseLv 175 ขึ้นไป All State +10\nเมื่ออัพเกรดถึงขั้น 10 ขึ้นไป All State +10\nเมื่อใช้คู่กับ True Kathryne Keyron Card\nเมื่อโจมตีทางเวทย์ เพิ่มโอกาส 3% ที่จะเปลี่ยนร่างเป็น Kathryne Keyron เป็นเวลา 6 วินาที\nMATK + 100 ตลอดระยะเวลาที่เปลี่ยนร่าง\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Garment^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 4,
+    "script": {
+      "mdef": [
+        "80"
+      ],
+      "allStatus": [
+        "level:175===10",
+        "10===10"
+      ],
+      "matk": [
+        "EQUIP[True Kathryne Keyron Card]100"
+      ]
+    }
+  },
   "4679": {
     "id": 4679,
     "aegisName": "RuneKnight_Card",
@@ -2203,6 +2627,97 @@
       ],
       "atk": [
         "EQUIP[True Seyren Windsor Card]100"
+      ]
+    }
+  },
+  "4680": {
+    "id": 4680,
+    "aegisName": "RoyalGuard_Card",
+    "name": "Royal Guard Randel Card",
+    "unidName": "Royal Guard Randel Card",
+    "resName": "이름없는카드",
+    "description": "เมื่อใช้งานด้วยอาชีพ Royal Guard, DEF +350, เพิ่ม Damage ทางกายภาพต่อศัตรูทุกเผ่า 10%\nเมื่อเลเวลตัวละครตั้งแต่ Lv. 175 ขึ้นไป All State +10\nเมื่ออัพเกรด Garment ตั้งแต่ 10 ขึ้นไป All State +10\nเมื่อใช้ร่วมกับ True Randel Lawrence Card,\nเมื่อโจมตีทางกายภาพ มีโอกาส 3% ที่จะเปลี่ยนร่างเป็น Randel Lawrence เป็นเวลา 6 วินาที\nตลอดเวลาที่เปลี่ยนร่าง ATK +100\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Garment^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 4,
+    "script": {
+      "def": [
+        "350"
+      ],
+      "p_race_all": [
+        "10"
+      ],
+      "allStatus": [
+        "level:175===10",
+        "10"
+      ],
+      "atk": [
+        "EQUIP[True Randel Lawrence Card]100"
+      ]
+    }
+  },
+  "4682": {
+    "id": 4682,
+    "aegisName": "ShadowChaser_Card",
+    "name": "Shadow Chaser Gertie Card",
+    "unidName": "Shadow Chaser Gertie Card",
+    "resName": "이름없는카드",
+    "description": "เมื่อใช้งานด้วยอาชีพ Shadow Chaser, MATK +15%, เพิ่ม Damage ทางกายภาพต่อศัตรูทุกเผ่า 5%\nเมื่อเลเวลตัวละครตั้งแต่ Lv. 175 ขึ้นไป All State +10\nเมื่ออัพเกรด Garment ตั้งแต่ 10 ขึ้นไป All State +10\nเมื่อใช้ร่วมกับ True Gertie Wie Card,\nเมื่อโจมตีทางกายภาพ มีโอกาส 3% ที่จะเปลี่ยนร่างเป็น Gertie Wie เป็นเวลา 6 วินาที\nตลอดเวลาที่เปลี่ยนร่าง ATK +100\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Garment^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 4,
+    "script": {
+      "matkPercent": [
+        "15"
+      ],
+      "p_race_all": [
+        "5"
+      ],
+      "allStatus": [
+        "level:175===10",
+        "10"
+      ],
+      "atk": [
+        "EQUIP[True Gertie Wie Card]100"
+      ]
+    }
+  },
+  "4684": {
+    "id": 4684,
+    "aegisName": "Real_Eremes_Card",
+    "name": "True Eremes Guile Card",
+    "unidName": "True Eremes Guile Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่มความแรงสกิล Cross Impact 20%\nเพิ่มความแรงสกิล Cross Impact อีก 20% เมื่ออาวุธเลเวล 4\nเพิ่มความแรงสกิล Cross Impact อีก 20% เมื่ออัพเกรดถึงขั้น 10 ขึ้นไป\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "script": {
+      "Cross Impact": [
+        "20",
+        "WEAPON_LEVEL[4]===20",
+        "10===20"
       ]
     }
   },
@@ -4759,6 +5274,290 @@
       ]
     }
   },
+  "9016": {
+    "id": 9016,
+    "aegisName": "Yoyo_Egg",
+    "name": "Yoyo Egg",
+    "unidName": "Yoyo Egg",
+    "resName": "지속성알",
+    "description": "ไข่ที่มี Q-Pet Yoyo อยู่ภายใน สามารถปลุกให้ตื่นขึ้นมาได้ด้วย [Pet Incubator]\nหากความสัมพันธ์อยู่ในระดับเป็นมิตร CRI +3\nหากความสัมพันธ์อยู่ในระดับสนิทสนม CRI +5\nประเภท : ^777777Monster Egg^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 518,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "cri": [
+        "5"
+      ]
+    }
+  },
+  "9087": {
+    "id": 9087,
+    "aegisName": "High_Orc_Egg",
+    "name": "High Orc Egg",
+    "unidName": "High Orc Egg",
+    "resName": "지속성알",
+    "description": "ไข่ที่ภายในมี Q-Pet High Orc อยู่ สามารถฟักไข่ได้โดย Pet Incubator\nเมื่อความสัมพันธ์ไม่คุ้นเคยหรือเขินอาย ATK + 10.\nเมื่อความสัมพันธ์เป็นปกติ ATK + 15.\nเมื่อความสัมพันธ์เป็นมิตร ATK + 20.\nเมื่อความสัมพันธ์เป็นสนิทสนม ATK + 25.\nประเภท : ^777777Q-Pet Egg^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 518,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atk": [
+        "25"
+      ]
+    }
+  },
+  "9088": {
+    "id": 9088,
+    "aegisName": "Angeling_Egg",
+    "name": "Angeling Egg",
+    "unidName": "Angeling Egg",
+    "resName": "성속성알",
+    "description": "ไข่ที่มี Q-Pet Angeling อยู่ภายใน สามารถปลุกให้ตื่นขึ้นมาได้ด้วย [Pet Incubator] \nหากความสัมพันธ์อยู่ในระดับไม่คุ้นเคยหรือเขินอาย MHP +1%, เพิ่มปริมาณ Heal 2%\nหากความสัมพันธ์อยู่ในระดับปกติ MHP +1%, เพิ่มปริมาณ Heal 4%\nหากความสัมพันธ์อยู่ในระดับเป็นมิตร MHP +2%, เพิ่มปริมาณ Heal 6%\nหากความสัมพันธ์อยู่ในระดับสนิทสนม MHP +2%, เพิ่มปริมาณ Heal 8%\nประเภท : ^777777Monster Egg^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 518,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "hpPercent": [
+        "2"
+      ],
+      "เพิ่มปริมาณ Heal": [
+        "8"
+      ]
+    }
+  },
+  "9089": {
+    "id": 9089,
+    "aegisName": "Ammut_Egg",
+    "name": "Am Mut Egg",
+    "unidName": "Am Mut Egg",
+    "resName": "암속성알",
+    "description": "ไข่ที่มี Q-Pet Am Mut อยู่ภายใน สามารถปลุกให้ตื่นขึ้นมาได้ด้วย [Pet Incubator]\nหากความสัมพันธ์อยู่ในระดับไม่คุ้นเคยหรือเขินอาย MATK +1%\nหากความสัมพันธ์อยู่ในระดับปกติ MATK +2%\nหากความสัมพันธ์อยู่ในระดับเป็นมิตร MATK +3%\nหากความสัมพันธ์อยู่ในระดับสนิทสนม MATK +4%\nประเภท : ^777777Monster Egg^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 518,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "matkPercent": [
+        "4"
+      ]
+    }
+  },
+  "9091": {
+    "id": 9091,
+    "aegisName": "Choco_Egg",
+    "name": "Choco Egg",
+    "unidName": "Choco Egg",
+    "resName": "화속성알",
+    "description": "ไข่ที่มี Q-Pet Choco อยู่ภายใน สามารถปลุกให้ตื่นขึ้นมาได้ด้วย [Pet Incubator]\nหากความสัมพันธ์อยู่ในระดับไม่คุ้นเคยหรือเขินอาย CRI +3\nหากความสัมพันธ์อยู่ในระดับปกติ CRI +5, เพิ่ม Damage ทางกายภาพระยะไกล 1%\nหากความสัมพันธ์อยู่ในระดับเป็นมิตร CRI +7, เพิ่ม Damage ทางกายภาพระยะไกล 2%\nหากความสัมพันธ์อยู่ในระดับสนิทสนม CRI +9, เพิ่ม Damage ทางกายภาพระยะไกล 3%\nประเภท : ^777777Monster Egg^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 518,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "cri": [
+        "9"
+      ],
+      "range": [
+        "3"
+      ]
+    }
+  },
+  "9092": {
+    "id": 9092,
+    "aegisName": "Eggring_Egg",
+    "name": "Eggring Egg",
+    "unidName": "Eggring Egg",
+    "resName": "지속성알",
+    "description": "ไข่ที่มี Q-Pet Eggring อยู่ภายใน สามารถปลุกให้ตื่นขึ้นมาได้ด้วย [Pet Incubator]\nหากความสัมพันธ์อยู่ในระดับไม่คุ้นเคยหรือเขินอาย HIT + 3, ATK + 3\nหากความสัมพันธ์อยู่ในระดับปกติ HIT + 5, ATK + 5\nหากความสัมพันธ์อยู่ในระดับเป็นมิตร HIT + 7, ATK + 7\nหากความสัมพันธ์อยู่ในระดับสนิทสนม HIT + 9, ATK + 9\nประเภท : ^777777Monster Egg^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 518,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "hit": [
+        "9"
+      ],
+      "atk": [
+        "9"
+      ]
+    }
+  },
+  "9095": {
+    "id": 9095,
+    "aegisName": "Nine_Tail_Egg",
+    "name": "Nine Tail Egg",
+    "unidName": "Nine Tail Egg",
+    "resName": "화속성알",
+    "description": "ไข่ที่มี Q-Pet Nine Tail อยู่ภายใน สามารถปลุกให้ตื่นขึ้นมาได้ด้วย [Pet Incubator]\nหากความสัมพันธ์อยู่ระดับเป็นมิตร CRI + 2, HIT + 2\nหากความสัมพันธ์อยู่ระดับสนิทสนม CRI + 3, HIT + 3\nประเภท : ^777777Monster Egg^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 518,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "cri": [
+        "3"
+      ],
+      "hit": [
+        "3"
+      ]
+    }
+  },
+  "9107": {
+    "id": 9107,
+    "aegisName": "Ancient_Mummy_Egg",
+    "name": "Ancient Mummy Egg",
+    "unidName": "Ancient Mummy Egg",
+    "resName": "언데드알",
+    "description": "ไข่ที่มี Q-Pet Ancient Mummy อยู่ภายใน สามารถปลุกให้ตื่นขึ้นมาได้ด้วย [Pet Incubator] \nในกรณีที่ความสัมพันธ์อยู่ระดับไม่คุ้นเคย หรือเขินอาย HIT + 4\nหากความสัมพันธ์อยู่ระดับปกติ HIT + 5\nหากความสัมพันธ์อยู่ระดับเป็นมิตร HIT + 6, เพิ่มความเสียหายทางกายภาพ/ทางเวทย์แก่มอนสเตอร์เผ่าพันธุ์ Dragon ขึ้น 3%\nหากความสัมพันธ์อยู่ระดับสนิทสนม HIT + 6, เพิ่มความเสียหายทางกายภาพ/ทางเวทย์แก่มอนสเตอร์เผ่าพันธุ์ Dragon ขึ้น 6%\n\nประเภท : ^777777Monster Egg^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 518,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "hit": [
+        "6"
+      ],
+      "p_race_dragon": [
+        "6"
+      ],
+      "m_race_dragon": [
+        "6"
+      ]
+    }
+  },
+  "9111": {
+    "id": 9111,
+    "aegisName": "Phreeoni_Egg",
+    "name": "Phreeoni Egg",
+    "unidName": "Phreeoni Egg",
+    "resName": "Phreeoni_Egg",
+    "description": "ไข่ที่มี Q-Pet Phreeoni อยู่ภายใน สามารถปลุกให้ตื่นขึ้นมาได้ด้วย [Pet Incubator]\n\nในกรณีที่ความสัมพันธ์อยู่ระดับไม่คุ้นเคย หรือเขินอาย HIT + 6\nหากความสัมพันธ์อยู่ระดับปกติ HIT + 10,\nมีโอกาส 5% ที่จะเกิด Perfect Hit \nหากความสัมพันธ์อยู่ระดับเป็นมิตร HIT + 14,\nมีโอกาส 10% ที่จะเกิด Perfect Hit\nหากความสัมพันธ์อยู่ระดับสนิทสนม HIT + 18,\nมีโอกาส 15% ที่จะเกิด Perfect Hit\n\nประเภท : ^777777Monster Egg^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 518,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "hit": [
+        "18"
+      ],
+      "perfectHit": [
+        "15"
+      ]
+    }
+  },
+  "9115": {
+    "id": 9115,
+    "aegisName": "Bacsojin_Egg2",
+    "name": "Bacsojin Egg",
+    "unidName": "Bacsojin Egg",
+    "resName": "대만백소진스크롤",
+    "description": "ไข่ที่มี Q-Pet Bacsojin อยู่ภายใน สามารถปลุกให้ตื่นขึ้นมาได้ด้วย [Pet Incubator] \n\nในกรณีที่ความสัมพันธ์อยู่ระดับไม่คุ้นเคย หรือเขินอาย MSP + 2%\nหากความสัมพันธ์อยู่ระดับปกติ MSP + 3%, ลด Delay หลังใช้สกิล 1%\nหากความสัมพันธ์อยู่ระดับเป็นมิตร MSP + 4%, ลด Delay หลังใช้สกิล 2%\nหากความสัมพันธ์อยู่ระดับสนิทสนม MSP + 5%, ลด Delay หลังใช้สกิล 3%\nประเภท : Monster Egg",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 518,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "spPercent": [
+        "5"
+      ],
+      "acd": [
+        "3"
+      ]
+    }
+  },
   "9117": {
     "id": 9117,
     "aegisName": "Wanderer_H_EGG",
@@ -4816,6 +5615,128 @@
         "5"
       ],
       "m_my_element_neutral": [
+        "5"
+      ]
+    }
+  },
+  "9121": {
+    "id": 9121,
+    "aegisName": "Ork_Hero_EGG",
+    "name": "Orc Hero Egg",
+    "unidName": "Orc Hero Egg",
+    "resName": "Ork_Hero_EGG",
+    "description": "ไข่ที่มี Q-Pet Orc Hero อยู่ภายใน สามารถปลุกให้ตื่นขึ้นมาได้ด้วย [Pet Incubator]\nหากความสัมพันธ์อยู่ในระดับไม่คุ้นเคยหรือเขินอาย ATK + 1%\nหากความสัมพันธ์อยู่ในระดับปกติ ATK + 2%\nหากความสัมพันธ์อยู่ในระดับเป็นมิตร ATK + 4%, Critical Damage + 1%\nหากความสัมพันธ์อยู่ในระดับสนิทสนม ATK + 7%, Critical Damage + 3%\nประเภท : ^777777Monster Egg^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 518,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atkPercent": [
+        "7"
+      ],
+      "criDmg": [
+        "3"
+      ]
+    }
+  },
+  "9128": {
+    "id": 9128,
+    "aegisName": "Dark_Priest_Egg",
+    "name": "Dark Priest Egg",
+    "unidName": "Dark Priest Egg",
+    "resName": "암속성알",
+    "description": "ไข่ที่มี Q-Pet Dark Priest อยู่ภายใน สามารถปลุกให้ตื่นขึ้นมาได้ด้วย [Pet Incubator]\n\nหากความสัมพันธ์อยู่ระดับเป็นมิตร INT +1, เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูธาตุ Holy 3%\nหากความสัมพันธ์อยู่ระดับสนิทสนม INT +2, เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูธาตุ Holy 5%\nประเภท : ^777777Monster Egg^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 518,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "int": [
+        "2"
+      ],
+      "m_element_holy": [
+        "5"
+      ]
+    }
+  },
+  "9129": {
+    "id": 9129,
+    "aegisName": "Desert_Wolf_Egg",
+    "name": "Desert Wolf Egg",
+    "unidName": "Desert Wolf Egg",
+    "resName": "화속성알",
+    "description": "ไข่ที่มี Q-Pet Desert Wolf อยู่ภายใน สามารถปลุกให้ตื่นขึ้นมาได้ด้วย [Pet Incubator]\nหากความสัมพันธ์อยู่ในระดับไม่คุ้นเคยหรือเขินอาย INT + 1, MaxSP + 50\nหากความสัมพันธ์อยู่ในระดับปกติ INT + 2, MaxSP + 75\nหากความสัมพันธ์อยู่ในระดับเป็นมิตร INT + 3, MaxSP + 105, เพิ่ม Damage ทางเวทมนต์ธาตุ Earth 3%\nหากความสัมพันธ์อยู่ในระดับสนิทสนม INT + 4, MaxSP + 130, เพิ่ม Damage ทางเวทมนต์ธาตุ Earth 5%\nประเภท : ^777777Monster Egg^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 518,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "int": [
+        "4"
+      ],
+      "sp": [
+        "130"
+      ],
+      "m_my_element_earth": [
+        "5"
+      ]
+    }
+  },
+  "9137": {
+    "id": 9137,
+    "aegisName": "Baphomet_Egg",
+    "name": "Baphomet Egg",
+    "unidName": "Baphomet Egg",
+    "resName": "Baphomet_Egg",
+    "description": "ไข่ที่มี Q-Pet Baphomet อยู่ภายใน สามารถปลุกให้ตื่นขึ้นมาได้ด้วย [Pet Incubator]\n\nหากความสัมพันธ์อยู่ระดับไม่คุ้นเคยหรือเขินอาย FLEE +8, MSP +1%\nหากความสัมพันธ์อยู่ระดับปกติ FLEE +12, MSP +3%, เพิ่ม Damage ทางกายภาพระยะไกล 1%\nหากความสัมพันธ์อยู่ระดับเป็นมิตร FLEE +16, MSP +5%, เพิ่ม Damage ทางกายภาพระยะไกล 3%\nหากความสัมพันธ์อยู่ระดับสนิทสนม FLEE +20, MSP +7%, เพิ่ม Damage ทางกายภาพระยะไกล 5%\n\nประเภท : ^777777Monster Egg^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 518,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "flee": [
+        "20"
+      ],
+      "spPercent": [
+        "7"
+      ],
+      "range": [
         "5"
       ]
     }
@@ -5858,7 +6779,7 @@
       "Double Strafe": [
         "EQUIP[Vigilante Bow&&Vigilante Badge]50"
       ],
-      "spCost__Triangle Shot": [
+      "sp__Triangle Shot": [
         "EQUIP[Vigilante Bow&&Vigilante Badge]10"
       ]
     }
@@ -5994,6 +6915,158 @@
       ],
       "criDmg": [
         "2---1"
+      ]
+    }
+  },
+  "15346": {
+    "id": 15346,
+    "aegisName": "Overwhelm_Luk_Armor",
+    "name": "Unexpected Fortune Armor [1]",
+    "unidName": "Armor",
+    "resName": "치우의갑옷",
+    "description": "ชุดเกราะแสงสีม่วงที่แฝงไปด้วยความโชคดีที่เกินความคาดหมายเอาไว้ \nATK + 50. \nทุกอัพเกรด 3 ขั้น เพิ่ม Critical Damage 2%\nเมื่ออัพเกรดขั้น 7, เผิกเฉยต่อพลังป้องกันทางกายภาพของมอนสเตอร์ เผ่า Brute, เผ่า Demon 30% \nเมื่ออัพเกรดขั้น 9, เพิ่ม Damage ทางกายภาพที่สร้างต่อมอนสเตอร์ เผ่า Brute, เผ่า Demon 10%\nเมื่ออัพเกรดขั้น 11, เพิ่ม Damage ทางกายภาพที่สร้างต่อมอนสเตอร์ธาตุ Wind และธาตุ Earth 10%\nเมื่อสวมใส่รวมกับ Temporal Luk Boots[1] หรือ Modified Luk Boots[1], \nเพิ่ม Critical Damage 10%\nเมื่อขั้นอัพเกรดรวมกันมากกว่า 21 ขั้น \nเผิกเฉยต่อพลังป้องกันทางกายภาพของมอนสเตอร์ เผ่า Brute, เผ่า Demon เพิ่มอีก 20% \nประเภท : ^777777Armor^000000 พลังป้องกัน : ^777777120^000000\nน้ำหนัก : ^777777200^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 120,
+    "weight": 200,
+    "requiredLevel": 1,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atk": [
+        "50"
+      ],
+      "criDmg": [
+        "3---2",
+        "EQUIP[Temporal Luk Boots||Modified Temporal Luk Boots]10"
+      ],
+      "p_pene_race_brute": [
+        "7===30",
+        "EQUIP[Temporal Luk Boots||Modified Temporal Luk Boots]REFINE[armor,boot==21]20"
+      ],
+      "p_pene_race_demon": [
+        "7===30",
+        "EQUIP[Temporal Luk Boots||Modified Temporal Luk Boots]REFINE[armor,boot==21]20"
+      ],
+      "p_race_brute": [
+        "9===10"
+      ],
+      "p_race_demon": [
+        "9===10"
+      ],
+      "p_element_wind": [
+        "11===10"
+      ],
+      "p_element_earth": [
+        "11===10"
+      ]
+    }
+  },
+  "15347": {
+    "id": 15347,
+    "aegisName": "Overwhelm_Vit_Armor",
+    "name": "Strong Healthy Armor [1]",
+    "unidName": "Armor",
+    "resName": "독충의갑옷",
+    "description": "เกราะสีนิลที่แฝงไปด้วยพลังกายที่แข็งแกร่ง \nATK + 50. \nทุกอัพเกรด 3 ขั้น เพิ่ม MHP 2% \nเมื่ออัพเกรดขั้น 7, เผิกเฉยต่อพลังป้องกันทางกายภาพของมอนสเตอร์ เผ่า Brute, เผ่า Demon 30% \nเมื่ออัพเกรดขั้น 9, เพิ่ม Damage ทางกายภาพที่สร้างต่อมอนสเตอร์ เผ่า Brute, เผ่า Demon 10%\nเมื่ออัพเกรดขั้น 11, เพิ่ม Damage ทางกายภาพที่สร้างต่อมอนสเตอร์ธาตุ Wind และธาตุ Earth 10%\nเมื่อใส่ร่วมกับ Temporal Vit Boots[1] หรือ Modified Vit boots[1], \nMHP + 10%.\nเมื่อขั้นอัพเกรดรวมกันมากกว่า 21 ขั้น \nเผิกเฉยต่อพลังป้องกันทางกายภาพของมอนสเตอร์ เผ่า Brute, เผ่า Demon เพิ่มอีก 20% \nประเภท : ^777777Armor^000000 พลังป้องกัน : ^777777120^000000\nน้ำหนัก : ^777777200^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 120,
+    "weight": 200,
+    "requiredLevel": 1,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atk": [
+        "50"
+      ],
+      "hpPercent": [
+        "3---2",
+        "EQUIP[Temporal Vit Boots||Modified Temporal Vit Boots]10"
+      ],
+      "p_pene_race_brute": [
+        "7===30",
+        "EQUIP[Temporal Vit Boots||Modified Temporal Vit Boots]REFINE[armor,boot==21]20"
+      ],
+      "p_pene_race_demon": [
+        "7===30",
+        "EQUIP[Temporal Vit Boots||Modified Temporal Vit Boots]REFINE[armor,boot==21]20"
+      ],
+      "p_race_brute": [
+        "9===10"
+      ],
+      "p_race_demon": [
+        "9===10"
+      ],
+      "p_element_wind": [
+        "11===10"
+      ],
+      "p_element_earth": [
+        "11===10"
+      ]
+    }
+  },
+  "15353": {
+    "id": 15353,
+    "aegisName": "Overwhelm_Agi_Armor",
+    "name": "Splendid Swift Armor [1]",
+    "unidName": "Armor",
+    "resName": "기린의갑옷",
+    "description": "ชุดเกราะที่เปี่ยมไปด้วยพลังแห่งความเร็ว\nATK + 50  \nทุกๆ การอัพเดท 3 ขั้น เพิ่ม ASPD ทีละ 2% \nเมื่ออัพเกรดถึงขั้น 7 ขึ้นไป เพิกเฉยต่อพลังป้องกันทางกายภาพของมอนสเตอร์เผ่า Brute และ Demon 30%  \nเมื่ออัพเกรดถึงขั้น 9 ขึ้นไป เพิ่ม Damage ทางกายภาพเมื่อโจมตีมอนสเตอร์เผ่า Brute และ Demon 10% \nเมื่ออัพเกรดถึงขั้น 11 ขึ้นไป เพิ่ม Damage ทางกายภาพเมื่อโจมตีมอนสเตอร์ธาตุ Wind และ Earth 10% \nเมื่อสวมใส่ร่วมกับ Temporal Agi Boots [1] หรือ Modified Temporal Agi Boots [1]  \nASPD + 1.\nในกรณีที่ค่าอัพเกรดรวมกันตั้งแต่ 21 ขึ้นไป\nเพิกเฉยต่อพลังป้องกันทางกายภาพของมอนสเตอร์เผ่า Brute และ Demon เพิ่มเติม 20%  \nประเภท : ^777777Armor^000000 พลังป้องกัน : ^777777120^000000\nน้ำหนัก : ^777777200^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 120,
+    "weight": 200,
+    "requiredLevel": 1,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atk": [
+        "50"
+      ],
+      "aspdPercent": [
+        "3---2"
+      ],
+      "aspd": [
+        "EQUIP[Temporal Agi Boots||Modified Temporal Agi Boots]1"
+      ],
+      "p_pene_race_brute": [
+        "7===30",
+        "EQUIP[Temporal Agi Boots||Modified Temporal Agi Boots]REFINE[armor,boot==21]20"
+      ],
+      "p_pene_race_demon": [
+        "7===30",
+        "EQUIP[Temporal Agi Boots||Modified Temporal Agi Boots]REFINE[armor,boot==21]20"
+      ],
+      "p_race_brute": [
+        "9===10"
+      ],
+      "p_race_demon": [
+        "9===10"
+      ],
+      "p_element_wind": [
+        "11===10"
+      ],
+      "p_element_earth": [
+        "11===10"
       ]
     }
   },
@@ -6211,6 +7284,106 @@
       ],
       "m_race_formless": [
         "11===15"
+      ]
+    }
+  },
+  "15480": {
+    "id": 15480,
+    "aegisName": null,
+    "name": "Lunar Eclipse Armor [1]",
+    "unidName": "Lunar Eclipse Armor",
+    "resName": "lunar_eclipse_Armor_",
+    "description": "ไม่สามารถทำลายได้\nทุก ๆ การอัพเกรด 1 ขั้น ATK, MATK +20\nทุก ๆ การอัพเกรด 4 ขั้น MaxHP, ATK, MATK +5%\nเมื่ออัพเกรดตั้งแต่ 11 ขึ้นไป\nลด Delay หลังใช้สกิล 15%\nลดระยะเวลาร่ายแบบแปรผัน 20%\n\nเมื่อใช้ร่วมกับ Cat O' Nine Tails Card,\nทุก ๆ การอัพเกรดรองเท้า 3 ขั้น,\nเพิ่ม Damage สกิล Solar Explosion, Full Moon Kick, Falling Stars, Espa, Eswhoo, Curse Explosion 5%\n\nเมื่อใช้ร่วมกับ Moonlight Flower Card หรือ Sealed Moonlight Flower Card,\nทุก ๆ การอัพเกรดรองเท้า 3 ขั้น,\nเพิ่ม Damage สกิล Solar Explosion, Full Moon Kick, Falling Stars, Espa, Eswhoo, Curse Explosion 15%\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^77777760^000000\nน้ำหนัก : ^77777780^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Taekwon Cls^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 60,
+    "weight": 80,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Taekwon Cls"
+    ],
+    "script": {
+      "atk": [
+        "1---20"
+      ],
+      "matk": [
+        "1---20"
+      ],
+      "hpPercent": [
+        "4---5"
+      ],
+      "atkPercent": [
+        "4---5"
+      ],
+      "matkPercent": [
+        "4---5"
+      ],
+      "acd": [
+        "11===15"
+      ],
+      "vct": [
+        "11===20"
+      ],
+      "Solar Explosion": [
+        "EQUIP[Cat O' Nine Tails Card]REFINE[boot==3]---5",
+        "EQUIP[Moonlight Flower Card]REFINE[boot==3]---15"
+      ],
+      "Full Moon Kick": [
+        "EQUIP[Cat O' Nine Tails Card]REFINE[boot==3]---5",
+        "EQUIP[Moonlight Flower Card]REFINE[boot==3]---15"
+      ],
+      "Falling Stars": [
+        "EQUIP[Cat O' Nine Tails Card]REFINE[boot==3]---5",
+        "EQUIP[Moonlight Flower Card]REFINE[boot==3]---15"
+      ],
+      "Espa": [
+        "EQUIP[Cat O' Nine Tails Card]REFINE[boot==3]---5",
+        "EQUIP[Moonlight Flower Card]REFINE[boot==3]---15"
+      ],
+      "Eswhoo": [
+        "EQUIP[Cat O' Nine Tails Card]REFINE[boot==3]---5",
+        "EQUIP[Moonlight Flower Card]REFINE[boot==3]---15"
+      ],
+      "Curse Explosion": [
+        "EQUIP[Cat O' Nine Tails Card]REFINE[boot==3]---5",
+        "EQUIP[Moonlight Flower Card]REFINE[boot==3]---15"
+      ]
+    }
+  },
+  "15482": {
+    "id": 15482,
+    "aegisName": null,
+    "name": "Worker Shirt [1]",
+    "unidName": "Worker Shirt",
+    "resName": "라그티셔츠",
+    "description": "เสื้อเก่า ๆ ตัวหนึ่งที่คนงานนิยมใช้\nดูเหมือนว่าตัวนี้ก็จะถูกใช้งานจนสภาพเกือบจะนำไปใช้ต่อไม่ได้แล้ว\n\nATK +25, ลด Delay หลังใช้สกิล 5%\n\nเมื่ออัพเกรดตั้งแต่ 7 ขึ้นไป,\nASPD +10%\n\nเมื่ออัพเกรดตั้งแต่ 9 ขึ้นไป,\nลด Delay หลังใช้สกิลลงอีก 10%\n\nเมื่ออัพเกรดตั้งแต่ 11 ขึ้นไป,\nATK +25 เพิ่มเติม\nลด Delay หลังใช้สกิลลงอีก 15%\n\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^77777780^000000\nเลเวลที่ต้องการ : ^777777175^000000\nอาชีพที่ใส่ได้ : ^777777Guillotine Cross^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 80,
+    "requiredLevel": 175,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "atk": [
+        "25",
+        "11===25"
+      ],
+      "acd": [
+        "5",
+        "9===10",
+        "11===15"
+      ],
+      "aspdPercent": [
+        "7===10"
       ]
     }
   },
@@ -6450,31 +7623,31 @@
         "5"
       ],
       "p_race_boss": [
-        "EQUIP[Orc Hero]10"
+        "EQUIP[Orc Hero Egg]10"
       ],
       "เพิ่มปริมาณการฟื้นฟู": [
-        "EQUIP[Skelion]333"
+        "EQUIP[Skelion Egg]333"
       ],
       "exp": [
-        "EQUIP[Angeling]10"
+        "EQUIP[Angeling Egg]10"
       ],
       "atk": [
-        "EQUIP[Angeling]luk:3---1"
+        "EQUIP[Angeling Egg]luk:3---1"
       ],
       "p_race_demon": [
-        "EQUIP[High Orc]10"
+        "EQUIP[High Orc Egg]10"
       ],
       "spDrainPercent": [
-        "EQUIP[Succubus]1"
+        "EQUIP[Succubus Egg]1"
       ],
       "hpDrainPercent": [
-        "EQUIP[Incubus]5"
+        "EQUIP[Incubus Egg]5"
       ],
       "vct": [
-        "EQUIP[Alicel]10"
+        "EQUIP[Alicel Egg]10"
       ],
       "m_my_element_neutral": [
-        "EQUIP[Alicel]5"
+        "EQUIP[Alicel Egg]5"
       ]
     }
   },
@@ -7036,7 +8209,7 @@
       "acd": [
         "5"
       ],
-      "spCost": [
+      "sp": [
         "10",
         "3---3"
       ]
@@ -7068,6 +8241,35 @@
       ],
       "spDrainPercent": [
         "4"
+      ]
+    }
+  },
+  "18724": {
+    "id": 18724,
+    "aegisName": "L_Magestic_Goat_",
+    "name": "Gigantic Magestic Goat [1]",
+    "unidName": "Helm",
+    "resName": "대형마제스틱고우트",
+    "description": "หมวกเวทมนตร์ที่ทำขึ้นจากเขาแพะ\nเพิ่ม Damage ทางกายภาพต่อมอนสเตอร์ประเภท Demi-Human 12%\nเพิ่มค่า ATK เท่ากับจำนวน Job Lv หารด้วย 3.5\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^77777710^000000\nตำแหน่ง : ^777777Upper ^000000น้ำหนัก : ^77777780^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 10,
+    "weight": 80,
+    "requiredLevel": 1,
+    "location": "Upper",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "p_race_demihuman": [
+        "12"
+      ],
+      "atk": [
+        "jobLevel:7---2"
       ]
     }
   },
@@ -7186,6 +8388,35 @@
       "matk": [
         "40",
         "1---1"
+      ]
+    }
+  },
+  "18858": {
+    "id": 18858,
+    "aegisName": "Pink_Angeling_Bubble",
+    "name": "Pink Angeling Bubble",
+    "unidName": "accessory",
+    "resName": "핑크엔젤링풍선",
+    "description": "บอลลูน Angeling สีชมพูน่ารักสดใส มันจะอยู่กับคุณเสมอ\nMHP + 200.\nASPD + 1.\nประเภท : ^777777Headgear^000000 ป้องกัน : ^7777775^000000\nตำแหน่ง : ^777777Bottom ^000000 น้ำหนัก : ^7777775^000000\nLv ที่ต้องการ : ^7777771^000000\nอาชีพ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 5,
+    "requiredLevel": 1,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "hp": [
+        "200"
+      ],
+      "aspd": [
+        "1"
       ]
     }
   },
@@ -7830,6 +9061,70 @@
       ]
     }
   },
+  "19179": {
+    "id": 19179,
+    "aegisName": "Rabbit_Magic_Hat_",
+    "name": "Rabbit Magic Hat [1]",
+    "unidName": "Cap",
+    "resName": "토끼마술모자",
+    "description": "หมวกที่ใช้ทดสอบเวทมนตร์โดยนักเวทย์ หูกระต่ายได้โผล่ขึ้นมาโดยไม่ได้ตั้งใจ คุณไม่สามารถคาดเดาได้เลยว่าจะมีอะไรโผล่ขึ้นมาอีก\nDEX +1, AGI +1, MDEF +1\nASPD +5%\nลด Delay หลังใช้สกิล 4%\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^7777774^000000\nตำแหน่ง : ^777777Upper ^000000 น้ำหนัก : ^77777780^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 519,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 4,
+    "weight": 80,
+    "requiredLevel": 1,
+    "location": "Upper",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "dex": [
+        "1"
+      ],
+      "agi": [
+        "1"
+      ],
+      "mdef": [
+        "1"
+      ],
+      "aspdPercent": [
+        "5"
+      ],
+      "acd": [
+        "4"
+      ]
+    }
+  },
+  "19181": {
+    "id": 19181,
+    "aegisName": "New_Wave_Sunglasses_",
+    "name": "New Wave Sunglasses [1]",
+    "unidName": "Glasses",
+    "resName": "독특한패션안경",
+    "description": "แว่นตาที่ทำให้มองเห็นอนาคตอันใกล้\nลด Delay หลังใช้สกิล 5%\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^7777770^000000\nตำแหน่ง : ^777777Middle ^000000น้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^77777730^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 519,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 30,
+    "location": "Middle",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "acd": [
+        "5"
+      ]
+    }
+  },
   "19199": {
     "id": 19199,
     "aegisName": "Racing_C_Ranger",
@@ -7857,7 +9152,7 @@
       "aspdPercent": [
         "3---2"
       ],
-      "[Aimed Bolt]": [
+      "Aimed Bolt": [
         "REFINE[8]LEARN_SKILL[Steel Crow==1]---3"
       ],
       "acd": [
@@ -8012,7 +9307,7 @@
       "acd": [
         "5"
       ],
-      "spCostPercent": [
+      "spPercent": [
         "-5"
       ]
     }
@@ -8828,6 +10123,45 @@
       ]
     }
   },
+  "20845": {
+    "id": 20845,
+    "aegisName": "Skin_Of_Marraco",
+    "name": "Marraco's Skin [1]",
+    "unidName": "Hood",
+    "resName": "Skin_Of_Marraco",
+    "description": "ผิวหนังของมังกรที่มีปากใหญ่พอกลืนนักผจญภัยเข้าไปได้ทั้งตัว\n\nSTR +5, LUK +5\nเพิ่มความต้านทานต่อการโจมตีธาตุ Holy, Ghost 5%\nเพิ่มความต้านทานต่อมอนสเตอร์ประเภท Angel, Formless 5%\nเมื่ออัพเกรดถึงขั้น 7, Critical Damage +5%\nเมื่ออัพเกรดถึงขั้น 8 เมื่อ Base STR และ LUK รวมกันได้ ทุกๆ 20 หน่วย CRI +1 , ASPD +1%\nเมื่ออัพเกรดถึงขั้น 9, Critical Damage +5% เพิ่มเติม\n\nประเภท : ^777777Garment^000000 พลังป้องกัน : ^77777715^000000\nน้ำหนัก : ^77777760^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 515,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 15,
+    "weight": 60,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "str": [
+        "5"
+      ],
+      "luk": [
+        "5"
+      ],
+      "criDmg": [
+        "7===5",
+        "9===5"
+      ],
+      "cri": [
+        "REFINE[8]SUM[str,luk==20]---1"
+      ],
+      "aspdPercent": [
+        "REFINE[8]SUM[str,luk==20]---1"
+      ]
+    }
+  },
   "20847": {
     "id": 20847,
     "aegisName": "Clack_Of_Servival_IL",
@@ -8882,6 +10216,47 @@
       ],
       "m_my_element_fire": [
         "EQUIP[Illusion Wizardry Staff]REFINE[weapon,garment==22]10"
+      ]
+    }
+  },
+  "20859": {
+    "id": 20859,
+    "aegisName": "Phreeoni_Wing",
+    "name": "Phreeoni Wing [1]",
+    "unidName": "Hood",
+    "resName": "Phreeoni_Wing",
+    "description": "ชุดสูทที่ทำขึ้นโดยได้รับแรงบันดาลใจจาก Phreeoni\nเมื่อใส่แล้วรู้สึกเหมือนล่องลอยอยู่บนฟ้า\n\nMHP +10%, HIT +10\n\nเมื่ออัพเกรดถึงขั้น 8, HIT +20 เพิ่มเติม\nเมื่ออัพเกรดถึงขั้น 10, HIT +30 เพิ่มเติม\nเมื่ออัพเกรดถึงขั้น 12, HIT +50 เพิ่มเติม\n\nเมื่อใช้ร่วมกับ Phreeoni Card หรือ\nSealed Phreeoni Card,\nFLEE -150\nเพิ่มความต้านทานต่อสถานะ Stone Curse 100%\nมีโอกาส 50% ที่จะเกิด Perfect Hit ที่ไม่สามารถหลบได้\n\nประเภท : ^777777Garment^000000  พลังป้องกัน : ^77777710^000000\nน้ำหนัก : ^77777730^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 515,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 10,
+    "weight": 30,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "hpPercent": [
+        "10"
+      ],
+      "hit": [
+        "10",
+        "8===20",
+        "10===30",
+        "12===50"
+      ],
+      "flee": [
+        "EQUIP[Phreeoni Card||Sealed Phreeoni Card]-150"
+      ],
+      "เพิ่มความต้านทานต่อสถานะ Stone Curse": [
+        "EQUIP[Phreeoni Card||Sealed Phreeoni Card]100"
+      ],
+      "perfectHit": [
+        "EQUIP[Phreeoni Card||Sealed Phreeoni Card]50"
       ]
     }
   },
@@ -9007,7 +10382,7 @@
     "script": {
       "atk": [
         "2---10",
-        "EQUIP[Temporal Str Boots [1]||Modified Str Boots]50"
+        "EQUIP[Temporal Str Boots|||Modified Str Boots]50"
       ],
       "atkPercent": [
         "2---1",
@@ -9019,22 +10394,22 @@
       "p_pene_race_brute": [
         "9===20",
         "11===10",
-        "EQUIP[Temporal Str Boots [1]||Modified Str Boots]REFINE[boot==10]30"
+        "EQUIP[Temporal Str Boots|||Modified Str Boots]REFINE[boot==10]30"
       ],
       "p_pene_race_demon": [
         "9===20",
         "11===10",
-        "EQUIP[Temporal Str Boots [1]||Modified Str Boots]REFINE[boot==10]30"
+        "EQUIP[Temporal Str Boots|||Modified Str Boots]REFINE[boot==10]30"
       ],
       "m_pene_race_brute": [
         "9===20",
         "11===10",
-        "EQUIP[Temporal Str Boots [1]||Modified Str Boots]REFINE[boot==10]30"
+        "EQUIP[Temporal Str Boots|||Modified Str Boots]REFINE[boot==10]30"
       ],
       "m_pene_race_demon": [
         "9===20",
         "11===10",
-        "EQUIP[Temporal Str Boots [1]||Modified Str Boots]REFINE[boot==10]30"
+        "EQUIP[Temporal Str Boots|||Modified Str Boots]REFINE[boot==10]30"
       ]
     }
   },
@@ -9064,7 +10439,7 @@
       ],
       "criDmg": [
         "2---3",
-        "EQUIP[Temporal Agi Boots [1]||Modified Agi Boots]7"
+        "EQUIP[Temporal Agi Boots|||Modified Agi Boots]7"
       ],
       "atkPercent": [
         "7===7"
@@ -9075,22 +10450,22 @@
       "p_pene_race_brute": [
         "9===20",
         "11===10",
-        "EQUIP[Temporal Agi Boots [1]||Modified Agi Boots]REFINE[boot==10]30"
+        "EQUIP[Temporal Agi Boots|||Modified Agi Boots]REFINE[boot==10]30"
       ],
       "p_pene_race_demon": [
         "9===20",
         "11===10",
-        "EQUIP[Temporal Agi Boots [1]||Modified Agi Boots]REFINE[boot==10]30"
+        "EQUIP[Temporal Agi Boots|||Modified Agi Boots]REFINE[boot==10]30"
       ],
       "m_pene_race_brute": [
         "9===20",
         "11===10",
-        "EQUIP[Temporal Agi Boots [1]||Modified Agi Boots]REFINE[boot==10]30"
+        "EQUIP[Temporal Agi Boots|||Modified Agi Boots]REFINE[boot==10]30"
       ],
       "m_pene_race_demon": [
         "9===20",
         "11===10",
-        "EQUIP[Temporal Agi Boots [1]||Modified Agi Boots]REFINE[boot==10]30"
+        "EQUIP[Temporal Agi Boots|||Modified Agi Boots]REFINE[boot==10]30"
       ]
     }
   },
@@ -9128,27 +10503,27 @@
         "7===7"
       ],
       "acd": [
-        "EQUIP[Temporal Vit Boots [1]||Modified Vit Boots]5"
+        "EQUIP[Temporal Vit Boots|||Modified Vit Boots]5"
       ],
       "p_pene_race_brute": [
         "9===20",
         "11===10",
-        "EQUIP[Temporal Vit Boots [1]||Modified Vit Boots]REFINE[boot==10]30"
+        "EQUIP[Temporal Vit Boots|||Modified Vit Boots]REFINE[boot==10]30"
       ],
       "p_pene_race_demon": [
         "9===20",
         "11===10",
-        "EQUIP[Temporal Vit Boots [1]||Modified Vit Boots]REFINE[boot==10]30"
+        "EQUIP[Temporal Vit Boots|||Modified Vit Boots]REFINE[boot==10]30"
       ],
       "m_pene_race_brute": [
         "9===20",
         "11===10",
-        "EQUIP[Temporal Vit Boots [1]||Modified Vit Boots]REFINE[boot==10]30"
+        "EQUIP[Temporal Vit Boots|||Modified Vit Boots]REFINE[boot==10]30"
       ],
       "m_pene_race_demon": [
         "9===20",
         "11===10",
-        "EQUIP[Temporal Vit Boots [1]||Modified Vit Boots]REFINE[boot==10]30"
+        "EQUIP[Temporal Vit Boots|||Modified Vit Boots]REFINE[boot==10]30"
       ]
     }
   },
@@ -9175,7 +10550,7 @@
     "script": {
       "matk": [
         "2---10",
-        "EQUIP[Temporal Int Boots [1]||Modified Int Boots]50"
+        "EQUIP[Temporal Int Boots|||Modified Int Boots]50"
       ],
       "matkPercent": [
         "2---1",
@@ -9187,22 +10562,22 @@
       "p_pene_race_brute": [
         "9===20",
         "11===10",
-        "EQUIP[Temporal Int Boots [1]||Modified Int Boots]REFINE[boot==10]30"
+        "EQUIP[Temporal Int Boots|||Modified Int Boots]REFINE[boot==10]30"
       ],
       "p_pene_race_demon": [
         "9===20",
         "11===10",
-        "EQUIP[Temporal Int Boots [1]||Modified Int Boots]REFINE[boot==10]30"
+        "EQUIP[Temporal Int Boots|||Modified Int Boots]REFINE[boot==10]30"
       ],
       "m_pene_race_brute": [
         "9===20",
         "11===10",
-        "EQUIP[Temporal Int Boots [1]||Modified Int Boots]REFINE[boot==10]30"
+        "EQUIP[Temporal Int Boots|||Modified Int Boots]REFINE[boot==10]30"
       ],
       "m_pene_race_demon": [
         "9===20",
         "11===10",
-        "EQUIP[Temporal Int Boots [1]||Modified Int Boots]REFINE[boot==10]30"
+        "EQUIP[Temporal Int Boots|||Modified Int Boots]REFINE[boot==10]30"
       ]
     }
   },
@@ -9232,7 +10607,7 @@
       ],
       "range": [
         "2---1",
-        "EQUIP[Temporal Dex Boots [1]||Modified Dex Boots]7"
+        "EQUIP[Temporal Dex Boots|||Modified Dex Boots]7"
       ],
       "criDmg": [
         "4---3"
@@ -9243,22 +10618,22 @@
       "p_pene_race_brute": [
         "9===20",
         "11===10",
-        "EQUIP[Temporal Dex Boots [1]||Modified Dex Boots]REFINE[boot==10]30"
+        "EQUIP[Temporal Dex Boots|||Modified Dex Boots]REFINE[boot==10]30"
       ],
       "p_pene_race_demon": [
         "9===20",
         "11===10",
-        "EQUIP[Temporal Dex Boots [1]||Modified Dex Boots]REFINE[boot==10]30"
+        "EQUIP[Temporal Dex Boots|||Modified Dex Boots]REFINE[boot==10]30"
       ],
       "m_pene_race_brute": [
         "9===20",
         "11===10",
-        "EQUIP[Temporal Dex Boots [1]||Modified Dex Boots]REFINE[boot==10]30"
+        "EQUIP[Temporal Dex Boots|||Modified Dex Boots]REFINE[boot==10]30"
       ],
       "m_pene_race_demon": [
         "9===20",
         "11===10",
-        "EQUIP[Temporal Dex Boots [1]||Modified Dex Boots]REFINE[boot==10]30"
+        "EQUIP[Temporal Dex Boots|||Modified Dex Boots]REFINE[boot==10]30"
       ]
     }
   },
@@ -9296,27 +10671,27 @@
         "7===7"
       ],
       "aspd": [
-        "EQUIP[Temporal Luk Boots [1]||Modified Luk Boots]1"
+        "EQUIP[Temporal Luk Boots|||Modified Luk Boots]1"
       ],
       "p_pene_race_brute": [
         "9===20",
         "11===10",
-        "EQUIP[Temporal Luk Boots [1]||Modified Luk Boots]REFINE[boot==10]30"
+        "EQUIP[Temporal Luk Boots|||Modified Luk Boots]REFINE[boot==10]30"
       ],
       "p_pene_race_demon": [
         "9===20",
         "11===10",
-        "EQUIP[Temporal Luk Boots [1]||Modified Luk Boots]REFINE[boot==10]30"
+        "EQUIP[Temporal Luk Boots|||Modified Luk Boots]REFINE[boot==10]30"
       ],
       "m_pene_race_brute": [
         "9===20",
         "11===10",
-        "EQUIP[Temporal Luk Boots [1]||Modified Luk Boots]REFINE[boot==10]30"
+        "EQUIP[Temporal Luk Boots|||Modified Luk Boots]REFINE[boot==10]30"
       ],
       "m_pene_race_demon": [
         "9===20",
         "11===10",
-        "EQUIP[Temporal Luk Boots [1]||Modified Luk Boots]REFINE[boot==10]30"
+        "EQUIP[Temporal Luk Boots|||Modified Luk Boots]REFINE[boot==10]30"
       ]
     }
   },
@@ -10869,10 +12244,10 @@
       ],
       "aspd": [
         "7===1",
-        "EQUIP[Blitz Shadow Pendant]REFINE[shadowEaring,shadowPendant==15]===1"
+        "EQUIP[Blitz Shadow Pendant]REFINE[shadowEarring,shadowPendant==15]===1"
       ],
       "atk": [
-        "EQUIP[Blitz Shadow Pendant]REFINE[shadowEaring,shadowPendant==1]---1"
+        "EQUIP[Blitz Shadow Pendant]REFINE[shadowEarring,shadowPendant==1]---1"
       ]
     }
   },
@@ -10992,6 +12367,41 @@
       ]
     }
   },
+  "24247": {
+    "id": 24247,
+    "aegisName": "S_Merchant_earring",
+    "name": "Merchant Shadow Earring",
+    "unidName": "Shadow Earring",
+    "resName": "이어링쉐도우",
+    "description": "ต่างหูมงคลที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา  \nเพิ่ม Damage ของ Mammonite 20%  \nทุกๆ การอัพเกรด 1 ขั้น [เพิ่ม Damage ของ Mammonite เพิ่มเติม 5% \nเมื่อสวมใส่ Merchant Shadow Earring, Merchant Shadow Pendant ATK +1%, MAXHP +1%.\nเมื่อค่าอัพเกรดรวมกันมากกว่า 10 ขึ้นไป, ATK +2%, MAXHP +2% เพิ่มเติม\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Earring^000000 น้ำหนัก :  ^7777770^000000\nเลเวลที่ต้องการ: ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 529,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Accessory",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "Mammonite": [
+        "20",
+        "1---5"
+      ],
+      "atkPercent": [
+        "EQUIP[Merchant Shadow Pendant]1",
+        "EQUIP[Merchant Shadow Pendant]REFINE[shadowEarring,shadowPendant==10]===2"
+      ],
+      "hpPercent": [
+        "EQUIP[Merchant Shadow Earring]1",
+        "EQUIP[Merchant Shadow Pendant]REFINE[shadowEarring,shadowPendant==10]===2"
+      ]
+    }
+  },
   "24248": {
     "id": 24248,
     "aegisName": "S_Acolyte_earring",
@@ -11019,11 +12429,11 @@
       ],
       "matkPercent": [
         "EQUIP[Acolyte Shadow Pendant]===1",
-        "EQUIP[Acolyte Shadow Pendant]REFINE[shadowEaring,shadowPendant==10]===2"
+        "EQUIP[Acolyte Shadow Pendant]REFINE[shadowEarring,shadowPendant==10]===2"
       ],
       "spPercent": [
         "EQUIP[Acolyte Shadow Pendant]===1",
-        "EQUIP[Acolyte Shadow Pendant]REFINE[shadowEaring,shadowPendant==10]===2"
+        "EQUIP[Acolyte Shadow Pendant]REFINE[shadowEarring,shadowPendant==10]===2"
       ]
     }
   },
@@ -11062,11 +12472,38 @@
       ],
       "matkPercent": [
         "EQUIP[Magician Shadow Pendant]1",
-        "EQUIP[Magician Shadow Pendant]REFINE[shadowEaring,shadowPendant==10]2"
+        "EQUIP[Magician Shadow Pendant]REFINE[shadowEarring,shadowPendant==10]2"
       ],
       "spPercent": [
         "EQUIP[Magician Shadow Pendant]1",
-        "EQUIP[Magician Shadow Pendant]REFINE[shadowEaring,shadowPendant==10]2"
+        "EQUIP[Magician Shadow Pendant]REFINE[shadowEarring,shadowPendant==10]2"
+      ]
+    }
+  },
+  "24251": {
+    "id": 24251,
+    "aegisName": "S_Merchant_Pendant",
+    "name": "Merchant Shadow Pendant",
+    "unidName": "Shadow Pendant",
+    "resName": "펜던트쉐도우",
+    "description": "สร้อยคอศักดิ์สิทธิ์ที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา\nเพิ่ม Damage ของ Cart Revolution 20% \nทุกๆ การอัพเกรด 1 ขั้น เพิ่ม Damage ของ Cart Revolution เพิ่มเติม 5% \nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Pendant^000000 น้ำหนัก :  ^7777770^000000\nเลเวลที่ต้องการ: ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 530,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Accessory",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "Cart Revolution": [
+        "20",
+        "1---5"
       ]
     }
   },
@@ -11173,6 +12610,33 @@
     ],
     "script": {
       "Arrow Shower": [
+        "20",
+        "1---5"
+      ]
+    }
+  },
+  "24258": {
+    "id": 24258,
+    "aegisName": "S_Blacksmith_Shoes",
+    "name": "Blacksmith Shadow Shoes",
+    "unidName": "Shadow Shoes",
+    "resName": "슈즈쉐도우",
+    "description": "รองเท้าที่สวมใส่เพิ่มเติม สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์ของมันจะลดน้อยลง\nลดการใช้ SP ในการใช้สกิล Hammer Fall, Adrenaline Rush SP 20% \nทุกๆ การอัพเกรด 1 ขั้น ลดการใช้ SP ในการใช้สกิล Hammer Fall, Adrenaline Rush เพิ่มเติม 5% \nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shoes^000000 น้ำหนัก :  ^7777770^000000\nเลเวลที่ต้องการ: ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 528,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Shoes",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "spPercent__Hammer Fall": [
         "20",
         "1---5"
       ]
@@ -11321,6 +12785,63 @@
       "Blitz Beat": [
         "20",
         "1---5"
+      ]
+    }
+  },
+  "24268": {
+    "id": 24268,
+    "aegisName": "S_Dancer_Shoes",
+    "name": "Dancer Shadow Shoes",
+    "unidName": "Shadow Shoes",
+    "resName": "슈즈쉐도우",
+    "description": "รองเท้าที่สวมใส่เพิ่มเติม สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์ของมันจะลดน้อยลง\nเพิ่ม ATK เท่ากับเลเวลของสกิล Dance Lessons ที่ผู้สวมใส่เรียน\nเมื่อขั้นอัพเกรดมากกว่า 6 ทุกๆ การอัพเกรด 1 ขั้น เพิ่ม ATK เท่ากับเลเวลของสกิล Dance Lessons ที่ผู้สวมใส่เรียนเพิ่มเติม \nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shoes^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่สวมใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 528,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Shoes",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atk": [
+        "LEARN_SKILL[Dance Lessons==1]---2"
+      ]
+    }
+  },
+  "24271": {
+    "id": 24271,
+    "aegisName": "S_Blacksmith_Armor",
+    "name": "Blacksmith Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우",
+    "description": "ชุดเกราะที่เพิ่มพลังป้องกันเมื่อสวมใส่เพิ่มบนเกราะอีกที สามารถใส่แบบชิ้นเดียวได้ แต่ความสามารถในการป้องกันจะลดลงไปอีก\nเมื่อสวมใส่ Perfection Weapon, เพิ่ม Damage เมื่อโจมตีศัตรูขนาดเล็ก, กลาง, ใหญ่ ด้วยการโจมตีทางกายภาพและทางเวทย์ 5% เป็นเวลา 50 วินาที  \nเมื่ออัพเกรดมากกว่าขั้น 6 ขึ้นไป, ทุกๆ การอัพเกรด 1 ขั้น เพิ่ม Damage เพิ่มเติม 1%\nเมื่อสวมใส่ร่วมกันกับ Blacksmith Shadow Shoes,\nเมื่ออาชีพ Blacksmith เป็นผู้สวมใส่ เพิ่ม Damage เมื่อโจมตีมอนสเตอร์ขนาดเล็ก, กลาง, ใหญ่ ด้วยการโจมตีทางกายภาพและทางเวทย์ 3% \nลดการใช้ SP ในการใช้สกิล Weapon Perfection  20% \nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Armor ^000000 น้ำหนัก :  ^7777770^000000\nเลเวลที่ต้องการ: ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "p_size_all": [
+        "5",
+        "7===1",
+        "8===1",
+        "9===1",
+        "10===1",
+        "EQUIP[Blacksmith Shadow Shoes]USED[Blacksmith]3"
       ]
     }
   },
@@ -11502,6 +13023,28 @@
       ]
     }
   },
+  "24281": {
+    "id": 24281,
+    "aegisName": "S_Dancer_Armor",
+    "name": "Dancer Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우",
+    "description": "ชุดเกราะที่เพิ่มพลังป้องกันเมื่อสวมใส่เพิ่มบนเกราะอีกที สามารถใส่แบบชิ้นเดียวได้ แต่ความสามารถในการป้องกันจะลดลงไปอีก \nเมื่อใช้สกิลของ Dancer จะฟื้นฟู 5 SP ทุกๆ 5 วินาทีในระยะเวลา 30 วินาที\nทุกๆ การอัพเกรด 1 ขั้น เพิ่มค่าฟื้นฟู SP ทีละ 1\n^ff0000Dancer Skills : Don't Forget Me, Service For You, Kiss of Fortune, Humming, Ugly Dance^000000\n\nเมื่อสวมใส่ร่วมกับ Dancer Shadow Shoes\nเมื่อใช้สกิล Extemporaneousness เพิ่ม ASPD และ Moving Speed อย่างสูงในระยะเวลา 5 วินาที\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Armor ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่สวมใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {}
+  },
   "24283": {
     "id": 24283,
     "aegisName": "S_Gunslinger_Weapon",
@@ -11535,6 +13078,33 @@
       "range": [
         "7===3",
         "9===5"
+      ]
+    }
+  },
+  "24290": {
+    "id": 24290,
+    "aegisName": "S_Mechanic_weapon",
+    "name": "Mechanic Weapon Shadow",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา\nอาชีพ Mechanic เท่านั้นที่สามารถสวมใส่ได้  \nเพิ่ม Damage ของ Vulcan Arm 20%  \nทุกๆ การอัพเกรด 1 ขั้น เพิ่ม Damage ของ Vulcan Arm เพิ่มเติม 5%  \nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Mechanic Class^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "Mechanic Class"
+    ],
+    "script": {
+      "Vulcan Arm": [
+        "20",
+        "1---5"
       ]
     }
   },
@@ -11670,6 +13240,32 @@
       "Bomb Cluster": [
         "20",
         "1---5"
+      ]
+    }
+  },
+  "24300": {
+    "id": 24300,
+    "aegisName": "S_Wanderer_Weapon",
+    "name": "Wanderer Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา \nสวมใส่ได้เฉพาะอาชีพ Wanderer เท่านั้น \nMaxHP + 3%.\nเพิ่มค่า DEF ตามขั้นอัพเกรดคูณด้วยผลรวมเลเวลสกิล\n^ff0000Moonlight Serenade, Swing Dance, Lover Symphony^000000\nประเภท : ^777777Shadow Equipment^000000\nตำแหน่ง : ^777777Weapon^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่สวมใส่ได้ : ^777777Wanderer^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "hpPercent": [
+        "3"
       ]
     }
   },
@@ -11906,6 +13502,100 @@
       ],
       "p_pene_class_normal": [
         "EQUIP[Ranger Shadow Weapon&&Archer Shadow Earring&&Archer Shadow Pendant&&Hunter Shadow Armor&&Hunter Shadow Shoes]===50"
+      ]
+    }
+  },
+  "24312": {
+    "id": 24312,
+    "aegisName": "S_Minstrel_Shield",
+    "name": "Minstrel Shadow Shield",
+    "unidName": "Shadow Shield",
+    "resName": "쉴드쉐도우",
+    "description": "โล่ขนาดเล็กที่สามารถสวมใส่แขนได้เพื่อรับเอฟเฟกต์การป้องกันเพิ่มเติม สามารถใช้งานแบบชิ้นเดียวได้แต่ผลของเอฟเฟกต์การป้องกันจะน้อยลง\nสวมใส่ได้เฉพาะอาชีพ Minstrel เท่านั้น \nMaxSP + 3%\nทุกๆ การอัพเกรด 1 ขั้น, MDEF + 1 ทุก 5 แต้มสกิล\n^ff0000Echo Song, Harmonize, Windmill Rush^000000\n------------- \nเมื่อสวมใส่ร่วมกับ ^32CD32Minstrel Shadow Weapon^000000 จะได้ผลลัพธ์ที่มากขึ้น\nMaxHP + 2%, MaxSP + 2%, ทุกๆ 2 เลเวลของสกิล ^ff0000Lesson^000000 เพิ่มดาเมจระยะไกล 1% \n------------- \nเมื่อสวมใส่กับ ^32CD32Archer Shadow^000000 2 ชิ้น, ^32CD32Bard Shadow^000000 2 ชิ้น,  ^32CD32Minstrel Shadow^000000 2 ชิ้นทั้งหมด จะได้รับเอฟเฟกต์ดังต่อไปนี้\nAll State + 10, MaxHP + 5%, MaxSP + 5%\nเพิกเฉยต่อค่า DEF และ MDEF ของมอนสเตอร์ทั่วไป 50 %\nประเภท : ^777777Shadow Equipment^000000\nตำแหน่ง : ^777777Shield^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่สวมใส่ได้ : ^777777Minstrel^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 527,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Shield",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "spPercent": [
+        "3",
+        "EQUIP[Minstrel Shadow Weapon]2",
+        "EQUIP[Archer Shadow Earring&&Archer Shadow Pendant&&Bard Shadow Armor&&Bard Shadow Shoes&&Minstrel Shadow Weapon]===5"
+      ],
+      "mdef": [
+        "1---3"
+      ],
+      "hpPercent": [
+        "EQUIP[Minstrel Shadow Weapon]2",
+        "EQUIP[Archer Shadow Earring&&Archer Shadow Pendant&&Bard Shadow Armor&&Bard Shadow Shoes&&Minstrel Shadow Weapon]===5"
+      ],
+      "range": [
+        "EQUIP[Minstrel Shadow Weapon]LEARN_SKILL[Music Lessons==2]---1"
+      ],
+      "allStatus": [
+        "EQUIP[Archer Shadow Earring&&Archer Shadow Pendant&&Bard Shadow Armor&&Bard Shadow Shoes&&Minstrel Shadow Weapon]===10"
+      ],
+      "p_pene_class_normal": [
+        "EQUIP[Archer Shadow Earring&&Archer Shadow Pendant&&Bard Shadow Armor&&Bard Shadow Shoes&&Minstrel Shadow Weapon]===50"
+      ],
+      "m_pene_class_normal": [
+        "EQUIP[Archer Shadow Earring&&Archer Shadow Pendant&&Bard Shadow Armor&&Bard Shadow Shoes&&Minstrel Shadow Weapon]===50"
+      ]
+    }
+  },
+  "24313": {
+    "id": 24313,
+    "aegisName": "S_Wanderer_Shield",
+    "name": "Wanderer Shadow Shield",
+    "unidName": "Shadow Shield",
+    "resName": "쉴드쉐도우",
+    "description": "โล่เล็กที่สามารถสวมใส่ที่แขนได้ สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์การป้องกันของมันจะลดน้อยลง\nสวมใส่ได้เฉพาะอาชีพ Wanderer เท่านั้น \nMaxSP + 3% \nทุกๆ การอัพเกรด 1 ขั้น, MDEF + 1 ทุก 5 แต้มสกิล\n^ff0000Moonlight Serenade, Swing Dance, Lover Symphony^000000\n------------- \nเมื่อสวมใส่กับ ^32CD32Wanderer Shadow Weapon^000000 จะได้ผลลัพธ์ที่มากขึ้น\nMaxHP + 2%, MaxSP + 2%, ทุกๆ 2 เลเวลของสกิล ^ff0000Lesson^000000 เพิ่มดาเมจระยะไกล 1%\n------------- \nเมื่อสวมใส่ ^32CD32Archer Shadow^000000 2 ชิ้น, ^32CD32Dancer Shadow^000000 2 ชิ้น,  ^32CD32Wanderer Shadow^000000 2 ชิ้นทั้งหมด จะได้รับเอฟเฟกต์ดังต่อไปนี้\nAll State + 10, MaxHP + 5%, MaxSP + 5%\nเพิกเฉยต่อค่า DEF และ MDEF ของมอนสเตอร์ทั่วไป 50 %\nประเภท : ^777777Shadow Equipment^000000\nตำแหน่ง : ^777777Shield^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Wanderer^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 527,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Shield",
+    "compositionPos": null,
+    "usableClass": [
+      "Wanderer"
+    ],
+    "script": {
+      "spPercent": [
+        "3",
+        "EQUIP[Minstrel Shadow Weapon]2",
+        "EQUIP[Archer Shadow Earring&&Archer Shadow Pendant&&Bard Shadow Armor&&Bard Shadow Shoes&&Minstrel Shadow Weapon]===5"
+      ],
+      "mdef": [
+        "1---3"
+      ],
+      "hpPercent": [
+        "EQUIP[Minstrel Shadow Weapon]2",
+        "EQUIP[Archer Shadow Earring&&Archer Shadow Pendant&&Bard Shadow Armor&&Bard Shadow Shoes&&Minstrel Shadow Weapon]===5"
+      ],
+      "range": [
+        "EQUIP[Minstrel Shadow Weapon]LEARN_SKILL[Music Lessons==2]---1"
+      ],
+      "allStatus": [
+        "EQUIP[Archer Shadow Earring&&Archer Shadow Pendant&&Bard Shadow Armor&&Bard Shadow Shoes&&Minstrel Shadow Weapon]===10"
+      ],
+      "p_pene_class_normal": [
+        "EQUIP[Archer Shadow Earring&&Archer Shadow Pendant&&Bard Shadow Armor&&Bard Shadow Shoes&&Minstrel Shadow Weapon]===50"
+      ],
+      "m_pene_class_normal": [
+        "EQUIP[Archer Shadow Earring&&Archer Shadow Pendant&&Bard Shadow Armor&&Bard Shadow Shoes&&Minstrel Shadow Weapon]===50"
       ]
     }
   },
@@ -12853,6 +14543,81 @@
       "all"
     ]
   },
+  "24425": {
+    "id": 24425,
+    "aegisName": "S_PerfectSize_Weapon",
+    "name": "Perfect Size Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우3",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา\nเพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูทุกขนาด 2%\nทุก ๆ การอัพเกรด 1 ขั้น ATK +3\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูทุกขนาดขึ้นอีก 2%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูทุกขนาดขึ้นอีก 3%\nเมื่อสวมใส่ร่วมกับ ^32CD32Perfect Size Shadow Armor^000000, \nMaxHP +2%, MaxSP +2%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "p_size_all": [
+        "2",
+        "7===2",
+        "9===3"
+      ],
+      "m_size_all": [
+        "2",
+        "7===2",
+        "9===3"
+      ],
+      "atk": [
+        "1---3"
+      ],
+      "hpPercent": [
+        "EQUIP[Perfect Size Shadow Armor]2"
+      ],
+      "spPercent": [
+        "EQUIP[Perfect Size Shadow Armor]2"
+      ]
+    }
+  },
+  "24426": {
+    "id": 24426,
+    "aegisName": "S_PerfectSize_Armor",
+    "name": "Perfect Size Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우3",
+    "description": "ชุดเกราะที่เพิ่มพลังป้องกันเมื่อสวมใส่เพิ่มบนเกราะอีกที สามารถใส่แบบชิ้นเดียวได้ แต่ความสามารถในการป้องกันจะลดลงไปอีก\nลด Damage ทางกายภาพ/เวทมนตร์ที่ได้รับจากศัตรูทุกขนาด 2%\nทุก ๆ การอัพเกรด 1 ขั้น DEF +10\nเมื่ออัพเกรดถึงขั้น 7 ลด Damage ทางกายภาพ/เวทมนตร์ที่ได้รับจากศัตรูทุกขนาดลงอีก 2%\nเมื่ออัพเกรดถึงขั้น 9 ลด Damage ทางกายภาพ/เวทมนตร์ที่ได้รับจากศัตรูทุกขนาดลงอีก 3%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Armor^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Armor",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "ลด Damage ทางกายภาพ/เวทมนตร์ที่ได้รับจากศัตรูทุกขนาด": [
+        "2"
+      ],
+      "def": [
+        "1---10"
+      ],
+      "ลด Damage ทางกายภาพ/เวทมนตร์ที่ได้รับจากศัตรูทุกขนาดลง": [
+        "7===2",
+        "9===3"
+      ]
+    }
+  },
   "24427": {
     "id": 24427,
     "aegisName": "S_M_Exo_Co_Weapon",
@@ -12877,12 +14642,12 @@
       "m_pene_race_demon": [
         "5",
         "2---1",
-        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]REFINE[shadowWeapon,shadowEaring,shadowPendant==25]===100"
+        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]REFINE[shadowWeapon,shadowEarring,shadowPendant==25]===100"
       ],
       "m_pene_race_angel": [
         "5",
         "2---1",
-        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]REFINE[shadowWeapon,shadowEaring,shadowPendant==25]===100"
+        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]REFINE[shadowWeapon,shadowEarring,shadowPendant==25]===100"
       ],
       "atk": [
         "1---1"
@@ -12917,12 +14682,12 @@
       "m_pene_race_dragon": [
         "5",
         "2---1",
-        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]REFINE[shadowWeapon,shadowEaring,shadowPendant==25]===100"
+        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]REFINE[shadowWeapon,shadowEarring,shadowPendant==25]===100"
       ],
       "m_pene_race_formless": [
         "5",
         "2---1",
-        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]REFINE[shadowWeapon,shadowEaring,shadowPendant==25]===100"
+        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]REFINE[shadowWeapon,shadowEarring,shadowPendant==25]===100"
       ],
       "atk": [
         "1---1"
@@ -12957,12 +14722,12 @@
       "m_pene_race_brute": [
         "5",
         "2---1",
-        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]REFINE[shadowWeapon,shadowEaring,shadowPendant==25]===100"
+        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]REFINE[shadowWeapon,shadowEarring,shadowPendant==25]===100"
       ],
       "m_pene_race_plant": [
         "5",
         "2---1",
-        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]REFINE[shadowWeapon,shadowEaring,shadowPendant==25]===100"
+        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]REFINE[shadowWeapon,shadowEarring,shadowPendant==25]===100"
       ],
       "atk": [
         "1---1"
@@ -12997,12 +14762,12 @@
       "m_pene_race_fish": [
         "5",
         "2---1",
-        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]REFINE[shadowWeapon,shadowEaring,shadowPendant==25]===100"
+        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]REFINE[shadowWeapon,shadowEarring,shadowPendant==25]===100"
       ],
       "m_pene_race_insect": [
         "5",
         "2---1",
-        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]REFINE[shadowWeapon,shadowEaring,shadowPendant==25]===100"
+        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]REFINE[shadowWeapon,shadowEarring,shadowPendant==25]===100"
       ],
       "atk": [
         "1---1"
@@ -13037,12 +14802,12 @@
       "m_pene_race_demihuman": [
         "5",
         "2---1",
-        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]REFINE[shadowWeapon,shadowEaring,shadowPendant==25]===100"
+        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]REFINE[shadowWeapon,shadowEarring,shadowPendant==25]===100"
       ],
       "m_pene_race_undead": [
         "5",
         "2---1",
-        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]REFINE[shadowWeapon,shadowEaring,shadowPendant==25]===100"
+        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]REFINE[shadowWeapon,shadowEarring,shadowPendant==25]===100"
       ],
       "atk": [
         "1---1"
@@ -13074,7 +14839,7 @@
       "p_pene_class_normal": [
         "5",
         "2---1",
-        "EQUIP[Penetration Shadow Armor&&Penetration Shadow Earring&&Penetration Shadow Pendant&&Penetration Shadow Shoes&&Penetration Shadow Shield]REFINE[shadowWeapon,shadowArmor,shadowShield,shadowBoot,shadowEaring,shadowPendant==54]===20"
+        "EQUIP[Penetration Shadow Armor&&Penetration Shadow Earring&&Penetration Shadow Pendant&&Penetration Shadow Shoes&&Penetration Shadow Shield]REFINE[shadowWeapon,shadowArmor,shadowShield,shadowBoot,shadowEarring,shadowPendant==54]===20"
       ]
     },
     "usableClass": [
@@ -13132,12 +14897,12 @@
       "p_pene_race_demihuman": [
         "5",
         "2---1",
-        "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]REFINE[shadowWeapon,shadowEaring,shadowPendant==25]===100"
+        "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]REFINE[shadowWeapon,shadowEarring,shadowPendant==25]===100"
       ],
       "p_pene_race_undead": [
         "5",
         "2---1",
-        "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]REFINE[shadowWeapon,shadowEaring,shadowPendant==25]===100"
+        "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]REFINE[shadowWeapon,shadowEarring,shadowPendant==25]===100"
       ],
       "atk": [
         "1---1",
@@ -13169,12 +14934,12 @@
       "p_pene_race_fish": [
         "5",
         "2---1",
-        "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]REFINE[shadowWeapon,shadowEaring,shadowPendant==25]===100"
+        "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]REFINE[shadowWeapon,shadowEarring,shadowPendant==25]===100"
       ],
       "p_pene_race_insect": [
         "5",
         "2---1",
-        "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]REFINE[shadowWeapon,shadowEaring,shadowPendant==25]===100"
+        "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]REFINE[shadowWeapon,shadowEarring,shadowPendant==25]===100"
       ],
       "atk": [
         "1---1",
@@ -13206,12 +14971,12 @@
       "p_pene_race_brute": [
         "5",
         "2---1",
-        "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]REFINE[shadowWeapon,shadowEaring,shadowPendant==25]===100"
+        "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]REFINE[shadowWeapon,shadowEarring,shadowPendant==25]===100"
       ],
       "p_pene_race_plant": [
         "5",
         "2---1",
-        "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]REFINE[shadowWeapon,shadowEaring,shadowPendant==25]===100"
+        "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]REFINE[shadowWeapon,shadowEarring,shadowPendant==25]===100"
       ],
       "atk": [
         "1---1",
@@ -13243,12 +15008,12 @@
       "p_pene_race_formless": [
         "5",
         "2---1",
-        "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]REFINE[shadowWeapon,shadowEaring,shadowPendant==25]===100"
+        "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]REFINE[shadowWeapon,shadowEarring,shadowPendant==25]===100"
       ],
       "p_pene_race_dragon": [
         "5",
         "2---1",
-        "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]REFINE[shadowWeapon,shadowEaring,shadowPendant==25]===100"
+        "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]REFINE[shadowWeapon,shadowEarring,shadowPendant==25]===100"
       ],
       "atk": [
         "1---1",
@@ -13280,16 +15045,105 @@
       "p_pene_race_demon": [
         "5",
         "2---1",
-        "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]REFINE[shadowWeapon,shadowEaring,shadowPendant==25]===100"
+        "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]REFINE[shadowWeapon,shadowEarring,shadowPendant==25]===100"
       ],
       "p_pene_race_angel": [
         "5",
         "2---1",
-        "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]REFINE[shadowWeapon,shadowEaring,shadowPendant==25]===100"
+        "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]REFINE[shadowWeapon,shadowEarring,shadowPendant==25]===100"
       ],
       "atk": [
         "1---1",
         "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]===5"
+      ]
+    }
+  },
+  "24455": {
+    "id": 24455,
+    "aegisName": "S_Aimed_Weapon",
+    "name": "Aimed Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา \nเพิ่ม Damage ทางกายภาพระยะไกล 3%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางกายภาพระยะไกลขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพระยะไกลขึ้นอีก 4%\nเมื่อสวมใส่ Aimed Shadow Weapon/Pendant/Earring ร่วมกัน,\nเพิ่ม Damage สกิล Aimed Bolt % เท่ากับค่าอัพเกรดรวมกัน\nเมื่อสวมใส่ร่วมกับ Ranger Shadow Shield,\nเพิกเฉยต่อพลังป้องกันทางกายภาพของทุกเผ่ายกเว้น Player 40% และเพิกเฉยต่อพลังป้องกันทางกายภาพเพิ่มอีกตามค่าอัพเกรดรวมกันของ Aimed Shadow Weapon และ Ranger Shadow Shield\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Ranger^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "Ranger"
+    ],
+    "script": {
+      "range": [
+        "3",
+        "7===3",
+        "9===4"
+      ],
+      "Aimed Bolt": [
+        "EQUIP[Aimed Shadow Pendant&&Aimed Shadow Earring]REFINE[shadowWeapon,shadowPendant,shadowEarring==1]---1"
+      ],
+      "p_pene_race_all": [
+        "EQUIP[Ranger Shadow Shield]40",
+        "EQUIP[Ranger Shadow Shield]REFINE[shadowWeapon,shadowShield==1]---1"
+      ]
+    }
+  },
+  "24456": {
+    "id": 24456,
+    "aegisName": "S_Aimed_Pendant",
+    "name": "Aimed Shadow Pendant",
+    "unidName": "Shadow Pendant",
+    "resName": "펜던트쉐도우",
+    "description": "สร้อยคอศักดิ์สิทธิ์ที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา\nเพิ่ม Damage สกิล Aimed Bolt 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage สกิล Aimed Bolt ขึ้นอีก 2%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Pendant ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Ranger^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 530,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "AccessoryLeft",
+    "compositionPos": null,
+    "usableClass": [
+      "Ranger"
+    ],
+    "script": {
+      "Aimed Bolt": [
+        "5",
+        "2---2"
+      ]
+    }
+  },
+  "24457": {
+    "id": 24457,
+    "aegisName": "S_Aimed_Earing",
+    "name": "Aimed Shadow Earring",
+    "unidName": "Shadow Earring",
+    "resName": "이어링쉐도우",
+    "description": "ต่างหูมงคลที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 3%\nทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาดขึ้นอีก 2%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Earring ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Ranger^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 529,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "AccessoryRight",
+    "compositionPos": null,
+    "usableClass": [
+      "Ranger"
+    ],
+    "script": {
+      "p_size_all": [
+        "3",
+        "3---2"
       ]
     }
   },
@@ -13376,7 +15230,7 @@
       "Ranger Cls"
     ],
     "script": {
-      "spCost__Arrow Storm": [
+      "sp__Arrow Storm": [
         "2",
         "2---1"
       ]
@@ -13415,7 +15269,7 @@
         "9===4"
       ],
       "criDmg": [
-        "EQUIP[Shooting Shadow Pendant&&Shooting Shadow Earring]REFINE[shadowWeapon,shadowEaring,shadowPendant==2]---1"
+        "EQUIP[Shooting Shadow Pendant&&Shooting Shadow Earring]REFINE[shadowWeapon,shadowEarring,shadowPendant==2]---1"
       ],
       "p_pene_race_all": [
         "EQUIP[Ranger Shadow Shield]===40",
@@ -13477,6 +15331,95 @@
       ]
     }
   },
+  "24464": {
+    "id": 24464,
+    "aegisName": "S_Tornado_Armor",
+    "name": "Tornado Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우",
+    "description": "ชุดเกราะที่เพิ่มพลังป้องกันเมื่อสวมใส่เพิ่มบนเกราะอีกที สามารถใส่แบบชิ้นเดียวได้ แต่ความสามารถในการป้องกันจะลดลงไปอีก \nเพิ่ม Damage สกิล Axe Tornado 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage สกิล Axe Tornado ขึ้นอีก 2%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Armor^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Mechanic^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Armor",
+    "compositionPos": null,
+    "usableClass": [
+      "Mechanic"
+    ],
+    "script": {
+      "Axe Tornado": [
+        "5",
+        "2---2"
+      ]
+    }
+  },
+  "24465": {
+    "id": 24465,
+    "aegisName": "S_Tornado_Shield",
+    "name": "Tornado Shadow Shield",
+    "unidName": "Shadow Shield",
+    "resName": "쉴드쉐도우",
+    "description": "โล่เล็กที่สามารถสวมใส่ที่แขนได้ สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์การป้องกันของมันจะลดน้อยลง\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 3%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาดขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาดขึ้นอีก 4%\nเมื่อสวมใส่ Tornado Shadow Armor/Shield/Shoes ร่วมกัน,\nลด Delay หลังใช้สกิล % เท่ากับครึ่งหนึ่งของค่าอัพเกรดรวมกัน\nเมื่อสวมใส่ร่วมกับ Mechanic Weapon Shadow,\nเพิกเฉยต่อพลังป้องกันทางกายภาพของทุกเผ่ายกเว้น Player 40% และเพิกเฉยต่อพลังป้องกันทางกายภาพเพิ่มอีกตามค่าอัพเกรดรวมกันของ Tornado Shadow Shield และ Mechanic Weapon Shadow\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shield^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Mechanic^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 527,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Shield",
+    "compositionPos": null,
+    "usableClass": [
+      "Mechanic"
+    ],
+    "script": {
+      "p_size_all": [
+        "3",
+        "7===3",
+        "9===4"
+      ],
+      "acd": [
+        "EQUIP[Tornado Shadow Armor&&Tornado Shadow Shoes]REFINE[shadowArmor,shadowShield,shadowBoot==2]---1"
+      ],
+      "p_pene_race_all": [
+        "EQUIP[Mechanic Weapon Shadow]40",
+        "EQUIP[Mechanic Weapon Shadow]REFINE[shadowWeapon,shadowShield==1]---1"
+      ]
+    }
+  },
+  "24466": {
+    "id": 24466,
+    "aegisName": "S_Tornado_Shoes",
+    "name": "Tornado Shadow Shoes",
+    "unidName": "Shadow Shoes",
+    "resName": "슈즈쉐도우",
+    "description": "รองเท้าที่สวมใส่เพิ่มเติม สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์ของมันจะลดน้อยลง\nลดปริมาณการใช้ SP สกิล Axe Tornado 2%\nทุก ๆ การอัพเกรด 2 ขั้น ลดปริมาณการใช้ SP สกิล Axe Tornado ลงอีก 1%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shoes^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Mechanic^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 528,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Shoes",
+    "compositionPos": null,
+    "usableClass": [
+      "Mechanic"
+    ],
+    "script": {
+      "spPercent__Axe Tornado": [
+        "2",
+        "2---1"
+      ]
+    }
+  },
   "24491": {
     "id": 24491,
     "aegisName": "S_Adoramus_Weapon",
@@ -13502,7 +15445,7 @@
         "3",
         "7===3",
         "9===4",
-        "EQUIP[Adora Shadow Pendant&&Adora Shadow Earring]REFINE[shadowWeapon,shadowEaring,shadowPendant==2]---1"
+        "EQUIP[Adora Shadow Pendant&&Adora Shadow Earring]REFINE[shadowWeapon,shadowEarring,shadowPendant==2]---1"
       ],
       "m_race_all": [
         "EQUIP[Arch Bishop Shadow Shield]40",
@@ -13564,6 +15507,95 @@
       ]
     }
   },
+  "24494": {
+    "id": 24494,
+    "aegisName": "S_Judex_Armor",
+    "name": "Judex Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우",
+    "description": "ชุดเกราะที่เพิ่มพลังป้องกันเมื่อสวมใส่เพิ่มบนเกราะอีกที สามารถใส่แบบชิ้นเดียวได้ แต่ความสามารถในการป้องกันจะลดลงไปอีก\nเพิ่ม Damage สกิล Judex 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage สกิล Judex ขึ้นอีก 2%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Armor^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Arch Bishop^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Arch Bishop"
+    ],
+    "script": {
+      "Judex": [
+        "5",
+        "2---2"
+      ]
+    }
+  },
+  "24495": {
+    "id": 24495,
+    "aegisName": "S_Judex_Shield",
+    "name": "Judex Shadow Shield",
+    "unidName": "Shadow Shield",
+    "resName": "쉴드쉐도우",
+    "description": "โล่เล็กที่สามารถสวมใส่ที่แขนได้ สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์การป้องกันของมันจะลดน้อยลง\nเพิ่ม Damage ทางเวทมนตร์ธาตุ Holy 3%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางเวทมนตร์ธาตุ Holy ขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางเวทมนตร์ธาตุ Holy ขึ้นอีก 4%\nเมื่อสวมใส่ Judex Shadow Armor/Shield/Shoes ร่วมกัน,\nเพิ่ม Damage สกิล Judex % เท่ากับค่าอัพเกรดรวมกัน\nเมื่อสวมใส่ร่วมกับ Arch Bishop Shadow Weapon,\nเพิกเฉยต่อพลังป้องกันทางเวทมนตร์ของทุกเผ่ายกเว้น Player 40% และเพิกเฉยต่อพลังป้องกันทางเวทมนตร์เพิ่มอีกตามค่าอัพเกรดรวมกันของ Judex Shadow Shield และ Arch Bishop Shadow Weapon\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shield^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Arch Bishop^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 527,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Arch Bishop"
+    ],
+    "script": {
+      "m_my_element_holy": [
+        "3",
+        "7===3",
+        "9===4"
+      ],
+      "Judex": [
+        "EQUIP[Judex Shadow Armor&&Judex Shadow Shoes]REFINE[shadowArmor,shadowBoot,shadowShield==1]---1"
+      ],
+      "m_pene_race_all": [
+        "EQUIP[Arch Bishop Shadow Weapon]40",
+        "EQUIP[Arch Bishop Shadow Weapon]REFINE[shadowWeapon,shadowShield==1]---1"
+      ]
+    }
+  },
+  "24496": {
+    "id": 24496,
+    "aegisName": "S_Judex_Shoes",
+    "name": "Judex Shadow Shoes",
+    "unidName": "Shadow Shoes",
+    "resName": "슈즈쉐도우",
+    "description": "รองเท้าที่สวมใส่เพิ่มเติม สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์ของมันจะลดน้อยลง\nเพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกขนาด 3%\nทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกขนาดขึ้นอีก 2%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shoes ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Arch Bishop^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 528,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Arch Bishop"
+    ],
+    "script": {
+      "m_size_all": [
+        "3",
+        "3---2"
+      ]
+    }
+  },
   "24497": {
     "id": 24497,
     "aegisName": "S_Magnus_Weapon",
@@ -13589,11 +15621,103 @@
         "3",
         "7===3",
         "9===4",
-        "EQUIP[Magnus Shadow Pendant&&Magnus Shadow Earring]REFINE[shadowWeapon,shadowEaring,shadowPendant==1]---1"
+        "EQUIP[Magnus Shadow Pendant&&Magnus Shadow Earring]REFINE[shadowWeapon,shadowEarring,shadowPendant==1]---1"
       ],
-      "m_race_all": [
+      "m_pene_race_all": [
         "EQUIP[Arch Bishop Shadow Shield]40",
         "EQUIP[Arch Bishop Shadow Shield]REFINE[shadowWeapon,shadowShield==1]---1"
+      ]
+    }
+  },
+  "24503": {
+    "id": 24503,
+    "aegisName": "S_Arrowvulcan_Weapon",
+    "name": "Arrow Vulcan Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา\nเพิ่ม Damage ทางกายภาพระยะไกล 3%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางกายภาพระยะไกลขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพระยะไกลขึ้นอีก 4%\nเมื่อสวมใส่ Arrow Vulcan Shadow Weapon/Pendant/Earring ร่วมกัน,\nเพิ่ม Damage สกิล Arrow Vulcan % เท่ากับค่าอัพเกรดรวมกัน\nเมื่อสวมใส่ร่วมกับ Wanderer/Minstrel Shadow Shield,\nเพิกเฉยต่อพลังป้องกันทางกายภาพของทุกเผ่ายกเว้น Player 40% และเพิกเฉยต่อพลังป้องกันทางกายภาพเพิ่มอีกตามค่าอัพเกรดรวมกันของ Arrow Vulcan Shadow Weapon และ Wanderer/Minstrel Shadow Shield\nประเภท : ^777777Shadow^000000 \nตำแหน่ง : ^777777Weapon^000000 น้ำหนัก : ^7777770^000000 \nเลเวลที่ต้องการ : ^77777799^000000 \nอาชีพที่ใส่ได้ : ^777777Minstrel, Wanderer^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Minstrel",
+      "Wanderer"
+    ],
+    "script": {
+      "range": [
+        "3",
+        "7===3",
+        "9===4"
+      ],
+      "Arrow Vulcan": [
+        "EQUIP[Arrow Vulcan Shadow Pendant&&Arrow Vulcan Shadow Earring]REFINE[shadowWeapon,shadowPendant,shadowEarring==1]---1"
+      ],
+      "p_pene_race_all": [
+        "EQUIP[Wanderer Shadow Shield||Minstrel Shadow Shield]40",
+        "EQUIP[Wanderer Shadow Shield||Minstrel Shadow Shield]REFINE[shadowWeapon,shadowShield==1]---1"
+      ]
+    }
+  },
+  "24504": {
+    "id": 24504,
+    "aegisName": "S_Arrowvulcan_Pendant",
+    "name": "Arrow Vulcan Shadow Pendant",
+    "unidName": "Shadow Pendant",
+    "resName": "펜던트쉐도우",
+    "description": "สร้อยคอศักดิ์สิทธิ์ที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา\nเพิ่ม Damage สกิล Arrow Vulcan 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage สกิล Arrow Vulcan ขึ้นอีก 2%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Pendant ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Minstrel, Wanderer^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 530,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Minstrel",
+      "Wanderer"
+    ],
+    "script": {
+      "Arrow Vulcan": [
+        "5",
+        "2---2"
+      ]
+    }
+  },
+  "24505": {
+    "id": 24505,
+    "aegisName": "S_Arrowvulcan_Earing",
+    "name": "Arrow Vulcan Shadow Earring",
+    "unidName": "Shadow Earring",
+    "resName": "이어링쉐도우",
+    "description": "ต่างหูมงคลที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา\nลด Cooldown สกิล Arrow Vulcan 0.2 วินาที\nทุก ๆ การอัพเกรด 3 ขั้น ลด Cooldown สกิล Arrow Vulcan ลงอีก 0.1 วินาที\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Earring ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Minstrel, Wanderer^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 529,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Minstrel",
+      "Wanderer"
+    ],
+    "script": {
+      "cd__Arrow Vulcan": [
+        "0.2",
+        "3---0.1"
       ]
     }
   },
@@ -13769,7 +15893,7 @@
       "Shadow Chaser Cls"
     ],
     "script": {
-      "spCost__Fatal Manace": [
+      "sp__Fatal Manace": [
         "2",
         "2---1"
       ]
@@ -13858,7 +15982,96 @@
       "Guillotine Cross Cls"
     ],
     "script": {
-      "spCostPercent__Rolling Cutter": [
+      "spPercent__Rolling Cutter": [
+        "2",
+        "2---1"
+      ]
+    }
+  },
+  "24542": {
+    "id": 24542,
+    "aegisName": "S_Slash_Armor",
+    "name": "Slash Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우",
+    "description": "ชุดเกราะที่เพิ่มพลังป้องกันเมื่อสวมใส่เพิ่มบนเกราะอีกที สามารถใส่แบบชิ้นเดียวได้ แต่ความสามารถในการป้องกันจะลดลงไปอีก \nเพิ่ม Damage สกิล Counter Slash 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage สกิล Counter Slash ขึ้นอีก 2%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Armor^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Guillotine Cross^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Armor",
+    "compositionPos": null,
+    "usableClass": [
+      "Guillotine Cross"
+    ],
+    "script": {
+      "Counter Slash": [
+        "5",
+        "2---2"
+      ]
+    }
+  },
+  "24543": {
+    "id": 24543,
+    "aegisName": "S_Slash_Shield",
+    "name": "Slash Shadow Shield",
+    "unidName": "Shadow Shield",
+    "resName": "쉴드쉐도우",
+    "description": "โล่เล็กที่สามารถสวมใส่ที่แขนได้ สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์การป้องกันของมันจะลดน้อยลง\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 3%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาดขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาดขึ้นอีก 4%\nเมื่อสวมใส่ Slash Shadow Armor/Shield/Shoes ร่วมกัน,\nลด Delay หลังใช้สกิล % เท่ากับครึ่งหนึ่งของค่าอัพเกรดรวมกัน\nเมื่อสวมใส่ร่วมกับ Guillotine Cross Shadow Weapon,\nเพิกเฉยต่อพลังป้องกันทางกายภาพของทุกเผ่ายกเว้น Player 40% และเพิกเฉยต่อพลังป้องกันทางกายภาพเพิ่มอีกตามค่าอัพเกรดรวมกันของ Slash Shadow Shield และ Guillotine Cross Shadow Weapon\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shield^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Guillotine Cross^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 527,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Shield",
+    "compositionPos": null,
+    "usableClass": [
+      "Guillotine Cross"
+    ],
+    "script": {
+      "p_size_all": [
+        "3",
+        "7===3",
+        "9===4"
+      ],
+      "acd": [
+        "EQUIP[Slash Shadow Shoes&&Slash Shadow Armor]REFINE[shadowShield,shadowArmor,shadowBoot==2]---1"
+      ],
+      "p_pene_race_all": [
+        "EQUIP[Guillotine Cross Shadow Weapon]40",
+        "EQUIP[Guillotine Cross Shadow Weapon]REFINE[shadowShield,shadowWeapon==1]---1"
+      ]
+    }
+  },
+  "24544": {
+    "id": 24544,
+    "aegisName": "S_Slash_Shoes",
+    "name": "Slash Shadow Shoes",
+    "unidName": "Shadow Shoes",
+    "resName": "슈즈쉐도우",
+    "description": "รองเท้าที่สวมใส่เพิ่มเติม สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์ของมันจะลดน้อยลง\nลดปริมาณการใช้ SP สกิล Counter Slash 2%\nทุก ๆ การอัพเกรด 2 ขั้น ลดปริมาณการใช้ SP สกิล Counter Slash ลงอีก 1%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shoes ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Guillotine Cross^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 528,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Shoes",
+    "compositionPos": null,
+    "usableClass": [
+      "Guillotine Cross"
+    ],
+    "script": {
+      "spPercent__Counter Slash": [
         "2",
         "2---1"
       ]
@@ -13891,7 +16104,7 @@
         "9===4"
       ],
       "Cross Ripper Slasher": [
-        "EQUIP[Ripper Slasher Shadow Weapon&&Ripper Slasher Shadow Pendant&&Ripper Slasher Shadow Earring]REFINE[shadowWeapon,shadowPendant,shadowEaring==2]---1"
+        "EQUIP[Ripper Slasher Shadow Pendant&&Ripper Slasher Shadow Earring]REFINE[shadowWeapon,shadowPendant,shadowEarring==2]---1"
       ],
       "p_pene_race_all": [
         "EQUIP[Guillotine Cross Shadow Shield]40",
@@ -14036,7 +16249,7 @@
       "Sorcerer"
     ],
     "script": {
-      "spCost__Psychic Wave": [
+      "sp__Psychic Wave": [
         "4",
         "2---1"
       ]
@@ -14466,7 +16679,8 @@
     "location": "Weapon",
     "compositionPos": null,
     "usableClass": [
-      "Minstrel Class, Wanderer Class"
+      "Minstrel Class",
+      "Wanderer Class"
     ],
     "script": {
       "atk": [
@@ -14524,11 +16738,11 @@
         "9===7"
       ],
       "Fire Dance": [
-        "EQUIP[Fire Dance Shadow Earring&&Fire Dance Shadow Pendant&&Fire Dance Shadow Shoes]REFINE[shadowWeapon,shadowEaring,shadowPendant==2]---1"
+        "EQUIP[Fire Dance Shadow Earring&&Fire Dance Shadow Pendant&&Fire Dance Shadow Shoes]REFINE[shadowWeapon,shadowEarring,shadowPendant==2]---1"
       ],
       "p_pene_race_all": [
         "EQUIP[Rebellion Shadow Armor]===40",
-        "EQUIP[Rebellion Shadow Armor]REFINE[shadowWeapon,shadowEaring==1]---1"
+        "EQUIP[Rebellion Shadow Armor]REFINE[shadowWeapon,shadowEarring==1]---1"
       ]
     }
   },
@@ -14617,14 +16831,14 @@
         "9===15"
       ],
       "Shatter Storm": [
-        "EQUIP[Shatter Buster Shadow Pendant&&Shatter Buster Shadow Shoes]REFINE[shadowWeapon,shadowEaring,shadowPendant==2]---1"
+        "EQUIP[Shatter Buster Shadow Pendant&&Shatter Buster Shadow Shoes]REFINE[shadowWeapon,shadowEarring,shadowPendant==2]---1"
       ],
       "Vanishing Buster": [
-        "EQUIP[Shatter Buster Shadow Pendant&&Shatter Buster Shadow Shoes]REFINE[shadowWeapon,shadowEaring,shadowPendant==2]---1"
+        "EQUIP[Shatter Buster Shadow Pendant&&Shatter Buster Shadow Shoes]REFINE[shadowWeapon,shadowEarring,shadowPendant==2]---1"
       ],
       "p_pene_race_all": [
         "EQUIP[Rebellion Shadow Armor]===40",
-        "EQUIP[Rebellion Shadow Armor]REFINE[shadowWeapon,shadowEaring==1]---1"
+        "EQUIP[Rebellion Shadow Armor]REFINE[shadowWeapon,shadowEarring==1]---1"
       ]
     }
   },
@@ -14769,6 +16983,105 @@
     "script": {
       "p_size_all": [
         "5",
+        "2---1"
+      ]
+    }
+  },
+  "24655": {
+    "id": 24655,
+    "aegisName": "S_S_Weapon",
+    "name": "Es Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา\nMSP +5%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage สกิล Esma 10%\nเมื่ออัพเกรดถึงขั้น 9 ลดปริมาณการใช้ SP สกิล Espa 10%\nเมื่อสวมใส่ร่วมกับ Es Shadow Weapon/Shield/Armor ร่วมกัน,\nเพิ่ม Damage สกิล Espa, Eswhoo % เท่ากับค่าอัพเกรดรวมกัน\nเมื่อสวมใส่ร่วมกับ Soul Reaper Shadow Shoes,\nเพิกเฉยต่อพลังป้องกันทางเวทมนตร์ของทุกเผ่ายกเว้น Player 40% และเพิกเฉยต่อพลังป้องกันทางเวทมนตร์เพิ่มอีกตามค่าอัพเกรดรวมกันของ Es Shadow Weapon และ Soul Reaper Shadow Shoes\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Soul Linker^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "Soul Linker"
+    ],
+    "script": {
+      "spPercent": [
+        "5"
+      ],
+      "Esma": [
+        "7===10"
+      ],
+      "spPercent__Espa": [
+        "9===10",
+        "EQUIP[Es Shadow Shield&&Es Shadow Armor]REFINE[shadowWeapon,shadowShield,shadowArmor==1]---1"
+      ],
+      "Eswhoo": [
+        "EQUIP[Es Shadow Shield&&Es Shadow Armor]REFINE[shadowWeapon,shadowShield,shadowArmor==1]---1"
+      ],
+      "m_pene_race_all": [
+        "EQUIP[Soul Reaper Shadow Shoes]40",
+        "EQUIP[Soul Reaper Shadow Shoes]REFINE[shadowWeapon,shadowBoot==1]---1"
+      ]
+    }
+  },
+  "24656": {
+    "id": 24656,
+    "aegisName": "S_S_Shield",
+    "name": "Es Shadow Shield",
+    "unidName": "Shadow Shield",
+    "resName": "쉴드쉐도우",
+    "description": "โล่เล็กที่สามารถสวมใส่ที่แขนได้ สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์การป้องกันของมันจะลดน้อยลง\nเพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกขนาด 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกขนาดขึ้นอีก 1%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shield^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Soul Linker^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 527,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Shield",
+    "compositionPos": null,
+    "usableClass": [
+      "Soul Linker"
+    ],
+    "script": {
+      "m_size_all": [
+        "5",
+        "2---1"
+      ]
+    }
+  },
+  "24657": {
+    "id": 24657,
+    "aegisName": "S_S_Armor",
+    "name": "Es Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우",
+    "description": "ชุดเกราะที่เพิ่มพลังป้องกันเมื่อสวมใส่เพิ่มบนเกราะอีกที สามารถใส่แบบชิ้นเดียวได้ แต่ความสามารถในการป้องกันจะลดลงไปอีก\nเพิ่ม Damage สกิล Esma 10%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage สกิล Espa, Eswhoo 1%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Armor^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Soul Linker^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Armor",
+    "compositionPos": null,
+    "usableClass": [
+      "Soul Linker"
+    ],
+    "script": {
+      "Esma": [
+        "10"
+      ],
+      "Espa": [
+        "2---1"
+      ],
+      "Eswhoo": [
         "2---1"
       ]
     }
@@ -15395,6 +17708,37 @@
       ]
     }
   },
+  "27149": {
+    "id": 27149,
+    "aegisName": "Heart_Hunter_Card",
+    "name": "Heart Hunter Card",
+    "unidName": "Heart Hunter Card",
+    "resName": "이름없는카드",
+    "description": "เมื่อติดตั้งอาวุธประเภท [Revolver], [Rifle],[Grenade Launcher] จะเพิ่มพลังโจมตีทางกายภาพระยะไกล 5 %\nทุกๆ การอัพเกรด 1 ขั้นของอาวุธประเภทดังกล่าว เพิ่มพลังโจมตีทางกายภาพระยะไกล 1% , เมื่ออัพเกรดถึงขั้น 10 ขึ้นไป เพิ่มพลังโจมตีทางกายภาพระยะไกลเพิ่มขึ้น 5%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "script": {
+      "range": [
+        "[weaponType=Revolver]5",
+        "[weaponType=Revolver]1---1",
+        "[weaponType=Revolver]10===5",
+        "[weaponType=Rifle]5",
+        "[weaponType=Rifle]1---1",
+        "[weaponType=Rifle]10===5",
+        "[weaponType=Grenade Launcher]5",
+        "[weaponType=Grenade Launcher]1---1",
+        "[weaponType=Grenade Launcher]10===5"
+      ]
+    }
+  },
   "27152": {
     "id": 27152,
     "aegisName": "Cutie_Card",
@@ -15421,6 +17765,34 @@
       ],
       "aspdPercent": [
         "2---1"
+      ]
+    }
+  },
+  "27157": {
+    "id": 27157,
+    "aegisName": "Wood_Goblin_Card",
+    "name": "Wood Goblin Card",
+    "unidName": "Wood Goblin Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่ม Damage ทางกายภาพต่อศัตรูธาตุ Water, Earth 5%\nเพิ่ม Damage ที่ได้รับจากศัตรูธาตุ Water, Earth 5%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพต่อศัตรูธาตุ Water, Earth ขึ้นอีก 5%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Armor^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 16,
+    "script": {
+      "p_element_water": [
+        "5",
+        "9===5"
+      ],
+      "p_element_earth": [
+        "5",
+        "9===5"
       ]
     }
   },
@@ -15519,6 +17891,33 @@
       ]
     }
   },
+  "27167": {
+    "id": 27167,
+    "aegisName": "Faceworm_L_Card",
+    "name": "Faceworm Larva Card",
+    "unidName": "Faceworm Larva Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่มความต้านทานต่อการโจมตีธาตุ Neutral 15%\nทุกๆ การอัพเกรด 1 ขั้น เพิ่มความเสียหายทางเวทธาตุ Water 3%\nเมื่อสวมใส่ร่วมกับ Faceworm Egg Card เพิ่มความต้านทานต่อการโจมตีธาตุ Neutral 5%\n^ffffff_^000000\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Garment^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 4,
+    "script": {
+      "เพิ่มความต้านทานต่อการโจมตีธาตุ Neutral": [
+        "15",
+        "EQUIP[Faceworm Egg Card]===5"
+      ],
+      "m_my_element_water": [
+        "1---3"
+      ]
+    }
+  },
   "27170": {
     "id": 27170,
     "aegisName": "Cowraiders1_Card",
@@ -15597,13 +17996,13 @@
     "script": {
       "atk": [
         "5",
-        "TYPE[dagger]10===20",
-        "TYPE[dagger]14===20"
+        "WEAPON_TYPE[dagger]10===20",
+        "WEAPON_TYPE[dagger]14===20"
       ],
       "matk": [
         "5",
-        "TYPE[dagger]10===20",
-        "TYPE[dagger]14===20"
+        "WEAPON_TYPE[dagger]10===20",
+        "WEAPON_TYPE[dagger]14===20"
       ],
       "p_size_s": [
         "EQUIP[Shotgun Buffalo Bandit Card]15"
@@ -15664,6 +18063,84 @@
       ],
       "aspdPercent": [
         "int:10---1"
+      ]
+    }
+  },
+  "27197": {
+    "id": 27197,
+    "aegisName": "S_Agnes_Card",
+    "name": "Agnes Lugenburg Card",
+    "unidName": "Agnes Lugenburg Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่ม Damage ทางกายภาพต่อศัตรูขนาดเล็ก 15%\nเมื่อใช้ร่วมกับ Jurgen Wigner Card, \nเพิ่ม Damage ทางกายภาพต่อศัตรูขนาดเล็กและศัตรูประเภท Brute ขึ้นอีก 5%\n^ffffff_^000000 \nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "script": {
+      "p_size_s": [
+        "15",
+        "EQUIP[Jurgen Wigner Card]5"
+      ],
+      "p_race_brute": [
+        "EQUIP[Jurgen Wigner Card]5"
+      ]
+    }
+  },
+  "27198": {
+    "id": 27198,
+    "aegisName": "S_Jurgen_Card",
+    "name": "Jurgen Wigner Card",
+    "unidName": "Jurgen Wigner Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่ม Damage ทางกายภาพต่อศัตรูประเภท Brute 15%\n^ffffff_^000000\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "script": {
+      "p_race_brute": [
+        "15"
+      ]
+    }
+  },
+  "27221": {
+    "id": 27221,
+    "aegisName": "SLD_Gioia_Card",
+    "name": "Sealed Gioia Card",
+    "unidName": "Sealed Gioia Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่มความเสียหายทางเวทมนตร์ธาตุ Wind และ ธาตุ Ghost เพิ่มขึ้น 50%\nได้รับความเสียหายจากการโจมตีทุกธาตุเพิ่มขึ้น 60%\nเมื่ออัพเกรดตั้งแต่ขั้น 15 ขึ้นไป\nเพิ่มความเสียหายทางเวทมนตร์ธาตุ Wind และ ธาตุ Ghost เพิ่มขึ้น +75%\nได้รับความเสียหายจากการโจมตีทุกธาตุเพิ่มขึ้น 40%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Garment^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 4,
+    "script": {
+      "m_my_element_wind": [
+        "50",
+        "15===75"
+      ],
+      "m_my_element_ghost": [
+        "50",
+        "15===75"
       ]
     }
   },
@@ -15728,6 +18205,32 @@
       ]
     }
   },
+  "27286": {
+    "id": 27286,
+    "aegisName": "Colorful_T_Bear_Card",
+    "name": "Colorful Teddy Bear Card",
+    "unidName": "Colorful Teddy Bear Card",
+    "resName": "이름없는카드",
+    "description": "MATK + 5\nเพิ่ม Damage ทางเวทย์ที่ทำต่อศัตรูขนาดใหญ่ 15%\n^ffffff_^000000\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "script": {
+      "matk": [
+        "5"
+      ],
+      "m_size_l": [
+        "15"
+      ]
+    }
+  },
   "27287": {
     "id": 27287,
     "aegisName": "Shining_T_Bear_Card",
@@ -15746,7 +18249,7 @@
     "location": null,
     "compositionPos": 64,
     "script": {
-      "spCostPercent": [
+      "spPercent": [
         "10"
       ],
       "m_my_element_holy": [
@@ -15896,6 +18399,29 @@
       ]
     }
   },
+  "27314": {
+    "id": 27314,
+    "aegisName": "Venenum_Card",
+    "name": "Venenum Card",
+    "unidName": "Venenum Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่ม Damage ทางกายภาพต่อศัตรูประเภท Brute 15%\n^ffffff_^000000\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Garment^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 4,
+    "script": {
+      "p_race_brute": [
+        "15"
+      ]
+    }
+  },
   "27321": {
     "id": 27321,
     "aegisName": "DespairGodMorocc_Card",
@@ -15925,6 +18451,59 @@
       ],
       "hpPercent": [
         "-50"
+      ]
+    }
+  },
+  "27324": {
+    "id": 27324,
+    "aegisName": "Brinaranea_Card",
+    "name": "Brinaranea Card",
+    "unidName": "Brinaranea Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่ม Damage ทางเวทมนตร์ธาตุ Water 15%\nเมื่อใช้ร่วมกับ Muspellskoll Card เพิ่ม Damage ทางเวทมนตร์ธาตุ Water ขึ้นอีก 10%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "script": {
+      "m_my_element_water": [
+        "15",
+        "EQUIP[Muspellskoll Card]10"
+      ]
+    }
+  },
+  "27325": {
+    "id": 27325,
+    "aegisName": "Muspellskoll_Card",
+    "name": "Muspellskoll Card",
+    "unidName": "Muspellskoll Card",
+    "resName": "이름없는카드",
+    "description": "ลด Damage ทางกายภาพ/เวทมนตร์ที่ได้รับจากศัตรูธาต Fire 30%\nเมื่อใช้ร่วมกับ Brinaranea Card เพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูธาตุ Fire 10% \nประเภท : ^777777Card^000000 \nใช้กับ : ^777777Shield^000000 \nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 32,
+    "script": {
+      "ลด Damage ทางกายภาพ/เวทมนตร์ที่ได้รับจากศัตรูธาต Fire": [
+        "30"
+      ],
+      "p_element_fire": [
+        "EQUIP[Brinaranea Card]10"
+      ],
+      "m_element_fire": [
+        "EQUIP[Brinaranea Card]10"
       ]
     }
   },
@@ -16028,6 +18607,29 @@
       ]
     }
   },
+  "27329": {
+    "id": 27329,
+    "aegisName": "Schmidt_Card",
+    "name": "Cursed King Schmidt Card",
+    "unidName": "Cursed King Schmidt Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่ม Damage ทางกายภาพต่อศัตรูธาตุ Fire 40%\n^ffffff_^000000\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Armor^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 16,
+    "script": {
+      "p_element_fire": [
+        "40"
+      ]
+    }
+  },
   "27331": {
     "id": 27331,
     "aegisName": "S_Kronecker_Card",
@@ -16051,6 +18653,214 @@
       ],
       "acd": [
         "EQUIP[Nihil M. Heine Card]3"
+      ]
+    }
+  },
+  "27334": {
+    "id": 27334,
+    "aegisName": "Chaos_Baphomet_Card",
+    "name": "Chaotic Baphomet Card",
+    "unidName": "Chaotic Baphomet Card",
+    "resName": "이름없는카드",
+    "description": "ATK +25%\nเพิ่ม Damage ทางกายภาพ/เวทมนตร์ที่ได้รับจากมอนสเตอร์ประเภท Demon 5%\n^ffffff_^000000\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Armor^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 16,
+    "script": {
+      "atkPercent": [
+        "25"
+      ],
+      "เพิ่ม Damage ทางกายภาพ/เวทมนตร์ที่ได้รับจากมอนสเตอร์ประเภท Demon": [
+        "5"
+      ]
+    }
+  },
+  "27335": {
+    "id": 27335,
+    "aegisName": "Chaos_Ba_Jr_Card",
+    "name": "Chaotic Baphomet Junior Card",
+    "unidName": "Chaotic Baphomet Junior Card",
+    "resName": "이름없는카드",
+    "description": "ทุก ๆ Base AGI 15, CRI +1\nเมื่อใช้ร่วมกับ Bapho Jr. Card เพิ่ม Critical Damage 15%\n^ffffff_^000000\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Shoes^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 64,
+    "script": {
+      "cri": [
+        "agi:15---1"
+      ],
+      "criDmg": [
+        "EQUIP[Bapho Jr. Card]15"
+      ]
+    }
+  },
+  "27338": {
+    "id": 27338,
+    "aegisName": "Chaos_Mantis_Card",
+    "name": "Chaotic Mantis Card",
+    "unidName": "Chaotic Mantis Card",
+    "resName": "이름없는카드",
+    "description": "STR +3\nเมื่อใช้ร่วมกับ Mantis Card, ATK +7%, HIT +12\n^ffffff_^000000\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Accessory^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 136,
+    "script": {
+      "str": [
+        "3"
+      ],
+      "atkPercent": [
+        "EQUIP[Mantis Card]7"
+      ],
+      "hit": [
+        "EQUIP[Mantis Card]12"
+      ]
+    }
+  },
+  "27339": {
+    "id": 27339,
+    "aegisName": "Chaos_Goring_Card",
+    "name": "Chaotic Ghostring Card",
+    "unidName": "Chaotic Ghostring Card",
+    "resName": "이름없는카드",
+    "description": "ATK +20\nเพิ่ม Damage ทางกายภาพต่อศัตรูขนาดเล็ก, ใหญ่ 25%\nเมื่อใช้ร่วมกับ Ghostring Card, ATK +10%\n^ffffff_^000000\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "script": {
+      "atk": [
+        "20"
+      ],
+      "p_size_s": [
+        "25"
+      ],
+      "p_size_l": [
+        "25"
+      ],
+      "atkPercent": [
+        "EQUIP[Ghostring Card]10"
+      ]
+    }
+  },
+  "27340": {
+    "id": 27340,
+    "aegisName": "Chaos_K_Mantis_Card",
+    "name": "Chaotic Killer Mantis Card",
+    "unidName": "Chaotic Killer Mantis Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่ม Critical Damage 3%\nเมื่อใช้ร่วมกับ Angra Mantis Card, เพิ่ม Critical Damage ขึ้นอีก 5%\n^ffffff_^000000\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Accessory^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 136,
+    "script": {
+      "criDmg": [
+        "3",
+        "EQUIP[Angra Mantis Card]5"
+      ]
+    }
+  },
+  "27343": {
+    "id": 27343,
+    "aegisName": "Chaos_Acolyte_Card",
+    "name": "Chaotic Acolyte Card",
+    "unidName": "Chaotic Acolyte Card",
+    "resName": "이름없는카드",
+    "description": "ลด Delay หลังใช้สกิล 4%\n^ffffff_^000000\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Accessory(Left)^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 128,
+    "script": {
+      "acd": [
+        "4"
+      ]
+    }
+  },
+  "27354": {
+    "id": 27354,
+    "aegisName": "Polluted_Raydric_Card",
+    "name": "Corrupted Raydric Card",
+    "unidName": "Corrupted Raydric Card",
+    "resName": "이름없는카드",
+    "description": "ATK + 5%\nเมื่อใช้ร่วมกับ Raydric Card,\nความต้านทานต่อการโจมตีธาตุ Neutral + 10%, ATK + 5%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Armor^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 16,
+    "script": {
+      "atkPercent": [
+        "5",
+        "EQUIP[Raydric Card]5"
+      ]
+    }
+  },
+  "27355": {
+    "id": 27355,
+    "aegisName": "Polluted_Ray_A_Card",
+    "name": "Corrupted Raydric Archer Card",
+    "unidName": "Corrupted Raydric Archer Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่ม Damage ทางกายภาพระยะไกล 10%\nเมื่อใช้ร่วมกับ Enchanted Archer Skeleton Card, เพิ่ม Damage ทางกายภาพระยะไกล 5%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "script": {
+      "range": [
+        "10",
+        "EQUIP[Enchanted Archer Skeleton Card]5"
       ]
     }
   },
@@ -16852,13 +19662,13 @@
       "vct": [
         "10"
       ],
-      "spCost__Fire Dance": [
+      "sp__Fire Dance": [
         "5"
       ],
       "Quick Draw Shot": [
         "50"
       ],
-      "spCost__Fire Rain": [
+      "sp__Fire Rain": [
         "20"
       ],
       "Fire Rain": [
@@ -16876,7 +19686,7 @@
       "cd__Hot Barrel": [
         "20"
       ],
-      "spCost__Mass Spiral": [
+      "sp__Mass Spiral": [
         "10"
       ],
       "Mass Spiral": [
@@ -21115,6 +23925,42 @@
       ]
     }
   },
+  "300209": {
+    "id": 300209,
+    "aegisName": "SLD_Grave_Amon_Ra_Card",
+    "name": "Sealed Nightmare Amon Ra Card",
+    "unidName": "Sealed Nightmare Amon Ra Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่มความเสียหายเวทย์ 25% แก่มอนสเตอร์ธาตุ Undead / Shadow, และมอนสเตอร์เผ่า Undead / Demon\nเมื่อค่าอัพเกรดมากกว่า 15 ขึ้นไป เพิ่มความเสียหายเวทย์ 12% เพิ่มเติม แก่มอนสเตอร์ธาตุ Undead / Shadow, และมอนสเตอร์เผ่า Undead / Demon\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Armor^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 16,
+    "script": {
+      "m_element_undead": [
+        "25",
+        "15===12"
+      ],
+      "m_element_shadow": [
+        "25",
+        "15===12"
+      ],
+      "m_race_undead": [
+        "25",
+        "15===12"
+      ],
+      "m_race_demon": [
+        "25",
+        "15===12"
+      ]
+    }
+  },
   "300291": {
     "id": 300291,
     "aegisName": "1st_Anniver_Card",
@@ -21162,7 +24008,7 @@
     "location": null,
     "compositionPos": 16,
     "script": {
-      "spCostPercent": [
+      "spPercent": [
         "10"
       ],
       "m_my_element_all": [
@@ -21191,7 +24037,7 @@
     "location": null,
     "compositionPos": 16,
     "script": {
-      "spCostPercent": [
+      "spPercent": [
         "10"
       ],
       "melee": [
@@ -21491,6 +24337,207 @@
       ],
       "m_my_element_holy": [
         "EQUIP[High Priest Stone II (Lower)]10"
+      ]
+    }
+  },
+  "310180": {
+    "id": 310180,
+    "aegisName": "Warlock_Robe2",
+    "name": "Warlock Stone II (Garment)",
+    "unidName": "Warlock Stone II (Garment)",
+    "resName": "High_Wizard_Figure",
+    "description": "เพิ่ม Damage สกิล Comet 15%\nเมื่อใช้กับ High Wizard Stone II (Upper) เพิ่ม Damage สกิล Comet ขึ้นอีก 15%\nเมื่อใช้กับ High Wizard Stone II (Middle) ทุก ๆ การเรียนรู้สกิล Mystical Amplification 2 เลเวล ลดระยะเวลาร่ายแบบคงที่ 0.1 วินาที\nเมื่อใช้กับ High Wizard Stone II (Lower) เพิ่ม Damage ทางเวทมนตร์ธาตุ Neutral 5%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "Comet": [
+        "15",
+        "EQUIP[High Wizard Stone II (Upper)]15"
+      ],
+      "fct": [
+        "EQUIP[High Wizard Stone II (Middle)]0.5"
+      ],
+      "m_my_element_neutral": [
+        "EQUIP[High Wizard Stone II (Lower)]5"
+      ]
+    }
+  },
+  "310181": {
+    "id": 310181,
+    "aegisName": "Warlock_Top2",
+    "name": "High Wizard Stone II (Upper)",
+    "unidName": "High Wizard Stone II (Upper)",
+    "resName": "마술사피규어",
+    "description": "เพิ่ม Damage สกิล Meteor Storm 20%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "Meteor Storm": [
+        "20"
+      ]
+    }
+  },
+  "310182": {
+    "id": 310182,
+    "aegisName": "Warlock_Middle2",
+    "name": "High Wizard Stone II (Middle)",
+    "unidName": "High Wizard Stone II (Middle)",
+    "resName": "마술사피규어",
+    "description": "ทุก ๆ การเรียนรู้สกิล Gravitational Field 1 เลเวล เพิ่ม Damage ทางเวทมนตร์ธาตุ Neutral 2%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "m_my_element_neutral": [
+        "10"
+      ]
+    }
+  },
+  "310183": {
+    "id": 310183,
+    "aegisName": "Warlock_Bottom2",
+    "name": "High Wizard Stone II (Lower)",
+    "unidName": "High Wizard Stone II (Lower)",
+    "resName": "마술사피규어",
+    "description": "ทุก ๆ การเรียนรู้สกิล Soul Drain 1 เลเวล MATK +2",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "matk": [
+        "20"
+      ]
+    }
+  },
+  "310188": {
+    "id": 310188,
+    "aegisName": "Guillotinecross_Robe2",
+    "name": "Guillotine Cross Stone II (Garment)",
+    "unidName": "Guillotine Cross Stone II (Garment)",
+    "resName": "Assasin_Cross_Figure",
+    "description": "Critical Damage +15%, เมื่อเรียนรู้สกิล Katar Mastery ถึงเลเวล 10 สามารถใช้สกิล Double Attack Lv. 3\n(ใช้สกิล Double Attack กับอาวุธทุกประเภท)\nเมื่อเรียนรู้สกิล Double Attack สูงกว่า Lv. 3 จะใช้ตามเลเวลที่เรียนรู้\nเมื่อใช้กับ Assassin Cross Stone II (Upper), ATK + 5%, Critical Damage +15%\nเมื่อใช้กับ Assassin Cross Stone II (Middle) เพิ่ม Damage สกิล Counter Slash 20%\nเมื่อใช้กับ Assassin Cross Stone II (Lower) ลด Delay หลังใช้สกิล 5%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "criDmg": [
+        "15",
+        "EQUIP[Assassin Cross Stone II (Upper)]15"
+      ],
+      "atkPercent": [
+        "EQUIP[Assassin Cross Stone II (Upper)]5"
+      ],
+      "Counter Slash": [
+        "EQUIP[Assassin Cross Stone II (Middle)]20"
+      ],
+      "acd": [
+        "EQUIP[Assassin Cross Stone II (Lower)]5"
+      ]
+    }
+  },
+  "310189": {
+    "id": 310189,
+    "aegisName": "Assassincross_Bottom2",
+    "name": "Assassin Cross Stone II (Lower)",
+    "unidName": "Assassin Cross Stone II (Lower)",
+    "resName": "도둑피규어",
+    "description": "ทุก ๆ การเรียนรู้สกิล Advanced Katar Mastery 1 เลเวล เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 2%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "p_size_all": [
+        "LEARN_SKILL[Advanced Katar Mastery==1]---2"
+      ]
+    }
+  },
+  "310190": {
+    "id": 310190,
+    "aegisName": "Assassincross_Middle2",
+    "name": "Assassin Cross Stone II (Middle)",
+    "unidName": "Assassin Cross Stone II (Middle)",
+    "resName": "도둑피규어",
+    "description": "เพิ่ม Damage สกิล Sonic Blow 20%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "Sonic Blow": [
+        "20"
+      ]
+    }
+  },
+  "310191": {
+    "id": 310191,
+    "aegisName": "Assassincross_Top2",
+    "name": "Assassin Cross Stone II (Upper)",
+    "unidName": "Assassin Cross Stone II (Upper)",
+    "resName": "도둑피규어",
+    "description": "ทุก ๆ การเรียนรู้สกิล Soul Destroyer 1 เลเวล ลด Delay หลังใช้สกิล 1%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "acd": [
+        "10"
       ]
     }
   },
@@ -21907,6 +24954,231 @@
       ],
       "range": [
         "EQUIP[Subject Cape (Range)]7"
+      ]
+    }
+  },
+  "420017": {
+    "id": 420017,
+    "aegisName": "Tree_Of_Sprout_STR",
+    "name": "Young Leaf of World Tree (Str)",
+    "unidName": "Mask",
+    "resName": "입에무는식물줄기",
+    "description": "ใบอ่อนบนต้น Yggdrasil อันเป็นแกนกลางของโลกใบนี้ เมื่ออยู่คู่กันกับอุปกรณ์ประเภท Temporal จะเผยพลังลึกลับที่ซ่อนไว้ออกมา\nเมื่อสวมใส่ร่วมกับ Temporal Str Manteau และ Soaring Physical Armor/[Not for Sale] Soaring Physical Armor ATK +5%,\nเมื่อค่าอัพเกรดรวมกันตั้งแต่ 14 ขึ้นไป ATK +80\nเมื่อค่าอัพเกรดรวมกันตั้งแต่ 18 ขึ้นไป ATK +30 เพิ่มเติม และลด Delay หลังใช้สกิล 7%\nเมื่อค่าอัพเกรดรวมกันตั้งแต่ 22 ขึ้นไป เพิ่ม Damage ทางกายภาพระยะใกล้ 10%\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^7777770^000000\nตำแหน่ง : ^777777Lower^000000 น้ำหนัก : ^7777775^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 5,
+    "requiredLevel": 100,
+    "location": "Lower",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atkPercent": [
+        "EQUIP[Temporal Str Manteau&&Soaring Physical Armor]===5"
+      ],
+      "atk": [
+        "EQUIP[Temporal Str Manteau&&Soaring Physical Armor]REFINE[armor,garment==14]===80",
+        "EQUIP[Temporal Str Manteau&&Soaring Physical Armor]REFINE[armor,garment==18]===30"
+      ],
+      "acd": [
+        "EQUIP[Temporal Str Manteau&&Soaring Physical Armor]REFINE[armor,garment==18]===7"
+      ],
+      "melee": [
+        "EQUIP[Temporal Str Manteau&&Soaring Physical Armor]REFINE[armor,garment==22]===10"
+      ]
+    }
+  },
+  "420018": {
+    "id": 420018,
+    "aegisName": "Tree_Of_Sprout_DEX",
+    "name": "Young Leaf of World Tree (Dex)",
+    "unidName": "Mask",
+    "resName": "입에무는식물줄기",
+    "description": "ใบอ่อนบนต้น Yggdrasil อันเป็นแกนกลางของโลกใบนี้ เมื่ออยู่คู่กันกับอุปกรณ์ประเภท Temporal จะเผยพลังลึกลับที่ซ่อนไว้ออกมา\nเมื่อสวมใส่ร่วมกับ Temporal Dex Manteau และ Excellent Dexterous Armor/[Not for Sale] Excellent Dexterous Armor เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 7%,\nเมื่อค่าอัพเกรดรวมกันตั้งแต่ 14 ขึ้นไป ATK +80\nเมื่อค่าอัพเกรดรวมกันตั้งแต่ 18 ขึ้นไป ATK +5% และเพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาดขึ้นอีก 7%\nเมื่อค่าอัพเกรดรวมกันตั้งแต่ 22 ขึ้นไป เพิ่ม Damage ทางกายภาพระยะไกล 10%\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^7777770^000000\nตำแหน่ง : ^777777Lower^000000 น้ำหนัก : ^7777775^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 5,
+    "requiredLevel": 100,
+    "location": "Lower",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "p_size_all": [
+        "EQUIP[Temporal Dex Manteau&&Excellent Dexterous Armor]===7",
+        "EQUIP[Temporal Dex Manteau&&Excellent Dexterous Armor]REFINE[armor,garment==18]===7"
+      ],
+      "atk": [
+        "EQUIP[Temporal Dex Manteau&&Excellent Dexterous Armor]REFINE[armor,garment==14]===80"
+      ],
+      "atkPercent": [
+        "EQUIP[Temporal Dex Manteau&&Excellent Dexterous Armor]REFINE[armor,garment==18]===5"
+      ],
+      "range": [
+        "EQUIP[Temporal Dex Manteau&&Excellent Dexterous Armor]REFINE[armor,garment==22]===10"
+      ]
+    }
+  },
+  "420019": {
+    "id": 420019,
+    "aegisName": "Tree_Of_Sprout_AGI",
+    "name": "Young Leaf of World Tree (Agi)",
+    "unidName": "Mask",
+    "resName": "입에무는식물줄기",
+    "description": "ใบอ่อนบนต้น Yggdrasil อันเป็นแกนกลางของโลกใบนี้ เมื่ออยู่คู่กันกับอุปกรณ์ประเภท Temporal จะเผยพลังลึกลับที่ซ่อนไว้ออกมา\nเมื่อสวมใส่ร่วมกับ Temporal Agi Manteau และ Splendid Swift Armor/[Not for Sale] Splendid Swift Armor เพิ่ม Damage ทางกายภาพต่อมอนสเตอร์ทุกเผ่า 7% (ยกเว้น Player),\nเมื่อค่าอัพเกรดรวมกันตั้งแต่ 14 ขึ้นไป ATK +80\nเมื่อค่าอัพเกรดรวมกันตั้งแต่ 18 ขึ้นไป ASPD +1 และเพิ่ม Damage ทางกายภาพต่อมอนสเตอร์ทุกเผ่าขึ้นอีก 7% (ยกเว้น Player)\nเมื่อค่าอัพเกรดรวมกันตั้งแต่ 22 ขึ้นไป ลด Delay หลังใช้สกิล 10%\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^7777770^000000\nตำแหน่ง : ^777777Lower^000000 น้ำหนัก : ^7777775^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 5,
+    "requiredLevel": 100,
+    "location": "Lower",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "p_race_all": [
+        "EQUIP[Temporal Agi Manteau&&Splendid Swift Armor]===7",
+        "EQUIP[Temporal Agi Manteau&&Splendid Swift Armor]REFINE[armor,garment==18]===7"
+      ],
+      "atk": [
+        "EQUIP[Temporal Agi Manteau&&Splendid Swift Armor]REFINE[armor,garment==14]===80"
+      ],
+      "aspd": [
+        "EQUIP[Temporal Agi Manteau&&Splendid Swift Armor]REFINE[armor,garment==18]===1"
+      ],
+      "acd": [
+        "EQUIP[Temporal Agi Manteau&&Splendid Swift Armor]REFINE[armor,garment==22]===10"
+      ]
+    }
+  },
+  "420020": {
+    "id": 420020,
+    "aegisName": "Tree_Of_Sprout_LUK",
+    "name": "Young Leaf of World Tree (Luk)",
+    "unidName": "Mask",
+    "resName": "입에무는식물줄기",
+    "description": "ใบอ่อนบนต้น Yggdrasil อันเป็นแกนกลางของโลกใบนี้ เมื่ออยู่คู่กันกับอุปกรณ์ประเภท Temporal จะเผยพลังลึกลับที่ซ่อนไว้ออกมา\nเมื่อสวมใส่ร่วมกับ Temporal Luk Manteau และ Unexpected Fortune Armor/[Not for Sale] Unexpected Fortune Armor เพิ่ม Damage ทางกายภาพต่อศัตรูทุกเผ่า 10% (ยกเว้น Player),\nเมื่อค่าอัพเกรดรวมกันตั้งแต่ 14 ขึ้นไป ATK +80\nเมื่อค่าอัพเกรดรวมกันตั้งแต่ 18 ขึ้นไป เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 10% และ Critical Damage +12%\nเมื่อค่าอัพเกรดรวมกันตั้งแต่ 22 ขึ้นไป เพิ่ม Damage ทางกายภาพระยะใกล้และระยะไกล 10%\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^7777770^000000\nตำแหน่ง : ^777777Lower^000000 น้ำหนัก : ^7777775^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 5,
+    "requiredLevel": 100,
+    "location": "Lower",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "p_race_all": [
+        "EQUIP[Temporal Luk Manteau&&Unexpected Fortune Armor]===10"
+      ],
+      "atk": [
+        "EQUIP[Temporal Luk Manteau&&Unexpected Fortune Armor]REFINE[armor,garment==14]===80"
+      ],
+      "p_size_all": [
+        "EQUIP[Temporal Luk Manteau&&Unexpected Fortune Armor]REFINE[armor,garment==18]===10"
+      ],
+      "criDmg": [
+        "EQUIP[Temporal Luk Manteau&&Unexpected Fortune Armor]REFINE[armor,garment==18]===12"
+      ],
+      "range": [
+        "EQUIP[Temporal Luk Manteau&&Unexpected Fortune Armor]REFINE[armor,garment==22]===10"
+      ],
+      "melee": [
+        "EQUIP[Temporal Luk Manteau&&Unexpected Fortune Armor]REFINE[armor,garment==22]===10"
+      ]
+    }
+  },
+  "420021": {
+    "id": 420021,
+    "aegisName": "Tree_Of_Sprout_VIT",
+    "name": "Young Leaf of World Tree (Vit)",
+    "unidName": "Mask",
+    "resName": "입에무는식물줄기",
+    "description": "ใบอ่อนบนต้น Yggdrasil อันเป็นแกนกลางของโลกใบนี้ เมื่ออยู่คู่กันกับอุปกรณ์ประเภท Temporal จะเผยพลังลึกลับที่ซ่อนไว้ออกมา\nเมื่อสวมใส่ร่วมกับ Temporal Vit Manteau และ Strong Healthy Armor/[Not for Sale] Strong Healthy Armor, MHP +10%,\nเมื่อค่าอัพเกรดรวมกันตั้งแต่ 14 ขึ้นไป ATK +80\nเมื่อค่าอัพเกรดรวมกันตั้งแต่ 18 ขึ้นไป ATK +10%, MSP +7%\nเมื่อค่าอัพเกรดรวมกันตั้งแต่ 22 ขึ้นไป ลด Delay หลังใช้สกิล 10%\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^7777770^000000\nตำแหน่ง : ^777777Lower^000000 น้ำหนัก : ^7777775^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 5,
+    "requiredLevel": 100,
+    "location": "Lower",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "hpPercent": [
+        "EQUIP[Temporal Vit Manteau&&Strong Healthy Armor]===10"
+      ],
+      "atk": [
+        "EQUIP[Temporal Vit Manteau&&Strong Healthy Armor]REFINE[armor,garment==14]===80"
+      ],
+      "atkPercent": [
+        "EQUIP[Temporal Vit Manteau&&Strong Healthy Armor]REFINE[armor,garment==18]===10"
+      ],
+      "spPercent": [
+        "EQUIP[Temporal Vit Manteau&&Strong Healthy Armor]REFINE[armor,garment==18]===7"
+      ],
+      "acd": [
+        "EQUIP[Temporal Vit Manteau&&Strong Healthy Armor]REFINE[armor,garment==22]===10"
+      ]
+    }
+  },
+  "420022": {
+    "id": 420022,
+    "aegisName": "Tree_Of_Sprout_INT",
+    "name": "Young Leaf of World Tree (Int)",
+    "unidName": "Mask",
+    "resName": "입에무는식물줄기",
+    "description": "ใบอ่อนบนต้น Yggdrasil อันเป็นแกนกลางของโลกใบนี้ เมื่ออยู่คู่กันกับอุปกรณ์ประเภท Temporal จะเผยพลังลึกลับที่ซ่อนไว้ออกมา\nเมื่อสวมใส่ร่วมกับ Temporal Int Manteau และ Robust Magical Armor/[Not for Sale] Robust Magical Armor ลดระยะเวลาร่ายแบบแปรผัน 10%,\nเมื่อค่าอัพเกรดรวมกันตั้งแต่ 14 ขึ้นไป MATK +80\nเมื่อค่าอัพเกรดรวมกันตั้งแต่ 18 ขึ้นไป เพิ่ม Damage ทางเวทมนตร์ทุกธาตุ 10% และลด Delay หลังใช้สกิล 7%\nเมื่อค่าอัพเกรดรวมกันตั้งแต่ 22 ขึ้นไป เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกขนาด 10%\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^7777770^000000\nตำแหน่ง : ^777777Lower^000000 น้ำหนัก : ^7777775^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 5,
+    "requiredLevel": 100,
+    "location": "Lower",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "vct": [
+        "EQUIP[Temporal Int Manteau&&Robust Magical Armor]===10"
+      ],
+      "matk": [
+        "EQUIP[Temporal Int Manteau&&Robust Magical Armor]REFINE[armor,garment==14]===80"
+      ],
+      "m_my_element_all": [
+        "EQUIP[Temporal Int Manteau&&Robust Magical Armor]REFINE[armor,garment==18]===10"
+      ],
+      "acd": [
+        "EQUIP[Temporal Int Manteau&&Robust Magical Armor]REFINE[armor,garment==18]===7"
+      ],
+      "m_size_all": [
+        "EQUIP[Temporal Int Manteau&&Robust Magical Armor]REFINE[armor,garment==22]===10"
       ]
     }
   },
@@ -22923,6 +26195,62 @@
       ],
       "atk": [
         "EQUIP[Emerald Earrings]LEARN_SKILL[Music Lessons==1]---20"
+      ]
+    }
+  },
+  "470193": {
+    "id": 470193,
+    "aegisName": null,
+    "name": "Military Boots TH [1]",
+    "unidName": "Military Boots TH",
+    "resName": "군용부츠",
+    "description": "รองเท้าบูทที่เหล่าทหารชอบสวมใส่ ได้รับการชื่นชมว่าโดดเด่นเรื่องความอึดทึกทน ถึงแม้ว่าความรู้สึกขณะสวมใส่จะแย่นิดหน่อยก็ตาม\n\nATK +50\nASPD +10%\nMaxHP +3%, MaxSP +3%\n\nทุก ๆ การเรียนรู้สกิล Axe Boomerang 1 เลเวล เพิ่ม Damage สกิล Axe Tornado 7%\nทุก ๆ การเรียนรู้สกิล Axe Boomerang 1 เลเวล เพิ่ม Damage สกิล Power Swing 15%\nทุก ๆ การเรียนรู้สกิล Lava Flow 1 เลเวล เพิกเฉยต่อพลังป้องกันทางกายภาพของทุกเผ่ายกเว้น Player 8%\nเมื่อไม่มีการเรียนรู้สกิล Nuckle Boost ทุก ๆ การเรียนรู้สกิล Power Swing 1 เลเวล \nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกประเภท 3%\nลด Damage ทางกายภาพที่ได้รับจากมอนสเตอร์ระดับ Boss 1%\n\nเมื่ออัพเกรดตั้งแต่ 10 ขึ้นไป,\nATK +50, MaxHP +5%, MaxSP +5%\n\nเมื่ออัพเกรดตั้งแต่ 12 ขึ้นไป,\nทุก ๆ Base Lv. 2, MaxHP +150\nประเภท : ^777777Shoes^000000  พลังป้องกัน : ^77777720^000000\nน้ำหนัก : ^77777730^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 516,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 20,
+    "weight": 30,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atk": [
+        "50",
+        "10===50"
+      ],
+      "aspdPercent": [
+        "10"
+      ],
+      "hpPercent": [
+        "3",
+        "10===5"
+      ],
+      "spPercent": [
+        "3",
+        "10===5"
+      ],
+      "Axe Tornado": [
+        "35"
+      ],
+      "Power Swing": [
+        "75"
+      ],
+      "p_pene_race_all": [
+        "40"
+      ],
+      "p_class_all": [
+        "30"
+      ],
+      "ลด Damage ทางกายภาพที่ได้รับจากมอนสเตอร์ระดับ Boss": [
+        "10"
+      ],
+      "hp": [
+        "REFINE[12]level:2---150"
       ]
     }
   },
@@ -23967,6 +27295,59 @@
       ]
     }
   },
+  "490098": {
+    "id": 490098,
+    "aegisName": "Ring_of_Pazuzu",
+    "name": "Ring of Pazuzu [1]",
+    "unidName": "Rosary",
+    "resName": "Ring_of_Pazuzu",
+    "description": "เพิ่ม Damage ทางเวทมนตร์ต่อมอนสเตอร์ขนาดเล็ก, กลาง, ใหญ่ 10%\n\nทุก ๆ Base Lv. 6, \nเพิ่ม Damage สกิล Crimson Rock, Chain Lightning 1%\n\nทุก ๆ Base Lv. 3,\nเพิ่ม Damage สกิล Lord of Vermilion 2%\n\nเมื่อเรียนรู้สกิล Chain Lightning ถึงเลเวล 5, \nลดปริมาณการใช้ SP สกิล Chain Lightning 20 หน่วย\n\nเมื่อเรียนรู้สกิล Drain Life ถึงเลเวล 5 ลดระยะเวลาร่ายแบบแปรผัน 15%\n\nเมื่อกำจัดมอนสเตอร์ด้วยการโจมตีทางเวทมนตร์ ฟื้นฟู HP 100 หน่วย และ SP 10 หน่วย\n\nเมื่อเรียนรู้สกิล Radius ถึงเลเวล 3, \nเพิ่ม Damage ทางเวทมนตร์ธาตุ Fire, Wind, Neutral 10% \n\nเมื่อเรียนรู้สกิล Recognized Spell ถึงเลเวล 5, \nลด Delay หลังใช้สกิล 15%\n\nประเภท : ^777777Accessory^000000  พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 517,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "m_size_all": [
+        "10"
+      ],
+      "Crimson Rock": [
+        "level:6---1"
+      ],
+      "Chain Lightning": [
+        "level:6---1"
+      ],
+      "Lord of Vermilion": [
+        "level:3---2"
+      ],
+      "sp__Chain Lightning": [
+        "20"
+      ],
+      "vct": [
+        "15"
+      ],
+      "m_my_element_fire": [
+        "LEARN_SKILL[Radius==3]10"
+      ],
+      "m_my_element_wind": [
+        "LEARN_SKILL[Radius==3]10"
+      ],
+      "m_my_element_neutral": [
+        "LEARN_SKILL[Radius==3]10"
+      ],
+      "acd": [
+        "15"
+      ]
+    }
+  },
   "490229": {
     "id": 490229,
     "aegisName": "",
@@ -24303,6 +27684,213 @@
     "usableClass": [
       "Acolyte Cls"
     ]
+  },
+  "490349": {
+    "id": 490349,
+    "aegisName": null,
+    "name": "Lunar Blessing [1]",
+    "unidName": "Lunar Blessing",
+    "resName": "차가운달빛",
+    "description": "MaxHP + 6%, MaxSP + 6%\nเพิ่ม Damage ทางกายภาพระยะใกล้ 8%\nเพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกประเภท 8%\n\nเมื่อสวมใส่ร่วมกับ Lunar Eclipse Armor หรือ [Not For Sale] Lunar Eclipse Armor,\nลดระยะเวลาร่ายแบบคงที่ 0.3 วินาที\nลด Cooldown สกิล New Moon Kick, Full Moon Kick 0.6 วินาที\nลด Cooldown สกิล Eswhoo 0.8 วินาที\nเพิ่ม Damage สกิล Full Moon Kick, Eswhoo 16%\nประเภท : ^777777Accessory (Right)^000000 พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^77777720^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 510,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 20,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "hpPercent": [
+        "6"
+      ],
+      "spPercent": [
+        "6"
+      ],
+      "melee": [
+        "8"
+      ],
+      "m_class_all": [
+        "8"
+      ],
+      "fct": [
+        "EQUIP[Lunar Eclipse Armor]0.3"
+      ],
+      "cd__New Moon Kick": [
+        "EQUIP[Lunar Eclipse Armor]0.6"
+      ],
+      "cd__Full Moon Kick": [
+        "EQUIP[Lunar Eclipse Armor]0.6"
+      ],
+      "cd__Eswhoo": [
+        "EQUIP[Lunar Eclipse Armor]0.8"
+      ],
+      "Full Moon Kick": [
+        "EQUIP[Lunar Eclipse Armor]16"
+      ],
+      "Eswhoo": [
+        "EQUIP[Lunar Eclipse Armor]16"
+      ]
+    }
+  },
+  "490372": {
+    "id": 490372,
+    "aegisName": null,
+    "name": "Solar Blessing [1]",
+    "unidName": "Solar Blessing",
+    "resName": "황혼의노을",
+    "description": "MaxHP, MaxSP +6%\nเพิ่ม Damage ทางกายภาพระยะใกล้ 8%\nเพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกประเภท 8%\n\nเมื่อสวมใส่ร่วมกับ Lunar Eclipse Armor หรือ [Not For Sale] Lunar Eclipse Armor, \nลด Delay หลังใช้สกิล 8%\nหลังจากใช้สกิล Blaze Kick, AGI +32 เป็นเวลา 5 วินาที\nลด Cooldown สกิล Curse Explosion 0.8 วินาที\nเพิ่ม Damage สกิล Curse Explosion, Solar Explosion 16%\nประเภท : ^777777Accessory (Right)^000000 พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^77777720^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 510,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 20,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "hpPercent": [
+        "6"
+      ],
+      "spPercent": [
+        "6"
+      ],
+      "melee": [
+        "8"
+      ],
+      "m_class_all": [
+        "8"
+      ],
+      "acd": [
+        "EQUIP[Lunar Eclipse Armor]8"
+      ],
+      "agi": [
+        "EQUIP[Lunar Eclipse Armor]SKILL[Blaze Kick]32"
+      ],
+      "cd__Curse Explosion": [
+        "EQUIP[Lunar Eclipse Armor]0.8"
+      ],
+      "Curse Explosion": [
+        "EQUIP[Lunar Eclipse Armor]16"
+      ],
+      "Solar Explosion": [
+        "EQUIP[Lunar Eclipse Armor]16"
+      ]
+    }
+  },
+  "490385": {
+    "id": 490385,
+    "aegisName": null,
+    "name": "Stellar Blessing [1]",
+    "unidName": "Stellar Blessing",
+    "resName": "어스름한별빛",
+    "description": "MaxHP, MaxSP +6%\nเพิ่ม Damage ทางกายภาพระยะใกล้ 8%\nเพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกประเภท 8%\n\nเมื่อสวมใส่ร่วมกับ Lunar Eclipse Armor หรือ [Not For Sale] Lunar Eclipse Armor, \nASPD +8%\nลดระยะเวลาร่ายแบบแปรผัน 8%\nเพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อมอนสเตอร์ประเภท Boss 8%\nเมื่อโจมตีทางกายภาพระยะใกล้ทั่วไป มีโอกาส 16% ที่จะใช้สกิล Falling Stars Lv. 10 ^ff0000(จำเป็นต้องใช้สกิล Flash Kick ก่อน)^000000\nเมื่อใช้สกิล Espa ลดปริมาณการใช้ SP 48 หน่วย\nเพิ่ม Damage สกิล Falling Stars +32%\nเพิ่ม Damage สกิล Espa 16%\nประเภท : ^777777Accessory (Right)^000000 พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^77777720^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 510,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 20,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "hpPercent": [
+        "6"
+      ],
+      "spPercent": [
+        "6"
+      ],
+      "melee": [
+        "8"
+      ],
+      "p_class_all": [
+        "8"
+      ],
+      "aspdPercent": [
+        "EQUIP[Lunar Eclipse Armor]8"
+      ],
+      "vct": [
+        "EQUIP[Lunar Eclipse Armor]8"
+      ],
+      "p_class_boss": [
+        "EQUIP[Lunar Eclipse Armor]8"
+      ],
+      "m_class_boss": [
+        "EQUIP[Lunar Eclipse Armor]8"
+      ],
+      "sp__Espa": [
+        "EQUIP[Lunar Eclipse Armor]48"
+      ],
+      "Falling Stars": [
+        "EQUIP[Lunar Eclipse Armor]32"
+      ],
+      "Espa": [
+        "EQUIP[Lunar Eclipse Armor]16"
+      ]
+    }
+  },
+  "490390": {
+    "id": 490390,
+    "aegisName": null,
+    "name": "Toy Ring [1]",
+    "unidName": "Toy Ring",
+    "resName": "장난감반지",
+    "description": "แหวนที่ถูกดัดแปลงมาจากน๊อตตัวเมีย เป็นหนึ่งในของเล่นสุดเท่ของเด็กช่าง\n\nมีโอกาส 1% ที่จะฟื้นฟู HP 1% ของ Damage ทางกายภาพที่ทำต่อศัตรู\nทุก ๆ Base Lv. 9 เพิ่ม Damage สกิล Axe Tornado 1% และสกิล Cart Tornado 2%\n\nเมื่อสวมใส่ร่วมกับ Avenger, [Not For Sale] Avenger หรือ Patent Avenger,\nเมื่ออัพเกรดอาวุธตั้งแต่ 11 ขึ้นไป\nลด Delay หลังใช้สกิล 15%,\nลด Damage ทางกายภาพ/เวทมนตร์ที่ได้รับจากมอนสเตอร์ทุกขนาด 10%,\nลด Cooldown สกิล Axe Tornado 0.65 วินาที\n\nเมื่อสวมใส่ร่วมกับ Slate Sword หรือ Patent Slate Sword, \nเมื่ออัพเกรดอาวุธตั้งแต่ 11 ขึ้นไป\nลด Delay หลังใช้สกิล 5%,\nลด Cooldown สกิล Cart Tornado 1.8 วินาที,\nเพิกเฉยต่อพลังป้องกันทางกายภาพของมอนสเตอร์ทุกเผ่า 60%\nประเภท : ^777777Accessory (Right)^000000 พลังป้องกัน : ^7777775^000000\nน้ำหนัก : ^777777100^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Merchant^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 510,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 5,
+    "weight": 100,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Merchant"
+    ],
+    "script": {
+      "hpPercent__atk": [
+        "1"
+      ],
+      "Axe Tornado": [
+        "level:9---1"
+      ],
+      "Cart Tornado": [
+        "level:9---2"
+      ],
+      "acd": [
+        "EQUIP[Avenger||Patent Avenger]11===15",
+        "EQUIP[Slate Sword||Patent Slate Sword]11===5"
+      ],
+      "ลด Damage ทางกายภาพ/เวทมนตร์ที่ได้รับจากมอนสเตอร์ทุกขนาด": [
+        "EQUIP[Avenger||Patent Avenger]11===10"
+      ],
+      "cd__Axe Tornado": [
+        "EQUIP[Avenger||Patent Avenger]11===0.65"
+      ],
+      "cd__Cart Tornado": [
+        "EQUIP[Slate Sword||Patent Slate Sword]11===1.8"
+      ],
+      "p_pene_race_all": [
+        "EQUIP[Slate Sword||Patent Slate Sword]11===60"
+      ]
+    }
   },
   "490394": {
     "id": 490394,
@@ -25130,6 +28718,93 @@
       ]
     }
   },
+  "550007": {
+    "id": 550007,
+    "aegisName": "Freezing_Rod",
+    "name": "Chilling Cane [2]",
+    "unidName": "Rod",
+    "resName": "일벽장",
+    "description": "ไม้คทาสีน้ำเงินที่เล่ากันว่าผู้กล้าในอดีตเคยใช้\nพลังเวทย์ที่ซ่อนอยู่ดูกลมกลืนเข้ากับ Ancient Hero Boots\nไม่สามารถทำลายได้\nMATK +150\nทุก ๆ การอัพเกรด 2 ขั้น MATK +10\nทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage สกิล Diamond Dust 8%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูธาตุ Undead 10%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage ทางเวทมนตร์ธาตุ Water 7%\nเมื่อสวมใส่ร่วมกับ Ancient Hero Boots เมื่อโจมตีทางเวทมนตร์ มีโอกาสที่ INT +20, MATK +15% เป็นเวลา 7 วินาที\nประเภท : ^777777One-Handed Staff^000000 พลังโจมตี : ^77777740^000000\nน้ำหนัก : ^77777750^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Sorcerer^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 265,
+    "itemLevel": 4,
+    "attack": 40,
+    "defense": null,
+    "weight": 50,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Sorcerer"
+    ],
+    "script": {
+      "matk": [
+        "150",
+        "2---10"
+      ],
+      "Diamond Dust": [
+        "3---8"
+      ],
+      "m_element_undead": [
+        "9===10"
+      ],
+      "m_my_element_water": [
+        "11===7"
+      ],
+      "magicalChance__int": [
+        "EQUIP[Ancient Hero Boots]===20(7 วินาที)"
+      ],
+      "magicalChance__matkPercent": [
+        "EQUIP[Ancient Hero Boots]===15(7 วินาที)"
+      ]
+    }
+  },
+  "550015": {
+    "id": 550015,
+    "aegisName": "Up_SoulWeight",
+    "name": "Patent Spirit Pendulum [2]",
+    "unidName": "Rod",
+    "resName": "Up_SoulWeight",
+    "description": "อาวุธลูกตุ้มสังหารที่มีพลังในการดูดกลืนดวงวิญญาณ ว่ากันว่า Soul Reaper ที่มีพลังวิเศษผู้หนึ่งเคยใช้\nเริ่มเผยพลังอันแท้จริงออกมา เมื่อได้ยินเสียงโหยหวนของเหล่าวิญญาณ\nดูกลมกลืนเข้ากับ Great Hero Boots\n\nMATK +190\nทุก ๆ การอัพเกรด 2 ขั้น MATK +15\nทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage ทางเวทมนตร์ทุกธาตุ 2%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage สกิล Espa 15%, ลดระยะเวลาร่ายแบบแปรผัน 10%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Eswhoo 25%\nเมื่ออัพเกรดถึงขั้น 11 เมื่อโจมตีทางเวทมนตร์ มีโอกาสที่จะฟื้นฟู SP 230 หน่วย 9 ครั้งเป็นเวลา 10 วินาที\nเมื่อสวมใส่ร่วมกับ Great Hero Boots, INT +10, MATK +7%\n\nประเภท : ^777777One-Handed Staff^000000 พลังโจมตี : ^77777770^000000\nน้ำหนัก : ^777777120^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Soul Reaper^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 265,
+    "itemLevel": 4,
+    "attack": 70,
+    "defense": null,
+    "weight": 120,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Soul Reaper"
+    ],
+    "script": {
+      "matk": [
+        "190",
+        "2---15"
+      ],
+      "m_my_element_all": [
+        "3---2"
+      ],
+      "Espa": [
+        "7===15"
+      ],
+      "vct": [
+        "7===10"
+      ],
+      "Eswhoo": [
+        "9===25"
+      ],
+      "int": [
+        "EQUIP[Great Hero Boots]===10"
+      ],
+      "matkPercent": [
+        "EQUIP[Great Hero Boots]===7"
+      ]
+    }
+  },
   "590000": {
     "id": 590000,
     "aegisName": "Boost_Hall",
@@ -25338,6 +29013,103 @@
       ]
     }
   },
+  "610009": {
+    "id": 610009,
+    "aegisName": "Up_Blade_Katar",
+    "name": "Patent Blade Katar [2]",
+    "unidName": "Jur",
+    "resName": "UpScorpio_Katar",
+    "description": "Katar ที่ทำขึ้นจากใบมีดอันแหลมคม\nฟื้นคืนเกียรติยศในอดีต และเริ่มเผยพลังอันแท้จริงออกมา\nดูกลมกลืนเข้ากับ Great Hero Boots\n\nทุก ๆ การอัพเกรด 2 ขั้น ATK +15\nทุก ๆ การอัพเกรด 3 ขั้น ASPD +2%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage สกิล Rolling Cutter และ Cross Ripper Slasher 25%\nเมื่ออัพเกรดถึงขั้น 9 ลด Delay หลังใช้สกิล 12%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage ทางกายภาพระยะใกล้/ระยะไกล 10%\nเมื่อสวมใส่ร่วมกับ Great Hero Boots STR + 10, ATK + 7%.\n\nประเภท : ^777777Katar^000000 พลังโจมตี : ^777777275^000000\nน้ำหนัก : ^777777140^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Guillotine Cross^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 272,
+    "itemLevel": 4,
+    "attack": 275,
+    "defense": null,
+    "weight": 140,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Guillotine Cross"
+    ],
+    "script": {
+      "atk": [
+        "2---15"
+      ],
+      "aspdPercent": [
+        "3---2"
+      ],
+      "Rolling Cutter": [
+        "7===25"
+      ],
+      "Cross Ripper Slasher": [
+        "7===25"
+      ],
+      "acd": [
+        "9===12"
+      ],
+      "range": [
+        "11===10"
+      ],
+      "melee": [
+        "11===10"
+      ],
+      "str": [
+        "EQUIP[Great Hero Boots]===10"
+      ],
+      "atkPercent": [
+        "EQUIP[Great Hero Boots]===7"
+      ]
+    }
+  },
+  "620004": {
+    "id": 620004,
+    "aegisName": "Up_Avenger",
+    "name": "Patent Avenger [2]",
+    "unidName": "Axe",
+    "resName": "Up_Avenger",
+    "description": "ขวานสองมือที่เล่าขานกันว่าถูกทำขึ้นเพื่อล้างแค้นโดยช่างตีเหล็กที่มีฝีมือ\nเพียงเห็นคมขวาน ก็ได้เริ่มเผยพลังอันแท้จริงออกมา\nดูกลมกลืนเข้ากับ Great Hero Boots\n\nไม่สามารถทำลายได้\nทุก ๆ การอัพเกรด 2 ขั้น ATK +15\nทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage สกิล Axe Tornado 10%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage สกิล Axe Boomerang 40%, ลด Cooldown สกิล Axe Tornado 1 วินาที\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 15%\nเมื่ออัพเกรดถึงขั้น 11 ลด Damage ทางกายภาพ/เวทมนตร์ที่ได้รับจากศัตรูทุกธาตุ 20%\nเมื่อสวมใส่ร่วมกับ Great Hero Boots, STR +10, ATK +7%\n\nประเภท : ^777777Two-Handed Axe^000000 พลังโจมตี : ^777777290^000000\nน้ำหนัก : ^777777700^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Mechanic^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 262,
+    "itemLevel": 4,
+    "attack": 290,
+    "defense": null,
+    "weight": 700,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Mechanic"
+    ],
+    "script": {
+      "atk": [
+        "2---15"
+      ],
+      "Axe Tornado": [
+        "3---10"
+      ],
+      "Axe Boomerang": [
+        "7===40"
+      ],
+      "cd__Axe Tornado": [
+        "7===1"
+      ],
+      "p_size_all": [
+        "9===15"
+      ],
+      "ลด Damage ทางกายภาพ/เวทมนตร์ที่ได้รับจากศัตรูทุกธาตุ": [
+        "11===20"
+      ],
+      "str": [
+        "EQUIP[Great Hero Boots]===10"
+      ],
+      "atkPercent": [
+        "EQUIP[Great Hero Boots]===7"
+      ]
+    }
+  },
   "640000": {
     "id": 640000,
     "aegisName": "Boost_Staff",
@@ -25395,6 +29167,51 @@
       "Soul Expansion": [
         "EQUIP[Defunct Booster Robe&&Defunct Booster Muffler&&Defunct Booster Shoes&&Defunct Booster Earring]level:15---1",
         "EQUIP[Defunct Booster Robe&&Defunct Booster Muffler&&Defunct Booster Shoes&&Defunct Booster Earring]SKILL[Mystical Amplification]===20(60 วินาที)"
+      ]
+    }
+  },
+  "640004": {
+    "id": 640004,
+    "aegisName": "Blue_Crystal_Staff",
+    "name": "Blue Crystal Staff [2]",
+    "unidName": "Rod",
+    "resName": "미라쥬스태프",
+    "description": "ไม้คทาที่เปี่ยมไปด้วยพลังแห่งเยือกแข็ง ถูกใช้โดยจอมเวทย์ในอดีตกาล\nดูกลมกลืนเข้ากับ Ancient Hero Boots\nไม่สามารถทำลายได้\nMATK +200\nทุก ๆ การอัพเกรด 2 ขั้น MATK +10\nทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage สกิล Jack Frost 12%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางเวทมนตร์ธาตุ Water 7%\nเมื่ออัพเกรดถึงขั้น 11 ลด Cooldown สกิล Jack Frost 1 วินาที, เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูธาตุ Fire 7%\nเมื่อสวมใส่ร่วมกับ Ancient Hero Boots เมื่อโจมตีทางเวทมนตร์ มีโอกาสที่ INT +20, MATK +15% เป็นเวลา 7 วินาที\nประเภท : ^777777Two-Handed Staff^000000 พลังโจมตี : ^777777100^000000\nน้ำหนัก : ^77777780^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Warlock^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 266,
+    "itemLevel": 4,
+    "attack": 100,
+    "defense": null,
+    "weight": 80,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Warlock"
+    ],
+    "script": {
+      "matk": [
+        "200",
+        "2---10"
+      ],
+      "Jack Frost": [
+        "3---12"
+      ],
+      "m_my_element_water": [
+        "9===7"
+      ],
+      "cd__Jack Frost": [
+        "11===1"
+      ],
+      "m_element_fire": [
+        "11===7"
+      ],
+      "magicalChance__int": [
+        "EQUIP[Ancient Hero Boots]===20(7 วินาที)"
+      ],
+      "magicalChance__matkPercent": [
+        "EQUIP[Ancient Hero Boots]===15(7 วินาที)"
       ]
     }
   },
@@ -25493,6 +29310,52 @@
       ],
       "atkChance__bowRange": [
         "EQUIP[Ancient Hero Boots]===20(7 วินาที)"
+      ]
+    }
+  },
+  "700013": {
+    "id": 700013,
+    "aegisName": "Up_Narcis_Bow",
+    "name": "Patent Narcissus Bow [2]",
+    "unidName": "Bow",
+    "resName": "Up_Narcis_Bow",
+    "description": "คันธนูของนักรบผู้กล้าหาญในการต่อสู้สมัยอดีตกาล\nด้วยออร่าที่เข้มข้นกว่าเดิม ทำให้มันเริ่มเผยพลังอันแท้จริงออกมา\nดูกลมกลืนเข้ากับ Great Hero Boots\n\nทุก ๆ การอัพเกรด 2 ขั้น ATK +15\nทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage ทางกายภาพระยะไกล 4%\nเมื่ออัพเกรดถึงขั้น 7 ลด Cooldown สกิล Severe Rainstorm 2 วินาที\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Severe Rainstorm 15%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Severe Rainstorm ขึ้นอีก 10%, เพิ่มพลังโจมตีอาวุธประเภท Bow 15%\nเมื่อสวมใส่ร่วมกับ Great Hero Boots, DEX +10, เพิ่ม Damage ทางกายภาพระยะไกล 5%\n\nประเภท : ^777777Bow^000000 พลังโจมตี : ^777777210^000000\nน้ำหนัก : ^777777100^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Archer Class 3, Shadow Chaser^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 267,
+    "itemLevel": 4,
+    "attack": 210,
+    "defense": null,
+    "weight": 100,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Ranger",
+      "Minstrel",
+      "Wanderer",
+      "Shadow Chaser"
+    ],
+    "script": {
+      "atk": [
+        "2---15"
+      ],
+      "range": [
+        "3---4",
+        "EQUIP[Great Hero Boots]===5"
+      ],
+      "cd__Severe Rainstorm": [
+        "7===2"
+      ],
+      "Severe Rainstorm": [
+        "9===15",
+        "11===10"
+      ],
+      "bowRange": [
+        "11===15"
+      ],
+      "dex": [
+        "EQUIP[Great Hero Boots]===10"
       ]
     }
   },
