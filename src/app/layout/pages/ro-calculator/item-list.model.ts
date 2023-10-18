@@ -61,6 +61,6 @@ export interface ItemListModel {
   shadowArmorList: DropdownModel[];
   shadowShieldList: DropdownModel[];
   shadowBootList: DropdownModel[];
-  shadowEaringList: DropdownModel[];
+  shadowEarringList: DropdownModel[];
   shadowPendantList: DropdownModel[];
 }

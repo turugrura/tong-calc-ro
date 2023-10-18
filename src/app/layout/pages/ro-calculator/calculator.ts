@@ -20,7 +20,7 @@ const refinableItemTypes = [
   ItemTypeEnum.shadowWeapon,
   ItemTypeEnum.shadowArmor,
   ItemTypeEnum.shadowBoot,
-  ItemTypeEnum.shadowEaring,
+  ItemTypeEnum.shadowEarring,
   ItemTypeEnum.shadowPendant,
   ItemTypeEnum.shadowShield,
 ];

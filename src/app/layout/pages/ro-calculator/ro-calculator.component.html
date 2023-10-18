@@ -2435,25 +2435,25 @@
       </div>
     </div>
 
-    <!-- Shadow Earing -->
+    <!-- Shadow Earring -->
     <div class="grid grid-nogutter item_label_shadow">
       <div class="col-3"></div>
       <div class="col-3 ml-4">
         <p-dropdown
-          inputId="shadowEaring"
+          inputId="shadowEarring"
           [autoDisplayFirst]="false"
           [resetFilterOnHide]="true"
-          [options]="shadowEaringList"
+          [options]="shadowEarringList"
           [filter]="true"
           filterBy="label"
-          [(ngModel)]="model.shadowEaring"
+          [(ngModel)]="model.shadowEarring"
           [showClear]="true"
-          (onChange)="onSelectItem('shadowEaring', $event.value)"
-          (onClear)="onClearItem('shadowEaring')"
+          (onChange)="onSelectItem('shadowEarring', $event.value)"
+          (onClear)="onClearItem('shadowEarring')"
           placeholder="Shadow Earring"
         >
           <ng-template let-item pTemplate="selectedItem">
-            <div class="flex gap-1 item_template" *ngIf="model.shadowEaring">
+            <div class="flex gap-1 item_template" *ngIf="model.shadowEarring">
               <img src="assets/demo/images/items/{{ item.value }}.png" alt="img" class="item_img" />
               <div>{{ item.label }}</div>
             </div>
@@ -2468,11 +2468,11 @@
       </div>
       <div class="col-1" style="min-width: 70px">
         <p-dropdown
-          inputId="shadowEaringRefine"
+          inputId="shadowEarringRefine"
           [options]="shadowRefineList"
-          [(ngModel)]="model.shadowEaringRefine"
-          [disabled]="!model.shadowEaring"
-          (onChange)="onSelectItem('shadowEaring', model.shadowEaring, $event.value)"
+          [(ngModel)]="model.shadowEarringRefine"
+          [disabled]="!model.shadowEarring"
+          (onChange)="onSelectItem('shadowEarring', model.shadowEarring, $event.value)"
         >
           <ng-template let-item pTemplate="selectedItem">
             <div class="flex gap-1">
@@ -2484,7 +2484,7 @@
       <div class="col-3">
         <p-cascadeSelect
           [(ngModel)]="model.rawOptionTxts[55]"
-          [disabled]="!model.shadowEaring"
+          [disabled]="!model.shadowEarring"
           [options]="basicOptions"
           optionValue="value"
           optionGroupLabel="label"
