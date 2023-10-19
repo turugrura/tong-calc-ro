@@ -675,7 +675,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         this.calcCompare();
         this.saveItemSet();
         this.resetItemDescription();
-        this.onSelectItemDescription();
+        this.onSelectItemDescription(Boolean(this.selectedCompareItemDesc));
         this.isCalculating = false;
         itemChanges.clear();
       });
@@ -702,24 +702,36 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         const model2 = { rawOptionTxts: [] } as ClassModel;
         const equipItemIdItemTypeMap2 = new Map<ItemTypeEnum, number>();
 
-        this.showCompareItemMap = (this.compareItemNames || []).reduce((agg, itemTypeName) => {
-          agg[itemTypeName] = true;
+        this.showCompareItemMap = (this.compareItemNames || [])
+          .sort((a: any, b: any) => {
+            return this.compareItemList.indexOf(a) > this.compareItemList.indexOf(b) ? 1 : -1;
+          })
+          .reduce((agg, itemTypeName) => {
+            agg[itemTypeName] = true;
 
-          model2[itemTypeName] = this.model2[itemTypeName] || null;
-          if (!model2[itemTypeName]) return agg;
+            model2[itemTypeName] = this.model2[itemTypeName] || null;
 
-          equipItemIdItemTypeMap2.set(itemTypeName, model2[itemTypeName]);
+            const hasMainItem = model2[itemTypeName] != null;
+            if (hasMainItem) {
+              equipItemIdItemTypeMap2.set(itemTypeName, model2[itemTypeName]);
+            }
 
-          model2.rawOptionTxts.push(...(this.model2.rawOptionTxts || []));
-          model2[`${itemTypeName}Refine`] = this.model2[`${itemTypeName}Refine`] || 0;
+            const relatedItems = MainItemWithRelations[itemTypeName];
+            for (const relatedItemType of relatedItems) {
+              model2[relatedItemType] = hasMainItem ? this.model2[relatedItemType] || null : null;
+              const relatedVal = model2[relatedItemType];
+              if (relatedVal) {
+                equipItemIdItemTypeMap2.set(relatedItemType, relatedVal);
+              }
+            }
 
-          const relatedItems = MainItemWithRelations[itemTypeName];
-          for (const relatedItem of relatedItems) {
-            model2[relatedItem] = this.model2[relatedItem] || null;
-          }
+            if (!hasMainItem) return agg;
 
-          return agg;
-        }, {});
+            model2.rawOptionTxts.push(...(this.model2.rawOptionTxts || []));
+            model2[`${itemTypeName}Refine`] = this.model2[`${itemTypeName}Refine`] || 0;
+
+            return agg;
+          }, {});
 
         this.equipCompareItemIdItemTypeMap = equipItemIdItemTypeMap2;
         this.equipCompareItems = [...this.equipCompareItemIdItemTypeMap.entries()].map(([itemType, id]) => {
@@ -736,6 +748,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         } else {
           this.model2 = { rawOptionTxts: [] };
         }
+        this.onSelectItemDescription(this.isEnableCompare && Boolean(this.selectedCompareItemDesc));
 
         this.isCalculating = false;
       });
@@ -1754,11 +1767,9 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     }
 
     // console.log({ itemType, itemId, refine });
-    // if (itemType === ItemTypeEnum.weapon) {
-    //   this.calculator.setWeapon(itemId, refine);
-    // } else {
-    //   this.calculator.setItem(itemType as ItemTypeEnum, itemId, refine);
-    // }
+    if (itemType === ItemTypeEnum.weapon) {
+      this.calculator.setWeapon(itemId, refine);
+    }
 
     this.updateItemEvent.next(itemType);
   }
@@ -1817,6 +1828,8 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     let selectedType: ItemTypeEnum;
     let bonus: any;
     let itemId: number;
+
+    // console.log({ isCompareItem, selectedType: this.selectedCompareItemDesc });
 
     if (isCompareItem) {
       selectedType = this.selectedCompareItemDesc;

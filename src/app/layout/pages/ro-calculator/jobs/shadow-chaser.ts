@@ -79,13 +79,17 @@ export class ShadowChaser extends CharacterBase {
     'Shadow Chaser',
     'Shadow Chaser Cls',
     'Shadow Chaser Class',
-    'Rougue',
+    'Rogue',
+    'Rogue Cls',
+    'Rogue Class',
     'Stalker',
+    'Stalker Cls',
+    'Stalker Class',
     'Only 3rd Cls',
   ];
   protected _atkSkillList: AtkSkillModel[] = [
     {
-      label: 'Fatal Manace',
+      label: 'Fatal Manace Lv10',
       name: 'Fatal Manace',
       value: 'Fatal Manace==10',
       acd: 0.5,
@@ -98,7 +102,7 @@ export class ShadowChaser extends CharacterBase {
       },
     },
     {
-      label: 'Triangle Shot',
+      label: 'Triangle Shot Lv10',
       name: 'Triangle Shot',
       value: 'Triangle Shot==10',
       acd: 0.32,
@@ -108,6 +112,22 @@ export class ShadowChaser extends CharacterBase {
       levelList: [{ label: 'Lv 10', value: 'Triangle Shot==10' }],
       formular: ({ baseLevel, skillLevel }: { baseLevel: number; skillLevel: number }): number => {
         return skillLevel * 230 * (baseLevel / 100);
+      },
+    },
+    {
+      label: 'Arrow Storm Lv10',
+      name: 'Arrow Storm',
+      value: 'Arrow Storm==10',
+      acd: 0,
+      fct: 0, // 0.3 future
+      vct: 2,
+      cd: 3.2,
+      hit: 3,
+      levelList: [{ label: 'Arrow Storm Lv 10', value: 'Arrow Storm==10' }],
+      formular: (input): number => {
+        const { baseLevel, skillLevel } = input;
+
+        return (1000 + 80 * skillLevel) * (baseLevel / 100);
       },
     },
   ];

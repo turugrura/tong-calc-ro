@@ -680,7 +680,10 @@ export class Calculator {
   }
 
   loadItemFromModel(model: any) {
-    this.model = model;
+    this.model = { ...model };
+    this.equipItem.clear();
+    this.equipItemName.clear();
+    this.mapRefine.clear();
 
     const items = Object.entries(MainItemWithRelations) as [ItemTypeEnum, ItemTypeEnum[]][];
 

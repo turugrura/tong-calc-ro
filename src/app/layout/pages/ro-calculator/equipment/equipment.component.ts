@@ -65,6 +65,10 @@ export class EquipmentComponent {
 
   constructor() {}
 
+  get isHeadCardable() {
+    return this.itemType === 'headMiddle' || this.itemType === 'headUpper';
+  }
+
   private setEnchantList(mainItemId: number) {
     const { aegisName, name } = this.items[mainItemId] ?? ({} as ItemModel);
     const enchants = getEnchants(aegisName) ?? getEnchants(name);

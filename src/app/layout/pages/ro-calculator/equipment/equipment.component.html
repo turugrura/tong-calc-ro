@@ -16,13 +16,13 @@
         >
           <ng-template let-item pTemplate="selectedItem">
             <div class="flex gap-1 item_template" *ngIf="itemId">
-              <img src="assets/demo/images/items/{{ item.value }}.png" alt="img" class="item_img" />
+              <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
               <div>{{ item.label }}</div>
             </div>
           </ng-template>
           <ng-template let-item pTemplate="item">
             <div class="flex gap-1">
-              <img src="assets/demo/images/items/{{ item.value }}.png" alt="img" style="width: 19px" />
+              <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
               <div>{{ item.label }}</div>
             </div>
           </ng-template>
@@ -60,9 +60,22 @@
           (onChange)="onSelectItem('card1Id', $event.value)"
           placeholder="Card 1"
         >
-          <ng-template let-item pTemplate="selectedItem">
+          <ng-template *ngIf="!isHeadCardable" let-item pTemplate="selectedItem">
             <div class="flex gap-1 item_template" *ngIf="card1Id">
-              <img src="assets/demo/images/items/card.png" alt="img" class="item_img" />
+              <img src="assets/demo/images/items/card.png" alt="" class="item_img" />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+
+          <ng-template *ngIf="isHeadCardable" let-item pTemplate="selectedItem">
+            <div class="flex gap-1 item_template" *ngIf="card1Id">
+              <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+          <ng-template *ngIf="isHeadCardable" let-item pTemplate="item">
+            <div class="flex gap-1">
+              <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
               <div>{{ item.label }}</div>
             </div>
           </ng-template>
@@ -83,7 +96,7 @@
         >
           <ng-template let-item pTemplate="selectedItem">
             <div class="flex gap-1 item_template" *ngIf="card2Id">
-              <img src="assets/demo/images/items/card.png" alt="img" class="item_img" />
+              <img src="assets/demo/images/items/card.png" alt="" class="item_img" />
               <div>{{ item.label }}</div>
             </div>
           </ng-template>
@@ -104,7 +117,7 @@
         >
           <ng-template let-item pTemplate="selectedItem">
             <div class="flex gap-1 item_template" *ngIf="card3Id">
-              <img src="assets/demo/images/items/card.png" alt="img" class="item_img" />
+              <img src="assets/demo/images/items/card.png" alt="" class="item_img" />
               <div>{{ item.label }}</div>
             </div>
           </ng-template>
@@ -125,7 +138,7 @@
         >
           <ng-template let-item pTemplate="selectedItem">
             <div class="flex gap-1 item_template" *ngIf="card4Id">
-              <img src="assets/demo/images/items/card.png" alt="img" class="item_img" />
+              <img src="assets/demo/images/items/card.png" alt="" class="item_img" />
               <div>{{ item.label }}</div>
             </div>
           </ng-template>
@@ -152,13 +165,13 @@
             >
               <ng-template let-item pTemplate="selectedItem">
                 <div class="flex gap-1 item_template" *ngIf="enchant2Id">
-                  <img src="assets/demo/images/items/{{ item.value }}.png" alt="img" class="item_img" />
+                  <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
                   <div>{{ item.label }}</div>
                 </div>
               </ng-template>
               <ng-template let-item pTemplate="item">
                 <div class="flex gap-1">
-                  <img src="assets/demo/images/items/{{ item.value }}.png" alt="img" style="width: 19px" />
+                  <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
                   <div>{{ item.label }}</div>
                 </div>
               </ng-template>
@@ -179,13 +192,13 @@
             >
               <ng-template let-item pTemplate="selectedItem">
                 <div class="flex gap-1 item_template" *ngIf="enchant3Id">
-                  <img src="assets/demo/images/items/{{ item.value }}.png" alt="img" class="item_img" />
+                  <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
                   <div>{{ item.label }}</div>
                 </div>
               </ng-template>
               <ng-template let-item pTemplate="item">
                 <div class="flex gap-1">
-                  <img src="assets/demo/images/items/{{ item.value }}.png" alt="img" style="width: 19px" />
+                  <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
                   <div>{{ item.label }}</div>
                 </div>
               </ng-template>
@@ -206,13 +219,13 @@
             >
               <ng-template let-item pTemplate="selectedItem">
                 <div class="flex gap-1 item_template" *ngIf="enchant4Id">
-                  <img src="assets/demo/images/items/{{ item.value }}.png" alt="img" class="item_img" />
+                  <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
                   <div>{{ item.label }}</div>
                 </div>
               </ng-template>
               <ng-template let-item pTemplate="item">
                 <div class="flex gap-1">
-                  <img src="assets/demo/images/items/{{ item.value }}.png" alt="img" style="width: 19px" />
+                  <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
                   <div>{{ item.label }}</div>
                 </div>
               </ng-template>

@@ -318,6 +318,29 @@
       "all"
     ]
   },
+  "1767": {
+    "id": 1767,
+    "aegisName": "Arrow_Of_Shadow",
+    "name": "Arrow of Shadow",
+    "unidName": "Arrow of Shadow",
+    "resName": "그림자의화살",
+    "description": "ลูกธนูแห่งความมืด\nประเภท : ^777777Arrow^000000 พลังโจมตี : ^77777730^000000\nน้ำหนัก : ^7777770.1^000000 ธาตุ : ^777777Dark^000000",
+    "slots": 0,
+    "itemTypeId": 4,
+    "itemSubTypeId": 1024,
+    "itemLevel": null,
+    "attack": 30,
+    "propertyAtk": "Dark",
+    "defense": null,
+    "weight": 0.1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {}
+  },
   "1770": {
     "id": 1770,
     "aegisName": "Iron_Arrow",
@@ -1836,10 +1859,10 @@
     "compositionPos": 16,
     "script": {
       "p_class_all": [
-        "USED[Rougue||Stalker||ShadowChaser]10"
+        "USED[Rogue||Stalker||ShadowChaser]10"
       ],
       "matkPercent": [
-        "USED[Rougue||Stalker||ShadowChaser]10"
+        "USED[Rogue||Stalker||ShadowChaser]10"
       ]
     }
   },
@@ -2523,13 +2546,16 @@
     "compositionPos": 4,
     "script": {
       "hpPercent": [
-        "10"
+        "USED[Sorcerer]10"
+      ],
+      "matkPercent": [
+        "USED[Sorcerer]10"
       ],
       "allStatus": [
         "level:175===10",
         "10===10"
       ],
-      "matk": [
+      "chance__matk": [
         "EQUIP[True Celia Alde Card]100"
       ]
     }
@@ -2562,7 +2588,7 @@
         "level:175===10",
         "10===10"
       ],
-      "atk": [
+      "chance__atk": [
         "EQUIP[True Howard Alt-Eisen Card]100"
       ]
     }
@@ -2586,13 +2612,16 @@
     "compositionPos": 4,
     "script": {
       "mdef": [
-        "80"
+        "USED[Warlock]80"
+      ],
+      "matkPercent": [
+        "USED[Warlock]15"
       ],
       "allStatus": [
         "level:175===10",
         "10===10"
       ],
-      "matk": [
+      "chance__matk": [
         "EQUIP[True Kathryne Keyron Card]100"
       ]
     }
@@ -2625,7 +2654,7 @@
         "level:175===10",
         "10===10"
       ],
-      "atk": [
+      "chance__atk": [
         "EQUIP[True Seyren Windsor Card]100"
       ]
     }
@@ -2649,16 +2678,16 @@
     "compositionPos": 4,
     "script": {
       "def": [
-        "350"
+        "USED[Royal Guard]350"
       ],
       "p_race_all": [
-        "10"
+        "USED[Royal Guard]10"
       ],
       "allStatus": [
         "level:175===10",
-        "10"
+        "10===10"
       ],
-      "atk": [
+      "chance__atk": [
         "EQUIP[True Randel Lawrence Card]100"
       ]
     }
@@ -2682,16 +2711,16 @@
     "compositionPos": 4,
     "script": {
       "matkPercent": [
-        "15"
+        "USED[Shadow Chaser]15"
       ],
       "p_race_all": [
-        "5"
+        "USED[Shadow Chaser]5"
       ],
       "allStatus": [
         "level:175===10",
-        "10"
+        "10===10"
       ],
-      "atk": [
+      "chance__atk": [
         "EQUIP[True Gertie Wie Card]100"
       ]
     }
@@ -7622,7 +7651,7 @@
       "m_size_all": [
         "5"
       ],
-      "p_race_boss": [
+      "p_class_boss": [
         "EQUIP[Orc Hero Egg]10"
       ],
       "เพิ่มปริมาณการฟื้นฟู": [
@@ -7648,6 +7677,112 @@
       ],
       "m_my_element_neutral": [
         "EQUIP[Alicel Egg]5"
+      ]
+    }
+  },
+  "15981": {
+    "id": 15981,
+    "aegisName": null,
+    "name": "All Above Time(Magic)",
+    "unidName": "All Above Time(Magic)",
+    "resName": "시간의장식",
+    "description": "เศษเสี้ยวหนึ่งของห้วงเวลาจาก Old Glast Heim\n\nลด Delay หลังใช้สกิล 10%\nเพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกธาตุ 10%\n\nเมื่อใช้ร่วมกับ Shard of Intelligence Jewel, MATK +100 \n\nเมื่อใช้ร่วมกับ Shard of Vitality Jewel ลด Delay หลังใช้สกิล 15%\n\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^7777770^000000\nตำแหน่ง : ^777777Lower^000000 น้ำหนัก : ^77777760^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 60,
+    "requiredLevel": 100,
+    "location": "Lower",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "acd": [
+        "10",
+        "EQUIP[Shard of Vitality Jewel]15"
+      ],
+      "m_element_all": [
+        "10"
+      ],
+      "matk": [
+        "EQUIP[Shard of Intelligence Jewel]100"
+      ]
+    }
+  },
+  "15982": {
+    "id": 15982,
+    "aegisName": null,
+    "name": "All Above Time(Range)",
+    "unidName": "All Above Time(Range)",
+    "resName": "시간의장식",
+    "description": "เศษเสี้ยวหนึ่งของห้วงเวลาจาก Old Glast Heim\n\nลด Delay หลังใช้สกิล 10%\nเพิ่ม Damage ทางกายภาพระยะไกล 10%\n\nเมื่อใช้ร่วมกับ Shard of Dexterity Jewel, HIT +50 \n\nเมื่อใช้ร่วมกับ Shard of Fatality Jewel, ATK +80 \n\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^7777770^000000\nตำแหน่ง : ^777777Lower^000000 น้ำหนัก : ^77777760^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 60,
+    "requiredLevel": 100,
+    "location": "Lower",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "acd": [
+        "10"
+      ],
+      "range": [
+        "10"
+      ],
+      "hit": [
+        "EQUIP[Shard of Dexterity Jewel]50"
+      ],
+      "atk": [
+        "EQUIP[Shard of Fatality Jewel]80"
+      ]
+    }
+  },
+  "15983": {
+    "id": 15983,
+    "aegisName": null,
+    "name": "All Above Time(Melee)",
+    "unidName": "All Above Time(Melee)",
+    "resName": "시간의장식",
+    "description": "เศษเสี้ยวหนึ่งของห้วงเวลาจาก Old Glast Heim\n\nลด Delay หลังใช้สกิล 10%\nเพิ่ม Damage ทางกายภาพระยะใกล้ 10%\n\nเมื่อใช้ร่วมกับ Shard of Strength Jewel, ATK +80 \n\nเมื่อใช้ร่วมกับ Shard of Agility Jewel, CRI +30, Critical Damage +30%\n\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^7777770^000000\nตำแหน่ง : ^777777Lower^000000 น้ำหนัก : ^77777760^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 60,
+    "requiredLevel": 100,
+    "location": "Lower",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "acd": [
+        "10"
+      ],
+      "melee": [
+        "10"
+      ],
+      "atk": [
+        "EQUIP[Shard of Strength Jewel]80"
+      ],
+      "cri": [
+        "EQUIP[Shard of Agility Jewel]30"
+      ],
+      "criDmg": [
+        "EQUIP[Shard of Agility Jewel]30"
       ]
     }
   },
@@ -9070,7 +9205,7 @@
     "description": "หมวกที่ใช้ทดสอบเวทมนตร์โดยนักเวทย์ หูกระต่ายได้โผล่ขึ้นมาโดยไม่ได้ตั้งใจ คุณไม่สามารถคาดเดาได้เลยว่าจะมีอะไรโผล่ขึ้นมาอีก\nDEX +1, AGI +1, MDEF +1\nASPD +5%\nลด Delay หลังใช้สกิล 4%\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^7777774^000000\nตำแหน่ง : ^777777Upper ^000000 น้ำหนัก : ^77777780^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
     "slots": 1,
     "itemTypeId": 2,
-    "itemSubTypeId": 519,
+    "itemSubTypeId": 512,
     "itemLevel": null,
     "attack": null,
     "defense": 4,
@@ -9108,7 +9243,7 @@
     "description": "แว่นตาที่ทำให้มองเห็นอนาคตอันใกล้\nลด Delay หลังใช้สกิล 5%\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^7777770^000000\nตำแหน่ง : ^777777Middle ^000000น้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^77777730^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
     "slots": 1,
     "itemTypeId": 2,
-    "itemSubTypeId": 519,
+    "itemSubTypeId": 512,
     "itemLevel": null,
     "attack": null,
     "defense": 0,
@@ -19205,6 +19340,180 @@
       ],
       "acd": [
         "EQUIP[1st Anniversary Card]3"
+      ]
+    }
+  },
+  "27421": {
+    "id": 27421,
+    "aegisName": null,
+    "name": "Shard of Strength Jewel",
+    "unidName": "Shard of Strength Jewel",
+    "resName": "Wolf_Orb_Str_1",
+    "description": "เศษของอัญมณีแห่งความแข็งแกร่ง สามารถนำไปตกแต่งอุปกรณ์ส่วนหัวได้\n\nทุก ๆ การอัพเกรด Headgear 2 ขั้น เพิ่ม Damage ทางกายภาพระยะใกล้ 3%\nทุก ๆ การอัพเกรด Headgear 2 ขั้น HIT +7\nทุก ๆ การอัพเกรด Headgear 5 ขั้น ATK +3%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Headgear^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 769,
+    "script": {
+      "melee": [
+        "2---3"
+      ],
+      "hit": [
+        "2---7"
+      ],
+      "atkPercent": [
+        "5---3"
+      ]
+    }
+  },
+  "27422": {
+    "id": 27422,
+    "aegisName": null,
+    "name": "Shard of Agility Jewel",
+    "unidName": "Shard of Agility Jewel",
+    "resName": "Wolf_Orb_luk_1",
+    "description": "เศษของอัญมณีแห่งความว่องไว สามารถนำไปตกแต่งอุปกรณ์ส่วนหัวได้\n\nทุก ๆ การอัพเกรด Headgear 2 ขั้น ASPD +5%\nทุก ๆ การอัพเกรด Headgear 2 ขั้น FLEE +7\nทุก ๆ การอัพเกรด Headgear 5 ขั้น ASPD +1\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Headgear^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 769,
+    "script": {
+      "aspdPercent": [
+        "2---5"
+      ],
+      "flee": [
+        "2---7"
+      ],
+      "aspd": [
+        "5---1"
+      ]
+    }
+  },
+  "27423": {
+    "id": 27423,
+    "aegisName": null,
+    "name": "Shard of Dexterity Jewel",
+    "unidName": "Shard of Dexterity Jewel",
+    "resName": "Wolf_Orb_Dex_1",
+    "description": "เศษของอัญมณีแห่งความแม่นยำ สามารถนำไปตกแต่งอุปกรณ์ส่วนหัวได้\n\nทุก ๆ การอัพเกรด Headgear 2 ขั้น เพิ่ม Damage ทางกายภาพระยะไกล 3%\nทุก ๆ การอัพเกรด Headgear 2 ขั้น HIT +7\nทุก ๆ การอัพเกรด Headgear 5 ขั้น ATK +3%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Headgear^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 769,
+    "script": {
+      "range": [
+        "2---3"
+      ],
+      "hit": [
+        "2---7"
+      ],
+      "atkPercent": [
+        "5---3"
+      ]
+    }
+  },
+  "27424": {
+    "id": 27424,
+    "aegisName": null,
+    "name": "Shard of Fatality Jewel",
+    "unidName": "Shard of Fatality Jewel",
+    "resName": "Wolf_Orb_Agi_1",
+    "description": "เศษของอัญมณีแห่งความโชคดี สามารถนำไปตกแต่งอุปกรณ์ส่วนหัวได้\n\nทุก ๆ การอัพเกรด Headgear 2 ขั้น Critical Damage +6%\nทุก ๆ การอัพเกรด Headgear 2 ขั้น CRI +3\nทุก ๆ การอัพเกรด Headgear 5 ขั้น ATK +3%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Headgear^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 769,
+    "script": {
+      "criDmg": [
+        "2---6"
+      ],
+      "cri": [
+        "2---3"
+      ],
+      "atkPercent": [
+        "5---3"
+      ]
+    }
+  },
+  "27425": {
+    "id": 27425,
+    "aegisName": null,
+    "name": "Shard of Vitality Jewel",
+    "unidName": "Shard of Vitality Jewel",
+    "resName": "Wolf_Orb_Vit_1",
+    "description": "เศษของอัญมณีแห่งความถึกทน สามารถนำไปตกแต่งอุปกรณ์ส่วนหัวได้\n\nทุก ๆ การอัพเกรด Headgear 2 ขั้น ลดระยะเวลาร่ายแบบแปรผัน 5%\nทุก ๆ การอัพเกรด Headgear 2 ขั้น MATK +7\nทุก ๆ การอัพเกรด Headgear 5 ขั้น MATK +3%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Headgear^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 769,
+    "script": {
+      "vct": [
+        "2---5"
+      ],
+      "matk": [
+        "2---7"
+      ],
+      "matkPercent": [
+        "5---3"
+      ]
+    }
+  },
+  "27426": {
+    "id": 27426,
+    "aegisName": null,
+    "name": "Shard of Intelligence Jewel",
+    "unidName": "Shard of Intelligence Jewel",
+    "resName": "Wolf_Orb_Int_1",
+    "description": "เศษของอัญมณีแห่งความรอบรู้ สามารถนำไปตกแต่งอุปกรณ์ส่วนหัวได้\n\nทุก ๆ การอัพเกรด Headgear 2 ขั้น เพิ่ม Damage ทางเวทมนตร์ทุกธาตุ 3%\nทุก ๆ การอัพเกรด Headgear 2 ขั้น MATK +7\nทุก ๆ การอัพเกรด Headgear 5 ขั้น MATK +3%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Headgear^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 769,
+    "script": {
+      "m_my_element_all": [
+        "Headgear 2---3"
+      ],
+      "matk": [
+        "Headgear 2---7"
+      ],
+      "matkPercent": [
+        "Headgear 5---3"
       ]
     }
   },
@@ -29582,7 +29891,7 @@
       "spPercent": [
         "3---2"
       ],
-      "p_race_boss": [
+      "p_class_boss": [
         "7===15"
       ],
       "p_race_demon": [

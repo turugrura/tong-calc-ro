@@ -84,10 +84,16 @@ export class Ranger extends CharacterBase {
     'Hi-Class',
     'Ranger',
     'Ranger Cls',
+    'Ranger Class',
     'Sniper',
+    'Sniper Cls',
+    'Sniper Class',
     'Hunter',
+    'Hunter Cls',
+    'Hunter Class',
     'Archer',
     'Archer Cls',
+    'Archer Clss',
     'Only 3rd Cls',
   ];
   protected _atkSkillList: AtkSkillModel[] = [
