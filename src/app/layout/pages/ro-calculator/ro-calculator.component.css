@@ -1,29 +1,29 @@
-pre {
-  font-weight: 400;
+:host ::ng-deep .json_display pre {
+  font-weight: 400 !important;
+}
 
-  .number-line {
-    color: #adadaf;
-  }
+:host ::ng-deep .json_display .number-line {
+  color: #adadaf !important;
+}
 
-  .string {
-    color: #95c602;
-  }
+:host ::ng-deep .json_display .string {
+  color: #95c602 !important;
+}
 
-  .number {
-    color: #f2b619;
-  }
+:host ::ng-deep .json_display .number {
+  color: #f2b619 !important;
+}
 
-  .boolean {
-    color: #0097f1;
-  }
+:host ::ng-deep .json_display .boolean {
+  color: #0097f1 !important;
+}
 
-  .null {
-    color: #727990;
-  }
+:host ::ng-deep .json_display .null {
+  color: #727990 !important;
+}
 
-  .key {
-    color: #fff;
-  }
+:host ::ng-deep .json_display .key {
+  color: #fff !important;
 }
 
 .p-inputgroup p-dropdown {

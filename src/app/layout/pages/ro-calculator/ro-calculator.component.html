@@ -3191,11 +3191,11 @@
 
       <p-accordionTab header="Summary">
         <div class="grid grid-nogutter">
-          <div class="col-6">
+          <div class="col-6 json_display">
             <pre [innerHTML]="modelSummary | prettyjson : [true, 3]"></pre>
             <pre *ngIf="isEnableCompare" [innerHTML]="model2 | prettyjson : [true, 3]"></pre>
           </div>
-          <div class="col-6">
+          <div class="col-6 json_display">
             <pre [innerHTML]="totalSummary | prettyjson : [true, 3]"></pre>
           </div>
         </div>
@@ -3203,10 +3203,10 @@
 
       <p-accordionTab header="Equipments Summary">
         <div class="grid grid-nogutter">
-          <div class="col-6">
+          <div class="col-6 json_display">
             <pre [innerHTML]="itemSummary | prettyjson : [true, 3]"></pre>
           </div>
-          <div class="col-6">
+          <div class="col-6 json_display">
             <pre [innerHTML]="itemSummary2 | prettyjson : [true, 3]"></pre>
           </div>
         </div>
@@ -3252,7 +3252,7 @@
           </div>
           <div class="col-8">
             <div class="grid grid-nogutter ml-2">
-              <div class="col-12">
+              <div class="col-12 json_display">
                 ItemID: {{ itemId }}
                 <pre [innerHTML]="itemBonus | prettyjson : [true, 3]"></pre>
               </div>
