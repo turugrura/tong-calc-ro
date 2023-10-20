@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { debounceTime, delay, finalize, forkJoin, mergeMap, of, Subject, Subscription, take, tap } from 'rxjs';
 import { BaseStateCalculator } from './base-state-calculator';
 import { Calculator } from './calculator';
@@ -22,6 +22,7 @@ import { ShadowChaser } from './jobs/shadow-chaser';
 import { GitCross } from './jobs/git-cross';
 import { ArchBishop } from './jobs/arch-bishop';
 import { Warlock } from './jobs/warlock';
+import { OverlayPanel } from 'primeng/overlaypanel';
 
 const sortObj = <T>(field: keyof T) => {
   return (a: T, b: T) => {
@@ -313,6 +314,9 @@ interface ClassModel extends Partial<Record<ItemTypeEnum, number>> {
   providers: [ConfirmationService, MessageService],
 })
 export class RoCalculatorComponent implements OnInit, OnDestroy {
+  @ViewChild('op') overlayPanel: OverlayPanel;
+  @ViewChild('opRef') opRef: any;
+
   updateItemEvent = new Subject();
   updateMonsterListEvent = new Subject();
   updateCompareEvent = new Subject();
@@ -603,6 +607,9 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   itemId = 0;
   itemBonus = {};
   itemDescription = '';
+
+  isHover = false;
+  hoverItemId = undefined;
   hover = '';
 
   cols: { field: string; header: string; default?: boolean }[] = [];
@@ -1854,6 +1861,16 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
   onLog(inputs) {
     console.log({ inputs, model2: this.model2 });
+  }
+
+  onHoverItem(itemId: any) {
+    this.hoverItemId = itemId;
+    this.hover = this.items[itemId]?.description.replaceAll('\n', '<br>').replace(/\^(.{6})/g, '<font color="#$1">');
+    this.isHover = true;
+  }
+
+  onLeaveHoverItem(itemId: any) {
+    // this.hover = undefined;
   }
 
   onOptionChange() {

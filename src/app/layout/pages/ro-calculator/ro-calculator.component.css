@@ -271,6 +271,10 @@ pre {
   padding: 0;
 }
 
+:host ::ng-deep .hover_item_desc .p-dialog-content {
+  padding: 0;
+}
+
 :host ::ng-deep .p-accordion-tab .p-accordion-header > a {
   font-weight: 800;
   /* color: var(--highlight-text-color);

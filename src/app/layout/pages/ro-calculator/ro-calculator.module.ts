@@ -26,12 +26,15 @@ import { TagModule } from 'primeng/tag';
 import { ToastModule } from 'primeng/toast';
 import { ToggleButtonModule } from 'primeng/togglebutton';
 import { BlockUIModule } from 'primeng/blockui';
+import { OverlayPanelModule } from 'primeng/overlaypanel';
 
 import { RoCalculatorComponent } from './ro-calculator.component';
 import { PrettyJsonPipe } from '../../prettier-json.pipe';
 import { RoCalculatorRoutingModule } from './ro-calculator-routing.module';
 import { EquipmentComponent } from './equipment/equipment.component';
 import { CalcValueComponent } from './calc-value/calc-value.component';
+import { DialogModule } from 'primeng/dialog';
+import { TooltipModule } from 'primeng/tooltip';
 
 @NgModule({
   imports: [
@@ -59,6 +62,9 @@ import { CalcValueComponent } from './calc-value/calc-value.component';
     StyleClassModule,
     TableModule,
     TagModule,
+    OverlayPanelModule,
+    TooltipModule,
+    DialogModule,
     ToastModule,
     ToggleButtonModule,
     BlockUIModule,

@@ -2,6 +2,24 @@
 <p-blockUI [blocked]="isInProcessingPreset"></p-blockUI>
 <p-confirmDialog [style]="{ width: '50vw' }"></p-confirmDialog>
 
+<p-dialog
+  class="hover_item_desc"
+  header="ItemID: {{ hoverItemId }}"
+  [(visible)]="isHover"
+  [style]="{ width: '30rem', height: '70vh' }"
+>
+  <div class="grid grid-nogutter" style="height: 100%">
+    <div class="col-12" style="color: #000; background-color: #fff">
+      <img
+        style="float: left; margin: 5px"
+        src="https://www.divine-pride.net/img/items/collection/thROG/{{ hoverItemId }}"
+        alt=""
+      />
+      <p class="px-2 py-2" style="text-align: justify" [innerHTML]="hover"></p>
+    </div>
+  </div>
+</p-dialog>
+
 <div class="grid grid-nogutter">
   <!-- Left Side -->
   <div class="p-fluid col-7">
@@ -100,7 +118,7 @@
       </div>
 
       <!-- Status -->
-      <div class="col-8">
+      <div #opRef class="col-8">
         <div class="grid grid-nogutter">
           <div class="col-4">
             <div class="grid grid-nogutter">
@@ -382,7 +400,7 @@
                 </div>
               </ng-template>
               <ng-template let-item pTemplate="item">
-                <div class="flex gap-1">
+                <div (mouseenter)="onHoverItem(item.value)" class="flex gap-1">
                   <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
                   <div>{{ item.label }}</div>
                 </div>
