@@ -1,6 +1,7 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { LayoutService } from './service/app.layout.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-topbar',
@@ -17,6 +18,7 @@ export class AppTopBarComponent {
 
   visible: boolean = false;
   visibleInfo: boolean = false;
+  env = environment;
 
   infos = [
     'เปลี่ยน Theme ทึ่ปุ่ม Config ตรงขวากลาง',

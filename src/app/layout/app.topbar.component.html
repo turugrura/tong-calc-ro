@@ -31,25 +31,34 @@
             <span>Settings</span>
         </button> -->
 
+    <a #survey [hidden]="true" href="{{ env.surveyUrl }}" target="_blank" rel="noreferrer noopener"> </a>
     <button
-      class="p-button-info p-button-rounded p-button-outlined"
+      class="font-bold p-button-danger p-button-rounded p-button-raised"
+      icon="pi pi-exclamation-triangle"
+      pButton
+      pRipple
+      label="Report"
+      (click)="survey.click()"
+    ></button>
+    <button
+      class="font-bold p-button-help p-button-rounded p-button-raised"
       icon="pi pi-info-circle"
       pButton
       pRipple
-      label="ข้อมูลเพิ่มเติม"
+      label="Infomation"
       (click)="showInfoDialog()"
     ></button>
     <button
-      class="p-button-primary p-button-rounded p-button-outlined"
+      class="font-bold p-button-primary p-button-rounded p-button-raised"
       icon="pi pi-heart"
       pButton
       pRipple
-      label="สนับสนุน"
+      label="Support"
       (click)="showDialog()"
     ></button>
   </div>
   <p-dialog
-    header="สนับสนุน"
+    header="Support"
     [draggable]="false"
     [resizable]="false"
     [modal]="true"
