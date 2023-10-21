@@ -7,6 +7,7 @@ import { MonsterModel } from './monster.model';
 import { Weapon } from './weapon';
 import { PoisionPsoEleTable } from './poison-psdo-ele-table';
 import { AllowShieldTable } from './allow-shield-table';
+import { PreparedMonsterModel } from './prepared-monster.model';
 
 // const getItem = (id: number) => items[id] as ItemModel;
 const refinableItemTypes = [
@@ -130,8 +131,6 @@ export class Calculator {
   private buffBonus: Record<string, any> = {};
   private masteryAtkSkillBonus: Record<string, any> = {};
   private consumableBonuses: any[] = [];
-  private activeSkillIds: number[] = [];
-  private passiveSkillIds: number[] = [];
   private aspdPotion: number = undefined;
 
   private allStatus = {
@@ -318,7 +317,7 @@ export class Calculator {
   };
   private extraOptions: any[] = [];
   private weaponData = new Weapon();
-  private monsterData = {
+  private monsterData: PreparedMonsterModel = {
     name: '',
     race: '',
     raceUpper: '',
@@ -350,6 +349,8 @@ export class Calculator {
   private skillPropertyMultiplier = 1;
   private baseEquipmentStat: Record<string, number> = {};
   private finalMultipliers = [] as number[];
+  private finalPhyMultipliers = [] as number[];
+  private finalMagicMultipliers = [] as number[];
 
   private buff: any[] = [];
 
@@ -662,13 +663,6 @@ export class Calculator {
     return this;
   }
 
-  setSkillIds({ activeSkillIds, passiveSkillIds }: { activeSkillIds: number[]; passiveSkillIds: number[] }) {
-    this.activeSkillIds = [...activeSkillIds];
-    this.passiveSkillIds = [...passiveSkillIds];
-
-    return this;
-  }
-
   setAspdPotion(aspdPotion: number) {
     this.aspdPotion = aspdPotion;
 
@@ -737,10 +731,10 @@ export class Calculator {
     return this;
   }
 
-  private calcPropertyMultiplier(propertyAtk?: ElementType) {
-    if (propertyAtk) {
-      const x = ElementMapper[this.monster.stats.elementName][propertyAtk];
-      this.skillPropertyMultiplier = this.toPercent(x);
+  private calcPropertyMultiplier(specifiedProperty?: ElementType) {
+    if (specifiedProperty) {
+      const propMultiplier = ElementMapper[this.monster.stats.elementName][specifiedProperty];
+      this.skillPropertyMultiplier = this.toPercent(propMultiplier);
 
       return this;
     }
@@ -950,15 +944,13 @@ export class Calculator {
     // const additionalAtk = this.totalMasteryAtk + this.totalBuffAtk;
     // if (aAtk && bAtk) return calcPropMulti(aAtk) + calcPropMulti(bAtk) + extraAtk + additionalAtk;
 
-    const { element, race } = this.monsterData;
-    const masteryPassiveSkill = this._class.getMasteryAtk({
-      weaponData: this.weaponData,
-      passiveSkillIds: this.passiveSkillIds,
-      element,
-      race,
-      level: this.model.level,
+    const masteryAtk = this._class.getMasteryAtk({
+      model: this.model,
+      monster: this.monsterData,
+      totalBonus: this.totalEquipStatus,
+      weapon: this.weaponData,
     });
-    const statusAtk = this.totalStatusAtk * 2 + this.totalMasteryAtk + masteryPassiveSkill + this.totalBuffAtk;
+    const statusAtk = this.totalStatusAtk * 2 + this.totalMasteryAtk + masteryAtk + this.totalBuffAtk;
     const totalMinAtk = this.totalAMin + this.totalBMin + statusAtk;
     const totalMaxAtk = this.totalAMax + this.totalBMax + statusAtk;
     const totalMaxAtkOver = this.totalAMaxOver + this.totalBMaxOver + statusAtk;
@@ -1006,10 +998,16 @@ export class Calculator {
     this.dmgReductionByMHardDef = (1000 + mDefBypassed) / (1000 + mDefBypassed * 10);
   }
 
-  private applyFinalMultiplier(rawDamage: number) {
-    return this.finalMultipliers.reduce((dmg, finalMultiplier) => {
+  private applyFinalMultiplier(rawDamage: number, atkType: 'phy' | 'magic') {
+    const allFinalApplied = this.finalMultipliers.reduce((dmg, finalMultiplier) => {
       return this.floor(dmg * this.toPercent(finalMultiplier + 100));
     }, rawDamage);
+
+    const finals = atkType === 'phy' ? this.finalPhyMultipliers : this.finalMagicMultipliers;
+
+    return finals.reduce((dmg, finalMultiplier) => {
+      return this.floor(dmg * this.toPercent(finalMultiplier + 100));
+    }, allFinalApplied);
   }
 
   private calcBasicDamage() {
@@ -1024,7 +1022,7 @@ export class Calculator {
       const dmgMultiApplied = this.floor(rangedApplied * this.toPercent(dmgMultiplier + 100));
       const dmgHdef = this.floor(dmgMultiApplied * hardDef);
       const dmgSdef = dmgHdef - softDef;
-      const finalApplied = this.applyFinalMultiplier(dmgSdef);
+      const finalApplied = this.applyFinalMultiplier(dmgSdef, 'phy');
 
       return this.toPreventNegativeDmg(finalApplied);
     };
@@ -1049,7 +1047,7 @@ export class Calculator {
       const dmgHdef = hardDef ? this.floor(dmgMultiApplied * hardDef) : dmgMultiApplied;
       const dmgSdef = dmgHdef - softDef;
       const baseCriApplied = this.floor(dmgSdef * this.BASE_CRI_DMG);
-      const finalApplied = this.applyFinalMultiplier(baseCriApplied);
+      const finalApplied = this.applyFinalMultiplier(baseCriApplied, 'phy');
 
       return this.toPreventNegativeDmg(finalApplied);
     };
@@ -1081,7 +1079,7 @@ export class Calculator {
         const rangedApplied = this.floor(dmgMultiApplied * this.toPercent(rangedMultiplier + 100));
         const hDefApplied = this.floor(rangedApplied * hardDef);
         const baseCriApplied = canCri ? this.floor(hDefApplied * this.BASE_CRI_DMG) : hDefApplied;
-        const finalApplied = this.applyFinalMultiplier(baseCriApplied);
+        const finalApplied = this.applyFinalMultiplier(baseCriApplied, 'phy');
 
         return this.toPreventNegativeDmg(finalApplied);
       }
@@ -1093,7 +1091,7 @@ export class Calculator {
       const equipSkillApplied = this.floor(baseSkillApplied * equipSkillMultiplier);
       const hDefApplied = this.floor(equipSkillApplied * hardDef) - softDef;
       const baseCriApplied = canCri ? this.floor(hDefApplied * this.BASE_CRI_DMG) : hDefApplied;
-      const finalApplied = this.applyFinalMultiplier(baseCriApplied);
+      const finalApplied = this.applyFinalMultiplier(baseCriApplied, 'phy');
 
       return this.toPreventNegativeDmg(finalApplied);
     };
@@ -1129,12 +1127,12 @@ export class Calculator {
     const { softMDef } = this.monsterData;
     const hardDef = this.dmgReductionByMHardDef;
 
-    const skillElement = this.model.propertyAtk || element || ElementType.Neutral;
-    this.calcPropertyMultiplier(skillElement);
+    this.propertySkill = element || this.model.propertyAtk || ElementType.Neutral;
+    this.calcPropertyMultiplier(this.propertySkill);
 
     const elementBonus =
       (this.totalEquipStatus.m_my_element_all || 0) +
-      (this.totalEquipStatus[`m_my_element_${skillElement.toLowerCase()}`] || 0);
+      (this.totalEquipStatus[`m_my_element_${this.propertySkill.toLowerCase()}`] || 0);
     const elementMultiplier = this.toPercent(100 + elementBonus);
     const baseSkillMultiplier = this.toPercent(this.baseSkillDamage);
     const equipSkillMultiplier = this.toPercent(100 + (this.totalEquipStatus[skillName] || 0));
@@ -1150,22 +1148,10 @@ export class Calculator {
       const propertyApplied = this.floor(sMdefApplied * this.skillPropertyMultiplier);
       const hDefApplied = this.floor(propertyApplied * hardDef);
       const finalApplied = this.floor(hDefApplied * this.toPercent(finalDmgMultiplier + 100));
+      const finalApplied2 = this.applyFinalMultiplier(finalApplied, 'magic');
 
-      return this.toPreventNegativeDmg(finalApplied);
+      return this.toPreventNegativeDmg(finalApplied2);
     };
-
-    // const skillHit = skillData.hit || 1;
-    // this.possiblyDamages = Array.from({ length: this.weaponMaxMatk - this.weaponMinMatk - 1 }).map((_, i) => {
-    //   const wMatk = this.weaponMinMatk + i + 1;
-    //   const totalMatk = this.calcTotalMatk(wMatk);
-    //   const dmg = this._class.calcSkillDmgByTotalHit(skillFormula(totalMatk), skillData);
-
-    //   if (skillHit > 1) {
-    //     return `From:${wMatk} => ${dmg} (${dmg / skillHit} x ${skillHit})`;
-    //   }
-
-    //   return `From:${wMatk} => ${dmg}`;
-    // });
 
     const rawMaxDamage = skillFormula(this.totalMaxMatk);
     const maxDamage = this._class.calcSkillDmgByTotalHit(rawMaxDamage, skillData);
@@ -1264,30 +1250,9 @@ export class Calculator {
       return 0;
     }
 
-    // 9===SKILL[Platinum Altar]==50(90 วินาที)
-    const [skillCond, extraBonus] = bonus.split('==');
-    // console.log({ miniScript, skillCond, extraBonus });
-    if (skillCond && extraBonus) {
-      const skillName = skillCond.substring(6, skillCond.length - 1);
-
-      if (this.isUsedSkill(skillName)) {
-        this.buff.push({ [skillName]: extraBonus });
-
-        return this.getActualBonus(extraBonus);
-      }
-
-      return 0;
-    }
-
-    // [weapon]10===10
-    if (condition.startsWith('[weapon]')) {
-      const conditionLv = Number(condition.replace('[weapon]', ''));
-      const refineLv = this.mapRefine.get(ItemTypeEnum.weapon);
-      // console.log({ refineLv, conditionLv });
-      if (refineLv >= conditionLv) return bonusNum;
-
-      return 0;
-    }
+    // 50(90 วินาที)
+    const actualBonus = this.getActualBonus(bonus);
+    if (isNumber(actualBonus)) return actualBonus;
 
     return 0;
   }
@@ -1312,16 +1277,8 @@ export class Calculator {
       return this.floor(itemRefine / conditionNum) * bonusNum;
     }
 
-    // [weapon]1---2 (ex. temporal headgear)
-    if (condition.startsWith('[weapon]')) {
-      const conditionLv = Number(condition.replace('[weapon]', ''));
-      const refineLv = this.mapRefine.get(ItemTypeEnum.weapon);
-
-      return calc(refineLv, Number(conditionLv));
-    }
-
     // LEARN_SKILL[Snake Eyes==]1---2
-    const [, skillName, skillLv] = condition.match(/^LEARN_SKILL\[(.+?)==(\d+)]/) ?? [];
+    const [, skillName, skillLv] = condition.match(/LEARN_SKILL\[(.+?)==(\d+)]/) ?? [];
     if (skillName) {
       const learned = this.learnedSkillMap.get(skillName) || 0;
       return calc(learned, Number(skillLv));
@@ -1390,7 +1347,7 @@ export class Calculator {
   } {
     let restCondition = script;
     const mainStatusRegex = /^(str|int|dex|agi|vit|luk|level):(\d+)&&(\d+===.+)/;
-    const [, status, statusCondition, raw] = script.match(mainStatusRegex) ?? [];
+    const [, status, statusCondition, raw] = restCondition.match(mainStatusRegex) ?? [];
     if (status) {
       const isPass = this.model[status] >= Number(statusCondition);
 
@@ -1419,7 +1376,7 @@ export class Calculator {
     }
 
     // [weaponType=Pistol]20
-    const [_, wSubTypeName] = script.match(/^\[weaponType=(.+?)\]/) ?? [];
+    const [_, wSubTypeName] = restCondition.match(/^\[weaponType=(.+?)\]/) ?? [];
     if (wSubTypeName) {
       const subTypeName = this.weaponData?.data?.subTypeName;
       if (wSubTypeName !== subTypeName) return { isValid: false, restCondition };
@@ -1429,7 +1386,7 @@ export class Calculator {
     }
 
     // USED[Mechanic]20
-    const [toRemove, usedByClass] = script.match(/USED\[(.+?)\]/) ?? [];
+    const [toRemove, usedByClass] = restCondition.match(/USED\[(.+?)\]/) ?? [];
     if (usedByClass) {
       const isUsed = usedByClass
         .split('||')
@@ -1441,7 +1398,7 @@ export class Calculator {
 
     // LEVEL[130]2---1
     // LEVEL[1-129]2---1
-    const [toRemove2, lvCond] = script.match(/LEVEL\[(.+?)\]/) ?? [];
+    const [toRemove2, lvCond] = restCondition.match(/LEVEL\[(.+?)\]/) ?? [];
     if (lvCond) {
       const [minLv, maxLv = 999] = lvCond.split('-').map(Number);
       const isPass = minLv <= this.model.level && this.model.level <= maxLv;
@@ -1450,8 +1407,19 @@ export class Calculator {
       restCondition = restCondition.replace(toRemove2, '');
     }
 
+    // ACTIVE_SKILL[Platinum Altar]9===50(90 วินาที)
+    const [unused2, actSkillName] = restCondition.match(/ACTIVE_SKILL\[(.+)]/) ?? [];
+    if (actSkillName) {
+      // console.log({ script, unused2, actSkillName });
+      const isUsed = this.isUsedSkill(actSkillName);
+
+      if (!isUsed) return { isValid: false, restCondition };
+
+      restCondition = restCondition.replace(unused2, '');
+    }
+
     // EQUIP[Bear's Power]===50
-    const [setCondition, itemSet] = script.match(/^EQUIP\[(.+?)]/) ?? [];
+    const [setCondition, itemSet] = restCondition.match(/^EQUIP\[(.+?)]/) ?? [];
     if (itemSet) {
       const itemSets = itemSet.split('&&').filter(Boolean);
       // console.log({ itemRefine, itemSet, itemSets });
@@ -1526,7 +1494,7 @@ export class Calculator {
     }
 
     // POS[accRight]50
-    const [unusedPos, position] = script.match(/POS\[(\D+)]/) ?? [];
+    const [unusedPos, position] = restCondition.match(/POS\[(\D+)]/) ?? [];
     if (position) {
       if (position === itemType) {
         return {
@@ -1536,6 +1504,18 @@ export class Calculator {
       }
 
       return { isValid: false, restCondition };
+    }
+
+    // SPAWN[tur_d03_i||tur_d04_i]
+    const [unusedSp, rawSpawn] = restCondition.match(/SPAWN\[(.+)]/) ?? [];
+    if (rawSpawn) {
+      const spawns = rawSpawn.split('||');
+      const monSpawns = this.monster.spawn.split(',');
+      const isPass = spawns.some((sp) => monSpawns.includes(sp));
+      // console.log({ rawSpawn, monSpawns, spawns });
+      if (!isPass) return { isValid: false, restCondition };
+
+      restCondition = restCondition.replace(unusedSp, '');
     }
 
     return {
@@ -1644,6 +1624,8 @@ export class Calculator {
 
     this.baseEquipmentStat = {};
     this.finalMultipliers = [];
+    this.finalPhyMultipliers = [];
+    this.finalMagicMultipliers = [];
     for (const [itemType, itemData] of this.equipItem) {
       this.equipStatus[itemType] = { ...this.allStatus };
       if (!itemData) {
@@ -1664,6 +1646,13 @@ export class Calculator {
       const refine = this.getRefineLevelByItemType(itemType);
       const calculatedItem = this.calcItemStatus(itemType, refine, itemData.script);
       for (const [attr, value] of Object.entries(calculatedItem)) {
+        if (attr === 'p_final') {
+          this.finalPhyMultipliers.push(value);
+        }
+        if (attr === 'm_final') {
+          this.finalMagicMultipliers.push(value);
+        }
+
         this.equipStatus[itemType][attr] = value;
 
         updateTotalStatus(attr, value);
@@ -1678,6 +1667,19 @@ export class Calculator {
           this.finalMultipliers.push(val);
           continue;
         }
+
+        this.equipStatus[skillName] = { ...this.allStatus, [attr]: val };
+
+        updateTotalStatus(attr, value);
+
+        this.updateBaseEquipStat(attr, val);
+      }
+    }
+    for (const [skillName, scripts] of Object.entries(this.masteryAtkSkillBonus)) {
+      for (const [attr, value] of Object.entries(scripts)) {
+        const val = Number(value);
+        if (attr === 'atk') continue;
+        if (attr === 'matk') continue;
 
         this.equipStatus[skillName] = { ...this.allStatus, [attr]: val };
 
@@ -1741,6 +1743,13 @@ export class Calculator {
     if (this.weaponData.data.typeName === 'bow') {
       this.totalEquipStatus.range += this.totalEquipStatus.bowRange || 0;
     }
+
+    this._class.setAdditionalBonus({
+      model: this.model,
+      monster: this.monsterData,
+      weapon: this.weaponData,
+      totalBonus: this.totalEquipStatus,
+    });
 
     return this;
   }
@@ -1993,6 +2002,8 @@ export class Calculator {
       calcSkill: {
         baseSkillDamage: this.baseSkillDamage,
         dps: this.skillDps,
+        totalHits: this.skillTotalHits,
+        propertySkill: this.propertySkill,
         ...this.skillFrequency,
       },
       calc: {

@@ -114,6 +114,12 @@ export const MainItemWithRelations: Partial<Record<ItemTypeEnum, ItemTypeEnum[]>
     ItemTypeEnum.weaponEnchant3,
   ],
   [ItemTypeEnum.ammo]: [],
+  [ItemTypeEnum.shield]: [
+    ItemTypeEnum.shieldCard,
+    ItemTypeEnum.shieldEnchant1,
+    ItemTypeEnum.shieldEnchant2,
+    ItemTypeEnum.shieldEnchant3,
+  ],
   [ItemTypeEnum.headUpper]: [
     ItemTypeEnum.headUpperCard,
     ItemTypeEnum.headUpperEnchant1,
@@ -136,12 +142,6 @@ export const MainItemWithRelations: Partial<Record<ItemTypeEnum, ItemTypeEnum[]>
     ItemTypeEnum.armorEnchant1,
     ItemTypeEnum.armorEnchant2,
     ItemTypeEnum.armorEnchant3,
-  ],
-  [ItemTypeEnum.shield]: [
-    ItemTypeEnum.shieldCard,
-    ItemTypeEnum.shieldEnchant1,
-    ItemTypeEnum.shieldEnchant2,
-    ItemTypeEnum.shieldEnchant3,
   ],
   [ItemTypeEnum.garment]: [
     ItemTypeEnum.garmentCard,
@@ -175,10 +175,10 @@ export const MainItemWithRelations: Partial<Record<ItemTypeEnum, ItemTypeEnum[]>
   [ItemTypeEnum.costumeEnchantLower]: [ItemTypeEnum.shadowArmorEnchant1],
   [ItemTypeEnum.costumeEnchantGarment]: [ItemTypeEnum.shadowArmorEnchant1],
 
+  [ItemTypeEnum.shadowWeapon]: [ItemTypeEnum.shadowWeaponEnchant1],
   [ItemTypeEnum.shadowArmor]: [ItemTypeEnum.shadowArmorEnchant1],
+  [ItemTypeEnum.shadowShield]: [ItemTypeEnum.shadowShieldEnchant1],
   [ItemTypeEnum.shadowBoot]: [ItemTypeEnum.shadowBootEnchant1],
   [ItemTypeEnum.shadowEarring]: [ItemTypeEnum.shadowEarringEnchant1],
   [ItemTypeEnum.shadowPendant]: [ItemTypeEnum.shadowPendantEnchant1],
-  [ItemTypeEnum.shadowShield]: [ItemTypeEnum.shadowShieldEnchant1],
-  [ItemTypeEnum.shadowWeapon]: [ItemTypeEnum.shadowWeaponEnchant1],
 };

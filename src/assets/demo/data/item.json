@@ -106,6 +106,45 @@
       ]
     }
   },
+  "1584": {
+    "id": 1584,
+    "aegisName": "Chilly_Spell_Book",
+    "name": "Chilly Spell Book [2]",
+    "unidName": "Book",
+    "resName": "냉기의마법서",
+    "description": "1 ใน 4 ของคัมภีร์เวทมนตร์ซึ่งใช้โดย Socerer ระดับสูง [Part. ice]\nMATK + 160, DEX + 1.\nเพิ่มพลังโจมตีให้กับ Skill Diamond Dust และ Cold Bolt ขึ้น 3 เท่าของการอัพเกรดไอเทม\nเสีย SP เพิ่มขึ้น 5 หน่วยทุกระดับการอัพเกรด\nไม่สามารถถูกทำลายได้\nประเภท : ^777777Book^000000 พลังโจมตี : ^777777100^000000\nน้ำหนัก : ^777777100^000000 ธาตุ : ^777777Water^000000\nอาวุธ Lv. : ^7777774^000000\nLv ที่ต้องการ : ^777777100^000000\nอาชีพ : ^777777Sorcerer^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 271,
+    "itemLevel": 4,
+    "attack": 100,
+    "propertyAtk": "Water",
+    "defense": null,
+    "weight": 100,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Sorcerer"
+    ],
+    "script": {
+      "matk": [
+        "160"
+      ],
+      "dex": [
+        "1"
+      ],
+      "Diamond Dust": [
+        "1---3"
+      ],
+      "Cold Bolt": [
+        "1---3"
+      ],
+      "sp": [
+        "1---5"
+      ]
+    }
+  },
   "1618": {
     "id": 1618,
     "aegisName": "Survival_Rod_",
@@ -240,6 +279,89 @@
       ]
     }
   },
+  "1654": {
+    "id": 1654,
+    "aegisName": "Mental_Stick",
+    "name": "Mental Stick [1]",
+    "unidName": "One-handed Staff",
+    "resName": "멘탈스틱",
+    "description": "Staff ที่สามารถแปรเปลี่ยนพลังงานของธาตุเวทย์มนตร์ให้เป็นพลังงาน Psychic ได้\nระยะเวลาการร่ายเวทย์ของสกิล Psychic Wave ลดลง 3 วินาที, เพิ่ม SP ของการใช้สกิล Psychic Wave ขึ้น 60\nเมื่อไอเทมมีค่าการอัพเกรดมากกว่า +6 เพิ่มความเสียหายของ Psychic Wave 2% และลด MHP 2% ต่อ 1 ระดับการอัพเกรด\nสูญเสีย SP 100 เมื่อถอดไอเทมออกจากตัวละคร\nMATK + 170\nประเภท : ^777777One-Hand Staff^000000 พลังโจมตี : ^77777740^000000\nน้ำหนัก : ^77777750^000000\nLv ของอาวุธ : ^7777773^000000\nLv ที่ต้องการ : ^777777102^000000\nอาชีพ : ^777777Sorcerer Only^000000",
+    "slots": 1,
+    "itemTypeId": 1,
+    "itemSubTypeId": 265,
+    "itemLevel": 3,
+    "attack": 40,
+    "defense": null,
+    "weight": 50,
+    "requiredLevel": 102,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Sorcerer"
+    ],
+    "script": {
+      "cd__Psychic Wave": [
+        "3"
+      ],
+      "เพิ่ม SP ของการใช้สกิล Psychic Wave": [
+        "60"
+      ],
+      "Psychic Wave": [
+        "7===2",
+        "8===2",
+        "9===2",
+        "10===2",
+        "11===2",
+        "12===2",
+        "13===2",
+        "14===2",
+        "15===2"
+      ],
+      "matk": [
+        "170"
+      ]
+    }
+  },
+  "1664": {
+    "id": 1664,
+    "aegisName": "Thorn_Staff_",
+    "name": "Thorn Staff of Darkness [1]",
+    "unidName": "Rod",
+    "resName": "해골지팡이",
+    "description": "ไม้เท้าที่ปกคลุมด้วยพืชหนาม มีพลังเวทย์ซ่อนอยู่\nMATK + 160, INT + 3, DEX + 3\nลดพลังป้องกันเวทย์ของเป้าหมายขึ้นอยู่กับระดับการอัพเกรด\nลด Delayหลังการใช้สกิล 3% ทุกๆ 2 การอัพเกรด\nประเภท : ^777777One-Handed Rod^000000 พลังโจมตี : ^77777760^000000\nน้ำหนัก : ^77777770^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^77777775^000000\nอาชีพที่ใส่ได้ : ^777777Hi-Class Acolyte Cls, Hi-Class Mage Cls^000000",
+    "slots": 1,
+    "itemTypeId": 1,
+    "itemSubTypeId": 265,
+    "itemLevel": 4,
+    "attack": 60,
+    "propertyAtk": "Dark",
+    "defense": null,
+    "weight": 70,
+    "requiredLevel": 75,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Acolyte Cls",
+      "Mage Cls"
+    ],
+    "script": {
+      "matk": [
+        "160"
+      ],
+      "int": [
+        "3"
+      ],
+      "dex": [
+        "3"
+      ],
+      "m_pene_class_all": [
+        "3"
+      ],
+      "acd": [
+        "2---3"
+      ]
+    }
+  },
   "1679": {
     "id": 1679,
     "aegisName": "Rafini_Staff_S",
@@ -268,6 +390,66 @@
       ],
       "matk": [
         "180"
+      ]
+    }
+  },
+  "1680": {
+    "id": 1680,
+    "aegisName": "Scarlet_Rod",
+    "name": "Rod of Crimson [2]",
+    "unidName": "Staff",
+    "resName": "진홍의로드",
+    "description": "ไม้เท้ามือเดียวที่เปล่งแสงสีแดง\nINT + 4, MATK + 70\nเพิ่ม MATK เท่ากับ (ระดับ Refine*ระดับ Refine) (สามารถ Refine ได้ถึง 15)\nตัวละครเลเวล 70 ขึ้นไป : ทุกครั้งที่ BaseLv เพิ่มขึ้น 10 เลเวล จะเพิ่ม MATK ทีละ +5 \nไม่สามารถทำลายได้\nประเภท : ^777777One-Handed Staff^000000 โจมตี : ^77777760^000000\nน้ำหนัก : ^77777760^000000\nเลเวลอาวุธ : ^7777773^000000\nเลเวลที่ต้องการ : ^77777770^000000\nอาชีพที่ใส่ได้ : ^777777 Novice /Mage / Acolyte / Soul Linker^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 265,
+    "itemLevel": 3,
+    "attack": 60,
+    "defense": null,
+    "weight": 60,
+    "requiredLevel": 70,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Novice",
+      "Mage",
+      "Acolyte",
+      "Soul Linker"
+    ],
+    "script": {
+      "int": [
+        "4"
+      ],
+      "matk": [
+        "70",
+        "1===1",
+        "2===3",
+        "3===5",
+        "4===7",
+        "5===9",
+        "6===11",
+        "7===13",
+        "8===15",
+        "9===17",
+        "10===19",
+        "11===21",
+        "12===23",
+        "13===25",
+        "14===27",
+        "15===29",
+        "level:80===5",
+        "level:90===5",
+        "level:100===5",
+        "level:110===5",
+        "level:120===5",
+        "level:130===5",
+        "level:140===5",
+        "level:150===5",
+        "level:160===5",
+        "level:170===5",
+        "level:180===5",
+        "level:190===5",
+        "level:200===5"
       ]
     }
   },
@@ -417,6 +599,154 @@
     "usableClass": [
       "all"
     ]
+  },
+  "2004": {
+    "id": 2004,
+    "aegisName": "Kronos",
+    "name": "Kronos",
+    "unidName": "Twohanded Staff",
+    "resName": "크로노스",
+    "description": "ส่วนบนตกแต่งด้วยมังกรสีทองและผลึกที่มีพลังเวทย์รุนแรงถูกใส่ไว้ข้างใน มันดูสวยมากแต่ค่อนข้างหนักในการถือไปไหนมาไหน\nMATK + 240. INT +3, MHP +300\nทุก 2 ระดับการอัพเกรด ค่า INT +1, MHP +50 เมื่อทำการโจมตีด้วยเวทมนตร์ MATK +12% มีโอกาสใช้ SP เพิ่มขึ้น 20% เป็นเวลา 5 วินาที\nประเภท : ^777777Two-Handed Staff^000000 พลังโจมตี : ^77777730^000000\nน้ำหนัก : ^777777100^000000\nอาวุธ Lv : ^7777774^000000\nเลเวลที่ต้องการ : ^77777750^000000\nอาชีพ : ^777777Hi-Mage Cls^000000",
+    "slots": 0,
+    "itemTypeId": 1,
+    "itemSubTypeId": 266,
+    "itemLevel": 0,
+    "attack": 30,
+    "defense": null,
+    "weight": 100,
+    "requiredLevel": 50,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Mage"
+    ],
+    "script": {
+      "matk": [
+        "240"
+      ],
+      "hp": [
+        "300",
+        "2---50"
+      ],
+      "int": [
+        "3",
+        "2---1"
+      ]
+    }
+  },
+  "2025": {
+    "id": 2025,
+    "aegisName": "Scarlet_Staff",
+    "name": "Staff of Crimson [2]",
+    "unidName": "Staff",
+    "resName": "진홍의스태프",
+    "description": "ไม้เท้าสองมือที่เปล่งแสงสีแดง\nINT + 5, MATK + 150\nเพิ่ม MATK เท่ากับ (ระดับ Refine*ระดับ Refine) (สามารถ Refine ได้ถึง 15)\nตัวละครเลเวล 70 ขึ้นไป : ทุกครั้งที่ BaseLv เพิ่มขึ้น 10 เลเวล จะเพิ่ม MATK ทีละ +5 \nไม่สามารถทำลายได้\nประเภท : ^777777Two-Handed Staff^000000 โจมตี : ^777777100^000000\nน้ำหนัก : ^777777100^000000\nเลเวลอาวุธ : ^7777773^000000\nเลเวลที่ต้องการ : ^77777770^000000\nอาชีพที่ใส่ได้ : ^777777 Mage / Soul Linker^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 266,
+    "itemLevel": 3,
+    "attack": 100,
+    "defense": null,
+    "weight": 100,
+    "requiredLevel": 70,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Mage",
+      "Soul Linker"
+    ],
+    "script": {
+      "int": [
+        "5"
+      ],
+      "matk": [
+        "150",
+        "1===1",
+        "2===3",
+        "3===5",
+        "4===7",
+        "5===9",
+        "6===11",
+        "7===13",
+        "8===15",
+        "9===17",
+        "10===19",
+        "11===21",
+        "12===23",
+        "13===25",
+        "14===27",
+        "15===29",
+        "level:80===5",
+        "level:90===5",
+        "level:100===5",
+        "level:110===5",
+        "level:120===5",
+        "level:130===5",
+        "level:140===5",
+        "level:150===5",
+        "level:160===5",
+        "level:170===5",
+        "level:180===5",
+        "level:190===5",
+        "level:200===5"
+      ]
+    }
+  },
+  "2049": {
+    "id": 2049,
+    "aegisName": "Staff_Of_Blue_Flame",
+    "name": "Blue Flame Cane [2]",
+    "unidName": "Rod",
+    "resName": "Staff_Of_Blue_Flame",
+    "description": "ไม้คทาสองมือที่ผลึกไปด้วยพลังเวทมนตร์แห่งน้ำและไฟ\nไม่สามารถถูกทำลายได้\nINT + 7, MATK + 300\nทุก ๆ การอัพเกรด 2 ขั้น, MATK + 1%\nเมื่ออัพเกรดถึงขั้น 7, เพิ่ม Damage เวทมนตร์ธาตุ Fire, Earth, Water, Holy 5%\nเมื่ออัพเกรดถึงขั้น 9, เพิ่ม Damage เวทมนตร์ธาตุ Fire, Earth, Water, Holy 10% เพิ่มเติม\nเมื่ออัพเกรดถึงขั้น 11, ลด Damage ที่ได้รับจากศัตรูทุกขนาด 20%\nเมื่ออัพเกรดถึงขั้น 13, ลด Delay หลังใช้สกิล 15%\n^ffffff_^000000\nประเภท : ^777777Two-Handed Rod^000000 พลังโจมตี : ^777777110^000000\nน้ำหนัก : ^77777780^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777175^000000\nอาชีพที่ใส่ได้ : ^777777Mage Cls, Acolyte Cls, Soul Linker Cls^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 266,
+    "itemLevel": 4,
+    "attack": 110,
+    "defense": null,
+    "weight": 80,
+    "requiredLevel": 175,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Mage Cls",
+      "Acolyte Cls",
+      "Soul Linker Cls"
+    ],
+    "script": {
+      "int": [
+        "7"
+      ],
+      "matk": [
+        "300"
+      ],
+      "matkPercent": [
+        "2---1"
+      ],
+      "m_my_element_fire": [
+        "7===5",
+        "9===10"
+      ],
+      "m_my_element_earth": [
+        "7===5",
+        "9===10"
+      ],
+      "m_my_element_water": [
+        "7===5",
+        "9===10"
+      ],
+      "m_my_element_holy": [
+        "7===5",
+        "9===10"
+      ],
+      "ลด Damage ที่ได้รับจากศัตรูทุกขนาด": [
+        "11===20"
+      ],
+      "acd": [
+        "13===15"
+      ]
+    }
   },
   "2051": {
     "id": 2051,
@@ -7416,6 +7746,38 @@
       ]
     }
   },
+  "15927": {
+    "id": 15927,
+    "aegisName": null,
+    "name": "[Rental] Happy Turtle Hat",
+    "unidName": "[Rental] Happy Turtle Hat",
+    "resName": "꼬북이모자",
+    "description": "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้^000000\nATK ,MATK +30\nเมื่อโจมตีทางกายภาพและเวทมนตร์\nDamage ที่สร้างต่อมอนสเตอร์ใน Illusion Abyss\nเพิ่มขึ้น 50%\nDamage ที่ได้รับจากมอนสเตอร์ใน Illusion Abyss \nลดลง 50%\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^77777715^000000\nตำแหน่ง : ^777777Upper^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777790^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 15,
+    "weight": 0,
+    "requiredLevel": 90,
+    "location": "Upper",
+    "compositionPos": null,
+    "script": {
+      "atk": [
+        "30"
+      ],
+      "matk": [
+        "30"
+      ],
+      "p_final": [
+        "SPAWN[tur_d03_i||tur_d04_i]50"
+      ],
+      "m_final": [
+        "SPAWN[tur_d03_i||tur_d04_i]50"
+      ]
+    }
+  },
   "15943": {
     "id": 15943,
     "aegisName": null,
@@ -8408,6 +8770,79 @@
       ]
     }
   },
+  "18804": {
+    "id": 18804,
+    "aegisName": "Thornbush_Hairband",
+    "name": "Thornbush Hairband [1]",
+    "unidName": "Ribbon",
+    "resName": "가시나무헤어밴드",
+    "description": "เครื่องประดับศีรษะที่ทำขึ้นจากกิ่งไม้อันทรงพลังที่เติบโตเฉพาะบนชั้นสูงสุดของหอคอยแห่งหนึ่งเท่านั้น\nINT + 1, DEX + 1\nเพิ่ม Damage ทางเวทมนตร์ต่อมอนสเตอร์ธาตุ Fire, Water, Wind, Earth 5%\nเมื่ออัปเกรดตั้งแต่ขั้น 5 ขึ้นไป, ทุก ๆ การอัปเกรด 1 ขั้น เพิ่ม Damage ทางเวทมนตร์ที่ทำต่อมอนสเตอร์ธาตุ Fire, Water, Wind, Earth 2% เพิ่มเติม (สูงสุดได้ถึงขั้น 10)\nเมื่อสวมใส่ร่วมกับ Thorn Staff of Darkness และทุก ๆ การอัปเกรดของอาวุธ 1 ขั้น, MATK +10 (สูงสุดได้ถึงขั้น 10)\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^7777775^000000\nตำแหน่ง : ^777777Upper^000000 น้ำหนัก : ^77777730^000000\nเลเวลที่ต้องการ : ^77777710^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 5,
+    "weight": 30,
+    "requiredLevel": 10,
+    "location": "Upper",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "int": [
+        "1"
+      ],
+      "dex": [
+        "1"
+      ],
+      "m_element_fire": [
+        "5",
+        "1---2",
+        "11===-2",
+        "12===-2",
+        "13===-2",
+        "14===-2",
+        "15===-2"
+      ],
+      "m_element_water": [
+        "5",
+        "1---2",
+        "11===-2",
+        "12===-2",
+        "13===-2",
+        "14===-2",
+        "15===-2"
+      ],
+      "m_element_wind": [
+        "5",
+        "1---2",
+        "11===-2",
+        "12===-2",
+        "13===-2",
+        "14===-2",
+        "15===-2"
+      ],
+      "m_element_earth": [
+        "5",
+        "1---2",
+        "11===-2",
+        "12===-2",
+        "13===-2",
+        "14===-2",
+        "15===-2"
+      ],
+      "matk": [
+        "EQUIP[Thorn Staff of Darkness]REFINE[weapon==1]---10",
+        "EQUIP[Thorn Staff of Darkness]REFINE[weapon==11]===-10",
+        "EQUIP[Thorn Staff of Darkness]REFINE[weapon==12]===-10",
+        "EQUIP[Thorn Staff of Darkness]REFINE[weapon==13]===-10",
+        "EQUIP[Thorn Staff of Darkness]REFINE[weapon==14]===-10",
+        "EQUIP[Thorn Staff of Darkness]REFINE[weapon==15]===-10"
+      ]
+    }
+  },
   "18813": {
     "id": 18813,
     "aegisName": "New_Wave_Sunglasses",
@@ -9360,6 +9795,66 @@
       ],
       "allStatus": [
         "EQUIP[Candy Bag Backpack (Physical)||Candy Bag Backpack (Range)||Candy Bag Backpack (Magical)]REFINE[garment==12]===1"
+      ]
+    }
+  },
+  "19249": {
+    "id": 19249,
+    "aegisName": "Spell_Circuit",
+    "name": "Spell Circuit [1]",
+    "unidName": "Headband",
+    "resName": "스펠서킷",
+    "description": "กลุ่มพลังเวทย์ที่ถูกแปรเป็นรูปร่างด้วยธาตุต่างๆ \nเพียงแค่สวมใส่ก็ให้ความรู้สึกเหมือนครอบครองพลังเวทย์ที่แข็งแกร่ง \nทุกๆ การอัพเกรด 2 ขั้น MATK +20\nเมื่ออัพเกรดถึงขั้น 7 ลด Variable Cast Time 10%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่มการโจมตีทางเวทย์ธาตุ Neutral, ธาตุ Shadow 10%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่มการโจมตีทางเวทย์ธาตุ Water, Wind, Earth และ Fire 10%\nเมื่ออัพเกรดมากกว่าขั้น 10 ทุกๆ การอัพเกรด 1 ขั้น ลด Fixed Cast Time 0.1 วินาที(มากสุดถึงการอัพเกรดขั้น 15) \n\nเมื่อสวมใส่กับ Mental Stick ทุกๆ การอัพเกรดอาวุธ 2 ขั้น เพิ่มความเสียหาย Psychic Wave 5% \nเมื่อสวมใส่กับ Kronos ทุกๆ การอัพเกรดอาวุธ 2 ขั้น เพิ่มความเสียหาย Hell Inferno 10% \nเมื่อสวมใส่กับ Mikatsuki, Raksasa Dagger\nลด Variable Cast Time % เท่ากับค่าอัพเกรดอาวุธ, ทุกๆ การอัพเกรดอาวุธ 2 ขั้น เพิ่มความเสียหาย Flaming Petals, Freezing Spear, Wind Blade 5% \nประเภท : ^777777Helm^000000 พลังป้องกัน : ^7777770^000000\nตำแหน่ง : ^777777Upper ^000000น้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 1,
+    "location": "Upper",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "matk": [
+        "2---20"
+      ],
+      "vct": [
+        "7===10"
+      ],
+      "m_my_element_neutral": [
+        "9===10"
+      ],
+      "m_my_element_shadow": [
+        "9===10"
+      ],
+      "m_my_element_water": [
+        "11===10"
+      ],
+      "m_my_element_wind": [
+        "11===10"
+      ],
+      "m_my_element_earth": [
+        "11===10"
+      ],
+      "m_my_element_fire": [
+        "11===10"
+      ],
+      "Psychic Wave": [
+        "EQUIP[Mental Stick]REFINE[weapon==2]---5"
+      ],
+      "Hell Inferno": [
+        "EQUIP[Kronos]REFINE[weapon==2]---10"
+      ],
+      "fct": [
+        "11===0.1",
+        "12===0.1",
+        "13===0.1",
+        "14===0.1",
+        "15===0.1"
       ]
     }
   },
@@ -12021,7 +12516,7 @@
         "EQUIP[Racing Cap(Ranger)]REFINE[headUpper,boot==21]15"
       ],
       "Vanishing Buster": [
-        "EQUIP[Racing Cap(Gunslinger)]REFINE[headUpper,boot==21]===SKILL[Shatter Storm]==30(10 วินาที)"
+        "EQUIP[Racing Cap(Gunslinger)]REFINE[headUpper,boot==21]ACTIVE_SKILL[Shatter Storm]===30(10 วินาที)"
       ],
       "cd__Swirling Petal": [
         "EQUIP[Racing Cap(Ninja)]REFINE[headUpper,boot==21]0.5"
@@ -12036,13 +12531,13 @@
         "EQUIP[Racing Cap(Star Gladiator)]REFINE[headUpper,boot==21]15"
       ],
       "allStatus": [
-        "EQUIP[Racing Cap(Star Gladiator)]REFINE[headUpper,boot==21]===SKILL[Seven Wind]==20"
+        "EQUIP[Racing Cap(Star Gladiator)]REFINE[headUpper,boot==21]ACTIVE_SKILL[Seven Wind]===20"
       ],
       "vct": [
         "EQUIP[Racing Cap(Soul Linker)]REFINE[headUpper,boot==21]10"
       ],
       "m_my_element_all": [
-        "EQUIP[Racing Cap(Soul Linker)]REFINE[headUpper,boot==21]===SKILL[Seven Wind]==30(15 วินาที)"
+        "EQUIP[Racing Cap(Soul Linker)]REFINE[headUpper,boot==21]ACTIVE_SKILL[Seven Wind]===30(15 วินาที)"
       ]
     },
     "usableClass": [
@@ -12896,6 +13391,33 @@
       ]
     }
   },
+  "24265": {
+    "id": 24265,
+    "aegisName": "S_Sage_Shoes",
+    "name": "Sage Shadow Shoes",
+    "unidName": "Shadow Shoes",
+    "resName": "슈즈쉐도우",
+    "description": "รองเท้าที่สวมใส่เพิ่มเติม สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์ของมันจะลดน้อยลง\nเพิ่ม Damage ของ Heaven's Drive 20%  \nทุกๆ การอัพเกรด 1 ขั้น เพิ่ม Damage ของ Heaven's Drive เพิ่มเติม 5%  \nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shoes^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 528,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Shoes",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "Heaven's Drive": [
+        "20",
+        "1---5"
+      ]
+    }
+  },
   "24266": {
     "id": 24266,
     "aegisName": "S_Hunter_Shoes",
@@ -13118,6 +13640,42 @@
       ],
       "vct__Jupitel Thunder": [
         "EQUIP[Wizard Shadow Shoes]40"
+      ]
+    }
+  },
+  "24278": {
+    "id": 24278,
+    "aegisName": "S_Sage_Armor",
+    "name": "Sage Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우",
+    "description": "ชุดเกราะที่เพิ่มพลังป้องกันเมื่อสวมใส่เพิ่มบนเกราะอีกที สามารถใส่แบบชิ้นเดียวได้ แต่ความสามารถในการป้องกันจะลดลงไปอีก\nเมื่อใช้สกิล Auto Spell เพิ่มความเร็วในการโจมตีเป็นเวลา 50 วินาที (ลดดีเลย์หลังการโจมตีเท่ากับค่าอัพเกรด)  \nเมื่ออัพเกรดถึงขั้น 7 ขึ้นไป เมื่อใช้สกิล Auto Spell, ASPD +1 เป็นเวลา 50 วินาที  \nเมื่ออัพเกรดถึงขั้น 9 ขึ้นไป  เมื่อใช้สกิล Auto Spell, ASPD +1 เพิ่มเติมเป็นเวลา 50 วินาที  \nเมื่อใส่ร่วมกับ Sage Shadow Shoes\nลดระยะเวลาร่ายผันแปรของสกิล Heaven's Drive 40%  \nเมื่อ Sage Class สวมใส่ MATK + 3%.\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Armor ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "aspdPercent": [
+        "ACTIVE_SKILL[Auto Spell]1---1"
+      ],
+      "aspd": [
+        "REFINE[7]ACTIVE_SKILL[Auto Spell]===1",
+        "REFINE[9]ACTIVE_SKILL[Auto Spell]===1"
+      ],
+      "vct__Heaven's Drive": [
+        "EQUIP[Sage Shadow Shoes]40"
+      ],
+      "matkPercent": [
+        "USED[Sage]3"
       ]
     }
   },
@@ -13348,6 +13906,33 @@
       "Drain Life": [
         "20",
         "1---5"
+      ]
+    }
+  },
+  "24297": {
+    "id": 24297,
+    "aegisName": "S_Sorcerer_Weapon",
+    "name": "Sorcerer Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา\nSorcerer เท่านั้นที่สามารถสวมใส่ได้\n ลด Cool down สกิล Diamond Dust 1 วิ\nทุกๆ การอัพเกรด 1 ขั้น ลด Cool down สกิล Diamond Dust เพิ่ม 0.3 วิ\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Sorcerer Classes^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "Sorcerer"
+    ],
+    "script": {
+      "cd__Diamond Dust": [
+        "1",
+        "1---0.3"
       ]
     }
   },
@@ -13592,6 +14177,54 @@
       ],
       "m_pene_class_normal": [
         "EQUIP[Magician Shadow Earring&&Magician Shadow Pendant&&Warlock Shadow Weapon&&Wizard Shadow Armor&&Wizard Shadow Shoes]50"
+      ]
+    }
+  },
+  "24310": {
+    "id": 24310,
+    "aegisName": "S_Sorcerer_Shield",
+    "name": "Sorcerer Shadow Shield",
+    "unidName": "Shadow Shield",
+    "resName": "쉴드쉐도우",
+    "description": "โล่เล็กที่สามารถสวมใส่ที่แขนได้ สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์การป้องกันของมันจะลดน้อยลง\nSorcerer เท่านั้นที่สามารถสวมใส่ได้\nลด Cool down สกิล Earth Grave 1 วิ\nทุกๆ การอัพเกรด 1 ขั้น ลด Cool down สกิล Earth Grave เพิ่ม 0.3 วิ\nเมื่อสวมใส่ร่วมกับ ^32CD32Sorcerer Shadow Weapon^000000 จะได้รับ Effect เพิ่ม\nเพิ่ม Damage สกิล Diamond Dust และ Earth Grave 20%\nเมื่อสวมใส่^32CD32Mage Shadow^000000 2 ประเภท, ^32CD32Sage Shadow^000000 2 ประเภท, ^32CD32Sorcerer Shadow^000000 2 ประเภททั้งหมด จะได้รับ Effect ดังนี้\nAll State + 10, MaxHP + 5%, MaxSP + 5%.\nเพิกเฉยต่อพลังป้องกันธรรมดาทางกายภาพและเวทมนตร์ 50%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shield^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Sorcerer Classes^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 527,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Shield",
+    "compositionPos": null,
+    "usableClass": [
+      "Sorcerer"
+    ],
+    "script": {
+      "cd__Earth Grave": [
+        "1",
+        "1---0.3"
+      ],
+      "Diamond Dust": [
+        "EQUIP[Sorcerer Shadow Weapon]20"
+      ],
+      "Earth Grave": [
+        "EQUIP[Sorcerer Shadow Weapon]20"
+      ],
+      "allStatus": [
+        "EQUIP[Magician Shadow Earring&&Magician Shadow Pendant&&Sorcerer Shadow Weapon&&Sage Shadow Armor&&Sage Shadow Shoes]10"
+      ],
+      "hpPercent": [
+        "EQUIP[Magician Shadow Earring&&Magician Shadow Pendant&&Sorcerer Shadow Weapon&&Sage Shadow Armor&&Sage Shadow Shoes]5"
+      ],
+      "spPercent": [
+        "EQUIP[Magician Shadow Earring&&Magician Shadow Pendant&&Sorcerer Shadow Weapon&&Sage Shadow Armor&&Sage Shadow Shoes]5"
+      ],
+      "p_pene_class_normal": [
+        "EQUIP[Magician Shadow Earring&&Magician Shadow Pendant&&Sorcerer Shadow Weapon&&Sage Shadow Armor&&Sage Shadow Shoes]50"
+      ],
+      "m_pene_class_normal": [
+        "EQUIP[Magician Shadow Earring&&Magician Shadow Pendant&&Sorcerer Shadow Weapon&&Sage Shadow Armor&&Sage Shadow Shoes]50"
       ]
     }
   },
@@ -16535,6 +17168,94 @@
       "all"
     ]
   },
+  "24589": {
+    "id": 24589,
+    "aegisName": "S_RK_B_Weapon",
+    "name": "Rune Knight Booster Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우3",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา\n^000088ไม่สามารถอัพเกรดได้^000000\nATK + 10, MATK + 10\nเมื่อสวมใส่กับ Booster Armor/Shield/Shoes/Earring/Pendant Shadow,\nลด Cooldown ของ Ignition Break 0.4 วินาที, \nเพิ่ม Damage ของ Ignition Break 15%\nลดดีเลย์หลังใช้สกิล 10% \nเพิกเฉยต่อพลังป้องกันทางเวทย์/ทางกายภาพของมอนสเตอร์ทุกเผ่า 70%\n(ยกเว้น Player)\n^ffffff_^000000\nประเภท : ^777777Shadow^000000 \nตำแหน่ง : ^777777Weapon^000000 น้ำหนัก :^7777770^000000 \nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Rune Knight Class^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "Rune Knight Class"
+    ],
+    "script": {
+      "atk": [
+        "10"
+      ],
+      "matk": [
+        "10"
+      ],
+      "cd__Ignition Break": [
+        "EQUIP[Booster Shadow Armor&&Booster Shadow Shield&&Booster Shadow Shoes&&Booster Shadow Earring&&Booster Shadow Pendant]0.4"
+      ],
+      "Ignition Break": [
+        "EQUIP[Booster Shadow Armor&&Booster Shadow Shield&&Booster Shadow Shoes&&Booster Shadow Earring&&Booster Shadow Pendant]15"
+      ],
+      "acd": [
+        "EQUIP[Booster Shadow Armor&&Booster Shadow Shield&&Booster Shadow Shoes&&Booster Shadow Earring&&Booster Shadow Pendant]10"
+      ],
+      "p_pene_race_all": [
+        "EQUIP[Booster Shadow Armor&&Booster Shadow Shield&&Booster Shadow Shoes&&Booster Shadow Earring&&Booster Shadow Pendant]70"
+      ],
+      "m_pene_race_all": [
+        "EQUIP[Booster Shadow Armor&&Booster Shadow Shield&&Booster Shadow Shoes&&Booster Shadow Earring&&Booster Shadow Pendant]70"
+      ]
+    }
+  },
+  "24590": {
+    "id": 24590,
+    "aegisName": "S_LG_B_Weapon",
+    "name": "Royal Guard Booster Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우3",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา\n^000088ไม่สามารถอัพเกรดได้^000000\nATK + 10, MATK + 10\nเมื่อสวมใส่กับ Booster Armor/Shield/Shoes/Earring/Pendant Shadow,\nลดดีเลย์หลังใช้สกิล 10% \nลด Cooldown ของ Cannon Spear 0.4 วินาที, \nเพิ่ม Damage ของ Cannon Spear 15% \nเพิกเฉยต่อพลังป้องกันทางเวทย์/ทางกายภาพของมอนสเตอร์ทุกเผ่า 70% (ยกเว้น Player)\n^ffffff_^000000\nประเภท : ^777777Shadow^000000 \nตำแหน่ง : ^777777Weapon^000000 น้ำหนัก :^7777770^000000 \nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Royal Guard Class^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "Royal Guard Class"
+    ],
+    "script": {
+      "atk": [
+        "10"
+      ],
+      "matk": [
+        "10"
+      ],
+      "acd": [
+        "EQUIP[Booster Shadow Armor&&Booster Shadow Shield&&Booster Shadow Shoes&&Booster Shadow Earring&&Booster Shadow Pendant]10"
+      ],
+      "cd__Cannon Spear": [
+        "EQUIP[Booster Shadow Armor&&Booster Shadow Shield&&Booster Shadow Shoes&&Booster Shadow Earring&&Booster Shadow Pendant]0.4"
+      ],
+      "Cannon Spear": [
+        "EQUIP[Booster Shadow Armor&&Booster Shadow Shield&&Booster Shadow Shoes&&Booster Shadow Earring&&Booster Shadow Pendant]15"
+      ],
+      "p_pene_race_all": [
+        "EQUIP[Booster Shadow Armor&&Booster Shadow Shield&&Booster Shadow Shoes&&Booster Shadow Earring&&Booster Shadow Pendant]70"
+      ],
+      "m_pene_race_all": [
+        "EQUIP[Booster Shadow Armor&&Booster Shadow Shield&&Booster Shadow Shoes&&Booster Shadow Earring&&Booster Shadow Pendant]70"
+      ]
+    }
+  },
   "24591": {
     "id": 24591,
     "aegisName": "S_NC_B_Weapon",
@@ -16569,6 +17290,50 @@
         "EQUIP[Booster Shadow Armor&&Booster Shadow Shield&&Booster Shadow Shoes&&Booster Shadow Earring&&Booster Shadow Pendant]15"
       ],
       "Arm Cannon": [
+        "EQUIP[Booster Shadow Armor&&Booster Shadow Shield&&Booster Shadow Shoes&&Booster Shadow Earring&&Booster Shadow Pendant]15"
+      ],
+      "acd": [
+        "EQUIP[Booster Shadow Armor&&Booster Shadow Shield&&Booster Shadow Shoes&&Booster Shadow Earring&&Booster Shadow Pendant]10"
+      ],
+      "p_pene_race_all": [
+        "EQUIP[Booster Shadow Armor&&Booster Shadow Shield&&Booster Shadow Shoes&&Booster Shadow Earring&&Booster Shadow Pendant]70"
+      ],
+      "m_pene_race_all": [
+        "EQUIP[Booster Shadow Armor&&Booster Shadow Shield&&Booster Shadow Shoes&&Booster Shadow Earring&&Booster Shadow Pendant]70"
+      ]
+    }
+  },
+  "24592": {
+    "id": 24592,
+    "aegisName": "S_GN_B_Weapon",
+    "name": "Genetic Booster Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우3",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา\n^000088ไม่สามารถอัพเกรดได้^000000\nATK + 10, MATK + 10\nเมื่อสวมใส่กับ Booster Armor/Shield/Shoes/Earring/Pendant Shadow,\nลด Cooldown ของ Cart Tornado Attack 1 วินาที \nเพิ่ม Damage ของ Cart Cannon 15%\nลดดีเลย์หลังใช้สกิล 10% \nเพิกเฉยต่อพลังป้องกันทางเวทย์/ทางกายภาพของมอนสเตอร์ทุกเผ่า 70% (ยกเว้น Player)\n^ffffff_^000000\nประเภท : ^777777Shadow^000000 \nตำแหน่ง : ^777777Weapon^000000 น้ำหนัก :^7777770^000000 \nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Genetic Class^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "Genetic Class"
+    ],
+    "script": {
+      "atk": [
+        "10"
+      ],
+      "matk": [
+        "10"
+      ],
+      "cd__Cart Tornado Attack": [
+        "EQUIP[Booster Shadow Armor&&Booster Shadow Shield&&Booster Shadow Shoes&&Booster Shadow Earring&&Booster Shadow Pendant]1"
+      ],
+      "Cart Cannon": [
         "EQUIP[Booster Shadow Armor&&Booster Shadow Shield&&Booster Shadow Shoes&&Booster Shadow Earring&&Booster Shadow Pendant]15"
       ],
       "acd": [
@@ -16704,6 +17469,47 @@
         "EQUIP[Booster Shadow Armor&&Booster Shadow Shield&&Booster Shadow Shoes&&Booster Shadow Earring&&Booster Shadow Pendant]15"
       ],
       "acd": [
+        "EQUIP[Booster Shadow Armor&&Booster Shadow Shield&&Booster Shadow Shoes&&Booster Shadow Earring&&Booster Shadow Pendant]10"
+      ],
+      "p_pene_race_all": [
+        "EQUIP[Booster Shadow Armor&&Booster Shadow Shield&&Booster Shadow Shoes&&Booster Shadow Earring&&Booster Shadow Pendant]70"
+      ],
+      "m_pene_race_all": [
+        "EQUIP[Booster Shadow Armor&&Booster Shadow Shield&&Booster Shadow Shoes&&Booster Shadow Earring&&Booster Shadow Pendant]70"
+      ]
+    }
+  },
+  "24596": {
+    "id": 24596,
+    "aegisName": "S_SO_B_Weapon",
+    "name": "Sorcerer Booster Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우3",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา\n^000088ไม่สามารถอัพเกรดได้^000000\nATK + 10, MATK + 10\nเมื่อสวมใส่กับ Booster Armor/Shield/Shoes/Earring/Pendant Shadow,\nลด Cool Down สกิล Diamond Dust 3.7 วินาที\nเพิ่ม Damage ทางเวทย์ต่อศัตรูทุกขนาด 10% \nเพิกเฉยต่อพลังป้องกันทางเวทย์/ทางกายภาพของมอนสเตอร์ทุกเผ่า 70% (ยกเว้น Player)\n^ffffff_^000000\nประเภท : ^777777Shadow^000000 \nตำแหน่ง : ^777777Weapon^000000 น้ำหนัก :^7777770^000000 \nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Sorcerer Class^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "Sorcerer Class"
+    ],
+    "script": {
+      "atk": [
+        "10"
+      ],
+      "matk": [
+        "10"
+      ],
+      "cd__Diamond Dust": [
+        "EQUIP[Booster Shadow Armor&&Booster Shadow Shield&&Booster Shadow Shoes&&Booster Shadow Earring&&Booster Shadow Pendant]3.7"
+      ],
+      "m_size_all": [
         "EQUIP[Booster Shadow Armor&&Booster Shadow Shield&&Booster Shadow Shoes&&Booster Shadow Earring&&Booster Shadow Pendant]10"
       ],
       "p_pene_race_all": [
@@ -17221,6 +18027,53 @@
       ]
     }
   },
+  "24739": {
+    "id": 24739,
+    "aegisName": "S_SU_Weapon",
+    "name": "Doram Booster Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우3",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา\n^000088ไม่สามารถอัพเกรดได้^000000\nATK + 10, MATK + 10\nเมื่อสวมใส่กับ Booster Armor/Shield/Shoes/Earring/Pendant Shadow,\nเพิ่มดาเมจทางเวทย์ทุกธาตุ 15%\nเพิ่มดาเมจทางกายภาพระยะไกล 15% \nเพิ่ม Damage สกิล Picky Peck และ Silvervine Stem Spear 10%\nเพิกเฉยต่อพลังป้องกันทางเวทย์/ทางกายภาพของมอนสเตอร์ทุกเผ่า 70% (ยกเว้น Player)\n^ffffff_^000000\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Summoner (Doram) Class^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "Summoner (Doram) Class"
+    ],
+    "script": {
+      "atk": [
+        "10"
+      ],
+      "matk": [
+        "10"
+      ],
+      "m_my_element_all": [
+        "EQUIP[Booster Shadow Armor&&Booster Shadow Shield&&Booster Shadow Shoes&&Booster Shadow Earring&&Booster Shadow Pendant]15"
+      ],
+      "range": [
+        "EQUIP[Booster Shadow Armor&&Booster Shadow Shield&&Booster Shadow Shoes&&Booster Shadow Earring&&Booster Shadow Pendant]15"
+      ],
+      "Picky Peck": [
+        "EQUIP[Booster Shadow Armor&&Booster Shadow Shield&&Booster Shadow Shoes&&Booster Shadow Earring&&Booster Shadow Pendant]10"
+      ],
+      "Silvervine Stem Spear": [
+        "EQUIP[Booster Shadow Armor&&Booster Shadow Shield&&Booster Shadow Shoes&&Booster Shadow Earring&&Booster Shadow Pendant]10"
+      ],
+      "p_pene_race_all": [
+        "EQUIP[Booster Shadow Armor&&Booster Shadow Shield&&Booster Shadow Shoes&&Booster Shadow Earring&&Booster Shadow Pendant]70"
+      ],
+      "m_pene_race_all": [
+        "EQUIP[Booster Shadow Armor&&Booster Shadow Shield&&Booster Shadow Shoes&&Booster Shadow Earring&&Booster Shadow Pendant]70"
+      ]
+    }
+  },
   "24742": {
     "id": 24742,
     "aegisName": "S_RL_Weapon",
@@ -17312,6 +18165,128 @@
       "Soul Reaper"
     ]
   },
+  "26118": {
+    "id": 26118,
+    "aegisName": "Shadow_Staff_K",
+    "name": "Shadow Staff [2]",
+    "unidName": "One-handed Staff",
+    "resName": "쉐도우스태프",
+    "description": "คทาเก่าแก่ที่กล่าวกันว่าฮีโร่โบราณได้เคยใช้\nถึงจะดูเก่าแต่พลังเวทที่หลับใหลอยู่ภายในดูจะตอบสนองกับ Ancient Hero Boots\nMATK + 155.\nไม่สามารถทำลายได้\nทุกๆ การอัพเกรด 2 ขั้น MATK+ 10.\nทุกๆ การอัพเกรด 3 ขั้น เพิ่ม Damage ของสกิล [Earth Grave] 12%\nเมื่ออัพเกรดถึงขั้น 9 ลด Variable Cast Time 10%\nเมื่ออัพเกรดถึงขั้น 11 ลด Cooldown ของสกิล [Psychic Wave] 1 วินาที\nเมื่อสวมใส่ร่วมกันกับ Ancient Hero Boots เมื่อทำการโจมตีทางเวทมนตร์จะมีโอกาส (3%) เพิ่ม INT + 20, MATK+ 15% เป็นเวลา 7 วินาที\nประเภท : ^777777One-handed Staff^000000 พลังโจมตี : ^77777740^000000\nน้ำหนัก : ^77777750^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Sorcerer^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 265,
+    "itemLevel": 4,
+    "attack": 40,
+    "defense": null,
+    "weight": 50,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Sorcerer"
+    ],
+    "script": {
+      "matk": [
+        "155",
+        "2---10"
+      ],
+      "Earth Grave": [
+        "3---12"
+      ],
+      "vct": [
+        "9===10"
+      ],
+      "cd__Psychic Wave": [
+        "11===1"
+      ],
+      "chance__matkPercent": [
+        "EQUIP[Ancient Hero Boots]===15"
+      ],
+      "chance__int": [
+        "EQUIP[Ancient Hero Boots]===15"
+      ]
+    }
+  },
+  "26138": {
+    "id": 26138,
+    "aegisName": "Wand_Of_Flame",
+    "name": "Hellfire Staff [2]",
+    "unidName": "Rod",
+    "resName": "Wand_Of_Flame",
+    "description": "ไม้คทาที่เคยใช้โดย Flame Ghost\nมีพลังเวทย์ธาตุไฟแฝงอยู่ภายใน อาจจะปะทุออกมาได้ จงระวังเวลาใช้ให้ดี\nไม่สามารถถูกทำลายได้\nINT + 5, MATK + 180\nทุก ๆ การอัพเกรด 2 ขั้น, MATK + 15\nเมื่ออัพเกรดถึงขั้น 7, เพิ่ม Damage ทางเวทมนตร์ธาตุ Fire, Earth 5%\nเมื่ออัพเกรดถึงขั้น 9, เพิ่ม Damage ทางเวทมนตร์ธาตุ Fire, Earth 10% เพิ่มเติม\n^ffffff_^000000\nประเภท : ^777777One-Handed Rod^000000 พลังโจมตี : ^777777110^000000\nน้ำหนัก : ^77777780^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777175^000000\nอาชีพที่ใส่ได้ : ^777777Mage Cls, Acolyte Cls, Soul Linker Cls^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 265,
+    "itemLevel": 4,
+    "attack": 110,
+    "defense": null,
+    "weight": 80,
+    "requiredLevel": 175,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Mage Cls",
+      "Acolyte Cls",
+      "Soul Linker Cls"
+    ],
+    "script": {
+      "int": [
+        "5"
+      ],
+      "matk": [
+        "180",
+        "2---15"
+      ],
+      "m_my_element_fire": [
+        "7===5",
+        "9===10"
+      ],
+      "m_my_element_earth": [
+        "7===5",
+        "9===10"
+      ]
+    }
+  },
+  "26139": {
+    "id": 26139,
+    "aegisName": "Wand_Of_Ice",
+    "name": "Icicle Staff [2]",
+    "unidName": "Rod",
+    "resName": "Wand_Of_Ice",
+    "description": "ไม้คทาที่เคยใช้โดย Ice Ghost\nมีพลังเวทย์ธาตุน้ำแฝงอยู่ภายใน อาจจะระเบิดออกมาได้ จงระวังเวลาใช้ให้ดี\nไม่สามารถถูกทำลายได้\nINT + 5, MATK + 180\nทุก ๆ การอัพเกรด 2 ขั้น, MATK + 15\nเมื่ออัพเกรดถึงขั้น 7, เพิ่ม Damage ทางเวทมนตร์ธาตุ Water, Holy 5%\nเมื่ออัพเกรดถึงขั้น 9, เพิ่ม Damage ทางเวทมนตร์ธาตุ Water, Holy 10% เพิ่มเติม\n^ffffff_^000000\nประเภท : ^777777One-Handed Rod^000000 พลังโจมตี : ^777777110^000000\nน้ำหนัก : ^77777780^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777175^000000\nอาชีพที่ใส่ได้ : ^777777Mage Cls, Acolyte Cls, Soul Linker Cls^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 265,
+    "itemLevel": 4,
+    "attack": 110,
+    "defense": null,
+    "weight": 80,
+    "requiredLevel": 175,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Mage Cls",
+      "Acolyte Cls",
+      "Soul Linker Cls"
+    ],
+    "script": {
+      "int": [
+        "5"
+      ],
+      "matk": [
+        "180",
+        "2---15"
+      ],
+      "m_my_element_water": [
+        "7===5",
+        "9===10"
+      ],
+      "m_my_element_holy": [
+        "7===5",
+        "9===10"
+      ]
+    }
+  },
   "26151": {
     "id": 26151,
     "aegisName": "Rutilus_Stick_OS",
@@ -17350,6 +18325,51 @@
       ],
       "acd": [
         "11===10"
+      ]
+    }
+  },
+  "26154": {
+    "id": 26154,
+    "aegisName": "SoulWeight",
+    "name": "Spirit Pendulum [2]",
+    "unidName": "Rod",
+    "resName": "케라우노스",
+    "description": "อาวุธลูกตุ้มสังหารที่มีพลังในการดูดกลืนดวงวิญญาณ ว่ากันว่า Soul Reaper ที่มีพลังวิเศษผู้หนึ่งเคยใช้\nและถ้าเอามือไปแตะมัน จะได้ยินเสียงโหยหวนของเหล่าวิญญาณ\nดูกลมกลืนเข้ากับ Ancient Hero Boots\n\nMATK +160\nทุก ๆ การอัพเกรด 2 ขั้น MATK +10 \nทุก ๆ การอัพเกรด 3 ขั้น MSP +2%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage สกิล Espa 15%\nเมื่ออัพเกรดถึงขั้น 9 ลดระยะเวลาร่ายแบบแปรผัน 10%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Eswhoo 20%\nเมื่อสวมใส่ร่วมกับ Ancient Hero Boots เมื่อโจมตีทางเวทมนตร์ มีโอกาสที่ INT +20, MATK +15% เป็นเวลา 7 วินาที\nประเภท : ^777777One-Handed Staff^000000 พลังโจมตี : ^77777770^000000\nน้ำหนัก : ^777777110^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Soul Reaper^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 265,
+    "itemLevel": 4,
+    "attack": 70,
+    "defense": null,
+    "weight": 110,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Soul Reaper"
+    ],
+    "script": {
+      "matk": [
+        "160",
+        "2---10"
+      ],
+      "spPercent": [
+        "3---2"
+      ],
+      "Espa": [
+        "7===15"
+      ],
+      "vct": [
+        "9===10"
+      ],
+      "Eswhoo": [
+        "11===20"
+      ],
+      "chance__int": [
+        "EQUIP[Ancient Hero Boots]===20(7 วินาที)"
+      ],
+      "chance__matkPercent": [
+        "EQUIP[Ancient Hero Boots]===15(7 วินาที)"
       ]
     }
   },
@@ -19507,13 +20527,13 @@
     "compositionPos": 769,
     "script": {
       "m_my_element_all": [
-        "Headgear 2---3"
+        "2---3"
       ],
       "matk": [
-        "Headgear 2---7"
+        "2---7"
       ],
       "matkPercent": [
-        "Headgear 5---3"
+        "5---3"
       ]
     }
   },
@@ -19821,11 +20841,11 @@
     "script": {
       "atk": [
         "2---10",
-        "9===SKILL[Platinum Altar]==50(90 วินาที)"
+        "ACTIVE_SKILL[Platinum Altar]9===50(90 วินาที)"
       ],
       "range": [
         "3---2",
-        "9===SKILL[Platinum Altar]==10(90 วินาที)",
+        "ACTIVE_SKILL[Platinum Altar]9===10(90 วินาที)",
         "EQUIP[Ancient Hero Boots]:AUTO:10(7 วินาที)"
       ],
       "Round Trip": [
@@ -20528,6 +21548,45 @@
       ],
       "acd": [
         "12===3"
+      ]
+    }
+  },
+  "28973": {
+    "id": 28973,
+    "aegisName": "",
+    "name": "Themis Balance [1]",
+    "unidName": "Themis Balance",
+    "resName": "Themis_Balance",
+    "description": "ตาชั่งในมือซ้ายของเทพีเธมีส แสดงถึงความเป็นธรรมและเที่ยงธรรมในการตัดสิน\nเหมือนตาชั่งที่บอกว่าสิ่งใดหนักเบากว่ากันได้อย่างซื่อตรงเสมอ เปรียบกับตอนชั่งน้ำหนักของหลักฐานและพิจารณาสิ่งนั้นอย่างตรงไปตรงมา\nMDEF + 10, ลดระยะเวลาร่ายแบบแปรผัน 5%\nทุก ๆ 5 Base Lv. เพิ่ม Damage สกิล [Genesis Ray] 1%\nเมื่ออัพเกรดตั้งแต่ 9 ขึ้นไป\nทุก ๆ การเรียนรู้สกิล [Heal] 2 เลเวล เพิ่ม Damage ทางเวทมนตร์ธาตุ Holy 3%\nเมื่ออัพเกรดตั้งแต่ 11 ขึ้นไป\nลด Cooldown สกิล [Genesis Ray] 1 วินาที\nเมื่อสวมใส่ร่วมกับ Dark Blinkers หรือ Dark Blinkers [1]\nลดระยะเวลาร่ายแบบแปรผัน 5%\nเพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกเผ่า 5%\nประเภท : ^777777Shield^000000  พลังป้องกัน : ^77777790^000000\nน้ำหนัก : ^77777730^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 514,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 90,
+    "weight": 30,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "mdef": [
+        "10"
+      ],
+      "vct": [
+        "5",
+        "EQUIP[Dark Blinkers]5"
+      ],
+      "m_my_element_holy": [
+        "USED[ArchBishop]9===15"
+      ],
+      "Genesis Ray": [
+        "level:5---1"
+      ],
+      "cd__Genesis Ray": [
+        "11===1"
+      ],
+      "m_race_all": [
+        "EQUIP[Dark Blinkers]5"
       ]
     }
   },
@@ -21808,7 +22867,112 @@
         "EQUIP[Sniper Stone (Middle)]===10"
       ],
       "range": [
-        "EQUIP[Sniper Stone (Lower)]===SKILL[Wind Walk]==5(60 วินาที)"
+        "EQUIP[Sniper Stone (Lower)]ACTIVE_SKILL[Wind Walk]===5(60 วินาที)"
+      ]
+    }
+  },
+  "29432": {
+    "id": 29432,
+    "aegisName": "Sorcerer_Top",
+    "name": "Scholar Stone (Upper)",
+    "unidName": "Scholar Stone (Upper)",
+    "resName": "마술사피규어",
+    "description": "ทุกๆ การเรียนรู้สกิล Advanced Book 1 Level เพิ่ม ASPD 1%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 71,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "aspdPercent": [
+        "LEARN_SKILL[Advanced Book==1]---1"
+      ]
+    }
+  },
+  "29433": {
+    "id": 29433,
+    "aegisName": "Sorcerer_Middle",
+    "name": "Scholar Stone (Middle)",
+    "unidName": "Scholar Stone (Middle)",
+    "resName": "마술사피규어",
+    "description": "ลด Fixed Cast Time ของสกิล Lucky Cast 0.4 วินาที\n(เอฟเฟกต์จะไม่ซ้อนทับกันกับไอเทมลด Fixed Cast Time อื่นๆ)",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 72,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "fct__Lucky Cast": [
+        "0.4"
+      ]
+    }
+  },
+  "29434": {
+    "id": 29434,
+    "aegisName": "Sorcerer_Bottom",
+    "name": "Scholar Stone (Lower)",
+    "unidName": "Scholar Stone (Lower)",
+    "resName": "마술사피규어",
+    "description": "เพิ่ม Damage ของสกิล Fire Bolt, Cold Bolt และ Lightening Bolt +20%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 73,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "Fire Bolt": [
+        "20"
+      ],
+      "Cold Bolt": [
+        "20"
+      ],
+      "Lightening Bolt": [
+        "20"
+      ]
+    }
+  },
+  "29435": {
+    "id": 29435,
+    "aegisName": "Sorcerer_Robe",
+    "name": "Sorcerer Stone (Garment)",
+    "unidName": "Sorcerer Stone (Garment)",
+    "resName": "마술사피규어",
+    "description": "เพิ่ม Damage ของสกิล Psychic Wave +10%\nเมื่อสวมใส่ร่วมกับ Scholar Stone (Upper) เพิ่ม Damage ของสกิล Psychic Wave +15%\nเมื่อสวมใส่ร่วมกับ Scholar Stone (Middle) ลด Cooldown ของสกิล Warmer 15 วินาที\nเมื่อสวมใส่ร่วมกับ Scholar Stone (Lower) ลด Cooldown ของสกิล Psychic Wave 2 วินาที",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 74,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "Psychic Wave": [
+        "10",
+        "EQUIP[Scholar Stone (Upper)]===15"
+      ],
+      "cd__Warmer": [
+        "EQUIP[Scholar Stone (Middle)]===15"
+      ],
+      "cd__Psychic Wave": [
+        "EQUIP[Scholar Stone (Lower)]===2"
       ]
     }
   },
@@ -23021,6 +24185,114 @@
       ],
       "Severe Rainstorm": [
         "REFINE_NAME[Antique Cello==3]---5"
+      ]
+    }
+  },
+  "29614": {
+    "id": 29614,
+    "aegisName": "Sorcerer_Robe2",
+    "name": "Sorcerer Stone II (Garment)",
+    "unidName": "Sorcerer Stone II (Garment)",
+    "resName": "Professor_Figure",
+    "description": "เพิ่ม Damage ของ Diamond Dust 15% \nเมื่อใช้กับ Scholar Stone II (Upper), เพิ่ม Damage ของ Diamond Dust ขึ้นอีก 10% \nเมื่อใช้กับ Scholar Stone II (Middle), เพิ่ม Damage ของ Earth Grave 20%\nเมื่อใช้กับ Scholar Stone II (Lower), ลด Cooldown ของ Varetyr Spear 1 วินาที",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 74,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "Diamond Dust": [
+        "15",
+        "EQUIP[Scholar Stone II (Upper)]10"
+      ],
+      "Earth Grave": [
+        "EQUIP[Scholar Stone II (Middle)]20"
+      ],
+      "cd__Varetyr Spear": [
+        "EQUIP[Scholar Stone II (Lower)]1"
+      ]
+    }
+  },
+  "29615": {
+    "id": 29615,
+    "aegisName": "Sorcerer_Bottom2",
+    "name": "Scholar Stone II (Lower)",
+    "unidName": "Scholar Stone II (Lower)",
+    "resName": "마술사피규어",
+    "description": "ทุก ๆ การเรียนรู้ของ Auto Spell 1 เลเวล, MATK +2",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 71,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "matk": [
+        "LEARN_SKILL[Auto Spell==1]---2"
+      ]
+    }
+  },
+  "29616": {
+    "id": 29616,
+    "aegisName": "Sorcerer_Middle2",
+    "name": "Scholar Stone II (Middle)",
+    "unidName": "Scholar Stone II (Middle)",
+    "resName": "마술사피규어",
+    "description": "เพิ่ม Damage ของ Fire Bolt, Cold Bolt, Lightning Bolt 20%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 72,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "Fire Bolt": [
+        "20"
+      ],
+      "Cold Bolt": [
+        "20"
+      ],
+      "Lightening Bolt": [
+        "20"
+      ]
+    }
+  },
+  "29617": {
+    "id": 29617,
+    "aegisName": "Sorcerer_Top2",
+    "name": "Scholar Stone II (Upper)",
+    "unidName": "Scholar Stone II (Upper)",
+    "resName": "마술사피규어",
+    "description": "เพิ่ม Damage ของ Earth Spike, Heaven's Drive 20%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 73,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "Earth Spike": [
+        "20"
+      ],
+      "Heaven's Drive": [
+        "20"
       ]
     }
   },
@@ -27984,7 +29256,7 @@
         "EQUIP[Old Mitra]30"
       ],
       "Judex": [
-        "EQUIP[Old Mitra]SKILL[Offertorium]===400(90 วินาที)"
+        "EQUIP[Old Mitra]ACTIVE_SKILL[Offertorium]===400(90 วินาที)"
       ],
       "Rampage Blast": [
         "EQUIP[Old Blazing Soul]30"
@@ -28084,7 +29356,7 @@
         "EQUIP[Lunar Eclipse Armor]8"
       ],
       "agi": [
-        "EQUIP[Lunar Eclipse Armor]SKILL[Blaze Kick]32"
+        "EQUIP[Lunar Eclipse Armor]ACTIVE_SKILL[Blaze Kick]32"
       ],
       "cd__Curse Explosion": [
         "EQUIP[Lunar Eclipse Armor]0.8"
@@ -28822,14 +30094,14 @@
       ],
       "Meteor Storm": [
         "EQUIP[Elemental Booster Robe&&Elemental Booster Muffler&&Elemental Booster Shoes&&Elemental Booster Earring]level:15---2",
-        "EQUIP[Elemental Booster Robe&&Elemental Booster Muffler&&Elemental Booster Shoes&&Elemental Booster Earring]SKILL[Preserve]===35(60 วินาที)"
+        "EQUIP[Elemental Booster Robe&&Elemental Booster Muffler&&Elemental Booster Shoes&&Elemental Booster Earring]ACTIVE_SKILL[Preserve]===35(60 วินาที)"
       ],
       "acd": [
         "EQUIP[Attacker Booster Plate&&Attacker Booster Manteau&&Attacker Booster Greaves&&Attacker Booster Ring]15"
       ],
       "Fatal Manace": [
         "EQUIP[Attacker Booster Plate&&Attacker Booster Manteau&&Attacker Booster Greaves&&Attacker Booster Ring]level:15---1",
-        "EQUIP[Attacker Booster Plate&&Attacker Booster Manteau&&Attacker Booster Greaves&&Attacker Booster Ring]===SKILL[Preserve]==20(60 วินาที)"
+        "EQUIP[Attacker Booster Plate&&Attacker Booster Manteau&&Attacker Booster Greaves&&Attacker Booster Ring]ACTIVE_SKILL[Preserve]===20(60 วินาที)"
       ]
     }
   },
@@ -28919,6 +30191,54 @@
       ],
       "atkPercent": [
         "EQUIP[Great Hero Boots]===7"
+      ]
+    }
+  },
+  "540000": {
+    "id": 540000,
+    "aegisName": "Boost_Spl_Book",
+    "name": "Boosting Spellbook [2]",
+    "unidName": "Book",
+    "resName": "빛나는책",
+    "description": "หนังสือเวทสุดพิเศษที่เตรียมไว้เพื่อทำให้นักผจญภัยพัฒนาไปอย่างรวดเร็ว\n\nMATK +165\nMATK +2%, เพิ่ม Damage ทางเวทมนตร์ธาตุ Neutral 3%\nทุก ๆ การอัพเกรด 1 ขั้น MATK +3\nทุก ๆ Base Lv. 15, MATK +3 (ใช้งานสูงสุดถึง Lv. 180)\nเมื่ออัพเกรดถึงขั้น 7 ทุก ๆ การเรียนรู้สกิล Indulge 1 เลเวล เพิ่ม Damage ทางเวทมนตร์ธาตุ Neutral 2%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกขนาด 10%\n\nเมื่อสวมใส่ร่วมกับ Elemental Booster (Robe/Muffler/Shoes/Earring),\nMATK +20, เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุดขนาด 10%,\nทุก ๆ Base Lv. 15 เพิ่ม Damage สกิล Psychic Wave 1% (ใช้งานสูงสุดถึง Lv. 180),\nเมื่อใช้สกิล Foresight เพิ่ม Damage สกิล Psychic Wave ขึ้นอีก 20% เป็นเวลา 60 วินาที\n\nเมื่อสวมใส่ร่วมกับ Defunct Booster (Robe/Muffler/Shoes/Earring),\nMATK +20, ASPD +2\nทุก ๆ Base Lv. 15 เพิ่ม Damage สกิล Fire Bolt, Cold Bolt, Lightning Bolt 2% (ใช้งานสูงสุดถึง Lv. 180),\nเมื่อใช้สกิล Lucky Cast เพิ่ม Damage สกิล Fire Bolt, Cold Bolt, Lightning Bolt ขึ้นอีก 35% เป็นเวลา 60 วินาที\nประเภท : ^777777Book^000000 พลังโจมตี : ^777777165^000000\nน้ำหนัก : ^7777770^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Sorcerer Cls^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 271,
+    "itemLevel": 4,
+    "attack": 165,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Sorcerer Cls"
+    ],
+    "script": {
+      "matk": [
+        "165",
+        "1---3",
+        "level:15---3",
+        "EQUIP[Elemental Booster Robe&&Elemental Booster Muffler&&Elemental Booster Shoes&&Elemental Booster Earring]20",
+        "EQUIP[Defunct Booster Robe&&Defunct Booster Muffler&&Defunct Booster Shoes&&Defunct Booster Earring]20"
+      ],
+      "matkPercent": [
+        "2"
+      ],
+      "m_my_element_neutral": [
+        "3",
+        "7===10"
+      ],
+      "m_size_all": [
+        "9===10",
+        "EQUIP[Elemental Booster Robe&&Elemental Booster Muffler&&Elemental Booster Shoes&&Elemental Booster Earring]10"
+      ],
+      "Psychic Wave": [
+        "EQUIP[Elemental Booster Robe&&Elemental Booster Muffler&&Elemental Booster Shoes&&Elemental Booster Earring]level:15---1",
+        "EQUIP[Elemental Booster Robe&&Elemental Booster Muffler&&Elemental Booster Shoes&&Elemental Booster Earring]ACTIVE_SKILL[Foresight]===20(60 วินาที)"
+      ],
+      "aspd": [
+        "EQUIP[Defunct Booster Robe&&Defunct Booster Muffler&&Defunct Booster Shoes&&Defunct Booster Earring]2"
       ]
     }
   },
@@ -29016,14 +30336,14 @@
       ],
       "Eswhoo": [
         "EQUIP[Elemental Booster Robe&&Elemental Booster Muffler&&Elemental Booster Shoes&&Elemental Booster Earring]level:15---1",
-        "EQUIP[Elemental Booster Robe&&Elemental Booster Muffler&&Elemental Booster Shoes&&Elemental Booster Earring]SKILL[Espa]===20(60 วินาที)"
+        "EQUIP[Elemental Booster Robe&&Elemental Booster Muffler&&Elemental Booster Shoes&&Elemental Booster Earring]ACTIVE_SKILL[Espa]===20(60 วินาที)"
       ],
       "vct": [
         "EQUIP[Defunct Booster Robe&&Defunct Booster Muffler&&Defunct Booster Shoes&&Defunct Booster Earring]===10"
       ],
       "Curse Explosion": [
         "EQUIP[Defunct Booster Robe&&Defunct Booster Muffler&&Defunct Booster Shoes&&Defunct Booster Earring]level:15---1",
-        "EQUIP[Defunct Booster Robe&&Defunct Booster Muffler&&Defunct Booster Shoes&&Defunct Booster Earring]SKILL[Evil Soul Curse]===20(60 วินาที)"
+        "EQUIP[Defunct Booster Robe&&Defunct Booster Muffler&&Defunct Booster Shoes&&Defunct Booster Earring]ACTIVE_SKILL[Evil Soul Curse]===20(60 วินาที)"
       ]
     }
   },
@@ -29066,6 +30386,108 @@
       ],
       "magicalChance__matkPercent": [
         "EQUIP[Ancient Hero Boots]===15(7 วินาที)"
+      ]
+    }
+  },
+  "550012": {
+    "id": 550012,
+    "aegisName": "Up_Shadow_Staff_K",
+    "name": "Patent Shadow Staff [2]",
+    "unidName": "Rod",
+    "resName": "Up_Shadow_Staff_K",
+    "description": "คทาเก่าแก่ที่กล่าวกันว่าฮีโร่โบราณได้เคยใช้\nเริ่มเผยพลังอันแท้จริงออกมา ด้วยพลังโบราณอันกล้าแกร่ง\nดูกลมกลืนเข้ากับ Great Hero Boots\n\nไม่สามารถทำลายได้\nMATK +195\nทุก ๆ การอัพเกรด 2 ขั้น MATK +15\nทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage สกิล Earth Grave 12%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางเวทมนตร์ธาตุ Earth, Neutral 15%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Psychic Wave 25%, ลดระยะเวลาร่ายแบบแปรผัน 7%\nเมื่ออัพเกรดถึงขั้น 11 ลดระยะเวลาร่ายแบบแปรผันลงอีก 8%, ลด Cooldown สกิล Psychic Wave 1 วินาที\nเมื่อสวมใส่ร่วมกับ Great Hero Boots, INT +10, MATK +7%\n\nประเภท : ^777777One-Handed Staff^000000 พลังโจมตี : ^77777740^000000\nน้ำหนัก : ^77777775^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Sorcerer^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 265,
+    "itemLevel": 4,
+    "attack": 40,
+    "defense": null,
+    "weight": 75,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Sorcerer"
+    ],
+    "script": {
+      "matk": [
+        "195",
+        "2---15"
+      ],
+      "Earth Grave": [
+        "3---12"
+      ],
+      "m_my_element_earth": [
+        "7===15"
+      ],
+      "m_my_element_neutral": [
+        "7===15"
+      ],
+      "Psychic Wave": [
+        "9===25"
+      ],
+      "vct": [
+        "9===7",
+        "11===8"
+      ],
+      "cd__Psychic Wave": [
+        "11===1"
+      ],
+      "int": [
+        "EQUIP[Great Hero Boots]===10"
+      ],
+      "matkPercent": [
+        "EQUIP[Great Hero Boots]===7"
+      ]
+    }
+  },
+  "550013": {
+    "id": 550013,
+    "aegisName": "Up_Freezing_Rod",
+    "name": "Patent Chilling Cane [2]",
+    "unidName": "Rod",
+    "resName": "Up_Freezing_Rod",
+    "description": "ไม้คทาสีน้ำเงินที่เล่ากันว่าผู้กล้าในอดีตเคยใช้\nเริ่มเผยพลังอันแท้จริงออกมา ด้วยพลังโบราณอันกล้าแกร่ง\nดูกลมกลืนเข้ากับ Great Hero Boots\n\nไม่สามารถทำลายได้\nMATK +195\nทุก ๆ การอัพเกรด 2 ขั้น MATK +15\nทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage สกิล Diamond Dust 12%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกธาตุ 15%, เพิ่ม Damage สกิล Varetyr Spear 15%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Varetyr Spear เพิ่มเติม 20%, ลดระยะเวลาร่ายแบบแปรผัน 7%\nเมื่ออัพเกรดถึงขั้น 11 ลดระยะเวลาร่ายแบบแปรผันลงอีก 8%, ลด Cooldown สกิล Varetyr Spear 2 วินาที\nเมื่อสวมใส่ร่วมกับ Great Hero Boots, INT +10, MATK + 7%.\n\nประเภท : ^777777One-Handed Staff^000000 พลังโจมตี : ^77777740^000000\nน้ำหนัก : ^77777775^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Sorcerer^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 265,
+    "itemLevel": 4,
+    "attack": 40,
+    "defense": null,
+    "weight": 75,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Sorcerer"
+    ],
+    "script": {
+      "matk": [
+        "195",
+        "2---15"
+      ],
+      "Diamond Dust": [
+        "3---12"
+      ],
+      "m_element_all": [
+        "7===15"
+      ],
+      "Varetyr Spear": [
+        "7===15",
+        "9===20"
+      ],
+      "vct": [
+        "9===7",
+        "11===8"
+      ],
+      "cd__Varetyr Spear": [
+        "11===2"
+      ],
+      "int": [
+        "EQUIP[Great Hero Boots]===10"
+      ],
+      "matkPercent": [
+        "EQUIP[Great Hero Boots]===7"
       ]
     }
   },
@@ -29163,7 +30585,7 @@
       ],
       "Adoramus": [
         "EQUIP[Defunct Booster Robe&&Defunct Booster Muffler&&Defunct Booster Shoes&&Defunct Booster Earring]level:15---1",
-        "EQUIP[Defunct Booster Robe&&Defunct Booster Muffler&&Defunct Booster Shoes&&Defunct Booster Earring]===SKILL[Magnificat]==20 (60 วินาที)"
+        "EQUIP[Defunct Booster Robe&&Defunct Booster Muffler&&Defunct Booster Shoes&&Defunct Booster Earring]ACTIVE_SKILL[Magnificat]===20 (60 วินาที)"
       ],
       "aspd": [
         "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]2"
@@ -29173,7 +30595,7 @@
       ],
       "Duple Light": [
         "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]level:15---2",
-        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]===SKILL[Magnificat]==35 (60 วินาที)"
+        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]ACTIVE_SKILL[Magnificat]===35 (60 วินาที)"
       ]
     }
   },
@@ -29468,14 +30890,14 @@
       ],
       "Crimson Rock": [
         "EQUIP[Elemental Booster Robe&&Elemental Booster Muffler&&Elemental Booster Shoes&&Elemental Booster Earring]level:15---1",
-        "EQUIP[Elemental Booster Robe&&Elemental Booster Muffler&&Elemental Booster Shoes&&Elemental Booster Earring]SKILL[Mystical Amplification]===20(60 วินาที)"
+        "EQUIP[Elemental Booster Robe&&Elemental Booster Muffler&&Elemental Booster Shoes&&Elemental Booster Earring]ACTIVE_SKILL[Mystical Amplification]===20(60 วินาที)"
       ],
       "acd": [
         "EQUIP[Defunct Booster Robe&&Defunct Booster Muffler&&Defunct Booster Shoes&&Defunct Booster Earring]10"
       ],
       "Soul Expansion": [
         "EQUIP[Defunct Booster Robe&&Defunct Booster Muffler&&Defunct Booster Shoes&&Defunct Booster Earring]level:15---1",
-        "EQUIP[Defunct Booster Robe&&Defunct Booster Muffler&&Defunct Booster Shoes&&Defunct Booster Earring]SKILL[Mystical Amplification]===20(60 วินาที)"
+        "EQUIP[Defunct Booster Robe&&Defunct Booster Muffler&&Defunct Booster Shoes&&Defunct Booster Earring]ACTIVE_SKILL[Mystical Amplification]===20(60 วินาที)"
       ]
     }
   },
@@ -29570,14 +30992,14 @@
       ],
       "Focused Arrow Strike": [
         "EQUIP[Attacker Booster Plate&&Attacker Booster Manteau&&Attacker Booster Greaves&&Attacker Booster Ring]level:15---1",
-        "EQUIP[Attacker Booster Plate&&Attacker Booster Manteau&&Attacker Booster Greaves&&Attacker Booster Ring]===SKILL[Falcon Eyes]==20(60 วินาที)"
+        "EQUIP[Attacker Booster Plate&&Attacker Booster Manteau&&Attacker Booster Greaves&&Attacker Booster Ring]ACTIVE_SKILL[Falcon Eyes]===20(60 วินาที)"
       ],
       "acd": [
         "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]15"
       ],
       "Aimed Bolt": [
         "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]level:15---2",
-        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]===SKILL[Falcon Eyes]==35(60 วินาที)"
+        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]ACTIVE_SKILL[Falcon Eyes]===35(60 วินาที)"
       ]
     }
   },
@@ -29805,7 +31227,7 @@
       ],
       "range": [
         "7===10",
-        "9===SKILL[Hot Barrel]==20(60 วินาที)"
+        "ACTIVE_SKILL[Hot Barrel]9===20(60 วินาที)"
       ],
       "acd": [
         "11===10"
@@ -29885,7 +31307,7 @@
     "script": {
       "range": [
         "2---3",
-        "9===SKILL[Platinum Altar]==10(90 วินาที)",
+        "ACTIVE_SKILL[Platinum Altar]9===10(90 วินาที)",
         "EQUIP[Great Hero Boots]===5"
       ],
       "spPercent": [
@@ -29901,7 +31323,7 @@
         "7===15"
       ],
       "atk": [
-        "9===SKILL[Platinum Altar]==50(90 วินาที)"
+        "ACTIVE_SKILL[Platinum Altar]9===50(90 วินาที)"
       ],
       "Vanishing Buster": [
         "11===35"
@@ -29954,14 +31376,14 @@
       ],
       "Fire Rain": [
         "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]level:15---2",
-        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]===SKILL[Rich's Coin]==35(60 วินาที)"
+        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]ACTIVE_SKILL[Rich's Coin]===35(60 วินาที)"
       ],
       "p_size_all": [
         "EQUIP[Attacker Booster Plate&&Attacker Booster Manteau&&Attacker Booster Greaves&&Attacker Booster Ring]10"
       ],
       "Round Trip": [
         "EQUIP[Attacker Booster Plate&&Attacker Booster Manteau&&Attacker Booster Greaves&&Attacker Booster Ring]level:15---1",
-        "EQUIP[Attacker Booster Plate&&Attacker Booster Manteau&&Attacker Booster Greaves&&Attacker Booster Ring]===SKILL[Rich's Coin]==20(60 วินาที)"
+        "EQUIP[Attacker Booster Plate&&Attacker Booster Manteau&&Attacker Booster Greaves&&Attacker Booster Ring]ACTIVE_SKILL[Rich's Coin]===20(60 วินาที)"
       ]
     }
   },
@@ -29986,11 +31408,11 @@
     "script": {
       "atk": [
         "2---15",
-        "9===SKILL[Platinum Altar]==50(90 วินาที)"
+        "ACTIVE_SKILL[Platinum Altar]9===50(90 วินาที)"
       ],
       "range": [
         "3---4",
-        "9===SKILL[Platinum Altar]==15(90 วินาที)",
+        "ACTIVE_SKILL[Platinum Altar]9===15(90 วินาที)",
         "EQUIP[Great Hero Boots]===5"
       ],
       "Round Trip": [

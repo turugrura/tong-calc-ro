@@ -1,5 +1,5 @@
 import { ElementType } from '../element-type.const';
-import { Weapon } from '../weapon';
+import { InfoForClass } from '../info-for-class.model';
 import { ClassName } from './_class-name';
 import {
   ActiveSkillModel,
@@ -221,19 +221,14 @@ export class ArchBishop extends CharacterBase {
     },
   ];
 
-  override getMasteryAtk(a: {
-    level: number;
-    weaponData: Weapon;
-    passiveSkillIds: number[];
-    element: string;
-    race: string;
-  }): number {
-    const { weaponData, passiveSkillIds, element, race, level } = a;
-    const weaponSubType = weaponData?.data?.subTypeName;
-    const bonusBaseLv = 0.05 * (level + 1);
+  override getMasteryAtk(info: InfoForClass): number {
+    const { weapon, monster, model } = info;
+    const weaponSubType = weapon?.data?.subTypeName;
+    const bonusBaseLv = 0.05 * (model['level'] + 1);
     const bonuses = this._passiveSkillList
-      .map((s, idx) => s.dropdown.find((d) => d.value === passiveSkillIds[idx])?.bonus)
+      .map((s, idx) => s.dropdown.find((d) => d.value === this.passiveSkillIds[idx])?.bonus)
       .filter(Boolean);
+    const { race, element } = monster;
 
     let totalAtk = 0;
     for (const bonus of bonuses) {

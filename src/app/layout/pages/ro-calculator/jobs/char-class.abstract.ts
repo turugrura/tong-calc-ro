@@ -1,4 +1,5 @@
 import { ElementType } from '../element-type.const';
+import { InfoForClass } from '../info-for-class.model';
 import { Weapon } from '../weapon';
 import { AspdTable } from './_aspd-table';
 import { ClassName } from './_class-name';
@@ -83,6 +84,16 @@ export abstract class CharacterBase {
   protected abstract _activeSkillList: ActiveSkillModel[];
   protected abstract _passiveSkillList: PassiveSkillModel[];
 
+  protected learnSkillMap = new Map<string, number>();
+  protected activeSkillIds: number[] = [];
+  protected passiveSkillIds: number[] = [];
+  protected bonuses: {
+    skillNames: any[];
+    equipAtks: Record<string, any>;
+    masteryAtks: Record<string, any>;
+    learnedSkillMap: Map<string, number>;
+  };
+
   /**
    * For item bonus condition
    */
@@ -113,22 +124,33 @@ export abstract class CharacterBase {
     return this.initialStatusPoint;
   }
 
-  getSkillBonusAndName(params: { activeIds: number[]; passiveIds: number[] }) {
+  setLearnSkills(a: { activeSkillIds: number[]; passiveSkillIds: number[] }) {
+    const { activeSkillIds, passiveSkillIds } = a;
+    this.activeSkillIds = [...activeSkillIds];
+    this.passiveSkillIds = [...passiveSkillIds];
+
+    this.passiveSkillIds.forEach((skillLvl, idx) => {
+      this.learnSkillMap.set(this.passiveSkills[idx].name, skillLvl);
+    });
+
+    return this;
+  }
+
+  getSkillBonusAndName() {
     const equipAtks: Record<string, any> = {};
     const masteryAtks: Record<string, any> = {};
     const skillNames = [];
     const learnedSkillMap = new Map<string, number>();
 
-    const { activeIds, passiveIds } = params;
     this._activeSkillList.forEach((skill, index) => {
-      const { bonus, isUse, skillLv, value } = skill.dropdown.find((x) => x.value === activeIds[index]) ?? {};
+      const { bonus, isUse, skillLv, value } = skill.dropdown.find((x) => x.value === this.activeSkillIds[index]) ?? {};
       if (!isUse) return;
 
       learnedSkillMap.set(skill.name, skillLv ?? Number(value));
       skillNames.push(skill.name);
       if (!bonus) return;
 
-      const { isEquipAtk, isMasteryAtk } = skill;
+      const { isMasteryAtk } = skill;
       if (isMasteryAtk) {
         masteryAtks[skill.name] = bonus;
       } else {
@@ -138,20 +160,22 @@ export abstract class CharacterBase {
 
     this._passiveSkillList.forEach((skill, index) => {
       const { bonus, isUse, value, skillLv } =
-        (skill.dropdown as any[]).find((x) => x.value === passiveIds[index]) ?? {};
+        (skill.dropdown as any[]).find((x) => x.value === this.passiveSkillIds[index]) ?? {};
       if (!isUse) return;
 
       learnedSkillMap.set(skill.name, skillLv ?? Number(value));
       skillNames.push(skill.name);
       if (!bonus) return;
 
-      const { isEquipAtk, isMasteryAtk } = skill;
+      const { isMasteryAtk } = skill;
       if (isMasteryAtk) {
         masteryAtks[skill.name] = bonus;
       } else {
         equipAtks[skill.name] = bonus;
       }
     });
+
+    this.bonuses = { skillNames, equipAtks, masteryAtks, learnedSkillMap };
 
     return { skillNames, equipAtks, masteryAtks, learnedSkillMap };
   }
@@ -228,7 +252,11 @@ export abstract class CharacterBase {
     };
   }
 
-  getMasteryAtk(a: any) {
+  getMasteryAtk(_: InfoForClass) {
     return 0;
+  }
+
+  setAdditionalBonus(params: InfoForClass) {
+    return params.totalBonus;
   }
 }

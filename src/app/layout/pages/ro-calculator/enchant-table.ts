@@ -357,6 +357,7 @@ interface EntTable {
 const enchantTable: EntTable[] = [
   { name: 'Lush_Rose', enchants: [null, null, null, [Spell._3, Spell._4, Spell._5]] },
   { name: 'Holy_Stick', enchants: [null, null, sp25, sp25] },
+  { name: 'Thorn_Staff_', enchants: [null, null, sp25, sp25] },
   {
     name: 'Fallen Angel Wing [1]',
     enchants: [null, [...ea35, ...fs35, ...sp25], [...ea35, ...fs35, ...sp25], [...ea35, ...fs35, ...sp25]],
