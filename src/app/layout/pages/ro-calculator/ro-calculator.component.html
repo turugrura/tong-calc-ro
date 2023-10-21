@@ -2882,13 +2882,18 @@
                   </div>
 
                   <div class="col-6">
+                    Element:
+                    <span class="{{ 'property_' + totalSummary?.calcSkill?.propertySkill }} px-1 font-semibold">{{
+                      totalSummary?.calcSkill?.propertySkill
+                    }}</span>
+                  </div>
+                  <div class="col-6">
                     <app-calc-value
                       [enableCompare]="isEnableCompare && totalSummary2?.dmg"
-                      label="Skill:"
+                      label="BaseSkill:"
                       unit="%"
                       styleClass="summary_highlight"
                       styleClass2="summary_compare"
-                      [enableCompare]="true"
                       [max]="totalSummary?.calcSkill?.baseSkillDamage"
                       [max2]="totalSummary2?.calcSkill?.baseSkillDamage"
                     ></app-calc-value>
@@ -2900,7 +2905,6 @@
                       unit=" Hits/s"
                       styleClass="summary_highlight"
                       styleClass2="summary_compare"
-                      [enableCompare]="true"
                       [max]="totalSummary?.calc?.hitPerSecs"
                       [max2]="totalSummary2?.calc?.hitPerSecs"
                     ></app-calc-value>
@@ -2912,7 +2916,6 @@
                       unit="%"
                       styleClass="summary_highlight"
                       styleClass2="summary_compare"
-                      [enableCompare]="true"
                       [max]="totalSummary?.calc?.totalPene"
                       [max2]="totalSummary2?.calc?.totalPene"
                     ></app-calc-value>
@@ -2924,7 +2927,6 @@
                       unit="%"
                       styleClass="summary_highlight"
                       styleClass2="summary_compare"
-                      [enableCompare]="true"
                       [max]="totalSummary?.calc?.hitRate"
                       [max2]="totalSummary2?.calc?.hitRate"
                     ></app-calc-value>
@@ -2939,7 +2941,6 @@
                           label="VCT:"
                           styleClass="summary_value"
                           styleClass2="summary_compare"
-                          [enableCompare]="true"
                           [isGreaterIsBetter]="false"
                           [max]="totalSummary?.calcSkill?.reducedVct"
                           [max2]="totalSummary2?.calcSkill?.reducedVct"
@@ -2951,7 +2952,6 @@
                           label="FCT:"
                           styleClass="summary_value"
                           styleClass2="summary_compare"
-                          [enableCompare]="true"
                           [isGreaterIsBetter]="false"
                           [max]="totalSummary?.calcSkill?.reducedFct"
                           [max2]="totalSummary2?.calcSkill?.reducedFct"
@@ -2963,7 +2963,6 @@
                           label="CD:"
                           styleClass="summary_value"
                           styleClass2="summary_compare"
-                          [enableCompare]="true"
                           [isGreaterIsBetter]="false"
                           [max]="totalSummary?.calcSkill?.reducedCd"
                           [max2]="totalSummary2?.calcSkill?.reducedCd"
@@ -2975,7 +2974,6 @@
                           label="Delay:"
                           styleClass="summary_value"
                           styleClass2="summary_compare"
-                          [enableCompare]="true"
                           [isGreaterIsBetter]="false"
                           [max]="totalSummary?.calcSkill?.reducedAcd"
                           [max2]="totalSummary2?.calcSkill?.reducedAcd"
@@ -2987,7 +2985,6 @@
                           label="Cast:"
                           styleClass="summary_damage"
                           styleClass2="summary_compare"
-                          [enableCompare]="true"
                           [isGreaterIsBetter]="false"
                           [max]="totalSummary?.calcSkill?.castPeriod"
                           [max2]="totalSummary2?.calcSkill?.castPeriod"
@@ -3000,7 +2997,6 @@
                           unit=" Hits/s"
                           styleClass="summary_highlight"
                           styleClass2="summary_compare"
-                          [enableCompare]="true"
                           [max]="totalSummary?.calcSkill?.totalHitPerSec"
                           [max2]="totalSummary2?.calcSkill?.totalHitPerSec"
                         ></app-calc-value>
@@ -3019,7 +3015,6 @@
                       unit="%"
                       styleClass="summary_damage"
                       styleClass2="summary_compare"
-                      [enableCompare]="true"
                       [max]="totalSummary?.dmg?.criRate"
                       [max2]="totalSummary2?.dmg?.criRate"
                     ></app-calc-value>
@@ -3030,7 +3025,7 @@
                       [label]="totalSummary?.dmg?.criRate <= 0 ? 'SkillDmg:' : 'SkillDmgCri:'"
                       styleClass="summary_damage"
                       styleClass2="summary_compare"
-                      [enableCompare]="true"
+                      [totalHit]="totalSummary?.calcSkill?.totalHits"
                       [min]="totalSummary?.dmg?.minDamage"
                       [max]="totalSummary?.dmg?.maxDamage"
                       [min2]="totalSummary2?.dmg?.minDamage"
@@ -3043,7 +3038,6 @@
                       label="HE:"
                       styleClass="summary_damage"
                       styleClass2="summary_compare"
-                      [enableCompare]="true"
                       [min]="totalSummary?.dmg?.minDamageHE"
                       [max]="totalSummary?.dmg?.maxDamageHE"
                       [min2]="totalSummary2?.dmg?.minDamageHE"
@@ -3056,7 +3050,6 @@
                       label="DPS:"
                       styleClass="summary_highlight"
                       styleClass2="summary_compare"
-                      [enableCompare]="true"
                       [max]="totalSummary?.dmg?.skillDps"
                       [max2]="totalSummary2?.dmg?.skillDps"
                     ></app-calc-value>
@@ -3072,7 +3065,6 @@
                       label="Basic:"
                       styleClass="summary_damage"
                       styleClass2="summary_compare"
-                      [enableCompare]="true"
                       [min]="totalSummary?.dmg?.basicMinDamage"
                       [max]="totalSummary?.dmg?.basicMaxDamage"
                       [min2]="totalSummary2?.dmg?.basicMinDamage"
@@ -3086,7 +3078,6 @@
                       unit="%"
                       styleClass="summary_damage"
                       styleClass2="summary_compare"
-                      [enableCompare]="true"
                       [max]="totalSummary?.calc?.totalCri"
                       [max2]="totalSummary2?.calc?.totalCri"
                     ></app-calc-value>
@@ -3097,7 +3088,6 @@
                       label="DmgCri:"
                       styleClass="summary_damage"
                       styleClass2="summary_compare"
-                      [enableCompare]="true"
                       [min]="totalSummary?.dmg?.criMinDamage"
                       [max]="totalSummary?.dmg?.criMaxDamage"
                       [min2]="totalSummary2?.dmg?.criMinDamage"
@@ -3110,7 +3100,6 @@
                       label="DPS:"
                       styleClass="summary_highlight"
                       styleClass2="summary_compare"
-                      [enableCompare]="true"
                       [max]="totalSummary?.dmg?.basicDps"
                       [max2]="totalSummary2?.dmg?.basicDps"
                     ></app-calc-value>

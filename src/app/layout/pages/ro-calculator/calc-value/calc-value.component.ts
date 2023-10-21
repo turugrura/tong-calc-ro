@@ -11,6 +11,7 @@ export class CalcValueComponent {
   @Input() unit: string;
   @Input() min: number;
   @Input({ required: true }) max: number;
+  @Input() totalHit: number;
 
   @Input() enableCompare = false;
   @Input() isGreaterIsBetter = true;

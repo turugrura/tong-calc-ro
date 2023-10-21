@@ -23,6 +23,7 @@ export interface AtkSkillModel<T = any> {
   canCri?: boolean;
   cri?: number;
   hit?: number;
+  totalHit?: number;
   isMatk?: boolean;
   isMelee?: boolean;
   element?: ElementType;

@@ -344,6 +344,7 @@ export class Calculator {
 
   private _class: CharacterBase;
   private propertyAtk = ElementType.Neutral;
+  private propertySkill = ElementType.Neutral;
   private sizePenalty = 1;
   private propertyMultiplier = 1;
   private skillPropertyMultiplier = 1;
@@ -374,6 +375,7 @@ export class Calculator {
   private criRateToMonster = 0;
   private basicDps = 0;
   private skillDps = 0;
+  private skillTotalHits = 0;
   private damageSummary = {};
 
   private weaponStatusAtk = 0;
@@ -1830,8 +1832,10 @@ export class Calculator {
       pene: this.totalPhysicalPene,
     };
 
+    this.skillTotalHits = 0;
+
     if (isValidSkill) {
-      const { formular, cri, canCri, isMatk } = skillData;
+      const { formular, cri, canCri, isMatk, totalHit = 1 } = skillData;
       const baseSkillDamage = formular({
         baseLevel: this.model.level,
         skillLevel: Number(skillLevel),
@@ -1840,6 +1844,7 @@ export class Calculator {
       });
       this.baseSkillDamage = baseSkillDamage;
       this.isMagicalSkill = isMatk;
+      this.skillTotalHits = totalHit;
 
       // HawkEye
       let minDamageHE = 0;

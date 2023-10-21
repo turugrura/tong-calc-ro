@@ -1,6 +1,7 @@
 <div class="grid grid-nogutter">
   <div class="col-12">
     {{ label }}
+    <span *ngIf="totalHit > 1" class="font-bold px-1 {{ styleClass }}">{{ totalHit }} x</span>
     <span *ngIf="isDisplayRangeDmg" class="font-bold px-1 {{ styleClass }}"
       >{{ _min | number }} - {{ _max | number }}{{ isDisplayCompare ? '' : unit }}</span
     >
