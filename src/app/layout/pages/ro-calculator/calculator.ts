@@ -1127,7 +1127,6 @@ export class Calculator {
     const { softMDef } = this.monsterData;
     const hardDef = this.dmgReductionByMHardDef;
 
-    this.propertySkill = element || this.model.propertyAtk || ElementType.Neutral;
     this.calcPropertyMultiplier(this.propertySkill);
 
     const elementBonus =
@@ -1842,15 +1841,17 @@ export class Calculator {
     };
 
     this.skillTotalHits = 0;
+    this.propertySkill = ElementType.Neutral;
 
     if (isValidSkill) {
-      const { formular, cri, canCri, isMatk, totalHit = 1 } = skillData;
+      const { formular, cri, canCri, element, isMatk, totalHit = 1 } = skillData;
       const baseSkillDamage = formular({
         baseLevel: this.model.level,
         skillLevel: Number(skillLevel),
         usedSkillSet: this.usedSkillNames,
         extra: { ...this.status },
       });
+      this.propertySkill = element || this.model.propertyAtk || ElementType.Neutral;
       this.baseSkillDamage = baseSkillDamage;
       this.isMagicalSkill = isMatk;
       this.skillTotalHits = totalHit;

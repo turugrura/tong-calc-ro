@@ -1,0 +1,145 @@
+<div class="grid grid-nogutter">
+  <div class="col-3">
+    <div class="grid grid-nogutter">
+      <div class="col-fixed">
+        <button
+          type="button"
+          class="p-button-help"
+          pButton
+          icon="pi pi-download"
+          label="Load"
+          [disabled]="!selectedPreset"
+          (click)="onLoadPresetClick()"
+        ></button>
+      </div>
+      <div class="col-fixed">
+        <button
+          type="button"
+          class="p-button-danger"
+          pButton
+          icon="pi pi-trash"
+          label="Delete"
+          [disabled]="!selectedPreset"
+          (click)="deletePreset()"
+        ></button>
+      </div>
+      <div class="col-12">
+        <p-listbox
+          [options]="presets"
+          [(ngModel)]="selectedPreset"
+          [metaKeySelection]="false"
+          [listStyle]="{ 'max-height': '500px' }"
+          (onChange)="onSelectPreset()"
+        >
+          <ng-template let-item pTemplate="item">
+            <div class="flex gap-1">
+              {{ item.label }}
+            </div>
+          </ng-template>
+        </p-listbox>
+      </div>
+    </div>
+  </div>
+  <div class="col-9 pl-3">
+    <div class="grid">
+      <div class="col-fixed">
+        <span class="summary_highlight"> {{ classLabelMap[model?.class] }} </span>
+      </div>
+      <div class="col-fixed">
+        Level: <span class="summary_highlight"> {{ model?.level }} </span>
+      </div>
+      <div class="col-fixed">
+        Job: <span class="summary_highlight"> {{ model?.jobLevel }} </span>
+      </div>
+      <div class="col-fixed">
+        str: <span class="summary_stat_atk"> {{ model?.str }} </span>
+      </div>
+      <div class="col-fixed">
+        int: <span class="summary_stat_matk"> {{ model?.int }} </span>
+      </div>
+      <div class="col-fixed">
+        dex: <span class="summary_stat_atk" style="color: var(--green-300)"> {{ model?.dex }} </span>
+      </div>
+      <div class="col-fixed">
+        agi: <span class="summary_stat_def"> {{ model?.agi }} </span>
+      </div>
+      <div class="col-fixed">
+        vit: <span class="summary_stat_def"> {{ model?.vit }} </span>
+      </div>
+      <div class="col-fixed">
+        luk: <span class="summary_stat_def"> {{ model?.luk }} </span>
+      </div>
+    </div>
+
+    <div
+      *ngFor="let item of displayMainItems"
+      class="grid grid-nogutter px-2 py-2 item_label_{{ item.itemType }}"
+      style="min-height: 2rem"
+    >
+      <div class="col-4">
+        <div *ngIf="!item.mainId">--- {{ item.itemType }} ---</div>
+        <div *ngIf="item.mainId" class="item_template flex gap-1">
+          <img src="assets/demo/images/items/{{ item.mainId }}.png" alt="" class="item_img" />
+          <div class="text_ellips pr-2" style="text-overflow: ellipsis">
+            {{ item.refineTxt }} {{ getItemLabel(item.mainId) }}
+          </div>
+        </div>
+      </div>
+      <div *ngFor="let cardId of item.cardIds" class="col-2">
+        <div class="item_template flex gap-1">
+          <img *ngIf="item.isHead" src="assets/demo/images/items/{{ cardId }}.png" alt="" class="item_img" />
+          <img *ngIf="!item.isHead" src="assets/demo/images/items/card.png" alt="" class="item_img" />
+          <div class="text_ellips pr-2" style="text-overflow: ellipsis">
+            {{ getItemLabel(cardId) }}
+          </div>
+        </div>
+      </div>
+      <div *ngFor="let enchantId of item.enchantIds" class="col-2">
+        <div class="item_template flex gap-1">
+          <img src="assets/demo/images/items/{{ enchantId }}.png" alt="" class="item_img" />
+          <div class="text_ellips pr-2" style="text-overflow: ellipsis">
+            {{ getItemLabel(enchantId) }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-nogutter">
+      <div class="col-12 py-1 divider">
+        <p-divider></p-divider>
+      </div>
+      <div class="col-4">
+        <div
+          *ngFor="let item of displayCostumeItems"
+          class="grid grid-nogutter px-2 py-2 item_label_{{ item.itemType }}"
+          style="min-height: 2rem"
+        >
+          <div class="col-12">
+            <div *ngIf="!item.mainId">--- {{ item.itemType }} ---</div>
+            <div *ngIf="item.mainId" class="item_template flex gap-1">
+              <img src="assets/demo/images/items/{{ item.mainId }}.png" alt="" class="item_img" />
+              <div class="text_ellips pr-2" style="text-overflow: ellipsis">{{ getItemLabel(item.mainId) }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div
+          *ngFor="let item of displayShadowItems"
+          class="grid grid-nogutter px-2 py-2 item_label_{{ item.itemType }}"
+          style="min-height: 2rem"
+        >
+          <div class="col-12">
+            <div *ngIf="!item.mainId">--- {{ item.itemType }} ---</div>
+            <div *ngIf="item.mainId" class="item_template flex gap-1">
+              <img src="assets/demo/images/items/{{ item.mainId }}.png" alt="" class="item_img" />
+              <div class="text_ellips pr-2" style="text-overflow: ellipsis">
+                {{ item.refineTxt }} {{ getItemLabel(item.mainId) }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

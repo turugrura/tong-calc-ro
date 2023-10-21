@@ -24,3 +24,20 @@ export enum ClassName {
   SoulReaper = 'SoulReaper',
   Rebellion = 'Rebellion',
 }
+
+export const ClassID = {
+  11: 'Royal Guard',
+  12: 'Rune Knight',
+  7: 'Arch Bishop',
+  2: ClassName.Ranger,
+  21: ClassName.Minstrel,
+  22: ClassName.Wanderer,
+  5: ClassName.GuillotineCross,
+  4: 'Shadow Chaser',
+  6: ClassName.Warlock,
+  8: ClassName.Sorcerer,
+  10: ClassName.Mechanic,
+  9: ClassName.Genetic,
+  3: 'Soul Reaper',
+  1: ClassName.Rebellion,
+} as const;

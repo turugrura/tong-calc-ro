@@ -32,6 +32,7 @@ import { PrettyJsonPipe } from '../../prettier-json.pipe';
 import { RoCalculatorRoutingModule } from './ro-calculator-routing.module';
 import { EquipmentComponent } from './equipment/equipment.component';
 import { CalcValueComponent } from './calc-value/calc-value.component';
+import { PresetTableComponent } from './preset-table/preset-table.component';
 
 @NgModule({
   imports: [
@@ -64,6 +65,6 @@ import { CalcValueComponent } from './calc-value/calc-value.component';
     BlockUIModule,
     RoCalculatorRoutingModule,
   ],
-  declarations: [RoCalculatorComponent, EquipmentComponent, CalcValueComponent, PrettyJsonPipe],
+  declarations: [RoCalculatorComponent, EquipmentComponent, CalcValueComponent, PrettyJsonPipe, PresetTableComponent],
 })
 export class RoCalculatorModule {}

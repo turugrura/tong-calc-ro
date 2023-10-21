@@ -23,6 +23,9 @@ import { GitCross } from './jobs/git-cross';
 import { ArchBishop } from './jobs/arch-bishop';
 import { Warlock } from './jobs/warlock';
 import { Sorcerer } from './jobs/sorcerer';
+import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
+import { PresetTableComponent } from './preset-table/preset-table.component';
+import { ClassID } from './jobs/_class-name';
 
 const sortObj = <T>(field: keyof T) => {
   return (a: T, b: T) => {
@@ -81,20 +84,20 @@ interface MonsterSelectItemGroup extends SelectItemGroup {
 }
 
 const Characters: DropdownModel[] = [
-  // { label: 'Royal Guard', value: 11, instant: new RoyalGuard() },
-  // { label: 'Rune Knight', value: 12, instant: new RuneKnight() },
-  { label: 'Arch Bishop', value: 7, instant: new ArchBishop() },
-  { label: 'Ranger', value: 2, instant: new Ranger() },
-  // { label: 'Minstrel', value: 21, instant: new Minstrel() },
-  // { label: 'Wanderer', value: 22, instant: new Wanderer() },
-  { label: 'Git Cross', value: 5, instant: new GitCross() },
-  { label: 'SC', value: 4, instant: new ShadowChaser() },
-  { label: 'Warlock', value: 6, instant: new Warlock() },
-  { label: 'Sorcerer', value: 8, instant: new Sorcerer() },
-  // { label: 'Machanic', value: 10, instant: new Machanic() },
-  // { label: 'Genetic', value: 9, instant: new Genetic() },
-  { label: 'Soul Reaper', value: 3, instant: new SoulReaper() },
-  { label: 'Rebelion', value: 1, instant: new Rebelion() },
+  // { label: ClassID[11], value: 11, instant: new RoyalGuard() },
+  // { label: ClassID[12], value: 12, instant: new RuneKnight() },
+  { label: ClassID[7], value: 7, instant: new ArchBishop() },
+  { label: ClassID[2], value: 2, instant: new Ranger() },
+  // { label: ClassID[21],value: 21, instant: new Minstrel() },
+  // { label: ClassID[22],value: 22, instant: new Wanderer() },
+  { label: ClassID[5], value: 5, instant: new GitCross() },
+  { label: ClassID[4], value: 4, instant: new ShadowChaser() },
+  { label: ClassID[6], value: 6, instant: new Warlock() },
+  { label: ClassID[8], value: 8, instant: new Sorcerer() },
+  // { label: ClassID[10],value: 10, instant: new Machanic() },
+  // { label: ClassID[9],value: 9, instant: new Genetic() },
+  { label: ClassID[3], value: 3, instant: new SoulReaper() },
+  { label: ClassID[1], value: 1, instant: new Rebelion() },
 ];
 
 const toDropdownList = <T extends Record<string, any>>(
@@ -318,7 +321,7 @@ interface ClassModel extends Partial<Record<ItemTypeEnum, number>> {
   selector: 'app-ro-calculator',
   templateUrl: './ro-calculator.component.html',
   styleUrls: ['./ro-calculator.component.css'],
-  providers: [ConfirmationService, MessageService],
+  providers: [ConfirmationService, MessageService, DialogService],
 })
 export class RoCalculatorComponent implements OnInit, OnDestroy {
   updateItemEvent = new Subject();
@@ -637,10 +640,13 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     'accRight',
   ];
 
+  ref: DynamicDialogRef | undefined;
+
   constructor(
     private roService: RoService,
     private messageService: MessageService,
     private confirmationService: ConfirmationService,
+    private dialogService: DialogService,
   ) {}
 
   ngOnInit() {
@@ -766,6 +772,9 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     for (const ob of this.allSubs) {
       ob?.unsubscribe();
     }
+    if (this.ref) {
+      this.ref.close();
+    }
   }
 
   private initData() {
@@ -794,13 +803,13 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
   private initLoadItems() {
     this.loadBtnItems = [
-      {
-        label: 'Load',
-        // icon: 'pi pi-refresh',
-        command: () => {
-          this.loadPreset();
-        },
-      },
+      // {
+      //   label: 'Load',
+      //   icon: PrimeIcons.DOWNLOAD,
+      //   command: () => {
+      //     this.loadPreset();
+      //   },
+      // },
       {
         label: 'Update',
         icon: PrimeIcons.SYNC,
@@ -808,13 +817,13 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
           this.updatePreset(this.selectedPreset);
         },
       },
-      {
-        label: 'Delete',
-        icon: PrimeIcons.TRASH,
-        command: () => {
-          this.deletePreset();
-        },
-      },
+      // {
+      //   label: 'Delete',
+      //   icon: PrimeIcons.TRASH,
+      //   command: () => {
+      //     this.deletePreset();
+      //   },
+      // },
     ];
   }
 
@@ -1073,7 +1082,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
             )
             .subscribe();
         },
-        reject: (type) => {
+        reject: () => {
           // switch (type as ConfirmEventType) {
           //   case ConfirmEventType.REJECT:
           //     this.messageService.add({
@@ -1115,11 +1124,11 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     }
   }
 
-  loadPreset() {
-    const selected = this.getPresetList().find((a) => a.value === this.selectedPreset);
+  loadPreset(presetName?: string) {
+    const selected = this.getPresetList().find((a) => a.value === presetName || this.selectedPreset);
     if (selected?.['model']) {
       this.confirmationService.confirm({
-        message: `Load "${this.selectedPreset}" ?`,
+        message: `Load "${presetName || this.selectedPreset}" ?`,
         header: 'Confirmation',
         icon: 'pi pi-exclamation-triangle',
         accept: () => {
@@ -1139,54 +1148,43 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
                 this.messageService.add({
                   severity: 'info',
                   summary: 'Confirmed',
-                  detail: `"${this.selectedPreset}" was loaded.`,
+                  detail: `"${presetName || this.selectedPreset}" was loaded.`,
                 });
                 this.isInProcessingPreset = false;
               }),
             )
             .subscribe();
         },
-        reject: (type) => {
+        reject: () => {
           this.isInProcessingPreset = false;
         },
       });
     }
   }
 
-  deletePreset() {
-    this.confirmationService.confirm({
-      message: `Delete "${this.selectedPreset}" ?`,
-      header: 'Confirmation',
-      icon: 'pi pi-exclamation-triangle',
-      accept: () => {
-        this.isInProcessingPreset = true;
-
-        waitRxjs(0.2)
-          .pipe(
-            tap(() => {
-              const preSets = this.getPresetList();
-              const removedSets = preSets.filter((a) => a.value !== this.selectedPreset);
-              this.savePresetList(removedSets);
-            }),
-            delay(200),
-            tap(() => this.setPresetList()),
-            finalize(() => {
-              this.messageService.add({
-                severity: 'error',
-                summary: `"${this.selectedPreset}" was deleted`,
-              });
-              this.selectedPreset = '';
-              this.isInProcessingPreset = false;
-            }),
-          )
-          .subscribe();
-
-        this.isInProcessingPreset = false;
-      },
-      reject: (type) => {
-        this.isInProcessingPreset = false;
+  openPresetManagement() {
+    this.ref = this.dialogService.open(PresetTableComponent, {
+      width: '80vw',
+      height: '80vh',
+      contentStyle: { overflow: 'auto' },
+      header: 'Preset Management',
+      baseZIndex: 10000,
+      showHeader: true,
+      data: {
+        items: this.items,
+        presets: this.getPresetList(),
+        getPresetFn: this.getPresetList.bind(this),
+        savePresetListFn: this.savePresetList.bind(this),
+        setPresetListFn: this.setPresetList.bind(this),
+        loadPresetFn: this.loadPreset.bind(this),
       },
     });
+    // this.ref.onClose.subscribe((product: any) => {
+    //   console.log({ onClose: product });
+    //   if (product) {
+    //     this.messageService.add({ severity: 'info', summary: 'Product Selected', detail: product });
+    //   }
+    // });
   }
 
   private setModelByJSONString(savedModel: string | any) {
@@ -1411,7 +1409,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     const shadowPendantList = [];
     const shadowWeaponList = [];
 
-    const consumableList = [];
+    const consumableList: ItemModel[] = [];
 
     const sortedItems = Object.values(this.items).sort(sortObj('name'));
     for (const item of sortedItems) {
@@ -1563,7 +1561,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     this.itemList.shadowPendantList = toDropdownList(shadowPendantList, 'name', 'id');
     this.itemList.shadowWeaponList = toDropdownList(shadowWeaponList, 'name', 'id');
 
-    this.consumableList = toDropdownList(consumableList, 'name', 'id');
+    this.consumableList = toDropdownList(consumableList.sort(sortObj('id')), 'name', 'id');
   }
 
   private setItemDropdownList() {
