@@ -118,7 +118,7 @@ export class Wizard extends CharacterBase {
       isMatk: true,
       element: ElementType.Earth,
       levelList: [{ label: 'Lv 5', value: "Heaven's Drive==5" }],
-      formular: ({ baseLevel, skillLevel }: { baseLevel: number; skillLevel: number }): number => {
+      formular: ({ baseLevel }: { baseLevel: number; skillLevel: number }): number => {
         return 125 * (baseLevel / 100);
       },
     },
@@ -144,7 +144,39 @@ export class Wizard extends CharacterBase {
       ],
     },
   ];
-  protected _passiveSkillList: PassiveSkillModel[] = [];
+  protected _passiveSkillList: PassiveSkillModel[] = [
+    {
+      inputType: 'dropdown',
+      label: 'Soul Drain',
+      name: 'Soul Drain',
+      dropdown: [
+        { label: '-', isUse: false, value: 0 },
+        { label: 'Lv 1', isUse: true, value: 1 },
+        { label: 'Lv 2', isUse: true, value: 2 },
+        { label: 'Lv 3', isUse: true, value: 1 },
+        { label: 'Lv 4', isUse: true, value: 2 },
+        { label: 'Lv 5', isUse: true, value: 3 },
+        { label: 'Lv 6', isUse: true, value: 3 },
+        { label: 'Lv 7', isUse: true, value: 4 },
+        { label: 'Lv 8', isUse: true, value: 4 },
+        { label: 'Lv 9', isUse: true, value: 5 },
+        { label: 'Lv 10', isUse: true, value: 5 },
+      ],
+    },
+    {
+      inputType: 'dropdown',
+      label: 'Gravitational',
+      name: 'Gravitational Field',
+      dropdown: [
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 1', value: 1, isUse: true },
+        { label: 'Lv 2', value: 2, isUse: true },
+        { label: 'Lv 3', value: 3, isUse: true },
+        { label: 'Lv 4', value: 4, isUse: true },
+        { label: 'Lv 5', value: 5, isUse: true },
+      ],
+    },
+  ];
 
   constructor() {
     super();

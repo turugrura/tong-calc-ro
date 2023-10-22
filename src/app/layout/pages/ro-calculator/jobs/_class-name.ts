@@ -1,7 +1,11 @@
 export enum ClassName {
-  Ranger = 'Ranger',
-  Minstrel = 'Minstrel',
+  Archer = 'Archer',
+  Bard = 'Bard',
   Wanderer = 'Wanderer',
+  Dance = 'Dance',
+  Minstrel = 'Minstrel',
+  Hunter = 'Hunter',
+  Ranger = 'Ranger',
 
   Mechanic = 'Mechanic',
   Genetic = 'Genetic',
@@ -21,6 +25,9 @@ export enum ClassName {
   Wizard = 'Wizard',
   Warlock = 'Warlock',
 
+  // extended
+  Taekwondo = 'Taekwondo',
+  SoulLinker = 'SoulLinker',
   SoulReaper = 'SoulReaper',
   Rebellion = 'Rebellion',
 }

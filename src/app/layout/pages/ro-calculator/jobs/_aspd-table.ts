@@ -10,7 +10,7 @@ type Y = {
 };
 interface XX extends Y, X {}
 
-export const AspdTable: Record<ClassName, XX> = {
+export const AspdTable: Partial<Record<ClassName, XX>> = {
   [ClassName.Ranger]: { base: 156, shield: -8, Dagger: -10, Bow: -9 },
   [ClassName.Minstrel]: { base: 156, shield: -7, Dagger: -12, Bow: -10, Instrument: -5, Whip: -5 },
   [ClassName.Wanderer]: { base: 156, shield: -7, Dagger: -12, Bow: -10, Instrument: -5, Whip: -5 },

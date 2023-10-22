@@ -24460,7 +24460,7 @@
     "compositionPos": null,
     "script": {
       "vct": [
-        "14"
+        "LEARN_SKILL[Kaahi==1]---2"
       ]
     }
   },
@@ -25864,7 +25864,7 @@
     "compositionPos": null,
     "script": {
       "m_my_element_holy": [
-        "5"
+        "LEARN_SKILL[Assumptio==1]---1"
       ]
     }
   },
@@ -25887,7 +25887,7 @@
     "compositionPos": null,
     "script": {
       "vct": [
-        "5"
+        "LEARN_SKILL[Kyrie Eleison==2]---1"
       ]
     }
   },
@@ -25993,7 +25993,7 @@
     "compositionPos": null,
     "script": {
       "m_my_element_neutral": [
-        "10"
+        "LEARN_SKILL[Gravitational Field==1]---2"
       ]
     }
   },
@@ -26016,7 +26016,7 @@
     "compositionPos": null,
     "script": {
       "matk": [
-        "20"
+        "LEARN_SKILL[Soul Drain==1]---2"
       ]
     }
   },
@@ -26118,7 +26118,7 @@
     "compositionPos": null,
     "script": {
       "acd": [
-        "10"
+        "LEARN_SKILL[Soul Destroyer==1]---1"
       ]
     }
   },
@@ -27816,13 +27816,13 @@
         "10===5"
       ],
       "Axe Tornado": [
-        "35"
+        "LEARN_SKILL[Axe Boomerang==1]---7"
       ],
       "Power Swing": [
-        "75"
+        "LEARN_SKILL[Axe Boomerang==1]---15"
       ],
       "p_pene_race_all": [
-        "40"
+        "LEARN_SKILL[Lava Flow==1]---8"
       ],
       "p_class_all": [
         "30"
@@ -29244,10 +29244,10 @@
         "5"
       ],
       "atk": [
-        "50"
+        "LEARN_SKILL[Heal==2]---10"
       ],
       "matk": [
-        "50"
+        "LEARN_SKILL[Heal==2]---10"
       ],
       "Adoramus": [
         "EQUIP[Old Mitra]-200"
@@ -30227,7 +30227,7 @@
       ],
       "m_my_element_neutral": [
         "3",
-        "7===10"
+        "REFINE[7]LEARN_SKILL[Indulge==1]---2"
       ],
       "m_size_all": [
         "9===10",

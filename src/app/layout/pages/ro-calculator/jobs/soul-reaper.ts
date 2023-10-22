@@ -1,5 +1,7 @@
+import { ElementType } from '../element-type.const';
 import { ClassName } from './_class-name';
 import { ActiveSkillModel, AtkSkillModel, CharacterBase, PassiveSkillModel } from './char-class.abstract';
+import { SoulLinker } from './soul-linker';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 0, 1, 0],
@@ -77,7 +79,7 @@ export class SoulReaper extends CharacterBase {
   protected classNames = ['Hi-Class', 'Soul Reaper', 'Soul Reaper Cls', 'Soul Reaper Class'];
   protected _atkSkillList: AtkSkillModel[] = [
     {
-      label: 'Espa',
+      label: 'Espa Lv10',
       name: 'Espa',
       value: 'Espa==10',
       acd: 0,
@@ -90,41 +92,57 @@ export class SoulReaper extends CharacterBase {
         return (500 + skillLevel * 250) * (baseLevel / 100);
       },
     },
+    {
+      label: 'Eswhoo Lv10',
+      name: 'Eswhoo',
+      value: 'Eswhoo==10',
+      acd: 0,
+      fct: 1,
+      vct: 0.5,
+      cd: 2,
+      isMatk: true,
+      levelList: [{ label: 'Lv 10', value: 'Eswhoo==10' }],
+      formular: ({ baseLevel, skillLevel }: { baseLevel: number; skillLevel: number }): number => {
+        return (1100 + skillLevel * 200) * (baseLevel / 100);
+      },
+    },
+    {
+      label: 'Curse Explosion Lv10',
+      name: 'Curse Explosion',
+      value: 'Curse Explosion==10',
+      acd: 0,
+      fct: 1,
+      vct: 0.5,
+      cd: 2,
+      isMatk: true,
+      element: ElementType.Dark,
+      levelList: [{ label: 'Lv 10', value: 'Curse Explosion==10' }],
+      formular: ({ baseLevel, skillLevel }: { baseLevel: number; skillLevel: number }): number => {
+        return (400 + skillLevel * 100) * (baseLevel / 100);
+      },
+    },
   ];
   protected _activeSkillList: ActiveSkillModel[] = [
-    {
-      isEquipAtk: true,
-      inputType: 'dropdown',
-      label: 'Fairy Soul',
-      name: 'Fairy Soul',
-      dropdown: [
-        { label: '-', value: 0, isUse: false },
-        { label: 'Lv 1', value: 1, skillLv: 1, isUse: true, bonus: { matk: 10, vct: 5 } },
-        { label: 'Lv 2', value: 2, skillLv: 2, isUse: true, bonus: { matk: 20, vct: 5 } },
-        { label: 'Lv 3', value: 3, skillLv: 3, isUse: true, bonus: { matk: 30, vct: 7 } },
-        { label: 'Lv 4', value: 4, skillLv: 4, isUse: true, bonus: { matk: 40, vct: 7 } },
-        { label: 'Lv 5', value: 5, skillLv: 5, isUse: true, bonus: { matk: 50, vct: 10 } },
-      ],
-    },
+    // {
+    //   isEquipAtk: true,
+    //   inputType: 'dropdown',
+    //   label: 'Fairy Soul',
+    //   name: 'Fairy Soul',
+    //   dropdown: [
+    //     { label: '-', value: 0, isUse: false },
+    //     { label: 'Lv 1', value: 1, skillLv: 1, isUse: true, bonus: { matk: 10, vct: 5 } },
+    //     { label: 'Lv 2', value: 2, skillLv: 2, isUse: true, bonus: { matk: 20, vct: 5 } },
+    //     { label: 'Lv 3', value: 3, skillLv: 3, isUse: true, bonus: { matk: 30, vct: 7 } },
+    //     { label: 'Lv 4', value: 4, skillLv: 4, isUse: true, bonus: { matk: 40, vct: 7 } },
+    //     { label: 'Lv 5', value: 5, skillLv: 5, isUse: true, bonus: { matk: 50, vct: 10 } },
+    //   ],
+    // },
   ];
-  protected _passiveSkillList: PassiveSkillModel[] = [
-    {
-      inputType: 'dropdown',
-      label: 'Happy Break',
-      name: 'Happy Break',
-      dropdown: [
-        { label: '-', value: 0, isUse: false },
-        { label: 'Lv 1', value: 1, skillLv: 1, isUse: true },
-        { label: 'Lv 2', value: 2, skillLv: 2, isUse: true },
-        { label: 'Lv 3', value: 3, skillLv: 3, isUse: true },
-        { label: 'Lv 4', value: 4, skillLv: 4, isUse: true },
-        { label: 'Lv 5', value: 5, skillLv: 5, isUse: true },
-        { label: 'Lv 6', value: 6, skillLv: 6, isUse: true },
-        { label: 'Lv 7', value: 7, skillLv: 7, isUse: true },
-        { label: 'Lv 8', value: 8, skillLv: 8, isUse: true },
-        { label: 'Lv 9', value: 9, skillLv: 9, isUse: true },
-        { label: 'Lv 10', value: 10, skillLv: 10, isUse: true },
-      ],
-    },
-  ];
+  protected _passiveSkillList: PassiveSkillModel[] = [];
+
+  constructor() {
+    super();
+
+    this.inheritBaseClass(new SoulLinker());
+  }
 }
