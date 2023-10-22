@@ -31,11 +31,11 @@ export const WeaponTypeNameMapBySubTypeId = {
   259: 'spear',
   260: '2hand',
   261: 'axe',
-  262: '2hand',
+  262: 'axe',
   263: 'mace',
   264: '2hand',
   265: 'rod',
-  266: '2hand',
+  266: '2hand', //rod staff
   267: 'bow',
   268: 'fist',
   269: 'instrument',

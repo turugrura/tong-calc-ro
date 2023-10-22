@@ -70,12 +70,6 @@
   height: 100%;
 }
 
-.text_ellips {
-  height: 19px;
-  overflow: hidden;
-  white-space: nowrap;
-}
-
 :host ::ng-deep .select_skill .p-accordion-content {
   padding: 0;
 }
@@ -96,14 +90,20 @@
   margin-left: 24px;
 }
 
+.text_ellips {
+  height: 19px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
 .text_group_ellips {
-  width: 50%;
+  width: 60%;
   overflow: hidden;
   white-space: nowrap;
 }
 
 :host ::ng-deep .select_skill p-selectbutton {
-  width: 50%;
+  width: 40%;
 }
 
 :host ::ng-deep .select_skill .p-tag-value {

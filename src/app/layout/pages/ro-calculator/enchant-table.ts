@@ -422,6 +422,9 @@ const enchantTable: EntTable[] = [
   { name: 'Vigilante_Bedge', enchants: [null, null, BaseState._1, BaseState._1] },
   { name: 'Vigilante_Suits', enchants: [null, BaseState._1, BaseState._1, BaseState._1] },
 
+  { name: 'Upgrade_Part_Engine', enchants: [null, null, BaseState._1, BaseState._1] },
+  { name: 'Supplement_Part_Dex', enchants: [null, null, BaseState._1, BaseState._1] },
+
   { name: 'Old_Mitra', enchants: [null, labHead2, BaseState._3_5, BaseState._3_5] },
   { name: 'Old_Driver_Band_R', enchants: [null, labHead2, BaseState._3_5, BaseState._3_5] },
   { name: 'Old_Driver_Band_Y', enchants: [null, labHead2, BaseState._3_5, BaseState._3_5] },

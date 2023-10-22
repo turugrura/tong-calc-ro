@@ -106,13 +106,23 @@ const toDropdownList = <T extends Record<string, any>>(
   labelKey: keyof T,
   valueKey: keyof T,
   elementKey?: keyof T,
+  extraKeys?: (keyof T)[],
 ): DropdownModel[] => {
-  return list.map((a) => ({
-    label: a[labelKey],
-    value: a[valueKey],
-    element: elementKey ? a[elementKey] || '' : undefined,
-    usableClass: a['usableClass'] || undefined,
-  }));
+  return list.map((a) => {
+    const ex = (extraKeys || []).reduce<T>((extraAttr, key) => {
+      extraAttr[key] = a[key];
+
+      return extraAttr;
+    }, {} as T);
+
+    return {
+      label: a[labelKey],
+      value: a[valueKey],
+      usableClass: a['usableClass'] || undefined,
+      element: elementKey ? a[elementKey] || '' : undefined,
+      ...ex,
+    };
+  });
 };
 
 const createNumberDropdownList = (from: number, to: number, prefixLabel?: string): DropdownModel[] => {
@@ -1329,7 +1339,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
   private setItemList() {
     const weaponList = [];
-    const weaponCardList = [];
+    const weaponCardList: ItemModel[] = [];
     const ammoList: ItemModel[] = [];
     const headUpperList = [];
     const headMiddleList = [];
@@ -1481,24 +1491,24 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     }
 
     this.itemList.weaponList = toDropdownList(weaponList, 'name', 'id');
-    this.itemList.weaponCardList = toDropdownList(weaponCardList, 'name', 'id');
+    this.itemList.weaponCardList = toDropdownList(weaponCardList, 'name', 'id', undefined, ['cardPrefix']);
     this.itemList.ammoList = toDropdownList(ammoList, 'name', 'id', 'propertyAtk');
     this.itemList.headUpperList = toDropdownList(headUpperList, 'name', 'id');
     this.itemList.headMiddleList = toDropdownList(headMiddleList, 'name', 'id');
     this.itemList.headLowerList = toDropdownList(headLowerList, 'name', 'id');
-    this.itemList.headCardList = toDropdownList(headCardList, 'name', 'id');
+    this.itemList.headCardList = toDropdownList(headCardList, 'name', 'id', undefined, ['cardPrefix']);
     this.itemList.armorList = toDropdownList(armorList, 'name', 'id');
-    this.itemList.armorCardList = toDropdownList(armorCardList, 'name', 'id');
+    this.itemList.armorCardList = toDropdownList(armorCardList, 'name', 'id', undefined, ['cardPrefix']);
     this.itemList.shieldList = toDropdownList(shieldList, 'name', 'id');
-    this.itemList.shieldCardList = toDropdownList(shieldCardList, 'name', 'id');
+    this.itemList.shieldCardList = toDropdownList(shieldCardList, 'name', 'id', undefined, ['cardPrefix']);
     this.itemList.garmentList = toDropdownList(garmentList, 'name', 'id');
-    this.itemList.garmentCardList = toDropdownList(garmentCardList, 'name', 'id');
+    this.itemList.garmentCardList = toDropdownList(garmentCardList, 'name', 'id', undefined, ['cardPrefix']);
     this.itemList.bootList = toDropdownList(bootList, 'name', 'id');
-    this.itemList.bootCardList = toDropdownList(bootCardList, 'name', 'id');
+    this.itemList.bootCardList = toDropdownList(bootCardList, 'name', 'id', undefined, ['cardPrefix']);
     this.itemList.accLeftList = toDropdownList(accLeftList, 'name', 'id');
-    this.itemList.accLeftCardList = toDropdownList(accLeftCardList, 'name', 'id');
+    this.itemList.accLeftCardList = toDropdownList(accLeftCardList, 'name', 'id', undefined, ['cardPrefix']);
     this.itemList.accRightList = toDropdownList(accRightList, 'name', 'id');
-    this.itemList.accRightCardList = toDropdownList(accRightCardList, 'name', 'id');
+    this.itemList.accRightCardList = toDropdownList(accRightCardList, 'name', 'id', undefined, ['cardPrefix']);
     this.itemList.petList = petList.map((a) => ({ label: a.name, value: a.id }));
 
     this.itemList.costumeEnhUpperList = toDropdownList(costumeEnhUpperList, 'name', 'id');

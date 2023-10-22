@@ -1647,6 +1647,44 @@
       ]
     }
   },
+  "2995": {
+    "id": 2995,
+    "aegisName": "Supplement_Part_Dex",
+    "name": "Flashy Gold Brooch [1]",
+    "unidName": "Accessory",
+    "resName": "손재주보완장치",
+    "description": "อุปกรณ์จักรกลที่ออกแบบมาเพื่อการใช้งานที่ละเอียดอ่อน\nลดการใช้ SP 10%, ลดดีเลย์หลังจากใช้สกิล 10%\nลดเวลาในการร่ายแบบผันแปร 10%\nเมื่อใช้งานร่วมกับ Supplement Part - Str จะเพิ่ม Axe Boomerang ATK 100%\nลดเวลาคูลดาวน์ Axe Boomerang 2 วินาที\nประเภท : ^777777Accessory^000000\nป้องกัน : ^7777770^000000      น้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777100^000000\nสวมใส่ : ^777777Mechanic^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 517,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Mechanic"
+    ],
+    "script": {
+      "sp": [
+        "10"
+      ],
+      "acd": [
+        "10"
+      ],
+      "vct": [
+        "10"
+      ],
+      "Axe Boomerang": [
+        "EQUIP[Supplement Part Str]100"
+      ],
+      "cd__Axe Boomerang": [
+        "EQUIP[Supplement Part Str]2"
+      ]
+    }
+  },
   "4007": {
     "id": 4007,
     "aegisName": "Pecopeco_Egg_Card",
@@ -1664,6 +1702,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 0,
+    "cardPrefix": "Beholder",
     "script": {
       "p_race_formless": [
         "20"
@@ -1687,6 +1726,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 16,
+    "cardPrefix": "Ghost",
     "script": {
       "ลดความเร็วในการฟื้นค่า HP": [
         "25"
@@ -1710,6 +1750,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 0,
+    "cardPrefix": "Underneath",
     "script": {
       "p_element_earth": [
         "20"
@@ -1733,6 +1774,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 0,
+    "cardPrefix": "Saharic",
     "script": {
       "p_element_water": [
         "20"
@@ -1756,6 +1798,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 0,
+    "cardPrefix": "Gigantic",
     "script": {
       "atk": [
         "5"
@@ -1782,6 +1825,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 0,
+    "cardPrefix": "Boned",
     "script": {
       "atk": [
         "5"
@@ -1808,6 +1852,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 0,
+    "cardPrefix": "Kingbird",
     "script": {
       "range": [
         "10"
@@ -1831,6 +1876,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 4,
+    "cardPrefix": "of Rogue",
     "script": {
       "agi": [
         "3"
@@ -1857,6 +1903,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 64,
+    "cardPrefix": "Hasty",
     "script": {}
   },
   "4143": {
@@ -1876,6 +1923,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 769,
+    "cardPrefix": "Neutral",
     "script": {
       "vit": [
         "3"
@@ -1902,6 +1950,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 64,
+    "cardPrefix": "of Doom",
     "script": {
       "hpPercent": [
         "EQUIP[Dark Illusion Card]20"
@@ -1928,6 +1977,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 769,
+    "cardPrefix": "of Spell Master",
     "script": {
       "spPercent": [
         "-10"
@@ -1958,6 +2008,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 0,
+    "cardPrefix": "Slash",
     "script": {
       "sp": [
         "1"
@@ -1996,6 +2047,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 64,
+    "cardPrefix": "Reflect",
     "script": {
       "mdef": [
         "3"
@@ -2019,6 +2071,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 16,
+    "cardPrefix": "of Wild Cat",
     "script": {
       "atk": [
         "25"
@@ -2045,6 +2098,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 64,
+    "cardPrefix": "of Regeneration",
     "script": {
       "hpPercent": [
         "10"
@@ -2071,6 +2125,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 769,
+    "cardPrefix": "of Tempest",
     "script": {
       "vct": [
         "-100"
@@ -2103,6 +2158,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 769,
+    "cardPrefix": "of Reload",
     "script": {
       "acd": [
         "30"
@@ -2126,6 +2182,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 16,
+    "cardPrefix": "Abyss",
     "script": {
       "p_element_holy": [
         "40"
@@ -2158,6 +2215,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 16,
+    "cardPrefix": "Panic",
     "script": {
       "matkPercent": [
         "5"
@@ -2187,6 +2245,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 16,
+    "cardPrefix": "Exceeding",
     "script": {
       "p_class_all": [
         "USED[Rogue||Stalker||ShadowChaser]10"
@@ -2213,6 +2272,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 64,
+    "cardPrefix": "Arrogant",
     "script": {
       "matkPercent": [
         "10"
@@ -2245,6 +2305,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 769,
+    "cardPrefix": "of Half Reload",
     "script": {
       "acd": [
         "15",
@@ -2269,6 +2330,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 16,
+    "cardPrefix": "Half Jack Frost's",
     "script": {
       "p_element_fire": [
         "25",
@@ -2293,6 +2355,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 16,
+    "cardPrefix": "Half Abyss",
     "script": {
       "p_element_holy": [
         "20",
@@ -2329,6 +2392,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 136,
+    "cardPrefix": "of Mad Berserker",
     "script": {
       "atk": [
         "20"
@@ -2355,6 +2419,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 0,
+    "cardPrefix": "Upper Shaft",
     "script": {
       "cri": [
         "WEAPON_TYPE[bow]5"
@@ -2384,6 +2449,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 769,
+    "cardPrefix": "Power Word",
     "script": {
       "matk": [
         "50",
@@ -2434,6 +2500,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 4,
+    "cardPrefix": "Educe",
     "script": {
       "m_my_element_wind": [
         "100"
@@ -2463,6 +2530,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 4,
+    "cardPrefix": "of Power",
     "script": {
       "atk": [
         "str:10---5"
@@ -2486,6 +2554,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 4,
+    "cardPrefix": "of Shooter",
     "script": {
       "range": [
         "dex:10---1"
@@ -2509,6 +2578,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 4,
+    "cardPrefix": "of Death Blow",
     "script": {
       "criDmg": [
         "luk:10---2"
@@ -2532,6 +2602,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 16,
+    "cardPrefix": "of Explosion",
     "script": {
       "p_class_all": [
         "15"
@@ -2564,6 +2635,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 16,
+    "cardPrefix": "of Fury",
     "script": {
       "p_class_all": [
         "20"
@@ -2596,6 +2668,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 0,
+    "cardPrefix": "of Evil God",
     "script": {
       "atk": [
         "30"
@@ -2619,6 +2692,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 0,
+    "cardPrefix": "Knight",
     "script": {
       "atk": [
         "15"
@@ -2653,6 +2727,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 32,
+    "cardPrefix": "Knight",
     "script": {
       "def": [
         "20"
@@ -2686,6 +2761,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 0,
+    "cardPrefix": "Wisdom of",
     "script": {
       "matkPercent": [
         "20"
@@ -2712,6 +2788,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 0,
+    "cardPrefix": "Queenbird",
     "script": {
       "range": [
         "10",
@@ -2736,6 +2813,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 32,
+    "cardPrefix": "Armed",
     "script": {
       "p_race_all": [
         "10"
@@ -2765,6 +2843,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 64,
+    "cardPrefix": "Strike",
     "script": {
       "atk": [
         "10",
@@ -2790,6 +2869,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 16,
+    "cardPrefix": "Punishment",
     "script": {
       "m_element_undead": [
         "50"
@@ -2822,6 +2902,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 4,
+    "cardPrefix": "Flame",
     "script": {
       "เพิ่มความทนทานต่อการโจมตีธาตุ Neutral": [
         "15",
@@ -2849,6 +2930,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 64,
+    "cardPrefix": "Magical",
     "script": {
       "matkPercent": [
         "5",
@@ -2874,6 +2956,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 4,
+    "cardPrefix": "of Sorcerer",
     "script": {
       "hpPercent": [
         "USED[Sorcerer]10"
@@ -2907,6 +2990,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 4,
+    "cardPrefix": "of Mechanic",
     "script": {
       "hit": [
         "USED[Mechanic]20"
@@ -2940,6 +3024,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 4,
+    "cardPrefix": "of Warlock",
     "script": {
       "mdef": [
         "USED[Warlock]80"
@@ -2973,6 +3058,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 4,
+    "cardPrefix": "of RuneKnight",
     "script": {
       "aspd": [
         "USED[Rune Knight]2"
@@ -3006,6 +3092,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 4,
+    "cardPrefix": "of RoyalGuard",
     "script": {
       "def": [
         "USED[Royal Guard]350"
@@ -3039,6 +3126,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 4,
+    "cardPrefix": "of Shadow Chaser",
     "script": {
       "matkPercent": [
         "USED[Shadow Chaser]15"
@@ -3072,6 +3160,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 0,
+    "cardPrefix": "Cross",
     "script": {
       "Cross Impact": [
         "20",
@@ -3097,6 +3186,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 0,
+    "cardPrefix": "Adoramus",
     "script": {
       "Adoramus": [
         "20",
@@ -3122,6 +3212,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 0,
+    "cardPrefix": "Crimson",
     "script": {
       "Crimson Rock": [
         "20",
@@ -3147,6 +3238,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 0,
+    "cardPrefix": "Powerstorm",
     "script": {
       "Axe Tornado": [
         "20",
@@ -3172,6 +3264,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 0,
+    "cardPrefix": "Neostorm",
     "script": {
       "Cart Tornado": [
         "20",
@@ -7277,6 +7370,33 @@
       ]
     }
   },
+  "15343": {
+    "id": 15343,
+    "aegisName": "Supplement_Part_Str_",
+    "name": "Supplement Part Str [1]",
+    "unidName": "Armor",
+    "resName": "근력보완장치",
+    "description": "จักรกลที่ยกระดับความแข็งแกร่งของตัวเองให้ถึงขีดสุดด้วยพลังแห่งวิทยาศาสตร์ สามารถสร้างการทำงานร่วมกันกับอุปกรณ์อื่น ๆ ได้ดี\nเพิ่มพลังโจมตีทางกายภาพต่อมอนสเตอร์ทุกประเภท 5%\nทุกการอัพเกรด 4 ขั้น เพิ่มพลังโจมตีทางกายภาพต่อมอนสเตอร์ทุกประเภทขึ้นอีกที 1%\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^77777780^000000\nน้ำหนัก : ^777777200^000000\nเลเวลที่ต้องการ : ^777777130^000000\nอาชีพที่ใส่ได้ : ^777777Mechanic Class^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 80,
+    "weight": 200,
+    "requiredLevel": 130,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Mechanic Class"
+    ],
+    "script": {
+      "p_class_all": [
+        "5",
+        "4---1"
+      ]
+    }
+  },
   "15346": {
     "id": 15346,
     "aegisName": "Overwhelm_Luk_Armor",
@@ -10642,6 +10762,36 @@
         "EQUIP[Temporal Luk Boot]5",
         "EQUIP[Modified Luk Boots]5",
         "EQUIP[Modified Luk Boot]5"
+      ]
+    }
+  },
+  "20733": {
+    "id": 20733,
+    "aegisName": "Upgrade_Part_Engine",
+    "name": "Upgrade Part - Engine [1]",
+    "unidName": "Garment",
+    "resName": "강화파츠엔진",
+    "description": "เอนจิ้นที่ช่วยเพิ่มการจ่ายพลังงานของ Madogear ถึงขีดสุด จุดเด่นคือ ง่ายต่อการแยกส่วนและประกอบ\nลดดีเลย์หลังจากใช้สกิล 10%\nเมื่ออัปเกรด +7 จะเพิ่ม Neutral Resistance 10%\nเมื่ออัปเกรด +9 จะลดดีเลย์หลังจากใช้สกิลเพิ่มเติม 10%\nประเภท : ^777777Garment^000000 ป้องกัน : ^77777725^000000\nน้ำหนัก : ^777777150^000000\nเลเวลที่ต้องการ : ^777777100^000000\nสวมใส่ : ^777777Mechanic^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 515,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 25,
+    "weight": 150,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Mechanic"
+    ],
+    "script": {
+      "acd": [
+        "10",
+        "9===10"
+      ],
+      "Neutral Resistance": [
+        "7===10"
       ]
     }
   },
@@ -18524,6 +18674,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 0,
+    "cardPrefix": "Sagittarius",
     "script": {
       "bowRange": [
         "10===20"
@@ -18547,6 +18698,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 16,
+    "cardPrefix": "Sorcery",
     "script": {
       "matk": [
         "20"
@@ -18573,6 +18725,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 16,
+    "cardPrefix": "Vigor",
     "script": {
       "atk": [
         "20"
@@ -18599,6 +18752,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 8,
+    "cardPrefix": "Dancing",
     "script": {
       "p_element_neutral": [
         "20"
@@ -18625,6 +18779,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 128,
+    "cardPrefix": "Singing",
     "script": {
       "m_element_neutral": [
         "20"
@@ -18683,6 +18838,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 16,
+    "cardPrefix": "Frozen",
     "script": {
       "m_my_element_water": [
         "20",
@@ -18707,6 +18863,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 136,
+    "cardPrefix": "Dual Critical",
     "script": {
       "cri": [
         "3",
@@ -18735,6 +18892,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 32,
+    "cardPrefix": "of Turtle Shell",
     "script": {
       "def": [
         "30"
@@ -18771,6 +18929,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 136,
+    "cardPrefix": "Aqua Benedict",
     "script": {
       "m_my_element_water": [
         "20"
@@ -18797,6 +18956,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 16,
+    "cardPrefix": "Python",
     "script": {
       "p_element_wind": [
         "40"
@@ -18829,6 +18989,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 136,
+    "cardPrefix": "Intensive",
     "script": {
       "hit": [
         "5",
@@ -18856,6 +19017,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 136,
+    "cardPrefix": "Deft",
     "script": {
       "flee": [
         "10",
@@ -18880,6 +19042,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 0,
+    "cardPrefix": "Sage",
     "script": {
       "range": [
         "[weaponType=Revolver]5",
@@ -18911,6 +19074,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 64,
+    "cardPrefix": "Prompt",
     "script": {
       "hpPercent": [
         "10"
@@ -18940,6 +19104,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 16,
+    "cardPrefix": "of Aquawood",
     "script": {
       "p_element_water": [
         "5",
@@ -18968,6 +19133,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 136,
+    "cardPrefix": "Land Blast",
     "script": {
       "m_my_element_fire": [
         "20"
@@ -18994,6 +19160,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 136,
+    "cardPrefix": "Abranchia",
     "script": {
       "agi": [
         "-1"
@@ -19026,6 +19193,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 136,
+    "cardPrefix": "Avian",
     "script": {
       "vit": [
         "-1",
@@ -19063,6 +19231,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 4,
+    "cardPrefix": "Glacial",
     "script": {
       "เพิ่มความต้านทานต่อการโจมตีธาตุ Neutral": [
         "15",
@@ -19090,6 +19259,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 128,
+    "cardPrefix": "Dust",
     "script": {
       "agi": [
         "7"
@@ -19122,6 +19292,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 8,
+    "cardPrefix": "Sunset",
     "script": {
       "str": [
         "4"
@@ -19148,6 +19319,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 0,
+    "cardPrefix": "Sharp Sword",
     "script": {
       "atk": [
         "5",
@@ -19184,6 +19356,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 4,
+    "cardPrefix": "Dirty",
     "script": {
       "atk": [
         "str:10---3",
@@ -19211,6 +19384,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 4,
+    "cardPrefix": "Marsh",
     "script": {
       "matk": [
         "int:10---3",
@@ -19238,6 +19412,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 0,
+    "cardPrefix": "Lugenburg",
     "script": {
       "p_size_s": [
         "15",
@@ -19265,6 +19440,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 0,
+    "cardPrefix": "Wigner",
     "script": {
       "p_race_brute": [
         "15"
@@ -19288,6 +19464,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 4,
+    "cardPrefix": "Half Educe",
     "script": {
       "m_my_element_wind": [
         "50",
@@ -19316,6 +19493,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 64,
+    "cardPrefix": "Akuma",
     "script": {
       "vct": [
         "3"
@@ -19351,6 +19529,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 136,
+    "cardPrefix": "Dwigh",
     "script": {
       "m_my_element_neutral": [
         "20"
@@ -19377,6 +19556,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 0,
+    "cardPrefix": "Lumping",
     "script": {
       "matk": [
         "5"
@@ -19403,6 +19583,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 64,
+    "cardPrefix": "of Luminant",
     "script": {
       "spPercent": [
         "10"
@@ -19429,6 +19610,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 0,
+    "cardPrefix": "Proper",
     "script": {
       "matk": [
         "5"
@@ -19455,6 +19637,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 4,
+    "cardPrefix": "of Stone shooter",
     "script": {
       "criDmg": [
         "luk:10---1",
@@ -19482,6 +19665,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 4,
+    "cardPrefix": "of Wootan shooter",
     "script": {
       "bowRange": [
         "dex:10---1"
@@ -19511,6 +19695,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 0,
+    "cardPrefix": "Fire Dance",
     "script": {
       "hit": [
         "[weaponType=Pistol]20"
@@ -19541,6 +19726,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 0,
+    "cardPrefix": "Heavy Trip",
     "script": {
       "hit": [
         "[weaponType=Gatling Gun]20"
@@ -19571,6 +19757,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 4,
+    "cardPrefix": "Animal Hunter",
     "script": {
       "p_race_brute": [
         "15"
@@ -19594,6 +19781,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 64,
+    "cardPrefix": "Demon God's",
     "script": {
       "atkPercent": [
         "10"
@@ -19626,6 +19814,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 0,
+    "cardPrefix": "Brinaranea",
     "script": {
       "m_my_element_water": [
         "15",
@@ -19650,6 +19839,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 32,
+    "cardPrefix": "Muspelheim",
     "script": {
       "ลด Damage ทางกายภาพ/เวทมนตร์ที่ได้รับจากศัตรูธาต Fire": [
         "30"
@@ -19679,6 +19869,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 16,
+    "cardPrefix": "Destructive",
     "script": {
       "atk": [
         "100"
@@ -19709,6 +19900,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 769,
+    "cardPrefix": "Corrupt Life",
     "script": {
       "hp": [
         "500"
@@ -19779,6 +19971,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 16,
+    "cardPrefix": "Of Schmidt",
     "script": {
       "p_element_fire": [
         "40"
@@ -19798,10 +19991,11 @@
     "itemLevel": null,
     "attack": null,
     "defense": null,
-    "weight": null,
+    "weight": 1,
     "requiredLevel": null,
     "location": null,
     "compositionPos": 8,
+    "cardPrefix": "of Granz Heine",
     "script": {
       "vct": [
         "5"
@@ -19828,6 +20022,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 16,
+    "cardPrefix": "Of Chaotic",
     "script": {
       "atkPercent": [
         "25"
@@ -19854,6 +20049,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 64,
+    "cardPrefix": "Of Black Guard",
     "script": {
       "cri": [
         "agi:15---1"
@@ -19880,6 +20076,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 136,
+    "cardPrefix": "Of Double Power",
     "script": {
       "str": [
         "3"
@@ -19909,6 +20106,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 0,
+    "cardPrefix": "The Ghost",
     "script": {
       "atk": [
         "20"
@@ -19941,6 +20139,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 136,
+    "cardPrefix": "Of Angry Killer",
     "script": {
       "criDmg": [
         "3",
@@ -19965,6 +20164,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 128,
+    "cardPrefix": "Holy Spell",
     "script": {
       "acd": [
         "4"
@@ -19988,6 +20188,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 16,
+    "cardPrefix": "of Deprave",
     "script": {
       "atkPercent": [
         "5",
@@ -20012,6 +20213,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 0,
+    "cardPrefix": "Depraved",
     "script": {
       "range": [
         "10",
@@ -20036,6 +20238,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 0,
+    "cardPrefix": "Heavy Blade",
     "script": {
       "p_size_m": [
         "30"
@@ -20062,6 +20265,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 4,
+    "cardPrefix": "of Queen Spider",
     "script": {
       "m_my_element_water": [
         "100"
@@ -20091,6 +20295,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 8,
+    "cardPrefix": "Doomed",
     "script": {
       "aspd": [
         "1"
@@ -20109,7 +20314,7 @@
     "name": "Phantom of Himmelmez Card",
     "unidName": "Phantom of Himmelmez Card",
     "resName": "이름없는카드",
-    "description": "เพิ่ม Damage ทางเวทมนตร์ธาตุ Holy, Neutral 100%\nลดความต้านทานต่อการโจมตีทุกธาตุ 30%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Garment^000000\nน้ำหนัก : ^7777771^000000",
+    "description": "เพิ่ม Damage ทางเวทมนตร์ธาตุ Holy, Neutral 100%\nได้รับความเสียหายจากการโจมตีทุกธาตุเพิ่มขึ้น 30%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Garment^000000\nน้ำหนัก : ^7777771^000000",
     "slots": 0,
     "itemTypeId": 6,
     "itemSubTypeId": 0,
@@ -20120,6 +20325,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 4,
+    "cardPrefix": "of Fallen Angel",
     "script": {
       "m_my_element_holy": [
         "100"
@@ -20149,6 +20355,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 4,
+    "cardPrefix": "of Creep",
     "script": {
       "atk": [
         "30"
@@ -20181,6 +20388,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 64,
+    "cardPrefix": "of Relax",
     "script": {
       "hpPercent": [
         "10"
@@ -20204,7 +20412,7 @@
     "name": "Mutating White Knight Card",
     "unidName": "Mutating White Knight Card",
     "resName": "이름없는카드",
-    "description": "MATK +15\nเพิ่ม Damage ทางเวทมนตร์ต่อศัตรูขนาดกลาง, ใหญ่ 20%\nเมื่อใช้ร่วมกับ Mutating Khalitzburg Card ลด Damage ทางกายภาพ/เวทมนตร์ที่ได้รับจากศัตรูขนาดกลาง, ใหญ่ลงอีก 5%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "description": "MATK +15\nเพิ่ม Damage ทางเวทมนตร์ต่อศัตรูขนาดกลาง, ใหญ่ 20%\nเมื่อใช้ร่วมกับ Mutating Khalitzburg Card ลด Damage ทางกายภาพ/เวทมนตร์ที่ได้รับจากศัตรูขนาดกลาง, ใหญ่ลงอีก 5%\nเพิ่ม Damage ทางเวทมนตร์ต่อศัตรูขนาดกลาง, ใหญ่ขึ้นอีก 5%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
     "slots": 0,
     "itemTypeId": 6,
     "itemSubTypeId": 0,
@@ -20215,6 +20423,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 0,
+    "cardPrefix": "Magical Knightage",
     "script": {
       "matk": [
         "15"
@@ -20244,6 +20453,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 32,
+    "cardPrefix": "Magical Knightage",
     "script": {
       "mdef": [
         "10"
@@ -20262,7 +20472,7 @@
     "name": "Cursed Raydric Card",
     "unidName": "Cursed Raydric Card",
     "resName": "이름없는카드",
-    "description": "เพิ่ม Damage ทางกายภาพต่อศัตรูประเภท Undead 5%\nเมื่อใช้ร่วมกับ Cursed Raydric Archer Card เพิ่ม Damage ทางกายภาพต่อศัตรูประเภท Undead ขึ้นอีก 5%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Accessory (Left)^000000\nน้ำหนัก : ^7777771^000000",
+    "description": "เพิ่ม Damage ทางกายภาพต่อศัตรูเผ่า Undead 5%\nเมื่อใช้ร่วมกับ Cursed Raydric Archer Card เพิ่ม Damage ทางกายภาพต่อศัตรูเผ่า Undead ขึ้นอีก 5%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Accessory (Left)^000000\nน้ำหนัก : ^7777771^000000",
     "slots": 0,
     "itemTypeId": 6,
     "itemSubTypeId": 0,
@@ -20273,6 +20483,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 128,
+    "cardPrefix": "Exorcist's",
     "script": {
       "p_race_undead": [
         "5",
@@ -20286,7 +20497,7 @@
     "name": "Cursed Raydric Archer Card",
     "unidName": "Cursed Raydric Archer Card",
     "resName": "이름없는카드",
-    "description": "เพิ่ม Damage ทางกายภาพต่อศัตรูประเภท Demon 5%\nเมื่อใช้ร่วมกับ Cursed Raydric Card เพิ่ม Damage ทางกายภาพต่อศัตรูประเภท Demon ขึ้นอีก 5%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Accessory (Right)^000000\nน้ำหนัก : ^7777771^000000",
+    "description": "เพิ่ม Damage ทางกายภาพต่อศัตรูเผ่า Demon 5%\nเมื่อใช้ร่วมกับ Cursed Raydric Card เพิ่ม Damage ทางกายภาพต่อศัตรูเผ่า Demon ขึ้นอีก 5%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Accessory (Right)^000000\nน้ำหนัก : ^7777771^000000",
     "slots": 0,
     "itemTypeId": 6,
     "itemSubTypeId": 0,
@@ -20297,6 +20508,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 8,
+    "cardPrefix": "Undead Slayer's",
     "script": {
       "p_race_demon": [
         "5",
@@ -20321,6 +20533,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 769,
+    "cardPrefix": "of Bright Wigner",
     "script": {
       "acd": [
         "5",
@@ -20776,6 +20989,35 @@
       ],
       "p_element_undead": [
         "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]REFINE[weapon,armor,garment==30]===20"
+      ]
+    }
+  },
+  "28101": {
+    "id": 28101,
+    "aegisName": "Tornado_Axe",
+    "name": "Tornado Axe [1]",
+    "unidName": "Axe",
+    "resName": "토네이도액스",
+    "description": "ชื่อที่ตั้งตามลักษณะของใบขวานที่คล้ายพายุหมุน\nธาตุ Wind\nลดเวลาคูลดาวน์ Axe Tornado 1 วินาที\nประเภท : ^777777Axe^000000    โจมตี : ^777777320^000000\nน้ำหนัก : ^777777400^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777100^000000\nสวมใส่ : Swordman, Merchant ขั้น^7777773 ^000000",
+    "slots": 1,
+    "itemTypeId": 1,
+    "itemSubTypeId": 262,
+    "itemLevel": 4,
+    "attack": 320,
+    "propertyAtk": "Wind",
+    "defense": null,
+    "weight": 400,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Swordman",
+      "Genetic",
+      "Mechanic"
+    ],
+    "script": {
+      "cd__Axe Tornado": [
+        "1"
       ]
     }
   },
@@ -21608,7 +21850,8 @@
     "location": null,
     "compositionPos": null,
     "usableClass": [
-      "3rd Merchant Cls"
+      "Genetic",
+      "Machanic"
     ],
     "script": {
       "atk": [
@@ -25523,6 +25766,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 16,
+    "cardPrefix": "Weak Punishment",
     "script": {
       "m_element_undead": [
         "25",
@@ -25559,6 +25803,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 136,
+    "cardPrefix": "The First",
     "script": {
       "allStatus": [
         "1"
@@ -25588,6 +25833,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 16,
+    "cardPrefix": "of Meyer",
     "script": {
       "spPercent": [
         "10"
@@ -25617,6 +25863,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 16,
+    "cardPrefix": "of Lugenburg",
     "script": {
       "spPercent": [
         "10"
@@ -28190,6 +28437,12 @@
     "requiredLevel": 100,
     "location": null,
     "compositionPos": null,
+    "usableClass": [
+      "Swordman Cls",
+      "Archer Cls",
+      "Thief Cls",
+      "Merchant Cls"
+    ],
     "script": {
       "atk": [
         "20"
@@ -28305,6 +28558,12 @@
     "requiredLevel": 100,
     "location": null,
     "compositionPos": null,
+    "usableClass": [
+      "Sword Class",
+      "Thief Class",
+      "Acolyte Class",
+      "Merchant Class"
+    ],
     "script": {
       "atk": [
         "20"

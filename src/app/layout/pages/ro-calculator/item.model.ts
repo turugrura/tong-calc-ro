@@ -16,6 +16,7 @@ export interface ItemModel {
   requiredLevel: any;
   location: any;
   compositionPos: number;
+  cardPrefix?: string;
   enchants: [null, string[], string[], string[]];
   script: Record<string, any[]>;
 }

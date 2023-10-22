@@ -48,6 +48,15 @@ export const JobBuffs: ActiveSkillModel[] = [
     ],
   },
   {
+    inputType: 'selectButton',
+    label: 'Weapon Perfect Lv5',
+    name: 'Weapon Perfection',
+    dropdown: [
+      { label: 'Yes', value: 5, skillLv: 5, isUse: true, bonus: { ignore_size_penalty: 1 } },
+      { label: 'No', value: 0, isUse: false },
+    ],
+  },
+  {
     inputType: 'dropdown',
     label: 'Soul Lv5',
     name: 'Soul',
