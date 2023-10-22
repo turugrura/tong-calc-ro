@@ -101,6 +101,7 @@ const weaponUpgradeTable: Record<
 };
 
 export class Weapon {
+  private _propertyAtk = '';
   private _rangeType = '';
   private _typeName: WeaponTypeName;
   private _subTypeName: WeaponSubTypeName;
@@ -111,15 +112,16 @@ export class Weapon {
   private _refineBonus = 0;
   private _overUpgradeBonus = 0;
   private _highUpgradeBonus = 0;
+  private _weight = 0;
 
   set(itemData: ItemModel, refineLevel: number) {
-    if (!itemData) return this;
-
-    const { itemLevel, attack, script, itemSubTypeId } = itemData;
-    this._baseWeaponAtk = attack;
+    const { itemLevel, attack, script, itemSubTypeId, weight, propertyAtk } = itemData || {};
+    this._propertyAtk = propertyAtk;
+    this._baseWeaponAtk = attack || 0;
+    this._weight = weight || 0;
     this._baseWeaponMatk = Number(script?.['matk']?.[0]) || 0;
     this._itemSubTypeId = itemSubTypeId;
-    this._baseWeaponLevel = itemLevel;
+    this._baseWeaponLevel = itemLevel || 0;
     this._typeName = WeaponTypeNameMapBySubTypeId[itemSubTypeId];
     this._subTypeName = WeaponSubTypeNameMapById[itemSubTypeId];
     this._rangeType = this._typeName === 'gun' || this._typeName === 'bow' ? 'range' : 'melee';
@@ -140,6 +142,7 @@ export class Weapon {
 
   get data() {
     return {
+      propertyAtk: this._propertyAtk,
       itemSubTypeId: this._itemSubTypeId,
       rangeType: this._rangeType,
       typeName: this._typeName,
@@ -150,6 +153,7 @@ export class Weapon {
       refineBonus: this._refineBonus,
       overUpgradeBonus: this._overUpgradeBonus,
       highUpgradeBonus: this._highUpgradeBonus,
+      weight: this._weight,
     };
   }
 }

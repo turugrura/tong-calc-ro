@@ -8,6 +8,7 @@ import { Weapon } from './weapon';
 import { PoisionPsoEleTable } from './poison-psdo-ele-table';
 import { AllowShieldTable } from './allow-shield-table';
 import { PreparedMonsterModel } from './prepared-monster.model';
+import { SizePenaltyMapper } from './constants/size-penalty-mapper';
 
 // const getItem = (id: number) => items[id] as ItemModel;
 const refinableItemTypes = [
@@ -26,17 +27,6 @@ const refinableItemTypes = [
   ItemTypeEnum.shadowShield,
 ];
 const mainStatuses = ['str', 'dex', 'int', 'agi', 'luk', 'vit'];
-
-const weaponSizePenalty: Record<string, { s: number; m: number; l: number }> = {
-  dagger: { s: 100, m: 75, l: 50 },
-  rod: { s: 100, m: 100, l: 100 },
-  bow: { s: 100, m: 100, l: 75 },
-  katar: { s: 75, m: 100, l: 75 },
-  book: { s: 100, m: 100, l: 50 },
-  instrument: { s: 75, m: 100, l: 75 },
-  whip: { s: 75, m: 100, l: 50 },
-  gun: { s: 100, m: 100, l: 100 },
-};
 
 const isNumber = (n: unknown): n is number => !Number.isNaN(n);
 
@@ -128,7 +118,8 @@ export class Calculator {
   private usedSkillNames = new Set<string>();
   private learnedSkillMap = new Map<string, number>();
   private equipAtkSkillBonus: Record<string, any> = {};
-  private buffBonus: Record<string, any> = {};
+  private buffMasteryAtkBonus: Record<string, any> = {};
+  private buffEquipAtkBonus: Record<string, any> = {};
   private masteryAtkSkillBonus: Record<string, any> = {};
   private consumableBonuses: any[] = [];
   private aspdPotion: number = undefined;
@@ -150,6 +141,7 @@ export class Calculator {
     softMdefPercent: 0,
     aspd: 0,
     aspdPercent: 0,
+    skillAspd: 0,
     atk: 0,
     atkPercent: 0,
     matk: 0,
@@ -351,8 +343,6 @@ export class Calculator {
   private finalMultipliers = [] as number[];
   private finalPhyMultipliers = [] as number[];
   private finalMagicMultipliers = [] as number[];
-
-  private buff: any[] = [];
 
   private dmgReductionByHardDef = 0;
   private dmgReductionByMHardDef = 0;
@@ -599,14 +589,9 @@ export class Calculator {
     } else {
       this.equipItemName.delete(ItemTypeEnum.weapon);
     }
-    this.equipItemNameSet = new Set(this.equipItemName.values());
-    this.mapRefine.set(ItemTypeEnum.weapon, refine);
-    this.weaponData = new Weapon().set(itemData, refine);
 
-    this.mapItemNameRefine = new Map();
-    for (const [itemType, itemName] of this.equipItemName) {
-      this.mapItemNameRefine.set(itemName, this.mapRefine.get(itemType));
-    }
+    this.mapRefine.set(ItemTypeEnum.weapon, refine);
+    this.weaponData.set(itemData, refine);
 
     return this;
   }
@@ -619,7 +604,7 @@ export class Calculator {
     } else {
       this.equipItemName.delete(itemType);
     }
-    this.equipItemNameSet = new Set(this.equipItemName.values());
+
     if (refine != null) {
       this.mapRefine.set(itemType, refine);
     }
@@ -645,8 +630,10 @@ export class Calculator {
     return this;
   }
 
-  setBuffBonus(buffBonus: Record<string, any>) {
-    this.buffBonus = { ...buffBonus };
+  setBuffBonus(params: { masteryAtk: Record<string, any>; equipAtk: Record<string, any> }) {
+    const { masteryAtk, equipAtk } = params;
+    this.buffEquipAtkBonus = { ...equipAtk };
+    this.buffMasteryAtkBonus = { ...masteryAtk };
 
     return this;
   }
@@ -677,9 +664,12 @@ export class Calculator {
 
   loadItemFromModel(model: any) {
     this.model = { ...model };
+    this.weaponData.set({} as any, 0);
     this.equipItem.clear();
     this.equipItemName.clear();
+
     this.mapRefine.clear();
+    this.mapItemNameRefine.clear();
 
     const items = Object.entries(MainItemWithRelations) as [ItemTypeEnum, ItemTypeEnum[]][];
 
@@ -703,11 +693,20 @@ export class Calculator {
       }
     }
 
+    this.equipItemNameSet = new Set(this.equipItemName.values());
+    for (const [itemType, itemName] of this.equipItemName) {
+      this.mapItemNameRefine.set(itemName, this.mapRefine.get(itemType));
+    }
+
     return this;
   }
 
   private isIncludingOverUpgrade() {
     return this.isRangeAtk();
+  }
+
+  get isMaximizeWeapon() {
+    return this.totalEquipStatus['weapon_maximize'] > 0;
   }
 
   private calcWeaponStatusAtk() {
@@ -725,7 +724,7 @@ export class Calculator {
       return this;
     }
 
-    const penalty = weaponSizePenalty[this.weaponData?.data?.typeName]?.[this.monsterData.size];
+    const penalty = SizePenaltyMapper[this.weaponData?.data?.typeName]?.[this.monsterData.size];
     this.sizePenalty = this.toPercent(penalty || 100);
 
     return this;
@@ -768,7 +767,7 @@ export class Calculator {
     const totalMax = formular(weaponSizePenalty + variant, 0);
     const totalMaxOver = formular(weaponSizePenalty + variant, overUpgradeBonus);
 
-    this.totalWeaponAtkMin = totalMin;
+    this.totalWeaponAtkMin = this.isMaximizeWeapon ? totalMax : totalMin;
     this.totalWeaponAtkMax = totalMax;
     this.totalWeaponAtkMaxOver = totalMaxOver;
 
@@ -777,7 +776,7 @@ export class Calculator {
 
   private getEquipAtkFromSkills(atkType: 'atk' | 'matk' = 'atk') {
     let atk = 0;
-    for (const [skillName, scripts] of Object.entries(this.equipAtkSkillBonus)) {
+    for (const [, scripts] of Object.entries(this.equipAtkSkillBonus)) {
       for (const [attr, value] of Object.entries(scripts)) {
         const val = Number(value);
         if (attr === atkType) {
@@ -789,23 +788,9 @@ export class Calculator {
     return atk;
   }
 
-  private getMasteryAtkFromSkills(atkType: 'atk' | 'matk' = 'atk') {
+  private calcBuffMasteryAtk(atkType: 'atk' | 'matk') {
     let atk = 0;
-    for (const [skillName, scripts] of Object.entries(this.masteryAtkSkillBonus)) {
-      for (const [attr, value] of Object.entries(scripts)) {
-        const val = Number(value);
-        if (attr === atkType) {
-          atk += val;
-        }
-      }
-    }
-
-    return atk;
-  }
-
-  private getBuffAtk(atkType: 'atk' | 'matk' = 'atk') {
-    let atk = 0;
-    for (const [skillName, scripts] of Object.entries(this.buffBonus)) {
+    for (const [, scripts] of Object.entries(this.buffMasteryAtkBonus)) {
       for (const [attr, value] of Object.entries(scripts)) {
         const val = Number(value);
         if (attr === atkType) {
@@ -917,8 +902,9 @@ export class Calculator {
       .map((a) => Number(a.atk || a[`atk_race_${race}`] || a[`atk_element_${element}`] || a[`atk_size_${size}`]))
       .filter((a) => Number.isNaN(a) === false)
       .reduce((sum, m) => sum + m, 0);
+    const buffAtk = this.calcBuffMasteryAtk('atk');
 
-    this.totalMasteryAtk = skillAtk;
+    this.totalMasteryAtk = skillAtk + buffAtk;
   }
 
   private calcMasteryMatk() {
@@ -962,6 +948,14 @@ export class Calculator {
     this.totalMaxAtkOver = totalMaxAtkOver;
 
     return this;
+  }
+
+  /**
+   * Ex. Power Thrust
+   * @returns number
+   */
+  private calcFlatAtkPercent() {
+    return this.totalEquipStatus['flatAtkPercent'] || 0;
   }
 
   private calcTotalPene() {
@@ -1015,7 +1009,7 @@ export class Calculator {
     const hardDef = this.dmgReductionByHardDef;
     const { range, melee, dmg } = this.totalEquipStatus;
     const rangedMultiplier = this.isRangeAtk() ? range : melee;
-    const dmgMultiplier = dmg;
+    const dmgMultiplier = dmg + this.calcFlatAtkPercent();
 
     const formula = (totalAtk: number) => {
       const rangedApplied = this.floor(totalAtk * this.toPercent(rangedMultiplier + 100));
@@ -1038,7 +1032,7 @@ export class Calculator {
     const hardDef = this.dmgReductionByHardDef;
     const { range, melee, criDmg, dmg } = this.totalEquipStatus;
     const rangedMultiplier = this.isRangeAtk() ? range : melee;
-    const dmgMultiplier = dmg;
+    const dmgMultiplier = dmg + this.calcFlatAtkPercent();
 
     const formula = (totalAtk: number) => {
       const criApplied = this.floor(totalAtk * this.toPercent((criDmg || 0) + 100));
@@ -1084,8 +1078,7 @@ export class Calculator {
         return this.toPreventNegativeDmg(finalApplied);
       }
 
-      const criApplied = this.floor(totalAtk * criMultiplier);
-      const rangedApplied = this.floor(criApplied * this.toPercent(rangedMultiplier + 100));
+      const rangedApplied = this.floor(totalAtk * this.toPercent(rangedMultiplier + 100));
       const dmgMultiApplied = this.floor(rangedApplied * this.toPercent(dmgMultiplier + 100));
       const baseSkillApplied = this.floor(dmgMultiApplied * baseSkillMultiplier);
       const equipSkillApplied = this.floor(baseSkillApplied * equipSkillMultiplier);
@@ -1096,7 +1089,7 @@ export class Calculator {
       return this.toPreventNegativeDmg(finalApplied);
     };
 
-    const skillHit = skillData.hit || 1;
+    // const skillHit = skillData.hit || 1;
     // this.possiblyDamages = canCri
     //   ? []
     //   : Array.from({ length: this.totalWeaponAtkMax - this.totalWeaponAtkMin - 1 }).map((_, i) => {
@@ -1688,10 +1681,20 @@ export class Calculator {
       }
     }
 
-    for (const [buffName, scripts] of Object.entries(this.buffBonus)) {
+    for (const [buffName, scripts] of Object.entries(this.buffEquipAtkBonus)) {
       for (const [attr, value] of Object.entries(scripts)) {
         const val = Number(value);
         // if (attr === 'atk' || attr === 'matk') val = 0;
+
+        this.equipStatus[buffName] = { ...this.allStatus, [attr]: val };
+
+        updateTotalStatus(attr, value);
+      }
+    }
+    for (const [buffName, scripts] of Object.entries(this.buffMasteryAtkBonus)) {
+      for (const [attr, value] of Object.entries(scripts)) {
+        const val = Number(value);
+        if (attr === 'atk' || attr === 'matk') continue;
 
         this.equipStatus[buffName] = { ...this.allStatus, [attr]: val };
 
@@ -1742,6 +1745,8 @@ export class Calculator {
     if (this.weaponData.data.typeName === 'bow') {
       this.totalEquipStatus.range += this.totalEquipStatus.bowRange || 0;
     }
+
+    this.model.propertyAtk = this.model.propertyAtk || this.weaponData?.data?.propertyAtk || ElementType.Neutral;
 
     this._class.setAdditionalBonus({
       model: this.model,
@@ -1845,14 +1850,16 @@ export class Calculator {
 
     if (isValidSkill) {
       const { formular, cri, canCri, element, isMatk, totalHit = 1 } = skillData;
-      const baseSkillDamage = formular({
-        baseLevel: this.model.level,
-        skillLevel: Number(skillLevel),
-        usedSkillSet: this.usedSkillNames,
-        extra: { ...this.status },
-      });
+      const baseSkillDamage =
+        formular({
+          baseLevel: this.model.level,
+          skillLevel: Number(skillLevel),
+          usedSkillSet: this.usedSkillNames,
+          extra: { ...this.status },
+          weapon: this.weaponData,
+        }) + this.calcFlatAtkPercent();
       this.propertySkill = element || this.model.propertyAtk || ElementType.Neutral;
-      this.baseSkillDamage = baseSkillDamage;
+      this.baseSkillDamage = this.floor(baseSkillDamage);
       this.isMagicalSkill = isMatk;
       this.skillTotalHits = totalHit;
 
@@ -1876,13 +1883,15 @@ export class Calculator {
       const hitPerSecs = Math.min(skillHitPersecs, this.hitPerSecs);
       this.criRateSkillToMonster = canCri ? Math.max(0, this.totalCri + (cri || 0) - criShield) : 0;
 
-      this.skillDps = this.calcDps({
-        min: minDamage,
-        max: maxDamage,
-        cri: this.criRateSkillToMonster,
-        criDmg: maxDamage,
-        hitPerSecs,
-      });
+      this.skillDps =
+        totalHit *
+        this.calcDps({
+          min: minDamage,
+          max: maxDamage,
+          cri: this.criRateSkillToMonster,
+          criDmg: maxDamage,
+          hitPerSecs,
+        });
       const hitKill = Math.ceil(this.monster.stats.health / minDamage);
       this.damageSummary = {
         ...this.damageSummary,
@@ -1907,11 +1916,12 @@ export class Calculator {
     this.totalAspd = this._class.calcAspd({
       potionAspd: this.aspdPotion,
       potionAspdPercent: 0,
-      skillAspd: 0,
+      skillAspd: this.totalEquipStatus.skillAspd || 0,
       skillAspdPercent: 0,
       totalAgi: this.model.agi + this.model.jobAgi + this.totalEquipStatus.agi,
       totalDex: this.model.dex + this.model.jobDex + this.totalEquipStatus.dex,
       weapon: this.weaponData,
+      isEquipShield: this.model.shield > 0,
       aspd: this.totalEquipStatus.aspd,
       aspdPercent: this.totalEquipStatus.aspdPercent,
     });

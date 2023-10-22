@@ -20333,7 +20333,7 @@
       "m_my_element_neutral": [
         "100"
       ],
-      "ลดความต้านทานต่อการโจมตีทุกธาตุ": [
+      "ได้รับความเสียหายจากการโจมตีทุกธาตุเพิ่มขึ้น": [
         "30"
       ]
     }
@@ -20429,10 +20429,12 @@
         "15"
       ],
       "m_size_m": [
-        "20"
+        "20",
+        "EQUIP[Mutating White Knight Card]5"
       ],
       "m_size_l": [
-        "20"
+        "20",
+        "EQUIP[Mutating White Knight Card]5"
       ]
     }
   },
@@ -21018,6 +21020,90 @@
     "script": {
       "cd__Axe Tornado": [
         "1"
+      ]
+    }
+  },
+  "28106": {
+    "id": 28106,
+    "aegisName": "Scarlet_Twohand_Axe",
+    "name": "Two-Handed Axe of Crimson [2]",
+    "unidName": "Axe",
+    "resName": "진홍의투핸드액스",
+    "description": "ขวานสองมือที่เปล่งแสงสีแดง\nเพิ่ม ATK เท่ากับ (ระดับ Refine*ระดับ Refine) (สามารถ Refine ได้ถึง 15)\nตัวละครเลเวล 70 ขึ้นไป : ทุกครั้งที่ BaseLv เพิ่มขึ้น 10 เลเวล จะเพิ่ม ATK ทีละ +5 \nไม่สามารถทำลายได้\nประเภท : ^777777Two-Handed Axe^000000 โจมตี : ^777777200^000000\nน้ำหนัก : ^777777200^000000\nเลเวลอาวุธ : ^7777773^000000\nเลเวลที่ต้องการ : ^77777770^000000\nอาชีพที่ใส่ได้ : ^777777 Swordman / Merchant^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 262,
+    "itemLevel": 3,
+    "attack": 200,
+    "defense": null,
+    "weight": 200,
+    "requiredLevel": 70,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Swordman",
+      "Merchant"
+    ],
+    "script": {
+      "atk": [
+        "1===1",
+        "2===3",
+        "3===5",
+        "4===7",
+        "5===9",
+        "6===11",
+        "7===13",
+        "8===15",
+        "9===17",
+        "10===19",
+        "11===21",
+        "12===23",
+        "13===25",
+        "14===27",
+        "15===29",
+        "level:80===5",
+        "level:90===5",
+        "level:100===5",
+        "level:110===5",
+        "level:120===5",
+        "level:130===5",
+        "level:140===5",
+        "level:150===5",
+        "level:160===5",
+        "level:170===5",
+        "level:180===5"
+      ]
+    }
+  },
+  "28120": {
+    "id": 28120,
+    "aegisName": "Probation_TH_Axe",
+    "name": "Probation Mechanic Two-Handed Axe [1]",
+    "unidName": "Two-Handed Axe",
+    "resName": "워액스",
+    "description": "^ff0000ไอเท็มชนิดนี้ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้^000000\n Two-Handed Axe ของ Mechanic ที่ค่อนข้างคุ้นเคยกับขวาน\nเมื่อสวมใส่กับอุปกรณ์ป้องกัน Toughen Time Keeper รู้สึกได้ถึงความบางเบาแทบจะบินได้\nไม่สามารถทำลายได้\nเพิ่มพลังโจมตีของ Axe Tornado 20%\nทุกการเพิ่มขึ้นของ Base Lv. 10 ขั้น เพิ่ม ATK +6(ปริมาณการเพิ่มขึ้นจะสูงสุดจนถึง Base Lv. 160).\nเมื่ออัพเกรดขั้น 7, ทุกๆ 1 Lv. ของสกิล Weaponry Research ลด Cooltime Skill Axe Tornado ลง 0.1 วินาที\n\nเมื่อสวมใส่ Toughen Time Keeper Hat, Robe, Manteau, Boots ทั้งหมดด้วยกัน\nASPD + 2, MHP/MSP + 10%\nทุกๆ Base VIT 10 เพิ่มความทนทานต่อพลังโจมตีธาตุ Neutral +3%\n(Base VIT สูงสุด ใช้งานได้ถึง 100)\nทุกๆ Base AGI 10 ดีเลย์หลังโจมตีลดลง 2%\n(Base AGI สูงสุด ใช้งานได้ถึง 100)\nทุกๆ Base DEX 10 เพิ่ม HIT + 3\n(Base DEX สูงสุด ใช้งานได้ถึง 100)\nทุกๆ Base LUK 10 เพิ่ม CRI + 3\n(Base LUK สูงสุด ใช้งานได้ถึง 100)\nประเภท : ^777777Two-Handed Axe^000000 พลังโจมตี : ^777777200^000000\nน้ำหนัก : ^7777770^000000\nเลเวลอาวุธ : ^7777773^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่สวมใส่ : ^777777Mechanic Cls^000000",
+    "slots": 1,
+    "itemTypeId": 1,
+    "itemSubTypeId": 262,
+    "itemLevel": 3,
+    "attack": 200,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "Axe Tornado": [
+        "20"
+      ],
+      "cd__Axe Tornado": [
+        "REFINE[7]LEARN_SKILL[Weaponry Research==1]---0.1"
+      ],
+      "atk": [
+        "level:10---6"
       ]
     }
   },
@@ -23414,6 +23500,105 @@
       ],
       "sp__Triangle Shot": [
         "EQUIP[Stalker Stone (Lower)]10"
+      ]
+    }
+  },
+  "29481": {
+    "id": 29481,
+    "aegisName": "Mechanic_Top",
+    "name": "Mastersmith Stone (Upper)",
+    "unidName": "Mastersmith Stone (Upper)",
+    "resName": "상인피규어",
+    "description": "ทุก ๆ การเรียนรู้สกิล Weaponry Research 1 Level ATK+ 2",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 71,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "atk": [
+        "LEARN_SKILL[Weaponry Research==1]---2"
+      ]
+    }
+  },
+  "29482": {
+    "id": 29482,
+    "aegisName": "Mechanic_Middle",
+    "name": "Mastersmith Stone (Middle)",
+    "unidName": "Mastersmith Stone (Middle)",
+    "resName": "상인피규어",
+    "description": "ทุก ๆ การเรียนรู้สกิล Skin Tempering 1 Level HIT+ 3",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 72,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "hit": [
+        "LEARN_SKILL[Skin Tempering==1]---3"
+      ]
+    }
+  },
+  "29483": {
+    "id": 29483,
+    "aegisName": "Mechanic_Bottom",
+    "name": "Mastersmith Stone (Lower)",
+    "unidName": "Mastersmith Stone (Lower)",
+    "resName": "상인피규어",
+    "description": "เพิ่มดาเมจของสกิล Cart Termination 20%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 73,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "Cart Termination": [
+        "20"
+      ]
+    }
+  },
+  "29484": {
+    "id": 29484,
+    "aegisName": "Mechanic_Robe",
+    "name": "Mechanic Stone (Garment)",
+    "unidName": "Mechanic Stone (Garment)",
+    "resName": "White_Smith_Figure",
+    "description": "เพิ่มดาเมจของสกิล Axe Tornado 15%\nเมื่อใช้ร่วมกับ Mastersmith Stone (Upper) มีโอกาส 2% ที่จะได้รับ SP เพิ่มขึ้น 1% เมื่อทำการโจมตีทางกายภาพ\nเมื่อใช้ร่วมกับ Mastersmith Stone (Middle) ลด Cooldown ของสกิล Axe Tornado 1 วินาที\nเมื่อใช้ร่วมกับ Mastersmith Stone (Lower) เพิ่มดาเมจของสกิล  Axe Tornado 15%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 74,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "Axe Tornado": [
+        "15",
+        "EQUIP[Mastersmith Stone (Lower)]15"
+      ],
+      "chance__spRegen": [
+        "EQUIP[Mastersmith Stone (Upper)]1"
+      ],
+      "cd__Axe Tornado": [
+        "EQUIP[Mastersmith Stone (Middle)]1"
       ]
     }
   },
@@ -29221,6 +29406,55 @@
       ],
       "p_race_all": [
         "EQUIP[Old Bone Circlet]10"
+      ]
+    }
+  },
+  "490239": {
+    "id": 490239,
+    "aegisName": "Record_Merchant_TH",
+    "name": "Record of Merchant [1]",
+    "unidName": "Record of Merchant",
+    "resName": "연구원기록표",
+    "description": "บันทึกการสำรวจของกลุ่มพ่อค้าที่เข้าไปสำรวจยังพื้นที่ Tomb of Honor เป็นรายการบันทึกที่ดูเหมือนว่าเนื้อหาจะขาดหายไปบางส่วน\n\nลด Delay หลังใช้สกิล 5%\nทุก ๆ การเรียนรู้ Mammonite 2 เลเวล เพิ่ม Damage ทางกายภาพและเวทมนตร์ต่อศัตรูทุกประเภท 3%\n\nเมื่อสวมใส่ร่วมกับ Old Driver Band (Red),\nลด Cooldown สกิล Axe Boomerang 0.5 วินาที\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 10%\n\nเมื่อสวมใส่ร่วมกับ Old Driver Band (Yellow),\nลดระยะเวลาร่ายแบบแปรผันของสกิล Arm Cannon 50%\nลด Delay หลังใช้สกิล 5%\n\nเมื่อสวมใส่ร่วมกับ Old Midas Whisper,\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 10%\nลด Cooldown สกิล Spore Explosion 2 วินาที\nเพิ่ม Damage สกิล Spore Explosion 40%\nประเภท : ^777777Accessory^000000  พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Merchant Cls^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 517,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Merchant Cls"
+    ],
+    "script": {
+      "acd": [
+        "5",
+        "EQUIP[Old Driver Band (Yellow)]5"
+      ],
+      "p_class_all": [
+        "LEARN_SKILL[Mammonite==2]---3"
+      ],
+      "m_class_all": [
+        "LEARN_SKILL[Mammonite==2]---3"
+      ],
+      "cd__Axe Boomerang": [
+        "EQUIP[Old Driver Band (Red)]0.5"
+      ],
+      "p_size_all": [
+        "EQUIP[Old Driver Band (Red)]10",
+        "EQUIP[Old Midas Whisper]10"
+      ],
+      "vct__Arm Cannon": [
+        "EQUIP[Old Driver Band (Yellow)]50"
+      ],
+      "cd__Spore Explosion": [
+        "EQUIP[Old Midas Whisper]2"
+      ],
+      "Spore Explosion": [
+        "EQUIP[Old Midas Whisper]40"
       ]
     }
   },

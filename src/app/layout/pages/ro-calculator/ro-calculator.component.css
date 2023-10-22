@@ -189,6 +189,18 @@
   color: var(--red-300);
 }
 
+.monster_hilight_label {
+  background-color: #121212;
+  color: var(--red-500);
+  width: 75px;
+}
+
+.skill_hilight_label {
+  background-color: #121212;
+  color: var(--yellow-500);
+  width: 60px;
+}
+
 .dropdown_monster_group_label {
   background-color: var(--green-900);
   color: white;

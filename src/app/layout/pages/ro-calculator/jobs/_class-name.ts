@@ -4,10 +4,13 @@ export enum ClassName {
   Wanderer = 'Wanderer',
   Dance = 'Dance',
   Minstrel = 'Minstrel',
-  Hunter = 'Hunter',
+  Sniper = 'Sniper',
   Ranger = 'Ranger',
 
+  Merchant = 'Merchant',
+  Whitesmith = 'Whitesmith',
   Mechanic = 'Mechanic',
+  Creator = 'Creator',
   Genetic = 'Genetic',
 
   ArchBishop = 'ArchBishop',

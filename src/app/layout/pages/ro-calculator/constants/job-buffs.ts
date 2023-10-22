@@ -48,6 +48,34 @@ export const JobBuffs: ActiveSkillModel[] = [
     ],
   },
   {
+    label: 'Crazy Uproar',
+    name: 'Crazy Uproar',
+    inputType: 'selectButton',
+    isMasteryAtk: true,
+    dropdown: [
+      { label: 'Yes', value: 1, skillLv: 1, isUse: true, bonus: { str: 4, atk: 30 } },
+      { label: 'No', value: 0, isUse: false },
+    ],
+  },
+  {
+    label: 'Adrenaline Lv5',
+    name: 'Adrenaline Rush',
+    inputType: 'selectButton',
+    dropdown: [
+      { label: 'Yes', value: 5, skillLv: 5, isUse: true, bonus: { hit: 20, skillAspd: 5 } },
+      { label: 'No', value: 0, isUse: false },
+    ],
+  },
+  {
+    label: 'Power Thrust Lv5',
+    name: 'Power Thrust',
+    inputType: 'selectButton',
+    dropdown: [
+      { label: 'Yes', value: 5, skillLv: 5, isUse: true, bonus: { flatAtkPercent: 15 } },
+      { label: 'No', value: 0, isUse: false },
+    ],
+  },
+  {
     inputType: 'selectButton',
     label: 'Weapon Perfect Lv5',
     name: 'Weapon Perfection',

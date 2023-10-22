@@ -27,6 +27,7 @@ import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { PresetTableComponent } from './preset-table/preset-table.component';
 import { ClassID } from './jobs/_class-name';
 import { JobBuffs } from './constants/job-buffs';
+import { Mechanic } from './jobs/mechanic';
 
 const sortObj = <T>(field: keyof T) => {
   return (a: T, b: T) => {
@@ -95,7 +96,7 @@ const Characters: DropdownModel[] = [
   { label: ClassID[4], value: 4, instant: new ShadowChaser() },
   { label: ClassID[6], value: 6, instant: new Warlock() },
   { label: ClassID[8], value: 8, instant: new Sorcerer() },
-  // { label: ClassID[10],value: 10, instant: new Machanic() },
+  { label: ClassID[10], value: 10, instant: new Mechanic() },
   // { label: ClassID[9],value: 9, instant: new Genetic() },
   { label: ClassID[3], value: 3, instant: new SoulReaper() },
   { label: ClassID[1], value: 1, instant: new Rebelion() },
@@ -184,14 +185,16 @@ const createExtraOptionList = () => {
   const options: [string, string, number, number][] = [
     ['Atk', 'atk', 1, 65],
     ['Atk %', 'atkPercent', 1, 30],
+    ['Matk', 'matk', 1, 65],
+    ['Matk %', 'matkPercent', 1, 30],
     ['Range', 'range', 1, 30],
+    ['Melee', 'melee', 1, 30],
     ['Cri Dmg', 'criDmg', 1, 30],
     ['ASPD %', 'aspdPercent', 1, 30],
     ['Delay', 'acd', 1, 30],
-    ['Matk', 'matk', 1, 65],
-    ['Matk %', 'matkPercent', 1, 30],
     ['VCT', 'vct', 1, 30],
     ['CRI', 'cri', 1, 30],
+    ['All Stat', 'allStatus', 1, 30],
   ];
 
   const VAL_CAP = 10;
@@ -408,7 +411,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     shadowPendant: undefined,
     shadowPendantRefine: undefined,
 
-    bishopBuffs: [],
+    skillBuffs: [],
 
     activeSkills: [],
     passiveSkills: [],
@@ -822,7 +825,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
   private prepare(calculator: Calculator, compareModel?: any) {
     const { activeSkills, passiveSkills, selectedAtkSkill } = this.model;
-    const { equipAtks, masteryAtks, skillNames, learnedSkillMap } = this.selectedCharacter
+    const { equipAtks, masteryAtks, activeSkillNames, learnedSkillMap } = this.selectedCharacter
       .setLearnSkills({
         activeSkillIds: activeSkills,
         passiveSkillIds: passiveSkills,
@@ -836,12 +839,17 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       .filter((id) => !usedSupBattlePill || (usedSupBattlePill && id !== 12791))
       .map((id) => this.items[id].script);
 
-    const buffs = {};
+    const buffEquips = {};
+    const buffMasterys = {};
     this.skillBuffs.forEach((skillBuff, i) => {
-      const buffVal = this.model.bishopBuffs[i];
+      const buffVal = this.model.skillBuffs[i];
       const buff = skillBuff.dropdown.find((a) => a.value === buffVal);
-      if (buff?.isUse) {
-        buffs[skillBuff.name] = buff.bonus;
+      if (buff?.isUse && !activeSkillNames.has(skillBuff.name)) {
+        if (skillBuff.isMasteryAtk) {
+          buffMasterys[skillBuff.name] = buff.bonus;
+        } else {
+          buffEquips[skillBuff.name] = buff.bonus;
+        }
       }
     });
 
@@ -858,12 +866,12 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       .setClass(this.selectedCharacter)
       .setMonster(this.monsterDataMap[this.selectedMonster])
       .setEquipAtkSkillAtk(equipAtks)
-      .setBuffBonus(buffs)
+      .setBuffBonus({ masteryAtk: buffMasterys, equipAtk: buffEquips })
       .setMasterySkillAtk(masteryAtks)
       .setConsumables(consumeData)
       .setAspdPotion(aspdPotion)
       .setExtraOptions(this.getOptionScripts(compareModel != null))
-      .setUsedSkillNames(skillNames)
+      .setUsedSkillNames(activeSkillNames)
       .setLearnedSkills(learnedSkillMap)
       .prepareAllItemBonus()
       .calcAllDefs()
@@ -1275,6 +1283,13 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
   private setSkillModelArray() {
     const { activeSkills, passiveSkills } = this.selectedCharacter;
+
+    this.model.skillBuffs = this.skillBuffs.map((skill, i) => {
+      const savedVal = this.model.skillBuffs[i];
+      const found = skill.dropdown.find((a) => a.value === savedVal);
+
+      return found ? savedVal : 0;
+    });
     this.model.activeSkills = activeSkills.map((skill, i) => {
       const savedVal = this.model.activeSkills[i];
       const found = skill.dropdown.find((a) => a.value === savedVal);

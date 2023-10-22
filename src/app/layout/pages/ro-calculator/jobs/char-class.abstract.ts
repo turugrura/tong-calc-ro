@@ -88,7 +88,7 @@ export abstract class CharacterBase {
   protected activeSkillIds: number[] = [];
   protected passiveSkillIds: number[] = [];
   protected bonuses: {
-    skillNames: Set<string>;
+    activeSkillNames: Set<string>;
     equipAtks: Record<string, any>;
     masteryAtks: Record<string, any>;
     learnedSkillMap: Map<string, number>;
@@ -140,7 +140,7 @@ export abstract class CharacterBase {
   getSkillBonusAndName() {
     const equipAtks: Record<string, any> = {};
     const masteryAtks: Record<string, any> = {};
-    const skillNames = new Set<string>();
+    const activeSkillNames = new Set<string>();
     const learnedSkillMap = new Map<string, number>();
     const usedSkillMap = new Map<string, number>();
 
@@ -149,7 +149,7 @@ export abstract class CharacterBase {
       if (!isUse) return;
 
       usedSkillMap.set(skill.name, skillLv ?? Number(value));
-      skillNames.add(skill.name);
+      activeSkillNames.add(skill.name);
       if (!bonus) return;
 
       const { isMasteryAtk } = skill;
@@ -176,9 +176,9 @@ export abstract class CharacterBase {
       }
     });
 
-    this.bonuses = { skillNames, equipAtks, masteryAtks, learnedSkillMap, usedSkillMap };
+    this.bonuses = { activeSkillNames, equipAtks, masteryAtks, learnedSkillMap, usedSkillMap };
 
-    return { skillNames, equipAtks, masteryAtks, learnedSkillMap, usedSkillMap };
+    return { activeSkillNames, equipAtks, masteryAtks, learnedSkillMap, usedSkillMap };
   }
 
   private calcBaseAspd(weaponSubType: string): { baseAspd: number; shieldPenalty: number } {
@@ -199,6 +199,19 @@ export abstract class CharacterBase {
     this.classNames = [...classNames, ...this.classNames];
   }
 
+  protected calcHiddenMasteryAtk(_: InfoForClass) {
+    const bonuses = this.bonuses?.masteryAtks || {};
+
+    let totalAtk = 0;
+    let totalMatk = 0;
+    for (const [, bonus] of Object.entries(bonuses)) {
+      totalAtk += bonus[`x_atk`] || 0;
+      totalMatk += bonus[`x_matk`] || 0;
+    }
+
+    return { totalAtk, totalMatk };
+  }
+
   calcAspd(a: AspdInput): number {
     const potion = { 645: 4, 656: 6, 657: 9 };
     const { weapon, isEquipShield, aspd, aspdPercent, totalAgi, totalDex, potionAspd, skillAspd } = a;
@@ -210,18 +223,22 @@ export abstract class CharacterBase {
     const statAspd = Math.sqrt((totalAgi * totalAgi) / 2 + (totalDex * totalDex) / (isRange ? 7 : 5)) / 4;
     const potionSkillAspd = ((aspdByPotion + skillAspd) * totalAgi) / 200;
     const rawCalcAspd = Math.floor(statAspd + potionSkillAspd + (isEquipShield ? shieldPenalty : 0));
+
     const baseAspd2 = baseAspd + rawCalcAspd;
     const equip = Math.floor((195 - baseAspd2) * (aspdPercent * 0.01));
     const final = Math.min(baseAspd2 + equip + aspd, 193);
 
     // console.log({
     //   weapon,
+    //   totalAgi,
+    //   totalDex,
     //   baseAspd,
     //   aspd,
     //   aspdPercent,
     //   shieldPenalty,
     //   statAspd,
     //   potionSkillAspd,
+    //   skillAspd,
     //   rawCalcAspd,
     //   baseAspd2,
     //   equip,
