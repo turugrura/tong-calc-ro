@@ -2703,9 +2703,9 @@
             </div>
           </div>
 
-          <!-- Passive Skills -->
+          <!-- Learned Skills -->
           <div class="col-4" [hidden]="passiveSkills.length === 0">
-            <p-tag severity="warning" value="Passive skills"></p-tag>
+            <p-tag severity="warning" value="Learnable skills"></p-tag>
             <div class="grid grid-nogutter">
               <div *ngFor="let passiveSkill of passiveSkills; let i = index" class="col-12">
                 <div [ngSwitch]="passiveSkill.inputType">

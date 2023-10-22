@@ -627,8 +627,8 @@ export class Calculator {
     return this;
   }
 
-  setUsedSkillNames(usedSkillNames: string[]) {
-    this.usedSkillNames = new Set(usedSkillNames);
+  setUsedSkillNames(usedSkillNames: Set<string>) {
+    this.usedSkillNames = usedSkillNames;
 
     return this;
   }

@@ -1251,7 +1251,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         }),
         finalize(() => {
           this.isInProcessingPreset = false;
-          if (fromCurrentModel) {
+          if (!fromCurrentModel) {
             this.messageService.add({
               severity: 'success',
               summary: 'Loaded',
