@@ -22,6 +22,7 @@ import { ShadowChaser } from './jobs/shadow-chaser';
 import { GitCross } from './jobs/git-cross';
 import { ArchBishop } from './jobs/arch-bishop';
 import { Warlock } from './jobs/warlock';
+import { Sorcerer } from './jobs/sorcerer';
 import { OverlayPanel } from 'primeng/overlaypanel';
 
 const sortObj = <T>(field: keyof T) => {
@@ -81,13 +82,20 @@ interface MonsterSelectItemGroup extends SelectItemGroup {
 }
 
 const Characters: DropdownModel[] = [
-  { label: 'Rebelion', value: 1, instant: new Rebelion() },
-  { label: 'Ranger', value: 2, instant: new Ranger() },
-  { label: 'Soul Reaper', value: 3, instant: new SoulReaper() },
-  { label: 'SC', value: 4, instant: new ShadowChaser() },
-  { label: 'Git Cross', value: 5, instant: new GitCross() },
-  { label: 'Warlock', value: 6, instant: new Warlock() },
+  // { label: 'Royal Guard', value: 11, instant: new RoyalGuard() },
+  // { label: 'Rune Knight', value: 12, instant: new RuneKnight() },
   { label: 'Arch Bishop', value: 7, instant: new ArchBishop() },
+  { label: 'Ranger', value: 2, instant: new Ranger() },
+  // { label: 'Minstrel', value: 21, instant: new Minstrel() },
+  // { label: 'Wanderer', value: 22, instant: new Wanderer() },
+  { label: 'Git Cross', value: 5, instant: new GitCross() },
+  { label: 'SC', value: 4, instant: new ShadowChaser() },
+  { label: 'Warlock', value: 6, instant: new Warlock() },
+  { label: 'Sorcerer', value: 8, instant: new Sorcerer() },
+  // { label: 'Machanic', value: 10, instant: new Machanic() },
+  // { label: 'Genetic', value: 9, instant: new Genetic() },
+  { label: 'Soul Reaper', value: 3, instant: new SoulReaper() },
+  { label: 'Rebelion', value: 1, instant: new Rebelion() },
 ];
 
 const toDropdownList = <T extends Record<string, any>>(
@@ -706,7 +714,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         debounceTime(250),
       )
       .subscribe(() => {
-        const model2 = { rawOptionTxts: [] } as ClassModel;
+        const model2 = { rawOptionTxts: this.model2.rawOptionTxts || [] } as ClassModel;
         const equipItemIdItemTypeMap2 = new Map<ItemTypeEnum, number>();
 
         this.showCompareItemMap = (this.compareItemNames || [])
@@ -734,7 +742,6 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
             if (!hasMainItem) return agg;
 
-            model2.rawOptionTxts.push(...(this.model2.rawOptionTxts || []));
             model2[`${itemTypeName}Refine`] = this.model2[`${itemTypeName}Refine`] || 0;
 
             return agg;
@@ -851,10 +858,12 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
   private prepare(calculator: Calculator, compareModel?: any) {
     const { activeSkills, passiveSkills, selectedAtkSkill } = this.model;
-    const { equipAtks, masteryAtks, skillNames, learnedSkillMap } = this.selectedCharacter.getSkillBonusAndName({
-      activeIds: activeSkills,
-      passiveIds: passiveSkills,
-    });
+    const { equipAtks, masteryAtks, skillNames, learnedSkillMap } = this.selectedCharacter
+      .setLearnSkills({
+        activeSkillIds: activeSkills,
+        passiveSkillIds: passiveSkills,
+      })
+      .getSkillBonusAndName();
 
     const { consumables, consumables2, aspdPotion, aspdPotions } = this.model;
     const usedSupBattlePill = consumables.includes(12792);

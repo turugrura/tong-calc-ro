@@ -1,4 +1,5 @@
 import { ElementType } from '../element-type.const';
+import { InfoForClass } from '../info-for-class.model';
 import { Weapon } from '../weapon';
 import { AspdTable } from './_aspd-table';
 import { ClassName } from './_class-name';
@@ -82,6 +83,10 @@ export abstract class CharacterBase {
   protected abstract _activeSkillList: ActiveSkillModel[];
   protected abstract _passiveSkillList: PassiveSkillModel[];
 
+  protected learnSkillMap = new Map<string, number>();
+  protected activeSkillIds: number[] = [];
+  protected passiveSkillIds: number[] = [];
+
   /**
    * For item bonus condition
    */
@@ -112,15 +117,26 @@ export abstract class CharacterBase {
     return this.initialStatusPoint;
   }
 
-  getSkillBonusAndName(params: { activeIds: number[]; passiveIds: number[] }) {
+  setLearnSkills(a: { activeSkillIds: number[]; passiveSkillIds: number[] }) {
+    const { activeSkillIds, passiveSkillIds } = a;
+    this.activeSkillIds = [...activeSkillIds];
+    this.passiveSkillIds = [...passiveSkillIds];
+
+    this.passiveSkillIds.forEach((skillLvl, idx) => {
+      this.learnSkillMap.set(this.passiveSkills[idx].name, skillLvl);
+    });
+
+    return this;
+  }
+
+  getSkillBonusAndName() {
     const equipAtks: Record<string, any> = {};
     const masteryAtks: Record<string, any> = {};
     const skillNames = [];
     const learnedSkillMap = new Map<string, number>();
 
-    const { activeIds, passiveIds } = params;
     this._activeSkillList.forEach((skill, index) => {
-      const { bonus, isUse, skillLv, value } = skill.dropdown.find((x) => x.value === activeIds[index]) ?? {};
+      const { bonus, isUse, skillLv, value } = skill.dropdown.find((x) => x.value === this.activeSkillIds[index]) ?? {};
       if (!isUse) return;
 
       learnedSkillMap.set(skill.name, skillLv ?? Number(value));
@@ -137,7 +153,7 @@ export abstract class CharacterBase {
 
     this._passiveSkillList.forEach((skill, index) => {
       const { bonus, isUse, value, skillLv } =
-        (skill.dropdown as any[]).find((x) => x.value === passiveIds[index]) ?? {};
+        (skill.dropdown as any[]).find((x) => x.value === this.passiveSkillIds[index]) ?? {};
       if (!isUse) return;
 
       learnedSkillMap.set(skill.name, skillLv ?? Number(value));
@@ -229,5 +245,9 @@ export abstract class CharacterBase {
 
   getMasteryAtk(a: any) {
     return 0;
+  }
+
+  setAdditionalBonus(params: InfoForClass) {
+    return params.totalBonus;
   }
 }

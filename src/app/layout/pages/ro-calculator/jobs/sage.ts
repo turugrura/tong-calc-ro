@@ -2,73 +2,7 @@ import { ClassName } from './_class-name';
 import { ActiveSkillModel, AtkSkillModel, CharacterBase, PassiveSkillModel } from './char-class.abstract';
 import { Mage } from './mage';
 
-const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
-  '1': [0, 0, 0, 1, 0, 0],
-  '2': [0, 0, 0, 1, 0, 0],
-  '3': [0, 1, 0, 1, 0, 0],
-  '4': [0, 1, 1, 1, 0, 0],
-  '5': [0, 1, 1, 1, 0, 0],
-  '6': [0, 2, 1, 1, 0, 0],
-  '7': [0, 2, 1, 1, 0, 0],
-  '8': [0, 2, 1, 2, 0, 0],
-  '9': [0, 2, 1, 2, 0, 0],
-  '10': [0, 2, 1, 2, 0, 0],
-  '11': [0, 2, 2, 2, 0, 0],
-  '12': [0, 2, 2, 2, 0, 0],
-  '13': [0, 3, 2, 2, 0, 0],
-  '14': [0, 3, 2, 2, 0, 0],
-  '15': [0, 3, 2, 3, 0, 0],
-  '16': [0, 3, 2, 3, 0, 0],
-  '17': [0, 3, 2, 3, 0, 1],
-  '18': [0, 3, 3, 3, 0, 1],
-  '19': [0, 3, 3, 3, 0, 1],
-  '20': [0, 3, 3, 3, 1, 1],
-  '21': [0, 3, 3, 3, 1, 1],
-  '22': [0, 4, 3, 3, 1, 1],
-  '23': [0, 4, 3, 3, 1, 1],
-  '24': [0, 4, 3, 4, 1, 1],
-  '25': [0, 4, 3, 4, 2, 1],
-  '26': [0, 4, 3, 4, 2, 1],
-  '27': [0, 4, 3, 4, 3, 1],
-  '28': [0, 4, 3, 4, 3, 1],
-  '29': [0, 4, 3, 4, 3, 1],
-  '30': [0, 4, 3, 5, 3, 1],
-  '31': [0, 4, 3, 5, 3, 1],
-  '32': [0, 4, 3, 5, 4, 1],
-  '33': [0, 5, 3, 5, 4, 1],
-  '34': [0, 5, 3, 5, 4, 1],
-  '35': [0, 5, 3, 5, 4, 2],
-  '36': [0, 5, 3, 5, 4, 2],
-  '37': [0, 5, 3, 6, 4, 2],
-  '38': [0, 5, 3, 7, 4, 2],
-  '39': [0, 5, 3, 7, 5, 2],
-  '40': [0, 5, 3, 7, 5, 3],
-  '41': [0, 5, 3, 7, 5, 3],
-  '42': [1, 5, 3, 7, 5, 3],
-  '43': [1, 5, 3, 7, 5, 3],
-  '44': [2, 5, 3, 7, 5, 3],
-  '45': [2, 5, 3, 8, 5, 3],
-  '46': [3, 5, 3, 8, 5, 3],
-  '47': [4, 5, 3, 8, 5, 3],
-  '48': [5, 5, 3, 8, 5, 3],
-  '49': [5, 5, 3, 8, 5, 3],
-  '50': [5, 5, 3, 9, 5, 3],
-  '51': [5, 5, 3, 9, 5, 3],
-  '52': [5, 5, 3, 9, 5, 3],
-  '53': [5, 5, 3, 9, 5, 3],
-  '54': [5, 5, 3, 9, 5, 3],
-  '55': [5, 5, 3, 9, 5, 3],
-  '56': [5, 5, 3, 9, 5, 3],
-  '57': [5, 5, 3, 9, 5, 3],
-  '58': [5, 5, 3, 9, 5, 3],
-  '59': [5, 5, 3, 9, 5, 3],
-  '60': [5, 5, 3, 9, 5, 3],
-  '61': [5, 5, 3, 9, 5, 3],
-  '62': [5, 5, 3, 9, 5, 3],
-  '63': [5, 5, 3, 9, 5, 3],
-  '64': [5, 5, 3, 9, 5, 3],
-  '65': [5, 5, 3, 9, 5, 3],
-};
+const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {};
 
 export class Sage extends CharacterBase {
   protected readonly CLASS_NAME = ClassName.Sage;
@@ -78,7 +12,66 @@ export class Sage extends CharacterBase {
   protected readonly classNames = ['Hi-Class', 'Sage', 'Sage Cls', 'Sage Class'];
   protected readonly _atkSkillList: AtkSkillModel[] = [];
   protected readonly _activeSkillList: ActiveSkillModel[] = [];
-  protected readonly _passiveSkillList: PassiveSkillModel[] = [];
+  protected readonly _passiveSkillList: PassiveSkillModel[] = [
+    {
+      inputType: 'dropdown',
+      label: 'Study',
+      name: 'Study',
+      isMasteryAtk: true,
+      dropdown: [
+        { label: '-', isUse: false, value: 0 },
+        { label: 'Lv 1', isUse: true, value: 1, bonus: { book_atk: 3, book_aspdPercent: 0.5 } },
+        { label: 'Lv 2', isUse: true, value: 2, bonus: { book_atk: 6, book_aspdPercent: 1 } },
+        { label: 'Lv 3', isUse: true, value: 3, bonus: { book_atk: 9, book_aspdPercent: 1.5 } },
+        { label: 'Lv 4', isUse: true, value: 4, bonus: { book_atk: 12, book_aspdPercent: 2 } },
+        { label: 'Lv 5', isUse: true, value: 5, bonus: { book_atk: 15, book_aspdPercent: 2.5 } },
+        { label: 'Lv 6', isUse: true, value: 6, bonus: { book_atk: 18, book_aspdPercent: 3 } },
+        { label: 'Lv 7', isUse: true, value: 7, bonus: { book_atk: 21, book_aspdPercent: 3.5 } },
+        { label: 'Lv 8', isUse: true, value: 8, bonus: { book_atk: 24, book_aspdPercent: 4 } },
+        { label: 'Lv 9', isUse: true, value: 9, bonus: { book_atk: 27, book_aspdPercent: 4.5 } },
+        { label: 'Lv 10', isUse: true, value: 10, bonus: { book_atk: 30, book_aspdPercent: 5 } },
+      ],
+    },
+    {
+      inputType: 'dropdown',
+      label: 'Dragonology',
+      name: 'Dragonology',
+      isMasteryAtk: true,
+      dropdown: [
+        { label: '-', isUse: false, value: 0 },
+        {
+          label: 'Lv 1',
+          isUse: true,
+          value: 1,
+          bonus: { atkPercent_race_dragon: 4, matkPercent_race_dragon: 2, int: 1 },
+        },
+        {
+          label: 'Lv 2',
+          isUse: true,
+          value: 2,
+          bonus: { atkPercent_race_dragon: 8, matkPercent_race_dragon: 4, int: 1 },
+        },
+        {
+          label: 'Lv 3',
+          isUse: true,
+          value: 3,
+          bonus: { atkPercent_race_dragon: 12, matkPercent_race_dragon: 6, int: 2 },
+        },
+        {
+          label: 'Lv 4',
+          isUse: true,
+          value: 4,
+          bonus: { atkPercent_race_dragon: 16, matkPercent_race_dragon: 8, int: 2 },
+        },
+        {
+          label: 'Lv 5',
+          isUse: true,
+          value: 5,
+          bonus: { atkPercent_race_dragon: 20, matkPercent_race_dragon: 10, int: 3 },
+        },
+      ],
+    },
+  ];
 
   constructor() {
     super();

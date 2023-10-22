@@ -7,6 +7,7 @@ import { MonsterModel } from './monster.model';
 import { Weapon } from './weapon';
 import { PoisionPsoEleTable } from './poison-psdo-ele-table';
 import { AllowShieldTable } from './allow-shield-table';
+import { PreparedMonsterModel } from './prepared-monster.model';
 
 // const getItem = (id: number) => items[id] as ItemModel;
 const refinableItemTypes = [
@@ -318,7 +319,7 @@ export class Calculator {
   };
   private extraOptions: any[] = [];
   private weaponData = new Weapon();
-  private monsterData = {
+  private monsterData: PreparedMonsterModel = {
     name: '',
     race: '',
     raceUpper: '',
@@ -1684,6 +1685,19 @@ export class Calculator {
         this.updateBaseEquipStat(attr, val);
       }
     }
+    for (const [skillName, scripts] of Object.entries(this.masteryAtkSkillBonus)) {
+      for (const [attr, value] of Object.entries(scripts)) {
+        const val = Number(value);
+        if (attr === 'atk') continue;
+        if (attr === 'matk') continue;
+
+        this.equipStatus[skillName] = { ...this.allStatus, [attr]: val };
+
+        updateTotalStatus(attr, value);
+
+        this.updateBaseEquipStat(attr, val);
+      }
+    }
 
     for (const [buffName, scripts] of Object.entries(this.buffBonus)) {
       for (const [attr, value] of Object.entries(scripts)) {
@@ -1739,6 +1753,13 @@ export class Calculator {
     if (this.weaponData.data.typeName === 'bow') {
       this.totalEquipStatus.range += this.totalEquipStatus.bowRange || 0;
     }
+
+    this._class.setAdditionalBonus({
+      model: this.model,
+      monster: this.monsterData,
+      weapon: this.weaponData,
+      totalBonus: this.totalEquipStatus,
+    });
 
     return this;
   }
