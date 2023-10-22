@@ -1,4 +1,4 @@
-import { WeaponTypeName } from '../weapon-type-mapper';
+import { WeaponTypeName } from './weapon-type-mapper';
 
 export const SizePenaltyMapper: Record<WeaponTypeName, { s: number; m: number; l: number }> = {
   dagger: { s: 100, m: 75, l: 50 },

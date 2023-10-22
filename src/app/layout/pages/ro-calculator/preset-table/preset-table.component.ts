@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DynamicDialogConfig, DynamicDialogRef } from 'primeng/dynamicdialog';
-import { ItemTypeEnum } from '../item-type.enum';
+import { ItemTypeEnum } from '../constants/item-type.enum';
 import { ClassID } from '../jobs/_class-name';
 import { ConfirmationService, MessageService } from 'primeng/api';
 

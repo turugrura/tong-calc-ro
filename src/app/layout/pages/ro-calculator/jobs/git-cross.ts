@@ -1,6 +1,12 @@
 import { ClassName } from './_class-name';
 import { AssasinCross } from './assasin-cross';
-import { ActiveSkillModel, AtkSkillModel, CharacterBase, PassiveSkillModel } from './char-class.abstract';
+import {
+  ActiveSkillModel,
+  AtkSkillFormulaInput,
+  AtkSkillModel,
+  CharacterBase,
+  PassiveSkillModel,
+} from './_character-base.abstract';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   '1': [0, 1, 0, 0, 0, 0],
@@ -86,7 +92,10 @@ export class GitCross extends CharacterBase {
       vct: 0,
       cd: 0,
       levelList: [{ label: 'Lv 5', value: 'Rolling Cutter==5' }],
-      formular: ({ baseLevel, skillLevel }: { baseLevel: number; skillLevel: number }): number => {
+      formular: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
+
         return (50 + skillLevel * 50) * (baseLevel / 100);
       },
     },

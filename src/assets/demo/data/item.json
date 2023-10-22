@@ -8306,6 +8306,112 @@
       ]
     }
   },
+  "18000": {
+    "id": 18000,
+    "aegisName": "Cannon_Ball",
+    "name": "Cannon Ball",
+    "unidName": "Cannon Ball",
+    "resName": "캐논볼",
+    "description": "ส่วนประกอบที่มีไว้สำหรับสกิลของ Mechanic Magic Gear, Arm's Cannon.\nประเภท : ^777777Cannonball^000000 พลังโจมตี : ^777777100^000000\nน้ำหนัก : ^7777770.1^000000 ธาตุ : ^777777None^000000",
+    "slots": 0,
+    "itemTypeId": 4,
+    "itemSubTypeId": 1025,
+    "itemLevel": null,
+    "attack": 100,
+    "defense": null,
+    "weight": 0.1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atk": [
+        "100"
+      ]
+    }
+  },
+  "18001": {
+    "id": 18001,
+    "aegisName": "Holy_Cannon_Ball",
+    "name": "Holy Cannon Ball",
+    "unidName": "Holy Cannon Ball",
+    "resName": "홀리캐논볼",
+    "description": "ส่วนประกอบที่มีไว้สำหรับสกิลของ Mechanic Magic Gear, Arm's Cannon.\nประเภท : ^777777Cannonball^000000 พลังโจมตี : ^777777120^000000\nน้ำหนัก : ^7777770.1^000000 ธาตุ : ^777777Holy^000000",
+    "slots": 0,
+    "itemTypeId": 4,
+    "itemSubTypeId": 1025,
+    "itemLevel": null,
+    "attack": 120,
+    "propertyAtk": "Holy",
+    "defense": null,
+    "weight": 0.1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atk": [
+        "120"
+      ]
+    }
+  },
+  "18002": {
+    "id": 18002,
+    "aegisName": "Dark_Cannon_Ball",
+    "name": "Dark Cannon Ball",
+    "unidName": "Dark Cannon Ball",
+    "resName": "다크캐논볼",
+    "description": "ส่วนประกอบที่มีไว้สำหรับสกิลของ Mechanic Magic Gear, Arm's Cannon.\nประเภท : ^777777Cannonball^000000 พลังโจมตี : ^777777120^000000\nน้ำหนัก : ^7777770.1^000000 ธาตุ : ^777777shadow^000000",
+    "slots": 0,
+    "itemTypeId": 4,
+    "itemSubTypeId": 1025,
+    "itemLevel": null,
+    "attack": 120,
+    "propertyAtk": "Dark",
+    "defense": null,
+    "weight": 0.1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atk": [
+        "120"
+      ]
+    }
+  },
+  "18004": {
+    "id": 18004,
+    "aegisName": "Iron_Cannon_Ball",
+    "name": "Iron Cannon Ball",
+    "unidName": "Iron Cannon Ball",
+    "resName": "아이언캐논볼",
+    "description": "ส่วนประกอบที่มีไว้สำหรับสกิลของ Mechanic Magic Gear, Arm's Cannon.\nประเภท : ^777777Cannonball^000000 พลังโจมตี : ^777777250^000000\nน้ำหนัก : ^7777770.1^000000 ธาตุ : ^777777Neutral^000000",
+    "slots": 0,
+    "itemTypeId": 4,
+    "itemSubTypeId": 1025,
+    "itemLevel": null,
+    "attack": 250,
+    "defense": null,
+    "weight": 0.1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atk": [
+        "250"
+      ]
+    }
+  },
   "18130": {
     "id": 18130,
     "aegisName": "Scarlet_Bow",
@@ -26699,6 +26805,59 @@
       ]
     }
   },
+  "400049": {
+    "id": 400049,
+    "aegisName": "Stripe_Hat",
+    "name": "Stripe Hat [1]",
+    "unidName": "Hat",
+    "resName": "Stripe_Hat",
+    "description": "หมวกที่มีลายเส้นตรงพาดยาวตั้งแต่ปีกไปจนถึงด้านหลังหัว\nมันถูกดัดแปลงเพื่อให้เข้ากับอาวุธ OS \nทุกการอัพเกรด 2 ขั้น, ATK +20. \nเมื่ออัพเกรดถึงขั้น 7, ลดระยะเวลาร่ายแบบแปรผัน 15%\nเมื่ออัพเกรดถึงขั้น 9, เพิ่ม Damage ทางกายภาพระยะไกล 15% \nเมื่ออัพเกรดถึงขั้น 11, เพิ่ม Damage ทางกายภาพที่สร้างต่อศัตรูขนาดเล็กและกลาง 15%, ลดระยะเวลาร่ายแบบคงตัว 0.2 วินาที\n\nเมื่อสวมใส่กับ Boost Lance-OS, ATK + 30, ทุกการอัพเกรดอาวุธ 2 ขั้น เพิ่ม Damage Cannon Spear ครั้งละ 4% \nเมื่อสวมใส่กับ MH-P89-OS, เพิ่ม Damage Severe Rainstorm 10%, ทุกการอัพเกรดอาวุธ 2 ขั้น เพิ่ม Damage ทางกายภาพระยะไกลครั้งละ 3%\nเมื่อสวมใส่กับ AC-B44-OS, ลด Global Cooldown 10%, ทุกการอัพเกรดอาวุธ 2 ขั้น เพิ่ม Damage ทางกายภาพระยะไกลครั้งละ 3%\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^7777770^000000\nตำแหน่ง : ^777777Upper^000000 น้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777130^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 130,
+    "location": "Upper",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atk": [
+        "20",
+        "EQUIP[Boost Lance-OS]===30"
+      ],
+      "vct": [
+        "7===15"
+      ],
+      "range": [
+        "9===15",
+        "EQUIP[MH-P89-OS]===3",
+        "EQUIP[AC-B44-OS]===3"
+      ],
+      "p_size_s": [
+        "11===15"
+      ],
+      "p_size_m": [
+        "11===15"
+      ],
+      "fct": [
+        "11===0.2"
+      ],
+      "เพิ่ม Damage Cannon Spear": [
+        "EQUIP[Boost Lance-OS]===4"
+      ],
+      "เพิ่ม Damage Severe Rainstorm": [
+        "EQUIP[MH-P89-OS]===10"
+      ],
+      "ลด Global Cooldown": [
+        "EQUIP[AC-B44-OS]===10"
+      ]
+    }
+  },
   "400054": {
     "id": 400054,
     "aegisName": "Large_Sorcerer_Crown",
@@ -30984,6 +31143,59 @@
       ]
     }
   },
+  "550014": {
+    "id": 550014,
+    "aegisName": "Up_MeawFoxtail",
+    "name": "Patent Meowmeow Foxtail [2]",
+    "unidName": "Rod",
+    "resName": "Up_MeawFoxtail",
+    "description": "กระดิ่งสุนัขมหัศจรรย์ที่จะได้ยินเสียงเหมียวเหมียวทุกครั้งที่สั่น\nเมื่อมันเริ่มสั่นไหวด้วยความนุ่มนวล พลังอันแท้จริงจึงเริ่มแสดงออกมา\nดูกลมกลืนเข้ากับ Great Hero Boots\n\nไม่สามารถทำลายได้\nMATK +350\nทุก ๆ การอัพเกรด 2 ขั้น ATK, MATK +15\nทุก ๆ การอัพเกรด 3 ขั้น ATK, MATK +2%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage สกิล Lunatic Carrot Beat, Silvervine Stem Spear 25%\nเมื่ออัพเกรดถึงขั้น 9 ลดระยะเวลาร่ายแบบแปรผัน 10%, ASPD +10%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Picky Peck, Catnip Meteor 25%\nเมื่อสวมใส่ร่วมกับ Great Hero Boots, LUK +10, ATK, MATK +7%\n\nประเภท : ^777777One-Handed Staff^000000 พลังโจมตี : ^777777350^000000\nน้ำหนัก : ^777777120^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Summoner (Doram)^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 265,
+    "itemLevel": 4,
+    "attack": 350,
+    "defense": null,
+    "weight": 120,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Summoner (Doram)"
+    ],
+    "script": {
+      "matk": [
+        "350"
+      ],
+      "atk": [
+        "2---15"
+      ],
+      "atkPercent": [
+        "3---2"
+      ],
+      "Lunatic Carrot Beat": [
+        "7===25"
+      ],
+      "Silvervine Stem Spear": [
+        "7===25"
+      ],
+      "vct": [
+        "9===10"
+      ],
+      "aspdPercent": [
+        "9===10"
+      ],
+      "Picky Peck": [
+        "11===25"
+      ],
+      "Catnip Meteor": [
+        "11===25"
+      ],
+      "matkPercent": [
+        "EQUIP[Great Hero Boots]===7"
+      ]
+    }
+  },
   "550015": {
     "id": 550015,
     "aegisName": "Up_SoulWeight",
@@ -31092,6 +31304,48 @@
       ]
     }
   },
+  "590002": {
+    "id": 590002,
+    "aegisName": "Meteor_Striker",
+    "name": "Meteor Striker [2]",
+    "unidName": "Mace",
+    "resName": "메테오스트라이크",
+    "description": "ค้อนที่ทำจากแร่หายากที่ค้นพบจากอุกกาบาตชิ้นหนึ่ง\nดูกลมกลืนเข้ากับ Ancient Hero Boots\nไม่สามารถทำลายได้\nทุก ๆ การอัพเกรด 2 ขั้น ATK +10\nทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage สกิล Vulcan Arm 10%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Vulcan Arm, Arm Cannon 10%\nเมื่ออัพเกรดถึงขั้น 11 ลดระยะเวลาร่ายแบบแปรผัน 15%\nเมื่อสวมใส่ร่วมกับ Ancient Hero Boots เมื่อโจมตีทางกายภาพ/เวทมนตร์ มีโอกาสที่ STR +20, ATK +15% เป็นเวลา 7 วินาที\nประเภท : ^777777Mace^000000 พลังโจมตี : ^777777300^000000\nน้ำหนัก : ^777777300^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Mechanic^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 263,
+    "itemLevel": 4,
+    "attack": 300,
+    "defense": null,
+    "weight": 300,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Mechanic"
+    ],
+    "script": {
+      "atk": [
+        "2---10"
+      ],
+      "Vulcan Arm": [
+        "3---10",
+        "9===10"
+      ],
+      "Arm Cannon": [
+        "9===10"
+      ],
+      "vct": [
+        "11===15"
+      ],
+      "chance__str": [
+        "EQUIP[Ancient Hero Boots]===20(7 วินาที)"
+      ],
+      "chance__atkPercent": [
+        "EQUIP[Ancient Hero Boots]===15(7 วินาที)"
+      ]
+    }
+  },
   "590003": {
     "id": 590003,
     "aegisName": "Saint_Hall",
@@ -31134,6 +31388,53 @@
       ],
       "auto_int": [
         "EQUIP[Ancient Hero Boots]===20(7 วินาที)"
+      ]
+    }
+  },
+  "590011": {
+    "id": 590011,
+    "aegisName": "Up_Meteor_Striker",
+    "name": "Patent Meteor Striker [2]",
+    "unidName": "Mace",
+    "resName": "Up_Meteor_Striker",
+    "description": "ค้อนที่ทำจากแร่หายากที่ค้นพบจากอุกกาบาตชิ้นหนึ่ง\nเริ่มเผยพลังอันแท้จริงออกมา เมื่อเห็นพลังที่แข็งแกร่งขึ้น\nดูกลมกลืนเข้ากับ Great Hero Boots\n\nไม่สามารถทำลายได้\nทุก ๆ การอัพเกรด 2 ขั้น ATK +15\nทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage สกิล Vulcan Arm, Knuckle Boost 10%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage สกิล Vulcan Arm, Knuckle Boost ขึ้นอีก 15%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Arm Cannon 25%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage ทางกายภาพระยะไกล 15%, ลดระยะเวลาร่ายแบบแปรผัน 15%\nเมื่อสวมใส่ร่วมกับ Great Hero Boots, STR +10, เพิ่ม Damage ทางกายภาพระยะไกล 5%\n\nประเภท : ^777777Mace^000000 พลังโจมตี : ^777777320^000000\nน้ำหนัก : ^777777350^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Mechanic^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 263,
+    "itemLevel": 4,
+    "attack": 320,
+    "defense": null,
+    "weight": 350,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Mechanic"
+    ],
+    "script": {
+      "atk": [
+        "2---15"
+      ],
+      "Vulcan Arm": [
+        "3---10",
+        "7===15"
+      ],
+      "Knuckle Boost": [
+        "3---10",
+        "7===15"
+      ],
+      "Arm Cannon": [
+        "9===25"
+      ],
+      "range": [
+        "11===15",
+        "EQUIP[Great Hero Boots]===5"
+      ],
+      "vct": [
+        "11===15"
+      ],
+      "str": [
+        "EQUIP[Great Hero Boots]===10"
       ]
     }
   },

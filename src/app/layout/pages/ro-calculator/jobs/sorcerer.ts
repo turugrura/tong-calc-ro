@@ -1,5 +1,5 @@
-import { ElementType } from '../element-type.const';
-import { InfoForClass } from '../info-for-class.model';
+import { ElementType } from '../constants/element-type.const';
+import { InfoForClass } from '../models/info-for-class.model';
 import { ClassName } from './_class-name';
 import {
   ActiveSkillModel,
@@ -7,7 +7,7 @@ import {
   AtkSkillModel,
   CharacterBase,
   PassiveSkillModel,
-} from './char-class.abstract';
+} from './_character-base.abstract';
 import { Sage } from './sage';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
@@ -96,9 +96,10 @@ export class Sorcerer extends CharacterBase {
       element: ElementType.Water,
       isMatk: true,
       levelList: [],
-      formular: (params: AtkSkillFormulaInput<{ extra: any }>): number => {
-        const { baseLevel, skillLevel, extra } = params;
-        const totalInt = extra?.totalInt;
+      formular: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const baseLevel = model.level;
+        const totalInt = status.totalInt;
         const learnedLv = this.learnSkillMap.get('Lightning Loader') || 0;
 
         // return ((skillLevel + 2) * totalInt + learnedLv * 300) * (baseLevel / 100); Rebalance
@@ -116,9 +117,10 @@ export class Sorcerer extends CharacterBase {
       element: ElementType.Earth,
       isMatk: true,
       levelList: [],
-      formular: (params: AtkSkillFormulaInput<{ extra: any }>): number => {
-        const { baseLevel, skillLevel, extra } = params;
-        const totalInt = extra?.totalInt;
+      formular: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const baseLevel = model.level;
+        const totalInt = status.totalInt;
         const learnedLv = this.learnSkillMap.get('Seismic Weapon') || 0;
 
         // return ((skillLevel + 2) * totalInt + learnedLv * 300) * (baseLevel / 100); Rebalance
@@ -137,9 +139,10 @@ export class Sorcerer extends CharacterBase {
       totalHit: 7,
       isMatk: true,
       levelList: [],
-      formular: (params: AtkSkillFormulaInput<{ extra: any }>): number => {
-        const { baseLevel, skillLevel, extra } = params;
-        const totalInt = extra?.totalInt;
+      formular: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const baseLevel = model.level;
+        const totalInt = status.totalInt;
 
         return (70 * skillLevel + 3 * totalInt) * (baseLevel / 100);
       },
@@ -155,9 +158,10 @@ export class Sorcerer extends CharacterBase {
       element: ElementType.Wind,
       isMatk: true,
       levelList: [],
-      formular: (params: AtkSkillFormulaInput<{ extra: any }>): number => {
-        const { baseLevel, skillLevel, extra } = params;
-        const totalInt = extra?.totalInt;
+      formular: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const baseLevel = model.level;
+        const totalInt = status.totalInt;
         const strikingLvl = this.learnSkillMap.get('Striking') || 0;
         const endowLvl = this.learnSkillMap.get('Endow Tornado') || 0;
 
@@ -203,8 +207,8 @@ export class Sorcerer extends CharacterBase {
     return atk;
   }
 
-  override setAdditionalBonus(params: InfoForClass): Record<string, any> {
-    if (!this.bonuses?.masteryAtks) return params.model;
+  override setAdditionalBonus(params: InfoForClass) {
+    if (!this.bonuses?.masteryAtks) return params.totalBonus;
 
     const { totalBonus, weapon } = params;
     const { typeName } = weapon.data;

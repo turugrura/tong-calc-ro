@@ -1,5 +1,5 @@
-import { ElementType } from '../element-type.const';
-import { InfoForClass } from '../info-for-class.model';
+import { ElementType } from '../constants/element-type.const';
+import { InfoForClass } from '../models/info-for-class.model';
 import { ClassName } from './_class-name';
 import {
   ActiveSkillModel,
@@ -7,7 +7,7 @@ import {
   AtkSkillModel,
   CharacterBase,
   PassiveSkillModel,
-} from './char-class.abstract';
+} from './_character-base.abstract';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   '1': [0, 0, 0, 1, 0, 0],
@@ -122,8 +122,9 @@ export class ArchBishop extends CharacterBase {
       isMatk: true,
       element: ElementType.Holy,
       value: 'Judex==1',
-      formular: (a: AtkSkillFormulaInput): number => {
-        const { baseLevel, skillLevel, usedSkillSet } = a;
+      formular: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
 
         return (300 + skillLevel * 40) * (baseLevel / 100);
       },
@@ -139,8 +140,9 @@ export class ArchBishop extends CharacterBase {
       isMatk: true,
       element: ElementType.Holy,
       value: 'Adoramus==10',
-      formular: (a: AtkSkillFormulaInput): number => {
-        const { baseLevel, skillLevel, usedSkillSet } = a;
+      formular: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
 
         return (330 + skillLevel * 70) * (baseLevel / 100);
       },

@@ -1,10 +1,11 @@
-import { ItemModel } from './item.model';
+import { ItemModel } from './models/item.model';
 import {
   WeaponSubTypeName,
   WeaponSubTypeNameMapById,
   WeaponTypeName,
   WeaponTypeNameMapBySubTypeId,
-} from './weapon-type-mapper';
+} from './constants/weapon-type-mapper';
+import { ElementType } from './constants/element-type.const';
 
 const weaponUpgradeTable: Record<
   number,
@@ -101,7 +102,7 @@ const weaponUpgradeTable: Record<
 };
 
 export class Weapon {
-  private _propertyAtk = '';
+  private _propertyAtk: ElementType = ElementType.Neutral;
   private _rangeType = '';
   private _typeName: WeaponTypeName;
   private _subTypeName: WeaponSubTypeName;

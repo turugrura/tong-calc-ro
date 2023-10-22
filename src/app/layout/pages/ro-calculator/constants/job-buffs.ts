@@ -1,4 +1,4 @@
-import { ActiveSkillModel } from '../jobs/char-class.abstract';
+import { ActiveSkillModel } from '../jobs/_character-base.abstract';
 
 export const JobBuffs: ActiveSkillModel[] = [
   {
@@ -71,7 +71,7 @@ export const JobBuffs: ActiveSkillModel[] = [
     name: 'Power Thrust',
     inputType: 'selectButton',
     dropdown: [
-      { label: 'Yes', value: 5, skillLv: 5, isUse: true, bonus: { flatAtkPercent: 15 } },
+      { label: 'Yes', value: 5, skillLv: 5, isUse: true, bonus: { flatDmg: 15 } },
       { label: 'No', value: 0, isUse: false },
     ],
   },

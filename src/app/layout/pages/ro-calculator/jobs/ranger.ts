@@ -5,7 +5,7 @@ import {
   AtkSkillModel,
   CharacterBase,
   PassiveSkillModel,
-} from './char-class.abstract';
+} from './_character-base.abstract';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 0, 1, 0],
@@ -108,12 +108,12 @@ export class Ranger extends CharacterBase {
       hit: 3,
       levelList: [{ label: 'Arrow Storm Lv 10', value: 'Arrow Storm==10' }],
       formular: (input: AtkSkillFormulaInput): number => {
-        const { baseLevel, skillLevel, usedSkillSet } = input;
-        const baseAtk = usedSkillSet?.has('Fear Breeze') ? 250 : 200;
-        const bonus = usedSkillSet?.has('Falcon Eyes') ? 20 : 0;
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
+        // const baseAtk = usedSkillSet?.has('Fear Breeze') ? 250 : 200;
 
         // return (baseAtk + 180 * skillLevel) * (baseLevel / 100);
-        return bonus + (1000 + 80 * skillLevel) * (baseLevel / 100);
+        return (1000 + 80 * skillLevel) * (baseLevel / 100);
       },
     },
     {
@@ -128,10 +128,10 @@ export class Ranger extends CharacterBase {
       canCri: true,
       cri: 50,
       formular: (input: AtkSkillFormulaInput): number => {
-        const { baseLevel, skillLevel, usedSkillSet } = input;
-        const bonus = usedSkillSet?.has('Falcon Eyes') ? 20 : 0;
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
 
-        return bonus + (150 + skillLevel * 200) * (baseLevel / 100);
+        return (150 + skillLevel * 200) * (baseLevel / 100);
       },
     },
     {
@@ -144,10 +144,10 @@ export class Ranger extends CharacterBase {
       cd: 1,
       levelList: [],
       formular: (input: AtkSkillFormulaInput): number => {
-        const { baseLevel, skillLevel, usedSkillSet } = input;
-        const bonus = usedSkillSet?.has('Falcon Eyes') ? 20 : 0;
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
 
-        return (bonus + 500 + skillLevel * 20) * (baseLevel / 100);
+        return (500 + skillLevel * 20) * (baseLevel / 100);
       },
     },
   ];
@@ -189,7 +189,7 @@ export class Ranger extends CharacterBase {
           value: 'Falcon Eyes==10',
           skillLv: 10,
           isUse: true,
-          bonus: { dmg: 20, hit: 30, cri: 10, allStatus: 5 },
+          bonus: { flatDmg: 20, hit: 30, cri: 10, allStatus: 5 },
         },
         { label: 'No', value: 0, isUse: false },
       ],

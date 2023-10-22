@@ -42,7 +42,7 @@ export const ClassID = {
   2: ClassName.Ranger,
   21: ClassName.Minstrel,
   22: ClassName.Wanderer,
-  5: ClassName.GuillotineCross,
+  5: 'Guillotine Cross',
   4: 'Shadow Chaser',
   6: ClassName.Warlock,
   8: ClassName.Sorcerer,

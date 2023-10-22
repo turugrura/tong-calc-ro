@@ -2,21 +2,21 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { debounceTime, delay, finalize, forkJoin, mergeMap, of, Subject, Subscription, take, tap } from 'rxjs';
 import { BaseStateCalculator } from './base-state-calculator';
 import { Calculator } from './calculator';
-import { ItemTypeEnum, MainItemTypeSet, MainItemWithRelations } from './item-type.enum';
-import { ItemTypeId } from './item.const';
+import { ItemTypeEnum, MainItemTypeSet, MainItemWithRelations } from './constants/item-type.enum';
+import { ItemTypeId } from './constants/item.const';
 import { RoService } from 'src/app/demo/service/ro.service';
-import { ItemModel } from './item.model';
+import { ItemModel } from './models/item.model';
 import { ConfirmationService, MenuItem, MessageService, PrimeIcons, SelectItemGroup } from 'primeng/api';
-import { RaceType } from './race-type.const';
-import { ElementType } from './element-type.const';
-import { ActiveSkillModel, AtkSkillModel, CharacterBase, PassiveSkillModel } from './jobs/char-class.abstract';
+import { RaceType } from './constants/race-type.const';
+import { ElementType } from './constants/element-type.const';
+import { ActiveSkillModel, AtkSkillModel, CharacterBase, PassiveSkillModel } from './jobs/_character-base.abstract';
 import { Ranger } from './jobs/ranger';
-import { MonsterModel } from './monster.model';
-import { getEnchants } from './enchant-table';
+import { MonsterModel } from './models/monster.model';
+import { getEnchants } from './constants/enchant-table';
 import { SoulReaper } from './jobs/soul-reaper';
-import { DropdownModel } from './dropdown.model';
-import { ItemListModel } from './item-list.model';
-import { getMonsterSpawnMap } from './monster-spawn-mapper';
+import { DropdownModel } from './models/dropdown.model';
+import { ItemListModel } from './models/item-list.model';
+import { getMonsterSpawnMap } from './constants/monster-spawn-mapper';
 import { Rebelion } from './jobs/rebellion';
 import { ShadowChaser } from './jobs/shadow-chaser';
 import { GitCross } from './jobs/git-cross';
@@ -25,9 +25,10 @@ import { Warlock } from './jobs/warlock';
 import { Sorcerer } from './jobs/sorcerer';
 import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { PresetTableComponent } from './preset-table/preset-table.component';
-import { ClassID } from './jobs/_class-name';
+import { ClassID, ClassName } from './jobs/_class-name';
 import { JobBuffs } from './constants/job-buffs';
 import { Mechanic } from './jobs/mechanic';
+import { MainModel } from './models/main.model';
 
 const sortObj = <T>(field: keyof T) => {
   return (a: T, b: T) => {
@@ -303,7 +304,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   selectedPreset = undefined;
   isInProcessingPreset = false;
 
-  model = {
+  model: MainModel = {
     class: 1,
     level: 99,
     jobLevel: 1,
@@ -499,7 +500,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
   characterList = Characters;
   selectedCharacter: CharacterBase;
-  atkSkills: AtkSkillModel<any>[] = [];
+  atkSkills: AtkSkillModel[] = [];
   passiveSkills: PassiveSkillModel[] = [];
   activeSkills: ActiveSkillModel[] = [];
   consumableList: DropdownModel[] = [];
@@ -796,16 +797,19 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     this.cols = [
       { field: 'health', header: 'HP', default: true },
       { field: 'monsterClass', header: 'Class' },
-      { field: 'minDamage', header: 'SkillMin', default: true },
-      { field: 'maxDamage', header: 'SkillMax', default: true },
+      { field: 'skillMinDamage', header: 'SkillMin', default: true },
+      { field: 'skillMaxDamage', header: 'SkillMax', default: true },
       { field: 'skillDps', header: 'DPS', default: true },
-      { field: 'hitKill', header: 'Kill', default: true },
-      { field: 'criRate', header: 'Cri%' },
-      { field: 'hitRate', header: 'แม่น' },
-      { field: 'pene', header: 'เจาะ' },
+      { field: 'skillHitKill', header: 'HitKill', default: true },
+      { field: 'skillCriRate', header: 'Cri%' },
+      { field: 'skillAccuracy', header: 'แม่น' },
+      { field: 'skillTotalPene', header: 'เจาะ' },
+      // { field: 'hitRate', header: 'แม่น' },
+      { field: 'accuracy', header: 'Basicแม่น' },
+      { field: 'totalPene', header: 'Basicเจาะ' },
       { field: 'basicMinDamage', header: 'BasicMin' },
       { field: 'basicMaxDamage', header: 'BasicMax' },
-      { field: 'criMaxDamage', header: 'CriDmg' },
+      { field: 'criMaxDamage', header: 'BasicCriDmg' },
       { field: 'criMaxDamage', header: 'BasicDPS' },
       { field: 'basicCriRate', header: 'BasicCri%' },
     ];
@@ -1264,6 +1268,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   private setClassInstant() {
     const c = Characters.find((a) => a.value === this.model.class)?.['instant'] as CharacterBase;
     this.selectedCharacter = c || Characters[0]['instant'];
+    this.calculator.setClass(this.selectedCharacter);
   }
 
   private setClassSkill() {
@@ -1587,7 +1592,12 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
   private setAmmoDropdownList() {
     const myAmmoId = this.calculator.getAmmuSubTypeId();
+    const isMC = this.selectedCharacter.className === ClassName.Mechanic;
     const onlyMyAmmo = (a: DropdownModel) => {
+      if (isMC) {
+        return this.items[a.value]?.aegisName?.includes('Cannon_Ball');
+      }
+
       return this.items[a.value]?.itemSubTypeId === myAmmoId;
     };
 
@@ -1855,8 +1865,8 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
             return waitRxjs();
           }),
           mergeMap(() => {
-            this.setClassInstant();
             this.calculator = new Calculator();
+            this.setClassInstant();
             this.calculator.setMasterItems(this.items);
 
             this.updateAvailablePoints();

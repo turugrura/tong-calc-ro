@@ -1,4 +1,4 @@
-import { WeaponSubTypeName } from '../weapon-type-mapper';
+import { WeaponSubTypeName } from '../constants/weapon-type-mapper';
 import { ClassName } from './_class-name';
 
 type MainAspdEffect = 'base' | 'shield';

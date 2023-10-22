@@ -1,5 +1,5 @@
 import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillModel, CharacterBase, PassiveSkillModel } from './char-class.abstract';
+import { ActiveSkillModel, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
 import { Mage } from './mage';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {};

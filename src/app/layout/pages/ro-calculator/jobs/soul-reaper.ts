@@ -1,6 +1,12 @@
-import { ElementType } from '../element-type.const';
+import { ElementType } from '../constants/element-type.const';
 import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillModel, CharacterBase, PassiveSkillModel } from './char-class.abstract';
+import {
+  ActiveSkillModel,
+  AtkSkillFormulaInput,
+  AtkSkillModel,
+  CharacterBase,
+  PassiveSkillModel,
+} from './_character-base.abstract';
 import { SoulLinker } from './soul-linker';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
@@ -88,7 +94,10 @@ export class SoulReaper extends CharacterBase {
       cd: 0,
       isMatk: true,
       levelList: [{ label: 'Lv 10', value: 'Espa==10' }],
-      formular: ({ baseLevel, skillLevel }: { baseLevel: number; skillLevel: number }): number => {
+      formular: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
+
         return (500 + skillLevel * 250) * (baseLevel / 100);
       },
     },
@@ -102,7 +111,10 @@ export class SoulReaper extends CharacterBase {
       cd: 2,
       isMatk: true,
       levelList: [{ label: 'Lv 10', value: 'Eswhoo==10' }],
-      formular: ({ baseLevel, skillLevel }: { baseLevel: number; skillLevel: number }): number => {
+      formular: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
+
         return (1100 + skillLevel * 200) * (baseLevel / 100);
       },
     },
@@ -117,7 +129,10 @@ export class SoulReaper extends CharacterBase {
       isMatk: true,
       element: ElementType.Dark,
       levelList: [{ label: 'Lv 10', value: 'Curse Explosion==10' }],
-      formular: ({ baseLevel, skillLevel }: { baseLevel: number; skillLevel: number }): number => {
+      formular: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
+
         return (400 + skillLevel * 100) * (baseLevel / 100);
       },
     },

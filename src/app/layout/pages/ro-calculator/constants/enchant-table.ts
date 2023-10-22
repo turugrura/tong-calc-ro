@@ -196,6 +196,12 @@ const BaseState = {
   _5: ['Strength5', 'Inteligence5', 'Dexterity5', 'Agility5', 'Vitality5', 'Luck5'],
   _6: ['Strength6', 'Inteligence6', 'Dexterity6', 'Agility6', 'Vitality6', 'Luck6'],
 };
+const AllState = {
+  _1: [FS._1, EA._1, Spell._1, AttackDelay._1, Cri._1, ...BaseState._1],
+  _2: [FS._2, EA._2, Spell._2, AttackDelay._2, Cri._2, ...BaseState._2],
+  _3: [FS._3, EA._3, Spell._3, AttackDelay._3, Cri._3, ...BaseState._3],
+};
+
 const TempOpts = {
   _1: [EA._1, FS._1, Sharp._1],
   _2: [EA._2, FS._2, Sharp._2],
@@ -423,7 +429,7 @@ const enchantTable: EntTable[] = [
   { name: 'Vigilante_Suits', enchants: [null, BaseState._1, BaseState._1, BaseState._1] },
 
   { name: 'Upgrade_Part_Engine', enchants: [null, BaseState._1, BaseState._1, BaseState._1] },
-  { name: 'Supplement_Part_Dex', enchants: [null, null, BaseState._1, BaseState._1] },
+  { name: 'Supplement_Part_Dex', enchants: [null, null, BaseState._1, AllState._1] },
 
   { name: 'Old_Mitra', enchants: [null, labHead2, BaseState._3_5, BaseState._3_5] },
   { name: 'Old_Driver_Band_R', enchants: [null, labHead2, BaseState._3_5, BaseState._3_5] },

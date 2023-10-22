@@ -1,5 +1,11 @@
 import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillModel, CharacterBase, PassiveSkillModel } from './char-class.abstract';
+import {
+  ActiveSkillModel,
+  AtkSkillFormulaInput,
+  AtkSkillModel,
+  CharacterBase,
+  PassiveSkillModel,
+} from './_character-base.abstract';
 
 const jobBonusTable: [number, number, number, number, number, number][] = [
   [0, 0, 0, 0, 0, 0], // job 0
@@ -86,7 +92,10 @@ export class Rebelion extends CharacterBase {
       vct: 0,
       cd: 1,
       levelList: [{ label: 'Lv 10', value: 'Round Trip==10' }],
-      formular: ({ baseLevel, skillLevel }: { baseLevel: number; skillLevel: number }): number => {
+      formular: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
+
         return (skillLevel * 200 + 500) * (baseLevel / 100);
       },
     },
@@ -99,7 +108,10 @@ export class Rebelion extends CharacterBase {
       vct: 0,
       cd: 0,
       levelList: [{ label: 'Lv 10', value: 'Fire Dance==10' }],
-      formular: ({ baseLevel, skillLevel }: { baseLevel: number; skillLevel: number }): number => {
+      formular: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
+
         return (skillLevel * 100 + 200 + 200) * (baseLevel / 100);
       },
     },
@@ -112,7 +124,10 @@ export class Rebelion extends CharacterBase {
       vct: 1,
       cd: 1.6,
       levelList: [{ label: 'Lv 10', value: 'Vanishing Buster==10' }],
-      formular: ({ baseLevel, skillLevel }: { baseLevel: number; skillLevel: number }): number => {
+      formular: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
+
         return (skillLevel * 100 + 1500) * (baseLevel / 100);
       },
     },

@@ -1,17 +1,17 @@
-import { ElementType } from '../element-type.const';
-import { InfoForClass } from '../info-for-class.model';
+import { ElementType } from '../constants/element-type.const';
+import { EquipmentSummaryModel } from '../models/equipment-summary.model';
+import { InfoForClass } from '../models/info-for-class.model';
+import { PostCalcSkillModel } from '../models/post-calc-skill.model';
+import { PreCalcSkillModel } from '../models/pre-calc-skill.model';
 import { Weapon } from '../weapon';
 import { AspdTable } from './_aspd-table';
 import { ClassName } from './_class-name';
 
-// eslint-disable-next-line @typescript-eslint/ban-types
-export type AtkSkillFormulaInput<T extends {} = {}> = T & {
-  baseLevel: number;
+export interface AtkSkillFormulaInput extends InfoForClass {
   skillLevel: number;
-  usedSkillSet?: Set<string>;
-};
+}
 
-export interface AtkSkillModel<T = any> {
+export interface AtkSkillModel {
   label: string;
   name: string;
   value: string;
@@ -20,13 +20,14 @@ export interface AtkSkillModel<T = any> {
   vct: number;
   cd: number;
   levelList: { label: string; value: any }[];
-  formular: (input: AtkSkillFormulaInput<T>) => number;
+  formular: (input: AtkSkillFormulaInput) => number;
   canCri?: boolean;
   cri?: number;
   hit?: number;
   totalHit?: number;
   isMatk?: boolean;
   isMelee?: boolean;
+  isIgnoreDef?: boolean;
   element?: ElementType;
 }
 [];
@@ -51,13 +52,6 @@ export interface ActiveSkillModel {
   dropdown: SkillModel[];
 }
 export type PassiveSkillModel = ActiveSkillModel;
-
-export interface SkillBonusResult {
-  skillNames: any[];
-  equipAtks: Record<string, any>;
-  masteryAtks: Record<string, any>;
-  learnedSkillMap: Map<string, number>;
-}
 
 export interface AspdInput {
   weapon: Weapon;
@@ -89,8 +83,8 @@ export abstract class CharacterBase {
   protected passiveSkillIds: number[] = [];
   protected bonuses: {
     activeSkillNames: Set<string>;
-    equipAtks: Record<string, any>;
-    masteryAtks: Record<string, any>;
+    equipAtks: Record<string, number>;
+    masteryAtks: Record<string, number>;
     learnedSkillMap: Map<string, number>;
     usedSkillMap: Map<string, number>;
   };
@@ -274,7 +268,15 @@ export abstract class CharacterBase {
     return 0;
   }
 
-  setAdditionalBonus(params: InfoForClass) {
+  setAdditionalBonus(params: InfoForClass): EquipmentSummaryModel {
     return params.totalBonus;
+  }
+
+  preCalcSkillDamage(_input: PreCalcSkillModel) {
+    return;
+  }
+
+  postCalcSkillDamage(_input: PostCalcSkillModel) {
+    return;
   }
 }

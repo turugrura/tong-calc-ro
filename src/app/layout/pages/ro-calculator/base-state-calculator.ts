@@ -1,4 +1,4 @@
-import { CharacterBase } from './jobs/char-class.abstract';
+import { CharacterBase } from './jobs/_character-base.abstract';
 
 /**
 =IFS(A2 <= 1, 100

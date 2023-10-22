@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { DropdownModel } from '../dropdown.model';
-import { ItemModel } from '../item.model';
-import { getEnchants } from '../enchant-table';
+import { DropdownModel } from '../models/dropdown.model';
+import { ItemModel } from '../models/item.model';
+import { getEnchants } from '../constants/enchant-table';
 
 @Component({
   selector: 'app-equipment',

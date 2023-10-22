@@ -1,6 +1,12 @@
-import { ElementType } from '../element-type.const';
+import { ElementType } from '../constants/element-type.const';
 import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillModel, CharacterBase, PassiveSkillModel } from './char-class.abstract';
+import {
+  ActiveSkillModel,
+  AtkSkillFormulaInput,
+  AtkSkillModel,
+  CharacterBase,
+  PassiveSkillModel,
+} from './_character-base.abstract';
 import { Wizard } from './wizard';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
@@ -89,7 +95,10 @@ export class Warlock extends CharacterBase {
       isMatk: true,
       element: ElementType.Neutral,
       levelList: [{ label: 'Lv 5', value: 'Comet==5' }],
-      formular: ({ baseLevel, skillLevel }: { baseLevel: number; skillLevel: number }): number => {
+      formular: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
+
         return (2500 + skillLevel * 700) * (baseLevel / 100);
       },
     },
@@ -104,7 +113,10 @@ export class Warlock extends CharacterBase {
       isMatk: true,
       element: ElementType.Fire,
       levelList: [{ label: 'Lv 5', value: 'Crimson Rock==5' }],
-      formular: ({ baseLevel, skillLevel }: { baseLevel: number; skillLevel: number }): number => {
+      formular: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
+
         return (700 + skillLevel * 600) * (baseLevel / 100);
       },
     },
@@ -119,7 +131,10 @@ export class Warlock extends CharacterBase {
       isMatk: true,
       element: ElementType.Water,
       levelList: [{ label: 'Lv 5', value: 'Jack Frost==5' }],
-      formular: ({ baseLevel, skillLevel }: { baseLevel: number; skillLevel: number }): number => {
+      formular: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
+
         // return (1200 + skillLevel * 600) * (baseLevel / 100); -- Frost
         return (1000 + skillLevel * 300) * (baseLevel / 100);
       },
@@ -136,10 +151,11 @@ export class Warlock extends CharacterBase {
       element: ElementType.Ghost,
       hit: 2,
       levelList: [{ label: 'Lv 5', value: 'Soul Expansion==5' }],
-      formular: ({ baseLevel, skillLevel, extra }: { baseLevel: number; skillLevel: number; extra: any }): number => {
-        const { totalInt } = extra;
+      formular: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const baseLevel = model.level;
 
-        return (totalInt + 1000 + skillLevel * 200) * (baseLevel / 100);
+        return (status.totalInt + 1000 + skillLevel * 200) * (baseLevel / 100);
       },
     },
   ];

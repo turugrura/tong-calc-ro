@@ -2,7 +2,7 @@ export interface PreparedMonsterModel {
   name: string;
   race: string;
   raceUpper: string;
-  size: string;
+  size: 's' | 'm' | 'l';
   sizeUpper: string;
   sizeFullUpper: string;
   element: string;

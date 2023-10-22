@@ -1,5 +1,5 @@
 import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillModel, CharacterBase, PassiveSkillModel } from './char-class.abstract';
+import { ActiveSkillModel, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
 import { Merchant } from './merchant';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {};
@@ -46,7 +46,7 @@ export class Whitesmith extends CharacterBase {
       name: 'Power Thrust',
       inputType: 'selectButton',
       dropdown: [
-        { label: 'Yes', value: 5, skillLv: 5, isUse: true, bonus: { flatAtkPercent: 25 } },
+        { label: 'Yes', value: 5, skillLv: 5, isUse: true, bonus: { flatDmg: 25 } },
         { label: 'No', value: 0, isUse: false },
       ],
     },
