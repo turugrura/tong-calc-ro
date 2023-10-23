@@ -155,17 +155,17 @@ export const MainItemWithRelations: Partial<Record<ItemTypeEnum, ItemTypeEnum[]>
     ItemTypeEnum.bootEnchant2,
     ItemTypeEnum.bootEnchant3,
   ],
-  [ItemTypeEnum.accLeft]: [
-    ItemTypeEnum.accLeftCard,
-    ItemTypeEnum.accLeftEnchant1,
-    ItemTypeEnum.accLeftEnchant2,
-    ItemTypeEnum.accLeftEnchant3,
-  ],
   [ItemTypeEnum.accRight]: [
     ItemTypeEnum.accRightCard,
     ItemTypeEnum.accRightEnchant1,
     ItemTypeEnum.accRightEnchant2,
     ItemTypeEnum.accRightEnchant3,
+  ],
+  [ItemTypeEnum.accLeft]: [
+    ItemTypeEnum.accLeftCard,
+    ItemTypeEnum.accLeftEnchant1,
+    ItemTypeEnum.accLeftEnchant2,
+    ItemTypeEnum.accLeftEnchant3,
   ],
 
   [ItemTypeEnum.pet]: [],

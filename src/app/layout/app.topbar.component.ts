@@ -23,7 +23,9 @@ export class AppTopBarComponent {
   infos = [
     'เปลี่ยน Theme ทึ่ปุ่ม Config ตรงขวากลาง',
     'ข้อมูลที่บันทึกไว้จะถูกเก็บไว้ที่ browser, ถ้าล้างข้อมูล browser ก็จะถูกลบไปด้วย',
-    'เงื่อนไขที่เขียนไว้ว่า "ทุกๆการเรียนรู้สกิล" ต้องกดอัพในช่อง "Learnable Skills" ถึงจะได้ bonus, ถ้าไม่มีให้อัพจะให้เป็น bonus เป็น Lv MAX',
+    'เงื่อนไขที่เขียนไว้ว่า "ทุกๆการเรียนรู้สกิล" ต้องกดอัพในช่อง "Learn to get bonuses" ถึงจะได้ bonus, ถ้าไม่มีให้อัพจะให้เป็น bonus เป็น Lv MAX',
+    'options ในแถวอาวุธจะอยู่ตลอด เอาไว้ใส่ options ของไอเทมทั้งตัว(ไม่รวม shadow equipment)',
+    'My Magical Element ใน options = เพิ่ม Damage ทางเวทมนตร์ธาตุ ...',
     'ยังไม่รองรับอาวุธ 2 มือ',
     'Job 61-64 จะได้ Bonus ไม่ตรงเพราะไม่มีข้อมูล',
     'Tab "Summary" คือ ใส่อะไรบ้าง/อัพสกิลอะไรบ้าง/การคำนวนทั้งหมด',
@@ -31,7 +33,7 @@ export class AppTopBarComponent {
     'Tab "Item Descriptions" คือ bonus ของไอเทมแต่ละชิ้นและคำอธิบาย (เอาไว้ตรวจสอบว่าได้ bonus ถูกไหม)',
   ];
 
-  constructor(public layoutService: LayoutService) {}
+  constructor(public layoutService: LayoutService) { }
 
   showDialog() {
     this.visible = true;

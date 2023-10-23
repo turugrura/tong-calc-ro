@@ -29,6 +29,8 @@ import { ClassID, ClassName } from './jobs/_class-name';
 import { JobBuffs } from './constants/job-buffs';
 import { Mechanic } from './jobs/mechanic';
 import { MainModel } from './models/main.model';
+import { RoyalGuard } from './jobs/royal-guard';
+import { environment } from 'src/environments/environment';
 
 const sortObj = <T>(field: keyof T) => {
   return (a: T, b: T) => {
@@ -87,7 +89,7 @@ interface MonsterSelectItemGroup extends SelectItemGroup {
 }
 
 const Characters: DropdownModel[] = [
-  // { label: ClassID[11], value: 11, instant: new RoyalGuard() },
+  { label: ClassID[11], value: 11, instant: new RoyalGuard() },
   // { label: ClassID[12], value: 12, instant: new RuneKnight() },
   { label: ClassID[7], value: 7, instant: new ArchBishop() },
   { label: ClassID[2], value: 2, instant: new Ranger() },
@@ -150,7 +152,7 @@ const createExtraOptionList = () => {
     Class: ['All', 'Monster', 'Boss'],
   };
 
-  const items = [];
+  const items: DropdownModel[] = [];
   for (const atkType of atkTypes) {
     const atk = atkType.at(0).toLowerCase();
     const item = {
@@ -158,21 +160,21 @@ const createExtraOptionList = () => {
       label: atkType,
       children: [],
     };
-    for (const [prop, finalProps] of Object.entries(atkProps)) {
-      const propLow = prop.toLowerCase();
+    for (const [dmgType, dmgSubTypes] of Object.entries(atkProps)) {
+      const propLow = dmgType.toLowerCase();
       item.children.push({
-        value: `${atk}_${prop}`,
-        label: prop,
-        children: finalProps.map((finalProp) => {
+        value: `${atk}_${dmgType}`,
+        label: dmgType,
+        children: dmgSubTypes.map((finalProp) => {
           const finalPropLow = finalProp.toLowerCase();
           return {
-            value: `${atk}_${prop}_${finalProp}`,
+            value: `${atk}_${dmgType}_${finalProp}`,
             label: finalProp,
             children: Array.from({ length: 25 }, (_, k) => {
               const num = k + 1;
               return {
                 value: `${atk}_${propLow}_${finalPropLow}:${num}`,
-                label: `${atk.toUpperCase()}. ${prop} ${finalProp} ${num}%`,
+                label: `${atk.toUpperCase()}. ${dmgType} ${finalProp} +${num}%`,
               };
             }),
           };
@@ -183,18 +185,38 @@ const createExtraOptionList = () => {
     items.push(item);
   }
 
+  // No idea about programmatic
+  items.push({
+    label: 'My Magical Element',
+    value: 'My Element',
+    children: atkProps.Element.map((element) => {
+      const elementLow = element.toLowerCase();
+      return {
+        value: `m_my_element_${elementLow}`,
+        label: element,
+        children: Array.from({ length: 25 }, (_, k) => {
+          const num = k + 1;
+          return {
+            value: `m_my_element_${elementLow}:${num}`,
+            label: `My ${element} ${num}%`,
+          };
+        }),
+      };
+    }),
+  })
+
   const options: [string, string, number, number][] = [
     ['Atk', 'atk', 1, 65],
     ['Atk %', 'atkPercent', 1, 30],
     ['Matk', 'matk', 1, 65],
     ['Matk %', 'matkPercent', 1, 30],
-    ['Range', 'range', 1, 30],
+    ['Long Range', 'range', 1, 30],
     ['Melee', 'melee', 1, 30],
-    ['Cri Dmg', 'criDmg', 1, 30],
+    ['CRI Rate', 'cri', 1, 30],
+    ['CRI Dmg', 'criDmg', 1, 30],
     ['ASPD %', 'aspdPercent', 1, 30],
     ['Delay', 'acd', 1, 30],
     ['VCT', 'vct', 1, 30],
-    ['CRI', 'cri', 1, 30],
     ['All Stat', 'allStatus', 1, 30],
   ];
 
@@ -221,7 +243,7 @@ const createExtraOptionList = () => {
         const { label: label2, min, max } = value;
 
         return {
-          label: label2,
+          label: `${label} ${label2}`,
           value: label2,
           children: Array.from({ length: max - min + 1 }, (_, k) => {
             const num = k + min;
@@ -304,6 +326,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   selectedPreset = undefined;
   isInProcessingPreset = false;
 
+  env = environment;
   model: MainModel = {
     class: 1,
     level: 99,
@@ -613,7 +636,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     private messageService: MessageService,
     private confirmationService: ConfirmationService,
     private dialogService: DialogService,
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.initLoadItems();

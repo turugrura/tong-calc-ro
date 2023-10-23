@@ -194,10 +194,13 @@ export abstract class CharacterBase {
   }
 
   protected calcHiddenMasteryAtk(_: InfoForClass) {
-    const bonuses = this.bonuses?.masteryAtks || {};
+    if (!this.bonuses?.masteryAtks) return { totalAtk: 0, totalMatk: 0 }
+
+    const bonuses = this.bonuses.masteryAtks || {};
 
     let totalAtk = 0;
     let totalMatk = 0;
+
     for (const [, bonus] of Object.entries(bonuses)) {
       totalAtk += bonus[`x_atk`] || 0;
       totalMatk += bonus[`x_matk`] || 0;

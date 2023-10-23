@@ -874,7 +874,7 @@ export class Calculator {
     const formular = (atk: number) => {
       return this.floor(
         this.floor(this.floor(this.floor(this.floor(atk * race) * size) * element) * monsterType) *
-          this.propertyMultiplier,
+        this.propertyMultiplier,
       );
     };
     // console.log({ name: this.monster.name, race, size, element, _class: monsterType });

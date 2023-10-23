@@ -82,6 +82,7 @@ export class Ranger extends CharacterBase {
   protected initialStatusPoint = 100;
   protected classNames = [
     'Hi-Class',
+    'Only 3rd Cls',
     'Ranger',
     'Ranger Cls',
     'Ranger Class',
@@ -93,8 +94,7 @@ export class Ranger extends CharacterBase {
     'Hunter Class',
     'Archer',
     'Archer Cls',
-    'Archer Clss',
-    'Only 3rd Cls',
+    'Archer Class',
   ];
   protected _atkSkillList: AtkSkillModel[] = [
     {

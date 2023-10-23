@@ -250,7 +250,7 @@
               </div>
               <div class="col-6">
                 <div class="grid grid-nogutter mx-2">
-                  <div class="col-12">
+                  <div [hidden]="env.production" class="col-12">
                     Alt+Q Atk:
                     <span class="font-semibold px-1 summary_stat_atk">
                       {{ totalSummary?.calc?.totalStatusAtk || 0 }} +
@@ -315,7 +315,7 @@
               </div>
               <div class="col-6">
                 <div class="grid grid-nogutter mx-2">
-                  <div class="col-12">
+                  <div [hidden]="env.production" class="col-12">
                     Alt+Q Matk:
                     <span class="font-semibold px-1 summary_stat_matk"
                       >{{ totalSummary?.calc?.totalStatusMatk || 0 }} +
@@ -366,7 +366,7 @@
       </div>
     </div>
 
-    <!-- Weapon + Ammu -->
+    <!-- Weapon + Ammo -->
     <div class="grid grid-nogutter item_label_weapon">
       <div class="col-3">
         <div class="grid grid-nogutter justify-content-end">
@@ -656,35 +656,54 @@
               </div>
             </div>
           </div>
-          <div class="col-4">
-            <p-cascadeSelect
-              [(ngModel)]="model.rawOptionTxts[0]"
-              [disabled]="!model.weapon"
-              [options]="optionList"
-              optionValue="value"
-              optionGroupLabel="label"
-              optionLabel="label"
-              [optionGroupChildren]="['children', 'children', 'children']"
-              placeholder="Options"
-              [showClear]="true"
-              (onChange)="onOptionChange()"
-              (onClear)="onOptionChange()"
-            ></p-cascadeSelect>
-          </div>
-          <div class="col-4">
-            <p-cascadeSelect
-              [(ngModel)]="model.rawOptionTxts[1]"
-              [disabled]="!model.weapon"
-              [options]="optionList"
-              optionValue="value"
-              optionGroupLabel="label"
-              optionLabel="label"
-              [optionGroupChildren]="['children', 'children', 'children']"
-              placeholder="Options"
-              [showClear]="true"
-              (onChange)="onOptionChange()"
-              (onClear)="onOptionChange()"
-            ></p-cascadeSelect>
+          <div class="col-12">
+            <div class="grid grid-nogutter">
+              <div class="col-4">
+                <p-cascadeSelect
+                  [(ngModel)]="model.rawOptionTxts[0]"
+                  [disabled]="!model.weapon"
+                  [options]="optionList"
+                  optionValue="value"
+                  optionGroupLabel="label"
+                  optionLabel="label"
+                  [optionGroupChildren]="['children', 'children', 'children']"
+                  placeholder="Option 1"
+                  [showClear]="true"
+                  (onChange)="onOptionChange()"
+                  (onClear)="onOptionChange()"
+                ></p-cascadeSelect>
+              </div>
+              <div class="col-4">
+                <p-cascadeSelect
+                  [(ngModel)]="model.rawOptionTxts[1]"
+                  [disabled]="!model.weapon"
+                  [options]="optionList"
+                  optionValue="value"
+                  optionGroupLabel="label"
+                  optionLabel="label"
+                  [optionGroupChildren]="['children', 'children', 'children']"
+                  placeholder="Option 2"
+                  [showClear]="true"
+                  (onChange)="onOptionChange()"
+                  (onClear)="onOptionChange()"
+                ></p-cascadeSelect>
+              </div>
+              <div class="col-4">
+                <p-cascadeSelect
+                  [(ngModel)]="model.rawOptionTxts[2]"
+                  [disabled]="!model.weapon"
+                  [options]="optionList"
+                  optionValue="value"
+                  optionGroupLabel="label"
+                  optionLabel="label"
+                  [optionGroupChildren]="['children', 'children', 'children']"
+                  placeholder="Option 3"
+                  [showClear]="true"
+                  (onChange)="onOptionChange()"
+                  (onClear)="onOptionChange()"
+                ></p-cascadeSelect>
+              </div>
+            </div>
           </div>
         </div>
       </div>

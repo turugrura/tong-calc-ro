@@ -2141,6 +2141,32 @@
       ]
     }
   },
+  "4366": {
+    "id": 4366,
+    "aegisName": "Katrinn_Card",
+    "name": "Kathryne Keyron Card",
+    "unidName": "Kathryne Keyron Card",
+    "resName": "이름없는카드",
+    "description": "ลดระยะเวลาในการร่ายเวทย์คิดเป็น% ตามการอัพเกรดหมวก\nถ้าหมวกตีบวกตั้งแต่ +9 ขึ้นไป, +Matk 2%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Headgear^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 769,
+    "script": {
+      "vct": [
+        "1---1"
+      ],
+      "matkPercent": [
+        "9===2"
+      ]
+    }
+  },
   "4403": {
     "id": 4403,
     "aegisName": "Kiel_Card",
@@ -2737,10 +2763,10 @@
         "5"
       ],
       "p_size_m": [
-        "15"
+        "EQUIP[White Knight Card]15"
       ],
       "p_size_l": [
-        "15"
+        "EQUIP[White Knight Card]15"
       ]
     }
   },
@@ -5704,9 +5730,6 @@
       "all"
     ],
     "script": {
-      "dex": [
-        "10"
-      ],
       "matk": [
         "dex:10---2",
         "dex:108===60",
@@ -8938,6 +8961,36 @@
       ]
     }
   },
+  "18609": {
+    "id": 18609,
+    "aegisName": "Dark_Blindfold_",
+    "name": "Dark Blinkers [1]",
+    "unidName": "Headgear",
+    "resName": "검은눈가리개",
+    "description": "ผ้าปิดตาที่มีพลังเหตุความมืด\nป้องกัน Darkness 100 % ป้องกัน Stun 2%\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^7777770^000000\nใช้สำหรับ : ^777777Middle^000000 น้ำหนัก : ^7777770^000000\nอาชีพ : ^777777ทุกอาชีพ ยกเว้น Novice^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": "Middle",
+    "compositionPos": null,
+    "usableClass": [
+      "all",
+      "ยกเว้น Novice"
+    ],
+    "script": {
+      "resist_darkness": [
+        "100"
+      ],
+      "resist_stun": [
+        "2"
+      ]
+    }
+  },
   "18652": {
     "id": 18652,
     "aegisName": "Vanargand_Helm",
@@ -9242,6 +9295,53 @@
       ],
       "เพิ่มปริมาณการใช้ SP": [
         "5"
+      ]
+    }
+  },
+  "18971": {
+    "id": 18971,
+    "aegisName": "Old_Rune_Circlet",
+    "name": "Old Rune Circlet [1]",
+    "unidName": "Helm",
+    "resName": "룬서클릿",
+    "description": "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้^000000\nAll State + 1, MDEF+ 5\nทุกๆ การอัพเกรด 1 ขั้น ATK + 4\nทุกๆ การอัพเกรด 5 ขั้น ASPD + 1\nทุกๆ การอัพเกรด 2 ขั้น เพิ่ม Max HP และ Max SP ทีละ 1%\nทุกๆ การอัพเกรด 2 ขั้น เพิ่มความแรงสกิล Ignition Break 20%\nทุกๆ การอัพเกรด 2 ขั้น เพิ่มความแรงสกิล Hundred Spears 15%\nประเภท : ^777777Helm^000000 พลังป้องกัน : ^77777710^000000\nตำแหน่ง : ^777777Upper ^000000น้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Rune Knight^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 10,
+    "weight": 10,
+    "requiredLevel": 170,
+    "location": "Upper",
+    "compositionPos": null,
+    "usableClass": [
+      "Rune Knight"
+    ],
+    "script": {
+      "allStatus": [
+        "1"
+      ],
+      "mdef": [
+        "5"
+      ],
+      "atk": [
+        "1---4"
+      ],
+      "aspd": [
+        "5---1"
+      ],
+      "hpPercent": [
+        "2---1"
+      ],
+      "spPercent": [
+        "2---1"
+      ],
+      "Ignition Break": [
+        "2---20"
+      ],
+      "Hundred Spears": [
+        "2---15"
       ]
     }
   },
@@ -9569,6 +9669,53 @@
       ],
       "Cross Ripper Slasher": [
         "2---20"
+      ]
+    }
+  },
+  "18983": {
+    "id": 18983,
+    "aegisName": "Old_Protect_Of_Crown",
+    "name": "Old Casket of Protection [1]",
+    "unidName": "Helm",
+    "resName": "수호의관",
+    "description": "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้^000000\nAll State + 1, MDEF+ 5 \nทุกๆ การอัพเกรด 1 ขั้น ATK + 4\nทุกๆ การอัพเกรด 5 ขั้น ASPD + 1\nทุกๆ การอัพเกรด 2 ขั้น เพิ่ม Max HP และ Max SP ทีละ 1%\nทุกๆ การอัพเกรด 2 ขั้น เพิ่มความแรงสกิล Cannon Spear 20%\nทุกๆ การอัพเกรด 2 ขั้น เพิ่มความแรงสกิล Over Brand 5%\nประเภท : ^777777Helm^000000 พลังป้องกัน : ^77777710^000000\nตำแหน่ง : ^777777Upper ^000000น้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Royal Guard^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 10,
+    "weight": 10,
+    "requiredLevel": 170,
+    "location": "Upper",
+    "compositionPos": null,
+    "usableClass": [
+      "Royal Guard"
+    ],
+    "script": {
+      "allStatus": [
+        "1"
+      ],
+      "mdef": [
+        "5"
+      ],
+      "atk": [
+        "1---4"
+      ],
+      "aspd": [
+        "5---1"
+      ],
+      "hpPercent": [
+        "2---1"
+      ],
+      "spPercent": [
+        "2---1"
+      ],
+      "Cannon Spear": [
+        "2---20"
+      ],
+      "Over Brand": [
+        "2---5"
       ]
     }
   },
@@ -13253,6 +13400,41 @@
       ]
     }
   },
+  "24246": {
+    "id": 24246,
+    "aegisName": "S_Swordman_earring",
+    "name": "Swordsman Shadow Earring",
+    "unidName": "Shadow Earring",
+    "resName": "이어링쉐도우",
+    "description": "ต่างหูที่ว่ากันว่าคุ้มครองผู้สวมใส่และปลดปล่อยศักยภาพของผู้สวมใส่\nลดปริมาณการใช้ SP Bash 20%\nทุกการอัพเกรด 1 ขั้น ลดปริมาณการใช้ SP Bash ลงอีก 3%\nเมื่อสวมใส่ Swordsman Shadow Earring, Swordsman Shadow Pendant ด้วยกัน ATK +1%, MAXHP +1%.\nเมื่อขั้นอัพเกรดรวมกันมากกว่า 10 ขึ้นไป,เพิ่ม ATK +2%, MAXHP +2%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Earring^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ :^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 529,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Accessory",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "spPercent__Bash": [
+        "20",
+        "1---3"
+      ],
+      "atkPercent": [
+        "EQUIP[Swordsman Shadow Pendant]===1",
+        "EQUIP[Swordsman Shadow Pendant]REFINE[shadowEarring,shadowPendant==10]2"
+      ],
+      "hpPercent": [
+        "EQUIP[Swordsman Shadow Pendant]===1",
+        "EQUIP[Swordsman Shadow Pendant]REFINE[shadowEarring,shadowPendant==10]2"
+      ]
+    }
+  },
   "24247": {
     "id": 24247,
     "aegisName": "S_Merchant_earring",
@@ -13363,6 +13545,33 @@
       "spPercent": [
         "EQUIP[Magician Shadow Pendant]1",
         "EQUIP[Magician Shadow Pendant]REFINE[shadowEarring,shadowPendant==10]2"
+      ]
+    }
+  },
+  "24250": {
+    "id": 24250,
+    "aegisName": "S_Swordman_Pendant",
+    "name": "Swordsman Shadow Pendant",
+    "unidName": "Shadow Pendant",
+    "resName": "펜던트쉐도우",
+    "description": "สร้อยคอศักดิ์สิทธิ์ช่วยปกป้องผู้สวมใส่ กระตุ้นศักยภาพของผู้สวมใส่\nเพิ่ม Damage ของ Magnum Break 20%\nทุกอัพเกรด 1 ขั้น Damage ของ Magnum Break เพิ่มขึ้น 5%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Pendant^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ :^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 530,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Accessory",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "Magnum Break": [
+        "20",
+        "1---5"
       ]
     }
   },
@@ -13498,6 +13707,33 @@
       "Arrow Shower": [
         "20",
         "1---5"
+      ]
+    }
+  },
+  "24257": {
+    "id": 24257,
+    "aegisName": "S_Crusader_Shoes",
+    "name": "Crusader Shadow Shoes",
+    "unidName": "Shadow Shoes",
+    "resName": "슈즈쉐도우",
+    "description": "รองเท้าที่สวมใส่เพิ่มเติม สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์ของมันจะลดน้อยลง\nลดปริมาณการใช้งาน SP ของ Holy Cross 20%\nทุกการอัพเกรด 1 ขั้น ลดปริมาณการใช้งาน SP ของ Holy Cross เพิ่มอีก 3%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shoes^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 528,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Shoes",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "spPercent__Holy Cross": [
+        "20",
+        "1---3"
       ]
     }
   },
@@ -13724,6 +13960,39 @@
     "script": {
       "atk": [
         "LEARN_SKILL[Dance Lessons==1]---2"
+      ]
+    }
+  },
+  "24270": {
+    "id": 24270,
+    "aegisName": "S_Crusader_Armor",
+    "name": "Crusader Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우",
+    "description": "ชุดเกราะที่เพิ่มพลังป้องกันเมื่อสวมใส่เพิ่มบนเกราะอีกที สามารถใส่แบบชิ้นเดียวได้ แต่ความสามารถในการป้องกันจะลดลงไปอีก\nเพิ่ม Damage Grand Cross 20% \nทุกการอัพเกรด 1 ขั้น เพิ่ม Damage Grand Cross อีก 5%\n\nเมื่อสวมใส่กับ Crusader Shadow Shoes,\nเพิ่ม Damage Holy Cross 20%\nลดปริมาณการใช้ SP ของ Grand Cross 20%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Armor ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "Grand Cross": [
+        "20",
+        "1---5"
+      ],
+      "Holy Cross": [
+        "EQUIP[Crusader Shadow Shoes]20"
+      ],
+      "spPercent__Grand Cross": [
+        "EQUIP[Crusader Shadow Shoes]20"
       ]
     }
   },
@@ -14030,6 +14299,33 @@
       ]
     }
   },
+  "24289": {
+    "id": 24289,
+    "aegisName": "S_Royalguard_Weapon",
+    "name": "Royal Guard Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา  \nRoyal Guard class เท่านั้นที่สามารถสวมใส่ได้ \nเพิ่ม Damage ของ Cannon Spear 20%  \nทุกๆ การอัพเกรด 1 ขั้น เพิ่ม Damage ของ Cannon Spear เพิ่มเติม 5%  \nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Royal Guard class^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "Royal Guard Class"
+    ],
+    "script": {
+      "Cannon Spear": [
+        "20",
+        "1---5"
+      ]
+    }
+  },
   "24290": {
     "id": 24290,
     "aegisName": "S_Mechanic_weapon",
@@ -14242,6 +14538,51 @@
     "script": {
       "hpPercent": [
         "3"
+      ]
+    }
+  },
+  "24302": {
+    "id": 24302,
+    "aegisName": "S_Royalguard_Shield",
+    "name": "Royal Guard Shadow Shield",
+    "unidName": "Shadow Shield",
+    "resName": "쉴드쉐도우",
+    "description": "โล่เล็กที่สามารถสวมใส่ที่แขนได้ สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์การป้องกันของมันจะลดน้อยลง  \nRoyal Guard class เท่านั้นที่สามารถสวมใส่ได้\nเพิ่ม Damage ของ Earth Drive 20%  \nทุกๆ การอัพเกรด 1 ขั้น เพิ่ม Damage ของ Earth Drive เพิ่มเติม 5%  \nเมื่อสวมใส่ร่วมกับ ^32CD32Royal Guard Shadow Weapon^000000, จะได้รับเอฟเฟกต์เพิ่มเติม  \nลด SP ในการใช้ สกิล Cannon Spear 20% , สามารถใช้สกิล Chemical Protection (Shield) Lv.3 ได้  \nเมื่อสวมใส่ ^32CD32Swordman Shadow^000000 2 ประเภท, ^32CD32Crusader Shadow^000000 2 ประเภท,  ^32CD32Royal Guard Shadow^000000 2 ประเภท ทั้งหมด, จะได้รับเอฟเฟกต์ต่อไปนี้  \nAll State + 10, MaxHP + 5%, MaxSP + 5%.\nเพิกเฉยต่อพลังป้องกันทางกายภาพและทางเวทย์ของศัตรูธรรมดา 50%  \nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shield^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Royal Guard class^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 527,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Shield",
+    "compositionPos": null,
+    "usableClass": [
+      "Royal Guard Class"
+    ],
+    "script": {
+      "Earth Drive": [
+        "20",
+        "1---5"
+      ],
+      "spPercent__Cannon Spear": [
+        "EQUIP[Royal Guard Shadow Weapon]20"
+      ],
+      "allStatus": [
+        "EQUIP[Swordsman Shadow Earring&&Swordsman Shadow Pendant&&Crusader Shadow Shoes&&Crusader Shadow Armor&&Royal Guard Shadow Weapon]10"
+      ],
+      "hpPercent": [
+        "EQUIP[Swordsman Shadow Earring&&Swordsman Shadow Pendant&&Crusader Shadow Shoes&&Crusader Shadow Armor&&Royal Guard Shadow Weapon]5"
+      ],
+      "spPercent": [
+        "EQUIP[Swordsman Shadow Earring&&Swordsman Shadow Pendant&&Crusader Shadow Shoes&&Crusader Shadow Armor&&Royal Guard Shadow Weapon]5"
+      ],
+      "p_pene_class_normal": [
+        "EQUIP[Swordsman Shadow Earring&&Swordsman Shadow Pendant&&Crusader Shadow Shoes&&Crusader Shadow Armor&&Royal Guard Shadow Weapon]50"
+      ],
+      "m_pene_class_normal": [
+        "EQUIP[Swordsman Shadow Earring&&Swordsman Shadow Pendant&&Crusader Shadow Shoes&&Crusader Shadow Armor&&Royal Guard Shadow Weapon]50"
       ]
     }
   },
@@ -17276,6 +17617,95 @@
       "sp__Psychic Wave": [
         "4",
         "2---1"
+      ]
+    }
+  },
+  "24581": {
+    "id": 24581,
+    "aegisName": "S_Genesis_Weapon",
+    "name": "Genesis Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา\nเพิ่ม Damage ทางเวทมนตร์ธาตุ Holy 3%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางเวทมนตร์ธาตุ Holy ขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางเวทมนตร์ธาตุ Holy ขึ้นอีก 4%\nเมื่อสวมใส่ Genesis Shadow Weapon/Pendant/Earring ร่วมกัน,\nเพิ่ม Damage สกิล Genesis Ray % เท่ากับค่าอัพเกรดรวมกัน\nเมื่อสวมใส่ร่วมกับ Royal Guard Shadow Shield,\nเพิกเฉยต่อพลังป้องกันทางเวทมนตร์ของทุกเผ่ายกเว้น Player 40% และเพิกเฉยต่อพลังป้องกันทางเวทมนตร์เพิ่มอีกตามค่าอัพเกรดรวมกันของ Genesis Shadow Weapon และ Royal Guard Shadow Shield\nประเภท : ^777777Shadow^000000 \nตำแหน่ง : ^777777Weapon^000000 น้ำหนัก : ^7777770^000000 \nเลเวลที่ต้องการ : ^77777799^000000 \nอาชีพที่ใส่ได้ : ^777777Royal Guard Cls^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "Royal Guard Cls"
+    ],
+    "script": {
+      "m_my_element_holy": [
+        "3",
+        "7===3",
+        "9===4"
+      ],
+      "Genesis Ray": [
+        "EQUIP[Genesis Shadow Pendant&&Genesis Shadow Earring]REFINE[shadowWeapon,shadowPendant,shadowEarring==1]---1"
+      ],
+      "m_pene_race_all": [
+        "EQUIP[Royal Guard Shadow Shield]40",
+        "EQUIP[Royal Guard Shadow Shield]REFINE[shadowWeapon,shadowShield==1]---1"
+      ]
+    }
+  },
+  "24582": {
+    "id": 24582,
+    "aegisName": "S_Genesis_Pendant",
+    "name": "Genesis Shadow Pendant",
+    "unidName": "Shadow Pendant",
+    "resName": "펜던트쉐도우",
+    "description": "สร้อยคอศักดิ์สิทธิ์ที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา \nเพิ่ม Damage สกิล Genesis Ray 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage สกิล Genesis Ray ขึ้นอีก 2%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Pendant ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Royal Guard Cls^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 530,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "AccessoryLeft",
+    "compositionPos": null,
+    "usableClass": [
+      "Royal Guard Cls"
+    ],
+    "script": {
+      "Genesis Ray": [
+        "5",
+        "2---2"
+      ]
+    }
+  },
+  "24583": {
+    "id": 24583,
+    "aegisName": "S_Genesis_Earing",
+    "name": "Genesis Shadow Earring",
+    "unidName": "Shadow Earring",
+    "resName": "이어링쉐도우",
+    "description": "ต่างหูมงคลที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา \nลด Cooldown สกิล Genesis Ray 0.2 วินาที\nทุก ๆ การอัพเกรด 3 ขั้น ลด Cooldown สกิล Genesis Ray ลงอีก 0.1 วินาที\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Earring ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Royal Guard Cls^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 529,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "AccessoryRight",
+    "compositionPos": null,
+    "usableClass": [
+      "Royal Guard Cls"
+    ],
+    "script": {
+      "cd__Genesis Ray": [
+        "0.2",
+        "3---0.1"
       ]
     }
   },
@@ -26040,6 +26470,43 @@
       ]
     }
   },
+  "32350": {
+    "id": 32350,
+    "aegisName": "Farthezan",
+    "name": "Farthezan [2]",
+    "unidName": "Sword",
+    "resName": "Farthezan",
+    "description": "ดาบที่ถูกมอบให้บุคคลที่เปรียบเสมือนเทพผู้ศักดิ์สิทธิ์\n^ffffff_^000000 \nMATK + 180, เพิ่ม Damage สกิล Gloria Domini 40%\nทุก ๆ การอัพเกรด 1 ขั้น ลดระยะเวลาร่ายแบบแปรผัน 1%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Genesis Ray 30%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Gloria Domini, Genesis Ray ขึ้นอีก 20%\n\nประเภท : ^777777Sword^000000 พลังโจมตี : ^777777130^000000\nน้ำหนัก : ^777777110^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Royal Guard^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 257,
+    "itemLevel": 4,
+    "attack": 130,
+    "defense": null,
+    "weight": 110,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Royal Guard"
+    ],
+    "script": {
+      "matk": [
+        "180"
+      ],
+      "Gloria Domini": [
+        "40",
+        "11===20"
+      ],
+      "vct": [
+        "1---1"
+      ],
+      "Genesis Ray": [
+        "9===30",
+        "11===20"
+      ]
+    }
+  },
   "300209": {
     "id": 300209,
     "aegisName": "SLD_Grave_Amon_Ra_Card",
@@ -26555,6 +27022,105 @@
     "script": {
       "matk": [
         "LEARN_SKILL[Soul Drain==1]---2"
+      ]
+    }
+  },
+  "310184": {
+    "id": 310184,
+    "aegisName": "Royalguard_Robe2",
+    "name": "Royal Guard Stone II (Garment)",
+    "unidName": "Royal Guard Stone II (Garment)",
+    "resName": "Paladin_Figure",
+    "description": "เพิ่ม Damage สกิล Genesis Ray 15%\nเมื่อใช้กับ Paladin Stone II (Upper) ทุก ๆ การเรียนรู้สกิล Auto Guard 2 เลเวล ลดระยะเวลาร่ายแบบคงที่ 0.1 วินาที\nเมื่อใช้กับ Paladin Stone II (Middle) เพิ่ม Damage ทางเวทมนตร์ธาตุ Holy 5%\nเมื่อใช้กับ Paladin Stone II (Lower) เพิ่ม Damage สกิล Genesis Ray ขึ้นอีก 15%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 74,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "Genesis Ray": [
+        "15",
+        "EQUIP[Paladin Stone II (Lower)]15"
+      ],
+      "fct": [
+        "EQUIP[Paladin Stone II (Upper)]LEARN_SKILL[Auto Guard==2]---0.1"
+      ],
+      "m_my_element_holy": [
+        "EQUIP[Paladin Stone II (Middle)]5"
+      ]
+    }
+  },
+  "310185": {
+    "id": 310185,
+    "aegisName": "Paladin_Bottom2",
+    "name": "Paladin Stone II (Lower)",
+    "unidName": "Paladin Stone II (Lower)",
+    "resName": "검사피규어",
+    "description": "ทุก ๆ การเรียนรู้สกิล Grand Cross 1 เลเวล เพิ่ม Damage ทางเวทมนตร์ธาตุ Holy 1%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 73,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "m_my_element_holy": [
+        "LEARN_SKILL[Grand Cross==1]---1"
+      ]
+    }
+  },
+  "310186": {
+    "id": 310186,
+    "aegisName": "Paladin_Middle2",
+    "name": "Paladin Stone II (Middle)",
+    "unidName": "Paladin Stone II (Middle)",
+    "resName": "검사피규어",
+    "description": "เพิ่ม Damage สกิล Gloria Domini 20%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 72,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "Gloria Domini": [
+        "20"
+      ]
+    }
+  },
+  "310187": {
+    "id": 310187,
+    "aegisName": "Paladin_Top2",
+    "name": "Paladin Stone II (Upper)",
+    "unidName": "Paladin Stone II (Upper)",
+    "resName": "검사피규어",
+    "description": "ทุก ๆ การเรียนรู้สกิล Faith 1 เลเวล ลดระยะเวลาร่ายแบบแปรผัน 1%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 71,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "vct": [
+        "LEARN_SKILL[Faith==1]---1"
       ]
     }
   },
@@ -29532,6 +30098,42 @@
       ]
     }
   },
+  "490221": {
+    "id": 490221,
+    "aegisName": "Record_Swordsman_TH",
+    "name": "Record of Swordsman [1]",
+    "unidName": "Record of Swordsman",
+    "resName": "연구원기록표",
+    "description": "บันทึกการสำรวจของกลุ่มอัศวินที่เข้าไปสำรวจยังพื้นที่ Tomb of Honor เป็นรายการบันทึกที่ดูเหมือนว่าเนื้อหาจะขาดหายไปบางส่วน\n\nATK + 5%\n\nทุก ๆ การเรียนรู้ Bash 2 เลเวล, ATK +15\nเมื่อสวมใส่ร่วมกับ Old Rune Circlet, เพิ่ม Damage ทางกายภาพระยะไกลต่อศัตรูทุกประเภท 15%\n\nเมื่อสวมใส่ร่วมกับ Old Casket of Protection\nลด Cooldown ของ Earth Drive 2.2 วินาที\nประเภท : ^777777Accessory^000000  พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 510,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Rune Knight",
+      "Royal Guard"
+    ],
+    "script": {
+      "atkPercent": [
+        "5"
+      ],
+      "atk": [
+        "LEARN_SKILL[Bash==2]---15"
+      ],
+      "range": [
+        "EQUIP[Old Rune Circlet]===15"
+      ],
+      "cd__Earth Drive": [
+        "EQUIP[Old Casket of Protection]2.2"
+      ]
+    }
+  },
   "490229": {
     "id": 490229,
     "aegisName": "",
@@ -29971,6 +30573,46 @@
       ]
     }
   },
+  "490364": {
+    "id": 490364,
+    "aegisName": null,
+    "name": "Above B.E.2 475 [1]",
+    "unidName": "Above B.E.2 475",
+    "resName": "Fate_MagicBook",
+    "description": "หนังสือซึ่งเป็นหนึ่งในสัญลักษ์ของ Lady of Justice ที่ผู้คนมองข้ามไป\nหนังสือที่สื่อถึงการตั้งมั่นอยู่บนรัฐธรรมนูญอันเป็นหลักสูงสุดของความยุติธรรมที่ไม่ควรมีสิ่งใดอยู่เหนือกว่ามัน\n\nMATK +10%\nลดระยะเวลาร่ายแบบแปรผัน 10%\nลด Delay หลังใช้สกิล 5%\nทุก ๆ BaseLv 5 เลเวล เพิ่ม Damage สกิล Genesis Ray 1%\n\nเมื่อสวมใส่ร่วมกับ Dark Blinkers หรือ Dark Blinkers [1],\nมีโอกาส 100% ที่จะใช้สกิล Highness Heal Lv. 3 ใส่ตัวเองหลังจากใช้สกิล Genesis Ray\n(เมื่อตัวละครมีเลเวลตั้งแต่ 200 ขึ้นไป จะไม่สามารถใช้งานของผลนี้ได้)\n\nเมื่อสวมใส่ร่วมกับ Themis Balance หรือ [Not For Sale] Themis Balance,\nทุก ๆ การอัพเกรดโล่ 3 ขั้น,\nลดระยะเวลาร่ายแบบแปรผัน 3%, \nลด Delay หลังใช้สกิล 3%\n\nเมื่อสวมใส่ร่วมกับ Themis Balance/[Not For Sale] Themis Balance และ Dark Blinkers/Dark Blinkers [1],\nทุก ๆ การอัพเกรดโล่ 3 ขั้น เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกธาตุ 5%\nประเภท : ^777777Accessory (Right)^000000 พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^77777720^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 510,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 20,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "matkPercent": [
+        "10"
+      ],
+      "vct": [
+        "10",
+        "EQUIP[Themis Balance]REFINE[shield==3]---3"
+      ],
+      "acd": [
+        "5",
+        "EQUIP[Themis Balance]REFINE[shield==3]---3"
+      ],
+      "Genesis Ray": [
+        "level:5---1"
+      ],
+      "m_element_all": [
+        "EQUIP[Themis Balance&&Dark Blinkers]REFINE[shield==3]---5"
+      ]
+    }
+  },
   "490372": {
     "id": 490372,
     "aegisName": null,
@@ -30018,6 +30660,64 @@
       ],
       "Solar Explosion": [
         "EQUIP[Lunar Eclipse Armor]16"
+      ]
+    }
+  },
+  "490376": {
+    "id": 490376,
+    "aegisName": null,
+    "name": "Record of Swordsman 2 [1]",
+    "unidName": "Record of Swordsman 2",
+    "resName": "Record_Mage2_TW",
+    "description": "บันทึกส่วนที่เหลือของกลุ่มอัศวินที่เข้าไปสำรวจยังพื้นที่ Tomb of Honor\n\nลด Delay หลังใช้สกิล 6%\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 6%\nเพิ่ม Damage สกิล Hundred Spears, Earth Drive 30%\n\nเมื่อสวมใส่ร่วมกับ Old Rune Circlet,\nทุก ๆ การอัพเกรด Old Rune Circlet 1 ขั้น เพิ่ม Damage ทางกายภาพระยะไกล 3%\n\nเมื่อสวมใส่ร่วมกับ Old Casket of Protection,\nทุก ๆ การอัพเกรด Old Casket of Protection 1 ขั้น เพิ่ม Damage ทางกายภาพระยะใกล้ 3%\n\nเมื่อสวมใส่ร่วมกับ Record of Swordsman หรือ [Not For Sale] Record of Swordsman,\nHIT +40, ลด Delay หลังใช้สกิล 16%\nลด Cooldown สกิล Hundred Spears, Earth Drive 0.5 วินาที \n\nเมื่อสวมใส่ร่วมกับ Record of Swordsman/[Not For Sale] Record of Swordsman และ Old Rune Circlet\nทุก ๆ การอัพเกรด Old Rune Circlet 3 ขั้น,\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกประเภท 6%\nเพิ่ม Damage สกิล Hundred Spears +10%\n\nเมื่อสวมใส่ร่วมกับ Record of Swordsman/[Not For Sale] Record of Swordsman และ Old Casket of Protection\nทุก ๆ การอัพเกรด Old Casket of Protection 3 ขั้น,\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกประเภท 6%\nเพิ่ม Damage สกิล Earth Drive +10%\nประเภท : ^777777Accessory (Left)^000000 พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 511,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Rune Knight",
+      "Royal Guard"
+    ],
+    "script": {
+      "acd": [
+        "6",
+        "EQUIP[Record of Swordsman]16"
+      ],
+      "p_size_all": [
+        "6"
+      ],
+      "range": [
+        "EQUIP[Old Rune Circlet]REFINE[headUpper==1]---3"
+      ],
+      "melee": [
+        "EQUIP[Old Casket of Protection]REFINE[headUpper==1]---3"
+      ],
+      "hit": [
+        "EQUIP[Record of Swordsman]40"
+      ],
+      "p_class_all": [
+        "EQUIP[Record of Swordsman&&Old Rune Circlet]REFINE[headUpper==3]---6",
+        "EQUIP[Record of Swordsman&&Old Casket of Protection]REFINE[headUpper==3]---6"
+      ],
+      "Hundred Spears": [
+        "30",
+        "EQUIP[Record of Swordsman&&Old Rune Circlet]REFINE[headUpper==3]---10"
+      ],
+      "Earth Drive": [
+        "30",
+        "EQUIP[Record of Swordsman&&Old Casket of Protection]REFINE[headUpper==3]---10"
+      ],
+      "cd__Hundred Spears": [
+        "EQUIP[Record of Swordsman]0.5"
+      ],
+      "cd__Earth Drive": [
+        "EQUIP[Record of Swordsman]0.5"
       ]
     }
   },
@@ -30698,6 +31398,101 @@
       ]
     }
   },
+  "500003": {
+    "id": 500003,
+    "aegisName": "Light_Blade",
+    "name": "Light Blade [2]",
+    "unidName": "One-Handed Sword",
+    "resName": "세이브더킹",
+    "description": "ดาบประกายแสงที่เล่าขานกันว่านักรบผู้กล้าหาญเคยใช้\nดูกลมกลืนเข้ากับ Ancient Hero Boots\nMATK + 170\nทุก ๆ การอัพเกรด 2 ขั้น MATK + 10\nทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage สกิล [Gloria Domini], [Genesis Ray] 5%\nเมื่ออัพเกรดตั้งแต่ 9 ขึ้นไป ลดระยะเวลาร่ายแบบแปรผัน 10%\nเมื่ออัพเกรดตั้งแต่ 11 ขึ้นไป เพิ่ม Damage ทางเวทมนตร์ธาตุ Holy 15%\nเมื่อสวมใส่ร่วมกับ Ancient Hero Boots มีโอกาสที่ INT +20, MATK +15% เป็นเวลา 7 วินาที\nประเภท : ^777777Sword^000000 พลังโจมตี : ^777777130^000000\nน้ำหนัก : ^777777100^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Royal Guard Cls^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 257,
+    "itemLevel": 4,
+    "attack": 130,
+    "defense": null,
+    "weight": 100,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Royal Guard Cls"
+    ],
+    "script": {
+      "matk": [
+        "170",
+        "2---10"
+      ],
+      "Gloria Domini": [
+        "3---5"
+      ],
+      "Genesis Ray": [
+        "3---5"
+      ],
+      "vct": [
+        "9===10"
+      ],
+      "m_my_element_holy": [
+        "11===15"
+      ],
+      "chance__int": [
+        "EQUIP[Ancient Hero Boots]===20"
+      ],
+      "chance__matkPercent": [
+        "EQUIP[Ancient Hero Boots]===15"
+      ]
+    }
+  },
+  "500017": {
+    "id": 500017,
+    "aegisName": "Up_Light_Blade",
+    "name": "Patent Light Blade [2]",
+    "unidName": "One-Handed Sword",
+    "resName": "Up_Light_Blade",
+    "description": "ดาบประกายแสงที่เล่าขานกันว่านักรบผู้กล้าหาญเคยใช้\nด้วยพลังแห่งแสงสว่าง พลังอันแท้จริงเริ่มถูกปลุกขึ้นมา\nดูกลมกลืนเข้ากับ Great Hero Boots\n\nMATK +195\nทุก ๆ การอัพเกรด 2 ขั้น MATK +15\nทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage สกิล Gloria Domini, Genesis Ray 5%\nเมื่ออัพเกรดถึงขั้น 7 ลดระยะเวลาร่ายแบบแปรผัน 10%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางเวทมนตร์ธาตุ Holy 15%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกขนาด 15%, เพิ่ม Damage สกิล Gloria Domini, Genesis Ray ขึ้นอีก 15%\nเมื่อสวมใส่ร่วมกับ Great Hero Boots, INT +10, MATK +7%\n\nประเภท : ^777777Sword^000000 พลังโจมตี : ^777777130^000000\nน้ำหนัก : ^777777120^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Royal Guard^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 257,
+    "itemLevel": 4,
+    "attack": 130,
+    "defense": null,
+    "weight": 120,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Royal Guard Cls"
+    ],
+    "script": {
+      "matk": [
+        "195",
+        "2---15"
+      ],
+      "Gloria Domini": [
+        "3---5",
+        "11===15"
+      ],
+      "Genesis Ray": [
+        "3---5",
+        "11===15"
+      ],
+      "vct": [
+        "7===10"
+      ],
+      "m_my_element_holy": [
+        "9===15"
+      ],
+      "m_size_all": [
+        "11===15"
+      ],
+      "int": [
+        "EQUIP[Great Hero Boots]===10"
+      ],
+      "matkPercent": [
+        "EQUIP[Great Hero Boots]===7"
+      ]
+    }
+  },
   "510001": {
     "id": 510001,
     "aegisName": "Boost_Dagger",
@@ -30843,6 +31638,64 @@
       ],
       "atkPercent": [
         "EQUIP[Great Hero Boots]===7"
+      ]
+    }
+  },
+  "530000": {
+    "id": 530000,
+    "aegisName": "Boost_Spear",
+    "name": "Boosting Spear [2]",
+    "unidName": "Spear",
+    "resName": "Blut_Spear",
+    "description": "หอกมือเดียวสุดพิเศษที่เตรียมไว้เพื่อทำให้นักผจญภัยพัฒนาไปอย่างรวดเร็ว\n\nMATK +160\nเพิ่ม Damage ทางเวทมนตร์ธาตุ Holy 3%, ATK +3%\nทุก ๆ การอัพเกรด 1 ขั้น ATK +2, MATK +2\nทุก ๆ Base Lv. 15, ATK +3, MATK +3 (ใช้งานสูงสุดถึง Lv. 180)\nเมื่ออัพเกรดถึงขั้น 7 ทุก ๆ การเรียนรู้สกิล Faith 1 เลเวล เพิ่ม Damage ทางเวทมนตร์ธาตุ Holy ขึ้นอีก 1%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพระยะไกล 10%\n\nเมื่อสวมใส่ร่วมกับ Defunct Booster (Robe/Muffler/Shoes/Earring),\nMATK +20, ลด Delay หลังใช้สกิล 10%,\nทุก ๆ Base Lv. 15 เพิ่ม Damage สกิล Genesis Ray 1% (ใช้งานสูงสุดถึง Lv. 180),\nเมื่อใช้สกิล Cure เพิ่ม Damage สกิล Genesis Ray ขึ้นอีก 20% เป็นเวลา 60 วินาที\n\nเมื่อสวมใส่ร่วมกับ Range Booster (Suit/Manteau/Boots/Brooch), \nASPD +2, เพิ่ม Damage ทางกายภาพระยะไกล 10%,\nทุก ๆ Base Lv. 15 เพิ่ม Damage สกิล Banishing Point 2% (ใช้งานสูงสุดถึง Lv. 180),\nเมื่อใช้สกิล Spear Quicken เพิ่ม Damage สกิล Banishing Point ขึ้นอีก 35% เป็นเวลา 60 วินาที\nประเภท : ^777777One-Handed Spear^000000 พลังโจมตี : ^777777160^000000\nน้ำหนัก : ^7777770^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Royal Guard Cls^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 259,
+    "itemLevel": 4,
+    "attack": 160,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Royal Guard Cls"
+    ],
+    "script": {
+      "matk": [
+        "160",
+        "1---2",
+        "level:15---3",
+        "EQUIP[Defunct Booster Robe&&Defunct Booster Muffler&&Defunct Booster Shoes&&Defunct Booster Earring]20"
+      ],
+      "m_my_element_holy": [
+        "3",
+        "REFINE[7]LEARN_SKILL[Faith==1]---1"
+      ],
+      "atkPercent": [
+        "3"
+      ],
+      "atk": [
+        "1---2",
+        "level:15---3"
+      ],
+      "range": [
+        "9===10",
+        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]10"
+      ],
+      "acd": [
+        "EQUIP[Defunct Booster Robe&&Defunct Booster Muffler&&Defunct Booster Shoes&&Defunct Booster Earring]10"
+      ],
+      "Genesis Ray": [
+        "EQUIP[Defunct Booster Robe&&Defunct Booster Muffler&&Defunct Booster Shoes&&Defunct Booster Earring]level:15---1",
+        "EQUIP[Defunct Booster Robe&&Defunct Booster Muffler&&Defunct Booster Shoes&&Defunct Booster Earring]ACTIVE_SKILL[Cure]===20(60 วินาที)"
+      ],
+      "aspd": [
+        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]2"
+      ],
+      "Banishing Point": [
+        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]level:15---2",
+        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]ACTIVE_SKILL[Spear Quicken]===35(60 วินาที)"
       ]
     }
   },

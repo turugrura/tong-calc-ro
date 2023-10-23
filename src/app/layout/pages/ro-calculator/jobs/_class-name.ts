@@ -1,9 +1,18 @@
 export enum ClassName {
+  Swordman = 'Swordman',
+  Paladin = 'Paladin',
+  RoyalGuard = 'RoyalGuard',
+
+  LordKnight = 'LordKnight',
+  RuneKnight = 'RuneKnight',
+
   Archer = 'Archer',
   Bard = 'Bard',
   Wanderer = 'Wanderer',
+
   Dance = 'Dance',
   Minstrel = 'Minstrel',
+
   Sniper = 'Sniper',
   Ranger = 'Ranger',
 

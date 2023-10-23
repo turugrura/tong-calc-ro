@@ -431,6 +431,7 @@ const enchantTable: EntTable[] = [
   { name: 'Upgrade_Part_Engine', enchants: [null, BaseState._1, BaseState._1, BaseState._1] },
   { name: 'Supplement_Part_Dex', enchants: [null, null, BaseState._1, AllState._1] },
 
+  { name: 'Old_Rune_Circlet', enchants: [null, labHead2, BaseState._3_5, BaseState._3_5] },
   { name: 'Old_Mitra', enchants: [null, labHead2, BaseState._3_5, BaseState._3_5] },
   { name: 'Old_Driver_Band_R', enchants: [null, labHead2, BaseState._3_5, BaseState._3_5] },
   { name: 'Old_Driver_Band_Y', enchants: [null, labHead2, BaseState._3_5, BaseState._3_5] },
@@ -438,6 +439,7 @@ const enchantTable: EntTable[] = [
   { name: 'Old_Magic_Stone_Hat', enchants: [null, labHead2, BaseState._3_5, BaseState._3_5] },
   { name: 'Old_Wind_Whisper', enchants: [null, labHead2, BaseState._3_5, BaseState._3_5] },
   { name: 'Old_Circlet_Of_Bone', enchants: [null, labHead2, BaseState._3_5, BaseState._3_5] },
+  { name: 'Old_Protect_Of_Crown', enchants: [null, labHead2, BaseState._3_5, BaseState._3_5] },
   { name: 'Old_Camo_RabbitHood', enchants: [null, labHead2, BaseState._3_5, BaseState._3_5] },
 
   { name: 'S_Circlet_Of_Time_GC', enchants: [null, labHead2, tempHead3, tempHead4] },

@@ -228,15 +228,13 @@ export class Mechanic extends CharacterBase {
   }
 
   override setAdditionalBonus(params: InfoForClass) {
-    if (!this.bonuses?.masteryAtks) return params.totalBonus;
-
     const { totalBonus, weapon } = params;
     const { typeName } = weapon.data;
 
     const { masteryAtks, equipAtks } = this.bonuses;
 
     const prefixCondition = `${typeName}_`;
-    for (const [_skillName, bonus] of Object.entries({ ...masteryAtks, ...equipAtks })) {
+    for (const [_skillName, bonus] of Object.entries({ ...(masteryAtks || {}), ...(equipAtks || {}) })) {
       for (const [attr, value] of Object.entries(bonus)) {
         if (attr.startsWith(prefixCondition)) {
           const actualAttr = attr.replace(prefixCondition, '');
