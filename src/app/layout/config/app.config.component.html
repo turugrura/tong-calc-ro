@@ -65,8 +65,8 @@
       </div>
     </div>
 
-    <h5>Ripple Effect</h5>
-    <p-inputSwitch [(ngModel)]="ripple"></p-inputSwitch>
+    <h5 *ngIf="!env.production">Ripple Effect</h5>
+    <p-inputSwitch *ngIf="!env.production" [(ngModel)]="ripple"></p-inputSwitch>
   </ng-container>
 
   <h5>Bootstrap</h5>

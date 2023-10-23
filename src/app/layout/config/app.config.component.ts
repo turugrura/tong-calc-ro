@@ -12,6 +12,7 @@ export class AppConfigComponent implements OnInit {
 
   scales: number[] = [12, 13, 14, 15, 16];
   isProd = environment.production;
+  env = environment;
 
   constructor(public layoutService: LayoutService, public menuService: MenuService) {}
 

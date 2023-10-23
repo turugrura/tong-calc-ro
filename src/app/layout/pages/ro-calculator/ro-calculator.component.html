@@ -250,7 +250,7 @@
               </div>
               <div class="col-6">
                 <div class="grid grid-nogutter mx-2">
-                  <div [hidden]="env.production" class="col-12">
+                  <div class="col-12">
                     Alt+Q Atk:
                     <span class="font-semibold px-1 summary_stat_atk">
                       {{ totalSummary?.calc?.totalStatusAtk || 0 }} +
@@ -262,7 +262,7 @@
                       }}
                     </span>
                   </div>
-                  <div class="col-12">
+                  <div [hidden]="env.production" class="col-12">
                     Equip Atk:
                     <span class="font-semibold px-1 summary_stat_atk"
                       >{{ totalSummary?.atk || 0 }} + {{ totalSummary?.atkPercent || 0 }} %</span
@@ -315,7 +315,7 @@
               </div>
               <div class="col-6">
                 <div class="grid grid-nogutter mx-2">
-                  <div [hidden]="env.production" class="col-12">
+                  <div class="col-12">
                     Alt+Q Matk:
                     <span class="font-semibold px-1 summary_stat_matk"
                       >{{ totalSummary?.calc?.totalStatusMatk || 0 }} +
@@ -326,7 +326,7 @@
                       }}</span
                     >
                   </div>
-                  <div class="col-12">
+                  <div [hidden]="env.production" class="col-12">
                     Equip Matk:
                     <span class="font-semibold px-1 summary_stat_matk"
                       >{{ totalSummary?.matk || 0 }} + {{ totalSummary?.matkPercent || 0 }} %</span
