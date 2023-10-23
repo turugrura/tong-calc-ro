@@ -1,74 +1,80 @@
 import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
+import {
+  ActiveSkillModel,
+  AtkSkillFormulaInput,
+  AtkSkillModel,
+  CharacterBase,
+  PassiveSkillModel,
+} from './_character-base.abstract';
 import { Paladin } from './paladin';
 import { ElementType } from '../constants/element-type.const';
 import { InfoForClass } from '../models/info-for-class.model';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
-  1: [0, 0, 0, 0, 1, 0],
-  2: [0, 0, 0, 1, 1, 0],
-  3: [0, 0, 0, 2, 1, 0],
-  4: [0, 1, 0, 2, 1, 0],
-  5: [0, 1, 0, 2, 1, 0],
-  6: [0, 1, 0, 2, 1, 0],
-  7: [0, 2, 0, 2, 1, 0],
-  8: [0, 2, 0, 2, 2, 0],
-  9: [0, 2, 0, 3, 2, 0],
-  10: [0, 2, 0, 3, 2, 0],
-  11: [0, 2, 0, 3, 2, 0],
-  12: [0, 2, 1, 3, 2, 0],
-  13: [0, 2, 2, 3, 2, 0],
-  14: [0, 2, 3, 3, 2, 0],
-  15: [0, 2, 3, 3, 2, 0],
-  16: [0, 2, 3, 3, 2, 0],
-  17: [0, 2, 3, 3, 3, 0],
-  18: [0, 3, 3, 3, 3, 0],
-  19: [0, 3, 3, 3, 3, 0],
-  20: [0, 3, 3, 3, 3, 0],
-  21: [0, 3, 3, 4, 3, 0],
-  22: [0, 3, 4, 4, 3, 0],
-  23: [0, 3, 4, 4, 4, 0],
-  24: [0, 3, 4, 4, 4, 0],
-  25: [0, 3, 4, 4, 4, 0],
-  26: [1, 3, 4, 4, 4, 0],
-  27: [2, 3, 4, 4, 4, 0],
-  28: [2, 3, 4, 4, 4, 0],
-  29: [2, 3, 4, 4, 4, 0],
-  30: [2, 3, 4, 4, 5, 0],
-  31: [2, 4, 4, 4, 5, 0],
-  32: [2, 4, 5, 4, 5, 0],
-  33: [2, 4, 5, 4, 5, 0],
-  34: [2, 4, 5, 4, 5, 0],
-  35: [2, 4, 5, 4, 5, 0],
-  36: [2, 4, 5, 5, 5, 0],
-  37: [2, 4, 5, 6, 5, 0],
-  38: [2, 4, 5, 7, 5, 0],
-  39: [2, 5, 5, 7, 5, 0],
-  40: [2, 5, 5, 7, 5, 0],
-  41: [2, 5, 5, 7, 5, 0],
-  42: [2, 5, 5, 7, 5, 0],
-  43: [2, 6, 5, 7, 5, 0],
-  44: [2, 6, 5, 7, 6, 0],
-  45: [2, 7, 5, 7, 6, 0],
-  46: [2, 7, 5, 7, 6, 0],
-  47: [2, 7, 5, 7, 6, 0],
-  48: [2, 7, 5, 7, 6, 0],
-  49: [2, 7, 5, 8, 6, 0],
-  50: [2, 8, 5, 8, 6, 0],
-  51: [2, 8, 5, 8, 6, 1],
-  52: [2, 8, 5, 8, 7, 1],
-  53: [2, 8, 5, 8, 7, 1],
-  54: [2, 8, 5, 9, 7, 1],
-  55: [2, 9, 5, 9, 7, 1],
-  56: [2, 9, 5, 9, 7, 1],
-  57: [2, 9, 6, 9, 7, 1],
-  58: [2, 9, 6, 9, 7, 2],
-  59: [2, 9, 6, 9, 8, 2],
-  60: [2, 10, 6, 9, 8, 2],
-  61: [2, 10, 6, 9, 8, 2],
-  62: [2, 10, 6, 9, 8, 2],
-  63: [2, 10, 6, 9, 8, 2],
-  64: [2, 11, 7, 9, 8, 2],
+  1: [0, 0, 0, 0, 0, 0],
+  2: [0, 0, 1, 0, 0, 0],
+  3: [0, 0, 1, 1, 0, 0],
+  4: [1, 0, 1, 1, 0, 0],
+  5: [1, 0, 1, 2, 0, 0],
+  6: [1, 0, 1, 2, 1, 0],
+  7: [1, 0, 1, 2, 1, 0],
+  8: [1, 0, 1, 2, 1, 0],
+  9: [1, 0, 2, 2, 1, 0],
+  10: [1, 0, 2, 2, 1, 0],
+  11: [1, 0, 2, 3, 1, 0],
+  12: [1, 0, 2, 3, 1, 0],
+  13: [2, 0, 2, 3, 1, 0],
+  14: [2, 0, 2, 3, 2, 0],
+  15: [2, 0, 2, 3, 2, 0],
+  16: [2, 0, 2, 3, 2, 1],
+  17: [2, 0, 2, 3, 2, 1],
+  18: [2, 0, 2, 3, 2, 1],
+  19: [2, 0, 2, 4, 2, 1],
+  20: [2, 0, 2, 4, 3, 1],
+  21: [2, 0, 2, 4, 3, 1],
+  22: [2, 0, 2, 4, 3, 1],
+  23: [2, 1, 2, 4, 3, 1],
+  24: [2, 1, 2, 5, 3, 1],
+  25: [2, 1, 2, 5, 3, 1],
+  26: [2, 1, 2, 6, 3, 1],
+  27: [2, 1, 3, 6, 3, 1],
+  28: [2, 1, 3, 6, 3, 1],
+  29: [2, 1, 3, 6, 3, 1],
+  30: [3, 1, 3, 6, 3, 1],
+  31: [3, 1, 3, 6, 4, 1],
+  32: [3, 1, 3, 6, 4, 1],
+  33: [3, 1, 3, 6, 4, 2],
+  34: [3, 2, 3, 6, 4, 2],
+  35: [3, 2, 3, 6, 4, 2],
+  36: [3, 2, 3, 6, 4, 2],
+  37: [3, 2, 3, 7, 4, 2],
+  38: [3, 2, 3, 8, 4, 2],
+  39: [3, 2, 3, 8, 4, 2],
+  40: [4, 2, 3, 8, 4, 2],
+  41: [4, 2, 4, 8, 4, 2],
+  42: [4, 2, 5, 8, 4, 2],
+  43: [4, 2, 5, 8, 4, 2],
+  44: [4, 2, 5, 8, 5, 2],
+  45: [5, 2, 5, 8, 5, 2],
+  46: [5, 2, 5, 9, 5, 2],
+  47: [5, 2, 5, 9, 5, 2],
+  48: [6, 2, 5, 9, 5, 2],
+  49: [6, 2, 5, 9, 6, 2],
+  50: [6, 2, 5, 9, 6, 2],
+  51: [6, 3, 5, 9, 6, 2],
+  52: [6, 3, 5, 9, 6, 2],
+  53: [6, 3, 6, 9, 6, 2],
+  54: [6, 3, 6, 9, 6, 3],
+  55: [6, 3, 6, 9, 6, 3],
+  56: [6, 3, 6, 9, 7, 3],
+  57: [6, 3, 6, 9, 7, 3],
+  58: [7, 3, 6, 9, 7, 3],
+  59: [7, 3, 7, 9, 7, 3],
+  60: [7, 3, 7, 10, 7, 3],
+  61: [7, 3, 7, 10, 7, 3],
+  62: [7, 3, 7, 10, 7, 3],
+  63: [7, 3, 7, 10, 7, 3],
+  64: [7, 3, 7, 10, 7, 3],
   65: [8, 3, 8, 10, 8, 3],
 };
 
@@ -77,12 +83,7 @@ export class RoyalGuard extends CharacterBase {
   protected readonly JobBonusTable = jobBonusTable;
 
   protected readonly initialStatusPoint = 100;
-  protected readonly classNames = [
-    'Only 3rd Cls',
-    'Royal Guard',
-    'Royal Guard Cls',
-    'Royal Guard Class'
-  ];
+  protected readonly classNames = ['Only 3rd Cls', 'Royal Guard', 'Royal Guard Cls', 'Royal Guard Class'];
   protected readonly _atkSkillList: AtkSkillModel[] = [
     {
       label: 'Banishing Point Lv10',
@@ -96,8 +97,8 @@ export class RoyalGuard extends CharacterBase {
       formular: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
-        const learnedBashLv = this.bonuses.learnedSkillMap.get('Bash') || 0
-        const bonus = learnedBashLv * 30
+        const learnedBashLv = this.bonuses.learnedSkillMap.get('Bash') || 0;
+        const bonus = learnedBashLv * 30;
 
         return (bonus + skillLevel * 50) * (baseLevel / 100);
       },
@@ -117,7 +118,7 @@ export class RoyalGuard extends CharacterBase {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
 
-        return (skillLevel * 200) * (baseLevel / 100);
+        return skillLevel * 200 * (baseLevel / 100);
       },
     },
     {
@@ -133,30 +134,28 @@ export class RoyalGuard extends CharacterBase {
       formular: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
-        const bonusLevel = (baseLevel / 100)
+        const bonusLevel = baseLevel / 100;
 
-        const spearQuicBonus = 50 * (this.bonuses.learnedSkillMap.get('Spear Quicken') || 0)
-        const pierceDmg = Math.floor((skillLevel * 200 + spearQuicBonus) * bonusLevel)
+        const spearQuicBonus = 50 * (this.bonuses.learnedSkillMap.get('Spear Quicken') || 0);
+        const pierceDmg = Math.floor((skillLevel * 200 + spearQuicBonus) * bonusLevel);
 
-        const { status: { totalStr, totalDex } } = input
-        const swingDmg = Math.floor((skillLevel * 100 + totalStr + totalDex) * bonusLevel)
+        const {
+          status: { totalStr, totalDex },
+        } = input;
+        const swingDmg = Math.floor((skillLevel * 100 + totalStr + totalDex) * bonusLevel);
 
-        return (pierceDmg + swingDmg);
+        return pierceDmg + swingDmg;
       },
     },
   ];
 
-  protected readonly _activeSkillList: ActiveSkillModel[] = [
-
-  ];
-  protected readonly _passiveSkillList: PassiveSkillModel[] = [
-
-  ];
+  protected readonly _activeSkillList: ActiveSkillModel[] = [];
+  protected readonly _passiveSkillList: PassiveSkillModel[] = [];
 
   constructor() {
-    super()
+    super();
 
-    this.inheritBaseClass(new Paladin())
+    this.inheritBaseClass(new Paladin());
   }
 
   override getMasteryAtk(info: InfoForClass): number {

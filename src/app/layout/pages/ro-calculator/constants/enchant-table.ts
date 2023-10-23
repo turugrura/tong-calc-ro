@@ -216,7 +216,7 @@ const sp25 = [Spell._2, Spell._3, Spell._4, Spell._5];
 
 const illusionArmor = ['Improve_Orb_Atk', 'Improve_Orb_Matk', 'Improve_Orb_Archer', 'Improve_Orb_Delay'];
 const illusionGarment = ['Improve_Orb_Speed', 'Improve_Orb_Cast', 'Improve_Orb_Cri', 'Improve_Orb_Above'];
-const illusionBoot = ['Improve_Orb_Fix', 'Improve_Orb_Heal'];
+const illusionBoot = ['Improve_Orb_Fix', 'Improve_Orb_Heal', 'Improve_Orb_L_LUK'];
 const illusionAcc = [EA._5, FS._6, Spell._5, AttackDelay._4, Cri._4];
 
 const tempBoot_3 = ["Bear's_Power", 'Runaway_Magic', 'Speed_Of_Light', 'Muscle_Fool', 'Hawkeye', 'Lucky_Day'];
@@ -443,6 +443,7 @@ const enchantTable: EntTable[] = [
   { name: 'Old_Camo_RabbitHood', enchants: [null, labHead2, BaseState._3_5, BaseState._3_5] },
 
   { name: 'S_Circlet_Of_Time_GC', enchants: [null, labHead2, tempHead3, tempHead4] },
+  { name: 'S_Circlet_Of_Time_SU', enchants: [null, labHead2, tempHead3, tempHead4] },
   { name: 'S_Circlet_Of_Time_SC', enchants: [null, labHead2, tempHead3, tempHead4] },
   { name: 'S_Circlet_Of_Time_AB', enchants: [null, labHead2, tempHead3, tempHead4] },
   { name: 'S_Circlet_Of_Time_RA', enchants: [null, labHead2, tempHead3, tempHead4] },

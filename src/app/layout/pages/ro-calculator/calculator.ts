@@ -246,9 +246,11 @@ export class Calculator {
     p_pene_race_all: 0,
     p_pene_size_all: 0,
     p_pene_element_all: 0,
+    p_pene_class_all: 0,
     m_pene_race_all: 0,
     m_pene_size_all: 0,
     m_pene_element_all: 0,
+    m_pene_class_all: 0,
   };
   private totalEquipStatus = { ...this.allStatus };
   private equipStatus = {
@@ -874,7 +876,7 @@ export class Calculator {
     const formular = (atk: number) => {
       return this.floor(
         this.floor(this.floor(this.floor(this.floor(atk * race) * size) * element) * monsterType) *
-        this.propertyMultiplier,
+          this.propertyMultiplier,
       );
     };
     // console.log({ name: this.monster.name, race, size, element, _class: monsterType });
@@ -967,23 +969,25 @@ export class Calculator {
   }
 
   private calcTotalPene() {
-    const { size, race, element } = this.monsterData;
-    const { p_pene_race_all, p_element_neutral, p_pene_size_all } = this.totalEquipStatus;
-    const rawP_Pene = p_pene_race_all + p_element_neutral + p_pene_size_all;
+    const { size, race, element, type } = this.monsterData;
+    const { p_pene_race_all, p_pene_size_all, p_pene_class_all } = this.totalEquipStatus;
+    const rawP_Pene = p_pene_race_all + p_pene_size_all + p_pene_class_all;
     const pByMonster =
       (this.totalEquipStatus[`p_pene_size_${size}`] ?? 0) +
       (this.totalEquipStatus[`p_pene_element_${element}`] ?? 0) +
-      (this.totalEquipStatus[`p_pene_race_${race}`] ?? 0);
+      (this.totalEquipStatus[`p_pene_race_${race}`] ?? 0) +
+      (this.totalEquipStatus[`p_pene_class_${type}`] ?? 0);
     const totalP_Pene = rawP_Pene + pByMonster;
 
     this.totalPhysicalPene = totalP_Pene >= 100 ? 100 : totalP_Pene;
 
-    const { m_pene_race_all, m_element_neutral, m_pene_size_all } = this.totalEquipStatus;
-    const rawM_Pene = m_pene_race_all + m_element_neutral + m_pene_size_all;
+    const { m_pene_race_all, m_pene_size_all, m_pene_class_all } = this.totalEquipStatus;
+    const rawM_Pene = m_pene_race_all + m_pene_size_all + m_pene_class_all;
     const mByMonster =
       (this.totalEquipStatus[`m_pene_size_${size}`] ?? 0) +
       (this.totalEquipStatus[`m_pene_element_${element}`] ?? 0) +
-      (this.totalEquipStatus[`m_pene_race_${race}`] ?? 0);
+      (this.totalEquipStatus[`m_pene_race_${race}`] ?? 0) +
+      (this.totalEquipStatus[`m_pene_class_${type}`] ?? 0);
     const totalM_Pene = rawM_Pene + mByMonster;
     this.totalMagicalPene = totalM_Pene >= 100 ? 100 : totalM_Pene;
   }
@@ -1356,7 +1360,7 @@ export class Calculator {
       return { isValid: isPass, restCondition: raw };
     }
 
-    //WEAPON_LEVEL
+    // WEAPON_LEVEL
     const [toRemoveA, wLevel] = restCondition.match(/WEAPON_LEVEL\[(\d+)]/) ?? [];
     if (wLevel) {
       const wLv = Number(wLevel);
@@ -1396,6 +1400,16 @@ export class Calculator {
       if (!isUsed) return { isValid: false, restCondition };
 
       restCondition = restCondition.replace(toRemove, '');
+    }
+
+    // LEARN_SKILL[Meow Meow==5]2
+    const [_raw, toRemove_, learnCond] = restCondition.match(/(LEARN_SKILL\[(.+?)\]=?=?=?)\d+/) ?? [];
+    if (learnCond) {
+      const [skillName, skillLv] = learnCond.split('==');
+      const isPass = this.learnedSkillMap.get(skillName) >= Number(skillLv);
+      if (!isPass) return { isValid: false, restCondition };
+
+      restCondition = restCondition.replace(toRemove_, '');
     }
 
     // LEVEL[130]2---1

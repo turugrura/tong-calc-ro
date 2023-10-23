@@ -95,6 +95,19 @@ export class AssasinCross extends CharacterBase {
     },
     {
       inputType: 'dropdown',
+      label: 'Lefthand Mastery',
+      name: 'Lefthand Mastery',
+      dropdown: [
+        { label: '-', isUse: false, value: 0 },
+        { label: 'Lv 1', isUse: true, value: 1, bonus: { weapon_left: 40 } },
+        { label: 'Lv 2', isUse: true, value: 2, bonus: { weapon_left: 50 } },
+        { label: 'Lv 3', isUse: true, value: 3, bonus: { weapon_left: 60 } },
+        { label: 'Lv 4', isUse: true, value: 4, bonus: { weapon_left: 70 } },
+        { label: 'Lv 5', isUse: true, value: 5, bonus: { weapon_left: 80 } },
+      ],
+    },
+    {
+      inputType: 'dropdown',
       label: 'Soul Destroyer',
       name: 'Soul Destroyer',
       isMasteryAtk: true,

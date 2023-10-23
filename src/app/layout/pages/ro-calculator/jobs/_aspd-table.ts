@@ -54,6 +54,7 @@ export const AspdTable: Partial<Record<ClassName, XX>> = {
   [ClassName.Mage]: { base: 156, shield: -5 },
   [ClassName.Wizard]: { base: 156, shield: -5 },
   [ClassName.Warlock]: { base: 151, shield: -5, Dagger: -7, Rod: -5, 'Two-Handed Rod': -5 },
+  [ClassName.Doram]: { base: 156, shield: -7, Rod: -20 },
   [ClassName.SoulReaper]: { base: 146, shield: -8, Dagger: 0, 'Two-Handed Rod': -3, Rod: -3 },
   [ClassName.Rebellion]: {
     base: 146,

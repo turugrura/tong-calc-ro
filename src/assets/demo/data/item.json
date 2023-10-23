@@ -10103,6 +10103,50 @@
       ]
     }
   },
+  "19205": {
+    "id": 19205,
+    "aegisName": "Racing_C_Doram",
+    "name": "Racing Cap(Summoner) [1]",
+    "unidName": "Cap",
+    "resName": "보스베레모",
+    "description": "^ff0000ไอเท็มชิ้นนี้ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้^000000\nหมวกที่ระลึกอันล้ำค่าที่ผลิตโดยองค์กร Monster Race สำหรับลูกค้าที่เข้าร่วมองค์กร\n\nทุกการอัพเกรด 2 ขั้น เพิ่ม ATK , MATK+ 5 .\nทุกการอัพเกรด 3 ขั้น เพิ่ม ASPD 2%\nเมื่ออัพเกรดตั้งแต่ขั้น 8 ขึ้นไป, \nทุกๆ 1 เลเวลของ [Lunatic Carrot Beat] ลดCooldown สกิลของ [Savage Of Spirit] ลง 4 วินาที \nทุกๆ 1 เลเวลของ [Catnip Meteor] ลดCooldown สกิลของ [Nyan Grass] ลง 8 วินาที \nทุกๆ 1 เลเวลของ [Fresh Shrimp] ลดCooldown สกิล [Tasty Shrimp Party] ลง 4 วินาที\nเมื่ออัพเกรดตั้งแต่ขั้น 11 ขึ้นไป, \nลดดีเลย์หลังใช้สกิล15%\n\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^77777710^000000\nตำแหน่ง : ^777777Upper ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Summoner^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 10,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Summoner"
+    ],
+    "script": {
+      "atk": [
+        "2---5"
+      ],
+      "matk": [
+        "2---5"
+      ],
+      "aspd": [
+        "3---2"
+      ],
+      "cd__Savage Of Spirit": [
+        "REFINE[8]LEARN_SKILL[Lunatic Carrot Beat==1]---4"
+      ],
+      "cd__Nyan Grass": [
+        "REFINE[8]LEARN_SKILL[Catnip Meteor==1]---8"
+      ],
+      "ลดCooldown สกิล [Tasty Shrimp Party] ลง": [
+        "REFINE[8]LEARN_SKILL[Fresh Shrimp==1]---4"
+      ],
+      "acd": [
+        "11===15"
+      ]
+    }
+  },
   "19210": {
     "id": 19210,
     "aegisName": "Apple_Of_Archer_IL",
@@ -10839,6 +10883,50 @@
       ],
       "range": [
         "4---5"
+      ],
+      "acd": [
+        "11===5"
+      ]
+    }
+  },
+  "19492": {
+    "id": 19492,
+    "aegisName": "S_Circlet_Of_Time_SU",
+    "name": "Temporal Circlet (Summoner) [1]",
+    "unidName": "Helm",
+    "resName": "Circlet_Of_Time",
+    "description": "มงกุฎผ่านการเจียระไนด้วยเพชรอัญมณีที่มาจากรอยแยกแห่งมิติเวลา\nผู้สวมใส่จะรู้สึกได้ถึงพลังวิเศษที่ได้รับจาก Hugin\n^ffffff_^000000 \nทุก ๆ การอัพเกรด 2 ขั้น ATK +15\nทุก ๆ การอัพเกรด 3 ขั้น ASPD +2%\nทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage สกิล Catnip Meteor, Picky Peck 20%\nทุก ๆ การอัพเกรด 4 ขั้น เพิ่ม Damage ทางกายภาพระยะไกล 5%, เพิ่ม Damage ทางเวทมนตร์ธาตุ Neutral 7%\nเมื่ออัพเกรดถึงขั้น 11 ลด Delay หลังใช้สกิล 5%\n^ffffff_^000000 \nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^77777710^000000\nตำแหน่ง : ^777777Upper ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Summoner (Doram)^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 10,
+    "weight": 0,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Summoner (Doram)"
+    ],
+    "script": {
+      "atk": [
+        "2---15"
+      ],
+      "aspdPercent": [
+        "3---2"
+      ],
+      "Catnip Meteor": [
+        "3---20"
+      ],
+      "Picky Peck": [
+        "3---20"
+      ],
+      "range": [
+        "4---5"
+      ],
+      "m_my_element_neutral": [
+        "4---7"
       ],
       "acd": [
         "11===5"
@@ -14299,6 +14387,73 @@
       ]
     }
   },
+  "24286": {
+    "id": 24286,
+    "aegisName": "S_DoramMagical_Weapon",
+    "name": "Doram Magical Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา\nเผ่า Doram เท่านั้นที่สามารถสวมได้\n------------- \nลด Variable Cast Time 5%\nทุกๆ การอัพเกรด 1 ขั้น ลด Variable Cast Time เพิ่มเติม 1%\nเมื่อเรียนรู้สกิล [Power of Land] ลด Fixed Cast Time 0.1 วินาที\nเมื่อเรียนรู้และทำการใช้สกิล [Power of Sea] ลดการใช้ SP 3%\nเมื่ออัพเกรดถึงขั้น 7 ขึ้นไป MATK +5%\nเมื่ออัพเกรดถึงขั้น 9 ขึ้นไป MATK +5% เพิ่มเติม\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่สวมใส่ได้ : ^777777Doram^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "Doram"
+    ],
+    "script": {
+      "vct": [
+        "5",
+        "1---1"
+      ],
+      "fct": [
+        "LEARN_SKILL[Power of Land==1]===0.1"
+      ],
+      "matkPercent": [
+        "7===5",
+        "9===5"
+      ]
+    }
+  },
+  "24287": {
+    "id": 24287,
+    "aegisName": "S_DoramPhysical_Weapon",
+    "name": "Doram Physical Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา\nเผ่า Doram เท่านั้นที่สามารถสวมได้\n------------- \nทุกๆ การอัพเกรด 1 ขั้น เพิ่มพลังโจมตีทางกายภาพระยะไกล 1%.\nเมื่อเรียนรู้สกิล [Power of Life] ASPD +1\nเมื่ออัพเกรดถึงขั้น 7 ขึ้นไป Perfect Dodge +2.\nเมื่ออัพเกรดถึงขั้น 9 ขึ้นไป Perfect Dodge +3 เพิ่มเติม\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่สวมใส่ได้ : ^777777Doram^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "Doram"
+    ],
+    "script": {
+      "range": [
+        "1---1"
+      ],
+      "aspd": [
+        "LEARN_SKILL[Power of Life==1]===1"
+      ],
+      "perfectDodge": [
+        "7===2",
+        "9===3"
+      ]
+    }
+  },
   "24289": {
     "id": 24289,
     "aegisName": "S_Royalguard_Weapon",
@@ -14533,7 +14688,7 @@
     "location": "Weapon",
     "compositionPos": null,
     "usableClass": [
-      "all"
+      "Wanderer"
     ],
     "script": {
       "hpPercent": [
@@ -14961,6 +15116,99 @@
       ],
       "m_pene_class_normal": [
         "EQUIP[Archer Shadow Earring&&Archer Shadow Pendant&&Bard Shadow Armor&&Bard Shadow Shoes&&Minstrel Shadow Weapon]===50"
+      ]
+    }
+  },
+  "24316": {
+    "id": 24316,
+    "aegisName": "S_DoramPhysical_Shield",
+    "name": "Doram Physical Shadow Shield",
+    "unidName": "Shadow Shield",
+    "resName": "쉴드쉐도우",
+    "description": "โล่เล็กที่สามารถสวมใส่ที่แขนได้ สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์การป้องกันของมันจะลดน้อยลง \nเผ่า Doram เท่านั้นที่สามารถสวมได้\n------------- \nATK + 3%.\nเมื่อใช้สกิล [Arclouse Dash] กับตนเอง ASPD + 1 เป็นระยะเวลา 50 วินาที\nทุกๆ การอัพเกรด 1 ขั้น ลดระยะเวลา Cooldown ของสกิล [Lunatic Carrot Beat] 0.2 วินาที\nเมื่ออัพเกรดถึงขั้น 7  เพิ่ม Damage ของสกิล [Lunatic Carrot Beat] 5%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ของสกิล [Lunatic Carrot Beat] เพิ่มเติม 5%\n------------- \nเมื่อสวมใส่ร่วมกับ Doram Physical Shadow Weapon จะได้รับเอฟเฟกต์ดังต่อไปนี้ \nAll State + 3, MaxHP + 2%, MaxSP + 2%. \nเมื่อใช้สกิล ลดการใช้ SP 10%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shield^000000 \nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่สวมใส่ได้ : ^777777Doram^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 527,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Shield",
+    "compositionPos": null,
+    "usableClass": [
+      "Doram"
+    ],
+    "script": {
+      "atkPercent": [
+        "3"
+      ],
+      "aspd": [
+        "ACTIVE_SKILL[Arclouse Dash]===1"
+      ],
+      "cd__Lunatic Carrot Beat": [
+        "1---0.2"
+      ],
+      "Lunatic Carrot Beat": [
+        "7===5",
+        "9===5"
+      ],
+      "allStatus": [
+        "EQUIP[Doram Physical Shadow Weapon]3"
+      ],
+      "hpPercent": [
+        "EQUIP[Doram Physical Shadow Weapon]2"
+      ],
+      "spPercent": [
+        "EQUIP[Doram Physical Shadow Weapon]2"
+      ],
+      "spPercent__all": [
+        "EQUIP[Doram Physical Shadow Weapon]10"
+      ]
+    }
+  },
+  "24317": {
+    "id": 24317,
+    "aegisName": "S_DoramMagical_Shield",
+    "name": "Doram Magical Shadow Shield",
+    "unidName": "Shadow Shield",
+    "resName": "쉴드쉐도우",
+    "description": "โล่เล็กที่สามารถสวมใส่ที่แขนได้ สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์การป้องกันของมันจะลดน้อยลง \nเผ่า Doram เท่านั้นที่สามารถสวมได้\n------------- \nMATK + 3%. \nเมื่อใช้สกิล [Bunch of Shrimp] ฟื้นฟู 5 SP ทุกๆ 5 วินาที เป็นระยะเวลา 30 วินาที\nทุกๆ การอัพเกรด 1 ขั้น ลดระยะเวลา Cooldown ของสกิล [Catnip Meteor] 0.1 วินาที\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ของสกิล [Catnip Meteor] 5%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ของสกิล [Catnip Meteor] 5% เพิ่มเติม\n------------- \nเมื่อสวมใส่ร่วมกับ Doram Magical Shadow Weapon จะได้รับเอฟเฟกต์ดังต่อไปนี้ \nAll State + 3, MaxHP + 2%, MaxSP + 2%. \nเมื่อใช้สกิล ลดการใช้ SP 10%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shield^000000 \nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่สวมใส่ได้ : ^777777Doram^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 527,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Shield",
+    "compositionPos": null,
+    "usableClass": [
+      "Doram"
+    ],
+    "script": {
+      "matkPercent": [
+        "3"
+      ],
+      "cd__Catnip Meteor": [
+        "1---0.1"
+      ],
+      "Catnip Meteor": [
+        "7===5",
+        "9===5"
+      ],
+      "allStatus": [
+        "EQUIP[Doram Magical Shadow Weapon]3"
+      ],
+      "hpPercent": [
+        "EQUIP[Doram Magical Shadow Weapon]2"
+      ],
+      "spPercent": [
+        "EQUIP[Doram Magical Shadow Weapon]2"
+      ],
+      "spPercent__all": [
+        "EQUIP[Doram Magical Shadow Weapon]10"
       ]
     }
   },
@@ -15739,6 +15987,154 @@
       "God's Hammer": [
         "20",
         "1---5"
+      ]
+    }
+  },
+  "24408": {
+    "id": 24408,
+    "aegisName": "S_DoramPhysical_Armor",
+    "name": "Doram Physical Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우",
+    "description": "ชุดเกราะที่เพิ่มพลังป้องกันเมื่อสวมใส่เพิ่มบนเกราะอีกที สามารถใส่แบบชิ้นเดียวได้ แต่ความสามารถในการป้องกันจะลดลงไปอีก\nสวมใส่ได้เฉพาะชนเผ่า Doram เท่านั้น\nเพิ่ม Damage สกิล Picky Peck 20%\nทุก ๆ การอัพเกรด 1 ขั้น เพิ่ม Damage สกิล Lunatic Carrot Beat 3%\nเมื่อสวมใส่ร่วมกับ Doram Physical Shadow Shoes จะได้รับผลเพิ่มเติมดังต่อไปนี้\nลด Cooldown สกิล Lunatic Carrot Beat 3 วินาที\nเมื่อสวมใส่ร่วมกับ Doram Physical Shadow Weapon, Shield, Armor, Shoes ทั้งหมด จะได้รับผลดังต่อไปนี้\nAll Status +7, Max HP + 3%, Max SP + 3%\nเพิกเฉยต่อพลังป้องกันทางกายภาพและเวทมนตร์ของศัตรูทั่วไป 50%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Armor^000000 \nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Doram^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": "Armor",
+    "compositionPos": null,
+    "usableClass": [
+      "Doram"
+    ],
+    "script": {
+      "Picky Peck": [
+        "20"
+      ],
+      "Lunatic Carrot Beat": [
+        "1---3"
+      ],
+      "cd__Lunatic Carrot Beat": [
+        "EQUIP[Doram Physical Shadow Shoes]3"
+      ],
+      "allStatus": [
+        "EQUIP[Doram Physical Shadow Weapon&&Doram Physical Shadow Shield&&Doram Physical Shadow Shoes]7"
+      ],
+      "hpPercent": [
+        "EQUIP[Doram Physical Shadow Weapon&&Doram Physical Shadow Shield&&Doram Physical Shadow Shoes]3"
+      ],
+      "spPercent": [
+        "EQUIP[Doram Physical Shadow Weapon&&Doram Physical Shadow Shield&&Doram Physical Shadow Shoes]3"
+      ],
+      "p_pene_class_normal": [
+        "EQUIP[Doram Physical Shadow Weapon&&Doram Physical Shadow Shield&&Doram Physical Shadow Shoes]50"
+      ],
+      "m_pene_class_normal": [
+        "EQUIP[Doram Physical Shadow Weapon&&Doram Physical Shadow Shield&&Doram Physical Shadow Shoes]50"
+      ]
+    }
+  },
+  "24409": {
+    "id": 24409,
+    "aegisName": "S_DoramPhysical_Shoes",
+    "name": "Doram Physical Shadow Shoes",
+    "unidName": "Shadow Shoes",
+    "resName": "슈즈쉐도우",
+    "description": "รองเท้าที่สวมใส่เพิ่มเติม สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์ของมันจะลดน้อยลง\nสวมใส่ได้เฉพาะชนเผ่า Doram เท่านั้น\nลด Cooldown สกิล Hiss 3 วินาที\nทุก ๆ การอัพเกรด 2 ขั้น ลด Cooldown สกิล Hiss เพิ่มเติม 3 วินาที\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shoes^000000 \nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Doram^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 528,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": "Shoes",
+    "compositionPos": null,
+    "usableClass": [
+      "Doram"
+    ],
+    "script": {
+      "cd__Hiss": [
+        "3",
+        "2---3"
+      ]
+    }
+  },
+  "24410": {
+    "id": 24410,
+    "aegisName": "S_DoramMagical_Armor",
+    "name": "Doram Magical Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우",
+    "description": "ชุดเกราะที่เพิ่มพลังป้องกันเมื่อสวมใส่เพิ่มบนเกราะอีกที สามารถใส่แบบชิ้นเดียวได้ แต่ความสามารถในการป้องกันจะลดลงไปอีก \nเผ่าโดรัมเท่านั้นที่สวมใส่ได้\nเพิ่มดาเมจ Catnip Meteor 20%\nทุกๆการอัพเกรด 1 ขั้น เพิ่มดาเมจ Silvervine Stem Spear ทีละ 3%\nเมื่อสวมใส่ Doram Magical Shadow Shoes\nคูลไทม์สกิล Silvervine Stem Spear ลดลง 1 วินาที\nเมื่อสวมใส่ Doram Magical Shadow Weapon, Shield, Armor, Shoes ด้วยกันทั้งหมด \nAll State + 7, MaxHP + 3%, MaxSP + 3%.\nเพิกเฉยต่อพลังป้องกันทางเวทย์และทางกายภาพของศัตรูประเภททั่วไป 50%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Armor^000000 \nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Doram^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": "Armor",
+    "compositionPos": null,
+    "usableClass": [
+      "Doram"
+    ],
+    "script": {
+      "Catnip Meteor": [
+        "20"
+      ],
+      "Silvervine Stem Spear": [
+        "1---3"
+      ],
+      "cd__Silvervine Stem Spear": [
+        "EQUIP[Doram Magical Shadow Shoes]1"
+      ],
+      "allStatus": [
+        "EQUIP[Doram Magical Shadow Weapon&&Doram Magical Shadow Shield&&Doram Magical Shadow Shoes]7"
+      ],
+      "hpPercent": [
+        "EQUIP[Doram Magical Shadow Weapon&&Doram Magical Shadow Shield&&Doram Magical Shadow Shoes]3"
+      ],
+      "spPercent": [
+        "EQUIP[Doram Magical Shadow Weapon&&Doram Magical Shadow Shield&&Doram Magical Shadow Shoes]3"
+      ],
+      "p_pene_class_normal": [
+        "EQUIP[Doram Magical Shadow Weapon&&Doram Magical Shadow Shield&&Doram Magical Shadow Shoes]50"
+      ],
+      "m_pene_class_normal": [
+        "EQUIP[Doram Magical Shadow Weapon&&Doram Magical Shadow Shield&&Doram Magical Shadow Shoes]50"
+      ]
+    }
+  },
+  "24411": {
+    "id": 24411,
+    "aegisName": "S_DoramMagical_Shoes",
+    "name": "Doram Magical Shadow Shoes",
+    "unidName": "Shadow Shoes",
+    "resName": "슈즈쉐도우",
+    "description": "รองเท้าที่สวมใส่เพิ่มเติม สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์ของมันจะลดน้อยลง \nเผ่าโดรัมเท่านั้นที่สวมใส่ได้\nลดเวลาคูลไทม์สกิล Chattering ลง 3 วินาที\nและทุกๆการอัพเกรด 2 ขั้น ลดเวลาคูลไทม์สกิล Chattering เพิ่มอีกทีละ 3 วินาที\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shoes^000000 \nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Doram^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 528,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": "Shoes",
+    "compositionPos": null,
+    "usableClass": [
+      "Doram"
+    ],
+    "script": {
+      "cd__Chattering": [
+        "3",
+        "2---3"
       ]
     }
   },
@@ -18614,6 +19010,102 @@
       ]
     }
   },
+  "24637": {
+    "id": 24637,
+    "aegisName": "S_SavageRabbit_Earing",
+    "name": "Savage Rabbit Shadow Earring",
+    "unidName": "Shadow Earring",
+    "resName": "이어링쉐도우",
+    "description": "ต่างหูมงคลที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา\nเพิ่ม Damage ทางกายภาพระยะไกล 5%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางกายภาพระยะไกลขึ้นอีก 5%\nเมื่ออัพเกรดถึงขั้น 9 ลดปริมาณการใช้ SP สกิล Lunatic Carrot Beat 10%\nเมื่อสวมใส่ Savage Rabbit Shadow Earring/Pendant/Shoes ร่วมกัน,\nเพิ่ม Damage สกิล Lunatic Carrot Beat, Sprit Of Savage % เท่ากับค่าอัพเกรดรวมกัน\nเมื่อสวมใส่ร่วมกับ Doram Physical Shadow Armor,\nเพิกเฉยต่อพลังป้องกันทางกายภาพของทุกเผ่ายกเว้น Player 40% และเพิกเฉยต่อพลังป้องกันทางกายภาพเพิ่มอีกตามค่าอัพเกรดรวมกันของ Savage Rabbit Shadow Earring และ Doram Physical Shadow Armor\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Earring^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Summoner (Doram)^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 529,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "AccessoryRight",
+    "compositionPos": null,
+    "usableClass": [
+      "Summoner (Doram)"
+    ],
+    "script": {
+      "range": [
+        "5",
+        "7===5"
+      ],
+      "spPercent__Lunatic Carrot Beat": [
+        "9===10"
+      ],
+      "Lunatic Carrot Beat": [
+        "EQUIP[Savage Rabbit Shadow Shoes&&Savage Rabbit Shadow Pendant]REFINE[shadowEarring,shadowBoot,shadowPendant==1]---1"
+      ],
+      "Sprit Of Savage": [
+        "EQUIP[Savage Rabbit Shadow Shoes&&Savage Rabbit Shadow Pendant]REFINE[shadowEarring,shadowBoot,shadowPendant==1]---1"
+      ],
+      "p_pene_race_all": [
+        "EQUIP[Doram Physical Shadow Armor]40",
+        "EQUIP[Doram Physical Shadow Armor]REFINE[shadowEarring,shadowArmor==1]---1"
+      ]
+    }
+  },
+  "24638": {
+    "id": 24638,
+    "aegisName": "S_SavageRabbit_Pendant",
+    "name": "Savage Rabbit Shadow Pendant",
+    "unidName": "Shadow Pendant",
+    "resName": "펜던트쉐도우",
+    "description": "สร้อยคอศักดิ์สิทธิ์ที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา\nเพิ่ม Damage สกิล Lunatic Carrot Beat 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage สกิล Sprit Of Savage 3%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Pendant^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Summoner (Doram)^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 530,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "AccessoryLeft",
+    "compositionPos": null,
+    "usableClass": [
+      "Summoner (Doram)"
+    ],
+    "script": {
+      "Lunatic Carrot Beat": [
+        "5"
+      ],
+      "Sprit Of Savage": [
+        "2---3"
+      ]
+    }
+  },
+  "24639": {
+    "id": 24639,
+    "aegisName": "S_SavageRabbit_Shoes",
+    "name": "Savage Rabbit Shadow Shoes",
+    "unidName": "Shadow Shoes",
+    "resName": "슈즈쉐도우",
+    "description": "รองเท้าที่สวมใส่เพิ่มเติม สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์ของมันจะลดน้อยลง\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาดขึ้นอีก 1%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shoes^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Summoner (Doram)^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 528,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Shoes",
+    "compositionPos": null,
+    "usableClass": [
+      "Summoner (Doram)"
+    ],
+    "script": {
+      "p_size_all": [
+        "5",
+        "2---1"
+      ]
+    }
+  },
   "24655": {
     "id": 24655,
     "aegisName": "S_S_Weapon",
@@ -19059,6 +19551,69 @@
       ]
     }
   },
+  "26155": {
+    "id": 26155,
+    "aegisName": "MeawFoxtail",
+    "name": "Meowmeow Foxtail [2]",
+    "unidName": "Staff",
+    "resName": "MeawFoxtail",
+    "description": "กระดิ่งสุนัขมหัศจรรย์ที่จะได้ยินเสียงเหมียวเหมียวทุกครั้งที่สั่น\nดูเข้ากับ Ancient Hero Boots\n\nMATK + 300\nทุก ๆ การอัพเกรด 2 ขั้น, ATK, MATK + 10 \nทุก ๆ การอัพเกรด 3 ขั้น, MATK, ATK +2% \nเมื่ออัพเกรดถึงขั้น 7, เพิ่ม Damage สกิล Lunatic Carrot Beat, Silvervine Stem Spear 15%\nเมื่ออัพเกรดถึงขั้น 9, ลด Variable Cast Time 10%, เพิ่ม ASPD 10%\nเมื่ออัพเกรดถึงขั้น 11, เพิ่ม Damage สกิล Picky Peck, Catnip Meteor 20%\nเมื่อสวมใส่ร่วมกับ Ancient Hero Boots และโจมตีทางกายภาพ/เวทมนตร์ มีโอกาสที่ LUK + 20, ATK, MATK + 15% เป็นเวลา 7 วินาที\nประเภท : ^777777One-Handed Staff^000000 พลังโจมตี : ^777777300^000000\nน้ำหนัก : ^777777110^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Summoner(Doram) Cls^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 265,
+    "itemLevel": 4,
+    "attack": 300,
+    "defense": null,
+    "weight": 110,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Doram"
+    ],
+    "script": {
+      "matk": [
+        "300",
+        "2---10"
+      ],
+      "atk": [
+        "2---10"
+      ],
+      "atkPercent": [
+        "3---2"
+      ],
+      "matkPercent": [
+        "3---2"
+      ],
+      "Lunatic Carrot Beat": [
+        "7===15"
+      ],
+      "Silvervine Stem Spear": [
+        "7===15"
+      ],
+      "vct": [
+        "9===10"
+      ],
+      "aspd": [
+        "9===10"
+      ],
+      "Picky Peck": [
+        "11===20"
+      ],
+      "Catnip Meteor": [
+        "11===20"
+      ],
+      "chance__luk": [
+        "EQUIP[Ancient Hero Boots]===20"
+      ],
+      "chance__atkPercent": [
+        "EQUIP[Ancient Hero Boots]===15"
+      ],
+      "chance__matkPercent": [
+        "EQUIP[Ancient Hero Boots]===15"
+      ]
+    }
+  },
   "26158": {
     "id": 26158,
     "aegisName": "Crimson_Rose_Stick",
@@ -19095,6 +19650,62 @@
       ],
       "cd__Crimson Rock": [
         "11===1"
+      ]
+    }
+  },
+  "26164": {
+    "id": 26164,
+    "aegisName": "ElectricFox_OS",
+    "name": "Electric Fox-OS [2]",
+    "unidName": "Rod",
+    "resName": "ElectricFox_OS",
+    "description": "อุปกรณ์ทรงหญ้าหางกระรอกที่เกิดจากสายไฟหลายเส้นพันกัน\nสายไฟที่มากระทบกัน ทำให้เกิดไฟฟ้าสถิตย์ \nจึงต้องระมัดระวังให้ดีเมื่อใช้งาน\nMATK + 350, MATK + 5%\nเมื่ออัปเกรดถึงขั้น 7 เพิ่ม Damage สกิล Silvervine Stem Spear 20% \nเมื่ออัปเกรดถึงขั้น 9 ลดระยะเวลาร่ายแบบแปรผัน 10%, เพิ่ม Damage เวทมนตร์ธาตุ Neutral, Ghost, Wind, Water, Fire, Earth 15%\nเมื่ออัปเกรดถึงขั้น 11 เพิ่ม Damage สกิล Catnip Meteor 30% \n^ffffff_^000000\nประเภท: ^777777One Handed Staff^000000 พลังโจมตี: ^777777250^000000\nน้ำหนัก: ^777777120^000000\nเลเวลอาวุธ: ^7777774^000000\nเลเวลที่ต้องการ: ^777777130^000000\nอาชีพที่ใส่ได้: ^777777Summoner (Doram)^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 265,
+    "itemLevel": 4,
+    "attack": 250,
+    "defense": null,
+    "weight": 120,
+    "requiredLevel": 130,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Doram"
+    ],
+    "script": {
+      "matk": [
+        "350"
+      ],
+      "matkPercent": [
+        "5"
+      ],
+      "Silvervine Stem Spear": [
+        "7===20"
+      ],
+      "vct": [
+        "9===10"
+      ],
+      "m_my_element_neutral": [
+        "9===15"
+      ],
+      "m_my_element_ghost": [
+        "9===15"
+      ],
+      "m_my_element_wind": [
+        "9===15"
+      ],
+      "m_my_element_water": [
+        "9===15"
+      ],
+      "m_my_element_fire": [
+        "9===15"
+      ],
+      "m_my_element_earth": [
+        "9===10"
+      ],
+      "Catnip Meteor": [
+        "11===30"
       ]
     }
   },
@@ -19185,11 +19796,76 @@
       "m_race_angel": [
         "11===20"
       ],
+      "m_element_holy": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]REFINE[weapon,armor,garment==30]===20"
+      ],
+      "m_element_undead": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]REFINE[weapon,armor,garment==30]===20"
+      ]
+    }
+  },
+  "26172": {
+    "id": 26172,
+    "aegisName": "R_Foxtail_rod",
+    "name": "Royal Foxtail [2]",
+    "unidName": "Rod",
+    "resName": "로얄강아지풀",
+    "description": "ไม้คทา Foxtail อันน่าสงสัยที่จู่ ๆ ก็ปรากฏอยู่ภายในปราสาท Glast Heim\nแม้จะเป็นอาวุธธรรมดา แต่ก็มีพลังที่แข็งแกร่งซ่อนอยู่เนื่องจากได้รับผลกระทบจาก Himmelmez\n^ffffff_^000000 \nไม่สามารถทำลายได้, MATK +350, MATK +5%\nทุก ๆ การอัพเกรด 1 ขั้น ATK +4, MATK +4\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Catnip Meteor, Picky Peck 20%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage ทางกายภาพต่อมอนสเตอร์เผ่า Undead, Angel 20%\n^ffffff_^000000 \nเมื่อสวมใส่ร่วมกับ ^32CD32King Schmidt's Suit และ King Schmidt's Manteau^000000, \nATK +30, MATK +30, เมื่อโจมตีทางกายภาพ มีโอกาสที่จะเพิ่ม Damage ทางกายภาพระยะไกล 10% เป็นเวลา 10 วินาที\nและเมื่อโจมตีทางเวทมนตร์ มีโอกาสที่จะ MATK +10% เป็นเวลา 10 วินาที\nเมื่อค่าอัพเกรด ^32CD32King Schmidt's Suit, King Schmidt's Manteau, Royal Foxtail^000000 รวมกันตั้งแต่ 30 ขึ้นไป,\nเพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูธาตุ Holy, Undead 20%\n^ffffff_^000000 \nประเภท : ^777777One-Handed Staff^000000 พลังโจมตี : ^777777275^000000\nน้ำหนัก : ^777777120^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Summoner (Doram)^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 265,
+    "itemLevel": 4,
+    "attack": 275,
+    "defense": null,
+    "weight": 120,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Summoner (Doram)"
+    ],
+    "script": {
+      "matk": [
+        "350",
+        "1---4",
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]30"
+      ],
+      "matkPercent": [
+        "5"
+      ],
+      "atk": [
+        "1---4",
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]30"
+      ],
+      "Catnip Meteor": [
+        "9===20"
+      ],
+      "Picky Peck": [
+        "9===20"
+      ],
+      "p_race_undead": [
+        "11===20"
+      ],
+      "p_race_angel": [
+        "11===20"
+      ],
       "p_element_holy": [
         "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]REFINE[weapon,armor,garment==30]===20"
       ],
       "p_element_undead": [
         "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]REFINE[weapon,armor,garment==30]===20"
+      ],
+      "m_element_holy": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]REFINE[weapon,armor,garment==30]===20"
+      ],
+      "m_element_undead": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]REFINE[weapon,armor,garment==30]===20"
+      ],
+      "chance__range": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]10"
+      ],
+      "chance__matkPercent": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]10"
       ]
     }
   },
@@ -21629,7 +22305,7 @@
     "location": null,
     "compositionPos": null,
     "usableClass": [
-      "all"
+      "Mechanic Cls"
     ],
     "script": {
       "Axe Tornado": [
@@ -21759,6 +22435,35 @@
       "atk": [
         "1---10",
         "EQUIP[Thief Shadow Pendant]REFINE[10]===2"
+      ]
+    }
+  },
+  "28424": {
+    "id": 28424,
+    "aegisName": "PlumpyWormCharm",
+    "name": "Plumpy Worm Charm [1]",
+    "unidName": "Accessory",
+    "resName": "토실토실지렁이",
+    "description": "Variable Cast Time ของ Picky Peck ลดลง 50%\nDMG ของ Picky Peck จะเพิ่มขึ้นตาม( Level ของสกิลที่เรียนรู้ * ทุกๆ 6 Base DEX)\nประเภท : ^777777Accessory^000000 ป้องกัน : ^7777771^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Doram^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 517,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 1,
+    "weight": 10,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Doram"
+    ],
+    "script": {
+      "vct__Picky Peck": [
+        "50"
+      ],
+      "Picky Peck": [
+        "SUM[dex==6]---5"
       ]
     }
   },
@@ -24237,6 +24942,105 @@
       ]
     }
   },
+  "29521": {
+    "id": 29521,
+    "aegisName": "Assassincross_Top",
+    "name": "Assassin Cross Stone (Upper)",
+    "unidName": "Assassin Cross Stone (Upper)",
+    "resName": "도둑피규어",
+    "description": "ทุก ๆ การเรียนรู้ Katar Mastery 1 เลเวล, ATK + 2",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 71,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "atk": [
+        "LEARN_SKILL[Katar Mastery==1]---2"
+      ]
+    }
+  },
+  "29522": {
+    "id": 29522,
+    "aegisName": "Assassincross_Middle",
+    "name": "Assassin Cross Stone (Middle)",
+    "unidName": "Assassin Cross Stone (Middle)",
+    "resName": "도둑피규어",
+    "description": "ทุก ๆ การเรียนรู้ Lefthand Mastery 1 เลเวล, HIT + 2",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 72,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "hit": [
+        "LEARN_SKILL[Lefthand Mastery==1]---2"
+      ]
+    }
+  },
+  "29523": {
+    "id": 29523,
+    "aegisName": "Assassincross_Bottom",
+    "name": "Assassin Cross Stone (Lower)",
+    "unidName": "Assassin Cross Stone (Lower)",
+    "resName": "도둑피규어",
+    "description": "เพิ่มดาเมจของ Sonic Blow 20%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 73,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "Sonic Blow": [
+        "20"
+      ]
+    }
+  },
+  "29524": {
+    "id": 29524,
+    "aegisName": "Guillotinecross_Robe",
+    "name": "Guillotine Cross Stone (Garment)",
+    "unidName": "Guillotine Cross Stone (Garment)",
+    "resName": "Assasin_Cross_Figure",
+    "description": "เพิ่มดาเมจของ Rolling Cutter 15%\nเมื่อใช้กับ Assassin Cross Stone (Upper), มีโอกาส 2% ที่จะได้รับ SP เพิ่มขึ้น 1% เมื่อทำการโจมตีทางกายภาพ\nเมื่อใช้กับ Assassin Cross Stone (Middle), เพิ่มดาเมจของ Cross Ripper Slasher 15%\nเมื่อใช้กับ Assassin Cross Stone (Lower), เพิ่มดาเมจของ Rolling Cutter 15%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 74,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "Rolling Cutter": [
+        "15",
+        "EQUIP[Assassin Cross Stone (Lower)]15"
+      ],
+      "spDrainPercent": [
+        "EQUIP[Assassin Cross Stone (Upper)]1"
+      ],
+      "Cross Ripper Slasher": [
+        "EQUIP[Assassin Cross Stone (Middle)]15"
+      ]
+    }
+  },
   "29533": {
     "id": 29533,
     "aegisName": "Improve_Orb_Heal",
@@ -24498,6 +25302,25 @@
         "9===5"
       ]
     }
+  },
+  "29552": {
+    "id": 29552,
+    "aegisName": "Improve_Orb_L_LUK",
+    "name": "Modification Orb (Lucky Strike)",
+    "unidName": "Modification Orb (Lucky Strike)",
+    "resName": "Deep_Black_Pearl",
+    "description": "เมื่อทำการโจมตีเวทมนตร์ มีโอกาส(3%)ได้รับ \"Good Fortune\" เป็นเวลา 10 วินาที \nGood Fortune : LUK + 50 เป็นเวลา 10 วินาที, เพิ่ม Damage ทางเวทมนตร์ทุกธาตุ 10%, ลด HP 300 ทุก ๆ 1 วินาที",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {}
   },
   "29587": {
     "id": 29587,
@@ -25555,6 +26378,113 @@
       ],
       "Vanishing Buster": [
         "EQUIP[Gunslinger Stone (Lower)]25"
+      ]
+    }
+  },
+  "29668": {
+    "id": 29668,
+    "aegisName": "Doram_Top",
+    "name": "Doram Stone (Upper)",
+    "unidName": "Doram Stone (Upper)",
+    "resName": "블랙캣",
+    "description": "ทุก ๆ การเรียนรู้สกิล Scratch 1 เลเวล MATK +7, ATK +7",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 71,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "matk": [
+        "LEARN_SKILL[Scratch==1]---7"
+      ],
+      "atk": [
+        "LEARN_SKILL[Scratch==1]---7"
+      ]
+    }
+  },
+  "29669": {
+    "id": 29669,
+    "aegisName": "Doram_Middle",
+    "name": "Doram Stone (Middle)",
+    "unidName": "Doram Stone (Middle)",
+    "resName": "블랙캣",
+    "description": "เพิ่ม Damage สกิล Lunatic Carrot Beat 20%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 72,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "Lunatic Carrot Beat": [
+        "20"
+      ]
+    }
+  },
+  "29670": {
+    "id": 29670,
+    "aegisName": "Doram_Bottom",
+    "name": "Doram Stone (Lower)",
+    "unidName": "Doram Stone (Lower)",
+    "resName": "블랙캣",
+    "description": "เพิ่ม Damage สกิล Silvervine Stem Spear 20%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 73,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "Silvervine Stem Spear": [
+        "20"
+      ]
+    }
+  },
+  "29671": {
+    "id": 29671,
+    "aegisName": "Doram_Robe",
+    "name": "Doram Stone (Garment)",
+    "unidName": "Doram Stone (Garment)",
+    "resName": "블랙캣",
+    "description": "เพิ่ม Damage สกิล [Picky Peck], [Catnip Meteor] 20%\nเมื่อใช้กับ Doram Stone (Upper) เพิ่ม Damage สกิล [Lunatic Carrot Beat], [Silvervine Stem Spear] 20%\nเมื่อใช้กับ Doram Stone (Middle) ลด Cooldown สกิล Sprit Of Savage 1 วินาที\nเมื่อใช้กับ Doram Stone (Lower) ลด Cooldown สกิล Catnip Meteor 1 วินาที",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 74,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "Picky Peck": [
+        "20"
+      ],
+      "Catnip Meteor": [
+        "20"
+      ],
+      "Lunatic Carrot Beat": [
+        "EQUIP[Doram Stone (Upper)]20"
+      ],
+      "cd__Sprit Of Savage": [
+        "EQUIP[Doram Stone (Middle)]1"
+      ],
+      "cd__Catnip Meteor": [
+        "EQUIP[Doram Stone (Lower)]1"
       ]
     }
   },
@@ -26934,8 +27864,8 @@
     "resName": "High_Wizard_Figure",
     "description": "เพิ่ม Damage สกิล Comet 15%\nเมื่อใช้กับ High Wizard Stone II (Upper) เพิ่ม Damage สกิล Comet ขึ้นอีก 15%\nเมื่อใช้กับ High Wizard Stone II (Middle) ทุก ๆ การเรียนรู้สกิล Mystical Amplification 2 เลเวล ลดระยะเวลาร่ายแบบคงที่ 0.1 วินาที\nเมื่อใช้กับ High Wizard Stone II (Lower) เพิ่ม Damage ทางเวทมนตร์ธาตุ Neutral 5%",
     "slots": 0,
-    "itemTypeId": 11,
-    "itemSubTypeId": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 74,
     "itemLevel": null,
     "attack": null,
     "defense": null,
@@ -26964,8 +27894,8 @@
     "resName": "마술사피규어",
     "description": "เพิ่ม Damage สกิล Meteor Storm 20%",
     "slots": 0,
-    "itemTypeId": 11,
-    "itemSubTypeId": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 71,
     "itemLevel": null,
     "attack": null,
     "defense": null,
@@ -26987,8 +27917,8 @@
     "resName": "마술사피규어",
     "description": "ทุก ๆ การเรียนรู้สกิล Gravitational Field 1 เลเวล เพิ่ม Damage ทางเวทมนตร์ธาตุ Neutral 2%",
     "slots": 0,
-    "itemTypeId": 11,
-    "itemSubTypeId": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 72,
     "itemLevel": null,
     "attack": null,
     "defense": null,
@@ -27010,8 +27940,8 @@
     "resName": "마술사피규어",
     "description": "ทุก ๆ การเรียนรู้สกิล Soul Drain 1 เลเวล MATK +2",
     "slots": 0,
-    "itemTypeId": 11,
-    "itemSubTypeId": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 73,
     "itemLevel": null,
     "attack": null,
     "defense": null,
@@ -27132,8 +28062,8 @@
     "resName": "Assasin_Cross_Figure",
     "description": "Critical Damage +15%, เมื่อเรียนรู้สกิล Katar Mastery ถึงเลเวล 10 สามารถใช้สกิล Double Attack Lv. 3\n(ใช้สกิล Double Attack กับอาวุธทุกประเภท)\nเมื่อเรียนรู้สกิล Double Attack สูงกว่า Lv. 3 จะใช้ตามเลเวลที่เรียนรู้\nเมื่อใช้กับ Assassin Cross Stone II (Upper), ATK + 5%, Critical Damage +15%\nเมื่อใช้กับ Assassin Cross Stone II (Middle) เพิ่ม Damage สกิล Counter Slash 20%\nเมื่อใช้กับ Assassin Cross Stone II (Lower) ลด Delay หลังใช้สกิล 5%",
     "slots": 0,
-    "itemTypeId": 11,
-    "itemSubTypeId": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 74,
     "itemLevel": null,
     "attack": null,
     "defense": null,
@@ -27165,8 +28095,8 @@
     "resName": "도둑피규어",
     "description": "ทุก ๆ การเรียนรู้สกิล Advanced Katar Mastery 1 เลเวล เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 2%",
     "slots": 0,
-    "itemTypeId": 11,
-    "itemSubTypeId": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 73,
     "itemLevel": null,
     "attack": null,
     "defense": null,
@@ -27188,8 +28118,8 @@
     "resName": "도둑피규어",
     "description": "เพิ่ม Damage สกิล Sonic Blow 20%",
     "slots": 0,
-    "itemTypeId": 11,
-    "itemSubTypeId": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 72,
     "itemLevel": null,
     "attack": null,
     "defense": null,
@@ -27211,8 +28141,8 @@
     "resName": "도둑피규어",
     "description": "ทุก ๆ การเรียนรู้สกิล Soul Destroyer 1 เลเวล ลด Delay หลังใช้สกิล 1%",
     "slots": 0,
-    "itemTypeId": 11,
-    "itemSubTypeId": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 71,
     "itemLevel": null,
     "attack": null,
     "defense": null,
@@ -27368,6 +28298,64 @@
       ],
       "ลด Damage ทางเวทย์และกายภาพที่ได้รับจากศัตรูขนาดเล็ก": [
         "EQUIP[Blasti-OS]===3"
+      ]
+    }
+  },
+  "400044": {
+    "id": 400044,
+    "aegisName": "Phantom_Cap",
+    "name": "Phantom of Masquerade [1]",
+    "unidName": "Hat",
+    "resName": "Phantom_Of_Masquerade",
+    "description": "หมวกที่ทำขึ้นมาอย่างทันสมัย ถูกพบจากที่ไหนสักแห่ง\nมันถูกดัดแปลงเพื่อให้เข้ากับอาวุธ OS \nทุกการอัพเกรด 2 ขั้น, MATK +20. \nเมื่ออัพเกรดถึงขั้น 7, ลดระยะเวลาร่ายแบบแปรผัน 15%\nเมื่ออัพเกรดถึงขั้น 9, เพิ่ม Damage ทางเวทย์ทุกธาตุ 15% \nเมื่ออัพเกรดถึงขั้น 11, เพิ่ม Damage ทางเวทย์ที่สร้างต่อศัตรูขนาดเล็กและกลาง 15%, ลดระยะเวลาร่ายแบบคงตัว 0.2 วินาที\n\nเมื่อสวมใส่กับ Electric Fox-OS, ลด Cooldown สกิล Catnip Meteor 1 วินาที, ทุกการอัพเกรดอาวุธ 2 ขั้น เพิ่ม Damage สกิล Catnip Meteor ครั้งละ 4% \nเมื่อสวมใส่กับ Rutilus Stick-OS, MATK + 30, ทุกการอัพเกรดอาวุธ 2 ขั้น เพิ่ม Damage สกิล Espa/Eswhoo ครั้งละ 4%\nเมื่อสวมใส่กับ Ultio-OS, เพิ่ม Damage ทางเวทย์ธาตุ Holy 5%, ทุกการอัพเกรดอาวุธ 2 ขั้น ลดระยะเวลาร่ายแบบแปรผันครั้งละ 3%\nประเภท : ^777777Headgear^000000 พลังป้องกัน :  ^7777770^000000\nตำแหน่ง : ^777777Upper ^000000 น้ำหนัก :  ^77777710^000000\nเลเวลที่ต้องการ : ^777777130^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 130,
+    "location": "Upper",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "matk": [
+        "2---20",
+        "EQUIP[Rutilus Stick-OS]===30"
+      ],
+      "vct": [
+        "7===15",
+        "EQUIP[Ultio-OS]REFINE[weapon==2]---3"
+      ],
+      "m_my_element_all": [
+        "9===15"
+      ],
+      "m_size_s": [
+        "11===15"
+      ],
+      "m_size_m": [
+        "11===15"
+      ],
+      "fct": [
+        "11===0.2"
+      ],
+      "cd__Catnip Meteor": [
+        "EQUIP[Electric Fox-OS]===1"
+      ],
+      "Catnip Meteor": [
+        "EQUIP[Electric Fox-OS]REFINE[weapon==2]---4"
+      ],
+      "Espa": [
+        "EQUIP[Rutilus Stick-OS]REFINE[weapon==2]---4"
+      ],
+      "Eswhoo": [
+        "EQUIP[Rutilus Stick-OS]REFINE[weapon==2]---4"
+      ],
+      "m_my_element_holy": [
+        "EQUIP[Ultio-OS]===5"
       ]
     }
   },
@@ -30098,6 +31086,62 @@
       ]
     }
   },
+  "490149": {
+    "id": 490149,
+    "aegisName": "Glittering_Cat_Choker",
+    "name": "Glittering Meow Meow Choker [1]",
+    "unidName": "Clip",
+    "resName": "Glittering_Cat_Choker",
+    "description": "สร้อยคอกระดิ่งรูปน้องแมวที่ผลิตโดยแบรนด์ดังจากอาณาจักร Rune Midgarts เป็นเทรนด์แฟชั่นมาแรงที่ต้องจับตามองในปีนี้\n\nเพิ่ม Damage ทางเวทมนตร์ต่อมอนสเตอร์ทุกขนาด 10%\nทุก ๆ Base Lv. 5 เพิ่ม Damage สกิล Catnip Meteor, Silvervine Stem Spear 1%\nเมื่อเรียนรู้สกิล Spirit Of Land ถึงเลเวล 1 เพิ่ม Damage ทางเวทมนตร์ธาตุ Fire, Ghost, Neutral 10%\nเมื่อเรียนรู้สกิล Chattering ถึงเลเวล 5, ASPD +15%, ลดระยะเวลาร่ายแบบแปรผัน 10%\nเมื่อเรียนรู้สกิล Nyang Grass ถึงเลเวล 5 ลด Delay หลังใช้สกิล 30%\nเมื่อเรียนรู้สกิล Meow Meow ถึงเลเวล 5 ลด Cooldown สกิล Catnip Meteor 2 วินาที\n\nเมื่อใช้ร่วมกับ Modification Orb (Lucky Strike),\nลดระยะเวลาร่ายแบบคงที่ 3 วินาที\n\nประเภท : ^777777Accessory^000000  พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Summoner (Doram)^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 517,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Summoner (Doram)"
+    ],
+    "script": {
+      "m_size_all": [
+        "10"
+      ],
+      "Catnip Meteor": [
+        "level:5---1"
+      ],
+      "Silvervine Stem Spear": [
+        "level:5---1"
+      ],
+      "m_my_element_fire": [
+        "LEARN_SKILL[Power of Land==1]10"
+      ],
+      "m_my_element_ghost": [
+        "LEARN_SKILL[Power of Land==1]10"
+      ],
+      "m_my_element_neutral": [
+        "LEARN_SKILL[Power of Land==1]10"
+      ],
+      "aspdPercent": [
+        "LEARN_SKILL[Chattering==5]15"
+      ],
+      "vct": [
+        "LEARN_SKILL[Chattering==5]10"
+      ],
+      "acd": [
+        "LEARN_SKILL[Nyang Grass==5]30"
+      ],
+      "cd__Catnip Meteor": [
+        "LEARN_SKILL[Meow Meow==5]2"
+      ],
+      "fct": [
+        "EQUIP[Modification Orb (Lucky Strike)]3"
+      ]
+    }
+  },
   "490221": {
     "id": 490221,
     "aegisName": "Record_Swordsman_TH",
@@ -30822,6 +31866,50 @@
       ],
       "p_pene_race_all": [
         "EQUIP[Slate Sword||Patent Slate Sword]11===60"
+      ]
+    }
+  },
+  "490392": {
+    "id": 490392,
+    "aegisName": null,
+    "name": "Scarlet Worm Charm [1]",
+    "unidName": "Scarlet Worm Charm",
+    "resName": "왕지렁이",
+    "description": "ไส้เดือนตัวอ้วนกลิ่นคาวเลือด เหมาะสำหรับการตกปลาชั้นยอด\n\nลดระยะเวลาร่ายแบบแปรผันสกิล Picky Peck 50%\nเพิ่ม Damage สกิล Picky Peck ขึ้นเท่ากับ (Level ของสกิลที่เรียนรู้ * ทุก ๆ Base DEX 5 หน่วย)\n\nทุก ๆ Base Lv.5 เพิ่ม Damage สกิล Lunatic Carrot Beat +1% \n\nเมื่อเรียนรู้สกิล Hiss ถึงเลเวล 5\nASPD +15%,\nเพิ่ม Damage ทางกายภาพต่อมอนสเตอร์ทุกขนาด 10%\n\nเมื่อเรียนรู้สกิล Power Of Flock ถึงเลเวล 5 \nลด Delay หลังใช้สกิล 30%\n\nเมื่อเรียนรู้สกิล Spirit Of Savage ถึงเลเวล 5\nลด Cooldown สกิล Lunatic Carrot Beat 2 วินาที\nประเภท : ^777777Accessory^000000  พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^77777750^000000\nอาชีพที่ใส่ได้ : ^777777Summoner (Doram)^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 517,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 50,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Summoner (Doram)"
+    ],
+    "script": {
+      "vct__Picky Peck": [
+        "50"
+      ],
+      "Picky Peck": [
+        "SUM[dex==5]---5"
+      ],
+      "Lunatic Carrot Beat": [
+        "level:5---1"
+      ],
+      "aspdPercent": [
+        "LEARN_SKILL[Hiss==5]15"
+      ],
+      "p_size_all": [
+        "LEARN_SKILL[Hiss==5]10"
+      ],
+      "acd": [
+        "LEARN_SKILL[Power of Flock==5]30"
+      ],
+      "cd__Lunatic Carrot Beat": [
+        "LEARN_SKILL[Spirit of Savage==5]2"
       ]
     }
   },

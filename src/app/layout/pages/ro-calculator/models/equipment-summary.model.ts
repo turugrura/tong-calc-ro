@@ -115,8 +115,10 @@ export interface EquipmentSummaryModel {
   p_pene_race_all: number;
   p_pene_size_all: number;
   p_pene_element_all: number;
+  p_pene_class_all: number;
   m_pene_race_all: number;
   m_pene_size_all: number;
   m_pene_element_all: number;
+  m_pene_class_all: number;
   [key: string]: number;
 }

@@ -31,6 +31,7 @@ import { Mechanic } from './jobs/mechanic';
 import { MainModel } from './models/main.model';
 import { RoyalGuard } from './jobs/royal-guard';
 import { environment } from 'src/environments/environment';
+import { Doram } from './jobs/doram';
 
 const sortObj = <T>(field: keyof T) => {
   return (a: T, b: T) => {
@@ -103,6 +104,7 @@ const Characters: DropdownModel[] = [
   // { label: ClassID[9],value: 9, instant: new Genetic() },
   { label: ClassID[3], value: 3, instant: new SoulReaper() },
   { label: ClassID[1], value: 1, instant: new Rebelion() },
+  { label: ClassID[31], value: 31, instant: new Doram() },
 ];
 
 const toDropdownList = <T extends Record<string, any>>(
@@ -203,7 +205,7 @@ const createExtraOptionList = () => {
         }),
       };
     }),
-  })
+  });
 
   const options: [string, string, number, number][] = [
     ['Atk', 'atk', 1, 65],
@@ -636,7 +638,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     private messageService: MessageService,
     private confirmationService: ConfirmationService,
     private dialogService: DialogService,
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.initLoadItems();
