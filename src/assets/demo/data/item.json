@@ -2428,6 +2428,33 @@
       ]
     }
   },
+  "4529": {
+    "id": 4529,
+    "aegisName": "Cruel_Coelacanth_Card",
+    "name": "Cruel Coelacanth Card",
+    "unidName": "Cruel Coelacanth Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่ม Damage ทางกายภาพต่อศัตรูทุกประเภท 2%,\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage ทางกายภาพต่อศัตรูทุกประเภท 1%, MSP -1%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Headgear^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 769,
+    "script": {
+      "p_class_all": [
+        "2",
+        "2---1"
+      ],
+      "spPercent": [
+        "2----1"
+      ]
+    }
+  },
   "4550": {
     "id": 4550,
     "aegisName": "Upd_Bow_Guardian_Card",
@@ -20437,6 +20464,36 @@
       ]
     }
   },
+  "27082": {
+    "id": 27082,
+    "aegisName": "AngerNineTail_Card",
+    "name": "Furious Ninetail Card",
+    "unidName": "Furious Ninetail Card",
+    "resName": "이름없는카드",
+    "description": "CRI + 5, Critical Damage +10% และเมื่ออัปเกรดถึงขั้น 10, CRI +10\nเมื่อใช้กับ Ninetail Card และโจมตีทางกายภาพ มีโอกาสที่จะแปลงร่างเป็น Ninetail เป็นเวลา 5 วินาที (เมื่อแปลงร่าง FLEE +10)\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Armor^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 16,
+    "script": {
+      "cri": [
+        "5",
+        "10===5"
+      ],
+      "criDmg": [
+        "10"
+      ],
+      "chance__flee": [
+        "EQUIP[Ninetail Card]10"
+      ]
+    }
+  },
   "27086": {
     "id": 27086,
     "aegisName": "BitterArcherSk_Card",
@@ -21517,6 +21574,33 @@
       ],
       "Round Trip": [
         "[weaponType=Gatling Gun]10===10"
+      ]
+    }
+  },
+  "27309": {
+    "id": 27309,
+    "aegisName": "High_Sanare_Card",
+    "name": "Greater Sanare Card",
+    "unidName": "Greater Sanare Card",
+    "resName": "이름없는카드",
+    "description": "MATK + 10, เพิ่ม Damage ทางเวทธาตุ Holy 5% \nเมื่ออัปเกรดตั้งแต่ 9 ขึ้นไป, เพิ่ม Damage ทางเวทธาตุ Holy 5% เพิ่มเติม\n^ffffff_^000000\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Headgear^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 769,
+    "script": {
+      "matk": [
+        "10"
+      ],
+      "m_my_element_holy": [
+        "5",
+        "9===5"
       ]
     }
   },
@@ -31199,6 +31283,56 @@
       ]
     }
   },
+  "420134": {
+    "id": 420134,
+    "aegisName": null,
+    "name": "The Spirit Of World",
+    "unidName": "Mask",
+    "resName": "도깨비불",
+    "description": "ราชาแห่งดวงวิญญาณที่เป็นดั่งพื้นฐานของเวทมนตร์ต่าง ๆ ของโลกใบนี้\nMATK + 60\nฟื้นฟู HP 60 หน่วย ทุก ๆ 6 วินาที\nทุก ๆ Base STR 10, เพิ่ม Damage เวทมนตร์ธาตุ Neutral 2%\nทุก ๆ Base AGI 10, เพิ่ม Damage เวทมนตร์ธาตุ Wind 2%\nทุก ๆ Base VIT 10, เพิ่ม Damage เวทมนตร์ธาตุ Earth 2%\nทุก ๆ Base INT 10, เพิ่ม Damage เวทมนตร์ธาตุ Fire 2%\nทุก ๆ Base DEX 10, เพิ่ม Damage เวทมนตร์ธาตุ Water 2%\nทุก ๆ Base LUK 10, เพิ่ม Damage เวทมนตร์ธาตุ Holy 2%\nทุก ๆ Base (Str+Agi+Vit+Int+Dex+Luk) รวมกัน 60, เพิ่ม Damage เวทมนต์ธาตุ Ghost 2%\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^7777770^000000\nตำแหน่ง : ^777777Lower^000000 น้ำหนัก : ^77777760^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 60,
+    "requiredLevel": 100,
+    "location": "Lower",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "matk": [
+        "60"
+      ],
+      "hpGain": [
+        "60"
+      ],
+      "m_my_element_neutral": [
+        "SUM[str==10]---2"
+      ],
+      "m_my_element_wind": [
+        "SUM[agi==10]---2"
+      ],
+      "m_my_element_earth": [
+        "SUM[vit==10]---2"
+      ],
+      "m_my_element_fire": [
+        "SUM[int==10]---2"
+      ],
+      "m_my_element_water": [
+        "SUM[dex==10]---2"
+      ],
+      "m_my_element_holy": [
+        "SUM[luk==10]---2"
+      ],
+      "m_my_element_ghost": [
+        "SUM[str,agi,vit,int,dex,luk==60]---2"
+      ]
+    }
+  },
   "420141": {
     "id": 420141,
     "aegisName": null,
@@ -33661,6 +33795,9 @@
     "requiredLevel": 100,
     "location": null,
     "compositionPos": null,
+    "usableClass": [
+      "Acolyte Cls"
+    ],
     "script": {
       "range": [
         "5",
@@ -33687,10 +33824,7 @@
       "Rampage Blast": [
         "EQUIP[Old Blazing Soul]30"
       ]
-    },
-    "usableClass": [
-      "Acolyte Cls"
-    ]
+    }
   },
   "490349": {
     "id": 490349,
@@ -34567,6 +34701,80 @@
       ],
       "Jack Frost": [
         "EQUIP[Patent Blue Crystal Staff]REFINE[weapon==11]SUM[int,dex==12]---1"
+      ]
+    }
+  },
+  "490436": {
+    "id": 490436,
+    "aegisName": null,
+    "name": "Record of Acolyte 2 [1]",
+    "unidName": "Record of Acolyte 2",
+    "resName": "Record_Mage2_TW",
+    "description": "บันทึกส่วนที่เหลือของกลุ่มนักบวชที่เข้าไปสำรวจยังพื้นที่ Tomb of Honor\n\nลด Delay หลังใช้สกิล 5%\nเพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูทุกขนาด 6%\nเพิ่ม Damage สกิล Judex, Rampage Blast 30%\n\nเมื่อสวมใส่ร่วมกับ Old Mitra,\nทุก ๆ การอัพเกรด Old Mitra 1 ขั้น\nเพิ่ม Damage ทางเวทมนตร์ธาตุ Holy 2%, ลด Delay หลังใช้สกิล 1%\n\nเมื่อสวมใส่ร่วมกับ Old Blazing Soul,\nทุก ๆ การอัพเกรด Old Blazing Soul 1 ขั้น\nเพิ่ม Damage ทางกายภาพระยะไกล 2%, ลด Delay หลังใช้สกิล 1%\n\nเมื่อสวมใส่ร่วมกับ Record of Acolyte หรือ [Not For Sale] Record of Acolyte,\nเพิกเฉยต่อพลังป้องกันทางกายภาพ/เวทมนตร์ของทุกเผ่า 25% (ยกเว้น Player)\n\nเมื่อสวมใส่ด้วย Arch Bishop\nลดระยะเวลาร่ายแบบแปรผันสกิล Judex 100%\nลด Cooldown สกิล Hell Inferno 2 วินาที\n\nเมื่อสวมใส่ด้วย Sura\nลด Cooldown สกิล Earth Shaker, Rampage Blast 1.2 วินาที\nลด Delay หลังใช้สกิล 20%\n\nเมื่อสวมใส่ร่วมกับ Record of Acolyte/[Not For Sale] Record of Acolyte และ Old Mitra,\nทุก ๆ การอัพเกรด Old Mitra 3 ขั้น\nเพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกประเภท 3%\nเพิ่ม Damage สกิล Judex 10%\n\nเมื่อสวมใส่ร่วมกับ Record of Acolyte/[Not For Sale] Record of Acolyte และ Old Blazing Soul,\nทุก ๆ การอัพเกรด Old Blazing Soul 3 ขั้น\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกประเภท 3%\nเพิ่ม Damage สกิล Rampage Blast 10%\nประเภท : ^777777Accessory (Left)^000000 พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Acolyte Class 3^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 511,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Arch Bishop",
+      "Sura"
+    ],
+    "script": {
+      "acd": [
+        "5",
+        "EQUIP[Old Mitra]REFINE[headUpper==1]---1",
+        "EQUIP[Old Blazing Soul]REFINE[headUpper==1]---1",
+        "USED[Sura]20"
+      ],
+      "p_size_all": [
+        "6"
+      ],
+      "m_size_all": [
+        "6"
+      ],
+      "p_pene_race_all": [
+        "EQUIP[Record of Acolyte]25"
+      ],
+      "m_pene_race_all": [
+        "EQUIP[Record of Acolyte]25"
+      ],
+      "vct__Judex": [
+        "USED[ArchBishop]100"
+      ],
+      "cd__Hell Inferno": [
+        "USED[ArchBishop]2"
+      ],
+      "cd__Earth Shaker": [
+        "USED[Sura]1.2"
+      ],
+      "cd__Rampage Blast": [
+        "USED[Sura]1.2"
+      ],
+      "m_my_element_holy": [
+        "EQUIP[Old Mitra]REFINE[headUpper==1]---2"
+      ],
+      "range": [
+        "EQUIP[Old Blazing Soul]REFINE[headUpper==1]---2"
+      ],
+      "m_class_all": [
+        "EQUIP[Record of Acolyte&&Old Mitra]REFINE[headUpper==3]---3"
+      ],
+      "Judex": [
+        "30",
+        "EQUIP[Record of Acolyte&&Old Mitra]REFINE[headUpper==3]---10"
+      ],
+      "p_class_all": [
+        "EQUIP[Record of Acolyte&&Old Blazing Soul]REFINE[headUpper==3]---3"
+      ],
+      "Rampage Blast": [
+        "30",
+        "EQUIP[Record of Acolyte&&Old Blazing Soul]REFINE[headUpper==3]---10"
       ]
     }
   },

@@ -1,10 +1,16 @@
 export interface PreparedMonsterModel {
   name: string;
+  /**
+   * lowercase
+   */
   race: string;
   raceUpper: string;
   size: 's' | 'm' | 'l';
   sizeUpper: string;
   sizeFullUpper: string;
+  /**
+   * lowercase
+   */
   element: string;
   elementUpper: string;
   elementLevel: string;

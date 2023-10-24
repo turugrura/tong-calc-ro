@@ -1766,6 +1766,7 @@ export class Calculator {
     const reduceSkillVct = this.totalEquipStatus[`vct__${name}`] || 0;
     const reduceSkillVctFix = this.totalEquipStatus[`fix_vct__${name}`] || 0;
     const reduceSkillFct = this.totalEquipStatus[`fct__${name}`] || 0;
+    const reduceSkillFctPercent = this.totalEquipStatus[`fctPercent__${name}`] || 0;
     const reduceSkillAcd = this.totalEquipStatus[`acd__${name}`] || 0;
 
     const { acd, vct, vct_inc = 0, fct, fctPercent } = this.totalEquipStatus;
@@ -1785,7 +1786,7 @@ export class Calculator {
       vctSkill,
       reducedVct,
       fct: skillFct,
-      reducedFct: this.floor((skillFct - reduceSkillFct - fct) * (1 - fctPercent * 0.01), 2),
+      reducedFct: this.floor((skillFct - reduceSkillFct - fct) * (1 - fctPercent * 0.01) * (1 - reduceSkillFctPercent * 0.01), 2),
       acd: skillAcd,
       reducedAcd: this.floor((skillAcd - reduceSkillAcd) * (1 - acd * 0.01), 2),
     };

@@ -1,14 +1,9 @@
 import { ElementType } from '../constants/element-type.const';
 import { InfoForClass } from '../models/info-for-class.model';
 import { ClassName } from './_class-name';
-import {
-  ActiveSkillModel,
-  AtkSkillFormulaInput,
-  AtkSkillModel,
-  CharacterBase,
-  PassiveSkillModel,
-} from './_character-base.abstract';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
 import { DemonBane, Heal } from '../constants/share-passive-skills';
+import { RaceType } from '../constants/race-type.const';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   '1': [0, 0, 0, 1, 0, 0],
@@ -114,7 +109,29 @@ export class ArchBishop extends CharacterBase {
       levelList: [{ label: 'Lv 1', value: 'Holy Light==1' }],
     },
     {
-      label: 'Judex Lv 10',
+      label: 'Magnus Exorcismus Lv10',
+      name: 'Magnus Exorcismus',
+      acd: 1,
+      cd: 6,
+      fct: 1,
+      vct: 4,
+      isMatk: true,
+      element: ElementType.Holy,
+      value: 'Magnus Exorcismus==10',
+      levelList: [],
+      formular: (input: AtkSkillFormulaInput): number => {
+        const { race, element } = input.monster;
+        const inCludeBonus =
+          [RaceType.Demon.toLowerCase(), RaceType.Undead.toLowerCase()].includes(race) ||
+          [ElementType.Undead.toLowerCase(), ElementType.Dark.toLowerCase()].includes(element);
+
+        if (inCludeBonus) return 130;
+
+        return 100;
+      },
+    },
+    {
+      label: 'Judex Lv10',
       name: 'Judex',
       fct: 0.5,
       vct: 2,
@@ -132,7 +149,7 @@ export class ArchBishop extends CharacterBase {
       levelList: [{ label: 'Lv 10', value: 'Judex==10' }],
     },
     {
-      label: 'Adoramus Lv 10',
+      label: 'Adoramus Lv10',
       name: 'Adoramus',
       fct: 0.5,
       vct: 2,
@@ -162,6 +179,15 @@ export class ArchBishop extends CharacterBase {
         { label: 'Lv 3', isUse: true, value: 3 },
         { label: 'Lv 4', isUse: true, value: 4 },
         { label: 'Lv 5', isUse: true, value: 5 },
+      ],
+    },
+    {
+      inputType: 'selectButton',
+      label: 'Offertorium Lv5',
+      name: 'Offertorium',
+      dropdown: [
+        { label: 'Yes', isUse: true, value: 5 },
+        { label: 'No', isUse: false, value: 0 },
       ],
     },
   ];
@@ -242,9 +268,7 @@ export class ArchBishop extends CharacterBase {
     const { weapon, monster, model } = info;
     const weaponSubType = weapon?.data?.subTypeName;
     const bonusBaseLv = 0.05 * (model['level'] + 1);
-    const bonuses = this._passiveSkillList
-      .map((s, idx) => s.dropdown.find((d) => d.value === this.passiveSkillIds[idx])?.bonus)
-      .filter(Boolean);
+    const bonuses = this._passiveSkillList.map((s, idx) => s.dropdown.find((d) => d.value === this.passiveSkillIds[idx])?.bonus).filter(Boolean);
     const { race, element } = monster;
 
     let totalAtk = 0;
