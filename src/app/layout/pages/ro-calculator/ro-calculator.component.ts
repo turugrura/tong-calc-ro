@@ -169,13 +169,15 @@ const createExtraOptionList = () => {
         label: dmgType,
         children: dmgSubTypes.map((finalProp) => {
           const finalPropLow = finalProp.toLowerCase();
+          const fixedSize = dmgType === 'Size' ? finalPropLow.at(1) : finalPropLow;
+
           return {
             value: `${atk}_${dmgType}_${finalProp}`,
             label: finalProp,
             children: Array.from({ length: 25 }, (_, k) => {
               const num = k + 1;
               return {
-                value: `${atk}_${propLow}_${finalPropLow}:${num}`,
+                value: `${atk}_${propLow}_${fixedSize}:${num}`,
                 label: `${atk.toUpperCase()}. ${dmgType} ${finalProp} +${num}%`,
               };
             }),
