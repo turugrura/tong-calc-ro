@@ -211,7 +211,16 @@ const racing3rd = [EA._1, EA._2, FS._1, FS._2, Sharp._1, Sharp._2, Cri._1, Cri._
 
 const illusionArmor = ['Improve_Orb_Atk', 'Improve_Orb_Matk', 'Improve_Orb_Archer', 'Improve_Orb_Delay'];
 const illusionGarment = ['Improve_Orb_Speed', 'Improve_Orb_Cast', 'Improve_Orb_Cri', 'Improve_Orb_Above'];
-const illusionBoot = ['Improve_Orb_Fix', 'Improve_Orb_Heal', 'Improve_Orb_L_LUK'];
+const illusionBoot = [
+  'Improve_Orb_Fix',
+  'Improve_Orb_Heal',
+  'Improve_Orb_L_Vit',
+  'Improve_Orb_L_INT',
+  'Improve_Orb_L_DEX',
+  'Improve_Orb_L_STR',
+  'Improve_Orb_L_AGI',
+  'Improve_Orb_L_LUK',
+];
 const illusionAcc = [EA._5, FS._6, Spell._5, AttackDelay._4, Cri._4];
 
 const tempBoot_3 = ["Bear's_Power", 'Runaway_Magic', 'Speed_Of_Light', 'Muscle_Fool', 'Hawkeye', 'Lucky_Day'];
@@ -336,7 +345,9 @@ const enchantTable: EntTable[] = [
   { name: 'Illusion_B_L', enchants: [null, illusionAcc, illusionAcc, illusionAcc] },
   { name: 'Illusion_BC_R', enchants: [null, illusionAcc, illusionAcc, illusionAcc] },
   { name: 'Illusion_BC_L', enchants: [null, illusionAcc, illusionAcc, illusionAcc] },
+
   { name: '[Upgrade] Illusion Ring [1]', enchants: [null, illusionAcc, illusionAcc, illusionAcc] },
+  { name: 'Secret Illusion Ring [1]', enchants: [null, ['Improve_Orb_L_Varmundt', ...illusionAcc], illusionAcc, illusionAcc] },
 
   { name: 'Temporal_Boots_TW', enchants: [null, null, tempBoot_3, tempBoot_4] },
   { name: 'Temporal_Str_Boots', enchants: [null, null, tempBoot_3, tempBoot_4] },

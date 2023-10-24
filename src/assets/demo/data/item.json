@@ -27105,6 +27105,141 @@
       ]
     }
   },
+  "29547": {
+    "id": 29547,
+    "aegisName": "Improve_Orb_L_Vit",
+    "name": "Modification Orb (Unlimited Vitality)",
+    "unidName": "Modification Orb (Unlimited Vitality)",
+    "resName": "Sea_Sapphire",
+    "description": "เมื่อได้รับการโจมตีทางกายภาพ/เวทมนตร์ มีโอกาส(5%)ได้รับ \"Everlasting Life\" เป็นเวลา 10 วินาที \nEverlasting Life : VIT + 50 เป็นเวลา 10 วินาที, ฟื้นฟู HP 400 ทุก ๆ 0.5 วินาที, ลด SP 20 ทุก ๆ 1 วินาที",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {}
+  },
+  "29548": {
+    "id": 29548,
+    "aegisName": "Improve_Orb_L_INT",
+    "name": "Modification Orb (Spell Buster)",
+    "unidName": "Modification Orb (Spell Buster)",
+    "resName": "Red_Fog_Garnet",
+    "description": "เมื่อทำการโจมตีเวทมนตร์ มีโอกาส(3%)ได้รับ \"Magic Storm\" เป็นเวลา 10 วินาที\nMagic Storm : INT + 50 เป็นเวลา 10 วินาที, MATK + 15%, ATK - 15%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "chance__int": [
+        "50"
+      ],
+      "chance__matkPercent": [
+        "15"
+      ],
+      "chance__atkPercent": [
+        "-15"
+      ]
+    }
+  },
+  "29549": {
+    "id": 29549,
+    "aegisName": "Improve_Orb_L_DEX",
+    "name": "Modification Orb (Fierce Shooter)",
+    "unidName": "Modification Orb (Fierce Shooter)",
+    "resName": "Lightning_Topaz",
+    "description": "เมื่อทำการโจมตีทางกายภาพ มีโอกาส(3%)ได้รับ \"Plunging Shooter\" เป็นเวลา 10 วินาที\nPlunging Shooter : DEX + 50 เป็นเวลา 10 วินาที, เพิ่ม Damage ทางกายภาพระยะไกล 10%, ลด SP 20 ทุก ๆ 1 วินาที",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "chance__dex": [
+        "50"
+      ],
+      "chance__range": [
+        "10"
+      ],
+      "chance__spLoss": [
+        "20"
+      ]
+    }
+  },
+  "29550": {
+    "id": 29550,
+    "aegisName": "Improve_Orb_L_STR",
+    "name": "Modification Orb (Overpower)",
+    "unidName": "Modification Orb (Overpower)",
+    "resName": "Poisoned_Amethyst",
+    "description": "เมื่อทำการโจมตีทางกายภาพ มีโอกาส(3%)ได้รับ \"Raging Fight\" เป็นเวลา 10 วินาที\nRaging Fight : STR + 50 เป็นเวลา 10 วินาที, ATK + 15%, MATK - 15%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "chance__str": [
+        "50"
+      ],
+      "chance__atkPercent": [
+        "15"
+      ],
+      "chance__matkPercent": [
+        "-15"
+      ]
+    }
+  },
+  "29551": {
+    "id": 29551,
+    "aegisName": "Improve_Orb_L_AGI",
+    "name": "Modification Module (Fatal Flash)",
+    "unidName": "Modification Module (Fatal Flash)",
+    "resName": "Frost_Zircon",
+    "description": "เมื่อทำการโจมตีทางกายภาพ มีโอกาส(3%)ได้รับ \"Deadly Lightspeed\" เป็นเวลา 10 วินาที \nDeadly Lightspeed : AGI + 50 เป็นเวลา 10 วินาที, เพิ่ม Critical Damage 10%, ลด HP 300 ทุก ๆ 1 วินาที",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "chance__agi": [
+        "50"
+      ],
+      "chance__criDmg": [
+        "10"
+      ],
+      "chance__hpLoss": [
+        "300"
+      ]
+    }
+  },
   "29552": {
     "id": 29552,
     "aegisName": "Improve_Orb_L_LUK",
@@ -28863,6 +28998,44 @@
       ],
       "atkPercent": [
         "5---3"
+      ]
+    }
+  },
+  "29726": {
+    "id": 29726,
+    "aegisName": "Improve_Orb_L_Varmundt",
+    "name": "Modification Orb(Vestige of Varmundt)",
+    "unidName": "Modification Orb(Vestige of Varmundt)",
+    "resName": "Release_Of_Magic",
+    "description": "^000088[พลังของ Varmundt]^000000 \nเมื่อสวมใส่กับ Modification Orb (Unlimited Vitality),\nลดระยะเวลาร่ายแปรผัน 20%\n\nเมื่อสวมใส่กับ Modification Orb (Spell Buster),\nเพิกเฉยต่อพลังป้องกันทางเวทย์ 50%\nของศัตรูทุกเผ่า (ยกเว้น Player)\n\nเมื่อสวมใส่กับ Modification Orb (Fierce Shooter),\nมีโอกาสเพิ่มขึ้น 20% ที่จะเกิด Perfect Hit\n\nเมื่อสวมใส่กับ Modification Orb (Overpower),\nMaxHP + 15%\n\nเมื่อสวมใส่กับ Modification Module (Fatal Flash),\nเพิ่ม Damage ทางกายภาพระยะไกล 8%\n\nเมื่อสวมใส่กับ Modification Orb (Lucky Strike),\nFlee + 40",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "vct": [
+        "EQUIP[Modification Orb (Unlimited Vitality)]20"
+      ],
+      "m_pene_race_all": [
+        "EQUIP[Modification Orb (Spell Buster)]50"
+      ],
+      "perfectHit": [
+        "EQUIP[Modification Orb (Fierce Shooter)]20"
+      ],
+      "hpPercent": [
+        "EQUIP[Modification Orb (Overpower)]15"
+      ],
+      "range": [
+        "EQUIP[Modification Module (Fatal Flash)]8"
+      ],
+      "flee": [
+        "EQUIP[Modification Orb (Lucky Strike)]40"
       ]
     }
   },
@@ -33370,6 +33543,9 @@
     "requiredLevel": 100,
     "location": null,
     "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
     "script": {
       "int": [
         "5"
@@ -33415,12 +33591,12 @@
         "EQUIP[Modification Orb (Lucky Strike)]40"
       ],
       "range": [
-        "EQUIP[Modification Orb (Fatal Flash)]8"
+        "EQUIP[Modification Module (Fatal Flash)]8"
+      ],
+      "perfectHit": [
+        "EQUIP[Modification Orb (Fierce Shooter)]20"
       ]
-    },
-    "usableClass": [
-      "all"
-    ]
+    }
   },
   "490316": {
     "id": 490316,
