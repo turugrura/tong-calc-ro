@@ -1,4 +1,4 @@
-export const PoisionPsoEleTable = {
+export const PoisonPsoEleTable = {
   1: {
     Neutral: 1,
     Water: 1,

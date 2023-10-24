@@ -1,11 +1,5 @@
 import { ClassName } from './_class-name';
-import {
-  ActiveSkillModel,
-  AtkSkillFormulaInput,
-  AtkSkillModel,
-  CharacterBase,
-  PassiveSkillModel,
-} from './_character-base.abstract';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
 import { Thief } from './thief';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {};
@@ -15,15 +9,7 @@ export class AssassinCross extends CharacterBase {
   protected readonly JobBonusTable = jobBonusTable;
 
   protected initialStatusPoint = 100;
-  protected classNames = [
-    'Hi-Class',
-    'Assassin',
-    'Assassin Cls',
-    'Assassin Class',
-    'Assassin Cross',
-    'Assassin Cross Cls',
-    'Assassin Cross Class',
-  ];
+  protected classNames = ['Hi-Class', 'Assassin', 'Assassin Cls', 'Assassin Class', 'Assassin Cross', 'Assassin Cross Cls', 'Assassin Cross Class'];
   protected _atkSkillList: AtkSkillModel[] = [
     {
       name: 'Meteor Assault',
@@ -76,16 +62,16 @@ export class AssassinCross extends CharacterBase {
       isMasteryAtk: true,
       dropdown: [
         { label: '-', isUse: false, value: 0 },
-        { label: 'Lv 1', isUse: true, value: 1, bonus: { atk: 3 } },
-        { label: 'Lv 2', isUse: true, value: 2, bonus: { atk: 6 } },
-        { label: 'Lv 3', isUse: true, value: 3, bonus: { atk: 9 } },
-        { label: 'Lv 4', isUse: true, value: 4, bonus: { atk: 12 } },
-        { label: 'Lv 5', isUse: true, value: 5, bonus: { atk: 15 } },
-        { label: 'Lv 6', isUse: true, value: 6, bonus: { atk: 18 } },
-        { label: 'Lv 7', isUse: true, value: 7, bonus: { atk: 21 } },
-        { label: 'Lv 8', isUse: true, value: 8, bonus: { atk: 24 } },
-        { label: 'Lv 9', isUse: true, value: 9, bonus: { atk: 27 } },
-        { label: 'Lv 10', isUse: true, value: 10, bonus: { atk: 30 } },
+        { label: 'Lv 1', isUse: true, value: 1, bonus: { x_katar_atk: 3 } },
+        { label: 'Lv 2', isUse: true, value: 2, bonus: { x_katar_atk: 6 } },
+        { label: 'Lv 3', isUse: true, value: 3, bonus: { x_katar_atk: 9 } },
+        { label: 'Lv 4', isUse: true, value: 4, bonus: { x_katar_atk: 12 } },
+        { label: 'Lv 5', isUse: true, value: 5, bonus: { x_katar_atk: 15 } },
+        { label: 'Lv 6', isUse: true, value: 6, bonus: { x_katar_atk: 18 } },
+        { label: 'Lv 7', isUse: true, value: 7, bonus: { x_katar_atk: 21 } },
+        { label: 'Lv 8', isUse: true, value: 8, bonus: { x_katar_atk: 24 } },
+        { label: 'Lv 9', isUse: true, value: 9, bonus: { x_katar_atk: 27 } },
+        { label: 'Lv 10', isUse: true, value: 10, bonus: { x_katar_atk: 30 } },
       ],
     },
     {

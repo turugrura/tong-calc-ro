@@ -1,12 +1,7 @@
 import { ClassName } from './_class-name';
 import { AssassinCross } from './assassin-cross';
-import {
-  ActiveSkillModel,
-  AtkSkillFormulaInput,
-  AtkSkillModel,
-  CharacterBase,
-  PassiveSkillModel,
-} from './_character-base.abstract';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
+import { InfoForClass } from '../models/info-for-class.model';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   '1': [0, 1, 0, 0, 0, 0],
@@ -91,6 +86,7 @@ export class GitCross extends CharacterBase {
       fct: 0,
       vct: 0,
       cd: 0,
+      isMelee: true,
       levelList: [{ label: 'Lv 5', value: 'Rolling Cutter==5' }],
       formular: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
@@ -122,5 +118,13 @@ export class GitCross extends CharacterBase {
     super();
 
     this.inheritBaseClass(new AssassinCross());
+  }
+
+  override getMasteryAtk(info: InfoForClass): number {
+    if (!info.weapon?.data) return 0;
+
+    const { typeName } = info.weapon.data;
+
+    return this.calcHiddenMasteryAtk(info, { prefix: `x_${typeName}` }).totalAtk;
   }
 }

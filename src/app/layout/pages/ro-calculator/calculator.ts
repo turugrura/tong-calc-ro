@@ -5,7 +5,7 @@ import { ItemTypeEnum, MainItemTypeSet, MainItemWithRelations } from './constant
 import { ItemModel } from './models/item.model';
 import { MonsterModel } from './models/monster.model';
 import { Weapon } from './weapon';
-import { PoisionPsoEleTable } from './constants/poison-psdo-ele-table';
+import { PoisonPsoEleTable } from './constants/poison-psdo-ele-table';
 import { AllowShieldTable } from './constants/allow-shield-table';
 import { PreparedMonsterModel } from './models/prepared-monster.model';
 import { SizePenaltyMapper } from './constants/size-penalty-mapper';
@@ -477,6 +477,10 @@ export class Calculator {
     return this.isUsedSkill('Enchant Deadly Poison');
   }
 
+  private getEDPMultiplier() {
+    return this.isUsedEDP() ? 4 : 1;
+  }
+
   private isEquipItem(itemName: string) {
     return this.equipItemNameSet.has(itemName);
   }
@@ -692,7 +696,7 @@ export class Calculator {
   }
 
   private isIncludingOverUpgrade() {
-    return this.isRangeAtk();
+    return !this.isRangeAtk();
   }
 
   get isMaximizeWeapon() {
@@ -748,18 +752,20 @@ export class Calculator {
     const [element, eleLvl] = this.monsterData.elementLevelUpper.split(' ');
     const weaponSizePenalty = baseWeaponAtk * this.sizePenalty;
     const variant = weaponSizePenalty * baseWeaponLevel * 0.05;
-    const poisonPsuMulti = 1 + PoisionPsoEleTable[eleLvl][element] * 0.25;
+    const poisonPsuMulti = 1 + PoisonPsoEleTable[eleLvl][element] * 0.25;
+    const isEDP = this.isUsedEDP();
 
-    const formular = (weaponAtk: number, overUpg: number) => {
-      const total = weaponAtk + this.floor(this.weaponStatusAtk * this.sizePenalty) + this.floor(refineBonus * this.sizePenalty);
-      const totalOverUpg = this.isIncludingOverUpgrade() ? total : total + overUpg;
-      const edpApplied = this.isUsedEDP() ? 4 * (totalOverUpg * poisonPsuMulti) : totalOverUpg;
+    const formula = (weaponAtk: number, overUpg: number) => {
+      const weaponBonus = this.isIncludingOverUpgrade() ? refineBonus + overUpg : refineBonus;
+      let total = weaponAtk;
+      total += this.floor(this.weaponStatusAtk * this.sizePenalty);
+      total += this.floor((isEDP ? weaponBonus * poisonPsuMulti : weaponBonus) * this.sizePenalty);
 
-      return this.floor(edpApplied);
+      return this.floor(isEDP ? total * 1.25 : total);
     };
-    const totalMin = formular(weaponSizePenalty - variant, 0);
-    const totalMax = formular(weaponSizePenalty + variant, 0);
-    const totalMaxOver = formular(weaponSizePenalty + variant, overUpgradeBonus);
+    const totalMin = formula(weaponSizePenalty - variant, 0);
+    const totalMax = formula(weaponSizePenalty + variant, 0);
+    const totalMaxOver = formula(weaponSizePenalty + variant, overUpgradeBonus);
 
     this.totalWeaponAtkMin = this.isMaximizeWeapon ? totalMax : totalMin;
     this.totalWeaponAtkMax = totalMax;
@@ -797,27 +803,27 @@ export class Calculator {
   }
 
   private calcExtraAtk() {
-    const equipaAtk = this.totalEquipStatus.atk;
+    const equipAtk = this.totalEquipStatus.atk;
     const skillAtk = this.getEquipAtkFromSkills();
 
-    this.totalEquipAtk = skillAtk + (this.isUsedEDP() ? equipaAtk * 4 : equipaAtk);
+    this.totalEquipAtk = skillAtk + equipAtk;
 
     return this;
   }
 
   private calcAtkGroupA(totalWeaponAtk?: number) {
     const atkPercent = this.toPercent(this.totalEquipStatus.atkPercent);
-    const formular = (totalAtk: number) => {
+    const formula = (totalAtk: number) => {
       const a = this.floor((totalAtk + this.totalEquipAtk) * atkPercent);
 
       return this.floor(a * this.propertyMultiplier);
     };
 
-    if (totalWeaponAtk) return formular(totalWeaponAtk);
+    if (totalWeaponAtk) return formula(totalWeaponAtk);
 
-    const totalAMin = formular(this.totalWeaponAtkMin);
-    const totalAMax = formular(this.totalWeaponAtkMax);
-    const totalAMaxOver = formular(this.totalWeaponAtkMaxOver);
+    const totalAMin = formula(this.totalWeaponAtkMin);
+    const totalAMax = formula(this.totalWeaponAtkMax);
+    const totalAMaxOver = formula(this.totalWeaponAtkMaxOver);
 
     this.totalAMin = totalAMin;
     this.totalAMax = totalAMax;
@@ -858,20 +864,20 @@ export class Calculator {
     const size = this.toPercent(this.calcSizeMultiplier());
     const element = this.toPercent(this.calcElementMultiplier());
     const monsterType = this.toPercent(this.calcMonterTypeMultiplier());
-    const formular = (atk: number) => {
+    const formula = (atk: number) => {
       return this.floor(this.floor(this.floor(this.floor(this.floor(atk * race) * size) * element) * monsterType) * this.propertyMultiplier);
     };
     // console.log({ name: this.monster.name, race, size, element, _class: monsterType });
 
-    if (totalWeaponAtk) return formular(totalWeaponAtk + this.totalEquipAtk);
+    if (totalWeaponAtk) return formula(totalWeaponAtk + this.totalEquipAtk);
 
-    const totalBMin = formular(this.totalWeaponAtkMin + this.totalEquipAtk);
-    const totalBMax = formular(this.totalWeaponAtkMax + this.totalEquipAtk);
-    const totalBMaxOver = formular(this.totalWeaponAtkMaxOver + this.totalEquipAtk);
+    const totalBMin = formula(this.totalWeaponAtkMin + this.totalEquipAtk);
+    const totalBMax = formula(this.totalWeaponAtkMax + this.totalEquipAtk);
+    const totalBMaxOver = formula(this.totalWeaponAtkMaxOver + this.totalEquipAtk);
 
-    this.totalBMin = totalBMin;
-    this.totalBMax = totalBMax;
-    this.totalBMaxOver = totalBMaxOver;
+    this.totalBMin = totalBMin * this.getEDPMultiplier();
+    this.totalBMax = totalBMax * this.getEDPMultiplier();
+    this.totalBMaxOver = totalBMaxOver * this.getEDPMultiplier();
 
     return this;
   }
@@ -921,14 +927,14 @@ export class Calculator {
     // const additionalAtk = this.totalMasteryAtk + this.totalBuffAtk;
     // if (aAtk && bAtk) return calcPropMulti(aAtk) + calcPropMulti(bAtk) + extraAtk + additionalAtk;
 
-    const masteryAtk = this._class.getMasteryAtk({
+    const hiddenMasteryAtk = this._class.getMasteryAtk({
       model: this.model,
       monster: this.monsterData,
       totalBonus: this.totalEquipStatus,
       weapon: this.weaponData,
       status: this.status,
     });
-    const statusAtk = this.totalStatusAtk * 2 + this.totalMasteryAtk + masteryAtk + this.totalBuffAtk;
+    const statusAtk = this.totalStatusAtk * 2 + this.totalMasteryAtk + hiddenMasteryAtk + this.totalBuffAtk;
     const totalMinAtk = this.totalAMin + this.totalBMin + statusAtk;
     const totalMaxAtk = this.totalAMax + this.totalBMax + statusAtk;
     const totalMaxAtkOver = this.totalAMaxOver + this.totalBMaxOver + statusAtk;

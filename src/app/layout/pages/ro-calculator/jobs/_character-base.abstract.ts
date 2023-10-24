@@ -156,8 +156,7 @@ export abstract class CharacterBase {
     });
 
     this._passiveSkillList.forEach((skill, index) => {
-      const { bonus, isUse, value, skillLv } =
-        (skill.dropdown as any[]).find((x) => x.value === this.passiveSkillIds[index]) ?? {};
+      const { bonus, isUse, value, skillLv } = (skill.dropdown as any[]).find((x) => x.value === this.passiveSkillIds[index]) ?? {};
       if (!isUse) return;
 
       learnedSkillMap.set(skill.name, skillLv ?? Number(value));
@@ -194,7 +193,7 @@ export abstract class CharacterBase {
     this.classNames = [...classNames, ...this.classNames];
   }
 
-  protected calcHiddenMasteryAtk(_: InfoForClass) {
+  protected calcHiddenMasteryAtk(_: InfoForClass, x?: { prefix?: string; suffix?: string }) {
     if (!this.bonuses?.masteryAtks) return { totalAtk: 0, totalMatk: 0 };
 
     const bonuses = this.bonuses.masteryAtks || {};
@@ -202,9 +201,20 @@ export abstract class CharacterBase {
     let totalAtk = 0;
     let totalMatk = 0;
 
+    let attrAtk = 'x_atk';
+    let attrMatk = 'x_matk';
+    if (x?.prefix) {
+      attrAtk = `${x.prefix}_atk`;
+      attrMatk = `${x.prefix}_matk`;
+    }
+    if (x?.suffix) {
+      attrAtk = `${attrAtk}_${x.suffix}`;
+      attrMatk = `${attrMatk}_${x.suffix}`;
+    }
+
     for (const [, bonus] of Object.entries(bonuses)) {
-      totalAtk += bonus[`x_atk`] || 0;
-      totalMatk += bonus[`x_matk`] || 0;
+      totalAtk += bonus[attrAtk] || 0;
+      totalMatk += bonus[attrMatk] || 0;
     }
 
     return { totalAtk, totalMatk };
