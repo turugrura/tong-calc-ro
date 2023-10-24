@@ -1,4 +1,5 @@
-export interface EnvirontmentModel {
+export interface EnvironmentModel {
   production: boolean;
   surveyUrl: string;
+  issueTrackingUrl?: string;
 }

@@ -16273,6 +16273,240 @@
       ]
     }
   },
+  "24345": {
+    "id": 24345,
+    "aegisName": "S_Tempest_Shield",
+    "name": "Tempest Shadow Shield",
+    "unidName": "Shadow Shield",
+    "resName": "쉴드쉐도우2",
+    "description": "โล่เล็กที่สามารถสวมใส่ที่แขนได้ สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์การป้องกันของมันจะลดน้อยลง\nเพิกเฉยต่อพลังป้องกันเวทของศัตรูทั่วไป 5%\nทุก ๆ การอัพเกรด 2 ขั้น, เพิกเฉยต่อพลังป้องกันเวทของศัตรูทั่วไป 1% เพิ่มเติม\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shield^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 527,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Shield",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "m_pene_class_normal": [
+        "5",
+        "2---1"
+      ]
+    }
+  },
+  "24346": {
+    "id": 24346,
+    "aegisName": "S_Tempest_Shoes",
+    "name": "Tempest Shadow Shoes",
+    "unidName": "Shadow Shoes",
+    "resName": "슈즈쉐도우2",
+    "description": "รองเท้าที่สวมใส่เพิ่มเติม สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์ของมันจะลดน้อยลง\nเพิกเฉยต่อพลังป้องกันเวทของศัตรูทั่วไป 5% \nทุก ๆ การอัพเกรด 2 ขั้น, เพิกเฉยต่อพลังป้องกันเวทของศัตรูทั่วไป 1% เพิ่มเติม\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shoes^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 528,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Shoes",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "m_pene_class_normal": [
+        "5",
+        "2---1"
+      ]
+    }
+  },
+  "24347": {
+    "id": 24347,
+    "aegisName": "S_M_ExeHoly_Armor",
+    "name": "Magic Executioner Holy Water Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우2",
+    "description": "ชุดเกราะที่เพิ่มพลังป้องกันเมื่อสวมใส่เพิ่มบนเกราะอีกที สามารถใส่แบบชิ้นเดียวได้ แต่ความสามารถในการป้องกันจะลดลงไปอีก\nเพิกเฉยต่อพลังป้องกันเวทของมอนสเตอร์ประเภท Demi-Human (ยกเว้น Player), Undead 5% \nทุก ๆ การอัพเกรด 2 ขั้น, เพิกเฉยต่อพลังป้องกันเวทของมอนสเตอร์ประเภท Demi-Human(ยกเว้น Player), Undead 1% เพิ่มเติม\nเมื่อสวมใส่ Magic Executioner Shadow ร่วมกับ Tempest Shadow(Shoes, Shield), MDEF +5  \nเมื่อค่าอัพเกรดรวมกันตั้งแต่ 25 ขึ้นไป, เพิกเฉยต่อพลังป้องกันเวทของมอนสเตอร์ประเภท Demi-Human(ยกเว้น Player), Undead 100% \nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Armor ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Armor",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "m_pene_race_demihuman": [
+        "5",
+        "2---1",
+        "EQUIP[Tempest Shadow Shoes&&Tempest Shadow Shield]REFINE[shadowArmor,shadowShield,shadowBoot==25]===100"
+      ],
+      "m_pene_race_undead": [
+        "5",
+        "2---1",
+        "EQUIP[Tempest Shadow Shoes&&Tempest Shadow Shield]REFINE[shadowArmor,shadowShield,shadowBoot==25]===100"
+      ],
+      "mdef": [
+        "EQUIP[Tempest Shadow Shoes&&Tempest Shadow Shield]===5"
+      ]
+    }
+  },
+  "24348": {
+    "id": 24348,
+    "aegisName": "S_M_ExoCorrupt_Armor",
+    "name": "Magic Exorcist Corrupted Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우2",
+    "description": "ชุดเกราะที่เพิ่มพลังป้องกันเมื่อสวมใส่เพิ่มบนเกราะอีกที สามารถใส่แบบชิ้นเดียวได้ แต่ความสามารถในการป้องกันจะลดลงไปอีก\nเพิกเฉยต่อพลังป้องกันเวทของมอนสเตอร์ประเภท Demon, Angel 5% \nทุก ๆ การอัพเกรด 2 ขั้น, เพิกเฉยต่อพลังป้องกันทางเวทของมอนสเตอร์ประเภท Demon, Angel 1% เพิ่มเติม \nเมื่อสวมใส่ Magic Exorcist Corrupted Shadow Armor ร่วมกับ Tempest Shadow(Shoes, Shield), MDEF +5\nเมื่อค่าอัพเกรดรวมกันตั้งแต่ 25 ขึ้นไป, เพิกเฉยต่อพลังป้องกันเวทของมอนสเตอร์ประเภท Demon, Angel 100%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Armor ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Armor",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "m_pene_race_demon": [
+        "5",
+        "2---1",
+        "EQUIP[Tempest Shadow Shoes&&Tempest Shadow Shield]REFINE[shadowArmor,shadowShield,shadowBoot==25]===100"
+      ],
+      "m_pene_race_angel": [
+        "5",
+        "2---1",
+        "EQUIP[Tempest Shadow Shoes&&Tempest Shadow Shield]REFINE[shadowArmor,shadowShield,shadowBoot==25]===100"
+      ],
+      "mdef": [
+        "EQUIP[Tempest Shadow Shoes&&Tempest Shadow Shield]===5"
+      ]
+    }
+  },
+  "24349": {
+    "id": 24349,
+    "aegisName": "S_M_DragonVib_Armor",
+    "name": "Magic Vibration Dragon Killer Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우2",
+    "description": "ชุดเกราะที่เพิ่มพลังป้องกันเมื่อสวมใส่เพิ่มบนเกราะอีกที สามารถใส่แบบชิ้นเดียวได้ แต่ความสามารถในการป้องกันจะลดลงไปอีก\nเพิกเฉยต่อพลังป้องกันเวทของมอนสเตอร์ประเภท Formless, Dragon 5%\nทุก ๆ การอัพเกรด 2 ขั้น, เพิกเฉยต่อพลังป้องกันเวทของมอนสเตอร์ประเภท Formless, Dragon 1% เพิ่มเติม \nเมื่อสวมใส่ Magic Vibration Dragon Killer Shadow Armor ร่วมกับ Tempest Shadow(Shoes, Shield), MDEF +5\nเมื่อค่าอัพเกรดรวมกันตั้งแต่ 25 ขึ้นไป, เพิกเฉยต่อพลังป้องกันเวทของมอนสเตอร์ประเภท Formless, Dragon 100%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Armor ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Armor",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "m_pene_race_formless": [
+        "5",
+        "2---1",
+        "EQUIP[Tempest Shadow Shoes&&Tempest Shadow Shield]REFINE[shadowArmor,shadowShield,shadowBoot==25]===100"
+      ],
+      "m_pene_race_dragon": [
+        "5",
+        "2---1",
+        "EQUIP[Tempest Shadow Shoes&&Tempest Shadow Shield]REFINE[shadowArmor,shadowShield,shadowBoot==25]===100"
+      ],
+      "mdef": [
+        "EQUIP[Tempest Shadow Shoes&&Tempest Shadow Shield]===5"
+      ]
+    }
+  },
+  "24350": {
+    "id": 24350,
+    "aegisName": "S_M_SciHunting_Armor",
+    "name": "Magic Scissor Hunting Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우2",
+    "description": "ชุดเกราะที่เพิ่มพลังป้องกันเมื่อสวมใส่เพิ่มบนเกราะอีกที สามารถใส่แบบชิ้นเดียวได้ แต่ความสามารถในการป้องกันจะลดลงไปอีก\nเพิกเฉยต่อพลังป้องกันเวทของมอนสเตอร์ประเภท Brute(ยกเว้น Player), Plant 5% \nทุก ๆ การอัพเกรด 2 ขั้น, เพิกเฉยต่อพลังป้องกันเวทของมอนสเตอร์ประเภท Brute(ยกเว้น Player), Plant 1% เพิ่มเติม\nเมื่อสวมใส่ Magic Scissor Hunting Shadow Armor ร่วมกับ Tempest(Shoes, Shield), MDEF +5\nเมื่อค่าอัพเกรดรวมกันตั้งแต่ 25 ขึ้นไป, เพิกเฉยต่อพลังป้องกันเวทของมอนสเตอร์ประเภท Brute(ยกเว้น Player), Plant 100% \nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Armor ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Armor",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "m_pene_race_brute": [
+        "5",
+        "2---1",
+        "EQUIP[Tempest Shadow Shoes&&Tempest Shadow Shield]REFINE[shadowArmor,shadowShield,shadowBoot==25]===100"
+      ],
+      "m_pene_race_plant": [
+        "5",
+        "2---1",
+        "EQUIP[Tempest Shadow Shoes&&Tempest Shadow Shield]REFINE[shadowArmor,shadowShield,shadowBoot==25]===100"
+      ],
+      "mdef": [
+        "EQUIP[Tempest Shadow Shoes&&Tempest Shadow Shield]===5"
+      ]
+    }
+  },
+  "24351": {
+    "id": 24351,
+    "aegisName": "S_M_FishInsect_Armor",
+    "name": "Magic Fishing Insect Net Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우2",
+    "description": "ชุดเกราะที่เพิ่มพลังป้องกันเมื่อสวมใส่เพิ่มบนเกราะอีกที สามารถใส่แบบชิ้นเดียวได้ แต่ความสามารถในการป้องกันจะลดลงไปอีก\nเพิกเฉยต่อพลังป้องกันเวทของมอนสเตอร์ประเภท Fish, Insect 5%\nทุก ๆ การอัพเกรด 2 ขั้น, เพิกเฉยต่อพลังป้องกันเวทของมอนสเตอร์ประเภท Fish, Insect 1% เพิ่มเติม \nเมื่อสวมใส่ Magic Fishing Insect Net Shadow Armor ร่วมกับ Tempest Shadow(Shoes, Shield), MDEF +5 \nเมื่อค่าอัพเกรดรวมกันตั้งแต่ 25 ขึ้นไป, เพิกเฉยต่อพลังป้องกันเวทของมอนสเตอร์ประเภท Fish, Insect 100%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Armor ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Armor",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "m_pene_race_demihuman": [
+        "5",
+        "2---1",
+        "EQUIP[Tempest Shadow Shoes&&Tempest Shadow Shield]REFINE[shadowArmor,shadowShield,shadowBoot==25]===100"
+      ],
+      "m_pene_race_undead": [
+        "5",
+        "2---1",
+        "EQUIP[Tempest Shadow Shoes&&Tempest Shadow Shield]REFINE[shadowArmor,shadowShield,shadowBoot==25]===100"
+      ],
+      "mdef": [
+        "EQUIP[Tempest Shadow Shoes&&Tempest Shadow Shield]===5"
+      ]
+    }
+  },
   "24373": {
     "id": 24373,
     "aegisName": "S_Penetration_Shoes",

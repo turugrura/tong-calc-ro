@@ -3,7 +3,7 @@
         <img src="assets/layout/images/{{layoutService.config.colorScheme === 'light' ? 'logo-dark' : 'logo-white'}}.svg" alt="logo">
         <span>SAKAI</span>
       </a> -->
-  <span>V1.0.0</span>
+  <span>V1.0.1</span>
 
   <!-- <button #menubutton class="p-link layout-menu-button layout-topbar-button" (click)="layoutService.onMenuToggle()">
         <i class="pi pi-bars"></i>
@@ -13,11 +13,7 @@
         <i class="pi pi-ellipsis-v"></i>
     </button> -->
 
-  <div
-    #topbarmenu
-    class="layout-topbar-menu"
-    [ngClass]="{ 'layout-topbar-menu-mobile-active': layoutService.state.profileSidebarVisible }"
-  >
+  <div #topbarmenu class="layout-topbar-menu" [ngClass]="{ 'layout-topbar-menu-mobile-active': layoutService.state.profileSidebarVisible }">
     <!-- <button class="p-link layout-topbar-button">
             <i class="pi pi-calendar"></i>
             <span>Calendar</span>
@@ -32,6 +28,7 @@
         </button> -->
 
     <a #survey [hidden]="true" href="{{ env.surveyUrl }}" target="_blank" rel="noreferrer noopener"> </a>
+    <a #tracking [hidden]="true" href="{{ env.issueTrackingUrl }}" target="_blank" rel="noreferrer noopener"> </a>
     <button
       class="font-bold p-button-danger p-button-rounded p-button-raised"
       icon="pi pi-exclamation-triangle"
@@ -39,6 +36,14 @@
       pRipple
       label="Report"
       (click)="survey.click()"
+    ></button>
+    <button
+      class="font-bold p-button-info p-button-rounded p-button-raised"
+      icon="pi pi-exclamation-triangle"
+      pButton
+      pRipple
+      label="Issues Tracking"
+      (click)="tracking.click()"
     ></button>
     <button
       class="font-bold p-button-help p-button-rounded p-button-raised"
@@ -57,14 +62,7 @@
       (click)="showDialog()"
     ></button>
   </div>
-  <p-dialog
-    header="Support"
-    [draggable]="false"
-    [resizable]="false"
-    [modal]="true"
-    [(visible)]="visible"
-    [style]="{ 'min-width': '300px' }"
-  >
+  <p-dialog header="Support" [draggable]="false" [resizable]="false" [modal]="true" [(visible)]="visible" [style]="{ 'min-width': '300px' }">
     <div class="card flex flex-column align-items-center gap-2 flex-wrap">
       <div>
         <img src="assets/demo/images/others/qr.jpg" alt="QR" style="width: 300px" />
@@ -78,14 +76,7 @@
     </div>
   </p-dialog>
 
-  <p-dialog
-    header="ข้อมูลเพิ่มเติม"
-    [draggable]="false"
-    [resizable]="false"
-    [modal]="true"
-    [(visible)]="visibleInfo"
-    [style]="{ width: '50vw' }"
-  >
+  <p-dialog header="ข้อมูลเพิ่มเติม" [draggable]="false" [resizable]="false" [modal]="true" [(visible)]="visibleInfo" [style]="{ width: '50vw' }">
     <div class="card flex flex-column align-items-center gap-2 flex-wrap">
       <ul>
         <li *ngFor="let info of infos">{{ info }}</li>
