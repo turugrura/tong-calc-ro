@@ -26,7 +26,7 @@ export enum ClassName {
   Sura = 'Sura',
 
   Thief = 'Thief',
-  AssasinCross = 'AssasinCross',
+  AssassinCross = 'AssassinCross',
   GuillotineCross = 'GuillotineCross',
   Rogue = 'Rogue',
   ShadowChaser = 'ShadowChaser',

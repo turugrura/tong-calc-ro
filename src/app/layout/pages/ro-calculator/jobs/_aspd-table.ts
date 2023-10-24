@@ -8,11 +8,33 @@ type X = {
 type Y = {
   [key in MainAspdEffect]: number;
 };
-interface XX extends Y, X { }
+interface XX extends Y, X {}
 
 export const AspdTable: Partial<Record<ClassName, XX>> = {
-  [ClassName.RuneKnight]: { base: 156, shield: -5, Dagger: -10, Sword: -12, "Two-Handed Sword": -15, Axe: -18, "Two-Handed Axe": -20, Mace: -5, Spear: -8, "Two-Handed Spear": -12 },
-  [ClassName.RoyalGuard]: { base: 156, shield: -5, Dagger: -7, Sword: -5, "Two-Handed Sword": -9, Axe: -8, "Two-Handed Axe": -12, Mace: -4, Spear: -10, "Two-Handed Spear": -10 },
+  [ClassName.RuneKnight]: {
+    base: 156,
+    shield: -5,
+    Dagger: -10,
+    Sword: -12,
+    'Two-Handed Sword': -15,
+    Axe: -18,
+    'Two-Handed Axe': -20,
+    Mace: -5,
+    Spear: -8,
+    'Two-Handed Spear': -12,
+  },
+  [ClassName.RoyalGuard]: {
+    base: 156,
+    shield: -5,
+    Dagger: -7,
+    Sword: -5,
+    'Two-Handed Sword': -9,
+    Axe: -8,
+    'Two-Handed Axe': -12,
+    Mace: -4,
+    Spear: -10,
+    'Two-Handed Spear': -10,
+  },
 
   [ClassName.Ranger]: { base: 156, shield: -8, Dagger: -10, Bow: -9 },
   [ClassName.Minstrel]: { base: 156, shield: -7, Dagger: -12, Bow: -10, Instrument: -5, Whip: -5 },
@@ -30,7 +52,7 @@ export const AspdTable: Partial<Record<ClassName, XX>> = {
   },
   [ClassName.Sura]: { base: 158, shield: -5, Mace: -5, Rod: -10, 'Two-Handed Rod': -12, Fistweapon: -1 },
   [ClassName.Thief]: { base: 156, shield: -5 },
-  [ClassName.AssasinCross]: { base: 156, shield: -5 },
+  [ClassName.AssassinCross]: { base: 156, shield: -5 },
   [ClassName.GuillotineCross]: {
     base: 156,
     shield: -9,

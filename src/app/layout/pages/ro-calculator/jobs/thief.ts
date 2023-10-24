@@ -8,7 +8,7 @@ export class Thief extends CharacterBase {
   protected readonly JobBonusTable = jobBonusTable;
 
   protected readonly initialStatusPoint = 40;
-  protected readonly classNames = ['Thief'];
+  protected readonly classNames = ['Thief', 'Thief Cls', 'Thief Class'];
   protected readonly _atkSkillList: AtkSkillModel[] = [];
   protected readonly _activeSkillList: ActiveSkillModel[] = [];
   protected readonly _passiveSkillList: PassiveSkillModel[] = [

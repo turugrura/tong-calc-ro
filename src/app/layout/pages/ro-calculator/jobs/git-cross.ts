@@ -1,5 +1,5 @@
 import { ClassName } from './_class-name';
-import { AssasinCross } from './assasin-cross';
+import { AssassinCross } from './assassin-cross';
 import {
   ActiveSkillModel,
   AtkSkillFormulaInput,
@@ -121,6 +121,6 @@ export class GitCross extends CharacterBase {
   constructor() {
     super();
 
-    this.inheritBaseClass(new AssasinCross());
+    this.inheritBaseClass(new AssassinCross());
   }
 }
