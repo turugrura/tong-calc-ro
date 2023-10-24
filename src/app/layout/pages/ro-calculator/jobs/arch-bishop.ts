@@ -102,7 +102,7 @@ export class ArchBishop extends CharacterBase {
       isMatk: true,
       element: ElementType.Holy,
       value: 'Holy Light==1',
-      formular: (): number => {
+      formula: (): number => {
         return 125;
       },
       levelList: [{ label: 'Lv 1', value: 'Holy Light==1' }],
@@ -118,7 +118,7 @@ export class ArchBishop extends CharacterBase {
       element: ElementType.Holy,
       value: 'Magnus Exorcismus==10',
       levelList: [],
-      formular: (input: AtkSkillFormulaInput): number => {
+      formula: (input: AtkSkillFormulaInput): number => {
         const { race, element } = input.monster;
         const inCludeBonus =
           [RaceType.Demon.toLowerCase(), RaceType.Undead.toLowerCase()].includes(race) ||
@@ -139,7 +139,7 @@ export class ArchBishop extends CharacterBase {
       isMatk: true,
       element: ElementType.Holy,
       value: 'Judex==1',
-      formular: (input: AtkSkillFormulaInput): number => {
+      formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
 
@@ -157,7 +157,7 @@ export class ArchBishop extends CharacterBase {
       isMatk: true,
       element: ElementType.Holy,
       value: 'Adoramus==10',
-      formular: (input: AtkSkillFormulaInput): number => {
+      formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
 

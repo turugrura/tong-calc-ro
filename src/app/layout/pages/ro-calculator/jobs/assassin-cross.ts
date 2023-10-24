@@ -20,7 +20,7 @@ export class AssassinCross extends CharacterBase {
       cd: 0.5,
       acd: 0,
       levelList: [],
-      formular: (input: AtkSkillFormulaInput): number => {
+      formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
         const baseLevel = model.level;
         const bonusStr = status.totalStr * 5;

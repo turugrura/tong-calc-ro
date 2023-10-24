@@ -86,7 +86,7 @@ export class Rebelion extends CharacterBase {
       vct: 0,
       cd: 1,
       levelList: [{ label: 'Lv 10', value: 'Round Trip==10' }],
-      formular: (input: AtkSkillFormulaInput): number => {
+      formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
 
@@ -102,7 +102,7 @@ export class Rebelion extends CharacterBase {
       vct: 0,
       cd: 0,
       levelList: [{ label: 'Lv 10', value: 'Fire Dance==10' }],
-      formular: (input: AtkSkillFormulaInput): number => {
+      formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
 
@@ -118,7 +118,7 @@ export class Rebelion extends CharacterBase {
       vct: 1,
       cd: 1.6,
       levelList: [{ label: 'Lv 10', value: 'Vanishing Buster==10' }],
-      formular: (input: AtkSkillFormulaInput): number => {
+      formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
 

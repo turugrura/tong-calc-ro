@@ -21,7 +21,7 @@ export class Mage extends CharacterBase {
       isMatk: true,
       element: ElementType.Water,
       value: 'Cold Bolt==1',
-      formular: (): number => {
+      formula: (): number => {
         return 100;
       },
       levelList: [{ label: 'Lv 1', value: 'Cold Bolt==1' }],

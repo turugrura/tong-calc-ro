@@ -1,12 +1,6 @@
 import { ElementType } from '../constants/element-type.const';
 import { ClassName } from './_class-name';
-import {
-  ActiveSkillModel,
-  AtkSkillFormulaInput,
-  AtkSkillModel,
-  CharacterBase,
-  PassiveSkillModel,
-} from './_character-base.abstract';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
 import { Wizard } from './wizard';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
@@ -95,7 +89,7 @@ export class Warlock extends CharacterBase {
       isMatk: true,
       element: ElementType.Neutral,
       levelList: [{ label: 'Lv 5', value: 'Comet==5' }],
-      formular: (input: AtkSkillFormulaInput): number => {
+      formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
 
@@ -113,7 +107,7 @@ export class Warlock extends CharacterBase {
       isMatk: true,
       element: ElementType.Fire,
       levelList: [{ label: 'Lv 5', value: 'Crimson Rock==5' }],
-      formular: (input: AtkSkillFormulaInput): number => {
+      formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
 
@@ -131,7 +125,7 @@ export class Warlock extends CharacterBase {
       isMatk: true,
       element: ElementType.Water,
       levelList: [{ label: 'Lv 5', value: 'Jack Frost==5' }],
-      formular: (input: AtkSkillFormulaInput): number => {
+      formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
 
@@ -151,7 +145,7 @@ export class Warlock extends CharacterBase {
       element: ElementType.Ghost,
       hit: 2,
       levelList: [{ label: 'Lv 5', value: 'Soul Expansion==5' }],
-      formular: (input: AtkSkillFormulaInput): number => {
+      formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
         const baseLevel = model.level;
 

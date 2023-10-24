@@ -1,12 +1,6 @@
 import { ElementType } from '../constants/element-type.const';
 import { ClassName } from './_class-name';
-import {
-  ActiveSkillModel,
-  AtkSkillFormulaInput,
-  AtkSkillModel,
-  CharacterBase,
-  PassiveSkillModel,
-} from './_character-base.abstract';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
 import { Mage } from './mage';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {};
@@ -28,7 +22,7 @@ export class Wizard extends CharacterBase {
       cd: 0,
       isMatk: true,
       levelList: [{ label: 'Lv 10', value: 'Soul Drain==10' }],
-      formular: (input: AtkSkillFormulaInput): number => {
+      formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
 
@@ -46,7 +40,7 @@ export class Wizard extends CharacterBase {
       isMatk: true,
       element: ElementType.Ghost,
       levelList: [{ label: 'Lv 5', value: 'Napalm Vulcan==5' }],
-      formular: (input: AtkSkillFormulaInput): number => {
+      formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
 
@@ -64,7 +58,7 @@ export class Wizard extends CharacterBase {
       isMatk: true,
       element: ElementType.Earth,
       levelList: [{ label: 'Lv 5', value: "Heaven's Drive==5" }],
-      formular: (input: AtkSkillFormulaInput): number => {
+      formula: (input: AtkSkillFormulaInput): number => {
         const { model } = input;
         const baseLevel = model.level;
 

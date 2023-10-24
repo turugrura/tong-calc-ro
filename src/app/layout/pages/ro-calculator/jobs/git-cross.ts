@@ -88,7 +88,7 @@ export class GitCross extends CharacterBase {
       cd: 0,
       isMelee: true,
       levelList: [{ label: 'Lv 5', value: 'Rolling Cutter==5' }],
-      formular: (input: AtkSkillFormulaInput): number => {
+      formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
 

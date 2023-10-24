@@ -1,12 +1,6 @@
 import { InfoForClass } from '../models/info-for-class.model';
 import { ClassName } from './_class-name';
-import {
-  ActiveSkillModel,
-  AtkSkillFormulaInput,
-  AtkSkillModel,
-  CharacterBase,
-  PassiveSkillModel,
-} from './_character-base.abstract';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
 import { Whitesmith } from './white-smith';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
@@ -95,7 +89,7 @@ export class Mechanic extends CharacterBase {
       hit: 6,
       isMelee: true,
       levelList: [{ label: 'Lv 5', value: 'Axe Tornado==5' }],
-      formular: (input: AtkSkillFormulaInput): number => {
+      formula: (input: AtkSkillFormulaInput): number => {
         const { status, skillLevel, model } = input;
         const baseLevel = model.level;
         const vit = status.totalVit;
@@ -112,7 +106,7 @@ export class Mechanic extends CharacterBase {
       vct: 0,
       cd: 3,
       levelList: [{ label: 'Lv 5', value: 'Axe Boomerang==5' }],
-      formular: (input: AtkSkillFormulaInput): number => {
+      formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, weapon } = input;
         const baseLevel = model.level;
         const weaponWeight = weapon?.data?.weight || 0;
@@ -130,7 +124,7 @@ export class Mechanic extends CharacterBase {
       cd: 0.65,
       isIgnoreDef: true,
       levelList: [{ label: 'Lv 5', value: 'Arm Cannon==5' }],
-      formular: (input: AtkSkillFormulaInput): number => {
+      formula: (input: AtkSkillFormulaInput): number => {
         const { skillLevel, model, monster } = input;
         const baseLevel = model.level;
         const monsterSize = monster.size;

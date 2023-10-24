@@ -1,11 +1,5 @@
 import { ClassName } from './_class-name';
-import {
-  ActiveSkillModel,
-  AtkSkillFormulaInput,
-  AtkSkillModel,
-  CharacterBase,
-  PassiveSkillModel,
-} from './_character-base.abstract';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
 import { Paladin } from './paladin';
 import { ElementType } from '../constants/element-type.const';
 import { InfoForClass } from '../models/info-for-class.model';
@@ -94,7 +88,7 @@ export class RoyalGuard extends CharacterBase {
       vct: 0,
       cd: 0,
       levelList: [{ label: 'Lv 10', value: 'Banishing Point==10' }],
-      formular: (input: AtkSkillFormulaInput): number => {
+      formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
         const learnedBashLv = this.bonuses.learnedSkillMap.get('Bash') || 0;
@@ -114,7 +108,7 @@ export class RoyalGuard extends CharacterBase {
       isMatk: true,
       element: ElementType.Holy,
       levelList: [{ label: 'Lv 10', value: 'Genesis Ray==10' }],
-      formular: (input: AtkSkillFormulaInput): number => {
+      formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
 
@@ -131,7 +125,7 @@ export class RoyalGuard extends CharacterBase {
       cd: 0,
       isMelee: true,
       levelList: [{ label: 'Lv 5', value: 'Over Brand==5' }],
-      formular: (input: AtkSkillFormulaInput): number => {
+      formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
         const bonusLevel = baseLevel / 100;
@@ -158,7 +152,7 @@ export class RoyalGuard extends CharacterBase {
       isMelee: true,
       hit: 5,
       levelList: [],
-      formular: (input: AtkSkillFormulaInput): number => {
+      formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status, extra } = input;
         const baseLevel = model.level;
         const { totalStr, totalVit } = status;

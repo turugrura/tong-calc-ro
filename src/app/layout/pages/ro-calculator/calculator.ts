@@ -497,7 +497,7 @@ export class Calculator {
     return AllowShieldTable[this.weaponData.data?.typeName] || false;
   }
 
-  getAmmuSubTypeId() {
+  getAmmoSubTypeId() {
     const map = {
       bow: 1024,
       gun: 1025,
@@ -853,7 +853,7 @@ export class Calculator {
     return 100 + base + (this.totalEquipStatus[`${prefix}_${this.monsterData.element}`] ?? 0);
   }
 
-  private calcMonterTypeMultiplier(atkType: 'p' | 'm' = 'p') {
+  private calcMonsterTypeMultiplier(atkType: 'p' | 'm' = 'p') {
     const base = this.totalEquipStatus[`${atkType}_class_all`] || 0;
 
     return 100 + base + (this.totalEquipStatus[`${atkType}_class_${this.monsterData.type}`] ?? 0);
@@ -863,7 +863,7 @@ export class Calculator {
     const race = this.toPercent(this.calcRaceMultiplier());
     const size = this.toPercent(this.calcSizeMultiplier());
     const element = this.toPercent(this.calcElementMultiplier());
-    const monsterType = this.toPercent(this.calcMonterTypeMultiplier());
+    const monsterType = this.toPercent(this.calcMonsterTypeMultiplier());
     const formula = (atk: number) => {
       return this.floor(this.floor(this.floor(this.floor(this.floor(atk * race) * size) * element) * monsterType) * this.propertyMultiplier);
     };
@@ -1199,7 +1199,7 @@ export class Calculator {
     const race = this.toPercent(this.calcRaceMultiplier('m'));
     const size = this.toPercent(this.calcSizeMultiplier('m'));
     const element = this.toPercent(this.calcElementMultiplier('m'));
-    const monsterType = this.toPercent(this.calcMonterTypeMultiplier('m'));
+    const monsterType = this.toPercent(this.calcMonsterTypeMultiplier('m'));
     const mysticAmp = 1 + this.toPercent(this.totalEquipStatus['mysticAmp'] || 0);
     const { matkPercent } = this.totalEquipStatus;
     const comet = this.toPercent(100 + (this.totalEquipStatus['comet'] || 0));
@@ -1835,7 +1835,7 @@ export class Calculator {
 
     const [, skillName, skillLevel] = skillValue?.match(/(.+)==(\d+)/) ?? [];
     const skillData = this._class.atkSkills.find((a) => a.value === skillValue);
-    const isValidSkill = !!skillName && !!skillLevel && typeof skillData?.formular === 'function';
+    const isValidSkill = !!skillName && !!skillLevel && typeof skillData?.formula === 'function';
     const criShield = this.monsterData.criShield;
 
     this.criRateToMonster = Math.max(0, this.totalCri + this.getExtraCriRate() - criShield);
@@ -1866,9 +1866,9 @@ export class Calculator {
 
     if (isValidSkill) {
       this._class.activeSkills;
-      const { formular, cri, canCri, element, isMatk, isIgnoreDef = false, totalHit = 1 } = skillData;
+      const { formula, cri, canCri, element, isMatk, isIgnoreDef = false, totalHit = 1 } = skillData;
       const baseSkillDamage =
-        formular({
+        formula({
           model: this.model,
           monster: this.monsterData,
           skillLevel: Number(skillLevel),
@@ -2022,7 +2022,7 @@ export class Calculator {
     return this;
   }
 
-  getTotalummary() {
+  getTotalSummary() {
     return {
       ...this.getObjSummary(this.totalEquipStatus),
       monster: { ...this.monsterData },

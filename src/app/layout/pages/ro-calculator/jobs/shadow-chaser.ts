@@ -1,11 +1,5 @@
 import { ClassName } from './_class-name';
-import {
-  ActiveSkillModel,
-  AtkSkillFormulaInput,
-  AtkSkillModel,
-  CharacterBase,
-  PassiveSkillModel,
-} from './_character-base.abstract';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 0, 0, 1],
@@ -103,7 +97,7 @@ export class ShadowChaser extends CharacterBase {
       vct: 0,
       cd: 0,
       levelList: [{ label: 'Lv 10', value: 'Fatal Manace==10' }],
-      formular: (input: AtkSkillFormulaInput): number => {
+      formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
 
@@ -119,7 +113,7 @@ export class ShadowChaser extends CharacterBase {
       vct: 0,
       cd: 0.2,
       levelList: [{ label: 'Lv 10', value: 'Triangle Shot==10' }],
-      formular: (input: AtkSkillFormulaInput): number => {
+      formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
 
@@ -136,7 +130,7 @@ export class ShadowChaser extends CharacterBase {
       cd: 3.2,
       hit: 3,
       levelList: [{ label: 'Arrow Storm Lv 10', value: 'Arrow Storm==10' }],
-      formular: (input: AtkSkillFormulaInput): number => {
+      formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
 

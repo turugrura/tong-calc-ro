@@ -1,11 +1,5 @@
 import { ClassName } from './_class-name';
-import {
-  ActiveSkillModel,
-  AtkSkillFormulaInput,
-  AtkSkillModel,
-  CharacterBase,
-  PassiveSkillModel,
-} from './_character-base.abstract';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 0, 1, 0],
@@ -107,7 +101,7 @@ export class Ranger extends CharacterBase {
       cd: 3.2,
       hit: 3,
       levelList: [{ label: 'Arrow Storm Lv 10', value: 'Arrow Storm==10' }],
-      formular: (input: AtkSkillFormulaInput): number => {
+      formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
         // const baseAtk = usedSkillSet?.has('Fear Breeze') ? 250 : 200;
@@ -127,7 +121,7 @@ export class Ranger extends CharacterBase {
       levelList: [],
       canCri: true,
       cri: 50,
-      formular: (input: AtkSkillFormulaInput): number => {
+      formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
 
@@ -143,7 +137,7 @@ export class Ranger extends CharacterBase {
       vct: 0,
       cd: 1,
       levelList: [],
-      formular: (input: AtkSkillFormulaInput): number => {
+      formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
         if (this.bonuses.activeSkillNames.has('Fear Breeze')) {

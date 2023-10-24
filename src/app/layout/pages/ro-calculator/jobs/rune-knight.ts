@@ -1,11 +1,5 @@
 import { ClassName } from './_class-name';
-import {
-  ActiveSkillModel,
-  AtkSkillFormulaInput,
-  AtkSkillModel,
-  CharacterBase,
-  PassiveSkillModel,
-} from './_character-base.abstract';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
 import { LordKnight } from './lord-knight';
 import { ElementType } from '../constants/element-type.const';
 
@@ -93,7 +87,7 @@ export class RuneKnight extends CharacterBase {
       vct: 1,
       cd: 2,
       levelList: [{ label: 'Lv 5', value: 'Ignition Break==5' }],
-      formular: (input: AtkSkillFormulaInput): number => {
+      formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, weapon } = input;
         const baseLevel = model.level;
         const isWeaponFire = weapon?.data?.propertyAtk === ElementType.Fire;

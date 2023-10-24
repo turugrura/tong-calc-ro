@@ -1,13 +1,7 @@
 import { ElementType } from '../constants/element-type.const';
 import { InfoForClass } from '../models/info-for-class.model';
 import { ClassName } from './_class-name';
-import {
-  ActiveSkillModel,
-  AtkSkillFormulaInput,
-  AtkSkillModel,
-  CharacterBase,
-  PassiveSkillModel,
-} from './_character-base.abstract';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
 import { Sage } from './sage';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
@@ -96,7 +90,7 @@ export class Sorcerer extends CharacterBase {
       element: ElementType.Water,
       isMatk: true,
       levelList: [],
-      formular: (input: AtkSkillFormulaInput): number => {
+      formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
         const baseLevel = model.level;
         const totalInt = status.totalInt;
@@ -117,7 +111,7 @@ export class Sorcerer extends CharacterBase {
       element: ElementType.Earth,
       isMatk: true,
       levelList: [],
-      formular: (input: AtkSkillFormulaInput): number => {
+      formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
         const baseLevel = model.level;
         const totalInt = status.totalInt;
@@ -139,7 +133,7 @@ export class Sorcerer extends CharacterBase {
       totalHit: 7,
       isMatk: true,
       levelList: [],
-      formular: (input: AtkSkillFormulaInput): number => {
+      formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
         const baseLevel = model.level;
         const totalInt = status.totalInt;
@@ -158,7 +152,7 @@ export class Sorcerer extends CharacterBase {
       element: ElementType.Wind,
       isMatk: true,
       levelList: [],
-      formular: (input: AtkSkillFormulaInput): number => {
+      formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
         const baseLevel = model.level;
         const totalInt = status.totalInt;

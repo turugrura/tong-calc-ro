@@ -904,7 +904,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   private calculate() {
     const calc = this.prepare(this.calculator);
 
-    this.totalSummary = calc.getTotalummary();
+    this.totalSummary = calc.getTotalSummary();
     const modelSummary = calc.getModelSummary() as any;
     this.modelSummary = { ...modelSummary, rawOptionTxts: modelSummary.rawOptionTxts.filter(Boolean) };
     const x = calc.getItemSummary();
@@ -932,7 +932,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     if (this.compareItemNames.length > 0) {
       const m2 = JSON.parse(JSON.stringify(this.model2));
       const calc2 = this.prepare(this.calculator2, m2);
-      this.totalSummary2 = calc2.getTotalummary();
+      this.totalSummary2 = calc2.getTotalSummary();
       this.compareItemSummaryModel = calc2.getItemSummary();
     }
   }
@@ -1000,7 +1000,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         health,
         monsterClass: classMap[_class],
         elementName: elementShortName,
-        ...calculated.getTotalummary().dmg,
+        ...calculated.getTotalSummary().dmg,
       };
     });
   }
@@ -1609,7 +1609,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   }
 
   private setAmmoDropdownList() {
-    const myAmmoId = this.calculator.getAmmuSubTypeId();
+    const myAmmoId = this.calculator.getAmmoSubTypeId();
     const isMC = this.selectedCharacter.className === ClassName.Mechanic;
     const onlyMyAmmo = (a: DropdownModel) => {
       if (isMC) {
