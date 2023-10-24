@@ -56,7 +56,6 @@ const jobBonusTable: Record<number, [number, number, number, number, number, num
   '48': [5, 4, 5, 7, 5, 0],
   '49': [5, 4, 5, 8, 5, 0],
   '50': [5, 4, 5, 8, 6, 0],
-  // '50': [5, 4, 5, 9, 6, 1],
   '51': [5, 4, 5, 8, 6, 1],
   '52': [5, 5, 5, 8, 6, 1],
   '53': [5, 5, 6, 8, 6, 1],
@@ -187,6 +186,15 @@ export class ArchBishop extends CharacterBase {
       name: 'Offertorium',
       dropdown: [
         { label: 'Yes', isUse: true, value: 5 },
+        { label: 'No', isUse: false, value: 0 },
+      ],
+    },
+    {
+      inputType: 'selectButton',
+      label: 'Basilica Lv5',
+      name: 'Basilica',
+      dropdown: [
+        { label: 'Yes', isUse: true, value: 5, bonus: { m_my_element_holy: 15, p_element_dark: 25, p_element_undead: 25 } },
         { label: 'No', isUse: false, value: 0 },
       ],
     },

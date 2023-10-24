@@ -500,6 +500,213 @@
       "all"
     ]
   },
+  "1751": {
+    "id": 1751,
+    "aegisName": "Silver_Arrow",
+    "name": "Silver Arrow",
+    "unidName": "Arrow",
+    "resName": "은화살",
+    "description": "ลูกธนูที่มีหัวทำจากเงิน สามารถทำลายศัตรูด้วยพลังศักดิ์สิทธิ์\nประเภท : ^777777Arrow^000000 พลังโจมตี : ^77777730^000000\nน้ำหนัก : ^7777770.1^000000 ธาตุ : ^777777Holy^000000",
+    "slots": 0,
+    "itemTypeId": 4,
+    "itemSubTypeId": 1024,
+    "itemLevel": null,
+    "attack": 30,
+    "propertyAtk": "Holy",
+    "defense": null,
+    "weight": 0.1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {}
+  },
+  "1752": {
+    "id": 1752,
+    "aegisName": "Fire_Arrow",
+    "name": "Fire Arrow",
+    "unidName": "Arrow",
+    "resName": "불화살",
+    "description": "ลูกธนูเพลิง สร้างความเสียหายด้วยเปลวไฟแก่ศัตรู\nประเภท : ^777777Arrow^000000 พลังโจมตี : ^77777730^000000\nน้ำหนัก : ^7777770.1^000000 ธาตุ : ^777777Fire^000000",
+    "slots": 0,
+    "itemTypeId": 4,
+    "itemSubTypeId": 1024,
+    "itemLevel": null,
+    "attack": 30,
+    "propertyAtk": "Fire",
+    "defense": null,
+    "weight": 0.1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {}
+  },
+  "1753": {
+    "id": 1753,
+    "aegisName": "Steel_Arrow",
+    "name": "Steel Arrow",
+    "unidName": "Steel Arrow",
+    "resName": "강철화살",
+    "description": "ลูกธนูทำจาก Steel แข็งแกร่งกว่าเดิม\nประเภท : ^777777Arrow^000000 พลังโจมตี : ^77777740^000000\nน้ำหนัก : ^7777770.1^000000 ธาตุ : ^777777Neutral^000000",
+    "slots": 0,
+    "itemTypeId": 4,
+    "itemSubTypeId": 1024,
+    "itemLevel": null,
+    "attack": 40,
+    "propertyAtk": "Neutral",
+    "defense": null,
+    "weight": 0.1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {}
+  },
+  "1754": {
+    "id": 1754,
+    "aegisName": "Crystal_Arrow",
+    "name": "Crystal Arrow",
+    "unidName": "Crystal Arrow",
+    "resName": "수정화살",
+    "description": "ลูกธนูทำมาจากคริสตัลสีน้ำเงิน ซึ่งมีคุณสมบัติของน้ำ\nประเภท : ^777777Arrow^000000 พลังโจมตี : ^77777730^000000\nน้ำหนัก : ^7777770.1^000000 ธาตุ : ^777777Water^000000",
+    "slots": 0,
+    "itemTypeId": 4,
+    "itemSubTypeId": 1024,
+    "itemLevel": null,
+    "attack": 30,
+    "propertyAtk": "Water",
+    "defense": null,
+    "weight": 0.1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {}
+  },
+  "1755": {
+    "id": 1755,
+    "aegisName": "Arrow_Of_Wind",
+    "name": "Arrow of Wind",
+    "unidName": "Arrow of Wind",
+    "resName": "바람의화살",
+    "description": "ลูกธนูทำมาจากโลหะประหลาด ซึ่งมีคุณสมบัติของลม\nประเภท : ^777777Arrow^000000 พลังโจมตี : ^77777730^000000\nน้ำหนัก : ^7777770.1^000000 ธาตุ : ^777777Wind^000000",
+    "slots": 0,
+    "itemTypeId": 4,
+    "itemSubTypeId": 1024,
+    "itemLevel": null,
+    "attack": 30,
+    "propertyAtk": "Wind",
+    "defense": null,
+    "weight": 0.1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {}
+  },
+  "1756": {
+    "id": 1756,
+    "aegisName": "Stone_Arrow",
+    "name": "Stone Arrow",
+    "unidName": "Stone Arrow",
+    "resName": "암석화살",
+    "description": "ธนูทำมาจากหินแข็งแกร่ง ซึ่งมีคุณสมบัติของดิน\nประเภท : ^777777Arrow^000000 พลังโจมตี : ^77777730^000000\nน้ำหนัก : ^7777770.1^000000 ธาตุ : ^777777Earth^000000",
+    "slots": 0,
+    "itemTypeId": 4,
+    "itemSubTypeId": 1024,
+    "itemLevel": null,
+    "attack": 30,
+    "propertyAtk": "Earth",
+    "defense": null,
+    "weight": 0.1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {}
+  },
+  "1757": {
+    "id": 1757,
+    "aegisName": "Immatrial_Arrow",
+    "name": "Immaterial Arrow",
+    "unidName": "Immaterial Arrow",
+    "resName": "무형의화살",
+    "description": "ลูกธนูไร้รูปร่างที่เปล่งประกาย\nประเภท : ^777777Arrow^000000 พลังโจมตี : ^77777730^000000\nน้ำหนัก : ^7777770.1^000000 ธาตุ : ^777777Ghost^000000",
+    "slots": 0,
+    "itemTypeId": 4,
+    "itemSubTypeId": 1024,
+    "itemLevel": null,
+    "attack": 30,
+    "propertyAtk": "Ghost",
+    "defense": null,
+    "weight": 0.1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {}
+  },
+  "1762": {
+    "id": 1762,
+    "aegisName": "Rusty_Arrow",
+    "name": "Rusty Arrow",
+    "unidName": "Rusty Arrow",
+    "resName": "녹슨화살",
+    "description": "ลูกธนูเก่าที่ขึ้นสนิม\nประเภท : ^777777Arrow^000000 พลังโจมตี : ^77777730^000000\nน้ำหนัก : ^7777770.1^000000 ธาตุ : ^777777Poison^000000",
+    "slots": 0,
+    "itemTypeId": 4,
+    "itemSubTypeId": 1024,
+    "itemLevel": null,
+    "attack": 30,
+    "propertyAtk": "Poison",
+    "defense": null,
+    "weight": 0.1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {}
+  },
+  "1765": {
+    "id": 1765,
+    "aegisName": "Oridecon_Arrow",
+    "name": "Oridecon Arrow",
+    "unidName": "Oridecon Arrow",
+    "resName": "강철화살",
+    "description": "ลูกธนูแข็งแกร่งทำมาจาก oridecon\nประเภท : ^777777Arrow^000000 พลังโจมตี : ^77777750^000000\nน้ำหนัก : ^7777770.1^000000 ธาตุ : ^777777Neutral^000000",
+    "slots": 0,
+    "itemTypeId": 4,
+    "itemSubTypeId": 1024,
+    "itemLevel": null,
+    "attack": 50,
+    "propertyAtk": "Neutral",
+    "defense": null,
+    "weight": 0.1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {}
+  },
   "1767": {
     "id": 1767,
     "aegisName": "Arrow_Of_Shadow",
@@ -545,6 +752,29 @@
     "usableClass": [
       "all"
     ]
+  },
+  "1772": {
+    "id": 1772,
+    "aegisName": "Holy_Arrow",
+    "name": "Holy Arrow",
+    "unidName": "Holy Arrow",
+    "resName": "강철화살",
+    "description": "ลูกธนูเหล็กที่อาบด้วยน้ำมนต์ศักดิ์สิทธิ์\nทำให้ ^FFFFFF ^000000 โจมตีมอนสเตอร์ประเภท Demon แรงขึ้น 5%\nประเภท : ^777777Arrow^000000 พลังโจมตี : ^77777750^000000\nน้ำหนัก : ^7777770.1^000000 ธาตุ : ^777777Holy^000000",
+    "slots": 0,
+    "itemTypeId": 4,
+    "itemSubTypeId": 1024,
+    "itemLevel": null,
+    "attack": 50,
+    "propertyAtk": "Holy",
+    "defense": null,
+    "weight": 0.1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {}
   },
   "1773": {
     "id": 1773,
