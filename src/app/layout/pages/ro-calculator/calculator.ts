@@ -528,21 +528,7 @@ export class Calculator {
   setMonster(monster: MonsterModel) {
     const {
       name,
-      stats: {
-        int,
-        vit,
-        agi,
-        luk,
-        level,
-        elementName,
-        health,
-        defense,
-        magicDefense,
-        raceName,
-        class: monsterTypeId,
-        scaleName,
-        mvp,
-      },
+      stats: { int, vit, agi, luk, level, elementName, health, defense, magicDefense, raceName, class: monsterTypeId, scaleName, mvp },
     } = monster;
     const [pureElement] = elementName.split(' ');
 
@@ -765,8 +751,7 @@ export class Calculator {
     const poisonPsuMulti = 1 + PoisionPsoEleTable[eleLvl][element] * 0.25;
 
     const formular = (weaponAtk: number, overUpg: number) => {
-      const total =
-        weaponAtk + this.floor(this.weaponStatusAtk * this.sizePenalty) + this.floor(refineBonus * this.sizePenalty);
+      const total = weaponAtk + this.floor(this.weaponStatusAtk * this.sizePenalty) + this.floor(refineBonus * this.sizePenalty);
       const totalOverUpg = this.isIncludingOverUpgrade() ? total : total + overUpg;
       const edpApplied = this.isUsedEDP() ? 4 * (totalOverUpg * poisonPsuMulti) : totalOverUpg;
 
@@ -874,10 +859,7 @@ export class Calculator {
     const element = this.toPercent(this.calcElementMultiplier());
     const monsterType = this.toPercent(this.calcMonterTypeMultiplier());
     const formular = (atk: number) => {
-      return this.floor(
-        this.floor(this.floor(this.floor(this.floor(atk * race) * size) * element) * monsterType) *
-          this.propertyMultiplier,
-      );
+      return this.floor(this.floor(this.floor(this.floor(this.floor(atk * race) * size) * element) * monsterType) * this.propertyMultiplier);
     };
     // console.log({ name: this.monster.name, race, size, element, _class: monsterType });
 
@@ -1134,9 +1116,7 @@ export class Calculator {
 
     this.calcPropertyMultiplier(this.propertySkill);
 
-    const elementBonus =
-      (this.totalEquipStatus.m_my_element_all || 0) +
-      (this.totalEquipStatus[`m_my_element_${this.propertySkill.toLowerCase()}`] || 0);
+    const elementBonus = (this.totalEquipStatus.m_my_element_all || 0) + (this.totalEquipStatus[`m_my_element_${this.propertySkill.toLowerCase()}`] || 0);
     const elementMultiplier = this.toPercent(100 + elementBonus);
     const baseSkillMultiplier = this.toPercent(this.baseSkillDamage);
     const equipSkillMultiplier = this.toPercent(100 + (this.totalEquipStatus[skillName] || 0));
@@ -1394,9 +1374,7 @@ export class Calculator {
     // USED[Mechanic]20
     const [toRemove, usedByClass] = restCondition.match(/USED\[(.+?)\]/) ?? [];
     if (usedByClass) {
-      const isUsed = usedByClass
-        .split('||')
-        .some((className) => className === this._class.className || this._class.classNameSet.has(className));
+      const isUsed = usedByClass.split('||').some((className) => className === this._class.className || this._class.classNameSet.has(className));
       if (!isUsed) return { isValid: false, restCondition };
 
       restCondition = restCondition.replace(toRemove, '');
@@ -1890,6 +1868,7 @@ export class Calculator {
           status: this.status,
           totalBonus: this.totalEquipStatus,
           weapon: this.weaponData,
+          extra: { shieldWeight: this.getItem(this.model.shield)?.weight || 0, shieldRefine: this.mapRefine.get(ItemTypeEnum.shield) || 0 },
         }) + this.calcFlatDmg();
       this.propertySkill = element || this.propertyAtk;
       this.baseSkillDamage = this.floor(baseSkillDamage);
@@ -2023,9 +2002,7 @@ export class Calculator {
       return bonus.filter((_, i) => i + 1 <= refine).reduce((sum, val) => sum + val, 0);
     };
     const { headUpperRefine, armorRefine, shieldRefine, garmentRefine, bootRefine } = this.model;
-    const refines = [headUpperRefine, armorRefine, shieldRefine, garmentRefine, bootRefine].filter(
-      (a) => Number(a) > 0,
-    );
+    const refines = [headUpperRefine, armorRefine, shieldRefine, garmentRefine, bootRefine].filter((a) => Number(a) > 0);
     const bonusDefByRefine = refines.reduce((sum, refine) => sum + calcDefByRefine(refine), 0);
     this.def = this.floor((def + bonusDefByRefine) * this.toPercent(100 + defPercent));
 

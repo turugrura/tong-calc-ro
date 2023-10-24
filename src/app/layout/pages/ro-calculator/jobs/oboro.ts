@@ -76,6 +76,6 @@ export class Oboro extends CharacterBase {
   protected readonly initialStatusPoint = 40;
   protected readonly classNames = ['Oboro', 'Oboro Cls', 'Oboro Class'];
   protected readonly _atkSkillList: AtkSkillModel[] = [];
-  protected readonly _activeSkillList: ActiveSkillModel[] = [];
-  protected readonly _passiveSkillList: PassiveSkillModel[] = [];
+  protected readonly _activeSkillList: ActiveSkillModel[] = []; //Shadow Warrior
+  protected readonly _passiveSkillList: PassiveSkillModel[] = []; //Moonlight Fantasy
 }

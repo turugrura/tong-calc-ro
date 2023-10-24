@@ -147,9 +147,40 @@ export class RoyalGuard extends CharacterBase {
         return pierceDmg + swingDmg;
       },
     },
+    {
+      label: 'Shield Press Lv10',
+      name: 'Shield Press',
+      value: 'Shield Press==10',
+      acd: 0,
+      fct: 0,
+      vct: 0,
+      cd: 2,
+      isMelee: true,
+      hit: 5,
+      levelList: [],
+      formular: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status, extra } = input;
+        const baseLevel = model.level;
+        const { totalStr, totalVit } = status;
+        const { shieldWeight = 0, shieldRefine = 0 } = extra || {};
+
+        return (totalStr + shieldWeight + skillLevel * 200) * (baseLevel / 100) + totalVit * shieldRefine;
+      },
+    },
   ];
 
-  protected readonly _activeSkillList: ActiveSkillModel[] = [];
+  protected readonly _activeSkillList: ActiveSkillModel[] = [
+    {
+      label: 'Earth Drive',
+      name: 'Earth Drive',
+      inputType: 'selectButton',
+      isMasteryAtk: true,
+      dropdown: [
+        { label: 'Yes', value: 5, skillLv: 5, isUse: true },
+        { label: 'No', value: 0, isUse: false },
+      ],
+    },
+  ];
   protected readonly _passiveSkillList: PassiveSkillModel[] = [];
 
   constructor() {

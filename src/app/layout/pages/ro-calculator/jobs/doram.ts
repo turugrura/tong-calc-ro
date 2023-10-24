@@ -1,11 +1,5 @@
 import { ClassName } from './_class-name';
-import {
-  ActiveSkillModel,
-  AtkSkillFormulaInput,
-  AtkSkillModel,
-  CharacterBase,
-  PassiveSkillModel,
-} from './_character-base.abstract';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
 import { ElementType } from '../constants/element-type.const';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
@@ -85,6 +79,9 @@ export class Doram extends CharacterBase {
     'Doram',
     'Doram Cls',
     'Doram Class',
+    'Summoner',
+    'Summoner Cls',
+    'Summoner Class',
     'Summoner (Doram)',
     'Summoner (Doram) Cls',
     'Summoner (Doram) Class',

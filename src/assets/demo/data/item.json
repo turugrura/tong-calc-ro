@@ -1987,7 +1987,7 @@
       ],
       "vct": [
         "10",
-        "EQUIP[Dark Lord Card]20"
+        "EQUIP[Dark Lord Card]10"
       ]
     }
   },
@@ -2213,7 +2213,7 @@
       "p_element_holy": [
         "40"
       ],
-      "p_element_shadow": [
+      "p_element_dark": [
         "40"
       ],
       "p_race_angel": [
@@ -2387,7 +2387,7 @@
         "20",
         "15===10"
       ],
-      "p_element_shadow": [
+      "p_element_dark": [
         "20",
         "15===10"
       ],
@@ -2900,7 +2900,7 @@
       "m_element_undead": [
         "50"
       ],
-      "m_element_shadow": [
+      "m_element_dark": [
         "50"
       ],
       "m_race_undead": [
@@ -7722,13 +7722,13 @@
       "p_element_fire": [
         "7===10"
       ],
-      "p_element_shadow": [
+      "p_element_dark": [
         "7===10"
       ],
       "m_element_fire": [
         "7===10"
       ],
-      "m_element_shadow": [
+      "m_element_dark": [
         "7===10"
       ],
       "hpPercent": [
@@ -7766,13 +7766,13 @@
       "p_element_fire": [
         "3---2"
       ],
-      "p_element_shadow": [
+      "p_element_dark": [
         "3---2"
       ],
       "m_element_fire": [
         "3---2"
       ],
-      "m_element_shadow": [
+      "m_element_dark": [
         "3---2"
       ],
       "p_race_dragon": [
@@ -10068,6 +10068,336 @@
       ]
     }
   },
+  "19189": {
+    "id": 19189,
+    "aegisName": "Racing_C_Mecha",
+    "name": "Racing Cap(Mechanic) [1]",
+    "unidName": "Cap",
+    "resName": "보스베레모",
+    "description": "^ff0000ไอเท็มชิ้นนี้ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้^000000\n หมวกที่ระลึกอันล้ำค่าที่ผลิตโดยองค์กร Monster Race สำหรับลูกค้าที่เข้าร่วมองค์กร\nทุกการอัพเกรด 2 ขั้น เพิ่ม ATK + 10\nทุกการอัพเกรด 3 ขั้น เพิ่ม ASPD 2%\nเมื่ออัพเกรดตั้งแต่ขั้น 8 ขึ้นไป,\nทุกๆ 1 เลเวลของ [Power Thrust] เพิ่ม Critical Damage 5%\nเมื่ออัพเกรดตั้งแต่ขั้น 11 ขึ้นไป, \nเมื่อโจมตีทางกายภาพ ใช้งาน [Double Attack] Lv.5\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^77777710^000000\nตำแหน่ง : ^777777Upper ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Mechanic^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 10,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": "Upper",
+    "compositionPos": null,
+    "usableClass": [
+      "Mechanic"
+    ],
+    "script": {
+      "atk": [
+        "2---10"
+      ],
+      "aspdPercent": [
+        "3---2"
+      ],
+      "criDmg": [
+        "8===25"
+      ]
+    }
+  },
+  "19190": {
+    "id": 19190,
+    "aegisName": "Racing_C_Gene",
+    "name": "Racing Cap(Genetic) [1]",
+    "unidName": "Cap",
+    "resName": "보스베레모",
+    "description": "^ff0000ไอเท็มชิ้นนี้ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้^000000\n หมวกที่ระลึกอันล้ำค่าที่ผลิตโดยองค์กร Monster Race สำหรับลูกค้าที่เข้าร่วมองค์กร\nทุกการอัพเกรด 2 ขั้น เพิ่ม ATK + 10\nทุกการอัพเกรด 3 ขั้น เพิ่ม ASPD 2%\nเมื่ออัพเกรดตั้งแต่ขั้น 8 ขึ้นไป,\nทุกๆ 1 เลเวลของ [Axe Mastery] เพิ่มดาเมจสกิล [Cart Tornado Attack ] 5%\nเมื่ออัพเกรดตั้งแต่ขั้น 11 ขึ้นไป, \nเมื่อโจมตีทางกายภาพ มีโอกาสเล็กน้อยที่จะ Auto Spell  [Cart Tornado Attack] Lv.2 \n(ถ้าระดับสกิลสูงกว่า จะใช้งานตามระดับสูงสุดที่เรียนรู้)\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^77777710^000000\nตำแหน่ง : ^777777Upper ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Geneticist^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 10,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": "Upper",
+    "compositionPos": null,
+    "usableClass": [
+      "Genetic"
+    ],
+    "script": {
+      "atk": [
+        "2---10"
+      ],
+      "aspdPercent": [
+        "3---2"
+      ],
+      "Cart Tornado ": [
+        "REFINE[8]LEARN_SKILL[Axe Mastery==1]---5"
+      ]
+    }
+  },
+  "19191": {
+    "id": 19191,
+    "aegisName": "Racing_C_Cross",
+    "name": "Racing Cap(Guillotine Cross) [1]",
+    "unidName": "Cap",
+    "resName": "보스베레모",
+    "description": "^ff0000ไอเท็มชิ้นนี้ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้^000000\n หมวกที่ระลึกอันล้ำค่าที่ผลิตโดยองค์กร Monster Race สำหรับลูกค้าที่เข้าร่วมองค์กร\n\nทุกการอัพเกรด 2 ขั้น เพิ่ม ATK + 10\nทุกการอัพเกรด 3 ขั้น เพิ่ม ASPD 2%\nเมื่ออัพเกรดตั้งแต่ขั้น 8 ขึ้นไป, \nทุกๆ 1 เลเวลของ [Lefthand Mastery] เพิ่ม Critical Damage 5%\nเมื่ออัพเกรดตั้งแต่ขั้น 11 ขึ้นไป, \nเมื่อโจมตีทางกายภาพ มีโอกาสเล็กน้อยที่จะเพิ่ง Critical Damage 20% เป็นเวลา 5 วินาที\n\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^77777710^000000\nตำแหน่ง : ^777777Upper ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Guillotine Cross^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 10,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": "Upper",
+    "compositionPos": null,
+    "usableClass": [
+      "Guillotine Cross"
+    ],
+    "script": {
+      "atk": [
+        "2---10"
+      ],
+      "aspdPercent": [
+        "3---2"
+      ],
+      "criDmg": [
+        "REFINE[8]LEARN_SKILL[Lefthand Mastery==1]---5"
+      ],
+      "chance__criDmg": [
+        "11===20"
+      ]
+    }
+  },
+  "19192": {
+    "id": 19192,
+    "aegisName": "Racing_C_Chaser",
+    "name": "Racing Cap(Shadow Chaser) [1]",
+    "unidName": "Cap",
+    "resName": "보스베레모",
+    "description": "^ff0000ไอเท็มชิ้นนี้ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้^000000\n หมวกที่ระลึกอันล้ำค่าที่ผลิตโดยองค์กร Monster Race สำหรับลูกค้าที่เข้าร่วมองค์กร\n\nทุกการอัพเกรด 2 ขั้น เพิ่ม MATK + 10\nทุกการอัพเกรด 3 ขั้น เพิ่ม ASPD 2%\nเมื่ออัพเกรดตั้งแต่ขั้น 8 ขึ้นไป, \nทุกๆ 1 เลเวลของ [Plagiarism] MATK + 5.\nเมื่ออัพเกรดตั้งแต่ขั้น 11 ขึ้นไป, \nเมื่อโจมตีทางกายภาพ มีโอกาสเล็กน้อยที่จะ Auto Spell [Mystical Amplification] Lv.5\n\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^77777710^000000\nตำแหน่ง : ^777777Upper ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Shadow Chaser ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 10,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": "Upper",
+    "compositionPos": null,
+    "usableClass": [
+      "Shadow Chaser"
+    ],
+    "script": {
+      "aspdPercent": [
+        "3---2"
+      ],
+      "matk": [
+        "2---10",
+        "REFINE[8]LEARN_SKILL[Plagiarism==1]---5"
+      ]
+    }
+  },
+  "19193": {
+    "id": 19193,
+    "aegisName": "Racing_C_Warlock",
+    "name": "Racing Cap(Warlock) [1]",
+    "unidName": "Cap",
+    "resName": "보스베레모",
+    "description": "^ff0000ไอเท็มชิ้นนี้ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้^000000\n หมวกที่ระลึกอันล้ำค่าที่ผลิตโดยองค์กร Monster Race สำหรับลูกค้าที่เข้าร่วมองค์กร\n\nทุกการอัพเกรด 2 ขั้น เพิ่ม MATK + 10\nทุกการอัพเกรด 3 ขั้น เพิ่ม ASPD 2% \nเมื่ออัพเกรดตั้งแต่ขั้น 8 ขึ้นไป, \nทุก ๆ 1 เลเวลของ [Meteor Storm], [Lord of Vermilion] ลด Cooldown สกิล Tetra Vortex เลเวลละ 0.5 วินาที\nเมื่ออัพเกรดตั้งแต่ขั้น 11 ขึ้นไป, \n[Mystical Amplification] ลดเวลาร่าย 50%\n(แต่, ความสามารถในการลดเวลาร่ายสกิล [Mystical Amplification] ของ Staff of Destruction จะไม่แสดงผลทับซ้อนกัน )\n\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^77777710^000000\nตำแหน่ง : ^777777Upper ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Warlock^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 10,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": "Upper",
+    "compositionPos": null,
+    "usableClass": [
+      "Warlock"
+    ],
+    "script": {
+      "matk": [
+        "2---10"
+      ],
+      "aspdPercent": [
+        "3---2"
+      ]
+    }
+  },
+  "19194": {
+    "id": 19194,
+    "aegisName": "Racing_C_Sorcer",
+    "name": "Racing Cap(Sorcerer) [1]",
+    "unidName": "Cap",
+    "resName": "보스베레모",
+    "description": "^ff0000ไอเท็มชิ้นนี้ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้^000000\nหมวกที่ระลึกอันล้ำค่าที่ผลิตโดยองค์กร Monster Race สำหรับลูกค้าที่เข้าร่วมองค์กร\n\nทุกการอัพเกรด 2 ขั้น เพิ่ม MATK + 10\nทุกการอัพเกรด 3 ขั้น เพิ่ม ASPD 2%\nเมื่ออัพเกรดตั้งแต่ขั้น 8 ขึ้นไป,\nทุกๆ 1 เลเวลของ [Auto Spell] เพิ่มดาเมจ [Thunderstorm], [Fire Ball] 5%\nเมื่ออัพเกรดตั้งแต่ขั้น 11 ขึ้นไป,\nเพิ่มดาเมจ [Lightening Bolt], [Fire Bolt] 50%\n\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^77777710^000000\nตำแหน่ง : ^777777Upper ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Sorcerer^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 10,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": "Upper",
+    "compositionPos": null,
+    "usableClass": [
+      "Sorcerer"
+    ],
+    "script": {
+      "matk": [
+        "2---10"
+      ],
+      "aspdPercent": [
+        "3---2"
+      ],
+      "Thunderstorm": [
+        "REFINE[8]LEARN_SKILL[Auto Spell==1]---5"
+      ],
+      "Fire Ball": [
+        "REFINE[8]LEARN_SKILL[Auto Spell==1]---5"
+      ],
+      "Lightening Bolt": [
+        "11===50"
+      ],
+      "Fire Bolt": [
+        "11===50"
+      ]
+    }
+  },
+  "19195": {
+    "id": 19195,
+    "aegisName": "Racing_C_Rune",
+    "name": "Racing Cap(Rune Knight) [1]",
+    "unidName": "Cap",
+    "resName": "보스베레모",
+    "description": "^ff0000ไอเท็มชิ้นนี้ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้^000000\nหมวกที่ระลึกอันล้ำค่าที่ผลิตโดยองค์กร Monster Race สำหรับลูกค้าที่เข้าร่วมองค์กร\n\nทุกการอัพเกรด 2 ขั้น เพิ่ม ATK + 10\nทุกการอัพเกรด 3 ขั้น เพิ่ม ASPD 2%\nเมื่ออัพเกรดตั้งแต่ขั้น 8 ขึ้นไป, \nทุกๆ 2 เลเวลของ [Two hand Quicken] เพิ่ม Critical Damage 5%\nเมื่ออัพเกรดตั้งแต่ขั้น 11 ขึ้นไป, \nอาวุธจะไม่ถูกทำลาย,\nเมื่อโจมตีทางกายภาพ ใช้งาน [Double Attack] Lv.5\n\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^77777710^000000\nตำแหน่ง : ^777777Upper ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Rune Knight^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 10,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": "Upper",
+    "compositionPos": null,
+    "usableClass": [
+      "Rune Knight"
+    ],
+    "script": {
+      "atk": [
+        "2---10"
+      ],
+      "aspdPercent": [
+        "3---2"
+      ],
+      "criDmg": [
+        "REFINE[8]LEARN_SKILL[Two hand Quicken==2]---5"
+      ]
+    }
+  },
+  "19196": {
+    "id": 19196,
+    "aegisName": "Racing_C_Royal",
+    "name": "Racing Cap(Royal Guard) [1]",
+    "unidName": "Cap",
+    "resName": "보스베레모",
+    "description": "^ff0000ไอเท็มชิ้นนี้ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้^000000\nหมวกที่ระลึกอันล้ำค่าที่ผลิตโดยองค์กร Monster Race สำหรับลูกค้าที่เข้าร่วมองค์กร\n\nทุกการอัพเกรด 2 ขั้น เพิ่ม ATK + 10\nทุกการอัพเกรด 3 ขั้น เพิ่ม ASPD 2%\nเมื่ออัพเกรดตั้งแต่ขั้น 8 ขึ้นไป,\nทุกๆ 1 เลเวลของ [Spear Mastery] เพิ่มดาเมจ [Burst Attack] 10%\nเมื่ออัพเกรดตั้งแต่ขั้น 11 ขึ้นไป,\nลดCooldown สกิล [Earth Drive] 1 วินาที\n\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^77777710^000000\nตำแหน่ง : ^777777Upper ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Royal Guard^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 10,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": "Upper",
+    "compositionPos": null,
+    "usableClass": [
+      "Royal Guard"
+    ],
+    "script": {
+      "atk": [
+        "2---10"
+      ],
+      "aspdPercent": [
+        "3---2"
+      ],
+      "Burst Attack": [
+        "REFINE[8]LEARN_SKILL[Spear Mastery==1]---10"
+      ],
+      "cd__Earth Drive": [
+        "11===1"
+      ]
+    }
+  },
+  "19197": {
+    "id": 19197,
+    "aegisName": "Racing_C_Bishop",
+    "name": "Racing Cap(Arch Bishop) [1]",
+    "unidName": "Cap",
+    "resName": "보스베레모",
+    "description": "^ff0000ไอเท็มชิ้นนี้ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้^000000\nหมวกที่ระลึกอันล้ำค่าที่ผลิตโดยองค์กร Monster Race สำหรับลูกค้าที่เข้าร่วมองค์กร\n\nทุกการอัพเกรด 2 ขั้น เพิ่ม MATK + 10 \nทุกการอัพเกรด 3 ขั้น เพิ่ม ASPD 2% \nเมื่ออัพเกรดตั้งแต่ขั้น 8 ขึ้นไป, เพิ่มดาเมจของ [Duple Light] 10% ตามเลเวลของ [Mace Mastery]\nเมื่ออัพเกรดตั้งแต่ขั้น 11 ขึ้นไป, เมื่อโจมตีทางกายภาพทั่วไป, มีโอกาสเล็กน้อยที่จะใช้งาน [Adoramus] Lv.5 \n(และเสีย Blue Gemstone, ถ้าระดับสกิลสูงกว่า จะใช้งานตามระดับสูงสุดที่เรียนรู้)\n\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^77777710^000000\nตำแหน่ง : ^777777Upper ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Arch Bishop^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 10,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": "Upper",
+    "compositionPos": null,
+    "usableClass": [
+      "Arch Bishop"
+    ],
+    "script": {
+      "matk": [
+        "2---10"
+      ],
+      "aspdPercent": [
+        "3---2"
+      ],
+      "Duple Light": [
+        "REFINE[8]LEARN_SKILL[Mace Mastery==1]---10"
+      ]
+    }
+  },
+  "19198": {
+    "id": 19198,
+    "aegisName": "Racing_C_Sura",
+    "name": "Racing Cap(Sura) [1]",
+    "unidName": "Cap",
+    "resName": "보스베레모",
+    "description": "^ff0000ไอเท็มชิ้นนี้ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้^000000\nหมวกที่ระลึกอันล้ำค่าที่ผลิตโดยองค์กร Monster Race สำหรับลูกค้าที่เข้าร่วมองค์กร\n\nทุกการอัพเกรด 2 ขั้น เพิ่ม ATK + 10\nทุกการอัพเกรด 3 ขั้น เพิ่ม ASPD 2%\nเมื่ออัพเกรดตั้งแต่ขั้น 8 ขึ้นไป,\nทุกๆ 1 เลเวลของ [Combo Finish] ลดการใช้ SP ของสกิล [Knuckle Arrow] ทีละ 1 \nเมื่ออัพเกรดตั้งแต่ขั้น 11 ขึ้นไป, เพิ่มดาเมจของ [Knuckle Arrow] 30%\n\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^77777710^000000\nตำแหน่ง : ^777777Upper ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Sura Class^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 10,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": "Upper",
+    "compositionPos": null,
+    "usableClass": [
+      "Sura"
+    ],
+    "script": {
+      "atk": [
+        "2---10"
+      ],
+      "aspdPercent": [
+        "3---2"
+      ],
+      "Knuckle Arrow": [
+        "11===30"
+      ]
+    }
+  },
   "19199": {
     "id": 19199,
     "aegisName": "Racing_C_Ranger",
@@ -10103,6 +10433,176 @@
       ]
     }
   },
+  "19200": {
+    "id": 19200,
+    "aegisName": "Racing_C_Mins",
+    "name": "Racing Cap(Minstrel) [1]",
+    "unidName": "Cap",
+    "resName": "보스베레모",
+    "description": "^ff0000ไอเท็มชิ้นนี้ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้^000000\nหมวกที่ระลึกอันล้ำค่าที่ผลิตโดยองค์กร Monster Race สำหรับลูกค้าที่เข้าร่วมองค์กร\n\nทุกการอัพเกรด 2 ขั้น เพิ่ม ATK + 10 \nทุกการอัพเกรด 3 ขั้น เพิ่ม ASPD 2% \nเมื่ออัพเกรดตั้งแต่ขั้น 8 ขึ้นไป, เพิ่ม ATK + 5 ตามเลเวลของ [Musical Lesson] \nเมื่ออัพเกรดตั้งแต่ขั้น 11 ขึ้นไป, เมื่อโจมตีทางกายภาพทั่วไป มีโอกาสเล็กน้อยที่จะใช้งาน [Reverberation] Lv. 2 \n(ถ้าระดับสกิลสูงกว่า จะใช้งานตามระดับสูงสุดที่เรียนรู้)\n\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^77777710^000000\nตำแหน่ง : ^777777Upper ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Minstrel^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 10,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": "Upper",
+    "compositionPos": null,
+    "usableClass": [
+      "Minstrel"
+    ],
+    "script": {
+      "atk": [
+        "2---10",
+        "REFINE[8]LEARN_SKILL[Musical Lesson==1]---5"
+      ],
+      "aspdPercent": [
+        "3---2"
+      ]
+    }
+  },
+  "19201": {
+    "id": 19201,
+    "aegisName": "Racing_C_Wander",
+    "name": "Racing Cap(Wanderer) [1]",
+    "unidName": "Cap",
+    "resName": "보스베레모",
+    "description": "^ff0000ไอเท็มชิ้นนี้ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้^000000\nหมวกที่ระลึกอันล้ำค่าที่ผลิตโดยองค์กร Monster Race สำหรับลูกค้าที่เข้าร่วมองค์กร\n\nทุกการอัพเกรด 2 ขั้น เพิ่ม ATK + 10\nทุกการอัพเกรด 3 ขั้น เพิ่ม ASPD 2%\nเมื่ออัพเกรดตั้งแต่ขั้น 8 ขึ้นไป, \nทุกๆ 1 เลเวลของ [Dancing Lesson] ATK + 5.\nเมื่ออัพเกรดตั้งแต่ขั้น 11 ขึ้นไป,\nเมื่อโจมตีทางกายภาพมีโอกาสเล็กน้อยที่จะใช้งาน [Reverberation] Lv.2 \n(ถ้าระดับสกิลสูงกว่า จะใช้งานตามระดับสูงสุดที่เรียนรู้)\n\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^77777710^000000\nตำแหน่ง : ^777777Upper ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Wanderer^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 10,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Wanderer"
+    ],
+    "script": {
+      "atk": [
+        "2---10",
+        "REFINE[8]LEARN_SKILL[Dancing Lesson==1]---5"
+      ],
+      "aspdPercent": [
+        "3---2"
+      ]
+    }
+  },
+  "19202": {
+    "id": 19202,
+    "aegisName": "Racing_C_Gunner",
+    "name": "Racing Cap(Gunslinger) [1]",
+    "unidName": "Cap",
+    "resName": "보스베레모",
+    "description": "^ff0000ไอเท็มชิ้นนี้ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้^000000\n หมวกที่ระลึกอันล้ำค่าที่ผลิตโดยองค์กร Monster Race สำหรับลูกค้าที่เข้าร่วมองค์กร\n\nทุกการอัพเกรด 2 ขั้น เพิ่ม ATK + 10\nทุกการอัพเกรด 3 ขั้น เพิ่ม ASPD 2%\nเมื่ออัพเกรดตั้งแต่ขั้น 8 ขึ้นไป,\nทุกๆ 1 เลเวลของ [Wounding Shot] ลดCooldown สกิลของ [God's Hammer] ลงทีละ 2 วินาที, \nทุกๆ 1 เลเวลของ [Gunslinger Mine] ลดCooldown สกิลของ [Dragon Tail] ทีละ 0.2 วินาที\nเมื่ออัพเกรดตั้งแต่ขั้น 11 ขึ้นไป, \nลดCooldown สกิล [Crimson Marker] 1 วินาที\n\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^77777710^000000\nตำแหน่ง : ^777777Upper ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Rebellion^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 10,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Rebellion"
+    ],
+    "script": {
+      "atk": [
+        "2---10"
+      ],
+      "aspdPercent": [
+        "3---2"
+      ],
+      "cd__God's Hammer": [
+        "REFINE[8]LEARN_SKILL[Wounding Shot==1]---2"
+      ],
+      "cd__Dragon Tail": [
+        "REFINE[8]LEARN_SKILL[Gunslinger Mine==1]---0.2"
+      ],
+      "cd__Crimson Marker": [
+        "11===1"
+      ]
+    }
+  },
+  "19203": {
+    "id": 19203,
+    "aegisName": "Racing_C_Ninja",
+    "name": "Racing Cap(Ninja) [1]",
+    "unidName": "Cap",
+    "resName": "보스베레모",
+    "description": "^ff0000ไอเท็มชิ้นนี้ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้^000000\n หมวกที่ระลึกอันล้ำค่าที่ผลิตโดยองค์กร Monster Race สำหรับลูกค้าที่เข้าร่วมองค์กร\n\nทุกการอัพเกรด 2 ขั้น เพิ่ม ATK + 10\nทุกการอัพเกรด 3 ขั้น เพิ่ม ASPD 2%\nเมื่ออัพเกรดตั้งแต่ขั้น 8 ขึ้นไป, \nทุกๆ 1 เลเวลของ [Throw Huuma Shuriken] เพิ่มพลังโจมตีทางกายภาพระยะไกล 1%\nเมื่ออัพเกรดตั้งแต่ขั้น 11 ขึ้นไป, \nเพิ่มดาเมจ [Swirling Petal] 30%\n\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^77777710^000000\nตำแหน่ง : ^777777Upper ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Kagerou, Oboro^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 10,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Kagerou",
+      "Oboro"
+    ],
+    "script": {
+      "atk": [
+        "2---10"
+      ],
+      "aspdPercent": [
+        "3---2"
+      ],
+      "range": [
+        "REFINE[8]LEARN_SKILL[Throw Huuma Shuriken==1]---1"
+      ],
+      "Swirling Petal": [
+        "11===30"
+      ]
+    }
+  },
+  "19204": {
+    "id": 19204,
+    "aegisName": "Racing_C_Super",
+    "name": "Racing Cap(Super Novice) [1]",
+    "unidName": "Cap",
+    "resName": "보스베레모",
+    "description": "^ff0000ไอเท็มชิ้นนี้ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้^000000\n หมวกที่ระลึกอันล้ำค่าที่ผลิตโดยองค์กร Monster Race สำหรับลูกค้าที่เข้าร่วมองค์กร\n\nทุกการอัพเกรด 2 ขั้น เพิ่ม ATK + 10\nทุกการอัพเกรด 3 ขั้น เพิ่ม ASPD 2%\nเมื่ออัพเกรดตั้งแต่ขั้น 8 ขึ้นไป,\nทุกๆ 2 เลเวลของ [Double Attack] เพิ่ม Critical Damage 10%\nเมื่ออัพเกรดตั้งแต่ขั้น 11 ขึ้นไป, \nเพิ่ม ASPD + 1, ATK + 20 เพิ่มเติม\n\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^77777710^000000\nตำแหน่ง : ^777777Upper ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Super Novice^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 10,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Super Novice"
+    ],
+    "script": {
+      "atk": [
+        "2---10",
+        "11===20"
+      ],
+      "aspdPercent": [
+        "3---2"
+      ],
+      "aspd": [
+        "11===1"
+      ],
+      "criDmg": [
+        "REFINE[8]LEARN_SKILL[Double Attack==2]---10"
+      ]
+    }
+  },
   "19205": {
     "id": 19205,
     "aegisName": "Racing_C_Doram",
@@ -10121,7 +10621,7 @@
     "location": null,
     "compositionPos": null,
     "usableClass": [
-      "Summoner"
+      "Doram"
     ],
     "script": {
       "atk": [
@@ -10139,7 +10639,7 @@
       "cd__Nyan Grass": [
         "REFINE[8]LEARN_SKILL[Catnip Meteor==1]---8"
       ],
-      "ลดCooldown สกิล [Tasty Shrimp Party] ลง": [
+      "cd__Tasty Shrimp Party": [
         "REFINE[8]LEARN_SKILL[Fresh Shrimp==1]---4"
       ],
       "acd": [
@@ -10245,7 +10745,7 @@
       "m_my_element_neutral": [
         "9===10"
       ],
-      "m_my_element_shadow": [
+      "m_my_element_dark": [
         "9===10"
       ],
       "m_my_element_water": [
@@ -10646,6 +11146,74 @@
       ]
     }
   },
+  "19396": {
+    "id": 19396,
+    "aegisName": "Racing_C_Star",
+    "name": "Racing Cap(Star Gladiator) [1]",
+    "unidName": "Cap",
+    "resName": "보스베레모",
+    "description": "ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้ \nหมวกที่ระลึกอันล้ำค่าที่ผลิตโดยองค์กร Monster Race สำหรับลูกค้าที่เข้าร่วมองค์กร\n\nทุก ๆ การอัพเกรด 2 ขั้น ATK +10\nทุก ๆ การอัพเกรด 3 ขั้น ASPD +2%\nเมื่ออัพเกรดตั้งแต่ 8 ขึ้นไป ทุก 1 เลเวลของ [Peaceful Break], ATK +5\nเมื่ออัพเกรดตั้งแต่ 11 ขึ้นไป เพิ่ม Damage สกิล [Solar Explosion] 30%\n\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^77777710^000000\nตำแหน่ง : ^777777Upper ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Star Gladiator Cls^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 10,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Star Gladiator"
+    ],
+    "script": {
+      "atk": [
+        "2---10",
+        "REFINE[8]LEARN_SKILL[Peaceful Break==1]---5"
+      ],
+      "aspdPercent": [
+        "3---2"
+      ],
+      "Solar Explosion": [
+        "11===30"
+      ]
+    }
+  },
+  "19397": {
+    "id": 19397,
+    "aegisName": "Racing_C_Soul",
+    "name": "Racing Cap(Soul Linker) [1]",
+    "unidName": "Cap",
+    "resName": "보스베레모",
+    "description": "ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้ \nหมวกที่ระลึกอันล้ำค่าที่ผลิตโดยองค์กร Monster Race สำหรับลูกค้าที่เข้าร่วมองค์กร\n\nทุก ๆ การอัพเกรด 2 ขั้น MATK +10\nทุก ๆ การอัพเกรด 3 ขั้น ลดระยะเวลาร่ายแบบแปรผัน 2%\nเมื่ออัพเกรดตั้งแต่ 8 ขึ้นไป ทุก 1 เลเวลของ [Happy Break], MSP +100\nเมื่ออัพเกรดตั้งแต่ 11 ขึ้นไป เมื่อใช้สกิล [Esma] จะเพิ่ม Damage สกิล [Espa], [Eswhoo] 30% เป็นเวลา 10 วินาที\n\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^77777710^000000\nตำแหน่ง : ^777777Upper ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Soul Linker Cls^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 10,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Soul Linker"
+    ],
+    "script": {
+      "matk": [
+        "2---10"
+      ],
+      "vct": [
+        "3---2"
+      ],
+      "sp": [
+        "REFINE[8]LEARN_SKILL[Happy Break==1]---100"
+      ],
+      "Espa": [
+        "REFINE[11]ACTIVE_SKILL[Esma]30"
+      ]
+    }
+  },
   "19478": {
     "id": 19478,
     "aegisName": "S_Circlet_Of_Time_GC",
@@ -10840,7 +11408,7 @@
       "Eswhoo": [
         "3---20"
       ],
-      "m_my_element_shadow": [
+      "m_my_element_dark": [
         "4---7"
       ],
       "matkPercent": [
@@ -11332,7 +11900,7 @@
       "m_my_element_wind": [
         "EQUIP[Illusion Wizardry Staff]REFINE[weapon,garment==18]10"
       ],
-      "m_my_element_shadow": [
+      "m_my_element_dark": [
         "EQUIP[Illusion Wizardry Staff]REFINE[weapon,garment==18]10"
       ],
       "m_my_element_fire": [
@@ -19642,7 +20210,7 @@
       "m_my_element_fire": [
         "5"
       ],
-      "m_my_element_shadow": [
+      "m_my_element_dark": [
         "5"
       ],
       "Hell Inferno": [
@@ -20746,7 +21314,7 @@
       "m_my_element_neutral": [
         "20"
       ],
-      "m_my_element_shadow": [
+      "m_my_element_dark": [
         "20"
       ]
     }
@@ -21136,7 +21704,7 @@
       "atk": [
         "EQUIP[Familiar Card]15"
       ],
-      "p_element_shadow": [
+      "p_element_dark": [
         "EQUIP[Familiar Card]20"
       ],
       "ลด Damage ที่ได้รับจากศัตรูประเภท Demi-Human": [
@@ -23199,7 +23767,7 @@
       "Arm Cannon": [
         "11===15"
       ],
-      "p_element_shadow": [
+      "p_element_dark": [
         "EQUIP[Holy Cannon Ball]10"
       ],
       "p_element_holy": [
@@ -24242,6 +24810,1240 @@
     "script": {
       "vct": [
         "3"
+      ]
+    }
+  },
+  "29310": {
+    "id": 29310,
+    "aegisName": "Racing_E_Rune1",
+    "name": "Racing (Rune Knight) Lv1",
+    "unidName": "Racing (Rune Knight) Lv1",
+    "resName": "마법석화",
+    "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Rune Knight)^000000\nเมื่อใช้งาน [Two hand Quicken], เพิ่มพลังโจมตีทางกายภาพที่สร้างต่อศัตรูทุกขนาด 5% เป็นเวลา 60 วินาที",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "p_size_all": [
+        "ACTIVE_SKILL[Two hand Quicken]5"
+      ]
+    }
+  },
+  "29311": {
+    "id": 29311,
+    "aegisName": "Racing_E_Rune2",
+    "name": "Racing (Rune Knight) Lv2",
+    "unidName": "Racing (Rune Knight) Lv2",
+    "resName": "마법석화",
+    "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Rune Knight)^000000\nเมื่อโจมตีทางกายภาพ มีโอกาสเล็กน้อย ที่จะยกเลิกโทษขนาด เป็นเวลา 3 วินาที\nเมื่อใช้งาน [Two hand Quicken], เพิ่มพลังโจมตีทางกายภาพที่สร้างต่อศัตรูทุกขนาด 7% เป็นเวลา 60 วินาที",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "p_size_all": [
+        "ACTIVE_SKILL[Two hand Quicken]7"
+      ]
+    }
+  },
+  "29312": {
+    "id": 29312,
+    "aegisName": "Racing_E_Rune3",
+    "name": "Racing (Rune Knight) Lv3",
+    "unidName": "Racing (Rune Knight) Lv3",
+    "resName": "마법석화",
+    "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Rune Knight)^000000\nเมื่อโจมตีทางกายภาพ มีโอกาสเล็กน้อย  ที่จะยกเลิกโทษขนาด เป็นเวลา 5 วินาที\nเมื่อใช้งาน [Two hand Quicken] ATK +40, เพิ่มพลังโจมตีทางกายภาพที่สร้างต่อศัตรูทุกขนาด 15% เป็นเวลา 60 วินาที",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "atk": [
+        "ACTIVE_SKILL[Two hand Quicken]40"
+      ],
+      "p_size_all": [
+        "ACTIVE_SKILL[Two hand Quicken]15"
+      ]
+    }
+  },
+  "29313": {
+    "id": 29313,
+    "aegisName": "Racing_E_Royal1",
+    "name": "Racing (Royal Guard) Lv1",
+    "unidName": "Racing (Royal Guard) Lv1",
+    "resName": "마나의파편홍련",
+    "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Royal Guard)^000000\nลด Cooldown สกิล [Shield Press] 0.5 วินาที",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "cd__Shield Press": [
+        "0.5"
+      ]
+    }
+  },
+  "29314": {
+    "id": 29314,
+    "aegisName": "Racing_E_Royal2",
+    "name": "Racing (Royal Guard) Lv2",
+    "unidName": "Racing (Royal Guard) Lv2",
+    "resName": "마나의파편홍련",
+    "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Royal Guard)^000000\nลด Cooldown สกิล [Shield Press] 1 วินาที,\nเมื่อใช้งาน [Earth Drive], เพิ่มดาเมจ [Shield Press] 20% เป็นเวลา 60 วินาที",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "cd__Shield Press": [
+        "1"
+      ],
+      "Shield Press": [
+        "ACTIVE_SKILL[Earth Drive]20"
+      ]
+    }
+  },
+  "29315": {
+    "id": 29315,
+    "aegisName": "Racing_E_Royal3",
+    "name": "Racing (Royal Guard) Lv3",
+    "unidName": "Racing (Royal Guard) Lv3",
+    "resName": "마나의파편홍련",
+    "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Royal Guard)^000000\nลด Cooldown สกิล [Shield Press] 1.5 วินาที,\nเมื่อใช้งาน [Earth Drive], เพิ่มดาเมจ [Shield Press] 60% เป็นเวลา 60 วินาที",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "cd__Shield Press": [
+        "1.5"
+      ],
+      "Shield Press": [
+        "ACTIVE_SKILL[Earth Drive]60"
+      ]
+    }
+  },
+  "29316": {
+    "id": 29316,
+    "aegisName": "Racing_E_Mecha1",
+    "name": "Racing (Mechanic) Lv1",
+    "unidName": "Racing (Mechanic) Lv1",
+    "resName": "마법석지",
+    "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Mechanic)^000000\nเมื่อใช้งาน [Adrenaline Rush], CRI + 5 เป็นระยะเวลา 60 วินาที.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "cri": [
+        "ACTIVE_SKILL[Adrenaline Rush]5"
+      ]
+    }
+  },
+  "29317": {
+    "id": 29317,
+    "aegisName": "Racing_E_Mecha2",
+    "name": "Racing (Mechanic) Lv2",
+    "unidName": "Racing (Mechanic) Lv2",
+    "resName": "마법석지",
+    "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Mechanic)^000000\nเมื่อโจมตีทางกายภาพ มีโอกาสเล็กน้อย เพิ่มพลังโจมตีทางกายภาพที่สร้างต่อศัตรูทุกขนาด 10% เป็นระยะเวลา 5 วินาที\nเมื่อใช้งาน [Adrenaline Rush], CRI + 10 เป็นระยะเวลา 60 วินาที",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "cri": [
+        "ACTIVE_SKILL[Adrenaline Rush]10"
+      ]
+    }
+  },
+  "29318": {
+    "id": 29318,
+    "aegisName": "Racing_E_Mecha3",
+    "name": "Racing (Mechanic) Lv3",
+    "unidName": "Racing (Mechanic) Lv3",
+    "resName": "마법석지",
+    "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Mechanic)^000000\nเมื่อโจมตีทางกายภาพ มีโอกาสเล็กน้อย เพิ่มพลังโจมตีทางกายภาพที่สร้างต่อศัตรูทุกขนาด 20% เป็นระยะเวลา 10 วินาที\nเมื่อใช้งาน [Adrenaline Rush],CRI + 20, เพิ่ม Critical Damage 10%เป็นระยะเวลา 60 วินาที",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "cri": [
+        "ACTIVE_SKILL[Adrenaline Rush]20"
+      ],
+      "criDmg": [
+        "ACTIVE_SKILL[Adrenaline Rush]10"
+      ]
+    }
+  },
+  "29319": {
+    "id": 29319,
+    "aegisName": "Racing_E_Gene1",
+    "name": "Racing (Geneticist) Lv1",
+    "unidName": "Racing (Geneticist) Lv1",
+    "resName": "마나의파편서광",
+    "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Geneticist)^000000\nเมื่อใช้งาน [Cart Boost], เพิ่มพลังโจมตีทางกายภาพที่สร้างต่อศัตรูทุกขนาด 5% เป็นเวลา 60 วินาที",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "p_size_all": [
+        "ACTIVE_SKILL[Cart Boost]5"
+      ]
+    }
+  },
+  "29320": {
+    "id": 29320,
+    "aegisName": "Racing_E_Gene2",
+    "name": "Racing (Geneticist) Lv2",
+    "unidName": "Racing (Geneticist) Lv2",
+    "resName": "마나의파편서광",
+    "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Geneticist)^000000\nลด Cooldown สกิล [Mandragora Howl] 1 วินาที,\nเมื่อใช้งาน [Cart Boost], เพิ่มพลังโจมตีทางกายภาพที่สร้างต่อศัตรูทุกขนาด 7% เป็นเวลา 60 วินาที",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "cd__Mandragora Howl": [
+        "1"
+      ],
+      "p_size_all": [
+        "ACTIVE_SKILL[Cart Boost]7"
+      ]
+    }
+  },
+  "29321": {
+    "id": 29321,
+    "aegisName": "Racing_E_Gene3",
+    "name": "Racing (Geneticist) Lv3",
+    "unidName": "Racing (Geneticist) Lv3",
+    "resName": "마나의파편서광",
+    "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Geneticist)^000000\nลด Cooldown สกิล [Mandragora Howl] 5 วินาที,\nเมื่อใช้งาน [Cart Boost] ATK +40, เพิ่มพลังโจมตีทางกายภาพที่สร้างต่อศัตรูทุกขนาด 15% เป็นเวลา 60 วินาที",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "cd__Mandragora Howl": [
+        "5"
+      ],
+      "atk": [
+        "ACTIVE_SKILL[Cart Boost]40"
+      ],
+      "p_size_all": [
+        "ACTIVE_SKILL[Cart Boost]15"
+      ]
+    }
+  },
+  "29322": {
+    "id": 29322,
+    "aegisName": "Racing_E_Cross1",
+    "name": "Racing (Guillotine Cross) Lv1",
+    "unidName": "Racing (Guillotine Cross) Lv1",
+    "resName": "마법석암",
+    "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Guillotine Cross)^000000\nเมื่อใช้งาน [Enchant Deadly Poison], ATK + 20 เป็นระยะเวลา 60 วินาที",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "atk": [
+        "ACTIVE_SKILL[Enchant Deadly Poison]20"
+      ]
+    }
+  },
+  "29323": {
+    "id": 29323,
+    "aegisName": "Racing_E_Cross2",
+    "name": "Racing (Guillotine Cross) Lv2",
+    "unidName": "Racing (Guillotine Cross) Lv2",
+    "resName": "마법석암",
+    "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Guillotine Cross)^000000\nเพิ่มพลังโจมตีทางกายภาพที่สร้างต่อศัตรูทุกขนาด 5%\nเมื่อใช้งาน [Enchant Deadly Poison], ATK + 30 เป็นระยะเวลา 60 วินาที",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "p_size_all": [
+        "5"
+      ],
+      "atk": [
+        "ACTIVE_SKILL[Enchant Deadly Poison]30"
+      ]
+    }
+  },
+  "29324": {
+    "id": 29324,
+    "aegisName": "Racing_E_Cross3",
+    "name": "Racing (Guillotine Cross) Lv3",
+    "unidName": "Racing (Guillotine Cross) Lv3",
+    "resName": "마법석암",
+    "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Guillotine Cross)^000000\nเพิ่มพลังโจมตีทางกายภาพที่สร้างต่อศัตรูทุกขนาด 10%\nเมื่อใช้งาน [Enchant Deadly Poison], ATK + 50, CRI + 10  เป็นระยะเวลา 60 วินาที",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "p_size_all": [
+        "10"
+      ],
+      "atk": [
+        "ACTIVE_SKILL[Enchant Deadly Poison]50"
+      ],
+      "cri": [
+        "ACTIVE_SKILL[Enchant Deadly Poison]10"
+      ]
+    }
+  },
+  "29325": {
+    "id": 29325,
+    "aegisName": "Racing_E_Chaser1",
+    "name": "Racing (Shadow Chaser) Lv1",
+    "unidName": "Racing (Shadow Chaser) Lv1",
+    "resName": "마나의파편혼돈",
+    "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Shadow Chaser)^000000\nเมื่อใช้งาน [Shadow Spell], CRI + 5 เป็นระยะเวลา 60 วินาที.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "cri": [
+        "ACTIVE_SKILL[Shadow Spell]5"
+      ]
+    }
+  },
+  "29326": {
+    "id": 29326,
+    "aegisName": "Racing_E_Chaser2",
+    "name": "Racing (Shadow Chaser) Lv2",
+    "unidName": "Racing (Shadow Chaser) Lv2",
+    "resName": "마나의파편혼돈",
+    "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Shadow Chaser)^000000\nเพิ่มพลังโจมตีทางเวทย์ธาตุ Fire, Wind, Water, Earth 5%\nเมื่อใช้งาน [Shadow Spell], CRI + 10 เป็นระยะเวลา 60 วินาที",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "m_my_element_fire": [
+        "5"
+      ],
+      "m_my_element_water": [
+        "5"
+      ],
+      "m_my_element_wind": [
+        "5"
+      ],
+      "m_my_element_earth": [
+        "5"
+      ],
+      "cri": [
+        "ACTIVE_SKILL[Shadow Spell]10"
+      ]
+    }
+  },
+  "29327": {
+    "id": 29327,
+    "aegisName": "Racing_E_Chaser3",
+    "name": "Racing (Shadow Chaser) Lv3",
+    "unidName": "Racing (Shadow Chaser) Lv3",
+    "resName": "마나의파편혼돈",
+    "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Shadow Chaser)^000000\nเพิ่มพลังโจมตีทางเวทย์ธาตุ Fire, Wind, Water, Earth 15%\nเมื่อใช้งาน [Shadow Spell], CRI + 20, MATK + 30. เป็นระยะเวลา 60 วินาที",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "m_my_element_fire": [
+        "15"
+      ],
+      "m_my_element_water": [
+        "15"
+      ],
+      "m_my_element_wind": [
+        "15"
+      ],
+      "m_my_element_earth": [
+        "15"
+      ],
+      "cri": [
+        "ACTIVE_SKILL[Shadow Spell]20"
+      ],
+      "matk": [
+        "ACTIVE_SKILL[Shadow Spell]30"
+      ]
+    }
+  },
+  "29328": {
+    "id": 29328,
+    "aegisName": "Racing_E_Warlock1",
+    "name": "Racing (Warlock) Lv1",
+    "unidName": "Racing (Warlock) Lv1",
+    "resName": "마법석수",
+    "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Warlock)^000000\nลด Cooldown สกิล [Frost Misty] 1 วินาที",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "cd__Frost Misty": [
+        "1"
+      ]
+    }
+  },
+  "29329": {
+    "id": 29329,
+    "aegisName": "Racing_E_Warlock2",
+    "name": "Racing (Warlock) Lv2",
+    "unidName": "Racing (Warlock) Lv2",
+    "resName": "마법석수",
+    "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Warlock)^000000\nลด Cooldown สกิล [Frost Misty] 3 วินาที\nเพิ่มดาเมจสกิล [Jack Frost] 30%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "cd__Frost Misty": [
+        "3"
+      ],
+      "Jack Frost": [
+        "30"
+      ]
+    }
+  },
+  "29330": {
+    "id": 29330,
+    "aegisName": "Racing_E_Warlock3",
+    "name": "Racing (Warlock) Lv3",
+    "unidName": "Racing (Warlock) Lv3",
+    "resName": "마법석수",
+    "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Warlock)^000000\nลด Cooldown สกิล [Frost Misty] 5 วินาที\nเพิ่มดาเมจสกิล [Jack Frost] 60%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "cd__Frost Misty": [
+        "5"
+      ],
+      "Jack Frost": [
+        "60"
+      ]
+    }
+  },
+  "29331": {
+    "id": 29331,
+    "aegisName": "Racing_E_Sorcer1",
+    "name": "Racing (Sorcerer) Lv1",
+    "unidName": "Racing (Sorcerer) Lv1",
+    "resName": "얼어붙은피부조각",
+    "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Sorcerer)^000000\nเมื่อโจมตีทางกายภาพระยะใกล้, มีโอกาสเล็กน้อยที่จะ Auto Spell [Frost Nova] Lv.1",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {}
+  },
+  "29332": {
+    "id": 29332,
+    "aegisName": "Racing_E_Sorcer2",
+    "name": "Racing (Sorcerer) Lv2",
+    "unidName": "Racing (Sorcerer) Lv2",
+    "resName": "얼어붙은피부조각",
+    "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Sorcerer)^000000\nเมื่อโจมตีทางกายภาพระยะใกล้, มีโอกาสเล็กน้อยที่จะ Auto Spell [Frost Nova] Lv.4\nเมื่อใช้งาน [Striking], เพิ่มดาเมจสกิล Bolt ทั้งหมด 30% เป็นระยะเวลา 60 วินาที",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "Lightening Bolt": [
+        "ACTIVE_SKILL[Striking]30"
+      ]
+    }
+  },
+  "29333": {
+    "id": 29333,
+    "aegisName": "Racing_E_Sorcer3",
+    "name": "Racing (Sorcerer) Lv3",
+    "unidName": "Racing (Sorcerer) Lv3",
+    "resName": "얼어붙은피부조각",
+    "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Sorcerer)^000000\nเมื่อโจมตีทางกายภาพระยะใกล้, มีโอกาสเล็กน้อยมีโอกาสเล็กน้อยที่จะ Auto Spell [Frost Nova] Lv.7\nเมื่อใช้งาน [Striking], เพิ่มดาเมจสกิล Bolt ทั้งหมด 60% เป็นระยะเวลา 60 วินาที",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "Lightening Bolt": [
+        "ACTIVE_SKILL[Striking]60"
+      ]
+    }
+  },
+  "29334": {
+    "id": 29334,
+    "aegisName": "Racing_E_Bishop1",
+    "name": "Racing (Arch Bishop) Lv1",
+    "unidName": "Racing (Arch Bishop) Lv1",
+    "resName": "마법석성",
+    "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Arch Bishop)^000000\nเพิ่มดาเมจ [Adoramus] 20%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "Adoramus": [
+        "20"
+      ]
+    }
+  },
+  "29335": {
+    "id": 29335,
+    "aegisName": "Racing_E_Bishop2",
+    "name": "Racing (Arch Bishop) Lv2",
+    "unidName": "Racing (Arch Bishop) Lv2",
+    "resName": "마법석성",
+    "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Arch Bishop)^000000\nเมื่อโจมตีทางกายภาพ, มีโอกาสเล็กน้อยที่จะไม่สูญเสีย Gemstone เป็นระยะเวลา 3 วินาที\nเพิ่มดาเมจ [Adoramus] 30%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "Adoramus": [
+        "30"
+      ]
+    }
+  },
+  "29336": {
+    "id": 29336,
+    "aegisName": "Racing_E_Bishop3",
+    "name": "Racing (Arch Bishop) Lv3",
+    "unidName": "Racing (Arch Bishop) Lv3",
+    "resName": "마법석성",
+    "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Arch Bishop)^000000\nเมื่อโจมตีทางกายภาพ, มีโอกาสเล็กน้อยที่จะไม่สูญเสีย Gemstone เป็นระยะเวลา 5 วินาที\nเพิ่มดาเมจ [Adoramus] 60%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "Adoramus": [
+        "60"
+      ]
+    }
+  },
+  "29337": {
+    "id": 29337,
+    "aegisName": "Racing_E_Sura1",
+    "name": "Racing (Sura) Lv1",
+    "unidName": "Racing (Sura) Lv1",
+    "resName": "마나의파편황혼",
+    "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Sura)^000000\nเพิ่มดาเมจ [Knuckle Arrow] 20%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "Knuckle Arrow": [
+        "20"
+      ]
+    }
+  },
+  "29338": {
+    "id": 29338,
+    "aegisName": "Racing_E_Sura2",
+    "name": "Racing (Sura) Lv2",
+    "unidName": "Racing (Sura) Lv2",
+    "resName": "마나의파편황혼",
+    "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Sura)^000000\nเมื่อใช้งาน [Knuckle Arrow], มีโอกาสเล็กน้อยที่จะร่าย [Zen]\nเพิ่มดาเมจของ [Knuckle Arrow] 30%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "Knuckle Arrow": [
+        "30"
+      ]
+    }
+  },
+  "29339": {
+    "id": 29339,
+    "aegisName": "Racing_E_Sura3",
+    "name": "Racing (Sura) Lv3",
+    "unidName": "Racing (Sura) Lv3",
+    "resName": "마나의파편황혼",
+    "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Sura)^000000\nเมื่อใช้งาน [Knuckle Arrow], มีโอกาสเล็กน้อยที่จะร่าย [Zen]\nเพิ่มดาเมจของ [Knuckle Arrow] 60%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "Knuckle Arrow": [
+        "60"
+      ]
+    }
+  },
+  "29340": {
+    "id": 29340,
+    "aegisName": "Racing_E_Ranger1",
+    "name": "Racing (Ranger) Lv1",
+    "unidName": "Racing (Ranger) Lv1",
+    "resName": "마법석풍",
+    "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Ranger)^000000\nเมื่อใช้งาน [Fear Breeze], เพิ่มพลังโจมตีทางกายภาพระยะไกล 2% เป็นระยะเวลา 60 วินาที",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "range": [
+        "ACTIVE[Fear Breeze]2"
+      ]
+    }
+  },
+  "29341": {
+    "id": 29341,
+    "aegisName": "Racing_E_Ranger2",
+    "name": "Racing (Ranger) Lv2",
+    "unidName": "Racing (Ranger) Lv2",
+    "resName": "마법석풍",
+    "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Ranger)^000000\nลด Cooldown สกิล [Arrow Storm] 0.5 วินาที\nเมื่อใช้งาน [Fear Breeze], เพิ่มพลังโจมตีทางกายภาพระยะไกล 4% เป็นระยะเวลา 60 วินาที",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "cd__Arrow Storm": [
+        "0.5"
+      ],
+      "range": [
+        "ACTIVE[Fear Breeze]4"
+      ]
+    }
+  },
+  "29342": {
+    "id": 29342,
+    "aegisName": "Racing_E_Ranger3",
+    "name": "Racing (Ranger) Lv3",
+    "unidName": "Racing (Ranger) Lv3",
+    "resName": "마법석풍",
+    "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Ranger)^000000\nลด Cooldown สกิล [Arrow Storm] 1.5 วินาที\nเมื่อใช้งาน [Fear Breeze], เพิ่มพลังโจมตีทางกายภาพระยะไกล 7% เป็นระยะเวลา 60 วินาที",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "cd__Arrow Storm": [
+        "1.5"
+      ],
+      "range": [
+        "ACTIVE[Fear Breeze]7"
+      ]
+    }
+  },
+  "29343": {
+    "id": 29343,
+    "aegisName": "Racing_E_Wand_Min1",
+    "name": "Racing (Wanderer&Minstrel) Lv1",
+    "unidName": "Racing (Wanderer&Minstrel) Lv1",
+    "resName": "마나의파편백은",
+    "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Wanderer)/Racing Cap(Minstrel)^000000\nATK + 20.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "atk": [
+        "20"
+      ]
+    }
+  },
+  "29344": {
+    "id": 29344,
+    "aegisName": "Racing_E_Wand_Min2",
+    "name": "Racing (Wanderer&Minstrel) Lv2",
+    "unidName": "Racing (Wanderer&Minstrel) Lv2",
+    "resName": "마나의파편백은",
+    "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Wanderer)/Racing Cap(Minstrel)^000000\nATK + 30.\nเมื่อใช้งาน [Windmill Rush], [Moonlight Serenade] เพิกเฉยต่อพลังป้องกันทางกายภาพของศัตรูทั่วไป 25% เป็นระยะเวลา 60 วินาที",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "atk": [
+        "30"
+      ],
+      "p_pene_class_normal": [
+        "ACTIVE_SKILL[Windmill Rush]25"
+      ]
+    }
+  },
+  "29345": {
+    "id": 29345,
+    "aegisName": "Racing_E_Wand_Min3",
+    "name": "Racing (Wanderer&Minstrel) Lv3",
+    "unidName": "Racing (Wanderer&Minstrel) Lv3",
+    "resName": "마나의파편백은",
+    "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Wanderer)/Racing Cap(Minstrel)^000000\nATK + 40.\nเมื่อใช้งาน [Windmill Rush], [Moonlight Serenade] เพิกเฉยต่อพลังป้องกันทางกายภาพของศัตรูทั่วไป 50% เป็นระยะเวลา 60 วินาที",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "atk": [
+        "40"
+      ],
+      "p_pene_class_normal": [
+        "ACTIVE_SKILL[Windmill Rush]50"
+      ]
+    }
+  },
+  "29346": {
+    "id": 29346,
+    "aegisName": "Racing_E_Gunner1",
+    "name": "Racing (Gunslinger) Lv1",
+    "unidName": "Racing (Gunslinger) Lv1",
+    "resName": "정화탄",
+    "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Gunslinger)^000000\nเมื่อใช้งาน [Shatter Storm], เพิ่มดาเมจ [Vanishing Buster] 20% เป็นระยะเวลา 5 วินาที",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "Vanishing Buster": [
+        "ACTIVE_SKILL[Shatter Storm]20"
+      ]
+    }
+  },
+  "29347": {
+    "id": 29347,
+    "aegisName": "Racing_E_Gunner2",
+    "name": "Racing (Gunslinger) Lv2",
+    "unidName": "Racing (Gunslinger) Lv2",
+    "resName": "정화탄",
+    "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Gunslinger)^000000\nลด Cooldown สกิล [Vanishing Buster] 1 วินาที\nเมื่อใช้งาน [Shatter Storm], เพิ่มดาเมจ [Vanishing Buster] 40% เป็นระยะเวลา 7 วินาที",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "cd__Vanishing Buster": [
+        "1"
+      ],
+      "Vanishing Buster": [
+        "ACTIVE_SKILL[Shatter Storm]40"
+      ]
+    }
+  },
+  "29348": {
+    "id": 29348,
+    "aegisName": "Racing_E_Gunner3",
+    "name": "Racing (Gunslinger) Lv3",
+    "unidName": "Racing (Gunslinger) Lv3",
+    "resName": "정화탄",
+    "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Gunslinger)^000000\nลด Cooldown สกิล [Vanishing Buster] 1.5 วินาที\nเมื่อใช้งาน [Shatter Storm], เพิ่มดาเมจ [Vanishing Buster] 60% เป็นระยะเวลา 10 วินาที",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "cd__Vanishing Buster": [
+        "1.5"
+      ],
+      "Vanishing Buster": [
+        "ACTIVE_SKILL[Shatter Storm]60"
+      ]
+    }
+  },
+  "29349": {
+    "id": 29349,
+    "aegisName": "Racing_E_Ninja1",
+    "name": "Racing (Ninja) Lv1",
+    "unidName": "Racing (Ninja) Lv1",
+    "resName": "불의부적",
+    "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Ninja)^000000\nATK + 10, MATK + 10.\nเมื่อใช้งาน [Shadow Warrior], เพิ่ม Critical Damage 5% เป็นระยะเวลา 60 วินาที\nเมื่อเรียนรู้สกิล [Moonlight Fantasy] ถึงเลเวล 5 จะลดระยะเวลาร่ายแบบแปรผัน 3%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "atk": [
+        "10"
+      ],
+      "matk": [
+        "10"
+      ],
+      "criDmg": [
+        "ACTIVE_SKILL[Shadow Warrior]5"
+      ],
+      "vct": [
+        "LEARN_SKILL[Moonlight Fantasy==5]3"
+      ]
+    }
+  },
+  "29350": {
+    "id": 29350,
+    "aegisName": "Racing_E_Ninja2",
+    "name": "Racing (Ninja) Lv2",
+    "unidName": "Racing (Ninja) Lv2",
+    "resName": "불의부적",
+    "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Ninja)^000000\nATK + 15, MATK + 15.\nเมื่อโจมตีทางกายภาพ มีโอกาสเล็กน้อยที่จะยกเลิกโทษขนาด เป็นเวลา 3 วินาที\nเมื่อใช้งาน [Shadow Warrior], เพิ่ม Critical Damage 10% เป็นระยะเวลา 60 วินาที\nเมื่อเรียนรู้สกิล [Moonlight Fantasy] ถึงเลเวล 5 จะลดระยะเวลาร่ายแบบแปรผัน 7%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "atk": [
+        "15"
+      ],
+      "matk": [
+        "15"
+      ],
+      "criDmg": [
+        "ACTIVE_SKILL[Shadow Warrior]10"
+      ],
+      "vct": [
+        "LEARN_SKILL[Moonlight Fantasy==5]7"
+      ]
+    }
+  },
+  "29351": {
+    "id": 29351,
+    "aegisName": "Racing_E_Ninja3",
+    "name": "Racing (Ninja) Lv3",
+    "unidName": "Racing (Ninja) Lv3",
+    "resName": "불의부적",
+    "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Ninja)^000000\nATK + 20, MATK + 20.\nเมื่อโจมตีทางกายภาพ มีโอกาสเล็กน้อย  ที่จะยกเลิกโทษขนาด เป็นเวลา 5 วินาที\nเมื่อใช้งาน [Shadow Warrior], เพิ่ม Critical Damage 30% เป็นระยะเวลา 60 วินาที\nเมื่อเรียนรู้สกิล [Moonlight Fantasy] ถึงเลเวล 5 จะลดระยะเวลาร่ายแบบแปรผัน 15%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "atk": [
+        "20"
+      ],
+      "matk": [
+        "20"
+      ],
+      "criDmg": [
+        "ACTIVE_SKILL[Shadow Warrior]30"
+      ],
+      "vct": [
+        "LEARN_SKILL[Moonlight Fantasy==5]15"
+      ]
+    }
+  },
+  "29352": {
+    "id": 29352,
+    "aegisName": "Racing_E_Super1",
+    "name": "Racing (Super Novice) Lv1",
+    "unidName": "Racing (Super Novice) Lv1",
+    "resName": "장미석영",
+    "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Super Novice)^000000\nMHP + 500, ATK + 10.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "hp": [
+        "500"
+      ],
+      "atk": [
+        "10"
+      ]
+    }
+  },
+  "29353": {
+    "id": 29353,
+    "aegisName": "Racing_E_Super2",
+    "name": "Racing (Super Novice) Lv2",
+    "unidName": "Racing (Super Novice) Lv2",
+    "resName": "장미석영",
+    "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Super Novice)^000000\nMHP +1000, ATK + 20.\nสามารถใช้งาน [Cart Boost] Lv.1 ได้\nเมื่อใช้งาน [Cart Boost], เพิ่ม ATK อีก +30 เป็นระยะเวลา 60 วินาที",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "hp": [
+        "1000"
+      ],
+      "atk": [
+        "20",
+        "ACTIVE_SKILL[Cart Boost]30"
+      ]
+    }
+  },
+  "29354": {
+    "id": 29354,
+    "aegisName": "Racing_E_Super3",
+    "name": "Racing (Super Novice) Lv3",
+    "unidName": "Racing (Super Novice) Lv3",
+    "resName": "장미석영",
+    "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Super Novice)^000000\nMHP + 1500, ATK + 40.\nสามารถใช้งาน [Cart Boost] Lv.3 ได้\nเมื่อใช้งาน [Cart Boost],เพิ่ม ATK อีก +50 เป็นระยะเวลา 120 วินาที",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "hp": [
+        "1500"
+      ],
+      "atk": [
+        "40",
+        "ACTIVE_SKILL[Cart Boost]50"
+      ]
+    }
+  },
+  "29355": {
+    "id": 29355,
+    "aegisName": "Racing_E_Doram1",
+    "name": "Racing (Summoner) Lv1",
+    "unidName": "Racing (Summoner) Lv1",
+    "resName": "블랙캣",
+    "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Summoner)^000000\nเพิ่มดาเมจ [Catnip Meteor], [Lunatic Carrot Beat] 10%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "Catnip Meteor": [
+        "10"
+      ],
+      "Lunatic Carrot Beat": [
+        "10"
+      ]
+    }
+  },
+  "29356": {
+    "id": 29356,
+    "aegisName": "Racing_E_Doram2",
+    "name": "Racing (Summoner) Lv2",
+    "unidName": "Racing (Summoner) Lv2",
+    "resName": "블랙캣",
+    "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Summoner)^000000\nลดระยะเวลาร่ายแบบคงตัว 0.2 วินาที\nเพิ่มดาเมจ [Catnip Meteor], [Lunatic Carrot Beat] 20%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "fct": [
+        "0.2"
+      ],
+      "Catnip Meteor": [
+        "20"
+      ],
+      "Lunatic Carrot Beat": [
+        "20"
+      ]
+    }
+  },
+  "29357": {
+    "id": 29357,
+    "aegisName": "Racing_E_Doram3",
+    "name": "Racing (Summoner) Lv3",
+    "unidName": "Racing (Summoner) Lv3",
+    "resName": "블랙캣",
+    "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Summoner)^000000\nลดระยะเวลาร่ายแบบคงตัว 0.5 วินาที\nเพิ่มดาเมจ [Catnip Meteor], [Lunatic Carrot Beat] 60%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "fct": [
+        "0.5"
+      ],
+      "Catnip Meteor": [
+        "60"
+      ],
+      "Lunatic Carrot Beat": [
+        "60"
       ]
     }
   },
@@ -25321,6 +27123,156 @@
     "location": null,
     "compositionPos": null,
     "script": {}
+  },
+  "29579": {
+    "id": 29579,
+    "aegisName": "Racing_E_Star1",
+    "name": "Racing (Star Gladiator) Lv1",
+    "unidName": "Racing (Star Gladiator) Lv1",
+    "resName": "푸른야광석",
+    "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Star Gladiator)^000000 \nเพิ่ม Damage สกิล [Solar Explosion], [Full Moon Kick], [Falling Stars] 10%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {}
+  },
+  "29580": {
+    "id": 29580,
+    "aegisName": "Racing_E_Star2",
+    "name": "Racing (Star Gladiator) Lv2",
+    "unidName": "Racing (Star Gladiator) Lv2",
+    "resName": "푸른야광석",
+    "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Star Gladiator)^000000 \nลด Cooldown สกิล [Solar, Lunar, and Stellar Record] 10 วินาที\nเพิ่ม Damage สกิล [Solar Explosion], [Full Moon Kick], [Falling Stars] 20%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {}
+  },
+  "29581": {
+    "id": 29581,
+    "aegisName": "Racing_E_Star3",
+    "name": "Racing (Star Gladiator) Lv3",
+    "unidName": "Racing (Star Gladiator) Lv3",
+    "resName": "푸른야광석",
+    "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Star Gladiator)^000000 \nลด Cooldown สกิล [Solar, Lunar, and Stellar Record] 30 วินาที\nเพิ่ม Damage สกิล [Solar Explosion], [Full Moon Kick], [Falling Stars] 40%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {}
+  },
+  "29582": {
+    "id": 29582,
+    "aegisName": "Racing_E_Soul1",
+    "name": "Racing (Soul Linker) Lv1",
+    "unidName": "Racing (Soul Linker) Lv1",
+    "resName": "도깨비불",
+    "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Soul Linker)^000000 \nเพิ่ม Damage สกิล [Esma], [Espa], [Eswhoo] 10%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "Esma": [
+        "10"
+      ],
+      "Espa": [
+        "10"
+      ],
+      "Eswhoo": [
+        "10"
+      ]
+    }
+  },
+  "29583": {
+    "id": 29583,
+    "aegisName": "Racing_E_Soul2",
+    "name": "Racing (Soul Linker) Lv2",
+    "unidName": "Racing (Soul Linker) Lv2",
+    "resName": "도깨비불",
+    "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Soul Linker)^000000 \nลด Cooldown สกิล [Soul Harvest] 10 วินาที\nเพิ่ม Damage สกิล [Esma], [Espa], [Eswhoo] 20%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "cd__Soul Harvest": [
+        "10"
+      ],
+      "Esma": [
+        "20"
+      ],
+      "Espa": [
+        "20"
+      ],
+      "Eswhoo": [
+        "20"
+      ]
+    }
+  },
+  "29584": {
+    "id": 29584,
+    "aegisName": "Racing_E_Soul3",
+    "name": "Racing (Soul Linker) Lv3",
+    "unidName": "Racing (Soul Linker) Lv3",
+    "resName": "도깨비불",
+    "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Soul Linker)^000000 \nลด Cooldown สกิล [Soul Harvest] 30 วินาที\nเพิ่ม Damage สกิล [Esma], [Espa], [Eswhoo] 40%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "cd__Soul Harvest": [
+        "30"
+      ],
+      "Esma": [
+        "40"
+      ],
+      "Espa": [
+        "40"
+      ],
+      "Eswhoo": [
+        "40"
+      ]
+    }
   },
   "29587": {
     "id": 29587,
@@ -27460,7 +29412,7 @@
         "25",
         "15===12"
       ],
-      "m_element_shadow": [
+      "m_element_dark": [
         "25",
         "15===12"
       ],
@@ -27592,7 +29544,7 @@
       "p_element_fire": [
         "2---3"
       ],
-      "p_element_shadow": [
+      "p_element_dark": [
         "2---3"
       ]
     }
@@ -29448,7 +31400,7 @@
       "m_my_element_holy": [
         "EQUIP[Celine's Ribbon]REFINE[headUpper,armor==1]---1"
       ],
-      "m_my_element_shadow": [
+      "m_my_element_dark": [
         "EQUIP[Celine's Ribbon]REFINE[headUpper,armor==1]---1"
       ],
       "m_my_element_poison": [
@@ -29840,7 +31792,7 @@
       "m_race_angel": [
         "3---4"
       ],
-      "m_my_element_shadow": [
+      "m_my_element_dark": [
         "7===10"
       ],
       "m_my_element_fire": [
@@ -30095,7 +32047,7 @@
       "m_my_element_holy": [
         "7===5"
       ],
-      "m_my_element_shadow": [
+      "m_my_element_dark": [
         "7===5"
       ],
       "m_my_element_undead": [
@@ -30806,7 +32758,7 @@
       "m_my_element_holy": [
         "5"
       ],
-      "m_my_element_shadow": [
+      "m_my_element_dark": [
         "5"
       ],
       "m_my_element_undead": [
@@ -32919,7 +34871,7 @@
       "matkPercent": [
         "2"
       ],
-      "m_my_element_shadow": [
+      "m_my_element_dark": [
         "3",
         "7===10"
       ],

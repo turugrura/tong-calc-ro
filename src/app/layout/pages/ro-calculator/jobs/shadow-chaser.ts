@@ -155,6 +155,16 @@ export class ShadowChaser extends CharacterBase {
       ],
     },
     {
+      label: 'Shadow Spell Lv10',
+      name: 'Shadow Spell',
+      inputType: 'selectButton',
+      isMasteryAtk: true,
+      dropdown: [
+        { label: 'Yes', value: 10, skillLv: 10, isUse: true },
+        { label: 'No', value: 0, isUse: false },
+      ],
+    },
+    {
       label: 'ShieldSpell',
       name: 'ShieldSpell',
       inputType: 'dropdown',

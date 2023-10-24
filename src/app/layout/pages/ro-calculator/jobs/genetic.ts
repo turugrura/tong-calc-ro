@@ -1,5 +1,6 @@
 import { ClassName } from './_class-name';
 import { ActiveSkillModel, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
+import { CartBoost } from '../constants/share-active-skills';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 1, 0, 0],
@@ -76,6 +77,6 @@ export class Genetic extends CharacterBase {
   protected readonly initialStatusPoint = 40;
   protected readonly classNames = ['Genetic'];
   protected readonly _atkSkillList: AtkSkillModel[] = [];
-  protected readonly _activeSkillList: ActiveSkillModel[] = [];
+  protected readonly _activeSkillList: ActiveSkillModel[] = [CartBoost];
   protected readonly _passiveSkillList: PassiveSkillModel[] = [];
 }

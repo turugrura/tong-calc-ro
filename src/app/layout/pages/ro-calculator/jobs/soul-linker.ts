@@ -11,7 +11,17 @@ export class SoulLinker extends CharacterBase {
   protected readonly initialStatusPoint = 40;
   protected readonly classNames = ['Soul Linker', 'Soul Linker Cls', 'Soul Linker Class'];
   protected readonly _atkSkillList: AtkSkillModel[] = [];
-  protected readonly _activeSkillList: ActiveSkillModel[] = [];
+  protected readonly _activeSkillList: ActiveSkillModel[] = [
+    {
+      label: 'Esma Lv10',
+      name: 'Esma',
+      inputType: 'selectButton',
+      dropdown: [
+        { label: 'Yes', value: 10, skillLv: 10, isUse: true },
+        { label: 'No', value: 0, isUse: false },
+      ],
+    },
+  ];
   protected readonly _passiveSkillList: PassiveSkillModel[] = [
     {
       inputType: 'dropdown',

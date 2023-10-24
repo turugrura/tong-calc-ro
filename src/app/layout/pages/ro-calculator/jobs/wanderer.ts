@@ -76,6 +76,6 @@ export class Wanderer extends CharacterBase {
   protected readonly initialStatusPoint = 40;
   protected readonly classNames = ['Thief'];
   protected readonly _atkSkillList: AtkSkillModel[] = [];
-  protected readonly _activeSkillList: ActiveSkillModel[] = [];
+  protected readonly _activeSkillList: ActiveSkillModel[] = []; //Windmill Rush
   protected readonly _passiveSkillList: PassiveSkillModel[] = [];
 }

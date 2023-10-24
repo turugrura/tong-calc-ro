@@ -1,11 +1,5 @@
 import { ClassName } from './_class-name';
-import {
-  ActiveSkillModel,
-  AtkSkillFormulaInput,
-  AtkSkillModel,
-  CharacterBase,
-  PassiveSkillModel,
-} from './_character-base.abstract';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
 
 const jobBonusTable: [number, number, number, number, number, number][] = [
   [0, 0, 0, 0, 0, 0], // job 0
@@ -81,10 +75,10 @@ export class Rebelion extends CharacterBase {
   protected readonly JobBonusTable = jobBonusTable;
 
   protected initialStatusPoint = 100;
-  protected classNames = ['Gunslinger', 'Gunslinger Cls', 'Rebellion'];
+  protected classNames = ['Gunslinger', 'Gunslinger Cls', 'Gunslinger Class', 'Rebellion', 'Rebellion Cls', 'Rebellion Class'];
   protected _atkSkillList: AtkSkillModel[] = [
     {
-      label: 'Round Trip',
+      label: 'Round Trip Lv10',
       name: 'Round Trip',
       value: 'Round Trip==10',
       acd: 1,
@@ -100,7 +94,7 @@ export class Rebelion extends CharacterBase {
       },
     },
     {
-      label: 'Fire Dance',
+      label: 'Fire Dance Lv10',
       name: 'Fire Dance',
       value: 'Fire Dance==10',
       acd: 0.5,
@@ -116,7 +110,7 @@ export class Rebelion extends CharacterBase {
       },
     },
     {
-      label: 'Vanishing Buster',
+      label: 'Vanishing Buster Lv10',
       name: 'Vanishing Buster',
       value: 'Vanishing Buster==10',
       acd: 0.4,
@@ -133,6 +127,37 @@ export class Rebelion extends CharacterBase {
     },
   ];
   protected _activeSkillList: ActiveSkillModel[] = [
+    {
+      inputType: 'dropdown',
+      label: 'Gunslinger Mine',
+      name: 'Gunslinger Mine',
+      dropdown: [
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 1', value: 1, skillLv: 1, isUse: true },
+        { label: 'Lv 2', value: 2, skillLv: 2, isUse: true },
+        { label: 'Lv 3', value: 3, skillLv: 3, isUse: true },
+        { label: 'Lv 4', value: 4, skillLv: 4, isUse: true },
+        { label: 'Lv 5', value: 5, skillLv: 5, isUse: true },
+        { label: 'Lv 6', value: 6, skillLv: 6, isUse: true },
+        { label: 'Lv 7', value: 7, skillLv: 7, isUse: true },
+        { label: 'Lv 8', value: 8, skillLv: 8, isUse: true },
+        { label: 'Lv 9', value: 9, skillLv: 9, isUse: true },
+        { label: 'Lv 10', value: 10, skillLv: 10, isUse: true },
+      ],
+    },
+    {
+      inputType: 'dropdown',
+      label: 'Wounding Shot',
+      name: 'Wounding Shot',
+      dropdown: [
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 1', value: 1, skillLv: 1, isUse: true },
+        { label: 'Lv 2', value: 2, skillLv: 2, isUse: true },
+        { label: 'Lv 3', value: 3, skillLv: 3, isUse: true },
+        { label: 'Lv 4', value: 4, skillLv: 4, isUse: true },
+        { label: 'Lv 5', value: 5, skillLv: 5, isUse: true },
+      ],
+    },
     {
       isEquipAtk: true,
       inputType: 'selectButton',
@@ -159,6 +184,15 @@ export class Rebelion extends CharacterBase {
         { label: 'No', value: 2, isUse: false },
       ],
     },
+    {
+      label: 'Shatter Storm',
+      name: 'Shatter Storm',
+      inputType: 'selectButton',
+      dropdown: [
+        { label: 'Yes', value: 1, skillLv: 5, isUse: true },
+        { label: 'No', value: 2, isUse: false },
+      ],
+    },
   ];
   protected _passiveSkillList: PassiveSkillModel[] = [
     {
@@ -167,18 +201,18 @@ export class Rebelion extends CharacterBase {
       label: 'Snake Eyes',
       name: 'Snake Eyes',
       dropdown: [
-        { label: '0', value: 0, isUse: false },
-        { label: '1', value: 1, skillLv: 1, isUse: true, bonus: { hit: 1 } },
-        { label: '2', value: 2, skillLv: 2, isUse: true, bonus: { hit: 2 } },
-        { label: '3', value: 3, skillLv: 3, isUse: true, bonus: { hit: 3 } },
-        { label: '4', value: 4, skillLv: 4, isUse: true, bonus: { hit: 4 } },
-        { label: '5', value: 5, skillLv: 5, isUse: true, bonus: { hit: 5 } },
-        { label: '6', value: 6, skillLv: 6, isUse: true, bonus: { hit: 6 } },
-        { label: '7', value: 7, skillLv: 7, isUse: true, bonus: { hit: 7 } },
-        { label: '8', value: 8, skillLv: 8, isUse: true, bonus: { hit: 8 } },
-        { label: '9', value: 9, skillLv: 9, isUse: true, bonus: { hit: 9 } },
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 1', value: 1, skillLv: 1, isUse: true, bonus: { hit: 1 } },
+        { label: 'Lv 2', value: 2, skillLv: 2, isUse: true, bonus: { hit: 2 } },
+        { label: 'Lv 3', value: 3, skillLv: 3, isUse: true, bonus: { hit: 3 } },
+        { label: 'Lv 4', value: 4, skillLv: 4, isUse: true, bonus: { hit: 4 } },
+        { label: 'Lv 5', value: 5, skillLv: 5, isUse: true, bonus: { hit: 5 } },
+        { label: 'Lv 6', value: 6, skillLv: 6, isUse: true, bonus: { hit: 6 } },
+        { label: 'Lv 7', value: 7, skillLv: 7, isUse: true, bonus: { hit: 7 } },
+        { label: 'Lv 8', value: 8, skillLv: 8, isUse: true, bonus: { hit: 8 } },
+        { label: 'Lv 9', value: 9, skillLv: 9, isUse: true, bonus: { hit: 9 } },
         {
-          label: '10',
+          label: 'Lv 10',
           value: 10,
           skillLv: 10,
           isUse: true,

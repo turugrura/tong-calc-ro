@@ -146,6 +146,10 @@ export class Ranger extends CharacterBase {
       formular: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
+        if (this.bonuses.activeSkillNames.has('Fear Breeze')) {
+          const fearBreezeDmg = 35 * skillLevel;
+          return (800 + fearBreezeDmg) * (baseLevel / 100);
+        }
 
         return (500 + skillLevel * 20) * (baseLevel / 100);
       },
@@ -191,6 +195,16 @@ export class Ranger extends CharacterBase {
           isUse: true,
           bonus: { flatDmg: 20, hit: 30, cri: 10, allStatus: 5 },
         },
+        { label: 'No', value: 0, isUse: false },
+      ],
+    },
+    {
+      label: 'Fear Breeze Lv10',
+      name: 'Fear Breeze',
+      inputType: 'selectButton',
+      isMasteryAtk: true,
+      dropdown: [
+        { label: 'Yes', value: 10, skillLv: 10, isUse: true },
         { label: 'No', value: 0, isUse: false },
       ],
     },

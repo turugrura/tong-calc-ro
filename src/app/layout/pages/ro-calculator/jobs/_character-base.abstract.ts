@@ -9,6 +9,7 @@ import { ClassName } from './_class-name';
 
 export interface AtkSkillFormulaInput extends InfoForClass {
   skillLevel: number;
+  extra?: any;
 }
 
 export interface AtkSkillModel {
@@ -194,7 +195,7 @@ export abstract class CharacterBase {
   }
 
   protected calcHiddenMasteryAtk(_: InfoForClass) {
-    if (!this.bonuses?.masteryAtks) return { totalAtk: 0, totalMatk: 0 }
+    if (!this.bonuses?.masteryAtks) return { totalAtk: 0, totalMatk: 0 };
 
     const bonuses = this.bonuses.masteryAtks || {};
 

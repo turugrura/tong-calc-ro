@@ -152,46 +152,34 @@ const BaseState = {
   _1: ['Strength1', 'Inteligence1', 'Dexterity1', 'Agility1', 'Vitality1', 'Luck1'],
   _2: ['Strength2', 'Inteligence2', 'Dexterity2', 'Agility2', 'Vitality2', 'Luck2'],
   _3: ['Strength3', 'Inteligence3', 'Dexterity3', 'Agility3', 'Vitality3', 'Luck3'],
-  _1_3: [
+  _1_3: [Str._1, Str._2, Str._3, Int._1, Int._2, Int._3, Dex._1, Dex._2, Dex._3, Agi._1, Agi._2, Agi._3, Vit._1, Vit._2, Vit._3, Luk._1, Luk._2, Luk._3],
+  _1_4: [
     Str._1,
     Str._2,
     Str._3,
+    Str._4,
     Int._1,
     Int._2,
     Int._3,
+    Int._4,
     Dex._1,
     Dex._2,
     Dex._3,
+    Dex._4,
     Agi._1,
     Agi._2,
     Agi._3,
+    Agi._4,
     Vit._1,
     Vit._2,
     Vit._3,
+    Vit._4,
     Luk._1,
     Luk._2,
     Luk._3,
-  ],
-  _3_5: [
-    Str._3,
-    Str._4,
-    Str._5,
-    Int._3,
-    Int._4,
-    Int._5,
-    Dex._3,
-    Dex._4,
-    Dex._5,
-    Agi._3,
-    Agi._4,
-    Agi._5,
-    Vit._3,
-    Vit._4,
-    Vit._5,
-    Luk._3,
     Luk._4,
-    Luk._5,
   ],
+  _3_5: [Str._3, Str._4, Str._5, Int._3, Int._4, Int._5, Dex._3, Dex._4, Dex._5, Agi._3, Agi._4, Agi._5, Vit._3, Vit._4, Vit._5, Luk._3, Luk._4, Luk._5],
   _4: ['Strength4', 'Inteligence4', 'Dexterity4', 'Agility4', 'Vitality4', 'Luck4'],
   _5: ['Strength5', 'Inteligence5', 'Dexterity5', 'Agility5', 'Vitality5', 'Luck5'],
   _6: ['Strength6', 'Inteligence6', 'Dexterity6', 'Agility6', 'Vitality6', 'Luck6'],
@@ -202,17 +190,24 @@ const AllState = {
   _3: [FS._3, EA._3, Spell._3, AttackDelay._3, Cri._3, ...BaseState._3],
 };
 
+const atkPer = [AtkPercent._1, AtkPercent._2, AtkPercent._3];
+const fs13 = [FS._1, FS._2, FS._3];
+const fs35 = [FS._3, FS._4, FS._5];
+const sh13 = [Sharp._1, Sharp._2, Sharp._3];
+// const sh35 = [Sharp._3, Sharp._4, Sharp._5];
+const matk12 = [MatkPercent._1, MatkPercent._2];
+const ea35 = [EA._3, EA._4, EA._5];
+const sp25 = [Spell._2, Spell._3, Spell._4, Spell._5];
+const aspd24 = [AttackDelay._2, AttackDelay._3, AttackDelay._4];
 const TempOpts = {
   _1: [EA._1, FS._1, Sharp._1],
   _2: [EA._2, FS._2, Sharp._2],
   _3: [EA._3, FS._3, Sharp._3],
   _1_3: [EA._1, EA._2, EA._3, FS._1, FS._2, FS._3, Sharp._1, Sharp._2, Sharp._3],
 };
-const atkPer = [AtkPercent._1, AtkPercent._2, AtkPercent._3];
-const fs13 = [FS._1, FS._2, FS._3];
-const fs35 = [FS._3, FS._4, FS._5];
-const ea35 = [EA._3, EA._4, EA._5];
-const sp25 = [Spell._2, Spell._3, Spell._4, Spell._5];
+
+const toyFactory = [...sp25, ...fs35, ...sh13, ...matk12, ...aspd24];
+const racing3rd = [EA._1, EA._2, FS._1, FS._2, Sharp._1, Sharp._2, Cri._1, Cri._2, Spell._1, Spell._2, AttackDelay._1, AttackDelay._2];
 
 const illusionArmor = ['Improve_Orb_Atk', 'Improve_Orb_Matk', 'Improve_Orb_Archer', 'Improve_Orb_Delay'];
 const illusionGarment = ['Improve_Orb_Speed', 'Improve_Orb_Cast', 'Improve_Orb_Cri', 'Improve_Orb_Above'];
@@ -224,21 +219,7 @@ const tempBoot_4 = [EA._4, FS._7, Spell._5, AttackDelay._4];
 const kingSmithAcc_2 = ['Gh_md_agi', 'Gh_md_str', 'Gh_md_dex', 'Gh_md_int', 'Gh_md_vit', 'Gh_md_luk'];
 const kingSmithAcc_3 = [EA._4, EA._5, FS._6, FS._7, Spell._4, Spell._5, Cri._2, Cri._3, Sharp._3, Sharp._4];
 const kingSmithAcc_4 = [...BaseState._3_5];
-const kingSmithMan = [
-  EA._3,
-  EA._4,
-  EA._5,
-  FS._5,
-  FS._6,
-  FS._7,
-  Spell._3,
-  Spell._4,
-  Spell._5,
-  Cri._2,
-  Cri._3,
-  Sharp._3,
-  Sharp._4,
-];
+const kingSmithMan = [EA._3, EA._4, EA._5, FS._5, FS._6, FS._7, Spell._3, Spell._4, Spell._5, Cri._2, Cri._3, Sharp._3, Sharp._4];
 
 const twinCannon = [Cri._3, AttackDelay._3, Spell._4, EA._3, ...BaseState._3];
 
@@ -271,24 +252,7 @@ const labHead2 = [
   MagicEess._7,
 ];
 
-const tempHead4 = [
-  Str._1,
-  Str._2,
-  Str._3,
-  Str._4,
-  Int._1,
-  Int._2,
-  Int._3,
-  Int._4,
-  Vit._1,
-  Vit._2,
-  Vit._3,
-  Vit._4,
-  Luk._1,
-  Luk._2,
-  Luk._3,
-  Luk._4,
-];
+const tempHead4 = [Str._1, Str._2, Str._3, Str._4, Int._1, Int._2, Int._3, Int._4, Vit._1, Vit._2, Vit._3, Vit._4, Luk._1, Luk._2, Luk._3, Luk._4];
 const tempHead3 = [
   'Time_Jewely_Str_1',
   'Time_Jewely_Str_2',
@@ -308,23 +272,7 @@ const tempHead3 = [
   ...tempHead4,
 ];
 
-const edda4 = [
-  EA._1,
-  EA._2,
-  EA._3,
-  FS._4,
-  FS._5,
-  FS._6,
-  Sharp._1,
-  Sharp._2,
-  Sharp._3,
-  Spell._1,
-  Spell._2,
-  Spell._3,
-  Cri._1,
-  Cri._2,
-  Cri._3,
-];
+const edda4 = [EA._1, EA._2, EA._3, FS._4, FS._5, FS._6, Sharp._1, Sharp._2, Sharp._3, Spell._1, Spell._2, Spell._3, Cri._1, Cri._2, Cri._3];
 const edda3 = [
   'Seyren_Memory',
   'Harword_Memory',
@@ -341,17 +289,7 @@ const edda3 = [
   'Alpho_Memory',
 ];
 
-const allRunes = [
-  RuneStr._1,
-  RuneStr._2,
-  RuneStr._3,
-  RuneDex._1,
-  RuneDex._2,
-  RuneDex._3,
-  RuneInt._1,
-  RuneInt._2,
-  RuneInt._3,
-];
+const allRunes = [RuneStr._1, RuneStr._2, RuneStr._3, RuneDex._1, RuneDex._2, RuneDex._3, RuneInt._1, RuneInt._2, RuneInt._3];
 
 const specials = ['S_Str', 'S_Agi', 'S_Vital', 'S_Int', 'S_Dex', 'S_Luck'];
 
@@ -361,13 +299,32 @@ interface EntTable {
 }
 
 const enchantTable: EntTable[] = [
-  { name: 'Lush_Rose', enchants: [null, null, null, [Spell._3, Spell._4, Spell._5]] },
+  { name: 'Lush_Rose', enchants: [null, null, BaseState._1_3, toyFactory] },
+  { name: 'Celines_Ribbon', enchants: [null, null, BaseState._1_3, toyFactory] },
+
   { name: 'Holy_Stick', enchants: [null, null, sp25, sp25] },
   { name: 'Thorn_Staff_', enchants: [null, null, sp25, sp25] },
-  {
-    name: 'Fallen Angel Wing [1]',
-    enchants: [null, [...ea35, ...fs35, ...sp25], [...ea35, ...fs35, ...sp25], [...ea35, ...fs35, ...sp25]],
-  },
+  { name: 'Fallen Angel Wing [1]', enchants: [null, [...ea35, ...fs35, ...sp25], [...ea35, ...fs35, ...sp25], [...ea35, ...fs35, ...sp25]] },
+
+  { name: 'Racing_C_Mecha', enchants: [null, ['Racing_E_Mecha1', 'Racing_E_Mecha2', 'Racing_E_Mecha3', ...racing3rd], BaseState._1_4, BaseState._1_3] },
+  { name: 'Racing_C_Gene', enchants: [null, ['Racing_E_Gene1', 'Racing_E_Gene2', 'Racing_E_Gene3', ...racing3rd], BaseState._1_4, BaseState._1_3] },
+  { name: 'Racing_C_Cross', enchants: [null, ['Racing_E_Cross1', 'Racing_E_Cross2', 'Racing_E_Cross3', ...racing3rd], BaseState._1_4, BaseState._1_3] },
+  { name: 'Racing_C_Chaser', enchants: [null, ['Racing_E_Chaser1', 'Racing_E_Chaser2', 'Racing_E_Chaser3', ...racing3rd], BaseState._1_4, BaseState._1_3] },
+  { name: 'Racing_C_Warlock', enchants: [null, ['Racing_E_Warlock1', 'Racing_E_Warlock2', 'Racing_E_Warlock3', ...racing3rd], BaseState._1_4, BaseState._1_3] },
+  { name: 'Racing_C_Sorcer', enchants: [null, ['Racing_E_Sorcer1', 'Racing_E_Sorcer2', 'Racing_E_Sorcer3', ...racing3rd], BaseState._1_4, BaseState._1_3] },
+  { name: 'Racing_C_Rune', enchants: [null, ['Racing_E_Rune1', 'Racing_E_Rune2', 'Racing_E_Rune3', ...racing3rd], BaseState._1_4, BaseState._1_3] },
+  { name: 'Racing_C_Royal', enchants: [null, ['Racing_E_Royal1', 'Racing_E_Royal2', 'Racing_E_Royal3', ...racing3rd], BaseState._1_4, BaseState._1_3] },
+  { name: 'Racing_C_Bishop', enchants: [null, ['Racing_E_Bishop1', 'Racing_E_Bishop2', 'Racing_E_Bishop3', ...racing3rd], BaseState._1_4, BaseState._1_3] },
+  { name: 'Racing_C_Sura', enchants: [null, ['Racing_E_Sura1', 'Racing_E_Sura2', 'Racing_E_Sura3', ...racing3rd], BaseState._1_4, BaseState._1_3] },
+  { name: 'Racing_C_Ranger', enchants: [null, ['Racing_E_Ranger1', 'Racing_E_Ranger2', 'Racing_E_Ranger3', ...racing3rd], BaseState._1_4, BaseState._1_3] },
+  { name: 'Racing_C_Mins', enchants: [null, ['Racing_E_Mins1', 'Racing_E_Mins2', 'Racing_E_Mins3', ...racing3rd], BaseState._1_4, BaseState._1_3] },
+  { name: 'Racing_C_Wander', enchants: [null, ['Racing_E_Wander1', 'Racing_E_Wander2', 'Racing_E_Wander3', ...racing3rd], BaseState._1_4, BaseState._1_3] },
+  { name: 'Racing_C_Gunner', enchants: [null, ['Racing_E_Gunner1', 'Racing_E_Gunner2', 'Racing_E_Gunner3', ...racing3rd], BaseState._1_4, BaseState._1_3] },
+  { name: 'Racing_C_Ninja', enchants: [null, ['Racing_E_Ninja1', 'Racing_E_Ninja2', 'Racing_E_Ninja3', ...racing3rd], BaseState._1_4, BaseState._1_3] },
+  { name: 'Racing_C_Super', enchants: [null, ['Racing_E_Super1', 'Racing_E_Super2', 'Racing_E_Super3', ...racing3rd], BaseState._1_4, BaseState._1_3] },
+  { name: 'Racing_C_Doram', enchants: [null, ['Racing_E_Doram1', 'Racing_E_Doram2', 'Racing_E_Doram3', ...racing3rd], BaseState._1_4, BaseState._1_3] },
+  { name: 'Racing_C_Star', enchants: [null, ['Racing_E_Star1', 'Racing_E_Star2', 'Racing_E_Star3', ...racing3rd], BaseState._1_4, BaseState._1_3] },
+  { name: 'Racing_C_Soul', enchants: [null, ['Racing_E_Soul1', 'Racing_E_Soul2', 'Racing_E_Soul3', ...racing3rd], BaseState._1_4, BaseState._1_3] },
 
   { name: 'Illusion_Armor_A', enchants: [null, illusionArmor, illusionArmor, illusionArmor] },
   { name: 'Illusion_Armor_B', enchants: [null, illusionArmor, illusionArmor, illusionArmor] },
