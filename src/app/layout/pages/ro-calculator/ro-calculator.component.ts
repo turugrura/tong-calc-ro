@@ -621,17 +621,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   isEnableCompare = false;
   showCompareItemMap = {} as any;
   compareItemNames = [] as ItemTypeEnum[];
-  compareItemList: (keyof typeof ItemTypeEnum)[] = [
-    'weapon',
-    'headUpper',
-    'headMiddle',
-    'headLower',
-    'armor',
-    'garment',
-    'boot',
-    'accLeft',
-    'accRight',
-  ];
+  compareItemList: (keyof typeof ItemTypeEnum)[] = ['weapon', 'headUpper', 'headMiddle', 'headLower', 'armor', 'garment', 'boot', 'accLeft', 'accRight'];
 
   ref: DynamicDialogRef | undefined;
 
@@ -771,10 +761,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   }
 
   private initData() {
-    return forkJoin([
-      this.roService.getItems<Record<number, ItemModel>>(),
-      this.roService.getMonsters<Record<number, MonsterModel>>(),
-    ]).pipe(
+    return forkJoin([this.roService.getItems<Record<number, ItemModel>>(), this.roService.getMonsters<Record<number, MonsterModel>>()]).pipe(
       tap(([items, monsters]) => {
         this.items = items;
         this.monsterDataMap = monsters;
@@ -999,11 +986,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
     this.calcDamages = selectedMonsterIds.map((monsterId) => {
       const monster = this.monsterDataMap[monsterId];
-      const calculated = this.calculator
-        .setMonster(monster)
-        .prepareAllItemBonus()
-        .calcHitRate()
-        .calculateAllDamages(this.model.selectedAtkSkill);
+      const calculated = this.calculator.setMonster(monster).prepareAllItemBonus().calcHitRate().calculateAllDamages(this.model.selectedAtkSkill);
 
       const {
         id,
@@ -1270,11 +1253,19 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   private resetItemDescription() {
     const equipItemTypes: string[] = [];
     const map = new Map<ItemTypeEnum, number>();
-    for (const [itemType, itemId] of this.equipItemMap.entries()) {
+    for (const [itemType, relations] of Object.entries(MainItemWithRelations)) {
+      const itemId = this.equipItemMap.get(itemType as any);
       if (itemId) {
         equipItemTypes.push(itemType);
-        // map.set(`${itemType}-${itemId}`, itemType);
-        map.set(itemType, itemId);
+        map.set(itemType as any, itemId);
+      }
+
+      for (const itemType2 of relations) {
+        const itemId = this.equipItemMap.get(itemType2 as any);
+        if (itemId) {
+          equipItemTypes.push(itemType2);
+          map.set(itemType2 as any, itemId);
+        }
       }
     }
 
@@ -1868,9 +1859,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
     this.itemId = itemId;
     this.itemBonus = bonus; //{ script, bonus };
-    this.itemDescription = this.items[itemId]?.description
-      .replaceAll('\n', '<br>')
-      .replace(/\^(.{6})/g, '<font color="#$1">');
+    this.itemDescription = this.items[itemId]?.description.replaceAll('\n', '<br>').replace(/\^(.{6})/g, '<font color="#$1">');
   }
 
   onLog(inputs) {
