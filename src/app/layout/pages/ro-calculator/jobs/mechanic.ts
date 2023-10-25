@@ -123,6 +123,7 @@ export class Mechanic extends CharacterBase {
       vct: 2.2,
       cd: 0.65,
       isIgnoreDef: true,
+      isHit100: true,
       levelList: [{ label: 'Lv 5', value: 'Arm Cannon==5' }],
       formula: (input: AtkSkillFormulaInput): number => {
         const { skillLevel, model, monster } = input;

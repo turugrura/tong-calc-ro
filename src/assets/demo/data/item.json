@@ -11471,6 +11471,170 @@
       ]
     }
   },
+  "19474": {
+    "id": 19474,
+    "aegisName": "S_Circlet_Of_Time_RK",
+    "name": "Temporal Circlet (Rune Knight) [1]",
+    "unidName": "Helm",
+    "resName": "Circlet_Of_Time",
+    "description": "มงกุฎผ่านการเจียระไนด้วยเพชรอัญมณีที่มาจากรอยแยกแห่งมิติเวลา\nผู้สวมใส่จะรู้สึกได้ถึงพลังวิเศษที่ได้รับจาก Hugin\n^ffffff_^000000 \nทุก ๆ การอัพเกรด 2 ขั้น MHP +250\nทุก ๆ การอัพเกรด 3 ขั้น MSP +2%\nทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage สกิล Dragon Breath, Dragon Breath - WATER 15%\nทุก ๆ การอัพเกรด 4 ขั้น เพิ่ม Damage ทางกายภาพระยะไกล 5%\nเมื่ออัพเกรดถึงขั้น 11 ลด Delay หลังใช้สกิล 5%\n^ffffff_^000000 \nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^77777710^000000\nตำแหน่ง : ^777777Upper ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Rune Knight^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 10,
+    "weight": 0,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Rune Knight"
+    ],
+    "script": {
+      "hp": [
+        "2---250"
+      ],
+      "spPercent": [
+        "3---2"
+      ],
+      "Dragon Breath": [
+        "3---15"
+      ],
+      "Dragon Breath - WATER": [
+        "3---15"
+      ],
+      "range": [
+        "4---5"
+      ],
+      "acd": [
+        "11===5"
+      ]
+    }
+  },
+  "19475": {
+    "id": 19475,
+    "aegisName": "S_Circlet_Of_Time_LG",
+    "name": "Temporal Circlet (Royal Guard) [1]",
+    "unidName": "Helm",
+    "resName": "Circlet_Of_Time",
+    "description": "มงกุฎผ่านการเจียระไนด้วยเพชรอัญมณีที่มาจากรอยแยกแห่งมิติเวลา\nผู้สวมใส่จะรู้สึกได้ถึงพลังวิเศษที่ได้รับจาก Hugin\n^ffffff_^000000 \nทุก ๆ การอัพเกรด 2 ขั้น ATK +15\nทุก ๆ การอัพเกรด 3 ขั้น ASPD +2%\nทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage สกิล Banishing Point, Cannon Spear 15%\nทุก ๆ การอัพเกรด 4 ขั้น เพิ่ม Damage ทางกายภาพระยะไกล 5%\nเมื่ออัพเกรดถึงขั้น 11, ATK +5%\n^ffffff_^000000 \nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^77777710^000000\nตำแหน่ง : ^777777Upper ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Royal Guard^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 10,
+    "weight": 0,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Royal Guard"
+    ],
+    "script": {
+      "atk": [
+        "2---15"
+      ],
+      "aspdPercent": [
+        "3---2"
+      ],
+      "Banishing Point": [
+        "3---15"
+      ],
+      "Cannon Spear": [
+        "3---15"
+      ],
+      "range": [
+        "4---5"
+      ],
+      "atkPercent": [
+        "11===5"
+      ]
+    }
+  },
+  "19476": {
+    "id": 19476,
+    "aegisName": "S_Circlet_Of_Time_NC",
+    "name": "Temporal Circlet (Mechanic) [1]",
+    "unidName": "Helm",
+    "resName": "Circlet_Of_Time",
+    "description": "มงกุฎผ่านการเจียระไนด้วยเพชรอัญมณีที่มาจากรอยแยกแห่งมิติเวลา\nผู้สวมใส่จะรู้สึกได้ถึงพลังวิเศษที่ได้รับจาก Hugin\n^ffffff_^000000 \nทุก ๆ การอัพเกรด 2 ขั้น ATK +15\nทุก ๆ การอัพเกรด 3 ขั้น ASPD +2%\nทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage สกิล Arm Cannon, Knuckle Boost 10%\nทุก ๆ การอัพเกรด 4 ขั้น เพิ่ม Damage ทางกายภาพระยะไกล 5%\nเมื่ออัพเกรดถึงขั้น 11 ลด Delay หลังใช้สกิล 5%\n^ffffff_^000000 \nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^77777710^000000\nตำแหน่ง : ^777777Upper ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Mechanic^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 10,
+    "weight": 0,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Mechanic"
+    ],
+    "script": {
+      "atk": [
+        "2---15"
+      ],
+      "aspdPercent": [
+        "3---2"
+      ],
+      "Arm Cannon": [
+        "3---10"
+      ],
+      "Knuckle Boost": [
+        "3---10"
+      ],
+      "range": [
+        "4---5"
+      ],
+      "acd": [
+        "11===5"
+      ]
+    }
+  },
+  "19477": {
+    "id": 19477,
+    "aegisName": "S_Circlet_Of_Time_GN",
+    "name": "Temporal Circlet (Genetic) [1]",
+    "unidName": "Helm",
+    "resName": "Circlet_Of_Time",
+    "description": "มงกุฎผ่านการเจียระไนด้วยเพชรอัญมณีที่มาจากรอยแยกแห่งมิติเวลา\nผู้สวมใส่จะรู้สึกได้ถึงพลังวิเศษที่ได้รับจาก Hugin\n^ffffff_^000000 \nทุก ๆ การอัพเกรด 2 ขั้น ATK +15\nทุก ๆ การอัพเกรด 3 ขั้น ASPD +2%\nทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage สกิล Spore Explosion, Cart Tornado Attack 20%\nทุก ๆ การอัพเกรด 4 ขั้น เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 2%\nเมื่ออัพเกรดถึงขั้น 11 ลด Delay หลังใช้สกิล 5%\n^ffffff_^000000 \nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^77777710^000000\nตำแหน่ง : ^777777Upper ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Genetic^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 10,
+    "weight": 0,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Genetic"
+    ],
+    "script": {
+      "atk": [
+        "2---15"
+      ],
+      "aspdPercent": [
+        "3---2"
+      ],
+      "Spore Explosion": [
+        "3---20"
+      ],
+      "Cart Tornado": [
+        "3---20"
+      ],
+      "p_size_all": [
+        "4---2"
+      ],
+      "acd": [
+        "11===5"
+      ]
+    }
+  },
   "19478": {
     "id": 19478,
     "aegisName": "S_Circlet_Of_Time_GC",
@@ -11591,6 +11755,47 @@
       ]
     }
   },
+  "19481": {
+    "id": 19481,
+    "aegisName": "S_Circlet_Of_Time_SR",
+    "name": "Temporal Circlet (Sura) [1]",
+    "unidName": "Helm",
+    "resName": "Circlet_Of_Time",
+    "description": "มงกุฎผ่านการเจียระไนด้วยเพชรอัญมณีที่มาจากรอยแยกแห่งมิติเวลา\nผู้สวมใส่จะรู้สึกได้ถึงพลังวิเศษที่ได้รับจาก Hugin\n^ffffff_^000000 \nทุก ๆ การอัพเกรด 2 ขั้น ATK +15\nทุก ๆ การอัพเกรด 3 ขั้น MHP +2%\nทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage สกิล Knuckle Arrow 20% และสกิล Tiger Cannon 10%\nทุก ๆ การอัพเกรด 4 ขั้น เพิ่ม Damage ทางกายภาพระยะไกล 5%\nเมื่ออัพเกรดถึงขั้น 11, ATK +5%\n^ffffff_^000000 \nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^77777710^000000\nตำแหน่ง : ^777777Upper ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Sura^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 10,
+    "weight": 0,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Sura"
+    ],
+    "script": {
+      "atk": [
+        "2---15"
+      ],
+      "hpPercent": [
+        "3---2"
+      ],
+      "Knuckle Arrow": [
+        "3---20"
+      ],
+      "Tiger Cannon": [
+        "3---10"
+      ],
+      "range": [
+        "4---5"
+      ],
+      "atkPercent": [
+        "11===5"
+      ]
+    }
+  },
   "19484": {
     "id": 19484,
     "aegisName": "S_Circlet_Of_Time_RA",
@@ -11629,6 +11834,44 @@
       ],
       "cd__Arrow Storm": [
         "11===1"
+      ]
+    }
+  },
+  "19486": {
+    "id": 19486,
+    "aegisName": "S_Circlet_Of_Time_SJ",
+    "name": "Temporal Circlet (Star Emperor) [1]",
+    "unidName": "Helm",
+    "resName": "Circlet_Of_Time",
+    "description": "มงกุฎผ่านการเจียระไนด้วยเพชรอัญมณีที่มาจากรอยแยกแห่งมิติเวลา\nผู้สวมใส่จะรู้สึกได้ถึงพลังวิเศษที่ได้รับจาก Hugin\n^ffffff_^000000 \nทุก ๆ การอัพเกรด 2 ขั้น ATK +15\nทุก ๆ การอัพเกรด 3 ขั้น ASPD +2%\nทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage สกิล Falling Stars 30%\nทุก ๆ การอัพเกรด 4 ขั้น เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 2%\nเมื่ออัพเกรดถึงขั้น 11, ATK +5%\n^ffffff_^000000 \nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^77777710^000000\nตำแหน่ง : ^777777Upper ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Star Emperor^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 10,
+    "weight": 0,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Star Emperor"
+    ],
+    "script": {
+      "atk": [
+        "2---15"
+      ],
+      "aspdPercent": [
+        "3---2"
+      ],
+      "Falling Stars": [
+        "3---30"
+      ],
+      "p_size_all": [
+        "4---2"
+      ],
+      "atkPercent": [
+        "11===5"
       ]
     }
   },
@@ -11707,6 +11950,137 @@
         "3---20"
       ],
       "range": [
+        "4---5"
+      ],
+      "acd": [
+        "11===5"
+      ]
+    }
+  },
+  "19489": {
+    "id": 19489,
+    "aegisName": "S_Circlet_Of_Time_OB",
+    "name": "Temporal Circlet (Oboro) [1]",
+    "unidName": "Helm",
+    "resName": "Circlet_Of_Time",
+    "description": "มงกุฎผ่านการเจียระไนด้วยเพชรอัญมณีที่มาจากรอยแยกแห่งมิติเวลา\nผู้สวมใส่จะรู้สึกได้ถึงพลังวิเศษที่ได้รับจาก Hugin\n^ffffff_^000000 \nทุก ๆ การอัพเกรด 2 ขั้น MATK +15\nทุก ๆ การอัพเกรด 3 ขั้น ASPD +2%\nทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage สกิล Wind Blade, Freezing Spear 30%\nทุก ๆ การอัพเกรด 4 ขั้น เพิ่ม Damage ทางเวทมนตร์ธาตุ Wind, Water 5%\nเมื่ออัพเกรดถึงขั้น 11, MATK +5%\n^ffffff_^000000 \nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^77777710^000000\nตำแหน่ง : ^777777Upper ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Kagerou, Oboro^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 10,
+    "weight": 0,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Kagerou",
+      "Oboro"
+    ],
+    "script": {
+      "matk": [
+        "2---15"
+      ],
+      "aspdPercent": [
+        "3---2"
+      ],
+      "Wind Blade": [
+        "3---30"
+      ],
+      "Freezing Spear": [
+        "3---30"
+      ],
+      "m_my_element_wind": [
+        "4---5"
+      ],
+      "m_my_element_water": [
+        "4---5"
+      ],
+      "matkPercent": [
+        "11===5"
+      ]
+    }
+  },
+  "19490": {
+    "id": 19490,
+    "aegisName": "S_Circlet_Of_Time_KG",
+    "name": "Temporal Circlet (Kagerou) [1]",
+    "unidName": "Helm",
+    "resName": "Circlet_Of_Time",
+    "description": "มงกุฎผ่านการเจียระไนด้วยเพชรอัญมณีที่มาจากรอยแยกแห่งมิติเวลา\nผู้สวมใส่จะรู้สึกได้ถึงพลังวิเศษที่ได้รับจาก Hugin\n^ffffff_^000000 \nทุก ๆ การอัพเกรด 2 ขั้น ATK +15\nทุก ๆ การอัพเกรด 3 ขั้น ASPD +2%\nทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage สกิล Cross Slash, Kunai Explosion 20%\nทุก ๆ การอัพเกรด 4 ขั้น เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 2%\nเมื่ออัพเกรดถึงขั้น 11, ATK +5%\n^ffffff_^000000 \nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^77777710^000000\nตำแหน่ง : ^777777Upper ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Kagerou, Oboro^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 10,
+    "weight": 0,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Kagerou",
+      "Oboro"
+    ],
+    "script": {
+      "atk": [
+        "2---15"
+      ],
+      "aspdPercent": [
+        "3---2"
+      ],
+      "Cross Slash": [
+        "3---20"
+      ],
+      "Kunai Explosion": [
+        "3---20"
+      ],
+      "p_size_all": [
+        "4---2"
+      ],
+      "atkPercent": [
+        "11===5"
+      ]
+    }
+  },
+  "19491": {
+    "id": 19491,
+    "aegisName": "S_Circlet_Of_Time_NV",
+    "name": "Temporal Circlet (Super Novice) [1]",
+    "unidName": "Helm",
+    "resName": "Circlet_Of_Time",
+    "description": "มงกุฎผ่านการเจียระไนด้วยเพชรอัญมณีที่มาจากรอยแยกแห่งมิติเวลา\nผู้สวมใส่จะรู้สึกได้ถึงพลังวิเศษที่ได้รับจาก Hugin\n^ffffff_^000000 \nทุก ๆ การอัพเกรด 2 ขั้น ATK +10, MATK +10\nทุก ๆ การอัพเกรด 3 ขั้น ASPD +4%, ลดระยะเวลาร่ายแบบแปรผัน 4%\nทุก ๆ การอัพเกรด 4 ขั้น Critical Damage +5%, เพิ่ม Damage ทางเวทมนตร์ทุกธาตุ 5%\nเมื่ออัพเกรดถึงขั้น 11 ลด Delay หลังใช้สกิล 5%\n^ffffff_^000000 \nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^77777710^000000\nตำแหน่ง : ^777777Upper ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Super Novice^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 10,
+    "weight": 0,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Super Novice"
+    ],
+    "script": {
+      "atk": [
+        "2---10"
+      ],
+      "matk": [
+        "2---10"
+      ],
+      "aspdPercent": [
+        "3---4"
+      ],
+      "vct": [
+        "3---4"
+      ],
+      "criDmg": [
+        "4---5"
+      ],
+      "m_my_element_all": [
         "4---5"
       ],
       "acd": [
@@ -15566,6 +15940,54 @@
       ]
     }
   },
+  "24303": {
+    "id": 24303,
+    "aegisName": "S_Mechanic_Shield",
+    "name": "Mechanic Shield Shadow",
+    "unidName": "Shadow Shield",
+    "resName": "쉴드쉐도우",
+    "description": "โล่เล็กที่สามารถสวมใส่ที่แขนได้ สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์การป้องกันของมันจะลดน้อยลง  \nอาชีพ Mechanic เท่านั้นที่สามารถสวมใส่ได้  \nเพิ่ม Damage ของ Flame Launcher 20%  \nทุกๆ การอัพเกรด 1 ขั้น เพิ่ม Damage ของ Flame Launcher เพิ่มเติม 5%  \nเมื่อสวมใส่ร่วมกับ ^32CD32Mechanic Weapon Shadow^000000 จะได้รับเอฟเฟกต์เพิ่มเติม  \nเพิ่ม Damage ของ Vulcan Arm 20%, ลดการใช้ SP ของ Flame Launcher 20%  \nเมื่อสวมใส่ ^32CD32Merchant Shadow^000000 2 ประเภท, ^32CD32Blacksmith Shadow^000000 2 ประเภท,  ^32CD32Mechanic Shadow^000000 2 ประเภททั้งหมด จะได้รับเอฟเฟกต์ดังต่อไปนี้  \nAll Status + 10, MaxHP + 5%, MaxSP + 5%.\nเพิกเฉยต่อพลังป้องกันทางกายภาพและทางเวทย์ของศัตรูทั่วไป  50%  \nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shield^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Mechanic Class^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 527,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Shield",
+    "compositionPos": null,
+    "usableClass": [
+      "Mechanic Class"
+    ],
+    "script": {
+      "Flame Launcher": [
+        "20",
+        "1---5"
+      ],
+      "Vulcan Arm": [
+        "EQUIP[Mechanic Weapon Shadow]20"
+      ],
+      "spPercent__Flame Launcher": [
+        "EQUIP[Mechanic Weapon Shadow]20"
+      ],
+      "allStatus": [
+        "EQUIP[Merchant Shadow Earring&&Merchant Shadow Pendant&&Blacksmith Shadow Shoes&&Blacksmith Shadow Armor&&Mechanic Weapon Shadow]10"
+      ],
+      "hpPercent": [
+        "EQUIP[Merchant Shadow Earring&&Merchant Shadow Pendant&&Blacksmith Shadow Shoes&&Blacksmith Shadow Armor&&Mechanic Weapon Shadow]5"
+      ],
+      "spPercent": [
+        "EQUIP[Merchant Shadow Earring&&Merchant Shadow Pendant&&Blacksmith Shadow Shoes&&Blacksmith Shadow Armor&&Mechanic Weapon Shadow]5"
+      ],
+      "p_pene_class_normal": [
+        "EQUIP[Merchant Shadow Earring&&Merchant Shadow Pendant&&Blacksmith Shadow Shoes&&Blacksmith Shadow Armor&&Mechanic Weapon Shadow]50"
+      ],
+      "m_pene_class_normal": [
+        "EQUIP[Merchant Shadow Earring&&Merchant Shadow Pendant&&Blacksmith Shadow Shoes&&Blacksmith Shadow Armor&&Mechanic Weapon Shadow]50"
+      ]
+    }
+  },
   "24305": {
     "id": 24305,
     "aegisName": "S_Archbishop_Shield",
@@ -18235,6 +18657,94 @@
     ],
     "script": {
       "spPercent__Axe Tornado": [
+        "2",
+        "2---1"
+      ]
+    }
+  },
+  "24473": {
+    "id": 24473,
+    "aegisName": "S_Arms_Weapon",
+    "name": "Arm Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา \nเพิ่ม Damage ทางกายภาพระยะไกล 3%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางกายภาพระยะไกลขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพระยะไกลขึ้นอีก 4%\nเมื่อสวมใส่ Arm Shadow Weapon/Pendant/Earring ร่วมกัน,\nเพิ่ม Damage สกิล Arm Cannon % เท่ากับครึ่งหนึ่งของค่าอัพเกรดรวมกัน\nเมื่อสวมใส่ร่วมกับ Mechanic Shield Shadow,\nลดระยะเวลาร่ายแบบแปรผันเท่ากับครึ่งหนึ่งของค่าอัพเกรดรวมกันของ Arm Shadow Weapon และ Mechanic Shield Shadow\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Mechanic Cls^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "Mechanic Cls"
+    ],
+    "script": {
+      "range": [
+        "3",
+        "7===3",
+        "9===4"
+      ],
+      "Arm Cannon": [
+        "EQUIP[Arm Shadow Pendant&&Arm Shadow Earring]REFINE[shadowWeapon,shadowEarring,shadowPendant==2]---1"
+      ],
+      "vct": [
+        "EQUIP[Mechanic Shield Shadow]REFINE[shadowWeapon,shadowShield==1]---1"
+      ]
+    }
+  },
+  "24474": {
+    "id": 24474,
+    "aegisName": "S_Arms_Pendant",
+    "name": "Arm Shadow Pendant",
+    "unidName": "Shadow Pendant",
+    "resName": "펜던트쉐도우",
+    "description": "สร้อยคอศักดิ์สิทธิ์ที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา\nเพิ่ม Damage สกิล Arm Cannon 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage สกิล Arm Cannon ขึ้นอีก 2%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Pendant ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Mechanic Cls^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 530,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "AccessoryLeft",
+    "compositionPos": null,
+    "usableClass": [
+      "Mechanic Cls"
+    ],
+    "script": {
+      "Arm Cannon": [
+        "5",
+        "2---2"
+      ]
+    }
+  },
+  "24475": {
+    "id": 24475,
+    "aegisName": "S_Arms_Earing",
+    "name": "Arm Shadow Earring",
+    "unidName": "Shadow Earring",
+    "resName": "이어링쉐도우",
+    "description": "ต่างหูมงคลที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา\nลดปริมาณการใช้ SP สกิล Arm Cannon 2%\nทุก ๆ การอัพเกรด 2 ขั้น ลดปริมาณการใช้ SP สกิล Arm Cannon ลงอีก 1%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Earring ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Mechanic Cls^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 529,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "AccessoryRight",
+    "compositionPos": null,
+    "usableClass": [
+      "Mechanic Cls"
+    ],
+    "script": {
+      "spPercent__Arm Cannon": [
         "2",
         "2---1"
       ]
@@ -30430,6 +30940,107 @@
       ]
     }
   },
+  "310004": {
+    "id": 310004,
+    "aegisName": "Mechanic_Top2",
+    "name": "Mastersmith Stone II (Upper)",
+    "unidName": "Mastersmith Stone II (Upper)",
+    "resName": "상인피규어",
+    "description": "ทุก ๆ การเรียนรู้สกิล Power Thrust Max 1 เลเวล ลด Cooldown สกิล Axe Boomerang 0.1 วินาที",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 71,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "cd__Axe Boomerang": [
+        "0.5"
+      ]
+    }
+  },
+  "310005": {
+    "id": 310005,
+    "aegisName": "Mechanic_Middle2",
+    "name": "Mastersmith Stone II (Middle)",
+    "unidName": "Mastersmith Stone II (Middle)",
+    "resName": "상인피규어",
+    "description": "เพิ่ม Damage สกิล Cart Termination 15%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 72,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "Cart Termination": [
+        "15"
+      ]
+    }
+  },
+  "310006": {
+    "id": 310006,
+    "aegisName": "Mechanic_Bottom2",
+    "name": "Mastersmith Stone II (Lower)",
+    "unidName": "Mastersmith Stone II (Lower)",
+    "resName": "상인피규어",
+    "description": "ทุก ๆ การเรียนรู้สกิล Maximize Power 1 เลเวล เพิ่ม Damage ทางกายภาพระยะไกล 1%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 73,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "range": [
+        "5"
+      ]
+    }
+  },
+  "310007": {
+    "id": 310007,
+    "aegisName": "Mechanic_Robe2",
+    "name": "Mechanic Stone II (Garment)",
+    "unidName": "Mechanic Stone II (Garment)",
+    "resName": "White_Smith_Figure",
+    "description": "เพิ่ม Damage สกิล Arm Cannon 15%\nเมื่อใช้กับ Mastersmith Stone II (Upper) เพิ่ม Damage ทางกายภาพระยะไกล 10%\nเมื่อใช้กับ Mastersmith Stone II (Middle) เพิ่ม Damage สกิล Vulcan Arm 20%\nเมื่อใช้กับ Mastersmith Stone II (Lower) เพิ่ม Damage สกิล Nuckle Boost 20%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 74,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "Arm Cannon": [
+        "15"
+      ],
+      "range": [
+        "EQUIP[Mastersmith Stone II (Upper)]10"
+      ],
+      "Vulcan Arm": [
+        "EQUIP[Mastersmith Stone II (Middle)]20"
+      ],
+      "Nuckle Boost": [
+        "EQUIP[Mastersmith Stone II (Lower)]20"
+      ]
+    }
+  },
   "310008": {
     "id": 310008,
     "aegisName": "Highpriest_Top2",
@@ -31054,7 +31665,7 @@
     ],
     "script": {
       "atk": [
-        "20",
+        "2---20",
         "EQUIP[Boost Lance-OS]===30"
       ],
       "vct": [
@@ -31062,8 +31673,8 @@
       ],
       "range": [
         "9===15",
-        "EQUIP[MH-P89-OS]===3",
-        "EQUIP[AC-B44-OS]===3"
+        "EQUIP[MH-P89-OS]REFINE[weapon==2]---3",
+        "EQUIP[AC-B44-OS]REFINE[weapon==2]---3"
       ],
       "p_size_s": [
         "11===15"
@@ -31074,14 +31685,14 @@
       "fct": [
         "11===0.2"
       ],
-      "เพิ่ม Damage Cannon Spear": [
-        "EQUIP[Boost Lance-OS]===4"
+      "Cannon Spear": [
+        "EQUIP[Boost Lance-OS]REFINE[weapon==2]---4"
       ],
-      "เพิ่ม Damage Severe Rainstorm": [
-        "EQUIP[MH-P89-OS]===10"
+      "Severe Rainstorm": [
+        "EQUIP[MH-P89-OS]10"
       ],
-      "ลด Global Cooldown": [
-        "EQUIP[AC-B44-OS]===10"
+      "acd": [
+        "EQUIP[AC-B44-OS]10"
       ]
     }
   },
@@ -35902,7 +36513,7 @@
     "location": null,
     "compositionPos": null,
     "usableClass": [
-      "Summoner (Doram)"
+      "Doram"
     ],
     "script": {
       "matk": [
@@ -35912,7 +36523,8 @@
         "2---15"
       ],
       "atkPercent": [
-        "3---2"
+        "3---2",
+        "EQUIP[Great Hero Boots]===7"
       ],
       "Lunatic Carrot Beat": [
         "7===25"
@@ -35931,6 +36543,9 @@
       ],
       "Catnip Meteor": [
         "11===25"
+      ],
+      "luk": [
+        "EQUIP[Great Hero Boots]===10"
       ],
       "matkPercent": [
         "EQUIP[Great Hero Boots]===7"

@@ -1866,7 +1866,7 @@ export class Calculator {
 
     if (isValidSkill) {
       this._class.activeSkills;
-      const { formula, cri, canCri, element, isMatk, isIgnoreDef = false, totalHit = 1 } = skillData;
+      const { formula, cri, canCri, element, isMatk, isHit100, isIgnoreDef = false, totalHit = 1 } = skillData;
       const baseSkillDamage =
         formula({
           model: this.model,
@@ -1881,7 +1881,7 @@ export class Calculator {
       this.baseSkillDamage = this.floor(baseSkillDamage);
       this.isMagicalSkill = isMatk;
       this.skillTotalHits = totalHit;
-      this.skillAccuracy = isMatk ? 100 : this.accuracy;
+      this.skillAccuracy = isMatk || isHit100 ? 100 : this.accuracy;
       this.skillPene = isIgnoreDef ? 100 : isMatk ? this.totalMagicalPene : this.totalPhysicalPene;
 
       // HawkEye
@@ -1917,7 +1917,7 @@ export class Calculator {
       const hitKill = Math.ceil(this.monster.stats.health / minDamage);
       this.damageSummary = {
         ...this.damageSummary,
-        skillTotalPene: isMatk ? this.totalMagicalPene : this.totalPhysicalPene,
+        skillTotalPene: this.skillPene,
         skillMinDamage: minDamage,
         skillMaxDamage: maxDamage,
         skillMinDamageHE: minDamageHE,

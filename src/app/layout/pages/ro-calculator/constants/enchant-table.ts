@@ -410,13 +410,23 @@ const enchantTable: EntTable[] = [
   { name: 'Old_Protect_Of_Crown', enchants: [null, labHead2, BaseState._3_5, BaseState._3_5] },
   { name: 'Old_Camo_RabbitHood', enchants: [null, labHead2, BaseState._3_5, BaseState._3_5] },
 
+  { name: 'S_Circlet_Of_Time_RK', enchants: [null, labHead2, tempHead3, tempHead4] },
+  { name: 'S_Circlet_Of_Time_LG', enchants: [null, labHead2, tempHead3, tempHead4] },
+  { name: 'S_Circlet_Of_Time_NC', enchants: [null, labHead2, tempHead3, tempHead4] },
+  { name: 'S_Circlet_Of_Time_GN', enchants: [null, labHead2, tempHead3, tempHead4] },
   { name: 'S_Circlet_Of_Time_GC', enchants: [null, labHead2, tempHead3, tempHead4] },
   { name: 'S_Circlet_Of_Time_SU', enchants: [null, labHead2, tempHead3, tempHead4] },
   { name: 'S_Circlet_Of_Time_SC', enchants: [null, labHead2, tempHead3, tempHead4] },
   { name: 'S_Circlet_Of_Time_AB', enchants: [null, labHead2, tempHead3, tempHead4] },
+  { name: 'S_Circlet_Of_Time_SR', enchants: [null, labHead2, tempHead3, tempHead4] },
   { name: 'S_Circlet_Of_Time_RA', enchants: [null, labHead2, tempHead3, tempHead4] },
+  { name: 'S_Circlet_Of_Time_SJ', enchants: [null, labHead2, tempHead3, tempHead4] },
   { name: 'S_Circlet_Of_Time_SP', enchants: [null, labHead2, tempHead3, tempHead4] },
   { name: 'S_Circlet_Of_Time_RL', enchants: [null, labHead2, tempHead3, tempHead4] },
+  { name: 'S_Circlet_Of_Time_OB', enchants: [null, labHead2, tempHead3, tempHead4] },
+  { name: 'S_Circlet_Of_Time_KG', enchants: [null, labHead2, tempHead3, tempHead4] },
+  { name: 'S_Circlet_Of_Time_NV', enchants: [null, labHead2, tempHead3, tempHead4] },
+  { name: 'S_Circlet_Of_Time_SU', enchants: [null, labHead2, tempHead3, tempHead4] },
 
   { name: 'Katar_170', enchants: [null, null, ea35, ea35] },
 

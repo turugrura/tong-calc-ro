@@ -29,6 +29,7 @@ export interface AtkSkillModel {
   isMatk?: boolean;
   isMelee?: boolean;
   isIgnoreDef?: boolean;
+  isHit100?: boolean;
   element?: ElementType;
 }
 [];
