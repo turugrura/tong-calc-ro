@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.3
+
+- Fixed weapon cannot comparing
+- Added items & monsters
+
 ## 1.0.2
 
 - Fixed EDP calculation
