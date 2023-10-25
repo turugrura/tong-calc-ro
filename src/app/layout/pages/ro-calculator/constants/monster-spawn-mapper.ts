@@ -7,6 +7,8 @@ const Mapper = {
   mag_dun03: '175 - 185 mag3 แมก3',
   prt_mz03_i: '170 - 175  ป่าบาโฟ Bapho',
   ein_dun03: '175 - xxx เหมือง 3',
+  abyss_04: '190 - 200 มังกร 4',
+  odin_past: '190 - 200 odin 4',
   iz_d04_i: 'Iillusion of under water 4',
   iz_d05_i: 'Iillusion of under water 5',
   hero_tra: 'Test damage',
