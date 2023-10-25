@@ -81,7 +81,7 @@ export const AspdTable: Partial<Record<ClassName, XX>> = {
   [ClassName.Rebellion]: {
     base: 146,
     shield: -6,
-    Pistol: 5,
+    Revolver: 5,
     Rifle: -5,
     Shotgun: -40,
     'Gatling Gun': 0,

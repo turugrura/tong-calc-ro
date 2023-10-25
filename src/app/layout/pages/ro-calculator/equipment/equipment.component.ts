@@ -58,6 +58,9 @@ export class EquipmentComponent {
   @Input() option2Value = undefined;
   @Output() option2ValueChange = new EventEmitter<string>();
 
+  @Input() option3Value = undefined;
+  @Output() option3ValueChange = new EventEmitter<string>();
+
   totalCardSlots = 0;
   enchant2List: DropdownModel[] = [];
   enchant3List: DropdownModel[] = [];
@@ -86,15 +89,9 @@ export class EquipmentComponent {
       }
     };
 
-    this.enchant2List = (e2 ?? [])
-      .map((a: any) => this.mapEnchant.get(a))
-      .map((a: any) => ({ label: a.name, value: a.id }));
-    this.enchant3List = (e3 ?? [])
-      .map((a: any) => this.mapEnchant.get(a))
-      .map((a: any) => ({ label: a.name, value: a.id }));
-    this.enchant4List = (e4 ?? [])
-      .map((a: any) => this.mapEnchant.get(a))
-      .map((a: any) => ({ label: a.name, value: a.id }));
+    this.enchant2List = (e2 ?? []).map((a: any) => this.mapEnchant.get(a)).map((a: any) => ({ label: a.name, value: a.id }));
+    this.enchant3List = (e3 ?? []).map((a: any) => this.mapEnchant.get(a)).map((a: any) => ({ label: a.name, value: a.id }));
+    this.enchant4List = (e4 ?? []).map((a: any) => this.mapEnchant.get(a)).map((a: any) => ({ label: a.name, value: a.id }));
 
     clearModel();
   }

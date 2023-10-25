@@ -72,6 +72,9 @@ export abstract class CharacterBase {
   private allClass = 'all';
 
   protected abstract readonly CLASS_NAME: ClassName;
+  /**
+   * str, agi, vit, int, dex, luk
+   */
   protected abstract readonly JobBonusTable: Record<number, [number, number, number, number, number, number]>;
 
   protected abstract initialStatusPoint: number;

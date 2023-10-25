@@ -277,6 +277,7 @@ const createMainStatOptionList = () => {
   const options: [string, string, number, number][] = [
     ['Atk', 'atk', 1, 15],
     ['Matk', 'matk', 1, 15],
+    ['Hit', 'hit', 1, 15],
     ['ASPD', 'aspd', 1, 1],
     ['ASPD %', 'aspdPercent', 1, 5],
     ['All Stat', 'allStatus', 1, 10],
@@ -722,7 +723,10 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
               }
             }
 
-            if (!hasMainItem) return agg;
+            if (!hasMainItem) {
+              model2[`${itemTypeName}Refine`] = null;
+              return agg;
+            }
 
             model2[`${itemTypeName}Refine`] = this.model2[`${itemTypeName}Refine`] || 0;
 
@@ -929,7 +933,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   }
 
   private calcCompare() {
-    if (this.compareItemNames.length > 0) {
+    if (this.compareItemNames?.length > 0) {
       const m2 = JSON.parse(JSON.stringify(this.model2));
       const calc2 = this.prepare(this.calculator2, m2);
       this.totalSummary2 = calc2.getTotalSummary();

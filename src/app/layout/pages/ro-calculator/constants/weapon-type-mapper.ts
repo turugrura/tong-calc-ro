@@ -16,7 +16,7 @@ export const WeaponSubTypeNameMapById = {
   270: 'Whip',
   271: 'Book',
   272: 'Katar',
-  273: 'Pistol',
+  273: 'Revolver',
   274: 'Rifle',
   275: 'Gatling Gun',
   276: 'Shotgun',

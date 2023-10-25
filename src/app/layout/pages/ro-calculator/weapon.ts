@@ -1,16 +1,8 @@
 import { ItemModel } from './models/item.model';
-import {
-  WeaponSubTypeName,
-  WeaponSubTypeNameMapById,
-  WeaponTypeName,
-  WeaponTypeNameMapBySubTypeId,
-} from './constants/weapon-type-mapper';
+import { WeaponSubTypeName, WeaponSubTypeNameMapById, WeaponTypeName, WeaponTypeNameMapBySubTypeId } from './constants/weapon-type-mapper';
 import { ElementType } from './constants/element-type.const';
 
-const weaponUpgradeTable: Record<
-  number,
-  Record<number, { bonus: number; overUpgrade: number; highUpgrade: number }>
-> = {
+const weaponUpgradeTable: Record<number, Record<number, { bonus: number; overUpgrade: number; highUpgrade: number }>> = {
   1: {
     1: { bonus: 2, overUpgrade: 0, highUpgrade: 0 },
     2: { bonus: 4, overUpgrade: 0, highUpgrade: 0 },

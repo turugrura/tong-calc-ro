@@ -1963,6 +1963,30 @@
       ]
     }
   },
+  "4064": {
+    "id": 4064,
+    "aegisName": "Zerom_Card",
+    "name": "Zerom Card",
+    "unidName": "Card",
+    "resName": "이름없는카드",
+    "description": "DEX + 3\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Accessory^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 136,
+    "cardPrefix": "Nimble",
+    "script": {
+      "dex": [
+        "3"
+      ]
+    }
+  },
   "4065": {
     "id": 4065,
     "aegisName": "Kaho_Card",
@@ -2388,6 +2412,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 769,
+    "cardPrefix": "of Caster",
     "script": {
       "vct": [
         "1---1"
@@ -2675,6 +2700,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 769,
+    "cardPrefix": "Muscular",
     "script": {
       "p_class_all": [
         "2",
@@ -14234,6 +14260,66 @@
       "all"
     ]
   },
+  "22259": {
+    "id": 22259,
+    "aegisName": null,
+    "name": "Tohil's Shoes [1]",
+    "unidName": "Tohil's Shoes",
+    "resName": "포로로카슈즈",
+    "description": "จงเต้นรำและสรรเสริญถึง \"คิงมาร์ติน\" ผู้เป็นลอร์ดทั้งสามเหล่าชั้น นั่นคือลอร์ดแห่งสายฝน ลอร์ดแห่งข้าวโพด และลอร์ดแห่งขุนเขาทั้งปวง\n\nเมื่อใช้สกิล เพิ่มปริมาณการใช้ SP 10%\nลดระยะเวลาร่ายแบบแปรผัน 10%\nเพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูเผ่า Demi-Human, Player, Demon, Undead 10%\n\nเมื่อสวมใส่ร่วมกับ Burning Knuckle-OS [2],\nลด Cooldown สกิล Lightning Ride 0.5 วินาที\nทุก ๆ การอัพเกรด Tohil's Shoes 3 ขั้น เพิ่ม Damage สกิล Lightning Ride 20%\n\nเมื่อสวมใส่ร่วมกับ Ultio-OS [2],\nลด Cooldown สกิล Adoramus 1 วินาที\nทุก ๆ การอัพเกรด Tohil's Shoes 3 ขั้น เพิ่ม Damage ทางเวทมนตร์ธาตุ Holy 10%\n\nเมื่อสวมใส่ร่วมกับ Ultio-OS [2] และ Arch Bishop Shadow Weapon,\nเพิ่ม Cooldown สกิล Adoramus 1 วินาที\nประเภท : ^777777Shoes^000000  พลังป้องกัน : ^77777720^000000\nน้ำหนัก : ^77777730^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 516,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 20,
+    "weight": 30,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "spPercentCost": [
+        "SKILL[ ]===10"
+      ],
+      "vct": [
+        "10"
+      ],
+      "p_race_demihuman": [
+        "10"
+      ],
+      "p_race_demon": [
+        "10"
+      ],
+      "p_race_undead": [
+        "10"
+      ],
+      "m_race_demihuman": [
+        "10"
+      ],
+      "m_race_demon": [
+        "10"
+      ],
+      "m_race_undead": [
+        "10"
+      ],
+      "cd__Lightning Ride": [
+        "EQUIP[Burning Knuckle-OS]0.5"
+      ],
+      "Lightning Ride": [
+        "EQUIP[Burning Knuckle-OS]3---20"
+      ],
+      "cd__Adoramus": [
+        "EQUIP[Ultio-OS]1",
+        "EQUIP[Ultio-OS&&Arch Bishop Shadow Weapon]-1"
+      ],
+      "m_my_element_holy": [
+        "EQUIP[Ultio-OS]3---10"
+      ]
+    }
+  },
   "22264": {
     "id": 22264,
     "aegisName": null,
@@ -14426,6 +14512,73 @@
       "criDmg": [
         "7===1",
         "EQUIP[Critical Shadow Armor]REFINE[shadowWeapon,shadowArmor==15]1"
+      ]
+    }
+  },
+  "24150": {
+    "id": 24150,
+    "aegisName": "S_Infinity_Earring",
+    "name": "Infinity Shadow Earring",
+    "unidName": "Shadow Earring",
+    "resName": "이어링쉐도우",
+    "description": "ต่างหูมงคลที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา \nเพิ่ม Damage เมื่อโจมตีศัตรูขนาดเล็ก, กลาง, ใหญ่ด้วยการโจมตีทางกายภาพและทางเวทย์ 1%\nเมื่ออัพเกรดถึงขั้น 7, เพิ่ม Damage เพิ่มเติม เมื่อโจมตีศัตรูขนาดเล็ก, กลาง, ใหญ่ด้วยการโจมตีทางกายภาพและทางเวทย์1%\nเมื่ออัพเกรดถึงขั้น 9, เพิ่ม Damage เพิ่มเติม เมื่อโจมตีศัตรูขนาดเล็ก, กลาง, ใหญ่ด้วยการโจมตีทางกายภาพและทางเวทย์ 1%\nเมื่อสวมใส่ร่วมกันกับ Infinity Shadow Earring และ Infinity Shadow Pendant, ATK + 1% \nเมื่อค่าอัพเกรดรวมกันมีค่ามากกว่า 15 ขึ้นไป, ยกเลิกการลงโทษขนาดของอาวุธ  \nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Earring ^000000น้ำหนัก :  ^7777770^000000\nเลเวลที่ต้องการ: ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 529,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Accessory",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "p_size_all": [
+        "1",
+        "7===1",
+        "9===1"
+      ],
+      "m_size_all": [
+        "1",
+        "7===1",
+        "9===1"
+      ],
+      "atkPercent": [
+        "EQUIP[Infinity Shadow Pendant]1"
+      ],
+      "ignore_size_penalty": [
+        "EQUIP[Infinity Shadow Pendant]REFINE[shadowEarring,shadowPendant==15]===1"
+      ]
+    }
+  },
+  "24151": {
+    "id": 24151,
+    "aegisName": "S_Infinity_Pendant",
+    "name": "Infinity Shadow Pendant",
+    "unidName": "Shadow Pendant",
+    "resName": "펜던트쉐도우",
+    "description": "สร้อยคอศักดิ์สิทธิ์ที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา \nลด Damage เมื่อถูกศัตรูขนาดเล็ก, กลาง, ใหญ่โจมตี 1%.\nเมื่ออัพเกรดถึงขั้น 7, ลด Damage เพิ่มเติม เมื่อถูกศัตรูขนาดเล็ก, กลาง, ใหญ่โจมตี 1%\nเมื่ออัพเกรดถึงขั้น 9, ลด Damage เพิ่มเติม เมื่อถูกศัตรูขนาดเล็ก, กลาง, ใหญ่โจมตี 1%\nIเมื่อสวมใส่ร่วมกันกับ Infinity Shadow Pendant และ Infinity Shadow Earring, ATK + 1%.\nเมื่อค่าอัพเกรดรวมกันมีค่ามากกว่า 15 ขึ้นไป, ยกเลิกการลงโทษขนาดของอาวุธ \nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Pandant ^000000น้ำหนัก :  ^7777770^000000\nเลเวลที่ต้องการ: ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 530,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Accessory",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "decrease_dmg_size_all": [
+        "1",
+        "7===1",
+        "9===1"
       ]
     }
   },
@@ -16618,6 +16771,70 @@
     "script": {
       "allStatus": [
         "1"
+      ]
+    }
+  },
+  "24341": {
+    "id": 24341,
+    "aegisName": "S_AllRace_Shoes",
+    "name": "All Race Shadow Shoes",
+    "unidName": "Shadow Shoes",
+    "resName": "슈즈쉐도우3",
+    "description": "รองเท้าที่สวมใส่เพิ่มเติม สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์ของมันจะลดน้อยลง\nเพิ่ม Damage ต่อศัตรูทุกเผ่า 2%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ต่อศัตรูทุกเผ่า 1%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ต่อศัตรูทุกเผ่า 2%\nเมื่อสวมใส่ ^32CD32All Race Shadow Shoes^000000 ร่วมกับ ^32CD32All Race Shadow Shield^000000, เพิ่ม EXP ที่ได้รับจากมอนสเตอร์ 3%\nประเภท : ^777777Shadow Equipment^000000\nตำแหน่ง : ^777777Shoes^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 528,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Shoes",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "p_race_all": [
+        "2",
+        "7===1",
+        "9===2"
+      ],
+      "m_race_all": [
+        "2",
+        "7===1",
+        "9===2"
+      ],
+      "exp": [
+        "EQUIP[All Race Shadow Shield]3"
+      ]
+    }
+  },
+  "24342": {
+    "id": 24342,
+    "aegisName": "S_AllRace_Shield",
+    "name": "All Race Shadow Shield",
+    "unidName": "Shadow Shield",
+    "resName": "쉴드쉐도우3",
+    "description": "โล่เล็กที่สามารถสวมใส่ที่แขนได้ สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์การป้องกันของมันจะลดน้อยลง\nลด Damage จากศัตรูทุกประเภท 1%\nเมื่ออัพเกรดถึงขั้น 7, ลด Damage จากศัตรูทุกประเภท 1% เพิ่มเติม\nเมื่ออัพเกรดถึงขั้น 9, ลด Damage จากศัตรูทุกประเภท 1% เพิ่มเติม\nเมื่อสวมใส่ ^32CD32All Race Shadow Shield^000000 ร่วมกับ ^32CD32All Race Shadow Shoes^000000, เพิ่ม EXP ที่ได้รับจากมอนสเตอร์ 3%\nประเภท : ^777777Shadow Equipment^000000\nตำแหน่ง : ^777777Shield^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 527,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Shield",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "decrease_dmg_race_all": [
+        "1",
+        "7===1",
+        "9===1"
       ]
     }
   },
@@ -20543,7 +20760,7 @@
     "location": "Shield",
     "compositionPos": null,
     "usableClass": [
-      "Gunsliger"
+      "Gunslinger"
     ],
     "script": {
       "Round Trip": [
@@ -20570,7 +20787,7 @@
     "location": "Armor",
     "compositionPos": null,
     "usableClass": [
-      "Gunsliger"
+      "Gunslinger"
     ],
     "script": {
       "p_size_all": [
@@ -21455,6 +21672,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 16,
+    "cardPrefix": "Fox Tail",
     "script": {
       "cri": [
         "5",
@@ -21927,6 +22145,31 @@
       ]
     }
   },
+  "27159": {
+    "id": 27159,
+    "aegisName": "Uzhas_Card",
+    "name": "Uzhas Card",
+    "unidName": "Uzhas Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่มพลังโจมตีทางเวทย์ที่สร้างต่อศัตรูเผ่า Demon 10%, เมื่ออัพเกรด Headgear ขั้น 9 เพิ่มพลังโจมตีทางเวทย์ที่สร้างต่อศัตรูเผ่า Demon อีก 5%\nประเภท : ^777777Card^000000\nตำแหน่ง : ^777777Headgear^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 769,
+    "cardPrefix": "Demon Hunter",
+    "script": {
+      "m_race_demon": [
+        "10",
+        "9===5"
+      ]
+    }
+  },
   "27161": {
     "id": 27161,
     "aegisName": "Mavka_Card",
@@ -22287,6 +22530,42 @@
       ]
     }
   },
+  "27249": {
+    "id": 27249,
+    "aegisName": "Archi_Card",
+    "name": "Arhi Card",
+    "unidName": "Arhi Card",
+    "resName": "이름없는카드",
+    "description": "ATK + 15, MATK + 15, MHP + 500, HIT + 15, FLEE + 15\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Shoes^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 64,
+    "cardPrefix": "Archi",
+    "script": {
+      "atk": [
+        "15"
+      ],
+      "matk": [
+        "15"
+      ],
+      "hp": [
+        "500"
+      ],
+      "hit": [
+        "15"
+      ],
+      "flee": [
+        "15"
+      ]
+    }
+  },
   "27257": {
     "id": 27257,
     "aegisName": "Kuro_Akuma_Card",
@@ -22404,6 +22683,34 @@
       ]
     }
   },
+  "27288": {
+    "id": 27288,
+    "aegisName": "Pitman_Worker_Card",
+    "name": "Hardworking Pitman Card",
+    "unidName": "Hardworking Pitman Card",
+    "resName": "이름없는카드",
+    "description": "HIT + 10, ATK + 5%\nเมื่ออัพเกรดถึงขั้น 10, HIT +5\n^ffffff_^000000\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Armor^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 16,
+    "cardPrefix": "of Worker",
+    "script": {
+      "hit": [
+        "10",
+        "10===5"
+      ],
+      "atkPercent": [
+        "5"
+      ]
+    }
+  },
   "27289": {
     "id": 27289,
     "aegisName": "Fragment_Of_Soul_Card",
@@ -22509,14 +22816,14 @@
     "cardPrefix": "Fire Dance",
     "script": {
       "hit": [
-        "[weaponType=Pistol]20"
+        "[weaponType=Revolver]20"
       ],
       "range": [
-        "[weaponType=Pistol]5",
-        "[weaponType=Pistol]1---1"
+        "[weaponType=Revolver]5",
+        "[weaponType=Revolver]1---1"
       ],
       "Fire Dance": [
-        "[weaponType=Pistol]10===15"
+        "[weaponType=Revolver]10===15"
       ]
     }
   },
@@ -22568,6 +22875,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 769,
+    "cardPrefix": "of Holy Power",
     "script": {
       "matk": [
         "10"
@@ -23981,6 +24289,49 @@
       ],
       "ลดปริมาณการใช้ SP เมื่อใช้สกิล Round Trip": [
         "9===5"
+      ]
+    }
+  },
+  "28244": {
+    "id": 28244,
+    "aegisName": "Gate_KeeperDD_IL",
+    "name": "Illusion Gate Keeper-DD [2]",
+    "unidName": "Shotgun",
+    "resName": "Gate_KeeperDD_IL",
+    "description": "ปืนที่ดัดแปลงจาก Gate Keeper ด้วย Oridecon บริสุทธิ์ทำให้ทนทานมากยิ่งขึ้น]\nการโจมตีแบบกระจาย, DEX + 1\nทุก ๆ การอัพเกรด 2 ขั้น, เพิ่ม Damage ทางกายภาพระยะไกล 5%\nเมื่ออัพเกรดถึงขั้น 7, ASPD 15%\nเมื่ออัพเกรดถึงขั้น 9, เพิ่ม Damage ทางกายภาพระยะไกล 5% เพิ่มเติม\nเมื่ออัพเกรดถึงขั้น 11, ถ้าโจมตีทางกายภาพระยะไกลทั่วไป มีโอกาสที่จะใช้งานสกิล Spread Shot Lv.6\n(ถ้าหากเลเวลที่เรียนไว้สูงกว่านี้ จะใช้งานตามเลเวลที่เรียนรู้)\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Illusion Hot-blooded Headband, ATK + 10%\nเมื่อค่าอัพเกรดของ Illusion Gate Keeper-DD และ Illusion Hot-blooded Headband ตั้งแต่ 7 ขึ้นไป, ASPD + 2\nเมื่อค่าอัพเกรดรวมกันตั้งแต่ 18 ขึ้นไป, เพิ่ม Damage ทางกายภาพระยะไกล 10%  \nเมื่อค่าอัพเกรดรวมกันตั้งแต่ 22 ขึ้นไป, เพิ่ม Damage ของสกิล Spread Shot 30%\n^ffffff_^000000\nประเภท : ^777777Shotgun^000000 พลังโจมตี : ^777777240^000000\nน้ำหนัก : ^777777130^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777120^000000\nอาชีพที่ใส่ได้ ^777777Rebeillion Cls^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 276,
+    "itemLevel": 4,
+    "attack": 240,
+    "defense": null,
+    "weight": 130,
+    "requiredLevel": 120,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Rebellion"
+    ],
+    "script": {
+      "dex": [
+        "1"
+      ],
+      "range": [
+        "2---5",
+        "9===5",
+        "EQUIP[Illusion Gate Keeper-DD&&Illusion Hot-blooded Headband]REFINE[weapon,headUpper==18]===10"
+      ],
+      "aspdPercent": [
+        "7===15"
+      ],
+      "atkPercent": [
+        "EQUIP[Illusion Hot-blooded Headband]===10"
+      ],
+      "aspd": [
+        "EQUIP[Illusion Gate Keeper-DD&&Illusion Hot-blooded Headband]REFINE[headUpper==7]7===2"
+      ],
+      "Spread Shot": [
+        "EQUIP[Illusion Gate Keeper-DD&&Illusion Hot-blooded Headband]REFINE[weapon,headUpper==22]===30"
       ]
     }
   },
@@ -30535,6 +30886,56 @@
       ]
     }
   },
+  "32302": {
+    "id": 32302,
+    "aegisName": "Crimson_Rose",
+    "name": "Crimson Rose [2]",
+    "unidName": "Revolver",
+    "resName": "무쌍총",
+    "description": "Revolver ที่ประดับตกแต่งด้วยดอกกุหลาบสีแดงสด ที่มือปืนสุดชำนาญการที่สุดได้เคยใช้มัน \nดูเหมือนจะตอบรับกันกับ Ancient Hero Boots\n\nทุกการอัพเกรด 2 ขั้น ATK + 10.\nทุกการอัพเกรด 3 ขั้น, เพิ่ม ASPD ทีละ +3% \nเมื่ออัพเกรดขั้น 7, ASPD + 1, ATK + 5%\nเมื่ออัพเกรดขั้น 9, เพิ่ม Critical Damage 20%\nเมื่ออัพเกรดขั้น 11, เมื่อใช้ Hot Barrel เพิ่ม CRI +20 และเพิ่มดาเมจทางกายภาพระยะไกล 15% เป็นเวลา 60 วินาที\nถ้าสวมใส่ร่วมกันกับ Ancient Hero Boots เมื่อทำการโจมตีทางกายภาพจะมีโอกาส (3%) ที่จะเพิ่ม DEX + 20,และพลังโจมตีทางกายภาพระยะไกลเพิ่ม 10% เป็นเวลา 7 วินาที\n\nประเภท : ^777777Revolver^000000 พลังโจมตี : ^777777150^000000\nน้ำหนัก : ^77777770^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777สำหรับ Rebellion^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 273,
+    "itemLevel": 4,
+    "attack": 150,
+    "defense": null,
+    "weight": 70,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Rebellion"
+    ],
+    "script": {
+      "atk": [
+        "2---10"
+      ],
+      "aspdPercent": [
+        "3---3"
+      ],
+      "aspd": [
+        "7===1"
+      ],
+      "atkPercent": [
+        "7===5"
+      ],
+      "criDmg": [
+        "9===20"
+      ],
+      "cri": [
+        "REFINE[11]ACTIVE_SKILL[Hot Barrel]20"
+      ],
+      "range": [
+        "REFINE[11]ACTIVE_SKILL[Hot Barrel]15"
+      ],
+      "chance__dex": [
+        "EQUIP[Ancient Hero Boots]20"
+      ],
+      "chance__range": [
+        "EQUIP[Ancient Hero Boots]10"
+      ]
+    }
+  },
   "32304": {
     "id": 32304,
     "aegisName": "R_Revolver",
@@ -34594,6 +34995,45 @@
       ],
       "Spore Explosion": [
         "EQUIP[Old Midas Whisper]40"
+      ]
+    }
+  },
+  "490265": {
+    "id": 490265,
+    "aegisName": null,
+    "name": "Inception Ring [1]",
+    "unidName": "Inception Ring",
+    "resName": "초록반지",
+    "description": "ณ ยุคเริ่มต้นของโลก แหวนวิเศษอันทรงพลังถูกสร้างขึ้นโดยพ่อมดผู้ทะเยอทะยานเพื่อพิชิตโลกใบนี้\n\nลดระยะเวลาร่ายแบบแปรผัน 20%, ASPD +1\nเมื่อโจมตีทางเวทมนตร์ มีโอกาส 1% ที่จะร่ายสกิล [Recognized Spell] Lv. 1\n\nเมื่อสวมใส่ร่วมกับ The Spirit Of World หรือ [Not For Sale] The Spirit Of World\nMATK + 30\nลดระยะเวลาร่ายแบบแปรผัน 5%\nลดระยะเวลาร่ายแบบคงที่ 0.2 วินาที\nเพิ่ม Damage ทางเวทมนตร์ต่อมอนสเตอร์ประเภท Boss 20%\nประเภท : ^777777Accessory(Right)^000000 พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^77777730^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 510,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 30,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "vct": [
+        "20",
+        "EQUIP[The Spirit Of World]5"
+      ],
+      "aspd": [
+        "1"
+      ],
+      "matk": [
+        "EQUIP[The Spirit Of World]30"
+      ],
+      "fct": [
+        "EQUIP[The Spirit Of World]0.2"
+      ],
+      "m_class_boss": [
+        "EQUIP[The Spirit Of World]20"
       ]
     }
   },
