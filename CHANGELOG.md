@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.4
+
+- Added Ranger, SR & Sorcerer skill to get bonus
+- Added items
+- Support 4th slot garment costume
+
 ## 1.0.3
 
 - Fixed weapon cannot comparing

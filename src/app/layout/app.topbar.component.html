@@ -3,7 +3,18 @@
         <img src="assets/layout/images/{{layoutService.config.colorScheme === 'light' ? 'logo-dark' : 'logo-white'}}.svg" alt="logo">
         <span>SAKAI</span>
       </a> -->
-  <span>V1.0.3</span>
+  <span class="px-2">{{ lastestVersion }}</span>
+  <button pButton class="p-button-rounded p-button-text p-button-info" (click)="showUpdateDialog()">
+    <i
+      *ngIf="showUnreadVersion > 0"
+      class="pi pi-bell text-xl"
+      severity="danger"
+      pBadge
+      value="{{ showUnreadVersion }}"
+    ></i>
+    <i *ngIf="showUnreadVersion === 0" class="pi pi-bell text-xl" severity="danger"></i>
+  </button>
+  <!-- <i (click)="showDialog()" class="pi pi-bell text-3xl" pBadge value="2"></i> -->
 
   <!-- <button #menubutton class="p-link layout-menu-button layout-topbar-button" (click)="layoutService.onMenuToggle()">
         <i class="pi pi-bars"></i>
@@ -13,7 +24,11 @@
         <i class="pi pi-ellipsis-v"></i>
     </button> -->
 
-  <div #topbarmenu class="layout-topbar-menu" [ngClass]="{ 'layout-topbar-menu-mobile-active': layoutService.state.profileSidebarVisible }">
+  <div
+    #topbarmenu
+    class="layout-topbar-menu"
+    [ngClass]="{ 'layout-topbar-menu-mobile-active': layoutService.state.profileSidebarVisible }"
+  >
     <!-- <button class="p-link layout-topbar-button">
             <i class="pi pi-calendar"></i>
             <span>Calendar</span>
@@ -62,7 +77,14 @@
       (click)="showDialog()"
     ></button>
   </div>
-  <p-dialog header="Support" [draggable]="false" [resizable]="false" [modal]="true" [(visible)]="visible" [style]="{ 'min-width': '300px' }">
+  <p-dialog
+    header="Support"
+    [draggable]="false"
+    [resizable]="false"
+    [modal]="true"
+    [(visible)]="visible"
+    [style]="{ 'min-width': '300px' }"
+  >
     <div class="card flex flex-column align-items-center gap-2 flex-wrap">
       <div>
         <img src="assets/demo/images/others/qr.jpg" alt="QR" style="width: 300px" />
@@ -76,7 +98,14 @@
     </div>
   </p-dialog>
 
-  <p-dialog header="ข้อมูลเพิ่มเติม" [draggable]="false" [resizable]="false" [modal]="true" [(visible)]="visibleInfo" [style]="{ width: '50vw' }">
+  <p-dialog
+    header="ข้อมูลเพิ่มเติม"
+    [draggable]="false"
+    [resizable]="false"
+    [modal]="true"
+    [(visible)]="visibleInfo"
+    [style]="{ width: '50vw' }"
+  >
     <div class="card flex flex-column align-items-center gap-2 flex-wrap">
       <ul>
         <li *ngFor="let info of infos">{{ info }}</li>
@@ -88,6 +117,23 @@
           <p-chip label="Tong Aphisit" icon="pi pi-facebook"></p-chip>
         </a>
       </div>
+    </div>
+  </p-dialog>
+
+  <p-dialog
+    header="CHANGELOG"
+    [draggable]="false"
+    [resizable]="false"
+    [modal]="true"
+    [(visible)]="visibleUpdate"
+    (onHide)="onHideUpdateDialog()"
+    [style]="{ width: '60vw' }"
+  >
+    <div *ngFor="let update of updates">
+      <span>{{ update.v }}</span>
+      <ul>
+        <li *ngFor="let log of update.logs">{{ log }}</li>
+      </ul>
     </div>
   </p-dialog>
 </div>

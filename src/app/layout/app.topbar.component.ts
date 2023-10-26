@@ -33,10 +33,45 @@ export class AppTopBarComponent {
     'Tab "Item Descriptions" คือ bonus ของไอเทมแต่ละชิ้นและคำอธิบาย (เอาไว้ตรวจสอบว่าได้ bonus ถูกไหม)',
   ];
 
-  constructor(public layoutService: LayoutService) { }
+  updates = [
+    {
+      v: 'V1.0.4',
+      logs: ['Added Ranger, SR & Sorcerer skill to get bonus', 'Added items', 'Support 4th slot garment costume'],
+    },
+    {
+      v: 'V1.0.3',
+      logs: ['Fixed cannot compare weapon', 'Added items & monsters'],
+    },
+    {
+      v: 'V1.0.2',
+      logs: ['Fixed EDP calculation', 'Changed Rolling Cutter to Melee damage'],
+    },
+    {
+      v: 'V1.0.1',
+      logs: ['Fixed items bonus', 'Fixed a dark monster calculation', 'Update Racing cap & Enchants'],
+    },
+  ];
+  localVersion = localStorage.getItem('version') || '';
+  lastestVersion = this.updates[0].v;
+
+  unreadVersion = this.updates.findIndex((a) => a.v === this.localVersion);
+  showUnreadVersion = this.unreadVersion === -1 ? this.updates.length + 1 : this.unreadVersion;
+
+  visibleUpdate = this.lastestVersion !== this.localVersion;
+
+  constructor(public layoutService: LayoutService) {}
 
   showDialog() {
     this.visible = true;
+  }
+
+  showUpdateDialog() {
+    this.visibleUpdate = true;
+  }
+
+  onHideUpdateDialog() {
+    localStorage.setItem('version', this.updates[0].v);
+    this.showUnreadVersion = 0;
   }
 
   showInfoDialog() {
