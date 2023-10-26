@@ -24259,6 +24259,245 @@
       ]
     }
   },
+  "27427": {
+    "id": 27427,
+    "aegisName": null,
+    "name": "Loft Stone (STR)",
+    "unidName": "Loft Stone Garment(STR)",
+    "resName": "마법석화",
+    "description": "ลด Delay หลังใช้สกิล 5%\nเพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูทุกประเภท 5%\nATK +50",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 75,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "acd": [
+        "5"
+      ],
+      "p_class_all": [
+        "5"
+      ],
+      "m_class_all": [
+        "5"
+      ],
+      "atk": [
+        "50"
+      ]
+    }
+  },
+  "27428": {
+    "id": 27428,
+    "aegisName": null,
+    "name": "Loft Stone (LUK)",
+    "unidName": "Loft Stone Garment(LUK)",
+    "resName": "마법석지",
+    "description": "ลด Delay หลังใช้สกิล 5%\nเพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูทุกประเภท 5%\nCritical Damage +10%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 75,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "acd": [
+        "5"
+      ],
+      "p_class_all": [
+        "5"
+      ],
+      "m_class_all": [
+        "5"
+      ],
+      "criDmg": [
+        "10"
+      ]
+    }
+  },
+  "27429": {
+    "id": 27429,
+    "aegisName": null,
+    "name": "Loft Stone (DEX)",
+    "unidName": "Loft Stone Garment(DEX)",
+    "resName": "마법석풍",
+    "description": "ลด Delay หลังใช้สกิล 5%\nเพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูทุกประเภท 5%\nเพิ่ม Damage ทางกายภาพระยะไกล 5%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 75,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "acd": [
+        "5"
+      ],
+      "p_class_all": [
+        "5"
+      ],
+      "m_class_all": [
+        "5"
+      ],
+      "range": [
+        "5"
+      ]
+    }
+  },
+  "27430": {
+    "id": 27430,
+    "aegisName": null,
+    "name": "Loft Stone (INT)",
+    "unidName": "Loft Stone Garment(INT)",
+    "resName": "마법석수",
+    "description": "ลด Delay หลังใช้สกิล 5%\nเพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูทุกประเภท 5%\nMATK +50",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 75,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "acd": [
+        "5"
+      ],
+      "p_class_all": [
+        "5"
+      ],
+      "m_class_all": [
+        "5"
+      ],
+      "matk": [
+        "50"
+      ]
+    }
+  },
+  "27431": {
+    "id": 27431,
+    "aegisName": null,
+    "name": "Loft Stone (VIT)",
+    "unidName": "Loft Stone Garment(VIT)",
+    "resName": "마법석성",
+    "description": "ลด Delay หลังใช้สกิล 5%\nเพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูทุกประเภท 5%\nMaxHP +10%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 75,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "acd": [
+        "5"
+      ],
+      "p_class_all": [
+        "5"
+      ],
+      "m_class_all": [
+        "5"
+      ],
+      "hpPercent": [
+        "10"
+      ]
+    }
+  },
+  "27432": {
+    "id": 27432,
+    "aegisName": null,
+    "name": "Loft Stone (AGI)",
+    "unidName": "Loft Stone Garment(AGI)",
+    "resName": "마법석암",
+    "description": "ลด Delay หลังใช้สกิล 5%\nเพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูทุกประเภท 5%\nHIT +30",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 75,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "acd": [
+        "5"
+      ],
+      "p_class_all": [
+        "5"
+      ],
+      "m_class_all": [
+        "5"
+      ],
+      "hit": [
+        "30"
+      ]
+    }
+  },
+  "27433": {
+    "id": 27433,
+    "aegisName": null,
+    "name": "Loft Stone (Ultimate)",
+    "unidName": "Loft Stone Garment(Ultimate)",
+    "resName": "Magical_Igni_Stone",
+    "description": "ลด Delay หลังใช้สกิล 10%\nเพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูทุกประเภท 10%\nATK/MATK +50\nHIT +30\nเพิ่ม Damage ทางกายภาพระยะไกล +5%\nMHP +10%\nCritical Damage +10%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 75,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "acd": [
+        "10"
+      ],
+      "p_class_all": [
+        "10"
+      ],
+      "m_class_all": [
+        "10"
+      ],
+      "atk": [
+        "50"
+      ],
+      "matk": [
+        "50"
+      ],
+      "hit": [
+        "30"
+      ],
+      "range": [
+        "5"
+      ],
+      "hpPercent": [
+        "10"
+      ],
+      "criDmg": [
+        "10"
+      ]
+    }
+  },
   "28007": {
     "id": 28007,
     "aegisName": "Scarlet_Katar",
@@ -38556,6 +38795,245 @@
       ],
       "dex": [
         "EQUIP[Great Hero Boots]===10"
+      ]
+    }
+  },
+  "27427999": {
+    "id": 27427999,
+    "aegisName": null,
+    "name": "Loft Stone (STR) (x2)",
+    "unidName": "Loft Stone Garment(STR)",
+    "resName": "마법석화",
+    "description": "ลด Delay หลังใช้สกิล 5%\nเพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูทุกประเภท 5%\nATK +50",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 75,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "acd": [
+        "10"
+      ],
+      "p_class_all": [
+        "10"
+      ],
+      "m_class_all": [
+        "10"
+      ],
+      "atk": [
+        "100"
+      ]
+    }
+  },
+  "27428999": {
+    "id": 27428999,
+    "aegisName": null,
+    "name": "Loft Stone (LUK) (x2)",
+    "unidName": "Loft Stone Garment(LUK)",
+    "resName": "마법석지",
+    "description": "ลด Delay หลังใช้สกิล 5%\nเพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูทุกประเภท 5%\nCritical Damage +10%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 75,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "acd": [
+        "10"
+      ],
+      "p_class_all": [
+        "10"
+      ],
+      "m_class_all": [
+        "10"
+      ],
+      "criDmg": [
+        "20"
+      ]
+    }
+  },
+  "27429999": {
+    "id": 27429999,
+    "aegisName": null,
+    "name": "Loft Stone (DEX) (x2)",
+    "unidName": "Loft Stone Garment(DEX)",
+    "resName": "마법석풍",
+    "description": "ลด Delay หลังใช้สกิล 5%\nเพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูทุกประเภท 5%\nเพิ่ม Damage ทางกายภาพระยะไกล 5%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 75,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "acd": [
+        "10"
+      ],
+      "p_class_all": [
+        "10"
+      ],
+      "m_class_all": [
+        "10"
+      ],
+      "range": [
+        "10"
+      ]
+    }
+  },
+  "27430999": {
+    "id": 27430999,
+    "aegisName": null,
+    "name": "Loft Stone (INT) (x2)",
+    "unidName": "Loft Stone Garment(INT)",
+    "resName": "마법석수",
+    "description": "ลด Delay หลังใช้สกิล 5%\nเพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูทุกประเภท 5%\nMATK +50",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 75,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "acd": [
+        "10"
+      ],
+      "p_class_all": [
+        "10"
+      ],
+      "m_class_all": [
+        "10"
+      ],
+      "matk": [
+        "100"
+      ]
+    }
+  },
+  "27431999": {
+    "id": 27431999,
+    "aegisName": null,
+    "name": "Loft Stone (VIT) (x2)",
+    "unidName": "Loft Stone Garment(VIT)",
+    "resName": "마법석성",
+    "description": "ลด Delay หลังใช้สกิล 5%\nเพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูทุกประเภท 5%\nMaxHP +10%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 75,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "acd": [
+        "10"
+      ],
+      "p_class_all": [
+        "10"
+      ],
+      "m_class_all": [
+        "10"
+      ],
+      "hpPercent": [
+        "20"
+      ]
+    }
+  },
+  "27432999": {
+    "id": 27432999,
+    "aegisName": null,
+    "name": "Loft Stone (AGI) (x2)",
+    "unidName": "Loft Stone Garment(AGI)",
+    "resName": "마법석암",
+    "description": "ลด Delay หลังใช้สกิล 5%\nเพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูทุกประเภท 5%\nHIT +30",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 75,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "acd": [
+        "10"
+      ],
+      "p_class_all": [
+        "10"
+      ],
+      "m_class_all": [
+        "10"
+      ],
+      "hit": [
+        "60"
+      ]
+    }
+  },
+  "27433999": {
+    "id": 27433999,
+    "aegisName": null,
+    "name": "Loft Stone (Ultimate) (x2)",
+    "unidName": "Loft Stone Garment(Ultimate)",
+    "resName": "Magical_Igni_Stone",
+    "description": "ลด Delay หลังใช้สกิล 10%\nเพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูทุกประเภท 10%\nATK/MATK +50\nHIT +30\nเพิ่ม Damage ทางกายภาพระยะไกล +5%\nMHP +10%\nCritical Damage +10%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 75,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "acd": [
+        "20"
+      ],
+      "p_class_all": [
+        "20"
+      ],
+      "m_class_all": [
+        "20"
+      ],
+      "atk": [
+        "100"
+      ],
+      "matk": [
+        "100"
+      ],
+      "hit": [
+        "60"
+      ],
+      "range": [
+        "10"
+      ],
+      "hpPercent": [
+        "20"
+      ],
+      "criDmg": [
+        "20"
       ]
     }
   }

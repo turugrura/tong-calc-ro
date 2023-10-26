@@ -273,7 +273,8 @@
 :host ::ng-deep .item_label_costumeEnchantUpper,
 :host ::ng-deep .item_label_costumeEnchantMiddle,
 :host ::ng-deep .item_label_costumeEnchantLower,
-:host ::ng-deep .item_label_costumeEnchantGarment {
+:host ::ng-deep .item_label_costumeEnchantGarment,
+:host ::ng-deep .item_label_costumeEnchantGarment4 {
   /* background-color: var(--surface-0); */
   background-color: #121212;
   color: var(--yellow-400);

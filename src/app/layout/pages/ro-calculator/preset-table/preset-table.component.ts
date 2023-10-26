@@ -21,6 +21,7 @@ const displayCostumeItemKeys = [
   ItemTypeEnum.costumeEnchantMiddle,
   ItemTypeEnum.costumeEnchantLower,
   ItemTypeEnum.costumeEnchantGarment,
+  ItemTypeEnum.costumeEnchantGarment4,
 ];
 const displayShadowItemKeys = [
   ItemTypeEnum.shadowWeapon,

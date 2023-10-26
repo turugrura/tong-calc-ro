@@ -90,11 +90,8 @@ export interface MainModel {
   costumeEnchantMiddle?: number;
   costumeEnchantLower?: number;
   costumeEnchantGarment?: number;
+  costumeEnchantGarment4?: number;
 
-  costumeEnhUpper?: number;
-  costumeEnhMiddle?: number;
-  costumeEnhLower?: number;
-  costumeEnhGarment?: number;
   shadowWeapon?: number;
   shadowWeaponRefine?: number;
   shadowArmor?: number;

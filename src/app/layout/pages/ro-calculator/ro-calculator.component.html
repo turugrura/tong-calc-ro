@@ -2477,9 +2477,36 @@
     </div>
 
     <!-- Shadow Earring -->
-    <div class="grid grid-nogutter item_label_shadow">
-      <div class="col-3"></div>
-      <div class="col-3 ml-4">
+    <div class="grid grid-nogutter">
+      <div class="col-3 item_label_costume">
+        <p-dropdown
+          inputId="costumeEnchantGarment4"
+          [autoDisplayFirst]="false"
+          [resetFilterOnHide]="true"
+          [options]="costumeEnhGarment4List"
+          [filter]="true"
+          filterBy="label"
+          [(ngModel)]="model.costumeEnchantGarment4"
+          [showClear]="true"
+          [disabled]="costumeEnhGarment4List.length === 0"
+          (onChange)="onSelectItem('costumeEnchantGarment4', $event.value)"
+          placeholder="Garment Enchant 4th"
+        >
+          <ng-template let-item pTemplate="selectedItem">
+            <div class="flex gap-1 item_template" *ngIf="model.costumeEnchantGarment4">
+              <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+          <ng-template let-item pTemplate="item">
+            <div class="flex gap-1">
+              <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
+      </div>
+      <div class="col-3 ml-4 item_label_shadow">
         <p-dropdown
           inputId="shadowEarring"
           [autoDisplayFirst]="false"
@@ -2507,7 +2534,7 @@
           </ng-template>
         </p-dropdown>
       </div>
-      <div class="col-1" style="min-width: 70px">
+      <div class="col-1 item_label_shadow" style="min-width: 70px">
         <p-dropdown
           inputId="shadowEarringRefine"
           [options]="shadowRefineList"
@@ -2522,7 +2549,7 @@
           </ng-template>
         </p-dropdown>
       </div>
-      <div class="col-3">
+      <div class="col-3 item_label_shadow">
         <p-cascadeSelect
           [(ngModel)]="model.rawOptionTxts[55]"
           [disabled]="!model.shadowEarring"

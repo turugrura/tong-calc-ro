@@ -73,6 +73,7 @@ enum ItemSubTypeId {
   CostumeEnhMiddle = 72,
   CostumeEnhLower = 73,
   CostumeEnhGarment = 74,
+  CostumeEnhGarment4 = 75,
 
   ShadowWeapon = 280,
   ShadowArmor = 526,
@@ -426,11 +427,8 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     costumeEnchantMiddle: undefined,
     costumeEnchantLower: undefined,
     costumeEnchantGarment: undefined,
+    costumeEnchantGarment4: undefined,
 
-    costumeEnhUpper: undefined,
-    costumeEnhMiddle: undefined,
-    costumeEnhLower: undefined,
-    costumeEnhGarment: undefined,
     shadowWeapon: undefined,
     shadowWeaponRefine: undefined,
     shadowArmor: undefined,
@@ -522,6 +520,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   costumeEnhMiddleList: DropdownModel[] = [];
   costumeEnhLowerList: DropdownModel[] = [];
   costumeEnhGarmentList: DropdownModel[] = [];
+  costumeEnhGarment4List: DropdownModel[] = [];
 
   shadowWeaponList: DropdownModel[] = [];
   shadowArmorList: DropdownModel[] = [];
@@ -1440,6 +1439,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     const costumeEnhMiddleList = [];
     const costumeEnhLowerList = [];
     const costumeEnhGarmentList = [];
+    const costumeEnhGarment4List = [];
 
     const shadowArmorList = [];
     const shadowShieldList = [];
@@ -1531,6 +1531,9 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         case ItemSubTypeId.CostumeEnhGarment:
           costumeEnhGarmentList.push(item);
           continue;
+        case ItemSubTypeId.CostumeEnhGarment4:
+          costumeEnhGarment4List.push(item);
+          continue;
       }
 
       if (itemTypeId === ItemTypeId.CARD) {
@@ -1592,6 +1595,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     this.itemList.costumeEnhMiddleList = toDropdownList(costumeEnhMiddleList, 'name', 'id');
     this.itemList.costumeEnhLowerList = toDropdownList(costumeEnhLowerList, 'name', 'id');
     this.itemList.costumeEnhGarmentList = toDropdownList(costumeEnhGarmentList, 'name', 'id');
+    this.itemList.costumeEnhGarment4List = toDropdownList(costumeEnhGarment4List, 'name', 'id');
 
     this.itemList.shadowArmorList = toDropdownList(shadowArmorList, 'name', 'id');
     this.itemList.shadowShieldList = toDropdownList(shadowShieldList, 'name', 'id');
@@ -1638,6 +1642,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     this.costumeEnhMiddleList = this.itemList.costumeEnhMiddleList.filter(onlyMe);
     this.costumeEnhLowerList = this.itemList.costumeEnhLowerList.filter(onlyMe);
     this.costumeEnhGarmentList = this.itemList.costumeEnhGarmentList.filter(onlyMe);
+    this.costumeEnhGarment4List = this.itemList.costumeEnhGarment4List.filter(onlyMe);
 
     this.shadowArmorList = this.itemList.shadowArmorList.filter(onlyMe);
     this.shadowShieldList = this.itemList.shadowShieldList.filter(onlyMe);
