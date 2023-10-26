@@ -1,7 +1,13 @@
 import { ElementType } from '../constants/element-type.const';
 import { InfoForClass } from '../models/info-for-class.model';
 import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
+import {
+  ActiveSkillModel,
+  AtkSkillFormulaInput,
+  AtkSkillModel,
+  CharacterBase,
+  PassiveSkillModel,
+} from './_character-base.abstract';
 import { Sage } from './sage';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
@@ -129,7 +135,7 @@ export class Sorcerer extends CharacterBase {
       vct: 12,
       cd: 5,
       acd: 1,
-      element: ElementType.Neutral,
+      // element: ElementType.Neutral,
       totalHit: 7,
       isMatk: true,
       levelList: [],

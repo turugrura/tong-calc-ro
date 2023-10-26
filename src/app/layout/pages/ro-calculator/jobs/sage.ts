@@ -21,6 +21,59 @@ export class Sage extends CharacterBase {
         { label: 'No', isUse: false, value: 0 },
       ],
     },
+    // {
+    //   inputType: 'dropdown',
+    //   label: 'Flame Launcher',
+    //   name: 'Flame Launcher',
+    //   dropdown: [
+    //     { label: '-', isUse: false, value: 0 },
+    //     { label: 'Lv 1', isUse: true, value: 1, bonus: { m_my_element_fire: 1 } },
+    //     { label: 'Lv 2', isUse: true, value: 2, bonus: { m_my_element_fire: 2 } },
+    //     { label: 'Lv 3', isUse: true, value: 3, bonus: { m_my_element_fire: 3 } },
+    //     { label: 'Lv 4', isUse: true, value: 4, bonus: { m_my_element_fire: 4 } },
+    //     { label: 'Lv 5', isUse: true, value: 5, bonus: { m_my_element_fire: 5 } },
+    //   ],
+    // },
+    {
+      inputType: 'dropdown',
+      label: 'Lightning Loader',
+      name: 'Lightning Loader',
+      dropdown: [
+        { label: '-', isUse: false, value: 0 },
+        { label: 'Lv 1', isUse: true, value: 1, bonus: { m_my_element_wind: 1 } },
+        { label: 'Lv 2', isUse: true, value: 2, bonus: { m_my_element_wind: 2 } },
+        { label: 'Lv 3', isUse: true, value: 3, bonus: { m_my_element_wind: 3 } },
+        { label: 'Lv 4', isUse: true, value: 4, bonus: { m_my_element_wind: 4 } },
+        { label: 'Lv 5', isUse: true, value: 5, bonus: { m_my_element_wind: 5 } },
+      ],
+    },
+    {
+      inputType: 'dropdown',
+      label: 'Frost Weapon',
+      name: 'Frost Weapon',
+      dropdown: [
+        { label: '-', isUse: false, value: 0 },
+        { label: 'Lv 1', isUse: true, value: 1, bonus: { m_my_element_water: 1 } },
+        { label: 'Lv 2', isUse: true, value: 2, bonus: { m_my_element_water: 2 } },
+        { label: 'Lv 3', isUse: true, value: 3, bonus: { m_my_element_water: 3 } },
+        { label: 'Lv 4', isUse: true, value: 4, bonus: { m_my_element_water: 4 } },
+        { label: 'Lv 5', isUse: true, value: 5, bonus: { m_my_element_water: 5 } },
+      ],
+    },
+
+    {
+      inputType: 'dropdown',
+      label: 'Seismic Weapon',
+      name: 'Seismic Weapon',
+      dropdown: [
+        { label: '-', isUse: false, value: 0 },
+        { label: 'Lv 1', isUse: true, value: 1, bonus: { m_my_element_earth: 1 } },
+        { label: 'Lv 2', isUse: true, value: 2, bonus: { m_my_element_earth: 2 } },
+        { label: 'Lv 3', isUse: true, value: 3, bonus: { m_my_element_earth: 3 } },
+        { label: 'Lv 4', isUse: true, value: 4, bonus: { m_my_element_earth: 4 } },
+        { label: 'Lv 5', isUse: true, value: 5, bonus: { m_my_element_earth: 5 } },
+      ],
+    },
   ];
   protected readonly _passiveSkillList: PassiveSkillModel[] = [
     {
@@ -112,6 +165,19 @@ export class Sage extends CharacterBase {
         { label: 'Lv 10', isUse: true, value: 10 },
       ],
     },
+    // {
+    //   inputType: 'dropdown',
+    //   label: 'Flame Launcher',
+    //   name: 'Flame Launcher',
+    //   dropdown: [
+    //     { label: '-', isUse: false, value: 0 },
+    //     { label: 'Lv 1', isUse: true, value: 1},
+    //     { label: 'Lv 2', isUse: true, value: 2},
+    //     { label: 'Lv 3', isUse: true, value: 3},
+    //     { label: 'Lv 4', isUse: true, value: 4},
+    //     { label: 'Lv 5', isUse: true, value: 5},
+    //   ],
+    // },
     {
       inputType: 'dropdown',
       label: 'Lightning Loader',

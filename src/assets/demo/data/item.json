@@ -2160,6 +2160,33 @@
     "cardPrefix": "Hasty",
     "script": {}
   },
+  "4140": {
+    "id": 4140,
+    "aegisName": "Knight_Of_Abyss_Card",
+    "name": "Abysmal Knight Card",
+    "unidName": "Card",
+    "resName": "이름없는카드",
+    "description": "โจมตี Monster Class Boss แรงขึ้น 25%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Liberation",
+    "script": {
+      "p_class_boss": [
+        "25"
+      ],
+      "m_class_boss": [
+        "25"
+      ]
+    }
+  },
   "4143": {
     "id": 4143,
     "aegisName": "Orc_Hero_Card",
@@ -6403,6 +6430,38 @@
       ],
       "criDmg": [
         "3"
+      ]
+    }
+  },
+  "9122": {
+    "id": 9122,
+    "aegisName": "Gloom_Under_Egg",
+    "name": "Gloom Under Night Egg",
+    "unidName": "Gloom Under Night Egg",
+    "resName": "Gloom_Under_Egg",
+    "description": "ไข่ที่มี Q-Pet Gloom Under Night อยู่ภายใน สามารถปลุกให้ตื่นขึ้นมาได้ด้วย [Pet Incubator] \nในกรณีที่ความสัมพันธ์อยู่ระดับไม่คุ้นเคย หรือเขินอาย MATK + 10\nหากความสัมพันธ์อยู่ระดับปกติ MATK + 20\nหากความสัมพันธ์อยู่ระดับเป็นมิตร MATK + 30, เพิ่ม Damage ทางเวทธาตุ Ghost และ Fire 5%\nหากความสัมพันธ์อยู่ระดับสนิทสนม MATK + 40, เพิ่ม Damage ทางเวทธาตุ Ghost และ Fire 7%\nประเภท : ^777777Monster Egg^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 518,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "matk": [
+        "40"
+      ],
+      "m_my_element_ghost": [
+        "7"
+      ],
+      "m_my_element_fire": [
+        "7"
       ]
     }
   },
@@ -11822,6 +11881,50 @@
       ]
     }
   },
+  "19483": {
+    "id": 19483,
+    "aegisName": "S_Circlet_Of_Time_SO",
+    "name": "Temporal Circlet (Sorcerer) [1]",
+    "unidName": "Helm",
+    "resName": "Circlet_Of_Time",
+    "description": "มงกุฎผ่านการเจียระไนด้วยเพชรอัญมณีที่มาจากรอยแยกแห่งมิติเวลา\nผู้สวมใส่จะรู้สึกได้ถึงพลังวิเศษที่ได้รับจาก Hugin\n^ffffff_^000000 \nทุก ๆ การอัพเกรด 2 ขั้น MATK +15\nทุก ๆ การอัพเกรด 3 ขั้น ลดระยะเวลาร่ายแบบแปรผัน 3%\nทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage สกิล Psychic Wave, Diamond Dust 20%\nทุก ๆ การอัพเกรด 4 ขั้น เพิ่ม Damage ทางเวทมนตร์ธาตุ Neutral, Water 5%\nเมื่ออัพเกรดถึงขั้น 11, MATK +5%\n^ffffff_^000000 \nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^77777710^000000\nตำแหน่ง : ^777777Upper ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Sorcerer^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 10,
+    "weight": 0,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Sorcerer"
+    ],
+    "script": {
+      "matk": [
+        "2---15"
+      ],
+      "vct": [
+        "3---3"
+      ],
+      "Psychic Wave": [
+        "3---20"
+      ],
+      "Diamond Dust": [
+        "3---20"
+      ],
+      "m_my_element_neutral": [
+        "4---5"
+      ],
+      "m_my_element_water": [
+        "4---5"
+      ],
+      "matkPercent": [
+        "11===5"
+      ]
+    }
+  },
   "19484": {
     "id": 19484,
     "aegisName": "S_Circlet_Of_Time_RA",
@@ -15739,6 +15842,52 @@
       ]
     }
   },
+  "24284": {
+    "id": 24284,
+    "aegisName": "S_Taekwon_Weapon",
+    "name": "Taekwon Shadow Weapon",
+    "unidName": "Shadow Weaoon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา\nสำหรับ Taekwon เท่านั้น\n--------------------------------------- \nASPD +1\nทุกๆ การอัพเกรด 1 ขั้น ATK & MATK +1% เพิ่มเติม\nเมื่ออัพเกรดตั้งแต่ 7 ขึ้นไป, ASPD +1 เพิ่มเติม, MaxHP +1000, MaxSP +200\nเมื่ออัพเกรดตั้งแต่ 9 ขึ้นไป, ASPD +1 เพิ่มเติม, MaxHP +10%, MaxSP +10%\nประเภท : ^777777Shadow Equipment^000000\nตำแหน่ง : ^777777Weapon^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777Taekwon^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "Taekwondo"
+    ],
+    "script": {
+      "aspd": [
+        "1",
+        "7===1",
+        "9===1"
+      ],
+      "atkPercent": [
+        "1---1"
+      ],
+      "matkPercent": [
+        "1---1"
+      ],
+      "hp": [
+        "7===1000"
+      ],
+      "sp": [
+        "7===200"
+      ],
+      "hpPercent": [
+        "9===10"
+      ],
+      "spPercent": [
+        "9===10"
+      ]
+    }
+  },
   "24286": {
     "id": 24286,
     "aegisName": "S_DoramMagical_Weapon",
@@ -16516,6 +16665,59 @@
       ],
       "m_pene_class_normal": [
         "EQUIP[Archer Shadow Earring&&Archer Shadow Pendant&&Bard Shadow Armor&&Bard Shadow Shoes&&Minstrel Shadow Weapon]===50"
+      ]
+    }
+  },
+  "24315": {
+    "id": 24315,
+    "aegisName": "S_Taekwon_Shield",
+    "name": "Taekwon Shadow Shield",
+    "unidName": "Shadow Shield",
+    "resName": "쉴드쉐도우",
+    "description": "โล่เล็กที่สามารถสวมใส่ที่แขนได้ สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์การป้องกันของมันจะลดน้อยลง\nสำหรับ Taekwon เท่านั้น\n--------------------------------------- \nATK, MATK + 3%\nทุกๆ การเรียนรู้สกิล [Peaceful Break] 1 เลเวล เพิกเฉยต่อพลังป้องกันทางกายภาพของศัตรูทั่วไป 3%\nทุกๆ การเรียนรู้สกิล [Happy Break] 1 เลเวล เพิกเฉยต่อพลังป้องกันเวทมนตร์ของศัตรูทั่วไป 3%\nทุกๆ การอัพเกรด 1 ขั้น เพิกเฉยต่อพลังป้องกันทางกายภาพและเวทมนตร์ของศัตรูทั่วไป 3%\nเมื่ออัพเกรดถึงขั้น 7, ATK, MATK + 2%\nเมื่ออัพเกรดถึงขั้น 9, ATK, MATK + 3%\n--------------------------------------- \nเมื่อสวมใส่ร่วมกับ Taekwon Shadow Weapon จะได้รับเอฟเฟกต์ดังต่อไปนี้ \nAll State + 3, MaxHP + 2%, MaxSP + 2% \nลด SP การใช้สกิล 10%\nประเภท : ^777777Shadow Equipment^000000\nตำแหน่ง : ^777777Shield^000000 \nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777Taekwon^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 527,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Shield",
+    "compositionPos": null,
+    "usableClass": [
+      "Taekwondo"
+    ],
+    "script": {
+      "atkPercent": [
+        "3",
+        "7===2",
+        "9===3"
+      ],
+      "matkPercent": [
+        "3",
+        "7===2",
+        "9===3"
+      ],
+      "p_pene_class_normal": [
+        "LEARN_SKILL[Peaceful Break==1]---3",
+        "1---3"
+      ],
+      "m_pene_class_normal": [
+        "LEARN_SKILL[Happy Break==1]---3",
+        "1---3"
+      ],
+      "allStatus": [
+        "EQUIP[Taekwon Shadow Weapon]3"
+      ],
+      "hpPercent": [
+        "EQUIP[Taekwon Shadow Weapon]2"
+      ],
+      "spPercent": [
+        "EQUIP[Taekwon Shadow Weapon]2"
+      ],
+      "spPercentConst": [
+        "EQUIP[Taekwon Shadow Weapon]10"
       ]
     }
   },
@@ -17833,6 +18035,74 @@
       "cd__Chattering": [
         "3",
         "2---3"
+      ]
+    }
+  },
+  "24414": {
+    "id": 24414,
+    "aegisName": "S_Soul_Reaper_Armor",
+    "name": "Soul Reaper Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우",
+    "description": "ชุดเกราะที่เพิ่มพลังป้องกันเมื่อสวมใส่เพิ่มบนเกราะอีกที สามารถใส่แบบชิ้นเดียวได้ แต่ความสามารถในการป้องกันจะลดลงไปอีก\nสวมใส่ได้เฉพาะอาชีพ Soul Reaper เท่านั้น\nเพิ่ม Damage สกิล Eswhoo 20%\nทุก ๆ การอัพเกรด 1 ขั้น เพิ่ม Damage สกิล Espa 3%\nเมื่อสวมใส่ร่วมกับ Soul Reaper Shadow Shoes ได้รับผลเพิ่มเติมดังต่อไปนี้\nลด Cooldown สกิล Soul Harvest 2 วินาที\nเมื่อสวมใส่ Taekwon Shadow 2 ประเภท, Soul Reaper Shadow 2 ประเภททั้งหมด ได้รับผลดังต่อไปนี้ \nAll Status +7, MaxHP +3%, MaxSP +3%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Armor^000000 \nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Soul Reaper^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": "Armor",
+    "compositionPos": null,
+    "usableClass": [
+      "Soul Reaper"
+    ],
+    "script": {
+      "Eswhoo": [
+        "20"
+      ],
+      "Espa": [
+        "1---3"
+      ],
+      "cd__Soul Harvest": [
+        "EQUIP[Soul Reaper Shadow Shoes]2"
+      ],
+      "allStatus": [
+        "EQUIP[Soul Reaper Shadow Shoes&&Taekwon Shadow Shield&&Taekwon Shadow Weapon]7"
+      ],
+      "hpPercent": [
+        "EQUIP[Soul Reaper Shadow Shoes&&Taekwon Shadow Shield&&Taekwon Shadow Weapon]3"
+      ],
+      "spPercent": [
+        "EQUIP[Soul Reaper Shadow Shoes&&Taekwon Shadow Shield&&Taekwon Shadow Weapon]3"
+      ]
+    }
+  },
+  "24415": {
+    "id": 24415,
+    "aegisName": "S_Soul_Reaper_Shoes",
+    "name": "Soul Reaper Shadow Shoes",
+    "unidName": "Shadow Shoes",
+    "resName": "슈즈쉐도우",
+    "description": "รองเท้าที่สวมใส่เพิ่มเติม สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์ของมันจะลดน้อยลง\nสวมใส่ได้เฉพาะอาชีพ Soul Reaper เท่านั้น\nลด Cooldown สกิล Soul Harvest 3 วินาที\nทุก ๆ การอัพเกรด 2 ขั้น ลด Cooldown สกิล Soul Harvest 1 วินาที\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shoes^000000 \nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Soul Reaper^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 528,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": "Shoes",
+    "compositionPos": null,
+    "usableClass": [
+      "Soul Reaper"
+    ],
+    "script": {
+      "cd__Soul Harvest": [
+        "3",
+        "2---1"
       ]
     }
   },
@@ -20988,6 +21258,97 @@
       ],
       "Eswhoo": [
         "2---1"
+      ]
+    }
+  },
+  "24658": {
+    "id": 24658,
+    "aegisName": "S_Evilcurse_Earring",
+    "name": "Evil Curse Shadow Earring",
+    "unidName": "Shadow Earring",
+    "resName": "이어링쉐도우",
+    "description": "ต่างหูมงคลที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา\nเพิ่ม Damage ทางเวทมนตร์ธาตุ Shadow 3% \nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางเวทมนตร์ธาตุ Shadow ขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางเวทมนตร์ธาตุ Shadow ขึ้นอีก 4%\nเมื่อสวมใส่ Evil Curse Shadow Earring/Pendant/Shoes ร่วมกัน,\nเพิ่ม Damage สกิล Curse Explosion % เท่ากับค่าอัพเกรดรวมกัน\nเมื่อสวมใส่ร่วมกับ Soul Reaper Shadow Armor,\nเพิกเฉยต่อพลังป้องกันทางเวทมนตร์ของทุกเผ่ายกเว้น Player 40% และเพิกเฉยต่อพลังป้องกันทางเวทมนตร์เพิ่มอีกตามค่าอัพเกรดรวมกันของ Evil Curse Shadow Earring และ Soul Reaper Shadow Armor\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Earring^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Soul Linker^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 529,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "AccessoryRight",
+    "compositionPos": null,
+    "usableClass": [
+      "Soul Linker"
+    ],
+    "script": {
+      "m_my_element_dark": [
+        "3",
+        "7===3",
+        "9===4"
+      ],
+      "Curse Explosion": [
+        "EQUIP[Evil Curse Shadow Pendant&&Evil Curse Shadow Shoes]REFINE[shadowEarring,shadowBoot,shadowPendant==1]---1"
+      ],
+      "m_pene_race_all": [
+        "EQUIP[Soul Reaper Shadow Armor]40",
+        "EQUIP[Soul Reaper Shadow Armor]REFINE[shadowEarring,shadowArmor==1]---1"
+      ]
+    }
+  },
+  "24659": {
+    "id": 24659,
+    "aegisName": "S_Evilcurse_Pendant",
+    "name": "Evil Curse Shadow Pendant",
+    "unidName": "Shadow Pendant",
+    "resName": "펜던트쉐도우",
+    "description": "สร้อยคอศักดิ์สิทธิ์ที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา\nเพิ่ม Damage ทางเวทมนตร์ธาตุ Shadow 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage สกิล Curse Explosion 3%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Pendant^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Soul Linker^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 530,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "AccessoryLeft",
+    "compositionPos": null,
+    "usableClass": [
+      "Soul Linker"
+    ],
+    "script": {
+      "m_my_element_dark": [
+        "5"
+      ],
+      "Curse Explosion": [
+        "2---3"
+      ]
+    }
+  },
+  "24660": {
+    "id": 24660,
+    "aegisName": "S_Evilcurse_Shoes",
+    "name": "Evil Curse Shadow Shoes",
+    "unidName": "Shadow Shoes",
+    "resName": "슈즈쉐도우",
+    "description": "รองเท้าที่สวมใส่เพิ่มเติม สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์ของมันจะลดน้อยลง\nลด Cooldown สกิล Evil Soul Curse 1 วินาที\nทุก ๆ การอัพเกรด 2 ขั้น ลด Cooldown สกิล Evil Soul Curse ลงอีก 0.1 วินาที\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shoes^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Soul Linker^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 528,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Shoes",
+    "compositionPos": null,
+    "usableClass": [
+      "Soul Linker"
+    ],
+    "script": {
+      "cd__Evil Soul Curse": [
+        "1",
+        "2---0.1"
       ]
     }
   },
@@ -31841,6 +32202,38 @@
       ]
     }
   },
+  "400001": {
+    "id": 400001,
+    "aegisName": "Victory_Wing_Ear",
+    "name": "Victorious Wing Ears",
+    "unidName": "Ribbon",
+    "resName": "승리의귀장식",
+    "description": "เครื่องประดับหูที่กล่าวขานกันว่ามอบให้แก่ผู้ชนะเท่านั้น\nเมื่อสวมใส่แล้ว แสดงถึงความสง่างามออกมา\nATK +10, MATK +10\nลด Delay หลังใช้สกิล 8%\nประเภท : ^777777Headgear^000000พลังป้องกัน : ^7777770^000000\nตำแหน่ง : ^777777Middle ^000000น้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 1,
+    "location": "Middle",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atk": [
+        "10"
+      ],
+      "matk": [
+        "10"
+      ],
+      "acd": [
+        "8"
+      ]
+    }
+  },
   "400002": {
     "id": 400002,
     "aegisName": "Victory_Wing_Ear_",
@@ -32222,6 +32615,35 @@
       ]
     }
   },
+  "410016": {
+    "id": 410016,
+    "aegisName": "Battle_Processor",
+    "name": "Battle Processor",
+    "unidName": "Hat",
+    "resName": "가디언프로세서",
+    "description": "เครื่องประมวลผลพิเศษที่ช่วยในการเพิ่มประสิทธิภาพด้านการต่อสู้\nATK +20, MATK +20\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^7777770^000000\nตำแหน่ง : ^777777Middle ^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Middle",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atk": [
+        "20"
+      ],
+      "matk": [
+        "20"
+      ]
+    }
+  },
   "410017": {
     "id": 410017,
     "aegisName": "Battle_Processor_",
@@ -32247,6 +32669,32 @@
         "10"
       ],
       "matk": [
+        "10"
+      ]
+    }
+  },
+  "410079": {
+    "id": 410079,
+    "aegisName": "Deepblue_Sunglasses",
+    "name": "Deep Blue Sunglasses",
+    "unidName": "Glasses",
+    "resName": "퇴마의글래스",
+    "description": "แว่นตาดำสุดเท่ที่ถูกเคลือบด้วยสีน้ำเงินเข้ม\nโดดเด่นด้านการป้องกันแสง UV\n\nลดระยะเวลาร่ายแบบแปรผัน 10%\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^7777770^000000\nตำแหน่ง : ^777777Middle^000000 น้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 1,
+    "location": "Middle",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "vct": [
         "10"
       ]
     }
@@ -33447,6 +33895,54 @@
       ],
       "fct": [
         "9===0.5"
+      ]
+    }
+  },
+  "470026": {
+    "id": 470026,
+    "aegisName": "Pretty_PigShoes_",
+    "name": "Cutie Piggy Shoes [1]",
+    "unidName": "Sandals",
+    "resName": "Pretty_pigShoes",
+    "description": "MaxHP +3%, MaxSP +3%\n\nเมื่ออัพเกรดถึงขั้น 9,\nMaxHP +7%, MaxSP +7%\n\nเมื่ออัพเกรดถึงขั้น 11,\nMaxHP +10%, MaxSP +10%,\nลด Delay หลังใช้สกิล 20%\n\nเมื่อเรียนรู้สกิล Sprit Of Life เลเวล 1,\nเมื่อถูกโจมตีทางกายภาพ มีโอกาส 3% ที่ ATK +100 เป็นเวลา 15 วินาที\n\nทุก ๆ การเรียนรู้สกิล Hiss 1 เลเวล, \nASPD +5%\n\nเมื่อเรียนรู้สกิล Power Of Flock ถึงเลเวล 5, \nPerfect Hit +30%\n\nทุก ๆ การเรียนรู้สกิล Sprit Of Savage 1 เลเวล, \nลดระยะเวลาร่ายแบบแปรผัน 5%\n\nประเภท : ^777777Shoes^000000  พลังป้องกัน : ^77777712^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Summoner (Doram)^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 516,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 12,
+    "weight": 10,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Summoner (Doram)"
+    ],
+    "script": {
+      "hpPercent": [
+        "3",
+        "9===7",
+        "11===10"
+      ],
+      "spPercent": [
+        "3",
+        "9===7",
+        "11===10"
+      ],
+      "acd": [
+        "11===20"
+      ],
+      "chance__atk": [
+        "100"
+      ],
+      "aspdPercent": [
+        "LEARN_SKILL[Hiss==1]---5"
+      ],
+      "perfectHit": [
+        "LEARN_SKILL[Power of Flock==5]30"
+      ],
+      "vct": [
+        "LEARN_SKILL[Spirit of Savage==1]---5"
       ]
     }
   },
