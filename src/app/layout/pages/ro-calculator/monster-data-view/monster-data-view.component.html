@@ -1,0 +1,74 @@
+<p-dataView #dv [value]="products" [layout]="'grid'" [rows]="12" [paginator]="true" filterBy="label">
+  <ng-template pTemplate="header">
+    <div class="p-fluid grid grid-nogutter">
+      <div class="col">
+        <div class="grid grid-nogutter">
+          <div class="col-4">
+            <p-multiSelect
+              [options]="groupNames"
+              [(ngModel)]="seletedGroupNames"
+              [showClear]="true"
+              [showToggleAll]="false"
+              [maxSelectedLabels]="9"
+              placeholder="Monster group"
+              (onChange)="onSelectGroupChange()"
+              (onClear)="onSelectGroupChange()"
+            >
+            </p-multiSelect>
+          </div>
+          <div class="col-4">
+            <input
+              #presetName
+              autocomplete="off"
+              type="text"
+              pInputText
+              placeholder="search"
+              [(ngModel)]="textSearch"
+              (ngModelChange)="onTextSearchChange()"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="col-fixed">
+        <button
+          pButton
+          icon="pi pi-times"
+          class="p-button-rounded p-button-outlined p-button-danger"
+          (click)="onSelectMonster(null)"
+        ></button>
+      </div>
+    </div>
+  </ng-template>
+  <ng-template let-product pTemplate="gridItem">
+    <div class="col-12 sm:col-6 lg:col-4 xl:col-3 p-2" style="height: 200px">
+      <div class="p-2 border-1 surface-border surface-card border-round" style="height: 100%">
+        <div class="flex flex-wrap align-items-center justify-content-between gap-2">
+          <span class="flex align-items-center gap-2">
+            <!-- <i class="pi pi-tag"></i> -->
+            <span>{{ 'Lv ' + product.level }}</span>
+          </span>
+          <p-tag *ngIf="product.className === 'Boss'" [value]="product.className" severity="danger"></p-tag>
+          <span *ngIf="product.className !== 'Boss'">{{ product.className }}</span>
+          <button pButton icon="pi pi-check" class="p-button-rounded" (click)="onSelectMonster(product)"></button>
+        </div>
+        <div class="flex flex-column align-items-center gap-2 py-2" style="height: 70%">
+          <img
+            class="shadow-2 border-round bg-white"
+            style="height: 75%"
+            [src]="'https://static.divine-pride.net/images/mobs/png/' + product.value + '.png'"
+            [alt]="product.name"
+          />
+          <div class="font-semibold">{{ product.name }}</div>
+        </div>
+        <div class="flex align-items-center justify-content-between">
+          <span>
+            <span class="{{ 'font-semibold property_' + product.elementName }}">{{ product.elementName }}</span>
+            <span> / {{ product.raceName }}</span>
+            <span> / {{ product.scaleName }}</span>
+          </span>
+          <span>{{ product.health | number }}</span>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</p-dataView>

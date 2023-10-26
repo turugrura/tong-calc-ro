@@ -4,16 +4,18 @@ const Mapper = {
   lasa_dun03: '133 - 150 Lasa แมว 3',
   tur_d03_i: '150 - 160 เต่า 1',
   tur_d04_i: '150 - 175 เต่า 2',
-  mag_dun03: '175 - 185 mag3 แมก3',
-  prt_mz03_i: '170 - 175  ป่าบาโฟ Bapho',
-  ein_dun03: '175 - xxx เหมือง 3',
+  mag_dun03: '175 - 185 แมกม่า 3',
+  prt_mz03_i: '170 - 175 ป่าบาโฟ',
+  ein_dun03: '175 - 190 เหมือง 3',
   abyss_04: '190 - 200 มังกร 4',
-  odin_past: '190 - 200 odin 4',
-  iz_d04_i: 'Iillusion of under water 4',
-  iz_d05_i: 'Iillusion of under water 5',
+  odin_past: '190 - 200 odin 3',
+  iz_d04_i: '135 - 150 Illuion of under water 4',
+  iz_d05_i: '190 - 200 Illuion of under water 5',
   hero_tra: 'Test damage',
   tra_fild: 'Test damage',
 } as const;
+
+export const MonsterGroupNames = [...new Set(Object.values(Mapper))].sort((a, b) => (a > b ? 1 : -1));
 
 export const getMonsterSpawnMap = (spawn: string) => {
   const spawns = spawn.split(',').map((a) => Mapper[a]);

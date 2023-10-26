@@ -26,6 +26,7 @@ import { TagModule } from 'primeng/tag';
 import { ToastModule } from 'primeng/toast';
 import { ToggleButtonModule } from 'primeng/togglebutton';
 import { BlockUIModule } from 'primeng/blockui';
+import { DataViewModule } from 'primeng/dataview';
 
 import { RoCalculatorComponent } from './ro-calculator.component';
 import { PrettyJsonPipe } from '../../prettier-json.pipe';
@@ -33,6 +34,7 @@ import { RoCalculatorRoutingModule } from './ro-calculator-routing.module';
 import { EquipmentComponent } from './equipment/equipment.component';
 import { CalcValueComponent } from './calc-value/calc-value.component';
 import { PresetTableComponent } from './preset-table/preset-table.component';
+import { MonsterDataViewComponent } from './monster-data-view/monster-data-view.component';
 
 @NgModule({
   imports: [
@@ -63,8 +65,9 @@ import { PresetTableComponent } from './preset-table/preset-table.component';
     ToastModule,
     ToggleButtonModule,
     BlockUIModule,
+    DataViewModule,
     RoCalculatorRoutingModule,
   ],
-  declarations: [RoCalculatorComponent, EquipmentComponent, CalcValueComponent, PrettyJsonPipe, PresetTableComponent],
+  declarations: [RoCalculatorComponent, EquipmentComponent, CalcValueComponent, PrettyJsonPipe, PresetTableComponent, MonsterDataViewComponent],
 })
 export class RoCalculatorModule {}
