@@ -35,6 +35,10 @@ export class AppTopBarComponent {
 
   updates = [
     {
+      v: 'V1.1.0',
+      logs: ['Support Minstrel & Wanderer', 'Added Edda weapon and enchants', 'Fixed reported bugs'],
+    },
+    {
       v: 'V1.0.4',
       logs: ['Added Ranger, SR & Sorcerer skill to get bonus', 'Added items', 'Support 4th slot garment costume'],
     },
@@ -48,7 +52,7 @@ export class AppTopBarComponent {
     },
     {
       v: 'V1.0.1',
-      logs: ['Fixed items bonus', 'Fixed a dark monster calculation', 'Update Racing cap & Enchants'],
+      logs: ['Fixed items bonus', 'Fixed dark monster calculation', 'Update Racing cap & Enchants'],
     },
   ];
   localVersion = localStorage.getItem('version') || '';
