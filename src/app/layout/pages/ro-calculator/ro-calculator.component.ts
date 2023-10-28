@@ -34,6 +34,7 @@ import { environment } from 'src/environments/environment';
 import { Doram } from './jobs/doram';
 import { MonsterDataViewComponent } from './monster-data-view/monster-data-view.component';
 import { Wanderer } from './jobs/wanderer';
+import { Minstrel } from './jobs/minstrel';
 
 const sortObj = <T>(field: keyof T) => {
   return (a: T, b: T) => {
@@ -97,7 +98,7 @@ const Characters: DropdownModel[] = [
   // { label: ClassID[12], value: 12, instant: new RuneKnight() },
   { label: ClassID[7], value: 7, instant: new ArchBishop() },
   { label: ClassID[2], value: 2, instant: new Ranger() },
-  // { label: ClassID[21],value: 21, instant: new Minstrel() },
+  { label: ClassID[21], value: 21, instant: new Minstrel() },
   { label: ClassID[22], value: 22, instant: new Wanderer() },
   { label: ClassID[5], value: 5, instant: new GitCross() },
   { label: ClassID[4], value: 4, instant: new ShadowChaser() },
@@ -1138,10 +1139,11 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   }
 
   loadPreset(presetName?: string) {
-    const selected = this.getPresetList().find((a) => a.value === presetName || this.selectedPreset);
+    const targePreset = presetName || this.selectedPreset;
+    const selected = this.getPresetList().find((a) => a.value === targePreset);
     if (selected?.['model']) {
       this.confirmationService.confirm({
-        message: `Load "${presetName || this.selectedPreset}" ?`,
+        message: `Load "${targePreset}" ?`,
         header: 'Confirmation',
         icon: 'pi pi-exclamation-triangle',
         accept: () => {
@@ -1161,7 +1163,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
                 this.messageService.add({
                   severity: 'info',
                   summary: 'Confirmed',
-                  detail: `"${presetName || this.selectedPreset}" was loaded.`,
+                  detail: `"${targePreset}" was loaded.`,
                 });
                 this.isInProcessingPreset = false;
               }),

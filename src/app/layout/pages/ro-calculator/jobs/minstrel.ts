@@ -1,5 +1,15 @@
 import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
+import {
+  ActiveSkillModel,
+  AtkSkillFormulaInput,
+  AtkSkillModel,
+  CharacterBase,
+  PassiveSkillModel,
+} from './_character-base.abstract';
+import { WeaponTypeName } from '../constants/weapon-type-mapper';
+import { InfoForClass } from '../models/info-for-class.model';
+import { Archer } from './archer';
+import { Lesson } from '../constants/share-passive-skills';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 1, 0, 0],
@@ -73,9 +83,188 @@ export class Minstrel extends CharacterBase {
   protected readonly CLASS_NAME = ClassName.Minstrel;
   protected readonly JobBonusTable = jobBonusTable;
 
-  protected readonly initialStatusPoint = 40;
-  protected readonly classNames = ['Thief'];
-  protected readonly _atkSkillList: AtkSkillModel[] = [];
-  protected readonly _activeSkillList: ActiveSkillModel[] = [];
-  protected readonly _passiveSkillList: PassiveSkillModel[] = [];
+  protected readonly initialStatusPoint = 100;
+  protected readonly classNames = [
+    'Hi-Class',
+    'Only 3rd Cls',
+    'Bard',
+    'Bard Cls',
+    'Bard Class',
+    'Clown',
+    'Clown Cls',
+    'Clown Class',
+    'Minstrel',
+    'Minstrel Cls',
+    'Minstrel Class',
+  ];
+
+  protected readonly _atkSkillList: AtkSkillModel[] = [
+    {
+      label: 'Arrow Vulcan Lv10',
+      name: 'Arrow Vulcan',
+      value: 'Arrow Vulcan==10',
+      acd: 0.5,
+      fct: 0.5,
+      vct: 1.5,
+      cd: 1.5,
+      hit: 9,
+      levelList: [],
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { skillLevel, model } = input;
+        const baseLevel = model.level;
+
+        return (500 + skillLevel * 100) * (baseLevel / 100);
+      },
+    },
+    {
+      label: 'Metalic Sound Lv10',
+      name: 'Metalic Sound',
+      value: 'Metalic Sound==10',
+      acd: 0.5,
+      fct: 0,
+      vct: 4,
+      cd: 2.5,
+      hit: 2,
+      isMatk: true,
+      levelList: [],
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { skillLevel, model } = input;
+        const baseLevel = model.level;
+        const lessonLv = this.bonuses.learnedSkillMap.get('Lesson') || 0;
+
+        return (skillLevel * 120 + lessonLv * 60) * (baseLevel / 100);
+      },
+    },
+    {
+      label: 'Severe Rainstorm Lv5',
+      name: 'Severe Rainstorm',
+      value: 'Severe Rainstorm==5',
+      acd: 1,
+      fct: 0.5,
+      vct: 3.5,
+      cd: 7,
+      totalHit: 12,
+      levelList: [],
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { weapon, status, skillLevel, model } = input;
+        const baseLevel = model.level;
+        const { totalDex, totalAgi } = status;
+        const weaType = weapon.data.typeName;
+        const weaMultiMap: Partial<Record<WeaponTypeName, number>> = {
+          bow: 1,
+          instrument: 1.5,
+          whip: 1.5,
+        };
+        const extra = weaMultiMap[weaType] || 0;
+
+        return extra * (totalDex + totalAgi) * (skillLevel / 5) * (baseLevel / 100);
+      },
+    },
+    {
+      label: '[Improved] Severe Rainstorm Lv5',
+      name: 'Severe Rainstorm',
+      value: '[Improved] Severe Rainstorm==5',
+      acd: 1,
+      fct: 0.5,
+      vct: 3.5,
+      cd: 7,
+      totalHit: 12,
+      levelList: [],
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { weapon, status, skillLevel, model } = input;
+        const baseLevel = model.level;
+        const { totalDex, totalAgi } = status;
+        const weaType = weapon.data.typeName;
+        const weaMultiMap: Partial<Record<WeaponTypeName, number>> = {
+          bow: 100,
+          instrument: 120,
+          whip: 120,
+        };
+        const extra = weaMultiMap[weaType] || 0;
+
+        return ((totalDex + totalAgi) / 2 + skillLevel * extra) * (baseLevel / 100);
+      },
+    },
+  ];
+
+  protected readonly _activeSkillList: ActiveSkillModel[] = [
+    {
+      label: 'Rush To Windmill',
+      name: 'Rush To Windmill',
+      inputType: 'dropdown',
+      isMasteryAtk: true,
+      dropdown: [
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 1', value: 1, isUse: true, bonus: { x_atk: 1 * 6 } },
+        { label: 'Lv 2', value: 2, isUse: true, bonus: { x_atk: 2 * 6 } },
+        { label: 'Lv 3', value: 3, isUse: true, bonus: { x_atk: 3 * 6 } },
+        { label: 'Lv 4', value: 4, isUse: true, bonus: { x_atk: 4 * 6 } },
+        { label: 'Lv 5', value: 5, isUse: true, bonus: { x_atk: 5 * 6 } },
+      ],
+    },
+  ];
+
+  protected readonly _passiveSkillList: PassiveSkillModel[] = [
+    {
+      label: 'Musical Lesson',
+      name: 'Musical Lesson',
+      inputType: 'dropdown',
+      isMasteryAtk: true,
+      dropdown: [
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 1', value: 1, isUse: true, bonus: { instrument_atk: 1 * 3, aspdPercent: 1, spPercent: 1 } },
+        { label: 'Lv 2', value: 2, isUse: true, bonus: { instrument_atk: 2 * 3, aspdPercent: 2, spPercent: 2 } },
+        { label: 'Lv 3', value: 3, isUse: true, bonus: { instrument_atk: 3 * 3, aspdPercent: 3, spPercent: 3 } },
+        { label: 'Lv 4', value: 4, isUse: true, bonus: { instrument_atk: 4 * 3, aspdPercent: 4, spPercent: 4 } },
+        { label: 'Lv 5', value: 5, isUse: true, bonus: { instrument_atk: 5 * 3, aspdPercent: 5, spPercent: 5 } },
+        { label: 'Lv 6', value: 6, isUse: true, bonus: { instrument_atk: 6 * 3, aspdPercent: 6, spPercent: 6 } },
+        { label: 'Lv 7', value: 7, isUse: true, bonus: { instrument_atk: 7 * 3, aspdPercent: 7, spPercent: 7 } },
+        { label: 'Lv 8', value: 8, isUse: true, bonus: { instrument_atk: 8 * 3, aspdPercent: 8, spPercent: 8 } },
+        { label: 'Lv 9', value: 9, isUse: true, bonus: { instrument_atk: 9 * 3, aspdPercent: 9, spPercent: 9 } },
+        { label: 'Lv 10', value: 10, isUse: true, bonus: { instrument_atk: 10 * 3, aspdPercent: 10, spPercent: 10 } },
+      ],
+    },
+    Lesson,
+    {
+      label: 'Musical Strike',
+      name: 'Musical Strike',
+      inputType: 'dropdown',
+      dropdown: [
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 1', value: 1, isUse: true },
+        { label: 'Lv 2', value: 2, isUse: true },
+        { label: 'Lv 3', value: 3, isUse: true },
+        { label: 'Lv 4', value: 4, isUse: true },
+        { label: 'Lv 5', value: 5, isUse: true },
+      ],
+    },
+  ];
+
+  constructor() {
+    super();
+
+    this.inheritBaseClass(new Archer());
+  }
+
+  override getUiMasteryAtk(info: InfoForClass): number {
+    const weaponType = info.weapon?.data?.typeName;
+    const { totalAtk } = this.calcHiddenMasteryAtk(info, { prefix: `${weaponType}` });
+
+    return totalAtk;
+  }
+
+  override getMasteryAtk(info: InfoForClass): number {
+    const { jobLevel } = info.model;
+
+    const isActiveRush = this.bonuses.activeSkillNames.has('Rush To Windmill');
+    if (!isActiveRush) return 0;
+
+    const weaponType = info.weapon?.data?.typeName;
+    const { totalAtk } = this.calcHiddenMasteryAtk(info, { prefix: `x_${weaponType}` });
+
+    const { learnedSkillMap } = this.bonuses;
+    const lessonLv = learnedSkillMap.get('Lesson') || 0;
+
+    return totalAtk + lessonLv + Math.floor(jobLevel / 5);
+  }
 }

@@ -9,6 +9,7 @@ import {
 import { Archer } from './archer';
 import { InfoForClass } from '../models/info-for-class.model';
 import { WeaponTypeName } from '../constants/weapon-type-mapper';
+import { Lesson } from '../constants/share-passive-skills';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 0, 1, 0],
@@ -189,29 +190,16 @@ export class Wanderer extends CharacterBase {
       inputType: 'dropdown',
       dropdown: [
         { label: '-', value: 0, isUse: false },
-        { label: 'Lv 1', value: 1, isUse: true, bonus: { aspdPercent: 1 * 5, fctPercent: 1 * 6 } },
-        { label: 'Lv 2', value: 2, isUse: true, bonus: { aspdPercent: 2 * 5, fctPercent: 2 * 6 } },
-        { label: 'Lv 3', value: 3, isUse: true, bonus: { aspdPercent: 3 * 5, fctPercent: 3 * 6 } },
-        { label: 'Lv 4', value: 4, isUse: true, bonus: { aspdPercent: 4 * 5, fctPercent: 4 * 6 } },
-        { label: 'Lv 5', value: 5, isUse: true, bonus: { aspdPercent: 5 * 5, fctPercent: 5 * 6 } },
+        { label: 'Lv 1', value: 1, isUse: true, bonus: { skillAspd: 1 * 4, fctPercent: 1 * 6 } },
+        { label: 'Lv 2', value: 2, isUse: true, bonus: { skillAspd: 2 * 4, fctPercent: 2 * 6 } },
+        { label: 'Lv 3', value: 3, isUse: true, bonus: { skillAspd: 3 * 4, fctPercent: 3 * 6 } },
+        { label: 'Lv 4', value: 4, isUse: true, bonus: { skillAspd: 4 * 4, fctPercent: 4 * 6 } },
+        { label: 'Lv 5', value: 5, isUse: true, bonus: { skillAspd: 5 * 4, fctPercent: 5 * 6 } },
       ],
     },
   ];
 
   protected readonly _passiveSkillList: PassiveSkillModel[] = [
-    {
-      label: 'Dart Arrow',
-      name: 'Dart Arrow',
-      inputType: 'dropdown',
-      dropdown: [
-        { label: '-', value: 0, isUse: false },
-        { label: 'Lv 1', value: 1, isUse: true },
-        { label: 'Lv 2', value: 2, isUse: true },
-        { label: 'Lv 3', value: 3, isUse: true },
-        { label: 'Lv 4', value: 4, isUse: true },
-        { label: 'Lv 5', value: 5, isUse: true },
-      ],
-    },
     {
       label: 'Dancing Lesson',
       name: 'Dancing Lesson',
@@ -231,23 +219,18 @@ export class Wanderer extends CharacterBase {
         { label: 'Lv 10', value: 10, isUse: true, bonus: { x_whip_atk: 10 * 3, whip_cri: 10, spPercent: 10 } },
       ],
     },
+    Lesson,
     {
-      label: 'Lesson',
-      name: 'Lesson',
+      label: 'Dart Arrow',
+      name: 'Dart Arrow',
       inputType: 'dropdown',
-      isMasteryAtk: true,
       dropdown: [
         { label: '-', value: 0, isUse: false },
-        { label: 'Lv 1', value: 1, isUse: true, bonus: { sp: 1 * 30 } },
-        { label: 'Lv 2', value: 2, isUse: true, bonus: { sp: 2 * 30 } },
-        { label: 'Lv 3', value: 3, isUse: true, bonus: { sp: 3 * 30 } },
-        { label: 'Lv 4', value: 4, isUse: true, bonus: { sp: 4 * 30 } },
-        { label: 'Lv 5', value: 5, isUse: true, bonus: { sp: 5 * 30 } },
-        { label: 'Lv 6', value: 6, isUse: true, bonus: { sp: 6 * 30 } },
-        { label: 'Lv 7', value: 7, isUse: true, bonus: { sp: 7 * 30 } },
-        { label: 'Lv 8', value: 8, isUse: true, bonus: { sp: 8 * 30 } },
-        { label: 'Lv 9', value: 9, isUse: true, bonus: { sp: 9 * 30 } },
-        { label: 'Lv 10', value: 10, isUse: true, bonus: { sp: 10 * 30 } },
+        { label: 'Lv 1', value: 1, isUse: true },
+        { label: 'Lv 2', value: 2, isUse: true },
+        { label: 'Lv 3', value: 3, isUse: true },
+        { label: 'Lv 4', value: 4, isUse: true },
+        { label: 'Lv 5', value: 5, isUse: true },
       ],
     },
   ];
@@ -286,7 +269,7 @@ export class Wanderer extends CharacterBase {
     const isActiveSwing = activeSkillNames.has('Swing Dance');
     const lessonLv = learnedSkillMap.get('Lesson') || 0;
     if (isActiveSwing && lessonLv > 0) {
-      totalBonus.aspdPercent += lessonLv;
+      totalBonus.skillAspd += lessonLv;
     }
 
     return totalBonus;
