@@ -106,6 +106,43 @@
       ]
     }
   },
+  "1333": {
+    "id": 1333,
+    "aegisName": "Golden_Wrench",
+    "name": "Golden Wrench [2]",
+    "unidName": "Axe",
+    "resName": "Golden_Wrench",
+    "description": "ประแจสีทองสำหรับใช้เฉพาะทาง\n^ffffff_^000000 \nไม่สามารถทำลายได้, ATK + 5%\nทุก ๆ การอัพเกรด 1 ขั้น ATK + 4\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Power Swing, Axe Boomerang 20%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Power Swing, Axe Boomerang ขึ้นอีก 15%\nประเภท : ^777777Axe^000000 พลังโจมตี : ^777777220^000000\nน้ำหนัก : ^777777550^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Mechanic^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 261,
+    "itemLevel": 4,
+    "attack": 220,
+    "defense": null,
+    "weight": 550,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Mechanic"
+    ],
+    "script": {
+      "atkPercent": [
+        "5"
+      ],
+      "atk": [
+        "1---4"
+      ],
+      "Power Swing": [
+        "9===20",
+        "11===15"
+      ],
+      "Axe Boomerang": [
+        "9===20",
+        "11===15"
+      ]
+    }
+  },
   "1584": {
     "id": 1584,
     "aegisName": "Chilly_Spell_Book",
@@ -1301,6 +1338,45 @@
       ],
       "Soul Expansion": [
         "9===20"
+      ]
+    }
+  },
+  "2056": {
+    "id": 2056,
+    "aegisName": "Gravitation_Staff",
+    "name": "Gravitation Staff [2]",
+    "unidName": "Rod",
+    "resName": "Gravitation_Staff",
+    "description": "ไม้เท้าที่ช่วยเพิ่มพลังในการใช้สนามแรงโน้มถ่วง\n^ffffff_^000000 \nMATK + 280, ไม่สามารถทำลายได้\nเพิ่ม Damage เวทมนตร์ธาตุ Neutral 5%\nทุก ๆ การอัพเกรด 1 ขั้น MATK + 4\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Gravitational Field, Drain Life 30%\nเมื่ออัพเกรดถึงขั้น 11 ลด Cooldown สกิล Gravitational Field 2 วินาที\nประเภท : ^777777Two-Handed Staff^000000 พลังโจมตี : ^777777110^000000\nน้ำหนัก : ^777777130^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Warlock^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 266,
+    "itemLevel": 4,
+    "attack": 110,
+    "defense": null,
+    "weight": 130,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Warlock"
+    ],
+    "script": {
+      "matk": [
+        "280",
+        "1---4"
+      ],
+      "m_my_element_neutral": [
+        "5"
+      ],
+      "Gravitational Field": [
+        "9===30"
+      ],
+      "Drain Life": [
+        "9===30"
+      ],
+      "cd__Gravitational Field": [
+        "11===2"
       ]
     }
   },
@@ -8954,6 +9030,113 @@
       ]
     }
   },
+  "16092": {
+    "id": 16092,
+    "aegisName": "Engine_Pilebuncker",
+    "name": "Engine Pilebunker [2]",
+    "unidName": "Iron Box",
+    "resName": "Engine_Pilebuncker",
+    "description": "เครื่องเจาะจักรกล\nมันมีอานุภาพมากกว่าเครื่องเจาะอื่น ๆ\n\nไม่สามารถทำลายได้, เพิ่ม Damage สกิล Vulcan Arm 10%\nทุก ๆ การอัพเกรด 1 ขั้น ASPD + 1%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Arm Cannon, Knuckle Boost 15%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Vulcan Arm ขึ้นอีก 15%\nประเภท : ^777777Mace^000000 พลังโจมตี : ^777777450^000000\nน้ำหนัก : ^777777320^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Mechanic^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 263,
+    "itemLevel": 4,
+    "attack": 450,
+    "defense": null,
+    "weight": 320,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Mechanic"
+    ],
+    "script": {
+      "Vulcan Arm": [
+        "10",
+        "11===15"
+      ],
+      "aspdPercent": [
+        "1---1"
+      ],
+      "Arm Cannon": [
+        "9===15"
+      ],
+      "Knuckle Boost": [
+        "9===15"
+      ]
+    }
+  },
+  "16095": {
+    "id": 16095,
+    "aegisName": "Lucis_Flail",
+    "name": "Lucis Flail [2]",
+    "unidName": "Club",
+    "resName": "Lucis_Flail",
+    "description": "กระบองเหล็กที่มีลูกตุ้มเรืองแสงสีเขียวห้อยอยู่\n^ffffff_^000000 \nMATK + 160, ไม่สามารถทำลายได้\nASPD + 1\nทุก ๆ การอัพเกรด 1 ขั้น MATK + 4\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Duple Light 40%\nเมื่ออัพเกรดถึงขั้น 11 เมื่อทำการโจมตีทางกายภาพระยะใกล้ มีโอกาสที่สกิล Judex Lv.2 จะทำงาน (หากเรียนรู้เลเวลที่สูงกว่า จะใช้งานเลเวลที่เรียนรู้ไว้)\nประเภท : ^777777Mace^000000 พลังโจมตี : ^777777180^000000\nน้ำหนัก : ^777777100^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Arch Bishop^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 263,
+    "itemLevel": 4,
+    "attack": 180,
+    "defense": null,
+    "weight": 100,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Arch Bishop"
+    ],
+    "script": {
+      "matk": [
+        "160",
+        "1---4"
+      ],
+      "aspd": [
+        "1"
+      ],
+      "Duple Light": [
+        "9===40"
+      ]
+    }
+  },
+  "16096": {
+    "id": 16096,
+    "aegisName": "Bright_Mace",
+    "name": "Bright Pendulum [2]",
+    "unidName": "Club",
+    "resName": "Bright_Mace",
+    "description": "อาวุธที่จะส่งเสียงใสกังวาลออกมาทุกครั้งที่ทำการโจมตีเป้าหมาย\n^ffffff_^000000 \nไม่สามารถทำลายได้, ลดระยะเวลาร่ายแบบแปรผัน 10%\nทุก ๆ การอัพเกรด 1 ขั้น ATK + 4\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Finger Offensive, Infiltration 50%\nเมื่ออัพเกรดถึงขั้น 11 ATK + 10%\nประเภท : ^777777Mace^000000 พลังโจมตี : ^777777210^000000\nน้ำหนัก : ^777777130^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Sura^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 263,
+    "itemLevel": 4,
+    "attack": 210,
+    "defense": null,
+    "weight": 130,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Sura"
+    ],
+    "script": {
+      "vct": [
+        "10"
+      ],
+      "atk": [
+        "1---4"
+      ],
+      "Finger Offensive": [
+        "9===50"
+      ],
+      "Infiltration": [
+        "9===50"
+      ],
+      "atkPercent": [
+        "11===10"
+      ]
+    }
+  },
   "18000": {
     "id": 18000,
     "aegisName": "Cannon_Ball",
@@ -13551,6 +13734,80 @@
       ]
     }
   },
+  "21051": {
+    "id": 21051,
+    "aegisName": "Volar",
+    "name": "Volar [2]",
+    "unidName": "Bastard Sword",
+    "resName": "Volar",
+    "description": "ดาบสองมือที่ประกอบด้วยคมดาบประกายดำ\n^ffffff_^000000\nเพิ่ม Damage สกิล Bowling Bash 30%\nทุก ๆ การอัพเกรด 1 ขั้น ATK + 4\nเมื่ออัพเกรดถึงขั้น 9 ลด Cooldown สกิล Ignition Break, Bowling Bash 1 วินาที\nเมื่ออัพเกรดถึงขั้น 11 จะไม่สามารถทำลายได้และเพิ่ม Damage สกิล Bowling Bash ขึ้นอีก 20%\nประเภท : ^777777Two-Handed Sword^000000 พลังโจมตี : ^777777280^000000\nน้ำหนัก : ^777777280^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Rune Knight^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 258,
+    "itemLevel": 4,
+    "attack": 280,
+    "defense": null,
+    "weight": 280,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Rune Knight"
+    ],
+    "script": {
+      "Bowling Bash": [
+        "30",
+        "11===20"
+      ],
+      "atk": [
+        "1---4"
+      ],
+      "cd__Ignition Break": [
+        "9===1"
+      ],
+      "cd__Bowling Bash": [
+        "9===1"
+      ]
+    }
+  },
+  "21052": {
+    "id": 21052,
+    "aegisName": "Vernan",
+    "name": "Vernan [2]",
+    "unidName": "Bastard Sword",
+    "resName": "Vernan",
+    "description": "ดาบสองมือที่มีใบมีดขนาดใหญ่\n^ffffff_^000000 \nATK + 5%\nทุก ๆ การอัพเกรด 1 ขั้น เพิ่ม Damage ทางกายภาพระยะไกล 1%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Clashing Spiral, Sonic Wave 30%\nเมื่ออัพเกรดถึงขั้น 11 ลด Cooldown สกิล Sonic Wave 1.5 วินาที\nประเภท : ^777777Two-Handed Sword^000000 พลังโจมตี : ^777777300^000000\nน้ำหนัก : ^777777650^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Rune Knight^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 258,
+    "itemLevel": 4,
+    "attack": 300,
+    "defense": null,
+    "weight": 650,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Rune Knight"
+    ],
+    "script": {
+      "atkPercent": [
+        "5"
+      ],
+      "range": [
+        "1---1"
+      ],
+      "Clashing Spiral": [
+        "9===30"
+      ],
+      "Sonic Wave": [
+        "9===30"
+      ],
+      "cd__Sonic Wave": [
+        "11===1.5"
+      ]
+    }
+  },
   "22000": {
     "id": 22000,
     "aegisName": "Temporal_Str_Boots",
@@ -15303,6 +15560,70 @@
       ],
       "aspd": [
         "7===1"
+      ]
+    }
+  },
+  "24231": {
+    "id": 24231,
+    "aegisName": "S_Blitz_Shoes",
+    "name": "Blitz Shadow Shoes",
+    "unidName": "Shadow Shoes",
+    "resName": "슈즈쉐도우",
+    "description": "รองเท้าที่สวมใส่เพิ่มเติม สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์ของมันจะลดน้อยลง\nFLEE + 5.\nทุกๆ อัพเกรด 2 ขั้น FLEE + 1.\nเมื่ออัพเกรดขั้น 7 ขึ้นไป, ASPD + 1.\nเมื่ออัพเกรดขั้น 9 ขึ้นไป, ASPD + 1.\n^32CD32Blitz Shadow Shoes^000000 กับ\n^32CD32Blitz Shadow Shield^000000\nเมื่อสวมใส่ไอเท็มดังกล่าวด้วยกัน, FLEE + 5.\nเมื่อขั้นการอัพเกรดรวมกันตั้งแต่ 15 ขึ้นไป ASPD + 1.\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shoes^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 528,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Shoes",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "flee": [
+        "5",
+        "2---1",
+        "EQUIP[Blitz Shadow Shield]===5"
+      ],
+      "aspd": [
+        "7===1",
+        "9===1",
+        "EQUIP[Blitz Shadow Shield]REFINE[shadowBoot,shadowShield==15]1"
+      ]
+    }
+  },
+  "24232": {
+    "id": 24232,
+    "aegisName": "S_Blitz_Shield",
+    "name": "Blitz Shadow Shield",
+    "unidName": "Shadow Shield",
+    "resName": "쉴드쉐도우",
+    "description": "โล่เล็กที่สามารถสวมใส่ที่แขนได้ สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์การป้องกันของมันจะลดน้อยลง\nCRI + 5.\nทุกๆ อัพเกรด 2 ขั้น CRI + 1.\nเมื่ออัพเกรดขั้น 7 ขึ้นไป, ASPD + 1.\nเมื่ออัพเกรดขั้น 9 ขึ้นไป, ASPD + 1.\n^32CD32Blitz Shadow Shield^000000 กับ\n^32CD32Blitz Shadow Shoes^000000\nเมื่อสวมใส่ไอเท็มดังกล่าวด้วยกัน, FLEE + 5.\nเมื่อขั้นการอัพเกรดรวมกันตั้งแต่ 15 ขึ้นไป ASPD + 1.\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shield^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 527,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Shield",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "cri": [
+        "5",
+        "2---1"
+      ],
+      "aspd": [
+        "7===1",
+        "9===1"
       ]
     }
   },
@@ -22379,6 +22700,123 @@
       ]
     }
   },
+  "26159": {
+    "id": 26159,
+    "aegisName": "Psychic_Spear_Rod",
+    "name": "Psychic Spear Rod [2]",
+    "unidName": "Rod",
+    "resName": "Psychic_Spear_Rod",
+    "description": "ไม้เท้าที่ทำให้สามารถรับมือกับพลังเหนือธรรมชาติได้อย่างยอดเยี่ยมมากยิ่งขึ้น\n^ffffff_^000000 \nMATK + 180, ไม่สามารถทำลายได้\nเพิ่ม Damage เวทมนตร์ธาตุ Neutral, Wind 5%\nทุก ๆ การอัพเกรด 1 ขั้น MATK + 4\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Psychic Wave 30%\nเมื่ออัพเกรดถึงขั้น 11 ลด Cooldown สกิล Varetyr Spear 2 วินาที\nประเภท : ^777777Staff^000000 พลังโจมตี : ^777777120^000000\nน้ำหนัก : ^77777780^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Sorcerer^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 265,
+    "itemLevel": 4,
+    "attack": 120,
+    "defense": null,
+    "weight": 80,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Sorcerer"
+    ],
+    "script": {
+      "matk": [
+        "180",
+        "1---4"
+      ],
+      "m_my_element_neutral": [
+        "5"
+      ],
+      "m_my_element_wind": [
+        "5"
+      ],
+      "Psychic Wave": [
+        "9===30"
+      ],
+      "cd__Varetyr Spear": [
+        "11===2"
+      ]
+    }
+  },
+  "26160": {
+    "id": 26160,
+    "aegisName": "Dust_Grave",
+    "name": "Dust Grave [2]",
+    "unidName": "Rod",
+    "resName": "Dust_Grave",
+    "description": "ไม้เท้าที่ทำให้สามารถรับมือกับพลังเหนือธรรมชาติได้อย่างยอดเยี่ยมมากยิ่งขึ้น\n^ffffff_^000000 \nMATK + 180, ไม่สามารถทำลายได้\nเพิ่ม Damage เวทมนตร์ธาตุ Water, Earth 5%\nทุก ๆ การอัพเกรด 1 ขั้น MATK + 4\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Diamond Dust, Earth Grave 30%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Diamond Dust, Earth Grave ขึ้นอีก 20%\nประเภท : ^777777Staff^000000 พลังโจมตี : ^777777120^000000\nน้ำหนัก : ^77777780^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Sorcerer^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 265,
+    "itemLevel": 4,
+    "attack": 120,
+    "defense": null,
+    "weight": 80,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Sorcerer"
+    ],
+    "script": {
+      "matk": [
+        "180",
+        "1---4"
+      ],
+      "m_my_element_water": [
+        "5"
+      ],
+      "m_my_element_earth": [
+        "5"
+      ],
+      "Diamond Dust": [
+        "9===30",
+        "11===20"
+      ],
+      "Earth Grave": [
+        "9===30",
+        "11===20"
+      ]
+    }
+  },
+  "26161": {
+    "id": 26161,
+    "aegisName": "Ponitendtia",
+    "name": "Penitentia [2]",
+    "unidName": "Rod",
+    "resName": "Ponitendtia",
+    "description": "ไม้เท้าที่มีอำนาจในการพิพากษาเหล่าคนบาปและทำให้พวกเขาสำนึกผิด\n^ffffff_^000000 \nMATK + 175, ไม่สามารถทำลายได้\nเพิ่ม Damage เวทมนตร์ธาตุ Holy 5%\nทุก ๆ การอัพเกรด 1 ขั้น MATK + 4\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Magnus Exorcimus, Judex 30%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Magnus Exorcimus ขึ้นอีก 20%\nประเภท : ^777777Staff^000000 พลังโจมตี : ^777777100^000000\nน้ำหนัก : ^77777770^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Arch Bishop^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 265,
+    "itemLevel": 4,
+    "attack": 100,
+    "defense": null,
+    "weight": 70,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Arch Bishop"
+    ],
+    "script": {
+      "matk": [
+        "175",
+        "1---4"
+      ],
+      "m_my_element_holy": [
+        "5"
+      ],
+      "Magnus Exorcimus": [
+        "9===30",
+        "11===20"
+      ],
+      "Judex": [
+        "9===30"
+      ]
+    }
+  },
   "26164": {
     "id": 26164,
     "aegisName": "ElectricFox_OS",
@@ -22660,6 +23098,41 @@
       ],
       "cd__Metalic Sound": [
         "11===2"
+      ]
+    }
+  },
+  "26213": {
+    "id": 26213,
+    "aegisName": "Scarlet_Ribbon",
+    "name": "Scarlet Ribbon [2]",
+    "unidName": "Rope",
+    "resName": "Scarlet_Ribbon",
+    "description": "แส้ที่ตกแต่งด้วยริบบิ้นสีแดง\n^ffffff_^000000 \nลดระยะเวลาร่ายแบบแปรผัน 10%\nทุก ๆ การอัพเกรด 1 ขั้น เพิ่ม Damage ทางกายภาพระยะไกล 1%\nเมื่ออัพเกรดถึงขั้น 9 ลด Cooldown สกิล Severe Rainstorm 1 วินาที\nเมื่ออัพเกรดถึงขั้น 11 ลดการใช้ SP ของสกิล Severe Rainstorm 20%\nประเภท : ^777777Whip^000000 พลังโจมตี : ^777777180^000000\nน้ำหนัก : ^777777120^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Wanderer^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 270,
+    "itemLevel": 4,
+    "attack": 180,
+    "defense": null,
+    "weight": 120,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Wanderer"
+    ],
+    "script": {
+      "vct": [
+        "10"
+      ],
+      "range": [
+        "1---1"
+      ],
+      "cd__Severe Rainstorm": [
+        "9===1"
+      ],
+      "spPercent__Severe Rainstorm": [
+        "11===20"
       ]
     }
   },
@@ -24555,7 +25028,7 @@
       "m_my_element_fire": [
         "EQUIP[Dark Lord Card]15"
       ],
-      "Meteor storm": [
+      "Meteor Storm": [
         "EQUIP[Dark Lord Card]15"
       ]
     }
@@ -25437,6 +25910,41 @@
       ]
     }
   },
+  "28044": {
+    "id": 28044,
+    "aegisName": "Agudo_Filo",
+    "name": "Agudo Filo [2]",
+    "unidName": "Katar",
+    "resName": "Local02_Katar",
+    "description": "กาตาร์ที่มีใบมีดแหลมคม\n^ffffff_^000000 \nCritical Damage + 5%\nทุก ๆ การอัพเกรด 1 ขั้น ATK + 4\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพที่ทำต่อศัตรูทุกขนาด 15%\nเมื่ออัพเกรดถึงขั้น 11 จะไม่สามารถทำลายได้และ ATK + 7%\nประเภท : ^777777Katar^000000 พลังโจมตี : ^777777270^000000\nน้ำหนัก : ^777777200^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Guillotine Cross^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 272,
+    "itemLevel": 4,
+    "attack": 270,
+    "defense": null,
+    "weight": 200,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Guillotine Cross"
+    ],
+    "script": {
+      "criDmg": [
+        "5"
+      ],
+      "atk": [
+        "1---4"
+      ],
+      "p_size_all": [
+        "9===15"
+      ],
+      "atkPercent": [
+        "11===7"
+      ]
+    }
+  },
   "28046": {
     "id": 28046,
     "aegisName": "R_Katar",
@@ -25595,6 +26103,44 @@
       ],
       "atk": [
         "level:10---6"
+      ]
+    }
+  },
+  "28138": {
+    "id": 28138,
+    "aegisName": "Maxi_Spanner",
+    "name": "Maxi Spanner [2]",
+    "unidName": "Axe",
+    "resName": "Maxi_Spanner",
+    "description": "ประแจขนาดยักษ์ มันดูเหมือนขวานขนาดใหญ่มากกว่าจะเป็นอาวุธที่น่าเกรงขาม\n^ffffff_^000000 \nไม่สามารถทำลายได้และลด Damage ทางกายภาพ/เวทมนตร์ที่ได้รับจากศัตรูขนาดเล็ก, กลาง 10%\nทุก ๆ การอัพเกรด 1 ขั้น ATK + 4\nเมื่ออัพเกรดถึงขั้น 9 ลด Cooldown สกิล Axe Tornado, Lava Flow 1 วินาที\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Axe Tornado 15%\nประเภท : ^777777Two-Handed Axe^000000 พลังโจมตี : ^777777340^000000\nน้ำหนัก : ^777777450^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Mechanic^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 262,
+    "itemLevel": 4,
+    "attack": 340,
+    "defense": null,
+    "weight": 450,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Mechanic"
+    ],
+    "script": {
+      "reducdDamageTaken_size_s_m": [
+        "10"
+      ],
+      "atk": [
+        "1---4"
+      ],
+      "cd__Axe Tornado": [
+        "9===1"
+      ],
+      "cd__Lava Flow": [
+        "9===1"
+      ],
+      "Axe Tornado": [
+        "11===15"
       ]
     }
   },
@@ -26280,6 +26826,48 @@
       ]
     }
   },
+  "28633": {
+    "id": 28633,
+    "aegisName": "Boltigin",
+    "name": "Boltigin [2]",
+    "unidName": "Book",
+    "resName": "Boltigin",
+    "description": "หนังสือว่าด้วยการตีความทางเวทมนตร์เกี่ยวกับธาตุทั้ง 4\n^ffffff_^000000\nMATK + 175, เพิ่ม Damage สกิล Fire Bolt, Cold Bolt, Lightning Bolt 20%\nทุก ๆ การอัพเกรด 1 ขั้น MATK + 4\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Fire Bolt, Cold Bolt, Lightning Bolt ขึ้นอีก 30%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Heaven's Drive, Earth Spike 50%\nประเภท : ^777777Book^000000 พลังโจมตี : ^777777120^000000\nน้ำหนัก : ^77777780^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Sorcerer^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 271,
+    "itemLevel": 4,
+    "attack": 120,
+    "defense": null,
+    "weight": 80,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Sorcerer"
+    ],
+    "script": {
+      "matk": [
+        "175",
+        "1---4"
+      ],
+      "Fire Bolt": [
+        "9===30"
+      ],
+      "Cold Bolt": [
+        "9===30"
+      ],
+      "Lightning Bolt": [
+        "9===30"
+      ],
+      "Heaven's Drive": [
+        "11===50"
+      ],
+      "Earth Spike": [
+        "11===50"
+      ]
+    }
+  },
   "28636": {
     "id": 28636,
     "aegisName": "R_Sage_Book",
@@ -26332,6 +26920,49 @@
       ]
     }
   },
+  "28765": {
+    "id": 28765,
+    "aegisName": "Judgement_Slasher",
+    "name": "Judgment Slasher [2]",
+    "unidName": "Knife",
+    "resName": "Judgement_Slasher",
+    "description": "หนึ่งในมีดสั้นที่เป็นที่ทราบกันว่ามันถูกมอบให้เหล่าผู้ตัดสินครั้งสุดท้าย\nว่ากันว่าพลังเดิมของมันจะปรากฏออกมาเฉพาะเมื่อใช้งานร่วมกับ Repent Slasher ที่สูญหายและถูกลืมไป\n^ffffff_^000000 \nเมื่อสวมใส่ร่วมกับ Repent Slasher,\nเพิ่ม Damage สกิล Meteor Assault, Soul Destroyer 40%\nทุกๆ ขั้นอัพเกรดรวมครบ 2 ขั้น ATK + 8\nเมื่อขั้นอัพเกรดรวมครบ 16 ขึ้นไป เพิ่ม Damage สกิล Cross Impact, Counter Slash 20%\nเมื่อขั้นอัพเกรดรวมครบ 18 ขึ้นไป, ATK + 12%\nเมื่อขั้นอัพเกรดรวมครบ 20 ขึ้นไป เพิ่ม Damage สกิล Meteor Assault, Soul Destroyer ขึ้นอีก 20%\nประเภท : ^777777Dagger^000000 พลังโจมตี : ^777777195^000000\nน้ำหนัก : ^777777110^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Guillotine Cross^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 256,
+    "itemLevel": 4,
+    "attack": 195,
+    "defense": null,
+    "weight": 110,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Guillotine Cross"
+    ],
+    "script": {
+      "atk": [
+        "EQUIP[Repent Slasher]REFINE[weapon,leftWeapon==2]8"
+      ],
+      "atkPercent": [
+        "EQUIP[Repent Slasher]REFINE[weapon,leftWeapon==18]12"
+      ],
+      "Meteor Assault": [
+        "EQUIP[Repent Slasher]40",
+        "EQUIP[Repent Slasher]REFINE[weapon,leftWeapon==20]20"
+      ],
+      "Soul Destroyer": [
+        "EQUIP[Repent Slasher]40",
+        "EQUIP[Repent Slasher]REFINE[weapon,leftWeapon==20]20"
+      ],
+      "Cross Impact": [
+        "EQUIP[Repent Slasher]REFINE[weapon,leftWeapon==16]20"
+      ],
+      "Counter Slash": [
+        "EQUIP[Repent Slasher]REFINE[weapon,leftWeapon==16]20"
+      ]
+    }
+  },
   "28767": {
     "id": 28767,
     "aegisName": "Jack_The_Knife",
@@ -26359,10 +26990,10 @@
       "atk": [
         "1---4"
       ],
-      "Fatal Menace": [
+      "Fatal Manace": [
         "9===30"
       ],
-      "spPercent__Fatal Menace": [
+      "spPercent__Fatal Manace": [
         "11===10"
       ]
     }
@@ -26418,8 +27049,10 @@
       "all"
     ],
     "script": {
+      "aspdPercent": [
+        "10"
+      ],
       "aspd": [
-        "10",
         "9===1"
       ],
       "atkPercent": [
@@ -30736,7 +31369,7 @@
       "Back Stab": [
         "REFINE_NAME[Jack the Knife==3]---10"
       ],
-      "Fatal Menace": [
+      "Fatal Manace": [
         "REFINE_NAME[Jack the Knife==3]---5"
       ],
       "m_my_element_fire": [
@@ -31858,6 +32491,93 @@
       ]
     }
   },
+  "29687": {
+    "id": 29687,
+    "aegisName": "Time_Jewely_Luk_1",
+    "name": "Temporal Jewel (Luk) Lv. 1",
+    "unidName": "Temporal Jewel (Luk) Lv. 1",
+    "resName": "Time_Jewely_Luk",
+    "description": "ทุก ๆ การอัพเกรด Headgear 2 ขั้น Critical Damage +2%\nทุก ๆ การอัพเกรด Headgear 2 ขั้น CRI +1\nทุก ๆ การอัพเกรด Headgear 5 ขั้น ATK +1%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "criDmg": [
+        "2---2"
+      ],
+      "cri": [
+        "2---1"
+      ],
+      "atkPercent": [
+        "5---1"
+      ]
+    }
+  },
+  "29688": {
+    "id": 29688,
+    "aegisName": "Time_Jewely_Luk_2",
+    "name": "Temporal Jewel (Luk) Lv. 2",
+    "unidName": "Temporal Jewel (Luk) Lv. 2",
+    "resName": "Time_Jewely_Luk",
+    "description": "ทุก ๆ การอัพเกรด Headgear 2 ขั้น Critical Damage +4%\nทุก ๆ การอัพเกรด Headgear 2 ขั้น CRI +2\nทุก ๆ การอัพเกรด Headgear 5 ขั้น ATK +2%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "criDmg": [
+        "2---4"
+      ],
+      "cri": [
+        "2---2"
+      ],
+      "atkPercent": [
+        "5---2"
+      ]
+    }
+  },
+  "29689": {
+    "id": 29689,
+    "aegisName": "Time_Jewely_Luk_3",
+    "name": "Temporal Jewel (Luk) Lv. 3",
+    "unidName": "Temporal Jewel (Luk) Lv. 3",
+    "resName": "Time_Jewely_Luk",
+    "description": "ทุก ๆ การอัพเกรด Headgear 2 ขั้น Critical Damage +6%\nทุก ๆ การอัพเกรด Headgear 2 ขั้น CRI +3\nทุก ๆ การอัพเกรด Headgear 5 ขั้น ATK +3%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "criDmg": [
+        "2---6"
+      ],
+      "cri": [
+        "2---3"
+      ],
+      "atkPercent": [
+        "5---3"
+      ]
+    }
+  },
   "29726": {
     "id": 29726,
     "aegisName": "Improve_Orb_L_Varmundt",
@@ -31896,6 +32616,108 @@
       ]
     }
   },
+  "32023": {
+    "id": 32023,
+    "aegisName": "Argen_Blanco",
+    "name": "Argen Blanco [2]",
+    "unidName": "Spear",
+    "resName": "Argen_Blanco",
+    "description": "หอกสีขาวที่ทำจากโลหะชนิดพิเศษ\n^ffffff_^000000 \nเพิ่ม Damage สกิล Brandish Spear 30%\nทุก ๆ การอัพเกรด 1 ขั้น ATK + 4\nเมื่ออัพเกรดถึงขั้น 9 ลด Cooldown สกิล Hundred Spear 1.5 วินาที\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Brandish Spear ขึ้นอีก 20%\nประเภท : ^777777Spear^000000 พลังโจมตี : ^777777200^000000\nน้ำหนัก : ^777777100^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Rune Knight^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 259,
+    "itemLevel": 4,
+    "attack": 200,
+    "defense": null,
+    "weight": 100,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Rune Knight"
+    ],
+    "script": {
+      "Brandish Spear": [
+        "30",
+        "11===20"
+      ],
+      "atk": [
+        "1---4"
+      ],
+      "cd__Hundred Spear": [
+        "9===1.5"
+      ]
+    }
+  },
+  "32024": {
+    "id": 32024,
+    "aegisName": "Harve",
+    "name": "Harve [2]",
+    "unidName": "Spear",
+    "resName": "Harve",
+    "description": "หอกสีทองที่ใช้ในการต่อสู้\n^ffffff_^000000 \nเพิ่ม Damage สกิล Shield Chain 40%\nทุก ๆ การอัพเกรด 1 ขั้น เพิ่ม Damage ทางกายภาพระยะไกล 1%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Shield Press 30% \nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Shield Chain, Shield Press ขึ้นอีก 20%\nประเภท : ^777777Spear^000000 พลังโจมตี : ^777777210^000000\nน้ำหนัก : ^777777150^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Royal Guard^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 259,
+    "itemLevel": 4,
+    "attack": 210,
+    "defense": null,
+    "weight": 150,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Royal Guard"
+    ],
+    "script": {
+      "Shield Chain": [
+        "40",
+        "11===20"
+      ],
+      "range": [
+        "1---1"
+      ],
+      "Shield Press": [
+        "9===30",
+        "11===20"
+      ]
+    }
+  },
+  "32025": {
+    "id": 32025,
+    "aegisName": "Fortrage",
+    "name": "Fortridge [2]",
+    "unidName": "Spear",
+    "resName": "Fortrage",
+    "description": "หอกที่ใช้ได้ดีทั้งตวัดทั้งแทง\n^ffffff_^000000 \nATK + 5%\nทุก ๆ การอัพเกรด 1 ขั้น ลด Delay หลังใช้สกิล 1%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Cannon Spear 20%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Overbrand 20%\nประเภท : ^777777Spear^000000 พลังโจมตี : ^777777205^000000\nน้ำหนัก : ^777777170^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Royal Guard^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 259,
+    "itemLevel": 4,
+    "attack": 205,
+    "defense": null,
+    "weight": 170,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Royal Guard"
+    ],
+    "script": {
+      "atkPercent": [
+        "5"
+      ],
+      "acd": [
+        "1---1"
+      ],
+      "Cannon Spear": [
+        "9===20"
+      ],
+      "Overbrand": [
+        "11===20"
+      ]
+    }
+  },
   "32107": {
     "id": 32107,
     "aegisName": "Black_Circle",
@@ -31929,6 +32751,41 @@
       ],
       "cd__Metalic Sound": [
         "11===2"
+      ]
+    }
+  },
+  "32108": {
+    "id": 32108,
+    "aegisName": "Antique_Cello",
+    "name": "Antique Cello [2]",
+    "unidName": "Violin",
+    "resName": "Antique_Cello",
+    "description": "เชลโล่โบราณ\nว่ากันว่ามันเคยถูกใช้ในงานเลี้ยงชนชั้นสูงที่ดูเหมือนว่าจะเป็นงานเลี้ยงในวัง\n^ffffff_^000000 \nลดระยะเวลาร่ายแบบแปรผัน 10%\nทุก ๆ การอัพเกรด 1 ขั้น เพิ่ม Damage ทางกายภาพระยะไกล 1%\nเมื่ออัพเกรดถึงขั้น 9 ลด Cooldown สกิล Severe Rainstorm 1 วินาที\nเมื่ออัพเกรดถึงขั้น 11 ลดการใช้ SP ของสกิล Severe Rainstorm 20%\nประเภท : ^777777Instrument^000000 พลังโจมตี : ^777777180^000000\nน้ำหนัก : ^777777120^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Minstrel^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 269,
+    "itemLevel": 4,
+    "attack": 180,
+    "defense": null,
+    "weight": 120,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Minstrel"
+    ],
+    "script": {
+      "vct": [
+        "10"
+      ],
+      "range": [
+        "1---1"
+      ],
+      "cd__Severe Rainstorm": [
+        "9===1"
+      ],
+      "spPercent__Severe Rainstorm": [
+        "11===20"
       ]
     }
   },
@@ -38157,7 +39014,7 @@
       "p_race_all": [
         "EQUIP[Patent Fatalist]8"
       ],
-      "Fatal Menace": [
+      "Fatal Manace": [
         "EQUIP[Patent Fatalist]REFINE[weapon==11]SUM[str,agi==12]---1"
       ]
     }

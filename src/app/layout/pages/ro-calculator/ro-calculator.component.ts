@@ -284,6 +284,7 @@ const createMainStatOptionList = () => {
     ['Matk', 'matk', 1, 15],
     ['Matk %', 'matkPercent', 1, 15],
     ['Matk', 'matk', 1, 15],
+    ['Vct', 'vct', 1, 15],
     ['Hit', 'hit', 1, 15],
     ['ASPD', 'aspd', 1, 1],
     ['ASPD %', 'aspdPercent', 1, 10],
