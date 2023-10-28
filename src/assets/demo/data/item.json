@@ -830,6 +830,139 @@
       "all"
     ]
   },
+  "1933": {
+    "id": 1933,
+    "aegisName": "Thanos_Violin",
+    "name": "Thanos Violin [1]",
+    "unidName": "Instrument",
+    "resName": "타노스의바이올린",
+    "description": "ไวโอลินที่มีพลังเวทย์ ทำขึ้นมาจาก Shard of Gray เพื่อใช้เผชิญหน้ากับ Devil Sword Tarthanos\nมีพลังเวทย์และพละกำลังที่แข็งแกร่ง แต่ก็ต้องจ่ายค่าตอบแทนที่สมน้ำสมเนื้อ\n\nINT + 6 / VIT + 6 / LUK - 6\nเมื่อโจมตีกายภาพ จะมีโอกาสในระดับต่ำ ที่จะดูดซับดาเมจ 5% มาเป็น HP และ SP\nดาเมจการโจมตีกายภาพระยะไกล เพิ่มขึ้น 20%\nHP ลดลง 100 ทุก 10 วินาที\nHP ลดลง 1000 เมื่อถอดอุปกรณ์\nMATK + 130\n\nประเภท : ^777777Musical Instrument^000000\nโจมตี : ^777777200^000000\nน้ำหนัก : ^777777200^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777120^000000\nอาชีพ: ^777777Minstrel^000000",
+    "slots": 1,
+    "itemTypeId": 1,
+    "itemSubTypeId": 269,
+    "itemLevel": 4,
+    "attack": 200,
+    "defense": null,
+    "weight": 200,
+    "requiredLevel": 120,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Minstrel"
+    ],
+    "script": {
+      "int": [
+        "6"
+      ],
+      "vit": [
+        "6"
+      ],
+      "luk": [
+        "-6"
+      ],
+      "matk": [
+        "130"
+      ],
+      "range": [
+        "20"
+      ]
+    }
+  },
+  "1988": {
+    "id": 1988,
+    "aegisName": "Thanos_Whip",
+    "name": "Thanos Whip [1]",
+    "unidName": "Whip",
+    "resName": "타노스의윕소드",
+    "description": "ดาบแส้ที่มีพลังเวทย์ ทำขึ้นมาจาก Shard of Gray เพื่อใช้เผชิญหน้ากับ Devil Sword Tarthanos\nมีพลังเวทย์และพละกำลังที่แข็งแกร่ง แต่ก็ต้องจ่ายค่าตอบแทนที่สมน้ำสมเนื้อ\n\nINT + 6 / VIT + 6 / LUK -6\nเมื่อโจมตีกายภาพ จะมีโอกาสในระดับต่ำ ที่จะดูดซับดาเมจ 5% มาเป็น HP และ SP\nดาเมจการโจมตีกายภาพระยะไกล เพิ่มขึ้น 20%\nHP ลดลง 100 ทุก 10 วินาที\nHP ลดลง 1000 เมื่อถอดอุปกรณ์\nMATK + 130\n\nประเภท : ^777777Whip^000000\nโจมตี : ^777777200^000000\nน้ำหนัก : ^777777220^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777120^000000\nอาชีพ: ^777777Wanderer^000000",
+    "slots": 1,
+    "itemTypeId": 1,
+    "itemSubTypeId": 270,
+    "itemLevel": 4,
+    "attack": 200,
+    "defense": null,
+    "weight": 220,
+    "requiredLevel": 120,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Wanderer"
+    ],
+    "script": {
+      "int": [
+        "6"
+      ],
+      "vit": [
+        "6"
+      ],
+      "luk": [
+        "-6"
+      ],
+      "matk": [
+        "130"
+      ],
+      "range": [
+        "20"
+      ]
+    }
+  },
+  "1996": {
+    "id": 1996,
+    "aegisName": "Sinister_Wire",
+    "name": "Vicious Mind Wire [1]",
+    "unidName": "Whip",
+    "resName": "사념의와이어",
+    "description": "แส้ที่เต็มไปด้วยความคิดมุ่งร้าย\nMATK + 50\nเพิ่ม ATK เท่ากับ (ระดับ Refine*ระดับ Refine) (สามารถ Refine ได้ถึง 15)\nเพิ่ม MATK เท่ากับ (ระดับ Refine*ระดับ Refine)/2 (สามารถ Refine ได้ถึง 15)\nประเภท : ^777777Whip^000000 โจมตี : ^777777130^000000\nน้ำหนัก : ^777777130^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777160^000000\nติดตั้ง : ^777777อาชีพ Dancer^000000",
+    "slots": 1,
+    "itemTypeId": 1,
+    "itemSubTypeId": 270,
+    "itemLevel": 4,
+    "attack": 130,
+    "defense": null,
+    "weight": 130,
+    "requiredLevel": 160,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Dancer"
+    ],
+    "script": {
+      "matk": [
+        "50",
+        "2===2",
+        "3===2",
+        "4===4",
+        "5===4",
+        "6===6",
+        "7===6",
+        "8===8",
+        "9===8",
+        "10===10",
+        "11===10",
+        "12===12",
+        "13===12",
+        "14===14",
+        "15===14"
+      ],
+      "atk": [
+        "1===1",
+        "2===3",
+        "3===5",
+        "4===7",
+        "5===9",
+        "6===11",
+        "7===13",
+        "8===15",
+        "9===17",
+        "10===19",
+        "11===21",
+        "12===23",
+        "13===25",
+        "14===27",
+        "15===29"
+      ]
+    }
+  },
   "2004": {
     "id": 2004,
     "aegisName": "Kronos",
@@ -1678,7 +1811,7 @@
     "location": null,
     "compositionPos": null,
     "script": {
-      "Metallic Sound": [
+      "Metalic Sound": [
         "150"
       ],
       "SP ในการใช้ Metallic Sound เพิ่มขึ้น": [
@@ -3603,6 +3736,32 @@
     "cardPrefix": "Neostorm",
     "script": {
       "Cart Tornado": [
+        "20",
+        "WEAPON_LEVEL[4]===20",
+        "10===20"
+      ]
+    }
+  },
+  "4695": {
+    "id": 4695,
+    "aegisName": "Real_Trentini_Card",
+    "name": "True Trentini Card",
+    "unidName": "True Trentini Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่มความแรงสกิล Severe Rainstorm 20% \nเพิ่มความแรงสกิล Severe Rainstorm อีก 20% เมื่ออาวุธเลเวล 4 \nเพิ่มความแรงสกิล Severe Rainstorm อีก 20% เมื่ออัพเกรดถึงขั้น 10 ขึ้นไป\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Rainstorm",
+    "script": {
+      "Severe Rainstorm": [
         "20",
         "WEAPON_LEVEL[4]===20",
         "10===20"
@@ -11966,6 +12125,48 @@
       ]
     }
   },
+  "19485": {
+    "id": 19485,
+    "aegisName": "S_Circlet_Of_Time_WM",
+    "name": "Temporal Circlet (Wanderer&Minstrel) [1]",
+    "unidName": "Helm",
+    "resName": "Circlet_Of_Time",
+    "description": "มงกุฎผ่านการเจียระไนด้วยเพชรอัญมณีที่มาจากรอยแยกแห่งมิติเวลา\nผู้สวมใส่จะรู้สึกได้ถึงพลังวิเศษที่ได้รับจาก Hugin\n^ffffff_^000000 \nทุก ๆ การอัพเกรด 2 ขั้น MATK +15\nทุก ๆ การอัพเกรด 3 ขั้น ลดระยะเวลาร่ายแบบแปรผัน 5%\nทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage สกิล Reverberation, Metalic Sound 20%\nทุก ๆ การอัพเกรด 4 ขั้น เพิ่ม Damage ทางเวทมนตร์ธาตุ Neutral 7%\nเมื่ออัพเกรดถึงขั้น 11, MATK +5%\n^ffffff_^000000 \nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^77777710^000000\nตำแหน่ง : ^777777Upper ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Minstrel, Wanderer^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 10,
+    "weight": 0,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Minstrel",
+      "Wanderer"
+    ],
+    "script": {
+      "matk": [
+        "2---15"
+      ],
+      "vct": [
+        "3---5"
+      ],
+      "Reverberation": [
+        "3---20"
+      ],
+      "Metalic Sound": [
+        "3---20"
+      ],
+      "m_my_element_neutral": [
+        "4---7"
+      ],
+      "matkPercent": [
+        "11===5"
+      ]
+    }
+  },
   "19486": {
     "id": 19486,
     "aegisName": "S_Circlet_Of_Time_SJ",
@@ -14106,6 +14307,48 @@
       ]
     }
   },
+  "22171": {
+    "id": 22171,
+    "aegisName": "Ancient_Hero_Boots",
+    "name": "Ancient Hero Boots [1]",
+    "unidName": "Shoes",
+    "resName": "ShoesOfGuardsman",
+    "description": "รองเท้าบูทที่ว่ากันว่าเหล่าวีรบุรุษในยุคโบราณเคยใช้สวมใส่\nซึ่งดูเหมือนว่ามันจะกลมกลืนไปกับอาวุธของพวกเขา\nMHP + 500, MSP + 50\nทุก ๆ การอัพเกรด 3 ขั้น MHP+ 2%, MSP +1%\nเมื่ออัพเกรดถึงขั้น 9 ลด Fixed Cast Time 0.3 วินาที\nเมื่ออัพเกรดถึงขั้น 12 ลด Fixed Cast Time เพิ่ม 0.2 วินาที\nเมื่ออัพเกรดถึงขั้น 14 ลด Delay หลังใช้สกิล 5%\nประเภท : ^777777Shoes^000000 พลังป้องกัน : ^77777715^000000\nน้ำหนัก : ^77777760^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่สวมใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 516,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 15,
+    "weight": 60,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "hp": [
+        "500"
+      ],
+      "sp": [
+        "50"
+      ],
+      "hpPercent": [
+        "3---2"
+      ],
+      "spPercent": [
+        "3---1"
+      ],
+      "fct": [
+        "9===0.3",
+        "12===0.2"
+      ],
+      "acd": [
+        "14===5"
+      ]
+    }
+  },
   "22196": {
     "id": 22196,
     "aegisName": "Illusion_Leg_A",
@@ -14231,7 +14474,7 @@
   "22238": {
     "id": 22238,
     "aegisName": "Great_Hero_Boots",
-    "name": "Great Hero's Boots [1]",
+    "name": "Great Hero Boots [1]",
     "unidName": "Sandals",
     "resName": "UpShoesOfGuardsman",
     "description": "รองเท้าบูทที่ว่ากันว่าเหล่าวีรบุรุษผู้ยิ่งใหญ่เคยใช้สวมใส่\nซึ่งดูเหมือนว่ามันจะกลมกลืนไปกับอาวุธของพวกเขา\nMHP +1500, MSP +150\nทุก ๆ การอัพเกรด 3 ขั้น MHP +1%, MSP +1%\nเมื่ออัพเกรดถึงขั้น 7 ATK +5%, MATK +5%\nเมื่ออัพเกรดถึงขั้น 9 ลดระยะเวลาร่ายแบบคงที่ 0.5 วินาที\nเมื่ออัพเกรดถึงขั้น 11 ลดระยะเวลาร่ายแบบคงที่ลงอีก 0.2 วินาที\nเมื่ออัพเกรดถึงขั้น 13 ลด Delay หลังใช้สกิล 5%, ลดระยะเวลาร่ายแบบแปรผัน 5%\nประเภท : ^777777Shoes^000000  พลังป้องกัน : ^77777715^000000\nน้ำหนัก : ^77777760^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
@@ -15502,7 +15745,7 @@
     ],
     "script": {
       "atk": [
-        "LEARN_SKILL[Dance Lessons==1]---2"
+        "LEARN_SKILL[Dancing Lesson==1]---2"
       ]
     }
   },
@@ -16171,6 +16414,37 @@
       ]
     }
   },
+  "24299": {
+    "id": 24299,
+    "aegisName": "S_Minstrel_Weapon",
+    "name": "Minstrel Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา \nสวมใส่ได้เฉพาะอาชีพ Minstrel เท่านั้น \nMaxHP + 3%\nเพิ่มค่า DEF ตามขั้นอัพเกรดคูณด้วยผลรวมเลเวลสกิล\n^ff0000Echo Song, Harmonize, Rush To Windmill^000000\nประเภท : ^777777Shadow Equipment^000000\nตำแหน่ง : ^777777Weapon^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่สวมใส่ได้ : ^777777Minstrel^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "Minstrel"
+    ],
+    "script": {
+      "hpPercent": [
+        "3"
+      ],
+      "def": [
+        "LEARN_SKILL[Echo Song==1]---1",
+        "LEARN_SKILL[Harmonize==1]---1",
+        "LEARN_SKILL[Rush To Windmill==1]---1"
+      ]
+    }
+  },
   "24300": {
     "id": 24300,
     "aegisName": "S_Wanderer_Weapon",
@@ -16194,6 +16468,11 @@
     "script": {
       "hpPercent": [
         "3"
+      ],
+      "def": [
+        "LEARN_SKILL[Moonlight Serenade==1]---1",
+        "LEARN_SKILL[Swing Dance==1]---1",
+        "LEARN_SKILL[Lover Symphony==1]---1"
       ]
     }
   },
@@ -16592,7 +16871,7 @@
     "location": "Shield",
     "compositionPos": null,
     "usableClass": [
-      "all"
+      "Minstrel"
     ],
     "script": {
       "spPercent": [
@@ -16608,7 +16887,7 @@
         "EQUIP[Archer Shadow Earring&&Archer Shadow Pendant&&Bard Shadow Armor&&Bard Shadow Shoes&&Minstrel Shadow Weapon]===5"
       ],
       "range": [
-        "EQUIP[Minstrel Shadow Weapon]LEARN_SKILL[Music Lessons==2]---1"
+        "EQUIP[Minstrel Shadow Weapon]LEARN_SKILL[Lesson==2]---1"
       ],
       "allStatus": [
         "EQUIP[Archer Shadow Earring&&Archer Shadow Pendant&&Bard Shadow Armor&&Bard Shadow Shoes&&Minstrel Shadow Weapon]===10"
@@ -16655,7 +16934,7 @@
         "EQUIP[Archer Shadow Earring&&Archer Shadow Pendant&&Bard Shadow Armor&&Bard Shadow Shoes&&Minstrel Shadow Weapon]===5"
       ],
       "range": [
-        "EQUIP[Minstrel Shadow Weapon]LEARN_SKILL[Music Lessons==2]---1"
+        "EQUIP[Minstrel Shadow Weapon]LEARN_SKILL[Lesson==2]---1"
       ],
       "allStatus": [
         "EQUIP[Archer Shadow Earring&&Archer Shadow Pendant&&Bard Shadow Armor&&Bard Shadow Shoes&&Minstrel Shadow Weapon]===10"
@@ -19446,6 +19725,100 @@
       ]
     }
   },
+  "24500": {
+    "id": 24500,
+    "aegisName": "S_Rainstorm_Armor",
+    "name": "Rainstorm Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우",
+    "description": "ชุดเกราะที่เพิ่มพลังป้องกันเมื่อสวมใส่เพิ่มบนเกราะอีกที สามารถใส่แบบชิ้นเดียวได้ แต่ความสามารถในการป้องกันจะลดลงไปอีก \nเพิ่ม Damage สกิล Severe Rainstorm 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage สกิล Severe Rainstorm ขึ้นอีก 2%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Armor^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Minstrel Cls, Wanderer Cls^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Minstrel Cls",
+      "Wanderer Cls"
+    ],
+    "script": {
+      "Severe Rainstorm": [
+        "5",
+        "2---2"
+      ]
+    }
+  },
+  "24501": {
+    "id": 24501,
+    "aegisName": "S_Rainstorm_Shield",
+    "name": "Rainstorm Shadow Shield",
+    "unidName": "Shadow Shield",
+    "resName": "쉴드쉐도우",
+    "description": "โล่เล็กที่สามารถสวมใส่ที่แขนได้ สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์การป้องกันของมันจะลดน้อยลง\nเพิ่ม Damage ทางกายภาพระยะไกล 3%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางกายภาพระยะไกลขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพระยะไกลขึ้นอีก 4%\nเมื่อสวมใส่ Rainstorm Shadow Armor/Shield/Shoes ร่วมกัน,\nเพิ่ม Damage สกิล Severe Rainstorm เท่ากับครึ่งหนึ่งของค่าอัพเกรดรวมกัน\nเมื่อสวมใส่ร่วมกับ Wanderer/Minstrel Shadow Weapon,\nเพิกเฉยต่อพลังป้องกันทางกายภาพของทุกเผ่ายกเว้น Player 40% และเพิกเฉยต่อพลังป้องกันทางกายภาพเพิ่มอีกตามค่าอัพเกรดรวมกันของ Rainstorm Shadow Shield และ Wanderer/Minstrel Shadow Weapon\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shield^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Minstrel Cls, Wanderer Cls^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 527,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Minstrel Cls",
+      "Wanderer Cls"
+    ],
+    "script": {
+      "range": [
+        "3",
+        "7===3",
+        "9===4"
+      ],
+      "acd": [
+        "EQUIP[Rainstorm Shadow Armor&&Rainstorm Shadow Shoes]REFINE[shadowArmor,shadowShield,shadowBoot==2]---1"
+      ],
+      "p_pene_race_all": [
+        "EQUIP[Wanderer Shadow Weapon]===40",
+        "EQUIP[Wanderer Shadow Weapon]REFINE[shadowWeapon,shadowShield==1]---1",
+        "EQUIP[Minstrel Shadow Weapon]===40",
+        "EQUIP[Minstrel Shadow Weapon]REFINE[shadowWeapon,shadowShield==1]---1"
+      ]
+    }
+  },
+  "24502": {
+    "id": 24502,
+    "aegisName": "S_Rainstorm_Shoes",
+    "name": "Rainstorm Shadow Shoes",
+    "unidName": "Shadow Shoes",
+    "resName": "슈즈쉐도우",
+    "description": "รองเท้าที่สวมใส่เพิ่มเติม สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์ของมันจะลดน้อยลง\nลดปริมาณการใช้ SP สกิล Severe Rainstorm 2%\nทุก ๆ การอัพเกรด 2 ขั้น ลดปริมาณการใช้ SP สกิล Severe Rainstorm ลงอีก 1%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shoes ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Minstrel Cls, Wanderer Cls^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 528,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Minstrel Cls",
+      "Wanderer Cls"
+    ],
+    "script": {
+      "spPercent__Severe Rainstorm": [
+        "2",
+        "2---1"
+      ]
+    }
+  },
   "24503": {
     "id": 24503,
     "aegisName": "S_Arrowvulcan_Weapon",
@@ -22016,6 +22389,172 @@
       ]
     }
   },
+  "26200": {
+    "id": 26200,
+    "aegisName": "Hippie_Rope",
+    "name": "Hippie Rope [2]",
+    "unidName": "Rope",
+    "resName": "히피로프",
+    "description": "เชือกที่ให้ความรู้สึกถึงเจตจำนงของชีวิตที่มีอิสระเสรี..\nถึงจะดูมีอายุหลายปีและเก่ามาก แต่เพราะอย่างนั้นมันจึงมีความยืดหยุ่นสูงมากเช่นกัน\nเพิ่ม ASPD 1% ทุก ๆ การเรียนรู้ของเลเวลสกิล [Lesson]\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม ATK 5 เท่าของเลเวลสกิล [Lesson]\nเมื่ออัพเกรดถึงขั้น 9 ASPD + 1\nประเภท : ^777777Whip^000000 พลังโจมตี : ^777777140^000000\nน้ำหนัก : ^777777100^000000\nเลเวลอาวุธ : ^7777773^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Wanderer^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 270,
+    "itemLevel": 3,
+    "attack": 140,
+    "defense": null,
+    "weight": 100,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Wanderer"
+    ],
+    "script": {
+      "aspdPercent": [
+        "LEARN_SKILL[Lesson==1]---1"
+      ],
+      "aspd": [
+        "9===1"
+      ],
+      "atk": [
+        "REFINE[7]LEARN_SKILL[Lesson==1]---5"
+      ]
+    }
+  },
+  "26212": {
+    "id": 26212,
+    "aegisName": "Heart_Whip",
+    "name": "Heart Whip [2]",
+    "unidName": "Rope",
+    "resName": "Heart_Whip",
+    "description": "แส้ที่ห้อยหัวใจดวงเล็ก ๆ ไว้ที่ปลายเชือก\n^ffffff_^000000 \nMATK + 190, เพิ่ม Damage เวทมนตร์ธาตุ Neutral 10%\nทุก ๆ การอัพเกรด 1 ขั้น MATK + 4\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Metallic Sound 30%\nเมื่ออัพเกรดถึงขั้น 11 ลด Cooldown สกิล Metallic Sound 2 วินาที\nประเภท : ^777777Whip^000000 พลังโจมตี : ^777777100^000000\nน้ำหนัก : ^777777120^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Wanderer^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 270,
+    "itemLevel": 4,
+    "attack": 100,
+    "defense": null,
+    "weight": 120,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Wanderer"
+    ],
+    "script": {
+      "matk": [
+        "190",
+        "1---4"
+      ],
+      "m_my_element_neutral": [
+        "10"
+      ],
+      "Metalic Sound": [
+        "9===30"
+      ],
+      "cd__Metalic Sound": [
+        "11===2"
+      ]
+    }
+  },
+  "26216": {
+    "id": 26216,
+    "aegisName": "R_Wheep",
+    "name": "Royal Whip [2]",
+    "unidName": "Rope",
+    "resName": "R_Wheep",
+    "description": "แส้สำหรับเต้นที่นักระบำแห่ง Glast Heim ใช้\nแม้จะเป็นอาวุธธรรมดา แต่ก็มีพลังที่แข็งแกร่งซ่อนอยู่เนื่องจากได้รับผลกระทบจาก Himmelmez\n^ffffff_^000000 \nไม่สามารถทำลายได้, MATK +180, เพิ่ม Damage ทางเวทมนตร์ธาตุ Neutral 10%\nทุก ๆ การอัพเกรด 1 ขั้น MATK +4\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Reverberation, Metalic Sound 20%, ลด Cooldown สกิล Metalic Sound 1 วินาที\nเมื่ออัพเกรดถึงขั้น 11 ลด Cooldown สกิล Metalic Sound ลงอีก 1 วินาที, เพิ่ม Damage ทางเวทมนตร์ต่อมอนสเตอร์เผ่า Undead, Angel 20%\n^ffffff_^000000 \nเมื่อสวมใส่ร่วมกับ ^32CD32King Schmidt's Suit และ King Schmidt's Manteau^000000, \nMATK +30, เมื่อโจมตีทางเวทมนตร์ มีโอกาสที่จะเพิ่ม Damage ทางเวทมนตร์ธาตุ Neutral 10% เป็นเวลา 10 วินาที\nเมื่อค่าอัพเกรด ^32CD32King Schmidt's Suit, King Schmidt's Manteau, Royal Whip^000000 รวมกันตั้งแต่ 30 ขึ้นไป, เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูธาตุ Holy, Undead 20%\n^ffffff_^000000 \nประเภท : ^777777Whip^000000 พลังโจมตี : ^777777100^000000\nน้ำหนัก : ^777777100^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Wanderer^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 270,
+    "itemLevel": 4,
+    "attack": 100,
+    "defense": null,
+    "weight": 100,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Wanderer"
+    ],
+    "script": {
+      "matk": [
+        "180",
+        "1---4",
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]30"
+      ],
+      "m_my_element_neutral": [
+        "10"
+      ],
+      "cd__Metalic Sound": [
+        "9===1",
+        "11===1"
+      ],
+      "Reverberation": [
+        "9===20"
+      ],
+      "Metalic Sound": [
+        "9===20"
+      ],
+      "m_race_undead": [
+        "11===20"
+      ],
+      "m_race_angel": [
+        "11===20"
+      ],
+      "m_element_holy": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]REFINE[weapon,armor,garment==30]===20"
+      ],
+      "m_element_undead": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]REFINE[weapon,armor,garment==30]===20"
+      ],
+      "chance__m_my_element_neutral": [
+        "10"
+      ]
+    }
+  },
+  "26221": {
+    "id": 26221,
+    "aegisName": "Dark_Illu_Whips_TH",
+    "name": "Dark Illusion Whip [2]",
+    "unidName": "Dark Illusion Whip",
+    "resName": "데몬블레이드휩",
+    "description": "ทุก ๆ การอัพเกรด 2 ขั้น,\nATK +15\n\nทุก ๆ การอัพเกรด 3 ขั้น,\nเพิ่ม Damage ทางกายภาพระยะไกล 4%\n\nเมื่ออัพเกรดถึงขั้น 7,\nASPD +10%\nลด Cooldown สกิล Arrow Vulcan 0.1 วินาที\n\nเมื่ออัพเกรดถึงขั้น 9,\nเพิ่ม Damage ทางกายภาพระยะไกล 7%\n\nเมื่ออัพเกรดถึงขั้น 11,\nเพิ่ม Damage สกิล Arrow Vulcan 200%\nลด Delay หลังใช้สกิล 10%\nประเภท : ^777777Whip^000000 พลังโจมตี : ^777777160^000000\nน้ำหนัก : ^777777100^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Wanderer^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 270,
+    "itemLevel": 4,
+    "attack": 160,
+    "defense": null,
+    "weight": 100,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Wanderer"
+    ],
+    "script": {
+      "atk": [
+        "2---15"
+      ],
+      "range": [
+        "3---4",
+        "9===7"
+      ],
+      "aspdPercent": [
+        "7===10"
+      ],
+      "cd__Arrow Vulcan": [
+        "7===0.1"
+      ],
+      "Arrow Vulcan": [
+        "11===200"
+      ],
+      "acd": [
+        "11===10"
+      ]
+    }
+  },
   "27082": {
     "id": 27082,
     "aegisName": "AngerNineTail_Card",
@@ -22147,7 +22686,7 @@
       "p_element_neutral": [
         "20"
       ],
-      "Metallic Sound": [
+      "Metalic Sound": [
         "EQUIP[Singing Pere Card]===50"
       ]
     }
@@ -25346,15 +25885,15 @@
     "script": {
       "dex": [
         "5",
-        "LEARN_SKILL[Music Lessons==2]---1"
+        "LEARN_SKILL[Lesson==2]---1"
       ],
       "agi": [
         "5",
-        "LEARN_SKILL[Music Lessons==2]---1"
+        "LEARN_SKILL[Lesson==2]---1"
       ],
       "int": [
         "5",
-        "LEARN_SKILL[Music Lessons==2]---1"
+        "LEARN_SKILL[Lesson==2]---1"
       ],
       "Arrow Vulcan": [
         "level:1(1-125)---1"
@@ -25372,7 +25911,7 @@
         "level:5(1-125)---1"
       ],
       "matk": [
-        "LEARN_SKILL[Music Lessons==2]---20"
+        "LEARN_SKILL[Lesson==2]---20"
       ]
     }
   },
@@ -28654,6 +29193,109 @@
       ]
     }
   },
+  "29485": {
+    "id": 29485,
+    "aegisName": "WanderMinstrel_Top",
+    "name": "Clown Gypsy Stone (Upper)",
+    "unidName": "Clown Gypsy Stone (Upper)",
+    "resName": "궁수피규어",
+    "description": "ทุก ๆ การเรียนรู้สกิล Dancing Lesson, Musical Lesson 1 Level ATK+ 2",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 71,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "atk": [
+        "LEARN_SKILL[Dancing Lesson==1]---2",
+        "LEARN_SKILL[Musical Lesson==1]---2"
+      ]
+    }
+  },
+  "29486": {
+    "id": 29486,
+    "aegisName": "WanderMinstrel_Middle",
+    "name": "Clown Gypsy Stone (Middle)",
+    "unidName": "Clown Gypsy Stone (Middle)",
+    "resName": "궁수피규어",
+    "description": "เพิ่มดาเมจของสกิล Musical Strike, Dart Arrow 20%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 72,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "Musical Strike": [
+        "20"
+      ],
+      "Dart Arrow": [
+        "20"
+      ]
+    }
+  },
+  "29487": {
+    "id": 29487,
+    "aegisName": "WanderMinstrel_Bottom",
+    "name": "Clown Gypsy Stone (Lower)",
+    "unidName": "Clown Gypsy Stone (Lower)",
+    "resName": "궁수피규어",
+    "description": "เพิ่มดาเมจของสกิล Arrow Vulcan 20%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 73,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "Arrow Vulcan": [
+        "20"
+      ]
+    }
+  },
+  "29488": {
+    "id": 29488,
+    "aegisName": "WanderMinstrel_Robe",
+    "name": "Wanderer Minstrel Stone (Garment)",
+    "unidName": "Wanderer Minstrel Stone (Garment)",
+    "resName": "ClownGypsy_Figure",
+    "description": "เพิ่มดาเมจของสกิล Severe Rainstorm 15%\nเมื่อใช้ร่วมกับ Clown Gypsy Stone (Upper) เพิ่มดาเมจของสกิล Severe Rainstorm 15%\nเมื่อใช้ร่วมกับ Clown Gypsy Stone (Middle) ลด Cooldown ของสกิล Severe Rainstorm 1 วินาที\nเมื่อใช้ร่วมกับ Clown Gypsy Stone (Lower) ลด Fixed Cast Time 0.5 วินาที",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 74,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "Severe Rainstorm": [
+        "15",
+        "EQUIP[Clown Gypsy Stone (Upper)]15"
+      ],
+      "cd__Severe Rainstorm": [
+        "EQUIP[Clown Gypsy Stone (Middle)]1"
+      ],
+      "fct": [
+        "EQUIP[Clown Gypsy Stone (Lower)]0.5"
+      ]
+    }
+  },
   "29513": {
     "id": 29513,
     "aegisName": "Highpriest_Top",
@@ -30027,7 +30669,7 @@
       "m_my_element_neutral": [
         "REFINE_NAME[Heart Whip==3]---5"
       ],
-      "Metallic Sound": [
+      "Metalic Sound": [
         "REFINE_NAME[Heart Whip==3]---5"
       ],
       "Severe Rainstorm": [
@@ -30063,7 +30705,7 @@
       "m_my_element_neutral": [
         "REFINE_NAME[Black Circle==3]---5"
       ],
-      "Metallic Sound": [
+      "Metalic Sound": [
         "REFINE_NAME[Black Circle==3]---5"
       ],
       "Severe Rainstorm": [
@@ -32441,6 +33083,112 @@
       ]
     }
   },
+  "310265": {
+    "id": 310265,
+    "aegisName": "WanderMins_Robe2",
+    "name": "Wanderer Minstrel Stone II (Garment)",
+    "unidName": "Wanderer Minstrel Stone II (Garment)",
+    "resName": "ClownGypsy_Figure",
+    "description": "เพิ่ม Damage สกิล Reverberation 15%\nเมื่อใช้กับ Clown Gypsy Stone II (Upper) เพิ่ม Damage สกิล Reverberation 10%\nเมื่อใช้กับ Clown Gypsy Stone II (Middle) ลดปริมาณการใช้ SP สกิล Reverberation, Metalic Sound 20%\nเมื่อใช้กับ Clown Gypsy Stone II (Lower) เพิ่ม Damage สกิล Metalic Sound 20%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 74,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "Reverberation": [
+        "15",
+        "EQUIP[Clown Gypsy Stone II (Upper)]10"
+      ],
+      "spPercent__Reverberation": [
+        "EQUIP[Clown Gypsy Stone II (Middle)]20"
+      ],
+      "spPercent__Metalic Sound": [
+        "EQUIP[Clown Gypsy Stone II (Middle)]20"
+      ],
+      "Metalic Sound": [
+        "EQUIP[Clown Gypsy Stone II (Lower)]20"
+      ]
+    }
+  },
+  "310266": {
+    "id": 310266,
+    "aegisName": "WanderMins_Top2",
+    "name": "Clown Gypsy Stone II (Upper)",
+    "unidName": "Clown Gypsy Stone II (Upper)",
+    "resName": "궁수피규어",
+    "description": "เพิ่ม Damage สกิล Arrow Vulcan 15%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 71,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "Arrow Vulcan": [
+        "15"
+      ]
+    }
+  },
+  "310267": {
+    "id": 310267,
+    "aegisName": "WanderMins_Middle2",
+    "name": "Clown Gypsy Stone II (Middle)",
+    "unidName": "Clown Gypsy Stone II (Middle)",
+    "resName": "궁수피규어",
+    "description": "ทุก ๆ การเรียนรู้สกิล Musical Strike, Dart Arrow 1 เลเวล เพิ่ม Damage ทางเวทมนตร์ธาตุ Neutral 1%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 72,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "m_my_element_neutral": [
+        "LEARN_SKILL[Musical Strike==1]---1",
+        "LEARN_SKILL[Dart Arrow==1]---1"
+      ]
+    }
+  },
+  "310268": {
+    "id": 310268,
+    "aegisName": "WanderMins_Bottom2",
+    "name": "Clown Gypsy Stone II (Lower)",
+    "unidName": "Clown Gypsy Stone II (Lower)",
+    "resName": "궁수피규어",
+    "description": "เพิ่ม Damage สกิล Musical Strike, Dart Arrow 15%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 73,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "Musical Strike": [
+        "20"
+      ],
+      "Dart Arrow": [
+        "20"
+      ]
+    }
+  },
   "400001": {
     "id": 400001,
     "aegisName": "Victory_Wing_Ear",
@@ -34390,7 +35138,7 @@
         "EQUIP[Emerald Earrings]20"
       ],
       "atk": [
-        "EQUIP[Emerald Earrings]LEARN_SKILL[Music Lessons==1]---20"
+        "EQUIP[Emerald Earrings]LEARN_SKILL[Lesson==1]---20"
       ]
     }
   },
@@ -34889,11 +35637,11 @@
       "matkPercent": [
         "9===7"
       ],
-      "Metallic Sound": [
+      "Metalic Sound": [
         "EQUIP[Old Maestro Song's Hat]2---15",
         "EQUIP[Old Dying Swan]2---15"
       ],
-      "cd__Metallic Sound": [
+      "cd__Metalic Sound": [
         "EQUIP[Old Maestro Song's Hat]12===1",
         "EQUIP[Old Dying Swan]12===1"
       ],
@@ -37769,6 +38517,164 @@
       ],
       "matkPercent": [
         "EQUIP[Great Hero Boots]===7"
+      ]
+    }
+  },
+  "580000": {
+    "id": 580000,
+    "aegisName": "Boost_Whip",
+    "name": "Boosting Whip [2]",
+    "unidName": "Rope",
+    "resName": "Blut_Whip",
+    "description": "แส้สุดพิเศษที่เตรียมไว้เพื่อทำให้นักผจญภัยพัฒนาไปอย่างรวดเร็ว\n\nMATK +160\nเพิ่ม Damage ทางเวทมนตร์ธาตุ Neutral 3%, ATK +3%\nทุก ๆ การอัพเกรด 1 ขั้น ATK +2, MATK +2\nทุก ๆ Base Lv. 15, ATK +3, MATK +3 (ใช้งานสูงสุดถึง Lv.180)\nเมื่ออัพเกรดถึงขั้น 7 ทุก ๆ การเรียนรู้สกิล Dancing Lesson 1 เลเวล ลดระยะเวลาร่ายแบบแปรผัน 1%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูทุกขนาด 10%\n\nเมื่อสวมใส่ร่วมกับ Elemental Booster (Robe/Muffler/Shoes/Earring),\nMATK +20, ลด Delay หลังใช้สกิล 10%,\nทุก ๆ Base Lv. 15 เพิ่ม Damage สกิล Reverberation 1% (ใช้งานสูงสุดถึง Lv.180),\nเมื่อใช้ Improve Concentration เพิ่ม Damage สกิล Reverberation ขึ้นอีก 20% เป็นเวลา 60 วินาที\n\nเมื่อสวมใส่ร่วมกับ Range Booster (Suit/Manteau/Boots/Brooch), \nATK +20, ลด Cooldown สกิล Severe Rainstorm 2 วินาที\nทุก ๆ Base Lv. 15 เพิ่ม Damage สกิล Severe Rainstorm 1% (ใช้งานสูงสุดถึง Lv.180),\nเมื่อใช้ Improve Concentration เพิ่ม Damage สกิล Severe Rainstorm ขึ้นอีก 20% เป็นเวลา 60 วินาที\nประเภท : ^777777Whip^000000 พลังโจมตี : ^777777150^000000\nน้ำหนัก : ^7777770^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Wanderer^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 270,
+    "itemLevel": 4,
+    "attack": 150,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Wanderer"
+    ],
+    "script": {
+      "matk": [
+        "160",
+        "1---2",
+        "level:15---3",
+        "level:195===-3",
+        "EQUIP[Defunct Booster Robe&&Defunct Booster Muffler&&Defunct Booster Shoes&&Defunct Booster Earring]20"
+      ],
+      "m_my_element_neutral": [
+        "3"
+      ],
+      "atkPercent": [
+        "3"
+      ],
+      "atk": [
+        "1---2",
+        "level:15---3",
+        "level:195===-3",
+        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]20"
+      ],
+      "vct": [
+        "REFINE[7]LEARN_SKILL[Dancing Lesson==1]---1"
+      ],
+      "p_size_all": [
+        "9===10"
+      ],
+      "m_size_all": [
+        "9===10"
+      ],
+      "acd": [
+        "EQUIP[Defunct Booster Robe&&Defunct Booster Muffler&&Defunct Booster Shoes&&Defunct Booster Earring]10"
+      ],
+      "Reverberation": [
+        "EQUIP[Defunct Booster Robe&&Defunct Booster Muffler&&Defunct Booster Shoes&&Defunct Booster Earring]level:15---1",
+        "EQUIP[Defunct Booster Robe&&Defunct Booster Muffler&&Defunct Booster Shoes&&Defunct Booster Earring]ACTIVE_SKILL[Improve Concentration]===20(60 วินาที)"
+      ],
+      "cd__Severe Rainstorm": [
+        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]2"
+      ],
+      "Severe Rainstorm": [
+        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]level:15---1",
+        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]ACTIVE_SKILL[Improve Concentration]===20(60 วินาที)"
+      ]
+    }
+  },
+  "580002": {
+    "id": 580002,
+    "aegisName": "Barb_Wire_K",
+    "name": "Barbed Wire Whip K [2]",
+    "unidName": "Rope",
+    "resName": "가시철사",
+    "description": "แส้ที่ถักด้วยลวดหนามแหลม\nดูกลมกลืนเข้ากับ Ancient Hero Boots\n\nMATK +190\nทุก ๆ การอัพเกรด 2 ขั้น MATK +10\nทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage ทางเวทมนตร์ธาตุ Neutral 4%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Reverberation, Metalic Sound 10%\nเมื่ออัพเกรดถึงขั้น 11 ลดระยะเวลาร่ายแบบคงที่สกิล Reverberation 0.5 วินาที\nเมื่อสวมใส่ร่วมกับ Ancient Hero Boots เมื่อโจมตีทางกายภาพ/เวทมนตร์ มีโอกาสที่ INT +20, MATK +15% เป็นเวลา 7 วินาที\nประเภท : ^777777Whip^000000 พลังโจมตี : ^777777160^000000\nน้ำหนัก : ^77777770^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Wanderer^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 270,
+    "itemLevel": 4,
+    "attack": 160,
+    "defense": null,
+    "weight": 70,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Wanderer"
+    ],
+    "script": {
+      "matk": [
+        "190",
+        "2---10"
+      ],
+      "m_my_element_neutral": [
+        "3---4"
+      ],
+      "Reverberation": [
+        "9===10"
+      ],
+      "Metalic Sound": [
+        "9===10"
+      ],
+      "fct__Reverberation": [
+        "11===0.5"
+      ],
+      "chance__int": [
+        "EQUIP[Ancient Hero Boots]===20(7 วินาที)"
+      ],
+      "chance__matkPercent": [
+        "EQUIP[Ancient Hero Boots]===15(7 วินาที)"
+      ]
+    }
+  },
+  "580009": {
+    "id": 580009,
+    "aegisName": "Up_Barb_Wire_K",
+    "name": "Patent Barbed Wire Whip [2]",
+    "unidName": "Rope",
+    "resName": "Up_Barb_Wire_K",
+    "description": "แส้ที่ถักด้วยลวดหนามแหลม\nด้วยพลังที่แกร่งขึ้น มันจึงเริ่มเผยพลังอันแท้จริงออกมา\nดูกลมกลืนเข้ากับ Great Hero Boots\n\nMATK +230\nทุก ๆ การอัพเกรด 2 ขั้น MATK +15\nทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage ทางเวทมนตร์ทุกธาตุ 4%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage สกิล Reverberation, Metalic Sound 10%\nเมื่ออัพเกรดถึงขั้น 9 ลดระยะเวลาร่ายแบบคงที่สกิล Reverberation 0.5 วินาที\nเมื่ออัพเกรดถึงขั้น 11, MATK +7%, เพิ่ม Damage สกิล Reverberation, Metalic Sound ขึ้นอีก 15%\nเมื่อสวมใส่ร่วมกับ Great Hero Boots, INT +10, MATK +7%\n\nประเภท : ^777777Whip^000000 พลังโจมตี : ^777777160^000000\nน้ำหนัก : ^777777100^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Wanderer^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 270,
+    "itemLevel": 4,
+    "attack": 160,
+    "defense": null,
+    "weight": 100,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Wanderer"
+    ],
+    "script": {
+      "matk": [
+        "230",
+        "2---15"
+      ],
+      "m_my_element_all": [
+        "3---4"
+      ],
+      "Reverberation": [
+        "7===10",
+        "11===15"
+      ],
+      "Metalic Sound": [
+        "7===10",
+        "11===15"
+      ],
+      "fct__Reverberation": [
+        "9===0.5"
+      ],
+      "matkPercent": [
+        "11===7",
+        "EQUIP[Great Hero Boots]===7"
+      ],
+      "int": [
+        "EQUIP[Great Hero Boots]===10"
       ]
     }
   },

@@ -6,6 +6,7 @@ import {
   CharacterBase,
   PassiveSkillModel,
 } from './_character-base.abstract';
+import { Archer } from './archer';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 0, 1, 0],
@@ -92,9 +93,6 @@ export class Ranger extends CharacterBase {
     'Hunter',
     'Hunter Cls',
     'Hunter Class',
-    'Archer',
-    'Archer Cls',
-    'Archer Class',
   ];
   protected _atkSkillList: AtkSkillModel[] = [
     {
@@ -159,22 +157,6 @@ export class Ranger extends CharacterBase {
     {
       isEquipAtk: true,
       inputType: 'selectButton',
-      label: 'Improve 10',
-      name: 'Improve Concentration',
-      dropdown: [
-        {
-          label: 'Yes',
-          value: 'Improve Concentration==10',
-          skillLv: 10,
-          isUse: true,
-          bonus: { agiBoost: 12, dexBoost: 12 },
-        },
-        { label: 'No', value: 0, isUse: false },
-      ],
-    },
-    {
-      isEquipAtk: true,
-      inputType: 'selectButton',
       label: 'Wind Walk 5',
       name: 'Wind Walk',
       dropdown: [
@@ -224,26 +206,6 @@ export class Ranger extends CharacterBase {
     },
   ];
   protected _passiveSkillList: PassiveSkillModel[] = [
-    {
-      label: "Owl's Eye 10",
-      name: "Owl's Eye",
-      inputType: 'selectButton',
-      isEquipAtk: true,
-      dropdown: [
-        { label: 'Yes', value: 10, skillLv: 10, isUse: true, bonus: { dex: 10 } },
-        { label: 'No', value: 0, isUse: false },
-      ],
-    },
-    {
-      label: "Vulture's Eye 10",
-      name: "Vulture's Eye",
-      inputType: 'selectButton',
-      isEquipAtk: true,
-      dropdown: [
-        { label: 'Yes', value: 10, skillLv: 10, isUse: true, bonus: { hit: 10 } },
-        { label: 'No', value: 0, isUse: false },
-      ],
-    },
     {
       label: 'Beast Bane',
       name: 'Beast Bane',
@@ -399,4 +361,10 @@ export class Ranger extends CharacterBase {
       ],
     },
   ];
+
+  constructor() {
+    super();
+
+    this.inheritBaseClass(new Archer());
+  }
 }

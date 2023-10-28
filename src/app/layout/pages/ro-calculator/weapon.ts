@@ -1,8 +1,16 @@
 import { ItemModel } from './models/item.model';
-import { WeaponSubTypeName, WeaponSubTypeNameMapById, WeaponTypeName, WeaponTypeNameMapBySubTypeId } from './constants/weapon-type-mapper';
+import {
+  WeaponSubTypeName,
+  WeaponSubTypeNameMapById,
+  WeaponTypeName,
+  WeaponTypeNameMapBySubTypeId,
+} from './constants/weapon-type-mapper';
 import { ElementType } from './constants/element-type.const';
 
-const weaponUpgradeTable: Record<number, Record<number, { bonus: number; overUpgrade: number; highUpgrade: number }>> = {
+const weaponUpgradeTable: Record<
+  number,
+  Record<number, { bonus: number; overUpgrade: number; highUpgrade: number }>
+> = {
   1: {
     1: { bonus: 2, overUpgrade: 0, highUpgrade: 0 },
     2: { bonus: 4, overUpgrade: 0, highUpgrade: 0 },
@@ -93,6 +101,13 @@ const weaponUpgradeTable: Record<number, Record<number, { bonus: number; overUpg
   },
 };
 
+const IsLongRange: Partial<Record<WeaponTypeName, boolean>> = {
+  gun: true,
+  bow: true,
+  whip: true,
+  instrument: true,
+};
+
 export class Weapon {
   private _propertyAtk: ElementType = ElementType.Neutral;
   private _rangeType = '';
@@ -117,7 +132,7 @@ export class Weapon {
     this._baseWeaponLevel = itemLevel || 0;
     this._typeName = WeaponTypeNameMapBySubTypeId[itemSubTypeId];
     this._subTypeName = WeaponSubTypeNameMapById[itemSubTypeId];
-    this._rangeType = this._typeName === 'gun' || this._typeName === 'bow' ? 'range' : 'melee';
+    this._rangeType = IsLongRange[this._typeName] ? 'range' : 'melee';
 
     if (refineLevel > 0) {
       const { bonus, highUpgrade, overUpgrade } = weaponUpgradeTable[itemLevel][refineLevel];

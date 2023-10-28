@@ -1,5 +1,14 @@
 import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
+import {
+  ActiveSkillModel,
+  AtkSkillFormulaInput,
+  AtkSkillModel,
+  CharacterBase,
+  PassiveSkillModel,
+} from './_character-base.abstract';
+import { Archer } from './archer';
+import { InfoForClass } from '../models/info-for-class.model';
+import { WeaponTypeName } from '../constants/weapon-type-mapper';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 0, 1, 0],
@@ -73,9 +82,213 @@ export class Wanderer extends CharacterBase {
   protected readonly CLASS_NAME = ClassName.Wanderer;
   protected readonly JobBonusTable = jobBonusTable;
 
-  protected readonly initialStatusPoint = 40;
-  protected readonly classNames = ['Thief'];
-  protected readonly _atkSkillList: AtkSkillModel[] = [];
-  protected readonly _activeSkillList: ActiveSkillModel[] = []; //Windmill Rush
-  protected readonly _passiveSkillList: PassiveSkillModel[] = [];
+  protected readonly initialStatusPoint = 100;
+  protected readonly classNames = [
+    'Hi-Class',
+    'Only 3rd Cls',
+    'Wanderer',
+    'Wanderer Cls',
+    'Wanderer Class',
+    'Dancer',
+    'Dancer Cls',
+    'Dancer Class',
+  ];
+  protected readonly _atkSkillList: AtkSkillModel[] = [
+    {
+      label: 'Arrow Vulcan Lv10',
+      name: 'Arrow Vulcan',
+      value: 'Arrow Vulcan==10',
+      acd: 0.5,
+      fct: 0.5,
+      vct: 1.5,
+      cd: 1.5,
+      hit: 9,
+      levelList: [],
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { skillLevel, model } = input;
+        const baseLevel = model.level;
+
+        return (500 + skillLevel * 100) * (baseLevel / 100);
+      },
+    },
+    {
+      label: 'Metalic Sound Lv10',
+      name: 'Metalic Sound',
+      value: 'Metalic Sound==10',
+      acd: 0.5,
+      fct: 0,
+      vct: 4,
+      cd: 2.5,
+      hit: 2,
+      isMatk: true,
+      levelList: [],
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { skillLevel, model } = input;
+        const baseLevel = model.level;
+        const lessonLv = this.bonuses.learnedSkillMap.get('Lesson') || 0;
+
+        return (skillLevel * 120 + lessonLv * 60) * (baseLevel / 100);
+      },
+    },
+    {
+      label: 'Severe Rainstorm Lv5',
+      name: 'Severe Rainstorm',
+      value: 'Severe Rainstorm==5',
+      acd: 1,
+      fct: 0.5,
+      vct: 3.5,
+      cd: 7,
+      totalHit: 12,
+      levelList: [],
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { weapon, status, skillLevel, model } = input;
+        const baseLevel = model.level;
+        const { totalDex, totalAgi } = status;
+        const weaType = weapon.data.typeName;
+        const weaMultiMap: Partial<Record<WeaponTypeName, number>> = {
+          bow: 1,
+          instrument: 1.5,
+          whip: 1.5,
+        };
+        const extra = weaMultiMap[weaType] || 0;
+
+        return extra * (totalDex + totalAgi) * (skillLevel / 5) * (baseLevel / 100);
+      },
+    },
+    {
+      label: '[Improved] Severe Rainstorm Lv5',
+      name: 'Severe Rainstorm',
+      value: '[Improved] Severe Rainstorm==5',
+      acd: 1,
+      fct: 0.5,
+      vct: 3.5,
+      cd: 7,
+      totalHit: 12,
+      levelList: [],
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { weapon, status, skillLevel, model } = input;
+        const baseLevel = model.level;
+        const { totalDex, totalAgi } = status;
+        const weaType = weapon.data.typeName;
+        const weaMultiMap: Partial<Record<WeaponTypeName, number>> = {
+          bow: 100,
+          instrument: 120,
+          whip: 120,
+        };
+        const extra = weaMultiMap[weaType] || 0;
+
+        return ((totalDex + totalAgi) / 2 + skillLevel * extra) * (baseLevel / 100);
+      },
+    },
+  ];
+
+  protected readonly _activeSkillList: ActiveSkillModel[] = [
+    {
+      label: 'Swing Dance',
+      name: 'Swing Dance',
+      inputType: 'dropdown',
+      dropdown: [
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 1', value: 1, isUse: true, bonus: { aspdPercent: 1 * 5, fctPercent: 1 * 6 } },
+        { label: 'Lv 2', value: 2, isUse: true, bonus: { aspdPercent: 2 * 5, fctPercent: 2 * 6 } },
+        { label: 'Lv 3', value: 3, isUse: true, bonus: { aspdPercent: 3 * 5, fctPercent: 3 * 6 } },
+        { label: 'Lv 4', value: 4, isUse: true, bonus: { aspdPercent: 4 * 5, fctPercent: 4 * 6 } },
+        { label: 'Lv 5', value: 5, isUse: true, bonus: { aspdPercent: 5 * 5, fctPercent: 5 * 6 } },
+      ],
+    },
+  ];
+
+  protected readonly _passiveSkillList: PassiveSkillModel[] = [
+    {
+      label: 'Dart Arrow',
+      name: 'Dart Arrow',
+      inputType: 'dropdown',
+      dropdown: [
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 1', value: 1, isUse: true },
+        { label: 'Lv 2', value: 2, isUse: true },
+        { label: 'Lv 3', value: 3, isUse: true },
+        { label: 'Lv 4', value: 4, isUse: true },
+        { label: 'Lv 5', value: 5, isUse: true },
+      ],
+    },
+    {
+      label: 'Dancing Lesson',
+      name: 'Dancing Lesson',
+      inputType: 'dropdown',
+      isMasteryAtk: true,
+      dropdown: [
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 1', value: 1, isUse: true, bonus: { x_whip_atk: 1 * 3, whip_cri: 1, spPercent: 1 } },
+        { label: 'Lv 2', value: 2, isUse: true, bonus: { x_whip_atk: 2 * 3, whip_cri: 2, spPercent: 2 } },
+        { label: 'Lv 3', value: 3, isUse: true, bonus: { x_whip_atk: 3 * 3, whip_cri: 3, spPercent: 3 } },
+        { label: 'Lv 4', value: 4, isUse: true, bonus: { x_whip_atk: 4 * 3, whip_cri: 4, spPercent: 4 } },
+        { label: 'Lv 5', value: 5, isUse: true, bonus: { x_whip_atk: 5 * 3, whip_cri: 5, spPercent: 5 } },
+        { label: 'Lv 6', value: 6, isUse: true, bonus: { x_whip_atk: 6 * 3, whip_cri: 6, spPercent: 6 } },
+        { label: 'Lv 7', value: 7, isUse: true, bonus: { x_whip_atk: 7 * 3, whip_cri: 7, spPercent: 7 } },
+        { label: 'Lv 8', value: 8, isUse: true, bonus: { x_whip_atk: 8 * 3, whip_cri: 8, spPercent: 8 } },
+        { label: 'Lv 9', value: 9, isUse: true, bonus: { x_whip_atk: 9 * 3, whip_cri: 9, spPercent: 9 } },
+        { label: 'Lv 10', value: 10, isUse: true, bonus: { x_whip_atk: 10 * 3, whip_cri: 10, spPercent: 10 } },
+      ],
+    },
+    {
+      label: 'Lesson',
+      name: 'Lesson',
+      inputType: 'dropdown',
+      isMasteryAtk: true,
+      dropdown: [
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 1', value: 1, isUse: true, bonus: { sp: 1 * 30 } },
+        { label: 'Lv 2', value: 2, isUse: true, bonus: { sp: 2 * 30 } },
+        { label: 'Lv 3', value: 3, isUse: true, bonus: { sp: 3 * 30 } },
+        { label: 'Lv 4', value: 4, isUse: true, bonus: { sp: 4 * 30 } },
+        { label: 'Lv 5', value: 5, isUse: true, bonus: { sp: 5 * 30 } },
+        { label: 'Lv 6', value: 6, isUse: true, bonus: { sp: 6 * 30 } },
+        { label: 'Lv 7', value: 7, isUse: true, bonus: { sp: 7 * 30 } },
+        { label: 'Lv 8', value: 8, isUse: true, bonus: { sp: 8 * 30 } },
+        { label: 'Lv 9', value: 9, isUse: true, bonus: { sp: 9 * 30 } },
+        { label: 'Lv 10', value: 10, isUse: true, bonus: { sp: 10 * 30 } },
+      ],
+    },
+  ];
+
+  constructor() {
+    super();
+
+    this.inheritBaseClass(new Archer());
+  }
+
+  override getUiMasteryAtk(info: InfoForClass): number {
+    const { weapon } = info;
+    const weaponType = weapon?.data?.typeName;
+
+    const { totalAtk } = this.calcHiddenMasteryAtk(info, { prefix: `x_${weaponType}` });
+
+    return totalAtk;
+  }
+
+  override setAdditionalBonus(params: InfoForClass) {
+    const { totalBonus, weapon } = params;
+    const { typeName } = weapon.data;
+
+    const { masteryAtks, equipAtks, learnedSkillMap, activeSkillNames } = this.bonuses;
+
+    const prefixCondition = `${typeName}_`;
+    for (const [_skillName, bonus] of Object.entries({ ...(masteryAtks || {}), ...(equipAtks || {}) })) {
+      for (const [attr, value] of Object.entries(bonus)) {
+        if (attr.startsWith(prefixCondition)) {
+          const actualAttr = attr.replace(prefixCondition, '');
+          totalBonus[actualAttr] += value;
+        }
+      }
+    }
+
+    const isActiveSwing = activeSkillNames.has('Swing Dance');
+    const lessonLv = learnedSkillMap.get('Lesson') || 0;
+    if (isActiveSwing && lessonLv > 0) {
+      totalBonus.aspdPercent += lessonLv;
+    }
+
+    return totalBonus;
+  }
 }

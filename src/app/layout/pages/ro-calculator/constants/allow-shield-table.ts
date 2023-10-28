@@ -1,7 +1,8 @@
-import { WeaponTypeName } from "./weapon-type-mapper";
+import { WeaponTypeName } from './weapon-type-mapper';
 
 export const AllowShieldTable: Partial<Record<WeaponTypeName, true>> = {
   sword: true,
+  whip: true,
   dagger: true,
   mace: true,
   rod: true,

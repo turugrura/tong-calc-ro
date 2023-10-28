@@ -6,7 +6,7 @@ export enum RaceType {
   Insect = 'Insect',
   Fish = 'Fish',
   Demon = 'Demon',
-  Human = 'Human',
+  DemiHuman = 'DemiHuman',
   Angel = 'Angel',
   Dragon = 'Dragon',
 }

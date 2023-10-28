@@ -160,7 +160,8 @@ export abstract class CharacterBase {
     });
 
     this._passiveSkillList.forEach((skill, index) => {
-      const { bonus, isUse, value, skillLv } = (skill.dropdown as any[]).find((x) => x.value === this.passiveSkillIds[index]) ?? {};
+      const { bonus, isUse, value, skillLv } =
+        (skill.dropdown as any[]).find((x) => x.value === this.passiveSkillIds[index]) ?? {};
       if (!isUse) return;
 
       learnedSkillMap.set(skill.name, skillLv ?? Number(value));
@@ -283,6 +284,10 @@ export abstract class CharacterBase {
   }
 
   getMasteryAtk(_: InfoForClass) {
+    return 0;
+  }
+
+  getUiMasteryAtk(_: InfoForClass) {
     return 0;
   }
 

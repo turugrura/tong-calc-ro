@@ -33,6 +33,7 @@ import { RoyalGuard } from './jobs/royal-guard';
 import { environment } from 'src/environments/environment';
 import { Doram } from './jobs/doram';
 import { MonsterDataViewComponent } from './monster-data-view/monster-data-view.component';
+import { Wanderer } from './jobs/wanderer';
 
 const sortObj = <T>(field: keyof T) => {
   return (a: T, b: T) => {
@@ -97,7 +98,7 @@ const Characters: DropdownModel[] = [
   { label: ClassID[7], value: 7, instant: new ArchBishop() },
   { label: ClassID[2], value: 2, instant: new Ranger() },
   // { label: ClassID[21],value: 21, instant: new Minstrel() },
-  // { label: ClassID[22],value: 22, instant: new Wanderer() },
+  { label: ClassID[22], value: 22, instant: new Wanderer() },
   { label: ClassID[5], value: 5, instant: new GitCross() },
   { label: ClassID[4], value: 4, instant: new ShadowChaser() },
   { label: ClassID[6], value: 6, instant: new Warlock() },
@@ -1656,11 +1657,16 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     const myAmmoId = this.calculator.getAmmoSubTypeId();
     const isMC = this.selectedCharacter.className === ClassName.Mechanic;
     const onlyMyAmmo = (a: DropdownModel) => {
-      if (isMC) {
-        return this.items[a.value]?.aegisName?.includes('Cannon_Ball');
+      const ammo = this.items[a.value];
+      if (!ammo) return false;
+
+      const onlyMC = ammo.aegisName?.includes('Cannon_Ball');
+
+      if (isMC && onlyMC) {
+        return true;
       }
 
-      return this.items[a.value]?.itemSubTypeId === myAmmoId;
+      return !onlyMC && ammo.itemSubTypeId === myAmmoId;
     };
 
     this.ammoList = this.itemList.ammoList.filter(onlyMyAmmo);
