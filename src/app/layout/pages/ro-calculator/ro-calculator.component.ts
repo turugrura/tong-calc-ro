@@ -155,7 +155,7 @@ const createExtraOptionList = () => {
     Race: ['All', ...Object.values(RaceType)],
     Element: ['All', ...Object.values(ElementType)],
     Size: ['All', 'Small', 'Medium', 'Large'],
-    Class: ['All', 'Monster', 'Boss'],
+    Class: ['All', 'Normal', 'Boss'],
   };
 
   const items: DropdownModel[] = [];
@@ -173,7 +173,10 @@ const createExtraOptionList = () => {
         label: dmgType,
         children: dmgSubTypes.map((finalProp) => {
           const finalPropLow = finalProp.toLowerCase();
-          const fixedSize = dmgType === 'Size' ? finalPropLow.at(1) : finalPropLow;
+          let fixedSize = finalPropLow;
+          if (dmgType === 'Size') {
+            fixedSize = finalPropLow === 'all' ? finalPropLow : finalPropLow.at(0);
+          }
 
           return {
             value: `${atk}_${dmgType}_${finalProp}`,
@@ -206,7 +209,7 @@ const createExtraOptionList = () => {
           const num = k + 1;
           return {
             value: `m_my_element_${elementLow}:${num}`,
-            label: `My ${element} ${num}%`,
+            label: `My ${element} +${num}%`,
           };
         }),
       };
@@ -242,7 +245,7 @@ const createExtraOptionList = () => {
       children = Array.from({ length: max - min + 1 }, (_, k) => {
         const num = k + min;
         return {
-          label: `${label} ${num}`,
+          label: `${label} +${num}`,
           value: `${prop}:${num}`,
         };
       });
@@ -256,7 +259,7 @@ const createExtraOptionList = () => {
           children: Array.from({ length: max - min + 1 }, (_, k) => {
             const num = k + min;
             return {
-              label: `${label} ${num}`,
+              label: `${label} +${num}`,
               value: `${prop}:${num}`,
             };
           }),
