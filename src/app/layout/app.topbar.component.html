@@ -127,9 +127,12 @@
     [modal]="true"
     [(visible)]="visibleUpdate"
     (onHide)="onHideUpdateDialog()"
-    [style]="{ width: '60vw' }"
+    [style]="{ width: '50vw', height: '70vh' }"
   >
-    <div *ngFor="let update of updates">
+    <div
+      *ngFor="let update of updates; index as i"
+      [ngStyle]="{ color: i + 1 > showUnreadVersion ? 'var(--gray-300)' : '' }"
+    >
       <span>{{ update.v }}</span>
       <ul>
         <li *ngFor="let log of update.logs">{{ log }}</li>

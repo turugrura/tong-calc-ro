@@ -33,7 +33,16 @@ export class AppTopBarComponent {
     'Tab "Item Descriptions" คือ bonus ของไอเทมแต่ละชิ้นและคำอธิบาย (เอาไว้ตรวจสอบว่าได้ bonus ถูกไหม)',
   ];
 
-  updates = [
+  updates: { v: string; logs: string[] }[] = [
+    {
+      v: 'V1.1.1',
+      logs: [
+        'Fixed SR job bonus',
+        'Fixed size multiplier option not working',
+        'Support Thananos card',
+        'Added requested items.',
+      ],
+    },
     {
       v: 'V1.1.0',
       logs: ['Support Minstrel & Wanderer', 'Added Edda weapon and enchants', 'Fixed reported bugs'],
