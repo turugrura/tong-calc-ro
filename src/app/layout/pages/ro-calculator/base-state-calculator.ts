@@ -52,7 +52,7 @@ export class BaseStateCalculator {
   }
 
   calculate() {
-    this._totalPoint = this.calcTotalPoint(this._baseLevel);
+    this._totalPoint = this._initialPoint + this.calcTotalPoint(this._baseLevel);
     this._usedPoint = this._statuslevels.reduce((total, statusLevel) => {
       return total + this.calcUsingPoint(statusLevel);
     }, 0);
@@ -62,8 +62,7 @@ export class BaseStateCalculator {
 
   private calcTotalPoint(level: number) {
     if (this.cachedTotalPoint.has(level)) return this.cachedTotalPoint.get(level);
-    if (level < 1) return 0;
-    if (level === 1) return this._initialPoint;
+    if (level <= 1) return 0;
 
     const previousLevelPoint = this.calcTotalPoint(level - 1);
     this.cachedTotalPoint.set(level - 1, previousLevelPoint);
