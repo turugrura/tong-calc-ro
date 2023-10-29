@@ -42,6 +42,7 @@ import { createMainStatOptionList } from './utils/create-main-stat-opton-list';
 import { createExtraOptionList } from './utils/create-extra-option-list';
 import { toDropdownList } from './utils/to-drowdown-list';
 import { sortObj } from './utils/sort-obj';
+import { HpSpTable } from './models/hp-sp-table.model';
 
 interface MonsterSelectItemGroup extends SelectItemGroup {
   items: any[];
@@ -541,15 +542,18 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     return forkJoin([
       this.roService.getItems<Record<number, ItemModel>>(),
       this.roService.getMonsters<Record<number, MonsterModel>>(),
+      this.roService.getHpSpTable<HpSpTable>(),
     ]).pipe(
-      tap(([items, monsters]) => {
+      tap(([items, monsters, hpSpTable]) => {
         this.items = items;
         this.monsterDataMap = monsters;
 
         this.selectedMonsterName = this.monsterDataMap[this.selectedMonster]?.name;
 
-        this.calculator.setMasterItems(items);
-        this.calculator2.setMasterItems(items);
+        this.calculator.setMasterItems(items).setHpSpTable(hpSpTable);
+
+        this.calculator2.setMasterItems(items).setHpSpTable(hpSpTable);
+
         this.mapEnchant = new Map(
           Object.values(items)
             .filter((item) => item.itemTypeId === ItemTypeId.CARD)
@@ -678,7 +682,8 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       .calcAspd()
       .calcHitRate()
       .calcCriRate()
-      .calculateAllDamages(selectedAtkSkill);
+      .calculateAllDamages(selectedAtkSkill)
+      .calculateHpSp();
 
     return calc;
   }

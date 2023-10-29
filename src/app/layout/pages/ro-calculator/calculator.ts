@@ -16,6 +16,8 @@ import { AllowAmmoMapper } from './constants/allow-ammo-mapper';
 import { ClassName } from './jobs/_class-name';
 import { WeaponAmmoMapper } from './constants/weapon-ammo-mapper';
 import { InfoForClass } from './models/info-for-class.model';
+import { HpSpCalculator } from './hp-sp-calculator';
+import { HpSpTable } from './models/hp-sp-table.model';
 
 // const getItem = (id: number) => items[id] as ItemModel;
 const refinableItemTypes = [
@@ -345,6 +347,8 @@ export class Calculator {
   };
   private monster: MonsterModel;
 
+  private hpSpCalculator = new HpSpCalculator();
+
   private _class: CharacterBase;
   private propertyAtk = ElementType.Neutral;
   private propertySkill = ElementType.Neutral;
@@ -363,6 +367,9 @@ export class Calculator {
   private dmgReductionByMHardDef = 0;
   private totalPhysicalPene = 0;
   private totalMagicalPene = 0;
+
+  private maxHp = 0;
+  private maxSp = 0;
 
   private def = 0;
   private softDef = 0;
@@ -473,6 +480,8 @@ export class Calculator {
 
   setMasterItems(items: any) {
     this.items = items;
+
+    return this;
   }
 
   private getItem(id: number) {
@@ -2004,6 +2013,25 @@ export class Calculator {
     return this;
   }
 
+  setHpSpTable(hpSpTable: HpSpTable) {
+    this.hpSpCalculator.setHpSpTable(hpSpTable);
+
+    return this;
+  }
+
+  calculateHpSp() {
+    const { maxHp, maxSp } = this.hpSpCalculator
+      .setClass(this._class)
+      .setAllInfo(this.infoForClass)
+      .calculate()
+      .getTotalSummary();
+
+    this.maxHp = maxHp;
+    this.maxSp = maxSp;
+
+    return this;
+  }
+
   calcAspd() {
     this.totalAspd = this._class.calcAspd({
       potionAspd: this.aspdPotion,
@@ -2112,6 +2140,8 @@ export class Calculator {
         ...this.skillFrequency,
       },
       calc: {
+        maxHp: this.maxHp,
+        maxSp: this.maxSp,
         def: this.def,
         softDef: this.softDef,
         mdef: this.mdef,
