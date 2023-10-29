@@ -1,8 +1,9 @@
+import { ItemSubTypeId } from './item-sub-type.enum';
 import { WeaponTypeName } from './weapon-type-mapper';
 
 export const WeaponAmmoMapper: Partial<Record<WeaponTypeName, number>> = {
-  bow: 1024,
-  whip: 1024,
-  instrument: 1024,
-  gun: 1025,
+  bow: ItemSubTypeId.Arrow,
+  whip: ItemSubTypeId.Arrow,
+  instrument: ItemSubTypeId.Arrow,
+  gun: ItemSubTypeId.Bullet,
 };

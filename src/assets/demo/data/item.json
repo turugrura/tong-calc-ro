@@ -5049,6 +5049,30 @@
       ]
     }
   },
+  "4807": {
+    "id": 4807,
+    "aegisName": "Atk_Speed1",
+    "name": "ASPD+1",
+    "unidName": "ASPD+1",
+    "resName": "태양신의상징",
+    "description": "ASPD + 1",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<Aspd+1>",
+    "script": {
+      "aspd": [
+        "1"
+      ]
+    }
+  },
   "4808": {
     "id": 4808,
     "aegisName": "Fighting_Spirit4",
@@ -5540,6 +5564,32 @@
       ]
     }
   },
+  "4827": {
+    "id": 4827,
+    "aegisName": "Spell6",
+    "name": "Spell 6Lv",
+    "unidName": "Spell 6Lv",
+    "resName": "용의보주_청",
+    "description": "MATK + 21, ลดระยะเวลาการร่ายเวทย์ลง 10%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "matk": [
+        "21"
+      ],
+      "vct": [
+        "10"
+      ]
+    }
+  },
   "4832": {
     "id": 4832,
     "aegisName": "Expert_Archer1",
@@ -5770,6 +5820,29 @@
       ],
       "aspd": [
         "1"
+      ]
+    }
+  },
+  "4842": {
+    "id": 4842,
+    "aegisName": "Atk_Speed2",
+    "name": "ASPD+2",
+    "unidName": "ASPD+2",
+    "resName": "태양신의상징",
+    "description": "ASPD + 2",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "aspd": [
+        "2"
       ]
     }
   },
@@ -7457,6 +7530,38 @@
       ]
     }
   },
+  "13138": {
+    "id": 13138,
+    "aegisName": "Dark_Rose",
+    "name": "Dark Rose [2]",
+    "unidName": "Revolver",
+    "resName": "다크로즈",
+    "description": "ปืนพกที่แต่งด้วยกุหลาบสีดำ\nเพิ่ม ASPD 10%\nเมื่ออัพเกรดถึงขั้น 7 ขึ้นไป เพิ่มพลังโจมตีทางกายภาพระยะไกล 15%\n เมื่ออัพเกรดถึงขั้น 9 ASPD + 1\n\nประเภท : ^777777Revolver^000000 พลังโจมตี : ^777777150^000000\nน้ำหนัก : ^777777180^000000\nเลเวลอาวุธ : ^7777773^000000\nเลเวลอาวุธ : ^777777120^000000\nอาชีพที่ใส่ได้ : ^777777Gunslinger Branch^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 273,
+    "itemLevel": 3,
+    "attack": 150,
+    "defense": null,
+    "weight": 180,
+    "requiredLevel": 120,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Gunslinger"
+    ],
+    "script": {
+      "aspdPercent": [
+        "10"
+      ],
+      "aspd": [
+        "9===1"
+      ],
+      "range": [
+        "7===15"
+      ]
+    }
+  },
   "13200": {
     "id": 13200,
     "aegisName": "Bullet",
@@ -7489,7 +7594,7 @@
     "description": "ลูกกระสุนที่ถูกทำมาเพื่อเจาะเกราะ\nประเภท : ^777777Bullet^000000 พลังโจมตี : ^77777750^000000\nน้ำหนัก : ^7777770.1^000000 ธาตุ : ^777777Neutral^000000\nจำกัดเลเวล : ^777777100^000000",
     "slots": 0,
     "itemTypeId": 4,
-    "itemSubTypeId": 1025,
+    "itemSubTypeId": 1027,
     "itemLevel": null,
     "attack": 50,
     "propertyAtk": "Neutral",
@@ -7512,7 +7617,7 @@
     "description": "ลูกกระสุนที่มีพลังแห่งเปลวไฟโอบล้อมเอาไว้\nประเภท : ^777777Bullet^000000 พลังโจมตี : ^77777740^000000\nน้ำหนัก : ^7777770.1^000000 ธาตุ : ^777777Fire^000000\nจำกัดเลเวล : ^777777100^000000",
     "slots": 0,
     "itemTypeId": 4,
-    "itemSubTypeId": 1025,
+    "itemSubTypeId": 1027,
     "itemLevel": null,
     "attack": 40,
     "propertyAtk": "Fire",
@@ -7535,7 +7640,7 @@
     "description": "ลูกกระสุนที่มีพลังแห่งน้ำแข็งโอบล้อมเอาไว้\nประเภท : ^777777Bullet^000000 พลังโจมตี : ^77777740^000000\nน้ำหนัก : ^7777770.1^000000 ธาตุ : ^777777Water^000000\nจำกัดเลเวล : ^777777100^000000",
     "slots": 0,
     "itemTypeId": 4,
-    "itemSubTypeId": 1025,
+    "itemSubTypeId": 1027,
     "itemLevel": null,
     "attack": 40,
     "propertyAtk": "Water",
@@ -7558,7 +7663,7 @@
     "description": "ลูกกระสุนที่มีพลังแห่งสายฟ้าโอบล้อมเอาไว้\nประเภท : ^777777Bullet^000000 พลังโจมตี : ^77777740^000000\nน้ำหนัก : ^7777770.1^000000 ธาตุ : ^777777Wind^000000\nจำกัดเลเวล : ^777777100^000000",
     "slots": 0,
     "itemTypeId": 4,
-    "itemSubTypeId": 1025,
+    "itemSubTypeId": 1027,
     "itemLevel": null,
     "attack": 40,
     "propertyAtk": "Wind",
@@ -7581,7 +7686,7 @@
     "description": "ลูกกระสุนที่มีพลังแห่งผืนดินโอบล้อมเอาไว้\nประเภท : ^777777Bullet^000000 พลังโจมตี : ^77777740^000000\nน้ำหนัก : ^7777770.1^000000 ธาตุ : ^777777Earth^000000\nจำกัดเลเวล : ^777777100^000000",
     "slots": 0,
     "itemTypeId": 4,
-    "itemSubTypeId": 1025,
+    "itemSubTypeId": 1027,
     "itemLevel": null,
     "attack": 40,
     "propertyAtk": "Earth",
@@ -7604,7 +7709,7 @@
     "description": "เปลี่ยนกระสุน Silver Bullet เป็นธาตุ Holy แล้วปรับความสามารถเพิ่มขึ้น\nประเภท : ^777777Bullet^000000 พลังโจมตี : ^77777740^000000\nน้ำหนัก : ^7777770.1^000000 ธาตุ : ^777777Holy^000000\nจำกัดเลเวล : ^777777100^000000",
     "slots": 0,
     "itemTypeId": 4,
-    "itemSubTypeId": 1025,
+    "itemSubTypeId": 1027,
     "itemLevel": null,
     "attack": 40,
     "propertyAtk": "Holy",
@@ -26573,6 +26678,38 @@
       ],
       "Axe Tornado": [
         "11===15"
+      ]
+    }
+  },
+  "28225": {
+    "id": 28225,
+    "aegisName": "Burning_Rose",
+    "name": "Burning Rose [2]",
+    "unidName": "Gatling Gun",
+    "resName": "버닝로즈",
+    "description": "ปืนแก็ตลิงที่ลูกกระสุนจะกลายเป็นสีแดงเมื่อมีความร้อนสูง\nจึงถูกเรียกว่า Burning Rose\nเพิ่มพลังโจมตีทางกายภาพระยะไกล 15%\n เมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ของสกิล [Fire Rain] 30%\n เมื่ออัพเกรดถึงขั้น 9 ลด Cooldown ของสกิล [Fire Rain] 1 วินาที\nประเภท : ^777777Gatling Gun^000000 พลังโจมตี : ^777777200^000000\nน้ำหนัก : ^777777250^000000\nเลเวลอาวุธ : ^7777773^000000\nเลเวลอาวุธ : ^777777120^000000\nอาชีพที่ใส่ได้ : ^777777Gunslinger Branch^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 275,
+    "itemLevel": 3,
+    "attack": 200,
+    "defense": null,
+    "weight": 250,
+    "requiredLevel": 120,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Gunslinger"
+    ],
+    "script": {
+      "range": [
+        "15"
+      ],
+      "Fire Rain": [
+        "7===30"
+      ],
+      "cd__Fire Rain": [
+        "9===1"
       ]
     }
   },

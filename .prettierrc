@@ -9,6 +9,12 @@
       "options": {
         "printWidth": 200
       }
+    },
+    {
+      "files": "src\\app\\layout\\pages\\ro-calculator\\constants\\enchant-table.ts",
+      "options": {
+        "printWidth": 200
+      }
     }
   ]
 }
