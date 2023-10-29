@@ -44,6 +44,7 @@ export interface EquipmentSummaryModel {
   perfectDodge: number;
   dmg: number;
   ignore_size_penalty: number;
+  p_infiltration: number;
   p_size_all: number;
   p_size_s: number;
   p_size_m: number;

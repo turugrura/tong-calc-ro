@@ -176,6 +176,7 @@ export class Calculator {
     flee: 0,
     perfectDodge: 0,
     dmg: 0,
+    p_infiltration: 0,
     ignore_size_penalty: 0,
     p_size_all: 0,
     p_size_s: 0,
@@ -356,6 +357,7 @@ export class Calculator {
   private finalPhyMultipliers = [] as number[];
   private finalMagicMultipliers = [] as number[];
 
+  private reducedHardDef = 0;
   private dmgReductionByHardDef = 0;
   private dmgReductionByMHardDef = 0;
   private totalPhysicalPene = 0;
@@ -379,7 +381,7 @@ export class Calculator {
   private basicDps = 0;
   private skillDps = 0;
   private skillTotalHits = 0;
-  private damageSummary = {};
+  private damageSummary = {} as any;
 
   private weaponStatusAtk = 0;
   private totalMasteryAtk = 0;
@@ -448,6 +450,19 @@ export class Calculator {
       baseAgi: agi,
       totalAgi: agi + (jobAgi ?? 0) + (this.totalEquipStatus.agi ?? 0),
     };
+  }
+
+  get isActiveInfilltration() {
+    return this.totalEquipStatus.p_infiltration >= 1;
+  }
+
+  get finalPhysicalDef() {
+    const { softDef } = this.monsterData;
+    const isActiveInfilltration = this.isActiveInfilltration;
+    const finalDmgReduction = isActiveInfilltration ? 1 : this.dmgReductionByHardDef;
+    const finalSoftDef = isActiveInfilltration ? 0 : softDef;
+
+    return { finalDmgReduction, finalSoftDef };
   }
 
   setMasterItems(items: any) {
@@ -786,9 +801,11 @@ export class Calculator {
 
       return this.floor(isEDP ? total * 1.25 : total);
     };
-    const totalMin = formula(weaponSizePenalty - variant, 0);
-    const totalMax = formula(weaponSizePenalty + variant, 0);
-    const totalMaxOver = formula(weaponSizePenalty + variant, overUpgradeBonus);
+
+    const extraAtk = this.totalEquipStatus.p_infiltration >= 1 ? this.reducedHardDef / 2 : 0;
+    const totalMin = formula(weaponSizePenalty - variant, 0) + extraAtk;
+    const totalMax = formula(weaponSizePenalty + variant, 0) + extraAtk;
+    const totalMaxOver = formula(weaponSizePenalty + variant, overUpgradeBonus) + extraAtk;
 
     this.totalWeaponAtkMin = this.isMaximizeWeapon ? totalMax : totalMin;
     this.totalWeaponAtkMax = totalMax;
@@ -1006,6 +1023,7 @@ export class Calculator {
     const mdef = this.monster.stats.magicDefense;
     const p_pene = this.totalPhysicalPene;
 
+    this.reducedHardDef = def * ((100 - p_pene) / 100);
     this.dmgReductionByHardDef = (4000 + def * ((100 - p_pene) / 100)) / (4000 + def * ((100 - p_pene) / 100) * 10);
 
     const m_pene = this.totalMagicalPene;
@@ -1026,11 +1044,12 @@ export class Calculator {
   }
 
   private calcBasicDamage() {
-    const { softDef } = this.monsterData;
-    const hardDef = this.dmgReductionByHardDef;
     const { range, melee, dmg } = this.totalEquipStatus;
     const rangedMultiplier = this.isRangeAtk() ? range : melee;
     const dmgMultiplier = dmg + this.calcFlatDmg();
+    const { finalDmgReduction, finalSoftDef } = this.finalPhysicalDef;
+    const hardDef = finalDmgReduction;
+    const softDef = finalSoftDef;
 
     const formula = (totalAtk: number) => {
       const rangedApplied = this.floor(totalAtk * this.toPercent(rangedMultiplier + 100));
@@ -1049,17 +1068,19 @@ export class Calculator {
   }
 
   private calcCriDamage() {
-    const { softDef } = this.monsterData;
-    const hardDef = this.dmgReductionByHardDef;
     const { range, melee, criDmg, dmg } = this.totalEquipStatus;
     const rangedMultiplier = this.isRangeAtk() ? range : melee;
     const dmgMultiplier = dmg + this.calcFlatDmg();
+
+    const { finalDmgReduction, finalSoftDef } = this.finalPhysicalDef;
+    const hardDef = finalDmgReduction;
+    const softDef = finalSoftDef;
 
     const formula = (totalAtk: number) => {
       const criApplied = this.floor(totalAtk * this.toPercent((criDmg || 0) + 100));
       const rangedApplied = this.floor(criApplied * this.toPercent(rangedMultiplier + 100));
       const dmgMultiApplied = rangedApplied * this.toPercent(dmgMultiplier + 100);
-      const dmgHdef = hardDef ? this.floor(dmgMultiApplied * hardDef) : dmgMultiApplied;
+      const dmgHdef = this.floor(dmgMultiApplied * hardDef);
       const dmgSdef = dmgHdef - softDef;
       const baseCriApplied = this.floor(dmgSdef * this.BASE_CRI_DMG);
       const finalApplied = this.applyFinalMultiplier(baseCriApplied, 'phy');
@@ -1075,8 +1096,9 @@ export class Calculator {
 
   private calcSkillDamage(skillData: AtkSkillModel) {
     const { name: skillName, canCri, isMelee, isIgnoreDef = false } = skillData;
-    const { softDef } = this.monsterData;
-    const hardDef = isIgnoreDef ? 1 : this.dmgReductionByHardDef;
+    const { finalDmgReduction, finalSoftDef } = this.finalPhysicalDef;
+    const hardDef = isIgnoreDef ? 1 : finalDmgReduction;
+    const softDef = finalSoftDef;
 
     const { range, melee, criDmg } = this.totalEquipStatus;
     const rangedMultiplier = isMelee ? melee : range;
@@ -1870,6 +1892,7 @@ export class Calculator {
     const skillData = this._class.atkSkills.find((a) => a.value === skillValue);
     const isValidSkill = !!skillName && !!skillLevel && typeof skillData?.formula === 'function';
     const criShield = this.monsterData.criShield;
+    const isActiveInfilltration = this.isActiveInfilltration;
 
     this.criRateToMonster = Math.max(0, this.totalCri + this.getExtraCriRate() - criShield);
     this.basicDps = this.calcDps({
@@ -1887,13 +1910,13 @@ export class Calculator {
       criMinDamage,
       criMaxDamage,
       basicCriRate: this.criRateToMonster,
-      totalPene: this.totalPhysicalPene,
+      totalPene: isActiveInfilltration ? 100 : this.totalPhysicalPene,
       accuracy: this.accuracy,
       basicDps: this.basicDps,
     };
 
     this.skillAccuracy = this.accuracy;
-    this.skillPene = this.totalPhysicalPene;
+    this.skillPene = this.damageSummary.totalPene;
     this.skillTotalHits = 0;
     this.propertySkill = ElementType.Neutral;
 
@@ -1918,7 +1941,7 @@ export class Calculator {
       this.isMagicalSkill = isMatk;
       this.skillTotalHits = totalHit;
       this.skillAccuracy = isMatk || isHit100 ? 100 : this.accuracy;
-      this.skillPene = isIgnoreDef ? 100 : isMatk ? this.totalMagicalPene : this.totalPhysicalPene;
+      this.skillPene = isIgnoreDef ? 100 : isMatk ? this.totalMagicalPene : this.skillPene;
 
       // HawkEye
       let minDamageHE = 0;

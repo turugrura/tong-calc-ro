@@ -1,4 +1,57 @@
 {
+  "1278": {
+    "id": 1278,
+    "dbname": "STALACTIC_GOLEM",
+    "name": "Stalactic Golem",
+    "spawn": "beach_dun2",
+    "stats": {
+      "attackRange": 1,
+      "level": 68,
+      "health": 2817,
+      "sp": 1,
+      "str": 67,
+      "int": 1,
+      "vit": 48,
+      "dex": 69,
+      "agi": 47,
+      "luk": 5,
+      "rechargeTime": 1264,
+      "atk1": 218,
+      "atk2": 21,
+      "attack": {
+        "minimum": 309,
+        "maximum": 396
+      },
+      "magicAttack": {
+        "minimum": 83,
+        "maximum": 96
+      },
+      "defense": 230,
+      "baseExperience": 651,
+      "jobExperience": 595,
+      "aggroRange": 10,
+      "escapeRange": 12,
+      "movementSpeed": 200,
+      "attackSpeed": 864,
+      "attackedSpeed": 288,
+      "element": 80,
+      "scale": 2,
+      "race": 0,
+      "magicDefense": 5,
+      "hit": 315,
+      "flee": 307,
+      "ai": "MONSTER_TYPE_17",
+      "mvp": 0,
+      "class": 0,
+      "attr": 0,
+      "res": 0,
+      "mres": 0,
+      "elementName": "Neutral 4",
+      "elementShortName": "Neutral",
+      "scaleName": "Large",
+      "raceName": "Formless"
+    }
+  },
   "1646": {
     "id": 1646,
     "dbname": "B_SEYREN",

@@ -77,6 +77,38 @@
     ],
     "script": {}
   },
+  "1230": {
+    "id": 1230,
+    "aegisName": "House_Auger",
+    "name": "Ice pick",
+    "unidName": "Dagger",
+    "resName": "송곳",
+    "description": "ชุดเครื่องมือ ใช้สำหรับเจาะรูบนไม้หรือน้ำแข็ง\nว่ากันว่าสามารถเจาะผ่านเกราะหนาๆได้อย่างไม่มีปัญหา\nพลังโจมตีจะสูงขึ้นเมื่อพลังป้องกันของเป้าหมายมีมาก\nพลังโจมตีจะสูงมากเมื่อศัตรูมีพลังป้องกันสูง\nประเภท : ^777777Dagger^000000\nพลังโจมตี : ^77777780^000000\nน้ำหนัก : ^77777760^000000\nLv ของอาวุธ : ^7777774^000000\nLv ที่ต้องการ : ^77777736^000000\nอาชีพ : ^777777Swordman, Mage,\nArcher, Merchant, และ\nThief Cls; Soul\nLinker และ Ninja Cls^000000",
+    "slots": 0,
+    "itemTypeId": 1,
+    "itemSubTypeId": 256,
+    "itemLevel": 4,
+    "attack": 80,
+    "defense": null,
+    "weight": 60,
+    "requiredLevel": 36,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Swordman",
+      "Mage",
+      "Archer",
+      "Merchant",
+      "Thief Cls",
+      "Soul Linker",
+      "Ninja Cls"
+    ],
+    "script": {
+      "p_infiltration": [
+        "1"
+      ]
+    }
+  },
   "1285": {
     "id": 1285,
     "aegisName": "Cakram",
@@ -2741,6 +2773,39 @@
       ],
       "matkPercent": [
         "9===2"
+      ]
+    }
+  },
+  "4399": {
+    "id": 4399,
+    "aegisName": "Thanatos_Card",
+    "name": "Memory of Thanatos Card",
+    "unidName": "Memory of Thanatos Card",
+    "resName": "이름없는카드",
+    "description": "ทำให้อาวุธที่สวมใส่การ์ดนี้มีผล\nเหมือนกับสกิล Infiltration\nเสียค่า SP 1 ทุกครั้งที่โจมตี\nDEF -30, Flee -30\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Penetration",
+    "script": {
+      "p_infiltration": [
+        "1"
+      ],
+      "spLost": [
+        "1"
+      ],
+      "def": [
+        "-30"
+      ],
+      "flee": [
+        "-30"
       ]
     }
   },
@@ -7255,6 +7320,38 @@
       ],
       "matk": [
         "30"
+      ]
+    }
+  },
+  "13017": {
+    "id": 13017,
+    "aegisName": "House_Auger_",
+    "name": "Ice Pick [1]",
+    "unidName": "Dagger",
+    "resName": "송곳",
+    "description": "ชุดเครื่องมือ ใช้สำหรับเจาะรูบนไม้หรือน้ำแข็ง\nว่ากันว่าสามารถเจาะผ่านเกราะหนาๆได้อย่างไม่มีปัญหา\nพลังโจมตีจะสูงขึ้นเมื่อพลังป้องกันของเป้าหมายมีมาก\nพลังโจมตีจะสูงมากเมื่อศัตรูมีพลังป้องกันสูง\nประเภท : ^777777Dagger^000000\nพลังโจมตี : ^77777770^000000\nน้ำหนัก : ^77777760^000000\nLv ของอาวุธ : ^7777774^000000\nLv ที่ต้องการ : ^77777736^000000\nอาชีพ : ^777777Swordman, Mage,\nArcher, Merchant, และ\nThief Cls; Soul\nLinker และ Ninja Cls^000000",
+    "slots": 1,
+    "itemTypeId": 1,
+    "itemSubTypeId": 256,
+    "itemLevel": 4,
+    "attack": 70,
+    "defense": null,
+    "weight": 60,
+    "requiredLevel": 36,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Swordman",
+      "Mage",
+      "Archer",
+      "Merchant",
+      "Thief Cls",
+      "Soul Linker",
+      "Ninja Cls"
+    ],
+    "script": {
+      "p_infiltration": [
+        "1"
       ]
     }
   },
@@ -24028,6 +24125,34 @@
       ]
     }
   },
+  "27183": {
+    "id": 27183,
+    "aegisName": "Gigantes_Card",
+    "name": "Gigantes Card",
+    "unidName": "Gigantes Card",
+    "resName": "이름없는카드",
+    "description": "ATK + 20 \nเมื่อ Base STR ตั้งแต่ 120 ขึ้นไป ATK +20 เพิ่มเติม, ASPD -3%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Accessory(Left)^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 128,
+    "cardPrefix": "Onslaught",
+    "script": {
+      "atk": [
+        "20",
+        "str:120===20"
+      ],
+      "aspdPercent": [
+        "str:120===-3"
+      ]
+    }
+  },
   "27197": {
     "id": 27197,
     "aegisName": "S_Agnes_Card",
@@ -24177,6 +24302,33 @@
         "5"
       ],
       "range": [
+        "5"
+      ]
+    }
+  },
+  "27259": {
+    "id": 27259,
+    "aegisName": "Rechenier_Card",
+    "name": "Licheniyes Card",
+    "unidName": "Licheniyes Card",
+    "resName": "이름없는카드",
+    "description": "MATK + 3%\nเพิ่มดาเมจทางเวทย์ธาตุ Holy 5%\nเพิ่มผลของสกิล Heal, Sanctuary, และ Potion Pitcher+ 5%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Shoes^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 64,
+    "cardPrefix": "Licheniyes",
+    "script": {
+      "matkPercent": [
+        "3"
+      ],
+      "m_my_element_holy": [
         "5"
       ]
     }

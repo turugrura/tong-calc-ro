@@ -353,11 +353,6 @@ export class Ranger extends CharacterBase {
         { label: '3', value: 3, skillLv: 3, isUse: true },
         { label: '4', value: 4, skillLv: 4, isUse: true },
         { label: '5', value: 5, skillLv: 5, isUse: true },
-        { label: '6', value: 6, skillLv: 6, isUse: true },
-        { label: '7', value: 7, skillLv: 7, isUse: true },
-        { label: '8', value: 8, skillLv: 8, isUse: true },
-        { label: '9', value: 9, skillLv: 9, isUse: true },
-        { label: '10', value: 10, skillLv: 10, isUse: true },
       ],
     },
   ];
