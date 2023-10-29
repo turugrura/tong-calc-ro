@@ -1694,7 +1694,9 @@ export class Calculator {
       //   this.equipStatus.weapon.matk = -baseMatk;
       // }
 
-      if (itemType !== ItemTypeEnum.weapon && itemData.attack) {
+      if (itemType === ItemTypeEnum.ammo) {
+        this.equipStatus[itemType].atk = itemData.attack;
+      } else if (itemType !== ItemTypeEnum.weapon && itemData.attack) {
         this.equipStatus[itemType].atk = itemData.attack;
         updateTotalStatus('atk', itemData.attack);
       }

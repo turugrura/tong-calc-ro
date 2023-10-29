@@ -140,6 +140,7 @@ export class Ranger extends CharacterBase {
       fct: 1,
       vct: 0,
       cd: 1,
+      totalHit: 5,
       levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
