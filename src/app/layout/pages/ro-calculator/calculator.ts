@@ -175,6 +175,7 @@ export class Calculator {
     hit: 0,
     flee: 0,
     perfectDodge: 0,
+    mildwind: 0,
     dmg: 0,
     p_infiltration: 0,
     ignore_size_penalty: 0,
@@ -391,6 +392,7 @@ export class Calculator {
   private totalWeaponAtkMax = 0;
   private totalWeaponAtkMaxOver = 0;
   private totalEquipAtk = 0;
+  private totalExtraAtk = 0;
   private totalEquipMatk = 0;
   private totalAMin = 0;
   private totalAMax = 0;
@@ -454,6 +456,10 @@ export class Calculator {
 
   get isActiveInfilltration() {
     return this.totalEquipStatus.p_infiltration >= 1;
+  }
+
+  get isActiveMildwind() {
+    return this.totalEquipStatus.mildwind >= 1;
   }
 
   get finalPhysicalDef() {
@@ -802,10 +808,9 @@ export class Calculator {
       return this.floor(isEDP ? total * 1.25 : total);
     };
 
-    const extraAtk = this.totalEquipStatus.p_infiltration >= 1 ? this.reducedHardDef / 2 : 0;
-    const totalMin = formula(weaponSizePenalty - variant, 0) + extraAtk;
-    const totalMax = formula(weaponSizePenalty + variant, 0) + extraAtk;
-    const totalMaxOver = formula(weaponSizePenalty + variant, overUpgradeBonus) + extraAtk;
+    const totalMin = formula(weaponSizePenalty - variant, 0);
+    const totalMax = formula(weaponSizePenalty + variant, 0);
+    const totalMaxOver = formula(weaponSizePenalty + variant, overUpgradeBonus);
 
     this.totalWeaponAtkMin = this.isMaximizeWeapon ? totalMax : totalMin;
     this.totalWeaponAtkMax = totalMax;
@@ -844,9 +849,12 @@ export class Calculator {
 
   private calcExtraAtk() {
     const equipAtk = this.totalEquipStatus.atk;
+    const ammoAtk = this.equipStatus.ammo?.atk || 0;
     const skillAtk = this.getEquipAtkFromSkills();
+    const pseudoBuffATK = this.isActiveInfilltration ? this.reducedHardDef / 2 : 0;
 
     this.totalEquipAtk = skillAtk + equipAtk;
+    this.totalExtraAtk = skillAtk + equipAtk + ammoAtk + pseudoBuffATK;
 
     return this;
   }
@@ -854,7 +862,7 @@ export class Calculator {
   private calcAtkGroupA(totalWeaponAtk?: number) {
     const atkPercent = this.toPercent(this.totalEquipStatus.atkPercent);
     const formula = (totalAtk: number) => {
-      const a = this.floor((totalAtk + this.totalEquipAtk) * atkPercent);
+      const a = this.floor((totalAtk + this.totalExtraAtk) * atkPercent);
 
       return this.floor(a * this.propertyMultiplier);
     };
@@ -912,11 +920,11 @@ export class Calculator {
     };
     // console.log({ name: this.monster.name, race, size, element, _class: monsterType });
 
-    if (totalWeaponAtk) return formula(totalWeaponAtk + this.totalEquipAtk);
+    if (totalWeaponAtk) return formula(totalWeaponAtk + this.totalExtraAtk);
 
-    const totalBMin = formula(this.totalWeaponAtkMin + this.totalEquipAtk);
-    const totalBMax = formula(this.totalWeaponAtkMax + this.totalEquipAtk);
-    const totalBMaxOver = formula(this.totalWeaponAtkMaxOver + this.totalEquipAtk);
+    const totalBMin = formula(this.totalWeaponAtkMin + this.totalExtraAtk);
+    const totalBMax = formula(this.totalWeaponAtkMax + this.totalExtraAtk);
+    const totalBMaxOver = formula(this.totalWeaponAtkMaxOver + this.totalExtraAtk);
 
     this.totalBMin = totalBMin * this.getEDPMultiplier();
     this.totalBMax = totalBMax * this.getEDPMultiplier();
@@ -971,8 +979,10 @@ export class Calculator {
     // const additionalAtk = this.totalMasteryAtk + this.totalBuffAtk;
     // if (aAtk && bAtk) return calcPropMulti(aAtk) + calcPropMulti(bAtk) + extraAtk + additionalAtk;
 
+    const mildwindMultiplier = this.isActiveMildwind ? this.propertyMultiplier : 1;
     const hiddenMasteryAtk = this._class.getMasteryAtk(this.infoForClass);
-    const statusAtk = this.totalStatusAtk * 2 + this.totalMasteryAtk + hiddenMasteryAtk + this.totalBuffAtk;
+    const statusAtk =
+      this.totalStatusAtk * mildwindMultiplier * 2 + this.totalMasteryAtk + hiddenMasteryAtk + this.totalBuffAtk;
     const totalMinAtk = this.totalAMin + this.totalBMin + statusAtk;
     const totalMaxAtk = this.totalAMax + this.totalBMax + statusAtk;
     const totalMaxAtkOver = this.totalAMaxOver + this.totalBMaxOver + statusAtk;
@@ -1691,7 +1701,7 @@ export class Calculator {
 
       if (itemData.defense) {
         this.equipStatus[itemType].baseDef = itemData.defense;
-        this.totalEquipStatus.def = (this.totalEquipStatus.def || 0) + itemData.defense;
+        updateTotalStatus('def', itemData.defense);
       }
 
       // console.log({ itemType, itemData });
@@ -2120,7 +2130,7 @@ export class Calculator {
         totalPhysicalPene: this.totalPhysicalPene,
         totalMagicalPene: this.totalMagicalPene,
         totalPene: this.isMagicalSkill ? this.totalMagicalPene : this.totalPhysicalPene,
-        totalEquipAtk: this.totalEquipStatus.atk - (this.equipStatus.ammo?.atk || 0),
+        totalEquipAtk: this.totalEquipAtk,
         ammuAtk: this.equipStatus.ammo?.atk || 0,
         totalMasteryAtk: this.totalMasteryAtk,
         totalBuffAtk: this.totalBuffAtk,

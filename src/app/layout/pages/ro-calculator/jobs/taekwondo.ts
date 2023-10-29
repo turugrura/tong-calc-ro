@@ -8,7 +8,14 @@ export class Taekwondo extends CharacterBase {
   protected readonly JobBonusTable = jobBonusTable;
 
   protected readonly initialStatusPoint = 40;
-  protected readonly classNames = ['Taekwondo', 'Taekwondo Cls', 'Taekwondo Class'];
+  protected readonly classNames = [
+    'Taekwondo',
+    'Taekwondo Cls',
+    'Taekwondo Class',
+    'Taekwon',
+    'Taekwon Cls',
+    'Taekwon Class',
+  ];
   protected readonly _atkSkillList: AtkSkillModel[] = [];
   protected readonly _activeSkillList: ActiveSkillModel[] = [
     {
@@ -16,7 +23,7 @@ export class Taekwondo extends CharacterBase {
       label: 'Seven Wind Lv7',
       name: 'Seven Wind',
       dropdown: [
-        { label: 'Yes', value: 7, skillLv: 7, isUse: true },
+        { label: 'Yes', value: 7, skillLv: 7, isUse: true, bonus: { mildwind: 1 } },
         { label: 'No', value: 0, isUse: false },
       ],
     },
