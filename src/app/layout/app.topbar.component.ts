@@ -35,6 +35,14 @@ export class AppTopBarComponent {
 
   updates: { v: string; logs: string[] }[] = [
     {
+      v: 'V1.1.2',
+      logs: [
+        'Fixed Aimed Bolt by remove bonus from Fear Breeze',
+        'Added Offensive skill (Dragon Tail, Gods Hammer, Cross Impact)',
+        'Added requested items',
+      ],
+    },
+    {
       v: 'V1.1.1',
       logs: [
         'Fixed SR job bonus',
