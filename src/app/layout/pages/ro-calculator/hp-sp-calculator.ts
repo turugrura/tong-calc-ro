@@ -6,44 +6,44 @@ import { InfoForClass } from './models/info-for-class.model';
 import { StatusSummary } from './models/status-summary.model';
 
 const hpSpIndex: Record<ClassName, number> = {
-  [ClassName.Swordman]: 2,
-  [ClassName.Paladin]: 20,
-  [ClassName.RoyalGuard]: 21,
-  [ClassName.LordKnight]: 8,
-  [ClassName.RuneKnight]: 9,
-  [ClassName.Archer]: 4,
-  [ClassName.Bard]: 30,
-  [ClassName.Wanderer]: 33,
-  [ClassName.Dance]: 32,
-  [ClassName.Minstrel]: 31,
-  [ClassName.Sniper]: 16,
-  [ClassName.Ranger]: 17,
-  [ClassName.Merchant]: 6,
-  [ClassName.Whitesmith]: 14,
-  [ClassName.Mechanic]: 15,
-  [ClassName.Creator]: 28,
-  [ClassName.Genetic]: 29,
-  [ClassName.ArchBishop]: 11,
-  [ClassName.Sura]: 23,
-  [ClassName.Thief]: 7,
-  [ClassName.AssassinCross]: 18,
-  [ClassName.GuillotineCross]: 19,
-  [ClassName.Rogue]: 26,
-  [ClassName.ShadowChaser]: 27,
-  [ClassName.Sage]: 24,
-  [ClassName.Sorcerer]: 25,
-  [ClassName.Mage]: 3,
-  [ClassName.Wizard]: 12,
-  [ClassName.Warlock]: 13,
-  [ClassName.Doram]: 42,
-  [ClassName.Taekwondo]: 39,
-  [ClassName.SoulLinker]: 41,
-  [ClassName.SoulReaper]: 44,
-  [ClassName.StarEmperor]: 43,
-  [ClassName.Rebellion]: 35,
-  [ClassName.Ninja]: 36,
-  [ClassName.Oboro]: 38,
-  [ClassName.Kagerou]: 37,
+  [ClassName.Swordman]: 1,
+  [ClassName.Paladin]: 19,
+  [ClassName.RoyalGuard]: 20,
+  [ClassName.LordKnight]: 7,
+  [ClassName.RuneKnight]: 8,
+  [ClassName.Archer]: 3,
+  [ClassName.Bard]: 29,
+  [ClassName.Wanderer]: 32,
+  [ClassName.Dance]: 31,
+  [ClassName.Minstrel]: 30,
+  [ClassName.Sniper]: 15,
+  [ClassName.Ranger]: 16,
+  [ClassName.Merchant]: 5,
+  [ClassName.Whitesmith]: 13,
+  [ClassName.Mechanic]: 14,
+  [ClassName.Creator]: 27,
+  [ClassName.Genetic]: 28,
+  [ClassName.ArchBishop]: 10,
+  [ClassName.Sura]: 22,
+  [ClassName.Thief]: 6,
+  [ClassName.AssassinCross]: 17,
+  [ClassName.GuillotineCross]: 18,
+  [ClassName.Rogue]: 25,
+  [ClassName.ShadowChaser]: 26,
+  [ClassName.Sage]: 23,
+  [ClassName.Sorcerer]: 24,
+  [ClassName.Mage]: 2,
+  [ClassName.Wizard]: 11,
+  [ClassName.Warlock]: 12,
+  [ClassName.Doram]: 41,
+  [ClassName.Taekwondo]: 38,
+  [ClassName.SoulLinker]: 40,
+  [ClassName.SoulReaper]: 43,
+  [ClassName.StarEmperor]: 42,
+  [ClassName.Rebellion]: 33,
+  [ClassName.Ninja]: 35,
+  [ClassName.Oboro]: 37,
+  [ClassName.Kagerou]: 36,
 };
 
 export class HpSpCalculator {
@@ -104,13 +104,13 @@ export class HpSpCalculator {
     let maxHp = Math.floor(baseHp * 1.25);
     maxHp += Math.floor(maxHp * (1 + this._totalStatus.totalVit * 0.01));
     maxHp += this._totalBonus.hp;
-    this._maxHp = maxHp + Math.floor(maxHp * (this._totalBonus.hpPercent * 0.01));
+    this._maxHp = maxHp + Math.floor(maxHp * ((this._totalBonus.hpPercent || 0) * 0.01));
 
     let maxSp = Math.floor(baseSp * 1.25);
     maxSp += Math.floor(this._maxSp * (1 + this._totalStatus.totalInt * 0.01));
     maxSp += this._totalBonus.sp;
     const buffedSp = Math.floor(maxSp * (this._totalBonus['buffedInt'] || 0));
-    this._maxSp = maxSp + Math.floor(maxSp * (this._totalBonus.spPercent * 0.01)) + buffedSp;
+    this._maxSp = maxSp + Math.floor(maxSp * ((this._totalBonus.spPercent || 0) * 0.01)) + buffedSp;
 
     return this;
   }
