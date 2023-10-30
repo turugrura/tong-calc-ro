@@ -136,23 +136,40 @@ export class Ranger extends CharacterBase {
       label: 'Aimed Bolt Lv 10',
       name: 'Aimed Bolt',
       value: 'Aimed Bolt==10',
-      acd: 1,
+      acd: 2,
       fct: 1,
-      vct: 0,
+      vct: 2,
       cd: 1,
       totalHit: 5,
       levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
-        if (this.bonuses.activeSkillNames.has('Fear Breeze')) {
-          const fearBreezeDmg = 35 * skillLevel;
-          return (800 + fearBreezeDmg) * (baseLevel / 100);
-        }
 
         return (500 + skillLevel * 20) * (baseLevel / 100);
       },
     },
+    // {
+    //   label: '[Improved] Aimed Bolt Lv 10',
+    //   name: 'Aimed Bolt',
+    //   value: 'Aimed Bolt==10',
+    //   acd: 1,
+    //   fct: 1,
+    //   vct: 0,
+    //   cd: 1,
+    //   totalHit: 5,
+    //   levelList: [],
+    //   formula: (input: AtkSkillFormulaInput): number => {
+    //     const { model, skillLevel } = input;
+    //     const baseLevel = model.level;
+    //     if (this.bonuses.activeSkillNames.has('Fear Breeze')) {
+    //       const fearBreezeDmg = 35 * skillLevel;
+    //       return (800 + fearBreezeDmg) * (baseLevel / 100);
+    //     }
+
+    //     return (500 + skillLevel * 20) * (baseLevel / 100);
+    //   },
+    // },
   ];
   protected _activeSkillList: ActiveSkillModel[] = [
     {
