@@ -39,6 +39,13 @@ const mainStatuses = ['str', 'dex', 'int', 'agi', 'luk', 'vit'];
 
 const isNumber = (n: unknown): n is number => !Number.isNaN(n);
 
+const CannotEDP = {
+  'Cross Impact': false,
+  'Counter Slash': false,
+  'Soul Destroyer': false,
+  'Meteor Assault': false,
+};
+
 export class Calculator {
   private items!: Record<number, ItemModel>;
 
@@ -396,20 +403,32 @@ export class Calculator {
   private totalBuffAtk = 0;
   private totalStatusAtk = 0;
   private totalWeaponAtkMin = 0;
+  private totalWeaponAtkMinNoEDP = 0;
   private totalWeaponAtkMax = 0;
+  private totalWeaponAtkMaxNoEDP = 0;
   private totalWeaponAtkMaxOver = 0;
+  private totalWeaponAtkMaxOverNoEDP = 0;
   private totalEquipAtk = 0;
   private totalExtraAtk = 0;
   private totalEquipMatk = 0;
   private totalAMin = 0;
+  private totalAMinNoEDP = 0;
   private totalAMax = 0;
+  private totalAMaxNoEDP = 0;
   private totalAMaxOver = 0;
+  private totalAMaxOverNoEDP = 0;
   private totalBMin = 0;
+  private totalBMinNoEDP = 0;
   private totalBMax = 0;
+  private totalBMaxNoEDP = 0;
   private totalBMaxOver = 0;
+  private totalBMaxOverNoEDP = 0;
   private totalMinAtk = 0;
+  private totalMinAtkNoEDP = 0;
   private totalMaxAtk = 0;
+  private totalMaxAtkNoEDP = 0;
   private totalMaxAtkOver = 0;
+  private totalMaxAtkOverNoEDP = 0;
   private baseSkillDamage = 0;
   private isMagicalSkill = false;
   private readonly BASE_CRI_DMG = 1.4;
@@ -467,6 +486,10 @@ export class Calculator {
 
   get isActiveMildwind() {
     return this.totalEquipStatus.mildwind >= 1;
+  }
+
+  private canEDP(skillName: string) {
+    return CannotEDP[skillName] !== false;
   }
 
   get finalPhysicalDef() {
@@ -808,13 +831,13 @@ export class Calculator {
     const poisonPsuMulti = 1 + PoisonPsoEleTable[eleLvl][element] * 0.25;
     const isEDP = this.isUsedEDP();
 
-    const formula = (weaponAtk: number, overUpg: number) => {
+    const formula = (weaponAtk: number, overUpg: number, edp = true) => {
       const weaponBonus = this.isIncludingOverUpgrade() ? refineBonus + overUpg : refineBonus;
       let total = weaponAtk;
       total += this.floor(this.weaponStatusAtk * this.sizePenalty);
-      total += this.floor((isEDP ? weaponBonus * poisonPsuMulti : weaponBonus) * this.sizePenalty);
+      total += this.floor((isEDP && edp ? weaponBonus * poisonPsuMulti : weaponBonus) * this.sizePenalty);
 
-      return this.floor(isEDP ? total * 1.25 : total);
+      return this.floor(isEDP && edp ? total * 1.25 : total);
     };
 
     const totalMin = formula(weaponSizePenalty - variant, 0);
@@ -824,6 +847,12 @@ export class Calculator {
     this.totalWeaponAtkMin = this.isMaximizeWeapon ? totalMax : totalMin;
     this.totalWeaponAtkMax = totalMax;
     this.totalWeaponAtkMaxOver = totalMaxOver;
+
+    this.totalWeaponAtkMaxNoEDP = formula(weaponSizePenalty + variant, 0, false);
+    this.totalWeaponAtkMinNoEDP = this.isMaximizeWeapon
+      ? this.totalWeaponAtkMaxNoEDP
+      : formula(weaponSizePenalty - variant, 0, false);
+    this.totalWeaponAtkMaxOverNoEDP = formula(weaponSizePenalty + variant, overUpgradeBonus, false);
 
     return this;
   }
@@ -886,6 +915,10 @@ export class Calculator {
     this.totalAMax = totalAMax;
     this.totalAMaxOver = totalAMaxOver;
 
+    this.totalAMinNoEDP = formula(this.totalWeaponAtkMinNoEDP);
+    this.totalAMaxNoEDP = formula(this.totalWeaponAtkMaxNoEDP);
+    this.totalAMaxOverNoEDP = formula(this.totalWeaponAtkMaxOverNoEDP);
+
     return this;
   }
 
@@ -938,6 +971,10 @@ export class Calculator {
     this.totalBMin = totalBMin * this.getEDPMultiplier();
     this.totalBMax = totalBMax * this.getEDPMultiplier();
     this.totalBMaxOver = totalBMaxOver * this.getEDPMultiplier();
+
+    this.totalBMinNoEDP = formula(this.totalWeaponAtkMinNoEDP + this.totalExtraAtk);
+    this.totalBMaxNoEDP = formula(this.totalWeaponAtkMaxNoEDP + this.totalExtraAtk);
+    this.totalBMaxOverNoEDP = formula(this.totalWeaponAtkMaxOverNoEDP + this.totalExtraAtk);
 
     return this;
   }
@@ -1001,6 +1038,10 @@ export class Calculator {
     this.totalMinAtk = totalMinAtk;
     this.totalMaxAtk = totalMaxAtk;
     this.totalMaxAtkOver = totalMaxAtkOver;
+
+    this.totalMinAtkNoEDP = this.totalAMinNoEDP + this.totalBMinNoEDP + statusAtk;
+    this.totalMaxAtkNoEDP = this.totalAMaxNoEDP + this.totalBMaxNoEDP + statusAtk;
+    this.totalMaxAtkOverNoEDP = this.totalAMaxOverNoEDP + this.totalBMaxOverNoEDP + statusAtk;
 
     return this;
   }
@@ -1167,11 +1208,14 @@ export class Calculator {
 
     //       return `From:${atk} => ${dmg}`;
     //     });
+    const canEDP = this.canEDP(skillName);
 
-    const rawMaxDamage = skillFormula(this.totalMaxAtkOver);
+    const rawMaxDamage = skillFormula(canEDP ? this.totalMaxAtkOver : this.totalMaxAtkOverNoEDP);
     const maxDamage = this._class.calcSkillDmgByTotalHit(rawMaxDamage, skillData);
 
-    const rawMinDamage = canCri ? skillFormula(this.totalMaxAtk) : skillFormula(this.totalMinAtk);
+    const rawMinDamage = canCri
+      ? skillFormula(canEDP ? this.totalMaxAtk : this.totalMaxAtkNoEDP)
+      : skillFormula(canEDP ? this.totalMinAtk : this.totalMinAtkNoEDP);
     const minDamage = this._class.calcSkillDmgByTotalHit(rawMinDamage, skillData);
 
     return { minDamage, maxDamage };

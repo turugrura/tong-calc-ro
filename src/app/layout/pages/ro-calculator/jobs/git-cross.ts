@@ -1,6 +1,12 @@
 import { ClassName } from './_class-name';
 import { AssassinCross } from './assassin-cross';
-import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
+import {
+  ActiveSkillModel,
+  AtkSkillFormulaInput,
+  AtkSkillModel,
+  CharacterBase,
+  PassiveSkillModel,
+} from './_character-base.abstract';
 import { InfoForClass } from '../models/info-for-class.model';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
@@ -65,9 +71,9 @@ const jobBonusTable: Record<number, [number, number, number, number, number, num
   '59': [8, 8, 6, 5, 7, 2],
   '60': [8, 9, 6, 5, 7, 2],
   '61': [8, 9, 6, 5, 7, 2],
-  '62': [8, 9, 6, 5, 7, 2],
-  '63': [8, 9, 6, 5, 7, 2],
-  '64': [8, 9, 6, 5, 7, 2],
+  '62': [8, 9, 6, 5, 8, 2],
+  '63': [8, 9, 6, 5, 8, 2],
+  '64': [8, 9, 6, 5, 8, 3],
   '65': [8, 10, 6, 5, 8, 3],
 };
 
@@ -79,7 +85,7 @@ export class GitCross extends CharacterBase {
   protected classNames = ['Guillotine Cross', 'Guillotine Cross Class', 'Guillotine Cross Cls', 'Only 3rd Cls'];
   protected _atkSkillList: AtkSkillModel[] = [
     {
-      label: 'Rolling Cutter',
+      label: 'Rolling Cutter Lv5',
       name: 'Rolling Cutter',
       value: 'Rolling Cutter==5',
       acd: 0.2,
@@ -87,12 +93,30 @@ export class GitCross extends CharacterBase {
       vct: 0,
       cd: 0,
       isMelee: true,
-      levelList: [{ label: 'Lv 5', value: 'Rolling Cutter==5' }],
+      levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
 
         return (50 + skillLevel * 50) * (baseLevel / 100);
+      },
+    },
+    {
+      label: 'Cross Impact Lv5',
+      name: 'Cross Impact',
+      value: 'Cross Impact==5',
+      acd: 0.5,
+      fct: 0,
+      vct: 0,
+      cd: 0,
+      isMelee: true,
+      hit: 7,
+      levelList: [],
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
+
+        return (1000 + skillLevel * 100) * (baseLevel / 100);
       },
     },
   ];
