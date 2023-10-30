@@ -220,7 +220,10 @@ const sh13 = [Sharp._1, Sharp._2, Sharp._3];
 // const sh35 = [Sharp._3, Sharp._4, Sharp._5];
 const matk12 = [MatkPercent._1, MatkPercent._2];
 const ea35 = [EA._3, EA._4, EA._5];
+const ea410 = [EA._4, EA._5, EA._6, EA._7, EA._8, EA._9, EA._10];
 const sp25 = [Spell._2, Spell._3, Spell._4, Spell._5];
+const sp46 = [Spell._4, Spell._5, Spell._6];
+const fs410 = [FS._4, FS._5, FS._6, FS._7, FS._8, FS._9, FS._10];
 const aspd24 = [AttackDelay._2, AttackDelay._3, AttackDelay._4];
 const TempOpts = {
   _1: [EA._1, FS._1, Sharp._1],
@@ -438,7 +441,7 @@ const enchantTable: EntTable[] = [
 
   { name: 'Twin Cannon', enchants: [null, twinCannon, twinCannon, twinCannon] },
 
-  { name: 'Temporal_Ring_TW', enchants: [null, null, null, [EA._5, EA._6, EA._7, EA._8, EA._9, EA._10]] },
+  { name: 'Temporal_Ring_TW', enchants: [null, null, null, [...ea410, ...fs410, ...sp46]] },
 
   { name: 'White_Wing_Suits', enchants: [null, whiteWingSuit, whiteWingSuit, whiteWingSuit] },
   { name: 'White_Wing_Manteau', enchants: [null, [...atkPer, ...fs13], [...atkPer, ...fs13], [...atkPer, ...fs13]] },
