@@ -2001,6 +2001,39 @@
       ]
     }
   },
+  "2629": {
+    "id": 2629,
+    "aegisName": "Magingiorde",
+    "name": "Megingjard",
+    "unidName": "Belt",
+    "resName": "메긴기오르드",
+    "description": "ครั้งหนึ่งเคยสวมใส่โดย เทพเจ้าสายฟ้า Thor นี่คือเข็มขัดที่ทำให้คุณรู้สึกถึงพลังความแข็งแกร่งของยอดมนุษย์\nSTR +40, MDEF +7\nทุก ๆ Base Lv.5, STR +1\nเมื่อ Base STR ตั้งแต่ 120 ขึ้นไป เพิ่ม Damage ต่อศัตรูประเภท Boss 10%\nประเภท : ^777777Accessory^000000\nพลังป้องกัน : ^7777772^000000      น้ำหนัก : ^777777800^000000\nเลเวลที่ต้องการ : ^77777794^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 517,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 2,
+    "weight": 800,
+    "requiredLevel": 94,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "str": [
+        "40",
+        "level:5---1"
+      ],
+      "mdef": [
+        "7"
+      ],
+      "p_class_boss": [
+        "str:120===10"
+      ]
+    }
+  },
   "2729": {
     "id": 2729,
     "aegisName": "Diabolus_Ring",
@@ -2437,6 +2470,30 @@
     "script": {
       "p_element_water": [
         "20"
+      ]
+    }
+  },
+  "4079": {
+    "id": 4079,
+    "aegisName": "Mantis_Card",
+    "name": "Mantis Card",
+    "unidName": "Card",
+    "resName": "이름없는카드",
+    "description": "STR + 3\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Accessory^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 136,
+    "cardPrefix": "of Power",
+    "script": {
+      "str": [
+        "3"
       ]
     }
   },
@@ -6973,6 +7030,35 @@
     "usableClass": [
       "all"
     ]
+  },
+  "9118": {
+    "id": 9118,
+    "aegisName": "Aliot_EGG",
+    "name": "Aliot Egg",
+    "unidName": "Aliot Egg",
+    "resName": "무속성알",
+    "description": "ไข่ที่มี Q-Pet Aliot อยู่ภายใน สามารถปลุกให้ตื่นขึ้นมาได้ด้วย [Pet Incubator]\n\nหากความสัมพันธ์อยู่ระดับไม่คุ้นเคยหรือเขินอาย ASPD +2%\nหากความสัมพันธ์อยู่ระดับปกติ ASPD +3%, HIT +6\nหากความสัมพันธ์อยู่ระดับเป็นมิตร ASPD +4%, HIT +9\nหากความสัมพันธ์อยู่ระดับสนิทสนม ASPD +5%, HIT +12\n\nประเภท : ^777777Monster Egg^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 518,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "aspdPercent": [
+        "5"
+      ],
+      "hit": [
+        "12"
+      ]
+    }
   },
   "9119": {
     "id": 9119,
@@ -22137,6 +22223,95 @@
       ]
     }
   },
+  "24601": {
+    "id": 24601,
+    "aegisName": "S_Tail_Dragon_Weapon",
+    "name": "Tail Dragon Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา\nเพิ่ม Damage ทางกายภาพระยะไกล 3%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางกายภาพระยะไกลขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพระยะไกลขึ้นอีก 4%\nเมื่อสวมใส่ Tail Dragon Shadow Weapon/Shield/Armor ร่วมกัน,\nเพิ่ม Damage สกิล Dragon Tail % เท่ากับครึ่งหนึ่งของค่าอัพเกรดรวมกัน\nเมื่อสวมใส่ร่วมกับ Rebellion Shadow Shoes,\nเพิกเฉยต่อพลังป้องกันทางกายภาพของทุกเผ่ายกเว้น Player 40% และเพิกเฉยต่อพลังป้องกันทางกายภาพเพิ่มอีกตามค่าอัพเกรดรวมกันของ Tail Dragon Shadow Weapon และ Rebellion Shadow Shoes\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Gunslinger^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "Gunslinger"
+    ],
+    "script": {
+      "range": [
+        "3",
+        "7===3",
+        "9===4"
+      ],
+      "Dragon Tail": [
+        "EQUIP[Tail Dragon Shadow Shield&&Tail Dragon Shadow Armor]REFINE[shadowWeapon,shadowShield,shadowArmor==2]---1"
+      ],
+      "p_pene_race_all": [
+        "EQUIP[Rebellion Shadow Shoes]===40",
+        "EQUIP[Rebellion Shadow Shoes]REFINE[shadowWeapon,shadowBoot==1]---1"
+      ]
+    }
+  },
+  "24602": {
+    "id": 24602,
+    "aegisName": "S_Tail_Dragon_Shield",
+    "name": "Tail Dragon Shadow Shield",
+    "unidName": "Shadow Shield",
+    "resName": "쉴드쉐도우",
+    "description": "โล่เล็กที่สามารถสวมใส่ที่แขนได้ สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์การป้องกันของมันจะลดน้อยลง\nเพิ่ม Damage สกิล Dragon Tail 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage สกิล Dragon Tail ขึ้นอีก 2%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shield^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Gunslinger^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 527,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Shield",
+    "compositionPos": null,
+    "usableClass": [
+      "Gunslinger"
+    ],
+    "script": {
+      "Dragon Tail": [
+        "5",
+        "2---2"
+      ]
+    }
+  },
+  "24603": {
+    "id": 24603,
+    "aegisName": "S_Tail_Dragon_Armor",
+    "name": "Tail Dragon Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우",
+    "description": "ชุดเกราะที่เพิ่มพลังป้องกันเมื่อสวมใส่เพิ่มบนเกราะอีกที สามารถใส่แบบชิ้นเดียวได้ แต่ความสามารถในการป้องกันจะลดลงไปอีก\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage ทางภายภาพต่อศัตรูทุกขนาดขึ้นอีก 1%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Armor^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Gunslinger^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Armor",
+    "compositionPos": null,
+    "usableClass": [
+      "Gunslinger"
+    ],
+    "script": {
+      "p_size_all": [
+        "5",
+        "2---1"
+      ]
+    }
+  },
   "24604": {
     "id": 24604,
     "aegisName": "S_Flare_Dance_Earing",
@@ -22172,7 +22347,7 @@
         "9===7"
       ],
       "Fire Dance": [
-        "EQUIP[Fire Dance Shadow Earring&&Fire Dance Shadow Pendant&&Fire Dance Shadow Shoes]REFINE[shadowWeapon,shadowEarring,shadowPendant==2]---1"
+        "EQUIP[Fire Dance Shadow Pendant&&Fire Dance Shadow Shoes]REFINE[shadowWeapon,shadowEarring,shadowPendant==2]---1"
       ],
       "p_pene_race_all": [
         "EQUIP[Rebellion Shadow Armor]===40",
@@ -26795,6 +26970,83 @@
       ]
     }
   },
+  "28253": {
+    "id": 28253,
+    "aegisName": "HR_S55_OS",
+    "name": "HR-S55-OS [2]",
+    "unidName": "Rifle",
+    "resName": "HR_S55_OS",
+    "description": "ปืมซุ่มยิงที่มีฟังก์ชันในการล็อกเป้าโจมตีจากดาวเทียมได้ \nATK + 3%\nเมื่ออัปเกรดถึงขั้น 7 เพิ่ม Damage ทางกายภาพระยะไกล 7%\nเมื่ออัปเกรดถึงขั้น 9 เพิ่ม Damage สกิล God's Hammer 20%\nเมื่ออัปเกรดถึงขั้น 11 ลด Cooldown ของสกิล God's Hammer 5 วินาที\n^ffffff_^000000\nประเภท : ^777777Rifle^000000 พลังโจมตี : ^777777250^000000\nน้ำหนัก : ^777777100^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777130^000000\nอาชีพที่ใส่ได้ : ^777777Gunslinger^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 274,
+    "itemLevel": 4,
+    "attack": 250,
+    "defense": null,
+    "weight": 100,
+    "requiredLevel": 130,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Gunslinger"
+    ],
+    "script": {
+      "atkPercent": [
+        "3"
+      ],
+      "range": [
+        "7===7"
+      ],
+      "God's Hammer": [
+        "9===20"
+      ],
+      "cd__God's Hammer": [
+        "11===5"
+      ]
+    }
+  },
+  "28257": {
+    "id": 28257,
+    "aegisName": "Golden_L_Launcher",
+    "name": "Golden Lord Launcher [2]",
+    "unidName": "Grenade Launcher",
+    "resName": "디바그레네이드건",
+    "description": "ปืน Grenade Launcher ที่ทำมาจากทองคำ ถูกใช้โดยนักแม่นปืนผู้มากความสามารถ\nดูกลมกลืนเข้ากับ Ancient Hero Boots\n\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage ทางกายภาพระยะไกล 3%\nทุก ๆ การอัพเกรด 3 ขั้น ATK +15\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage สกิล Dragon Tail 15%\nเมื่ออัพเกรดถึงขั้น 9 ลด Cooldown สกิล Dragon Tail 1 วินาที\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Dragon Tail ขึ้นอีก 15%\nเมื่อสวมใส่ร่วมกับ Ancient Hero Boots เมื่อโจมตีทางกายภาพ มีโอกาส DEX +20, เพิ่ม Damage ทางกายภาพระยะไกล 10% เป็นเวลา 7 วินาที\nประเภท : ^777777Grenade Launcher^000000 พลังโจมตี : ^777777320^000000\nน้ำหนัก : ^777777210^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Rebellion^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 277,
+    "itemLevel": 4,
+    "attack": 320,
+    "defense": null,
+    "weight": 210,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Rebellion"
+    ],
+    "script": {
+      "range": [
+        "2---3"
+      ],
+      "atk": [
+        "3---15"
+      ],
+      "Dragon Tail": [
+        "7===15",
+        "11===15"
+      ],
+      "cd__Dragon Tail": [
+        "9===1"
+      ],
+      "chance__dex": [
+        "EQUIP[Ancient Hero Boots]===20(7 วินาที)"
+      ],
+      "chance__range": [
+        "EQUIP[Ancient Hero Boots]===10(7 วินาที)"
+      ]
+    }
+  },
   "28258": {
     "id": 28258,
     "aegisName": "The_Black_Gatling",
@@ -27760,6 +28012,53 @@
       ],
       "acd": [
         "12===3"
+      ]
+    }
+  },
+  "28946": {
+    "id": 28946,
+    "aegisName": "Bloody_Knight_Shield__",
+    "name": "Purified Knight's Shield [1]",
+    "unidName": "Shield",
+    "resName": "Knight_Shield",
+    "description": "โล่ทหารม้าที่ผ่านการชำระคำสาปอย่างสมบูรณ์\nดูเหมือนได้รับพลังแห่งธรรมชาติที่ถูกคำสาปกลืนกินไปกลับมา\n^ffffff_^000000 \nเพิ่ม ASPD 10%\nATK + 5%, MATK + 5%.\nลดความเสียหายที่ได้รับจากศัตรูทุกธาตุ 10%\nเมื่อถูกโจมตี มีโอกาส (3%) ที่จะฟื้นฟู 50 SP ทุกๆ 1 วินาที เป็นเวลา 7 วินาที\nเมื่อโจมตีทางกายภาพ/ทางเวทย์ มีโอกาส (3%) ที่จะฟื้นฟู 300 HP ทุกๆ 1 วินาที เป็นเวลา 7 วินาที\nเมื่ออัพเกรดถึงขั้น 7 ขึ้นไป ATK + 20, MATK + 20.\nเมื่ออัพเกรดถึงขั้น 9, ASPD + 2.\nเมื่ออัพเกรดถึงขั้น 12 ลดดีเลย์หลังใช้สกิล 5%\nประเภท : ^777777Shield^000000 พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^77777780^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 514,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 80,
+    "requiredLevel": 1,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "aspdPercent": [
+        "10"
+      ],
+      "atkPercent": [
+        "5"
+      ],
+      "matkPercent": [
+        "5"
+      ],
+      "ลดความเสียหายที่ได้รับจากศัตรูทุกธาตุ": [
+        "10"
+      ],
+      "atk": [
+        "7===20"
+      ],
+      "matk": [
+        "7===20"
+      ],
+      "aspd": [
+        "9===2"
+      ],
+      "acd": [
+        "12===5"
       ]
     }
   },
@@ -35528,6 +35827,59 @@
       ]
     }
   },
+  "400061": {
+    "id": 400061,
+    "aegisName": "Sagittarius_DiademK",
+    "name": "Sagittarius Celestial Coronet K [1]",
+    "unidName": "Helm",
+    "resName": "인마궁보관",
+    "description": "มงกุฎอันเป็นตัวแทนของดาวจักรราศีดวงที่ 9 อัญมณี Zircon ที่เป็นอัญมณีเดือนเกิดติดอยู่\nมันถูกดัดแปลงเพื่อให้เข้ากับอาวุธ OS \nทุกการอัพเกรด 2 ขั้น, ATK +20. \nเมื่ออัพเกรดถึงขั้น 7, ลดระยะเวลาร่ายแบบแปรผัน 15%\nเมื่ออัพเกรดถึงขั้น 9, เพิ่ม Damage ทางกายภาพระยะไกล 15% \nเมื่ออัพเกรดถึงขั้น 11, เพิ่ม Damage ทางกายภาพที่สร้างต่อศัตรูขนาดเล็กและกลาง 15%, ลดระยะเวลาร่ายแบบคงตัว 0.2 วินาที\n\nเมื่อสวมใส่กับ Burning Knuckle-OS, ลด Cooldown ของสกิล Rampage Blast 1 วินาที, ทุกการอัพเกรดอาวุธ 2 ขั้น เพิ่ม Damage ทางกายภาพระยะไกลครั้งละ 3%\nเมื่อสวมใส่กับ Saphir Mace-OS, ลดระยะเวลาร่ายแบบแปรผัน 10%, ทุกการอัพเกรดอาวุธ 2 ขั้น เพิ่ม Damage สกิล Acid Demonstration ครั้งละ 3%\nเมื่อสวมใส่กับ HR-S55-OS, เพิ่ม Damage ทางกายภาพระยะไกล 5%, ทุกการอัพเกรดอาวุธ 2 ขั้น เพิ่ม Damage สกิล Hammer of God ครั้งละ 3%\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^7777770^000000\nตำแหน่ง : ^777777Upper^000000 น้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777130^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 130,
+    "location": "Upper",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atk": [
+        "2---20"
+      ],
+      "vct": [
+        "7===15",
+        "EQUIP[Saphir Mace-OS]===10"
+      ],
+      "range": [
+        "9===15",
+        "EQUIP[HR-S55-OS]===5",
+        "EQUIP[Burning Knuckle-OS]REFINE[weapon==2]---3"
+      ],
+      "p_size_s": [
+        "11===15"
+      ],
+      "p_size_m": [
+        "11===15"
+      ],
+      "fct": [
+        "11===0.2"
+      ],
+      "cd__Rampage Blast": [
+        "EQUIP[Burning Knuckle-OS]===1"
+      ],
+      "Acid Demonstration": [
+        "EQUIP[Saphir Mace-OS]REFINE[weapon==2]---3"
+      ],
+      "God's Hammer": [
+        "EQUIP[HR-S55-OS]REFINE[weapon==2]---3"
+      ]
+    }
+  },
   "400097": {
     "id": 400097,
     "aegisName": "Egirnion_Helm",
@@ -35693,6 +36045,73 @@
     "script": {
       "vct": [
         "5"
+      ]
+    }
+  },
+  "410119": {
+    "id": 410119,
+    "aegisName": "Guardian_Helm",
+    "name": "Guardian Helm",
+    "unidName": "Ribbon",
+    "resName": "Guardian_Helm",
+    "description": "หมวกของกองอารักขาที่แข็งแกร่งที่สุดในแผ่นดินใหญ่ เต็มเปี่ยมไปด้วยความภักดีอย่างสุดซึ้งต่อพระราชาผู้น่านับถือ \n\nเพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูทุกขนาด 10%\nทำให้ไม่ติดสถานะ Curse\n\nเมื่อสวมใส่ร่วมกับ King Schmidt's Suit, All State +10, เพิ่มความต้านทานต่อ Player 7%, ทำให้ไม่ติดสถานะแช่แข็ง\nเมื่อสวมใส่ร่วมกับ King Schmidt's Manteau, All State + 10, เพิ่มความต้านทานต่อ Player 6%\nเมื่อสวมใส่ร่วมกับ King Schmidt's Strong Insignia, All State +5, เพิ่ม Damage ทางกายภาพต่อศัตรูทุกประเภท 10%, เพิ่มความต้านทานต่อ Player 3%\nเมื่อสวมใส่ร่วมกับ King Schmidt's Rigid Insignia, All State +5, ลดระยะเวลาร่ายแบบแปรผัน 10%, เพิ่มความต้านทานต่อ Player 3%\nเมื่อสวมใส่ร่วมกับ King Schmidt's Divine Power Insignia, All State +5, เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกประเภท 10%, เพิ่มความต้านทานต่อ Player 3%\nเมื่อสวมใส่ร่วมกับ King Schmidt's Flash Insignia, All State +5, ASPD +10%, เพิ่มความต้านทานต่อ Player 3%\nเมื่อสวมใส่ร่วมกับ King Schmidt's Celestial Bow Insignia, All State +5, เพิ่ม Damage ทางกายภาพระยะไกล 10%, เพิ่มความต้านทานต่อ Player 3%\nเมื่อสวมใส่ร่วมกับ King Schmidt's White Cloud Insignia, All State +5, Critical Damage +10%, เพิ่มความต้านทานต่อ Player 3%\n\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^7777772^000000\nตำแหน่ง : ^777777Middle^000000 น้ำหนัก : ^77777730^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 2,
+    "weight": 30,
+    "requiredLevel": 100,
+    "location": "Middle",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "p_size_all": [
+        "10"
+      ],
+      "m_size_all": [
+        "10"
+      ],
+      "allStatus": [
+        "EQUIP[King Schmidt's Suit]===10",
+        "EQUIP[King Schmidt's Manteau]===10",
+        "EQUIP[King Schmidt's Strong Insignia]===5",
+        "EQUIP[King Schmidt's Rigid Insignia]===5",
+        "EQUIP[King Schmidt's Divine Power Insignia]===5",
+        "EQUIP[King Schmidt's Flash Insignia]===5",
+        "EQUIP[King Schmidt's Celestial Bow Insignia]===5",
+        "EQUIP[King Schmidt's White Cloud Insignia]===5"
+      ],
+      "เพิ่มความต้านทานต่อ Player": [
+        "EQUIP[King Schmidt's Suit]===7",
+        "EQUIP[King Schmidt's Manteau]===6",
+        "EQUIP[King Schmidt's Strong Insignia]===3",
+        "EQUIP[King Schmidt's Rigid Insignia]===3",
+        "EQUIP[King Schmidt's Divine Power Insignia]===3",
+        "EQUIP[King Schmidt's Flash Insignia]===3",
+        "EQUIP[King Schmidt's Celestial Bow Insignia]===3",
+        "EQUIP[King Schmidt's White Cloud Insignia]===3"
+      ],
+      "p_class_all": [
+        "EQUIP[King Schmidt's Strong Insignia]===10"
+      ],
+      "vct": [
+        "EQUIP[King Schmidt's Rigid Insignia]===10"
+      ],
+      "m_class_all": [
+        "EQUIP[King Schmidt's Divine Power Insignia]===10"
+      ],
+      "aspdPercent": [
+        "EQUIP[King Schmidt's Flash Insignia]===10"
+      ],
+      "range": [
+        "EQUIP[King Schmidt's Celestial Bow Insignia]===10"
+      ],
+      "criDmg": [
+        "EQUIP[King Schmidt's White Cloud Insignia]===10"
       ]
     }
   },

@@ -113,12 +113,13 @@ export class Rebelion extends CharacterBase {
       fct: 0,
       vct: 0,
       cd: 0,
-      levelList: [{ label: 'Lv 10', value: 'Fire Dance==10' }],
+      levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
+        const desperadoBonus = 200;
 
-        return (skillLevel * 100 + 200 + 200) * (baseLevel / 100);
+        return (skillLevel * 100 + 200 + desperadoBonus) * (baseLevel / 100);
       },
     },
     {
@@ -129,7 +130,7 @@ export class Rebelion extends CharacterBase {
       fct: 0.7,
       vct: 1,
       cd: 1.6,
-      levelList: [{ label: 'Lv 10', value: 'Vanishing Buster==10' }],
+      levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
@@ -137,39 +138,43 @@ export class Rebelion extends CharacterBase {
         return (skillLevel * 100 + 1500) * (baseLevel / 100);
       },
     },
+    {
+      label: 'Dragon Tail Lv10',
+      name: 'Dragon Tail',
+      value: 'Dragon Tail==10',
+      acd: 1,
+      fct: 0,
+      vct: 3,
+      cd: 3.5,
+      levelList: [],
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
+        const crimsonMarker = this.bonuses.activeSkillNames.has('Crimson Marker') ? 2 : 1;
+
+        return crimsonMarker * (skillLevel * 200 + 500) * (baseLevel / 100);
+      },
+    },
+    {
+      label: "God's Hammer Lv10 (10 coin)",
+      name: "God's Hammer",
+      value: "God's Hammer==10",
+      acd: 0.5,
+      fct: 0,
+      vct: 0,
+      cd: 20,
+      levelList: [],
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
+        const crimsonMarker = this.bonuses.activeSkillNames.has('Crimson Marker') ? 450 : 150;
+
+        return (skillLevel * 100 + crimsonMarker * 10) * (baseLevel / 100);
+      },
+    },
   ];
+
   protected _activeSkillList: ActiveSkillModel[] = [
-    {
-      inputType: 'dropdown',
-      label: 'Gunslinger Mine',
-      name: 'Gunslinger Mine',
-      dropdown: [
-        { label: '-', value: 0, isUse: false },
-        { label: 'Lv 1', value: 1, skillLv: 1, isUse: true },
-        { label: 'Lv 2', value: 2, skillLv: 2, isUse: true },
-        { label: 'Lv 3', value: 3, skillLv: 3, isUse: true },
-        { label: 'Lv 4', value: 4, skillLv: 4, isUse: true },
-        { label: 'Lv 5', value: 5, skillLv: 5, isUse: true },
-        { label: 'Lv 6', value: 6, skillLv: 6, isUse: true },
-        { label: 'Lv 7', value: 7, skillLv: 7, isUse: true },
-        { label: 'Lv 8', value: 8, skillLv: 8, isUse: true },
-        { label: 'Lv 9', value: 9, skillLv: 9, isUse: true },
-        { label: 'Lv 10', value: 10, skillLv: 10, isUse: true },
-      ],
-    },
-    {
-      inputType: 'dropdown',
-      label: 'Wounding Shot',
-      name: 'Wounding Shot',
-      dropdown: [
-        { label: '-', value: 0, isUse: false },
-        { label: 'Lv 1', value: 1, skillLv: 1, isUse: true },
-        { label: 'Lv 2', value: 2, skillLv: 2, isUse: true },
-        { label: 'Lv 3', value: 3, skillLv: 3, isUse: true },
-        { label: 'Lv 4', value: 4, skillLv: 4, isUse: true },
-        { label: 'Lv 5', value: 5, skillLv: 5, isUse: true },
-      ],
-    },
     {
       isEquipAtk: true,
       inputType: 'selectButton',
@@ -209,8 +214,49 @@ export class Rebelion extends CharacterBase {
         { label: 'No', value: 0, isUse: false },
       ],
     },
+    {
+      label: 'Crimson Marker',
+      name: 'Crimson Marker',
+      inputType: 'selectButton',
+      dropdown: [
+        { label: 'Yes', value: 1, skillLv: 1, isUse: true },
+        { label: 'No', value: 0, isUse: false },
+      ],
+    },
   ];
+
   protected _passiveSkillList: PassiveSkillModel[] = [
+    {
+      inputType: 'dropdown',
+      label: 'Gunslinger Mine',
+      name: 'Gunslinger Mine',
+      dropdown: [
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 1', value: 1, skillLv: 1, isUse: true },
+        { label: 'Lv 2', value: 2, skillLv: 2, isUse: true },
+        { label: 'Lv 3', value: 3, skillLv: 3, isUse: true },
+        { label: 'Lv 4', value: 4, skillLv: 4, isUse: true },
+        { label: 'Lv 5', value: 5, skillLv: 5, isUse: true },
+        { label: 'Lv 6', value: 6, skillLv: 6, isUse: true },
+        { label: 'Lv 7', value: 7, skillLv: 7, isUse: true },
+        { label: 'Lv 8', value: 8, skillLv: 8, isUse: true },
+        { label: 'Lv 9', value: 9, skillLv: 9, isUse: true },
+        { label: 'Lv 10', value: 10, skillLv: 10, isUse: true },
+      ],
+    },
+    {
+      inputType: 'dropdown',
+      label: 'Wounding Shot',
+      name: 'Wounding Shot',
+      dropdown: [
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 1', value: 1, skillLv: 1, isUse: true },
+        { label: 'Lv 2', value: 2, skillLv: 2, isUse: true },
+        { label: 'Lv 3', value: 3, skillLv: 3, isUse: true },
+        { label: 'Lv 4', value: 4, skillLv: 4, isUse: true },
+        { label: 'Lv 5', value: 5, skillLv: 5, isUse: true },
+      ],
+    },
     {
       isEquipAtk: true,
       inputType: 'dropdown',
