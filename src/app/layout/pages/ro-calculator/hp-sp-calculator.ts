@@ -98,19 +98,19 @@ export class HpSpCalculator {
   }
 
   calculate() {
-    const baseHp = this.hpSpTable[this._dataIndex].baseHp[this._level];
-    const baseSp = this.hpSpTable[this._dataIndex].baseSp[this._level];
+    // const baseHp = this.hpSpTable[this._dataIndex].baseHp[this._level];
+    // const baseSp = this.hpSpTable[this._dataIndex].baseSp[this._level];
 
-    let maxHp = Math.floor(baseHp * 1.25);
-    maxHp += Math.floor(maxHp * (1 + this._totalStatus.totalVit * 0.01));
-    maxHp += this._totalBonus.hp;
-    this._maxHp = maxHp + Math.floor(maxHp * ((this._totalBonus.hpPercent || 0) * 0.01));
+    // let maxHp = Math.floor(baseHp * 1.25);
+    // maxHp += Math.floor(maxHp * (1 + this._totalStatus.totalVit * 0.01));
+    // maxHp += this._totalBonus.hp;
+    // this._maxHp = maxHp + Math.floor(maxHp * ((this._totalBonus.hpPercent || 0) * 0.01));
 
-    let maxSp = Math.floor(baseSp * 1.25);
-    maxSp += Math.floor(this._maxSp * (1 + this._totalStatus.totalInt * 0.01));
-    maxSp += this._totalBonus.sp;
-    const buffedSp = Math.floor(maxSp * (this._totalBonus['buffedInt'] || 0));
-    this._maxSp = maxSp + Math.floor(maxSp * ((this._totalBonus.spPercent || 0) * 0.01)) + buffedSp;
+    // let maxSp = Math.floor(baseSp * 1.25);
+    // maxSp += Math.floor(this._maxSp * (1 + this._totalStatus.totalInt * 0.01));
+    // maxSp += this._totalBonus.sp;
+    // const buffedSp = Math.floor(maxSp * (this._totalBonus['buffedInt'] || 0));
+    // this._maxSp = maxSp + Math.floor(maxSp * ((this._totalBonus.spPercent || 0) * 0.01)) + buffedSp;
 
     return this;
   }
