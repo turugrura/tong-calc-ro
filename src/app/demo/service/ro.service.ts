@@ -1,13 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ClassName } from 'src/app/layout/pages/ro-calculator/jobs/_class-name';
 
 @Injectable()
 export class RoService {
   constructor(private http: HttpClient) {
     // const a = [] as any[];
-
     // this.getHpSpTable<{ Body: HpSpTable }>().subscribe(({ Body: data }) => {
     //   console.log({ data });
     //   for (const rec of data) {
@@ -18,7 +16,6 @@ export class RoService {
     //       }
     //       return Object.keys(curJob).some((job) => jobs[job] === true);
     //     });
-
     //     if (found) {
     //       found.jobs = { ...found.jobs, ...rec.Jobs };
     //       found.baseHp = {
@@ -28,7 +25,6 @@ export class RoService {
     //           return s;
     //         }, {}),
     //       };
-
     //       found.baseSp = {
     //         ...(found.baseSp || {}),
     //         ...rec.BaseSp?.reduce((s, { Sp, Level }) => {
@@ -52,20 +48,18 @@ export class RoService {
     //       });
     //     }
     //   }
-
     //   console.log(a);
     // });
-
-    this.getHpSpTable<any[]>().subscribe((data) => {
-      const ls = {};
-      for (const cName of Object.values(ClassName)) {
-        const i = data.findIndex((a) => {
-          return a.jobs[cName] === true;
-        });
-        ls[cName] = i;
-      }
-      console.log(ls);
-    });
+    // this.getHpSpTable<any[]>().subscribe((data) => {
+    //   const ls = {};
+    //   for (const cName of Object.values(ClassName)) {
+    //     const i = data.findIndex((a) => {
+    //       return a.jobs[cName] === true;
+    //     });
+    //     ls[cName] = i;
+    //   }
+    //   console.log(ls);
+    // });
   }
 
   getItems<T>(): Observable<T> {

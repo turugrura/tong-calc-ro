@@ -110,6 +110,7 @@ export const MainItemWithRelations: Partial<Record<ItemTypeEnum, ItemTypeEnum[]>
     ItemTypeEnum.weaponCard1,
     ItemTypeEnum.weaponCard2,
     ItemTypeEnum.weaponCard3,
+    ItemTypeEnum.weaponCard4,
     ItemTypeEnum.weaponEnchant1,
     ItemTypeEnum.weaponEnchant2,
     ItemTypeEnum.weaponEnchant3,

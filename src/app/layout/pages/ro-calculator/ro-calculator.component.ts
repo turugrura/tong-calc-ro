@@ -87,6 +87,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
   loadBtnItems: MenuItem[];
   monsterDataMap: Record<number, MonsterModel> = {};
+  hpSpTable: HpSpTable;
   items!: Record<number, ItemModel>;
   mapEnchant!: Map<string, ItemModel>;
   skillBuffs = JobBuffs;
@@ -547,6 +548,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       tap(([items, monsters, hpSpTable]) => {
         this.items = items;
         this.monsterDataMap = monsters;
+        this.hpSpTable = hpSpTable;
 
         this.selectedMonsterName = this.monsterDataMap[this.selectedMonster]?.name;
 
@@ -1580,6 +1582,14 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       this.model[cardTypeName] = undefined;
       this.equipItemMap.set(cardTypeName, undefined);
     }
+
+    if (itemType === ItemTypeEnum.weapon) {
+      for (let i = (slots || 0) + 1; i <= 4; i++) {
+        const cTypeName = `weaponCard${i}` as ItemTypeEnum;
+        this.model[cTypeName] = undefined;
+        this.equipItemMap.set(cTypeName, undefined);
+      }
+    }
   }
 
   onSelectItem(itemType: string, itemId = 0, refine = 0) {
@@ -1699,7 +1709,10 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
           mergeMap(() => {
             this.calculator = new Calculator();
             this.setClassInstant();
-            this.calculator.setMasterItems(this.items);
+            this.calculator.setMasterItems(this.items).setHpSpTable(this.hpSpTable);
+
+            this.calculator2.setClass(this.selectedCharacter);
+            this.onListItemComparingChange(true);
 
             this.updateAvailablePoints();
             this.equipItemMap.clear();

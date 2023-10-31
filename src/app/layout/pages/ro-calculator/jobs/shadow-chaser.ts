@@ -1,5 +1,12 @@
 import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
+import {
+  ActiveSkillModel,
+  AtkSkillFormulaInput,
+  AtkSkillModel,
+  CharacterBase,
+  PassiveSkillModel,
+} from './_character-base.abstract';
+import { DarkClaw, NoLimit } from '../constants/share-active-skills';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 0, 0, 1],
@@ -175,7 +182,10 @@ export class ShadowChaser extends CharacterBase {
         { label: '-', value: 0, isUse: false },
       ],
     },
+    DarkClaw,
+    NoLimit,
   ];
+
   protected _passiveSkillList: PassiveSkillModel[] = [
     {
       label: "Vulture's Eye 10",

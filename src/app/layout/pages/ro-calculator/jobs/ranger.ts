@@ -7,6 +7,7 @@ import {
   PassiveSkillModel,
 } from './_character-base.abstract';
 import { Archer } from './archer';
+import { NoLimit } from '../constants/share-active-skills';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 0, 1, 0],
@@ -208,21 +209,9 @@ export class Ranger extends CharacterBase {
         { label: 'No', value: 0, isUse: false },
       ],
     },
-    {
-      isEquipAtk: true,
-      inputType: 'dropdown',
-      label: 'No Limits',
-      name: 'No Limits',
-      dropdown: [
-        { label: '0', value: 0, isUse: false },
-        { label: 'Lv 1', value: 'No Limits==1', skillLv: 1, isUse: true, bonus: { range: 150 } },
-        { label: 'Lv 2', value: 'No Limits==2', skillLv: 2, isUse: true, bonus: { range: 200 } },
-        { label: 'Lv 3', value: 'No Limits==3', skillLv: 3, isUse: true, bonus: { range: 250 } },
-        { label: 'Lv 4', value: 'No Limits==4', skillLv: 4, isUse: true, bonus: { range: 300 } },
-        { label: 'Lv 5', value: 'No Limits==5', skillLv: 5, isUse: true, bonus: { range: 350 } },
-      ],
-    },
+    NoLimit,
   ];
+
   protected _passiveSkillList: PassiveSkillModel[] = [
     {
       label: 'Beast Bane',
@@ -260,6 +249,15 @@ export class Ranger extends CharacterBase {
         { label: '8', value: 8, skillLv: 8, isUse: true, bonus: { falconDmg: 48 } },
         { label: '9', value: 9, skillLv: 9, isUse: true, bonus: { falconDmg: 54 } },
         { label: '10', value: 10, skillLv: 10, isUse: true, bonus: { falconDmg: 60 } },
+      ],
+    },
+    {
+      inputType: 'selectButton',
+      label: 'Falcon Eyes 10',
+      name: 'Falcon Eyes',
+      dropdown: [
+        { label: 'Yes', value: 10, skillLv: 10, isUse: true },
+        { label: 'No', value: 0, isUse: false },
       ],
     },
     {

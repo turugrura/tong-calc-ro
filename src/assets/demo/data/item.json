@@ -2622,6 +2622,30 @@
     "cardPrefix": "Hasty",
     "script": {}
   },
+  "4133": {
+    "id": 4133,
+    "aegisName": "Daydric_Card",
+    "name": "Raydric Card",
+    "unidName": "Card",
+    "resName": "이름없는카드",
+    "description": "ลดพลังโจมตีจาก ธาตุ Normal 20%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Garment^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 4,
+    "cardPrefix": "Immune",
+    "script": {
+      "ลดพลังโจมตีจาก ธาตุ Normal": [
+        "20"
+      ]
+    }
+  },
   "4140": {
     "id": 4140,
     "aegisName": "Knight_Of_Abyss_Card",
@@ -7616,6 +7640,73 @@
       ]
     }
   },
+  "13034": {
+    "id": 13034,
+    "aegisName": "Twilight_Desert",
+    "name": "Twilight of Desert [2]",
+    "unidName": "Dagger",
+    "resName": "사막의황혼",
+    "description": "มีดคู่ที่ทำขึ้นโดยสมาคม Assassin\nSP + 20, MHP + 5%, HIT + 10 เมื่อสวมใส่คู่กับ Sand Storm\nเพิ่มความเสียหาย 30% กับมอนสเตอร์ขนาดใหญ่\nมีโอกาสที่ความเร็วในการโจมตีจะเป็น 190 เมื่อทำการโจมตี\nประเภท : ^777777Dagger^000000 พลังโจมตี : ^777777130^000000\nน้ำหนัก : ^77777760^000000 ธาตุ : ^777777Neutral^000000\nอาวุธ Lv : ^7777772^000000\nเลเวลที่ต้องการ : ^77777770^000000\nอาชีพ : ^777777Assassin Cross^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 256,
+    "itemLevel": 2,
+    "attack": 130,
+    "defense": null,
+    "weight": 60,
+    "requiredLevel": 70,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Assassin Cross"
+    ],
+    "script": {
+      "sp": [
+        "20"
+      ],
+      "hpPercent": [
+        "5"
+      ],
+      "hit": [
+        "10"
+      ],
+      "p_size_l": [
+        "EQUIP[Sandstorm]30"
+      ]
+    }
+  },
+  "13035": {
+    "id": 13035,
+    "aegisName": "Sandstorm",
+    "name": "Sandstorm [4]",
+    "unidName": "Dagger",
+    "resName": "모래폭풍",
+    "description": "มีดคู่ที่ทำขึ้นโดยสมาคม Assassin\nSP + 20, MHP + 5%, HIT + 10 เมื่อสวมใส่คู่กับ Twilight of Desert\nเพิ่มความเสียหาย 30% กับมอนสเตอร์ขนาดใหญ่\nมีโอกาสที่ความเร็วในการโจมตีจะเป็น 190 เมื่อทำการโจมตี\nประเภท : ^777777Dagger^000000 พลังโจมตี : ^77777750^000000\nน้ำหนัก : ^77777760^000000 ธาตุ : ^777777Neutral^000000\nอาวุธ Lv : ^7777772^000000\nเลเวลที่ต้องการ : ^77777770^000000\nอาชีพ : ^777777Assassin Cross^000000",
+    "slots": 4,
+    "itemTypeId": 1,
+    "itemSubTypeId": 256,
+    "itemLevel": 2,
+    "attack": 50,
+    "defense": null,
+    "weight": 60,
+    "requiredLevel": 70,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Assassin Cross"
+    ],
+    "script": {
+      "sp": [
+        "20"
+      ],
+      "hpPercent": [
+        "5"
+      ],
+      "hit": [
+        "10"
+      ]
+    }
+  },
   "13138": {
     "id": 13138,
     "aegisName": "Dark_Rose",
@@ -7854,6 +7945,91 @@
     "usableClass": [
       "all"
     ]
+  },
+  "13412": {
+    "id": 13412,
+    "aegisName": "Twin_Edge_B",
+    "name": "Twin Edge of Naght Sieger [3]",
+    "unidName": "One-Handed Sword",
+    "resName": "트윈엣지B",
+    "description": "หนึ่งในดาบสองเล่มของ Naght Sieger ประกายสีฟ้าซึ่งแสดงถึงความคมของดาบ\nมีโอกาสเล็กน้อยที่จะไม่คิดพลังป้องกันของศัตรู เมื่อทำการโจมตี\nสามารถใช้สกิล Lv. 5 Frost Diver ได้\nประเภท : ^777777Sword^000000 พลังโจมตี : ^777777150^000000\nน้ำหนัก : ^777777150^000000 ธาตุ : ^777777Water^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^77777775^000000\nอาชีพ : ^777777Hi-Class(Swordman,Merchant,Thief Cls)^000000",
+    "slots": 3,
+    "itemTypeId": 1,
+    "itemSubTypeId": 257,
+    "itemLevel": 4,
+    "attack": 150,
+    "propertyAtk": "Water",
+    "defense": null,
+    "weight": 150,
+    "requiredLevel": 75,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Swordman",
+      "Merchant",
+      "Thief"
+    ],
+    "script": {}
+  },
+  "13413": {
+    "id": 13413,
+    "aegisName": "Twin_Edge_R",
+    "name": "Twin Edge of Naght Sieger [3]",
+    "unidName": "One-Handed Sword",
+    "resName": "트윈엣지R",
+    "description": "หนึ่งในดาบสองเล่มของ Naght Sieger ประกายสีแดงซึ่งแสดงถึงพลังทำลายของดาบ\nมีโอกาสเล็กน้อยที่จะไม่คิดพลังป้องกันของศัตรู เมื่อทำการโจมตี\nสามารถใช้สกิล Lv. 3 Meteor Storm ได้\nประเภท : ^777777Sword^000000 พลังโจมตี : ^777777160^000000\nน้ำหนัก : ^777777150^000000 ธาตุ : ^777777Fire^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^77777775^000000\nอาชีพ : ^777777Hi-Class(Swordman,Merchant,Thief Cls)^000000",
+    "slots": 3,
+    "itemTypeId": 1,
+    "itemSubTypeId": 257,
+    "itemLevel": 4,
+    "attack": 160,
+    "propertyAtk": "Fire",
+    "defense": null,
+    "weight": 150,
+    "requiredLevel": 75,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Swordman",
+      "Merchant",
+      "Thief"
+    ],
+    "script": {}
+  },
+  "13493": {
+    "id": 13493,
+    "aegisName": "Cannon_Rapier_OS",
+    "name": "Cannon Rapier-OS [2]",
+    "unidName": "Sword",
+    "resName": "Cannon_Rapier_OS",
+    "description": "ดาบที่ทำให้เกิดระเบิดรุนแรงได้ด้วยการเปิดใช้งานชนวนระเบิดที่อยู่ในใบมีด\nMATK + 150\nเมื่อทำการโจมตีทางกายภาพระยะใกล้แบบธรรมดา มีโอกาสร่ายสกิล Fireball Lv.(ขั้นอัปเกรด) (สูงสุดไม่เกินขั้น 10)\nเมื่ออัปเกรดถึงขั้น 7 เพิ่ม ASPD 7%\nเมื่ออัปเกรดถึงขั้น 9 เพิ่ม Damage สกิล Fireball 30%\nเมื่ออัปเกรดถึงขั้น 11 หากทำการโจมตีทางกายภาพระยะใกล้แบบธรรมดา มีโอกาสร่ายสกิล Hell Inferno Lv.3\nประเภท : ^777777Sword^000000 พลังโจมตี : ^777777160^000000\nน้ำหนัก : ^77777780^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777130^000000\nอาชีพที่ใส่ได้ : ^777777Swordsman,Novice,Thief,Merchant^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 257,
+    "itemLevel": 4,
+    "attack": 160,
+    "defense": null,
+    "weight": 80,
+    "requiredLevel": 130,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Swordsman",
+      "Novice",
+      "Thief",
+      "Merchant"
+    ],
+    "script": {
+      "matk": [
+        "150"
+      ],
+      "aspdPercent": [
+        "7===7"
+      ],
+      "Fireball": [
+        "9===30"
+      ]
+    }
   },
   "14616": {
     "id": 14616,
@@ -10164,6 +10340,44 @@
     "usableClass": [
       "all"
     ]
+  },
+  "18528": {
+    "id": 18528,
+    "aegisName": "Tare_Neko_Cru",
+    "name": "Tare Neko Cru [1]",
+    "unidName": "Cap",
+    "resName": "타레네코크루",
+    "description": "หมวกที่เลียนแบบสัตว์เลี้ยงของ Lori Ruri 'Cru' ว่ากันว่ามันค่อนข้างอ่อนไหวและตกใจง่าย\nINT + 2, MDEF + 5.\nไม่สนพลังป้องกันเวทมนตร์ 5%, ทุกการอัพเกรด 1 ขั้น เพิ่มการไม่สนพลังป้องกันทางเวทย์ขึ้นอีก 1%\nเมื่ออัพเกรดตั้งแต่ขั้น 7 ขึ้นไป ไม่สนพลังป้องกันทางเวทย์เพิ่มขึ้นอีก 5%, เพิ่ม MATK +2%\nเมื่ออัพเกรดตั้งแต่ขั้น 9 ขึ้นไป เพิ่ม MATK +5%\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^7777770^000000\nตำแหน่ง : ^777777Upper^000000 น้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 1,
+    "location": "Upper",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "int": [
+        "2"
+      ],
+      "mdef": [
+        "5"
+      ],
+      "m_pene_class_all": [
+        "5",
+        "7===5",
+        "1---1"
+      ],
+      "matkPercent": [
+        "7===2",
+        "9===5"
+      ]
+    }
   },
   "18563": {
     "id": 18563,
@@ -17715,16 +17929,16 @@
     ],
     "script": {
       "Triangle Shot": [
-        "EQUIP[Shadow Chaser Shadow Weapon]20"
+        "EQUIP[Shadow Chaser Weapon Shadow]20"
       ],
       "atkPercent": [
-        "EQUIP[Shadow Chaser Shadow Weapon]2"
+        "EQUIP[Shadow Chaser Weapon Shadow]2"
       ],
       "matkPercent": [
-        "EQUIP[Shadow Chaser Shadow Weapon]2"
+        "EQUIP[Shadow Chaser Weapon Shadow]2"
       ],
       "range": [
-        "EQUIP[Shadow Chaser Shadow Weapon]2"
+        "EQUIP[Shadow Chaser Weapon Shadow]2"
       ],
       "allStatus": [
         "EQUIP[Rogue Shadow Armor&&Rogue Shadow Shoes&&Shadow Chaser Weapon Shadow&&Thief Shadow Earring&&Thief Shadow Pendant]10"
@@ -18256,7 +18470,7 @@
     ],
     "script": {
       "allStatus": [
-        "1"
+        "1---1"
       ]
     }
   },
@@ -18282,7 +18496,7 @@
     ],
     "script": {
       "allStatus": [
-        "1"
+        "1---1"
       ]
     }
   },
@@ -21125,8 +21339,8 @@
         "EQUIP[Menace Shadow Armor&&Menace Shadow Shoes]REFINE[shadowArmor,shadowShield,shadowBoot==2]---1"
       ],
       "p_pene_race_all": [
-        "EQUIP[Shadow Chaser Shadow Weapon]===40",
-        "EQUIP[Shadow Chaser Shadow Weapon]REFINE[shadowWeapon,shadowShield==1]---1"
+        "EQUIP[Shadow Chaser Weapon Shadow]===40",
+        "EQUIP[Shadow Chaser Weapon Shadow]REFINE[shadowWeapon,shadowShield==1]---1"
       ]
     }
   },
@@ -34832,7 +35046,7 @@
     "compositionPos": null,
     "script": {
       "atk": [
-        "10"
+        "LEARN_SKILL[Falcon Eyes==1]---2"
       ]
     }
   },
@@ -35824,6 +36038,61 @@
       ],
       "Wind Blade": [
         "EQUIP[Kuroiro-OS]REFINE[weapon==2]---3"
+      ]
+    }
+  },
+  "400059": {
+    "id": 400059,
+    "aegisName": "Scorpio_Diadem_K",
+    "name": "Scorpio Celestial Coronet K [1]",
+    "unidName": "Helm",
+    "resName": "천헐궁보관",
+    "description": "มงกุฎอันเป็นตัวแทนของดาวจักรราศีดวงที่ 8 อัญมณี Topaz ที่เป็นอัญมณีเดือนเกิดติดอยู่\nมันถูกดัดแปลงเพื่อให้เข้ากับอาวุธ OS \nทุกการอัพเกรด 2 ขั้น, MATK +20. \nเมื่ออัพเกรดถึงขั้น 7, ลดระยะเวลาร่ายแบบแปรผัน 15%\nเมื่ออัพเกรดถึงขั้น 9, เพิ่ม Damage ทางเวทย์ทุกธาตุ 15% \nเมื่ออัพเกรดถึงขั้น 11, เพิ่ม Damage ทางเวทย์ที่สร้างต่อศัตรูขนาดเล็กและกลาง 15%, ลดระยะเวลาร่ายแบบคงตัว 0.2 วินาที\n\nเมื่อสวมใส่กับ Cannon Rapier-OS, เพิ่ม Damage ทางเวทย์ธาตุ Holy 5%, ทุกการอัพเกรดอาวุธ 2 ขั้น เพิ่ม Damage สกิล Genesis Ray ครั้งละ 4% \nเมื่อสวมใส่กับ Rutilus Stick-OS, MATK + 30, ทุกการอัพเกรดอาวุธ 2 ขั้น เพิ่ม Damage สกิล Psychic Wave ครั้งละ 3%\nเมื่อสวมใส่กับ Ultio-OS, เพิ่ม Damage ทางเวทย์ธาตุ Holy 5%, ทุกการอัพเกรดอาวุธ 2 ขั้น เพิ่ม Damage Judex ครั้งละ 3%\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^7777770^000000\nตำแหน่ง : ^777777Upper^000000 น้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777130^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 130,
+    "location": "Upper",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "matk": [
+        "2---20",
+        "EQUIP[Rutilus Stick-OS]===30"
+      ],
+      "vct": [
+        "7===15"
+      ],
+      "m_element_all": [
+        "9===15"
+      ],
+      "m_size_s": [
+        "11===15"
+      ],
+      "m_size_m": [
+        "11===15"
+      ],
+      "fct": [
+        "11===0.2"
+      ],
+      "m_my_element_holy": [
+        "EQUIP[Cannon Rapier-OS]===5",
+        "EQUIP[Ultio-OS]===5"
+      ],
+      "Genesis Ray": [
+        "EQUIP[Cannon Rapier-OS]REFINE[weapon==2]---4"
+      ],
+      "Psychic Wave": [
+        "EQUIP[Rutilus Stick-OS]REFINE[weapon==2]---3"
+      ],
+      "Judex": [
+        "EQUIP[Ultio-OS]REFINE[weapon==2]---3"
       ]
     }
   },

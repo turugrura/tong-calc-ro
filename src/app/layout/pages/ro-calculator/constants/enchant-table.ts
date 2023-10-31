@@ -219,6 +219,7 @@ const fs35 = [FS._3, FS._4, FS._5];
 const sh13 = [Sharp._1, Sharp._2, Sharp._3];
 // const sh35 = [Sharp._3, Sharp._4, Sharp._5];
 const matk12 = [MatkPercent._1, MatkPercent._2];
+const ea15 = [EA._1, EA._2, EA._3, EA._4, EA._5];
 const ea35 = [EA._3, EA._4, EA._5];
 const ea410 = [EA._4, EA._5, EA._6, EA._7, EA._8, EA._9, EA._10];
 const sp25 = [Spell._2, Spell._3, Spell._4, Spell._5];
@@ -231,6 +232,7 @@ const TempOpts = {
   _3: [EA._3, FS._3, Sharp._3],
   _1_3: [EA._1, EA._2, EA._3, FS._1, FS._2, FS._3, Sharp._1, Sharp._2, Sharp._3],
 };
+const eaFsSp15 = [...ea15, ...fs35, ...sp25];
 
 const toyFactory = [...sp25, ...fs35, ...sh13, ...matk12, ...aspd24];
 const racing3rd = [EA._1, EA._2, FS._1, FS._2, Sharp._1, Sharp._2, Cri._1, Cri._2, Spell._1, Spell._2, AttackDelay._1, AttackDelay._2];
@@ -353,6 +355,8 @@ interface EntTable {
   enchants: [null, any[], any[], any[]];
 }
 
+const base15 = createBaseStat(1, 5);
+
 const enchantTable: EntTable[] = [
   { name: 'Lush_Rose', enchants: [null, null, BaseState._1_3, toyFactory] },
   { name: 'Celines_Ribbon', enchants: [null, null, BaseState._1_3, toyFactory] },
@@ -367,7 +371,7 @@ const enchantTable: EntTable[] = [
   { name: 'Balistar_IL', enchants: [null, null, malangdo, malangdo] },
   { name: 'Burning_Rose', enchants: [null, null, malangdo, malangdo] },
 
-  { name: 'Fallen Angel Wing [1]', enchants: [null, [...ea35, ...fs35, ...sp25], [...ea35, ...fs35, ...sp25], [...ea35, ...fs35, ...sp25]] },
+  { name: 'Fallen Angel Wing [1]', enchants: [null, eaFsSp15, eaFsSp15, eaFsSp15] },
 
   { name: 'Racing_C_Mecha', enchants: [null, ['Racing_E_Mecha1', 'Racing_E_Mecha2', 'Racing_E_Mecha3', ...racing3rd], BaseState._1_4, BaseState._1_3] },
   { name: 'Racing_C_Gene', enchants: [null, ['Racing_E_Gene1', 'Racing_E_Gene2', 'Racing_E_Gene3', ...racing3rd], BaseState._1_4, BaseState._1_3] },
@@ -453,18 +457,18 @@ const enchantTable: EntTable[] = [
   { name: 'Upgrade_Part_Engine', enchants: [null, BaseState._1, BaseState._1, BaseState._1] },
   { name: 'Supplement_Part_Dex', enchants: [null, null, BaseState._1, AllState._1] },
 
-  { name: 'Old_Rune_Circlet', enchants: [null, labHead2, BaseState._3_5, BaseState._3_5] },
-  { name: 'Old_Mitra', enchants: [null, labHead2, BaseState._3_5, BaseState._3_5] },
-  { name: 'Old_Driver_Band_R', enchants: [null, labHead2, BaseState._3_5, BaseState._3_5] },
-  { name: 'Old_Driver_Band_Y', enchants: [null, labHead2, BaseState._3_5, BaseState._3_5] },
-  { name: 'Old_Shadow_Handicraft', enchants: [null, labHead2, BaseState._3_5, BaseState._3_5] },
-  { name: 'Old_Minstrel_Song_Hat', enchants: [null, labHead2, BaseState._3_5, BaseState._3_5] },
-  { name: 'Old_Magic_Stone_Hat', enchants: [null, labHead2, BaseState._3_5, BaseState._3_5] },
-  { name: 'Old_Wind_Whisper', enchants: [null, labHead2, BaseState._3_5, BaseState._3_5] },
-  { name: 'Old_Dying_Swan', enchants: [null, labHead2, BaseState._3_5, BaseState._3_5] },
-  { name: 'Old_Circlet_Of_Bone', enchants: [null, labHead2, BaseState._3_5, BaseState._3_5] },
-  { name: 'Old_Protect_Of_Crown', enchants: [null, labHead2, BaseState._3_5, BaseState._3_5] },
-  { name: 'Old_Camo_RabbitHood', enchants: [null, labHead2, BaseState._3_5, BaseState._3_5] },
+  { name: 'Old_Rune_Circlet', enchants: [null, labHead2, base15, base15] },
+  { name: 'Old_Mitra', enchants: [null, labHead2, base15, base15] },
+  { name: 'Old_Driver_Band_R', enchants: [null, labHead2, base15, base15] },
+  { name: 'Old_Driver_Band_Y', enchants: [null, labHead2, base15, base15] },
+  { name: 'Old_Shadow_Handicraft', enchants: [null, labHead2, base15, base15] },
+  { name: 'Old_Minstrel_Song_Hat', enchants: [null, labHead2, base15, base15] },
+  { name: 'Old_Magic_Stone_Hat', enchants: [null, labHead2, base15, base15] },
+  { name: 'Old_Wind_Whisper', enchants: [null, labHead2, base15, base15] },
+  { name: 'Old_Dying_Swan', enchants: [null, labHead2, base15, base15] },
+  { name: 'Old_Circlet_Of_Bone', enchants: [null, labHead2, base15, base15] },
+  { name: 'Old_Protect_Of_Crown', enchants: [null, labHead2, base15, base15] },
+  { name: 'Old_Camo_RabbitHood', enchants: [null, labHead2, base15, base15] },
 
   { name: 'S_Circlet_Of_Time_RK', enchants: [null, labHead2, tempHead3, tempHead4] },
   { name: 'S_Circlet_Of_Time_LG', enchants: [null, labHead2, tempHead3, tempHead4] },
