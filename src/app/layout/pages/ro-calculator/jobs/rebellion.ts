@@ -156,7 +156,24 @@ export class Rebelion extends CharacterBase {
       },
     },
     {
-      label: "God's Hammer Lv10 (10 coin)",
+      label: "God's Hammer Lv10 (0 coin)",
+      name: "God's Hammer",
+      value: "God's Hammer_0==10",
+      acd: 0.5,
+      fct: 0,
+      vct: 0,
+      cd: 20,
+      levelList: [],
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
+        const crimsonMarker = this.bonuses.activeSkillNames.has('Crimson Marker') ? 450 : 150;
+
+        return (skillLevel * 100 + crimsonMarker * 0) * (baseLevel / 100);
+      },
+    },
+    {
+      label: "God's Hammer Lv10 (10 coins)",
       name: "God's Hammer",
       value: "God's Hammer==10",
       acd: 0.5,

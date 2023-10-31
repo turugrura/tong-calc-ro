@@ -33,9 +33,15 @@ export class AppTopBarComponent {
     'Tab "Item Descriptions" คือ bonus ของไอเทมแต่ละชิ้นและคำอธิบาย (เอาไว้ตรวจสอบว่าได้ bonus ถูกไหม)',
   ];
 
-  updates: { v: string; logs: string[] }[] = [
+  updates: { v: string; date: string; logs: string[] }[] = [
+    {
+      v: 'V1.1.3',
+      date: '31-10-2566',
+      logs: ['Fixed reported bugs', 'Added Dark claw & No Limit to SC Active skills', 'Added requested items'],
+    },
     {
       v: 'V1.1.2',
+      date: '30-10-2566',
       logs: [
         'Fixed Aimed Bolt by remove bonus from Fear Breeze',
         'Added Offensive skill (Dragon Tail, Gods Hammer, Cross Impact)',
@@ -44,6 +50,7 @@ export class AppTopBarComponent {
     },
     {
       v: 'V1.1.1',
+      date: '29-10-2566',
       logs: [
         'Fixed SR job bonus',
         'Fixed size multiplier option not working',
@@ -53,22 +60,27 @@ export class AppTopBarComponent {
     },
     {
       v: 'V1.1.0',
+      date: '28-10-2566',
       logs: ['Support Minstrel & Wanderer', 'Added Edda weapon and enchants', 'Fixed reported bugs'],
     },
     {
       v: 'V1.0.4',
+      date: '26-10-2566',
       logs: ['Added Ranger, SR & Sorcerer skill to get bonus', 'Added items', 'Support 4th slot garment costume'],
     },
     {
       v: 'V1.0.3',
+      date: '25-10-2566',
       logs: ['Fixed cannot compare weapon', 'Added items & monsters'],
     },
     {
       v: 'V1.0.2',
+      date: '24-10-2566',
       logs: ['Fixed EDP calculation', 'Changed Rolling Cutter to Melee damage'],
     },
     {
       v: 'V1.0.1',
+      date: '24-10-2566',
       logs: ['Fixed items bonus', 'Fixed dark monster calculation', 'Update Racing cap & Enchants'],
     },
   ];

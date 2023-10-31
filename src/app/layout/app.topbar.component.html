@@ -133,7 +133,7 @@
       *ngFor="let update of updates; index as i"
       [ngStyle]="{ color: i + 1 > showUnreadVersion ? 'var(--gray-300)' : '' }"
     >
-      <span>{{ update.v }}</span>
+      <span class="pr-2">{{ update.v }}</span> <span>{{ update.date }}</span>
       <ul>
         <li *ngFor="let log of update.logs">{{ log }}</li>
       </ul>
