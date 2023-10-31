@@ -8,6 +8,7 @@ import {
   PassiveSkillModel,
 } from './_character-base.abstract';
 import { InfoForClass } from '../models/info-for-class.model';
+import { DarkClaw } from '../constants/share-active-skills';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   '1': [0, 1, 0, 0, 0, 0],
@@ -120,22 +121,7 @@ export class GitCross extends CharacterBase {
       },
     },
   ];
-  protected _activeSkillList: ActiveSkillModel[] = [
-    {
-      inputType: 'dropdown',
-      label: 'Dark Claw',
-      name: 'Dark Claw',
-      isEquipAtk: true,
-      dropdown: [
-        { label: '-', isUse: false, value: 0 },
-        { label: 'Lv 1', isUse: true, value: 1, bonus: { final: 30 } },
-        { label: 'Lv 2', isUse: true, value: 2, bonus: { final: 60 } },
-        { label: 'Lv 3', isUse: true, value: 3, bonus: { final: 90 } },
-        { label: 'Lv 4', isUse: true, value: 4, bonus: { final: 120 } },
-        { label: 'Lv 5', isUse: true, value: 5, bonus: { final: 150 } },
-      ],
-    },
-  ];
+  protected _activeSkillList: ActiveSkillModel[] = [DarkClaw];
   protected _passiveSkillList: PassiveSkillModel[] = [];
 
   constructor() {
