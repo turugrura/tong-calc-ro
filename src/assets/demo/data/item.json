@@ -4175,6 +4175,56 @@
       ]
     }
   },
+  "4698": {
+    "id": 4698,
+    "aegisName": "Step_Card",
+    "name": "Step Card",
+    "unidName": "Step Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่ม Damage ของ [Axe Boomerang] 30% \nเมื่อค่าอัปเกรดของอาวุธตั้งแต่ 10 ขึ้นไป เพิ่ม Damage ของ [Axe Boomerang] ขึ้นอีก 30%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Boomerang",
+    "script": {
+      "Axe Boomerang": [
+        "30",
+        "10===30"
+      ]
+    }
+  },
+  "4699": {
+    "id": 4699,
+    "aegisName": "Rock_Step_Card",
+    "name": "Rock Step Card",
+    "unidName": "Rock Step Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่ม Damage สกิล Arm Cannon 20%\nเมื่ออัพเกรดอาวุธตั้งแต่ 10 ขึ้นไป เพิ่ม Damage สกิล Arm Cannon ขึ้นอีก 20%\nเมื่อใช้ร่วมกับ Kick Step Card, Madogear จะไม่ใช้งาน Fuel\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Dual Cannon",
+    "script": {
+      "Arm Cannon": [
+        "20",
+        "10===20"
+      ]
+    }
+  },
   "4700": {
     "id": 4700,
     "aegisName": "Strength1",
@@ -16039,6 +16089,65 @@
       ]
     }
   },
+  "24053": {
+    "id": 24053,
+    "aegisName": "S_Safeguard_Shield",
+    "name": "Safeguard Shadow Shield",
+    "unidName": "Shadow Shield",
+    "resName": "쉴드쉐도우",
+    "description": "โล่ขนาดเล็กที่สามารถสวมใส่ได้ที่แขนแล้วจะเพิ่มพลังป้องกัน สามารถใส่แยกชิ้นได้ แต่เอฟเฟกต์ที่ได้ก็จะลดลงไปอีก\nลดพลังโจมตีที่ได้รับจาก Boss 1%\nเมื่ออัพเกรดขั้น 7, ลดพลังโจมตีที่ได้รับจาก Boss เพิ่ม 1%\nเมื่ออัพเกรดขั้น 9, ลดพลังโจมตีที่ได้รับจาก Boss เพิ่ม 1%\nเมื่อสวมใส่ ^32CD32Safeguard Shadow Shield^000000 กับ ^32CD32Liberation Shadow Shoes^000000 ด้วยกัน, เพิ่มพลังโจมตีทางกายภาพต่อ Boss 5%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shield^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 527,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Shield",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "ลดพลังโจมตีที่ได้รับจาก Boss": [
+        "1",
+        "7===1",
+        "9===1"
+      ],
+      "p_class_boss": [
+        "EQUIP[Liberation Shadow Shoes]===5"
+      ]
+    }
+  },
+  "24063": {
+    "id": 24063,
+    "aegisName": "S_Liberation_Shoes",
+    "name": "Liberation Shadow Shoes",
+    "unidName": "Shadow Shoes",
+    "resName": "슈즈쉐도우",
+    "description": "รองเท้าที่สามารถสวมใส่เพิ่มเข้าไปได้ ใส่แยกชิ้นได้ แต่เอฟเฟกต์ที่ได้รับจะลดลงไปอีก\nเพิ่มความเสียหายทางกายภาพที่สร้างต่อ Boss 2%\nเมื่ออัพเกรดขั้น 7 เพิ่มความเสียหายทางกายภาพที่สร้างต่อ Boss เพิ่ม 1%\nเมื่ออัพเกรดขั้น 9 เพิ่มความเสียหายทางกายภาพที่สร้างต่อ Boss เพิ่ม 2%\nเมื่อสวมใส่ ^32CD32Liberation Shadow Shoes^000000 กับ ^32CD32Safeguard Shadow Shield^000000 ด้วยกัน, เพิ่มพลังโจมตีทางกายภาพต่อ Boss 5%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shoes^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 528,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Shoes",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "p_class_boss": [
+        "2",
+        "7===1",
+        "9===2"
+      ]
+    }
+  },
   "24150": {
     "id": 24150,
     "aegisName": "S_Infinity_Earring",
@@ -20707,6 +20816,95 @@
       ]
     }
   },
+  "24467": {
+    "id": 24467,
+    "aegisName": "S_Boomerang_Weapon",
+    "name": "Boomerang Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา\nเพิ่ม Damage ทางกายภาพระยะไกล 3%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางกายภาพระยะไกลขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพระยะไกลขึ้นอีก 4%\nเมื่อสวมใส่ Boomerang Shadow Weapon/Pendant/Earring ร่วมกัน,\nเพิ่ม Damage สกิล Axe Boomerang % เท่ากับค่าอัพเกรดรวมกัน\nเมื่อสวมใส่ร่วมกับ Mechanic Shield Shadow,\nเพิกเฉยต่อพลังป้องกันทางกายภาพของทุกเผ่ายกเว้น Player 40% และเพิกเฉยต่อพลังป้องกันทางกายภาพเพิ่มอีกตามค่าอัพเกรดรวมกันของ Boomerang Shadow Weapon และ Mechanic Shield Shadow\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Mechanic^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "Mechanic"
+    ],
+    "script": {
+      "range": [
+        "3",
+        "7===3",
+        "9===4"
+      ],
+      "Axe Boomerang": [
+        "EQUIP[Boomerang Shadow Pendant&&Boomerang Shadow Earring]REFINE[shadowWeapon,shadowEarring,shadowPendant==1]---1"
+      ],
+      "p_pene_race_all": [
+        "EQUIP[Mechanic Shield Shadow]40",
+        "EQUIP[Mechanic Shield Shadow]REFINE[shadowWeapon,shadowShield==1]---1"
+      ]
+    }
+  },
+  "24468": {
+    "id": 24468,
+    "aegisName": "S_Boomerang_Pendant",
+    "name": "Boomerang Shadow Pendant",
+    "unidName": "Shadow Pendant",
+    "resName": "펜던트쉐도우",
+    "description": "สร้อยคอศักดิ์สิทธิ์ที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา\nเพิ่ม Damage สกิล Axe Boomerang 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage สกิล Axe Boomerang ขึ้นอีก 2%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Pendant ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Mechanic^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 530,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "AccessoryLeft",
+    "compositionPos": null,
+    "usableClass": [
+      "Mechanic"
+    ],
+    "script": {
+      "Axe Boomerang": [
+        "5",
+        "2---2"
+      ]
+    }
+  },
+  "24469": {
+    "id": 24469,
+    "aegisName": "S_Boomerang_Earing",
+    "name": "Boomerang Shadow Earring",
+    "unidName": "Shadow Earring",
+    "resName": "이어링쉐도우",
+    "description": "ต่างหูมงคลที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา\nลด Cooldown สกิล Axe Boomerang 0.1 วินาที\nทุก ๆ การอัพเกรด 4 ขั้น ลด Cooldown สกิล Axe Boomerang ลงอีก 0.1 วินาที\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Earring ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Mechanic^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 529,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "AccessoryRight",
+    "compositionPos": null,
+    "usableClass": [
+      "Mechanic"
+    ],
+    "script": {
+      "cd__Axe Boomerang": [
+        "0.1",
+        "4---0.1"
+      ]
+    }
+  },
   "24473": {
     "id": 24473,
     "aegisName": "S_Arms_Weapon",
@@ -24072,6 +24270,31 @@
       ],
       "acd": [
         "11===10"
+      ]
+    }
+  },
+  "27013": {
+    "id": 27013,
+    "aegisName": "KickAndKick_Card",
+    "name": "Kick and Kick Card",
+    "unidName": "Kick and Kick Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่ม Damage ของ [Vulcan Arm] 10%\nเมื่อขั้นอัพเกรดของอาวุธตั้งแต่ 10 ขึ้นไป,เพิ่ม Damage ของ [Vulcan Arm] ขึ้นอีก 20%\nเมื่อสวมใส่กับ Kick Step Card, Madogear จะไม่ใช้งาน  Fuel\nประเภท : ^777777Card^000000\nใส่กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Vulcan",
+    "script": {
+      "Vulcan Arm": [
+        "10",
+        "10===20"
       ]
     }
   },
@@ -27974,7 +28197,7 @@
     ],
     "script": {
       "atk": [
-        "EQUIP[Repent Slasher]REFINE[weapon,leftWeapon==2]8"
+        "EQUIP[Repent Slasher]REFINE[weapon,leftWeapon==2]---8"
       ],
       "atkPercent": [
         "EQUIP[Repent Slasher]REFINE[weapon,leftWeapon==18]12"
@@ -27994,6 +28217,28 @@
         "EQUIP[Repent Slasher]REFINE[weapon,leftWeapon==16]20"
       ]
     }
+  },
+  "28766": {
+    "id": 28766,
+    "aegisName": "Repent_Slasher",
+    "name": "Repent Slasher [3]",
+    "unidName": "Knife",
+    "resName": "Repent_Slasher",
+    "description": "หนึ่งในมีดสั้นที่สูญหายและถูกลืมไปของเหล่าผู้ตัดสิน\nมันสามารถใช้ต่อกับ Judgment Slasher ได้\nโดยพื้นฐานแล้ว มันอาจจะไม่มีความสามารถอะไร แต่ว่ากันว่าหากใช้งานร่วมกับ Judgment Slasher มันจะช่วยดึงพลังเดิมของ Judgment Slasher ออกมาได้\nประเภท : ^777777Dagger^000000 พลังโจมตี : ^777777100^000000\nน้ำหนัก : ^77777770^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Guillotine Cross^000000",
+    "slots": 3,
+    "itemTypeId": 1,
+    "itemSubTypeId": 256,
+    "itemLevel": 4,
+    "attack": 100,
+    "defense": null,
+    "weight": 70,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Guillotine Cross"
+    ],
+    "script": {}
   },
   "28767": {
     "id": 28767,

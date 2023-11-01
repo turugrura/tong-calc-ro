@@ -1758,7 +1758,7 @@ export class Calculator {
       if (itemType === ItemTypeEnum.ammo) {
         this.equipStatus[itemType].atk = itemData.attack;
       } else if (itemType === ItemTypeEnum.leftWeapon) {
-        this.equipStatus[itemType].atk = itemData.attack;
+        // this.equipStatus[itemType].atk = itemData.attack;
       } else if (itemType !== ItemTypeEnum.weapon && itemData.attack) {
         this.equipStatus[itemType].atk = itemData.attack;
         updateTotalStatus('atk', itemData.attack);
@@ -1797,7 +1797,7 @@ export class Calculator {
 
         this.equipStatus[skillName] = { ...this.allStatus, [attr]: val };
 
-        updateTotalStatus(attr, value);
+        updateTotalStatus(attr, val);
 
         this.updateBaseEquipStat(attr, val);
       }
@@ -1810,7 +1810,7 @@ export class Calculator {
 
         this.equipStatus[skillName] = { ...this.allStatus, [attr]: val };
 
-        updateTotalStatus(attr, value);
+        updateTotalStatus(attr, val);
 
         this.updateBaseEquipStat(attr, val);
       }
