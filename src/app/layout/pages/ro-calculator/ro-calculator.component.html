@@ -708,6 +708,293 @@
         </div>
       </div>
     </div>
+    <div class="grid grid-nogutter item_label_left_weapon" *ngIf="showLeftWeapon">
+      <div class="col-3">
+        <div class="grid grid-nogutter justify-content-end">
+          <div class="col-12">
+            <p-dropdown
+              inputId="leftWeapon"
+              [autoDisplayFirst]="false"
+              [resetFilterOnHide]="true"
+              [options]="leftWeaponList"
+              [filter]="true"
+              filterBy="label"
+              [(ngModel)]="model.leftWeapon"
+              [disabled]="!model.weapon || !!model.shield"
+              [showClear]="true"
+              (onChange)="onSelectItem('leftWeapon', $event.value, model.leftWeaponRefine)"
+              (onClear)="onClearItem('leftWeapon')"
+              placeholder="Left Weapon"
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1 item_template" *ngIf="model.leftWeapon">
+                  <img src="assets/demo/images/items/{{ item.value }}.png" alt="" alt="" class="item_img" />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+              <ng-template let-item pTemplate="item">
+                <div class="flex gap-1">
+                  <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
+          </div>
+          <div class="col-4" style="min-width: 70px">
+            <p-dropdown
+              inputId="leftWeaponRefine"
+              [options]="refineList"
+              [(ngModel)]="model.leftWeaponRefine"
+              [disabled]="!model.leftWeapon"
+              (onChange)="onSelectItem('leftWeapon', model.leftWeapon, $event.value)"
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1">
+                  <div>{{ item.label > 0 ? '+ ' : '' }} {{ item.label || 0 }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
+          </div>
+        </div>
+      </div>
+      <div class="col-9">
+        <div class="grid grid-nogutter">
+          <div class="col-4" [hidden]="itemSlotsMap.leftWeapon < 1">
+            <p-dropdown
+              inputId="leftWeaponCard1"
+              [autoDisplayFirst]="false"
+              [resetFilterOnHide]="true"
+              [options]="weaponCardList"
+              [filter]="true"
+              filterBy="label,cardPrefix"
+              [(ngModel)]="model.leftWeaponCard1"
+              [disabled]="!model.leftWeapon || !model.weapon"
+              [showClear]="true"
+              (onChange)="onSelectItem('leftWeaponCard1', $event.value)"
+              placeholder="Card 1"
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1 item_template" *ngIf="model.leftWeaponCard1">
+                  <img src="assets/demo/images/items/card.png" alt="" class="item_img" />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
+          </div>
+          <div class="col-4" [hidden]="itemSlotsMap.leftWeapon < 2">
+            <p-dropdown
+              inputId="leftWeaponCard2"
+              [autoDisplayFirst]="false"
+              [resetFilterOnHide]="true"
+              [options]="weaponCardList"
+              [filter]="true"
+              filterBy="label,cardPrefix"
+              [(ngModel)]="model.leftWeaponCard2"
+              [disabled]="!model.leftWeapon || !model.weapon"
+              [showClear]="true"
+              (onChange)="onSelectItem('leftWeaponCard2', $event.value)"
+              placeholder="Card 2"
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1 item_template" *ngIf="model.leftWeaponCard2">
+                  <img src="assets/demo/images/items/card.png" alt="" class="item_img" />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
+          </div>
+          <div class="col-4" [hidden]="itemSlotsMap.leftWeapon < 3">
+            <p-dropdown
+              inputId="leftWeaponCard3"
+              [autoDisplayFirst]="false"
+              [resetFilterOnHide]="true"
+              [options]="weaponCardList"
+              [filter]="true"
+              filterBy="label,cardPrefix"
+              [(ngModel)]="model.leftWeaponCard3"
+              [disabled]="!model.leftWeapon || !model.weapon"
+              [showClear]="true"
+              (onChange)="onSelectItem('leftWeaponCard3', $event.value)"
+              placeholder="Card3"
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1 item_template" *ngIf="model.leftWeaponCard3">
+                  <img src="assets/demo/images/items/card.png" alt="" class="item_img" />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
+          </div>
+          <div class="col-4" [hidden]="itemSlotsMap.leftWeapon < 4">
+            <p-dropdown
+              inputId="leftWeaponCard4"
+              [autoDisplayFirst]="false"
+              [resetFilterOnHide]="true"
+              [options]="weaponCardList"
+              [filter]="true"
+              filterBy="label,cardPrefix"
+              [(ngModel)]="model.leftWeaponCard4"
+              [disabled]="!model.leftWeapon || !model.weapon"
+              [showClear]="true"
+              (onChange)="onSelectItem('leftWeaponCard4', $event.value)"
+              placeholder="Card 4"
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1 item_template" *ngIf="model.leftWeaponCard4">
+                  <img src="assets/demo/images/items/card.png" alt="" class="item_img" />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
+          </div>
+          <div
+            class="col-12"
+            [hidden]="
+              (leftWeaponEnchant1List.length === 0 &&
+                leftWeaponEnchant2List.length === 0 &&
+                leftWeaponEnchant3List.length === 0) ||
+              !model.leftWeapon
+            "
+          >
+            <div class="grid grid-nogutter">
+              <div class="col-4">
+                <p-dropdown
+                  inputId="leftWeaponEnchant1"
+                  [autoDisplayFirst]="false"
+                  [resetFilterOnHide]="true"
+                  [options]="leftWeaponEnchant1List"
+                  [filter]="true"
+                  filterBy="label"
+                  [(ngModel)]="model.leftWeaponEnchant1"
+                  [showClear]="true"
+                  [disabled]="leftWeaponEnchant1List.length === 0 || !model.leftWeapon || !model.weapon"
+                  (onChange)="onSelectItem('leftWeaponEnchant1', $event.value)"
+                  placeholder="Enchant 2"
+                >
+                  <ng-template let-item pTemplate="selectedItem">
+                    <div class="flex gap-1 item_template" *ngIf="model.leftWeaponEnchant1">
+                      <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
+                      <div>{{ item.label }}</div>
+                    </div>
+                  </ng-template>
+                  <ng-template let-item pTemplate="item">
+                    <div class="flex gap-1">
+                      <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
+                      <div>{{ item.label }}</div>
+                    </div>
+                  </ng-template>
+                </p-dropdown>
+              </div>
+              <div class="col-4">
+                <p-dropdown
+                  inputId="leftWeaponEnchant2"
+                  [autoDisplayFirst]="false"
+                  [resetFilterOnHide]="true"
+                  [options]="leftWeaponEnchant2List"
+                  [filter]="true"
+                  filterBy="label"
+                  [(ngModel)]="model.leftWeaponEnchant2"
+                  [showClear]="true"
+                  [disabled]="leftWeaponEnchant2List.length === 0 || !model.leftWeapon || !model.weapon"
+                  (onChange)="onSelectItem('leftWeaponEnchant2', $event.value)"
+                  placeholder="Enchant 3"
+                >
+                  <ng-template let-item pTemplate="selectedItem">
+                    <div class="flex gap-1 item_template" *ngIf="model.leftWeaponEnchant2">
+                      <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
+                      <div>{{ item.label }}</div>
+                    </div>
+                  </ng-template>
+                  <ng-template let-item pTemplate="item">
+                    <div class="flex gap-1">
+                      <img src="assets/demo/images/items/{{ item.value }}.png" alt="" />
+                      <div>{{ item.label }}</div>
+                    </div>
+                  </ng-template>
+                </p-dropdown>
+              </div>
+              <div class="col-4">
+                <p-dropdown
+                  inputId="leftWeaponEnchant3"
+                  [autoDisplayFirst]="false"
+                  [resetFilterOnHide]="true"
+                  [options]="leftWeaponEnchant3List"
+                  [filter]="true"
+                  filterBy="label"
+                  [(ngModel)]="model.leftWeaponEnchant3"
+                  [showClear]="true"
+                  [disabled]="leftWeaponEnchant3List.length === 0 || !model.leftWeapon || !model.weapon"
+                  (onChange)="onSelectItem('leftWeaponEnchant3', $event.value)"
+                  placeholder="Enchant 4"
+                >
+                  <ng-template let-item pTemplate="selectedItem">
+                    <div class="flex gap-1 item_template" *ngIf="model.leftWeaponEnchant3">
+                      <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
+                      <div>{{ item.label }}</div>
+                    </div>
+                  </ng-template>
+                  <ng-template let-item pTemplate="item">
+                    <div class="flex gap-1">
+                      <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
+                      <div>{{ item.label }}</div>
+                    </div>
+                  </ng-template>
+                </p-dropdown>
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="grid grid-nogutter">
+              <div class="col-4">
+                <p-cascadeSelect
+                  [(ngModel)]="model.rawOptionTxts[3]"
+                  [disabled]="!model.leftWeapon || !model.weapon"
+                  [options]="optionList"
+                  optionValue="value"
+                  optionGroupLabel="label"
+                  optionLabel="label"
+                  [optionGroupChildren]="['children', 'children', 'children']"
+                  placeholder="Option 1"
+                  [showClear]="true"
+                  (onChange)="onOptionChange()"
+                  (onClear)="onOptionChange()"
+                ></p-cascadeSelect>
+              </div>
+              <div class="col-4">
+                <p-cascadeSelect
+                  [(ngModel)]="model.rawOptionTxts[4]"
+                  [disabled]="!model.leftWeapon || !model.weapon"
+                  [options]="optionList"
+                  optionValue="value"
+                  optionGroupLabel="label"
+                  optionLabel="label"
+                  [optionGroupChildren]="['children', 'children', 'children']"
+                  placeholder="Option 2"
+                  [showClear]="true"
+                  (onChange)="onOptionChange()"
+                  (onClear)="onOptionChange()"
+                ></p-cascadeSelect>
+              </div>
+              <div class="col-4">
+                <p-cascadeSelect
+                  [(ngModel)]="model.rawOptionTxts[5]"
+                  [disabled]="!model.leftWeapon || !model.weapon"
+                  [options]="optionList"
+                  optionValue="value"
+                  optionGroupLabel="label"
+                  optionLabel="label"
+                  [optionGroupChildren]="['children', 'children', 'children']"
+                  placeholder="Option 3"
+                  [showClear]="true"
+                  (onChange)="onOptionChange()"
+                  (onClear)="onOptionChange()"
+                ></p-cascadeSelect>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="grid grid-nogutter item_label_compare" *ngIf="showCompareItemMap.weapon">
       <div class="col-12">
         <app-equipment
@@ -751,6 +1038,7 @@
               [filter]="true"
               filterBy="label"
               [(ngModel)]="model.shield"
+              [disabled]="!model.weapon || !!model.leftWeapon"
               [showClear]="true"
               (onChange)="onSelectItem('shield', $event.value, model.shieldRefine)"
               (onClear)="onClearItem('shield')"
@@ -3130,11 +3418,17 @@
                   </div>
 
                   <!-- Basic Damage -->
-                  <div class="col-6">
+                  <div class="col-12">
                     Element:
                     <span class="{{ 'property_' + totalSummary?.propertyAtk }} px-1 font-semibold">{{
                       totalSummary?.propertyAtk
                     }}</span>
+                    <span
+                      class="summary_monster_value px-1 font-bold"
+                      style="color: var(--red-500)"
+                      [hidden]="!showLeftWeapon || !model.leftWeapon"
+                      >***ยังไม่คิด Atk มือซ้าย</span
+                    >
                   </div>
                   <div class="col-6" [hidden]="totalSummary?.dmg?.totalPene === totalSummary?.dmg?.skillTotalPene">
                     <app-calc-value

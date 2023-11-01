@@ -2,6 +2,7 @@ import { DropdownModel } from './dropdown.model';
 
 export interface ItemListModel {
   weaponList: DropdownModel[];
+  leftWeaponList: DropdownModel[];
   weaponCardList: DropdownModel[];
   weaponEnchant1List: DropdownModel[];
   weaponEnchant2List: DropdownModel[];

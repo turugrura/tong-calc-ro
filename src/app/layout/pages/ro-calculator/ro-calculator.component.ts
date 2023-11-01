@@ -43,6 +43,7 @@ import { createExtraOptionList } from './utils/create-extra-option-list';
 import { toDropdownList } from './utils/to-drowdown-list';
 import { sortObj } from './utils/sort-obj';
 import { HpSpTable } from './models/hp-sp-table.model';
+import { AllowLeftWeaponMapper } from './constants/allow-left-weapon-mapper';
 
 interface MonsterSelectItemGroup extends SelectItemGroup {
   items: any[];
@@ -131,6 +132,15 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     weaponEnchant1: undefined,
     weaponEnchant2: undefined,
     weaponEnchant3: undefined,
+    leftWeapon: undefined,
+    leftWeaponRefine: undefined,
+    leftWeaponCard1: undefined,
+    leftWeaponCard2: undefined,
+    leftWeaponCard3: undefined,
+    leftWeaponCard4: undefined,
+    leftWeaponEnchant1: undefined,
+    leftWeaponEnchant2: undefined,
+    leftWeaponEnchant3: undefined,
     ammo: undefined,
     headUpper: undefined,
     headUpperRefine: undefined,
@@ -226,10 +236,14 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   itemList: ItemListModel = {} as any;
 
   weaponList: DropdownModel[] = [];
+  leftWeaponList: DropdownModel[] = [];
   weaponCardList: DropdownModel[] = [];
   weaponEnchant1List: DropdownModel[] = [];
   weaponEnchant2List: DropdownModel[] = [];
   weaponEnchant3List: DropdownModel[] = [];
+  leftWeaponEnchant1List: DropdownModel[] = [];
+  leftWeaponEnchant2List: DropdownModel[] = [];
+  leftWeaponEnchant3List: DropdownModel[] = [];
   ammoList: DropdownModel[] = [];
   headUpperList: DropdownModel[] = [];
   headUpperEnchant1List: DropdownModel[] = [];
@@ -372,7 +386,6 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   itemId = 0;
   itemBonus = {};
   itemDescription = '';
-  hover = '';
 
   cols: { field: string; header: string; default?: boolean }[] = [];
   selectedColumns: { field: string; header: string }[] = [];
@@ -382,6 +395,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   private allSubs: Subscription[] = [];
 
   hiddenMap = { ammu: true, shield: true };
+  showLeftWeapon = false;
 
   isEnableCompare = false;
   showCompareItemMap = {} as any;
@@ -432,15 +446,24 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         };
         if (this.hiddenMap.ammu && this.model.ammo) {
           this.model.ammo = undefined;
-          this.onSelectItem('ammo');
+          this.onSelectItem(ItemTypeEnum.ammo);
           return;
         }
         if (this.hiddenMap.shield && this.model.shield) {
           this.model.shield = undefined;
-          this.onSelectItem('shield');
-          this.onClearItem('shield');
+          this.onSelectItem(ItemTypeEnum.shield);
+          this.onClearItem(ItemTypeEnum.shield);
           return;
         }
+
+        const isClassAllow = AllowLeftWeaponMapper[this.selectedCharacter.className] || false;
+        this.showLeftWeapon = isClassAllow && !this.hiddenMap.shield;
+        if (this.model.leftWeapon && !this.showLeftWeapon) {
+          this.model.leftWeapon = undefined;
+          this.onClearItem(ItemTypeEnum.leftWeapon);
+          return;
+        }
+
         if (itemChanges.has(ItemTypeEnum.weapon)) {
           this.setAmmoDropdownList();
         }
@@ -1181,6 +1204,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
   private setItemList() {
     const weaponList = [];
+    const leftWeaponList: ItemModel[] = [];
     const weaponCardList: ItemModel[] = [];
     const ammoList: ItemModel[] = [];
     const headUpperList = [];
@@ -1223,6 +1247,9 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       switch (itemTypeId) {
         case ItemTypeId.WEAPON:
           weaponList.push(item);
+          if (itemSubTypeId === 256 || itemSubTypeId === 257) {
+            leftWeaponList.push(item);
+          }
           continue;
         case ItemTypeId.CONSUMABLE:
           consumableList.push(item);
@@ -1337,6 +1364,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     }
 
     this.itemList.weaponList = toDropdownList(weaponList, 'name', 'id');
+    this.itemList.leftWeaponList = toDropdownList(leftWeaponList, 'name', 'id');
     this.itemList.weaponCardList = toDropdownList(weaponCardList, 'name', 'id', undefined, ['cardPrefix']);
     this.itemList.ammoList = toDropdownList(ammoList, 'name', 'id', 'propertyAtk');
     this.itemList.headUpperList = toDropdownList(headUpperList, 'name', 'id');
@@ -1384,6 +1412,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     };
 
     this.weaponList = this.itemList.weaponList.filter(onlyMe);
+    this.leftWeaponList = this.itemList.leftWeaponList.filter(onlyMe);
     this.weaponCardList = this.itemList.weaponCardList.filter(onlyMe);
     // this.ammoList = this.itemList.ammoList.filter(onlyMe);
     this.headUpperList = this.itemList.headUpperList.filter(onlyMe);
@@ -1488,10 +1517,17 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     };
 
     if (itemTypeId === ItemTypeId.WEAPON) {
-      this.weaponEnchant1List = (e2 ?? []).map(mapToEnchant).map(mapToOption);
-      this.weaponEnchant2List = (e3 ?? []).map(mapToEnchant).map(mapToOption);
-      this.weaponEnchant3List = (e4 ?? []).map(mapToEnchant).map(mapToOption);
-      clearModel('weapon');
+      if (positionEnum === ItemTypeEnum.leftWeapon) {
+        this.leftWeaponEnchant1List = (e2 ?? []).map(mapToEnchant).map(mapToOption);
+        this.leftWeaponEnchant2List = (e3 ?? []).map(mapToEnchant).map(mapToOption);
+        this.leftWeaponEnchant3List = (e4 ?? []).map(mapToEnchant).map(mapToOption);
+        clearModel('leftWeapon');
+      } else {
+        this.weaponEnchant1List = (e2 ?? []).map(mapToEnchant).map(mapToOption);
+        this.weaponEnchant2List = (e3 ?? []).map(mapToEnchant).map(mapToOption);
+        this.weaponEnchant3List = (e4 ?? []).map(mapToEnchant).map(mapToOption);
+        clearModel('weapon');
+      }
 
       return;
     }
@@ -1617,8 +1653,11 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     if (itemType === ItemTypeEnum.weapon) {
       this.model.propertyAtk = undefined;
       this.model.ammo = undefined;
-      this.model.rawOptionTxts[0] = undefined;
-      this.model.rawOptionTxts[1] = undefined;
+      for (let i = 0; i <= 5; i++) {
+        this.model.rawOptionTxts[i] = undefined;
+      }
+
+      this.onClearItem(ItemTypeEnum.leftWeapon);
     }
 
     const relatedItems = MainItemWithRelations[itemType as ItemTypeEnum] || [];

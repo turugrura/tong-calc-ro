@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Input, Output } from '@angular/core';
 import { DropdownModel } from '../models/dropdown.model';
 import { ItemModel } from '../models/item.model';
 import { getEnchants } from '../constants/enchant-table';
@@ -8,9 +8,10 @@ import { getEnchants } from '../constants/enchant-table';
   templateUrl: './equipment.component.html',
   styleUrls: ['../ro-calculator.component.css'],
 })
-export class EquipmentComponent {
-  @Input({ required: true }) itemType: string;
+export class EquipmentComponent implements AfterViewInit {
+  @Input({ required: true }) itemType!: string;
   @Input({ required: true }) placeholder: string;
+  @Input() isWeapon = false;
 
   @Input() items!: Record<number, ItemModel>;
   @Input() itemList: DropdownModel[] = [];
@@ -66,7 +67,26 @@ export class EquipmentComponent {
   enchant3List: DropdownModel[] = [];
   enchant4List: DropdownModel[] = [];
 
+  private itemTypeMap = {};
+
   constructor() {}
+
+  ngAfterViewInit(): void {
+    setTimeout(() => {
+      this.itemTypeMap = {
+        itemId: this.itemType,
+        itemRefine: `${this.itemType}Refine`,
+        card1Id: this.isWeapon ? `${this.itemType}Card1` : `${this.itemType}Card`,
+        card2Id: `${this.itemType}Card2`,
+        card3Id: `${this.itemType}Card3`,
+        card4Id: `${this.itemType}Card4`,
+        enchant2Id: `${this.itemType}Enchant1`,
+        enchant3Id: `${this.itemType}Enchant2`,
+        enchant4Id: `${this.itemType}Enchant3`,
+      };
+      this.onSelectItem('itemId', this.itemId, this.itemRefine, false);
+    }, 300);
+  }
 
   get isHeadCardable() {
     return this.itemType === 'headMiddle' || this.itemType === 'headUpper';
@@ -89,14 +109,20 @@ export class EquipmentComponent {
       }
     };
 
-    this.enchant2List = (e2 ?? []).map((a: any) => this.mapEnchant.get(a)).map((a: any) => ({ label: a.name, value: a.id }));
-    this.enchant3List = (e3 ?? []).map((a: any) => this.mapEnchant.get(a)).map((a: any) => ({ label: a.name, value: a.id }));
-    this.enchant4List = (e4 ?? []).map((a: any) => this.mapEnchant.get(a)).map((a: any) => ({ label: a.name, value: a.id }));
+    this.enchant2List = (e2 ?? [])
+      .map((a: any) => this.mapEnchant.get(a))
+      .map((a: any) => ({ label: a.name, value: a.id }));
+    this.enchant3List = (e3 ?? [])
+      .map((a: any) => this.mapEnchant.get(a))
+      .map((a: any) => ({ label: a.name, value: a.id }));
+    this.enchant4List = (e4 ?? [])
+      .map((a: any) => this.mapEnchant.get(a))
+      .map((a: any) => ({ label: a.name, value: a.id }));
 
     clearModel();
   }
 
-  onSelectItem(itemType: string, itemId = 0, refine = 0) {
+  onSelectItem(itemType: string, itemId = 0, refine = 0, isEmit = true) {
     if (itemType === 'itemId') {
       this.totalCardSlots = this.items[itemId]?.slots || 0;
       this.setEnchantList(itemId);
@@ -110,7 +136,9 @@ export class EquipmentComponent {
       }
     }
 
-    this.selectItemChange.emit({ itemType, itemId, refine });
+    if (isEmit) {
+      this.selectItemChange.emit({ itemType: this.itemTypeMap[itemType], itemId, refine });
+    }
   }
 
   onClearItem(itemType: string) {

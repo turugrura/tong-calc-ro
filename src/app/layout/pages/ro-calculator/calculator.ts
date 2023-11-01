@@ -22,6 +22,7 @@ import { HpSpTable } from './models/hp-sp-table.model';
 // const getItem = (id: number) => items[id] as ItemModel;
 const refinableItemTypes = [
   ItemTypeEnum.weapon,
+  ItemTypeEnum.leftWeapon,
   ItemTypeEnum.headUpper,
   ItemTypeEnum.shield,
   ItemTypeEnum.armor,
@@ -750,6 +751,7 @@ export class Calculator {
       if (mainItemType === ItemTypeEnum.weapon) {
         this.setWeapon(itemId, refine);
       } else {
+        // console.log({ mainItemType, refine });
         this.setItem(mainItemType, itemId, refine);
       }
 
@@ -1679,6 +1681,12 @@ export class Calculator {
     return itemName.replace(/\[\d]$/, '').trim();
   }
 
+  /**
+   * Sometime it should get from base item
+   * like card should get refine from it's own
+   * @param itemType
+   * @returns refine level
+   */
   private getRefineLevelByItemType(itemType: ItemTypeEnum) {
     for (const _itemType of refinableItemTypes) {
       if (itemType.startsWith(_itemType)) {
@@ -1748,6 +1756,8 @@ export class Calculator {
       // }
 
       if (itemType === ItemTypeEnum.ammo) {
+        this.equipStatus[itemType].atk = itemData.attack;
+      } else if (itemType === ItemTypeEnum.leftWeapon) {
         this.equipStatus[itemType].atk = itemData.attack;
       } else if (itemType !== ItemTypeEnum.weapon && itemData.attack) {
         this.equipStatus[itemType].atk = itemData.attack;

@@ -223,6 +223,14 @@
   color: var(--cyan-200);
 }
 
+:host ::ng-deep .item_label_left_weapon .p-dropdown-label,
+:host ::ng-deep .item_label_left_weapon .p-cascadeselect-label,
+:host ::ng-deep .item_label_left_weapon {
+  /* background-color: var(--surface-0); */
+  background-color: #121212;
+  color: var(--pink-200);
+}
+
 :host ::ng-deep .item_label_shield .p-dropdown-label,
 :host ::ng-deep .item_label_shield .p-cascadeselect-label,
 :host ::ng-deep .item_label_shield {

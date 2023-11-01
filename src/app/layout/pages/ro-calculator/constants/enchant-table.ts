@@ -370,6 +370,8 @@ const enchantTable: EntTable[] = [
   { name: 'Kronos', enchants: [null, null, malangdo, malangdo] },
   { name: 'Balistar_IL', enchants: [null, null, malangdo, malangdo] },
   { name: 'Burning_Rose', enchants: [null, null, malangdo, malangdo] },
+  { name: 'Twin_Edge_B', enchants: [null, null, null, malangdo] },
+  { name: 'Twin_Edge_R', enchants: [null, null, null, malangdo] },
 
   { name: 'Fallen Angel Wing [1]', enchants: [null, eaFsSp15, eaFsSp15, eaFsSp15] },
 
@@ -442,6 +444,7 @@ const enchantTable: EntTable[] = [
   { name: 'Schmidt_Insignia_Dex', enchants: [null, kingSmithAcc_2, kingSmithAcc_3, kingSmithAcc_4] },
   { name: 'Schmidt_Insignia_Luk', enchants: [null, kingSmithAcc_2, kingSmithAcc_3, kingSmithAcc_4] },
   { name: 'TimeOverloadRing_TW', enchants: [null, kingSmithAcc_2, kingSmithAcc_3, kingSmithAcc_4] },
+  { name: 'Temporal_Ring', enchants: [null, kingSmithAcc_2, kingSmithAcc_3, kingSmithAcc_4] },
 
   { name: 'Twin Cannon', enchants: [null, twinCannon, twinCannon, twinCannon] },
 

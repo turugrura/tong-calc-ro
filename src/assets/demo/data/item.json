@@ -2667,9 +2667,6 @@
     "script": {
       "p_class_boss": [
         "25"
-      ],
-      "m_class_boss": [
-        "25"
       ]
     }
   },
@@ -28041,16 +28038,18 @@
     "resName": "Rotten_Garden_knife",
     "description": "มีดทำสวนที่ดูผุพังจนไม่สามารถเอาไปตัดอะไรได้\nแม้จะเป็นแบบนี้ แต่หากมันอยู่ในมือของนักฆ่าก็ยังสามารถปลิดชีพศัตรูได้อย่างง่ายดาย\n\nลด Delay หลังใช้สกิล 5%\nเพิ่ม Damage ทางกายภาพ/เวทมนตร์ที่ได้รับจากศัตรูทุกขนาด 25%\n\nเมื่อสวมใส่ตำแหน่งซ้าย เมื่ออัพเกรดมากกว่าขั้น 10 ทุก ๆ การอัพเกรด 1 ขั้น,\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกธาตุ 2%\nประเภท : ^777777Dagger^000000 พลังโจมตี : ^77777710^000000\nน้ำหนัก : ^77777740^000000\nเลเวลของอาวุธ : ^7777773^000000\nเลเวลที่ต้องการ : ^77777770^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
     "slots": 4,
-    "itemTypeId": 0,
-    "itemSubTypeId": 0,
-    "itemLevel": null,
+    "itemTypeId": 1,
+    "itemSubTypeId": 256,
+    "itemLevel": 3,
     "attack": 10,
     "defense": null,
     "weight": 40,
     "requiredLevel": 70,
     "location": null,
     "compositionPos": null,
-    "usableClass": "all",
+    "usableClass": [
+      "all"
+    ],
     "script": {
       "acd": [
         "5"
@@ -28059,7 +28058,12 @@
         "25"
       ],
       "p_element_all": [
-        "EQUIP[สวมใส่ตำแหน่งซ้าย เมื่ออัพเกรดมากกว่าขั้น 10 ทุก ๆ การอัพเกรด 1 ขั้น]2"
+        "POS[leftWeapon]11===2",
+        "POS[leftWeapon]12===2",
+        "POS[leftWeapon]13===2",
+        "POS[leftWeapon]14===2",
+        "POS[leftWeapon]15===2",
+        "POS[leftWeapon]16===2"
       ]
     }
   },
@@ -38620,7 +38624,7 @@
       "Fire Dance": [
         "11===50"
       ],
-      "p_race_all": [
+      "p_pene_race_all": [
         "11===20"
       ]
     }

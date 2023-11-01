@@ -34,6 +34,15 @@ export interface MainModel {
   weaponEnchant1?: number;
   weaponEnchant2?: number;
   weaponEnchant3?: number;
+  leftWeapon?: number;
+  leftWeaponRefine?: number;
+  leftWeaponCard1?: number;
+  leftWeaponCard2?: number;
+  leftWeaponCard3?: number;
+  leftWeaponCard4?: number;
+  leftWeaponEnchant1?: number;
+  leftWeaponEnchant2?: number;
+  leftWeaponEnchant3?: number;
   ammo?: number;
   headUpper?: number;
   headUpperRefine?: number;
