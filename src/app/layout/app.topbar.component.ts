@@ -35,6 +35,11 @@ export class AppTopBarComponent {
 
   updates: { v: string; date: string; logs: string[] }[] = [
     {
+      v: 'V1.1.4',
+      date: '01-11-2566',
+      logs: ['Fixed reported bugs', 'Added requested items'],
+    },
+    {
       v: 'V1.1.3',
       date: '31-10-2566',
       logs: ['Fixed reported bugs', 'Added Dark claw & No Limit to SC Active skills', 'Added requested items'],
