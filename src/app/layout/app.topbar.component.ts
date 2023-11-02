@@ -35,6 +35,16 @@ export class AppTopBarComponent {
 
   updates: { v: string; date: string; logs: string[] }[] = [
     {
+      v: 'V1.2.0',
+      date: '02-11-2566',
+      logs: [
+        'Fixed reported bugs',
+        'Support Dual weapon',
+        'Added offensive skill (Canon Spear)',
+        'Added requested items & lastest update items',
+      ],
+    },
+    {
       v: 'V1.1.4',
       date: '01-11-2566',
       logs: ['Fixed reported bugs', 'Added requested items'],
@@ -49,7 +59,7 @@ export class AppTopBarComponent {
       date: '30-10-2566',
       logs: [
         'Fixed Aimed Bolt by remove bonus from Fear Breeze',
-        'Added Offensive skill (Dragon Tail, Gods Hammer, Cross Impact)',
+        'Added offensive skill (Dragon Tail, Gods Hammer, Cross Impact)',
         'Added requested items',
       ],
     },
