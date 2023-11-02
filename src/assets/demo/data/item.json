@@ -8573,6 +8573,41 @@
       ]
     }
   },
+  "15189": {
+    "id": 15189,
+    "aegisName": "Einherial_Armor",
+    "name": "Fallen Warrior Armor [1]",
+    "unidName": "Armor",
+    "resName": "아인헤리얼의갑옷",
+    "description": "ATK +10\nลด Damage ที่ได้รับจากมอนสเตอร์ประเภท Demi-Human 1%\n―――――――――――――\nเมื่ออัพเกรดตั้งแต่ 8 ขึ้นไป\nลด Damage ที่ได้รับจากมอนสเตอร์ประเภท Demi-Human 2%\n―――――――――――――\nเมื่ออัพเกรดตั้งแต่ 9 ขึ้นไป\nลด Damage ที่ได้รับจากมอนสเตอร์ประเภท Demi-Human 2%\nไม่ถูกทำลายอย่างแน่นอน\n―――――――――――――\nเมื่ออัพเกรดตั้งแต่ 10 ขึ้นไป\nลด Damage ที่ได้รับจากมอนสเตอร์ประเภท Demi-Human 2%\n―――――――――――――\nเมื่อสวมใส่ร่วมกับ Fallen Warrior Manteau\nทุก ๆ การอัพเกรด 1 ขั้นของ Fallen Warrior Manteau, ATK +3\n―――――――――――――\nเมื่อ Fallen Warrior Manteau อัพเกรดตั้งแต่ 9 ขึ้นไป\nทุก ๆ Base STR 10, ATK +5\n―――――――――――――\nเมื่อ Fallen Warrior Manteau อัพเกรดตั้งแต่ 11 ขึ้นไป \nทุก ๆ Base STR 10, ATK +7\nประเภท : ^777777Armor^000000 พลังป้องกัน : ^77777760^000000\nน้ำหนัก : ^77777780^000000\nเลเวลที่ต้องการ : ^77777790^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 60,
+    "weight": 80,
+    "requiredLevel": 90,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atk": [
+        "10",
+        "EQUIP[Fallen Warrior Manteau]1---3",
+        "EQUIP[Fallen Warrior Manteau]REFINE[9]str:10---5",
+        "EQUIP[Fallen Warrior Manteau]REFINE[11]str:10---7"
+      ],
+      "ลด Damage ที่ได้รับจากมอนสเตอร์ประเภท Demi-Human": [
+        "1",
+        "8===2",
+        "9===2",
+        "10===2"
+      ]
+    }
+  },
   "15278": {
     "id": 15278,
     "aegisName": "Overwhelm_Str_Armor",
@@ -12869,6 +12904,68 @@
       ]
     }
   },
+  "19452": {
+    "id": 19452,
+    "aegisName": "Heavenly_Order_",
+    "name": "Heavenly Order [1]",
+    "unidName": "Ribbon",
+    "resName": "천사의귀걸이",
+    "description": "สามารถใช้สกิล Item Appraisal Lv. 1 ได้\nทุก ๆ Base STR 18 หน่วย HIT +2, MaxHP +2%\n\nทุก ๆ Base AGI 18 หน่วย FLEE +2, ASPD +1%\n\nทุก ๆ Base VIT 18 หน่วย MDEF +2, ลดระยะเวลาร่ายแบบแปรผัน 1%\n\nทุก ๆ Base INT 18 หน่วย MaxSP +2%, ลดปริมาณการใช้ SP เมื่อใช้สกิล 2%\n\nทุก ๆ Base DEX 18 หน่วย CRI +2, Perfect Hit +2%\n\nทุก ๆ Base LUK 18 หน่วย DEF +20, ATK +10, MATK +10\n\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^7777770^000000\nตำแหน่ง : ^777777Middle^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": "Middle",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "hit": [
+        "str:18---2"
+      ],
+      "hpPercent": [
+        "str:18---2"
+      ],
+      "flee": [
+        "agi:18---2"
+      ],
+      "aspdPercent": [
+        "agi:18---1"
+      ],
+      "mdef": [
+        "vit:18---2"
+      ],
+      "vct": [
+        "vit:18---1"
+      ],
+      "spPercent": [
+        "int:18---2"
+      ],
+      "ลดปริมาณการใช้ SP เมื่อใช้สกิล": [
+        "int:18---2"
+      ],
+      "cri": [
+        "dex:18---2"
+      ],
+      "perfectHit": [
+        "dex:18---2"
+      ],
+      "def": [
+        "luk:18---20"
+      ],
+      "atk": [
+        "luk:18---10"
+      ],
+      "matk": [
+        "luk:18---10"
+      ]
+    }
+  },
   "19474": {
     "id": 19474,
     "aegisName": "S_Circlet_Of_Time_RK",
@@ -13816,6 +13913,104 @@
       ],
       "Neutral Resistance": [
         "7===10"
+      ]
+    }
+  },
+  "20748": {
+    "id": 20748,
+    "aegisName": "Manteau_Of_Fallen",
+    "name": "Fallen Warrior Manteau",
+    "unidName": "Garment",
+    "resName": "전사자의망토",
+    "description": "เสื้อคลุมในตำนานที่ว่ากันว่าถูกสวมใส่โดยเหล่านักรบผู้กล้าที่ออกไปต่อสู้ และสละชีวิตในสนามรบ\nเมื่อ STR พื้นฐานตั้งแต่ 90 ขึ้นไป, ATK + 10 (ทุกๆ การอัพเกรด 1 ขั้น ATK +2)\nเมื่อ INT พื้นฐานตั้งแต่ 90 ขึ้นไป, MATK + 20 (ทุกๆ การอัพเกรด 1 ขั้น MATK + 3)\nเมื่อ VIT พื้นฐานตั้งแต่ 90 ขึ้นไป, เพิ่มความต้านทานจากการโจมตีธาตุ Neutral 3% (เมื่ออัพเกรดถึงขั้น 8 ขึ้นไป เพิ่มอีก 3% และเมื่ออัพเกรดถึงขั้น 10 ขึ้นไป เพิ่มอีก 4%)\nเมื่อ AGI พื้นฐานตั้งแต่ 90 ขึ้นไป, ASPD + 3% (ทุกๆ การอัพเกรด 2 ขั้น ASPD + 1%)\n(เมื่ออัพเกรดถึงขั้น 10 ขึ้นไป ASPD + 1)\nเมื่อ DEX พื้นฐานตั้งแต่ 90 ขึ้นไป, เพิ่มค่าโจมตีระยะไกล 3% (ทุกๆ การอัพเกรด 2 ขั้น เพิ่มอีก 1%)\nเมื่อ LUK พื้นฐานตั้งแต่ 90 ขึ้นไป เพิ่ม Critical Damage 5% (ทุกๆ การอัพเกรด 1 ขั้น เพิ่มอีก 1%)\nประเภท : ^777777Garment^000000 พลังป้องกัน : ^77777720^000000\nน้ำหนัก : ^77777760^000000\nเลเวลที่ต้องการ : ^777777120^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 515,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 20,
+    "weight": 60,
+    "requiredLevel": 120,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atk": [
+        "SUM[str==90]===10",
+        "SUM[str==90]1---2"
+      ],
+      "matk": [
+        "SUM[int==90]===20",
+        "SUM[int==90]1---3"
+      ],
+      "aspdPercent": [
+        "SUM[agi==90]===3",
+        "SUM[agi==90]2---1"
+      ],
+      "aspd": [
+        "SUM[agi==90]10===1"
+      ],
+      "range": [
+        "SUM[dex==90]===3",
+        "SUM[dex==90]2---1"
+      ],
+      "criDmg": [
+        "SUM[luk==90]===5",
+        "SUM[luk==90]1---1"
+      ]
+    }
+  },
+  "20749": {
+    "id": 20749,
+    "aegisName": "Manteau_Of_Fallen_",
+    "name": "Fallen Warrior Manteau [1]",
+    "unidName": "Garment",
+    "resName": "전사자의망토_",
+    "description": "เสื้อคลุมในตำนานที่ว่ากันว่าถูกสวมใส่โดยเหล่านักรบผู้กล้าที่ออกไปต่อสู้ และสละชีวิตในสนามรบ\nทุกๆ การอัพเกรด 2 ขั้น เพิ่ม Max HP และ Max SP ทีละ 1%\nเมื่อ STR พื้นฐานตั้งแต่ 90 ขึ้นไป, ATK + 10 (ทุกๆ การอัพเกรด 1 ขั้น ATK +2)\nเมื่อ INT พื้นฐานตั้งแต่ 90 ขึ้นไป, MATK + 20 (ทุกๆ การอัพเกรด 1 ขั้น MATK + 3)\nเมื่อ VIT พื้นฐานตั้งแต่ 90 ขึ้นไป, เพิ่มความต้านทานจากการโจมตีธาตุ Neutral 3% (เมื่ออัพเกรดถึงขั้น 8 ขึ้นไป เพิ่มอีก 3% และเมื่ออัพเกรดถึงขั้น 10 ขึ้นไป เพิ่มอีก 4%)\nเมื่อ AGI พื้นฐานตั้งแต่ 90 ขึ้นไป, ASPD + 3% (ทุกๆ การอัพเกรด 2 ขั้น ASPD + 1%)\n(เมื่ออัพเกรดถึงขั้น 10 ขึ้นไป ASPD + 1)\nเมื่อ DEX พื้นฐานตั้งแต่ 90 ขึ้นไป, เพิ่มค่าโจมตีระยะไกล 3% (ทุกๆ การอัพเกรด 2 ขั้น เพิ่มอีก 1%)\nเมื่อ LUK พื้นฐานตั้งแต่ 90 ขึ้นไป เพิ่ม Critical Damage 5% (ทุกๆ การอัพเกรด 1 ขั้น เพิ่มอีก 1%)\nประเภท : ^777777Garment^000000 พลังป้องกัน : ^77777730^000000\nน้ำหนัก : ^77777760^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 515,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 30,
+    "weight": 60,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "hpPercent": [
+        "2---1"
+      ],
+      "spPercent": [
+        "2---1"
+      ],
+      "atk": [
+        "SUM[str==90]===10",
+        "SUM[str==90]1---2"
+      ],
+      "matk": [
+        "SUM[int==90]===20",
+        "SUM[int==90]1---3"
+      ],
+      "aspdPercent": [
+        "SUM[agi==90]===3",
+        "SUM[agi==90]2---1"
+      ],
+      "aspd": [
+        "SUM[agi==90]10===1"
+      ],
+      "range": [
+        "SUM[dex==90]===3",
+        "SUM[dex==90]2---1"
+      ],
+      "criDmg": [
+        "SUM[luk==90]===5",
+        "SUM[luk==90]1---1"
       ]
     }
   },
@@ -21020,7 +21215,7 @@
         "9===4",
         "EQUIP[Adora Shadow Pendant&&Adora Shadow Earring]REFINE[shadowWeapon,shadowEarring,shadowPendant==2]---1"
       ],
-      "m_race_all": [
+      "m_pene_race_all": [
         "EQUIP[Arch Bishop Shadow Shield]40",
         "EQUIP[Arch Bishop Shadow Shield]REFINE[shadowWeapon,shadowShield==1]---1"
       ]
@@ -23096,6 +23291,115 @@
     ],
     "script": {
       "p_size_all": [
+        "5",
+        "2---1"
+      ]
+    }
+  },
+  "24643": {
+    "id": 24643,
+    "aegisName": "S_Silvervine_Earing",
+    "name": "Silvervine Shadow Earring",
+    "unidName": "Shadow Earring",
+    "resName": "이어링쉐도우",
+    "description": "ต่างหูมงคลที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา\nเพิ่ม Damage ทางเวทมนตร์ธาตุ Earth, Fire, Water, Wind, Ghost 3%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางเวทมนตร์ธาตุ Earth, Fire, Water, Wind, Ghost ขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางเวทมนตร์ธาตุ Earth, Fire, Water, Wind, Ghost ขึ้นอีก 4%\nเมื่อสวมใส่ Silvervine Shadow Earring/Pendant/Shoes ร่วมกัน,\nเพิ่ม Damage สกิล Silvervine Stem Spear % เท่ากับครึ่งหนึ่งของค่าอัพเกรดรวมกัน\nเมื่อสวมใส่ร่วมกับ Doram Magical Shadow Armor,\nเพิกเฉยต่อพลังป้องกันทางเวทมนตร์ของทุกเผ่ายกเว้น Player 40% และเพิกเฉยต่อพลังป้องกันทางเวทมนตร์เพิ่มอีกตามค่าอัพเกรดรวมกันของ Silvervine Shadow Earring และ Doram Magical Shadow Armor\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Earring^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Summoner (Doram)^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 529,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "AccessoryRight",
+    "compositionPos": null,
+    "usableClass": [
+      "Summoner (Doram)"
+    ],
+    "script": {
+      "m_my_element_earth": [
+        "3",
+        "7===3",
+        "9===4"
+      ],
+      "m_my_element_fire": [
+        "3",
+        "7===3",
+        "9===4"
+      ],
+      "m_my_element_water": [
+        "3",
+        "7===3",
+        "9===4"
+      ],
+      "m_my_element_wind": [
+        "3",
+        "7===3",
+        "9===4"
+      ],
+      "m_my_element_ghost": [
+        "3",
+        "7===3",
+        "9===4"
+      ],
+      "Silvervine Stem Spear": [
+        "EQUIP[Silvervine Shadow Pendant&&Silvervine Shadow Shoes]REFINE[shadowBoot,shadowEarring,shadowPendant==2]---1"
+      ],
+      "m_pene_race_all": [
+        "EQUIP[Doram Magical Shadow Armor]===40",
+        "EQUIP[Doram Magical Shadow Armor]REFINE[shadowArmor,shadowEarring==1]---1"
+      ]
+    }
+  },
+  "24644": {
+    "id": 24644,
+    "aegisName": "S_Silvervine_Pendant",
+    "name": "Silvervine Shadow Pendant",
+    "unidName": "Silvervine Shadow Pendant",
+    "resName": "펜던트쉐도우",
+    "description": "สร้อยคอศักดิ์สิทธิ์ที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา\nลดระยะเวลาร่ายแบบแปรผัน 3%\nทุก ๆ การอัพเกรด 2 ขั้น ลดระยะเวลาร่ายแบบแปรผันลงอีก 1%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Pendant^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Summoner (Doram)^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 530,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "AccessoryLeft",
+    "compositionPos": null,
+    "usableClass": [
+      "Summoner (Doram)"
+    ],
+    "script": {
+      "vct": [
+        "3",
+        "2---1"
+      ]
+    }
+  },
+  "24645": {
+    "id": 24645,
+    "aegisName": "S_Silvervine_Shoes",
+    "name": "Silvervine Shadow Shoes",
+    "unidName": "Shadow Shoes",
+    "resName": "슈즈쉐도우",
+    "description": "รองเท้าที่สวมใส่เพิ่มเติม สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์ของมันจะลดน้อยลง\nเพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกธาตุ 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกธาตุขึ้นอีก 1%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shoes^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Summoner (Doram)^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 528,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Shoes",
+    "compositionPos": null,
+    "usableClass": [
+      "Summoner (Doram)"
+    ],
+    "script": {
+      "m_element_all": [
         "5",
         "2---1"
       ]
@@ -27721,6 +28025,52 @@
       ]
     }
   },
+  "28485": {
+    "id": 28485,
+    "aegisName": "Shinobi's_Sash_H",
+    "name": "Shinobi's Belt [1]",
+    "unidName": "Ring",
+    "resName": "상급닌자의허리띠",
+    "description": "MATK +5%\nลด Delay หลังใช้สกิล 5%\nASPD +5%\n\nทุก ๆ การเรียนรู้สกิล Flaming Petals 1 เลเวล เพิ่ม Damage สกิล Exploding Dragon 10%\n\nทุก ๆ การเรียนรู้สกิล Freezing Spear 1 เลเวล เพิ่ม Damage สกิล Snow Flake Draft 20%\n\nทุก ๆ การเรียนรู้สกิล Wind Blade 1 เลเวล เพิ่ม Damage สกิล First Wind 10%\n\nทุก ๆ การเรียนรู้สกิล Illusion - Bewitch, Illusion - Death, Illusion - Shock 1 เลเวล,\nเพิ่ม Damage ทางเวทมนตร์ต่อศัตรูธาตุ Shadow 4%\nประเภท : ^777777Accessory^000000 พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 517,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "matkPercent": [
+        "5"
+      ],
+      "acd": [
+        "5"
+      ],
+      "aspdPercent": [
+        "5"
+      ],
+      "Exploding Dragon": [
+        "LEARN_SKILL[Flaming Petals==1]---10"
+      ],
+      "Snow Flake Draft": [
+        "LEARN_SKILL[Freezing Spear==1]---20"
+      ],
+      "First Wind": [
+        "LEARN_SKILL[Wind Blade==1]---10"
+      ],
+      "m_element_dark": [
+        "LEARN_SKILL[Illusion - Bewitch==1]---4",
+        "LEARN_SKILL[Illusion - Death==1]---4",
+        "LEARN_SKILL[Illusion - Shock==1]---4"
+      ]
+    }
+  },
   "28502": {
     "id": 28502,
     "aegisName": "Mob_Scarf",
@@ -28561,6 +28911,68 @@
       ],
       "m_race_all": [
         "EQUIP[Dark Blinkers]5"
+      ]
+    }
+  },
+  "28977": {
+    "id": 28977,
+    "aegisName": null,
+    "name": "Fallen Warrior's Shield [1]",
+    "unidName": "Fallen Warrior's Shield",
+    "resName": "데몬실드",
+    "description": "ไม่มีวันถูกทำลาย\nMDEF -15\nลด Damage ที่ได้รับจากศัตรูประเภท Demi-Human, Player, Demon 10%\n\nเมื่ออัพเกรดตั้งแต่ 7 ขึ้นไป,\nASPD +2\n\nเมื่ออัพเกรดตั้งแต่ 10 ขึ้นไป,\nเมื่อสวมใส่โดย Rune Knight ลด Cooldown สกิล [Hundred Spears] 1 วินาที\nเมื่อสวมใส่โดย Royal Guard ลดระยะเวลาร่ายแบบแปรผันสกิล [Earth Drive] 100%\n\nเมื่ออัพเกรดตั้งแต่ 12 ขึ้นไป,\nHIT +40,\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกประเภท 5%\n\nเมื่อสวมใส่ร่วมกับ Record of Swordsman/[Not for Sale] Record of Swordsman และ Old Rune Circlet,\n\nเมื่อเรียนรู้สกิล [Hundred Spears] ถึงเลเวล 10,\nสามารถใช้สกิล [Shield Spell] Lv. 1 ได้\n\nเมื่อเรียนรู้สกิล [Ignition Break] ถึงเลเวล 1\nATK -120\n\nเมื่อค่าอัพเกรดรวมกันตั้งแต่ 18 ขึ้นไป,\nลด Delay หลังใช้สกิล 5%\nASPD +10%\n\nเมื่อค่าอัพเกรดรวมกันตั้งแต่ 21 ขึ้นไป,\nลด Cooldown สกิล [Hundred Spears] 0.5 วินาที\n\nเมื่อสวมใส่ร่วมกับ Record of Swordsman/[Not for Sale] Record of Swordsman และ Old Casket of Protection,\n\nเมื่อเรียนรู้สกิล [Shield Press] ถึงเลเวล 10,\nลด Delay หลังใช้สกิล 30%\n\nเมื่อเรียนรู้สกิล [Over Brand] ถึงเลเวล 1\nเพิ่ม Delay หลังใช้สกิล 30%\n\nเมื่อค่าอัพเกรดรวมกันตั้งแต่ 18 ขึ้นไป,\nเพิ่ม Damage สกิล [Earth Drive] และ [Shield Press] 25%\n\nเมื่อค่าอัพเกรดรวมกันตั้งแต่ 21 ขึ้นไป,\nลด Cooldown สกิล [Earth Drive] 0.5 วินาที\nประเภท : ^777777Shield^000000 พลังป้องกัน : ^777777120^000000\nน้ำหนัก : ^777777350^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 514,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 120,
+    "weight": 350,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "mdef": [
+        "-15"
+      ],
+      "aspd": [
+        "7===2"
+      ],
+      "cd__Hundred Spears": [
+        "REFINE[10]USED[Rune Knight]===1",
+        "EQUIP[Record of Swordsman&&Old Rune Circlet]REFINE[headUpper,shield==21]===0.5"
+      ],
+      "vct__Earth Drive": [
+        "REFINE[10]USED[Royal Guard]===100"
+      ],
+      "cd__Earth Drive": [
+        "EQUIP[Record of Swordsman&&Old Casket of Protection]REFINE[headUpper,shield==21]0.5"
+      ],
+      "hit": [
+        "12===40"
+      ],
+      "p_class_all": [
+        "12===5"
+      ],
+      "atk": [
+        "EQUIP[Record of Swordsman&&Old Rune Circlet]LEARN_SKILL[Ignition Break==1]===-120"
+      ],
+      "acd": [
+        "EQUIP[Record of Swordsman&&Old Rune Circlet]REFINE[headUpper,shield==18]===5",
+        "EQUIP[Record of Swordsman&&Old Casket of Protection]LEARN_SKILL[Shield Press==10]===30",
+        "EQUIP[Record of Swordsman&&Old Casket of Protection]LEARN_SKILL[Over Brand==1]===30"
+      ],
+      "aspdPercent": [
+        "EQUIP[Record of Swordsman&&Old Rune Circlet]REFINE[headUpper,shield==18]===10"
+      ],
+      "Earth Drive": [
+        "EQUIP[Record of Swordsman&&Old Casket of Protection]REFINE[headUpper,shield==18]25"
+      ],
+      "Shield Press": [
+        "EQUIP[Record of Swordsman&&Old Casket of Protection]REFINE[headUpper,shield==18]25"
       ]
     }
   },
@@ -31182,6 +31594,110 @@
       ],
       "cd__Psychic Wave": [
         "EQUIP[Scholar Stone (Lower)]===2"
+      ]
+    }
+  },
+  "29460": {
+    "id": 29460,
+    "aegisName": "Runeknight_Top",
+    "name": "Lord Knight Stone (Upper)",
+    "unidName": "Lord Knight Stone (Upper)",
+    "resName": "검사피규어",
+    "description": "ทุกๆ 1 Lv. Spear Mastery เพิ่ม ATK+ 2",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 71,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "atk": [
+        "LEARN_SKILL[Spear Mastery==1]---2"
+      ]
+    }
+  },
+  "29461": {
+    "id": 29461,
+    "aegisName": "Runeknight_Middle",
+    "name": "Lord Knight Stone (Middle)",
+    "unidName": "Lord Knight Stone (Middle)",
+    "resName": "검사피규어",
+    "description": "เพิ่ม Damage ของ Clashing Spiral 15%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 72,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "Clashing Spiral": [
+        "15"
+      ]
+    }
+  },
+  "29462": {
+    "id": 29462,
+    "aegisName": "Runeknight_Bottom",
+    "name": "Lord Knight Stone (Lower)",
+    "unidName": "Lord Knight Stone (Lower)",
+    "resName": "검사피규어",
+    "description": "ทุกๆ 1 Lv. Cavalier Mastery เพิ่ม ASPD 1%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 73,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "aspdPercent": [
+        "LEARN_SKILL[Cavalier Mastery==1]---1"
+      ]
+    }
+  },
+  "29463": {
+    "id": 29463,
+    "aegisName": "Runeknight_Robe",
+    "name": "Rune Knight Stone (Garment)",
+    "unidName": "Rune Knight Stone (Garment)",
+    "resName": "Lord_Knight_Figure",
+    "description": "เพิ่ม Damage Dragon Breath(Fire), Dragon Breath(Water) 10%\nเมื่อสวมใส่กับ Lord Knight Stone (Upper), เพิ่ม Damage Dragon Breath(Fire), Dragon Breath(Water) 10%\nเมื่อสวมใส่กับ Lord Knight Stone (Middle), ลดการใช้ SP ของ Dragon Breath(Fire), Dragon Breath(Water) 10%\nเมื่อสวมใส่กับ Lord Knight Stone (Lower), ลดดีเลย์หลังใช้สกิล 5%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 74,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "Dragon Breath(Fire)": [
+        "EQUIP[Lord Knight Stone (Upper)]===10"
+      ],
+      "Dragon Breath(Water)": [
+        "EQUIP[Lord Knight Stone (Upper)]===10"
+      ],
+      "spPercent__Dragon Breath(Fire)": [
+        "EQUIP[Lord Knight Stone (Middle)]===10"
+      ],
+      "spPercent__Dragon Breath(Water)": [
+        "EQUIP[Lord Knight Stone (Middle)]===10"
+      ],
+      "acd": [
+        "EQUIP[Lord Knight Stone (Lower)]===5"
       ]
     }
   },
@@ -34193,7 +34709,7 @@
       "atk": [
         "1---4"
       ],
-      "cd__Hundred Spear": [
+      "cd__Hundred Spears": [
         "9===1.5"
       ]
     }
@@ -35829,6 +36345,105 @@
       ]
     }
   },
+  "310257": {
+    "id": 310257,
+    "aegisName": "Runeknight_Robe2",
+    "name": "Rune Knight Stone II (Garment)",
+    "unidName": "Rune Knight Stone II (Garment)",
+    "resName": "Lord_Knight_Figure",
+    "description": "เพิ่ม Damage สกิล Ignition Break 15%\nเมื่อใช้กับ Lord Knight Stone II (Upper) เพิ่ม Damage สกิล Sonic Wave 20%\nเมื่อใช้กับ Lord Knight Stone II (Middle) เพิ่ม Damage สกิล Ignition Break 10%\nเมื่อใช้กับ Lord Knight Stone II (Lower) เพิ่ม Damage สกิล Hundred Spears 30%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 74,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "Ignition Break": [
+        "15",
+        "EQUIP[Lord Knight Stone II (Middle)]10"
+      ],
+      "Sonic Wave": [
+        "EQUIP[Lord Knight Stone II (Upper)]20"
+      ],
+      "Hundred Spears": [
+        "EQUIP[Lord Knight Stone II (Lower)]30"
+      ]
+    }
+  },
+  "310258": {
+    "id": 310258,
+    "aegisName": "Runeknight_Top2",
+    "name": "Lord Knight Stone II (Upper)",
+    "unidName": "Lord Knight Stone II (Upper)",
+    "resName": "검사피규어",
+    "description": "ทุก ๆ การเรียนรู้สกิล Clashing Spiral 1 เลเวล เพิ่ม Damage ทางกายภาพระยะไกล 1%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 71,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "range": [
+        "LEARN_SKILL[Clashing Spiral==1]---1"
+      ]
+    }
+  },
+  "310259": {
+    "id": 310259,
+    "aegisName": "Runeknight_Middle2",
+    "name": "Lord Knight Stone II (Middle)",
+    "unidName": "Lord Knight Stone II (Middle)",
+    "resName": "검사피규어",
+    "description": "เพิ่ม Damage สกิล Bowling Bash 20%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 72,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "Bowling Bash": [
+        "20"
+      ]
+    }
+  },
+  "310260": {
+    "id": 310260,
+    "aegisName": "Runeknight_Bottom2",
+    "name": "Lord Knight Stone II (Lower)",
+    "unidName": "Lord Knight Stone II (Lower)",
+    "resName": "검사피규어",
+    "description": "เพิ่ม Damage สกิล Clashing Spiral 20%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 73,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "Clashing Spiral": [
+        "20"
+      ]
+    }
+  },
   "310265": {
     "id": 310265,
     "aegisName": "WanderMins_Robe2",
@@ -35938,7 +36553,7 @@
   "400001": {
     "id": 400001,
     "aegisName": "Victory_Wing_Ear",
-    "name": "Victorious Wing Ears",
+    "name": "Victorious Wing Ears_",
     "unidName": "Ribbon",
     "resName": "승리의귀장식",
     "description": "เครื่องประดับหูที่กล่าวขานกันว่ามอบให้แก่ผู้ชนะเท่านั้น\nเมื่อสวมใส่แล้ว แสดงถึงความสง่างามออกมา\nATK +10, MATK +10\nลด Delay หลังใช้สกิล 8%\nประเภท : ^777777Headgear^000000พลังป้องกัน : ^7777770^000000\nตำแหน่ง : ^777777Middle ^000000น้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
@@ -36459,7 +37074,7 @@
   "410016": {
     "id": 410016,
     "aegisName": "Battle_Processor",
-    "name": "Battle Processor",
+    "name": "Battle Processor_",
     "unidName": "Hat",
     "resName": "가디언프로세서",
     "description": "เครื่องประมวลผลพิเศษที่ช่วยในการเพิ่มประสิทธิภาพด้านการต่อสู้\nATK +20, MATK +20\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^7777770^000000\nตำแหน่ง : ^777777Middle ^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
@@ -36517,7 +37132,7 @@
   "410079": {
     "id": 410079,
     "aegisName": "Deepblue_Sunglasses",
-    "name": "Deep Blue Sunglasses",
+    "name": "Deep Blue Sunglasses_",
     "unidName": "Glasses",
     "resName": "퇴마의글래스",
     "description": "แว่นตาดำสุดเท่ที่ถูกเคลือบด้วยสีน้ำเงินเข้ม\nโดดเด่นด้านการป้องกันแสง UV\n\nลดระยะเวลาร่ายแบบแปรผัน 10%\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^7777770^000000\nตำแหน่ง : ^777777Middle^000000 น้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
@@ -37806,6 +38421,62 @@
       ]
     }
   },
+  "470009": {
+    "id": 470009,
+    "aegisName": "Fluffy_DandeShoes_J_",
+    "name": "Fluffy Dandelion Shoes [1]",
+    "unidName": "Sandals",
+    "resName": "Fluffy_DandelionShoes_J",
+    "description": "รองเท้านุ่มนิ่มพิมพ์ลายดอกแดนดิไลออน ผลิตโดยแบรนด์ดังจากอาณาจักร Rune Midgarts\n\nMaxHP +3%, MaxSP +3%\n\nเมื่ออัพเกรดตั้งแต่ 9 ขึ้นไป, \nMaxHP +7%, MaxSP +7%,\nลด Delay หลังใช้สกิล 10%\n\nเมื่ออัพเกรดตั้งแต่ 11 ขึ้นไป, \nMaxHP +10%, MaxSP +10%\nลด Delay หลังใช้สกิล 10%\n\nเมื่อเรียนรู้สกิล Spirit Of Land Lv. 1 และสกิล Catnip Powdering Lv. 5,\nทำให้ไม่ติดสถานะ Curse\nลดปริมาณการใช้ SP สกิล Catnip Meteor 50 หน่วย\n\nเมื่อเรียนรู้สกิล Spirit Of Land Lv. 1 และสกิล Catnip Meteor Lv. 5, \nเพิ่ม Damage สกิล Silvervine Stem Spear 20%\n\nเมื่อเรียนรู้สกิล Spirit Of Land Lv. 1 และสกิล Nyang Grass Lv. 5,\nMATK +50\n\nเมื่อเรียนรู้สกิล Spirit Of Land Lv. 1 และสกิล Silvervine Stem Spear Lv. 5,\nเพิ่มความเร็วในการเคลื่อนที่\n\nเมื่อเรียนรู้สกิล Spirit Of Land Lv. 1 และสกิล Silvervine Root Twist Lv. 5,\nMATK +50\n\nทุก ๆ การเรียนรู้สกิล Chattering 1 เลเวล ASPD +5%\n\nเมื่อเรียนรู้สกิล Nyang Grass ถึงเลเวล 5 เพิกเฉยต่อพลังป้องกันทางเวทมนตร์ของศัตรูทุกเผ่ายกเว้น Player 100%\n\nทุก ๆ การเรียนรู้สกิล Meow Meow 1 เลเวล เพิ่ม Damage สกิล Catnip Meteor 15%\n\nประเภท : ^777777Shoes^000000  พลังป้องกัน : ^77777712^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Summoner (Doram)^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 516,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 12,
+    "weight": 10,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Summoner (Doram)"
+    ],
+    "script": {
+      "hpPercent": [
+        "3",
+        "9===7",
+        "11===10"
+      ],
+      "spPercent": [
+        "3",
+        "9===7",
+        "11===10"
+      ],
+      "acd": [
+        "9===10",
+        "11===10"
+      ],
+      "sp__Catnip Meteor": [
+        "50"
+      ],
+      "Silvervine Stem Spear": [
+        "20"
+      ],
+      "matk": [
+        "LEARN_SKILL[Nyang Grass==5]50",
+        "LEARN_SKILL[Silvervine Root Twist==5]50"
+      ],
+      "aspdPercent": [
+        "LEARN_SKILL[Chattering==1]---5"
+      ],
+      "Catnip Meteor": [
+        "LEARN_SKILL[Meow Meow==1]---15"
+      ],
+      "m_pene_race_all": [
+        "LEARN_SKILL[Nyang Grass==5]100"
+      ]
+    }
+  },
   "470026": {
     "id": 470026,
     "aegisName": "Pretty_PigShoes_",
@@ -38408,6 +39079,61 @@
       ]
     }
   },
+  "480124": {
+    "id": 480124,
+    "aegisName": "Cvt_Physical_Wing",
+    "name": "Convertible Physical Wing [1]",
+    "unidName": "Hood",
+    "resName": "Supplement_Part_Wing",
+    "description": "ปีกจักรกลอเนกประสงค์ที่ได้รับการพัฒนาอีกขั้นหนึ่ง ซึ่งมีเป้าหมายให้จ่ายพลังงานและมีประสิทธิภาพอย่างสูงสุด\nเครื่องประมวลผล Physical ถูกติดตั้งควบคู่ไปด้วย\nสามารถใช้งานร่วมกับไอเท็มต่าง ๆ ได้\n\nทุก ๆ การอัพเกรด 2 ขั้น ATK +5, ATK +1%\nทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 3%\nเมื่ออัพเกรดถึงขั้น 7, ASPD +7%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่มความต้านทานต่อการโจมตีธาตุ Neutral 7%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage ทางกายภาพระยะใกล้และระยะไกล 10%\n\nเมื่อสวมใส่ร่วมกับ Deep Blue Sunglasses [1], ATK +7%, ลดระยะเวลาร่ายแบบแปรผัน 15%\nเมื่อสวมใส่ร่วมกับ Victorious Wing Ears [1], ATK +7%, ลด Delay หลังใช้สกิล 15%\nเมื่อสวมใส่ร่วมกับ Battle Processor [1], ATK +7%, เพิ่ม Damage ทางกายภาพระยะใกล้และระยะไกล 5%\nประเภท : ^777777Garment^000000  พลังป้องกัน : ^77777738^000000\nน้ำหนัก : ^77777740^000000\nเลเวลของเกราะ : ^7777771^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 515,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 38,
+    "weight": 40,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atk": [
+        "2---5"
+      ],
+      "atkPercent": [
+        "2---1",
+        "EQUIP[Deep Blue Sunglasses]===7",
+        "EQUIP[Victorious Wing Ears]===7",
+        "EQUIP[Battle Processor]===7"
+      ],
+      "p_size_all": [
+        "3---3"
+      ],
+      "aspdPercent": [
+        "7===7"
+      ],
+      "เพิ่มความต้านทานต่อการโจมตีธาตุ Neutral": [
+        "9===7"
+      ],
+      "range": [
+        "11===10",
+        "EQUIP[Battle Processor]===5"
+      ],
+      "melee": [
+        "11===10",
+        "EQUIP[Battle Processor]===5"
+      ],
+      "vct": [
+        "EQUIP[Deep Blue Sunglasses]===15"
+      ],
+      "acd": [
+        "EQUIP[Victorious Wing Ears]===15"
+      ]
+    }
+  },
   "480125": {
     "id": 480125,
     "aegisName": "Cvt_Magical_Wing",
@@ -38827,6 +39553,53 @@
       ],
       "cd__Arrow Storm": [
         "EQUIP[Royal Bow||Patent Royal Bow]2.5"
+      ]
+    }
+  },
+  "480365": {
+    "id": 480365,
+    "aegisName": null,
+    "name": "Fallen Protect Manteau [1]",
+    "unidName": "Fallen Protect Manteau",
+    "resName": "Leo_Mantle_J",
+    "description": "ทุก ๆ การอัพเกรด 2 ขั้น, \nATK +20\n\nทุก ๆ การอัพเกรด 4 ขั้น,\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 5%\n\nเมื่ออัพเกรดถึงขั้น 7,\nASPD +10%\nATK +7%\n\nเมื่ออัพเกรดถึงขั้น 9,\nเพิ่ม Damage ทางกายภาพระยะไกล 15%\n\nเมื่ออัพเกรดถึงขั้น 11,\nทุก ๆ Base Lv. 2 เพิ่ม Damage สกิล Cannon Spear 1% และสกิล Vanishing Point 2%\n\nเมื่อสวมใส่ร่วมกับ Old Casket of Protection,\nเมื่อโจมตีทางกายภาพ มีโอกาส 2% ที่จะฟื้นฟู HP 4% ของ Damage ที่ทำ\nและมีโอกาส 1% ที่จะฟื้นฟู SP 2% ของ Damage ที่ทำ\n\nเมื่อ Old Casket of Protection อัพเกรดตั้งแต่ 11 ขึ้นไป,\nลด Cooldown สกิล Cannon Spear 0.5 วินาที\nประเภท : ^777777Garment^000000  พลังป้องกัน : ^77777755^000000\nน้ำหนัก : ^777777150^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Royal Guard^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 515,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 55,
+    "weight": 150,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Royal Guard"
+    ],
+    "script": {
+      "atk": [
+        "2---20"
+      ],
+      "p_size_all": [
+        "4---5"
+      ],
+      "aspdPercent": [
+        "7===10"
+      ],
+      "atkPercent": [
+        "7===7"
+      ],
+      "range": [
+        "9===15"
+      ],
+      "Cannon Spear": [
+        "REFINE[11]level:2---1"
+      ],
+      "Banishing Point": [
+        "REFINE[11]level:2---2"
+      ],
+      "cd__Cannon Spear": [
+        "EQUIP[Old Casket of Protection]REFINE[headUpper==11]0.5"
       ]
     }
   },
@@ -40831,6 +41604,50 @@
       ],
       "Fatal Manace": [
         "EQUIP[Patent Fatalist]REFINE[weapon==11]SUM[str,agi==12]---1"
+      ]
+    }
+  },
+  "490464": {
+    "id": 490464,
+    "aegisName": null,
+    "name": "Ring of Unknown Hero(Guillotine Cross) [1]",
+    "unidName": "Ring of Unknown Hero(Guillotine Cross)",
+    "resName": "Ullr_Bracelet",
+    "description": "แหวนของฮีโร่นิรนาม\n\nลด Delay หลังใช้สกิล 3%\nเพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูทุกประเภท 6%\n\nเมื่อสวมใส่ร่วมกับ Patent Shiver Katar,\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกเผ่า 8%\nเมื่อ Patent Shiver Katar อัพเกรดตั้งแต่ 11 ขึ้นไป,\nเมื่อ Base STR และ LUK รวมกันได้ทุก ๆ 12 หน่วย เพิ่ม Damage สกิล Cross Impact 1%\n\nเมื่อสวมใส่ร่วมกับ Patent Blade Katar,\nเพิ่ม Damage ทางกายภาพระยะใกล้ 8%\nเมื่อ Patent Blade Katar อัพเกรดตั้งแต่ 11 ขึ้นไป,\nเมื่อ Base STR และ DEX รวมกันได้ทุก ๆ 12 หน่วย เพิ่ม Damage สกิล Rolling Cutter 1%\nประเภท : ^777777Accessory (Right)^000000 พลังป้องกัน : ^7777777^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Guillotine Cross^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 510,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 7,
+    "weight": 10,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Guillotine Cross"
+    ],
+    "script": {
+      "acd": [
+        "3"
+      ],
+      "p_class_all": [
+        "6"
+      ],
+      "m_class_all": [
+        "6"
+      ],
+      "p_race_all": [
+        "EQUIP[Patent Shiver Katar]8"
+      ],
+      "Cross Impact": [
+        "EQUIP[Patent Shiver Katar]REFINE[weapon==11]SUM[str,luk==12]---1"
+      ],
+      "melee": [
+        "EQUIP[Patent Blade Katar]8"
+      ],
+      "Rolling Cutter": [
+        "EQUIP[Patent Blade Katar]REFINE[weapon==11]SUM[str,dex==12]---1"
       ]
     }
   },

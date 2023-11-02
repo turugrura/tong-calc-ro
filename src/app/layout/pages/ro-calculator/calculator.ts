@@ -1487,12 +1487,26 @@ export class Calculator {
       return { isValid: true, restCondition };
     }
 
+    // SUM[str,luk==80]---6
+    const [, toRemove3, statStr, sumCond] = restCondition.match(/(SUM\[(\D+)==(\d+)])[^-]/) ?? [];
+    if (statStr && sumCond) {
+      const totalStat = statStr.split(',').reduce((total, stat) => total + (this.model[stat] || 0), 0);
+      const cond = Number(sumCond);
+      if (totalStat < cond) return { isValid: false, restCondition };
+
+      restCondition = restCondition.replace(toRemove3, '');
+    }
+
     // USED[Mechanic]20
     const [toRemove, usedByClass] = restCondition.match(/USED\[(.+?)\]/) ?? [];
     if (usedByClass) {
+      const cName = this._class.className.replace(' ', '');
       const isUsed = usedByClass
         .split('||')
-        .some((className) => className === this._class.className || this._class.classNameSet.has(className));
+        .some(
+          (className) =>
+            className === cName || className === this._class.className || this._class.classNameSet.has(className),
+        );
       if (!isUsed) return { isValid: false, restCondition };
 
       restCondition = restCondition.replace(toRemove, '');
@@ -1590,7 +1604,7 @@ export class Calculator {
     }
 
     // REFINE[11]
-    const [, unused, refineCond] = restCondition.match(/^(REFINE\[(\d+)?])[^-]/) ?? [];
+    const [, unused, refineCond] = restCondition.match(/(REFINE\[(\d+)?])[^-]/) ?? [];
     if (refineCond && itemRefine >= Number(refineCond)) {
       restCondition = restCondition.replace(unused, '');
       if (restCondition.startsWith('===')) {
