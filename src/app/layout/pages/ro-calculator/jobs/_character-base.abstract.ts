@@ -57,6 +57,7 @@ export type PassiveSkillModel = ActiveSkillModel;
 
 export interface AspdInput {
   weapon: Weapon;
+  weapon2: Weapon;
   isEquipShield?: boolean;
   aspd: number;
   aspdPercent: number;
@@ -189,6 +190,12 @@ export abstract class CharacterBase {
     };
   }
 
+  private calcLeftWeaponAspd(weaponSubType: string) {
+    if (!weaponSubType) return 0;
+
+    return AspdTable[this.className]?.[`left-${weaponSubType}`] || 0;
+  }
+
   protected inheritBaseClass(baseClass: CharacterBase) {
     const { _atkSkillList, _passiveSkillList, _activeSkillList, classNames } = baseClass;
 
@@ -227,17 +234,18 @@ export abstract class CharacterBase {
 
   calcAspd(a: AspdInput): number {
     const potion = { 645: 4, 656: 6, 657: 9 };
-    const { weapon, isEquipShield, aspd, aspdPercent, totalAgi, totalDex, potionAspd, skillAspd } = a;
+    const { weapon, weapon2, isEquipShield, aspd, aspdPercent, totalAgi, totalDex, potionAspd, skillAspd } = a;
     const aspdByPotion = potion[potionAspd] || 0;
 
     const { rangeType, subTypeName: subTypeName } = weapon.data;
     const { baseAspd, shieldPenalty } = this.calcBaseAspd(subTypeName);
+    const leftWeapon = this.calcLeftWeaponAspd(weapon2?.data?.subTypeName);
     const isRange = rangeType === 'range';
     const statAspd = Math.sqrt((totalAgi * totalAgi) / 2 + (totalDex * totalDex) / (isRange ? 7 : 5)) / 4;
     const potionSkillAspd = ((aspdByPotion + skillAspd) * totalAgi) / 200;
     const rawCalcAspd = Math.floor(statAspd + potionSkillAspd + (isEquipShield ? shieldPenalty : 0));
 
-    const baseAspd2 = baseAspd + rawCalcAspd;
+    const baseAspd2 = baseAspd + leftWeapon + rawCalcAspd;
     const equip = Math.floor((195 - baseAspd2) * (aspdPercent * 0.01));
     const final = Math.min(baseAspd2 + equip + aspd, 193);
 
