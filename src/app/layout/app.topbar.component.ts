@@ -35,6 +35,19 @@ export class AppTopBarComponent {
 
   updates: { v: string; date: string; logs: string[] }[] = [
     {
+      v: 'V1.2.1',
+      date: '03-11-2566',
+      logs: [
+        'Fixed compared item not include the main item options',
+        'Fixed Dual weapon ASPD calculation',
+        'Fixed incorrect Rebellion status points',
+        'Fixed EDP not effect to Cross Impact ',
+        'Fixed reported bugs',
+        'Added Buff (Odin Power)',
+        'Added requested items',
+      ],
+    },
+    {
       v: 'V1.2.0',
       date: '02-11-2566',
       logs: [
