@@ -95,4 +95,14 @@ export const JobBuffs: ActiveSkillModel[] = [
       { label: 'Falcon Soul', isUse: true, value: 3, bonus: { atk: 50, hit: 15 } },
     ],
   },
+  {
+    inputType: 'dropdown',
+    label: "Odin's Power",
+    name: "Odin's Power",
+    dropdown: [
+      { label: '-', isUse: false, value: 0 },
+      { label: 'Lv 1', isUse: true, value: 1, bonus: { atk: 70, matk: 70, def: -20, mdef: -20 } },
+      { label: 'Lv 2', isUse: true, value: 2, bonus: { atk: 100, matk: 100, def: -40, mdef: -40 } },
+    ],
+  },
 ];
