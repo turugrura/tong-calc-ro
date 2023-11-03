@@ -41,9 +41,6 @@ const mainStatuses = ['str', 'dex', 'int', 'agi', 'luk', 'vit'];
 const isNumber = (n: unknown): n is number => !Number.isNaN(n);
 
 const CannotEDP = {
-  'Cross Impact': false,
-  'Counter Slash': false,
-  'Soul Destroyer': false,
   'Meteor Assault': false,
 };
 
@@ -331,6 +328,7 @@ export class Calculator {
   };
   private extraOptions: any[] = [];
   private weaponData = new Weapon();
+  private leftWeaponData = new Weapon();
   private monsterData: PreparedMonsterModel = {
     name: '',
     race: '',
@@ -734,6 +732,7 @@ export class Calculator {
   loadItemFromModel(model: any) {
     this.model = { ...model };
     this.weaponData.set({} as any, 0);
+    this.leftWeaponData.set({} as any, 0);
     this.equipItem.clear();
     this.equipItemName.clear();
 
@@ -753,6 +752,10 @@ export class Calculator {
       } else {
         // console.log({ mainItemType, refine });
         this.setItem(mainItemType, itemId, refine);
+      }
+
+      if (mainItemType === ItemTypeEnum.leftWeapon && itemId) {
+        this.leftWeaponData.set(this.items[itemId], 0);
       }
 
       for (const itemRelation of itemRelations) {
@@ -2109,6 +2112,7 @@ export class Calculator {
       totalAgi: this.model.agi + this.model.jobAgi + this.totalEquipStatus.agi,
       totalDex: this.model.dex + this.model.jobDex + this.totalEquipStatus.dex,
       weapon: this.weaponData,
+      weapon2: this.leftWeaponData,
       isEquipShield: this.model.shield > 0,
       aspd: this.totalEquipStatus.aspd,
       aspdPercent: this.totalEquipStatus.aspdPercent,
