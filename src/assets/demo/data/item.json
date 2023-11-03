@@ -2646,6 +2646,30 @@
       ]
     }
   },
+  "4137": {
+    "id": 4137,
+    "aegisName": "Drake_Card",
+    "name": "Drake Card",
+    "unidName": "Card",
+    "resName": "이름없는카드",
+    "description": "สามารถโจมตีศัตรูทุกขนาดได้ด้วยพลังโจมตี 100% ไม่ว่าจะใช้อาวุธอะไร\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "of Infinity",
+    "script": {
+      "ignore_size_penalty": [
+        "1"
+      ]
+    }
+  },
   "4140": {
     "id": 4140,
     "aegisName": "Knight_Of_Abyss_Card",
@@ -10827,7 +10851,7 @@
     "defense": null,
     "weight": 5,
     "requiredLevel": 1,
-    "location": null,
+    "location": "Lower",
     "compositionPos": null,
     "usableClass": [
       "all"
@@ -25424,6 +25448,36 @@
       ]
     }
   },
+  "27184": {
+    "id": 27184,
+    "aegisName": "Knight_Sakray_Card",
+    "name": "Knight Sakray Card",
+    "unidName": "Knight Sakray Card",
+    "resName": "이름없는카드",
+    "description": "ATK + 20 \nเพิ่ม Damage ทางกายภาพต่อมอนสเตอร์ประเภท Demon, Undead 30%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Salvation",
+    "script": {
+      "atk": [
+        "20"
+      ],
+      "p_race_demon": [
+        "30"
+      ],
+      "p_race_undead": [
+        "30"
+      ]
+    }
+  },
   "27197": {
     "id": 27197,
     "aegisName": "S_Agnes_Card",
@@ -39274,6 +39328,12 @@
     "requiredLevel": 100,
     "location": null,
     "compositionPos": null,
+    "usableClass": [
+      "Mage Class",
+      "Acolyte Class",
+      "Archer Class",
+      "Soul Linker Class"
+    ],
     "script": {
       "matk": [
         "20"
