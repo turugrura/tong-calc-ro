@@ -495,7 +495,8 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         debounceTime(250),
       )
       .subscribe(() => {
-        const model2 = { rawOptionTxts: this.model2.rawOptionTxts || [] } as ClassModel;
+        const model2 = { rawOptionTxts: this.model2?.rawOptionTxts || [] } as ClassModel;
+
         const equipItemIdItemTypeMap2 = new Map<ItemTypeEnum, number>();
 
         this.showCompareItemMap = (this.compareItemNames || [])
@@ -684,8 +685,14 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
     const calc = calculator;
 
+    const rawOptionTxts = [...this.model.rawOptionTxts];
     if (compareModel) {
       const model2 = { ...this.model, ...compareModel };
+      if (this.compareItemNames?.includes(ItemTypeEnum.weapon)) {
+        for (let i = 0; i <= 2; i++) {
+          rawOptionTxts[i] = this.model2.rawOptionTxts[i];
+        }
+      }
       calc.loadItemFromModel(model2);
     } else {
       // calc.setModel(this.model);
@@ -699,7 +706,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       .setMasterySkillAtk(masteryAtks)
       .setConsumables(consumeData)
       .setAspdPotion(aspdPotion)
-      .setExtraOptions(this.getOptionScripts(compareModel != null))
+      .setExtraOptions(this.getOptionScripts(rawOptionTxts))
       .setUsedSkillNames(activeSkillNames)
       .setLearnedSkills(learnedSkillMap)
       .prepareAllItemBonus()
@@ -1466,10 +1473,8 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     this.ammoList = this.itemList.ammoList.filter(onlyMyAmmo);
   }
 
-  private getOptionScripts(isModel2 = false) {
-    const rawOptions = isModel2 ? this.model2.rawOptionTxts : this.model.rawOptionTxts;
-
-    return (rawOptions || [])
+  private getOptionScripts(rawOptionTxts: string[]) {
+    return (rawOptionTxts || [])
       .map((a) => {
         if (typeof a !== 'string' || a === '') return '';
 
