@@ -10,6 +10,7 @@ export const createMainStatOptionList = () => {
     ['Range', 'range', 1, 10, ' %'],
     ['Vct', 'vct', 1, 10],
     ['Hit', 'hit', 1, 15],
+    ['CriDmg', 'criDmg', 1, 15, ' %'],
     ['ASPD', 'aspd', 1, 1],
     ['ASPD %', 'aspdPercent', 1, 10],
     ['All Stat', 'allStatus', 1, 10],
