@@ -79,7 +79,7 @@ export class Rebelion extends CharacterBase {
   protected readonly CLASS_NAME = ClassName.Rebellion;
   protected readonly JobBonusTable = jobBonusTable;
 
-  protected initialStatusPoint = 100;
+  protected initialStatusPoint = 48;
   protected classNames = [
     'Gunslinger',
     'Gunslinger Cls',
