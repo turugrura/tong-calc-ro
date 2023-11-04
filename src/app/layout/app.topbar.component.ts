@@ -35,15 +35,28 @@ export class AppTopBarComponent {
 
   updates: { v: string; date: string; logs: string[] }[] = [
     {
+      v: 'V1.3.0',
+      date: '04-11-2566',
+      logs: [
+        'Fixed incorrect EDP calculation to Dark monster',
+        'Fixed reported bugs',
+        'Removed Doram skill bonus from base level',
+        'Support Kagerou class',
+        'Added Buff skill (Comet Amp (working as a monster debuff, not a player buff))',
+        'Added Einbech Dun3 equipments & cards',
+        'Added requested items',
+      ],
+    },
+    {
       v: 'V1.2.1',
       date: '03-11-2566',
       logs: [
         'Fixed compared item not include the main item options',
         'Fixed Dual weapon ASPD calculation',
         'Fixed incorrect Rebellion status points',
-        'Fixed EDP not effect to Cross Impact ',
+        'Fixed EDP not effect to Cross Impact',
         'Fixed reported bugs',
-        'Added Buff (Odin Power)',
+        'Added Buff skill (Odin Power)',
         'Added requested items',
       ],
     },
