@@ -109,11 +109,8 @@ export class Doram extends CharacterBase {
         { label: 'Lv 4 Wind', value: 'Silvervine Stem Spear==4' },
         { label: 'Lv 5 Ghost', value: 'Silvervine Stem Spear==5' },
       ],
-      formula: (input: AtkSkillFormulaInput): number => {
-        const { model } = input;
-        const baseLevel = model.level;
-
-        return 700 * (baseLevel / 100);
+      formula: (_input: AtkSkillFormulaInput): number => {
+        return 700;
       },
     },
     {
@@ -128,10 +125,9 @@ export class Doram extends CharacterBase {
       element: ElementType.Neutral,
       levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
-        const { model, skillLevel } = input;
-        const baseLevel = model.level;
+        const { skillLevel } = input;
 
-        return (200 + skillLevel * 100) * (baseLevel / 100);
+        return 200 + skillLevel * 100;
       },
     },
     {
@@ -143,8 +139,9 @@ export class Doram extends CharacterBase {
       vct: 1,
       cd: 0,
       levelList: [],
+      hit: 5,
       formula: (input: AtkSkillFormulaInput): number => {
-        const { model, skillLevel } = input;
+        const { skillLevel } = input;
 
         return 200 + skillLevel * 100;
       },
@@ -160,10 +157,9 @@ export class Doram extends CharacterBase {
       hit: 3,
       levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
-        const { model, skillLevel } = input;
-        const baseLevel = model.level;
+        const { skillLevel } = input;
 
-        return (200 + skillLevel * 100) * (baseLevel / 100);
+        return 200 + skillLevel * 100;
       },
     },
   ];
