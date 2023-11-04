@@ -22,6 +22,13 @@ export interface AtkSkillModel {
   cd: number;
   levelList: { label: string; value: any }[];
   formula: (input: AtkSkillFormulaInput) => number;
+  part2?: {
+    label: string;
+    element: ElementType;
+    isIncludeMain: boolean;
+    hit: number;
+    formula: (input: AtkSkillFormulaInput) => number;
+  };
   canCri?: boolean;
   cri?: number;
   hit?: number;

@@ -462,7 +462,6 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         const isClassAllow = AllowLeftWeaponMapper[this.selectedCharacter.className] || false;
         this.showLeftWeapon = isClassAllow && !this.hiddenMap.shield;
         if (this.model.leftWeapon && !this.showLeftWeapon) {
-          console.log('remove left');
           this.model.leftWeapon = undefined;
           this.onSelectItem(ItemTypeEnum.leftWeapon);
           this.onClearItem(ItemTypeEnum.leftWeapon);

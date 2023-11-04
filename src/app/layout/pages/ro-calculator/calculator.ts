@@ -2048,7 +2048,7 @@ export class Calculator {
 
     if (isValidSkill) {
       this._class.activeSkills;
-      const { formula, cri, canCri, element, isMatk, isHit100, isIgnoreDef = false, totalHit = 1 } = skillData;
+      const { formula, part2, cri, canCri, element, isMatk, isHit100, isIgnoreDef = false, totalHit = 1 } = skillData;
       const baseSkillDamage =
         formula({
           model: this.model,
@@ -2083,7 +2083,45 @@ export class Calculator {
         maxDamageHE = calculated.maxDamage;
       }
 
-      const { minDamage, maxDamage } = isMatk ? this.calcMatkSkillDamage(skillData) : this.calcSkillDamage(skillData);
+      let { minDamage, maxDamage } = isMatk ? this.calcMatkSkillDamage(skillData) : this.calcSkillDamage(skillData);
+
+      let skillPart2Label = '';
+      let skillMinDamage2 = 0;
+      let skillMaxDamage2 = 0;
+      if (typeof part2?.formula === 'function' && isMatk) {
+        const { formula: formula2, isIncludeMain, element, label } = part2;
+        const bk = this.propertySkill;
+        const bkBaseSkill = this.baseSkillDamage;
+
+        const baseSkillDamage2 = formula2({
+          model: this.model,
+          monster: this.monsterData,
+          skillLevel: Number(skillLevel),
+          status: this.status,
+          totalBonus: this.totalEquipStatus,
+          weapon: this.weaponData,
+          equipmentBonus: this.equipStatus,
+          extra: {
+            shieldWeight: this.getItem(this.model.shield)?.weight || 0,
+            shieldRefine: this.mapRefine.get(ItemTypeEnum.shield) || 0,
+          },
+        });
+        this.baseSkillDamage = baseSkillDamage2;
+        this.propertySkill = element || bk;
+        const { minDamage: _minDamage, maxDamage: _maxDamage } = this.calcMatkSkillDamage({ ...skillData, element });
+
+        if (isIncludeMain) {
+          minDamage += _minDamage;
+          maxDamage += _maxDamage;
+        } else {
+          skillPart2Label = label;
+          skillMinDamage2 = _minDamage;
+          skillMaxDamage2 = _maxDamage;
+        }
+
+        this.propertySkill = bk;
+        this.baseSkillDamage = bkBaseSkill;
+      }
       this.calcSkillFrequency(skillData);
 
       const { totalHitPerSec: skillHitPersecs } = this.skillFrequency;
@@ -2113,6 +2151,9 @@ export class Calculator {
         skillDps: this.skillDps,
         skillHitKill: hitKill,
         skillCriRate: this.criRateSkillToMonster,
+        skillPart2Label,
+        skillMinDamage2,
+        skillMaxDamage2,
       };
     }
 

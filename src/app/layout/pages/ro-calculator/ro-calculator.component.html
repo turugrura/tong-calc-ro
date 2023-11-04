@@ -3390,6 +3390,19 @@
                       [max2]="totalSummary2?.dmg?.skillMaxDamage"
                     ></app-calc-value>
                   </div>
+                  <div class="col-12" *ngIf="totalSummary?.dmg?.skillPart2Label && totalSummary?.dmg?.skillMaxDamage2">
+                    <app-calc-value
+                      [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+                      [label]="totalSummary?.dmg?.skillPart2Label"
+                      styleClass="summary_damage"
+                      styleClass2="summary_compare"
+                      [totalHit]="totalSummary?.calcSkill?.totalHits"
+                      [min]="totalSummary?.dmg?.skillMinDamage2"
+                      [max]="totalSummary?.dmg?.skillMaxDamage2"
+                      [min2]="totalSummary2?.dmg?.skillMinDamage2"
+                      [max2]="totalSummary2?.dmg?.skillMaxDamage2"
+                    ></app-calc-value>
+                  </div>
                   <div class="col-12" [hidden]="totalSummary?.dmg?.skillMaxDamageHE <= 0">
                     <app-calc-value
                       [enableCompare]="isEnableCompare && totalSummary2?.dmg"

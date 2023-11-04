@@ -2818,6 +2818,33 @@
       ]
     }
   },
+  "4257": {
+    "id": 4257,
+    "aegisName": "Wild_Rose_Card",
+    "name": "Wild Rose Card",
+    "unidName": "Wild Rose Card",
+    "resName": "이름없는카드",
+    "description": "AGI + 1\nPerfect Dodge +5 ถ้าถูกใช้โดย Thief Class\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Foot Gear^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 64,
+    "cardPrefix": "Wing",
+    "script": {
+      "agi": [
+        "1"
+      ],
+      "perfectDodge": [
+        "USED[Thief]5"
+      ]
+    }
+  },
   "4263": {
     "id": 4263,
     "aegisName": "Incant_Samurai_Card",
@@ -3380,6 +3407,31 @@
     "script": {
       "matk": [
         "25"
+      ]
+    }
+  },
+  "4561": {
+    "id": 4561,
+    "aegisName": "Professor_Card",
+    "name": "Professor Celia Card",
+    "unidName": "Professor Celia Card",
+    "resName": "이름없는카드",
+    "description": "เมื่อได้รับการโจมตีทางเวทย์ มีโอกาสสูงที่จะร่าย Land Protector Lv.5\nMATK + 7%, เมื่อ DEX 110 ขึ้นไป เพิ่ม MATK + 7%\nประเภท : ^777777Card^000000\nใส่กับ : ^777777Armor^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 16,
+    "cardPrefix": "of Magic Protection",
+    "script": {
+      "matkPercent": [
+        "7",
+        "SUM[dex==110]7"
       ]
     }
   },
@@ -7778,6 +7830,57 @@
       ]
     }
   },
+  "13127": {
+    "id": 13127,
+    "aegisName": "Scarlet_Revolver",
+    "name": "Revolver of Crimson [2]",
+    "unidName": "Revolver",
+    "resName": "진홍의리볼버",
+    "description": "ปืนที่เปล่งแสงสีแดงบนกระบอกปืน\nเพิ่ม ATK เท่ากับ (ระดับ Refine*ระดับ Refine) (สามารถ Refine ได้ถึง 15)\nตัวละครเลเวล 70 ขึ้นไป : ทุกครั้งที่ BaseLv เพิ่มขึ้น 10 เลเวล จะเพิ่ม ATK ทีละ +5 \nประเภท : ^777777Revolver^000000 โจมตี : ^777777100^000000\nน้ำหนัก : ^777777100^000000\nเลเวลอาวุธ : ^7777773^000000\nเลเวลที่ต้องการ : ^77777770^000000\nอาชีพที่ใส่ได้ : ^777777 Gunslinger^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 273,
+    "itemLevel": 3,
+    "attack": 100,
+    "defense": null,
+    "weight": 100,
+    "requiredLevel": 70,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Gunslinger"
+    ],
+    "script": {
+      "atk": [
+        "1===1",
+        "2===3",
+        "3===5",
+        "4===7",
+        "5===9",
+        "6===11",
+        "7===13",
+        "8===15",
+        "9===17",
+        "10===19",
+        "11===21",
+        "12===23",
+        "13===25",
+        "14===27",
+        "15===29",
+        "level:80===5",
+        "level:90===5",
+        "level:100===5",
+        "level:110===5",
+        "level:120===5",
+        "level:130===5",
+        "level:140===5",
+        "level:150===5",
+        "level:160===5",
+        "level:170===5",
+        "level:180===5"
+      ]
+    }
+  },
   "13138": {
     "id": 13138,
     "aegisName": "Dark_Rose",
@@ -9561,6 +9664,37 @@
       ]
     }
   },
+  "15932": {
+    "id": 15932,
+    "aegisName": null,
+    "name": "Vassalage Necklace",
+    "unidName": "Ribbon",
+    "resName": "Vassalage_Necklace",
+    "description": "สร้อยที่มาพร้อมกับข้อสัญญาผูกมัดอันแน่นแฟ้น\n\nทุก ๆ Base Lv. 35 เพิ่ม Damage ทางกายภาพระยะใกล้ 1%, HIT +2\n\nเมื่อ Base Lv. 175 ขึ้นไป\nความสามารถทั้งหมดที่ได้รับเพิ่มขึ้น 2 เท่า\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^7777770^000000\nตำแหน่ง : ^777777Lower^000000 น้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^77777730^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 30,
+    "location": "Lower",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "melee": [
+        "level:35---1",
+        "level:175===5"
+      ],
+      "hit": [
+        "level:35---2",
+        "level:175===10"
+      ]
+    }
+  },
   "15943": {
     "id": 15943,
     "aegisName": null,
@@ -11099,7 +11233,7 @@
       ],
       "matk": [
         "40",
-        "1---1"
+        "1---7"
       ]
     }
   },
@@ -22568,6 +22702,100 @@
       ]
     }
   },
+  "24578": {
+    "id": 24578,
+    "aegisName": "S_Banish_Cannon_Armor",
+    "name": "Vanishing Cannon Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우",
+    "description": "ชุดเกราะที่เพิ่มพลังป้องกันเมื่อสวมใส่เพิ่มบนเกราะอีกที สามารถใส่แบบชิ้นเดียวได้ แต่ความสามารถในการป้องกันจะลดลงไปอีก\nเพิ่ม Damage สกิล Banishing Point 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage สกิล Cannon Spear 2%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Armor^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Royal Guard^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Armor",
+    "compositionPos": null,
+    "usableClass": [
+      "Royal Guard"
+    ],
+    "script": {
+      "Banishing Point": [
+        "5"
+      ],
+      "Cannon Spear": [
+        "2---2"
+      ]
+    }
+  },
+  "24579": {
+    "id": 24579,
+    "aegisName": "S_Banish_Cannon_Shield",
+    "name": "Vanishing Cannon Shadow Shield",
+    "unidName": "Shadow Shield",
+    "resName": "쉴드쉐도우",
+    "description": "โล่เล็กที่สามารถสวมใส่ที่แขนได้ สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์การป้องกันของมันจะลดน้อยลง\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 3%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาดขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาดขึ้นอีก 4%\nเมื่อสวมใส่ Vanishing Cannon Shadow Armor/Shield/Shoes ร่วมกัน,\nเพิ่ม Damage สกิล Banishing Point และสกิล Cannon Spear % เท่ากับครึ่งหนึ่งของค่าอัพเกรดรวมกัน\nเมื่อสวมใส่ร่วมกับ Royal Guard Shadow Weapon,\nเพิกเฉยต่อพลังป้องกันทางกายภาพของทุกเผ่ายกเว้น Player 40% และเพิกเฉยต่อพลังป้องกันทางกายภาพเพิ่มอีกตามค่าอัพเกรดรวมกันของ Vanishing Cannon Shadow Shield และ Royal Guard Shadow Weapon\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shield^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Royal Guard^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 527,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Shield",
+    "compositionPos": null,
+    "usableClass": [
+      "Royal Guard"
+    ],
+    "script": {
+      "p_size_all": [
+        "3",
+        "7===3",
+        "9===4"
+      ],
+      "Banishing Point": [
+        "EQUIP[Vanishing Cannon Shadow Armor&&Vanishing Cannon Shadow Shoes]REFINE[shadowShield,shadowArmor,shadowBoot==2]---1"
+      ],
+      "Cannon Spear": [
+        "EQUIP[Vanishing Cannon Shadow Armor&&Vanishing Cannon Shadow Shoes]REFINE[shadowShield,shadowArmor,shadowBoot==2]---1"
+      ],
+      "p_pene_race_all": [
+        "EQUIP[Royal Guard Shadow Weapon]===40",
+        "EQUIP[Royal Guard Shadow Weapon]REFINE[shadowShield,shadowWeapon==1]---1"
+      ]
+    }
+  },
+  "24580": {
+    "id": 24580,
+    "aegisName": "S_Banish_Cannon_Shoes",
+    "name": "Vanishing Cannon Shadow Shoes",
+    "unidName": "Shadow Shoes",
+    "resName": "슈즈쉐도우",
+    "description": "รองเท้าที่สวมใส่เพิ่มเติม สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์ของมันจะลดน้อยลง \nลด Cooldown สกิล Cannon Spear 0.2 วินาที\nทุก ๆ การอัพเกรด 3 ขั้น ลด Cooldown สกิล Cannon Spear ลงอีก 0.1 วินาที\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shoes ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Royal Guard^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 528,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Shoes",
+    "compositionPos": null,
+    "usableClass": [
+      "Royal Guard"
+    ],
+    "script": {
+      "cd__Cannon Spear": [
+        "0.2",
+        "3---0.1"
+      ]
+    }
+  },
   "24581": {
     "id": 24581,
     "aegisName": "S_Genesis_Weapon",
@@ -26141,6 +26369,34 @@
       ]
     }
   },
+  "27196": {
+    "id": 27196,
+    "aegisName": "S_Nihil_Card",
+    "name": "Nihil M. Heine Card",
+    "unidName": "Nihil M. Heine Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูขนาดเล็ก 15%\nเมื่อใช้ร่วมกับ Spica Nerious Card,\nเพิ่ม Damage ทางเวทมนตร์ต่อศัตรูขนาดเล็กและศัตรูประเภท Brute ขึ้นอีก 5%\n^ffffff_^000000 \nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Heine",
+    "script": {
+      "m_size_s": [
+        "15",
+        "EQUIP[Spica Nerious Card]5"
+      ],
+      "m_race_brute": [
+        "EQUIP[Spica Nerious Card]5"
+      ]
+    }
+  },
   "27197": {
     "id": 27197,
     "aegisName": "S_Agnes_Card",
@@ -26189,6 +26445,30 @@
     "cardPrefix": "Wigner",
     "script": {
       "p_race_brute": [
+        "15"
+      ]
+    }
+  },
+  "27199": {
+    "id": 27199,
+    "aegisName": "S_Spica_Card",
+    "name": "Spica Nerious Card",
+    "unidName": "Spica Nerious Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูประเภท Brute 15%\n^ffffff_^000000\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Nerious",
+    "script": {
+      "m_race_brute": [
         "15"
       ]
     }
@@ -26255,6 +26535,33 @@
       ],
       "flee": [
         "15"
+      ]
+    }
+  },
+  "27256": {
+    "id": 27256,
+    "aegisName": "Blut_Hase_Card",
+    "name": "Blut Hase Card",
+    "unidName": "Blut Hase Card",
+    "resName": "이름없는카드",
+    "description": "ATK + 3%\nเพิ่มดาเมจทางกายภาพระยะไกล 5%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Shoes^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 64,
+    "cardPrefix": "Hase",
+    "script": {
+      "atkPercent": [
+        "3"
+      ],
+      "range": [
+        "5"
       ]
     }
   },
@@ -28609,6 +28916,43 @@
       ]
     }
   },
+  "28392": {
+    "id": 28392,
+    "aegisName": "S_Archer_earring",
+    "name": "Archer Shadow Earring",
+    "unidName": "Shadow Earring",
+    "resName": "이어링쉐도우",
+    "description": "ต่างหูมงคลที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา  \nเมื่อใช้สกิล Double Strafe เพิ่ม ATK และ HIT 30 เป็นเวลา 5 วินาทีด้วยอัตรา 20% ทุกๆ การอัพเกรด 1 ขั้น เพิ่ม ATK และ HIT เพิ่มเติม 10  \nเมื่อสวมใส่ Archer Shadow Earring, Archer Shadow Pendant ATK +1%, MAXHP +1%.\nเมื่อค่าอัพเกรดรวมกันมีค่ามากกว่า 10 ขึ้นไป , เพิ่ม ATK +2%, MAXHP +2% เพิ่มเติม  \nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Earring^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 529,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Accessory",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atkPercent": [
+        "EQUIP[Archer Shadow Pendant]===1",
+        "EQUIP[Archer Shadow Pendant]REFINE[shadowEarring,shadowPendant==10]===2"
+      ],
+      "hpPercent": [
+        "EQUIP[Archer Shadow Pendant]===1",
+        "EQUIP[Archer Shadow Pendant]REFINE[shadowEarring,shadowPendant==10]===2"
+      ],
+      "atk": [
+        "1---10"
+      ],
+      "hit": [
+        "1---10"
+      ]
+    }
+  },
   "28424": {
     "id": 28424,
     "aegisName": "PlumpyWormCharm",
@@ -29587,6 +29931,41 @@
         "5",
         "7===2",
         "9===3"
+      ]
+    }
+  },
+  "28922": {
+    "id": 28922,
+    "aegisName": "Herald_Of_GOD_IL",
+    "name": "Illusion Sacred Mission [1]",
+    "unidName": "Shield",
+    "resName": "Herald_Of_GOD_IL",
+    "description": "ว่ากันว่าเป็นโล่ของพระเจ้าที่ประทานให้แก่ผู้ส่งสารของท่าน\nINT +2, VIT +3\nMDEF +3\nไม่สามารถทำลายได้\nทุก ๆ การอัพเกรด 1 ขั้น, เพิ่ม Damage ของสกิล [Earth Drive] 7%\nประเภท : ^777777Shield^000000 พลังป้องกัน : ^777777190^000000\nน้ำหนัก : ^777777160^000000\nเลเวลที่ต้องการ : ^777777120^000000\nอาชีพที่ใส่ได้ : ^777777Royal Guard^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 514,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 190,
+    "weight": 160,
+    "requiredLevel": 120,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Royal Guard"
+    ],
+    "script": {
+      "int": [
+        "2"
+      ],
+      "vit": [
+        "3"
+      ],
+      "mdef": [
+        "3"
+      ],
+      "Earth Drive": [
+        "1---7"
       ]
     }
   },
@@ -39607,6 +39986,12 @@
       ],
       "m_class_boss": [
         "EQUIP[Dark Lord Card||Sealed Dark Lord Card]30"
+      ],
+      "chance__int": [
+        "EQUIP[Dark Lord Card||Sealed Dark Lord Card]30"
+      ],
+      "chance__matkPercent": [
+        "EQUIP[Dark Lord Card||Sealed Dark Lord Card]20"
       ]
     }
   },
@@ -40344,6 +40729,53 @@
       ]
     }
   },
+  "480256": {
+    "id": 480256,
+    "aegisName": null,
+    "name": "DID Cape [1]",
+    "unidName": "DID Cape",
+    "resName": "마법의스톨",
+    "description": "แว่วหนึ่งเมื่อสวมใส่มันก็มีเสียงกระซิบนี้เข้ามาในหัว “จงน้อมรับความคลั่งซะ”\n\nATK +30\nทุก ๆ การอัพเกรด 3 ขั้น HIT +8\nทุก ๆ การอัพเกรด 4 ขั้น เพิ่ม Damage ทางกายภาพระยะใกล้ 3%\n\nเมื่ออัพเกรดตั้งแต่ 9 ขึ้นไป เมื่อสวมใส่ด้วยอาชีพ Guillotine Cross,\nลด Delay หลังใช้สกิล 5%\nASPD +20%\n\nเมื่ออัพเกรดตั้งแต่ 9 ขึ้นไป เมื่อสวมใส่ด้วยอาชีพ Royal Guard,\nHIT +20\nหลังจากใช้สกิล Earth Drive,\nเพิ่ม Damage สกิล Shield Press 30% เป็นเวลา 60 วินาที\n\nเมื่ออัพเกรดตั้งแต่ 11 ขึ้นไป,\nHIT +30, \nAll Status +5\nเพิ่ม Damage ทางกายภาพระยะใกล้ 5%\nประเภท : ^777777Garment^000000  พลังป้องกัน : ^7777778^000000\nน้ำหนัก : ^77777720^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 515,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 8,
+    "weight": 20,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atk": [
+        "30"
+      ],
+      "hit": [
+        "3---8",
+        "REFINE[9]USED[Royal Guard]===20",
+        "11===30"
+      ],
+      "melee": [
+        "4---3",
+        "11===5"
+      ],
+      "acd": [
+        "REFINE[9]USED[Guillotine Cross]===5"
+      ],
+      "aspdPercent": [
+        "REFINE[9]USED[Guillotine Cross]===20"
+      ],
+      "Shield Press": [
+        "REFINE[9]USED[Royal Guard]ACTIVE_SKILL[Earth Drive]===30"
+      ],
+      "allStatus": [
+        "11===5"
+      ]
+    }
+  },
   "480307": {
     "id": 480307,
     "aegisName": null,
@@ -40793,6 +41225,42 @@
       ]
     }
   },
+  "490089": {
+    "id": 490089,
+    "aegisName": "Alice_Hug_Pillow_TW",
+    "name": "Alice Body Pillow [1]",
+    "unidName": "Ribbon",
+    "resName": "껴안는엘리스베개",
+    "description": "หมอนขนาดเกือบเท่ากับตัวจริงของ Alice มีความน่ารัก และเหมาะแก่การหนุนนอน\n\nMDEF +10,\nAll State +2,\nลด Damage ทางกายภาพ/เวทมนตร์ที่ได้รับจากศัตรูขนาดกลาง 5%,\nลด Damage ที่ได้รับจาก Player, Demi-Human 3%\n\nเมื่อใช้ร่วมกับ Alice Egg,\nเพิ่ม Damage ที่ได้รับจาก Player, Demi-Human 2%\n\nเมื่อใช้ร่วมกับ Wild Rose Card,\nAll State +8,\nMaxHP +5%,\nPerfect Dodge +8 เพิ่มเติม\nประเภท : ^777777Accessory (Left)^000000 พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^77777720^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 511,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 20,
+    "requiredLevel": 1,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "mdef": [
+        "10"
+      ],
+      "allStatus": [
+        "2",
+        "EQUIP[Wild Rose Card]8"
+      ],
+      "hpPercent": [
+        "EQUIP[Wild Rose Card]5"
+      ],
+      "perfectDodge": [
+        "EQUIP[Wild Rose Card]8"
+      ]
+    }
+  },
   "490092": {
     "id": 490092,
     "aegisName": "Egirnion_Ring",
@@ -41153,6 +41621,37 @@
       ],
       "Spore Explosion": [
         "EQUIP[Old Midas Whisper]40"
+      ]
+    }
+  },
+  "490246": {
+    "id": 490246,
+    "aegisName": null,
+    "name": "Vassalage Ring [1]",
+    "unidName": "Vassalage Ring",
+    "resName": "심연왕의반지",
+    "description": "แหวนที่มาพร้อมกับข้อสัญญาผูกมัดอันแน่นแฟ้น\n\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกประเภท 5%\nทุก ๆ Base Lv. 35, Critical Damage +1%\nเมื่อ Base Lv. 175 ขึ้นไป\nความสามารถทั้งหมดที่ได้รับเพิ่มขึ้น 2 เท่า\n\nเมื่อสวมใส่ร่วมกับ Vassalage Necklace\nสามารถใช้สกิล Double Attack Lv. 3 (เมื่อเลเวลที่เรียนรู้สูงกว่าจะใช้งานได้ขั้นที่เรียนรู้)\nประเภท : ^777777Accessory(Left)^000000  พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^77777730^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 511,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 30,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "p_class_all": [
+        "5",
+        "level:175===5"
+      ],
+      "criDmg": [
+        "level:35---1",
+        "level:175===5"
       ]
     }
   },

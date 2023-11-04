@@ -1,7 +1,13 @@
 import { ElementType } from '../constants/element-type.const';
 import { InfoForClass } from '../models/info-for-class.model';
 import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
+import {
+  ActiveSkillModel,
+  AtkSkillFormulaInput,
+  AtkSkillModel,
+  CharacterBase,
+  PassiveSkillModel,
+} from './_character-base.abstract';
 import { DemonBane, Heal } from '../constants/share-passive-skills';
 import { RaceType } from '../constants/race-type.const';
 
@@ -102,10 +108,10 @@ export class ArchBishop extends CharacterBase {
       isMatk: true,
       element: ElementType.Holy,
       value: 'Holy Light==1',
+      levelList: [],
       formula: (): number => {
         return 125;
       },
-      levelList: [{ label: 'Lv 1', value: 'Holy Light==1' }],
     },
     {
       label: 'Magnus Exorcismus Lv10',
@@ -117,6 +123,7 @@ export class ArchBishop extends CharacterBase {
       isMatk: true,
       element: ElementType.Holy,
       value: 'Magnus Exorcismus==10',
+      totalHit: 10,
       levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
         const { race, element } = input.monster;
@@ -139,13 +146,13 @@ export class ArchBishop extends CharacterBase {
       isMatk: true,
       element: ElementType.Holy,
       value: 'Judex==1',
+      levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
 
         return (300 + skillLevel * 40) * (baseLevel / 100);
       },
-      levelList: [{ label: 'Lv 10', value: 'Judex==10' }],
     },
     {
       label: 'Adoramus Lv10',
@@ -157,13 +164,43 @@ export class ArchBishop extends CharacterBase {
       isMatk: true,
       element: ElementType.Holy,
       value: 'Adoramus==10',
+      levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
 
         return (330 + skillLevel * 70) * (baseLevel / 100);
       },
-      levelList: [{ label: 'Lv 10', value: 'Adoramus==10' }],
+    },
+    {
+      label: 'Hell Inferno Lv5',
+      name: 'Hell Inferno',
+      fct: 1,
+      vct: 3,
+      acd: 0.5,
+      cd: 3,
+      isMatk: true,
+      element: ElementType.Fire,
+      value: 'Hell Inferno==5',
+      levelList: [],
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
+
+        return skillLevel * 400 * (baseLevel / 100);
+      },
+      part2: {
+        label: 'Shadow Dmg',
+        isIncludeMain: false,
+        element: ElementType.Dark,
+        hit: 3,
+        formula: (input: AtkSkillFormulaInput): number => {
+          const { model, skillLevel } = input;
+          const baseLevel = model.level;
+
+          return skillLevel * 600 * (baseLevel / 100);
+        },
+      },
     },
   ];
   protected readonly _activeSkillList: ActiveSkillModel[] = [
@@ -194,7 +231,12 @@ export class ArchBishop extends CharacterBase {
       label: 'Basilica Lv5',
       name: 'Basilica',
       dropdown: [
-        { label: 'Yes', isUse: true, value: 5, bonus: { m_my_element_holy: 15, p_element_dark: 25, p_element_undead: 25 } },
+        {
+          label: 'Yes',
+          isUse: true,
+          value: 5,
+          bonus: { m_my_element_holy: 15, p_element_dark: 25, p_element_undead: 25 },
+        },
         { label: 'No', isUse: false, value: 0 },
       ],
     },
@@ -276,7 +318,9 @@ export class ArchBishop extends CharacterBase {
     const { weapon, monster, model } = info;
     const weaponSubType = weapon?.data?.subTypeName;
     const bonusBaseLv = 0.05 * (model['level'] + 1);
-    const bonuses = this._passiveSkillList.map((s, idx) => s.dropdown.find((d) => d.value === this.passiveSkillIds[idx])?.bonus).filter(Boolean);
+    const bonuses = this._passiveSkillList
+      .map((s, idx) => s.dropdown.find((d) => d.value === this.passiveSkillIds[idx])?.bonus)
+      .filter(Boolean);
     const { race, element } = monster;
 
     let totalAtk = 0;

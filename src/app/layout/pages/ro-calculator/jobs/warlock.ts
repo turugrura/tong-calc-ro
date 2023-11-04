@@ -1,6 +1,12 @@
 import { ElementType } from '../constants/element-type.const';
 import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
+import {
+  ActiveSkillModel,
+  AtkSkillFormulaInput,
+  AtkSkillModel,
+  CharacterBase,
+  PassiveSkillModel,
+} from './_character-base.abstract';
 import { Wizard } from './wizard';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
@@ -150,6 +156,36 @@ export class Warlock extends CharacterBase {
         const baseLevel = model.level;
 
         return (status.totalInt + 1000 + skillLevel * 200) * (baseLevel / 100);
+      },
+    },
+    {
+      label: 'Hell Inferno Lv5',
+      name: 'Hell Inferno',
+      fct: 1,
+      vct: 3,
+      acd: 0.5,
+      cd: 3,
+      isMatk: true,
+      element: ElementType.Fire,
+      value: 'Hell Inferno==5',
+      levelList: [],
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
+
+        return skillLevel * 400 * (baseLevel / 100);
+      },
+      part2: {
+        label: 'Shadow Dmg',
+        isIncludeMain: false,
+        element: ElementType.Dark,
+        hit: 3,
+        formula: (input: AtkSkillFormulaInput): number => {
+          const { model, skillLevel } = input;
+          const baseLevel = model.level;
+
+          return skillLevel * 600 * (baseLevel / 100);
+        },
       },
     },
   ];
