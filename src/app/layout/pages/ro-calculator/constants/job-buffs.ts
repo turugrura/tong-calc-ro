@@ -105,4 +105,13 @@ export const JobBuffs: ActiveSkillModel[] = [
       { label: 'Lv 2', isUse: true, value: 2, bonus: { atk: 100, matk: 100, def: -40, mdef: -40 } },
     ],
   },
+  {
+    inputType: 'selectButton',
+    label: 'Comet Amp',
+    name: 'Comet Amp',
+    dropdown: [
+      { label: 'Yes', isUse: true, value: 1, bonus: { comet: 50 } },
+      { label: 'No', isUse: false, value: 0 },
+    ],
+  },
 ];
