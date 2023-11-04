@@ -51,6 +51,9 @@ export enum ClassName {
   Kagerou = 'Kagerou',
 }
 
+/**
+ * Display only
+ */
 export const ClassID = {
   11: 'Royal Guard',
   12: 'Rune Knight',
@@ -67,4 +70,6 @@ export const ClassID = {
   3: 'Soul Reaper',
   1: ClassName.Rebellion,
   31: ClassName.Doram,
+  17: ClassName.Oboro,
+  18: ClassName.Kagerou,
 } as const;

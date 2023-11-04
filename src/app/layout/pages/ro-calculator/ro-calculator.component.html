@@ -3633,7 +3633,7 @@
             </p-listbox>
           </div>
           <div class="col-8">
-            <div class="grid grid-nogutter ml-2">
+            <div class="grid grid-nogutter ml-2" style="max-height: 500px; overflow: auto">
               <div class="col-12 json_display">
                 ItemID: {{ itemId }}
                 <pre [innerHTML]="itemBonus | prettyjson : [true, 3]"></pre>

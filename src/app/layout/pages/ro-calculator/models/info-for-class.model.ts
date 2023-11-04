@@ -3,6 +3,7 @@ import { PreparedMonsterModel } from './prepared-monster.model';
 import { Weapon } from '../weapon';
 import { MainModel } from './main.model';
 import { EquipmentSummaryModel } from './equipment-summary.model';
+import { ItemTypeEnum } from '../constants/item-type.enum';
 
 export interface InfoForClass {
   weapon: Weapon;
@@ -10,4 +11,5 @@ export interface InfoForClass {
   model: Partial<MainModel>;
   status: StatusSummary;
   totalBonus: EquipmentSummaryModel;
+  equipmentBonus: Partial<Record<ItemTypeEnum, EquipmentSummaryModel>>;
 }

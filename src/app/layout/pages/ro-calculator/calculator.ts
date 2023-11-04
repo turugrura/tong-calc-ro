@@ -12,9 +12,8 @@ import { SizePenaltyMapper } from './constants/size-penalty-mapper';
 import { StatusSummary } from './models/status-summary.model';
 import { EquipmentSummaryModel } from './models/equipment-summary.model';
 import { MainModel } from './models/main.model';
-import { AllowAmmoMapper } from './constants/allow-ammo-mapper';
-import { ClassName } from './jobs/_class-name';
-import { WeaponAmmoMapper } from './constants/weapon-ammo-mapper';
+import { AllowAmmoClassMapper, AllowAmmoMapper } from './constants/allow-ammo-mapper';
+import { ClassAmmoMapper, WeaponAmmoMapper } from './constants/weapon-ammo-mapper';
 import { InfoForClass } from './models/info-for-class.model';
 import { HpSpCalculator } from './hp-sp-calculator';
 import { HpSpTable } from './models/hp-sp-table.model';
@@ -542,6 +541,7 @@ export class Calculator {
       totalBonus: this.totalEquipStatus,
       weapon: this.weaponData,
       status: this.status,
+      equipmentBonus: this.equipStatus,
     };
   }
 
@@ -554,7 +554,9 @@ export class Calculator {
   }
 
   isAllowAmmo() {
-    return AllowAmmoMapper[this.weaponData.data?.typeName] || this._class.className === ClassName.Mechanic;
+    const cName = this._class.className;
+
+    return AllowAmmoMapper[this.weaponData.data?.typeName] || AllowAmmoClassMapper[cName];
   }
 
   isAllowShield() {
@@ -562,7 +564,9 @@ export class Calculator {
   }
 
   getAmmoSubTypeId() {
-    return WeaponAmmoMapper[this.weaponData.data?.typeName];
+    const cName = this._class.className;
+
+    return WeaponAmmoMapper[this.weaponData.data?.typeName] || ClassAmmoMapper[cName];
   }
 
   private toPercent(n: number) {
@@ -755,7 +759,7 @@ export class Calculator {
       }
 
       if (mainItemType === ItemTypeEnum.leftWeapon && itemId) {
-        this.leftWeaponData.set(this.items[itemId], 0);
+        this.leftWeaponData.set(this.items[itemId], refine);
       }
 
       for (const itemRelation of itemRelations) {
@@ -845,9 +849,10 @@ export class Calculator {
       return this.floor(isEDP && edp ? total * 1.25 : total);
     };
 
-    const totalMin = formula(weaponSizePenalty - variant, 0);
-    const totalMax = formula(weaponSizePenalty + variant, 0);
-    const totalMaxOver = formula(weaponSizePenalty + variant, overUpgradeBonus);
+    const weaPercent = (this.totalEquipStatus['weaponAtkPercent'] || 100) / 100;
+    const totalMin = formula(weaponSizePenalty - variant, 0) * weaPercent;
+    const totalMax = formula(weaponSizePenalty + variant, 0) * weaPercent;
+    const totalMaxOver = formula(weaponSizePenalty + variant, overUpgradeBonus) * weaPercent;
 
     this.totalWeaponAtkMin = this.isMaximizeWeapon ? totalMax : totalMin;
     this.totalWeaponAtkMax = totalMax;
@@ -1051,6 +1056,24 @@ export class Calculator {
     return this;
   }
 
+  private calcRawTotalAtk() {
+    // this.calcWeaponAtk();
+    // this.calcWeaponMatk();
+    const weaMinAtk = this.totalWeaponAtkMin * 1.5;
+    const weaMaxAtk = this.totalWeaponAtkMaxOver * 1.5;
+
+    const aMin = this.calcAtkGroupA(weaMinAtk);
+    const aMax = this.calcAtkGroupA(weaMaxAtk);
+
+    const bMin = this.calcAtkGroupB(weaMinAtk);
+    const bMax = this.calcAtkGroupB(weaMaxAtk);
+
+    const totalMin = this.calcTotalAtk(aMin, bMin);
+    const totalMax = this.calcTotalAtk(aMax, bMax);
+
+    return { totalMin, totalMax };
+  }
+
   /**
    * Ex. Power Thrust
    * @returns number
@@ -1166,19 +1189,20 @@ export class Calculator {
     const softDef = finalSoftDef;
 
     const { range, melee, criDmg } = this.totalEquipStatus;
-    const rangedMultiplier = isMelee ? melee : range;
+    const ranged = isMelee ? melee : range;
+    const rangedMultiplier = this.toPercent(ranged + 100);
     const baseSkillMultiplier = this.toPercent(this.baseSkillDamage);
     const equipSkillMultiplier = this.toPercent(100 + (this.totalEquipStatus[skillName] || 0));
     const criMultiplier = canCri ? this.toPercent((criDmg || 0) + 100) : 1;
-    const dmgMultiplier = 0;
+    const dmgMultiplier = this.toPercent(0 + 100);
 
     const skillFormula = (totalAtk: number) => {
       if (canCri) {
         const criApplied = this.floor(totalAtk * criMultiplier) - softDef;
         const baseSkillApplied = this.floor(criApplied * baseSkillMultiplier);
         const equipSkillApplied = this.floor(baseSkillApplied * equipSkillMultiplier);
-        const dmgMultiApplied = this.floor(equipSkillApplied * this.toPercent(dmgMultiplier + 100));
-        const rangedApplied = this.floor(dmgMultiApplied * this.toPercent(rangedMultiplier + 100));
+        const dmgMultiApplied = this.floor(equipSkillApplied * dmgMultiplier);
+        const rangedApplied = this.floor(dmgMultiApplied * rangedMultiplier);
         const hDefApplied = this.floor(rangedApplied * hardDef);
         const baseCriApplied = canCri ? this.floor(hDefApplied * this.BASE_CRI_DMG) : hDefApplied;
         const finalApplied = this.applyFinalMultiplier(baseCriApplied, 'phy');
@@ -1186,8 +1210,17 @@ export class Calculator {
         return this.toPreventNegativeDmg(finalApplied);
       }
 
-      const rangedApplied = this.floor(totalAtk * this.toPercent(rangedMultiplier + 100));
-      const dmgMultiApplied = this.floor(rangedApplied * this.toPercent(dmgMultiplier + 100));
+      // if (skillName === 'Kunai Splash') {
+      //   let total = this.floor(totalAtk * baseSkillMultiplier);
+      //   total = this.floor(total * hardDef - softDef);
+      //   total = this.floor(total * rangedMultiplier);
+      //   total = this.floor(total * equipSkillMultiplier);
+
+      //   return this.toPreventNegativeDmg(total);
+      // }
+
+      const rangedApplied = this.floor(totalAtk * rangedMultiplier);
+      const dmgMultiApplied = this.floor(rangedApplied * dmgMultiplier);
       const baseSkillApplied = this.floor(dmgMultiApplied * baseSkillMultiplier);
       const equipSkillApplied = this.floor(baseSkillApplied * equipSkillMultiplier);
       const hDefApplied = this.floor(equipSkillApplied * hardDef) - softDef;
@@ -1904,6 +1937,7 @@ export class Calculator {
       status: this.status,
       totalBonus: this.totalEquipStatus,
       weapon: this.weaponData,
+      equipmentBonus: this.equipStatus,
     });
 
     return this;
@@ -2023,6 +2057,7 @@ export class Calculator {
           status: this.status,
           totalBonus: this.totalEquipStatus,
           weapon: this.weaponData,
+          equipmentBonus: this.equipStatus,
           extra: {
             shieldWeight: this.getItem(this.model.shield)?.weight || 0,
             shieldRefine: this.mapRefine.get(ItemTypeEnum.shield) || 0,
@@ -2196,6 +2231,9 @@ export class Calculator {
   }
 
   getTotalSummary() {
+    const { baseWeaponAtk = 0, refineBonus = 0 } = this.leftWeaponData?.data || {};
+    const leftWeaponAtk = baseWeaponAtk + refineBonus;
+
     return {
       ...this.getObjSummary(this.totalEquipStatus),
       monster: { ...this.monsterData },
@@ -2234,7 +2272,7 @@ export class Calculator {
         totalPhysicalPene: this.totalPhysicalPene,
         totalMagicalPene: this.totalMagicalPene,
         totalPene: this.isMagicalSkill ? this.totalMagicalPene : this.totalPhysicalPene,
-        totalEquipAtk: this.totalEquipAtk,
+        totalEquipAtk: this.totalEquipAtk + leftWeaponAtk,
         ammuAtk: this.equipStatus.ammo?.atk || 0,
         totalMasteryAtk: this.totalMasteryAtk,
         totalBuffAtk: this.totalBuffAtk,

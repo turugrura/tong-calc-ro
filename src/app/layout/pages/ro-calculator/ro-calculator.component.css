@@ -225,7 +225,10 @@
 
 :host ::ng-deep .item_label_left_weapon .p-dropdown-label,
 :host ::ng-deep .item_label_left_weapon .p-cascadeselect-label,
-:host ::ng-deep .item_label_left_weapon {
+:host ::ng-deep .item_label_left_weapon,
+:host ::ng-deep .item_label_leftWeapon .p-dropdown-label,
+:host ::ng-deep .item_label_leftWeapon .p-cascadeselect-label,
+:host ::ng-deep .item_label_leftWeapon {
   /* background-color: var(--surface-0); */
   background-color: #121212;
   color: var(--pink-200);

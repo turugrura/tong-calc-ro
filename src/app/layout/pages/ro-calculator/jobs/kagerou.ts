@@ -1,6 +1,14 @@
 import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
+import {
+  ActiveSkillModel,
+  AtkSkillFormulaInput,
+  AtkSkillModel,
+  CharacterBase,
+  PassiveSkillModel,
+} from './_character-base.abstract';
 import { Ninja } from './ninja';
+import { ShadowWarrior } from '../constants/share-active-skills/shadow-warrior';
+import { InfoForClass } from '../models/info-for-class.model';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 0, 1, 0],
@@ -65,24 +73,123 @@ const jobBonusTable: Record<number, [number, number, number, number, number, num
   60: [7, 6, 4, 6, 8, 4],
   61: [7, 6, 4, 6, 8, 4],
   62: [7, 6, 4, 6, 8, 4],
-  63: [7, 6, 4, 6, 8, 4],
-  64: [7, 6, 4, 6, 8, 4],
-  65: [7, 6, 4, 6, 8, 4],
+  63: [7, 9, 5, 6, 8, 4],
+  64: [7, 9, 5, 6, 8, 4],
+  65: [7, 9, 5, 6, 8, 4],
 };
 
 export class Kagerou extends CharacterBase {
   protected readonly CLASS_NAME = ClassName.Kagerou;
   protected readonly JobBonusTable = jobBonusTable;
 
-  protected readonly initialStatusPoint = 40;
+  protected readonly initialStatusPoint = 48;
   protected readonly classNames = ['Kagerou', 'Kagerou Cls', 'Kagerou Class'];
-  protected readonly _atkSkillList: AtkSkillModel[] = [];
-  protected readonly _activeSkillList: ActiveSkillModel[] = [];
+  protected readonly _atkSkillList: AtkSkillModel[] = [
+    {
+      label: 'Cross Slash Lv10',
+      name: 'Cross Slash',
+      value: 'Cross Slash==10',
+      acd: 0.5,
+      fct: 0,
+      vct: 0,
+      cd: 3.1,
+      levelList: [],
+      hit: 2,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
+        const bonus = this.isSkillActive('Cross Wound') ? baseLevel * skillLevel : 0;
+
+        return skillLevel * 200 * (baseLevel / 100) + bonus;
+      },
+    },
+    // {
+    //   label: 'Kunai Explosion Lv5',
+    //   name: 'Kunai Explosion',
+    //   value: 'Kunai Explosion==5',
+    //   acd: 1,
+    //   fct: 0,
+    //   vct: 2.6,
+    //   cd: 3,
+    //   isHit100: true,
+    //   levelList: [],
+    //   formula: (input: AtkSkillFormulaInput): number => {
+    //     const {
+    //       model,
+    //       skillLevel,
+    //       status: { totalDex },
+    //       equipmentBonus,
+    //     } = input;
+    //     const { level: baseLevel, jobLevel } = model;
+    //     const ammoAtk = equipmentBonus?.ammo?.atk || 0;
+    //     const bonusDaggerThrow = 0.4 * this.learnLv('Dagger Throwing Practice');
+
+    //     return (ammoAtk + totalDex / 4) * skillLevel * bonusDaggerThrow * (baseLevel / 100) + jobLevel * 10;
+    //   },
+    // },
+    {
+      label: 'Kunai Splash Lv5',
+      name: 'Kunai Splash',
+      value: 'Kunai Splash==5',
+      acd: 0.5,
+      fct: 0,
+      vct: 0,
+      cd: 0,
+      levelList: [],
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
+        const bonusDaggerThrow = 20 * this.learnLv('Dagger Throwing Practice');
+
+        return (skillLevel * 50 + bonusDaggerThrow) * (baseLevel / 100);
+      },
+    },
+    // {
+    //   label: 'Swirling Petal Lv10',
+    //   name: 'Swirling Petal',
+    //   value: 'Swirling Petal==10',
+    //   acd: 0.5,
+    //   fct: 0,
+    //   vct: 1.5,
+    //   cd: 3,
+    //   levelList: [],
+    //   hit: 5,
+    //   formula: (input: AtkSkillFormulaInput): number => {
+    //     const {
+    //       model,
+    //       skillLevel,
+    //       status: { totalStr },
+    //     } = input;
+    //     const baseLevel = model.level;
+    //     const bonusDaggerThrow = 100 * (this.bonuses.learnedSkillMap.get('Throw Huuma Shuriken') || 0);
+
+    //     return (skillLevel * 150 + totalStr * 5 + bonusDaggerThrow) * (baseLevel / 100);
+    //   },
+    // },
+  ];
+
+  protected readonly _activeSkillList: ActiveSkillModel[] = [
+    ShadowWarrior,
+    {
+      label: 'Cross Wound',
+      name: 'Cross Wound',
+      inputType: 'selectButton',
+      dropdown: [
+        { label: 'Yes', value: 1, isUse: true },
+        { label: 'No', value: 0, isUse: false },
+      ],
+    },
+  ];
+
   protected readonly _passiveSkillList: PassiveSkillModel[] = [];
 
   constructor() {
     super();
 
     this.inheritBaseClass(new Ninja());
+  }
+
+  override getMasteryAtk(info: InfoForClass): number {
+    return this.calcHiddenMasteryAtk(info).totalAtk;
   }
 }

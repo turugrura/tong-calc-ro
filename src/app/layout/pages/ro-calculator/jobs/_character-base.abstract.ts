@@ -125,6 +125,14 @@ export abstract class CharacterBase {
     return this.initialStatusPoint;
   }
 
+  protected learnLv(skillName: string) {
+    return this.bonuses.learnedSkillMap.get(skillName) || 0;
+  }
+
+  protected isSkillActive(skillName: string) {
+    return this.bonuses.activeSkillNames.has(skillName);
+  }
+
   setLearnSkills(a: { activeSkillIds: number[]; passiveSkillIds: number[] }) {
     const { activeSkillIds, passiveSkillIds } = a;
     this.activeSkillIds = [...activeSkillIds];

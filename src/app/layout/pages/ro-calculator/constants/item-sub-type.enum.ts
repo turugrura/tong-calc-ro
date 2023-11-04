@@ -2,6 +2,7 @@ export enum ItemSubTypeId {
   Gatling_Gun = 275,
   Arrow = 1024,
   Cannonball = 1025,
+  Kunai = 1026,
   Bullet = 1027,
   Upper = 512,
   Shield = 514,

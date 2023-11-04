@@ -2178,17 +2178,17 @@
     "requiredLevel": 1,
     "location": null,
     "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
     "script": {
-      "m_class_all": [
+      "p_class_all": [
         "7"
       ],
       "aspdPercent": [
         "10"
       ]
-    },
-    "usableClass": [
-      "all"
-    ]
+    }
   },
   "2963": {
     "id": 2963,
@@ -8017,6 +8017,273 @@
       "all"
     ]
   },
+  "13255": {
+    "id": 13255,
+    "aegisName": "Kunai_Of_Icicle",
+    "name": "Icicle Kunai",
+    "unidName": "Icicle Kunai",
+    "resName": "쿠나이_수",
+    "description": "มีดบินน้ำแข็ง\nประเภท : ^777777Throwing Weapon^000000\nพลังโจมตี : ^77777730^000000\nน้ำหนัก : ^7777770.1^000000 ธาตุ : ^777777Water^000000",
+    "slots": 0,
+    "itemTypeId": 4,
+    "itemSubTypeId": 1026,
+    "itemLevel": null,
+    "attack": 30,
+    "propertyAtk": "Water",
+    "defense": null,
+    "weight": 0.1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Ninja"
+    ],
+    "script": {}
+  },
+  "13256": {
+    "id": 13256,
+    "aegisName": "Kunai_Of_Black_Soil",
+    "name": "Black Earth Kunai",
+    "unidName": "Black Earth Kunai",
+    "resName": "쿠나이_토",
+    "description": "มีดบินธาตุดิน ที่สร้างความเจ็บปวดให้กับศัตรูได้\nประเภท : ^777777Throwing Weapon^000000\nพลังโจมตี : ^77777730^000000\nน้ำหนัก : ^7777770.1^000000 ธาตุ : ^777777Earth^000000",
+    "slots": 0,
+    "itemTypeId": 4,
+    "itemSubTypeId": 1026,
+    "itemLevel": null,
+    "attack": 30,
+    "propertyAtk": "Earth",
+    "defense": null,
+    "weight": 0.1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Ninja"
+    ],
+    "script": {}
+  },
+  "13257": {
+    "id": 13257,
+    "aegisName": "Kunai_Of_Furious_Wind",
+    "name": "High Wind Kunai",
+    "unidName": "High Wind Kunai",
+    "resName": "쿠나이_풍",
+    "description": "มีดบินธาตุลมที่มีความคมกว่ามีดบินใดๆ\nประเภท : ^777777Throwing Weapon^000000\nพลังโจมตี : ^77777730^000000\nน้ำหนัก : ^7777770.1^000000 ธาตุ : ^777777Wind^000000",
+    "slots": 0,
+    "itemTypeId": 4,
+    "itemSubTypeId": 1026,
+    "itemLevel": null,
+    "attack": 30,
+    "propertyAtk": "Wind",
+    "defense": null,
+    "weight": 0.1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Ninja"
+    ],
+    "script": {}
+  },
+  "13258": {
+    "id": 13258,
+    "aegisName": "Kunai_Of_Fierce_Flame",
+    "name": "Heat Wave Kunai",
+    "unidName": "Heat Wave Kunai",
+    "resName": "쿠나이_화",
+    "description": "มีดบินติดระเบิดสร้างความเสียหายให้กับศัตรูรอบๆ ได้\nประเภท : ^777777Throwing Weapon^000000\nพลังโจมตี : ^77777730^000000\nน้ำหนัก : ^7777770.1^000000 ธาตุ : ^777777Fire^000000",
+    "slots": 0,
+    "itemTypeId": 4,
+    "itemSubTypeId": 1026,
+    "itemLevel": null,
+    "attack": 30,
+    "propertyAtk": "Fire",
+    "defense": null,
+    "weight": 0.1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Ninja"
+    ],
+    "script": {}
+  },
+  "13259": {
+    "id": 13259,
+    "aegisName": "Kunai_Of_Deadly_Poison",
+    "name": "Fell Poison Kunai",
+    "unidName": "Fell Poison Kunai",
+    "resName": "쿠나이_독",
+    "description": "มีดบินเคลือบพิษ\nมีโอกาสทำให้ศัตรูติดพิษ\nประเภท : ^777777Throwing Weapon^000000\nพลังโจมตี : ^77777730^000000\nน้ำหนัก : ^7777770.1^000000 ธาตุ : ^777777Poison^000000",
+    "slots": 0,
+    "itemTypeId": 4,
+    "itemSubTypeId": 1026,
+    "itemLevel": null,
+    "attack": 30,
+    "propertyAtk": "Poison",
+    "defense": null,
+    "weight": 0.1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Ninja"
+    ],
+    "script": {}
+  },
+  "13294": {
+    "id": 13294,
+    "aegisName": "Explosive_Kunai",
+    "name": "Explosive Kunai",
+    "unidName": "Explosive Kunai",
+    "resName": "폭발쿠나이",
+    "description": "Kunai ชนิดพิเศษที่ออกมาแบบเพื่อใช้งานกับดินปืน เพื่อจัดการระเบิดเป้าหมายและสิ่งรอบข้าง ควรระมัดระวังในการใช้!\nประเภท : ^777777Throwing Weapon^000000\nพลังโจมตี : ^77777750^000000\nน้ำหนัก : ^7777770.1^000000 ธาตุ : ^777777ไม่มี^000000\nLv ที่ต้องการ : ^777777100^000000",
+    "slots": 0,
+    "itemTypeId": 4,
+    "itemSubTypeId": 1026,
+    "itemLevel": null,
+    "attack": 50,
+    "defense": null,
+    "weight": 0.1,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Ninja"
+    ],
+    "script": {}
+  },
+  "13322": {
+    "id": 13322,
+    "aegisName": "Metal_Huuma_Shuriken",
+    "name": "Metal Huuma Shuriken [1]",
+    "unidName": "Huuma Shuriken",
+    "resName": "메탈풍마수리검",
+    "description": "Huuma Shuriken ทำจากโลหะที่ช่วยเพิ่มความสามารถโดยผลิตจากการผสมกันระหว่าง Phracon และ Emveretarcon ลงในเหล็กกล้า\nไม่สามารถทำลายได้\nทุกการอัพเกรด 1 ขั้น ATK +5/ MATK + 3,\nทุกการอัพเกรด 2 ขั้น เพิ่มพลังโจมตีทางกายภาพระยะไกล 1%\nเมื่อตัวละครเลเวลมากกว่า 20 : ทุกการเพิ่มขึ้นของ Base lv. 10 เพิ่ม ATK ขึ้นอีกครั้งละ +3\n(ปริมาณการเพิ่มขึ้น จะใช้งานได้จนถึง BaseLv 120)\nประเภท : ^777777Huuma Shuriken^000000 พลังโจมตี : ^77777750^000000\nน้ำหนัก : ^7777770^000000\nเลเวลอาวุธ : ^7777773^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่สวมใส่ : ^777777Ninja Cls^000000",
+    "slots": 1,
+    "itemTypeId": 1,
+    "itemSubTypeId": 278,
+    "itemLevel": 3,
+    "attack": 50,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Ninja"
+    ],
+    "script": {
+      "atk": [
+        "1---5",
+        "level:30===3",
+        "level:40===3",
+        "level:50===3",
+        "level:60===3",
+        "level:70===3",
+        "level:80===3",
+        "level:90===3",
+        "level:100===3",
+        "level:110===3",
+        "level:120===3"
+      ],
+      "matk": [
+        "1---3"
+      ],
+      "range": [
+        "2---1"
+      ]
+    }
+  },
+  "13338": {
+    "id": 13338,
+    "aegisName": "Huuma_Bird_Wing_IL",
+    "name": "Illusion Wing Shuriken [2]",
+    "unidName": "Shuriken",
+    "resName": "Huuma_Bird_Wing_IL",
+    "description": "ชื่อของมันถูกเรียกตามรูปร่าง\nที่ดูคล้ายกับปีกของนก\nมันเป็นที่รู้จักอย่างแพร่หลายในฐานะอาวุธประจำตระกูลฟูมะ\nไม่สามารถทำลายได้, DEX + 2 \nทุก ๆ การอัพเกรด 1 ขั้น เพิ่ม Damage สกิล Kunai Splash 9%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Illusion Apple O' Archer\nATK + 50\nเมื่อขั้นอัพเกรดของ Illusion Wing Shuriken และ Illusion Apple O' Archer ตั้งแต่ 7 ขึ้นไป จะเพิ่ม Damage สกิล Kunai Splash 30%\nเมื่อผลรวมขั้นอัพเกรดตั้งแต่ 18 ขึ้นไป\nเพิ่ม Damage ทางกายภาพระยะไกล 10%\nเมื่อผลรวมขั้นอัพเกรดตั้งแต่ 22 ขึ้นไป\nเพิ่ม Damage สกิล Kunai Splash ขึ้นอีก 20%\n^ffffff_^000000\nประเภท : ^777777Shuriken^000000 พลังโจมตี : ^777777300^000000\nน้ำหนัก : ^777777150^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777120^000000\nอาชีพที่ใส่ได้ : ^777777Ninja^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 278,
+    "itemLevel": 4,
+    "attack": 300,
+    "defense": null,
+    "weight": 150,
+    "requiredLevel": 120,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Ninja"
+    ],
+    "script": {
+      "dex": [
+        "2"
+      ],
+      "Kunai Splash": [
+        "1---9",
+        "EQUIP[Illusion Apple of Archer]REFINE[weapon==7]7===30",
+        "EQUIP[Illusion Apple of Archer]REFINE[weapon,headUpper==22]20"
+      ],
+      "atk": [
+        "EQUIP[Illusion Apple of Archer]50"
+      ],
+      "range": [
+        "EQUIP[Illusion Apple of Archer]REFINE[weapon,headUpper==18]10"
+      ]
+    }
+  },
+  "13347": {
+    "id": 13347,
+    "aegisName": "R_Huuma_Shuriken",
+    "name": "Royal Huuma Shuriken [2]",
+    "unidName": "Huuma Shuriken",
+    "resName": "로얄풍마수리검",
+    "description": "อาวุธดาวกระจายขนาดใหญ่ที่ถูกลักลอบนำเข้ามายังปราสาท Glast Heim\nแม้จะเป็นอาวุธธรรมดา แต่ก็มีพลังที่แข็งแกร่งซ่อนอยู่เนื่องจากได้รับผลกระทบจาก Himmelmez\n^ffffff_^000000 \nไม่สามารถทำลายได้, เพิ่ม Damage ทางกายภาพระยะไกล 15%\nทุก ๆ การอัพเกรด 1 ขั้น ATK +4\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Cross Slash 20%\nเมื่ออัพเกรดถึงขั้น 11 ลด Cooldown สกิล Cross Slash 2 วินาที, เพิ่ม Damage ทางกายภาพต่อมอนสเตอร์เผ่า Undead, Angel 20%\n^ffffff_^000000 \nเมื่อสวมใส่ร่วมกับ ^32CD32King Schmidt's Suit และ King Schmidt's Manteau^000000, \nATK +30, เมื่อโจมตีทางกายภาพ มีโอกาสที่จะเพิ่ม Damage ทางกายภาพระยะไกล 10% เป็นเวลา 10 วินาที\nเมื่อค่าอัพเกรด ^32CD32King Schmidt's Suit, King Schmidt's Manteau, Royal Huuma Shuriken^000000 รวมกันตั้งแต่ 30 ขึ้นไป เพิ่ม Damage ทางกายภาพต่อศัตรูธาตุ Holy, Undead 20%\n^ffffff_^000000 \nประเภท : ^777777Huuma Shuriken^000000 พลังโจมตี : ^777777240^000000\nน้ำหนัก : ^777777150^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Ninja^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 278,
+    "itemLevel": 4,
+    "attack": 240,
+    "defense": null,
+    "weight": 150,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Ninja"
+    ],
+    "script": {
+      "range": [
+        "15"
+      ],
+      "atk": [
+        "1---4",
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]30"
+      ],
+      "Cross Slash": [
+        "9===20"
+      ],
+      "cd__Cross Slash": [
+        "11===2"
+      ],
+      "p_race_undead": [
+        "11===20"
+      ],
+      "p_race_angel": [
+        "11===20"
+      ],
+      "chance__range": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]10"
+      ],
+      "p_element_holy": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]REFINE[weapon,armor,garment==30]===20"
+      ],
+      "p_element_undead": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]REFINE[weapon,armor,garment==30]===20"
+      ]
+    }
+  },
   "13412": {
     "id": 13412,
     "aegisName": "Twin_Edge_B",
@@ -10022,17 +10289,17 @@
     "script": {
       "range": [
         "1---1",
-        "EQUIP[Illusion Apple O' Archer]5"
+        "EQUIP[Illusion Apple of Archer]5"
       ],
       "atk": [
-        "EQUIP[Illusion Apple O' Archer]50"
+        "EQUIP[Illusion Apple of Archer]50"
       ],
       "Arrow Storm": [
-        "EQUIP[Illusion Apple O' Archer]REFINE[weapon==7]REFINE[headUpper==7]20",
-        "EQUIP[Illusion Apple O' Archer]REFINE[weapon,headUpper==22]30"
+        "EQUIP[Illusion Apple of Archer]REFINE[weapon==7]REFINE[headUpper==7]20",
+        "EQUIP[Illusion Apple of Archer]REFINE[weapon,headUpper==22]30"
       ],
       "atkPercent": [
-        "EQUIP[Illusion Apple O' Archer]REFINE[weapon,headUpper==18]===10"
+        "EQUIP[Illusion Apple of Archer]REFINE[weapon,headUpper==18]===10"
       ]
     }
   },
@@ -17701,6 +17968,45 @@
       ]
     }
   },
+  "24285": {
+    "id": 24285,
+    "aegisName": "S_Ninja_Weapon",
+    "name": "Ninja Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา\nอาชีพ Ninja เท่านั้นที่สามารถสวมใส่ได้\n-------------------------- \nATK & MATK +3%\nลด Cooldown ของสกิล [Kunai Explosion] 2 วินาที\nทุกๆ 1 เลเวลของสกิล [Ninja Mastery] MATK +3\nเมื่ออัพเกรดถึงขั้น 7 ขึ้นไป ATK & MATK +3% เพิ่มเติม\nเมื่ออัพเกรดถึงขั้น 9 ขึ้นไป ATK & MATK +4% เพิ่มเติม\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่สวมใส่ได้ : ^777777Ninja Class^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "Ninja"
+    ],
+    "script": {
+      "atkPercent": [
+        "3",
+        "7===3",
+        "9===4"
+      ],
+      "matkPercent": [
+        "3",
+        "7===3",
+        "9===4"
+      ],
+      "cd__Kunai Explosion": [
+        "2"
+      ],
+      "matk": [
+        "LEARN_SKILL[Ninja Mastery==1]---3"
+      ]
+    }
+  },
   "24286": {
     "id": 24286,
     "aegisName": "S_DoramMagical_Weapon",
@@ -18514,6 +18820,58 @@
       ],
       "m_pene_class_normal": [
         "EQUIP[Archer Shadow Earring&&Archer Shadow Pendant&&Bard Shadow Armor&&Bard Shadow Shoes&&Minstrel Shadow Weapon]===50"
+      ]
+    }
+  },
+  "24314": {
+    "id": 24314,
+    "aegisName": "S_Ninja_Shield",
+    "name": "Ninja Shadow Shield",
+    "unidName": "Shadow Shield",
+    "resName": "쉴드쉐도우",
+    "description": "โล่เล็กที่สามารถสวมใส่ที่แขนได้ สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์การป้องกันของมันจะลดน้อยลง\nอาชีพ Ninja เท่านั้นที่สามารถสวมใส่ได้\n-------------------------- \nASPD + 1.\nทุกๆ 1 เลเวลของสกิล [Dagger Throwing Practice ] ATK + 3.\nเมื่อใช้สกิล [Ninja Aura]  เพิ่ม  ASPD + 1 เพิ่มเติมในระยะเวลา 50 วินาที\nทุกๆ การอัพเกรด 1 ขั้น เพิกเฉยต่อพลังป้องก่อนทางกายภาพและทางเวทของศัตรูทั่วไป 4%\nเมื่ออัพเกรดถึงขั้น 7 ขึ้นไป เพิกเฉยต่อพลังป้องก่อนทางกายภาพและทางเวทของศัตรูทั่วไปเพิ่มเติม 10%\nเมื่ออัพเกรดถึงขั้น 9 ขึ้นไป เพิกเฉยต่อพลังป้องก่อนทางกายภาพและทางเวทของศัตรูทั่วไปเพิ่มเติม 10%\n-------------------------- \nเมื่อสวมใส่ร่วมกับ Ninja Shadow Weapon จะได้รับเอฟเฟกต์ดังต่อไปนี้\nAll State + 3, MaxHP + 2%, MaxSP + 2%\nเมื่อใช้สกิล ลดการใช้ SP 10%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shield^000000 \nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่สวมใส่ได้ : ^777777Ninja Class^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 527,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Shield",
+    "compositionPos": null,
+    "usableClass": [
+      "Ninja"
+    ],
+    "script": {
+      "aspd": [
+        "1",
+        "ACTIVE_SKILL[Ninja Aura]===1"
+      ],
+      "atk": [
+        "LEARN_SKILL[Dagger Throwing Practice==1]---3"
+      ],
+      "p_pene_class_normal": [
+        "1---4",
+        "7===10",
+        "9===10"
+      ],
+      "m_pene_class_normal": [
+        "1---4",
+        "7===10",
+        "9===10"
+      ],
+      "allStatus": [
+        "EQUIP[Ninja Shadow Weapon]3"
+      ],
+      "hpPercent": [
+        "EQUIP[Ninja Shadow Weapon]2"
+      ],
+      "spPercent": [
+        "EQUIP[Ninja Shadow Weapon]2"
+      ],
+      "spPercentCost": [
+        "EQUIP[Ninja Shadow Weapon]10"
       ]
     }
   },
@@ -19712,6 +20070,48 @@
       ]
     }
   },
+  "24403": {
+    "id": 24403,
+    "aegisName": "S_Kagerou_Armor",
+    "name": "Kagerou Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우",
+    "description": "ชุดเกราะที่เพิ่มพลังป้องกันเมื่อสวมใส่เพิ่มบนเกราะอีกที สามารถใส่แบบชิ้นเดียวได้ แต่ความสามารถในการป้องกันจะลดลงไปอีก\nเพิ่มดาเมจสกิล Swirling Petal 20%\nทุกการอัพเกรด 1 ขั้น เพิ่มดาเมจสกิล Swirling Petal ขึ้นอีกทีละ 5%\nเมื่อสวมใส่กับ Kagerou Shadow Shoes, จะได้รับเอฟเฟกต์เพิ่มขึ้น \nเพิ่มดาเมจทางกายภาพระยะไกล 5%, ลดคูลไทม์ของสกิล Cross Slash 1 วินาที\nหากสวมใส่ Ninja Shadow 2 ชนิด, Kagerou Shadow 2 ชนิด ครบทั้งหมด, จะได้รับเอฟเฟกต์ด้านล่างเพิ่มเติม\nAll State + 7, MaxHP + 3%, MaxSP + 3%.\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Armor ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Ninja Class^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": "Armor",
+    "compositionPos": null,
+    "usableClass": [
+      "Ninja Class"
+    ],
+    "script": {
+      "Swirling Petal": [
+        "20",
+        "1---5"
+      ],
+      "range": [
+        "EQUIP[Kagerou Shadow Shoes]5"
+      ],
+      "cd__Cross Slash": [
+        "EQUIP[Kagerou Shadow Shoes]1"
+      ],
+      "allStatus": [
+        "EQUIP[Kagerou Shadow Shoes&&Ninja Shadow Shield&&Ninja Shadow Weapon]7"
+      ],
+      "hpPercent": [
+        "EQUIP[Kagerou Shadow Shoes&&Ninja Shadow Shield&&Ninja Shadow Weapon]3"
+      ],
+      "spPercent": [
+        "EQUIP[Kagerou Shadow Shoes&&Ninja Shadow Shield&&Ninja Shadow Weapon]3"
+      ]
+    }
+  },
   "24405": {
     "id": 24405,
     "aegisName": "S_Rebellion_Shoes",
@@ -19734,6 +20134,33 @@
     ],
     "script": {
       "God's Hammer": [
+        "20",
+        "1---5"
+      ]
+    }
+  },
+  "24406": {
+    "id": 24406,
+    "aegisName": "S_Kagerou_Shoes",
+    "name": "Kagerou Shadow Shoes",
+    "unidName": "Shadow Shoes",
+    "resName": "슈즈쉐도우",
+    "description": "รองเท้าที่สวมใส่เพิ่มเติม สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์ของมันจะลดน้อยลง\nเพิ่มดาเมจสกิล Kunai Splash 20%\nทุกการอัพเกรด 1 ขั้น เพิ่มดาเมจสกิล Kunai Splash ขึ้นอีกทีละ 5%\nประเภท : ^777777Shadow^000000 \nตำแหน่ง : ^777777Shoes ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000 \nอาชีพที่ใส่ได้ : ^777777Ninja Class^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 528,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": "Shoes",
+    "compositionPos": null,
+    "usableClass": [
+      "Ninja"
+    ],
+    "script": {
+      "Kunai Splash": [
         "20",
         "1---5"
       ]
@@ -23224,6 +23651,186 @@
       ]
     }
   },
+  "24622": {
+    "id": 24622,
+    "aegisName": "S_Kunai_Weapon",
+    "name": "Kunai Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา\nเพิ่ม Damage ทางกายภาพระยะไกล 3%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางกายภาพระยะไกลขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพระยะไกลขึ้นอีก 4%\nเมื่อสวมใส่ Kunai Shadow Weapon/Shield/Armor ร่วมกัน,\nเพิ่ม Damage สกิล Kunai Splash, Kunai Explosion % เท่ากับครึ่งหนึ่งของค่าอัพเกรดรวมกัน\nเมื่อสวมใส่ร่วมกับ Kagerou Shadow Shoes,\nเพิกเฉยต่อพลังป้องกันทางกายภาพของทุกเผ่ายกเว้น Player 40% และเพิกเฉยต่อพลังป้องกันทางกายภาพเพิ่มอีกตามค่าอัพเกรดรวมกันของ Kunai Shadow Weapon และ Kagerou Shadow Shoes\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Ninja^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "Ninja"
+    ],
+    "script": {
+      "range": [
+        "3",
+        "7===3",
+        "9===4"
+      ],
+      "Kunai Splash": [
+        "EQUIP[Kunai Shadow Shield&&Kunai Shadow Armor]REFINE[shadowWeapon,shadowShield,shadowArmor==2]---1"
+      ],
+      "p_pene_race_all": [
+        "EQUIP[Kagerou Shadow Shoes]40",
+        "EQUIP[Kagerou Shadow Shoes]REFINE[shadowWeapon,shadowBoot==1]---1"
+      ]
+    }
+  },
+  "24623": {
+    "id": 24623,
+    "aegisName": "S_Kunai_Shield",
+    "name": "Kunai Shadow Shield",
+    "unidName": "Shadow Shield",
+    "resName": "쉴드쉐도우",
+    "description": "โล่เล็กที่สามารถสวมใส่ที่แขนได้ สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์การป้องกันของมันจะลดน้อยลง\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาดขึ้นอีก 1%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shield^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Ninja^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 527,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Shield",
+    "compositionPos": null,
+    "usableClass": [
+      "Ninja"
+    ],
+    "script": {
+      "p_size_all": [
+        "5",
+        "2---1"
+      ]
+    }
+  },
+  "24624": {
+    "id": 24624,
+    "aegisName": "S_Kunai_Armor",
+    "name": "Kunai Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우",
+    "description": "ชุดเกราะที่เพิ่มพลังป้องกันเมื่อสวมใส่เพิ่มบนเกราะอีกที สามารถใส่แบบชิ้นเดียวได้ แต่ความสามารถในการป้องกันจะลดลงไปอีก\nเพิ่ม Damage สกิล Kunai Explosion 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage สกิล Kunai Explosion ขึ้นอีก 2%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Armor^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Ninja^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Armor",
+    "compositionPos": null,
+    "usableClass": [
+      "Ninja"
+    ],
+    "script": {
+      "Kunai Explosion": [
+        "5",
+        "2---2"
+      ]
+    }
+  },
+  "24625": {
+    "id": 24625,
+    "aegisName": "S_Syuriken_Earing",
+    "name": "Cross Shuriken Shadow Earring",
+    "unidName": "Shadow Earring",
+    "resName": "이어링쉐도우",
+    "description": "ต่างหูมงคลที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา\nเพิ่ม Damage ทางกายภาพระยะไกล 3%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางกายภาพระยะไกลขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 9 ลดปริมาณการใช้ SP สกิล Cross Slash 10%\nเมื่อสวมใส่ Cross Shuriken Shadow Earring/Pendant/Shoes ร่วมกัน,\nเพิ่ม Damage สกิล Swirling Petal % เท่ากับครึ่งหนึ่งของค่าอัพเกรดรวมกัน\nเมื่อสวมใส่ร่วมกับ Kagerou Shadow Armor,\nเพิกเฉยต่อพลังป้องกันทางกายภาพของทุกเผ่ายกเว้น Player 40% และเพิกเฉยต่อพลังป้องกันทางกายภาพเพิ่มอีกตามค่าอัพเกรดรวมกันของ Cross Shuriken Shadow Earring และ Kagerou Shadow Armor\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Earring^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Ninja^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 529,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "AccessoryRight",
+    "compositionPos": null,
+    "usableClass": [
+      "Ninja"
+    ],
+    "script": {
+      "range": [
+        "3",
+        "7===3"
+      ],
+      "spPercent__Cross Slash": [
+        "9===10"
+      ],
+      "Swirling Petal": [
+        "EQUIP[Cross Shuriken Shadow Shoes&&Cross Shuriken Shadow Pendant]REFINE[shadowEarring,shadowBoot,shadowPendant==2]---1"
+      ],
+      "p_pene_race_all": [
+        "EQUIP[Kagerou Shadow Armor]40",
+        "EQUIP[Kagerou Shadow Armor]REFINE[shadowEarring,shadowArmor==1]---1"
+      ]
+    }
+  },
+  "24626": {
+    "id": 24626,
+    "aegisName": "S_Syuriken_Pendant",
+    "name": "Cross Shuriken Shadow Pendant",
+    "unidName": "Shadow Pendant",
+    "resName": "펜던트쉐도우",
+    "description": "สร้อยคอศักดิ์สิทธิ์ที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา\nเพิ่ม Damage สกิล Swirling Petal 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage สกิล Swirling Petal ขึ้นอีก 2%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Pendant^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Ninja^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 530,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "AccessoryLeft",
+    "compositionPos": null,
+    "usableClass": [
+      "Ninja"
+    ],
+    "script": {
+      "Swirling Petal": [
+        "5",
+        "2---2"
+      ]
+    }
+  },
+  "24627": {
+    "id": 24627,
+    "aegisName": "S_Syuriken_Shoes",
+    "name": "Cross Shuriken Shadow Shoes",
+    "unidName": "Shadow Shoes",
+    "resName": "슈즈쉐도우",
+    "description": "รองเท้าที่สวมใส่เพิ่มเติม สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์ของมันจะลดน้อยลง\nเพิ่ม Damage สกิล Cross Slash 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage สกิล Cross Slash ขึ้นอีก 2%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shoes^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Ninja^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 528,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Shoes",
+    "compositionPos": null,
+    "usableClass": [
+      "Ninja"
+    ],
+    "script": {
+      "Cross Slash": [
+        "5",
+        "2---2"
+      ]
+    }
+  },
   "24637": {
     "id": 24637,
     "aegisName": "S_SavageRabbit_Earing",
@@ -23657,6 +24264,62 @@
       ],
       "Silvervine Stem Spear": [
         "EQUIP[Booster Shadow Armor&&Booster Shadow Shield&&Booster Shadow Shoes&&Booster Shadow Earring&&Booster Shadow Pendant]10"
+      ],
+      "p_pene_race_all": [
+        "EQUIP[Booster Shadow Armor&&Booster Shadow Shield&&Booster Shadow Shoes&&Booster Shadow Earring&&Booster Shadow Pendant]70"
+      ],
+      "m_pene_race_all": [
+        "EQUIP[Booster Shadow Armor&&Booster Shadow Shield&&Booster Shadow Shoes&&Booster Shadow Earring&&Booster Shadow Pendant]70"
+      ]
+    }
+  },
+  "24741": {
+    "id": 24741,
+    "aegisName": "S_KO_Weapon",
+    "name": "Kagerou & Oboro Booster Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우3",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา\n^000088ไม่สามารถอัพเกรดได้^000000\nATK + 10, MATK + 10\nเมื่อสวมใส่กับ Booster Armor/Shield/Shoes/Earring/Pendant Shadow,\nลดระยะเวลาการร่ายแบบแปรผัน 10% \nลดดีเลย์หลังใช้สกิล 10% \nลด Cooldown สกิล Cross Slash 0.7 วินาที\nเพิ่ม Damage สกิล Flaming Petals, Freezing Spear, Wind Blade, \n และ Swirling Petal 15%\nเพิกเฉยต่อพลังป้องกันทางเวทย์/ทางกายภาพของมอนสเตอร์ทุกเผ่า 70% (ยกเว้น Player)\n^ffffff_^000000\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Ninja Class^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "Ninja"
+    ],
+    "script": {
+      "atk": [
+        "10"
+      ],
+      "matk": [
+        "10"
+      ],
+      "vct": [
+        "EQUIP[Booster Shadow Armor&&Booster Shadow Shield&&Booster Shadow Shoes&&Booster Shadow Earring&&Booster Shadow Pendant]10"
+      ],
+      "acd": [
+        "EQUIP[Booster Shadow Armor&&Booster Shadow Shield&&Booster Shadow Shoes&&Booster Shadow Earring&&Booster Shadow Pendant]10"
+      ],
+      "cd__Cross Slash": [
+        "EQUIP[Booster Shadow Armor&&Booster Shadow Shield&&Booster Shadow Shoes&&Booster Shadow Earring&&Booster Shadow Pendant]0.7"
+      ],
+      "Flaming Petals": [
+        "EQUIP[Booster Shadow Armor&&Booster Shadow Shield&&Booster Shadow Shoes&&Booster Shadow Earring&&Booster Shadow Pendant]15"
+      ],
+      "Freezing Spear": [
+        "EQUIP[Booster Shadow Armor&&Booster Shadow Shield&&Booster Shadow Shoes&&Booster Shadow Earring&&Booster Shadow Pendant]15"
+      ],
+      "Wind Blade": [
+        "EQUIP[Booster Shadow Armor&&Booster Shadow Shield&&Booster Shadow Shoes&&Booster Shadow Earring&&Booster Shadow Pendant]15"
+      ],
+      "Swirling Petal": [
+        "EQUIP[Booster Shadow Armor&&Booster Shadow Shield&&Booster Shadow Shoes&&Booster Shadow Earring&&Booster Shadow Pendant]15"
       ],
       "p_pene_race_all": [
         "EQUIP[Booster Shadow Armor&&Booster Shadow Shield&&Booster Shadow Shoes&&Booster Shadow Earring&&Booster Shadow Pendant]70"
@@ -25654,6 +26317,33 @@
         "3"
       ],
       "m_my_element_holy": [
+        "5"
+      ]
+    }
+  },
+  "27260": {
+    "id": 27260,
+    "aegisName": "Odorico_Card",
+    "name": "Odoric Card",
+    "unidName": "Odoric Card",
+    "resName": "이름없는카드",
+    "description": "ASPD +3%\nเพิ่มดาเมจทางกายภาพระยะไกล 5%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Shoes^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 64,
+    "cardPrefix": "Odorico",
+    "script": {
+      "aspdPercent": [
+        "3"
+      ],
+      "range": [
         "5"
       ]
     }
@@ -28576,6 +29266,71 @@
       ],
       "p_element_undead": [
         "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]REFINE[weapon,armor,garment==30]===20"
+      ]
+    }
+  },
+  "28763": {
+    "id": 28763,
+    "aegisName": "Sharp_Wind_Sword",
+    "name": "Surudoi Kaze [2]",
+    "unidName": "Knife",
+    "resName": "후츠노미타마",
+    "description": "หนึ่งในดาบนินจาที่นินจาผู้ชำนาญการใช้ดาบคู่ในอดีต\nความสามารถที่แท้จริงของมันสามารถรับรู้ได้เมื่อสวมใส่กับดาบนินจา Kiri no Tsuyu อีกเล่มหนึ่ง\n\nเมื่อสวมใส่กับ Kiri no Tsuyu และ Ancient Hero Boots หากทำการโจมตึทางกายภาพ มีโอกาสเล็กน้อย ที่จะเพิ่ม STR + 20, ATK 10% เป็นเวลา 7 วินาที\nประเภท : ^777777Dagger^000000 พลังโจมตี : ^777777150^000000\nน้ำหนัก : ^777777100^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Ninja Class^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 256,
+    "itemLevel": 4,
+    "attack": 150,
+    "defense": null,
+    "weight": 100,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Ninja Class"
+    ],
+    "script": {
+      "chance__str": [
+        "EQUIP[Kiri no Tsuyu&&Ancient Hero Boots]===20"
+      ],
+      "atkPercent": [
+        "EQUIP[Kiri no Tsuyu&&Ancient Hero Boots]===10"
+      ]
+    }
+  },
+  "28764": {
+    "id": 28764,
+    "aegisName": "Fog_Dew_Sword",
+    "name": "Kiri no Tsuyu [2]",
+    "unidName": "Knife",
+    "resName": "안개의요도",
+    "description": "หนึ่งในดาบนินจาที่นินจาผู้ชำนาญการใช้ดาบคู่ในอดีต\nความสามารถที่แท้จริงของมันสามารถรับรู้ได้เมื่อสวมใส่กับดาบนินจา Surudoi Kaze อีกเล่มหนึ่ง\n\nเมื่อสวมใส่กับ Surudoi Kaze, \nทุกๆ ขั้นอัพเกรดรวมครบ 3 ขั้น ATK + 10.\nทุกๆ ขั้นอัพเกรดรวมครบ 5 ขั้น ATK + 2%.\nเมื่อขั้นอัพเกรดรวมครบ 14 ขึ้นไป, ดาเมจของ Cross Slash เพิ่มขึ้น 25%\nเมื่อขั้นอัพเกรดรวมครบ 16 ขึ้นไป, ลดเวลาคูลไทม์ของสกิล Cross Slash ลง 2 วินาที\nเมื่อขั้นอัพเกรดรวมครบ 18 ขึ้นไป, จะสามารถใช้งานสกิล Distorted Cresent ได้เท่ากับจำนวนเลเวลการเรียนรู้ของสกิล Shadow Trampling, จะสามารถใช้งานสกิล Shadow Trampling ได้เท่ากับจำนวนเลเวลการเรียนรู้ของสกิล Distorted Cresent\nเมื่อขั้นอัพเกรดรวมครบ 20 ขึ้นไป, ดาเมจของ Cross Slash เพิ่มขึ้นอีก 25%\nประเภท : ^777777Dagger^000000 พลังโจมตี : ^777777150^000000\nน้ำหนัก : ^777777100^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Ninja Class^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 256,
+    "itemLevel": 4,
+    "attack": 150,
+    "defense": null,
+    "weight": 100,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Ninja Class"
+    ],
+    "script": {
+      "atk": [
+        "EQUIP[Surudoi Kaze]REFINE[weapon,leftWeapon==3]---10"
+      ],
+      "atkPercent": [
+        "EQUIP[Surudoi Kaze]REFINE[weapon,leftWeapon==5]---2"
+      ],
+      "Cross Slash": [
+        "EQUIP[Surudoi Kaze]REFINE[weapon,leftWeapon==14]25",
+        "EQUIP[Surudoi Kaze]REFINE[weapon,leftWeapon==20]20"
+      ],
+      "cd__Cross Slash": [
+        "EQUIP[Surudoi Kaze]REFINE[weapon,leftWeapon==16]2"
       ]
     }
   },
@@ -33974,6 +34729,125 @@
       ],
       "fct": [
         "EQUIP[Soul Linker Stone (Lower)]0.5"
+      ]
+    }
+  },
+  "29659": {
+    "id": 29659,
+    "aegisName": "Ninja_Top",
+    "name": "Ninja Stone (Upper)",
+    "unidName": "Ninja Stone (Upper)",
+    "resName": "불의부적",
+    "description": "ทุก ๆ การเรียนรู้สกิล Ninja Mastery 1 เลเวล ATK +2, MATK +2",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 71,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "atk": [
+        "LEARN_SKILL[Ninja Mastery==1]---2"
+      ],
+      "matk": [
+        "LEARN_SKILL[Ninja Mastery==1]---2"
+      ]
+    }
+  },
+  "29660": {
+    "id": 29660,
+    "aegisName": "Ninja_Middle",
+    "name": "Ninja Stone (Middle)",
+    "unidName": "Ninja Stone (Middle)",
+    "resName": "불의부적",
+    "description": "เพิ่ม Damage สกิล Throw Huuma Shuriken 20%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 72,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "Throw Huuma Shuriken": [
+        "20"
+      ]
+    }
+  },
+  "29661": {
+    "id": 29661,
+    "aegisName": "Ninja_Bottom",
+    "name": "Ninja Stone (Lower)",
+    "unidName": "Ninja Stone (Lower)",
+    "resName": "불의부적",
+    "description": "เพิ่ม Damage สกิล [Exploding Dragon], [Snow Flake Draft], [First Wind] 20%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 73,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "Exploding Dragon": [
+        "20"
+      ],
+      "Snow Flake Draft": [
+        "20"
+      ],
+      "First Wind": [
+        "20"
+      ]
+    }
+  },
+  "29663": {
+    "id": 29663,
+    "aegisName": "Oboro_Robe",
+    "name": "Oboro Stone (Garment)",
+    "unidName": "Oboro Stone (Garment)",
+    "resName": "불의부적",
+    "description": "เพิ่ม Damage สกิล Flaming Petals 20%\nเมื่อใช้กับ Ninja Stone (Upper) เพิ่ม Damage สกิล [Exploding Dragon], [Snow Flake Draft], [First Wind] 30%\nเมื่อใช้กับ Ninja Stone (Middle) เพิ่ม Damage สกิล [Freezing Spear], [Wind Blade] 20%\nเมื่อใช้กับ Ninja Stone (Lower) ลดระยะเวลาร่ายแบบแปรผัน 15%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 74,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "Flaming Petals": [
+        "20"
+      ],
+      "Exploding Dragon": [
+        "EQUIP[Ninja Stone (Upper)]30"
+      ],
+      "Snow Flake Draft": [
+        "EQUIP[Ninja Stone (Upper)]30"
+      ],
+      "First Wind": [
+        "EQUIP[Ninja Stone (Upper)]30"
+      ],
+      "Freezing Spear": [
+        "EQUIP[Ninja Stone (Middle)]20"
+      ],
+      "Wind Blade": [
+        "EQUIP[Ninja Stone (Middle)]20"
+      ],
+      "vct": [
+        "EQUIP[Ninja Stone (Lower)]15"
       ]
     }
   },
@@ -41954,6 +42828,49 @@
       ]
     }
   },
+  "510022": {
+    "id": 510022,
+    "aegisName": "Up_Fog_Dew_Sword",
+    "name": "Patent Kiri no Tsuyu [2]",
+    "unidName": "Knife",
+    "resName": "Up_Fog_Dew_Sword",
+    "description": "หนึ่งในดาบนินจาที่นินจาผู้ชำนาญการใช้ดาบคู่ในอดีต\nเริ่มเผยพลังอันแท้จริงออกมา เมื่อได้เห็นใบมีดที่ลับคม\nความสามารถที่แท้จริงของมันสามารถรับรู้ได้เมื่อสวมใส่กับดาบนินจา Surudoi Kaze อีกเล่มหนึ่ง และดูกลมกลืนเข้ากับ Great Hero Boots\n\nเมื่อสวมใส่ร่วมกับ Surudoi Kaze,\nทุก ๆ ขั้นอัพเกรดรวมครบ 3 ขั้น ATK +15\nทุก ๆ ขั้นอัพเกรดรวมครบ 5 ขั้น ATK +3%\nเมื่อค่าอัพเกรดรวมกันตั้งแต่ 14 ขึ้นไป เพิ่ม Damage สกิล Cross Slash 30%, ลด Cooldown สกิล Cross Slash 2 วินาที\nเมื่อค่าอัพเกรดรวมกันตั้งแต่ 16 ขึ้นไป สามารถใช้สกิล Shadow Trampling ได้เท่ากับเลเวลการเรียนรู้ของสกิล Distorted Crescent และสามารถใช้สกิล Distorted Crescent ได้เท่ากับเลเวลการเรียนรู้ของสกิล Shadow Trampling\nเมื่อค่าอัพเกรดรวมกันตั้งแต่ 18 ขึ้นไป เพิ่ม Damage ทางกายภาพต่อศัตรูทุกธาตุ 15%\nเมื่อค่าอัพเกรดรวมกันตั้งแต่ 20 ขึ้นไป เพิ่ม Damage สกิล Cross Slash ขึ้นอีก 25%\nเมื่อสวมใส่ร่วมกับ Great Hero Boots และ Surudoi Kaze, DEX +10, ATK +7%\n\nประเภท : ^777777Dagger^000000 พลังโจมตี : ^777777190^000000\nน้ำหนัก : ^777777120^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Ninja^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 256,
+    "itemLevel": 4,
+    "attack": 190,
+    "defense": null,
+    "weight": 120,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Ninja"
+    ],
+    "script": {
+      "dex": [
+        "EQUIP[Great Hero Boots&&Surudoi Kaze]===10"
+      ],
+      "atkPercent": [
+        "EQUIP[Great Hero Boots&&Surudoi Kaze]===7",
+        "EQUIP[Surudoi Kaze]REFINE[weapon,leftWeapon==5]---3"
+      ],
+      "atk": [
+        "EQUIP[Surudoi Kaze]REFINE[weapon,leftWeapon==3]---15"
+      ],
+      "Cross Slash": [
+        "EQUIP[Surudoi Kaze]REFINE[weapon,leftWeapon==14]===30",
+        "EQUIP[Surudoi Kaze]REFINE[weapon,leftWeapon==20]===25"
+      ],
+      "cd__Cross Slash": [
+        "EQUIP[Surudoi Kaze]REFINE[weapon,leftWeapon==14]===2"
+      ],
+      "p_element_all": [
+        "EQUIP[Surudoi Kaze]REFINE[weapon,leftWeapon==18]===15"
+      ]
+    }
+  },
   "530000": {
     "id": 530000,
     "aegisName": "Boost_Spear",
@@ -43804,6 +44721,97 @@
         "EQUIP[Great Hero Boots]===10"
       ]
     }
+  },
+  "1220001": {
+    "id": 1220001,
+    "aegisName": "Kunai",
+    "name": "Kunai",
+    "unidName": "Kunai",
+    "resName": "Kunai",
+    "description": "มีดบินที่ใช้ได้ทั่วไป เมื่อนินจาใช้แล้วจะรู้สึกถึงความภาคภูมิตนเอง\nประเภท : ^777777Throwing Weapon^000000\nพลังโจมตี : ^77777730^000000\nน้ำหนัก : ^7777770.1^000000      ธาตุ : ^777777None^000000",
+    "slots": 0,
+    "itemTypeId": 4,
+    "itemSubTypeId": 1026,
+    "itemLevel": null,
+    "attack": 30,
+    "defense": null,
+    "weight": 0.1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Ninja"
+    ],
+    "script": {}
+  },
+  "1220002": {
+    "id": 1220002,
+    "aegisName": "Kunai_Of_Nothing",
+    "name": "Formless Kunai",
+    "unidName": "Formless Kunai",
+    "resName": "Kunai_Of_Nothing",
+    "description": "มีดบินที่รับรู้ถึงการเคลื่อนไหวของอากาศ สามารถเฉือนสิ่งนั้นได้อย่างง่ายดาย\nประเภท : ^777777Throwing Weapon^000000\nพลังโจมตี : ^77777730^000000\nน้ำหนัก : ^7777770.1^000000      ธาตุ : ^777777Ghost^000000",
+    "slots": 0,
+    "itemTypeId": 4,
+    "itemSubTypeId": 1026,
+    "itemLevel": null,
+    "attack": 30,
+    "propertyAtk": "Ghost",
+    "defense": null,
+    "weight": 0.1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Ninja"
+    ],
+    "script": {}
+  },
+  "1220003": {
+    "id": 1220003,
+    "aegisName": "Kunai_Of_Shadow",
+    "name": "Shadow Kunai",
+    "unidName": "Shadow Kunai",
+    "resName": "Kunai_Of_Shadow",
+    "description": "มีดบินที่มีพลังของเงามืด รู้สึกถึงความมืดมนไปจนถึงปลายนิ้ว\nประเภท : ^777777Throwing Weapon^000000\nพลังโจมตี : ^77777730^000000\nน้ำหนัก : ^7777770.1^000000      ธาตุ : ^777777Shadow^000000",
+    "slots": 0,
+    "itemTypeId": 4,
+    "itemSubTypeId": 1026,
+    "itemLevel": null,
+    "attack": 30,
+    "propertyAtk": "Dark",
+    "defense": null,
+    "weight": 0.1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Ninja"
+    ],
+    "script": {}
+  },
+  "1220004": {
+    "id": 1220004,
+    "aegisName": "Kunai_Of_Hamaya",
+    "name": "Hamaya Kunai",
+    "unidName": "Hamaya Kunai",
+    "resName": "Kunai_Of_Hamaya",
+    "description": "มีดบินแห่งความศักดิ์สิทธิ์ สามารถขับไล่ความชั่วร้ายได้ทั้งหมด\nประเภท : ^777777Throwing Weapon^000000\nพลังโจมตี : ^77777730^000000\nน้ำหนัก : ^7777770.1^000000      ธาตุ : ^777777Holy^000000",
+    "slots": 0,
+    "itemTypeId": 4,
+    "itemSubTypeId": 1026,
+    "itemLevel": null,
+    "attack": 30,
+    "propertyAtk": "Holy",
+    "defense": null,
+    "weight": 0.1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Ninja"
+    ],
+    "script": {}
   },
   "27427999": {
     "id": 27427999,

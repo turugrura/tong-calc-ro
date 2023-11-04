@@ -44,6 +44,7 @@ import { toDropdownList } from './utils/to-drowdown-list';
 import { sortObj } from './utils/sort-obj';
 import { HpSpTable } from './models/hp-sp-table.model';
 import { AllowLeftWeaponMapper } from './constants/allow-left-weapon-mapper';
+import { Kagerou } from './jobs/kagerou';
 
 interface MonsterSelectItemGroup extends SelectItemGroup {
   items: any[];
@@ -63,6 +64,8 @@ const Characters: DropdownModel[] = [
   { label: ClassID[10], value: 10, instant: new Mechanic() },
   // { label: ClassID[9],value: 9, instant: new Genetic() },
   { label: ClassID[3], value: 3, instant: new SoulReaper() },
+  // { label: ClassID[17], value: 3, instant: new Oboro() },
+  { label: ClassID[18], value: 18, instant: new Kagerou() },
   { label: ClassID[1], value: 1, instant: new Rebelion() },
   { label: ClassID[31], value: 31, instant: new Doram() },
 ];
@@ -459,7 +462,9 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         const isClassAllow = AllowLeftWeaponMapper[this.selectedCharacter.className] || false;
         this.showLeftWeapon = isClassAllow && !this.hiddenMap.shield;
         if (this.model.leftWeapon && !this.showLeftWeapon) {
+          console.log('remove left');
           this.model.leftWeapon = undefined;
+          this.onSelectItem(ItemTypeEnum.leftWeapon);
           this.onClearItem(ItemTypeEnum.leftWeapon);
           return;
         }
@@ -973,7 +978,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   openPresetManagement() {
     this.ref = this.dialogService.open(PresetTableComponent, {
       width: '80vw',
-      height: '80vh',
+      height: '90vh',
       contentStyle: { overflow: 'auto' },
       header: 'Preset Management',
       baseZIndex: 10000,
@@ -1663,6 +1668,10 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       }
 
       this.onClearItem(ItemTypeEnum.leftWeapon);
+    } else if (itemType === ItemTypeEnum.leftWeapon) {
+      for (let i = 3; i <= 5; i++) {
+        this.model.rawOptionTxts[i] = undefined;
+      }
     }
 
     const relatedItems = MainItemWithRelations[itemType as ItemTypeEnum] || [];

@@ -1,6 +1,7 @@
 import { ClassName } from './_class-name';
 import { ActiveSkillModel, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
 import { Ninja } from './ninja';
+import { ShadowWarrior } from '../constants/share-active-skills/shadow-warrior';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 0, 1, 0],
@@ -74,15 +75,29 @@ export class Oboro extends CharacterBase {
   protected readonly CLASS_NAME = ClassName.Oboro;
   protected readonly JobBonusTable = jobBonusTable;
 
-  protected readonly initialStatusPoint = 40;
+  protected readonly initialStatusPoint = 48;
   protected readonly classNames = ['Oboro', 'Oboro Cls', 'Oboro Class'];
+
   protected readonly _atkSkillList: AtkSkillModel[] = [];
-  protected readonly _activeSkillList: ActiveSkillModel[] = []; //Shadow Warrior
-  protected readonly _passiveSkillList: PassiveSkillModel[] = []; //Moonlight Fantasy
+
+  protected readonly _activeSkillList: ActiveSkillModel[] = [ShadowWarrior];
+
+  protected readonly _passiveSkillList: PassiveSkillModel[] = [
+    {
+      label: 'Moonlight Fantasy 5',
+      name: 'Moonlight Fantasy',
+      inputType: 'selectButton',
+      dropdown: [
+        { label: 'Yes', value: 5, skillLv: 5, isUse: true },
+        { label: 'No', value: 0, isUse: false },
+      ],
+    },
+  ];
 
   constructor() {
     super();
 
-    this.inheritBaseClass(new Ninja());
+    this.inheritBaseClass(Ninja.bind(this));
+    // Ninja.bind(this)
   }
 }

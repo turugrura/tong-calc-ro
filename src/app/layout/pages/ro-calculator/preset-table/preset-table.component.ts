@@ -6,6 +6,7 @@ import { ConfirmationService, MessageService } from 'primeng/api';
 
 const displayMainItemKeys = [
   ItemTypeEnum.weapon,
+  ItemTypeEnum.leftWeapon,
   ItemTypeEnum.shield,
   ItemTypeEnum.headUpper,
   ItemTypeEnum.headMiddle,
@@ -16,6 +17,10 @@ const displayMainItemKeys = [
   ItemTypeEnum.accRight,
   ItemTypeEnum.accLeft,
 ];
+const allowHidden = {
+  [ItemTypeEnum.leftWeapon]: true,
+  [ItemTypeEnum.shield]: true,
+};
 const displayCostumeItemKeys = [
   ItemTypeEnum.costumeEnchantUpper,
   ItemTypeEnum.costumeEnchantMiddle,
@@ -76,7 +81,7 @@ export class PresetTableComponent implements OnInit {
       .map((itemType) => {
         const itemId = this.model[itemType];
         if (!itemId) {
-          return { itemType, cardIds: [], enchantIds: [], isHidden: itemType === ItemTypeEnum.shield };
+          return { itemType, cardIds: [], enchantIds: [], isHidden: allowHidden[itemType] || false };
         }
 
         const refine = this.model[`${itemType}Refine`];
