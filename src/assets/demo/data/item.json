@@ -69,7 +69,7 @@
     "usableClass": [
       "Swordman Cls",
       "Rogue",
-      "Magician",
+      "Mage",
       "Wizard",
       "Marchant Cls",
       "Taekwon Cls",
@@ -939,6 +939,49 @@
       "all"
     ]
   },
+  "1867": {
+    "id": 1867,
+    "aegisName": "Ein_1HKNUCK",
+    "name": "Safety Knuckle [2]",
+    "unidName": "Bagh Nahk",
+    "resName": "Ein_1HKNUCK",
+    "description": "มันเคยเป็นผลิตภัณฑ์ที่ทำขึ้นเพื่อใช้เป็นเซฟตี้ของคนงาน Einbech\nแต่ด้วยความทนทานอันยอดเยี่ยมของมัน จึงมีการนำไปดัดแปลงเป็นอุปกรณ์ยึดเกาะเพื่อใช้ในการต่อสู้\n^ffffff_^000000\nATK +10%\nเพิ่ม Damage สกิล Knuckle Arrow 10%\nเมื่ออัพเกรดถึงขั้น 7, ATK +40, ASPD +15%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Knuckle Arrow ขึ้นอีก 15% \nเมื่อโจมตีทางกายภาพ มีโอกาสที่จะเพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 15% เป็นเวลา 10 วินาที\nเมื่ออัพเกรดถึงขั้น 11 ลด Delay หลังใช้สกิล 20%\n^ffffff_^000000\nประเภท : ^777777Knuckle^000000 พลังโจมตี : ^777777210^000000\nน้ำหนัก : ^777777180^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Sura^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 268,
+    "itemLevel": 4,
+    "attack": 210,
+    "defense": null,
+    "weight": 180,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Sura"
+    ],
+    "script": {
+      "atkPercent": [
+        "10"
+      ],
+      "Knuckle Arrow": [
+        "10",
+        "9===15",
+        "9===15"
+      ],
+      "atk": [
+        "7===40"
+      ],
+      "aspdPercent": [
+        "7===15"
+      ],
+      "acd": [
+        "11===20"
+      ],
+      "chance__p_size_all": [
+        "15"
+      ]
+    }
+  },
   "1900": {
     "id": 1900,
     "aegisName": "Sinister_Viollin",
@@ -1485,6 +1528,48 @@
       ],
       "ลด Damage ทางกายภาพ/เวทมนตร์ที่ได้รับจากศัตรูทุกขนาด": [
         "11===25"
+      ]
+    }
+  },
+  "2058": {
+    "id": 2058,
+    "aegisName": "Ein_BHSTAFF",
+    "name": "Detecting Staff [2]",
+    "unidName": "Rod",
+    "resName": "Ein_BHSTAFF",
+    "description": "เครื่องตรวจจับที่ใช้ในการหาโลหะชนิดพิเศษในเหมือง Einbech\nหลังจากที่มีการเพิ่มพลังเวทมนตร์ลงไป มันก็ถูกใช้เพื่อวัตถุประสงค์อื่นนอกเหนือจากวัตถุประสงค์เดิมอยู่บ่อย ๆ\n^ffffff_^000000\nMATK +330 \nMATK +10%\nเมื่ออัพเกรดถึงขั้น 7, MATK +60, ลดระยะเวลาร่ายแบบแปรผัน 10%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางเวทมนตร์ธาตุ Fire 15%\nเมื่อโจมตีทางเวทมนตร์ มีโอกาสที่จะเพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 20% เป็นเวลา 10 วินาที\nเมื่ออัพเกรดถึงขั้น 11 ลด Delay หลังใช้สกิล 20% \n^ffffff_^000000\nประเภท : ^777777Two-Handed Staff^000000\nพลังโจมตี : ^777777180^000000\nน้ำหนัก : ^777777200^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Warlock^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 266,
+    "itemLevel": 4,
+    "attack": 180,
+    "defense": null,
+    "weight": 200,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Warlock"
+    ],
+    "script": {
+      "matk": [
+        "330",
+        "7===60"
+      ],
+      "matkPercent": [
+        "10"
+      ],
+      "vct": [
+        "7===10"
+      ],
+      "m_my_element_fire": [
+        "9===15"
+      ],
+      "chance__m_size_all": [
+        "9===20"
+      ],
+      "acd": [
+        "11===20"
       ]
     }
   },
@@ -2892,6 +2977,53 @@
         "3"
       ]
     }
+  },
+  "4335": {
+    "id": 4335,
+    "aegisName": "Pitman_Card",
+    "name": "Pitman Card",
+    "unidName": "Pitman Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่มความรุนแรงของ\nสกิล Earth Spike และ\nHeaven's Drive 5%\nลด 50 SP เมื่อ\nอาวุธที่สวมใส่การ์ดนี้\nถูกถอดออก\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Gnome",
+    "script": {
+      "Earth Spike": [
+        "5"
+      ],
+      "Heaven's Drive": [
+        "5"
+      ]
+    }
+  },
+  "4336": {
+    "id": 4336,
+    "aegisName": "Ungoliant_Card",
+    "name": "Ungoliant Card",
+    "unidName": "Ungoliant Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่มความต้านทาน\nสถานะ Bleeding\nและเพิ่มอัตราการ\nฟื้นฟู HP 10%.\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Headgear^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 769,
+    "cardPrefix": "of Vitality",
+    "script": {}
   },
   "4337": {
     "id": 4337,
@@ -8336,6 +8468,51 @@
       ]
     }
   },
+  "13346": {
+    "id": 13346,
+    "aegisName": "Ein_BHHuuma",
+    "name": "Grinder Huuma Shuriken [2]",
+    "unidName": "Shuriken",
+    "resName": "Ein_BHHuuma",
+    "description": "ใบเลื่อยที่ใช้ในเหมือง Einbech \nด้วยความสะดวกสบายในการพกพาและความสามารถในการตัดอันยอดเยี่ยม จึงถูกนำไปใช้เพื่อวัตถุประสงค์อื่นมากกว่า \n^ffffff_^000000\nATK +15%\nเพิ่ม Damage สกิล Swirling Petal 15%\nเมื่ออัพเกรดถึงขั้น 7, ATK +60, ลดระยะเวลาร่ายแบบแปรผัน 15% \nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Swirling Petal ขึ้นอีก 20%,\nเมื่อโจมตีทางกายภาพ มีโอกาสที่จะเพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 20% เป็นเวลา 10 วินาที\nเมื่ออัพเกรดถึงขั้น 11 ลด Cooldown สกิล Swirling Petal 1 วินาที, ลด Delay หลังใช้สกิล 20% \n^ffffff_^000000\nประเภท : ^777777Shuriken^000000\nพลังโจมตี : ^777777280^000000\nน้ำหนัก : ^777777180^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Ninja^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 278,
+    "itemLevel": 4,
+    "attack": 280,
+    "defense": null,
+    "weight": 180,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Ninja"
+    ],
+    "script": {
+      "atkPercent": [
+        "15"
+      ],
+      "Swirling Petal": [
+        "15",
+        "9===20"
+      ],
+      "atk": [
+        "7===60"
+      ],
+      "vct": [
+        "7===15"
+      ],
+      "cd__Swirling Petal": [
+        "11===1"
+      ],
+      "chance__p_size_all": [
+        "9===20"
+      ],
+      "acd": [
+        "11===20"
+      ]
+    }
+  },
   "13347": {
     "id": 13347,
     "aegisName": "R_Huuma_Shuriken",
@@ -10210,6 +10387,51 @@
       ]
     }
   },
+  "16099": {
+    "id": 16099,
+    "aegisName": "Ein_1HHAMMER",
+    "name": "Rubber Hammer [2]",
+    "unidName": "Club",
+    "resName": "Ein_1HHAMMER",
+    "description": "ค้อนที่ใช้ในการสำรวจอุโมงค์เหมือง Einbech\nเดิมทีมันถูกใช้เป็นอุปกรณ์ในการสำรวจอุโมงค์เหมือง แต่ด้วยดีไซน์เฉพาะตัวและความแข็งแรงทนทาน จึงมีการนำไปใช้ในการต่อสู้ด้วย\n^ffffff_^000000\nMATK +180, ไม่สามารถทำลายได้\nMATK +7%\nปริมาณ Heal +15%, เพิ่ม Damage สกิล Adoramus 10%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางเวทมนตร์ธาตุ Holy 7%, ลดระยะเวลาร่ายแบบแปรผัน 10%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Adoramus ขึ้นอีก 15%\nเมื่อโจมตีทางกายภาพ มีโอกาสที่จะเพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 15% เป็นเวลา 5 วินาที\nเมื่ออัพเกรดถึงขั้น 11 ลด Delay หลังใช้สกิล 20%\n^ffffff_^000000\nประเภท : ^777777Mace^000000 พลังโจมตี : ^777777160^000000\nน้ำหนัก : ^777777190^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Archbishop^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 263,
+    "itemLevel": 4,
+    "attack": 160,
+    "defense": null,
+    "weight": 190,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Arch Bishop"
+    ],
+    "script": {
+      "matk": [
+        "180"
+      ],
+      "matkPercent": [
+        "7"
+      ],
+      "Adoramus": [
+        "10",
+        "9===15"
+      ],
+      "m_my_element_holy": [
+        "7===7"
+      ],
+      "vct": [
+        "7===10"
+      ],
+      "chance__m_size_all": [
+        "9===15"
+      ],
+      "acd": [
+        "11===20"
+      ]
+    }
+  },
   "18000": {
     "id": 18000,
     "aegisName": "Cannon_Ball",
@@ -10710,6 +10932,48 @@
       ],
       "cd__Severe Rainstorm": [
         "11===2"
+      ]
+    }
+  },
+  "18190": {
+    "id": 18190,
+    "aegisName": "Ein_BHBOW",
+    "name": "Bolt Shooter [2]",
+    "unidName": "Bow",
+    "resName": "Ein_BHBOW",
+    "description": "เครื่องมือที่ใช้เพื่อปักตะปูในเหมือง Einbech \nมันถูกดัดแปลงให้สามารถใช้ยิงอย่างอื่นได้นอกจากตะปูด้วย \n^ffffff_^000000\nATK + 10%\nเพิ่ม Damage สกิล Aimed Bolt 10%\nเมื่ออัพเกรดถึงขั้น 7, ATK +60, ลดระยะเวลาร่ายแบบแปรผัน 10%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Aimed Bolt อีก 15%\nเมื่อโจมตีทางกายภาพ มีโอกาสที่จะเพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 20% เป็นเวลา 10 วินาที\nเมื่ออัพเกรดถึงขั้น 11 ลด Delay หลังใช้สกิล 20% \n^ffffff_^000000\nประเภท : ^777777Bow^000000 พลังโจมตี : ^777777210^000000\nน้ำหนัก : ^777777170^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Ranger^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 267,
+    "itemLevel": 4,
+    "attack": 210,
+    "defense": null,
+    "weight": 170,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Ranger"
+    ],
+    "script": {
+      "atkPercent": [
+        "10"
+      ],
+      "Aimed Bolt": [
+        "10",
+        "9===15"
+      ],
+      "atk": [
+        "7===60"
+      ],
+      "vct": [
+        "7===10"
+      ],
+      "chance__p_size_all": [
+        "9===20"
+      ],
+      "acd": [
+        "11===20"
       ]
     }
   },
@@ -15190,6 +15454,48 @@
       ],
       "cd__Sonic Wave": [
         "11===1.5"
+      ]
+    }
+  },
+  "21054": {
+    "id": 21054,
+    "aegisName": "Ein_BHSWORD",
+    "name": "Claw Sword [2]",
+    "unidName": "Bastard Sword",
+    "resName": "Ein_BHSWORD",
+    "description": "เครื่องมือที่ใช้ในการจัดการเศษซากต่าง ๆ ที่เหลืออยู่เขตก่อสร้าง\nสามารถนำไปใช้ประโยชน์ได้อย่างหลากหลาย\n^ffffff_^000000\nATK +15%, CRI +5\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Critical Damage 25%, ASPD +10%\nเมื่ออัพเกรดถึงขั้น 9 เมื่อโจมตีทางกายภาพ มีโอกาสที่จะเพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 20% เป็นเวลา 5 วินาที\nเมื่ออัพเกรดถึงขั้น 11, CRI +7, ลด Delay หลังใช้สกิล 20%\n^ffffff_^000000\nประเภท : ^777777Two-Handed Sword^000000 พลังโจมตี : ^777777300^000000\nน้ำหนัก : ^777777350^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Rune Knight^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 258,
+    "itemLevel": 4,
+    "attack": 300,
+    "defense": null,
+    "weight": 350,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Rune Knight"
+    ],
+    "script": {
+      "atkPercent": [
+        "15"
+      ],
+      "cri": [
+        "5",
+        "11===7"
+      ],
+      "criDmg": [
+        "7===25"
+      ],
+      "aspdPercent": [
+        "7===10"
+      ],
+      "chance__p_size_all": [
+        "9===20"
+      ],
+      "acd": [
+        "11===20"
       ]
     }
   },
@@ -25075,6 +25381,55 @@
       ]
     }
   },
+  "26162": {
+    "id": 26162,
+    "aegisName": "Ein_1HWAND",
+    "name": "Welding Wand [2]",
+    "unidName": "Rod",
+    "resName": "Ein_1HWAND",
+    "description": "เครื่องเชื่อมเหล็กที่ทำงานด้วยพลังเวทมนตร์\nมันมีความสามารถในการเพิ่มพลังเวทมนตร์ จึงถูกนำไปใช้ในการต่อสู้ด้วย\n^ffffff_^000000\nMATK +200\nเพิ่ม Damage ทางเวทมนตร์ธาตุ Neutral, Water, Fire 7%\nเมื่ออัพเกรดถึงขั้น 7, MATK + 40, ลดระยะเวลาร่ายแบบแปรผัน 10%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางเวทมนตร์ธาตุ Neutral, Water, Fire ขึ้นอีก 8%\nเมื่อโจมตีเวทมนตร์ มีโอกาสที่จะเพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 15% เป็นเวลา 10 วินาที\nเมื่ออัพเกรดถึงขั้น 11 ลด Delay หลังใช้สกิล 20% \n^ffffff_^000000\nประเภท : ^777777Staff^000000\nพลังโจมตี : ^777777160^000000\nน้ำหนัก : ^777777120^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Magician, Soul Linker^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 265,
+    "itemLevel": 4,
+    "attack": 160,
+    "defense": null,
+    "weight": 120,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Mage",
+      "Soul Linker"
+    ],
+    "script": {
+      "matk": [
+        "200",
+        "7===40"
+      ],
+      "vct": [
+        "7===10"
+      ],
+      "m_my_element_neutral": [
+        "7",
+        "9===8"
+      ],
+      "m_my_element_water": [
+        "7",
+        "9===8"
+      ],
+      "m_my_element_fire": [
+        "7",
+        "9===8"
+      ],
+      "chance__m_size_all": [
+        "9===15"
+      ],
+      "acd": [
+        "11===20"
+      ]
+    }
+  },
   "26164": {
     "id": 26164,
     "aegisName": "ElectricFox_OS",
@@ -25390,6 +25745,51 @@
         "9===1"
       ],
       "spPercent__Severe Rainstorm": [
+        "11===20"
+      ]
+    }
+  },
+  "26215": {
+    "id": 26215,
+    "aegisName": "Ein_1HWHIP",
+    "name": "Safety Whip [2]",
+    "unidName": "Rope",
+    "resName": "Ein_1HWHIP",
+    "description": "เชือกที่ถูกทำขึ้นเพื่อใช้เป็นอุปกรณ์ช่วยชีวิตในเหมือง Einbech\nแต่ในความเป็นจริงมันถูกใช้เพื่อวัตถุประสงค์อื่นบ่อยยิ่งกว่าใช้ช่วยชีวิตอีก \n^ffffff_^000000\nเพิ่ม Damage ทางกายภาพระยะไกล 10%\nเพิ่ม Damage สกิล Severe Rainstorm 10%\nเมื่ออัพเกรดถึงขั้น 7, ATK +40, ลดระยะเวลาร่ายแบบแปรผัน 10%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Severe Rainstorm ขึ้นอีก 15% \nเมื่อโจมตีทางกายภาพ มีโอกาสที่จะเพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 15% เป็นเวลา 10 วินาที\nเมื่ออัพเกรดถึงขั้น 11 ลด Cooldown สกิล Severe Rainstorm 2 วินาที, ลด Delay หลังใช้สกิล 20%\n^ffffff_^000000\nประเภท : ^777777Whip^000000 พลังโจมตี : ^777777200^000000\nน้ำหนัก : ^777777140^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Wanderer^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 270,
+    "itemLevel": 4,
+    "attack": 200,
+    "defense": null,
+    "weight": 140,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Wanderer"
+    ],
+    "script": {
+      "range": [
+        "10"
+      ],
+      "Severe Rainstorm": [
+        "10",
+        "9===15"
+      ],
+      "atk": [
+        "7===40"
+      ],
+      "vct": [
+        "7===10"
+      ],
+      "cd__Severe Rainstorm": [
+        "11===2"
+      ],
+      "chance__p_size_all": [
+        "9===15"
+      ],
+      "acd": [
         "11===20"
       ]
     }
@@ -28446,6 +28846,48 @@
       ]
     }
   },
+  "28045": {
+    "id": 28045,
+    "aegisName": "Ein_BHKATAR",
+    "name": "Bolt Crusher [2]",
+    "unidName": "Katar",
+    "resName": "Ein_BHKATAR",
+    "description": "เครื่องมือที่ใช้ในการตัดเหล็กชนิดต่าง ๆ ในเหมือง Einbech \nด้วยความสามารถในการตัดอันยอดเยี่ยมของมัน จึงมีการนำไปดัดแปลงเพื่อใช้ในการต่อสู้ \n^ffffff_^000000\nATK +10%\nเพิ่ม Damage สกิล Rolling Cutter 10%\nเมื่ออัพเกรดถึงขั้น 7, ATK +60, ASPD +10%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Rolling Cutter ขึ้นอีก 15%\nเมื่อโจมตีทางกายภาพ มีโอกาสที่จะเพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 20% เป็นเวลา 10 วินาที\nเมื่ออัพเกรดถึงขั้น 11 ลด Delay หลังใช้สกิล 20%\n^ffffff_^000000\nประเภท : ^777777Katar^000000 พลังโจมตี : ^777777300^000000\nน้ำหนัก : ^777777200^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Guillotine Cross^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 272,
+    "itemLevel": 4,
+    "attack": 300,
+    "defense": null,
+    "weight": 200,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Guillotine Cross"
+    ],
+    "script": {
+      "atkPercent": [
+        "10"
+      ],
+      "Rolling Cutter": [
+        "10",
+        "9===15"
+      ],
+      "atk": [
+        "7===60"
+      ],
+      "aspdPercent": [
+        "7===10"
+      ],
+      "chance__p_size_all": [
+        "9===20"
+      ],
+      "acd": [
+        "11===20"
+      ]
+    }
+  },
   "28046": {
     "id": 28046,
     "aegisName": "R_Katar",
@@ -28642,6 +29084,50 @@
       ],
       "Axe Tornado": [
         "11===15"
+      ]
+    }
+  },
+  "28140": {
+    "id": 28140,
+    "aegisName": "Ein_BHAXE",
+    "name": "Saw Axe [2]",
+    "unidName": "Axe",
+    "resName": "Ein_BHAXE",
+    "description": "อาวุธที่ดัดแปลงมาจากเลื่อยเพื่อใช้ในการต่อสู้ เดิมมันถูกใช้ตัดเหล็กมาก่อน\nแค่เสียงสั่นสะเทือนจากเครื่องยนต์ทุกครั้งการกวัดแกว่งของมัน ก็ทำให้ศัตรูพากันหัวหดแล้ว\n^ffffff_^000000\nATK +10%, ไม่สามารถทำลายได้\nเพิ่ม Damage สกิล Arm Cannon 10%\nเมื่ออัพเกรดถึงขั้น 7, ATK +60, ลดระยะเวลาร่ายแบบแปรผัน 10%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพระยะไกล 10%\nเมื่อโจมตีทางกายภาพ มีโอกาสที่จะเพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 15% เป็นเวลา 5 วินาที\nเมื่ออัพเกรดถึงขั้น 11 ลด Delay หลังใช้สกิล 20%\n^ffffff_^000000\nประเภท : ^777777Two-Handed Axe^000000 พลังโจมตี : ^777777350^000000\nน้ำหนัก : ^777777500^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Mechanic^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 262,
+    "itemLevel": 4,
+    "attack": 350,
+    "defense": null,
+    "weight": 500,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Mechanic"
+    ],
+    "script": {
+      "atkPercent": [
+        "10"
+      ],
+      "Arm Cannon": [
+        "10"
+      ],
+      "atk": [
+        "7===60"
+      ],
+      "vct": [
+        "7===10"
+      ],
+      "range": [
+        "9===10"
+      ],
+      "chance__p_size_all": [
+        "9===15"
+      ],
+      "acd": [
+        "11===20"
       ]
     }
   },
@@ -29561,6 +30047,51 @@
       ]
     }
   },
+  "28635": {
+    "id": 28635,
+    "aegisName": "Ein_1HBOOK",
+    "name": "Safety Manual [2]",
+    "unidName": "Book",
+    "resName": "Ein_1HBOOK",
+    "description": "หนังสือที่เต็มไปด้วยวิธีการเตรียมพร้อมสำหรับภัยพิบัติทางธรรมชาติและอุตสาหกรรมต่าง ๆ \nหนังสือที่เต็มไปด้วยวิธีการเตรียมพร้อมสำหรับภัยพิบัติทางธรรมชาติและอุตสาหกรรมต่าง ๆ \n^ffffff_^000000\nATK +10%, CRI +3\nเมื่ออัพเกรดถึงขั้น 7, ATK +40, ASPD +10%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Critical Damage 15%, เมื่อโจมตีทางกายภาพ มีโอกาสที่จะเพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 15% เป็นเวลา 10 วินาที\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Critical Damage ขึ้นอีก 15%, ลด Delay หลังใช้สกิล 20% \n^ffffff_^000000\nประเภท : ^777777Book^000000 พลังโจมตี : ^777777200^000000\nน้ำหนัก : ^77777770^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Star Emperor^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 271,
+    "itemLevel": 4,
+    "attack": 200,
+    "defense": null,
+    "weight": 70,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Star Emperor"
+    ],
+    "script": {
+      "atkPercent": [
+        "10"
+      ],
+      "cri": [
+        "3"
+      ],
+      "atk": [
+        "7===40"
+      ],
+      "aspdPercent": [
+        "7===10"
+      ],
+      "criDmg": [
+        "9===15",
+        "11===15"
+      ],
+      "chance__p_size_all": [
+        "9===15"
+      ],
+      "acd": [
+        "11===20"
+      ]
+    }
+  },
   "28636": {
     "id": 28636,
     "aegisName": "R_Sage_Book",
@@ -29775,6 +30306,95 @@
       ],
       "spPercent__Fatal Manace": [
         "11===10"
+      ]
+    }
+  },
+  "28771": {
+    "id": 28771,
+    "aegisName": "Ein_1HDAGGER",
+    "name": "Metal Detector Mk47 [2]",
+    "unidName": "Knife",
+    "resName": "Ein_1HDAGGER",
+    "description": "เครื่องตรวจจับขนาดเล็กที่ถูกสร้างขึ้นเพื่อใช้ค้นหาโลหะในเหมือง\nมันแข็งแรงและมีน้ำหนักเบา จึงนิยมนำมาใช้เป็นอาวุธป้องกันตัวด้วยเช่นกัน\n^ffffff_^000000\nATK +10%\nเพิ่ม Damage สกิล Cross Impact 10% \nเมื่ออัพเกรดถึงขั้น 7, ATK +40, ASPD +10%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Cross Impact ขึ้นอีก 15%  \nเมื่อโจมตีทางกายภาพ มีโอกาสที่จะเพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 15% เป็นเวลา 10 วินาที\nเมื่ออัพเกรดถึงขั้น 11 ลด Delay หลังใช้สกิล 20% \n^ffffff_^000000\nประเภท : ^777777Dagger^000000 พลังโจมตี : ^777777200^000000\nน้ำหนัก : ^777777100^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Guillotine Cross^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 256,
+    "itemLevel": 4,
+    "attack": 200,
+    "defense": null,
+    "weight": 100,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Guillotine Cross"
+    ],
+    "script": {
+      "atkPercent": [
+        "10"
+      ],
+      "Cross Impact": [
+        "10",
+        "9===15"
+      ],
+      "atk": [
+        "7===40"
+      ],
+      "aspdPercent": [
+        "7===10"
+      ],
+      "chance__p_size_all": [
+        "9===15"
+      ],
+      "acd": [
+        "11===20"
+      ]
+    }
+  },
+  "28772": {
+    "id": 28772,
+    "aegisName": "Ein_1HMAGGER",
+    "name": "Jewel Detector Mk47 [2]",
+    "unidName": "Knife",
+    "resName": "Ein_1HMAGGER",
+    "description": "เครื่องตรวจจับขนาดเล็กที่ถูกสร้างขึ้นเพื่อใช้ค้นหาอัญมณีในเหมือง\nมันช่วยเพิ่มพลังให้กับผู้ใช้งาน จึงถูกนำไปใช้ประโยชน์ในหลาย ๆ ด้าน\n^ffffff_^000000\nMATK +180 \nMATK +10%\nเพิ่ม Damage ทางเวทมนตร์ธาตุ Fire, Neutral 7% \nเมื่ออัพเกรดถึงขั้น 7, MATK +40, ASPD +10%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางเวทมนตร์ธาตุ Fire, Neutral อีก 8% \nเมื่อโจมตีทางกายภาพ มีโอกาสที่จะเพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 15% เป็นเวลา 10 วินาที\nเมื่ออัพเกรดถึงขั้น 11 ลด Delay หลังใช้สกิล 20% \n^ffffff_^000000\nประเภท : ^777777Dagger^000000 พลังโจมตี : ^777777190^000000\nน้ำหนัก : ^777777100^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Shadow Chaser^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 256,
+    "itemLevel": 4,
+    "attack": 190,
+    "defense": null,
+    "weight": 100,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Shadow Chaser"
+    ],
+    "script": {
+      "matk": [
+        "180",
+        "7===40"
+      ],
+      "matkPercent": [
+        "10"
+      ],
+      "aspdPercent": [
+        "7===10"
+      ],
+      "m_my_element_fire": [
+        "7",
+        "9===8"
+      ],
+      "m_my_element_neutral": [
+        "7",
+        "9===8"
+      ],
+      "chance__p_size_all": [
+        "9===15"
+      ],
+      "acd": [
+        "11===20"
       ]
     }
   },
@@ -36090,6 +36710,48 @@
       ]
     }
   },
+  "32026": {
+    "id": 32026,
+    "aegisName": "Ein_1HSPEAR",
+    "name": "Blocking Spear [2]",
+    "unidName": "Spear",
+    "resName": "Ein_1HSPEAR",
+    "description": "สิ่งของที่ใช้ในการปิดทางเข้าออกพื้นที่อันตรายในเหมือง Einbech \nมันมีความทนทานและมีความสามารถในการทำลายล้างสูง จึงถูกนำไปดัดแปลงเป็นอาวุธ \n^ffffff_^000000\nATK +10%\nเพิ่ม Damage สกิล Vanishing Point 10%\nเมื่ออัพเกรดถึงขั้น 7, ATK +40, ASPD +10%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Vanishing Point ขึ้นอีก 15% \nเมื่อโจมตีทางกายภาพ มีโอกาสที่จะเพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 15% เป็นเวลา 10 วินาที\nเมื่ออัพเกรดถึงขั้น 11 ลด Delay หลังใช้สกิล 20% \n^ffffff_^000000\nประเภท : ^777777Spear^000000 พลังโจมตี : ^777777210^000000\nน้ำหนัก : ^777777300^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Royal Guard^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 259,
+    "itemLevel": 4,
+    "attack": 210,
+    "defense": null,
+    "weight": 300,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Royal Guard"
+    ],
+    "script": {
+      "atkPercent": [
+        "10"
+      ],
+      "Vanishing Point": [
+        "10",
+        "9===15"
+      ],
+      "atk": [
+        "7===40"
+      ],
+      "aspdPercent": [
+        "7===10"
+      ],
+      "chance__p_size_all": [
+        "9===15"
+      ],
+      "acd": [
+        "11===20"
+      ]
+    }
+  },
   "32107": {
     "id": 32107,
     "aegisName": "Black_Circle",
@@ -36157,6 +36819,51 @@
         "9===1"
       ],
       "spPercent__Severe Rainstorm": [
+        "11===20"
+      ]
+    }
+  },
+  "32110": {
+    "id": 32110,
+    "aegisName": "Ein_1HLUTE",
+    "name": "Safety Lute [2]",
+    "unidName": "Violin",
+    "resName": "Ein_1HLUTE",
+    "description": "เครื่องดนตรีที่ถูกทำขึ้นเพื่อใช้ในการแจ้งเหตุฉุกเฉินและเติมชีวิตชีวาให้กับคนงานในเหมือง Einbech \nถึงแม้ว่ากีตาร์จะมีข้อเสียหลายอย่าง แต่เสียงของมันไม่ใช่เล่น ๆ เลย \n^ffffff_^000000\nเพิ่ม Damage ทางกายภาพระยะไกล 10%\nเพิ่ม Damage สกิล Severe Rainstorm 10%\nเมื่ออัพเกรดถึงขั้น 7, ATK +40, ลดระยะเวลาร่ายแบบแปรผัน 10%\nเมื่ออัพเกรดถึงขั้น 9, เพิ่ม Damage สกิล Severe Rainstorm ขึ้นอีก 15%\nเมื่อโจมตีทางกายภาพ มีโอกาสที่จะเพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 15% เป็นเวลา 10 วินาที\nเมื่ออัพเกรดถึงขั้น 11 ลด Cooldown สกิล Severe Rainstorm 2 วินาที, ลด Delay หลังใช้สกิล 20% \n^ffffff_^000000\nประเภท : ^777777Instrument^000000 พลังโจมตี : ^777777200^000000\nน้ำหนัก : ^777777140^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Minstrel^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 269,
+    "itemLevel": 4,
+    "attack": 200,
+    "defense": null,
+    "weight": 140,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Minstrel"
+    ],
+    "script": {
+      "range": [
+        "10"
+      ],
+      "Severe Rainstorm": [
+        "10",
+        "9===15"
+      ],
+      "atk": [
+        "7===40"
+      ],
+      "vct": [
+        "7===10"
+      ],
+      "cd__Severe Rainstorm": [
+        "11===2"
+      ],
+      "chance__p_size_all": [
+        "9===15"
+      ],
+      "acd": [
         "11===20"
       ]
     }
@@ -36650,6 +37357,144 @@
       ]
     }
   },
+  "32248": {
+    "id": 32248,
+    "aegisName": "Ein_SAFETY_PENDR",
+    "name": "Safety Pendant R [1]",
+    "unidName": "Earring",
+    "resName": "Ein_SAFETY_PENDR",
+    "description": "เหรียญตราที่มอบให้แก่ผู้รับผิดชอบความปลอดภัยภายในเหมือง Einbech\nมันถูกมอบไม่บ่อยนัก จึงเป็นเหรียญตราที่หาได้ยากมาก\nAll Stat +5, ASPD +5% \n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Safety Epaulet R, \nMHP +10%, ASPD +15%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Safety Epaulet B, \nMHP +10%, ลดระยะเวลาร่ายแบบแปรผัน 15%\n^ffffff_^000000\nเมื่อสวมใส่อาวุธ Einbech ร่วมกับ Safety Epaulet R หรือ Safety Epaulet B, \nลดระยะเวลาร่ายแบบคงที่ 0.3 วินาที, ลด Delay หลังใช้สกิล 7%\nลด Damage ทางกายภาพที่ได้รับจากศัตรูทุกขนาด 3%\n^ffffff_^000000\nประเภท : ^777777Accessory (Right)^000000\nพลังป้องกัน : ^77777710^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 510,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 10,
+    "weight": 10,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "allStatus": [
+        "5"
+      ],
+      "aspdPercent": [
+        "5",
+        "EQUIP[Safety Epaulet R]15"
+      ],
+      "hpPercent": [
+        "EQUIP[Safety Epaulet R]10",
+        "EQUIP[Safety Epaulet B]10"
+      ],
+      "vct": [
+        "EQUIP[Safety Epaulet B]15"
+      ],
+      "fct": [
+        "EQUIP[Safety Epaulet R||Safety Epaulet B&&Safety Knuckle||Detecting Staff||Grinder Huuma Shuriken||Rubber Hammer||Bolt Shooter||Claw Sword||Welding Wand||Safety Whip||Bolt Crusher||Saw Axe||Safety Manual||Metal Detector Mk47||Jewel Detector Mk47||Blocking Spear||Safety Lute||Bolt Revolver||Safety Saber||Safety Foxtail]0.3"
+      ],
+      "acd": [
+        "EQUIP[Safety Epaulet R||Safety Epaulet B&&Safety Knuckle||Detecting Staff||Grinder Huuma Shuriken||Rubber Hammer||Bolt Shooter||Claw Sword||Welding Wand||Safety Whip||Bolt Crusher||Saw Axe||Safety Manual||Metal Detector Mk47||Jewel Detector Mk47||Blocking Spear||Safety Lute||Bolt Revolver||Safety Saber||Safety Foxtail]7"
+      ]
+    }
+  },
+  "32249": {
+    "id": 32249,
+    "aegisName": "Ein_SAFETY_PENDL",
+    "name": "Safety Pendant B [1]",
+    "unidName": "Earring",
+    "resName": "Ein_SAFETY_PENDL",
+    "description": "เหรียญตราที่มอบให้แก่ผู้รับผิดชอบความปลอดภัยภายในเหมือง Einbech \nมันถูกมอบไม่บ่อยนัก จึงเป็นเหรียญตราที่หาได้ยากมาก \nAll Stat +5, ลดระยะเวลาร่ายแบบแปรผัน 5%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Safety Epaulet B, \nMHP +10%, ลดระยะเวลาร่ายแบบแปรผันลงอีก 15%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Safety Epaulet R, \nMHP +10%, ASPD +15%\n^ffffff_^000000\nเมื่อสวมใส่อาวุธ Einbech ร่วมกับ Safety Epaulet R หรือ Safety Epaulet B, \nลดระยะเวลาร่ายแบบคงที่ 0.3 วินาที, ลด Delay หลังใช้สกิล 7%\nลด Damage ทางเวทมนตร์ที่ได้รับจากศัตรูทุกขนาด 3% \n^ffffff_^000000\nประเภท : ^777777Accessory (Right)^000000\nพลังป้องกัน : ^77777710^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 510,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 10,
+    "weight": 10,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "allStatus": [
+        "5"
+      ],
+      "vct": [
+        "5",
+        "EQUIP[Safety Epaulet B]15"
+      ],
+      "hpPercent": [
+        "EQUIP[Safety Epaulet B]10",
+        "EQUIP[Safety Epaulet R]10"
+      ],
+      "aspdPercent": [
+        "EQUIP[Safety Epaulet R]15"
+      ],
+      "fct": [
+        "EQUIP[Safety Epaulet R||Safety Epaulet B&&Safety Knuckle||Detecting Staff||Grinder Huuma Shuriken||Rubber Hammer||Bolt Shooter||Claw Sword||Welding Wand||Safety Whip||Bolt Crusher||Saw Axe||Safety Manual||Metal Detector Mk47||Jewel Detector Mk47||Blocking Spear||Safety Lute||Bolt Revolver||Safety Saber||Safety Foxtail]0.3"
+      ],
+      "acd": [
+        "EQUIP[Safety Epaulet R||Safety Epaulet B&&Safety Knuckle||Detecting Staff||Grinder Huuma Shuriken||Rubber Hammer||Bolt Shooter||Claw Sword||Welding Wand||Safety Whip||Bolt Crusher||Saw Axe||Safety Manual||Metal Detector Mk47||Jewel Detector Mk47||Blocking Spear||Safety Lute||Bolt Revolver||Safety Saber||Safety Foxtail]7"
+      ]
+    }
+  },
+  "32250": {
+    "id": 32250,
+    "aegisName": "Ein_SAFETY_EPAULR",
+    "name": "Safety Epaulet R [1]",
+    "unidName": "Ring",
+    "resName": "Ein_SAFETY_EPAULR",
+    "description": "อินทรธนูที่มอบให้แก่ผู้รับผิดชอบความปลอดภัยภายในเหมือง Einbech \nมันถูกมอบไม่บ่อยนัก จึงเป็นอินทรธนูที่หาได้ยากมาก \n^ffffff_^000000\nATK +5%\n^ffffff_^000000\nประเภท : ^777777Accessory (Left)^000000\nพลังป้องกัน : ^77777710^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 511,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 10,
+    "weight": 10,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atkPercent": [
+        "5"
+      ]
+    }
+  },
+  "32251": {
+    "id": 32251,
+    "aegisName": "Ein_SAFETY_EPAULL",
+    "name": "Safety Epaulet B [1]",
+    "unidName": "Ring",
+    "resName": "Ein_SAFETY_EPAULL",
+    "description": "อินทรธนูที่มอบให้แก่ผู้รับผิดชอบความปลอดภัยภายในเหมือง Einbech \nมันถูกมอบไม่บ่อยนัก จึงเป็นอินทรธนูที่หาได้ยากมาก \n^ffffff_^000000\nMATK +5%\n^ffffff_^000000\nประเภท : ^777777Accessory (Left)^000000\nพลังป้องกัน : ^77777710^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 511,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 10,
+    "weight": 10,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "matkPercent": [
+        "5"
+      ]
+    }
+  },
   "32301": {
     "id": 32301,
     "aegisName": "Gold_Lux_IL",
@@ -36747,6 +37592,48 @@
       ]
     }
   },
+  "32303": {
+    "id": 32303,
+    "aegisName": "Ein_1HGUN",
+    "name": "Bolt Revolver [2]",
+    "unidName": "Six Shooter",
+    "resName": "Ein_1HGUN",
+    "description": "เครื่องมือที่ใช้เพื่อปักตะปูในเหมือง Einbech\nมันถูกดัดแปลงให้สามารถใช้ยิงอย่างอื่นได้นอกจากตะปูด้วย\n^ffffff_^000000\nเพิ่ม Damage ทางกายภาพระยะไกล 15%\nเพิ่ม Damage สกิล Fire Dance 15%\nเมื่ออัพเกรดถึงขั้น 7, ATK +60, ASPD +10%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Fire Dance ขึ้นอีก 20%\nเมื่อโจมตีทางกายภาพ มีโอกาสที่จะเพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 20% เป็นเวลา 10 วินาที\nเมื่ออัพเกรดถึงขั้น 11 ลด Delay หลังใช้สกิล 20% \n^ffffff_^000000\nประเภท : ^777777Pistol ^000000 พลังโจมตี : ^777777200^000000\nน้ำหนัก : ^777777180^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Gunslinger ^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 273,
+    "itemLevel": 4,
+    "attack": 200,
+    "defense": null,
+    "weight": 180,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Gunslinger"
+    ],
+    "script": {
+      "range": [
+        "15"
+      ],
+      "Fire Dance": [
+        "15",
+        "9===20"
+      ],
+      "atk": [
+        "7===60"
+      ],
+      "aspdPercent": [
+        "7===10"
+      ],
+      "chance__p_size_all": [
+        "9===20"
+      ],
+      "acd": [
+        "11===20"
+      ]
+    }
+  },
   "32304": {
     "id": 32304,
     "aegisName": "R_Revolver",
@@ -36829,6 +37716,236 @@
       "Genesis Ray": [
         "9===30",
         "11===20"
+      ]
+    }
+  },
+  "32352": {
+    "id": 32352,
+    "aegisName": "Ein_1HSWORD",
+    "name": "Safety Saber [2]",
+    "unidName": "Sword",
+    "resName": "Ein_1HSWORD",
+    "description": "ดาบที่ถูกสร้างขึ้นเพื่อใช้ป้องกันตัวและส่องทางในเหมือง\nหากมีอันตรายอยู่ในบริเวณใกล้เคียง มันจะเรืองแสงระยิบระยับออกมา \n^ffffff_^000000\nATK +10%\nเพิ่ม Damage สกิล Cart Cannon 10%\nเมื่ออัพเกรดถึงขั้น 7, ATK +40, ลดระยะเวลาร่ายแบบแปรผัน 10%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Cart Cannon ขึ้นอีก 15%, เพิ่ม Damage ทางกายภาพระยะไกล 7% \nเมื่ออัพเกรดถึงขั้น 11 ลด Delay หลังใช้สกิล 20% \n^ffffff_^000000\nประเภท : ^777777Sword^000000 พลังโจมตี : ^777777200^000000\nน้ำหนัก : ^777777250^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Genetic^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 257,
+    "itemLevel": 4,
+    "attack": 200,
+    "defense": null,
+    "weight": 250,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Genetic"
+    ],
+    "script": {
+      "atkPercent": [
+        "10"
+      ],
+      "Cart Cannon": [
+        "10",
+        "9===15"
+      ],
+      "atk": [
+        "7===40"
+      ],
+      "vct": [
+        "7===10"
+      ],
+      "range": [
+        "9===7"
+      ],
+      "acd": [
+        "11===20"
+      ]
+    }
+  },
+  "300001": {
+    "id": 300001,
+    "aegisName": "Poisonous_Card",
+    "name": "Poisonous Card",
+    "unidName": "Poisonous Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่ม Damage ทางกายภาพต่อศัตรูธาตุ Poison 25%\nเมื่อสวมใส่ร่วมกับ Anacondaq Card เพิ่ม Damage ทางกายภาพต่อศัตรูธาตุ Poison ขึ้นอีก 15%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "High Envenom",
+    "script": {
+      "p_element_poison": [
+        "25",
+        "EQUIP[Anacondaq Card]===15"
+      ]
+    }
+  },
+  "300002": {
+    "id": 300002,
+    "aegisName": "Toxious_Card",
+    "name": "Toxious Card",
+    "unidName": "Toxious Card",
+    "resName": "이름없는카드",
+    "description": "MHP +10%, ลด Damage ที่ได้รับจากการโจมตีทางกายภาพระยะไกล 5%\nเมื่อใช้ร่วมกับ Noxious Card, MHP +5%, ลด Damage ที่ได้รับจากการโจมตีทางกายภาพระยะไกลลงอีก 10%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Armor^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 16,
+    "cardPrefix": "Bulletproof Vest's",
+    "script": {
+      "hpPercent": [
+        "10",
+        "EQUIP[Noxious Card]5"
+      ]
+    }
+  },
+  "300003": {
+    "id": 300003,
+    "aegisName": "Porcellio_W_Card",
+    "name": "White Porcellio Card",
+    "unidName": "White Porcellio Card",
+    "resName": "이름없는카드",
+    "description": "ATK +20, เมื่อใช้กับ Porcellio Card, ATK +10\nทุก ๆ การอัพเกรด Shoes 1 ขั้น ATK +1\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Shoes^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 64,
+    "cardPrefix": "of Wild Dog",
+    "script": {
+      "atk": [
+        "20",
+        "EQUIP[Porcellio Card]10",
+        "1---1"
+      ]
+    }
+  },
+  "300004": {
+    "id": 300004,
+    "aegisName": "Neo_Mineral_Card",
+    "name": "Neo Mineral Card",
+    "unidName": "Neo Mineral Card",
+    "resName": "이름없는카드",
+    "description": "DEF +30, เมื่อใช้ร่วมกับ Mineral Card, DEF +20\nทุก ๆ การอัพเกรด Garment 1 ขั้น DEF +3\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Garment^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 4,
+    "cardPrefix": "of Iron Wall",
+    "script": {
+      "def": [
+        "30",
+        "EQUIP[Mineral Card]20",
+        "1---3"
+      ]
+    }
+  },
+  "300005": {
+    "id": 300005,
+    "aegisName": "Abyss_Man_Card",
+    "name": "Abyssman Card",
+    "unidName": "Abyssman Card",
+    "resName": "이름없는카드",
+    "description": "HP +10%, เพิ่ม Damage สกิล Earth Grave 10%\nเมื่อใช้ร่วมกับ Pitman Card เพิ่ม Damage สกิล Earth Grave ขึ้นอีก 10%, ทุก ๆ การอัพเกรด Shoes 1 ขั้น Damage สกิล Earth Grave ขึ้นอีก 1%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Shoes^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 64,
+    "cardPrefix": "of High Worker",
+    "script": {
+      "hpPercent": [
+        "10"
+      ],
+      "Earth Grave": [
+        "10",
+        "EQUIP[Pitman Card]10",
+        "1---1"
+      ]
+    }
+  },
+  "300006": {
+    "id": 300006,
+    "aegisName": "Jeweliant_Card",
+    "name": "Jeweliant Card",
+    "unidName": "Jeweliant Card",
+    "resName": "이름없는카드",
+    "description": "เมื่อโจมตีทางกายภาพ มีโอกาสใช้สกิล Psychic Wave Lv. 1 โดยอัตโนมัติ\nเมื่อใช้ร่วมกับ Ungoliant Card เพิ่ม Damage ทางเวทมนตร์ธาตุ Neutral 30%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Accessory (Left)^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 128,
+    "cardPrefix": "of Psychic",
+    "script": {
+      "m_my_element_neutral": [
+        "EQUIP[Ungoliant Card]30"
+      ]
+    }
+  },
+  "300007": {
+    "id": 300007,
+    "aegisName": "Jungoliant_Card",
+    "name": "Jewgoliant Card",
+    "unidName": "Jewgoliant Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่ม Damage ทางกายภาพต่อศัตรูธาตุ Water, Fire และมอนสเตอร์ประเภท Plant, Formless 40%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Armor^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 16,
+    "cardPrefix": "Solid Break",
+    "script": {
+      "m_element_water": [
+        "40"
+      ],
+      "m_element_fire": [
+        "40"
+      ],
+      "m_race_plant": [
+        "40"
+      ],
+      "m_race_formless": [
+        "40"
       ]
     }
   },
@@ -43630,6 +44747,61 @@
       "Curse Explosion": [
         "EQUIP[Defunct Booster Robe&&Defunct Booster Muffler&&Defunct Booster Shoes&&Defunct Booster Earring]level:15---1",
         "EQUIP[Defunct Booster Robe&&Defunct Booster Muffler&&Defunct Booster Shoes&&Defunct Booster Earring]ACTIVE_SKILL[Evil Soul Curse]===20(60 วินาที)"
+      ]
+    }
+  },
+  "550006": {
+    "id": 550006,
+    "aegisName": "Ein_1H_Foxtail",
+    "name": "Safety Foxtail [2]",
+    "unidName": "Rod",
+    "resName": "Ein_1H_Foxtail",
+    "description": "หญ้าหางจิ้งจอกที่โตในเหมือง Einbech\nไม่รู้ว่าเป็นเพราะอัญมณีลึกลับหรือเปล่าที่ทำให้มันแข็งแกร่งราวกับเหล็กกล้า \n_\nMATK +350\nATK +7%, MATK +7%\nเพิ่ม Damage สกิล Catnip Meteor และ Picky Peck 15%\nเมื่ออัพเกรดถึงขั้น 7, ASPD +10%, ลดระยะเวลาร่ายแบบแปรผัน 10% \nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Catnip Meteor และ Picky Peck อีก 20% \nเมื่อโจมตีทางกายภาพและเวทมนตร์ มีโอกาสที่จะเพิ่ม Damage ทางกายภาพและเวทมนตร์ที่ทำต่อศัตรูทุกขนาด 10% เป็นเวลา 10 วินาที\nเมื่ออัพเกรดถึงขั้น 11 ลด Delay หลังใช้สกิล 20% \n_\nประเภท : ^777777Staff^000000\nพลังโจมตี : ^777777300^000000\nน้ำหนัก : ^777777150^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Summoner (Doram)^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 265,
+    "itemLevel": 4,
+    "attack": 300,
+    "defense": null,
+    "weight": 150,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Doram"
+    ],
+    "script": {
+      "matk": [
+        "350"
+      ],
+      "atkPercent": [
+        "7"
+      ],
+      "matkPercent": [
+        "7"
+      ],
+      "Catnip Meteor": [
+        "15",
+        "9===20"
+      ],
+      "Picky Peck": [
+        "15",
+        "9===20"
+      ],
+      "aspdPercent": [
+        "7===10"
+      ],
+      "vct": [
+        "7===10"
+      ],
+      "chance__m_size_all": [
+        "9===10"
+      ],
+      "chance__p_size_all": [
+        "9===10"
+      ],
+      "acd": [
+        "11===20"
       ]
     }
   },
