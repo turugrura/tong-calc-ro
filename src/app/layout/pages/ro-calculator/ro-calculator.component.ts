@@ -593,16 +593,19 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
             }),
         );
 
-        const enchants = EnchantTable.flatMap((a) => a.enchants)
-          .filter(Boolean)
-          .flat();
-        const allEnchantSet = new Set(enchants);
-        console.log({ allEnchantSet });
-        for (const enchtName of allEnchantSet.values()) {
-          if (!this.mapEnchant.has(enchtName)) {
-            console.log({ enchtName });
+        if (!this.env.production) {
+          const enchants = EnchantTable.flatMap((a) => a.enchants)
+            .filter(Boolean)
+            .flat();
+          const allEnchantSet = new Set(enchants);
+          console.log({ allEnchantSet });
+          for (const enchtName of allEnchantSet.values()) {
+            if (!this.mapEnchant.has(enchtName)) {
+              console.log({ enchtName });
+            }
           }
         }
+
         this.setMonsterDropdownList();
         this.setItemList();
       }),
