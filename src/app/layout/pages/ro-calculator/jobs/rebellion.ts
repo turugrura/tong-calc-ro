@@ -70,9 +70,9 @@ const jobBonusTable: Record<number, [number, number, number, number, number, num
   60: [3, 6, 6, 8, 8, 5],
   61: [3, 6, 6, 8, 8, 5],
   62: [3, 6, 6, 8, 8, 5],
-  63: [3, 6, 10, 8, 10, 5],
-  64: [3, 6, 10, 8, 10, 5],
-  65: [3, 6, 10, 8, 10, 5],
+  63: [3, 6, 6, 8, 10, 5],
+  64: [3, 6, 6, 8, 10, 6],
+  65: [3, 6, 7, 8, 10, 6],
 };
 
 export class Rebelion extends CharacterBase {

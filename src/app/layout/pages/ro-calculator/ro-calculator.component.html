@@ -344,6 +344,18 @@
                     Variable Cast Time:
                     <span class="font-semibold px-1 summary_stat_matk">{{ totalSummary?.vct || 0 }}</span>
                   </div>
+                  <div class="col-12" *ngIf="!env.production">
+                    <div class="grid grid-nogutter">
+                      <div class="col-12">
+                        HP:
+                        <span class="font-semibold px-1 summary_stat_matk">{{ totalSummary?.calc?.maxHp || 0 }}</span>
+                      </div>
+                      <div class="col-12">
+                        SP:
+                        <span class="font-semibold px-1 summary_stat_matk">{{ totalSummary?.calc?.maxSp || 0 }}</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="col-12 item_label_compare">
