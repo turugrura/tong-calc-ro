@@ -574,6 +574,10 @@ export class Calculator {
     return WeaponAmmoMapper[this.weaponData.data?.typeName] || ClassAmmoMapper[cName];
   }
 
+  private getCometAmp() {
+    return this.toPercent(100 + (this.totalEquipStatus['comet'] || 0));
+  }
+
   private toPercent(n: number) {
     return n * 0.01;
   }
@@ -969,11 +973,21 @@ export class Calculator {
     const size = this.toPercent(this.calcSizeMultiplier());
     const element = this.toPercent(this.calcElementMultiplier());
     const monsterType = this.toPercent(this.calcMonsterTypeMultiplier());
+    const comet = this.getCometAmp();
+
     const formula = (atk: number) => {
-      return this.floor(
-        this.floor(this.floor(this.floor(this.floor(atk * race) * size) * element) * monsterType) *
-          this.propertyMultiplier,
-      );
+      let total = this.floor(atk * race);
+      total = this.floor(total * size);
+      total = this.floor(total * element);
+      total = this.floor(total * monsterType);
+      total = this.floor(total * this.propertyMultiplier);
+      total = this.floor(total * comet);
+
+      // return this.floor(
+      //   this.floor(this.floor(this.floor(this.floor(atk * race) * size) * element) * monsterType) *
+      //     this.propertyMultiplier,
+      // );
+      return total;
     };
     // console.log({ name: this.monster.name, race, size, element, _class: monsterType });
 
@@ -1358,7 +1372,7 @@ export class Calculator {
     const monsterType = this.toPercent(this.calcMonsterTypeMultiplier('m'));
     const mysticAmp = 1 + this.toPercent(this.totalEquipStatus['mysticAmp'] || 0);
     const { matkPercent } = this.totalEquipStatus;
-    const comet = this.toPercent(100 + (this.totalEquipStatus['comet'] || 0));
+    const comet = this.getCometAmp();
 
     const formula = (atk: number) => {
       const mysticAmpApplied = this.floor(atk * mysticAmp + this.totalEquipMatk);
