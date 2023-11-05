@@ -88,12 +88,17 @@ export class PresetTableComponent implements OnInit {
         const cardIds =
           itemType === ItemTypeEnum.weapon
             ? [
-                this.model[
-                  (ItemTypeEnum.weaponCard1,
-                  ItemTypeEnum.weaponCard2,
-                  ItemTypeEnum.weaponCard3,
-                  ItemTypeEnum.weaponCard4)
-                ],
+                this.model[ItemTypeEnum.weaponCard1],
+                this.model[ItemTypeEnum.weaponCard2],
+                this.model[ItemTypeEnum.weaponCard3],
+                this.model[ItemTypeEnum.weaponCard4],
+              ]
+            : itemType === ItemTypeEnum.leftWeapon
+            ? [
+                this.model[ItemTypeEnum.leftWeaponCard1],
+                this.model[ItemTypeEnum.leftWeaponCard2],
+                this.model[ItemTypeEnum.leftWeaponCard3],
+                this.model[ItemTypeEnum.leftWeaponCard4],
               ]
             : [this.model[`${itemType}Card`]];
 
