@@ -8368,6 +8368,29 @@
       ]
     }
   },
+  "12419": {
+    "id": 12419,
+    "aegisName": "Mana_Plus",
+    "name": "Mana +",
+    "unidName": "Mana +",
+    "resName": "마나플러스",
+    "description": "Potion ที่เพิ่มค่า MATK เล็กน้อย ระยะเวลา : 500 วินาที\nน้ำหนัก : ^7777775^000000",
+    "slots": 0,
+    "itemTypeId": 3,
+    "itemSubTypeId": 768,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 5,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "matk": [
+        "50"
+      ]
+    }
+  },
   "12429": {
     "id": 12429,
     "aegisName": "Savage_BBQ",
@@ -8376,7 +8399,7 @@
     "resName": "세비지통구이",
     "description": "มื้ออาหารที่เหมือนรับประทานในป่า, บาร์บีคิว Savage!\nSTR + 20\nระยะเวลา : 5 นาที\nน้ำหนัก : ^7777775^000000",
     "slots": 0,
-    "itemTypeId": 3,
+    "itemTypeId": 3333,
     "itemSubTypeId": 768,
     "itemLevel": null,
     "attack": null,
@@ -37806,6 +37829,35 @@
       ],
       "First Wind": [
         "20"
+      ]
+    }
+  },
+  "29662": {
+    "id": 29662,
+    "aegisName": "Kagerou_Robe",
+    "name": "Kagerou Stone (Garment)",
+    "unidName": "Kagerou Stone (Garment)",
+    "resName": "불의부적",
+    "description": "เพิ่ม Damage สกิล Swirling Petal 25%\nเมื่อใช้กับ Ninja Stone (Upper) เพิ่ม Damage สกิล Cross Slash 25%\nเมื่อใช้กับ Ninja Stone (Middle) เพิ่ม Damage สกิล Kunai Explosion 25%\nเมื่อใช้กับ Ninja Stone (Lower) และโจมตีทางกายภาพ มีโอกาส 1% ที่ SP จะฟื้นฟู 1% ของ Damage ที่ทำ",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 74,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "Swirling Petal": [
+        "25"
+      ],
+      "Cross Slash": [
+        "EQUIP[Ninja Stone (Upper)]25"
+      ],
+      "Kunai Explosion": [
+        "EQUIP[Ninja Stone (Middle)]25"
       ]
     }
   },

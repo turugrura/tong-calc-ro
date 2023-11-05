@@ -69,6 +69,18 @@ export class AppConfigComponent implements OnInit {
     this.layoutService.config.ripple = _val;
   }
 
+  get hideBasicAtk(): boolean {
+    return this.layoutService.config.hideBasicAtk;
+  }
+
+  set hideBasicAtk(_val: boolean) {
+    localStorage.setItem('hideBasicAtk', String(_val));
+
+    this.layoutService.config.hideBasicAtk = _val;
+
+    this.layoutService.onConfigUpdate();
+  }
+
   onConfigButtonClick() {
     this.layoutService.showConfigSidebar();
   }

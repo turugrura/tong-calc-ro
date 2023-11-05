@@ -3431,84 +3431,88 @@
                   </div>
 
                   <!-- Basic Damage -->
-                  <div class="col-12">
-                    Element:
-                    <span class="{{ 'property_' + totalSummary?.propertyAtk }} px-1 font-semibold">{{
-                      totalSummary?.propertyAtk
-                    }}</span>
-                    <span
-                      class="summary_monster_value px-1 font-bold"
-                      style="color: var(--red-500)"
-                      [hidden]="!showLeftWeapon || !model.leftWeapon"
-                      >***ยังไม่คิด Atk มือซ้าย</span
-                    >
-                  </div>
-                  <div class="col-6" [hidden]="totalSummary?.dmg?.totalPene === totalSummary?.dmg?.skillTotalPene">
-                    <app-calc-value
-                      [enableCompare]="isEnableCompare && totalSummary2?.dmg"
-                      label="เจาะ:"
-                      unit="%"
-                      styleClass="summary_highlight"
-                      styleClass2="summary_compare"
-                      [max]="totalSummary?.dmg?.totalPene"
-                      [max2]="totalSummary2?.dmg?.totalPene"
-                    ></app-calc-value>
-                  </div>
-                  <div class="col-6" [hidden]="totalSummary?.dmg?.accuracy === totalSummary?.dmg?.skillAccuracy">
-                    <app-calc-value
-                      [enableCompare]="isEnableCompare && totalSummary2?.dmg"
-                      label="แม่น:"
-                      unit="%"
-                      styleClass="summary_highlight"
-                      styleClass2="summary_compare"
-                      [max]="totalSummary?.dmg?.accuracy"
-                      [max2]="totalSummary2?.dmg?.accuracy"
-                    ></app-calc-value>
-                  </div>
-                  <div class="col-12">
-                    <app-calc-value
-                      [enableCompare]="isEnableCompare && totalSummary2?.dmg"
-                      label="Basic:"
-                      styleClass="summary_damage"
-                      styleClass2="summary_compare"
-                      [min]="totalSummary?.dmg?.basicMinDamage"
-                      [max]="totalSummary?.dmg?.basicMaxDamage"
-                      [min2]="totalSummary2?.dmg?.basicMinDamage"
-                      [max2]="totalSummary2?.dmg?.basicMaxDamage"
-                    ></app-calc-value>
-                  </div>
-                  <div class="col-12">
-                    <app-calc-value
-                      [enableCompare]="isEnableCompare && totalSummary2?.dmg"
-                      label="Cri:"
-                      unit="%"
-                      styleClass="summary_damage"
-                      styleClass2="summary_compare"
-                      [max]="totalSummary?.dmg?.basicCriRate"
-                      [max2]="totalSummary2?.dmg?.basicCriRate"
-                    ></app-calc-value>
-                  </div>
-                  <div class="col-12">
-                    <app-calc-value
-                      [enableCompare]="isEnableCompare && totalSummary2?.dmg"
-                      label="DmgCri:"
-                      styleClass="summary_damage"
-                      styleClass2="summary_compare"
-                      [min]="totalSummary?.dmg?.criMinDamage"
-                      [max]="totalSummary?.dmg?.criMaxDamage"
-                      [min2]="totalSummary2?.dmg?.criMinDamage"
-                      [max2]="totalSummary2?.dmg?.criMaxDamage"
-                    ></app-calc-value>
-                  </div>
-                  <div class="col-12">
-                    <app-calc-value
-                      [enableCompare]="isEnableCompare && totalSummary2?.dmg"
-                      label="DPS:"
-                      styleClass="summary_highlight"
-                      styleClass2="summary_compare"
-                      [max]="totalSummary?.dmg?.basicDps"
-                      [max2]="totalSummary2?.dmg?.basicDps"
-                    ></app-calc-value>
+                  <div class="col-12" [hidden]="hideBasicAtk">
+                    <div class="grid grid-nogutter">
+                      <div class="col-12">
+                        Element:
+                        <span class="{{ 'property_' + totalSummary?.propertyAtk }} px-1 font-semibold">{{
+                          totalSummary?.propertyAtk
+                        }}</span>
+                        <span
+                          class="summary_monster_value px-1 font-bold"
+                          style="color: var(--red-500)"
+                          [hidden]="!showLeftWeapon || !model.leftWeapon"
+                          >***ยังไม่คิด Atk มือซ้าย</span
+                        >
+                      </div>
+                      <div class="col-6" [hidden]="totalSummary?.dmg?.totalPene === totalSummary?.dmg?.skillTotalPene">
+                        <app-calc-value
+                          [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+                          label="เจาะ:"
+                          unit="%"
+                          styleClass="summary_highlight"
+                          styleClass2="summary_compare"
+                          [max]="totalSummary?.dmg?.totalPene"
+                          [max2]="totalSummary2?.dmg?.totalPene"
+                        ></app-calc-value>
+                      </div>
+                      <div class="col-6" [hidden]="totalSummary?.dmg?.accuracy === totalSummary?.dmg?.skillAccuracy">
+                        <app-calc-value
+                          [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+                          label="แม่น:"
+                          unit="%"
+                          styleClass="summary_highlight"
+                          styleClass2="summary_compare"
+                          [max]="totalSummary?.dmg?.accuracy"
+                          [max2]="totalSummary2?.dmg?.accuracy"
+                        ></app-calc-value>
+                      </div>
+                      <div class="col-12">
+                        <app-calc-value
+                          [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+                          label="Basic:"
+                          styleClass="summary_damage"
+                          styleClass2="summary_compare"
+                          [min]="totalSummary?.dmg?.basicMinDamage"
+                          [max]="totalSummary?.dmg?.basicMaxDamage"
+                          [min2]="totalSummary2?.dmg?.basicMinDamage"
+                          [max2]="totalSummary2?.dmg?.basicMaxDamage"
+                        ></app-calc-value>
+                      </div>
+                      <div class="col-12">
+                        <app-calc-value
+                          [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+                          label="Cri:"
+                          unit="%"
+                          styleClass="summary_damage"
+                          styleClass2="summary_compare"
+                          [max]="totalSummary?.dmg?.basicCriRate"
+                          [max2]="totalSummary2?.dmg?.basicCriRate"
+                        ></app-calc-value>
+                      </div>
+                      <div class="col-12">
+                        <app-calc-value
+                          [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+                          label="DmgCri:"
+                          styleClass="summary_damage"
+                          styleClass2="summary_compare"
+                          [min]="totalSummary?.dmg?.criMinDamage"
+                          [max]="totalSummary?.dmg?.criMaxDamage"
+                          [min2]="totalSummary2?.dmg?.criMinDamage"
+                          [max2]="totalSummary2?.dmg?.criMaxDamage"
+                        ></app-calc-value>
+                      </div>
+                      <div class="col-12">
+                        <app-calc-value
+                          [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+                          label="DPS:"
+                          styleClass="summary_highlight"
+                          styleClass2="summary_compare"
+                          [max]="totalSummary?.dmg?.basicDps"
+                          [max2]="totalSummary2?.dmg?.basicDps"
+                        ></app-calc-value>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

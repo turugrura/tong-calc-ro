@@ -46,6 +46,7 @@ import { HpSpTable } from './models/hp-sp-table.model';
 import { AllowLeftWeaponMapper } from './constants/allow-left-weapon-mapper';
 import { Kagerou } from './jobs/kagerou';
 import { Genetic } from './jobs/genetic';
+import { LayoutService } from '../../service/app.layout.service';
 
 interface MonsterSelectItemGroup extends SelectItemGroup {
   items: any[];
@@ -418,12 +419,14 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
   ref: DynamicDialogRef | undefined;
   monsterRef: DynamicDialogRef | undefined;
+  hideBasicAtk = this.layoutService.config.hideBasicAtk;
 
   constructor(
     private roService: RoService,
     private messageService: MessageService,
     private confirmationService: ConfirmationService,
     private dialogService: DialogService,
+    private readonly layoutService: LayoutService,
   ) {}
 
   ngOnInit() {
@@ -433,6 +436,11 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     this.initData().subscribe(() => {
       this.loadItemSet();
     });
+
+    const laySub = this.layoutService.configUpdate$.pipe(debounceTime(300)).subscribe((c) => {
+      this.hideBasicAtk = c.hideBasicAtk;
+    });
+    this.allSubs.push(laySub);
 
     const itemChanges = new Set<ItemTypeEnum>();
     const updateItemSubs = this.updateItemEvent
