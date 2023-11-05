@@ -10570,6 +10570,429 @@
       ]
     }
   },
+  "15391": {
+    "id": 15391,
+    "aegisName": "DragonA_Red",
+    "name": "Red Dragon Plate [1]",
+    "unidName": "Mail",
+    "resName": "DragonA_Red",
+    "description": "ชุดเกราะที่สั่งสมพลังมังกรเอาไว้มาอย่างช้านาน\nเพียงแค่สวมใส่ก็รู้สึกได้ถึงอำนาจของมังกรขึ้นมา\n\nSTR +12, MHP +15%, MSP +10% \nทุก ๆ การอัพเกรด 2 ขั้น, ATK +2% \nทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage ทางกายภาพต่อเผ่า Dragon 7% \nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage ทางกายภาพต่อมอนสเตอร์ขนาดกลางและใหญ่ 10%, ลดระยะเวลาร่ายแบบคงที่ 0.2 วินาที \n\nเมื่อสวมใส่ร่วมกับ Dragon Scale Boots และ Dragon Scale Hood, \nDEF +50, MDEF +8, ATK +5% \nทุก ๆ Base STR 15, ATK +15 \n[Dragon's Force]\nเมื่อถูกโจมตี มีโอกาส ATK +10% เป็นเวลา 10 วินาที\nเมื่อ Base STR ตั้งแต่ 120 ขึ้นไป เพิ่มโอกาสที่ [Dragon's Force] จะมีผลและ ATK เพิ่มอีก 15%\n\nเมื่อค่าอัพเกรดของ Red Dragon Plate, Dragon Scale Boots, Dragon Scale Hood รวมกันตั้งแต่ 33 ขึ้นไป\nASPD +20%\nลด Delay หลังใช้สกิล 25%\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^777777110^000000\nน้ำหนัก : ^777777120^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 110,
+    "weight": 120,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "str": [
+        "12"
+      ],
+      "hpPercent": [
+        "15"
+      ],
+      "spPercent": [
+        "10"
+      ],
+      "atkPercent": [
+        "2",
+        "EQUIP[Dragon Scale Boots&&Dragon Scale Hood]5"
+      ],
+      "p_race_dragon": [
+        "3---7"
+      ],
+      "p_size_m": [
+        "11===10"
+      ],
+      "p_size_l": [
+        "11===10"
+      ],
+      "fct": [
+        "11===0.2"
+      ],
+      "aspdPercent": [
+        "EQUIP[Dragon Scale Boots&&Dragon Scale Hood]REFINE[armor,garment,boot==33]20"
+      ],
+      "acd": [
+        "EQUIP[Dragon Scale Boots&&Dragon Scale Hood]REFINE[armor,garment,boot==33]25"
+      ],
+      "def": [
+        "EQUIP[Dragon Scale Boots&&Dragon Scale Hood]50"
+      ],
+      "mdef": [
+        "EQUIP[Dragon Scale Boots&&Dragon Scale Hood]8"
+      ],
+      "atk": [
+        "EQUIP[Dragon Scale Boots&&Dragon Scale Hood]SUM[str==15]---15"
+      ],
+      "chance__atkPercent": [
+        "EQUIP[Dragon Scale Boots&&Dragon Scale Hood]10",
+        "EQUIP[Dragon Scale Boots&&Dragon Scale Hood]SUM[str==120]15"
+      ]
+    }
+  },
+  "15392": {
+    "id": 15392,
+    "aegisName": "DragonA_Green",
+    "name": "Green Dragon Plate [1]",
+    "unidName": "Mail",
+    "resName": "DragonA_Green",
+    "description": "ชุดเกราะที่สั่งสมพลังมังกรเอาไว้มาอย่างช้านาน\nเพียงแค่สวมใส่ก็รู้สึกได้ถึงความว่องไวของมังกรขึ้นมา\n\nAGI +12, MHP +10%, MSP +10%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage ทางกายภาพระยะไกล 2%\nทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage ทางกายภาพต่อเผ่า Dragon 7%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage ทางกายภาพต่อมอนสเตอร์ขนาดกลางและใหญ่ 10%, ลดระยะเวลาร่ายแบบคงที่ 0.2 วินาที\n\nเมื่อสวมใส่ร่วมกับ Dragon Scale Boots และ Dragon Scale Hood, \nDEF +50, MDEF +8, เพิ่ม Damage ทางกายภาพระยะไกล 7%\nทุก ๆ Base AGI 15, ASPD +4%\n[Dragon's Shot] \nเมื่อถูกโจมตี มีโอกาสเพิ่ม Damage ทางกายภาพระยะไกล 10% เป็นเวลา 10 วินาที\nเมื่อ Base AGI ตั้งแต่ 120 ขึ้นไป เพิ่มโอกาสที่ [Dragon's Shot] จะมีผลและเพิ่ม Damage ทางกายภาพระยะไกลอีก 10%\n\nเมื่อค่าอัพเกรดของ Green Dragon Plate, Dragon Scale Boots, Dragon Scale Hood รวมกันตั้งแต่ 33 ขึ้นไป \nASPD +20%,\nลด Delay หลังใช้สกิล 25%\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^777777110^000000\nน้ำหนัก : ^777777120^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 110,
+    "weight": 120,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "agi": [
+        "12"
+      ],
+      "hpPercent": [
+        "10"
+      ],
+      "spPercent": [
+        "10"
+      ],
+      "range": [
+        "2---2",
+        "EQUIP[Dragon Scale Boots&&Dragon Scale Hood]7"
+      ],
+      "p_race_dragon": [
+        "3---7"
+      ],
+      "p_size_m": [
+        "11===10"
+      ],
+      "p_size_l": [
+        "11===10"
+      ],
+      "fct": [
+        "11===0.2"
+      ],
+      "aspdPercent": [
+        "EQUIP[Dragon Scale Boots&&Dragon Scale Hood]REFINE[armor,garment,boot==33]20",
+        "EQUIP[Dragon Scale Boots&&Dragon Scale Hood]agi:15---4"
+      ],
+      "acd": [
+        "EQUIP[Dragon Scale Boots&&Dragon Scale Hood]REFINE[armor,garment,boot==33]25"
+      ],
+      "def": [
+        "EQUIP[Dragon Scale Boots&&Dragon Scale Hood]50"
+      ],
+      "mdef": [
+        "EQUIP[Dragon Scale Boots&&Dragon Scale Hood]8"
+      ],
+      "chance__range": [
+        "EQUIP[Dragon Scale Boots&&Dragon Scale Hood]10",
+        "EQUIP[Dragon Scale Boots&&Dragon Scale Hood]SUM[agi==120]10"
+      ]
+    }
+  },
+  "15393": {
+    "id": 15393,
+    "aegisName": "DragonA_Gold",
+    "name": "Gold Dragon Plate [1]",
+    "unidName": "Mail",
+    "resName": "DragonA_Gold",
+    "description": "ชุดเกราะที่สั่งสมพลังมังกรเอาไว้มาอย่างช้านาน \nเพียงแค่สวมใส่ก็รู้สึกได้ถึงพละกำลังของมังกรขึ้นมา\n\nVIT +12, MHP +20%, MSP +5%\nทุก ๆ การอัพเกรด 2 ขั้น ลดระยะเวลาร่ายแบบแปรผัน 3%, ASPD +3% \nทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage ทางกายภาพและเวทมนตร์ที่ทำต่อเผ่า Dragon 7% \nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage ทางกายภาพและเวทมนตร์ที่ทำต่อมอนสเตอร์ขนาดกลางและใหญ่ 6%, ลดระยะเวลาร่ายแบบคงที่ 0.2 วินาที \n\nเมื่อสวมใส่ร่วมกับ Dragon Scale Boots และ Dragon Scale Hood \nDEF +80, MDEF +15, MHP +10% \nทุก ๆ Base VIT 30, ลด Damage ทางกายภาพและเวทมนตร์ที่ได้รับจากมอนสเตอร์ขนาดกลางและใหญ่ 1% \n[Dragon's Health] \nเมื่อถูกโจมตี มีโอกาสลด Damage ที่ได้รับจากมอนสเตอร์ทุกขนาด 7% เป็นเวลา 10 วินาที\nเมื่อ Base VIT ตั้งแต่ 120 ขึ้นไป เพิ่มโอกาสที่ [Dragon's Health] จะมีผลและลด Damage ที่ได้รับจากมอนสเตอร์ทุกขนาดอีก 5%\n\nเมื่อค่าอัพเกรดของ Gold Dragon Plate, Dragon Scale Boots, Dragon Scale Hood รวมกันตั้งแต่ 33 ขึ้นไป \nASPD +20%,\nลด Delay หลังใช้สกิล 25%\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^777777110^000000\nน้ำหนัก : ^777777120^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 110,
+    "weight": 120,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "vit": [
+        "12"
+      ],
+      "hpPercent": [
+        "20",
+        "EQUIP[Dragon Scale Boots&&Dragon Scale Hood]10"
+      ],
+      "spPercent": [
+        "5"
+      ],
+      "vct": [
+        "2---3"
+      ],
+      "aspdPercent": [
+        "2---3",
+        "EQUIP[Dragon Scale Boots&&Dragon Scale Hood]REFINE[armor,garment,boot==33]20"
+      ],
+      "p_race_dragon": [
+        "3---7"
+      ],
+      "m_race_dragon": [
+        "3---7"
+      ],
+      "p_size_m": [
+        "11===6"
+      ],
+      "p_size_l": [
+        "11===6"
+      ],
+      "m_size_m": [
+        "11===6"
+      ],
+      "m_size_l": [
+        "11===6"
+      ],
+      "fct": [
+        "11===0.2"
+      ],
+      "acd": [
+        "EQUIP[Dragon Scale Boots&&Dragon Scale Hood]REFINE[armor,garment,boot==33]25"
+      ],
+      "def": [
+        "EQUIP[Dragon Scale Boots&&Dragon Scale Hood]80"
+      ],
+      "mdef": [
+        "EQUIP[Dragon Scale Boots&&Dragon Scale Hood]15"
+      ]
+    }
+  },
+  "15394": {
+    "id": 15394,
+    "aegisName": "DragonA_Purple",
+    "name": "Purple Dragon Plate [1]",
+    "unidName": "Mail",
+    "resName": "DragonA_Purple",
+    "description": "ชุดเกราะที่สั่งสมพลังมังกรเอาไว้มาอย่างช้านาน \nเพียงแค่สวมใส่ก็รู้สึกได้ถึงพรสวรรค์ของมังกรขึ้นมา\n\nDEX +12, MHP +15%, MSP +10%\nทุก ๆ การอัพเกรด 2 ขั้น ลดระยะเวลาร่ายแบบแปรผัน 4%, ASPD +4%\nทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage ทางกายภาพและเวทมนตร์ที่ทำต่อเผ่า Dragon 8%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage ทางกายภาพและเวทมนตร์ที่ทำต่อมอนสเตอร์ขนาดกลางและใหญ่ 8%, ลดระยะเวลาร่ายแบบคงที่ 0.2 วินาที\n\nเมื่อสวมใส่ร่วมกับ Dragon Scale Boots และ Dragon Scale Hood \nDEF +50, MDEF +8, ATK +5%, MATK +5%\nทุก ๆ Base DEX 15, ASPD +3%, ลดระยะเวลาร่ายแบบแปรผัน 3% \n[Dragon's Speed] \nเมื่อถูกโจมตีทางกายภาพและเวทมนตร์ มีโอกาส FLEE +50, Perfect Dodge +10 เป็นเวลา 10 วินาที\nเมื่อ Base DEX ตั้งแต่ 120 ขึ้นไป เพิ่มโอกาสที่ [Dragon's Speed] จะมีผลและ FLEE +30, Perfect Dodge + 5 เพิ่มเติม\n\nเมื่อค่าอัพเกรดของ Purple Dragon Plate, Dragon Scale Boots, Dragon Scale Hood รวมกันตั้งแต่ 33 ขึ้นไป \nASPD +15%, ลดระยะร่ายแบบแปรผัน 15%,\nลด Delay หลังใช้สกิล 25%\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^777777110^000000\nน้ำหนัก : ^777777120^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 110,
+    "weight": 120,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "dex": [
+        "12"
+      ],
+      "hpPercent": [
+        "15"
+      ],
+      "spPercent": [
+        "10"
+      ],
+      "vct": [
+        "2---4",
+        "EQUIP[Dragon Scale Boots&&Dragon Scale Hood]REFINE[armor,garment,boot==33]15",
+        "EQUIP[Dragon Scale Boots&&Dragon Scale Hood]dex:15---3"
+      ],
+      "aspdPercent": [
+        "2---4",
+        "EQUIP[Dragon Scale Boots&&Dragon Scale Hood]REFINE[armor,garment,boot==33]15",
+        "EQUIP[Dragon Scale Boots&&Dragon Scale Hood]dex:15---3"
+      ],
+      "p_race_dragon": [
+        "3---8"
+      ],
+      "m_race_dragon": [
+        "3---8"
+      ],
+      "p_size_m": [
+        "11===8"
+      ],
+      "p_size_l": [
+        "11===8"
+      ],
+      "m_size_m": [
+        "11===8"
+      ],
+      "m_size_l": [
+        "11===8"
+      ],
+      "fct": [
+        "11===0.2"
+      ],
+      "acd": [
+        "EQUIP[Dragon Scale Boots&&Dragon Scale Hood]REFINE[armor,garment,boot==33]25"
+      ],
+      "def": [
+        "EQUIP[Dragon Scale Boots&&Dragon Scale Hood]50"
+      ],
+      "mdef": [
+        "EQUIP[Dragon Scale Boots&&Dragon Scale Hood]8"
+      ],
+      "atkPercent": [
+        "EQUIP[Dragon Scale Boots&&Dragon Scale Hood]5"
+      ],
+      "matkPercent": [
+        "EQUIP[Dragon Scale Boots&&Dragon Scale Hood]5"
+      ]
+    }
+  },
+  "15395": {
+    "id": 15395,
+    "aegisName": "DragonA_Blue",
+    "name": "Blue Dragon Plate [1]",
+    "unidName": "Mail",
+    "resName": "DragonA_Blue",
+    "description": "ชุดเกราะที่สั่งสมพลังมังกรเอาไว้มาอย่างช้านาน \nเพียงแค่สวมใส่ก็รู้สึกได้ถึงสติปัญญาของมังกรขึ้นมา\n\nINT +12, MHP +5%, MSP +20% \nทุก ๆ การอัพเกรด 2 ขั้น MATK +2%, เพิ่มปริมาณ Heal 4% \nทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage ทางเวทมนตร์ต่อเผ่า Dragon 7%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage ทางเวทมนตร์ต่อมอนสเตอร์ขนาดกลางและใหญ่ 10%, ลดระยะเวลาร่ายแบบคงที่ 0.2 วินาที\n\nเมื่อสวมใส่ร่วมกับ Dragon Scale Boots และ Dragon Scale Hood \nDEF +50, MDEF +8, MATK +7%, เพิ่มปริมาณ Heal 15% \nทุก ๆ Base INT 15, ลดระยะเวลาร่ายแบบแปรผัน 4%\n[Dragon's Wisdom] \nเมื่อถูกโจมตี มีโอกาสเพิ่ม Damage ทางเวทมนตร์ทุกธาตุ 20% และเพิ่มปริมาณ Heal 40% เป็นเวลา 10 วินาที\nเมื่อ Base INT ตั้งแต่ 120 ขึ้นไป เพิ่มโอกาสที่ [Dragon's Wisdom] จะมีผลและเพิ่ม Damage ทางเวทมนตร์ทุกธาตุอีก 10%\n\nเมื่อค่าอัพเกรดของ Blue Dragon Plate, Dragon Scale Boots, Dragon Scale Hood รวมกันตั้งแต่ 33 ขึ้นไป \nลดระยะเวลาร่ายแบบแปรผัน 20%,\nลด Delay หลังใช้สกิล 25%\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^777777110^000000\nน้ำหนัก : ^777777120^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 110,
+    "weight": 120,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "int": [
+        "12"
+      ],
+      "hpPercent": [
+        "5"
+      ],
+      "spPercent": [
+        "20"
+      ],
+      "matkPercent": [
+        "2---2",
+        "EQUIP[Dragon Scale Boots&&Dragon Scale Hood]7"
+      ],
+      "m_race_dragon": [
+        "3---7"
+      ],
+      "m_size_m": [
+        "11===10"
+      ],
+      "m_size_l": [
+        "11===10"
+      ],
+      "fct": [
+        "11===0.2"
+      ],
+      "vct": [
+        "EQUIP[Dragon Scale Boots&&Dragon Scale Hood]REFINE[armor,garment,boot==33]20",
+        "EQUIP[Dragon Scale Boots&&Dragon Scale Hood]int:15---4"
+      ],
+      "acd": [
+        "EQUIP[Dragon Scale Boots&&Dragon Scale Hood]REFINE[armor,garment,boot==33]25"
+      ],
+      "def": [
+        "EQUIP[Dragon Scale Boots&&Dragon Scale Hood]50"
+      ],
+      "mdef": [
+        "EQUIP[Dragon Scale Boots&&Dragon Scale Hood]8"
+      ],
+      "m_my_element_all": [
+        "EQUIP[Dragon Scale Boots&&Dragon Scale Hood]20"
+      ],
+      "chance__m_my_element_all": [
+        "EQUIP[Dragon Scale Boots&&Dragon Scale Hood]20",
+        "EQUIP[Dragon Scale Boots&&Dragon Scale Hood]int:120===10"
+      ]
+    }
+  },
+  "15396": {
+    "id": 15396,
+    "aegisName": "DragonA_Silver",
+    "name": "Silver Dragon Plate [1]",
+    "unidName": "Mail",
+    "resName": "DragonA_Silver",
+    "description": "ชุดเกราะที่สั่งสมพลังมังกรเอาไว้มาอย่างช้านาน \nเพียงแค่สวมใส่ก็รู้สึกได้ถึงโชคของมังกรขึ้นมา\n\nLUK +12, MHP +15%, MSP +15% \nทุก ๆ การอัพเกรด 2 ขั้น CRI +2, Critical Damage +4%\nทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage ทางกายภาพต่อเผ่า Dragon 7%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage ทางกายภาพต่อมอนสเตอร์ขนาดกลางและใหญ่ 10%, ลดระยะเวลาร่ายแบบคงที่ 0.2 วินาที\n\nเมื่อสวมใส่ร่วมกับ Dragon Scale Boots และ Dragon Scale Hood \nDEF +50, MDEF +8, ATK +5% \nทุก ๆ Base LUK 15, CRI +2, Critical Damage +3% เพิ่มเติม\n[Dragon's Fortune] \nเมื่อถูกโจมตีทางกายภาพและเวทมนตร์ มีโอกาส ATK +7%, Critical Damage +7% เป็นเวลา 10 วินาที\nเมื่อ Base LUK ตั้งแต่ 120 ขึ้นไป เพิ่มโอกาสที่ [Dragon's Fortune] จะมีผลและ ATK +10%, Critical Damage +10% เพิ่มเติม \n\nเมื่อค่าอัพเกรดของ Silver Dragon Plate, Dragon Scale Boots, Dragon Scale Hood รวมกันตั้งแต่ 33 ขึ้นไป\nASPD +20%,\nลด Delay หลังใช้สกิล 25%\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^777777110^000000\nน้ำหนัก : ^777777120^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 110,
+    "weight": 120,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "luk": [
+        "12"
+      ],
+      "hpPercent": [
+        "15"
+      ],
+      "spPercent": [
+        "15"
+      ],
+      "cri": [
+        "2---2",
+        "EQUIP[Dragon Scale Boots&&Dragon Scale Hood]luk:15---2"
+      ],
+      "criDmg": [
+        "2---4",
+        "EQUIP[Dragon Scale Boots&&Dragon Scale Hood]luk:15---3"
+      ],
+      "p_race_dragon": [
+        "3---7"
+      ],
+      "p_size_m": [
+        "11===10"
+      ],
+      "p_size_l": [
+        "11===10"
+      ],
+      "fct": [
+        "11===0.2"
+      ],
+      "aspdPercent": [
+        "EQUIP[Dragon Scale Boots&&Dragon Scale Hood]REFINE[armor,garment,boot==33]20"
+      ],
+      "acd": [
+        "EQUIP[Dragon Scale Boots&&Dragon Scale Hood]REFINE[armor,garment,boot==33]25"
+      ],
+      "def": [
+        "EQUIP[Dragon Scale Boots&&Dragon Scale Hood]50"
+      ],
+      "mdef": [
+        "EQUIP[Dragon Scale Boots&&Dragon Scale Hood]8"
+      ],
+      "atkPercent": [
+        "EQUIP[Dragon Scale Boots&&Dragon Scale Hood]5"
+      ],
+      "chance__atkPercent": [
+        "EQUIP[Dragon Scale Boots&&Dragon Scale Hood]7",
+        "EQUIP[Dragon Scale Boots&&Dragon Scale Hood]luk:120===10"
+      ],
+      "chance__criDmg": [
+        "EQUIP[Dragon Scale Boots&&Dragon Scale Hood]7",
+        "EQUIP[Dragon Scale Boots&&Dragon Scale Hood]luk:120===10"
+      ]
+    }
+  },
   "15397": {
     "id": 15397,
     "aegisName": "CassockA_STR",
@@ -16489,6 +16912,35 @@
       ]
     }
   },
+  "20946": {
+    "id": 20946,
+    "aegisName": "Drag_Manteau",
+    "name": "Dragon Scale Hood [1]",
+    "unidName": "Muffler",
+    "resName": "Drag_Manteau",
+    "description": "ผ้าคลุมหัวที่ใช้อวัยวะส่วนต่าง ๆ อันแข็งแกร่งของมังกรถักขึ้น \nเพียงแค่สวมใส่ก็รู้สึกได้ถึงความน่าเกรงขามของมังกรขึ้นมา\n\nDEF +20, MDEF +2 \nเพิ่มผลการฟื้นฟูจากสกิลและไอเท็ม 15% \nเมื่ออัพเกรดถึงขั้น 7 ลด Damage ที่ได้รับจากมอนสเตอร์เผ่า Dragon 2% \nเมื่ออัพเกรดถึงขั้น 9 เมื่อถูกโจมตี มีโอกาสที่จะฟื้นฟู HP 2000 ทุก ๆ 1 วินาที เป็นระยะเวลา 3 วินาที \nเมื่ออัพเกรดถึงขั้น 11 ลด Damage ที่ได้รับจากมอนสเตอร์เผ่า Dragon ลงอีก 3% \nประเภท : ^777777Garment^000000  พลังป้องกัน : ^77777723^000000\nน้ำหนัก : ^77777750^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 515,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 23,
+    "weight": 50,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "def": [
+        "20"
+      ],
+      "mdef": [
+        "2"
+      ]
+    }
+  },
   "20947": {
     "id": 20947,
     "aegisName": "Cassock_Manteau",
@@ -18103,6 +18555,38 @@
       ],
       "allStatus": [
         "REFINE[10]===2"
+      ]
+    }
+  },
+  "22208": {
+    "id": 22208,
+    "aegisName": "Dragon_Boots",
+    "name": "Dragon Scale Boots [1]",
+    "unidName": "Shoes",
+    "resName": "Dragon_Boots",
+    "description": "รองเท้าที่ใช้อวัยวะส่วนต่าง ๆ อันแข็งแกร่งของมังกรถักขึ้น \nเพียงแค่สวมใส่ก็รู้สึกได้ถึงความน่าเกรงขามของมังกรขึ้นมา\n\nMSP +500 \nASPD +7%, ลดระยะเวลาร่ายแบบแปรผัน 7% \nเมื่ออัพเกรดถึงขั้น 7 ลด Damage ที่ได้รับจากมอนสเตอร์เผ่า Dragon 2%\nเมื่ออัพเกรดถึงขั้น 9 เมื่อถูกโจมตีทางกายภาพและเวทมนตร์ มีโอกาสฟื้นฟู SP 500 ทุก ๆ 1 วินาที เป็นระยะเวลา 3 วินาที \nเมื่ออัพเกรดถึงขั้น 11 ลด Damage ที่ได้รับจากมอนสเตอร์เผ่า Dragon อีก 3%\nประเภท : ^777777Shoes^000000  พลังป้องกัน : ^77777735^000000\nน้ำหนัก : ^77777760^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 516,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 35,
+    "weight": 60,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "sp": [
+        "500"
+      ],
+      "aspdPercent": [
+        "7"
+      ],
+      "vct": [
+        "7"
       ]
     }
   },
