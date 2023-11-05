@@ -58,6 +58,7 @@
               <p-dropdown
                 inputId="character"
                 [autoDisplayFirst]="false"
+                [resetFilterOnHide]="true"
                 [options]="characterList"
                 [filter]="true"
                 filterBy="label"
@@ -73,10 +74,10 @@
               <p-dropdown
                 inputId="level"
                 [autoDisplayFirst]="false"
+                [resetFilterOnHide]="true"
                 [options]="levelList"
                 [filter]="true"
                 filterBy="label"
-                [resetFilterOnHide]="true"
                 [(ngModel)]="model.level"
                 (ngModelChange)="onBaseStatusChange()"
               ></p-dropdown>

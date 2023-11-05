@@ -9,7 +9,7 @@ import {
 import { Archer } from './archer';
 import { InfoForClass } from '../models/info-for-class.model';
 import { WeaponTypeName } from '../constants/weapon-type-mapper';
-import { Lesson } from '../constants/share-passive-skills';
+import { DanceWithWug, LeradsDew, Lesson, SongOfMana } from '../constants/share-passive-skills';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 0, 1, 0],
@@ -233,6 +233,9 @@ export class Wanderer extends CharacterBase {
         { label: 'Lv 5', value: 5, isUse: true },
       ],
     },
+    SongOfMana,
+    DanceWithWug,
+    LeradsDew,
   ];
 
   constructor() {

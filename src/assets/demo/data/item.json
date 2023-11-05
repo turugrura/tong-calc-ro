@@ -1293,6 +1293,48 @@
       ]
     }
   },
+  "2048": {
+    "id": 2048,
+    "aegisName": "Iron_Staff",
+    "name": "Aeon Staff [2]",
+    "unidName": "Staff",
+    "resName": "아이온스태프",
+    "description": "ไม้เท้าที่ทำขึ้นจากโลหะลึกลับของโลกอื่น\nเล่าลือกันว่านักเวทย์ผู้ใหญ่ในอดีตเป็นคนทำขึ้น\nดูมีความกลมกลืนเข้ากับ Ancient Hero Boots\nMATK +200\nไม่สามารถทำลายได้\nทุกๆ การอัพเกรด 2 ขั้น MATK +10\nทุกๆ การอัพเกรด 3 ขั้น เพิ่มดาเมจของ Earth Strain 12%\nเมื่ออัพเกรดถึงขั้น 9 ลด Variable Cast Time 10%\nเมื่ออัพเกรดถึงขั้น 11 ลด Cooldown ของ Earth Strain 1 วินาที\nเมื่อโจมตีทางเวทย์ระหว่างสวมใส่ร่วมกับ Ancient Hero Boots มีโอกาสที่ INT +20, MATK +15% เป็นเวลา 7 วินาที\nประเภท : ^777777Two-Handed Staff^000000 พลังโจมตี : ^777777100^000000\nน้ำหนัก : ^77777780^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Warlock^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 265,
+    "itemLevel": 4,
+    "attack": 100,
+    "defense": null,
+    "weight": 80,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Warlock"
+    ],
+    "script": {
+      "matk": [
+        "200",
+        "2---10"
+      ],
+      "Earth Strain": [
+        "3---12"
+      ],
+      "vct": [
+        "9===10"
+      ],
+      "cd__Earth Strain": [
+        "11===1"
+      ],
+      "chance__int": [
+        "EQUIP[Ancient Hero Boots]11===20"
+      ],
+      "chance__matkPercent": [
+        "EQUIP[Ancient Hero Boots]11===15"
+      ]
+    }
+  },
   "2049": {
     "id": 2049,
     "aegisName": "Staff_Of_Blue_Flame",
@@ -3026,6 +3068,30 @@
       ]
     }
   },
+  "4305": {
+    "id": 4305,
+    "aegisName": "Turtle_General_Card",
+    "name": "Turtle General Card",
+    "unidName": "Turtle General Card",
+    "resName": "이름없는카드",
+    "description": "ATK +20%\nมีโอกาสที่จะร่าย Level 10 Magnum Break ใส่คู่ต่อสู้ เมื่อโจมตีด้วย Physical Damage\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Blast",
+    "script": {
+      "atkPercent": [
+        "20"
+      ]
+    }
+  },
   "4330": {
     "id": 4330,
     "aegisName": "Dark_Snake_Lord_Card",
@@ -3489,6 +3555,30 @@
       ],
       "spPercent": [
         "-50"
+      ]
+    }
+  },
+  "4451": {
+    "id": 4451,
+    "aegisName": "Ant_Buyanne_Card",
+    "name": "Ant Buyanne Card",
+    "unidName": "Ant Buyanne Card",
+    "resName": "이름없는카드",
+    "description": "MATK + 100\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Armor^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 16,
+    "cardPrefix": "of Access",
+    "script": {
+      "matk": [
+        "100"
       ]
     }
   },
@@ -8782,6 +8872,54 @@
       ]
     }
   },
+  "13061": {
+    "id": 13061,
+    "aegisName": "Black_Wing",
+    "name": "Black Wing [1]",
+    "unidName": "Dagger",
+    "resName": "블랙윙",
+    "description": "กริชที่ถูกสร้างขึ้นโดย Rogue Guild\nเพิ่มพลังโจมตี 30% ให้แก่สกิล Fatal Menace, เพิ่มพลังโจมตี 2% และ เพิ่ม MATK 3 ทุกๆการอัพเกรดที่มากกว่าระดับ +6\n\"HIT +5, MATK +5 เมื่อใช้ร่วมกับ Black Cat\nMasquerade : Enervation และ Groomy ใช้ SP ลดลง 20\"\nประเภท : ^777777Dagger^000000 พลังโจมตี : ^777777142^000000\nน้ำหนัก : ^77777760^000000\nLv ของอาวุธ : ^7777773^000000\nLv ที่ต้องการ : ^777777102^000000\nอาชีพ : ^777777Shadow Chaser Only^000000",
+    "slots": 1,
+    "itemTypeId": 1,
+    "itemSubTypeId": 256,
+    "itemLevel": 3,
+    "attack": 142,
+    "defense": null,
+    "weight": 60,
+    "requiredLevel": 102,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Shadow Chaser"
+    ],
+    "script": {
+      "Fatal Manace": [
+        "30"
+      ],
+      "atkPercent": [
+        "1===-2",
+        "2===-2",
+        "3===-2",
+        "4===-2",
+        "5===-2",
+        "6===-2",
+        "1---2"
+      ],
+      "matk": [
+        "EQUIP[Black Cat]5",
+        "1===-2",
+        "2===-2",
+        "3===-2",
+        "4===-2",
+        "5===-2",
+        "6===-2",
+        "1---2"
+      ],
+      "hit": [
+        "EQUIP[Black Cat]5"
+      ]
+    }
+  },
   "13127": {
     "id": 13127,
     "aegisName": "Scarlet_Revolver",
@@ -11568,6 +11706,47 @@
       ],
       "hpDrainPercent": [
         "EQUIP[Feeling of Love]===2(2%)"
+      ]
+    }
+  },
+  "15945": {
+    "id": 15945,
+    "aegisName": "",
+    "name": "Metal Riffs Ring [1]",
+    "unidName": "Metal Riffs Ring",
+    "resName": "Skull_Ring",
+    "description": "แหวนที่เมื่อคุณสวมใส่มันจะได้กลิ่นอายของดนตรีเมทัลและไลน์จังหวะที่ถูกออกแบบมาอย่างพิถีพิถัน\nคนที่ได้ยินมันจะไม่มีวันลืมวลีริฟฟ์ที่น่าจดจำอันนี้ได้\n\nMATK +50, ลดระยะเวลาร่ายแบบแปรผัน 10%\nทุก ๆ Base Lv. 12, เพิ่ม Damage ทางเวทธาตุ Neutral 1%\n\nทุก ๆ การเรียนรู้สกิล [Song Of Mana], [Dance With Wug], [Lerad's Dew] 1 เลเวล\nเพิ่ม Damage สกิล [Metallic Sound] 7%\n\nเมื่อเรียนรู้สกิล [Severe Rainstorm] ถึงเลเวล 5,\nลด Cooldown สกิล [Metallic Sound] 1 วินาที\n\nเมื่อสวมใส่โดย Archer Cls,\nลดระยะเวลาร่ายแบบแปรผัน 30%\nประเภท : ^777777Accessory^000000  พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 517,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "matk": [
+        "50"
+      ],
+      "vct": [
+        "10",
+        "USED[Archer]30"
+      ],
+      "m_my_element_neutral": [
+        "level:12---1"
+      ],
+      "Metalic Sound": [
+        "LEARN_SKILL[Song Of Mana==1]---7",
+        "LEARN_SKILL[Dance With Wug==1]---7",
+        "LEARN_SKILL[Lerad's Dew==1]---7"
+      ],
+      "cd__Metalic Sound": [
+        "LEARN_SKILL[Severe Rainstorm==5]1"
       ]
     }
   },
@@ -24745,6 +24924,95 @@
       ]
     }
   },
+  "24518": {
+    "id": 24518,
+    "aegisName": "S_Crimson_Armor",
+    "name": "Crimson Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우",
+    "description": "ชุดเกราะที่เพิ่มพลังป้องกันเมื่อสวมใส่เพิ่มบนเกราะอีกที สามารถใส่แบบชิ้นเดียวได้ แต่ความสามารถในการป้องกันจะลดลงไปอีก \nเพิ่ม Damage สกิล Crimsom Rock 5%\nทุก ๆ การอัพเกรด 1 ขั้น เพิ่ม Damage สกิล Crimsom Rock ขึ้นอีก 2%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Armor^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Warlock Cls^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Armor",
+    "compositionPos": null,
+    "usableClass": [
+      "Warlock Cls"
+    ],
+    "script": {
+      "Crimson Rock": [
+        "5",
+        "1---2"
+      ]
+    }
+  },
+  "24519": {
+    "id": 24519,
+    "aegisName": "S_Crimson_Shield",
+    "name": "Crimson Shadow Shield",
+    "unidName": "Shadow Shield",
+    "resName": "쉴드쉐도우",
+    "description": "โล่เล็กที่สามารถสวมใส่ที่แขนได้ สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์การป้องกันของมันจะลดน้อยลง\nเพิ่ม Damage ทางเวทมนตร์ธาตุ Fire 3%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางเวทมนตร์ธาตุ Fire ขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางเวทมนตร์ธาตุ Fire ขึ้นอีก 4%\nเมื่อสวมใส่ Crimson Shadow Armor/Shield/Shoes ร่วมกัน,\nเพิ่ม Damage สกิล Crimson Rock % เท่ากับค่าอัพเกรดรวมกัน\nเมื่อสวมใส่ร่วมกับ Warlock Shadow Weapon,\nเพิกเฉยต่อพลังป้องกันทางเวทมนตร์ของทุกเผ่ายกเว้น Player 40% และเพิกเฉยต่อพลังป้องกันทางเวทมนตร์เพิ่มอีกตามค่าอัพเกรดรวมกันของ Crimson Shadow Shield และ Warlock Shadow Weapon\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shield^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Warlock Cls^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 527,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Shield",
+    "compositionPos": null,
+    "usableClass": [
+      "Warlock Cls"
+    ],
+    "script": {
+      "m_my_element_fire": [
+        "3",
+        "7===3",
+        "9===4"
+      ],
+      "Crimson Rock": [
+        "EQUIP[Crimson Shadow Armor&&Crimson Shadow Shoes]REFINE[shadowArmor,shadowShield,shadowBoot==1]---1"
+      ],
+      "m_pene_race_all": [
+        "EQUIP[Warlock Shadow Weapon]===40",
+        "EQUIP[Warlock Shadow Weapon]REFINE[shadowWeapon,shadowShield==1]---1"
+      ]
+    }
+  },
+  "24520": {
+    "id": 24520,
+    "aegisName": "S_Crimson_Shoes",
+    "name": "Crimson Shadow Shoes",
+    "unidName": "Shadow Shoes",
+    "resName": "슈즈쉐도우",
+    "description": "รองเท้าที่สวมใส่เพิ่มเติม สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์ของมันจะลดน้อยลง\nลดปริมาณการใช้ SP สกิล Crimson Rock 4%\nทุก ๆ การอัพเกรด 2 ขั้น ลดปริมาณการใช้ SP สกิล Crimson Rock ลงอีก 1%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shoes ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Warlock Cls^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 528,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Shoes",
+    "compositionPos": null,
+    "usableClass": [
+      "Warlock Cls"
+    ],
+    "script": {
+      "spPercent__Crimson Rock": [
+        "4",
+        "2---1"
+      ]
+    }
+  },
   "24524": {
     "id": 24524,
     "aegisName": "S_Triangle_Armor",
@@ -26826,6 +27094,97 @@
       ]
     }
   },
+  "24640": {
+    "id": 24640,
+    "aegisName": "S_Catnip_Weapon",
+    "name": "Catnip Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา\nเพิ่ม Damage สกิล Catnip Meteor 5%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage สกิล Catnip Meteor ขึ้นอีก 5%\nเมื่ออัพเกรดถึงขั้น 9 ลดระยะเวลาร่ายแบบแปรผัน 5%\nเมื่อสวมใส่ Catnip Shadow Weapon/Shield/Armor ร่วมกัน,\nเพิ่ม Damage สกิล Catnip Meteor % เท่ากับค่าอัพเกรดรวมกัน\nเมื่อสวมใส่ร่วมกับ Doram Magical Shadow Shoes,\nเพิกเฉยต่อพลังป้องกันทางเวทมนตร์ของทุกเผ่ายกเว้น Player 40% และเพิกเฉยต่อพลังป้องกันทางเวทมนตร์เพิ่มอีกตามค่าอัพเกรดรวมกันของ Catnip Shadow Weapon และ Doram Magical Shadow Shoes\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Summoner (Doram)^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "Summoner (Doram)"
+    ],
+    "script": {
+      "Catnip Meteor": [
+        "5",
+        "7===5",
+        "EQUIP[Catnip Shadow Shield&&Catnip Shadow Armor]REFINE[shadowWeapon,shadowShield,shadowArmor==1]---1"
+      ],
+      "vct": [
+        "9===5"
+      ],
+      "m_pene_race_all": [
+        "EQUIP[Doram Magical Shadow Shoes]40",
+        "EQUIP[Doram Magical Shadow Shoes]REFINE[shadowWeapon,shadowBoot==1]---1"
+      ]
+    }
+  },
+  "24641": {
+    "id": 24641,
+    "aegisName": "S_Catnip_Shield",
+    "name": "Catnip Shadow Shield",
+    "unidName": "Shadow Shield",
+    "resName": "쉴드쉐도우",
+    "description": "โล่เล็กที่สามารถสวมใส่ที่แขนได้ สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์การป้องกันของมันจะลดน้อยลง\nลด Cooldown สกิล Nyang Grass 4 วินาที\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage สกิล Catnip Meteor 3%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shield^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Summoner (Doram)^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 527,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Shield",
+    "compositionPos": null,
+    "usableClass": [
+      "Summoner (Doram)"
+    ],
+    "script": {
+      "cd__Nyang Grass": [
+        "4"
+      ],
+      "Catnip Meteor": [
+        "2---3"
+      ]
+    }
+  },
+  "24642": {
+    "id": 24642,
+    "aegisName": "S_Catnip_Armor",
+    "name": "Catnip Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우",
+    "description": "ชุดเกราะที่เพิ่มพลังป้องกันเมื่อสวมใส่เพิ่มบนเกราะอีกที สามารถใส่แบบชิ้นเดียวได้ แต่ความสามารถในการป้องกันจะลดลงไปอีก\nเพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกขนาด 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกขนาดขึ้นอีก 1%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Armor^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Summoner (Doram)^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Armor",
+    "compositionPos": null,
+    "usableClass": [
+      "Summoner (Doram)"
+    ],
+    "script": {
+      "m_size_all": [
+        "5",
+        "2---1"
+      ]
+    }
+  },
   "24643": {
     "id": 24643,
     "aegisName": "S_Silvervine_Earing",
@@ -28254,6 +28613,30 @@
       ],
       "acd": [
         "11===10"
+      ]
+    }
+  },
+  "27012": {
+    "id": 27012,
+    "aegisName": "Kick_Step_Card",
+    "name": "Kick Step Card",
+    "unidName": "Kick Step Card",
+    "resName": "이름없는카드",
+    "description": "MHP + 8%.\nหากสวมใส่โดย Mechanic ลดความเสียหายทางกายภาพระยะไกลลง 30%\nประเภท : ^777777Card^000000\nใส่กับ : ^777777Armor^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 16,
+    "cardPrefix": "Active Protection",
+    "script": {
+      "hpPercent": [
+        "8"
       ]
     }
   },
@@ -29993,6 +30376,33 @@
       ],
       "acd": [
         "EQUIP[Nihil M. Heine Card]3"
+      ]
+    }
+  },
+  "27333": {
+    "id": 27333,
+    "aegisName": "S_Skia_Card",
+    "name": "Skia Nerious Card",
+    "unidName": "Skia Nerious Card",
+    "resName": "이름없는카드",
+    "description": "ASPD +5%\nเมื่อใช้ร่วมกับ Agnes Lugenburg Card, \nATK +5%\n^ffffff_^000000\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Accessory (Left)^000000\nน้ำหนัก : 1",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 128,
+    "cardPrefix": "of Shiny Nerious",
+    "script": {
+      "aspdPercent": [
+        "5"
+      ],
+      "atkPercent": [
+        "EQUIP[Agnes Lugenburg Card]5"
       ]
     }
   },
@@ -31833,6 +32243,38 @@
       ]
     }
   },
+  "28426": {
+    "id": 28426,
+    "aegisName": "Mercenary_Ring_B",
+    "name": "Mercenary Ring Type B",
+    "unidName": "Accessory",
+    "resName": "뉴오즈의날개반지",
+    "description": "INT + 3.\nกรณีที่เป็น Novice, Taekwo, Gunslinge, Ninja\nลดระยะเวลาการร่ายเวทย์ลง 30%\nประเภท : ^777777Accessory^000000 พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^77777720^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 517,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 20,
+    "requiredLevel": 99,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "int": [
+        "3"
+      ],
+      "vct": [
+        "USED[Novice]30",
+        "USED[Taekwondo]30",
+        "USED[Gunslinger]30",
+        "USED[Ninja]30"
+      ]
+    }
+  },
   "28438": {
     "id": 28438,
     "aegisName": "Fairy_Leaf_Powder",
@@ -33168,7 +33610,7 @@
     "compositionPos": null,
     "usableClass": [
       "Genetic",
-      "Machanic"
+      "Mechanic"
     ],
     "script": {
       "atk": [
@@ -49175,6 +49617,61 @@
       ],
       "magicalChance__matkPercent": [
         "EQUIP[Ancient Hero Boots]===15(7 วินาที)"
+      ]
+    }
+  },
+  "640011": {
+    "id": 640011,
+    "aegisName": "Up_Iron_Staff",
+    "name": "Patent Aeon Staff [2]",
+    "unidName": "Rod",
+    "resName": "Up_Iron_Staff",
+    "description": "ไม้เท้าที่ทำขึ้นจากโลหะลึกลับของโลกอื่น\nเมื่อเห็นพลังเวทย์อันบิดเบี้ยว ก็ได้เริ่มเผยพลังอันแท้จริงออกมา\nดูกลมกลืนเข้ากับ Great Hero Boots\n\nไม่สามารถทำลายได้\nMATK +235\nทุก ๆ การอัพเกรด 2 ขั้น MATK +15\nทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage สกิล Earth Strain 12%\nเมื่ออัพเกรดถึงขั้น 7 ลดระยะเวลาร่ายแบบแปรผัน 10%, เพิ่ม Damage ทางเวทมนตร์ธาตุ Earth, Fire 15%\nเมื่ออัพเกรดถึงขั้น 9 ลด Cooldown สกิล Earth Strain 1 วินาที, ลดระยะเวลาร่ายแบบแปรผันลงอีก 5%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกขนาด 15%, เพิ่ม Damage สกิล Crimson Rock 15%\nเมื่อสวมใส่ร่วมกับ Great Hero Boots, INT +10, MATK +7%\n\nประเภท : ^777777Two-Handed Staff^000000 พลังโจมตี : ^777777100^000000\nน้ำหนัก : ^777777100^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Warlock^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 265,
+    "itemLevel": 4,
+    "attack": 100,
+    "defense": null,
+    "weight": 100,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Warlock"
+    ],
+    "script": {
+      "matk": [
+        "235",
+        "2---15"
+      ],
+      "Earth Strain": [
+        "3---12"
+      ],
+      "vct": [
+        "7===10",
+        "9===5"
+      ],
+      "m_my_element_earth": [
+        "7===15"
+      ],
+      "m_my_element_fire": [
+        "7===15"
+      ],
+      "cd__Earth Strain": [
+        "9===1"
+      ],
+      "m_size_all": [
+        "11===15"
+      ],
+      "Crimson Rock": [
+        "11===15"
+      ],
+      "int": [
+        "EQUIP[Great Hero Boots]===10"
+      ],
+      "matkPercent": [
+        "EQUIP[Great Hero Boots]===7"
       ]
     }
   },
