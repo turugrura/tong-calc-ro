@@ -2438,6 +2438,30 @@
       ]
     }
   },
+  "4005": {
+    "id": 4005,
+    "aegisName": "Poring__Card",
+    "name": "Santa Poring Card",
+    "unidName": "Card",
+    "resName": "이름없는카드",
+    "description": "โจมตีศัตรู ธาตุ Shadow แรงขึ้น 20%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Hallowed",
+    "script": {
+      "p_element_dark": [
+        "20"
+      ]
+    }
+  },
   "4007": {
     "id": 4007,
     "aegisName": "Pecopeco_Egg_Card",
@@ -2606,6 +2630,30 @@
       ],
       "p_size_s": [
         "15"
+      ]
+    }
+  },
+  "4085": {
+    "id": 4085,
+    "aegisName": "Orc_Skeleton_Card",
+    "name": "Orc Skeleton Card",
+    "unidName": "Card",
+    "resName": "이름없는카드",
+    "description": "โจมตีศัตรู ธาตุ Holy แรงขึ้น 20%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Damned",
+    "script": {
+      "p_element_holy": [
+        "20"
       ]
     }
   },
@@ -3163,6 +3211,59 @@
       ]
     }
   },
+  "4378": {
+    "id": 4378,
+    "aegisName": "Acidus_Card",
+    "name": "Gold Acidus Card",
+    "unidName": "Gold Acidus Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่ม Max HP\nและ Max SP 4%\nถ้าหากรองเท้าอัพเกรด\nต่ำกว่า 5\nจะได้รับโบนัสเพิ่มเป็น\nMax HP +8% และ Max SP +8%\nและเพิ่ม SP Recovery +5%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Footwear^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 64,
+    "cardPrefix": "Low Level",
+    "script": {
+      "spPercent": [
+        "8",
+        "5===-4"
+      ],
+      "hpPercent": [
+        "8",
+        "5===-4"
+      ]
+    }
+  },
+  "4387": {
+    "id": 4387,
+    "aegisName": "Ancient_Mimic_Card",
+    "name": "Ancient Mimic Card",
+    "unidName": "Ancient Mimic Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่มค่า AGI 1 หน่วย\nทุกๆ ค่า LUK 18 หน่วย\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Armor^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 16,
+    "cardPrefix": "of Agility Switching",
+    "script": {
+      "agi": [
+        "SUM[luk==18]---1"
+      ]
+    }
+  },
   "4399": {
     "id": 4399,
     "aegisName": "Thanatos_Card",
@@ -3217,6 +3318,54 @@
     "script": {
       "acd": [
         "30"
+      ]
+    }
+  },
+  "4406": {
+    "id": 4406,
+    "aegisName": "Skeggiold_Card",
+    "name": "Skeggiold Card",
+    "unidName": "Skeggiold Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่มความเสียหาย\nจากเวทมนตร์ต่อ\nมอนสเตอร์ประเภท\nDemon 2%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Twinkle",
+    "script": {
+      "m_race_demon": [
+        "2"
+      ]
+    }
+  },
+  "4407": {
+    "id": 4407,
+    "aegisName": "Randgris_Card",
+    "name": "Randgris Card",
+    "unidName": "Randgris Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่มความเสียหาย\nATK + 10%\nอาวุธไม่มีวันถูกทำลาย\nมีโอกาสร่ายสกิล\nDispell Lv.1 โดยอัตโนมัติ\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "of Elimination",
+    "script": {
+      "atkPercent": [
+        "10"
       ]
     }
   },
@@ -4465,7 +4614,7 @@
     "resName": "용의보주_홍",
     "description": "STR+1\n^ffffff_^000000",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -4488,7 +4637,7 @@
     "resName": "용의보주_홍",
     "description": "STR+2\n^ffffff_^000000",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -4511,7 +4660,7 @@
     "resName": "용의보주_홍",
     "description": "STR+3\n^ffffff_^000000",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -4534,7 +4683,7 @@
     "resName": "용의보주_홍",
     "description": "STR+4\n^ffffff_^000000",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -4557,7 +4706,7 @@
     "resName": "용의보주_홍",
     "description": "STR+5\n^ffffff_^000000",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -4580,7 +4729,7 @@
     "resName": "용의보주_홍",
     "description": "STR+6\n^ffffff_^000000",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -4595,6 +4744,102 @@
       ]
     }
   },
+  "4706": {
+    "id": 4706,
+    "aegisName": "Strength7",
+    "name": "STR+7",
+    "unidName": "STR+7",
+    "resName": "용의보주_홍",
+    "description": "STR+7\n^ffffff_^000000",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 10,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<Str+7>",
+    "script": {
+      "str": [
+        "7"
+      ]
+    }
+  },
+  "4707": {
+    "id": 4707,
+    "aegisName": "Strength8",
+    "name": "STR+8",
+    "unidName": "STR+8",
+    "resName": "용의보주_홍",
+    "description": "STR+8\n^ffffff_^000000",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 10,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<Str+8>",
+    "script": {
+      "str": [
+        "8"
+      ]
+    }
+  },
+  "4708": {
+    "id": 4708,
+    "aegisName": "Strength9",
+    "name": "STR+9",
+    "unidName": "STR+9",
+    "resName": "용의보주_홍",
+    "description": "STR+9\n^ffffff_^000000",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 10,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<Str+9>",
+    "script": {
+      "str": [
+        "9"
+      ]
+    }
+  },
+  "4709": {
+    "id": 4709,
+    "aegisName": "Strength10",
+    "name": "STR+10",
+    "unidName": "STR+10",
+    "resName": "용의보주_홍",
+    "description": "STR+10\n^ffffff_^000000",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 10,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<Str+10>",
+    "script": {
+      "str": [
+        "10"
+      ]
+    }
+  },
   "4710": {
     "id": 4710,
     "aegisName": "Inteligence1",
@@ -4603,7 +4848,7 @@
     "resName": "용의보주_홍",
     "description": "INT+1\n^ffffff_^000000",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -4626,7 +4871,7 @@
     "resName": "용의보주_홍",
     "description": "INT+2\n^ffffff_^000000",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -4649,7 +4894,7 @@
     "resName": "용의보주_홍",
     "description": "INT+3\n^ffffff_^000000",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -4672,7 +4917,7 @@
     "resName": "용의보주_홍",
     "description": "INT+4\n^ffffff_^000000",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -4695,7 +4940,7 @@
     "resName": "용의보주_홍",
     "description": "INT+5\n^ffffff_^000000",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -4718,7 +4963,7 @@
     "resName": "용의보주_홍",
     "description": "INT+6\n^ffffff_^000000",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -4733,6 +4978,102 @@
       ]
     }
   },
+  "4716": {
+    "id": 4716,
+    "aegisName": "Inteligence7",
+    "name": "INT+7",
+    "unidName": "INT+7",
+    "resName": "용의보주_홍",
+    "description": "INT+7\n^ffffff_^000000",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 10,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<Int+7>",
+    "script": {
+      "int": [
+        "7"
+      ]
+    }
+  },
+  "4717": {
+    "id": 4717,
+    "aegisName": "Inteligence8",
+    "name": "INT+8",
+    "unidName": "INT+8",
+    "resName": "용의보주_홍",
+    "description": "INT+8\n^ffffff_^000000",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 10,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<Int+8>",
+    "script": {
+      "int": [
+        "8"
+      ]
+    }
+  },
+  "4718": {
+    "id": 4718,
+    "aegisName": "Inteligence9",
+    "name": "INT+9",
+    "unidName": "INT+9",
+    "resName": "용의보주_홍",
+    "description": "INT+9\n^ffffff_^000000",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 10,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<Int+9>",
+    "script": {
+      "int": [
+        "9"
+      ]
+    }
+  },
+  "4719": {
+    "id": 4719,
+    "aegisName": "Inteligence10",
+    "name": "INT+10",
+    "unidName": "INT+10",
+    "resName": "용의보주_홍",
+    "description": "INT+10\n^ffffff_^000000",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 10,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<Int+10>",
+    "script": {
+      "int": [
+        "10"
+      ]
+    }
+  },
   "4720": {
     "id": 4720,
     "aegisName": "Dexterity1",
@@ -4741,7 +5082,7 @@
     "resName": "용의보주_홍",
     "description": "DEX+1\n^ffffff_^000000",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -4764,7 +5105,7 @@
     "resName": "용의보주_홍",
     "description": "DEX+2\n^ffffff_^000000",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -4787,7 +5128,7 @@
     "resName": "용의보주_홍",
     "description": "DEX+3\n^ffffff_^000000",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -4810,7 +5151,7 @@
     "resName": "용의보주_홍",
     "description": "DEX+4\n^ffffff_^000000",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -4833,7 +5174,7 @@
     "resName": "용의보주_홍",
     "description": "DEX+5\n^ffffff_^000000",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -4856,7 +5197,7 @@
     "resName": "용의보주_홍",
     "description": "DEX+6\n^ffffff_^000000",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -4871,6 +5212,102 @@
       ]
     }
   },
+  "4726": {
+    "id": 4726,
+    "aegisName": "Dexterity7",
+    "name": "DEX+7",
+    "unidName": "DEX+7",
+    "resName": "용의보주_홍",
+    "description": "DEX+7\n^ffffff_^000000",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 10,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<Dex+7>",
+    "script": {
+      "dex": [
+        "7"
+      ]
+    }
+  },
+  "4727": {
+    "id": 4727,
+    "aegisName": "Dexterity8",
+    "name": "DEX+8",
+    "unidName": "DEX+8",
+    "resName": "용의보주_홍",
+    "description": "DEX+8\n^ffffff_^000000",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<Dex+8>",
+    "script": {
+      "dex": [
+        "8"
+      ]
+    }
+  },
+  "4728": {
+    "id": 4728,
+    "aegisName": "Dexterity9",
+    "name": "DEX+9",
+    "unidName": "DEX+9",
+    "resName": "용의보주_홍",
+    "description": "DEX+9\n^ffffff_^000000",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<Dex+9>",
+    "script": {
+      "dex": [
+        "9"
+      ]
+    }
+  },
+  "4729": {
+    "id": 4729,
+    "aegisName": "Dexterity10",
+    "name": "DEX+10",
+    "unidName": "DEX+10",
+    "resName": "용의보주_홍",
+    "description": "DEX+10\n^ffffff_^000000",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<Dex+10>",
+    "script": {
+      "dex": [
+        "10"
+      ]
+    }
+  },
   "4730": {
     "id": 4730,
     "aegisName": "Agility1",
@@ -4879,7 +5316,7 @@
     "resName": "용의보주_홍",
     "description": "AGI+1\n^ffffff_^000000",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -4902,7 +5339,7 @@
     "resName": "용의보주_홍",
     "description": "AGI+2\n^ffffff_^000000",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -4925,7 +5362,7 @@
     "resName": "용의보주_홍",
     "description": "AGI+3\n^ffffff_^000000",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -4948,7 +5385,7 @@
     "resName": "용의보주_홍",
     "description": "AGI+4\n^ffffff_^000000",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -4971,7 +5408,7 @@
     "resName": "용의보주_홍",
     "description": "AGI+5\n^ffffff_^000000",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -4994,7 +5431,7 @@
     "resName": "용의보주_홍",
     "description": "AGI+6\n^ffffff_^000000",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -5009,6 +5446,102 @@
       ]
     }
   },
+  "4736": {
+    "id": 4736,
+    "aegisName": "Agility7",
+    "name": "AGI+7",
+    "unidName": "AGI+7",
+    "resName": "용의보주_홍",
+    "description": "AGI+7\n^ffffff_^000000",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 10,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<Agi+7>",
+    "script": {
+      "agi": [
+        "7"
+      ]
+    }
+  },
+  "4737": {
+    "id": 4737,
+    "aegisName": "Agility8",
+    "name": "AGI+8",
+    "unidName": "AGI+8",
+    "resName": "용의보주_홍",
+    "description": "AGI+8\n^ffffff_^000000",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<Agi+8>",
+    "script": {
+      "agi": [
+        "8"
+      ]
+    }
+  },
+  "4738": {
+    "id": 4738,
+    "aegisName": "Agility9",
+    "name": "AGI+9",
+    "unidName": "AGI+9",
+    "resName": "용의보주_홍",
+    "description": "AGI+9\n^ffffff_^000000",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<Agi+9>",
+    "script": {
+      "agi": [
+        "9"
+      ]
+    }
+  },
+  "4739": {
+    "id": 4739,
+    "aegisName": "Agility10",
+    "name": "AGI+10",
+    "unidName": "AGI+10",
+    "resName": "용의보주_홍",
+    "description": "AGI+10\n^ffffff_^000000",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<Agi+10>",
+    "script": {
+      "agi": [
+        "10"
+      ]
+    }
+  },
   "4740": {
     "id": 4740,
     "aegisName": "Vitality1",
@@ -5017,7 +5550,7 @@
     "resName": "용의보주_홍",
     "description": "VIT+1\n^ffffff_^000000",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -5040,7 +5573,7 @@
     "resName": "용의보주_홍",
     "description": "VIT+2\n^ffffff_^000000",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -5063,7 +5596,7 @@
     "resName": "용의보주_홍",
     "description": "VIT+3\n^ffffff_^000000",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -5086,7 +5619,7 @@
     "resName": "용의보주_홍",
     "description": "VIT+4\n^ffffff_^000000",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -5109,7 +5642,7 @@
     "resName": "용의보주_홍",
     "description": "VIT+5\n^ffffff_^000000",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -5132,7 +5665,7 @@
     "resName": "용의보주_홍",
     "description": "VIT+6\n^ffffff_^000000",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -5147,6 +5680,102 @@
       ]
     }
   },
+  "4746": {
+    "id": 4746,
+    "aegisName": "Vitality7",
+    "name": "VIT+7",
+    "unidName": "VIT+7",
+    "resName": "용의보주_홍",
+    "description": "VIT+7\n^ffffff_^000000",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 10,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<Vit+7>",
+    "script": {
+      "vit": [
+        "7"
+      ]
+    }
+  },
+  "4747": {
+    "id": 4747,
+    "aegisName": "Vitality8",
+    "name": "VIT+8",
+    "unidName": "VIT+8",
+    "resName": "용의보주_홍",
+    "description": "VIT+8\n^ffffff_^000000",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<Vit+8>",
+    "script": {
+      "vit": [
+        "8"
+      ]
+    }
+  },
+  "4748": {
+    "id": 4748,
+    "aegisName": "Vitality9",
+    "name": "VIT+9",
+    "unidName": "VIT+9",
+    "resName": "용의보주_홍",
+    "description": "VIT+9\n^ffffff_^000000",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<Vit+9>",
+    "script": {
+      "vit": [
+        "9"
+      ]
+    }
+  },
+  "4749": {
+    "id": 4749,
+    "aegisName": "Vitality10",
+    "name": "VIT+10",
+    "unidName": "VIT+10",
+    "resName": "용의보주_홍",
+    "description": "VIT+10\n^ffffff_^000000",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<Vit+10>",
+    "script": {
+      "vit": [
+        "10"
+      ]
+    }
+  },
   "4750": {
     "id": 4750,
     "aegisName": "Luck1",
@@ -5155,7 +5784,7 @@
     "resName": "용의보주_홍",
     "description": "LUK+1\n^ffffff_^000000",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -5178,7 +5807,7 @@
     "resName": "용의보주_홍",
     "description": "LUK+2\n^ffffff_^000000",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -5201,7 +5830,7 @@
     "resName": "용의보주_홍",
     "description": "LUK+3\n^ffffff_^000000",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -5224,7 +5853,7 @@
     "resName": "용의보주_홍",
     "description": "LUK+4\n^ffffff_^000000",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -5247,7 +5876,7 @@
     "resName": "용의보주_홍",
     "description": "LUK+5\n^ffffff_^000000",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -5270,7 +5899,7 @@
     "resName": "용의보주_홍",
     "description": "LUK+6\n^ffffff_^000000",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -5285,6 +5914,102 @@
       ]
     }
   },
+  "4756": {
+    "id": 4756,
+    "aegisName": "Luck7",
+    "name": "LUK+7",
+    "unidName": "LUK+7",
+    "resName": "용의보주_홍",
+    "description": "LUK+7\n^ffffff_^000000",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 10,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<Luk+7>",
+    "script": {
+      "luk": [
+        "7"
+      ]
+    }
+  },
+  "4757": {
+    "id": 4757,
+    "aegisName": "Luck8",
+    "name": "LUK+8",
+    "unidName": "LUK+8",
+    "resName": "용의보주_홍",
+    "description": "LUK+8\n^ffffff_^000000",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<Luk+8>",
+    "script": {
+      "luk": [
+        "8"
+      ]
+    }
+  },
+  "4758": {
+    "id": 4758,
+    "aegisName": "Luck9",
+    "name": "LUK+9",
+    "unidName": "LUK+9",
+    "resName": "용의보주_홍",
+    "description": "LUK+9\n^ffffff_^000000",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<Luk+9>",
+    "script": {
+      "luk": [
+        "9"
+      ]
+    }
+  },
+  "4759": {
+    "id": 4759,
+    "aegisName": "Luck10",
+    "name": "LUK+10",
+    "unidName": "LUK+10",
+    "resName": "용의보주_홍",
+    "description": "LUK+10\n^ffffff_^000000",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<Luk+10>",
+    "script": {
+      "luk": [
+        "10"
+      ]
+    }
+  },
   "4760": {
     "id": 4760,
     "aegisName": "Matk1",
@@ -5293,7 +6018,7 @@
     "resName": "안실라",
     "description": "MATK + 1%,\nลดระยะเวลาการร่ายลง 1%.",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -5319,7 +6044,7 @@
     "resName": "안실라",
     "description": "MATK + 2%,\nลดระยะเวลาการร่ายลง 1%.",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -5337,6 +6062,54 @@
       ]
     }
   },
+  "4764": {
+    "id": 4764,
+    "aegisName": "Critical5",
+    "name": "CRI+5",
+    "unidName": "CRI+5",
+    "resName": "안실라",
+    "description": "CRI + 5.",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<Cri+5>",
+    "script": {
+      "cri": [
+        "5"
+      ]
+    }
+  },
+  "4765": {
+    "id": 4765,
+    "aegisName": "Critical7",
+    "name": "CRI+7",
+    "unidName": "CRI+7",
+    "resName": "안실라",
+    "description": "CRI + 7.",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<Cri+7>",
+    "script": {
+      "cri": [
+        "7"
+      ]
+    }
+  },
   "4766": {
     "id": 4766,
     "aegisName": "Atk2",
@@ -5345,7 +6118,7 @@
     "resName": "안실라",
     "description": "ATK + 2%.",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -5368,7 +6141,7 @@
     "resName": "안실라",
     "description": "ATK + 3%.",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -5391,7 +6164,7 @@
     "resName": "안실라",
     "description": "MATK + 3%,\nลดระยะเวลาการร่ายลง 1%.",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -5417,7 +6190,7 @@
     "resName": "태양신의상징",
     "description": "ASPD + 1",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -5441,7 +6214,7 @@
     "resName": "용의보주_녹",
     "description": "ATK + 15, HIT + 5",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -5467,7 +6240,7 @@
     "resName": "용의보주_녹",
     "description": "ATK + 12, HIT + 4",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -5493,7 +6266,7 @@
     "resName": "용의보주_녹",
     "description": "ATK + 9, HIT + 3",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -5519,7 +6292,7 @@
     "resName": "용의보주_녹",
     "description": "ATK + 6, HIT + 2",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -5545,7 +6318,7 @@
     "resName": "용의보주_청",
     "description": "MATK + 15, ลดระยะเวลาการร่ายเวทย์ลง 10%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -5571,7 +6344,7 @@
     "resName": "용의보주_청",
     "description": "MATK + 12, ลดระยะเวลาการร่ายเวทย์ลง 8%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -5597,7 +6370,7 @@
     "resName": "용의보주_청",
     "description": "MATK + 9, ลดระยะเวลาการร่ายเวทย์ลง 6%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -5623,7 +6396,7 @@
     "resName": "용의보주_청",
     "description": "MATK + 6, ลดระยะเวลาการร่ายเวทย์ลง 4%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -5649,7 +6422,7 @@
     "resName": "용의보주_녹",
     "description": "CRI + 12, HIT + 4",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -5675,7 +6448,7 @@
     "resName": "용의보주_녹",
     "description": "CRI + 9, HIT + 3",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -5701,7 +6474,7 @@
     "resName": "용의보주_녹",
     "description": "CRI + 6, HIT + 2",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -5727,7 +6500,7 @@
     "resName": "안실라",
     "description": "ATK + 1%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -5750,7 +6523,7 @@
     "resName": "용의보주_녹",
     "description": "ATK + 18, HIT + 5",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -5776,7 +6549,7 @@
     "resName": "용의보주_녹",
     "description": "ATK + 21, HIT + 5",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -5802,7 +6575,7 @@
     "resName": "용의보주_녹",
     "description": "ATK + 24, HIT + 5",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -5828,7 +6601,7 @@
     "resName": "용의보주_녹",
     "description": "ATK + 27, HIT + 5",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -5854,7 +6627,7 @@
     "resName": "용의보주_녹",
     "description": "ATK + 30, HIT + 5",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -5880,7 +6653,7 @@
     "resName": "용의보주_녹",
     "description": "ATK +50, HIT +15",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -5906,7 +6679,7 @@
     "resName": "용의보주_청",
     "description": "MATK + 18, ลดระยะเวลาการร่ายเวทย์ลง 10%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -5932,7 +6705,7 @@
     "resName": "용의보주_청",
     "description": "MATK + 21, ลดระยะเวลาการร่ายเวทย์ลง 10%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -5958,7 +6731,7 @@
     "resName": "용의보주_황",
     "description": "เพิ่มค่าความเสียหายจากการโจมตีระยะไกลขึ้น 2%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -5981,7 +6754,7 @@
     "resName": "용의보주_황",
     "description": "เพิ่มค่าความเสียหายจากการโจมตีระยะไกลขึ้น 4%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -6004,7 +6777,7 @@
     "resName": "용의보주_황",
     "description": "เพิ่มค่าความเสียหายจากการโจมตีระยะไกลขึ้น 6%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -6027,7 +6800,7 @@
     "resName": "용의보주_황",
     "description": "เพิ่มค่าความเสียหายจากการโจมตีระยะไกลขึ้น 8%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -6050,7 +6823,7 @@
     "resName": "용의보주_황",
     "description": "เพิ่มค่าความเสียหายจากการโจมตีระยะไกลขึ้น 10%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -6073,7 +6846,7 @@
     "resName": "용의보주_황",
     "description": "เพิ่มค่าความเสียหายจากการโจมตีระยะไกลขึ้น 12%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -6096,7 +6869,7 @@
     "resName": "용의보주_황",
     "description": "เพิ่มค่าความเสียหายจากการโจมตีระยะไกลขึ้น 14%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -6119,7 +6892,7 @@
     "resName": "용의보주_황",
     "description": "เพิ่มค่าความเสียหายจากการโจมตีระยะไกลขึ้น 16%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -6142,7 +6915,7 @@
     "resName": "용의보주_황",
     "description": "เพิ่มค่าความเสียหายจากการโจมตีระยะไกลขึ้น 18%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -6165,7 +6938,7 @@
     "resName": "용의보주_황",
     "description": "เพิ่มค่าความเสียหายจากการโจมตีระยะไกลขึ้น 20%, ASPD + 1",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -6191,7 +6964,7 @@
     "resName": "태양신의상징",
     "description": "ASPD + 2",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -6214,7 +6987,7 @@
     "resName": "용의보주_녹",
     "description": "CRI + 14, HIT + 5",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -6240,7 +7013,7 @@
     "resName": "용의보주_녹",
     "description": "CRI + 15, HIT + 6",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -6266,7 +7039,7 @@
     "resName": "검붉은보석",
     "description": "STR + 1\nหากระดับการอัพเกรดอยู่ที่ 8 เพิ่มค่า STR + 3\nหากระดับการอัพเกรดอยู่ที่ 9 เพิ่มค่า เพิ่ม Damage ทางกายภาพต่อศัตรูทุกประเภท + 1%\nหากระดับการอัพเกรดอยู่ที่ 12 เพิ่มค่า ASPD + 1 ลด Fixed Cast Time 7%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -6299,7 +7072,7 @@
     "resName": "노란색보석",
     "description": "AGI + 1\nหากระดับการอัพเกรดอยู่ที่ 8 เพิ่มค่า AGI + 3\nหากระดับการอัพเกรดอยู่ที่ 9 เพิ่มค่า เพิ่ม Damage ทางกายภาพต่อศัตรูทุกประเภท + 1%\nหากระดับการอัพเกรดอยู่ที่ 12 เพิ่มค่า ASPD + 1 ลด Fixed Cast Time 7%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -6332,7 +7105,7 @@
     "resName": "청록색보석",
     "description": "VIT + 1\nหากระดับการอัพเกรดอยู่ที่ 8 เพิ่มค่า VIT + 3\nหากระดับการอัพเกรดอยู่ที่ 9 เพิ่มค่า SP + 1%\nหากระดับการอัพเกรดอยู่ที่ 12 เพิ่มค่า ASPD + 1 ลด Fixed Cast Time  7%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -6365,7 +7138,7 @@
     "resName": "파란색보석",
     "description": "INT + 1\nหากระดับการอัพเกรดอยู่ที่ 8 เพิ่มค่า INT + 3\nหากระดับการอัพเกรดอยู่ที่ 9 เพิ่มค่า MATK + 1%\nหากระดับการอัพเกรดอยู่ที่ 12 เพิ่มค่า ASPD + 1 ลด Fixed Cast Time 7%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -6398,7 +7171,7 @@
     "resName": "초록색보석",
     "description": "DEX + 1\nหากระดับการอัพเกรดอยู่ที่ 8 เพิ่มค่า DEX + 3\nหากระดับการอัพเกรดอยู่ที่ 9 เพิ่มค่า MATK + 1%\nหากระดับการอัพเกรดอยู่ที่ 12 เพิ่มค่า ASPD + 1 ลด Fixed Cast Time 7%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -6431,7 +7204,7 @@
     "resName": "분홍색보석",
     "description": "LUK + 1\nหากระดับการอัพเกรดอยู่ที่ 8 เพิ่มค่า LUK + 3\nหากระดับการอัพเกรดอยู่ที่ 9 เพิ่มค่า MHP + 1%\nหากระดับการอัพเกรดอยู่ที่ 12 เพิ่มค่า ASPD + 1 ลด Fixed Cast Time 7%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -6464,7 +7237,7 @@
     "resName": "하얀묘안석",
     "description": "Critical Damage +4%, CRI+1.",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -6490,7 +7263,7 @@
     "resName": "하얀묘안석",
     "description": "Critical Damage +6%, CRI+2.",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -6516,7 +7289,7 @@
     "resName": "하얀묘안석",
     "description": "Critical Damage + 8%, CRI + 3.",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -6542,7 +7315,7 @@
     "resName": "하얀묘안석",
     "description": "Critical Damage + 10%, CRI + 4.",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -6568,7 +7341,7 @@
     "resName": "노란묘안석",
     "description": "ASPD+4%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -6591,7 +7364,7 @@
     "resName": "노란묘안석",
     "description": "ASPD+6%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -6614,7 +7387,7 @@
     "resName": "노란묘안석",
     "description": "ASPD+8%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -6637,7 +7410,7 @@
     "resName": "영혼의조각",
     "description": "เมื่อได้รับการโจมตีทางกายภาพ จะมีโอกาสได้รับพลัง “Bear's Power” เป็นเวลา 5 วินาที แต่จะเสีย HP 500 ต่อวินาที",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -6660,7 +7433,7 @@
     "resName": "영혼의조각",
     "description": "เมื่อโจมตีด้วยเวทมนตร์ มีโอกาสเล็กน้อยที่จะใช้ \"Runaway Magic\" เป็นเวลา 10 วินาที แต่จะเสีย SP 200 ต่อวินาที",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -6683,7 +7456,7 @@
     "resName": "영혼의조각",
     "description": "เมื่อโจมตีทางกายภาพ มีโอกาสเล็กน้อยที่จะเคลื่อนไหวได้เหมือน \"Speed of Light\" เป็นเวลา 5 วินาที แต่จะเสีย HP 400, SP 40 ต่อวินาที",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -6706,7 +7479,7 @@
     "resName": "영혼의조각",
     "description": "เมื่อได้รับการโจมตีทางกายภาพ มีโอกาสเล็กน้อยที่จะกลายเป็น \"Muscle Fool\" เป็นเวลา 5 วินาที เพิ่มพลังป้องกันมหาศาล แต่จะลด Atk และ Matk ลง50%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -6729,7 +7502,7 @@
     "resName": "영혼의조각",
     "description": "เมื่อโจมตีทางกายภาพ มีโอกาสเล็กน้อยที่จะตั้งสมาธิด้วย \"Hawkeye\" เป็นเวลา 5 วินาที แต่จะเสีย SP 50 ต่อวินาที",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -6748,7 +7521,7 @@
     "resName": "영혼의조각",
     "description": "เมื่อทำการโจมตี และได้รับการโจมตี ทั้งจากกายภาพ และเวทมนตร์ มีโอกาสเล็กน้อยที่จะได้รับ \"Lucky day\" เป็นเวลา 5 วินาที ทำให้วันนี้เป็นวันที่ดีของคุณ",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -6767,7 +7540,7 @@
     "resName": "노란묘안석",
     "description": "ASPD +10%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -6790,7 +7563,7 @@
     "resName": "힘의니브",
     "description": "STR + 5 เมื่อ Refine ระดับ 7\nโจมตีทุกเผ่าแรงขึ้น 5% เมื่อ Refine ระดับ 10",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -6816,7 +7589,7 @@
     "resName": "힘의니브",
     "description": "STR + 6 เมื่อ Refine ระดับ 7\nเพิ่ม STR + 1, โจมตีทุกเผ่าแรงขึ้น 7% เมื่อ Refine ระดับ 11",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -6843,7 +7616,7 @@
     "resName": "힘의니브",
     "description": "STR + 7 เมื่อ Refine ระดับ 7\nเพิ่ม STR + 1, โจมตีทุกเผ่าแรงขึ้น 8% เมื่อ Refine ระดับ 12\nเพิ่ม STR + 1, โจมตีทุกเผ่าแรงขึ้น 2% เมื่อ Refine ระดับ 13",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -9771,6 +10544,389 @@
       ],
       "m_race_formless": [
         "11===15"
+      ]
+    }
+  },
+  "15397": {
+    "id": 15397,
+    "aegisName": "CassockA_STR",
+    "name": "Str Soutane [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "CassockA_STR",
+    "description": "ชุดประกอบพิธีของเหล่าสาวกที่เลื่อมใสในพลังอำนาจแห่งโอดิน  \nมันเปี่ยมไปด้วยพรที่ช่วยเพิ่มพลัง \nMHP +10%, MSP +10% \nASPD +10% \nทุก ๆ การอัพเกรด 2 ขั้น ATK +3% \nทุก ๆ การอัพเกรด 3 ขั้น STR +5 \nทุก ๆ การอัพเกรด 4 ขั้น เพิ่ม Damage ทางกายภาพต่อมอนสเตอร์ประเภท Angel, Demon 8%\n\nเมื่อสวมใส่ร่วมกับ Clergy's Boots และ Clergy's Manteau,  \nSTR +8, DEF +30, MDEF +15 \nลด Damage ทางกายภาพและเวทมนตร์ที่ได้รับจากมอนสเตอร์ประเภท Angel, Demon 15%\n\nเมื่อค่าอัพเกรดของ Str Soutane, Clergy's Boots, Clergy's Manteau รวมกันตั้งแต่ 27 ขึ้นไป \nATK +10% \nลด Delay หลังใช้สกิล 20% \nลดระยะเวลาร่ายแบบคงที่ 20% \nประเภท : ^777777Armor^000000  พลังป้องกัน : ^777777100^000000\nน้ำหนัก : ^77777780^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 100,
+    "weight": 80,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "hpPercent": [
+        "10"
+      ],
+      "spPercent": [
+        "10"
+      ],
+      "aspdPercent": [
+        "10"
+      ],
+      "atkPercent": [
+        "2---3",
+        "EQUIP[Clergy's Boots&&Clergy's Manteau]REFINE[armor,boot,garment==27]10"
+      ],
+      "str": [
+        "3---5",
+        "EQUIP[Clergy's Boots&&Clergy's Manteau]8"
+      ],
+      "p_race_angel": [
+        "4---8"
+      ],
+      "p_race_demon": [
+        "4---8"
+      ],
+      "acd": [
+        "EQUIP[Clergy's Boots&&Clergy's Manteau]REFINE[armor,boot,garment==27]20"
+      ],
+      "fctPercent": [
+        "EQUIP[Clergy's Boots&&Clergy's Manteau]REFINE[armor,boot,garment==27]20"
+      ],
+      "def": [
+        "EQUIP[Clergy's Boots&&Clergy's Manteau]30"
+      ],
+      "mdef": [
+        "EQUIP[Clergy's Boots&&Clergy's Manteau]15"
+      ]
+    }
+  },
+  "15398": {
+    "id": 15398,
+    "aegisName": "CassockA_AGI",
+    "name": "Agi Soutane [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "CassockA_AGI",
+    "description": "ชุดประกอบพิธีของเหล่าสาวกที่เลื่อมใสในความว่องไวของโอดิน \nมันเปี่ยมไปด้วยพรที่ช่วยเพิ่มความว่องไว \nMHP +10%, MSP +10% \nASPD +10% \nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage ทางกายภาพระยะไกล 3% \nทุก ๆ การอัพเกรด 3 ขั้น AGI +5 \nทุก ๆ การอัพเกรด 4 ขั้น เพิ่ม Damage ทางกายภาพต่อมอนสเตอร์ประเภท Angel, Demon 8%\n\nเมื่อสวมใส่ร่วมกับ Clergy's Boots, Clergy's Manteau, \nAGI +8, DEF +30, MDEF +15 \nลด Damage ทางกายภาพและเวทมนตร์ที่ได้รับจากมอนสเตอร์ประเภท Angel, Demon 15%\n\nเมื่อค่าอัพเกรดของ Agi Soutane, Clergy's Boots, Clergy's Manteau รวมกันตั้งแต่ 27 ขึ้นไป \nเพิ่ม Damage ทางกายภาพระยะไกล 10% \nลด Delay หลังใช้สกิล 20% \nลดระยะเวลาร่ายแบบคงที่ 20% \nประเภท : ^777777Armor^000000  พลังป้องกัน : ^777777100^000000\nน้ำหนัก : ^77777780^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 100,
+    "weight": 80,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "hpPercent": [
+        "10"
+      ],
+      "spPercent": [
+        "10"
+      ],
+      "aspdPercent": [
+        "10"
+      ],
+      "range": [
+        "2---3",
+        "EQUIP[Clergy's Boots&&Clergy's Manteau]REFINE[armor,boot,garment==27]10"
+      ],
+      "agi": [
+        "3---5",
+        "EQUIP[Clergy's Boots&&Clergy's Manteau]8"
+      ],
+      "p_race_angel": [
+        "4---8"
+      ],
+      "p_race_demon": [
+        "4---8"
+      ],
+      "acd": [
+        "EQUIP[Clergy's Boots&&Clergy's Manteau]REFINE[armor,boot,garment==27]20"
+      ],
+      "fctPercent": [
+        "EQUIP[Clergy's Boots&&Clergy's Manteau]REFINE[armor,boot,garment==27]20"
+      ],
+      "def": [
+        "EQUIP[Clergy's Boots&&Clergy's Manteau]30"
+      ],
+      "mdef": [
+        "EQUIP[Clergy's Boots&&Clergy's Manteau]15"
+      ]
+    }
+  },
+  "15399": {
+    "id": 15399,
+    "aegisName": "CassockA_VIT",
+    "name": "Vit Soutane [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "CassockA_VIT",
+    "description": "ชุดประกอบพิธีของเหล่าสาวกที่เลื่อมใสในพละกำลังของโอดิน \nมันเปี่ยมไปด้วยพรที่ช่วยเพิ่มพละกำลัง \nMHP +15%, MSP +5% \nASPD +7% \nลดระยะเวลาร่ายแบบแปรผัน 7% \nทุก ๆ การอัพเกรด 2 ขั้น MHP +2% \nทุก ๆ การอัพเกรด 3 ขั้น VIT +5 \nทุก ๆ การอัพเกรด 4 ขั้น เพิ่ม Damage ทางกายภาพและเวทมนตร์ที่ทำต่อมอนสเตอร์ประเภท Angel, Demon 10%\n\nเมื่อสวมใส่ร่วมกับ Clergy's Boots, Clergy's Manteau, \nVIT +8, DEF +50, MDEF +20 \nลด Damage ทางกายภาพและเวทมนตร์ที่ได้รับจากมอนสเตอร์ประเภท Angel, Demon 20%\n\nเมื่อค่าอัพเกรดของ Vit Soutane, Clergy's Boots, Clergy's Manteau รวมกันตั้งแต่ 27 ขึ้นไป \nATK +4%, MATK +4% \nลด Delay หลังใช้สกิล 20% \nลดระยะเวลาร่ายแบบคงที่ 20% \nประเภท : ^777777Armor^000000  พลังป้องกัน : ^777777100^000000\nน้ำหนัก : ^77777780^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 100,
+    "weight": 80,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "hpPercent": [
+        "15",
+        "2---2"
+      ],
+      "spPercent": [
+        "5"
+      ],
+      "aspdPercent": [
+        "7"
+      ],
+      "vct": [
+        "7"
+      ],
+      "vit": [
+        "3---5",
+        "EQUIP[Clergy's Boots&&Clergy's Manteau]8"
+      ],
+      "p_race_angel": [
+        "4---10"
+      ],
+      "p_race_demon": [
+        "4---10"
+      ],
+      "m_race_angel": [
+        "4---10"
+      ],
+      "m_race_demon": [
+        "4---10"
+      ],
+      "atkPercent": [
+        "EQUIP[Clergy's Boots&&Clergy's Manteau]REFINE[armor,boot,garment==27]4"
+      ],
+      "matkPercent": [
+        "EQUIP[Clergy's Boots&&Clergy's Manteau]REFINE[armor,boot,garment==27]4"
+      ],
+      "acd": [
+        "EQUIP[Clergy's Boots&&Clergy's Manteau]REFINE[armor,boot,garment==27]20"
+      ],
+      "fctPercent": [
+        "EQUIP[Clergy's Boots&&Clergy's Manteau]REFINE[armor,boot,garment==27]20"
+      ],
+      "def": [
+        "EQUIP[Clergy's Boots&&Clergy's Manteau]50"
+      ],
+      "mdef": [
+        "EQUIP[Clergy's Boots&&Clergy's Manteau]20"
+      ]
+    }
+  },
+  "15400": {
+    "id": 15400,
+    "aegisName": "CassockA_DEX",
+    "name": "Dex Soutane [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "CassockA_DEX",
+    "description": "ชุดประกอบพิธีของเหล่าสาวกที่เลื่อมใสในความแม่นยำของโอดิน \nมันเปี่ยมไปด้วยพรที่ช่วยเพิ่มความแม่นยำ \nMHP +10%, MSP +10% \nASPD +10%, ลดระยะเวลาร่ายแบบแปรผัน 10% \nทุก ๆ การอัพเกรด 2 ขั้น ATK +1%, MATK +1%  \nทุก ๆ การอัพเกรด 3 ขั้น DEX +5 \nทุก ๆ การอัพเกรด 4 ขั้น เพิ่ม Damage ทางกายภาพและเวทมนตร์ที่ทำต่อมอนสเตอร์ประเภท Angel, Demon 6%\n\nเมื่อสวมใส่ร่วมกับ Clergy's Boots, Clergy's Manteau, \nDEX +8, DEF +30, MDEF +15 \nลด Damage ทางกายภาพและเวทมนตร์ที่ได้รับจากมอนสเตอร์ประเภท Angel, Demon 15%\n\nเมื่อค่าอัพเกรดของ Dex Soutane, Clergy's Boots, Clergy's Manteau รวมกันตั้งแต่ 27 ขึ้นไป \nATK +7%\nMATK +7%\nลด Delay หลังใช้สกิล 20% \nลดระยะเวลาร่ายแบบคงที่ 20% \nประเภท : ^777777Armor^000000  พลังป้องกัน : ^777777100^000000\nน้ำหนัก : ^77777780^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 100,
+    "weight": 80,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "hpPercent": [
+        "10"
+      ],
+      "spPercent": [
+        "10"
+      ],
+      "aspdPercent": [
+        "10"
+      ],
+      "vct": [
+        "10"
+      ],
+      "atkPercent": [
+        "2---1",
+        "EQUIP[Clergy's Boots&&Clergy's Manteau]REFINE[armor,boot,garment==27]7"
+      ],
+      "matkPercent": [
+        "2---1",
+        "EQUIP[Clergy's Boots&&Clergy's Manteau]REFINE[armor,boot,garment==27]7"
+      ],
+      "dex": [
+        "3---5",
+        "EQUIP[Clergy's Boots&&Clergy's Manteau]8"
+      ],
+      "p_race_angel": [
+        "4---6"
+      ],
+      "p_race_demon": [
+        "4---6"
+      ],
+      "m_race_angel": [
+        "4---6"
+      ],
+      "m_race_demon": [
+        "4---6"
+      ],
+      "acd": [
+        "EQUIP[Clergy's Boots&&Clergy's Manteau]REFINE[armor,boot,garment==27]20"
+      ],
+      "fctPercent": [
+        "EQUIP[Clergy's Boots&&Clergy's Manteau]REFINE[armor,boot,garment==27]20"
+      ],
+      "def": [
+        "EQUIP[Clergy's Boots&&Clergy's Manteau]30"
+      ],
+      "mdef": [
+        "EQUIP[Clergy's Boots&&Clergy's Manteau]15"
+      ]
+    }
+  },
+  "15401": {
+    "id": 15401,
+    "aegisName": "CassockA_INT",
+    "name": "Int Soutane [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "CassockA_INT",
+    "description": "ชุดประกอบพิธีของเหล่าสาวกที่เลื่อมใสสติปัญญาของโอดิน \nมันเปี่ยมไปด้วยพรที่ช่วยเพิ่มความฉลาด \nMHP +5%, MSP +15% \nลดระยะเวลาร่ายแบบแปรผัน 10% \nทุก ๆ การอัพเกรด 2 ขั้น MATK +3% \nทุก ๆ การอัพเกรด 3 ขั้น INT +5 \nทุก ๆ การอัพเกรด 4 ขั้น เพิ่ม Damage ทางกายภาพและเวทมนตร์ที่ทำต่อมอนสเตอร์ประเภท Angel, Demon 8%\n\nเมื่อสวมใส่ร่วมกับ Clergy's Boots, Clergy's Manteau, \nINT +8, DEF +30, MDEF +15 \nลด Damage ทางกายภาพและเวทมนตร์ที่ได้รับจากมอนสเตอร์ประเภท Angel, Demon 15%\n\nเมื่อค่าอัพเกรดของ Int Soutane, Clergy's Boots, Clergy's Manteau รวมกันตั้งแต่ 27 ขึ้นไป \nMATK +10% \nลด Delay หลังใช้สกิล 20% \nลดระยะเวลาร่ายแบบคงที่ 20% \nประเภท : ^777777Armor^000000  พลังป้องกัน : ^777777100^000000\nน้ำหนัก : ^77777780^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 100,
+    "weight": 80,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "hpPercent": [
+        "5"
+      ],
+      "spPercent": [
+        "15"
+      ],
+      "vct": [
+        "10"
+      ],
+      "matkPercent": [
+        "2---3",
+        "EQUIP[Clergy's Boots&&Clergy's Manteau]REFINE[armor,boot,garment==27]10"
+      ],
+      "int": [
+        "3---5",
+        "EQUIP[Clergy's Boots&&Clergy's Manteau]8"
+      ],
+      "p_race_angel": [
+        "4---8"
+      ],
+      "p_race_demon": [
+        "4---8"
+      ],
+      "m_race_angel": [
+        "4---8"
+      ],
+      "m_race_demon": [
+        "4---8"
+      ],
+      "acd": [
+        "EQUIP[Clergy's Boots&&Clergy's Manteau]REFINE[armor,boot,garment==27]20"
+      ],
+      "fctPercent": [
+        "EQUIP[Clergy's Boots&&Clergy's Manteau]REFINE[armor,boot,garment==27]20"
+      ],
+      "def": [
+        "EQUIP[Clergy's Boots&&Clergy's Manteau]30"
+      ],
+      "mdef": [
+        "EQUIP[Clergy's Boots&&Clergy's Manteau]15"
+      ]
+    }
+  },
+  "15402": {
+    "id": 15402,
+    "aegisName": "CassockA_LUK",
+    "name": "Luk Soutane [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "CassockA_LUK",
+    "description": "ชุดประกอบพิธีของเหล่าสาวกที่เลื่อมใสในโชคของโอดิน \nมันเปี่ยมไปด้วยพรที่ช่วยเพิ่มโชคลาภ \nMHP +10%, MSP +10% \nASPD +10% \nทุก ๆ การอัพเกรด 2 ขั้น CRI +3, Critical Damage +4% \nทุก ๆ การอัพเกรด 3 ขั้น LUK +5 \nทุก ๆ การอัพเกรด 4 ขั้น เพิ่ม Damage ทางกายภาพต่อมอนสเตอร์ประเภท Angel, Demon 8%\n\nเมื่อสวมใส่ร่วมกับ Clergy's Boots, Clergy's Manteau, \nLUK +8, DEF +30, MDEF +15 \nลด Damage ทางกายภาพและเวทมนตร์ที่ได้รับจากมอนสเตอร์ประเภท Angel, Demon 15%\n\nเมื่อค่าอัพเกรดของ Luk Soutane, Clergy's Boots, Clergy's Manteau รวมกันตั้งแต่ 27 ขึ้นไป \nATK +10% \nลด Delay หลังใช้สกิล 20% \nลดระยะเวลาร่ายแบบคงที่ 20% \nประเภท : ^777777Armor^000000  พลังป้องกัน : ^777777100^000000\nน้ำหนัก : ^77777780^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 100,
+    "weight": 80,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "hpPercent": [
+        "10"
+      ],
+      "spPercent": [
+        "10"
+      ],
+      "aspdPercent": [
+        "10"
+      ],
+      "cri": [
+        "2---3"
+      ],
+      "criDmg": [
+        "2---4"
+      ],
+      "luk": [
+        "3---5"
+      ],
+      "p_race_angel": [
+        "4---8"
+      ],
+      "p_race_demon": [
+        "4---8"
+      ],
+      "atkPercent": [
+        "EQUIP[Clergy's Boots&&Clergy's Manteau]REFINE[armor,boot,garment==27]10"
+      ],
+      "acd": [
+        "EQUIP[Clergy's Boots&&Clergy's Manteau]REFINE[armor,boot,garment==27]20"
+      ],
+      "fctPercent": [
+        "EQUIP[Clergy's Boots&&Clergy's Manteau]REFINE[armor,boot,garment==27]20"
+      ],
+      "def": [
+        "EQUIP[Clergy's Boots&&Clergy's Manteau]30"
+      ],
+      "mdef": [
+        "EQUIP[Clergy's Boots&&Clergy's Manteau]15"
       ]
     }
   },
@@ -15310,6 +16466,45 @@
       ]
     }
   },
+  "20947": {
+    "id": 20947,
+    "aegisName": "Cassock_Manteau",
+    "name": "Clergy's Manteau [1]",
+    "unidName": "Manteau",
+    "resName": "Cassock_Manteau",
+    "description": "ชุดคลุมที่เหล่าสาวกผู้เลื่อมใสในโอดินเคยสวมใส่ \nพรที่อบอวลไปทั่วเสื้อคลุมนี้ จะห่อหุ้มร่างกายไว้อย่างนุ่มนวล\n\nMSP +5%, MDEF +10 \nลดระยะเวลาร่ายแบบแปรผัน 10%  \nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage ทางเวทมนตร์ต่อมอนสเตอร์ประเภท Angel, Demon 1% \nทุก ๆ การอัพเกรด 3 ขั้น ลด Damage ทางเวทมนตร์ที่ได้รับจากมอนสเตอร์ประเภท Angel, Demon 1% \nเมื่ออัพเกรดถึงขั้น 7 ลดระยะเวลาร่ายแบบแปรผันลงอีก 10% \nประเภท : ^777777Garment^000000  พลังป้องกัน : ^77777740^000000\nน้ำหนัก : ^77777745^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 515,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 40,
+    "weight": 45,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "spPercent": [
+        "5"
+      ],
+      "mdef": [
+        "10"
+      ],
+      "vct": [
+        "10",
+        "7===10"
+      ],
+      "m_race_angel": [
+        "2---1"
+      ],
+      "m_race_demon": [
+        "2---1"
+      ]
+    }
+  },
   "20963": {
     "id": 20963,
     "aegisName": "Temporal_M_Str",
@@ -16885,6 +18080,47 @@
       ],
       "allStatus": [
         "REFINE[10]===2"
+      ]
+    }
+  },
+  "22209": {
+    "id": 22209,
+    "aegisName": "Cassock_Boots",
+    "name": "Clergy's Boots [1]",
+    "unidName": "Boots",
+    "resName": "Cassock_Boots",
+    "description": "รองเท้าที่เหล่าสาวกผู้เลื่อมใสในโอดินเคยสวมใส่ \nพรที่อบอวลไปทั่วรองเท้านี้ จะห่อหุ้มร่างกายไว้อย่างนุ่มนวล\n\nMHP +5%, DEF +30 \nASPD +10% \nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage ทางเวทมนตร์ต่อมอนสเตอร์ประเภท Angel, Demon 1%\nทุก ๆ การอัพเกรด 3 ขั้น ลด Damage ทางเวทมนตร์ที่ได้รับจากมอนสเตอร์ประเภท Angel, Demon 1%\nเมื่ออัพเกรดถึงขั้น 7 ลดระยะเวลาร่ายแบบแปรผันอีก 10% \nประเภท : ^777777Shoes^000000  พลังป้องกัน : ^77777735^000000\nน้ำหนัก : ^77777740^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 516,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 35,
+    "weight": 40,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "hpPercent": [
+        "5"
+      ],
+      "def": [
+        "30"
+      ],
+      "aspdPercent": [
+        "10"
+      ],
+      "m_race_angel": [
+        "2---1"
+      ],
+      "m_race_demon": [
+        "2---1"
+      ],
+      "vct": [
+        "7===10"
       ]
     }
   },
@@ -31503,7 +32739,7 @@
     "resName": "마력의니브",
     "description": "INT + 5 เมื่อ Refine ระดับ 7\nMATK + 5% เมื่อ Refine ระดับ 10",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -31529,7 +32765,7 @@
     "resName": "마력의니브",
     "description": "INT + 6 เมื่อ Refine ระดับ 7\nเพิ่ม INT + 1, MATK + 7% เมื่อ Refine ระดับ 11",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -31556,7 +32792,7 @@
     "resName": "마력의니브",
     "description": "INT + 7 เมื่อ Refine ระดับ 7\nเพิ่ม INT + 1, MATK + 8% เมื่อ Refine ระดับ 12\nเพิ่ม INT + 1, MATK + 2% เมื่อ Refine ระดับ 13",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -31585,7 +32821,7 @@
     "resName": "손재주의니브",
     "description": "DEX + 5 เมื่อ Refine ระดับ 7\nดาเมจกายภาพระยะไกล + 5% เมื่อ Refine ระดับ 10",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -31611,7 +32847,7 @@
     "resName": "손재주의니브",
     "description": "DEX + 6 เมื่อ Refine ระดับ 7\nเพิ่ม DEX +1, ดาเมจกายภาพระยะไกล + 7% เมื่อ Refine ระดับ 11",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -31638,7 +32874,7 @@
     "resName": "손재주의니브",
     "description": "DEX + 7 เมื่อ Refine ระดับ 7\nเพิ่ม DEX + 1, ดาเมจกายภาพระยะไกล +8% เมื่อ Refine ระดับ 12\nเพิ่ม DEX + 1, ดาเมจกายภาพระยะไกล +2% เมื่อ Refine ระดับ 13",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -31806,7 +33042,7 @@
     "resName": "레드크리스탈조각",
     "description": "ATK + 6%, HIT + 6",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -31832,7 +33068,7 @@
     "resName": "레드크리스탈조각",
     "description": "ATK + 9%, HIT + 9",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -31858,7 +33094,7 @@
     "resName": "레드크리스탈조각",
     "description": "ATK + 12%, HIT + 12",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -31884,7 +33120,7 @@
     "resName": "레드크리스탈조각",
     "description": "ATK + 15%, HIT + 15",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -31910,7 +33146,7 @@
     "resName": "레드크리스탈조각",
     "description": "ATK + 18%, HIT + 18",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -31936,7 +33172,7 @@
     "resName": "레드크리스탈조각",
     "description": "ATK + 21%, HIT + 21",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -31962,7 +33198,7 @@
     "resName": "블루크리스탈조각",
     "description": "MATK + 6%, ลด Fixed Cast Time 0.2 วินาที",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -31988,7 +33224,7 @@
     "resName": "블루크리스탈조각",
     "description": "MATK + 9%, ลด Fixed Cast Time 0.3 วินาที",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -32014,7 +33250,7 @@
     "resName": "블루크리스탈조각",
     "description": "MATK + 12%, ลด Fixed Cast Time 0.4 วินาที",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -32040,7 +33276,7 @@
     "resName": "블루크리스탈조각",
     "description": "MATK + 15%, ลด Fixed Cast Time 0.5 วินาที",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -32066,7 +33302,7 @@
     "resName": "블루크리스탈조각",
     "description": "MATK + 18%, ลด Fixed Cast Time 0.6 วินาที",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -32092,7 +33328,7 @@
     "resName": "블루크리스탈조각",
     "description": "MATK + 21%, ลด Fixed Cast Time 0.7 วินาที",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -32118,7 +33354,7 @@
     "resName": "그린크리스탈조각",
     "description": "คริติคอลดาเมจ + 20%, CRI + 6",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -32144,7 +33380,7 @@
     "resName": "그린크리스탈조각",
     "description": "คริติคอลดาเมจ + 30%, CRI + 9",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -32170,7 +33406,7 @@
     "resName": "그린크리스탈조각",
     "description": "คริติคอลดาเมจ + 40%, CRI + 12",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -32196,7 +33432,7 @@
     "resName": "그린크리스탈조각",
     "description": "คริติคอลดาเมจ + 50%, CRI + 15",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -32222,7 +33458,7 @@
     "resName": "그린크리스탈조각",
     "description": "คริติคอลดาเมจ + 60%, CRI + 18",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -32248,7 +33484,7 @@
     "resName": "그린크리스탈조각",
     "description": "คริติคอลดาเมจ + 70%, CRI + 21",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -32274,7 +33510,7 @@
     "resName": "옐로크리스탈조각",
     "description": "เพิ่มความเสียหายทางกายภาพ + 8% เมื่อใช้ธนู, ASPD + 2%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -32300,7 +33536,7 @@
     "resName": "옐로크리스탈조각",
     "description": "เพิ่มความเสียหายทางกายภาพ + 12% เมื่อใช้ธนู, ASPD + 3%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -32326,7 +33562,7 @@
     "resName": "옐로크리스탈조각",
     "description": "เพิ่มความเสียหายทางกายภาพ + 16% เมื่อใช้ธนู, ASPD + 4%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -32352,7 +33588,7 @@
     "resName": "옐로크리스탈조각",
     "description": "เพิ่มความเสียหายทางกายภาพ + 20% เมื่อใช้ธนู, ASPD + 5%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -32378,7 +33614,7 @@
     "resName": "옐로크리스탈조각",
     "description": "เพิ่มความเสียหายทางกายภาพ + 24% เมื่อใช้ธนู, ASPD + 6%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -32404,7 +33640,7 @@
     "resName": "옐로크리스탈조각",
     "description": "เพิ่มความเสียหายทางกายภาพ + 28% เมื่อใช้ธนู, ASPD + 7%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -32515,6 +33751,30 @@
       ]
     }
   },
+  "29241": {
+    "id": 29241,
+    "aegisName": "Critical10",
+    "name": "CRI+10",
+    "unidName": "CRI+10",
+    "resName": "안실라",
+    "description": "CRI + 10",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<Cri+10>",
+    "script": {
+      "cri": [
+        "10"
+      ]
+    }
+  },
   "29310": {
     "id": 29310,
     "aegisName": "Racing_E_Rune1",
@@ -32523,7 +33783,7 @@
     "resName": "마법석화",
     "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Rune Knight)^000000\nเมื่อใช้งาน [Two hand Quicken], เพิ่มพลังโจมตีทางกายภาพที่สร้างต่อศัตรูทุกขนาด 5% เป็นเวลา 60 วินาที",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -32546,7 +33806,7 @@
     "resName": "마법석화",
     "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Rune Knight)^000000\nเมื่อโจมตีทางกายภาพ มีโอกาสเล็กน้อย ที่จะยกเลิกโทษขนาด เป็นเวลา 3 วินาที\nเมื่อใช้งาน [Two hand Quicken], เพิ่มพลังโจมตีทางกายภาพที่สร้างต่อศัตรูทุกขนาด 7% เป็นเวลา 60 วินาที",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -32569,7 +33829,7 @@
     "resName": "마법석화",
     "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Rune Knight)^000000\nเมื่อโจมตีทางกายภาพ มีโอกาสเล็กน้อย  ที่จะยกเลิกโทษขนาด เป็นเวลา 5 วินาที\nเมื่อใช้งาน [Two hand Quicken] ATK +40, เพิ่มพลังโจมตีทางกายภาพที่สร้างต่อศัตรูทุกขนาด 15% เป็นเวลา 60 วินาที",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -32595,7 +33855,7 @@
     "resName": "마나의파편홍련",
     "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Royal Guard)^000000\nลด Cooldown สกิล [Shield Press] 0.5 วินาที",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -32618,7 +33878,7 @@
     "resName": "마나의파편홍련",
     "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Royal Guard)^000000\nลด Cooldown สกิล [Shield Press] 1 วินาที,\nเมื่อใช้งาน [Earth Drive], เพิ่มดาเมจ [Shield Press] 20% เป็นเวลา 60 วินาที",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -32644,7 +33904,7 @@
     "resName": "마나의파편홍련",
     "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Royal Guard)^000000\nลด Cooldown สกิล [Shield Press] 1.5 วินาที,\nเมื่อใช้งาน [Earth Drive], เพิ่มดาเมจ [Shield Press] 60% เป็นเวลา 60 วินาที",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -32670,7 +33930,7 @@
     "resName": "마법석지",
     "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Mechanic)^000000\nเมื่อใช้งาน [Adrenaline Rush], CRI + 5 เป็นระยะเวลา 60 วินาที.",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -32693,7 +33953,7 @@
     "resName": "마법석지",
     "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Mechanic)^000000\nเมื่อโจมตีทางกายภาพ มีโอกาสเล็กน้อย เพิ่มพลังโจมตีทางกายภาพที่สร้างต่อศัตรูทุกขนาด 10% เป็นระยะเวลา 5 วินาที\nเมื่อใช้งาน [Adrenaline Rush], CRI + 10 เป็นระยะเวลา 60 วินาที",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -32716,7 +33976,7 @@
     "resName": "마법석지",
     "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Mechanic)^000000\nเมื่อโจมตีทางกายภาพ มีโอกาสเล็กน้อย เพิ่มพลังโจมตีทางกายภาพที่สร้างต่อศัตรูทุกขนาด 20% เป็นระยะเวลา 10 วินาที\nเมื่อใช้งาน [Adrenaline Rush],CRI + 20, เพิ่ม Critical Damage 10%เป็นระยะเวลา 60 วินาที",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -32742,7 +34002,7 @@
     "resName": "마나의파편서광",
     "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Geneticist)^000000\nเมื่อใช้งาน [Cart Boost], เพิ่มพลังโจมตีทางกายภาพที่สร้างต่อศัตรูทุกขนาด 5% เป็นเวลา 60 วินาที",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -32765,7 +34025,7 @@
     "resName": "마나의파편서광",
     "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Geneticist)^000000\nลด Cooldown สกิล [Mandragora Howl] 1 วินาที,\nเมื่อใช้งาน [Cart Boost], เพิ่มพลังโจมตีทางกายภาพที่สร้างต่อศัตรูทุกขนาด 7% เป็นเวลา 60 วินาที",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -32791,7 +34051,7 @@
     "resName": "마나의파편서광",
     "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Geneticist)^000000\nลด Cooldown สกิล [Mandragora Howl] 5 วินาที,\nเมื่อใช้งาน [Cart Boost] ATK +40, เพิ่มพลังโจมตีทางกายภาพที่สร้างต่อศัตรูทุกขนาด 15% เป็นเวลา 60 วินาที",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -32820,7 +34080,7 @@
     "resName": "마법석암",
     "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Guillotine Cross)^000000\nเมื่อใช้งาน [Enchant Deadly Poison], ATK + 20 เป็นระยะเวลา 60 วินาที",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -32843,7 +34103,7 @@
     "resName": "마법석암",
     "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Guillotine Cross)^000000\nเพิ่มพลังโจมตีทางกายภาพที่สร้างต่อศัตรูทุกขนาด 5%\nเมื่อใช้งาน [Enchant Deadly Poison], ATK + 30 เป็นระยะเวลา 60 วินาที",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -32869,7 +34129,7 @@
     "resName": "마법석암",
     "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Guillotine Cross)^000000\nเพิ่มพลังโจมตีทางกายภาพที่สร้างต่อศัตรูทุกขนาด 10%\nเมื่อใช้งาน [Enchant Deadly Poison], ATK + 50, CRI + 10  เป็นระยะเวลา 60 วินาที",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -32898,7 +34158,7 @@
     "resName": "마나의파편혼돈",
     "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Shadow Chaser)^000000\nเมื่อใช้งาน [Shadow Spell], CRI + 5 เป็นระยะเวลา 60 วินาที.",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -32921,7 +34181,7 @@
     "resName": "마나의파편혼돈",
     "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Shadow Chaser)^000000\nเพิ่มพลังโจมตีทางเวทย์ธาตุ Fire, Wind, Water, Earth 5%\nเมื่อใช้งาน [Shadow Spell], CRI + 10 เป็นระยะเวลา 60 วินาที",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -32956,7 +34216,7 @@
     "resName": "마나의파편혼돈",
     "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Shadow Chaser)^000000\nเพิ่มพลังโจมตีทางเวทย์ธาตุ Fire, Wind, Water, Earth 15%\nเมื่อใช้งาน [Shadow Spell], CRI + 20, MATK + 30. เป็นระยะเวลา 60 วินาที",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -32994,7 +34254,7 @@
     "resName": "마법석수",
     "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Warlock)^000000\nลด Cooldown สกิล [Frost Misty] 1 วินาที",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -33017,7 +34277,7 @@
     "resName": "마법석수",
     "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Warlock)^000000\nลด Cooldown สกิล [Frost Misty] 3 วินาที\nเพิ่มดาเมจสกิล [Jack Frost] 30%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -33043,7 +34303,7 @@
     "resName": "마법석수",
     "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Warlock)^000000\nลด Cooldown สกิล [Frost Misty] 5 วินาที\nเพิ่มดาเมจสกิล [Jack Frost] 60%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -33069,7 +34329,7 @@
     "resName": "얼어붙은피부조각",
     "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Sorcerer)^000000\nเมื่อโจมตีทางกายภาพระยะใกล้, มีโอกาสเล็กน้อยที่จะ Auto Spell [Frost Nova] Lv.1",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -33088,7 +34348,7 @@
     "resName": "얼어붙은피부조각",
     "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Sorcerer)^000000\nเมื่อโจมตีทางกายภาพระยะใกล้, มีโอกาสเล็กน้อยที่จะ Auto Spell [Frost Nova] Lv.4\nเมื่อใช้งาน [Striking], เพิ่มดาเมจสกิล Bolt ทั้งหมด 30% เป็นระยะเวลา 60 วินาที",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -33111,7 +34371,7 @@
     "resName": "얼어붙은피부조각",
     "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Sorcerer)^000000\nเมื่อโจมตีทางกายภาพระยะใกล้, มีโอกาสเล็กน้อยมีโอกาสเล็กน้อยที่จะ Auto Spell [Frost Nova] Lv.7\nเมื่อใช้งาน [Striking], เพิ่มดาเมจสกิล Bolt ทั้งหมด 60% เป็นระยะเวลา 60 วินาที",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -33134,7 +34394,7 @@
     "resName": "마법석성",
     "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Arch Bishop)^000000\nเพิ่มดาเมจ [Adoramus] 20%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -33157,7 +34417,7 @@
     "resName": "마법석성",
     "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Arch Bishop)^000000\nเมื่อโจมตีทางกายภาพ, มีโอกาสเล็กน้อยที่จะไม่สูญเสีย Gemstone เป็นระยะเวลา 3 วินาที\nเพิ่มดาเมจ [Adoramus] 30%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -33180,7 +34440,7 @@
     "resName": "마법석성",
     "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Arch Bishop)^000000\nเมื่อโจมตีทางกายภาพ, มีโอกาสเล็กน้อยที่จะไม่สูญเสีย Gemstone เป็นระยะเวลา 5 วินาที\nเพิ่มดาเมจ [Adoramus] 60%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -33203,7 +34463,7 @@
     "resName": "마나의파편황혼",
     "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Sura)^000000\nเพิ่มดาเมจ [Knuckle Arrow] 20%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -33226,7 +34486,7 @@
     "resName": "마나의파편황혼",
     "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Sura)^000000\nเมื่อใช้งาน [Knuckle Arrow], มีโอกาสเล็กน้อยที่จะร่าย [Zen]\nเพิ่มดาเมจของ [Knuckle Arrow] 30%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -33249,7 +34509,7 @@
     "resName": "마나의파편황혼",
     "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Sura)^000000\nเมื่อใช้งาน [Knuckle Arrow], มีโอกาสเล็กน้อยที่จะร่าย [Zen]\nเพิ่มดาเมจของ [Knuckle Arrow] 60%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -33272,7 +34532,7 @@
     "resName": "마법석풍",
     "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Ranger)^000000\nเมื่อใช้งาน [Fear Breeze], เพิ่มพลังโจมตีทางกายภาพระยะไกล 2% เป็นระยะเวลา 60 วินาที",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -33295,7 +34555,7 @@
     "resName": "마법석풍",
     "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Ranger)^000000\nลด Cooldown สกิล [Arrow Storm] 0.5 วินาที\nเมื่อใช้งาน [Fear Breeze], เพิ่มพลังโจมตีทางกายภาพระยะไกล 4% เป็นระยะเวลา 60 วินาที",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -33321,7 +34581,7 @@
     "resName": "마법석풍",
     "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Ranger)^000000\nลด Cooldown สกิล [Arrow Storm] 1.5 วินาที\nเมื่อใช้งาน [Fear Breeze], เพิ่มพลังโจมตีทางกายภาพระยะไกล 7% เป็นระยะเวลา 60 วินาที",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -33347,7 +34607,7 @@
     "resName": "마나의파편백은",
     "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Wanderer)/Racing Cap(Minstrel)^000000\nATK + 20.",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -33370,7 +34630,7 @@
     "resName": "마나의파편백은",
     "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Wanderer)/Racing Cap(Minstrel)^000000\nATK + 30.\nเมื่อใช้งาน [Windmill Rush], [Moonlight Serenade] เพิกเฉยต่อพลังป้องกันทางกายภาพของศัตรูทั่วไป 25% เป็นระยะเวลา 60 วินาที",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -33396,7 +34656,7 @@
     "resName": "마나의파편백은",
     "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Wanderer)/Racing Cap(Minstrel)^000000\nATK + 40.\nเมื่อใช้งาน [Windmill Rush], [Moonlight Serenade] เพิกเฉยต่อพลังป้องกันทางกายภาพของศัตรูทั่วไป 50% เป็นระยะเวลา 60 วินาที",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -33422,7 +34682,7 @@
     "resName": "정화탄",
     "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Gunslinger)^000000\nเมื่อใช้งาน [Shatter Storm], เพิ่มดาเมจ [Vanishing Buster] 20% เป็นระยะเวลา 5 วินาที",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -33445,7 +34705,7 @@
     "resName": "정화탄",
     "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Gunslinger)^000000\nลด Cooldown สกิล [Vanishing Buster] 1 วินาที\nเมื่อใช้งาน [Shatter Storm], เพิ่มดาเมจ [Vanishing Buster] 40% เป็นระยะเวลา 7 วินาที",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -33471,7 +34731,7 @@
     "resName": "정화탄",
     "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Gunslinger)^000000\nลด Cooldown สกิล [Vanishing Buster] 1.5 วินาที\nเมื่อใช้งาน [Shatter Storm], เพิ่มดาเมจ [Vanishing Buster] 60% เป็นระยะเวลา 10 วินาที",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -33497,7 +34757,7 @@
     "resName": "불의부적",
     "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Ninja)^000000\nATK + 10, MATK + 10.\nเมื่อใช้งาน [Shadow Warrior], เพิ่ม Critical Damage 5% เป็นระยะเวลา 60 วินาที\nเมื่อเรียนรู้สกิล [Moonlight Fantasy] ถึงเลเวล 5 จะลดระยะเวลาร่ายแบบแปรผัน 3%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -33529,7 +34789,7 @@
     "resName": "불의부적",
     "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Ninja)^000000\nATK + 15, MATK + 15.\nเมื่อโจมตีทางกายภาพ มีโอกาสเล็กน้อยที่จะยกเลิกโทษขนาด เป็นเวลา 3 วินาที\nเมื่อใช้งาน [Shadow Warrior], เพิ่ม Critical Damage 10% เป็นระยะเวลา 60 วินาที\nเมื่อเรียนรู้สกิล [Moonlight Fantasy] ถึงเลเวล 5 จะลดระยะเวลาร่ายแบบแปรผัน 7%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -33561,7 +34821,7 @@
     "resName": "불의부적",
     "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Ninja)^000000\nATK + 20, MATK + 20.\nเมื่อโจมตีทางกายภาพ มีโอกาสเล็กน้อย  ที่จะยกเลิกโทษขนาด เป็นเวลา 5 วินาที\nเมื่อใช้งาน [Shadow Warrior], เพิ่ม Critical Damage 30% เป็นระยะเวลา 60 วินาที\nเมื่อเรียนรู้สกิล [Moonlight Fantasy] ถึงเลเวล 5 จะลดระยะเวลาร่ายแบบแปรผัน 15%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -33593,7 +34853,7 @@
     "resName": "장미석영",
     "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Super Novice)^000000\nMHP + 500, ATK + 10.",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -33619,7 +34879,7 @@
     "resName": "장미석영",
     "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Super Novice)^000000\nMHP +1000, ATK + 20.\nสามารถใช้งาน [Cart Boost] Lv.1 ได้\nเมื่อใช้งาน [Cart Boost], เพิ่ม ATK อีก +30 เป็นระยะเวลา 60 วินาที",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -33646,7 +34906,7 @@
     "resName": "장미석영",
     "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Super Novice)^000000\nMHP + 1500, ATK + 40.\nสามารถใช้งาน [Cart Boost] Lv.3 ได้\nเมื่อใช้งาน [Cart Boost],เพิ่ม ATK อีก +50 เป็นระยะเวลา 120 วินาที",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -33673,7 +34933,7 @@
     "resName": "블랙캣",
     "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Summoner)^000000\nเพิ่มดาเมจ [Catnip Meteor], [Lunatic Carrot Beat] 10%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -33699,7 +34959,7 @@
     "resName": "블랙캣",
     "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Summoner)^000000\nลดระยะเวลาร่ายแบบคงตัว 0.2 วินาที\nเพิ่มดาเมจ [Catnip Meteor], [Lunatic Carrot Beat] 20%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -33728,7 +34988,7 @@
     "resName": "블랙캣",
     "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Summoner)^000000\nลดระยะเวลาร่ายแบบคงตัว 0.5 วินาที\nเพิ่มดาเมจ [Catnip Meteor], [Lunatic Carrot Beat] 60%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -34954,7 +36214,7 @@
     "resName": "분홍색보석",
     "description": "เพิ่มผลของสกิลประเภท Heal 5%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่มผลของสกิลประเภท Heal 5% เพิ่มเติม\nเมื่ออัพเกรดถึงขั้น 9 เพิ่มผลของสกิลประเภท Heal 5% เพิ่มเติม",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -34979,7 +36239,7 @@
     "resName": "에너지파편",
     "description": "ATK + 5%\nเมื่ออัปเกรดถึงขั้น 7 เพิ่ม ATK เพิ่มเติม 25\nเมื่ออัปเกรดถึงขั้น 9 เพิ่ม ATK เพิ่มเติม 25",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -35006,7 +36266,7 @@
     "resName": "원념의파편",
     "description": "MATK + 5%\nเมื่ออัปเกรดถึงขั้น 7 เพิ่ม MATK เพิ่มเติม 25\nเมื่ออัปเกรดถึงขั้น 9 เพิ่ม MATK เพิ่มเติม 25",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -35033,7 +36293,7 @@
     "resName": "그레이트네이쳐",
     "description": "Damage ทางกายภาพระยะไกล + 3%\nเมื่ออัปเกรดถึงขั้น 7 เพิ่ม Damage ทางกายภาพระยะไกล เพิ่มเติม 2%\nเมื่ออัปเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพระยะไกล เพิ่มเติม 2%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -35058,7 +36318,7 @@
     "resName": "러프윈드",
     "description": "ASPD + 1\nเมื่ออัปเกรดถึงขั้น 7 เพิ่ม ASPD เพิ่มเติม 3%\nเมื่ออัปเกรดถึงขั้น 9 เพิ่ม ASPD เพิ่มเติม 3%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -35085,7 +36345,7 @@
     "resName": "미스틱프로즌",
     "description": "ลดระยะเวลาร่ายแบบแปรผัน 5%\nเมื่ออัปเกรดถึงขั้น 7 ลดระยะเวลาร่ายแบบแปรผันเพิ่มเติม 3%\nเมื่ออัปเกรดถึงขั้น 9 ลดระยะเวลาร่ายแบบแปรผันเพิ่มเติม 3%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -35110,7 +36370,7 @@
     "resName": "프레임하트",
     "description": "CRI + 10\nเมื่ออัปเกรดถึงขั้น 7 เพิ่ม Critical Damage 5%\nเมื่ออัปเกรดถึงขั้น 9 เพิ่ม Critical Damage เพิ่มเติม 5%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -35137,7 +36397,7 @@
     "resName": "Deep_Black_Pearl",
     "description": "ลด Delay หลังใช้สกิล 5%\nเมื่ออัปเกรดถึงขั้น 7 ลด Delay หลังใช้สกิล เพิ่มเติม 5%\nเมื่ออัปเกรดถึงขั้น 9 ลด Delay หลังใช้สกิล เพิ่มเติม 5%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -35162,7 +36422,7 @@
     "resName": "마법석수",
     "description": "ลด Fixed Cast Time 0.3 วินาที\nเมื่ออัปเกรดถึงขั้น 7 ลด Fixed Cast Time เพิ่มเติม 0.2 วินาที\nเมื่ออัปเกรดถึงขั้น 9 ลด Fixed Cast Time เพิ่มเติม 0.2 วินาที",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -35187,7 +36447,7 @@
     "resName": "마법석지",
     "description": "ลด Damage ทางกายภาพ/เวทมนตร์ที่ได้รับจากศัตรูทุกธาตุ 5%\nเมื่ออัปเกรดถึงขั้น 7 ลด Damage ทางกายภาพ/เวทมนตร์ที่ได้รับจากศัตรูทุกขนาด 5%\nเมื่ออัปเกรดถึงขั้น 9 ลด Damage ทางกายภาพ/เวทมนตร์ที่ได้รับจากศัตรูทุกประเภท 5%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -35216,7 +36476,7 @@
     "resName": "Sea_Sapphire",
     "description": "เมื่อได้รับการโจมตีทางกายภาพ/เวทมนตร์ มีโอกาส(5%)ได้รับ \"Everlasting Life\" เป็นเวลา 10 วินาที \nEverlasting Life : VIT + 50 เป็นเวลา 10 วินาที, ฟื้นฟู HP 400 ทุก ๆ 0.5 วินาที, ลด SP 20 ทุก ๆ 1 วินาที",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -35235,7 +36495,7 @@
     "resName": "Red_Fog_Garnet",
     "description": "เมื่อทำการโจมตีเวทมนตร์ มีโอกาส(3%)ได้รับ \"Magic Storm\" เป็นเวลา 10 วินาที\nMagic Storm : INT + 50 เป็นเวลา 10 วินาที, MATK + 15%, ATK - 15%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -35264,7 +36524,7 @@
     "resName": "Lightning_Topaz",
     "description": "เมื่อทำการโจมตีทางกายภาพ มีโอกาส(3%)ได้รับ \"Plunging Shooter\" เป็นเวลา 10 วินาที\nPlunging Shooter : DEX + 50 เป็นเวลา 10 วินาที, เพิ่ม Damage ทางกายภาพระยะไกล 10%, ลด SP 20 ทุก ๆ 1 วินาที",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -35293,7 +36553,7 @@
     "resName": "Poisoned_Amethyst",
     "description": "เมื่อทำการโจมตีทางกายภาพ มีโอกาส(3%)ได้รับ \"Raging Fight\" เป็นเวลา 10 วินาที\nRaging Fight : STR + 50 เป็นเวลา 10 วินาที, ATK + 15%, MATK - 15%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -35322,7 +36582,7 @@
     "resName": "Frost_Zircon",
     "description": "เมื่อทำการโจมตีทางกายภาพ มีโอกาส(3%)ได้รับ \"Deadly Lightspeed\" เป็นเวลา 10 วินาที \nDeadly Lightspeed : AGI + 50 เป็นเวลา 10 วินาที, เพิ่ม Critical Damage 10%, ลด HP 300 ทุก ๆ 1 วินาที",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -35351,7 +36611,7 @@
     "resName": "Deep_Black_Pearl",
     "description": "เมื่อทำการโจมตีเวทมนตร์ มีโอกาส(3%)ได้รับ \"Good Fortune\" เป็นเวลา 10 วินาที \nGood Fortune : LUK + 50 เป็นเวลา 10 วินาที, เพิ่ม Damage ทางเวทมนตร์ทุกธาตุ 10%, ลด HP 300 ทุก ๆ 1 วินาที",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -35370,7 +36630,7 @@
     "resName": "푸른야광석",
     "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Star Gladiator)^000000 \nเพิ่ม Damage สกิล [Solar Explosion], [Full Moon Kick], [Falling Stars] 10%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -35389,7 +36649,7 @@
     "resName": "푸른야광석",
     "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Star Gladiator)^000000 \nลด Cooldown สกิล [Solar, Lunar, and Stellar Record] 10 วินาที\nเพิ่ม Damage สกิล [Solar Explosion], [Full Moon Kick], [Falling Stars] 20%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -35408,7 +36668,7 @@
     "resName": "푸른야광석",
     "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Star Gladiator)^000000 \nลด Cooldown สกิล [Solar, Lunar, and Stellar Record] 30 วินาที\nเพิ่ม Damage สกิล [Solar Explosion], [Full Moon Kick], [Falling Stars] 40%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -35427,7 +36687,7 @@
     "resName": "도깨비불",
     "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Soul Linker)^000000 \nเพิ่ม Damage สกิล [Esma], [Espa], [Eswhoo] 10%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -35456,7 +36716,7 @@
     "resName": "도깨비불",
     "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Soul Linker)^000000 \nลด Cooldown สกิล [Soul Harvest] 10 วินาที\nเพิ่ม Damage สกิล [Esma], [Espa], [Eswhoo] 20%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -35488,7 +36748,7 @@
     "resName": "도깨비불",
     "description": "^800080เอฟเฟกต์จะใช้ได้ก็ต่อเมื่อถูกเสริมพลังให้กับ Racing Cap(Soul Linker)^000000 \nลด Cooldown สกิล [Soul Harvest] 30 วินาที\nเพิ่ม Damage สกิล [Esma], [Espa], [Eswhoo] 40%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -35520,7 +36780,7 @@
     "resName": "Lightning_Topaz",
     "description": "เมื่อใช้ร่วมกับ Speed Of Light เพิ่ม Critical Damage 30%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -35543,7 +36803,7 @@
     "resName": "Bloody_Ruby",
     "description": "เมื่อใช้ร่วมกับ Bear's Power เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 25%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -35566,7 +36826,7 @@
     "resName": "GH_Cursed_Gemstone",
     "description": "เมื่อใช้ร่วมกับ Hawkeye, ATK +10%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -35589,7 +36849,7 @@
     "resName": "GH_Cursed_Crystal",
     "description": "เมื่อใช้ร่วมกับ Runaway Magic เพิ่ม Damage ทางเวทมนตร์ทุกธาตุ 15%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -35612,7 +36872,7 @@
     "resName": "Cursed_Emerald",
     "description": "เมื่อใช้ร่วมกับ Muscle Fool ลด Delay หลังใช้สกิล 10%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -35635,7 +36895,7 @@
     "resName": "Shinee_Opal",
     "description": "เมื่อใช้ร่วมกับ Lucky Day, ASPD +2",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -35658,7 +36918,7 @@
     "resName": "검사의혼",
     "description": "ทุก ๆ การอัพเกรด Volar 3 ขั้น เพิ่ม Damage สกิล Bowling Bash 10% และเพิ่ม Damage สกิล Ignition Break 5%\n^ffffff_^000000 \nทุก ๆ การอัพเกรด Vernan 3 ขั้น เพิ่ม Damage สกิล Clashing Spiral 10% และเพิ่ม Damage สกิล Sonic Wave 5%\n^ffffff_^000000 \nทุก ๆ การอัพเกรด Argen Blanco 3 ขั้น เพิ่ม Damage สกิล Brandish Spear 10% และเพิ่ม Damage สกิล Hundred Spears 5%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -35696,7 +36956,7 @@
     "resName": "상인의혼",
     "description": "ทุก ๆ การอัพเกรด Golden Wrench 3 ขั้น เพิ่ม Damage สกิล Power Swing 7% และเพิ่ม Damage สกิล Axe Boomerang 5%\n^ffffff_^000000 \nทุก ๆ การอัพเกรด Engine Pilebunker 3 ขั้น เพิ่ม Damage สกิล Knuckle Boost 7% และเพิ่ม Damage สกิล Arm Cannon 5%\n^ffffff_^000000 \nทุก ๆ การอัพเกรด Maxi Spanner 3 ขั้น เพิ่ม Damage สกิล Axe Tornado 7% และลด Damage ทางกายภาพ/เวทมนตร์ที่ได้รับจากศัตรูทุกขนาด 5%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -35734,7 +36994,7 @@
     "resName": "도둑의혼",
     "description": "ทุก ๆ 5 ขั้นของผลรวมขั้นอัพเกรด Judgment Slasher และ Repent Slasher เพิ่ม Damage สกิล Meteor Assault, Soul Destroyer 10% และเพิ่ม Damage สกิล Cross Impact, Counter Slash 5%\n^ffffff_^000000 \nทุก ๆ การอัพเกรด Agudo Filo 3 ขั้น ลด Cooldown สกิล Dark Claw 3 วินาทีและเพิ่ม ASPD 2%\n^ffffff_^000000 \nทุก ๆ การอัพเกรด Ripper Cross 3 ขั้น เพิ่ม Damage สกิล Rolling Cutter 7% และเพิ่ม Damage สกิล Cross Ripper Slasher 5%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -35778,7 +37038,7 @@
     "resName": "마법사의혼",
     "description": "ทุก ๆ การอัพเกรด Crimson Rose Stick 3 ขั้น เพิ่ม Damage สกิล Hell Inferno 7% และเพิ่ม Damage สกิล Crimson Rock 5%\n^ffffff_^000000 \nทุก ๆ การอัพเกรด Staff of Miracle 3 ขั้น เพิ่ม Damage สกิล Soul Strike, Napalm Vulcan 10% และเพิ่ม Damage สกิล Soul Expansion 5%\n^ffffff_^000000 \nทุก ๆ การอัพเกรด Gravitation Staff 3 ขั้น เพิ่ม Damage สกิล Gravitational Field 10% และเพิ่ม Damage สกิล Drain Life 5%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -35819,7 +37079,7 @@
     "resName": "복사의혼",
     "description": "ทุก ๆ การอัพเกรด Penitentia 3 ขั้น เพิ่ม Damage สกิล Magnus Exorcismus 10% และเพิ่ม Damage สกิล Judex 5%\n^ffffff_^000000 \nทุก ๆ การอัพเกรด Adorare Staff 3 ขั้น เพิ่ม Damage เวทมนตร์ธาตุ Holy 5% และเพิ่ม Damage สกิล Adoramus 5%\n^ffffff_^000000 \nทุก ๆ การอัพเกรด Lucis Flail 3 ขั้น เพิ่ม Damage สกิล Judex 10% และเพิ่ม Damage สกิล Duple Light 5%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -35855,7 +37115,7 @@
     "resName": "궁수의혼",
     "description": "ทุก ๆ การอัพเกรด Sharp Star 3 ขั้น Critical Damage + 5% และเพิ่ม Damage สกิล Focused Arrow Strike 7%\n^ffffff_^000000 \nทุก ๆ การอัพเกรด Falken Shooter 3 ขั้น ลดการใช้ SP ของสกิล Arrow Storm 2% และลด Cooldown สกิล No Limits 15 วินาที\n^ffffff_^000000 \nทุก ๆ การอัพเกรด Aiming Bow 3 ขั้น เพิ่ม Damage สกิล Aimed Bolt 7% และลดการใช้ SP ของสกิล Aimed Bolt 2%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -35893,7 +37153,7 @@
     "resName": "검사피규어",
     "description": "ทุก ๆ การอัพเกรด Farthezan 3 ขั้น เพิ่ม Damage สกิล Gloria Domini 10% และเพิ่ม Damage สกิล Genesis Ray 5%\n^ffffff_^000000 \nทุก ๆ การอัพเกรด Harve 3 ขั้น เพิ่ม Damage สกิล Shield Chain 10% และเพิ่ม Damage สกิล Shield Press 5%\n^ffffff_^000000 \nทุก ๆ การอัพเกรด Fortridge 3 ขั้น เพิ่ม Damage สกิล Overbrand 7% และเพิ่ม Damage สกิล Cannon Spear 5%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -35931,7 +37191,7 @@
     "resName": "상인피규어",
     "description": "ทุก ๆ การอัพเกรด Estal 3 ขั้น เพิ่ม Damage สกิล Spore Explosion 7% และลด Cooldown สกิล Spore Explosion 0.2 วินาที\n^ffffff_^000000 \nทุก ๆ การอัพเกรด Coolant Injection 3 ขั้น เพิ่ม Damage  Cart Cannon 7% และเพิ่ม Damage ทางกายภาพระยะไกล 2%\n^ffffff_^000000 \nทุก ๆ การอัพเกรด Gene Rod 3 ขั้น เพิ่ม Damage สกิล Crazy Weed 7% และลด Cooldown สกิล Crazy Weed 0.2 วินาที",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -35969,7 +37229,7 @@
     "resName": "도둑피규어",
     "description": "ทุก ๆ การอัพเกรด Jack the Knife 3 ขั้น เพิ่ม Damage สกิล Back Stab 10% และเพิ่ม Damage สกิล Fatal Menace 5%\n^ffffff_^000000 \nทุก ๆ การอัพเกรด Platinum Dagger 3 ขั้น เพิ่ม Damage เวทมนตร์ธาตุ Fire, Water, Wind, Earth 5% และเพิ่ม ASPD 2%\n^ffffff_^000000 \nทุก ๆ การอัพเกรด Rapid Fire 3 ขั้น เพิ่ม Damage สกิล Triangle Shot 7% และเพิ่ม Damage ทางกายภาพระยะไกล 2%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -36016,7 +37276,7 @@
     "resName": "마술사피규어",
     "description": "ทุก ๆ การอัพเกรด Boltigin 3 ขั้น เพิ่ม Damage สกิล Earth Spike 10% และเพิ่ม Damage สกิล Heaven's Drive 7%\n^ffffff_^000000 \nทุก ๆ การอัพเกรด Psychic Spear Rod 3 ขั้น เพิ่ม Damage สกิล Psychic Wave 7% และลด Cooldown สกิล Varetyr Spear 0.2 วินาที\n^ffffff_^000000 \nทุก ๆ การอัพเกรด Dust Grave 3 ขั้น เพิ่ม Damage สกิล Earth Grave 7% และเพิ่ม Damage สกิล Diamond Dust 5%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -36054,7 +37314,7 @@
     "resName": "복사피규어",
     "description": "ทุก ๆ การอัพเกรด Raging Dragon Fist 3 ขั้น เพิ่ม Damage สกิล Chain Combo, Combo Finish 10% และเพิ่ม Damage สกิล Chain Crush Combo 7%\n^ffffff_^000000 \nทุก ๆ การอัพเกรด Fighting God's Bandage 3 ขั้น เพิ่ม Damage สกิล Knuckle Arrow 7% และเพิ่ม Damage ทางกายภาพระยะไกล 2%\n^ffffff_^000000 \nทุก ๆ การอัพเกรด Bright Pendulum 3 ขั้น เพิ่ม Damage สกิล Finger Offensive, infiltration 10% และเพิ่ม Damage สกิล Lightning Ride, Sky Blow 5%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -36101,7 +37361,7 @@
     "resName": "궁수피규어",
     "description": "ทุก ๆ การอัพเกรด Wind Gale 3 ขั้น ลดการใช้ SP ของสกิล Severe Rainstorm 3% และเพิ่ม Damage ทางกายภาพระยะไกล 2%\n^ffffff_^000000 \nทุก ๆ การอัพเกรด Heart Whip 3 ขั้น เพิ่ม Damage เวทมนตร์ธาตุ Neutral 5% และเพิ่ม Damage สกิล Metallic Sound 5%\n^ffffff_^000000 \nทุก ๆ การอัพเกรด Scarlet Ribbon 3 ขั้น เพิ่ม Damage สกิล Severe Rainstorm 5% และเพิ่ม Damage ทางกายภาพระยะไกล 2%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -36137,7 +37397,7 @@
     "resName": "궁수피규어",
     "description": "ทุก ๆ การอัพเกรด Wind Gale 3 ขั้น ลดการใช้ SP ของสกิล Severe Rainstorm 3% และเพิ่ม Damage ทางกายภาพระยะไกล 2%\n^ffffff_^000000 \nทุก ๆ การอัพเกรด Black Circle 3 ขั้น เพิ่ม Damage เวทมนตร์ธาตุ Neutral 5% และเพิ่ม Damage สกิล Metallic Sound 5%\n^ffffff_^000000 \nทุก ๆ การอัพเกรด Antique Cello 3 ขั้น เพิ่ม Damage สกิล Severe Rainstorm 5% และเพิ่ม Damage ทางกายภาพระยะไกล 2%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -36805,7 +38065,7 @@
     "resName": "Time_Jewely_Str",
     "description": "ทุก ๆ การอัพเกรด Headgear 2 ขั้น ATK +2\nทุก ๆ การอัพเกรด Headgear 2 ขั้น HIT +3\nทุก ๆ การอัพเกรด Headgear 5 ขั้น ATK +1%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -36834,7 +38094,7 @@
     "resName": "Time_Jewely_Str",
     "description": "ทุก ๆ การอัพเกรด Headgear 2 ขั้น ATK +4\nทุก ๆ การอัพเกรด Headgear 2 ขั้น HIT +5\nทุก ๆ การอัพเกรด Headgear 5 ขั้น ATK +2%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -36863,7 +38123,7 @@
     "resName": "Time_Jewely_Str",
     "description": "ทุก ๆ การอัพเกรด Headgear 2 ขั้น ATK +7\nทุก ๆ การอัพเกรด Headgear 2 ขั้น HIT +7\nทุก ๆ การอัพเกรด Headgear 5 ขั้น ATK +3%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -36892,7 +38152,7 @@
     "resName": "Time_Jewely_Agi",
     "description": "ทุก ๆ การอัพเกรด Headgear 2 ขั้น ASPD +1%\nทุก ๆ การอัพเกรด Headgear 2 ขั้น FLEE +4\nทุก ๆ การอัพเกรด Headgear 5 ขั้น ASPD +1",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -36921,7 +38181,7 @@
     "resName": "Time_Jewely_Agi",
     "description": "ทุก ๆ การอัพเกรด Headgear 2 ขั้น ASPD +3%\nทุก ๆ การอัพเกรด Headgear 2 ขั้น FLEE +5\nทุก ๆ การอัพเกรด Headgear 5 ขั้น ASPD +1",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -36950,7 +38210,7 @@
     "resName": "Time_Jewely_Agi",
     "description": "ทุก ๆ การอัพเกรด Headgear 2 ขั้น ASPD +5%\nทุก ๆ การอัพเกรด Headgear 2 ขั้น FLEE +7\nทุก ๆ การอัพเกรด Headgear 5 ขั้น ASPD +1",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -36979,7 +38239,7 @@
     "resName": "Time_Jewely_Vit",
     "description": "ทุก ๆ การอัพเกรด Headgear 2 ขั้น DEF +5\nทุก ๆ การอัพเกรด Headgear 2 ขั้น MHP +200\nทุก ๆ การอัพเกรด Headgear 5 ขั้น MHP +1%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -37008,7 +38268,7 @@
     "resName": "Time_Jewely_Vit",
     "description": "ทุก ๆ การอัพเกรด Headgear 2 ขั้น DEF +7\nทุก ๆ การอัพเกรด Headgear 2 ขั้น MHP +300\nทุก ๆ การอัพเกรด Headgear 5 ขั้น MHP +2%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -37037,7 +38297,7 @@
     "resName": "Time_Jewely_Vit",
     "description": "ทุก ๆ การอัพเกรด Headgear 2 ขั้น DEF +10\nทุก ๆ การอัพเกรด Headgear 2 ขั้น MHP +500\nทุก ๆ การอัพเกรด Headgear 5 ขั้น MHP +3%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -37066,7 +38326,7 @@
     "resName": "Time_Jewely_Int",
     "description": "ทุก ๆ การอัพเกรด Headgear 2 ขั้น ปริมาณการ Heal +1%\nทุก ๆ การอัพเกรด Headgear 2 ขั้น MATK +2\nทุก ๆ การอัพเกรด Headgear 5 ขั้น MATK +1%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -37092,7 +38352,7 @@
     "resName": "Time_Jewely_Int",
     "description": "ทุก ๆ การอัพเกรด Headgear 2 ขั้น ปริมาณการ Heal +3%\nทุก ๆ การอัพเกรด Headgear 2 ขั้น MATK +4\nทุก ๆ การอัพเกรด Headgear 5 ขั้น MATK +2%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -37118,7 +38378,7 @@
     "resName": "Time_Jewely_Int",
     "description": "ทุก ๆ การอัพเกรด Headgear 2 ขั้น ปริมาณการ Heal +5%\nทุก ๆ การอัพเกรด Headgear 2 ขั้น MATK +7\nทุก ๆ การอัพเกรด Headgear 5 ขั้น MATK +3%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -37144,7 +38404,7 @@
     "resName": "Time_Jewely_Dex",
     "description": "ทุก ๆ การอัพเกรด Headgear 2 ขั้น เพิ่มพลังโจมตีอาวุธประเภท Bow 1%\nทุก ๆ การอัพเกรด Headgear 2 ขั้น HIT +2\nทุก ๆ การอัพเกรด Headgear 5 ขั้น ATK +1%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -37173,7 +38433,7 @@
     "resName": "Time_Jewely_Dex",
     "description": "ทุก ๆ การอัพเกรด Headgear 2 ขั้น เพิ่มพลังโจมตีอาวุธประเภท Bow 2%\nทุก ๆ การอัพเกรด Headgear 2 ขั้น HIT +5\nทุก ๆ การอัพเกรด Headgear 5 ขั้น ATK +2%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -37202,7 +38462,7 @@
     "resName": "Time_Jewely_Dex",
     "description": "ทุก ๆ การอัพเกรด Headgear 2 ขั้น เพิ่มพลังโจมตีอาวุธประเภท Bow 3%\nทุก ๆ การอัพเกรด Headgear 2 ขั้น HIT +7\nทุก ๆ การอัพเกรด Headgear 5 ขั้น ATK +3%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -37231,7 +38491,7 @@
     "resName": "Time_Jewely_Luk",
     "description": "ทุก ๆ การอัพเกรด Headgear 2 ขั้น Critical Damage +2%\nทุก ๆ การอัพเกรด Headgear 2 ขั้น CRI +1\nทุก ๆ การอัพเกรด Headgear 5 ขั้น ATK +1%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -37260,7 +38520,7 @@
     "resName": "Time_Jewely_Luk",
     "description": "ทุก ๆ การอัพเกรด Headgear 2 ขั้น Critical Damage +4%\nทุก ๆ การอัพเกรด Headgear 2 ขั้น CRI +2\nทุก ๆ การอัพเกรด Headgear 5 ขั้น ATK +2%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -37289,7 +38549,7 @@
     "resName": "Time_Jewely_Luk",
     "description": "ทุก ๆ การอัพเกรด Headgear 2 ขั้น Critical Damage +6%\nทุก ๆ การอัพเกรด Headgear 2 ขั้น CRI +3\nทุก ๆ การอัพเกรด Headgear 5 ขั้น ATK +3%",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -37318,7 +38578,7 @@
     "resName": "Release_Of_Magic",
     "description": "^000088[พลังของ Varmundt]^000000 \nเมื่อสวมใส่กับ Modification Orb (Unlimited Vitality),\nลดระยะเวลาร่ายแปรผัน 20%\n\nเมื่อสวมใส่กับ Modification Orb (Spell Buster),\nเพิกเฉยต่อพลังป้องกันทางเวทย์ 50%\nของศัตรูทุกเผ่า (ยกเว้น Player)\n\nเมื่อสวมใส่กับ Modification Orb (Fierce Shooter),\nมีโอกาสเพิ่มขึ้น 20% ที่จะเกิด Perfect Hit\n\nเมื่อสวมใส่กับ Modification Orb (Overpower),\nMaxHP + 15%\n\nเมื่อสวมใส่กับ Modification Module (Fatal Flash),\nเพิ่ม Damage ทางกายภาพระยะไกล 8%\n\nเมื่อสวมใส่กับ Modification Orb (Lucky Strike),\nFlee + 40",
     "slots": 0,
-    "itemTypeId": 6,
+    "itemTypeId": 11,
     "itemSubTypeId": 0,
     "itemLevel": null,
     "attack": null,
@@ -38689,6 +39949,366 @@
       ]
     }
   },
+  "300008": {
+    "id": 300008,
+    "aegisName": "Angelgolt_Card",
+    "name": "Angelgolt Card",
+    "unidName": "Angelgolt Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่ม Damage ทางเวทมนตร์ต่อมอนสเตอร์ประเภท Demon 10%\nเมื่อใช้ร่วมกับ Skeggiold Card, ทุก ๆ การอัพเกรด Weapon 2 ขั้น เพิ่ม Damage ทางเวทมนตร์ต่อมอนสเตอร์ประเภท Demon ขึ้นอีก 3%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Holy Twinkle",
+    "script": {
+      "m_race_demon": [
+        "10",
+        "EQUIP[Skeggiold Card]2---3"
+      ]
+    }
+  },
+  "300009": {
+    "id": 300009,
+    "aegisName": "Plasma_Spt_Card",
+    "name": "Spectrum Plasma Card",
+    "unidName": "Spectrum Plasma Card",
+    "resName": "이름없는카드",
+    "description": "เมื่อติดตั้งอาวุธประเภท Staff, Two-handed Staff จะเพิ่ม Damage ทางเวทมนตร์ธาตุ Ghost 10%\nเมื่ออัพเกรด Weapon ตั้งแต่ 10 ขึ้นไป เพิ่ม Damage ทางเวทมนตร์ธาตุ Ghost ขึ้นอีก 10%\nเมื่ออัพเกรด Weapon ตั้งแต่ 14 ขึ้นไป เพิ่ม Damage ทางเวทมนตร์ธาตุ Ghost ขึ้นอีก 10%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Ghost Magical",
+    "script": {
+      "m_my_element_ghost": [
+        "WEAPON_TYPE[twohandRod]10",
+        "WEAPON_TYPE[rod]10",
+        "10===10",
+        "14===10"
+      ]
+    }
+  },
+  "300010": {
+    "id": 300010,
+    "aegisName": "Plasma_Arch_Card",
+    "name": "Arch Plasma Card",
+    "unidName": "Arch Plasma Card",
+    "resName": "이름없는카드",
+    "description": "เมื่อติดตั้งอาวุธประเภท Staff, Two-handed Staff จะเพิ่ม Damage ทางเวทมนตร์ธาตุ Wind 10%\nเมื่ออัพเกรด Weapon ตั้งแต่ 10 ขึ้นไป เพิ่ม Damage ทางเวทมนตร์ธาตุ Wind ขึ้นอีก 10%\nเมื่ออัพเกรด Weapon ตั้งแต่ 14 ขึ้นไป เพิ่ม Damage ทางเวทมนตร์ธาตุ Wind ขึ้นอีก 10%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Wind Magical",
+    "script": {
+      "m_my_element_wind": [
+        "WEAPON_TYPE[twohandRod]10",
+        "WEAPON_TYPE[rod]10",
+        "10===10",
+        "14===10"
+      ]
+    }
+  },
+  "300011": {
+    "id": 300011,
+    "aegisName": "Holy_Frus_Card",
+    "name": "Holy Frus Card",
+    "unidName": "Holy Frus Card",
+    "resName": "이름없는카드",
+    "description": "เมื่อติดตั้งอาวุธประเภท Staff, Two-handed Staff จะเพิ่ม Damage ทางเวทมนตร์ธาตุ Holy 10%\nเมื่ออัพเกรด Weapon ตั้งแต่ 10 ขึ้นไป เพิ่ม Damage ทางเวทมนตร์ธาตุ Holy ขึ้นอีก 10%\nเมื่ออัพเกรด Weapon ตั้งแต่ 14 ขึ้นไป เพิ่ม Damage ทางเวทมนตร์ธาตุ Holy ขึ้นอีก 10%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Saint Magical",
+    "script": {
+      "m_my_element_holy": [
+        "WEAPON_TYPE[twohandRod]10",
+        "WEAPON_TYPE[rod]10",
+        "10===10",
+        "14===10"
+      ]
+    }
+  },
+  "300013": {
+    "id": 300013,
+    "aegisName": "Reginleif_Card",
+    "name": "Reginleif Card",
+    "unidName": "Reginleif Card",
+    "resName": "이름없는카드",
+    "description": "ไม่สามารถทำลายได้\nATK +30%, MHP -15%\nเมื่อใช้ร่วมกับ Randgris Card, ATK +10%, MHP +5%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Armor^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 16,
+    "cardPrefix": "Reginleif",
+    "script": {
+      "atkPercent": [
+        "30",
+        "EQUIP[Randgris Card]10"
+      ],
+      "hpPercent": [
+        "-15",
+        "EQUIP[Randgris Card]5"
+      ]
+    }
+  },
+  "300014": {
+    "id": 300014,
+    "aegisName": "Ingrid_Card",
+    "name": "Ingrid Card",
+    "unidName": "Ingrid Card",
+    "resName": "이름없는카드",
+    "description": "ไม่สามารถทำลายได้\nMHP +40%, ATK -15%\nผู้ติดตั้งจะเสีย HP 1,000 ทุก ๆ 4 วินาที\nเมื่อถอดจะเสีย HP 10,000\nเมื่อใช้ร่วมกับ Randgris Card, MHP +10%, ATK +5%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Armor^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 16,
+    "cardPrefix": "Ingrid",
+    "script": {
+      "hpPercent": [
+        "40",
+        "EQUIP[Randgris Card]10"
+      ],
+      "atkPercent": [
+        "-15",
+        "EQUIP[Randgris Card]5"
+      ]
+    }
+  },
+  "300015": {
+    "id": 300015,
+    "aegisName": "Ferus_P_Card",
+    "name": "Purple Ferus Card",
+    "unidName": "Purple Ferus Card",
+    "resName": "이름없는카드",
+    "description": "ATK +3%, MHP -5%, MSP -5%, ทุก ๆ การอัพเกรด 4 ขั้น ATK +1%\nเมื่อใช้ร่วมกับ Gold Acidus Card ทุก ๆ การอัพเกรด Shoes 4 ขั้น MHP +4%, MSP +4%\nประเภท : ^777777Card^000000\nใช้กับ: ^777777Headgear^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 769,
+    "cardPrefix": "Remedy Low Level",
+    "script": {
+      "atkPercent": [
+        "3",
+        "4---1"
+      ],
+      "hpPercent": [
+        "-5",
+        "EQUIP[Gold Acidus Card]REFINE[boot==4]---4"
+      ],
+      "spPercent": [
+        "-5",
+        "EQUIP[Gold Acidus Card]REFINE[boot==4]---4"
+      ]
+    }
+  },
+  "300016": {
+    "id": 300016,
+    "aegisName": "Treasure_Mimic_Card",
+    "name": "Treasure Mimic Card",
+    "unidName": "Treasure Mimic Card",
+    "resName": "이름없는카드",
+    "description": "FLEE +30, CRI +5\nเมื่อใช้ร่วมกับ Ancient Mimic Card ทุก ๆ การอัพเกรด Garment 1 ขั้น Critical Damage +2%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Garment^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 4,
+    "cardPrefix": "of Treasure",
+    "script": {
+      "flee": [
+        "30"
+      ],
+      "cri": [
+        "5"
+      ],
+      "criDmg": [
+        "EQUIP[Ancient Mimic Card]1---2"
+      ]
+    }
+  },
+  "300017": {
+    "id": 300017,
+    "aegisName": "Acidus_B_Card",
+    "name": "Black Acidus Card",
+    "unidName": "Black Acidus Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่ม Damage ทางกายภาพต่อศัตรูธาตุ Shadow 25%\nเมื่อใช้ร่วมกับ Santa Poring Card เพิ่ม Damage ทางกายภาพต่อศัตรูธาตุ Shadow ขึ้นอีก 15%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "High Hallowed",
+    "script": {
+      "p_element_dark": [
+        "25",
+        "EQUIP[Santa Poring Card]15"
+      ]
+    }
+  },
+  "300018": {
+    "id": 300018,
+    "aegisName": "Acidus_S_Card",
+    "name": "Silver Acidus Card",
+    "unidName": "Silver Acidus Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่ม Damage ทางกายภาพต่อศัตรูธาตุ Holy 25%\nเมื่อใช้ร่วมกับ Orc Skeleton Card เพิ่ม Damage ทางกายภาพต่อศัตรูธาตุ Holy ขึ้นอีก 15%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "High Damned",
+    "script": {
+      "p_element_holy": [
+        "25",
+        "EQUIP[Orc Skeleton Card]15"
+      ]
+    }
+  },
+  "300019": {
+    "id": 300019,
+    "aegisName": "Bone_Ferus_Card",
+    "name": "Bone Ferus Card",
+    "unidName": "Bone Ferus Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่ม Damage ทางกายภาพต่อศัตรูประเภท Dragon 5%\nเมื่อใช้ร่วมกับ Bone Acidus Card เพิ่ม Damage ทางกายภาพต่อศัตรูประเภท Dragon ขึ้นอีก 5% \nประเภท : ^777777Card^000000\nใช้กับ : ^777777Accessory (Left)^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 128,
+    "cardPrefix": "Dragon Slayer's",
+    "script": {
+      "p_race_dragon": [
+        "5",
+        "EQUIP[Bone Acidus Card]5"
+      ]
+    }
+  },
+  "300020": {
+    "id": 300020,
+    "aegisName": "Bone_Acidus_Card",
+    "name": "Bone Acidus Card",
+    "unidName": "Bone Acidus Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่ม Damage ทางกายภาพต่อศัตรูประเภท Brute 5%\nเมื่อใช้ร่วมกับ Bone Ferus Card เพิ่ม Damage ทางกายภาพต่อศัตรูประเภท Brute ขึ้นอีก 5%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Accessory (Right)^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 8,
+    "cardPrefix": "Poacher's",
+    "script": {
+      "p_race_brute": [
+        "5",
+        "EQUIP[Bone Ferus Card]5"
+      ]
+    }
+  },
+  "300021": {
+    "id": 300021,
+    "aegisName": "Bone_Detale_Card",
+    "name": "Bone Detardeurus Card",
+    "unidName": "Bone Detardeurus Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่ม Damage ทางกายภาพต่อศัตรูธาตุ Ghost, Undead และมอนสเตอร์ประเภท Undead,  Dragon 40%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Armor^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 16,
+    "cardPrefix": "Dragon Killer",
+    "script": {
+      "p_element_ghost": [
+        "40"
+      ],
+      "p_element_undead": [
+        "40"
+      ],
+      "p_race_undead": [
+        "40"
+      ],
+      "p_race_dragon": [
+        "40"
+      ]
+    }
+  },
   "300209": {
     "id": 300209,
     "aegisName": "SLD_Grave_Amon_Ra_Card",
@@ -39206,6 +40826,233 @@
       ],
       "m_my_element_holy": [
         "EQUIP[High Priest Stone II (Lower)]10"
+      ]
+    }
+  },
+  "310076": {
+    "id": 310076,
+    "aegisName": "Cassock_Str",
+    "name": "Str Blessing",
+    "unidName": "Str Blessing",
+    "resName": "Cassock_Str",
+    "description": "STR +10\nDEF +25, MDEF +3\nATK +10%\nเมื่อใช้กับ Str Soutane, ATK +5%, เพิ่ม Damage ทางกายภาพต่อมอนสเตอร์ทุกประเภท 12%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "str": [
+        "10"
+      ],
+      "def": [
+        "25"
+      ],
+      "mdef": [
+        "3"
+      ],
+      "atkPercent": [
+        "10",
+        "EQUIP[Str Soutane]5"
+      ],
+      "p_class_all": [
+        "EQUIP[Str Soutane]12"
+      ]
+    }
+  },
+  "310077": {
+    "id": 310077,
+    "aegisName": "Cassock_Agi",
+    "name": "Agi Blessing",
+    "unidName": "Agi Blessing",
+    "resName": "Cassock_Agi",
+    "description": "AGI +10\nDEF +25, MDEF +3\nเพิ่ม Damage ทางกายภาพระยะไกล 10%\nเมื่อใช้กับ Agi Soutane, ASPD +1, มีโอกาส 5% ที่จะเกิด Perfect Hit",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "agi": [
+        "10"
+      ],
+      "def": [
+        "25"
+      ],
+      "mdef": [
+        "3"
+      ],
+      "range": [
+        "10"
+      ],
+      "aspd": [
+        "EQUIP[Agi Soutane]1"
+      ],
+      "perfectHit": [
+        "EQUIP[Agi Soutane]5"
+      ]
+    }
+  },
+  "310078": {
+    "id": 310078,
+    "aegisName": "Cassock_Vit",
+    "name": "Vit Blessing",
+    "unidName": "Vit Blessing",
+    "resName": "Cassock_Vit",
+    "description": "VIT +10\nDEF +25, MDEF +3\nMHP +10%, MSP +10%\nเมื่อใช้กับ Vit Soutane, MHP +5%, ลด Delay หลังใช้สกิล 5%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "vit": [
+        "10"
+      ],
+      "def": [
+        "25"
+      ],
+      "mdef": [
+        "3"
+      ],
+      "hpPercent": [
+        "10",
+        "EQUIP[Vit Soutane]5"
+      ],
+      "spPercent": [
+        "10"
+      ],
+      "acd": [
+        "EQUIP[Vit Soutane]5"
+      ]
+    }
+  },
+  "310079": {
+    "id": 310079,
+    "aegisName": "Cassock_Dex",
+    "name": "Dex Blessing",
+    "unidName": "Dex Blessing",
+    "resName": "Cassock_Dex",
+    "description": "DEX +10\nDEF +25, MDEF +3\nลดระยะร่ายแบบแปรผัน 10%, ASPD +10%\nเมื่อใช้กับ Dex Soutane ลดระยะเวลาร่ายแบบคงที่ 0.3 วินาที",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "dex": [
+        "10"
+      ],
+      "def": [
+        "25"
+      ],
+      "mdef": [
+        "3"
+      ],
+      "vct": [
+        "10"
+      ],
+      "aspdPercent": [
+        "10"
+      ],
+      "fct": [
+        "EQUIP[Dex Soutane]0.3"
+      ]
+    }
+  },
+  "310080": {
+    "id": 310080,
+    "aegisName": "Cassock_Int",
+    "name": "Int Blessing",
+    "unidName": "Int Blessing",
+    "resName": "Cassock_Int",
+    "description": "INT +10\nDEF +25, MDEF +3\nMATK +10%\nเมื่อใช้กับ Int Soutane ลดระยะเวลาร่ายแบบแปรผัน 10%, เพิ่ม Damage ทางเวทมนตร์ทุกธาตุ 12%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "int": [
+        "10"
+      ],
+      "def": [
+        "25"
+      ],
+      "mdef": [
+        "3"
+      ],
+      "matkPercent": [
+        "10"
+      ],
+      "vct": [
+        "EQUIP[Int Soutane]10"
+      ],
+      "m_my_element_all": [
+        "EQUIP[Int Soutane]12"
+      ]
+    }
+  },
+  "310081": {
+    "id": 310081,
+    "aegisName": "Cassock_Luk",
+    "name": "Luk Blessing",
+    "unidName": "Luk Blessing",
+    "resName": "Cassock_Luk",
+    "description": "LUK +10\nDEF +25, MDEF +3\nเพิ่ม Critical Damage 15%\nเมื่อใช้กับ Luk Soutane, CRI +10, เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 12%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "luk": [
+        "10"
+      ],
+      "def": [
+        "25"
+      ],
+      "mdef": [
+        "3"
+      ],
+      "criDmg": [
+        "15"
+      ],
+      "cri": [
+        "EQUIP[Luk Soutane]10"
+      ],
+      "p_size_all": [
+        "EQUIP[Luk Soutane]12"
       ]
     }
   },
@@ -47649,6 +49496,54 @@
       ],
       "criDmg": [
         "20"
+      ]
+    }
+  },
+  "48079999": {
+    "id": 4807,
+    "aegisName": "Atk_Speed1",
+    "name": "ASPD+1",
+    "unidName": "ASPD+1",
+    "resName": "태양신의상징",
+    "description": "ASPD + 1",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 71,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<Aspd+1>",
+    "script": {
+      "aspd": [
+        "1"
+      ]
+    }
+  },
+  "480799999": {
+    "id": 4807,
+    "aegisName": "Atk_Speed1",
+    "name": "ASPD+1",
+    "unidName": "ASPD+1",
+    "resName": "태양신의상징",
+    "description": "ASPD + 1",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 74,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<Aspd+1>",
+    "script": {
+      "aspd": [
+        "1"
       ]
     }
   }

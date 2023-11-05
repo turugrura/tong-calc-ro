@@ -11,7 +11,7 @@ import { ElementType } from './constants/element-type.const';
 import { ActiveSkillModel, AtkSkillModel, CharacterBase, PassiveSkillModel } from './jobs/_character-base.abstract';
 import { Ranger } from './jobs/ranger';
 import { MonsterModel } from './models/monster.model';
-import { getEnchants } from './constants/enchant-table';
+import { EnchantTable, getEnchants } from './constants/enchant-table';
 import { SoulReaper } from './jobs/soul-reaper';
 import { DropdownModel } from './models/dropdown.model';
 import { ItemListModel } from './models/item-list.model';
@@ -427,7 +427,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
-    this.initLoadItems();
+    this.initLoadItemsBtn();
     this.initCalcTableColumns();
     this.setPresetList();
     this.initData().subscribe(() => {
@@ -587,18 +587,29 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
         this.mapEnchant = new Map(
           Object.values(items)
-            .filter((item) => item.itemTypeId === ItemTypeId.CARD)
+            .filter((item) => item.itemTypeId === ItemTypeId.ENCHANT)
             .map((item) => {
               return [item.aegisName, item];
             }),
         );
+
+        const enchants = EnchantTable.flatMap((a) => a.enchants)
+          .filter(Boolean)
+          .flat();
+        const allEnchantSet = new Set(enchants);
+        console.log({ allEnchantSet });
+        for (const enchtName of allEnchantSet.values()) {
+          if (!this.mapEnchant.has(enchtName)) {
+            console.log({ enchtName });
+          }
+        }
         this.setMonsterDropdownList();
         this.setItemList();
       }),
     );
   }
 
-  private initLoadItems() {
+  private initLoadItemsBtn() {
     this.loadBtnItems = [
       // {
       //   label: 'Load',

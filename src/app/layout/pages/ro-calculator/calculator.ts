@@ -12,7 +12,7 @@ import { SizePenaltyMapper } from './constants/size-penalty-mapper';
 import { StatusSummary } from './models/status-summary.model';
 import { EquipmentSummaryModel } from './models/equipment-summary.model';
 import { MainModel } from './models/main.model';
-import { AllowAmmoClassMapper, AllowAmmoMapper } from './constants/allow-ammo-mapper';
+import { AllowAmmoMapper } from './constants/allow-ammo-mapper';
 import { ClassAmmoMapper, WeaponAmmoMapper } from './constants/weapon-ammo-mapper';
 import { InfoForClass } from './models/info-for-class.model';
 import { HpSpCalculator } from './hp-sp-calculator';
@@ -561,7 +561,7 @@ export class Calculator {
   isAllowAmmo() {
     const cName = this._class.className;
 
-    return AllowAmmoMapper[this.weaponData.data?.typeName] || AllowAmmoClassMapper[cName];
+    return AllowAmmoMapper[this.weaponData.data?.typeName] || ClassAmmoMapper[cName] != null;
   }
 
   isAllowShield() {

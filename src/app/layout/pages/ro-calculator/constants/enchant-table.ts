@@ -36,7 +36,7 @@ enum Spell {
   _5 = 'Spell5',
   _6 = 'Spell6',
 }
-enum Cri {
+enum Fatal {
   _1 = 'Fatal1',
   _2 = 'Fatal2',
   _3 = 'Fatal3',
@@ -52,6 +52,11 @@ enum Sharp {
 enum ASPD {
   _1 = 'Atk_Speed1',
   _2 = 'Atk_Speed2',
+}
+enum Cri {
+  _5 = 'Critical5',
+  _7 = 'Critical7',
+  _10 = 'Critical10',
 }
 enum AtkPercent {
   _1 = 'Atk1',
@@ -85,6 +90,10 @@ enum Str {
   _4 = 'Strength4',
   _5 = 'Strength5',
   _6 = 'Strength6',
+  _7 = 'Strength7',
+  _8 = 'Strength8',
+  _9 = 'Strength9',
+  _10 = 'Strength10',
 }
 enum Int {
   _1 = 'Inteligence1',
@@ -93,6 +102,10 @@ enum Int {
   _4 = 'Inteligence4',
   _5 = 'Inteligence5',
   _6 = 'Inteligence6',
+  _7 = 'Inteligence7',
+  _8 = 'Inteligence8',
+  _9 = 'Inteligence9',
+  _10 = 'Inteligence10',
 }
 enum Dex {
   _1 = 'Dexterity1',
@@ -101,6 +114,10 @@ enum Dex {
   _4 = 'Dexterity4',
   _5 = 'Dexterity5',
   _6 = 'Dexterity6',
+  _7 = 'Dexterity7',
+  _8 = 'Dexterity8',
+  _9 = 'Dexterity9',
+  _10 = 'Dexterity10',
 }
 enum Agi {
   _1 = 'Agility1',
@@ -109,6 +126,10 @@ enum Agi {
   _4 = 'Agility4',
   _5 = 'Agility5',
   _6 = 'Agility6',
+  _7 = 'Agility7',
+  _8 = 'Agility8',
+  _9 = 'Agility9',
+  _10 = 'Agility10',
 }
 enum Vit {
   _1 = 'Vitality1',
@@ -117,6 +138,10 @@ enum Vit {
   _4 = 'Vitality4',
   _5 = 'Vitality5',
   _6 = 'Vitality6',
+  _7 = 'Vitality7',
+  _8 = 'Vitality8',
+  _9 = 'Vitality9',
+  _10 = 'Vitality10',
 }
 enum Luk {
   _1 = 'Luck1',
@@ -125,6 +150,10 @@ enum Luk {
   _4 = 'Luck4',
   _5 = 'Luck5',
   _6 = 'Luck6',
+  _7 = 'Luck7',
+  _8 = 'Luck8',
+  _9 = 'Luck9',
+  _10 = 'Luck10',
 }
 enum Acute {
   _2 = 'Acute2',
@@ -208,9 +237,9 @@ const BaseState = {
   _6: ['Strength6', 'Inteligence6', 'Dexterity6', 'Agility6', 'Vitality6', 'Luck6'],
 };
 const AllState = {
-  _1: [FS._1, EA._1, Spell._1, AttackDelay._1, Cri._1, ...BaseState._1],
-  _2: [FS._2, EA._2, Spell._2, AttackDelay._2, Cri._2, ...BaseState._2],
-  _3: [FS._3, EA._3, Spell._3, AttackDelay._3, Cri._3, ...BaseState._3],
+  _1: [FS._1, EA._1, Spell._1, AttackDelay._1, Fatal._1, ...BaseState._1],
+  _2: [FS._2, EA._2, Spell._2, AttackDelay._2, Fatal._2, ...BaseState._2],
+  _3: [FS._3, EA._3, Spell._3, AttackDelay._3, Fatal._3, ...BaseState._3],
 };
 
 const atkPer = [AtkPercent._1, AtkPercent._2, AtkPercent._3];
@@ -226,6 +255,7 @@ const sp25 = [Spell._2, Spell._3, Spell._4, Spell._5];
 const sp46 = [Spell._4, Spell._5, Spell._6];
 const fs410 = [FS._4, FS._5, FS._6, FS._7, FS._8, FS._9, FS._10];
 const aspd24 = [AttackDelay._2, AttackDelay._3, AttackDelay._4];
+const cri57 = [Cri._5, Cri._7, Cri._10];
 const TempOpts = {
   _1: [EA._1, FS._1, Sharp._1],
   _2: [EA._2, FS._2, Sharp._2],
@@ -235,21 +265,21 @@ const TempOpts = {
 const eaFsSp15 = [...ea15, ...fs35, ...sp25];
 
 const toyFactory = [...sp25, ...fs35, ...sh13, ...matk12, ...aspd24];
-const racing3rd = [EA._1, EA._2, FS._1, FS._2, Sharp._1, Sharp._2, Cri._1, Cri._2, Spell._1, Spell._2, AttackDelay._1, AttackDelay._2];
+const racing3rd = [EA._1, EA._2, FS._1, FS._2, Sharp._1, Sharp._2, Fatal._1, Fatal._2, Spell._1, Spell._2, AttackDelay._1, AttackDelay._2];
 
 const illusionArmor = ['Improve_Orb_Atk', 'Improve_Orb_Matk', 'Improve_Orb_Archer', 'Improve_Orb_Delay'];
 const illusionGarment = ['Improve_Orb_Speed', 'Improve_Orb_Cast', 'Improve_Orb_Cri', 'Improve_Orb_Above'];
 const illusionBoot = ['Improve_Orb_Fix', 'Improve_Orb_Heal', 'Improve_Orb_L_Vit', 'Improve_Orb_L_INT', 'Improve_Orb_L_DEX', 'Improve_Orb_L_STR', 'Improve_Orb_L_AGI', 'Improve_Orb_L_LUK'];
-const illusionAcc = [EA._5, FS._6, Spell._5, AttackDelay._4, Cri._4];
+const illusionAcc = [EA._5, FS._6, Spell._5, AttackDelay._4, Fatal._4];
 
 const tempBoot_3 = ["Bear's_Power", 'Runaway_Magic', 'Speed_Of_Light', 'Muscle_Fool', 'Hawkeye', 'Lucky_Day'];
 const tempBoot_4 = [EA._4, FS._7, Spell._5, AttackDelay._4];
 const kingSmithAcc_2 = ['Gh_md_agi', 'Gh_md_str', 'Gh_md_dex', 'Gh_md_int', 'Gh_md_vit', 'Gh_md_luk'];
-const kingSmithAcc_3 = [EA._4, EA._5, FS._6, FS._7, Spell._4, Spell._5, Cri._2, Cri._3, Sharp._3, Sharp._4];
+const kingSmithAcc_3 = [EA._4, EA._5, FS._6, FS._7, Spell._4, Spell._5, Fatal._2, Fatal._3, Sharp._3, Sharp._4];
 const kingSmithAcc_4 = [...BaseState._3_5];
-const kingSmithMan = [EA._3, EA._4, EA._5, FS._5, FS._6, FS._7, Spell._3, Spell._4, Spell._5, Cri._2, Cri._3, Sharp._3, Sharp._4];
+const kingSmithMan = [EA._3, EA._4, EA._5, FS._5, FS._6, FS._7, Spell._3, Spell._4, Spell._5, Fatal._2, Fatal._3, Sharp._3, Sharp._4];
 
-const twinCannon = [Cri._3, AttackDelay._3, Spell._4, EA._3, ...BaseState._3];
+const twinCannon = [Fatal._3, AttackDelay._3, Spell._4, EA._3, ...BaseState._3];
 
 const whiteWingSuit = [...TempOpts._1_3, ...BaseState._1_3];
 
@@ -303,7 +333,7 @@ const tempHead3 = [
   ...tempHead4,
 ];
 
-const edda4 = [EA._1, EA._2, EA._3, FS._4, FS._5, FS._6, Sharp._1, Sharp._2, Sharp._3, Spell._1, Spell._2, Spell._3, Cri._1, Cri._2, Cri._3];
+const edda4 = [EA._1, EA._2, EA._3, FS._4, FS._5, FS._6, Sharp._1, Sharp._2, Sharp._3, Spell._1, Spell._2, Spell._3, Fatal._1, Fatal._2, Fatal._3];
 const edda3 = [
   'Seyren_Memory',
   'Harword_Memory',
@@ -357,7 +387,13 @@ interface EntTable {
 
 const base15 = createBaseStat(1, 5);
 
-const enchantTable: EntTable[] = [
+const soutanes = ['Cassock_Str', 'Cassock_Agi', 'Cassock_Vit', 'Cassock_Dex', 'Cassock_Int', 'Cassock_Luk'];
+const specialBonus = [FS._5, FS._6, Spell._4, Spell._5, EA._4, EA._5, Sharp._4, Sharp._5];
+const odin2 = [...cri57, ...createBaseStat(6, 8)];
+const odin3 = [Cri._7, Cri._10, ...createBaseStat(7, 8)];
+const odin4 = [...soutanes, ...specialBonus, Cri._10, ...createBaseStat(7, 8)];
+
+export const EnchantTable: EntTable[] = [
   { name: 'Lush_Rose', enchants: [null, null, BaseState._1_3, toyFactory] },
   { name: 'Celines_Ribbon', enchants: [null, null, BaseState._1_3, toyFactory] },
 
@@ -388,8 +424,8 @@ const enchantTable: EntTable[] = [
   { name: 'Racing_C_Bishop', enchants: [null, ['Racing_E_Bishop1', 'Racing_E_Bishop2', 'Racing_E_Bishop3', ...racing3rd], BaseState._1_4, BaseState._1_3] },
   { name: 'Racing_C_Sura', enchants: [null, ['Racing_E_Sura1', 'Racing_E_Sura2', 'Racing_E_Sura3', ...racing3rd], BaseState._1_4, BaseState._1_3] },
   { name: 'Racing_C_Ranger', enchants: [null, ['Racing_E_Ranger1', 'Racing_E_Ranger2', 'Racing_E_Ranger3', ...racing3rd], BaseState._1_4, BaseState._1_3] },
-  { name: 'Racing_C_Mins', enchants: [null, ['Racing_E_Mins1', 'Racing_E_Mins2', 'Racing_E_Mins3', ...racing3rd], BaseState._1_4, BaseState._1_3] },
-  { name: 'Racing_C_Wander', enchants: [null, ['Racing_E_Wander1', 'Racing_E_Wander2', 'Racing_E_Wander3', ...racing3rd], BaseState._1_4, BaseState._1_3] },
+  { name: 'Racing_C_Mins', enchants: [null, ['Racing_E_Wand_Min1', 'Racing_E_Wand_Min2', 'Racing_E_Wand_Min3', ...racing3rd], BaseState._1_4, BaseState._1_3] },
+  { name: 'Racing_C_Wander', enchants: [null, ['Racing_E_Wand_Min1', 'Racing_E_Wand_Min2', 'Racing_E_Wand_Min3', ...racing3rd], BaseState._1_4, BaseState._1_3] },
   { name: 'Racing_C_Gunner', enchants: [null, ['Racing_E_Gunner1', 'Racing_E_Gunner2', 'Racing_E_Gunner3', ...racing3rd], BaseState._1_4, BaseState._1_3] },
   { name: 'Racing_C_Ninja', enchants: [null, ['Racing_E_Ninja1', 'Racing_E_Ninja2', 'Racing_E_Ninja3', ...racing3rd], BaseState._1_4, BaseState._1_3] },
   { name: 'Racing_C_Super', enchants: [null, ['Racing_E_Super1', 'Racing_E_Super2', 'Racing_E_Super3', ...racing3rd], BaseState._1_4, BaseState._1_3] },
@@ -534,9 +570,18 @@ const enchantTable: EntTable[] = [
   { name: 'Robe_Of_Vituperation', enchants: [null, null, allRunes, allRunes] },
 
   { name: 'FaceWorm_Skin_', enchants: [null, specials, BaseState._3_5, BaseState._3_5] },
+
+  { name: 'CassockA_STR', enchants: [null, odin2, odin3, odin4] },
+  { name: 'CassockA_AGI', enchants: [null, odin2, odin3, odin4] },
+  { name: 'CassockA_VIT', enchants: [null, odin2, odin3, odin4] },
+  { name: 'CassockA_DEX', enchants: [null, odin2, odin3, odin4] },
+  { name: 'CassockA_INT', enchants: [null, odin2, odin3, odin4] },
+  { name: 'CassockA_LUK', enchants: [null, odin2, odin3, odin4] },
 ];
 
-const map = new Map(enchantTable.map((a) => [a.name, a.enchants]));
+Object.freeze(EnchantTable);
+
+const map = new Map(EnchantTable.map((a) => [a.name, a.enchants]));
 
 export const getEnchants = (name) => {
   return map.get(name);

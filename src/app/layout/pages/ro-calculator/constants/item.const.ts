@@ -22,4 +22,5 @@ export enum ItemTypeId {
   AMMO = 4,
   ETC = 5,
   CARD = 6,
+  ENCHANT = 11,
 }

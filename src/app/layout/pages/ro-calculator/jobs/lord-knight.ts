@@ -24,7 +24,7 @@ export class LordKnight extends CharacterBase {
           value: 10,
           skillLv: 10,
           isUse: true,
-          bonus: { '2hand_skillAspd': 7, '2handSword_skillAspd': 7 },
+          bonus: { twohandSword_skillAspd: 7, twohandSword_cri: 12, twohandSword_hit: 20 },
         },
         { label: 'No', value: 0, isUse: false },
       ],

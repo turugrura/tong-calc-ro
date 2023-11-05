@@ -367,7 +367,7 @@
     </div>
 
     <!-- Weapon + Ammo -->
-    <div class="grid grid-nogutter item_label_weapon">
+    <div class="grid grid-nogutter item_label_weapon_main">
       <div class="col-3">
         <div class="grid grid-nogutter justify-content-end">
           <div class="col-12">
@@ -483,7 +483,7 @@
               [filter]="true"
               filterBy="label,cardPrefix"
               [(ngModel)]="model.weaponCard1"
-              [disabled]="!model.weapon"
+              [disabled]="!model.weapon || itemSlotsMap.weapon < 1"
               [showClear]="true"
               (onChange)="onSelectItem('weaponCard1', $event.value)"
               placeholder="Card 1"
@@ -505,7 +505,7 @@
               [filter]="true"
               filterBy="label,cardPrefix"
               [(ngModel)]="model.weaponCard2"
-              [disabled]="!model.weapon"
+              [disabled]="!model.weapon || itemSlotsMap.weapon < 2"
               [showClear]="true"
               (onChange)="onSelectItem('weaponCard2', $event.value)"
               placeholder="Card 2"
@@ -708,7 +708,7 @@
         </div>
       </div>
     </div>
-    <div class="grid grid-nogutter item_label_left_weapon" *ngIf="showLeftWeapon">
+    <div class="grid grid-nogutter item_label_leftWeapon_main" *ngIf="showLeftWeapon">
       <div class="col-3">
         <div class="grid grid-nogutter justify-content-end">
           <div class="col-12">
@@ -1026,7 +1026,7 @@
     </div>
 
     <!-- Shield -->
-    <div class="grid grid-nogutter item_label_shield" *ngIf="!hiddenMap.shield">
+    <div class="grid grid-nogutter item_label_shield_main" *ngIf="!hiddenMap.shield">
       <div class="col-3">
         <div class="grid grid-nogutter justify-content-end">
           <div class="col-12">
@@ -3636,7 +3636,10 @@
               (onChange)="onSelectItemDescription()"
             >
               <ng-template let-item pTemplate="item">
-                <div class="flex gap-1 item_template">
+                <div
+                  class="flex gap-1 item_template item_label_{{ item.value }}"
+                  style="background-color: var(--border-radius)"
+                >
                   <img src="assets/demo/images/items/{{ item.id }}.png" alt="" class="item_img" />
                   <div class="text_ellips">
                     {{ item.label }}

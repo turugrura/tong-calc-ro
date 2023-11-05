@@ -38,7 +38,7 @@ export class Swordman extends CharacterBase {
       inputType: 'selectButton',
       isMasteryAtk: true,
       dropdown: [
-        { label: 'Yes', value: 10, skillLv: 10, isUse: true, bonus: { x_2handSword_atk: 40 } },
+        { label: 'Yes', value: 10, skillLv: 10, isUse: true, bonus: { x_twohandSword_atk: 40 } },
         { label: 'No', value: 0, isUse: false },
       ],
     },

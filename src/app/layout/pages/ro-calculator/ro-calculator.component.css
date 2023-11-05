@@ -215,27 +215,24 @@
   width: 95%;
 }
 
-:host ::ng-deep .item_label_weapon .p-dropdown-label,
-:host ::ng-deep .item_label_weapon .p-cascadeselect-label,
+:host ::ng-deep .item_label_weapon_main .p-dropdown-label,
+:host ::ng-deep .item_label_weapon_main .p-cascadeselect-label,
 :host ::ng-deep .item_label_weapon {
   /* background-color: var(--surface-0); */
   background-color: #121212;
   color: var(--cyan-200);
 }
 
-:host ::ng-deep .item_label_left_weapon .p-dropdown-label,
-:host ::ng-deep .item_label_left_weapon .p-cascadeselect-label,
-:host ::ng-deep .item_label_left_weapon,
-:host ::ng-deep .item_label_leftWeapon .p-dropdown-label,
-:host ::ng-deep .item_label_leftWeapon .p-cascadeselect-label,
+:host ::ng-deep .item_label_leftWeapon_main .p-dropdown-label,
+:host ::ng-deep .item_label_leftWeapon_main .p-cascadeselect-label,
 :host ::ng-deep .item_label_leftWeapon {
   /* background-color: var(--surface-0); */
   background-color: #121212;
   color: var(--pink-200);
 }
 
-:host ::ng-deep .item_label_shield .p-dropdown-label,
-:host ::ng-deep .item_label_shield .p-cascadeselect-label,
+:host ::ng-deep .item_label_shield_main .p-dropdown-label,
+:host ::ng-deep .item_label_shield_main .p-cascadeselect-label,
 :host ::ng-deep .item_label_shield {
   /* background-color: var(--surface-0); */
   background-color: #121212;
