@@ -24,7 +24,7 @@ import { Warlock } from './jobs/warlock';
 import { Sorcerer } from './jobs/sorcerer';
 import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { PresetTableComponent } from './preset-table/preset-table.component';
-import { ClassID, ClassName } from './jobs/_class-name';
+import { ClassID } from './jobs/_class-name';
 import { JobBuffs } from './constants/job-buffs';
 import { Mechanic } from './jobs/mechanic';
 import { MainModel } from './models/main.model';
@@ -45,6 +45,7 @@ import { sortObj } from './utils/sort-obj';
 import { HpSpTable } from './models/hp-sp-table.model';
 import { AllowLeftWeaponMapper } from './constants/allow-left-weapon-mapper';
 import { Kagerou } from './jobs/kagerou';
+import { Genetic } from './jobs/genetic';
 
 interface MonsterSelectItemGroup extends SelectItemGroup {
   items: any[];
@@ -62,7 +63,7 @@ const Characters: DropdownModel[] = [
   { label: ClassID[6], value: 6, instant: new Warlock() },
   { label: ClassID[8], value: 8, instant: new Sorcerer() },
   { label: ClassID[10], value: 10, instant: new Mechanic() },
-  // { label: ClassID[9],value: 9, instant: new Genetic() },
+  { label: ClassID[9], value: 9, instant: new Genetic() },
   { label: ClassID[3], value: 3, instant: new SoulReaper() },
   // { label: ClassID[17], value: 3, instant: new Oboro() },
   { label: ClassID[18], value: 18, instant: new Kagerou() },
@@ -1460,18 +1461,18 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
   private setAmmoDropdownList() {
     const myAmmoId = this.calculator.getAmmoSubTypeId();
-    const isMC = this.selectedCharacter.className === ClassName.Mechanic;
+    // const isMC = this.selectedCharacter.className === ClassName.Mechanic;
     const onlyMyAmmo = (a: DropdownModel) => {
       const ammo = this.items[a.value];
       if (!ammo) return false;
 
-      const onlyMC = ammo.aegisName?.includes('Cannon_Ball');
+      // const onlyMC = ammo.aegisName?.includes('Cannon_Ball');
 
-      if (isMC && onlyMC) {
-        return true;
-      }
+      // if (isMC && onlyMC) {
+      //   return true;
+      // }
 
-      return !onlyMC && ammo.itemSubTypeId === myAmmoId;
+      return ammo.itemSubTypeId === myAmmoId;
     };
 
     this.ammoList = this.itemList.ammoList.filter(onlyMyAmmo);

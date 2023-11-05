@@ -13,4 +13,5 @@ export const AllowAmmoClassMapper: Partial<Record<ClassName, boolean>> = {
   Oboro: true,
   Kagerou: true,
   Mechanic: true,
+  Genetic: true,
 };

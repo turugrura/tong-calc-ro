@@ -1,6 +1,14 @@
 import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
+import {
+  ActiveSkillModel,
+  AtkSkillFormulaInput,
+  AtkSkillModel,
+  CharacterBase,
+  PassiveSkillModel,
+} from './_character-base.abstract';
 import { CartBoost } from '../constants/share-active-skills';
+import { Creator } from './creator';
+import { InfoForClass } from '../models/info-for-class.model';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 1, 0, 0],
@@ -64,9 +72,9 @@ const jobBonusTable: Record<number, [number, number, number, number, number, num
   59: [3, 6, 6, 11, 8, 2],
   60: [3, 6, 6, 12, 8, 2],
   61: [3, 6, 6, 12, 8, 2],
-  62: [3, 6, 6, 12, 8, 2],
-  63: [3, 6, 6, 12, 8, 2],
-  64: [3, 6, 6, 12, 8, 2],
+  62: [4, 6, 6, 12, 8, 3],
+  63: [4, 6, 6, 12, 8, 3],
+  64: [4, 6, 6, 12, 8, 3],
   65: [4, 6, 7, 12, 8, 3],
 };
 
@@ -74,9 +82,93 @@ export class Genetic extends CharacterBase {
   protected readonly CLASS_NAME = ClassName.Genetic;
   protected readonly JobBonusTable = jobBonusTable;
 
-  protected readonly initialStatusPoint = 40;
-  protected readonly classNames = ['Genetic'];
-  protected readonly _atkSkillList: AtkSkillModel[] = [];
+  protected readonly initialStatusPoint = 100;
+  protected readonly classNames = ['Only 3rd Cls', 'Genetic', 'Genetic Cls', 'Genetic Class'];
+  protected readonly _atkSkillList: AtkSkillModel[] = [
+    {
+      label: 'Cart Cannon Lv5',
+      name: 'Cart Cannon',
+      value: 'Cart Cannon==5',
+      acd: 0.5,
+      fct: 0,
+      vct: 3,
+      cd: 0,
+      isHit100: true,
+      isHDefToSDef: true,
+      levelList: [],
+      formula: (input: AtkSkillFormulaInput): number => {
+        const {
+          skillLevel,
+          status: { totalInt },
+        } = input;
+        const cartModelingLv = this.learnLv('Cart Remodeling');
+
+        return skillLevel * 60 + cartModelingLv * 50 * (totalInt / 40);
+      },
+    },
+  ];
+
   protected readonly _activeSkillList: ActiveSkillModel[] = [CartBoost];
-  protected readonly _passiveSkillList: PassiveSkillModel[] = [];
+
+  protected readonly _passiveSkillList: PassiveSkillModel[] = [
+    {
+      label: 'Sword Mastery 10',
+      name: 'Sword Mastery',
+      inputType: 'selectButton',
+      isMasteryAtk: true,
+      dropdown: [
+        {
+          label: 'Yes',
+          value: 10,
+          skillLv: 10,
+          isUse: true,
+          bonus: { x_dagger_atk: 50, x_dagger_hit: 15, x_sword_atk: 50, x_sword_hit: 15 },
+        },
+        { label: 'No', value: 0, isUse: false },
+      ],
+    },
+    {
+      label: 'Cart Remodel 5',
+      name: 'Cart Remodeling',
+      inputType: 'selectButton',
+      isMasteryAtk: true,
+      dropdown: [
+        {
+          label: 'Yes',
+          value: 5,
+          skillLv: 5,
+          isUse: true,
+          bonus: { weight: 2500, 'hit__Cart Revolution': 20, 'hit__Cart Tornado': 20, 'hit__Cart Cannon': 20 },
+        },
+        { label: 'No', value: 0, isUse: false },
+      ],
+    },
+    {
+      label: 'Mandragora',
+      name: 'Mandragora Howling',
+      inputType: 'dropdown',
+      dropdown: [
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 1', value: 1, isUse: true },
+        { label: 'Lv 2', value: 2, isUse: true },
+        { label: 'Lv 3', value: 3, isUse: true },
+        { label: 'Lv 4', value: 4, isUse: true },
+        { label: 'Lv 5', value: 5, isUse: true },
+      ],
+    },
+  ];
+
+  constructor() {
+    super();
+
+    this.inheritBaseClass(new Creator());
+  }
+
+  override getMasteryAtk(info: InfoForClass): number {
+    const { weapon } = info;
+    const weaponType = weapon?.data?.typeName;
+    if (weaponType !== 'sword' && weaponType !== 'axe') return 0;
+
+    return this.calcHiddenMasteryAtk(info, { prefix: `x_${weaponType}` }).totalAtk;
+  }
 }

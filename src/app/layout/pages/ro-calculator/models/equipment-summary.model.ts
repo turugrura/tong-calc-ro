@@ -17,8 +17,12 @@ export interface EquipmentSummaryModel {
   aspdPercent: number;
   skillAspd: number;
   skillAspdPercent: number;
+
   atk: number;
+  x_atk: number;
+  cannonballAtk: number;
   atkPercent: number;
+
   matk: number;
   matkPercent: number;
   allStatus: number;

@@ -17,6 +17,7 @@ import { ClassAmmoMapper, WeaponAmmoMapper } from './constants/weapon-ammo-mappe
 import { InfoForClass } from './models/info-for-class.model';
 import { HpSpCalculator } from './hp-sp-calculator';
 import { HpSpTable } from './models/hp-sp-table.model';
+import { ItemSubTypeId } from './constants/item-sub-type.enum';
 
 // const getItem = (id: number) => items[id] as ItemModel;
 const refinableItemTypes = [
@@ -156,8 +157,12 @@ export class Calculator {
     aspdPercent: 0,
     skillAspd: 0,
     skillAspdPercent: 0,
+
     atk: 0,
+    x_atk: 0,
+    cannonballAtk: 0,
     atkPercent: 0,
+
     matk: 0,
     matkPercent: 0,
     allStatus: 0,
@@ -1035,10 +1040,15 @@ export class Calculator {
     // const additionalAtk = this.totalMasteryAtk + this.totalBuffAtk;
     // if (aAtk && bAtk) return calcPropMulti(aAtk) + calcPropMulti(bAtk) + extraAtk + additionalAtk;
 
+    const cannonBallAtk = this.totalEquipStatus.cannonballAtk || 0;
     const mildwindMultiplier = this.isActiveMildwind ? this.propertyMultiplier : 1;
     const hiddenMasteryAtk = this._class.getMasteryAtk(this.infoForClass);
     const statusAtk =
-      this.totalStatusAtk * mildwindMultiplier * 2 + this.totalMasteryAtk + hiddenMasteryAtk + this.totalBuffAtk;
+      this.totalStatusAtk * mildwindMultiplier * 2 +
+      this.totalMasteryAtk +
+      hiddenMasteryAtk +
+      cannonBallAtk +
+      this.totalBuffAtk;
     const totalMinAtk = this.totalAMin + this.totalBMin + statusAtk;
     const totalMaxAtk = this.totalAMax + this.totalBMax + statusAtk;
     const totalMaxAtkOver = this.totalAMaxOver + this.totalBMaxOver + statusAtk;
@@ -1183,10 +1193,10 @@ export class Calculator {
   }
 
   private calcSkillDamage(skillData: AtkSkillModel) {
-    const { name: skillName, canCri, isMelee, isIgnoreDef = false } = skillData;
+    const { name: skillName, canCri, isMelee, isHDefToSDef = false, isIgnoreDef = false } = skillData;
     const { finalDmgReduction, finalSoftDef } = this.finalPhysicalDef;
-    const hardDef = isIgnoreDef ? 1 : finalDmgReduction;
-    const softDef = finalSoftDef;
+    const hardDef = isIgnoreDef || isHDefToSDef ? 1 : finalDmgReduction;
+    const softDef = finalSoftDef + (isHDefToSDef ? this.reducedHardDef : 0);
 
     const { range, melee, criDmg } = this.totalEquipStatus;
     const ranged = isMelee ? melee : range;
@@ -1765,7 +1775,7 @@ export class Calculator {
     this.totalEquipStatus = { ...this.allStatus, matk: 0 - baseMatk };
     this.equipStatus = {} as any;
 
-    const updateTotalStatus = (attr, value) => {
+    const updateTotalStatus = (attr: keyof EquipmentSummaryModel, value) => {
       if (this.totalEquipStatus[attr]) {
         if (attr === 'fctPercent') {
           this.totalEquipStatus[attr] = Math.max(this.totalEquipStatus[attr], value);
@@ -1806,6 +1816,12 @@ export class Calculator {
       // }
 
       if (itemType === ItemTypeEnum.ammo) {
+        if (itemData.itemSubTypeId === ItemSubTypeId.Cannonball) {
+          this.equipStatus[itemType].atk = 0;
+          updateTotalStatus('cannonballAtk', itemData.attack);
+          continue;
+        }
+
         this.equipStatus[itemType].atk = itemData.attack;
       } else if (itemType === ItemTypeEnum.leftWeapon) {
         // this.equipStatus[itemType].atk = itemData.attack;

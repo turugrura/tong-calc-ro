@@ -13,4 +13,5 @@ export const WeaponAmmoMapper: Partial<Record<WeaponTypeName, ItemSubTypeId>> = 
 export const ClassAmmoMapper: Partial<Record<ClassName, ItemSubTypeId>> = {
   Oboro: ItemSubTypeId.Kunai,
   Kagerou: ItemSubTypeId.Kunai,
+  Genetic: ItemSubTypeId.Cannonball,
 };

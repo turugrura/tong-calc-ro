@@ -321,7 +321,7 @@
                       >{{ totalSummary?.calc?.totalStatusMatk || 0 }} +
                       {{
                         totalSummary?.weapon?.baseWeaponMatk +
-                          (totalSummary?.weapon?.baseWeaponMatk > 0 ? totalSummary?.weapon?.refineBonus : 0) +
+                          (totalSummary?.weapon?.refineBonus || 0) +
                           (totalSummary?.matk || 0)
                       }}</span
                     >

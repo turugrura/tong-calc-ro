@@ -373,6 +373,8 @@ const enchantTable: EntTable[] = [
   { name: 'Twin_Edge_B', enchants: [null, null, null, malangdo] },
   { name: 'Twin_Edge_R', enchants: [null, null, null, malangdo] },
 
+  { name: 'Tengu_Scroll', enchants: [null, BaseState._1_3, BaseState._1_3, BaseState._1_3] },
+
   { name: 'Fallen Angel Wing [1]', enchants: [null, eaFsSp15, eaFsSp15, eaFsSp15] },
 
   { name: 'Racing_C_Mecha', enchants: [null, ['Racing_E_Mecha1', 'Racing_E_Mecha2', 'Racing_E_Mecha3', ...racing3rd], BaseState._1_4, BaseState._1_3] },
@@ -466,6 +468,7 @@ const enchantTable: EntTable[] = [
   { name: 'Old_Driver_Band_Y', enchants: [null, labHead2, base15, base15] },
   { name: 'Old_Shadow_Handicraft', enchants: [null, labHead2, base15, base15] },
   { name: 'Old_Minstrel_Song_Hat', enchants: [null, labHead2, base15, base15] },
+  { name: 'Old_Midas_Whisper', enchants: [null, labHead2, base15, base15] },
   { name: 'Old_Magic_Stone_Hat', enchants: [null, labHead2, base15, base15] },
   { name: 'Old_Wind_Whisper', enchants: [null, labHead2, base15, base15] },
   { name: 'Old_Dying_Swan', enchants: [null, labHead2, base15, base15] },

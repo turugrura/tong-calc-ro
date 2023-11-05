@@ -2978,6 +2978,30 @@
       ]
     }
   },
+  "4330": {
+    "id": 4330,
+    "aegisName": "Dark_Snake_Lord_Card",
+    "name": "Dark Snake Lord Card",
+    "unidName": "Dark Snake Lord Card",
+    "resName": "이름없는카드",
+    "description": "ป้องกัน Blind และ Curse 100%\nINT +3\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Headgear^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 769,
+    "cardPrefix": "Uncurse",
+    "script": {
+      "int": [
+        "3"
+      ]
+    }
+  },
   "4335": {
     "id": 4335,
     "aegisName": "Pitman_Card",
@@ -8614,6 +8638,47 @@
     ],
     "script": {}
   },
+  "13485": {
+    "id": 13485,
+    "aegisName": "Sword_Of_Bluefire",
+    "name": "Red Lotus Sword [2]",
+    "unidName": "One-Handed Sword",
+    "resName": "홍련의검",
+    "description": "เมื่อดึงออกจากฝักดาบ จะมีเปลวไฟสีน้ำเงินลุกขึ้นมา\nดูมีความกลมกลืนเข้ากับ Ancient Hero Boots\nทุกๆ การอัพเกรด 2 ขั้น ATK +10\nทุกๆ การอัพเกรด 3 ขั้น เพิ่มพลังโจมตีทางกายภาพระยะไกล 4%\nเมื่ออัพเกรดถึงขั้น 9 ลดปริมาณการใช้ SP ของ Cart Cannon 10%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่มดาเมจของ Cart Cannon 15%\nเมื่อโจมตีทางกายภาพระหว่างสวมใส่ร่วมกับ Ancient Hero Boots มีโอกาสที่ DEX +20, พลังโจมตีทางกายภาพระยะไกล +20% เป็นเวลา 7 วินาที\nประเภท : ^777777Sword^000000 พลังโจมตี : ^777777180^000000\nน้ำหนัก : ^77777780^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Generic^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 257,
+    "itemLevel": 4,
+    "attack": 180,
+    "defense": null,
+    "weight": 80,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Genetic"
+    ],
+    "script": {
+      "atk": [
+        "2---10"
+      ],
+      "range": [
+        "3---4"
+      ],
+      "spPercent__Cart Cannon": [
+        "9===10"
+      ],
+      "Cart Cannon": [
+        "11===15"
+      ],
+      "chance__dex": [
+        "EQUIP[Ancient Hero Boots]20"
+      ],
+      "chance__range": [
+        "EQUIP[Ancient Hero Boots]20"
+      ]
+    }
+  },
   "13493": {
     "id": 13493,
     "aegisName": "Cannon_Rapier_OS",
@@ -10242,6 +10307,41 @@
       ]
     }
   },
+  "16088": {
+    "id": 16088,
+    "aegisName": "Saphir_Hall_OS",
+    "name": "Saphir Mace-OS [2]",
+    "unidName": "Mace",
+    "resName": "Saphir_Hall_OS",
+    "description": "อาวุธที่ครอบด้วยวัตถุทรงกลมที่มีประกายแสงสีน้ำเงิน\nไม่สามารถทำลายได้\nATK + 3%\nเมื่ออัปเกรดถึงขั้น 7 ลดระยะเวลาร่ายแบบแปรผัน 7%\nเมื่ออัปเกรดถึงขั้น 9 เพิ่ม Damage สกิล Cart Cannon 20%\nเมื่ออัปเกรดถึงขั้น 11 เพิ่ม Damage ทางกายภาพระยะไกล 15%\n^ffffff_^000000\nประเภท : ^777777Mace^000000 พลังโจมตี : ^777777185^000000\nน้ำหนัก : ^77777780^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777130^000000\nอาชีพที่ใส่ได้ : ^777777Genetic^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 263,
+    "itemLevel": 4,
+    "attack": 185,
+    "defense": null,
+    "weight": 80,
+    "requiredLevel": 130,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Genetic"
+    ],
+    "script": {
+      "atkPercent": [
+        "3"
+      ],
+      "vct": [
+        "7===7"
+      ],
+      "Cart Cannon": [
+        "9===20"
+      ],
+      "range": [
+        "11===15"
+      ]
+    }
+  },
   "16089": {
     "id": 16089,
     "aegisName": "Ultio_Spes_OS",
@@ -10452,11 +10552,7 @@
     "usableClass": [
       "all"
     ],
-    "script": {
-      "atk": [
-        "100"
-      ]
-    }
+    "script": {}
   },
   "18001": {
     "id": 18001,
@@ -10479,11 +10575,7 @@
     "usableClass": [
       "all"
     ],
-    "script": {
-      "atk": [
-        "120"
-      ]
-    }
+    "script": {}
   },
   "18002": {
     "id": 18002,
@@ -10506,11 +10598,30 @@
     "usableClass": [
       "all"
     ],
-    "script": {
-      "atk": [
-        "120"
-      ]
-    }
+    "script": {}
+  },
+  "18003": {
+    "id": 18003,
+    "aegisName": "Soul_Cannon_Ball",
+    "name": "Soul Cannon Ball",
+    "unidName": "Soul Cannon Ball",
+    "resName": "소울캐논볼",
+    "description": "ส่วนประกอบที่มีไว้สำหรับสกิลของ Mechanic Magic Gear, Arm's Cannon.\nประเภท : ^777777Cannonball^000000 พลังโจมตี : ^777777120^000000\nน้ำหนัก : ^7777770.1^000000 ธาตุ : ^777777Ghost^000000",
+    "slots": 0,
+    "itemTypeId": 4,
+    "itemSubTypeId": 1025,
+    "itemLevel": null,
+    "attack": 120,
+    "propertyAtk": "Ghost",
+    "defense": null,
+    "weight": 0.1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {}
   },
   "18004": {
     "id": 18004,
@@ -10532,11 +10643,122 @@
     "usableClass": [
       "all"
     ],
-    "script": {
-      "atk": [
-        "250"
-      ]
-    }
+    "script": {}
+  },
+  "18005": {
+    "id": 18005,
+    "aegisName": "Ice_Cannon_Ball",
+    "name": "Ice Cannon Ball",
+    "unidName": "Ice Cannon Ball",
+    "resName": "Ice_Cannon_Ball",
+    "description": "ส่วนประกอบที่มีไว้สำหรับสกิลของ Mechanic Magic Gear, Arm's Cannon\nประเภท : ^777777Cannonball^000000 พลังโจมตี : ^777777120^000000\nน้ำหนัก : ^7777770.1^000000 ธาตุ : ^777777Water^000000",
+    "slots": 0,
+    "itemTypeId": 4,
+    "itemSubTypeId": 1025,
+    "itemLevel": null,
+    "attack": 120,
+    "propertyAtk": "Water",
+    "defense": null,
+    "weight": 0.1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {}
+  },
+  "18006": {
+    "id": 18006,
+    "aegisName": "Lightning_Cannon_Ball",
+    "name": "Lightning Cannon Ball",
+    "unidName": "Lightning Cannon Ball",
+    "resName": "Lightning_Cannon_Ball",
+    "description": "ส่วนประกอบที่มีไว้สำหรับสกิลของ Mechanic Magic Gear, Arm's Cannon\nประเภท : ^777777Cannonball^000000 พลังโจมตี : ^777777120^000000\nน้ำหนัก : ^7777770.1^000000 ธาตุ : ^777777Wind^000000",
+    "slots": 0,
+    "itemTypeId": 4,
+    "itemSubTypeId": 1025,
+    "itemLevel": null,
+    "attack": 120,
+    "propertyAtk": "Wind",
+    "defense": null,
+    "weight": 0.1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {}
+  },
+  "18007": {
+    "id": 18007,
+    "aegisName": "Stone_Cannon_Ball",
+    "name": "Stone Cannon Ball",
+    "unidName": "Stone Cannon Ball",
+    "resName": "Stone_Cannon_Ball",
+    "description": "ส่วนประกอบที่มีไว้สำหรับสกิลของ Mechanic Magic Gear, Arm's Cannon\nประเภท : ^777777Cannonball^000000 พลังโจมตี : ^777777120^000000\nน้ำหนัก : ^7777770.1^000000 ธาตุ : ^777777Earth^000000",
+    "slots": 0,
+    "itemTypeId": 4,
+    "itemSubTypeId": 1025,
+    "itemLevel": null,
+    "attack": 120,
+    "propertyAtk": "Earth",
+    "defense": null,
+    "weight": 0.1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {}
+  },
+  "18008": {
+    "id": 18008,
+    "aegisName": "Flare_Cannon_Ball",
+    "name": "Flare Cannon Ball",
+    "unidName": "Flare Cannon Ball",
+    "resName": "Flare_Cannon_Ball",
+    "description": "ส่วนประกอบที่มีไว้สำหรับสกิลของ Mechanic Magic Gear, Arm's Cannon\nประเภท : ^777777Cannonball^000000 พลังโจมตี : ^777777120^000000\nน้ำหนัก : ^7777770.1^000000 ธาตุ : ^777777Fire^000000",
+    "slots": 0,
+    "itemTypeId": 4,
+    "itemSubTypeId": 1025,
+    "itemLevel": null,
+    "attack": 120,
+    "propertyAtk": "Fire",
+    "defense": null,
+    "weight": 0.1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {}
+  },
+  "18009": {
+    "id": 18009,
+    "aegisName": "Poisoning_Cannon_Ball",
+    "name": "Poisoning Cannon Ball",
+    "unidName": "Poisoning Cannon Ball",
+    "resName": "Poisoning_Cannon_Ball",
+    "description": "ส่วนประกอบที่มีไว้สำหรับสกิลของ Mechanic Magic Gear, Arm's Cannon\nประเภท : ^777777Cannonball^000000 พลังโจมตี : ^777777120^000000\nน้ำหนัก : ^7777770.1^000000 ธาตุ : ^777777Poison^000000",
+    "slots": 0,
+    "itemTypeId": 4,
+    "itemSubTypeId": 1025,
+    "itemLevel": null,
+    "attack": 120,
+    "propertyAtk": "Poison",
+    "defense": null,
+    "weight": 0.1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {}
   },
   "18130": {
     "id": 18130,
@@ -11835,6 +12057,47 @@
       ]
     }
   },
+  "18977": {
+    "id": 18977,
+    "aegisName": "Old_Midas_Whisper",
+    "name": "Old Midas Whisper [1]",
+    "unidName": "Mask",
+    "resName": "마이더스의속삭임",
+    "description": "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้^000000\nAll State + 1 \nทุกๆ การอัพเกรด 1 ขั้น ATK + 4\nทุกๆ การอัพเกรด 2 ขั้น เพิ่มพลังโจมตีระยะไกล 1%\nทุกๆ การอัพเกรด 2 ขั้น เพิ่ม Max HP และ Max SP ทีละ 1%\nทุกๆ การอัพเกรด 2 ขั้น เพิ่มความแรงสกิล Cart Cannon 15%\nประเภท : ^777777Helm^000000 พลังป้องกัน : ^77777710^000000\nตำแหน่ง : ^777777Upper ^000000น้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Geneticist^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 10,
+    "weight": 10,
+    "requiredLevel": 170,
+    "location": "Upper",
+    "compositionPos": null,
+    "usableClass": [
+      "Genetic"
+    ],
+    "script": {
+      "allStatus": [
+        "1"
+      ],
+      "atk": [
+        "1---4"
+      ],
+      "range": [
+        "2---1"
+      ],
+      "hpPercent": [
+        "2---1"
+      ],
+      "spPercent": [
+        "2---1"
+      ],
+      "Cart Cannon": [
+        "2---15"
+      ]
+    }
+  },
   "18978": {
     "id": 18978,
     "aegisName": "Old_Magic_Stone_Hat",
@@ -12470,7 +12733,7 @@
       "aspdPercent": [
         "3---2"
       ],
-      "Cart Tornado ": [
+      "Cart Tornado": [
         "REFINE[8]LEARN_SKILL[Axe Mastery==1]---5"
       ]
     }
@@ -17773,6 +18036,33 @@
       ]
     }
   },
+  "24256": {
+    "id": 24256,
+    "aegisName": "S_Knight_Shoes",
+    "name": "Knight Shadow Shoes",
+    "unidName": "Shadow Shoes",
+    "resName": "슈즈쉐도우",
+    "description": "รองเท้าศักดิ์สิทธิ์ช่วยปกป้องผู้สวมใส่ สามารถใส่ชิ้นเดียวได้แต่พลังของมันจะลดลง\nเพิ่ม Damage ของสกิล Pierce 20%\nทุกการอัพเกรด 1 ขั้น เพิ่ม Damage ของสกิล Pierce อีก 5%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shoes^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ :^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 528,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Shoes",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "Pierce": [
+        "20",
+        "1---5"
+      ]
+    }
+  },
   "24257": {
     "id": 24257,
     "aegisName": "S_Crusader_Shoes",
@@ -17826,6 +18116,28 @@
         "1---5"
       ]
     }
+  },
+  "24259": {
+    "id": 24259,
+    "aegisName": "S_Alchemist_Shoes",
+    "name": "Alchemist Shadow Shoes",
+    "unidName": "Shadow Shoes",
+    "resName": "슈즈쉐도우",
+    "description": "รองเท้าที่สามารถสวมทับบนรองเท้าได้ แม้ว่าจะสามารถใช้เดี่ยว ๆ ได้ แต่ประสิทธิภาพจะลดลง\nหากสวมใส่โดย Alchemist Class เมื่อใช้สกิลประเภทฟื้นฟู จะเพิ่มการการฟื้นฟู 30%\nเพิ่มการฟื้นฟู 7% ทุก ๆ ขั้นอัพเกรด 1 ขั้น\nประเภท : ^777777Shadow Equipment^000000\nตำแหน่ง : ^777777Shoes^000000 น้ำหนัก :^7777770^000000\nเลเวลที่ต้องการ :^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 528,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Shoes",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {}
   },
   "24260": {
     "id": 24260,
@@ -18026,6 +18338,39 @@
       ]
     }
   },
+  "24269": {
+    "id": 24269,
+    "aegisName": "S_Knight_Armor",
+    "name": "Knight Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우",
+    "description": "เสื้อเกราะศักดิ์สิทธิ์ช่วยปกป้องผู้สวมใส่ สามารถใส่ชิ้นเดียวได้แต่พลังของมันจะลดลง\nลดปริมาณการใช้ SP ของสกิล Bowling Bash 20%\nทุกการอัพเกรด 1 ขั้น ลดปริมาณการใช้ SP ของสกิล Bowling Bash ลงอีก 3%\n\nเมื่อสวมใส่กับ Knight Shadow Shoes,\nลดปริมาณการใช้ SP ของสกิล Pierce 20%\nเพิ่ม Damage ของสกิล Bowling Bash 20%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Armor^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ :^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "spPercent__Bowling Bash": [
+        "20",
+        "1---3"
+      ],
+      "spPercent__Pierce": [
+        "EQUIP[Knight Shadow Shoes]20"
+      ],
+      "Bowling Bash": [
+        "EQUIP[Knight Shadow Shoes]20"
+      ]
+    }
+  },
   "24270": {
     "id": 24270,
     "aegisName": "S_Crusader_Armor",
@@ -18087,6 +18432,36 @@
         "9===1",
         "10===1",
         "EQUIP[Blacksmith Shadow Shoes]USED[Blacksmith]3"
+      ]
+    }
+  },
+  "24272": {
+    "id": 24272,
+    "aegisName": "S_Alchemist_Armor",
+    "name": "Alchemist Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우",
+    "description": "เกราะป้องกันที่สามารถสวมทับบนเกราะได้ ซึ่งจะทำให้ได้รับพลังป้องกันเพิ่มขึ้น แม้ว่าจะใช้เดี่ยว ๆ ได้ แต่ประสิทธิภาพการป้องกันจะลดลง \nเมื่อเรียนสกิล Learning Potion จะเพิ่ม ATK 1 ต่อเลเวลสกิล\nทุกๆการตีที่มากกว่า 6 ขึ้นไป, จะเพิ่ม ATK  +1 ต่อเลเวลสกิล Learning Potion \n\nเมื่อสวมใส่พร้อมกับ Alchemist Shadow Shoes, \nหากอาชีพ Alchemist สวมใส่ จะสามารถใช้สกิล Adrenaline Rush Lv 3 ได้\nประเภท : ^777777Shadow Equipment^000000\nตำแหน่ง : ^777777Armor^000000น้ำหนัก :^7777770^000000\nเลเวลที่ต้องการ :^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atk": [
+        "LEARN_SKILL[Learning Potion==1]---1",
+        "LEARN_SKILL[Learning Potion==10]7===10",
+        "LEARN_SKILL[Learning Potion==10]8===10",
+        "LEARN_SKILL[Learning Potion==10]9===10",
+        "LEARN_SKILL[Learning Potion==10]10===10"
       ]
     }
   },
@@ -18514,6 +18889,33 @@
       ]
     }
   },
+  "24288": {
+    "id": 24288,
+    "aegisName": "S_Runeknight_Weapon",
+    "name": "Rune Knight Weapon Shadow",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา\nRune Knight Class เท่านั้นที่สวมใส่ได้\nเพิ่มความแรงสกิลของ Sonic Wave 20%\nทุกๆ การอัพเกรด 1 ขั้น เพิ่มความแรงสกิลของ Sonic Wave อีก 5%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Rune Knight Class^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "Rune Knight"
+    ],
+    "script": {
+      "Sonic Wave": [
+        "20",
+        "1---5"
+      ]
+    }
+  },
   "24289": {
     "id": 24289,
     "aegisName": "S_Royalguard_Weapon",
@@ -18563,6 +18965,33 @@
     ],
     "script": {
       "Vulcan Arm": [
+        "20",
+        "1---5"
+      ]
+    }
+  },
+  "24291": {
+    "id": 24291,
+    "aegisName": "S_Genetic_Weapon",
+    "name": "Geneticist Weapon Shadow",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่ใช้สวมมือข้างที่ติดตั้งอาวุธ ซึ่งจะช่วยดึงศักยภาพที่ซ่อนอยู่ของผู้สวมใส่ออกมา \nสวมใส่ได้เฉพาะอาชีพ Genetic เท่านั้น \nเพิ่ม Damage สกิล Cart Tornado 20%\n Damage สกิล Cart Tornado เพิ่มขึ้น 5% ทุก ๆ ขั้นอัพเกรด 1 ขั้น\nประเภท : ^777777Shadow Equipment^000000\nตำแหน่ง : ^777777Weapon^000000 น้ำหนัก :^7777770^000000\nเลเวลที่ต้องการ :^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Genetic^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "Genetic"
+    ],
+    "script": {
+      "Cart Tornado": [
         "20",
         "1---5"
       ]
@@ -18792,6 +19221,54 @@
       ]
     }
   },
+  "24301": {
+    "id": 24301,
+    "aegisName": "S_Runeknight_Shield",
+    "name": "Rune Knight Shield Shadow",
+    "unidName": "Shadow Shield",
+    "resName": "쉴드쉐도우",
+    "description": "โล่เล็กที่สามารถสวมใส่ที่แขนได้ สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์การป้องกันของมันจะลดน้อยลง\nRune Knight Classes เท่านั้นที่สวมใส่ได้\nเมื่อใช้สกิล Enchant Blade เพิ่มความเร็วในการโจมตีเป็นเวลา 50 วินาที (ลด ATK Delay เท่า % ค่าอัพเกรด)\nเมื่ออัพเกรดถึงขั้น 7 ขึ้นไป หากใช้สกิล  Enchant Blade ASPD +1 เป็นเวลา 50 วินาที\nเมื่ออัพเกรดถึงขั้น 9 ขึ้นไป หากใช้สกิล  Enchant Blade ASPD +1 เพิ่มเติม เป็นเวลา 50 วินาที\nเมื่อสวมใส่ร่วมกับ ^32CD32Rune Knight Weapon Shadow^000000 จะได้รับ  Effect เพิ่มเติม\nลดการใช้ SP สกิล Sonic Wave  20% , เมื่อโจมตีทางกายภาพ มีโอกาสร่ายสกิล Ignition Break 3Lv\nเมื่อสวมใส่ ^32CD32Swordman Shadow^000000 2 ประเภท, ^32CD32Knight Shadow^000000 2 ประเภท,  ^32CD32Rune Knight Shadow^000000 2 ประเภททั้งหมด จะได้รับ Effect ดังนี้\nAll State + 10, MaxHP + 5%, MaxSP + 5%.\nไม่สนใจการป้องกันทางกายภาพและทางเวทย์แบบปกติ 50%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shield^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Rune Knight Classes^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 527,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Shield",
+    "compositionPos": null,
+    "usableClass": [
+      "Rune Knight"
+    ],
+    "script": {
+      "aspdPercent": [
+        "ACTIVE_SKILL[Enchant Blade]1---1"
+      ],
+      "aspd": [
+        "ACTIVE_SKILL[Enchant Blade]7===1",
+        "ACTIVE_SKILL[Enchant Blade]9===1"
+      ],
+      "spPercent__Sonic Wave": [
+        "EQUIP[Rune Knight Weapon Shadow]20"
+      ],
+      "allStatus": [
+        "EQUIP[Swordsman Shadow Earring&&Swordsman Shadow Pendant&&Knight Shadow Shoes&&Knight Shadow Armor&&Rune Knight Weapon Shadow]10"
+      ],
+      "hpPercent": [
+        "EQUIP[Swordsman Shadow Earring&&Swordsman Shadow Pendant&&Knight Shadow Shoes&&Knight Shadow Armor&&Rune Knight Weapon Shadow]5"
+      ],
+      "spPercent": [
+        "EQUIP[Swordsman Shadow Earring&&Swordsman Shadow Pendant&&Knight Shadow Shoes&&Knight Shadow Armor&&Rune Knight Weapon Shadow]5"
+      ],
+      "p_pene_class_normal": [
+        "EQUIP[Swordsman Shadow Earring&&Swordsman Shadow Pendant&&Knight Shadow Shoes&&Knight Shadow Armor&&Rune Knight Weapon Shadow]50"
+      ],
+      "m_pene_class_normal": [
+        "EQUIP[Swordsman Shadow Earring&&Swordsman Shadow Pendant&&Knight Shadow Shoes&&Knight Shadow Armor&&Rune Knight Weapon Shadow]50"
+      ]
+    }
+  },
   "24302": {
     "id": 24302,
     "aegisName": "S_Royalguard_Shield",
@@ -18882,6 +19359,57 @@
       ],
       "m_pene_class_normal": [
         "EQUIP[Merchant Shadow Earring&&Merchant Shadow Pendant&&Blacksmith Shadow Shoes&&Blacksmith Shadow Armor&&Mechanic Weapon Shadow]50"
+      ]
+    }
+  },
+  "24304": {
+    "id": 24304,
+    "aegisName": "S_Genetic_Shield",
+    "name": "Geneticist Shadow Shield",
+    "unidName": "Shadow Shield",
+    "resName": "쉴드쉐도우",
+    "description": "โล่เล็กที่สามารถสวมใส่ที่แขนได้ สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์การป้องกันของมันจะลดน้อยลง\nสวมใส่ได้เฉพาะอาชีพ Genetic เท่านั้น\nMaxHP + 3%\nเพิ่มค่า Def ตามขั้นอัพเกรดคูณด้วยผลรวมเลเวล Skill ของ Generic Cart\n^ff0000Cart Tornado, Cart Cannon, Cart Boost^000000\n------------- \nเมื่อสวมใส่ร่วมกับ ^32CD32Geneticist Shadow Weapon^000000 จะได้ผลลัพธ์ที่มากขึ้น\nลดคูลดาวน์สกิล Cart Tornado 1 วินาที, MaxHP + 2%, ลด Variable Cast Time ของสกิล Cart Boost 100%\n------------- \nเมื่อสวมใส่ ^32CD32Merchant Shadow^000000 2 ประเภท, ^32CD32Alchemist Shadow^000000 2 ประเภท,  ^32CD32Geneticist Shadow^000000 2 ประเภท จะได้รับเอฟเฟกต์ต่อไปนี้\nAll State + 10, MaxHP + 5%, MaxSP + 5%\nเพิกเฉยต่อค่า DEF และ MDEF ของมอนสเตอร์ทั่วไป 50 %\nประเภท : ^777777Shadow Equipment^000000\nตำแหน่ง : ^777777Shield^000000 น้ำหนัก :^7777770^000000\nเลเวลที่ต้องการ :^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Genetic^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 527,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Shield",
+    "compositionPos": null,
+    "usableClass": [
+      "Genetic"
+    ],
+    "script": {
+      "hpPercent": [
+        "3",
+        "EQUIP[Geneticist Shadow Weapon]2",
+        "EQUIP[Geneticist Shadow Weapon&&Alchemist Shadow Shoes&&Alchemist Shadow Armor&&Merchant Shadow Earring&&Merchant Shadow Pendant]5"
+      ],
+      "cd__Cart Tornado": [
+        "EQUIP[Geneticist Shadow Weapon]1"
+      ],
+      "vct__Cart Boost": [
+        "EQUIP[Geneticist Shadow Weapon]100"
+      ],
+      "spPercent": [
+        "EQUIP[Geneticist Shadow Weapon&&Alchemist Shadow Shoes&&Alchemist Shadow Armor&&Merchant Shadow Earring&&Merchant Shadow Pendant]5"
+      ],
+      "allStatus": [
+        "EQUIP[Geneticist Shadow Weapon&&Alchemist Shadow Shoes&&Alchemist Shadow Armor&&Merchant Shadow Earring&&Merchant Shadow Pendant]10"
+      ],
+      "def": [
+        "LEARN_SKILL[Cart Tornado==10]1---10",
+        "LEARN_SKILL[Cart Cannon==5]1---5",
+        "LEARN_SKILL[Cart Boost==5]1---5"
+      ],
+      "p_pene_class_normal": [
+        "EQUIP[Geneticist Shadow Weapon&&Alchemist Shadow Shoes&&Alchemist Shadow Armor&&Merchant Shadow Earring&&Merchant Shadow Pendant]50"
+      ],
+      "m_pene_class_normal": [
+        "EQUIP[Geneticist Shadow Weapon&&Alchemist Shadow Shoes&&Alchemist Shadow Armor&&Merchant Shadow Earring&&Merchant Shadow Pendant]50"
       ]
     }
   },
@@ -23008,6 +23536,100 @@
       ]
     }
   },
+  "24563": {
+    "id": 24563,
+    "aegisName": "S_Cannon_Cart_Weapon",
+    "name": "Cannon Cart Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา\nเพิ่ม Damage ทางกายภาพระยะไกล 3%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางกายภาพระยะไกลขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพระยะไกลขึ้นอีก 4%\nเมื่อสวมใส่ Cannon Cart Shadow Weapom/Pendant/Earring ร่วมกัน,\nเพิ่ม Damage สกิล Cart Cannon % เท่ากับครึ่งหนึ่งของค่าอัพเกรดรวมกัน\nเมื่อสวมใส่ร่วมกับ Geneticist Shadow Shield,\nลดระยะเวลาร่ายแบบแปรผันเท่ากับครึ่งหนึ่งของค่าอัพเกรดรวมกันของ Cannon Cart Shadow Weapon และ Geneticist Shield Shield \nประเภท : ^777777Shadow^000000 \nตำแหน่ง : ^777777Weapon^000000 น้ำหนัก : ^7777770^000000 \nเลเวลที่ต้องการ : ^77777799^000000 \nอาชีพที่ใส่ได้ : ^777777Genetic Cls^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "Genetic"
+    ],
+    "script": {
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1"
+      ],
+      "range": [
+        "3",
+        "7===3",
+        "9===4"
+      ],
+      "Cart Cannon": [
+        "EQUIP[Cannon Cart Shadow Pendant&&Cannon Cart Shadow Earring]REFINE[shadowWeapon,shadowPendant,shadowEarring==2]---1"
+      ],
+      "vct": [
+        "EQUIP[Geneticist Shadow Shield]REFINE[shadowWeapon,shadowShield==2]---1"
+      ]
+    }
+  },
+  "24564": {
+    "id": 24564,
+    "aegisName": "S_Cannon_Cart_Pendant",
+    "name": "Cannon Cart Shadow Pendant",
+    "unidName": "Shadow Pendant",
+    "resName": "펜던트쉐도우",
+    "description": "สร้อยคอศักดิ์สิทธิ์ที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา\nเพิ่ม Damage สกิล Cart Cannon 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage สกิล Cart Cannon ขึ้นอีก 2%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Pendant ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Genetic Cls^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 530,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "AccessoryLeft",
+    "compositionPos": null,
+    "usableClass": [
+      "Genetic"
+    ],
+    "script": {
+      "Cart Cannon": [
+        "5",
+        "2---2"
+      ]
+    }
+  },
+  "24565": {
+    "id": 24565,
+    "aegisName": "S_Cannon_Cart_Earing",
+    "name": "Cannon Cart Shadow Earring",
+    "unidName": "Shadow Earring",
+    "resName": "이어링쉐도우",
+    "description": "ต่างหูมงคลที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาดขึ้นอีก 1%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Earring ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Genetic Cls^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 529,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "AccessoryRight",
+    "compositionPos": null,
+    "usableClass": [
+      "Genetic"
+    ],
+    "script": {
+      "p_size_all": [
+        "5",
+        "2---1"
+      ]
+    }
+  },
   "24578": {
     "id": 24578,
     "aegisName": "S_Banish_Cannon_Armor",
@@ -23498,7 +24120,7 @@
       "matk": [
         "10"
       ],
-      "cd__Cart Tornado Attack": [
+      "cd__Cart Tornado": [
         "EQUIP[Booster Shadow Armor&&Booster Shadow Shield&&Booster Shadow Shoes&&Booster Shadow Earring&&Booster Shadow Pendant]1"
       ],
       "Cart Cannon": [
@@ -31060,6 +31682,29 @@
       ]
     }
   },
+  "29048": {
+    "id": 29048,
+    "aegisName": "Expert_Archer0",
+    "name": "Range",
+    "unidName": "Range",
+    "resName": "용의보주_황",
+    "description": "เพิ่ม Damage โจมตีทางกายภาพระยะไกล 3%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 72,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "range": [
+        "3"
+      ]
+    }
+  },
   "29053": {
     "id": 29053,
     "aegisName": "Skill_Delay1_Top",
@@ -33506,6 +34151,101 @@
       ],
       "acd": [
         "EQUIP[Lord Knight Stone (Lower)]===5"
+      ]
+    }
+  },
+  "29464": {
+    "id": 29464,
+    "aegisName": "Genetic_Top",
+    "name": "Creator Stone (Upper)",
+    "unidName": "Creator Stone (Upper)",
+    "resName": "상인피규어",
+    "description": "ทุกๆ 1 Lv. Learning Potion ATK +2",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 71,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "atk": [
+        "LEARN_SKILL[Learning Potion==1]---2"
+      ]
+    }
+  },
+  "29465": {
+    "id": 29465,
+    "aegisName": "Genetic_Middle",
+    "name": "Creator Stone (Middle)",
+    "unidName": "Creator Stone (Middle)",
+    "resName": "상인피규어",
+    "description": "ทุกๆ 1 Lv. Potion Pitcher เพิ่มประมาณการฟื้นฟูของ Heal และ Potion 2%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 72,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {}
+  },
+  "29466": {
+    "id": 29466,
+    "aegisName": "Genetic_Bottom",
+    "name": "Creator Stone (Lower)",
+    "unidName": "Creator Stone (Lower)",
+    "resName": "상인피규어",
+    "description": "เพิ่ม Damage Acid Terror 20%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 73,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "Acid Terror": [
+        "20"
+      ]
+    }
+  },
+  "29467": {
+    "id": 29467,
+    "aegisName": "Genetic_Robe",
+    "name": "Genetic Stone (Garment)",
+    "unidName": "Genetic Stone (Garment)",
+    "resName": "Creator_Figure",
+    "description": "เพิ่ม Damage Cart Cannon 10%\nเมื่อสวมใส่กับ Creator Stone (Upper), เพิ่ม Damage Cart Cannon 15%\nเมื่อสวมใส่กับ Creator Stone (Middle), ลด Cooldown สกิล Mandragora Howling ลง 3 วินาที\nเมื่อสวมใส่กับ Creator Stone (Lower), เพิ่ม Damage ทางกายภาพระยะไกล 5%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 74,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "Cart Cannon": [
+        "10",
+        "EQUIP[Creator Stone (Upper)]===15"
+      ],
+      "cd__Mandragora Howling": [
+        "EQUIP[Creator Stone (Middle)]===3"
+      ],
+      "range": [
+        "EQUIP[Creator Stone (Lower)]===5"
       ]
     }
   },
@@ -38868,6 +39608,107 @@
       ]
     }
   },
+  "310261": {
+    "id": 310261,
+    "aegisName": "Genetic_Robe2",
+    "name": "Genetic Stone II (Garment)",
+    "unidName": "Genetic Stone II (Garment)",
+    "resName": "Creator_Figure",
+    "description": "เพิ่ม Damage สกิล Crazy Weed 20%\nเมื่อใช้กับ Creator Stone II (Upper) ลด Cooldown สกิล Cart Tornado Attack 0.7 วินาที\nเมื่อใช้กับ Creator Stone II (Middle) เพิ่ม Damage สกิล Spore Explosion 20%\nเมื่อใช้กับ Creator Stone II (Lower) ทุก ๆ การเรียนรู้สกิล Acid Demonstration 2 เลเวล ลดระยะเวลาร่ายแบบคงที่ 0.1 วินาที",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 74,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "Crazy Weed": [
+        "20"
+      ],
+      "cd__Cart Tornado": [
+        "EQUIP[Creator Stone II (Upper)]0.7"
+      ],
+      "Spore Explosion": [
+        "EQUIP[Creator Stone II (Middle)]20"
+      ],
+      "fct": [
+        "EQUIP[Creator Stone II (Lower)]LEARN_SKILL[Acid Demonstration==2]---0.1"
+      ]
+    }
+  },
+  "310262": {
+    "id": 310262,
+    "aegisName": "Genetic_Top2",
+    "name": "Creator Stone II (Upper)",
+    "unidName": "Creator Stone II (Upper)",
+    "resName": "상인피규어",
+    "description": "ทุก ๆ การเรียนรู้สกิล Bio Cannibalize 1 เลเวล เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 1%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 71,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "p_size_all": [
+        "LEARN_SKILL[Bio Cannibalize==1]---1"
+      ]
+    }
+  },
+  "310263": {
+    "id": 310263,
+    "aegisName": "Genetic_Middle2",
+    "name": "Creator Stone II (Middle)",
+    "unidName": "Creator Stone II (Middle)",
+    "resName": "상인피규어",
+    "description": "เพิ่ม Damage สกิล Acid Demonstration 25%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 72,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "Acid Demonstration": [
+        "25"
+      ]
+    }
+  },
+  "310264": {
+    "id": 310264,
+    "aegisName": "Genetic_Bottom2",
+    "name": "Creator Stone II (Lower)",
+    "unidName": "Creator Stone II (Lower)",
+    "resName": "상인피규어",
+    "description": "ทุก ๆ การเรียนรู้สกิล Acid Demonstration 2 เลเวล เพิ่ม Damage ทางกายภาพระยะไกล 1%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 73,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "range": [
+        "LEARN_SKILL[Acid Demonstration==2]---1"
+      ]
+    }
+  },
   "310265": {
     "id": 310265,
     "aegisName": "WanderMins_Robe2",
@@ -43115,6 +43956,48 @@
       ]
     }
   },
+  "490345": {
+    "id": 490345,
+    "aegisName": null,
+    "name": "Necklace of Truth [1]",
+    "unidName": "Necklace of Truth",
+    "resName": "Necklace_Of_Hawkeye",
+    "description": "ความใคร่รู้สงสัยในสิ่งที่เกิดขึ้น พระเจ้าสร้างมันได้อย่างไร มนุษย์ก็อยากเป็นผู้สร้างมันได้ดั่งเช่นพระเจ้า\nหากความจริงแล้วพระเจ้านั้นอาจไม่ได้สรรสร้างสิ่งต่าง ๆ ขึ้นมา เพียงแต่สัจจะเป็นเช่นนั้นอยู่แล้ว\n\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกเผ่า 5%\nทุก ๆ Base DEX 12 เพิ่ม Damage ทางกายภาพระยะไกลต่อศัตรูทั้งหมด 1%\nทุก ๆ การเรียนรู้สกิล Mandragora Howling 1 เลเวล เพิ่ม Damage สกิล Cart Cannon 3%\n\nเมื่อ Base DEX ตั้งแต่ 125 ขึ้นไป เมื่อสวมใส่ตำแหน่ง Accessory (Right),\nเพิ่ม Damage สกิล Cart Cannon 10%\nAll Status +10\n\nเมื่อ Base DEX ตั้งแต่ 125 ขึ้นไป เมื่อสวมใส่ตำแหน่ง Accessory (Left),\nMaxHP +10%, MaxSP +10%\nสามารถใช้สกิล Fire Wall Lv. 10 ได้\nประเภท : ^777777Accessory^000000  พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 517,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "p_race_all": [
+        "5"
+      ],
+      "range": [
+        "dex:12---1"
+      ],
+      "Cart Cannon": [
+        "SUM[dex==125]POS[accRight]===10",
+        "LEARN_SKILL[Mandragora Howling==1]---3"
+      ],
+      "allStatus": [
+        "SUM[dex==125]POS[accRight]===10"
+      ],
+      "hpPercent": [
+        "SUM[dex==125]POS[accLeft]===10"
+      ],
+      "spPercent": [
+        "SUM[dex==125]POS[accLeft]===10"
+      ]
+    }
+  },
   "490349": {
     "id": 490349,
     "aegisName": null,
@@ -44243,6 +45126,52 @@
       ],
       "chance__matkPercent": [
         "EQUIP[Ancient Hero Boots]===15"
+      ]
+    }
+  },
+  "500013": {
+    "id": 500013,
+    "aegisName": "Up_Sword_Of_Bluefire",
+    "name": "Patent Red Lotus Sword [2]",
+    "unidName": "One-Handed Sword",
+    "resName": "Up_Sword_Of_Bluefire",
+    "description": "เมื่อดึงออกจากฝักดาบ จะมีเปลวไฟสีน้ำเงินลุกขึ้นมา\nเริ่มเผยพลังอันแท้จริงออกมาด้วยลูกไฟอันทรงพลัง\nดูกลมกลืนเข้ากับ Great Hero Boots\n\nทุก ๆ การอัพเกรด 2 ขั้น ATK +15\nทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage ทางกายภาพระยะไกล 4%\nเมื่ออัพเกรดถึงขั้น 7 ลดปริมาณการใช้ SP สกิล Cart Cannon 10%, ลดระยะเวลาร่ายแบบแปรผัน 7%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Cart Cannon 20%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Acid Demonstration 10%, ลดระยะเวลาร่ายแบบแปรผันลงอีก 5%\nเมื่อสวมใส่ร่วมกับ Great Hero Boots, DEX +10, เพิ่ม Damage ทางกายภาพระยะไกล 5%\n\nประเภท : ^777777Sword^000000 พลังโจมตี : ^777777200^000000\nน้ำหนัก : ^777777100^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Genetic^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 257,
+    "itemLevel": 4,
+    "attack": 200,
+    "defense": null,
+    "weight": 100,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Genetic"
+    ],
+    "script": {
+      "atk": [
+        "2---15"
+      ],
+      "range": [
+        "3---4",
+        "EQUIP[Great Hero Boots]===5"
+      ],
+      "spPercent__Cart Cannon": [
+        "7===10"
+      ],
+      "vct": [
+        "7===7",
+        "11===5"
+      ],
+      "Cart Cannon": [
+        "9===20"
+      ],
+      "Acid Demonstration": [
+        "11===10"
+      ],
+      "dex": [
+        "EQUIP[Great Hero Boots]===10"
       ]
     }
   },
