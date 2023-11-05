@@ -35,6 +35,19 @@ export class AppTopBarComponent {
 
   updates: { v: string; date: string; logs: string[] }[] = [
     {
+      v: 'V1.4.0',
+      date: '05-11-2566',
+      logs: [
+        'Fixed Comet does not effected to physical damage',
+        'Fixed reported bugs',
+        'Support Genetic class',
+        'Support toggle Hidden basic attack (see at the config button)',
+        'Added Odin3 equipments & cards',
+        'Added Abyss4 equipments & cards',
+        'Added requested items',
+      ],
+    },
+    {
       v: 'V1.3.0',
       date: '04-11-2566',
       logs: [
