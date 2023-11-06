@@ -92,6 +92,7 @@ export class Doram extends CharacterBase {
     'Summoner (Doram) Cls',
     'Summoner (Doram) Class',
   ];
+
   protected readonly _atkSkillList: AtkSkillModel[] = [
     {
       label: 'Silvervine Stem Spear',
@@ -142,8 +143,9 @@ export class Doram extends CharacterBase {
       hit: 5,
       formula: (input: AtkSkillFormulaInput): number => {
         const { skillLevel } = input;
+        const bonus = this.learnLv('Sprit Of Life') > 0 ? 2.2 : 1;
 
-        return 200 + skillLevel * 100;
+        return (200 + skillLevel * 100) * bonus;
       },
     },
     {
@@ -159,10 +161,13 @@ export class Doram extends CharacterBase {
       formula: (input: AtkSkillFormulaInput): number => {
         const { skillLevel } = input;
 
-        return 200 + skillLevel * 100;
+        const bonus = this.learnLv('Sprit Of Life') > 0 ? 2.2 : 1;
+
+        return (200 + skillLevel * 100) * bonus;
       },
     },
   ];
+
   protected readonly _activeSkillList: ActiveSkillModel[] = [
     {
       label: 'Arclouse Dash 5',
@@ -175,6 +180,7 @@ export class Doram extends CharacterBase {
       ],
     },
   ];
+
   protected readonly _passiveSkillList: PassiveSkillModel[] = [
     {
       label: 'Power of Sea',
@@ -290,6 +296,15 @@ export class Doram extends CharacterBase {
       dropdown: [
         { label: '-', value: 0, isUse: false },
         { label: 'Lv 5', value: 5, skillLv: 5, isUse: true },
+      ],
+    },
+    {
+      label: 'Sprit Of Life',
+      name: 'Sprit Of Life',
+      inputType: 'selectButton',
+      dropdown: [
+        { label: 'Yes', value: 1, skillLv: 1, isUse: true },
+        { label: 'No', value: 0, isUse: false },
       ],
     },
   ];
