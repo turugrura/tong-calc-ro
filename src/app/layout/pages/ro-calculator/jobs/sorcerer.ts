@@ -95,7 +95,6 @@ export class Sorcerer extends CharacterBase {
       acd: 1,
       element: ElementType.Water,
       isMatk: true,
-      levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
         const baseLevel = model.level;
@@ -116,7 +115,6 @@ export class Sorcerer extends CharacterBase {
       acd: 1,
       element: ElementType.Earth,
       isMatk: true,
-      levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
         const baseLevel = model.level;
@@ -138,7 +136,6 @@ export class Sorcerer extends CharacterBase {
       // element: ElementType.Neutral,
       totalHit: 7,
       isMatk: true,
-      levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
         const baseLevel = model.level;
@@ -157,7 +154,6 @@ export class Sorcerer extends CharacterBase {
       acd: 1,
       element: ElementType.Wind,
       isMatk: true,
-      levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
         const baseLevel = model.level;

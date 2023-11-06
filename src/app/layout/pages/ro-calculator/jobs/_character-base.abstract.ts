@@ -20,7 +20,7 @@ export interface AtkSkillModel {
   fct: number;
   vct: number;
   cd: number;
-  levelList: { label: string; value: any }[];
+  levelList?: { label: string; value: any }[];
   formula: (input: AtkSkillFormulaInput) => number;
   part2?: {
     label: string;

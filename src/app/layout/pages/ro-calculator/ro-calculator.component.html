@@ -3232,7 +3232,7 @@
                 <div class="p-inputgroup">
                   <span class="p-inputgroup-addon skill_hilight_label">Skill</span>
                   <p-dropdown
-                    inputId="monster"
+                    inputId="skill"
                     [autoDisplayFirst]="false"
                     [resetFilterOnHide]="true"
                     [options]="atkSkills"
@@ -3240,6 +3240,16 @@
                     (onChange)="onAtkSkillChange()"
                   ></p-dropdown>
                 </div>
+                <!-- <span class="skill_hilight_label">Skill</span>
+                <p-cascadeSelect
+                  [(ngModel)]="model.selectedAtkSkill"
+                  [options]="atkSkillCascades"
+                  optionValue="value"
+                  optionGroupLabel="label"
+                  optionLabel="label"
+                  [optionGroupChildren]="['levelList']"
+                  (onChange)="onAtkSkillChange()"
+                ></p-cascadeSelect> -->
               </div>
               <div class="col-12">
                 <div class="grid grid-nogutter">

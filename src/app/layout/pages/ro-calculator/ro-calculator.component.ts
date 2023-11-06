@@ -311,6 +311,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   characterList = Characters;
   selectedCharacter: CharacterBase;
   atkSkills: AtkSkillModel[] = [];
+  atkSkillCascades: any[] = [];
   passiveSkills: PassiveSkillModel[] = [];
   activeSkills: ActiveSkillModel[] = [];
   consumableList: DropdownModel[] = [];
@@ -1144,6 +1145,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     this.activeSkills = this.selectedCharacter.activeSkills;
     this.passiveSkills = this.selectedCharacter.passiveSkills;
     this.atkSkills = this.selectedCharacter.atkSkills;
+    this.atkSkillCascades = this.selectedCharacter.atkSkills;
   }
 
   private setDefaultSkill() {
@@ -1654,6 +1656,12 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     if (itemType === ItemTypeEnum.weapon) {
       for (let i = (slots || 0) + 1; i <= 4; i++) {
         const cTypeName = `weaponCard${i}` as ItemTypeEnum;
+        this.model[cTypeName] = undefined;
+        this.equipItemMap.set(cTypeName, undefined);
+      }
+    } else if (itemType === ItemTypeEnum.leftWeapon) {
+      for (let i = (slots || 0) + 1; i <= 4; i++) {
+        const cTypeName = `${ItemTypeEnum.leftWeapon}Card${i}` as ItemTypeEnum;
         this.model[cTypeName] = undefined;
         this.equipItemMap.set(cTypeName, undefined);
       }
