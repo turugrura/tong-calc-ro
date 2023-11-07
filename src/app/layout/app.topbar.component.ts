@@ -35,6 +35,16 @@ export class AppTopBarComponent {
 
   updates: { v: string; date: string; logs: string[] }[] = [
     {
+      v: 'V1.4.2',
+      date: '07-11-2566',
+      logs: [
+        'Fixed Magma3 monsters stat',
+        'Fixed reported bugs',
+        'Added MC learnable skill (Power Swing)',
+        'Added requested items',
+      ],
+    },
+    {
       v: 'V1.4.1',
       date: '06-11-2566',
       logs: [
