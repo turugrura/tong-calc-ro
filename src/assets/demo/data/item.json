@@ -3726,6 +3726,31 @@
       ]
     }
   },
+  "4506": {
+    "id": 4506,
+    "aegisName": "Dolomedes_Card",
+    "name": "Dolomedes Card",
+    "unidName": "Dolomedes Card",
+    "resName": "이름없는카드",
+    "description": "DEX + 2, เมื่อสวมใส่โดย Archer Class ทุกๆ 3 ขั้นอัพเกรด เพิ่ม DEX 1\nประเภท : ^777777Card^000000\nใส่กับ : ^777777Headgear^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 769,
+    "cardPrefix": "of Archer",
+    "script": {
+      "dex": [
+        "2",
+        "USED[Archer]3---1"
+      ]
+    }
+  },
   "4508": {
     "id": 4508,
     "aegisName": "Gold_Scaraba_Card",
@@ -3914,6 +3939,33 @@
       ],
       "damageTaken_element_all": [
         "30"
+      ]
+    }
+  },
+  "4577": {
+    "id": 4577,
+    "aegisName": "Elvira_Card",
+    "name": "Elvira Card",
+    "unidName": "Elvira Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่มความเสียหายทางเวทมนตร์ธาตุ Wind และ ธาตุ Ghost เพิ่มขึ้น 20%\nประเภท : ^777777Card^000000\nใส่กับ : ^777777Accessory^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 136,
+    "cardPrefix": "Psychic",
+    "script": {
+      "m_my_element_wind": [
+        "20"
+      ],
+      "m_my_element_ghost": [
+        "20"
       ]
     }
   },
@@ -12365,6 +12417,39 @@
       ],
       "Knuckle Boost": [
         "9===15"
+      ]
+    }
+  },
+  "16093": {
+    "id": 16093,
+    "aegisName": "Coolant_Injection",
+    "name": "Coolant Injection [2]",
+    "unidName": "Club",
+    "resName": "Coolant_Injection",
+    "description": "เข็มฉีดที่ถูกประดิษฐ์ให้สามารถใส่สารทำความเย็นในปลอกที่ร้อนระอุได้\n^ffffff_^000000 \nไม่สามารถทำลายได้, เพิ่ม Damage ทางกายภาพระยะไกล 10%\nทุก ๆ การอัพเกรด 1 ขั้น ATK + 1%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Cart Cannon 25%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage ทางกายภาพระยะไกล ขึ้นอีก 15%\nประเภท : ^777777Mace^000000 พลังโจมตี : ^777777210^000000\nน้ำหนัก : ^777777140^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Genetic^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 263,
+    "itemLevel": 4,
+    "attack": 210,
+    "defense": null,
+    "weight": 140,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Genetic"
+    ],
+    "script": {
+      "range": [
+        "10",
+        "11===15"
+      ],
+      "atkPercent": [
+        "1---1"
+      ],
+      "Cart Cannon": [
+        "9===25"
       ]
     }
   },
@@ -27352,6 +27437,95 @@
       ]
     }
   },
+  "24634": {
+    "id": 24634,
+    "aegisName": "S_Pickyrush_Weapon",
+    "name": "Picky Rush Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา\nเพิ่ม Damage ทางกายภาพระยะไกล 3%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางกายภาพระยะไกลขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพระยะไกลขึ้นอีก 4%\nเมื่อสวมใส่ Picky Rush Shadow Weapon/Shield/Armor ร่วมกัน,\nเพิ่ม Damage สกิล Picky Peck % เท่ากับครึ่งหนึ่งของค่าอัพเกรดรวมกัน\nเมื่อสวมใส่ร่วมกับ Doram Physical Shadow Shoes,\nเพิกเฉยต่อพลังป้องกันทางกายภาพของทุกเผ่ายกเว้น Player 40% และเพิกเฉยต่อพลังป้องกันทางกายภาพเพิ่มอีกตามค่าอัพเกรดรวมกันของ Picky Rush Shadow Weapon และ Doram Physical Shadow Shoes\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Summoner (Doram)^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "Summoner (Doram)"
+    ],
+    "script": {
+      "range": [
+        "3",
+        "7===3",
+        "9===4"
+      ],
+      "Picky Peck": [
+        "EQUIP[Picky Rush Shadow Shield&&Picky Rush Shadow Armor]REFINE[shadowWeapon,shadowShield,shadowArmor==2]---1"
+      ],
+      "p_pene_race_all": [
+        "EQUIP[Doram Physical Shadow Shoes]40",
+        "EQUIP[Doram Physical Shadow Shoes]REFINE[shadowWeapon,shadowBoot==1]---1"
+      ]
+    }
+  },
+  "24635": {
+    "id": 24635,
+    "aegisName": "S_Pickyrush_Shield",
+    "name": "Picky Rush Shadow Shield",
+    "unidName": "Shadow Shield",
+    "resName": "쉴드쉐도우",
+    "description": "โล่เล็กที่สามารถสวมใส่ที่แขนได้ สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์การป้องกันของมันจะลดน้อยลง\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาดขึ้นอีก 1%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shield^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Summoner (Doram)^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 527,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Shield",
+    "compositionPos": null,
+    "usableClass": [
+      "Summoner (Doram)"
+    ],
+    "script": {
+      "p_size_all": [
+        "5",
+        "2---1"
+      ]
+    }
+  },
+  "24636": {
+    "id": 24636,
+    "aegisName": "S_Pickyrush_Armor",
+    "name": "Picky Rush Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우",
+    "description": "ชุดเกราะที่เพิ่มพลังป้องกันเมื่อสวมใส่เพิ่มบนเกราะอีกที สามารถใส่แบบชิ้นเดียวได้ แต่ความสามารถในการป้องกันจะลดลงไปอีก\nเพิ่ม Damage สกิล Picky Peck 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage สกิล Picky Peck ขึ้นอีก 1%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Armor^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Summoner (Doram)^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Armor",
+    "compositionPos": null,
+    "usableClass": [
+      "Summoner (Doram)"
+    ],
+    "script": {
+      "Picky Peck": [
+        "5",
+        "2---1"
+      ]
+    }
+  },
   "24637": {
     "id": 24637,
     "aegisName": "S_SavageRabbit_Earing",
@@ -33841,6 +34015,53 @@
       ],
       "acd": [
         "12===5"
+      ]
+    }
+  },
+  "28948": {
+    "id": 28948,
+    "aegisName": "Doram_Shield",
+    "name": "Doram Shield [1]",
+    "unidName": "Shield",
+    "resName": "Doram_Shield",
+    "description": "ATK +50, MATK +50\nเพิ่มระยะเวลาร่ายสกิล [Picky Peck], [Silvervine Stem Spear] 15%\n―――――――――――――\nทุก ๆ 5 วินาที HP +200\n―――――――――――――\nทุก ๆ ค่าอัพเกรดที่มากกว่า 5 ขึ้นไป\nATK +10, MATK +10 เพิ่มเติม\nประเภท : ^777777Shield^000000 พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777Doram^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 514,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Doram"
+    ],
+    "script": {
+      "atk": [
+        "50",
+        "1===-10",
+        "2===-10",
+        "3===-10",
+        "4===-10",
+        "5===-10",
+        "1---10"
+      ],
+      "matk": [
+        "50",
+        "1===-10",
+        "2===-10",
+        "3===-10",
+        "4===-10",
+        "5===-10",
+        "1---10"
+      ],
+      "vct__Picky Peck": [
+        "-15"
+      ],
+      "vct__Silvervine Stem Spear": [
+        "-15"
       ]
     }
   },
@@ -45312,10 +45533,7 @@
         "LEARN_SKILL[Lava Flow==1]---8"
       ],
       "p_class_all": [
-        "30"
-      ],
-      "ลด Damage ทางกายภาพที่ได้รับจากมอนสเตอร์ระดับ Boss": [
-        "10"
+        "LEARN_SKILL[Power Swing==1]---3"
       ],
       "hp": [
         "REFINE[12]level:2---150"
@@ -50102,6 +50320,66 @@
       ],
       "matkPercent": [
         "EQUIP[Great Hero Boots]===7"
+      ]
+    }
+  },
+  "650004": {
+    "id": 650004,
+    "aegisName": "Up_Humma_Clear",
+    "name": "Patent Huuma Shuriken Clearness [2]",
+    "unidName": "Huuma Shuriken",
+    "resName": "Up_Humma_Clear",
+    "description": "Shuriken ที่นินจาผู้โด่งดังในตำนานใช้งาน\nด้วยพลังงานสีน้ำเงินที่ซ่อนอยู่ มันได้เริ่มเผยพลังอันแท้จริงออกมา\nดูกลมกลืนเข้ากับ Great Hero Boots\n\nไม่สามารถทำลายได้\nทุก ๆ การอัพเกรด 2 ขั้น ATK +15\nทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage ทางกายภาพระยะไกล 2%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage สกิล Swirling Petal 30%, ลดระยะเวลาร่ายแบบแปรผัน 10%\nเมื่ออัพเกรดถึงขั้น 9 ลด Cooldown สกิล Swirling Petal 1 วินาที\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage ทางกายภาพต่อศัตรูธาตุ Fire, Shadow, Holy 20%, เพิ่ม Damage ทางกายภาพต่อมอนสเตอร์ประเภท Undead, Demon, Angel 20%\nเมื่อสวมใส่ร่วมกับ Great Hero Boots, STR +10, เพิ่ม Damage ทางกายภาพระยะไกล 5%\n\nประเภท : ^777777Huuma Shuriken^000000 พลังโจมตี : ^777777290^000000\nน้ำหนัก : ^777777230^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Ninja^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 278,
+    "itemLevel": 4,
+    "attack": 290,
+    "defense": null,
+    "weight": 230,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Ninja"
+    ],
+    "script": {
+      "atk": [
+        "2---15"
+      ],
+      "range": [
+        "3---2",
+        "EQUIP[Great Hero Boots]===5"
+      ],
+      "Swirling Petal": [
+        "7===30"
+      ],
+      "vct": [
+        "7===10"
+      ],
+      "cd__Swirling Petal": [
+        "9===1"
+      ],
+      "p_element_fire": [
+        "11===20"
+      ],
+      "p_element_dark": [
+        "11===20"
+      ],
+      "p_element_holy": [
+        "11===20"
+      ],
+      "p_race_undead": [
+        "11===20"
+      ],
+      "p_race_demon": [
+        "11===20"
+      ],
+      "p_race_angel": [
+        "11===20"
+      ],
+      "str": [
+        "EQUIP[Great Hero Boots]===10"
       ]
     }
   },
