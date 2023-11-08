@@ -35,6 +35,18 @@ export class AppTopBarComponent {
 
   updates: { v: string; date: string; logs: string[] }[] = [
     {
+      v: 'V1.4.3',
+      date: '08-11-2566',
+      logs: [
+        'Fixed SC Triangle shot formula',
+        'Fixed MC Arm cannon base lvl bonus to /120',
+        'Fixed reported bugs',
+        'Added RG active skill (Shield Spell)',
+        'Added GitCross offensive skill (Counter Slash) ',
+        'Added requested items',
+      ],
+    },
+    {
       v: 'V1.4.2',
       date: '07-11-2566',
       logs: [
