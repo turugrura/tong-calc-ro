@@ -105,7 +105,7 @@ export class HpSpCalculator {
       const { hp, hpPercent, sp, spPercent } = this._totalBonus;
       // console.log({ baseHp, baseSp, hp, hpPercent, sp, spPercent });
 
-      let maxHp = Math.floor(baseHp);
+      let maxHp = Math.floor(baseHp * 1.25);
       maxHp = Math.floor(maxHp * (1 + this._totalStatus.totalVit * 0.01));
       maxHp += hp;
       this._maxHp = maxHp + Math.floor(maxHp * ((hpPercent || 0) * 0.01));

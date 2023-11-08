@@ -425,6 +425,7 @@ export const EnchantTable: EntTable[] = [
   { name: 'Burning_Rose', enchants: [null, null, malangdo, malangdo] },
   { name: 'Twin_Edge_B', enchants: [null, null, null, malangdo] },
   { name: 'Twin_Edge_R', enchants: [null, null, null, malangdo] },
+  { name: 'Death_Guidance', enchants: [null, null, malangdo, malangdo] },
 
   { name: 'Tengu_Scroll', enchants: [null, BaseState._1_3, BaseState._1_3, BaseState._1_3] },
 

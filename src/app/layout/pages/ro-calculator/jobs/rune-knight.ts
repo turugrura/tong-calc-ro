@@ -8,6 +8,7 @@ import {
 } from './_character-base.abstract';
 import { LordKnight } from './lord-knight';
 import { ElementType } from '../constants/element-type.const';
+import { InfoForClass } from '../models/info-for-class.model';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 1, 0, 0],
@@ -70,11 +71,16 @@ const jobBonusTable: Record<number, [number, number, number, number, number, num
   58: [4, 4, 5, 10, 8, 4],
   59: [4, 4, 6, 10, 8, 4],
   60: [5, 4, 6, 10, 8, 4],
-  61: [5, 4, 6, 10, 8, 4],
-  62: [5, 4, 6, 10, 8, 4],
-  63: [5, 4, 6, 10, 8, 4],
-  64: [5, 4, 6, 10, 8, 4],
+  61: [5, 4, 7, 10, 8, 4],
+  62: [5, 4, 7, 10, 8, 4],
+  63: [5, 5, 7, 10, 8, 4],
+  64: [5, 5, 7, 10, 8, 4],
   65: [5, 5, 7, 10, 8, 5],
+  66: [5, 5, 7, 10, 9, 5],
+  67: [5, 5, 7, 10, 9, 5],
+  68: [5, 6, 7, 10, 9, 5],
+  69: [5, 6, 7, 10, 9, 5],
+  70: [6, 6, 7, 10, 9, 5],
 };
 
 export class RuneKnight extends CharacterBase {
@@ -126,5 +132,18 @@ export class RuneKnight extends CharacterBase {
     super();
 
     this.inheritBaseClass(new LordKnight());
+  }
+
+  override getMasteryAtk(info: InfoForClass): number {
+    const { weapon } = info;
+    const weaponType = weapon?.data?.typeName;
+    const bonuses = this.bonuses?.masteryAtks || {};
+
+    let sum = 0;
+    for (const [, bonus] of Object.entries(bonuses)) {
+      sum += bonus[`x_${weaponType}_atk`] || 0; // x_spear_atk
+    }
+
+    return sum;
   }
 }

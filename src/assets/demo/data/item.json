@@ -77,6 +77,38 @@
     ],
     "script": {}
   },
+  "1186": {
+    "id": 1186,
+    "aegisName": "Death_Guidance",
+    "name": "Death Guidance [2]",
+    "unidName": "Twohand Sword",
+    "resName": "죽음의인도자",
+    "description": "อาวุธต้องคำสาปที่มีไว้เพื่อทำลายมวลมนุษยชาติ คำสาปของดาบนี้มีผลต่อผู้ใช้อาจทำให้เข้าสู่ด้านมืดได้\nSTR + 5, AGI + 2\nPerfect Dodge + 20\nเมื่อทำการโจมตีแบบประชิดมีโอกาสที่จะทำให้ติดสถานะต่างๆ\nเมื่อทำการโจมตีแบบประชิด มีโอกาสจะสร้างความเสียหาย 100% ในพื้นที่ 11*11 รอบตัวผู้ใช้และฟื้นฟู HP 100% ของค่าความเสียหาย\nถ้าอัพเกรดระดับ 9 ขึ้นไป พื้นที่ที่ได้รับผลจะเพิ่มเป็น 15*15 ช่องรอบๆ ตัวผู้ใช้และความเสียหายจะเพิ่มเป็น 200% รวมถึงค่า HP ที่จะได้รับการฟื้นฟู\nประเภท : ^777777Two Handed Sword^000000 พลังโจมตี : ^777777200^000000\nน้ำหนัก : ^777777200^000000\nอาวุธเลเวล : ^7777774^000000\nเลเวลที่ต้องการ : ^77777770^000000\nอาชีพ : ^777777High Swordman Cls^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 258,
+    "itemLevel": 4,
+    "attack": 200,
+    "defense": null,
+    "weight": 200,
+    "requiredLevel": 70,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Swordman"
+    ],
+    "script": {
+      "str": [
+        "5"
+      ],
+      "agi": [
+        "2"
+      ],
+      "perfectDodge": [
+        "20"
+      ]
+    }
+  },
   "1230": {
     "id": 1230,
     "aegisName": "House_Auger",
@@ -2194,6 +2226,35 @@
       ]
     }
   },
+  "2703": {
+    "id": 2703,
+    "aegisName": "Expert_Ring",
+    "name": "Expert Ring [1]",
+    "unidName": "Accessory",
+    "resName": "익스퍼트링",
+    "description": "เครื่องประดับที่มีพลังยิ่งใหญ่ซ้อนเร้นอยู่ ผู้ที่เข้าใจในตัวมันเท่านั้นที่จะดึงพลังนี้ออกมาได้\nแต่จงระวัง มันมีทั้งด้านดีและด้านร้าย\nDelay ในการใช้สกิลลดลง 5% เพิ่มการใช้ SP จากปกติ 5%\nประเภท : ^777777Accessory^000000\nพลังป้องกัน : ^7777770^000000 น้ำหนัก : ^77777715^000000\nเลเวลที่ต้องการ : ^77777750^000000\nอาชีพ : ^777777Hi-Class ทุกอาชีพ ยกเว้น Novice Cls^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 517,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 15,
+    "requiredLevel": 50,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Hi-Class"
+    ],
+    "script": {
+      "acd": [
+        "5"
+      ],
+      "spPercentCost": [
+        "5"
+      ]
+    }
+  },
   "2729": {
     "id": 2729,
     "aegisName": "Diabolus_Ring",
@@ -2558,6 +2619,30 @@
     "script": {
       "p_race_formless": [
         "20"
+      ]
+    }
+  },
+  "4034": {
+    "id": 4034,
+    "aegisName": "Worm_Tail_Card",
+    "name": "Wormtail Card",
+    "unidName": "Card",
+    "resName": "이름없는카드",
+    "description": "DEX + 2\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Accessory^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 136,
+    "cardPrefix": "Clever",
+    "script": {
+      "dex": [
+        "2"
       ]
     }
   },
@@ -2950,6 +3035,36 @@
       ],
       "resist_Stun": [
         "100"
+      ]
+    }
+  },
+  "4160": {
+    "id": 4160,
+    "aegisName": "Antique_Firelock_Card",
+    "name": "Firelock Soldier Card",
+    "unidName": "Firelock Soldier Card",
+    "resName": "이름없는카드",
+    "description": "STR +2\nMax HP, Max SP +10% ถ้า Foot Gear ถูกตีบวกตั้งแต่ +9 ขึ้นไป\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Foot Gear^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 64,
+    "cardPrefix": "High Level",
+    "script": {
+      "str": [
+        "2"
+      ],
+      "hpPercent": [
+        "9===10"
+      ],
+      "spPercent": [
+        "9===10"
       ]
     }
   },
@@ -4154,15 +4269,10 @@
         "15"
       ],
       "p_size_m": [
-        "20",
-        "EQUIP[Khalitzburg Knightage Card]15"
+        "20"
       ],
       "p_size_l": [
-        "20",
-        "EQUIP[Khalitzburg Knightage Card]15"
-      ],
-      "ลดพลังโจมตีทางกายภาพและทางเวทย์ที่ได้รับจากมอนสเตอร์ขนาดกลางและขนาดใหญ่ลง": [
-        "EQUIP[Khalitzburg Knightage Card]5"
+        "20"
       ]
     }
   },
@@ -4749,6 +4859,32 @@
     "cardPrefix": "Rainstorm",
     "script": {
       "Severe Rainstorm": [
+        "20",
+        "WEAPON_LEVEL[4]===20",
+        "10===20"
+      ]
+    }
+  },
+  "4696": {
+    "id": 4696,
+    "aegisName": "Real_Alphoccio_Card",
+    "name": "True Alphoccio Basil Card",
+    "unidName": "True Alphoccio Basil Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่มความแรงสกิล Reverberation 20% \nเพิ่มความแรงสกิล Reverberation อีก 20% เมื่ออาวุธเลเวล 4 \nเพิ่มความแรงสกิล Reverberation อีก 20% เมื่ออัพเกรดถึงขั้น 10 ขึ้นไป\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Sound Shock",
+    "script": {
+      "Reverberation": [
         "20",
         "WEAPON_LEVEL[4]===20",
         "10===20"
@@ -9570,6 +9706,33 @@
     ],
     "script": {}
   },
+  "13314": {
+    "id": 13314,
+    "aegisName": "Huuma_Fluttering_Snow",
+    "name": "Huuma Fluttering Snow",
+    "unidName": "Huuma Shuriken",
+    "resName": "풍마_난설",
+    "description": "Shuriken คุณสมบัติเป็นธาตุน้ำ เมื่อใช้งานจะทำให้มีพายุหิมะเกิดขึ้นได้\nMATK + 50.\nมีโอกาสเล็กน้อยที่จะใช้ Skill Snow Flake Draft Lv 1 อัตโนมัติ เมื่อทำการโจมตีระยะประชิด Lv ของ Skill ที่ออกอัตโนมัติจะเพิ่มขึ้นตามระดับการ Up Lv skill.\nประเภท : ^777777Huuma Shuriken^000000 พลังโจมตี : ^777777200^000000\nน้ำหนัก : ^777777150^000000 ธาตุ : ^777777Water^000000\nอาวุธ Lv : ^7777774^000000\nLv ที่ต้องการ : ^777777110^000000\nอาชีพ : ^777777Ninja Cls^000000",
+    "slots": 0,
+    "itemTypeId": 1,
+    "itemSubTypeId": 1026,
+    "itemLevel": 4,
+    "attack": 200,
+    "propertyAtk": "Water",
+    "defense": null,
+    "weight": 150,
+    "requiredLevel": 110,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Ninja Cls"
+    ],
+    "script": {
+      "matk": [
+        "50"
+      ]
+    }
+  },
   "13322": {
     "id": 13322,
     "aegisName": "Metal_Huuma_Shuriken",
@@ -9612,6 +9775,49 @@
       ]
     }
   },
+  "13337": {
+    "id": 13337,
+    "aegisName": "Huuma_Flutter_Snow_IL",
+    "name": "Illusion Huuma Fluttering Snow [2]",
+    "unidName": "Shuriken",
+    "resName": "Huuma_Fluttering_Snow_IL",
+    "description": "Shuriken ที่มีคุณสมบัติเป็นธาตุน้ำ เกิดพายุหิมะปลิวสไวเมื่อสะบัดมัน\nMATK +50\nทุก ๆ การอัพเกรด 3 ขั้น, ATK +30\nทุก ๆ การอัพเกรด 1 ขั้น, เพิ่ม Damage ทางกายภาพระยะไกล 3%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Illusion Apple of Archer,\nลด Variable Cast Time 15%\nเมื่อค่าอัพเกรดของ Illusion Huuma Fluttering Snow และ Illusion Apple of Archer ตั้งแต่ 7 ขึ้นไป, เพิ่ม Damage ของสกิล Swirling Petal 25%\nเมื่อค่าอัพเกรดรวมกันตั้งแต่ 18 ขึ้นไป,\nเพิ่ม Damage ของสกิล Swirling Petal 25%\nเมื่อค่าอัพเกรดรวมกันตั้งแต่ 22 ขึ้นไป,\nลด Cooldown ของสกิล Swirling Petal 1 วินาที\n^ffffff_^000000\nประเภท : ^777777Shuriken^000000 พลังโจมตี : ^777777250^000000\nน้ำหนัก : ^777777150^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777120^000000\nอาชีพที่ใส่ได้ : ^777777Ninja Cls^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 278,
+    "itemLevel": 4,
+    "attack": 250,
+    "propertyAtk": "Water",
+    "defense": null,
+    "weight": 150,
+    "requiredLevel": 120,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Ninja Cls"
+    ],
+    "script": {
+      "matk": [
+        "50"
+      ],
+      "atk": [
+        "3---30"
+      ],
+      "range": [
+        "1---3"
+      ],
+      "vct": [
+        "EQUIP[Illusion Apple of Archer]15"
+      ],
+      "Swirling Petal": [
+        "EQUIP[Illusion Apple of Archer]REFINE[headUpper==7]7===25",
+        "EQUIP[Illusion Apple of Archer]REFINE[headUpper,weapon==18]25"
+      ],
+      "cd__Swirling Petal": [
+        "EQUIP[Illusion Apple of Archer]REFINE[headUpper,weapon==22]1"
+      ]
+    }
+  },
   "13338": {
     "id": 13338,
     "aegisName": "Huuma_Bird_Wing_IL",
@@ -9646,6 +9852,59 @@
       ],
       "range": [
         "EQUIP[Illusion Apple of Archer]REFINE[weapon,headUpper==18]10"
+      ]
+    }
+  },
+  "13345": {
+    "id": 13345,
+    "aegisName": "Humma_Clear",
+    "name": "Huuma Shuriken Clearness [2]",
+    "unidName": "Huuma Shuriken",
+    "resName": "미라쥬풍마수리검",
+    "description": "Shuriken ที่นินจาผู้โด่งดังในตำนานใช้งาน\nดูกลมกลืนเข้ากับ Ancient Hero Boots\nไม่สามารถทำลายได้\n\nทุก ๆ การอัพเกรด 2 ขั้น ATK +10\nทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage ทางกายภาพระยะไกล 2%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage สกิล Swirling Petal 30%\nเมื่ออัพเกรดถึงขั้น 9 ลด Cooldown สกิล Swirling Petal 1 วินาที\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage ทางกายภาพต่อศัตรูธาตุ Fire, Shadow 15%, เพิ่ม Damage ทางกายภาพต่อศัตรูประเภท Undead, Demon 20%\nเมื่อสวมใส่ร่วมกับ Ancient Hero Boots เมื่อโจมตีทางกายภาพ มีโอกาสที่ STR +20, เพิ่ม Damage ทางกายภาพระยะไกล 10% เป็นเวลา 7 วินาที\nประเภท : ^777777Huuma Shuriken^000000 พลังโจมตี : ^777777230^000000\nน้ำหนัก : ^777777130^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Ninja^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 278,
+    "itemLevel": 4,
+    "attack": 230,
+    "defense": null,
+    "weight": 130,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Ninja"
+    ],
+    "script": {
+      "atk": [
+        "2---10"
+      ],
+      "range": [
+        "3---2"
+      ],
+      "Swirling Petal": [
+        "7===30"
+      ],
+      "cd__Swirling Petal": [
+        "9===1"
+      ],
+      "p_element_fire": [
+        "11===15"
+      ],
+      "p_element_dark": [
+        "11===15"
+      ],
+      "p_race_undead": [
+        "11===20"
+      ],
+      "p_race_demon": [
+        "11===20"
+      ],
+      "chance__str": [
+        "EQUIP[Ancient Hero Boots]===20"
+      ],
+      "chance__range": [
+        "EQUIP[Ancient Hero Boots]===10"
       ]
     }
   },
@@ -10389,9 +10648,9 @@
     "script": {
       "atk": [
         "10",
-        "EQUIP[Fallen Warrior Manteau]1---3",
-        "EQUIP[Fallen Warrior Manteau]REFINE[9]str:10---5",
-        "EQUIP[Fallen Warrior Manteau]REFINE[11]str:10---7"
+        "EQUIP[Fallen Warrior Manteau_||Fallen Warrior Manteau]REFINE[garment==1]---3",
+        "EQUIP[Fallen Warrior Manteau_||Fallen Warrior Manteau]REFINE[garment==9]str:10---5",
+        "EQUIP[Fallen Warrior Manteau_||Fallen Warrior Manteau]REFINE[garment==11]str:10---7"
       ],
       "ลด Damage ที่ได้รับจากมอนสเตอร์ประเภท Demi-Human": [
         "1",
@@ -15885,6 +16144,54 @@
       ]
     }
   },
+  "19366": {
+    "id": 19366,
+    "aegisName": "Goibne_Helmet_IL",
+    "name": "Illusion Goibne's Helm [1]",
+    "unidName": "Helm",
+    "resName": "Goibne_Helmet_IL",
+    "description": "เกราะหนึ่งในไม่กี่ชิ้นที่ถูกตีขึ้นโดย Goibne เนื่องจากโดยส่วนมากแล้วเขาจะทำอาวุธเป็นหลัก กล่าวกันว่า เหล่าทวยเทพยกย่องให้เกราะของเขายอดเยี่ยมยิ่งกว่าอาวุธเสียอีก \nVIT +3, MDEF + 3 \nเมื่ออัพเกรดถึงขั้น 7 VIT + 5\nเมื่ออัพเกรดถึงขั้น 9 ลด Delay หลังใช้สกิล 12%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Illusion Goibne's Armor, Illusion Goibne's Spaulders, Illusion Goibne's Greaves VIT + 5, MHP + 15%, MSP + 5%, DEF + 5, MDEF + 15, ต้านทานต่อการโจมตีธาตุ Water, Wind, Earth, Fire 10% \nและถ้าไอเท็มแต่ละส่วนมีขั้นอัพเกรดตั้งแต่ +7 ขึ้นไป MHP เพิ่มอีก +10%\nเมื่อขั้นอัพเกรดรวมกันตั้งแต่ 36 ขึ้นไป\nลด Fixed Cast Time 0.7 วินาที\nเมื่อขั้นอัพเกรดรวมกันตั้งแต่ 40 ขึ้นไป\nลด Delay หลังใช้สกิล 20%\n^ffffff_^000000\nประเภท : ^777777Headgear ^000000 พลังป้องกัน : ^77777725^000000\nตำแหน่ง : ^777777Upper ^000000น้ำหนัก : ^777777100^000000\nเลเวลที่ต้องการ : ^777777130^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพยกเว้น Novice^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 25,
+    "weight": 100,
+    "requiredLevel": 130,
+    "location": "Upper",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "vit": [
+        "3",
+        "7===5",
+        "EQUIP[Illusion Goibne's Armor&&Illusion Goibne's Spaulders&&Illusion Goibne's Greaves]===5"
+      ],
+      "mdef": [
+        "3",
+        "EQUIP[Illusion Goibne's Armor&&Illusion Goibne's Spaulders&&Illusion Goibne's Greaves]===15"
+      ],
+      "acd": [
+        "9===12",
+        "EQUIP[Illusion Goibne's Armor&&Illusion Goibne's Spaulders&&Illusion Goibne's Greaves]REFINE[headUpper,armor,garment,boot==40]20"
+      ],
+      "hpPercent": [
+        "EQUIP[Illusion Goibne's Armor&&Illusion Goibne's Spaulders&&Illusion Goibne's Greaves]===15"
+      ],
+      "spPercent": [
+        "EQUIP[Illusion Goibne's Armor&&Illusion Goibne's Spaulders&&Illusion Goibne's Greaves]===5"
+      ],
+      "def": [
+        "EQUIP[Illusion Goibne's Armor&&Illusion Goibne's Spaulders&&Illusion Goibne's Greaves]===5"
+      ],
+      "fct": [
+        "EQUIP[Illusion Goibne's Armor&&Illusion Goibne's Spaulders&&Illusion Goibne's Greaves]REFINE[headUpper,armor,garment,boot==36]0.7"
+      ]
+    }
+  },
   "19396": {
     "id": 19396,
     "aegisName": "Racing_C_Star",
@@ -15950,6 +16257,50 @@
       ],
       "Espa": [
         "REFINE[11]ACTIVE_SKILL[Esma]30"
+      ]
+    }
+  },
+  "19439": {
+    "id": 19439,
+    "aegisName": "Subject_Aura",
+    "name": "Vicious Mind Aura",
+    "unidName": "Ribbon",
+    "resName": "사념의오오라",
+    "description": "พลังงานบางอย่างที่โอบล้อมร่างกายไว้ \n^ffffff_^000000 \nเมื่อสวมใส่ร่วมกับ Fallen Warrior Manteau [1],\nทุก ๆ Base STR 30, ATK + 5\nทุก ๆ Base AGI 30, ASPD + 3%\nทุก ๆ Base VIT 30 ลด Delay หลังใช้สกิล 4%\nทุก ๆ Base INT 30, MATK + 5, ลดระยะเวลาร่ายแบบแปรผัน 8%\nทุก ๆ Base DEX 30 เพิ่ม Damage ทางกายภาพระยะไกล 1%\nทุก ๆ Base LUK 30, Critical Damage + 3%\nประเภท : ^777777Headgear^000000พลังป้องกัน : ^7777775^000000\nตำแหน่ง : ^777777Lower^000000น้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 5,
+    "weight": 10,
+    "requiredLevel": 170,
+    "location": "Lower",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atk": [
+        "EQUIP[Fallen Warrior Manteau]str:30---5"
+      ],
+      "aspdPercent": [
+        "EQUIP[Fallen Warrior Manteau]agi:30---3"
+      ],
+      "acd": [
+        "EQUIP[Fallen Warrior Manteau]vit:30---4"
+      ],
+      "matk": [
+        "EQUIP[Fallen Warrior Manteau]int:30---5"
+      ],
+      "vct": [
+        "EQUIP[Fallen Warrior Manteau]int:30---8"
+      ],
+      "range": [
+        "EQUIP[Fallen Warrior Manteau]dex:30---1"
+      ],
+      "criDmg": [
+        "EQUIP[Fallen Warrior Manteau]luk:30---3"
       ]
     }
   },
@@ -16968,7 +17319,7 @@
   "20748": {
     "id": 20748,
     "aegisName": "Manteau_Of_Fallen",
-    "name": "Fallen Warrior Manteau",
+    "name": "Fallen Warrior Manteau_",
     "unidName": "Garment",
     "resName": "전사자의망토",
     "description": "เสื้อคลุมในตำนานที่ว่ากันว่าถูกสวมใส่โดยเหล่านักรบผู้กล้าที่ออกไปต่อสู้ และสละชีวิตในสนามรบ\nเมื่อ STR พื้นฐานตั้งแต่ 90 ขึ้นไป, ATK + 10 (ทุกๆ การอัพเกรด 1 ขั้น ATK +2)\nเมื่อ INT พื้นฐานตั้งแต่ 90 ขึ้นไป, MATK + 20 (ทุกๆ การอัพเกรด 1 ขั้น MATK + 3)\nเมื่อ VIT พื้นฐานตั้งแต่ 90 ขึ้นไป, เพิ่มความต้านทานจากการโจมตีธาตุ Neutral 3% (เมื่ออัพเกรดถึงขั้น 8 ขึ้นไป เพิ่มอีก 3% และเมื่ออัพเกรดถึงขั้น 10 ขึ้นไป เพิ่มอีก 4%)\nเมื่อ AGI พื้นฐานตั้งแต่ 90 ขึ้นไป, ASPD + 3% (ทุกๆ การอัพเกรด 2 ขั้น ASPD + 1%)\n(เมื่ออัพเกรดถึงขั้น 10 ขึ้นไป ASPD + 1)\nเมื่อ DEX พื้นฐานตั้งแต่ 90 ขึ้นไป, เพิ่มค่าโจมตีระยะไกล 3% (ทุกๆ การอัพเกรด 2 ขั้น เพิ่มอีก 1%)\nเมื่อ LUK พื้นฐานตั้งแต่ 90 ขึ้นไป เพิ่ม Critical Damage 5% (ทุกๆ การอัพเกรด 1 ขั้น เพิ่มอีก 1%)\nประเภท : ^777777Garment^000000 พลังป้องกัน : ^77777720^000000\nน้ำหนัก : ^77777760^000000\nเลเวลที่ต้องการ : ^777777120^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
@@ -17808,6 +18159,61 @@
         "9===20",
         "11===10",
         "EQUIP[Temporal Luk Boots|||Modified Luk Boots]REFINE[boot==10]30"
+      ]
+    }
+  },
+  "21050": {
+    "id": 21050,
+    "aegisName": "Taegoolyeon_IL",
+    "name": "Illusion Tae Goo Lyeon [2]",
+    "unidName": "Two-Handed Sword",
+    "resName": "Taegoolyeon_IL",
+    "description": "ดาบนี้เป็นที่รู้จักในชื่อดาบแห่งผู้กล้าตะวันออก\nPerfect Dodge +10\nทุก ๆ การอัพเกรด 1 ขั้น เพิ่ม Damage ทางกายภาพระยะไกล 2%\nเมื่ออัพเกรดถึงขั้น 7 ลดปริมาณการใช้ SP 20%\nเมื่ออัพเกรดถึงขั้น 9 ลด Delay หลังใช้สกิล 20%\nเมื่ออัพเกรดถึงขั้น 11, MHP +10%, MSP +10%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Illusion Boots เพิ่ม Damage ทางกายภาพระยะไกล 3%\nเมื่อ Illusion Tae Goo Lyeon และ Illusion Boots อัพเกรดตั้งแต่ 7 ขึ้นไป ลดระยะเวลาร่ายแบบแปรผัน 10%\nเมื่อค่าอัพเกรดรวมกันตั้งแต่ 18 ขึ้นไป ลดระยะเวลาร่ายแบบคงที่ 0.5 วินาที\nเมื่อค่าอัพเกรดรวมกันตั้งแต่ 22 ขึ้นไป เพิ่ม Damage สกิล Dragon Breath, Dragon Breath - WATER 20%\n^ffffff_^000000\nประเภท : ^777777Two-Handed Sword^000000 พลังโจมตี : ^777777250^000000\nน้ำหนัก : ^777777200^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777120^000000\nอาชีพที่ใส่ได้ : ^7777773rd Class Swordman^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 258,
+    "itemLevel": 4,
+    "attack": 250,
+    "defense": null,
+    "weight": 200,
+    "requiredLevel": 120,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Rune Knight",
+      "Royal Guard"
+    ],
+    "script": {
+      "perfectDodge": [
+        "10"
+      ],
+      "range": [
+        "1---2",
+        "EQUIP[Illusion Boots]===3"
+      ],
+      "spPercentCost": [
+        "7===20"
+      ],
+      "acd": [
+        "9===20"
+      ],
+      "hpPercent": [
+        "11===10"
+      ],
+      "spPercent": [
+        "11===10"
+      ],
+      "vct": [
+        "EQUIP[Illusion Boots]REFINE[boot==7]7===10"
+      ],
+      "fct": [
+        "EQUIP[Illusion Boots]REFINE[weapon,boot==18]===0.5"
+      ],
+      "Dragon Breath": [
+        "EQUIP[Illusion Boots]REFINE[weapon,boot==22]===20"
+      ],
+      "Dragon Breath - WATER": [
+        "EQUIP[Illusion Boots]REFINE[weapon,boot==22]===20"
       ]
     }
   },
@@ -29410,6 +29816,38 @@
       "m_my_element_water": [
         "20",
         "1---3"
+      ]
+    }
+  },
+  "27114": {
+    "id": 27114,
+    "aegisName": "OminousSolider_Card",
+    "name": "Ominous Solider Card",
+    "unidName": "Ominous Solider Card",
+    "resName": "이름없는카드",
+    "description": "MHP + 10% DEF + 50 \nทุก ๆ การอัพเกรด 3 ขั้นของ Armor MHP+ 1% \nเมื่อเลเวลของผู้สวมใส่ตั้งแต่ 160 ขึ้นไป DEF+50, VIT+3\n\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Armor^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 16,
+    "cardPrefix": "Firm",
+    "script": {
+      "hpPercent": [
+        "10",
+        "3---1"
+      ],
+      "def": [
+        "50",
+        "SUM[level==160]50"
+      ],
+      "vit": [
+        "SUM[level==160]3"
       ]
     }
   },
@@ -44083,6 +44521,35 @@
       ],
       "range": [
         "EQUIP[Subject Cape (Range)]7"
+      ]
+    }
+  },
+  "420003": {
+    "id": 420003,
+    "aegisName": "CD_In_MouthK",
+    "name": "CD in Mouth K",
+    "unidName": "Ribbon",
+    "resName": "입에무는콤팩트디스크",
+    "description": "คอมแพ็กดิสก์ที่ให้ความรู้สึกเหมือนกับข้อมูลมากมายในแผ่นซีดีถูกป้อนเข้าสู่สมองผ่านทางปาก \n\nเพิ่ม Damage ทางเวทมนตร์ทุกธาตุ 5%\nเมื่อโจมตีทางกายภาพระยะใกล้ทั่วไป มีโอกาสที่สกิล Soul Strike Lv. 10 จะทำงาน\nเมื่อสวมใส่ร่วมกับ Old Parasol, MATK +50, เมื่อโจมตีทางกายภาพทั่วไป มีโอกาสที่สกิล Gravitational Field Lv. 3 จะทำงาน\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^7777770^000000\nตำแหน่ง : ^777777Lower^000000 น้ำหนัก : ^77777720^000000\nเลเวลที่ต้องการ : ^77777710^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 20,
+    "requiredLevel": 10,
+    "location": "Lower",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "m_my_element_all": [
+        "5"
+      ],
+      "matk": [
+        "EQUIP[Old Parasol]50"
       ]
     }
   },
