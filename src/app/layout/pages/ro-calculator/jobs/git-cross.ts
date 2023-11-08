@@ -120,6 +120,25 @@ export class GitCross extends CharacterBase {
         return (1000 + skillLevel * 100) * (baseLevel / 100);
       },
     },
+    {
+      label: 'Counter Slash Lv10',
+      name: 'Counter Slash',
+      value: 'Counter Slash==10',
+      acd: 2,
+      fct: 0,
+      vct: 0,
+      cd: 0,
+      isMelee: true,
+      isIgnoreDef: true,
+      levelList: [],
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { level: baseLevel, jobLevel } = model;
+        const { totalAgi } = status;
+
+        return (300 + skillLevel * 150) * (baseLevel / 120) + totalAgi * 2 + jobLevel * 4;
+      },
+    },
   ];
   protected _activeSkillList: ActiveSkillModel[] = [DarkClaw];
   protected _passiveSkillList: PassiveSkillModel[] = [];
