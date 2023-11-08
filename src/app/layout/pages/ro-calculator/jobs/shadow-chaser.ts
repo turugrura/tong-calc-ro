@@ -116,16 +116,34 @@ export class ShadowChaser extends CharacterBase {
       label: 'Triangle Shot Lv10',
       name: 'Triangle Shot',
       value: 'Triangle Shot==10',
+      acd: 0.5,
+      fct: 0,
+      vct: 1,
+      cd: 0,
+      hit: 3,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const baseLevel = model.level;
+        const { totalAgi } = status;
+
+        return (300 + (skillLevel - 1) * 0.5 * totalAgi) * (baseLevel / 120);
+      },
+    },
+    {
+      label: '[Improved] Triangle Shot Lv10',
+      name: 'Triangle Shot',
+      value: '[Improved] Triangle Shot==10',
       acd: 0.32,
       fct: 0,
       vct: 0,
       cd: 0.2,
-      levelList: [{ label: 'Lv 10', value: 'Triangle Shot==10' }],
+      hit: 3,
       formula: (input: AtkSkillFormulaInput): number => {
-        const { model, skillLevel } = input;
+        const { model, skillLevel, status } = input;
         const baseLevel = model.level;
+        const { totalAgi } = status;
 
-        return skillLevel * 230 * (baseLevel / 100);
+        return (230 * skillLevel + 3 * totalAgi) * (baseLevel / 100);
       },
     },
     {
