@@ -547,6 +547,14 @@ export class Calculator {
       weapon: this.weaponData,
       status: this.status,
       equipmentBonus: this.equipStatus,
+      shieldWeight: this.getShieldData().shieldWeight,
+    };
+  }
+
+  private getShieldData() {
+    return {
+      shieldWeight: this.getItem(this.model.shield)?.weight || 0,
+      shieldRefine: this.mapRefine.get(ItemTypeEnum.shield) || 0,
     };
   }
 
@@ -1961,14 +1969,7 @@ export class Calculator {
       this.totalEquipStatus.range += this.totalEquipStatus.bowRange || 0;
     }
 
-    this._class.setAdditionalBonus({
-      model: this.model,
-      monster: this.monsterData,
-      status: this.status,
-      totalBonus: this.totalEquipStatus,
-      weapon: this.weaponData,
-      equipmentBonus: this.equipStatus,
-    });
+    this._class.setAdditionalBonus(this.infoForClass);
 
     return this;
   }
@@ -2081,13 +2082,8 @@ export class Calculator {
       const { formula, part2, cri, canCri, element, isMatk, isHit100, isIgnoreDef = false, totalHit = 1 } = skillData;
       const baseSkillDamage =
         formula({
-          model: this.model,
-          monster: this.monsterData,
+          ...this.infoForClass,
           skillLevel: Number(skillLevel),
-          status: this.status,
-          totalBonus: this.totalEquipStatus,
-          weapon: this.weaponData,
-          equipmentBonus: this.equipStatus,
           extra: {
             shieldWeight: this.getItem(this.model.shield)?.weight || 0,
             shieldRefine: this.mapRefine.get(ItemTypeEnum.shield) || 0,
@@ -2124,13 +2120,8 @@ export class Calculator {
         const bkBaseSkill = this.baseSkillDamage;
 
         const baseSkillDamage2 = formula2({
-          model: this.model,
-          monster: this.monsterData,
+          ...this.infoForClass,
           skillLevel: Number(skillLevel),
-          status: this.status,
-          totalBonus: this.totalEquipStatus,
-          weapon: this.weaponData,
-          equipmentBonus: this.equipStatus,
           extra: {
             shieldWeight: this.getItem(this.model.shield)?.weight || 0,
             shieldRefine: this.mapRefine.get(ItemTypeEnum.shield) || 0,

@@ -207,6 +207,15 @@ export class RoyalGuard extends CharacterBase {
 
   protected readonly _activeSkillList: ActiveSkillModel[] = [
     {
+      label: 'Shield Spell',
+      name: 'Shield Spell',
+      inputType: 'selectButton',
+      dropdown: [
+        { label: 'Yes', value: 3, skillLv: 3, isUse: true },
+        { label: 'No', value: 0, isUse: false },
+      ],
+    },
+    {
       label: 'Earth Drive',
       name: 'Earth Drive',
       inputType: 'selectButton',
@@ -271,7 +280,7 @@ export class RoyalGuard extends CharacterBase {
   }
 
   override setAdditionalBonus(params: InfoForClass) {
-    const { totalBonus, weapon } = params;
+    const { totalBonus, weapon, shieldWeight } = params;
     const { typeName } = weapon.data;
 
     const { masteryAtks, equipAtks } = this.bonuses;
@@ -284,6 +293,10 @@ export class RoyalGuard extends CharacterBase {
           totalBonus[actualAttr] += value;
         }
       }
+    }
+
+    if (this.isSkillActive('Shield Spell')) {
+      totalBonus.atk += shieldWeight;
     }
 
     return totalBonus;

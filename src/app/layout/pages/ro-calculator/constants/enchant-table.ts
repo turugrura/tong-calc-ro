@@ -254,16 +254,19 @@ const AllState = {
 
 const atkPer = [AtkPercent._1, AtkPercent._2, AtkPercent._3];
 const fs13 = [FS._1, FS._2, FS._3];
+const fs23 = [FS._2, FS._3];
 const fs35 = [FS._3, FS._4, FS._5];
+const fs410 = [FS._4, FS._5, FS._6, FS._7, FS._8, FS._9, FS._10];
 const sh13 = [Sharp._1, Sharp._2, Sharp._3];
+const sh23 = [Sharp._2, Sharp._3];
 // const sh35 = [Sharp._3, Sharp._4, Sharp._5];
 const matk12 = [MatkPercent._1, MatkPercent._2];
 const ea15 = [EA._1, EA._2, EA._3, EA._4, EA._5];
-const ea35 = [EA._3, EA._4, EA._5];
+const ea23 = [EA._2, EA._3];
 const ea410 = [EA._4, EA._5, EA._6, EA._7, EA._8, EA._9, EA._10];
+const sp23 = [Spell._2, Spell._3];
 const sp25 = [Spell._2, Spell._3, Spell._4, Spell._5];
 const sp46 = [Spell._4, Spell._5, Spell._6];
-const fs410 = [FS._4, FS._5, FS._6, FS._7, FS._8, FS._9, FS._10];
 const aspd24 = [AttackDelay._2, AttackDelay._3, AttackDelay._4];
 const cri57 = [Cri._5, Cri._7, Cri._10];
 const TempOpts = {
@@ -396,6 +399,7 @@ interface EntTable {
   enchants: [null, any[], any[], any[]];
 }
 
+const base12 = createBaseStat(1, 2);
 const base15 = createBaseStat(1, 5);
 
 const soutanes = ['Cassock_Str', 'Cassock_Agi', 'Cassock_Vit', 'Cassock_Dex', 'Cassock_Int', 'Cassock_Luk'];
@@ -403,6 +407,8 @@ const specialBonus = [FS._5, FS._6, Spell._4, Spell._5, EA._4, EA._5, Sharp._4, 
 const odin2 = [...cri57, ...createBaseStat(6, 8)];
 const odin3 = [Cri._7, Cri._10, ...createBaseStat(7, 8)];
 const odin4 = [...soutanes, ...specialBonus, Cri._10, ...createBaseStat(7, 8)];
+
+const wing4 = [...ea23, ...fs23, ...sp23, ...sh23, ...matk12, ...specials, ...base12];
 
 export const EnchantTable: EntTable[] = [
   { name: 'Lush_Rose', enchants: [null, null, BaseState._1_3, toyFactory] },
@@ -583,6 +589,7 @@ export const EnchantTable: EntTable[] = [
   { name: 'Robe_Of_Vituperation', enchants: [null, null, allRunes, allRunes] },
 
   { name: 'FaceWorm_Skin_', enchants: [null, specials, BaseState._3_5, BaseState._3_5] },
+  { name: 'Archangel_Wing', enchants: [null, null, null, wing4] },
 
   { name: 'CassockA_STR', enchants: [null, odin2, odin3, odin4] },
   { name: 'CassockA_AGI', enchants: [null, odin2, odin3, odin4] },

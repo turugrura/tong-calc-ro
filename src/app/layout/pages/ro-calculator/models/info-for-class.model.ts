@@ -7,6 +7,7 @@ import { ItemTypeEnum } from '../constants/item-type.enum';
 
 export interface InfoForClass {
   weapon: Weapon;
+  shieldWeight: number;
   monster: PreparedMonsterModel;
   model: Partial<MainModel>;
   status: StatusSummary;
