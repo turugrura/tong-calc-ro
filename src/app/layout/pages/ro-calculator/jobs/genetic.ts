@@ -95,7 +95,6 @@ export class Genetic extends CharacterBase {
       cd: 0,
       isHit100: true,
       isHDefToSDef: true,
-      levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
         const {
           skillLevel,
@@ -106,9 +105,46 @@ export class Genetic extends CharacterBase {
         return skillLevel * 60 + cartModelingLv * 50 * (totalInt / 40);
       },
     },
+    {
+      label: 'Cart Tornado Lv10',
+      name: 'Cart Tornado',
+      value: 'Cart Tornado==10',
+      acd: 1,
+      fct: 0,
+      vct: 0,
+      cd: 2,
+      isMelee: true,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { skillLevel, status } = input;
+        const { baseStr } = status;
+
+        const cartModelingLv = this.learnLv('Cart Remodeling');
+        const cartWeight = this.bonuses.usedSkillMap.get('Cart Weight') || 0;
+
+        return skillLevel * 100 + cartModelingLv * 50 + cartWeight / (150 - baseStr);
+      },
+    },
   ];
 
-  protected readonly _activeSkillList: ActiveSkillModel[] = [CartBoost];
+  protected readonly _activeSkillList: ActiveSkillModel[] = [
+    CartBoost,
+    {
+      label: 'Cart Weight',
+      name: 'Cart Weight',
+      inputType: 'dropdown',
+      dropdown: [
+        { label: '-', value: 0, isUse: false },
+        { label: '1000', value: 1000, isUse: true },
+        { label: '2000', value: 2000, isUse: true },
+        { label: '3000', value: 3000, isUse: true },
+        { label: '4000', value: 4000, isUse: true },
+        { label: '5000', value: 5000, isUse: true },
+        { label: '6000', value: 6000, isUse: true },
+        { label: '7000', value: 7000, isUse: true },
+        { label: '8000', value: 8000, isUse: true },
+      ],
+    },
+  ];
 
   protected readonly _passiveSkillList: PassiveSkillModel[] = [
     {
