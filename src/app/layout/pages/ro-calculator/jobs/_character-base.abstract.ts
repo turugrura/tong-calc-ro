@@ -315,6 +315,10 @@ export abstract class CharacterBase {
     return 0;
   }
 
+  modifyFinalAtk(currentAtk: number, _: InfoForClass) {
+    return currentAtk;
+  }
+
   setAdditionalBonus(params: InfoForClass): EquipmentSummaryModel {
     return params.totalBonus;
   }

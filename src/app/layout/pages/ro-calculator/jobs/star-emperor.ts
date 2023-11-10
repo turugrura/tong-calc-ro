@@ -1,5 +1,13 @@
 import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
+import {
+  ActiveSkillModel,
+  AtkSkillFormulaInput,
+  AtkSkillModel,
+  CharacterBase,
+  PassiveSkillModel,
+} from './_character-base.abstract';
+import { InfoForClass } from '../models/info-for-class.model';
+import { StarGladiator } from './star-gladiator';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [1, 0, 0, 0, 0, 0],
@@ -73,9 +81,87 @@ export class StarEmperor extends CharacterBase {
   protected readonly CLASS_NAME = ClassName.StarEmperor;
   protected readonly JobBonusTable = jobBonusTable;
 
-  protected readonly initialStatusPoint = 40;
+  protected readonly initialStatusPoint = 48;
   protected readonly classNames = ['Star Emperor', 'Star Emperor Cls', 'Star Emperor Class'];
-  protected readonly _atkSkillList: AtkSkillModel[] = [];
-  protected readonly _activeSkillList: ActiveSkillModel[] = [];
+  protected readonly _atkSkillList: AtkSkillModel[] = [
+    {
+      label: 'New Moon Kick Lv7',
+      name: 'New Moon Kick',
+      value: 'New Moon Kick==7',
+      acd: 0,
+      fct: 1,
+      vct: 0,
+      cd: 1,
+      isMelee: true,
+      levelList: [],
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { skillLevel } = input;
+
+        return 700 + skillLevel * 100;
+      },
+    },
+    {
+      label: 'Full Moon Kick Lv10',
+      name: 'Full Moon Kick',
+      value: 'Full Moon Kick==10',
+      acd: 0,
+      fct: 0,
+      vct: 0,
+      cd: 1,
+      isMelee: true,
+      levelList: [],
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
+        const bonus = this.isSkillActive('Lunar Luminance') ? 1.25 : 1;
+
+        return (1100 + skillLevel * 100) * (baseLevel / 100) * bonus;
+      },
+    },
+  ];
+
+  protected readonly _activeSkillList: ActiveSkillModel[] = [
+    {
+      label: 'Lunar Luminance 5',
+      name: 'Lunar Luminance',
+      inputType: 'selectButton',
+      dropdown: [
+        { label: 'Yes', value: 5, skillLv: 5, isUse: true },
+        { label: 'No', value: 0, isUse: false },
+      ],
+    },
+  ];
+
   protected readonly _passiveSkillList: PassiveSkillModel[] = [];
+
+  constructor() {
+    super();
+
+    this.inheritBaseClass(new StarGladiator());
+  }
+
+  x(info: InfoForClass): number {
+    if (!this.isSkillActive('Wrath of')) return 0;
+
+    const { model, status } = info;
+    const { level } = model;
+    const { totalLuk, totalDex } = status;
+
+    return Math.floor((level + totalLuk + totalDex) / 3);
+  }
+
+  override setAdditionalBonus(params: InfoForClass) {
+    const { totalBonus } = params;
+
+    totalBonus.atkPercent += this.x(params);
+
+    return totalBonus;
+  }
+
+  override modifyFinalAtk(currentAtk: number, _params: InfoForClass) {
+    const partyCnt = this.bonuses.usedSkillMap.get('Power');
+    if (partyCnt < 2) return currentAtk;
+
+    return currentAtk * ((100 + partyCnt * 10) / 100);
+  }
 }

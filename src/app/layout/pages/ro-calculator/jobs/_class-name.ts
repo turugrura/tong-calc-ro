@@ -42,6 +42,7 @@ export enum ClassName {
   Taekwondo = 'Taekwondo',
   SoulLinker = 'SoulLinker',
   SoulReaper = 'SoulReaper',
+  StarGladiator = 'StarGladiator',
   StarEmperor = 'StarEmperor',
 
   Rebellion = 'Rebellion',
@@ -68,6 +69,7 @@ export const ClassID = {
   10: ClassName.Mechanic,
   9: ClassName.Genetic,
   3: 'Soul Reaper',
+  33: 'Star Emperor',
   1: ClassName.Rebellion,
   31: ClassName.Doram,
   17: ClassName.Oboro,

@@ -39,6 +39,7 @@ const hpSpIndex: Record<ClassName, number> = {
   [ClassName.Taekwondo]: 38,
   [ClassName.SoulLinker]: 40,
   [ClassName.SoulReaper]: 43,
+  [ClassName.StarGladiator]: 42,
   [ClassName.StarEmperor]: 42,
   [ClassName.Rebellion]: 33,
   [ClassName.Ninja]: 35,
@@ -99,7 +100,7 @@ export class HpSpCalculator {
 
   calculate() {
     try {
-      const baseHp = 18470; //this.hpSpTable[this._dataIndex].baseHp[this._level];
+      const baseHp = this.hpSpTable[this._dataIndex].baseHp[this._level];
       const baseSp = this.hpSpTable[this._dataIndex].baseSp[this._level];
 
       const { hp, hpPercent, sp, spPercent } = this._totalBonus;

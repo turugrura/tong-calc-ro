@@ -181,7 +181,35 @@ export class Kagerou extends CharacterBase {
     },
   ];
 
-  protected readonly _passiveSkillList: PassiveSkillModel[] = [];
+  protected readonly _passiveSkillList: PassiveSkillModel[] = [
+    {
+      label: 'Soul Cutter 5',
+      name: 'Soul Cutter',
+      inputType: 'selectButton',
+      dropdown: [
+        { label: 'Yes', value: 5, isUse: true },
+        { label: 'No', value: 0, isUse: false },
+      ],
+    },
+    {
+      label: 'Illusion - Shadow 5',
+      name: 'Illusion - Shadow',
+      inputType: 'selectButton',
+      dropdown: [
+        { label: 'Yes', value: 5, isUse: true },
+        { label: 'No', value: 0, isUse: false },
+      ],
+    },
+    {
+      label: 'Illusion - Shock 5',
+      name: 'Illusion - Shock',
+      inputType: 'selectButton',
+      dropdown: [
+        { label: 'Yes', value: 5, isUse: true },
+        { label: 'No', value: 0, isUse: false },
+      ],
+    },
+  ];
 
   constructor() {
     super();

@@ -288,7 +288,7 @@ const illusionAcc = [EA._5, FS._6, Spell._5, AttackDelay._4, Fatal._4];
 const tempBoot_3 = ["Bear's_Power", 'Runaway_Magic', 'Speed_Of_Light', 'Muscle_Fool', 'Hawkeye', 'Lucky_Day'];
 const tempBoot_4 = [EA._4, FS._7, Spell._5, AttackDelay._4];
 const kingSmithAcc_2 = ['Gh_md_agi', 'Gh_md_str', 'Gh_md_dex', 'Gh_md_int', 'Gh_md_vit', 'Gh_md_luk'];
-const kingSmithAcc_3 = [EA._4, EA._5, FS._6, FS._7, Spell._4, Spell._5, Fatal._2, Fatal._3, Sharp._3, Sharp._4];
+const kingSmithAcc_3 = [EA._4, EA._5, FS._6, FS._7, Spell._4, Spell._5, Fatal._2, Fatal._3, Sharp._3, Sharp._4, Sharp._5];
 const kingSmithAcc_4 = [...BaseState._3_5];
 const kingSmithMan = [EA._3, EA._4, EA._5, FS._5, FS._6, FS._7, Spell._3, Spell._4, Spell._5, Fatal._2, Fatal._3, Sharp._3, Sharp._4];
 
@@ -426,6 +426,7 @@ export const EnchantTable: EntTable[] = [
   { name: 'Twin_Edge_B', enchants: [null, null, null, malangdo] },
   { name: 'Twin_Edge_R', enchants: [null, null, null, malangdo] },
   { name: 'Death_Guidance', enchants: [null, null, malangdo, malangdo] },
+  { name: 'Destruction_Rod', enchants: [null, null, malangdo, malangdo] },
 
   { name: 'Tengu_Scroll', enchants: [null, BaseState._1_3, BaseState._1_3, BaseState._1_3] },
 
@@ -584,6 +585,8 @@ export const EnchantTable: EntTable[] = [
 
   { name: 'Headband_Of_Power_IL', enchants: [null, null, BaseState._1_4, illusionDun] },
   { name: 'Apple_Of_Archer_IL', enchants: [null, null, BaseState._1_4, illusionDun] },
+  { name: 'Fancy_Flower_IL', enchants: [null, null, BaseState._1_4, illusionDun] },
+  { name: 'Goibne_Helmet_IL', enchants: [null, null, BaseState._1_4, illusionDun] },
   { name: 'Boots_IL', enchants: [null, null, BaseState._1_4, illusionDun] },
 
   { name: 'Robe_Of_Flattery', enchants: [null, null, allRunes, allRunes] },

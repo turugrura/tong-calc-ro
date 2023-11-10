@@ -2808,6 +2808,59 @@
       "raceName": "Plant"
     }
   },
+  "20536": {
+    "id": 20536,
+    "dbname": "MD_ED_B_YGNIZEM",
+    "name": "Unknown Swordsman",
+    "spawn": "",
+    "stats": {
+      "attackRange": 1,
+      "level": 180,
+      "health": 75500000,
+      "sp": 1,
+      "str": 188,
+      "int": 142,
+      "vit": 165,
+      "dex": 278,
+      "agi": 177,
+      "luk": 105,
+      "rechargeTime": 124,
+      "atk1": 5585,
+      "atk2": 2532,
+      "attack": {
+        "minimum": 4836,
+        "maximum": 7070
+      },
+      "magicAttack": {
+        "minimum": 2094,
+        "maximum": 3613
+      },
+      "defense": 585,
+      "baseExperience": 5885540,
+      "jobExperience": 4780000,
+      "aggroRange": 10,
+      "escapeRange": 12,
+      "movementSpeed": 100,
+      "attackSpeed": 384,
+      "attackedSpeed": 288,
+      "element": 43,
+      "scale": 1,
+      "race": 7,
+      "magicDefense": 235,
+      "hit": 557,
+      "flee": 628,
+      "ai": "MONSTER_TYPE_21",
+      "mvp": 0,
+      "class": 1,
+      "attr": 8,
+      "res": 0,
+      "mres": 0,
+      "elementName": "Fire 2",
+      "elementShortName": "Fire",
+      "scaleName": "Medium",
+      "raceName": "DemiHuman"
+    }
+  },
   "20573": {
     "id": 20573,
     "dbname": "MD_C_AMDARAIS",

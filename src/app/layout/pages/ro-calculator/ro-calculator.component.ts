@@ -47,6 +47,7 @@ import { AllowLeftWeaponMapper } from './constants/allow-left-weapon-mapper';
 import { Kagerou } from './jobs/kagerou';
 import { Genetic } from './jobs/genetic';
 import { LayoutService } from '../../service/app.layout.service';
+import { StarEmperor } from './jobs/star-emperor';
 
 interface MonsterSelectItemGroup extends SelectItemGroup {
   items: any[];
@@ -66,6 +67,7 @@ const Characters: DropdownModel[] = [
   { label: ClassID[10], value: 10, instant: new Mechanic() },
   { label: ClassID[9], value: 9, instant: new Genetic() },
   { label: ClassID[3], value: 3, instant: new SoulReaper() },
+  { label: ClassID[33], value: 33, instant: new StarEmperor() },
   // { label: ClassID[17], value: 3, instant: new Oboro() },
   { label: ClassID[18], value: 18, instant: new Kagerou() },
   { label: ClassID[1], value: 1, instant: new Rebelion() },

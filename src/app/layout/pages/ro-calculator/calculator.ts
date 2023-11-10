@@ -1227,10 +1227,13 @@ export class Calculator {
     const equipSkillMultiplier = this.toPercent(100 + (this.totalEquipStatus[skillName] || 0));
     const criMultiplier = canCri ? this.toPercent((criDmg || 0) + 100) : 1;
     const dmgMultiplier = this.toPercent(0 + 100);
+    const infoForClass = this.infoForClass;
 
-    const skillFormula = (totalAtk: number) => {
+    const skillFormula = (_totalAtk: number) => {
+      const finalAtk = this._class.modifyFinalAtk(_totalAtk, infoForClass);
+
       if (canCri) {
-        const criApplied = this.floor(totalAtk * criMultiplier) - softDef;
+        const criApplied = this.floor(finalAtk * criMultiplier) - softDef;
         const baseSkillApplied = this.floor(criApplied * baseSkillMultiplier);
         const equipSkillApplied = this.floor(baseSkillApplied * equipSkillMultiplier);
         const dmgMultiApplied = this.floor(equipSkillApplied * dmgMultiplier);
@@ -1243,7 +1246,7 @@ export class Calculator {
       }
 
       // if (skillName === 'Kunai Splash') {
-      //   let total = this.floor(totalAtk * baseSkillMultiplier);
+      //   let total = this.floor((totalAtk+additionalAtk) * baseSkillMultiplier);
       //   total = this.floor(total * hardDef - softDef);
       //   total = this.floor(total * rangedMultiplier);
       //   total = this.floor(total * equipSkillMultiplier);
@@ -1251,7 +1254,7 @@ export class Calculator {
       //   return this.toPreventNegativeDmg(total);
       // }
 
-      const rangedApplied = this.floor(totalAtk * rangedMultiplier);
+      const rangedApplied = this.floor(finalAtk * rangedMultiplier);
       const dmgMultiApplied = this.floor(rangedApplied * dmgMultiplier);
       const baseSkillApplied = this.floor(dmgMultiApplied * baseSkillMultiplier);
       const equipSkillApplied = this.floor(baseSkillApplied * equipSkillMultiplier);
@@ -1381,6 +1384,11 @@ export class Calculator {
     const mysticAmp = 1 + this.toPercent(this.totalEquipStatus['mysticAmp'] || 0);
     const { matkPercent } = this.totalEquipStatus;
     const comet = this.getCometAmp();
+    // const elementBonus =
+    //   (this.totalEquipStatus.m_my_element_all || 0) +
+    //   (this.totalEquipStatus[`m_my_element_${this.propertySkill.toLowerCase()}`] || 0);
+    // const elementMultiplier = this.toPercent(elementBonus + this.calcElementMultiplier('m'));
+    // console.log({ elementMultiplier });
 
     const formula = (atk: number) => {
       const mysticAmpApplied = this.floor(atk * mysticAmp + this.totalEquipMatk);
@@ -1396,7 +1404,8 @@ export class Calculator {
 
     if (weaponMatk) return formula(this.totalStatusMatk + weaponMatk);
 
-    this.totalMinMatk = formula(this.totalStatusMatk + this.weaponMinMatk + 1);
+    const extra = this.weaponMinMatk > 0 ? 1 : 0;
+    this.totalMinMatk = formula(this.totalStatusMatk + this.weaponMinMatk + extra);
     this.totalMaxMatk = formula(this.totalStatusMatk + this.weaponMaxMatk);
 
     return this;
@@ -1581,7 +1590,7 @@ export class Calculator {
     }
 
     // LEARN_SKILL[Meow Meow==5]2
-    const [_raw, toRemove_, learnCond] = restCondition.match(/(LEARN_SKILL\[(.+?)\]=?=?=?)\d+/) ?? [];
+    const [_raw, toRemove_, learnCond] = restCondition.match(/(LEARN_SKILL\[(.+?)\]=?=?=?-?)\d+/) ?? [];
     if (learnCond) {
       const [skillName, skillLv] = learnCond.split('==');
       const isPass = this.learnedSkillMap.get(skillName) >= Number(skillLv);
