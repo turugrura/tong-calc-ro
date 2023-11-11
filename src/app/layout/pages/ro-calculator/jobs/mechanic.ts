@@ -137,7 +137,7 @@ export class Mechanic extends CharacterBase {
         const size = { s: 2, m: 1, l: 0 };
         const additional = 50 * skillLevel * size[monsterSize];
 
-        return (additional + 300 + skillLevel * 300) * (baseLevel / 100);
+        return (additional + 300 + skillLevel * 300) * (baseLevel / 120);
       },
     },
     {
