@@ -411,26 +411,31 @@
               </ng-template>
             </p-dropdown>
           </div>
-          <div class="col-6" style="min-width: 100px">
+          <div class="col-8" style="min-width: 100px">
             <p-dropdown
               [options]="propertyAtkList"
               [(ngModel)]="model.propertyAtk"
               [disabled]="!model.weapon"
               [showClear]="true"
-              placeholder="Element"
+              placeholder="Element convert"
               (onChange)="onPropertyAtkChange()"
             >
               <ng-template let-item pTemplate="selectedItem">
                 <div class="flex gap-1" *ngIf="model.propertyAtk">
-                  <div class="{{ 'property_' + item.element }}">
+                  <!-- <div class="{{ 'property_' + item.element }}">
                     {{ item.label }}
+                  </div> -->
+                  <div class="flex gap-1 item_template">
+                    <img src="assets/demo/images/items/{{ item.img }}.png" alt="" class="item_img" />
+                    <div class="{{ 'property_' + item.element }}">{{ item.label }}</div>
                   </div>
                 </div>
               </ng-template>
               <ng-template let-item pTemplate="item">
                 <div class="flex gap-1">
-                  <div class="{{ 'property_' + item.element }}">
-                    {{ item.label }}
+                  <div class="flex gap-1 item_template">
+                    <img src="assets/demo/images/items/{{ item.img }}.png" alt="" class="item_img" />
+                    <div class="{{ 'property_' + item.element }}">{{ item.label }}</div>
                   </div>
                 </div>
               </ng-template>

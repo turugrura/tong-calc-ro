@@ -1,5 +1,6 @@
 import { ClassName } from './_class-name';
 import { ActiveSkillModel, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
+import { ElementType } from '../constants/element-type.const';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {};
 
@@ -19,12 +20,18 @@ export class Taekwondo extends CharacterBase {
   protected readonly _atkSkillList: AtkSkillModel[] = [];
   protected readonly _activeSkillList: ActiveSkillModel[] = [
     {
-      inputType: 'selectButton',
-      label: 'Seven Wind Lv7',
+      label: 'Seven Wind',
       name: 'Seven Wind',
+      inputType: 'dropdown',
       dropdown: [
-        { label: 'Yes', value: 7, skillLv: 7, isUse: true, bonus: { mildwind: 1 } },
-        { label: 'No', value: 0, isUse: false },
+        { label: '-', value: 0, isUse: false },
+        { label: '1 Earth', value: 1, isUse: true, bonus: { mildwind: 1, propertyAtk: ElementType.Earth } },
+        { label: '2 Wind', value: 2, isUse: true, bonus: { mildwind: 1, propertyAtk: ElementType.Wind } },
+        { label: '3 Water', value: 3, isUse: true, bonus: { mildwind: 1, propertyAtk: ElementType.Water } },
+        { label: '4 Fire', value: 4, isUse: true, bonus: { mildwind: 1, propertyAtk: ElementType.Fire } },
+        { label: '5 Ghost', value: 5, isUse: true, bonus: { mildwind: 1, propertyAtk: ElementType.Ghost } },
+        { label: '6 Darkness', value: 6, isUse: true, bonus: { mildwind: 1, propertyAtk: ElementType.Dark } },
+        { label: '7 Holy', value: 7, isUse: true, bonus: { mildwind: 1, propertyAtk: ElementType.Holy } },
       ],
     },
   ];

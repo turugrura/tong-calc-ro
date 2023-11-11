@@ -7,7 +7,6 @@ import { ItemTypeId } from './constants/item.const';
 import { RoService } from 'src/app/demo/service/ro.service';
 import { ItemModel } from './models/item.model';
 import { ConfirmationService, MenuItem, MessageService, PrimeIcons, SelectItemGroup } from 'primeng/api';
-import { ElementType } from './constants/element-type.const';
 import { ActiveSkillModel, AtkSkillModel, CharacterBase, PassiveSkillModel } from './jobs/_character-base.abstract';
 import { Ranger } from './jobs/ranger';
 import { MonsterModel } from './models/monster.model';
@@ -27,7 +26,6 @@ import { PresetTableComponent } from './preset-table/preset-table.component';
 import { ClassID } from './jobs/_class-name';
 import { JobBuffs } from './constants/job-buffs';
 import { Mechanic } from './jobs/mechanic';
-import { MainModel } from './models/main.model';
 import { RoyalGuard } from './jobs/royal-guard';
 import { environment } from 'src/environments/environment';
 import { Doram } from './jobs/doram';
@@ -48,6 +46,9 @@ import { Kagerou } from './jobs/kagerou';
 import { Genetic } from './jobs/genetic';
 import { LayoutService } from '../../service/app.layout.service';
 import { StarEmperor } from './jobs/star-emperor';
+import { createMainModel } from './utils/create-main-model';
+import { FoodStatList } from './constants/food-stat-list';
+import { ElementConverterList } from './constants/element-converter-list';
 
 interface MonsterSelectItemGroup extends SelectItemGroup {
   items: any[];
@@ -105,130 +106,8 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   isInProcessingPreset = false;
 
   env = environment;
-  model: MainModel = {
-    class: 1,
-    level: 99,
-    jobLevel: 1,
-    str: 1,
-    itemStr: undefined,
-    jobStr: undefined,
-    agi: 1,
-    itemAgi: undefined,
-    jobAgi: undefined,
-    vit: 1,
-    itemVit: undefined,
-    jobVit: undefined,
-    int: 1,
-    itemInt: undefined,
-    jobInt: undefined,
-    dex: 1,
-    itemDex: undefined,
-    jobDex: undefined,
-    luk: 1,
-    itemLuk: undefined,
-    jobLuk: undefined,
-    selectedAtkSkill: undefined,
-    propertyAtk: undefined,
-    rawOptionTxts: [],
-    weapon: undefined,
-    weaponRefine: undefined,
-    weaponCard1: undefined,
-    weaponCard2: undefined,
-    weaponCard3: undefined,
-    weaponCard4: undefined,
-    weaponEnchant1: undefined,
-    weaponEnchant2: undefined,
-    weaponEnchant3: undefined,
-    leftWeapon: undefined,
-    leftWeaponRefine: undefined,
-    leftWeaponCard1: undefined,
-    leftWeaponCard2: undefined,
-    leftWeaponCard3: undefined,
-    leftWeaponCard4: undefined,
-    leftWeaponEnchant1: undefined,
-    leftWeaponEnchant2: undefined,
-    leftWeaponEnchant3: undefined,
-    ammo: undefined,
-    headUpper: undefined,
-    headUpperRefine: undefined,
-    headUpperCard: undefined,
-    headUpperEnchant1: undefined,
-    headUpperEnchant2: undefined,
-    headUpperEnchant3: undefined,
-    headMiddle: undefined,
-    headMiddleCard: undefined,
-    headMiddleEnchant1: undefined,
-    headMiddleEnchant2: undefined,
-    headMiddleEnchant3: undefined,
-    headLower: undefined,
-    headLowerEnchant1: undefined,
-    headLowerEnchant2: undefined,
-    headLowerEnchant3: undefined,
-    armor: undefined,
-    armorRefine: undefined,
-    armorCard: undefined,
-    armorEnchant1: undefined,
-    armorEnchant2: undefined,
-    armorEnchant3: undefined,
-    shield: undefined,
-    shieldRefine: undefined,
-    shieldCard: undefined,
-    shieldEnchant1: undefined,
-    shieldEnchant2: undefined,
-    shieldEnchant3: undefined,
-    garment: undefined,
-    garmentRefine: undefined,
-    garmentCard: undefined,
-    garmentEnchant1: undefined,
-    garmentEnchant2: undefined,
-    garmentEnchant3: undefined,
-    boot: undefined,
-    bootRefine: undefined,
-    bootCard: undefined,
-    bootEnchant1: undefined,
-    bootEnchant2: undefined,
-    bootEnchant3: undefined,
-    accLeft: undefined,
-    accLeftCard: undefined,
-    accLeftEnchant1: undefined,
-    accLeftEnchant2: undefined,
-    accLeftEnchant3: undefined,
-    accRight: undefined,
-    accRightCard: undefined,
-    accRightEnchant1: undefined,
-    accRightEnchant2: undefined,
-    accRightEnchant3: undefined,
-    pet: undefined,
-
-    costumeEnchantUpper: undefined,
-    costumeEnchantMiddle: undefined,
-    costumeEnchantLower: undefined,
-    costumeEnchantGarment: undefined,
-    costumeEnchantGarment4: undefined,
-
-    shadowWeapon: undefined,
-    shadowWeaponRefine: undefined,
-    shadowArmor: undefined,
-    shadowArmorRefine: undefined,
-    shadowShield: undefined,
-    shadowShieldRefine: undefined,
-    shadowBoot: undefined,
-    shadowBootRefine: undefined,
-    shadowEarring: undefined,
-    shadowEarringRefine: undefined,
-    shadowPendant: undefined,
-    shadowPendantRefine: undefined,
-
-    skillBuffs: [],
-
-    activeSkills: [],
-    passiveSkills: [],
-    consumables: [],
-    consumables2: [],
-    aspdPotion: undefined,
-    aspdPotions: [],
-  };
-  private emptyModel = this.cloneModel(this.model);
+  model = createMainModel();
+  private emptyModel = createMainModel();
   model2: ClassModel = { rawOptionTxts: [] };
 
   basicOptions = createMainStatOptionList();
@@ -237,7 +116,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   mainStatusList = createNumberDropdownList(1, 130);
   levelList = createNumberDropdownList(99, 185);
   jobList = createNumberDropdownList(1, 65);
-  propertyAtkList = Object.values(ElementType).map<DropdownModel>((a) => ({ label: a, value: a, element: a }));
+  propertyAtkList = ElementConverterList;
 
   optionList: any[] = createExtraOptionList();
   itemList: ItemListModel = {} as any;
@@ -317,38 +196,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   passiveSkills: PassiveSkillModel[] = [];
   activeSkills: ActiveSkillModel[] = [];
   consumableList: DropdownModel[] = [];
-  consumableList2: DropdownModel[][] = [
-    [
-      { label: 'Str 10', value: 14854 },
-      { label: 'Str 15', value: 14616 },
-      // { label: '20', value: 12429 },
-    ],
-    [
-      { label: 'Agi 10', value: 14853 },
-      { label: 'Agi 15', value: 14618 },
-      // { label: '20', value: 12433 },
-    ],
-    [
-      { label: 'Vit 10', value: 14849 },
-      { label: 'Vit 15', value: 14617 },
-      // { label: '20', value: 12431 },
-    ],
-    [
-      { label: 'Int 10', value: 14852 },
-      { label: 'Int 15', value: 14619 },
-      // { label: '20', value: 12430 },
-    ],
-    [
-      { label: 'Dex 10', value: 14851 },
-      { label: 'Dex 15', value: 14620 },
-      // { label: '20', value: 12432 },
-    ],
-    [
-      { label: 'Luk 10', value: 14850 },
-      { label: 'Luk 15', value: 14621 },
-      // { label: '20', value: 12434 },
-    ],
-  ];
+  consumableList2: DropdownModel[][] = FoodStatList;
   aspdPotionList: DropdownModel[] = [
     { label: 'Concentration Potion', value: 645 },
     { label: 'Awakening Potion', value: 656 },
@@ -868,7 +716,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
   private resetModel() {
     const { class: _class, level, jobLevel } = this.model;
-    this.model = { ...this.cloneModel(this.emptyModel), class: _class, level, jobLevel };
+    this.model = { ...createMainModel(), class: _class, level, jobLevel };
   }
 
   private getPresetList(): DropdownModel[] {
@@ -1027,7 +875,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
   private setModelByJSONString(savedModel: string | any) {
     const savedData = typeof savedModel === 'string' ? JSON.parse(savedModel || '{}') : savedModel;
-    const model = this.cloneModel(this.emptyModel);
+    const model = createMainModel();
     if (!savedData) {
       this.model = model;
       return;

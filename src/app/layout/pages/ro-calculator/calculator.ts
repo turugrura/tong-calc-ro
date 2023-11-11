@@ -360,8 +360,9 @@ export class Calculator {
   private hpSpCalculator = new HpSpCalculator();
 
   private _class: CharacterBase;
-  private propertyAtk = ElementType.Neutral;
-  private propertySkill = ElementType.Neutral;
+  private propertyBasicAtk = ElementType.Neutral;
+  private propertySkillAtk = ElementType.Neutral;
+  private propertyWindmind: ElementType;
   private skillAccuracy = 0;
   private skillPene = 0;
   private sizePenalty = 1;
@@ -828,10 +829,11 @@ export class Calculator {
 
   private calcPropertyAtkType() {
     const weaponEle = this.weaponData?.data?.propertyAtk;
-    const scroll = this.model.propertyAtk;
+    const buff = this.model.propertyAtk;
+    const windmind = this.propertyWindmind;
     const ammo = this.equipItem.get(ItemTypeEnum.ammo)?.propertyAtk;
 
-    this.propertyAtk = scroll ?? ammo ?? weaponEle ?? ElementType.Neutral;
+    this.propertyBasicAtk = windmind ?? buff ?? ammo ?? weaponEle ?? ElementType.Neutral;
   }
 
   private calcPropertyMultiplier(specifiedProperty?: ElementType) {
@@ -842,7 +844,7 @@ export class Calculator {
       return this;
     }
 
-    const pMultiplier = ElementMapper[this.monster.stats.elementName][this.propertyAtk];
+    const pMultiplier = ElementMapper[this.monster.stats.elementName][this.propertyBasicAtk];
     const viApplied = this.toPercent((this.totalEquipStatus['vi'] || 0) + 100) * pMultiplier;
     this.propertyMultiplier = this.toPercent(viApplied);
 
@@ -1299,11 +1301,11 @@ export class Calculator {
     const { softMDef } = this.monsterData;
     const hardDef = isIgnoreDef ? 1 : this.dmgReductionByMHardDef;
 
-    this.calcPropertyMultiplier(this.propertySkill);
+    this.calcPropertyMultiplier(this.propertySkillAtk);
 
     const elementBonus =
       (this.totalEquipStatus.m_my_element_all || 0) +
-      (this.totalEquipStatus[`m_my_element_${this.propertySkill.toLowerCase()}`] || 0);
+      (this.totalEquipStatus[`m_my_element_${this.propertySkillAtk.toLowerCase()}`] || 0);
     const elementMultiplier = this.toPercent(100 + elementBonus);
     const baseSkillMultiplier = this.toPercent(this.baseSkillDamage);
     const equipSkillMultiplier = this.toPercent(100 + (this.totalEquipStatus[skillName] || 0));
@@ -1805,6 +1807,9 @@ export class Calculator {
 
     this.totalEquipStatus = { ...this.allStatus, matk: 0 - baseMatk };
     this.equipStatus = {} as any;
+    this.propertyBasicAtk = ElementType.Neutral;
+    this.propertySkillAtk = ElementType.Neutral;
+    this.propertyWindmind = undefined;
 
     const updateTotalStatus = (attr: keyof EquipmentSummaryModel, value) => {
       if (this.totalEquipStatus[attr]) {
@@ -1885,6 +1890,11 @@ export class Calculator {
 
     for (const [skillName, scripts] of Object.entries(this.equipAtkSkillBonus)) {
       for (const [attr, value] of Object.entries(scripts)) {
+        if (attr === 'propertyAtk') {
+          this.propertyWindmind = value as any;
+          continue;
+        }
+
         let val = Number(value);
         if (attr === 'atk') val = 0;
         if (attr === 'final') {
@@ -1901,6 +1911,11 @@ export class Calculator {
     }
     for (const [skillName, scripts] of Object.entries(this.masteryAtkSkillBonus)) {
       for (const [attr, value] of Object.entries(scripts)) {
+        if (attr === 'propertyAtk') {
+          this.propertyWindmind = value as any;
+          continue;
+        }
+
         const val = Number(value);
         if (attr === 'atk') continue;
         if (attr === 'matk') continue;
@@ -2084,7 +2099,7 @@ export class Calculator {
     this.skillAccuracy = this.accuracy;
     this.skillPene = this.damageSummary.totalPene;
     this.skillTotalHits = 0;
-    this.propertySkill = ElementType.Neutral;
+    this.propertySkillAtk = ElementType.Neutral;
 
     if (isValidSkill) {
       this._class.activeSkills;
@@ -2098,7 +2113,7 @@ export class Calculator {
             shieldRefine: this.mapRefine.get(ItemTypeEnum.shield) || 0,
           },
         }) + this.calcFlatDmg();
-      this.propertySkill = element || this.propertyAtk;
+      this.propertySkillAtk = element || this.propertyBasicAtk;
       this.baseSkillDamage = this.floor(baseSkillDamage);
       this.isMagicalSkill = isMatk;
       this.skillTotalHits = totalHit;
@@ -2125,7 +2140,7 @@ export class Calculator {
       let skillMaxDamage2 = 0;
       if (typeof part2?.formula === 'function' && isMatk) {
         const { formula: formula2, isIncludeMain, element, label } = part2;
-        const bk = this.propertySkill;
+        const bk = this.propertySkillAtk;
         const bkBaseSkill = this.baseSkillDamage;
 
         const baseSkillDamage2 = formula2({
@@ -2137,7 +2152,7 @@ export class Calculator {
           },
         });
         this.baseSkillDamage = baseSkillDamage2;
-        this.propertySkill = element || bk;
+        this.propertySkillAtk = element || bk;
         const { minDamage: _minDamage, maxDamage: _maxDamage } = this.calcMatkSkillDamage({ ...skillData, element });
 
         if (isIncludeMain) {
@@ -2149,7 +2164,7 @@ export class Calculator {
           skillMaxDamage2 = _maxDamage;
         }
 
-        this.propertySkill = bk;
+        this.propertySkillAtk = bk;
         this.baseSkillDamage = bkBaseSkill;
       }
       this.calcSkillFrequency(skillData);
@@ -2308,14 +2323,14 @@ export class Calculator {
     return {
       ...this.getObjSummary(this.totalEquipStatus),
       monster: { ...this.monsterData },
-      propertyAtk: this.propertyAtk,
+      propertyAtk: this.propertyBasicAtk,
       propertyMultiplier: this.propertyMultiplier,
       weapon: this.weaponData.data,
       calcSkill: {
         baseSkillDamage: this.baseSkillDamage,
         dps: this.skillDps,
         totalHits: this.skillTotalHits,
-        propertySkill: this.propertySkill,
+        propertySkill: this.propertySkillAtk,
         accuracy: this.skillAccuracy,
         totalPene: this.skillPene,
         ...this.skillFrequency,
