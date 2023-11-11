@@ -273,6 +273,17 @@ export class ShadowChaser extends CharacterBase {
         { label: 'Lv 10', value: 10, skillLv: 10, isUse: true, bonus: { aspdPercent: 10 } },
       ],
     },
+    {
+      inputType: 'dropdown',
+      label: 'Maelstrom',
+      name: 'Maelstrom',
+      dropdown: [
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 1', value: 1, skillLv: 1, isUse: true },
+        { label: 'Lv 2', value: 2, skillLv: 2, isUse: true },
+        { label: 'Lv 3', value: 3, skillLv: 3, isUse: true },
+      ],
+    },
   ];
 
   constructor() {

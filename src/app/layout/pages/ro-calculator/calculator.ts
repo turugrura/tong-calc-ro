@@ -2102,7 +2102,6 @@ export class Calculator {
     this.propertySkillAtk = ElementType.Neutral;
 
     if (isValidSkill) {
-      this._class.activeSkills;
       const { formula, part2, cri, canCri, element, isMatk, isHit100, isIgnoreDef = false, totalHit = 1 } = skillData;
       const baseSkillDamage =
         formula({

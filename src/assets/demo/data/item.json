@@ -16303,7 +16303,7 @@
     "location": null,
     "compositionPos": null,
     "usableClass": [
-      "Star Gladiator"
+      "Star Emperor"
     ],
     "script": {
       "atk": [
@@ -34874,6 +34874,44 @@
       ]
     }
   },
+  "28979": {
+    "id": 28979,
+    "aegisName": null,
+    "name": "Black Mithril Guard [1]",
+    "unidName": "Black Mithril Guard",
+    "resName": "Black_Mithril_Guard",
+    "description": "โล่ที่หลอมขึ้นด้วยมิธริลซึ่งมีน้ำหนักเบาและแข็งแกร่งเหนือเหล็กกล้า ได้รับความนิยมอย่างมากในองกรค์ลับแห่งหนึ่ง\n\nลด Damage ที่ได้รับจากมอนสเตอร์ทั่วไป 10%\nทุก ๆ การเรียนรู้สกิล Maelstrom 1 เลเวล, \nเพิ่ม Damage สกิล Fatal Manace 5%\n\nเมื่ออัพเกรดตั้งแต่ 7 ขึ้นไป, \nASPD +2\n\nเมื่ออัพเกรดตั้งแต่ 9 ขึ้นไป, \nAll Stat +2  \nลด Damage ที่ได้รับจากมอนสเตอร์ทั่วไป 5%\n\nเมื่ออัพเกรดตั้งแต่ 11 ขึ้นไป, \nลด Delay หลังใช้สกิล 5% \nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกประเภทขึ้นอีก 3%\nประเภท : ^777777Shield^000000  พลังป้องกัน : ^77777760^000000\nน้ำหนัก : ^77777730^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 514,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 60,
+    "weight": 30,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "Fatal Manace": [
+        "LEARN_SKILL[Maelstrom==1]===5"
+      ],
+      "aspd": [
+        "7===2"
+      ],
+      "allStatus": [
+        "9===2"
+      ],
+      "acd": [
+        "11===5"
+      ],
+      "p_class_all": [
+        "11===3"
+      ]
+    }
+  },
   "28982": {
     "id": 28982,
     "aegisName": null,
@@ -38953,7 +38991,17 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": null,
-    "script": {}
+    "script": {
+      "Solar Explosion": [
+        "10"
+      ],
+      "Full Moon Kick": [
+        "10"
+      ],
+      "Falling Stars": [
+        "10"
+      ]
+    }
   },
   "29580": {
     "id": 29580,
@@ -38972,7 +39020,17 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": null,
-    "script": {}
+    "script": {
+      "Solar Explosion": [
+        "20"
+      ],
+      "Full Moon Kick": [
+        "20"
+      ],
+      "Falling Stars": [
+        "20"
+      ]
+    }
   },
   "29581": {
     "id": 29581,
@@ -38991,7 +39049,17 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": null,
-    "script": {}
+    "script": {
+      "Solar Explosion": [
+        "40"
+      ],
+      "Full Moon Kick": [
+        "40"
+      ],
+      "Falling Stars": [
+        "40"
+      ]
+    }
   },
   "29582": {
     "id": 29582,
@@ -50149,6 +50217,53 @@
         "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]level:15---2",
         "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]level:195===-2",
         "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]===35"
+      ]
+    }
+  },
+  "540010": {
+    "id": 540010,
+    "aegisName": "Up_OneSkyOneSun",
+    "name": "Patent One Sky One Sun [2]",
+    "unidName": "Book",
+    "resName": "Up_OneSkyOneSun",
+    "description": "หนังสือโบราณที่เกี่ยวกับพระอาทิตย์อันเป็นศูนย์กลางเดียวบนท้องฟ้า\nแม้จะไม่ทราบว่าผู้เขียนเป็นใคร บันทึกที่ไหนและเมื่อไหร่ แต่เนื้อหาเต็มไปด้วยความรู้เกี่ยวกับจักรวาล\nเริ่มเผยพลังอันแท้จริงออกมา เมื่อได้สัมผัสพลังของอัสดง\nดูกลมกลืนเข้ากับ Great Hero Boots\n\nทุก ๆ การอัพเกรด 2 ขั้น ATK +15\nทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage ทางกายภาพระยะใกล้ 4%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage สกิล Blaze Kick 20%, ASPD +10%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Solar Explosion 25%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 15%\nเมื่อสวมใส่ร่วมกับ Great Hero Boots, STR +10, ATK +7%\n\nประเภท : ^777777Book^000000 พลังโจมตี : ^777777200^000000\nน้ำหนัก : ^777777110^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Star Emperor^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 271,
+    "itemLevel": 4,
+    "attack": 200,
+    "defense": null,
+    "weight": 110,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Star Emperor"
+    ],
+    "script": {
+      "atk": [
+        "2---15"
+      ],
+      "melee": [
+        "3---4"
+      ],
+      "Blaze Kick": [
+        "7===20"
+      ],
+      "aspdPercent": [
+        "7===10"
+      ],
+      "Solar Explosion": [
+        "9===25"
+      ],
+      "p_size_all": [
+        "11===15"
+      ],
+      "str": [
+        "EQUIP[Great Hero Boots]===10"
+      ],
+      "atkPercent": [
+        "EQUIP[Great Hero Boots]===7"
       ]
     }
   },

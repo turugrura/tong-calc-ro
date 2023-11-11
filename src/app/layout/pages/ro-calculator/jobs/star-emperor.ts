@@ -74,7 +74,7 @@ const jobBonusTable: Record<number, [number, number, number, number, number, num
   62: [10, 8, 4, 3, 9, 3],
   63: [10, 8, 4, 3, 9, 3],
   64: [10, 8, 4, 3, 9, 3],
-  65: [10, 8, 4, 3, 9, 3],
+  65: [11, 9, 5, 3, 9, 3],
 };
 
 export class StarEmperor extends CharacterBase {
@@ -118,12 +118,65 @@ export class StarEmperor extends CharacterBase {
         return (1100 + skillLevel * 100) * (baseLevel / 100) * bonus;
       },
     },
+    {
+      label: 'Blaze Kick Lv7',
+      name: 'Blaze Kick',
+      value: 'Blaze Kick==7',
+      acd: 0,
+      fct: 0,
+      vct: 0,
+      cd: 0,
+      isMelee: true,
+      levelList: [],
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel } = input;
+        const _baseLevel = model.level;
+
+        return 150 + skillLevel * 50;
+      },
+    },
+    {
+      label: 'Solar Explosion Lv10',
+      name: 'Solar Explosion',
+      value: 'Solar Explosion==10',
+      acd: 0.5,
+      fct: 0,
+      vct: 0,
+      cd: 0,
+      isMelee: true,
+      levelList: [],
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
+        const bonus = this.isSkillActive('Solar Luminance') ? 1.25 : 1;
+
+        return (1000 + skillLevel * 220) * (baseLevel / 100) * bonus;
+      },
+    },
   ];
 
   protected readonly _activeSkillList: ActiveSkillModel[] = [
     {
       label: 'Lunar Luminance 5',
       name: 'Lunar Luminance',
+      inputType: 'selectButton',
+      dropdown: [
+        { label: 'Yes', value: 5, skillLv: 5, isUse: true },
+        { label: 'No', value: 0, isUse: false },
+      ],
+    },
+    {
+      label: 'Solar Stance 3',
+      name: 'Solar Stance',
+      inputType: 'selectButton',
+      dropdown: [
+        { label: 'Yes', value: 3, skillLv: 3, isUse: true, bonus: { atkPercent: 5 } },
+        { label: 'No', value: 0, isUse: false },
+      ],
+    },
+    {
+      label: 'Solar Luminance 5',
+      name: 'Solar Luminance',
       inputType: 'selectButton',
       dropdown: [
         { label: 'Yes', value: 5, skillLv: 5, isUse: true },
@@ -140,7 +193,7 @@ export class StarEmperor extends CharacterBase {
     this.inheritBaseClass(new StarGladiator());
   }
 
-  x(info: InfoForClass): number {
+  getWrathAtkBonus(info: InfoForClass): number {
     if (!this.isSkillActive('Wrath of')) return 0;
 
     const { model, status } = info;
@@ -150,18 +203,19 @@ export class StarEmperor extends CharacterBase {
     return Math.floor((level + totalLuk + totalDex) / 3);
   }
 
-  override setAdditionalBonus(params: InfoForClass) {
-    const { totalBonus } = params;
+  // override setAdditionalBonus(params: InfoForClass) {
+  //   const { totalBonus, equipmentBonus } = params;
 
-    totalBonus.atkPercent += this.x(params);
+  //   totalBonus.atkPercent += this.getWrathAtkBonus(params);
 
-    return totalBonus;
-  }
+  //   return totalBonus;
+  // }
 
   override modifyFinalAtk(currentAtk: number, _params: InfoForClass) {
-    const partyCnt = this.bonuses.usedSkillMap.get('Power');
-    if (partyCnt < 2) return currentAtk;
+    const partyCnt = this.bonuses.usedSkillMap.get('Power') || 0;
+    // if (partyCnt < 2) return currentAtk;
+    const wratBonus = (100 + this.getWrathAtkBonus(_params)) / 100;
 
-    return currentAtk * ((100 + partyCnt * 10) / 100);
+    return currentAtk * ((100 + partyCnt * 10) / 100) * wratBonus;
   }
 }

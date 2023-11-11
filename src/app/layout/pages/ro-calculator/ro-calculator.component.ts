@@ -68,12 +68,15 @@ const Characters: DropdownModel[] = [
   { label: ClassID[10], value: 10, instant: new Mechanic() },
   { label: ClassID[9], value: 9, instant: new Genetic() },
   { label: ClassID[3], value: 3, instant: new SoulReaper() },
-  { label: ClassID[33], value: 33, instant: new StarEmperor() },
+  // { label: ClassID[33], value: 33, instant: new StarEmperor() },
   // { label: ClassID[17], value: 3, instant: new Oboro() },
   { label: ClassID[18], value: 18, instant: new Kagerou() },
   { label: ClassID[1], value: 1, instant: new Rebelion() },
   { label: ClassID[31], value: 31, instant: new Doram() },
 ];
+if (!environment.production) {
+  Characters.push({ label: ClassID[33], value: 33, instant: new StarEmperor() });
+}
 
 const waitRxjs = (second: number = 0.1) => {
   return of(null).pipe(delay(1000 * second), take(1));
