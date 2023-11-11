@@ -540,6 +540,7 @@ export const EnchantTable: EntTable[] = [
   { name: 'S_Circlet_Of_Time_SC', enchants: [null, labHead2, tempHead3, tempHead4] },
   { name: 'S_Circlet_Of_Time_AB', enchants: [null, labHead2, tempHead3, tempHead4] },
   { name: 'S_Circlet_Of_Time_SR', enchants: [null, labHead2, tempHead3, tempHead4] },
+  { name: 'S_Circlet_Of_Time_WL', enchants: [null, labHead2, tempHead3, tempHead4] },
   { name: 'S_Circlet_Of_Time_SO', enchants: [null, labHead2, tempHead3, tempHead4] },
   { name: 'S_Circlet_Of_Time_RA', enchants: [null, labHead2, tempHead3, tempHead4] },
   { name: 'S_Circlet_Of_Time_WM', enchants: [null, labHead2, tempHead3, tempHead4] },

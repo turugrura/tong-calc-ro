@@ -4062,6 +4062,30 @@
       ]
     }
   },
+  "4568": {
+    "id": 4568,
+    "aegisName": "Ceila_Card",
+    "name": "Celia Card",
+    "unidName": "Celia Card",
+    "resName": "이름없는카드",
+    "description": "FLEE + 10.\nสามารถใช้งาน Abracadabra Lv.1\nประเภท : ^777777Card^000000\nใส่กับ : ^777777Garment^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 4,
+    "cardPrefix": "of Gnosis",
+    "script": {
+      "flee": [
+        "10"
+      ]
+    }
+  },
   "4576": {
     "id": 4576,
     "aegisName": "Gioia_Card",
@@ -4868,6 +4892,32 @@
     "cardPrefix": "Neostorm",
     "script": {
       "Cart Tornado": [
+        "20",
+        "WEAPON_LEVEL[4]===20",
+        "10===20"
+      ]
+    }
+  },
+  "4692": {
+    "id": 4692,
+    "aegisName": "Real_Ceila_Card",
+    "name": "True Celia Alde Card",
+    "unidName": "True Celia Alde Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่มความแรงสกิล Varetyr Spear 20% \nเพิ่มความแรงสกิล Varetyr Spear อีก 20% เมื่ออาวุธเลเวล 4 \nเพิ่มความแรงสกิล Varetyr Spear อีก 20% เมื่ออัพเกรดถึงขั้น 10 ขึ้นไป\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Varetyr",
+    "script": {
+      "Varetyr Spear": [
         "20",
         "WEAPON_LEVEL[4]===20",
         "10===20"
@@ -16784,6 +16834,50 @@
       ]
     }
   },
+  "19482": {
+    "id": 19482,
+    "aegisName": "S_Circlet_Of_Time_WL",
+    "name": "Temporal Circlet (Warlock) [1]",
+    "unidName": "Helm",
+    "resName": "Circlet_Of_Time",
+    "description": "มงกุฎผ่านการเจียระไนด้วยเพชรอัญมณีที่มาจากรอยแยกแห่งมิติเวลา\nผู้สวมใส่จะรู้สึกได้ถึงพลังวิเศษที่ได้รับจาก Hugin\n^ffffff_^000000 \nทุก ๆ การอัพเกรด 2 ขั้น MATK +15\nทุก ๆ การอัพเกรด 3 ขั้น ลดระยะเวลาร่ายแบบแปรผัน 3%\nทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage สกิล Chain Lightning, Jack Frost 20%\nทุก ๆ การอัพเกรด 4 ขั้น เพิ่ม Damage ทางเวทมนตร์ธาตุ Wind, Water 5%\nเมื่ออัพเกรดถึงขั้น 11, MATK +5%\n^ffffff_^000000 \nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^77777710^000000\nตำแหน่ง : ^777777Upper ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Warlock^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 10,
+    "weight": 0,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Warlock"
+    ],
+    "script": {
+      "matk": [
+        "2---15"
+      ],
+      "vct": [
+        "3---3"
+      ],
+      "Chain Lightning": [
+        "3---20"
+      ],
+      "Jack Frost": [
+        "3---20"
+      ],
+      "m_my_element_wind": [
+        "4---5"
+      ],
+      "m_my_element_water": [
+        "4---5"
+      ],
+      "matkPercent": [
+        "11===5"
+      ]
+    }
+  },
   "19483": {
     "id": 19483,
     "aegisName": "S_Circlet_Of_Time_SO",
@@ -28511,6 +28605,70 @@
       ]
     }
   },
+  "24666": {
+    "id": 24666,
+    "aegisName": "S_FullTemp_Shoes",
+    "name": "Full Tempest Shadow Shoes",
+    "unidName": "Shadow Shoes",
+    "resName": "슈즈쉐도우3",
+    "description": "Ignores magical defense rate of all race monsters (except players) by 5%.\nIgnores magical defense rate of all race monsters (except players) by additional 1% per 2 refine rate.\nIf refine rate is 10, increases magical damage against all race monsters (except players) by 3%.\nClass: ^777777Shadow Equipment^000000\nLocation: ^777777Shoes^000000 Weight: ^7777770^000000\nRequired Level: ^7777771^000000\nJobs: ^777777All^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 528,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Shoes",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "m_pene_race_all": [
+        "5",
+        "2---1"
+      ],
+      "m_race_all": [
+        "10===3"
+      ]
+    }
+  },
+  "24667": {
+    "id": 24667,
+    "aegisName": "S_FullTemp_Armor",
+    "name": "Full Tempest Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우3",
+    "description": "Ignores magical defense rate of all race monsters (except players) by 5%.\nIgnores magical defense rate of all race monsters (except players) by additional 1% per 2 refine rate.\nIf refine rate is 10, increases magical damage against all race monsters (except players) by 3%.\nWhen equipped with Full Tempest Shadow Shoes, Matk + 2%, if the sum of refine rate of set is 18 or higher, ignores magical defense rate of all race monsters (except players) by 100%.\nClass: ^777777Shadow Equipment^000000\nLocation: ^777777Armor^000000 Weight: ^7777770^000000\nRequired Level: ^7777771^000000\nJobs: ^777777All^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Armor",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "m_pene_race_all": [
+        "5",
+        "2---1",
+        "EQUIP[Full Tempest Shadow Shoes]REFINE[shadowArmor,shadowBoot==18]100"
+      ],
+      "m_race_all": [
+        "10===3"
+      ],
+      "matkPercent": [
+        "EQUIP[Full Tempest Shadow Shoes]2"
+      ]
+    }
+  },
   "24739": {
     "id": 24739,
     "aegisName": "S_SU_Weapon",
@@ -34799,7 +34957,7 @@
         "EQUIP[Dark Blinkers]5"
       ],
       "m_my_element_holy": [
-        "USED[ArchBishop]9===15"
+        "REFINE[9]LEARN_SKILL[Heal==2]---3"
       ],
       "Genesis Ray": [
         "level:5---1"
@@ -34896,7 +35054,7 @@
     ],
     "script": {
       "Fatal Manace": [
-        "LEARN_SKILL[Maelstrom==1]===5"
+        "LEARN_SKILL[Maelstrom==1]---5"
       ],
       "aspd": [
         "7===2"
@@ -47036,7 +47194,7 @@
         "EQUIP[Old Wind Whisper]2---1",
         "EQUIP[Old Magic Stone Hat]2---1"
       ],
-      "cd__Varetry Spear": [
+      "cd__Varetyr Spear": [
         "EQUIP[Old Wind Whisper]12===1"
       ],
       "m_class_boss": [
