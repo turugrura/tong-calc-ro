@@ -1,5 +1,11 @@
 import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
+import {
+  ActiveSkillModel,
+  AtkSkillFormulaInput,
+  AtkSkillModel,
+  CharacterBase,
+  PassiveSkillModel,
+} from './_character-base.abstract';
 import { Thief } from './thief';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {};
@@ -9,16 +15,25 @@ export class AssassinCross extends CharacterBase {
   protected readonly JobBonusTable = jobBonusTable;
 
   protected initialStatusPoint = 100;
-  protected classNames = ['Hi-Class', 'Assassin', 'Assassin Cls', 'Assassin Class', 'Assassin Cross', 'Assassin Cross Cls', 'Assassin Cross Class'];
+  protected classNames = [
+    'Hi-Class',
+    'Assassin',
+    'Assassin Cls',
+    'Assassin Class',
+    'Assassin Cross',
+    'Assassin Cross Cls',
+    'Assassin Cross Class',
+  ];
   protected _atkSkillList: AtkSkillModel[] = [
     {
       name: 'Meteor Assault',
-      label: 'Meteor Assault Lv 10',
+      label: 'Meteor Assault Lv10',
       value: 'Meteor Assault==10',
       fct: 0.25,
       vct: 0.25,
       cd: 0.5,
       acd: 0,
+      isMelee: true,
       levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
