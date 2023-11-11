@@ -35,6 +35,18 @@ export class AppTopBarComponent {
 
   updates: { v: string; date: string; logs: string[] }[] = [
     {
+      v: 'V1.4.4',
+      date: '11-11-2566',
+      logs: [
+        'Fixed Arm cannon lv4 formula',
+        'Fixed MA damage to be melee type',
+        'Fixed reported bugs',
+        'Added MC offensive skill (Cart Tornado)',
+        'Added Severe Rainstorm Lv4',
+        'Added requested items',
+      ],
+    },
+    {
       v: 'V1.4.3',
       date: '08-11-2566',
       logs: [
