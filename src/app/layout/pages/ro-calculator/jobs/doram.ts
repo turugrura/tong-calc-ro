@@ -179,6 +179,15 @@ export class Doram extends CharacterBase {
         { label: 'No', value: 0, isUse: false },
       ],
     },
+    {
+      label: 'Bunch of Shrimp 5',
+      name: 'Bunch of Shrimp',
+      inputType: 'selectButton',
+      dropdown: [
+        { label: 'Yes', value: 5, skillLv: 5, isUse: true, bonus: { atkPercent: 10, matkPercent: 10 } },
+        { label: 'No', value: 0, isUse: false },
+      ],
+    },
   ];
 
   protected readonly _passiveSkillList: PassiveSkillModel[] = [
