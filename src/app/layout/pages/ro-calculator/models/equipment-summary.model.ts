@@ -129,5 +129,8 @@ export interface EquipmentSummaryModel {
   m_pene_size_all: number;
   m_pene_element_all: number;
   m_pene_class_all: number;
+
+  // Other from skill
+  forceCri?: number;
   [key: string]: number;
 }

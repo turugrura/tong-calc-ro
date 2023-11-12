@@ -49,6 +49,8 @@ import { StarEmperor } from './jobs/star-emperor';
 import { createMainModel } from './utils/create-main-model';
 import { FoodStatList } from './constants/food-stat-list';
 import { ElementConverterList } from './constants/element-converter-list';
+import { RuneKnight } from './jobs/rune-knight';
+import { Oboro } from './jobs/oboro';
 
 interface MonsterSelectItemGroup extends SelectItemGroup {
   items: any[];
@@ -68,14 +70,15 @@ const Characters: DropdownModel[] = [
   { label: ClassID[10], value: 10, instant: new Mechanic() },
   { label: ClassID[9], value: 9, instant: new Genetic() },
   { label: ClassID[3], value: 3, instant: new SoulReaper() },
-  // { label: ClassID[33], value: 33, instant: new StarEmperor() },
+  { label: ClassID[33], value: 33, instant: new StarEmperor() },
   // { label: ClassID[17], value: 3, instant: new Oboro() },
   { label: ClassID[18], value: 18, instant: new Kagerou() },
   { label: ClassID[1], value: 1, instant: new Rebelion() },
   { label: ClassID[31], value: 31, instant: new Doram() },
 ];
 if (!environment.production) {
-  Characters.push({ label: ClassID[33], value: 33, instant: new StarEmperor() });
+  Characters.push({ label: ClassID[12], value: 12, instant: new RuneKnight() });
+  Characters.push({ label: ClassID[17], value: 3, instant: new Oboro() });
 }
 
 const waitRxjs = (second: number = 0.1) => {

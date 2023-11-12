@@ -183,6 +183,15 @@ export class StarEmperor extends CharacterBase {
         { label: 'No', value: 0, isUse: false },
       ],
     },
+    {
+      label: 'Fus Sun Moon Star',
+      name: 'Fusion of Sun, Moon and Star',
+      inputType: 'selectButton',
+      dropdown: [
+        { label: 'Yes', value: 1, skillLv: 1, isUse: true, bonus: { forceCri: 1 } },
+        { label: 'No', value: 0, isUse: false },
+      ],
+    },
   ];
 
   protected readonly _passiveSkillList: PassiveSkillModel[] = [];
@@ -203,19 +212,13 @@ export class StarEmperor extends CharacterBase {
     return Math.floor((level + totalLuk + totalDex) / 3);
   }
 
-  // override setAdditionalBonus(params: InfoForClass) {
-  //   const { totalBonus, equipmentBonus } = params;
-
-  //   totalBonus.atkPercent += this.getWrathAtkBonus(params);
-
-  //   return totalBonus;
-  // }
-
   override modifyFinalAtk(currentAtk: number, _params: InfoForClass) {
-    const partyCnt = this.bonuses.usedSkillMap.get('Power') || 0;
-    // if (partyCnt < 2) return currentAtk;
+    const partyCnt = this.bonuses.usedSkillMap.get('Power') || 1;
     const wratBonus = (100 + this.getWrathAtkBonus(_params)) / 100;
 
-    return currentAtk * ((100 + partyCnt * 10) / 100) * wratBonus;
+    let totalAtk = Math.floor(currentAtk * ((100 + (partyCnt - 1) * 10) / 100));
+    totalAtk = totalAtk * wratBonus;
+
+    return totalAtk;
   }
 }

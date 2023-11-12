@@ -43169,6 +43169,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 769,
+    "cardPrefix": "Agony",
     "script": {
       "hit": [
         "-30",
@@ -43199,6 +43200,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 4,
+    "cardPrefix": "Grudge",
     "script": {
       "m_race_demon": [
         "1---5"
@@ -43231,6 +43233,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 64,
+    "cardPrefix": "Decree",
     "script": {
       "hpPercent": [
         "REFINE[boot==1]---2"

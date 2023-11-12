@@ -97,7 +97,6 @@ export class Oboro extends CharacterBase {
   constructor() {
     super();
 
-    this.inheritBaseClass(Ninja.bind(this));
-    // Ninja.bind(this)
+    this.inheritBaseClass(new Ninja());
   }
 }

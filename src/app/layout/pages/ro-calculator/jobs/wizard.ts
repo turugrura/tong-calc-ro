@@ -1,6 +1,12 @@
 import { ElementType } from '../constants/element-type.const';
 import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
+import {
+  ActiveSkillModel,
+  AtkSkillFormulaInput,
+  AtkSkillModel,
+  CharacterBase,
+  PassiveSkillModel,
+} from './_character-base.abstract';
 import { Mage } from './mage';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {};
@@ -76,14 +82,14 @@ export class Wizard extends CharacterBase {
         { label: '-', isUse: false, value: 0 },
         { label: 'Lv 1', isUse: true, value: 1, bonus: { mysticAmp: 5 } },
         { label: 'Lv 2', isUse: true, value: 2, bonus: { mysticAmp: 10 } },
-        { label: 'Lv 3', isUse: true, value: 1, bonus: { mysticAmp: 15 } },
-        { label: 'Lv 4', isUse: true, value: 2, bonus: { mysticAmp: 20 } },
-        { label: 'Lv 5', isUse: true, value: 3, bonus: { mysticAmp: 25 } },
-        { label: 'Lv 6', isUse: true, value: 3, bonus: { mysticAmp: 30 } },
-        { label: 'Lv 7', isUse: true, value: 4, bonus: { mysticAmp: 35 } },
-        { label: 'Lv 8', isUse: true, value: 4, bonus: { mysticAmp: 40 } },
-        { label: 'Lv 9', isUse: true, value: 5, bonus: { mysticAmp: 45 } },
-        { label: 'Lv 10', isUse: true, value: 5, bonus: { mysticAmp: 50 } },
+        { label: 'Lv 3', isUse: true, value: 3, bonus: { mysticAmp: 15 } },
+        { label: 'Lv 4', isUse: true, value: 4, bonus: { mysticAmp: 20 } },
+        { label: 'Lv 5', isUse: true, value: 5, bonus: { mysticAmp: 25 } },
+        { label: 'Lv 6', isUse: true, value: 6, bonus: { mysticAmp: 30 } },
+        { label: 'Lv 7', isUse: true, value: 7, bonus: { mysticAmp: 35 } },
+        { label: 'Lv 8', isUse: true, value: 8, bonus: { mysticAmp: 40 } },
+        { label: 'Lv 9', isUse: true, value: 9, bonus: { mysticAmp: 45 } },
+        { label: 'Lv 10', isUse: true, value: 10, bonus: { mysticAmp: 50 } },
       ],
     },
   ];
@@ -96,14 +102,14 @@ export class Wizard extends CharacterBase {
         { label: '-', isUse: false, value: 0 },
         { label: 'Lv 1', isUse: true, value: 1 },
         { label: 'Lv 2', isUse: true, value: 2 },
-        { label: 'Lv 3', isUse: true, value: 1 },
-        { label: 'Lv 4', isUse: true, value: 2 },
-        { label: 'Lv 5', isUse: true, value: 3 },
-        { label: 'Lv 6', isUse: true, value: 3 },
-        { label: 'Lv 7', isUse: true, value: 4 },
-        { label: 'Lv 8', isUse: true, value: 4 },
-        { label: 'Lv 9', isUse: true, value: 5 },
-        { label: 'Lv 10', isUse: true, value: 5 },
+        { label: 'Lv 3', isUse: true, value: 3 },
+        { label: 'Lv 4', isUse: true, value: 4 },
+        { label: 'Lv 5', isUse: true, value: 5 },
+        { label: 'Lv 6', isUse: true, value: 6 },
+        { label: 'Lv 7', isUse: true, value: 7 },
+        { label: 'Lv 8', isUse: true, value: 8 },
+        { label: 'Lv 9', isUse: true, value: 9 },
+        { label: 'Lv 10', isUse: true, value: 10 },
       ],
     },
     {

@@ -18,6 +18,8 @@ import { InfoForClass } from './models/info-for-class.model';
 import { HpSpCalculator } from './hp-sp-calculator';
 import { HpSpTable } from './models/hp-sp-table.model';
 import { ItemSubTypeId } from './constants/item-sub-type.enum';
+import { ClassName } from './jobs/_class-name';
+import { environment } from 'src/environments/environment';
 
 // const getItem = (id: number) => items[id] as ItemModel;
 const refinableItemTypes = [
@@ -492,6 +494,10 @@ export class Calculator {
     return this.totalEquipStatus.mildwind >= 1;
   }
 
+  get isForceSkillCri() {
+    return this.totalEquipStatus.forceCri >= 1;
+  }
+
   private canEDP(skillName: string) {
     return CannotEDP[skillName] !== false;
   }
@@ -574,6 +580,15 @@ export class Calculator {
   }
 
   isAllowShield() {
+    if (!this.weaponData.data?.typeName && !environment.production) {
+      switch (this._class.className) {
+        case ClassName.Warlock:
+          return true;
+      }
+
+      return false;
+    }
+
     return AllowShieldTable[this.weaponData.data?.typeName] || false;
   }
 
@@ -928,8 +943,8 @@ export class Calculator {
 
   private calcAtkGroupA(totalWeaponAtk?: number) {
     const atkPercent = this.toPercent(this.totalEquipStatus.atkPercent);
-    const formula = (totalAtk: number) => {
-      const a = this.floor((totalAtk + this.totalExtraAtk) * atkPercent);
+    const formula = (weaponAtk: number) => {
+      const a = this.floor((weaponAtk + this.totalExtraAtk) * atkPercent);
 
       return this.floor(a * this.propertyMultiplier);
     };
@@ -1217,7 +1232,8 @@ export class Calculator {
   }
 
   private calcSkillDamage(skillData: AtkSkillModel) {
-    const { name: skillName, canCri, isMelee, isHDefToSDef = false, isIgnoreDef = false } = skillData;
+    const { name: skillName, canCri: _canCri, isMelee, isHDefToSDef = false, isIgnoreDef = false } = skillData;
+    const canCri = this.isForceSkillCri || _canCri;
     const { finalDmgReduction, finalSoftDef } = this.finalPhysicalDef;
     const hardDef = isIgnoreDef || isHDefToSDef ? 1 : finalDmgReduction;
     const softDef = finalSoftDef + (isHDefToSDef ? this.reducedHardDef : 0);
@@ -1386,11 +1402,6 @@ export class Calculator {
     const mysticAmp = 1 + this.toPercent(this.totalEquipStatus['mysticAmp'] || 0);
     const { matkPercent } = this.totalEquipStatus;
     const comet = this.getCometAmp();
-    // const elementBonus =
-    //   (this.totalEquipStatus.m_my_element_all || 0) +
-    //   (this.totalEquipStatus[`m_my_element_${this.propertySkill.toLowerCase()}`] || 0);
-    // const elementMultiplier = this.toPercent(elementBonus + this.calcElementMultiplier('m'));
-    // console.log({ elementMultiplier });
 
     const formula = (atk: number) => {
       const mysticAmpApplied = this.floor(atk * mysticAmp + this.totalEquipMatk);
@@ -2171,6 +2182,10 @@ export class Calculator {
       const { totalHitPerSec: skillHitPersecs } = this.skillFrequency;
       const hitPerSecs = Math.min(skillHitPersecs, this.hitPerSecs);
       this.criRateSkillToMonster = canCri ? Math.max(0, this.totalCri + (cri || 0) - criShield) : 0;
+
+      if (this.isForceSkillCri) {
+        this.criRateSkillToMonster = 100;
+      }
 
       this.skillDps =
         totalHit *
