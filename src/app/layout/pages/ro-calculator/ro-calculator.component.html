@@ -3617,7 +3617,7 @@
       </p-accordionTab>
 
       <p-accordionTab header="Summary">
-        <div class="grid grid-nogutter">
+        <div class="grid grid-nogutter" style="overflow: auto">
           <div class="col-6 json_display">
             <pre [innerHTML]="modelSummary | prettyjson : [true, 3]"></pre>
             <pre *ngIf="isEnableCompare" [innerHTML]="model2 | prettyjson : [true, 3]"></pre>

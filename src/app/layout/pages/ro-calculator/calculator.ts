@@ -1392,6 +1392,11 @@ export class Calculator {
 
     this.weaponMinMatk = rawWeaponMATK - variance;
     this.weaponMaxMatk = rawWeaponMATK + variance + overUpgradeBonus;
+
+    if (overUpgradeBonus > 0) {
+      this.weaponMinMatk += 1;
+      this.weaponMaxMatk -= 1;
+    }
   }
 
   private calcTotalMatk(weaponMatk?: number) {
