@@ -98,7 +98,7 @@ export class RuneKnight extends CharacterBase {
       fct: 0,
       vct: 1,
       cd: 2,
-      levelList: [{ label: 'Lv 5', value: 'Ignition Break==5' }],
+      isMelee: true,
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, weapon } = input;
         const baseLevel = model.level;
@@ -108,14 +108,72 @@ export class RuneKnight extends CharacterBase {
         return (bonusFire + skillLevel * 300) * (baseLevel / 100);
       },
     },
+    {
+      label: 'Hundred Spears Lv10',
+      name: 'Hundred Spears',
+      value: 'Hundred Spears==10',
+      acd: 0.5,
+      fct: 0,
+      vct: 0.1,
+      cd: 3,
+      hit: 5,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model } = input;
+        const baseLevel = model.level;
+        const bonus = this.learnLv('Clashing Spiral') * 50;
+
+        return (1400 + bonus) * (baseLevel / 100);
+      },
+    },
   ];
 
-  protected readonly _activeSkillList: ActiveSkillModel[] = [];
+  protected readonly _activeSkillList: ActiveSkillModel[] = [
+    {
+      label: 'Aura Blade 5',
+      name: 'Aura Blade',
+      inputType: 'selectButton',
+      dropdown: [
+        { label: 'Yes', value: 5, skillLv: 5, isUse: true },
+        { label: 'No', value: 0, isUse: false },
+      ],
+    },
+    {
+      label: 'Spear Dynamo 5',
+      name: 'Spear Dynamo',
+      inputType: 'selectButton',
+      dropdown: [
+        { label: 'Yes', value: 5, skillLv: 5, isUse: true, bonus: { atkPercent: 15, hit: 50, defPercent: -15 } },
+        { label: 'No', value: 0, isUse: false },
+      ],
+    },
+    {
+      label: 'Rune: Turisus',
+      name: 'Turisus Runestone',
+      inputType: 'selectButton',
+      dropdown: [
+        { label: 'Yes', value: 5, skillLv: 5, isUse: true, bonus: { melee: 250, str: 30 } },
+        { label: 'No', value: 0, isUse: false },
+      ],
+    },
+  ];
 
   protected readonly _passiveSkillList: PassiveSkillModel[] = [
     {
       label: 'Ignition Break',
       name: 'Ignition Break',
+      inputType: 'dropdown',
+      dropdown: [
+        { label: '0', value: 0, isUse: false },
+        { label: '1', value: 1, skillLv: 1, isUse: true },
+        { label: '2', value: 2, skillLv: 2, isUse: true },
+        { label: '3', value: 3, skillLv: 3, isUse: true },
+        { label: '4', value: 4, skillLv: 4, isUse: true },
+        { label: '5', value: 5, skillLv: 5, isUse: true },
+      ],
+    },
+    {
+      label: 'Clashing Spiral',
+      name: 'Clashing Spiral',
       inputType: 'dropdown',
       dropdown: [
         { label: '0', value: 0, isUse: false },
@@ -135,7 +193,7 @@ export class RuneKnight extends CharacterBase {
   }
 
   override getMasteryAtk(info: InfoForClass): number {
-    const { weapon } = info;
+    const { weapon, model } = info;
     const weaponType = weapon?.data?.typeName;
     const bonuses = this.bonuses?.masteryAtks || {};
 
@@ -144,6 +202,27 @@ export class RuneKnight extends CharacterBase {
       sum += bonus[`x_${weaponType}_atk`] || 0; // x_spear_atk
     }
 
+    if (this.isSkillActive('Aura Blade')) {
+      sum += model.level * 8;
+    }
+
     return sum;
+  }
+
+  override setAdditionalBonus(params: InfoForClass) {
+    const { totalBonus, weapon } = params;
+    const wType = weapon.data?.typeName;
+    if (!wType) return totalBonus;
+
+    const bonus = this.getDynimicBonusFromSkill(`${wType}_`);
+    for (const [key, value] of Object.entries(bonus)) {
+      if (totalBonus[key]) {
+        totalBonus[key] += value;
+      } else {
+        totalBonus[key] = value;
+      }
+    }
+
+    return totalBonus;
   }
 }

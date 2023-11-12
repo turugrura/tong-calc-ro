@@ -94,7 +94,9 @@ export abstract class CharacterBase {
 
   protected learnSkillMap = new Map<string, number>();
   protected activeSkillIds: number[] = [];
+  protected activeBonus = new Map<string, Record<string, number>>();
   protected passiveSkillIds: number[] = [];
+  protected passiveBonus = new Map<string, Record<string, number>>();
   protected bonuses: {
     activeSkillNames: Set<string>;
     equipAtks: Record<string, number>;
@@ -160,6 +162,9 @@ export abstract class CharacterBase {
     const learnedSkillMap = new Map<string, number>();
     const usedSkillMap = new Map<string, number>();
 
+    this.activeBonus.clear();
+    this.passiveBonus.clear();
+
     this._activeSkillList.forEach((skill, index) => {
       const { bonus, isUse, skillLv, value } = skill.dropdown.find((x) => x.value === this.activeSkillIds[index]) ?? {};
       if (!isUse) return;
@@ -168,6 +173,7 @@ export abstract class CharacterBase {
       activeSkillNames.add(skill.name);
       if (!bonus) return;
 
+      this.activeBonus.set(skill.name, bonus);
       const { isMasteryAtk } = skill;
       if (isMasteryAtk) {
         masteryAtks[skill.name] = bonus;
@@ -184,6 +190,7 @@ export abstract class CharacterBase {
       learnedSkillMap.set(skill.name, skillLv ?? Number(value));
       if (!bonus) return;
 
+      this.passiveBonus.set(skill.name, bonus);
       const { isMasteryAtk } = skill;
       if (isMasteryAtk) {
         masteryAtks[skill.name] = bonus;
@@ -219,6 +226,28 @@ export abstract class CharacterBase {
     this._activeSkillList = [..._activeSkillList, ...this._activeSkillList];
     this._passiveSkillList = [..._passiveSkillList, ...this._passiveSkillList];
     this.classNames = [...classNames, ...this.classNames];
+  }
+
+  protected getDynimicBonusFromSkill(prefix: string): Record<string, number> {
+    const totalBonus = {};
+    const addBonus = (key: string, val: number) => {
+      if (totalBonus[key]) {
+        totalBonus[key] += val;
+      } else {
+        totalBonus[key] = val;
+      }
+    };
+
+    for (const bonus of [...this.passiveBonus.values(), ...this.activeBonus.values()]) {
+      for (const [attr, val] of Object.entries(bonus)) {
+        if (attr.startsWith(prefix)) {
+          const actualAttr = attr.replace(prefix, '');
+          addBonus(actualAttr, val);
+        }
+      }
+    }
+
+    return totalBonus;
   }
 
   protected calcHiddenMasteryAtk(_: InfoForClass, x?: { prefix?: string; suffix?: string }) {
@@ -307,6 +336,11 @@ export abstract class CharacterBase {
     };
   }
 
+  /**
+   * Not show in screen
+   * @param info
+   * @returns mastery atk
+   */
   getMasteryAtk(_: InfoForClass) {
     return 0;
   }

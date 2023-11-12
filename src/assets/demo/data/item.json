@@ -18349,6 +18349,41 @@
       ]
     }
   },
+  "21038": {
+    "id": 21038,
+    "aegisName": "Oriental_Sword",
+    "name": "Oriental Sword [2]",
+    "unidName": "Two-Handed Sword",
+    "resName": "오니마루",
+    "description": "ดาบโบราณที่ว่ากันว่าสามารถกำจัดได้แม้กระทั่งดวงวิญญาณอันชั่วร้ายจากประเทศฝั่งตะวันออก\nดูมีความกลมกลืนเข้ากับ Ancient Hero Boots\nทุกๆ การอัพเกรด 2 ขั้น ATK + 10\nทุกๆ การอัพเกรด 3 ขั้น เพิ่มดาเมจ Sonic Wave 10% \nเมื่ออัพเกรดถึงขั้น 9 และโจมตีทางกายภาพระยะใกล้ มีโอกาสสูงที่จะร่ายสกิล Sonic Wave Lv.2 (ถ้าระดับสกิลสูงกว่า จะใช้งานตามระดับสูงสุดที่เรียนรู้)\nเมื่ออัพเกรดถึงขั้น 11 อาวุธจะไม่ถูกทำลาย\nเมื่อโจมตีทางกายภาพระหว่างสวมใส่ร่วมกับ Ancient Hero Boots มีโอกาสที่ STR + 20, ATK + 15% เป็นเวลา 7 วินาที\nประเภท : ^777777Two-Handed Sword^000000 พลังโจมตี : ^777777180^000000\nน้ำหนัก : ^777777100^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Rune Knight^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 258,
+    "itemLevel": 4,
+    "attack": 180,
+    "defense": null,
+    "weight": 100,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Rune Knight"
+    ],
+    "script": {
+      "atk": [
+        "2---10"
+      ],
+      "Sonic Wave": [
+        "3---10"
+      ],
+      "chance__str": [
+        "EQUIP[Ancient Hero Boots]===20"
+      ],
+      "chance__atkPercent": [
+        "EQUIP[Ancient Hero Boots]===15"
+      ]
+    }
+  },
   "21050": {
     "id": 21050,
     "aegisName": "Taegoolyeon_IL",
@@ -30184,6 +30219,49 @@
       "criDmg": [
         "5",
         "EQUIP[Ominous Assaulter Card]2"
+      ]
+    }
+  },
+  "27117": {
+    "id": 27117,
+    "aegisName": "OminousAssulter_Card",
+    "name": "Ominous Assaulter Card",
+    "unidName": "Ominous Assaulter Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่ม Critical Damage 10%\nเมื่อติดตั้งอาวุธประเภท [Whip], [Musical instrument], [Book], [Two-handed sword], [Two-handed spear] CRI+5\nทุก ๆ การอัพเกรด 1 ขั้นของอาวุธประเภทดังกล่าว ATK +3, Critical Damage เพิ่มขึ้น 1%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Lethal",
+    "script": {
+      "criDmg": [
+        "10",
+        "WEAPON_TYPE[whip]1---1",
+        "WEAPON_TYPE[instrument]1---1",
+        "WEAPON_TYPE[book]1---1",
+        "WEAPON_TYPE[twohandSword]1---1",
+        "WEAPON_TYPE[twohandSpear]1---1"
+      ],
+      "cri": [
+        "WEAPON_TYPE[whip]5",
+        "WEAPON_TYPE[instrument]5",
+        "WEAPON_TYPE[book]5",
+        "WEAPON_TYPE[twohandSword]5",
+        "WEAPON_TYPE[twohandSpear]5"
+      ],
+      "atk": [
+        "WEAPON_TYPE[whip]1---3",
+        "WEAPON_TYPE[instrument]1---3",
+        "WEAPON_TYPE[book]1---3",
+        "WEAPON_TYPE[twohandSword]1---3",
+        "WEAPON_TYPE[twohandSpear]1---3"
       ]
     }
   },
@@ -51391,6 +51469,50 @@
       ],
       "int": [
         "EQUIP[Great Hero Boots]===10"
+      ]
+    }
+  },
+  "600009": {
+    "id": 600009,
+    "aegisName": "Up_Oriental_Sword",
+    "name": "Patent Oriental Sword [2]",
+    "unidName": "Bastard Sword",
+    "resName": "UpOnimaru",
+    "description": "ดาบโบราณที่ว่ากันว่าสามารถกำจัดได้แม้กระทั่งดวงวิญญาณอันชั่วร้ายจากฝั่งตะวันออก\nฟื้นคืนเกียรติยศในอดีต และเริ่มเผยพลังอันแท้จริงออกมา\nดูกลมกลืนเข้ากับ Great Hero Boots\n\nทุก ๆ การอัพเกรด 2 ขั้น ATK +15\nทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage สกิล Sonic Wave 10%\nเมื่ออัพเกรดถึงขั้น 7 อาวุธจะไม่ถูกทำลาย, ASPD +10%\nเมื่ออัพเกรดถึงขั้น 9 เมื่อโจมตีทางกายภาพระยะใกล้ มีโอกาสสูงที่จะใช้สกิล Sonic Wave Lv. 2 (เมื่อเรียนรู้สกิลสูงกว่า Lv. 2 จะใช้ตามเลเวลที่เรียนรู้)\nเมื่ออัพเกรดถึงขั้น 11, CRI +15, Critical Damage +15%\nเมื่อสวมใส่ร่วมกับ Great Hero Boots, STR +10, ATK +7%\n\nประเภท : ^777777Two-Handed Sword^000000 พลังโจมตี : ^777777240^000000\nน้ำหนัก : ^777777200^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Rune Knight^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 258,
+    "itemLevel": 4,
+    "attack": 240,
+    "defense": null,
+    "weight": 200,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Rune Knight"
+    ],
+    "script": {
+      "atk": [
+        "2---15"
+      ],
+      "Sonic Wave": [
+        "3---10"
+      ],
+      "aspdPercent": [
+        "7===10"
+      ],
+      "cri": [
+        "11===15"
+      ],
+      "criDmg": [
+        "11===15"
+      ],
+      "str": [
+        "EQUIP[Great Hero Boots]===10"
+      ],
+      "atkPercent": [
+        "EQUIP[Great Hero Boots]===7"
       ]
     }
   },
