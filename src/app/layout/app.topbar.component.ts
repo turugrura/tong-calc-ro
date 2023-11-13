@@ -35,6 +35,11 @@ export class AppTopBarComponent {
 
   updates: { v: string; date: string; logs: string[] }[] = [
     {
+      v: 'V1.5.1',
+      date: '13-11-2566',
+      logs: ['Added penetration shadow equipments (white)', 'Added requested items'],
+    },
+    {
       v: 'V1.5.0',
       date: '12-11-2566',
       logs: ['Support Star Emperor class', 'Added Doram active skill (Bunch of Shrimp)'],
