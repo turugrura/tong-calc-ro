@@ -9,7 +9,14 @@ export class StarGladiator extends CharacterBase {
   protected readonly JobBonusTable = jobBonusTable;
 
   protected readonly initialStatusPoint = 40;
-  protected readonly classNames = ['StarGladiator', 'StarGladiator Cls', 'StarGladiator Class'];
+  protected readonly classNames = [
+    'StarGladiator',
+    'StarGladiator Cls',
+    'StarGladiator Class',
+    'Star Gladiator',
+    'Star Gladiator Cls',
+    'Star Gladiator Class',
+  ];
 
   protected readonly _atkSkillList: AtkSkillModel[] = [];
 

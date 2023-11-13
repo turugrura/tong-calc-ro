@@ -82,7 +82,14 @@ export class StarEmperor extends CharacterBase {
   protected readonly JobBonusTable = jobBonusTable;
 
   protected readonly initialStatusPoint = 48;
-  protected readonly classNames = ['Star Emperor', 'Star Emperor Cls', 'Star Emperor Class'];
+  protected readonly classNames = [
+    'Star Emperor',
+    'Star Emperor Cls',
+    'Star Emperor Class',
+    'StarEmperor',
+    'StarEmperor Cls',
+    'StarEmperor Class',
+  ];
   protected readonly _atkSkillList: AtkSkillModel[] = [
     {
       label: 'New Moon Kick Lv7',
