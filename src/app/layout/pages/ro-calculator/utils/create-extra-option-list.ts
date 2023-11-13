@@ -69,23 +69,24 @@ export const createExtraOptionList = () => {
     }),
   });
 
-  const options: [string, string, number, number][] = [
+  const options: [string, string, number, number, string?][] = [
     ['Atk', 'atk', 1, 65],
-    ['Atk %', 'atkPercent', 1, 30],
+    ['Atk percent', 'atkPercent', 1, 30, ' %'],
     ['Matk', 'matk', 1, 65],
-    ['Matk %', 'matkPercent', 1, 30],
-    ['Long Range', 'range', 1, 30],
-    ['Melee', 'melee', 1, 30],
-    ['CRI Rate', 'cri', 1, 30],
-    ['CRI Dmg', 'criDmg', 1, 30],
-    ['ASPD %', 'aspdPercent', 1, 30],
-    ['Delay', 'acd', 1, 30],
-    ['VCT', 'vct', 1, 30],
+    ['Matk percent', 'matkPercent', 1, 30, ' %'],
+    ['Long Range', 'range', 1, 30, ' %'],
+    ['Melee', 'melee', 1, 30, ' %'],
+    ['CRI Rate', 'cri', 1, 30, ' %'],
+    ['CRI Dmg', 'criDmg', 1, 30, ' %'],
+    ['ASPD percent', 'aspdPercent', 1, 30, ' %'],
+    ['Delay', 'acd', 1, 30, ' %'],
+    ['VCT', 'vct', 1, 30, ' %'],
     ['All Stat', 'allStatus', 1, 30],
   ];
 
   const VAL_CAP = 10;
-  for (const [label, prop, rawMin, rawMax] of options) {
+  for (const [label, prop, rawMin, rawMax, suffix] of options) {
+    const labelNoPercent = label.replace(' percent', '');
     const values = [] as { label: string; min: number; max: number }[];
     for (let i = rawMin; i < rawMax; i += VAL_CAP) {
       const max = Math.min(i + VAL_CAP - 1, rawMax);
@@ -98,7 +99,7 @@ export const createExtraOptionList = () => {
       children = Array.from({ length: max - min + 1 }, (_, k) => {
         const num = k + min;
         return {
-          label: `${label} +${num}`,
+          label: `${labelNoPercent} +${num}${suffix || ''}`,
           value: `${prop}:${num}`,
         };
       });
@@ -112,7 +113,7 @@ export const createExtraOptionList = () => {
           children: Array.from({ length: max - min + 1 }, (_, k) => {
             const num = k + min;
             return {
-              label: `${label} +${num}`,
+              label: `${labelNoPercent} +${num}${suffix || ''}`,
               value: `${prop}:${num}`,
             };
           }),

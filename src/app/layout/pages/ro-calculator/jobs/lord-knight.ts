@@ -55,6 +55,19 @@ export class LordKnight extends CharacterBase {
         { label: 'Lv 5', value: 5, isUse: true },
       ],
     },
+    {
+      label: 'Clashing Spiral',
+      name: 'Clashing Spiral',
+      inputType: 'dropdown',
+      dropdown: [
+        { label: '0', value: 0, isUse: false },
+        { label: '1', value: 1, skillLv: 1, isUse: true },
+        { label: '2', value: 2, skillLv: 2, isUse: true },
+        { label: '3', value: 3, skillLv: 3, isUse: true },
+        { label: '4', value: 4, skillLv: 4, isUse: true },
+        { label: '5', value: 5, skillLv: 5, isUse: true },
+      ],
+    },
   ];
 
   constructor() {

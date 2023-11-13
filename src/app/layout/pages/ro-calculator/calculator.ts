@@ -1608,7 +1608,7 @@ export class Calculator {
     }
 
     // LEARN_SKILL[Meow Meow==5]2
-    const [_raw, toRemove_, learnCond] = restCondition.match(/(LEARN_SKILL\[(.+?)\]=?=?=?-?)\d+/) ?? [];
+    const [_raw, toRemove_, learnCond] = restCondition.match(/(LEARN_SKILL\[(.+?)\]=?=?=?)-?\d+/) ?? [];
     if (learnCond) {
       const [skillName, skillLv] = learnCond.split('==');
       const isPass = this.learnedSkillMap.get(skillName) >= Number(skillLv);

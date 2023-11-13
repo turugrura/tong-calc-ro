@@ -2927,6 +2927,30 @@
       ]
     }
   },
+  "4121": {
+    "id": 4121,
+    "aegisName": "Phreeoni_Card",
+    "name": "Phreeoni Card",
+    "unidName": "Card",
+    "resName": "이름없는카드",
+    "description": "HIT + 100\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Perfect",
+    "script": {
+      "hit": [
+        "100"
+      ]
+    }
+  },
   "4129": {
     "id": 4129,
     "aegisName": "Baphomet__Card",
@@ -19517,6 +19541,37 @@
       ]
     }
   },
+  "22133": {
+    "id": 22133,
+    "aegisName": "Shoes_IL",
+    "name": "Illusion Shoes [1]",
+    "unidName": "Shoes",
+    "resName": "Shoes_IL",
+    "description": "รองเท้าหุ้มข้อ ทำให้เคลื่อนไหวง่ายต่อการปฏิบัติภารกิจ \nMHP + 100, MSP + 10. ทุก ๆ การอัพเกรด 1 ขั้น MHP + 100, MSP+5 เพิ่มเติม\nประเภท : ^777777Shoes^000000 พลังป้องกัน : ^77777710^000000\nน้ำหนัก : ^77777740^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพยกเว้น Novice^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 516,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 10,
+    "weight": 40,
+    "requiredLevel": 99,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "hp": [
+        "100",
+        "1---100"
+      ],
+      "sp": [
+        "10",
+        "1---5"
+      ]
+    }
+  },
   "22171": {
     "id": 22171,
     "aegisName": "Ancient_Hero_Boots",
@@ -20138,8 +20193,12 @@
     ],
     "script": {
       "atk": [
+        "1---1",
         "10",
         "EQUIP[Ancient Shadow Armor]REFINE[shadowWeapon,shadowArmor==1]---1"
+      ],
+      "matk": [
+        "1---1"
       ],
       "range": [
         "7===1",
@@ -20304,6 +20363,356 @@
       ]
     }
   },
+  "24156": {
+    "id": 24156,
+    "aegisName": "S_Executioner_Weapon",
+    "name": "Demi-Human Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา\nเพิกเฉยต่อพลังป้องกันทางกายภาพของมอนสเตอร์เผ่า Demi-Human (ยกเว้น Player) 5%\nทุกการอัพเกรด 2 ขั้น เพิกเฉยต่อพลังป้องกันทางกายภาพของมอนสเตอร์เผ่า Demi-Human (ยกเว้น Player) เพิ่มอีกขั้นละ 1%\nเมื่อสวมใส่ Demi-Human Shadow Weapon กับ Penetration Shadow (Earring, Pendant), ATK + 5.\nเมื่อขั้นอัพเกรดรวมกันมากกว่า 25 ขึ้นไป, เพิกเฉยต่อพลังป้องกันทางกายภาพของมอนสเตอร์เผ่า Demi-Human (ยกเว้น Player) 100%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "p_pene_race_demihuman": [
+        "5",
+        "2---1",
+        "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]REFINE[shadowWeapon,shadowEarring,shadowPendant==25]100"
+      ],
+      "atk": [
+        "1---1",
+        "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]5"
+      ],
+      "matk": [
+        "1---1"
+      ]
+    }
+  },
+  "24157": {
+    "id": 24157,
+    "aegisName": "S_Exorcist_Weapon",
+    "name": "Exorcist Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา\nเพิกเฉยพลังป้องกันทางกายภาพของมอนสเตอร์เผ่า Demon 5%\nทุกการอัพเกรด 2 ขั้น จะเพิกเฉยต่อพลังป้องกันทางกายภาพของมอนสเตอร์เผ่า Demon เพิ่มอีกครั้งละ 1%\nเมื่อสวมใส่ Exorcist Shadow Weapon คู่กับ Penetration Shadow (Earring, Pendant) ATK + 5\nเมื่อขั้นอัพเกรดรวมกันมากกว่า 25 ขึ้นไป จะเพิกเฉยพลังป้องกันทางกายภาพของมอนสเตอร์เผ่า Demon 100%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "p_pene_race_demon": [
+        "5",
+        "2---1",
+        "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]REFINE[shadowWeapon,shadowEarring,shadowPendant==25]100"
+      ],
+      "atk": [
+        "1---1",
+        "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]5"
+      ],
+      "matk": [
+        "1---1"
+      ]
+    }
+  },
+  "24158": {
+    "id": 24158,
+    "aegisName": "S_Hunting_Weapon",
+    "name": "Hunting Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา\nเพิกเฉยต่อพลังป้องกันทางกายภาพของมอนสเตอร์เผ่า Brute 5%\nทุกๆ การอัพเกรด 2 ขั้น เพิกเฉยต่อพลังป้องกันทางกายภาพของมอนสเตอร์เผ่า Brute เพิ่มเติมทีละ 1%\nเมื่อสวมใส่ Hunting Shadow Weapon ร่วมกันกับ Penetration Shadow (Earring, Pendant)  ATK + 5.\nในกรณีที่ค่าอัพเกรดรวมกันมากกว่า 25 ขึ้นไป เพิกเฉยต่อพลังป้องกันทางกายภาพของมอนสเตอร์เผ่า Brute 100%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "p_pene_race_brute": [
+        "5",
+        "2---1",
+        "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]REFINE[shadowWeapon,shadowEarring,shadowPendant==25]100"
+      ],
+      "atk": [
+        "1---1",
+        "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]5"
+      ],
+      "matk": [
+        "1---1"
+      ]
+    }
+  },
+  "24159": {
+    "id": 24159,
+    "aegisName": "S_Insect_Net_Weapon",
+    "name": "Insect Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา  \nเพิกเฉยต่อพลังป้องทางกายภาพของมอนสเตอร์เผ่า Insect 5%  \nทุกๆ การอัพเกรด 2 ขั้น เพิกเฉยต่อพลังป้องกันทางกายภาพของมอนสเตอร์เผ่า Insect เพิ่มเติม 1%  \nเมื่อสวมใส่ Insect Shadow Weapon ร่วมกับ Penetration (Earring & Pendant) Shadow ATK + 5.\nเมื่อค่าอัพเกรดรวมกันมีค่า 25 ขึ้นไป เพิกเฉยต่อพลังป้องกันทางกายภาพของมอนสเตอร์เผ่า Insect 100%  \nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "p_pene_race_insect": [
+        "5",
+        "2---1",
+        "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]REFINE[shadowWeapon,shadowEarring,shadowPendant==25]100"
+      ],
+      "atk": [
+        "1---1",
+        "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]5"
+      ],
+      "matk": [
+        "1---1"
+      ]
+    }
+  },
+  "24160": {
+    "id": 24160,
+    "aegisName": "S_Fishing_Weapon",
+    "name": "Fishing Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา\nเพิกเฉยต่อพลังป้องกันทางกายภาพของมอนสเตอร์เผ่า Fish 5%  \nทุกๆ การอัพเกรด 2 ขั้น เพิกเฉยต่อพลังป้องกันทางกายภาพของมอนสเตอร์เผ่า Fish เพิ่มเติม 1%  \nเมื่อสวมใส่ Fishing Shadow Weapon ร่วมกับ Penetration (Earring, Pendant) Shadow ATK + 5  \nเมื่อค่าอัพเกรดรวมกันมีค่า 25 ขึ้นไป เพิกเฉยต่อพลังป้องกันทางกายภาพของมอนสเตอร์เผ่า Fish 100%  \nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "p_pene_race_fish": [
+        "5",
+        "2---1",
+        "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]REFINE[shadowWeapon,shadowEarring,shadowPendant==25]100"
+      ],
+      "atk": [
+        "1---1",
+        "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]5"
+      ],
+      "matk": [
+        "1---1"
+      ]
+    }
+  },
+  "24161": {
+    "id": 24161,
+    "aegisName": "S_Dragon_Killer_Weapon",
+    "name": "Dragon Killer Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา\nเพิกเฉยต่อพลังป้องกันของมอนสเตอร์เผ่า Dragon 5%\nทุกๆ การอัพเกรด 2 ขั้น เพิกเฉยต่อพลังป้องกันทางกายภาพของมอนสเตอร์เผ่า Dragon เพิ่มเติมทีละ 1%\nเมื่อสวมใส่ Dragon Killer Shadow Weapon ร่วมกันกับ Penetration Shadow (Earring, Pendant)  ATK + 5.\nในกรณีที่ค่าอัพเกรดรวมกันมากกว่า 25 ขึ้นไป เพิกเฉยต่อพลังป้องกันทางกายภาพของมอนสเตอร์เผ่า Dragon 100%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "p_pene_race_dragon": [
+        "5",
+        "2---1",
+        "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]REFINE[shadowWeapon,shadowEarring,shadowPendant==25]100"
+      ],
+      "atk": [
+        "1---1",
+        "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]5"
+      ],
+      "matk": [
+        "1---1"
+      ]
+    }
+  },
+  "24162": {
+    "id": 24162,
+    "aegisName": "S_Corrupt_Weapon",
+    "name": "Angelus Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา \nเพิกเฉยต่อพลังป้องกันของมอนสเตอร์เผ่า Angel 5%\nทุกๆ การอัพเกรด 2 ขั้น เพิกเฉยต่อพลังป้องกันทางกายภาพของมอนสเตอร์เผ่า Angel เพิ่มเติมทีละ 1%\nเมื่อสวมใส่ Angelus Shadow Weapon ร่วมกันกับ Penetration Shadow (Earring, Pendant)  ATK + 5.\nในกรณีที่ค่าอัพเกรดรวมกันมากกว่า 25 ขึ้นไป เพิกเฉยต่อพลังป้องกันทางกายภาพของมอนสเตอร์เผ่า Angel 100%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "p_pene_race_angel": [
+        "5",
+        "2---1",
+        "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]REFINE[shadowWeapon,shadowEarring,shadowPendant==25]100"
+      ],
+      "atk": [
+        "1---1",
+        "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]5"
+      ],
+      "matk": [
+        "1---1"
+      ]
+    }
+  },
+  "24163": {
+    "id": 24163,
+    "aegisName": "S_Vibration_Weapon",
+    "name": "Formless Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา\nเพิกเฉยพลังป้องกันทางกายภาพของมอนสเตอร์เผ่า Formless 5%\nทุกการอัพเกรด 2 ขั้น จะเพิกเฉยต่อพลังป้องกันทางกายภาพของมอนสเตอร์เผ่า Formless เพิ่มอีกครั้งละ 1%\nเมื่อสวมใส่ Formless Shadow Weapon คู่กับ Penetration Shadow (Earring, Pendant) ATK + 5\nเมื่อขั้นอัพเกรดรวมกันมากกว่า 25 ขึ้นไป จะเพิกเฉยพลังป้องกันทางกายภาพของมอนสเตอร์เผ่า Formless 100%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "p_pene_race_formless": [
+        "5",
+        "2---1",
+        "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]REFINE[shadowWeapon,shadowEarring,shadowPendant==25]100"
+      ],
+      "atk": [
+        "1---1",
+        "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]5"
+      ],
+      "matk": [
+        "1---1"
+      ]
+    }
+  },
+  "24164": {
+    "id": 24164,
+    "aegisName": "S_Holy_Water_Weapon",
+    "name": "Holy Water Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา \nเพิกเฉยต่อพลังป้องกันทางกายภาพของมอนสเตอร์ เผ่า Undead 5% \nทุกๆ การอัพเกรด 2 ขั้น เพิกเฉยต่อพลังป้องกันทางกายภาพของมอนสเตอร์ เผ่า Undead เพิ่มเติม 1%  \nเมื่อสวมใส่ Holy Water Shadow Weapon ร่วมกันกับ Penetration (Earring, Pendant) Shadow, ATK + 5.\nเมื่อค่าอัพเกรดรวมกันมากกว่า  25 ขึ้นไป, เพิกเฉยต่อพลังป้องกันทางกายภาพของมอนสเตอร์ เผ่า Undead 100% \nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon ^000000น้ำหนัก :  ^7777770^000000\nเลเวลที่ต้องการ: ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "p_pene_race_undead": [
+        "5",
+        "2---1",
+        "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]REFINE[shadowWeapon,shadowEarring,shadowPendant==25]100"
+      ],
+      "atk": [
+        "1---1",
+        "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]5"
+      ],
+      "matk": [
+        "1---1"
+      ]
+    }
+  },
+  "24165": {
+    "id": 24165,
+    "aegisName": "S_Scissors_Weapon",
+    "name": "Plant Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา \nเพิกเฉยต่อพลังป้องกันของมอนสเตอร์เผ่า Plant 5%\nทุกๆ การอัพเกรด 2 ขั้น เพิกเฉยต่อพลังป้องกันทางกายภาพของมอนสเตอร์เผ่า Plant เพิ่มเติมทีละ 1%\nเมื่อสวมใส่ Plant Shadow Weapon ร่วมกันกับ Penetration Shadow (Earring, Pendant)  ATK + 5.\nในกรณีที่ค่าอัพเกรดรวมกันมากกว่า 25 ขึ้นไป เพิกเฉยต่อพลังป้องกันทางกายภาพของมอนสเตอร์เผ่า Plant 100%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "p_pene_race_plant": [
+        "5",
+        "2---1",
+        "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]REFINE[shadowWeapon,shadowEarring,shadowPendant==25]100"
+      ],
+      "atk": [
+        "1---1",
+        "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]5"
+      ],
+      "matk": [
+        "1---1"
+      ]
+    }
+  },
   "24166": {
     "id": 24166,
     "aegisName": "S_Penetration_Earring",
@@ -20409,6 +20818,356 @@
       "m_pene_class_normal": [
         "5",
         "2---1"
+      ]
+    }
+  },
+  "24170": {
+    "id": 24170,
+    "aegisName": "S_M_Executioner_Weapon",
+    "name": "Magic Demi-Human Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา\nเพิกเฉยต่อพลังป้องกันทางเวทย์ของมอนสเตอร์เผ่า Demi-Human (ยกเว้น Player) 5%\nทุกการอัพเกรด 2 ขั้น เพิกเฉยต่อพลังป้องกันทางเวทย์ของมอนสเตอร์เผ่า Demi-Human (ยกเว้น Player) เพิ่มอีกขั้นละ 1%\nเมื่อสวมใส่ Magic Demi-Human Shadow Weapon กับ Tempest Shadow (Earring, Pendant) , MATK + 5.\nเมื่อขั้นอัพเกรดรวมกันมากกว่า 25 ขึ้นไป, เพิกเฉยต่อพลังป้องกันทางเวทย์ของมอนสเตอร์เผ่า Demi-Human (ยกเว้น Player) 100%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "m_pene_race_demihuman": [
+        "5",
+        "2---1",
+        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]REFINE[shadowWeapon,shadowEarring,shadowPendant==25]100"
+      ],
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1",
+        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]5"
+      ]
+    }
+  },
+  "24171": {
+    "id": 24171,
+    "aegisName": "S_M_Exorcist_Weapon",
+    "name": "Magic Exorcist Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา\nเพิกเฉยต่อพลังป้องกันทางเวทย์ของมอนสเตอร์เผ่าDemon 5%\nทุกๆการอัพเกรด 2 ขั้น เพิกเฉยต่อพลังป้องกันทางเวทย์ของมอนสเตอร์เผ่า Demon เพิ่มขึ้นอีกทีละ 1%\nเมื่อสวมใส่กับ Magic Exorcist Shadow Weapon และ Tempest Shadow (Earring, Pandant), MATK + 5.\nเมื่อผลรวมของขั้นอัพเกรดเกิน 25 ขึ้นไป, เพิกเฉยต่อพลังป้องกันทางเวทย์ของมอนสเตอร์เผ่า Demon 100%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "m_pene_race_demon": [
+        "5",
+        "2---1",
+        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]REFINE[shadowWeapon,shadowEarring,shadowPendant==25]100"
+      ],
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1",
+        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]5"
+      ]
+    }
+  },
+  "24172": {
+    "id": 24172,
+    "aegisName": "S_M_Hunting_Weapon",
+    "name": "Magic Hunting Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา\nเพิกเฉยต่อพลังป้องกันทางเวทของมอนสเตอร์เผ่า Brute 5%\nทุกๆ การอัพเกรด 2 ขั้น เพิกเฉยต่อพลังป้องกันทางเวทของมอนสเตอร์เผ่า Brute เพิ่มเติม 1%\nเมื่อสวมใส่ Magic Hunting Shadow Weapon ร่วมกันกับ Tempest Shadow (Earring, Pendant) MATK + 5.\nเมื่อค่าอัพเกรดรวมกันมากกว่า 25 ขึ้นไป เพิกเฉยต่อพลังป้องกันทางเวทของมอนสเตอร์เผ่า Brute 100%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่สวมใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "m_pene_race_brute": [
+        "5",
+        "2---1",
+        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]REFINE[shadowWeapon,shadowEarring,shadowPendant==25]100"
+      ],
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1",
+        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]5"
+      ]
+    }
+  },
+  "24173": {
+    "id": 24173,
+    "aegisName": "S_M_Insect_Net_Weapon",
+    "name": "Magic Insect Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา\nเพิกเฉยต่อพลังป้องกันทางเวทย์ของมอนสเตอร์เผ่า Insect 5%  \nทุกๆ การอัพเกรด 2 ขั้น เพิกเฉยต่อพลังป้องกันทางเวทย์ของมอนสเตอร์เผ่า Insect เพิ่มเติม 1%  \nเมื่อสวมใส่ Magic Insect Shadow Weapon ร่วมกับ Tempest (Earring, Pendant) Shadow MATK + 5  \nเมื่อค่าอัพเกรดรวมกันมีค่า 25 ขึ้นไป เพิกเฉยต่อพลังป้องกันทางเวทย์ของมอนสเตอร์เผ่า Insect 100%  \nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "m_pene_race_insect": [
+        "5",
+        "2---1",
+        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]REFINE[shadowWeapon,shadowEarring,shadowPendant==25]100"
+      ],
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1",
+        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]5"
+      ]
+    }
+  },
+  "24174": {
+    "id": 24174,
+    "aegisName": "S_M_Fishing_Weapon",
+    "name": "Magic Fishing Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา\nเพิกเฉยต่อพลังป้องกันทางเวทย์ของมอนสเตอร์เผ่า Fish 5%  \nทุกๆ การอัพเกรด 2 ขั้น เพิกเฉยต่อพลังป้องกันทางเวทย์ของมอนสเตอร์เผ่า Fish เพิ่มเติม 1%  \nเมื่อสวมใส่ Magic Fishing Shadow Weapon ร่วมกับ Tempest (Earring, Pendant) Shadow MATK + 5  \nเมื่อค่าอัพเกรดรวมกันมีค่า 25 ขึ้นไป เพิกเฉยต่อพลังป้องกันทางเวทย์ของมอนสเตอร์เผ่า Fish 100%  \nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "m_pene_race_fish": [
+        "5",
+        "2---1",
+        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]REFINE[shadowWeapon,shadowEarring,shadowPendant==25]100"
+      ],
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1",
+        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]5"
+      ]
+    }
+  },
+  "24175": {
+    "id": 24175,
+    "aegisName": "S_M_Dragon_K_Weapon",
+    "name": "Magic Dragon Killer Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา\nเพิกเฉยต่อพลังป้องกันทางเวทของมอนสเตอร์เผ่า Dragon 5%\nทุกๆ การอัพเกรด 2 ขั้น เพิกเฉยต่อพลังป้องกันทางเวทของมอนสเตอร์เผ่า Dragon เพิ่มเติมทีละ 1%\nเมื่อสวมใส่ Magic Dragon Killer Shadow Weapon ร่วมกันกับ Tempest Shadow (Earring, Pendant) MATK + 5.\nเมื่อค่าอัพเกรดรวมกันมากกว่า 25 ขึ้นไป เพิกเฉยต่อพลังป้องกันทางเวทของมอนสเตอร์เผ่า Dragon 100%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่สวมใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "m_pene_race_dragon": [
+        "5",
+        "2---1",
+        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]REFINE[shadowWeapon,shadowEarring,shadowPendant==25]100"
+      ],
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1",
+        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]5"
+      ]
+    }
+  },
+  "24176": {
+    "id": 24176,
+    "aegisName": "S_M_Corrupt_Weapon",
+    "name": "Magic Angelus Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา \nเพิกเฉยต่อพลังป้องกันทางเวทของมอนสเตอร์เผ่า Angel 5%\nทุกๆ การอัพเกรด 2 ขั้น เพิกเฉยต่อพลังป้องกันทางเวทของมอนสเตอร์เผ่า Angel เพิ่มเติมครั้งละ 1%\nเมื่อสวมใส่ Magic Angelus Shadow Weapon ร่วมกันกับ Tempest Shadow (Earring, Pendant) MATK + 5.\nเมื่อค่าอัพเกรดรวมกันมากกว่า 25 ขึ้นไป เพิกเฉยต่อพลังป้องกันทางเวทของมอนสเตอร์เผ่า Angel 100%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่สวมใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "m_pene_race_angel": [
+        "5",
+        "2---1",
+        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]REFINE[shadowWeapon,shadowEarring,shadowPendant==25]100"
+      ],
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1",
+        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]5"
+      ]
+    }
+  },
+  "24177": {
+    "id": 24177,
+    "aegisName": "S_M_Vibration_Weapon",
+    "name": "Magic Formless Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา\nเพิกเฉยต่อพลังป้องกันทางเวทย์ของมอนสเตอร์เผ่า Formless 5%\nทุกๆการอัพเกรด 2 ขั้น เพิกเฉยต่อพลังป้องกันทางเวทย์ของมอนสเตอร์เผ่า Formless ขึ้นทีละ 1%\nเมื่อสวมใส่กับ Magic Formless Shadow Weapon และ Tempest Shadow (Earring, Pandant), MATK + 5.\nเมื่อผลรวมของขั้นอัพเกรดเกิน 25 ขึ้นไป, เพิกเฉยต่อพลังป้องกันทางเวทย์ของมอนสเตอร์เผ่า Formless 100%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "m_pene_race_formless": [
+        "5",
+        "2---1",
+        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]REFINE[shadowWeapon,shadowEarring,shadowPendant==25]100"
+      ],
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1",
+        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]5"
+      ]
+    }
+  },
+  "24178": {
+    "id": 24178,
+    "aegisName": "S_M_Holy_Water_Weapon",
+    "name": "Magic Holy Water Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา \nพิกเฉยต่อพลังป้องกันทางเวทย์ของมอนสเตอร์ เผ่า Undead 5% \nทุกๆ การอัพเกรด 2 ขั้นพิกเฉยต่อพลังป้องกันทางเวทย์ของมอนสเตอร์ เผ่า Undead เพิ่มเติมทีละ 1% \nเมื่อสวมใส่ Magic Holy Water Shadow Weapon ร่วมกันกับ Tempest (Earring,Pendent) Shadow, MATK+5\nเมื่อค่าอัพเกรดรวมกันมากกว่า  25 ขึ้นไป, พิกเฉยต่อพลังป้องกันทางเวทย์ของมอนสเตอร์ เผ่า Undead 100%  \nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon ^000000น้ำหนัก :  ^7777770^000000\nเลเวลที่ต้องการ: ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "m_pene_race_undead": [
+        "5",
+        "2---1",
+        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]REFINE[shadowWeapon,shadowEarring,shadowPendant==25]100"
+      ],
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1",
+        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]5"
+      ]
+    }
+  },
+  "24179": {
+    "id": 24179,
+    "aegisName": "S_M_Scissors_Weapon",
+    "name": "Magic Caesars Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา \nเพิกเฉยต่อพลังป้องกันทางเวทของมอนสเตอร์เผ่า Plant\nทุกๆ การอัพเกรด 2 ขั้น เพิกเฉยต่อพลังป้องกันทางเวทของมอนสเตอร์เผ่า Plant เพิ่มเติมครั้งละ 1%\nMagic Caesars Shadow Weapon ร่วมกันกับ Tempest Shadow (Earring, Pendant) MATK + 5.\nเมื่อค่าอัพเกรดรวมกันมากกว่า 25 ขึ้นไป เพิกเฉยต่อพลังป้องกันทางเวทของมอนสเตอร์เผ่า Plant 100%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่สวมใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "m_pene_race_plant": [
+        "5",
+        "2---1",
+        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]REFINE[shadowWeapon,shadowEarring,shadowPendant==25]100"
+      ],
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1",
+        "EQUIP[Tempest Shadow Earring&&Tempest Shadow Pendant]5"
       ]
     }
   },
@@ -21634,6 +22393,12 @@
       "range": [
         "7===3",
         "9===5"
+      ],
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1"
       ]
     }
   },
@@ -21680,6 +22445,12 @@
       ],
       "spPercent": [
         "9===10"
+      ],
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1"
       ]
     }
   },
@@ -21718,7 +22489,11 @@
         "2"
       ],
       "matk": [
+        "1---1",
         "LEARN_SKILL[Ninja Mastery==1]---3"
+      ],
+      "atk": [
+        "1---1"
       ]
     }
   },
@@ -21753,6 +22528,12 @@
       "matkPercent": [
         "7===5",
         "9===5"
+      ],
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1"
       ]
     }
   },
@@ -21786,6 +22567,12 @@
       "perfectDodge": [
         "7===2",
         "9===3"
+      ],
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1"
       ]
     }
   },
@@ -21813,6 +22600,12 @@
       "Sonic Wave": [
         "20",
         "1---5"
+      ],
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1"
       ]
     }
   },
@@ -21840,6 +22633,12 @@
       "Cannon Spear": [
         "20",
         "1---5"
+      ],
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1"
       ]
     }
   },
@@ -21867,6 +22666,12 @@
       "Vulcan Arm": [
         "20",
         "1---5"
+      ],
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1"
       ]
     }
   },
@@ -21894,6 +22699,12 @@
       "Cart Tornado": [
         "20",
         "1---5"
+      ],
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1"
       ]
     }
   },
@@ -21921,6 +22732,12 @@
       "Duple Light": [
         "20",
         "1---5"
+      ],
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1"
       ]
     }
   },
@@ -21948,6 +22765,12 @@
       "spPercent__Dark Illusion": [
         "20",
         "1---3"
+      ],
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1"
       ]
     }
   },
@@ -21975,6 +22798,12 @@
       "Triangle Shot": [
         "20",
         "1---5"
+      ],
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1"
       ]
     }
   },
@@ -22002,6 +22831,12 @@
       "Drain Life": [
         "20",
         "1---5"
+      ],
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1"
       ]
     }
   },
@@ -22029,6 +22864,12 @@
       "cd__Diamond Dust": [
         "1",
         "1---0.3"
+      ],
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1"
       ]
     }
   },
@@ -22056,6 +22897,12 @@
       "Bomb Cluster": [
         "20",
         "1---5"
+      ],
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1"
       ]
     }
   },
@@ -22087,6 +22934,12 @@
         "LEARN_SKILL[Echo Song==1]---1",
         "LEARN_SKILL[Harmonize==1]---1",
         "LEARN_SKILL[Rush To Windmill==1]---1"
+      ],
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1"
       ]
     }
   },
@@ -22118,6 +22971,12 @@
         "LEARN_SKILL[Moonlight Serenade==1]---1",
         "LEARN_SKILL[Swing Dance==1]---1",
         "LEARN_SKILL[Lover Symphony==1]---1"
+      ],
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1"
       ]
     }
   },
@@ -23150,6 +24009,12 @@
       ],
       "mdef": [
         "EQUIP[Blitz Shadow Armor]REFINE[shadowWeapon,shadowArmor==1]1"
+      ],
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1"
       ]
     }
   },
@@ -23730,16 +24595,18 @@
     "requiredLevel": 1,
     "location": "Shield",
     "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
     "script": {
       "hp": [
-        "200",
+        "200"
+      ],
+      "hpPercent": [
         "7===2",
         "9===3"
       ]
-    },
-    "usableClass": [
-      "all"
-    ]
+    }
   },
   "24395": {
     "id": 24395,
@@ -24270,6 +25137,12 @@
     "script": {
       "criDmg": [
         "7"
+      ],
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1"
       ]
     },
     "usableClass": [
@@ -24448,7 +25321,11 @@
         "9===3"
       ],
       "atk": [
-        "1---3"
+        "1---3",
+        "1---1"
+      ],
+      "matk": [
+        "1---1"
       ],
       "hpPercent": [
         "EQUIP[Perfect Size Shadow Armor]2"
@@ -24713,6 +25590,12 @@
         "5",
         "2---1",
         "EQUIP[Penetration Shadow Armor&&Penetration Shadow Earring&&Penetration Shadow Pendant&&Penetration Shadow Shoes&&Penetration Shadow Shield]REFINE[shadowWeapon,shadowArmor,shadowShield,shadowBoot,shadowEarring,shadowPendant==54]===20"
+      ],
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1"
       ]
     },
     "usableClass": [
@@ -24780,6 +25663,9 @@
       "atk": [
         "1---1",
         "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]===5"
+      ],
+      "matk": [
+        "1---1"
       ]
     }
   },
@@ -24817,6 +25703,9 @@
       "atk": [
         "1---1",
         "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]===5"
+      ],
+      "matk": [
+        "1---1"
       ]
     }
   },
@@ -24854,6 +25743,9 @@
       "atk": [
         "1---1",
         "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]===5"
+      ],
+      "matk": [
+        "1---1"
       ]
     }
   },
@@ -24891,6 +25783,9 @@
       "atk": [
         "1---1",
         "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]===5"
+      ],
+      "matk": [
+        "1---1"
       ]
     }
   },
@@ -24928,6 +25823,9 @@
       "atk": [
         "1---1",
         "EQUIP[Penetration Shadow Earring&&Penetration Shadow Pendant]===5"
+      ],
+      "matk": [
+        "1---1"
       ]
     }
   },
@@ -24965,6 +25863,12 @@
       ],
       "flee": [
         "7===15"
+      ],
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1"
       ]
     }
   },
@@ -25000,6 +25904,12 @@
       "p_pene_race_all": [
         "EQUIP[Ranger Shadow Shield]40",
         "EQUIP[Ranger Shadow Shield]REFINE[shadowWeapon,shadowShield==1]---1"
+      ],
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1"
       ]
     }
   },
@@ -25362,6 +26272,12 @@
       "p_pene_race_all": [
         "EQUIP[Mechanic Shield Shadow]40",
         "EQUIP[Mechanic Shield Shadow]REFINE[shadowWeapon,shadowShield==1]---1"
+      ],
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1"
       ]
     }
   },
@@ -25450,6 +26366,12 @@
       ],
       "vct": [
         "EQUIP[Mechanic Shield Shadow]REFINE[shadowWeapon,shadowShield==1]---1"
+      ],
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1"
       ]
     }
   },
@@ -25537,6 +26459,12 @@
       "m_pene_race_all": [
         "EQUIP[Arch Bishop Shadow Shield]40",
         "EQUIP[Arch Bishop Shadow Shield]REFINE[shadowWeapon,shadowShield==1]---1"
+      ],
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1"
       ]
     }
   },
@@ -25713,6 +26641,12 @@
       "m_pene_race_all": [
         "EQUIP[Arch Bishop Shadow Shield]40",
         "EQUIP[Arch Bishop Shadow Shield]REFINE[shadowWeapon,shadowShield==1]---1"
+      ],
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1"
       ]
     }
   },
@@ -25843,6 +26777,12 @@
       "p_pene_race_all": [
         "EQUIP[Wanderer Shadow Shield||Minstrel Shadow Shield]40",
         "EQUIP[Wanderer Shadow Shield||Minstrel Shadow Shield]REFINE[shadowWeapon,shadowShield==1]---1"
+      ],
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1"
       ]
     }
   },
@@ -26379,6 +27319,12 @@
       "p_pene_race_all": [
         "EQUIP[Guillotine Cross Shadow Shield]40",
         "EQUIP[Guillotine Cross Shadow Shield]REFINE[shadowWeapon,shadowShield==1]---1"
+      ],
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1"
       ]
     }
   },
@@ -26468,6 +27414,12 @@
       "m_pene_race_all": [
         "EQUIP[Sorcerer Shadow Shield]40",
         "EQUIP[Sorcerer Shadow Shield]REFINE[shadowWeapon,shadowShield==1]---1"
+      ],
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1"
       ]
     }
   },
@@ -26834,6 +27786,12 @@
       "m_pene_race_all": [
         "EQUIP[Royal Guard Shadow Shield]40",
         "EQUIP[Royal Guard Shadow Shield]REFINE[shadowWeapon,shadowShield==1]---1"
+      ],
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1"
       ]
     }
   },
@@ -27058,9 +28016,11 @@
     ],
     "script": {
       "atk": [
+        "1---1",
         "10"
       ],
       "matk": [
+        "1---1",
         "10"
       ],
       "cd__Ignition Break": [
@@ -27102,9 +28062,11 @@
     ],
     "script": {
       "atk": [
+        "1---1",
         "10"
       ],
       "matk": [
+        "1---1",
         "10"
       ],
       "acd": [
@@ -27146,9 +28108,11 @@
     ],
     "script": {
       "atk": [
+        "1---1",
         "10"
       ],
       "matk": [
+        "1---1",
         "10"
       ],
       "p_size_all": [
@@ -27193,9 +28157,11 @@
     ],
     "script": {
       "atk": [
+        "1---1",
         "10"
       ],
       "matk": [
+        "1---1",
         "10"
       ],
       "cd__Cart Tornado": [
@@ -27237,9 +28203,11 @@
     ],
     "script": {
       "atk": [
+        "1---1",
         "10"
       ],
       "matk": [
+        "1---1",
         "10"
       ],
       "Rolling Cutter": [
@@ -27281,9 +28249,11 @@
     ],
     "script": {
       "atk": [
+        "1---1",
         "10"
       ],
       "matk": [
+        "1---1",
         "10"
       ],
       "Triangle Shot": [
@@ -27325,9 +28295,11 @@
     ],
     "script": {
       "atk": [
+        "1---1",
         "10"
       ],
       "matk": [
+        "1---1",
         "10"
       ],
       "m_my_element_all": [
@@ -27369,9 +28341,11 @@
     ],
     "script": {
       "atk": [
+        "1---1",
         "10"
       ],
       "matk": [
+        "1---1",
         "10"
       ],
       "cd__Diamond Dust": [
@@ -27410,9 +28384,11 @@
     ],
     "script": {
       "atk": [
+        "1---1",
         "10"
       ],
       "matk": [
+        "1---1",
         "10"
       ],
       "cd__Adoramus": [
@@ -27451,9 +28427,11 @@
     ],
     "script": {
       "atk": [
+        "1---1",
         "10"
       ],
       "matk": [
+        "1---1",
         "10"
       ],
       "Arrow Storm": [
@@ -27493,9 +28471,11 @@
     ],
     "script": {
       "atk": [
+        "1---1",
         "10"
       ],
       "matk": [
+        "1---1",
         "10"
       ],
       "Severe Rainstorm": [
@@ -27544,6 +28524,12 @@
       "p_pene_race_all": [
         "EQUIP[Rebellion Shadow Shoes]===40",
         "EQUIP[Rebellion Shadow Shoes]REFINE[shadowWeapon,shadowBoot==1]---1"
+      ],
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1"
       ]
     }
   },
@@ -27828,6 +28814,12 @@
       "p_pene_race_all": [
         "EQUIP[Rebellion Shadow Shoes]===40",
         "EQUIP[Rebellion Shadow Shoes]REFINE[shadowWeapon,shadowBoot==1]---1"
+      ],
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1"
       ]
     }
   },
@@ -27917,6 +28909,12 @@
       "p_pene_race_all": [
         "EQUIP[Kagerou Shadow Shoes]40",
         "EQUIP[Kagerou Shadow Shoes]REFINE[shadowWeapon,shadowBoot==1]---1"
+      ],
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1"
       ]
     }
   },
@@ -28097,6 +29095,12 @@
       "p_pene_race_all": [
         "EQUIP[Doram Physical Shadow Shoes]40",
         "EQUIP[Doram Physical Shadow Shoes]REFINE[shadowWeapon,shadowBoot==1]---1"
+      ],
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1"
       ]
     }
   },
@@ -28282,6 +29286,12 @@
       "m_pene_race_all": [
         "EQUIP[Doram Magical Shadow Shoes]40",
         "EQUIP[Doram Magical Shadow Shoes]REFINE[shadowWeapon,shadowBoot==1]---1"
+      ],
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1"
       ]
     }
   },
@@ -28487,6 +29497,12 @@
       "m_pene_race_all": [
         "EQUIP[Soul Reaper Shadow Shoes]40",
         "EQUIP[Soul Reaper Shadow Shoes]REFINE[shadowWeapon,shadowBoot==1]---1"
+      ],
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1"
       ]
     }
   },
@@ -28726,9 +29742,11 @@
     ],
     "script": {
       "atk": [
+        "1---1",
         "10"
       ],
       "matk": [
+        "1---1",
         "10"
       ],
       "m_my_element_all": [
@@ -28773,9 +29791,11 @@
     ],
     "script": {
       "atk": [
+        "1---1",
         "10"
       ],
       "matk": [
+        "1---1",
         "10"
       ],
       "Blaze Kick": [
@@ -28829,9 +29849,11 @@
     ],
     "script": {
       "atk": [
+        "1---1",
         "10"
       ],
       "matk": [
+        "1---1",
         "10"
       ],
       "vct": [
@@ -28885,9 +29907,11 @@
     ],
     "script": {
       "atk": [
+        "1---1",
         "10"
       ],
       "matk": [
+        "1---1",
         "10"
       ],
       "range": [
@@ -28923,9 +29947,11 @@
     "compositionPos": null,
     "script": {
       "atk": [
+        "1---1",
         "10"
       ],
       "matk": [
+        "1---1",
         "10"
       ],
       "vct": [
@@ -30262,6 +31288,41 @@
         "WEAPON_TYPE[book]1---3",
         "WEAPON_TYPE[twohandSword]1---3",
         "WEAPON_TYPE[twohandSpear]1---3"
+      ]
+    }
+  },
+  "27118": {
+    "id": 27118,
+    "aegisName": "OminousFreezer_Card",
+    "name": "Ominous Freezer Card",
+    "unidName": "Ominous Freezer Card",
+    "resName": "이름없는카드",
+    "description": "MHP + 10 % STR+ 2\nเมื่อเลเวลของผู้สวมใส่ตั้งแต่160 ขึ้นไป เพิ่ม Damage สกิล [Hundred Spears], [Over Brand] 10%\nเมื่อขั้นอัพเกรดของ Shoes ตั้งแต่ 9 ขึ้นไป เพิ่ม Damage สกิล [Hundred Spears], [Over Brand] 10%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Shoes^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 64,
+    "cardPrefix": "of Pierce",
+    "script": {
+      "hpPercent": [
+        "10"
+      ],
+      "str": [
+        "2"
+      ],
+      "Hundred Spears": [
+        "SUM[level==160]10",
+        "9===10"
+      ],
+      "Over Brand": [
+        "SUM[level==160]10",
+        "9===10"
       ]
     }
   },
@@ -36246,6 +37307,162 @@
       ]
     }
   },
+  "29102": {
+    "id": 29102,
+    "aegisName": "Adamatine2",
+    "name": "Adamantine Lv. 2",
+    "unidName": "Adamantine Lv. 2",
+    "resName": "퍼플크리스탈조각",
+    "description": "Max HP + 10%, DEF + 30",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "hpPercent": [
+        "10"
+      ],
+      "def": [
+        "30"
+      ]
+    }
+  },
+  "29103": {
+    "id": 29103,
+    "aegisName": "Adamatine3",
+    "name": "Adamantine Lv. 3",
+    "unidName": "Adamantine Lv. 3",
+    "resName": "퍼플크리스탈조각",
+    "description": "Max HP + 15%, DEF + 45",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "hpPercent": [
+        "15"
+      ],
+      "def": [
+        "45"
+      ]
+    }
+  },
+  "29104": {
+    "id": 29104,
+    "aegisName": "Adamatine4",
+    "name": "Adamantine Lv. 4",
+    "unidName": "Adamantine Lv. 4",
+    "resName": "퍼플크리스탈조각",
+    "description": "Max HP + 20%, DEF + 60",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "hpPercent": [
+        "20"
+      ],
+      "def": [
+        "60"
+      ]
+    }
+  },
+  "29105": {
+    "id": 29105,
+    "aegisName": "Adamatine5",
+    "name": "Adamantine Lv. 5",
+    "unidName": "Adamantine Lv. 5",
+    "resName": "퍼플크리스탈조각",
+    "description": "Max HP + 25%, DEF + 75",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "hpPercent": [
+        "25"
+      ],
+      "def": [
+        "75"
+      ]
+    }
+  },
+  "29106": {
+    "id": 29106,
+    "aegisName": "Adamatine6",
+    "name": "Adamantine Lv. 6",
+    "unidName": "Adamantine Lv. 6",
+    "resName": "퍼플크리스탈조각",
+    "description": "Max HP + 30%, DEF + 90",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "hpPercent": [
+        "30"
+      ],
+      "def": [
+        "90"
+      ]
+    }
+  },
+  "29107": {
+    "id": 29107,
+    "aegisName": "Adamatine7",
+    "name": "Adamantine Lv. 7",
+    "unidName": "Adamantine Lv. 7",
+    "resName": "퍼플크리스탈조각",
+    "description": "Max HP + 35%, DEF + 105",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "hpPercent": [
+        "35"
+      ],
+      "def": [
+        "105"
+      ]
+    }
+  },
   "29154": {
     "id": 29154,
     "aegisName": "FixedCasting03",
@@ -39793,7 +41010,7 @@
       "Shield Press": [
         "REFINE_NAME[Harve==3]---5"
       ],
-      "Overbrand": [
+      "Over Brand": [
         "REFINE_NAME[Fortridge==3]---7"
       ],
       "Cannon Spear": [
@@ -41351,6 +42568,52 @@
       ]
     }
   },
+  "32005": {
+    "id": 32005,
+    "aegisName": "Pole_Axe_IL",
+    "name": "Illusion Pole Axe [2]",
+    "unidName": "Spear",
+    "resName": "Pole_Axe_IL",
+    "description": "หอกอเนกประสงค์ขนาดใหญ่ \nที่มีอาวุธรูปร่างคล้ายเคียวติดอยู่ตรงด้ามหอก\nเพื่อให้สามารถทำการโจมตีได้หลากหลายรูปแบบ\nSTR +3, INT+ 2, DEX +2\nเมื่ออัพเกรดถึงขั้น 9 ลด Cooldown ของสกิล Hundred Spears 1 วินาที\nเมื่ออัพเกรดถึงขั้น 13 ลด Cooldown ของสกิล Hundred Spears เพิ่ม 1 วินาที\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Illusion Shoes\nATK + 40.\nเมื่อขั้นอัพเกรดของ Illusion Pole Axe และ Illusion Shoes ตั้งแต่ 7 ขึ้นไป เพิ่ม Damage สกิล Hundred Spears 20%\nเมื่อผลรวมขั้นอัพเกรดตั้งแต่18 ขึ้นไป ATK + 10%\nเมื่อผลรวมขั้นอัพเกรดตั้งแต่ 22 ขึ้นไป เพิ่ม Damage สกิล Hundred Spears อีก 20%\n^ffffff_^000000\nประเภท : ^777777Spear^000000 พลังโจมตี : ^777777190^000000\nน้ำหนัก : ^777777150^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777120^000000\nอาชีพที่ใส่ได้ : ^777777Swordsman^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 259,
+    "itemLevel": 4,
+    "attack": 190,
+    "defense": null,
+    "weight": 150,
+    "requiredLevel": 120,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Swordman"
+    ],
+    "script": {
+      "str": [
+        "3"
+      ],
+      "int": [
+        "2"
+      ],
+      "dex": [
+        "2"
+      ],
+      "cd__Hundred Spears": [
+        "9===1",
+        "13===1"
+      ],
+      "atk": [
+        "EQUIP[Illusion Shoes]40"
+      ],
+      "Hundred Spears": [
+        "EQUIP[ขั้นอัพเกรดของ Illusion Pole Axe&&Illusion Shoes]REFINE[boot==7]7===20",
+        "EQUIP[ขั้นอัพเกรดของ Illusion Pole Axe&&Illusion Shoes]REFINE[weapon,boot==22]20"
+      ],
+      "atkPercent": [
+        "EQUIP[ขั้นอัพเกรดของ Illusion Pole Axe&&Illusion Shoes]REFINE[weapon,boot==18]10"
+      ]
+    }
+  },
   "32023": {
     "id": 32023,
     "aegisName": "Argen_Blanco",
@@ -41448,7 +42711,7 @@
       "Cannon Spear": [
         "9===20"
       ],
-      "Overbrand": [
+      "Over Brand": [
         "11===20"
       ]
     }

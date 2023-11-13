@@ -197,6 +197,14 @@ enum MagicEess {
   _6 = 'MagicEessence6',
   _7 = 'MagicEessence7',
 }
+enum Adamatine {
+  _2 = 'Adamatine2',
+  _3 = 'Adamatine3',
+  _4 = 'Adamatine4',
+  _5 = 'Adamatine5',
+  _6 = 'Adamatine6',
+  _7 = 'Adamatine7',
+}
 
 const statEnums = [Str, Int, Dex, Agi, Vit, Luk];
 const createBaseStat = (from: number, to: number): string[] => {
@@ -283,7 +291,7 @@ const racing3rd = [EA._1, EA._2, FS._1, FS._2, Sharp._1, Sharp._2, Fatal._1, Fat
 const illusionArmor = ['Improve_Orb_Atk', 'Improve_Orb_Matk', 'Improve_Orb_Archer', 'Improve_Orb_Delay'];
 const illusionGarment = ['Improve_Orb_Speed', 'Improve_Orb_Cast', 'Improve_Orb_Cri', 'Improve_Orb_Above'];
 const illusionBoot = ['Improve_Orb_Fix', 'Improve_Orb_Heal', 'Improve_Orb_L_Vit', 'Improve_Orb_L_INT', 'Improve_Orb_L_DEX', 'Improve_Orb_L_STR', 'Improve_Orb_L_AGI', 'Improve_Orb_L_LUK'];
-const illusionAcc = [EA._5, FS._6, Spell._5, AttackDelay._4, Fatal._4];
+const illusionAcc = [EA._5, FS._6, Spell._5, AttackDelay._4, Fatal._4, ...BaseState._3];
 
 const tempBoot_3 = ["Bear's_Power", 'Runaway_Magic', 'Speed_Of_Light', 'Muscle_Fool', 'Hawkeye', 'Lucky_Day'];
 const tempBoot_4 = [EA._4, FS._7, Spell._5, AttackDelay._4];
@@ -321,6 +329,12 @@ const labHead2 = [
   MagicEess._5,
   MagicEess._6,
   MagicEess._7,
+  Adamatine._2,
+  Adamatine._3,
+  Adamatine._4,
+  Adamatine._5,
+  Adamatine._6,
+  Adamatine._7,
 ];
 
 const tempHead4 = [Str._1, Str._2, Str._3, Str._4, Int._1, Int._2, Int._3, Int._4, Vit._1, Vit._2, Vit._3, Vit._4, Luk._1, Luk._2, Luk._3, Luk._4];
@@ -589,6 +603,7 @@ export const EnchantTable: EntTable[] = [
   { name: 'Fancy_Flower_IL', enchants: [null, null, BaseState._1_4, illusionDun] },
   { name: 'Goibne_Helmet_IL', enchants: [null, null, BaseState._1_4, illusionDun] },
   { name: 'Boots_IL', enchants: [null, null, BaseState._1_4, illusionDun] },
+  { name: 'Shoes_IL', enchants: [null, null, BaseState._1_4, illusionDun] },
 
   { name: 'Robe_Of_Flattery', enchants: [null, null, allRunes, allRunes] },
   { name: 'Robe_Of_Vituperation', enchants: [null, null, allRunes, allRunes] },
