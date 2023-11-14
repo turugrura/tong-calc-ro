@@ -51,6 +51,8 @@ import { FoodStatList } from './constants/food-stat-list';
 import { ElementConverterList } from './constants/element-converter-list';
 import { RuneKnight } from './jobs/rune-knight';
 import { Oboro } from './jobs/oboro';
+import { AspdPotionList } from './constants/aspd-potion-list';
+import { canUsedByClass } from './utils/can-used-by-class';
 
 interface MonsterSelectItemGroup extends SelectItemGroup {
   items: any[];
@@ -203,11 +205,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   activeSkills: ActiveSkillModel[] = [];
   consumableList: DropdownModel[] = [];
   consumableList2: DropdownModel[][] = FoodStatList;
-  aspdPotionList: DropdownModel[] = [
-    { label: 'Concentration Potion', value: 645 },
-    { label: 'Awakening Potion', value: 656 },
-    { label: 'Berserk Potion', value: 657 },
-  ];
+  aspdPotionList: DropdownModel[] = [];
   aspdPotionList2: DropdownModel[] = [
     { label: 'Enrich Celermine', value: 12437 },
     // { label: 'Guarana Candy', value: 12414 },
@@ -917,6 +915,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         take(1),
         mergeMap(() => {
           this.setClassSkill();
+          this.setAspdPotionList();
           this.setDefaultSkill();
           this.setItemDropdownList();
           return waitRxjs();
@@ -1011,6 +1010,10 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     if (!this.model.selectedAtkSkill || selectedValidSkill) {
       this.model.selectedAtkSkill = defaultAtkSkill;
     }
+  }
+
+  private setAspdPotionList() {
+    this.aspdPotionList = AspdPotionList.filter(canUsedByClass(this.selectedCharacter));
   }
 
   private setSkillModelArray() {
@@ -1661,6 +1664,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
             return waitRxjs();
           }),
           mergeMap(() => {
+            this.setAspdPotionList();
             this.setClassSkill();
             this.setDefaultSkill();
             return waitRxjs();

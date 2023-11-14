@@ -8,6 +8,7 @@ import {
   PassiveSkillModel,
 } from './_character-base.abstract';
 import { SoulLinker } from './soul-linker';
+import { InfoForClass } from '../models/info-for-class.model';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 1, 0, 0],
@@ -74,7 +75,7 @@ const jobBonusTable: Record<number, [number, number, number, number, number, num
   62: [3, 7, 5, 11, 11, 0],
   63: [3, 7, 5, 11, 11, 0],
   64: [3, 7, 6, 11, 12, 0],
-  65: [3, 7, 6, 11, 12, 0],
+  65: [3, 7, 6, 11, 12, 1],
 };
 
 export class SoulReaper extends CharacterBase {
@@ -139,7 +140,6 @@ export class SoulReaper extends CharacterBase {
   ];
   protected _activeSkillList: ActiveSkillModel[] = [
     // {
-    //   isEquipAtk: true,
     //   inputType: 'dropdown',
     //   label: 'Fairy Soul',
     //   name: 'Fairy Soul',
@@ -152,6 +152,18 @@ export class SoulReaper extends CharacterBase {
     //     { label: 'Lv 5', value: 5, skillLv: 5, isUse: true, bonus: { matk: 50, vct: 10 } },
     //   ],
     // },
+    {
+      inputType: 'dropdown',
+      label: 'Total Soul',
+      name: 'Total Soul',
+      dropdown: [
+        { label: '-', value: 0, isUse: false },
+        { label: '5', value: 5, skillLv: 5, isUse: true, bonus: { x_matk: 5 * 3 } },
+        { label: '10', value: 10, skillLv: 10, isUse: true, bonus: { x_matk: 10 * 3 } },
+        { label: '15', value: 15, skillLv: 15, isUse: true, bonus: { x_matk: 15 * 3 } },
+        { label: '20', value: 20, skillLv: 20, isUse: true, bonus: { x_matk: 20 * 3 } },
+      ],
+    },
   ];
   protected _passiveSkillList: PassiveSkillModel[] = [];
 
@@ -159,5 +171,9 @@ export class SoulReaper extends CharacterBase {
     super();
 
     this.inheritBaseClass(new SoulLinker());
+  }
+
+  override getMasteryMatk(info: InfoForClass): number {
+    return this.calcHiddenMasteryAtk(info).totalMatk;
   }
 }

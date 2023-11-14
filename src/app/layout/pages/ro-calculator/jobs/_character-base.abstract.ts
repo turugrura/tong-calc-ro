@@ -251,9 +251,7 @@ export abstract class CharacterBase {
   }
 
   protected calcHiddenMasteryAtk(_: InfoForClass, x?: { prefix?: string; suffix?: string }) {
-    if (!this.bonuses?.masteryAtks) return { totalAtk: 0, totalMatk: 0 };
-
-    const bonuses = this.bonuses.masteryAtks || {};
+    const allBonus = { ...(this.bonuses?.masteryAtks || {}), ...(this.bonuses?.equipAtks || {}) };
 
     let totalAtk = 0;
     let totalMatk = 0;
@@ -269,7 +267,7 @@ export abstract class CharacterBase {
       attrMatk = `${attrMatk}_${x.suffix}`;
     }
 
-    for (const [, bonus] of Object.entries(bonuses)) {
+    for (const [, bonus] of Object.entries(allBonus)) {
       totalAtk += bonus[attrAtk] || 0;
       totalMatk += bonus[attrMatk] || 0;
     }
@@ -342,6 +340,10 @@ export abstract class CharacterBase {
    * @returns mastery atk
    */
   getMasteryAtk(_: InfoForClass) {
+    return 0;
+  }
+
+  getMasteryMatk(_: InfoForClass) {
     return 0;
   }
 
