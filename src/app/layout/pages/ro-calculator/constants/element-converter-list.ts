@@ -27,6 +27,12 @@ export const ElementConverterList: DropdownModel[] = [
     element: ElementType.Wind,
   },
   {
+    img: 'I_EnchantPoison',
+    label: 'EnchantPoison',
+    value: ElementType.Poison,
+    element: ElementType.Poison,
+  },
+  {
     img: 'I_Aspersio',
     label: 'Aspersio',
     value: ElementType.Holy,

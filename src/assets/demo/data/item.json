@@ -18214,7 +18214,7 @@
     "script": {
       "atk": [
         "2---10",
-        "EQUIP[Temporal Str Boots|||Modified Str Boots]50"
+        "EQUIP[Temporal Str Boots||Modified Str Boots]50"
       ],
       "atkPercent": [
         "2---1",
@@ -18226,22 +18226,22 @@
       "p_pene_race_brute": [
         "9===20",
         "11===10",
-        "EQUIP[Temporal Str Boots|||Modified Str Boots]REFINE[boot==10]30"
+        "EQUIP[Temporal Str Boots||Modified Str Boots]REFINE[boot==10]30"
       ],
       "p_pene_race_demon": [
         "9===20",
         "11===10",
-        "EQUIP[Temporal Str Boots|||Modified Str Boots]REFINE[boot==10]30"
+        "EQUIP[Temporal Str Boots||Modified Str Boots]REFINE[boot==10]30"
       ],
       "m_pene_race_brute": [
         "9===20",
         "11===10",
-        "EQUIP[Temporal Str Boots|||Modified Str Boots]REFINE[boot==10]30"
+        "EQUIP[Temporal Str Boots||Modified Str Boots]REFINE[boot==10]30"
       ],
       "m_pene_race_demon": [
         "9===20",
         "11===10",
-        "EQUIP[Temporal Str Boots|||Modified Str Boots]REFINE[boot==10]30"
+        "EQUIP[Temporal Str Boots||Modified Str Boots]REFINE[boot==10]30"
       ]
     }
   },
@@ -18271,7 +18271,7 @@
       ],
       "criDmg": [
         "2---3",
-        "EQUIP[Temporal Agi Boots|||Modified Agi Boots]7"
+        "EQUIP[Temporal Agi Boots||Modified Agi Boots]7"
       ],
       "atkPercent": [
         "7===7"
@@ -18282,22 +18282,22 @@
       "p_pene_race_brute": [
         "9===20",
         "11===10",
-        "EQUIP[Temporal Agi Boots|||Modified Agi Boots]REFINE[boot==10]30"
+        "EQUIP[Temporal Agi Boots||Modified Agi Boots]REFINE[boot==10]30"
       ],
       "p_pene_race_demon": [
         "9===20",
         "11===10",
-        "EQUIP[Temporal Agi Boots|||Modified Agi Boots]REFINE[boot==10]30"
+        "EQUIP[Temporal Agi Boots||Modified Agi Boots]REFINE[boot==10]30"
       ],
       "m_pene_race_brute": [
         "9===20",
         "11===10",
-        "EQUIP[Temporal Agi Boots|||Modified Agi Boots]REFINE[boot==10]30"
+        "EQUIP[Temporal Agi Boots||Modified Agi Boots]REFINE[boot==10]30"
       ],
       "m_pene_race_demon": [
         "9===20",
         "11===10",
-        "EQUIP[Temporal Agi Boots|||Modified Agi Boots]REFINE[boot==10]30"
+        "EQUIP[Temporal Agi Boots||Modified Agi Boots]REFINE[boot==10]30"
       ]
     }
   },
@@ -18335,27 +18335,27 @@
         "7===7"
       ],
       "acd": [
-        "EQUIP[Temporal Vit Boots|||Modified Vit Boots]5"
+        "EQUIP[Temporal Vit Boots||Modified Vit Boots]5"
       ],
       "p_pene_race_brute": [
         "9===20",
         "11===10",
-        "EQUIP[Temporal Vit Boots|||Modified Vit Boots]REFINE[boot==10]30"
+        "EQUIP[Temporal Vit Boots||Modified Vit Boots]REFINE[boot==10]30"
       ],
       "p_pene_race_demon": [
         "9===20",
         "11===10",
-        "EQUIP[Temporal Vit Boots|||Modified Vit Boots]REFINE[boot==10]30"
+        "EQUIP[Temporal Vit Boots||Modified Vit Boots]REFINE[boot==10]30"
       ],
       "m_pene_race_brute": [
         "9===20",
         "11===10",
-        "EQUIP[Temporal Vit Boots|||Modified Vit Boots]REFINE[boot==10]30"
+        "EQUIP[Temporal Vit Boots||Modified Vit Boots]REFINE[boot==10]30"
       ],
       "m_pene_race_demon": [
         "9===20",
         "11===10",
-        "EQUIP[Temporal Vit Boots|||Modified Vit Boots]REFINE[boot==10]30"
+        "EQUIP[Temporal Vit Boots||Modified Vit Boots]REFINE[boot==10]30"
       ]
     }
   },
@@ -18382,7 +18382,7 @@
     "script": {
       "matk": [
         "2---10",
-        "EQUIP[Temporal Int Boots|||Modified Int Boots]50"
+        "EQUIP[Temporal Int Boots||Modified Int Boots]50"
       ],
       "matkPercent": [
         "2---1",
@@ -18394,22 +18394,22 @@
       "p_pene_race_brute": [
         "9===20",
         "11===10",
-        "EQUIP[Temporal Int Boots|||Modified Int Boots]REFINE[boot==10]30"
+        "EQUIP[Temporal Int Boots||Modified Int Boots]REFINE[boot==10]30"
       ],
       "p_pene_race_demon": [
         "9===20",
         "11===10",
-        "EQUIP[Temporal Int Boots|||Modified Int Boots]REFINE[boot==10]30"
+        "EQUIP[Temporal Int Boots||Modified Int Boots]REFINE[boot==10]30"
       ],
       "m_pene_race_brute": [
         "9===20",
         "11===10",
-        "EQUIP[Temporal Int Boots|||Modified Int Boots]REFINE[boot==10]30"
+        "EQUIP[Temporal Int Boots||Modified Int Boots]REFINE[boot==10]30"
       ],
       "m_pene_race_demon": [
         "9===20",
         "11===10",
-        "EQUIP[Temporal Int Boots|||Modified Int Boots]REFINE[boot==10]30"
+        "EQUIP[Temporal Int Boots||Modified Int Boots]REFINE[boot==10]30"
       ]
     }
   },
@@ -18439,7 +18439,7 @@
       ],
       "range": [
         "2---1",
-        "EQUIP[Temporal Dex Boots|||Modified Dex Boots]7"
+        "EQUIP[Temporal Dex Boots||Modified Dex Boots]7"
       ],
       "criDmg": [
         "4---3"
@@ -18450,22 +18450,22 @@
       "p_pene_race_brute": [
         "9===20",
         "11===10",
-        "EQUIP[Temporal Dex Boots|||Modified Dex Boots]REFINE[boot==10]30"
+        "EQUIP[Temporal Dex Boots||Modified Dex Boots]REFINE[boot==10]30"
       ],
       "p_pene_race_demon": [
         "9===20",
         "11===10",
-        "EQUIP[Temporal Dex Boots|||Modified Dex Boots]REFINE[boot==10]30"
+        "EQUIP[Temporal Dex Boots||Modified Dex Boots]REFINE[boot==10]30"
       ],
       "m_pene_race_brute": [
         "9===20",
         "11===10",
-        "EQUIP[Temporal Dex Boots|||Modified Dex Boots]REFINE[boot==10]30"
+        "EQUIP[Temporal Dex Boots||Modified Dex Boots]REFINE[boot==10]30"
       ],
       "m_pene_race_demon": [
         "9===20",
         "11===10",
-        "EQUIP[Temporal Dex Boots|||Modified Dex Boots]REFINE[boot==10]30"
+        "EQUIP[Temporal Dex Boots||Modified Dex Boots]REFINE[boot==10]30"
       ]
     }
   },
@@ -18503,27 +18503,27 @@
         "7===7"
       ],
       "aspd": [
-        "EQUIP[Temporal Luk Boots|||Modified Luk Boots]1"
+        "EQUIP[Temporal Luk Boots||Modified Luk Boots]1"
       ],
       "p_pene_race_brute": [
         "9===20",
         "11===10",
-        "EQUIP[Temporal Luk Boots|||Modified Luk Boots]REFINE[boot==10]30"
+        "EQUIP[Temporal Luk Boots||Modified Luk Boots]REFINE[boot==10]30"
       ],
       "p_pene_race_demon": [
         "9===20",
         "11===10",
-        "EQUIP[Temporal Luk Boots|||Modified Luk Boots]REFINE[boot==10]30"
+        "EQUIP[Temporal Luk Boots||Modified Luk Boots]REFINE[boot==10]30"
       ],
       "m_pene_race_brute": [
         "9===20",
         "11===10",
-        "EQUIP[Temporal Luk Boots|||Modified Luk Boots]REFINE[boot==10]30"
+        "EQUIP[Temporal Luk Boots||Modified Luk Boots]REFINE[boot==10]30"
       ],
       "m_pene_race_demon": [
         "9===20",
         "11===10",
-        "EQUIP[Temporal Luk Boots|||Modified Luk Boots]REFINE[boot==10]30"
+        "EQUIP[Temporal Luk Boots||Modified Luk Boots]REFINE[boot==10]30"
       ]
     }
   },
