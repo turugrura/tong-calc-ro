@@ -1099,7 +1099,7 @@
           [resetFilterOnHide]="true"
           [options]="shieldCardList"
           [filter]="true"
-          filterBy="label"
+          filterBy="label,cardPrefix"
           [(ngModel)]="model.shieldCard"
           [disabled]="!model.shield || itemSlotsMap.shield < 1"
           [showClear]="true"

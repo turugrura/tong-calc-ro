@@ -8,8 +8,8 @@ import {
   CharacterBase,
   PassiveSkillModel,
 } from './_character-base.abstract';
-import { DemonBane, Heal } from '../constants/share-passive-skills';
 import { RaceType } from '../constants/race-type.const';
+import { Acolyte } from './acolyte';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   '1': [0, 0, 0, 1, 0, 0],
@@ -87,12 +87,12 @@ export class ArchBishop extends CharacterBase {
   protected readonly classNames = [
     'Only 3rd Cls',
     'Hi-Class',
-    'Acolyte',
-    'Acolyte Cls',
-    'Acolyte Class',
     'Priest',
     'Priest Cls',
     'Priest Class',
+    'ArchBishop',
+    'ArchBishop Cls',
+    'ArchBishop Class',
     'Arch Bishop',
     'Arch Bishop Cls',
     'Arch Bishop Class',
@@ -191,7 +191,7 @@ export class ArchBishop extends CharacterBase {
       },
       part2: {
         label: 'Shadow Dmg',
-        isIncludeMain: false,
+        isIncludeMain: true,
         element: ElementType.Dark,
         hit: 3,
         formula: (input: AtkSkillFormulaInput): number => {
@@ -242,8 +242,6 @@ export class ArchBishop extends CharacterBase {
     },
   ];
   protected readonly _passiveSkillList: PassiveSkillModel[] = [
-    Heal,
-    DemonBane,
     {
       inputType: 'dropdown',
       label: 'Mace Mastery',
@@ -313,6 +311,12 @@ export class ArchBishop extends CharacterBase {
       ],
     },
   ];
+
+  constructor() {
+    super();
+
+    this.inheritBaseClass(new Acolyte());
+  }
 
   override getMasteryAtk(info: InfoForClass): number {
     const { weapon, monster, model } = info;

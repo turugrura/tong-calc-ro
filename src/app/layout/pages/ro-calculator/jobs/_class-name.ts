@@ -22,6 +22,7 @@ export enum ClassName {
   Creator = 'Creator',
   Genetic = 'Genetic',
 
+  Acolyte = 'Acolyte',
   ArchBishop = 'ArchBishop',
   Sura = 'Sura',
 
@@ -59,6 +60,7 @@ export const ClassID = {
   11: 'Royal Guard',
   12: 'Rune Knight',
   7: 'Arch Bishop',
+  13: ClassName.Sura,
   2: ClassName.Ranger,
   21: ClassName.Minstrel,
   22: ClassName.Wanderer,

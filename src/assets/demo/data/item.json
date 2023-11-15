@@ -971,6 +971,47 @@
       "all"
     ]
   },
+  "1847": {
+    "id": 1847,
+    "aegisName": "Iron_Nail_K",
+    "name": "Iron Nail [2]",
+    "unidName": "Claw",
+    "resName": "아이언네일",
+    "description": "สนับมือที่กล่าวกันว่าฮีโร่โบราณได้เคยใช้\nถึงจะดูต่างจากสนับมือที่เคยเห็นทั่วไป แต่ความสามารถในการล้มศัตรูได้ในหมัดเดียวทำให้สนับมือนี้น่าสนใจเป็นอย่างมาก และดูเหมือนว่าจะตอบรับกันกับ Ancient Hero Boots\nทุกๆ การอัพเกรด 2 ขั้น ATK + 10.\nทุกๆ การอัพเกรด 3 ขั้น เพิ่มพลังโจมตีทางกายภาพระยะไกล 4%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damge ของสกิล [Rampage Blast] 10%\nเมื่ออัพเกรดถึงขั้น 11 ลด Cooldown ของสกิล [Rampage Blast] 1 วินาที\nเมื่อสวมใส่ร่วมกันกับ Ancient Hero Boots เมื่อทำการโจมตีทางกายภาพจะมีโอกาส (3%) เพิ่ม STR+20, ATK+ 15% เป็นเวลา 7 วินาที\nประเภท : ^777777Knuckle^000000 พลังโจมตี : ^777777180^000000\nน้ำหนัก : ^777777100^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Sura^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 268,
+    "itemLevel": 4,
+    "attack": 180,
+    "defense": null,
+    "weight": 100,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Sura"
+    ],
+    "script": {
+      "atk": [
+        "2---10"
+      ],
+      "range": [
+        "3---4"
+      ],
+      "Rampage Blast": [
+        "9===10"
+      ],
+      "cd__Rampage Blast": [
+        "11===1"
+      ],
+      "chance__str": [
+        "EQUIP[Ancient Hero Boots]===20"
+      ],
+      "chance__atkPercent": [
+        "EQUIP[Ancient Hero Boots]===15"
+      ]
+    }
+  },
   "1867": {
     "id": 1867,
     "aegisName": "Ein_1HKNUCK",
@@ -4167,6 +4208,30 @@
       ]
     }
   },
+  "4582": {
+    "id": 4582,
+    "aegisName": "Bungisngis_Card",
+    "name": "Bungisngis Card",
+    "unidName": "Bungisngis Card",
+    "resName": "이름없는카드",
+    "description": "ทุกๆการอัพเกรด 2 ขั้น MHP+1%\nประเภท : ^777777Card^000000\nใส่กับ : ^777777Headgear^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 769,
+    "cardPrefix": "Stamina",
+    "script": {
+      "hpPercent": [
+        "2---1"
+      ]
+    }
+  },
   "4588": {
     "id": 4588,
     "aegisName": "Wakwak_Card",
@@ -4464,14 +4529,11 @@
     "compositionPos": 32,
     "cardPrefix": "Armed",
     "script": {
-      "p_race_all": [
+      "p_class_all": [
         "10"
       ],
       "matkPercent": [
         "10"
-      ],
-      "เพิ่มความต้านทานธาตุ Undead และ ธาตุ Shadow": [
-        "100"
       ]
     }
   },
@@ -4942,6 +5004,32 @@
     "cardPrefix": "Varetyr",
     "script": {
       "Varetyr Spear": [
+        "20",
+        "WEAPON_LEVEL[4]===20",
+        "10===20"
+      ]
+    }
+  },
+  "4693": {
+    "id": 4693,
+    "aegisName": "Real_Chen_Card",
+    "name": "True Chen Lio Card",
+    "unidName": "True Chen Lio Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่มความแรงสกิล Rampage Blast 20% \nเพิ่มความแรงสกิล Rampage Blast อีก 20% เมื่ออาวุธเลเวล 4 \nเพิ่มความแรงสกิล Rampage Blast อีก 20% เมื่ออัพเกรดถึงขั้น 10 ขึ้นไป\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Rampage Blast",
+    "script": {
+      "Rampage Blast": [
         "20",
         "WEAPON_LEVEL[4]===20",
         "10===20"
@@ -7864,8 +7952,8 @@
     "location": null,
     "compositionPos": 65535,
     "script": {
-      "hp": [
-        "CHANCE===-500(5วินาที)"
+      "chance__Bear's Power": [
+        "1"
       ]
     }
   },
@@ -14633,6 +14721,50 @@
       ]
     }
   },
+  "18979": {
+    "id": 18979,
+    "aegisName": "Old_Blazing_Soul",
+    "name": "Old Blazing Soul [1]",
+    "unidName": "Headband",
+    "resName": "불타는혼",
+    "description": "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้^000000\nAll State + 1 \nทุกๆ การอัพเกรด 1 ขั้น ATK + 4, CRI + 2\nทุกๆ การอัพเกรด 2 ขั้น เพิ่ม Max HP และ Max SP ทีละ 1%\nทุกๆ การอัพเกรด 2 ขั้น เพิ่มความแรงสกิล Rampage Blast 15%\nทุกๆ การอัพเกรด 2 ขั้น เพิ่มความแรงสกิล Lightning Ride 20%\nประเภท : ^777777Helm^000000 พลังป้องกัน : ^77777710^000000\nตำแหน่ง : ^777777Upper ^000000น้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Sura^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 10,
+    "weight": 10,
+    "requiredLevel": 170,
+    "location": "Upper",
+    "compositionPos": null,
+    "usableClass": [
+      "Sura"
+    ],
+    "script": {
+      "allStatus": [
+        "1"
+      ],
+      "atk": [
+        "1---4"
+      ],
+      "cri": [
+        "1---2"
+      ],
+      "hpPercent": [
+        "2---1"
+      ],
+      "spPercent": [
+        "2---1"
+      ],
+      "Rampage Blast": [
+        "2---15"
+      ],
+      "Lightning Ride": [
+        "2---20"
+      ]
+    }
+  },
   "18980": {
     "id": 18980,
     "aegisName": "Old_Wind_Whisper",
@@ -15381,7 +15513,7 @@
       "Fire Ball": [
         "REFINE[8]LEARN_SKILL[Auto Spell==1]---5"
       ],
-      "Lightening Bolt": [
+      "Lightning Bolt": [
         "11===50"
       ],
       "Fire Bolt": [
@@ -20139,6 +20271,73 @@
       ]
     }
   },
+  "24025": {
+    "id": 24025,
+    "aegisName": "S_Champion_Shoes",
+    "name": "Champion Shadow Shoes",
+    "unidName": "Shadow Shoes",
+    "resName": "슈즈쉐도우",
+    "description": "รองเท้าที่สวมใส่เพิ่มเติม สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์ของมันจะลดน้อยลง\nHP + 20, SP + 10.\nเมื่ออัพเกรดถึงขั้น 7 ขึ้นไป เพิ่ม MHP + 1%, MSP + 1% \nเมื่อสวมใส่ ^32CD32Champion Shadow Shoes^000000 ร่วมกับ ^32CD32Hard Shadow Armor^000000เพิ่ม HP และ SP เท่ากับค่าอัพเกรดรวมกัน\nในกรณีที่ค่าอัพเกรดรวมกันมากกว่า 15 ขึ้นไป เพิ่ม HP + 1% เพิ่มเติม\nประเท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shoes^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^77777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 528,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Shoes",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "hp": [
+        "20",
+        "EQUIP[Hard Shadow Armor]REFINE[shadowBoot,shadowArmor==1]---1"
+      ],
+      "sp": [
+        "10",
+        "EQUIP[Hard Shadow Armor]REFINE[shadowBoot,shadowArmor==1]---1"
+      ],
+      "hpPercent": [
+        "7===1"
+      ],
+      "spPercent": [
+        "7===1"
+      ]
+    }
+  },
+  "24028": {
+    "id": 24028,
+    "aegisName": "S_Hard_Armor",
+    "name": "Hard Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우",
+    "description": "ชุดเกราะที่เพิ่มพลังป้องกันเมื่อสวมใส่เพิ่มบนเกราะอีกที สามารถใส่แบบชิ้นเดียวได้ แต่ความสามารถในการป้องกันจะลดลงไปอีก\nHP + 50.\nเมื่ออัพเกรดถึงขั้น 7 ขึ้นไป เพิ่ม HP + 1% \nเมื่อสวมใส่ ^32CD32Hard Shadow Armor^000000 ร่วมกับ ^32CD32Champion Shadow Shoes^000000 เพิ่ม HP และ SP เท่ากับค่าอัพเกรดรวมกัน\nในกรณีที่ค่าอัพเกรดรวมกันมากกว่า 15 ขึ้นไป เพิ่ม HP + 1% เพิ่มเติม\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Armor ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Armor",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "hp": [
+        "50"
+      ],
+      "hpPercent": [
+        "7===1",
+        "EQUIP[Champion Shadow Shoes]REFINE[shadowBoot,shadowArmor==15]===1"
+      ]
+    }
+  },
   "24029": {
     "id": 24029,
     "aegisName": "S_Ancient_Armor",
@@ -21851,6 +22050,33 @@
       ]
     }
   },
+  "24261": {
+    "id": 24261,
+    "aegisName": "S_Monk_Shoes",
+    "name": "Monk Shadow Shoes",
+    "unidName": "Shadow Shoes",
+    "resName": "슈즈쉐도우",
+    "description": "รองเท้าที่สวมใส่เพิ่มเติม สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์ของมันจะลดน้อยลง\nเพิ่ม Damage ของสกิล Chain Combo 20%\nทุกๆ การอัพเกรด 1 ขั้น เพิ่ม Damage ของสกิล Chain Combo เพิ่มเติม 5%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shoes^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 528,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Shoes",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "Chain Combo": [
+        "20",
+        "1---5"
+      ]
+    }
+  },
   "24262": {
     "id": 24262,
     "aegisName": "S_Assassin_Shoes",
@@ -22176,6 +22402,37 @@
       ],
       "vct__Magnus Exorcismus": [
         "EQUIP[Priest Shadow Shoes]USED[ArchBishop]40"
+      ]
+    }
+  },
+  "24274": {
+    "id": 24274,
+    "aegisName": "S_Monk_Armor",
+    "name": "Monk Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우",
+    "description": "ชุดเกราะที่เพิ่มพลังป้องกันเมื่อสวมใส่เพิ่มบนเกราะอีกที สามารถใส่แบบชิ้นเดียวได้ แต่ความสามารถในการป้องกันจะลดลงไปอีก\nเพิ่ม Damage ของสกิล Finger Offensive, Infiltration 20%\nทุกๆ การอัพเกรด 1 ขั้น เพิ่ม Damage ของสกิล Finger Offensive, Infiltration เพิ่มเติม 5%\n\nเมื่อสวมใส่ร่วมกับ Monk Shadow Shoes,\nลดปริมาณการใช้ SP เมื่อใช้สกิล Chain Combo, Infiltration, Finger Offensive 20%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Armor ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "Finger Offensive": [
+        "20",
+        "1---5"
+      ],
+      "Infiltration": [
+        "20",
+        "1---5"
       ]
     }
   },
@@ -22763,6 +23020,39 @@
       ]
     }
   },
+  "24293": {
+    "id": 24293,
+    "aegisName": "S_Sura_weapon",
+    "name": "Sura Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่เมื่อสวมใส่ในมือข้างที่ติดตั้งอาวุธ จะช่วยดึงศักยภาพของผู้ที่สวมใส่ออกมา \nสำหรับ Sura เท่านั้น \nลดคูลดาวน์สกิล Rampage Blast 2 วินาที\nลดคูลดาวน์สกิล Rampage Blast เพิ่มขึ้นอีก 0.5 วินาทีทุก ๆ 1 ขั้นอัพเกรด\nประเภท : ^777777Shadow Equipment^000000\nตำแหน่ง : ^777777Weapon^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Sura^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "Sura"
+    ],
+    "script": {
+      "cd__Rampage Blast": [
+        "2",
+        "1---0.5"
+      ],
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1"
+      ]
+    }
+  },
   "24294": {
     "id": 24294,
     "aegisName": "S_Guillotine_Weapon",
@@ -23239,6 +23529,51 @@
       ],
       "m_pene_class_normal": [
         "EQUIP[Acolyte Shadow Earring&&Acolyte Shadow Pendant&&Priest Shadow Shoes&&Priest Shadow Armor&&Arch Bishop Shadow Weapon]50"
+      ]
+    }
+  },
+  "24306": {
+    "id": 24306,
+    "aegisName": "S_Sura_Shield",
+    "name": "Sura Shadow Shield",
+    "unidName": "Shadow Shield",
+    "resName": "쉴드쉐도우",
+    "description": "โล่เล็กที่สามารถสวมใส่ที่แขนได้ สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์การป้องกันของมันจะลดน้อยลง\nสำหรับ Sura เท่านั้น \nเพิ่มดาเมจ Sky Blow 20%  \nทุกๆ การอัพเกรด 1 ขั้น เพิ่มดาเมจ Sky Blow 5% เพิ่มเติม \n--------------------------------------- \nเมื่อสวมใส่กับ ^32CD32Sura Shadow Weapon^000000 จะได้รับเอฟเฟกต์เพิ่มเติม\nเพิ่มดาเมจ Rampage Blast 20%, ลดปริมาณการใช้ SP ของ Sky Blow 20% \n--------------------------------------- \nเมื่อสวมใส่ ^32CD32Acolyte Shadow^000000 2 ชิ้น, ^32CD32Monk Shadow^000000 2 ชิ้น,  ^32CD32Sura Shadow^000000 2 ชิ้นทั้งหมด จะได้รับเอฟเฟกต์ดังต่อไปนี้\nAll State + 10, MaxHP + 5%, MaxSP + 5%\nเพิกเฉยต่อพลังป้องกันทางกายภาพและทางเวทย์ของศัตรูทั่วไป 50%\nประเภท : ^777777Shadow Equipment^000000\nตำแหน่ง : ^777777Shield^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Sura^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 527,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Shield",
+    "compositionPos": null,
+    "usableClass": [
+      "Sura"
+    ],
+    "script": {
+      "Sky Blow": [
+        "20",
+        "1---5"
+      ],
+      "Rampage Blast": [
+        "EQUIP[Sura Shadow Weapon]20"
+      ],
+      "allStatus": [
+        "EQUPIP[Acolyte Shadow Earring&&Acolyte Shadow Pendant&&Monk Shadow Armor&&Monk Shadow Shoes&&Sura Shadow Weapon]10"
+      ],
+      "hpPercent": [
+        "EQUPIP[Acolyte Shadow Earring&&Acolyte Shadow Pendant&&Monk Shadow Armor&&Monk Shadow Shoes&&Sura Shadow Weapon]5"
+      ],
+      "spPercent": [
+        "EQUPIP[Acolyte Shadow Earring&&Acolyte Shadow Pendant&&Monk Shadow Armor&&Monk Shadow Shoes&&Sura Shadow Weapon]5"
+      ],
+      "p_pene_class_normal": [
+        "EQUPIP[Acolyte Shadow Earring&&Acolyte Shadow Pendant&&Monk Shadow Armor&&Monk Shadow Shoes&&Sura Shadow Weapon]50"
+      ],
+      "m_pene_class_normal": [
+        "EQUPIP[Acolyte Shadow Earring&&Acolyte Shadow Pendant&&Monk Shadow Armor&&Monk Shadow Shoes&&Sura Shadow Weapon]50"
       ]
     }
   },
@@ -24751,6 +25086,41 @@
         "9===3",
         "EQUIP[Magical Shadow Shield&&Magical Shadow Shoes]REFINE[shadowArmor,shadowShield,shadowBoot==23]===2",
         "EQUIP[Magical Shadow Shield&&Magical Shadow Shoes]REFINE[shadowArmor,shadowShield,shadowBoot==25]===3"
+      ]
+    }
+  },
+  "24400": {
+    "id": 24400,
+    "aegisName": "S_HardChamption_Shoes",
+    "name": "Hard Champion Shadow Shoes",
+    "unidName": "Shadow Shoes",
+    "resName": "슈즈쉐도우3",
+    "description": "รองเท้าที่สวมใส่เพิ่มเติม สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์ของมันจะลดน้อยลง \nMHP + 200, MSP + 100\nทุก ๆ การอัปเกรด 2 ขั้น, MHP, MSP + 1%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shoes^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 528,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Shoes",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "hp": [
+        "200"
+      ],
+      "sp": [
+        "100"
+      ],
+      "hpPercent": [
+        "2---1"
+      ],
+      "spPercent": [
+        "2---1"
       ]
     }
   },
@@ -26508,6 +26878,95 @@
       "spPercent__Arm Cannon": [
         "2",
         "2---1"
+      ]
+    }
+  },
+  "24476": {
+    "id": 24476,
+    "aegisName": "S_Rampage_Armor",
+    "name": "Rampage Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우",
+    "description": "ชุดเกราะที่เพิ่มพลังป้องกันเมื่อสวมใส่เพิ่มบนเกราะอีกที สามารถใส่แบบชิ้นเดียวได้ แต่ความสามารถในการป้องกันจะลดลงไปอีก\nเพิ่ม Damage สกิล Rampage Blast 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage สกิล Rampage Blast ขึ้นอีก 2%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Armor^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Sura Cls^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Sura Cls"
+    ],
+    "script": {
+      "Rampage Blast": [
+        "5",
+        "2---2"
+      ]
+    }
+  },
+  "24477": {
+    "id": 24477,
+    "aegisName": "S_Rampage_Shield",
+    "name": "Rampage Shadow Shield",
+    "unidName": "Shadow Shield",
+    "resName": "쉴드쉐도우",
+    "description": "โล่เล็กที่สามารถสวมใส่ที่แขนได้ สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์การป้องกันของมันจะลดน้อยลง\nเพิ่ม Damage ทางกายภาพระยะไกล 3%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางกายภาพระยะไกลขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพระยะไกลขึ้นอีก 4%\nเมื่อสวมใส่ Rampage Shadow Armor/Shield/Shoes ร่วมกัน,\nเพิ่ม Damage สกิล Rampage Blast % เท่ากับค่าอัพเกรดรวมกัน\nเมื่อสวมใส่ร่วมกับ Sura Shadow Weapon,\nเพิกเฉยต่อพลังป้องกันทางกายภาพของทุกเผ่ายกเว้น Player 40% และเพิกเฉยพลังป้องกันทางกายภาพเพิ่มอีกตามค่าอัพเกรดรวมกันของ Rampage Shadow Shield และ Sura Shadow Weapon\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shield^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Sura Cls^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 527,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Sura Cls"
+    ],
+    "script": {
+      "range": [
+        "3",
+        "7===3",
+        "9===4"
+      ],
+      "Rampage Blast": [
+        "EQUIP[Rampage Shadow Armor&&Rampage Shadow Shoes]REFINE[shadowArmor,shadowBoot,shadowShield==1]---1"
+      ],
+      "p_pene_race_all": [
+        "EQUIP[Sura Shadow Weapon]40",
+        "EQUIP[Sura Shadow Weapon]REFINE[shadowWeapon,shadowShield==1]---1"
+      ]
+    }
+  },
+  "24478": {
+    "id": 24478,
+    "aegisName": "S_Rampage_Shoes",
+    "name": "Rampage Shadow Shoes",
+    "unidName": "Shadow Shoes",
+    "resName": "슈즈쉐도우",
+    "description": "รองเท้าที่สวมใส่เพิ่มเติม สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์ของมันจะลดน้อยลง\nลด Cooldown สกิล Rampage Blast 0.2 วินาที\nทุก ๆ การอัพเกรด 3 ขั้น ลด Cooldown สกิล Rampage Blast ลงอีก 0.1 วินาที\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shoes ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Sura Cls^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 528,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Sura Cls"
+    ],
+    "script": {
+      "cd__Rampage Blast": [
+        "0.2",
+        "3---0.1"
       ]
     }
   },
@@ -28478,6 +28937,50 @@
       ],
       "Adoramus": [
         "EQUIP[Booster Shadow Armor&&Booster Shadow Shield&&Booster Shadow Shoes&&Booster Shadow Earring&&Booster Shadow Pendant]15"
+      ],
+      "p_pene_race_all": [
+        "EQUIP[Booster Shadow Armor&&Booster Shadow Shield&&Booster Shadow Shoes&&Booster Shadow Earring&&Booster Shadow Pendant]70"
+      ],
+      "m_pene_race_all": [
+        "EQUIP[Booster Shadow Armor&&Booster Shadow Shield&&Booster Shadow Shoes&&Booster Shadow Earring&&Booster Shadow Pendant]70"
+      ]
+    }
+  },
+  "24598": {
+    "id": 24598,
+    "aegisName": "S_SR_B_Weapon",
+    "name": "Sura Booster Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우3",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา\n^000088ไม่สามารถอัพเกรดได้^000000\nATK + 10, MATK + 10\nเมื่อสวมใส่กับ Booster Armor/Shield/Shoes/Earring/Pendant Shadow,\nลด Cool Down สกิล Rampage Blast  7 วินาที \nเพิ่ม Damage สกิล Rampage Blast 15% \nลดดีเลย์หลังใช้สกิล 10% \nเพิกเฉยต่อพลังป้องกันทางเวทย์/ทางกายภาพของมอนสเตอร์ทุกเผ่า 70% (ยกเว้น Player)\n^ffffff_^000000\nประเภท : ^777777Shadow^000000 \nตำแหน่ง : ^777777Weapon^000000 น้ำหนัก :^7777770^000000 \nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Sura Class^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "Sura Class"
+    ],
+    "script": {
+      "atk": [
+        "10"
+      ],
+      "matk": [
+        "10"
+      ],
+      "cd__Rampage Blast": [
+        "EQUIP[Booster Shadow Armor&&Booster Shadow Shield&&Booster Shadow Shoes&&Booster Shadow Earring&&Booster Shadow Pendant]7"
+      ],
+      "Rampage Blast": [
+        "EQUIP[Booster Shadow Armor&&Booster Shadow Shield&&Booster Shadow Shoes&&Booster Shadow Earring&&Booster Shadow Pendant]15"
+      ],
+      "acd": [
+        "EQUIP[Booster Shadow Armor&&Booster Shadow Shield&&Booster Shadow Shoes&&Booster Shadow Earring&&Booster Shadow Pendant]10"
       ],
       "p_pene_race_all": [
         "EQUIP[Booster Shadow Armor&&Booster Shadow Shield&&Booster Shadow Shoes&&Booster Shadow Earring&&Booster Shadow Pendant]70"
@@ -38539,7 +39042,7 @@
     "location": null,
     "compositionPos": null,
     "script": {
-      "Lightening Bolt": [
+      "Lightning Bolt": [
         "ACTIVE_SKILL[Striking]30"
       ]
     }
@@ -38562,7 +39065,7 @@
     "location": null,
     "compositionPos": null,
     "script": {
-      "Lightening Bolt": [
+      "Lightning Bolt": [
         "ACTIVE_SKILL[Striking]60"
       ]
     }
@@ -39287,6 +39790,129 @@
       ]
     }
   },
+  "29423": {
+    "id": 29423,
+    "aegisName": "Sura_Top",
+    "name": "Champion Stone (Upper)",
+    "unidName": "Champion Stone (Upper)",
+    "resName": "복사피규어",
+    "description": "ทุกๆ การเรียนรู้สกิล Iron Hand 1 Level ATK +2",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 71,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "atk": [
+        "LEARN_SKILL[Iron Hand==1]---2"
+      ]
+    }
+  },
+  "29424": {
+    "id": 29424,
+    "aegisName": "Sura_Middle",
+    "name": "Champion Stone (Middle)",
+    "unidName": "Champion Stone (Middle)",
+    "resName": "복사피규어",
+    "description": "ทุกๆ การเรียนรู้สกิล Dodge 1 Level HIT +2",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 72,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "hit": [
+        "LEARN_SKILL[Dodge==1]---2"
+      ]
+    }
+  },
+  "29425": {
+    "id": 29425,
+    "aegisName": "Sura_Bottom",
+    "name": "Champion Stone (Lower)",
+    "unidName": "Champion Stone (Lower)",
+    "resName": "복사피규어",
+    "description": "เพิ่ม Damage ของสกิล Chain Combo  +20%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 73,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "Chain Combo": [
+        "20"
+      ]
+    }
+  },
+  "29426": {
+    "id": 29426,
+    "aegisName": "Sura_Robe",
+    "name": "Sura Stone (Garment)",
+    "unidName": "Sura Stone (Garment)",
+    "resName": "복사피규어",
+    "description": "เพิ่ม Damage ของสกิล Rampage Blast  +15%\nเมื่อสวมใส่ร่วมกับ Champion Stone (Upper) เพิ่ม Damage ของสกิล Rampage Blast  +10%\nเมื่อสวมใส่ร่วมกับ Champion Stone (Middle) ลด Fix Cast time ของสกิล Zen 40%\nเมื่อสวมใส่ร่วมกับ Champion Stone (Lower) เมื่อใช้สกิล Rampage Blast มีโอกาสสูง  ที่จะเกิดการใช้สกิล Autospell [Zen] ได้",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 74,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "Rampage Blast": [
+        "15",
+        "EQUIP[Champion Stone (Upper)]===10"
+      ]
+    }
+  },
+  "29427": {
+    "id": 29427,
+    "aegisName": "Sura_Robe2",
+    "name": "Sura Stone II (Garment)",
+    "unidName": "Sura Stone II (Garment)",
+    "resName": "Champion_Figure",
+    "description": "เพิ่ม Damage ของ Knuckle Arrow 15%\nเมื่อใช้กับ Champion Stone II (Upper), เพิ่ม Damage ของ Tiger Cannon 15%\nเมื่อใช้กับ Champion Stone II (Middle), MHP +10%\nเมื่อใช้กับ Champion Stone II (Lower), เพิ่ม Damage ของ Tiger Cannon 15%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 74,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "Knuckle Arrow": [
+        "15"
+      ],
+      "Tiger Cannon": [
+        "EQUIP[Champion Stone II (Upper)]15",
+        "EQUIP[Champion Stone II (Lower)]15"
+      ],
+      "hpPercent": [
+        "EQUIP[Champion Stone II (Middle)]10"
+      ]
+    }
+  },
   "29428": {
     "id": 29428,
     "aegisName": "Ranger_Top",
@@ -39456,7 +40082,7 @@
       "Cold Bolt": [
         "20"
       ],
-      "Lightening Bolt": [
+      "Lightning Bolt": [
         "20"
       ]
     }
@@ -41553,7 +42179,7 @@
       "Finger Offensive": [
         "REFINE_NAME[Bright Pendulum==3]---10"
       ],
-      "infiltration": [
+      "Infiltration": [
         "REFINE_NAME[Bright Pendulum==3]---10"
       ],
       "Lightning Ride": [
@@ -41636,6 +42262,75 @@
       ]
     }
   },
+  "29611": {
+    "id": 29611,
+    "aegisName": "Sura_Bottom2",
+    "name": "Champion Stone II (Lower)",
+    "unidName": "Champion Stone II (Lower)",
+    "resName": "복사피규어",
+    "description": "ทุก ๆ 1 เลเวลของ Divine Protection, ATK +2",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 73,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "atk": [
+        "LEARN_SKILL[Divine Protection==1]---2"
+      ]
+    }
+  },
+  "29612": {
+    "id": 29612,
+    "aegisName": "Sura_Middle2",
+    "name": "Champion Stone II (Middle)",
+    "unidName": "Champion Stone II (Middle)",
+    "resName": "복사피규어",
+    "description": "เพิ่ม Damage ของ Combo Finish 15%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 72,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "Combo Finish": [
+        "15"
+      ]
+    }
+  },
+  "29613": {
+    "id": 29613,
+    "aegisName": "Sura_Top2",
+    "name": "Champion Stone II (Upper)",
+    "unidName": "Champion Stone II (Upper)",
+    "resName": "복사피규어",
+    "description": "เพิ่ม Damage ของ Chain Crush Combo 15%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 71,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "Chain Crush Combo": [
+        "15"
+      ]
+    }
+  },
   "29614": {
     "id": 29614,
     "aegisName": "Sorcerer_Robe2",
@@ -41713,7 +42408,7 @@
       "Cold Bolt": [
         "20"
       ],
-      "Lightening Bolt": [
+      "Lightning Bolt": [
         "20"
       ]
     }
@@ -50887,6 +51582,50 @@
       ]
     }
   },
+  "490406": {
+    "id": 490406,
+    "aegisName": null,
+    "name": "Ring of Unknown Hero(Sura) [1]",
+    "unidName": "Ring of Unknown Hero(Sura)",
+    "resName": "Ullr_Bracelet",
+    "description": "แหวนของฮีโร่นิรนาม\n\nลด Delay หลังใช้สกิล 3%\nเพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูทุกประเภท 6%\n\nเมื่อสวมใส่ร่วมกับ Patent Iron Nail,\nเพิ่ม Damage ทางกายภาพระยะไกลต่อศัตรูทั้งหมด 8%\nเมื่อ Patent Iron Nail อัพเกรดตั้งแต่ 11 ขึ้นไป,\nเมื่อ Base STR และ DEX รวมกันได้ทุก ๆ 12 หน่วย เพิ่ม Damage สกิล Rampage Blast 1%\n\nเมื่อสวมใส่ร่วมกับ Patent Ray Knuckle,\nเพิ่ม Damage ทางกายภาพระยะใกล้ 8%\nเมื่อ Patent Ray Knuckle อัพเกรดตั้งแต่ 11 ขึ้นไป,\nเมื่อ Base VIT และ STR รวมกันได้ทุก ๆ 12 หน่วย เพิ่ม Damage สกิล Tiger Cannon 1%\nประเภท : ^777777Accessory (Right)^000000 พลังป้องกัน : ^7777777^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Sura^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 510,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 7,
+    "weight": 10,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Sura"
+    ],
+    "script": {
+      "acd": [
+        "3"
+      ],
+      "p_class_all": [
+        "6"
+      ],
+      "m_class_all": [
+        "6"
+      ],
+      "range": [
+        "EQUIP[Patent Iron Nail]8"
+      ],
+      "Rampage Blast": [
+        "EQUIP[Patent Iron Nail]REFINE[weapon==11]SUM[str,dex==12]---1"
+      ],
+      "melee": [
+        "EQUIP[Patent Ray Knuckle]8"
+      ],
+      "Tiger Cannon": [
+        "EQUIP[Patent Ray Knuckle]REFINE[weapon==11]SUM[vit,str==12]---1"
+      ]
+    }
+  },
   "490411": {
     "id": 490411,
     "aegisName": null,
@@ -51721,6 +52460,7 @@
         "160",
         "1---2",
         "level:15---3",
+        "level:195===-3",
         "EQUIP[Elemental Booster Robe&&Elemental Booster Muffler&&Elemental Booster Shoes&&Elemental Booster Earring]20"
       ],
       "m_my_element_fire": [
@@ -51733,7 +52473,8 @@
       ],
       "atk": [
         "1---2",
-        "level:15---3"
+        "level:15---3",
+        "level:195===-3"
       ],
       "p_size_all": [
         "9===10"
@@ -51744,14 +52485,16 @@
       ],
       "Meteor Storm": [
         "EQUIP[Elemental Booster Robe&&Elemental Booster Muffler&&Elemental Booster Shoes&&Elemental Booster Earring]level:15---2",
-        "EQUIP[Elemental Booster Robe&&Elemental Booster Muffler&&Elemental Booster Shoes&&Elemental Booster Earring]ACTIVE_SKILL[Preserve]===35(60 วินาที)"
+        "EQUIP[Elemental Booster Robe&&Elemental Booster Muffler&&Elemental Booster Shoes&&Elemental Booster Earring]level:195===-2",
+        "EQUIP[Elemental Booster Robe&&Elemental Booster Muffler&&Elemental Booster Shoes&&Elemental Booster Earring]ACTIVE_SKILL[Preserve]===35"
       ],
       "acd": [
         "EQUIP[Attacker Booster Plate&&Attacker Booster Manteau&&Attacker Booster Greaves&&Attacker Booster Ring]15"
       ],
       "Fatal Manace": [
         "EQUIP[Attacker Booster Plate&&Attacker Booster Manteau&&Attacker Booster Greaves&&Attacker Booster Ring]level:15---1",
-        "EQUIP[Attacker Booster Plate&&Attacker Booster Manteau&&Attacker Booster Greaves&&Attacker Booster Ring]ACTIVE_SKILL[Preserve]===20(60 วินาที)"
+        "EQUIP[Attacker Booster Plate&&Attacker Booster Manteau&&Attacker Booster Greaves&&Attacker Booster Ring]level:195===-1",
+        "EQUIP[Attacker Booster Plate&&Attacker Booster Manteau&&Attacker Booster Greaves&&Attacker Booster Ring]ACTIVE_SKILL[Preserve]===20"
       ]
     }
   },
@@ -51884,6 +52627,61 @@
       ],
       "p_element_all": [
         "EQUIP[Surudoi Kaze]REFINE[weapon,leftWeapon==18]===15"
+      ]
+    }
+  },
+  "520000": {
+    "id": 520000,
+    "aegisName": "Boost_Axe",
+    "name": "Boosting Axe [2]",
+    "unidName": "One-Handed Axe",
+    "resName": "Blut_Axe",
+    "description": "ขวานมือเดียวสุดพิเศษที่เตรียมไว้เพื่อทำให้นักผจญภัยพัฒนาไปอย่างรวดเร็ว\n\nไม่สามารถทำลายได้, เพิ่ม Damage ต่อศัตรูทุกประเภท 5%\nทุก ๆ การอัพเกรด 1 ขั้น ATK +3\nทุก ๆ Base Lv. 15, ATK +3 (ใช้งานสูงสุดถึง Lv. 180)\nเมื่ออัพเกรดถึงขั้น 7 ทุก ๆ การเรียนรู้สกิล Weaponry Research 1 เลเวล ATK +3\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 15%\n\nเมื่อสวมใส่ร่วมกับ Attacker Booster (Plate/Manteau/Greaves/Ring), \nลด Delay หลังใช้สกิล 10%, ลด Cooldown สกิล Axe Tornado 1 วินาที, \nทุก ๆ Base Lv. 15 เพิ่ม Damage สกิล Axe Tornado 1% (ใช้งานสูงสุดถึง Lv. 180),\nเมื่อใช้สกิล Weapon Perfection เพิ่ม Damage สกิล Axe Tornado ขึ้นอีก 20% เป็นเวลา 60 วินาที\n\nเมื่อสวมใส่ร่วมกับ Range Booster (Suit/Manteau/Boots/Brooch), \nลดระยะเวลาร่ายแบบแปรผัน 10%, ลด Delay หลังใช้สกิล 15%, \nทุก ๆ Base Lv. 15 เพิ่ม Damage สกิล Arm Cannon 1% (ใช้งานสูงสุดถึง Lv. 180),\nเมื่อใช้สกิล Weapon Perfection เพิ่ม Damage สกิล Arm Cannon ขึ้นอีก 20% เป็นเวลา 60 วินาที\nประเภท : ^777777One-Handed Axe^000000 พลังโจมตี : ^777777200^000000\nน้ำหนัก : ^7777770^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Mechanic Cls^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 261,
+    "itemLevel": 4,
+    "attack": 200,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Mechanic Cls"
+    ],
+    "script": {
+      "p_class_all": [
+        "5"
+      ],
+      "atk": [
+        "1---3",
+        "level:15---3",
+        "level:195===-3",
+        "REFINE[7]LEARN_SKILL[Weaponry Research==1]---3"
+      ],
+      "p_size_all": [
+        "9===15"
+      ],
+      "acd": [
+        "EQUIP[Attacker Booster Plate&&Attacker Booster Manteau&&Attacker Booster Greaves&&Attacker Booster Ring]10",
+        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]15"
+      ],
+      "cd__Axe Tornado": [
+        "EQUIP[Attacker Booster Plate&&Attacker Booster Manteau&&Attacker Booster Greaves&&Attacker Booster Ring]1"
+      ],
+      "Axe Tornado": [
+        "EQUIP[Attacker Booster Plate&&Attacker Booster Manteau&&Attacker Booster Greaves&&Attacker Booster Ring]level:15---1",
+        "EQUIP[Attacker Booster Plate&&Attacker Booster Manteau&&Attacker Booster Greaves&&Attacker Booster Ring]level:195===-1",
+        "EQUIP[Attacker Booster Plate&&Attacker Booster Manteau&&Attacker Booster Greaves&&Attacker Booster Ring]ACTIVE_SKILL[Weapon Perfection]===20"
+      ],
+      "vct": [
+        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]10"
+      ],
+      "Arm Cannon": [
+        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]level:15---1",
+        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]level:195===-1",
+        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]ACTIVE_SKILL[Weapon Perfection]===20"
       ]
     }
   },
@@ -52551,6 +53349,114 @@
       ]
     }
   },
+  "560000": {
+    "id": 560000,
+    "aegisName": "Boost_Knuckle",
+    "name": "Boosting Knuckle [2]",
+    "unidName": "Fistweapon",
+    "resName": "디바크로",
+    "description": "สนับสุดพิเศษที่เตรียมไว้เพื่อทำให้นักผจญภัยพัฒนาไปอย่างรวดเร็ว\n\nATK +2%, MHP +3%\nทุก ๆ การอัพเกรด 1 ขั้น ATK +3\nทุก ๆ Base Lv. 15, ATK +3 (ใช้งานสูงสุดถึง Lv. 180)\nเมื่ออัพเกรดถึงขั้น 7 ทุก ๆ การเรียนรู้สกิล Vigor Explosion 1 เลเวล MHP +2%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 10%\n\nเมื่อสวมใส่ร่วมกับ Attacker Booster (Plate/Manteau/Greaves/Ring), \nMHP +10%, ATK +10%,\nทุก ๆ Base Lv. 15 เพิ่ม Damage สกิล Tiger Cannon 1% (ใช้งานสูงสุดถึง Lv. 180).\nเมื่อใช้สกิล Zen เพิ่ม Damage สกิล Tiger Cannon ขึ้นอีก 20% เป็นเวลา 60 วินาที\n\nเมื่อสวมใส่ร่วมกับ Range Booster (Suit/Manteau/Boots/Brooch), \nMSP +10%, ลด Delay หลังใช้สกิล 15%,\nทุก ๆ Base Lv. 15 เพิ่ม Damage สกิล Knuckle Arrow 2% (ใช้งานสูงสุดถึง Lv. 180).\nเมื่อใช้สกิล Zen เพิ่ม Damage สกิล Knuckle Arrow ขึ้นอีก 35% เป็นเวลา 60 วินาที\nประเภท : ^777777Knuckle^000000 พลังโจมตี : ^777777150^000000\nน้ำหนัก : ^7777770^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Sura Cls^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 268,
+    "itemLevel": 4,
+    "attack": 150,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Sura Cls"
+    ],
+    "script": {
+      "atkPercent": [
+        "2",
+        "EQUIP[Attacker Booster Plate&&Attacker Booster Manteau&&Attacker Booster Greaves&&Attacker Booster Ring]10"
+      ],
+      "hpPercent": [
+        "3",
+        "REFINE[7]LEARN_SKILL[Vigor Explosion==1]---2",
+        "EQUIP[Attacker Booster Plate&&Attacker Booster Manteau&&Attacker Booster Greaves&&Attacker Booster Ring]10"
+      ],
+      "atk": [
+        "1---3",
+        "level:15---3",
+        "level:195===-3"
+      ],
+      "p_size_all": [
+        "9===10"
+      ],
+      "Tiger Cannon": [
+        "EQUIP[Attacker Booster Plate&&Attacker Booster Manteau&&Attacker Booster Greaves&&Attacker Booster Ring]level:15---1",
+        "EQUIP[Attacker Booster Plate&&Attacker Booster Manteau&&Attacker Booster Greaves&&Attacker Booster Ring]level:195===-1",
+        "EQUIP[Attacker Booster Plate&&Attacker Booster Manteau&&Attacker Booster Greaves&&Attacker Booster Ring]20"
+      ],
+      "spPercent": [
+        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]10"
+      ],
+      "acd": [
+        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]15"
+      ],
+      "Knuckle Arrow": [
+        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]level:15---2",
+        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]level:195===-2",
+        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]35"
+      ]
+    }
+  },
+  "560008": {
+    "id": 560008,
+    "aegisName": "Up_Iron_Nail_K",
+    "name": "Patent Iron Nail [2]",
+    "unidName": "Claw",
+    "resName": "Up_Iron_Nail_K",
+    "description": "สนับมือที่กล่าวกันว่าฮีโร่โบราณได้เคยใช้\nพลังเวทย์โบราณถูกปลุกขึ้น ทำให้มันเริ่มเผยพลังอันแท้จริงออกมา\nดูกลมกลืนเข้ากับ Great Hero Boots\n\nทุก ๆ การอัพเกรด 2 ขั้น ATK +15\nทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage ทางกายภาพระยะไกล 4%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage สกิล Rampage Blast, Lightning Ride 10%\nเมื่ออัพเกรดถึงขั้น 9 ลด Cooldown สกิล Rampage Blast, Earth Shaker 1 วินาที\nเมื่ออัพเกรดถึงขั้น 11 ลดปริมาณการใช้ SP สกิล Rampage Blast 15%, เพิ่ม Damage สกิล Rampage Blast, Lightning Ride ขึ้นอีก 15%\nเมื่อสวมใส่ร่วมกับ Great Hero Boots, STR +10, ATK +7%\n\nประเภท : ^777777Knuckle^000000 พลังโจมตี : ^777777205^000000\nน้ำหนัก : ^777777120^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Sura^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 268,
+    "itemLevel": 4,
+    "attack": 205,
+    "defense": null,
+    "weight": 120,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Sura"
+    ],
+    "script": {
+      "atk": [
+        "2---15"
+      ],
+      "range": [
+        "3---4"
+      ],
+      "Rampage Blast": [
+        "7===10",
+        "11===15"
+      ],
+      "Lightning Ride": [
+        "7===10",
+        "11===15"
+      ],
+      "cd__Rampage Blast": [
+        "9===1"
+      ],
+      "cd__Earth Shaker": [
+        "9===1"
+      ],
+      "spPercent__Rampage Blast": [
+        "11===15"
+      ],
+      "str": [
+        "EQUIP[Great Hero Boots]===10"
+      ],
+      "atkPercent": [
+        "EQUIP[Great Hero Boots]===7"
+      ]
+    }
+  },
   "570000": {
     "id": 570000,
     "aegisName": "Boost_Guitar",
@@ -52605,14 +53511,14 @@
       ],
       "Reverberation": [
         "EQUIP[Elemental Booster Robe&&Elemental Booster Muffler&&Elemental Booster Shoes&&Elemental Booster Earring]level:15---1",
-        "EQUIP[Elemental Booster Robe&&Elemental Booster Muffler&&Elemental Booster Shoes&&Elemental Booster Earring]ACTIVE_SKILL[Improve Concentration]===20(60 วินาที)"
+        "EQUIP[Elemental Booster Robe&&Elemental Booster Muffler&&Elemental Booster Shoes&&Elemental Booster Earring]ACTIVE_SKILL[Improve Concentration]===20"
       ],
       "cd__Severe Rainstorm": [
         "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]2"
       ],
       "Severe Rainstorm": [
         "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]level:15---1",
-        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]ACTIVE_SKILL[Improve Concentration]===20(60 วินาที)"
+        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]ACTIVE_SKILL[Improve Concentration]===20"
       ]
     }
   },
@@ -53371,6 +54277,7 @@
         "200",
         "1---3",
         "level:15---3",
+        "level:195===-3",
         "EQUIP[Elemental Booster Robe&&Elemental Booster Muffler&&Elemental Booster Shoes&&Elemental Booster Earring]20",
         "EQUIP[Defunct Booster Robe&&Defunct Booster Muffler&&Defunct Booster Shoes&&Defunct Booster Earring]20"
       ],
@@ -53395,14 +54302,16 @@
       ],
       "Crimson Rock": [
         "EQUIP[Elemental Booster Robe&&Elemental Booster Muffler&&Elemental Booster Shoes&&Elemental Booster Earring]level:15---1",
-        "EQUIP[Elemental Booster Robe&&Elemental Booster Muffler&&Elemental Booster Shoes&&Elemental Booster Earring]ACTIVE_SKILL[Mystical Amplification]===20(60 วินาที)"
+        "EQUIP[Elemental Booster Robe&&Elemental Booster Muffler&&Elemental Booster Shoes&&Elemental Booster Earring]level:195===-1",
+        "EQUIP[Elemental Booster Robe&&Elemental Booster Muffler&&Elemental Booster Shoes&&Elemental Booster Earring]ACTIVE_SKILL[Mystical Amplification]===20"
       ],
       "acd": [
         "EQUIP[Defunct Booster Robe&&Defunct Booster Muffler&&Defunct Booster Shoes&&Defunct Booster Earring]10"
       ],
       "Soul Expansion": [
         "EQUIP[Defunct Booster Robe&&Defunct Booster Muffler&&Defunct Booster Shoes&&Defunct Booster Earring]level:15---1",
-        "EQUIP[Defunct Booster Robe&&Defunct Booster Muffler&&Defunct Booster Shoes&&Defunct Booster Earring]ACTIVE_SKILL[Mystical Amplification]===20(60 วินาที)"
+        "EQUIP[Defunct Booster Robe&&Defunct Booster Muffler&&Defunct Booster Shoes&&Defunct Booster Earring]level:195===-1",
+        "EQUIP[Defunct Booster Robe&&Defunct Booster Muffler&&Defunct Booster Shoes&&Defunct Booster Earring]ACTIVE_SKILL[Mystical Amplification]===20"
       ]
     }
   },
@@ -53596,7 +54505,8 @@
       ],
       "atk": [
         "1---3",
-        "level:15---3"
+        "level:15---3",
+        "level:195===-3"
       ],
       "aspdPercent": [
         "7===5"
@@ -53612,14 +54522,16 @@
       ],
       "Focused Arrow Strike": [
         "EQUIP[Attacker Booster Plate&&Attacker Booster Manteau&&Attacker Booster Greaves&&Attacker Booster Ring]level:15---1",
-        "EQUIP[Attacker Booster Plate&&Attacker Booster Manteau&&Attacker Booster Greaves&&Attacker Booster Ring]ACTIVE_SKILL[Falcon Eyes]===20(60 วินาที)"
+        "EQUIP[Attacker Booster Plate&&Attacker Booster Manteau&&Attacker Booster Greaves&&Attacker Booster Ring]level:195===-1",
+        "EQUIP[Attacker Booster Plate&&Attacker Booster Manteau&&Attacker Booster Greaves&&Attacker Booster Ring]ACTIVE_SKILL[Falcon Eyes]===20"
       ],
       "acd": [
         "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]15"
       ],
       "Aimed Bolt": [
         "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]level:15---2",
-        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]ACTIVE_SKILL[Falcon Eyes]===35(60 วินาที)"
+        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]level:195===-2",
+        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]ACTIVE_SKILL[Falcon Eyes]===35"
       ]
     }
   },
@@ -53983,6 +54895,7 @@
       "atk": [
         "1---3",
         "level:15---3",
+        "level:195===-3",
         "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]20",
         "EQUIP[Attacker Booster Plate&&Attacker Booster Manteau&&Attacker Booster Greaves&&Attacker Booster Ring]20"
       ],
@@ -53996,14 +54909,16 @@
       ],
       "Fire Rain": [
         "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]level:15---2",
-        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]ACTIVE_SKILL[Rich's Coin]===35(60 วินาที)"
+        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]level:195===-2",
+        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]ACTIVE_SKILL[Rich's Coin]===35"
       ],
       "p_size_all": [
         "EQUIP[Attacker Booster Plate&&Attacker Booster Manteau&&Attacker Booster Greaves&&Attacker Booster Ring]10"
       ],
       "Round Trip": [
         "EQUIP[Attacker Booster Plate&&Attacker Booster Manteau&&Attacker Booster Greaves&&Attacker Booster Ring]level:15---1",
-        "EQUIP[Attacker Booster Plate&&Attacker Booster Manteau&&Attacker Booster Greaves&&Attacker Booster Ring]ACTIVE_SKILL[Rich's Coin]===20(60 วินาที)"
+        "EQUIP[Attacker Booster Plate&&Attacker Booster Manteau&&Attacker Booster Greaves&&Attacker Booster Ring]level:195===-1",
+        "EQUIP[Attacker Booster Plate&&Attacker Booster Manteau&&Attacker Booster Greaves&&Attacker Booster Ring]ACTIVE_SKILL[Rich's Coin]===20"
       ]
     }
   },

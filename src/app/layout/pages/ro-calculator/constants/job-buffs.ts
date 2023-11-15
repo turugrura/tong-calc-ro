@@ -31,7 +31,7 @@ export const JobBuffs: ActiveSkillModel[] = [
   },
   {
     inputType: 'selectButton',
-    label: 'Impositio Lv5',
+    label: 'Impositio 5',
     name: 'Impositio Manus',
     dropdown: [
       { label: 'Yes', isUse: true, value: 5, bonus: { atk: 25, matk: 25 } },
@@ -40,7 +40,7 @@ export const JobBuffs: ActiveSkillModel[] = [
   },
   {
     inputType: 'selectButton',
-    label: 'Expiatio Lv5',
+    label: 'Expiatio 5',
     name: 'Expiatio',
     dropdown: [
       { label: 'Yes', isUse: true, value: 5, bonus: { p_pene_race_all: 25, m_pene_race_all: 25 } },
@@ -58,7 +58,7 @@ export const JobBuffs: ActiveSkillModel[] = [
     ],
   },
   {
-    label: 'Adrenaline Lv5',
+    label: 'Adrenaline 5',
     name: 'Adrenaline Rush',
     inputType: 'selectButton',
     dropdown: [
@@ -67,7 +67,7 @@ export const JobBuffs: ActiveSkillModel[] = [
     ],
   },
   {
-    label: 'Power Thrust Lv5',
+    label: 'Power Thrust 5',
     name: 'Power Thrust',
     inputType: 'selectButton',
     dropdown: [
@@ -77,7 +77,7 @@ export const JobBuffs: ActiveSkillModel[] = [
   },
   {
     inputType: 'selectButton',
-    label: 'Weapon Perfect Lv5',
+    label: 'Weapon Perfect 5',
     name: 'Weapon Perfection',
     dropdown: [
       { label: 'Yes', value: 5, skillLv: 5, isUse: true, bonus: { ignore_size_penalty: 1 } },
@@ -86,7 +86,7 @@ export const JobBuffs: ActiveSkillModel[] = [
   },
   {
     inputType: 'dropdown',
-    label: 'Soul Lv5',
+    label: 'Soul 5',
     name: 'Soul',
     dropdown: [
       { label: '-', isUse: false, value: 0 },

@@ -177,7 +177,7 @@ export class Warlock extends CharacterBase {
       },
       part2: {
         label: 'Shadow Dmg',
-        isIncludeMain: false,
+        isIncludeMain: true,
         element: ElementType.Dark,
         hit: 3,
         formula: (input: AtkSkillFormulaInput): number => {

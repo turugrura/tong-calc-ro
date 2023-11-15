@@ -539,6 +539,7 @@ export const EnchantTable: EntTable[] = [
   { name: 'Old_Minstrel_Song_Hat', enchants: [null, labHead2, base15, base15] },
   { name: 'Old_Midas_Whisper', enchants: [null, labHead2, base15, base15] },
   { name: 'Old_Magic_Stone_Hat', enchants: [null, labHead2, base15, base15] },
+  { name: 'Old_Blazing_Soul', enchants: [null, labHead2, base15, base15] },
   { name: 'Old_Wind_Whisper', enchants: [null, labHead2, base15, base15] },
   { name: 'Old_Dying_Swan', enchants: [null, labHead2, base15, base15] },
   { name: 'Old_Circlet_Of_Bone', enchants: [null, labHead2, base15, base15] },

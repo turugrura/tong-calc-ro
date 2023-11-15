@@ -23,6 +23,7 @@ const hpSpIndex: Record<ClassName, number> = {
   [ClassName.Mechanic]: 14,
   [ClassName.Creator]: 27,
   [ClassName.Genetic]: 28,
+  [ClassName.Acolyte]: 10,
   [ClassName.ArchBishop]: 10,
   [ClassName.Sura]: 22,
   [ClassName.Thief]: 6,

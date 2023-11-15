@@ -53,6 +53,7 @@ import { RuneKnight } from './jobs/rune-knight';
 import { Oboro } from './jobs/oboro';
 import { AspdPotionList } from './constants/aspd-potion-list';
 import { canUsedByClass } from './utils/can-used-by-class';
+import { Sura } from './jobs/sura';
 
 interface MonsterSelectItemGroup extends SelectItemGroup {
   items: any[];
@@ -60,8 +61,9 @@ interface MonsterSelectItemGroup extends SelectItemGroup {
 
 const Characters: DropdownModel[] = [
   { label: ClassID[11], value: 11, instant: new RoyalGuard() },
-  // { label: ClassID[12], value: 12, instant: new RuneKnight() },
+  { label: ClassID[12], value: 12, instant: new RuneKnight() },
   { label: ClassID[7], value: 7, instant: new ArchBishop() },
+  { label: ClassID[13], value: 13, instant: new Sura() },
   { label: ClassID[2], value: 2, instant: new Ranger() },
   { label: ClassID[21], value: 21, instant: new Minstrel() },
   { label: ClassID[22], value: 22, instant: new Wanderer() },
@@ -73,14 +75,13 @@ const Characters: DropdownModel[] = [
   { label: ClassID[9], value: 9, instant: new Genetic() },
   { label: ClassID[3], value: 3, instant: new SoulReaper() },
   { label: ClassID[33], value: 33, instant: new StarEmperor() },
-  // { label: ClassID[17], value: 3, instant: new Oboro() },
+  // { label: ClassID[17], value: 17, instant: new Oboro() },
   { label: ClassID[18], value: 18, instant: new Kagerou() },
   { label: ClassID[1], value: 1, instant: new Rebelion() },
   { label: ClassID[31], value: 31, instant: new Doram() },
 ];
 if (!environment.production) {
-  Characters.push({ label: ClassID[12], value: 12, instant: new RuneKnight() });
-  Characters.push({ label: ClassID[17], value: 3, instant: new Oboro() });
+  Characters.push({ label: ClassID[17], value: 17, instant: new Oboro() });
 }
 
 const waitRxjs = (second: number = 0.1) => {
