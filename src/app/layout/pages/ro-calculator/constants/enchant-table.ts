@@ -591,6 +591,7 @@ export const EnchantTable: EntTable[] = [
   { name: 'Agudo_Filo', enchants: [null, null, edda3, edda4] },
   { name: 'Maxi_Spanner', enchants: [null, null, edda3, edda4] },
   { name: 'Engine_Pilebuncker', enchants: [null, null, edda3, edda4] },
+  { name: 'Coolant_Injection', enchants: [null, null, edda3, edda4] },
   { name: 'Lucis_Flail', enchants: [null, null, edda3, edda4] },
   { name: 'Bright_Mace', enchants: [null, null, edda3, edda4] },
   { name: 'Adorare_Staff', enchants: [null, null, edda3, edda4] },
