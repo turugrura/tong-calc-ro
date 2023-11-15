@@ -35,6 +35,17 @@ export class AppTopBarComponent {
 
   updates: { v: string; date: string; logs: string[] }[] = [
     {
+      v: 'V1.6.0',
+      date: '15-11-2566',
+      logs: [
+        'Fixed uneffect combo Temporal boot & Modified boot',
+        'Improved MATK formula (damage slightly decreased)',
+        'Supported Rune Knight class',
+        'Supported Sura class',
+        'Added requested items',
+      ],
+    },
+    {
       v: 'V1.5.1',
       date: '13-11-2566',
       logs: ['Added penetration shadow equipments (white)', 'Added requested items'],
@@ -42,7 +53,7 @@ export class AppTopBarComponent {
     {
       v: 'V1.5.0',
       date: '12-11-2566',
-      logs: ['Support Star Emperor class', 'Added Doram active skill (Bunch of Shrimp)'],
+      logs: ['Supported Star Emperor class', 'Added Doram active skill (Bunch of Shrimp)'],
     },
     {
       v: 'V1.4.4',
@@ -94,8 +105,8 @@ export class AppTopBarComponent {
       logs: [
         'Fixed Comet does not effected to physical damage',
         'Fixed reported bugs',
-        'Support Genetic class',
-        'Support toggle Hidden basic attack (see at the config button)',
+        'Supported Genetic class',
+        'Supported toggle Hidden basic attack (see at the config button)',
         'Added Odin3 equipments & cards',
         'Added Abyss4 equipments & cards',
         'Added requested items',
@@ -108,7 +119,7 @@ export class AppTopBarComponent {
         'Fixed incorrect EDP calculation to Dark monster',
         'Fixed reported bugs',
         'Removed Doram skill bonus from base level',
-        'Support Kagerou class',
+        'Supported Kagerou class',
         'Added Buff skill (Comet Amp (working as a monster debuff, not a player buff))',
         'Added Einbech Dun3 equipments & cards',
         'Added requested items',
@@ -132,7 +143,7 @@ export class AppTopBarComponent {
       date: '02-11-2566',
       logs: [
         'Fixed reported bugs',
-        'Support Dual weapon',
+        'Supported Dual weapon',
         'Added offensive skill (Canon Spear)',
         'Added requested items & lastest update items',
       ],
@@ -162,19 +173,19 @@ export class AppTopBarComponent {
       logs: [
         'Fixed SR job bonus',
         'Fixed size multiplier option not working',
-        'Support Thananos card',
+        'Supported Thananos card',
         'Added requested items.',
       ],
     },
     {
       v: 'V1.1.0',
       date: '28-10-2566',
-      logs: ['Support Minstrel & Wanderer', 'Added Edda weapon and enchants', 'Fixed reported bugs'],
+      logs: ['Supported Minstrel & Wanderer', 'Added Edda weapon and enchants', 'Fixed reported bugs'],
     },
     {
       v: 'V1.0.4',
       date: '26-10-2566',
-      logs: ['Added Ranger, SR & Sorcerer skill to get bonus', 'Added items', 'Support 4th slot garment costume'],
+      logs: ['Added Ranger, SR & Sorcerer skill to get bonus', 'Added items', 'Supported 4th slot garment costume'],
     },
     {
       v: 'V1.0.3',
