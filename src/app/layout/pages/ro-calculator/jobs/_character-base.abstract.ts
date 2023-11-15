@@ -35,6 +35,7 @@ export interface AtkSkillModel {
   totalHit?: number;
   isMatk?: boolean;
   isMelee?: boolean;
+  isDevMode?: boolean;
   isIgnoreDef?: boolean;
   isHDefToSDef?: boolean;
   isHit100?: boolean;
@@ -60,6 +61,7 @@ export interface ActiveSkillModel {
   label: string;
   name: string;
   dropdown: SkillModel[];
+  isDevMode?: boolean;
 }
 export type PassiveSkillModel = ActiveSkillModel;
 
@@ -120,15 +122,15 @@ export abstract class CharacterBase {
   }
 
   get atkSkills() {
-    return this._atkSkillList;
+    return this._atkSkillList.filter((a) => a.isDevMode !== true);
   }
 
   get passiveSkills() {
-    return this._passiveSkillList;
+    return this._passiveSkillList.filter((a) => a.isDevMode !== true);
   }
 
   get activeSkills() {
-    return this._activeSkillList;
+    return this._activeSkillList.filter((a) => a.isDevMode !== true);
   }
 
   get initialStatPoint() {
