@@ -35,6 +35,16 @@ export class AppTopBarComponent {
 
   updates: { v: string; date: string; logs: string[] }[] = [
     {
+      v: 'V1.6.1',
+      date: '16-11-2566',
+      logs: [
+        'Fixed One-hand Axe cannot equip shield',
+        'Added Minstrel/Wanderer offensive skill (Reverberation)',
+        'Added Official latest update items',
+        'Added requested items',
+      ],
+    },
+    {
       v: 'V1.6.0',
       date: '15-11-2566',
       logs: [
