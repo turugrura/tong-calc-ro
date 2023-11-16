@@ -857,6 +857,13 @@ export class Calculator {
     this.propertyBasicAtk = windmind ?? buff ?? ammo ?? weaponEle ?? ElementType.Neutral;
   }
 
+  private getPropertyMultiplier(propertyAtk: ElementType) {
+    const pMultiplier = ElementMapper[this.monster.stats.elementName][propertyAtk];
+    const viApplied = this.toPercent((this.totalEquipStatus['vi'] || 0) + 100) * pMultiplier;
+
+    return this.toPercent(viApplied);
+  }
+
   private calcPropertyMultiplier(specifiedProperty?: ElementType) {
     if (specifiedProperty) {
       const propMultiplier = ElementMapper[this.monster.stats.elementName][specifiedProperty];
@@ -947,15 +954,17 @@ export class Calculator {
     return this;
   }
 
-  private calcAtkGroupA(totalWeaponAtk?: number) {
+  private calcAtkGroupA(params: { propertyMultiplier: number; totalWeaponAtk?: number }) {
     const atkPercent = this.toPercent(this.totalEquipStatus.atkPercent);
     const formula = (weaponAtk: number) => {
-      const a = this.floor((weaponAtk + this.totalExtraAtk) * atkPercent);
+      let total = weaponAtk + this.totalExtraAtk;
+      total = this.floor(total * atkPercent);
+      total = this.floor(total * params.propertyMultiplier);
 
-      return this.floor(a * this.propertyMultiplier);
+      return total;
     };
 
-    if (totalWeaponAtk) return formula(totalWeaponAtk);
+    if (params.totalWeaponAtk) return formula(params.totalWeaponAtk);
 
     const totalAMin = formula(this.totalWeaponAtkMin);
     const totalAMax = formula(this.totalWeaponAtkMax);
@@ -999,7 +1008,7 @@ export class Calculator {
     return 100 + base + (this.totalEquipStatus[`${atkType}_class_${this.monsterData.type}`] ?? 0);
   }
 
-  private calcAtkGroupB(totalWeaponAtk?: number) {
+  private calcAtkGroupB(params: { propertyMultiplier: number; totalWeaponAtk?: number }) {
     const race = this.toPercent(this.calcRaceMultiplier());
     const size = this.toPercent(this.calcSizeMultiplier());
     const element = this.toPercent(this.calcElementMultiplier());
@@ -1011,18 +1020,14 @@ export class Calculator {
       total = this.floor(total * size);
       total = this.floor(total * element);
       total = this.floor(total * monsterType);
-      total = this.floor(total * this.propertyMultiplier);
+      total = this.floor(total * params.propertyMultiplier);
       total = this.floor(total * comet);
 
-      // return this.floor(
-      //   this.floor(this.floor(this.floor(this.floor(atk * race) * size) * element) * monsterType) *
-      //     this.propertyMultiplier,
-      // );
       return total;
     };
     // console.log({ name: this.monster.name, race, size, element, _class: monsterType });
 
-    if (totalWeaponAtk) return formula(totalWeaponAtk + this.totalExtraAtk);
+    if (params.totalWeaponAtk) return formula(params.totalWeaponAtk + this.totalExtraAtk);
 
     const totalBMin = formula(this.totalWeaponAtkMin + this.totalExtraAtk);
     const totalBMax = formula(this.totalWeaponAtkMax + this.totalExtraAtk);
@@ -1077,28 +1082,22 @@ export class Calculator {
     this.totalBuffAtk = 0;
   }
 
-  private calcTotalAtk(aAtk?: number, bAtk?: number) {
-    // const calcPropMulti = (atk: number) => this.floor(atk * 1);
-    // const extraAtk = calcPropMulti(this.totalStatusAtk * 2);
-    // const totalMinAtk = calcPropMulti(this.totalAMin) + calcPropMulti(this.totalBMin) + extraAtk;
-    // const totalMaxAtk = calcPropMulti(this.totalAMax) + calcPropMulti(this.totalBMax) + extraAtk;
-    // const additionalAtk = this.totalMasteryAtk + this.totalBuffAtk;
-    // if (aAtk && bAtk) return calcPropMulti(aAtk) + calcPropMulti(bAtk) + extraAtk + additionalAtk;
-
+  private calcTotalAtk(params: { propertyMultiplier: number; aAtk?: number; bAtk?: number }) {
+    const { aAtk, bAtk, propertyMultiplier } = params;
     const cannonBallAtk = this.totalEquipStatus.cannonballAtk || 0;
-    const mildwindMultiplier = this.isActiveMildwind ? this.propertyMultiplier : 1;
+    const mildwindMultiplier = this.isActiveMildwind ? propertyMultiplier : 1;
     const hiddenMasteryAtk = this._class.getMasteryAtk(this.infoForClass);
     const statusAtk =
-      this.totalStatusAtk * mildwindMultiplier * 2 +
+      this.totalStatusAtk * 2 * mildwindMultiplier +
       this.totalMasteryAtk +
       hiddenMasteryAtk +
       cannonBallAtk +
       this.totalBuffAtk;
+    if (aAtk && bAtk) return aAtk + bAtk + statusAtk;
+
     const totalMinAtk = this.totalAMin + this.totalBMin + statusAtk;
     const totalMaxAtk = this.totalAMax + this.totalBMax + statusAtk;
     const totalMaxAtkOver = this.totalAMaxOver + this.totalBMaxOver + statusAtk;
-
-    if (aAtk && bAtk) return aAtk + bAtk + statusAtk;
 
     this.totalMinAtk = totalMinAtk;
     this.totalMaxAtk = totalMaxAtk;
@@ -1111,22 +1110,32 @@ export class Calculator {
     return this;
   }
 
-  private calcRawTotalAtk() {
-    // this.calcWeaponAtk();
-    // this.calcWeaponMatk();
-    const weaMinAtk = this.totalWeaponAtkMin * 1.5;
-    const weaMaxAtk = this.totalWeaponAtkMaxOver * 1.5;
+  private calcRawTotalAtk(propertyAtk: ElementType, isEdp: boolean) {
+    const weaMinAtk = isEdp ? this.totalWeaponAtkMin : this.totalWeaponAtkMinNoEDP;
+    const weaMaxAtk = isEdp ? this.totalWeaponAtkMax : this.totalWeaponAtkMaxNoEDP;
+    const weaMaxOverAtk = isEdp ? this.totalWeaponAtkMaxOver : this.totalWeaponAtkMaxOverNoEDP;
 
-    const aMin = this.calcAtkGroupA(weaMinAtk);
-    const aMax = this.calcAtkGroupA(weaMaxAtk);
+    const propertyMultiplier = this.getPropertyMultiplier(propertyAtk);
 
-    const bMin = this.calcAtkGroupB(weaMinAtk);
-    const bMax = this.calcAtkGroupB(weaMaxAtk);
+    const aMin = this.calcAtkGroupA({ propertyMultiplier, totalWeaponAtk: weaMinAtk }) as number;
+    const aMax = this.calcAtkGroupA({ propertyMultiplier, totalWeaponAtk: weaMaxAtk }) as number;
+    const aMaxOver = this.calcAtkGroupA({ propertyMultiplier, totalWeaponAtk: weaMaxOverAtk }) as number;
 
-    const totalMin = this.calcTotalAtk(aMin, bMin);
-    const totalMax = this.calcTotalAtk(aMax, bMax);
+    let bMin = this.calcAtkGroupB({ propertyMultiplier, totalWeaponAtk: weaMinAtk });
+    let bMax = this.calcAtkGroupB({ propertyMultiplier, totalWeaponAtk: weaMaxAtk });
+    let bMaxOver = this.calcAtkGroupB({ propertyMultiplier, totalWeaponAtk: weaMaxOverAtk });
+    if (isEdp) {
+      const edpMulti = this.getEDPMultiplier();
+      bMin = bMin * edpMulti;
+      bMax = bMax * edpMulti;
+      bMaxOver = bMaxOver * edpMulti;
+    }
 
-    return { totalMin, totalMax };
+    const totalMin = this.calcTotalAtk({ aAtk: aMin, bAtk: bMin, propertyMultiplier }) as number;
+    const totalMax = this.calcTotalAtk({ aAtk: aMax, bAtk: bMax, propertyMultiplier }) as number;
+    const totalMaxOver = this.calcTotalAtk({ aAtk: aMaxOver, bAtk: bMaxOver, propertyMultiplier }) as number;
+
+    return { totalMin, totalMax, totalMaxOver };
   }
 
   /**
@@ -1238,7 +1247,7 @@ export class Calculator {
   }
 
   private calcSkillDamage(skillData: AtkSkillModel) {
-    const { name: skillName, canCri: _canCri, isMelee, isHDefToSDef = false, isIgnoreDef = false } = skillData;
+    const { name: skillName, element, canCri: _canCri, isMelee, isHDefToSDef = false, isIgnoreDef = false } = skillData;
     const canCri = this.isForceSkillCri || _canCri;
     const { finalDmgReduction, finalSoftDef } = this.finalPhysicalDef;
     const hardDef = isIgnoreDef || isHDefToSDef ? 1 : finalDmgReduction;
@@ -1305,14 +1314,14 @@ export class Calculator {
 
     //       return `From:${atk} => ${dmg}`;
     //     });
-    const canEDP = this.canEDP(skillName);
 
-    const rawMaxDamage = skillFormula(canEDP ? this.totalMaxAtkOver : this.totalMaxAtkOverNoEDP);
+    const canEDP = this.canEDP(skillName);
+    const { totalMin, totalMax, totalMaxOver } = this.calcRawTotalAtk(element || this.propertyBasicAtk, canEDP);
+
+    const rawMaxDamage = skillFormula(totalMaxOver);
     const maxDamage = this._class.calcSkillDmgByTotalHit(rawMaxDamage, skillData);
 
-    const rawMinDamage = canCri
-      ? skillFormula(canEDP ? this.totalMaxAtk : this.totalMaxAtkNoEDP)
-      : skillFormula(canEDP ? this.totalMinAtk : this.totalMinAtkNoEDP);
+    const rawMinDamage = canCri ? skillFormula(totalMax) : skillFormula(totalMin);
     const minDamage = this._class.calcSkillDmgByTotalHit(rawMinDamage, skillData);
 
     return { minDamage, maxDamage };
@@ -1385,9 +1394,9 @@ export class Calculator {
     this.calcWeaponAtk();
     this.calcWeaponMatk();
 
-    this.calcAtkGroupA();
-    this.calcAtkGroupB();
-    this.calcTotalAtk();
+    this.calcAtkGroupA({ propertyMultiplier: this.propertyMultiplier });
+    this.calcAtkGroupB({ propertyMultiplier: this.propertyMultiplier });
+    this.calcTotalAtk({ propertyMultiplier: this.propertyMultiplier });
     this.calcTotalMatk();
 
     return this;

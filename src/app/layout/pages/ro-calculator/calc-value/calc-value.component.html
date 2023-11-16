@@ -2,21 +2,21 @@
   <div class="col-12">
     {{ label }}
     <span *ngIf="totalHit > 1">
-      <span class="font-bold px-1 {{ styleClass }}" style="color: var(--pink-300)">{{ totalHit }}</span>
+      <span class="text-lg font-medium px-1 {{ styleClass }}" style="color: var(--pink-300)">{{ totalHit }}</span>
       <span>x</span>
     </span>
-    <span *ngIf="isDisplayRangeDmg" class="font-bold px-1 {{ styleClass }}"
+    <span *ngIf="isDisplayRangeDmg" class="text-lg font-medium px-1 {{ styleClass }}"
       >{{ _min | number }} - {{ _max | number }}{{ isDisplayCompare ? '' : unit }}</span
     >
-    <span *ngIf="!isDisplayRangeDmg" class="font-bold px-1 {{ styleClass }}"
+    <span *ngIf="!isDisplayRangeDmg" class="text-lg font-medium px-1 {{ styleClass }}"
       >{{ _max | number }}{{ isDisplayCompare ? '' : unit }}</span
     >
     <span [hidden]="!isDisplayCompare">
       <i class="pi pi-arrow-right vs_sign px-1"></i>
-      <span *ngIf="isDisplayRangeDmg2" class="font-bold px-1  {{ compareStyleClass }}"
+      <span *ngIf="isDisplayRangeDmg2" class="text-lg font-medium px-1  {{ compareStyleClass }}"
         >{{ _min2 | number }} - {{ _max2 | number }}{{ unit }}</span
       >
-      <span *ngIf="!isDisplayRangeDmg2" class="font-bold px-1  {{ compareStyleClass }}"
+      <span *ngIf="!isDisplayRangeDmg2" class="text-lg font-medium px-1  {{ compareStyleClass }}"
         >{{ _max2 | number }}{{ unit }}</span
       >
     </span>

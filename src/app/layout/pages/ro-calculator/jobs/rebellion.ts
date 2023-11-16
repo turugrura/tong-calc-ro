@@ -6,6 +6,7 @@ import {
   CharacterBase,
   PassiveSkillModel,
 } from './_character-base.abstract';
+import { ElementType } from '../constants/element-type.const';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 0, 0, 0],
@@ -146,6 +147,7 @@ export class Rebelion extends CharacterBase {
       fct: 0,
       vct: 3,
       cd: 3.5,
+      element: ElementType.Neutral,
       levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
