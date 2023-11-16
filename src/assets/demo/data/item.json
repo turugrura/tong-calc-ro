@@ -16581,6 +16581,39 @@
       ]
     }
   },
+  "19437": {
+    "id": 19437,
+    "aegisName": "LittleGarden",
+    "name": "Little Garden",
+    "unidName": "Ribbon",
+    "resName": "LittleGarden",
+    "description": "มงกุฎดอกไม้อันงดงาม สวมใส่แล้วรู้สึกได้ถึงภูมิฐานที่พริ้งพรายในความสวยงามตามธรรมชาติ\n\nATK +40\nCrirical Damage +5%\n\nเมื่อ Base LUK ตั้งแต่ 90 ขึ้นไป, \nATK +60 เพิ่มเติม\nCritical Damage +10% เพิ่มเติม\n\nเมื่อ Base LUK ตั้งแต่ 125 ขึ้นไป, \nATK +80 เพิ่มเติม\nCritical Damage +20% เพิ่มเติม\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^7777770^000000\nตำแหน่ง : ^777777Middle^000000 น้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 100,
+    "location": "Middle",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atk": [
+        "40",
+        "luk:90===60",
+        "luk:125===80"
+      ],
+      "criDmg": [
+        "5",
+        "luk:90===10",
+        "luk:125===20"
+      ]
+    }
+  },
   "19439": {
     "id": 19439,
     "aegisName": "Subject_Aura",
@@ -27383,6 +27416,112 @@
       ]
     }
   },
+  "24509": {
+    "id": 24509,
+    "aegisName": "S_Reverberation_Weapon",
+    "name": "Reverberation Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา\nเพิ่ม Damage ทางเวทมนตร์ธาตุ Neutral 3%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางเวทมนตร์ธาตุ Neutral ขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางเวทมนตร์ธาตุ Neutral ขึ้นอีก 4%\nเมื่อสวมใส่ Reverberation Shadow Weapon/Pendant/Earring ร่วมกัน,\nเพิ่ม Damage สกิล Reverberation % เท่ากับครึ่งหนึ่งของค่าอัพเกรดรวมกัน\nเมื่อสวมใส่ร่วมกับ Wanderer/Minstrel Shadow Shield,\nเพิกเฉยต่อพลังป้องกันทางกายภาพ/เวทมนตร์ของทุกเผ่ายกเว้น Player 40% และเพิกเฉยต่อพลังป้องกันทางกายภาพ/เวทมนตร์เพิ่มอีกตามค่าอัพเกรดรวมกันของ Reverberation Shadow Weapon และ Wanderer/Minstrel Shadow Shield\nประเภท : ^777777Shadow^000000 \nตำแหน่ง : ^777777Weapon^000000 น้ำหนัก : ^7777770^000000 \nเลเวลที่ต้องการ : ^77777799^000000 \nอาชีพที่ใส่ได้ : ^777777Minstrel, Wanderer^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Minstrel",
+      "Wanderer"
+    ],
+    "script": {
+      "m_my_element_neutral": [
+        "3",
+        "7===3",
+        "9===4"
+      ],
+      "Reverberation": [
+        "EQUIP[Reverberation Shadow Pendant&&Reverberation Shadow Earring]REFINE[shadowWeapon,shadowPendant,shadowEarring==2]---1"
+      ],
+      "p_pene_race_all": [
+        "EQUIP[Minstrel Shadow Shield]40",
+        "EQUIP[Minstrel Shadow Shield]REFINE[shadowWeapon,shadowShield==1]---1",
+        "EQUIP[Wanderer Shadow Shield]40",
+        "EQUIP[Wanderer Shadow Shield]REFINE[shadowWeapon,shadowShield==1]---1"
+      ],
+      "m_pene_race_all": [
+        "EQUIP[Minstrel Shadow Shield]40",
+        "EQUIP[Minstrel Shadow Shield]REFINE[shadowWeapon,shadowShield==1]---1",
+        "EQUIP[Wanderer Shadow Shield]40",
+        "EQUIP[Wanderer Shadow Shield]REFINE[shadowWeapon,shadowShield==1]---1"
+      ],
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1"
+      ]
+    }
+  },
+  "24510": {
+    "id": 24510,
+    "aegisName": "S_Reverberation_Pendant",
+    "name": "Reverberation Shadow Pendant",
+    "unidName": "Shadow Pendant",
+    "resName": "펜던트쉐도우",
+    "description": "สร้อยคอศักดิ์สิทธิ์ที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา\nเพิ่ม Damage สกิล Reverberation 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage สกิล Reverberation ขึ้นอีก 2%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Pendant ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Minstrel, Wanderer^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 530,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Minstrel",
+      "Wanderer"
+    ],
+    "script": {
+      "Reverberation": [
+        "5",
+        "2---2"
+      ]
+    }
+  },
+  "24511": {
+    "id": 24511,
+    "aegisName": "S_Reverberation_Earing",
+    "name": "Reverberation Shadow Earring",
+    "unidName": "Shadow Earring",
+    "resName": "이어링쉐도우",
+    "description": "ต่างหูมงคลที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา\nลดปริมาณการใช้ SP สกิล Reverberation 2%\nทุก ๆ การอัพเกรด 2 ขั้น ลดปริมาณการใช้ SP สกิล Reverberation ลงอีก 1%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Earring ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Minstrel, Wanderer^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 529,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Minstrel",
+      "Wanderer"
+    ],
+    "script": {
+      "spPercent__Reverberation": [
+        "2",
+        "2---1"
+      ]
+    }
+  },
   "24518": {
     "id": 24518,
     "aegisName": "S_Crimson_Armor",
@@ -27735,6 +27874,102 @@
     "script": {
       "spPercent__Rolling Cutter": [
         "2",
+        "2---1"
+      ]
+    }
+  },
+  "24539": {
+    "id": 24539,
+    "aegisName": "S_Katar_Weapon",
+    "name": "Katar Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา\nเมื่อโจมตีทางกายภาพ มีโอกาสที่เกิด Effect Critical Damage +10% และเพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 10% เป็นเวลา 5 วินาที\nเมื่ออัพเกรดถึงขั้น 7 Critical Damage +5% และ Damage ทางกายภาพต่อศัตรูทุกขนาด +5% เพิ่มเติมขณะเกิด Effect \nเมื่ออัพเกรดถึงขั้น 9 เพิ่มระยะเวลา Effect การเพิ่ม Critical Damage และ Damage ทางกายภาพต่อศัตรูทุกขนาดขึ้นอีก 5 วินาที\nเมื่อสวมใส่ Katar Shadow Weapon/Pendant/Earring ร่วมกัน,\nเพิ่ม ATK เท่ากับค่าอัพเกรดรวมกัน\nเมื่อสวมใส่ร่วมกับ Guillotine Cross Shadow Shield,\nเพิกเฉยต่อพลังป้องกันทางกายภาพของทุกเผ่ายกเว้น Player 40% และเพิกเฉยต่อพลังป้องกันทางกายภาพเพิ่มอีกตามค่าอัพเกรดรวมกันของ Katar Shadow Weapon และ Guillotine Cross Shadow Shield\nประเภท : ^777777Shadow^000000 \nตำแหน่ง : ^777777Weapon^000000 น้ำหนัก : ^7777770^000000 \nเลเวลที่ต้องการ : ^77777799^000000 \nอาชีพที่ใส่ได้ : ^777777Guillotine Cross^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "Guillotine Cross"
+    ],
+    "script": {
+      "chance__criDmg": [
+        "10",
+        "7===5"
+      ],
+      "chance__p_size_all": [
+        "10",
+        "7===5"
+      ],
+      "atk": [
+        "1---1",
+        "EQUIP[Katar Shadow Pendant&&Katar Shadow Earring]REFINE[shadowWeapon,shadowPendant,shadowEarring==1]---1"
+      ],
+      "p_pene_race_all": [
+        "EQUIP[Guillotine Cross Shadow Shield]40",
+        "EQUIP[Guillotine Cross Shadow Shield]REFINE[shadowWeapon,shadowShield==1]---1"
+      ],
+      "matk": [
+        "1---1"
+      ]
+    }
+  },
+  "24540": {
+    "id": 24540,
+    "aegisName": "S_Katar_Pendant",
+    "name": "Katar Shadow Pendant",
+    "unidName": "Shadow Pendant",
+    "resName": "펜던트쉐도우",
+    "description": "สร้อยคอศักดิ์สิทธิ์ที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา\nCritical Damage +5%\nทุก ๆ การอัพเกรด 2 ขั้น Critical Damage +1% เพิ่มเติม\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Pendant ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Guillotine Cross^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 530,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "AccessoryLeft",
+    "compositionPos": null,
+    "usableClass": [
+      "Guillotine Cross"
+    ],
+    "script": {
+      "criDmg": [
+        "5",
+        "2---1"
+      ]
+    }
+  },
+  "24541": {
+    "id": 24541,
+    "aegisName": "S_Katar_Earing",
+    "name": "Katar Shadow Earring",
+    "unidName": "Shadow Earring",
+    "resName": "이어링쉐도우",
+    "description": "ต่างหูมงคลที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาดขึ้นอีก 1%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Earring ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Guillotine Cross^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 529,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "AccessoryRight",
+    "compositionPos": null,
+    "usableClass": [
+      "Guillotine Cross"
+    ],
+    "script": {
+      "p_size_all": [
+        "5",
         "2---1"
       ]
     }
@@ -48230,6 +48465,39 @@
       ]
     }
   },
+  "420239": {
+    "id": 420239,
+    "aegisName": "Adventure_Clover",
+    "name": "Adventure Clover",
+    "unidName": "Ribbon",
+    "resName": "입에문네잎클로버",
+    "description": "ใบโคลเวอร์ 4 แฉก มีตำนานกล่าวว่าเป็นใบไม้ซึ่งนำความโชคดีมาแก่ผู้พบเห็น\nเพิ่ม EXP ที่ได้รับจากมอนสเตอร์ 8%\n\nเมื่อสวมใส่ร่วมกับ Illusion Armor A-type หรือ Illusion Armor B-type,\nเพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูทุกเผ่า 8%\nเพิ่ม EXP ที่ได้รับจากมอนสเตอร์ขึ้นอีก 2%\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^7777770^000000\nตำแหน่ง : ^777777Lower^000000 น้ำหนัก : ^77777710^000000\nเลเวลของเกราะ : ^7777771^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 1,
+    "location": "Lower",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "exp": [
+        "8",
+        "EQUIP[Illusion Armor A-type||Illusion Armor B-type]2"
+      ],
+      "p_race_all": [
+        "EQUIP[Illusion Armor A-type||Illusion Armor B-type]8"
+      ],
+      "m_race_all": [
+        "EQUIP[Illusion Armor A-type||Illusion Armor B-type]8"
+      ]
+    }
+  },
   "450001": {
     "id": 450001,
     "aegisName": "Atker_Plate",
@@ -49211,6 +49479,50 @@
       ]
     }
   },
+  "470248": {
+    "id": 470248,
+    "aegisName": null,
+    "name": "Dragon Slayer Shoes [1]",
+    "unidName": "Dragon Slayer Shoes",
+    "resName": "FrontiaBoots",
+    "description": "รองเท้าของนักล่ามังกร ผู้สวมใส่จะมีความมั่นใจในการล่ามังกรมากขึ้น\n\nMHP +1000, MSP +200\n\nเมื่ออัพเกรดถึงขั้น 7,\nเพิ่ม EXP ที่ได้รับจากมอนสเตอร์ 8%\n\nเมื่ออัพเกรดถึงขั้น 9,\nเพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อมอนสเตอร์เผ่า Dragon, Insect 15%\n\nเมื่ออัพเกรดถึงขั้น 11,\nลด Damage ทางกายภาพ/เวทมนตร์ที่ได้รับจากมอนสเตอร์เผ่า Dragon, Insect 20%\nประเภท : ^777777Shoes^000000  พลังป้องกัน : ^77777730^000000\nน้ำหนัก : ^77777790^000000\nเลเวลที่ต้องการ : ^77777730^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 516,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 30,
+    "weight": 90,
+    "requiredLevel": 30,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "hp": [
+        "1000"
+      ],
+      "sp": [
+        "200"
+      ],
+      "exp": [
+        "7===8"
+      ],
+      "p_race_dragon": [
+        "9===15"
+      ],
+      "p_race_insect": [
+        "9===15"
+      ],
+      "m_race_dragon": [
+        "9===15"
+      ],
+      "m_race_insect": [
+        "9===15"
+      ]
+    }
+  },
   "480000": {
     "id": 480000,
     "aegisName": "Atker_Manteau",
@@ -49536,9 +49848,6 @@
       "aspdPercent": [
         "7===7"
       ],
-      "เพิ่มความต้านทานต่อการโจมตีธาตุ Neutral": [
-        "9===7"
-      ],
       "range": [
         "11===10",
         "EQUIP[Battle Processor]===5"
@@ -49787,6 +50096,60 @@
       ],
       "ลดดาเมจที่ได้รับจากการโจมตีทางกายภาพระยะไกลลง": [
         "Old Blazing Soul12===5"
+      ]
+    }
+  },
+  "480197": {
+    "id": 480197,
+    "aegisName": null,
+    "name": "Convertible Critical Wing [1]",
+    "unidName": "Hood",
+    "resName": "Supplement_Part_Wing",
+    "description": "ปีกจักรกลอเนกประสงค์ที่ได้รับการพัฒนาอีกขั้นหนึ่ง ซึ่งมีเป้าหมายให้จ่ายพลังงานและมีประสิทธิภาพอย่างสูงสุด\nเครื่องประมวลผล Critical ถูกติดตั้งควบคู่ไปด้วย\nสามารถใช้งานร่วมกับไอเท็มต่าง ๆ ได้\n\nทุก ๆ การอัพเกรด 2 ขั้น ATK +5, CRI +2\nทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 3%\nเมื่ออัพเกรดถึงขั้น 7, ASPD +7%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่มความต้านทานต่อการโจมตีธาตุ Neutral 7%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage ทางกายภาพระยะใกล้และระยะไกล 10%\n\nเมื่อสวมใส่ร่วมกับ Deep Blue Sunglasses [1], Critical Damage +7%, ลดระยะเวลาร่ายแบบแปรผัน 15%\nเมื่อสวมใส่ร่วมกับ Victorious Wing Ears [1], Critical Damage +7%, ลด Delay หลังใช้สกิล 15%\nเมื่อสวมใส่ร่วมกับ Battle Processor [1], Critical Damage +7%, เพิ่ม Damage ทางกายภาพระยะใกล้และระยะไกล 5%\nประเภท : ^777777Garment^000000  พลังป้องกัน : ^77777738^000000\nน้ำหนัก : ^77777740^000000\nเลเวลของเกราะ : ^7777771^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 515,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 38,
+    "weight": 40,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atk": [
+        "2---5"
+      ],
+      "cri": [
+        "2---2"
+      ],
+      "p_size_all": [
+        "3---3"
+      ],
+      "aspdPercent": [
+        "7===7"
+      ],
+      "range": [
+        "11===10",
+        "EQUIP[Battle Processor]===5"
+      ],
+      "melee": [
+        "11===10",
+        "EQUIP[Battle Processor]===5"
+      ],
+      "criDmg": [
+        "EQUIP[Deep Blue Sunglasses]===7",
+        "EQUIP[Victorious Wing Ears]===7",
+        "EQUIP[Battle Processor]===7"
+      ],
+      "vct": [
+        "EQUIP[Deep Blue Sunglasses]===15"
+      ],
+      "acd": [
+        "EQUIP[Victorious Wing Ears]===15"
       ]
     }
   },
@@ -52319,6 +52682,50 @@
       ],
       "Rolling Cutter": [
         "EQUIP[Patent Blade Katar]REFINE[weapon==11]SUM[str,dex==12]---1"
+      ]
+    }
+  },
+  "490469": {
+    "id": 490469,
+    "aegisName": null,
+    "name": "Ring of Unknown Hero(Taekwon) [1]",
+    "unidName": "Ring of Unknown Hero(Taekwon)",
+    "resName": "Ullr_Bracelet",
+    "description": "แหวนของฮีโร่นิรนาม\n\nลด Delay หลังใช้สกิล 3%\nเพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูทุกประเภท 6%\n\nเมื่อสวมใส่ร่วมกับ Patent One Sky One Sun,\nเพิ่ม Damage ทางกายภาพระยะใกล้ 8%\nเมื่อ Patent One Sky One Sun อัพเกรดตั้งแต่ 11 ขึ้นไป,\nเมื่อ Base STR และ LUK รวมกันได้ทุก ๆ 12 หน่วย เพิ่ม Damage สกิล Solar Explosion 1%\n\nเมื่อสวมใส่ร่วมกับ Patent Spirit Pendulum,\nเพิ่ม Damage ทางเวทมนตร์ต่อมอนสเตอร์ทุกเผ่า 8%\nเมื่อ Patent Spirit Pendulum อัพเกรดตั้งแต่ 11 ขึ้นไป,\nเมื่อ Base INT และ AGI รวมกันได้ทุก ๆ 12 หน่วย เพิ่ม Damage สกิล Espa 1%\nประเภท : ^777777Accessory (Right)^000000 พลังป้องกัน : ^7777777^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Taekwon^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 510,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 7,
+    "weight": 10,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Taekwondo"
+    ],
+    "script": {
+      "acd": [
+        "3"
+      ],
+      "p_class_all": [
+        "6"
+      ],
+      "m_class_all": [
+        "6"
+      ],
+      "melee": [
+        "EQUIP[Patent One Sky One Sun]8"
+      ],
+      "Solar Explosion": [
+        "EQUIP[Patent One Sky One Sun]REFINE[weapon==11]SUM[str,luk==12]---1"
+      ],
+      "m_race_all": [
+        "EQUIP[Patent Spirit Pendulum]8"
+      ],
+      "Espa": [
+        "EQUIP[Patent Spirit Pendulum]REFINE[weapon==11]SUM[int,agi==12]---1"
       ]
     }
   },

@@ -10,4 +10,5 @@ export const AllowShieldTable: Partial<Record<WeaponTypeName, true>> = {
   rod: true,
   book: true,
   spear: true,
+  axe: true,
 };
