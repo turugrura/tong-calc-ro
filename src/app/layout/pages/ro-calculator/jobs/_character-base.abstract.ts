@@ -27,6 +27,7 @@ export interface AtkSkillModel {
     element: ElementType;
     isIncludeMain: boolean;
     hit: number;
+    isMatk?: boolean;
     formula: (input: AtkSkillFormulaInput) => number;
   };
   canCri?: boolean;

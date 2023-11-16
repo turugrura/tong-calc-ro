@@ -444,7 +444,7 @@
       "cd__Psychic Wave": [
         "3"
       ],
-      "เพิ่ม SP ของการใช้สกิล Psychic Wave": [
+      "sp__Psychic Wave": [
         "60"
       ],
       "Psychic Wave": [
@@ -4952,6 +4952,32 @@
     "cardPrefix": "Powerstorm",
     "script": {
       "Axe Tornado": [
+        "20",
+        "WEAPON_LEVEL[4]===20",
+        "10===20"
+      ]
+    }
+  },
+  "4689": {
+    "id": 4689,
+    "aegisName": "Real_Seyren_Card",
+    "name": "True Seyren Windsor Card",
+    "unidName": "True Seyren Windsor Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่มความแรงสกิล Ignition Break 20% \nเพิ่มความแรงสกิล Ignition Break อีก 20% เมื่ออาวุธเลเวล 4 \nเพิ่มความแรงสกิล Ignition Break อีก 20% เมื่ออัพเกรดถึงขั้น 10 ขึ้นไป\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Ignition",
+    "script": {
+      "Ignition Break": [
         "20",
         "WEAPON_LEVEL[4]===20",
         "10===20"
@@ -28158,6 +28184,95 @@
       ]
     }
   },
+  "24548": {
+    "id": 24548,
+    "aegisName": "S_Dust_Armor",
+    "name": "Dust Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우",
+    "description": "ชุดเกราะที่เพิ่มพลังป้องกันเมื่อสวมใส่เพิ่มบนเกราะอีกที สามารถใส่แบบชิ้นเดียวได้ แต่ความสามารถในการป้องกันจะลดลงไปอีก \nเพิ่ม Damage สกิล Diamond Dust 5%\nทุก ๆ การอัพเกรด 1 ขั้น เพิ่ม Damage สกิล Diamond Dust ขึ้นอีก 2%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Armor^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Sorcerer Cls^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Armor",
+    "compositionPos": null,
+    "usableClass": [
+      "Sorcerer Cls"
+    ],
+    "script": {
+      "Diamond Dust": [
+        "5",
+        "1---2"
+      ]
+    }
+  },
+  "24549": {
+    "id": 24549,
+    "aegisName": "S_Dust_Shield",
+    "name": "Dust Shadow Shield",
+    "unidName": "Shadow Shield",
+    "resName": "쉴드쉐도우",
+    "description": "โล่เล็กที่สามารถสวมใส่ที่แขนได้ สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์การป้องกันของมันจะลดน้อยลง\nเพิ่ม Damage ทางเวทมนตร์ธาตุ Water 3%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางเวทมนตร์ธาตุ Water ขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางเวทมนตร์ธาตุ Water ขึ้นอีก 4%\nเมื่อสวมใส่ Dust Shadow Armor/Shield/Shoes ร่วมกัน,\nเพิ่ม Damage สกิล Diamond Dust % เท่ากับค่าอัพเกรดรวมกัน\nเมื่อสวมใส่ร่วมกับ Sorcerer Shadow Weapon,\nเพิกเฉยต่อพลังป้องกันทางเวทมนตร์ของทุกเผ่ายกเว้น Player 40% และเพิกเฉยต่อพลังป้องกันทางเวทมนตร์เพิ่มอีกตามค่าอัพเกรดรวมกันของ Dust Shadow Shield และ Sorcerer Shadow Weapon\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shield^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Sorcerer Cls^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 527,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Shield",
+    "compositionPos": null,
+    "usableClass": [
+      "Sorcerer Cls"
+    ],
+    "script": {
+      "m_my_element_water": [
+        "3",
+        "7===3",
+        "9===4"
+      ],
+      "Diamond Dust": [
+        "EQUIP[Dust Shadow Armor&&Dust Shadow Shoes]REFINE[shadowShield,shadowArmor,shadowBoot==1]---1"
+      ],
+      "m_pene_race_all": [
+        "EQUIP[Sorcerer Shadow Weapon]===40",
+        "EQUIP[Sorcerer Shadow Weapon]REFINE[shadowShield,shadowWeapon==1]---1"
+      ]
+    }
+  },
+  "24550": {
+    "id": 24550,
+    "aegisName": "S_Dust_Shoes",
+    "name": "Dust Shadow Shoes",
+    "unidName": "Shadow Shoes",
+    "resName": "슈즈쉐도우",
+    "description": "รองเท้าที่สวมใส่เพิ่มเติม สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์ของมันจะลดน้อยลง\nลดปริมาณการใช้ SP สกิล Diamond Dust 4%\nทุก ๆ การอัพเกรด 2 ขั้น ลดปริมาณการใช้ SP สกิล Diamond Dust ลงอีก 1%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shoes ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Sorcerer Cls^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 528,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Shoes",
+    "compositionPos": null,
+    "usableClass": [
+      "Sorcerer Cls"
+    ],
+    "script": {
+      "spPercent__Diamond Dust": [
+        "4",
+        "2---1"
+      ]
+    }
+  },
   "24551": {
     "id": 24551,
     "aegisName": "S_Grave_Weapon",
@@ -50437,6 +50552,53 @@
       ],
       "cd__Cannon Spear": [
         "EQUIP[Old Casket of Protection]REFINE[headUpper==11]0.5"
+      ]
+    }
+  },
+  "480369": {
+    "id": 480369,
+    "aegisName": "Scarlet_Hero_Manteau_TH",
+    "name": "Scarlet Hero Manteau [1]",
+    "unidName": "Scarlet Hero Manteau",
+    "resName": "Commander_manteau_J",
+    "description": "ผ้าคลุมสีชาดที่ว่ากันว่าไม่ได้มีสีเช่นนี้ตั้งแต่แรก แต่ตำนานของผู้นั้นซึ่งย้อมผ้าคลุมตัวนี้ด้วยเลือดศัตรูจากทั่วทุกสมรภูมิ\nจนผู้นั้นได้รับการขนานนามว่าเป็นอัศวินสีชาด\nสามารถใช้สกิล Bowling Bash Lv. 10 ได้\n\nทุก ๆ การอัพเกรด 2 ขั้น ATK + 10, ลดระยะเวลาร่ายแบบแปรผัน 3%\nทุก ๆ การอัพเกรด 4 ขั้น เพิ่ม Damage ทางกายภาพต่อศัตรูทุกประเภท 4%\n\nเมื่ออัพเกรดถึงขั้น 7, ASPD +10%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพระยะใกล้ 10%\nเมื่ออัพเกรดถึงขั้น 11,\nเมื่อ Base Lv. 99 หรือน้อยกว่า\nASPD +10%\nลด Cooldown สกิล Bowling Bash 1 วินาที\nเพิ่ม Damage สกิล Bowling Bash 50%\n\nเมื่อสวมใส่ด้วย Rune Knight จะได้รับความสามารถดังต่อไปนี้\nเมื่อ Base Lv. 100~169\nATK +50, ASPD +10%\nลดระยะเวลาร่ายแบบแปรผัน 15%\nลด Cooldown สกิล Ignition Break 1 วินาที\nเพิ่ม Damage ทางกายภาพระยะใกล้ 10%\n\nเมื่อ Base Lv. ตั้งแต่ 170 ขึ้นไป\nATK +50, ASPD +10%\nลดระยะเวลาร่ายแบบแปรผัน 15%\nลด Cooldown สกิล Ignition Break 0.15 วินาที\nเพิ่ม Damage ทางกายภาพระยะใกล้ 30%\nประเภท : ^777777Garment^000000  พลังป้องกัน : ^77777760^000000\nน้ำหนัก : ^77777790^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777Swordman Cls^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 515,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 60,
+    "weight": 90,
+    "requiredLevel": 1,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Swordman Cls"
+    ],
+    "script": {
+      "atk": [
+        "2---10",
+        "REFINE[11]USED[Rune Knight]SUM[level==100]===50"
+      ],
+      "vct": [
+        "2---3",
+        "REFINE[11]USED[Rune Knight]SUM[level==100]===15"
+      ],
+      "p_class_all": [
+        "4---4"
+      ],
+      "aspdPercent": [
+        "7===10",
+        "REFINE[11]USED[Rune Knight]SUM[level==100]===10"
+      ],
+      "melee": [
+        "9===10",
+        "REFINE[11]USED[Rune Knight]SUM[level==100]===10",
+        "REFINE[11]USED[Rune Knight]SUM[level==170]===20"
+      ],
+      "cd__Ignition Break": [
+        "REFINE[11]USED[Rune Knight]LEVEL[1-169]===1",
+        "REFINE[11]USED[Rune Knight]LEVEL[170]===0.15"
       ]
     }
   },

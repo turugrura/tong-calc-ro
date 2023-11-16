@@ -415,6 +415,7 @@ interface EntTable {
 
 const base12 = createBaseStat(1, 2);
 const base15 = createBaseStat(1, 5);
+const base46 = createBaseStat(4, 6);
 
 const soutanes = ['Cassock_Str', 'Cassock_Agi', 'Cassock_Vit', 'Cassock_Dex', 'Cassock_Int', 'Cassock_Luk'];
 const specialBonus = [FS._5, FS._6, Spell._4, Spell._5, EA._4, EA._5, Sharp._4, Sharp._5];
@@ -519,7 +520,7 @@ export const EnchantTable: EntTable[] = [
 
   { name: 'Twin Cannon', enchants: [null, twinCannon, twinCannon, twinCannon] },
 
-  { name: 'Temporal_Ring_TW', enchants: [null, null, null, [...ea410, ...fs410, ...sp46]] },
+  { name: 'Temporal_Ring_TW', enchants: [null, null, null, [...ea410, ...fs410, ...sp46, ...base46]] },
 
   { name: 'White_Wing_Suits', enchants: [null, whiteWingSuit, whiteWingSuit, whiteWingSuit] },
   { name: 'White_Wing_Manteau', enchants: [null, [...atkPer, ...fs13], [...atkPer, ...fs13], [...atkPer, ...fs13]] },

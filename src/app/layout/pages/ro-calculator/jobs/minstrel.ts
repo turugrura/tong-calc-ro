@@ -10,6 +10,7 @@ import { WeaponTypeName } from '../constants/weapon-type-mapper';
 import { InfoForClass } from '../models/info-for-class.model';
 import { Archer } from './archer';
 import { DanceWithWug, LeradsDew, Lesson, SevereRainstorm, SongOfMana } from '../constants/share-passive-skills';
+import { ElementType } from '../constants/element-type.const';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 1, 0, 0],
@@ -208,6 +209,53 @@ export class Minstrel extends CharacterBase {
         const extra = weaMultiMap[weaType] || 0;
 
         return ((totalDex + totalAgi) / 2 + skillLevel * extra) * (baseLevel / 100);
+      },
+    },
+    {
+      label: 'Reverberation Lv5',
+      name: 'Severe Rainstorm',
+      value: 'Reverberation==5',
+      acd: 1,
+      fct: 0,
+      vct: 1.5,
+      cd: 0,
+      levelList: [],
+      isMelee: true,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { skillLevel, model } = input;
+        const baseLevel = model.level;
+
+        return (300 + skillLevel * 100) * (baseLevel / 100);
+      },
+      part2: {
+        element: ElementType.Neutral,
+        isIncludeMain: true,
+        label: '',
+        hit: 1,
+        isMatk: true,
+        formula: (input: AtkSkillFormulaInput): number => {
+          const { skillLevel, model } = input;
+          const baseLevel = model.level;
+
+          return (400 + skillLevel * 300) * (baseLevel / 100);
+        },
+      },
+    },
+    {
+      label: '[Improved] Reverberation Lv5',
+      name: 'Reverberation',
+      value: '[Improved] Reverberation==5',
+      acd: 0.5,
+      fct: 0.5,
+      vct: 1.5,
+      cd: 0,
+      isMatk: true,
+      levelList: [],
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { skillLevel, model } = input;
+        const baseLevel = model.level;
+
+        return (700 + skillLevel * 300) * (baseLevel / 100);
       },
     },
   ];

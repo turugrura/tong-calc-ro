@@ -964,7 +964,7 @@ export class Calculator {
       return total;
     };
 
-    if (params.totalWeaponAtk) return formula(params.totalWeaponAtk);
+    if (params.totalWeaponAtk >= 0) return formula(params.totalWeaponAtk);
 
     const totalAMin = formula(this.totalWeaponAtkMin);
     const totalAMax = formula(this.totalWeaponAtkMax);
@@ -1027,7 +1027,7 @@ export class Calculator {
     };
     // console.log({ name: this.monster.name, race, size, element, _class: monsterType });
 
-    if (params.totalWeaponAtk) return formula(params.totalWeaponAtk + this.totalExtraAtk);
+    if (params.totalWeaponAtk >= 0) return formula(params.totalWeaponAtk + this.totalExtraAtk);
 
     const totalBMin = formula(this.totalWeaponAtkMin + this.totalExtraAtk);
     const totalBMax = formula(this.totalWeaponAtkMax + this.totalExtraAtk);
@@ -1093,7 +1093,7 @@ export class Calculator {
       hiddenMasteryAtk +
       cannonBallAtk +
       this.totalBuffAtk;
-    if (aAtk && bAtk) return aAtk + bAtk + statusAtk;
+    if (aAtk >= 0 && bAtk >= 0) return aAtk + bAtk + statusAtk;
 
     const totalMinAtk = this.totalAMin + this.totalBMin + statusAtk;
     const totalMaxAtk = this.totalAMax + this.totalBMax + statusAtk;
@@ -1134,6 +1134,7 @@ export class Calculator {
     const totalMin = this.calcTotalAtk({ aAtk: aMin, bAtk: bMin, propertyMultiplier }) as number;
     const totalMax = this.calcTotalAtk({ aAtk: aMax, bAtk: bMax, propertyMultiplier }) as number;
     const totalMaxOver = this.calcTotalAtk({ aAtk: aMaxOver, bAtk: bMaxOver, propertyMultiplier }) as number;
+    // console.log({ aMin, bMin, totalMin, totalMax, totalMaxOver, propertyMultiplier, isEdp });
 
     return { totalMin, totalMax, totalMaxOver };
   }
@@ -1649,7 +1650,7 @@ export class Calculator {
     if (lvCond) {
       const [minLv, maxLv = 999] = lvCond.split('-').map(Number);
       const isPass = minLv <= this.model.level && this.model.level <= maxLv;
-      if (!isPass) return { isValid: true, restCondition };
+      if (!isPass) return { isValid: false, restCondition };
 
       restCondition = restCondition.replace(toRemove2, '');
     }
@@ -2180,34 +2181,37 @@ export class Calculator {
       let skillPart2Label = '';
       let skillMinDamage2 = 0;
       let skillMaxDamage2 = 0;
-      if (typeof part2?.formula === 'function' && isMatk) {
-        const { formula: formula2, isIncludeMain, element, label } = part2;
-        const bk = this.propertySkillAtk;
-        const bkBaseSkill = this.baseSkillDamage;
+      if (typeof part2?.formula === 'function') {
+        const { formula: formula2, isMatk: isMatkPart2, isIncludeMain, element, label } = part2;
 
-        const baseSkillDamage2 = formula2({
-          ...this.infoForClass,
-          skillLevel: Number(skillLevel),
-          extra: {
-            shieldWeight: this.getItem(this.model.shield)?.weight || 0,
-            shieldRefine: this.mapRefine.get(ItemTypeEnum.shield) || 0,
-          },
-        });
-        this.baseSkillDamage = baseSkillDamage2;
-        this.propertySkillAtk = element || bk;
-        const { minDamage: _minDamage, maxDamage: _maxDamage } = this.calcMatkSkillDamage({ ...skillData, element });
+        if (isMatk || isMatkPart2) {
+          const bk = this.propertySkillAtk;
+          const bkBaseSkill = this.baseSkillDamage;
 
-        if (isIncludeMain) {
-          minDamage += _minDamage;
-          maxDamage += _maxDamage;
-        } else {
-          skillPart2Label = label;
-          skillMinDamage2 = _minDamage;
-          skillMaxDamage2 = _maxDamage;
+          const baseSkillDamage2 = formula2({
+            ...this.infoForClass,
+            skillLevel: Number(skillLevel),
+            extra: {
+              shieldWeight: this.getItem(this.model.shield)?.weight || 0,
+              shieldRefine: this.mapRefine.get(ItemTypeEnum.shield) || 0,
+            },
+          });
+          this.baseSkillDamage = baseSkillDamage2;
+          this.propertySkillAtk = element || bk;
+          const { minDamage: _minDamage, maxDamage: _maxDamage } = this.calcMatkSkillDamage({ ...skillData, element });
+
+          if (isIncludeMain) {
+            minDamage += _minDamage;
+            maxDamage += _maxDamage;
+          } else {
+            skillPart2Label = label;
+            skillMinDamage2 = _minDamage;
+            skillMaxDamage2 = _maxDamage;
+          }
+
+          this.propertySkillAtk = bk;
+          this.baseSkillDamage = bkBaseSkill + baseSkillDamage2;
         }
-
-        this.propertySkillAtk = bk;
-        this.baseSkillDamage = bkBaseSkill;
       }
       this.calcSkillFrequency(skillData);
 
