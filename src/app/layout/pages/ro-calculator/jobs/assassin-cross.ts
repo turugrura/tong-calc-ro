@@ -64,7 +64,7 @@ export class AssassinCross extends CharacterBase {
       label: 'EDP',
       name: 'Enchant Deadly Poison',
       dropdown: [
-        { label: 'Yes', value: 1, isUse: true },
+        { label: 'Yes', value: 1, isUse: true, bonus: { edp: 1 } },
         { label: 'No', value: 0, isUse: false },
       ],
     },

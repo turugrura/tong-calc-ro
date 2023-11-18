@@ -7978,8 +7978,8 @@
     "location": null,
     "compositionPos": 65535,
     "script": {
-      "chance__Bear's Power": [
-        "1"
+      "chance__str": [
+        "200"
       ]
     }
   },
@@ -8069,7 +8069,11 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 65535,
-    "script": {}
+    "script": {
+      "chance__dex": [
+        "200"
+      ]
+    }
   },
   "4880": {
     "id": 4880,
@@ -32202,9 +32206,6 @@
       ],
       "criDmg": [
         "10"
-      ],
-      "chance__flee": [
-        "EQUIP[Ninetail Card]10"
       ]
     }
   },
@@ -41069,9 +41070,6 @@
         "15",
         "EQUIP[Mastersmith Stone (Lower)]15"
       ],
-      "chance__spRegen": [
-        "EQUIP[Mastersmith Stone (Upper)]1"
-      ],
       "cd__Axe Tornado": [
         "EQUIP[Mastersmith Stone (Middle)]1"
       ]
@@ -41810,9 +41808,6 @@
       ],
       "chance__range": [
         "10"
-      ],
-      "chance__spLoss": [
-        "20"
       ]
     }
   },
@@ -41868,9 +41863,6 @@
       ],
       "chance__criDmg": [
         "10"
-      ],
-      "chance__hpLoss": [
-        "300"
       ]
     }
   },
@@ -51762,11 +51754,6 @@
       "chance__hit": [
         "2",
         "1---1"
-      ],
-      "chance__def": [
-        "10",
-        "1---1",
-        "REFINE[shield==1]----10"
       ],
       "Grand Cross": [
         "EQUIP[Dark Shield]level:1---1"

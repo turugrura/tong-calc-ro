@@ -35,6 +35,7 @@ import { EquipmentComponent } from './equipment/equipment.component';
 import { CalcValueComponent } from './calc-value/calc-value.component';
 import { PresetTableComponent } from './preset-table/preset-table.component';
 import { MonsterDataViewComponent } from './monster-data-view/monster-data-view.component';
+import { FieldsetModule } from 'primeng/fieldset';
 
 @NgModule({
   imports: [
@@ -66,8 +67,16 @@ import { MonsterDataViewComponent } from './monster-data-view/monster-data-view.
     ToggleButtonModule,
     BlockUIModule,
     DataViewModule,
+    FieldsetModule,
     RoCalculatorRoutingModule,
   ],
-  declarations: [RoCalculatorComponent, EquipmentComponent, CalcValueComponent, PrettyJsonPipe, PresetTableComponent, MonsterDataViewComponent],
+  declarations: [
+    RoCalculatorComponent,
+    EquipmentComponent,
+    CalcValueComponent,
+    PrettyJsonPipe,
+    PresetTableComponent,
+    MonsterDataViewComponent,
+  ],
 })
 export class RoCalculatorModule {}

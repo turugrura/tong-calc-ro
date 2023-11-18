@@ -9,7 +9,6 @@ import { ClassName } from './_class-name';
 
 export interface AtkSkillFormulaInput extends InfoForClass {
   skillLevel: number;
-  extra?: any;
 }
 
 export interface AtkSkillModel {
@@ -31,7 +30,7 @@ export interface AtkSkillModel {
     formula: (input: AtkSkillFormulaInput) => number;
   };
   canCri?: boolean;
-  cri?: number;
+  baseCri?: number;
   hit?: number;
   totalHit?: number;
   isMatk?: boolean;

@@ -1,4 +1,8 @@
 export interface EquipmentSummaryModel {
+  weight: number;
+  refine: number;
+  baseDef?: number;
+
   exp: number;
   drop: number;
   hp: number;

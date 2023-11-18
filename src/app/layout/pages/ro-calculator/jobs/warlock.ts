@@ -196,7 +196,7 @@ export class Warlock extends CharacterBase {
       name: 'Recognized Spell',
       isEquipAtk: true,
       dropdown: [
-        { label: 'Yes', isUse: true, value: 1 },
+        { label: 'Yes', isUse: true, value: 1, bonus: { spell_maximize: 1 } },
         { label: 'No', isUse: false, value: 0 },
       ],
     },

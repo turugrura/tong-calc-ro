@@ -125,7 +125,7 @@ export class Ranger extends CharacterBase {
       cd: 0.15,
       levelList: [],
       canCri: true,
-      cri: 50,
+      baseCri: 50,
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;

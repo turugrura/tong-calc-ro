@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { debounceTime, delay, finalize, forkJoin, mergeMap, of, Subject, Subscription, take, tap } from 'rxjs';
+import { debounceTime, delay, filter, finalize, forkJoin, mergeMap, of, Subject, Subscription, take, tap } from 'rxjs';
 import { BaseStateCalculator } from './base-state-calculator';
 import { Calculator } from './calculator';
 import { ItemTypeEnum, MainItemTypeSet, MainItemWithRelations } from './constants/item-type.enum';
@@ -54,6 +54,8 @@ import { Oboro } from './jobs/oboro';
 import { AspdPotionList } from './constants/aspd-potion-list';
 import { canUsedByClass } from './utils/can-used-by-class';
 import { Sura } from './jobs/sura';
+import { BasicDamageSummaryModel, SkillDamageSummaryModel } from './models/damage-summary.model';
+import { ChanceModel } from './models/chance-model';
 
 interface MonsterSelectItemGroup extends SelectItemGroup {
   items: any[];
@@ -102,6 +104,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   updateItemEvent = new Subject();
   updateMonsterListEvent = new Subject();
   updateCompareEvent = new Subject();
+  updateChanceEvent = new Subject();
 
   loadBtnItems: MenuItem[];
   monsterDataMap: Record<number, MonsterModel> = {};
@@ -219,6 +222,9 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   selectedMonsterName = '';
   selectedMonster = Number(localStorage.getItem('monster')) || 21067;
 
+  chanceList = [] as ChanceModel[];
+  selectedChances = [] as string[];
+
   isCalculating = false;
   calculator = new Calculator();
   calculator2 = new Calculator();
@@ -248,7 +254,11 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   itemBonus = {};
   itemDescription = '';
 
-  cols: { field: string; header: string; default?: boolean }[] = [];
+  cols: {
+    field: keyof BasicDamageSummaryModel | keyof SkillDamageSummaryModel | 'health' | 'monsterClass';
+    header: string;
+    default?: boolean;
+  }[] = [];
   selectedColumns: { field: string; header: string }[] = [];
   selectedMonsterIds: number[] = this.getCachedMonsterIdsForCalc();
   calcDamages: any[] = [];
@@ -341,6 +351,15 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         this.saveItemSet();
         this.resetItemDescription();
         this.onSelectItemDescription(Boolean(this.selectedCompareItemDesc));
+
+        this.chanceList = this.calculator.chanceList;
+        const fixedSelectedChances = this.chanceList
+          .filter(({ name }) => {
+            return this.selectedChances.includes(name);
+          })
+          .map(({ name }) => name);
+        this.selectedChances = fixedSelectedChances;
+
         this.isCalculating = false;
         itemChanges.clear();
       });
@@ -421,6 +440,27 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         this.isCalculating = false;
       });
     this.allSubs.push(x);
+
+    const cObs = this.updateChanceEvent
+      .pipe(
+        tap(() => (this.isCalculating = true)),
+        debounceTime(300),
+        filter(() => {
+          const needCalc = this.selectedChances?.length > 0;
+          if (!needCalc) this.isCalculating = false;
+
+          return needCalc;
+        }),
+        tap(() => {
+          this.calculator.setSelectedChances(this.selectedChances).recalcExtraBonus(this.model.selectedAtkSkill);
+          this.totalSummary = this.calculator.getTotalSummary();
+        }),
+        debounceTime(100),
+      )
+      .subscribe(() => {
+        this.isCalculating = false;
+      });
+    this.allSubs.push(cObs);
   }
 
   ngOnDestroy(): void {
@@ -510,7 +550,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       { field: 'skillMaxDamage', header: 'SkillMax', default: true },
       { field: 'skillDps', header: 'DPS', default: true },
       { field: 'skillHitKill', header: 'HitKill', default: true },
-      { field: 'skillCriRate', header: 'Cri%' },
+      { field: 'skillCriRateToMonster', header: 'Cri%' },
       { field: 'skillAccuracy', header: 'แม่น' },
       { field: 'skillTotalPene', header: 'เจาะ' },
       // { field: 'hitRate', header: 'แม่น' },
@@ -594,11 +634,9 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       .setLearnedSkills(learnedSkillMap)
       .prepareAllItemBonus()
       .calcAllDefs()
-      .calcAspd()
-      .calcHitRate()
-      .calcCriRate()
       .calculateAllDamages(selectedAtkSkill)
-      .calculateHpSp();
+      .calculateHpSp()
+      .setSelectedChances(this.selectedChances);
 
     return calc;
   }
@@ -691,7 +729,6 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       const calculated = this.calculator
         .setMonster(monster)
         .prepareAllItemBonus()
-        .calcHitRate()
         .calculateAllDamages(this.model.selectedAtkSkill);
 
       const {
@@ -1735,5 +1772,9 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         this.onMonsterChange();
       }
     });
+  }
+
+  onSelecteChance(a: any) {
+    this.updateChanceEvent.next(1);
   }
 }

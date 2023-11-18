@@ -159,12 +159,12 @@ export class RoyalGuard extends CharacterBase {
       hit: 5,
       levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
-        const { model, skillLevel, status, extra } = input;
+        const { model, skillLevel, status, equipmentBonus } = input;
         const baseLevel = model.level;
         const { totalStr, totalVit } = status;
-        const { shieldWeight = 0, shieldRefine = 0 } = extra || {};
+        const { weight = 0, refine = 0 } = equipmentBonus.shield || {};
 
-        return (totalStr + shieldWeight + skillLevel * 200) * (baseLevel / 100) + totalVit * shieldRefine;
+        return (totalStr + weight + skillLevel * 200) * (baseLevel / 100) + totalVit * refine;
       },
     },
     {
@@ -280,7 +280,7 @@ export class RoyalGuard extends CharacterBase {
   }
 
   override setAdditionalBonus(params: InfoForClass) {
-    const { totalBonus, weapon, shieldWeight } = params;
+    const { totalBonus, weapon, equipmentBonus } = params;
     const { typeName } = weapon.data;
 
     const { masteryAtks, equipAtks } = this.bonuses;
@@ -296,7 +296,7 @@ export class RoyalGuard extends CharacterBase {
     }
 
     if (this.isSkillActive('Shield Spell')) {
-      totalBonus.atk += shieldWeight;
+      totalBonus.atk += equipmentBonus.shield?.weight || 0;
     }
 
     return totalBonus;
