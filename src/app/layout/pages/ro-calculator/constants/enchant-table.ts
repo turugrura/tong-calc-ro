@@ -296,7 +296,7 @@ const tempOpts = {
 };
 
 const all25 = [...ea25, ...fs36, ...sh25, ...sp25, ...atkPer13, ...fatal14];
-const eaFsSp15 = [...ea15, ...fs35, ...sp25];
+const eaFsSp15 = [...ea15, ...fs35, ...sp25, ...fatal14];
 
 const toyFactory = [...sp25, ...fs35, ...sh13, ...matk12, ...aspd24];
 const racing3rd = [EA._1, EA._2, FS._1, FS._2, Sharp._1, Sharp._2, Fatal._1, Fatal._2, Spell._1, Spell._2, AttackDelay._1, AttackDelay._2];
