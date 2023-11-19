@@ -447,7 +447,10 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         debounceTime(300),
         filter(() => {
           const needCalc = this.selectedChances?.length > 0;
-          if (!needCalc) this.isCalculating = false;
+          if (!needCalc) {
+            this.isCalculating = false;
+            this.calculator.setSelectedChances([]);
+          }
 
           return needCalc;
         }),

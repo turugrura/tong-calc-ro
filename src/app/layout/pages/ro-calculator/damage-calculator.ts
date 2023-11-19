@@ -22,7 +22,7 @@ import { Weapon } from './weapon';
 export class DamageCalculator {
   private readonly EDP_WEAPON_MULTIPLIER = 1.25;
   private readonly EDP_EQUIP_MULTIPLIER = 4;
-  private readonly BASE_CRI_MULTIPLIER = 4;
+  private readonly BASE_CRI_MULTIPLIER = 1.4;
 
   private equipStatus: Record<ItemTypeEnum, EquipmentSummaryModel>;
   private totalBonus: EquipmentSummaryModel;

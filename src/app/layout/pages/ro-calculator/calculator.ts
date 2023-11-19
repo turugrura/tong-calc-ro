@@ -20,7 +20,7 @@ import { ClassName } from './jobs/_class-name';
 import { environment } from 'src/environments/environment';
 import { DamageCalculator } from './damage-calculator';
 import { createRawTotalBonus } from './utils/create-raw-total-bonus';
-import { floor } from './utils';
+import { floor, round } from './utils';
 import {
   BasicAspdModel,
   BasicDamageSummaryModel,
@@ -138,9 +138,9 @@ export class Calculator {
   private mapItemNameRefine = new Map<string, number>();
   private usedSkillNames = new Set<string>();
   private learnedSkillMap = new Map<string, number>();
-  private equipAtkSkillBonus: Record<string, any> = {};
-  private buffMasteryAtkBonus: Record<string, any> = {};
-  private buffEquipAtkBonus: Record<string, any> = {};
+  private equipAtkSkillBonus: Record<string, Record<string, any>> = {};
+  private buffMasteryAtkBonus: Record<string, Record<string, any>> = {};
+  private buffEquipAtkBonus: Record<string, Record<string, any>> = {};
   private masteryAtkSkillBonus: Record<string, any> = {};
   private consumableBonuses: any[] = [];
   private aspdPotion: number = undefined;
@@ -207,7 +207,7 @@ export class Calculator {
     accRightEnchant2: { ...this.allStatus },
     accRightEnchant3: { ...this.allStatus },
   };
-  private extraOptions: any[] = [];
+  private extraOptions: Record<string, number>[] = [];
   private weaponData = new Weapon();
   private leftWeaponData = new Weapon();
   private monsterData: PreparedMonsterModel = {
@@ -1080,7 +1080,7 @@ export class Calculator {
         return sum + Number(restCondition);
       }, 0);
 
-      if (attr.startsWith('chance__') && total[attr] > 0) {
+      if (attr.startsWith('chance__') && isNumber(total[attr]) && total[attr] !== 0) {
         const actualAttr = attr.replace('chance__', '');
         addChance(actualAttr, total[attr]);
       }
@@ -1140,7 +1140,7 @@ export class Calculator {
     this.propertyWindmind = undefined;
     this._chanceList = [];
 
-    const updateTotalStatus = (attr: keyof EquipmentSummaryModel, value) => {
+    const updateTotalStatus = (attr: keyof EquipmentSummaryModel, value: number) => {
       if (this.totalEquipStatus[attr]) {
         if (attr === 'fctPercent') {
           this.totalEquipStatus[attr] = Math.max(this.totalEquipStatus[attr], value);
@@ -1321,6 +1321,16 @@ export class Calculator {
     }
 
     this._class.setAdditionalBonus(this.infoForClass);
+
+    // fix floating point
+    for (const [attr, val] of Object.entries(this.totalEquipStatus)) {
+      if (isNumber(val) && val !== 0) {
+        this.totalEquipStatus[attr] = round(val, 2);
+        if (val !== this.totalEquipStatus[attr]) {
+          console.log({ attr, val, newVal: this.totalEquipStatus[attr] });
+        }
+      }
+    }
 
     return this;
   }

@@ -8001,8 +8001,8 @@
     "location": null,
     "compositionPos": 65535,
     "script": {
-      "AUTO_SKILL": [
-        "ACTION[โจมตีด้วยเวทมนตร์]:AUTO:\"Runaway Magic\""
+      "chance__int": [
+        "200"
       ]
     }
   },
@@ -8023,11 +8023,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 65535,
-    "script": {
-      "sp": [
-        "40"
-      ]
-    }
+    "script": {}
   },
   "4878": {
     "id": 4878,
@@ -8046,11 +8042,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 65535,
-    "script": {
-      "เพิ่มพลังป้องกันมหาศาล แต่จะลด Atk และ Matk ลง": [
-        "50"
-      ]
-    }
+    "script": {}
   },
   "4879": {
     "id": 4879,
@@ -8092,7 +8084,11 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 65535,
-    "script": {}
+    "script": {
+      "chance__luk": [
+        "200"
+      ]
+    }
   },
   "4881": {
     "id": 4881,
@@ -20167,7 +20163,7 @@
         "EQUIP[Racing Cap(Ranger)]REFINE[headUpper,boot==21]15"
       ],
       "Vanishing Buster": [
-        "EQUIP[Racing Cap(Gunslinger)]REFINE[headUpper,boot==21]ACTIVE_SKILL[Shatter Storm]===30(10 วินาที)"
+        "EQUIP[Racing Cap(Gunslinger)]REFINE[headUpper,boot==21]ACTIVE_SKILL[Shatter Storm]===30"
       ],
       "cd__Swirling Petal": [
         "EQUIP[Racing Cap(Ninja)]REFINE[headUpper,boot==21]0.5"
@@ -20188,7 +20184,7 @@
         "EQUIP[Racing Cap(Soul Linker)]REFINE[headUpper,boot==21]10"
       ],
       "m_my_element_all": [
-        "EQUIP[Racing Cap(Soul Linker)]REFINE[headUpper,boot==21]ACTIVE_SKILL[Seven Wind]===30(15 วินาที)"
+        "EQUIP[Racing Cap(Soul Linker)]REFINE[headUpper,boot==21]ACTIVE_SKILL[Seven Wind]===30"
       ]
     },
     "usableClass": [
@@ -31395,10 +31391,10 @@
         "11===20"
       ],
       "chance__int": [
-        "EQUIP[Ancient Hero Boots]===20(7 วินาที)"
+        "EQUIP[Ancient Hero Boots]===20"
       ],
       "chance__matkPercent": [
-        "EQUIP[Ancient Hero Boots]===15(7 วินาที)"
+        "EQUIP[Ancient Hero Boots]===15"
       ]
     }
   },
@@ -32384,17 +32380,11 @@
     "location": null,
     "compositionPos": 769,
     "script": {
-      "ลดพลังโจมตีทางกายภาพและทางเวทย์ที่ได้รับจากศัตรูธาตุ Neutral ลง": [
-        "10"
+      "chance__p_element_neutral": [
+        "EQUIP[Singing Pere Card&&Playing Pere Card]===200"
       ],
-      "hpDrain": [
-        "EQUIP[Singing Pere Card&&Playing Pere Card]===CHANCE[500]"
-      ],
-      "p_element_neutral": [
-        "EQUIP[Singing Pere Card&&Playing Pere Card]===CHANCE[200(6 วินาที)]"
-      ],
-      "m_element_neutral": [
-        "EQUIP[Singing Pere Card&&Playing Pere Card]===CHANCE[200(6 วินาที)]"
+      "chance__m_element_neutral": [
+        "EQUIP[Singing Pere Card&&Playing Pere Card]===200"
       ]
     }
   },
@@ -34103,9 +34093,6 @@
     "script": {
       "atkPercent": [
         "25"
-      ],
-      "เพิ่ม Damage ทางกายภาพ/เวทมนตร์ที่ได้รับจากมอนสเตอร์ประเภท Demon": [
-        "5"
       ]
     }
   },
@@ -35825,22 +35812,24 @@
     "script": {
       "atk": [
         "2---10",
-        "ACTIVE_SKILL[Platinum Altar]9===50(90 วินาที)"
+        "ACTIVE_SKILL[Platinum Altar]9===50"
       ],
       "range": [
         "3---2",
-        "ACTIVE_SKILL[Platinum Altar]9===10(90 วินาที)",
-        "EQUIP[Ancient Hero Boots]:AUTO:10(7 วินาที)"
+        "ACTIVE_SKILL[Platinum Altar]9===10"
       ],
       "Round Trip": [
         "7===15",
         "11===15"
       ],
-      "เพิ่มการใช้ SP ของสกิล Round Trip": [
+      "sp__Round Trip": [
         "7===10"
       ],
-      "dex": [
-        "EQUIP[Ancient Hero Boots]:AUTO:20(7 วินาที)"
+      "chance__dex": [
+        "EQUIP[Ancient Hero Boots]20"
+      ],
+      "chance__range": [
+        "EQUIP[Ancient Hero Boots]10"
       ]
     }
   },
@@ -37105,9 +37094,6 @@
     "script": {
       "acd": [
         "5"
-      ],
-      "เพิ่ม Damage ทางกายภาพ/เวทมนตร์ที่ได้รับจากศัตรูทุกขนาด": [
-        "25"
       ],
       "p_element_all": [
         "POS[leftWeapon]11===2",
@@ -51616,7 +51602,7 @@
         "EQUIP[Old Mitra]30"
       ],
       "Judex": [
-        "EQUIP[Old Mitra]ACTIVE_SKILL[Offertorium]===400(90 วินาที)"
+        "EQUIP[Old Mitra]ACTIVE_SKILL[Offertorium]===400"
       ],
       "Rampage Blast": [
         "EQUIP[Old Blazing Soul]30"
@@ -52318,10 +52304,6 @@
         "EQUIP[Record of Merchant&&Old Driver Band (Red)]REFINE[headUpper==3]---3",
         "EQUIP[Record of Merchant&&Old Driver Band (Yellow)]REFINE[headUpper==3]---3",
         "EQUIP[Record of Merchant&&Old Midas Whisper]REFINE[headUpper==3]---3"
-      ],
-      "AUTO_SKILL": [
-        "EQUIP[Record of Merchant]USED[Mechanic]===CHANCE[Axe Boomerang==35%]",
-        "EQUIP[Record of Merchant]USED[Genetic]===CHANCE[Spore Explosion Lv. 10==15%]"
       ]
     }
   },
@@ -53201,11 +53183,11 @@
       "acd": [
         "11===7"
       ],
-      "str": [
-        "EQUIP[Ancient Hero Boots]:AUTO:20(7 วินาที )"
+      "chance__str": [
+        "EQUIP[Ancient Hero Boots]20"
       ],
-      "atkPercent": [
-        "EQUIP[Ancient Hero Boots]:AUTO:15(7 วินาที )"
+      "chance__atkPercent": [
+        "EQUIP[Ancient Hero Boots]15"
       ]
     }
   },
@@ -55477,10 +55459,6 @@
         "7===15",
         "EQUIP[Great Hero Boots]===5"
       ],
-      "AUTO_SKILL": [
-        "9===ACTION[โจมตีทางกายภาพระยะไกลทั่วไป]:AUTO:สกิล Soul Strike Lv. 10",
-        "11===ACTION[โจมตีทางกายภาพระยะไกลทั่วไป]:AUTO:สกิล Napalm Vulcan Lv. 3"
-      ],
       "int": [
         "EQUIP[Great Hero Boots]===10"
       ]
@@ -55509,7 +55487,7 @@
     "script": {
       "range": [
         "2---3",
-        "ACTIVE_SKILL[Platinum Altar]9===10(90 วินาที)",
+        "ACTIVE_SKILL[Platinum Altar]9===10",
         "EQUIP[Great Hero Boots]===5"
       ],
       "spPercent": [
@@ -55525,7 +55503,7 @@
         "7===15"
       ],
       "atk": [
-        "ACTIVE_SKILL[Platinum Altar]9===50(90 วินาที)"
+        "ACTIVE_SKILL[Platinum Altar]9===50"
       ],
       "Vanishing Buster": [
         "11===35"
@@ -55613,11 +55591,11 @@
     "script": {
       "atk": [
         "2---15",
-        "ACTIVE_SKILL[Platinum Altar]9===50(90 วินาที)"
+        "ACTIVE_SKILL[Platinum Altar]9===50"
       ],
       "range": [
         "3---4",
-        "ACTIVE_SKILL[Platinum Altar]9===15(90 วินาที)",
+        "ACTIVE_SKILL[Platinum Altar]9===15",
         "EQUIP[Great Hero Boots]===5"
       ],
       "Round Trip": [
