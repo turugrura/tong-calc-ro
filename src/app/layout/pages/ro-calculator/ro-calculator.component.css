@@ -164,6 +164,18 @@
   color: var(--teal-300);
 }
 
+.summary_chance {
+  /* background-color: var(--surface-0); */
+  background-color: #121212;
+  color: var(--teal-100);
+}
+
+.summary_chance_hilight {
+  /* background-color: var(--surface-0); */
+  background-color: #121212;
+  color: var(--orange-300);
+}
+
 .summary_compare {
   /* background-color: var(--surface-0); */
   background-color: #121212;

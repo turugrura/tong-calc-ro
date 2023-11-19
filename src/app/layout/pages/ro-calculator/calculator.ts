@@ -1386,7 +1386,7 @@ export class Calculator {
       return this;
     }
 
-    const { basicDmg, skillDmg } = this.dmgCalculator
+    const { basicDmg, skillDmg, basicAspd, skillAspd } = this.dmgCalculator
       .setExtraBonus(c)
       .calculateAllDamages(skillValue, this.propertyBasicAtk);
     console.log(skillDmg);
@@ -1398,13 +1398,29 @@ export class Calculator {
       effectedBasicCriDamageMin: basicDmg.criMinDamage,
       effectedBasicCriDamageMax: basicDmg.criMaxDamage,
       effectedBasicDps: basicDmg.basicDps,
+      effectedBasicHitsPerSec: basicAspd.hitsPerSec,
 
       effectedSkillDamageMin: skillDmg.skillMinDamage,
       effectedSkillDamageMax: skillDmg.skillMaxDamage,
       effectedSkillDps: skillDmg.skillDps,
+      effectedSkillHitsPerSec: skillAspd.totalHitPerSec,
     };
 
     return this;
+  }
+
+  calcDmgWithExtraBonus(skillValue: string): BasicDamageSummaryModel & SkillDamageSummaryModel {
+    this.calcAllAtk();
+
+    const c = this.getChanceBonus();
+    const { basicDmg, skillDmg } = this.dmgCalculator
+      .setExtraBonus(c)
+      .calculateAllDamages(skillValue, this.propertyBasicAtk);
+
+    return {
+      ...basicDmg,
+      ...skillDmg,
+    };
   }
 
   private getObjSummary(obj: Record<string, number>) {
@@ -1457,6 +1473,7 @@ export class Calculator {
       propertyMultiplier: this.propertyMultiplier,
       weapon: this.weaponData.data,
       calcSkill: {
+        dmgType: this.damageSummary.dmgType,
         baseSkillDamage: this.damageSummary.baseSkillDamage,
         dps: this.damageSummary.skillDps,
         totalHits: this.damageSummary.skillTotalHit,

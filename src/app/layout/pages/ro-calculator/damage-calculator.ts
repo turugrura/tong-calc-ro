@@ -9,6 +9,7 @@ import {
   DamageSummaryModel,
   MiscModel,
   SkillDamageSummaryModel,
+  SkillType,
 } from './models/damage-summary.model';
 import { EquipmentSummaryModel } from './models/equipment-summary.model';
 import { InfoForClass } from './models/info-for-class.model';
@@ -832,6 +833,7 @@ export class DamageCalculator {
       part2,
       baseCri: baseSkillCri,
       isMatk,
+      isMelee,
       canCri,
       isHit100,
       isIgnoreDef = false,
@@ -909,6 +911,7 @@ export class DamageCalculator {
 
     const skillDmg: SkillDamageSummaryModel = {
       baseSkillDamage,
+      dmgType: isMatk ? SkillType.MAGICAL : isMelee ? SkillType.MELEE : SkillType.RANGE,
       skillTotalHit: totalHit,
       skillPropertyAtk: calculated.propertyAtk,
       skillPropertyMultiplier: calculated.propertyMultiplier,

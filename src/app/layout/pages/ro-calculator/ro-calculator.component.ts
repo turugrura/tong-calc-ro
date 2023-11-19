@@ -450,6 +450,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
           if (!needCalc) {
             this.isCalculating = false;
             this.calculator.setSelectedChances([]);
+            this.calculateToSelectedMonsters();
           }
 
           return needCalc;
@@ -457,6 +458,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         tap(() => {
           this.calculator.setSelectedChances(this.selectedChances).recalcExtraBonus(this.model.selectedAtkSkill);
           this.totalSummary = this.calculator.getTotalSummary();
+          this.calculateToSelectedMonsters();
         }),
         debounceTime(100),
       )
@@ -489,7 +491,6 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         this.selectedMonsterName = this.monsterDataMap[this.selectedMonster]?.name;
 
         this.calculator.setMasterItems(items).setHpSpTable(hpSpTable);
-
         this.calculator2.setMasterItems(items).setHpSpTable(hpSpTable);
 
         this.mapEnchant = new Map(
@@ -636,10 +637,10 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       .setUsedSkillNames(activeSkillNames)
       .setLearnedSkills(learnedSkillMap)
       .prepareAllItemBonus()
+      .setSelectedChances(this.selectedChances)
       .calcAllDefs()
       .calculateAllDamages(selectedAtkSkill)
-      .calculateHpSp()
-      .setSelectedChances(this.selectedChances);
+      .calculateHpSp();
 
     return calc;
   }
@@ -732,7 +733,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       const calculated = this.calculator
         .setMonster(monster)
         .prepareAllItemBonus()
-        .calculateAllDamages(this.model.selectedAtkSkill);
+        .calcDmgWithExtraBonus(this.model.selectedAtkSkill);
 
       const {
         id,
@@ -746,17 +747,12 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         health,
         monsterClass: classMap[_class],
         elementName: elementShortName,
-        ...calculated.getTotalSummary().dmg,
+        ...calculated,
       };
     });
-  }
 
-  private cloneModel(baseModel: any): any {
-    return Object.entries(baseModel).reduce((m, [key, val]) => {
-      m[key] = Array.isArray(val) ? [] : val;
-
-      return m;
-    }, {});
+    // reset to main selected monster
+    this.calculator.setMonster(this.monsterDataMap[this.selectedMonster]).prepareAllItemBonus();
   }
 
   private resetModel() {

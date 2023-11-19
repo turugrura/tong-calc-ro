@@ -14,8 +14,15 @@ export interface BasicDamageSummaryModel {
   basicDps: number;
 }
 
+export enum SkillType {
+  MELEE = 'Melee',
+  RANGE = 'Range',
+  MAGICAL = 'Magical',
+}
+
 export interface SkillDamageSummaryModel {
   baseSkillDamage: number;
+  dmgType: SkillType;
   skillCanCri: boolean;
   skillPropertyAtk: ElementType;
   skillPropertyMultiplier: number;
@@ -39,9 +46,11 @@ export interface SkillDamageSummaryModel {
   effectedBasicDamageMax?: number;
   effectedBasicCriDamageMin?: number;
   effectedBasicCriDamageMax?: number;
+  effectedBasicHitsPerSec?: number;
   effectedBasicDps?: number;
   effectedSkillDamageMin?: number;
   effectedSkillDamageMax?: number;
+  effectedSkillHitsPerSec?: number;
   effectedSkillDps?: number;
 }
 

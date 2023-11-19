@@ -3140,7 +3140,7 @@
                   [inputId]="category.name"
                   (ngModelChange)="onSelecteChance($event)"
                 ></p-checkbox>
-                <label class="font-semibold summary_damage" [for]="category.name">{{ category.label }}</label
+                <label class="font-semibold summary_chance" [for]="category.name">{{ category.label }}</label
                 ><i class="pi pi-arrow-right px-1"></i>
                 <span>{{ category.label2 }}</span>
               </div>
@@ -3278,7 +3278,9 @@
                   <div class="loading_block" *ngIf="isCalculating">
                     <i class="pi pi-spin pi-spinner" style="font-size: 2rem"></i>
                   </div>
-
+                  <div class="col-6">
+                    Type <span class="summary_highlight font-semibold">{{ totalSummary?.calcSkill?.dmgType }}</span>
+                  </div>
                   <div class="col-6">
                     Element:
                     <span class="{{ 'property_' + totalSummary?.calcSkill?.propertySkill }} px-1 font-semibold">{{
@@ -3478,7 +3480,7 @@
                     <app-calc-value
                       [enableCompare]="isEnableCompare && totalSummary2?.dmg"
                       label="Triggered:"
-                      styleClass="summary_damage"
+                      styleClass="summary_chance"
                       styleClass2="summary_compare"
                       [min]="totalSummary?.dmg?.effectedSkillDamageMin"
                       [max]="totalSummary?.dmg?.effectedSkillDamageMax"
@@ -3492,8 +3494,21 @@
                   >
                     <app-calc-value
                       [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+                      label="Skill/s:"
+                      styleClass="summary_chance_hilight"
+                      styleClass2="summary_compare"
+                      [max]="totalSummary?.dmg?.effectedSkillHitsPerSec"
+                      [max2]="totalSummary2?.dmg?.effectedSkillHitsPerSec"
+                    ></app-calc-value>
+                  </div>
+                  <div
+                    class="col-12"
+                    [hidden]="totalSummary?.dmg?.effectedSkillDamageMin <= 0 || !selectedChances?.length"
+                  >
+                    <app-calc-value
+                      [enableCompare]="isEnableCompare && totalSummary2?.dmg"
                       label="DPS:"
-                      styleClass="summary_highlight"
+                      styleClass="summary_chance_hilight"
                       styleClass2="summary_compare"
                       [max]="totalSummary?.dmg?.effectedSkillDps"
                       [max2]="totalSummary2?.dmg?.effectedSkillDps"
@@ -3587,16 +3602,30 @@
                           [max2]="totalSummary2?.dmg?.basicDps"
                         ></app-calc-value>
                       </div>
+                      <div
+                        class="col-12"
+                        [hidden]="totalSummary?.dmg?.effectedBasicDamageMin <= 0 || !selectedChances?.length"
+                      >
+                        <app-calc-value
+                          [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+                          label="Triggered DmgCri:"
+                          styleClass="summary_chance"
+                          styleClass2="summary_compare"
+                          [min]="totalSummary?.dmg?.effectedBasicCriDamageMin"
+                          [max]="totalSummary?.dmg?.effectedBasicCriDamageMax"
+                          [min2]="totalSummary2?.dmg?.effectedBasicCriDamageMin"
+                          [max2]="totalSummary2?.dmg?.effectedBasicCriDamageMax"
+                        ></app-calc-value>
+                      </div>
                       <!-- <div class="col-12" [hidden]="totalSummary?.dmg?.effectedBasicDamageMin <= 0 || !selectedChances?.length">
                         <app-calc-value
                           [enableCompare]="isEnableCompare && totalSummary2?.dmg"
-                          label="Triggered:"
-                          styleClass="summary_damage"
+                          label="ASPD:"
+                          unit="Hits/s"
+                          styleClass="summary_chance"
                           styleClass2="summary_compare"
-                          [min]="totalSummary?.dmg?.effectedBasicDamageMin"
-                          [max]="totalSummary?.dmg?.effectedBasicDamageMax"
-                          [min2]="totalSummary2?.dmg?.effectedBasicDamageMin"
-                          [max2]="totalSummary2?.dmg?.effectedBasicDamageMax"
+                          [max]="totalSummary?.dmg?.effectedBasicHitsPerSec"
+                          [max2]="totalSummary2?.dmg?.effectedBasicHitsPerSec"
                         ></app-calc-value>
                       </div> -->
                       <div
@@ -3605,23 +3634,8 @@
                       >
                         <app-calc-value
                           [enableCompare]="isEnableCompare && totalSummary2?.dmg"
-                          label="Triggered DmgCri:"
-                          styleClass="summary_damage"
-                          styleClass2="summary_compare"
-                          [min]="totalSummary?.dmg?.effectedBasicCriDamageMin"
-                          [max]="totalSummary?.dmg?.effectedBasicCriDamageMax"
-                          [min2]="totalSummary2?.dmg?.effectedBasicCriDamageMin"
-                          [max2]="totalSummary2?.dmg?.effectedBasicCriDamageMax"
-                        ></app-calc-value>
-                      </div>
-                      <div
-                        class="col-12"
-                        [hidden]="totalSummary?.dmg?.effectedBasicDamageMin <= 0 || !selectedChances?.length"
-                      >
-                        <app-calc-value
-                          [enableCompare]="isEnableCompare && totalSummary2?.dmg"
                           label="DPS:"
-                          styleClass="summary_highlight"
+                          styleClass="summary_chance_hilight"
                           styleClass2="summary_compare"
                           [max]="totalSummary?.dmg?.effectedBasicDps"
                           [max2]="totalSummary2?.dmg?.effectedBasicDps"
