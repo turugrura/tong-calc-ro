@@ -20,7 +20,7 @@ import { ClassName } from './jobs/_class-name';
 import { environment } from 'src/environments/environment';
 import { DamageCalculator } from './damage-calculator';
 import { createRawTotalBonus } from './utils/create-raw-total-bonus';
-import { floor, round } from './utils';
+import { floor, isNumber, round } from './utils';
 import {
   BasicAspdModel,
   BasicDamageSummaryModel,
@@ -48,8 +48,6 @@ const refinableItemTypes = [
   ItemTypeEnum.shadowShield,
 ];
 const mainStatuses = ['str', 'dex', 'int', 'agi', 'luk', 'vit'];
-
-const isNumber = (n: unknown): n is number => !Number.isNaN(n);
 
 export class Calculator {
   private items!: Record<number, ItemModel>;
@@ -687,7 +685,7 @@ export class Calculator {
     this.totalBuffAtk = 0;
   }
 
-  private calcAllAtk() {
+  calcAllAtk() {
     this.calcPropertyAtkType();
 
     this.calcSizePenalty();

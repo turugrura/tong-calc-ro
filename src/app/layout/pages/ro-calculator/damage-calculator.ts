@@ -356,6 +356,7 @@ export class DamageCalculator {
     const element = this.toPercent(this.getElementMultiplier('p'));
     const monsterType = this.toPercent(this.getMonsterTypeMultiplier('p'));
     const comet = this.getCometAmp();
+    // console.log({ race, size, element, monsterType, comet, monster: this.monster.name });
 
     let total = floor(totalAtk * race);
     total = floor(total * size);

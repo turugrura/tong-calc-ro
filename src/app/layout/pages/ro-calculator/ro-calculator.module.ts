@@ -36,6 +36,7 @@ import { CalcValueComponent } from './calc-value/calc-value.component';
 import { PresetTableComponent } from './preset-table/preset-table.component';
 import { MonsterDataViewComponent } from './monster-data-view/monster-data-view.component';
 import { FieldsetModule } from 'primeng/fieldset';
+import { MiscDetailComponent } from './misc-detail/misc-detail.component';
 
 @NgModule({
   imports: [
@@ -77,6 +78,7 @@ import { FieldsetModule } from 'primeng/fieldset';
     PrettyJsonPipe,
     PresetTableComponent,
     MonsterDataViewComponent,
+    MiscDetailComponent,
   ],
 })
 export class RoCalculatorModule {}

@@ -56,6 +56,9 @@ import { canUsedByClass } from './utils/can-used-by-class';
 import { Sura } from './jobs/sura';
 import { BasicDamageSummaryModel, SkillDamageSummaryModel } from './models/damage-summary.model';
 import { ChanceModel } from './models/chance-model';
+import { RaceType } from './constants/race-type.const';
+import { ElementType } from './constants/element-type.const';
+import { isNumber } from './utils';
 
 interface MonsterSelectItemGroup extends SelectItemGroup {
   items: any[];
@@ -93,6 +96,31 @@ const waitRxjs = (second: number = 0.1) => {
 interface ClassModel extends Partial<Record<ItemTypeEnum, number>> {
   rawOptionTxts: string[];
 }
+
+interface ElementDataModel {
+  name: string;
+  physicalElementToMonster: number;
+  magicalElementToMonster: number;
+  myElement: number;
+}
+interface RaceDataModel {
+  name: string;
+  physical: number;
+  magical: number;
+}
+interface SkillMultiplierModel {
+  name: string;
+  value: number;
+  cd: string;
+}
+
+const elements = Object.values(ElementType).map((a) => [a, a.toLowerCase()]);
+const races = Object.values(RaceType).map((a) => [a, a.toLowerCase()]);
+const sizes = [
+  ['Small', 's'],
+  ['Medium', 'm'],
+  ['Large', 'l'],
+];
 
 @Component({
   selector: 'app-ro-calculator',
@@ -236,6 +264,11 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   modelSummary: any;
   totalSummary: any;
 
+  elementTable: ElementDataModel[];
+  raceTable: RaceDataModel[];
+  sizeTable: RaceDataModel[];
+  skillMultiplierTable: SkillMultiplierModel[];
+
   /**
    * Model 2
    */
@@ -351,6 +384,10 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         this.saveItemSet();
         this.resetItemDescription();
         this.onSelectItemDescription(Boolean(this.selectedCompareItemDesc));
+        this.setRaceTable();
+        this.setElementTable();
+        this.setSizeTable();
+        this.setSkillTable();
 
         this.chanceList = this.calculator.chanceList;
         const fixedSelectedChances = this.chanceList
@@ -715,6 +752,93 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     localStorage.setItem('battle_cols', JSON.stringify(this.selectedColumns.map((a) => a.field)));
   }
 
+  private setElementTable(): void {
+    const d: ElementDataModel[] = [];
+
+    const p_element_all = this.totalSummary.p_element_all || 0;
+    const m_element_all = this.totalSummary.m_element_all || 0;
+    const m_my_element_all = this.totalSummary.m_my_element_all || 0;
+
+    for (const [eleShow, ele] of elements) {
+      d.push({
+        name: eleShow,
+        physicalElementToMonster: p_element_all + (this.totalSummary[`p_element_${ele}`] || 0),
+        magicalElementToMonster: m_element_all + (this.totalSummary[`m_element_${ele}`] || 0),
+        myElement: m_my_element_all + (this.totalSummary[`m_my_element_${ele}`] || 0),
+      });
+    }
+
+    this.elementTable = d;
+  }
+
+  private setRaceTable(): void {
+    const d: RaceDataModel[] = [];
+
+    const p_race_all = this.totalSummary.p_race_all || 0;
+    const m_race_all = this.totalSummary.m_race_all || 0;
+
+    for (const [raceShow, race] of races) {
+      d.push({
+        name: raceShow,
+        physical: p_race_all + (this.totalSummary[`p_race_${race}`] || 0),
+        magical: m_race_all + (this.totalSummary[`m_race_${race}`] || 0),
+      });
+    }
+
+    this.raceTable = d;
+  }
+
+  private setSizeTable(): void {
+    const d: RaceDataModel[] = [];
+
+    const p_size_all = this.totalSummary.p_size_all || 0;
+    const m_size_all = this.totalSummary.m_size_all || 0;
+
+    for (const [sizeShow, size] of sizes) {
+      d.push({
+        name: sizeShow,
+        physical: p_size_all + (this.totalSummary[`p_size_${size}`] || 0),
+        magical: m_size_all + (this.totalSummary[`m_size_${size}`] || 0),
+      });
+    }
+
+    this.sizeTable = d;
+  }
+
+  private setSkillTable(): void {
+    const dMap = new Map<string, any>();
+    const addValue = (key: string, val: Partial<SkillMultiplierModel>) => {
+      if (dMap.has(key)) {
+        dMap.set(key, { ...dMap.get(key), ...val });
+      } else {
+        dMap.set(key, val);
+      }
+    };
+
+    for (const [attr, value] of Object.entries(this.totalSummary)) {
+      if (!isNumber(value)) continue;
+
+      const firstCap = attr.charAt(0);
+      if (firstCap === firstCap.toUpperCase()) {
+        addValue(attr, {
+          name: attr,
+          value,
+        });
+        continue;
+      }
+
+      if (attr.startsWith('cd__')) {
+        const actualAttr = attr.replace('cd__', '');
+        addValue(actualAttr, {
+          name: actualAttr,
+          cd: value < 0 ? `+ ${value * -1}` : `- ${value}`,
+        });
+      }
+    }
+
+    this.skillMultiplierTable = [...dMap.values()];
+  }
+
   calculateToSelectedMonsters(needCalcAll = true) {
     const classMap = ['Normal', 'Champion', 'Boss'];
     const selectedMonsterIds = this.selectedMonsterIds || [];
@@ -752,7 +876,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     });
 
     // reset to main selected monster
-    this.calculator.setMonster(this.monsterDataMap[this.selectedMonster]).prepareAllItemBonus();
+    this.calculator.setMonster(this.monsterDataMap[this.selectedMonster]).prepareAllItemBonus().calcAllAtk();
   }
 
   private resetModel() {

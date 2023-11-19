@@ -188,6 +188,16 @@
   color: var(--orange-500);
 }
 
+.color_primary {
+  background: var(--primary-color) !important;
+  color: var(--primary-color-text) !important;
+}
+
+.color_highlight {
+  background: var(--highlight-bg) !important;
+  color: var(--highlight-text-color) !important;
+}
+
 .compare_greater {
   /* background-color: var(--surface-0); */
   background-color: #121212;

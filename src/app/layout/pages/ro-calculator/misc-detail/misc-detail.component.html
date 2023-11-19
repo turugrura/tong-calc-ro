@@ -1,0 +1,109 @@
+<div class="grid p-fluid grid-nogutter">
+  <div class="col-7">
+    <div class="grid grid-nogutter">
+      <div class="col-6">
+        <div class="grid grid-nogutter">
+          <div class="col-12">
+            <p-table [value]="skillMultiplierTable" styleClass="p-datatable-sm" [tableStyle]="{ 'min-width': '10rem' }">
+              <ng-template pTemplate="header">
+                <tr>
+                  <th class="color_highlight">Skill</th>
+                  <th>%</th>
+                  <th>CD</th>
+                </tr>
+              </ng-template>
+              <ng-template pTemplate="body" let-val>
+                <tr>
+                  <td>{{ val.name }}</td>
+                  <td>
+                    <span class="{{ !!val.value ? 'summary_damage' : '' }}">{{ val.value || '-' }}</span>
+                  </td>
+                  <td>
+                    <span class="{{ !!val.cd ? 'summary_damage' : '' }}">{{ val.cd || '-' }}</span>
+                  </td>
+                </tr>
+              </ng-template>
+            </p-table>
+          </div>
+          <div class="col-12">
+            <p-table [value]="sizeTable" styleClass="p-datatable-sm" [tableStyle]="{ 'min-width': '10rem' }">
+              <ng-template pTemplate="header">
+                <tr>
+                  <th class="color_highlight">Size</th>
+                  <th>P</th>
+                  <th>M</th>
+                </tr>
+              </ng-template>
+              <ng-template pTemplate="body" let-val>
+                <tr>
+                  <td>{{ val.name }}</td>
+                  <td>
+                    <span class="{{ val.physical != 0 ? 'summary_stat_atk' : '' }}">{{ val.physical || '-' }}</span>
+                  </td>
+                  <td>
+                    <span class="{{ val.magical != 0 ? 'summary_stat_matk' : '' }}">{{ val.magical || '-' }}</span>
+                  </td>
+                </tr>
+              </ng-template>
+            </p-table>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <p-table [value]="raceTable" styleClass="p-datatable-sm" [tableStyle]="{ 'min-width': '10rem' }">
+          <ng-template pTemplate="header">
+            <tr>
+              <th class="color_highlight">Race</th>
+              <th>P</th>
+              <th>M</th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-val>
+            <tr>
+              <td>{{ val.name }}</td>
+              <td>
+                <span class="{{ val.physical != 0 ? 'summary_stat_atk' : '' }}">{{ val.physical || '-' }}</span>
+              </td>
+              <td>
+                <span class="{{ val.magical != 0 ? 'summary_stat_matk' : '' }}">{{ val.magical || '-' }}</span>
+              </td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-5">
+    <p-table [value]="elementTable" styleClass="p-datatable-sm" [tableStyle]="{ 'min-width': '15rem' }">
+      <ng-template pTemplate="header">
+        <tr>
+          <th class="color_highlight">Element</th>
+          <th>P</th>
+          <th>M</th>
+          <th>M Elemental</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-val>
+        <tr>
+          <td>
+            <span class="{{ 'font-medium property_' + val.name }}">{{ val.name }}</span>
+          </td>
+          <td>
+            <span class="{{ val.physicalElementToMonster != 0 ? 'summary_stat_atk' : '' }}">{{
+              val.physicalElementToMonster || '-'
+            }}</span>
+          </td>
+          <td>
+            <span class="{{ val.magicalElementToMonster != 0 ? 'summary_stat_matk' : '' }}">{{
+              val.magicalElementToMonster || '-'
+            }}</span>
+          </td>
+          <td>
+            <span class="{{ val.myElement != 0 ? 'summary_stat_matk' : '' }}">{{ val.myElement || '-' }}</span>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>

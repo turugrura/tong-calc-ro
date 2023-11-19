@@ -1491,9 +1491,6 @@
         "7===5",
         "9===10"
       ],
-      "ลด Damage ที่ได้รับจากศัตรูทุกขนาด": [
-        "11===20"
-      ],
       "acd": [
         "13===15"
       ]
@@ -1675,9 +1672,6 @@
       ],
       "Adoramus": [
         "9===30"
-      ],
-      "ลด Damage ทางกายภาพ/เวทมนตร์ที่ได้รับจากศัตรูทุกขนาด": [
-        "11===25"
       ]
     }
   },
@@ -1790,9 +1784,6 @@
     "location": null,
     "compositionPos": null,
     "script": {
-      "ลดพลังโจมตี": [
-        "20"
-      ],
       "mdef": [
         "5"
       ],
@@ -2003,9 +1994,6 @@
       "acd": [
         "10"
       ],
-      "เพิ่มความแรงของสกิล Heal": [
-        "6"
-      ],
       "atkPercent": [
         "EQUIP[Diabolus Ring]3"
       ],
@@ -2104,7 +2092,7 @@
       "agi": [
         "2"
       ],
-      "ลดการใช้ SP ของสกิล Aimed Bolt": [
+      "sp__Aimed Bolt": [
         "10"
       ]
     }
@@ -2216,10 +2204,6 @@
       "matk": [
         "int:90&&7===30",
         "int:90&&9===20"
-      ],
-      "เพิ่มพลังป้องกันไร้ธาตุ": [
-        "vit:90&&7===5",
-        "vit:90&&9===5"
       ],
       "aspdPercent": [
         "agi:90&&7===8"
@@ -2358,9 +2342,6 @@
       "sp": [
         "100"
       ],
-      "เพิ่มผลสกิล Heal": [
-        "5"
-      ],
       "dmg__Lucifer Morocc": [
         "10"
       ]
@@ -2416,7 +2397,7 @@
       "Metalic Sound": [
         "150"
       ],
-      "SP ในการใช้ Metallic Sound เพิ่มขึ้น": [
+      "sp__Metalic Sound": [
         "60"
       ],
       "vct": [
@@ -2740,11 +2721,7 @@
     "location": null,
     "compositionPos": 16,
     "cardPrefix": "Ghost",
-    "script": {
-      "ลดความเร็วในการฟื้นค่า HP": [
-        "25"
-      ]
-    }
+    "script": {}
   },
   "4064": {
     "id": 4064,
@@ -3057,11 +3034,7 @@
     "location": null,
     "compositionPos": 4,
     "cardPrefix": "Immune",
-    "script": {
-      "ลดพลังโจมตีจาก ธาตุ Normal": [
-        "20"
-      ]
-    }
+    "script": {}
   },
   "4137": {
     "id": 4137,
@@ -3132,9 +3105,6 @@
     "script": {
       "vit": [
         "3"
-      ],
-      "resist_Stun": [
-        "100"
       ]
     }
   },
@@ -3250,9 +3220,6 @@
       ],
       "aspdPercent": [
         "EQUIP[Dancing Dragon Card&&Shinobi Card&&The Paper Card&&Wander Man Card&&Wild Rose Card]===5"
-      ],
-      "เพิ่มการเคลื่อนที่": [
-        "5"
       ],
       "agi": [
         "EQUIP[Dancing Dragon Card&&Shinobi Card&&The Paper Card&&Wander Man Card&&Wild Rose Card]===5"
@@ -4446,10 +4413,6 @@
       "def": [
         "20"
       ],
-      "ลดพลังโจมตีทางกายภาพและทางเวทย์ที่ได้รับจากมอนสเตอร์ขนาดกลางและขนาดใหญ่ลง": [
-        "25",
-        "5"
-      ],
       "p_size_m": [
         "EQUIP[White Knight Card]15"
       ],
@@ -4615,10 +4578,6 @@
     "compositionPos": 4,
     "cardPrefix": "Flame",
     "script": {
-      "เพิ่มความทนทานต่อการโจมตีธาตุ Neutral": [
-        "15",
-        "EQUIP[Nightmare Mummy Card]5"
-      ],
       "m_my_element_fire": [
         "1---3"
       ]
@@ -8374,17 +8333,11 @@
         "luk:120===17",
         "dex:10----2"
       ],
-      "ลดความเสียหายที่ได้รับจากสกิล Arrow Storm และ Gates of Hell": [
-        "10"
-      ],
       "atk": [
         "luk:10---2"
       ],
       "matk": [
         "luk:10---2"
-      ],
-      "ลดความเสียหายที่ได้รับจากสกิล Arrorw Storm และ Gates of Hell": [
-        "luk:120===30"
       ]
     },
     "usableClass": [
@@ -8506,9 +8459,6 @@
     "script": {
       "hpPercent": [
         "2"
-      ],
-      "เพิ่มปริมาณ Heal": [
-        "8"
       ]
     }
   },
@@ -10530,7 +10480,7 @@
       "aspd": [
         "1"
       ],
-      "ลดปริมาณการใช้ SP": [
+      "spPercentCost": [
         "5"
       ],
       "fctPercent": [
@@ -10874,12 +10824,6 @@
         "EQUIP[Fallen Warrior Manteau_||Fallen Warrior Manteau]REFINE[garment==1]---3",
         "EQUIP[Fallen Warrior Manteau_||Fallen Warrior Manteau]REFINE[garment==9]str:10---5",
         "EQUIP[Fallen Warrior Manteau_||Fallen Warrior Manteau]REFINE[garment==11]str:10---7"
-      ],
-      "ลด Damage ที่ได้รับจากมอนสเตอร์ประเภท Demi-Human": [
-        "1",
-        "8===2",
-        "9===2",
-        "10===2"
       ]
     }
   },
@@ -12476,9 +12420,6 @@
       "all"
     ],
     "script": {
-      "เพิ่มความต้านทานต่อสถานะ Bleeding": [
-        "100"
-      ],
       "atk": [
         "60",
         "level:170===60",
@@ -12593,9 +12534,6 @@
       ],
       "m_my_element_all": [
         "EQUIP[Twin Cannon]5"
-      ],
-      "ลด Damage ทางกายภาพ/เวทมนตร์ที่ได้รับจากศัตรูทุกธาตุ": [
-        "EQUIP[Modification Orb (Above All)]5"
       ]
     }
   },
@@ -12660,9 +12598,6 @@
       ],
       "p_class_boss": [
         "EQUIP[Orc Hero Egg]10"
-      ],
-      "เพิ่มปริมาณการฟื้นฟู": [
-        "EQUIP[Skelion Egg]333"
       ],
       "exp": [
         "EQUIP[Angeling Egg]10"
@@ -14002,14 +13937,7 @@
       "all",
       "ยกเว้น Novice"
     ],
-    "script": {
-      "resist_darkness": [
-        "100"
-      ],
-      "resist_stun": [
-        "2"
-      ]
-    }
+    "script": {}
   },
   "18652": {
     "id": 18652,
@@ -14196,9 +14124,6 @@
       "aspd": [
         "agi:108===1"
       ],
-      "reduce_dmg_element_wind": [
-        "5"
-      ],
       "Cannon Spear": [
         "EQUIP[Imperial Spear&&Imperial Guard]20"
       ],
@@ -14355,7 +14280,7 @@
       "acd": [
         "5"
       ],
-      "เพิ่มปริมาณการใช้ SP": [
+      "spPercentCost": [
         "5"
       ]
     }
@@ -15115,16 +15040,14 @@
     ],
     "script": {
       "p_size_all": [
-        "EQUIP[Tengu Crow Mask]1"
+        "EQUIP[Tengu Crow Mask]1",
+        "EQUIP[Tengu Crow Mask]str:108===2",
+        "EQUIP[Tengu Crow Mask]str:120===3"
       ],
       "range": [
         "EQUIP[Tengu Crow Mask]1",
         "EQUIP[Tengu Crow Mask]str:108===1",
         "EQUIP[Tengu Crow Mask]str:120===1"
-      ],
-      "เพิ่ม Damage ทางกายภาพต่อมอนสเตอร์ทุกขนาด": [
-        "EQUIP[Tengu Crow Mask]str:108===2",
-        "EQUIP[Tengu Crow Mask]str:120===3"
       ]
     }
   },
@@ -15279,7 +15202,7 @@
       "aspdPercent": [
         "EQUIP[Surfer Swinsuit]===10"
       ],
-      "เพิ่มโอกาส Critical ต่อมอนสเตอร์ประเภท Fish": [
+      "cri__fish": [
         "EQUIP[Surfer Swinsuit]===50"
       ]
     }
@@ -16372,14 +16295,6 @@
         "EQUIP[Gambler Seal]luk:108===2",
         "EQUIP[Gambler Seal]luk:120===4",
         "EQUIP[Gambler Seal]dex:10---2"
-      ],
-      "ลดความเสียหายจาก Demi Human": [
-        "EQUIP[Gambler Seal]2",
-        "EQUIP[Gambler Seal]luk:108===2",
-        "EQUIP[Gambler Seal]luk:120===4"
-      ],
-      "ลดดาเมจที่ได้รับจากสกิล Critical Slash": [
-        "EQUIP[Gambler Seal]100"
       ]
     },
     "usableClass": [
@@ -16726,7 +16641,7 @@
       "spPercent": [
         "int:18---2"
       ],
-      "ลดปริมาณการใช้ SP เมื่อใช้สกิล": [
+      "spPercentCost": [
         "int:18---2"
       ],
       "cri": [
@@ -17590,13 +17505,6 @@
       "matk": [
         "EQUIP[Diabolus Robe]REFINE[armor==1]---15",
         "EQUIP[Diabolus Boots]REFINE[boot==1]---12"
-      ],
-      "เพิ่มปริมาณการฟื้นฟู": [
-        "EQUIP[Diabolus Robe]1---2",
-        "EQUIP[Diabolus Ring]15"
-      ],
-      "ลด Damage ที่ได้รับจากการโจมตีทางกายภาพระยะไกล": [
-        "EQUIP[Diabolus Manteau]10"
       ]
     }
   },
@@ -17734,9 +17642,6 @@
       "acd": [
         "10",
         "9===10"
-      ],
-      "Neutral Resistance": [
-        "7===10"
       ]
     }
   },
@@ -18074,9 +17979,6 @@
       ],
       "flee": [
         "EQUIP[Phreeoni Card||Sealed Phreeoni Card]-150"
-      ],
-      "เพิ่มความต้านทานต่อสถานะ Stone Curse": [
-        "EQUIP[Phreeoni Card||Sealed Phreeoni Card]100"
       ],
       "perfectHit": [
         "EQUIP[Phreeoni Card||Sealed Phreeoni Card]50"
@@ -20538,11 +20440,6 @@
       "all"
     ],
     "script": {
-      "ลดพลังโจมตีที่ได้รับจาก Boss": [
-        "1",
-        "7===1",
-        "9===1"
-      ],
       "p_class_boss": [
         "EQUIP[Liberation Shadow Shoes]===5"
       ]
@@ -20635,13 +20532,7 @@
     "usableClass": [
       "all"
     ],
-    "script": {
-      "decrease_dmg_size_all": [
-        "1",
-        "7===1",
-        "9===1"
-      ]
-    }
+    "script": {}
   },
   "24156": {
     "id": 24156,
@@ -22157,7 +22048,7 @@
       "all"
     ],
     "script": {
-      "สกิล Grimtooth": [
+      "Grimtooth": [
         "20",
         "1---5"
       ]
@@ -24382,13 +24273,7 @@
     "usableClass": [
       "all"
     ],
-    "script": {
-      "decrease_dmg_race_all": [
-        "1",
-        "7===1",
-        "9===1"
-      ]
-    }
+    "script": {}
   },
   "24343": {
     "id": 24343,
@@ -25867,15 +25752,8 @@
       "all"
     ],
     "script": {
-      "ลด Damage ทางกายภาพ/เวทมนตร์ที่ได้รับจากศัตรูทุกขนาด": [
-        "2"
-      ],
       "def": [
         "1---10"
-      ],
-      "ลด Damage ทางกายภาพ/เวทมนตร์ที่ได้รับจากศัตรูทุกขนาดลง": [
-        "7===2",
-        "9===3"
       ]
     }
   },
@@ -32577,10 +32455,6 @@
       "mdef": [
         "5"
       ],
-      "reducdDamageTaken_size_all": [
-        "25",
-        "EQUIP[Turtle General Card]5"
-      ],
       "hit": [
         "EQUIP[Turtle General Card]25"
       ],
@@ -32935,10 +32809,6 @@
     "compositionPos": 4,
     "cardPrefix": "Glacial",
     "script": {
-      "เพิ่มความต้านทานต่อการโจมตีธาตุ Neutral": [
-        "15",
-        "EQUIP[Faceworm Egg Card]===5"
-      ],
       "m_my_element_water": [
         "1---3"
       ]
@@ -33798,9 +33668,6 @@
     "script": {
       "criDmg": [
         "20"
-      ],
-      "recieve__race_all": [
-        "20"
       ]
     }
   },
@@ -33881,9 +33748,6 @@
     "compositionPos": 32,
     "cardPrefix": "Muspelheim",
     "script": {
-      "ลด Damage ทางกายภาพ/เวทมนตร์ที่ได้รับจากศัตรูธาต Fire": [
-        "30"
-      ],
       "p_element_fire": [
         "EQUIP[Brinaranea Card]10"
       ],
@@ -33949,12 +33813,6 @@
         "50",
         "EQUIP[Baby Desertwolf Card]100"
       ],
-      "เพิ่ม Damage ที่ได้รับจากมอนสเตอร์ประเภท Angel": [
-        "50"
-      ],
-      "เพิ่มความต้านทานต่อการโจมตีธาตุ Neutral": [
-        "EQUIP[Orc Baby Card]5"
-      ],
       "int": [
         "EQUIP[Baby Desertwolf Card]3"
       ],
@@ -33966,9 +33824,6 @@
       ],
       "p_element_dark": [
         "EQUIP[Familiar Card]20"
-      ],
-      "ลด Damage ที่ได้รับจากศัตรูประเภท Demi-Human": [
-        "EQUIP[Orc Warrior Card]15"
       ],
       "vct": [
         "EQUIP[Phen Card]25"
@@ -34336,9 +34191,6 @@
       ],
       "m_my_element_earth": [
         "100"
-      ],
-      "damageTaken_element_all": [
-        "30"
       ]
     }
   },
@@ -34396,9 +34248,6 @@
       ],
       "m_my_element_neutral": [
         "100"
-      ],
-      "ได้รับความเสียหายจากการโจมตีทุกธาตุเพิ่มขึ้น": [
-        "30"
       ]
     }
   },
@@ -34605,10 +34454,13 @@
         "5",
         "EQUIP[Wolf Lugenburg Card&&Poe Richard Card]3"
       ],
-      "เพิ่ม Damage ทางกายภาพต่อศัตรูขนาดเล็กและศัตรูประเภท Brute": [
+      "p_size_s": [
         "EQUIP[Jurgen Wigner Card&&Agnes Lugenburg Card]7"
       ],
-      "เพิ่ม Damage ทางกายภาพต่อศัตรูขนาดกลาง": [
+      "p_race_brute": [
+        "EQUIP[Jurgen Wigner Card&&Agnes Lugenburg Card]7"
+      ],
+      "p_size_m": [
         "EQUIP[Wolf Lugenburg Card&&Poe Richard Card]7"
       ]
     }
@@ -35537,9 +35389,6 @@
       "Mechanic"
     ],
     "script": {
-      "reducdDamageTaken_size_s_m": [
-        "10"
-      ],
       "atk": [
         "1---4"
       ],
@@ -35664,7 +35513,7 @@
       "Round Trip": [
         "7===20"
       ],
-      "ลดปริมาณการใช้ SP เมื่อใช้สกิล Round Trip": [
+      "spPercent__Round Trip": [
         "9===5"
       ]
     }
@@ -35782,10 +35631,10 @@
         "9===1"
       ],
       "chance__dex": [
-        "EQUIP[Ancient Hero Boots]===20(7 วินาที)"
+        "EQUIP[Ancient Hero Boots]===20"
       ],
       "chance__range": [
-        "EQUIP[Ancient Hero Boots]===10(7 วินาที)"
+        "EQUIP[Ancient Hero Boots]===10"
       ]
     }
   },
@@ -36161,10 +36010,6 @@
       "all"
     ],
     "script": {
-      "resist_player": [
-        "2",
-        "EQUIP[Sunglasses||Glasses]SUM[agi,vit==80]---2"
-      ],
       "p_class_all": [
         "EQUIP[Sunglasses||Glasses]SUM[str,luk==80]---6"
       ],
@@ -36179,9 +36024,6 @@
       ],
       "vct": [
         "EQUIP[Sunglasses||Glasses]SUM[int,dex==80]---3"
-      ],
-      "เพิ่มอัตราการฟื้นฟู Heal": [
-        "EQUIP[Sunglasses||Glasses]SUM[int,dex==80]---10"
       ],
       "aspdPercent": [
         "EQUIP[Sunglasses||Glasses]SUM[agi,vit==80]---5"
@@ -36364,9 +36206,6 @@
     "script": {
       "vct": [
         "10"
-      ],
-      "เพิ่มปริมาณการฟื้นฟู SP เอง": [
-        "20"
       ],
       "acd": [
         "5"
@@ -37212,11 +37051,6 @@
       "p_pene_class_normal": [
         "10"
       ],
-      "resist_element_neutral": [
-        "5",
-        "7===2",
-        "9===3"
-      ],
       "aspdPercent": [
         "5",
         "7===2",
@@ -37292,9 +37126,6 @@
       "matkPercent": [
         "3"
       ],
-      "ลดความเสียหายที่ได้รับจากศัตรูทุกธาตุ": [
-        "7"
-      ],
       "atk": [
         "7===10"
       ],
@@ -37335,9 +37166,6 @@
       ],
       "matkPercent": [
         "5"
-      ],
-      "ลดความเสียหายที่ได้รับจากศัตรูทุกธาตุ": [
-        "10"
       ],
       "atk": [
         "7===20"
@@ -40459,7 +40287,7 @@
         "EQUIP[Sniper Stone (Middle)]===10"
       ],
       "range": [
-        "EQUIP[Sniper Stone (Lower)]ACTIVE_SKILL[Wind Walk]===5(60 วินาที)"
+        "EQUIP[Sniper Stone (Lower)]ACTIVE_SKILL[Wind Walk]===5"
       ]
     }
   },
@@ -41478,13 +41306,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": null,
-    "script": {
-      "เพิ่มผลของสกิลประเภท Heal": [
-        "5",
-        "7===5",
-        "9===5"
-      ]
-    }
+    "script": {}
   },
   "29534": {
     "id": 29534,
@@ -41711,17 +41533,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": null,
-    "script": {
-      "ลด Damage ทางกายภาพ/เวทมนตร์ที่ได้รับจากศัตรูทุกธาตุ": [
-        "5"
-      ],
-      "ลด Damage ทางกายภาพ/เวทมนตร์ที่ได้รับจากศัตรูทุกขนาด": [
-        "7===5"
-      ],
-      "ลด Damage ทางกายภาพ/เวทมนตร์ที่ได้รับจากศัตรูทุกประเภท": [
-        "9===5"
-      ]
-    }
+    "script": {}
   },
   "29547": {
     "id": 29547,
@@ -41869,7 +41681,14 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": null,
-    "script": {}
+    "script": {
+      "chance__luk": [
+        "50"
+      ],
+      "chance__m_my_element_all": [
+        "10"
+      ]
+    }
   },
   "29579": {
     "id": 29579,
@@ -42259,9 +42078,6 @@
       ],
       "Axe Tornado": [
         "REFINE_NAME[Maxi Spanner==3]---7"
-      ],
-      "ลด Damage ทางกายภาพ/เวทมนตร์ที่ได้รับจากศัตรูทุกขนาด": [
-        "REFINE_NAME[Maxi Spanner==3]---5"
       ]
     }
   },
@@ -45100,12 +44916,6 @@
       ],
       "atkPercent": [
         "EQUIP[Illusion Hot-blooded Headband]REFINE[weapon==7]REFINE[headUpper==7]5"
-      ],
-      "reduce_dmg_s": [
-        "EQUIP[Illusion Hot-blooded Headband]REFINE[weapon,headUpper==18]===20"
-      ],
-      "reduce_dmg_m": [
-        "EQUIP[Illusion Hot-blooded Headband]REFINE[weapon,headUpper==18]===20"
       ]
     }
   },
@@ -46061,12 +45871,6 @@
       ],
       "m_race_demihuman": [
         "1---5"
-      ],
-      "ลดความต้านทานต่อการโจมตีทุกธาตุ": [
-        "1---30"
-      ],
-      "เพิ่มความต้านทานต่อการโจมตีทุกธาตุ": [
-        "EQUIP[1st Anniversary Card&&2nd Anniversary Card]20"
       ]
     }
   },
@@ -47438,9 +47242,6 @@
       ],
       "hpPercent": [
         "EQUIP[Blasti-OS]===5"
-      ],
-      "ลด Damage ทางเวทย์และกายภาพที่ได้รับจากศัตรูขนาดเล็ก": [
-        "EQUIP[Blasti-OS]===3"
       ]
     }
   },
@@ -47782,9 +47583,6 @@
       ],
       "m_race_demihuman": [
         "EQUIP[Aegirnian Armor&&Aegirnian Manteau&&Aegirnian Shoes]50"
-      ],
-      "ความต้านทานการโจมตีธาตุ Water, Wind": [
-        "25"
       ]
     }
   },
@@ -47934,16 +47732,6 @@
         "EQUIP[King Schmidt's Flash Insignia]===5",
         "EQUIP[King Schmidt's Celestial Bow Insignia]===5",
         "EQUIP[King Schmidt's White Cloud Insignia]===5"
-      ],
-      "เพิ่มความต้านทานต่อ Player": [
-        "EQUIP[King Schmidt's Suit]===7",
-        "EQUIP[King Schmidt's Manteau]===6",
-        "EQUIP[King Schmidt's Strong Insignia]===3",
-        "EQUIP[King Schmidt's Rigid Insignia]===3",
-        "EQUIP[King Schmidt's Divine Power Insignia]===3",
-        "EQUIP[King Schmidt's Flash Insignia]===3",
-        "EQUIP[King Schmidt's Celestial Bow Insignia]===3",
-        "EQUIP[King Schmidt's White Cloud Insignia]===3"
       ],
       "p_class_all": [
         "EQUIP[King Schmidt's Strong Insignia]===10"
@@ -48331,9 +48119,6 @@
       "all"
     ],
     "script": {
-      "เพิ่มความต้านทานต่อการโจมตีทุกธาตุ": [
-        "2"
-      ],
       "exp": [
         "EQUIP[Archangel Wing]8"
       ],
@@ -48342,9 +48127,6 @@
       ],
       "criDmg": [
         "EQUIP[Archangel Wing]REFINE[garment==8]agi:20---4"
-      ],
-      "เพิ่มความต้านทานต่อการโจมตีธาตุ Neutral": [
-        "EQUIP[Archangel Wing]REFINE[garment==8]vit:20---2"
       ],
       "hpPercent": [
         "EQUIP[Archangel Wing]REFINE[garment==8]vit:20---1"
@@ -48470,9 +48252,6 @@
       ],
       "hpPercent": [
         "EQUIP[Bangungot Agimat Tattoo]7"
-      ],
-      "ผลของ Heal ที่ได้รับเพิ่มขึ้น": [
-        "EQUIP[Bangungot Agimat Tattoo]SUM[agi,vit==40]---2"
       ]
     }
   },
@@ -48856,19 +48635,12 @@
       "hpPercent": [
         "3"
       ],
-      "เพิ่มความต้านทานต่อการโจมตีธาตุ Fire, Wind": [
-        "9===20",
-        "11===20"
-      ],
       "p_class_boss": [
         "9===10",
         "11===10"
       ],
       "acd": [
         "20"
-      ],
-      "ลด Damage ทางกายภาพที่ได้รับจากมอนสเตอร์ประเภท Boss": [
-        "5"
       ],
       "Arm Cannon": [
         "75"
@@ -49027,21 +48799,6 @@
       "mdef": [
         "10"
       ],
-      "เพิ่มความต้านทานต่อการโจมตีธาตุ Wind": [
-        "REFINE[9]str:108===20"
-      ],
-      "เพิ่มความต้านทานต่อการโจมตีธาตุ Water": [
-        "REFINE[9]agi:108===20"
-      ],
-      "เพิ่มความต้านทานต่อการโจมตีธาตุ Neutral": [
-        "REFINE[9]vit:108===20"
-      ],
-      "เพิ่มความต้านทานต่อการโจมตีธาตุ Earth": [
-        "REFINE[9]int:108===20"
-      ],
-      "เพิ่มความต้านทานต่อการโจมตีธาตุ Fire": [
-        "REFINE[9]dex:108===20"
-      ],
       "perfectDodge": [
         "REFINE[9]luk:108===20"
       ],
@@ -49050,9 +48807,6 @@
       ],
       "spPercent": [
         "12===10"
-      ],
-      "เพิ่มความต้านทานต่อการโจมตีทุกธาตุ": [
-        "12===5"
       ]
     }
   },
@@ -49994,9 +49748,6 @@
         "7===7",
         "EQUIP[Deep Blue Sunglasses]===15"
       ],
-      "เพิ่มความต้านทานต่อการโจมตีธาตุ Neutral": [
-        "9===7"
-      ],
       "m_my_element_all": [
         "11===10",
         "EQUIP[Battle Processor]===5"
@@ -50186,9 +49937,6 @@
       ],
       "Tiger Cannon": [
         "EQUIP[Old Blazing Soul]2---3"
-      ],
-      "ลดดาเมจที่ได้รับจากการโจมตีทางกายภาพระยะไกลลง": [
-        "Old Blazing Soul12===5"
       ]
     }
   },
@@ -50267,9 +50015,6 @@
       "all"
     ],
     "script": {
-      "resist_element_neutral": [
-        "20"
-      ],
       "exp": [
         "10"
       ],
@@ -50284,9 +50029,6 @@
       ],
       "sp": [
         "level:1---2"
-      ],
-      "resist_element_holy": [
-        "5===80"
       ],
       "spPercentDrain": [
         "2"
@@ -50369,9 +50111,6 @@
       ],
       "matk": [
         "int:20---1"
-      ],
-      "เพิ่มความต้านทานการโจมตีธาตุ Neutral": [
-        "vit:20---1"
       ],
       "aspdPercent": [
         "agi:20---1"
@@ -52136,9 +51875,6 @@
       "Focused Arrow Strike": [
         "EQUIP[Old Camouflage Bunny Hood]30"
       ],
-      "เพิ่ม Cooldown สกิล Cicada Skin Shed": [
-        "EQUIP[Old Camouflage Bunny Hood]10"
-      ],
       "p_size_all": [
         "EQUIP[Old Maestro Song's Hat||Old Dying Swan]15"
       ],
@@ -53384,14 +53120,14 @@
       ],
       "Genesis Ray": [
         "EQUIP[Defunct Booster Robe&&Defunct Booster Muffler&&Defunct Booster Shoes&&Defunct Booster Earring]level:15---1",
-        "EQUIP[Defunct Booster Robe&&Defunct Booster Muffler&&Defunct Booster Shoes&&Defunct Booster Earring]ACTIVE_SKILL[Cure]===20(60 วินาที)"
+        "EQUIP[Defunct Booster Robe&&Defunct Booster Muffler&&Defunct Booster Shoes&&Defunct Booster Earring]ACTIVE_SKILL[Cure]===20"
       ],
       "aspd": [
         "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]2"
       ],
       "Banishing Point": [
         "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]level:15---2",
-        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]ACTIVE_SKILL[Spear Quicken]===35(60 วินาที)"
+        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]ACTIVE_SKILL[Spear Quicken]===35"
       ]
     }
   },
@@ -53488,7 +53224,7 @@
       ],
       "Psychic Wave": [
         "EQUIP[Elemental Booster Robe&&Elemental Booster Muffler&&Elemental Booster Shoes&&Elemental Booster Earring]level:15---1",
-        "EQUIP[Elemental Booster Robe&&Elemental Booster Muffler&&Elemental Booster Shoes&&Elemental Booster Earring]ACTIVE_SKILL[Foresight]===20(60 วินาที)"
+        "EQUIP[Elemental Booster Robe&&Elemental Booster Muffler&&Elemental Booster Shoes&&Elemental Booster Earring]ACTIVE_SKILL[Foresight]===20"
       ],
       "aspd": [
         "EQUIP[Defunct Booster Robe&&Defunct Booster Muffler&&Defunct Booster Shoes&&Defunct Booster Earring]2"
@@ -53637,9 +53373,6 @@
       "m_my_element_holy": [
         "7===15"
       ],
-      "AUTO_SKILL__Judex": [
-        "11===5"
-      ],
       "int": [
         "EQUIP[Great Hero Boots]===10"
       ],
@@ -53689,14 +53422,14 @@
       ],
       "Eswhoo": [
         "EQUIP[Elemental Booster Robe&&Elemental Booster Muffler&&Elemental Booster Shoes&&Elemental Booster Earring]level:15---1",
-        "EQUIP[Elemental Booster Robe&&Elemental Booster Muffler&&Elemental Booster Shoes&&Elemental Booster Earring]ACTIVE_SKILL[Espa]===20(60 วินาที)"
+        "EQUIP[Elemental Booster Robe&&Elemental Booster Muffler&&Elemental Booster Shoes&&Elemental Booster Earring]ACTIVE_SKILL[Espa]===20"
       ],
       "vct": [
         "EQUIP[Defunct Booster Robe&&Defunct Booster Muffler&&Defunct Booster Shoes&&Defunct Booster Earring]===10"
       ],
       "Curse Explosion": [
         "EQUIP[Defunct Booster Robe&&Defunct Booster Muffler&&Defunct Booster Shoes&&Defunct Booster Earring]level:15---1",
-        "EQUIP[Defunct Booster Robe&&Defunct Booster Muffler&&Defunct Booster Shoes&&Defunct Booster Earring]ACTIVE_SKILL[Evil Soul Curse]===20(60 วินาที)"
+        "EQUIP[Defunct Booster Robe&&Defunct Booster Muffler&&Defunct Booster Shoes&&Defunct Booster Earring]ACTIVE_SKILL[Evil Soul Curse]===20"
       ]
     }
   },
@@ -53789,11 +53522,11 @@
       "m_my_element_water": [
         "11===7"
       ],
-      "magicalChance__int": [
-        "EQUIP[Ancient Hero Boots]===20(7 วินาที)"
+      "chance__int": [
+        "EQUIP[Ancient Hero Boots]===20"
       ],
-      "magicalChance__matkPercent": [
-        "EQUIP[Ancient Hero Boots]===15(7 วินาที)"
+      "chance__matkPercent": [
+        "EQUIP[Ancient Hero Boots]===15"
       ]
     }
   },
@@ -54212,10 +53945,10 @@
         "11===0.5"
       ],
       "chance__int": [
-        "EQUIP[Ancient Hero Boots]===20(7 วินาที)"
+        "EQUIP[Ancient Hero Boots]===20"
       ],
       "chance__matkPercent": [
-        "EQUIP[Ancient Hero Boots]===15(7 วินาที)"
+        "EQUIP[Ancient Hero Boots]===15"
       ]
     }
   },
@@ -54321,14 +54054,14 @@
       ],
       "Reverberation": [
         "EQUIP[Elemental Booster Robe&&Elemental Booster Muffler&&Elemental Booster Shoes&&Elemental Booster Earring]level:15---1",
-        "EQUIP[Elemental Booster Robe&&Elemental Booster Muffler&&Elemental Booster Shoes&&Elemental Booster Earring]ACTIVE_SKILL[Improve Concentration]===20(60 วินาที)"
+        "EQUIP[Elemental Booster Robe&&Elemental Booster Muffler&&Elemental Booster Shoes&&Elemental Booster Earring]ACTIVE_SKILL[Improve Concentration]===20"
       ],
       "cd__Severe Rainstorm": [
         "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]2"
       ],
       "Severe Rainstorm": [
         "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]level:15---1",
-        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]ACTIVE_SKILL[Improve Concentration]===20(60 วินาที)"
+        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]ACTIVE_SKILL[Improve Concentration]===20"
       ]
     }
   },
@@ -54370,10 +54103,10 @@
         "11===0.5"
       ],
       "chance__int": [
-        "EQUIP[Ancient Hero Boots]===20(7 วินาที)"
+        "EQUIP[Ancient Hero Boots]===20"
       ],
       "chance__matkPercent": [
-        "EQUIP[Ancient Hero Boots]===15(7 วินาที)"
+        "EQUIP[Ancient Hero Boots]===15"
       ]
     }
   },
@@ -54450,6 +54183,7 @@
         "160",
         "1---2",
         "level:15---3",
+        "level:195===-3",
         "EQUIP[Defunct Booster Robe&&Defunct Booster Muffler&&Defunct Booster Shoes&&Defunct Booster Earring]20"
       ],
       "m_my_element_holy": [
@@ -54474,7 +54208,8 @@
       ],
       "Adoramus": [
         "EQUIP[Defunct Booster Robe&&Defunct Booster Muffler&&Defunct Booster Shoes&&Defunct Booster Earring]level:15---1",
-        "EQUIP[Defunct Booster Robe&&Defunct Booster Muffler&&Defunct Booster Shoes&&Defunct Booster Earring]ACTIVE_SKILL[Magnificat]===20 (60 วินาที)"
+        "EQUIP[Defunct Booster Robe&&Defunct Booster Muffler&&Defunct Booster Shoes&&Defunct Booster Earring]level:195===-1",
+        "EQUIP[Defunct Booster Robe&&Defunct Booster Muffler&&Defunct Booster Shoes&&Defunct Booster Earring]ACTIVE_SKILL[Magnificat]===20"
       ],
       "aspd": [
         "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]2"
@@ -54484,7 +54219,8 @@
       ],
       "Duple Light": [
         "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]level:15---2",
-        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]ACTIVE_SKILL[Magnificat]===35 (60 วินาที)"
+        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]level:195===-2",
+        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]ACTIVE_SKILL[Magnificat]===35"
       ]
     }
   },
@@ -54523,10 +54259,10 @@
         "11===15"
       ],
       "chance__str": [
-        "EQUIP[Ancient Hero Boots]===20(7 วินาที)"
+        "EQUIP[Ancient Hero Boots]===20"
       ],
       "chance__atkPercent": [
-        "EQUIP[Ancient Hero Boots]===15(7 วินาที)"
+        "EQUIP[Ancient Hero Boots]===15"
       ]
     }
   },
@@ -54557,8 +54293,8 @@
       "matkPercent": [
         "3"
       ],
-      "auto_matkPercent": [
-        "EQUIP[Ancient Hero Boots]===15(7 วินาที)"
+      "chance__matkPercent": [
+        "EQUIP[Ancient Hero Boots]===15"
       ],
       "m_my_element_holy": [
         "2---1",
@@ -54570,8 +54306,8 @@
       "vct": [
         "9===10"
       ],
-      "auto_int": [
-        "EQUIP[Ancient Hero Boots]===20(7 วินาที)"
+      "chance__int": [
+        "EQUIP[Ancient Hero Boots]===20"
       ]
     }
   },
@@ -54893,9 +54629,6 @@
       "p_size_all": [
         "9===15"
       ],
-      "ลด Damage ทางกายภาพ/เวทมนตร์ที่ได้รับจากศัตรูทุกธาตุ": [
-        "11===20"
-      ],
       "str": [
         "EQUIP[Great Hero Boots]===10"
       ],
@@ -55004,11 +54737,11 @@
       "m_element_fire": [
         "11===7"
       ],
-      "magicalChance__int": [
-        "EQUIP[Ancient Hero Boots]===20(7 วินาที)"
+      "chance__int": [
+        "EQUIP[Ancient Hero Boots]===20"
       ],
-      "magicalChance__matkPercent": [
-        "EQUIP[Ancient Hero Boots]===15(7 วินาที)"
+      "chance__matkPercent": [
+        "EQUIP[Ancient Hero Boots]===15"
       ]
     }
   },
@@ -55220,11 +54953,11 @@
       "cd__Aimed Bolt": [
         "11===1"
       ],
-      "atkChance__dex": [
-        "EQUIP[Ancient Hero Boots]===20(7 วินาที)"
+      "chance__dex": [
+        "EQUIP[Ancient Hero Boots]===20"
       ],
-      "atkChance__bowRange": [
-        "EQUIP[Ancient Hero Boots]===20(7 วินาที)"
+      "chance__bowRange": [
+        "EQUIP[Ancient Hero Boots]===20"
       ]
     }
   },
@@ -55411,7 +55144,7 @@
       ],
       "range": [
         "7===10",
-        "ACTIVE_SKILL[Hot Barrel]9===20(60 วินาที)"
+        "ACTIVE_SKILL[Hot Barrel]9===20"
       ],
       "acd": [
         "11===10"
@@ -55602,7 +55335,7 @@
         "7===20",
         "9===15"
       ],
-      "เพิ่มปริมาณการใช้ SP สกิล Round Trip": [
+      "spPercent__Round Trip": [
         "7===10"
       ],
       "p_size_all": [

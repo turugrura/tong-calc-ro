@@ -2938,7 +2938,7 @@
 
   <!-- Right Side -->
   <div class="p-fluid col-5">
-    <p-accordion [multiple]="true" [activeIndex]="[2, 5]">
+    <p-accordion [multiple]="true" [activeIndex]="[2, 6]">
       <p-accordionTab header="Consumables" class="consumable">
         <div class="grid grid-nogutter">
           <!-- Consumable -->
@@ -3715,6 +3715,15 @@
             </p-table>
           </div>
         </div>
+      </p-accordionTab>
+
+      <p-accordionTab header="Multiplier Summary">
+        <app-misc-detail
+          [elementTable]="elementTable"
+          [raceTable]="raceTable"
+          [sizeTable]="sizeTable"
+          [skillMultiplierTable]="skillMultiplierTable"
+        ></app-misc-detail>
       </p-accordionTab>
 
       <p-accordionTab header="Summary">
