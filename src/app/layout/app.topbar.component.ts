@@ -35,6 +35,18 @@ export class AppTopBarComponent {
 
   updates: { v: string; date: string; logs: string[] }[] = [
     {
+      v: 'V1.6.2',
+      date: '19-11-2566',
+      logs: [
+        'Supported level 200',
+        'Supported toggle bonus from "Has a chance"',
+        'Added Warlock offensive skill (Chain Lightning)',
+        'Added Kagerou offensive skill (Swirling Petal)',
+        'Added Multiplier summary section (below Battle summary section)',
+        'Added requested items',
+      ],
+    },
+    {
       v: 'V1.6.1',
       date: '16-11-2566',
       logs: [
