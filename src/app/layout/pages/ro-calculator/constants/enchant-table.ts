@@ -260,29 +260,42 @@ const AllState = {
   _3: [FS._3, EA._3, Spell._3, AttackDelay._3, Fatal._3, ...BaseState._3],
 };
 
-const atkPer = [AtkPercent._1, AtkPercent._2, AtkPercent._3];
+const atkPer13 = [AtkPercent._1, AtkPercent._2, AtkPercent._3];
+
 const fs13 = [FS._1, FS._2, FS._3];
 const fs23 = [FS._2, FS._3];
 const fs35 = [FS._3, FS._4, FS._5];
+const fs36 = [FS._3, FS._4, FS._5, FS._6];
 const fs410 = [FS._4, FS._5, FS._6, FS._7, FS._8, FS._9, FS._10];
+
 const sh13 = [Sharp._1, Sharp._2, Sharp._3];
 const sh23 = [Sharp._2, Sharp._3];
+const sh25 = [Sharp._2, Sharp._3, Sharp._4, Sharp._5];
 // const sh35 = [Sharp._3, Sharp._4, Sharp._5];
 const matk12 = [MatkPercent._1, MatkPercent._2];
+
 const ea15 = [EA._1, EA._2, EA._3, EA._4, EA._5];
 const ea23 = [EA._2, EA._3];
+const ea25 = [EA._2, EA._3, EA._4, EA._5];
 const ea410 = [EA._4, EA._5, EA._6, EA._7, EA._8, EA._9, EA._10];
+
 const sp23 = [Spell._2, Spell._3];
 const sp25 = [Spell._2, Spell._3, Spell._4, Spell._5];
 const sp46 = [Spell._4, Spell._5, Spell._6];
 const aspd24 = [AttackDelay._2, AttackDelay._3, AttackDelay._4];
+
+const fatal14 = [Fatal._1, Fatal._2, Fatal._3, Fatal._4];
+
 const cri57 = [Cri._5, Cri._7, Cri._10];
-const TempOpts = {
+
+const tempOpts = {
   _1: [EA._1, FS._1, Sharp._1],
   _2: [EA._2, FS._2, Sharp._2],
   _3: [EA._3, FS._3, Sharp._3],
   _1_3: [EA._1, EA._2, EA._3, FS._1, FS._2, FS._3, Sharp._1, Sharp._2, Sharp._3],
 };
+
+const all25 = [...ea25, ...fs36, ...sh25, ...sp25, ...atkPer13, ...fatal14];
 const eaFsSp15 = [...ea15, ...fs35, ...sp25];
 
 const toyFactory = [...sp25, ...fs35, ...sh13, ...matk12, ...aspd24];
@@ -302,7 +315,7 @@ const kingSmithMan = [EA._3, EA._4, EA._5, FS._5, FS._6, FS._7, Spell._3, Spell.
 
 const twinCannon = [Fatal._3, AttackDelay._3, Spell._4, EA._3, ...BaseState._3];
 
-const whiteWingSuit = [...TempOpts._1_3, ...BaseState._1_3];
+const whiteWingSuit = [...tempOpts._1_3, ...BaseState._1_3];
 
 const labHead2 = [
   Acute._2,
@@ -408,6 +421,8 @@ const malangdo = [
   ...createBaseStat(2, 6),
 ];
 
+const goldenSet = [...all25];
+
 interface EntTable {
   name: string;
   enchants: [null, any[], any[], any[]];
@@ -442,6 +457,9 @@ export const EnchantTable: EntTable[] = [
   { name: 'Twin_Edge_R', enchants: [null, null, null, malangdo] },
   { name: 'Death_Guidance', enchants: [null, null, malangdo, malangdo] },
   { name: 'Destruction_Rod', enchants: [null, null, malangdo, malangdo] },
+
+  { name: 'Golden_Ninja_Suit', enchants: [null, goldenSet, goldenSet, goldenSet] },
+  { name: 'Golden_Scarf', enchants: [null, goldenSet, goldenSet, goldenSet] },
 
   { name: 'Tengu_Scroll', enchants: [null, BaseState._1_3, BaseState._1_3, BaseState._1_3] },
 
@@ -523,8 +541,8 @@ export const EnchantTable: EntTable[] = [
   { name: 'Temporal_Ring_TW', enchants: [null, null, null, [...ea410, ...fs410, ...sp46, ...base46]] },
 
   { name: 'White_Wing_Suits', enchants: [null, whiteWingSuit, whiteWingSuit, whiteWingSuit] },
-  { name: 'White_Wing_Manteau', enchants: [null, [...atkPer, ...fs13], [...atkPer, ...fs13], [...atkPer, ...fs13]] },
-  { name: 'White_Wing_Brooch', enchants: [null, [], [], BaseState._1] },
+  { name: 'White_Wing_Manteau', enchants: [null, [...atkPer13, ...fs13], [...atkPer13, ...fs13], [...atkPer13, ...fs13]] },
+  { name: 'White_Wing_Brooch', enchants: [null, null, null, BaseState._1] },
 
   { name: 'Vigilante_Bedge', enchants: [null, null, BaseState._1, BaseState._1] },
   { name: 'Vigilante_Suits', enchants: [null, BaseState._1, BaseState._1, BaseState._1] },

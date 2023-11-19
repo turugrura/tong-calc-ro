@@ -854,7 +854,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         const actualAttr = attr.replace('cd__', '');
         addValue(actualAttr, {
           name: actualAttr,
-          cd: value < 0 ? `+ ${value * -1}` : `- ${value}`,
+          cd: value < 0 ? `+${value * -1}` : `-${value}`,
         });
       }
     }

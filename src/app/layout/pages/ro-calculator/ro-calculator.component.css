@@ -101,6 +101,11 @@
   white-space: nowrap;
 }
 
+.text_ellips_no_height {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
 .text_group_ellips {
   width: 60%;
   overflow: hidden;

@@ -9973,6 +9973,37 @@
       ]
     }
   },
+  "13332": {
+    "id": 13332,
+    "aegisName": "Huuma_Hundred_Petal",
+    "name": "Huuma Shuriken of Dancing Petals [2]",
+    "unidName": "Shuriken",
+    "resName": "풍마_백화엽",
+    "description": "ดาวกระจายของนินจาที่ถูกว่าจ้างให้มาเป็นเจ้าของเหมืองในสมัยอดีต\nเพิ่ม Damage สกิล [Swirling Petal] 20%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่มพลังโจมตีทางกายภาพระยะไกล 10%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล [Swirling Petal] ขึ้นอีก 20%\nประเภท : ^777777Huuma Shuriken^000000 พลังโจมตี : ^777777250^000000\nน้ำหนัก : ^777777200^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Kagerou, Oboro^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 278,
+    "itemLevel": 4,
+    "attack": 250,
+    "defense": null,
+    "weight": 200,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Kagerou",
+      "Oboro"
+    ],
+    "script": {
+      "Swirling Petal": [
+        "20",
+        "9===20"
+      ],
+      "range": [
+        "7===10"
+      ]
+    }
+  },
   "13337": {
     "id": 13337,
     "aegisName": "Huuma_Flutter_Snow_IL",
@@ -10852,6 +10883,46 @@
       ],
       "sp__Triangle Shot": [
         "EQUIP[Vigilante Bow&&Vigilante Badge]10"
+      ]
+    }
+  },
+  "15178": {
+    "id": 15178,
+    "aegisName": "Golden_Ninja_Suit",
+    "name": "Golden Ninja Suit",
+    "unidName": "Armor",
+    "resName": "골든닌자슈츠",
+    "description": "ชุดของนินจาที่ถูกว่าจ้างให้มาเป็นเจ้าของเหมืองในสมัยอดีต\nทุก ๆ การอัพเกรด 2 ขั้น Flee + 5\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล [Kunai Splash] 20%\nเมื่อสวมใส่ร่วมกับ Monokage และ Golden Scarf \nเพิ่ม Damage สกิล [Kunai Explosion] 20%\nเพิ่ม Damage สกิล [Kunai Splash] 50%\nเมื่อสวมใส่ร่วมกับ Huuma Shuriken of Dancing Petals และ Golden Scarf\nเพิ่มพลังโจมตีทางกายภาพระยะไกล 15%\nลดเวลาร่ายสกิล [Swirling Petal] 1 วินาที\nประเภท : ^777777Armor^000000 พลังป้องกัน : ^77777750^000000\nน้ำหนัก : ^77777750^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Kagerou, Oboro^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 50,
+    "weight": 50,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Kagerou",
+      "Oboro"
+    ],
+    "script": {
+      "flee": [
+        "2---5"
+      ],
+      "Kunai Splash": [
+        "9===20",
+        "EQUIP[Monokage&&Golden Scarf]50"
+      ],
+      "Kunai Explosion": [
+        "EQUIP[Monokage&&Golden Scarf]20"
+      ],
+      "range": [
+        "EQUIP[Huuma Shuriken of Dancing Petals&&Golden Scarf]15"
+      ],
+      "cd__Swirling Petal": [
+        "EQUIP[Huuma Shuriken of Dancing Petals&&Golden Scarf]1"
       ]
     }
   },
@@ -17797,6 +17868,37 @@
       "criDmg": [
         "SUM[luk==90]===5",
         "SUM[luk==90]1---1"
+      ]
+    }
+  },
+  "20821": {
+    "id": 20821,
+    "aegisName": "Golden_Scarf",
+    "name": "Golden Scarf",
+    "unidName": "Garment",
+    "resName": "골든스카프",
+    "description": "ผ้าพันคอของนินจาที่ถูกว่าจ้างให้มาเป็นเจ้าของเหมืองในสมัยอดีต\nFlee + 20\nเมื่ออัพเกรดถึงขั้น 7 เพิ่มพลังโจมตีทางกายภาพระยะไกล 5%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่มพลังโจมตีทางกายภาพระยะไกลขึ้นอีก 5%\nประเภท : ^777777Garment^000000 พลังป้องกัน : ^77777712^000000\nน้ำหนัก : ^77777750^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Kagerou, Oboro^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 515,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 12,
+    "weight": 50,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Kagerou",
+      "Oboro"
+    ],
+    "script": {
+      "flee": [
+        "20"
+      ],
+      "range": [
+        "7===5",
+        "9===5"
       ]
     }
   },
@@ -36644,6 +36746,37 @@
       ]
     }
   },
+  "28721": {
+    "id": 28721,
+    "aegisName": "Monokage",
+    "name": "Monokage [2]",
+    "unidName": "Dagger",
+    "resName": "모노카게",
+    "description": "มีดประกายสีม่วงอันคมกริบของนินจาที่ถูกว่าจ้างให้มาเป็นเจ้าของเหมืองในสมัยอดีต \nเพิ่ม Damgae สกิล [Kunai Explosion] (เลเวลสกิล [Dagger Throwing Practice])% \nเมื่ออัพเกรดถึงขั้น 7 เพิ่มพลังโจมตีทางกายภาพระยะไกล 2%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่มพลังโจมตีทางกายภาพระยะไกล 3%\nประเภท : ^777777Dagger^000000 พลังโจมตี : ^777777100^000000\nน้ำหนัก : ^77777780^000000\nเลเวลอาวุธ : ^7777773^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Kagerou, Oboro^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 256,
+    "itemLevel": 3,
+    "attack": 100,
+    "defense": null,
+    "weight": 80,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Kagerou",
+      "Oboro"
+    ],
+    "script": {
+      "Kunai Explosion": [
+        "LEARN_SKILL[Dagger Throwing Practice==1]---1"
+      ],
+      "range": [
+        "7===2",
+        "9===3"
+      ]
+    }
+  },
   "28762": {
     "id": 28762,
     "aegisName": "Bazerald_IL",
@@ -44969,10 +45102,10 @@
         "5"
       ],
       "Throw Huuma Shuriken": [
-        "LEARN_SKILL[Illusion - Shadow==5]level:4---2"
+        "LEARN_SKILL2[Illusion - Shadow==5]SUM[level==4]---2"
       ],
       "Swirling Petal": [
-        "LEARN_SKILL[Illusion - Shadow==5]level:4---1",
+        "LEARN_SKILL2[Illusion - Shadow==5]SUM[level==4]---1",
         "LEARN_SKILL[Soul Cutter==5]-40"
       ],
       "cd__Swirling Petal": [

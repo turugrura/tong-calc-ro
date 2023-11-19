@@ -905,6 +905,16 @@ export class Calculator {
       restCondition = restCondition.replace(toRemove_, '');
     }
 
+    // LEARN_SKILL2[Illusion - Shadow==5]SUM[level==4]---2
+    const [_raw2, toRemove2_, learnCond2] = restCondition.match(/(LEARN_SKILL2\[(.+?)\]=?=?=?)/) ?? [];
+    if (learnCond2) {
+      const [skillName, skillLv] = learnCond2.split('==');
+      const isPass = this.learnedSkillMap.get(skillName) >= Number(skillLv);
+      if (!isPass) return { isValid: false, restCondition };
+
+      restCondition = restCondition.replace(toRemove2_, '');
+    }
+
     // LEVEL[130]2---1
     // LEVEL[1-129]2---1
     const [toRemove2, lvCond] = restCondition.match(/LEVEL\[(.+?)\]/) ?? [];

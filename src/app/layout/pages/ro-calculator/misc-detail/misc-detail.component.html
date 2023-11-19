@@ -14,7 +14,7 @@
               </ng-template>
               <ng-template pTemplate="body" let-val>
                 <tr>
-                  <td>{{ val.name }}</td>
+                  <td class="text_ellips_no_height">{{ val.name }}</td>
                   <td>
                     <span class="{{ !!val.value ? 'summary_damage' : '' }}">{{ val.value || '-' }}</span>
                   </td>

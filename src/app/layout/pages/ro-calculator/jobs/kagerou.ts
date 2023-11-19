@@ -9,6 +9,8 @@ import {
 import { Ninja } from './ninja';
 import { ShadowWarrior } from '../constants/share-active-skills/shadow-warrior';
 import { InfoForClass } from '../models/info-for-class.model';
+import { floor } from '../utils';
+import { S16thNight } from '../constants/share-active-skills/s16th-night';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 0, 1, 0],
@@ -144,28 +146,24 @@ export class Kagerou extends CharacterBase {
         return (skillLevel * 50 + bonusDaggerThrow) * (baseLevel / 100);
       },
     },
-    // {
-    //   label: 'Swirling Petal Lv10',
-    //   name: 'Swirling Petal',
-    //   value: 'Swirling Petal==10',
-    //   acd: 0.5,
-    //   fct: 0,
-    //   vct: 1.5,
-    //   cd: 3,
-    //   levelList: [],
-    //   hit: 5,
-    //   formula: (input: AtkSkillFormulaInput): number => {
-    //     const {
-    //       model,
-    //       skillLevel,
-    //       status: { totalStr },
-    //     } = input;
-    //     const baseLevel = model.level;
-    //     const bonusDaggerThrow = 100 * (this.bonuses.learnedSkillMap.get('Throw Huuma Shuriken') || 0);
+    {
+      label: 'Swirling Petal Lv10',
+      name: 'Swirling Petal',
+      value: 'Swirling Petal==10',
+      acd: 0.5,
+      fct: 0,
+      vct: 1.5,
+      cd: 3,
+      hit: 5,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const baseLevel = model.level;
+        const { totalStr } = status;
+        const bonusDaggerThrow = 100 * this.learnLv('Throw Huuma Shuriken');
 
-    //     return (skillLevel * 150 + totalStr * 5 + bonusDaggerThrow) * (baseLevel / 100);
-    //   },
-    // },
+        return (skillLevel * 150 + totalStr * 5 + bonusDaggerThrow) * (baseLevel / 100);
+      },
+    },
   ];
 
   protected readonly _activeSkillList: ActiveSkillModel[] = [
@@ -179,6 +177,7 @@ export class Kagerou extends CharacterBase {
         { label: 'No', value: 0, isUse: false },
       ],
     },
+    S16thNight,
   ];
 
   protected readonly _passiveSkillList: PassiveSkillModel[] = [
@@ -219,5 +218,14 @@ export class Kagerou extends CharacterBase {
 
   override getMasteryAtk(info: InfoForClass): number {
     return this.calcHiddenMasteryAtk(info).totalAtk;
+  }
+
+  override getMasteryMatk(info: InfoForClass): number {
+    const _16Night = this.learnLv('16th Night');
+    if (_16Night <= 0) return 0;
+
+    const { model } = info;
+
+    return floor((model.jobLevel * _16Night) / 2);
   }
 }
