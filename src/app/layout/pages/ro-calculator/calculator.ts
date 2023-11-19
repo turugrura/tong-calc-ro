@@ -1175,8 +1175,6 @@ export class Calculator {
         continue;
       }
 
-      this.equipStatus[itemType].weight = itemData.weight;
-
       if (itemType === ItemTypeEnum.ammo) {
         if (itemData.itemSubTypeId === ItemSubTypeId.Cannonball) {
           this.equipStatus[itemType].atk = 0;
@@ -1199,7 +1197,11 @@ export class Calculator {
 
       // console.log({ itemType, itemData });
       const refine = this.getRefineLevelByItemType(itemType);
-      this.equipStatus[itemType].refine = refine;
+      if (MainItemTypeSet.has(itemType)) {
+        this.equipStatus[itemType].refine = refine;
+        this.equipStatus[itemType].weight = itemData.weight;
+      }
+
       const calculatedItem = this.calcItemStatus(itemType, refine, itemData);
       for (const [attr, value] of Object.entries(calculatedItem)) {
         if (attr === 'p_final') {

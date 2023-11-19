@@ -126,7 +126,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   refineList = createNumberDropdownList(0, 15);
   shadowRefineList = createNumberDropdownList(0, 10);
   mainStatusList = createNumberDropdownList(1, 130);
-  levelList = createNumberDropdownList(99, 185);
+  levelList = createNumberDropdownList(99, 200);
   jobList = createNumberDropdownList(1, 65);
   propertyAtkList = ElementConverterList;
 
