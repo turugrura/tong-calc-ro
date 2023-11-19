@@ -71,7 +71,7 @@
       "Rogue",
       "Mage",
       "Wizard",
-      "Marchant Cls",
+      "Merchant",
       "Taekwon Cls",
       "Gunslinger Cls"
     ],
@@ -496,7 +496,7 @@
         "3"
       ],
       "m_pene_class_all": [
-        "3"
+        "1---1"
       ],
       "acd": [
         "2---3"
@@ -4063,6 +4063,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 769,
+    "cardPrefix": "Orb Spell Power",
     "script": {
       "matk": [
         "25"
@@ -8072,6 +8073,30 @@
       ]
     }
   },
+  "4882": {
+    "id": 4882,
+    "aegisName": "Atk1p",
+    "name": "ATK + 1%",
+    "unidName": "ATK + 1%",
+    "resName": "마력석_빨강",
+    "description": "ATK +1%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 72,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<Atk+1%>",
+    "script": {
+      "atkPercent": [
+        "1"
+      ]
+    }
+  },
   "4994": {
     "id": 4994,
     "aegisName": "Neev_STR_1",
@@ -10303,6 +10328,38 @@
       ]
     }
   },
+  "14601": {
+    "id": 14601,
+    "aegisName": "Tyr's_Blessing",
+    "name": "Blessing Of Tyr",
+    "unidName": "Blessing Of Tyr",
+    "resName": "용병용빨간포션",
+    "description": "น้ำยาที่ปรุงขึ้นด้วยจิตวิญญาณแห่ง Tyr, เทพแห่งการต่อสู้\nATK, MATK +20, Accuracy +30, Flee +30 เป็นเวลา 5 นาที\nข้อควรระวัง!- ในขณะที่ใช้ Item นี้อยู่ จะไม่สามารถใช้ Item Honey Pastry, Sesame Pastry และ Rainbow Cake ได้\nItem นี้จะถูกยกเลิกหากตัวละครตาย\n^ffffff_^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 3,
+    "itemSubTypeId": 768,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "atk": [
+        "20"
+      ],
+      "matk": [
+        "20"
+      ],
+      "hit": [
+        "30"
+      ],
+      "flee": [
+        "30"
+      ]
+    }
+  },
   "14616": {
     "id": 14616,
     "aegisName": "STR_Biscuit_Stick",
@@ -10920,10 +10977,10 @@
       "m_race_demon": [
         "9===10"
       ],
-      "p_element_wind": [
+      "m_element_wind": [
         "11===10"
       ],
-      "p_element_earth": [
+      "m_element_earth": [
         "11===10"
       ]
     }
@@ -34482,6 +34539,7 @@
     "requiredLevel": null,
     "location": null,
     "compositionPos": 16,
+    "cardPrefix": "Joyful",
     "script": {
       "atkPercent": [
         "3"
@@ -37699,6 +37757,53 @@
       "criDmg": [
         "12===8",
         "13===6"
+      ]
+    }
+  },
+  "29028": {
+    "id": 29028,
+    "aegisName": "Atk1p_Top",
+    "name": "ATK + 1% (Upper)",
+    "unidName": "ATK + 1% (Upper)",
+    "resName": "마력석_노랑",
+    "description": "ATK + 1%.\nเมื่อช่อง Enchant Costume ส่วน Middle/Lower มีใส่ ATK + 1% อยู่, จะเพิ่ม ATK +2%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 71,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "atkPercent": [
+        "1",
+        "EQUIP[ATK + 1%&&ATK + 1% (Lower)]2"
+      ]
+    }
+  },
+  "29029": {
+    "id": 29029,
+    "aegisName": "Atk1p_Bottom",
+    "name": "ATK + 1% (Lower)",
+    "unidName": "ATK + 1% (Lower)",
+    "resName": "마력석_파랑",
+    "description": "ATK + 1%.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 73,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "atkPercent": [
+        "1"
       ]
     }
   },
@@ -50793,7 +50898,7 @@
         "LEARN_SKILL[Radius==3]10"
       ],
       "acd": [
-        "15"
+        "LEARN_SKILL[Recognized Spell==5]15"
       ]
     }
   },

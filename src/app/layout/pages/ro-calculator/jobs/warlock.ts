@@ -85,7 +85,7 @@ export class Warlock extends CharacterBase {
   protected classNames = ['Warlock', 'Warlock Class', 'Warlock Cls', 'Only 3rd Cls'];
   protected _atkSkillList: AtkSkillModel[] = [
     {
-      label: 'Comet',
+      label: 'Comet Lv5',
       name: 'Comet',
       value: 'Comet==5',
       acd: 1.5,
@@ -94,7 +94,6 @@ export class Warlock extends CharacterBase {
       cd: 20,
       isMatk: true,
       element: ElementType.Neutral,
-      levelList: [{ label: 'Lv 5', value: 'Comet==5' }],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
@@ -103,7 +102,7 @@ export class Warlock extends CharacterBase {
       },
     },
     {
-      label: 'Crimson Rock',
+      label: 'Crimson Rock Lv5',
       name: 'Crimson Rock',
       value: 'Crimson Rock==5',
       fct: 1,
@@ -112,7 +111,6 @@ export class Warlock extends CharacterBase {
       cd: 5,
       isMatk: true,
       element: ElementType.Fire,
-      levelList: [{ label: 'Lv 5', value: 'Crimson Rock==5' }],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
@@ -121,7 +119,7 @@ export class Warlock extends CharacterBase {
       },
     },
     {
-      label: 'Jack Frost',
+      label: 'Jack Frost Lv5',
       name: 'Jack Frost',
       value: 'Jack Frost==5',
       acd: 1,
@@ -140,7 +138,7 @@ export class Warlock extends CharacterBase {
       },
     },
     {
-      label: 'Soul Expansion',
+      label: 'Soul Expansion Lv5',
       name: 'Soul Expansion',
       value: 'Soul Expansion==5',
       acd: 0.5,
@@ -150,12 +148,28 @@ export class Warlock extends CharacterBase {
       isMatk: true,
       element: ElementType.Ghost,
       hit: 2,
-      levelList: [{ label: 'Lv 5', value: 'Soul Expansion==5' }],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
         const baseLevel = model.level;
 
         return (status.totalInt + 1000 + skillLevel * 200) * (baseLevel / 100);
+      },
+    },
+    {
+      label: 'Chain Lightning Lv5',
+      name: 'Chain Lightning',
+      value: 'Chain Lightning==5',
+      acd: 3,
+      fct: 1,
+      vct: 5.5,
+      cd: 0,
+      isMatk: true,
+      element: ElementType.Wind,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
+
+        return (500 + skillLevel * 100) * (baseLevel / 100) + 900;
       },
     },
     {
@@ -179,6 +193,8 @@ export class Warlock extends CharacterBase {
         label: 'Shadow Dmg',
         isIncludeMain: true,
         element: ElementType.Dark,
+        isMatk: true,
+        isMelee: false,
         hit: 3,
         formula: (input: AtkSkillFormulaInput): number => {
           const { model, skillLevel } = input;
@@ -255,6 +271,30 @@ export class Warlock extends CharacterBase {
         { label: 'Lv 8', isUse: true, value: 8 },
         { label: 'Lv 9', isUse: true, value: 9 },
         { label: 'Lv 10', isUse: true, value: 10 },
+      ],
+    },
+    {
+      inputType: 'dropdown',
+      label: 'Radius',
+      name: 'Radius',
+      dropdown: [
+        { label: '-', isUse: false, value: 0 },
+        { label: 'Lv 1', isUse: true, value: 1, bonus: { fctPercent: 10 * 1 } },
+        { label: 'Lv 2', isUse: true, value: 2, bonus: { fctPercent: 10 * 2 } },
+        { label: 'Lv 3', isUse: true, value: 3, bonus: { fctPercent: 10 * 3 } },
+      ],
+    },
+    {
+      inputType: 'dropdown',
+      label: 'Recognized Spell',
+      name: 'Recognized Spell',
+      dropdown: [
+        { label: '-', isUse: false, value: 0 },
+        { label: 'Lv 1', isUse: true, value: 1 },
+        { label: 'Lv 2', isUse: true, value: 2 },
+        { label: 'Lv 3', isUse: true, value: 3 },
+        { label: 'Lv 4', isUse: true, value: 4 },
+        { label: 'Lv 5', isUse: true, value: 5 },
       ],
     },
   ];

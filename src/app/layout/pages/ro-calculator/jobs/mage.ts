@@ -12,19 +12,19 @@ export class Mage extends CharacterBase {
   protected readonly classNames = ['Mage', 'Mage Class', 'Mage Cls'];
   protected readonly _atkSkillList: AtkSkillModel[] = [
     {
-      label: 'Cold Bolt',
+      label: 'Cold Bolt Lv1',
       name: 'Cold Bolt',
       acd: 0,
       cd: 0,
       fct: 0,
       vct: 0,
       isMatk: true,
+      isDevMode: true,
       element: ElementType.Water,
       value: 'Cold Bolt==1',
       formula: (): number => {
         return 100;
       },
-      levelList: [{ label: 'Lv 1', value: 'Cold Bolt==1' }],
     },
   ];
   protected readonly _activeSkillList: ActiveSkillModel[] = [];

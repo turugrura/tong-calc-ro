@@ -1,3 +1,4 @@
+import { environment } from 'src/environments/environment';
 import { ElementType } from '../constants/element-type.const';
 import { EquipmentSummaryModel } from '../models/equipment-summary.model';
 import { InfoForClass } from '../models/info-for-class.model';
@@ -26,7 +27,8 @@ export interface AtkSkillModel {
     element: ElementType;
     isIncludeMain: boolean;
     hit: number;
-    isMatk?: boolean;
+    isMatk: boolean;
+    isMelee: boolean;
     formula: (input: AtkSkillFormulaInput) => number;
   };
   canCri?: boolean;
@@ -122,15 +124,27 @@ export abstract class CharacterBase {
   }
 
   get atkSkills() {
-    return this._atkSkillList.filter((a) => a.isDevMode !== true);
+    if (environment.production) {
+      return this._atkSkillList.filter((a) => !a.isDevMode);
+    }
+
+    return this._atkSkillList;
   }
 
   get passiveSkills() {
-    return this._passiveSkillList.filter((a) => a.isDevMode !== true);
+    if (environment.production) {
+      return this._passiveSkillList.filter((a) => !a.isDevMode);
+    }
+
+    return this._passiveSkillList;
   }
 
   get activeSkills() {
-    return this._activeSkillList.filter((a) => a.isDevMode !== true);
+    if (environment.production) {
+      return this._activeSkillList.filter((a) => !a.isDevMode);
+    }
+
+    return this._activeSkillList;
   }
 
   get initialStatPoint() {

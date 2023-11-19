@@ -19,7 +19,7 @@ export class Wizard extends CharacterBase {
   protected classNames = ['Hi-Class', 'Wizard', 'Wizard Class', 'Wizard Cls'];
   protected _atkSkillList: AtkSkillModel[] = [
     {
-      label: 'Soul Drain',
+      label: 'Soul Drain Lv10',
       name: 'Soul Drain',
       value: 'Soul Drain==10',
       acd: 0,
@@ -27,7 +27,6 @@ export class Wizard extends CharacterBase {
       vct: 0,
       cd: 0,
       isMatk: true,
-      levelList: [{ label: 'Lv 10', value: 'Soul Drain==10' }],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
@@ -36,7 +35,7 @@ export class Wizard extends CharacterBase {
       },
     },
     {
-      label: 'Napalm Vulcan',
+      label: 'Napalm Vulcan Lv5',
       name: 'Napalm Vulcan',
       value: 'Napalm Vulcan==5',
       fct: 0.3,
@@ -45,7 +44,6 @@ export class Wizard extends CharacterBase {
       cd: 1,
       isMatk: true,
       element: ElementType.Ghost,
-      levelList: [{ label: 'Lv 5', value: 'Napalm Vulcan==5' }],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
@@ -54,7 +52,7 @@ export class Wizard extends CharacterBase {
       },
     },
     {
-      label: "Heaven's Drive",
+      label: "Heaven's Drive Lv5",
       name: "Heaven's Drive",
       value: "Heaven's Drive==5",
       fct: 0.8,
@@ -63,7 +61,6 @@ export class Wizard extends CharacterBase {
       cd: 0,
       isMatk: true,
       element: ElementType.Earth,
-      levelList: [{ label: 'Lv 5', value: "Heaven's Drive==5" }],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model } = input;
         const baseLevel = model.level;

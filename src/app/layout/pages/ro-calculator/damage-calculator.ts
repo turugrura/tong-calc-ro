@@ -635,7 +635,7 @@ export class DamageCalculator {
     const variance = 0.1 * baseWeaponLevel * baseWeaponMatk;
     const isMax = this.isMaximizeSpell;
 
-    let weaponMinMatk = rawWeaponMATK - (isMax ? 0 : variance);
+    let weaponMinMatk = rawWeaponMATK - (isMax ? -variance : variance);
     let weaponMaxMatk = rawWeaponMATK + variance + overUpgradeBonus;
 
     if (overUpgradeBonus > 0) {
@@ -654,6 +654,14 @@ export class DamageCalculator {
     const matkPercentMultiplier = this.toPercent(100 + this.totalBonus.matkPercent);
 
     const comet = this.getCometAmp();
+    // console.log({
+    //   race,
+    //   size,
+    //   element,
+    //   monsterType,
+    //   matkPercentMultiplier,
+    //   comet,
+    // });
 
     let total = floor(matk * race);
     total = floor(total * size);
@@ -721,6 +729,16 @@ export class DamageCalculator {
 
     const rawMinDamage = statusDmg + equipmentDmg + weaponMinDmg;
     const minDamage = this._class.calcSkillDmgByTotalHit(rawMinDamage, skillData);
+
+    // console.log({
+    //   skillPropertyAtk,
+    //   myElementMultiplier,
+    //   totalStatusMatk,
+    //   extraMatk,
+    //   equipSkillMultiplier,
+    //   weaponMinMatk,
+    //   weaponMaxMatk,
+    // });
 
     return { propertyAtk: skillPropertyAtk, propertyMultiplier, minDamage, maxDamage };
   }

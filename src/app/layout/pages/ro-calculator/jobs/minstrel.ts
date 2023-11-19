@@ -233,6 +233,7 @@ export class Minstrel extends CharacterBase {
         label: '',
         hit: 1,
         isMatk: true,
+        isMelee: true,
         formula: (input: AtkSkillFormulaInput): number => {
           const { skillLevel, model } = input;
           const baseLevel = model.level;

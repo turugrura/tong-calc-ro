@@ -7,6 +7,7 @@ export const JobBuffs: ActiveSkillModel[] = [
     name: 'Cantocandidus',
     dropdown: [
       { label: '-', value: 0, isUse: false },
+      { label: 'Lv 3', value: 3, isUse: true, bonus: { agi: 5, aspdPercent: 3 } },
       { label: 'Lv 10', value: 10, isUse: true, bonus: { agi: 12, aspdPercent: 10 } },
       { label: 'Job 20', value: 12, isUse: true, bonus: { agi: 14, aspdPercent: 12 } },
       { label: 'Job 30', value: 13, isUse: true, bonus: { agi: 15, aspdPercent: 13 } },

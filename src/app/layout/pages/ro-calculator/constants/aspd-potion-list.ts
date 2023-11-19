@@ -8,6 +8,6 @@ export const AspdPotionList = [
     label: 'Berserk Potion',
     value: 657,
 
-    usebleClass: ['Swordman Cls', 'Rogue', 'Mage', 'Wizard', 'Marchant Cls', 'Taekwon Cls', 'Gunslinger Cls'],
+    usableClass: ['Swordman Cls', 'Rogue', 'Mage', 'Wizard', 'Merchant', 'Taekwon Cls', 'Gunslinger Cls'],
   },
 ];

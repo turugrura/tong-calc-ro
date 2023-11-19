@@ -121,6 +121,10 @@ const sizes = [
   ['Medium', 'm'],
   ['Large', 'l'],
 ];
+const monsterTypes = [
+  ['Boss', 'boss'],
+  ['Normal', 'normal'],
+];
 
 @Component({
   selector: 'app-ro-calculator',
@@ -267,6 +271,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   elementTable: ElementDataModel[];
   raceTable: RaceDataModel[];
   sizeTable: RaceDataModel[];
+  classTable: RaceDataModel[];
   skillMultiplierTable: SkillMultiplierModel[];
 
   /**
@@ -387,6 +392,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         this.setRaceTable();
         this.setElementTable();
         this.setSizeTable();
+        this.setMonsterTypeTable();
         this.setSkillTable();
 
         this.chanceList = this.calculator.chanceList;
@@ -805,6 +811,23 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     this.sizeTable = d;
   }
 
+  private setMonsterTypeTable(): void {
+    const d: RaceDataModel[] = [];
+
+    const p_class_all = this.totalSummary.p_class_all || 0;
+    const m_class_all = this.totalSummary.m_class_all || 0;
+
+    for (const [classShow, _class] of monsterTypes) {
+      d.push({
+        name: classShow,
+        physical: p_class_all + (this.totalSummary[`p_class_${_class}`] || 0),
+        magical: m_class_all + (this.totalSummary[`m_class_${_class}`] || 0),
+      });
+    }
+
+    this.classTable = d;
+  }
+
   private setSkillTable(): void {
     const dMap = new Map<string, any>();
     const addValue = (key: string, val: Partial<SkillMultiplierModel>) => {
@@ -1076,6 +1099,9 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         take(1),
         mergeMap(() => {
           this.setClassSkill();
+          return waitRxjs();
+        }),
+        mergeMap(() => {
           this.setAspdPotionList();
           this.setDefaultSkill();
           this.setItemDropdownList();
@@ -1166,9 +1192,14 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
   private setDefaultSkill() {
     const defaultAtkSkill = this.atkSkills[0].value;
-    const selectedValidSkill = this.atkSkills.every((a) => a.value !== this.model.selectedAtkSkill);
+    if (!this.model.selectedAtkSkill) {
+      this.model.selectedAtkSkill = defaultAtkSkill;
+      return;
+    }
 
-    if (!this.model.selectedAtkSkill || selectedValidSkill) {
+    const selectedValidSkill = this.atkSkills.some((a) => a.value === this.model.selectedAtkSkill);
+
+    if (!selectedValidSkill) {
       this.model.selectedAtkSkill = defaultAtkSkill;
     }
   }

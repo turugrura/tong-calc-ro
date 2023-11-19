@@ -193,6 +193,8 @@ export class ArchBishop extends CharacterBase {
         label: 'Shadow Dmg',
         isIncludeMain: true,
         element: ElementType.Dark,
+        isMatk: true,
+        isMelee: false,
         hit: 3,
         formula: (input: AtkSkillFormulaInput): number => {
           const { model, skillLevel } = input;

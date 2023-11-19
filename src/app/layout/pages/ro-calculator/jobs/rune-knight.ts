@@ -9,7 +9,6 @@ import {
 import { LordKnight } from './lord-knight';
 import { ElementType } from '../constants/element-type.const';
 import { InfoForClass } from '../models/info-for-class.model';
-import { environment } from 'src/environments/environment';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 1, 0, 0],
@@ -100,7 +99,7 @@ export class RuneKnight extends CharacterBase {
       vct: 1,
       cd: 2,
       isMelee: true,
-      isDevMode: environment.production === true,
+      isDevMode: true,
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, weapon } = input;
         const baseLevel = model.level;
@@ -152,7 +151,7 @@ export class RuneKnight extends CharacterBase {
       label: 'Rune: Turisus',
       name: 'Turisus Runestone',
       inputType: 'selectButton',
-      isDevMode: environment.production === true,
+      isDevMode: true,
       dropdown: [
         { label: 'Yes', value: 5, skillLv: 5, isUse: true, bonus: { melee: 250, str: 30 } },
         { label: 'No', value: 0, isUse: false },

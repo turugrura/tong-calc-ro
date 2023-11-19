@@ -9,6 +9,7 @@ export class MiscDetailComponent {
   @Input({ required: true }) elementTable: any[];
   @Input({ required: true }) raceTable: any[];
   @Input({ required: true }) sizeTable: any[];
+  @Input({ required: true }) classTable: any[];
   @Input({ required: true }) skillMultiplierTable: any[];
 
   constructor() {}

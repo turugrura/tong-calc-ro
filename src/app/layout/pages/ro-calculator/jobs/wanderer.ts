@@ -229,6 +229,7 @@ export class Wanderer extends CharacterBase {
         label: '',
         hit: 1,
         isMatk: true,
+        isMelee: false,
         formula: (input: AtkSkillFormulaInput): number => {
           const { skillLevel, model } = input;
           const baseLevel = model.level;
