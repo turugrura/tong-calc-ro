@@ -2,6 +2,7 @@ const Mapper = {
   iz_ac01: 'Test damage',
   lasa_dun02: '125 - 133 Lasa แมว 2',
   lasa_dun03: '133 - 150 Lasa แมว 3',
+  lhz_dun04: '140 แลป 4',
   tur_d03_i: '150 - 160 เต่า 1',
   tur_d04_i: '150 - 175 เต่า 2',
   mag_dun03: '175 - 185 แมกม่า 3',

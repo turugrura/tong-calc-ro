@@ -212,11 +212,13 @@ export class StarEmperor extends CharacterBase {
   getWrathAtkBonus(info: InfoForClass): number {
     if (!this.isSkillActive('Wrath of')) return 0;
 
-    const { model, status } = info;
+    const { model, status, monster } = info;
     const { level } = model;
-    const { totalLuk, totalDex } = status;
+    const { totalLuk, totalDex, totalStr } = status;
+    const { size } = monster;
+    const bonusSize = size === 'l' ? totalStr : 0;
 
-    return Math.floor((level + totalLuk + totalDex) / 3);
+    return Math.floor((level + totalLuk + totalDex + bonusSize) / 3);
   }
 
   override modifyFinalAtk(currentAtk: number, _params: InfoForClass) {
