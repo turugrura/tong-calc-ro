@@ -2,7 +2,7 @@ import { WeaponTypeName } from './weapon-type-mapper';
 
 export const SizePenaltyMapper: Record<WeaponTypeName, { s: number; m: number; l: number }> = {
   dagger: { s: 100, m: 75, l: 50 },
-  sword: { s: 100, m: 100, l: 100 },
+  sword: { s: 75, m: 100, l: 75 },
   twohandSword: { s: 75, m: 75, l: 100 },
   axe: { s: 50, m: 75, l: 100 },
   twohandAxe: { s: 50, m: 75, l: 100 },
