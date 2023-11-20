@@ -4071,6 +4071,31 @@
       ]
     }
   },
+  "4513": {
+    "id": 4513,
+    "aegisName": "Angra_Mantis_Card",
+    "name": "Angra Mantis Card",
+    "unidName": "Angra Mantis Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่ม Critical Damage 2%\nเมื่อตัวละคร Thief Class สวมใส่ จะเพิ่ม Critica lDamage 1% ทุกๆ การอัพเกรด 2 ขั้น\nประเภท : ^777777Card^000000\nบริเวณที่สวมใส่ : ^777777Helm^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 769,
+    "cardPrefix": "of Thief",
+    "script": {
+      "criDmg": [
+        "2",
+        "USED[Thief]2---1"
+      ]
+    }
+  },
   "4529": {
     "id": 4529,
     "aegisName": "Cruel_Coelacanth_Card",
@@ -32007,6 +32032,9 @@
       ],
       "acd": [
         "11===10"
+      ],
+      "chance__m_my_element_fire": [
+        "9===30"
       ]
     }
   },
@@ -34063,6 +34091,33 @@
         "5"
       ],
       "range": [
+        "5"
+      ]
+    }
+  },
+  "27258": {
+    "id": 27258,
+    "aegisName": "Hyper_Death_Card",
+    "name": "Ifodes Card",
+    "unidName": "Ifodes Card",
+    "resName": "이름없는카드",
+    "description": "ATK + 3%\nASPD +5%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Shoes^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 64,
+    "cardPrefix": "Ifodes",
+    "script": {
+      "atkPercent": [
+        "3"
+      ],
+      "aspdPercent": [
         "5"
       ]
     }
@@ -37486,6 +37541,63 @@
       ]
     }
   },
+  "28755": {
+    "id": 28755,
+    "aegisName": "Kuroiro_OS",
+    "name": "Kuroiro-OS [2]",
+    "unidName": "Dagger",
+    "resName": "Kuroiro_OS",
+    "description": "มีดสั้นที่ประดับลูกหินสีขาวกึ่งโปร่งใสบนใบมีดสีดำ\nMATK + 150\nเพิ่ม Damage ทางกายภาพ/เวทมนตร์ที่ทำต่อศัตรูธาตุ Shadow, Undead 5%\nเมื่ออัปเกรดถึงขั้น 7 เพิ่ม Damage ทางกายภาพ/เวทมนตร์ที่ทำต่อศัตรูธาตุ Shadow, Undead เพิ่มเติม 10%\nเมื่ออัปเกรดถึงขั้น 9 เพิ่ม Damage สกิล Kunai Splash 20%\nเมื่ออัปเกรดถึงขั้น 11 เพิ่ม Damage ทางกายภาพ/เวทมนตร์ที่ทำต่อมอนสเตอร์ประเภท Demon, Undead 10%\n^ffffff_^000000\nประเภท : ^777777Dagger^000000 พลังโจมตี : ^777777150^000000\nน้ำหนัก : ^77777790^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777130^000000\nอาชีพที่ใส่ได้ : ^777777Ninja^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 256,
+    "itemLevel": 4,
+    "attack": 150,
+    "defense": null,
+    "weight": 90,
+    "requiredLevel": 130,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Ninja"
+    ],
+    "script": {
+      "matk": [
+        "150"
+      ],
+      "p_element_dark": [
+        "5",
+        "7===10"
+      ],
+      "p_element_undead": [
+        "5",
+        "7===10"
+      ],
+      "m_element_dark": [
+        "5",
+        "7===10"
+      ],
+      "m_element_undead": [
+        "5",
+        "7===10"
+      ],
+      "Kunai Splash": [
+        "9===20"
+      ],
+      "p_race_demon": [
+        "11===10"
+      ],
+      "p_race_undead": [
+        "11===10"
+      ],
+      "m_race_demon": [
+        "11===10"
+      ],
+      "m_race_undead": [
+        "11===10"
+      ]
+    }
+  },
   "28762": {
     "id": 28762,
     "aegisName": "Bazerald_IL",
@@ -38125,6 +38237,38 @@
       ],
       "vct__Silvervine Stem Spear": [
         "-15"
+      ]
+    }
+  },
+  "28953": {
+    "id": 28953,
+    "aegisName": "Poring_B_Shield",
+    "name": "Poring Combat Shield [1]",
+    "unidName": "Shield",
+    "resName": "스쿠톰",
+    "description": "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้^000000\nโล่สี่เหลี่ยมที่มีลาย Poring อยู่ตรงกลาง  \nได้ยินมาว่า Poring ที่มีปีกคู่สีทองบนพื้นหลังสีแดงทำให้จิตวิญญาณในการต่อสู่ของศัตรูหดหาย แต่ความเป็นจริงเป็นอย่างไรก็ไม่มีใครรู้เหมือนกัน  \n^ffffff_^000000\nทุกๆ การอัพเกรด 3 ขั้น จะลดความเสียหายที่ได้รับจากมอนสเตอร์ทุกขนาด 2%  \nเมื่ออัพเกรดถึงขั้น 7 ขึ้นไป, MHP + 5%, MSP + 5%.\nเมื่ออัพเกรดถึงขั้น 9 ขึ้นไป, ASPD + 1.\nเมื่ออัพเกรดถึงขั้น 12 ขึ้นไป, เมื่อถูกโจมตีทางกายภาพระยะใกล้ จะสะท้อนความเสียหาย 1% และเมื่อโจมตีทางเวท จะมีโอกาส 5% ในการฟื้นฟุ 100 HP ทุกๆ 1 วินาที 4 ครั้ง  \nประเภท : ^777777Shield^000000  พลังป้องกัน : ^77777780^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 514,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 80,
+    "weight": 0,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "hpPercent": [
+        "7===5"
+      ],
+      "spPercent": [
+        "7===5"
+      ],
+      "aspd": [
+        "9===1"
       ]
     }
   },
@@ -43047,16 +43191,16 @@
     "compositionPos": null,
     "script": {
       "Meteor Assault": [
-        "REFINE_NAME[Judgment Slasher,Repent Slasher==3]---10"
+        "REFINE_NAME[Judgment Slasher,Repent Slasher==5]---10"
       ],
       "Soul Destroyer": [
-        "REFINE_NAME[Judgment Slasher,Repent Slasher==3]---10"
+        "REFINE_NAME[Judgment Slasher,Repent Slasher==5]---10"
       ],
       "Cross Impact": [
-        "REFINE_NAME[Judgment Slasher,Repent Slasher==3]---5"
+        "REFINE_NAME[Judgment Slasher,Repent Slasher==5]---5"
       ],
       "Counter Slash": [
-        "REFINE_NAME[Judgment Slasher,Repent Slasher==3]---5"
+        "REFINE_NAME[Judgment Slasher,Repent Slasher==5]---5"
       ],
       "cd__Dark Claw": [
         "REFINE_NAME[Agudo Filo==3]---3"
