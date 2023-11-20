@@ -184,25 +184,45 @@ export class RoyalGuard extends CharacterBase {
         return (totalStr * skillLevel + skillLevel * 50) * (baseLevel / 100);
       },
     },
-    // {
-    //   label: 'Earth Drive Lv5',
-    //   name: 'Earth Drive',
-    //   value: 'Earth Drive==5',
-    //   acd: 1,
-    //   fct: 0,
-    //   vct: 1,
-    //   cd: 3,
-    //   isMelee: true,
-    //   hit: 5,
-    //   levelList: [],
-    //   formula: (input: AtkSkillFormulaInput): number => {
-    //     const { model, skillLevel, extra } = input;
-    //     const baseLevel = model.level;
-    //     const { shieldWeight = 0 } = extra || {};
+    {
+      label: 'Earth Drive Lv5',
+      name: 'Earth Drive',
+      value: 'Earth Drive==5',
+      acd: 1,
+      fct: 0,
+      vct: 1,
+      cd: 3,
+      isMelee: true,
+      hit: 5,
+      element: ElementType.Earth,
+      levelList: [],
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, equipmentBonus } = input;
+        const baseLevel = model.level;
+        const shieldWeight = equipmentBonus.shield?.weight || 0;
 
-    //     return (shieldWeight * (skillLevel+1)) * (baseLevel / 100);
-    //   },
-    // },
+        return shieldWeight * (skillLevel + 1) * (baseLevel / 100);
+      },
+    },
+    {
+      label: '[Improved] Earth Drive Lv5',
+      name: 'Earth Drive',
+      value: '[Improved] Earth Drive==5',
+      acd: 1,
+      fct: 0,
+      vct: 1,
+      cd: 2.5,
+      isMelee: true,
+      hit: 5,
+      levelList: [],
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, status, skillLevel } = input;
+        const baseLevel = model.level;
+        const { totalVit, totalStr } = status;
+
+        return (totalVit + totalStr + skillLevel * 380) * (baseLevel / 100);
+      },
+    },
   ];
 
   protected readonly _activeSkillList: ActiveSkillModel[] = [
@@ -222,6 +242,15 @@ export class RoyalGuard extends CharacterBase {
       isMasteryAtk: true,
       dropdown: [
         { label: 'Yes', value: 5, skillLv: 5, isUse: true, bonus: { p_pene_class_all: 25 } },
+        { label: 'No', value: 0, isUse: false },
+      ],
+    },
+    {
+      label: 'Ride Peco',
+      name: 'Ride Peco',
+      inputType: 'selectButton',
+      dropdown: [
+        { label: 'Yes', value: 1, skillLv: 1, isUse: true },
         { label: 'No', value: 0, isUse: false },
       ],
     },
@@ -297,6 +326,10 @@ export class RoyalGuard extends CharacterBase {
 
     if (this.isSkillActive('Shield Spell')) {
       totalBonus.atk += equipmentBonus.shield?.weight || 0;
+    }
+
+    if (this.isSkillActive('Ride Peco') && typeName === 'spear') {
+      totalBonus['sizePenalty_m'] = 100;
     }
 
     return totalBonus;

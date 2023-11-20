@@ -937,6 +937,21 @@ export class Calculator {
       restCondition = restCondition.replace(unused2, '');
     }
 
+    for (let i = 1; i <= 3; i++) {
+      const [unused, itemType, refineCond] = restCondition.match(/XREFINEX\[(\D*?)=*=*(\d+)]/) ?? [];
+      if (itemType) {
+        const refine = this.mapRefine.get(itemType as ItemTypeEnum);
+        if (refine >= Number(refineCond)) {
+          restCondition = restCondition.replace(unused, '');
+          continue;
+        }
+
+        return { isValid: false, restCondition };
+      }
+
+      break;
+    }
+
     // EQUIP[Bear's Power]===50
     const [setCondition, itemSet] = restCondition.match(/^EQUIP\[(.+?)]/) ?? [];
     if (itemSet) {

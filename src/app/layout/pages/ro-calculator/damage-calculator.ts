@@ -282,7 +282,13 @@ export class DamageCalculator {
       return 1;
     }
 
-    const penalty = SizePenaltyMapper[this.weaponData?.data?.typeName]?.[this.monsterData.size];
+    const size = this.monsterData.size;
+    const fixedSize = this.totalBonus[`sizePenalty_${size}`];
+    if (fixedSize > 0) {
+      return this.toPercent(fixedSize);
+    }
+
+    const penalty = SizePenaltyMapper[this.weaponData?.data?.typeName]?.[size];
 
     return this.toPercent(penalty || 100);
   }
