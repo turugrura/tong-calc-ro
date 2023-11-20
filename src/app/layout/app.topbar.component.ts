@@ -35,6 +35,18 @@ export class AppTopBarComponent {
 
   updates: { v: string; date: string; logs: string[] }[] = [
     {
+      v: 'V1.6.3',
+      date: '20-11-2566',
+      logs: [
+        'Fixed reported bugs',
+        'Fixed Sword size penalty to 75 100 75',
+        'Added Guillotine Cross skill (Cross Ripper Slasher)',
+        'Added Royal Guard skill (Earth Drive)',
+        'Added requested monsters',
+        'Added requested items',
+      ],
+    },
+    {
       v: 'V1.6.2',
       date: '19-11-2566',
       logs: [
