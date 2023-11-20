@@ -123,6 +123,7 @@ export class Doram extends CharacterBase {
       vct: 4,
       cd: 5,
       isMatk: true,
+      totalHit: 7,
       element: ElementType.Neutral,
       levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
