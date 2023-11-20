@@ -139,8 +139,64 @@ export class GitCross extends CharacterBase {
         return (300 + skillLevel * 150) * (baseLevel / 120) + totalAgi * 2 + jobLevel * 4;
       },
     },
+    {
+      label: 'Cross Ripper Slasher Lv5',
+      name: 'Cross Ripper Slasher',
+      value: 'Cross Ripper Slasher==5',
+      acd: 1,
+      fct: 0,
+      vct: 0,
+      cd: 0,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { level: baseLevel } = model;
+        const { totalAgi } = status;
+        const spinCnt = this.activeSkillLv('Spin Count');
+
+        return (400 + skillLevel * 80) * (baseLevel / 100) + totalAgi * spinCnt;
+      },
+    },
+    {
+      label: '[Improved] Cross Ripper Slasher Lv5',
+      name: 'Cross Ripper Slasher',
+      value: '[Improved] Cross Ripper Slasher==5',
+      acd: 0.3,
+      fct: 0,
+      vct: 0,
+      cd: 0.2,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { level: baseLevel } = model;
+        const { totalAgi } = status;
+        const spinCnt = this.activeSkillLv('Spin Count');
+
+        return skillLevel * 80 * (baseLevel / 100) + 200 * spinCnt + totalAgi * 3;
+      },
+    },
   ];
-  protected _activeSkillList: ActiveSkillModel[] = [DarkClaw];
+
+  protected _activeSkillList: ActiveSkillModel[] = [
+    DarkClaw,
+    {
+      inputType: 'dropdown',
+      label: 'Spin Count',
+      name: 'Spin Count',
+      dropdown: [
+        { label: '-', isUse: false, value: 0 },
+        { label: '1', isUse: true, value: 1 },
+        { label: '2', isUse: true, value: 2 },
+        { label: '3', isUse: true, value: 3 },
+        { label: '4', isUse: true, value: 4 },
+        { label: '5', isUse: true, value: 5 },
+        { label: '6', isUse: true, value: 6 },
+        { label: '7', isUse: true, value: 7 },
+        { label: '8', isUse: true, value: 8 },
+        { label: '9', isUse: true, value: 9 },
+        { label: '10', isUse: true, value: 10 },
+      ],
+    },
+  ];
+
   protected _passiveSkillList: PassiveSkillModel[] = [];
 
   constructor() {
