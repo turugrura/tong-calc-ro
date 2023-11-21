@@ -1428,6 +1428,41 @@
       ]
     }
   },
+  "2027": {
+    "id": 2027,
+    "aegisName": "Staff_170",
+    "name": "Sunflower Kid [2]",
+    "unidName": "Staff",
+    "resName": "해바라기소년",
+    "description": "ไม้เท้าที่รู้จักกันว่าใช้โดย Archmage Nazohina เวทมนตร์ที่ล้นออกมาจากไม้เท้าช่วยทำให้ดอกไม้ไม่เหี่ยวเฉา\nINT + 5, MATK + 320\nเพิ่ม MATK ทีละ + 1% ต่อระดับ Refine 2 ระดับ\nลดการดีเลย์หลังร่ายสกิล 1% ต่อระดับ Refine 1 ระดับ \nทำลายไม่ได้\nประเภท : ^777777Two-Handed Staff^000000 โจมตี : ^777777150^000000\nน้ำหนัก : ^777777150^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nติดตั้ง : ^777777Warlock^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 266,
+    "itemLevel": 4,
+    "attack": 150,
+    "defense": null,
+    "weight": 150,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Warlock"
+    ],
+    "script": {
+      "int": [
+        "5"
+      ],
+      "matk": [
+        "320"
+      ],
+      "matkPercent": [
+        "2---1"
+      ],
+      "acd": [
+        "1---1"
+      ]
+    }
+  },
   "2048": {
     "id": 2048,
     "aegisName": "Iron_Staff",
@@ -8259,6 +8294,224 @@
       ]
     }
   },
+  "4982": {
+    "id": 4982,
+    "aegisName": "Reactor_A_STR",
+    "name": "STR Supplement Reactor",
+    "unidName": "STR Supplement Reactor",
+    "resName": "리액토_보조",
+    "description": "ทุก Base STR 10, เพิ่ม ATK ทีละ +5\nเมื่ออัพเกรดขั้น 7, เพิ่ม ATK ขึ้นอีก +10",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<A-Str>",
+    "script": {
+      "atk": [
+        "SUM[str==10]---5",
+        "7===10"
+      ]
+    }
+  },
+  "4983": {
+    "id": 4983,
+    "aegisName": "Reactor_A_INT",
+    "name": "INT Supplement Reactor",
+    "unidName": "INT Supplement Reactor",
+    "resName": "리액토_보조",
+    "description": "ทุกๆ Base INT 10,เพิ่ม MATK ทีละ +5\nเมื่ออัพเกรดตั้งแต่ขั้น 7 ขึ้นไป,เพิ่ม MATK ขึ้นอีก +10",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<A-Int>",
+    "script": {
+      "matk": [
+        "SUM[int==10]---5",
+        "7===10"
+      ]
+    }
+  },
+  "4984": {
+    "id": 4984,
+    "aegisName": "Reactor_A_DEF",
+    "name": "DEF Supplement Reactor",
+    "unidName": "DEF Supplement Reactor",
+    "resName": "리액토_보조",
+    "description": "DEF + 100.",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<A-Def>",
+    "script": {
+      "def": [
+        "100"
+      ]
+    }
+  },
+  "4985": {
+    "id": 4985,
+    "aegisName": "Reactor_A_AVOI",
+    "name": "Perfect Dodge Supplement Reactor",
+    "unidName": "Perfect Dodge Supplement Reactor",
+    "resName": "리액토_보조",
+    "description": "Perfect Dodge + 3.",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<A-Avoid>",
+    "script": {
+      "perfectDodge": [
+        "3"
+      ]
+    }
+  },
+  "4986": {
+    "id": 4986,
+    "aegisName": "Reactor_A_ATK",
+    "name": "Attack Supplement Reactor",
+    "unidName": "Attack Supplement Reactor",
+    "resName": "리액토_보조",
+    "description": "ATK + 20.",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<A-Atk>",
+    "script": {
+      "atk": [
+        "20"
+      ]
+    }
+  },
+  "4987": {
+    "id": 4987,
+    "aegisName": "Reactor_A_MATK",
+    "name": "Magic Supplement Reactor",
+    "unidName": "Magic Supplement Reactor",
+    "resName": "리액토_보조",
+    "description": "MATK + 20.",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<A-Matk>",
+    "script": {
+      "matk": [
+        "20"
+      ]
+    }
+  },
+  "4988": {
+    "id": 4988,
+    "aegisName": "Reactor_A_MHP",
+    "name": "MHP Supplement Reactor",
+    "unidName": "MHP Supplement Reactor",
+    "resName": "리액토_보조",
+    "description": "MHP + 5%.",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<A-MaxHP>",
+    "script": {
+      "hpPercent": [
+        "5"
+      ]
+    }
+  },
+  "4989": {
+    "id": 4989,
+    "aegisName": "Reactor_A_MSP",
+    "name": "MSP Supplement Reactor",
+    "unidName": "MSP Supplement Reactor",
+    "resName": "리액토_보조",
+    "description": "MSP + 3%.",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<A-MaxSP>",
+    "script": {
+      "spPercent": [
+        "3"
+      ]
+    }
+  },
+  "4991": {
+    "id": 4991,
+    "aegisName": "Reactor_A_ASPD",
+    "name": "ASPD Supplement Reactor",
+    "unidName": "ASPD Supplement Reactor",
+    "resName": "리액토_보조",
+    "description": "ASPD + 1.",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<A-ASPD>",
+    "script": {
+      "aspd": [
+        "1"
+      ]
+    }
+  },
   "4994": {
     "id": 4994,
     "aegisName": "Neev_STR_1",
@@ -10899,6 +11152,36 @@
       ],
       "Arrow Storm": [
         "EQUIP[White Wing Manteau&&White Wing Boots&&White Wing Brooch]===50"
+      ]
+    }
+  },
+  "15128": {
+    "id": 15128,
+    "aegisName": "Excelion_Suit",
+    "name": "Excelion Suit",
+    "unidName": "Cotton Shirt",
+    "resName": "엑셀리온슈츠",
+    "description": "Power Suit ที่สร้างขึ้นด้วยเทคโนโลยีที่หายไปกับศูนย์วิจัยที่พังลงไป\nVIT+6.\nเมื่อ Lv. 130 ขึ้นไป VIT + 4\nเพิ่ม MHP 4% ทุกๆ 3 อัพเกรด\nเมื่อสวมใส่กับ [Excelion Wing]\nลดดีเลย์หลังใช้สกิล 10%\nเมื่อ Lv. 130 ขึ้นไป ลดดีเลย์หลังใช้สกิลเพิ่มอีก 10%\nPerfect Dodge + 6, ไม่สามารถทำลายได้\nประเภท : ^777777Armor^000000 พลังป้องกัน : ^777777100^000000\nน้ำหนัก : ^777777100^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 100,
+    "weight": 100,
+    "requiredLevel": 99,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "vit": [
+        "6",
+        "SUM[level==130]===4"
+      ],
+      "hpPercent": [
+        "3---4"
       ]
     }
   },
@@ -13796,6 +14079,50 @@
       ]
     }
   },
+  "18170": {
+    "id": 18170,
+    "aegisName": "Narcis_Bow",
+    "name": "Narcissus Bow [2]",
+    "unidName": "Bow",
+    "resName": "Neev_Bow_Of_Rogue",
+    "description": "คันธนูของนักรบผู้กล้าหาญในการต่อสู้สมัยอดีตกาล\nดูกลมกลืนเข้ากับ Ancient Hero Boots\nทุกๆ การอัพเกรด 2 ขั้น ATK +10 \nทุกๆ การอัพเกรด 3 ขั้น เพิ่มความเสียหายจากการโจมตีกายภาพ ระยะไกล แรงขึ้น 4%\nเมื่อค่าอัพเกรดถึงขั้น 9, เพิ่มดาเมจ Severe Rainstorm 10%\nเมื่อค่าอัพเกรดถึงขั้น 11, ลด Cooldown ของ Severe Rainstorm 2 วินาที\nเมื่อโจมตีทางกายภาพระหว่างสวมใส่ร่วมกับ Ancient Hero Boots มีโอกาสที่ DEX +20, พลังโจมตีของธนู +20% เป็นเวลา 7 วินาที\nประเภท : ^777777Bow^000000 พลังโจมตี : ^777777180^000000\nน้ำหนัก : ^777777100^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Archer Class 3, Shadow Chaser^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 267,
+    "itemLevel": 4,
+    "attack": 180,
+    "defense": null,
+    "weight": 100,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Ranger",
+      "Wanderer",
+      "Minstrel",
+      "Shadow Chaser"
+    ],
+    "script": {
+      "atk": [
+        "2---10"
+      ],
+      "range": [
+        "3---4"
+      ],
+      "Severe Rainstorm": [
+        "9===10"
+      ],
+      "cd__Severe Rainstorm": [
+        "11===2"
+      ],
+      "chance__dex": [
+        "EQUIP[Ancient Hero Boots]20"
+      ],
+      "chance__bowRange": [
+        "EQUIP[Ancient Hero Boots]20"
+      ]
+    }
+  },
   "18174": {
     "id": 18174,
     "aegisName": "Hunter_Bow_IL",
@@ -15598,6 +15925,44 @@
       ]
     }
   },
+  "19157": {
+    "id": 19157,
+    "aegisName": "Droop_Gunslinger",
+    "name": "Drooping Gunslinger [1]",
+    "unidName": "Cap",
+    "resName": "늘어진건슬링거",
+    "description": "ตุ๊กตาที่จำลองทหารรับจ้างในตำนาน มีพลังทำลายล้างต่างกับลุคน่ารัก ๆ อย่างที่เห็น ใช้ [Gunslinger Scroll] เพื่อเสริมความสามารถได้\nAll Status +1, ลดปริมาณการใช้ SP ลง 10%\nเพิ่ม EXP ที่ได้รับจากมอนสเตอร์ 5% เพิ่มอัตราดร็อปไอเท็ม 5% \nเมื่ออัพเกรดถึงขั้น 9, ASPD +1\nเมื่ออัพเกรดถึงขั้น 12 เพิ่มความเร็วในการเคลื่อนที่\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^7777770^000000\nตำแหน่ง : ^777777Upper ^000000น้ำหนัก : ^77777720^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 519,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 20,
+    "requiredLevel": 1,
+    "location": "Upper",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "allStatus": [
+        "1"
+      ],
+      "spPercentCost": [
+        "10"
+      ],
+      "exp": [
+        "5"
+      ],
+      "itemDrop": [
+        "5"
+      ],
+      "aspd": [
+        "9===1"
+      ]
+    }
+  },
   "19162": {
     "id": 19162,
     "aegisName": "Scuba_Mask_K",
@@ -16300,6 +16665,41 @@
       "dex": [
         "3",
         "2---1"
+      ]
+    }
+  },
+  "19242": {
+    "id": 19242,
+    "aegisName": "Cat_Lace_Hairband_K",
+    "name": "Kitten Headdress [1]",
+    "unidName": "Hairband",
+    "resName": "고양이레이스머리띠",
+    "description": "ผ้าคาดผมที่ตกแต่งด้วยตุ๊กตาลูกแมวสุดน่ารัก \nยิ่งตกแต่งด้วยลูกไม้ ยิ่งทำให้ดูน่ารักมากยิ่งขึ้น \nเพิ่ม All State 1, ลด Delay หลังการโจมตี 5%\nเมื่ออัพเกรดถึงขั้น 9 ลด Variable Cast Time 10%\nเมื่ออัพเกรดถึงขั้น 12 การร่ายจะไม่ถูกขัด\nเมื่อสวมใส่ร่วมกับ [Blush] เพิ่ม Healing 5%\nเมื่อเลเวลตัวละครน้อยกว่า 100 : เพิ่มค่าประสบการณ์ที่ได้รับจากมอนสเตอร์ 10% \nเมื่อเลเวลตัวละครมากกว่า 100 ขึ้นไป : เพิ่มค่าประสบการณ์ที่ได้รับจากมอนสเตอร์ 4% \nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^77777720^000000\nตำแหน่ง : ^777777Upper ^000000น้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 20,
+    "weight": 10,
+    "requiredLevel": 1,
+    "location": "Upper",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "allStatus": [
+        "1"
+      ],
+      "aspdPercent": [
+        "5"
+      ],
+      "vct": [
+        "9===10"
+      ],
+      "exp": [
+        "4"
       ]
     }
   },
@@ -18195,6 +18595,41 @@
       ]
     }
   },
+  "20773": {
+    "id": 20773,
+    "aegisName": "Excelion_Wing",
+    "name": "Excelion Wing",
+    "unidName": "Garment",
+    "resName": "엑셀리온윙",
+    "description": "Power Wing ที่สร้างขึ้นด้วยเทคโนโลยีที่หายไปกับศูนย์วิจัยที่พังลงไป\nPerfect Dodge + 8.\nเมื่อ Lv. 130 ขึ้นไป เพิ่ม Perfect Dodge+2\nทุกการอัพเกรด 1 ขั้น FLEE + 2\n[เมื่อสวมใส่กับ Excelion Suit]\nลดดีเลย์หลังใช้สกิล 10%\nเมื่อ Lv. 130 ขึ้นไป ลดดีเลย์หลังใช้สกิลเพิ่มอีก 10%\nPerfect Dodge + 6, ไม่สามารถทำลายได้\nประเภท : ^777777Garment^000000 พลังป้องกัน : ^77777740^000000\nน้ำหนัก : ^77777790^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 515,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 40,
+    "weight": 90,
+    "requiredLevel": 99,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "perfectDodge": [
+        "8",
+        "SUM[level==130]===2",
+        "EQUIP[Excelion Suit]6"
+      ],
+      "flee": [
+        "1---2"
+      ],
+      "acd": [
+        "EQUIP[Excelion Suit]10",
+        "SUM[level==130]===10"
+      ]
+    }
+  },
   "20821": {
     "id": 20821,
     "aegisName": "Golden_Scarf",
@@ -19066,6 +19501,36 @@
         "9===20",
         "11===10",
         "EQUIP[Temporal Luk Boots||Modified Luk Boots]REFINE[boot==10]30"
+      ]
+    }
+  },
+  "21018": {
+    "id": 21018,
+    "aegisName": "Two_Hand_Spear_170",
+    "name": "Lindy Hop [2]",
+    "unidName": "Two-Handed Sword",
+    "resName": "린디합",
+    "description": "ดาบที่รู้จักกันว่าใช้โดย Berserker Liel กล่าวกันว่าหากกำลังมองเขาฆ่าศัตรู เหมือนจะรู้สึกถึงจังหวะที่เหมาะสม\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกประเภท 1% ต่อระดับ Refine 2 ระดับ\nเพิ่มความเร็วโจมตี (ลดดีเลย์หลังโจมตี 1% ต่อระดับ Refine 1 ระดับ)\nทำลายไม่ได้\nประเภท : ^777777Two-Handed Sword^000000 โจมตี : ^777777340^000000\nน้ำหนัก : ^777777340^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nติดตั้ง : ^7777773อาชีพ Swordman คลาส^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 258,
+    "itemLevel": 4,
+    "attack": 340,
+    "defense": null,
+    "weight": 340,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Rune Knight",
+      "Royal Guard"
+    ],
+    "script": {
+      "p_class_all": [
+        "2---1"
+      ],
+      "aspdPercent": [
+        "1---1"
       ]
     }
   },
@@ -24667,7 +25132,7 @@
       "spPercent": [
         "EQUIP[Taekwon Shadow Weapon]2"
       ],
-      "spPercentConst": [
+      "spPercentCost": [
         "EQUIP[Taekwon Shadow Weapon]10"
       ]
     }
@@ -36345,6 +36810,38 @@
       ]
     }
   },
+  "28226": {
+    "id": 28226,
+    "aegisName": "Revenger",
+    "name": "Avenger [2]",
+    "unidName": "Grenade Launcher",
+    "resName": "리벤져",
+    "description": "ปืนยิงลูกระเบิดที่ได้สมญานามว่า 'ผู้ล้างแค้น'\nเพิ่มพลังโจมตีทางกายภาพระยะไกล 20%\n เมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ของสกิล [Dragon Tail] 15%\n เมื่ออัพเกรดถึงขั้น 9 ลด Cooldown ของสกิล [Howling Mine] 1 วินาที\nประเภท : ^777777Grenade Launcher^000000 พลังโจมตี : ^777777350^000000\nน้ำหนัก : ^777777180^000000\nเลเวลอาวุธ : ^7777773^000000\nเลเวลอาวุธ : ^777777120^000000\nอาชีพที่ใส่ได้ : ^777777Gunslinger Branch^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 277,
+    "itemLevel": 3,
+    "attack": 350,
+    "defense": null,
+    "weight": 180,
+    "requiredLevel": 120,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Gunslinger"
+    ],
+    "script": {
+      "range": [
+        "20"
+      ],
+      "Dragon Tail": [
+        "7===15"
+      ],
+      "cd__Howling Mine": [
+        "9===1"
+      ]
+    }
+  },
   "28241": {
     "id": 28241,
     "aegisName": "Calf_Diamondback",
@@ -38102,6 +38599,42 @@
       ],
       "Earth Drive": [
         "1---7"
+      ]
+    }
+  },
+  "28941": {
+    "id": 28941,
+    "aegisName": "Excelion_Shield",
+    "name": "Excelion Shield [1]",
+    "unidName": "Shield",
+    "resName": "엑셀리온쉴드",
+    "description": "MDEF + 5\nMaxHP+1%, MaxSP+1%\n--------------------------\nเมื่อ BaseLv130 ขึ้นไป, \nMaxHP+1%, MaxSP+1% เพิ่มเติม\n--------------------------\nทุก ๆ การอัพเกรด 3 ขั้น\nMaxHP+1%, MaxSP+1% เพิ่มเติม\nประเภท : ^777777Shield^000000 พลังป้องกัน : ^77777795^000000\nน้ำหนัก : ^777777120^000000 \nเลเวลที่ต้องการ : ^777777100^000000 \nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 514,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 95,
+    "weight": 120,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "mdef": [
+        "5"
+      ],
+      "hpPercent": [
+        "1",
+        "SUM[level==130]===1",
+        "3---1"
+      ],
+      "spPercent": [
+        "1",
+        "SUM[level==130]===1",
+        "3---1"
       ]
     }
   },
@@ -45031,6 +45564,52 @@
       ],
       "atkPercent": [
         "EQUIP[ขั้นอัพเกรดของ Illusion Pole Axe&&Illusion Shoes]REFINE[weapon,boot==18]10"
+      ]
+    }
+  },
+  "32018": {
+    "id": 32018,
+    "aegisName": "Undine_Spear_K",
+    "name": "Aquatic Spear [2]",
+    "unidName": "Spear",
+    "resName": "운디네의창",
+    "description": "หอกที่ทำให้นึกถึงเกลียวคลื่นที่โหมกระหน่ำแต่งดงาม\nว่ากันว่าเป็นอาวุธที่ได้รับพรจากจิตวิญญาณแห่งน้ำ ซึ่งวีรบุรุษในยุคโบราณเคยใช้ \nดูกลมกลืนเข้ากับ Ancient Hero Boots\n\nทุกๆ การอัพเกรด 2 ขั้น ATK + 10\nทุกๆ การอัพเกรด 3 ขั้น เพิ่ม Damage กายภาพ ระยะไกล 4%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่มดาเมจสกิล Cannon Spear, Banishing Point 15%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม ASPD 10%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่มดาเมจสกิล Cannon Spear, Banishing Point 20%\nเมื่อโจมตีทางกายภาพในระหว่างที่สวมใส่ Ancient Hero Boots จะมีโอกาสที่ STR +20, ATK + 15% เป็นเวลา 7 วินาที \n\nประเภท : ^777777One-Handed Spear^000000 พลังโจมตี : ^777777180^000000\nน้ำหนัก : ^777777120^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Royal Guard^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 259,
+    "itemLevel": 4,
+    "attack": 180,
+    "defense": null,
+    "weight": 120,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Royal Guard"
+    ],
+    "script": {
+      "atk": [
+        "2---10"
+      ],
+      "range": [
+        "3---4"
+      ],
+      "Cannon Spear": [
+        "7===15",
+        "11===20"
+      ],
+      "Banishing Point": [
+        "7===15",
+        "11===20"
+      ],
+      "aspdPercent": [
+        "9===10"
+      ],
+      "chance__str": [
+        "EQUIP[Ancient Hero Boots]===20"
+      ],
+      "chance__atkPercent": [
+        "EQUIP[Ancient Hero Boots]===15"
       ]
     }
   },
@@ -51982,6 +52561,68 @@
       ],
       "fct": [
         "EQUIP[Modification Orb (Lucky Strike)]3"
+      ]
+    }
+  },
+  "490182": {
+    "id": 490182,
+    "aegisName": "Immortal_Dog_Tag_IN",
+    "name": "Immortal Dog Tag [1]",
+    "unidName": "Immortal Dog Tag",
+    "resName": "Immortal_Dog_Tag",
+    "description": "ATK + 40, MATK + 40\nลดความเสียหายของ Monster เผ่า Undead 4%\n\nเมื่อสวมใส่กับ Juliette D Rachel,\nทุกการอัพเกรดอาวุธ 1 ขั้น, ดาเมจทางกายภาพที่สร้างต่อศัตรูทุกประเภท + 1%\nเมื่ออัพเกรดอาวุธตั้งแต่ 10 ขึ้นไป, เมื่อโจมตีทางกายภาพ มีโอกาสเล็กน้อยที่จะเพิ่ม AGI +20 เป็นเวลา 10 วินาที\nเมื่ออัพเกรดอาวุธตั้งแต่ 12 ขึ้นไป, ลดดีเลย์หลังใช้สกิล 5%, เพิ่มดาเมจทางกายภาพระยะไกล + 8%\n\nเมื่อสวมใส่กับ Sunflower Kid,\nทุกการอัพเกรดอาวุธ 1 ขั้น, เพิ่มดาเมจ Crimson Rock + 2%\nเมื่ออัพเกรดอาวุธตั้งแต่ 10 ขึ้นไป, เมื่อโจมตีทางเวทย์ มีโอกาสเล็กน้อยที่จะเพิ่มดาเมจทางเวทย์ธาตุ Fire +15% เป็นเวลา 10 วินาที\nเมื่ออัพเกรดอาวุธตั้งแต่ 12 ขึ้นไป, MaxHP, MaxSP + 5%, เพิ่มดาเมจทางเวทย์ที่สร้างต่อศัตรูทุกขนาด + 10%\n\nเมื่อสวมใส่กับ Lindy Hop,\nทุกการอัพเกรดอาวุธ 1 ขั้น, Critical Damage + 1%\nเมื่ออัพเกรดอาวุธตั้งแต่ 10 ขึ้นไป, เมื่อโจมตีทางกายภาพทั่วไประยะใกล้, มีโอกาสเล็กน้อยที่จะ Auto Spell  Ignition Break Lv.3\nเมื่ออัพเกรดอาวุธตั้งแต่ 12 ขึ้นไป, เพิ่มดาเมจทางกายภาพที่สร้างต่อศัตรูประเภท Boss + 15%, ASPD + 2\n\nประเภท : ^777777Accessory^000000  พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 517,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atk": [
+        "40"
+      ],
+      "matk": [
+        "40"
+      ],
+      "p_class_all": [
+        "EQUIP[Juliette D Rachel]REFINE[weapon==1]---1"
+      ],
+      "acd": [
+        "EQUIP[Juliette D Rachel]REFINE[weapon==12]===5"
+      ],
+      "range": [
+        "EQUIP[Juliette D Rachel]REFINE[weapon==12]===8"
+      ],
+      "Crimson Rock": [
+        "EQUIP[Sunflower Kid]REFINE[weapon==1]---2"
+      ],
+      "chance__m_my_element_fire": [
+        "EQUIP[Sunflower Kid]REFINE[weapon==10]===15"
+      ],
+      "hpPercent": [
+        "EQUIP[Sunflower Kid]REFINE[weapon==12]===5"
+      ],
+      "spPercent": [
+        "EQUIP[Sunflower Kid]REFINE[weapon==12]===5"
+      ],
+      "m_size_all": [
+        "EQUIP[Sunflower Kid]REFINE[weapon==12]===10"
+      ],
+      "criDmg": [
+        "EQUIP[Lindy Hop]REFINE[weapon==1]---1"
+      ],
+      "p_class_boss": [
+        "EQUIP[Lindy Hop]REFINE[weapon==12]===15"
+      ],
+      "aspd": [
+        "EQUIP[Lindy Hop]REFINE[weapon==12]===2"
       ]
     }
   },

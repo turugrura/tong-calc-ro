@@ -678,7 +678,7 @@
             <div class="grid grid-nogutter">
               <div class="col-4">
                 <p-cascadeSelect
-                  [(ngModel)]="model.rawOptionTxts[0]"
+                  [(ngModel)]="model.rawOptionTxts[itemOptionNumber.W_Left_1]"
                   [disabled]="!model.weapon"
                   [options]="optionList"
                   optionValue="value"
@@ -693,7 +693,7 @@
               </div>
               <div class="col-4">
                 <p-cascadeSelect
-                  [(ngModel)]="model.rawOptionTxts[1]"
+                  [(ngModel)]="model.rawOptionTxts[itemOptionNumber.W_Left_2]"
                   [disabled]="!model.weapon"
                   [options]="optionList"
                   optionValue="value"
@@ -708,7 +708,7 @@
               </div>
               <div class="col-4">
                 <p-cascadeSelect
-                  [(ngModel)]="model.rawOptionTxts[2]"
+                  [(ngModel)]="model.rawOptionTxts[itemOptionNumber.W_Left_3]"
                   [disabled]="!model.weapon"
                   [options]="optionList"
                   optionValue="value"
@@ -965,7 +965,7 @@
             <div class="grid grid-nogutter">
               <div class="col-4">
                 <p-cascadeSelect
-                  [(ngModel)]="model.rawOptionTxts[3]"
+                  [(ngModel)]="model.rawOptionTxts[itemOptionNumber.W_Right_1]"
                   [disabled]="!model.leftWeapon || !model.weapon"
                   [options]="optionList"
                   optionValue="value"
@@ -980,7 +980,7 @@
               </div>
               <div class="col-4">
                 <p-cascadeSelect
-                  [(ngModel)]="model.rawOptionTxts[4]"
+                  [(ngModel)]="model.rawOptionTxts[itemOptionNumber.W_Right_2]"
                   [disabled]="!model.leftWeapon || !model.weapon"
                   [options]="optionList"
                   optionValue="value"
@@ -995,7 +995,7 @@
               </div>
               <div class="col-4">
                 <p-cascadeSelect
-                  [(ngModel)]="model.rawOptionTxts[5]"
+                  [(ngModel)]="model.rawOptionTxts[itemOptionNumber.W_Right_3]"
                   [disabled]="!model.leftWeapon || !model.weapon"
                   [options]="optionList"
                   optionValue="value"
@@ -1034,9 +1034,9 @@
           [(enchant2Id)]="model2.weaponEnchant1"
           [(enchant3Id)]="model2.weaponEnchant2"
           [(enchant4Id)]="model2.weaponEnchant3"
-          [(option1Value)]="model2.rawOptionTxts[0]"
-          [(option2Value)]="model2.rawOptionTxts[1]"
-          [(option3Value)]="model2.rawOptionTxts[2]"
+          [(option1Value)]="model2.rawOptionTxts[itemOptionNumber.W_Left_1]"
+          [(option2Value)]="model2.rawOptionTxts[itemOptionNumber.W_Left_2]"
+          [(option3Value)]="model2.rawOptionTxts[itemOptionNumber.W_Left_3]"
           (selectItemChange)="onCompareItemChange()"
           (optionChange)="onCompareItemChange()"
         ></app-equipment>
@@ -1113,6 +1113,36 @@
             </div>
           </ng-template>
         </p-dropdown>
+      </div>
+      <div class="col-3" [hidden]="!(itemTotalOptionMap['shield'] >= 1)">
+        <p-cascadeSelect
+          [(ngModel)]="model.rawOptionTxts[itemOptionNumber.Shield_1]"
+          [disabled]="!model.shield"
+          [options]="optionList"
+          optionValue="value"
+          optionGroupLabel="label"
+          optionLabel="label"
+          [optionGroupChildren]="['children', 'children', 'children']"
+          placeholder="Option 1"
+          [showClear]="true"
+          (onChange)="onOptionChange()"
+          (onClear)="onOptionChange()"
+        ></p-cascadeSelect>
+      </div>
+      <div class="col-3" [hidden]="!(itemTotalOptionMap['shield'] >= 2)">
+        <p-cascadeSelect
+          [(ngModel)]="model.rawOptionTxts[itemOptionNumber.Shield_2]"
+          [disabled]="!model.shield"
+          [options]="optionList"
+          optionValue="value"
+          optionGroupLabel="label"
+          optionLabel="label"
+          [optionGroupChildren]="['children', 'children', 'children']"
+          placeholder="Option 2"
+          [showClear]="true"
+          (onChange)="onOptionChange()"
+          (onClear)="onOptionChange()"
+        ></p-cascadeSelect>
       </div>
     </div>
 
@@ -1194,8 +1224,41 @@
               </ng-template>
             </p-dropdown>
           </div>
-          <div class="col-8"></div>
-          <div class="col-4">
+          <div class="col-8">
+            <div class="grid grid-nogutter">
+              <div class="col-6" [hidden]="!(itemTotalOptionMap['headUpper'] >= 1)">
+                <p-cascadeSelect
+                  [(ngModel)]="model.rawOptionTxts[itemOptionNumber.H_Upper_1]"
+                  [disabled]="!model.headUpper"
+                  [options]="optionList"
+                  optionValue="value"
+                  optionGroupLabel="label"
+                  optionLabel="label"
+                  [optionGroupChildren]="['children', 'children', 'children']"
+                  placeholder="Option 1"
+                  [showClear]="true"
+                  (onChange)="onOptionChange()"
+                  (onClear)="onOptionChange()"
+                ></p-cascadeSelect>
+              </div>
+              <div class="col-6" [hidden]="!(itemTotalOptionMap['headUpper'] >= 2)">
+                <p-cascadeSelect
+                  [(ngModel)]="model.rawOptionTxts[itemOptionNumber.H_Upper_2]"
+                  [disabled]="!model.headUpper"
+                  [options]="optionList"
+                  optionValue="value"
+                  optionGroupLabel="label"
+                  optionLabel="label"
+                  [optionGroupChildren]="['children', 'children', 'children']"
+                  placeholder="Option 2"
+                  [showClear]="true"
+                  (onChange)="onOptionChange()"
+                  (onClear)="onOptionChange()"
+                ></p-cascadeSelect>
+              </div>
+            </div>
+          </div>
+          <div class="col-4" [hidden]="headUpperEnchant3List.length === 0 || !model.headUpper">
             <p-dropdown
               inputId="headUpperEnchant1"
               [autoDisplayFirst]="false"
@@ -1223,7 +1286,7 @@
               </ng-template>
             </p-dropdown>
           </div>
-          <div class="col-4">
+          <div class="col-4" [hidden]="headUpperEnchant3List.length === 0 || !model.headUpper">
             <p-dropdown
               inputId="headUpperEnchant2"
               [autoDisplayFirst]="false"
@@ -1251,7 +1314,7 @@
               </ng-template>
             </p-dropdown>
           </div>
-          <div class="col-4">
+          <div class="col-4" [hidden]="headUpperEnchant3List.length === 0 || !model.headUpper">
             <p-dropdown
               inputId="headUpperEnchant3"
               [autoDisplayFirst]="false"
@@ -1362,6 +1425,36 @@
           </ng-template>
         </p-dropdown>
       </div>
+      <div class="col-3" [hidden]="!(itemTotalOptionMap['headMiddle'] >= 1)">
+        <p-cascadeSelect
+          [(ngModel)]="model.rawOptionTxts[itemOptionNumber.H_Mid_1]"
+          [disabled]="!model.headMiddle"
+          [options]="optionList"
+          optionValue="value"
+          optionGroupLabel="label"
+          optionLabel="label"
+          [optionGroupChildren]="['children', 'children', 'children']"
+          placeholder="Option 1"
+          [showClear]="true"
+          (onChange)="onOptionChange()"
+          (onClear)="onOptionChange()"
+        ></p-cascadeSelect>
+      </div>
+      <div class="col-3" [hidden]="!(itemTotalOptionMap['headMiddle'] >= 2)">
+        <p-cascadeSelect
+          [(ngModel)]="model.rawOptionTxts[itemOptionNumber.H_Mid_2]"
+          [disabled]="!model.headMiddle"
+          [options]="optionList"
+          optionValue="value"
+          optionGroupLabel="label"
+          optionLabel="label"
+          [optionGroupChildren]="['children', 'children', 'children']"
+          placeholder="Option 2"
+          [showClear]="true"
+          (onChange)="onOptionChange()"
+          (onClear)="onOptionChange()"
+        ></p-cascadeSelect>
+      </div>
     </div>
     <div class="grid grid-nogutter item_label_compare" *ngIf="showCompareItemMap.headMiddle">
       <div class="col-12">
@@ -1412,7 +1505,7 @@
           </ng-template>
         </p-dropdown>
       </div>
-      <div class="col-3">
+      <div class="col-3" [hidden]="headLowerEnchant3List.length === 0 || !model.headLower">
         <p-dropdown
           inputId="headLowerEnchant1"
           [autoDisplayFirst]="false"
@@ -1440,7 +1533,7 @@
           </ng-template>
         </p-dropdown>
       </div>
-      <div class="col-3">
+      <div class="col-3" [hidden]="headLowerEnchant3List.length === 0 || !model.headLower">
         <p-dropdown
           inputId="headLowerEnchant2"
           [autoDisplayFirst]="false"
@@ -1468,7 +1561,7 @@
           </ng-template>
         </p-dropdown>
       </div>
-      <div class="col-3">
+      <div class="col-3" [hidden]="headLowerEnchant3List.length === 0 || !model.headLower">
         <p-dropdown
           inputId="headLowerEnchant3"
           [autoDisplayFirst]="false"
@@ -1586,8 +1679,41 @@
               </ng-template>
             </p-dropdown>
           </div>
-          <div class="col-8"></div>
-          <div class="col-4">
+          <div class="col-8">
+            <div class="grid grid-nogutter">
+              <div class="col-6" [hidden]="!(itemTotalOptionMap['armor'] >= 1)">
+                <p-cascadeSelect
+                  [(ngModel)]="model.rawOptionTxts[itemOptionNumber.Armor_1]"
+                  [disabled]="!model.armor"
+                  [options]="optionList"
+                  optionValue="value"
+                  optionGroupLabel="label"
+                  optionLabel="label"
+                  [optionGroupChildren]="['children', 'children', 'children']"
+                  placeholder="Option 1"
+                  [showClear]="true"
+                  (onChange)="onOptionChange()"
+                  (onClear)="onOptionChange()"
+                ></p-cascadeSelect>
+              </div>
+              <div class="col-6" [hidden]="!(itemTotalOptionMap['armor'] >= 2)">
+                <p-cascadeSelect
+                  [(ngModel)]="model.rawOptionTxts[itemOptionNumber.Armor_2]"
+                  [disabled]="!model.armor"
+                  [options]="optionList"
+                  optionValue="value"
+                  optionGroupLabel="label"
+                  optionLabel="label"
+                  [optionGroupChildren]="['children', 'children', 'children']"
+                  placeholder="Option 2"
+                  [showClear]="true"
+                  (onChange)="onOptionChange()"
+                  (onClear)="onOptionChange()"
+                ></p-cascadeSelect>
+              </div>
+            </div>
+          </div>
+          <div class="col-4" [hidden]="armorEnchant3List.length === 0 || !model.armor">
             <p-dropdown
               inputId="armorEnchant1"
               [autoDisplayFirst]="false"
@@ -1615,7 +1741,7 @@
               </ng-template>
             </p-dropdown>
           </div>
-          <div class="col-4">
+          <div class="col-4" [hidden]="armorEnchant3List.length === 0 || !model.armor">
             <p-dropdown
               inputId="armorEnchant2"
               [autoDisplayFirst]="false"
@@ -1643,7 +1769,7 @@
               </ng-template>
             </p-dropdown>
           </div>
-          <div class="col-4">
+          <div class="col-4" [hidden]="armorEnchant3List.length === 0 || !model.armor">
             <p-dropdown
               inputId="armorEnchant3"
               [autoDisplayFirst]="false"
@@ -1768,8 +1894,41 @@
               </ng-template>
             </p-dropdown>
           </div>
-          <div class="col-8"></div>
-          <div class="col-4">
+          <div class="col-8">
+            <div class="grid grid-nogutter">
+              <div class="col-6" [hidden]="!(itemTotalOptionMap['garment'] >= 1)">
+                <p-cascadeSelect
+                  [(ngModel)]="model.rawOptionTxts[itemOptionNumber.Garment_1]"
+                  [disabled]="!model.garment"
+                  [options]="optionList"
+                  optionValue="value"
+                  optionGroupLabel="label"
+                  optionLabel="label"
+                  [optionGroupChildren]="['children', 'children', 'children']"
+                  placeholder="Option 1"
+                  [showClear]="true"
+                  (onChange)="onOptionChange()"
+                  (onClear)="onOptionChange()"
+                ></p-cascadeSelect>
+              </div>
+              <div class="col-6" [hidden]="!(itemTotalOptionMap['garment'] >= 2)">
+                <p-cascadeSelect
+                  [(ngModel)]="model.rawOptionTxts[itemOptionNumber.Garment_2]"
+                  [disabled]="!model.garment"
+                  [options]="optionList"
+                  optionValue="value"
+                  optionGroupLabel="label"
+                  optionLabel="label"
+                  [optionGroupChildren]="['children', 'children', 'children']"
+                  placeholder="Option 2"
+                  [showClear]="true"
+                  (onChange)="onOptionChange()"
+                  (onClear)="onOptionChange()"
+                ></p-cascadeSelect>
+              </div>
+            </div>
+          </div>
+          <div class="col-4" [hidden]="garmentEnchant3List.length === 0 || !model.garment">
             <p-dropdown
               inputId="garmentEnchant1"
               [autoDisplayFirst]="false"
@@ -1797,7 +1956,7 @@
               </ng-template>
             </p-dropdown>
           </div>
-          <div class="col-4">
+          <div class="col-4" [hidden]="garmentEnchant3List.length === 0 || !model.garment">
             <p-dropdown
               inputId="garmentEnchant2"
               [autoDisplayFirst]="false"
@@ -1825,7 +1984,7 @@
               </ng-template>
             </p-dropdown>
           </div>
-          <div class="col-4">
+          <div class="col-4" [hidden]="garmentEnchant3List.length === 0 || !model.garment">
             <p-dropdown
               inputId="garmentEnchant3"
               [autoDisplayFirst]="false"
@@ -1951,7 +2110,7 @@
             </p-dropdown>
           </div>
           <div class="col-8"></div>
-          <div class="col-4">
+          <div class="col-4" [hidden]="bootEnchant3List.length === 0 || !model.boot">
             <p-dropdown
               inputId="bootEnchant1"
               [autoDisplayFirst]="false"
@@ -1979,7 +2138,7 @@
               </ng-template>
             </p-dropdown>
           </div>
-          <div class="col-4">
+          <div class="col-4" [hidden]="bootEnchant3List.length === 0 || !model.boot">
             <p-dropdown
               inputId="bootEnchant2"
               [autoDisplayFirst]="false"
@@ -2007,7 +2166,7 @@
               </ng-template>
             </p-dropdown>
           </div>
-          <div class="col-4">
+          <div class="col-4" [hidden]="bootEnchant3List.length === 0 || !model.boot">
             <p-dropdown
               inputId="bootEnchant3"
               [autoDisplayFirst]="false"
@@ -2115,10 +2274,40 @@
           </ng-template>
         </p-dropdown>
       </div>
+      <div class="col-3" [hidden]="!(itemTotalOptionMap['accRight'] >= 1)">
+        <p-cascadeSelect
+          [(ngModel)]="model.rawOptionTxts[itemOptionNumber.A_Right_1]"
+          [disabled]="!model.accRight"
+          [options]="optionList"
+          optionValue="value"
+          optionGroupLabel="label"
+          optionLabel="label"
+          [optionGroupChildren]="['children', 'children', 'children']"
+          placeholder="Option 1"
+          [showClear]="true"
+          (onChange)="onOptionChange()"
+          (onClear)="onOptionChange()"
+        ></p-cascadeSelect>
+      </div>
+      <div class="col-3" [hidden]="!(itemTotalOptionMap['accRight'] >= 2)">
+        <p-cascadeSelect
+          [(ngModel)]="model.rawOptionTxts[itemOptionNumber.A_Right_2]"
+          [disabled]="!model.accRight"
+          [options]="optionList"
+          optionValue="value"
+          optionGroupLabel="label"
+          optionLabel="label"
+          [optionGroupChildren]="['children', 'children', 'children']"
+          placeholder="Option 2"
+          [showClear]="true"
+          (onChange)="onOptionChange()"
+          (onClear)="onOptionChange()"
+        ></p-cascadeSelect>
+      </div>
       <div class="col-12">
         <div class="grid grid-nogutter">
           <div class="col-3"></div>
-          <div class="col-3">
+          <div class="col-3" [hidden]="accRightEnchant3List.length === 0 || !model.accRight">
             <p-dropdown
               inputId="accRightEnchant1"
               [autoDisplayFirst]="false"
@@ -2146,7 +2335,7 @@
               </ng-template>
             </p-dropdown>
           </div>
-          <div class="col-3">
+          <div class="col-3" [hidden]="accRightEnchant3List.length === 0 || !model.accRight">
             <p-dropdown
               inputId="accRightEnchant2"
               [autoDisplayFirst]="false"
@@ -2174,7 +2363,7 @@
               </ng-template>
             </p-dropdown>
           </div>
-          <div class="col-3">
+          <div class="col-3" [hidden]="accRightEnchant3List.length === 0 || !model.accRight">
             <p-dropdown
               inputId="accRightEnchant3"
               [autoDisplayFirst]="false"
@@ -2203,6 +2392,9 @@
             </p-dropdown>
           </div>
         </div>
+      </div>
+      <div class="col-12" [hidden]="!(accRightEnchant3List.length === 0 || !model.accRight)">
+        <div style="height: 2rem"></div>
       </div>
     </div>
     <div class="grid grid-nogutter item_label_compare" *ngIf="showCompareItemMap.accRight">
@@ -2280,11 +2472,41 @@
           </ng-template>
         </p-dropdown>
       </div>
+      <div class="col-3" [hidden]="!(itemTotalOptionMap['accLeft'] >= 1)">
+        <p-cascadeSelect
+          [(ngModel)]="model.rawOptionTxts[itemOptionNumber.A_Left_1]"
+          [disabled]="!model.accLeft"
+          [options]="optionList"
+          optionValue="value"
+          optionGroupLabel="label"
+          optionLabel="label"
+          [optionGroupChildren]="['children', 'children', 'children']"
+          placeholder="Option 1"
+          [showClear]="true"
+          (onChange)="onOptionChange()"
+          (onClear)="onOptionChange()"
+        ></p-cascadeSelect>
+      </div>
+      <div class="col-3" [hidden]="!(itemTotalOptionMap['accLeft'] >= 2)">
+        <p-cascadeSelect
+          [(ngModel)]="model.rawOptionTxts[itemOptionNumber.A_Left_2]"
+          [disabled]="!model.accLeft"
+          [options]="optionList"
+          optionValue="value"
+          optionGroupLabel="label"
+          optionLabel="label"
+          [optionGroupChildren]="['children', 'children', 'children']"
+          placeholder="Option 2"
+          [showClear]="true"
+          (onChange)="onOptionChange()"
+          (onClear)="onOptionChange()"
+        ></p-cascadeSelect>
+      </div>
 
       <div class="col-12">
         <div class="grid grid-nogutter">
           <div class="col-3"></div>
-          <div class="col-3">
+          <div class="col-3" [hidden]="accLeftEnchant3List.length === 0 || !model.accLeft">
             <p-dropdown
               inputId="accLeftEnchant1"
               [autoDisplayFirst]="false"
@@ -2312,7 +2534,7 @@
               </ng-template>
             </p-dropdown>
           </div>
-          <div class="col-3">
+          <div class="col-3" [hidden]="accLeftEnchant3List.length === 0 || !model.accLeft">
             <p-dropdown
               inputId="accLeftEnchant2"
               [autoDisplayFirst]="false"
@@ -2340,7 +2562,7 @@
               </ng-template>
             </p-dropdown>
           </div>
-          <div class="col-3">
+          <div class="col-3" [hidden]="accLeftEnchant3List.length === 0 || !model.accLeft">
             <p-dropdown
               inputId="accLeftEnchant3"
               [autoDisplayFirst]="false"
@@ -2392,7 +2614,7 @@
     </div>
 
     <!-- Pet -->
-    <div class="grid item_label_pet">
+    <div class="grid grid-nogutter py-3 item_label_pet">
       <div class="col-3">
         <p-dropdown
           inputId="pet"
@@ -2497,13 +2719,13 @@
       </div>
       <div class="col-3 item_label_shadow">
         <p-cascadeSelect
-          [(ngModel)]="model.rawOptionTxts[51]"
+          [(ngModel)]="model.rawOptionTxts[itemOptionNumber.SD_Wp_1]"
           [disabled]="!model.shadowWeapon"
           [options]="basicOptions"
           optionValue="value"
           optionGroupLabel="label"
           optionLabel="label"
-          [optionGroupChildren]="['children']"
+          [optionGroupChildren]="['children', 'children']"
           placeholder="Options"
           [showClear]="true"
           (onChange)="onOptionChange()"
@@ -2587,13 +2809,13 @@
       </div>
       <div class="col-3 item_label_shadow">
         <p-cascadeSelect
-          [(ngModel)]="model.rawOptionTxts[52]"
+          [(ngModel)]="model.rawOptionTxts[itemOptionNumber.SD_Ar_1]"
           [disabled]="!model.shadowArmor"
           [options]="basicOptions"
           optionValue="value"
           optionGroupLabel="label"
           optionLabel="label"
-          [optionGroupChildren]="['children']"
+          [optionGroupChildren]="['children', 'children']"
           placeholder="Options"
           [showClear]="true"
           (onChange)="onOptionChange()"
@@ -2677,13 +2899,13 @@
       </div>
       <div class="col-3 item_label_shadow">
         <p-cascadeSelect
-          [(ngModel)]="model.rawOptionTxts[53]"
+          [(ngModel)]="model.rawOptionTxts[itemOptionNumber.SD_Sh_1]"
           [disabled]="!model.shadowShield"
           [options]="basicOptions"
           optionValue="value"
           optionGroupLabel="label"
           optionLabel="label"
-          [optionGroupChildren]="['children']"
+          [optionGroupChildren]="['children', 'children']"
           placeholder="Options"
           [showClear]="true"
           (onChange)="onOptionChange()"
@@ -2767,13 +2989,13 @@
       </div>
       <div class="col-3 item_label_shadow">
         <p-cascadeSelect
-          [(ngModel)]="model.rawOptionTxts[54]"
+          [(ngModel)]="model.rawOptionTxts[itemOptionNumber.SD_B_1]"
           [disabled]="!model.shadowBoot"
           [options]="basicOptions"
           optionValue="value"
           optionGroupLabel="label"
           optionLabel="label"
-          [optionGroupChildren]="['children']"
+          [optionGroupChildren]="['children', 'children']"
           placeholder="Options"
           [showClear]="true"
           (onChange)="onOptionChange()"
@@ -2857,13 +3079,13 @@
       </div>
       <div class="col-3 item_label_shadow">
         <p-cascadeSelect
-          [(ngModel)]="model.rawOptionTxts[55]"
+          [(ngModel)]="model.rawOptionTxts[itemOptionNumber.SD_Ear_1]"
           [disabled]="!model.shadowEarring"
           [options]="basicOptions"
           optionValue="value"
           optionGroupLabel="label"
           optionLabel="label"
-          [optionGroupChildren]="['children']"
+          [optionGroupChildren]="['children', 'children']"
           placeholder="Options"
           [showClear]="true"
           (onChange)="onOptionChange()"
@@ -2920,13 +3142,13 @@
       </div>
       <div class="col-3">
         <p-cascadeSelect
-          [(ngModel)]="model.rawOptionTxts[56]"
+          [(ngModel)]="model.rawOptionTxts[itemOptionNumber.SD_Pan_1]"
           [disabled]="!model.shadowPendant"
           [options]="basicOptions"
           optionValue="value"
           optionGroupLabel="label"
           optionLabel="label"
-          [optionGroupChildren]="['children']"
+          [optionGroupChildren]="['children', 'children']"
           placeholder="Options"
           [showClear]="true"
           (onChange)="onOptionChange()"

@@ -1,6 +1,7 @@
 import { ElementType } from '../constants/element-type.const';
 import { RaceType } from '../constants/race-type.const';
 import { DropdownModel } from '../models/dropdown.model';
+import { createBaseStatOptionList } from './create-base-stat-option-list';
 
 export const createExtraOptionList = () => {
   const atkTypes = ['Physical', 'Magical'];
@@ -11,7 +12,7 @@ export const createExtraOptionList = () => {
     Class: ['All', 'Normal', 'Boss'],
   };
 
-  const items: DropdownModel[] = [];
+  const items: (DropdownModel & { children: any[] })[] = [];
   for (const atkType of atkTypes) {
     const atk = atkType.at(0).toLowerCase();
     const item = {
@@ -50,7 +51,7 @@ export const createExtraOptionList = () => {
   }
 
   // No idea about programmatic
-  items.push({
+  items[1].children.push({
     label: 'My Magical Element',
     value: 'My Element',
     children: atkProps.Element.map((element) => {
@@ -78,16 +79,26 @@ export const createExtraOptionList = () => {
     ['Melee', 'melee', 1, 30, ' %'],
     ['CRI Rate', 'cri', 1, 30, ' %'],
     ['CRI Dmg', 'criDmg', 1, 30, ' %'],
+    ['ASPD', 'aspd', 1, 5],
     ['ASPD percent', 'aspdPercent', 1, 30, ' %'],
     ['Delay', 'acd', 1, 30, ' %'],
     ['VCT', 'vct', 1, 30, ' %'],
-    ['All Stat', 'allStatus', 1, 30],
   ];
+
+  const subTypeMap = {
+    Atk: 'Physical',
+    'Atk percent': 'Physical',
+    'Long Range': 'Physical',
+    Melee: 'Physical',
+    Matk: 'Magical',
+    'Matk percent': 'Magical',
+  };
 
   const VAL_CAP = 10;
   for (const [label, prop, rawMin, rawMax, suffix] of options) {
     const labelNoPercent = label.replace(' percent', '');
     const values = [] as { label: string; min: number; max: number }[];
+    const sign = label === 'Delay' || label === 'VCT' ? '-' : '+';
     for (let i = rawMin; i < rawMax; i += VAL_CAP) {
       const max = Math.min(i + VAL_CAP - 1, rawMax);
       values.push({ label: `${i} - ${max}`, min: i, max: max });
@@ -99,7 +110,7 @@ export const createExtraOptionList = () => {
       children = Array.from({ length: max - min + 1 }, (_, k) => {
         const num = k + min;
         return {
-          label: `${labelNoPercent} +${num}${suffix || ''}`,
+          label: `${labelNoPercent} ${sign}${num}${suffix || ''}`,
           value: `${prop}:${num}`,
         };
       });
@@ -113,7 +124,7 @@ export const createExtraOptionList = () => {
           children: Array.from({ length: max - min + 1 }, (_, k) => {
             const num = k + min;
             return {
-              label: `${labelNoPercent} +${num}${suffix || ''}`,
+              label: `${labelNoPercent} ${sign}${num}${suffix || ''}`,
               value: `${prop}:${num}`,
             };
           }),
@@ -126,8 +137,18 @@ export const createExtraOptionList = () => {
       label,
       children,
     };
-    items.push(item);
+
+    const subT = subTypeMap[label];
+    if (subT === 'Physical') {
+      items[0].children.push(item);
+    } else if (subT === 'Magical') {
+      items[1].children.push(item);
+    } else {
+      items.push(item);
+    }
   }
+
+  items.push(createBaseStatOptionList(1, 30));
 
   return items;
 };

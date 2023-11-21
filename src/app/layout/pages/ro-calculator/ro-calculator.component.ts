@@ -2,7 +2,12 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { debounceTime, delay, filter, finalize, forkJoin, mergeMap, of, Subject, Subscription, take, tap } from 'rxjs';
 import { BaseStateCalculator } from './base-state-calculator';
 import { Calculator } from './calculator';
-import { ItemTypeEnum, MainItemTypeSet, MainItemWithRelations } from './constants/item-type.enum';
+import {
+  ItemTypeEnum,
+  MainItemTypeSet,
+  MainItemWithRelations,
+  OptionableItemTypeSet,
+} from './constants/item-type.enum';
 import { ItemTypeId } from './constants/item.const';
 import { RoService } from 'src/app/demo/service/ro.service';
 import { ItemModel } from './models/item.model';
@@ -59,6 +64,8 @@ import { ChanceModel } from './models/chance-model';
 import { RaceType } from './constants/race-type.const';
 import { ElementType } from './constants/element-type.const';
 import { isNumber } from './utils';
+import { ExtraOptionTable } from './constants/extra-option-table';
+import { ItemOptionNumber } from './constants/item-option-number.enum';
 
 interface MonsterSelectItemGroup extends SelectItemGroup {
   items: any[];
@@ -88,6 +95,18 @@ const Characters: DropdownModel[] = [
 if (!environment.production) {
   Characters.push({ label: ClassID[17], value: 17, instant: new Oboro() });
 }
+
+const extraOptionList: [ItemTypeEnum, [ItemOptionNumber, ItemOptionNumber]][] = [
+  [ItemTypeEnum.shield, [ItemOptionNumber.Shield_1, ItemOptionNumber.Shield_2]],
+  [ItemTypeEnum.headUpper, [ItemOptionNumber.H_Upper_1, ItemOptionNumber.H_Upper_2]],
+  [ItemTypeEnum.headMiddle, [ItemOptionNumber.H_Mid_1, ItemOptionNumber.H_Mid_2]],
+  // [ItemTypeEnum.headLower, [ExtraOption.H_Low_1, ExtraOption.H_Low_2]],
+  [ItemTypeEnum.armor, [ItemOptionNumber.Armor_1, ItemOptionNumber.Armor_2]],
+  [ItemTypeEnum.garment, [ItemOptionNumber.Garment_1, ItemOptionNumber.Garment_2]],
+  // [ItemTypeEnum.boot, [ExtraOption.Boot_1, ExtraOption.Boot_2]],
+  [ItemTypeEnum.accLeft, [ItemOptionNumber.A_Left_1, ItemOptionNumber.A_Left_2]],
+  [ItemTypeEnum.accRight, [ItemOptionNumber.A_Right_1, ItemOptionNumber.A_Right_2]],
+];
 
 const waitRxjs = (second: number = 0.1) => {
   return of(null).pipe(delay(1000 * second), take(1));
@@ -291,6 +310,9 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   itemId = 0;
   itemBonus = {};
   itemDescription = '';
+
+  itemOptionNumber = ItemOptionNumber;
+  itemTotalOptionMap: Partial<Record<ItemTypeEnum, number>> = {};
 
   cols: {
     field: keyof BasicDamageSummaryModel | keyof SkillDamageSummaryModel | 'health' | 'monsterClass';
@@ -654,18 +676,42 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     });
 
     const calc = calculator;
-
     const rawOptionTxts = [...this.model.rawOptionTxts];
     if (compareModel) {
+      // if compare the item, should get options from its.
       const model2 = { ...this.model, ...compareModel };
       if (this.compareItemNames?.includes(ItemTypeEnum.weapon)) {
-        for (let i = 0; i <= 2; i++) {
+        for (let i = ItemOptionNumber.W_Left_1; i <= ItemOptionNumber.W_Left_3; i++) {
           rawOptionTxts[i] = this.model2.rawOptionTxts[i];
         }
       }
+
+      for (const [_itemType, [min, max]] of extraOptionList) {
+        if (this.compareItemNames?.includes(_itemType)) {
+          for (let i = min; i <= max; i++) {
+            rawOptionTxts[i] = this.model2.rawOptionTxts[i];
+          }
+        }
+      }
+
       calc.loadItemFromModel(model2);
     } else {
-      // calc.setModel(this.model);
+      // clean if the itemType not allow to have options
+      for (const [_itemType, [min, max]] of extraOptionList) {
+        const itemId = this.model[_itemType];
+
+        let startClear = 0;
+        if (itemId) {
+          const aegisName = this.items[itemId]?.aegisName;
+          startClear = ExtraOptionTable[aegisName] || 0;
+        }
+
+        for (let i = min + startClear; i <= max; i++) {
+          rawOptionTxts[i] = null;
+        }
+      }
+      this.model.rawOptionTxts = rawOptionTxts;
+
       calc.loadItemFromModel(this.model);
     }
     calc
@@ -925,6 +971,10 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     return MainItemTypeSet.has(itemType as any);
   }
 
+  private isOptionableItem(itemType: string) {
+    return OptionableItemTypeSet.has(itemType as any);
+  }
+
   updatePreset(name: string) {
     const currentPresets = this.getPresetList();
     const currentPreset = currentPresets.find((a) => a.value === name);
@@ -1076,6 +1126,22 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       const validValue = isAttrArray ? (Array.isArray(savedValue) ? savedValue : []) : savedValue ?? initialValue;
       model[key] = validValue;
     }
+
+    const rawOptionTxts = [] as string[];
+    // migrate
+    for (let i = 0; i <= 26; i++) {
+      if (model.rawOptionTxts[i]) {
+        rawOptionTxts[i] = model.rawOptionTxts[i];
+      }
+    }
+    for (let i = 51; i <= 56; i++) {
+      if (model.rawOptionTxts[i]) {
+        rawOptionTxts[i - 31] = model.rawOptionTxts[i];
+      }
+    }
+
+    model.rawOptionTxts = rawOptionTxts;
+
     this.model = model;
     // console.log('model', { ...model });
   }
@@ -1726,6 +1792,10 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       this.itemSlotsMap[itemType] = this.items[itemId]?.slots || 0;
       this.setEnchantList(itemId, itemType);
       this.clearCard(itemType);
+    }
+    if (this.isOptionableItem(itemType)) {
+      const itemAegisName = this.items[itemId]?.aegisName;
+      this.itemTotalOptionMap[itemType] = ExtraOptionTable[itemAegisName] || 0;
     }
 
     // console.log({ itemType, itemId, refine });

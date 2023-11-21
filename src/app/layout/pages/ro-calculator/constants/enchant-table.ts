@@ -316,6 +316,8 @@ const kingSmithMan = [EA._3, EA._4, EA._5, FS._5, FS._6, FS._7, Spell._3, Spell.
 const twinCannon = [Fatal._3, AttackDelay._3, Spell._4, EA._3, ...BaseState._3];
 
 const whiteWingSuit = [...tempOpts._1_3, ...BaseState._1_3];
+const excelion = ['Reactor_A_DEF', 'Reactor_A_AVOI', 'Reactor_A_ATK', 'Reactor_A_MATK', 'Reactor_A_MHP', 'Reactor_A_MSP', 'Reactor_A_ASPD'];
+const excelionSuit = ['Reactor_A_STR', 'Reactor_A_INT', ...excelion];
 
 const labHead2 = [
   Acute._2,
@@ -447,6 +449,8 @@ export const EnchantTable: EntTable[] = [
   { name: 'Dark_Rose', enchants: [null, null, malangdo, malangdo] },
   { name: 'Holy_Stick', enchants: [null, null, malangdo, malangdo] },
   { name: 'Katar_170', enchants: [null, null, malangdo, malangdo] },
+  { name: 'Two_Hand_Spear_170', enchants: [null, null, malangdo, malangdo] },
+  { name: 'Staff_170', enchants: [null, null, malangdo, malangdo] },
   { name: 'Cakram', enchants: [null, null, malangdo, malangdo] },
   { name: 'House_Auger', enchants: [null, null, malangdo, malangdo] },
   { name: 'Thorn_Staff_', enchants: [null, null, malangdo, malangdo] },
@@ -458,6 +462,7 @@ export const EnchantTable: EntTable[] = [
   { name: 'Death_Guidance', enchants: [null, null, malangdo, malangdo] },
   { name: 'Destruction_Rod', enchants: [null, null, malangdo, malangdo] },
   { name: 'Poison_Forged_Spear', enchants: [null, null, null, malangdo] },
+  { name: 'Revenger', enchants: [null, null, malangdo, malangdo] },
 
   { name: 'Golden_Ninja_Suit', enchants: [null, goldenSet, goldenSet, goldenSet] },
   { name: 'Golden_Scarf', enchants: [null, goldenSet, goldenSet, goldenSet] },
@@ -465,6 +470,9 @@ export const EnchantTable: EntTable[] = [
   { name: 'Tengu_Scroll', enchants: [null, BaseState._1_3, BaseState._1_3, BaseState._1_3] },
 
   { name: 'Fallen Angel Wing [1]', enchants: [null, eaFsSp15, eaFsSp15, eaFsSp15] },
+
+  { name: 'Excelion_Suit', enchants: [null, excelionSuit, excelionSuit, excelionSuit] },
+  { name: 'Excelion_Wing', enchants: [null, excelion, excelion, excelion] },
 
   { name: 'Racing_C_Mecha', enchants: [null, ['Racing_E_Mecha1', 'Racing_E_Mecha2', 'Racing_E_Mecha3', ...racing3rd], BaseState._1_4, BaseState._1_3] },
   { name: 'Racing_C_Gene', enchants: [null, ['Racing_E_Gene1', 'Racing_E_Gene2', 'Racing_E_Gene3', ...racing3rd], BaseState._1_4, BaseState._1_3] },
