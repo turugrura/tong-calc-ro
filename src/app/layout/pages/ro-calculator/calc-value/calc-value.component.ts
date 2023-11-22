@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { floor } from '../utils';
 
 @Component({
   selector: 'app-calc-value',
@@ -13,6 +14,7 @@ export class CalcValueComponent {
   @Input({ required: true }) max: number;
   @Input() totalHit: number;
 
+  @Input() showPercentDiff = false;
   @Input() enableCompare = false;
   @Input() isGreaterIsBetter = true;
   @Input() styleClass2: string;
@@ -58,5 +60,17 @@ export class CalcValueComponent {
   }
   get _max2() {
     return this.max2 || 0;
+  }
+
+  get _diffPercent() {
+    if (!this.isDisplayCompare || !this.showPercentDiff) return '';
+
+    const avg1 = (this._min + this.max) / 2;
+    const avg2 = (this._min2 + this.max2) / 2;
+
+    const percentage = ((avg2 - avg1) * 100) / avg1;
+    const prefix = percentage > 0 ? '+' : '';
+
+    return `(${prefix}${floor(percentage, 1)} %)`;
   }
 }

@@ -19,6 +19,7 @@
       <span *ngIf="!isDisplayRangeDmg2" class="text-lg font-medium px-1  {{ compareStyleClass }}"
         >{{ _max2 | number }}{{ unit }}</span
       >
+      <span [hidden]="!_diffPercent" class="text-lg font-medium px-1 {{ compareStyleClass }}">{{ _diffPercent }}</span>
     </span>
   </div>
 </div>

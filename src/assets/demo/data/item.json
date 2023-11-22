@@ -17306,6 +17306,47 @@
       ]
     }
   },
+  "19381": {
+    "id": 19381,
+    "aegisName": "Protect_cloth",
+    "name": "Protect Cloth",
+    "unidName": "Ribbon",
+    "resName": "Protect_cloth",
+    "description": "ผ้าคลุมที่พาดยาวจากช่วงคอลงมาจนถึงไหล่ ประดับด้วยวัสดุแข็งทำหน้าที่ราวกับเกราะคอยปกป้องไหล่เอาไว้\nแฝงไปด้วยความแข็งแกร่งจากเครื่องประดับและความพริ้วไหวอ่อนช้อยของตัวผ้า\nMaxHP+5%\n------------ \nเมื่อสวมใส่ร่วมกับ Protect Feathers ลดความเสียหายจาก Player +5%\nDEF+15 MDEF+2, VIT+2\n------ ------ \nเมื่อ Base VIT ตั้งแต่ 108 ขึ้นไป\nDEF+25 MDEF+3, VIT+3\n------------ \nเมื่อ Base VIT ตั้งแต่ 120 ขึ้นไป\nDEF+40 MDEF+10 VIT+5\nประเภท : ^777777Helm^000000 พลังป้องกัน :^7777770^000000\nตำแหน่ง : ^777777Lower^000000 น้ำหนัก :^777777100^000000\nเลเวลที่ต้องการ :^77777790^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 100,
+    "requiredLevel": null,
+    "location": "Lower",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "hpPercent": [
+        "5"
+      ],
+      "def": [
+        "EQUIP[Protect Feathers]15",
+        "SUM[vit==108]===25",
+        "SUM[vit==120]===40"
+      ],
+      "mdef": [
+        "EQUIP[Protect Feathers]2",
+        "SUM[vit==108]===3",
+        "SUM[vit==120]===10"
+      ],
+      "vit": [
+        "EQUIP[Protect Feathers]2",
+        "SUM[vit==108]===3",
+        "SUM[vit==120]===5"
+      ]
+    }
+  },
   "19396": {
     "id": 19396,
     "aegisName": "Racing_C_Star",
@@ -19165,6 +19206,38 @@
       ],
       "m_race_demon": [
         "2---1"
+      ]
+    }
+  },
+  "20949": {
+    "id": 20949,
+    "aegisName": "Skin_Of_Ladon_J",
+    "name": "Ladon's Skin [1]",
+    "unidName": "Hood",
+    "resName": "Skin_Of_Ladon",
+    "description": "ผิวหนังของมังกรสีน้ำตาล 100 หัวที่คอยปกปักษ์แอปเปิลทองคำ\n\nMDEF +10\nลด Damage ที่ได้รับจากมอนสเตอร์ประเภท Brute, Demi-Human 5%\nลด Damage ที่ได้รับจาก Player ประเภท Doram 5%\nลด Damage ที่ได้รับจากการโจมตีธาตุ Wind, Earth 5%\n\nเมื่ออัพเกรดตั้งแต่ 7 ขึ้นไป,\nเมื่อกำจัดมอนสเตอร์ด้วยการโจมตีทางกายภาพ SP +10\n\nเมื่ออัพเกรดตั้งแต่ 8 ขึ้นไป,\nเมื่อ Base VIT และ AGI รวมกันได้ทุก ๆ 20 หน่วย \nATK +10, HIT +2\n\nเมื่ออัพเกรดตั้งแต่ 9 ขึ้นไป,\nเมื่อกำจัดมอนสเตอร์ด้วยการโจมตีทางกายภาพ SP +10\nประเภท : ^777777Garment^000000 พลังป้องกัน : ^77777715^000000\nน้ำหนัก : ^77777760^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 515,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 15,
+    "weight": 60,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "mdef": [
+        "10"
+      ],
+      "atk": [
+        "SUM[vit,agi==20]---10"
+      ],
+      "hit": [
+        "SUM[vit,agi==20]---2"
       ]
     }
   },
@@ -35420,6 +35493,31 @@
       ]
     }
   },
+  "27351": {
+    "id": 27351,
+    "aegisName": "Firm_Deleter2_Card",
+    "name": "Rigid Sky Deleter Card",
+    "unidName": "Rigid Sky Deleter Card",
+    "resName": "이름없는카드",
+    "description": "MHP + 5%\nเมื่อใช้ร่วมกับ Bungisngis Card,\nMHP + 5% เพิ่มเติม\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Headgear^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 769,
+    "cardPrefix": "of Dragon Heart",
+    "script": {
+      "hpPercent": [
+        "5",
+        "EQUIP[Bungisngis Card]5"
+      ]
+    }
+  },
   "27354": {
     "id": 27354,
     "aegisName": "Polluted_Raydric_Card",
@@ -38004,6 +38102,82 @@
       ],
       "p_element_undead": [
         "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]REFINE[weapon,armor,garment==30]===20"
+      ]
+    }
+  },
+  "28705": {
+    "id": 28705,
+    "aegisName": "Scarlet_Dagger",
+    "name": "Dagger of Crimson [2]",
+    "unidName": "Dagger",
+    "resName": "진홍의대거",
+    "description": "กริชที่เปล่งแสงสีแดงบนดาบ\nเพิ่ม ATK เท่ากับ (ระดับ Refine*ระดับ Refine) (สามารถ Refine ได้ถึง 15)\nเพิ่ม MATK เท่ากับ (ระดับ Refine*ระดับ Refine)/2 (สามารถ Refine ได้ถึง 15)\nตัวละครเลเวล 70 ขึ้นไป : ทุกครั้งที่ BaseLv เพิ่มขึ้น 10 เลเวล จะเพิ่ม ATK ทีละ +5 \nประเภท : ^777777Dagger^000000 โจมตี : ^77777755^000000\nน้ำหนัก : ^77777755^000000\nเลเวลอาวุธ : ^7777773^000000\nเลเวลที่ต้องการ : ^77777770^000000\nอาชีพที่ใส่ได้ : ^777777 Novice /Swordman /Mage /Archer /Merchant /Thief /Ninja / Soul Linker^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 256,
+    "itemLevel": 3,
+    "attack": 55,
+    "defense": null,
+    "weight": 55,
+    "requiredLevel": 70,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Novice",
+      "Swordman",
+      "Mage",
+      "Archer",
+      "Merchant",
+      "Thief",
+      "Ninja",
+      "Soul Linker"
+    ],
+    "script": {
+      "matk": [
+        "2===2",
+        "3===2",
+        "4===4",
+        "5===4",
+        "6===6",
+        "7===6",
+        "8===8",
+        "9===8",
+        "10===10",
+        "11===10",
+        "12===12",
+        "13===12",
+        "14===14",
+        "15===14"
+      ],
+      "atk": [
+        "1===1",
+        "2===3",
+        "3===5",
+        "4===7",
+        "5===9",
+        "6===11",
+        "7===13",
+        "8===15",
+        "9===17",
+        "10===19",
+        "11===21",
+        "12===23",
+        "13===25",
+        "14===27",
+        "15===29",
+        "level:80===5",
+        "level:90===5",
+        "level:100===5",
+        "level:110===5",
+        "level:120===5",
+        "level:130===5",
+        "level:140===5",
+        "level:150===5",
+        "level:160===5",
+        "level:170===5",
+        "level:180===5",
+        "level:190===5",
+        "level:200===5"
       ]
     }
   },
@@ -49925,6 +50099,35 @@
       ]
     }
   },
+  "420130": {
+    "id": 420130,
+    "aegisName": null,
+    "name": "Fumi Fan",
+    "unidName": "Accessory",
+    "resName": "풍신의부채",
+    "description": "พัดไม้หอมที่มีการตกแต่งด้วยลวดลายสวยงาม\nMaxHP + 5% , MaxSP + 5%. \nลดดาเมจที่ได้รับจากการโจมตีทางกายภาพระยะไกลลง 5%\nได้รับผลของสกิลฟื้นฟูแรงขึ้น 5%\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^77777720^000000\nตำแหน่ง : ^777777Lower^000000 น้ำหนัก : ^77777750^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 20,
+    "weight": 50,
+    "requiredLevel": 100,
+    "location": "Lower",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "hpPercent": [
+        "5"
+      ],
+      "spPercent": [
+        "5"
+      ]
+    }
+  },
   "420134": {
     "id": 420134,
     "aegisName": null,
@@ -54369,6 +54572,64 @@
       ]
     }
   },
+  "500001": {
+    "id": 500001,
+    "aegisName": "Boost_Sword",
+    "name": "Boosting Sword [2]",
+    "unidName": "Sword",
+    "resName": "빛나는검",
+    "description": "ดาบมือเดียวสุดพิเศษที่เตรียมไว้เพื่อทำให้นักผจญภัยพัฒนาไปอย่างรวดเร็ว\n\nATK +2%, ลดระยะเวลาร่ายแบบแปรผัน 3%\nทุก ๆ การอัพเกรด 1 ขั้น ATK +3\nทุก ๆ Base Lv. 15, ATK +3 (ใช้งานสูงสุดถึง Lv. 180)\nเมื่ออัพเกรดถึงขั้น 7 ทุก ๆ การเรียนรู้สกิล Learning Potion 1 เลเวล ลดระยะเวลาร่ายแบบแปรผันลงอีก 1%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพระยะไกล 10%\n\nเมื่อสวมใส่ร่วมกับ Attacker Booster (Plate/Manteau/Greaves/Ring),\nASPD +2, เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 10%\nทุก ๆ Base Lv. 15 เพิ่ม Damage สกิล Cart Tornado Attack 1% (ใช้งานสูงสุดถึง Lv. 180),\nเมื่อใช้สกิล Cart Boost เพิ่ม Damage สกิล Cart Tornado Attack ขึ้นอีก 20% เป็นเวลา 60 วินาที\n\nเมื่อสวมใส่ร่วมกับ Range Booster (Suit/Manteau/Boots/Brooch),\nMHP +10%, ลดระยะเวลาร่ายแบบแปรผัน 10%,\nทุก ๆ Base Lv. 15 เพิ่ม Damage สกิล Cart Cannon 1% (ใช้งานสูงสุดถึง Lv. 180),\nเมื่อใช้สกิล Cart Boost เพิ่ม Damage สกิล Cart Cannon ขึ้นอีก 20% เป็นเวลา 60 วินาที\nประเภท : ^777777Sword^000000 พลังโจมตี : ^777777160^000000\nน้ำหนัก : ^7777770^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Genetic Cls^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 257,
+    "itemLevel": 4,
+    "attack": 160,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Genetic Cls"
+    ],
+    "script": {
+      "atkPercent": [
+        "2"
+      ],
+      "vct": [
+        "3",
+        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]10",
+        "REFINE[7]LEARN_SKILL[Learning Potion==1]---1"
+      ],
+      "atk": [
+        "1---3",
+        "SUM[level==15]---3",
+        "SUM[level==195]===-3"
+      ],
+      "range": [
+        "9===10"
+      ],
+      "aspd": [
+        "EQUIP[Attacker Booster Plate&&Attacker Booster Manteau&&Attacker Booster Greaves&&Attacker Booster Ring]2"
+      ],
+      "p_size_all": [
+        "EQUIP[Attacker Booster Plate&&Attacker Booster Manteau&&Attacker Booster Greaves&&Attacker Booster Ring]10"
+      ],
+      "Cart Tornado": [
+        "EQUIP[Attacker Booster Plate&&Attacker Booster Manteau&&Attacker Booster Greaves&&Attacker Booster Ring]SUM[level==15]---1",
+        "EQUIP[Attacker Booster Plate&&Attacker Booster Manteau&&Attacker Booster Greaves&&Attacker Booster Ring]SUM[level==195]===-1",
+        "EQUIP[Attacker Booster Plate&&Attacker Booster Manteau&&Attacker Booster Greaves&&Attacker Booster Ring]ACTIVE_SKILL[Cart Boost]===20"
+      ],
+      "hpPercent": [
+        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]10"
+      ],
+      "Cart Cannon": [
+        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]SUM[level==15]---1",
+        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]SUM[level==195]===-1",
+        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]ACTIVE_SKILL[Cart Boost]===20"
+      ]
+    }
+  },
   "500003": {
     "id": 500003,
     "aegisName": "Light_Blade",
@@ -55602,6 +55863,45 @@
       ]
     }
   },
+  "560002": {
+    "id": 560002,
+    "aegisName": "Ray_Knuckle",
+    "name": "Ray Knuckle [2]",
+    "unidName": "Claw",
+    "resName": "섬광의손톱",
+    "description": "สนับมือติดใบมีดที่ทำจากแร่ส่องประกายซึ่งค้นพบจากอุกกาบาตชิ้นหนึ่ง\nดูกลมกลืนเข้ากับ Ancient Hero Boots \nทุก ๆ การอัพเกรด 2 ขั้น ATK +10 \nทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage สกิล Tiger Cannon 4%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Tiger Cannon ขึ้นอีก 15%\nเมื่ออัพเกรดถึงขั้น 11 ลด Cooldown สกิล Tiger Cannon 1 วินาที\nเมื่อสวมใส่ร่วมกับ Ancient Hero Boots เมื่อโจมตีทางกายภาพ มีโอกาสที่ STR +20, ATK +15% เป็นเวลา 7 วินาที\nประเภท : ^777777Knuckle^000000 พลังโจมตี : ^777777185^000000\nน้ำหนัก : ^77777770^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Sura^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 268,
+    "itemLevel": 4,
+    "attack": 185,
+    "defense": null,
+    "weight": 70,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Sura"
+    ],
+    "script": {
+      "atk": [
+        "2---10"
+      ],
+      "Tiger Cannon": [
+        "3---4",
+        "9===15"
+      ],
+      "cd__Tiger Cannon": [
+        "11===1"
+      ],
+      "chance__str": [
+        "EQUIP[Ancient Hero Boots]===20"
+      ],
+      "chance__atkPercent": [
+        "EQUIP[Ancient Hero Boots]===15"
+      ]
+    }
+  },
   "560008": {
     "id": 560008,
     "aegisName": "Up_Iron_Nail_K",
@@ -55647,6 +55947,52 @@
         "11===15"
       ],
       "str": [
+        "EQUIP[Great Hero Boots]===10"
+      ],
+      "atkPercent": [
+        "EQUIP[Great Hero Boots]===7"
+      ]
+    }
+  },
+  "560009": {
+    "id": 560009,
+    "aegisName": "Up_Ray_Knuckle",
+    "name": "Patent Ray Knuckle [2]",
+    "unidName": "Claw",
+    "resName": "Up_Ray_Knuckle",
+    "description": "สนับมือติดใบมีดที่ทำจากแร่ส่องประกายซึ่งค้นพบจากอุกกาบาตชิ้นหนึ่ง\nเริ่มเผยพลังอันแท้จริงออกมา เมื่อเห็นพลังที่แข็งแกร่งขึ้น\nดูกลมกลืนเข้ากับ Great Hero Boots\n\nทุก ๆ การอัพเกรด 2 ขั้น ATK +15\nทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage สกิล Tiger Cannon 4%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage สกิล Tiger Cannon ขึ้นอีก 15%, เพิ่ม Damage สกิล Hell Gate 20%\nเมื่ออัพเกรดถึงขั้น 9 ลด Cooldown สกิล Tiger Cannon 1 วินาที\nเมื่ออัพเกรดถึงขั้น 11, MHP +10%, เพิ่ม Damage สกิล Hell Gate ขึ้นอีก 15%\nเมื่อสวมใส่ร่วมกับ Great Hero Boots, VIT +10, ATK +7%\n\nประเภท : ^777777Knuckle^000000 พลังโจมตี : ^777777205^000000\nน้ำหนัก : ^77777780^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Sura^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 268,
+    "itemLevel": 4,
+    "attack": 205,
+    "defense": null,
+    "weight": 80,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Sura"
+    ],
+    "script": {
+      "atk": [
+        "2---15"
+      ],
+      "Tiger Cannon": [
+        "3---4",
+        "7===15"
+      ],
+      "Hell Gate": [
+        "7===20",
+        "11===15"
+      ],
+      "cd__Tiger Cannon": [
+        "9===1"
+      ],
+      "hpPercent": [
+        "11===10"
+      ],
+      "vit": [
         "EQUIP[Great Hero Boots]===10"
       ],
       "atkPercent": [

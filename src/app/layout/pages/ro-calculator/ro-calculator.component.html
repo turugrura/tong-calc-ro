@@ -1114,7 +1114,7 @@
           </ng-template>
         </p-dropdown>
       </div>
-      <div class="col-3" [hidden]="!(itemTotalOptionMap['shield'] >= 1)">
+      <div class="col-3" [hidden]="!(itemTotalOptionMap['shield'] >= 1) || !model.shield">
         <p-cascadeSelect
           [(ngModel)]="model.rawOptionTxts[itemOptionNumber.Shield_1]"
           [disabled]="!model.shield"
@@ -1129,7 +1129,7 @@
           (onClear)="onOptionChange()"
         ></p-cascadeSelect>
       </div>
-      <div class="col-3" [hidden]="!(itemTotalOptionMap['shield'] >= 2)">
+      <div class="col-3" [hidden]="!(itemTotalOptionMap['shield'] >= 2) || !model.shield">
         <p-cascadeSelect
           [(ngModel)]="model.rawOptionTxts[itemOptionNumber.Shield_2]"
           [disabled]="!model.shield"
@@ -1226,7 +1226,7 @@
           </div>
           <div class="col-8">
             <div class="grid grid-nogutter">
-              <div class="col-6" [hidden]="!(itemTotalOptionMap['headUpper'] >= 1)">
+              <div class="col-6" [hidden]="!(itemTotalOptionMap['headUpper'] >= 1) || !model.headUpper">
                 <p-cascadeSelect
                   [(ngModel)]="model.rawOptionTxts[itemOptionNumber.H_Upper_1]"
                   [disabled]="!model.headUpper"
@@ -1241,7 +1241,7 @@
                   (onClear)="onOptionChange()"
                 ></p-cascadeSelect>
               </div>
-              <div class="col-6" [hidden]="!(itemTotalOptionMap['headUpper'] >= 2)">
+              <div class="col-6" [hidden]="!(itemTotalOptionMap['headUpper'] >= 2) || !model.headUpper">
                 <p-cascadeSelect
                   [(ngModel)]="model.rawOptionTxts[itemOptionNumber.H_Upper_2]"
                   [disabled]="!model.headUpper"
@@ -1428,7 +1428,7 @@
           </ng-template>
         </p-dropdown>
       </div>
-      <div class="col-3" [hidden]="!(itemTotalOptionMap['headMiddle'] >= 1)">
+      <div class="col-3" [hidden]="!(itemTotalOptionMap['headMiddle'] >= 1) || !model.headMiddle">
         <p-cascadeSelect
           [(ngModel)]="model.rawOptionTxts[itemOptionNumber.H_Mid_1]"
           [disabled]="!model.headMiddle"
@@ -1443,7 +1443,7 @@
           (onClear)="onOptionChange()"
         ></p-cascadeSelect>
       </div>
-      <div class="col-3" [hidden]="!(itemTotalOptionMap['headMiddle'] >= 2)">
+      <div class="col-3" [hidden]="!(itemTotalOptionMap['headMiddle'] >= 2) || !model.headMiddle">
         <p-cascadeSelect
           [(ngModel)]="model.rawOptionTxts[itemOptionNumber.H_Mid_2]"
           [disabled]="!model.headMiddle"
@@ -1687,7 +1687,7 @@
           </div>
           <div class="col-8">
             <div class="grid grid-nogutter">
-              <div class="col-6" [hidden]="!(itemTotalOptionMap['armor'] >= 1)">
+              <div class="col-6" [hidden]="!(itemTotalOptionMap['armor'] >= 1) || !model.armor">
                 <p-cascadeSelect
                   [(ngModel)]="model.rawOptionTxts[itemOptionNumber.Armor_1]"
                   [disabled]="!model.armor"
@@ -1702,7 +1702,7 @@
                   (onClear)="onOptionChange()"
                 ></p-cascadeSelect>
               </div>
-              <div class="col-6" [hidden]="!(itemTotalOptionMap['armor'] >= 2)">
+              <div class="col-6" [hidden]="!(itemTotalOptionMap['armor'] >= 2) || !model.armor">
                 <p-cascadeSelect
                   [(ngModel)]="model.rawOptionTxts[itemOptionNumber.Armor_2]"
                   [disabled]="!model.armor"
@@ -1905,7 +1905,7 @@
           </div>
           <div class="col-8">
             <div class="grid grid-nogutter">
-              <div class="col-6" [hidden]="!(itemTotalOptionMap['garment'] >= 1)">
+              <div class="col-6" [hidden]="!(itemTotalOptionMap['garment'] >= 1) || !model.garment">
                 <p-cascadeSelect
                   [(ngModel)]="model.rawOptionTxts[itemOptionNumber.Garment_1]"
                   [disabled]="!model.garment"
@@ -1920,7 +1920,7 @@
                   (onClear)="onOptionChange()"
                 ></p-cascadeSelect>
               </div>
-              <div class="col-6" [hidden]="!(itemTotalOptionMap['garment'] >= 2)">
+              <div class="col-6" [hidden]="!(itemTotalOptionMap['garment'] >= 2) || !model.garment">
                 <p-cascadeSelect
                   [(ngModel)]="model.rawOptionTxts[itemOptionNumber.Garment_2]"
                   [disabled]="!model.garment"
@@ -2286,7 +2286,7 @@
           </ng-template>
         </p-dropdown>
       </div>
-      <div class="col-3" [hidden]="!(itemTotalOptionMap['accRight'] >= 1)">
+      <div class="col-3" [hidden]="!(itemTotalOptionMap['accRight'] >= 1) || !model.accRight">
         <p-cascadeSelect
           [(ngModel)]="model.rawOptionTxts[itemOptionNumber.A_Right_1]"
           [disabled]="!model.accRight"
@@ -2301,7 +2301,7 @@
           (onClear)="onOptionChange()"
         ></p-cascadeSelect>
       </div>
-      <div class="col-3" [hidden]="!(itemTotalOptionMap['accRight'] >= 2)">
+      <div class="col-3" [hidden]="!(itemTotalOptionMap['accRight'] >= 2) || !model.accRight">
         <p-cascadeSelect
           [(ngModel)]="model.rawOptionTxts[itemOptionNumber.A_Right_2]"
           [disabled]="!model.accRight"
@@ -2487,7 +2487,7 @@
           </ng-template>
         </p-dropdown>
       </div>
-      <div class="col-3" [hidden]="!(itemTotalOptionMap['accLeft'] >= 1)">
+      <div class="col-3" [hidden]="!(itemTotalOptionMap['accLeft'] >= 1) || !model.accLeft">
         <p-cascadeSelect
           [(ngModel)]="model.rawOptionTxts[itemOptionNumber.A_Left_1]"
           [disabled]="!model.accLeft"
@@ -2502,7 +2502,7 @@
           (onClear)="onOptionChange()"
         ></p-cascadeSelect>
       </div>
-      <div class="col-3" [hidden]="!(itemTotalOptionMap['accLeft'] >= 2)">
+      <div class="col-3" [hidden]="!(itemTotalOptionMap['accLeft'] >= 2) || !model.accLeft">
         <p-cascadeSelect
           [(ngModel)]="model.rawOptionTxts[itemOptionNumber.A_Left_2]"
           [disabled]="!model.accLeft"
@@ -3671,6 +3671,7 @@
                       [label]="totalSummary?.dmg?.skillCanCri ? 'SkillDmgCri:' : 'SkillDmg:'"
                       styleClass="summary_damage"
                       styleClass2="summary_compare"
+                      [showPercentDiff]="true"
                       [totalHit]="totalSummary?.calcSkill?.totalHits"
                       [min]="totalSummary?.dmg?.skillMinDamage"
                       [max]="totalSummary?.dmg?.skillMaxDamage"
@@ -3709,6 +3710,7 @@
                       label="DPS:"
                       styleClass="summary_highlight"
                       styleClass2="summary_compare"
+                      [showPercentDiff]="true"
                       [max]="totalSummary?.dmg?.skillDps"
                       [max2]="totalSummary2?.dmg?.skillDps"
                     ></app-calc-value>
@@ -3750,6 +3752,7 @@
                       label="DPS:"
                       styleClass="summary_chance_hilight"
                       styleClass2="summary_compare"
+                      [showPercentDiff]="true"
                       [max]="totalSummary?.dmg?.effectedSkillDps"
                       [max2]="totalSummary2?.dmg?.effectedSkillDps"
                     ></app-calc-value>
@@ -3838,6 +3841,7 @@
                           label="DPS:"
                           styleClass="summary_highlight"
                           styleClass2="summary_compare"
+                          [showPercentDiff]="true"
                           [max]="totalSummary?.dmg?.basicDps"
                           [max2]="totalSummary2?.dmg?.basicDps"
                         ></app-calc-value>
@@ -3877,6 +3881,7 @@
                           label="DPS:"
                           styleClass="summary_chance_hilight"
                           styleClass2="summary_compare"
+                          [showPercentDiff]="true"
                           [max]="totalSummary?.dmg?.effectedBasicDps"
                           [max2]="totalSummary2?.dmg?.effectedBasicDps"
                         ></app-calc-value>

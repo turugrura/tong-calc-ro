@@ -33,6 +33,8 @@ export interface AtkSkillModel {
   };
   canCri?: boolean;
   baseCri?: number;
+  baseCriPercentage?: number;
+  criDmgPercentage?: number;
   hit?: number;
   totalHit?: number;
   isMatk?: boolean;

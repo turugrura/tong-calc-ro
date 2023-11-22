@@ -564,6 +564,7 @@ export class DamageCalculator {
   }) {
     const { skillData, baseSkillDamage, weaponPropertyAtk } = params;
     const { name: skillName, element, canCri: _canCri, isMelee, isHDefToSDef = false, isIgnoreDef = false } = skillData;
+    const { criDmgPercentage = 1 } = skillData;
     const canCri = this.isForceSkillCri || _canCri;
     const { reducedHardDef, finalDmgReduction, finalSoftDef } = this.getPhisicalDefData();
     const hardDef = isIgnoreDef || isHDefToSDef ? 1 : finalDmgReduction;
@@ -574,7 +575,7 @@ export class DamageCalculator {
     const rangedMultiplier = this.toPercent(ranged + 100);
     const baseSkillMultiplier = this.toPercent(baseSkillDamage);
     const equipSkillMultiplier = this.toPercent(100 + (this.totalBonus[skillName] || 0));
-    const criMultiplier = canCri ? this.toPercent((criDmg || 0) + 100) : 1;
+    const criMultiplier = canCri ? this.toPercent((criDmg * criDmgPercentage || 0) + 100) : 1;
     // const dmgMultiplier = this.toPercent(0 + 100);
     const infoForClass = this.infoForClass;
 
@@ -856,13 +857,14 @@ export class DamageCalculator {
     const {
       formula,
       part2,
-      baseCri: baseSkillCri,
+      baseCri: baseSkillCri = 0,
       isMatk,
       isMelee,
       canCri,
       isHit100,
       isIgnoreDef = false,
       totalHit = 1,
+      baseCriPercentage = 1,
     } = skillData;
     const _baseSkillDamage =
       formula({
@@ -913,7 +915,7 @@ export class DamageCalculator {
     const skillAspd = calcSkillAspd({ skillData, status: this.status, totalEquipStatus: this.totalBonus });
     const skillHitsPerSec = Math.min(basicAspd.hitsPerSec, skillAspd.totalHitPerSec);
 
-    let actualCri = canCri ? Math.max(0, basicDmg.basicCriRate + baseSkillCri - criShield) : 0;
+    let actualCri = canCri ? Math.max(0, (basicDmg.basicCriRate + baseSkillCri) * baseCriPercentage - criShield) : 0;
     if (this.isForceSkillCri) {
       actualCri = 100;
     }

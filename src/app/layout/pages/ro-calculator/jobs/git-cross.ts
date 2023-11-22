@@ -121,6 +121,27 @@ export class GitCross extends CharacterBase {
       },
     },
     {
+      label: '[Improved] Cross Impact Lv5',
+      name: 'Cross Impact',
+      value: '[Improved] Cross Impact==5',
+      acd: 0.5,
+      fct: 0,
+      vct: 0,
+      cd: 0.35,
+      isMelee: true,
+      canCri: true,
+      baseCriPercentage: 0.5,
+      criDmgPercentage: 0.5,
+      hit: 7,
+      levelList: [],
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
+
+        return (1400 + skillLevel * 150) * (baseLevel / 100);
+      },
+    },
+    {
       label: 'Counter Slash Lv10',
       name: 'Counter Slash',
       value: 'Counter Slash==10',
