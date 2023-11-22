@@ -691,6 +691,18 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
           for (let i = min; i <= max; i++) {
             rawOptionTxts[i] = this.model2.rawOptionTxts[i];
           }
+
+          const itemId = this.model2[_itemType];
+          let startClear = 0;
+          if (itemId) {
+            const aegisName = this.items[itemId]?.aegisName;
+            startClear = ExtraOptionTable[aegisName] || 0;
+          }
+
+          for (let i = min + startClear; i <= max; i++) {
+            rawOptionTxts[i] = null;
+            this.model2.rawOptionTxts[i] = null;
+          }
         }
       }
 

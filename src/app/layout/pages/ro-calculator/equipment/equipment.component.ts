@@ -2,6 +2,8 @@ import { AfterViewInit, Component, EventEmitter, Input, Output } from '@angular/
 import { DropdownModel } from '../models/dropdown.model';
 import { ItemModel } from '../models/item.model';
 import { getEnchants } from '../constants/enchant-table';
+import { ItemTypeEnum, OptionableItemTypeSet } from '../constants/item-type.enum';
+import { ExtraOptionTable } from '../constants/extra-option-table';
 
 @Component({
   selector: 'app-equipment',
@@ -66,6 +68,7 @@ export class EquipmentComponent implements AfterViewInit {
   enchant2List: DropdownModel[] = [];
   enchant3List: DropdownModel[] = [];
   enchant4List: DropdownModel[] = [];
+  totalExtraOption = 0;
 
   private itemTypeMap = {};
 
@@ -128,6 +131,11 @@ export class EquipmentComponent implements AfterViewInit {
       this.setEnchantList(itemId);
       this.itemIdChange.emit(this.itemId);
       this.itemRefineChange.emit(this.itemRefine);
+
+      if (this.itemType !== ItemTypeEnum.weapon && OptionableItemTypeSet.has(this.itemType as any)) {
+        const itemAegisName = this.items[itemId]?.aegisName;
+        this.totalExtraOption = ExtraOptionTable[itemAegisName] || 0;
+      }
     } else {
       const e = this[`${itemType}Change`];
       const val = this[`${itemType}`];

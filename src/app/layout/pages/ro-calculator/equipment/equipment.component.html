@@ -149,8 +149,41 @@
           </ng-template>
         </p-dropdown>
       </div>
+      <div class="col-4" *ngIf="itemType !== 'weapon'" [hidden]="totalExtraOption < 1">
+        <p-cascadeSelect
+          [(ngModel)]="option1Value"
+          [disabled]="!itemId"
+          [options]="optionList"
+          optionValue="value"
+          optionGroupLabel="label"
+          optionLabel="label"
+          [optionGroupChildren]="['children', 'children', 'children']"
+          placeholder="Options"
+          [showClear]="true"
+          (onChange)="onOptionChange('option1Value', $event)"
+          (onClear)="onOptionChange('option1Value', $event)"
+        ></p-cascadeSelect>
+      </div>
+      <div class="col-4" *ngIf="itemType !== 'weapon'" [hidden]="totalExtraOption < 2">
+        <p-cascadeSelect
+          [(ngModel)]="option2Value"
+          [disabled]="!itemId"
+          [options]="optionList"
+          optionValue="value"
+          optionGroupLabel="label"
+          optionLabel="label"
+          [optionGroupChildren]="['children', 'children', 'children']"
+          placeholder="Options"
+          [showClear]="true"
+          (onChange)="onOptionChange('option2Value', $event)"
+          (onClear)="onOptionChange('option2Value', $event)"
+        ></p-cascadeSelect>
+      </div>
 
-      <div class="col-12" [hidden]="(enchant2List.length === 0 && enchant3List.length === 0 && enchant4List.length === 0) || !itemId">
+      <div
+        class="col-12"
+        [hidden]="(enchant2List.length === 0 && enchant3List.length === 0 && enchant4List.length === 0) || !itemId"
+      >
         <div class="grid grid-nogutter">
           <div class="col-4">
             <p-dropdown
@@ -239,7 +272,7 @@
         </div>
       </div>
 
-      <div class="col-12">
+      <div class="col-12" *ngIf="itemType === 'weapon'">
         <div class="grid grid-nogutter">
           <div class="col-4" [hidden]="totalOptions < 1">
             <p-cascadeSelect
