@@ -35,6 +35,17 @@ export class AppTopBarComponent {
 
   updates: { v: string; date: string; logs: string[] }[] = [
     {
+      v: 'V1.6.4',
+      date: '22-11-2566',
+      logs: [
+        'Fixed reported bugs',
+        'Fixed items cannot choose option (Reporter: "แก้สักทีนะ ตูแจ้งไปเป็นชาติแล้ววว")',
+        'Display diff percentage when compare item',
+        'Added Guillotine Cross skill ([Improved] Cross Impact)',
+        'Added requested items',
+      ],
+    },
+    {
       v: 'V1.6.3',
       date: '20-11-2566',
       logs: [
