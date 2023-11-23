@@ -14,6 +14,7 @@ const Mapper = {
   iz_d05_i: '190 - 200 Illuion of under water 5',
   hero_tra: 'Test damage',
   tra_fild: 'Test damage',
+  prontera: 'Test damage',
 } as const;
 
 export const MonsterGroupNames = [...new Set(Object.values(Mapper))].sort((a, b) => (a > b ? 1 : -1));

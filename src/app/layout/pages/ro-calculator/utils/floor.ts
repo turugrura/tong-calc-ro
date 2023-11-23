@@ -1,8 +1,10 @@
-export const floor = (n: number, digit = 0): number => {
+export const floor = (_n: number, digit = 0): number => {
+  const nn = _n;
+
   if (digit > 0) {
     const pow = Math.pow(10, digit);
-    return floor(n * pow) / pow;
+    return floor(nn * pow) / pow;
   }
 
-  return Math.floor(n);
+  return Math.floor(nn);
 };

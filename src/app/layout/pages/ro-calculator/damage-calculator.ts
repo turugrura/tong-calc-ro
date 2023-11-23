@@ -17,7 +17,7 @@ import { MainModel } from './models/main.model';
 import { MonsterModel } from './models/monster.model';
 import { PreparedMonsterModel } from './models/prepared-monster.model';
 import { StatusSummary } from './models/status-summary.model';
-import { calcDmgDps, calcSkillAspd, floor, isSkillCanEDP } from './utils';
+import { calcDmgDps, calcSkillAspd, floor, isSkillCanEDP, round } from './utils';
 import { Weapon } from './weapon';
 
 export class DamageCalculator {
@@ -183,7 +183,7 @@ export class DamageCalculator {
     return this.totalBonus['edp'] > 0;
   }
 
-  private getCometAmp() {
+  private getCometMultiplier() {
     return this.toPercent(100 + (this.totalBonus['comet'] || 0));
   }
 
@@ -338,7 +338,7 @@ export class DamageCalculator {
   private getMagicalDefData() {
     const { mdef } = this.monsterData;
     const m_pene = this.getTotalMagicalPene();
-    const mDefBypassed = floor(mdef - mdef * this.toPercent(m_pene));
+    const mDefBypassed = round(mdef - mdef * this.toPercent(m_pene), 4);
     const dmgReductionByMHardDef = (1000 + mDefBypassed) / (1000 + mDefBypassed * 10);
 
     return { dmgReductionByMHardDef };
@@ -361,7 +361,7 @@ export class DamageCalculator {
     const size = this.toPercent(this.getSizeMultiplier('p'));
     const element = this.toPercent(this.getElementMultiplier('p'));
     const monsterType = this.toPercent(this.getMonsterTypeMultiplier('p'));
-    const comet = this.getCometAmp();
+    const comet = this.getCometMultiplier();
     // console.log({ race, size, element, monsterType, comet, monster: this.monster.name });
 
     let total = floor(totalAtk * race);
@@ -639,7 +639,7 @@ export class DamageCalculator {
   private getWeaponMatk() {
     const { baseWeaponMatk, baseWeaponLevel, refineBonus, overUpgradeBonus } = this.weaponData.data;
     const rawWeaponMATK = baseWeaponMatk + refineBonus;
-    const variance = 0.1 * baseWeaponLevel * baseWeaponMatk;
+    const variance = round(0.1 * baseWeaponLevel * rawWeaponMATK, 2);
     const isMax = this.isMaximizeSpell;
 
     let weaponMinMatk = rawWeaponMATK - (isMax ? -variance : variance);
@@ -651,33 +651,6 @@ export class DamageCalculator {
     }
 
     return { weaponMinMatk, weaponMaxMatk };
-  }
-
-  private applyMatkMultiplier(matk: number) {
-    const race = this.toPercent(this.getRaceMultiplier('m'));
-    const size = this.toPercent(this.getSizeMultiplier('m'));
-    const element = this.toPercent(this.getElementMultiplier('m'));
-    const monsterType = this.toPercent(this.getMonsterTypeMultiplier('m'));
-    const matkPercentMultiplier = this.toPercent(100 + this.totalBonus.matkPercent);
-
-    const comet = this.getCometAmp();
-    // console.log({
-    //   race,
-    //   size,
-    //   element,
-    //   monsterType,
-    //   matkPercentMultiplier,
-    //   comet,
-    // });
-
-    let total = floor(matk * race);
-    total = floor(total * size);
-    total = floor(total * element);
-    total = floor(total * monsterType);
-    total = floor(total * matkPercentMultiplier);
-    total = floor(total * comet);
-
-    return total;
   }
 
   private calcMatkSkillDamage(params: {
@@ -699,52 +672,66 @@ export class DamageCalculator {
     const finalDmgMultiplier = this.toPercent(finalDmg + 100);
     const propertyMultiplier = this.getPropertyMultiplier(skillPropertyAtk);
 
-    const skillFormula = (totalAtk: number, isNoEle = false) => {
-      let total = this.applyMatkMultiplier(totalAtk);
+    const elementBonus =
+      (this.totalBonus.m_my_element_all || 0) +
+      (this.totalBonus[`m_my_element_${skillPropertyAtk.toLowerCase()}`] || 0);
+    const myElementMultiplier = this.toPercent(100 + elementBonus);
+    const matkPercentMultiplier = this.toPercent(100 + this.totalBonus.matkPercent);
+
+    const cometMultiplier = this.getCometMultiplier();
+    const raceMultiplier = this.toPercent(this.getRaceMultiplier('m'));
+    const sizeMultiplier = this.toPercent(this.getSizeMultiplier('m'));
+    const elementMultiplier = this.toPercent(this.getElementMultiplier('m'));
+    const monsterTypeMultiplier = this.toPercent(this.getMonsterTypeMultiplier('m'));
+
+    const skillFormula = (totalAtk: number) => {
+      let total = totalAtk;
+
+      total = floor(total * raceMultiplier);
+      total = floor(total * sizeMultiplier);
+      total = floor(total * elementMultiplier);
+      total = floor(total * monsterTypeMultiplier);
+      total = floor(total * matkPercentMultiplier);
+      total = floor(total * cometMultiplier);
+
       total = floor(total * baseSkillMultiplier);
       total = floor(total * equipSkillMultiplier);
+
+      total = floor(total * myElementMultiplier);
+      total = floor(total * round(hardDef, 4));
       total = total - softMDef;
-      total = floor(total * (isNoEle ? 1 : propertyMultiplier));
-      total = floor(total * hardDef);
+      total = floor(total * propertyMultiplier);
       total = floor(total * finalDmgMultiplier);
       total = this.applyFinalMultiplier(total, 'magic');
 
       return this.toPreventNegativeDmg(total);
     };
 
-    const isMildwind = this.isActiveMildwind;
-
-    const elementBonus =
-      (this.totalBonus.m_my_element_all || 0) +
-      (this.totalBonus[`m_my_element_${skillPropertyAtk.toLowerCase()}`] || 0);
-    const myElementMultiplier = this.toPercent(100 + elementBonus);
-
     const totalStatusMatk = this.getStatusMatk();
     const extraMatk = this.getExtraMatk();
     const { weaponMinMatk, weaponMaxMatk } = this.getWeaponMatk();
 
-    const statusDmg = skillFormula(
-      totalStatusMatk * this.myticalAmp * (isMildwind ? myElementMultiplier : 1),
-      !isMildwind,
-    );
-    const equipmentDmg = skillFormula(extraMatk * myElementMultiplier);
-    const weaponMinDmg = skillFormula(weaponMinMatk * myElementMultiplier * this.myticalAmp);
-    const weaponMaxDmg = skillFormula(weaponMaxMatk * myElementMultiplier * this.myticalAmp);
+    const rawMatk = extraMatk + totalStatusMatk * this.myticalAmp;
+    const weaponMinDmg = skillFormula(weaponMinMatk * this.myticalAmp + rawMatk);
+    const weaponMaxDmg = skillFormula(weaponMaxMatk * this.myticalAmp + rawMatk);
 
-    const rawMaxDamage = statusDmg + equipmentDmg + weaponMaxDmg;
+    const rawMaxDamage = weaponMaxDmg;
     const maxDamage = this._class.calcSkillDmgByTotalHit(rawMaxDamage, skillData);
 
-    const rawMinDamage = statusDmg + equipmentDmg + weaponMinDmg;
+    const rawMinDamage = weaponMinDmg;
     const minDamage = this._class.calcSkillDmgByTotalHit(rawMinDamage, skillData);
 
     // console.log({
     //   skillPropertyAtk,
     //   myElementMultiplier,
+    //   elementBonus,
     //   totalStatusMatk,
     //   extraMatk,
     //   equipSkillMultiplier,
     //   weaponMinMatk,
     //   weaponMaxMatk,
+    //   weaponMinDmg,
+    //   weaponMaxDmg,
     // });
 
     return { propertyAtk: skillPropertyAtk, propertyMultiplier, minDamage, maxDamage };

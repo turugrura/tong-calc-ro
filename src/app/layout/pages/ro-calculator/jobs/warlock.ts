@@ -93,12 +93,13 @@ export class Warlock extends CharacterBase {
       vct: 10,
       cd: 20,
       isMatk: true,
+      hit: 10,
       element: ElementType.Neutral,
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
 
-        return (2500 + skillLevel * 700) * (baseLevel / 100);
+        return (1500 + skillLevel * 700) * (baseLevel / 100);
       },
     },
     {
