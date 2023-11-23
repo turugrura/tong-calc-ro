@@ -334,7 +334,8 @@ export abstract class CharacterBase {
     return final;
   }
 
-  calcSkillDmgByTotalHit(finalDamage: number, skill: AtkSkillModel): number {
+  calcSkillDmgByTotalHit(params: { finalDamage: number; skill: AtkSkillModel; info: InfoForClass }): number {
+    const { finalDamage, skill } = params;
     const skillHit = skill?.hit || 1;
     if (skillHit > 1) {
       return Math.floor(finalDamage / skillHit) * skillHit;

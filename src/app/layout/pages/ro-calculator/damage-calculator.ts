@@ -616,10 +616,18 @@ export class DamageCalculator {
     });
 
     const rawMaxDamage = skillFormula(totalMaxOver);
-    const maxDamage = this._class.calcSkillDmgByTotalHit(rawMaxDamage, skillData);
+    const maxDamage = this._class.calcSkillDmgByTotalHit({
+      info: this.infoForClass,
+      finalDamage: rawMaxDamage,
+      skill: skillData,
+    });
 
     const rawMinDamage = canCri ? skillFormula(totalMax) : skillFormula(totalMin);
-    const minDamage = this._class.calcSkillDmgByTotalHit(rawMinDamage, skillData);
+    const minDamage = this._class.calcSkillDmgByTotalHit({
+      info: this.infoForClass,
+      finalDamage: rawMinDamage,
+      skill: skillData,
+    });
 
     return { minDamage, maxDamage, propertyAtk, propertyMultiplier };
   }
@@ -718,10 +726,18 @@ export class DamageCalculator {
     const weaponMaxDmg = skillFormula(weaponMaxMatk * this.myticalAmp + rawMatk);
 
     const rawMaxDamage = weaponMaxDmg;
-    const maxDamage = this._class.calcSkillDmgByTotalHit(rawMaxDamage, skillData);
+    const maxDamage = this._class.calcSkillDmgByTotalHit({
+      info: this.infoForClass,
+      finalDamage: rawMaxDamage,
+      skill: skillData,
+    });
 
     const rawMinDamage = weaponMinDmg;
-    const minDamage = this._class.calcSkillDmgByTotalHit(rawMinDamage, skillData);
+    const minDamage = this._class.calcSkillDmgByTotalHit({
+      info: this.infoForClass,
+      finalDamage: rawMinDamage,
+      skill: skillData,
+    });
 
     // console.log({
     //   skillPropertyAtk,

@@ -8,6 +8,7 @@ import {
 } from './_character-base.abstract';
 import { DarkClaw, NoLimit } from '../constants/share-active-skills';
 import { Thief } from './thief';
+import { InfoForClass } from '../models/info-for-class.model';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 0, 0, 1],
@@ -104,7 +105,7 @@ export class ShadowChaser extends CharacterBase {
       fct: 0,
       vct: 0,
       cd: 0,
-      levelList: [{ label: 'Lv 10', value: 'Fatal Manace==10' }],
+      isMelee: true,
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
@@ -155,7 +156,6 @@ export class ShadowChaser extends CharacterBase {
       vct: 2,
       cd: 3.2,
       hit: 3,
-      levelList: [{ label: 'Arrow Storm Lv 10', value: 'Arrow Storm==10' }],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
@@ -164,6 +164,7 @@ export class ShadowChaser extends CharacterBase {
       },
     },
   ];
+
   protected _activeSkillList: ActiveSkillModel[] = [
     {
       label: 'Preserve',
@@ -293,5 +294,15 @@ export class ShadowChaser extends CharacterBase {
     super();
 
     this.inheritBaseClass(new Thief());
+  }
+
+  override calcSkillDmgByTotalHit(params: { finalDamage: number; skill: AtkSkillModel; info: InfoForClass }) {
+    const { finalDamage, skill, info } = params;
+    const isDagger = info.weapon.data?.typeName === 'dagger';
+    if (skill.name === 'Fatal Manace' && isDagger) {
+      return finalDamage * 2;
+    }
+
+    return super.calcSkillDmgByTotalHit(params);
   }
 }
