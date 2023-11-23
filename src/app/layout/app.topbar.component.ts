@@ -35,6 +35,11 @@ export class AppTopBarComponent {
 
   updates: { v: string; date: string; logs: string[] }[] = [
     {
+      v: 'V1.6.5',
+      date: '23-11-2566',
+      logs: ['Fixed MATK formula', 'Fixed Fatal Manace formula', 'Fixed Katar crirate', 'Added requested items'],
+    },
+    {
       v: 'V1.6.4',
       date: '22-11-2566',
       logs: [
