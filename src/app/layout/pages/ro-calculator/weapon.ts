@@ -134,7 +134,7 @@ export class Weapon {
     this._subTypeName = WeaponSubTypeNameMapById[itemSubTypeId];
     this._rangeType = IsLongRange[this._typeName] ? 'range' : 'melee';
 
-    if (refineLevel > 0) {
+    if (refineLevel > 0 && itemLevel > 0) {
       const { bonus, highUpgrade, overUpgrade } = weaponUpgradeTable[itemLevel][refineLevel];
       this._refineBonus = bonus;
       this._overUpgradeBonus = overUpgrade;

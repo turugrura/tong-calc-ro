@@ -215,7 +215,9 @@ export class DamageCalculator {
     const { cri } = this.totalBonus;
     const { totalLuk } = this.status;
 
-    return 1 + cri + floor(totalLuk / 3);
+    const base = 1 + cri + floor(totalLuk / 3);
+
+    return this.weaponData.data?.typeName === 'katar' ? base * 2 : base;
   }
 
   private getBasicAspd() {
