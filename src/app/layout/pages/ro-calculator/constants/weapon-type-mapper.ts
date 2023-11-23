@@ -37,7 +37,7 @@ export const WeaponTypeNameMapBySubTypeId = {
   265: 'rod',
   266: 'twohandRod', //rod staff
   267: 'bow',
-  268: 'fist',
+  268: 'fist', // knuckle
   269: 'instrument',
   270: 'whip',
   271: 'book',

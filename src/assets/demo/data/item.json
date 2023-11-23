@@ -3091,6 +3091,30 @@
       ]
     }
   },
+  "4118": {
+    "id": 4118,
+    "aegisName": "Petit_Card",
+    "name": "Earth Petite Card",
+    "unidName": "Card",
+    "resName": "이름없는카드",
+    "description": "โจมตี Monster Race Dragon แรงขึ้น 20%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Dragoon",
+    "script": {
+      "p_race_dragon": [
+        "20"
+      ]
+    }
+  },
   "4121": {
     "id": 4121,
     "aegisName": "Phreeoni_Card",
@@ -4695,6 +4719,39 @@
         "10",
         "7===10",
         "9===15"
+      ]
+    }
+  },
+  "4646": {
+    "id": 4646,
+    "aegisName": "IFN_Chimera_Card",
+    "name": "Infinite Chimera Card",
+    "unidName": "Infinite Chimera Card",
+    "resName": "이름없는카드",
+    "description": "MHP + 8%, MSP + 4%\nหากใส่ร่วมกับ  Infinite Toad Card, Infinite Vagabond Wolf Card, Infinite Vocal Card หรือ Infinite Eclipse Card\nATK + 10%, MATK + 10% \nประเภท : ^777777Card^000000\nใส่กับ : ^777777Garment^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 4,
+    "cardPrefix": "Chimera",
+    "script": {
+      "hpPercent": [
+        "8"
+      ],
+      "spPercent": [
+        "4"
+      ],
+      "atkPercent": [
+        "EQUIP[Infinite Toad Card||Infinite Vagabond Wolf Card||Infinite Vocal Card||Infinite Eclipse Card]10"
+      ],
+      "matkPercent": [
+        "EQUIP[Infinite Toad Card||Infinite Vagabond Wolf Card||Infinite Vocal Card||Infinite Eclipse Card]10"
       ]
     }
   },
@@ -19642,6 +19699,44 @@
       ]
     }
   },
+  "21047": {
+    "id": 21047,
+    "aegisName": "Beam_Claymore_OS",
+    "name": "Beam Claymor-OS [2]",
+    "unidName": "Two-Handed Sword",
+    "resName": "Beam_Claymore_OS",
+    "description": "ดาบสองมือที่เรืองแสงสีมรกตออกมาจากใบมีดอย่างรุนแรง\nไม่สามารถทำลายได้\nCRI + 5\nเมื่ออัปเกรดถึงขั้น 7 เพิ่ม ASPD 7%\nเมื่ออัปเกรดถึงขั้น 9 เพิ่ม Critical Damage 15%\nเมื่ออัปเกรดถึงขั้น 11 เพิ่มความเสียหายที่ทำต่อศัตรูขนาดกลางและขนาดเล็ก 20%\n^ffffff_^000000\nประเภท : ^777777Two-Handed Sword^000000 พลังโจมตี : ^777777250^000000\nน้ำหนัก : ^777777180^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777130^000000\nอาชีพที่ใส่ได้ : ^777777Swordsman^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 258,
+    "itemLevel": 4,
+    "attack": 250,
+    "defense": null,
+    "weight": 180,
+    "requiredLevel": 130,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Swordman"
+    ],
+    "script": {
+      "cri": [
+        "5"
+      ],
+      "aspdPercent": [
+        "7===7"
+      ],
+      "criDmg": [
+        "9===15"
+      ],
+      "p_size_m": [
+        "11===20"
+      ],
+      "p_size_s": [
+        "11===20"
+      ]
+    }
+  },
   "21050": {
     "id": 21050,
     "aegisName": "Taegoolyeon_IL",
@@ -22715,6 +22810,77 @@
       ],
       "matkPercent": [
         "2---1"
+      ]
+    }
+  },
+  "24234": {
+    "id": 24234,
+    "aegisName": "S_Titan_Earring",
+    "name": "Titan Shadow Earring",
+    "unidName": "Shadow Earring",
+    "resName": "이어링쉐도우",
+    "description": "ต่างหูมงคลที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา\nเพิ่ม Damage เมื่อโจมตีศัตรูขนาดใหญ่ทางกายภาพ/ทางเวทย์ 1%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage เมื่อโจมตีศัตรูขนาดใหญ่ทางกายภาพ/ทางเวทย์เพิ่มเติมอีก 1%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage เมื่อโจมตีศัตรูขนาดใหญ่ทางกายภาพ/ทางเวทย์เพิ่มเติมอีก 2%\nเมื่อสวมใส่ ^32CD32Titan Shadow Earring^000000 และ\n^32CD32Titan Shadow Pendant^000000\nร่วมกัน ATK + 5.\nเมื่อค่าอัพเกรดรวมกันมากกว่า 15 ขึ้นไป  เพิ่ม Damage เมื่อโจมตีศัตรูขนาดใหญ่ทางกายภาพ/ทางเวทย์เพิ่มเติมอีก 2%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Earring^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 529,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Accessory",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "p_size_l": [
+        "1",
+        "7===1",
+        "9===2"
+      ],
+      "m_size_l": [
+        "1",
+        "7===1",
+        "9===2"
+      ]
+    }
+  },
+  "24235": {
+    "id": 24235,
+    "aegisName": "S_Titan_Pendant",
+    "name": "Titan Shadow Pendant",
+    "unidName": "Shadow Pendant",
+    "resName": "펜던트쉐도우",
+    "description": "สร้อยคอศักดิ์สิทธิ์ที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา\nเพิ่ม Damage เมื่อโจมตีศัตรูขนาดใหญ่ทางกายภาพ/ทางเวทย์ 1%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage เมื่อโจมตีศัตรูขนาดใหญ่ทางกายภาพ/ทางเวทย์เพิ่มเติมอีก 1%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage เมื่อโจมตีศัตรูขนาดใหญ่ทางกายภาพ/ทางเวทย์เพิ่มเติมอีก 2%\nเมื่อสวมใส่ ^32CD32Titan Shadow Pendant^000000 และ\n^32CD32Titan Shadow Earring^000000\nร่วมกัน ATK + 5\nเมื่อค่าอัพเกรดรวมกันมากกว่า 15 ขึ้นไป  เพิ่ม Damage เมื่อโจมตีศัตรูขนาดใหญ่ทางกายภาพ/ทางเวทย์เพิ่มเติมอีก 2%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Pendant^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 530,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Accessory",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "p_size_l": [
+        "1",
+        "7===1",
+        "9===2",
+        "EQUIP[Titan Shadow Earring]REFINE[shadowEarring,shadowPendant==15]===2"
+      ],
+      "m_size_l": [
+        "1",
+        "7===1",
+        "9===2",
+        "EQUIP[Titan Shadow Earring]REFINE[shadowEarring,shadowPendant==15]===2"
+      ],
+      "atk": [
+        "EQUIP[Titan Shadow Earring]===5"
       ]
     }
   },
@@ -35023,6 +35189,37 @@
       "m_element_neutral": [
         "5",
         "9===5"
+      ]
+    }
+  },
+  "27311": {
+    "id": 27311,
+    "aegisName": "Mutant_Plaga_Card",
+    "name": "Mutant Plaga Card",
+    "unidName": "Mutant Plaga Card",
+    "resName": "이름없는카드",
+    "description": "ถ้าอาวุธที่ถือเป็นประเภท [Knuckle], HIT +20, ATK +15\nทุก ๆ การอัปเกรดอาวุธ 1 ขั้น เพิ่ม Damage ทางกายภาพต่อมอนสเตอร์ขนาดใหญ่ 1% และเมื่อค่าอัปเกรดตั้งแต่ 10 ขึ้นไป เพิ่ม Damage ทางกายภาพต่อมอสเตอร์ขนาดใหญ่ 15%\n^ffffff_^000000\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Heavy knuckle",
+    "script": {
+      "hit": [
+        "WEAPON_TYPE[fist]20"
+      ],
+      "atk": [
+        "WEAPON_TYPE[fist]15"
+      ],
+      "p_size_l": [
+        "WEAPON_TYPE[fist]1---1",
+        "WEAPON_TYPE[fist]10===15"
       ]
     }
   },
@@ -52122,7 +52319,7 @@
         "7"
       ],
       "Arrow Storm": [
-        "30",
+        "LEARN_SKILL[Maelstrom==1]---10",
         "EQUIP[Arrow of Shadow]10"
       ],
       "hpPercent": [
@@ -56604,6 +56801,60 @@
       ],
       "atkPercent": [
         "EQUIP[Great Hero Boots]===7"
+      ]
+    }
+  },
+  "610000": {
+    "id": 610000,
+    "aegisName": "Boost_Katar",
+    "name": "Boosting Katar [2]",
+    "unidName": "Katar",
+    "resName": "Blut_Katar",
+    "description": "Katar สุดพิเศษที่เตรียมไว้เพื่อทำให้นักผจญภัยพัฒนาไปอย่างรวดเร็ว\n\nATK +2%, Critical Damage +3%\nทุก ๆ การอัพเกรด 1 ขั้น ATK +3\nทุก ๆ Base Lv. 15, ATK +3 (ใช้งานสูงสุดถึง Lv. 180)\nเมื่ออัพเกรดถึงขั้น 7 ทุก ๆ การเรียนรู้สกิล Katar Mastery 1 เลเวล Critical Damage +1% เพิ่มเติม\nเมื่ออัพเกรดถึงขั้น 9, ATK +10%\n\nเมื่อสวมใส่ร่วมกับ Attacker Booster (Plate/Manteau/Greaves/Ring), \nASPD +2, Critical Damage +10%,\nทุก ๆ Base Lv. 15 เพิ่ม Damage ทางกายภาพต่อศัตรูทุกธาตุ 1% (ใช้งานสูงสุดถึง Lv. 180),\nเมื่อใช้สกิล Enchant Deadly Poison เพิ่ม Damage ทางกายภาพต่อศัตรูทุกธาตุขึ้นอีก 10% เป็นเวลา 60 วินาที\n\nเมื่อสวมใส่ร่วมกับ Range Booster (Suit/Manteau/Boots/Brooch), \nATK +10%, ลด Delay หลังใช้สกิล 15%,\nทุก ๆ Base Lv. 15 เพิ่ม Damage สกิล Rolling Cutter 1% (ใช้งานสูงสุดถึง Lv. 180),\nเมื่อใช้สกิล Enchant Deadly Poison เพิ่ม Damage สกิล Rolling Cutter ขึ้นอีก 20% เป็นเวลา 60 วินาที \nประเภท : ^777777Katar^000000 พลังโจมตี : ^777777150^000000\nน้ำหนัก : ^7777770^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Guillotine Cross Cls^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 272,
+    "itemLevel": 4,
+    "attack": 150,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Guillotine Cross Cls"
+    ],
+    "script": {
+      "atkPercent": [
+        "2",
+        "9===10",
+        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]10"
+      ],
+      "criDmg": [
+        "3",
+        "REFINE[7]LEARN_SKILL[Katar Mastery==1]---1",
+        "EQUIP[Attacker Booster Plate&&Attacker Booster Manteau&&Attacker Booster Greaves&&Attacker Booster Ring]10"
+      ],
+      "atk": [
+        "1---3",
+        "SUM[level==15]---3",
+        "SUM[level==195]===-3"
+      ],
+      "aspd": [
+        "EQUIP[Attacker Booster Plate&&Attacker Booster Manteau&&Attacker Booster Greaves&&Attacker Booster Ring]2"
+      ],
+      "p_element_all": [
+        "EQUIP[Attacker Booster Plate&&Attacker Booster Manteau&&Attacker Booster Greaves&&Attacker Booster Ring]SUM[level==15]---1",
+        "EQUIP[Attacker Booster Plate&&Attacker Booster Manteau&&Attacker Booster Greaves&&Attacker Booster Ring]SUM[level==195]===-1",
+        "EQUIP[Attacker Booster Plate&&Attacker Booster Manteau&&Attacker Booster Greaves&&Attacker Booster Ring]ACTIVE_SKILL[Enchant Deadly Poison]===10"
+      ],
+      "acd": [
+        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]15"
+      ],
+      "Rolling Cutter": [
+        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]SUM[level==15]---1",
+        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]SUM[level==195]===-1",
+        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]ACTIVE_SKILL[Enchant Deadly Poison]===20"
       ]
     }
   },
