@@ -58,6 +58,21 @@ enum Cri {
   _7 = 'Critical7',
   _10 = 'Critical10',
 }
+enum Critical {
+  _2 = 'Critical2',
+  _3 = 'Critical3',
+  _4 = 'Critical4',
+}
+enum SkillDelay {
+  _1 = 'Skill_Delay1',
+  _2 = 'Skill_Delay2',
+  _3 = 'Skill_Delay3',
+}
+enum MATK_P {
+  _3 = 'Matk3p',
+  _4 = 'Matk4p',
+  _5 = 'Matk5p',
+}
 enum AtkPercent {
   _1 = 'Atk1',
   _2 = 'Atk2',
@@ -272,8 +287,11 @@ const sh13 = [Sharp._1, Sharp._2, Sharp._3];
 const sh23 = [Sharp._2, Sharp._3];
 const sh25 = [Sharp._2, Sharp._3, Sharp._4, Sharp._5];
 // const sh35 = [Sharp._3, Sharp._4, Sharp._5];
-const matk12 = [MatkPercent._1, MatkPercent._2];
 
+const matk12 = [MatkPercent._1, MatkPercent._2];
+const matk13 = [MatkPercent._1, MatkPercent._2, MatkPercent._3];
+
+const ea13 = [EA._1, EA._2, EA._3];
 const ea15 = [EA._1, EA._2, EA._3, EA._4, EA._5];
 const ea23 = [EA._2, EA._3];
 const ea25 = [EA._2, EA._3, EA._4, EA._5];
@@ -282,11 +300,18 @@ const ea410 = [EA._4, EA._5, EA._6, EA._7, EA._8, EA._9, EA._10];
 const sp23 = [Spell._2, Spell._3];
 const sp25 = [Spell._2, Spell._3, Spell._4, Spell._5];
 const sp46 = [Spell._4, Spell._5, Spell._6];
+
+const aspd13 = [AttackDelay._1, AttackDelay._2, AttackDelay._3];
 const aspd24 = [AttackDelay._2, AttackDelay._3, AttackDelay._4];
 
+const fatal13 = [Fatal._1, Fatal._2, Fatal._3];
 const fatal14 = [Fatal._1, Fatal._2, Fatal._3, Fatal._4];
 
 const cri57 = [Cri._5, Cri._7, Cri._10];
+
+const critical24 = [Critical._2, Critical._3, Critical._4];
+const delay13 = [SkillDelay._1, SkillDelay._2, SkillDelay._3];
+const matkP35 = [MATK_P._3, MATK_P._4, MATK_P._5];
 
 const tempOpts = {
   _1: [EA._1, FS._1, Sharp._1],
@@ -440,6 +465,8 @@ const odin2 = [...cri57, ...createBaseStat(6, 8)];
 const odin3 = [Cri._7, Cri._10, ...createBaseStat(7, 8)];
 const odin4 = [...soutanes, ...specialBonus, Cri._10, ...createBaseStat(7, 8)];
 
+const infityEnt4 = [...ea13, ...delay13, ...aspd13, ...critical24, ...fatal13, ...matkP35, ...BaseState._3];
+
 const wing4 = [...ea23, ...fs23, ...sp23, ...sh23, ...matk12, ...specials, ...base12];
 
 export const EnchantTable: EntTable[] = [
@@ -467,7 +494,11 @@ export const EnchantTable: EntTable[] = [
   { name: 'Golden_Ninja_Suit', enchants: [null, goldenSet, goldenSet, goldenSet] },
   { name: 'Golden_Scarf', enchants: [null, goldenSet, goldenSet, goldenSet] },
 
-  { name: 'Tengu_Scroll', enchants: [null, BaseState._1_3, BaseState._1_3, BaseState._1_3] },
+  { name: 'Tree_Of_Sprout_JP', enchants: [null, BaseState._1_3, BaseState._1_3, infityEnt4] },
+  { name: 'Tengu_Scroll', enchants: [null, BaseState._1_3, BaseState._1_3, infityEnt4] },
+  { name: 'Royalguard_Necklace', enchants: [null, BaseState._1_3, BaseState._1_3, infityEnt4] },
+  { name: 'Protect_cloth', enchants: [null, BaseState._1_3, BaseState._1_3, infityEnt4] },
+  { name: 'Heart_Card_In_Mouth', enchants: [null, BaseState._1_3, BaseState._1_3, infityEnt4] },
 
   { name: 'Fallen Angel Wing [1]', enchants: [null, eaFsSp15, eaFsSp15, eaFsSp15] },
 

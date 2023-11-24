@@ -8351,6 +8351,216 @@
       ]
     }
   },
+  "4897": {
+    "id": 4897,
+    "aegisName": "Matk3p",
+    "name": "MATK + 3%",
+    "unidName": "MATK + 3%",
+    "resName": "마력석_빨강",
+    "description": "MATK +3%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<Matk+3%>",
+    "script": {
+      "matkPercent": [
+        "3"
+      ]
+    }
+  },
+  "4898": {
+    "id": 4898,
+    "aegisName": "Matk4p",
+    "name": "MATK + 4%",
+    "unidName": "MATK + 4%",
+    "resName": "마력석_빨강",
+    "description": "MATK +4%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<Matk+4%>",
+    "script": {
+      "matkPercent": [
+        "4"
+      ]
+    }
+  },
+  "4899": {
+    "id": 4899,
+    "aegisName": "Matk5p",
+    "name": "MATK + 5%",
+    "unidName": "MATK + 5%",
+    "resName": "마력석_빨강",
+    "description": "MATK +5%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<Matk+5%>",
+    "script": {
+      "matkPercent": [
+        "5"
+      ]
+    }
+  },
+  "4939": {
+    "id": 4939,
+    "aegisName": "Critical2",
+    "name": "Critical Level 2",
+    "unidName": "Critical Level 2",
+    "resName": "하얀묘안석",
+    "description": "CRIT +2",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "cri": [
+        "2"
+      ]
+    }
+  },
+  "4940": {
+    "id": 4940,
+    "aegisName": "Critical3",
+    "name": "Critical Level 3",
+    "unidName": "Critical Level 3",
+    "resName": "하얀묘안석",
+    "description": "CRIT +4",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "cri": [
+        "4"
+      ]
+    }
+  },
+  "4941": {
+    "id": 4941,
+    "aegisName": "Critical4",
+    "name": "Critical Level 4",
+    "unidName": "Critical Level 4",
+    "resName": "하얀묘안석",
+    "description": "CRIT +6",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "cri": [
+        "6"
+      ]
+    }
+  },
+  "4948": {
+    "id": 4948,
+    "aegisName": "Skill_Delay1",
+    "name": "Post-Skill Delay Level 1",
+    "unidName": "Post-Skill Delay Level 1",
+    "resName": "하얀묘안석",
+    "description": "ลดดีเลย์หลังจากใช้สกิล 2%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "acd": [
+        "2"
+      ]
+    }
+  },
+  "4949": {
+    "id": 4949,
+    "aegisName": "Skill_Delay2",
+    "name": "Post-Skill Delay Level 2",
+    "unidName": "Post-Skill Delay Level 2",
+    "resName": "하얀묘안석",
+    "description": "ลดดีเลย์หลังจากใช้สกิล 4%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "acd": [
+        "4"
+      ]
+    }
+  },
+  "4950": {
+    "id": 4950,
+    "aegisName": "Skill_Delay3",
+    "name": "Post-Skill Delay Level 3",
+    "unidName": "Post-Skill Delay Level 3",
+    "resName": "하얀묘안석",
+    "description": "ลดดีเลย์หลังจากใช้สกิล 6%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "acd": [
+        "6"
+      ]
+    }
+  },
   "4982": {
     "id": 4982,
     "aegisName": "Reactor_A_STR",
