@@ -183,6 +183,10 @@ export class DamageCalculator {
     return this.totalBonus['edp'] > 0;
   }
 
+  private isGhost() {
+    return this.monsterData.elementUpper === ElementType.Ghost;
+  }
+
   private getCometMultiplier() {
     return this.toPercent(100 + (this.totalBonus['comet'] || 0));
   }
@@ -346,19 +350,18 @@ export class DamageCalculator {
     return { dmgReductionByMHardDef };
   }
 
-  private getAtkGroupA(params: { propertyMultiplier: number; totalAtk: number }) {
-    const { propertyMultiplier, totalAtk } = params;
+  private getAtkGroupA(params: { totalAtk: number }) {
+    const { totalAtk } = params;
     const atkPercent = this.toPercent(this.totalBonus.atkPercent);
 
     let total = totalAtk;
-    total = floor(total * atkPercent);
-    total = floor(total * propertyMultiplier);
+    total = floor(total * atkPercent); // tested
 
     return total;
   }
 
-  private getAtkGroupB(params: { propertyMultiplier: number; totalAtk: number }) {
-    const { propertyMultiplier, totalAtk } = params;
+  private getAtkGroupB(params: { totalAtk: number }) {
+    const { totalAtk } = params;
     const race = this.toPercent(this.getRaceMultiplier('p'));
     const size = this.toPercent(this.getSizeMultiplier('p'));
     const element = this.toPercent(this.getElementMultiplier('p'));
@@ -368,9 +371,8 @@ export class DamageCalculator {
 
     let total = floor(totalAtk * race);
     total = floor(total * size);
-    total = floor(total * element);
-    total = floor(total * monsterType);
-    total = floor(total * propertyMultiplier);
+    total = floor(total * element); // tested
+    total = floor(total * monsterType); // tested
     total = floor(total * comet);
 
     return total;
@@ -390,27 +392,35 @@ export class DamageCalculator {
     const prefix = `${atkType}_race`;
     const base = this.totalBonus[`${prefix}_all`] || 0;
 
-    return 100 + base + (this.totalBonus[`${prefix}_${this.monsterData.race}`] ?? 0);
+    const total = 100 + base + (this.totalBonus[`${prefix}_${this.monsterData.race}`] ?? 0);
+
+    return round(total, 3);
   }
 
   private getSizeMultiplier(atkType: 'p' | 'm') {
     const prefix = `${atkType}_size`;
     const base = this.totalBonus[`${prefix}_all`] || 0;
 
-    return 100 + base + (this.totalBonus[`${prefix}_${this.monsterData.size}`] ?? 0);
+    const total = 100 + base + (this.totalBonus[`${prefix}_${this.monsterData.size}`] ?? 0);
+
+    return round(total, 3);
   }
 
   private getElementMultiplier(atkType: 'p' | 'm') {
     const prefix = `${atkType}_element`;
     const base = this.totalBonus[`${prefix}_all`] || 0;
 
-    return 100 + base + (this.totalBonus[`${prefix}_${this.monsterData.element}`] ?? 0);
+    const total = 100 + base + (this.totalBonus[`${prefix}_${this.monsterData.element}`] ?? 0);
+
+    return round(total, 3);
   }
 
   private getMonsterTypeMultiplier(atkType: 'p' | 'm') {
     const base = this.totalBonus[`${atkType}_class_all`] || 0;
 
-    return 100 + base + (this.totalBonus[`${atkType}_class_${this.monsterData.type}`] ?? 0);
+    const total = 100 + base + (this.totalBonus[`${atkType}_class_${this.monsterData.type}`] ?? 0);
+
+    return round(total, 3);
   }
 
   /**
@@ -460,44 +470,49 @@ export class DamageCalculator {
   }
 
   private getMasteryAtk() {
-    const { race, element, size } = this.monsterData;
     const skillAtk = Object.values(this.masteryAtkSkillBonus)
-      .map((a) => Number(a.atk || a[`atk_race_${race}`] || a[`atk_element_${element}`] || a[`atk_size_${size}`]))
+      .map((a) => Number(a.atk))
       .filter((a) => Number.isNaN(a) === false)
       .reduce((sum, m) => sum + m, 0);
     const buffAtk = this.getBuffMasteryAtk('atk');
     const uiMastery = this._class.getUiMasteryAtk(this.infoForClass);
+    const hiddenMastery = this._class.getMasteryAtk(this.infoForClass);
 
-    return skillAtk + buffAtk + uiMastery;
+    return skillAtk + buffAtk + uiMastery + hiddenMastery;
   }
 
   private getWeaponAtk(params: { isEDP: boolean }) {
     const { isEDP } = params;
     const { baseWeaponAtk, baseWeaponLevel, refineBonus, overUpgradeBonus } = this.weaponData.data;
-    const [element, eleLvl] = this.monsterData.elementLevelUpper.split(' ');
+    const { elementLevelN, elementUpper } = this.monsterData;
     const sizePenalty = this.getSizePenalty();
-    const weaponSizePenalty = baseWeaponAtk * sizePenalty;
-    const variant = weaponSizePenalty * baseWeaponLevel * 0.05;
-    const poisonPsuMulti = 1 + PoisonPsoEleTable[eleLvl][element] * 0.25;
+    const variant = baseWeaponAtk * baseWeaponLevel * 0.05;
+    const poisonPsudoMulti = 1 + PoisonPsoEleTable[elementLevelN][elementUpper] * 0.25;
 
     const { totalStr, totalDex } = this.status;
     const mainState = this.isRangeAtk() ? totalDex : totalStr;
-    const weaponStatBonus = (baseWeaponAtk * mainState) / 200;
+    const statBonus = (baseWeaponAtk * mainState) / 200;
 
-    const formula = (weaponAtk: number, overUpg: number) => {
-      const weaponBonus = this.isIncludingOverUpgrade() ? refineBonus + overUpg : refineBonus;
-      let total = weaponAtk;
-      total += floor(weaponStatBonus * sizePenalty);
-      total += floor((isEDP ? weaponBonus * poisonPsuMulti : weaponBonus) * sizePenalty);
+    const formula = (_variant: number, overUpg: number) => {
+      const upgradeBonus = refineBonus + (this.isIncludingOverUpgrade() ? overUpg : 0);
 
-      return floor(isEDP ? total * this.EDP_WEAPON_MULTIPLIER : total);
+      let total = baseWeaponAtk + _variant;
+      total += statBonus;
+      total += upgradeBonus;
+      if (isEDP) {
+        total += upgradeBonus * (1 - poisonPsudoMulti);
+        total = total * this.EDP_WEAPON_MULTIPLIER;
+      }
+      total = total * sizePenalty;
+
+      return floor(round(total, 3));
     };
 
     const weaPercent = (this.totalBonus['weaponAtkPercent'] || 100) / 100;
 
-    const totalMin = formula(weaponSizePenalty - variant, 0) * weaPercent;
-    const totalMax = formula(weaponSizePenalty + variant, 0) * weaPercent;
-    const totalMaxOver = formula(weaponSizePenalty + variant, overUpgradeBonus) * weaPercent;
+    const totalMin = formula(-variant, 0) * weaPercent;
+    const totalMax = formula(variant, 0) * weaPercent;
+    const totalMaxOver = formula(variant, overUpgradeBonus) * weaPercent;
 
     return { totalMin, totalMax, totalMaxOver };
   }
@@ -523,22 +538,22 @@ export class DamageCalculator {
     const { totalMin: _weaMin, totalMax: weaMax, totalMaxOver: weaMaxOver } = this.getWeaponAtk({ isEDP });
     const weaMin = this.isMaximizeWeapon ? weaMax : _weaMin;
 
-    const aMin = this.getAtkGroupA({ propertyMultiplier, totalAtk: weaMin + extraAtk });
-    const aMax = this.getAtkGroupA({ propertyMultiplier, totalAtk: weaMax + extraAtk });
-    const aMaxOver = this.getAtkGroupA({ propertyMultiplier, totalAtk: weaMaxOver + extraAtk });
+    const aMin = this.getAtkGroupA({ totalAtk: weaMin + extraAtk });
+    const aMax = this.getAtkGroupA({ totalAtk: weaMax + extraAtk });
+    const aMaxOver = this.getAtkGroupA({ totalAtk: weaMaxOver + extraAtk });
 
-    let bMin = this.getAtkGroupB({ propertyMultiplier, totalAtk: weaMin + extraAtk });
-    let bMax = this.getAtkGroupB({ propertyMultiplier, totalAtk: weaMax + extraAtk });
-    let bMaxOver = this.getAtkGroupB({ propertyMultiplier, totalAtk: weaMaxOver + extraAtk });
+    let bMin = this.getAtkGroupB({ totalAtk: weaMin + extraAtk });
+    let bMax = this.getAtkGroupB({ totalAtk: weaMax + extraAtk });
+    let bMaxOver = this.getAtkGroupB({ totalAtk: weaMaxOver + extraAtk });
     if (isEDP) {
       bMin = bMin * this.EDP_EQUIP_MULTIPLIER;
       bMax = bMax * this.EDP_EQUIP_MULTIPLIER;
       bMaxOver = bMaxOver * this.EDP_EQUIP_MULTIPLIER;
     }
 
-    let totalMin = statusAtk + masteryAtk + aMin + bMin;
-    const totalMax = statusAtk + masteryAtk + aMax + bMax;
-    let totalMaxOver = statusAtk + masteryAtk + aMaxOver + bMaxOver;
+    let totalMin = statusAtk + masteryAtk + floor((aMin + bMin) * propertyMultiplier); // tested
+    const totalMax = statusAtk + masteryAtk + floor((aMax + bMax) * propertyMultiplier);
+    let totalMaxOver = statusAtk + masteryAtk + floor((aMaxOver + bMaxOver) * propertyMultiplier);
     if (totalMin > totalMax) {
       totalMin = totalMaxOver;
       totalMaxOver = statusAtk + masteryAtk + aMin + bMin;
@@ -582,28 +597,14 @@ export class DamageCalculator {
     const infoForClass = this.infoForClass;
 
     const skillFormula = (_totalAtk: number) => {
-      const finalAtk = this._class.modifyFinalAtk(_totalAtk, infoForClass);
-
-      if (canCri) {
-        let total = floor(finalAtk * criMultiplier);
-        total = total - softDef;
-        total = floor(total * baseSkillMultiplier);
-        total = floor(total * equipSkillMultiplier);
-        // total = floor(total * dmgMultiplier);
-        total = floor(total * rangedMultiplier);
-        total = floor(total * hardDef);
-        total = floor(total * this.BASE_CRI_MULTIPLIER);
-        total = this.applyFinalMultiplier(total, 'phy');
-
-        return this.toPreventNegativeDmg(total);
-      }
-
-      let total = floor(finalAtk * rangedMultiplier);
-      // total = floor(total * dmgMultiplier);
-      total = floor(total * baseSkillMultiplier);
-      total = total - softDef;
+      let total = this._class.modifyFinalAtk(_totalAtk, infoForClass);
+      total = floor(total * criMultiplier); // tested
+      total = floor(total * rangedMultiplier); // tested
+      total = floor(total * baseSkillMultiplier); // tested
       total = floor(total * equipSkillMultiplier);
       total = floor(total * hardDef);
+      total = total - softDef; // tested
+      if (canCri) total = floor(total * this.BASE_CRI_MULTIPLIER);
       total = this.applyFinalMultiplier(total, 'phy');
 
       return this.toPreventNegativeDmg(total);

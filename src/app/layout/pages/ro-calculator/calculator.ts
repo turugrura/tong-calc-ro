@@ -216,10 +216,11 @@ export class Calculator {
     sizeUpper: '',
     sizeFullUpper: '',
     element: '',
-    elementUpper: '',
+    elementUpper: ElementType.Neutral,
     elementLevel: '',
+    elementLevelN: 1,
     elementLevelUpper: '',
-    type: '',
+    type: 'normal',
     isMvp: false,
     typeUpper: '',
     softDef: 1,
@@ -416,6 +417,7 @@ export class Calculator {
 
     const _class = monsterTypeId === 0 ? 'normal' : 'boss';
     const elementLevel = elementName.toLowerCase();
+    const [_, eleLvl] = elementName.split(' ');
     const upperFirst = (s: string) => {
       return s.at(0).toUpperCase() + s.substring(1);
     };
@@ -424,8 +426,9 @@ export class Calculator {
     this.monsterData = {
       name,
       element: pureElement.toLowerCase(),
-      elementUpper: upperFirst(pureElement),
+      elementUpper: upperFirst(pureElement) as ElementType,
       elementLevel,
+      elementLevelN: Number(eleLvl),
       elementLevelUpper: upperFirst(elementLevel),
       race: raceName.toLowerCase(),
       raceUpper: raceName,
@@ -659,21 +662,21 @@ export class Calculator {
   }
 
   private calcMasteryAtk() {
-    const { race, element, size } = this.monsterData;
     const skillAtk = Object.values(this.masteryAtkSkillBonus)
-      .map((a) => Number(a.atk || a[`atk_race_${race}`] || a[`atk_element_${element}`] || a[`atk_size_${size}`]))
+      .map((a) => Number(a.atk))
       .filter((a) => Number.isNaN(a) === false)
       .reduce((sum, m) => sum + m, 0);
+
     const buffAtk = this.calcBuffMasteryAtk('atk');
     const uiMastery = this._class.getUiMasteryAtk(this.infoForClass);
+    const hiddenMastery = this._class.getMasteryAtk(this.infoForClass);
 
-    this.totalMasteryAtk = skillAtk + buffAtk + uiMastery;
+    this.totalMasteryAtk = skillAtk + buffAtk + uiMastery + hiddenMastery;
   }
 
   private calcMasteryMatk() {
-    const { race, element, size } = this.monsterData;
     const skillAtk = Object.values(this.masteryAtkSkillBonus)
-      .map((a) => Number(a.matk || a[`matk_race_${race}`] || a[`matk_element_${element}`] || a[`matk_size_${size}`]))
+      .map((a) => Number(a.matk))
       .filter((a) => Number.isNaN(a) === false)
       .reduce((sum, m) => sum + m, 0);
 

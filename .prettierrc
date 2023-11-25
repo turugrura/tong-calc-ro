@@ -15,6 +15,12 @@
       "options": {
         "printWidth": 200
       }
+    },
+    {
+      "files": "src\\app\\layout\\pages\\ro-calculator\\constants\\element-mapper.ts",
+      "options": {
+        "printWidth": 200
+      }
     }
   ]
 }

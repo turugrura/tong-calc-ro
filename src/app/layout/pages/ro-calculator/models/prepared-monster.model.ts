@@ -1,3 +1,5 @@
+import { ElementType } from '../constants/element-type.const';
+
 export interface PreparedMonsterModel {
   name: string;
   /**
@@ -9,13 +11,17 @@ export interface PreparedMonsterModel {
   sizeUpper: string;
   sizeFullUpper: string;
   /**
-   * lowercase
+   * lowercase ex neutral
    */
   element: string;
-  elementUpper: string;
+  elementUpper: ElementType;
+  /**
+   * Neutral 1
+   */
   elementLevel: string;
+  elementLevelN: number;
   elementLevelUpper: string;
-  type: string;
+  type: 'normal' | 'boss';
   isMvp: boolean;
   typeUpper: string;
   softDef: number;

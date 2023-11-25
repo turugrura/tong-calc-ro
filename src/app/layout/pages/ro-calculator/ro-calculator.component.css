@@ -160,7 +160,7 @@
 .summary_value {
   /* background-color: var(--surface-0); */
   background-color: #121212;
-  color: var(--blue-500);
+  color: var(--blue-400);
 }
 
 .summary_damage {
@@ -190,7 +190,7 @@
 .summary_highlight {
   /* background-color: var(--surface-0); */
   background-color: #121212;
-  color: var(--orange-500);
+  color: var(--orange-400);
 }
 
 .color_primary {
@@ -402,18 +402,18 @@
 
 :host ::ng-deep .p-accordion-tab .p-accordion-header > a {
   font-weight: 800;
-  /* color: var(--highlight-text-color);
-  background: var(--highlight-bg); */
-  color: black;
-  background: var(--indigo-300);
+  color: var(--highlight-text-color);
+  background: var(--highlight-bg);
+  /* color: black;
+  background: var(--indigo-300); */
 }
 
 :host ::ng-deep .p-accordion-tab .p-highlight > a,
 :host ::ng-deep .p-accordion-tab .p-accordion-header :hover {
-  /* color: var(--primary-color-text) !important;
-  background: var(--primary-color) !important; */
-  color: white !important;
-  background: var(--indigo-800) !important;
+  color: var(--primary-color-text) !important;
+  background: var(--primary-color) !important;
+  /* color: white !important;
+  background: var(--indigo-800) !important; */
 }
 
 .property_Water {

@@ -8,6 +8,7 @@ import {
 } from './_character-base.abstract';
 import { Archer } from './archer';
 import { NoLimit } from '../constants/share-active-skills';
+import { InfoForClass } from '../models/info-for-class.model';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 0, 1, 0],
@@ -220,16 +221,16 @@ export class Ranger extends CharacterBase {
       isMasteryAtk: true,
       dropdown: [
         { label: '0', value: 0, isUse: false },
-        { label: '1', value: 1, skillLv: 1, isUse: true, bonus: { atk_race_brute: 4, atk_race_insect: 4 } },
-        { label: '2', value: 2, skillLv: 2, isUse: true, bonus: { atk_race_brute: 8, atk_race_insect: 8 } },
-        { label: '3', value: 3, skillLv: 3, isUse: true, bonus: { atk_race_brute: 12, atk_race_insect: 12 } },
-        { label: '4', value: 4, skillLv: 4, isUse: true, bonus: { atk_race_brute: 16, atk_race_insect: 16 } },
-        { label: '5', value: 5, skillLv: 5, isUse: true, bonus: { atk_race_brute: 20, atk_race_insect: 20 } },
-        { label: '6', value: 6, skillLv: 6, isUse: true, bonus: { atk_race_brute: 24, atk_race_insect: 24 } },
-        { label: '7', value: 7, skillLv: 7, isUse: true, bonus: { atk_race_brute: 28, atk_race_insect: 28 } },
-        { label: '8', value: 8, skillLv: 8, isUse: true, bonus: { atk_race_brute: 32, atk_race_insect: 32 } },
-        { label: '9', value: 9, skillLv: 9, isUse: true, bonus: { atk_race_brute: 36, atk_race_insect: 36 } },
-        { label: '10', value: 10, skillLv: 10, isUse: true, bonus: { atk_race_brute: 40, atk_race_insect: 40 } },
+        { label: '1', value: 1, skillLv: 1, isUse: true, bonus: { x_race_brute_atk: 4, x_race_insect_atk: 4 } },
+        { label: '2', value: 2, skillLv: 2, isUse: true, bonus: { x_race_brute_atk: 8, x_race_insect_atk: 8 } },
+        { label: '3', value: 3, skillLv: 3, isUse: true, bonus: { x_race_brute_atk: 12, x_race_insect_atk: 12 } },
+        { label: '4', value: 4, skillLv: 4, isUse: true, bonus: { x_race_brute_atk: 16, x_race_insect_atk: 16 } },
+        { label: '5', value: 5, skillLv: 5, isUse: true, bonus: { x_race_brute_atk: 20, x_race_insect_atk: 20 } },
+        { label: '6', value: 6, skillLv: 6, isUse: true, bonus: { x_race_brute_atk: 24, x_race_insect_atk: 24 } },
+        { label: '7', value: 7, skillLv: 7, isUse: true, bonus: { x_race_brute_atk: 28, x_race_insect_atk: 28 } },
+        { label: '8', value: 8, skillLv: 8, isUse: true, bonus: { x_race_brute_atk: 32, x_race_insect_atk: 32 } },
+        { label: '9', value: 9, skillLv: 9, isUse: true, bonus: { x_race_brute_atk: 36, x_race_insect_atk: 36 } },
+        { label: '10', value: 10, skillLv: 10, isUse: true, bonus: { x_race_brute_atk: 40, x_race_insect_atk: 40 } },
       ],
     },
     {
@@ -272,70 +273,70 @@ export class Ranger extends CharacterBase {
           value: 1,
           skillLv: 1,
           isUse: true,
-          bonus: { atk_race_brute: 5, atk_race_plant: 5, atk_race_fish: 5 },
+          bonus: { x_race_brute_atk: 5, x_race_plant_atk: 5, x_race_fish_atk: 5 },
         },
         {
           label: '2',
           value: 2,
           skillLv: 2,
           isUse: true,
-          bonus: { atk_race_brute: 10, atk_race_plant: 10, atk_race_fish: 10 },
+          bonus: { x_race_brute_atk: 10, x_race_plant_atk: 10, x_race_fish_atk: 10 },
         },
         {
           label: '3',
           value: 3,
           skillLv: 3,
           isUse: true,
-          bonus: { atk_race_brute: 15, atk_race_plant: 15, atk_race_fish: 15 },
+          bonus: { x_race_brute_atk: 15, x_race_plant_atk: 15, x_race_fish_atk: 15 },
         },
         {
           label: '4',
           value: 4,
           skillLv: 4,
           isUse: true,
-          bonus: { atk_race_brute: 20, atk_race_plant: 20, atk_race_fish: 20 },
+          bonus: { x_race_brute_atk: 20, x_race_plant_atk: 20, x_race_fish_atk: 20 },
         },
         {
           label: '5',
           value: 5,
           skillLv: 5,
           isUse: true,
-          bonus: { atk_race_brute: 25, atk_race_plant: 25, atk_race_fish: 25 },
+          bonus: { x_race_brute_atk: 25, x_race_plant_atk: 25, x_race_fish_atk: 25 },
         },
         {
           label: '6',
           value: 6,
           skillLv: 6,
           isUse: true,
-          bonus: { atk_race_brute: 30, atk_race_plant: 30, atk_race_fish: 30 },
+          bonus: { x_race_brute_atk: 30, x_race_plant_atk: 30, x_race_fish_atk: 30 },
         },
         {
           label: '7',
           value: 7,
           skillLv: 7,
           isUse: true,
-          bonus: { atk_race_brute: 35, atk_race_plant: 35, atk_race_fish: 35 },
+          bonus: { x_race_brute_atk: 35, x_race_plant_atk: 35, x_race_fish_atk: 35 },
         },
         {
           label: '8',
           value: 8,
           skillLv: 8,
           isUse: true,
-          bonus: { atk_race_brute: 40, atk_race_plant: 40, atk_race_fish: 40 },
+          bonus: { x_race_brute_atk: 40, x_race_plant_atk: 40, x_race_fish_atk: 40 },
         },
         {
           label: '9',
           value: 9,
           skillLv: 9,
           isUse: true,
-          bonus: { atk_race_brute: 45, atk_race_plant: 45, atk_race_fish: 45 },
+          bonus: { x_race_brute_atk: 45, x_race_plant_atk: 45, x_race_fish_atk: 45 },
         },
         {
           label: '10',
           value: 10,
           skillLv: 10,
           isUse: true,
-          bonus: { atk_race_brute: 50, atk_race_plant: 50, atk_race_fish: 50 },
+          bonus: { x_race_brute_atk: 50, x_race_plant_atk: 50, x_race_fish_atk: 50 },
         },
       ],
     },
@@ -346,16 +347,16 @@ export class Ranger extends CharacterBase {
       isEquipAtk: true,
       dropdown: [
         { label: '0', value: 0, isUse: false },
-        { label: '1', value: 'Trap Research==1', skillLv: 1, isUse: true, bonus: { int: 1, sp: 220 } },
-        { label: '2', value: 'Trap Research==2', skillLv: 2, isUse: true, bonus: { int: 2, sp: 240 } },
-        { label: '3', value: 'Trap Research==3', skillLv: 3, isUse: true, bonus: { int: 3, sp: 260 } },
-        { label: '4', value: 'Trap Research==4', skillLv: 4, isUse: true, bonus: { int: 4, sp: 280 } },
-        { label: '5', value: 'Trap Research==5', skillLv: 5, isUse: true, bonus: { int: 5, sp: 300 } },
-        { label: '6', value: 'Trap Research==6', skillLv: 6, isUse: true, bonus: { int: 6, sp: 320 } },
-        { label: '7', value: 'Trap Research==7', skillLv: 7, isUse: true, bonus: { int: 7, sp: 340 } },
-        { label: '8', value: 'Trap Research==8', skillLv: 8, isUse: true, bonus: { int: 8, sp: 360 } },
-        { label: '9', value: 'Trap Research==9', skillLv: 9, isUse: true, bonus: { int: 9, sp: 380 } },
-        { label: '10', value: 'Trap Research==10', skillLv: 10, isUse: true, bonus: { int: 10, sp: 400 } },
+        { label: '1', value: 1, skillLv: 1, isUse: true, bonus: { int: 1, sp: 220 } },
+        { label: '2', value: 2, skillLv: 2, isUse: true, bonus: { int: 2, sp: 240 } },
+        { label: '3', value: 3, skillLv: 3, isUse: true, bonus: { int: 3, sp: 260 } },
+        { label: '4', value: 4, skillLv: 4, isUse: true, bonus: { int: 4, sp: 280 } },
+        { label: '5', value: 5, skillLv: 5, isUse: true, bonus: { int: 5, sp: 300 } },
+        { label: '6', value: 6, skillLv: 6, isUse: true, bonus: { int: 6, sp: 320 } },
+        { label: '7', value: 7, skillLv: 7, isUse: true, bonus: { int: 7, sp: 340 } },
+        { label: '8', value: 8, skillLv: 8, isUse: true, bonus: { int: 8, sp: 360 } },
+        { label: '9', value: 9, skillLv: 9, isUse: true, bonus: { int: 9, sp: 380 } },
+        { label: '10', value: 10, skillLv: 10, isUse: true, bonus: { int: 10, sp: 400 } },
       ],
     },
     {
@@ -377,5 +378,11 @@ export class Ranger extends CharacterBase {
     super();
 
     this.inheritBaseClass(new Archer());
+  }
+
+  override getMasteryAtk(info: InfoForClass): number {
+    const { monster } = info;
+
+    return this.calcHiddenMasteryAtk(info, { prefix: `x_race_${monster.race}` }).totalAtk;
   }
 }
