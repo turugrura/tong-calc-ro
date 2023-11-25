@@ -11,6 +11,7 @@ import { InfoForClass } from '../models/info-for-class.model';
 import { WeaponTypeName } from '../constants/weapon-type-mapper';
 import { DanceWithWug, LeradsDew, Lesson, SevereRainstorm, SongOfMana } from '../constants/share-passive-skills';
 import { ElementType } from '../constants/element-type.const';
+import { BragisPoem } from '../constants/share-active-skills';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 0, 1, 0],
@@ -271,6 +272,7 @@ export class Wanderer extends CharacterBase {
         { label: 'Lv 5', value: 5, isUse: true, bonus: { skillAspd: 5 * 4, fctPercent: 5 * 6 } },
       ],
     },
+    BragisPoem,
   ];
 
   protected readonly _passiveSkillList: PassiveSkillModel[] = [
