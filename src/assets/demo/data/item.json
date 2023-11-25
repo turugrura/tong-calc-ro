@@ -17435,6 +17435,47 @@
       ]
     }
   },
+  "19268": {
+    "id": 19268,
+    "aegisName": "FaceWorm_Breath",
+    "name": "Giant Snake Breath",
+    "unidName": "Hat",
+    "resName": "이프리트의숨결",
+    "description": "หุ่นจำลองที่คล้ายกับงูยักษ์\nแค่ใส่มันไว้ก็รู้สึกเป็นงูยักษ์\nเพิ่มพลังโจมตีทางเวทย์ธาตุ Fire 1%\n\nเมื่อสวมใส่กับ Giant God Snake Skin/Giant God Snake Skin[1]\nทุกๆ Base STR 20 ATK + 5\nทุกๆ Base AGI 20 ลดดีเลย์หลังโจมตีลง 3%\nทุกๆ Base VIT 20 เพิ่มความทนทานต่อธาตุ Neutral 1%\nทุกๆ Base INT 20 ลดการร่ายแบบแปรผัน 4%\nทุกๆ Base DEX 20 เพิ่มพลังโจมตีระยะไกล 1%\nทุกๆ Base LUK 20 เพิ่ม Critical Damage 3%\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^7777772^000000\nตำแหน่ง : ^777777Lower ^000000น้ำหนัก : ^77777730^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 2,
+    "weight": 30,
+    "requiredLevel": 1,
+    "location": "Lower",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "m_my_element_fire": [
+        "1"
+      ],
+      "atk": [
+        "EQUIP[Giant God Snake Skin]SUM[str==20]---5"
+      ],
+      "acd": [
+        "EQUIP[Giant God Snake Skin]SUM[agi==20]---3"
+      ],
+      "vct": [
+        "EQUIP[Giant God Snake Skin]SUM[int==20]---4"
+      ],
+      "range": [
+        "EQUIP[Giant God Snake Skin]SUM[dex==20]---1"
+      ],
+      "criDmg": [
+        "EQUIP[Giant God Snake Skin]SUM[luk==20]---3"
+      ]
+    }
+  },
   "19274": {
     "id": 19274,
     "aegisName": "OpenAir_Headset",

@@ -36,6 +36,17 @@ export class AppTopBarComponent {
 
   updates: { v: string; date: string; logs: string[] }[] = [
     {
+      v: 'V1.7.0',
+      date: '25-11-2566',
+      logs: [
+        'Fixed Soul Reaper ASPD',
+        'Fixed Judex formula',
+        'Fixed reported bugs',
+        'Supported Oboro class',
+        'Added requested items & monster',
+      ],
+    },
+    {
       v: 'V1.6.5',
       date: '23-11-2566',
       logs: ['Fixed MATK formula', 'Fixed Fatal Manace formula', 'Fixed Katar crirate', 'Added requested items'],
