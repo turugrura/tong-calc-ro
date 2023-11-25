@@ -145,7 +145,8 @@ export class ArchBishop extends CharacterBase {
       cd: 0,
       isMatk: true,
       element: ElementType.Holy,
-      value: 'Judex==1',
+      value: 'Judex==10',
+      hit: 3,
       levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
