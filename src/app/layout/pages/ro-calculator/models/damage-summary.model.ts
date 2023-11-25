@@ -5,6 +5,7 @@ export interface BasicDamageSummaryModel {
   basicMaxDamage: number;
   criMinDamage: number;
   criMaxDamage: number;
+  sizePenalty: number;
   propertyAtk: ElementType;
   propertyMultiplier: number;
   basicCriRate: number;
@@ -23,6 +24,7 @@ export enum SkillType {
 export interface SkillDamageSummaryModel {
   baseSkillDamage: number;
   dmgType: SkillType;
+  skillSizePenalty: number;
   skillCanCri: boolean;
   skillPropertyAtk: ElementType;
   skillPropertyMultiplier: number;

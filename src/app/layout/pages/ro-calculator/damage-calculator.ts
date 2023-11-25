@@ -481,11 +481,10 @@ export class DamageCalculator {
     return skillAtk + buffAtk + uiMastery + hiddenMastery;
   }
 
-  private getWeaponAtk(params: { isEDP: boolean }) {
-    const { isEDP } = params;
+  private getWeaponAtk(params: { isEDP: boolean; sizePenalty: number }) {
+    const { isEDP, sizePenalty } = params;
     const { baseWeaponAtk, baseWeaponLevel, refineBonus, overUpgradeBonus } = this.weaponData.data;
     const { elementLevelN, elementUpper } = this.monsterData;
-    const sizePenalty = this.getSizePenalty();
     const variant = baseWeaponAtk * baseWeaponLevel * 0.05;
     const poisonPsudoMulti = 1 + PoisonPsoEleTable[elementLevelN][elementUpper] * 0.25;
 
@@ -524,8 +523,8 @@ export class DamageCalculator {
     return this.toPercent(pMultiplier);
   }
 
-  private calcTotalAtk(params: { propertyAtk: ElementType; isEDP: boolean }) {
-    const { propertyAtk, isEDP } = params;
+  private calcTotalAtk(params: { propertyAtk: ElementType; isEDP: boolean; sizePenalty: number }) {
+    const { propertyAtk, isEDP, sizePenalty } = params;
     const propertyMultiplier = this.getPropertyMultiplier(propertyAtk);
 
     const mildwindMultiplier = this.isActiveMildwind ? propertyMultiplier : 1;
@@ -535,7 +534,7 @@ export class DamageCalculator {
 
     const statusAtk = this.getstatusAtk() * mildwindMultiplier;
 
-    const { totalMin: _weaMin, totalMax: weaMax, totalMaxOver: weaMaxOver } = this.getWeaponAtk({ isEDP });
+    const { totalMin: _weaMin, totalMax: weaMax, totalMaxOver: weaMaxOver } = this.getWeaponAtk({ sizePenalty, isEDP });
     const weaMin = this.isMaximizeWeapon ? weaMax : _weaMin;
 
     const aMin = this.getAtkGroupA({ totalAtk: weaMin + extraAtk });
@@ -578,8 +577,9 @@ export class DamageCalculator {
     skillData: AtkSkillModel;
     baseSkillDamage: number;
     weaponPropertyAtk: ElementType;
+    sizePenalty: number;
   }) {
-    const { skillData, baseSkillDamage, weaponPropertyAtk } = params;
+    const { skillData, baseSkillDamage, weaponPropertyAtk, sizePenalty } = params;
     const { name: skillName, element, canCri: _canCri, isMelee, isHDefToSDef = false, isIgnoreDef = false } = skillData;
     const { criDmgPercentage = 1 } = skillData;
     const canCri = this.isForceSkillCri || _canCri;
@@ -613,6 +613,7 @@ export class DamageCalculator {
     const propertyAtk = element || weaponPropertyAtk;
     const { totalMin, totalMax, totalMaxOver, propertyMultiplier } = this.calcTotalAtk({
       propertyAtk,
+      sizePenalty,
       isEDP: this.isActiveEDP(skillName),
     });
 
@@ -630,7 +631,7 @@ export class DamageCalculator {
       skill: skillData,
     });
 
-    return { minDamage, maxDamage, propertyAtk, propertyMultiplier };
+    return { minDamage, maxDamage, propertyAtk, propertyMultiplier, sizePenalty };
   }
 
   private getStatusMatk() {
@@ -753,7 +754,7 @@ export class DamageCalculator {
     //   weaponMaxDmg,
     // });
 
-    return { propertyAtk: skillPropertyAtk, propertyMultiplier, minDamage, maxDamage };
+    return { propertyAtk: skillPropertyAtk, propertyMultiplier, minDamage, maxDamage, sizePenalty: 1 };
   }
 
   private calcBasicDamage(params: { totalMin: number; totalMax: number }) {
@@ -810,12 +811,14 @@ export class DamageCalculator {
     const criMinDamage = formula(totalMaxAtk);
     const criMaxDamage = formula(totalMaxAtkOver);
 
-    return { criMinDamage, criMaxDamage };
+    return { criMinDamage, criMaxDamage, sizePenalty: 100 };
   }
 
   calculateAllDamages(skillValue: string, propertyAtk: ElementType): DamageSummaryModel {
+    const sizePenalty = this.getSizePenalty();
     const { totalMin, totalMax, totalMaxOver, propertyMultiplier } = this.calcTotalAtk({
       propertyAtk,
+      sizePenalty,
       isEDP: this.isActiveEDP(''),
     });
 
@@ -844,6 +847,7 @@ export class DamageCalculator {
       basicMaxDamage,
       criMinDamage,
       criMaxDamage,
+      sizePenalty: floor(sizePenalty * 100, 0),
       propertyAtk,
       propertyMultiplier,
       basicCriRate: basicCriRate,
@@ -883,6 +887,7 @@ export class DamageCalculator {
       baseSkillDamage,
       skillData,
       weaponPropertyAtk: propertyAtk,
+      sizePenalty,
     };
     const calculated = isMatk ? this.calcMatkSkillDamage(params) : this.calcSkillDamage(params);
 
@@ -904,6 +909,7 @@ export class DamageCalculator {
         baseSkillDamage: baseSkillDamage2,
         skillData: { ...skillData, ...part2 },
         weaponPropertyAtk: propertyAtk,
+        sizePenalty,
       };
 
       const calcPart2 = isPart2Matk ? this.calcMatkSkillDamage(params2) : this.calcSkillDamage(params2);
@@ -945,6 +951,7 @@ export class DamageCalculator {
     const skillDmg: SkillDamageSummaryModel = {
       baseSkillDamage,
       dmgType: isMatk ? SkillType.MAGICAL : isMelee ? SkillType.MELEE : SkillType.RANGE,
+      skillSizePenalty: round(calculated.sizePenalty * 100, 0),
       skillTotalHit: totalHit,
       skillPropertyAtk: calculated.propertyAtk,
       skillPropertyMultiplier: calculated.propertyMultiplier,

@@ -1092,57 +1092,147 @@
           </div>
         </div>
       </div>
-      <div class="col-3">
-        <p-dropdown
-          inputId="shieldCard"
-          [autoDisplayFirst]="false"
-          [resetFilterOnHide]="true"
-          [options]="shieldCardList"
-          [filter]="true"
-          filterBy="label,cardPrefix"
-          [(ngModel)]="model.shieldCard"
-          [disabled]="!model.shield || itemSlotsMap.shield < 1"
-          [showClear]="true"
-          (onChange)="onSelectItem('shieldCard', $event.value)"
-          placeholder="Card"
-        >
-          <ng-template let-item pTemplate="selectedItem">
-            <div class="flex gap-1 item_template" *ngIf="model.shieldCard">
-              <img src="assets/demo/images/items/card.png" alt="" class="item_img" />
-              <div>{{ item.label }}</div>
-            </div>
-          </ng-template>
-        </p-dropdown>
-      </div>
-      <div class="col-3" [hidden]="!(itemTotalOptionMap['shield'] >= 1) || !model.shield">
-        <p-cascadeSelect
-          [(ngModel)]="model.rawOptionTxts[itemOptionNumber.Shield_1]"
-          [disabled]="!model.shield"
-          [options]="optionList"
-          optionValue="value"
-          optionGroupLabel="label"
-          optionLabel="label"
-          [optionGroupChildren]="['children', 'children', 'children']"
-          placeholder="Option 1"
-          [showClear]="true"
-          (onChange)="onOptionChange()"
-          (onClear)="onOptionChange()"
-        ></p-cascadeSelect>
-      </div>
-      <div class="col-3" [hidden]="!(itemTotalOptionMap['shield'] >= 2) || !model.shield">
-        <p-cascadeSelect
-          [(ngModel)]="model.rawOptionTxts[itemOptionNumber.Shield_2]"
-          [disabled]="!model.shield"
-          [options]="optionList"
-          optionValue="value"
-          optionGroupLabel="label"
-          optionLabel="label"
-          [optionGroupChildren]="['children', 'children', 'children']"
-          placeholder="Option 2"
-          [showClear]="true"
-          (onChange)="onOptionChange()"
-          (onClear)="onOptionChange()"
-        ></p-cascadeSelect>
+      <div class="col-9">
+        <div class="grid grid-nogutter">
+          <div class="col-4">
+            <p-dropdown
+              inputId="shieldCard"
+              [autoDisplayFirst]="false"
+              [resetFilterOnHide]="true"
+              [options]="shieldCardList"
+              [filter]="true"
+              filterBy="label,cardPrefix"
+              [(ngModel)]="model.shieldCard"
+              [disabled]="!model.shield || itemSlotsMap.shield < 1"
+              [showClear]="true"
+              (onChange)="onSelectItem('shieldCard', $event.value)"
+              placeholder="Card"
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1 item_template" *ngIf="model.shieldCard">
+                  <img src="assets/demo/images/items/card.png" alt="" class="item_img" />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
+          </div>
+          <div class="col-4" [hidden]="!(itemTotalOptionMap['shield'] >= 1) || !model.shield">
+            <p-cascadeSelect
+              [(ngModel)]="model.rawOptionTxts[itemOptionNumber.Shield_1]"
+              [disabled]="!model.shield"
+              [options]="optionList"
+              optionValue="value"
+              optionGroupLabel="label"
+              optionLabel="label"
+              [optionGroupChildren]="['children', 'children', 'children']"
+              placeholder="Option 1"
+              [showClear]="true"
+              (onChange)="onOptionChange()"
+              (onClear)="onOptionChange()"
+            ></p-cascadeSelect>
+          </div>
+          <div class="col-4" [hidden]="!(itemTotalOptionMap['shield'] >= 2) || !model.shield">
+            <p-cascadeSelect
+              [(ngModel)]="model.rawOptionTxts[itemOptionNumber.Shield_2]"
+              [disabled]="!model.shield"
+              [options]="optionList"
+              optionValue="value"
+              optionGroupLabel="label"
+              optionLabel="label"
+              [optionGroupChildren]="['children', 'children', 'children']"
+              placeholder="Option 2"
+              [showClear]="true"
+              (onChange)="onOptionChange()"
+              (onClear)="onOptionChange()"
+            ></p-cascadeSelect>
+          </div>
+        </div>
+        <div class="grid grid-nogutter" [hidden]="shieldEnchant3List.length === 0 || !model.shield">
+          <div class="col-4">
+            <p-dropdown
+              inputId="shieldEnchant1"
+              [autoDisplayFirst]="false"
+              [resetFilterOnHide]="true"
+              [options]="shieldEnchant1List"
+              [filter]="true"
+              filterBy="label"
+              [(ngModel)]="model.shieldEnchant1"
+              [showClear]="true"
+              [disabled]="shieldEnchant1List.length === 0 || !model.shield"
+              (onChange)="onSelectItem('shieldEnchant1', $event.value)"
+              placeholder="Enchant 2"
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1 item_template" *ngIf="model.shieldEnchant1">
+                  <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+              <ng-template let-item pTemplate="item">
+                <div class="flex gap-1">
+                  <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
+          </div>
+          <div class="col-4">
+            <p-dropdown
+              inputId="shieldEnchant2"
+              [autoDisplayFirst]="false"
+              [resetFilterOnHide]="true"
+              [options]="shieldEnchant2List"
+              [filter]="true"
+              filterBy="label"
+              [(ngModel)]="model.shieldEnchant2"
+              [showClear]="true"
+              [disabled]="shieldEnchant2List.length === 0 || !model.shield"
+              (onChange)="onSelectItem('shieldEnchant2', $event.value)"
+              placeholder="Enchant 3"
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1 item_template" *ngIf="model.shieldEnchant2">
+                  <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+              <ng-template let-item pTemplate="item">
+                <div class="flex gap-1">
+                  <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
+          </div>
+          <div class="col-4">
+            <p-dropdown
+              inputId="shieldEnchant3"
+              [autoDisplayFirst]="false"
+              [resetFilterOnHide]="true"
+              [options]="shieldEnchant3List"
+              [filter]="true"
+              filterBy="label"
+              [(ngModel)]="model.shieldEnchant3"
+              [showClear]="true"
+              [disabled]="shieldEnchant3List.length === 0 || !model.shield"
+              (onChange)="onSelectItem('shieldEnchant3', $event.value)"
+              placeholder="Enchant 4"
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1 item_template" *ngIf="model.shieldEnchant3">
+                  <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+              <ng-template let-item pTemplate="item">
+                <div class="flex gap-1">
+                  <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -3542,12 +3632,12 @@
                   <div class="col-6">
                     <app-calc-value
                       [enableCompare]="isEnableCompare && totalSummary2?.dmg"
-                      label="ASPD:"
-                      unit=" Hits/s"
+                      label="SizePenalty:"
+                      unit=" %"
                       styleClass="summary_highlight"
                       styleClass2="summary_compare"
-                      [max]="totalSummary?.calc?.hitPerSecs"
-                      [max2]="totalSummary2?.calc?.hitPerSecs"
+                      [max]="totalSummary?.dmg?.skillSizePenalty"
+                      [max2]="totalSummary2?.dmg?.skillSizePenalty"
                     ></app-calc-value>
                   </div>
                   <div class="col-6">
@@ -3570,6 +3660,17 @@
                       styleClass2="summary_compare"
                       [max]="totalSummary?.dmg?.skillAccuracy"
                       [max2]="totalSummary2?.dmg?.skillAccuracy"
+                    ></app-calc-value>
+                  </div>
+                  <div class="col-6">
+                    <app-calc-value
+                      [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+                      label="ASPD:"
+                      unit=" Hits/s"
+                      styleClass="summary_highlight"
+                      styleClass2="summary_compare"
+                      [max]="totalSummary?.calc?.hitPerSecs"
+                      [max2]="totalSummary2?.calc?.hitPerSecs"
                     ></app-calc-value>
                   </div>
 

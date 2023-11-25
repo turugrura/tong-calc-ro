@@ -663,6 +663,7 @@ export const EnchantTable: EntTable[] = [
   { name: 'Apple_Of_Archer_IL', enchants: [null, null, BaseState._1_4, illusionDun] },
   { name: 'Fancy_Flower_IL', enchants: [null, null, BaseState._1_4, illusionDun] },
   { name: 'Goibne_Helmet_IL', enchants: [null, null, BaseState._1_4, illusionDun] },
+  { name: 'Herald_Of_GOD_IL', enchants: [null, null, BaseState._1_4, illusionDun] },
   { name: 'Boots_IL', enchants: [null, null, BaseState._1_4, illusionDun] },
   { name: 'Shoes_IL', enchants: [null, null, BaseState._1_4, illusionDun] },
 

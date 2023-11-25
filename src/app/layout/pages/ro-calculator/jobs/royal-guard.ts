@@ -325,7 +325,7 @@ export class RoyalGuard extends CharacterBase {
     }
 
     if (this.isSkillActive('Shield Spell')) {
-      totalBonus.atk += equipmentBonus.shield?.weight || 0;
+      totalBonus.atk += equipmentBonus.shield?.baseDef || 0;
     }
 
     if (this.isSkillActive('Ride Peco') && typeName === 'spear') {
