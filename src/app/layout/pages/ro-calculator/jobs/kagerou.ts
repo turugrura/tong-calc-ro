@@ -10,7 +10,7 @@ import { Ninja } from './ninja';
 import { ShadowWarrior } from '../constants/share-active-skills/shadow-warrior';
 import { InfoForClass } from '../models/info-for-class.model';
 import { floor } from '../utils';
-import { S16thNight } from '../constants/share-active-skills/s16th-night';
+import { DistortedCrescent, S16thNight } from '../constants/share-active-skills';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 0, 1, 0],
@@ -178,6 +178,7 @@ export class Kagerou extends CharacterBase {
       ],
     },
     S16thNight,
+    DistortedCrescent,
   ];
 
   protected readonly _passiveSkillList: PassiveSkillModel[] = [
@@ -227,5 +228,16 @@ export class Kagerou extends CharacterBase {
     const { model } = info;
 
     return floor((model.jobLevel * _16Night) / 2);
+  }
+
+  override setAdditionalBonus(params: InfoForClass) {
+    const { totalBonus, model } = params;
+    if (this.isSkillActive('Distorted Crescent')) {
+      const bonus = floor(model.level / 3) + 100;
+      totalBonus.atk += bonus;
+      totalBonus.matk += bonus;
+    }
+
+    return totalBonus;
   }
 }
