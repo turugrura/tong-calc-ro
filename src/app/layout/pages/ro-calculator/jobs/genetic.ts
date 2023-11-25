@@ -144,6 +144,26 @@ export class Genetic extends CharacterBase {
         { label: '8000', value: 8000, isUse: true },
       ],
     },
+    {
+      label: 'Pyroclastic 10',
+      name: 'Pyroclastic',
+      inputType: 'dropdown',
+      isEquipAtk: true,
+      dropdown: [
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 100', value: 100, isUse: true, bonus: { atk: 100 + 100 } },
+        { label: 'Lv 110', value: 110, isUse: true, bonus: { atk: 100 + 110 } },
+        { label: 'Lv 120', value: 120, isUse: true, bonus: { atk: 100 + 120 } },
+        { label: 'Lv 130', value: 130, isUse: true, bonus: { atk: 100 + 130 } },
+        { label: 'Lv 140', value: 140, isUse: true, bonus: { atk: 100 + 140 } },
+        { label: 'Lv 150', value: 150, isUse: true, bonus: { atk: 100 + 150 } },
+        { label: 'Lv 160', value: 160, isUse: true, bonus: { atk: 100 + 160 } },
+        { label: 'Lv 170', value: 170, isUse: true, bonus: { atk: 100 + 170 } },
+        { label: 'Lv 180', value: 180, isUse: true, bonus: { atk: 100 + 180 } },
+        { label: 'Lv 190', value: 190, isUse: true, bonus: { atk: 100 + 190 } },
+        { label: 'Lv 200', value: 200, isUse: true, bonus: { atk: 100 + 200 } },
+      ],
+    },
   ];
 
   protected readonly _passiveSkillList: PassiveSkillModel[] = [
