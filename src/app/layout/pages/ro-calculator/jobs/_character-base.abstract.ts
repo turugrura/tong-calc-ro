@@ -7,6 +7,7 @@ import { PreCalcSkillModel } from '../models/pre-calc-skill.model';
 import { Weapon } from '../weapon';
 import { AspdTable } from './_aspd-table';
 import { ClassName } from './_class-name';
+import { sortSkill } from '../utils';
 
 export interface AtkSkillFormulaInput extends InfoForClass {
   skillLevel: number;
@@ -137,19 +138,37 @@ export abstract class CharacterBase {
   }
 
   get passiveSkills() {
+    const sortedSkill = this._passiveSkillList.map((a) => {
+      const sortedDropdown = a.dropdown.sort(sortSkill);
+
+      return {
+        ...a,
+        dropdown: sortedDropdown,
+      };
+    });
+
     if (environment.production) {
-      return this._passiveSkillList.filter((a) => !a.isDevMode);
+      return sortedSkill.filter((a) => !a.isDevMode);
     }
 
-    return this._passiveSkillList;
+    return sortedSkill;
   }
 
   get activeSkills() {
+    const sortedSkill = this._activeSkillList.map((a) => {
+      const sortedDropdown = a.dropdown.sort(sortSkill);
+
+      return {
+        ...a,
+        dropdown: sortedDropdown,
+      };
+    });
+
     if (environment.production) {
-      return this._activeSkillList.filter((a) => !a.isDevMode);
+      return sortedSkill.filter((a) => !a.isDevMode);
     }
 
-    return this._activeSkillList;
+    return sortedSkill;
   }
 
   get initialStatPoint() {

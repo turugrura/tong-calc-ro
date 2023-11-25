@@ -4,3 +4,4 @@ export * from './calc-skill-aspd';
 export * from './calc-dmg-dps';
 export * from './round';
 export * from './is-number';
+export * from './sort-skill';
