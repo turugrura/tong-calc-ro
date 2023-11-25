@@ -25,7 +25,7 @@ export class Ninja extends CharacterBase {
   ];
   protected readonly _passiveSkillList: PassiveSkillModel[] = [
     {
-      label: 'Ninja Mastery Lv10',
+      label: 'Ninja Mastery 10',
       name: 'Ninja Mastery',
       inputType: 'selectButton',
       dropdown: [
@@ -43,7 +43,7 @@ export class Ninja extends CharacterBase {
       ],
     },
     {
-      label: 'Dagger Practice Lv10',
+      label: 'Dagger Practice 10',
       name: 'Dagger Throwing Practice',
       inputType: 'selectButton',
       dropdown: [
@@ -61,7 +61,7 @@ export class Ninja extends CharacterBase {
       ],
     },
     {
-      label: 'Throw Huuma Lv5',
+      label: 'Throw Huuma 5',
       name: 'Throw Huuma Shuriken',
       inputType: 'selectButton',
       dropdown: [

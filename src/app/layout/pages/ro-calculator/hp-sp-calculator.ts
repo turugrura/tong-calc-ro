@@ -76,7 +76,8 @@ export class HpSpCalculator {
   }
 
   setClass(cClass: CharacterBase) {
-    this._dataIndex = hpSpIndex[cClass.className];
+    const dataIdx = this.hpSpTable.findIndex((a) => a.jobs[cClass.className]);
+    this._dataIndex = dataIdx;
 
     return this;
   }

@@ -323,6 +323,7 @@
                       {{
                         totalSummary?.weapon?.baseWeaponMatk +
                           (totalSummary?.weapon?.refineBonus || 0) +
+                          (totalSummary?.calc?.leftWeaponRefineBonus || 0) +
                           (totalSummary?.matk || 0)
                       }}</span
                     >
@@ -1045,7 +1046,7 @@
 
     <!-- Shield -->
     <div class="grid grid-nogutter item_label_shield_main" *ngIf="!hiddenMap.shield">
-      <div class="col-3">
+      <div class="col-3" [hidden]="!model.weapon || !!model.leftWeapon">
         <div class="grid grid-nogutter justify-content-end">
           <div class="col-12">
             <p-dropdown
@@ -1092,7 +1093,7 @@
           </div>
         </div>
       </div>
-      <div class="col-9">
+      <div class="col-9" [hidden]="!model.weapon || !!model.leftWeapon">
         <div class="grid grid-nogutter">
           <div class="col-4">
             <p-dropdown

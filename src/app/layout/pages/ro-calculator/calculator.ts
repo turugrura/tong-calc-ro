@@ -1527,6 +1527,7 @@ export class Calculator {
         totalPhysicalPene: this.totalPhysicalPene,
         totalMagicalPene: this.totalMagicalPene,
         totalPene: this.isMagicalSkill ? this.totalMagicalPene : this.totalPhysicalPene,
+        leftWeaponRefineBonus: refineBonus,
 
         totalStatusAtk: this.totalStatusAtk,
         totalEquipAtk: this.totalEquipAtk + leftWeaponAtk,

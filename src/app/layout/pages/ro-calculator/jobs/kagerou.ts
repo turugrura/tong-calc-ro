@@ -222,7 +222,7 @@ export class Kagerou extends CharacterBase {
   }
 
   override getMasteryMatk(info: InfoForClass): number {
-    const _16Night = this.learnLv('16th Night');
+    const _16Night = this.activeSkillLv('16th Night');
     if (_16Night <= 0) return 0;
 
     const { model } = info;

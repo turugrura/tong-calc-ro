@@ -2,7 +2,7 @@ import { ActiveSkillModel } from '../../jobs/_character-base.abstract';
 
 export const ElementCharm: ActiveSkillModel = {
   inputType: 'dropdown',
-  label: 'Charm Lv10',
+  label: 'Charm 10',
   name: 'Charm',
   dropdown: [
     { label: '-', isUse: false, value: 0 },

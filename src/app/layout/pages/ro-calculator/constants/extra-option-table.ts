@@ -21,4 +21,5 @@ export const ExtraOptionTable = {
   Gambler_Seal: 2,
   Droop_Gunslinger: 2,
   Cat_Lace_Hairband_K: 2,
+  Ring_Of_Spell_Explosion: 2,
 } as const;

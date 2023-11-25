@@ -490,6 +490,7 @@ export const EnchantTable: EntTable[] = [
   { name: 'Destruction_Rod', enchants: [null, null, malangdo, malangdo] },
   { name: 'Poison_Forged_Spear', enchants: [null, null, null, malangdo] },
   { name: 'Revenger', enchants: [null, null, malangdo, malangdo] },
+  { name: 'Bazerald', enchants: [null, null, malangdo, malangdo] },
 
   { name: 'Golden_Ninja_Suit', enchants: [null, goldenSet, goldenSet, goldenSet] },
   { name: 'Golden_Scarf', enchants: [null, goldenSet, goldenSet, goldenSet] },

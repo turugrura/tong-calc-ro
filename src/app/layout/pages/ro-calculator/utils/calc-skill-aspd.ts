@@ -20,14 +20,18 @@ export const calcSkillAspd = (params: {
   const reduceSkillFctPercent = totalEquipStatus[`fctPercent__${name}`] || 0;
   const reduceSkillAcd = totalEquipStatus[`acd__${name}`] || 0;
 
-  const { acd, vct, vct_inc = 0, fct, fctPercent } = totalEquipStatus;
+  const { acd, vct, vct_inc = 0, fct, fctPercent, vctBySkill = 0 } = totalEquipStatus;
   const { totalDex, totalInt } = status;
 
   const vctByStat = Math.max(0, 1 - Math.sqrt(floor((totalDex * 2 + totalInt) / 530, 4)));
   const vctGlobal = Math.max(0, 1 - (vct - vct_inc) / 100);
   const vctSkill = Math.max(0, 1 - reduceSkillVct / 100);
+  const vctBySkill_ = (100 - vctBySkill) / 100;
 
-  const reducedVct = Math.max(0, round((skillVct - reduceSkillVctFix) * vctByStat * vctGlobal * vctSkill, 2));
+  const reducedVct = Math.max(
+    0,
+    round((skillVct - reduceSkillVctFix) * vctByStat * vctGlobal * vctSkill * vctBySkill_, 2),
+  );
   const reducedCd = Math.max(0, round(skillCd - reduceSkillCd, 2));
   const reducedAcd = Math.max(0, round((skillAcd - reduceSkillAcd) * (1 - acd * 0.01), 2));
 

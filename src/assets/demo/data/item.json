@@ -133,11 +133,47 @@
       "Merchant",
       "Thief Cls",
       "Soul Linker",
-      "Ninja Cls"
+      "Ninja"
     ],
     "script": {
       "p_infiltration": [
         "1"
+      ]
+    }
+  },
+  "1231": {
+    "id": 1231,
+    "aegisName": "Bazerald",
+    "name": "Bazerald",
+    "unidName": "Dagger",
+    "resName": "바제랄드",
+    "description": "เป็นมีดที่ประดับด้วยสัญลักษณ์ที่สวยงาม ถูกใช้โดยขุนนางชั้นสูงในงานพิธีมงคล\nINT + 5 / MATK + 105\nประเภท : ^777777Dagger^000000\nพลังโจมตี : ^77777770^000000\nน้ำหนัก : ^77777750^000000\nธาตุ : ^777777Fire^000000\nLv ของอาวุธ : ^7777774^000000\nLv ที่ต้องการ : ^77777736^000000\nอาชีพ : ^777777Swordman, Mage, Archer, Merchant,\nThief Cls, Soul Linker, และ Ninja Cls^000000",
+    "slots": 0,
+    "itemTypeId": 1,
+    "itemSubTypeId": 256,
+    "itemLevel": 4,
+    "attack": 70,
+    "propertyAtk": "Fire",
+    "defense": null,
+    "weight": 50,
+    "requiredLevel": 36,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Swordman",
+      "Mage",
+      "Archer",
+      "Merchant",
+      "Thief",
+      "Soul Linker",
+      "Ninja"
+    ],
+    "script": {
+      "int": [
+        "5"
+      ],
+      "matk": [
+        "105"
       ]
     }
   },
@@ -4539,12 +4575,6 @@
       ],
       "matkPercent": [
         "15"
-      ],
-      "spLoss": [
-        "66"
-      ],
-      "hpLoss": [
-        "666"
       ]
     }
   },
@@ -4572,12 +4602,6 @@
       ],
       "matkPercent": [
         "20"
-      ],
-      "spLoss": [
-        "66"
-      ],
-      "hpLoss": [
-        "666"
       ]
     }
   },
@@ -10145,7 +10169,7 @@
       "Merchant",
       "Thief Cls",
       "Soul Linker",
-      "Ninja Cls"
+      "Ninja"
     ],
     "script": {
       "p_infiltration": [
@@ -10730,7 +10754,7 @@
     "location": null,
     "compositionPos": null,
     "usableClass": [
-      "Ninja Cls"
+      "Ninja"
     ],
     "script": {
       "matk": [
@@ -10830,7 +10854,7 @@
     "location": null,
     "compositionPos": null,
     "usableClass": [
-      "Ninja Cls"
+      "Ninja"
     ],
     "script": {
       "matk": [
@@ -15408,12 +15432,6 @@
       "matk": [
         "20",
         "1---5"
-      ],
-      "hpDrain": [
-        "100"
-      ],
-      "hpLoss": [
-        "50"
       ]
     },
     "usableClass": [
@@ -27128,7 +27146,7 @@
     "location": "Armor",
     "compositionPos": null,
     "usableClass": [
-      "Ninja Class"
+      "Ninja"
     ],
     "script": {
       "Swirling Petal": [
@@ -39139,7 +39157,7 @@
       "Thief Cls",
       "Mage Cls",
       "Merchant Cls",
-      "Ninja Cls",
+      "Ninja",
       "Soul Linker Cls"
     ],
     "script": {
@@ -39203,7 +39221,7 @@
     "location": null,
     "compositionPos": null,
     "usableClass": [
-      "Ninja Class"
+      "Ninja"
     ],
     "script": {
       "chance__str": [
@@ -39232,7 +39250,7 @@
     "location": null,
     "compositionPos": null,
     "usableClass": [
-      "Ninja Class"
+      "Ninja"
     ],
     "script": {
       "atk": [
@@ -55766,6 +55784,89 @@
       ]
     }
   },
+  "510002": {
+    "id": 510002,
+    "aegisName": "Boost_Nindo",
+    "name": "Boosting Nindo [2]",
+    "unidName": "Dagger",
+    "resName": "빛나는대거",
+    "description": "มีดสุดพิเศษที่เตรียมไว้เพื่อทำให้นักผจญภัยพัฒนาไปอย่างรวดเร็ว\n\nMATK +160\nเพิ่ม Damage ทางเวทมนตร์ธาตุ Water, Wind, Fire 3%, ATK +3%\nทุก ๆ การอัพเกรด 1 ขั้น ATK +2, MATK +2\nทุก ๆ Base Lv. 15, ATK +3, MATK +3 (ใช้งานสูงสุดถึง Lv. 180)\nเมื่ออัพเกรดถึงขั้น 7 ทุก ๆ การเรียนรู้สกิล Ninja Mastery 1 เลเวล ลดระยะเวลาร่ายแบบแปรผัน 1%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูทุกขนาด 10%\n\nเมื่อสวมใส่ร่วมกับ Elemental Booster (Robe/Muffler/Shoes/Earring),\nMATK +20, ลด Delay หลังใช้สกิล 10%,\nทุก ๆ Base Lv. 15 เพิ่ม Damage สกิล Flaming Petals, Freezing Spear, Wind Blade 2% (ใช้งานสูงสุดถึง Lv. 180),\nเมื่อใช้สกิล Ninja Aura เพิ่ม Damage สกิล Flaming Petals, Freezing Spear, Wind Blade ขึ้นอีก 35% เป็นเวลา 60 วินาที\n\nเมื่อสวมใส่ร่วมกับ Range Booster (Suit/Manteau/Boots/Brooch), \nATK +20, ลด Cooldown สกิล Cross Slash 1 วินาที,\nทุก ๆ Base Lv. 15 เพิ่ม Damage สกิล Kunai Splash 1% (ใช้งานสูงสุดถึง Lv. 180),\nเมื่อใช้สกิล Ninja Aura เพิ่ม Damage สกิล Kunai Splash ขึ้นอีก 20% เป็นเวลา 60 วินาที\nประเภท : ^777777Dagger^000000 พลังโจมตี : ^777777150^000000\nน้ำหนัก : ^7777770^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Ninja Cls^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 256,
+    "itemLevel": 4,
+    "attack": 150,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Ninja"
+    ],
+    "script": {
+      "matk": [
+        "160",
+        "1---2",
+        "SUM[level==15]---3",
+        "SUM[level==195]===-3",
+        "EQUIP[Elemental Booster Robe&&Elemental Booster Muffler&&Elemental Booster Shoes&&Elemental Booster Earring]===20"
+      ],
+      "m_my_element_water": [
+        "3"
+      ],
+      "m_my_element_wind": [
+        "3"
+      ],
+      "m_my_element_fire": [
+        "3"
+      ],
+      "atkPercent": [
+        "3"
+      ],
+      "atk": [
+        "1---2",
+        "SUM[level==15]---3",
+        "SUM[level==195]===-3",
+        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]===20"
+      ],
+      "vct": [
+        "REFINE[7]LEARN_SKILL[Ninja Mastery==1]---1"
+      ],
+      "p_size_all": [
+        "9===10"
+      ],
+      "m_size_all": [
+        "9===10"
+      ],
+      "acd": [
+        "EQUIP[Elemental Booster Robe&&Elemental Booster Muffler&&Elemental Booster Shoes&&Elemental Booster Earring]===10"
+      ],
+      "Flaming Petals": [
+        "EQUIP[Elemental Booster Robe&&Elemental Booster Muffler&&Elemental Booster Shoes&&Elemental Booster Earring]SUM[level==15]---2",
+        "EQUIP[Elemental Booster Robe&&Elemental Booster Muffler&&Elemental Booster Shoes&&Elemental Booster Earring]SUM[level==195]===-2",
+        "EQUIP[Elemental Booster Robe&&Elemental Booster Muffler&&Elemental Booster Shoes&&Elemental Booster Earring]ACTIVE_SKILL[Ninja Aura]===35"
+      ],
+      "Freezing Spear": [
+        "EQUIP[Elemental Booster Robe&&Elemental Booster Muffler&&Elemental Booster Shoes&&Elemental Booster Earring]SUM[level==15]---2",
+        "EQUIP[Elemental Booster Robe&&Elemental Booster Muffler&&Elemental Booster Shoes&&Elemental Booster Earring]SUM[level==195]===-2",
+        "EQUIP[Elemental Booster Robe&&Elemental Booster Muffler&&Elemental Booster Shoes&&Elemental Booster Earring]ACTIVE_SKILL[Ninja Aura]===35"
+      ],
+      "Wind Blade": [
+        "EQUIP[Elemental Booster Robe&&Elemental Booster Muffler&&Elemental Booster Shoes&&Elemental Booster Earring]SUM[level==15]---2",
+        "EQUIP[Elemental Booster Robe&&Elemental Booster Muffler&&Elemental Booster Shoes&&Elemental Booster Earring]SUM[level==195]===-2",
+        "EQUIP[Elemental Booster Robe&&Elemental Booster Muffler&&Elemental Booster Shoes&&Elemental Booster Earring]ACTIVE_SKILL[Ninja Aura]===35"
+      ],
+      "cd__Cross Slash": [
+        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]===1"
+      ],
+      "Kunai Splash": [
+        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]SUM[level==15]---1",
+        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]SUM[level==195]===-1",
+        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]ACTIVE_SKILL[Ninja Aura]===20"
+      ]
+    }
+  },
   "510006": {
     "id": 510006,
     "aegisName": "Fatalist",
@@ -56127,6 +56228,7 @@
         "165",
         "1---3",
         "level:15---3",
+        "level:195===-3",
         "EQUIP[Elemental Booster Robe&&Elemental Booster Muffler&&Elemental Booster Shoes&&Elemental Booster Earring]20",
         "EQUIP[Defunct Booster Robe&&Defunct Booster Muffler&&Defunct Booster Shoes&&Defunct Booster Earring]20"
       ],
@@ -56143,6 +56245,7 @@
       ],
       "Psychic Wave": [
         "EQUIP[Elemental Booster Robe&&Elemental Booster Muffler&&Elemental Booster Shoes&&Elemental Booster Earring]level:15---1",
+        "EQUIP[Elemental Booster Robe&&Elemental Booster Muffler&&Elemental Booster Shoes&&Elemental Booster Earring]level:185===-1",
         "EQUIP[Elemental Booster Robe&&Elemental Booster Muffler&&Elemental Booster Shoes&&Elemental Booster Earring]ACTIVE_SKILL[Foresight]===20"
       ],
       "aspd": [
