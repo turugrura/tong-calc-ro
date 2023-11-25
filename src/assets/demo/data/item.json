@@ -67,13 +67,13 @@
     "location": null,
     "compositionPos": null,
     "usableClass": [
-      "Swordman Cls",
+      "Swordman",
       "Rogue",
       "Mage",
       "Wizard",
       "Merchant",
-      "Taekwon Cls",
-      "Gunslinger Cls"
+      "Taekwon",
+      "Gunslinger"
     ],
     "script": {}
   },
@@ -131,7 +131,7 @@
       "Mage",
       "Archer",
       "Merchant",
-      "Thief Cls",
+      "Thief",
       "Soul Linker",
       "Ninja"
     ],
@@ -195,7 +195,7 @@
     "location": null,
     "compositionPos": null,
     "usableClass": [
-      "Assassin Cross Cls"
+      "Assassin Cross"
     ],
     "script": {
       "hit": [
@@ -545,8 +545,8 @@
     "location": null,
     "compositionPos": null,
     "usableClass": [
-      "Acolyte Cls",
-      "Mage Cls"
+      "Acolyte",
+      "Mage"
     ],
     "script": {
       "matk": [
@@ -586,7 +586,7 @@
     "usableClass": [
       "Warlock",
       "Sorcerer",
-      "Acolyte Cls"
+      "Acolyte"
     ],
     "script": {
       "fctPercent": [
@@ -676,7 +676,7 @@
     "compositionPos": null,
     "script": {},
     "usableClass": [
-      "Archer Cls",
+      "Archer",
       "Thief",
       "Rogue"
     ]
@@ -1559,9 +1559,9 @@
     "location": null,
     "compositionPos": null,
     "usableClass": [
-      "Mage Cls",
-      "Acolyte Cls",
-      "Soul Linker Cls"
+      "Mage",
+      "Acolyte",
+      "Soul Linker"
     ],
     "script": {
       "int": [
@@ -2214,7 +2214,7 @@
     "compositionPos": null,
     "usableClass": [
       "all",
-      "ยกเว้น Novice Cls"
+      "ยกเว้น Novice"
     ],
     "script": {
       "perfectDodge": [
@@ -2244,7 +2244,7 @@
       "all"
     ],
     "unusableClass": [
-      "Novice Cls"
+      "Novice"
     ],
     "script": {
       "agi": [
@@ -2327,7 +2327,7 @@
       "Hi-Class"
     ],
     "unusableClass": [
-      "Novice Cls"
+      "Novice"
     ],
     "script": {
       "sp": [
@@ -10167,7 +10167,7 @@
       "Mage",
       "Archer",
       "Merchant",
-      "Thief Cls",
+      "Thief",
       "Soul Linker",
       "Ninja"
     ],
@@ -11968,7 +11968,7 @@
     "location": null,
     "compositionPos": null,
     "usableClass": [
-      "Mechanic Class"
+      "Mechanic"
     ],
     "script": {
       "p_class_all": [
@@ -13277,7 +13277,7 @@
     "location": null,
     "compositionPos": null,
     "usableClass": [
-      "Archer Cls"
+      "Archer"
     ],
     "script": {
       "range": [
@@ -13316,7 +13316,7 @@
     "location": null,
     "compositionPos": null,
     "usableClass": [
-      "Taekwon Cls"
+      "Taekwon"
     ],
     "script": {
       "atk": [
@@ -24884,7 +24884,7 @@
     "location": "Weapon",
     "compositionPos": null,
     "usableClass": [
-      "Royal Guard Class"
+      "Royal Guard"
     ],
     "script": {
       "Cannon Spear": [
@@ -24917,7 +24917,7 @@
     "location": "Weapon",
     "compositionPos": null,
     "usableClass": [
-      "Mechanic Class"
+      "Mechanic"
     ],
     "script": {
       "Vulcan Arm": [
@@ -25082,7 +25082,7 @@
     "location": "Weapon",
     "compositionPos": null,
     "usableClass": [
-      "Shadow Chaser Class"
+      "Shadow Chaser"
     ],
     "script": {
       "Triangle Shot": [
@@ -25115,7 +25115,7 @@
     "location": "Weapon",
     "compositionPos": null,
     "usableClass": [
-      "Warlock Class"
+      "Warlock"
     ],
     "script": {
       "Drain Life": [
@@ -25336,7 +25336,7 @@
     "location": "Shield",
     "compositionPos": null,
     "usableClass": [
-      "Royal Guard Class"
+      "Royal Guard"
     ],
     "script": {
       "Earth Drive": [
@@ -25381,7 +25381,7 @@
     "location": "Shield",
     "compositionPos": null,
     "usableClass": [
-      "Mechanic Class"
+      "Mechanic"
     ],
     "script": {
       "Flame Launcher": [
@@ -25618,7 +25618,7 @@
     "location": "Shield",
     "compositionPos": null,
     "usableClass": [
-      "Shadow Chaser Class"
+      "Shadow Chaser"
     ],
     "script": {
       "Triangle Shot": [
@@ -25668,7 +25668,7 @@
     "location": "Shield",
     "compositionPos": null,
     "usableClass": [
-      "Warlock Class"
+      "Warlock"
     ],
     "script": {
       "Earth Strain": [
@@ -27147,7 +27147,7 @@
     "location": "Armor",
     "compositionPos": null,
     "usableClass": [
-      "Gunslinger Class"
+      "Gunslinger"
     ],
     "script": {
       "cd__Hot Barrel": [
@@ -27229,7 +27229,7 @@
     "location": "Shoes",
     "compositionPos": null,
     "usableClass": [
-      "Gunslinger Class"
+      "Gunslinger"
     ],
     "script": {
       "God's Hammer": [
@@ -28402,7 +28402,7 @@
     "location": "Armor",
     "compositionPos": null,
     "usableClass": [
-      "Ranger Cls"
+      "Ranger"
     ],
     "script": {
       "Arrow Storm": [
@@ -28429,7 +28429,7 @@
     "location": "Shield",
     "compositionPos": null,
     "usableClass": [
-      "Ranger Cls"
+      "Ranger"
     ],
     "script": {
       "range": [
@@ -28464,7 +28464,7 @@
     "location": "Shoes",
     "compositionPos": null,
     "usableClass": [
-      "Ranger Cls"
+      "Ranger"
     ],
     "script": {
       "sp__Arrow Storm": [
@@ -28770,7 +28770,7 @@
     "location": "Weapon",
     "compositionPos": null,
     "usableClass": [
-      "Mechanic Cls"
+      "Mechanic"
     ],
     "script": {
       "range": [
@@ -28810,7 +28810,7 @@
     "location": "AccessoryLeft",
     "compositionPos": null,
     "usableClass": [
-      "Mechanic Cls"
+      "Mechanic"
     ],
     "script": {
       "Arm Cannon": [
@@ -28837,7 +28837,7 @@
     "location": "AccessoryRight",
     "compositionPos": null,
     "usableClass": [
-      "Mechanic Cls"
+      "Mechanic"
     ],
     "script": {
       "spPercent__Arm Cannon": [
@@ -28864,7 +28864,7 @@
     "location": null,
     "compositionPos": null,
     "usableClass": [
-      "Sura Cls"
+      "Sura"
     ],
     "script": {
       "Rampage Blast": [
@@ -28891,7 +28891,7 @@
     "location": null,
     "compositionPos": null,
     "usableClass": [
-      "Sura Cls"
+      "Sura"
     ],
     "script": {
       "range": [
@@ -28926,7 +28926,7 @@
     "location": null,
     "compositionPos": null,
     "usableClass": [
-      "Sura Cls"
+      "Sura"
     ],
     "script": {
       "cd__Rampage Blast": [
@@ -28953,7 +28953,7 @@
     "location": null,
     "compositionPos": null,
     "usableClass": [
-      "Arch Bishop Cls"
+      "Arch Bishop"
     ],
     "script": {
       "m_my_element_holy": [
@@ -28992,7 +28992,7 @@
     "location": null,
     "compositionPos": null,
     "usableClass": [
-      "Arch Bishop Cls"
+      "Arch Bishop"
     ],
     "script": {
       "Adoramus": [
@@ -29019,7 +29019,7 @@
     "location": null,
     "compositionPos": null,
     "usableClass": [
-      "Arch Bishop Cls"
+      "Arch Bishop"
     ],
     "script": {
       "spPercent__Adoramus": [
@@ -29174,8 +29174,8 @@
     "location": null,
     "compositionPos": null,
     "usableClass": [
-      "Minstrel Cls",
-      "Wanderer Cls"
+      "Minstrel",
+      "Wanderer"
     ],
     "script": {
       "Severe Rainstorm": [
@@ -29202,8 +29202,8 @@
     "location": null,
     "compositionPos": null,
     "usableClass": [
-      "Minstrel Cls",
-      "Wanderer Cls"
+      "Minstrel",
+      "Wanderer"
     ],
     "script": {
       "range": [
@@ -29240,8 +29240,8 @@
     "location": null,
     "compositionPos": null,
     "usableClass": [
-      "Minstrel Cls",
-      "Wanderer Cls"
+      "Minstrel",
+      "Wanderer"
     ],
     "script": {
       "spPercent__Severe Rainstorm": [
@@ -29566,7 +29566,7 @@
     "location": "Armor",
     "compositionPos": null,
     "usableClass": [
-      "Warlock Cls"
+      "Warlock"
     ],
     "script": {
       "Crimson Rock": [
@@ -29593,7 +29593,7 @@
     "location": "Shield",
     "compositionPos": null,
     "usableClass": [
-      "Warlock Cls"
+      "Warlock"
     ],
     "script": {
       "m_my_element_fire": [
@@ -29628,7 +29628,7 @@
     "location": "Shoes",
     "compositionPos": null,
     "usableClass": [
-      "Warlock Cls"
+      "Warlock"
     ],
     "script": {
       "spPercent__Crimson Rock": [
@@ -29838,7 +29838,7 @@
     "location": "Armor",
     "compositionPos": null,
     "usableClass": [
-      "Shadow Chaser Cls"
+      "Shadow Chaser"
     ],
     "script": {
       "Fatal Manace": [
@@ -29865,7 +29865,7 @@
     "location": "Shield",
     "compositionPos": null,
     "usableClass": [
-      "Shadow Chaser Cls"
+      "Shadow Chaser"
     ],
     "script": {
       "p_size_all": [
@@ -29900,7 +29900,7 @@
     "location": "Shoes",
     "compositionPos": null,
     "usableClass": [
-      "Shadow Chaser Cls"
+      "Shadow Chaser"
     ],
     "script": {
       "sp__Fatal Manace": [
@@ -29927,7 +29927,7 @@
     "location": "Armor",
     "compositionPos": null,
     "usableClass": [
-      "Guillotine Cross Cls"
+      "Guillotine Cross"
     ],
     "script": {
       "Rolling Cutter": [
@@ -29954,7 +29954,7 @@
     "location": "Shield",
     "compositionPos": null,
     "usableClass": [
-      "Guillotine Cross Cls"
+      "Guillotine Cross"
     ],
     "script": {
       "p_size_all": [
@@ -29989,7 +29989,7 @@
     "location": "Shoes",
     "compositionPos": null,
     "usableClass": [
-      "Guillotine Cross Cls"
+      "Guillotine Cross"
     ],
     "script": {
       "spPercent__Rolling Cutter": [
@@ -30296,7 +30296,7 @@
     "location": "Armor",
     "compositionPos": null,
     "usableClass": [
-      "Sorcerer Cls"
+      "Sorcerer"
     ],
     "script": {
       "Diamond Dust": [
@@ -30323,7 +30323,7 @@
     "location": "Shield",
     "compositionPos": null,
     "usableClass": [
-      "Sorcerer Cls"
+      "Sorcerer"
     ],
     "script": {
       "m_my_element_water": [
@@ -30358,7 +30358,7 @@
     "location": "Shoes",
     "compositionPos": null,
     "usableClass": [
-      "Sorcerer Cls"
+      "Sorcerer"
     ],
     "script": {
       "spPercent__Diamond Dust": [
@@ -30846,7 +30846,7 @@
     "location": "Weapon",
     "compositionPos": null,
     "usableClass": [
-      "Royal Guard Cls"
+      "Royal Guard"
     ],
     "script": {
       "m_my_element_holy": [
@@ -30887,7 +30887,7 @@
     "location": "AccessoryLeft",
     "compositionPos": null,
     "usableClass": [
-      "Royal Guard Cls"
+      "Royal Guard"
     ],
     "script": {
       "Genesis Ray": [
@@ -30914,7 +30914,7 @@
     "location": "AccessoryRight",
     "compositionPos": null,
     "usableClass": [
-      "Royal Guard Cls"
+      "Royal Guard"
     ],
     "script": {
       "cd__Genesis Ray": [
@@ -31086,7 +31086,7 @@
     "location": "Weapon",
     "compositionPos": null,
     "usableClass": [
-      "Rune Knight Class"
+      "Rune Knight"
     ],
     "script": {
       "atk": [
@@ -31132,7 +31132,7 @@
     "location": "Weapon",
     "compositionPos": null,
     "usableClass": [
-      "Royal Guard Class"
+      "Royal Guard"
     ],
     "script": {
       "atk": [
@@ -31178,7 +31178,7 @@
     "location": "Weapon",
     "compositionPos": null,
     "usableClass": [
-      "Mechanic Class"
+      "Mechanic"
     ],
     "script": {
       "atk": [
@@ -31227,7 +31227,7 @@
     "location": "Weapon",
     "compositionPos": null,
     "usableClass": [
-      "Genetic Class"
+      "Genetic"
     ],
     "script": {
       "atk": [
@@ -31273,7 +31273,7 @@
     "location": "Weapon",
     "compositionPos": null,
     "usableClass": [
-      "Guillotine Cross Class"
+      "Guillotine Cross"
     ],
     "script": {
       "atk": [
@@ -31319,7 +31319,7 @@
     "location": "Weapon",
     "compositionPos": null,
     "usableClass": [
-      "Shadow Chaser Class"
+      "Shadow Chaser"
     ],
     "script": {
       "atk": [
@@ -31365,7 +31365,7 @@
     "location": "Weapon",
     "compositionPos": null,
     "usableClass": [
-      "Warlock Class"
+      "Warlock"
     ],
     "script": {
       "atk": [
@@ -31411,7 +31411,7 @@
     "location": "Weapon",
     "compositionPos": null,
     "usableClass": [
-      "Sorcerer Class"
+      "Sorcerer"
     ],
     "script": {
       "atk": [
@@ -31454,7 +31454,7 @@
     "location": "Weapon",
     "compositionPos": null,
     "usableClass": [
-      "Arch Bishop Class"
+      "Arch Bishop"
     ],
     "script": {
       "atk": [
@@ -31497,7 +31497,7 @@
     "location": "Weapon",
     "compositionPos": null,
     "usableClass": [
-      "Sura Class"
+      "Sura"
     ],
     "script": {
       "atk": [
@@ -31584,8 +31584,8 @@
     "location": "Weapon",
     "compositionPos": null,
     "usableClass": [
-      "Minstrel Class",
-      "Wanderer Class"
+      "Minstrel",
+      "Wanderer"
     ],
     "script": {
       "atk": [
@@ -33042,7 +33042,7 @@
     "location": "Weapon",
     "compositionPos": null,
     "usableClass": [
-      "Summoner (Doram) Class"
+      "Summoner (Doram)"
     ],
     "script": {
       "atk": [
@@ -33344,9 +33344,9 @@
     "location": null,
     "compositionPos": null,
     "usableClass": [
-      "Mage Cls",
-      "Acolyte Cls",
-      "Soul Linker Cls"
+      "Mage",
+      "Acolyte",
+      "Soul Linker"
     ],
     "script": {
       "int": [
@@ -33384,9 +33384,9 @@
     "location": null,
     "compositionPos": null,
     "usableClass": [
-      "Mage Cls",
-      "Acolyte Cls",
-      "Soul Linker Cls"
+      "Mage",
+      "Acolyte",
+      "Soul Linker"
     ],
     "script": {
       "int": [
@@ -37241,6 +37241,41 @@
       ]
     }
   },
+  "28000": {
+    "id": 28000,
+    "aegisName": "Thanos_Katar",
+    "name": "Thanos Katar [1]",
+    "unidName": "Katar",
+    "resName": "타노스의카타르",
+    "description": "กาตาร์ที่มีพลังเวทย์ ทำขึ้นมาจาก Shard of Gray เพื่อใช้เผชิญหน้ากับ Devil Sword Tarthanos\nมีพลังเวทย์และพละกำลังที่แข็งแกร่ง แต่ก็ต้องจ่ายค่าตอบแทนที่สมน้ำสมเนื้อ\n\nINT + 6 / VIT + 6 / LUK -6\nเมื่อโจมตีกายภาพ จะมีโอกาสในระดับต่ำ ที่จะดูดซับดาเมจ 5% มาเป็น HP และ SP\nHP ลดลง 100 ทุก 10 วินาที\nHP ลดลง 1000 เมื่อถอดอุปกรณ์\nMATK + 80\n\nประเภท : ^777777Katar^000000\nโจมตี : ^777777220^000000\nน้ำหนัก : ^777777180^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777120^000000\nอาชีพ: ^777777Guillotine Cross^000000",
+    "slots": 1,
+    "itemTypeId": 1,
+    "itemSubTypeId": 272,
+    "itemLevel": 4,
+    "attack": 220,
+    "defense": null,
+    "weight": 180,
+    "requiredLevel": 120,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Guillotine Cross"
+    ],
+    "script": {
+      "int": [
+        "6"
+      ],
+      "vit": [
+        "6"
+      ],
+      "luk": [
+        "-6"
+      ],
+      "matk": [
+        "80"
+      ]
+    }
+  },
   "28007": {
     "id": 28007,
     "aegisName": "Scarlet_Katar",
@@ -37377,7 +37412,7 @@
     "location": null,
     "compositionPos": null,
     "usableClass": [
-      "Guillotine Cross Cls"
+      "Guillotine Cross"
     ],
     "script": {
       "atk": [
@@ -37659,7 +37694,7 @@
     "location": null,
     "compositionPos": null,
     "usableClass": [
-      "Mechanic Cls"
+      "Mechanic"
     ],
     "script": {
       "Axe Tornado": [
@@ -37980,7 +38015,7 @@
     "location": null,
     "compositionPos": null,
     "usableClass": [
-      "Gunslinger Cls"
+      "Gunslinger"
     ],
     "script": {
       "range": [
@@ -38781,9 +38816,9 @@
     "location": null,
     "compositionPos": null,
     "usableClass": [
-      "Sage Cls",
-      "Priest Cls",
-      "Star Gladiator Cls"
+      "Sage",
+      "Priest",
+      "Star Gladiator"
     ],
     "script": {
       "hpPercent": [
@@ -39193,13 +39228,13 @@
     "location": null,
     "compositionPos": null,
     "usableClass": [
-      "Swordman Cls",
-      "Archer Cls",
-      "Thief Cls",
-      "Mage Cls",
-      "Merchant Cls",
+      "Swordman",
+      "Archer",
+      "Thief",
+      "Mage",
+      "Merchant",
       "Ninja",
-      "Soul Linker Cls"
+      "Soul Linker"
     ],
     "script": {
       "int": [
@@ -52553,10 +52588,10 @@
     "location": null,
     "compositionPos": null,
     "usableClass": [
-      "Swordman Cls",
-      "Archer Cls",
-      "Thief Cls",
-      "Merchant Cls"
+      "Swordman",
+      "Archer",
+      "Thief",
+      "Merchant"
     ],
     "script": {
       "atk": [
@@ -52627,10 +52662,10 @@
     "location": null,
     "compositionPos": null,
     "usableClass": [
-      "Mage Class",
-      "Acolyte Class",
-      "Archer Class",
-      "Soul Linker Class"
+      "Mage",
+      "Acolyte",
+      "Archer",
+      "Soul Linker"
     ],
     "script": {
       "matk": [
@@ -52681,9 +52716,9 @@
     "compositionPos": null,
     "usableClass": [
       "Swordman",
-      "Thief Class",
-      "Acolyte Class",
-      "Merchant Class"
+      "Thief",
+      "Acolyte",
+      "Merchant"
     ],
     "script": {
       "atk": [
@@ -53109,7 +53144,7 @@
     "location": null,
     "compositionPos": null,
     "usableClass": [
-      "Swordman Cls"
+      "Swordman"
     ],
     "script": {
       "atk": [
@@ -53824,7 +53859,7 @@
     "location": null,
     "compositionPos": null,
     "usableClass": [
-      "Merchant Cls"
+      "Merchant"
     ],
     "script": {
       "acd": [
@@ -53980,6 +54015,9 @@
     "requiredLevel": 100,
     "location": null,
     "compositionPos": null,
+    "usableClass": [
+      "Mage"
+    ],
     "script": {
       "vct": [
         "10"
@@ -53999,10 +54037,7 @@
       "Psychic Wave": [
         "EQUIP[Old Wind Whisper]30"
       ]
-    },
-    "usableClass": [
-      "Mage Cls"
-    ]
+    }
   },
   "490309": {
     "id": 490309,
@@ -54199,7 +54234,7 @@
     "location": null,
     "compositionPos": null,
     "usableClass": [
-      "Acolyte Cls"
+      "Acolyte"
     ],
     "script": {
       "range": [
@@ -54873,7 +54908,7 @@
     "location": null,
     "compositionPos": null,
     "usableClass": [
-      "Merchant Class"
+      "Merchant"
     ],
     "script": {
       "aspdPercent": [
@@ -55495,7 +55530,7 @@
     "location": null,
     "compositionPos": null,
     "usableClass": [
-      "Genetic Cls"
+      "Genetic"
     ],
     "script": {
       "atkPercent": [
@@ -55553,7 +55588,7 @@
     "location": null,
     "compositionPos": null,
     "usableClass": [
-      "Royal Guard Cls"
+      "Royal Guard"
     ],
     "script": {
       "matk": [
@@ -55730,7 +55765,7 @@
     "location": null,
     "compositionPos": null,
     "usableClass": [
-      "Royal Guard Cls"
+      "Royal Guard"
     ],
     "script": {
       "matk": [
@@ -55780,7 +55815,7 @@
     "location": null,
     "compositionPos": null,
     "usableClass": [
-      "Shadow Chaser Cls"
+      "Shadow Chaser"
     ],
     "script": {
       "matk": [
@@ -55926,7 +55961,7 @@
     "location": null,
     "compositionPos": null,
     "usableClass": [
-      "Shadow Chaser Cls"
+      "Shadow Chaser"
     ],
     "script": {
       "atk": [
@@ -56097,7 +56132,7 @@
     "location": null,
     "compositionPos": null,
     "usableClass": [
-      "Mechanic Cls"
+      "Mechanic"
     ],
     "script": {
       "p_class_all": [
@@ -56152,7 +56187,7 @@
     "location": null,
     "compositionPos": null,
     "usableClass": [
-      "Royal Guard Cls"
+      "Royal Guard"
     ],
     "script": {
       "matk": [
@@ -56262,7 +56297,7 @@
     "location": null,
     "compositionPos": null,
     "usableClass": [
-      "Sorcerer Cls"
+      "Sorcerer"
     ],
     "script": {
       "matk": [
@@ -56815,7 +56850,7 @@
     "location": null,
     "compositionPos": null,
     "usableClass": [
-      "Sura Cls"
+      "Sura"
     ],
     "script": {
       "atkPercent": [
@@ -57008,7 +57043,7 @@
     "location": null,
     "compositionPos": null,
     "usableClass": [
-      "Minstrel Cls"
+      "Minstrel"
     ],
     "script": {
       "matk": [
@@ -57615,7 +57650,7 @@
     "location": null,
     "compositionPos": null,
     "usableClass": [
-      "Guillotine Cross Cls"
+      "Guillotine Cross"
     ],
     "script": {
       "atkPercent": [
@@ -57857,7 +57892,7 @@
     "location": null,
     "compositionPos": null,
     "usableClass": [
-      "Warlock Cls"
+      "Warlock"
     ],
     "script": {
       "matk": [
@@ -58080,7 +58115,7 @@
     "location": null,
     "compositionPos": null,
     "usableClass": [
-      "Ranger Cls"
+      "Ranger"
     ],
     "script": {
       "cri": [
@@ -58140,7 +58175,7 @@
     "location": null,
     "compositionPos": null,
     "usableClass": [
-      "Ranger Cls"
+      "Ranger"
     ],
     "script": {
       "atk": [
@@ -58469,7 +58504,7 @@
     "location": null,
     "compositionPos": null,
     "usableClass": [
-      "Gunslinger Cls"
+      "Gunslinger"
     ],
     "script": {
       "atkPercent": [

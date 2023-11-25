@@ -554,8 +554,10 @@ export class DamageCalculator {
     const totalMax = statusAtk + masteryAtk + floor((aMax + bMax) * propertyMultiplier);
     let totalMaxOver = statusAtk + masteryAtk + floor((aMaxOver + bMaxOver) * propertyMultiplier);
     if (totalMin > totalMax) {
-      totalMin = totalMaxOver;
-      totalMaxOver = statusAtk + masteryAtk + aMin + bMin;
+      const minBk = Math.min(totalMin, totalMax, totalMaxOver, 0);
+      const maxBk = Math.max(totalMin, totalMax, totalMaxOver);
+      totalMin = minBk;
+      totalMaxOver = maxBk;
     }
 
     return { totalMin, totalMax, totalMaxOver, propertyMultiplier };
