@@ -1,4 +1,5 @@
 import { ActiveSkillModel } from '../jobs/_character-base.abstract';
+import { FusionSunMoonStar } from './share-active-skills';
 
 export const JobBuffs: ActiveSkillModel[] = [
   {
@@ -115,4 +116,5 @@ export const JobBuffs: ActiveSkillModel[] = [
       { label: 'No', isUse: false, value: 0 },
     ],
   },
+  FusionSunMoonStar,
 ];

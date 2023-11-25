@@ -35,6 +35,9 @@ export interface AtkSkillModel {
   baseCri?: number;
   baseCriPercentage?: number;
   criDmgPercentage?: number;
+  /**
+   * Will be round down
+   */
   hit?: number;
   totalHit?: number;
   isMatk?: boolean;

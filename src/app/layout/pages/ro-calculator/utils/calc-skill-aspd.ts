@@ -3,6 +3,7 @@ import { SkillAspdModel } from '../models/damage-summary.model';
 import { EquipmentSummaryModel } from '../models/equipment-summary.model';
 import { StatusSummary } from '../models/status-summary.model';
 import { floor } from './floor';
+import { round } from './round';
 
 export const calcSkillAspd = (params: {
   skillData: AtkSkillModel;
@@ -22,22 +23,22 @@ export const calcSkillAspd = (params: {
   const { acd, vct, vct_inc = 0, fct, fctPercent } = totalEquipStatus;
   const { totalDex, totalInt } = status;
 
-  const vctByStat = Math.max(0, 1 - Math.sqrt(floor((totalDex * 2 + totalInt) / 530, 3)));
+  const vctByStat = Math.max(0, 1 - Math.sqrt(floor((totalDex * 2 + totalInt) / 530, 4)));
   const vctGlobal = Math.max(0, 1 - (vct - vct_inc) / 100);
   const vctSkill = Math.max(0, 1 - reduceSkillVct / 100);
 
-  const reducedVct = Math.max(0, floor((skillVct - reduceSkillVctFix) * vctByStat * vctGlobal * vctSkill, 2));
-  const reducedCd = Math.max(0, floor(skillCd - reduceSkillCd, 2));
-  const reducedAcd = Math.max(0, floor((skillAcd - reduceSkillAcd) * (1 - acd * 0.01), 2));
+  const reducedVct = Math.max(0, round((skillVct - reduceSkillVctFix) * vctByStat * vctGlobal * vctSkill, 2));
+  const reducedCd = Math.max(0, round(skillCd - reduceSkillCd, 2));
+  const reducedAcd = Math.max(0, round((skillAcd - reduceSkillAcd) * (1 - acd * 0.01), 2));
 
   const reducedFct = Math.max(
     0,
-    floor((skillFct - reduceSkillFct - fct) * (1 - fctPercent * 0.01) * (1 - reduceSkillFctPercent * 0.01), 2),
+    round((skillFct - reduceSkillFct - fct) * (1 - fctPercent * 0.01) * (1 - reduceSkillFctPercent * 0.01), 2),
   );
 
   const blockPeriod = Math.max(reducedCd, reducedAcd);
-  const castPeriod = floor(reducedVct + reducedFct, 3);
-  const hitPeriod = floor(blockPeriod + castPeriod, 3);
+  const castPeriod = round(reducedVct + reducedFct, 2);
+  const hitPeriod = round(blockPeriod + castPeriod, 2);
 
   return {
     cd: skillCd,

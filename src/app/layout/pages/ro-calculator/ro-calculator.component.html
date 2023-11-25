@@ -3491,6 +3491,7 @@
                     [filter]="true"
                     filterBy="label,searchVal"
                     [group]="true"
+                    scrollHeight="300px"
                     [(ngModel)]="selectedMonster"
                     (onChange)="onMonsterChange()"
                   >
@@ -3758,7 +3759,7 @@
                   <div class="col-12" [hidden]="!totalSummary?.dmg?.skillCanCri">
                     <app-calc-value
                       [enableCompare]="isEnableCompare && totalSummary2?.dmg"
-                      label="Cri:"
+                      label="CriRate:"
                       unit="%"
                       styleClass="summary_damage"
                       styleClass2="summary_compare"
@@ -3916,7 +3917,7 @@
                       <div class="col-12">
                         <app-calc-value
                           [enableCompare]="isEnableCompare && totalSummary2?.dmg"
-                          label="Cri:"
+                          label="CriRate:"
                           unit="%"
                           styleClass="summary_damage"
                           styleClass2="summary_compare"

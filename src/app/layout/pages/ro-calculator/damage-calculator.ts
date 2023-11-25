@@ -596,15 +596,15 @@ export class DamageCalculator {
     // const dmgMultiplier = this.toPercent(0 + 100);
     const infoForClass = this.infoForClass;
 
-    const skillFormula = (_totalAtk: number) => {
+    const skillFormula = (_totalAtk: number, _calcCri: boolean) => {
       let total = this._class.modifyFinalAtk(_totalAtk, infoForClass);
-      total = floor(total * criMultiplier); // tested
+      if (_calcCri) total = floor(total * criMultiplier); // tested
       total = floor(total * rangedMultiplier); // tested
       total = floor(total * baseSkillMultiplier); // tested
       total = floor(total * equipSkillMultiplier);
       total = floor(total * hardDef);
       total = total - softDef; // tested
-      if (canCri) total = floor(total * this.BASE_CRI_MULTIPLIER);
+      if (_calcCri) total = floor(total * this.BASE_CRI_MULTIPLIER);
       total = this.applyFinalMultiplier(total, 'phy');
 
       return this.toPreventNegativeDmg(total);
@@ -617,21 +617,33 @@ export class DamageCalculator {
       isEDP: this.isActiveEDP(skillName),
     });
 
-    const rawMaxDamage = skillFormula(totalMaxOver);
+    const rawMaxDamage = skillFormula(totalMaxOver, canCri);
     const maxDamage = this._class.calcSkillDmgByTotalHit({
       info: this.infoForClass,
       finalDamage: rawMaxDamage,
       skill: skillData,
     });
 
-    const rawMinDamage = canCri ? skillFormula(totalMax) : skillFormula(totalMin);
+    const rawMinDamage = canCri ? skillFormula(totalMax, canCri) : skillFormula(totalMin, canCri);
     const minDamage = this._class.calcSkillDmgByTotalHit({
       info: this.infoForClass,
       finalDamage: rawMinDamage,
       skill: skillData,
     });
 
-    return { minDamage, maxDamage, propertyAtk, propertyMultiplier, sizePenalty };
+    const rawMinNoCri = canCri ? skillFormula(totalMax, false) : 0;
+    const rawMaxNoCri = canCri ? skillFormula(totalMaxOver, false) : 0;
+
+    return {
+      minDamage,
+      maxDamage,
+      avgNoCriDamage: round((rawMinNoCri + rawMaxNoCri) / 2, 0),
+      avgCriDamage: round((minDamage + maxDamage) / 2, 0),
+      propertyAtk,
+      propertyMultiplier,
+      sizePenalty,
+      canCri,
+    };
   }
 
   private getStatusMatk() {
@@ -655,11 +667,10 @@ export class DamageCalculator {
     const isMax = this.isMaximizeSpell;
 
     let weaponMinMatk = rawWeaponMATK - (isMax ? -variance : variance);
-    let weaponMaxMatk = rawWeaponMATK + variance + overUpgradeBonus;
+    const weaponMaxMatk = rawWeaponMATK + variance + overUpgradeBonus;
 
     if (overUpgradeBonus > 0) {
       weaponMinMatk += 1;
-      weaponMaxMatk -= 1;
     }
 
     return { weaponMinMatk, weaponMaxMatk };
@@ -754,7 +765,16 @@ export class DamageCalculator {
     //   weaponMaxDmg,
     // });
 
-    return { propertyAtk: skillPropertyAtk, propertyMultiplier, minDamage, maxDamage, sizePenalty: 1 };
+    return {
+      propertyAtk: skillPropertyAtk,
+      propertyMultiplier,
+      minDamage,
+      maxDamage,
+      avgNoCriDamage: 0,
+      avgCriDamage: 0,
+      sizePenalty: 1,
+      canCri: false,
+    };
   }
 
   private calcBasicDamage(params: { totalMin: number; totalMax: number }) {
@@ -870,7 +890,6 @@ export class DamageCalculator {
       baseCri: baseSkillCri = 0,
       isMatk,
       isMelee,
-      canCri,
       isHit100,
       isIgnoreDef = false,
       totalHit = 1,
@@ -927,21 +946,24 @@ export class DamageCalculator {
     const skillAspd = calcSkillAspd({ skillData, status: this.status, totalEquipStatus: this.totalBonus });
     const skillHitsPerSec = Math.min(basicAspd.hitsPerSec, skillAspd.totalHitPerSec);
 
-    let actualCri = canCri ? Math.max(0, (basicDmg.basicCriRate + baseSkillCri) * baseCriPercentage - criShield) : 0;
+    let actualCri = calculated.canCri
+      ? Math.max(0, (basicDmg.basicCriRate + baseSkillCri) * baseCriPercentage - criShield)
+      : 0;
     if (this.isForceSkillCri) {
       actualCri = 100;
     }
 
     const skillAccRate = isHit100 || isMatk ? 100 : basicDmg.accuracy;
+    const { avgCriDamage, avgNoCriDamage } = calculated;
 
     const skillDps =
       totalHit *
       calcDmgDps({
-        min: minDamage + skillMinDamage2,
-        max: maxDamage + skillMaxDamage2,
+        min: avgNoCriDamage || minDamage + skillMinDamage2,
+        max: avgNoCriDamage || maxDamage + skillMaxDamage2,
         cri: actualCri,
-        criDmg: maxDamage,
-        hitsPerSec: skillHitsPerSec,
+        criDmg: avgCriDamage || maxDamage + skillMaxDamage2,
+        hitsPerSec: floor(skillHitsPerSec),
         accRate: skillAccRate,
       });
     const hitKill = Math.ceil(this.monsterData.hp / minDamage);
@@ -955,7 +977,7 @@ export class DamageCalculator {
       skillTotalHit: totalHit,
       skillPropertyAtk: calculated.propertyAtk,
       skillPropertyMultiplier: calculated.propertyMultiplier,
-      skillCanCri: canCri,
+      skillCanCri: calculated.canCri,
       skillTotalPene: isIgnoreDef ? 100 : totalPene,
       skillMinDamage: minDamage,
       skillMaxDamage: maxDamage,
