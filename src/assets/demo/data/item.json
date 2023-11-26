@@ -1508,7 +1508,7 @@
     "description": "ไม้เท้าที่ทำขึ้นจากโลหะลึกลับของโลกอื่น\nเล่าลือกันว่านักเวทย์ผู้ใหญ่ในอดีตเป็นคนทำขึ้น\nดูมีความกลมกลืนเข้ากับ Ancient Hero Boots\nMATK +200\nไม่สามารถทำลายได้\nทุกๆ การอัพเกรด 2 ขั้น MATK +10\nทุกๆ การอัพเกรด 3 ขั้น เพิ่มดาเมจของ Earth Strain 12%\nเมื่ออัพเกรดถึงขั้น 9 ลด Variable Cast Time 10%\nเมื่ออัพเกรดถึงขั้น 11 ลด Cooldown ของ Earth Strain 1 วินาที\nเมื่อโจมตีทางเวทย์ระหว่างสวมใส่ร่วมกับ Ancient Hero Boots มีโอกาสที่ INT +20, MATK +15% เป็นเวลา 7 วินาที\nประเภท : ^777777Two-Handed Staff^000000 พลังโจมตี : ^777777100^000000\nน้ำหนัก : ^77777780^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Warlock^000000",
     "slots": 2,
     "itemTypeId": 1,
-    "itemSubTypeId": 265,
+    "itemSubTypeId": 266,
     "itemLevel": 4,
     "attack": 100,
     "defense": null,
@@ -2026,6 +2026,28 @@
     "usableClass": [
       "all"
     ]
+  },
+  "2202": {
+    "id": 2202,
+    "aegisName": "Sunglasses_",
+    "name": "Sunglasses [1]",
+    "unidName": "Glasses",
+    "resName": "선글래스",
+    "description": "แว่นตากันแดด มีเลนส์สีดำสำหรับป้องกันแสงแดด\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^7777770^000000\nใช้สำหรับ : ^777777Middle^000000 น้ำหนัก : ^77777710^000000\nอาชีพ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": null,
+    "location": "Middle",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {}
   },
   "2367": {
     "id": 2367,
@@ -20377,6 +20399,56 @@
       ],
       "acd": [
         "11===20"
+      ]
+    }
+  },
+  "21058": {
+    "id": 21058,
+    "aegisName": "Up_Dragonic_Slayer",
+    "name": "Patent Dragonic Slayer [2]",
+    "unidName": "Bastard Sword",
+    "resName": "UpHetairoi_Sword",
+    "description": "ดาบขนาดใหญ่ที่เล่าขานกันว่าผู้ปราบมังกรในอดีตเคยใช้\nฟื้นคืนเกียรติยศในอดีต และเริ่มเผยพลังอันแท้จริงออกมา\nดูกลมกลืนเข้ากับ Great Hero Boots\n\nทุก ๆ การอัพเกรด 2 ขั้น MHP/MSP +5%\nทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage สกิล Dragon Breath และ Dragon Breath - WATER 5%\nเมื่ออัพเกรดถึงขั้น 7 ลด Delay หลังใช้สกิล 10%, ลดระยะเวลาร่ายแบบแปรผัน 10%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพระยะไกล 10%\nเมื่ออัพเกรดถึงขั้น 11 ลด Delay หลังใช้สกิลลงอีก 7%, MSP +5%\nเมื่อสวมใส่ร่วมกับ Great Hero Boots, VIT +10, เพิ่ม Damage ทางกายภาพระยะไกล 5%\n\nประเภท : ^777777Two-Handed Sword^000000 พลังโจมตี : ^777777200^000000\nน้ำหนัก : ^777777200^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Rune Knight^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 258,
+    "itemLevel": 4,
+    "attack": 200,
+    "defense": null,
+    "weight": 200,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Rune Knight"
+    ],
+    "script": {
+      "hpPercent": [
+        "2---5"
+      ],
+      "spPercent": [
+        "2---5",
+        "11===5"
+      ],
+      "Dragon Breath": [
+        "3---5"
+      ],
+      "Dragon Breath - WATER": [
+        "3---5"
+      ],
+      "acd": [
+        "7===10",
+        "11===7"
+      ],
+      "vct": [
+        "7===10"
+      ],
+      "range": [
+        "9===10",
+        "EQUIP[Great Hero Boots]===5"
+      ],
+      "vit": [
+        "EQUIP[Great Hero Boots]===10"
       ]
     }
   },
@@ -54582,7 +54654,7 @@
       "melee": [
         "8"
       ],
-      "p_class_all": [
+      "m_class_all": [
         "8"
       ],
       "aspdPercent": [
@@ -56114,6 +56186,92 @@
       ]
     }
   },
+  "510070": {
+    "id": 510070,
+    "aegisName": "Blessed_Knife",
+    "name": "Blessed Knife [2]",
+    "unidName": "Dagger",
+    "resName": "매지컬블레이드",
+    "description": "มีดสั้นที่วีรชนผู้กล้าในอดีตเคยใช้มันสู้รบ\nกล่าวขานกันว่า ภายในเปี่ยมไปด้วยพรของเหล่าเทวทูต จึงทำให้ผู้ที่ได้รับการคุ้มครองจากทูตสวรรค์เท่านั้นที่ใช้มีดนี้ได้\nดูกลมกลืนเข้ากับ Ancient Hero Boots\nทุก ๆ การอัพเกรด 2 ขั้น ATK +10\nทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage สกิล Back Stab 20%\nเมื่ออัพเกรดถึงขั้น 9, ASPD +10%\nเมื่ออัพเกรดถึงขั้น 11 สามารถใช้สกิล Fatal Manace Lv. 7 ได้\nเมื่อสวมใส่ร่วมกับ Ancient Hero Boots เมื่อโจมตีทางกายภาพ มีโอกาสที่ STR +20, ATK +15% เป็นเวลา 7 วินาที\nประเภท : ^777777Dagger^000000 พลังโจมตี : ^777777200^000000\nน้ำหนัก : ^777777120^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Novice^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 256,
+    "itemLevel": 4,
+    "attack": 200,
+    "defense": null,
+    "weight": 120,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Novice"
+    ],
+    "script": {
+      "atk": [
+        "2---10"
+      ],
+      "Back Stab": [
+        "3---20"
+      ],
+      "aspdPercent": [
+        "9===10"
+      ],
+      "chance__str": [
+        "EQUIP[Ancient Hero Boots]===20"
+      ],
+      "chance__atkPercent": [
+        "EQUIP[Ancient Hero Boots]===15"
+      ]
+    }
+  },
+  "510071": {
+    "id": 510071,
+    "aegisName": "Up_Blessed_Knife",
+    "name": "Patent Blessed Knife [2]",
+    "unidName": "Knife",
+    "resName": "Up_Blessed_Knife",
+    "description": "มีดสั้นที่วีรชนผู้กล้าในอดีตเคยใช้มันสู้รบ\nกล่าวขานกันว่า ภายในเปี่ยมไปด้วยพรของเหล่าเทวทูต จึงทำให้ผู้ที่ได้รับการคุ้มครองจากทูตสวรรค์เท่านั้นที่ใช้มีดนี้ได้\nเริ่มเผยพลังอันแท้จริงออกมา ด้วยพลังโบราณอันกล้าแกร่ง\nดูกลมกลืนเข้ากับ Great Hero Boots\n \nทุก ๆ การอัพเกรด 2 ขั้น ATK +15\nทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage สกิล Back Stab 25%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางกายภาพต่อศัตรูทุกธาตุ 15%, สามารถใช้สกิล Fatal Manace Lv. 10\nเมื่ออัพเกรดถึงขั้น 9, ASPD +10%, เพิ่ม Damage สกิล Fatal Manace 10%\nเมื่ออัพเกรดถึงขั้น 11, ลด Delay หลังใช้สกิล 5%, เพิ่ม Damage ทางกายภาพระยะใกล้ 15%\nเมื่อสวมใส่ร่วมกับ Great Hero Boots, STR +10, เพิ่ม Damage ทางกายภาพระยะใกล้ 5%\n\nประเภท : ^777777Dagger^000000 พลังโจมตี : ^777777210^000000\nน้ำหนัก : ^777777120^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Novice^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 256,
+    "itemLevel": 4,
+    "attack": 210,
+    "defense": null,
+    "weight": 120,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Novice"
+    ],
+    "script": {
+      "atk": [
+        "2---15"
+      ],
+      "Back Stab": [
+        "3---25"
+      ],
+      "p_element_all": [
+        "7===15"
+      ],
+      "aspdPercent": [
+        "9===10"
+      ],
+      "Fatal Manace": [
+        "9===10"
+      ],
+      "acd": [
+        "11===5"
+      ],
+      "melee": [
+        "11===15",
+        "EQUIP[Great Hero Boots]===5"
+      ],
+      "str": [
+        "EQUIP[Great Hero Boots]===10"
+      ]
+    }
+  },
   "520000": {
     "id": 520000,
     "aegisName": "Boost_Axe",
@@ -56823,6 +56981,97 @@
       ],
       "Eswhoo": [
         "9===25"
+      ],
+      "int": [
+        "EQUIP[Great Hero Boots]===10"
+      ],
+      "matkPercent": [
+        "EQUIP[Great Hero Boots]===7"
+      ]
+    }
+  },
+  "550080": {
+    "id": 550080,
+    "aegisName": "Freedom_Stick",
+    "name": "Freedom Stick [2]",
+    "unidName": "Rod",
+    "resName": "신축만능팔",
+    "description": "คทาเวทย์ที่ไม่ผูกมัดกับวิถีใดใด วีรบุรษผู้หนึ่งเคยใช้ในอดีต\nดูกลมกลืนเข้ากับ Ancient Hero Boots\nไม่สามารถทำลายได้\nMATK +160\nทุก ๆ การอัพเกรด 2 ขั้น MATK +10\nทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage สกิล Heaven's Drive 20%\nเมื่ออัพเกรดถึงขั้น 9 ลดระยะเวลาร่ายแบบแปรผัน 10%\nเมื่ออัพเกรดถึงขั้น 11 สามารถใช้สกิล Psychic Wave Lv. 3\nเมื่อสวมใส่ร่วมกับ Ancient Hero Boots เมื่อโจมตีทางเวทมนตร์ มีโอกาสที่ INT +20, MATK +15% เป็นเวลา 7 วินาที\nประเภท : ^777777One-Handed Staff^000000 พลังโจมตี : ^77777770^000000\nน้ำหนัก : ^777777100^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Novice^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 265,
+    "itemLevel": 4,
+    "attack": 70,
+    "defense": null,
+    "weight": 100,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Novice"
+    ],
+    "script": {
+      "matk": [
+        "160",
+        "2---10"
+      ],
+      "Heaven's Drive": [
+        "3---20"
+      ],
+      "vct": [
+        "9===10"
+      ],
+      "chance__int": [
+        "EQUIP[Ancient Hero Boots]===20"
+      ],
+      "chance__matkPercent": [
+        "EQUIP[Ancient Hero Boots]===15"
+      ]
+    }
+  },
+  "550081": {
+    "id": 550081,
+    "aegisName": "Up_Freedom_Stick",
+    "name": "Patent Freedom Stick [2]",
+    "unidName": "Rod",
+    "resName": "Up_Freedom_Stick",
+    "description": "คทาเวทย์ที่ไม่ผูกมัดกับวิถีใดใด วีรบุรษผู้หนึ่งเคยใช้ในอดีต\nเริ่มเผยพลังอันแท้จริงออกมา ด้วยพลังโบราณอันกล้าแกร่ง\nดูกลมกลืนเข้ากับ Great Hero Boots\n \nไม่สามารถทำลายได้\nMATK +200\nทุก ๆ การอัพเกรด 2 ขั้น MATK +15\nทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage สกิล Heaven's Drive 30%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกธาตุ 15%, สามารถใช้สกิล Psychic Wave Lv. 5\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Psychic Wave 10%, ลดระยะเวลาร่ายแบบแปรผัน 10%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage ทางเวทมนตร์ธาตุ Earth, Neutral 10%, ลดระยะเวลาร่ายแบบแปรผันลงอีก 5%\nเมื่อสวมใส่ร่วมกับ Great Hero Boots, INT +10, MATK +7%\n\nประเภท : ^777777One-Handed Staff^000000 พลังโจมตี : ^77777790^000000\nน้ำหนัก : ^777777100^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Novice^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 265,
+    "itemLevel": 4,
+    "attack": 90,
+    "defense": null,
+    "weight": 100,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Novice"
+    ],
+    "script": {
+      "matk": [
+        "200",
+        "2---15"
+      ],
+      "Heaven's Drive": [
+        "3---30"
+      ],
+      "m_element_all": [
+        "7===15"
+      ],
+      "Psychic Wave": [
+        "9===10"
+      ],
+      "vct": [
+        "9===10",
+        "11===5"
+      ],
+      "m_my_element_earth": [
+        "11===10"
+      ],
+      "m_my_element_neutral": [
+        "11===10"
       ],
       "int": [
         "EQUIP[Great Hero Boots]===10"
@@ -57588,6 +57837,50 @@
       ]
     }
   },
+  "600004": {
+    "id": 600004,
+    "aegisName": "Dragonic_Slayer",
+    "name": "Dragonic Slayer [2]",
+    "unidName": "Two-Handed Sword",
+    "resName": "헤타이로이의검",
+    "description": "ดาบขนาดใหญ่ที่เล่าขานกันว่าผู้ปราบมังกรในอดีตเคยใช้\nดูกลมกลืนเข้ากับ Ancient Hero Boots\nทุก ๆ การอัพเกรด 2 ขั้น MHP/MSP +3%\nทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage สกิล Dragon Breath และ Dragon Breath - WATER 5%\nเมื่ออัพเกรดถึงขั้น 9 ลด Delay หลังใช้สกิล 10%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage ทางกายภาพระยะไกล 10%\nเมื่อสวมใส่ร่วมกับ Ancient Hero Boots เมื่อโจมตีทางกายภาพ มีโอกาสที่ VIT +20 และเพิ่ม Damage ทางกายภาพระยะไกล 10% เป็นเวลา 7 วินาที\nประเภท : ^777777Two-Handed Sword^000000 พลังโจมตี : ^777777180^000000\nน้ำหนัก : ^777777100^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Rune Knight^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 258,
+    "itemLevel": 4,
+    "attack": 180,
+    "defense": null,
+    "weight": 100,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Rune Knight"
+    ],
+    "script": {
+      "hpPercent": [
+        "2---3"
+      ],
+      "spPercent": [
+        "2---3"
+      ],
+      "Dragon Breath": [
+        "3---5"
+      ],
+      "Dragon Breath - WATER": [
+        "3---5"
+      ],
+      "acd": [
+        "9===10"
+      ],
+      "range": [
+        "11===10"
+      ],
+      "chance__range": [
+        "EQUIP[Ancient Hero Boots]===10"
+      ]
+    }
+  },
   "600009": {
     "id": 600009,
     "aegisName": "Up_Oriental_Sword",
@@ -57991,7 +58284,7 @@
     "description": "ไม้เท้าที่ทำขึ้นจากโลหะลึกลับของโลกอื่น\nเมื่อเห็นพลังเวทย์อันบิดเบี้ยว ก็ได้เริ่มเผยพลังอันแท้จริงออกมา\nดูกลมกลืนเข้ากับ Great Hero Boots\n\nไม่สามารถทำลายได้\nMATK +235\nทุก ๆ การอัพเกรด 2 ขั้น MATK +15\nทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage สกิล Earth Strain 12%\nเมื่ออัพเกรดถึงขั้น 7 ลดระยะเวลาร่ายแบบแปรผัน 10%, เพิ่ม Damage ทางเวทมนตร์ธาตุ Earth, Fire 15%\nเมื่ออัพเกรดถึงขั้น 9 ลด Cooldown สกิล Earth Strain 1 วินาที, ลดระยะเวลาร่ายแบบแปรผันลงอีก 5%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกขนาด 15%, เพิ่ม Damage สกิล Crimson Rock 15%\nเมื่อสวมใส่ร่วมกับ Great Hero Boots, INT +10, MATK +7%\n\nประเภท : ^777777Two-Handed Staff^000000 พลังโจมตี : ^777777100^000000\nน้ำหนัก : ^777777100^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Warlock^000000",
     "slots": 2,
     "itemTypeId": 1,
-    "itemSubTypeId": 265,
+    "itemSubTypeId": 266,
     "itemLevel": 4,
     "attack": 100,
     "defense": null,
@@ -58027,6 +58320,63 @@
         "11===15"
       ],
       "Crimson Rock": [
+        "11===15"
+      ],
+      "int": [
+        "EQUIP[Great Hero Boots]===10"
+      ],
+      "matkPercent": [
+        "EQUIP[Great Hero Boots]===7"
+      ]
+    }
+  },
+  "640012": {
+    "id": 640012,
+    "aegisName": "Up_Blue_Crystal_Staff",
+    "name": "Patent Blue Crystal Staff [2]",
+    "unidName": "Rod",
+    "resName": "Up_Blue_Crystal_Staff",
+    "description": "ไม้คทาที่เปี่ยมไปด้วยพลังแห่งเยือกแข็ง ถูกใช้โดยจอมเวทย์ในอดีตกาล\nเพียงเห็นพลังเวทย์อันเย็นยะเยือก ก็ได้เริ่มเผยพลังอันแท้จริงออกมา\nดูกลมกลืนเข้ากับ Great Hero Boots\n\nไม่สามารถทำลายได้\nMATK +235\nทุก ๆ การอัพเกรด 2 ขั้น MATK +15\nทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage สกิล Jack Frost 12%\nเมื่ออัพเกรดถึงขั้น 7 ลดระยะเวลาร่ายแบบแปรผัน 10%, เพิ่ม Damage ทางเวทมนตร์ธาตุ Water, Wind 15%\nเมื่ออัพเกรดถึงขั้น 9 ลด Cooldown สกิล Jack Frost 1 วินาที, ลด Delay หลังใช้สกิล 5%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกขนาด 15%, เพิ่ม Damage สกิล Chain Lightning 15%\nเมื่อสวมใส่ร่วมกับ Great Hero Boots, INT +10, MATK +7%\n\nประเภท : ^777777Two-Handed Staff^000000 พลังโจมตี : ^777777100^000000\nน้ำหนัก : ^777777100^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Warlock^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 266,
+    "itemLevel": 4,
+    "attack": 100,
+    "defense": null,
+    "weight": 100,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Warlock"
+    ],
+    "script": {
+      "matk": [
+        "235",
+        "2---15"
+      ],
+      "Jack Frost": [
+        "3---12"
+      ],
+      "m_my_element_water": [
+        "7===15"
+      ],
+      "m_my_element_wind": [
+        "7===15"
+      ],
+      "vct": [
+        "7===10"
+      ],
+      "cd__Jack Frost": [
+        "9===1"
+      ],
+      "acd": [
+        "9===5"
+      ],
+      "m_size_all": [
+        "11===15"
+      ],
+      "Chain Lightning": [
         "11===15"
       ],
       "int": [
