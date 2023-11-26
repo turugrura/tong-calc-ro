@@ -193,29 +193,29 @@ export class Oboro extends CharacterBase {
 
   protected readonly _passiveSkillList: PassiveSkillModel[] = [
     {
-      label: 'Flaming Petals 5',
+      label: 'Flaming Petals 10',
       name: 'Flaming Petals',
       inputType: 'selectButton',
       dropdown: [
-        { label: 'Yes', value: 5, skillLv: 5, isUse: true },
+        { label: 'Yes', value: 10, skillLv: 10, isUse: true },
         { label: 'No', value: 0, isUse: false },
       ],
     },
     {
-      label: 'Freezing Spear 5',
+      label: 'Freezing Spear 10',
       name: 'Freezing Spear',
       inputType: 'selectButton',
       dropdown: [
-        { label: 'Yes', value: 5, skillLv: 5, isUse: true },
+        { label: 'Yes', value: 10, skillLv: 10, isUse: true },
         { label: 'No', value: 0, isUse: false },
       ],
     },
     {
-      label: 'Wind Blade 5',
+      label: 'Wind Blade 10',
       name: 'Wind Blade',
       inputType: 'selectButton',
       dropdown: [
-        { label: 'Yes', value: 5, skillLv: 5, isUse: true },
+        { label: 'Yes', value: 10, skillLv: 10, isUse: true },
         { label: 'No', value: 0, isUse: false },
       ],
     },
