@@ -63,7 +63,7 @@ export const createExtraOptionList = () => {
           const num = k + 1;
           return {
             value: `m_my_element_${elementLow}:${num}`,
-            label: `My ${element} +${num}%`,
+            label: `M. My ${element} +${num}%`,
           };
         }),
       };
@@ -72,31 +72,31 @@ export const createExtraOptionList = () => {
 
   const options: [string, string, number, number, string?][] = [
     ['Atk', 'atk', 1, 65],
-    ['Atk percent', 'atkPercent', 1, 30, ' %'],
+    ['Atk %', 'atkPercent', 1, 30, ' %'],
     ['Matk', 'matk', 1, 65],
-    ['Matk percent', 'matkPercent', 1, 30, ' %'],
+    ['Matk %', 'matkPercent', 1, 30, ' %'],
     ['Long Range', 'range', 1, 30, ' %'],
     ['Melee', 'melee', 1, 30, ' %'],
     ['CRI Rate', 'cri', 1, 30, ' %'],
     ['CRI Dmg', 'criDmg', 1, 30, ' %'],
     ['ASPD', 'aspd', 1, 5],
-    ['ASPD percent', 'aspdPercent', 1, 30, ' %'],
+    ['ASPD %', 'aspdPercent', 1, 30, ' %'],
     ['Delay', 'acd', 1, 30, ' %'],
     ['VCT', 'vct', 1, 30, ' %'],
   ];
 
   const subTypeMap = {
     Atk: 'Physical',
-    'Atk percent': 'Physical',
+    'Atk %': 'Physical',
     'Long Range': 'Physical',
     Melee: 'Physical',
     Matk: 'Magical',
-    'Matk percent': 'Magical',
+    'Matk %': 'Magical',
   };
 
   const VAL_CAP = 10;
   for (const [label, prop, rawMin, rawMax, suffix] of options) {
-    const labelNoPercent = label.replace(' percent', '');
+    const labelNoPercent = label.replace(' %', '');
     const values = [] as { label: string; min: number; max: number }[];
     const sign = label === 'Delay' || label === 'VCT' ? '-' : '+';
     for (let i = rawMin; i < rawMax; i += VAL_CAP) {

@@ -15185,6 +15185,46 @@
       ]
     }
   },
+  "18570": {
+    "id": 18570,
+    "aegisName": "Ancient_Gold_Deco",
+    "name": "Ancient Gold Deco [1]",
+    "unidName": "Headgear",
+    "resName": "고대의금장식",
+    "description": "เครื่องประดับสีทองอันสวยงามที่แฝงไปด้วยพลังเวทมนตร์โบราณ มันสามารถเปลี่ยนแปลงพลังของตัวมันเองโดยขึ้นอยู่กับผู้ที่ใช้งาน\nถ้า Base Lv 150 จะได้รับ All State + 2\nถ้าใช้งานโดย Swordman , Merchant และ Thief Class เพิ่ม Damage ทางกายภาพต่อศัตรูทุกประเภท 8% , ถ้าใช้งานโดย Magician และ Acolyte Class จะได้รับ MATK + 8% และเพิ่มพลังให้ Skill Heal 7% , ถ้าใช้งานโดย Archer Class จะได้รับ DEX + 3 , เพิ่มพลังโจมตีระยะไกล 10%\nประเภท : ^777777Helemt^000000 ป้องกัน : ^7777777^000000\nตำแหน่ง : ^777777Upper ^000000 น้ำหนัก : ^77777740^000000\nLv ที่ต้องการ : ^777777100^000000\nอาชีพ : ^777777For 3rd Job only/Kagerou/Oboro^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 7,
+    "weight": 40,
+    "requiredLevel": 100,
+    "location": "Upper",
+    "compositionPos": null,
+    "usableClass": [
+      "Only 3rd Cls",
+      "Kagerou",
+      "Oboro"
+    ],
+    "script": {
+      "allStatus": [
+        "SUM[level==150]===2"
+      ],
+      "p_class_all": [
+        "USED[Swordman||Merchant||Thief]===8"
+      ],
+      "matkPercent": [
+        "USED[Mage||Acolyte]===8"
+      ],
+      "dex": [
+        "USED[Archer]===3"
+      ],
+      "range": [
+        "USED[Archer]===10"
+      ]
+    }
+  },
   "18609": {
     "id": 18609,
     "aegisName": "Dark_Blindfold_",
@@ -38239,6 +38279,40 @@
       ]
     }
   },
+  "28240": {
+    "id": 28240,
+    "aegisName": "Calf_Kingcobra",
+    "name": "Calf Kingcobra [2]",
+    "unidName": "Rifle",
+    "resName": "Calf_Kingcobra",
+    "description": "ปืนไรเฟิลที่กลุ่ม Buffalo Bandit มักจะใช้กัน \nดูเหมือนว่ามันจะมีน้ำหนักเบามากเมื่อเทียบกับอาวุธและปืนชนิดอื่นที่กลุ่ม Buffalo Bandit ใช้\nเพิ่ม ASPD 10% \nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage ทางกายภาพระยะไกล 5%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม ASPD 5%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Critical Damage 15% \nเมื่ออัพเกรดถึงขั้น 12 เพิ่ม Damage ทางกายภาพระยะไกลขึ้นอีก 5%\n^ffffff_^000000\nประเภท : ^777777Rifle^000000 พลังโจมตี : ^777777230^000000\nน้ำหนัก : ^77777790^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Rebellion^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 274,
+    "itemLevel": 4,
+    "attack": 230,
+    "defense": null,
+    "weight": 90,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Rebellion"
+    ],
+    "script": {
+      "aspd": [
+        "10",
+        "7===5"
+      ],
+      "range": [
+        "2---5",
+        "12===5"
+      ],
+      "criDmg": [
+        "9===15"
+      ]
+    }
+  },
   "28241": {
     "id": 28241,
     "aegisName": "Calf_Diamondback",
@@ -52470,6 +52544,9 @@
       ],
       "atk": [
         "EQUIP[Emerald Earrings]LEARN_SKILL[Lesson==1]---20"
+      ],
+      "chance__dex": [
+        "11===200"
       ]
     }
   },

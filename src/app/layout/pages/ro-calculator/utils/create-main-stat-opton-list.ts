@@ -5,18 +5,19 @@ export const createMainStatOptionList = () => {
 
   const options: [string, string, number, number, string?][] = [
     ['Atk', 'atk', 1, 15],
-    ['Atk percent', 'atkPercent', 1, 15, ' %'],
+    ['Atk %', 'atkPercent', 1, 3, ' %'],
     ['Matk', 'matk', 1, 15],
-    ['Matk percent', 'matkPercent', 1, 15, ' %'],
-    ['Long Range', 'range', 1, 10, ' %'],
-    ['VCT', 'vct', 1, 10],
-    ['Hit', 'hit', 1, 15],
-    ['CriDmg', 'criDmg', 1, 15, ' %'],
+    ['Matk %', 'matkPercent', 1, 3, ' %'],
+    ['Long Range', 'range', 1, 5, ' %'],
+    ['VCT', 'vct', 1, 3, ' %'],
+    ['Hit', 'hit', 5, 15],
+    ['CRI Rate', 'cri', 1, 5, ' %'],
+    ['CRI Dmg', 'criDmg', 1, 5, ' %'],
     ['ASPD', 'aspd', 1, 1],
-    ['ASPD percent', 'aspdPercent', 1, 10, ' %'],
+    ['ASPD %', 'aspdPercent', 1, 5, ' %'],
   ];
   for (const [label, prop, min, max, suffix = ''] of options) {
-    const labelNoPercent = label.replace(' percent', '');
+    const labelNoPercent = label.replace(' %', '');
     const sign = label === 'VCT' ? '-' : '+';
     const item = {
       value: label,
