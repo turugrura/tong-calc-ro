@@ -1224,6 +1224,77 @@
       ]
     }
   },
+  "1865": {
+    "id": 1865,
+    "aegisName": "Combo_Fist",
+    "name": "Raging Dragon Fist [2]",
+    "unidName": "Knuckle",
+    "resName": "Combo_Fist",
+    "description": "ถุงมือที่ใช้โจมตีได้อย่างรุนแรง\n^ffffff_^000000 \nเพิ่ม Damage สกิล Chain Combo 30%\nทุก ๆ การอัพเกรด 1 ขั้น ATK + 4\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Combo Finish, Chain Crush Combo 50%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Chain Crush Combo ขึ้นอีก 30%\nประเภท : ^777777Knuckle^000000 พลังโจมตี : ^777777210^000000\nน้ำหนัก : ^77777770^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Sura^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 268,
+    "itemLevel": 4,
+    "attack": 210,
+    "defense": null,
+    "weight": 70,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Sura"
+    ],
+    "script": {
+      "Chain Combo": [
+        "30"
+      ],
+      "atk": [
+        "1---4"
+      ],
+      "Combo Finish": [
+        "9===50"
+      ],
+      "Chain Crush Combo": [
+        "9===50",
+        "11===30"
+      ]
+    }
+  },
+  "1866": {
+    "id": 1866,
+    "aegisName": "Asura_Bandage",
+    "name": "Fighting God's Bandage [2]",
+    "unidName": "Knuckle",
+    "resName": "Asura_Bandage",
+    "description": "ผ้าพันแผลสีดำที่ผู้ที่ได้ชื่อว่าเทพแห่งการต่อสู้ใช้พันมือไว้\n^ffffff_^000000 \nเพิ่ม Damage ทางกายภาพระยะไกล 10%\nทุก ๆ การอัพเกรด 1 ขั้น ATK + 4\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Knuckle Arrow 40%\nเมื่ออัพเกรดถึงขั้น 11 ลด Delay หลังใช้สกิล 7%\nประเภท : ^777777Knuckle^000000 พลังโจมตี : ^777777220^000000\nน้ำหนัก : ^77777780^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Sura^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 268,
+    "itemLevel": 4,
+    "attack": 220,
+    "defense": null,
+    "weight": 80,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Sura"
+    ],
+    "script": {
+      "range": [
+        "10"
+      ],
+      "atk": [
+        "1---4"
+      ],
+      "Knuckle Arrow": [
+        "9===40"
+      ],
+      "acd": [
+        "11===7"
+      ]
+    }
+  },
   "1867": {
     "id": 1867,
     "aegisName": "Ein_1HKNUCK",
@@ -14331,6 +14402,39 @@
       ],
       "Cart Cannon": [
         "9===25"
+      ]
+    }
+  },
+  "16094": {
+    "id": 16094,
+    "aegisName": "Gene_Rod",
+    "name": "Gene Rod [2]",
+    "unidName": "Club",
+    "resName": "Gene_Rod",
+    "description": "คทาที่ถูกตกแต่งด้วยผลึกที่ได้ชื่อว่าเป็นแก่นแห่งพันธุศาสตร์\n^ffffff_^000000 \nไม่สามารถทำลายได้, เพิ่ม Damage สกิล Crazy Weed 20%\nทุก ๆ การอัพเกรด 1 ขั้น ATK + 4\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Crazy Weed ขึ้นอีก 30%\nเมื่ออัพเกรดถึงขั้น 11 ลด Cooldown สกิล Crazy Weed 2 วินาที\nประเภท : ^777777Mace^000000 พลังโจมตี : ^777777195^000000\nน้ำหนัก : ^777777140^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Genetic^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 263,
+    "itemLevel": 4,
+    "attack": 195,
+    "defense": null,
+    "weight": 140,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Genetic"
+    ],
+    "script": {
+      "Crazy Weed": [
+        "20",
+        "9===30"
+      ],
+      "atk": [
+        "1---4"
+      ],
+      "cd__Crazy Weed": [
+        "11===2"
       ]
     }
   },
@@ -40384,6 +40488,54 @@
       ]
     }
   },
+  "28768": {
+    "id": 28768,
+    "aegisName": "Platinum_Dagger",
+    "name": "Platinum Dagger [2]",
+    "unidName": "Knife",
+    "resName": "Platinum_Dagger",
+    "description": "มีดสั้นที่ทำจากทองคำขาว\n^ffffff_^000000 \nMATK + 170, MATK + 5%\nทุก ๆ การอัพเกรด 1 ขั้น MATK + 4\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage เวทมนตร์ธาตุ Fire, Water, Wind, Earth 15%\nเมื่ออัพเกรดถึงขั้น 11 เมื่อทำการโจมตีทางกายภาพ มีโอกาสที่ MATK + 100 เป็นระยะเวลา 10 วินาทีและเพิ่ม Damage เวทมนตร์ที่ทำต่อศัตรูทุกขนาด 30% \nประเภท : ^777777Dagger^000000 พลังโจมตี : ^777777150^000000\nน้ำหนัก : ^777777150^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Shadow Chaser^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 256,
+    "itemLevel": 4,
+    "attack": 150,
+    "defense": null,
+    "weight": 150,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Shadow Chaser"
+    ],
+    "script": {
+      "matk": [
+        "170",
+        "1---4"
+      ],
+      "matkPercent": [
+        "5"
+      ],
+      "m_my_element_fire": [
+        "9===15"
+      ],
+      "m_my_element_water": [
+        "9===15"
+      ],
+      "m_my_element_wind": [
+        "9===15"
+      ],
+      "m_my_element_earth": [
+        "9===15"
+      ],
+      "chance__matk": [
+        "11===100"
+      ],
+      "chance__m_size_all": [
+        "11===30"
+      ]
+    }
+  },
   "28771": {
     "id": 28771,
     "aegisName": "Ein_1HDAGGER",
@@ -47775,6 +47927,162 @@
       ]
     }
   },
+  "29707": {
+    "id": 29707,
+    "aegisName": "Tenacity2",
+    "name": "Tenacity Lv. 2",
+    "unidName": "Tenacity Lv. 2",
+    "resName": "Crystal_Piece_BL",
+    "description": "Increase physical melee damage by 8%, Perfect Hit + 2",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "melee": [
+        "8"
+      ],
+      "perfectHit": [
+        "2"
+      ]
+    }
+  },
+  "29708": {
+    "id": 29708,
+    "aegisName": "Tenacity3",
+    "name": "Tenacity Lv. 3",
+    "unidName": "Tenacity Lv. 3",
+    "resName": "Crystal_Piece_BL",
+    "description": "Increase physical melee damage by 12%, Perfect Hit + 3",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "melee": [
+        "12"
+      ],
+      "perfectHit": [
+        "3"
+      ]
+    }
+  },
+  "29709": {
+    "id": 29709,
+    "aegisName": "Tenacity4",
+    "name": "Tenacity Lv. 4",
+    "unidName": "Tenacity Lv. 4",
+    "resName": "Crystal_Piece_BL",
+    "description": "Increase physical melee damage by 16%, Perfect Hit + 4",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "melee": [
+        "16"
+      ],
+      "perfectHit": [
+        "4"
+      ]
+    }
+  },
+  "29710": {
+    "id": 29710,
+    "aegisName": "Tenacity5",
+    "name": "Tenacity Lv. 5",
+    "unidName": "Tenacity Lv. 5",
+    "resName": "Crystal_Piece_BL",
+    "description": "Increase physical melee damage by 20%, Perfect Hit + 5",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "melee": [
+        "20"
+      ],
+      "perfectHit": [
+        "5"
+      ]
+    }
+  },
+  "29711": {
+    "id": 29711,
+    "aegisName": "Tenacity6",
+    "name": "Tenacity Lv. 6",
+    "unidName": "Tenacity Lv. 6",
+    "resName": "Crystal_Piece_BL",
+    "description": "Increase physical melee damage by 24%, Perfect Hit + 6",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "melee": [
+        "24"
+      ],
+      "perfectHit": [
+        "6"
+      ]
+    }
+  },
+  "29712": {
+    "id": 29712,
+    "aegisName": "Tenacity7",
+    "name": "Tenacity Lv. 7",
+    "unidName": "Tenacity Lv. 7",
+    "resName": "Crystal_Piece_BL",
+    "description": "Increase physical melee damage by 28%, Perfect Hit + 7",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "melee": [
+        "28"
+      ],
+      "perfectHit": [
+        "7"
+      ]
+    }
+  },
   "29726": {
     "id": 29726,
     "aegisName": "Improve_Orb_L_Varmundt",
@@ -49103,6 +49411,39 @@
         "1---1"
       ],
       "Genesis Ray": [
+        "9===30",
+        "11===20"
+      ]
+    }
+  },
+  "32351": {
+    "id": 32351,
+    "aegisName": "Estal",
+    "name": "Estal [2]",
+    "unidName": "Sword",
+    "resName": "Estal",
+    "description": "ดาบที่ทนได้แม้แต่การระเบิดที่รุนแรง\n^ffffff_^000000 \nลด Cooldown สกิล Spore Explosion 1 วินาที\nทุก ๆ การอัพเกรด 1 ขั้น ATK + 4\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Spore Explosion 30%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Spore Explosion ขึ้นอีก 20%\nประเภท : ^777777Sword^000000 พลังโจมตี : ^777777195^000000\nน้ำหนัก : ^77777770^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Genetic^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 257,
+    "itemLevel": 4,
+    "attack": 195,
+    "defense": null,
+    "weight": 70,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Genetic"
+    ],
+    "script": {
+      "cd__Spore Explosion": [
+        "1"
+      ],
+      "atk": [
+        "1---4"
+      ],
+      "Spore Explosion": [
         "9===30",
         "11===20"
       ]
@@ -51765,6 +52106,246 @@
       ]
     }
   },
+  "400078": {
+    "id": 400078,
+    "aegisName": "BioWeapon_Helm_RK",
+    "name": "Goral Crown [1]",
+    "unidName": "Headgear",
+    "resName": "백양궁왕관",
+    "description": "A crown made of red genstones with shaped curved horns and a white mane.\nAtk + 20 per 2 refine rate.\nIf upgrade level is +7 or higher, ASPD +10%.\nIf upgrade level is +9 or higher, increase long ranged physical damage by 15%.\nIf refine rate is 11 or higher, increases physical damage against all size enemies by 10%.\n\nWhen equipped with Volar,\nincreases critical damage by 10%, increases Ignition Break damage by 12% per refine rate of weapon.\nWhen equipped with Vernan,\nreduces delay after skill by 10%, increases Sonic Wave damage by 10% per refine rate of weapon.\nWhen equipped with Argen Blanco,\nreduces cooldown of Hundred Spear by 0.5 seconds, increases Hundred Spear damage by 10% per refine rate of weapon.\nClass: ^777777Headgear^000000 Defense: ^77777710^000000\nLocation: ^777777Upper ^000000 Weight: ^77777710^000000\nRequired Lv: ^777777170^000000\nJobs: ^777777Rune Knight^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": 1,
+    "attack": 0,
+    "defense": 10,
+    "weight": 10,
+    "requiredLevel": 170,
+    "location": "Upper",
+    "compositionPos": null,
+    "usableClass": [
+      "Rune Knight"
+    ],
+    "script": {
+      "atk": [
+        "2---20"
+      ],
+      "aspdPercent": [
+        "7===10"
+      ],
+      "range": [
+        "9===15"
+      ],
+      "p_size_all": [
+        "11===10"
+      ],
+      "criDmg": [
+        "EQUIP[Volar]===10"
+      ],
+      "Ignition Break": [
+        "EQUIP[Volar]REFINE[weapon==1]---12"
+      ],
+      "acd": [
+        "EQUIP[Vernan]===10"
+      ],
+      "Sonic Wave": [
+        "EQUIP[Vernan]REFINE[weapon==1]---10"
+      ],
+      "cd__Hundred Spears": [
+        "EQUIP[Argen Blanco]===0.5"
+      ],
+      "Hundred Spears": [
+        "EQUIP[Argen Blanco]REFINE[weapon==1]---10"
+      ]
+    }
+  },
+  "400079": {
+    "id": 400079,
+    "aegisName": "BioWeapon_Helm_LG",
+    "name": "Trial Diadem [1]",
+    "unidName": "Headgear",
+    "resName": "천칭궁보관",
+    "description": "Atk + 20 and Matk + 20 per 2 refine rate.\nIf refine rate is 7 or higher, increases attack speed (reduces delay after attack by 10%).\nIf refine rate is 9 or higher, Atk + 15%, increase holy property magical damage by 15%.\nIf refine rate is 11 or higher, increases physical and magical damage against all size enemies by 10%, reduces fixed casting time by 0.2 seconds.\n\nWhen equipped with Farthezan, reduces variable casting time by 10%,\nincreases Gloria Domini and Genesis Ray damage by 10% per refine rate of weapon.\n\nWhen equipped with Harve, reduces skill cooldown of Shield Press by 1 second,\nincreases Shield Press damage by 10% per refine rate of weapon.\n\nWhen equipped with Fortridge, reduces skill cooldown of Cannon Spear by 0.5 seconds,\nincreases Cannon Spear damage by 12% per refine rate of weapon.\nClass: ^777777Headgear^000000 Defense: ^77777710^000000\nLocation: ^777777Upper ^000000 Weight: ^77777710^000000\nRequired Level: ^777777170^000000\nJobs: ^777777Royal Guard^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": 1,
+    "attack": 0,
+    "defense": 10,
+    "weight": 10,
+    "requiredLevel": 170,
+    "location": "Upper",
+    "compositionPos": null,
+    "usableClass": [
+      "Royal Guard"
+    ],
+    "script": {
+      "atk": [
+        "2---20"
+      ],
+      "matk": [
+        "2---20"
+      ],
+      "aspdPercent": [
+        "7===10"
+      ],
+      "atkPercent": [
+        "9===15"
+      ],
+      "m_my_element_holy": [
+        "9===15"
+      ],
+      "p_size_all": [
+        "11===10"
+      ],
+      "m_size_all": [
+        "11===10"
+      ],
+      "fct": [
+        "11===0.2"
+      ],
+      "vct": [
+        "EQUIP[Farthezan]===10"
+      ],
+      "Gloria Domini": [
+        "EQUIP[Farthezan]REFINE[weapon==1]---10"
+      ],
+      "Genesis Ray": [
+        "EQUIP[Farthezan]REFINE[weapon==1]---10"
+      ],
+      "cd__Shield Press": [
+        "EQUIP[Harve]===1"
+      ],
+      "Shield Press": [
+        "EQUIP[Harve]REFINE[weapon==1]---10"
+      ],
+      "cd__Cannon Spear": [
+        "EQUIP[Fortridge]===0.5"
+      ],
+      "Cannon Spear": [
+        "EQUIP[Fortridge]REFINE[weapon==1]---12"
+      ]
+    }
+  },
+  "400094": {
+    "id": 400094,
+    "aegisName": "BioWeapon_Helm_WL",
+    "name": "Jade Crown [1]",
+    "unidName": "Headgear",
+    "resName": "보병궁왕관",
+    "description": "Matk + 2% and increases SP recovery rate by 6% per 2 refine rate.\nIf refine rate is 7 or higher, all stat + 3.\nIf refine rate is 9 or higher, Matk + 4%.\nIf refine rate is 11 or higher, increases neutral, fire and ghost property magical damage by 20%.\n\nWhen equipped with Crimson Rose Stick, reduces skill cooldown of Crimson Rock by 1 second,\nincreases Crimson Rock damage by 3% per refine rate of weapon.\n\nWhen equipped with Staff of Miracle, increases ghost property magical damage by 3%,\nincreases Soul Expansion damage by 3% per refine rate of weapon.\n\nWhen equipped with Gravitation Staff, increases neutral property magical damage by 3%,\nincreases Gravitational Field and Comet damage by 3% per refine rate of weapon.\nClass: ^777777Headgear^000000 Defense: ^77777710^000000\nLocation: ^777777Upper ^000000 Weight: ^77777710^000000\nRequired Level: ^777777170^000000\nJobs: ^777777Warlock^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": 1,
+    "attack": 0,
+    "defense": 10,
+    "weight": 10,
+    "requiredLevel": 170,
+    "location": "Upper",
+    "compositionPos": null,
+    "usableClass": [
+      "Warlock"
+    ],
+    "script": {
+      "matkPercent": [
+        "2---2",
+        "9===4"
+      ],
+      "allStatus": [
+        "7===3"
+      ],
+      "m_my_element_neutral": [
+        "11===20",
+        "EQUIP[Gravitation Staff]===3"
+      ],
+      "m_my_element_fire": [
+        "11===20"
+      ],
+      "m_my_element_ghost": [
+        "11===20",
+        "EQUIP[Staff of Miracle]===3"
+      ],
+      "cd__Crimson Rock": [
+        "EQUIP[Crimson Rose Stick]===1"
+      ],
+      "Crimson Rock": [
+        "EQUIP[Crimson Rose Stick]REFINE[weapon==1]---3"
+      ],
+      "Soul Expansion": [
+        "EQUIP[Staff of Miracle]REFINE[weapon==1]---3"
+      ],
+      "Gravitational Field": [
+        "EQUIP[Gravitation Staff]REFINE[weapon==1]---3"
+      ],
+      "Comet": [
+        "EQUIP[Gravitation Staff]REFINE[weapon==1]---3"
+      ]
+    }
+  },
+  "400095": {
+    "id": 400095,
+    "aegisName": "BioWeapon_Helm_SO",
+    "name": "Spinel Diadem [1]",
+    "unidName": "Headgear",
+    "resName": "보병궁보관",
+    "description": "Matk + 2% and increases SP recovery rate by 6% per 2 refine rate.\r\nIf refine rate is 7 or higher, all stat + 3.\r\nIf refine rate is 9 or higher, reduces variable casting time by 10%.\r\nIf refine rate is 11 or higher, increases neutral, earth and water property magical damage by 20%.\r\n\r\nWhen equipped with Boltigin, Matk + 2%,\r\nincreases Fire Bolt, Cold Bolt and Lightning Bolt damage by 3% per refine rate of weapon.\r\n\r\nWhen equipped with Psychic Spear Rod, increases neutral and wind property magical damage by 3%,\r\nincreases Varetyr Spear damage by 3% per refine rate of weapon.\r\n\r\nWhen equipped with Dust Grave, increases water and earth property magical damage by 3%,\r\nincreases Diamond Dust damage by 3% per refine rate of weapon.\r\nClass: ^777777Headgear^000000 Defense: ^77777710^000000\r\nLocation: ^777777Upper ^000000 Weight: ^77777710^000000\r\nRequired Level: ^777777170^000000\r\nJobs: ^777777Sorcerer^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": 1,
+    "attack": 0,
+    "defense": 10,
+    "weight": 10,
+    "requiredLevel": 170,
+    "location": "Upper",
+    "compositionPos": null,
+    "usableClass": [
+      "Sorcerer"
+    ],
+    "script": {
+      "matkPercent": [
+        "2---2",
+        "EQUIP[Boltigin]===2"
+      ],
+      "allStatus": [
+        "7===3"
+      ],
+      "vct": [
+        "9===10"
+      ],
+      "m_my_element_neutral": [
+        "11===20",
+        "EQUIP[Psychic Spear Rod]===3"
+      ],
+      "m_my_element_earth": [
+        "11===20",
+        "EQUIP[Dust Grave]===3"
+      ],
+      "m_my_element_water": [
+        "11===20",
+        "EQUIP[Dust Grave]===3"
+      ],
+      "Fire Bolt": [
+        "EQUIP[Boltigin]REFINE[weapon==1]---3"
+      ],
+      "Cold Bolt": [
+        "EQUIP[Boltigin]REFINE[weapon==1]---3"
+      ],
+      "Lightning Bolt": [
+        "EQUIP[Boltigin]REFINE[weapon==1]---3"
+      ],
+      "m_my_element_wind": [
+        "EQUIP[Psychic Spear Rod]===3"
+      ],
+      "Varetyr Spear": [
+        "EQUIP[Psychic Spear Rod]REFINE[weapon==1]---3"
+      ],
+      "Diamond Dust": [
+        "EQUIP[Dust Grave]REFINE[weapon==1]---3"
+      ]
+    }
+  },
   "400097": {
     "id": 400097,
     "aegisName": "Egirnion_Helm",
@@ -51817,6 +52398,429 @@
       ],
       "m_race_demihuman": [
         "EQUIP[Aegirnian Armor&&Aegirnian Manteau&&Aegirnian Shoes]50"
+      ]
+    }
+  },
+  "400098": {
+    "id": 400098,
+    "aegisName": "BioWeapon_Helm_NC",
+    "name": "Bull Crown [1]",
+    "unidName": "Headgear",
+    "resName": "금우궁왕관",
+    "description": "Atk + 20 per 2 refine rate.\nIf refine rate is 7 or higher, increases attack speed (reduces delay after attack by 10%).\nIf refine rate is 9 or higher, increase long ranged physical damage by 15%.\nIf refine rate is 11 or higher, increases physical damage against all size enemies by 10%.\n\nWhen equipped with Golden Wrench, increases physical damage against all size enemies by 10%,\nincreases Power Swing damage by 10% per refine rate of weapon.\n\nWhen equipped with Engine Pilebunker, increase long ranged physical damage by 10%,\nincreases Arm Cannon damage by 10% per refine rate of weapon.\n\nWhen equipped with Maxi Spanner, increases physical damage against all size enemies by 10%,\nincreases Axe Tornado damage by 10% per refine rate of weapon.\nClass: ^777777Headgear^000000 Defense: ^77777710^000000\nLocation: ^777777Upper ^000000 Weight: ^77777710^000000\nRequired Level: ^777777170^000000\nJobs: ^777777Mechanic^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": 1,
+    "attack": 0,
+    "defense": 10,
+    "weight": 10,
+    "requiredLevel": 170,
+    "location": "Upper",
+    "compositionPos": null,
+    "usableClass": [
+      "Mechanic"
+    ],
+    "script": {
+      "atk": [
+        "2---20"
+      ],
+      "aspdPercent": [
+        "7===10"
+      ],
+      "range": [
+        "9===15",
+        "EQUIP[Engine Pilebunker]===10"
+      ],
+      "p_size_all": [
+        "11===10",
+        "EQUIP[Golden Wrench]===10",
+        "EQUIP[Maxi Spanner]===10"
+      ],
+      "Power Swing": [
+        "EQUIP[Golden Wrench]REFINE[weapon==1]---10"
+      ],
+      "Arm Cannon": [
+        "EQUIP[Engine Pilebunker]REFINE[weapon==1]---10"
+      ],
+      "Axe Tornado": [
+        "EQUIP[Maxi Spanner]REFINE[weapon==1]---10"
+      ]
+    }
+  },
+  "400099": {
+    "id": 400099,
+    "aegisName": "BioWeapon_Helm_GN",
+    "name": "Taurus Diadem [1]",
+    "unidName": "Headgear",
+    "resName": "금우궁보관",
+    "description": "Atk + 20 per 2 refine rate.\nIf refine rate is 7 or higher, increases attack speed (reduces delay after attack by 10%).\nIf refine rate is 9 or higher, increase long ranged physical damage by 15%.\nIf refine rate is 11 or higher, increases physical damage against all size enemies by 10%.\n\nWhen equipped with Coolant Injection, increase long ranged physical damage by 10%,\nincreases Cart Cannon damage by 10% per refine rate of weapon.\n\nWhen equipped with Gene Rod, increases physical damage against all size enemies by 10%,\nincreases Crazy Vines damage by 10% per refine rate of weapon.\n\nWhen equipped with Estal, increases physical damage against all size enemies by 10%,\nincreases Spore Explosion damage by 10% per refine rate of weapon.\nClass: ^777777Headgear^000000 Defense: ^77777710^000000\nLocation: ^777777Upper ^000000 Weight: ^77777710^000000\nRequired Level: ^777777170^000000\nJobs: ^777777Genetic^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": 1,
+    "attack": 0,
+    "defense": 10,
+    "weight": 10,
+    "requiredLevel": 170,
+    "location": "Upper",
+    "compositionPos": null,
+    "usableClass": [
+      "Genetic"
+    ],
+    "script": {
+      "atk": [
+        "2---20"
+      ],
+      "aspdPercent": [
+        "7===10"
+      ],
+      "range": [
+        "9===15",
+        "EQUIP[Coolant Injection]===10"
+      ],
+      "p_size_all": [
+        "11===10",
+        "EQUIP[Gene Rod]===10",
+        "EQUIP[Estal]===10"
+      ],
+      "Cart Tornado": [
+        "EQUIP[Coolant Injection]REFINE[weapon==1]---10"
+      ],
+      "Crazy Weed": [
+        "EQUIP[Gene Rod]REFINE[weapon==1]---10"
+      ],
+      "Spore Explosion": [
+        "EQUIP[Estal]REFINE[weapon==1]---10"
+      ]
+    }
+  },
+  "400116": {
+    "id": 400116,
+    "aegisName": "BioWeapon_Helm_RA",
+    "name": "Celestial Jewel Crown [1]",
+    "unidName": "Headgear",
+    "resName": "쌍녀궁보관",
+    "description": "Atk + 20 per 2 refine rate.\r\nIf refine rate is 7 or higher, increases attack speed (reduces delay after attack by 10%).\r\nIf refine rate is 9 or higher, increases long ranged physical damage by 15%.\r\nIf refine rate is 11 or higher, increases physical damage against all size enemies by 10%.\r\n\r\nWhen equipped with ^32cd32Sharp Star^000000, increases critical damage by 20%,\r\nincreases Focused Arrow Strike damage by 10% per refine rate of weapon.\r\n\r\nWhen equipped with ^32cd32Aiming Bow^000000, increases long ranged physical damage by 10%,\r\nincreases Aimed Bolt damage by 10% per refine rate of weapon.\r\n\r\nWhen equipped with ^32cd32Falken Shooter^000000, reduces skill cooldown of Arrow Storm by 1.8 seconds,\r\nincreases Arrow Storm damage by 10% per refine rate of weapon.\r\nClass: ^777777Headgear^000000 Defense: ^77777710^000000\r\nLocation: ^777777Upper^000000 Weight: ^77777710^000000\r\nRequired Level: ^777777170^000000\r\nJobs: ^777777Ranger^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 10,
+    "weight": 10,
+    "requiredLevel": 170,
+    "location": "Upper",
+    "compositionPos": null,
+    "usableClass": [
+      "Ranger"
+    ],
+    "script": {
+      "atk": [
+        "2---20"
+      ],
+      "aspdPercent": [
+        "7===10"
+      ],
+      "range": [
+        "9===15",
+        "EQUIP[Aiming Bow]===10"
+      ],
+      "p_size_all": [
+        "11===10"
+      ],
+      "criDmg": [
+        "EQUIP[Sharp Star]===20"
+      ],
+      "Focused Arrow Strike": [
+        "EQUIP[Sharp Star]REFINE[weapon==1]---10"
+      ],
+      "Aimed Bolt": [
+        "EQUIP[Aiming Bow]REFINE[weapon==1]---10"
+      ],
+      "cd__Arrow Storm": [
+        "EQUIP[Falken Shooter]===1.8"
+      ],
+      "Arrow Storm": [
+        "EQUIP[Falken Shooter]REFINE[weapon==1]---10"
+      ]
+    }
+  },
+  "400117": {
+    "id": 400117,
+    "aegisName": "BioWeapon_Helm_WM",
+    "name": "Libra Crown [1]",
+    "unidName": "Headgear",
+    "resName": "천칭궁왕관",
+    "description": "Atk + 20 and Matk + 20 per 2 refine rate.\nIf refine rate is 7 or higher, increases attack speed (reduces delay after attack by 10%), reduces variable casting time by 10%.\nIf refine rate is 9 or higher, increases long ranged physical damage by 15%, increases neutral property magical damage by 10%.\nIf refine rate is 11 or higher, increases all property magical damage by 10%, increases physical damage against all size enemies by 10%.\n\nWhen equipped with ^32cd32Black Circle or Heart Whip^000000, increase neutral property magical damage by 10%,\nincreases Metallic Sound damage by 5% per refine rate of weapon.\n\nWhen equipped with ^32cd32Antique Cello or Scarlet Ribbon^000000, increases long ranged physical damage by 10%,\nincreases Severe Rainstorm damage by 10% per refine rate of weapon.\n\nWhen equipped with ^32cd32Wind Gale^000000, increases long ranged physical damage by 10%,\nincreases Severe Rainstorm damage by 10% per refine rate of weapon.\nClass: ^777777Headgear^000000 Defense: ^77777710^000000\nLocation: ^777777Upper^000000 Weight: ^77777710^000000\nRequired Level: ^777777170^000000\nJobs: ^777777Minstrel, Wanderer^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 10,
+    "weight": 10,
+    "requiredLevel": 170,
+    "location": "Upper",
+    "compositionPos": null,
+    "usableClass": [
+      "Minstrel",
+      "Wanderer"
+    ],
+    "script": {
+      "atk": [
+        "2---20"
+      ],
+      "matk": [
+        "2---20"
+      ],
+      "aspdPercent": [
+        "7===10"
+      ],
+      "vct": [
+        "7===10"
+      ],
+      "range": [
+        "9===15",
+        "EQUIP[Antique Cello||Scarlet Ribbon]===10",
+        "EQUIP[Wind Gale]===10"
+      ],
+      "m_my_element_neutral": [
+        "9===15",
+        "EQUIP[Black Circle||Heart Whip]===10"
+      ],
+      "p_size_all": [
+        "11===10"
+      ],
+      "m_my_element_all": [
+        "11===10"
+      ],
+      "Metalic Sound": [
+        "EQUIP[Black Circle||Heart Whip]REFINE[weapon==1]---5"
+      ],
+      "Severe Rainstorm": [
+        "EQUIP[Antique Cello||Scarlet Ribbon]REFINE[weapon==1]---10",
+        "EQUIP[Wind Gale]REFINE[weapon==1]---10"
+      ]
+    }
+  },
+  "400118": {
+    "id": 400118,
+    "aegisName": "BioWeapon_Helm_AB",
+    "name": "Saint Crown [1]",
+    "unidName": "Headgear",
+    "resName": "거해궁보관",
+    "description": "Atk + 20 and Matk + 20 per 2 refine rate.\nIf refine rate is 7 or higher, increases attack speed (reduces delay after attack by 10%), reduces variable casting time by 10%.\nIf refine rate is 9 or higher, Atk + 15%, Matk + 15%.\nIf refine rate is 11 or higher, increases all property magical damage by 10%, increases physical damage against all size enemies by 10%.\n\nWhen equipped with ^32cd32Adorare Staff^000000, increase holy property magical damage by 10%,\nincreases Adoramus damage by 5% per refine rate of weapon.\n\nWhen equipped with ^32cd32Penitentia^000000, increase holy property magical damage by 10%,\nincreases Judex damage by 5% per refine rate of weapon.\n\nWhen equipped with ^32cd32Lucis Flail^000000, increases physical damage against all size enemies by 10%,\nincreases Duple Light damage by 10% per refine rate of weapon.\nClass: ^777777Headgear^000000 Defense: ^77777710^000000\nLocation: ^777777Upper^000000 Weight: ^77777710^000000\nRequired Level: ^777777170^000000\nJobs: ^777777Archbishop^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 10,
+    "weight": 10,
+    "requiredLevel": 170,
+    "location": "Upper",
+    "compositionPos": null,
+    "usableClass": [
+      "Arch Bishop"
+    ],
+    "script": {
+      "atk": [
+        "2---20"
+      ],
+      "matk": [
+        "2---20"
+      ],
+      "aspdPercent": [
+        "7===10"
+      ],
+      "vct": [
+        "7===10"
+      ],
+      "atkPercent": [
+        "9===15"
+      ],
+      "matkPercent": [
+        "9===15"
+      ],
+      "p_size_all": [
+        "11===10",
+        "EQUIP[Lucis Flail]===10"
+      ],
+      "m_my_element_all": [
+        "11===10"
+      ],
+      "m_my_element_holy": [
+        "EQUIP[Adorare Staff]===10",
+        "EQUIP[Penitentia]===10"
+      ],
+      "Adoramus": [
+        "EQUIP[Adorare Staff]REFINE[weapon==1]---5"
+      ],
+      "Judex": [
+        "EQUIP[Penitentia]REFINE[weapon==1]---5"
+      ],
+      "Duple Light": [
+        "EQUIP[Lucis Flail]REFINE[weapon==1]---10"
+      ]
+    }
+  },
+  "400119": {
+    "id": 400119,
+    "aegisName": "BioWeapon_Helm_SR",
+    "name": "Lion Crown [1]",
+    "unidName": "Headgear",
+    "resName": "사자궁왕관",
+    "description": "Atk + 20 per 2 refine rate.\nIf refine rate is 7 or higher, increases attack speed (reduces delay after attack by 10%).\nIf refine rate is 9 or higher, increases MaxHP by 10%.\nIf refine rate is 11 or higher, increases physical damage against all size enemies by 10%.\n\nWhen equipped with ^32cd32Raging Dragon Fist^000000, increases physical damage against all size enemies by 10%,\nincreases Chain Crush Combo damage by 10% per refine rate of weapon.\n\nWhen equipped with ^32cd32Fighting God's Bandage^000000, increase long ranged physical damage by 10%,\nincreases Knuckle Arrow damage by 10% per refine rate of weapon.\n\nWhen equipped with ^32cd32Bright Pendulum^000000, increase long ranged physical damage by 10%,\nincreases Throw Spirit Sphere damage by 10% per refine rate of weapon.\nClass: ^777777Headgear^000000 Defense: ^77777710^000000\nLocation: ^777777Upper^000000 Weight: ^77777710^000000\nRequired Level: ^777777170^000000\nJobs: ^777777Sura^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 10,
+    "weight": 10,
+    "requiredLevel": 170,
+    "location": "Upper",
+    "compositionPos": null,
+    "usableClass": [
+      "Sura"
+    ],
+    "script": {
+      "atk": [
+        "2---20"
+      ],
+      "aspdPercent": [
+        "7===10"
+      ],
+      "hpPercent": [
+        "9===10"
+      ],
+      "p_size_all": [
+        "11===10",
+        "EQUIP[Raging Dragon Fist]===10"
+      ],
+      "Chain Crush Combo": [
+        "EQUIP[Raging Dragon Fist]REFINE[weapon==1]---10"
+      ],
+      "range": [
+        "EQUIP[Fighting God's Bandage]===10",
+        "EQUIP[Bright Pendulum]===10"
+      ],
+      "Knuckle Arrow": [
+        "EQUIP[Fighting God's Bandage]REFINE[weapon==1]---10"
+      ],
+      "Finger Offensive": [
+        "EQUIP[Bright Pendulum]REFINE[weapon==1]---10"
+      ]
+    }
+  },
+  "400120": {
+    "id": 400120,
+    "aegisName": "BioWeapon_Helm_SC",
+    "name": "Goat Crown [1]",
+    "unidName": "Headgear",
+    "resName": "마갈궁왕관",
+    "description": "Atk + 20 and Matk + 20 per 2 refine rate.\nIf refine rate is 7 or higher, increases attack speed (reduces delay after attack by 10%).\nIf refine rate is 9 or higher, Atk + 15%, Matk + 15%.\nIf refine rate is 11 or higher, increases physical and magical damage against all size enemies by 10%.\n\nWhen equipped with ^32cd32Jack the Knife^000000, reduces global cooldown by 10%,\nincreases Fatal Menace damage by 10% per refine rate of weapon.\n\nWhen equipped with ^32cd32Platinum Dagger^000000, increase all property magical damage by 10%,\nincreases all property magical damage by 5% per refine rate of weapon.\n\nWhen equipped with ^32cd32Rapid Fire^000000, increase long ranged physical damage by 10%,\nincreases Triangle Shot damage by 10% per refine rate of weapon.\nClass: ^777777Headgear^000000 Defense: ^77777710^000000\nLocation: ^777777Upper^000000 Weight: ^77777710^000000\nRequired Level: ^777777170^000000\nJobs: ^777777Shadow Chaser^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 10,
+    "weight": 10,
+    "requiredLevel": 170,
+    "location": "Upper",
+    "compositionPos": null,
+    "usableClass": [
+      "Shadow Chaser"
+    ],
+    "script": {
+      "atk": [
+        "2---20"
+      ],
+      "matk": [
+        "2---20"
+      ],
+      "aspdPercent": [
+        "7===10"
+      ],
+      "atkPercent": [
+        "9===15"
+      ],
+      "matkPercent": [
+        "9===15"
+      ],
+      "p_size_all": [
+        "11===10"
+      ],
+      "m_size_all": [
+        "11===10"
+      ],
+      "acd": [
+        "EQUIP[Jack the Knife]===10"
+      ],
+      "Fatal Manace": [
+        "EQUIP[Jack the Knife]REFINE[weapon==1]---10"
+      ],
+      "m_my_element_all": [
+        "EQUIP[Platinum Dagger]===10",
+        "EQUIP[Platinum Dagger]REFINE[weapon==1]---5"
+      ],
+      "range": [
+        "EQUIP[Rapid Fire]===10"
+      ],
+      "Triangle Shot": [
+        "EQUIP[Rapid Fire]REFINE[weapon==1]---10"
+      ]
+    }
+  },
+  "400121": {
+    "id": 400121,
+    "aegisName": "BioWeapon_Helm_GC",
+    "name": "Twin Crown [1]",
+    "unidName": "Headgear",
+    "resName": "쌍자궁왕관",
+    "description": "Atk + 20 per 2 refine rate.\nIf refine rate is 7 or higher, increases attack speed (reduces delay after attack by 10%).\nIf refine rate is 9 or higher, increases long ranged physical damage by 15%.\nIf refine rate is 11 or higher, increases physical damage against all size enemies by 10%.\n\nWhen equipped with ^32cd32Judgment Slasher and Repent Slasher^000000, increases critical damage by 20%,\nincreases melee and long ranged physical damage by 5% per 2 of the sum of refine rate of both weapons.\n\nWhen equipped with ^32cd32Agudo Filo^000000, increases Cross Impact damage by 20%,\nincreases melee physical damage by 5% per refine rate of weapon.\n\nWhen equipped with ^32cd32Ripper Cross^000000, increase long ranged physical damage by 10%,\nincreases Cross Ripper Slasher damage by 10% per refine rate of weapon.\nClass: ^777777Headgear^000000 Defense: ^77777710^000000\nLocation: ^777777Upper^000000 Weight: ^77777710^000000\nRequired Level: ^777777170^000000\nJobs: ^777777Guillotine Cross^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 10,
+    "weight": 10,
+    "requiredLevel": 170,
+    "location": "Upper",
+    "compositionPos": null,
+    "usableClass": [
+      "Guillotine Cross"
+    ],
+    "script": {
+      "atk": [
+        "2---20"
+      ],
+      "aspdPercent": [
+        "7===10"
+      ],
+      "range": [
+        "9===15",
+        "EQUIP[Judgment Slasher&&Repent Slasher]REFINE[weapon,leftWeapon==2]---5",
+        "EQUIP[Ripper Cross]===10"
+      ],
+      "p_size_all": [
+        "11===10"
+      ],
+      "criDmg": [
+        "EQUIP[Judgment Slasher&&Repent Slasher]===20"
+      ],
+      "melee": [
+        "EQUIP[Judgment Slasher&&Repent Slasher]REFINE[weapon,leftWeapon==2]---5",
+        "EQUIP[Agudo Filo]REFINE[weapon==1]---5"
+      ],
+      "Cross Impact": [
+        "EQUIP[Agudo Filo]===20"
+      ],
+      "Cross Ripper Slasher": [
+        "EQUIP[Ripper Cross]REFINE[weapon==1]---10"
       ]
     }
   },
@@ -54097,7 +55101,7 @@
         "EQUIP[Old Midas Whisper]2---2",
         "EQUIP[Old Casket of Protection]2---2"
       ],
-      "Arrow Strom": [
+      "Arrow Storm": [
         "EQUIP[Old Camouflage Bunny Hood]2---5"
       ],
       "cd__Arrow Storm": [

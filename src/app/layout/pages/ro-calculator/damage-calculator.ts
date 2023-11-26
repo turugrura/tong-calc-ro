@@ -598,7 +598,7 @@ export class DamageCalculator {
     const rangedMultiplier = this.toPercent(ranged + 100);
     const baseSkillMultiplier = this.toPercent(baseSkillDamage);
     const equipSkillMultiplier = this.toPercent(100 + (this.totalBonus[skillName] || 0));
-    const criDmgToMonster = criDmg * criDmgPercentage || 0;
+    const criDmgToMonster = floor(criDmg * criDmgPercentage || 0);
     const criMultiplier = canCri ? this.toPercent(criDmgToMonster + 100) : 1;
     // const dmgMultiplier = this.toPercent(0 + 100);
     const infoForClass = this.infoForClass;

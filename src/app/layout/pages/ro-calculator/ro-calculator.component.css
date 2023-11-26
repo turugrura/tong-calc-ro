@@ -259,7 +259,7 @@
 :host ::ng-deep .item_label_weaponEnchant3 {
   /* background-color: var(--surface-0); */
   background-color: #121212;
-  color: var(--cyan-200);
+  color: var(--pink-200);
 }
 
 :host ::ng-deep .item_label_leftWeapon_main .p-dropdown-label,

@@ -225,6 +225,14 @@ enum Adamatine {
   _6 = 'Adamatine6',
   _7 = 'Adamatine7',
 }
+enum Tenacity {
+  _2 = 'Tenacity2',
+  _3 = 'Tenacity3',
+  _4 = 'Tenacity4',
+  _5 = 'Tenacity5',
+  _6 = 'Tenacity6',
+  _7 = 'Tenacity7',
+}
 
 const statEnums = [Str, Int, Dex, Agi, Vit, Luk];
 const createBaseStat = (from: number, to: number): string[] => {
@@ -391,6 +399,7 @@ const labHead2 = [
   Adamatine._6,
   Adamatine._7,
 ];
+const bioHead2 = [...labHead2, Tenacity._2, Tenacity._3, Tenacity._4, Tenacity._5, Tenacity._6, Tenacity._7];
 
 const tempHead4 = [Str._1, Str._2, Str._3, Str._4, Int._1, Int._2, Int._3, Int._4, Vit._1, Vit._2, Vit._3, Vit._4, Luk._1, Luk._2, Luk._3, Luk._4];
 const tempHead3 = [
@@ -640,6 +649,19 @@ export const EnchantTable: EntTable[] = [
   { name: 'Old_Protect_Of_Crown', enchants: [null, labHead2, base15, base15] },
   { name: 'Old_Camo_RabbitHood', enchants: [null, labHead2, base15, base15] },
 
+  { name: 'BioWeapon_Helm_RK', enchants: [null, bioHead2, base15, base15] },
+  { name: 'BioWeapon_Helm_LG', enchants: [null, bioHead2, base15, base15] },
+  { name: 'BioWeapon_Helm_WL', enchants: [null, bioHead2, base15, base15] },
+  { name: 'BioWeapon_Helm_SO', enchants: [null, bioHead2, base15, base15] },
+  { name: 'BioWeapon_Helm_NC', enchants: [null, bioHead2, base15, base15] },
+  { name: 'BioWeapon_Helm_GN', enchants: [null, bioHead2, base15, base15] },
+  { name: 'BioWeapon_Helm_RA', enchants: [null, bioHead2, base15, base15] },
+  { name: 'BioWeapon_Helm_WM', enchants: [null, bioHead2, base15, base15] },
+  { name: 'BioWeapon_Helm_AB', enchants: [null, bioHead2, base15, base15] },
+  { name: 'BioWeapon_Helm_SR', enchants: [null, bioHead2, base15, base15] },
+  { name: 'BioWeapon_Helm_SC', enchants: [null, bioHead2, base15, base15] },
+  { name: 'BioWeapon_Helm_GC', enchants: [null, bioHead2, base15, base15] },
+
   { name: 'S_Circlet_Of_Time_RK', enchants: [null, labHead2, tempHead3, tempHead4] },
   { name: 'S_Circlet_Of_Time_LG', enchants: [null, labHead2, tempHead3, tempHead4] },
   { name: 'S_Circlet_Of_Time_NC', enchants: [null, labHead2, tempHead3, tempHead4] },
@@ -666,6 +688,7 @@ export const EnchantTable: EntTable[] = [
   { name: 'Falken_Shooter', enchants: [null, null, edda3, edda4] },
   { name: 'Wind_Gale', enchants: [null, null, edda3, edda4] },
   { name: 'Farthezan', enchants: [null, null, edda3, edda4] },
+  { name: 'Estal', enchants: [null, null, edda3, edda4] },
   { name: 'Heart_Whip', enchants: [null, null, edda3, edda4] },
   { name: 'Reaper_Cross', enchants: [null, null, edda3, edda4] },
   { name: 'Jack_The_Knife', enchants: [null, null, edda3, edda4] },
@@ -686,6 +709,7 @@ export const EnchantTable: EntTable[] = [
   { name: 'Maxi_Spanner', enchants: [null, null, edda3, edda4] },
   { name: 'Engine_Pilebuncker', enchants: [null, null, edda3, edda4] },
   { name: 'Coolant_Injection', enchants: [null, null, edda3, edda4] },
+  { name: 'Gene_Rod', enchants: [null, null, edda3, edda4] },
   { name: 'Lucis_Flail', enchants: [null, null, edda3, edda4] },
   { name: 'Bright_Mace', enchants: [null, null, edda3, edda4] },
   { name: 'Adorare_Staff', enchants: [null, null, edda3, edda4] },
@@ -693,6 +717,9 @@ export const EnchantTable: EntTable[] = [
   { name: 'Staff_Of_Miracle', enchants: [null, null, edda3, edda4] },
   { name: 'Golden_Wrench', enchants: [null, null, edda3, edda4] },
   { name: 'Boltigin', enchants: [null, null, edda3, edda4] },
+  { name: 'Combo_Fist', enchants: [null, null, edda3, edda4] },
+  { name: 'Asura_Bandage', enchants: [null, null, edda3, edda4] },
+  { name: 'Platinum_Dagger', enchants: [null, null, edda3, edda4] },
 
   { name: 'Headband_Of_Power_IL', enchants: [null, null, BaseState._1_4, illusionDun] },
   { name: 'Apple_Of_Archer_IL', enchants: [null, null, BaseState._1_4, illusionDun] },
