@@ -10,7 +10,7 @@ export const ElementCharm: ActiveSkillModel = {
       label: 'Fire',
       isUse: true,
       value: 'Fire-Charm',
-      bonus: { 'Flaming Petals': 200, 'Blaze Shield': 200, 'Exploding Dragon': 1000, p_element_earth: 30 },
+      bonus: { 'Flaming Petals': 200, 'Blaze Shield': 200, 'flat_Exploding Dragon': 1000, p_element_earth: 30 },
     },
     { label: 'Earth', isUse: true, value: 'Earth-Charm', bonus: { weaponAtkPercent: 150, p_element_wind: 30 } },
     {
@@ -19,7 +19,7 @@ export const ElementCharm: ActiveSkillModel = {
       value: 'Ice-Charm',
       bonus: {
         'Freezing Spear': 200,
-        'Snow Flake Draft': 1000,
+        'flat_Snow Flake Draft': 1000,
         p_element_fire: 30,
       },
     },
@@ -30,7 +30,7 @@ export const ElementCharm: ActiveSkillModel = {
       bonus: {
         'Wind Blade': 200,
         'Lightning Jolt': 200,
-        'First Wind': 1000,
+        'flat_First Wind': 1000,
         p_element_water: 30,
       },
     },

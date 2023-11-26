@@ -423,8 +423,14 @@ export class DamageCalculator {
    * Ex. Power Thrust
    * @returns number
    */
-  private getFlatDmg() {
-    return this.totalBonus['flatDmg'] || 0;
+  private getFlatDmg(skillName?: string) {
+    const base = this.totalBonus['flatDmg'] || 0;
+    if (skillName) {
+      const flatSkill = this.totalBonus[`flat_${skillName}`] || 0;
+      return base + flatSkill;
+    }
+
+    return base;
   }
 
   private getEquipAtkFromSkills(atkType: 'atk' | 'matk' = 'atk') {
@@ -899,7 +905,7 @@ export class DamageCalculator {
       formula({
         ...this.infoForClass,
         skillLevel,
-      }) + this.getFlatDmg();
+      }) + this.getFlatDmg(skillName);
     let baseSkillDamage = floor(_baseSkillDamage);
 
     const params = {
@@ -920,7 +926,7 @@ export class DamageCalculator {
         formula2({
           ...this.infoForClass,
           skillLevel,
-        }) + this.getFlatDmg();
+        }) + this.getFlatDmg(skillName);
       const baseSkillDamage2 = floor(_baseSkillDamage2);
       baseSkillDamage += baseSkillDamage2;
 
