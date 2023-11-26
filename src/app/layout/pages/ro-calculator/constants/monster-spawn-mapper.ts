@@ -16,6 +16,7 @@ const Mapper = {
   hero_tra: 'Test damage',
   tra_fild: 'Test damage',
   prontera: 'Test damage',
+  lhz_dun_n: 'Lab 5',
 } as const;
 
 export const MonsterGroupNames = [...new Set(Object.values(Mapper))].sort((a, b) => (a > b ? 1 : -1));
