@@ -7,7 +7,7 @@ export const ElementMapper = {
   'Poison 1': { Neutral: 100, Water: 100, Earth: 100, Fire: 100, Wind: 100, Poison: 0, Holy: 100, Dark: 50, Ghost: 100, Undead: 50 },
   'Holy 1': { Neutral: 100, Water: 75, Earth: 75, Fire: 75, Wind: 75, Poison: 75, Holy: 0, Dark: 125, Ghost: 75, Undead: 100 },
   'Dark 1': { Neutral: 100, Water: 100, Earth: 100, Fire: 100, Wind: 100, Poison: 50, Holy: 125, Dark: 0, Ghost: 75, Undead: 0 },
-  'Ghost 1': { Neutral: 90, Water: 100, Earth: 100, Fire: 100, Wind: 100, Poison: 100, Holy: 100, Dark: 100, Ghost: 125, Undead: 100 },
+  'Ghost 1': { Neutral: 70, Water: 100, Earth: 100, Fire: 100, Wind: 100, Poison: 100, Holy: 100, Dark: 100, Ghost: 125, Undead: 100 },
   'Undead 1': { Neutral: 100, Water: 100, Earth: 100, Fire: 125, Wind: 100, Poison: -25, Holy: 150, Dark: -25, Ghost: 100, Undead: 0 },
 
   'Neutral 2': { Neutral: 100, Water: 100, Earth: 100, Fire: 100, Wind: 100, Poison: 100, Holy: 100, Dark: 100, Ghost: 50, Undead: 100 },

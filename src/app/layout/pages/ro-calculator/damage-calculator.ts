@@ -165,7 +165,7 @@ export class DamageCalculator {
   }
 
   private toPercent(n: number) {
-    return n * 0.01;
+    return round(n * 0.01, 4);
   }
 
   private toPreventNegativeDmg(n: number) {
@@ -181,10 +181,6 @@ export class DamageCalculator {
     if (!can) return false;
 
     return this.totalBonus['edp'] > 0;
-  }
-
-  private isGhost() {
-    return this.monsterData.elementUpper === ElementType.Ghost;
   }
 
   private getCometMultiplier() {
@@ -378,7 +374,7 @@ export class DamageCalculator {
     return total;
   }
 
-  private getstatusAtk() {
+  private getStatusAtk() {
     const { totalStr, totalDex, totalLuk } = this.status;
     const baseLvl = this.model.level;
     const [primaryStatus, secondStatus] = this.isRangeAtk() ? [totalDex, totalStr] : [totalStr, totalDex];
@@ -520,19 +516,21 @@ export class DamageCalculator {
     let pMultiplier = ElementMapper[this.monster.stats.elementName][propertyAtk];
     pMultiplier = pMultiplier * this.getVIAmp();
 
-    return this.toPercent(pMultiplier);
+    return round(this.toPercent(pMultiplier), 2);
   }
 
   private calcTotalAtk(params: { propertyAtk: ElementType; isEDP: boolean; sizePenalty: number }) {
     const { propertyAtk, isEDP, sizePenalty } = params;
     const propertyMultiplier = this.getPropertyMultiplier(propertyAtk);
 
-    const mildwindMultiplier = this.isActiveMildwind ? propertyMultiplier : 1;
     const extraAtk = this.getExtraAtk();
     const cannonBallAtk = this.totalBonus.cannonballAtk || 0;
     const masteryAtk = this.getMasteryAtk() + cannonBallAtk;
 
-    const statusAtk = this.getstatusAtk() * mildwindMultiplier;
+    const mildwindMultiplier = this.isActiveMildwind
+      ? propertyMultiplier
+      : this.getPropertyMultiplier(ElementType.Neutral);
+    const statusAtk = this.getStatusAtk() * mildwindMultiplier;
 
     const { totalMin: _weaMin, totalMax: weaMax, totalMaxOver: weaMaxOver } = this.getWeaponAtk({ sizePenalty, isEDP });
     const weaMin = this.isMaximizeWeapon ? weaMax : _weaMin;
@@ -714,18 +712,18 @@ export class DamageCalculator {
 
       total = floor(total * raceMultiplier);
       total = floor(total * sizeMultiplier);
-      total = floor(total * elementMultiplier);
+      total = floor(total * elementMultiplier); //tested
       total = floor(total * monsterTypeMultiplier);
-      total = floor(total * matkPercentMultiplier);
+      total = floor(total * matkPercentMultiplier); //tested
       total = floor(total * cometMultiplier);
 
-      total = floor(total * baseSkillMultiplier);
+      total = floor(total * baseSkillMultiplier); //tested
       total = floor(total * equipSkillMultiplier);
 
-      total = floor(total * myElementMultiplier);
-      total = floor(total * round(hardDef, 4));
-      total = total - softMDef;
-      total = floor(total * propertyMultiplier);
+      total = floor(total * myElementMultiplier); //tested
+      total = floor(total * round(hardDef, 4)); //tested
+      total = total - softMDef; //tested
+      total = floor(total * propertyMultiplier); //tested
       total = floor(total * finalDmgMultiplier);
       total = this.applyFinalMultiplier(total, 'magic');
 
