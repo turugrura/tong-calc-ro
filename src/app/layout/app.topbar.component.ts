@@ -36,6 +36,20 @@ export class AppTopBarComponent {
 
   updates: { v: string; date: string; logs: string[] }[] = [
     {
+      v: 'V1.7.1',
+      date: '26-11-2566',
+      logs: [
+        'Fixed Oboro max passive skill level',
+        'Fixed Charm bonus skill damage to be flatten',
+        'Fixed Physical damage to ghost monster',
+        'Fixed reported bugs',
+        'Added Warlock Offensive skill (Earth Strain, Frost Misty)',
+        'Added Rune Knight Offensive skill (Ignition Break & Improved version)',
+        'Added Biolab headgear',
+        'Added requested items & monsters from Lab 5',
+      ],
+    },
+    {
       v: 'V1.7.0',
       date: '25-11-2566',
       logs: [
@@ -43,7 +57,7 @@ export class AppTopBarComponent {
         'Fixed Judex formula',
         'Fixed reported bugs',
         'Supported Oboro class',
-        'Added requested items & monster',
+        'Added requested items & monsters',
       ],
     },
     {
