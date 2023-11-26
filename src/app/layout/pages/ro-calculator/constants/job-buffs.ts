@@ -116,5 +116,5 @@ export const JobBuffs: ActiveSkillModel[] = [
       { label: 'No', isUse: false, value: 0 },
     ],
   },
-  FusionSunMoonStar,
+  FusionSunMoonStar(),
 ];

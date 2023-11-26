@@ -191,7 +191,7 @@ export class StarEmperor extends CharacterBase {
         { label: 'No', value: 0, isUse: false },
       ],
     },
-    FusionSunMoonStar,
+    FusionSunMoonStar(),
   ];
 
   protected readonly _passiveSkillList: PassiveSkillModel[] = [];
