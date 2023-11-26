@@ -111,6 +111,7 @@ export class Warlock extends CharacterBase {
       acd: 0.5,
       cd: 5,
       isMatk: true,
+      hit: 7,
       element: ElementType.Fire,
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
@@ -169,8 +170,27 @@ export class Warlock extends CharacterBase {
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
+        const chainBonus = 900;
 
-        return (500 + skillLevel * 100) * (baseLevel / 100) + 900;
+        return (500 + skillLevel * 100) * (baseLevel / 100) + chainBonus;
+      },
+    },
+    {
+      label: 'Earth Strain Lv5',
+      name: 'Earth Strain',
+      value: 'Earth Strain==5',
+      acd: 1,
+      fct: 1,
+      vct: 6,
+      cd: 10,
+      isMatk: true,
+      hit: 10,
+      element: ElementType.Earth,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
+
+        return (1000 + skillLevel * 600) * (baseLevel / 100);
       },
     },
     {

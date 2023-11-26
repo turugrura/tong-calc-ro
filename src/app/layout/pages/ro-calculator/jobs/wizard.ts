@@ -92,9 +92,9 @@ export class Wizard extends CharacterBase {
   ];
   protected _passiveSkillList: PassiveSkillModel[] = [
     {
-      inputType: 'dropdown',
       label: 'Soul Drain',
       name: 'Soul Drain',
+      inputType: 'dropdown',
       dropdown: [
         { label: '-', isUse: false, value: 0 },
         { label: 'Lv 1', isUse: true, value: 1 },
@@ -110,9 +110,9 @@ export class Wizard extends CharacterBase {
       ],
     },
     {
-      inputType: 'dropdown',
       label: 'Gravitational',
       name: 'Gravitational Field',
+      inputType: 'dropdown',
       dropdown: [
         { label: '-', value: 0, isUse: false },
         { label: 'Lv 1', value: 1, isUse: true },
@@ -120,6 +120,15 @@ export class Wizard extends CharacterBase {
         { label: 'Lv 3', value: 3, isUse: true },
         { label: 'Lv 4', value: 4, isUse: true },
         { label: 'Lv 5', value: 5, isUse: true },
+      ],
+    },
+    {
+      label: 'Mystical Amp 10',
+      name: 'Mystical Amplification',
+      inputType: 'selectButton',
+      dropdown: [
+        { label: 'Yes', value: 10, isUse: true },
+        { label: 'No', value: 0, isUse: false },
       ],
     },
   ];

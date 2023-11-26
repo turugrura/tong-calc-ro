@@ -43352,7 +43352,7 @@
     "compositionPos": null,
     "script": {
       "matk": [
-        "20"
+        "LEARN_SKILL[Mystical Amplification==1]---2"
       ]
     }
   },
@@ -43425,7 +43425,7 @@
         "EQUIP[High Wizard Stone (Upper)]===15"
       ],
       "fct": [
-        "EQUIP[High Wizard Stone (Middle)]===0.5"
+        "EQUIP[High Wizard Stone (Middle)]LEARN_SKILL[Soul Drain==2]---0.1"
       ],
       "m_my_element_fire": [
         "EQUIP[High Wizard Stone (Lower)]===5"
