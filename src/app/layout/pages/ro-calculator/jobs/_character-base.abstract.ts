@@ -139,11 +139,13 @@ export abstract class CharacterBase {
 
   get passiveSkills() {
     const sortedSkill = this._passiveSkillList.map((a) => {
+      if (a.inputType === 'selectButton') return a;
+
       const sortedDropdown = a.dropdown.sort(sortSkill);
 
       return {
         ...a,
-        dropdown: sortedDropdown,
+        dropdown: [...sortedDropdown],
       };
     });
 
@@ -160,7 +162,7 @@ export abstract class CharacterBase {
 
       return {
         ...a,
-        dropdown: sortedDropdown,
+        dropdown: [...sortedDropdown],
       };
     });
 

@@ -11809,6 +11809,49 @@
       ]
     }
   },
+  "15186": {
+    "id": 15186,
+    "aegisName": "Kafra_Suit",
+    "name": "Kafra Uniform [1]",
+    "unidName": "Costume",
+    "resName": "카프라제복",
+    "description": "ชุด Uniform ที่พนักงาน Kafra สวมใส่\nถึงจะดูเหมือนชุด maid ธรรมดา แต่เพราะทำขึ้นด้วยความใส่ใจเป็นพิเศษจึงทำให้สวมใส่สบาย\nค่าประสบการณ์ที่ได้รับจากมอนสเตอร์ + 5%, อัตราการดร็อปไอเท็ม + 5%\nMaxHP +100, MaxSP +20 ทุกๆ 1 อัพเกรด\nเมื่ออัพเกรดถึงขั้น 7 จะเพิ่ม MaxHP +3%, MaxSP +3%\nเมื่ออัพเกรดถึงขั้น 9 จะเพิ่ม MaxHP +5%, MaxSP +5%\nเมื่ออัพเกรดถึงขั้น 12 จะเพิ่ม HP Recovery และ SP Recovery 100%\nประเภท : ^777777Armor^000000 พลังป้องกัน : ^77777740^000000\nน้ำหนัก : ^77777750^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 40,
+    "weight": 50,
+    "requiredLevel": 1,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "exp": [
+        "5"
+      ],
+      "itemDrop": [
+        "5"
+      ],
+      "hp": [
+        "1---100"
+      ],
+      "sp": [
+        "1---20"
+      ],
+      "hpPercent": [
+        "7===3",
+        "9===5"
+      ],
+      "spPercent": [
+        "7===3",
+        "9===5"
+      ]
+    }
+  },
   "15189": {
     "id": 15189,
     "aegisName": "Einherial_Armor",
@@ -16545,6 +16588,38 @@
       ],
       "cri__fish": [
         "EQUIP[Surfer Swinsuit]===50"
+      ]
+    }
+  },
+  "19168": {
+    "id": 19168,
+    "aegisName": "Kafra_Employee_Band",
+    "name": "Kafra Employee Band [1]",
+    "unidName": "Hairband",
+    "resName": "카프라의머리띠",
+    "description": "ที่คาดผมสัญลักษณ์ของพนักงาน Kafra\nเข้าเซ็ตกันกับ Kafra Uniform\nลด damage จากมอนสเตอร์ทุกประเภท 5%\nเมื่อกำจัดมอนสเตอร์ มีโอกาสที่จะได้รับ [Not For Sale] Kafra Card, Free Ticket for Kafra Transportation, Free Ticket for Kafra Storage\nยิ่งค่าการอัพเกรดสูง ยิ่งเพิ่มโอกาสในการได้รับ\n----------------\nเมื่อใช้ร่วมกันกับ Kafra Uniform EXP ที่ได้รับจากมอนสเตอร์ + 5% เปอร์เซ็นต์ดร็อปไอเท็ม + 5%, All State +4.\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^7777770^000000\nตำแหน่ง : ^777777Upper ^000000น้ำหนัก : ^77777750^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 519,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 50,
+    "requiredLevel": 1,
+    "location": "Upper",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "exp": [
+        "EQUIP[Kafra Uniform]===5"
+      ],
+      "itemDrop": [
+        "EQUIP[Kafra Uniform]===5"
+      ],
+      "allStatus": [
+        "EQUIP[Kafra Uniform]===4"
       ]
     }
   },

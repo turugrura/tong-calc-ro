@@ -4,6 +4,7 @@ import { EquipmentSummaryModel } from './models/equipment-summary.model';
 import { HpSpTable } from './models/hp-sp-table.model';
 import { InfoForClass } from './models/info-for-class.model';
 import { StatusSummary } from './models/status-summary.model';
+import { floor } from './utils';
 
 const hpSpIndex: Record<ClassName, number> = {
   [ClassName.Swordman]: 1,
@@ -117,15 +118,15 @@ export class HpSpCalculator {
       const { hp, hpPercent, sp, spPercent } = this._totalBonus;
       // console.log({ baseHp, baseSp, hp, hpPercent, sp, spPercent });
 
-      let maxHp = Math.floor(baseHp * 1.25);
-      maxHp = Math.floor(maxHp * (1 + this._totalStatus.totalVit * 0.01));
+      let maxHp = floor(baseHp * 1.25);
+      maxHp = floor(maxHp * (1 + this._totalStatus.totalVit * 0.01));
       maxHp += hp + this._shadowHP;
-      this._maxHp = maxHp + Math.floor(maxHp * ((hpPercent || 0) * 0.01));
+      this._maxHp = maxHp + floor(maxHp * ((hpPercent || 0) * 0.01));
 
-      let maxSp = Math.floor(baseSp * 1.25);
-      maxSp = Math.floor(maxSp * (1 + this._totalStatus.totalInt * 0.01));
+      let maxSp = floor(baseSp * 1.25);
+      maxSp = floor(maxSp * (1 + this._totalStatus.totalInt * 0.01));
       maxSp += sp;
-      this._maxSp = maxSp + Math.floor(maxSp * ((spPercent || 0) * 0.01));
+      this._maxSp = maxSp + floor(maxSp * ((spPercent || 0) * 0.01));
     } catch (error) {
       console.error('hp calculation', error);
     }

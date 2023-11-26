@@ -91,22 +91,78 @@ export class RuneKnight extends CharacterBase {
   protected readonly classNames = ['Only 3rd Cls', 'Rune Knight', 'Rune Knight Cls', 'Rune Knight Class'];
   protected readonly _atkSkillList: AtkSkillModel[] = [
     {
-      label: 'Ignition Break Lv5',
+      label: 'Ignition Break Lv5 (3x3)',
       name: 'Ignition Break',
-      value: 'Ignition Break==5',
+      value: 'Ignition Break3==5',
       acd: 0,
       fct: 0,
       vct: 1,
       cd: 2,
       isMelee: true,
-      isDevMode: true,
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, weapon } = input;
         const baseLevel = model.level;
         const isWeaponFire = weapon?.data?.propertyAtk === ElementType.Fire;
-        const bonusFire = isWeaponFire ? 0 : skillLevel * 100;
+        const bonusFire = isWeaponFire ? skillLevel * 100 : 0;
+        const rangeDmgBase = 300;
 
-        return (bonusFire + skillLevel * 300) * (baseLevel / 100);
+        return (bonusFire + skillLevel * rangeDmgBase) * (baseLevel / 100);
+      },
+    },
+    {
+      label: 'Ignition Break Lv5 (5x5)',
+      name: 'Ignition Break',
+      value: 'Ignition Break5==5',
+      acd: 0,
+      fct: 0,
+      vct: 1,
+      cd: 2,
+      isMelee: true,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, weapon } = input;
+        const baseLevel = model.level;
+        const isWeaponFire = weapon?.data?.propertyAtk === ElementType.Fire;
+        const bonusFire = isWeaponFire ? skillLevel * 100 : 0;
+        const rangeDmgBase = 250;
+
+        return (bonusFire + skillLevel * rangeDmgBase) * (baseLevel / 100);
+      },
+    },
+    {
+      label: 'Ignition Break Lv5 (7x7)',
+      name: 'Ignition Break',
+      value: 'Ignition Break7==5',
+      acd: 0,
+      fct: 0,
+      vct: 1,
+      cd: 2,
+      isMelee: true,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, weapon } = input;
+        const baseLevel = model.level;
+        const isWeaponFire = weapon?.data?.propertyAtk === ElementType.Fire;
+        const bonusFire = isWeaponFire ? skillLevel * 100 : 0;
+        const rangeDmgBase = 200;
+
+        return (bonusFire + skillLevel * rangeDmgBase) * (baseLevel / 100);
+      },
+    },
+    {
+      label: '[Improved] Ignition Break Lv5',
+      name: 'Ignition Break',
+      value: '[Improved] Ignition Break==5',
+      acd: 0,
+      fct: 0,
+      vct: 1,
+      cd: 2,
+      isMelee: true,
+      canCri: true,
+      criDmgPercentage: 0.5,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
+
+        return skillLevel * 450 * (baseLevel / 100);
       },
     },
     {
@@ -165,12 +221,12 @@ export class RuneKnight extends CharacterBase {
       name: 'Ignition Break',
       inputType: 'dropdown',
       dropdown: [
-        { label: '0', value: 0, isUse: false },
-        { label: '1', value: 1, skillLv: 1, isUse: true },
-        { label: '2', value: 2, skillLv: 2, isUse: true },
-        { label: '3', value: 3, skillLv: 3, isUse: true },
-        { label: '4', value: 4, skillLv: 4, isUse: true },
-        { label: '5', value: 5, skillLv: 5, isUse: true },
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 1', value: 1, skillLv: 1, isUse: true },
+        { label: 'Lv 2', value: 2, skillLv: 2, isUse: true },
+        { label: 'Lv 3', value: 3, skillLv: 3, isUse: true },
+        { label: 'Lv 4', value: 4, skillLv: 4, isUse: true },
+        { label: 'Lv 5', value: 5, skillLv: 5, isUse: true },
       ],
     },
   ];

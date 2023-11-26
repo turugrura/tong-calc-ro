@@ -264,6 +264,7 @@ export class Calculator {
   private basicAspd = { hitsPerSec: 0, totalAspd: 0 } as BasicAspdModel;
 
   private totalMasteryAtk = 0;
+  private totalHideMasteryAtk = 0;
   private totalBuffAtk = 0;
   private totalStatusAtk = 0;
   private totalEquipAtk = 0;
@@ -671,7 +672,8 @@ export class Calculator {
     const uiMastery = this._class.getUiMasteryAtk(this.infoForClass);
     const hiddenMastery = this._class.getMasteryAtk(this.infoForClass);
 
-    this.totalMasteryAtk = skillAtk + buffAtk + uiMastery + hiddenMastery;
+    this.totalMasteryAtk = skillAtk + buffAtk + uiMastery;
+    this.totalHideMasteryAtk = hiddenMastery;
   }
 
   private calcMasteryMatk() {
@@ -1533,6 +1535,7 @@ export class Calculator {
         totalEquipAtk: this.totalEquipAtk + leftWeaponAtk,
         ammuAtk: this.equipStatus.ammo?.atk || 0,
         totalMasteryAtk: this.totalMasteryAtk,
+        totalHideMasteryAtk: this.totalHideMasteryAtk,
         totalBuffAtk: this.totalBuffAtk,
 
         totalStatusMatk: this.totalStatusMatk,

@@ -37,6 +37,7 @@ export interface SkillDamageSummaryModel {
   skillDps: number;
   skillHitKill: number;
   skillCriRateToMonster: number;
+  skillCriDmgToMonster: number;
   skillPart2Label: string;
   skillMinDamage2: number;
   skillMaxDamage2: number;

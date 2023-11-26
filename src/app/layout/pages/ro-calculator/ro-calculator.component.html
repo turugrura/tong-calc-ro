@@ -1148,8 +1148,8 @@
             ></p-cascadeSelect>
           </div>
         </div>
-        <div class="grid grid-nogutter" [hidden]="shieldEnchant3List.length === 0 || !model.shield">
-          <div class="col-4">
+        <div class="grid grid-nogutter">
+          <div class="col-4" [hidden]="shieldEnchant3List.length === 0 || !model.shield">
             <p-dropdown
               inputId="shieldEnchant1"
               [autoDisplayFirst]="false"
@@ -1177,7 +1177,7 @@
               </ng-template>
             </p-dropdown>
           </div>
-          <div class="col-4">
+          <div class="col-4" [hidden]="shieldEnchant3List.length === 0 || !model.shield">
             <p-dropdown
               inputId="shieldEnchant2"
               [autoDisplayFirst]="false"
@@ -1205,7 +1205,7 @@
               </ng-template>
             </p-dropdown>
           </div>
-          <div class="col-4">
+          <div class="col-4" [hidden]="shieldEnchant3List.length === 0 || !model.shield">
             <p-dropdown
               inputId="shieldEnchant3"
               [autoDisplayFirst]="false"
@@ -3757,7 +3757,7 @@
                   </div>
 
                   <!-- Skill Damage -->
-                  <div class="col-12" [hidden]="!totalSummary?.dmg?.skillCanCri">
+                  <div class="col-6" [hidden]="!totalSummary?.dmg?.skillCanCri">
                     <app-calc-value
                       [enableCompare]="isEnableCompare && totalSummary2?.dmg"
                       label="CriRate:"
@@ -3766,6 +3766,17 @@
                       styleClass2="summary_compare"
                       [max]="totalSummary?.dmg?.skillCriRateToMonster"
                       [max2]="totalSummary2?.dmg?.skillCriRateToMonster"
+                    ></app-calc-value>
+                  </div>
+                  <div class="col-6" [hidden]="!totalSummary?.dmg?.skillCanCri">
+                    <app-calc-value
+                      [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+                      label="CriDmg:"
+                      unit="%"
+                      styleClass="summary_damage"
+                      styleClass2="summary_compare"
+                      [max]="totalSummary?.dmg?.skillCriDmgToMonster"
+                      [max2]="totalSummary2?.dmg?.skillCriDmgToMonster"
                     ></app-calc-value>
                   </div>
                   <div class="col-12">

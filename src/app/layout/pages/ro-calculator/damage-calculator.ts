@@ -598,7 +598,8 @@ export class DamageCalculator {
     const rangedMultiplier = this.toPercent(ranged + 100);
     const baseSkillMultiplier = this.toPercent(baseSkillDamage);
     const equipSkillMultiplier = this.toPercent(100 + (this.totalBonus[skillName] || 0));
-    const criMultiplier = canCri ? this.toPercent((criDmg * criDmgPercentage || 0) + 100) : 1;
+    const criDmgToMonster = criDmg * criDmgPercentage || 0;
+    const criMultiplier = canCri ? this.toPercent(criDmgToMonster + 100) : 1;
     // const dmgMultiplier = this.toPercent(0 + 100);
     const infoForClass = this.infoForClass;
 
@@ -649,6 +650,7 @@ export class DamageCalculator {
       propertyMultiplier,
       sizePenalty,
       canCri,
+      criDmgToMonster,
     };
   }
 
@@ -780,6 +782,7 @@ export class DamageCalculator {
       avgCriDamage: 0,
       sizePenalty: 1,
       canCri: false,
+      criDmgToMonster: 0,
     };
   }
 
@@ -992,6 +995,7 @@ export class DamageCalculator {
       skillDps,
       skillHitKill: hitKill,
       skillCriRateToMonster: actualCri,
+      skillCriDmgToMonster: calculated.criDmgToMonster,
       skillPart2Label,
       skillMinDamage2,
       skillMaxDamage2,
