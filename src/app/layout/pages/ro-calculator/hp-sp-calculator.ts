@@ -59,6 +59,8 @@ export class HpSpCalculator {
   private _maxHp = 0;
   private _maxSp = 0;
 
+  private _shadowHP = 0;
+
   setHpSpTable(hpSpTable: HpSpTable) {
     this.hpSpTable = hpSpTable;
 
@@ -66,7 +68,14 @@ export class HpSpCalculator {
   }
 
   setAllInfo(info: Omit<InfoForClass, 'weapon' | 'monster'>) {
-    const { model, status, totalBonus } = info;
+    const { model, status, totalBonus, equipmentBonus } = info;
+    const { shadowArmor, shadowShield, shadowBoot, shadowEarring, shadowPendant } = equipmentBonus;
+    let totalShadowRefine = shadowArmor.refine || 0;
+    totalShadowRefine += shadowShield.refine || 0;
+    totalShadowRefine += shadowBoot.refine || 0;
+    totalShadowRefine += shadowEarring.refine || 0;
+    totalShadowRefine += shadowPendant.refine || 0;
+    this._shadowHP = totalShadowRefine * 10;
 
     this.setLevel(model.level);
     this.setTotalBonus(totalBonus);
@@ -110,7 +119,7 @@ export class HpSpCalculator {
 
       let maxHp = Math.floor(baseHp * 1.25);
       maxHp = Math.floor(maxHp * (1 + this._totalStatus.totalVit * 0.01));
-      maxHp += hp;
+      maxHp += hp + this._shadowHP;
       this._maxHp = maxHp + Math.floor(maxHp * ((hpPercent || 0) * 0.01));
 
       let maxSp = Math.floor(baseSp * 1.25);

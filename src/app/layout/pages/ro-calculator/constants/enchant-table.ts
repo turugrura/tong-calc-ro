@@ -323,12 +323,22 @@ const tempOpts = {
 const all25 = [...ea25, ...fs36, ...sh25, ...sp25, ...atkPer13, ...fatal14];
 const eaFsSp15 = [...ea15, ...fs35, ...sp25, ...fatal14];
 
-const toyFactory = [...sp25, ...fs35, ...sh13, ...matk12, ...aspd24];
+const toyFactory = [...sp25, ...fs35, ...sh13, ...matk12, AttackDelay._1, ...aspd24];
 const racing3rd = [EA._1, EA._2, FS._1, FS._2, Sharp._1, Sharp._2, Fatal._1, Fatal._2, Spell._1, Spell._2, AttackDelay._1, AttackDelay._2];
 
 const illusionArmor = ['Improve_Orb_Atk', 'Improve_Orb_Matk', 'Improve_Orb_Archer', 'Improve_Orb_Delay'];
 const illusionGarment = ['Improve_Orb_Speed', 'Improve_Orb_Cast', 'Improve_Orb_Cri', 'Improve_Orb_Above'];
-const illusionBoot = ['Improve_Orb_Fix', 'Improve_Orb_Heal', 'Improve_Orb_L_Vit', 'Improve_Orb_L_INT', 'Improve_Orb_L_DEX', 'Improve_Orb_L_STR', 'Improve_Orb_L_AGI', 'Improve_Orb_L_LUK'];
+const illusionBoot = [
+  'Improve_Orb_Fix',
+  'Improve_Orb_Heal',
+  'Improve_Orb_L_Vit',
+  'Improve_Orb_L_INT',
+  'Improve_Orb_L_DEX',
+  'Improve_Orb_L_STR',
+  'Improve_Orb_L_AGI',
+  'Improve_Orb_L_LUK',
+  'Improve_Orb_Health',
+];
 const illusionAcc = [EA._5, FS._6, Spell._5, AttackDelay._4, Fatal._4, ...BaseState._3];
 
 const tempBoot_3 = ["Bear's_Power", 'Runaway_Magic', 'Speed_Of_Light', 'Muscle_Fool', 'Hawkeye', 'Lucky_Day'];

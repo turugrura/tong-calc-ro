@@ -27283,6 +27283,59 @@
       ]
     }
   },
+  "24404": {
+    "id": 24404,
+    "aegisName": "S_Oboro_Armor",
+    "name": "Oboro Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우",
+    "description": "ชุดเกราะที่เพิ่มพลังป้องกันเมื่อสวมใส่เพิ่มบนเกราะอีกที สามารถใส่แบบชิ้นเดียวได้ แต่ความสามารถในการป้องกันจะลดลงไปอีก\nเพิ่มดาเมจสกิล Flaming Petals, Freezing Spear, Wind Blade 20%\nทุกการอัพเกรด 1 ขั้น เพิ่มดาเมจสกิล Flaming Petals, Freezing Spear, Wind Blade ขึ้นอีกทีละ 5%\nเมื่อสวมใส่กับ Oboro Shadow Shoes, จะได้รับเอฟเฟกต์เพิ่มขึ้น \nเพิ่มดาเมจทางเวทย์ธาตุ Fire, Water, Wind 5%, ลดคูลไทม์ของสกิล Illusion-Shadow 3 วินาที\nหากสวมใส่ Ninja Shadow 2 ชนิด, Oboro Shadow 2 ชนิด ครบทั้งหมด, จะได้รับเอฟเฟกต์ด้านล่างเพิ่มเติม\nAll State + 7, MaxHP + 3%, MaxSP + 3%.\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Armor ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Ninja Class^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": "Armor",
+    "compositionPos": null,
+    "usableClass": [
+      "Ninja"
+    ],
+    "script": {
+      "Flaming Petals": [
+        "20",
+        "1---5"
+      ],
+      "Freezing Spear": [
+        "20",
+        "1---5"
+      ],
+      "Wind Blade": [
+        "20",
+        "1---5"
+      ],
+      "m_my_element_fire": [
+        "EQUIP[Oboro Shadow Shoes]===5"
+      ],
+      "m_my_element_water": [
+        "EQUIP[Oboro Shadow Shoes]===5"
+      ],
+      "m_my_element_wind": [
+        "EQUIP[Oboro Shadow Shoes]===5"
+      ],
+      "allStatus": [
+        "EQUIP[Ninja Shadow Shield&&Ninja Shadow Weapon&&Oboro Shadow Shoes]===7"
+      ],
+      "hpPercent": [
+        "EQUIP[Ninja Shadow Shield&&Ninja Shadow Weapon&&Oboro Shadow Shoes]===3"
+      ],
+      "spPercent": [
+        "EQUIP[Ninja Shadow Shield&&Ninja Shadow Weapon&&Oboro Shadow Shoes]===3"
+      ]
+    }
+  },
   "24405": {
     "id": 24405,
     "aegisName": "S_Rebellion_Shoes",
@@ -27336,6 +27389,28 @@
         "1---5"
       ]
     }
+  },
+  "24407": {
+    "id": 24407,
+    "aegisName": "S_Oboro_Shoes",
+    "name": "Oboro Shadow Shoes",
+    "unidName": "Shadow Shoes",
+    "resName": "슈즈쉐도우",
+    "description": "รองเท้าที่สวมใส่เพิ่มเติม สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์ของมันจะลดน้อยลง\nลดคูลไทม์สกิล Illusion Shadow 2 วินาที\nทุกการอัพเกรด 2 ขั้น ลดคูลไทม์สกิล Illusion Shadow เพิ่มอีกทีละ 1 วินาที\nประเภท : ^777777Shadow^000000 \nตำแหน่ง : ^777777Shoes ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000 \nอาชีพที่ใส่ได้ : ^777777Ninja Class^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 528,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": "Shoes",
+    "compositionPos": null,
+    "usableClass": [
+      "Ninja"
+    ],
+    "script": {}
   },
   "24408": {
     "id": 24408,
@@ -32250,6 +32325,218 @@
       "Cross Slash": [
         "5",
         "2---2"
+      ]
+    }
+  },
+  "24628": {
+    "id": 24628,
+    "aegisName": "S_Kamaenraku_Weapon",
+    "name": "First Exploding Draft Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา\nเพิ่ม Damage สกิล First Wind, Exploding Dragon, Snow Flake Draft 5%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage สกิล First Wind, Exploding Dragon, Snow Flake Draft ขึ้นอีก 5%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล First Wind, Exploding Dragon, Snow Flake Draft ขึ้นอีก 5%\nเมื่อสวมใส่ First Exploding Draft Shadow Weapon/Shield/Armor ร่วมกัน,\nเพิ่ม Damage สกิล First Wind, Exploding Dragon, Snow Flake Draft % เท่ากับค่าอัพเกรดรวมกัน\nเมื่อสวมใส่ร่วมกับ Oboro Shadow Shoes,\nเพิกเฉยต่อพลังป้องกันทางเวทมนตร์ของทุกเผ่ายกเว้น Player 40% และเพิกเฉยต่อพลังป้องกันทางเวทมนตร์เพิ่มอีกตามค่าอัพเกรดรวมกันของ First Exploding Draft Shadow Weapon และ Oboro Shadow Shoes\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777닌자계열^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "Ninja"
+    ],
+    "script": {
+      "First Wind": [
+        "5",
+        "7===5",
+        "9===5",
+        "EQUIP[First Exploding Draft Shadow Shield&&First Exploding Draft Shadow Armor]REFINE[shadowWeapon,shadowShield,shadowArmor==1]---1"
+      ],
+      "Exploding Dragon": [
+        "5",
+        "7===5",
+        "9===5",
+        "EQUIP[First Exploding Draft Shadow Shield&&First Exploding Draft Shadow Armor]REFINE[shadowWeapon,shadowShield,shadowArmor==1]---1"
+      ],
+      "Snow Flake Draft": [
+        "5",
+        "7===5",
+        "9===5",
+        "EQUIP[First Exploding Draft Shadow Shield&&First Exploding Draft Shadow Armor]REFINE[shadowWeapon,shadowShield,shadowArmor==1]---1"
+      ],
+      "m_pene_race_all": [
+        "EQUIP[Oboro Shadow Shoes]40",
+        "EQUIP[Oboro Shadow Shoes]REFINE[shadowWeapon,shadowBoot==1]---1"
+      ],
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1"
+      ]
+    }
+  },
+  "24629": {
+    "id": 24629,
+    "aegisName": "S_Kamaenraku_Shield",
+    "name": "First Exploding Draft Shadow Shield",
+    "unidName": "Shadow Shield",
+    "resName": "쉴드쉐도우",
+    "description": "โล่เล็กที่สามารถสวมใส่ที่แขนได้ สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์การป้องกันของมันจะลดน้อยลง\nเพิ่ม Damage สกิล First Wind, Exploding Dragon, Snow Flake Draft 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage สกิล First Wind, Exploding Dragon, Snow Flake Draft ขึ้นอีก 2%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shield^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Ninja^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 527,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Shield",
+    "compositionPos": null,
+    "usableClass": [
+      "Ninja"
+    ],
+    "script": {
+      "First Wind": [
+        "5",
+        "2---2"
+      ],
+      "Exploding Dragon": [
+        "5",
+        "2---2"
+      ],
+      "Snow Flake Draft": [
+        "5",
+        "2---2"
+      ]
+    }
+  },
+  "24630": {
+    "id": 24630,
+    "aegisName": "S_Kamaenraku_Armor",
+    "name": "First Exploding Draft Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우",
+    "description": "ชุดเกราะที่เพิ่มพลังป้องกันเมื่อสวมใส่เพิ่มบนเกราะอีกที สามารถใส่แบบชิ้นเดียวได้ แต่ความสามารถในการป้องกันจะลดลงไปอีก\nเพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกธาตุ 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกธาตุขึ้นอีก 1%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Armor^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Ninja^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Armor",
+    "compositionPos": null,
+    "usableClass": [
+      "Ninja"
+    ],
+    "script": {
+      "m_element_all": [
+        "5",
+        "2---1"
+      ]
+    }
+  },
+  "24631": {
+    "id": 24631,
+    "aegisName": "S_Huusouka_Earing",
+    "name": "Wind Spear Petal Shadow Earring",
+    "unidName": "Shadow Earring",
+    "resName": "이어링쉐도우",
+    "description": "ต่างหูมงคลที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา\nเพิ่ม Damage สกิล Flaming Petals, Freezing Spear, Wind Blade 3%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage สกิล Flaming Petals, Freezing Spear, Wind Blade ขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Flaming Petals, Freezing Spear, Wind Blade ขึ้นอีก 4%\nเมื่อสวมใส่ Wind Spear Petal Shadow Earring/Pendant/Shoes ร่วมกัน,\nเพิ่ม Damage สกิล Flaming Petals, Freezing Spear, Wind Blade % เท่ากับครึ่งหนึ่งของค่าอัพเกรดรวมกัน\nเมื่อสวมใส่ร่วมกับ Oboro Shadow Armor,\nเพิกเฉยต่อพลังป้องกันทางเวทมนตร์ของทุกเผ่ายกเว้น Player 40% และเพิกเฉยต่อพลังป้องกันทางเวทมนตร์เพิ่มอีกตามค่าอัพเกรดรวมกันของ Wind Spear Petal Shadow Earring และ Oboro Shadow Armor\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Earring^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Ninja^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 529,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "AccessoryRight",
+    "compositionPos": null,
+    "usableClass": [
+      "Ninja"
+    ],
+    "script": {
+      "Flaming Petals": [
+        "3",
+        "7===3",
+        "9===4",
+        "EQUIP[Wind Spear Petal Shadow Shoes&&Wind Spear Petal Shadow Pendant]REFINE[shadowEarring,shadowBoot,shadowPendant==2]---1"
+      ],
+      "Freezing Spear": [
+        "3",
+        "7===3",
+        "9===4",
+        "EQUIP[Wind Spear Petal Shadow Shoes&&Wind Spear Petal Shadow Pendant]REFINE[shadowEarring,shadowBoot,shadowPendant==2]---1"
+      ],
+      "Wind Blade": [
+        "3",
+        "7===3",
+        "9===4",
+        "EQUIP[Wind Spear Petal Shadow Shoes&&Wind Spear Petal Shadow Pendant]REFINE[shadowEarring,shadowBoot,shadowPendant==2]---1"
+      ],
+      "m_pene_race_all": [
+        "EQUIP[Oboro Shadow Armor]40",
+        "EQUIP[Oboro Shadow Armor]REFINE[shadowEarring,shadowArmor==1]---1"
+      ]
+    }
+  },
+  "24632": {
+    "id": 24632,
+    "aegisName": "S_Huusouka_Pendant",
+    "name": "Wind Spear Petal Shadow Pendant",
+    "unidName": "Shadow Pendant",
+    "resName": "펜던트쉐도우",
+    "description": "สร้อยคอศักดิ์สิทธิ์ที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา \nMSP +2%\nทุก ๆ การอัพเกรด 2 ขึ้น MSP +1% เพิ่มเติม\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Pendant^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Ninja^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 530,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "AccessoryLeft",
+    "compositionPos": null,
+    "usableClass": [
+      "Ninja"
+    ],
+    "script": {
+      "spPercent": [
+        "2",
+        "1"
+      ]
+    }
+  },
+  "24633": {
+    "id": 24633,
+    "aegisName": "S_Huusouka_Shoes",
+    "name": "Wind Spear Petal Shadow Shoes",
+    "unidName": "Shadow Shoes",
+    "resName": "슈즈쉐도우",
+    "description": "รองเท้าที่สวมใส่เพิ่มเติม สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์ของมันจะลดน้อยลง\nเพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกขนาด 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกขนาดขึ้นอีก 1%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shoes^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Ninja^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 528,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Shoes",
+    "compositionPos": null,
+    "usableClass": [
+      "Ninja"
+    ],
+    "script": {
+      "m_size_all": [
+        "5",
+        "2---1"
       ]
     }
   },
@@ -44096,6 +44383,34 @@
       ],
       "Cross Ripper Slasher": [
         "EQUIP[Assassin Cross Stone (Middle)]15"
+      ]
+    }
+  },
+  "29531": {
+    "id": 29531,
+    "aegisName": "Improve_Orb_Health",
+    "name": "Modification Orb (Health)",
+    "unidName": "Modification Orb (Health)",
+    "resName": "마력석_빨강",
+    "description": "MHP + 5%\nเมื่ออัปเกรดถึงขั้น 7 เพิ่ม MHP เพิ่มเติม 500\nเมื่ออัปเกรดถึงขั้น 9 เพิ่ม MHP เพิ่มเติม 750",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "cardPrefix": "<B-MaxHP>",
+    "script": {
+      "hpPercent": [
+        "5"
+      ],
+      "hp": [
+        "7===500",
+        "9===750"
       ]
     }
   },
