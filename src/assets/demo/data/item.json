@@ -243,6 +243,59 @@
       ]
     }
   },
+  "1336": {
+    "id": 1336,
+    "aegisName": "G_Knight_Axe",
+    "name": "Guardian Knight Axe [2]",
+    "unidName": "Axe",
+    "resName": "G_Knight_Axe",
+    "description": "ขวานที่ใช้ประกอบพิธีระลึกถึงบรรพบุรุษโดยกองทัพทหารแห่ง Glast Heim\nแม้จะเป็นอาวุธธรรมดา แต่ก็มีพลังที่แข็งแกร่งซ่อนอยู่เนื่องจากได้รับผลกระทบจาก Himmelmez\n^ffffff_^000000 \nไม่สามารถทำลายได้, ATK +5%\nทุก ๆ การอัพเกรด 1 ขั้น เพิ่ม Damage ทางกายภาพระยะไกล 1%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Power Swing, Axe Boomerang 20%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage ทางกายภาพต่อมอนสเตอร์เผ่า Undead, Angel 20%\n^ffffff_^000000 \nเมื่อสวมใส่ร่วมกับ ^32CD32King Schmidt's Suit และ King Schmidt's Manteau^000000, \nATK +30, เมื่อโจมตีทางกายภาพ มีโอกาสที่จะเพิ่ม Damage ทางกายภาพระยะไกล 10% เป็นเวลา 10 วินาที\nเมื่อค่าอัพเกรด ^32CD32King Schmidt's Suit, King Schmidt's Manteau, Guardian Knight Axe^000000 รวมกันตั้งแต่ 30 ขึ้นไป,\nเพิ่ม Damage ทางกายภาพต่อศัตรูธาตุ Holy, Undead 20%\n^ffffff_^000000 \nประเภท : ^777777One-Handed Axe^000000 พลังโจมตี : ^777777210^000000\nน้ำหนัก : ^777777150^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Mechanic^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 261,
+    "itemLevel": 4,
+    "attack": 210,
+    "defense": null,
+    "weight": 150,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Mechanic"
+    ],
+    "script": {
+      "atkPercent": [
+        "5"
+      ],
+      "range": [
+        "1---1"
+      ],
+      "Power Swing": [
+        "9===20"
+      ],
+      "Axe Boomerang": [
+        "9===20"
+      ],
+      "atk": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]===30"
+      ],
+      "p_race_undead": [
+        "11===20"
+      ],
+      "p_race_angel": [
+        "11===20"
+      ],
+      "p_element_holy": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]REFINE[weapon,armor,garment==30]===20"
+      ],
+      "p_element_undead": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]REFINE[weapon,armor,garment==30]===20"
+      ],
+      "chance__range": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]===10"
+      ]
+    }
+  },
   "1433": {
     "id": 1433,
     "aegisName": "Imperial_Spear",
@@ -1034,6 +1087,102 @@
       "all"
     ]
   },
+  "1839": {
+    "id": 1839,
+    "aegisName": "Scarlet_Knuckle",
+    "name": "Knuckle of Crimson [2]",
+    "unidName": "Claw",
+    "resName": "진홍의너클",
+    "description": "สนับมือที่เปล่งแสงสีแดง\nเพิ่ม ATK เท่ากับ (ระดับ Refine*ระดับ Refine) (สามารถ Refine ได้ถึง 15)\nตัวละครเลเวล 70 ขึ้นไป : ทุกครั้งที่ BaseLv เพิ่มขึ้น 10 เลเวล จะเพิ่ม ATK ทีละ +5 \nประเภท : ^777777Knuckle^000000 โจมตี : ^777777100^000000\nน้ำหนัก : ^777777100^000000\nเลเวลอาวุธ : ^7777773^000000\nเลเวลที่ต้องการ : ^77777770^000000\nอาชีพที่ใส่ได้ : ^777777 Priest / Monk^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 268,
+    "itemLevel": 3,
+    "attack": 100,
+    "defense": null,
+    "weight": 100,
+    "requiredLevel": 70,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Priest",
+      "Monk"
+    ],
+    "script": {
+      "atk": [
+        "1===1",
+        "2===3",
+        "3===5",
+        "4===7",
+        "5===9",
+        "6===11",
+        "7===13",
+        "8===15",
+        "9===17",
+        "10===19",
+        "11===21",
+        "12===23",
+        "13===25",
+        "14===27",
+        "15===29",
+        "level:80===5",
+        "level:90===5",
+        "level:100===5",
+        "level:110===5",
+        "level:120===5",
+        "level:130===5",
+        "level:140===5",
+        "level:150===5",
+        "level:160===5",
+        "level:170===5",
+        "level:180===5",
+        "level:190===5",
+        "level:200===5"
+      ]
+    }
+  },
+  "1846": {
+    "id": 1846,
+    "aegisName": "Combo_Battle_Glove_IL",
+    "name": "Illusion Combo Battle Glove [2]",
+    "unidName": "Knuckle",
+    "resName": "Combo_Battle_Glove_IL",
+    "description": "คำสวดอวยพรที่สลักอยู่บนสนับมือ สนองต่อความแน่วแน่ของเหล่า Monk ที่ปกป้องเจตนารมณ์ของพระเจ้า มอบพลังโจมตีอันแข็งแกร่ง\nยิ่งเป็น Monk ที่เดินตามทางแห่งพรต ความปรารถนาที่มีต่อพระเจ้าก็จะยิ่งแข็งแกร่งขึ้น\nเพิ่ม Damage ของสกิล Sky Blow 10%\nเพิ่ม Damage ของสกิล Dragon Combo 10%\nทุก ๆ การอัพเกรด 2 ขั้น, เพิ่ม Damage ของสกิล Sky Blow, Dragon Combo 5%\nทุก ๆ การอัพเกรด 3 ขั้น, เพิ่ม Damage ของสกิล Tiger Cannon 5%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Illusion Muffler, ATK + 40\nเมื่อค่าอัพเกรดของ Illusion Combo Battle Glove และ Illusion Muffler ตั้งแต่ 7 ขึ้นไป, เพิ่ม Damage ของสกิล Tiger Cannon 20%\nเมื่อค่าอัพเกรดรวมกันตั้งแต่ 18 ขึ้นไป, ลด Cooldown ของสกิล Flash Combo 1 วินาที\nเมื่อค่าอัพเกรดรวมกันตั้งแต่ 22 ขึ้นไป, เพิ่ม Damage ของสกิล Tiger Cannon 15% เพิ่มเติม\n^ffffff_^000000\nประเภท : ^777777Knuckle^000000 พลังโจมตี : ^777777250^000000\nน้ำหนัก : ^77777750^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777120^000000\nอาชีพที่ใส่ได้ : ^777777Sura Cls^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 268,
+    "itemLevel": 4,
+    "attack": 250,
+    "defense": null,
+    "weight": 50,
+    "requiredLevel": 120,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Sura"
+    ],
+    "script": {
+      "Sky Blow": [
+        "10",
+        "2---5"
+      ],
+      "Dragon Combo": [
+        "10",
+        "2---5"
+      ],
+      "Tiger Cannon": [
+        "3---5",
+        "EQUIP[Illusion Muffler]REFINE[garment==7]7===20",
+        "EQUIP[Illusion Muffler]REFINE[weapon,garment==22]===15"
+      ],
+      "atk": [
+        "EQUIP[Illusion Muffler]===40"
+      ],
+      "cd__Flash Combo": [
+        "EQUIP[Illusion Muffler]REFINE[weapon,garment==18]===1"
+      ]
+    }
+  },
   "1847": {
     "id": 1847,
     "aegisName": "Iron_Nail_K",
@@ -1115,6 +1264,57 @@
       ],
       "chance__p_size_all": [
         "15"
+      ]
+    }
+  },
+  "1870": {
+    "id": 1870,
+    "aegisName": "R_Knuckle",
+    "name": "Royal Knuckle [2]",
+    "unidName": "Knuckle",
+    "resName": "로얄너클",
+    "description": "สนับมือที่นักบวชแห่ง Glast Heim ใช้\nแม้จะเป็นอาวุธธรรมดา แต่ก็มีพลังที่แข็งแกร่งซ่อนอยู่เนื่องจากได้รับผลกระทบจาก Himmelmez\n^ffffff_^000000 \nเพิ่ม Damage ทางกายภาพระยะไกล 15%\nทุก ๆ การอัพเกรด 1 ขั้น ATK +4\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Rampage Blast 20%\nเมื่ออัพเกรดถึงขั้น 11 ลด Cooldown สกิล Rampage Blast 1 วินาที, เพิ่ม Damage ทางกายภาพต่อมอนสเตอร์เผ่า Undead, Angel 20%\n^ffffff_^000000 \nเมื่อสวมใส่ร่วมกับ ^32CD32King Schmidt's Suit และ King Schmidt's Manteau^000000, \nATK +30, เมื่อโจมตีทางกายภาพ มีโอกาสที่จะเพิ่ม Damage ทางกายภาพระยะไกล 10% เป็นเวลา 10 วินาที\nเมื่อค่าอัพเกรด ^32CD32King Schmidt's Suit, King Schmidt's Manteau, Royal Knuckle^000000 รวมกันตั้งแต่ 30 ขึ้นไป,\nเพิ่ม Damage ทางกายภาพต่อศัตรูธาตุ Holy, Undead 20%\n^ffffff_^000000 \nประเภท : ^777777Knuckle^000000 พลังโจมตี : ^777777190^000000\nน้ำหนัก : ^777777150^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Sura^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 268,
+    "itemLevel": 4,
+    "attack": 190,
+    "defense": null,
+    "weight": 150,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Sura"
+    ],
+    "script": {
+      "range": [
+        "15"
+      ],
+      "atk": [
+        "1---4",
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]===30"
+      ],
+      "Rampage Blast": [
+        "9===20"
+      ],
+      "cd__Rampage Blast": [
+        "11===1"
+      ],
+      "p_race_undead": [
+        "11===20"
+      ],
+      "p_race_angel": [
+        "11===20"
+      ],
+      "p_element_holy": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]REFINE[weapon,armor,garment==30]===20"
+      ],
+      "p_element_undead": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]REFINE[weapon,armor,garment==30]===20"
+      ],
+      "chance__range": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]===10"
       ]
     }
   },
@@ -1861,6 +2061,12 @@
       ],
       "p_element_undead": [
         "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]REFINE[weapon,armor,garment==30]===20"
+      ],
+      "chance__m_my_element_wind": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]===10"
+      ],
+      "chance__m_my_element_earth": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]===10"
       ]
     }
   },
@@ -10377,7 +10583,9 @@
         "level:150===5",
         "level:160===5",
         "level:170===5",
-        "level:180===5"
+        "level:180===5",
+        "level:190===5",
+        "level:200===5"
       ]
     }
   },
@@ -13928,6 +14136,62 @@
       ]
     }
   },
+  "16040": {
+    "id": 16040,
+    "aegisName": "Scarlet_Mace",
+    "name": "Mace of Crimson [2]",
+    "unidName": "Mace",
+    "resName": "진홍의메이스",
+    "description": "คทาที่เปล่งประกายสีแดง\nเพิ่ม ATK เท่ากับ (ระดับ Refine*ระดับ Refine) (สามารถ Refine ได้ถึง 15)\nตัวละครเลเวล 70 ขึ้นไป : ทุกครั้งที่ BaseLv เพิ่มขึ้น 10 เลเวล จะเพิ่ม ATK ทีละ +5 \nไม่สามารถทำลายได้\nประเภท : ^777777Mace^000000 โจมตี : ^77777780^000000\nน้ำหนัก : ^77777780^000000\nเลเวลอาวุธ : ^7777773^000000\nเลเวลที่ต้องการ : ^77777770^000000\nอาชีพที่ใส่ได้ : ^777777 Novice /Swordman /Acolyte /Merchant^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 263,
+    "itemLevel": 3,
+    "attack": 80,
+    "defense": null,
+    "weight": 80,
+    "requiredLevel": 70,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Novice",
+      "Swordman",
+      "Acolyte",
+      "Merchant"
+    ],
+    "script": {
+      "atk": [
+        "1===1",
+        "2===3",
+        "3===5",
+        "4===7",
+        "5===9",
+        "6===11",
+        "7===13",
+        "8===15",
+        "9===17",
+        "10===19",
+        "11===21",
+        "12===23",
+        "13===25",
+        "14===27",
+        "15===29",
+        "level:80===5",
+        "level:90===5",
+        "level:100===5",
+        "level:110===5",
+        "level:120===5",
+        "level:130===5",
+        "level:140===5",
+        "level:150===5",
+        "level:160===5",
+        "level:170===5",
+        "level:180===5",
+        "level:190===5",
+        "level:200===5"
+      ]
+    }
+  },
   "16088": {
     "id": 16088,
     "aegisName": "Saphir_Hall_OS",
@@ -14495,7 +14759,9 @@
         "level:150===5",
         "level:160===5",
         "level:170===5",
-        "level:180===5"
+        "level:180===5",
+        "level:190===5",
+        "level:200===5"
       ]
     }
   },
@@ -15030,7 +15296,7 @@
     "name": "Guardian Knight Bow [2]",
     "unidName": "Bow",
     "resName": "G_Knight_Bow",
-    "description": "อาวุธหน้าไม้ที่กองทัพทหารแห่ง Glast Heim ใช้\nแม้จะเป็นอาวุธธรรมดา แต่ก็มีพลังที่แข็งแกร่งซ่อนอยู่เนื่องจากได้รับผลกระทบจาก Himmelmez\n^ffffff_^000000 \nเพิ่ม Damage ทางกายภาพระยะไกล 15%\nทุก ๆ การอัพเกรด 1 ขั้น ATK +4\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Triangle Shot 20%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage ทางกายภาพต่อมอนสเตอร์ประเภท Undead, Angel 20%\n^ffffff_^000000 \nเมื่อสวมใส่ร่วมกับ ^32CD32King Schmidt's Suit และ King Schmidt's Manteau^000000, \nATK +30, เมื่อโจมตีทางกายภาพ มีโอกาสที่จะเพิ่ม Damage ทางกายภาพระยะไกล 10% เป็นเวลา 10 วินาที\nเมื่อค่าอัพเกรด ^32CD32King Schmidt's Suit, King Schmidt's Manteau, Guardian Knight Bow^000000 รวมกันตั้งแต่ 30 ขึ้นไป เพิ่ม Damage ทางกายภาพต่อศัตรูธาตุ Holy, Undead 20%\n^ffffff_^000000 \nประเภท : ^777777Bow^000000 พลังโจมตี : ^777777180^000000\nน้ำหนัก : ^777777150^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Shadow Chaser^000000",
+    "description": "อาวุธหน้าไม้ที่กองทัพทหารแห่ง Glast Heim ใช้\nแม้จะเป็นอาวุธธรรมดา แต่ก็มีพลังที่แข็งแกร่งซ่อนอยู่เนื่องจากได้รับผลกระทบจาก Himmelmez\n^ffffff_^000000 \nเพิ่ม Damage ทางกายภาพระยะไกล 15%\nทุก ๆ การอัพเกรด 1 ขั้น ATK +4\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Triangle Shot 20%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage ทางกายภาพต่อมอนสเตอร์เผ่า Undead, Angel 20%\n^ffffff_^000000 \nเมื่อสวมใส่ร่วมกับ ^32CD32King Schmidt's Suit และ King Schmidt's Manteau^000000, \nATK +30, เมื่อโจมตีทางกายภาพ มีโอกาสที่จะเพิ่ม Damage ทางกายภาพระยะไกล 10% เป็นเวลา 10 วินาที\nเมื่อค่าอัพเกรด ^32CD32King Schmidt's Suit, King Schmidt's Manteau, Guardian Knight Bow^000000 รวมกันตั้งแต่ 30 ขึ้นไป เพิ่ม Damage ทางกายภาพต่อศัตรูธาตุ Holy, Undead 20%\n^ffffff_^000000 \nประเภท : ^777777Bow^000000 พลังโจมตี : ^777777180^000000\nน้ำหนัก : ^777777150^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Shadow Chaser^000000",
     "slots": 2,
     "itemTypeId": 1,
     "itemSubTypeId": 267,
@@ -15066,6 +15332,9 @@
       ],
       "p_element_undead": [
         "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]REFINE[weapon,armor,garment==30]===20"
+      ],
+      "chance__range": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]===10"
       ]
     }
   },
@@ -15117,6 +15386,9 @@
       ],
       "p_element_undead": [
         "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]REFINE[weapon,armor,garment==30]===20"
+      ],
+      "chance__range": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]===10"
       ]
     }
   },
@@ -19368,6 +19640,37 @@
       ]
     }
   },
+  "20838": {
+    "id": 20838,
+    "aegisName": "Muffler_IL",
+    "name": "Illusion Muffler [1]",
+    "unidName": "Garment",
+    "resName": "Muffler_IL",
+    "description": "ผ้าคลุมไหล่ดูอบอุ่น ใช้เมื่อต้องการปิดบังบริเวณคอและไหล่ \nMHP + 100, MSP + 10. ทุก ๆ การอัพเกรด 1 ขั้น MHP + 100, MSP+5 เพิ่มเติม\nประเภท : ^777777Garment^000000 พลังป้องกัน : ^7777778^000000\nน้ำหนัก : ^77777740^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพยกเว้น Novice^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 515,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 8,
+    "weight": 40,
+    "requiredLevel": 99,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "hp": [
+        "100",
+        "1---100"
+      ],
+      "sp": [
+        "10",
+        "1---5"
+      ]
+    }
+  },
   "20842": {
     "id": 20842,
     "aegisName": "Bag_Of_Antonio_Melee",
@@ -20514,6 +20817,57 @@
       ],
       "acd": [
         "11===20"
+      ]
+    }
+  },
+  "21055": {
+    "id": 21055,
+    "aegisName": "G_Knight_Sword",
+    "name": "Guardian Knight Claymore [2]",
+    "unidName": "Two-Handed Sword",
+    "resName": "G_Knight_Sword",
+    "description": "ดาบสองมือดูเทอะทะและมีน้ำหนักที่กลุ่มทหารรบ Raydric ใช้\nแม้จะเป็นอาวุธธรรมดา แต่ก็มีพลังที่แข็งแกร่งซ่อนอยู่เนื่องจากได้รับผลกระทบจาก Himmelmez\n^ffffff_^000000 \nATK +5%\nทุก ๆ การอัพเกรด 1 ขั้น ATK +4\nเมื่ออัพเกรดถึงขั้น 9, CRI + 5, Critical Damage +25%\nเมื่ออัพเกรดถึงขั้น 11 ไม่สามารถทำลายได้, เพิ่ม Damage ทางกายภาพต่อมอนสเตอร์เผ่า Undead, Angel 20%\n^ffffff_^000000 \nเมื่อสวมใส่ร่วมกับ ^32CD32King Schmidt's Suit และ King Schmidt's Manteau^000000, \nATK +30, เมื่อโจมตีทางกายภาพ มีโอกาสที่ Critical Damage +20% เป็นเวลา 10 วินาที\nเมื่อค่าอัพเกรด ^32CD32King Schmidt's Suit, King Schmidt's Manteau, Guardian Knight Claymore^000000 รวมกันตั้งแต่ 30 ขึ้นไป เพิ่ม Damage ทางกายภาพต่อศัตรูธาตุ Holy, Undead 20%\n^ffffff_^000000 \nประเภท : ^777777Two-Handed Sword^000000 พลังโจมตี : ^777777280^000000\nน้ำหนัก : ^777777400^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Rune Knight^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 258,
+    "itemLevel": 4,
+    "attack": 280,
+    "defense": null,
+    "weight": 400,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Rune Knight"
+    ],
+    "script": {
+      "atkPercent": [
+        "5"
+      ],
+      "atk": [
+        "1---4",
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]===30"
+      ],
+      "cri": [
+        "9===5"
+      ],
+      "criDmg": [
+        "9===25"
+      ],
+      "p_race_undead": [
+        "11===20"
+      ],
+      "p_race_angel": [
+        "11===20"
+      ],
+      "p_element_holy": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]REFINE[weapon,armor,garment==30]===20"
+      ],
+      "p_element_undead": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]REFINE[weapon,armor,garment==30]===20"
+      ],
+      "chance__criDmg": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]===20"
       ]
     }
   },
@@ -34299,7 +34653,7 @@
     "name": "Royal Cleric Staff [2]",
     "unidName": "Rod",
     "resName": "R_Cleric_Staff",
-    "description": "ไม้คทาสำหรับตกแต่งที่ซิสเตอร์และบาทหลวงแห่ง Glast Heim ใช้\nแม้จะเป็นอาวุธธรรมดา แต่ก็มีพลังที่แข็งแกร่งซ่อนอยู่เนื่องจากได้รับผลกระทบจาก Himmelmez\n^ffffff_^000000 \nไม่สามารถทำลายได้, MATK +170, MATK +5%\nทุก ๆ การอัพเกรด 1 ขั้น MATK +4\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Adoramus 20%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage ทางเวทมนตร์ต่อมอนสเตอร์ประเภท Undead, Angel 20%\n^ffffff_^000000 \nเมื่อสวมใส่ร่วมกับ ^32CD32King Schmidt's Suit และ King Schmidt's Manteau^000000, \nMATK +30, เมื่อโจมตีทางเวทมนตร์ มีโอกาสที่จะเพิ่ม Damage ทางเวทมนตร์ธาตุ Holy 10% เป็นเวลา 10 วินาที\nเมื่อค่าอัพเกรด ^32CD32King Schmidt's Suit, King Schmidt's Manteau, Royal Cleric Staff^000000 รวมกันตั้งแต่ 30 ขึ้นไป, เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูธาตุ Holy, Undead 20%\n^ffffff_^000000 \nประเภท : ^777777One-Handed Staff^000000 พลังโจมตี : ^777777100^000000\nน้ำหนัก : ^777777100^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Arch Bishop^000000",
+    "description": "ไม้คทาสำหรับตกแต่งที่ซิสเตอร์และบาทหลวงแห่ง Glast Heim ใช้\nแม้จะเป็นอาวุธธรรมดา แต่ก็มีพลังที่แข็งแกร่งซ่อนอยู่เนื่องจากได้รับผลกระทบจาก Himmelmez\n^ffffff_^000000 \nไม่สามารถทำลายได้, MATK +170, MATK +5%\nทุก ๆ การอัพเกรด 1 ขั้น MATK +4\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Adoramus 20%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage ทางเวทมนตร์ต่อมอนสเตอร์เผ่า Undead, Angel 20%\n^ffffff_^000000 \nเมื่อสวมใส่ร่วมกับ ^32CD32King Schmidt's Suit และ King Schmidt's Manteau^000000, \nMATK +30, เมื่อโจมตีทางเวทมนตร์ มีโอกาสที่จะเพิ่ม Damage ทางเวทมนตร์ธาตุ Holy 10% เป็นเวลา 10 วินาที\nเมื่อค่าอัพเกรด ^32CD32King Schmidt's Suit, King Schmidt's Manteau, Royal Cleric Staff^000000 รวมกันตั้งแต่ 30 ขึ้นไป, เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูธาตุ Holy, Undead 20%\n^ffffff_^000000 \nประเภท : ^777777One-Handed Staff^000000 พลังโจมตี : ^777777100^000000\nน้ำหนัก : ^777777100^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Arch Bishop^000000",
     "slots": 2,
     "itemTypeId": 1,
     "itemSubTypeId": 265,
@@ -34336,6 +34690,9 @@
       ],
       "p_element_undead": [
         "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]REFINE[weapon,armor,garment==30]===20"
+      ],
+      "chance__m_my_element_holy": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]===10"
       ]
     }
   },
@@ -34385,6 +34742,12 @@
       ],
       "m_element_undead": [
         "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]REFINE[weapon,armor,garment==30]===20"
+      ],
+      "chance__m_my_element_fire": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]===10"
+      ],
+      "chance__m_my_element_dark": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]===10"
       ]
     }
   },
@@ -34653,7 +35016,7 @@
         "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]REFINE[weapon,armor,garment==30]===20"
       ],
       "chance__m_my_element_neutral": [
-        "10"
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]===10"
       ]
     }
   },
@@ -37797,7 +38160,9 @@
         "level:150===5",
         "level:160===5",
         "level:170===5",
-        "level:180===5"
+        "level:180===5",
+        "level:190===5",
+        "level:200===5"
       ]
     }
   },
@@ -38066,6 +38431,9 @@
       ],
       "p_element_undead": [
         "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]REFINE[weapon,armor,garment==30]===20"
+      ],
+      "chance__range": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]===10"
       ]
     }
   },
@@ -38146,7 +38514,9 @@
         "level:150===5",
         "level:160===5",
         "level:170===5",
-        "level:180===5"
+        "level:180===5",
+        "level:190===5",
+        "level:200===5"
       ]
     }
   },
@@ -38287,6 +38657,62 @@
       ],
       "acd": [
         "11===20"
+      ]
+    }
+  },
+  "28141": {
+    "id": 28141,
+    "aegisName": "G_Knight_BattleAxe",
+    "name": "Guardian Knight Battle Axe [2]",
+    "unidName": "Two-Handed Axe",
+    "resName": "G_Knight_BattleAxe",
+    "description": "ขวานสองมือขนาดใหญ่ที่หน่วยทหารม้ารักษาพระองค์แห่ง Glast Heim ใช้\nแม้จะเป็นอาวุธธรรมดา แต่ก็มีพลังที่แข็งแกร่งซ่อนอยู่เนื่องจากได้รับผลกระทบจาก Himmelmez\nไม่สามารถทำลายได้, ATK +5%, ลด Damage ทางกายภาพ/เวทมนตร์ที่ได้รับจากศัตรูขนาดกลาง, ใหญ่ 10%\nทุก ๆ การอัพเกรด 1 ขั้น เพิ่ม Damage ทางกายภาพระยะไกล 1%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Axe Tornado, Lava Flow 20%, ลด Cooldown สกิล Axe Tornado 1 วินาที\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage ทางกายภาพต่อมอนสเตอร์เผ่า Undead, Angel 20%\n^ffffff_^000000 \nเมื่อสวมใส่ร่วมกับ ^32CD32King Schmidt's Suit และ King Schmidt's Manteau^000000, \nATK +30, เมื่อโจมตีทางกายภาพ มีโอกาสที่จะเพิ่ม Damage ทางกายภาพระยะไกล 10% เป็นเวลา 10 วินาที\nเมื่อค่าอัพเกรด ^32CD32King Schmidt's Suit, King Schmidt's Manteau, Guardian Knight Battle Axe^000000 รวมกันตั้งแต่ 30 ขึ้นไป เพิ่ม Damage ทางกายภาพต่อศัตรูธาตุ Holy, Undead 20%\n^ffffff_^000000 \nประเภท : ^777777Two-Handed Axe^000000 พลังโจมตี : ^777777270^000000\nน้ำหนัก : ^777777500^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Mechanic^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 262,
+    "itemLevel": 4,
+    "attack": 270,
+    "defense": null,
+    "weight": 500,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Mechanic"
+    ],
+    "script": {
+      "atkPercent": [
+        "5"
+      ],
+      "range": [
+        "1---1"
+      ],
+      "Axe Tornado": [
+        "9===20"
+      ],
+      "Lava Flow": [
+        "9===20"
+      ],
+      "cd__Axe Tornado": [
+        "9===1"
+      ],
+      "atk": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]===30"
+      ],
+      "p_race_undead": [
+        "11===20"
+      ],
+      "p_race_angel": [
+        "11===20"
+      ],
+      "p_element_holy": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]REFINE[weapon,armor,garment==30]===20"
+      ],
+      "p_element_undead": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]REFINE[weapon,armor,garment==30]===20"
+      ],
+      "chance__range": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]===10"
       ]
     }
   },
@@ -39550,6 +39976,12 @@
       ],
       "p_element_undead": [
         "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]REFINE[weapon,armor,garment==30]===20"
+      ],
+      "chance__m_my_element_water": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]===10"
+      ],
+      "chance__m_my_element_wind": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]===10"
       ]
     }
   },
@@ -40038,6 +40470,134 @@
       ],
       "acd": [
         "11===20"
+      ]
+    }
+  },
+  "28774": {
+    "id": 28774,
+    "aegisName": "R_Gladius_R",
+    "name": "Royal Gladius (R) [2]",
+    "unidName": "Dagger",
+    "resName": "R_Gladius_R",
+    "description": "มีดสั้นสำหรับป้องกันตัวของเหล่าชนชั้นสูงแห่ง Glast Heim\nแม้จะเป็นอาวุธธรรมดา แต่ก็มีพลังที่แข็งแกร่งซ่อนอยู่เนื่องจากได้รับผลกระทบจาก Himmelmez\n^ffffff_^000000 \nATK +5%\nเมื่อสวมใส่ร่วมกับ Royal Gladius (L) ทุก ๆ การอัพเกรด 2 ขั้นของค่าอัพเกรดรวม ATK +7\nเมื่อค่าอัพเกรดรวมกันตั้งแต่ 18 ขึ้นไป เพิ่ม Damage สกิล Cross Impact, Counter Slash 20%\nเมื่อค่าอัพเกรดรวมกันตั้งแต่ 22 ขึ้นไป เพิ่ม Damage ทางกายภาพต่อมอนสเตอร์เผ่า Undead, Angel 30%\n^ffffff_^000000 \nเมื่อสวมใส่ร่วมกับ ^32CD32King Schmidt's Suit และ King Schmidt's Manteau^000000, \nATK +30, เมื่อโจมตีทางกายภาพ มีโอกาสที่ ATK +10% เป็นเวลา 10 วินาที\nเมื่อค่าอัพเกรด ^32CD32King Schmidt's Suit, King Schmidt's Manteau, Royal Gladius (R), Royal Gladius (L)^000000 รวมกันตั้งแต่ 40 ขึ้นไป, เพิ่ม Damage ทางกายภาพต่อศัตรูธาตุ Holy, Undead 20%\n^ffffff_^000000 \nประเภท : ^777777Dagger^000000 พลังโจมตี : ^777777200^000000\nน้ำหนัก : ^777777150^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Guillotine Cross^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 256,
+    "itemLevel": 4,
+    "attack": 200,
+    "defense": null,
+    "weight": 150,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Guillotine Cross"
+    ],
+    "script": {
+      "atkPercent": [
+        "5"
+      ],
+      "atk": [
+        "EQUIP[Royal Gladius (L)]REFINE[weapon,leftWeapon==2]---7",
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]===30"
+      ],
+      "Cross Impact": [
+        "EQUIP[Royal Gladius (L)]REFINE[weapon,leftWeapon==18]===20"
+      ],
+      "Counter Slash": [
+        "EQUIP[Royal Gladius (L)]REFINE[weapon,leftWeapon==18]===20"
+      ],
+      "p_race_undead": [
+        "EQUIP[Royal Gladius (L)]REFINE[weapon,leftWeapon==22]===30"
+      ],
+      "p_race_angel": [
+        "EQUIP[Royal Gladius (L)]REFINE[weapon,leftWeapon==22]===30"
+      ],
+      "p_element_holy": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]REFINE[weapon,leftWeapon,armor,garment==40]===20"
+      ],
+      "p_element_undead": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]REFINE[weapon,leftWeapon,armor,garment==40]===20"
+      ],
+      "chance__atkPercent": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]===10"
+      ]
+    }
+  },
+  "28775": {
+    "id": 28775,
+    "aegisName": "R_Gladius_L",
+    "name": "Royal Gladius (L) [3]",
+    "unidName": "Dagger",
+    "resName": "R_Gladius_L",
+    "description": "มีดสั้นสำหรับป้องกันตัวของเหล่าชนชั้นสูงแห่ง Glast Heim\nแม้จะเป็นอาวุธธรรมดา แต่ก็มีพลังที่แข็งแกร่งซ่อนอยู่เนื่องจากได้รับผลกระทบจาก Himmelmez\nไม่มีความสามารถที่เป็นพื้นฐาน แต่ถ้าได้สวมใส่ร่วมกับ Royal Gladius (R) แล้วจะได้รับพลังที่แข็งแกร่งมา\n^ffffff_^000000 \nประเภท : ^777777Dagger^000000 พลังโจมตี : ^777777100^000000\nน้ำหนัก : ^777777100^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Guillotine Cross^000000",
+    "slots": 3,
+    "itemTypeId": 1,
+    "itemSubTypeId": 256,
+    "itemLevel": 4,
+    "attack": 100,
+    "defense": null,
+    "weight": 100,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Guillotine Cross"
+    ],
+    "script": {}
+  },
+  "28776": {
+    "id": 28776,
+    "aegisName": "R_Magician_Dagger",
+    "name": "Royal Magician Dagger [2]",
+    "unidName": "Dagger",
+    "resName": "R_Magician_Dagger",
+    "description": "มีดสั้นสำหรับป้องกันตัวของนักเวทย์แห่ง Glast Heim\nแม้จะเป็นอาวุธธรรมดา แต่ก็มีพลังที่แข็งแกร่งซ่อนอยู่เนื่องจากได้รับผลกระทบจาก Himmelmez\n^ffffff_^000000 \nMATK +170, MATK +5%\nทุก ๆ การอัพเกรด 1 ขั้น MATK +4\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางเวทมนตร์ธาตุ Fire, Neutral 15%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage ทางเวทมนตร์ต่อมอนสเตอร์เผ่า Undead, Angel 20%\n^ffffff_^000000 \nเมื่อสวมใส่ร่วมกับ ^32CD32King Schmidt's Suit และ King Schmidt's Manteau^000000, \nMATK +30, เมื่อโจมตีทางเวทมนตร์ มีโอกาสที่จะเพิ่ม Damage ทางเวทมนตร์ธาตุ Fire, Neutral 10% เป็นเวลา 10 วินาที\nเมื่อค่าอัพเกรด ^32CD32King Schmidt's Suit, King Schmidt's Manteau, Royal Magician Dagger^000000 รวมกันตั้งแต่ 30 ขึ้นไป, เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูธาตุ Holy, Undead 20%\n^ffffff_^000000 \nประเภท : ^777777Dagger^000000 พลังโจมตี : ^777777200^000000\nน้ำหนัก : ^777777150^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Shadow Chaser^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 256,
+    "itemLevel": 4,
+    "attack": 200,
+    "defense": null,
+    "weight": 150,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Shadow Chaser"
+    ],
+    "script": {
+      "matk": [
+        "170",
+        "1---4",
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]===30"
+      ],
+      "matkPercent": [
+        "5"
+      ],
+      "m_my_element_fire": [
+        "9===15"
+      ],
+      "m_my_element_neutral": [
+        "9===15"
+      ],
+      "m_race_undead": [
+        "11===20"
+      ],
+      "m_race_angel": [
+        "11===20"
+      ],
+      "m_element_holy": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]REFINE[weapon,armor,garment==30]===20"
+      ],
+      "m_element_undead": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]REFINE[weapon,armor,garment==30]===20"
+      ],
+      "chance__m_my_element_fire": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]===10"
+      ],
+      "chance__m_my_element_neutral": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]===10"
       ]
     }
   },
@@ -40898,6 +41458,88 @@
       "criDmg": [
         "12===8",
         "13===6"
+      ]
+    }
+  },
+  "29009": {
+    "id": 29009,
+    "aegisName": "Neev_VIT_1",
+    "name": "Rune of Vitality Lv 1",
+    "unidName": "Rune of Vitality Lv 1",
+    "resName": "체력의니브",
+    "description": "VIT + 5 เมื่อ Refine ระดับ 7\nMHP + 5% เมื่อ Refine ระดับ10",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "vit": [
+        "7===5"
+      ],
+      "hpPercent": [
+        "10===5"
+      ]
+    }
+  },
+  "29010": {
+    "id": 29010,
+    "aegisName": "Neev_VIT_2",
+    "name": "Rune of Vitality Lv 2",
+    "unidName": "Rune of Vitality Lv 2",
+    "resName": "체력의니브",
+    "description": "VIT + 6 เมื่อ Refine ระดับ 7 \nเพิ่ม VIT + 1, MHP + 7% เมื่อ Refine ระดับ 11",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "vit": [
+        "7===6",
+        "11===1"
+      ],
+      "hpPercent": [
+        "11===7"
+      ]
+    }
+  },
+  "29011": {
+    "id": 29011,
+    "aegisName": "Neev_VIT_3",
+    "name": "Rune of Vitality Lv 3",
+    "unidName": "Rune of Vitality Lv 3",
+    "resName": "체력의니브",
+    "description": "VIT + 7 เมื่อ Refine ระดับ 7 \nเพิ่ม VIT + 1, MHP + 8% เมื่อ Refine ระดับ 12\nเพิ่ม VIT + 1, MHP + 2% เมื่อ Refine ระดับ 13",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "vit": [
+        "7===7",
+        "12===1",
+        "13===1"
+      ],
+      "hpPercent": [
+        "12===8",
+        "13===2"
       ]
     }
   },
@@ -47407,6 +48049,53 @@
       ]
     }
   },
+  "32027": {
+    "id": 32027,
+    "aegisName": "G_Knight_Spear",
+    "name": "Guardian Knight Spear [2]",
+    "unidName": "Spear",
+    "resName": "G_Knight_Spear",
+    "description": "อาวุธหอกมือเดียวที่มีน้ำหนัก เป็นอาวุธของกองทัพทหารม้าขาว\nแม้จะเป็นอาวุธธรรมดา แต่ก็มีพลังที่แข็งแกร่งซ่อนอยู่เนื่องจากได้รับผลกระทบจาก Himmelmez\n^ffffff_^000000 \nทุก ๆ การอัพเกรด 1 ขั้น เพิ่ม Damage ทางกายภาพระยะไกล 1%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Banishing Point 20%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage ทางกายภาพต่อมอนสเตอร์เผ่า Undead, Angel 20%\n^ffffff_^000000 \nเมื่อสวมใส่ร่วมกับ ^32CD32King Schmidt's Suit และ King Schmidt's Manteau^000000, \nATK +30, เมื่อโจมตีทางกายภาพ มีโอกาสที่จะเพิ่ม Damage ทางกายภาพระยะไกล 10% เป็นเวลา 10 วินาที\nเมื่อค่าอัพเกรด ^32CD32King Schmidt's Suit, King Schmidt's Manteau, Guardian Knight Spear^000000 รวมกันตั้งแต่ 30 ขึ้นไป,\nเพิ่ม Damage ทางกายภาพต่อศัตรูธาตุ Holy, Undead 20%\n^ffffff_^000000 \nประเภท : ^777777One-Handed Spear^000000 พลังโจมตี : ^777777205^000000\nน้ำหนัก : ^777777400^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Royal Guard^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 259,
+    "itemLevel": 4,
+    "attack": 205,
+    "defense": null,
+    "weight": 400,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Royal Guard"
+    ],
+    "script": {
+      "range": [
+        "1---1"
+      ],
+      "Banishing Point": [
+        "9===20"
+      ],
+      "atk": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]===30"
+      ],
+      "p_race_undead": [
+        "11===20"
+      ],
+      "p_race_angel": [
+        "11===20"
+      ],
+      "p_element_holy": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]REFINE[weapon,armor,garment==30]===20"
+      ],
+      "p_element_undead": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]REFINE[weapon,armor,garment==30]===20"
+      ],
+      "chance__range": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]===10"
+      ]
+    }
+  },
   "32107": {
     "id": 32107,
     "aegisName": "Black_Circle",
@@ -48376,6 +49065,9 @@
       ],
       "p_element_undead": [
         "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]REFINE[weapon,armor,garment==30]===20"
+      ],
+      "chance__range": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]===10"
       ]
     }
   },
@@ -48455,6 +49147,228 @@
       ],
       "acd": [
         "11===20"
+      ]
+    }
+  },
+  "32353": {
+    "id": 32353,
+    "aegisName": "G_Knight_JewelSword",
+    "name": "Guardian Knight Jewel Sword [2]",
+    "unidName": "One-Handed Sword",
+    "resName": "G_Knight_JewelSword",
+    "description": "ดาบที่ใช้ประกอบพิธีระลึกถึงบรรพบุรุษโดยกองทัพทหารแห่ง Glast Heim\nแม้จะเป็นอาวุธธรรมดา แต่ก็มีพลังที่แข็งแกร่งซ่อนอยู่เนื่องจากได้รับผลกระทบจาก Himmelmez\n^ffffff_^000000 \nMATK +180\nทุก ๆ การอัพเกรด 1 ขั้น MHP +1%, เพิ่ม Damage สกิล Grand Cross 2%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Shield Press 20%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อมอนสเตอร์เผ่า Undead, Angel 20%\n^ffffff_^000000 \nเมื่อสวมใส่ร่วมกับ ^32CD32King Schmidt's Suit และ King Schmidt's Manteau^000000, \nเมื่อโจมตีทางกายภาพ/เวทมนตร์ มีโอกาสที่ ATK +7%, MATK +7% เป็นเวลา 10 วินาที\nเมื่อค่าอัพเกรด ^32CD32King Schmidt's Suit, King Schmidt's Manteau, Guardian Knight Jewel Sword^000000 รวมกันตั้งแต่ 30 ขึ้นไป,\nเพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูธาตุ Holy, Undead 20%\n^ffffff_^000000 \nประเภท : ^777777One-Handed Sword^000000 พลังโจมตี : ^777777130^000000\nน้ำหนัก : ^777777400^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Royal Guard^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 257,
+    "itemLevel": 4,
+    "attack": 130,
+    "defense": null,
+    "weight": 400,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Royal Guard"
+    ],
+    "script": {
+      "matk": [
+        "180"
+      ],
+      "hpPercent": [
+        "1---1"
+      ],
+      "Grand Cross": [
+        "1---2"
+      ],
+      "Shield Press": [
+        "9===20"
+      ],
+      "p_race_undead": [
+        "11===20"
+      ],
+      "p_race_angel": [
+        "11===20"
+      ],
+      "m_race_undead": [
+        "11===20"
+      ],
+      "m_race_angel": [
+        "11===20"
+      ],
+      "p_element_holy": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]REFINE[weapon,armor,garment==30]===20"
+      ],
+      "p_element_undead": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]REFINE[weapon,armor,garment==30]===20"
+      ],
+      "m_element_holy": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]REFINE[weapon,armor,garment==30]===20"
+      ],
+      "m_element_undead": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]REFINE[weapon,armor,garment==30]===20"
+      ],
+      "chance__atkPercent": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]===7"
+      ],
+      "chance__matkPercent": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]===7"
+      ]
+    }
+  },
+  "32401": {
+    "id": 32401,
+    "aegisName": "R_Pillar",
+    "name": "Royal Pillar [2]",
+    "unidName": "Club",
+    "resName": "R_Pillar",
+    "description": "ไม้ตะบองเหล็กขนาดใหญ่และหนา ถูกใช้เป็นของตกแต่งภายใน Glast Heim\nแม้จะเป็นอาวุธธรรมดา แต่ก็มีพลังที่แข็งแกร่งซ่อนอยู่เนื่องจากได้รับผลกระทบจาก Himmelmez\n^ffffff_^000000 \nไม่สามารถทำลายได้, ATK +5%\nทุก ๆ การอัพเกรด 1 ขั้น เพิ่ม Damage ทางกายภาพระยะไกล 1%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Arm Cannon, Knuckle Boost 20%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage ทางกายภาพต่อมอนสเตอร์เผ่า Undead, Angel 20%\n^ffffff_^000000 \nเมื่อสวมใส่ร่วมกับ ^32CD32King Schmidt's Suit และ King Schmidt's Manteau^000000, \nATK +30, เมื่อโจมตีทางกายภาพ มีโอกาสที่จะเพิ่ม Damage ทางกายภาพระยะไกล 10% เป็นเวลา 10 วินาที\nเมื่อค่าอัพเกรด ^32CD32King Schmidt's Suit, King Schmidt's Manteau, Royal Pillar^000000 รวมกันตั้งแต่ 30 ขึ้นไป,\nเพิ่ม Damage ทางกายภาพต่อศัตรูธาตุ Holy, Undead 20%\n^ffffff_^000000 \nประเภท : ^777777Mace^000000 พลังโจมตี : ^777777220^000000\nน้ำหนัก : ^777777500^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Mechanic^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 263,
+    "itemLevel": 4,
+    "attack": 220,
+    "defense": null,
+    "weight": 500,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Mechanic"
+    ],
+    "script": {
+      "atkPercent": [
+        "5"
+      ],
+      "range": [
+        "1---1"
+      ],
+      "Arm Cannon": [
+        "9===20"
+      ],
+      "Knuckle Boost": [
+        "9===20"
+      ],
+      "atk": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]===30"
+      ],
+      "p_race_undead": [
+        "11===20"
+      ],
+      "p_race_angel": [
+        "11===20"
+      ],
+      "p_element_holy": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]REFINE[weapon,armor,garment==30]===20"
+      ],
+      "p_element_undead": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]REFINE[weapon,armor,garment==30]===20"
+      ],
+      "chance__range": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]===10"
+      ]
+    }
+  },
+  "32402": {
+    "id": 32402,
+    "aegisName": "R_Syringe",
+    "name": "Royal Syringe [2]",
+    "unidName": "Club",
+    "resName": "R_Syringe",
+    "description": "เข็มฉีดยาสำหรับทดลองที่เอาไว้ใช้ในห้องวิจัยของ Glast Heim\nแม้จะทำขึ้นมาเพื่อรักษาผู้คน แต่ก็มีพลังที่แข็งแกร่งซ่อนอยู่เนื่องจากได้รับผลกระทบจาก Himmelmez\nไม่สามารถทำลายได้, ATK +5%\nทุก ๆ การอัพเกรด 1 ขั้น เพิ่ม Damage ทางกายภาพระยะไกล 1%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Cart Cannon, Spore Explosion 20%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage ทางกายภาพต่อมอนสเตอร์เผ่า Undead, Angel 20%\n^ffffff_^000000 \nเมื่อสวมใส่ร่วมกับ ^32CD32King Schmidt's Suit และ King Schmidt's Manteau^000000, \nATK +30, เมื่อโจมตีทางกายภาพ มีโอกาสที่จะเพิ่ม Damage ทางกายภาพระยะไกล 10% เป็นเวลา 10 วินาที\nเมื่อค่าอัพเกรด ^32CD32King Schmidt's Suit, King Schmidt's Manteau, Royal Syringe^000000 รวมกันตั้งแต่ 30 ขึ้นไป, เพิ่ม Damage ทางกายภาพต่อศัตรูธาตุ Holy, Undead 20%\n^ffffff_^000000 \nประเภท : ^777777Mace^000000 พลังโจมตี : ^777777210^000000\nน้ำหนัก : ^777777150^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Genetic^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 263,
+    "itemLevel": 4,
+    "attack": 210,
+    "defense": null,
+    "weight": 150,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Genetic"
+    ],
+    "script": {
+      "atkPercent": [
+        "5"
+      ],
+      "range": [
+        "1---1"
+      ],
+      "Cart Cannon": [
+        "9===20"
+      ],
+      "Spore Explosion": [
+        "9===20"
+      ],
+      "atk": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]===30"
+      ],
+      "p_race_undead": [
+        "11===20"
+      ],
+      "p_race_angel": [
+        "11===20"
+      ],
+      "p_element_holy": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]REFINE[weapon,armor,garment==30]===20"
+      ],
+      "p_element_undead": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]REFINE[weapon,armor,garment==30]===20"
+      ],
+      "chance__range": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]===10"
+      ]
+    }
+  },
+  "32403": {
+    "id": 32403,
+    "aegisName": "G_Alchemist_Staff",
+    "name": "Royal Alchemy Staff [2]",
+    "unidName": "Club",
+    "resName": "G_Alchemist_Staff",
+    "description": "ไม้เท้าประดิษฐ์ที่นักวิจัยแห่ง Glast Heim ใช้\nรูปทรงที่สวยงาม กลับมีพลังที่แข็งแกร่งซ่อนอยู่เนื่องจากได้รับผลกระทบจาก Himmelmez\nไม่สามารถทำลายได้, ATK +5%\nทุก ๆ การอัพเกรด 1 ขั้น ATK +4\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Crazy Weed 30%, ลด Cooldown สกิล Crazy Weed 1 วินาที\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage ทางกายภาพต่อมอนสเตอร์เผ่า Undead, Angel 20%\n^ffffff_^000000 \nเมื่อสวมใส่ร่วมกับ ^32CD32King Schmidt's Suit และ King Schmidt's Manteau^000000, \nATK +30, เมื่อโจมตีทางกายภาพ มีโอกาสที่จะเพิ่ม Damage ทางกายภาพระยะไกล 10% เป็นเวลา 10 วินาที\nเมื่อค่าอัพเกรด ^32CD32King Schmidt's Suit, King Schmidt's Manteau, Royal Alchemy Staff^000000 รวมกันตั้งแต่ 30 ขึ้นไป, เพิ่ม Damage ทางกายภาพต่อศัตรูธาตุ Holy, Undead 20%\n^ffffff_^000000 \nประเภท : ^777777Mace^000000 พลังโจมตี : ^777777200^000000\nน้ำหนัก : ^777777150^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Genetic^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 263,
+    "itemLevel": 4,
+    "attack": 200,
+    "defense": null,
+    "weight": 150,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Genetic"
+    ],
+    "script": {
+      "atkPercent": [
+        "5"
+      ],
+      "atk": [
+        "1---4",
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]===30"
+      ],
+      "Crazy Weed": [
+        "9===30"
+      ],
+      "cd__Crazy Weed": [
+        "9===1"
+      ],
+      "p_race_undead": [
+        "11===20"
+      ],
+      "p_race_angel": [
+        "11===20"
+      ],
+      "p_element_holy": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]REFINE[weapon,armor,garment==30]===20"
+      ],
+      "p_element_undead": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]REFINE[weapon,armor,garment==30]===20"
+      ],
+      "chance__range": [
+        "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]===10"
       ]
     }
   },
@@ -53008,6 +53922,42 @@
       "m_race_demihuman": [
         "EQUIP[Aegirnian Helm]10",
         "EQUIP[Aegirnian Helm]1---1"
+      ]
+    }
+  },
+  "480120": {
+    "id": 480120,
+    "aegisName": "Guardian_Soul_TH",
+    "name": "Guardian Soul",
+    "unidName": "Garment",
+    "resName": "Guardian_Soul",
+    "description": "เสื้อคลุมที่เคยเป็นของนักปราชญ์ผู้รับใช้พระราชาผู้ยิ่งใหญ่  \nแฝงไปด้วยพลังป้องกันที่ไม่สามารถหยั่งถึงได้\nไอเท็มชิ้นนี้ไม่สามารถทำลายได้\nสามารถใช้สกิล Heaven Drive Lv1 ได้  \nเพิ่มความทนทานต่อ Damage ที่ได้รับจาก Player 5% \nเมื่ออัพเกรดขั้น 7 ขึ้นไป,\nทุกๆ ผลรวมของ LUK และ STR เท่ากับ 18\nลด Delay หลังใช้สกิล 1%\nเพิ่มความทนทานต่อธาตุ Holy และธาตุ Shadow 3%\nทุกๆ ผลรวมของ AGI และ VIT เท่ากับ 18\nเพิ่ม ASPD 1%\nMHP +1%\nเพิ่มความทนทานต่อธาตุ Fire และธาตุ Water 3%\nทุกๆ ผลรวมของ INT และ DEX เท่ากับ 18\nเพิ่มความทนทานต่อธาตุ Wind และธาตุ Earth 3%\nลด Variable Cast Time 1%\nเมื่ออัพเกรดขั้น 12 ขึ้นไป,\nทุกๆ ผลรวมของ LUK และ STR เท่ากับ 18\nเพิ่มความทนทานต่อธาตุ Holy และธาตุ Shadow 2%\nทุกๆ ผลรวมของ AGI และ VIT เท่ากับ 18\nMHP +1%\nเพิ่มความทนทานต่อธาตุ Fire และธาตุ Water 2%\nทุกๆ ผลรวมของ INT และ DEX เท่ากับ 18\nเพิ่มความทนทานต่อธาตุ Wind และธาตุ Earth 2%\nประเภท : ^777777Garment^000000  พลังป้องกัน : ^77777725^000000\nน้ำหนัก : ^777777100^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 515,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 25,
+    "weight": 100,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "acd": [
+        "REFINE[7]SUM[luk,str==18]---1"
+      ],
+      "aspdPercent": [
+        "REFINE[7]SUM[agi,vit==18]---1"
+      ],
+      "hpPercent": [
+        "REFINE[7]SUM[agi,vit==18]---1",
+        "REFINE[12]SUM[agi,vit==18]---1"
+      ],
+      "vct": [
+        "REFINE[7]SUM[int,dex==18]---1"
       ]
     }
   },

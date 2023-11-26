@@ -130,13 +130,29 @@ export class Warlock extends CharacterBase {
       cd: 4,
       isMatk: true,
       element: ElementType.Water,
-      levelList: [{ label: 'Lv 5', value: 'Jack Frost==5' }],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
 
         // return (1200 + skillLevel * 600) * (baseLevel / 100); -- Frost
         return (1000 + skillLevel * 300) * (baseLevel / 100);
+      },
+    },
+    {
+      label: 'Jack Frost Lv5 (in Frost)',
+      name: 'Jack Frost',
+      value: 'Jack Frost Frost==5',
+      acd: 1,
+      fct: 1,
+      vct: 4,
+      cd: 4,
+      isMatk: true,
+      element: ElementType.Water,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
+
+        return (1200 + skillLevel * 600) * (baseLevel / 100);
       },
     },
     {
@@ -191,6 +207,24 @@ export class Warlock extends CharacterBase {
         const baseLevel = model.level;
 
         return (1000 + skillLevel * 600) * (baseLevel / 100);
+      },
+    },
+    {
+      label: 'Frost Misty Lv5',
+      name: 'Frost Misty',
+      value: 'Frost Misty==5',
+      acd: 1,
+      fct: 0.5,
+      vct: 4,
+      cd: 10,
+      isMatk: true,
+      hit: 5,
+      element: ElementType.Water,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
+
+        return (200 + skillLevel * 100) * (baseLevel / 100);
       },
     },
     {

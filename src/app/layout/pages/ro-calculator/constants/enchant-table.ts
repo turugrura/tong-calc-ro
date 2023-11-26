@@ -108,6 +108,11 @@ enum RuneAgi {
   _2 = 'Neev_AGI_2',
   _3 = 'Neev_AGI_3',
 }
+enum RuneVit {
+  _1 = 'Neev_VIT_1',
+  _2 = 'Neev_VIT_2',
+  _3 = 'Neev_VIT_3',
+}
 enum Str {
   _1 = 'Strength1',
   _2 = 'Strength2',
@@ -427,8 +432,27 @@ const edda3 = [
   'Alpho_Memory',
 ];
 
-const allRunes = [RuneStr._1, RuneStr._2, RuneStr._3, RuneDex._1, RuneDex._2, RuneDex._3, RuneInt._1, RuneInt._2, RuneInt._3, RuneLuk._1, RuneLuk._2, RuneLuk._3, RuneAgi._1, RuneAgi._2, RuneAgi._3];
-const illusionDun = [RuneStr._1, RuneStr._2, RuneDex._1, RuneDex._2, RuneInt._1, RuneInt._2, RuneLuk._1, RuneLuk._2, RuneAgi._1, RuneAgi._2];
+const allRunes = [
+  RuneStr._1,
+  RuneStr._2,
+  RuneStr._3,
+  RuneDex._1,
+  RuneDex._2,
+  RuneDex._3,
+  RuneInt._1,
+  RuneInt._2,
+  RuneInt._3,
+  RuneLuk._1,
+  RuneLuk._2,
+  RuneLuk._3,
+  RuneAgi._1,
+  RuneAgi._2,
+  RuneAgi._3,
+  RuneVit._1,
+  RuneVit._2,
+  RuneVit._3,
+];
+const illusionDun = [RuneStr._1, RuneStr._2, RuneDex._1, RuneDex._2, RuneInt._1, RuneInt._2, RuneLuk._1, RuneLuk._2, RuneAgi._1, RuneAgi._2, RuneVit._1, RuneVit._2];
 
 const specials = ['S_Str', 'S_Agi', 'S_Vital', 'S_Int', 'S_Dex', 'S_Luck'];
 
@@ -677,6 +701,7 @@ export const EnchantTable: EntTable[] = [
   { name: 'Herald_Of_GOD_IL', enchants: [null, null, BaseState._1_4, illusionDun] },
   { name: 'Boots_IL', enchants: [null, null, BaseState._1_4, illusionDun] },
   { name: 'Shoes_IL', enchants: [null, null, BaseState._1_4, illusionDun] },
+  { name: 'Muffler_IL', enchants: [null, null, BaseState._1_4, illusionDun] },
 
   { name: 'Robe_Of_Flattery', enchants: [null, null, allRunes, allRunes] },
   { name: 'Robe_Of_Vituperation', enchants: [null, null, allRunes, allRunes] },
