@@ -354,6 +354,77 @@ const illusionBoot = [
 ];
 const illusionAcc = [EA._5, FS._6, Spell._5, AttackDelay._4, Fatal._4, ...BaseState._3];
 
+const automaticJobs = [
+  'Automatic_Orb46',
+  'Automatic_Orb47',
+  'Automatic_Orb48',
+  'Automatic_Orb49',
+  'Automatic_Orb50',
+  'Automatic_Orb51',
+  'Automatic_Orb52',
+  'Automatic_Orb53',
+  'Automatic_Orb54',
+  'Automatic_Orb55',
+  'Automatic_Orb56',
+  'Automatic_Orb57',
+  'Automatic_Orb58',
+  'Automatic_Orb59',
+  'Automatic_Orb60',
+  'Automatic_Orb61',
+  'Automatic_Orb62',
+  'Automatic_Orb63',
+  'Automatic_Orb64',
+  'Automatic_Orb65',
+  'Automatic_Orb66',
+  'Automatic_Orb67',
+  'Automatic_Orb68',
+  'Automatic_Orb69',
+  'Automatic_Orb70',
+  'Automatic_Orb71',
+  'Automatic_Orb72',
+  'Automatic_Orb73',
+  'Automatic_Orb74',
+  'Automatic_Orb75',
+  'Automatic_Orb76',
+  'Automatic_Orb77',
+  'Automatic_Orb78',
+  'Automatic_Orb79',
+  'Automatic_Orb80',
+  'Automatic_Orb81',
+  'Automatic_Orb82',
+  'Automatic_Orb83',
+  'Automatic_Orb84',
+  'Automatic_Orb85',
+  'Automatic_Orb86',
+  'Automatic_Orb87',
+  'Automatic_Orb88',
+  'Automatic_Orb89',
+  'Automatic_Orb90',
+  'Automatic_Orb91',
+  'Automatic_Orb92',
+  'Automatic_Orb93',
+  'Automatic_Orb95',
+  'Automatic_Orb96',
+];
+const automaticArmor2 = [
+  'Automatic_Orb18',
+  'Automatic_Orb19',
+  'Automatic_Orb20',
+  'Automatic_Orb24',
+  'Automatic_Orb25',
+  'Automatic_Orb26',
+  'Automatic_Orb27',
+  'Automatic_Orb28',
+  'Automatic_Orb29',
+  'Automatic_Orb36',
+];
+const automaticArmor34 = [...automaticArmor2, ...automaticJobs];
+const automaticGarment = ['Automatic_Orb21', 'Automatic_Orb22', 'Automatic_Orb23', 'Automatic_Orb38'];
+const automaticBoot = ['Automatic_Orb15', 'Automatic_Orb16', 'Automatic_Orb30', 'Automatic_Orb37', 'Automatic_Orb41', 'Automatic_Orb42', 'Automatic_Orb43', 'Automatic_Orb44', 'Automatic_Orb45'];
+const automaticAcc = ['Automatic_Orb39', 'Automatic_Orb11', 'Automatic_Orb12', 'Automatic_Orb13', 'Automatic_Orb14', 'Automatic_Orb3', 'Automatic_Orb4'];
+const automaticAccR = [...automaticAcc, 'Automatic_Orb5', 'Automatic_Orb6'];
+const automaticAccL = [...automaticAcc, 'Automatic_Orb7', 'Automatic_Orb8'];
+
 const tempBoot_3 = ["Bear's_Power", 'Runaway_Magic', 'Speed_Of_Light', 'Muscle_Fool', 'Hawkeye', 'Lucky_Day'];
 const tempBoot_4 = [EA._4, FS._7, Spell._5, AttackDelay._4];
 const kingSmithAcc_2 = ['Gh_md_agi', 'Gh_md_str', 'Gh_md_dex', 'Gh_md_int', 'Gh_md_vit', 'Gh_md_luk'];
@@ -583,6 +654,17 @@ export const EnchantTable: EntTable[] = [
 
   { name: '[Upgrade] Illusion Ring [1]', enchants: [null, illusionAcc, illusionAcc, illusionAcc] },
   { name: 'Secret Illusion Ring [1]', enchants: [null, ['Improve_Orb_L_Varmundt', ...illusionAcc], illusionAcc, illusionAcc] },
+
+  { name: 'Auto_Armor_A', enchants: [null, automaticArmor2, automaticArmor34, automaticArmor34] },
+  { name: 'Auto_Armor_B', enchants: [null, automaticArmor2, automaticArmor34, automaticArmor34] },
+  { name: 'Auto_Engine_A', enchants: [null, automaticGarment, automaticGarment, automaticGarment] },
+  { name: 'Auto_Engine_B', enchants: [null, automaticGarment, automaticGarment, automaticGarment] },
+  { name: 'Auto_Leg_A', enchants: [null, automaticBoot, automaticBoot, automaticBoot] },
+  { name: 'Auto_Leg_B', enchants: [null, automaticBoot, automaticBoot, automaticBoot] },
+  { name: 'Auto_B_R', enchants: [null, automaticAccR, automaticAccR, automaticAccR] },
+  { name: 'Auto_B_L', enchants: [null, automaticAccL, automaticAccL, automaticAccL] },
+  { name: 'Auto_BC_R', enchants: [null, automaticAccR, automaticAccR, automaticAccR] },
+  { name: 'Auto_BC_L', enchants: [null, automaticAccL, automaticAccL, automaticAccL] },
 
   { name: 'Temporal_Boots_TW', enchants: [null, null, tempBoot_3, tempBoot_4] },
   { name: 'Temporal_Str_Boots', enchants: [null, null, tempBoot_3, tempBoot_4] },
