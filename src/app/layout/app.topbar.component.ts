@@ -36,6 +36,11 @@ export class AppTopBarComponent {
 
   updates: { v: string; date: string; logs: string[] }[] = [
     {
+      v: 'V1.7.2',
+      date: '27-11-2566',
+      logs: ['Fixed reported bugs', 'Added Archbishop offensive skill (Improved Adoramus)', 'Added requested items'],
+    },
+    {
       v: 'V1.7.1',
       date: '26-11-2566',
       logs: [
@@ -43,8 +48,8 @@ export class AppTopBarComponent {
         'Fixed Charm bonus skill damage to be flatten',
         'Fixed Physical damage to ghost monster',
         'Fixed reported bugs',
-        'Added Warlock Offensive skill (Earth Strain, Frost Misty)',
-        'Added Rune Knight Offensive skill (Ignition Break & Improved version)',
+        'Added Warlock offensive skill (Earth Strain, Frost Misty)',
+        'Added Rune Knight offensive skill (Ignition Break & Improved version)',
         'Added Biolab headgear',
         'Added requested items & monsters from Lab 5',
       ],
