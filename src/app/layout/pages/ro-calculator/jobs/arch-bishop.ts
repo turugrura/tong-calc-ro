@@ -163,6 +163,7 @@ export class ArchBishop extends CharacterBase {
       acd: 0.5,
       cd: 2.5,
       isMatk: true,
+      hit: 10,
       element: ElementType.Holy,
       value: 'Adoramus==10',
       levelList: [],
@@ -171,6 +172,44 @@ export class ArchBishop extends CharacterBase {
         const baseLevel = model.level;
 
         return (330 + skillLevel * 70) * (baseLevel / 100);
+      },
+    },
+    {
+      label: '[Improved] Adoramus Lv10',
+      name: 'Adoramus',
+      value: '[Improved] Adoramus==10',
+      fct: 0.5,
+      vct: 2,
+      acd: 0.5,
+      cd: 2.5,
+      isMatk: true,
+      hit: 10,
+      element: ElementType.Holy,
+      levelList: [],
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
+
+        return (300 + skillLevel * 250) * (baseLevel / 100);
+      },
+    },
+    {
+      label: '[Improved] Adoramus Lv10 (In Ancilla)',
+      name: 'Adoramus',
+      value: '[Improved] Adoramus Ancilla==10',
+      fct: 0.5,
+      vct: 2,
+      acd: 0.5,
+      cd: 2.5,
+      isMatk: true,
+      hit: 10,
+      element: ElementType.Neutral,
+      levelList: [],
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
+
+        return (300 + skillLevel * 250) * (baseLevel / 100);
       },
     },
     {
