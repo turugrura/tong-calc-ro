@@ -370,6 +370,7 @@ export class DamageCalculator {
     total = floor(total * element); // tested
     total = floor(total * monsterType); // tested
     total = floor(total * comet);
+    total = this.applyFinalMultiplier(total, 'phy');
 
     return total;
   }
@@ -612,7 +613,7 @@ export class DamageCalculator {
       total = floor(total * hardDef);
       total = total - softDef; // tested
       if (_calcCri) total = floor(total * this.BASE_CRI_MULTIPLIER);
-      total = this.applyFinalMultiplier(total, 'phy');
+      // total = this.applyFinalMultiplier(total, 'phy');
 
       return this.toPreventNegativeDmg(total);
     };
@@ -801,7 +802,7 @@ export class DamageCalculator {
       total = floor(total * dmgMultiplier);
       total = floor(total * hardDef);
       total = total - softDef;
-      total = this.applyFinalMultiplier(total, 'phy');
+      // total = this.applyFinalMultiplier(total, 'phy');
 
       return this.toPreventNegativeDmg(total);
     };
@@ -832,7 +833,7 @@ export class DamageCalculator {
       total = floor(total * hardDef);
       total = total - softDef;
       total = floor(total * this.BASE_CRI_MULTIPLIER);
-      total = this.applyFinalMultiplier(total, 'phy');
+      // total = this.applyFinalMultiplier(total, 'phy');
 
       return this.toPreventNegativeDmg(total);
     };

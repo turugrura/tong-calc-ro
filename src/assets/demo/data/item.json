@@ -4566,6 +4566,31 @@
       ]
     }
   },
+  "4537": {
+    "id": 4537,
+    "aegisName": "Sealed_Phreeoni_Card",
+    "name": "Sealed Phreeoni Card",
+    "unidName": "Card",
+    "resName": "이름없는카드",
+    "description": "HIT +50\nเมื่ออัพเกรดตั้งแต่ 15 ขึ้นไป HIT +75\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Half Perfect",
+    "script": {
+      "hit": [
+        "50",
+        "15===25"
+      ]
+    }
+  },
   "4550": {
     "id": 4550,
     "aegisName": "Upd_Bow_Guardian_Card",
@@ -5015,6 +5040,30 @@
       ]
     }
   },
+  "4629": {
+    "id": 4629,
+    "aegisName": "Arc_Elder_Card",
+    "name": "Arc Elder Card",
+    "unidName": "Card",
+    "resName": "이름없는카드",
+    "description": "ลดความเสียหายจากการโจมตีแบบไร้ธาตุลง 15%\nเพิ่มพลังโจมตีทางเวทย์ธาตุ Earth ทุกๆการอัพเกรด 3%\nเมื่อใส่กับ Nightmare Time Keeper Card จะลดความเสียหายจากการโจมตีธาตุ Neutral เพิ่มขึ้นอีก 5%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Garment^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 4,
+    "cardPrefix": "Bone-dry",
+    "script": {
+      "m_my_element_earth": [
+        "1---3"
+      ]
+    }
+  },
   "4633": {
     "id": 4633,
     "aegisName": "P_Archer_Skeleton_Card",
@@ -5123,6 +5172,30 @@
       ],
       "matkPercent": [
         "EQUIP[Infinite Toad Card||Infinite Vagabond Wolf Card||Infinite Vocal Card||Infinite Eclipse Card]10"
+      ]
+    }
+  },
+  "4649": {
+    "id": 4649,
+    "aegisName": "IFN_Phreeoni_Card",
+    "name": "Infinite Phreeoni Card",
+    "unidName": "Infinite Phreeoni Card",
+    "resName": "이름없는카드",
+    "description": "CRI + 100\nประเภท : ^777777Card^000000\nใส่กับ: ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Fatal Blow",
+    "script": {
+      "cri": [
+        "100"
       ]
     }
   },
@@ -9422,6 +9495,39 @@
       "all"
     ]
   },
+  "5933": {
+    "id": 5933,
+    "aegisName": "Crow_Tengu_Mask",
+    "name": "Crow Tengu Mask",
+    "unidName": "Mask",
+    "resName": "까마귀천구의가면",
+    "description": "หน้ากากของหน่วยลับเมื่อใส่แล้วรู้สึกว่ามีพลังเอ่อล้น\nเพิ่มโจมตีกายภาพต่อมอนสเตอร์ทุกขนาด 1%\nเพิ่มพลังโจมตีระยะไกล 2%\nถ้าผู้เล่นมีค่า Str พื้นฐาน 108 หรือ มากกว่า, เพิ่มโจมตีกายภาพต่อมอนสเตอร์ทุกขนาดอีก 1%, เพิ่มพลังโจมตีระยะไกลอีก 2%\nถ้าผู้เล่นมีค่า Str พื้นฐาน 120 หรือ มากกว่า, เพิ่มโจมตีกายภาพต่อมอนสเตอร์ทุกขนาดอีก 2%, เพิ่มพลังโจมตีระยะไกลอีก 3%\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^7777770^000000\nตำแหน่ง : ^777777MIddle^000000 น้ำหนัก : ^7777773^000000\nเลเวลที่ต้องการ : ^77777780^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 3,
+    "requiredLevel": 80,
+    "location": "Middle",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "p_size_all": [
+        "1",
+        "SUM[str==108]===1",
+        "SUM[str==120]===2"
+      ],
+      "range": [
+        "2",
+        "SUM[str==108]===2",
+        "SUM[str==120]===3"
+      ]
+    }
+  },
   "5966": {
     "id": 5966,
     "aegisName": "KarduiEar",
@@ -11414,6 +11520,46 @@
       "Thief"
     ],
     "script": {}
+  },
+  "13461": {
+    "id": 13461,
+    "aegisName": "Sealed_Evil_Sword",
+    "name": "Sealed Evil Sword [2]",
+    "unidName": "Sword",
+    "resName": "봉인된이블소드",
+    "description": "ดาบปีศาจที่ผนึกพลังอันแข็งแกร่งไว้\nการจะดึงพลังนั้นออกมาได้อย่างสมบูรณ์แบบคงจะไม่ใช่เรื่องง่าย\nDEF -50, MDEF -10.\nเมื่อทำการโจมตีทางกายภาพ จะมีโอกาสใช้สกิล Frost Nova Lv 5\nเมื่ออัพเกรดถึงขั้น 7 CRI +30, MDEF +10 \nเมื่ออัพเกรดถึงขั้น 10 ASPD +1, CRI +20, DEF +50\nประเภท : ^777777Sword^000000 พลังโจมตี : ^777777100^000000\nน้ำหนัก : ^777777150^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Transcendent Swordsman/Merchant/Thief Branch^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 257,
+    "itemLevel": 4,
+    "attack": 100,
+    "defense": null,
+    "weight": 150,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Swordman",
+      "Merchant",
+      "Thief"
+    ],
+    "script": {
+      "def": [
+        "-50",
+        "10===50"
+      ],
+      "mdef": [
+        "-10",
+        "7===10"
+      ],
+      "cri": [
+        "7===30",
+        "10===20"
+      ],
+      "aspd": [
+        "10===1"
+      ]
+    }
   },
   "13485": {
     "id": 13485,
@@ -19500,56 +19646,10 @@
         "10"
       ],
       "hpPercent": [
-        "EQUIP[Temporal Str Boots]15",
-        "EQUIP[Temporal Str Boot]15",
-        "EQUIP[Modified Str Boots]15",
-        "EQUIP[Modified Str Boot]15",
-        "EQUIP[Temporal Int Boots]15",
-        "EQUIP[Temporal Int Boot]15",
-        "EQUIP[Modified Int Boots]15",
-        "EQUIP[Modified Int Boot]15",
-        "EQUIP[Temporal Agi Boots]15",
-        "EQUIP[Temporal Agi Boot]15",
-        "EQUIP[Modified Agi Boots]15",
-        "EQUIP[Modified Agi Boot]15",
-        "EQUIP[Temporal Vit Boots]15",
-        "EQUIP[Temporal Vit Boot]15",
-        "EQUIP[Modified Vit Boots]15",
-        "EQUIP[Modified Vit Boot]15",
-        "EQUIP[Temporal Dex Boots]15",
-        "EQUIP[Temporal Dex Boot]15",
-        "EQUIP[Modified Dex Boots]15",
-        "EQUIP[Modified Dex Boot]15",
-        "EQUIP[Temporal Luk Boots]15",
-        "EQUIP[Temporal Luk Boot]15",
-        "EQUIP[Modified Luk Boots]15",
-        "EQUIP[Modified Luk Boot]15"
+        "EQUIP[Temporal Str Boots||Temporal Str Boot||Modified Str Boots||Modified Str Boot||Temporal Int Boots||Temporal Int Boot||Modified Int Boots||Modified Int Boot||Temporal Agi Boots||Temporal Agi Boot||Modified Agi Boots||Modified Agi Boot||Temporal Vit Boots||Temporal Vit Boot||Modified Vit Boots||Modified Vit Boot||Temporal Dex Boots||Temporal Dex Boot||Modified Dex Boots||Modified Dex Boot||Temporal Luk Boots||Temporal Luk Boot||Modified Luk Boots||Modified Luk Boot]15"
       ],
       "spPercent": [
-        "EQUIP[Temporal Str Boots]5",
-        "EQUIP[Temporal Str Boot]5",
-        "EQUIP[Modified Str Boots]5",
-        "EQUIP[Modified Str Boot]5",
-        "EQUIP[Temporal Int Boots]5",
-        "EQUIP[Temporal Int Boot]5",
-        "EQUIP[Modified Int Boots]5",
-        "EQUIP[Modified Int Boot]5",
-        "EQUIP[Temporal Agi Boots]5",
-        "EQUIP[Temporal Agi Boot]5",
-        "EQUIP[Modified Agi Boots]5",
-        "EQUIP[Modified Agi Boot]5",
-        "EQUIP[Temporal Vit Boots]5",
-        "EQUIP[Temporal Vit Boot]5",
-        "EQUIP[Modified Vit Boots]5",
-        "EQUIP[Modified Vit Boot]5",
-        "EQUIP[Temporal Dex Boots]5",
-        "EQUIP[Temporal Dex Boot]5",
-        "EQUIP[Modified Dex Boots]5",
-        "EQUIP[Modified Dex Boot]5",
-        "EQUIP[Temporal Luk Boots]5",
-        "EQUIP[Temporal Luk Boot]5",
-        "EQUIP[Modified Luk Boots]5",
-        "EQUIP[Modified Luk Boot]5"
+        "EQUIP[Temporal Str Boots||Temporal Str Boot||Modified Str Boots||Modified Str Boot||Temporal Int Boots||Temporal Int Boot||Modified Int Boots||Modified Int Boot||Temporal Agi Boots||Temporal Agi Boot||Modified Agi Boots||Modified Agi Boot||Temporal Vit Boots||Temporal Vit Boot||Modified Vit Boots||Modified Vit Boot||Temporal Dex Boots||Temporal Dex Boot||Modified Dex Boots||Modified Dex Boot||Temporal Luk Boots||Temporal Luk Boot||Modified Luk Boots||Modified Luk Boot]5"
       ]
     }
   },
@@ -26506,27 +26606,27 @@
     "script": {
       "spPercent": [
         "3",
-        "EQUIP[Minstrel Shadow Weapon]2",
-        "EQUIP[Archer Shadow Earring&&Archer Shadow Pendant&&Bard Shadow Armor&&Bard Shadow Shoes&&Minstrel Shadow Weapon]===5"
+        "EQUIP[Wanderer Shadow Weapon]2",
+        "EQUIP[Archer Shadow Earring&&Archer Shadow Pendant&&Dancer Shadow Armor&&Dancer Shadow Shoes&&Wanderer Shadow Weapon]===5"
       ],
       "mdef": [
         "1---3"
       ],
       "hpPercent": [
-        "EQUIP[Minstrel Shadow Weapon]2",
-        "EQUIP[Archer Shadow Earring&&Archer Shadow Pendant&&Bard Shadow Armor&&Bard Shadow Shoes&&Minstrel Shadow Weapon]===5"
+        "EQUIP[Wanderer Shadow Weapon]2",
+        "EQUIP[Archer Shadow Earring&&Archer Shadow Pendant&&Dancer Shadow Armor&&Dancer Shadow Shoes&&Wanderer Shadow Weapon]===5"
       ],
       "range": [
-        "EQUIP[Minstrel Shadow Weapon]LEARN_SKILL[Lesson==2]---1"
+        "EQUIP[Wanderer Shadow Weapon]LEARN_SKILL[Lesson==2]---1"
       ],
       "allStatus": [
-        "EQUIP[Archer Shadow Earring&&Archer Shadow Pendant&&Bard Shadow Armor&&Bard Shadow Shoes&&Minstrel Shadow Weapon]===10"
+        "EQUIP[Archer Shadow Earring&&Archer Shadow Pendant&&Dancer Shadow Armor&&Dancer Shadow Shoes&&Wanderer Shadow Weapon]===10"
       ],
       "p_pene_class_normal": [
-        "EQUIP[Archer Shadow Earring&&Archer Shadow Pendant&&Bard Shadow Armor&&Bard Shadow Shoes&&Minstrel Shadow Weapon]===50"
+        "EQUIP[Archer Shadow Earring&&Archer Shadow Pendant&&Dancer Shadow Armor&&Dancer Shadow Shoes&&Wanderer Shadow Weapon]===50"
       ],
       "m_pene_class_normal": [
-        "EQUIP[Archer Shadow Earring&&Archer Shadow Pendant&&Bard Shadow Armor&&Bard Shadow Shoes&&Minstrel Shadow Weapon]===50"
+        "EQUIP[Archer Shadow Earring&&Archer Shadow Pendant&&Dancer Shadow Armor&&Dancer Shadow Shoes&&Wanderer Shadow Weapon]===50"
       ]
     }
   },
@@ -29006,6 +29106,96 @@
       ],
       "matk": [
         "1---1"
+      ]
+    }
+  },
+  "24443": {
+    "id": 24443,
+    "aegisName": "S_Ignition_Weapon",
+    "name": "Ignition Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา\nเมื่อโจมตีทางกายภาพระยะใกล้ทั่วไป มีโอกาสเล็กน้อยที่จะใช้สกิล Ignition Break Lv. 3 โดยอัตโนมัติ (เมื่อเรียนรู้สกิลสูงกว่า Lv. 3 จะใช้ตามเลเวลที่เรียนรู้)\nเมื่ออัพเกรดถึงขั้น 7 เพิ่มโอกาสที่จะใช้สกิล Ignition Break โดยอัตโนมัติขึ้นอีก 1% \nเมื่ออัพเกรดถึงขั้น 9 เพิ่มโอกาสที่จะใช้สกิล Ignition Break โดยอัตโนมัติขึ้นอีก 2% \nเมื่อสวมใส่ Ignition Shadow Weapon/Pendant/Earring ร่วมกัน,\nเพิ่ม Damage สกิล Ignition Break % เท่ากับค่าอัพเกรดรวมกัน\nเมื่อสวมใส่ร่วมกับ Rune Knight Shield Shadow,\nเพิกเฉยต่อพลังป้องกันทางกายภาพของทุกเผ่ายกเว้น Player 40% และเพิกเฉยต่อพลังป้องกันทางกายภาพเพิ่มอีกตามค่าอัพเกรดรวมกันของ Ignition Shadow Weapon และ Rune Knight Shield Shadow\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Rune Knight^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "Rune Knight"
+    ],
+    "script": {
+      "Ignition Break": [
+        "EQUIP[Ignition Shadow Pendant&&Ignition Shadow Earring]REFINE[shadowWeapon,shadowPendant,shadowEarring==1]---1"
+      ],
+      "p_pene_race_all": [
+        "EQUIP[Rune Knight Shield Shadow]40",
+        "EQUIP[Rune Knight Shield Shadow]REFINE[shadowWeapon,shadowShield==1]---1"
+      ],
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1"
+      ]
+    }
+  },
+  "24444": {
+    "id": 24444,
+    "aegisName": "S_Ignition_Pendant",
+    "name": "Ignition Shadow Pendant",
+    "unidName": "Shadow Pendant",
+    "resName": "펜던트쉐도우",
+    "description": "สร้อยคอศักดิ์สิทธิ์ที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา\nเพิ่ม Damage สกิล Ignition Break 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage สกิล Ignition Break ขึ้นอีก 2%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Pendant^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Rune Knight^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 530,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "AccessoryLeft",
+    "compositionPos": null,
+    "usableClass": [
+      "Rune Knight"
+    ],
+    "script": {
+      "Ignition Break": [
+        "5",
+        "2---2"
+      ]
+    }
+  },
+  "24445": {
+    "id": 24445,
+    "aegisName": "S_Ignition_Earing",
+    "name": "Ignition Shadow Earring",
+    "unidName": "Shadow Earring",
+    "resName": "이어링쉐도우",
+    "description": "ต่างหูมงคลที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา\nลด Cooldown สกิล Ignition Break 0.2 วินาที\nทุก ๆ การอัพเกรด 3 ขั้น ลด Cooldown สกิล Ignition Break ลงอีก 0.1 วินาที\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Earring^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Rune Knight^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 529,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "AccessoryRight",
+    "compositionPos": null,
+    "usableClass": [
+      "Rune Knight"
+    ],
+    "script": {
+      "cd__Ignition Break": [
+        "0.2",
+        "3---0.1"
       ]
     }
   },
@@ -34637,7 +34827,7 @@
       "m_my_element_holy": [
         "5"
       ],
-      "Magnus Exorcimus": [
+      "Magnus Exorcismus": [
         "9===30",
         "11===20"
       ],
@@ -36553,6 +36743,72 @@
       ],
       "m_my_element_dark": [
         "20"
+      ]
+    }
+  },
+  "27264": {
+    "id": 27264,
+    "aegisName": "Evil_Shadow_Card",
+    "name": "Evil Shadow Card",
+    "unidName": "Evil Shadow Card",
+    "resName": "이름없는카드",
+    "description": "ลดดาเมจทางกายภาพที่ได้รับจากศัตรูธาตุ Shadow, Undead 30%\nเพิ่มดาเมจทางกายภาพที่ได้รับจากศัตรูธาตุ Holy, Fire 30%\nเมื่อใช้ร่วมกับ Evil Believer Card\nเพิ่มดาเมจทางเวทย์และทางกายภาพต่อศัตรูธาตุ Shadow, Undead 15%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Shield^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 32,
+    "cardPrefix": "Evil Shadow",
+    "script": {
+      "p_element_dark": [
+        "EQUIP[Evil Believer Card]===15"
+      ],
+      "p_element_undead": [
+        "EQUIP[Evil Believer Card]===15"
+      ],
+      "m_element_dark": [
+        "EQUIP[Evil Believer Card]===15"
+      ],
+      "m_element_undead": [
+        "EQUIP[Evil Believer Card]===15"
+      ]
+    }
+  },
+  "27265": {
+    "id": 27265,
+    "aegisName": "Evil_Fanatics_Card",
+    "name": "Evil Believer Card",
+    "unidName": "Evil Believer Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่มดาเมจทางเวทย์และทางกายภาพต่อศัตรูธาตุ Shadow, Undead 30%\nลดดาเมจทางเวทย์และดาเมจทางกายภาพต่อศัตรูธาตุ Holy, Fire 30%\nเมื่อใช้ร่วมกับ Evil Shadow Card ลดดาเมจทางกายภาพที่ได้รับจากศัตรูธาตุ Shadow, Undead 15%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Evil Fanatic",
+    "script": {
+      "p_element_dark": [
+        "30"
+      ],
+      "p_element_undead": [
+        "30"
+      ],
+      "m_element_dark": [
+        "30"
+      ],
+      "m_element_undead": [
+        "30"
       ]
     }
   },
@@ -41367,6 +41623,38 @@
       ]
     }
   },
+  "28985": {
+    "id": 28985,
+    "aegisName": null,
+    "name": "Protect Feather Shield [1]",
+    "unidName": "Protect Feather Shield",
+    "resName": "에너지룬가드",
+    "description": "MDEF +15\nทุก ๆ การอัพเกรด 1 ขั้น MaxHP/MaxSP +1%\n\nเมื่ออัพเกรดถึงขั้น 7,\nลด Damage ที่ได้รับจากสกิล Crimson Rock 30%\nลด Damage ที่ได้รับจากสกิล Arm Cannon 30%\n\nเมื่ออัพเกรดถึงขั้น 9,\nลด Damage ที่ได้รับจากสกิล Arrow Storm 30%\nลด Damage ที่ได้รับจากสกิล Hell Gate 30%\n\nเมื่ออัพเกรดถึงขั้น 11,\nลด Damage ที่ได้รับจากสกิล Lunatic Carrot Beat 30%\nลด Damage ที่ได้รับจากสกิล Catnip Meteor 30%\n\nเมื่อสวมใส่ร่วมกับ Protect Cloth และ Protect Feathers,\nลด Damage ที่ได้รับจากสกิลดังต่อไปนี้ลงอีก 30%\nCrimson Rock, Arm Cannon, Arrow Storm, Hell Gate, Lunatic Carrot Beat, Catnip Meteor\nประเภท : ^777777Shield^000000  พลังป้องกัน : ^777777140^000000\nน้ำหนัก : ^777777100^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 514,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 140,
+    "weight": 100,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "mdef": [
+        "15"
+      ],
+      "hpPercent": [
+        "1---1"
+      ],
+      "spPercent": [
+        "1---1"
+      ]
+    }
+  },
   "29000": {
     "id": 29000,
     "aegisName": "Neev_INT_1",
@@ -43038,7 +43326,7 @@
     "location": null,
     "compositionPos": null,
     "script": {
-      "cd__Mandragora Howl": [
+      "cd__Mandragora Howling": [
         "1"
       ],
       "p_size_all": [
@@ -43064,7 +43352,7 @@
     "location": null,
     "compositionPos": null,
     "script": {
-      "cd__Mandragora Howl": [
+      "cd__Mandragora Howling": [
         "5"
       ],
       "atk": [
@@ -51005,6 +51293,2481 @@
       ]
     }
   },
+  "310084": {
+    "id": 310084,
+    "aegisName": "Automatic_Orb3",
+    "name": "Automatic Modification Orb (VIT)",
+    "unidName": "Automatic Modification Orb (VIT)",
+    "resName": "마법석수",
+    "description": "VIT +3, MaxHP +1%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<B-Vit>",
+    "script": {
+      "vit": [
+        "3"
+      ],
+      "hpPercent": [
+        "1"
+      ]
+    }
+  },
+  "310085": {
+    "id": 310085,
+    "aegisName": "Automatic_Orb4",
+    "name": "Automatic Modification Orb (LUK)",
+    "unidName": "Automatic Modification Orb (LUK)",
+    "resName": "마법석수",
+    "description": "LUK +3, Critical damage +1%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<B-Luk>",
+    "script": {
+      "luk": [
+        "3"
+      ],
+      "criDmg": [
+        "1"
+      ]
+    }
+  },
+  "310086": {
+    "id": 310086,
+    "aegisName": "Automatic_Orb5",
+    "name": "Automatic Modification Orb (STR)",
+    "unidName": "Automatic Modification Orb (STR)",
+    "resName": "마법석수",
+    "description": "STR +3, ATK +2%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<B-Str>",
+    "script": {
+      "str": [
+        "3"
+      ],
+      "atkPercent": [
+        "2"
+      ]
+    }
+  },
+  "310087": {
+    "id": 310087,
+    "aegisName": "Automatic_Orb6",
+    "name": "Automatic Modification Orb (AGI)",
+    "unidName": "Automatic Modification Orb (AGI)",
+    "resName": "마법석수",
+    "description": "AGI +3, increased ASPD (ASPD +2%)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<B-Agi>",
+    "script": {
+      "agi": [
+        "3"
+      ],
+      "aspdPercent": [
+        "2"
+      ]
+    }
+  },
+  "310088": {
+    "id": 310088,
+    "aegisName": "Automatic_Orb7",
+    "name": "Automatic Modification Orb (INT)",
+    "unidName": "Automatic Modification Orb (INT)",
+    "resName": "마법석수",
+    "description": "INT +3, MATK +2%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<B-Int>",
+    "script": {
+      "int": [
+        "3"
+      ],
+      "matkPercent": [
+        "2"
+      ]
+    }
+  },
+  "310089": {
+    "id": 310089,
+    "aegisName": "Automatic_Orb8",
+    "name": "Automatic Modification Orb (DEX)",
+    "unidName": "Automatic Modification Orb (DEX)",
+    "resName": "마법석수",
+    "description": "DEX +3, Long-ranged Physical damage +2%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<B-Dex>",
+    "script": {
+      "dex": [
+        "3"
+      ],
+      "range": [
+        "2"
+      ]
+    }
+  },
+  "310092": {
+    "id": 310092,
+    "aegisName": "Automatic_Orb11",
+    "name": "Automatic Modification Orb (Spell)",
+    "unidName": "Automatic Modification Orb (Spell)",
+    "resName": "마법석암",
+    "description": "MATK +20, Variable Cast Time -10%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<P-Petrifaction>",
+    "script": {
+      "matk": [
+        "20"
+      ],
+      "vct": [
+        "10"
+      ]
+    }
+  },
+  "310093": {
+    "id": 310093,
+    "aegisName": "Automatic_Orb12",
+    "name": "Automatic Modification Orb (ASPD)",
+    "unidName": "Automatic Modification Orb (ASPD)",
+    "resName": "마법석암",
+    "description": "ATK +20, increased ASPD (ASPD +10%)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<P-Curse>",
+    "script": {
+      "atk": [
+        "20"
+      ],
+      "aspdPercent": [
+        "10"
+      ]
+    }
+  },
+  "310094": {
+    "id": 310094,
+    "aegisName": "Automatic_Orb13",
+    "name": "Automatic Modification Orb (Fatal)",
+    "unidName": "Automatic Modification Orb (Fatal)",
+    "resName": "마법석암",
+    "description": "CRIT +10, Critical damage +10%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<P-Sleep>",
+    "script": {
+      "cri": [
+        "10"
+      ],
+      "criDmg": [
+        "10"
+      ]
+    }
+  },
+  "310095": {
+    "id": 310095,
+    "aegisName": "Automatic_Orb14",
+    "name": "Automatic Modification Orb (Expert Archer)",
+    "unidName": "Automatic Modification Orb (Expert Archer)",
+    "resName": "마법석암",
+    "description": "HIT +10, Long-ranged Physical damage +10%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<P-Confuse>",
+    "script": {
+      "hit": [
+        "10"
+      ],
+      "range": [
+        "10"
+      ]
+    }
+  },
+  "310096": {
+    "id": 310096,
+    "aegisName": "Automatic_Orb15",
+    "name": "Automatic Modification Orb (Health)",
+    "unidName": "Automatic Modification Orb (Health)",
+    "resName": "마법석암",
+    "description": "MaxHP +5%, MaxHP +1,500\nWhen refined to +7 or higher, MaxHP +2% (Additional)\nWhen refined to +11 or higher, MaxHP +3% (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<P-Silence>",
+    "script": {
+      "hpPercent": [
+        "5",
+        "9===2",
+        "11===3"
+      ],
+      "hp": [
+        "1500"
+      ]
+    }
+  },
+  "310097": {
+    "id": 310097,
+    "aegisName": "Automatic_Orb16",
+    "name": "Automatic Modification Orb (SPR)",
+    "unidName": "Automatic Modification Orb (SPR)",
+    "resName": "마법석암",
+    "description": "MaxSP +5%, MaxSP +300\nWhen refined to +7 or higher, MaxSP +2% (Additional)\nWhen refined to +11 or higher, MaxSP +3% (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<P-Fear>",
+    "script": {
+      "spPercent": [
+        "5",
+        "9===2",
+        "11===3"
+      ],
+      "sp": [
+        "300"
+      ]
+    }
+  },
+  "310099": {
+    "id": 310099,
+    "aegisName": "Automatic_Orb18",
+    "name": "Automatic Modification Orb (ATK)",
+    "unidName": "Automatic Modification Orb (ATK)",
+    "resName": "마법석암",
+    "description": "ATK +5%, ATK +75\nWhen refined to +7 or higher, Melee Physical damage +2%\nWhen refined to +11 or higher, Melee Physical damage +3% (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<R-Saint>",
+    "script": {
+      "atkPercent": [
+        "5"
+      ],
+      "atk": [
+        "75"
+      ],
+      "melee": [
+        "9===2",
+        "11===3"
+      ]
+    }
+  },
+  "310100": {
+    "id": 310100,
+    "aegisName": "Automatic_Orb19",
+    "name": "Automatic Modification Orb (MATK)",
+    "unidName": "Automatic Modification Orb (MATK)",
+    "resName": "마법석암",
+    "description": "MATK +5%, MATK +75\nWhen refined to +7 or higher, MATK +2% (Additional)\nWhen refined to +11 or higher, MATK +3% (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<R-Undead>",
+    "script": {
+      "matkPercent": [
+        "5",
+        "9===2",
+        "11===3"
+      ],
+      "matk": [
+        "75"
+      ]
+    }
+  },
+  "310101": {
+    "id": 310101,
+    "aegisName": "Automatic_Orb20",
+    "name": "Automatic Modification Orb (Sharpshooter)",
+    "unidName": "Automatic Modification Orb (Sharpshooter)",
+    "resName": "마법석암",
+    "description": "Long-ranged Physical damage +3%\nWhen refined to +7 or higher, Long-ranged Physical damage +3% (Additional)\nWhen refined to +11 or higher, Long-ranged Physical damage +3% (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<R-Darkness>",
+    "script": {
+      "range": [
+        "3",
+        "9===3",
+        "11===3"
+      ]
+    }
+  },
+  "310102": {
+    "id": 310102,
+    "aegisName": "Automatic_Orb21",
+    "name": "Automatic Modification Orb (Speed)",
+    "unidName": "Automatic Modification Orb (Speed)",
+    "resName": "마법석암",
+    "description": "ASPD +1\nWhen refined to +7 or higher, ASPD +5%\nWhen refined to +11 or higher, ASPD +5% (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<R-Telekinesis>",
+    "script": {
+      "aspd": [
+        "1"
+      ],
+      "aspdPercent": [
+        "9===5",
+        "11===5"
+      ]
+    }
+  },
+  "310103": {
+    "id": 310103,
+    "aegisName": "Automatic_Orb22",
+    "name": "Automatic Modification Orb (Caster)",
+    "unidName": "Automatic Modification Orb (Caster)",
+    "resName": "마법석암",
+    "description": "Variable Cast Time -5%\nWhen refined to +7 or higher, Variable Cast Time -5% (Additional)\nWhen refined to +11 or higher, Variable Cast Time -5% (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<E-Saint>",
+    "script": {
+      "vct": [
+        "5",
+        "9===5",
+        "11===5"
+      ]
+    }
+  },
+  "310104": {
+    "id": 310104,
+    "aegisName": "Automatic_Orb23",
+    "name": "Automatic Modification Orb (Critical)",
+    "unidName": "Automatic Modification Orb (Critical)",
+    "resName": "마법석암",
+    "description": "CRIT +10\nWhen refined to +7 or higher, Critical damage +5%\nWhen refined to +11 or higher, Critical damage +7% (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<E-Undead>",
+    "script": {
+      "cri": [
+        "10"
+      ],
+      "criDmg": [
+        "9===5",
+        "11===70"
+      ]
+    }
+  },
+  "310105": {
+    "id": 310105,
+    "aegisName": "Automatic_Orb24",
+    "name": "Automatic Modification Orb (Magical Force)",
+    "unidName": "Automatic Modification Orb (Magical Force)",
+    "resName": "마법석화",
+    "description": "MATK +20, Variable Cast Time -10%, all elemental Magic damage +2%\nWhen refined to +7 or higher, All elemental Magic damage +1% (Additional)\nWhen refined to +11 or higher, All elemental Magic damage +2% (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<E-Darkness>",
+    "script": {
+      "matk": [
+        "20"
+      ],
+      "vct": [
+        "10"
+      ],
+      "m_my_element_all": [
+        "2",
+        "9===1",
+        "11===2"
+      ]
+    }
+  },
+  "310106": {
+    "id": 310106,
+    "aegisName": "Automatic_Orb25",
+    "name": "Automatic Modification Orb (Attacker Force)",
+    "unidName": "Automatic Modification Orb (Attacker Force)",
+    "resName": "마법석화",
+    "description": "ATK +20, Melee Physical damage +10%, Physical damage +3% on enemies of all sizes\nWhen refined to +7 or higher, Physical damage +1% on enemies of all sizes (Additional)\nWhen refined to +11 or higher, Physical damage +1% on enemies of all sizes (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<E-Poison>",
+    "script": {
+      "atk": [
+        "20"
+      ],
+      "melee": [
+        "10"
+      ],
+      "p_size_all": [
+        "3",
+        "9===1",
+        "11===1"
+      ]
+    }
+  },
+  "310107": {
+    "id": 310107,
+    "aegisName": "Automatic_Orb26",
+    "name": "Automatic Modification Orb (Ranged Force)",
+    "unidName": "Automatic Modification Orb (Ranged Force)",
+    "resName": "마법석지",
+    "description": "ATK +20, Long-ranged Physical damage +10%, Physical damage +3% on enemies of all sizes\nWhen refined to +7 or higher, Physical damage +1% on enemies of all sizes (Additional)\nWhen refined to +11 or higher, Physical damage +1% on enemies of all sizes (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<G-Guided>",
+    "script": {
+      "atk": [
+        "20"
+      ],
+      "range": [
+        "10"
+      ],
+      "p_size_all": [
+        "3",
+        "9===1",
+        "11===1"
+      ]
+    }
+  },
+  "310108": {
+    "id": 310108,
+    "aegisName": "Automatic_Orb27",
+    "name": "Automatic Modification Orb (Critical Force)",
+    "unidName": "Automatic Modification Orb (Critical Force)",
+    "resName": "마법석화",
+    "description": "CRIT +5, Critical damage +10%, Physical damage +3% on enemies of all sizes\nWhen refined to +7 or higher, Physical damage +1% on enemies of all sizes (Additional)\nWhen refined to +11 or higher, Physical damage +1% on enemies of all sizes (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<G-Cri>",
+    "script": {
+      "cri": [
+        "5"
+      ],
+      "criDmg": [
+        "10"
+      ],
+      "p_size_all": [
+        "3",
+        "9===1",
+        "11===1"
+      ]
+    }
+  },
+  "310109": {
+    "id": 310109,
+    "aegisName": "Automatic_Orb28",
+    "name": "Automatic Modification Orb (Recovery Force)",
+    "unidName": "Automatic Modification Orb (Recovery Force)",
+    "resName": "마법석화",
+    "description": "MATK +20, Variable Cast Time -10%, Healing Recovery +5%\nWhen refined to +7 or higher, Healing Recovery +5% (Additional)\nWhen refined to +11 or higher, Healing Recovery +5% (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "matk": [
+        "20"
+      ],
+      "vct": [
+        "10"
+      ]
+    }
+  },
+  "310110": {
+    "id": 310110,
+    "aegisName": "Automatic_Orb29",
+    "name": "Automatic Modification Orb (Post-skill Delay)",
+    "unidName": "Automatic Modification Orb (Post-skill Delay)",
+    "resName": "마법석화",
+    "description": "Post-skill delay -4%\nWhen refined to +7 or higher, Post-skill delay -6% (Additional)\nWhen refined to +11 or higher, Post-skill delay -6% (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "acd": [
+        "4",
+        "9===6",
+        "11===6"
+      ]
+    }
+  },
+  "310111": {
+    "id": 310111,
+    "aegisName": "Automatic_Orb30",
+    "name": "Automatic Modification Orb (Fixed Cast Time)",
+    "unidName": "Automatic Modification Orb (Fixed Cast Time)",
+    "resName": "마법석화",
+    "description": "Fixed Cast Time -0.1 sec.\nWhen refined to +7 or higher, Fixed Cast Time -0.2 sec. (Additional)\nWhen refined to +11 or higher, Fixed Cast Time -0.5 sec. (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "fct": [
+        "0.1",
+        "9===0.2",
+        "11===0.5"
+      ]
+    }
+  },
+  "310117": {
+    "id": 310117,
+    "aegisName": "Automatic_Orb36",
+    "name": "Automatic Modification Orb (Power Force)",
+    "unidName": "Automatic Modification Orb (Power Force)",
+    "resName": "마법석화",
+    "description": "ATK +3%, MATK +3%.\nWhen refined to +7 or higher, ATK +3%, MATK +3% (Additional)\nWhen refined to +11 or higher, ATK +4%, MATK +4% (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "atkPercent": [
+        "3",
+        "9===3",
+        "11===4"
+      ],
+      "matkPercent": [
+        "3",
+        "9===3",
+        "11===4"
+      ]
+    }
+  },
+  "310118": {
+    "id": 310118,
+    "aegisName": "Automatic_Orb37",
+    "name": "Automatic Modification Orb (Robust)",
+    "unidName": "Automatic Modification Orb (Robust)",
+    "resName": "마법석화",
+    "description": "MaxHP +2000, MaxSP +300, MaxHP +5%, MaxSP +5%\nWhen refined to +7 or higher, MaxHP +2%, MaxSP +2% (Additional)\nWhen refined to +11 or higher, MaxHP +3%, MaxSP +3% (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "hp": [
+        "2000"
+      ],
+      "sp": [
+        "300"
+      ],
+      "hpPercent": [
+        "5",
+        "9===2",
+        "11===3"
+      ],
+      "spPercent": [
+        "5",
+        "9===2",
+        "11===3"
+      ]
+    }
+  },
+  "310120": {
+    "id": 310120,
+    "aegisName": "Automatic_Orb39",
+    "name": "Automatic Modification Orb (All-Force)",
+    "unidName": "Automatic Modification Orb (All-Force)",
+    "resName": "마법석화",
+    "description": "Melee Physical damage +5%, Long-ranged Physical damage +5%, all elemental Magic damage +5%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "melee": [
+        "5"
+      ],
+      "range": [
+        "5"
+      ],
+      "m_my_element_all": [
+        "5"
+      ]
+    }
+  },
+  "310122": {
+    "id": 310122,
+    "aegisName": "Automatic_Orb41",
+    "name": "Automatic Orb (Spell Buster)",
+    "unidName": "Automatic Orb (Spell Buster)",
+    "resName": "마법석성",
+    "description": "When dealing magic damage, create a 3% chance of casting Enhanced Mana Storm for 10 seconds\nEnhanced Mana Storm: INT +50 and MATK +25% for 10 sec.",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<S-SpellBuster>",
+    "script": {
+      "chance__int": [
+        "50"
+      ],
+      "chance__matkPercent": [
+        "25"
+      ]
+    }
+  },
+  "310123": {
+    "id": 310123,
+    "aegisName": "Automatic_Orb42",
+    "name": "Automatic Orb (Fierce Shooter)",
+    "unidName": "Automatic Orb (Fierce Shooter)",
+    "resName": "마법석성",
+    "description": "When physically attacking, create a 3% chance of casting Enhanced Shooter Under Fire for 10 seconds\nEnhanced Shooter Under Fire: DEX +50 and Long-ranged Physical damage +15% for 10 sec.",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<S-FiringShot>",
+    "script": {
+      "chance__dex": [
+        "50"
+      ],
+      "chance__range": [
+        "15"
+      ]
+    }
+  },
+  "310124": {
+    "id": 310124,
+    "aegisName": "Automatic_Orb43",
+    "name": "Automatic Orb (Overpower)",
+    "unidName": "Automatic Orb (Overpower)",
+    "resName": "마법석성",
+    "description": "When physically attacking, create a 3% chance of casting Enhanced Boiling Fighting Spirit for 10 seconds\nEnhanced Boiling Fighting Spirit: STR +50, ATK +15%, and Melee Physical damage +10% for 10 sec.",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<S-OverPower>",
+    "script": {
+      "chance__str": [
+        "50"
+      ],
+      "chance__atkPercent": [
+        "15"
+      ],
+      "chance__melee": [
+        "10"
+      ]
+    }
+  },
+  "310125": {
+    "id": 310125,
+    "aegisName": "Automatic_Orb44",
+    "name": "Automatic Orb (Fatal Flash)",
+    "unidName": "Automatic Orb (Fatal Flash)",
+    "resName": "마법석성",
+    "description": "When physically attacking, create a 3% chance of casting Enhanced Lethal Speed Maniac for 10 seconds\nEnhanced Lethal Speed Maniac: AGI +50 and Critical Damage +15% for 10 sec.",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<S-FatalFlash>",
+    "script": {
+      "chance__agi": [
+        "50"
+      ],
+      "chance__criDmg": [
+        "15"
+      ]
+    }
+  },
+  "310126": {
+    "id": 310126,
+    "aegisName": "Automatic_Orb45",
+    "name": "Automatic Orb (Lucky Strike)",
+    "unidName": "Automatic Orb (Lucky Strike)",
+    "resName": "마법석성",
+    "description": "When dealing magic damage, create a 3% chance of casting Enhanced Windfall for 10 seconds\nEnhanced Windfall: LUK +50 and all elemental Magic damage +15% for 10 sec.",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<S-LuckyStrike>",
+    "script": {
+      "chance__luk": [
+        "50"
+      ],
+      "chance__m_my_element_all": [
+        "15"
+      ]
+    }
+  },
+  "310127": {
+    "id": 310127,
+    "aegisName": "Automatic_Orb46",
+    "name": "Automatic Orb (Draconic Breath)",
+    "unidName": "Automatic Orb (Draconic Breath)",
+    "resName": "Auto_Orb_Swordman",
+    "description": "Dragon Breath and Dragon Water Breath damage +15%\nWhen refined to +7 or higher, Dragon Breath and Dragon Water Breath damage +3% (Additional)\nWhen refined to +11 or higher, Dragon Breath and Dragon Water Breath damage +7% (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<L-Sight1>",
+    "script": {
+      "Dragon Breath": [
+        "15",
+        "9===3",
+        "11===7"
+      ],
+      "Dragon Breath - WATER": [
+        "15",
+        "9===3",
+        "11===7"
+      ]
+    }
+  },
+  "310128": {
+    "id": 310128,
+    "aegisName": "Automatic_Orb47",
+    "name": "Automatic Orb (Wave Break)",
+    "unidName": "Automatic Orb (Wave Break)",
+    "resName": "Auto_Orb_Swordman",
+    "description": "Sonic Wave and Ignition Break damage +15%\nWhen refined to +7 or higher, Sonic Wave and Ignition Break damage +3% (Additional)\nWhen refined to +11 or higher, Sonic Wave damage +7%, Ignition Break cooldown -0.25 sec.",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<L-Teleport1>",
+    "script": {
+      "Sonic Wave": [
+        "15",
+        "9===3",
+        "11===7"
+      ],
+      "Ignition Break": [
+        "15",
+        "9===3",
+        "11===7"
+      ],
+      "cd__Ignition Break": [
+        "11===0.25"
+      ]
+    }
+  },
+  "310129": {
+    "id": 310129,
+    "aegisName": "Automatic_Orb48",
+    "name": "Automatic Orb (Hundred Spiral)",
+    "unidName": "Automatic Orb (Hundred Spiral)",
+    "resName": "Auto_Orb_Swordman",
+    "description": "Clashing Spiral and Hundred Spears damage +15%\nWhen refined to +7 or higher, Clashing Spiral and Hundred Spears damage +3% (Additional)\nWhen refined to +11 or higher, Clashing Spiral damage +7% (Additional), Hundred Spears cooldown -0.25 sec.",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<L-SpellBreaker1>",
+    "script": {
+      "Clashing Spiral": [
+        "15",
+        "9===3",
+        "11===7"
+      ],
+      "Hundred Spears": [
+        "15",
+        "9===3",
+        "11===7"
+      ],
+      "cd__Hundred Spears": [
+        "11===0.25"
+      ]
+    }
+  },
+  "310130": {
+    "id": 310130,
+    "aegisName": "Automatic_Orb49",
+    "name": "Automatic Orb (Drive Press)",
+    "unidName": "Automatic Orb (Drive Press)",
+    "resName": "Auto_Orb_Swordman",
+    "description": "Earth Drive and Shield Press damage +15%\nWhen refined to +7 or higher, Earth Drive and Shield Press damage +3% (Additional)\nWhen refined to +11 or higher, Earth Drive and Shield Press damage +7% (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<L-Steal1>",
+    "script": {
+      "Earth Drive": [
+        "15",
+        "9===3",
+        "11===7"
+      ],
+      "Shield Press": [
+        "15",
+        "9===3",
+        "11===7"
+      ]
+    }
+  },
+  "310131": {
+    "id": 310131,
+    "aegisName": "Automatic_Orb50",
+    "name": "Automatic Orb (Vanishing Cannon)",
+    "unidName": "Automatic Orb (Vanishing Cannon)",
+    "resName": "Auto_Orb_Swordman",
+    "description": "Vanishing Point and Cannon Spear damage +15%\nWhen refined to +7 or higher, Vanishing Point and Cannon Spear damage +3% (Additional)\nWhen refined to +11 or higher, Vanishing Point and Cannon Spear damage +7% (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<L-SnowFlip1>",
+    "script": {
+      "Vanishing Point": [
+        "15",
+        "9===3",
+        "11===7"
+      ],
+      "Cannon Spear": [
+        "15",
+        "9===3",
+        "11===7"
+      ]
+    }
+  },
+  "310132": {
+    "id": 310132,
+    "aegisName": "Automatic_Orb51",
+    "name": "Automatic Orb (Genesis Gloria)",
+    "unidName": "Automatic Orb (Genesis Gloria)",
+    "resName": "Auto_Orb_Swordman",
+    "description": "Gloria Domini and Genesis Ray damage +15%\nWhen refined to +7 or higher, Gloria Domini and Genesis Ray damage +3% (Additional)\nWhen refined to +11 or higher, Gloria Domini and Genesis Ray damage +7% (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<L-PeonyMamy1>",
+    "script": {
+      "Genesis Ray": [
+        "15",
+        "9===3",
+        "11===7"
+      ],
+      "Gloria Domini": [
+        "15",
+        "9===3",
+        "11===7"
+      ]
+    }
+  },
+  "310133": {
+    "id": 310133,
+    "aegisName": "Automatic_Orb52",
+    "name": "Automatic Orb (Boost Cannon)",
+    "unidName": "Automatic Orb (Boost Cannon)",
+    "resName": "Auto_Orb_Merchant",
+    "description": "Knuckle Boost and Arm Cannon damage +15%\nWhen refined to +7 or higher, Knuckle Boost and Arm Cannon damage +3% (Additional)\nWhen refined to +11 or higher, Knuckle Boost and Arm Cannon damage +7% (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<L-Sadagui1>",
+    "script": {
+      "Knuckle Boost": [
+        "15",
+        "9===3",
+        "11===7"
+      ],
+      "Arm Cannon": [
+        "15",
+        "9===3",
+        "11===7"
+      ]
+    }
+  },
+  "310134": {
+    "id": 310134,
+    "aegisName": "Automatic_Orb53",
+    "name": "Automatic Orb (Ice Flame)",
+    "unidName": "Automatic Orb (Ice Flame)",
+    "resName": "Auto_Orb_Merchant",
+    "description": "Ice Launcher and Flame Launcher damage +15%\nWhen refined to +7 or higher, Ice Launcher and Flame Launcher damage +3% (Additional)\nWhen refined to +11 or higher, Ice Launcher and Flame Launcher damage +7% (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<L-SeuoiaDust1>",
+    "script": {
+      "Cold Slower": [
+        "15",
+        "9===3",
+        "11===7"
+      ],
+      "Flame Launcher": [
+        "15",
+        "9===3",
+        "11===7"
+      ]
+    }
+  },
+  "310135": {
+    "id": 310135,
+    "aegisName": "Automatic_Orb54",
+    "name": "Automatic Orb (Tornado Swing)",
+    "unidName": "Automatic Orb (Tornado Swing)",
+    "resName": "Auto_Orb_Merchant",
+    "description": "Axe Tornado and Power Swing damage +15%\nWhen refined to +7 or higher, Axe Tornado and Power Swing damage +3% (Additional)\nWhen refined to +11 or higher, Axe Tornado and Power Swing damage +7% (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<L-Hiding1>",
+    "script": {
+      "Axe Tornado": [
+        "15",
+        "9===3",
+        "11===7"
+      ],
+      "Power Swing": [
+        "15",
+        "9===3",
+        "11===7"
+      ]
+    }
+  },
+  "310136": {
+    "id": 310136,
+    "aegisName": "Automatic_Orb55",
+    "name": "Automatic Orb (Cannon Tornado)",
+    "unidName": "Automatic Orb (Cannon Tornado)",
+    "resName": "Auto_Orb_Merchant",
+    "description": "Cart Tornado and Cart Cannon damage +15%\nWhen refined to +7 or higher, Cart Tornado and Cart Cannon damage +3% (Additional)\nWhen refined to +11 or higher, Cart Tornado and Cart Cannon damage +7% (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<L-Magnum3>",
+    "script": {
+      "Cart Cannon": [
+        "15",
+        "9===3",
+        "11===7"
+      ],
+      "Cart Tornado": [
+        "15",
+        "9===3",
+        "11===7"
+      ]
+    }
+  },
+  "310137": {
+    "id": 310137,
+    "aegisName": "Automatic_Orb56",
+    "name": "Automatic Orb (Crazy Mandragora)",
+    "unidName": "Automatic Orb (Crazy Mandragora)",
+    "resName": "Auto_Orb_Merchant",
+    "description": "Crazy Vines damage +15%, Mandragora Howling cooldown -0.3 sec.\nWhen refined to +7 or higher, Crazy Vines damage +3% (Additional), Mandragora Howling cooldown -0.3 sec. (Additional)\nWhen refined to +11 or higher, Crazy Vines damage +7% (Additional), Mandragora Howling cooldown -0.4 sec. (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<L-FireBall3>",
+    "script": {
+      "Crazy Weed": [
+        "15",
+        "9===3",
+        "11===7"
+      ],
+      "cd__Mandragora Howling": [
+        "0.3",
+        "9===0.3",
+        "11===0.4"
+      ]
+    }
+  },
+  "310138": {
+    "id": 310138,
+    "aegisName": "Automatic_Orb57",
+    "name": "Automatic Orb (Acid Explosion)",
+    "unidName": "Automatic Orb (Acid Explosion)",
+    "resName": "Auto_Orb_Merchant",
+    "description": "Acid Bomb and Spore Explosion damage +15%\nWhen refined to +7 or higher, Acid Bomb and Spore Explosion damage +3% (Additional)\nWhen refined to +11 or higher, Acid Bomb and Spore Explosion damage +7% (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<L-Heal1>",
+    "script": {
+      "Acid Demonstration": [
+        "15",
+        "9===3",
+        "11===7"
+      ],
+      "Spore Explosion": [
+        "15",
+        "9===3",
+        "11===7"
+      ]
+    }
+  },
+  "310139": {
+    "id": 310139,
+    "aegisName": "Automatic_Orb58",
+    "name": "Automatic Orb (Sonic Impact)",
+    "unidName": "Automatic Orb (Sonic Impact)",
+    "resName": "Auto_Orb_Thief",
+    "description": "Sonic Blow and Cross Impact damage +15%\nWhen refined to +7 or higher, Sonic Blow and Cross Impact damage +3% (Additional)\nWhen refined to +11 or higher, Sonic Blow and Cross Impact damage +7% (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<L-Cure1>",
+    "script": {
+      "Sonic Blow": [
+        "15",
+        "9===3",
+        "11===7"
+      ],
+      "Cross Impact": [
+        "15",
+        "9===3",
+        "11===7"
+      ]
+    }
+  },
+  "310140": {
+    "id": 310140,
+    "aegisName": "Automatic_Orb59",
+    "name": "Automatic Orb (Cutter Slasher)",
+    "unidName": "Automatic Orb (Cutter Slasher)",
+    "resName": "Auto_Orb_Thief",
+    "description": "Cross Ripper Slasher and Rolling Cutter damage +15%\nWhen refined to +7 or higher, Cross Ripper Slasher and Rolling Cutter damage +3% (Additional)\nWhen refined to +11 or higher, Cross Ripper Slasher and Rolling Cutter damage +7% (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<L-Poison3>",
+    "script": {
+      "Cross Ripper Slasher": [
+        "15",
+        "9===3",
+        "11===7"
+      ],
+      "Rolling Cutter": [
+        "15",
+        "9===3",
+        "11===7"
+      ]
+    }
+  },
+  "310141": {
+    "id": 310141,
+    "aegisName": "Automatic_Orb60",
+    "name": "Automatic Orb (Berserk Slash)",
+    "unidName": "Automatic Orb (Berserk Slash)",
+    "resName": "Auto_Orb_Thief",
+    "description": "Soul Destroyer and Counter Slash damage +15%\nWhen refined to +7 or higher, Soul Destroyer and Counter Slash damage +3% (Additional)\nWhen refined to +11 or higher, Soul Destroyer and Counter Slash damage +7% (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<L-Detoxify1>",
+    "script": {
+      "Soul Destroyer": [
+        "15",
+        "9===3",
+        "11===7"
+      ],
+      "Counter Slash": [
+        "15",
+        "9===3",
+        "11===7"
+      ]
+    }
+  },
+  "310142": {
+    "id": 310142,
+    "aegisName": "Automatic_Orb61",
+    "name": "Automatic Orb (Fatal Raid)",
+    "unidName": "Automatic Orb (Fatal Raid)",
+    "resName": "Auto_Orb_Thief",
+    "description": "Fatal Menace and Sightless Mind damage +15%\nWhen refined to +7 or higher, Fatal Menace and Sightless Mind damage +3% (Additional)\nWhen refined to +11 or higher, Fatal Menace and Sightless Mind damage +7% (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<L-ThrowStone1>",
+    "script": {
+      "Fatal Manace": [
+        "15",
+        "9===3",
+        "11===7"
+      ],
+      "Sightless Mind": [
+        "15",
+        "9===3",
+        "11===7"
+      ]
+    }
+  },
+  "310143": {
+    "id": 310143,
+    "aegisName": "Automatic_Orb62",
+    "name": "Automatic Orb (Shadow Spell)",
+    "unidName": "Automatic Orb (Shadow Spell)",
+    "resName": "Auto_Orb_Thief",
+    "description": "All elemental Magic damage +15%\nWhen refined to +7 or higher, All elemental Magic damage +3% (Additional)\nWhen refined to +11 or higher, All elemental Magic damage +7% (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<L-AbsorbSpirits1>",
+    "script": {
+      "m_my_element_all": [
+        "15",
+        "9===3",
+        "11===7"
+      ]
+    }
+  },
+  "310144": {
+    "id": 310144,
+    "aegisName": "Automatic_Orb63",
+    "name": "Automatic Orb (Angle Shot)",
+    "unidName": "Automatic Orb (Angle Shot)",
+    "resName": "Auto_Orb_Thief",
+    "description": "Triangle Shot damage +15%, Long-ranged Physical damage +10%\nWhen refined to +7 or higher, Triangle Shot damage +3% (Additional)\nWhen refined to +11 or higher, Triangle Shot damage +7% (Additional), Long-ranged Physical damage +5% (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<L-Bash3>",
+    "script": {
+      "Triangle Shot": [
+        "15",
+        "9===3",
+        "11===7"
+      ],
+      "range": [
+        "10",
+        "11===5"
+      ]
+    }
+  },
+  "310145": {
+    "id": 310145,
+    "aegisName": "Automatic_Orb64",
+    "name": "Automatic Orb (Crimson Strain)",
+    "unidName": "Automatic Orb (Crimson Strain)",
+    "resName": "Auto_Orb_Magician",
+    "description": "Crimson Rock and Earth Strain damage +15%\nWhen refined to +7 or higher, Crimson Rock and Earth Strain damage +3% (Additional)\nWhen refined to +11 or higher, Crimson Rock and Earth Strain damage +7% (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<L-Cloaking1>",
+    "script": {
+      "Crimson Rock": [
+        "15",
+        "9===3",
+        "11===7"
+      ],
+      "Earth Strain": [
+        "15",
+        "9===3",
+        "11===7"
+      ]
+    }
+  },
+  "310146": {
+    "id": 310146,
+    "aegisName": "Automatic_Orb65",
+    "name": "Automatic Orb (Jack Lightning)",
+    "unidName": "Automatic Orb (Jack Lightning)",
+    "resName": "Auto_Orb_Magician",
+    "description": "Jack Frost and Chain Lightning damage +15%\nWhen refined to +7 or higher, Jack Frost and Chain Lightning damage +3% (Additional)\nWhen refined to +11 or higher, Jack Frost and Chain Lightning damage +7% (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<L-CastCancel1>",
+    "script": {
+      "Jack Frost": [
+        "15",
+        "9===3",
+        "11===7"
+      ],
+      "Chain Lightning": [
+        "15",
+        "9===3",
+        "11===7"
+      ]
+    }
+  },
+  "310147": {
+    "id": 310147,
+    "aegisName": "Automatic_Orb66",
+    "name": "Automatic Orb (Comet Vortex)",
+    "unidName": "Automatic Orb (Comet Vortex)",
+    "resName": "Auto_Orb_Magician",
+    "description": "Comet and Tetra Vortex damage +15%\nWhen refined to +7 or higher, Comet and Tetra Vortex damage +3% (Additional)\nWhen refined to +11 or higher, Comet and Tetra Vortex damage +7% (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<L-FireBolt3>",
+    "script": {
+      "Comet": [
+        "15",
+        "9===3",
+        "11===7"
+      ],
+      "Tetra Vortex": [
+        "15",
+        "9===3",
+        "11===7"
+      ]
+    }
+  },
+  "310148": {
+    "id": 310148,
+    "aegisName": "Automatic_Orb67",
+    "name": "Automatic Orb (Double Bolt)",
+    "unidName": "Automatic Orb (Double Bolt)",
+    "resName": "Auto_Orb_Magician",
+    "description": "Fire/Cold/Lightning Bolt damage +15%\nWhen refined to +7 or higher, Fire/Cold/Lightning Bolt damage +3% (Additional)\nWhen refined to +11 or higher, Fire/Cold/Lightning Bolt damage +7% (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<L-ColdBolt3>",
+    "script": {
+      "Fire Bolt": [
+        "15",
+        "9===3",
+        "11===7"
+      ],
+      "Cold Bolt": [
+        "15",
+        "9===3",
+        "11===7"
+      ],
+      "Lightning Bolt": [
+        "15",
+        "9===3",
+        "11===7"
+      ]
+    }
+  },
+  "310149": {
+    "id": 310149,
+    "aegisName": "Automatic_Orb68",
+    "name": "Automatic Orb (Warmer Wave)",
+    "unidName": "Automatic Orb (Warmer Wave)",
+    "resName": "Auto_Orb_Magician",
+    "description": "Psychic Wave damage +15%, Warmer cooldown -1 sec.\nWhen refined to +7 or higher, Psychic Wave damage +3% (Additional), Warmer cooldown -2 sec. (Additional)\nWhen refined to +11 or higher, Psychic Wave damage +7% (Additional), Warmer cooldown -4 sec. (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<L-LightningBolt3>",
+    "script": {
+      "Psychic Wave": [
+        "15",
+        "9===3",
+        "11===7"
+      ],
+      "cd__Warmer": [
+        "1",
+        "9===2",
+        "11===4"
+      ]
+    }
+  },
+  "310150": {
+    "id": 310150,
+    "aegisName": "Automatic_Orb69",
+    "name": "Automatic Orb (Diamond Grave)",
+    "unidName": "Automatic Orb (Diamond Grave)",
+    "resName": "Auto_Orb_Magician",
+    "description": "Diamond Dust and Earth Grave damage +15%\nWhen refined to +7 or higher, Diamond Dust and Earth Grave damage +3% (Additional)\nWhen refined to +11 or higher, Diamond Dust and Earth Grave damage +7% (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<L-EarthSpike3>",
+    "script": {
+      "Diamond Dust": [
+        "15",
+        "9===3",
+        "11===7"
+      ],
+      "Earth Grave": [
+        "15",
+        "9===3",
+        "11===7"
+      ]
+    }
+  },
+  "310151": {
+    "id": 310151,
+    "aegisName": "Automatic_Orb70",
+    "name": "Automatic Orb (Magnusmus)",
+    "unidName": "Automatic Orb (Magnusmus)",
+    "resName": "Auto_Orb_Priest",
+    "description": "Magnus Exorcismus and Adoramus damage +15%\nWhen refined to +7 or higher, Magnus Exorcismus and Adoramus damage +3% (Additional)\nWhen refined to +11 or higher, Magnus Exorcismus and Adoramus damage +7% (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<L-Angelus1>",
+    "script": {
+      "Magnus Exorcismus": [
+        "15",
+        "9===3",
+        "11===7"
+      ],
+      "Adoramus": [
+        "15",
+        "9===3",
+        "11===7"
+      ]
+    }
+  },
+  "310152": {
+    "id": 310152,
+    "aegisName": "Automatic_Orb71",
+    "name": "Automatic Orb (Holy Judex)",
+    "unidName": "Automatic Orb (Holy Judex)",
+    "resName": "Auto_Orb_Priest",
+    "description": "Holy Light and Judex damage +15%\nWhen refined to +7 or higher, Holy Light and Judex damage +3% (Additional)\nWhen refined to +11 or higher, Holy Light and Judex damage +7% (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<L-StoneCurse3>",
+    "script": {
+      "Holy Light": [
+        "15",
+        "9===3",
+        "11===7"
+      ],
+      "Judex": [
+        "15",
+        "9===3",
+        "11===7"
+      ]
+    }
+  },
+  "310153": {
+    "id": 310153,
+    "aegisName": "Automatic_Orb72",
+    "name": "Automatic Orb (Duplelica)",
+    "unidName": "Automatic Orb (Duplelica)",
+    "resName": "Auto_Orb_Priest",
+    "description": "Duple Light damage +15%, Basilica cooldown -2 sec.\nWhen refined to +7 or higher, Duple Light damage +3% (Additional), Basilica cooldown -3 sec. (Additional)\nWhen refined to +11 or higher, Duple Light damage +7% (Additional), Basilica cooldown -5 sec. (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<L-FrostDiver3>",
+    "script": {
+      "Duple Light": [
+        "15",
+        "9===3",
+        "11===7"
+      ]
+    }
+  },
+  "310154": {
+    "id": 310154,
+    "aegisName": "Automatic_Orb73",
+    "name": "Automatic Orb (Fallen Tiger)",
+    "unidName": "Automatic Orb (Fallen Tiger)",
+    "resName": "Auto_Orb_Priest",
+    "description": "Tiger Cannon and Fallen Empire damage +15%\nWhen refined to +7 or higher, Tiger Cannon and Fallen Empire damage +3% (Additional)\nWhen refined to +11 or higher, Tiger Cannon and Fallen Empire damage +7% (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<L-Meteor3>",
+    "script": {
+      "Tiger Cannon": [
+        "15",
+        "9===3",
+        "11===7"
+      ],
+      "Fallen Empire": [
+        "15",
+        "9===3",
+        "11===7"
+      ]
+    }
+  },
+  "310155": {
+    "id": 310155,
+    "aegisName": "Automatic_Orb74",
+    "name": "Automatic Orb (Rampage Arrow)",
+    "unidName": "Automatic Orb (Rampage Arrow)",
+    "resName": "Auto_Orb_Priest",
+    "description": "Rampage Blast and Knuckle Arrow damage +15%\nWhen refined to +7 or higher, Rampage Blast and Knuckle Arrow damage +3% (Additional)\nWhen refined to +11 or higher, Rampage Blast and Knuckle Arrow damage +7% (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<L-Estimation1>",
+    "script": {
+      "Rampage Blast": [
+        "15",
+        "9===3",
+        "11===7"
+      ],
+      "Knuckle Arrow": [
+        "15",
+        "9===3",
+        "11===7"
+      ]
+    }
+  },
+  "310156": {
+    "id": 310156,
+    "aegisName": "Automatic_Orb75",
+    "name": "Automatic Orb (Raging Crush)",
+    "unidName": "Automatic Orb (Raging Crush)",
+    "resName": "Auto_Orb_Priest",
+    "description": "Raging Thrust and Chain Crush Combo damage +15%\nWhen refined to +7 or higher, Raging Thrust and Chain Crush Combo damage +3% (Additional)\nWhen refined to +11 or higher, Raging Thrust and Chain Crush Combo damage +7% (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<L-FrostNova2>",
+    "script": {
+      "Combo Finish": [
+        "15",
+        "9===3",
+        "11===7"
+      ],
+      "Chain Crush Combo": [
+        "15",
+        "9===3",
+        "11===7"
+      ]
+    }
+  },
+  "310157": {
+    "id": 310157,
+    "aegisName": "Automatic_Orb76",
+    "name": "Automatic Orb (Cluster)",
+    "unidName": "Automatic Orb (Cluster)",
+    "resName": "Auto_Orb_Archer",
+    "description": "Bomb Cluster damage +15%\nWhen refined to +7 or higher, Bomb Cluster damage +3% (Additional)\nWhen refined to +11 or higher, Bomb Cluster damage +7% (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<L-DecAgi1>",
+    "script": {
+      "Bomb Cluster": [
+        "15",
+        "9===3",
+        "11===7"
+      ]
+    }
+  },
+  "310158": {
+    "id": 310158,
+    "aegisName": "Automatic_Orb77",
+    "name": "Automatic Orb (Breeze Shooting)",
+    "unidName": "Automatic Orb (Breeze Shooting)",
+    "resName": "Auto_Orb_Archer",
+    "description": "Focused Arrow Strike damage +15%, Critical damage +10%\nWhen refined to +7 or higher, Focused Arrow Strike damage +3% (Additional)\nWhen refined to +11 or higher, Focused Arrow Strike damage +7%, Critical damage +5% (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<L-Identify1>",
+    "script": {
+      "Focused Arrow Strike": [
+        "15",
+        "9===3",
+        "11===7"
+      ],
+      "criDmg": [
+        "10",
+        "11===5"
+      ]
+    }
+  },
+  "310159": {
+    "id": 310159,
+    "aegisName": "Automatic_Orb78",
+    "name": "Automatic Orb (Aimed Storm)",
+    "unidName": "Automatic Orb (Aimed Storm)",
+    "resName": "Auto_Orb_Archer",
+    "description": "Aimed Bolt and Arrow Storm damage +15%\nWhen refined to +7 or higher, Aimed Bolt and Arrow Storm damage +3% (Additional)\nWhen refined to +11 or higher, Aimed Bolt and Arrow Storm damage +7% (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<L-Loud1>",
+    "script": {
+      "Aimed Bolt": [
+        "15",
+        "9===3",
+        "11===7"
+      ],
+      "Arrow Storm": [
+        "15",
+        "9===3",
+        "11===7"
+      ]
+    }
+  },
+  "310160": {
+    "id": 310160,
+    "aegisName": "Automatic_Orb79",
+    "name": "Automatic Orb (Metallic Echo)",
+    "unidName": "Automatic Orb (Metallic Echo)",
+    "resName": "Auto_Orb_Archer",
+    "description": "Metallic Sound and Great Echo damage +15%\nWhen refined to +7 or higher, Metallic Sound and Great Echo damage +3% (Additional)\nWhen refined to +11 or higher, Metallic Sound and Great Echo damage +7% (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<L-SoulStrike3>",
+    "script": {
+      "Metalic Sound": [
+        "15",
+        "9===3",
+        "11===7"
+      ],
+      "Great Echo": [
+        "15",
+        "9===3",
+        "11===7"
+      ]
+    }
+  },
+  "310161": {
+    "id": 310161,
+    "aegisName": "Automatic_Orb80",
+    "name": "Automatic Orb (Reverberation)",
+    "unidName": "Automatic Orb (Reverberation)",
+    "resName": "Auto_Orb_Archer",
+    "description": "Reverberation damage +15%\nWhen refined to +7 or higher, Reverberation damage +3% (Additional)\nWhen refined to +11 or higher, Reverberation damage +7% (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<L-CallSpirits2>",
+    "script": {
+      "Reverberation": [
+        "15",
+        "9===3",
+        "11===7"
+      ]
+    }
+  },
+  "310162": {
+    "id": 310162,
+    "aegisName": "Automatic_Orb81",
+    "name": "Automatic Orb (Vulcan Severe)",
+    "unidName": "Automatic Orb (Vulcan Severe)",
+    "resName": "Auto_Orb_Archer",
+    "description": "Arrow Vulcan and Severe Rainstorm damage +15%\nWhen refined to +7 or higher, Arrow Vulcan and Severe Rainstorm damage +3% (Additional)\nWhen refined to +11 or higher, Arrow Vulcan and Severe Rainstorm damage +7% (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<L-CloseConfine1>",
+    "script": {
+      "Arrow Vulcan": [
+        "15",
+        "9===3",
+        "11===7"
+      ],
+      "Severe Rainstorm": [
+        "15",
+        "9===3",
+        "11===7"
+      ]
+    }
+  },
+  "310163": {
+    "id": 310163,
+    "aegisName": "Automatic_Orb82",
+    "name": "Automatic Orb (Blaze Explosion)",
+    "unidName": "Automatic Orb (Blaze Explosion)",
+    "resName": "Auto_Orb_Ex1",
+    "description": "Blaze Kick and Solar Explosion damage +15%\nWhen refined to +7 or higher, Blaze Kick and Solar Explosion damage +3% (Additional)\nWhen refined to +11 or higher, Blaze Kick and Solar Explosion damage When refined to +7 or higher,% (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<L-AutoGuard3>",
+    "script": {
+      "Blaze Kick": [
+        "15",
+        "9===3",
+        "11===7"
+      ],
+      "Solar Explosion": [
+        "15",
+        "9===3",
+        "11===7"
+      ]
+    }
+  },
+  "310164": {
+    "id": 310164,
+    "aegisName": "Automatic_Orb83",
+    "name": "Automatic Orb (Moon Kick)",
+    "unidName": "Automatic Orb (Moon Kick)",
+    "resName": "Auto_Orb_Ex1",
+    "description": "New Moon Kick and Full Moon Kick damage +15%\nWhen refined to +7 or higher, New Moon Kick and Full Moon Kick damage +3% (Additional)\nWhen refined to +11 or higher, New Moon Kick and Full Moon Kick damage +7% (Additional), Critical damage +5%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<L-PotionPitcher3>",
+    "script": {
+      "New Moon Kick": [
+        "15",
+        "9===3",
+        "11===7"
+      ],
+      "Full Moon Kick": [
+        "15",
+        "9===3",
+        "11===7"
+      ],
+      "criDmg": [
+        "11===5"
+      ]
+    }
+  },
+  "310165": {
+    "id": 310165,
+    "aegisName": "Automatic_Orb84",
+    "name": "Automatic Orb (Falling Flash)",
+    "unidName": "Automatic Orb (Falling Flash)",
+    "resName": "Auto_Orb_Ex1",
+    "description": "Flash Kick and Falling Stars damage +15%\nWhen refined to +7 or higher, Flash Kick and Falling Stars damage +3% (Additional)\nWhen refined to +11 or higher, Flash Kick and Falling Stars damage +7% (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<L-MagicPower5>",
+    "script": {
+      "Flash Kick": [
+        "15",
+        "9===3",
+        "11===7"
+      ],
+      "Falling Stars": [
+        "15",
+        "9===3",
+        "11===7"
+      ]
+    }
+  },
+  "310166": {
+    "id": 310166,
+    "aegisName": "Automatic_Orb85",
+    "name": "Automatic Orb (Eswoo)",
+    "unidName": "Automatic Orb (Eswoo)",
+    "resName": "Auto_Orb_Ex1",
+    "description": "Esma and Eswoo damage +15%\nWhen refined to +7 or higher, Esma and Eswoo damage +3% (Additional)\nWhen refined to +11 or higher, Esma and Eswoo damage +7% (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<L-Gloria1>",
+    "script": {
+      "Esma": [
+        "15",
+        "9===3",
+        "11===7"
+      ],
+      "Eswhoo": [
+        "15",
+        "9===3",
+        "11===7"
+      ]
+    }
+  },
+  "310167": {
+    "id": 310167,
+    "aegisName": "Automatic_Orb86",
+    "name": "Automatic Orb (Espa)",
+    "unidName": "Automatic Orb (Espa)",
+    "resName": "Auto_Orb_Ex1",
+    "description": "Espa damage +15%\nWhen refined to +7 or higher, Espa damage +3% (Additional)\nWhen refined to +11 or higher, Espa damage +7% (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "Espa": [
+        "15",
+        "9===3",
+        "11===7"
+      ]
+    }
+  },
+  "310168": {
+    "id": 310168,
+    "aegisName": "Automatic_Orb87",
+    "name": "Automatic Orb (Curse Explosion)",
+    "unidName": "Automatic Orb (Curse Explosion)",
+    "resName": "Auto_Orb_Ex1",
+    "description": "Curse Explosion damage +15%\nWhen refined to +7 or higher, Curse Explosion damage +3% (Additional)\nWhen refined to +11 or higher, Curse Explosion damage +7% (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "Curse Explosion": [
+        "15",
+        "9===3",
+        "11===7"
+      ]
+    }
+  },
+  "310169": {
+    "id": 310169,
+    "aegisName": "Automatic_Orb88",
+    "name": "Automatic Orb (Death Hammer Dance)",
+    "unidName": "Automatic Orb (Death Hammer Dance)",
+    "resName": "Auto_Orb_Ex2",
+    "description": "Desperado, Fire Dance, God's Hammer damage +15%\nWhen refined to +7 or higher, Desperado, Fire Dance, God's Hammer damage +3% (Additional)\nWhen refined to +11 or higher, Desperado, Fire Dance, God's Hammer damage +7% (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "Desperado": [
+        "15",
+        "9===3",
+        "11===7"
+      ],
+      "Fire Dance": [
+        "15",
+        "9===3",
+        "11===7"
+      ],
+      "God's Hammer": [
+        "15",
+        "9===3",
+        "11===7"
+      ]
+    }
+  },
+  "310170": {
+    "id": 310170,
+    "aegisName": "Automatic_Orb89",
+    "name": "Automatic Orb (Fire Howling Tail)",
+    "unidName": "Automatic Orb (Fire Howling Tail)",
+    "resName": "Auto_Orb_Ex2",
+    "description": "Fire Rain, Howling Mine, Dragon Tail damage +15%\nWhen refined to +7 or higher, Fire Rain, Howling Mine, Dragon Tail damage +3% (Additional)\nWhen refined to +11 or higher, Fire Rain, Howling Mine, Dragon Tail damage +7% (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "Fire Rain": [
+        "15",
+        "9===3",
+        "11===7"
+      ],
+      "Howling Mine": [
+        "15",
+        "9===3",
+        "11===7"
+      ],
+      "Dragon Tail": [
+        "15",
+        "9===3",
+        "11===7"
+      ]
+    }
+  },
+  "310171": {
+    "id": 310171,
+    "aegisName": "Automatic_Orb90",
+    "name": "Automatic Orb (Storm Buster Trip)",
+    "unidName": "Automatic Orb (Storm Buster Trip)",
+    "resName": "Auto_Orb_Ex2",
+    "description": "Shattering Storm, Vanishing Buster, Round Trip damage +15%\nWhen refined to +7 or higher, Shattering Storm, Vanishing Buster, Round Trip damage +3% (Additional)\nWhen refined to +11 or higher, Shattering Storm, Vanishing Buster, Round Trip damage +7% (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "Shatter Storm": [
+        "15",
+        "9===3",
+        "11===7"
+      ],
+      "Vanishing Buster": [
+        "15",
+        "9===3",
+        "11===7"
+      ],
+      "Round Trip": [
+        "15",
+        "9===3",
+        "11===7"
+      ]
+    }
+  },
+  "310172": {
+    "id": 310172,
+    "aegisName": "Automatic_Orb91",
+    "name": "Automatic Orb (Petal Spear Blade)",
+    "unidName": "Automatic Orb (Petal Spear Blade)",
+    "resName": "Auto_Orb_Ex2",
+    "description": "Flaming Petals, Freezing Spear, Wind Blade damage +15%\nWhen refined to +7 or higher, Flaming Petals, Freezing Spear, Wind Blade damage +3% (Additional)\nWhen refined to +11 or higher, Flaming Petals, Freezing Spear, Wind Blade damage +7% (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "Flaming Petals": [
+        "15",
+        "9===3",
+        "11===7"
+      ],
+      "Freezing Spear": [
+        "15",
+        "9===3",
+        "11===7"
+      ],
+      "Wind Blade": [
+        "15",
+        "9===3",
+        "11===7"
+      ]
+    }
+  },
+  "310173": {
+    "id": 310173,
+    "aegisName": "Automatic_Orb92",
+    "name": "Automatic Orb (Cross Slash)",
+    "unidName": "Automatic Orb (Cross Slash)",
+    "resName": "Auto_Orb_Ex2",
+    "description": "Cross Slash damage +15%\nWhen refined to +7 or higher, Cross Slash damage +3% (Additional)\nWhen refined to +11 or higher, Cross Slash damage +7% (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "Cross Slash": [
+        "15",
+        "9===3",
+        "11===7"
+      ]
+    }
+  },
+  "310174": {
+    "id": 310174,
+    "aegisName": "Automatic_Orb93",
+    "name": "Automatic Orb (Dragon Draft Wind)",
+    "unidName": "Automatic Orb (Dragon Draft Wind)",
+    "resName": "Auto_Orb_Ex2",
+    "description": "Exploding Dragon, Snow Flake Draft, First Wind damage +15%\nWhen refined to +7 or higher, Exploding Dragon, Snow Flake Draft, First Wind damage +3% (Additional)\nWhen refined to +11 or higher, Exploding Dragon, Snow Flake Draft, First Wind damage +7% (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "Exploding Dragon": [
+        "15",
+        "9===3",
+        "11===7"
+      ],
+      "Snow Flake Draft": [
+        "15",
+        "9===3",
+        "11===7"
+      ],
+      "First Wind": [
+        "15",
+        "9===3",
+        "11===7"
+      ]
+    }
+  },
+  "310176": {
+    "id": 310176,
+    "aegisName": "Automatic_Orb95",
+    "name": "Automatic Orb (Power of Land)",
+    "unidName": "Automatic Orb (Power of Land)",
+    "resName": "Auto_Orb_Summoner",
+    "description": "Silvervine Stem Spear and Catnip Meteor damage +15%\nWhen refined to +7 or higher, Silvervine Stem Spear and Catnip Meteor damage +3% (Additional)\nWhen refined to +11 or higher, Silvervine Stem Spear and Catnip Meteor damage +7% (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "Silvervine Stem Spear": [
+        "15",
+        "9===3",
+        "11===7"
+      ],
+      "Catnip Meteor": [
+        "15",
+        "9===3",
+        "11===7"
+      ]
+    }
+  },
+  "310177": {
+    "id": 310177,
+    "aegisName": "Automatic_Orb96",
+    "name": "Automatic Orb (Power of Life)",
+    "unidName": "Automatic Orb (Power of Life)",
+    "resName": "Auto_Orb_Summoner",
+    "description": "Picky Peck and Lunatic Carrot Beat damage +15%\nWhen refined to +7 or higher, Picky Peck and Lunatic Carrot Beat damage +3% (Additional)\nWhen refined to +11 or higher, Picky Peck and Lunatic Carrot Beat damage +7% (Additional)",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": 0,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "Picky Peck": [
+        "15",
+        "9===3",
+        "11===7"
+      ],
+      "Lunatic Carrot Beat": [
+        "15",
+        "9===3",
+        "11===7"
+      ]
+    }
+  },
   "310180": {
     "id": 310180,
     "aegisName": "Warlock_Robe2",
@@ -56141,6 +58904,73 @@
       ],
       "acd": [
         "LEARN_SKILL[Recognized Spell==5]15"
+      ]
+    }
+  },
+  "490147": {
+    "id": 490147,
+    "aegisName": "Anniversary_Ring_1TH",
+    "name": "1st Anniversary Ring",
+    "unidName": "1st Anniversary Ring",
+    "resName": "Ring_Of_Nature",
+    "description": "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้^000000\nแหวนที่บ่งบอกถึงผู้ครอบครองนี้ได้ผ่านกิจกรรมเก็บเลเวลถึง 175 ฉลองครบรอบ 1 ปี Ragnarok Online Gravity Game Tech  \nAll stat +2\nMDEF + 5\nATK + 25\nMATK +25\n\nเมื่อสวมใส่ร่วมกับ Temporal [Stat Str] Boots ตั้งแต่ +9 ขึ้นไป  \nหากมีค่า Str พื้นฐานตั้งแต่ 120 ขึ้นไป  \nATK +8%\nเพิ่มพลังโจมตีทุกขนาดขึ้น 8% \n\n\nเมื่อผู้เล่นสวมใส่กับ Temporal [Stat Agi] Boots ตั้งแต่ +9 ขึ้นไป  \nหากมีค่า Agi พื้นฐานตั้งแต่ 120 ขึ้นไป  \nASPD +4%\nCRI Damage +15%\n\nเมื่อผู้เล่นสวมใส่กับ Temporal [Stat Vit] Boots ตั้งแต่ +9 ขึ้นไป  \nหากมีค่า Vit พื้นฐานตั้งแต่ 120 ขึ้นไป  \nMHP +8%\nลด Delay หลังใช้การใช้สกิล 8%  \n\nเมื่อผู้เล่นสวมใส่กับ Temporal [Stat Int] Boots ตั้งแต่ +9 ขึ้นไป  \nหากมีค่า Int พื้นฐานตั้งแต่ 120 ขึ้นไป\nMATK +8%\nเพิ่มความเสียหายการโจมตีทางเวททุกธาตุขึ้น 8% \n\nเมื่อผู้เล่นสวมใส่กับ Temporal [Stat Dex] Boots ตั้งแต่ +9 ขึ้นไป  \nหากมีค่า Dex พื้นฐานตั้งแต่ 120 ขึ้นไป \nATK +8%\nเพิ่ม Damage การโจมตีระยะไกลขึ้น 5%  \n\nเมื่อผู้เล่นสวมใส่กับ Temporal [Stat Luk] Boots ตั้งแต่ +9 ขึ้นไป  \nหากมีค่า Luk พื้นฐานตั้งแต่ 120 ขึ้นไป  \nCRI Damage +10%\nASPD +1\n\nประเภท : ^777777Accessory(Left)^000000  พลังป้องกัน : ^7777775^000000\nน้ำหนัก : ^7777771^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 511,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 5,
+    "weight": 1,
+    "requiredLevel": 99,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "allStatus": [
+        "2"
+      ],
+      "mdef": [
+        "5"
+      ],
+      "atk": [
+        "25"
+      ],
+      "matk": [
+        "25"
+      ],
+      "atkPercent": [
+        "EQUIP[Temporal Str Boots||Temporal Str Boot||Modified Str Boots||Modified Str Boot]REFINE[boot==9]SUM[str==120]===8",
+        "EQUIP[Temporal Dex Boots||Temporal Dex Boot||Modified Dex Boots||Modified Dex Boot]REFINE[boot==9]SUM[dex==120]===8"
+      ],
+      "p_size_all": [
+        "EQUIP[Temporal Str Boots||Temporal Str Boot||Modified Str Boots||Modified Str Boot]REFINE[boot==9]SUM[str==120]===8"
+      ],
+      "aspdPercent": [
+        "EQUIP[Temporal Agi Boots||Temporal Agi Boot||Modified Agi Boots||Modified Agi Boot]REFINE[boot==9]SUM[agi==120]===4"
+      ],
+      "criDmg": [
+        "EQUIP[Temporal Agi Boots||Temporal Agi Boot||Modified Agi Boots||Modified Agi Boot]REFINE[boot==9]SUM[agi==120]===15",
+        "EQUIP[Temporal Luk Boots||Temporal Luk Boot||Modified Luk Boots||Modified Luk Boot]REFINE[boot==9]SUM[luk==120]===10"
+      ],
+      "hpPercent": [
+        "EQUIP[Temporal Vit Boots||Temporal Vit Boot||Modified Vit Boots||Modified Vit Boot]REFINE[boot==9]SUM[vit==120]===8"
+      ],
+      "acd": [
+        "EQUIP[Temporal Vit Boots||Temporal Vit Boot||Modified Vit Boots||Modified Vit Boot]REFINE[boot==9]SUM[vit==120]===8"
+      ],
+      "matkPercent": [
+        "EQUIP[Temporal Int Boots||Temporal Int Boot||Modified Int Boots||Modified Int Boot]REFINE[boot==9]SUM[int==120]===8"
+      ],
+      "m_my_element_all": [
+        "EQUIP[Temporal Int Boots||Temporal Int Boot||Modified Int Boots||Modified Int Boot]REFINE[boot==9]SUM[int==120]===8"
+      ],
+      "range": [
+        "EQUIP[Temporal Dex Boots||Temporal Dex Boot||Modified Dex Boots||Modified Dex Boot]REFINE[boot==9]SUM[dex==120]===5"
+      ],
+      "aspd": [
+        "EQUIP[Temporal Luk Boots||Temporal Luk Boot||Modified Luk Boots||Modified Luk Boot]REFINE[boot==9]SUM[luk==120]===1"
       ]
     }
   },
