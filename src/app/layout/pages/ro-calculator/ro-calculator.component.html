@@ -346,6 +346,13 @@
                     Variable Cast Time:
                     <span class="font-semibold px-1 summary_stat_matk">{{ totalSummary?.vct || 0 }}</span>
                   </div>
+                  <div class="col-12">
+                    Dex2 Int1:
+                    <span class="font-semibold px-1 summary_stat_yellow">{{ totalSummary?.calc?.dex2int1 || 0 }}</span>
+                    <span [hidden]="totalSummary?.calc?.to530 <= 0">{{
+                      '( อีก ' + totalSummary?.calc?.to530 + ' )'
+                    }}</span>
+                  </div>
                   <div class="col-12" *ngIf="!env.production">
                     <div class="grid grid-nogutter">
                       <div class="col-12">
@@ -412,13 +419,13 @@
               </ng-template>
             </p-dropdown>
           </div>
-          <div class="col-8" style="min-width: 100px">
+          <div class="col-8 item_label_element_converter" style="min-width: 100px">
             <p-dropdown
               [options]="propertyAtkList"
               [(ngModel)]="model.propertyAtk"
               [disabled]="!model.weapon"
               [showClear]="true"
-              placeholder="Element convert"
+              placeholder="เคลือบ"
               (onChange)="onPropertyAtkChange()"
             >
               <ng-template let-item pTemplate="selectedItem">

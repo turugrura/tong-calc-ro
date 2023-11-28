@@ -3836,6 +3836,36 @@
       ]
     }
   },
+  "4302": {
+    "id": 4302,
+    "aegisName": "Tao_Gunka_Card",
+    "name": "Tao Gunka Card",
+    "unidName": "Tao Gunka Card",
+    "resName": "이름없는카드",
+    "description": "Max HP + 100%, DEF - 50 และMDEF - 50\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Armor^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 16,
+    "cardPrefix": "of High Risk",
+    "script": {
+      "hpPercent": [
+        "100"
+      ],
+      "def": [
+        "-50"
+      ],
+      "mdef": [
+        "-50"
+      ]
+    }
+  },
   "4305": {
     "id": 4305,
     "aegisName": "Turtle_General_Card",
@@ -4316,10 +4346,10 @@
         "10"
       ],
       "m_race_demihuman": [
-        "10"
+        "50"
       ],
       "m_race_angel": [
-        "10"
+        "50"
       ],
       "spPercent": [
         "-50"
@@ -4458,6 +4488,37 @@
       "p_race_demon": [
         "20",
         "15===10"
+      ]
+    }
+  },
+  "4493": {
+    "id": 4493,
+    "aegisName": "Sealed_Tao_Card",
+    "name": "Sealed Tao Gunka Card",
+    "unidName": "Sealed Tao Gunka Card",
+    "resName": "이름없는카드",
+    "description": "Max HP + 50%, DEF และ MDEF - 50\nหากอัพเกรดตั้งแต่ระดับ +15 ขึ้นไป MaxHP + 75%, DEF และ MDEF - 50\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Armor^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 16,
+    "cardPrefix": "Half High Risk",
+    "script": {
+      "hpPercent": [
+        "50",
+        "15===25"
+      ],
+      "def": [
+        "-50"
+      ],
+      "mdef": [
+        "-50"
       ]
     }
   },
@@ -5196,6 +5257,33 @@
     "script": {
       "cri": [
         "100"
+      ]
+    }
+  },
+  "4651": {
+    "id": 4651,
+    "aegisName": "IFN_Tao_Gunka_Card",
+    "name": "Infinite Tao Gunka Card",
+    "unidName": "Infinite Tao Gunka Card",
+    "resName": "이름없는카드",
+    "description": "MHP + 10000\nAGI - 10\nประเภท : ^777777Card^000000\nใส่กับ: ^777777Armor^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 16,
+    "cardPrefix": "King of",
+    "script": {
+      "hp": [
+        "10000"
+      ],
+      "agi": [
+        "-10"
       ]
     }
   },
@@ -8445,6 +8533,54 @@
       ]
     }
   },
+  "4861": {
+    "id": 4861,
+    "aegisName": "MHP1",
+    "name": "MHP+1%",
+    "unidName": "MHP+1%",
+    "resName": "마력석_빨강",
+    "description": "MHP + 1%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<MaxHP1>",
+    "script": {
+      "hpPercent": [
+        "1"
+      ]
+    }
+  },
+  "4862": {
+    "id": 4862,
+    "aegisName": "MHP2",
+    "name": "MHP+2%",
+    "unidName": "MHP+2%",
+    "resName": "마력석_빨강",
+    "description": "MHP + 2%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<MaxHP2>",
+    "script": {
+      "hpPercent": [
+        "2"
+      ]
+    }
+  },
   "4863": {
     "id": 4863,
     "aegisName": "Fatal1",
@@ -8545,6 +8681,54 @@
         "10"
       ],
       "cri": [
+        "4"
+      ]
+    }
+  },
+  "4867": {
+    "id": 4867,
+    "aegisName": "MHP3",
+    "name": "MHP+3%",
+    "unidName": "MHP+3%",
+    "resName": "마력석_빨강",
+    "description": "MHP + 3%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<MaxHP3>",
+    "script": {
+      "hpPercent": [
+        "3"
+      ]
+    }
+  },
+  "4868": {
+    "id": 4868,
+    "aegisName": "MHP4",
+    "name": "MHP+4%",
+    "unidName": "MHP+4%",
+    "resName": "마력석_빨강",
+    "description": "MHP + 4%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<MaxHP4>",
+    "script": {
+      "hpPercent": [
         "4"
       ]
     }
@@ -26284,19 +26468,19 @@
         "EQUIP[Sura Shadow Weapon]20"
       ],
       "allStatus": [
-        "EQUPIP[Acolyte Shadow Earring&&Acolyte Shadow Pendant&&Monk Shadow Armor&&Monk Shadow Shoes&&Sura Shadow Weapon]10"
+        "EQUIP[Acolyte Shadow Earring&&Acolyte Shadow Pendant&&Monk Shadow Armor&&Monk Shadow Shoes&&Sura Shadow Weapon]10"
       ],
       "hpPercent": [
-        "EQUPIP[Acolyte Shadow Earring&&Acolyte Shadow Pendant&&Monk Shadow Armor&&Monk Shadow Shoes&&Sura Shadow Weapon]5"
+        "EQUIP[Acolyte Shadow Earring&&Acolyte Shadow Pendant&&Monk Shadow Armor&&Monk Shadow Shoes&&Sura Shadow Weapon]5"
       ],
       "spPercent": [
-        "EQUPIP[Acolyte Shadow Earring&&Acolyte Shadow Pendant&&Monk Shadow Armor&&Monk Shadow Shoes&&Sura Shadow Weapon]5"
+        "EQUIP[Acolyte Shadow Earring&&Acolyte Shadow Pendant&&Monk Shadow Armor&&Monk Shadow Shoes&&Sura Shadow Weapon]5"
       ],
       "p_pene_class_normal": [
-        "EQUPIP[Acolyte Shadow Earring&&Acolyte Shadow Pendant&&Monk Shadow Armor&&Monk Shadow Shoes&&Sura Shadow Weapon]50"
+        "EQUIP[Acolyte Shadow Earring&&Acolyte Shadow Pendant&&Monk Shadow Armor&&Monk Shadow Shoes&&Sura Shadow Weapon]50"
       ],
       "m_pene_class_normal": [
-        "EQUPIP[Acolyte Shadow Earring&&Acolyte Shadow Pendant&&Monk Shadow Armor&&Monk Shadow Shoes&&Sura Shadow Weapon]50"
+        "EQUIP[Acolyte Shadow Earring&&Acolyte Shadow Pendant&&Monk Shadow Armor&&Monk Shadow Shoes&&Sura Shadow Weapon]50"
       ]
     }
   },
@@ -29842,6 +30026,106 @@
       "cd__Rampage Blast": [
         "0.2",
         "3---0.1"
+      ]
+    }
+  },
+  "24485": {
+    "id": 24485,
+    "aegisName": "S_TigerCannon_Weapon",
+    "name": "Tiger Cannon Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 3%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาดขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาดขึ้นอีก 4%\nเมื่อสวมใส่ Tiger Cannon Shadow Weapon/Pendant/Earring ร่วมกัน,\nเพิ่ม MHP/MSP % เท่ากับครึ่งหนึ่งของค่าอัพเกรดรวมกัน\nเมื่อสวมใส่ร่วมกับ Sura Shadow Shield,\nเพิกเฉยต่อพลังป้องกันทางกายภาพของทุกเผ่ายกเว้น Player 40% และเพิ่ม Damage สกิล Tiger Cannon % เท่ากับครึ่งหนึ่งของค่าอัพเกรด Tiger Cannon Shadow Weapon และ Sura Shadow Shield รวมกัน\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Sura^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Sura"
+    ],
+    "script": {
+      "p_size_all": [
+        "3",
+        "7===3",
+        "9===4"
+      ],
+      "hpPercent": [
+        "EQUIP[Tiger Cannon Shadow Pendant&&Tiger Cannon Shadow Earring]REFINE[shadowWeapon,shadowEarring,shadowPendant==2]---1"
+      ],
+      "spPercent": [
+        "EQUIP[Tiger Cannon Shadow Pendant&&Tiger Cannon Shadow Earring]REFINE[shadowWeapon,shadowEarring,shadowPendant==2]---1"
+      ],
+      "p_pene_race_all": [
+        "EQUIP[Sura Shadow Shield]40"
+      ],
+      "Tiger Cannon": [
+        "EQUIP[Sura Shadow Shield]REFINE[shadowWeapon,shadowShield==2]---1"
+      ],
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1"
+      ]
+    }
+  },
+  "24486": {
+    "id": 24486,
+    "aegisName": "S_Tigercannon_Pendant",
+    "name": "Tiger Cannon Shadow Pendant",
+    "unidName": "Shadow Pendant",
+    "resName": "펜던트쉐도우",
+    "description": "สร้อยคอศักดิ์สิทธิ์ที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา\nเพิ่ม Damage สกิล Tiger Cannon 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage สกิล Tiger Cannon ขึ้นอีก 2%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Pendant ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Sura^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 530,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Sura"
+    ],
+    "script": {
+      "Tiger Cannon": [
+        "5",
+        "2---2"
+      ]
+    }
+  },
+  "24487": {
+    "id": 24487,
+    "aegisName": "S_Tigercannon_Earing",
+    "name": "Tiger Cannon Shadow Earring",
+    "unidName": "Shadow Earring",
+    "resName": "이어링쉐도우",
+    "description": "ต่างหูมงคลที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา\nลดปริมาณการใช้ SP ของสกิล Tiger Cannon 2%\nทุก ๆ การอัพเกรด 2 ขั้น ลดปริมาณการใช้ SP สกิล Tiger Cannon ลงอีก 1%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Earring ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Sura^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 529,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Sura"
+    ],
+    "script": {
+      "spPercent__Tiger Cannon": [
+        "2",
+        "2---1"
       ]
     }
   },
@@ -54910,12 +55194,12 @@
     "name": "Goral Crown [1]",
     "unidName": "Headgear",
     "resName": "백양궁왕관",
-    "description": "A crown made of red genstones with shaped curved horns and a white mane.\nAtk + 20 per 2 refine rate.\nIf upgrade level is +7 or higher, ASPD +10%.\nIf upgrade level is +9 or higher, increase long ranged physical damage by 15%.\nIf refine rate is 11 or higher, increases physical damage against all size enemies by 10%.\n\nWhen equipped with Volar,\nincreases critical damage by 10%, increases Ignition Break damage by 12% per refine rate of weapon.\nWhen equipped with Vernan,\nreduces delay after skill by 10%, increases Sonic Wave damage by 10% per refine rate of weapon.\nWhen equipped with Argen Blanco,\nreduces cooldown of Hundred Spear by 0.5 seconds, increases Hundred Spear damage by 10% per refine rate of weapon.\nClass: ^777777Headgear^000000 Defense: ^77777710^000000\nLocation: ^777777Upper ^000000 Weight: ^77777710^000000\nRequired Lv: ^777777170^000000\nJobs: ^777777Rune Knight^000000",
+    "description": "Atk + 20 per 2 refine rate.\nIf refine rate is 7 or higher, increases attack speed (reduces delay after attack by 10%).\nIf refine rate is 9 or higher, increase long ranged physical damage by 15%.\nIf refine rate is 11 or higher, increases physical damage against all size enemies by 10%.\n\nWhen equipped with Volar, increases critical damage by 10%,\nincreases Ignition Break damage by 12% per refine rate of weapon.\n\nWhen equipped with Vernan, reduces global cooldown by 10%,\nincreases Sonic Wave damage by 10% per refine rate of weapon.\n\nWhen equipped with Argen Blanco, reduces skill cooldown of Hundred Spear by 0.5 seconds,\nincreases Hundred Spear damage by 10% per refine rate of weapon.\nClass: ^777777Headgear^000000 Defense: ^77777710^000000\nLocation: ^777777Upper ^000000 Weight: ^77777710^000000\nRequired Level: ^777777170^000000\nJobs: ^777777Rune Knight^000000",
     "slots": 1,
     "itemTypeId": 2,
     "itemSubTypeId": 512,
-    "itemLevel": 1,
-    "attack": 0,
+    "itemLevel": null,
+    "attack": null,
     "defense": 10,
     "weight": 10,
     "requiredLevel": 170,
@@ -54967,8 +55251,8 @@
     "slots": 1,
     "itemTypeId": 2,
     "itemSubTypeId": 512,
-    "itemLevel": 1,
-    "attack": 0,
+    "itemLevel": null,
+    "attack": null,
     "defense": 10,
     "weight": 10,
     "requiredLevel": 170,
@@ -55035,8 +55319,8 @@
     "slots": 1,
     "itemTypeId": 2,
     "itemSubTypeId": 512,
-    "itemLevel": 1,
-    "attack": 0,
+    "itemLevel": null,
+    "attack": null,
     "defense": 10,
     "weight": 10,
     "requiredLevel": 170,
@@ -55091,8 +55375,8 @@
     "slots": 1,
     "itemTypeId": 2,
     "itemSubTypeId": 512,
-    "itemLevel": 1,
-    "attack": 0,
+    "itemLevel": null,
+    "attack": null,
     "defense": 10,
     "weight": 10,
     "requiredLevel": 170,
@@ -55209,8 +55493,8 @@
     "slots": 1,
     "itemTypeId": 2,
     "itemSubTypeId": 512,
-    "itemLevel": 1,
-    "attack": 0,
+    "itemLevel": null,
+    "attack": null,
     "defense": 10,
     "weight": 10,
     "requiredLevel": 170,
@@ -55256,8 +55540,8 @@
     "slots": 1,
     "itemTypeId": 2,
     "itemSubTypeId": 512,
-    "itemLevel": 1,
-    "attack": 0,
+    "itemLevel": null,
+    "attack": null,
     "defense": 10,
     "weight": 10,
     "requiredLevel": 170,
@@ -55304,7 +55588,7 @@
     "itemTypeId": 2,
     "itemSubTypeId": 512,
     "itemLevel": null,
-    "attack": 0,
+    "attack": null,
     "defense": 10,
     "weight": 10,
     "requiredLevel": 170,
@@ -55355,7 +55639,7 @@
     "itemTypeId": 2,
     "itemSubTypeId": 512,
     "itemLevel": null,
-    "attack": 0,
+    "attack": null,
     "defense": 10,
     "weight": 10,
     "requiredLevel": 170,
@@ -55413,7 +55697,7 @@
     "itemTypeId": 2,
     "itemSubTypeId": 512,
     "itemLevel": null,
-    "attack": 0,
+    "attack": null,
     "defense": 10,
     "weight": 10,
     "requiredLevel": 170,
@@ -55474,7 +55758,7 @@
     "itemTypeId": 2,
     "itemSubTypeId": 512,
     "itemLevel": null,
-    "attack": 0,
+    "attack": null,
     "defense": 10,
     "weight": 10,
     "requiredLevel": 170,
@@ -55523,7 +55807,7 @@
     "itemTypeId": 2,
     "itemSubTypeId": 512,
     "itemLevel": null,
-    "attack": 0,
+    "attack": null,
     "defense": 10,
     "weight": 10,
     "requiredLevel": 170,
@@ -55583,7 +55867,7 @@
     "itemTypeId": 2,
     "itemSubTypeId": 512,
     "itemLevel": null,
-    "attack": 0,
+    "attack": null,
     "defense": 10,
     "weight": 10,
     "requiredLevel": 170,

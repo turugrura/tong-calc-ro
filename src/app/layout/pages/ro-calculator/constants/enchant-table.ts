@@ -113,6 +113,12 @@ enum RuneVit {
   _2 = 'Neev_VIT_2',
   _3 = 'Neev_VIT_3',
 }
+enum MHP {
+  _1 = 'MHP1',
+  _2 = 'MHP2',
+  _3 = 'MHP3',
+  _4 = 'MHP4',
+}
 enum Str {
   _1 = 'Strength1',
   _2 = 'Strength2',
@@ -532,7 +538,8 @@ const allRunes = [
   RuneVit._2,
   RuneVit._3,
 ];
-const illusionDun = [RuneStr._1, RuneStr._2, RuneDex._1, RuneDex._2, RuneInt._1, RuneInt._2, RuneLuk._1, RuneLuk._2, RuneAgi._1, RuneAgi._2, RuneVit._1, RuneVit._2];
+const mhp14 = [MHP._1, MHP._2, MHP._3, MHP._4];
+const illusionDun = [...mhp14, RuneStr._1, RuneStr._2, RuneDex._1, RuneDex._2, RuneInt._1, RuneInt._2, RuneLuk._1, RuneLuk._2, RuneAgi._1, RuneAgi._2, RuneVit._1, RuneVit._2];
 
 const specials = ['S_Str', 'S_Agi', 'S_Vital', 'S_Int', 'S_Dex', 'S_Luck'];
 
@@ -804,14 +811,14 @@ export const EnchantTable: EntTable[] = [
   { name: 'Asura_Bandage', enchants: [null, null, edda3, edda4] },
   { name: 'Platinum_Dagger', enchants: [null, null, edda3, edda4] },
 
-  { name: 'Headband_Of_Power_IL', enchants: [null, null, BaseState._1_4, illusionDun] },
-  { name: 'Apple_Of_Archer_IL', enchants: [null, null, BaseState._1_4, illusionDun] },
-  { name: 'Fancy_Flower_IL', enchants: [null, null, BaseState._1_4, illusionDun] },
-  { name: 'Goibne_Helmet_IL', enchants: [null, null, BaseState._1_4, illusionDun] },
-  { name: 'Herald_Of_GOD_IL', enchants: [null, null, BaseState._1_4, illusionDun] },
-  { name: 'Boots_IL', enchants: [null, null, BaseState._1_4, illusionDun] },
-  { name: 'Shoes_IL', enchants: [null, null, BaseState._1_4, illusionDun] },
-  { name: 'Muffler_IL', enchants: [null, null, BaseState._1_4, illusionDun] },
+  { name: 'Headband_Of_Power_IL', enchants: [null, null, [...mhp14, ...BaseState._1_4], illusionDun] },
+  { name: 'Apple_Of_Archer_IL', enchants: [null, null, [...mhp14, ...BaseState._1_4], illusionDun] },
+  { name: 'Fancy_Flower_IL', enchants: [null, null, [...mhp14, ...BaseState._1_4], illusionDun] },
+  { name: 'Goibne_Helmet_IL', enchants: [null, null, [...mhp14, ...BaseState._1_4], illusionDun] },
+  { name: 'Herald_Of_GOD_IL', enchants: [null, null, [...mhp14, ...BaseState._1_4], illusionDun] },
+  { name: 'Boots_IL', enchants: [null, null, [...mhp14, ...BaseState._1_4], illusionDun] },
+  { name: 'Shoes_IL', enchants: [null, null, [...mhp14, ...BaseState._1_4], illusionDun] },
+  { name: 'Muffler_IL', enchants: [null, null, [...mhp14, ...BaseState._1_4], illusionDun] },
 
   { name: 'Robe_Of_Flattery', enchants: [null, null, allRunes, allRunes] },
   { name: 'Robe_Of_Vituperation', enchants: [null, null, allRunes, allRunes] },

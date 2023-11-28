@@ -151,6 +151,11 @@
   color: var(--blue-300);
 }
 
+.summary_stat_yellow {
+  background-color: #121212;
+  color: var(--yellow-300);
+}
+
 .summary_stat_def {
   /* background-color: var(--surface-0); */
   background-color: #121212;
@@ -260,6 +265,12 @@
   /* background-color: var(--surface-0); */
   background-color: #121212;
   color: var(--pink-200);
+}
+
+:host ::ng-deep .item_label_weapon_main .item_label_element_converter .p-inputtext {
+  /* background-color: var(--surface-0); */
+  background-color: #121212;
+  color: var(--yellow-300);
 }
 
 :host ::ng-deep .item_label_leftWeapon_main .p-dropdown-label,

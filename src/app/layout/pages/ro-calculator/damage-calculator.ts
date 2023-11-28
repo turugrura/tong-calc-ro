@@ -887,9 +887,9 @@ export class DamageCalculator {
       basicDps,
     };
 
-    const [, skillName, skillLevelStr] = skillValue?.match(/(.+)==(\d+)/) ?? [];
+    const [, _skillName, skillLevelStr] = skillValue?.match(/(.+)==(\d+)/) ?? [];
     const skillData = this._class.atkSkills.find((a) => a.value === skillValue);
-    const isValidSkill = !!skillName && !!skillLevelStr && typeof skillData?.formula === 'function';
+    const isValidSkill = !!_skillName && !!skillLevelStr && typeof skillData?.formula === 'function';
 
     if (!isValidSkill) return { basicDmg, misc, basicAspd };
 
@@ -903,6 +903,7 @@ export class DamageCalculator {
       isHit100,
       isIgnoreDef = false,
       totalHit = 1,
+      name: skillName,
       baseCriPercentage = 1,
     } = skillData;
     const _baseSkillDamage =

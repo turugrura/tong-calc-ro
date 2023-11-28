@@ -1513,6 +1513,8 @@ export class Calculator {
       calc: {
         maxHp: this.maxHp,
         maxSp: this.maxSp,
+        dex2int1: this.skillFrequency.sumDex2Int1 || 0,
+        to530: 530 - (this.skillFrequency.sumDex2Int1 || 0),
         def: this.def,
         softDef: this.softDef,
         mdef: this.mdef,

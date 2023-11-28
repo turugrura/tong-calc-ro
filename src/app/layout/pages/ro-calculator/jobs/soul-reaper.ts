@@ -94,7 +94,6 @@ export class SoulReaper extends CharacterBase {
       vct: 0.5,
       cd: 0,
       isMatk: true,
-      levelList: [{ label: 'Lv 10', value: 'Espa==10' }],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
@@ -111,7 +110,6 @@ export class SoulReaper extends CharacterBase {
       vct: 0.5,
       cd: 2,
       isMatk: true,
-      levelList: [{ label: 'Lv 10', value: 'Eswhoo==10' }],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
@@ -126,10 +124,9 @@ export class SoulReaper extends CharacterBase {
       acd: 0,
       fct: 1,
       vct: 0.5,
-      cd: 2,
+      cd: 1,
       isMatk: true,
       element: ElementType.Dark,
-      levelList: [{ label: 'Lv 10', value: 'Curse Explosion==10' }],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
