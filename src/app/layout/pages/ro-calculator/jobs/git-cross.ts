@@ -9,6 +9,7 @@ import {
 } from './_character-base.abstract';
 import { InfoForClass } from '../models/info-for-class.model';
 import { DarkClaw } from '../constants/share-active-skills';
+import { ElementType } from '../constants/element-type.const';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   '1': [0, 1, 0, 0, 0, 0],
@@ -85,6 +86,36 @@ export class GitCross extends CharacterBase {
   protected initialStatusPoint = 100;
   protected classNames = ['Guillotine Cross', 'Guillotine Cross Class', 'Guillotine Cross Cls', 'Only 3rd Cls'];
   protected _atkSkillList: AtkSkillModel[] = [
+    {
+      label: 'Soul Destroyer Lv10',
+      name: 'Soul Destroyer',
+      value: 'Soul Destroyer==10',
+      acd: 2.8,
+      fct: 0.25,
+      vct: 0.25,
+      cd: 0,
+      isHDefToSDef: true,
+      isHit100: true,
+      isDevMode: true,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { skillLevel } = input;
+
+        return 350 + skillLevel * 50;
+      },
+      part2: {
+        label: '',
+        hit: 1,
+        element: ElementType.Neutral,
+        isMatk: true,
+        isIncludeMain: true,
+        isMelee: false,
+        formula: (input: AtkSkillFormulaInput): number => {
+          const { skillLevel } = input;
+
+          return 350 + skillLevel * 50;
+        },
+      },
+    },
     {
       label: 'Rolling Cutter Lv5',
       name: 'Rolling Cutter',

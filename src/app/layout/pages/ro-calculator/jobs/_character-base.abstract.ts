@@ -158,6 +158,7 @@ export abstract class CharacterBase {
 
   get activeSkills() {
     const sortedSkill = this._activeSkillList.map((a) => {
+      if (a.inputType === 'selectButton') return a;
       const sortedDropdown = a.dropdown.sort(sortSkill);
 
       return {
