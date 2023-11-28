@@ -115,6 +115,21 @@ export class Oboro extends CharacterBase {
       element: ElementType.Water,
       isMatk: true,
       totalHit: 12,
+      formula: (): number => {
+        return 70;
+      },
+    },
+    {
+      label: 'Freezing Spear Lv10 (in Watery Evasion)',
+      name: 'Freezing Spear',
+      value: 'Freezing Spear Water==10',
+      acd: 0,
+      fct: 1.4,
+      vct: 5.6,
+      cd: 0,
+      element: ElementType.Water,
+      isMatk: true,
+      totalHit: 12,
       formula: (input: AtkSkillFormulaInput): number => {
         const { skillLevel } = input;
 
@@ -174,10 +189,10 @@ export class Oboro extends CharacterBase {
       label: 'First Wind Lv5',
       name: 'First Wind',
       value: 'First Wind==5',
-      acd: 0.5,
-      fct: 0.8,
-      vct: 2.5,
-      cd: 0.3,
+      acd: 0,
+      fct: 0.3,
+      vct: 1.2,
+      cd: 0,
       element: ElementType.Wind,
       isMatk: true,
       hit: 5,
