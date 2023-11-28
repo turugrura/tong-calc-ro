@@ -36,6 +36,16 @@ export class AppTopBarComponent {
 
   updates: { v: string; date: string; logs: string[] }[] = [
     {
+      v: 'V1.7.3',
+      date: '28-11-2566',
+      logs: [
+        'Fixed reported bugs',
+        'Display dex*2 + int*1 on stat summary',
+        'Added Automatic sets (17.2)',
+        'Added requested items',
+      ],
+    },
+    {
       v: 'V1.7.2',
       date: '27-11-2566',
       logs: ['Fixed reported bugs', 'Added Archbishop offensive skill (Improved Adoramus)', 'Added requested items'],

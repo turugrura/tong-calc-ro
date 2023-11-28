@@ -42380,7 +42380,7 @@
     "script": {
       "acd": [
         "1",
-        "EQUIP[Reload Stone (Middle)]===2"
+        "EQUIP[Reload Stone (Middle)&&Reload Stone (Lower)]===2"
       ]
     }
   },
