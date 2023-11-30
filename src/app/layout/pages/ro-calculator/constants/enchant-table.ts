@@ -198,6 +198,9 @@ enum Acute {
   _5 = 'Acute5',
   _6 = 'Acute6',
   _7 = 'Acute7',
+  _8 = 'Acute8',
+  _9 = 'Acute9',
+  _10 = 'Acute10',
 }
 enum Mettle {
   _2 = 'Mettle2',
@@ -206,6 +209,9 @@ enum Mettle {
   _5 = 'Mettle5',
   _6 = 'Mettle6',
   _7 = 'Mettle7',
+  _8 = 'Mettle8',
+  _9 = 'Mettle9',
+  _10 = 'Mettle10',
 }
 enum MasterArc {
   _2 = 'MasterArcher2',
@@ -214,6 +220,9 @@ enum MasterArc {
   _5 = 'MasterArcher5',
   _6 = 'MasterArcher6',
   _7 = 'MasterArcher7',
+  _8 = 'MasterArcher8',
+  _9 = 'MasterArcher9',
+  _10 = 'MasterArcher10',
 }
 enum MagicEess {
   _2 = 'MagicEessence2',
@@ -222,6 +231,9 @@ enum MagicEess {
   _5 = 'MagicEessence5',
   _6 = 'MagicEessence6',
   _7 = 'MagicEessence7',
+  _8 = 'MagicEessence8',
+  _9 = 'MagicEessence9',
+  _10 = 'MagicEessence10',
 }
 enum Adamatine {
   _2 = 'Adamatine2',
@@ -230,6 +242,9 @@ enum Adamatine {
   _5 = 'Adamatine5',
   _6 = 'Adamatine6',
   _7 = 'Adamatine7',
+  _8 = 'Adamatine8',
+  _9 = 'Adamatine9',
+  _10 = 'Adamatine10',
 }
 enum Tenacity {
   _2 = 'Tenacity2',
@@ -238,6 +253,9 @@ enum Tenacity {
   _5 = 'Tenacity5',
   _6 = 'Tenacity6',
   _7 = 'Tenacity7',
+  _8 = 'Tenacity8',
+  _9 = 'Tenacity9',
+  _10 = 'Tenacity10',
 }
 
 const statEnums = [Str, Int, Dex, Agi, Vit, Luk];
@@ -300,6 +318,7 @@ const fs13 = [FS._1, FS._2, FS._3];
 const fs23 = [FS._2, FS._3];
 const fs35 = [FS._3, FS._4, FS._5];
 const fs36 = [FS._3, FS._4, FS._5, FS._6];
+const fs68 = [FS._6, FS._7, FS._8];
 const fs410 = [FS._4, FS._5, FS._6, FS._7, FS._8, FS._9, FS._10];
 
 const sh13 = [Sharp._1, Sharp._2, Sharp._3];
@@ -314,6 +333,7 @@ const ea13 = [EA._1, EA._2, EA._3];
 const ea15 = [EA._1, EA._2, EA._3, EA._4, EA._5];
 const ea23 = [EA._2, EA._3];
 const ea25 = [EA._2, EA._3, EA._4, EA._5];
+const ea35 = [EA._3, EA._4, EA._5];
 const ea410 = [EA._4, EA._5, EA._6, EA._7, EA._8, EA._9, EA._10];
 
 const sp23 = [Spell._2, Spell._3];
@@ -451,32 +471,47 @@ const labHead2 = [
   Acute._5,
   Acute._6,
   Acute._7,
+  Acute._8,
+  Acute._9,
+  Acute._10,
   Mettle._2,
   Mettle._3,
   Mettle._4,
   Mettle._5,
   Mettle._6,
   Mettle._7,
+  Mettle._8,
+  Mettle._9,
+  Mettle._10,
   MasterArc._2,
   MasterArc._3,
   MasterArc._4,
   MasterArc._5,
   MasterArc._6,
   MasterArc._7,
+  MasterArc._8,
+  MasterArc._9,
+  MasterArc._10,
   MagicEess._2,
   MagicEess._3,
   MagicEess._4,
   MagicEess._5,
   MagicEess._6,
   MagicEess._7,
+  MagicEess._8,
+  MagicEess._9,
+  MagicEess._10,
   Adamatine._2,
   Adamatine._3,
   Adamatine._4,
   Adamatine._5,
   Adamatine._6,
   Adamatine._7,
+  Adamatine._8,
+  Adamatine._9,
+  Adamatine._10,
 ];
-const bioHead2 = [...labHead2, Tenacity._2, Tenacity._3, Tenacity._4, Tenacity._5, Tenacity._6, Tenacity._7];
+const bioHead2 = [...labHead2, Tenacity._2, Tenacity._3, Tenacity._4, Tenacity._5, Tenacity._6, Tenacity._7, Tenacity._8, Tenacity._9, Tenacity._10];
 
 const tempHead4 = [Str._1, Str._2, Str._3, Str._4, Int._1, Int._2, Int._3, Int._4, Vit._1, Vit._2, Vit._3, Vit._4, Luk._1, Luk._2, Luk._3, Luk._4];
 const tempHead3 = [
@@ -587,8 +622,8 @@ const odin3 = [Cri._7, Cri._10, ...createBaseStat(7, 8)];
 const odin4 = [...soutanes, ...specialBonus, Cri._10, ...createBaseStat(7, 8)];
 
 const infityEnt4 = [...ea13, ...delay13, ...aspd13, ...critical24, ...fatal13, ...matkP35, ...BaseState._3];
-
 const wing4 = [...ea23, ...fs23, ...sp23, ...sh23, ...matk12, ...specials, ...base12];
+const subject = [...BaseState._5, ...fs68, ...ea35, ...sp46, ...delay13];
 
 export const EnchantTable: EntTable[] = [
   { name: 'Lush_Rose', enchants: [null, null, BaseState._1_3, toyFactory] },
@@ -647,6 +682,10 @@ export const EnchantTable: EntTable[] = [
   { name: 'Racing_C_Doram', enchants: [null, ['Racing_E_Doram1', 'Racing_E_Doram2', 'Racing_E_Doram3', ...racing3rd], BaseState._1_4, BaseState._1_3] },
   { name: 'Racing_C_Star', enchants: [null, ['Racing_E_Star1', 'Racing_E_Star2', 'Racing_E_Star3', ...racing3rd], BaseState._1_4, BaseState._1_3] },
   { name: 'Racing_C_Soul', enchants: [null, ['Racing_E_Soul1', 'Racing_E_Soul2', 'Racing_E_Soul3', ...racing3rd], BaseState._1_4, BaseState._1_3] },
+
+  { name: 'Subject_CapeRange_TH', enchants: [null, subject, subject, subject] },
+  { name: 'Subject_CapeMagic_TH', enchants: [null, subject, subject, subject] },
+  { name: 'Subject_CapeMelee_TH', enchants: [null, subject, subject, subject] },
 
   { name: 'Illusion_Armor_A', enchants: [null, illusionArmor, illusionArmor, illusionArmor] },
   { name: 'Illusion_Armor_B', enchants: [null, illusionArmor, illusionArmor, illusionArmor] },

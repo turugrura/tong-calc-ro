@@ -1224,6 +1224,44 @@
       ]
     }
   },
+  "1862": {
+    "id": 1862,
+    "aegisName": "Burning_Knuckle_OS",
+    "name": "Burning Knuckle-OS [2]",
+    "unidName": "Knuckle",
+    "resName": "Burning_Knuckle_OS",
+    "description": "สนับมือสีม่วงที่ทำให้รู้สึกถึงบางสิ่งกำลังเดือดพล่าน\nเมื่อทำการโจมตี จะทำให้เป้าหมายทุกข์ทรมานราวกับถูกไฟเผา\nATK + 3%\nเมื่ออัปเกรดถึงขั้น 7 เพิ่ม ASPD 7%\nเมื่ออัปเกรดถึงขั้น 9 เพิ่ม Damage สกิล Rampage Blast 15%\nเมื่ออัปเกรดถึงขั้น 11 เพิ่ม Damage ต่อศัตรูขนาดกลางและขนาดใหญ่ 20%\n^ffffff_^000000\nประเภท : ^777777Knuckle^000000 พลังโจมตี : ^777777175^000000\nน้ำหนัก : ^77777790^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777130^000000\nอาชีพที่ใส่ได้ : ^777777Sura^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 268,
+    "itemLevel": 4,
+    "attack": 175,
+    "defense": null,
+    "weight": 90,
+    "requiredLevel": 130,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Sura"
+    ],
+    "script": {
+      "atkPercent": [
+        "3"
+      ],
+      "aspdPercent": [
+        "7===7"
+      ],
+      "Rampage Blast": [
+        "9===15"
+      ],
+      "p_size_m": [
+        "11===20"
+      ],
+      "p_size_l": [
+        "11===20"
+      ]
+    }
+  },
   "1865": {
     "id": 1865,
     "aegisName": "Combo_Fist",
@@ -4599,6 +4637,30 @@
       ]
     }
   },
+  "4514": {
+    "id": 4514,
+    "aegisName": "Pom_Spider_Card",
+    "name": "Pom Spider Card",
+    "unidName": "Pom Spider Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่มพลังการโจมตีทางกายภาพ 20% ต่อมอนสเตอร์เผ่า Undead\nประเภท : ^777777Card^000000\nบริเวณที่สวมใส่ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Exorcism",
+    "script": {
+      "p_race_undead": [
+        "20"
+      ]
+    }
+  },
   "4529": {
     "id": 4529,
     "aegisName": "Cruel_Coelacanth_Card",
@@ -5367,6 +5429,32 @@
         "5",
         "7===3",
         "9===2"
+      ]
+    }
+  },
+  "4670": {
+    "id": 4670,
+    "aegisName": "Fru_Pom_Spider_Card",
+    "name": "Fruit Pom Spider Card",
+    "unidName": "Fruit Pom Spider Card",
+    "resName": "이름없는카드",
+    "description": "[เพิ่มความแรงในการโจมตีเวทย์แก่มอนสเตอร์ธาตุ Fire +3%\nเมื่อ Refine ระดับ 7 ขึ้นไป\nเพิ่มความแรงในการโจมตีเวทย์แก่มอนสเตอร์ธาตุ Fire +5%\nเมื่อ Refine ระดับ 9 ขึ้นไป\n[เพิ่มความแรงในการโจมตีเวทย์แก่มอนสเตอร์ธาตุ Fire +7%\nประเภท : ^777777Card^000000\nใส่กับ :  ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Blaze",
+    "script": {
+      "m_element_fire": [
+        "3",
+        "7===5",
+        "9===7"
       ]
     }
   },
@@ -17092,14 +17180,14 @@
     ],
     "script": {
       "p_size_all": [
-        "EQUIP[Tengu Crow Mask]1",
-        "EQUIP[Tengu Crow Mask]str:108===2",
-        "EQUIP[Tengu Crow Mask]str:120===3"
+        "EQUIP[Crow Tengu Mask]1",
+        "EQUIP[Crow Tengu Mask]str:108===2",
+        "EQUIP[Crow Tengu Mask]str:120===3"
       ],
       "range": [
-        "EQUIP[Tengu Crow Mask]1",
-        "EQUIP[Tengu Crow Mask]str:108===1",
-        "EQUIP[Tengu Crow Mask]str:120===1"
+        "EQUIP[Crow Tengu Mask]1",
+        "EQUIP[Crow Tengu Mask]str:108===1",
+        "EQUIP[Crow Tengu Mask]str:120===1"
       ]
     }
   },
@@ -26363,20 +26451,20 @@
     "script": {
       "hpPercent": [
         "3",
-        "EQUIP[Geneticist Shadow Weapon]2",
-        "EQUIP[Geneticist Shadow Weapon&&Alchemist Shadow Shoes&&Alchemist Shadow Armor&&Merchant Shadow Earring&&Merchant Shadow Pendant]5"
+        "EQUIP[Geneticist Weapon Shadow]2",
+        "EQUIP[Geneticist Weapon Shadow&&Alchemist Shadow Shoes&&Alchemist Shadow Armor&&Merchant Shadow Earring&&Merchant Shadow Pendant]5"
       ],
       "cd__Cart Tornado": [
-        "EQUIP[Geneticist Shadow Weapon]1"
+        "EQUIP[Geneticist Weapon Shadow]1"
       ],
       "vct__Cart Boost": [
-        "EQUIP[Geneticist Shadow Weapon]100"
+        "EQUIP[Geneticist Weapon Shadow]100"
       ],
       "spPercent": [
-        "EQUIP[Geneticist Shadow Weapon&&Alchemist Shadow Shoes&&Alchemist Shadow Armor&&Merchant Shadow Earring&&Merchant Shadow Pendant]5"
+        "EQUIP[Geneticist Weapon Shadow&&Alchemist Shadow Shoes&&Alchemist Shadow Armor&&Merchant Shadow Earring&&Merchant Shadow Pendant]5"
       ],
       "allStatus": [
-        "EQUIP[Geneticist Shadow Weapon&&Alchemist Shadow Shoes&&Alchemist Shadow Armor&&Merchant Shadow Earring&&Merchant Shadow Pendant]10"
+        "EQUIP[Geneticist Weapon Shadow&&Alchemist Shadow Shoes&&Alchemist Shadow Armor&&Merchant Shadow Earring&&Merchant Shadow Pendant]10"
       ],
       "def": [
         "LEARN_SKILL[Cart Tornado==10]1---10",
@@ -26384,10 +26472,10 @@
         "LEARN_SKILL[Cart Boost==5]1---5"
       ],
       "p_pene_class_normal": [
-        "EQUIP[Geneticist Shadow Weapon&&Alchemist Shadow Shoes&&Alchemist Shadow Armor&&Merchant Shadow Earring&&Merchant Shadow Pendant]50"
+        "EQUIP[Geneticist Weapon Shadow&&Alchemist Shadow Shoes&&Alchemist Shadow Armor&&Merchant Shadow Earring&&Merchant Shadow Pendant]50"
       ],
       "m_pene_class_normal": [
-        "EQUIP[Geneticist Shadow Weapon&&Alchemist Shadow Shoes&&Alchemist Shadow Armor&&Merchant Shadow Earring&&Merchant Shadow Pendant]50"
+        "EQUIP[Geneticist Weapon Shadow&&Alchemist Shadow Shoes&&Alchemist Shadow Armor&&Merchant Shadow Earring&&Merchant Shadow Pendant]50"
       ]
     }
   },
@@ -38156,12 +38244,10 @@
         "15"
       ],
       "m_size_m": [
-        "20",
-        "EQUIP[Mutating White Knight Card]5"
+        "20"
       ],
       "m_size_l": [
-        "20",
-        "EQUIP[Mutating White Knight Card]5"
+        "20"
       ]
     }
   },
@@ -42609,6 +42695,84 @@
       ]
     }
   },
+  "29068": {
+    "id": 29068,
+    "aegisName": "Mettle8",
+    "name": "Mettle Lv. 8",
+    "unidName": "Mettle Lv. 8",
+    "resName": "레드크리스탈조각",
+    "description": "ATK + 24%, HIT + 24",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "atkPercent": [
+        "24"
+      ],
+      "hit": [
+        "24"
+      ]
+    }
+  },
+  "29069": {
+    "id": 29069,
+    "aegisName": "Mettle9",
+    "name": "Mettle Lv. 9",
+    "unidName": "Mettle Lv. 9",
+    "resName": "레드크리스탈조각",
+    "description": "ATK + 27%, HIT + 27",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "atkPercent": [
+        "27"
+      ],
+      "hit": [
+        "27"
+      ]
+    }
+  },
+  "29070": {
+    "id": 29070,
+    "aegisName": "Mettle10",
+    "name": "Mettle Lv. 10",
+    "unidName": "Mettle Lv. 10",
+    "resName": "레드크리스탈조각",
+    "description": "ATK + 33%, HIT + 30",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "atkPercent": [
+        "33"
+      ],
+      "hit": [
+        "30"
+      ]
+    }
+  },
   "29072": {
     "id": 29072,
     "aegisName": "MagicEessence2",
@@ -42762,6 +42926,84 @@
       ],
       "fct": [
         "0.7"
+      ]
+    }
+  },
+  "29078": {
+    "id": 29078,
+    "aegisName": "MagicEessence8",
+    "name": "Magic Essence Lv. 8",
+    "unidName": "Magic Essence Lv. 8",
+    "resName": "블루크리스탈조각",
+    "description": "MATK + 24%, ลด Fixed Cast Time 0.8 วินาที",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "matkPercent": [
+        "24"
+      ],
+      "fct": [
+        "0.8"
+      ]
+    }
+  },
+  "29079": {
+    "id": 29079,
+    "aegisName": "MagicEessence9",
+    "name": "Magic Essence Lv. 9",
+    "unidName": "Magic Essence Lv. 9",
+    "resName": "블루크리스탈조각",
+    "description": "MATK + 27%, ลด Fixed Cast Time 0.9 วินาที",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "matkPercent": [
+        "27"
+      ],
+      "fct": [
+        "0.9"
+      ]
+    }
+  },
+  "29080": {
+    "id": 29080,
+    "aegisName": "MagicEessence10",
+    "name": "Magic Essence Lv. 10",
+    "unidName": "Magic Essence Lv. 10",
+    "resName": "블루크리스탈조각",
+    "description": "MATK + 33%, ลด Fixed Cast Time 1 วินาที",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "matkPercent": [
+        "33"
+      ],
+      "fct": [
+        "1"
       ]
     }
   },
@@ -42921,6 +43163,84 @@
       ]
     }
   },
+  "29088": {
+    "id": 29088,
+    "aegisName": "Acute8",
+    "name": "Acute Lv. 8",
+    "unidName": "Acute Lv. 8",
+    "resName": "그린크리스탈조각",
+    "description": "คริติคอลดาเมจ + 80%, CRI + 24",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "criDmg": [
+        "80"
+      ],
+      "cri": [
+        "24"
+      ]
+    }
+  },
+  "29089": {
+    "id": 29089,
+    "aegisName": "Acute9",
+    "name": "Acute Lv. 9",
+    "unidName": "Acute Lv. 9",
+    "resName": "그린크리스탈조각",
+    "description": "คริติคอลดาเมจ + 90%, CRI + 27",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "criDmg": [
+        "90"
+      ],
+      "cri": [
+        "27"
+      ]
+    }
+  },
+  "29090": {
+    "id": 29090,
+    "aegisName": "Acute10",
+    "name": "Acute Lv. 10",
+    "unidName": "Acute Lv. 10",
+    "resName": "그린크리스탈조각",
+    "description": "คริติคอลดาเมจ + 110%, CRI + 30",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "criDmg": [
+        "110"
+      ],
+      "cri": [
+        "30"
+      ]
+    }
+  },
   "29092": {
     "id": 29092,
     "aegisName": "MasterArcher2",
@@ -43077,6 +43397,84 @@
       ]
     }
   },
+  "29098": {
+    "id": 29098,
+    "aegisName": "MasterArcher8",
+    "name": "Master Archer Lv. 8",
+    "unidName": "Master Archer Lv. 8",
+    "resName": "옐로크리스탈조각",
+    "description": "เพิ่มความเสียหายทางกายภาพ + 32% เมื่อใช้ธนู, ASPD + 8%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "bowRange": [
+        "32"
+      ],
+      "aspdPercent": [
+        "8"
+      ]
+    }
+  },
+  "29099": {
+    "id": 29099,
+    "aegisName": "MasterArcher9",
+    "name": "Master Archer Lv. 9",
+    "unidName": "Master Archer Lv. 9",
+    "resName": "옐로크리스탈조각",
+    "description": "เพิ่มความเสียหายทางกายภาพ + 36% เมื่อใช้ธนู, ASPD + 9%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "bowRange": [
+        "36"
+      ],
+      "aspdPercent": [
+        "9"
+      ]
+    }
+  },
+  "29100": {
+    "id": 29100,
+    "aegisName": "MasterArcher10",
+    "name": "Master Archer Lv. 10",
+    "unidName": "Master Archer Lv. 10",
+    "resName": "옐로크리스탈조각",
+    "description": "เพิ่มความเสียหายทางกายภาพ + 44% เมื่อใช้ธนู, ASPD + 10%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "bowRange": [
+        "44"
+      ],
+      "aspdPercent": [
+        "10"
+      ]
+    }
+  },
   "29102": {
     "id": 29102,
     "aegisName": "Adamatine2",
@@ -43230,6 +43628,84 @@
       ],
       "def": [
         "105"
+      ]
+    }
+  },
+  "29108": {
+    "id": 29108,
+    "aegisName": "Adamatine8",
+    "name": "Adamantine Lv. 8",
+    "unidName": "Adamantine Lv. 8",
+    "resName": "퍼플크리스탈조각",
+    "description": "Max HP + 40%, DEF + 120",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "hpPercent": [
+        "40"
+      ],
+      "def": [
+        "120"
+      ]
+    }
+  },
+  "29109": {
+    "id": 29109,
+    "aegisName": "Adamatine9",
+    "name": "Adamantine Lv. 9",
+    "unidName": "Adamantine Lv. 9",
+    "resName": "퍼플크리스탈조각",
+    "description": "Max HP + 45%, DEF + 135",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "hpPercent": [
+        "45"
+      ],
+      "def": [
+        "135"
+      ]
+    }
+  },
+  "29110": {
+    "id": 29110,
+    "aegisName": "Adamatine10",
+    "name": "Adamantine Lv. 10",
+    "unidName": "Adamantine Lv. 10",
+    "resName": "퍼플크리스탈조각",
+    "description": "Max HP + 55%, DEF + 150",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "hpPercent": [
+        "55"
+      ],
+      "def": [
+        "150"
       ]
     }
   },
@@ -48652,6 +49128,84 @@
       ],
       "perfectHit": [
         "7"
+      ]
+    }
+  },
+  "29713": {
+    "id": 29713,
+    "aegisName": "Tenacity8",
+    "name": "Tenacity Lv. 8",
+    "unidName": "Tenacity Lv. 8",
+    "resName": "Crystal_Piece_BL",
+    "description": "Increase physical melee damage by 32%, Perfect Hit + 8",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "melee": [
+        "32"
+      ],
+      "perfectHit": [
+        "8"
+      ]
+    }
+  },
+  "29714": {
+    "id": 29714,
+    "aegisName": "Tenacity9",
+    "name": "Tenacity Lv. 9",
+    "unidName": "Tenacity Lv. 9",
+    "resName": "Crystal_Piece_BL",
+    "description": "Increase physical melee damage by 36%, Perfect Hit + 9",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "melee": [
+        "36"
+      ],
+      "perfectHit": [
+        "9"
+      ]
+    }
+  },
+  "29715": {
+    "id": 29715,
+    "aegisName": "Tenacity10",
+    "name": "Tenacity Lv. 10",
+    "unidName": "Tenacity Lv. 10",
+    "resName": "Crystal_Piece_BL",
+    "description": "Increase physical melee damage by 44%, Perfect Hit + 10",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "melee": [
+        "44"
+      ],
+      "perfectHit": [
+        "10"
       ]
     }
   },
@@ -56161,6 +56715,44 @@
       ],
       "range": [
         "EQUIP[Subject Cape (Range)]7"
+      ]
+    }
+  },
+  "410294": {
+    "id": 410294,
+    "aegisName": null,
+    "name": "Little Abyss Dragon [1]",
+    "unidName": "Ribbon",
+    "resName": "C_Little_Abyss_Dragon",
+    "description": "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้^000000\nมังกรตัวน้อยที่เกิดมาจากห้วงลึกลับอันไกลโพ้น\nมีนิสัยตามการบ่มเพาะด้วยอารมณ์ของเจ้าของ จะเป็นสัตว์ที่แสดงถึงความพินาศ หรือเกียรติภูมิก็ขึ้นอยู่กับสิ่งนั้น\n\nลด Delay หลังใช้สกิล 3%\nATK/MATK +24\nลด Damage ที่ได้รับจากมอนสเตอร์เผ่า Dragon 5%\nเพิ่ม Damage ต่อมอนสเตอร์เผ่า Dragon 5%\nเพิ่ม EXP ที่ได้รับจากมอนสเตอร์เผ่า Dragon 5%\n\n^ff0000ได้รับความสามารถดังต่อไปนี้เพิ่มเติมในระยะเวลา (2023/11/30 ~ 2024/12/04)^000000\nลด Damage ที่ได้รับจากมอนสเตอร์เผ่า Dragon ลงอีก 10%\nเพิ่ม Damage ต่อมอนสเตอร์เผ่า Dragon ขึ้นอีก 10%\nเพิ่ม EXP ที่ได้รับจากมอนสเตอร์เผ่า Dragon ขึ้นอีก 10%\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^7777770^000000\nตำแหน่ง : ^777777Middle^000000 น้ำหนัก : ^77777730^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 30,
+    "requiredLevel": 1,
+    "location": "Middle",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "acd": [
+        "3"
+      ],
+      "atk": [
+        "24"
+      ],
+      "matk": [
+        "24"
+      ],
+      "p_race_dragon": [
+        "15"
+      ],
+      "m_race_dragon": [
+        "15"
       ]
     }
   },

@@ -176,7 +176,7 @@ export class GitCross extends CharacterBase {
       label: 'Counter Slash Lv10',
       name: 'Counter Slash',
       value: 'Counter Slash==10',
-      acd: 2,
+      acd: 1,
       fct: 0,
       vct: 0,
       cd: 0,

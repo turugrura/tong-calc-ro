@@ -215,7 +215,7 @@ export class Sorcerer extends CharacterBase {
     for (const [_skillName, bonus] of Object.entries({ ...masteryAtks, ...equipAtks })) {
       aspdPercent += bonus[`${typeName}_aspdPercent`] || 0;
     }
-    totalBonus['aspdPercent'] += aspdPercent;
+    totalBonus.aspdPercent = (totalBonus.aspdPercent || 0) + aspdPercent;
 
     return totalBonus;
   }
