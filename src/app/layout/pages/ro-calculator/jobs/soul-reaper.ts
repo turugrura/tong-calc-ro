@@ -76,6 +76,11 @@ const jobBonusTable: Record<number, [number, number, number, number, number, num
   63: [3, 7, 5, 11, 11, 0],
   64: [3, 7, 6, 11, 12, 0],
   65: [3, 7, 6, 11, 12, 1],
+  66: [3, 7, 6, 11, 12, 1],
+  67: [3, 7, 6, 11, 12, 1],
+  68: [3, 7, 6, 11, 12, 1],
+  69: [3, 7, 6, 11, 12, 1],
+  70: [3, 7, 7, 11, 13, 2],
 };
 
 export class SoulReaper extends CharacterBase {

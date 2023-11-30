@@ -76,6 +76,11 @@ const jobBonusTable: Record<number, [number, number, number, number, number, num
   63: [7, 3, 7, 10, 7, 3],
   64: [7, 3, 7, 10, 7, 3],
   65: [8, 3, 8, 10, 8, 3],
+  66: [8, 3, 8, 10, 8, 3],
+  67: [8, 3, 8, 10, 8, 3],
+  68: [8, 3, 8, 10, 8, 3],
+  69: [8, 3, 8, 10, 8, 3],
+  70: [9, 3, 9, 10, 9, 3],
 };
 
 export class RoyalGuard extends CharacterBase {

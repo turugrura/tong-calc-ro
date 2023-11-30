@@ -79,6 +79,11 @@ const jobBonusTable: Record<number, [number, number, number, number, number, num
   63: [7, 6, 4, 6, 8, 4],
   64: [7, 6, 4, 6, 8, 4],
   65: [7, 6, 4, 6, 8, 4],
+  66: [7, 6, 4, 6, 8, 4],
+  67: [7, 6, 4, 6, 8, 4],
+  68: [7, 6, 4, 6, 8, 4],
+  69: [7, 6, 4, 6, 8, 4],
+  70: [7, 10, 6, 6, 8, 6],
 };
 
 export class Oboro extends CharacterBase {

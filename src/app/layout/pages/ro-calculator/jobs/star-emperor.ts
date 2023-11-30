@@ -76,6 +76,11 @@ const jobBonusTable: Record<number, [number, number, number, number, number, num
   63: [10, 8, 4, 3, 9, 3],
   64: [10, 8, 4, 3, 9, 3],
   65: [11, 9, 5, 3, 9, 3],
+  66: [11, 9, 5, 3, 9, 3],
+  67: [11, 9, 5, 3, 9, 3],
+  68: [11, 9, 5, 3, 9, 3],
+  69: [11, 9, 5, 3, 9, 3],
+  70: [12, 10, 6, 3, 9, 3],
 };
 
 export class StarEmperor extends CharacterBase {

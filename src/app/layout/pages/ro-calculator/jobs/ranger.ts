@@ -76,6 +76,11 @@ const jobBonusTable: Record<number, [number, number, number, number, number, num
   63: [2, 10, 6, 9, 8, 2],
   64: [2, 11, 7, 9, 8, 2],
   65: [2, 11, 7, 9, 8, 3],
+  66: [2, 11, 7, 9, 8, 3],
+  67: [2, 11, 7, 9, 8, 3],
+  68: [2, 11, 7, 9, 8, 3],
+  69: [2, 11, 7, 9, 8, 3],
+  70: [2, 12, 8, 9, 8, 4],
 };
 
 export class Ranger extends CharacterBase {

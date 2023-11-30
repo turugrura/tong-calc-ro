@@ -75,6 +75,11 @@ const jobBonusTable: Record<number, [number, number, number, number, number, num
   63: [9, 8, 6, 6, 8, 1],
   64: [9, 8, 6, 6, 8, 1],
   65: [9, 9, 6, 7, 8, 1],
+  66: [9, 9, 6, 7, 8, 1],
+  67: [9, 9, 6, 7, 8, 1],
+  68: [9, 9, 6, 7, 8, 1],
+  69: [9, 9, 6, 7, 8, 1],
+  70: [10, 10, 6, 8, 8, 1],
 };
 
 export class Sura extends CharacterBase {

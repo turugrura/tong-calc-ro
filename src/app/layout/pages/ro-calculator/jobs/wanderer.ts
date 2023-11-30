@@ -79,6 +79,11 @@ const jobBonusTable: Record<number, [number, number, number, number, number, num
   63: [3, 9, 7, 9, 8, 1],
   64: [3, 9, 7, 9, 8, 1],
   65: [5, 9, 7, 9, 8, 2],
+  66: [5, 9, 7, 9, 8, 2],
+  67: [5, 9, 7, 9, 8, 2],
+  68: [5, 9, 7, 9, 8, 2],
+  69: [5, 9, 7, 9, 8, 2],
+  70: [7, 9, 7, 9, 8, 3],
 };
 
 export class Wanderer extends CharacterBase {

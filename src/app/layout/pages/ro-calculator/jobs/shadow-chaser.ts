@@ -76,6 +76,11 @@ const jobBonusTable: Record<number, [number, number, number, number, number, num
   63: [8, 5, 8, 6, 4, 6],
   64: [8, 5, 8, 6, 4, 6],
   65: [8, 7, 8, 6, 5, 6],
+  66: [8, 7, 8, 6, 5, 6],
+  67: [8, 7, 8, 6, 5, 6],
+  68: [8, 7, 8, 6, 5, 6],
+  69: [8, 7, 8, 6, 5, 6],
+  70: [8, 9, 8, 6, 6, 6],
 };
 
 export class ShadowChaser extends CharacterBase {

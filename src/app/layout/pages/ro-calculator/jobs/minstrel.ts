@@ -79,6 +79,11 @@ const jobBonusTable: Record<number, [number, number, number, number, number, num
   63: [7, 5, 7, 9, 8, 1],
   64: [7, 5, 7, 9, 8, 1],
   65: [7, 6, 7, 9, 9, 2],
+  66: [7, 6, 7, 9, 9, 2],
+  67: [7, 6, 7, 9, 9, 2],
+  68: [7, 6, 7, 9, 9, 2],
+  69: [7, 6, 7, 9, 9, 2],
+  70: [7, 7, 7, 9, 10, 3],
 };
 
 export class Minstrel extends CharacterBase {

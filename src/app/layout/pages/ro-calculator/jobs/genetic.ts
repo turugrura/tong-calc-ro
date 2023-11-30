@@ -76,6 +76,11 @@ const jobBonusTable: Record<number, [number, number, number, number, number, num
   63: [4, 6, 6, 12, 8, 3],
   64: [4, 6, 6, 12, 8, 3],
   65: [4, 6, 7, 12, 8, 3],
+  66: [4, 6, 7, 12, 8, 3],
+  67: [4, 6, 7, 12, 8, 3],
+  68: [4, 6, 7, 12, 8, 3],
+  69: [4, 6, 7, 12, 8, 3],
+  70: [5, 6, 8, 12, 8, 4],
 };
 
 export class Genetic extends CharacterBase {
