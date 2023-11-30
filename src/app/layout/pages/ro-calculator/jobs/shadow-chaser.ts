@@ -163,6 +163,42 @@ export class ShadowChaser extends CharacterBase {
         return (1000 + 80 * skillLevel) * (baseLevel / 100);
       },
     },
+    {
+      name: 'Psychic Wave',
+      label: 'Psychic Wave Lv1',
+      value: 'Psychic Wave==1',
+      fct: 1,
+      vct: 8,
+      cd: 5,
+      acd: 1,
+      totalHit: 3,
+      isMatk: true,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const baseLevel = model.level;
+        const totalInt = status.totalInt;
+
+        return (70 * skillLevel + 3 * totalInt) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Psychic Wave',
+      label: 'Psychic Wave Lv5',
+      value: 'Psychic Wave==5',
+      fct: 0.6,
+      vct: 12,
+      cd: 5,
+      acd: 1,
+      totalHit: 7,
+      isMatk: true,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const baseLevel = model.level;
+        const totalInt = status.totalInt;
+
+        return (70 * skillLevel + 3 * totalInt) * (baseLevel / 100);
+      },
+    },
   ];
 
   protected _activeSkillList: ActiveSkillModel[] = [
