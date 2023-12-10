@@ -2503,9 +2503,10 @@
           </div>
         </div>
       </div>
-      <div class="col-12" [hidden]="!(accRightEnchant3List.length === 0 || !model.accRight)">
-        <div style="height: 2rem"></div>
-      </div>
+      <div
+        class="col-12 mb-5"
+        [hidden]="!(accRightEnchant3List.length === 0 || !model.accRight) || showCompareItemMap.accRight"
+      ></div>
     </div>
     <div class="grid grid-nogutter item_label_compare" *ngIf="showCompareItemMap.accRight">
       <div class="col-12">
@@ -2528,6 +2529,9 @@
           (optionChange)="onCompareItemChange()"
         ></app-equipment>
       </div>
+    </div>
+    <div class="grid grid-nogutter" *ngIf="showCompareItemMap.accRight">
+      <div class="col-12 mb-5"></div>
     </div>
 
     <!-- Acc Left -->

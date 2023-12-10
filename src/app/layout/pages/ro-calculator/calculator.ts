@@ -1394,10 +1394,11 @@ export class Calculator {
     return this;
   }
 
-  calculateHpSp() {
+  calculateHpSp(params: { isUseHpL: boolean }) {
     const { maxHp, maxSp } = this.hpSpCalculator
       .setClass(this._class)
       .setAllInfo(this.infoForClass)
+      .setBonusFlag(params)
       .calculate()
       .getTotalSummary();
 

@@ -1,53 +1,9 @@
 import { CharacterBase } from './jobs/_character-base.abstract';
-import { ClassName } from './jobs/_class-name';
 import { EquipmentSummaryModel } from './models/equipment-summary.model';
 import { HpSpTable } from './models/hp-sp-table.model';
 import { InfoForClass } from './models/info-for-class.model';
 import { StatusSummary } from './models/status-summary.model';
 import { floor } from './utils';
-
-const hpSpIndex: Record<ClassName, number> = {
-  [ClassName.Swordman]: 1,
-  [ClassName.Paladin]: 19,
-  [ClassName.RoyalGuard]: 20,
-  [ClassName.LordKnight]: 7,
-  [ClassName.RuneKnight]: 8,
-  [ClassName.Archer]: 3,
-  [ClassName.Bard]: 29,
-  [ClassName.Wanderer]: 32,
-  [ClassName.Dance]: 31,
-  [ClassName.Minstrel]: 30,
-  [ClassName.Sniper]: 15,
-  [ClassName.Ranger]: 16,
-  [ClassName.Merchant]: 5,
-  [ClassName.Whitesmith]: 13,
-  [ClassName.Mechanic]: 14,
-  [ClassName.Creator]: 27,
-  [ClassName.Genetic]: 28,
-  [ClassName.Acolyte]: 10,
-  [ClassName.ArchBishop]: 10,
-  [ClassName.Sura]: 22,
-  [ClassName.Thief]: 6,
-  [ClassName.AssassinCross]: 17,
-  [ClassName.GuillotineCross]: 18,
-  [ClassName.Rogue]: 25,
-  [ClassName.ShadowChaser]: 26,
-  [ClassName.Sage]: 23,
-  [ClassName.Sorcerer]: 24,
-  [ClassName.Mage]: 2,
-  [ClassName.Wizard]: 11,
-  [ClassName.Warlock]: 12,
-  [ClassName.Doram]: 41,
-  [ClassName.Taekwondo]: 38,
-  [ClassName.SoulLinker]: 40,
-  [ClassName.SoulReaper]: 43,
-  [ClassName.StarGladiator]: 42,
-  [ClassName.StarEmperor]: 42,
-  [ClassName.Rebellion]: 33,
-  [ClassName.Ninja]: 35,
-  [ClassName.Oboro]: 37,
-  [ClassName.Kagerou]: 36,
-};
 
 export class HpSpCalculator {
   private hpSpTable: HpSpTable;
@@ -61,6 +17,9 @@ export class HpSpCalculator {
   private _maxSp = 0;
 
   private _shadowHP = 0;
+
+  // bonus flag
+  private _isUseHpL = false;
 
   setHpSpTable(hpSpTable: HpSpTable) {
     this.hpSpTable = hpSpTable;
@@ -92,6 +51,14 @@ export class HpSpCalculator {
     return this;
   }
 
+  setBonusFlag(params: { isUseHpL: boolean }) {
+    const { isUseHpL } = params;
+
+    this._isUseHpL = isUseHpL;
+
+    return this;
+  }
+
   private setLevel(level: number) {
     this._level = level;
 
@@ -110,17 +77,26 @@ export class HpSpCalculator {
     return this;
   }
 
+  private getBonusHpL() {
+    if (this._isUseHpL) {
+      return 2500 + floor((this._level * 10) / 3);
+    }
+
+    return 0;
+  }
+
   calculate() {
     try {
       const baseHp = this.hpSpTable[this._dataIndex].baseHp[this._level];
       const baseSp = this.hpSpTable[this._dataIndex].baseSp[this._level];
 
       const { hp, hpPercent, sp, spPercent } = this._totalBonus;
-      // console.log({ baseHp, baseSp, hp, hpPercent, sp, spPercent });
+      console.log({ baseHp, baseSp, hp, hpPercent, sp, spPercent });
 
       let maxHp = floor(baseHp * 1.25);
       maxHp = floor(maxHp * (1 + this._totalStatus.totalVit * 0.01));
       maxHp += hp + this._shadowHP;
+      maxHp += this.getBonusHpL();
       this._maxHp = maxHp + floor(maxHp * ((hpPercent || 0) * 0.01));
 
       let maxSp = floor(baseSp * 1.25);

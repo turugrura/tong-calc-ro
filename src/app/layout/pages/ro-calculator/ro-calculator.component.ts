@@ -335,8 +335,8 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     'armor',
     'garment',
     'boot',
-    'accLeft',
     'accRight',
+    'accLeft',
   ];
 
   ref: DynamicDialogRef | undefined;
@@ -652,6 +652,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
     const { consumables, consumables2, aspdPotion, aspdPotions } = this.model;
     const usedSupBattlePill = consumables.includes(12792);
+    const usedHpL = consumables.includes(12424);
     const consumeData = [...consumables, ...consumables2, ...aspdPotions]
       .filter(Boolean)
       .filter((id) => !usedSupBattlePill || (usedSupBattlePill && id !== 12791))
@@ -737,7 +738,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       .setSelectedChances(this.selectedChances)
       .calcAllDefs()
       .calculateAllDamages(selectedAtkSkill)
-      .calculateHpSp();
+      .calculateHpSp({ isUseHpL: usedHpL });
 
     return calc;
   }

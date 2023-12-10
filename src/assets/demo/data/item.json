@@ -10560,6 +10560,25 @@
       ]
     }
   },
+  "12424": {
+    "id": 12424,
+    "aegisName": "HP_Increase_PotionL",
+    "name": "HP Increase Potion(Large)",
+    "unidName": "HP Increase Potion(Large)",
+    "resName": "HP증가포션_대",
+    "description": "big Potion ที่เพิ่ม MHP\nMHP เพิ่มขึ้นมากในเวลา 500 วินาที, เพิ่มค่าฟื้นฟู HP 5%\nน้ำหนัก : ^7777778^000000",
+    "slots": 0,
+    "itemTypeId": 3,
+    "itemSubTypeId": 768,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 8,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {}
+  },
   "12429": {
     "id": 12429,
     "aegisName": "Savage_BBQ",
@@ -11135,6 +11154,40 @@
       ],
       "range": [
         "7===15"
+      ]
+    }
+  },
+  "13146": {
+    "id": 13146,
+    "aegisName": "Calf_Deathadder",
+    "name": "Calf Deathadder [2]",
+    "unidName": "Pistol",
+    "resName": "Calf_Deathadder",
+    "description": "ปืนพกที่กลุ่ม Buffalo Bandit มักจะใช้กัน\nดูเหมือนว่ามันจะหนักเกินกว่าที่คนทั่วไปจะใช้งานได้\nเพิ่ม ASPD 10%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage ทางกายภาพระยะไกล 5%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม ASPD ขึ้นอีก 5%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Fire Dance 25%\nเมื่ออัพเกรดถึงขั้น 12 เพิ่ม Damage ทางภายภาพระยะไกลขึ้นอีก 5%\n^ffffff_^000000\nประเภท : ^777777Pistol^000000 พลังโจมตี : ^777777170^000000\nน้ำหนัก : ^777777140^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Rebellion^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 273,
+    "itemLevel": 4,
+    "attack": 170,
+    "defense": null,
+    "weight": 140,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Rebellion"
+    ],
+    "script": {
+      "aspdPercent": [
+        "10",
+        "7===5"
+      ],
+      "range": [
+        "2---5",
+        "12===5"
+      ],
+      "Fire Dance": [
+        "9===25"
       ]
     }
   },
@@ -18863,18 +18916,18 @@
       ],
       "def": [
         "EQUIP[Protect Feathers]15",
-        "SUM[vit==108]===25",
-        "SUM[vit==120]===40"
+        "EQUIP[Protect Feathers]SUM[vit==108]===10",
+        "EQUIP[Protect Feathers]SUM[vit==120]===15"
       ],
       "mdef": [
         "EQUIP[Protect Feathers]2",
-        "SUM[vit==108]===3",
-        "SUM[vit==120]===10"
+        "EQUIP[Protect Feathers]SUM[vit==108]===1",
+        "EQUIP[Protect Feathers]SUM[vit==120]===7"
       ],
       "vit": [
         "EQUIP[Protect Feathers]2",
-        "SUM[vit==108]===3",
-        "SUM[vit==120]===5"
+        "EQUIP[Protect Feathers]SUM[vit==108]===1",
+        "EQUIP[Protect Feathers]SUM[vit==120]===2"
       ]
     }
   },
@@ -30228,6 +30281,95 @@
       ]
     }
   },
+  "24482": {
+    "id": 24482,
+    "aegisName": "S_Knucklearrow_Armor",
+    "name": "Knuckle Arrow Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우",
+    "description": "ชุดเกราะที่เพิ่มพลังป้องกันเมื่อสวมใส่เพิ่มบนเกราะอีกที สามารถใส่แบบชิ้นเดียวได้ แต่ความสามารถในการป้องกันจะลดลงไปอีก\nเพิ่ม Damage สกิล Knuckle Arrow 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage สกิล Knuckle Arrow ขึ้นอีก 2%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Armor^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Sura^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Sura"
+    ],
+    "script": {
+      "Knuckle Arrow": [
+        "5",
+        "2---2"
+      ]
+    }
+  },
+  "24483": {
+    "id": 24483,
+    "aegisName": "S_Knucklearrow_Shield",
+    "name": "Knuckle Arrow Shadow Shield",
+    "unidName": "Shadow Shield",
+    "resName": "쉴드쉐도우",
+    "description": "โล่เล็กที่สามารถสวมใส่ที่แขนได้ สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์การป้องกันของมันจะลดน้อยลง\nเพิ่ม Damage ทางกายภาพระยะไกล 3%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางกายภาพระยะไกลขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพระยะไกลขึ้นอีก 4%\nเมื่อสวมใส่ Knuckle Arrow Shadow Armor/Shield/Shoes ร่วมกัน,\nลด Delay หลังใช้สกิล % เท่ากับครึ่งหนึ่งของค่าอัพเกรดรวมกัน\nเมื่อสวมใส่ร่วมกับ Sura Shadow Weapon,\nเพิกเฉยต่อพลังป้องกันทางกายภาพของทุกเผ่ายกเว้น Player 40% และเพิกเฉยต่อพลังป้องกันทางกายภาพเพิ่มอีกตามค่าอัพเกรดรวมกันของ Knuckle Arrow Shadow Shield และ Sura Shadow Weapon\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shield^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Sura^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 527,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Sura"
+    ],
+    "script": {
+      "range": [
+        "3",
+        "7===3",
+        "9===4"
+      ],
+      "acd": [
+        "EQUIP[Knuckle Arrow Shadow Armor&&Knuckle Arrow Shadow Shoes]REFINE[shadowArmor,shadowBoot,shadowShield==2]---1"
+      ],
+      "p_pene_race_all": [
+        "EQUIP[Sura Shadow Weapon]40",
+        "EQUIP[Sura Shadow Weapon]REFINE[shadowWeapon,shadowShield==1]---1"
+      ]
+    }
+  },
+  "24484": {
+    "id": 24484,
+    "aegisName": "S_Knucklearrow_Shoes",
+    "name": "Knuckle Arrow Shadow Shoes",
+    "unidName": "Shadow Shoes",
+    "resName": "슈즈쉐도우",
+    "description": "รองเท้าที่สวมใส่เพิ่มเติม สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์ของมันจะลดน้อยลง\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 3%\nทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาดขึ้นอีก 2%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shoes ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Sura^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 528,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Sura"
+    ],
+    "script": {
+      "p_size_all": [
+        "3",
+        "3---2"
+      ]
+    }
+  },
   "24485": {
     "id": 24485,
     "aegisName": "S_TigerCannon_Weapon",
@@ -39889,6 +40031,81 @@
       ]
     }
   },
+  "28242": {
+    "id": 28242,
+    "aegisName": "Calf_Anaconda",
+    "name": "Calf Anaconda [2]",
+    "unidName": "Shotgun",
+    "resName": "Calf_Anaconda",
+    "description": "ปืนสั้นที่กลุ่ม Buffalo Bandit มักจะใช้กัน \nมันถูกออกแบบมาอย่างพิถีพิถัน จึงใช้งานได้เป็นอย่างดี\nการโจมตีแบบกระจาย, MSP + 2%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage ทางกายภาพระยะไกล 5%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage สกิล Vanishing Buster 20%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพระยะไกลขึ้นอีก 5%\nเมื่ออัพเกรดถึงขั้น 12 ลดปริมาณการใช้ SP เมื่อใช้สกิล Vanishing Buster 15%\n^ffffff_^000000\nประเภท : ^777777Shotgun^000000 พลังโจมตี : ^777777305^000000\nน้ำหนัก : ^777777140^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Rebellion^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 276,
+    "itemLevel": 4,
+    "attack": 305,
+    "defense": null,
+    "weight": 140,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Rebellion"
+    ],
+    "script": {
+      "spPercent": [
+        "2"
+      ],
+      "range": [
+        "2---5",
+        "9===5"
+      ],
+      "Vanishing Buster": [
+        "7===20"
+      ],
+      "spPercent__Vanishing Buster": [
+        "12===15"
+      ]
+    }
+  },
+  "28243": {
+    "id": 28243,
+    "aegisName": "Calf_Python",
+    "name": "Calf Python [2]",
+    "unidName": "Grenade Launcher",
+    "resName": "Calf_Python",
+    "description": "เครื่องยิงลูกระเบิดที่กลุ่ม Buffalo Bandit มักจะใช้กัน \nดูเหมือนว่ากลุ่มคนรักเครื่องยิงลูกระเบิดจะยกให้มันเป็นอาวุธที่มีพลังทำลายล้างสูง\nDEX + 2, ATK + 2%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage ทางกายภาพระยะไกล 5%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม ASPD ขึ้นอีก 5%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Dragon Tail 15%\nเมื่ออัพเกรดถึงขั้น 12 เพิ่ม Damage สกิล Dragon Tail ขึ้นอีก 15%\n^ffffff_^000000\nประเภท : ^777777Grenade Launcher^000000 พลังโจมตี : ^777777360^000000\nน้ำหนัก : ^777777200^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Rebellion^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 277,
+    "itemLevel": 4,
+    "attack": 360,
+    "defense": null,
+    "weight": 200,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Rebellion"
+    ],
+    "script": {
+      "dex": [
+        "2"
+      ],
+      "atkPercent": [
+        "2"
+      ],
+      "range": [
+        "2---5"
+      ],
+      "aspdPercent": [
+        "7===5"
+      ],
+      "Dragon Tail": [
+        "9===15",
+        "12===15"
+      ]
+    }
+  },
   "28244": {
     "id": 28244,
     "aegisName": "Gate_KeeperDD_IL",
@@ -40459,6 +40676,48 @@
       ],
       "hpPercent": [
         "EQUIP[Sunglasses||Glasses]SUM[agi,vit==80]---5"
+      ]
+    }
+  },
+  "28503": {
+    "id": 28503,
+    "aegisName": "Keraunos",
+    "name": "Keraunos [1]",
+    "unidName": "Ribbon",
+    "resName": "케라우노스",
+    "description": "MaxHP +5%\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกประเภท 5%\nASPD +5%\nเพิ่ม Damage สกิล Lightning Ride 5%\nทุก ๆ Base Lv. 15 เพิ่ม Damage สกิล Lightning Ride 2%\nลด Cooldown สกิล Power Absorb 3 วินาที\n\nเมื่อสวมใส่ร่วมกับ Tohil's Shoes หรือ [Not For Sale] Tohil's Shoes,\nทุก ๆ การอัพเกรดรองเท้า 4 ขั้น ลด Cooldown สกิล Lightning Ride 0.1 วินาที\nประเภท : ^777777Accessory^000000  พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 517,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "hpPercent": [
+        "5"
+      ],
+      "p_class_all": [
+        "5"
+      ],
+      "aspdPercent": [
+        "5"
+      ],
+      "Lightning Ride": [
+        "5",
+        "SUM[level==15]---2"
+      ],
+      "cd__Power Absorb": [
+        "3"
+      ],
+      "cd__Lightning Ride": [
+        "EQUIP[Tohil's Shoes]REFINE[boot==4]---0.1"
       ]
     }
   },

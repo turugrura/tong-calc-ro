@@ -126,11 +126,29 @@ export class Sura extends CharacterBase {
 
   protected readonly _activeSkillList: ActiveSkillModel[] = [
     {
+      label: 'Rising Dragon 10',
+      name: 'Rising Dragon',
+      inputType: 'selectButton',
+      dropdown: [
+        { label: 'Yes', value: 10, isUse: true, bonus: { hpPercent: 12, spPercent: 12 } },
+        { label: 'No', value: 0, isUse: false },
+      ],
+    },
+    {
       label: 'GT-Opposite 5',
       name: 'Gentle Touch - Opposite',
       inputType: 'selectButton',
       dropdown: [
         { label: 'Yes', value: 5, isUse: true, bonus: { atk: 40, atkPercent: 5, hpPercent: -5 } },
+        { label: 'No', value: 0, isUse: false },
+      ],
+    },
+    {
+      label: 'GT-Alive 5',
+      name: 'Gentle Touch - Alive',
+      inputType: 'selectButton',
+      dropdown: [
+        { label: 'Yes', value: 5, isUse: true, bonus: { hpPercent: 10, def: 100 } },
         { label: 'No', value: 0, isUse: false },
       ],
     },
