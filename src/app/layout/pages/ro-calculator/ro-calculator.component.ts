@@ -171,11 +171,11 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   model2: ClassModel = { rawOptionTxts: [] };
 
   basicOptions = createMainStatOptionList();
-  refineList = createNumberDropdownList(0, 15);
-  shadowRefineList = createNumberDropdownList(0, 10);
-  mainStatusList = createNumberDropdownList(1, 130);
-  levelList = createNumberDropdownList(99, 200);
-  jobList = createNumberDropdownList(1, 65);
+  refineList = createNumberDropdownList({ from: 0, to: 15 });
+  shadowRefineList = createNumberDropdownList({ from: 0, to: 10 });
+  mainStatusList = createNumberDropdownList({ from: 1, to: 130 });
+  levelList = createNumberDropdownList({ from: 99, to: 200 });
+  jobList = createNumberDropdownList({ from: 1, to: 70, excludingNumbers: [66, 67, 68, 69] });
   propertyAtkList = ElementConverterList;
 
   optionList: any[] = createExtraOptionList();
