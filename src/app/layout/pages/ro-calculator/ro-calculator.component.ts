@@ -28,7 +28,7 @@ import { Warlock } from './jobs/warlock';
 import { Sorcerer } from './jobs/sorcerer';
 import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { PresetTableComponent } from './preset-table/preset-table.component';
-import { ClassID } from './jobs/_class-name';
+import { ClassID, ClassName } from './jobs/_class-name';
 import { JobBuffs } from './constants/job-buffs';
 import { Mechanic } from './jobs/mechanic';
 import { RoyalGuard } from './jobs/royal-guard';
@@ -57,7 +57,6 @@ import { ElementConverterList } from './constants/element-converter-list';
 import { RuneKnight } from './jobs/rune-knight';
 import { Oboro } from './jobs/oboro';
 import { AspdPotionList } from './constants/aspd-potion-list';
-import { canUsedByClass } from './utils/can-used-by-class';
 import { Sura } from './jobs/sura';
 import { BasicDamageSummaryModel, SkillDamageSummaryModel } from './models/damage-summary.model';
 import { ChanceModel } from './models/chance-model';
@@ -1280,7 +1279,25 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   }
 
   private setAspdPotionList() {
-    this.aspdPotionList = AspdPotionList.filter(canUsedByClass(this.selectedCharacter));
+    this.aspdPotionList = AspdPotionList.filter(({ value }) => {
+      switch (value) {
+        case 645:
+          return true;
+        case 656:
+          return true;
+        case 657: {
+          const nameSet = this.selectedCharacter.classNameSet;
+
+          return (
+            [ClassName.Swordman, ClassName.Merchant, ClassName.Taekwondo, ClassName.Rebellion].findIndex((cName) =>
+              nameSet.has(cName),
+            ) >= 0
+          );
+        }
+      }
+
+      return true;
+    });
   }
 
   private setSkillModelArray() {
