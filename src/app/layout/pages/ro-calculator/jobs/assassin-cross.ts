@@ -29,7 +29,7 @@ export class AssassinCross extends CharacterBase {
       name: 'Meteor Assault',
       label: 'Meteor Assault Lv10',
       value: 'Meteor Assault==10',
-      fct: 0.25,
+      fct: 0.3,
       vct: 0.25,
       cd: 0.5,
       acd: 0,
