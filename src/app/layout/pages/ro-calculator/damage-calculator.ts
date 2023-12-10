@@ -904,7 +904,7 @@ export class DamageCalculator {
       isMelee,
       isHit100,
       isIgnoreDef = false,
-      totalHit = 1,
+      totalHit: _totalHit = 1,
       name: skillName,
       baseCriPercentage = 1,
     } = skillData;
@@ -969,6 +969,7 @@ export class DamageCalculator {
     const skillAccRate = isHit100 || isMatk ? 100 : basicDmg.accuracy;
     const { avgCriDamage, avgNoCriDamage } = calculated;
 
+    const totalHit = typeof _totalHit === 'function' ? _totalHit(this.monsterData.size) : _totalHit;
     const skillDps =
       totalHit *
       calcDmgDps({

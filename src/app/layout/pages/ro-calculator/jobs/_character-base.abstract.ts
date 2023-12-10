@@ -40,7 +40,7 @@ export interface AtkSkillModel {
    * Will be round down
    */
   hit?: number;
-  totalHit?: number;
+  totalHit?: number | ((monsterSize: 's' | 'm' | 'l') => number);
   isMatk?: boolean;
   isMelee?: boolean;
   isDevMode?: boolean;
