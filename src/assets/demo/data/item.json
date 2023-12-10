@@ -2866,6 +2866,41 @@
       ]
     }
   },
+  "2873": {
+    "id": 2873,
+    "aegisName": "Cat_Hand_Glove",
+    "name": "Cat Hand Glove [1]",
+    "unidName": "Globe",
+    "resName": "고양이의발",
+    "description": "ของที่ระลึกจาก Malang do มันทำให้คุณมีความสุขเมื่อสวมใส่\nVIT + 1, AGI + 1, DEX + 1, LUK + 1\nประเภท : ^777777accessory ^000000 พลังป้องกัน : ^7777775^000000\nน้ำหนัก : ^77777710^000000\nLv ที่ต้องการ : ^7777771^000000\nอาชีพ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 517,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 5,
+    "weight": 10,
+    "requiredLevel": 1,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "vit": [
+        "1"
+      ],
+      "agi": [
+        "1"
+      ],
+      "dex": [
+        "1"
+      ],
+      "luk": [
+        "1"
+      ]
+    }
+  },
   "2890": {
     "id": 2890,
     "aegisName": "White_Wing_Brooch",

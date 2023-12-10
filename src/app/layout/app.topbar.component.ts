@@ -36,6 +36,19 @@ export class AppTopBarComponent {
 
   updates: { v: string; date: string; logs: string[] }[] = [
     {
+      v: 'V1.7.5',
+      date: '10-12-2566',
+      logs: [
+        'Fixed Cross Impact base level modifier from /100 to /120',
+        'Fixed Aimed Bolt total hit related to monster size',
+        'Fixed reported bugs',
+        'Supported job 70',
+        'Added GX offensive skill (Improved Rolling Cutter, Improved Cross Impact)',
+        'Added Ranger offensive skill (Improved AS, Improved AB)',
+        'Added requested items',
+      ],
+    },
+    {
       v: 'V1.7.4',
       date: '30-11-2566',
       logs: ['Fixed reported bugs', 'Added SC offensive skill (Psychic Wave)', 'Added requested items'],
