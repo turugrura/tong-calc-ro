@@ -28,13 +28,18 @@ export class AppTopBarComponent {
     'options ในแถวอาวุธจะอยู่ตลอด สามารถใช้เป็น What if ได้',
     'My Magical Element ใน options = เพิ่ม Damage ทางเวทมนตร์ธาตุ ...',
     'การเปรียบเทียบอาวุธ 2 มือยังไม่รองรับการเปลี่ยนมือซ้าย',
-    'Job 61-64 จะได้ Bonus ไม่ตรงเพราะไม่มีข้อมูล',
+    'Job 61-64, 66-69 จะได้ Bonus ไม่ตรงเพราะไม่มีข้อมูล',
     'Tab "Summary" คือ ใส่อะไรบ้าง/อัพสกิลอะไรบ้าง/การคำนวนทั้งหมด',
     'Tab "Equipments Summary" คือ bonus ของไอเทมแบบภาพรวม',
     'Tab "Item Descriptions" คือ bonus ของไอเทมแต่ละชิ้นและคำอธิบาย (เอาไว้ตรวจสอบว่าได้ bonus ถูกไหม)',
   ];
 
   updates: { v: string; date: string; logs: string[] }[] = [
+    {
+      v: 'V1.7.4',
+      date: '30-11-2566',
+      logs: ['Fixed reported bugs', 'Added SC offensive skill (Psychic Wave)', 'Added requested items'],
+    },
     {
       v: 'V1.7.3',
       date: '28-11-2566',
