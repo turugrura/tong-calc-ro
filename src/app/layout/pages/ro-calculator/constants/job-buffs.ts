@@ -15,6 +15,7 @@ export const JobBuffs: ActiveSkillModel[] = [
       { label: 'Job 40', value: 14, isUse: true, bonus: { agi: 16, aspdPercent: 14 } },
       { label: 'Job 50', value: 15, isUse: true, bonus: { agi: 17, aspdPercent: 15 } },
       { label: 'Job 60', value: 16, isUse: true, bonus: { agi: 18, aspdPercent: 16 } },
+      { label: 'Job 70', value: 17, isUse: true, bonus: { agi: 19, aspdPercent: 17 } },
     ],
   },
   {
@@ -29,6 +30,7 @@ export const JobBuffs: ActiveSkillModel[] = [
       { label: 'Job 40', value: 14, isUse: true, bonus: { str: 14, int: 14, dex: 14, hit: 24 } },
       { label: 'Job 50', value: 15, isUse: true, bonus: { str: 15, int: 15, dex: 15, hit: 25 } },
       { label: 'Job 60', value: 16, isUse: true, bonus: { str: 16, int: 16, dex: 16, hit: 26 } },
+      { label: 'Job 70', value: 17, isUse: true, bonus: { str: 17, int: 17, dex: 17, hit: 27 } },
     ],
   },
   {
