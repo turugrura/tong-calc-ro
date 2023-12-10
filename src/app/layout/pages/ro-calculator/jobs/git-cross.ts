@@ -139,6 +139,23 @@ export class GitCross extends CharacterBase {
       },
     },
     {
+      label: '[Improved] Rolling Cutter Lv5',
+      name: 'Rolling Cutter',
+      value: '[Improved] Rolling Cutter==5',
+      acd: 0.2,
+      fct: 0,
+      vct: 0,
+      cd: 0,
+      isMelee: true,
+      levelList: [],
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
+
+        return (50 + skillLevel * 80) * (baseLevel / 100);
+      },
+    },
+    {
       label: 'Cross Impact Lv5',
       name: 'Cross Impact',
       value: 'Cross Impact==5',
