@@ -22753,6 +22753,46 @@
       ]
     }
   },
+  "22210": {
+    "id": 22210,
+    "aegisName": "Fluffy_FishShoes_J",
+    "name": "Fluffy Fish Shoes",
+    "unidName": "Shoes",
+    "resName": "Fluffy_FishShoes",
+    "description": "รองเท้านุ่มนิ่มพิมพ์ลายปลาแสนน่ารัก ผลิตโดยแบรนด์ดังจากอาณาจักร Rune Midgarts \n\nMaxHP +3%, MaxSP +3%\n\nเมื่ออัพเกรดตั้งแต่ 5 ขึ้นไป,\nMaxHP +7%, MaxSP +7% เพิ่มเติม\nลด Delay หลังใช้สกิล 10%\n\nเมื่ออัพเกรดตั้งแต่ 7 ขึ้นไป,\nMaxHP +10%, MaxSP +10%\nลด Delay หลังใช้สกิล 10% เพิ่มเติม\n\nเมื่อเรียนรู้สกิล Grooming ถึงเลเวล 5,\nลดระยะเวลาร่ายแบบคงที่ 50%\nทำให้ไม่กระเด็น\n\nทุก ๆ การเรียนรู้สกิล Tasty Shrimp Party 1 เลเวล,\nลดระยะเวลาร่ายสกิลประเภท Sea Animal 10%\n\nทุก ๆ การเรียนรู้สกิล Purring 1 เลเวล,\nเมื่อใช้สกิลประเภท Heal, เพิ่มปริมาณผลการฟื้นฟู HP 10%\n\nเมื่อเรียนรู้สกิล Spirit Of Sea ถึงเลเวล 1,\nเมื่อใช้สกิล Grooming ตนเองจะไม่ติดสถานะ Sleep, Stun, Stone Curse โดยเด็ดขาดเป็นเวลา 30 วินาที\nประเภท : ^777777Shoes^000000  พลังป้องกัน : ^77777712^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Summoner (Doram)^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 516,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 12,
+    "weight": 10,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Summoner (Doram)"
+    ],
+    "script": {
+      "hpPercent": [
+        "3",
+        "5===7",
+        "7===10"
+      ],
+      "spPercent": [
+        "3",
+        "5===7",
+        "7===10"
+      ],
+      "acd": [
+        "5===10",
+        "7===10"
+      ],
+      "fctPercent": [
+        "LEARN_SKILL[Grooming==1]===50"
+      ]
+    }
+  },
   "22238": {
     "id": 22238,
     "aegisName": "Great_Hero_Boots",
@@ -63173,6 +63213,74 @@
       "Curse Explosion": [
         "EQUIP[Defunct Booster Robe&&Defunct Booster Muffler&&Defunct Booster Shoes&&Defunct Booster Earring]level:15---1",
         "EQUIP[Defunct Booster Robe&&Defunct Booster Muffler&&Defunct Booster Shoes&&Defunct Booster Earring]ACTIVE_SKILL[Evil Soul Curse]===20"
+      ]
+    }
+  },
+  "550002": {
+    "id": 550002,
+    "aegisName": "Boost_Foxtail",
+    "name": "Boosting Foxtail [2]",
+    "unidName": "Rod",
+    "resName": "Diva_Foxtail",
+    "description": "ไม้คทาสุดพิเศษที่เตรียมไว้เพื่อทำให้นักผจญภัยพัฒนาไปอย่างรวดเร็ว\n\nMATK +260\nไม่สามารถทำลายได้, ATK +5%, MATK +5%\nทุก ๆ การอัพเกรด 1 ขั้น ATK +2, MATK +2\nทุก ๆ Base Lv. 15, ATK +3, MATK +3 (ใช้งานสูงสุดถึง Lv. 180)\nเมื่ออัพเกรดถึงขั้น 7 ทุก ๆ การเรียนรู้สกิล Nyang Grass 1 เลเวล ลดระยะเวลาร่ายแบบแปรผัน 2%, ทุก ๆ การเรียนรู้สกิล Sprit Of Savage 1 เลเวล เพิ่ม Damage ทางกายภาพระยะไกล 2%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูทุกขนาด 10%\n\nเมื่อสวมใส่ร่วมกับ Elemental Booster (Robe/Muffler/Shoes/Earring),\nMATK +20, เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกขนาด 10%,\nทุก ๆ Base Lv. 15 เพิ่ม Damage สกิล Catnip Meteor 2% (ใช้งานสูงสุดถึง Lv. 180),\nเมื่อใช้สกิล Silvervine Stem Spear เพิ่ม Damage สกิล Catnip Meteor ขึ้นอีก 35% เป็นเวลา 60 วินาที\n\nเมื่อใช้สกิล Range Booster (Suit/Manteau/Boots/Brooch), \nATK +20, ลด Delay หลังใช้สกิล 10%,\nทุก ๆ Base Lv. 15 เพิ่ม Damage สกิล Picky Peck 2% (ใช้งานสูงสุดถึง Lv. 180),\nเมื่อใช้สกิล Arclouse Dash เพิ่ม Damage สกิล Picky Peck ขึ้นอีก 35% เป็นเวลา 60 วินาที\nประเภท : ^777777One-Handed Staff^000000 พลังโจมตี : ^777777250^000000\nน้ำหนัก : ^7777770^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Summoner(Doram)^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 265,
+    "itemLevel": 4,
+    "attack": 250,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Summoner (Doram)"
+    ],
+    "script": {
+      "matk": [
+        "260",
+        "1---2",
+        "SUM[level==15]---3",
+        "SUM[level==195]===-3",
+        "EQUIP[Elemental Booster Robe&&Elemental Booster Muffler&&Elemental Booster Shoes&&Elemental Booster Earring]===20"
+      ],
+      "atkPercent": [
+        "5"
+      ],
+      "matkPercent": [
+        "5"
+      ],
+      "atk": [
+        "1---2",
+        "SUM[level==15]---3",
+        "SUM[level==195]===-3",
+        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]===20"
+      ],
+      "vct": [
+        "REFINE[7]LEARN_SKILL[Nyang Grass==1]---2"
+      ],
+      "range": [
+        "REFINE[7]LEARN_SKILL[Sprit Of Savage==1]---2"
+      ],
+      "p_size_all": [
+        "9===10"
+      ],
+      "m_size_all": [
+        "9===10",
+        "EQUIP[Elemental Booster Robe&&Elemental Booster Muffler&&Elemental Booster Shoes&&Elemental Booster Earring]===10"
+      ],
+      "acd": [
+        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]===10"
+      ],
+      "Picky Peck": [
+        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]SUM[level==15]---2",
+        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]SUM[level==195]===-2",
+        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]===35"
+      ],
+      "Catnip Meteor": [
+        "EQUIP[Elemental Booster Robe&&Elemental Booster Muffler&&Elemental Booster Shoes&&Elemental Booster Earring]SUM[level==15]---2",
+        "EQUIP[Elemental Booster Robe&&Elemental Booster Muffler&&Elemental Booster Shoes&&Elemental Booster Earring]SUM[level==195]===-2",
+        "EQUIP[Elemental Booster Robe&&Elemental Booster Muffler&&Elemental Booster Shoes&&Elemental Booster Earring]===35"
       ]
     }
   },

@@ -187,7 +187,9 @@ export class DamageCalculator {
     return this.toPercent(100 + (this.totalBonus['comet'] || 0));
   }
 
-  private getVIAmp() {
+  private getVIAmp(propertyAtk: ElementType) {
+    if (propertyAtk !== ElementType.Poison) return 1;
+
     return this.toPercent((this.totalBonus['vi'] || 0) + 100);
   }
 
@@ -521,7 +523,7 @@ export class DamageCalculator {
 
   private getPropertyMultiplier(propertyAtk: ElementType) {
     let pMultiplier = ElementMapper[this.monster.stats.elementName][propertyAtk];
-    pMultiplier = pMultiplier * this.getVIAmp();
+    pMultiplier = pMultiplier * this.getVIAmp(propertyAtk);
 
     return round(this.toPercent(pMultiplier), 2);
   }
