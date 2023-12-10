@@ -4926,6 +4926,36 @@
       ]
     }
   },
+  "4583": {
+    "id": 4583,
+    "aegisName": "Engkanto_Card",
+    "name": "Engkanto Card",
+    "unidName": "Engkanto Card",
+    "resName": "이름없는카드",
+    "description": "สร้างความเสียหายทางเวทย์และทางกายภาพต่อมอนสเตอร์ธาตุ Poison เพิ่มขึ้น 30%\nไม่สนใจพลังป้องกันของมอนสเตอร์เผ่า Plant 30%\nประเภท : ^777777Card^000000\nใส่กับ : ^777777Headgear^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 769,
+    "cardPrefix": "of Poison Grass",
+    "script": {
+      "p_element_poison": [
+        "30"
+      ],
+      "m_element_poison": [
+        "30"
+      ],
+      "p_pene_race_plant": [
+        "30"
+      ]
+    }
+  },
   "4588": {
     "id": 4588,
     "aegisName": "Wakwak_Card",
@@ -10985,6 +11015,44 @@
       ]
     }
   },
+  "13093": {
+    "id": 13093,
+    "aegisName": "Thanos_Dagger",
+    "name": "Thanos Dagger [1]",
+    "unidName": "Dagger",
+    "resName": "타노스의단검",
+    "description": "มีดสั้นที่มีพลังเวทย์ ทำขึ้นมาจาก Shard of Gray เพื่อใช้เผชิญหน้ากับ Devil Sword Tarthanos\nมีพลังเวทย์และพละกำลังที่แข็งแกร่ง แต่ก็ต้องจ่ายค่าตอบแทนที่สมน้ำสมเนื้อ\n\nINT + 6 / VIT + 6 / LUK -6\nเมื่อโจมตีกายภาพ จะมีโอกาสในระดับต่ำ ที่จะดูดซับดาเมจ 5% มาเป็น HP และ SP\nHP ลดลง 100 ทุก 10 วินาที\nHP ลดลง 1000 เมื่อถอดอุปกรณ์\nMATK + 130\n\nประเภท : ^777777Dagger^000000\nโจมตี : ^777777100^000000\nน้ำหนัก : ^77777780^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777120^000000\nอาชีพ: ^777777อาชีพ Swordman/Archer/Merchant/Thief^000000",
+    "slots": 1,
+    "itemTypeId": 1,
+    "itemSubTypeId": 256,
+    "itemLevel": 4,
+    "attack": 100,
+    "defense": null,
+    "weight": 80,
+    "requiredLevel": 120,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Swordman",
+      "Archer",
+      "Merchant",
+      "Thief"
+    ],
+    "script": {
+      "int": [
+        "6"
+      ],
+      "vit": [
+        "6"
+      ],
+      "luk": [
+        "-6"
+      ],
+      "matk": [
+        "130"
+      ]
+    }
+  },
   "13127": {
     "id": 13127,
     "aegisName": "Scarlet_Revolver",
@@ -14500,6 +14568,9 @@
         "EQUIP[Angeling Egg]10"
       ],
       "atk": [
+        "EQUIP[Angeling Egg]luk:3---1"
+      ],
+      "matk": [
         "EQUIP[Angeling Egg]luk:3---1"
       ],
       "p_race_demon": [
@@ -32056,6 +32127,104 @@
       ]
     }
   },
+  "24575": {
+    "id": 24575,
+    "aegisName": "S_Chain_Press_Weapon",
+    "name": "Chain Press Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 3%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาดขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาดขึ้นอีก 4%\nเมื่อสวมใส่ Chain Press Shadow Weapon/Pendant/Earring ร่วมกัน,\nเพิ่ม Damage สกิล Shield Chain, Shield Press % เท่ากับค่าอัพเกรดรวมกัน\nเมื่อสวมใส่ร่วมกับ Royal Guard Shadow Shield,\nเพิกเฉยต่อพลังป้องกันทางกายภาพของทุกเผ่ายกเว้น Player 40% และเพิกเฉยต่อพลังป้องกันทางกายภาพเพิ่มอีกตามค่าอัพเกรดรวมกันของ Chain Press Shadow Weapon และ Royal Guard Shadow Shield\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Royal Guard^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "Royal Guard"
+    ],
+    "script": {
+      "p_size_all": [
+        "3",
+        "7===3",
+        "9===4"
+      ],
+      "Shield Chain": [
+        "EQUIP[Chain Press Shadow Pendant&&Chain Press Shadow Earring]REFINE[shadowWeapon,shadowPendant,shadowEarring==1]---1"
+      ],
+      "Shield Press": [
+        "EQUIP[Chain Press Shadow Pendant&&Chain Press Shadow Earring]REFINE[shadowWeapon,shadowPendant,shadowEarring==1]---1"
+      ],
+      "p_pene_race_all": [
+        "EQUIP[Royal Guard Shadow Shield]40",
+        "EQUIP[Royal Guard Shadow Shield]REFINE[shadowWeapon,shadowShield==1]---1"
+      ],
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1"
+      ]
+    }
+  },
+  "24576": {
+    "id": 24576,
+    "aegisName": "S_Chain_Press_Pendant",
+    "name": "Chain Press Shadow Pendant",
+    "unidName": "Shadow Pendant",
+    "resName": "펜던트쉐도우",
+    "description": "สร้อยคอศักดิ์สิทธิ์ที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา\nเพิ่ม Damage สกิล Shield Press 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage สกิล Shield Press ขึ้นอีก 2%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Pendant ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Royal Guard^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 530,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "AccessoryLeft",
+    "compositionPos": null,
+    "usableClass": [
+      "Royal Guard"
+    ],
+    "script": {
+      "Shield Press": [
+        "5",
+        "2---2"
+      ]
+    }
+  },
+  "24577": {
+    "id": 24577,
+    "aegisName": "S_Chain_Press_Earing",
+    "name": "Chain Press Shadow Earring",
+    "unidName": "Shadow Earring",
+    "resName": "이어링쉐도우",
+    "description": "ต่างหูมงคลที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา\nเพิ่ม Damage สกิล Shield Chain 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage สกิล Shield Chain ขึ้นอีก 2%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Earring ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Royal Guard^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 529,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "AccessoryRight",
+    "compositionPos": null,
+    "usableClass": [
+      "Royal Guard"
+    ],
+    "script": {
+      "Shield Chain": [
+        "5",
+        "2---2"
+      ]
+    }
+  },
   "24578": {
     "id": 24578,
     "aegisName": "S_Banish_Cannon_Armor",
@@ -34558,6 +34727,76 @@
       ]
     }
   },
+  "24685": {
+    "id": 24685,
+    "aegisName": "S_Absorb_Shield",
+    "name": "Absorb Shadow Shield",
+    "unidName": "Shadow Shield",
+    "resName": "쉴드쉐도우3",
+    "description": "โล่เล็กที่สามารถสวมใส่ที่แขนได้ สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์การป้องกันของมันจะลดน้อยลง\nMHP +3%, MSP +3%\nทุก ๆ การอัพเกรด 3 ขั้น ATK +1%\nเมื่ออัพเกรดถึงขั้น 7 ลดระยะเวลาร่ายแบบแปรผัน 3%\nเมื่ออัพเกรดถึงขั้น 10 เมื่อโจมตีทางกายภาพ มีโอกาส 2% ที่จะฟื้นฟู HP 2% ของ Damage ที่ทำ และมีโอกาส 1% ที่จะฟื้นฟู SP 2% ของ Damage ที่ทำ\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shield^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 527,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Shield",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "hpPercent": [
+        "3"
+      ],
+      "spPercent": [
+        "3"
+      ],
+      "atkPercent": [
+        "3---1"
+      ],
+      "vct": [
+        "7===3"
+      ]
+    }
+  },
+  "24686": {
+    "id": 24686,
+    "aegisName": "S_Absorb_Weapon",
+    "name": "Absorb Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우3",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา\nMHP +3%, MSP +3%\nทุก ๆ การอัพเกรด 3 ขั้น ATK +1%\nเมื่ออัพเกรดถึงขั้น 7 ลดระยะเวลาร่ายแบบแปรผัน 3%\nเมื่ออัพเกรดถึงขั้น 10 เมื่อโจมตีทางกายภาพ มีโอกาส 2% ที่จะฟื้นฟู HP 2% ของ Damage ที่ทำ และมีโอกาส 1% ที่จะฟื้นฟู SP 2% ของ Damage ที่ทำ\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "hpPercent": [
+        "3"
+      ],
+      "spPercent": [
+        "3"
+      ],
+      "atkPercent": [
+        "3---1"
+      ],
+      "vct": [
+        "7===3"
+      ]
+    }
+  },
   "24739": {
     "id": 24739,
     "aegisName": "S_SU_Weapon",
@@ -36984,6 +37223,33 @@
       ],
       "flee": [
         "15"
+      ]
+    }
+  },
+  "27252": {
+    "id": 27252,
+    "aegisName": "Geffen_Thug_Card",
+    "name": "Geffen Bully Card",
+    "unidName": "Geffen Bully Card",
+    "resName": "이름없는카드",
+    "description": "ASPD +3%\nเพิ่มคริติคอลดาเมจ 5%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Shoes^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 64,
+    "cardPrefix": "Bully",
+    "script": {
+      "aspdPercent": [
+        "3"
+      ],
+      "criDmg": [
+        "5"
       ]
     }
   },
@@ -40240,6 +40506,35 @@
       ]
     }
   },
+  "28509": {
+    "id": 28509,
+    "aegisName": "Ring_IL",
+    "name": "Illusion Ring [1]",
+    "unidName": "Ring",
+    "resName": "Ring_IL",
+    "description": "แหวนโบราณ\nSTR + 3, เมื่อมี STR พื้นฐานเท่ากับ 100 ขึ้นไป ATK + 30\nประเภท : ^777777Accessory^000000 พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^77777720^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพยกเว้น Novice^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 517,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 20,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "str": [
+        "3"
+      ],
+      "atk": [
+        "SUM[str==100]===30"
+      ]
+    }
+  },
   "28513": {
     "id": 28513,
     "aegisName": "Celine_Brooch",
@@ -40561,6 +40856,67 @@
       ],
       "m_element_dark": [
         "11===15"
+      ]
+    }
+  },
+  "28626": {
+    "id": 28626,
+    "aegisName": "Tablet_IL",
+    "name": "Illusion Tablet [2]",
+    "unidName": "Book",
+    "resName": "Tablet_IL",
+    "description": "แผ่นหินที่กล่าวกันว่าจารึกถ้อยคำแห่งปัญญาเอาไว้ แน่นอนว่ามันมีน้ำหนักมากเพราะเป็นหิน และถ้าหากเป็นไปตามคำกล่าวนั้น ก็คงจะเข้าถึงได้ยาก\nเพิ่ม Damage ทางกายภาพที่ทำต่อศัตรูธาตุ Shadow, Undead, Poison, Ghost 10%\nทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage ทางกายภาพที่ทำต่อศัตรูธาตุ Shadow, Undead, Poison, Ghost อีก 10%(มีผลจนถึงอัพเกรดขั้น 10)\nได้รับ Damage ทางกายภาพจากศัตรูธาตุ Shadow แรงขึ้น 30%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Illusion Ring \nเพิ่ม ASPD 8% \nทุก ๆ ขั้นอัพเกรด 2 ขั้นของ Illusion Tablet เพิ่ม Critical Damage อีก 5% \nเมื่ออัพเกรดถึงขั้น 9 CRI + 15\nเมื่ออัพเกรดถึงขั้น 11 ATK + 100 \n^ffffff_^000000\nประเภท : ^777777Book^000000 พลังโจมตี : ^777777170^000000\nน้ำหนัก : ^77777780^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Sage, Priest, Star Gladiator^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 271,
+    "itemLevel": 4,
+    "attack": 170,
+    "defense": null,
+    "weight": 80,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Sage",
+      "Priest",
+      "Star Gladiator"
+    ],
+    "script": {
+      "p_element_dark": [
+        "10",
+        "3===10",
+        "6===10",
+        "9===10"
+      ],
+      "p_element_undead": [
+        "10",
+        "3===10",
+        "6===10",
+        "9===10"
+      ],
+      "p_element_poison": [
+        "10",
+        "3===10",
+        "6===10",
+        "9===10"
+      ],
+      "p_element_ghost": [
+        "10",
+        "3===10",
+        "6===10",
+        "9===10"
+      ],
+      "aspdPercent": [
+        "EQUIP[Illusion Ring]===8"
+      ],
+      "criDmg": [
+        "EQUIP[Illusion Ring]2---5"
+      ],
+      "cri": [
+        "EQUIP[Illusion Ring]9===15"
+      ],
+      "atk": [
+        "EQUIP[Illusion Ring]11===100"
       ]
     }
   },
@@ -42390,6 +42746,342 @@
       "hpPercent": [
         "12===8",
         "13===2"
+      ]
+    }
+  },
+  "29014": {
+    "id": 29014,
+    "aegisName": "STR3INT",
+    "name": "STR+3 INT-3",
+    "unidName": "STR+3 INT-3",
+    "resName": "용의보주_홍",
+    "description": "STR + 3, INT - 3.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 72,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "str": [
+        "3"
+      ],
+      "int": [
+        "-3"
+      ]
+    }
+  },
+  "29015": {
+    "id": 29015,
+    "aegisName": "STR3DEX",
+    "name": "STR+3 DEX-3",
+    "unidName": "STR+3 DEX-3",
+    "resName": "용의보주_홍",
+    "description": "STR + 3, DEX - 3.\nเมื่อสวมใส่กับ STR+3 INT-3 จะเพิ่ม DEX + 3, INT + 3",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 73,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "str": [
+        "3"
+      ],
+      "dex": [
+        "-3",
+        "EQUIP[STR+3 INT-3]===3"
+      ],
+      "int": [
+        "EQUIP[STR+3 INT-3]===3"
+      ]
+    }
+  },
+  "29016": {
+    "id": 29016,
+    "aegisName": "INT3DEX",
+    "name": "INT+3 DEX-3",
+    "unidName": "INT+3 DEX-3",
+    "resName": "용의보주_청",
+    "description": "INT + 3, DEX - 3.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 72,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "int": [
+        "3"
+      ],
+      "dex": [
+        "-3"
+      ]
+    }
+  },
+  "29017": {
+    "id": 29017,
+    "aegisName": "INT3VIT",
+    "name": "INT+3 VIT-3",
+    "unidName": "INT+3 VIT-3",
+    "resName": "용의보주_청",
+    "description": "INT + 3, VIT - 3.\nเมื่อสวมใส่กับ INT+3 DEX-3 จะเพิ่ม DEX + 3, VIT + 3",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 73,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "int": [
+        "3"
+      ],
+      "vit": [
+        "-3",
+        "EQUIP[INT+3 DEX-3]===3"
+      ],
+      "dex": [
+        "EQUIP[INT+3 DEX-3]===3"
+      ]
+    }
+  },
+  "29018": {
+    "id": 29018,
+    "aegisName": "DEX3VIT",
+    "name": "DEX+3 VIT-3",
+    "unidName": "DEX+3 VIT-3",
+    "resName": "용의보주_녹",
+    "description": "DEX + 3, VIT - 3.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 72,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "dex": [
+        "3"
+      ],
+      "vit": [
+        "-3"
+      ]
+    }
+  },
+  "29019": {
+    "id": 29019,
+    "aegisName": "DEX3AGI",
+    "name": "DEX+3 AGI-3",
+    "unidName": "DEX+3 AGI-3",
+    "resName": "용의보주_녹",
+    "description": "DEX + 3, AGI - 3.\nเมื่อสวมใส่กับ DEX+3 VIT-3 จะเพิ่ม VIT + 3, AGI + 3.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 73,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "dex": [
+        "3"
+      ],
+      "agi": [
+        "-3",
+        "EQUIP[DEX+3 VIT-3]===3"
+      ],
+      "vit": [
+        "EQUIP[DEX+3 VIT-3]===3"
+      ]
+    }
+  },
+  "29020": {
+    "id": 29020,
+    "aegisName": "VIT3AGI",
+    "name": "VIT+3 AGI-3",
+    "unidName": "VIT+3 AGI-3",
+    "resName": "용의보주_황",
+    "description": "VIT + 3, AGI - 3.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 72,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "vit": [
+        "3"
+      ],
+      "agi": [
+        "-3"
+      ]
+    }
+  },
+  "29021": {
+    "id": 29021,
+    "aegisName": "VIT3LUK",
+    "name": "VIT+3 LUK-3",
+    "unidName": "VIT+3 LUK-3",
+    "resName": "용의보주_황",
+    "description": "VIT + 3, LUK - 3.\nเมื่อสวมใส่กับ VIT+3 AGI-3 จะเพิ่ม AGI + 3, LUK + 3",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 73,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "vit": [
+        "3"
+      ],
+      "luk": [
+        "-3",
+        "EQUIP[VIT+3 AGI-3]===3"
+      ],
+      "agi": [
+        "EQUIP[VIT+3 AGI-3]===3"
+      ]
+    }
+  },
+  "29022": {
+    "id": 29022,
+    "aegisName": "AGI3LUK",
+    "name": "AGI+3 LUK-3",
+    "unidName": "AGI+3 LUK-3",
+    "resName": "푸른묘안석",
+    "description": "AGI + 3, LUK - 3.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 72,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "agi": [
+        "3"
+      ],
+      "luk": [
+        "-3"
+      ]
+    }
+  },
+  "29023": {
+    "id": 29023,
+    "aegisName": "AGI3STR",
+    "name": "AGI+3 STR-3",
+    "unidName": "AGI+3 STR-3",
+    "resName": "푸른묘안석",
+    "description": "AGI + 3, STR - 3.\nเมื่อสวมใส่กับ AGI+3 LUK-3 จะเพิ่ม LUK + 3, STR + 3",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 73,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "agi": [
+        "3"
+      ],
+      "str": [
+        "-3",
+        "EQUIP[AGI+3 LUK-3]===3"
+      ],
+      "luk": [
+        "EQUIP[AGI+3 LUK-3]===3"
+      ]
+    }
+  },
+  "29024": {
+    "id": 29024,
+    "aegisName": "LUK3STR",
+    "name": "LUK+3 STR-3",
+    "unidName": "LUK+3 STR-3",
+    "resName": "하얀묘안석",
+    "description": "LUK + 3, STR - 3.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 72,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "luk": [
+        "3"
+      ],
+      "str": [
+        "-3"
+      ]
+    }
+  },
+  "29025": {
+    "id": 29025,
+    "aegisName": "LUK3INT",
+    "name": "LUK+3 INT-3",
+    "unidName": "LUK+3 INT-3",
+    "resName": "하얀묘안석",
+    "description": "LUK + 3, INT - 3.\nเมื่อสวมใส่กับ LUK+3 STR-3 จะเพิ่ม STR + 3, INT + 3",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 73,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "luk": [
+        "3"
+      ],
+      "int": [
+        "-3",
+        "EQUIP[LUK+3 STR-3]===3"
+      ],
+      "str": [
+        "EQUIP[LUK+3 STR-3]===3"
       ]
     }
   },
@@ -50369,15 +51061,18 @@
     "resName": "Gold_Lux_IL",
     "description": "ปืกพกที่สะดุดตาเพราะแสงสีทอง เน้นสวยงามแต่ไม่เน้นใช้งาน ถ้าพกติดตัวไปมาจะต้องเป็นที่จับจ้องอย่างแน่นอน \nHIT +10\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage ทางกายภาพระยะไกล 3%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage สกิล Desperado 40%\nเมื่ออัพเกรดถึงขั้น 9 ลด Cooldown สกิล Hot Barrel 5 วินาที\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Fire Dance 30%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Illusion Hot-blooded Headband, ATK +30\nเมื่อ Illusion Gold Lux และ Illusion Hot-blooded Headband อัพเกรดตั้งแต่ 7 ขึ้นไป ATK +5%\nเมื่อค่าอัพเกรดรวมกันตั้งแต่ 18 ขึ้นไป ลด Damage ที่ได้รับจากศัตรูขนาดเล็ก, กลาง 20%\nเมื่อค่าอัพเกรดรวมกันตั้งแต่ 22 ขึ้นไป เมื่อใช้สกิล Fire Dance มีโอกาสที่ ATK +100, เพิ่ม Damage ทางกายภาพระยะไกล 15% เป็นเวลา 10 วินาที\n^ffffff_^000000\nประเภท : ^777777Revolver^000000 พลังโจมตี : ^777777160^000000\nน้ำหนัก : ^777777180^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777120^000000\nอาชีพที่ใส่ได้ : ^777777Gunslinger Cls^000000",
     "slots": 2,
-    "itemTypeId": 0,
+    "itemTypeId": 1,
     "itemSubTypeId": 273,
-    "itemLevel": null,
+    "itemLevel": 4,
     "attack": 160,
     "defense": null,
     "weight": 180,
     "requiredLevel": 120,
     "location": null,
     "compositionPos": null,
+    "usableClass": [
+      "Gunslinger"
+    ],
     "script": {
       "hit": [
         "10"
@@ -64796,7 +65491,7 @@
       ],
       "m_my_element_fire": [
         "3",
-        "7===10"
+        "REFINE[7]LEARN_SKILL[Mystical Amplification==1]---1"
       ],
       "m_my_element_ghost": [
         "9===10"
