@@ -113,13 +113,20 @@ export class Sura extends CharacterBase {
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
-        const isMarked = this.isSkillActive('Earth Shaker');
-        const bonus = this.learnLv('Vigor Explosion') * (isMarked ? 300 : 200);
-        const gtBonus = this.isSkillActive('Gentle Touch - Opposite') ? 1.3 : 1;
+        const vigorLv = this.learnLv('Vigor Explosion');
 
-        return (
-          gtBonus * Math.floor((bonus + skillLevel * (isMarked ? 550 : 350)) * (baseLevel / (isMarked ? 120 : 150)))
-        );
+        let totalDmg = 0;
+        if (this.isSkillActive('Earth Shaker')) {
+          totalDmg = (vigorLv * 300 + skillLevel * 550) * (baseLevel / 100);
+        } else {
+          totalDmg = (vigorLv * 200 + skillLevel * 350) * (baseLevel / 100);
+        }
+
+        if (this.isSkillActive('Gentle Touch - Opposite')) {
+          totalDmg = totalDmg * 1.3;
+        }
+
+        return totalDmg;
       },
     },
   ];
@@ -139,7 +146,7 @@ export class Sura extends CharacterBase {
       name: 'Gentle Touch - Opposite',
       inputType: 'selectButton',
       dropdown: [
-        { label: 'Yes', value: 5, isUse: true, bonus: { atk: 40, atkPercent: 5, hpPercent: -5 } },
+        { label: 'Yes', value: 5, isUse: true, bonus: { atk: 40, atkPercent: 5 } },
         { label: 'No', value: 0, isUse: false },
       ],
     },
@@ -174,13 +181,22 @@ export class Sura extends CharacterBase {
       ],
     },
     {
-      label: 'Iron Hand 10',
+      label: 'Iron Hand',
       name: 'Iron Hand',
-      inputType: 'selectButton',
+      inputType: 'dropdown',
       isMasteryAtk: true,
       dropdown: [
-        { label: 'Yes', value: 10, isUse: true, bonus: { x_fist_atk: 10 * 3 } },
-        { label: 'No', value: 0, isUse: false },
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 1', value: 1, isUse: true, bonus: { x_fist_atk: 1 * 3 } },
+        { label: 'Lv 2', value: 2, isUse: true, bonus: { x_fist_atk: 2 * 3 } },
+        { label: 'Lv 3', value: 3, isUse: true, bonus: { x_fist_atk: 3 * 3 } },
+        { label: 'Lv 4', value: 4, isUse: true, bonus: { x_fist_atk: 4 * 3 } },
+        { label: 'Lv 5', value: 5, isUse: true, bonus: { x_fist_atk: 5 * 3 } },
+        { label: 'Lv 6', value: 6, isUse: true, bonus: { x_fist_atk: 6 * 3 } },
+        { label: 'Lv 7', value: 7, isUse: true, bonus: { x_fist_atk: 7 * 3 } },
+        { label: 'Lv 8', value: 8, isUse: true, bonus: { x_fist_atk: 8 * 3 } },
+        { label: 'Lv 9', value: 9, isUse: true, bonus: { x_fist_atk: 9 * 3 } },
+        { label: 'Lv 10', value: 10, isUse: true, bonus: { x_fist_atk: 10 * 3 } },
       ],
     },
     {
@@ -203,11 +219,6 @@ export class Sura extends CharacterBase {
         { label: 'Lv 3', value: 3, isUse: true },
         { label: 'Lv 4', value: 4, isUse: true },
         { label: 'Lv 5', value: 5, isUse: true },
-        { label: 'Lv 6', value: 6, isUse: true },
-        { label: 'Lv 7', value: 7, isUse: true },
-        { label: 'Lv 8', value: 8, isUse: true },
-        { label: 'Lv 9', value: 9, isUse: true },
-        { label: 'Lv 10', value: 10, isUse: true },
       ],
     },
     // {
