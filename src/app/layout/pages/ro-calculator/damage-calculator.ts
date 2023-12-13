@@ -25,6 +25,7 @@ export class DamageCalculator {
   private readonly EDP_EQUIP_MULTIPLIER = 4;
   private readonly BASE_CRI_MULTIPLIER = 1.4;
 
+  private skillName = '';
   private equipStatus: Record<ItemTypeEnum, EquipmentSummaryModel>;
   private totalBonus: EquipmentSummaryModel;
   private _totalEquipStatus: EquipmentSummaryModel;
@@ -155,6 +156,7 @@ export class DamageCalculator {
       weapon: this.weaponData,
       status: this.status,
       equipmentBonus: this.equipStatus,
+      skillName: this.skillName,
     };
   }
 
@@ -506,7 +508,7 @@ export class DamageCalculator {
     const formula = (_variant: number, overUpg: number) => {
       const upgradeBonus = refineBonus + (this.isIncludingOverUpgrade() ? overUpg : 0);
 
-      let total = baseWeaponAtk + _variant;
+      let total = baseWeaponAtk + _variant + (this.totalBonus['weaponAtk'] || 0);
       total += statBonus;
       total += upgradeBonus;
       if (isEDP) {
@@ -605,6 +607,7 @@ export class DamageCalculator {
       isIgnoreDef = false,
       finalDmgFormula,
     } = skillData;
+    this.skillName = skillName;
     const { criDmgPercentage = 1 } = skillData;
     const canCri = this.isForceSkillCri || _canCri;
     const { reducedHardDef, finalDmgReduction, finalSoftDef } = this.getPhisicalDefData();

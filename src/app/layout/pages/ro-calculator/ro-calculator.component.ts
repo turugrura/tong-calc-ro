@@ -141,6 +141,15 @@ const monsterTypes = [
   ['Normal', 'normal'],
 ];
 
+const HideHpSp = {
+  [ClassName.Doram]: environment.production,
+  [ClassName.Rebellion]: environment.production,
+  [ClassName.Kagerou]: environment.production,
+  [ClassName.Oboro]: environment.production,
+  [ClassName.SoulReaper]: environment.production,
+  [ClassName.StarEmperor]: environment.production,
+};
+
 @Component({
   selector: 'app-ro-calculator',
   templateUrl: './ro-calculator.component.html',
@@ -342,6 +351,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   ref: DynamicDialogRef | undefined;
   monsterRef: DynamicDialogRef | undefined;
   hideBasicAtk = this.layoutService.config.hideBasicAtk;
+  readonly hideHpSp = HideHpSp;
 
   constructor(
     private roService: RoService,
@@ -734,6 +744,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       .setExtraOptions(this.getOptionScripts(rawOptionTxts))
       .setUsedSkillNames(activeSkillNames)
       .setLearnedSkills(learnedSkillMap)
+      .setOffensiveSkill(selectedAtkSkill)
       .prepareAllItemBonus()
       .setSelectedChances(this.selectedChances)
       .calcAllDefs()

@@ -133,10 +133,10 @@
 }
 
 .battle_row_health {
-  color: var(--red-500);
+  color: var(--red-300);
   /* background-color: var(--surface-0); */
   background-color: #121212;
-  font-weight: bold;
+  font-weight: 400;
 }
 
 .summary_stat_atk {
@@ -250,6 +250,10 @@
   /* max-height: 7rem;
   height: 100%; */
   width: 95%;
+}
+
+.border_default {
+  border: var(--border-radius) solid var(--surface-border);
 }
 
 :host ::ng-deep .item_label_weapon_main .p-dropdown-label,

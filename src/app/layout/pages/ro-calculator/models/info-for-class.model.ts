@@ -12,4 +12,5 @@ export interface InfoForClass {
   status: StatusSummary;
   totalBonus: EquipmentSummaryModel;
   equipmentBonus: Partial<Record<ItemTypeEnum, EquipmentSummaryModel>>;
+  skillName: string;
 }

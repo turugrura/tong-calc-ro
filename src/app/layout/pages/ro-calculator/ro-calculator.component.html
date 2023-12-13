@@ -353,7 +353,7 @@
                       '( อีก ' + totalSummary?.calc?.to530 + ' )'
                     }}</span>
                   </div>
-                  <div class="col-12" *ngIf="!env.production">
+                  <div class="col-12 px-1 border_default" [hidden]="hideHpSp[selectedCharacter?.className]">
                     <div class="grid grid-nogutter">
                       <div class="col-12">
                         MaxHP:
@@ -706,7 +706,6 @@
               <div class="col-4">
                 <p-cascadeSelect
                   [(ngModel)]="model.rawOptionTxts[itemOptionNumber.W_Left_2]"
-                  [disabled]="!model.weapon"
                   [options]="optionList"
                   optionValue="value"
                   optionGroupLabel="label"
@@ -721,7 +720,6 @@
               <div class="col-4">
                 <p-cascadeSelect
                   [(ngModel)]="model.rawOptionTxts[itemOptionNumber.W_Left_3]"
-                  [disabled]="!model.weapon"
                   [options]="optionList"
                   optionValue="value"
                   optionGroupLabel="label"

@@ -143,6 +143,7 @@ export class Calculator {
   private consumableBonuses: any[] = [];
   private aspdPotion: number = undefined;
 
+  private skillName = '';
   private allStatus = createRawTotalBonus();
   private totalEquipStatus = createRawTotalBonus();
   private equipStatus: Partial<Record<ItemTypeEnum, EquipmentSummaryModel>> = {
@@ -356,6 +357,7 @@ export class Calculator {
       weapon: this.weaponData,
       status: this.status,
       equipmentBonus: this.equipStatus,
+      skillName: this.skillName,
     };
   }
 
@@ -504,6 +506,13 @@ export class Calculator {
 
   setLearnedSkills(learnedSkillMap: Map<string, number>) {
     this.learnedSkillMap = learnedSkillMap;
+
+    return this;
+  }
+
+  setOffensiveSkill(skillValue: string) {
+    const [, _skillName] = skillValue?.match(/(.+)==(\d+)/) ?? [];
+    this.skillName = _skillName;
 
     return this;
   }

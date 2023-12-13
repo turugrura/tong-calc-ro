@@ -232,6 +232,34 @@ export class Sura extends CharacterBase {
         { label: 'No', value: 0, isUse: false },
       ],
     },
+    {
+      label: 'Total Spirit',
+      name: 'Total Spirit',
+      inputType: 'dropdown',
+      isMasteryAtk: true,
+      dropdown: [
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 1', value: 1, isUse: true, bonus: { atk: 1 * 3 } },
+        { label: 'Lv 2', value: 2, isUse: true, bonus: { atk: 2 * 3 } },
+        { label: 'Lv 3', value: 3, isUse: true, bonus: { atk: 3 * 3 } },
+        { label: 'Lv 4', value: 4, isUse: true, bonus: { atk: 4 * 3 } },
+        { label: 'Lv 5', value: 5, isUse: true, bonus: { atk: 5 * 3 } },
+      ],
+    },
+    {
+      label: 'Flash Combo',
+      name: 'Flash Combo',
+      inputType: 'dropdown',
+      isMasteryAtk: true,
+      dropdown: [
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 1', value: 1, isUse: true },
+        { label: 'Lv 2', value: 2, isUse: true },
+        { label: 'Lv 3', value: 3, isUse: true },
+        { label: 'Lv 4', value: 4, isUse: true },
+        { label: 'Lv 5', value: 5, isUse: true },
+      ],
+    },
   ];
 
   protected readonly _passiveSkillList: PassiveSkillModel[] = [
@@ -325,5 +353,15 @@ export class Sura extends CharacterBase {
     const wTypeName = weapon.data?.typeName || 'none';
 
     return this.calcHiddenMasteryAtk(info, { prefix: `x_${wTypeName}` }).totalAtk;
+  }
+
+  override setAdditionalBonus(params: InfoForClass) {
+    const { totalBonus, skillName } = params;
+    const flashComboLv = this.activeSkillLv('Flash Combo');
+    if (skillName === 'Tiger Cannon' && flashComboLv > 0) {
+      totalBonus['weaponAtk'] = (flashComboLv + 1) * 20;
+    }
+
+    return totalBonus;
   }
 }
