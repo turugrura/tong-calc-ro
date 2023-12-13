@@ -84,7 +84,7 @@ export const createExtraOptionList = () => {
     ['Delay', 'acd', 1, 30, 1, ' %'],
     ['VCT', 'vct', 1, 30, 1, ' %'],
     ['BaseHP (ใช้ปรับ BaseHP)', 'baseHp', 1, 100, 100],
-    ['BaseSP (ใช้ปรับ BaseSP)', 'baseSp', 1, 100, 100],
+    ['BaseSP (ใช้ปรับ BaseSP)', 'baseSp', 1, 100, 5],
     ['HP %', 'hpPercent', 1, 100, 1, ' %'],
     ['SP %', 'spPercent', 1, 100, 1, ' %'],
   ];
