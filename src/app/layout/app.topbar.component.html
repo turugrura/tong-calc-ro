@@ -14,6 +14,7 @@
     ></i>
     <i *ngIf="showUnreadVersion === 0" class="pi pi-bell text-xl" severity="danger"></i>
   </button>
+  <button pButton class="pl-2 p-button-text p-button-info" (click)="showReferenceDialog()">Reference</button>
   <!-- <i (click)="showDialog()" class="pi pi-bell text-3xl" pBadge value="2"></i> -->
 
   <!-- <button #menubutton class="p-link layout-menu-button layout-topbar-button" (click)="layoutService.onMenuToggle()">
@@ -146,5 +147,22 @@
         <li *ngFor="let log of update.logs">{{ log }}</li>
       </ul>
     </div>
+  </p-dialog>
+
+  <p-dialog
+    header="References"
+    [draggable]="false"
+    [resizable]="false"
+    [modal]="true"
+    [(visible)]="visibleReference"
+    [style]="{ width: '50vw', height: '70vh' }"
+  >
+    <ul>
+      <li *ngFor="let reference of references">
+        <span class="mx-2">{{ reference.label }}</span
+        >By<span class="mx-2">{{ reference.writer }}</span>
+        <a href="{{ reference.link }}" target="_blank" rel="noreferrer noopener">Link</a>
+      </li>
+    </ul>
   </p-dialog>
 </div>

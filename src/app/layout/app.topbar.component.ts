@@ -18,6 +18,7 @@ export class AppTopBarComponent {
 
   visible: boolean = false;
   visibleInfo: boolean = false;
+  visibleReference = false;
   env = environment;
 
   infos = [
@@ -32,6 +33,69 @@ export class AppTopBarComponent {
     'Tab "Summary" คือ ใส่อะไรบ้าง/อัพสกิลอะไรบ้าง/การคำนวนทั้งหมด',
     'Tab "Equipments Summary" คือ bonus ของไอเทมแบบภาพรวม',
     'Tab "Item Descriptions" คือ bonus ของไอเทมแต่ละชิ้นและคำอธิบาย (เอาไว้ตรวจสอบว่าได้ bonus ถูกไหม)',
+  ];
+
+  references: { label: string; link: string; writer: string; date?: string }[] = [
+    {
+      label: 'Items & Monsters & Skill infomation',
+      writer: 'DIVINE PRIDE',
+      link: 'https://www.divine-pride.net/',
+    },
+    {
+      label: 'Skill infomation',
+      writer: 'IRO Wiki',
+      link: 'https://irowiki.org/wiki/Main_Page',
+    },
+    {
+      label: 'KRO : Jobs improvement project',
+      writer: 'Sigma',
+      link: 'https://www.divine-pride.net/forum/index.php?/topic/3723-kro-jobs-improvement-project',
+    },
+    {
+      label: 'ATK',
+      writer: 'IRO Wiki',
+      link: 'https://irowiki.org/wiki/ATK',
+    },
+    {
+      label: 'MATK',
+      writer: 'IRO Wiki',
+      link: 'https://irowiki.org/wiki/MATK',
+    },
+    {
+      label: 'เจาะลึก Stat ต่างๆ ใน Renewal Part I : Matk & Mdef',
+      writer: 'Sigma the fallen',
+      link: 'https://web.facebook.com/notes/3202008843255644/',
+    },
+    {
+      label: 'Enchant Deadly Poison หรือที่เรียกติดปากกันว่า EDP',
+      writer: 'Assing',
+      link: 'https://www.pingbooster.com/th/blog/detail/ragnarok-online-edp-enchant-deadly-poison-assassin',
+    },
+    {
+      label: 'Enchants',
+      writer: 'trifectaro.com',
+      link: 'https://trifectaro.com/mediawiki/index.php/Enchants',
+    },
+    {
+      label: 'Malangdo Enchants',
+      writer: 'IRO Wiki',
+      link: 'https://irowiki.org/wiki/Malangdo_Enchants',
+    },
+    {
+      label: 'Open-source RO emulator',
+      writer: 'rAthena',
+      link: 'https://github.com/rathena/rathena',
+    },
+    {
+      label: 'Bonus JOB LV.70',
+      writer: 'RO GGT',
+      link: 'https://ro.gnjoy.in.th/newyear_adventure_2024/assets/img/additional/Ragnarok-Today/POP-UP-Job-BONUS.jpg',
+    },
+    // {
+    //   label: '',
+    //   writer: '',
+    //   link: '',
+    // },
   ];
 
   updates: { v: string; date: string; logs: string[] }[] = [
@@ -328,6 +392,10 @@ export class AppTopBarComponent {
 
   showUpdateDialog() {
     this.visibleUpdate = true;
+  }
+
+  showReferenceDialog() {
+    this.visibleReference = true;
   }
 
   onHideUpdateDialog() {
