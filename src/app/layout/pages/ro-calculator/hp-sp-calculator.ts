@@ -35,6 +35,8 @@ export class HpSpCalculator {
 
   private _maxHp = 0;
   private _maxSp = 0;
+  private _baseHp = 0;
+  private _baseSp = 0;
 
   private _shadowHP = 0;
   private _equipmentVit = 0;
@@ -49,8 +51,11 @@ export class HpSpCalculator {
     return this;
   }
 
-  setAllInfo(info: Omit<InfoForClass, 'weapon' | 'monster'>) {
-    const { model, status, totalBonus, equipmentBonus } = info;
+  setAllInfo(info: Omit<InfoForClass, 'weapon' | 'monster'> & { baseHp: number; baseSp: number }) {
+    const { model, status, totalBonus, equipmentBonus, baseHp, baseSp } = info;
+    this._baseHp = baseHp || 0;
+    this._baseSp = baseSp || 0;
+
     const { shadowArmor, shadowShield, shadowBoot, shadowEarring, shadowPendant } = equipmentBonus;
     let totalShadowRefine = shadowArmor.refine || 0;
     totalShadowRefine += shadowShield.refine || 0;
@@ -125,13 +130,13 @@ export class HpSpCalculator {
       const { hp, hpPercent, sp, spPercent } = this._totalBonus;
       // console.log({ baseHp, baseSp, hp, hpPercent, sp, spPercent });
 
-      let maxHp = floor(baseHp * 1.25);
+      let maxHp = floor(baseHp * 1.25) + this._baseHp;
       maxHp = floor(maxHp * (1 + this._totalStatus.totalVit * 0.01));
       maxHp += hp + this._shadowHP + this._equipmentVit;
       maxHp += this.getBonusHpL();
       this._maxHp = maxHp + floor(maxHp * ((hpPercent || 0) * 0.01));
 
-      let maxSp = floor(baseSp * 1.25);
+      let maxSp = floor(baseSp * 1.25) + this._baseSp;
       maxSp = floor(maxSp * (1 + this._totalStatus.totalInt * 0.01));
       maxSp += sp + this._equipmentInt;
       this._maxSp = maxSp + floor(maxSp * ((spPercent || 0) * 0.01));

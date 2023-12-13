@@ -1414,7 +1414,11 @@ export class Calculator {
   calculateHpSp(params: { isUseHpL: boolean }) {
     const { maxHp, maxSp } = this.hpSpCalculator
       .setClass(this._class)
-      .setAllInfo(this.infoForClass)
+      .setAllInfo({
+        ...this.infoForClass,
+        baseHp: this.totalEquipStatus['baseHp'],
+        baseSp: this.totalEquipStatus['baseSp'],
+      })
       .setBonusFlag(params)
       .calculate()
       .getTotalSummary();
@@ -1465,7 +1469,11 @@ export class Calculator {
     const calculator = this.dmgCalculator.setExtraBonus(c);
     const { maxHp, maxSp } = this.hpSpCalculator
       .setClass(this._class)
-      .setAllInfo(calculator.infoForClass)
+      .setAllInfo({
+        ...calculator.infoForClass,
+        baseHp: calculator.totalBonus['baseHp'],
+        baseSp: calculator.totalBonus['baseSp'],
+      })
       .setBonusFlag(params)
       .calculate()
       .getTotalSummary();

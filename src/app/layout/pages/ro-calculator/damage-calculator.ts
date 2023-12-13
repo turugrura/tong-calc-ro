@@ -27,7 +27,7 @@ export class DamageCalculator {
 
   private skillName = '';
   private equipStatus: Record<ItemTypeEnum, EquipmentSummaryModel>;
-  private totalBonus: EquipmentSummaryModel;
+  totalBonus: EquipmentSummaryModel;
   private _totalEquipStatus: EquipmentSummaryModel;
   private model: Partial<MainModel>;
 

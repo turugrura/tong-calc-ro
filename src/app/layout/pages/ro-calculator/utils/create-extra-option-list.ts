@@ -70,21 +70,23 @@ export const createExtraOptionList = () => {
     }),
   });
 
-  const options: [string, string, number, number, string?][] = [
-    ['Atk', 'atk', 1, 65],
-    ['Atk %', 'atkPercent', 1, 30, ' %'],
-    ['Matk', 'matk', 1, 65],
-    ['Matk %', 'matkPercent', 1, 30, ' %'],
-    ['Long Range', 'range', 1, 30, ' %'],
-    ['Melee', 'melee', 1, 30, ' %'],
-    ['CRI Rate', 'cri', 1, 30, ' %'],
-    ['CRI Dmg', 'criDmg', 1, 30, ' %'],
-    ['ASPD', 'aspd', 1, 5],
-    ['ASPD %', 'aspdPercent', 1, 30, ' %'],
-    ['Delay', 'acd', 1, 30, ' %'],
-    ['VCT', 'vct', 1, 30, ' %'],
-    ['MaxHP %', 'hpPercent', 1, 100, ' %'],
-    ['MaxSP %', 'spPercent', 1, 100, ' %'],
+  const options: [string, string, number, number, number, string?][] = [
+    ['Atk', 'atk', 1, 65, 1],
+    ['Atk %', 'atkPercent', 1, 30, 1, ' %'],
+    ['Matk', 'matk', 1, 65, 1],
+    ['Matk %', 'matkPercent', 1, 30, 1, ' %'],
+    ['Long Range', 'range', 1, 30, 1, ' %'],
+    ['Melee', 'melee', 1, 30, 1, ' %'],
+    ['CRI Rate', 'cri', 1, 30, 1, ' %'],
+    ['CRI Dmg', 'criDmg', 1, 30, 1, ' %'],
+    ['ASPD', 'aspd', 1, 5, 1],
+    ['ASPD %', 'aspdPercent', 1, 30, 1, ' %'],
+    ['Delay', 'acd', 1, 30, 1, ' %'],
+    ['VCT', 'vct', 1, 30, 1, ' %'],
+    ['BaseHP (ใช้ปรับ BaseHP)', 'baseHp', 1, 100, 100],
+    ['BaseSP (ใช้ปรับ BaseSP)', 'baseSp', 1, 100, 100],
+    ['HP %', 'hpPercent', 1, 100, 1, ' %'],
+    ['SP %', 'spPercent', 1, 100, 1, ' %'],
   ];
 
   const subTypeMap = {
@@ -97,13 +99,17 @@ export const createExtraOptionList = () => {
   };
 
   const VAL_CAP = 10;
-  for (const [label, prop, rawMin, rawMax, suffix] of options) {
-    const labelNoPercent = label.replace(' %', '');
+  for (const [label, prop, rawMin, rawMax, scale, suffix] of options) {
+    const labelNoPercent = label.startsWith('BaseHP')
+      ? 'BaseHP'
+      : label.startsWith('BaseSP')
+      ? 'BaseSP'
+      : label.replace(' %', '');
     const values = [] as { label: string; min: number; max: number }[];
     const sign = label === 'Delay' || label === 'VCT' ? '-' : '+';
     for (let i = rawMin; i < rawMax; i += VAL_CAP) {
       const max = Math.min(i + VAL_CAP - 1, rawMax);
-      values.push({ label: `${i} - ${max}`, min: i, max: max });
+      values.push({ label: `${i * scale} - ${max * scale}`, min: i, max: max });
     }
 
     let children = [];
@@ -121,13 +127,13 @@ export const createExtraOptionList = () => {
         const { label: label2, min, max } = value;
 
         return {
-          label: `${label} ${label2}`,
+          label: `${labelNoPercent} ${label2}${suffix || ''}`,
           value: label2,
           children: Array.from({ length: max - min + 1 }, (_, k) => {
             const num = k + min;
             return {
-              label: `${labelNoPercent} ${sign}${num}${suffix || ''}`,
-              value: `${prop}:${num}`,
+              label: `${labelNoPercent} ${sign}${num * scale}${suffix || ''}`,
+              value: `${prop}:${num * scale}`,
             };
           }),
         };
