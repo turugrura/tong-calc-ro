@@ -22811,7 +22811,7 @@
       ],
       "hpPercent": [
         "EQUIP[Giant God Snake Skin]===15",
-        "EQUIP[Giant God Snake Skin]REFINE[10]vit:108===8"
+        "REFINE[10]vit:108===8"
       ],
       "spPercent": [
         "EQUIP[Giant God Snake Skin]===5"
@@ -22877,7 +22877,7 @@
     "name": "Clergy's Boots [1]",
     "unidName": "Boots",
     "resName": "Cassock_Boots",
-    "description": "รองเท้าที่เหล่าสาวกผู้เลื่อมใสในโอดินเคยสวมใส่ \nพรที่อบอวลไปทั่วรองเท้านี้ จะห่อหุ้มร่างกายไว้อย่างนุ่มนวล\n\nMHP +5%, DEF +30 \nASPD +10% \nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage ทางเวทมนตร์ต่อมอนสเตอร์ประเภท Angel, Demon 1%\nทุก ๆ การอัพเกรด 3 ขั้น ลด Damage ทางเวทมนตร์ที่ได้รับจากมอนสเตอร์ประเภท Angel, Demon 1%\nเมื่ออัพเกรดถึงขั้น 7 ลดระยะเวลาร่ายแบบแปรผันอีก 10% \nประเภท : ^777777Shoes^000000  พลังป้องกัน : ^77777735^000000\nน้ำหนัก : ^77777740^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "description": "รองเท้าที่เหล่าสาวกผู้เลื่อมใสในโอดินเคยสวมใส่ \nพรที่อบอวลไปทั่วรองเท้านี้ จะห่อหุ้มร่างกายไว้อย่างนุ่มนวล\n\nMHP +5%, DEF +30 \nASPD +10% \nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage ทางกายภาพต่อมอนสเตอร์เผ่า Angel, Demon 1%\nทุก ๆ การอัพเกรด 3 ขั้น ลด Damage ทางกายภาพและเวทมนตร์ที่ได้รับจากมอนสเตอร์เผ่า Angel, Demon 1%\nเมื่ออัพเกรดถึงขั้น 7 ASPD +10% เพิ่มเติม \nประเภท : ^777777Shoes^000000  พลังป้องกัน : ^77777735^000000\nน้ำหนัก : ^77777740^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
     "slots": 1,
     "itemTypeId": 2,
     "itemSubTypeId": 516,
@@ -22901,10 +22901,10 @@
       "aspdPercent": [
         "10"
       ],
-      "m_race_angel": [
+      "p_race_angel": [
         "2---1"
       ],
-      "m_race_demon": [
+      "p_race_demon": [
         "2---1"
       ],
       "vct": [
@@ -52532,7 +52532,7 @@
     "compositionPos": 16,
     "cardPrefix": "of Lugenburg",
     "script": {
-      "spPercent": [
+      "spPercentCost": [
         "10"
       ],
       "melee": [
@@ -61657,13 +61657,13 @@
       "acd": [
         "5"
       ],
-      "spPercent": [
-        "EQUIP[Illusion Booster R]10"
-      ],
       "p_class_boss": [
         "EQUIP[Illusion Booster R]10"
       ],
       "hpPercent": [
+        "EQUIP[Illusion Booster L]10"
+      ],
+      "spPercent": [
         "EQUIP[Illusion Booster L]10"
       ],
       "int": [

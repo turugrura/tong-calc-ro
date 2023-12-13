@@ -356,12 +356,16 @@
                   <div class="col-12" *ngIf="!env.production">
                     <div class="grid grid-nogutter">
                       <div class="col-12">
-                        HP:
-                        <span class="font-semibold px-1 summary_stat_def">{{ totalSummary?.calc?.maxHp || 0 }}</span>
+                        MaxHP:
+                        <span class="font-semibold px-1 summary_stat_yellow">{{
+                          totalSummary?.calc?.maxHp || 0 | number
+                        }}</span>
                       </div>
                       <div class="col-12">
-                        SP:
-                        <span class="font-semibold px-1 summary_stat_def">{{ totalSummary?.calc?.maxSp || 0 }}</span>
+                        MaxSP:
+                        <span class="font-semibold px-1 summary_stat_yellow">{{
+                          totalSummary?.calc?.maxSp || 0 | number
+                        }}</span>
                       </div>
                     </div>
                   </div>

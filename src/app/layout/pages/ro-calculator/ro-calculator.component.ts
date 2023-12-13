@@ -737,8 +737,8 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       .prepareAllItemBonus()
       .setSelectedChances(this.selectedChances)
       .calcAllDefs()
-      .calculateAllDamages(selectedAtkSkill)
-      .calculateHpSp({ isUseHpL: usedHpL });
+      .calculateHpSp({ isUseHpL: usedHpL })
+      .calculateAllDamages(selectedAtkSkill);
 
     return calc;
   }
@@ -930,12 +930,13 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       }
     }
 
+    const isUseHpL = this.model.consumables.includes(12424);
     this.calcDamages = selectedMonsterIds.map((monsterId) => {
       const monster = this.monsterDataMap[monsterId];
       const calculated = this.calculator
         .setMonster(monster)
         .prepareAllItemBonus()
-        .calcDmgWithExtraBonus(this.model.selectedAtkSkill);
+        .calcDmgWithExtraBonus({ skillValue: this.model.selectedAtkSkill, isUseHpL });
 
       const {
         id,

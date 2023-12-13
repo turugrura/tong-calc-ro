@@ -2,8 +2,6 @@ import { environment } from 'src/environments/environment';
 import { ElementType } from '../constants/element-type.const';
 import { EquipmentSummaryModel } from '../models/equipment-summary.model';
 import { InfoForClass } from '../models/info-for-class.model';
-import { PostCalcSkillModel } from '../models/post-calc-skill.model';
-import { PreCalcSkillModel } from '../models/pre-calc-skill.model';
 import { Weapon } from '../weapon';
 import { AspdTable } from './_aspd-table';
 import { ClassName } from './_class-name';
@@ -11,6 +9,8 @@ import { sortSkill } from '../utils';
 
 export interface AtkSkillFormulaInput extends InfoForClass {
   skillLevel: number;
+  maxHp: number;
+  maxSp: number;
 }
 
 export interface AtkSkillModel {
@@ -32,6 +32,7 @@ export interface AtkSkillModel {
     isMelee: boolean;
     formula: (input: AtkSkillFormulaInput) => number;
   };
+  finalDmgFormula?: (input: AtkSkillFormulaInput & { damage: number }) => number;
   canCri?: boolean;
   baseCri?: number;
   baseCriPercentage?: number;
@@ -47,6 +48,7 @@ export interface AtkSkillModel {
   isIgnoreDef?: boolean;
   isHDefToSDef?: boolean;
   isHit100?: boolean;
+  isSudoElement?: boolean;
   element?: ElementType;
 }
 [];
@@ -300,9 +302,6 @@ export abstract class CharacterBase {
   protected calcHiddenMasteryAtk(_: InfoForClass, x?: { prefix?: string; suffix?: string }) {
     const allBonus = { ...(this.bonuses?.masteryAtks || {}), ...(this.bonuses?.equipAtks || {}) };
 
-    let totalAtk = 0;
-    let totalMatk = 0;
-
     let attrAtk = 'x_atk';
     let attrMatk = 'x_matk';
     if (x?.prefix) {
@@ -314,6 +313,8 @@ export abstract class CharacterBase {
       attrMatk = `${attrMatk}_${x.suffix}`;
     }
 
+    let totalAtk = 0;
+    let totalMatk = 0;
     for (const [, bonus] of Object.entries(allBonus)) {
       totalAtk += bonus[attrAtk] || 0;
       totalMatk += bonus[attrMatk] || 0;
@@ -405,13 +406,5 @@ export abstract class CharacterBase {
 
   setAdditionalBonus(params: InfoForClass): EquipmentSummaryModel {
     return params.totalBonus;
-  }
-
-  preCalcSkillDamage(_input: PreCalcSkillModel) {
-    return;
-  }
-
-  postCalcSkillDamage(_input: PostCalcSkillModel) {
-    return;
   }
 }

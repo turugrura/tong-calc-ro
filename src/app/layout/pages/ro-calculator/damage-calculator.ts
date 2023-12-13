@@ -122,26 +122,32 @@ export class DamageCalculator {
 
     return {
       baseStr: str,
+      equipStr: this.totalBonus.str ?? 0,
       totalStr: str + (jobStr ?? 0) + (this.totalBonus.str ?? 0),
 
       baseInt: int,
+      equipInt: this.totalBonus.int ?? 0,
       totalInt: int + (jobInt ?? 0) + (this.totalBonus.int ?? 0),
 
       baseLuk: luk,
+      equipLuk: this.totalBonus.luk ?? 0,
       totalLuk: luk + (jobLuk ?? 0) + (this.totalBonus.luk ?? 0),
 
       baseVit: vit,
+      equipVit: this.totalBonus.vit ?? 0,
       totalVit: vit + (jobVit ?? 0) + (this.totalBonus.vit ?? 0),
 
       baseDex: dex,
+      equipDex: this.totalBonus.dex ?? 0,
       totalDex: dex + (jobDex ?? 0) + (this.totalBonus.dex ?? 0),
 
       baseAgi: agi,
+      equipAgi: this.totalBonus.agi ?? 0,
       totalAgi: agi + (jobAgi ?? 0) + (this.totalBonus.agi ?? 0),
     };
   }
 
-  private get infoForClass(): InfoForClass {
+  get infoForClass(): InfoForClass {
     return {
       model: this.model,
       monster: this.monsterData,
@@ -587,9 +593,18 @@ export class DamageCalculator {
     baseSkillDamage: number;
     weaponPropertyAtk: ElementType;
     sizePenalty: number;
+    formulaParams?: any;
   }) {
-    const { skillData, baseSkillDamage, weaponPropertyAtk, sizePenalty } = params;
-    const { name: skillName, element, canCri: _canCri, isMelee, isHDefToSDef = false, isIgnoreDef = false } = skillData;
+    const { skillData, baseSkillDamage, weaponPropertyAtk, sizePenalty, formulaParams } = params;
+    const {
+      name: skillName,
+      element,
+      canCri: _canCri,
+      isMelee,
+      isHDefToSDef = false,
+      isIgnoreDef = false,
+      finalDmgFormula,
+    } = skillData;
     const { criDmgPercentage = 1 } = skillData;
     const canCri = this.isForceSkillCri || _canCri;
     const { reducedHardDef, finalDmgReduction, finalSoftDef } = this.getPhisicalDefData();
@@ -617,7 +632,13 @@ export class DamageCalculator {
       if (_calcCri) total = floor(total * this.BASE_CRI_MULTIPLIER);
       // total = this.applyFinalMultiplier(total, 'phy');
 
-      return this.toPreventNegativeDmg(total);
+      total = this.toPreventNegativeDmg(total);
+
+      if (!!finalDmgFormula && typeof finalDmgFormula === 'function') {
+        return finalDmgFormula({ damage: total, ...formulaParams });
+      }
+
+      return total;
     };
 
     const propertyAtk = element || weaponPropertyAtk;
@@ -846,7 +867,13 @@ export class DamageCalculator {
     return { criMinDamage, criMaxDamage, sizePenalty: 100 };
   }
 
-  calculateAllDamages(skillValue: string, propertyAtk: ElementType): DamageSummaryModel {
+  calculateAllDamages(args: {
+    skillValue: string;
+    propertyAtk: ElementType;
+    maxHp: number;
+    maxSp: number;
+  }): DamageSummaryModel {
+    const { skillValue, propertyAtk, maxHp, maxSp } = args;
     const sizePenalty = this.getSizePenalty();
     const { totalMin, totalMax, totalMaxOver, propertyMultiplier } = this.calcTotalAtk({
       propertyAtk,
@@ -908,11 +935,14 @@ export class DamageCalculator {
       name: skillName,
       baseCriPercentage = 1,
     } = skillData;
-    const _baseSkillDamage =
-      formula({
-        ...this.infoForClass,
-        skillLevel,
-      }) + this.getFlatDmg(skillName);
+
+    const formulaParams = {
+      ...this.infoForClass,
+      skillLevel,
+      maxHp,
+      maxSp,
+    };
+    const _baseSkillDamage = formula(formulaParams) + this.getFlatDmg(skillName);
     let baseSkillDamage = floor(_baseSkillDamage);
 
     const params = {
@@ -920,6 +950,7 @@ export class DamageCalculator {
       skillData,
       weaponPropertyAtk: propertyAtk,
       sizePenalty,
+      formulaParams,
     };
     const calculated = isMatk ? this.calcMatkSkillDamage(params) : this.calcSkillDamage(params);
 
@@ -933,6 +964,8 @@ export class DamageCalculator {
         formula2({
           ...this.infoForClass,
           skillLevel,
+          maxHp,
+          maxSp,
         }) + this.getFlatDmg(skillName);
       const baseSkillDamage2 = floor(_baseSkillDamage2);
       baseSkillDamage += baseSkillDamage2;
@@ -942,6 +975,7 @@ export class DamageCalculator {
         skillData: { ...skillData, ...part2 },
         weaponPropertyAtk: propertyAtk,
         sizePenalty,
+        skillLevel,
       };
 
       const calcPart2 = isPart2Matk ? this.calcMatkSkillDamage(params2) : this.calcSkillDamage(params2);

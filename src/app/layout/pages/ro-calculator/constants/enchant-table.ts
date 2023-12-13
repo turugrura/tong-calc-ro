@@ -271,9 +271,9 @@ const createBaseStat = (from: number, to: number): string[] => {
   return ls;
 };
 const BaseState = {
-  _1: ['Strength1', 'Inteligence1', 'Dexterity1', 'Agility1', 'Vitality1', 'Luck1'],
-  _2: ['Strength2', 'Inteligence2', 'Dexterity2', 'Agility2', 'Vitality2', 'Luck2'],
-  _3: ['Strength3', 'Inteligence3', 'Dexterity3', 'Agility3', 'Vitality3', 'Luck3'],
+  _1: [Str._1, Int._1, Dex._1, Agi._1, Vit._1, Luk._1],
+  _2: [Str._2, Int._2, Dex._2, Agi._2, Vit._2, Luk._2],
+  _3: [Str._3, Int._3, Dex._3, Agi._3, Vit._3, Luk._3],
   _1_3: [Str._1, Str._2, Str._3, Int._1, Int._2, Int._3, Dex._1, Dex._2, Dex._3, Agi._1, Agi._2, Agi._3, Vit._1, Vit._2, Vit._3, Luk._1, Luk._2, Luk._3],
   _1_4: [
     Str._1,
@@ -302,9 +302,9 @@ const BaseState = {
     Luk._4,
   ],
   _3_5: [Str._3, Str._4, Str._5, Int._3, Int._4, Int._5, Dex._3, Dex._4, Dex._5, Agi._3, Agi._4, Agi._5, Vit._3, Vit._4, Vit._5, Luk._3, Luk._4, Luk._5],
-  _4: ['Strength4', 'Inteligence4', 'Dexterity4', 'Agility4', 'Vitality4', 'Luck4'],
-  _5: ['Strength5', 'Inteligence5', 'Dexterity5', 'Agility5', 'Vitality5', 'Luck5'],
-  _6: ['Strength6', 'Inteligence6', 'Dexterity6', 'Agility6', 'Vitality6', 'Luck6'],
+  _4: [Str._4, Int._4, Dex._4, Agi._4, Vit._4, Luk._4],
+  _5: [Str._5, Int._5, Dex._5, Agi._5, Vit._5, Luk._5],
+  _6: [Str._6, Int._6, Dex._6, Agi._6, Vit._6, Luk._6],
 };
 const AllState = {
   _1: [FS._1, EA._1, Spell._1, AttackDelay._1, Fatal._1, ...BaseState._1],
@@ -379,6 +379,8 @@ const illusionBoot = [
   'Improve_Orb_Health',
 ];
 const illusionAcc = [EA._5, FS._6, Spell._5, AttackDelay._4, Fatal._4, ...BaseState._3];
+const illusionAccR = [EA._5, FS._6, Spell._5, AttackDelay._4, Fatal._4, Str._3, Agi._3, Vit._3, Luk._3];
+const illusionAccL = [EA._5, FS._6, Spell._5, AttackDelay._4, Fatal._4, Int._3, Dex._3, Vit._3, Luk._3];
 
 const automaticJobs = [
   'Automatic_Orb46',
@@ -693,10 +695,10 @@ export const EnchantTable: EntTable[] = [
   { name: 'Illusion_Engine_B', enchants: [null, illusionGarment, illusionGarment, illusionGarment] },
   { name: 'Illusion_Leg_A', enchants: [null, illusionBoot, illusionBoot, illusionBoot] },
   { name: 'Illusion_Leg_B', enchants: [null, illusionBoot, illusionBoot, illusionBoot] },
-  { name: 'Illusion_B_R', enchants: [null, illusionAcc, illusionAcc, illusionAcc] },
-  { name: 'Illusion_B_L', enchants: [null, illusionAcc, illusionAcc, illusionAcc] },
-  { name: 'Illusion_BC_R', enchants: [null, illusionAcc, illusionAcc, illusionAcc] },
-  { name: 'Illusion_BC_L', enchants: [null, illusionAcc, illusionAcc, illusionAcc] },
+  { name: 'Illusion_B_R', enchants: [null, illusionAccR, illusionAccR, illusionAccR] },
+  { name: 'Illusion_BC_R', enchants: [null, illusionAccR, illusionAccR, illusionAccR] },
+  { name: 'Illusion_B_L', enchants: [null, illusionAccL, illusionAccL, illusionAccL] },
+  { name: 'Illusion_BC_L', enchants: [null, illusionAccL, illusionAccL, illusionAccL] },
 
   { name: '[Upgrade] Illusion Ring [1]', enchants: [null, illusionAcc, illusionAcc, illusionAcc] },
   { name: 'Secret Illusion Ring [1]', enchants: [null, ['Improve_Orb_L_Varmundt', ...illusionAcc], illusionAcc, illusionAcc] },

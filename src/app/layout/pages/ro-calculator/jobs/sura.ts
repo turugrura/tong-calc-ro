@@ -8,6 +8,8 @@ import {
 } from './_character-base.abstract';
 import { Acolyte } from './acolyte';
 import { InfoForClass } from '../models/info-for-class.model';
+import { floor } from '../utils';
+import { ElementType } from '../constants/element-type.const';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 1, 0, 0, 0, 0],
@@ -102,13 +104,13 @@ export class Sura extends CharacterBase {
   ];
   protected readonly _atkSkillList: AtkSkillModel[] = [
     {
-      label: 'Rampage Blast Lv5',
       name: 'Rampage Blast',
+      label: 'Rampage Blast Lv5',
+      value: 'Rampage Blast==5',
       fct: 0,
       vct: 0,
       acd: 1,
       cd: 10,
-      value: 'Rampage Blast==5',
       levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
@@ -122,41 +124,103 @@ export class Sura extends CharacterBase {
           totalDmg = (vigorLv * 200 + skillLevel * 350) * (baseLevel / 100);
         }
 
-        if (this.isSkillActive('Gentle Touch - Opposite')) {
-          totalDmg = totalDmg * 1.3;
-        }
+        return floor(totalDmg);
+      },
+    },
+    {
+      name: 'Tiger Cannon',
+      label: 'Tiger Cannon Lv10',
+      value: 'Tiger Cannon==10',
+      fct: 0,
+      vct: 2,
+      acd: 1,
+      cd: 3,
+      isMelee: true,
+      isSudoElement: true,
+      element: ElementType.Neutral,
+      levelList: [],
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, maxHp, maxSp } = input;
+        const baseLevel = model.level;
+        const baseDamage = (maxHp * (10 + skillLevel * 2) * 0.01 + maxSp * (5 + skillLevel) * 0.01) / 4;
 
-        return totalDmg;
+        return floor(baseDamage * (baseLevel / 100));
+      },
+      finalDmgFormula: ({ damage, skillLevel, monster }): number => {
+        const bonusDamge = skillLevel * 240 + monster.level * 40;
+
+        return damage + bonusDamge;
+      },
+    },
+    {
+      name: 'Tiger Cannon',
+      label: 'Tiger Cannon Lv10 (Combo)',
+      value: 'Tiger Cannon Combo==10',
+      fct: 0,
+      vct: 2,
+      acd: 1,
+      cd: 3,
+      isMelee: true,
+      element: ElementType.Neutral,
+      levelList: [],
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, maxHp, maxSp } = input;
+        const baseLevel = model.level;
+        const baseDamage = (maxHp * (10 + skillLevel * 2) * 0.01 + maxSp * (5 + skillLevel) * 0.01) / 2;
+
+        return floor((baseDamage * (baseLevel / 100) * 4) / 3);
+      },
+      finalDmgFormula: ({ damage, skillLevel, monster }): number => {
+        const bonusDamge = skillLevel * 500 + monster.level * 40;
+
+        return damage + bonusDamge;
       },
     },
   ];
 
   protected readonly _activeSkillList: ActiveSkillModel[] = [
     {
-      label: 'Rising Dragon 10',
+      label: 'Rising Dragon',
       name: 'Rising Dragon',
-      inputType: 'selectButton',
+      inputType: 'dropdown',
       dropdown: [
-        { label: 'Yes', value: 10, isUse: true, bonus: { hpPercent: 12, spPercent: 12 } },
-        { label: 'No', value: 0, isUse: false },
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 1', value: 1, isUse: true, bonus: { hpPercent: 1 + 2, spPercent: 1 + 2 } },
+        { label: 'Lv 2', value: 2, isUse: true, bonus: { hpPercent: 2 + 2, spPercent: 2 + 2 } },
+        { label: 'Lv 3', value: 3, isUse: true, bonus: { hpPercent: 3 + 2, spPercent: 3 + 2 } },
+        { label: 'Lv 4', value: 4, isUse: true, bonus: { hpPercent: 4 + 2, spPercent: 4 + 2 } },
+        { label: 'Lv 5', value: 5, isUse: true, bonus: { hpPercent: 5 + 2, spPercent: 5 + 2 } },
+        { label: 'Lv 6', value: 6, isUse: true, bonus: { hpPercent: 6 + 2, spPercent: 6 + 2 } },
+        { label: 'Lv 7', value: 7, isUse: true, bonus: { hpPercent: 7 + 2, spPercent: 7 + 2 } },
+        { label: 'Lv 8', value: 8, isUse: true, bonus: { hpPercent: 8 + 2, spPercent: 8 + 2 } },
+        { label: 'Lv 9', value: 9, isUse: true, bonus: { hpPercent: 9 + 2, spPercent: 9 + 2 } },
+        { label: 'Lv 10', value: 10, isUse: true, bonus: { hpPercent: 10 + 2, spPercent: 10 + 2 } },
       ],
     },
     {
-      label: 'GT-Opposite 5',
+      label: 'GT-Opposite',
       name: 'Gentle Touch - Opposite',
-      inputType: 'selectButton',
+      inputType: 'dropdown',
       dropdown: [
-        { label: 'Yes', value: 5, isUse: true, bonus: { atk: 40, atkPercent: 5 } },
-        { label: 'No', value: 0, isUse: false },
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 1', value: 1, isUse: true, bonus: { atk: 8 * 1, atkPercent: 1, 'Rampage Blast': 30 } },
+        { label: 'Lv 2', value: 2, isUse: true, bonus: { atk: 8 * 2, atkPercent: 2, 'Rampage Blast': 30 } },
+        { label: 'Lv 3', value: 3, isUse: true, bonus: { atk: 8 * 3, atkPercent: 3, 'Rampage Blast': 30 } },
+        { label: 'Lv 4', value: 4, isUse: true, bonus: { atk: 8 * 4, atkPercent: 4, 'Rampage Blast': 30 } },
+        { label: 'Lv 5', value: 5, isUse: true, bonus: { atk: 8 * 5, atkPercent: 5, 'Rampage Blast': 30 } },
       ],
     },
     {
-      label: 'GT-Alive 5',
+      label: 'GT-Alive',
       name: 'Gentle Touch - Alive',
-      inputType: 'selectButton',
+      inputType: 'dropdown',
       dropdown: [
-        { label: 'Yes', value: 5, isUse: true, bonus: { hpPercent: 10, def: 100 } },
-        { label: 'No', value: 0, isUse: false },
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 1', value: 1, isUse: true, bonus: { hpPercent: 1 * 2, def: 1 * 20, 'Tiger Cannon': 30 } },
+        { label: 'Lv 2', value: 2, isUse: true, bonus: { hpPercent: 2 * 2, def: 2 * 20, 'Tiger Cannon': 30 } },
+        { label: 'Lv 3', value: 3, isUse: true, bonus: { hpPercent: 3 * 2, def: 3 * 20, 'Tiger Cannon': 30 } },
+        { label: 'Lv 4', value: 4, isUse: true, bonus: { hpPercent: 4 * 2, def: 4 * 20, 'Tiger Cannon': 30 } },
+        { label: 'Lv 5', value: 5, isUse: true, bonus: { hpPercent: 5 * 2, def: 5 * 20, 'Tiger Cannon': 30 } },
       ],
     },
     {
@@ -172,12 +236,21 @@ export class Sura extends CharacterBase {
 
   protected readonly _passiveSkillList: PassiveSkillModel[] = [
     {
-      label: 'Divine Protec 10',
+      label: 'Divine Protection',
       name: 'Divine Protection',
-      inputType: 'selectButton',
+      inputType: 'dropdown',
       dropdown: [
-        { label: 'Yes', value: 10, isUse: true },
-        { label: 'No', value: 0, isUse: false },
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 1', value: 1, isUse: true },
+        { label: 'Lv 2', value: 2, isUse: true },
+        { label: 'Lv 3', value: 3, isUse: true },
+        { label: 'Lv 4', value: 4, isUse: true },
+        { label: 'Lv 5', value: 5, isUse: true },
+        { label: 'Lv 6', value: 6, isUse: true },
+        { label: 'Lv 7', value: 7, isUse: true },
+        { label: 'Lv 8', value: 8, isUse: true },
+        { label: 'Lv 9', value: 9, isUse: true },
+        { label: 'Lv 10', value: 10, isUse: true },
       ],
     },
     {
@@ -187,25 +260,34 @@ export class Sura extends CharacterBase {
       isMasteryAtk: true,
       dropdown: [
         { label: '-', value: 0, isUse: false },
-        { label: 'Lv 1', value: 1, isUse: true, bonus: { x_fist_atk: 1 * 3 } },
-        { label: 'Lv 2', value: 2, isUse: true, bonus: { x_fist_atk: 2 * 3 } },
-        { label: 'Lv 3', value: 3, isUse: true, bonus: { x_fist_atk: 3 * 3 } },
-        { label: 'Lv 4', value: 4, isUse: true, bonus: { x_fist_atk: 4 * 3 } },
-        { label: 'Lv 5', value: 5, isUse: true, bonus: { x_fist_atk: 5 * 3 } },
-        { label: 'Lv 6', value: 6, isUse: true, bonus: { x_fist_atk: 6 * 3 } },
-        { label: 'Lv 7', value: 7, isUse: true, bonus: { x_fist_atk: 7 * 3 } },
-        { label: 'Lv 8', value: 8, isUse: true, bonus: { x_fist_atk: 8 * 3 } },
-        { label: 'Lv 9', value: 9, isUse: true, bonus: { x_fist_atk: 9 * 3 } },
-        { label: 'Lv 10', value: 10, isUse: true, bonus: { x_fist_atk: 10 * 3 } },
+        { label: 'Lv 1', value: 1, isUse: true, bonus: { x_fist_atk: 1 * 3, x_none_atk: 1 * 3 } },
+        { label: 'Lv 2', value: 2, isUse: true, bonus: { x_fist_atk: 2 * 3, x_none_atk: 2 * 3 } },
+        { label: 'Lv 3', value: 3, isUse: true, bonus: { x_fist_atk: 3 * 3, x_none_atk: 3 * 3 } },
+        { label: 'Lv 4', value: 4, isUse: true, bonus: { x_fist_atk: 4 * 3, x_none_atk: 4 * 3 } },
+        { label: 'Lv 5', value: 5, isUse: true, bonus: { x_fist_atk: 5 * 3, x_none_atk: 5 * 3 } },
+        { label: 'Lv 6', value: 6, isUse: true, bonus: { x_fist_atk: 6 * 3, x_none_atk: 6 * 3 } },
+        { label: 'Lv 7', value: 7, isUse: true, bonus: { x_fist_atk: 7 * 3, x_none_atk: 7 * 3 } },
+        { label: 'Lv 8', value: 8, isUse: true, bonus: { x_fist_atk: 8 * 3, x_none_atk: 8 * 3 } },
+        { label: 'Lv 9', value: 9, isUse: true, bonus: { x_fist_atk: 9 * 3, x_none_atk: 9 * 3 } },
+        { label: 'Lv 10', value: 10, isUse: true, bonus: { x_fist_atk: 10 * 3, x_none_atk: 10 * 3 } },
       ],
     },
     {
-      label: 'Dodge 10',
+      label: 'Dodge',
       name: 'Dodge',
-      inputType: 'selectButton',
+      inputType: 'dropdown',
       dropdown: [
-        { label: 'Yes', value: 10, isUse: true, bonus: { flee: 15 } },
-        { label: 'No', value: 0, isUse: false },
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 1', value: 1, isUse: true, bonus: { flee: 1 } },
+        { label: 'Lv 2', value: 2, isUse: true, bonus: { flee: 3 } },
+        { label: 'Lv 3', value: 3, isUse: true, bonus: { flee: 4 } },
+        { label: 'Lv 4', value: 4, isUse: true, bonus: { flee: 6 } },
+        { label: 'Lv 5', value: 5, isUse: true, bonus: { flee: 7 } },
+        { label: 'Lv 6', value: 6, isUse: true, bonus: { flee: 9 } },
+        { label: 'Lv 7', value: 7, isUse: true, bonus: { flee: 10 } },
+        { label: 'Lv 8', value: 8, isUse: true, bonus: { flee: 12 } },
+        { label: 'Lv 9', value: 9, isUse: true, bonus: { flee: 13 } },
+        { label: 'Lv 10', value: 10, isUse: true, bonus: { flee: 15 } },
       ],
     },
     {
@@ -240,8 +322,8 @@ export class Sura extends CharacterBase {
 
   override getMasteryAtk(info: InfoForClass): number {
     const { weapon } = info;
-    const wTypeName = weapon.data?.typeName;
+    const wTypeName = weapon.data?.typeName || 'none';
 
-    return this.calcHiddenMasteryAtk(info, { prefix: wTypeName }).totalAtk;
+    return this.calcHiddenMasteryAtk(info, { prefix: `x_${wTypeName}` }).totalAtk;
   }
 }

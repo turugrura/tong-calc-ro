@@ -2,6 +2,7 @@ import { ElementType } from '../constants/element-type.const';
 
 export interface PreparedMonsterModel {
   name: string;
+  level: number;
   /**
    * lowercase
    */

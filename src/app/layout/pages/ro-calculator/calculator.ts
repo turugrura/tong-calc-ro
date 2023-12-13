@@ -210,6 +210,7 @@ export class Calculator {
   private leftWeaponData = new Weapon();
   private monsterData: PreparedMonsterModel = {
     name: '',
+    level: 1,
     race: '',
     raceUpper: '',
     size: 'm',
@@ -300,21 +301,27 @@ export class Calculator {
 
     return {
       baseStr: str,
+      equipStr: this.totalEquipStatus.str ?? 0,
       totalStr: str + (jobStr ?? 0) + (this.totalEquipStatus.str ?? 0),
 
       baseInt: int,
+      equipInt: this.totalEquipStatus.int ?? 0,
       totalInt: int + (jobInt ?? 0) + (this.totalEquipStatus.int ?? 0),
 
       baseLuk: luk,
+      equipLuk: this.totalEquipStatus.luk ?? 0,
       totalLuk: luk + (jobLuk ?? 0) + (this.totalEquipStatus.luk ?? 0),
 
       baseVit: vit,
+      equipVit: this.totalEquipStatus.vit ?? 0,
       totalVit: vit + (jobVit ?? 0) + (this.totalEquipStatus.vit ?? 0),
 
       baseDex: dex,
+      equipDex: this.totalEquipStatus.dex ?? 0,
       totalDex: dex + (jobDex ?? 0) + (this.totalEquipStatus.dex ?? 0),
 
       baseAgi: agi,
+      equipAgi: this.totalEquipStatus.agi ?? 0,
       totalAgi: agi + (jobAgi ?? 0) + (this.totalEquipStatus.agi ?? 0),
     };
   }
@@ -426,6 +433,7 @@ export class Calculator {
     this.monster = monster;
     this.monsterData = {
       name,
+      level,
       element: pureElement.toLowerCase(),
       elementUpper: upperFirst(pureElement) as ElementType,
       elementLevel,
@@ -1370,7 +1378,7 @@ export class Calculator {
 
     const { basicDmg, misc, skillDmg, skillAspd, basicAspd } = this.dmgCalculator
       .setExtraBonus([])
-      .calculateAllDamages(skillValue, this.propertyBasicAtk);
+      .calculateAllDamages({ skillValue, propertyAtk: this.propertyBasicAtk, maxHp: this.maxHp, maxSp: this.maxSp });
 
     this.damageSummary = {
       ...basicDmg,
@@ -1417,7 +1425,7 @@ export class Calculator {
 
     const { basicDmg, skillDmg, basicAspd, skillAspd } = this.dmgCalculator
       .setExtraBonus(c)
-      .calculateAllDamages(skillValue, this.propertyBasicAtk);
+      .calculateAllDamages({ skillValue, propertyAtk: this.propertyBasicAtk, maxHp: this.maxHp, maxSp: this.maxSp });
     console.log(skillDmg);
 
     this.damageSummary = {
@@ -1438,13 +1446,28 @@ export class Calculator {
     return this;
   }
 
-  calcDmgWithExtraBonus(skillValue: string): BasicDamageSummaryModel & SkillDamageSummaryModel {
+  calcDmgWithExtraBonus(params: {
+    skillValue: string;
+    isUseHpL: boolean;
+  }): BasicDamageSummaryModel & SkillDamageSummaryModel {
     this.calcAllAtk();
 
     const c = this.getChanceBonus();
-    const { basicDmg, skillDmg } = this.dmgCalculator
-      .setExtraBonus(c)
-      .calculateAllDamages(skillValue, this.propertyBasicAtk);
+    const calculator = this.dmgCalculator.setExtraBonus(c);
+    const { maxHp, maxSp } = this.hpSpCalculator
+      .setClass(this._class)
+      .setAllInfo(calculator.infoForClass)
+      .setBonusFlag(params)
+      .calculate()
+      .getTotalSummary();
+
+    const { skillValue } = params;
+    const { basicDmg, skillDmg } = calculator.calculateAllDamages({
+      skillValue,
+      propertyAtk: this.propertyBasicAtk,
+      maxHp,
+      maxSp,
+    });
 
     return {
       ...basicDmg,

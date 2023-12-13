@@ -83,6 +83,8 @@ export const createExtraOptionList = () => {
     ['ASPD %', 'aspdPercent', 1, 30, ' %'],
     ['Delay', 'acd', 1, 30, ' %'],
     ['VCT', 'vct', 1, 30, ' %'],
+    ['MaxHP %', 'hpPercent', 1, 100, ' %'],
+    ['MaxSP %', 'spPercent', 1, 100, ' %'],
   ];
 
   const subTypeMap = {

@@ -1,9 +1,29 @@
+import { ItemTypeEnum, MainItemWithRelations } from './constants/item-type.enum';
 import { CharacterBase } from './jobs/_character-base.abstract';
 import { EquipmentSummaryModel } from './models/equipment-summary.model';
 import { HpSpTable } from './models/hp-sp-table.model';
 import { InfoForClass } from './models/info-for-class.model';
 import { StatusSummary } from './models/status-summary.model';
 import { floor } from './utils';
+
+const mainEquipment = [
+  ItemTypeEnum.weapon,
+  ItemTypeEnum.leftWeapon,
+  ItemTypeEnum.headUpper,
+  ItemTypeEnum.headMiddle,
+  ItemTypeEnum.headLower,
+  ItemTypeEnum.armor,
+  ItemTypeEnum.shield,
+  ItemTypeEnum.garment,
+  ItemTypeEnum.boot,
+  ItemTypeEnum.accLeft,
+  ItemTypeEnum.accRight,
+];
+const eligibleVitIntItems = Object.entries(MainItemWithRelations)
+  .filter(([mainItem]) => mainEquipment.includes(mainItem as any))
+  .flatMap(([mainItem, relatedItems]) => {
+    return [mainItem, ...relatedItems];
+  });
 
 export class HpSpCalculator {
   private hpSpTable: HpSpTable;
@@ -17,6 +37,8 @@ export class HpSpCalculator {
   private _maxSp = 0;
 
   private _shadowHP = 0;
+  private _equipmentVit = 0;
+  private _equipmentInt = 0;
 
   // bonus flag
   private _isUseHpL = false;
@@ -36,6 +58,16 @@ export class HpSpCalculator {
     totalShadowRefine += shadowEarring.refine || 0;
     totalShadowRefine += shadowPendant.refine || 0;
     this._shadowHP = totalShadowRefine * 10;
+
+    let equipmentVit = 0;
+    let equipmentInt = 0;
+
+    for (const equipmentName of eligibleVitIntItems) {
+      equipmentVit += equipmentBonus[equipmentName]?.vit || 0;
+      equipmentInt += equipmentBonus[equipmentName]?.int || 0;
+    }
+    this._equipmentVit = equipmentVit;
+    this._equipmentInt = equipmentInt;
 
     this.setLevel(model.level);
     this.setTotalBonus(totalBonus);
@@ -91,17 +123,17 @@ export class HpSpCalculator {
       const baseSp = this.hpSpTable[this._dataIndex].baseSp[this._level];
 
       const { hp, hpPercent, sp, spPercent } = this._totalBonus;
-      console.log({ baseHp, baseSp, hp, hpPercent, sp, spPercent });
+      // console.log({ baseHp, baseSp, hp, hpPercent, sp, spPercent });
 
       let maxHp = floor(baseHp * 1.25);
       maxHp = floor(maxHp * (1 + this._totalStatus.totalVit * 0.01));
-      maxHp += hp + this._shadowHP;
+      maxHp += hp + this._shadowHP + this._equipmentVit;
       maxHp += this.getBonusHpL();
       this._maxHp = maxHp + floor(maxHp * ((hpPercent || 0) * 0.01));
 
       let maxSp = floor(baseSp * 1.25);
       maxSp = floor(maxSp * (1 + this._totalStatus.totalInt * 0.01));
-      maxSp += sp;
+      maxSp += sp + this._equipmentInt;
       this._maxSp = maxSp + floor(maxSp * ((spPercent || 0) * 0.01));
     } catch (error) {
       console.error('hp calculation', error);
