@@ -100,6 +100,19 @@ export class AppTopBarComponent {
 
   updates: { v: string; date: string; logs: string[] }[] = [
     {
+      v: 'V1.7.6',
+      date: '13-12-2566',
+      logs: [
+        'Fixed Rampage Blast base level modifier from /120 to /100',
+        'Fixed Berserk potion unavailable for some classes',
+        'Fixed reported bugs',
+        'Supported HP/SP calculation (only main class)',
+        'Added Sura offensive skill (Tiger Cannon)',
+        'Added GX offensive skill (Soul Destroyer & Improved versions)',
+        'Added requested items & Monsters',
+      ],
+    },
+    {
       v: 'V1.7.5',
       date: '10-12-2566',
       logs: [
