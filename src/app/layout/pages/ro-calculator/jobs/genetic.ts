@@ -147,6 +147,9 @@ export class Genetic extends CharacterBase {
         { label: '6000', value: 6000, isUse: true },
         { label: '7000', value: 7000, isUse: true },
         { label: '8000', value: 8000, isUse: true },
+        { label: '9000', value: 9000, isUse: true },
+        { label: '10000', value: 10000, isUse: true },
+        { label: '10500', value: 10500, isUse: true },
       ],
     },
     {

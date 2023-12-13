@@ -1299,13 +1299,17 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         case 656:
           return true;
         case 657: {
-          const nameSet = this.selectedCharacter.classNameSet;
+          const usable = [
+            ClassName.RuneKnight,
+            ClassName.RoyalGuard,
+            ClassName.Genetic,
+            ClassName.Mechanic,
+            ClassName.ShadowChaser,
+            ClassName.Warlock,
+            ClassName.Rebellion,
+          ];
 
-          return (
-            [ClassName.Swordman, ClassName.Merchant, ClassName.Taekwondo, ClassName.Rebellion].findIndex((cName) =>
-              nameSet.has(cName),
-            ) >= 0
-          );
+          return usable.includes(this.selectedCharacter.className);
         }
       }
 
