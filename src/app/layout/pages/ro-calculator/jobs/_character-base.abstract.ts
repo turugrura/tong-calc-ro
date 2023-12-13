@@ -35,6 +35,9 @@ export interface AtkSkillModel {
   finalDmgFormula?: (input: AtkSkillFormulaInput & { damage: number }) => number;
   canCri?: boolean;
   baseCri?: number;
+  /**
+   * 0.3 => baseCri * 0.3
+   */
   baseCriPercentage?: number;
   criDmgPercentage?: number;
   /**

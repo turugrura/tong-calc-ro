@@ -101,7 +101,6 @@ export class GitCross extends CharacterBase {
       cd: 0,
       isHDefToSDef: true,
       isHit100: true,
-      isDevMode: true,
       formula: (input: AtkSkillFormulaInput): number => {
         const { skillLevel } = input;
 
@@ -119,6 +118,43 @@ export class GitCross extends CharacterBase {
 
           return 350 + skillLevel * 50;
         },
+      },
+    },
+    {
+      label: '[Improved 1st] Soul Destroyer Lv10',
+      name: 'Soul Destroyer',
+      value: '[Improved 1st] Soul Destroyer==10',
+      acd: 2,
+      fct: 0.25,
+      vct: 0.25,
+      cd: 0.15,
+      canCri: true,
+      baseCriPercentage: 0.5,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { skillLevel, model, status } = input;
+        const baseLevel = model.level;
+        const { totalStr, totalInt } = status;
+
+        return (skillLevel * 140 + totalStr + totalInt) * (baseLevel / 100);
+      },
+    },
+    {
+      label: '[Improved 2nd] Soul Destroyer Lv10',
+      name: 'Soul Destroyer',
+      value: '[Improved 2nd] Soul Destroyer==10',
+      acd: 1,
+      fct: 0.25,
+      vct: 0.25,
+      cd: 0.25,
+      canCri: true,
+      baseCriPercentage: 0.5,
+      criDmgPercentage: 0.5,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { skillLevel, model, status } = input;
+        const baseLevel = model.level;
+        const { totalStr, totalInt } = status;
+
+        return (skillLevel * 150 + totalStr + totalInt) * (baseLevel / 100);
       },
     },
     {
