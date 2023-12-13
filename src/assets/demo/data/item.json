@@ -3257,6 +3257,30 @@
       ]
     }
   },
+  "4035": {
+    "id": 4035,
+    "aegisName": "Hydra_Card",
+    "name": "Hydra Card",
+    "unidName": "Card",
+    "resName": "이름없는카드",
+    "description": "โจมตี Monster Race Demi-Human แรงขึ้น 20%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Bloody",
+    "script": {
+      "p_race_demihuman": [
+        "20"
+      ]
+    }
+  },
   "4047": {
     "id": 4047,
     "aegisName": "Ghostring_Card",
@@ -3297,6 +3321,30 @@
     "cardPrefix": "Clamorous",
     "script": {
       "p_race_brute": [
+        "20"
+      ]
+    }
+  },
+  "4063": {
+    "id": 4063,
+    "aegisName": "Caramel_Card",
+    "name": "Caramel Card",
+    "unidName": "Card",
+    "resName": "이름없는카드",
+    "description": "โจมตี Monster Race Insect แรงขึ้น 20%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Insecticide",
+    "script": {
+      "p_race_insect": [
         "20"
       ]
     }
@@ -3568,6 +3616,33 @@
     "script": {
       "hit": [
         "100"
+      ]
+    }
+  },
+  "4126": {
+    "id": 4126,
+    "aegisName": "Minorous_Card",
+    "name": "Minorous Card",
+    "unidName": "Card",
+    "resName": "이름없는카드",
+    "description": "โจมตีศัตรูขนาดใหญ่แรงขึ้น 15%\nพลังโจมตี + 5\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Titan",
+    "script": {
+      "p_size_l": [
+        "15"
+      ],
+      "atk": [
+        "5"
       ]
     }
   },
@@ -4201,6 +4276,30 @@
       ]
     }
   },
+  "4398": {
+    "id": 4398,
+    "aegisName": "Tha_Dolor_Card",
+    "name": "Dolor of Thanatos Card",
+    "unidName": "Dolor of Thanatos Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่มความเสียหายจาก\nการโจมตีด้วยเวทมนตร์\nกับมอนสเตอร์ประเภท Angel 10%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Darkness",
+    "script": {
+      "m_race_angel": [
+        "10"
+      ]
+    }
+  },
   "4399": {
     "id": 4399,
     "aegisName": "Thanatos_Card",
@@ -4368,6 +4467,26 @@
         "USED[Mage||Warlock||Sorcerer]100"
       ]
     }
+  },
+  "4413": {
+    "id": 4413,
+    "aegisName": "Hodremlin_Card",
+    "name": "Hodremlin Card",
+    "unidName": "Hodremlin Card",
+    "resName": "이름없는카드",
+    "description": "ลดพลังโจมตีทางกายภาพ/เวทมนตร์ที่ได้รับจากศัตรูทุกขนาด 15%\nเมื่อถูกโจมตีทางกายภาพหรือเวทมนตร์ มีโอกาส Perfect Dodge +30 เป็นเวลา 10 วินาที\nประเภท : Card\nใช้กับ : Shield\nน้ำหนัก : 1",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 32,
+    "cardPrefix": "Resistant",
+    "script": {}
   },
   "4426": {
     "id": 4426,
@@ -5444,6 +5563,60 @@
       ],
       "m_race_demon": [
         "50"
+      ]
+    }
+  },
+  "4653": {
+    "id": 4653,
+    "aegisName": "Grave_Arclouse_Card",
+    "name": "Nightmare Arclouse Card",
+    "unidName": "Nightmare Arclouse Card",
+    "resName": "이름없는카드",
+    "description": "ลดความเสียหายต่อมอนสเตอร์ประเภท Brute และ Undead 20%\n\nประเภท : ^777777Card^000000\nส่วนที่ใส่ : ^777777Shield^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 32,
+    "cardPrefix": "Immortal Beast",
+    "script": {
+      "p_pene_race_brute": [
+        "EQUIP[Nightmare Minorous Card]50"
+      ],
+      "p_pene_race_undead": [
+        "EQUIP[Nightmare Minorous Card]50"
+      ]
+    }
+  },
+  "4655": {
+    "id": 4655,
+    "aegisName": "Grave_Minorous_Card",
+    "name": "Nightmare Minorous Card",
+    "unidName": "Nightmare Minorous Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่มพลังโจมตีทางกายภาพต่อมอนสเตอร์เผ่า Brute และเผ่า Undead +10%\n\nเมื่อสวมใส่กับ Nightmare Arclouse Card\nเพิ่มความทนทานต่อการโจมตีของมอนสเตอร์เผ่า Brute และเผ่า Undead +5%\nไม่สน DEF 50% ของมอนสเตอร์เผ่า Brute และเผ่า Undead\n\nประเภท : ^777777Card^000000\nส่วนที่ใส่ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Grave Keeper",
+    "script": {
+      "p_race_brute": [
+        "10"
+      ],
+      "p_race_undead": [
+        "10"
       ]
     }
   },
@@ -10771,6 +10944,32 @@
     "compositionPos": null,
     "script": {
       "aspdPercent": [
+        "10"
+      ]
+    }
+  },
+  "12775": {
+    "id": 12775,
+    "aegisName": "Ancient_Spirit_Agimat",
+    "name": "Greater Agimat of Ancient Spirit",
+    "unidName": "Greater Agimat of Ancient Spirit",
+    "resName": "고대정령의대부적",
+    "description": "เสาที่มีพลังความสามารถในการต่อสู้กับปีศาจ มีพลังศักดิ์สิทธิ์เปล่งประกายออกมา\nเพิ่ม 10% physical และ magic damage ต่อมอนสเตอร์ประเภท demon เป็นระยะเวลา 20 นาที\n^ffffff_^000000\nน้ำหนัก : ^77777760^000000",
+    "slots": 0,
+    "itemTypeId": 3,
+    "itemSubTypeId": 768,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 60,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "p_race_demon": [
+        "10"
+      ],
+      "m_race_demon": [
         "10"
       ]
     }
@@ -42214,6 +42413,36 @@
         "5",
         "7===2",
         "9===3"
+      ]
+    }
+  },
+  "28918": {
+    "id": 28918,
+    "aegisName": "Shield_Of_Chaos",
+    "name": "Shield of Chaos [1]",
+    "unidName": "Guard",
+    "resName": "혼돈의방패",
+    "description": "โล่ผนึกพลังของเทพอสูรทมิฬ ควรหยิบมาใช้อย่างชาญฉลาด\nMDEF +5\nลด Damage ที่ได้รับจากการโจมตีธาตุ Shadow 25% \n――――――――――――― \nเมื่ออัพเกรดตั้งแต่ 5 ขึ้นไป,\nASPD +1\n――――――――――――― \nเมื่ออัพเกรดตั้งแต่ 7 ขึ้นไป,\nASPD +1 เพิ่มเติม\n――――――――――――― \nเมื่อสวมใส่ร่วมกับ Shining Trapezohedron หรือ [Not For Sale] Shining Trapezohedron,\nลด Damage ที่ได้รับจากมอนสเตอร์ประเภท Demi-Human 3%\nลด Damage ที่ได้รับจากมอนสเตอร์ประเภท Undead 4%\nลด Damage ที่ได้รับจากมอนสเตอร์ประเภท Demon 4%\nประเภท : ^777777Shield^000000 พลังป้องกัน : ^77777780^000000\nน้ำหนัก : ^77777750^000000\nเลเวลที่ต้องการ : ^77777790^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 514,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 80,
+    "weight": 50,
+    "requiredLevel": 90,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "mdef": [
+        "5"
+      ],
+      "aspd": [
+        "5===1",
+        "7===1"
       ]
     }
   },
