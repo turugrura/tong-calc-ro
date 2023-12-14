@@ -9,6 +9,7 @@ import {
 import { LordKnight } from './lord-knight';
 import { ElementType } from '../constants/element-type.const';
 import { InfoForClass } from '../models/info-for-class.model';
+import { floor } from '../utils';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 1, 0, 0],
@@ -148,7 +149,7 @@ export class RuneKnight extends CharacterBase {
       },
     },
     {
-      label: '[Improved] Ignition Break Lv5',
+      label: 'Ignition Break Lv5 [Improved]',
       name: 'Ignition Break',
       value: '[Improved] Ignition Break==5',
       acd: 0,
@@ -175,11 +176,135 @@ export class RuneKnight extends CharacterBase {
       cd: 3,
       hit: 5,
       formula: (input: AtkSkillFormulaInput): number => {
-        const { model } = input;
+        const { model, skillLevel } = input;
         const baseLevel = model.level;
         const bonus = this.learnLv('Clashing Spiral') * 50;
 
-        return (1400 + bonus) * (baseLevel / 100);
+        return (600 + 80 * skillLevel + bonus) * (baseLevel / 100);
+      },
+    },
+    {
+      label: 'Dragon Breath Lv10',
+      name: 'Dragon Breath',
+      value: 'Dragon Breath==10',
+      acd: 2,
+      fct: 0.5,
+      vct: 2,
+      cd: 0.2,
+      element: ElementType.Fire,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, maxHp, maxSp } = input;
+        const baseLevel = model.level;
+        const dragonTrainingLv = this.learnLv('Dragon Training');
+
+        return floor(maxHp / 50 + maxSp / 4) * ((skillLevel * baseLevel) / 150) * (95 + dragonTrainingLv * 5) * 0.01;
+      },
+      customFormula: (input): number => {
+        const { baseSkillDamage, propertyMultiplier, totalBonus, reducedHardDef, finalSoftDef } = input;
+        let totalDamage = baseSkillDamage;
+        totalDamage = totalDamage - (reducedHardDef + finalSoftDef);
+        totalDamage = floor(totalDamage * (100 + totalBonus.range) * 0.01);
+        totalDamage = floor(totalDamage * (100 + (totalBonus['Dragon Breath - WATER'] || 0)) * 0.01);
+        totalDamage = floor(totalDamage * propertyMultiplier);
+
+        return totalDamage;
+      },
+    },
+    {
+      name: 'Dragon Breath',
+      label: 'Dragon Breath Lv10 [Improved]',
+      value: '[Improved] Dragon Breath==10',
+      acd: 2,
+      fct: 0.5,
+      vct: 2,
+      cd: 0,
+      getElement: () => {
+        if (this.isSkillActive('Lux Anima Runestone')) {
+          return ElementType.Dark;
+        } else if (this.isSkillActive('Turisus Runestone')) {
+          return ElementType.Holy;
+        }
+
+        return ElementType.Fire;
+      },
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, maxHp, maxSp } = input;
+        const baseLevel = model.level;
+        const dragonTrainingLv = this.learnLv('Dragon Training');
+
+        return floor(maxHp / 50 + maxSp / 4) * ((skillLevel * baseLevel) / 100) * (90 + dragonTrainingLv * 10) * 0.01;
+      },
+      customFormula: (input): number => {
+        const { baseSkillDamage, propertyMultiplier, totalBonus, reducedHardDef, finalSoftDef } = input;
+        let totalDamage = baseSkillDamage;
+        totalDamage = totalDamage - (reducedHardDef + finalSoftDef);
+        totalDamage = floor(totalDamage * (100 + totalBonus.range) * 0.01);
+        totalDamage = floor(totalDamage * (100 + (totalBonus['Dragon Breath - WATER'] || 0)) * 0.01);
+        totalDamage = floor(totalDamage * propertyMultiplier);
+
+        return totalDamage;
+      },
+    },
+    {
+      name: 'Dragon Breath - WATER',
+      label: 'Dragon Breath - WATER Lv10',
+      value: 'Dragon Breath - WATER==10',
+      acd: 2,
+      fct: 0.5,
+      vct: 2,
+      cd: 0.2,
+      element: ElementType.Water,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, maxHp, maxSp } = input;
+        const baseLevel = model.level;
+        const dragonTrainingLv = this.learnLv('Dragon Training');
+
+        return floor(maxHp / 50 + maxSp / 4) * ((skillLevel * baseLevel) / 150) * (95 + dragonTrainingLv * 5) * 0.01;
+      },
+      customFormula: (input): number => {
+        const { baseSkillDamage, propertyMultiplier, totalBonus, reducedHardDef, finalSoftDef } = input;
+        let totalDamage = baseSkillDamage;
+        totalDamage = totalDamage - (reducedHardDef + finalSoftDef);
+        totalDamage = floor(totalDamage * (100 + totalBonus.range) * 0.01);
+        totalDamage = floor(totalDamage * (100 + (totalBonus['Dragon Breath - WATER'] || 0)) * 0.01);
+        totalDamage = floor(totalDamage * propertyMultiplier);
+
+        return totalDamage;
+      },
+    },
+    {
+      name: 'Dragon Breath - WATER',
+      label: 'Dragon Breath - WATER Lv10 [Improved]',
+      value: '[Improved] Dragon Breath - WATER==10',
+      acd: 2,
+      fct: 0.5,
+      vct: 2,
+      cd: 0,
+      getElement: () => {
+        if (this.isSkillActive('Lux Anima Runestone')) {
+          return ElementType.Ghost;
+        } else if (this.isSkillActive('Asir Runestone')) {
+          return ElementType.Neutral;
+        }
+
+        return ElementType.Water;
+      },
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, maxHp, maxSp } = input;
+        const baseLevel = model.level;
+        const dragonTrainingLv = this.learnLv('Dragon Training');
+
+        return floor(maxHp / 50 + maxSp / 4) * ((skillLevel * baseLevel) / 100) * (90 + dragonTrainingLv * 10) * 0.01;
+      },
+      customFormula: (input): number => {
+        const { baseSkillDamage, propertyMultiplier, totalBonus, reducedHardDef, finalSoftDef } = input;
+        let totalDamage = baseSkillDamage;
+        totalDamage = totalDamage - (reducedHardDef + finalSoftDef);
+        totalDamage = floor(totalDamage * (100 + totalBonus.range) * 0.01);
+        totalDamage = floor(totalDamage * (100 + (totalBonus['Dragon Breath - WATER'] || 0)) * 0.01);
+        totalDamage = floor(totalDamage * propertyMultiplier);
+
+        return totalDamage;
       },
     },
   ];
@@ -206,11 +331,35 @@ export class RuneKnight extends CharacterBase {
     {
       label: 'Rune: Turisus',
       name: 'Turisus Runestone',
-      inputType: 'selectButton',
-      isDevMode: true,
+      inputType: 'dropdown',
       dropdown: [
-        { label: 'Yes', value: 5, skillLv: 5, isUse: true, bonus: { melee: 250, str: 30 } },
-        { label: 'No', value: 0, isUse: false },
+        { label: '-', value: 0, isUse: false },
+        { label: 'Active', value: 1, skillLv: 1, isUse: true, bonus: { p_final: 250, str: 30 } },
+      ],
+    },
+    {
+      label: 'Rune: Lux Anima',
+      name: 'Lux Anima Runestone',
+      inputType: 'dropdown',
+      dropdown: [
+        { label: '-', value: 0, isUse: false },
+        { label: 'Active', value: 1, skillLv: 1, isUse: true },
+        {
+          label: 'Improved',
+          value: 2,
+          skillLv: 2,
+          isUse: true,
+          bonus: { p_size_all: 30, criDmg: 30, melee: 30, range: 30, hpPercent: 30, spPercent: 30 },
+        },
+      ],
+    },
+    {
+      label: 'Rune: Asir',
+      name: 'Asir Runestone',
+      inputType: 'dropdown',
+      dropdown: [
+        { label: '-', value: 0, isUse: false },
+        { label: 'Active', value: 1, skillLv: 1, isUse: true },
       ],
     },
   ];
@@ -219,6 +368,19 @@ export class RuneKnight extends CharacterBase {
     {
       label: 'Ignition Break',
       name: 'Ignition Break',
+      inputType: 'dropdown',
+      dropdown: [
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 1', value: 1, skillLv: 1, isUse: true },
+        { label: 'Lv 2', value: 2, skillLv: 2, isUse: true },
+        { label: 'Lv 3', value: 3, skillLv: 3, isUse: true },
+        { label: 'Lv 4', value: 4, skillLv: 4, isUse: true },
+        { label: 'Lv 5', value: 5, skillLv: 5, isUse: true },
+      ],
+    },
+    {
+      label: 'Dragon Training',
+      name: 'Dragon Training',
       inputType: 'dropdown',
       dropdown: [
         { label: '-', value: 0, isUse: false },

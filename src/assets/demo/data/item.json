@@ -9305,6 +9305,30 @@
       ]
     }
   },
+  "4883": {
+    "id": 4883,
+    "aegisName": "Matk1p",
+    "name": "MATK + 1%",
+    "unidName": "MATK + 1%",
+    "resName": "마력석_빨강",
+    "description": "MATK +1%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 72,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<Matk+1%>",
+    "script": {
+      "matkPercent": [
+        "1"
+      ]
+    }
+  },
   "4897": {
     "id": 4897,
     "aegisName": "Matk3p",
@@ -43651,6 +43675,53 @@
     "compositionPos": 65535,
     "script": {
       "atkPercent": [
+        "1"
+      ]
+    }
+  },
+  "29030": {
+    "id": 29030,
+    "aegisName": "Matk1p_Top",
+    "name": "MATK + 1% (Upper)",
+    "unidName": "MATK + 1% (Upper)",
+    "resName": "마력석_노랑",
+    "description": "MATK + 1%.\nเมื่อช่อง Enchant Costume ส่วน Middle/Lower มีใส่ MATK + 1% อยู่, จะเพิ่ม MATK + 2%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 71,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "matkPercent": [
+        "1",
+        "EQUIP[MATK + 1% (Lower)&&MATK + 1%]2"
+      ]
+    }
+  },
+  "29031": {
+    "id": 29031,
+    "aegisName": "Matk1p_Bottom",
+    "name": "MATK + 1% (Lower)",
+    "unidName": "MATK + 1% (Lower)",
+    "resName": "마력석_파랑",
+    "description": "MATK + 1%.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 73,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "matkPercent": [
         "1"
       ]
     }

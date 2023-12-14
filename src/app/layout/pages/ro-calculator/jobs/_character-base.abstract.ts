@@ -13,6 +13,13 @@ export interface AtkSkillFormulaInput extends InfoForClass {
   maxSp: number;
 }
 
+export interface DefForCalcModel {
+  reducedHardDef: number;
+  dmgReductionByHardDef: number;
+  finalDmgReduction: number;
+  finalSoftDef: number;
+}
+
 export interface AtkSkillModel {
   label: string;
   name: string;
@@ -23,6 +30,13 @@ export interface AtkSkillModel {
   cd: number;
   levelList?: { label: string; value: any }[];
   formula: (input: AtkSkillFormulaInput) => number;
+  customFormula?: (
+    input: AtkSkillFormulaInput & {
+      baseSkillDamage: number;
+      sizePenalty: number;
+      propertyMultiplier: number;
+    } & DefForCalcModel,
+  ) => number;
   part2?: {
     label: string;
     element: ElementType;
@@ -53,6 +67,7 @@ export interface AtkSkillModel {
   isHit100?: boolean;
   isSudoElement?: boolean;
   element?: ElementType;
+  getElement?: () => ElementType;
 }
 [];
 

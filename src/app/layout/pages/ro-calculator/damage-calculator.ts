@@ -20,6 +20,18 @@ import { StatusSummary } from './models/status-summary.model';
 import { calcDmgDps, calcSkillAspd, floor, isSkillCanEDP, round } from './utils';
 import { Weapon } from './weapon';
 
+interface DamageResultModel {
+  minDamage: number;
+  maxDamage: number;
+  avgNoCriDamage: number;
+  avgCriDamage: number;
+  propertyAtk: ElementType;
+  propertyMultiplier: number;
+  sizePenalty: number;
+  canCri: boolean;
+  criDmgToMonster: number;
+}
+
 export class DamageCalculator {
   private readonly EDP_WEAPON_MULTIPLIER = 1.25;
   private readonly EDP_EQUIP_MULTIPLIER = 4;
@@ -596,7 +608,7 @@ export class DamageCalculator {
     weaponPropertyAtk: ElementType;
     sizePenalty: number;
     formulaParams?: any;
-  }) {
+  }): DamageResultModel {
     const { skillData, baseSkillDamage, weaponPropertyAtk, sizePenalty, formulaParams } = params;
     const {
       name: skillName,
@@ -715,7 +727,7 @@ export class DamageCalculator {
     skillData: AtkSkillModel;
     baseSkillDamage: number;
     weaponPropertyAtk: ElementType;
-  }) {
+  }): DamageResultModel {
     const { skillData, baseSkillDamage, weaponPropertyAtk } = params;
     const { name: skillName, element, isIgnoreDef = false } = skillData;
     const { softMDef } = this.monsterData;
@@ -937,6 +949,8 @@ export class DamageCalculator {
       totalHit: _totalHit = 1,
       name: skillName,
       baseCriPercentage = 1,
+      customFormula,
+      getElement,
     } = skillData;
 
     const formulaParams = {
@@ -955,7 +969,33 @@ export class DamageCalculator {
       sizePenalty,
       formulaParams,
     };
-    const calculated = isMatk ? this.calcMatkSkillDamage(params) : this.calcSkillDamage(params);
+
+    let calculated: DamageResultModel;
+    if (customFormula && typeof customFormula === 'function') {
+      const skillPropertyAtk = typeof getElement === 'function' ? getElement() : skillData.element || propertyAtk;
+      const propertyMultiplier = this.getPropertyMultiplier(skillPropertyAtk);
+
+      const d = customFormula({
+        ...formulaParams,
+        baseSkillDamage,
+        sizePenalty,
+        propertyMultiplier,
+        ...this.getPhisicalDefData(),
+      });
+      calculated = {
+        canCri: false,
+        minDamage: d,
+        maxDamage: d,
+        propertyAtk: skillPropertyAtk,
+        propertyMultiplier: propertyMultiplier,
+        avgCriDamage: d,
+        avgNoCriDamage: d,
+        criDmgToMonster: d,
+        sizePenalty,
+      };
+    } else {
+      calculated = isMatk ? this.calcMatkSkillDamage(params) : this.calcSkillDamage(params);
+    }
 
     let { minDamage, maxDamage } = calculated;
     let skillPart2Label = '';

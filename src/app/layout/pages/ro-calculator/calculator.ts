@@ -1275,6 +1275,10 @@ export class Calculator {
           this.finalMultipliers.push(val);
           continue;
         }
+        if (attr === 'p_final') {
+          this.finalPhyMultipliers.push(val);
+          continue;
+        }
 
         this.equipStatus[skillName] = { ...this.allStatus, [attr]: val };
 
@@ -1293,6 +1297,11 @@ export class Calculator {
         const val = Number(value);
         if (attr === 'atk') continue;
         if (attr === 'matk') continue;
+
+        if (attr === 'p_final') {
+          this.finalPhyMultipliers.push(val);
+          continue;
+        }
 
         this.equipStatus[skillName] = { ...this.allStatus, [attr]: val };
 
