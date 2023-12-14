@@ -100,6 +100,17 @@ export class AppTopBarComponent {
 
   updates: { v: string; date: string; logs: string[] }[] = [
     {
+      v: 'V1.7.7',
+      date: '14-12-2566',
+      logs: [
+        'Fixed Berserk potion unavailable for SR/SE',
+        'Fixed reported bugs',
+        'Added Rune Knight offensive skill (Dragon Breath & Improved versions)',
+        'Added Official latest update items',
+        'Added requested items',
+      ],
+    },
+    {
       v: 'V1.7.6',
       date: '13-12-2566',
       logs: [
