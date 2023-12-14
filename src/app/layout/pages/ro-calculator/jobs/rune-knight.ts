@@ -4,6 +4,7 @@ import {
   AtkSkillFormulaInput,
   AtkSkillModel,
   CharacterBase,
+  DefForCalcModel,
   PassiveSkillModel,
 } from './_character-base.abstract';
 import { LordKnight } from './lord-knight';
@@ -193,21 +194,10 @@ export class RuneKnight extends CharacterBase {
       cd: 0.2,
       element: ElementType.Fire,
       formula: (input: AtkSkillFormulaInput): number => {
-        const { model, skillLevel, maxHp, maxSp } = input;
-        const baseLevel = model.level;
-        const dragonTrainingLv = this.learnLv('Dragon Training');
-
-        return floor(maxHp / 50 + maxSp / 4) * ((skillLevel * baseLevel) / 150) * (95 + dragonTrainingLv * 5) * 0.01;
+        return this.calcDragonBreathFormula(input);
       },
       customFormula: (input): number => {
-        const { baseSkillDamage, propertyMultiplier, totalBonus, reducedHardDef, finalSoftDef } = input;
-        let totalDamage = baseSkillDamage;
-        totalDamage = totalDamage - (reducedHardDef + finalSoftDef);
-        totalDamage = floor(totalDamage * (100 + totalBonus.range) * 0.01);
-        totalDamage = floor(totalDamage * (100 + (totalBonus['Dragon Breath - WATER'] || 0)) * 0.01);
-        totalDamage = floor(totalDamage * propertyMultiplier);
-
-        return totalDamage;
+        return this.calcPostSkillDamgeDragonBreath(input, 'Dragon Breath');
       },
     },
     {
@@ -228,21 +218,10 @@ export class RuneKnight extends CharacterBase {
         return ElementType.Fire;
       },
       formula: (input: AtkSkillFormulaInput): number => {
-        const { model, skillLevel, maxHp, maxSp } = input;
-        const baseLevel = model.level;
-        const dragonTrainingLv = this.learnLv('Dragon Training');
-
-        return floor(maxHp / 50 + maxSp / 4) * ((skillLevel * baseLevel) / 100) * (90 + dragonTrainingLv * 10) * 0.01;
+        return this.calcDragonBreathFormulaImproved(input);
       },
       customFormula: (input): number => {
-        const { baseSkillDamage, propertyMultiplier, totalBonus, reducedHardDef, finalSoftDef } = input;
-        let totalDamage = baseSkillDamage;
-        totalDamage = totalDamage - (reducedHardDef + finalSoftDef);
-        totalDamage = floor(totalDamage * (100 + totalBonus.range) * 0.01);
-        totalDamage = floor(totalDamage * (100 + (totalBonus['Dragon Breath - WATER'] || 0)) * 0.01);
-        totalDamage = floor(totalDamage * propertyMultiplier);
-
-        return totalDamage;
+        return this.calcPostSkillDamgeDragonBreath(input, 'Dragon Breath');
       },
     },
     {
@@ -255,21 +234,10 @@ export class RuneKnight extends CharacterBase {
       cd: 0.2,
       element: ElementType.Water,
       formula: (input: AtkSkillFormulaInput): number => {
-        const { model, skillLevel, maxHp, maxSp } = input;
-        const baseLevel = model.level;
-        const dragonTrainingLv = this.learnLv('Dragon Training');
-
-        return floor(maxHp / 50 + maxSp / 4) * ((skillLevel * baseLevel) / 150) * (95 + dragonTrainingLv * 5) * 0.01;
+        return this.calcDragonBreathFormula(input);
       },
       customFormula: (input): number => {
-        const { baseSkillDamage, propertyMultiplier, totalBonus, reducedHardDef, finalSoftDef } = input;
-        let totalDamage = baseSkillDamage;
-        totalDamage = totalDamage - (reducedHardDef + finalSoftDef);
-        totalDamage = floor(totalDamage * (100 + totalBonus.range) * 0.01);
-        totalDamage = floor(totalDamage * (100 + (totalBonus['Dragon Breath - WATER'] || 0)) * 0.01);
-        totalDamage = floor(totalDamage * propertyMultiplier);
-
-        return totalDamage;
+        return this.calcPostSkillDamgeDragonBreath(input, 'Dragon Breath - WATER');
       },
     },
     {
@@ -290,21 +258,10 @@ export class RuneKnight extends CharacterBase {
         return ElementType.Water;
       },
       formula: (input: AtkSkillFormulaInput): number => {
-        const { model, skillLevel, maxHp, maxSp } = input;
-        const baseLevel = model.level;
-        const dragonTrainingLv = this.learnLv('Dragon Training');
-
-        return floor(maxHp / 50 + maxSp / 4) * ((skillLevel * baseLevel) / 100) * (90 + dragonTrainingLv * 10) * 0.01;
+        return this.calcDragonBreathFormulaImproved(input);
       },
       customFormula: (input): number => {
-        const { baseSkillDamage, propertyMultiplier, totalBonus, reducedHardDef, finalSoftDef } = input;
-        let totalDamage = baseSkillDamage;
-        totalDamage = totalDamage - (reducedHardDef + finalSoftDef);
-        totalDamage = floor(totalDamage * (100 + totalBonus.range) * 0.01);
-        totalDamage = floor(totalDamage * (100 + (totalBonus['Dragon Breath - WATER'] || 0)) * 0.01);
-        totalDamage = floor(totalDamage * propertyMultiplier);
-
-        return totalDamage;
+        return this.calcPostSkillDamgeDragonBreath(input, 'Dragon Breath - WATER');
       },
     },
   ];
@@ -326,6 +283,21 @@ export class RuneKnight extends CharacterBase {
       dropdown: [
         { label: 'Yes', value: 5, skillLv: 5, isUse: true, bonus: { atkPercent: 15, hit: 50, defPercent: -15 } },
         { label: 'No', value: 0, isUse: false },
+      ],
+    },
+    {
+      label: 'Current HP',
+      name: 'Current HP',
+      inputType: 'dropdown',
+      dropdown: [
+        { label: '100 %', value: 0, isUse: false },
+        { label: '30 %', value: 30, skillLv: 30, isUse: true },
+        { label: '40 %', value: 40, skillLv: 40, isUse: true },
+        { label: '50 %', value: 50, skillLv: 50, isUse: true },
+        { label: '60 %', value: 60, skillLv: 60, isUse: true },
+        { label: '70 %', value: 70, skillLv: 70, isUse: true },
+        { label: '80 %', value: 80, skillLv: 80, isUse: true },
+        { label: '90 %', value: 90, skillLv: 90, isUse: true },
       ],
     },
     {
@@ -431,5 +403,55 @@ export class RuneKnight extends CharacterBase {
     }
 
     return totalBonus;
+  }
+
+  private getCurHP(maxHp: number) {
+    const curHp = this.activeSkillLv('Current HP') || 100;
+
+    return maxHp * curHp * 0.01;
+  }
+
+  private calcDragonBreathFormula(input: AtkSkillFormulaInput) {
+    const { model, skillLevel, maxHp, maxSp } = input;
+    const baseLevel = model.level;
+    const dragonTrainingLv = this.learnLv('Dragon Training');
+
+    return (
+      floor(this.getCurHP(maxHp) / 50 + maxSp / 4) *
+      ((skillLevel * baseLevel) / 150) *
+      (95 + dragonTrainingLv * 5) *
+      0.01
+    );
+  }
+
+  private calcDragonBreathFormulaImproved(input: AtkSkillFormulaInput) {
+    const { model, skillLevel, maxHp, maxSp } = input;
+    const baseLevel = model.level;
+    const dragonTrainingLv = this.learnLv('Dragon Training');
+
+    return (
+      floor(this.getCurHP(maxHp) / 50 + maxSp / 4) *
+      ((skillLevel * baseLevel) / 100) *
+      (90 + dragonTrainingLv * 10) *
+      0.01
+    );
+  }
+
+  private calcPostSkillDamgeDragonBreath(
+    input: AtkSkillFormulaInput & {
+      baseSkillDamage: number;
+      sizePenalty: number;
+      propertyMultiplier: number;
+    } & DefForCalcModel,
+    skillName: string,
+  ) {
+    const { baseSkillDamage, propertyMultiplier, totalBonus, reducedHardDef, finalSoftDef } = input;
+    let totalDamage = baseSkillDamage;
+    totalDamage = totalDamage - (reducedHardDef + finalSoftDef);
+    totalDamage = floor(totalDamage * (100 + totalBonus.range) * 0.01);
+    totalDamage = floor(totalDamage * (100 + (totalBonus[skillName] || 0)) * 0.01);
+    totalDamage = floor(totalDamage * propertyMultiplier);
+
+    return totalDamage;
   }
 }
