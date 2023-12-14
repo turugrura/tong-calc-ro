@@ -137,16 +137,18 @@ export class Sura extends CharacterBase {
       cd: 3,
       isMelee: true,
       isSudoElement: true,
-      element: ElementType.Neutral,
       levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
-        const { model, skillLevel, maxHp, maxSp } = input;
+        const { model, skillLevel, maxHp, maxSp, monster } = input;
+        if (monster.elementUpper === ElementType.Ghost) return 0;
+
         const baseLevel = model.level;
         const baseDamage = (maxHp * (10 + skillLevel * 2) * 0.01 + maxSp * (5 + skillLevel) * 0.01) / 4;
 
         return floor(baseDamage * (baseLevel / 100));
       },
       finalDmgFormula: ({ damage, skillLevel, monster }): number => {
+        if (monster.elementUpper === ElementType.Ghost) return 0;
         const bonusDamge = skillLevel * 240 + monster.level * 40;
 
         return damage + bonusDamge;
@@ -161,16 +163,18 @@ export class Sura extends CharacterBase {
       acd: 1,
       cd: 3,
       isMelee: true,
-      element: ElementType.Neutral,
       levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
-        const { model, skillLevel, maxHp, maxSp } = input;
+        const { model, skillLevel, monster, maxHp, maxSp } = input;
+        if (monster.elementUpper === ElementType.Ghost) return 0;
+
         const baseLevel = model.level;
         const baseDamage = (maxHp * (10 + skillLevel * 2) * 0.01 + maxSp * (5 + skillLevel) * 0.01) / 2;
 
         return floor((baseDamage * (baseLevel / 100) * 4) / 3);
       },
       finalDmgFormula: ({ damage, skillLevel, monster }): number => {
+        if (monster.elementUpper === ElementType.Ghost) return 0;
         const bonusDamge = skillLevel * 500 + monster.level * 40;
 
         return damage + bonusDamge;
