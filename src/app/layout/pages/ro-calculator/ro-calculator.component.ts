@@ -1307,6 +1307,8 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
             ClassName.ShadowChaser,
             ClassName.Warlock,
             ClassName.Rebellion,
+            ClassName.SoulReaper,
+            ClassName.StarEmperor,
           ];
 
           return usable.includes(this.selectedCharacter.className);
