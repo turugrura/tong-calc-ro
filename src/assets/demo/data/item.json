@@ -4596,6 +4596,30 @@
       ]
     }
   },
+  "4472": {
+    "id": 4472,
+    "aegisName": "Bradium_Goram_Card",
+    "name": "Bradium Golem Card",
+    "unidName": "Bradium Golem Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่มความเสียหายทางด้านเวทย์มนตร์ให้กับ Brute type monsters ขึ้น 10%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Cannibal",
+    "script": {
+      "m_race_brute": [
+        "10"
+      ]
+    }
+  },
   "4480": {
     "id": 4480,
     "aegisName": "Sealed_Kiel_Card",
@@ -12679,6 +12703,37 @@
       ]
     }
   },
+  "15073": {
+    "id": 15073,
+    "aegisName": "Anti_Magic_Suit",
+    "name": "Anti-Magic Suit [1]",
+    "unidName": "Armor",
+    "resName": "천사의예복",
+    "description": "ชุดที่ได้รับการพัฒนาในเมือง Geffen มีความสามารถในการต้านทานพลังเวทย์ที่รุนแรงได้\nMHP + 5%, MDEF + 10\nMDEF+ 5 เมื่ออัปเกรดขั้น 7, MHP +2% เมื่ออัปเกรดขั้น 9\nประเภท : ^777777Armor^000000 ป้องกัน : ^77777750^000000\nน้ำหนัก : ^777777150^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพ: ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 50,
+    "weight": 150,
+    "requiredLevel": 99,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "hpPercent": [
+        "5",
+        "9===2"
+      ],
+      "mdef": [
+        "10",
+        "7===5"
+      ]
+    }
+  },
   "15128": {
     "id": 15128,
     "aegisName": "Excelion_Suit",
@@ -19148,6 +19203,39 @@
       ]
     }
   },
+  "19380": {
+    "id": 19380,
+    "aegisName": "Floating_Ball",
+    "name": "Floating Ball",
+    "unidName": "Ribbon",
+    "resName": "Floating_Ball",
+    "description": "MATK +35\nเพิ่ม Damage ทางเวทมนตร์ต่อมอนสเตอร์ประเภท Boss 2%\n\nเมื่อ Base DEX ตั้งแต่ 90 ขึ้นไป MATK +70 เพิ่มเติม,\nเพิ่ม Damage ทางเวทมนตร์ต่อมอนสเตอร์ประเภท Boss ขึ้นอีก 3%\n\nเมื่อ Base DEX ตั้งแต่ 125 ขึ้นไป MATK +140 เพิ่มเติม,\nเพิ่ม Damage ทางเวทมนตร์ต่อมอนสเตอร์ประเภท Boss ขึ้นอีก 5%\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^7777770^000000\nตำแหน่ง : ^777777Middle ^000000น้ำหนัก : ^77777720^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 20,
+    "requiredLevel": 100,
+    "location": "Middle",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "matk": [
+        "35",
+        "SUM[dex==90]===70",
+        "SUM[dex==125]===140"
+      ],
+      "m_race_boss": [
+        "2",
+        "SUM[dex==90]===3",
+        "SUM[dex==125]===5"
+      ]
+    }
+  },
   "19381": {
     "id": 19381,
     "aegisName": "Protect_cloth",
@@ -20965,6 +21053,48 @@
       ],
       "m_my_element_fire": [
         "11===5"
+      ]
+    }
+  },
+  "20944": {
+    "id": 20944,
+    "aegisName": "Anti_Magic_Manteau",
+    "name": "Anti-Magic Manteau [1]",
+    "unidName": "Garment",
+    "resName": "Fairy_Cloth",
+    "description": "เหมือนจะเป็นหนึ่งในของรางวัลของการแข่งประลองเวท Geffen\nราวกับว่ามันเข้ากับเซตอุปกรณ์ที่เคยแจกในการประลองเวท Geffen ในอดีต\nMHP + 300\nทุก ๆ การอัพเกรด 2 ขั้น MHP +100\nทุก ๆ การอัพเกรด 3 ขั้น MHP +2%\nเมื่ออัพเกรดถึงขั้น 7, ATK +7%\nเมื่ออัพเกรดถึงขั้น 9, MHP +10%\nเมื่อสวมใส่ร่วมกับ Anti-Magic Suit,\nATK +30\nเมื่ออัพเกรด Anti-Magic Suit ตั้งแต่ 11 ขึ้นไป\nATK +40 เพิ่มเติม, ลด Delay หลังใช้สกิล 10%\nเมื่อสวมใส่ร่วมกับ Physical Enhancer Ring,\nลด Delay หลังใช้สกิล 5%\nประเภท : ^777777Garment^000000 พลังป้องกัน : ^77777723^000000\nน้ำหนัก : ^77777775^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 515,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 23,
+    "weight": 75,
+    "requiredLevel": 99,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "hp": [
+        "300",
+        "2---100"
+      ],
+      "hpPercent": [
+        "3---2",
+        "9===10"
+      ],
+      "atkPercent": [
+        "7===7"
+      ],
+      "atk": [
+        "EQUIP[Anti-Magic Suit]===30",
+        "EQUIP[Anti-Magic Suit]REFINE[armor==11]===40"
+      ],
+      "acd": [
+        "EQUIP[Anti-Magic Suit]REFINE[armor==11]===10",
+        "EQUIP[Physical Enhancer Ring]===5"
       ]
     }
   },
@@ -29893,6 +30023,191 @@
       ]
     }
   },
+  "24446": {
+    "id": 24446,
+    "aegisName": "S_W_Breath_Armor",
+    "name": "Cold Breath Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우",
+    "description": "ชุดเกราะที่เพิ่มพลังป้องกันเมื่อสวมใส่เพิ่มบนเกราะอีกที สามารถใส่แบบชิ้นเดียวได้ แต่ความสามารถในการป้องกันจะลดลงไปอีก \nเพิ่ม Damage สกิล Dragon Breath - WATER 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage สกิล Dragon Breath - WATER ขึ้นอีก 2%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Armor^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Rune Knight^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Armor",
+    "compositionPos": null,
+    "usableClass": [
+      "Rune Knight"
+    ],
+    "script": {
+      "Dragon Breath - WATER": [
+        "5",
+        "2---2"
+      ]
+    }
+  },
+  "24447": {
+    "id": 24447,
+    "aegisName": "S_W_Breath_Shield",
+    "name": "Cold Breath Shadow Shield",
+    "unidName": "Shadow Shield",
+    "resName": "쉴드쉐도우",
+    "description": "โล่เล็กที่สามารถสวมใส่ที่แขนได้ สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์การป้องกันของมันจะลดน้อยลง\nเพิ่ม Damage ทางกายภาพระยะไกล 3%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางกายภาพระยะไกลขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพระยะไกลขึ้นอีก 4%\nเมื่อสวมใส่ Cold Breath Shadow Armor/Shield/Shoes ร่วมกัน,\nลด Delay หลังใช้สกิล % เท่ากับครึ่งหนึ่งของค่าอัพเกรดรวมกัน\nเมื่อสวมใส่ร่วมกับ Rune Knight Weapon Shadow,\nเพิ่ม Damage สกิล Dragon Breath - WATER % ตามค่าอัพเกรดรวมกันของ Cold Breath Shadow Shield และ Rune Knight Shadow Weapon\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shield^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Rune Knight^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 527,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Shield",
+    "compositionPos": null,
+    "usableClass": [
+      "Rune Knight"
+    ],
+    "script": {
+      "range": [
+        "3",
+        "7===3",
+        "9===4"
+      ],
+      "acd": [
+        "EQUIP[Cold Breath Shadow Armor&&Cold Breath Shadow Shoes]REFINE[shadowArmor,shadowShield,shadowBoot==2]---1"
+      ],
+      "Dragon Breath - WATER": [
+        "EQUIP[Rune Knight Weapon Shadow]REFINE[shadowWeapon,shadowShield==1]---1"
+      ]
+    }
+  },
+  "24448": {
+    "id": 24448,
+    "aegisName": "S_W_Breath_Shoes",
+    "name": "Cold Breath Shadow Shoes",
+    "unidName": "Shadow Shoes",
+    "resName": "슈즈쉐도우",
+    "description": "รองเท้าที่สวมใส่เพิ่มเติม สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์ของมันจะลดน้อยลง\nลดปริมาณการใช้ SP สกิล Dragon Breath - WATER 2%\nทุก ๆ การอัพเกรด 2 ขั้น ลดปริมาณการใช้ SP สกิล Dragon Breath - WATER ลงอีก 1%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shoes^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Rune Knight^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 528,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Shoes",
+    "compositionPos": null,
+    "usableClass": [
+      "Rune Knight"
+    ],
+    "script": {
+      "spPercent__Dragon Breath - WATER": [
+        "2",
+        "2---1"
+      ]
+    }
+  },
+  "24449": {
+    "id": 24449,
+    "aegisName": "S_F_Breath_Weapon",
+    "name": "Fire Breath Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา\nเพิ่ม Damage ทางกายภาพระยะไกล 3%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางกายภาพระยะไกลขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพระยะไกลขึ้นอีก 4%\nเมื่อสวมใส่ Fire Breath Shadow Weapon/Pendant/Earring ร่วมกัน,\nเพิ่ม MHP/MSP % เท่ากับครึ่งหนึ่งของค่าอัพเกรดรวมกัน\nเมื่อสวมใส่ร่วมกับ Rune Knight Shield Shadow,\nเพิ่ม Damage สกิล Dragon Breath % ตามค่าอัพเกรดรวมกันของ Fire Breath Shadow Weapon และ Rune Knight Shield Shadow\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Rune Knight^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "Rune Knight"
+    ],
+    "script": {
+      "range": [
+        "3",
+        "7===3",
+        "9===4"
+      ],
+      "hpPercent": [
+        "EQUIP[Fire Breath Shadow Pendant&&Fire Breath Shadow Earring]REFINE[shadowWeapon,shadowPendant,shadowEarring==2]---1"
+      ],
+      "spPercent": [
+        "EQUIP[Fire Breath Shadow Pendant&&Fire Breath Shadow Earring]REFINE[shadowWeapon,shadowPendant,shadowEarring==2]---1"
+      ],
+      "Dragon Breath": [
+        "EQUIP[Rune Knight Shield Shadow]REFINE[shadowWeapon,shadowShield==1]---1"
+      ],
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1"
+      ]
+    }
+  },
+  "24450": {
+    "id": 24450,
+    "aegisName": "S_F_Breath_Pendant",
+    "name": "Fire Breath Shadow Pendant",
+    "unidName": "Shadow Pendant",
+    "resName": "펜던트쉐도우",
+    "description": "สร้อยคอศักดิ์สิทธิ์ที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา\nเพิ่ม Damage สกิล Dragon Breath 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage สกิล Dragon Breath ขึ้นอีก 2%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Pendant ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Rune Knight^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 530,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "AccessoryLeft",
+    "compositionPos": null,
+    "usableClass": [
+      "Rune Knight"
+    ],
+    "script": {
+      "Dragon Breath": [
+        "5",
+        "2---2"
+      ]
+    }
+  },
+  "24451": {
+    "id": 24451,
+    "aegisName": "S_F_Breath_Earing",
+    "name": "Fire Breath Shadow Earring",
+    "unidName": "Shadow Earring",
+    "resName": "이어링쉐도우",
+    "description": "ต่างหูมงคลที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา \nลดปริมาณการใช้ SP สกิล Dragon Breath 2%\nทุก ๆ การอัพเกรด 2 ขั้น ลดปริมาณการใช้ SP สกิล Dragon Breath ลงอีก 1%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Earring ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Rune Knight^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 529,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "AccessoryRight",
+    "compositionPos": null,
+    "usableClass": [
+      "Rune Knight"
+    ],
+    "script": {
+      "sp__Dragon Breath": [
+        "2",
+        "2---1"
+      ]
+    }
+  },
   "24455": {
     "id": 24455,
     "aegisName": "S_Aimed_Weapon",
@@ -35127,6 +35442,198 @@
       ]
     }
   },
+  "24669": {
+    "id": 24669,
+    "aegisName": "S_Mammoth_Armor",
+    "name": "Mammoth Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우",
+    "description": "ชุดเกราะที่เพิ่มพลังป้องกันเมื่อสวมใส่เพิ่มบนเกราะอีกที สามารถใส่แบบชิ้นเดียวได้ แต่ความสามารถในการป้องกันจะลดลงไปอีก\nCRI +10\nทุก ๆ การอัพเกรด 2 ขั้น CRI +1 เพิ่มเติม\nเมื่ออัพเกรดถึงขั้น 9, Critical Damage +5%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Armor^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Armor",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "cri": [
+        "10",
+        "2---1"
+      ],
+      "criDmg": [
+        "9===5"
+      ]
+    }
+  },
+  "24670": {
+    "id": 24670,
+    "aegisName": "S_Mammoth_Shoes",
+    "name": "Mammoth Shadow Shoes",
+    "unidName": "Shadow Shoes",
+    "resName": "슈즈쉐도우",
+    "description": "รองเท้าที่สวมใส่เพิ่มเติม สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์ของมันจะลดน้อยลง\nFLEE +10\nทุก ๆ การอัพเกรด 2 ขั้น FLEE +1 เพิ่มเติม\nเมื่ออัพเกรดถึงขั้น 9, ASPD +1\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shoes^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 528,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Shoes",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "flee": [
+        "10",
+        "2---1"
+      ],
+      "aspd": [
+        "9===1"
+      ]
+    }
+  },
+  "24671": {
+    "id": 24671,
+    "aegisName": "S_Mammoth_Pendant",
+    "name": "Mammoth Shadow Pendant",
+    "unidName": "Shadow Pendant",
+    "resName": "펜던트쉐도우",
+    "description": "สร้อยคอศักดิ์สิทธิ์ที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา\nATK +10\nทุก ๆ การอัพเกรด 2 ขั้น ATK +1 เพิ่มเติม\nเมื่ออัพเกรดถึงขั้น 9, ATK +3%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Pendant^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 530,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "AccessoryLeft",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atk": [
+        "10",
+        "2---1"
+      ],
+      "atkPercent": [
+        "9===3"
+      ]
+    }
+  },
+  "24672": {
+    "id": 24672,
+    "aegisName": "S_Mammoth_Earring",
+    "name": "Mammoth Shadow Earring",
+    "unidName": "Shadow Earring",
+    "resName": "이어링쉐도우",
+    "description": "ต่างหูมงคลที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา\nCritical Damage +1%\nทุก ๆ การอัพเกรด 2 ขั้น Critical Damage +1% เพิ่มเติม\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพระยะใกล้และระยะไกล 3%\nเมื่อสวมใส่ Mammoth Shadow Armor/Shield/Shoes/Weapon/Pendant ร่วมกัน, ATK +1%,\nเมื่อค่าอัพเกรดรวมกันตั้งแต่ 45 ขึ้นไป ทำให้ไม่กระเด็น\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Earring^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 529,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "AccessoryRight",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "criDmg": [
+        "1",
+        "2---1"
+      ],
+      "range": [
+        "9===3"
+      ],
+      "melee": [
+        "9===3"
+      ],
+      "atkPercent": [
+        "EQUIP[Mammoth Shadow Armor&&Mammoth Shadow Shield&&Mammoth Shadow Shoes&&Mammoth Shadow Weapon&&Mammoth Shadow Pendant]===1"
+      ]
+    }
+  },
+  "24673": {
+    "id": 24673,
+    "aegisName": "S_Mammoth_Weapon",
+    "name": "Mammoth Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา\nHIT +10\nทุก ๆ การอัพเกรด 2 ขั้น HIT +1 เพิ่มเติม\nเมื่ออัพเกรดถึงขั้น 9, Perfect Hit +5%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1"
+      ],
+      "hit": [
+        "10",
+        "2---1"
+      ],
+      "perfectHit": [
+        "9===5"
+      ]
+    }
+  },
+  "24674": {
+    "id": 24674,
+    "aegisName": "S_Mammoth_Shield",
+    "name": "Mammoth Shadow Shield",
+    "unidName": "Shadow Shield",
+    "resName": "쉴드쉐도우",
+    "description": "โล่เล็กที่สามารถสวมใส่ที่แขนได้ สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์การป้องกันของมันจะลดน้อยลง\nDEF +5\nทุก ๆ การอัพเกรด 2 ขั้น DEF +1 เพิ่มเติม\nเมื่ออัพเกรดถึงขั้น 9 ลด Delay หลังใช้สกิล 3%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shield^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 527,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Shield",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "def": [
+        "5",
+        "2---1"
+      ],
+      "acd": [
+        "9===3"
+      ]
+    }
+  },
   "24685": {
     "id": 24685,
     "aegisName": "S_Absorb_Shield",
@@ -38203,6 +38710,39 @@
       "p_size_l": [
         "WEAPON_TYPE[fist]1---1",
         "WEAPON_TYPE[fist]10===15"
+      ]
+    }
+  },
+  "27313": {
+    "id": 27313,
+    "aegisName": "Mt_Dolor_Card",
+    "name": "Mutant Dolor Card",
+    "unidName": "Mutant Dolor Card",
+    "resName": "이름없는카드",
+    "description": "ถ้าอาวุธที่ถือเป็นประเภท [Katar], CRI +7, ATK +15\nทุก ๆ การอัปเกรดอาวุธ 1 ขั้น เพิ่ม Critical Damage 2% และเมื่ออัปเกรดตั้งแต่ 10 ขึ้นไป เพิ่ม Damage ต่อมอนสเตอร์ขนาดใหญ่ 15%\n^ffffff_^000000\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Power Fist",
+    "script": {
+      "cri": [
+        "WEAPON_TYPE[katar]7"
+      ],
+      "atk": [
+        "WEAPON_TYPE[katar]15"
+      ],
+      "criDmg": [
+        "WEAPON_TYPE[katar]1---2"
+      ],
+      "p_size_l": [
+        "WEAPON_TYPE[katar]10===15"
       ]
     }
   },
@@ -46897,16 +47437,16 @@
     "location": null,
     "compositionPos": null,
     "script": {
-      "Dragon Breath(Fire)": [
+      "Dragon Breath": [
         "EQUIP[Lord Knight Stone (Upper)]===10"
       ],
-      "Dragon Breath(Water)": [
+      "Dragon Breath - WATER": [
         "EQUIP[Lord Knight Stone (Upper)]===10"
       ],
-      "spPercent__Dragon Breath(Fire)": [
+      "spPercent__Dragon Breath": [
         "EQUIP[Lord Knight Stone (Middle)]===10"
       ],
-      "spPercent__Dragon Breath(Water)": [
+      "spPercent__Dragon Breath - WATER": [
         "EQUIP[Lord Knight Stone (Middle)]===10"
       ],
       "acd": [
@@ -56785,6 +57325,79 @@
       ]
     }
   },
+  "400023": {
+    "id": 400023,
+    "aegisName": "Dolor_HatK",
+    "name": "Drooping Thanatos's Dolor [1]",
+    "unidName": "Helm",
+    "resName": "고뇌의모자",
+    "description": "หมวกตุ๊กตาที่คล้ายกับ Donor of Thanatos ได้ยินมาว่าตุ๊กตาตัวนี้พูดกับเจ้าของได้ด้วยล่ะ\nเพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อมอนสเตอร์ธาตุ Holy, Shadow และเผ่า Dragon, Angel 10% (ทุก ๆ การอัพเกรด 2 ขั้น เพิ่มขึ้นอีก 1%)\nMHP +5%, MSP +5%\nเมื่ออัพเกรดถึงขั้น 7 ATK + 5%, MATK + 5%.\nเมื่ออัพเกรดถึงขั้น 9 ลดระยะเวลาร่ายแบบแปรผัน 10%\nเมื่ออัพเกรดถึงขั้น 11 ลด Delay หลังใช้สกิล 15%\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^77777730^000000\nตำแหน่ง : ^777777Upper ^000000 น้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 30,
+    "weight": 10,
+    "requiredLevel": 1,
+    "location": "Upper",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "p_element_holy": [
+        "10",
+        "2---1"
+      ],
+      "p_element_dark": [
+        "10",
+        "2---1"
+      ],
+      "p_race_dragon": [
+        "10",
+        "2---1"
+      ],
+      "p_race_angel": [
+        "10",
+        "2---1"
+      ],
+      "m_element_holy": [
+        "10",
+        "2---1"
+      ],
+      "m_element_dark": [
+        "10",
+        "2---1"
+      ],
+      "m_race_dragon": [
+        "10",
+        "2---1"
+      ],
+      "m_race_angel": [
+        "10",
+        "2---1"
+      ],
+      "hpPercent": [
+        "5"
+      ],
+      "spPercent": [
+        "5"
+      ],
+      "atkPercent": [
+        "7===5"
+      ],
+      "matkPercent": [
+        "7===5"
+      ],
+      "vct": [
+        "9===10"
+      ],
+      "acd": [
+        "11===15"
+      ]
+    }
+  },
   "400044": {
     "id": 400044,
     "aegisName": "Phantom_Cap",
@@ -61472,6 +62085,120 @@
       ]
     }
   },
+  "490099": {
+    "id": 490099,
+    "aegisName": "Thanatos_Pendant",
+    "name": "Thanatos's Necklace",
+    "unidName": "Ring",
+    "resName": "영원한수호의사랑",
+    "description": "สร้อยคอที่ประดับด้วยอัญมณีเม็ดงามที่หาได้จาก Dolor of Thanatos\nATK +5%, MATK +5%\nเมื่อสวมใส่ร่วมกับ Drooping Thanatos's Dolor,\nเมื่ออัพเกรด Headgear ถึงขั้น 7, ASPD +10%, ลดระยะเวลาร่ายแบบแปรผัน 10%\nเมื่ออัพเกรด Headgear ถึงขั้น 9, ATK +5%, MATK +5%\nเมื่ออัพเกรด Headgear ถึงขั้น 11 ลดระยะเวลาร่ายแบบคงที่ 0.5 วินาที\nสามารถเพิ่ม Random Option ด้วยไอเท็ม 'Pendant Crafted Stone'\nประเภท : ^777777Accessory (Right)^000000 พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 510,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 1,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atkPercent": [
+        "5",
+        "EQUIP[Drooping Thanatos's Dolor]REFINE[headUpper==9]===5"
+      ],
+      "matkPercent": [
+        "5",
+        "EQUIP[Drooping Thanatos's Dolor]REFINE[headUpper==9]===5"
+      ],
+      "aspdPercent": [
+        "EQUIP[Drooping Thanatos's Dolor]REFINE[headUpper==7]===10"
+      ],
+      "vct": [
+        "EQUIP[Drooping Thanatos's Dolor]REFINE[headUpper==7]===10"
+      ],
+      "fct": [
+        "EQUIP[Drooping Thanatos's Dolor]REFINE[headUpper==11]===0.5"
+      ]
+    }
+  },
+  "490100": {
+    "id": 490100,
+    "aegisName": "Red_Force_Pendant",
+    "name": "Red Force Pendant [1]",
+    "unidName": "Ring",
+    "resName": "영원한사랑",
+    "description": "สร้อยคอที่ปรับแต่งมาจาก Thanatos's Necklace ซึ่งโดดเด่นในเรื่องของพลังแห่งการฟื้นฟู HP\nATK +5%, MATK +5%\nเมื่อสวมใส่ร่วมกับ Drooping Thanatos's Dolor,\nทุก ๆ การอัพเกรด Headgear 4 ขั้น ลด Delay หลังใช้สกิล 2%\nเมื่ออัพเกรด Headgear ถึงขั้น 7 เมื่อโจมตีทางกายภาพ มีโอกาส 5% ที่จะฟื้นฟู HP 5% ของ Damage ที่ทำ และเมื่อโจมตีทางเวทมนตร์ มีโอกาส 4% ที่จะฟื้นฟู HP 300 หน่วยทุก ๆ 1 วินาทีทั้งหมด 4 ครั้ง\nเมื่ออัพเกรด Headgear ถึงขั้น 9, ATK +5%, MATK +5%\nเมื่ออัพเกรด Headgear ถึงขั้น 11 ลดระยะเวลาร่ายแบบคงที่ 0.5 วินาที\nสามารถเพิ่ม Random Option ด้วยไอเท็ม 'Dark Stone'\nประเภท : ^777777Accessory (Right)^000000 พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 510,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 1,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atkPercent": [
+        "5",
+        "EQUIP[Drooping Thanatos's Dolor]REFINE[headUpper==9]===5"
+      ],
+      "matkPercent": [
+        "5",
+        "EQUIP[Drooping Thanatos's Dolor]REFINE[headUpper==9]===5"
+      ],
+      "acd": [
+        "EQUIP[Drooping Thanatos's Dolor]REFINE[headUpper==4]---2"
+      ],
+      "fct": [
+        "EQUIP[Drooping Thanatos's Dolor]REFINE[headUpper==11]===0.5"
+      ]
+    }
+  },
+  "490101": {
+    "id": 490101,
+    "aegisName": "Blue_Mental_Pendant",
+    "name": "Blue Mental Pendant [1]",
+    "unidName": "Ring",
+    "resName": "수호의사랑",
+    "description": "สร้อยคอที่ปรับแต่งมาจาก Thanatos's Necklace ซึ่งโดดเด่นในเรื่องของพลังแห่งการฟื้นฟู SP\nATK +5%, MATK +5%\nเมื่อสวมใส่ร่วมกับ Drooping Thanatos's Dolor,\nทุก ๆ การอัพเกรด Headgear 4 ขั้น ลด Delay หลังใช้สกิล 2%\nเมื่ออัพเกรด Headgear ถึงขั้น 7 เมื่อโจมตีทางกายภาพ มีโอกาส 1% ที่จะฟื้นฟู SP 3% ของ Damage ที่ทำ และเมื่อโจมตีทางเวทมนตร์ มีโอกาส 4% ที่จะฟื้นฟู SP 70 หน่วยทุก ๆ 1 วินาทีทั้งหมด 4 ครั้ง\nเมื่ออัพเกรด Headgear ถึงขั้น 9, ATK +5%, MATK +5%\nเมื่ออัพเกรด Headgear ถึงขั้น 11 ลดระยะเวลาร่ายแบบคงที่ 0.5 วินาที\nสามารถเพิ่ม Random Option ด้วยไอเท็ม 'Dark Stone'\nประเภท : ^777777Accessory (Right)^000000 พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 510,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 1,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atkPercent": [
+        "5",
+        "EQUIP[Drooping Thanatos's Dolor]REFINE[headUpper==9]===5"
+      ],
+      "matkPercent": [
+        "5",
+        "EQUIP[Drooping Thanatos's Dolor]REFINE[headUpper==9]===5"
+      ],
+      "acd": [
+        "EQUIP[Drooping Thanatos's Dolor]REFINE[headUpper==4]---2"
+      ],
+      "fct": [
+        "EQUIP[Drooping Thanatos's Dolor]REFINE[headUpper==11]===0.5"
+      ]
+    }
+  },
   "490147": {
     "id": 490147,
     "aegisName": "Anniversary_Ring_1TH",
@@ -63397,6 +64124,50 @@
       ],
       "Espa": [
         "EQUIP[Patent Spirit Pendulum]REFINE[weapon==11]SUM[int,agi==12]---1"
+      ]
+    }
+  },
+  "490479": {
+    "id": 490479,
+    "aegisName": null,
+    "name": "Ring of Unknown Hero(Ninja) [1]",
+    "unidName": "Ring of Unknown Hero(Ninja)",
+    "resName": "Ullr_Bracelet",
+    "description": "แหวนของฮีโร่นิรนาม\n\nลด Delay หลังใช้สกิล 3%\nเพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูทุกประเภท 6%\n\nเมื่อสวมใส่ร่วมกับ Patent Huuma Shuriken Clearness,\nเพิ่ม Damage ทางกายภาพต่อมอนสเตอร์ทุกเผ่า 8%\nเมื่ออัพเกรด Patent Huuma Shuriken Clearness ตั้งแต่ 11 ขึ้นไป,\nเมื่อ Base STR และ DEX รวมกันได้ทุก ๆ 12 หน่วย เพิ่ม Damage สกิล Swirling Petal 1%\n\nเมื่อสวมใส่ร่วมกับ Patent Kiri no Tsuyu,\nเพิ่ม Damage ทางกายภาพระยะไกล 8%\nเมื่ออัพเกรด Patent Kiri no Tsuyu ตั้งแต่ 11 ขึ้นไป,\nเมื่อ Base STR และ AGI รวมกันได้ทุก ๆ 12 หน่วย เพิ่ม Damage สกิล Cross Slash 1%\nประเภท : ^777777Accessory (Right)^000000 พลังป้องกัน : ^7777777^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Ninja^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 510,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 7,
+    "weight": 10,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Ninja"
+    ],
+    "script": {
+      "acd": [
+        "3"
+      ],
+      "p_class_all": [
+        "6"
+      ],
+      "m_class_all": [
+        "6"
+      ],
+      "p_race_all": [
+        "EQUIP[Patent Huuma Shuriken Clearness]===8"
+      ],
+      "Swirling Petal": [
+        "EQUIP[Patent Huuma Shuriken Clearness]REFINE[weapon==11]SUM[str,dex==12]---1"
+      ],
+      "range": [
+        "EQUIP[Patent Kiri no Tsuyu]===8"
+      ],
+      "Cross Slash": [
+        "EQUIP[Patent Kiri no Tsuyu]REFINE[weapon==11]SUM[str,agi==12]---1"
       ]
     }
   },

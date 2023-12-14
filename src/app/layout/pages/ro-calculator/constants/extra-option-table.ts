@@ -24,6 +24,10 @@ export const ExtraOptionTable = {
   Bag_Of_Antonio_Range: 2,
   Bag_Of_Antonio_Magic: 2,
 
+  Thanatos_Pendant: 2,
+  Red_Force_Pendant: 2,
+  Blue_Mental_Pendant: 2,
+
   Bloody_Knight_Shield_: 2,
   Gambler_Seal: 2,
   Droop_Gunslinger: 2,
