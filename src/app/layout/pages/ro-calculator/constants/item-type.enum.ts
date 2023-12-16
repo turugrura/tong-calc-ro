@@ -8,7 +8,9 @@ export enum ItemTypeEnum {
   weaponEnchant1 = 'weaponEnchant1',
   weaponEnchant2 = 'weaponEnchant2',
   weaponEnchant3 = 'weaponEnchant3',
+
   ammo = 'ammo',
+
   leftWeapon = 'leftWeapon',
   leftWeaponRefine = 'leftWeaponRefine',
   leftWeaponCard1 = 'leftWeaponCard1',
@@ -18,6 +20,14 @@ export enum ItemTypeEnum {
   leftWeaponEnchant1 = 'leftWeaponEnchant1',
   leftWeaponEnchant2 = 'leftWeaponEnchant2',
   leftWeaponEnchant3 = 'leftWeaponEnchant3',
+
+  shield = 'shield',
+  shieldRefine = 'shieldRefine',
+  shieldCard = 'shieldCard',
+  shieldEnchant1 = 'shieldEnchant1',
+  shieldEnchant2 = 'shieldEnchant2',
+  shieldEnchant3 = 'shieldEnchant3',
+
   headUpper = 'headUpper',
   headUpperRefine = 'headUpperRefine',
   headUpperCard = 'headUpperCard',
@@ -39,12 +49,6 @@ export enum ItemTypeEnum {
   armorEnchant1 = 'armorEnchant1',
   armorEnchant2 = 'armorEnchant2',
   armorEnchant3 = 'armorEnchant3',
-  shield = 'shield',
-  shieldRefine = 'shieldRefine',
-  shieldCard = 'shieldCard',
-  shieldEnchant1 = 'shieldEnchant1',
-  shieldEnchant2 = 'shieldEnchant2',
-  shieldEnchant3 = 'shieldEnchant3',
   garment = 'garment',
   garmentRefine = 'garmentRefine',
   garmentCard = 'garmentCard',
@@ -68,6 +72,8 @@ export enum ItemTypeEnum {
   accRightEnchant2 = 'accRightEnchant2',
   accRightEnchant3 = 'accRightEnchant3',
   pet = 'pet',
+
+  costumeUpper = 'costumeUpper',
 
   costumeEnchantUpper = 'costumeEnchantUpper',
   costumeEnchantMiddle = 'costumeEnchantMiddle',
@@ -205,6 +211,8 @@ export const MainItemWithRelations: Partial<Record<ItemTypeEnum, ItemTypeEnum[]>
 
   [ItemTypeEnum.pet]: [],
 
+  [ItemTypeEnum.costumeUpper]: [],
+
   [ItemTypeEnum.costumeEnchantUpper]: [],
   [ItemTypeEnum.costumeEnchantMiddle]: [],
   [ItemTypeEnum.costumeEnchantLower]: [],
@@ -218,3 +226,5 @@ export const MainItemWithRelations: Partial<Record<ItemTypeEnum, ItemTypeEnum[]>
   [ItemTypeEnum.shadowEarring]: [ItemTypeEnum.shadowEarringEnchant1],
   [ItemTypeEnum.shadowPendant]: [ItemTypeEnum.shadowPendantEnchant1],
 };
+
+export type EquipmentModel = Record<ItemTypeEnum, number>;

@@ -16,6 +16,7 @@ export enum ItemSubTypeId {
   Pet = 518,
   Enchant = 0,
 
+  CostumeUpper = 519,
   CostumeEnhUpper = 71,
   CostumeEnhMiddle = 72,
   CostumeEnhLower = 73,

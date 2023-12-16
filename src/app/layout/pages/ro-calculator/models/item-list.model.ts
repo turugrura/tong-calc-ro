@@ -53,6 +53,8 @@ export interface ItemListModel {
   accRightEnchant3List: DropdownModel[];
   petList: DropdownModel[];
 
+  costumeUpperList: DropdownModel[];
+
   costumeEnhUpperList: DropdownModel[];
   costumeEnhMiddleList: DropdownModel[];
   costumeEnhLowerList: DropdownModel[];

@@ -2770,6 +2770,34 @@
     <div class="grid grid-nogutter">
       <div class="col-3 item_label_costume">
         <p-dropdown
+          inputId="costumeUpper"
+          [autoDisplayFirst]="false"
+          [resetFilterOnHide]="true"
+          [options]="costumeUpperList"
+          [filter]="true"
+          filterBy="label"
+          [(ngModel)]="model.costumeUpper"
+          [showClear]="true"
+          [disabled]="costumeUpperList.length === 0"
+          (onChange)="onSelectItem('costumeUpper', $event.value)"
+          placeholder="Upper Enchant"
+        >
+          <ng-template let-item pTemplate="selectedItem">
+            <div class="flex gap-1 item_template" *ngIf="model.costumeUpper">
+              <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+          <ng-template let-item pTemplate="item">
+            <div class="flex gap-1">
+              <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
+      </div>
+      <div class="col-3 item_label_costume">
+        <p-dropdown
           inputId="costumeEnchantUpper"
           [autoDisplayFirst]="false"
           [resetFilterOnHide]="true"
@@ -2796,7 +2824,7 @@
           </ng-template>
         </p-dropdown>
       </div>
-      <div class="col-3 ml-4 item_label_shadow">
+      <div class="col-3 item_label_shadow">
         <p-dropdown
           inputId="shadowWeapon"
           [autoDisplayFirst]="false"
@@ -2839,7 +2867,7 @@
           </ng-template>
         </p-dropdown>
       </div>
-      <div class="col-3 item_label_shadow">
+      <div class="col-2 item_label_shadow">
         <p-cascadeSelect
           [(ngModel)]="model.rawOptionTxts[itemOptionNumber.SD_Wp_1]"
           [disabled]="!model.shadowWeapon"
@@ -2858,6 +2886,7 @@
 
     <!-- Costume Middle / Shadow Armor -->
     <div class="grid grid-nogutter">
+      <div class="col-3 item_label_costume"></div>
       <div class="col-3 item_label_costume">
         <p-dropdown
           inputId="costumeEnchantMiddle"
@@ -2886,7 +2915,7 @@
           </ng-template>
         </p-dropdown>
       </div>
-      <div class="col-3 ml-4 item_label_shadow">
+      <div class="col-3 item_label_shadow">
         <p-dropdown
           inputId="shadowArmor"
           [autoDisplayFirst]="false"
@@ -2929,7 +2958,7 @@
           </ng-template>
         </p-dropdown>
       </div>
-      <div class="col-3 item_label_shadow">
+      <div class="col-2 item_label_shadow">
         <p-cascadeSelect
           [(ngModel)]="model.rawOptionTxts[itemOptionNumber.SD_Ar_1]"
           [disabled]="!model.shadowArmor"
@@ -2948,6 +2977,7 @@
 
     <!-- Costume Lower / Shadow Shield -->
     <div class="grid grid-nogutter">
+      <div class="col-3 item_label_costume"></div>
       <div class="col-3 item_label_costume">
         <p-dropdown
           inputId="costumeEnchantLower"
@@ -2976,7 +3006,7 @@
           </ng-template>
         </p-dropdown>
       </div>
-      <div class="col-3 ml-4 item_label_shadow">
+      <div class="col-3 item_label_shadow">
         <p-dropdown
           inputId="shadowShield"
           [autoDisplayFirst]="false"
@@ -3019,7 +3049,7 @@
           </ng-template>
         </p-dropdown>
       </div>
-      <div class="col-3 item_label_shadow">
+      <div class="col-2 item_label_shadow">
         <p-cascadeSelect
           [(ngModel)]="model.rawOptionTxts[itemOptionNumber.SD_Sh_1]"
           [disabled]="!model.shadowShield"
@@ -3038,6 +3068,7 @@
 
     <!-- Costume Garment / Shadow Boot -->
     <div class="grid grid-nogutter">
+      <div class="col-3 item_label_costume"></div>
       <div class="col-3 item_label_costume">
         <p-dropdown
           inputId="costumeEnchantGarment"
@@ -3066,7 +3097,7 @@
           </ng-template>
         </p-dropdown>
       </div>
-      <div class="col-3 ml-4 item_label_shadow">
+      <div class="col-3 item_label_shadow">
         <p-dropdown
           inputId="shadowBoot"
           [autoDisplayFirst]="false"
@@ -3109,7 +3140,7 @@
           </ng-template>
         </p-dropdown>
       </div>
-      <div class="col-3 item_label_shadow">
+      <div class="col-2 item_label_shadow">
         <p-cascadeSelect
           [(ngModel)]="model.rawOptionTxts[itemOptionNumber.SD_B_1]"
           [disabled]="!model.shadowBoot"
@@ -3128,6 +3159,7 @@
 
     <!-- Shadow Earring -->
     <div class="grid grid-nogutter">
+      <div class="col-3 item_label_costume"></div>
       <div class="col-3 item_label_costume">
         <p-dropdown
           inputId="costumeEnchantGarment4"
@@ -3156,7 +3188,7 @@
           </ng-template>
         </p-dropdown>
       </div>
-      <div class="col-3 ml-4 item_label_shadow">
+      <div class="col-3 item_label_shadow">
         <p-dropdown
           inputId="shadowEarring"
           [autoDisplayFirst]="false"
@@ -3199,7 +3231,7 @@
           </ng-template>
         </p-dropdown>
       </div>
-      <div class="col-3 item_label_shadow">
+      <div class="col-2 item_label_shadow">
         <p-cascadeSelect
           [(ngModel)]="model.rawOptionTxts[itemOptionNumber.SD_Ear_1]"
           [disabled]="!model.shadowEarring"
@@ -3218,8 +3250,9 @@
 
     <!-- Shadow Pendant -->
     <div class="grid grid-nogutter item_label_shadow">
+      <div class="col-3 item_label_costume"></div>
       <div class="col-3"></div>
-      <div class="col-3 ml-4">
+      <div class="col-3">
         <p-dropdown
           inputId="shadowPendant"
           [autoDisplayFirst]="false"
@@ -3262,7 +3295,7 @@
           </ng-template>
         </p-dropdown>
       </div>
-      <div class="col-3">
+      <div class="col-2">
         <p-cascadeSelect
           [(ngModel)]="model.rawOptionTxts[itemOptionNumber.SD_Pan_1]"
           [disabled]="!model.shadowPendant"

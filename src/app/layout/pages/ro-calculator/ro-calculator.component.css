@@ -263,6 +263,7 @@
 :host ::ng-deep .item_label_weaponCard2,
 :host ::ng-deep .item_label_weaponCard3,
 :host ::ng-deep .item_label_weaponCard4,
+:host ::ng-deep .item_label_ammo,
 :host ::ng-deep .item_label_weaponEnchant1,
 :host ::ng-deep .item_label_weaponEnchant2,
 :host ::ng-deep .item_label_weaponEnchant3 {
@@ -374,6 +375,7 @@
 
 :host ::ng-deep .item_label_costume .p-dropdown-label,
 :host ::ng-deep .item_label_costume .p-cascadeselect-label,
+:host ::ng-deep .item_label_costumeUpper,
 :host ::ng-deep .item_label_costumeEnchantUpper,
 :host ::ng-deep .item_label_costumeEnchantMiddle,
 :host ::ng-deep .item_label_costumeEnchantLower,

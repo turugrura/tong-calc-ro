@@ -3936,6 +3936,33 @@
       ]
     }
   },
+  "4258": {
+    "id": 4258,
+    "aegisName": "Wicked_Nymph_Card",
+    "name": "Evil Nymph Card",
+    "unidName": "Evil Nymph Card",
+    "resName": "이름없는카드",
+    "description": "INT + 1, Max SP + 50\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Headgear^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 769,
+    "cardPrefix": "Improved Intelligence",
+    "script": {
+      "int": [
+        "1"
+      ],
+      "sp": [
+        "50"
+      ]
+    }
+  },
   "4263": {
     "id": 4263,
     "aegisName": "Incant_Samurai_Card",
@@ -5251,6 +5278,34 @@
     "script": {
       "criDmg": [
         "luk:10---2"
+      ]
+    }
+  },
+  "4599": {
+    "id": 4599,
+    "aegisName": "LichternR_Card",
+    "name": "Lichtern Red Card",
+    "unidName": "Lichtern Red Card",
+    "resName": "이름없는카드",
+    "description": "MATK + 10, พลังโจมตีทางเวทย์ธาตุ Fire เพิ่มขึ้น 5%\nเมื่อขั้นอัพเกรดตั้งแต่ 9 ขึ้นไป, พลังโจมตีทางเวทย์ธาตุ Fire เพิ่มอีก 5%\nประเภท : ^777777Card^000000\nใส่กับ : ^777777Headgear^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 769,
+    "cardPrefix": "of Fire",
+    "script": {
+      "matk": [
+        "10"
+      ],
+      "m_my_element_fire": [
+        "5",
+        "9===5"
       ]
     }
   },
@@ -17852,7 +17907,7 @@
     "description": "ตุ๊กตาที่จำลองทหารรับจ้างในตำนาน มีพลังทำลายล้างต่างกับลุคน่ารัก ๆ อย่างที่เห็น ใช้ [Gunslinger Scroll] เพื่อเสริมความสามารถได้\nAll Status +1, ลดปริมาณการใช้ SP ลง 10%\nเพิ่ม EXP ที่ได้รับจากมอนสเตอร์ 5% เพิ่มอัตราดร็อปไอเท็ม 5% \nเมื่ออัพเกรดถึงขั้น 9, ASPD +1\nเมื่ออัพเกรดถึงขั้น 12 เพิ่มความเร็วในการเคลื่อนที่\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^7777770^000000\nตำแหน่ง : ^777777Upper ^000000น้ำหนัก : ^77777720^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
     "slots": 1,
     "itemTypeId": 2,
-    "itemSubTypeId": 519,
+    "itemSubTypeId": 512,
     "itemLevel": null,
     "attack": null,
     "defense": 0,
@@ -17925,7 +17980,7 @@
     "description": "ที่คาดผมสัญลักษณ์ของพนักงาน Kafra\nเข้าเซ็ตกันกับ Kafra Uniform\nลด damage จากมอนสเตอร์ทุกประเภท 5%\nเมื่อกำจัดมอนสเตอร์ มีโอกาสที่จะได้รับ [Not For Sale] Kafra Card, Free Ticket for Kafra Transportation, Free Ticket for Kafra Storage\nยิ่งค่าการอัพเกรดสูง ยิ่งเพิ่มโอกาสในการได้รับ\n----------------\nเมื่อใช้ร่วมกันกับ Kafra Uniform EXP ที่ได้รับจากมอนสเตอร์ + 5% เปอร์เซ็นต์ดร็อปไอเท็ม + 5%, All State +4.\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^7777770^000000\nตำแหน่ง : ^777777Upper ^000000น้ำหนัก : ^77777750^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
     "slots": 1,
     "itemTypeId": 2,
-    "itemSubTypeId": 519,
+    "itemSubTypeId": 512,
     "itemLevel": null,
     "attack": null,
     "defense": 0,
@@ -51323,6 +51378,35 @@
       ],
       "flee": [
         "EQUIP[Modification Orb (Lucky Strike)]40"
+      ]
+    }
+  },
+  "31390": {
+    "id": 31390,
+    "aegisName": "C_Let_It_Snow",
+    "name": "Costume Let It Snow",
+    "unidName": "Cap",
+    "resName": "Let_It_Snow",
+    "description": "หมวกที่ถูกสร้างขึ้นมาด้วยแรงอธิษฐานของชาวบ้านในพื้นที่ที่หิมะไม่ตกแม้ในฤดูหนาว รูปร่างที่มีลักษณะเป็นหิมะโปรยปรายนั้นทำให้นึกถึง Stormgast\n^ffffff_^000000\nในช่วงเวลากิจกรรม ทุก ๆ 20 Base Lv. HP + 250\nเพิ่มพลังฟื้นฟูของ Ice Cream 50%\nทุก ๆ 30 Base Lv. เพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูทุกประเภท 2%\n(ความสามารถของไอเท็มนี้จะถูกลบหลังสิ้นสุดระยะเวลากิจกรรม)\n^ffffff_^000000\nประเภท : ^777777Costume^000000 พลังป้องกัน : ^7777770^000000\nตำแหน่ง : ^777777Upper ^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 9,
+    "itemSubTypeId": 519,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Upper",
+    "compositionPos": null,
+    "script": {
+      "hp": [
+        "SUM[level==20]---250"
+      ],
+      "p_class_all": [
+        "SUM[level==30]---2"
+      ],
+      "m_class_all": [
+        "SUM[level==30]---2"
       ]
     }
   },

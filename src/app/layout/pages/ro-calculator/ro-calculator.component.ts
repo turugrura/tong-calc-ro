@@ -244,6 +244,8 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   accRightEnchant3List: DropdownModel[] = [];
   petList: DropdownModel[] = [];
 
+  costumeUpperList: DropdownModel[] = [];
+
   costumeEnhUpperList: DropdownModel[] = [];
   costumeEnhMiddleList: DropdownModel[] = [];
   costumeEnhLowerList: DropdownModel[] = [];
@@ -1423,6 +1425,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     const accRightCardList = [];
     const petList = [];
 
+    const costumeUpperList = [];
     const costumeEnhUpperList = [];
     const costumeEnhMiddleList = [];
     const costumeEnhLowerList = [];
@@ -1510,6 +1513,9 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         case ItemSubTypeId.ShadowWeapon:
           shadowWeaponList.push(item);
           continue;
+        case ItemSubTypeId.CostumeUpper:
+          costumeUpperList.push(item);
+          continue;
         case ItemSubTypeId.CostumeEnhUpper:
           costumeEnhUpperList.push(item);
           continue;
@@ -1583,6 +1589,8 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     this.itemList.accRightCardList = toDropdownList(accRightCardList, 'name', 'id', undefined, ['cardPrefix']);
     this.itemList.petList = petList.map((a) => ({ label: a.name, value: a.id }));
 
+    this.itemList.costumeUpperList = toDropdownList(costumeUpperList, 'name', 'id');
+
     this.itemList.costumeEnhUpperList = toDropdownList(costumeEnhUpperList, 'name', 'id');
     this.itemList.costumeEnhMiddleList = toDropdownList(costumeEnhMiddleList, 'name', 'id');
     this.itemList.costumeEnhLowerList = toDropdownList(costumeEnhLowerList, 'name', 'id');
@@ -1630,6 +1638,8 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     this.accRightList = this.itemList.accRightList.filter(onlyMe);
     this.accRightCardList = this.itemList.accRightCardList.filter(onlyMe);
     this.petList = this.itemList.petList.filter(onlyMe);
+
+    this.costumeUpperList = this.itemList.costumeUpperList.filter(onlyMe);
 
     this.costumeEnhUpperList = this.itemList.costumeEnhUpperList.filter(onlyMe);
     this.costumeEnhMiddleList = this.itemList.costumeEnhMiddleList.filter(onlyMe);

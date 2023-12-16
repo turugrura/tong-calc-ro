@@ -95,6 +95,8 @@ export const createMainModel = (): MainModel => ({
   accRightEnchant3: undefined,
   pet: undefined,
 
+  costumeUpper: undefined,
+
   costumeEnchantUpper: undefined,
   costumeEnchantMiddle: undefined,
   costumeEnchantLower: undefined,
