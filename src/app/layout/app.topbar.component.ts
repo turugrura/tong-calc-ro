@@ -100,6 +100,16 @@ export class AppTopBarComponent {
 
   updates: { v: string; date: string; logs: string[] }[] = [
     {
+      v: 'V1.7.8',
+      date: '16-12-2566',
+      logs: [
+        'Fixed reported bugs',
+        'Added Warlock, Sorcerer learnable skill (Fire Wall)',
+        'Added SC offensive skill (Comet)',
+        'Added requested items',
+      ],
+    },
+    {
       v: 'V1.7.7',
       date: '14-12-2566',
       logs: [
