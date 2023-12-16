@@ -19229,7 +19229,7 @@
         "SUM[dex==90]===70",
         "SUM[dex==125]===140"
       ],
-      "m_race_boss": [
+      "m_class_boss": [
         "2",
         "SUM[dex==90]===3",
         "SUM[dex==125]===5"
@@ -23382,10 +23382,10 @@
         "12===0.2"
       ],
       "Cart Tornado": [
-        "EQUIP[Racing Cap(Geneticist)]REFINE[headUpper,boot==21]===30"
+        "EQUIP[Racing Cap(Genetic)]REFINE[headUpper,boot==21]===30"
       ],
       "cd__Cart Tornado": [
-        "EQUIP[Racing Cap(Geneticist)]REFINE[headUpper,boot==21]===0.3"
+        "EQUIP[Racing Cap(Genetic)]REFINE[headUpper,boot==21]===0.3"
       ],
       "matk": [
         "EQUIP[Racing Cap(Shadow Chaser)]REFINE[headUpper,boot==21]===100"
@@ -59457,6 +59457,9 @@
         "2---10",
         "EQUIP[Automatic Engine wing B-type]===50"
       ],
+      "vct": [
+        "7===15"
+      ],
       "aspdPercent": [
         "EQUIP[Automatic Engine wing A-type]===10"
       ]
@@ -62685,7 +62688,7 @@
         "10"
       ],
       "m_pene_race_all": [
-        "50"
+        "LEARN_SKILL[Safety Wall==2]---10"
       ],
       "fct": [
         "EQUIP[Old Magic Stone Hat]0.3"
