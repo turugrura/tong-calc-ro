@@ -95,11 +95,11 @@ export class AssassinCross extends CharacterBase {
       name: 'Advanced Katar Mastery',
       dropdown: [
         { label: '-', isUse: false, value: 0 },
-        { label: 'Lv 1', isUse: true, value: 1, bonus: { final: 12 } },
-        { label: 'Lv 2', isUse: true, value: 2, bonus: { final: 14 } },
-        { label: 'Lv 3', isUse: true, value: 3, bonus: { final: 16 } },
-        { label: 'Lv 4', isUse: true, value: 4, bonus: { final: 18 } },
-        { label: 'Lv 5', isUse: true, value: 5, bonus: { final: 20 } },
+        { label: 'Lv 1', isUse: true, value: 1, bonus: { advKatar: 12 } },
+        { label: 'Lv 2', isUse: true, value: 2, bonus: { advKatar: 14 } },
+        { label: 'Lv 3', isUse: true, value: 3, bonus: { advKatar: 16 } },
+        { label: 'Lv 4', isUse: true, value: 4, bonus: { advKatar: 18 } },
+        { label: 'Lv 5', isUse: true, value: 5, bonus: { advKatar: 20 } },
       ],
     },
     {

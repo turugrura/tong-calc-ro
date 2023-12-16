@@ -207,6 +207,21 @@ export class DamageCalculator {
     return this.toPercent(100 + (this.totalBonus['comet'] || 0));
   }
 
+  private getDarkClawBonus(atkType: 'melee' | 'range') {
+    if (atkType === 'range') return 0;
+
+    const bonus = this.totalBonus['darkClaw'] || 0;
+    // if (this.monsterData.type === 'boss') {
+    //   bonus = bonus / 2;
+    // }
+
+    return bonus;
+  }
+
+  private getAdvanceKatar() {
+    return this.totalBonus['advKatar'] || 0;
+  }
+
   private getVIAmp(propertyAtk: ElementType) {
     if (propertyAtk !== ElementType.Poison) return 1;
 
@@ -633,7 +648,10 @@ export class DamageCalculator {
     const equipSkillMultiplier = this.toPercent(100 + (this.totalBonus[skillName] || 0));
     const criDmgToMonster = floor(criDmg * criDmgPercentage || 0);
     const criMultiplier = canCri ? this.toPercent(criDmgToMonster + 100) : 1;
-    // const dmgMultiplier = this.toPercent(0 + 100);
+
+    const darkClaw = this.getDarkClawBonus(isMelee ? 'melee' : 'range');
+    const advKatar = this.getAdvanceKatar();
+    const finalDmgMultipliers = [darkClaw, advKatar].map((b) => this.toPercent(100 + b));
     const infoForClass = this.infoForClass;
 
     const skillFormula = (_totalAtk: number, _calcCri: boolean) => {
@@ -645,7 +663,10 @@ export class DamageCalculator {
       total = floor(total * hardDef);
       total = total - softDef; // tested
       if (_calcCri) total = floor(total * this.BASE_CRI_MULTIPLIER);
-      // total = this.applyFinalMultiplier(total, 'phy');
+
+      for (const final of finalDmgMultipliers) {
+        total = floor(total * final);
+      }
 
       total = this.toPreventNegativeDmg(total);
 
