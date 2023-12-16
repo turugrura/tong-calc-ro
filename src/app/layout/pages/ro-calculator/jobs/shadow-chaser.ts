@@ -9,6 +9,7 @@ import {
 import { DarkClaw, NoLimit } from '../constants/share-active-skills';
 import { Thief } from './thief';
 import { InfoForClass } from '../models/info-for-class.model';
+import { ElementType } from '../constants/element-type.const';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 0, 0, 1],
@@ -188,6 +189,42 @@ export class ShadowChaser extends CharacterBase {
     },
     {
       name: 'Psychic Wave',
+      label: 'Psychic Wave Lv3',
+      value: 'Psychic Wave==3',
+      fct: 0.8,
+      vct: 10,
+      cd: 5,
+      acd: 1,
+      totalHit: 7,
+      isMatk: true,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const baseLevel = model.level;
+        const totalInt = status.totalInt;
+
+        return (70 * skillLevel + 3 * totalInt) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Psychic Wave',
+      label: 'Psychic Wave Lv4',
+      value: 'Psychic Wave==4',
+      fct: 0.7,
+      vct: 11,
+      cd: 5,
+      acd: 1,
+      totalHit: 7,
+      isMatk: true,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const baseLevel = model.level;
+        const totalInt = status.totalInt;
+
+        return (70 * skillLevel + 3 * totalInt) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Psychic Wave',
       label: 'Psychic Wave Lv5',
       value: 'Psychic Wave==5',
       fct: 0.6,
@@ -202,6 +239,24 @@ export class ShadowChaser extends CharacterBase {
         const totalInt = status.totalInt;
 
         return (70 * skillLevel + 3 * totalInt) * (baseLevel / 100);
+      },
+    },
+    {
+      label: 'Comet Lv5',
+      name: 'Comet',
+      value: 'Comet==5',
+      acd: 1.5,
+      fct: 2,
+      vct: 10,
+      cd: 20,
+      isMatk: true,
+      hit: 10,
+      element: ElementType.Neutral,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
+
+        return (1500 + skillLevel * 700) * (baseLevel / 100);
       },
     },
   ];
