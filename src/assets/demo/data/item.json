@@ -4548,6 +4548,30 @@
       ]
     }
   },
+  "4448": {
+    "id": 4448,
+    "aegisName": "Cornus_Card",
+    "name": "Cornus Card",
+    "unidName": "Cornus Card",
+    "resName": "이름없는카드",
+    "description": "ลดพลังโจมตีจาก monsters ธาตุ Holy 20%\nเพิ่มพลังโจมตีกับ monsters ธาตุ Holy 5%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Shield^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 32,
+    "cardPrefix": "of Damned",
+    "script": {
+      "p_element_holy": [
+        "5"
+      ]
+    }
+  },
   "4451": {
     "id": 4451,
     "aegisName": "Ant_Buyanne_Card",
@@ -4835,6 +4859,30 @@
     "cardPrefix": "Exorcism",
     "script": {
       "p_race_undead": [
+        "20"
+      ]
+    }
+  },
+  "4519": {
+    "id": 4519,
+    "aegisName": "Butoijo_Card",
+    "name": "Butoijo Card",
+    "unidName": "Butoijo Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่มพลังโจมตีทางกายภาพต่อมอนสเตอร์ธาตุ Angel 20%\nประเภท : ^777777Card^000000\nบริเวณที่สวมใส่ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Seraphim",
+    "script": {
+      "p_race_angel": [
         "20"
       ]
     }
@@ -14759,6 +14807,52 @@
       ]
     }
   },
+  "15956": {
+    "id": 15956,
+    "aegisName": null,
+    "name": "Helmet Of Siegfried TH [1]",
+    "unidName": "Helm",
+    "resName": "지크프리트의투구",
+    "description": "ครั้งนึงเคยถูกสวมใส่โดยทาสผู้รับใช้มังกรในตำนาน ทำจากปีกและเกล็ดของมังกร\nเมื่อสวมใส่จะทำให้รู้สึกถึงพลังและความกล้าหาญ\n\nMaxHP +5%, MaxSP +5%, MDEF +15\nเมื่อ Base INT ตั้งแต่ 108 ขึ้นไป เพิ่ม Damage สกิล [Dragon Breath] 15%\nเมื่อ Base DEX ตั้งแต่ 108 ขึ้นไป เพิ่ม Damage สกิล [Dragon Breath - WATER] 15%\nเมื่อ Base INT และ Base DEX ตั้งแต่ 120 ขึ้นไป,\nเพิ่ม Damage สกิล [Dragon Breath], [Dragon Breath - WATER] 10%\n\nเมื่ออัพเกรดตั้งแต่ 7 ขึ้นไป,\nMaxHP +5%, MaxSP +5%\n\nเมื่ออัพเกรดตั้งแต่ 9 ขึ้นไป,\nลด Damage ที่ได้รับจากศัตรูเผ่า Demi-Human, Player, Dragon 10%\n\nเมื่ออัพเกรดตั้งแต่ 11 ขึ้นไป,\nลด Delay หลังใช้สกิล 10%\n\nเมื่ออัพเกรดตั้งแต่ 13 ขึ้นไป,\nDEF +200, MDEF +40\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^77777760^000000\nตำแหน่ง : ^777777Upper^000000 น้ำหนัก : ^77777730^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 60,
+    "weight": 30,
+    "requiredLevel": 100,
+    "location": "Upper",
+    "compositionPos": null,
+    "script": {
+      "hpPercent": [
+        "5",
+        "7===5"
+      ],
+      "spPercent": [
+        "5",
+        "7===5"
+      ],
+      "mdef": [
+        "15",
+        "13===40"
+      ],
+      "Dragon Breath": [
+        "SUM[int==108]===15",
+        "SUM[int==120]dex:120===10"
+      ],
+      "Dragon Breath - WATER": [
+        "SUM[dex==108]===15",
+        "SUM[int==120]dex:120===10"
+      ],
+      "acd": [
+        "11===10"
+      ],
+      "def": [
+        "13===200"
+      ]
+    }
+  },
   "15968": {
     "id": 15968,
     "aegisName": null,
@@ -21596,6 +21690,36 @@
       ],
       "chance__atkPercent": [
         "EQUIP[Ancient Hero Boots]===15"
+      ]
+    }
+  },
+  "21039": {
+    "id": 21039,
+    "aegisName": "T_Sword_Of_Kingdom",
+    "name": "Royal Knight's Broadsword [2]",
+    "unidName": "Two-Handed Sword",
+    "resName": "T_Sword_Of_Kingdom",
+    "description": "ดาบใหญ่ที่ใช้โดยอัศวินผู้เลื่องชื่อ\nทุก ๆ การอัพเกรด 2 ขั้น, ATK + 20\nเมื่ออัพเกรดถึงขั้น 7, เพิ่ม Critical Damage 10%\nเมื่ออัพเกรดถึงขั้น 9, ไม่สามารถถูกทำลายได้\n^ffffff_^000000\nประเภท : ^777777Two-Handed Sword^000000 พลังโจมตี : ^777777280^000000\nน้ำหนัก : ^777777400^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777175^000000\nอาชีพที่ใส่ได้ : ^7777773rd Swordman Cls^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 258,
+    "itemLevel": 4,
+    "attack": 280,
+    "defense": null,
+    "weight": 400,
+    "requiredLevel": 175,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Rune Knight",
+      "Royal Guard"
+    ],
+    "script": {
+      "atk": [
+        "2---20"
+      ],
+      "criDmg": [
+        "7===10"
       ]
     }
   },
@@ -31653,6 +31777,95 @@
       "spPercent__Reverberation": [
         "2",
         "2---1"
+      ]
+    }
+  },
+  "24512": {
+    "id": 24512,
+    "aegisName": "S_Jack_Armor",
+    "name": "Jack Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우",
+    "description": "ชุดเกราะที่เพิ่มพลังป้องกันเมื่อสวมใส่เพิ่มบนเกราะอีกที สามารถใส่แบบชิ้นเดียวได้ แต่ความสามารถในการป้องกันจะลดลงไปอีก\nเพิ่ม Damage สกิล Jack Frost 5%\nทุก ๆ การอัพเกรด 1 ขั้น เพิ่ม Damage สกิล Jack Frost ขึ้นอีก 2%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Armor^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Warlock^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Armor",
+    "compositionPos": null,
+    "usableClass": [
+      "Warlock"
+    ],
+    "script": {
+      "Jack Frost": [
+        "5",
+        "1---2"
+      ]
+    }
+  },
+  "24513": {
+    "id": 24513,
+    "aegisName": "S_Jack_Shield",
+    "name": "Jack Shadow Shield",
+    "unidName": "Shadow Shield",
+    "resName": "쉴드쉐도우",
+    "description": "โล่เล็กที่สามารถสวมใส่ที่แขนได้ สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์การป้องกันของมันจะลดน้อยลง\nเพิ่ม Damage ทางเวทมนตร์ธาตุ Water 3%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางเวทมนตร์ธาตุ Water ขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางเวทมนตร์ธาตุ Water ขึ้นอีก 4%\nเมื่อสวมใส่ Jack Shadow Armor/Shield/Shoes ร่วมกัน,\nเพิ่ม Damage สกิล Jack Frost % เท่ากับค่าอัพเกรดรวมกัน\nเมื่อสวมใส่ร่วมกับ Warlock Shadow Weapon,\nเพิกเฉยต่อพลังป้องกันทางเวทมนตร์ของทุกเผ่ายกเว้น Player 40% และเพิกเฉยต่อพลังป้องกันทางเวทมนตร์เพิ่มอีกตามค่าอัพเกรดรวมกันของ Jack Shadow Shield และ Warlock Shadow Weapon\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shield^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Warlock^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 527,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Shield",
+    "compositionPos": null,
+    "usableClass": [
+      "Warlock"
+    ],
+    "script": {
+      "m_my_element_water": [
+        "3",
+        "7===3",
+        "9===4"
+      ],
+      "Jack Frost": [
+        "EQUIP[Jack Shadow Armor&&Jack Shadow Shoes]REFINE[shadowArmor,shadowShield,shadowBoot==1]---1"
+      ],
+      "m_pene_race_all": [
+        "EQUIP[Warlock Shadow Weapon]===40",
+        "EQUIP[Warlock Shadow Weapon]REFINE[shadowWeapon,shadowShield==1]---1"
+      ]
+    }
+  },
+  "24514": {
+    "id": 24514,
+    "aegisName": "S_Jack_Shoes",
+    "name": "Jack Shadow Shoes",
+    "unidName": "Shadow Shoes",
+    "resName": "슈즈쉐도우",
+    "description": "รองเท้าที่สวมใส่เพิ่มเติม สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์ของมันจะลดน้อยลง\nลด Cooldown สกิล Jack Frost 1 วินาที\nทุก ๆ การอัพเกรด 2 ขั้น ลด Cooldown สกิล Jack Frost ลงอีก 0.1 วินาที\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shoes ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Warlock^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 528,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Shoes",
+    "compositionPos": null,
+    "usableClass": [
+      "Warlock"
+    ],
+    "script": {
+      "cd__Jack Frost": [
+        "1",
+        "2---0.1"
       ]
     }
   },
