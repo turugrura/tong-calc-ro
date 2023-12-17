@@ -91,6 +91,11 @@ export class AppTopBarComponent {
       writer: 'RO GGT',
       link: 'https://ro.gnjoy.in.th/newyear_adventure_2024/assets/img/additional/Ragnarok-Today/POP-UP-Job-BONUS.jpg',
     },
+    {
+      label: 'KRO : Episode 17.2 enchant info : Automatic equipment and Sin weapons.',
+      writer: 'Sigma',
+      link: 'https://www.divine-pride.net/forum/index.php?/topic/4176-kro-episode-172-enchant-info-automatic-equipment-and-sin-weapons',
+    },
     // {
     //   label: '',
     //   writer: '',

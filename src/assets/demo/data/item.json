@@ -58757,6 +58757,38 @@
       ]
     }
   },
+  "410071": {
+    "id": 410071,
+    "aegisName": "Demons_Familiar_",
+    "name": "Demon's Familiar [1]",
+    "unidName": "Ribbon",
+    "resName": "Demons_Familiar",
+    "description": "A self-contained remote surveillance camera kept in the Varmundt mansion.\r\nDue to the magical interference device installed by the Illusions, it has changed into a terrifying appearance.\r\n------------------------\r\nAll Stats + 10\r\n------------------------\r\n^FF0000When equipped with one of the following:^000000\r\n\r\n^4D4DFFAddiction Plant [2]^000000\r\n^4D4DFFAvaritia Metal [2]^000000\r\n^4D4DFFEnvy Blunt [2]^000000\r\n^4D4DFFGula Gun [2]^000000\r\n^4D4DFFGula Teeth [2]^000000\r\n^4D4DFFGluttony Stick [2]^000000\r\n^4D4DFFGreed Wand [2]^000000\r\n^4D4DFFHypocrisy Machine [3]^000000\r\n^4D4DFFHypocrisy Edge [2]^000000\r\n^4D4DFFInvidia Bundle [2]^000000\r\n^4D4DFFIra Fist [2]^000000\r\n^4D4DFFLust Pointer [2]^000000\r\n^4D4DFFLust Shatter [2]^000000\r\n^4D4DFFLust Crusher [2]^000000\r\n^4D4DFFLust Boom [2]^000000\r\n^4D4DFFLuxuria Pierce [2]^000000\r\n^4D4DFFPride Stone [2]^000000\r\n^4D4DFFPride Steel [2]^000000\r\n^4D4DFFPigritia Rhythm [2]^000000\r\n^4D4DFFPigritia Wave [2]^000000\r\n^4D4DFFPigritia Spark [2]^000000\r\n^4D4DFFSuperbia String [2]^000000\r\n^4D4DFFSloth Text [2]^000000\r\n^4D4DFFSloth Bible [2]^000000\r\n^4D4DFFWrath Wheel [2]^000000\r\n^4D4DFFWrath Rack [2]^000000\r\n\r\nATK + 200 , MATK + 200\r\n------------------------\r\nType: ^777777Headgear^000000\r\nDef: ^7777770^000000\r\nLocation: ^777777Middle^000000\r\nWeight: ^7777770^000000\r\nRequired Level: ^777777100^000000\r\nClass: ^777777All Jobs^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 2,
+    "weight": 20,
+    "requiredLevel": 100,
+    "location": "Middle",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "allStatus": [
+        "10"
+      ],
+      "atk": [
+        "EQUIP[Addiction Plant||Avaritia Metal||Envy Blunt||Gula Gun||Gula Teeth||Gluttony Stick||Greed Wand||Hypocrisy Machine||Hypocrisy Edge||Invidia Bundle||Ira Fist||Lust Pointer||Lust Shatter||Lust Crusher||Lust Boom||Luxuria Pierce||Pride Stone||Pride Steel||Pigritia Rhythm||Pigritia Wave||Pigritia Spark||Superbia String||Sloth Text||Sloth Bible||Wrath Wheel||Wrath Rack]===200"
+      ],
+      "matk": [
+        "EQUIP[Addiction Plant||Avaritia Metal||Envy Blunt||Gula Gun||Gula Teeth||Gluttony Stick||Greed Wand||Hypocrisy Machine||Hypocrisy Edge||Invidia Bundle||Ira Fist||Lust Pointer||Lust Shatter||Lust Crusher||Lust Boom||Luxuria Pierce||Pride Stone||Pride Steel||Pigritia Rhythm||Pigritia Wave||Pigritia Spark||Superbia String||Sloth Text||Sloth Bible||Wrath Wheel||Wrath Rack]===200"
+      ]
+    }
+  },
   "410079": {
     "id": 410079,
     "aegisName": "Deepblue_Sunglasses",
@@ -59457,9 +59489,6 @@
     ],
     "script": {
       "matk": [
-        "60"
-      ],
-      "hpGain": [
         "60"
       ],
       "m_my_element_neutral": [
@@ -64660,6 +64689,78 @@
       ]
     }
   },
+  "500007": {
+    "id": 500007,
+    "aegisName": "Ep172_1h_Sword",
+    "name": "Hypocrisy Machine [3]",
+    "unidName": "Sword",
+    "resName": "Ep172_1h_Sword",
+    "description": "Can't be destroyed.\nIncreases melee physical damage by 3% per 2 refine rate.\nCri + 2 per 3 refine rate.\nIf refine rate is 7 or higher, increases attack speed (reduces delay after attack by 20%).\nIf refine rate is 9 or higher, increases physical damage against small and large size enemies by 25%.\nIf refine rate is 11 or higher, enables to use Bowling Bash which has the same level as Sword Mastery user learned.\n^ffffff_^000000\nClass: ^777777Sword^000000 Attack: ^777777250^000000\nWeight: ^777777300^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777150^000000\nJobs: ^777777Novice Class^000000",
+    "slots": 3,
+    "itemTypeId": 1,
+    "itemSubTypeId": 257,
+    "itemLevel": 4,
+    "attack": 250,
+    "defense": null,
+    "weight": 300,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Novice"
+    ],
+    "script": {
+      "melee": [
+        "2---3"
+      ],
+      "cri": [
+        "3---2"
+      ],
+      "aspdPercent": [
+        "7===20"
+      ],
+      "p_size_s": [
+        "9===25"
+      ],
+      "p_size_l": [
+        "9===25"
+      ]
+    }
+  },
+  "500008": {
+    "id": 500008,
+    "aegisName": "Ep172_1h_Sword2",
+    "name": "Invidia Bundle [2]",
+    "unidName": "Sword",
+    "resName": "Ep172_1h_Sword2",
+    "description": "Increases Cart Tornado damage by 10%.\nAtk + 12 per 3 refine rate.\nIf refine rate is 7 or higher, increases Cart Tornado damage by additional 15%.\nIf refine rate is 9 or higher, increases attack speed (reduces delay after attack by 10%).\nIf refine rate is 11 or higher, increases Cart Tornado damage by additional 25%.\n^ffffff_^000000\nClass: ^777777Sword^000000 Attack: ^777777210^000000\nWeight: ^777777180^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777150^000000\nJobs: ^777777Genetic^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 257,
+    "itemLevel": 4,
+    "attack": 210,
+    "defense": null,
+    "weight": 180,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Genetic"
+    ],
+    "script": {
+      "Cart Tornado": [
+        "10",
+        "7===15",
+        "11===25"
+      ],
+      "atk": [
+        "3---12"
+      ],
+      "aspdPercent": [
+        "9===10"
+      ]
+    }
+  },
   "500013": {
     "id": 500013,
     "aegisName": "Up_Sword_Of_Bluefire",
@@ -64990,6 +65091,80 @@
       ]
     }
   },
+  "510008": {
+    "id": 510008,
+    "aegisName": "Ep172_1h_Dagger",
+    "name": "Wrath Rack [2]",
+    "unidName": "Dagger",
+    "resName": "Ep172_1h_Dagger",
+    "description": "Matk + 170.\nIncreases Flaming Petals and Freezing Spear damage by 10%.\nMatk + 6 per 3 refine rate.\nIf refine rate is 7 or higher, increases Flaming Petals and Freezing Spear damage by additional 10%.\nIf refine rate is 9 or higher, reduces variable casting time by 10%.\nIf refine rate is 11 or higher, increases Flaming Petals and Freezing Spear damage by additional 10%.\n^ffffff_^000000\nClass: ^777777Dagger^000000 Attack: ^777777160^000000\nWeight: ^77777780^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777150^000000\nJobs: ^777777Ninja Class^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 256,
+    "itemLevel": 4,
+    "attack": 160,
+    "defense": null,
+    "weight": 80,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Ninja"
+    ],
+    "script": {
+      "matk": [
+        "170",
+        "3---6"
+      ],
+      "Flaming Petals": [
+        "10",
+        "7===10",
+        "11===10"
+      ],
+      "Freezing Spear": [
+        "10",
+        "7===10",
+        "11===10"
+      ],
+      "vct": [
+        "9===10"
+      ]
+    }
+  },
+  "510009": {
+    "id": 510009,
+    "aegisName": "Ep172_1h_Dagger2",
+    "name": "Gula Teeth [2]",
+    "unidName": "Dagger",
+    "resName": "Ep172_1h_Dagger2",
+    "description": "Increases Fatal Menace damage by 10%.\nAtk + 12 per 3 refine rate.\nIf refine rate is 7 or higher, increases Fatal Menace damage by additional 10%.\nIf refine rate is 9 or higher, reduces global cooldown by 10%.\nIf refine rate is 11 or higher, increases Fatal Menace damage by additional 15%.\n^ffffff_^000000\nClass: ^777777Dagger^000000 Attack: ^777777180^000000\nWeight: ^77777790^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777150^000000\nJobs: ^777777Shadow Chaser^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 256,
+    "itemLevel": 4,
+    "attack": 180,
+    "defense": null,
+    "weight": 90,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Shadow Chaser"
+    ],
+    "script": {
+      "Fatal Manace": [
+        "10",
+        "7===10",
+        "11===15"
+      ],
+      "atk": [
+        "3---12"
+      ],
+      "acd": [
+        "9===10"
+      ]
+    }
+  },
   "510019": {
     "id": 510019,
     "aegisName": "Up_Magic_Sword",
@@ -65261,6 +65436,42 @@
       ]
     }
   },
+  "520002": {
+    "id": 520002,
+    "aegisName": "Ep172_1h_Axe",
+    "name": "Pride Steel [2]",
+    "unidName": "Axe",
+    "resName": "Ep172_1h_Axe",
+    "description": "Can't be destroyed.\nIncreases Power Swing damage by 10%.\nAtk + 12 per 3 refine rate.\nIf refine rate is 7 or higher, increases Power Swing damage by additional 15%.\nIf refine rate is 9 or higher, reduces skill cooldown of Axe Tornado by 1 second.\nIf refine rate is 11 or higher, increases Axe Boomerang damage by 25%.\n^ffffff_^000000\nClass: ^777777Axe^000000 Attack: ^777777250^000000\nWeight: ^777777300^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777150^000000\nJobs: ^777777Mechanic^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 261,
+    "itemLevel": 4,
+    "attack": 250,
+    "defense": null,
+    "weight": 300,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Mechanic"
+    ],
+    "script": {
+      "Power Swing": [
+        "10",
+        "7===15"
+      ],
+      "atk": [
+        "3---12"
+      ],
+      "cd__Axe Tornado": [
+        "9===1"
+      ],
+      "Axe Boomerang": [
+        "11===25"
+      ]
+    }
+  },
   "530000": {
     "id": 530000,
     "aegisName": "Boost_Spear",
@@ -65316,6 +65527,41 @@
       "Banishing Point": [
         "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]level:15---2",
         "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]ACTIVE_SKILL[Spear Quicken]===35"
+      ]
+    }
+  },
+  "530002": {
+    "id": 530002,
+    "aegisName": "Ep172_1h_Spear",
+    "name": "Gluttony Stick [2]",
+    "unidName": "Spear",
+    "resName": "Ep172_1h_Spear",
+    "description": "Matk + 200.\nIncreases Genesis Ray damage by 10%.\nMatk + 12 per 3 refine rate.\nIf refine rate is 7 or higher, increases Genesis Ray damage by additional 10%.\nIf refine rate is 9 or higher, reduces variable casting time by 10%.\nIf refine rate is 11 or higher, increases Genesis Ray damage by additional 15%.\n^ffffff_^000000\nClass: ^777777Spear^000000 Attack: ^777777190^000000\nWeight: ^777777200^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777150^000000\nJobs: ^777777Royal Guard^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 259,
+    "itemLevel": 4,
+    "attack": 190,
+    "defense": null,
+    "weight": 200,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Royal Guard"
+    ],
+    "script": {
+      "matk": [
+        "200",
+        "3---12"
+      ],
+      "Genesis Ray": [
+        "10",
+        "7===10",
+        "11===15"
+      ],
+      "vct": [
+        "9===10"
       ]
     }
   },
@@ -65471,6 +65717,86 @@
         "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]level:15---2",
         "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]level:195===-2",
         "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]===35"
+      ]
+    }
+  },
+  "540004": {
+    "id": 540004,
+    "aegisName": "Ep172_1h_Book",
+    "name": "Sloth Text [2]",
+    "unidName": "Book",
+    "resName": "Ep172_1h_Book",
+    "description": "Can't be destroyed.\nIncreases New Moon Kick damage by 10%.\nAtk + 12 per 3 refine rate.\nIf refine rate is 7 or higher, increases New Moon Kick damage by additional 15%.\nIf refine rate is 9 or higher, increases attack speed (reduces delay after attack by 10%).\nIf refine rate is 11 or higher, increases Full Moon Kick damage by 25%.\n^ffffff_^000000\nClass: ^777777Book^000000 Attack: ^777777210^000000\nWeight: ^77777750^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777150^000000\nJobs: ^777777Star Emperor^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 271,
+    "itemLevel": 4,
+    "attack": 210,
+    "defense": null,
+    "weight": 50,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Star Emperor"
+    ],
+    "script": {
+      "New Moon Kick": [
+        "10",
+        "7===15"
+      ],
+      "atk": [
+        "3---12"
+      ],
+      "aspdPercent": [
+        "9===10"
+      ],
+      "Full Moon Kick": [
+        "11===25"
+      ]
+    }
+  },
+  "540005": {
+    "id": 540005,
+    "aegisName": "Ep172_1h_Book2",
+    "name": "Sloth Bible [2]",
+    "unidName": "Book",
+    "resName": "Ep172_1h_Book2",
+    "description": "Matk + 220.\nWhen dealing physical or magical damage, has a chance to recovers 300 SP per second for 5 seconds, reduces damage taken from normal monster by 15%.\nMatk + 6 and reduces variable casting time by 3% per 3 refine rate.\nIf refine rate is 7 or higher, increases Fire Bolt and Lightning Bolt damage by 25%.\nIf refine rate is 9 or higher, increases attack speed (reduces delay after attack by 10%).\nIf refine rate is 11 or higher, increases Fire Bolt and Lightning Bolt damage by additional 30%.\n^ffffff_^000000\nClass: ^777777Book^000000 Attack: ^777777160^000000\nWeight: ^77777770^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777150^000000\nJobs: ^777777Sorcerer^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 271,
+    "itemLevel": 4,
+    "attack": 160,
+    "defense": null,
+    "weight": 70,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Sorcerer"
+    ],
+    "script": {
+      "matk": [
+        "220",
+        "3---6"
+      ],
+      "sp": [
+        "5"
+      ],
+      "vct": [
+        "3---3"
+      ],
+      "Fire Bolt": [
+        "7===25",
+        "11===30"
+      ],
+      "Lightning Bolt": [
+        "7===25",
+        "11===30"
+      ],
+      "aspdPercent": [
+        "9===10"
       ]
     }
   },
@@ -65785,6 +66111,87 @@
       ],
       "chance__matkPercent": [
         "EQUIP[Ancient Hero Boots]===15"
+      ]
+    }
+  },
+  "550008": {
+    "id": 550008,
+    "aegisName": "Ep172_1h_Wand",
+    "name": "Greed Wand [2]",
+    "unidName": "Staff",
+    "resName": "Ep172_1h_Wand",
+    "description": "Can't be destroyed.\nMatk + 200.\nIncreases Espa damage by 10%.\nMatk + 12 per 3 refine rate.\nIf refine rate is 7 or higher, increases Espa damage by additional 15%.\nIf refine rate is 9 or higher, reduces variable casting time by 10%.\nIf refine rate is 11 or higher, increases Eswhoo damage by 25%.\n^ffffff_^000000\nClass: ^777777Staff^000000 Attack: ^777777130^000000\nWeight: ^77777780^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777150^000000\nJobs: ^777777Soul Reaper^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 265,
+    "itemLevel": 4,
+    "attack": 130,
+    "defense": null,
+    "weight": 80,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Soul Reaper"
+    ],
+    "script": {
+      "matk": [
+        "200",
+        "3---12"
+      ],
+      "Espa": [
+        "10",
+        "7===15"
+      ],
+      "vct": [
+        "9===10"
+      ],
+      "Eswhoo": [
+        "11===25"
+      ]
+    }
+  },
+  "550009": {
+    "id": 550009,
+    "aegisName": "Ep172_1h_Foxtail",
+    "name": "Addiction Plant [2]",
+    "unidName": "Staff",
+    "resName": "Ep172_1h_Foxtail",
+    "description": "Can't be destroyed.\nMatk + 330.\nWhen dealing magical damage, has a chance to recovers 300 SP per second for 5 seconds, reduces damage taken from normal monster by 15%.\nMatk + 6 and reduces variable casting time by 3% per 3 refine rate.\nIf refine rate is 7 or higher, increases Silvervine Stem Spear and Catnip Meteor damage by 15%.\nIf refine rate is 9 or higher, reduces skill cooldown of Catnip Meteor by 1.5 seconds.\nIf refine rate is 11 or higher, increases Silvervine Stem Spear and Catnip Meteor damage by additional 15%.\n^ffffff_^000000\nClass: ^777777Staff^000000\nAttack: ^777777280^000000\nWeight: ^777777150^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777150^000000\nJobs: ^777777Summoner (Doram)^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 265,
+    "itemLevel": 4,
+    "attack": 280,
+    "defense": null,
+    "weight": 150,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Summoner (Doram)"
+    ],
+    "script": {
+      "matk": [
+        "330",
+        "3---6"
+      ],
+      "sp": [
+        "5"
+      ],
+      "vct": [
+        "3---3"
+      ],
+      "Silvervine Stem Spear": [
+        "7===15",
+        "11===15"
+      ],
+      "Catnip Meteor": [
+        "7===15",
+        "11===15"
+      ],
+      "cd__Catnip Meteor": [
+        "9===1.5"
       ]
     }
   },
@@ -66178,6 +66585,43 @@
       ]
     }
   },
+  "560004": {
+    "id": 560004,
+    "aegisName": "Ep172_Bh_Knuck",
+    "name": "Ira Fist [2]",
+    "unidName": "Knuckle",
+    "resName": "Ep172_Bh_knuck",
+    "description": "Increases Lightning Ride damage by 15%.\nAtk + 12 per 3 refine rate.\nIf refine rate is 7 or higher, increases Lion's Howl damage by 15%.\nIf refine rate is 9 or higher, reduces skill cooldown of Lion's Howl by 2 seconds.\nIf refine rate is 11 or higher, increases Lightning Ride and Lion's Howl damage by additional 10%.\n^ffffff_^000000\nClass: ^777777Knuckle^000000 Attack: ^777777200^000000\nWeight: ^77777780^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777150^000000\nJobs: ^777777Sura^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 268,
+    "itemLevel": 4,
+    "attack": 200,
+    "defense": null,
+    "weight": 80,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Sura"
+    ],
+    "script": {
+      "Lightning Ride": [
+        "15",
+        "11===10"
+      ],
+      "atk": [
+        "3---12"
+      ],
+      "Lion Howling": [
+        "7===15",
+        "11===10"
+      ],
+      "cd__Lion Howling": [
+        "9===2"
+      ]
+    }
+  },
   "560008": {
     "id": 560008,
     "aegisName": "Up_Iron_Nail_K",
@@ -66386,6 +66830,50 @@
       ]
     }
   },
+  "570005": {
+    "id": 570005,
+    "aegisName": "Ep172_1h_Inst",
+    "name": "Pigritia Wave [2]",
+    "unidName": "Musical Instrument",
+    "resName": "Ep172_1h_Inst",
+    "description": "Matk + 210.\nIncreases Metallic Sound and Reverberation damage by 10%.\nMatk + 8 per 3 refine rate.\nIf refine rate is 7 or higher, reduces variable casting time by 10%.\nIf refine rate is 9 or higher, increases Metallic Sound and Reverberation damage by additional 15%.\nIf refine rate is 11 or higher, reduces skill cooldown of Metallic Sound by 2 seconds, reduces SP consumption of Reverberation by 20%.\n^ffffff_^000000\nClass: ^777777Instrument^000000 Attack: ^777777150^000000\nWeight: ^77777770^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777150^000000\nJobs: ^777777Minstrel^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 269,
+    "itemLevel": 4,
+    "attack": 150,
+    "defense": null,
+    "weight": 70,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Minstrel"
+    ],
+    "script": {
+      "matk": [
+        "210",
+        "3---8"
+      ],
+      "Metallic Sound": [
+        "10",
+        "9===15"
+      ],
+      "Reverberation": [
+        "10",
+        "9===15"
+      ],
+      "vct": [
+        "7===10"
+      ],
+      "cd__Metalic Sound": [
+        "11===2"
+      ],
+      "spPercentCost__Reverberation": [
+        "11===20"
+      ]
+    }
+  },
   "570009": {
     "id": 570009,
     "aegisName": "Up_Trumpet_Shell_K",
@@ -66541,6 +67029,50 @@
       ],
       "chance__matkPercent": [
         "EQUIP[Ancient Hero Boots]===15"
+      ]
+    }
+  },
+  "580005": {
+    "id": 580005,
+    "aegisName": "Ep172_1h_Whip",
+    "name": "Pigritia Spark [2]",
+    "unidName": "Whip",
+    "resName": "Ep172_1h_Whip",
+    "description": "Matk + 210.\nIncreases Metallic Sound and Reverberation damage by 10%.\nMatk + 8 per 3 refine rate.\nIf refine rate is 7 or higher, reduces variable casting time by 10%.\nIf refine rate is 9 or higher, increases Metallic Sound and Reverberation damage by additional 15%.\nIf refine rate is 11 or higher, reduces skill cooldown of Metallic Sound by 2 seconds, reduces SP consumption of Reverberation by 20%.\n^ffffff_^000000\nClass: ^777777Whip^000000 Attack: ^777777150^000000\nWeight: ^77777770^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777150^000000\nJobs: ^777777Wanderer^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 270,
+    "itemLevel": 4,
+    "attack": 150,
+    "defense": null,
+    "weight": 70,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Wanderer"
+    ],
+    "script": {
+      "matk": [
+        "210",
+        "3---8"
+      ],
+      "Metallic Sound": [
+        "10",
+        "9===15"
+      ],
+      "Reverberation": [
+        "10",
+        "9===15"
+      ],
+      "vct": [
+        "7===10"
+      ],
+      "cd__Metalic Sound": [
+        "11===2"
+      ],
+      "spPercentCost__Reverberation": [
+        "11===20"
       ]
     }
   },
@@ -66745,6 +67277,44 @@
       ]
     }
   },
+  "590006": {
+    "id": 590006,
+    "aegisName": "Ep172_1h_Hammer",
+    "name": "Envy Blunt [2]",
+    "unidName": "Mace",
+    "resName": "Ep172_1h_Hammer",
+    "description": "Can't be destroyed.\nMatk + 210.\nIncreases Duple Light damage by 15%.\nMatk + 12 per 3 refine rate.\nIf refine rate is 7 or higher, increases Duple Light damage by additional 20%.\nIf refine rate is 9 or higher, increases attack speed (reduces delay after attack by 10%).\nIf refine rate is 11 or higher, increases Duple Light damage by additional 35%, reduces fixed casting time of Duple Light by 0.5 seconds.\n^ffffff_^000000\nClass: ^777777Mace^000000 Attack: ^777777180^000000\nWeight: ^777777150^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777150^000000\nJobs: ^777777Archbishop^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 263,
+    "itemLevel": 4,
+    "attack": 180,
+    "defense": null,
+    "weight": 150,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Arch Bishop"
+    ],
+    "script": {
+      "matk": [
+        "210",
+        "3---12"
+      ],
+      "Duple Light": [
+        "15",
+        "7===20",
+        "11===35"
+      ],
+      "aspdPercent": [
+        "9===10"
+      ],
+      "fct__Duple Light": [
+        "11===0.5"
+      ]
+    }
+  },
   "590011": {
     "id": 590011,
     "aegisName": "Up_Meteor_Striker",
@@ -66880,6 +67450,40 @@
       ],
       "chance__range": [
         "EQUIP[Ancient Hero Boots]===10"
+      ]
+    }
+  },
+  "600008": {
+    "id": 600008,
+    "aegisName": "Ep172_Bh_Sword",
+    "name": "Hypocrisy Edge [2]",
+    "unidName": "Two-handed Sword",
+    "resName": "Ep172_Bh_Sword",
+    "description": "Can't be destroyed.\nIncreases Wind Cutter damage by 10%.\nAtk + 12 per 3 refine rate.\nIf refine rate is 7 or higher, increases Wind Cutter damage by additional 10%.\nIf refine rate is 9 or higher, reduces global cooldown by 10%.\nIf refine rate is 11 or higher, increases Wind Cutter damage by additional 15%.\n^ffffff_^000000\nClass: ^777777Two-handed Sword^000000 Attack: ^777777280^000000\nWeight: ^777777300^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777150^000000\nJobs: ^777777Rune Knight^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 258,
+    "itemLevel": 4,
+    "attack": 280,
+    "defense": null,
+    "weight": 300,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Rune Knight"
+    ],
+    "script": {
+      "Wind Cutter": [
+        "10",
+        "7===10",
+        "11===15"
+      ],
+      "atk": [
+        "3---12"
+      ],
+      "acd": [
+        "9===10"
       ]
     }
   },
@@ -67019,6 +67623,43 @@
       ],
       "chance__atkPercent": [
         "EQUIP[Ancient Hero Boots]===15"
+      ]
+    }
+  },
+  "610006": {
+    "id": 610006,
+    "aegisName": "Ep172_Bh_Katar",
+    "name": "Avaritia Metal [2]",
+    "unidName": "Katar",
+    "resName": "Ep172_Bh_Katar",
+    "description": "Increases Rolling Cutter damage by 10%.\nAtk + 12 per 3 refine rate.\nIf refine rate is 7 or higher, increases Cross Ripper Slasher damage by 15%.\nIf refine rate is 9 or higher, increases attack speed (reduces delay after attack by 10%).\nIf refine rate is 11 or higher, increases Rolling Cutter and Cross Ripper Slasher damage by additional 15%.\n^ffffff_^000000\nClass: ^777777Katar^000000 Attack: ^777777220^000000\nWeight: ^777777180^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777150^000000\nJobs: ^777777Guillotine Cross^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 272,
+    "itemLevel": 4,
+    "attack": 220,
+    "defense": null,
+    "weight": 180,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Guillotine Cross"
+    ],
+    "script": {
+      "Rolling Cutter": [
+        "10",
+        "11===15"
+      ],
+      "atk": [
+        "3---12"
+      ],
+      "Cross Ripper Slasher": [
+        "7===15",
+        "11===15"
+      ],
+      "aspdPercent": [
+        "9===10"
       ]
     }
   },
@@ -67169,6 +67810,40 @@
       ]
     }
   },
+  "630003": {
+    "id": 630003,
+    "aegisName": "Ep172_Bh_Spear",
+    "name": "Luxuria Pierce [2]",
+    "unidName": "Spear",
+    "resName": "Ep172_Bh_Spear",
+    "description": "Increases Hundred Spear damage by 10%.\nAtk + 12 per 3 refine rate.\nIf refine rate is 7 or higher, increases Hundred Spear damage by additional 15%.\nIf refine rate is 9 or higher, reduces skill cooldown of Hundred Spear by 1.5 seconds.\nIf refine rate is 11 or higher, increases Hundred Spear damage by additional 20%.\n^ffffff_^000000\nClass: ^777777Two-handed Spear^000000 Attack: ^777777250^000000\nWeight: ^777777330^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777150^000000\nJobs: ^777777Rune Knight^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 260,
+    "itemLevel": 4,
+    "attack": 250,
+    "defense": null,
+    "weight": 330,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Rune Knight"
+    ],
+    "script": {
+      "Hundred Spears": [
+        "10",
+        "7===15",
+        "11===20"
+      ],
+      "atk": [
+        "3---12"
+      ],
+      "cd__Hundred Spears": [
+        "9===1.5"
+      ]
+    }
+  },
   "640000": {
     "id": 640000,
     "aegisName": "Boost_Staff",
@@ -67274,6 +67949,56 @@
       ],
       "chance__matkPercent": [
         "EQUIP[Ancient Hero Boots]===15"
+      ]
+    }
+  },
+  "640005": {
+    "id": 640005,
+    "aegisName": "Ep172_Bh_Staff",
+    "name": "Pride Stone [2]",
+    "unidName": "Two-handed Staff",
+    "resName": "Ep172_Bh_Staff",
+    "description": "Can't be destroyed.\nMatk + 320.\nIncreases neutral and water property magical damage by 15%.\nMatk + 6 and reduces variable casting time by 3% per 3 refine rate.\nIf refine rate is 7 or higher, increases Comet and Jack Frost damage by 10%.\nIf refine rate is 9 or higher, reduces skill cooldown of Comet by 10 seconds and reduces skill cooldown of Jack Frost by 1.5 seconds.\nIf refine rate is 11 or higher, increases Comet and Jack Frost damage by additional 20%.\n^ffffff_^000000\nClass: ^777777Two-handed Staff^000000\nAttack: ^777777180^000000\nWeight: ^777777200^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777150^000000\nJobs: ^777777Warlock^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 266,
+    "itemLevel": 4,
+    "attack": 180,
+    "defense": null,
+    "weight": 200,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Warlock"
+    ],
+    "script": {
+      "matk": [
+        "320",
+        "3---6"
+      ],
+      "m_my_element_neutral": [
+        "15"
+      ],
+      "m_my_element_water": [
+        "15"
+      ],
+      "vct": [
+        "3---3"
+      ],
+      "Comet": [
+        "7===10",
+        "11===20"
+      ],
+      "Jack Frost": [
+        "7===10",
+        "11===20"
+      ],
+      "cd__Comet": [
+        "9===10"
+      ],
+      "cd__Jack Frost": [
+        "9===1.5"
       ]
     }
   },
@@ -67386,6 +68111,50 @@
       ],
       "matkPercent": [
         "EQUIP[Great Hero Boots]===7"
+      ]
+    }
+  },
+  "650003": {
+    "id": 650003,
+    "aegisName": "Ep172_Bh_Huuma",
+    "name": "Wrath Wheel [2]",
+    "unidName": "Huuma Shuriken",
+    "resName": "Ep172_Bh_Huuma",
+    "description": "Can't be destroyed.\nIncreases Swirling Petal damage by 15%.\nAtk + 6 and reduces variable casting time by 2% per 3 refine rate.\nIf refine rate is 7 or higher, increases Cross Slash damage by 15%.\nIf refine rate is 9 or higher, reduces skill cooldown of Swirling Petal by 2 seconds and reduces skill cooldown of Cross Slash by 1 second.\nIf refine rate is 11 or higher, increases Swirling Petal and Cross Slash damage by additional 20%.\n^ffffff_^000000\nClass: ^777777Shuriken^000000\nAttack: ^777777320^000000 Element: ^777777Wind^000000\nWeight: ^777777180^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777150^000000\nJobs: ^777777Ninja Class^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 278,
+    "itemLevel": 4,
+    "attack": 320,
+    "propertyAtk": "Wind",
+    "defense": null,
+    "weight": 180,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Ninja"
+    ],
+    "script": {
+      "Swirling Petal": [
+        "15",
+        "11===20"
+      ],
+      "atk": [
+        "3---6"
+      ],
+      "vct": [
+        "3---2"
+      ],
+      "Cross Slash": [
+        "7===15",
+        "11===20"
+      ],
+      "cd__Swirling Petal": [
+        "9===2"
+      ],
+      "cd__Cross Slash": [
+        "9===1"
       ]
     }
   },
@@ -67547,6 +68316,109 @@
       ],
       "chance__bowRange": [
         "EQUIP[Ancient Hero Boots]===20"
+      ]
+    }
+  },
+  "700007": {
+    "id": 700007,
+    "aegisName": "Ep172_Bh_Bow",
+    "name": "Superbia String [2]",
+    "unidName": "Bow",
+    "resName": "Ep172_Bh_Bow",
+    "description": "Increases Arrow Storm damage by 10%.\nAtk + 12 per 3 refine rate.\nIf refine rate is 7 or higher, increases Arrow Storm damage by additional 10%.\nIf refine rate is 9 or higher, reduces skill cooldown of Arrow Storm by 1 second.\nIf refine rate is 11 or higher, increases Arrow Storm damage by additional 15%.\n^ffffff_^000000\nClass: ^777777Bow^000000 Attack: ^777777220^000000\nWeight: ^777777140^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777150^000000\nJobs: ^777777Ranger^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 267,
+    "itemLevel": 4,
+    "attack": 220,
+    "defense": null,
+    "weight": 140,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Ranger"
+    ],
+    "script": {
+      "Arrow Storm": [
+        "10",
+        "7===10",
+        "11===15"
+      ],
+      "atk": [
+        "3---12"
+      ],
+      "cd__Arrow Storm": [
+        "9===1"
+      ]
+    }
+  },
+  "700008": {
+    "id": 700008,
+    "aegisName": "Ep172_Bh_Bow2",
+    "name": "Gula Gun [2]",
+    "unidName": "Bow",
+    "resName": "Ep172_Bh_Bow2",
+    "description": "Increases Triangle Shot damage by 10%.\nAtk + 12 per 3 refine rate.\nIf refine rate is 7 or higher, increases Triangle Shot damage by additional 15%.\nIf refine rate is 9 or higher, reduces global cooldown by 10%.\nIf refine rate is 11 or higher, increases Triangle Shot damage by additional 20%.\n^ffffff_^000000\nClass: ^777777Bow^000000 Attack: ^777777220^000000\nWeight: ^777777120^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777150^000000\nJobs: ^777777Shadow Chaser^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 267,
+    "itemLevel": 4,
+    "attack": 220,
+    "defense": null,
+    "weight": 120,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Shadow Chaser"
+    ],
+    "script": {
+      "Triangle Shot": [
+        "10",
+        "7===15",
+        "11===20"
+      ],
+      "atk": [
+        "3---12"
+      ],
+      "acd": [
+        "9===10"
+      ]
+    }
+  },
+  "700009": {
+    "id": 700009,
+    "aegisName": "Ep172_Bh_Bow3",
+    "name": "Pigritia Rhythm [2]",
+    "unidName": "Bow",
+    "resName": "Ep172_Bh_Bow3",
+    "description": "Increases Severe Rainstorm damage by 10%.\nAtk + 12 per 3 refine rate.\nIf refine rate is 7 or higher, increases Severe Rainstorm damage by additional 15%.\nIf refine rate is 9 or higher, reduces skill cooldown of Severe Rainstorm by 2.5 seconds.\nIf refine rate is 11 or higher, increases Severe Rainstorm damage by additional 20%.\n^ffffff_^000000\nClass: ^777777Bow^000000 Attack: ^777777190^000000\nWeight: ^777777100^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777150^000000\nJobs: ^777777Minstrel, Wanderer^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 267,
+    "itemLevel": 4,
+    "attack": 190,
+    "defense": null,
+    "weight": 100,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Minstrel",
+      "Wanderer"
+    ],
+    "script": {
+      "Severe Rainstorm": [
+        "10",
+        "7===15",
+        "11===20"
+      ],
+      "atk": [
+        "3---12"
+      ],
+      "cd__Severe Rainstorm": [
+        "9===2.5"
       ]
     }
   },
@@ -67743,6 +68615,44 @@
       ]
     }
   },
+  "810000": {
+    "id": 810000,
+    "aegisName": "Ep172_1h_Rifle",
+    "name": "Lust Pointer [2]",
+    "unidName": "Rifle",
+    "resName": "Ep172_1h_Rifle",
+    "description": "Increases Hammer of God damage by 10%.\nAtk + 6 and increases attack speed (reduces delay after attack by 10%) per 3 refine rate.\nIf refine rate is 7 or higher, increases Hammer of God damage by additional 15%.\nIf refine rate is 9 or higher, reduces skill cooldown of Hammer of God by 3 seconds.\nIf refine rate is 11 or higher, reduces skill cooldown of Hammer of God by additional 4 seconds, increases Hammer of God damage by additional 25% for 10 seconds when using Crimson Marker.\n^ffffff_^000000\nClass: ^777777Rifle^000000 Attack: ^777777260^000000\nWeight: ^777777130^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777150^000000\nJobs: ^777777Gunslinger Class^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 274,
+    "itemLevel": 4,
+    "attack": 260,
+    "defense": null,
+    "weight": 130,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Gunslinger"
+    ],
+    "script": {
+      "God's Hammer": [
+        "10",
+        "7===15",
+        "ACTIVE_SKILL[Crimson Marker]11===25"
+      ],
+      "atk": [
+        "3---6"
+      ],
+      "aspdPercent": [
+        "3---10"
+      ],
+      "cd__God's Hammer": [
+        "9===3",
+        "11===4"
+      ]
+    }
+  },
   "810001": {
     "id": 810001,
     "aegisName": "Up_Master_Soul_Rifle",
@@ -67783,6 +68693,52 @@
       ],
       "int": [
         "EQUIP[Great Hero Boots]===10"
+      ]
+    }
+  },
+  "820000": {
+    "id": 820000,
+    "aegisName": "Ep172_1h_Shotgun",
+    "name": "Lust Shatter [2]",
+    "unidName": "Shotgun",
+    "resName": "Ep172_1h_Shotgun",
+    "description": "Increases Slug Shot damage by 10%.\nAtk + 6 and increases attack speed (reduces delay after attack by 10%) per 3 refine rate.\nIf refine rate is 7 or higher, increases Slug Shot damage by additional 15%, increases Shattering Storm damage by 10%.\nIf refine rate is 9 or higher, reduces skill cooldown of Slug Shot by 2 seconds, reduces skill cooldown of Shattering Storm by 1 second.\nIf refine rate is 11 or higher, increases Slug Shot damage by additional 25%, increases Shattering Storm damage by additional 25% for 10 seconds when using Slug Shot.\n^ffffff_^000000\nClass: ^777777Shotgun^000000 Attack: ^777777310^000000\nWeight: ^777777160^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777150^000000\nJobs: ^777777Gunslinger Class^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 276,
+    "itemLevel": 4,
+    "attack": 310,
+    "defense": null,
+    "weight": 160,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Gunslinger"
+    ],
+    "script": {
+      "Slug Shot": [
+        "10",
+        "7===15",
+        "11===25"
+      ],
+      "atk": [
+        "3---6"
+      ],
+      "aspdPercent": [
+        "3---10"
+      ],
+      "Shatter Storm": [
+        "7===10"
+      ],
+      "cd__Slug Shot": [
+        "9===2"
+      ],
+      "cd__Shatter Storm": [
+        "9===1"
+      ],
+      "chance__Shatter Storm": [
+        "11===25"
       ]
     }
   },
@@ -67892,6 +68848,49 @@
       ]
     }
   },
+  "830001": {
+    "id": 830001,
+    "aegisName": "Ep172_1h_Gatling",
+    "name": "Lust Crusher [2]",
+    "unidName": "Gatling Gun",
+    "resName": "Ep172_1h_Gatling",
+    "description": "Increases Fire Rain damage by 10%.\nAtk + 6 and increases attack speed (reduces delay after attack by 10%) per 3 refine rate.\nIf refine rate is 7 or higher, increases Fire Rain damage by additional 15%, increases Round Trip damage by 10%.\nIf refine rate is 9 or higher, reduces skill cooldown of Fire Rain by 2 seconds.\nIf refine rate is 11 or higher, increases Fire Rain damage by additional 25%, increases Round Trip damage by additional 15% for 10 seconds when using Fire Rain.\n^ffffff_^000000\nClass: ^777777Gatling Gun^000000 Attack: ^777777230^000000\nWeight: ^777777200^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777150^000000\nJobs: ^777777Gunslinger Class^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 275,
+    "itemLevel": 4,
+    "attack": 230,
+    "defense": null,
+    "weight": 200,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Gunslinger"
+    ],
+    "script": {
+      "Fire Rain": [
+        "10",
+        "7===15",
+        "11===25"
+      ],
+      "atk": [
+        "3---6"
+      ],
+      "aspdPercent": [
+        "3---10"
+      ],
+      "Round Trip": [
+        "7===10"
+      ],
+      "cd__Fire Rain": [
+        "9===2"
+      ],
+      "chance__Round Trip": [
+        "11===15"
+      ]
+    }
+  },
   "830002": {
     "id": 830002,
     "aegisName": "Up_The_Black_Gatling",
@@ -67932,6 +68931,50 @@
       ],
       "dex": [
         "EQUIP[Great Hero Boots]===10"
+      ]
+    }
+  },
+  "840000": {
+    "id": 840000,
+    "aegisName": "Ep172_1h_Grenade",
+    "name": "Lust Boom [2]",
+    "unidName": "Grenade Launcher",
+    "resName": "Ep172_1h_Grenade",
+    "description": "Increases Howling Mine damage by 10%.\nAtk + 6 and increases attack speed (reduces delay after attack by 10%) per 3 refine rate.\nIf refine rate is 7 or higher, increases Howling Mine damage by additional 10%, increases Dragon Tail damage by 10%.\nIf refine rate is 9 or higher, reduces skill cooldown of Howling Mine and Dragon Tail by 1 second.\nIf refine rate is 11 or higher, increases Howling Mine damage by additional 25%, increases Dragon Tail damage by additional 25% for 10 seconds when using Crimson Marker.\n^ffffff_^000000\nClass: ^777777Grenade Launcher^000000\nAttack: ^777777330^000000\nWeight: ^777777240^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777150^000000\nJobs: ^777777Gunslinger Class^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 277,
+    "itemLevel": 4,
+    "attack": 330,
+    "defense": null,
+    "weight": 240,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Gunslinger"
+    ],
+    "script": {
+      "Howling Mine": [
+        "10",
+        "7===10",
+        "11===25"
+      ],
+      "atk": [
+        "3---6"
+      ],
+      "aspdPercent": [
+        "3---10"
+      ],
+      "Dragon Tail": [
+        "7===10",
+        "ACTIVE_SKILL[Crimson Marker]11===25"
+      ],
+      "cd__Howling Mine": [
+        "9===1"
+      ],
+      "cd__Dragon Tail": [
+        "9===1"
       ]
     }
   },

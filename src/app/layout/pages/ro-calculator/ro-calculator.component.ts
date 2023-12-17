@@ -1403,7 +1403,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   }
 
   private setItemList() {
-    const weaponList = [];
+    const weaponList: ItemModel[] = [];
     const leftWeaponList: ItemModel[] = [];
     const weaponCardList: ItemModel[] = [];
     const ammoList: ItemModel[] = [];
@@ -1605,6 +1605,14 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     this.itemList.shadowWeaponList = toDropdownList(shadowWeaponList, 'name', 'id');
 
     this.consumableList = toDropdownList(consumableList.sort(sortObj('id')), 'name', 'id');
+
+    if (!this.env.production) {
+      for (const wea of weaponList) {
+        if (!wea.itemLevel) {
+          console.log('invalid weapon, ID' + wea.id);
+        }
+      }
+    }
   }
 
   private setItemDropdownList() {
