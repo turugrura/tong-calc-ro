@@ -154,6 +154,23 @@ export class ShadowChaser extends CharacterBase {
       },
     },
     {
+      label: 'Feint Bomb Lv10',
+      name: 'Feint Bomb',
+      value: 'Feint Bomb==10',
+      acd: 0,
+      fct: 0,
+      vct: 1,
+      cd: 5,
+      isMelee: true,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { level: baseLevel, jobLevel } = model;
+        const { totalDex } = status;
+
+        return (1 + skillLevel) * (totalDex / 2) * (jobLevel / 10) * (baseLevel / 120);
+      },
+    },
+    {
       label: 'Arrow Storm Lv10',
       name: 'Arrow Storm',
       value: 'Arrow Storm==10',
