@@ -105,6 +105,11 @@ export class AppTopBarComponent {
 
   updates: { v: string; date: string; logs: string[] }[] = [
     {
+      v: 'V1.7.9',
+      date: '18-12-2566',
+      logs: ['Added SC offensive skill (Fient Bomb)', 'Added Sin weapons (EP 17.2)', 'Added requested items'],
+    },
+    {
       v: 'V1.7.8',
       date: '16-12-2566',
       logs: [
