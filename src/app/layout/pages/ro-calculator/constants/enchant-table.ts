@@ -852,6 +852,7 @@ export const EnchantTable: EntTable[] = [
   { name: 'Combo_Fist', enchants: [null, null, edda3, edda4] },
   { name: 'Asura_Bandage', enchants: [null, null, edda3, edda4] },
   { name: 'Platinum_Dagger', enchants: [null, null, edda3, edda4] },
+  { name: 'Black_Circle', enchants: [null, null, edda3, edda4] },
 
   { name: 'Headband_Of_Power_IL', enchants: [null, null, [...mhp14, ...BaseState._1_4], illusionDun] },
   { name: 'Apple_Of_Archer_IL', enchants: [null, null, [...mhp14, ...BaseState._1_4], illusionDun] },

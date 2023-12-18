@@ -334,6 +334,16 @@ export class ShadowChaser extends CharacterBase {
       ],
     },
     {
+      label: 'Double Strafe 10',
+      name: 'Double Strafe',
+      inputType: 'selectButton',
+      isEquipAtk: true,
+      dropdown: [
+        { label: 'Yes', value: 10, skillLv: 10, isUse: true },
+        { label: 'No', value: 0, isUse: false },
+      ],
+    },
+    {
       inputType: 'dropdown',
       label: 'Sword Mastery',
       name: 'Sword Mastery',

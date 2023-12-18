@@ -14558,6 +14558,122 @@
       ]
     }
   },
+  "15461": {
+    "id": 15461,
+    "aegisName": "Apollo_Armor_TH",
+    "name": "2nd Anniversary Apollo Armor [1]",
+    "unidName": "Armor",
+    "resName": "화염의갑옷",
+    "description": "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้^000000\nMaxHP + 15%\nทุก ๆ การเรียนรู้สกิล Increase HP Recovery 2 เลเวล เพิ่ม MaxHP +1%\n\nทุก ๆ การอัปเกรด 4 ขั้น VIT + 3, MDEF + 5\nเมื่ออัปเกรดตั้งแต่ 11 ขึ้นไป และถูกโจมตีทางกายภาพ\nมีโอกาส 5% ที่จะร่ายสกิล Pneuma Lv. 1\n\nเมื่อสวมใส่ร่วมกับ 2nd Anniversary Card,\nลด Delay หลังใช้สกิล 5%\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^7777771^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Swordman Cls^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 1,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Swordman"
+    ],
+    "script": {
+      "hpPercent": [
+        "15",
+        "LEARN_SKILL[Increase HP Recovery==2]---1"
+      ],
+      "vit": [
+        "4---3"
+      ],
+      "mdef": [
+        "4---5"
+      ],
+      "acd": [
+        "EQUIP[2nd Anniversary Card]===5"
+      ]
+    }
+  },
+  "15462": {
+    "id": 15462,
+    "aegisName": "Jupiter_Armor_TH",
+    "name": "2nd Anniversary Jupiter Armor [1]",
+    "unidName": "Armor",
+    "resName": "독충의갑옷",
+    "description": "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้^000000\nMATK +30\nทุก ๆ การอัปเกรด 4 ขั้น INT + 3, MATK + 3%\n\nเมื่ออัปเกรดตั้งแต่ 11 ขึ้นไป\nทุก ๆ การเรียนรู้สกิล Radius 1 เลเวล ลด Delay หลังใช้สกิล 2%\nทุก ๆ การเรียนรู้สกิล Advanced Book 2 เลเวล \nลด Cooldown สกิล Diamond Dust  0.1 วินาที\n\nเมื่อสวมใส่ร่วมกับ 2nd Anniversary Card, MATK + 30\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^7777771^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Mage Cls^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 1,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Mage"
+    ],
+    "script": {
+      "matk": [
+        "30",
+        "EQUIP[2nd Anniversary Card]===30"
+      ],
+      "int": [
+        "4---3"
+      ],
+      "matkPercent": [
+        "4---3"
+      ],
+      "acd": [
+        "REFINE[11]LEARN_SKILL[Radius==1]---2"
+      ],
+      "cd__Diamond Dust": [
+        "REFINE[11]LEARN_SKILL[Advanced Book==2]---0.1"
+      ]
+    }
+  },
+  "15463": {
+    "id": 15463,
+    "aegisName": "Mars_Armor_TH",
+    "name": "2nd Anniversary Mars Armor [1]",
+    "unidName": "Armor",
+    "resName": "현무의갑옷",
+    "description": "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้^000000\nหลังใช้งานสกิล Back Slide จะเพิ่ม ASPD +2 เป็นเวลา 10 วินาที\n\nทุก ๆ การอัปเกรด 4 ขั้น เพิกเฉยต่อพลังป้องกันทางกายภาพ\nของศัตรูประเภท Demi-Human, Brute, Player 15%\nเมื่ออัปเกรดตั้งแต่ 11 ขึ้นไป\nเพิ่ม Damage สกิล Cross Impact 30%\nทุก ๆ การเรียนรู้สกิล Double Strafe 1 เลเวล\nเพิ่ม Damage สกิล Triangle Shot 2%\n\nเมื่อสวมใส่ร่วมกับ 2nd Anniversary Card, ATK + 30\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^7777771^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Thief Cls^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 1,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Thief"
+    ],
+    "script": {
+      "chance__aspd": [
+        "2"
+      ],
+      "p_pene_race_demihuman": [
+        "4---15"
+      ],
+      "p_pene_race_brute": [
+        "4---15"
+      ],
+      "Cross Impact": [
+        "11===30"
+      ],
+      "Triangle Shot": [
+        "REFINE[11]LEARN_SKILL[Double Strafe==1]---2"
+      ],
+      "atk": [
+        "EQUIP[2nd Anniversary Card]===30"
+      ]
+    }
+  },
   "15464": {
     "id": 15464,
     "aegisName": "Ceres_Armor_TH",
@@ -14594,6 +14710,164 @@
       ],
       "Severe Rainstorm": [
         "11===20"
+      ]
+    }
+  },
+  "15465": {
+    "id": 15465,
+    "aegisName": "Vinus_Armor_TH",
+    "name": "2nd Anniversary Venus Armor [1]",
+    "unidName": "Armor",
+    "resName": "치우의갑옷",
+    "description": "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้^000000\nทุก ๆ การเรียนรู้สกิล Heal 1 เลเวล ลด Damage ทางกายภาพระยะไกลที่ได้รับจากศัตรูทุกประเภท 1%, MaxHP +1%\n\nทุก ๆ การอัปเกรด 4 ขั้น INT + 2, MDEF + 7\nเมื่ออัปเกรดตั้งแต่ 11 ขึ้นไป \nเมื่อใช้งานสกิล Vigor Explosion จะใช้ Skill Zen Lv.1 ตามโดยอัตโนมัติ\nเพิ่ม Damage สกิล Judex 80%\n\nเมื่อสวมใส่ร่วมกับ 2nd Anniversary Card,\nลด Damage ทางกายภาพ/เวทมนตร์ที่ได้รับจากศัตรูทุกเผ่า 5% (รวมถึงประเภท Player)\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^7777771^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Acolyte Cls^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 1,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Acolyte"
+    ],
+    "script": {
+      "hpPercent": [
+        "LEARN_SKILL[Heal==1]---1"
+      ],
+      "int": [
+        "4---2"
+      ],
+      "mdef": [
+        "4---7"
+      ],
+      "Judex": [
+        "11===80"
+      ]
+    }
+  },
+  "15466": {
+    "id": 15466,
+    "aegisName": "Vulcan_Armor_TH",
+    "name": "2nd Anniversary Vulcan Armor [1]",
+    "unidName": "Armor",
+    "resName": "기린의갑옷",
+    "description": "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้^000000\nทุก ๆ การเรียนรู้สกิล Mammonite 1 เลเวล ATK + 1%\nทุก ๆ การอัปเกรด 4 ขั้น STR + 3, ATK + 20\nเมื่ออัปเกรดตั้งแต่ 11 ขึ้นไป\nเพิ่ม Damage สกิล Crazy Weed, Power Swing 80%\n\nเมื่อสวมใส่ร่วมกับ 2nd Anniversary Card,\nเพิกเฉยต่อพลังป้องกันทางกายภาพของมอนสเตอร์ประเภททั่วไป 20%\n\n\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^7777771^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Merchant Cls^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 1,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Merchant"
+    ],
+    "script": {
+      "atkPercent": [
+        "LEARN_SKILL[Mammonite==1]---1"
+      ],
+      "str": [
+        "4---3"
+      ],
+      "atk": [
+        "4---20"
+      ],
+      "Crazy Weed": [
+        "11===80"
+      ],
+      "Power Swing": [
+        "11===80"
+      ],
+      "p_pene_class_normal": [
+        "EQUIP[2nd Anniversary Card]===20"
+      ]
+    }
+  },
+  "15467": {
+    "id": 15467,
+    "aegisName": "Neptune_Armor_TH",
+    "name": "2nd Anniversary Neptune Armor [1]",
+    "unidName": "Armor",
+    "resName": "용사의플레이트",
+    "description": "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้^000000\nลด Variable Cast Time 10%\nทุก ๆ การอัปเกรด 4 ขั้น ATK, MATK + 2%\n\nเมื่ออัปเกรดตั้งแต่ 11 ขึ้นไป \nเพิ่ม Damage ทางกายภาพระยะไกลต่อศัตรูทุกประเภท 10%\nเพิ่ม Damage ทางเวทมนตร์ทุกธาตุ 10%\n\nเมื่อสวมใส่ร่วมกับ 2nd Anniversary Card,\nเพิ่ม Damage ทางกายภาพระยะไกลต่อศัตรูทุกประเภท 5%\nเพิ่ม Damage ทางเวทมนตร์ทุกธาตุ 5%\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^7777771^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Rebellion, Oboro, Kagerou^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 1,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Rebellion",
+      "Oboro",
+      "Kagerou"
+    ],
+    "script": {
+      "vct": [
+        "10"
+      ],
+      "atkPercent": [
+        "4---2"
+      ],
+      "matkPercent": [
+        "4---2"
+      ],
+      "range": [
+        "11===10",
+        "EQUIP[2nd Anniversary Card]===5"
+      ],
+      "m_my_element_all": [
+        "11===10",
+        "EQUIP[2nd Anniversary Card]===5"
+      ]
+    }
+  },
+  "15468": {
+    "id": 15468,
+    "aegisName": "Neptune_ArmorDoram_TH",
+    "name": "2nd Anniversary Neptune Armor(Doram) [1]",
+    "unidName": "Armor",
+    "resName": "용사의플레이트",
+    "description": "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้^000000\nลด Variable Cast Time 10%\nทุก ๆ การอัปเกรด 4 ขั้น ATK, MATK + 2%\n\nเมื่ออัปเกรดตั้งแต่ 11 ขึ้นไป \nเพิ่ม Damage ทางกายภาพระยะไกลต่อศัตรูทุกประเภท 10%\nเพิ่ม Damage ทางเวทมนตร์ทุกธาตุ 10%\n\nเมื่อสวมใส่ร่วมกับ 2nd Anniversary Card,\nเพิ่ม Damage ทางกายภาพระยะไกลต่อศัตรูทุกประเภท 5%\nเพิ่ม Damage ทางเวทมนตร์ทุกธาตุ 5%\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^7777771^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Doram^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 1,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Doram"
+    ],
+    "script": {
+      "vct": [
+        "10"
+      ],
+      "atkPercent": [
+        "4---2"
+      ],
+      "matkPercent": [
+        "4---2"
+      ],
+      "range": [
+        "11===10",
+        "EQUIP[2nd Anniversary Card]===5"
+      ],
+      "m_my_element_all": [
+        "11===10",
+        "EQUIP[2nd Anniversary Card]===5"
       ]
     }
   },
@@ -31443,6 +31717,60 @@
       ]
     }
   },
+  "24498": {
+    "id": 24498,
+    "aegisName": "S_Magnus_Pendant",
+    "name": "Magnus Shadow Pendant",
+    "unidName": "Shadow Pendant",
+    "resName": "펜던트쉐도우",
+    "description": "สร้อยคอศักดิ์สิทธิ์ที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา\nเพิ่ม Damage สกิล Magnus Exorcismus 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage สกิล Magnus Exorcismus ขึ้นอีก 2%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Pendant ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Arch Bishop^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 530,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Arch Bishop"
+    ],
+    "script": {
+      "Magnus Exorcismus": [
+        "5",
+        "2---2"
+      ]
+    }
+  },
+  "24499": {
+    "id": 24499,
+    "aegisName": "S_Magnus_Earing",
+    "name": "Magnus Shadow Earring",
+    "unidName": "Shadow Earring",
+    "resName": "이어링쉐도우",
+    "description": "ต่างหูมงคลที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา\nลดปริมาณการใช้ SP สกิล Magnus Exorcismus 2%\nทุก ๆ การอัพเกรด 2 ขั้น ลดปริมาณการใช้ SP สกิล Magnus Exorcismus ลงอีก 1%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Earring ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Arch Bishop^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 529,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Arch Bishop"
+    ],
+    "script": {
+      "sp__Magnus Exorcismus": [
+        "2",
+        "2---1"
+      ]
+    }
+  },
   "24500": {
     "id": 24500,
     "aegisName": "S_Rainstorm_Armor",
@@ -34271,6 +34599,101 @@
     ],
     "script": {
       "p_size_all": [
+        "5",
+        "2---1"
+      ]
+    }
+  },
+  "24607": {
+    "id": 24607,
+    "aegisName": "S_God_Hammer_Weapon",
+    "name": "God Hammer Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา\nเพิ่ม Damage ทางกายภาพระยะไกล 3%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางกายภาพระยะไกลขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพระยะไกลขึ้นอีก 4%\nเมื่อสวมใส่ God Hammer Shadow Weapon/Shield/Armor ร่วมกัน,\nเพิ่ม Damage สกิล God's Hammer % เท่ากับครึ่งหนึ่งของค่าอัพเกรดรวมกัน\nเมื่อสวมใส่ร่วมกับ Rebellion Shadow Shoes,\nเพิกเฉยต่อพลังป้องกันทางกายภาพของทุกเผ่ายกเว้น Player 40% และเพิกเฉยต่อพลังป้องกันทางกายภาพเพิ่มอีกตามค่าอัพเกรดรวมกันของ God Hammer Shadow Weapon และ Rebellion Shadow Shoes\nประเภท : ^777777Shadow^000000 \nตำแหน่ง : ^777777Weapon^000000 น้ำหนัก : ^7777770^000000 \nเลเวลที่ต้องการ : ^77777799^000000 \nอาชีพที่ใส่ได้ : ^777777Gunslinger^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "Gunslinger"
+    ],
+    "script": {
+      "range": [
+        "3",
+        "7===3",
+        "9===4"
+      ],
+      "God's Hammer": [
+        "EQUIP[God Hammer Shadow Shield&&God Hammer Shadow Armor]REFINE[shadowWeapon,shadowShield,shadowArmor==2]---1"
+      ],
+      "p_pene_race_all": [
+        "EQUIP[Rebellion Shadow Shoes]===40",
+        "EQUIP[Rebellion Shadow Shoes]REFINE[shadowWeapon,shadowBoot==1]---1"
+      ],
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1"
+      ]
+    }
+  },
+  "24608": {
+    "id": 24608,
+    "aegisName": "S_God_Hammer_Shield",
+    "name": "God Hammer Shadow Shield",
+    "unidName": "Shadow Shield",
+    "resName": "쉴드쉐도우",
+    "description": "โล่เล็กที่สามารถสวมใส่ที่แขนได้ สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์การป้องกันของมันจะลดน้อยลง\nเพิ่ม Damage สกิล God's Hammer 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage สกิล God's Hammer ขึ้นอีก 2%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shield^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Gunslinger^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 527,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Shield",
+    "compositionPos": null,
+    "usableClass": [
+      "Gunslinger"
+    ],
+    "script": {
+      "God's Hammer": [
+        "5",
+        "2---2"
+      ]
+    }
+  },
+  "24609": {
+    "id": 24609,
+    "aegisName": "S_God_Hammer_Armor",
+    "name": "God Hammer Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우",
+    "description": "ชุดเกราะที่เพิ่มพลังป้องกันเมื่อสวมใส่เพิ่มบนเกราะอีกที สามารถใส่แบบชิ้นเดียวได้ แต่ความสามารถในการป้องกันจะลดลงไปอีก\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกธาตุ 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage ทางกายภาพต่อศัตรูทุกธาตุขึ้นอีก 1%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Armor^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Gunslinger^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Armor",
+    "compositionPos": null,
+    "usableClass": [
+      "Gunslinger"
+    ],
+    "script": {
+      "p_element_all": [
         "5",
         "2---1"
       ]
@@ -61447,6 +61870,49 @@
       ]
     }
   },
+  "480182": {
+    "id": 480182,
+    "aegisName": null,
+    "name": "Bastawtozaq Heart [1]",
+    "unidName": "Garment",
+    "resName": "군용지수",
+    "description": "หัวใจมังกรที่ถูกเก็บไว้ได้ แม้จะตายไปแล้วแต่หัวใจของมังกรก็ยังมีพลังอยู่อย่างน่าประหลาด ผู้ที่ถือครองมันไว้จะได้รับพลังที่น่าเหลือเชื่อ!\n\nเพิ่มความทนทานต่อการโจมตีธาตู Fire, Water 10%\nลด Damage ที่ได้รับจาก Player 5%\nASPD +5%\n\nทุก ๆ การอัปเกรด 3 ขั้น, เพิ่ม Damage ของสกิล [Dragon Breath/Dragon Breath - WATER] +7%\nเมื่อเรียนรู้สกิล [Dragon Breath - WATER] ถึงเลเวล 10, เพิ่ม Damage ทางกายภาพระยะไกลต่อศัตรูทุกประเภท 5%\nเมื่อเรียนรู้สกิล [Dragon Breath] ถึงเลเวล 10, เพิ่ม Damage ทางกายภาพระยะไกลต่อศัตรูทุกประเภท 5%\n\nเมื่ออัปเกรดถึงขั้น 9,\nเพิ่มความทนทานต่อการโจมตีธาตู Fire, Water ขึ้นอีก 5%\nลด Damage ทางกายภาพระยะไกลที่ได้รับจากศัตรูทุกประเภท 10%\nMaxHP + 10%, MaxSP + 10%\n\nเมื่ออัปเกรดถึงขั้น 11,\nเพิ่มความทนทานต่อการโจมตีธาตุ Fire, Water ขึ้นอีก 5%\nลด Damage ทางกายภาพระยะไกลที่ได้รับจากศัตรูทุกประเภทขึ้นอีก 10%\nASPD +5% เพิ่มเติม\n\nประเภท : ^777777Garment^000000  พลังป้องกัน : ^77777712^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 515,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 12,
+    "weight": 10,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "aspdPercent": [
+        "5",
+        "11===5"
+      ],
+      "Dragon Breath": [
+        "3---7"
+      ],
+      "Dragon Breath - WATER": [
+        "3---7"
+      ],
+      "range": [
+        "LEARN_SKILL[Dragon Breath==10]===5",
+        "LEARN_SKILL[Dragon Breath - WATER==10]===5"
+      ],
+      "hpPercent": [
+        "9===10"
+      ],
+      "spPercent": [
+        "9===10"
+      ]
+    }
+  },
   "480197": {
     "id": 480197,
     "aegisName": null,
@@ -63746,6 +64212,51 @@
       "p_class_all": [
         "EQUIP[Record of Thief&&Old Bone Circlet]REFINE[headUpper==3]---3",
         "EQUIP[Record of Thief&&Old Shadow Handicraft]REFINE[headUpper==3]---3"
+      ]
+    }
+  },
+  "490397": {
+    "id": 490397,
+    "aegisName": null,
+    "name": "Ring of Unknown Hero(Rune Knight) [1]",
+    "unidName": "Ring of Unknown Hero(Rune Knight)",
+    "resName": "Ullr_Bracelet",
+    "description": "แหวนของฮีโร่นิรนาม\n\nลด Delay หลังใช้สกิล 3%\nเพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูทุกประเภท 6%\n\nเมื่อสวมใส่ร่วมกับ Patent Oriental Sword,\nเพิ่ม Damage ทางกายภาพระยะไกลต่อศัตรูทั้งหมด 8%\nเมื่อ Patent Oriental Sword อัพเกรดตั้งแต่ 11 ขึ้นไป, \nเมื่อ Base STR และ LUK รวมกันได้ทุก ๆ 12 หน่วย เพิ่ม Damage สกิล Sonic Wave 1%\n\nเมื่อสวมใส่ร่วมกับ Patent Dragonic Slayer,\nเพิ่ม Damage ทางกายภาพระยะไกลต่อศัตรูทั้งหมด 8%\nเมื่อ Patent Dragonic Slayer อัพเกรดตั้งแต่ 11 ขึ้นไป, \nเมื่อ Base VIT และ DEX รวมกันได้ทุก ๆ 12 หน่วย เพิ่ม Damage สกิล Dragon Breath, Dragon Breath - WATER 1%\n\nประเภท : ^777777Accessory (Right)^000000 พลังป้องกัน : ^7777777^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Rune Knight^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 510,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 7,
+    "weight": 10,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Rune Knight"
+    ],
+    "script": {
+      "acd": [
+        "3"
+      ],
+      "p_class_all": [
+        "6"
+      ],
+      "m_class_all": [
+        "6"
+      ],
+      "range": [
+        "EQUIP[Patent Oriental Sword]===8",
+        "EQUIP[Patent Dragonic Slayer]===8"
+      ],
+      "Sonic Wave": [
+        "EQUIP[Patent Oriental Sword]REFINE[weapon==11]SUM[str,luk==12]---1"
+      ],
+      "Dragon Breath": [
+        "EQUIP[Patent Dragonic Slayer]REFINE[weapon==11]SUM[vit,dex==12]---1"
+      ],
+      "Dragon Breath - WATER": [
+        "EQUIP[Patent Dragonic Slayer]REFINE[weapon==11]SUM[vit,dex==12]---1"
       ]
     }
   },
