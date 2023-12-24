@@ -3356,6 +3356,30 @@
       ]
     }
   },
+  "4062": {
+    "id": 4062,
+    "aegisName": "Anacondaq_Card",
+    "name": "Anacondaq Card",
+    "unidName": "Card",
+    "resName": "이름없는카드",
+    "description": "โจมตีศัตรู ธาตุ Poison แรงขึ้น 20%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Envenom",
+    "script": {
+      "p_element_poison": [
+        "20"
+      ]
+    }
+  },
   "4063": {
     "id": 4063,
     "aegisName": "Caramel_Card",
@@ -26157,7 +26181,11 @@
     ],
     "script": {
       "atk": [
-        "20"
+        "USED[Rogue]LEARN_SKILL[Sword Mastery==1]---1",
+        "USED[Rogue]REFINE[7]LEARN_SKILL[Sword Mastery==1]---1",
+        "USED[Rogue]REFINE[8]LEARN_SKILL[Sword Mastery==1]---1",
+        "USED[Rogue]REFINE[9]LEARN_SKILL[Sword Mastery==1]---1",
+        "USED[Rogue]REFINE[10]LEARN_SKILL[Sword Mastery==1]---1"
       ]
     }
   },
@@ -26526,13 +26554,13 @@
         "1---5"
       ],
       "p_size_all": [
-        "USED[Rogue||ShadowChaser]EQUIP[Rogue Shadow Shoes]===3"
+        "EQUIP[Rogue Shadow Shoes]USED[Rogue]===3"
       ],
       "m_size_all": [
-        "USED[Rogue||ShadowChaser]EQUIP[Rogue Shadow Shoes]===3"
+        "EQUIP[Rogue Shadow Shoes]USED[Rogue]===3"
       ],
       "spPercentCost__Sightless Mind": [
-        "EQUIP[Rogue Shadow Shoes]20"
+        "EQUIP[Rogue Shadow Shoes]USED[Rogue]===20"
       ]
     }
   },
@@ -67397,7 +67425,7 @@
         "210",
         "3---8"
       ],
-      "Metallic Sound": [
+      "Metalic Sound": [
         "10",
         "9===15"
       ],
@@ -67599,7 +67627,7 @@
         "210",
         "3---8"
       ],
-      "Metallic Sound": [
+      "Metalic Sound": [
         "10",
         "9===15"
       ],

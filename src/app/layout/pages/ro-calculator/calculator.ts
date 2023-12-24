@@ -277,6 +277,7 @@ export class Calculator {
 
   private selectedChanceList = [] as string[];
   private _chanceList = [] as ChanceModel[];
+  private equipCombo = new Set<string>();
 
   private skillFrequency: SkillAspdModel = {
     cd: 0,
@@ -1087,6 +1088,20 @@ export class Calculator {
     }
   }
 
+  private isAreadyCalcCombo(params: { item: ItemModel; attr: string; lineScript: string }) {
+    const { item, attr, lineScript } = params;
+    if (lineScript.startsWith('EQUIP[')) {
+      const comboFix = `${item.id}-${attr}-${lineScript}`;
+      if (this.equipCombo.has(comboFix)) {
+        return true;
+      }
+
+      this.equipCombo.add(comboFix);
+    }
+
+    return false;
+  }
+
   private calcItemStatus(itemType: ItemTypeEnum, itemRefine: number, item: ItemModel) {
     const total: Record<string, number> = {};
     const chance = {};
@@ -1105,6 +1120,10 @@ export class Calculator {
       }
 
       total[attr] = attrScripts.reduce((sum, lineScript) => {
+        if (this.isAreadyCalcCombo({ item, attr, lineScript })) {
+          return sum;
+        }
+
         const { isValid, restCondition } = this.validateCondition(itemType, itemRefine, lineScript);
         // console.log({ lineScript, restCondition, isValid });
         if (!isValid) return sum;
@@ -1184,6 +1203,7 @@ export class Calculator {
     this.propertyBasicAtk = ElementType.Neutral;
     this.propertyWindmind = undefined;
     this._chanceList = [];
+    this.equipCombo.clear();
 
     const updateTotalStatus = (attr: keyof EquipmentSummaryModel, value: number) => {
       if (this.totalEquipStatus[attr]) {
