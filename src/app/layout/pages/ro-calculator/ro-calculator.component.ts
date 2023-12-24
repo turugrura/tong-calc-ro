@@ -275,6 +275,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
   totalPoints = 0;
   availablePoints = 0;
+  appropriateLevel = 0;
   groupMonsterList: MonsterSelectItemGroup[] = [];
   monsterList: DropdownModel[] = [];
   selectedMonsterName = '';
@@ -1815,12 +1816,13 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   private updateAvailablePoints() {
     const { str, agi, vit, int, dex, luk } = this.model;
     const mainStatuses = [str, agi, vit, int, dex, luk];
-    const { availablePoint } = this.stateCalculator
+    const { availablePoint, appropriateLevel } = this.stateCalculator
       .setLevel(this.model.level)
       .setClass(this.selectedCharacter)
       .setMainStatusLevels(mainStatuses)
       .calculate().summary;
     this.availablePoints = availablePoint;
+    this.appropriateLevel = appropriateLevel;
   }
 
   private clearCard(itemType: string) {

@@ -102,8 +102,9 @@
             <span class="p-inputgroup-addon"
               >Available Point:
               <span [className]="availablePoints < 0 ? 'ml-2 summary_monster_value px-1 font-semibold' : 'ml-2'">
-                {{ availablePoints }}</span
-              ></span
+                {{ availablePoints }}
+                <span [hidden]="!appropriateLevel">(Lv {{ appropriateLevel > 200 ? '> 200' : appropriateLevel }})</span>
+              </span></span
             >
           </div>
         </div>

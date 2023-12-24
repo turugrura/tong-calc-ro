@@ -206,6 +206,37 @@
       ]
     }
   },
+  "1292": {
+    "id": 1292,
+    "aegisName": "Upg_Katar",
+    "name": "Upgrade Katar [1]",
+    "unidName": "Katar",
+    "resName": "강화카타르",
+    "description": "Katar ที่ถูกเคลือบด้วย Oridecon และ Gold ออกแบบมาได้อย่างสมบูรณ์แบบ\nAtk + 10 ต่อระดับการอัพเกรดทุกๆ 1 Lv. และ เพิ่มค่า Critical Atk ขึ้น 2% (ไม่รวมค่าอัพเกรดตามปกติ)\nหากตัวละครมี Lv. ตั้งแต่ 70 ขึ้นไป : เพิ่มค่า Atk + 10 ทุกๆ 10 BaseLv.\nประเภท : ^777777Katar^000000 พลังโจมตี : ^77777780^000000\nน้ำหนัก : ^777777100^000000\nLv. ของอาวุธ : ^7777773^000000\nLv. ที่ต้องการ : ^7777771^000000\nอาชีพ : ^777777Assassin Cls^000000",
+    "slots": 1,
+    "itemTypeId": 1,
+    "itemSubTypeId": 272,
+    "itemLevel": 3,
+    "attack": 80,
+    "defense": null,
+    "weight": 100,
+    "requiredLevel": 1,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Assassin"
+    ],
+    "script": {
+      "atk": [
+        "1---10",
+        "SUM[level==70]===-70",
+        "SUM[level==10]---10"
+      ],
+      "criDmg": [
+        "1---2"
+      ]
+    }
+  },
   "1333": {
     "id": 1333,
     "aegisName": "Golden_Wrench",

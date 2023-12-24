@@ -26,11 +26,29 @@ export class BaseStateCalculator {
   }
 
   get summary() {
-    return {
+    const response = {
       totalPoint: this._totalPoint,
       usedPoint: this._usedPoint,
       availablePoint: this.availablePoint,
+      appropriateLevel: 0,
     };
+    if (response.availablePoint < 0) {
+      const start = this._baseLevel + 1;
+      for (let level = start; level <= 200; level++) {
+        const availablePoint = this.setLevel(level).calculate().availablePoint;
+
+        if (availablePoint > 0) {
+          response.appropriateLevel = level;
+          break;
+        }
+      }
+
+      if (response.appropriateLevel === 0) {
+        response.appropriateLevel = 201;
+      }
+    }
+
+    return response;
   }
 
   setClass(_class: CharacterBase) {
