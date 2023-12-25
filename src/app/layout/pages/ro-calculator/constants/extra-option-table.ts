@@ -28,10 +28,14 @@ export const ExtraOptionTable = {
   Red_Force_Pendant: 2,
   Blue_Mental_Pendant: 2,
 
+  Geffen_Mage_Robe: 2,
+  Anti_Magic_Suit: 2,
+  Ring_Of_Spell_Explosion: 2,
+  Body_Power_Up_Ring: 2,
+
   Bloody_Knight_Shield_: 2,
   Gambler_Seal: 2,
   Droop_Gunslinger: 2,
   Cat_Lace_Hairband_K: 2,
-  Ring_Of_Spell_Explosion: 2,
   Kafra_Suit: 1,
 } as const;

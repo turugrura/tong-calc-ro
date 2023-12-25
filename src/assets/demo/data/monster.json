@@ -6200,6 +6200,59 @@
       "raceName": "Undead"
     }
   },
+  "20621": {
+    "id": 20621,
+    "dbname": "MD_REDPEPPER_H",
+    "name": "Senior Red Pepper",
+    "spawn": "",
+    "stats": {
+      "attackRange": 1,
+      "level": 185,
+      "health": 1008398847,
+      "sp": 1,
+      "str": 165,
+      "int": 167,
+      "vit": 67,
+      "dex": 146,
+      "agi": 103,
+      "luk": 57,
+      "rechargeTime": 526,
+      "atk1": 3816,
+      "atk2": 2060,
+      "attack": {
+        "minimum": 3402,
+        "maximum": 4929
+      },
+      "magicAttack": {
+        "minimum": 1794,
+        "maximum": 3030
+      },
+      "defense": 386,
+      "baseExperience": 3381619,
+      "jobExperience": 2367133,
+      "aggroRange": 10,
+      "escapeRange": 12,
+      "movementSpeed": 120,
+      "attackSpeed": 1632,
+      "attackedSpeed": 480,
+      "element": 67,
+      "scale": 1,
+      "race": 0,
+      "magicDefense": 113,
+      "hit": 488,
+      "flee": 501,
+      "ai": "MONSTER_TYPE_04",
+      "mvp": 0,
+      "class": 1,
+      "attr": 8,
+      "res": 0,
+      "mres": 0,
+      "elementName": "Dark 3",
+      "elementShortName": "Dark",
+      "scaleName": "Medium",
+      "raceName": "Formless"
+    }
+  },
   "20801": {
     "id": 20801,
     "dbname": "ILL_SROPHO",

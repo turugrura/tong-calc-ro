@@ -6,7 +6,7 @@ import {
   CharacterBase,
   PassiveSkillModel,
 } from './_character-base.abstract';
-import { DarkClaw, NoLimit } from '../constants/share-active-skills';
+import { DarkClaw, NoLimit, ShieldSpellFn } from '../constants/share-active-skills';
 import { Thief } from './thief';
 import { InfoForClass } from '../models/info-for-class.model';
 import { ElementType } from '../constants/element-type.const';
@@ -298,26 +298,7 @@ export class ShadowChaser extends CharacterBase {
         { label: 'No', value: 0, isUse: false },
       ],
     },
-    {
-      label: 'ShieldSpell',
-      name: 'ShieldSpell',
-      inputType: 'dropdown',
-      isMasteryAtk: true,
-      dropdown: [
-        { label: 'Atk +50', value: 50, skillLv: 5, isUse: true, bonus: { atk: 50 } },
-        { label: 'Atk +60', value: 60, skillLv: 6, isUse: true, bonus: { atk: 60 } },
-        { label: 'Atk +70', value: 70, skillLv: 7, isUse: true, bonus: { atk: 70 } },
-        { label: 'Atk +80', value: 80, skillLv: 8, isUse: true, bonus: { atk: 80 } },
-        { label: 'Atk +90', value: 90, skillLv: 9, isUse: true, bonus: { atk: 90 } },
-        { label: 'Atk +100', value: 100, skillLv: 100, isUse: true, bonus: { atk: 100 } },
-        { label: 'Atk +110', value: 110, skillLv: 110, isUse: true, bonus: { atk: 110 } },
-        { label: 'Atk +120', value: 120, skillLv: 120, isUse: true, bonus: { atk: 120 } },
-        { label: 'Atk +130', value: 130, skillLv: 130, isUse: true, bonus: { atk: 130 } },
-        { label: 'Atk +140', value: 140, skillLv: 140, isUse: true, bonus: { atk: 140 } },
-        { label: 'Atk +150', value: 150, skillLv: 150, isUse: true, bonus: { atk: 150 } },
-        { label: '-', value: 0, isUse: false },
-      ],
-    },
+    ShieldSpellFn(),
     DarkClaw,
     NoLimit,
   ];
@@ -409,6 +390,24 @@ export class ShadowChaser extends CharacterBase {
         { label: 'Lv 1', value: 1, skillLv: 1, isUse: true },
         { label: 'Lv 2', value: 2, skillLv: 2, isUse: true },
         { label: 'Lv 3', value: 3, skillLv: 3, isUse: true },
+      ],
+    },
+    {
+      inputType: 'dropdown',
+      label: 'Feint Bomb',
+      name: 'Feint Bomb',
+      dropdown: [
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 1', value: 1, skillLv: 1, isUse: true },
+        { label: 'Lv 2', value: 2, skillLv: 2, isUse: true },
+        { label: 'Lv 3', value: 3, skillLv: 3, isUse: true },
+        { label: 'Lv 4', value: 4, skillLv: 4, isUse: true },
+        { label: 'Lv 5', value: 5, skillLv: 5, isUse: true },
+        { label: 'Lv 6', value: 6, skillLv: 6, isUse: true },
+        { label: 'Lv 7', value: 7, skillLv: 7, isUse: true },
+        { label: 'Lv 8', value: 8, skillLv: 8, isUse: true },
+        { label: 'Lv 9', value: 9, skillLv: 9, isUse: true },
+        { label: 'Lv 10', value: 10, skillLv: 10, isUse: true },
       ],
     },
   ];

@@ -9,6 +9,7 @@ import {
 import { Paladin } from './paladin';
 import { ElementType } from '../constants/element-type.const';
 import { InfoForClass } from '../models/info-for-class.model';
+import { ShieldSpellFn } from '../constants/share-active-skills';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 0, 0, 0],
@@ -231,15 +232,7 @@ export class RoyalGuard extends CharacterBase {
   ];
 
   protected readonly _activeSkillList: ActiveSkillModel[] = [
-    {
-      label: 'Shield Spell',
-      name: 'Shield Spell',
-      inputType: 'selectButton',
-      dropdown: [
-        { label: 'Yes', value: 3, skillLv: 3, isUse: true },
-        { label: 'No', value: 0, isUse: false },
-      ],
-    },
+    ShieldSpellFn(),
     {
       label: 'Earth Drive',
       name: 'Earth Drive',
@@ -266,17 +259,17 @@ export class RoyalGuard extends CharacterBase {
       name: 'Shield Press',
       inputType: 'dropdown',
       dropdown: [
-        { label: '0', value: 0, isUse: false },
-        { label: '1', value: 1, skillLv: 1, isUse: true },
-        { label: '2', value: 2, skillLv: 2, isUse: true },
-        { label: '3', value: 3, skillLv: 3, isUse: true },
-        { label: '4', value: 4, skillLv: 4, isUse: true },
-        { label: '5', value: 5, skillLv: 5, isUse: true },
-        { label: '6', value: 6, skillLv: 6, isUse: true },
-        { label: '7', value: 7, skillLv: 7, isUse: true },
-        { label: '8', value: 8, skillLv: 8, isUse: true },
-        { label: '9', value: 9, skillLv: 9, isUse: true },
-        { label: '10', value: 10, skillLv: 10, isUse: true },
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 1', value: 1, skillLv: 1, isUse: true },
+        { label: 'Lv 2', value: 2, skillLv: 2, isUse: true },
+        { label: 'Lv 3', value: 3, skillLv: 3, isUse: true },
+        { label: 'Lv 4', value: 4, skillLv: 4, isUse: true },
+        { label: 'Lv 5', value: 5, skillLv: 5, isUse: true },
+        { label: 'Lv 6', value: 6, skillLv: 6, isUse: true },
+        { label: 'Lv 7', value: 7, skillLv: 7, isUse: true },
+        { label: 'Lv 8', value: 8, skillLv: 8, isUse: true },
+        { label: 'Lv 9', value: 9, skillLv: 9, isUse: true },
+        { label: 'Lv 10', value: 10, skillLv: 10, isUse: true },
       ],
     },
     {
@@ -284,12 +277,12 @@ export class RoyalGuard extends CharacterBase {
       name: 'Over Brand',
       inputType: 'dropdown',
       dropdown: [
-        { label: '0', value: 0, isUse: false },
-        { label: '1', value: 1, skillLv: 1, isUse: true },
-        { label: '2', value: 2, skillLv: 2, isUse: true },
-        { label: '3', value: 3, skillLv: 3, isUse: true },
-        { label: '4', value: 4, skillLv: 4, isUse: true },
-        { label: '5', value: 5, skillLv: 5, isUse: true },
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 1', value: 1, skillLv: 1, isUse: true },
+        { label: 'Lv 2', value: 2, skillLv: 2, isUse: true },
+        { label: 'Lv 3', value: 3, skillLv: 3, isUse: true },
+        { label: 'Lv 4', value: 4, skillLv: 4, isUse: true },
+        { label: 'Lv 5', value: 5, skillLv: 5, isUse: true },
       ],
     },
   ];
@@ -314,7 +307,7 @@ export class RoyalGuard extends CharacterBase {
   }
 
   override setAdditionalBonus(params: InfoForClass) {
-    const { totalBonus, weapon, equipmentBonus } = params;
+    const { totalBonus, weapon } = params;
     const { typeName } = weapon.data;
 
     const { masteryAtks, equipAtks } = this.bonuses;
@@ -327,10 +320,6 @@ export class RoyalGuard extends CharacterBase {
           totalBonus[actualAttr] += value;
         }
       }
-    }
-
-    if (this.isSkillActive('Shield Spell')) {
-      totalBonus.atk += equipmentBonus.shield?.baseDef || 0;
     }
 
     if (this.isSkillActive('Ride Peco') && typeName === 'spear') {

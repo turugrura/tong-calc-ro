@@ -129,6 +129,7 @@ export class Wanderer extends CharacterBase {
       cd: 2.5,
       hit: 2,
       isMatk: true,
+      element: ElementType.Neutral,
       levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
         const { skillLevel, model } = input;

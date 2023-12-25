@@ -96,6 +96,11 @@ export class AppTopBarComponent {
       writer: 'Sigma',
       link: 'https://www.divine-pride.net/forum/index.php?/topic/4176-kro-episode-172-enchant-info-automatic-equipment-and-sin-weapons',
     },
+    {
+      label: 'Geffen Magic Tournament Enchant System Update!',
+      writer: 'RO GGT',
+      link: 'https://ro.gnjoy.in.th/geffen-magic-tournament-enchant-system-update/',
+    },
     // {
     //   label: '',
     //   writer: '',

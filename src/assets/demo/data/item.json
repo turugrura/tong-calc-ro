@@ -4305,6 +4305,33 @@
       ]
     }
   },
+  "4374": {
+    "id": 4374,
+    "aegisName": "Apocalips_H_Card",
+    "name": "Vesper Card",
+    "unidName": "Vesper Card",
+    "resName": "이름없는카드",
+    "description": "DEX +2\nสามารถใช้เวทมนตร์\nโจมตีทะลุ Mdef 30%\nของมอนสเตอร์ระดับบอส\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Headgear^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 769,
+    "cardPrefix": "of Vision",
+    "script": {
+      "dex": [
+        "2"
+      ],
+      "m_pene_class_boss": [
+        "30"
+      ]
+    }
+  },
   "4378": {
     "id": 4378,
     "aegisName": "Acidus_Card",
@@ -4841,6 +4868,34 @@
       ],
       "mdef": [
         "-50"
+      ]
+    }
+  },
+  "4503": {
+    "id": 4503,
+    "aegisName": "Sealed_Apocalips_H_Card",
+    "name": "Sealed Vesper Card",
+    "unidName": "Sealed Vesper Card",
+    "resName": "이름없는카드",
+    "description": "สามารถใช้เวทมนตร์โจมตีทะลุ Mdef 15% ของมอนสเตอร์ระดับบอส\nหากอัพเกรดตั้งแต่ระดับ +15 ขึ้นไป สามารถใช้เวทมนตร์โจมตีทะลุ Mdef 25% ของมอนสเตอร์ระดับบอส\nDex + 2\nประเภท : ^777777Card ^000000\nใช้กับ : ^777777Headgear^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 769,
+    "cardPrefix": "of Half Vision",
+    "script": {
+      "dex": [
+        "2"
+      ],
+      "m_pene_class_boss": [
+        "15",
+        "15===10"
       ]
     }
   },
@@ -6310,6 +6365,32 @@
     "cardPrefix": "Rampage Blast",
     "script": {
       "Rampage Blast": [
+        "20",
+        "WEAPON_LEVEL[4]===20",
+        "10===20"
+      ]
+    }
+  },
+  "4694": {
+    "id": 4694,
+    "aegisName": "Real_Gertie_Card",
+    "name": "True Gertie Wie Card",
+    "unidName": "True Gertie Wie Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่มความแรงสกิล Feint Bomb 20%\nเพิ่มความแรงสกิล Feint Bomb อีก 20% เมื่ออาวุธเลเวล 4 \nเพิ่มความแรงสกิล Feint Bomb อีก 20% เมื่ออัพเกรดถึงขั้น 10 ขึ้นไป\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Decoy",
+    "script": {
+      "Feint Bomb": [
         "20",
         "WEAPON_LEVEL[4]===20",
         "10===20"
@@ -9583,6 +9664,30 @@
       ]
     }
   },
+  "4900": {
+    "id": 4900,
+    "aegisName": "MHP5",
+    "name": "MHP+5%",
+    "unidName": "MHP+5%",
+    "resName": "마력석_빨강",
+    "description": "MHP +5%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<MaxHP5>",
+    "script": {
+      "hpPercent": [
+        "5"
+      ]
+    }
+  },
   "4939": {
     "id": 4939,
     "aegisName": "Critical2",
@@ -9649,6 +9754,75 @@
     "script": {
       "cri": [
         "6"
+      ]
+    }
+  },
+  "4942": {
+    "id": 4942,
+    "aegisName": "Dodge1",
+    "name": "Shedding Level 1",
+    "unidName": "Shedding Level 1",
+    "resName": "하얀묘안석",
+    "description": "Perfect Dodge +3",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "perfectDodge": [
+        "3"
+      ]
+    }
+  },
+  "4943": {
+    "id": 4943,
+    "aegisName": "Dodge2",
+    "name": "Shedding Level 2",
+    "unidName": "Shedding Level 2",
+    "resName": "하얀묘안석",
+    "description": "Perfect Dodge +4",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "perfectDodge": [
+        "4"
+      ]
+    }
+  },
+  "4944": {
+    "id": 4944,
+    "aegisName": "Dodge3",
+    "name": "Shedding Level 3",
+    "unidName": "Shedding Level 3",
+    "resName": "하얀묘안석",
+    "description": "Perfect Dodge +5",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "perfectDodge": [
+        "5"
       ]
     }
   },
@@ -12892,6 +13066,33 @@
       ]
     }
   },
+  "15074": {
+    "id": 15074,
+    "aegisName": "Geffen_Mage_Robe",
+    "name": "Geffen Magic Robe [1]",
+    "unidName": "Robe",
+    "resName": "캐스팅의로브",
+    "description": "ชุดเครื่องแบบของเหล่านักเวทย์แห่ง Geffen มีความสามารถในการเพิ่มสมาธิตอนร่ายคาถาให้สูงขึ้น\nลดปริมาณการใช้ SP ลง 10%\nvariable casting time เพิ่มขึ้น 15% ไม่ถูกขัดจังหวะขณะร่าย\nลดปริมาณการใช้ SP ลงเพิ่มเติม 5% เมื่ออัปเกรดขั้น 7, Variable Cast Time ลดลง 5% เมื่ออัปเกรดขั้น 9\nประเภท : ^777777Armor^000000 ป้องกัน : ^77777740^000000\nน้ำหนัก : ^777777100^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพ: ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 40,
+    "weight": 100,
+    "requiredLevel": 99,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "vct": [
+        "-15",
+        "9===5"
+      ]
+    }
+  },
   "15128": {
     "id": 15128,
     "aegisName": "Excelion_Suit",
@@ -15112,12 +15313,6 @@
     "script": {
       "acd": [
         "7"
-      ],
-      "spDrainPercent": [
-        "EQUIP[Feeling of Love]===2(1%)"
-      ],
-      "hpDrainPercent": [
-        "EQUIP[Feeling of Love]===2(2%)"
       ]
     }
   },
@@ -15419,12 +15614,6 @@
       ],
       "p_race_demon": [
         "EQUIP[High Orc Egg]10"
-      ],
-      "spDrainPercent": [
-        "EQUIP[Succubus Egg]1"
-      ],
-      "hpDrainPercent": [
-        "EQUIP[Incubus Egg]5"
       ],
       "vct": [
         "EQUIP[Alicel Egg]10"
@@ -17020,14 +17209,7 @@
     "usableClass": [
       "all"
     ],
-    "script": {
-      "hpDrainPercent": [
-        "8"
-      ],
-      "spDrainPercent": [
-        "4"
-      ]
-    }
+    "script": {}
   },
   "18724": {
     "id": 18724,
@@ -17991,6 +18173,48 @@
       ],
       "Wug Strike": [
         "2---10"
+      ]
+    }
+  },
+  "18997": {
+    "id": 18997,
+    "aegisName": "Riot_Chip",
+    "name": "Runaway Chip [1]",
+    "unidName": "Helmet",
+    "resName": "폭주하는칩",
+    "description": "รู้สึกเหมือนถูกควบคุมโดยเครื่องจักรปริศนา\nHIT + 50, FLEE + 50, MSP - 50%\nเมื่อใช้งาน Broken Chip 01, Broken Chip 02 ร่วมกัน\nเพิ่มความเร็วในการเคลื่อนที่ ,ATK และ MATK+50\nเมื่อทำการ Refine Helmet+9, MSP + 50%, MHP + 10%\nประเภท : ^777777Headgear^000000 ป้องกัน : ^7777770^000000\nตำแหน่ง : ^777777Upper ^000000น้ำหนัก : ^77777730^000000\nเลเวลที่ต้องการ : ^777777100^000000\nสวมใส่ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 30,
+    "requiredLevel": 100,
+    "location": "Upper",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "hit": [
+        "50"
+      ],
+      "flee": [
+        "50"
+      ],
+      "spPercent": [
+        "-50",
+        "9===50"
+      ],
+      "atk": [
+        "EQUIP[Broken Chip 01&&Broken Chip 02]===50"
+      ],
+      "matk": [
+        "EQUIP[Broken Chip 01&&Broken Chip 02]===50"
+      ],
+      "hpPercent": [
+        "9===10"
       ]
     }
   },
@@ -19343,9 +19567,6 @@
       "all"
     ],
     "script": {
-      "spDrain": [
-        "KILL[physical||magical]===5"
-      ],
       "acd": [
         "5"
       ],
@@ -21029,7 +21250,7 @@
       ],
       "acd": [
         "EQUIP[Excelion Suit]10",
-        "SUM[level==130]===10"
+        "EQUIP[Excelion Suit]SUM[level==130]===10"
       ]
     }
   },
@@ -23407,6 +23628,63 @@
       "sp": [
         "10",
         "1---5"
+      ]
+    }
+  },
+  "22167": {
+    "id": 22167,
+    "aegisName": "Astraea_Shoes",
+    "name": "Astraea Shoes [1]",
+    "unidName": "Shoes",
+    "resName": "디바슈즈",
+    "description": "รองเท้าที่ลือกันว่าผู้สูงศักดิ์ของประเทศที่ห่างไกลสวมใส่\nAll state + 1\nเมื่ออัปเกรดถึงขั้น 10\nเมื่อ Base STR ตั้งแต่ 100 ขึ้นไป, เพิ่ม MHP+5%, MSP+5% (เมื่อ Base STR 120, เพิ่มอีกอย่างละ 2%),\nเมื่อ Base INT ตั้งแต่ 100 ขึ้นไป, ลด Fixed Cast Time 30% (เมื่อ Base INT 120, ลดอีก 0.5 วินาที),\nเมื่อ Base VIT ตั้งแต่ 100 ขึ้นไป, เพิ่มความต้านทานทางกายภาพจากการโจมตีของมอนสเตอร์ขนาดกลาง 10% (เมื่อ Base VIT 120, เพิ่มความต้านทานทางกายภาพจากการโจมตีของมอนสเตอร์ขนาดกลางอีก 5%),\nเมื่อ Base AGI ตั้งแต่ 100 ขึ้นไป, ASPD +8% (เมื่อ Base AGI 120, ASPD +1 เพิ่มเติม),\nเมื่อ Base DEX ตั้งแต่ 100 ขึ้นไป, ลด Delay หลังใช้สกิล 3% (เมื่อ Base DEX 120, ลดอีก 2%),\nเมื่อ Base LUK ตั้งแต่ 100 ขึ้นไป, Cri +5 (เมื่อ Base LUK 120, Cri +2, Perfect Dodge +1)\nประเภท : ^777777Shoes^000000 พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^77777725^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 516,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 25,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "allStatus": [
+        "1"
+      ],
+      "hpPercent": [
+        "REFINE[10]SUM[str==100]===5",
+        "REFINE[10]SUM[str==120]===2"
+      ],
+      "spPercent": [
+        "REFINE[10]SUM[str==100]===5",
+        "REFINE[10]SUM[str==120]===2"
+      ],
+      "fctPercent": [
+        "REFINE[10]SUM[int==100]===30"
+      ],
+      "fct": [
+        "REFINE[10]SUM[int==120]===0.5"
+      ],
+      "aspdPercent": [
+        "REFINE[10]SUM[agi==100]===8"
+      ],
+      "aspd": [
+        "REFINE[10]SUM[agi==120]===1"
+      ],
+      "acd": [
+        "REFINE[10]SUM[dex==100]===3",
+        "REFINE[10]SUM[dex==120]===2"
+      ],
+      "cri": [
+        "REFINE[10]SUM[luk==100]===5",
+        "REFINE[10]SUM[luk==120]===2"
+      ],
+      "perfectDodge": [
+        "REFINE[10]SUM[luk==120]===1"
       ]
     }
   },
@@ -33314,6 +33592,104 @@
       ]
     }
   },
+  "24557": {
+    "id": 24557,
+    "aegisName": "S_Varetyr_Weapon",
+    "name": "Varetyr Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา\nเพิ่ม Damage ทางเวทมนตร์ธาตุ Wind 3%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางเวทมนตร์ธาตุ Wind ขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางเวทมนตร์ธาตุ Wind ขึ้นอีก 4%\nเมื่อสวมใส่ Varetyr Shadow Weapon/Pendant/Earring ร่วมกัน,\nเพิ่ม Damage สกิล Varetyr Spear % เท่ากับค่าอัพเกรดรวมกัน\nเมื่อสวมใส่ร่วมกับ Sorcerer Shadow Shield,\nเพิกเฉยต่อพลังป้องกันทางเวทมนตร์ของทุกเผ่ายกเว้น Player 40% และเพิกเฉยต่อพลังป้องกันทางเวทมนตร์เพิ่มอีกตามค่าอัพเกรดรวมกันของ Varetyr Shadow Weapon และ Sorcerer Shadow Shield\nประเภท : ^777777Shadow^000000 \nตำแหน่ง : ^777777Weapon^000000 น้ำหนัก : ^7777770^000000 \nเลเวลที่ต้องการ : ^77777799^000000 \nอาชีพที่ใส่ได้ : ^777777Sorcerer^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "Sorcerer"
+    ],
+    "script": {
+      "m_my_element_wind": [
+        "3",
+        "7===3",
+        "9===4"
+      ],
+      "Varetyr Spear": [
+        "EQUIP[Varetyr Shadow Pendant&&Varetyr Shadow Earring]REFINE[shadowWeapon,shadowPendant,shadowEarring==1]---1"
+      ],
+      "Shield Press": [
+        "EQUIP[Chain Press Shadow Pendant&&Chain Press Shadow Earring]REFINE[shadowWeapon,shadowPendant,shadowEarring==1]---1"
+      ],
+      "m_pene_race_all": [
+        "EQUIP[Sorcerer Shadow Shield]40",
+        "EQUIP[Sorcerer Shadow Shield]REFINE[shadowWeapon,shadowShield==1]---1"
+      ],
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1"
+      ]
+    }
+  },
+  "24558": {
+    "id": 24558,
+    "aegisName": "S_Varetyr_Pendant",
+    "name": "Varetyr Shadow Pendant",
+    "unidName": "Shadow Pendant",
+    "resName": "펜던트쉐도우",
+    "description": "สร้อยคอศักดิ์สิทธิ์ที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา\nเพิ่ม Damage สกิล Varetyr Spear 5%\nทุก ๆ การอัพเกรด 1 ขั้น เพิ่ม Damage สกิล Varetyr Spear ขึ้นอีก 2%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Pendant ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Sorcerer^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 530,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "AccessoryLeft",
+    "compositionPos": null,
+    "usableClass": [
+      "Sorcerer"
+    ],
+    "script": {
+      "Varetyr Spear": [
+        "5",
+        "1---2"
+      ]
+    }
+  },
+  "24559": {
+    "id": 24559,
+    "aegisName": "S_Varetyr_Earing",
+    "name": "Varetyr Shadow Earring",
+    "unidName": "Shadow Earring",
+    "resName": "이어링쉐도우",
+    "description": "ต่างหูมงคลที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา\nลดปริมาณการใช้ SP สกิล Varetyr Spear 4%\nทุก ๆ การอัพเกรด 2 ขั้น ลดปริมาณการใช้ SP สกิล Varetyr Spear ลงอีก 1%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Earring ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Sorcerer^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 529,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "AccessoryRight",
+    "compositionPos": null,
+    "usableClass": [
+      "Sorcerer"
+    ],
+    "script": {
+      "spPercent__Varetyr Spear": [
+        "4",
+        "2---1"
+      ]
+    }
+  },
   "24560": {
     "id": 24560,
     "aegisName": "S_Cart_Tornado_Armor",
@@ -36128,6 +36504,168 @@
       ]
     }
   },
+  "24661": {
+    "id": 24661,
+    "aegisName": "S_FullPene_Earring",
+    "name": "Full Penetration Shadow Earring",
+    "unidName": "Shadow Earring",
+    "resName": "이어링쉐도우3",
+    "description": "Ignores defense rate of all race monsters (except players) by 5%.\nIgnores defense rate of all race monsters (except players) by additional 1% per 2 refine rate.\nIf refine rate is 10, increases physical damage against all race monsters (except players) by 3%.\nWhen equipped with Full Penetration Shadow Pendant, Atk + 2%, if the sum of refine rate of set is 18 or higher, ignores defense rate of all race monsters (except players) by 100%.\nClass: ^777777Shadow Equipment^000000\nLocation: ^777777Earring^000000 Weight: ^7777770^000000\nRequired Level: ^7777771^000000\nJobs: ^777777All^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 529,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "AccessoryRight",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "p_pene_race_all": [
+        "5",
+        "2---1",
+        "EQUIP[Full Penetration Shadow Pendant]REFINE[shadowEarring,shadowPendant==18]===100"
+      ],
+      "p_race_all": [
+        "10===3"
+      ],
+      "atkPercent": [
+        "EQUIP[Full Penetration Shadow Pendant]===2"
+      ]
+    }
+  },
+  "24662": {
+    "id": 24662,
+    "aegisName": "S_FullPene_Pendant",
+    "name": "Full Penetration Shadow Pendant",
+    "unidName": "Shadow Pendant",
+    "resName": "펜던트쉐도우3",
+    "description": "Ignores defense rate of all race monsters (except players) by 5%.\nIgnores defense rate of all race monsters (except players) by additional 1% per 2 refine rate.\nIf refine rate is 10, increases physical damage against all race monsters (except players) by 3%.\nClass: ^777777Shadow Equipment^000000\nLocation: ^777777Pendant^000000 Weight: ^7777770^000000\nRequired Level: ^7777771^000000\nJobs: ^777777All Jobs^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 530,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "AccessoryLeft",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "p_pene_race_all": [
+        "5",
+        "2---1"
+      ],
+      "p_race_all": [
+        "10===3"
+      ]
+    }
+  },
+  "24663": {
+    "id": 24663,
+    "aegisName": "S_FullPene_Armor",
+    "name": "Full Penetration Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우3",
+    "description": "Ignores defense rate of all race monsters (except players) by 5%.\nIgnores defense rate of all race monsters (except players) by additional 1% per 2 refine rate.\nIf refine rate is 10, increases physical damage against all race monsters (except players) by 3%.\nWhen equipped with Full Penetration Shadow Shoes, Atk + 2%, if the sum of refine rate of set is 18 or higher, ignores defense rate of all race monsters (except players) by 100%.\nClass: ^777777Shadow Equipment^000000\nLocation: ^777777Padded Armor ^000000Weight: ^7777770^000000\nRequired Level: ^7777771^000000\nJobs: ^777777All^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Armor",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "p_pene_race_all": [
+        "5",
+        "2---1",
+        "EQUIP[Full Penetration Shadow Shoes]REFINE[shadowArmor,shadowBoot==18]===100"
+      ],
+      "p_race_all": [
+        "10===3"
+      ],
+      "atkPercent": [
+        "EQUIP[Full Penetration Shadow Shoes]===2"
+      ]
+    }
+  },
+  "24664": {
+    "id": 24664,
+    "aegisName": "S_FullPene_Shoes",
+    "name": "Full Penetration Shadow Shoes",
+    "unidName": "Shadow Shoes",
+    "resName": "슈즈쉐도우3",
+    "description": "Ignores defense rate of all race monsters (except players) by 5%.\nIgnores defense rate of all race monsters (except players) by additional 1% per 2 refine rate.\nIf refine rate is 10, increases physical damage against all race monsters (except players) by 3%.\nClass: ^777777Shadow Equipment^000000\nLocation: ^777777Shoes^000000 Weight: ^7777770^000000\nRequired Level: ^7777771^000000\nJobs: ^777777All Jobs^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 528,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Shoes",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "p_pene_race_all": [
+        "5",
+        "2---1"
+      ],
+      "p_race_all": [
+        "10===3"
+      ]
+    }
+  },
+  "24665": {
+    "id": 24665,
+    "aegisName": "S_FullTemp_Earring",
+    "name": "Full Tempest Shadow Earring",
+    "unidName": "Shadow Earring",
+    "resName": "이어링쉐도우3",
+    "description": "Ignores magical defense rate of all race monsters (except players) by 5%.\nIgnores magical defense rate of all race monsters (except players) by additional 1% per 2 refine rate.\nIf refine rate is 10, increases magical damage against all race monsters (except players) by 3%.\nWhen equipped with Full Tempest Shadow Pendant, Matk + 2%, if the sum of refine rate of set is 18 or higher, ignores magical defense rate of all race monsters (except players) by 100%.\nClass: ^777777Shadow Equipment^000000\nLocation: ^777777Earring^000000 Weight: ^7777770^000000\nRequired Level: ^7777771^000000\nJobs: ^777777All^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 529,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "AccessoryRight",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "m_pene_race_all": [
+        "5",
+        "2---1",
+        "EQUIP[Full Tempest Shadow Pendant]REFINE[shadowEarring,shadowPendant==18]100"
+      ],
+      "m_race_all": [
+        "10===3"
+      ],
+      "matkPercent": [
+        "EQUIP[Full Tempest Shadow Pendant]2"
+      ]
+    }
+  },
   "24666": {
     "id": 24666,
     "aegisName": "S_FullTemp_Shoes",
@@ -36189,6 +36727,36 @@
       ],
       "matkPercent": [
         "EQUIP[Full Tempest Shadow Shoes]2"
+      ]
+    }
+  },
+  "24668": {
+    "id": 24668,
+    "aegisName": "S_FullTemp_Pendant",
+    "name": "Full Tempest Shadow Pendant",
+    "unidName": "Shadow Pendant",
+    "resName": "펜던트쉐도우3",
+    "description": "Ignores magical defense rate of all race monsters (except players) by 5%.\nIgnores magical defense rate of all race monsters (except players) by additional 1% per 2 refine rate.\nIf refine rate is 10, increases magical damage against all race monsters (except players) by 3%.\nClass: ^777777Shadow Equipment^000000\nLocation: ^777777Pendant^000000 Weight: ^7777770^000000\nRequired Level: ^7777771^000000\nJobs: ^777777All Jobs^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 530,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "AccessoryLeft",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "m_pene_race_all": [
+        "5",
+        "2---1"
+      ],
+      "m_race_all": [
+        "10===3"
       ]
     }
   },
@@ -41876,6 +42444,62 @@
       ]
     }
   },
+  "28326": {
+    "id": 28326,
+    "aegisName": "Broken_Chip_1",
+    "name": "Broken Chip 01 [1]",
+    "unidName": "Accessory",
+    "resName": "부러진_칩_1",
+    "description": "ดูเหมือนว่าจะหักครึ่งในขณะที่เกิดความวุ่นวาย\nSTR + 4\nเมื่อใช้งานร่วมกับ Broken Chip 02\nSTR + 8, INT+ 8\nประเภท : ^777777Accessory^000000 ป้องกัน : ^7777770^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777100^000000\nสวมใส่ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 517,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "str": [
+        "4",
+        "EQUIP[Broken Chip 02]===8"
+      ],
+      "int": [
+        "EQUIP[Broken Chip 02]===8"
+      ]
+    }
+  },
+  "28327": {
+    "id": 28327,
+    "aegisName": "Broken_Chip_2",
+    "name": "Broken Chip 02 [1]",
+    "unidName": "Accessory",
+    "resName": "부러진_칩_2",
+    "description": "ดูเหมือนว่าจะหักครึ่งในขณะที่เกิดความวุ่นวาย\nINT + 4\nเมื่อใช้งานร่วมกับ Broken Chip 01\nSTR + 8, INT+ 8\nประเภท : ^777777Accessory^000000 ป้องกัน : ^7777770^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777100^000000\nสวมใส่ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 517,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "int": [
+        "4"
+      ]
+    }
+  },
   "28391": {
     "id": 28391,
     "aegisName": "S_Thief_earring",
@@ -42509,15 +43133,15 @@
     "script": {
       "dex": [
         "5",
-        "5"
+        "LEARN_SKILL[Double Strafe==2]---1"
       ],
       "agi": [
         "5",
-        "5"
+        "LEARN_SKILL[Double Strafe==2]---1"
       ],
       "vit": [
         "5",
-        "5"
+        "LEARN_SKILL[Double Strafe==2]---1"
       ],
       "Arrow Shower": [
         "level:1(1-125)---1"
@@ -42529,7 +43153,7 @@
         "level:10(1-150)---2"
       ],
       "atk": [
-        "100"
+        "LEARN_SKILL[Double Strafe==2]---20"
       ]
     }
   },
@@ -48886,9 +49510,6 @@
         "15",
         "EQUIP[Paladin Stone (Lower)]15"
       ],
-      "spPercentDrain": [
-        "EQUIP[Paladin Stone (Upper)]1"
-      ],
       "cd__Cannon Spear": [
         "EQUIP[Paladin Stone (Middle)]0.5"
       ]
@@ -48984,9 +49605,6 @@
       "Rolling Cutter": [
         "15",
         "EQUIP[Assassin Cross Stone (Lower)]15"
-      ],
-      "spDrainPercent": [
-        "EQUIP[Assassin Cross Stone (Upper)]1"
       ],
       "Cross Ripper Slasher": [
         "EQUIP[Assassin Cross Stone (Middle)]15"
@@ -52389,6 +53007,45 @@
       ]
     }
   },
+  "32203": {
+    "id": 32203,
+    "aegisName": "Accelerator_Chip",
+    "name": "Accelerator Chip [1]",
+    "unidName": "Clip",
+    "resName": "Accelerator_Chip",
+    "description": "เพิ่ม Damage ทางกายภาพต่อศัตรูทุกประเภท 5%\nMATK +5%\nASPD +5%\nเมื่อสวมใส่ร่วมกับ Runaway Chip, ASPD +10% เพิ่มเติม\nเพิกเฉยต่อพลังป้องกันทางกายภาพ/เวทมนตร์ของทุกเผ่า 30%\nประเภท : ^777777Accessory (Left)^000000 พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 511,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "p_class_all": [
+        "5"
+      ],
+      "matkPercent": [
+        "5"
+      ],
+      "aspdPercent": [
+        "5",
+        "EQUIP[Runaway Chip]===10"
+      ],
+      "p_pene_race_all": [
+        "EQUIP[Runaway Chip]===30"
+      ],
+      "m_pene_race_all": [
+        "EQUIP[Runaway Chip]===30"
+      ]
+    }
+  },
   "32207": {
     "id": 32207,
     "aegisName": "Illusion_B_R",
@@ -54032,6 +54689,39 @@
       ],
       "p_race_dragon": [
         "40"
+      ]
+    }
+  },
+  "300080": {
+    "id": 300080,
+    "aegisName": "Redpepper_H_Card",
+    "name": "Senior Red Pepper Card",
+    "unidName": "Senior Red Pepper Card",
+    "resName": "이름없는카드",
+    "description": "Increases magical damage against formless and fish race enemies by 50%.\r\nIncreases magical damage against holy and water property enemies by 50%.\r\nClass: ^777777Card^000000\r\nCompound on: ^777777Armor^000000\r\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 16,
+    "cardPrefix": "Dry",
+    "script": {
+      "m_race_formless": [
+        "50"
+      ],
+      "m_race_fish": [
+        "50"
+      ],
+      "m_element_holy": [
+        "50"
+      ],
+      "m_element_water": [
+        "50"
       ]
     }
   },
@@ -58383,7 +59073,7 @@
       "vct": [
         "7===15"
       ],
-      "m_element_all": [
+      "m_my_element_all": [
         "9===15"
       ],
       "m_size_s": [
@@ -58841,7 +59531,7 @@
         "EQUIP[Gene Rod]===10",
         "EQUIP[Estal]===10"
       ],
-      "Cart Tornado": [
+      "Cart Cannon": [
         "EQUIP[Coolant Injection]REFINE[weapon==1]---10"
       ],
       "Crazy Weed": [
@@ -62061,9 +62751,6 @@
       ],
       "sp": [
         "level:1---2"
-      ],
-      "spPercentDrain": [
-        "2"
       ]
     }
   },
@@ -63321,6 +64008,102 @@
       ]
     }
   },
+  "490224": {
+    "id": 490224,
+    "aegisName": null,
+    "name": "Dichotomous Ruby Necklace [1]",
+    "unidName": "Dichotomous Ruby Necklace",
+    "resName": "달신의축복",
+    "description": "สร้อยคอจันทร์เสี้ยวที่ถูกประดับด้วยเศษที่แตกออกมาจาก Dichotomous Cube\n\nAll State + 1, ลด Delay หลังใช้สกิล 3%\n\nเมื่อสวมใส่ร่วมกับ Apollo Armor,\nMax HP + 5%\nเพิ่ม Damage สกิล Dragon Breath, Dragon Breath - WATER 10%\nเพิ่ม Damage สกิล Banishing Point 15%\n\nเมื่อสวมใส่ร่วมกับ Jupiter Armor,\nลดระยะเวลาร่ายแบบแปรผัน 10%\nเพิกเฉยต่อพลังป้องกันทางเวทมนตร์ของมอนสเตอร์ทุกเผ่า 30% (ยกเว้น Player)\n\nเมื่อสวมใส่ร่วมกับ Mars Armor,\nหากสวมใส่โดย Shadow Chaser\nINT/DEX/AGI + 6, ลด Delay หลังใช้สกิล 6%\nเพิ่ม Damage ทางกายภาพระยะไกล 6%\n\nหากสวมใส่โดย Guillotine Cross\nเพิ่ม Damage ทางกายภาพระยะใกล้ 10%\n\nเมื่อสวมใส่ร่วมกับ Keres Armor,\nASPD +5%\nเพิ่ม Damage สกิล Arrow Storm 15%\n\nหากสวมใส่โดย Minstrel, Wanderer\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 15%\n\nเมื่อสวมใส่ร่วมกับ Venus Armor,\nATK, MATK + 30\nเพิกเฉยต่อพลังป้องกันทางกายภาพและเวทมนตร์ของมอนสเตอร์ทุกเผ่า 30% (ยกเว้น Player)\n\nเมื่อสวมใส่ร่วมกับ Vulcan Armor,\nลด Delay หลังใช้สกิล 10%\nเพิ่ม Damage สกิล Power Swing 25%\nเพิ่ม Damage สกิล Cart Cannon 15%\n\nเมื่อสวมใส่ร่วมกับ Neptune Armor หรือ Neptune Armor (Doram),\nATK, MATK + 30\nเพิ่ม Damage ทางกายภาพระยะไกล 7%\nเพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกขนาด 7%\n\nประเภท : ^777777Accessory^000000  พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^77777780^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 517,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 80,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "allStatus": [
+        "1"
+      ],
+      "acd": [
+        "3",
+        "EQUIP[2nd Anniversary Mars Armor]USED[ShadowChaser]===6",
+        "EQUIP[2nd Anniversary Vulcan Armor]===10"
+      ],
+      "hpPercent": [
+        "EQUIP[2nd Anniversary Apollo Armor]===5"
+      ],
+      "Dragon Breath": [
+        "EQUIP[2nd Anniversary Apollo Armor]===10"
+      ],
+      "Dragon Breath - WATER": [
+        "EQUIP[2nd Anniversary Apollo Armor]===10"
+      ],
+      "Banishing Point": [
+        "EQUIP[2nd Anniversary Apollo Armor]===15"
+      ],
+      "vct": [
+        "EQUIP[2nd Anniversary Jupiter Armor]===10"
+      ],
+      "m_pene_race_all": [
+        "EQUIP[2nd Anniversary Jupiter Armor]===30",
+        "EQUIP[2nd Anniversary Venus Armor]===30"
+      ],
+      "int": [
+        "EQUIP[2nd Anniversary Mars Armor]USED[ShadowChaser]===6"
+      ],
+      "dex": [
+        "EQUIP[2nd Anniversary Mars Armor]USED[ShadowChaser]===6"
+      ],
+      "agi": [
+        "EQUIP[2nd Anniversary Mars Armor]USED[ShadowChaser]===6"
+      ],
+      "range": [
+        "EQUIP[2nd Anniversary Mars Armor]USED[ShadowChaser]===6",
+        "EQUIP[2nd Anniversary Neptune Armor||2nd Anniversary Neptune Armor(Doram)]===7"
+      ],
+      "melee": [
+        "EQUIP[2nd Anniversary Mars Armor]USED[Guillotine Cross]===10"
+      ],
+      "aspdPercent": [
+        "EQUIP[2nd Anniversary Keres Armor]===5"
+      ],
+      "Arrow Storm": [
+        "EQUIP[2nd Anniversary Keres Armor]===15"
+      ],
+      "p_size_all": [
+        "EQUIP[2nd Anniversary Keres Armor]USED[Minstrel]===15",
+        "EQUIP[2nd Anniversary Keres Armor]USED[Wanderer]===15"
+      ],
+      "atk": [
+        "EQUIP[2nd Anniversary Venus Armor]===30",
+        "EQUIP[2nd Anniversary Neptune Armor||2nd Anniversary Neptune Armor(Doram)]===30"
+      ],
+      "matk": [
+        "EQUIP[2nd Anniversary Venus Armor]===30",
+        "EQUIP[2nd Anniversary Neptune Armor||2nd Anniversary Neptune Armor(Doram)]===30"
+      ],
+      "p_pene_race_all": [
+        "EQUIP[2nd Anniversary Venus Armor]===30"
+      ],
+      "Power Swing": [
+        "EQUIP[2nd Anniversary Vulcan Armor]===25"
+      ],
+      "Cart Cannon": [
+        "EQUIP[2nd Anniversary Vulcan Armor]===15"
+      ],
+      "m_size_all": [
+        "EQUIP[2nd Anniversary Neptune Armor||2nd Anniversary Neptune Armor(Doram)]===7"
+      ]
+    }
+  },
   "490229": {
     "id": 490229,
     "aegisName": "",
@@ -63720,12 +64503,6 @@
       ],
       "cd__Urgent Escape": [
         "LEARN_SKILL[Urgent Escape==5]===0.5"
-      ],
-      "hpDrain": [
-        "KILL===300"
-      ],
-      "spDrain": [
-        "KILL===30"
       ]
     },
     "usableClass": [
