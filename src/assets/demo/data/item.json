@@ -5208,6 +5208,34 @@
       ]
     }
   },
+  "4575": {
+    "id": 4575,
+    "aegisName": "Soheon_Card",
+    "name": "Armed Guard Soheon Card",
+    "unidName": "Armed Guard Soheon Card",
+    "resName": "이름없는카드",
+    "description": "ATK + 10.\nเมื่อสวมใส่อาวุธประเภท Dagger เมื่ออัพเกรดตั้งแต่ขั้น 10 ขึ้นไป ASPD + 1\nเมื่ออัพเกรดตั้งแต่ขั้น 14 ขึ้นไป เพิ่ม ASPD อีก +1\nประเภท : ^777777Card^000000\nใส่กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Short Cut",
+    "script": {
+      "atk": [
+        "10"
+      ],
+      "aspd": [
+        "WEAPON_TYPE[dagger]10===1",
+        "WEAPON_TYPE[dagger]14===1"
+      ]
+    }
+  },
   "4576": {
     "id": 4576,
     "aegisName": "Gioia_Card",
@@ -38689,6 +38717,35 @@
       ]
     }
   },
+  "27121": {
+    "id": 27121,
+    "aegisName": "Piranha_Card",
+    "name": "Piranha Card",
+    "unidName": "Piranha Card",
+    "resName": "이름없는카드",
+    "description": "Damage ทางกายภาพและทางเวทย์ที่สร้างต่อมอนสเตอร์เผ่า Fish เพิ่มขึ้น 10%\nเมื่อสวมใส่กับรองเท้าที่มีขั้นอัพเกรด 9 จะเพิ่ม Damage ทางเวทย์และทางกายภาพที่สร้างต่อมอนสเตอร์เผ่า Fish อีก 5%\nประเภท :^777777Card^000000\nติดตั้ง :^777777Shoes^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 64,
+    "cardPrefix": "Serrasalmus",
+    "script": {
+      "p_race_fish": [
+        "10",
+        "9===5"
+      ],
+      "m_race_fish": [
+        "10",
+        "9===5"
+      ]
+    }
+  },
   "27125": {
     "id": 27125,
     "aegisName": "Headless_Mule_Card",
@@ -39944,6 +40001,26 @@
       ]
     }
   },
+  "27308": {
+    "id": 27308,
+    "aegisName": "Sanare_Card",
+    "name": "Sanare Card",
+    "unidName": "Sanare Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่มผลของ Heal + 2%\nเมื่ออาวุธอัปเกรดถึงขั้น 9, เพิ่มผลของ Heal 3% \nเมื่ออาวุธอัปเกรดถึงขั้น 11, เพิ่มผลของ Heal 5% เพิ่มเติม\n^ffffff_^000000\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Sacred",
+    "script": {}
+  },
   "27309": {
     "id": 27309,
     "aegisName": "High_Sanare_Card",
@@ -40109,6 +40186,32 @@
     "script": {
       "criDmg": [
         "20"
+      ]
+    }
+  },
+  "27320": {
+    "id": 27320,
+    "aegisName": "E_EA1L_Card",
+    "name": "E-EA1L Card",
+    "unidName": "E-EA1L Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่ม Damage ทางเวทธาตุ Fire 3%\nเมื่ออัปเกรดอาวุธถึงขั้น 9, เพิ่ม Damage ทางเวทธาตุ Fire 2% เพิ่มเติม \nเมื่ออัปเกรดอาวุธถึงขั้น 11, เพิ่ม Damage ทางเวทธาตุ Fire 5% เพิ่มเติม\n^ffffff_^000000\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Enhance Fire",
+    "script": {
+      "m_my_element_fire": [
+        "3",
+        "9===2",
+        "11===5"
       ]
     }
   },
@@ -54692,6 +54795,143 @@
       ]
     }
   },
+  "300076": {
+    "id": 300076,
+    "aegisName": "Beta_Guards_Ng_Card",
+    "name": "Broken Guard Beta Card",
+    "unidName": "Broken Guard Beta Card",
+    "resName": "이름없는카드",
+    "description": "Vit + 3.\r\nMaxHP + 10%, increases Vanishing Point and Cannon Spear damage by 10%.\r\nWhen equipped with Verporta Card and Senior Research Assistant Bot Card, increases Vanishing Point and Cannon Spear damage by 20%, increases Vanishing Point damage by additional 5% per 2 refine rate of shoes and increases Cannon Spear damage by additional 5% per 2 refine rate of weapon.\r\nClass: ^777777Card^000000\r\nCompound on: ^777777Accessory^000000\r\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 136,
+    "cardPrefix": "of Royal Guard",
+    "script": {
+      "vit": [
+        "3"
+      ],
+      "hpPercent": [
+        "10"
+      ],
+      "Vanishing Point": [
+        "10",
+        "EQUIP[Verporta Card&&Senior Research Assistant Bot Card]===20",
+        "EQUIP[Verporta Card&&Senior Research Assistant Bot Card]REFINE[boot==2]---5"
+      ],
+      "Cannon Spear": [
+        "10",
+        "EQUIP[Verporta Card&&Senior Research Assistant Bot Card]===20",
+        "EQUIP[Verporta Card&&Senior Research Assistant Bot Card]REFINE[weapon==2]---5"
+      ]
+    }
+  },
+  "300077": {
+    "id": 300077,
+    "aegisName": "O_Cleaner_Ng_Card",
+    "name": "Broken Cleaning Robot Omega Card",
+    "unidName": "Broken Cleaning Robot Omega Card",
+    "resName": "이름없는카드",
+    "description": "Dex + 2, Vit + 1.\r\nMaxHP + 10%, increases Axe Boomerang and Vulcan Arm damage by 10%.\r\nWhen equipped with Kick and Kick Card and Senior Papila Card, increases Axe Boomerang and Vulcan Arm damage by 20%, increases Vulcan Arm damage by additional 5% per 2 refine rate of shoes and increases Axe Boomerang damage by additional 5% per 2 refine rate of weapon.\r\nClass: ^777777Card^000000\r\nCompound on: ^777777Accessory^000000\r\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 136,
+    "cardPrefix": "of Mechanic",
+    "script": {
+      "dex": [
+        "2"
+      ],
+      "vit": [
+        "1"
+      ],
+      "hpPercent": [
+        "10"
+      ],
+      "Axe Boomerang": [
+        "10",
+        "EQUIP[Kick and Kick Card&&Senior Papila Card]===20",
+        "EQUIP[Kick and Kick Card&&Senior Papila Card]REFINE[weapon==2]---5"
+      ],
+      "Vulcan Arm": [
+        "10",
+        "EQUIP[Kick and Kick Card&&Senior Papila Card]===20",
+        "EQUIP[Kick and Kick Card&&Senior Papila Card]REFINE[boot==2]---5"
+      ]
+    }
+  },
+  "300078": {
+    "id": 300078,
+    "aegisName": "Sweety_Card",
+    "name": "Sweety Card",
+    "unidName": "Sweety Card",
+    "resName": "이름없는카드",
+    "description": "Increases Fire Dance damage by 60%.\r\nIncreases SP consumption of Fire Dance by 25%.\r\nClass: ^777777Card^000000\r\nCompound on: ^777777Weapon^000000\r\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Mad Dance",
+    "script": {
+      "Fire Dance": [
+        "60"
+      ],
+      "spPercent__Fire Dance": [
+        "25"
+      ]
+    }
+  },
+  "300079": {
+    "id": 300079,
+    "aegisName": "Redpepper_Card",
+    "name": "Red Pepper Card",
+    "unidName": "Red Pepper Card",
+    "resName": "이름없는카드",
+    "description": "Increases magical damage against formless and fish race enemies by 30%.\nIncreases magical damage against holy and water property enemies by 30%.\nClass: ^777777Card^000000\nCompound on: ^777777Armor^000000\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 16,
+    "cardPrefix": "Middle Dry",
+    "script": {
+      "m_race_formless": [
+        "30"
+      ],
+      "m_race_fish": [
+        "30"
+      ],
+      "m_element_holy": [
+        "30"
+      ],
+      "m_element_water": [
+        "30"
+      ]
+    }
+  },
   "300080": {
     "id": 300080,
     "aegisName": "Redpepper_H_Card",
@@ -54722,6 +54962,1525 @@
       ],
       "m_element_water": [
         "50"
+      ]
+    }
+  },
+  "300081": {
+    "id": 300081,
+    "aegisName": "Assistant_Card",
+    "name": "Research Assistant Bot Card",
+    "unidName": "Research Assistant Bot Card",
+    "resName": "이름없는카드",
+    "description": "Int + 2.\nMaxHP + 10%, MaxSP + 10%.\nIncreases Fire Ball damage by 25%.\nClass: ^777777Card^000000\nCompound on: ^777777Shoes^000000\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 64,
+    "cardPrefix": "of Magician",
+    "script": {
+      "int": [
+        "2"
+      ],
+      "hpPercent": [
+        "10"
+      ],
+      "spPercent": [
+        "10"
+      ],
+      "Fire Ball": [
+        "25"
+      ]
+    }
+  },
+  "300082": {
+    "id": 300082,
+    "aegisName": "Assistant_H_Card",
+    "name": "Senior Research Assistant Bot Card",
+    "unidName": "Senior Research Assistant Bot Card",
+    "resName": "이름없는카드",
+    "description": "When compounded on Spear or Two-handed Spear, increases long ranged physical damage by 10%.\r\nIncreases long ranged physical damage by additional 2% per 2 refine rate of weapon.\r\nClass: ^777777Card^000000\r\nCompound on: ^777777Weapon^000000\r\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Piercing",
+    "script": {
+      "range": [
+        "WEAPON_TYPE[spear]===10",
+        "WEAPON_TYPE[twohandSpear]===10",
+        "2---2"
+      ]
+    }
+  },
+  "300083": {
+    "id": 300083,
+    "aegisName": "Dry_Rafflesia_Card",
+    "name": "Dried Rafflesia Card",
+    "unidName": "Dried Rafflesia Card",
+    "resName": "이름없는카드",
+    "description": "Agi + 2.\nMaxHP + 10%, MaxSP + 10%.\nIncreases Freezing Spear and Throw Kunai damage by 15%.\nClass: ^777777Card^000000\nCompound on: ^777777Shoes^000000\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 64,
+    "cardPrefix": "of Ninja",
+    "script": {
+      "agi": [
+        "2"
+      ],
+      "hpPercent": [
+        "10"
+      ],
+      "spPercent": [
+        "10"
+      ],
+      "Freezing Spear": [
+        "15"
+      ],
+      "Throw Kunai": [
+        "15"
+      ]
+    }
+  },
+  "300084": {
+    "id": 300084,
+    "aegisName": "Dry_Rafflesia_H_Card",
+    "name": "Senior Dried Rafflesia Card",
+    "unidName": "Senior Dried Rafflesia Card",
+    "resName": "이름없는카드",
+    "description": "Reduces damage taken from holy property by 30%.\r\nFlee + 5.\r\nClass: ^777777Card^000000\r\nCompound on: ^777777Garment^000000\r\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 4,
+    "cardPrefix": "of Holy",
+    "script": {
+      "flee": [
+        "5"
+      ]
+    }
+  },
+  "300085": {
+    "id": 300085,
+    "aegisName": "Alnoldi_Ex_Card",
+    "name": "Special Alnoldi Card",
+    "unidName": "Special Alnoldi Card",
+    "resName": "이름없는카드",
+    "description": "Str + 2.\nMaxHP + 10%, MaxSP + 10%.\nAtk + 7 per each level of Kihop user learned.\nClass: ^777777Card^000000\nCompound on: ^777777Shoes^000000\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 64,
+    "cardPrefix": "of Taekwon",
+    "script": {
+      "str": [
+        "2"
+      ],
+      "hpPercent": [
+        "10"
+      ],
+      "spPercent": [
+        "10"
+      ],
+      "atk": [
+        "LEARN_SKILL[Power==1]---7"
+      ]
+    }
+  },
+  "300086": {
+    "id": 300086,
+    "aegisName": "Alnoldi_Ex_H_Card",
+    "name": "Senior Special Alnoldi Card",
+    "unidName": "Senior Special Alnoldi Card",
+    "resName": "이름없는카드",
+    "description": "When compounded on Two-handed Sword, increases melee physical damage by 10%.\r\nIncreases melee physical damage by additional 1% per refine rate of weapon.\r\nIf refine rate is 11 or higher, the weapon can't be destroyed.\r\nClass: ^777777Card^000000\r\nCompound on: ^777777Weapon^000000\r\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Vanguard's",
+    "script": {
+      "melee": [
+        "WEAPON_TYPE[twohandSword]===10",
+        "1---1"
+      ]
+    }
+  },
+  "300087": {
+    "id": 300087,
+    "aegisName": "Beta_Scissore_Ng_Card",
+    "name": "Broken Gardener Beta Card",
+    "unidName": "Broken Gardener Beta Card",
+    "resName": "이름없는카드",
+    "description": "Luk + 2.\nMaxHP + 10%, MaxSP + 10%.\nIncreases Silvervine Stem Spear and Scar of Tarou damage by 10%.\nClass: ^777777Card^000000\nCompound on: ^777777Shoes^000000\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 64,
+    "cardPrefix": "of Shadow Cat",
+    "script": {
+      "luk": [
+        "2"
+      ],
+      "hpPercent": [
+        "10"
+      ],
+      "spPercent": [
+        "10"
+      ],
+      "Silvervine Stem Spear": [
+        "10"
+      ],
+      "Scar of Tarou": [
+        "10"
+      ]
+    }
+  },
+  "300088": {
+    "id": 300088,
+    "aegisName": "B_Scissore_Ng_H_Card",
+    "name": "Senior Broken Gardener Beta Card",
+    "unidName": "Senior Broken Gardener Beta Card",
+    "resName": "이름없는카드",
+    "description": "When compounded on Book, Hit + 20, Atk + 5%.\r\nIncreases melee physical damage by additional 1% per refine rate of weapon.\r\nIf refine rate is 10 or higher, increase Full Moon Kick and Falling Star damage by 15%.\r\nClass: ^777777Card^000000\r\nCompound on: ^777777Weapon^000000\r\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Fallen Star",
+    "script": {
+      "hit": [
+        "WEAPON_TYPE[book]===20"
+      ],
+      "atkPercent": [
+        "WEAPON_TYPE[book]===5"
+      ],
+      "melee": [
+        "1---1"
+      ],
+      "Full Moon Kick": [
+        "10===15"
+      ],
+      "Falling Stars": [
+        "10===15"
+      ]
+    }
+  },
+  "300089": {
+    "id": 300089,
+    "aegisName": "Verporta_Card",
+    "name": "Verporta Card",
+    "unidName": "Verporta Card",
+    "resName": "이름없는카드",
+    "description": "Str + 2.\nMaxHP + 10%, MaxSP + 10%.\nIncreases Magnum Break damage by 25%.\nClass: ^777777Card^000000\nCompound on: ^777777Shoes^000000\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 64,
+    "cardPrefix": "of Assault",
+    "script": {
+      "str": [
+        "2"
+      ],
+      "hpPercent": [
+        "10"
+      ],
+      "spPercent": [
+        "10"
+      ],
+      "Magnum Break": [
+        "25"
+      ]
+    }
+  },
+  "300090": {
+    "id": 300090,
+    "aegisName": "Verporte_H_Card",
+    "name": "Verporte Card",
+    "unidName": "Verporte Card",
+    "resName": "이름없는카드",
+    "description": "Increases earth property magical damage by 10%.\nIncreases SP consumption by 5%.\nIf refine rate is 9 or higher, increases earth property magical damage by additional 10%.\nClass: ^777777Card^000000\nCompound on: ^777777Shoes^000000\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 64,
+    "cardPrefix": "of Land Power",
+    "script": {
+      "m_my_element_earth": [
+        "10",
+        "9===10"
+      ],
+      "spPercentCost": [
+        "5"
+      ]
+    }
+  },
+  "300091": {
+    "id": 300091,
+    "aegisName": "Papila_Card",
+    "name": "Papila Card",
+    "unidName": "Papila Card",
+    "resName": "이름없는카드",
+    "description": "Dex + 2.\nMaxHP + 10%, MaxSP + 10%.\nIncreases Desperado, Full Blast and Spread Attack damage by 10%.\nClass: ^777777Card^000000\nCompound on: ^777777Shoes^000000\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 64,
+    "cardPrefix": "of Gunman",
+    "script": {
+      "dex": [
+        "2"
+      ],
+      "hpPercent": [
+        "10"
+      ],
+      "spPercent": [
+        "10"
+      ],
+      "Desperado": [
+        "10"
+      ],
+      "Full Blast": [
+        "10"
+      ],
+      "Spread Shot": [
+        "10"
+      ]
+    }
+  },
+  "300092": {
+    "id": 300092,
+    "aegisName": "Papila_H_Card",
+    "name": "Senior Papila Card",
+    "unidName": "Senior Papila Card",
+    "resName": "이름없는카드",
+    "description": "Luk + 2.\r\nMaxHP + 10%, MaxSP + 10%.\r\nIncreases Cart Revolution damage by 50%.\r\nClass: ^777777Card^000000\r\nCompound on: ^777777Shoes^000000\r\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 64,
+    "cardPrefix": "of Merchant",
+    "script": {
+      "luk": [
+        "2"
+      ],
+      "hpPercent": [
+        "10"
+      ],
+      "spPercent": [
+        "10"
+      ],
+      "Cart Revolution": [
+        "50"
+      ]
+    }
+  },
+  "300093": {
+    "id": 300093,
+    "aegisName": "Papila_Ruba_Card",
+    "name": "Papila Ruba Card",
+    "unidName": "Papila Ruba Card",
+    "resName": "이름없는카드",
+    "description": "Int + 2.\nMaxHP + 10%, MaxSP + 10%.\nIncreases Holy Light damage by 50%.\nClass: ^777777Card^000000\nCompound on: ^777777Shoes^000000\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 64,
+    "cardPrefix": "of Acolyte",
+    "script": {
+      "int": [
+        "2"
+      ],
+      "hpPercent": [
+        "10"
+      ],
+      "spPercent": [
+        "10"
+      ],
+      "Holy Light": [
+        "50"
+      ]
+    }
+  },
+  "300094": {
+    "id": 300094,
+    "aegisName": "Papila_Ruba_H_Card",
+    "name": "Senior Papila Ruba Card",
+    "unidName": "Senior Papila Ruba Card",
+    "resName": "이름없는카드",
+    "description": "When compounded on Two-handed Sword, increases critical damage by 20%.\r\nIncreases critical damage by additional 2% per 2 refine rate of weapon.\r\nClass: ^777777Card^000000\r\nCompound on: ^777777Weapon^000000\r\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Mad Lethal",
+    "script": {
+      "criDmg": [
+        "WEAPON_TYPE[twohandSword]===20",
+        "2---2"
+      ]
+    }
+  },
+  "300095": {
+    "id": 300095,
+    "aegisName": "Papila_Cae_Card",
+    "name": "Papila Cae Card",
+    "unidName": "Papila Cae Card",
+    "resName": "이름없는카드",
+    "description": "Dex + 2.\nMaxHP + 10%, MaxSP + 10%.\nIncreases Arrow Shower damage by 25%.\nClass: ^777777Card^000000\nCompound on: ^777777Shoes^000000\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 64,
+    "cardPrefix": "of Keen",
+    "script": {
+      "dex": [
+        "2"
+      ],
+      "hpPercent": [
+        "10"
+      ],
+      "spPercent": [
+        "10"
+      ],
+      "Arrow Shower": [
+        "25"
+      ]
+    }
+  },
+  "300096": {
+    "id": 300096,
+    "aegisName": "Papila_Cae_H_Card",
+    "name": "Senior Papila Cae Card",
+    "unidName": "Senior Papila Cae Card",
+    "resName": "이름없는카드",
+    "description": "When compounded on Musical Instrument or Whip, Matk + 20.\r\nIf refine rate is 10 or higher, Matk + 20, reduces variable casting time by 10%.\r\nIf refine rate is 13 or higher, Matk + 20.\r\nClass: ^777777Card^000000\r\nCompound on: ^777777Weapon^000000\r\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Harmony",
+    "script": {
+      "matk": [
+        "WEAPON_TYPE[instrument]===20",
+        "WEAPON_TYPE[whip]===20",
+        "10===20",
+        "13===20"
+      ],
+      "vct": [
+        "10===10"
+      ]
+    }
+  },
+  "300097": {
+    "id": 300097,
+    "aegisName": "Aries_Card",
+    "name": "Aries Card",
+    "unidName": "Aries Card",
+    "resName": "이름없는카드",
+    "description": "Agi + 2.\nMaxHP + 10%, MaxSP + 10%.\nIncreases Envenom damage by 25%.\nClass: ^777777Card^000000\nCompound on: ^777777Shoes^000000\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 64,
+    "cardPrefix": "of Thief",
+    "script": {
+      "agi": [
+        "2"
+      ],
+      "hpPercent": [
+        "10"
+      ],
+      "spPercent": [
+        "10"
+      ],
+      "Envenom": [
+        "25"
+      ]
+    }
+  },
+  "300098": {
+    "id": 300098,
+    "aegisName": "Aries_H_Card",
+    "name": "Senior Aries Card",
+    "unidName": "Senior Aries Card",
+    "resName": "이름없는카드",
+    "description": "Matk + 5.\r\nIncreases Wind Blade, Freezing Spear and Flaming Petals damage by 10%.\r\nIf refine rate is 7 or higher, reduces variable casting time by 5%.\r\nClass: ^777777Card^000000\r\nCompound on: ^777777Garment^000000\r\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 4,
+    "cardPrefix": "Ninja's",
+    "script": {
+      "matk": [
+        "5"
+      ],
+      "Wind Blade": [
+        "10"
+      ],
+      "Freezing Spear": [
+        "10"
+      ],
+      "Flaming Petals": [
+        "10"
+      ],
+      "vct": [
+        "7===5"
+      ]
+    }
+  },
+  "300099": {
+    "id": 300099,
+    "aegisName": "Silva_Papilia_Card",
+    "name": "Silva Papilia Card",
+    "unidName": "Silva Papilia Card",
+    "resName": "이름없는카드",
+    "description": "Reduces damage taken from normal enemies by 20%.\nIncreases incoming heal effectiveness by 15%.\nClass: ^777777Card^000000\nCompound on: ^777777Shield^000000\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 32,
+    "cardPrefix": "of Minor Guard",
+    "script": {}
+  },
+  "300100": {
+    "id": 300100,
+    "aegisName": "Gran_Papilia_Card",
+    "name": "Gran Papilia Card",
+    "unidName": "Gran Papilia Card",
+    "resName": "이름없는카드",
+    "description": "Reduces damage taken from boss enemies by 25%.\nIncreases incoming heal effectiveness by 30%.\nClass: ^777777Card^000000\nCompound on: ^777777Shield^000000\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 32,
+    "cardPrefix": "of Major Guard",
+    "script": {}
+  },
+  "300101": {
+    "id": 300101,
+    "aegisName": "Beta_Cleaner_Card",
+    "name": "Broken Cleaner Card",
+    "unidName": "Broken Cleaner Card",
+    "resName": "이름없는카드",
+    "description": "Str + 3.\r\nMaxHP + 10%, increases Dragon Breath and Dragon Breath - Water damage by 10%.\r\nWhen equipped with Verporta Card and Senior Papila Ruba Card, increases Dragon Breath and Dragon Breath - Water damage by 20%, increases Dragon Breath damage by additional 5% per 2 refine rate of shoes and increases Dragon Breath - Water damage by additional 5% per 2 refine rate of weapon.\r\nClass: ^777777Card^000000\r\nCompound on: ^777777Accessory^000000\r\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 136,
+    "cardPrefix": "of Rune Knight",
+    "script": {
+      "str": [
+        "3"
+      ],
+      "hpPercent": [
+        "10"
+      ],
+      "Dragon Breath": [
+        "10",
+        "EQUIP[Verporta Card&&Senior Papila Ruba Card]===20",
+        "EQUIP[Verporta Card&&Senior Papila Ruba Card]REFINE[boot==2]---5"
+      ],
+      "Dragon Breath - WATER": [
+        "10",
+        "EQUIP[Verporta Card&&Senior Papila Ruba Card]===20",
+        "EQUIP[Verporta Card&&Senior Papila Ruba Card]REFINE[weapon==2]---5"
+      ]
+    }
+  },
+  "300102": {
+    "id": 300102,
+    "aegisName": "Beta_Baths_A_Card",
+    "name": "Bath Administrator Card",
+    "unidName": "Bath Administrator Card",
+    "resName": "이름없는카드",
+    "description": "Int + 3.\r\nMaxHP + 10%, increases Cart Cannon and Spore Explosion damage by 10%.\r\nWhen equipped with Powerful Archer Skeleton Card and Senior Papila Card, increases Cart Cannon and Spore Explosion damage by 20%, increases Cart Cannon damage by additional 5% per 2 refine rate of shoes and increases Spore Explosion damage by additional 5% per 2 refine rate of weapon.\r\nClass: ^777777Card^000000\r\nCompound on: ^777777Accessory^000000\r\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 136,
+    "cardPrefix": "of Genetic",
+    "script": {
+      "int": [
+        "3"
+      ],
+      "hpPercent": [
+        "10"
+      ],
+      "Cart Cannon": [
+        "10",
+        "EQUIP[Enchanted Archer Skeleton Card&&Senior Papila Card]===20",
+        "EQUIP[Enchanted Archer Skeleton Card&&Senior Papila Card]REFINE[boot==2]---5"
+      ],
+      "Spore Explosion": [
+        "10",
+        "EQUIP[Enchanted Archer Skeleton Card&&Senior Papila Card]===20",
+        "EQUIP[Enchanted Archer Skeleton Card&&Senior Papila Card]REFINE[weapon==2]---5"
+      ]
+    }
+  },
+  "300103": {
+    "id": 300103,
+    "aegisName": "Bath_Mermaid_Card",
+    "name": "Azure Princess Card",
+    "unidName": "Azure Princess Card",
+    "resName": "이름없는카드",
+    "description": "Matk + 15.\nIf refine rate is 9 or higher, increases magical damage against fish and demihuman enemies by 10%.\nIf refine rate is 11 or higher, reduces global cooldown by 3%.\nClass: ^777777Card^000000\nCompound on: ^777777Shoes^000000\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 64,
+    "cardPrefix": "Mermaid",
+    "script": {
+      "matk": [
+        "15"
+      ],
+      "m_race_fish": [
+        "9===10"
+      ],
+      "m_race_demihuman": [
+        "9===10"
+      ],
+      "acd": [
+        "11===3"
+      ]
+    }
+  },
+  "300104": {
+    "id": 300104,
+    "aegisName": "Bookworm_Card",
+    "name": "Bookworm Card",
+    "unidName": "Bookworm Card",
+    "resName": "이름없는카드",
+    "description": "Int + 2, Vit + 1.\nMaxHP + 10%, increases Psychic Wave and Diamond Dust damage by 10%.\nWhen equipped with Blue Pitaya Card and Research Assistant Bot Card, increases Psychic Wave and Diamond Dust damage by 20%, increases Psychic Wave damage by additional 5% per 2 refine rate of shoes and increases Diamond Dust damage by additional 5% per 2 refine rate of weapon.\nClass: ^777777Card^000000\nCompound on: ^777777Accessory^000000\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 136,
+    "cardPrefix": "of Sorcerer",
+    "script": {
+      "int": [
+        "2"
+      ],
+      "vit": [
+        "1"
+      ],
+      "hpPercent": [
+        "10"
+      ],
+      "Psychic Wave": [
+        "10",
+        "EQUIP[Blue Pitaya Card&&Research Assistant Bot Card]===20",
+        "EQUIP[Blue Pitaya Card&&Research Assistant Bot Card]REFINE[boot==2]---5"
+      ],
+      "Diamond Dust": [
+        "10",
+        "EQUIP[Blue Pitaya Card&&Research Assistant Bot Card]===20",
+        "EQUIP[Blue Pitaya Card&&Research Assistant Bot Card]REFINE[weapon==2]---5"
+      ]
+    }
+  },
+  "300105": {
+    "id": 300105,
+    "aegisName": "Roaming_Splbook_Card",
+    "name": "Roaming Spellbook Card",
+    "unidName": "Roaming Spellbook Card",
+    "resName": "이름없는카드",
+    "description": "Int + 3.\nMaxHP + 5%, MaxSP + 5%, increases Crimson Rock and Comet damage by 10%.\nWhen equipped with Red Pitaya Card and Research Assistant Bot Card, increases Crimson Rock and Comet damage by 20%, increases Comet damage by additional 5% per 2 refine rate of shoes and increases Crimson Rock damage by additional 5% per 2 refine rate of weapon.\nClass: ^777777Card^000000\nCompound on: ^777777Accessory^000000\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 136,
+    "cardPrefix": "of Warlock",
+    "script": {
+      "int": [
+        "3"
+      ],
+      "hpPercent": [
+        "5"
+      ],
+      "spPercent": [
+        "5"
+      ],
+      "Crimson Rock": [
+        "10",
+        "EQUIP[Red Pitaya Card&&Research Assistant Bot Card]===20",
+        "EQUIP[Red Pitaya Card&&Research Assistant Bot Card]REFINE[weapon==2]---5"
+      ],
+      "Comet": [
+        "10",
+        "EQUIP[Red Pitaya Card&&Research Assistant Bot Card]===20",
+        "EQUIP[Red Pitaya Card&&Research Assistant Bot Card]REFINE[boot==2]---5"
+      ]
+    }
+  },
+  "300106": {
+    "id": 300106,
+    "aegisName": "Pitaya_R_Card",
+    "name": "Red Pitaya Card",
+    "unidName": "Red Pitaya Card",
+    "resName": "이름없는카드",
+    "description": "When compounded on Staff or Two-handed Staff, increases fire property magical damage by 10%.\nIf refine rate of weapon is 10 or higher, increases fire property magical damage by additional 10%.\nIf refine rate of weapon is 14 or higher, increases fire property magical damage by additional 10%.\nClass: ^777777Card^000000\nCompound on: ^777777Weapon^000000\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Fire Magical",
+    "script": {
+      "m_my_element_fire": [
+        "WEAPON_TYPE[rod]===10",
+        "WEAPON_TYPE[twohandRod]===10",
+        "10===10",
+        "14===10"
+      ]
+    }
+  },
+  "300107": {
+    "id": 300107,
+    "aegisName": "Pitaya_Boss_Card",
+    "name": "Meow Card",
+    "unidName": "Meow Card",
+    "resName": "이름없는카드",
+    "description": "Increases recovery rate of Apple and Banana by 500%.\nClass: ^777777Card^000000\nCompound on: ^777777Accessory^000000\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 136,
+    "cardPrefix": "Fruit",
+    "script": {}
+  },
+  "300108": {
+    "id": 300108,
+    "aegisName": "Venenum3_Card",
+    "name": "Sewage Venenum Card",
+    "unidName": "Sewage Venenum Card",
+    "resName": "이름없는카드",
+    "description": "Agi + 2, Dex + 1.\nMaxHP + 10%, increases Fatal Menace and Triangle Shot damage by 10%.\nWhen equipped with Scimitar Buffalo Bandit Card and Aries Card, increases Fatal Menace and Triangle Shot damage by 20%, increases Fatal Menace damage by additional 5% per 2 refine rate of shoes and increases Triangle Shot damage by additional 5% per 2 refine rate of weapon.\nClass: ^777777Card^000000\nCompound on: ^777777Accessory^000000\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 136,
+    "cardPrefix": "of Shadow Chaser",
+    "script": {
+      "agi": [
+        "2"
+      ],
+      "dex": [
+        "1"
+      ],
+      "hpPercent": [
+        "10"
+      ],
+      "Fatal Manace": [
+        "10",
+        "EQUIP[Scimitar Buffalo Bandit Card&&Aries Card]===20",
+        "EQUIP[Scimitar Buffalo Bandit Card&&Aries Card]REFINE[boot==2]---5"
+      ],
+      "Triangle Shot": [
+        "10",
+        "EQUIP[Scimitar Buffalo Bandit Card&&Aries Card]===20",
+        "EQUIP[Scimitar Buffalo Bandit Card&&Aries Card]REFINE[weapon==2]---5"
+      ]
+    }
+  },
+  "300109": {
+    "id": 300109,
+    "aegisName": "EP17_2_Cramp_Card",
+    "name": "Sewage Cramp Card",
+    "unidName": "Sewage Cramp Card",
+    "resName": "이름없는카드",
+    "description": "Dex + 2, Str + 1.\nMaxHP + 10%, increases Rolling Cutter and Counter Slash damage by 10%.\nWhen equipped with Mutant Dolor Card and Aries Card, increases Rolling Cutter and Counter Slash damage by 20%, increases Rolling Cutter and Counter Slash damage by additional 5% per 3 refine rate of shoes.\nCompound on: ^777777Accessory^000000\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 136,
+    "cardPrefix": "of Guillotine Cross",
+    "script": {
+      "dex": [
+        "2"
+      ],
+      "str": [
+        "1"
+      ],
+      "hpPercent": [
+        "10"
+      ],
+      "Rolling Cutter": [
+        "10",
+        "EQUIP[Mutant Dolor Card&&Aries Card]===20",
+        "EQUIP[Mutant Dolor Card&&Aries Card]REFINE[boot==3]---5"
+      ],
+      "Counter Slash": [
+        "10",
+        "EQUIP[Mutant Dolor Card&&Aries Card]===20",
+        "EQUIP[Mutant Dolor Card&&Aries Card]REFINE[boot==3]---5"
+      ]
+    }
+  },
+  "300110": {
+    "id": 300110,
+    "aegisName": "Waterfall_Card",
+    "name": "Sewage Waterfall Card",
+    "unidName": "Sewage Waterfall Card",
+    "resName": "이름없는카드",
+    "description": "Agi + 2, Int + 1.\nMaxHP + 10%, increases Kunai Explosion and Cross Slash damage by 10%.\nWhen equipped with Armed Guard Soheon Card and Dried Rafflesia Card, increases Kunai Explosion and Cross Slash damage by 20%, increases Kunai Explosion and Cross Slash damage by additional 5% per 3 refine rate of shoes.\nClass: ^777777Card^000000\nCompound on: ^777777Accessory^000000\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 136,
+    "cardPrefix": "of Kagerou",
+    "script": {
+      "agi": [
+        "2"
+      ],
+      "int": [
+        "1"
+      ],
+      "hpPercent": [
+        "10"
+      ],
+      "Kunai Explosion": [
+        "10",
+        "EQUIP[Armed Guard Soheon Card&&Dried Rafflesia Card]===20",
+        "EQUIP[Armed Guard Soheon Card&&Dried Rafflesia Card]REFINE[boot==3]---5"
+      ],
+      "Cross Slash": [
+        "10",
+        "EQUIP[Armed Guard Soheon Card&&Dried Rafflesia Card]===20",
+        "EQUIP[Armed Guard Soheon Card&&Dried Rafflesia Card]REFINE[boot==3]---5"
+      ]
+    }
+  },
+  "300111": {
+    "id": 300111,
+    "aegisName": "Bellare3_Card",
+    "name": "Elite Bellare Card",
+    "unidName": "Elite Bellare Card",
+    "resName": "이름없는카드",
+    "description": "Agi + 2, Int + 1.\nMaxHP + 10%, increases Flaming Petals, Freezing Spear and Wind Blade damage by 10%.\nWhen equipped with E-EA1L Card and Dried Rafflesia Card, increases Flaming Petals, Freezing Spear and Wind Blade damage by 20%, increases Flaming Petals, Freezing Spear and Wind Blade damage by additional 5% per 3 refine rate of shoes.\nClass: ^777777Card^000000\nCompound on: ^777777Accessory^000000\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 136,
+    "cardPrefix": "of Oboro",
+    "script": {
+      "agi": [
+        "2"
+      ],
+      "int": [
+        "1"
+      ],
+      "hpPercent": [
+        "10"
+      ],
+      "Flaming Petals": [
+        "10",
+        "EQUIP[E-EA1L Card&&Dried Rafflesia Card]===20",
+        "EQUIP[E-EA1L Card&&Dried Rafflesia Card]REFINE[boot==3]---5"
+      ],
+      "Freezing Spear": [
+        "10",
+        "EQUIP[E-EA1L Card&&Dried Rafflesia Card]===20",
+        "EQUIP[E-EA1L Card&&Dried Rafflesia Card]REFINE[boot==3]---5"
+      ],
+      "Wind Blade": [
+        "10",
+        "EQUIP[E-EA1L Card&&Dried Rafflesia Card]===20",
+        "EQUIP[E-EA1L Card&&Dried Rafflesia Card]REFINE[boot==3]---5"
+      ]
+    }
+  },
+  "300112": {
+    "id": 300112,
+    "aegisName": "Dolor3_Card",
+    "name": "Spell Addicted Dolor Card",
+    "unidName": "Spell Addicted Dolor Card",
+    "resName": "이름없는카드",
+    "description": "Int + 2, Vit + 1.\r\nMaxHP + 10%, increases Eswhoo and Curse Explosion damage by 10%.\r\nWhen equipped with Magic-poisoned Plaga Card and Special Alnoldi Card, increases Eswhoo and Curse Explosion damage by 20%, increases Curse Explosion damage by additional 5% per 2 refine rate of shoes and increases Eswhoo damage by additional 5% per 2 refine rate of weapon.\r\nClass: ^777777Card^000000\r\nCompound on: ^777777Accessory^000000\r\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 136,
+    "cardPrefix": "of Soul Reaper",
+    "script": {
+      "int": [
+        "2"
+      ],
+      "vit": [
+        "1"
+      ],
+      "hpPercent": [
+        "10"
+      ],
+      "Eswhoo": [
+        "10",
+        "EQUIP[Spell Addicted Plaga Card&&Special Alnoldi Card]===20",
+        "EQUIP[Spell Addicted Plaga Card&&Special Alnoldi Card]REFINE[weapon==2]---5"
+      ],
+      "Curse Explosion": [
+        "10",
+        "EQUIP[Spell Addicted Plaga Card&&Special Alnoldi Card]===20",
+        "EQUIP[Spell Addicted Plaga Card&&Special Alnoldi Card]REFINE[boot==2]---5"
+      ]
+    }
+  },
+  "300113": {
+    "id": 300113,
+    "aegisName": "Plasma_Y_Card",
+    "name": "Released Spell Card",
+    "unidName": "Released Spell Card",
+    "resName": "이름없는카드",
+    "description": "Int + 2, Vit + 1.\r\nMaxHP + 10%, increases Reverberation and Severe Rainstorm damage by 10%.\r\nWhen equipped with Greater Papila Cae Card and Papila Cae Card, increases Reverberation and Severe Rainstorm damage by 20%, increases Reverberation damage by additional 5% per 2 refine rate of shoes and increases Severe Rainstorm damage by additional 5% per 2 refine rate of weapon.\r\nClass: ^777777Card^000000\r\nCompound on: ^777777Accessory^000000\r\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 136,
+    "cardPrefix": "of Talent",
+    "script": {
+      "int": [
+        "2"
+      ],
+      "vit": [
+        "1"
+      ],
+      "hpPercent": [
+        "10"
+      ],
+      "Reverberation": [
+        "10",
+        "EQUIP[Senior Papila Cae Card&&Papila Cae Card]===20",
+        "EQUIP[Senior Papila Cae Card&&Papila Cae Card]REFINE[boot==2]---5"
+      ],
+      "Severe Rainstorm": [
+        "10",
+        "EQUIP[Senior Papila Cae Card&&Papila Cae Card]===20",
+        "EQUIP[Senior Papila Cae Card&&Papila Cae Card]REFINE[weapon==2]---5"
+      ]
+    }
+  },
+  "300114": {
+    "id": 300114,
+    "aegisName": "Plaga3_Card",
+    "name": "Spell Addicted Plaga Card",
+    "unidName": "Spell Addicted Plaga Card",
+    "resName": "이름없는카드",
+    "description": "When compounded on Staff or Two-handed Staff, increases neutral property magical damage by 10%.\r\nIf refine rate of weapon is 10 or higher, increases neutral property magical damage by additional 10%.\r\nIf refine rate of weapon is 14 or higher, increases neutral property magical damage by additional 10%.\r\nClass: ^777777Card^000000\r\nCompound on: ^777777Weapon^000000\r\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Immortal Magical",
+    "script": {
+      "m_my_element_neutral": [
+        "WEAPON_TYPE[rod]===10",
+        "WEAPON_TYPE[twohandRod]===10",
+        "10===10",
+        "14===10"
+      ]
+    }
+  },
+  "300115": {
+    "id": 300115,
+    "aegisName": "Sanare3_Card",
+    "name": "Spell Addicted Sanare Card",
+    "unidName": "Spell Addicted Sanare Card",
+    "resName": "이름없는카드",
+    "description": "Int + 2, Dex + 1.\r\nMaxHP + 10%, increases Adoramus and Judex damage by 10%.\r\nWhen equipped with Sanare Card and Papila Ruba Card, increases Adoramus and Judex damage by 20%, increases Adoramus damage by additional 5% per 2 refine rate of shoes and increases Judex damage by additional 5% per 2 refine rate of weapon.\r\nClass: ^777777Card^000000\r\nCompound on: ^777777Accessory^000000\r\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 136,
+    "cardPrefix": "of Archbishop",
+    "script": {
+      "int": [
+        "2"
+      ],
+      "dex": [
+        "1"
+      ],
+      "hpPercent": [
+        "10"
+      ],
+      "Adoramus": [
+        "10",
+        "EQUIP[Sanare Card&&Papila Ruba Card]===20",
+        "EQUIP[Sanare Card&&Papila Ruba Card]REFINE[boot==2]---5"
+      ],
+      "Judex": [
+        "10",
+        "EQUIP[Sanare Card&&Papila Ruba Card]===20",
+        "EQUIP[Sanare Card&&Papila Ruba Card]REFINE[weapon==2]---5"
+      ]
+    }
+  },
+  "300116": {
+    "id": 300116,
+    "aegisName": "Plasma_R_Card",
+    "name": "Powerful Spell Card",
+    "unidName": "Powerful Spell Card",
+    "resName": "이름없는카드",
+    "description": "Str + 2, Int + 1.\r\nMaxHP + 10%, increases Rampage Blast and Tiger Cannon damage by 10%.\r\nWhen equipped with Mutant Plaga Card and Papila Ruba Card, increases Rampage Blast and Tiger Cannon damage by 20%, increases Tiger Cannon damage by additional 5% per 2 refine rate of shoes and increases Rampage Blast damage by additional 5% per 2 refine rate of weapon.\r\nClass: ^777777Card^000000\r\nCompound on: ^777777Accessory^000000\r\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 136,
+    "cardPrefix": "of Sura",
+    "script": {
+      "str": [
+        "2"
+      ],
+      "int": [
+        "1"
+      ],
+      "hpPercent": [
+        "10"
+      ],
+      "Rampage Blast": [
+        "10",
+        "EQUIP[Mutant Plaga Card&&Papila Ruba Card]===20",
+        "EQUIP[Mutant Plaga Card&&Papila Ruba Card]REFINE[weapon==2]---5"
+      ],
+      "Tiger Cannon": [
+        "10",
+        "EQUIP[Mutant Plaga Card&&Papila Ruba Card]===20",
+        "EQUIP[Mutant Plaga Card&&Papila Ruba Card]REFINE[boot==2]---5"
+      ]
+    }
+  },
+  "300117": {
+    "id": 300117,
+    "aegisName": "Plasma_R2_Card",
+    "name": "Sharp Spell Card",
+    "unidName": "Sharp Spell Card",
+    "resName": "이름없는카드",
+    "description": "Dex + 2, Agi + 1.\r\nMaxHP + 10%, increases Arrow Storm and Bomb Cluster damage by 10%.\r\nWhen equipped with Powerful Archer Skeleton Card and Papila Cae Card, increases Arrow Storm and Bomb Cluster damage by 20%, increases Bomb Cluster damage by additional 5% per 2 refine rate of shoes and increases Arrow Storm damage by additional 5% per 2 refine rate of weapon.\r\nClass: ^777777Card^000000\r\nCompound on: ^777777Accessory^000000\r\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 136,
+    "cardPrefix": "of Ranger",
+    "script": {
+      "dex": [
+        "2"
+      ],
+      "agi": [
+        "1"
+      ],
+      "hpPercent": [
+        "10"
+      ],
+      "Arrow Storm": [
+        "10",
+        "EQUIP[Enchanted Archer Skeleton Card&&Papila Cae Card]===20",
+        "EQUIP[Enchanted Archer Skeleton Card&&Papila Cae Card]REFINE[weapon==2]---5"
+      ],
+      "Bomb Cluster": [
+        "10",
+        "EQUIP[Enchanted Archer Skeleton Card&&Papila Cae Card]===20",
+        "EQUIP[Enchanted Archer Skeleton Card&&Papila Cae Card]REFINE[boot==2]---5"
+      ]
+    }
+  },
+  "300118": {
+    "id": 300118,
+    "aegisName": "EP17_2_Phen_Card",
+    "name": "Boiling Water Phen Card",
+    "unidName": "Boiling Water Phen Card",
+    "resName": "이름없는카드",
+    "description": "Str + 2, Vit + 1.\r\nMaxHP + 10%, increases Full Moon Kick and Falling Star damage by 10%.\r\nWhen equipped with Senior Broken Gardener Beta Card and Special Alnoldi Card, increases Full Moon Kick and Falling Star damage by 20%, increases Falling Star damage by additional 5% per 2 refine rate of shoes and increases Full Moon Kick damage by additional 5% per 2 refine rate of weapon.\r\nClass: ^777777Card^000000\r\nCompound on: ^777777Accessory^000000\r\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 136,
+    "cardPrefix": "of Star Master",
+    "script": {
+      "str": [
+        "2"
+      ],
+      "vit": [
+        "1"
+      ],
+      "hpPercent": [
+        "10"
+      ],
+      "Full Moon Kick": [
+        "10",
+        "EQUIP[Senior Broken Gardener Beta Card&&Special Alnoldi Card]===20",
+        "EQUIP[Senior Broken Gardener Beta Card&&Special Alnoldi Card]REFINE[weapon==2]---5"
+      ],
+      "Falling Stars": [
+        "10",
+        "EQUIP[Senior Broken Gardener Beta Card&&Special Alnoldi Card]===20",
+        "EQUIP[Senior Broken Gardener Beta Card&&Special Alnoldi Card]REFINE[boot==2]---5"
+      ]
+    }
+  },
+  "300119": {
+    "id": 300119,
+    "aegisName": "EP17_2_Sword_Fish_Card",
+    "name": "Boiling Water Swordfish Card",
+    "unidName": "Boiling Water Swordfish Card",
+    "resName": "이름없는카드",
+    "description": "Dex + 2, Agi + 1.\r\nMaxHP + 10%, increases Round Trip and Hammer of God damage by 10%.\r\nWhen equipped with Greater Bellare Card and Papila Card, increases Round Trip and Hammer of God damage by 20%, increases Hammer of God damage by additional 5% per 2 refine rate of shoes and increases Round Trip damage by additional 5% per 2 refine rate of weapon.\r\nClass: ^777777Card^000000\r\nCompound on: ^777777Accessory^000000\r\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 136,
+    "cardPrefix": "of Rebellion",
+    "script": {
+      "dex": [
+        "2"
+      ],
+      "agi": [
+        "1"
+      ],
+      "hpPercent": [
+        "10"
+      ],
+      "Round Trip": [
+        "10",
+        "EQUIP[Greater Bellare Card&&Papila Card]===20",
+        "EQUIP[Greater Bellare Card&&Papila Card]REFINE[weapon==2]---5"
+      ],
+      "God's Hammer": [
+        "10",
+        "EQUIP[Greater Bellare Card&&Papila Card]===20",
+        "EQUIP[Greater Bellare Card&&Papila Card]REFINE[boot==2]---5"
+      ]
+    }
+  },
+  "300120": {
+    "id": 300120,
+    "aegisName": "EP17_2_Piranha_Card",
+    "name": "Boiling Water Piranha Card",
+    "unidName": "Boiling Water Piranha Card",
+    "resName": "이름없는카드",
+    "description": "Matk + 2%.\r\nWhen equipped with Piranha Card, Matk + 10, increases magical damage against water property enemies by 15%.\r\nClass: ^777777Card^000000\r\nCompound on: ^777777Accessory^000000\r\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 136,
+    "cardPrefix": "Shoal's",
+    "script": {
+      "matkPercent": [
+        "2"
+      ],
+      "matk": [
+        "EQUIP[Piranha Card]10"
+      ],
+      "m_element_water": [
+        "EQUIP[Piranha Card]15"
+      ]
+    }
+  },
+  "300121": {
+    "id": 300121,
+    "aegisName": "EP17_2_Marc_Card",
+    "name": "Boiling Water Marc Card",
+    "unidName": "Boiling Water Marc Card",
+    "resName": "이름없는카드",
+    "description": "Increases holy and water property magical damage by 5%.\r\nIncreases holy and water property magical damage by additional 1% per 2 refine rate of shoes.\r\nClass: ^777777Card^000000\r\nCompound on: ^777777Shoes^000000\r\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 64,
+    "cardPrefix": "Purified Water's",
+    "script": {
+      "m_my_element_holy": [
+        "5",
+        "2---1"
+      ],
+      "m_my_element_water": [
+        "5",
+        "2---1"
+      ]
+    }
+  },
+  "300122": {
+    "id": 300122,
+    "aegisName": "Pitaya_Y_Card",
+    "name": "Yellow Pitaya Card",
+    "unidName": "Yellow Pitaya Card",
+    "resName": "이름없는카드",
+    "description": "Reduces damage taken from neutral property by 15%.\r\nIncreases holy property magical damage by 3% per refine rate.\r\nWhen equipped with Boiling Water Marc Card, reduces damage taken from neutral property by additional 5%.\r\nClass: ^777777Card^000000\r\nCompound on: ^777777Garment^000000\r\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 4,
+    "cardPrefix": "Saint",
+    "script": {
+      "m_my_element_holy": [
+        "1---3"
+      ]
+    }
+  },
+  "300123": {
+    "id": 300123,
+    "aegisName": "Pitaya_V_Card",
+    "name": "Purple Pitaya Card",
+    "unidName": "Purple Pitaya Card",
+    "resName": "이름없는카드",
+    "description": "Reduces damage taken from neutral property by 15%.\r\nIncreases neutral property magical damage by 3% per refine rate.\r\nWhen equipped with Boiling Water Marc Card, reduces damage taken from neutral property by additional 5%.\r\nClass: ^777777Card^000000\r\nCompound on: ^777777Garment^000000\r\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 4,
+    "cardPrefix": "Formless's",
+    "script": {
+      "m_my_element_neutral": [
+        "1---3"
+      ]
+    }
+  },
+  "300124": {
+    "id": 300124,
+    "aegisName": "Pitaya_B_Card",
+    "name": "Blue Pitaya Card",
+    "unidName": "Blue Pitaya Card",
+    "resName": "이름없는카드",
+    "description": "When compounded on Staff or Two-handed Staff, increases water property magical damage by 10%.\nIf refine rate of weapon is 10 or higher, increases water property magical damage by additional 10%.\nIf refine rate of weapon is 14 or higher, increases water property magical damage by additional 10%.\nClass: ^777777Card^000000\nCompound on: ^777777Weapon^000000\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Water Magical",
+    "script": {
+      "m_my_element_water": [
+        "WEAPON_TYPE[rod]===10",
+        "WEAPON_TYPE[twohandRod]===10",
+        "10===10",
+        "14===10"
+      ]
+    }
+  },
+  "300125": {
+    "id": 300125,
+    "aegisName": "Pitaya_G_Card",
+    "name": "Green Pitaya Card",
+    "unidName": "Green Pitaya Card",
+    "resName": "이름없는카드",
+    "description": "Luk + 2, Int + 1.\r\nMaxHP + 10%, increases Picky Peck and Catnip Meteor damage by 10%.\r\nWhen equipped with Spell Addicted Plaga Card and Broken Gardener Beta Card, increases Picky Peck and Catnip Meteor damage by 20%, increases Catnip Meteor damage by additional 5% per 2 refine rate of shoes and increases Picky Peck damage by additional 5% per 2 refine rate of weapon.\r\nClass: ^777777Card^000000\r\nCompound on: ^777777Accessory^000000\r\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 136,
+    "cardPrefix": "of Summoner",
+    "script": {
+      "luk": [
+        "2"
+      ],
+      "int": [
+        "1"
+      ],
+      "hpPercent": [
+        "10"
+      ],
+      "Picky Peck": [
+        "10",
+        "EQUIP[Spell Addicted Plaga Card&&Broken Gardener Beta Card]===20",
+        "EQUIP[Spell Addicted Plaga Card&&Broken Gardener Beta Card]REFINE[weapon==2]---5"
+      ],
+      "Catnip Meteor": [
+        "10",
+        "EQUIP[Spell Addicted Plaga Card&&Broken Gardener Beta Card]===20",
+        "EQUIP[Spell Addicted Plaga Card&&Broken Gardener Beta Card]REFINE[boot==2]---5"
+      ]
+    }
+  },
+  "300141": {
+    "id": 300141,
+    "aegisName": "ILL_Obeaune_Card",
+    "name": "Abysmal Obeaune Card",
+    "unidName": "Abysmal Obeaune Card",
+    "resName": "이름없는카드",
+    "description": "Matk + 30.\r\nWhen equipped with Boiling Water Piranha Card, increases magical damage against water property enemies by 15%.\r\n^ffffff_^000000\r\nClass: ^777777Card^000000\r\nCompound on: ^777777Accessory^000000\r\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 136,
+    "cardPrefix": "Mermaid's",
+    "script": {
+      "matk": [
+        "30"
+      ],
+      "m_element_water": [
+        "EQUIP[Boiling Water Piranha Card]15"
       ]
     }
   },
