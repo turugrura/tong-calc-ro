@@ -36980,6 +36980,296 @@
       ]
     }
   },
+  "24675": {
+    "id": 24675,
+    "aegisName": "S_TrueGem_Armor",
+    "name": "True Gemstone Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우3",
+    "description": "Matk + 3%.\nIncreases all property magical damage by 1% per 2 refine rate.\nIf refine rate is 10 or higher, reduces variable casting time by 3%.\nWhen equipped with True Gemstone Shadow Shoes, Matk + 2%,\nif the sum of refine rate of set is 18 or higher, negates gemstone consumption of skills, increases SP consumption of skills by 40%,\nif the sum of refine rate of set is 20 or higher, increases magical damage against all size enemies by 12%.\nClass: ^777777Shadow Equipment^000000 \nLocation: ^777777Armor^000000\nWeight: ^7777770^000000\nRequired Level: ^7777771^000000\nJobs: ^777777All^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Armor",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "matkPercent": [
+        "3",
+        "EQUIP[True Gemstone Shadow Shoes]===2"
+      ],
+      "m_my_element_all": [
+        "2---1"
+      ],
+      "vct": [
+        "10===3"
+      ],
+      "spPercentCost": [
+        "EQUIP[True Gemstone Shadow Shoes]REFINE[shadowArmor,shadowBoot==18]===40"
+      ],
+      "m_size_all": [
+        "EQUIP[True Gemstone Shadow Shoes]REFINE[shadowArmor,shadowBoot==20]===12"
+      ]
+    }
+  },
+  "24676": {
+    "id": 24676,
+    "aegisName": "S_TrueGem_Shoes",
+    "name": "True Gemstone Shadow Shoes",
+    "unidName": "Shadow Shoes",
+    "resName": "슈즈쉐도우3",
+    "description": "Matk + 3%.\nIncreases all property magical damage by 1% per 2 refine rate.\nIf refine rate is 10 or higher, reduces variable casting time by 3%.\nClass: ^777777Shadow Equipment^000000\nLocation: ^777777Shoes^000000 Weight: ^7777770^000000\nRequired Level: ^7777771^000000\nJobs: ^777777All^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 528,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Shoes",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "matkPercent": [
+        "3"
+      ],
+      "m_my_element_all": [
+        "2---1"
+      ],
+      "vct": [
+        "10===3"
+      ]
+    }
+  },
+  "24677": {
+    "id": 24677,
+    "aegisName": "S_TrueGem_Earring",
+    "name": "True Gemstone Shadow Earring",
+    "unidName": "Shadow Earring",
+    "resName": "이어링쉐도우3",
+    "description": "Matk + 3%.\nIncreases all property magical damage by 1% per 2 refine rate.\nIf refine rate is 10 or higher, reduces variable casting time by 3%.\nWhen equipped with True Gemstone Shadow Pendant, Matk + 2%,\nif the sum of refine rate of set is 18 or higher, negates gemstone consumption of skills, increases SP consumption of skills by 40%,\nif the sum of refine rate of set is 20 or higher, increases magical damage against all size enemies by 12%.\nClass: ^777777Shadow Equipment^000000\nLocation: ^777777Earring^000000 Weight: ^7777770^000000\nRequired Level: ^7777771^000000\nJobs: ^777777All^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 529,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "AccessoryRight",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "matkPercent": [
+        "3",
+        "EQUIP[True Gemstone Shadow Pendant]===2"
+      ],
+      "m_my_element_all": [
+        "2---1"
+      ],
+      "vct": [
+        "10===3"
+      ],
+      "spPercentCost": [
+        "EQUIP[True Gemstone Shadow Pendant]REFINE[shadowEarring,shadowPendant==18]===40"
+      ],
+      "m_size_all": [
+        "EQUIP[True Gemstone Shadow Pendant]REFINE[shadowEarring,shadowPendant==20]===12"
+      ]
+    }
+  },
+  "24678": {
+    "id": 24678,
+    "aegisName": "S_TrueGem_Pendant",
+    "name": "True Gemstone Shadow Pendant",
+    "unidName": "Shadow Pendant",
+    "resName": "펜던트쉐도우3",
+    "description": "Matk + 3%.\nIncreases all property magical damage by 1% per 2 refine rate.\nIf refine rate is 10 or higher, reduces variable casting time by 3%.\nClass: ^777777Shadow Equipment^000000\nLocation: ^777777Pendant^000000 Weight: ^7777770^000000\nRequired Level: ^7777771^000000\nJobs: ^777777All Jobs^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 530,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "AccessoryLeft",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "matkPercent": [
+        "3"
+      ],
+      "m_my_element_all": [
+        "2---1"
+      ],
+      "vct": [
+        "10===3"
+      ]
+    }
+  },
+  "24679": {
+    "id": 24679,
+    "aegisName": "S_M_Mammoth_Armor",
+    "name": "Maximum Mammoth Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우3",
+    "description": "Atk + 3%.\nIncreases melee and long ranged physical damage by 1% per 2 refine rate.\nIf refine rate is 10 or higher, MaxHP + 3%.\nWhen equipped with Maximum Mammoth Shadow Shoes, Atk + 2%,\nif the sum of refine rate of set is 18 or higher, grants immunity to knock-back.\nif the sum of refine rate of set is 20 or higher, increases physical damage against all property enemies by 12%.\nClass: ^777777Shadow Equipment^000000 \nLocation: ^777777Padded Armor^000000\nWeight: ^7777770^000000\nRequired Level: ^7777771^000000\nJobs: ^777777All^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Armor",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atkPercent": [
+        "3",
+        "EQUIP[Maximum Mammoth Shadow Shoes]===2"
+      ],
+      "melee": [
+        "2---1"
+      ],
+      "range": [
+        "2---1"
+      ],
+      "hpPercent": [
+        "10===3"
+      ],
+      "p_element_all": [
+        "EQUIP[Maximum Mammoth Shadow Shoes]REFINE[shadowArmor,shadowBoot==20]===12"
+      ]
+    }
+  },
+  "24680": {
+    "id": 24680,
+    "aegisName": "S_M_Mammoth_Shoes",
+    "name": "Maximum Mammoth Shadow Shoes",
+    "unidName": "Shadow Shoes",
+    "resName": "슈즈쉐도우3",
+    "description": "Atk + 3%.\nIncreases melee and long ranged physical damage by 1% per 2 refine rate.\nIf refine rate is 10 or higher, MaxHP + 3%.\nClass: ^777777Shadow Equipment^000000\nLocation: ^777777Shoes^000000 Weight: ^7777770^000000\nRequired Level: ^7777771^000000\nJobs: ^777777All^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 528,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Shoes",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atkPercent": [
+        "3"
+      ],
+      "melee": [
+        "2---1"
+      ],
+      "range": [
+        "2---1"
+      ],
+      "hpPercent": [
+        "10===3"
+      ]
+    }
+  },
+  "24681": {
+    "id": 24681,
+    "aegisName": "S_M_Mammoth_Earring",
+    "name": "Maximum Mammoth Shadow Earring",
+    "unidName": "Shadow Earring",
+    "resName": "이어링쉐도우3",
+    "description": "Atk + 3%.\nIncreases melee and long ranged physical damage by 1% per 2 refine rate.\nIf refine rate is 10 or higher, MaxHP + 3%.\nWhen equipped with Maximum Mammoth Shadow Pendant, Atk + 2%,\nif the sum of refine rate of set is 18 or higher, grants immunity to knock-back.\nif the sum of refine rate of set is 20 or higher, increases physical damage against all property enemies by 12%.\nClass: ^777777Shadow Equipment^000000\nLocation: ^777777Earring^000000 Weight: ^7777770^000000\nRequired Level: ^7777771^000000\nJobs: ^777777All^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 529,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "AccessoryRight",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atkPercent": [
+        "3",
+        "EQUIP[Maximum Mammoth Shadow Pendant]===2"
+      ],
+      "melee": [
+        "2---1"
+      ],
+      "range": [
+        "2---1"
+      ],
+      "hpPercent": [
+        "10===3"
+      ],
+      "p_element_all": [
+        "EQUIP[Maximum Mammoth Shadow Pendant]REFINE[shadowEarring,shadowPendant==20]===12"
+      ]
+    }
+  },
+  "24682": {
+    "id": 24682,
+    "aegisName": "S_M_Mammoth_Pendant",
+    "name": "Maximum Mammoth Shadow Pendant",
+    "unidName": "Shadow Pendant",
+    "resName": "펜던트쉐도우3",
+    "description": "Atk + 3%.\nIncreases melee and long ranged physical damage by 1% per 2 refine rate.\nIf refine rate is 10 or higher, MaxHP + 3%.\nClass: ^777777Shadow Equipment^000000\nLocation: ^777777Pendant^000000 Weight: ^7777770^000000\nRequired Level: ^7777771^000000\nJobs: ^777777All Jobs^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 530,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "AccessoryLeft",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atkPercent": [
+        "3"
+      ],
+      "melee": [
+        "2---1"
+      ],
+      "range": [
+        "2---1"
+      ],
+      "hpPercent": [
+        "10===3"
+      ]
+    }
+  },
   "24685": {
     "id": 24685,
     "aegisName": "S_Absorb_Shield",
@@ -37047,6 +37337,158 @@
       ],
       "vct": [
         "7===3"
+      ]
+    }
+  },
+  "24734": {
+    "id": 24734,
+    "aegisName": "S_Durable_Weapon",
+    "name": "Durable Weapon Shadow",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우3",
+    "description": "Increases melee and long ranged physical damage by 2%.\nAtk + 1% per 2 refine rate.\nIf refine rate is 9 or higher, ASPD + 1.\nIf refine rate is 10 or higher, increases melee and long ranged physical damage by 7%.\nClass: ^777777Shadow Equipment^000000\nLocation: ^777777Weapon^000000 Weight: ^7777770^000000\nRequired Level: ^77777799^000000\nJobs: ^777777All^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1"
+      ],
+      "melee": [
+        "2",
+        "10===7"
+      ],
+      "range": [
+        "2",
+        "10===7"
+      ],
+      "atkPercent": [
+        "2---1"
+      ],
+      "aspd": [
+        "9===1"
+      ]
+    }
+  },
+  "24736": {
+    "id": 24736,
+    "aegisName": "S_Clever_Weapon",
+    "name": "Clever Weapon Shadow",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우3",
+    "description": "Increases all property magical damage by 2%.\nMatk + 1% per 2 refine rate.\nIf refine rate is 9 or higher, reduces variable casting time by 5%.\nIf refine rate is 10 or higher, increases all property magical damage by 7%.\nClass: ^777777Shadow Equipment^000000\nLocation: ^777777Weapon^000000 Weight: ^7777770^000000\nRequired Level: ^77777799^000000\nJobs: ^777777All^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1"
+      ],
+      "m_my_element_all": [
+        "2",
+        "10===7"
+      ],
+      "matkPercent": [
+        "2---1"
+      ],
+      "vct": [
+        "9===5"
+      ]
+    }
+  },
+  "24737": {
+    "id": 24737,
+    "aegisName": "S_Clever_Shield",
+    "name": "Clever Shield Shadow",
+    "unidName": "Shadow Shield",
+    "resName": "쉴드쉐도우3",
+    "description": "Increases all property magical damage by 2%.\nMatk + 1% per 2 refine rate.\nIf refine rate is 9 or higher, reduces variable casting time by 5%.\nIf refine rate is 10 or higher, increases all property magical damage by 7%.\nClass: ^777777Shadow Equipment^000000\nLocation: ^777777Shield^000000 Weight: ^7777770^000000\nRequired Level: ^77777799^000000\nJobs: ^777777All^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 527,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Shield",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "m_my_element_all": [
+        "2",
+        "10===7"
+      ],
+      "matkPercent": [
+        "2---1"
+      ],
+      "vct": [
+        "9===5"
+      ]
+    }
+  },
+  "24738": {
+    "id": 24738,
+    "aegisName": "S_CriticalHit_Weapon",
+    "name": "Critical Hit Weapon Shadow",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우3",
+    "description": "Atk + 15, Cri + 7.\nIncreases critical damage 1% per 2 refine rate.\nIf refine rate is 7 or higher, additional Cri + 7.\nClass: ^777777Shadow Equipment^000000\nLocation: ^777777Weapon^000000 Weight: ^7777770^000000\nRequired Level: ^7777771^000000\nJobs: ^777777All^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atk": [
+        "1---1",
+        "15"
+      ],
+      "matk": [
+        "1---1"
+      ],
+      "cri": [
+        "7",
+        "7===7"
+      ],
+      "criDmg": [
+        "2---1"
       ]
     }
   },
@@ -37309,6 +37751,43 @@
     "usableClass": [
       "Soul Reaper"
     ]
+  },
+  "24745": {
+    "id": 24745,
+    "aegisName": "S_KingbirdAnc_Weapon",
+    "name": "Kingbird Ancient Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우3",
+    "description": "Atk + 15, Hit + 15.\nIncreases long ranged physical damage by 1% per 2 refine rate.\nIf refine rate is 7 or higher, additional Hit + 15.\nClass: ^777777Shadow Equipment^000000\nLocation: ^777777Weapon^000000 Weight: ^7777770^000000\nRequired Level: ^7777771^000000\nJobs: ^777777All^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atk": [
+        "1---1",
+        "15"
+      ],
+      "matk": [
+        "1---1"
+      ],
+      "hit": [
+        "15",
+        "7===15"
+      ],
+      "range": [
+        "2---1"
+      ]
+    }
   },
   "26118": {
     "id": 26118,

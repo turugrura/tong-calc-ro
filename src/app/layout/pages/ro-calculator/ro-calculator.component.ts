@@ -1626,7 +1626,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       return true;
     };
 
-    this.weaponList = this.itemList.weaponList.filter(onlyMe);
+    this.weaponList = this.itemList.weaponList; //.filter(onlyMe);
     this.leftWeaponList = this.itemList.leftWeaponList.filter(onlyMe);
     this.weaponCardList = this.itemList.weaponCardList.filter(onlyMe);
     // this.ammoList = this.itemList.ammoList.filter(onlyMe);
