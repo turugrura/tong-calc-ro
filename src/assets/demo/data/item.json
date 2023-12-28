@@ -61405,7 +61405,7 @@
     "compositionPos": 65535,
     "script": {
       "vct": [
-        "LEARN_SKILL[Lauda Agnus==1]---3"
+        "LEARN_SKILL[Laudaagnus==1]---3"
       ],
       "Adoramus": [
         "EQUIP[Archbishop Stone (Garment)]===15"
