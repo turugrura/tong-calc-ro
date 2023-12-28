@@ -61839,7 +61839,7 @@
     "location": null,
     "compositionPos": 65535,
     "script": {
-      "melee physical": [
+      "melee": [
         "LEARN_SKILL[Dark Illusion==1]---2"
       ],
       "Rolling Cutter": [
