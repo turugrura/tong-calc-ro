@@ -199,7 +199,47 @@ export class StarEmperor extends CharacterBase {
     FusionSunMoonStar(),
   ];
 
-  protected readonly _passiveSkillList: PassiveSkillModel[] = [];
+  protected readonly _passiveSkillList: PassiveSkillModel[] = [
+    {
+      label: 'Blessing of Sun',
+      name: 'Blessing of Sun',
+      inputType: 'dropdown',
+      dropdown: [
+        { label: '-', isUse: false, value: 0 },
+        { label: 'Lv 1', isUse: true, value: 1 },
+        { label: 'Lv 2', isUse: true, value: 2 },
+        { label: 'Lv 3', isUse: true, value: 3 },
+        { label: 'Lv 4', isUse: true, value: 4 },
+        { label: 'Lv 5', isUse: true, value: 5 },
+      ],
+    },
+    {
+      label: 'Blessing of Moon',
+      name: 'Blessing of Moon',
+      inputType: 'dropdown',
+      dropdown: [
+        { label: '-', isUse: false, value: 0 },
+        { label: 'Lv 1', isUse: true, value: 1 },
+        { label: 'Lv 2', isUse: true, value: 2 },
+        { label: 'Lv 3', isUse: true, value: 3 },
+        { label: 'Lv 4', isUse: true, value: 4 },
+        { label: 'Lv 5', isUse: true, value: 5 },
+      ],
+    },
+    {
+      label: 'Blessing of Star',
+      name: 'Blessing of Star',
+      inputType: 'dropdown',
+      dropdown: [
+        { label: '-', isUse: false, value: 0 },
+        { label: 'Lv 1', isUse: true, value: 1 },
+        { label: 'Lv 2', isUse: true, value: 2 },
+        { label: 'Lv 3', isUse: true, value: 3 },
+        { label: 'Lv 4', isUse: true, value: 4 },
+        { label: 'Lv 5', isUse: true, value: 5 },
+      ],
+    },
+  ];
 
   constructor() {
     super();

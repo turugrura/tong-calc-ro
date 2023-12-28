@@ -167,7 +167,57 @@ export class SoulReaper extends CharacterBase {
       ],
     },
   ];
-  protected _passiveSkillList: PassiveSkillModel[] = [];
+  protected _passiveSkillList: PassiveSkillModel[] = [
+    {
+      label: 'Espa',
+      name: 'Espa',
+      inputType: 'dropdown',
+      dropdown: [
+        { label: '-', isUse: false, value: 0 },
+        { label: 'Lv 1', isUse: true, value: 1 },
+        { label: 'Lv 2', isUse: true, value: 2 },
+        { label: 'Lv 3', isUse: true, value: 3 },
+        { label: 'Lv 4', isUse: true, value: 4 },
+        { label: 'Lv 5', isUse: true, value: 5 },
+        { label: 'Lv 6', isUse: true, value: 6 },
+        { label: 'Lv 7', isUse: true, value: 7 },
+        { label: 'Lv 8', isUse: true, value: 8 },
+        { label: 'Lv 9', isUse: true, value: 9 },
+        { label: 'Lv 10', isUse: true, value: 10 },
+      ],
+    },
+    {
+      label: 'Eswhoo',
+      name: 'Eswhoo',
+      inputType: 'dropdown',
+      dropdown: [
+        { label: '-', isUse: false, value: 0 },
+        { label: 'Lv 1', isUse: true, value: 1 },
+        { label: 'Lv 2', isUse: true, value: 2 },
+        { label: 'Lv 3', isUse: true, value: 3 },
+        { label: 'Lv 4', isUse: true, value: 4 },
+        { label: 'Lv 5', isUse: true, value: 5 },
+        { label: 'Lv 6', isUse: true, value: 6 },
+        { label: 'Lv 7', isUse: true, value: 7 },
+        { label: 'Lv 8', isUse: true, value: 8 },
+        { label: 'Lv 9', isUse: true, value: 9 },
+        { label: 'Lv 10', isUse: true, value: 10 },
+      ],
+    },
+    {
+      label: 'Evil Soul Curse',
+      name: 'Evil Soul Curse',
+      inputType: 'dropdown',
+      dropdown: [
+        { label: '-', isUse: false, value: 0 },
+        { label: 'Lv 1', isUse: true, value: 1 },
+        { label: 'Lv 2', isUse: true, value: 2 },
+        { label: 'Lv 3', isUse: true, value: 3 },
+        { label: 'Lv 4', isUse: true, value: 4 },
+        { label: 'Lv 5', isUse: true, value: 5 },
+      ],
+    },
+  ];
 
   constructor() {
     super();
