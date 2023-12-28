@@ -202,7 +202,7 @@ export class Rebelion extends CharacterBase {
     {
       isEquipAtk: true,
       inputType: 'selectButton',
-      label: 'Platinum Altar',
+      label: 'Platinum Altar 10',
       name: 'Platinum Altar',
       dropdown: [
         { label: 'Yes', value: 1, skillLv: 1, isUse: true, bonus: { atk: 150 } },
@@ -211,7 +211,7 @@ export class Rebelion extends CharacterBase {
     },
     {
       inputType: 'selectButton',
-      label: 'Hot Barrel',
+      label: 'Hot Barrel 5',
       name: 'Hot Barrel',
       isEquipAtk: true,
       dropdown: [
@@ -320,12 +320,60 @@ export class Rebelion extends CharacterBase {
       ],
     },
     {
-      label: 'Chain Action Lv10',
+      label: 'Chain Action',
       name: 'Chain Action',
-      inputType: 'selectButton',
+      inputType: 'dropdown',
       dropdown: [
-        { label: 'Yes', value: 10, skillLv: 10, isUse: true },
-        { label: 'No', value: 0, isUse: false },
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 1', value: 1, skillLv: 1, isUse: true },
+        { label: 'Lv 2', value: 2, skillLv: 2, isUse: true },
+        { label: 'Lv 3', value: 3, skillLv: 3, isUse: true },
+        { label: 'Lv 4', value: 4, skillLv: 4, isUse: true },
+        { label: 'Lv 5', value: 5, skillLv: 5, isUse: true },
+        { label: 'Lv 6', value: 6, skillLv: 6, isUse: true },
+        { label: 'Lv 7', value: 7, skillLv: 7, isUse: true },
+        { label: 'Lv 8', value: 8, skillLv: 8, isUse: true },
+        { label: 'Lv 9', value: 9, skillLv: 9, isUse: true },
+        { label: 'Lv 10', value: 10, skillLv: 10, isUse: true },
+      ],
+    },
+    {
+      name: 'Platinum Altar',
+      label: 'Platinum Altar',
+      inputType: 'dropdown',
+      dropdown: [
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 1', value: 1, skillLv: 1, isUse: true },
+        { label: 'Lv 2', value: 2, skillLv: 2, isUse: true },
+        { label: 'Lv 3', value: 3, skillLv: 3, isUse: true },
+        { label: 'Lv 4', value: 4, skillLv: 4, isUse: true },
+        { label: 'Lv 5', value: 5, skillLv: 5, isUse: true },
+      ],
+    },
+    {
+      name: 'Hot Barrel',
+      label: 'Hot Barrel',
+      inputType: 'dropdown',
+      dropdown: [
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 1', value: 1, skillLv: 1, isUse: true },
+        { label: 'Lv 2', value: 2, skillLv: 2, isUse: true },
+        { label: 'Lv 3', value: 3, skillLv: 3, isUse: true },
+        { label: 'Lv 4', value: 4, skillLv: 4, isUse: true },
+        { label: 'Lv 5', value: 5, skillLv: 5, isUse: true },
+      ],
+    },
+    {
+      name: 'Fire Rain',
+      label: 'Fire Rain',
+      inputType: 'dropdown',
+      dropdown: [
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 1', value: 1, skillLv: 1, isUse: true },
+        { label: 'Lv 2', value: 2, skillLv: 2, isUse: true },
+        { label: 'Lv 3', value: 3, skillLv: 3, isUse: true },
+        { label: 'Lv 4', value: 4, skillLv: 4, isUse: true },
+        { label: 'Lv 5', value: 5, skillLv: 5, isUse: true },
       ],
     },
   ];

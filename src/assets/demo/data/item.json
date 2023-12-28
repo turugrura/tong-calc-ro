@@ -62333,7 +62333,7 @@
     "compositionPos": 65535,
     "script": {
       "vct": [
-        "LEARN_SKILL[Fresh Shrimp==1]---2"
+        "LEARN_SKILL[Frash Shrimp==1]---2"
       ],
       "Catnip Meteor": [
         "EQUIP[Doram Stone (Garment)]===25"

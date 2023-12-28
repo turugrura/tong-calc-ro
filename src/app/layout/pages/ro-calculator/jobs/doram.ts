@@ -100,21 +100,71 @@ export class Doram extends CharacterBase {
 
   protected readonly _atkSkillList: AtkSkillModel[] = [
     {
-      label: 'Silvervine Stem Spear',
+      label: 'Silvervine Stem Spear (Earth)',
       name: 'Silvervine Stem Spear',
-      value: 'Silvervine Stem Spear==5',
+      value: 'Silvervine Stem Spear Earth==5',
       acd: 1,
       fct: 0.5,
       vct: 2,
       cd: 1,
       isMatk: true,
-      levelList: [
-        { label: 'Lv 1 Earth', value: 'Silvervine Stem Spear==1' },
-        { label: 'Lv 2 Fire', value: 'Silvervine Stem Spear==2' },
-        { label: 'Lv 3 Water', value: 'Silvervine Stem Spear==3' },
-        { label: 'Lv 4 Wind', value: 'Silvervine Stem Spear==4' },
-        { label: 'Lv 5 Ghost', value: 'Silvervine Stem Spear==5' },
-      ],
+      element: ElementType.Earth,
+      formula: (_input: AtkSkillFormulaInput): number => {
+        return 700;
+      },
+    },
+    {
+      label: 'Silvervine Stem Spear (Fire)',
+      name: 'Silvervine Stem Spear',
+      value: 'Silvervine Stem Spear Fire==5',
+      acd: 1,
+      fct: 0.5,
+      vct: 2,
+      cd: 1,
+      isMatk: true,
+      element: ElementType.Fire,
+      formula: (_input: AtkSkillFormulaInput): number => {
+        return 700;
+      },
+    },
+    {
+      label: 'Silvervine Stem Spear (Water)',
+      name: 'Silvervine Stem Spear',
+      value: 'Silvervine Stem Spear Water==5',
+      acd: 1,
+      fct: 0.5,
+      vct: 2,
+      cd: 1,
+      isMatk: true,
+      element: ElementType.Water,
+      formula: (_input: AtkSkillFormulaInput): number => {
+        return 700;
+      },
+    },
+    {
+      label: 'Silvervine Stem Spear (Wind)',
+      name: 'Silvervine Stem Spear',
+      value: 'Silvervine Stem Spear Wind==5',
+      acd: 1,
+      fct: 0.5,
+      vct: 2,
+      cd: 1,
+      isMatk: true,
+      element: ElementType.Wind,
+      formula: (_input: AtkSkillFormulaInput): number => {
+        return 700;
+      },
+    },
+    {
+      label: 'Silvervine Stem Spear (Ghost)',
+      name: 'Silvervine Stem Spear',
+      value: 'Silvervine Stem Spear Ghost==5',
+      acd: 1,
+      fct: 0.5,
+      vct: 2,
+      cd: 1,
+      isMatk: true,
+      element: ElementType.Ghost,
       formula: (_input: AtkSkillFormulaInput): number => {
         return 700;
       },
@@ -155,7 +205,7 @@ export class Doram extends CharacterBase {
       },
     },
     {
-      label: 'Lunatic Carrot Lv5',
+      label: 'Lunatic Carrot Beat Lv5',
       name: 'Lunatic Carrot Beat',
       value: 'Lunatic Carrot Beat==5',
       acd: 1,
@@ -176,13 +226,17 @@ export class Doram extends CharacterBase {
 
   protected readonly _activeSkillList: ActiveSkillModel[] = [
     {
-      label: 'Arclouse Dash 5',
+      label: 'Arclouse Dash',
       name: 'Arclouse Dash',
-      inputType: 'selectButton',
+      inputType: 'dropdown',
       isEquipAtk: true,
       dropdown: [
-        { label: 'Yes', value: 5, skillLv: 5, isUse: true, bonus: { agi: 40, range: 10 } },
-        { label: 'No', value: 0, isUse: false },
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 1', value: 1, isUse: true, bonus: { agi: 20, range: 10 } },
+        { label: 'Lv 2', value: 2, isUse: true, bonus: { agi: 25, range: 10 } },
+        { label: 'Lv 3', value: 3, isUse: true, bonus: { agi: 30, range: 10 } },
+        { label: 'Lv 4', value: 4, isUse: true, bonus: { agi: 35, range: 10 } },
+        { label: 'Lv 5', value: 5, isUse: true, bonus: { agi: 40, range: 10 } },
       ],
     },
     {
@@ -283,6 +337,10 @@ export class Doram extends CharacterBase {
       inputType: 'dropdown',
       dropdown: [
         { label: '-', value: 0, isUse: false },
+        { label: 'Lv 1', value: 1, isUse: true },
+        { label: 'Lv 2', value: 2, isUse: true },
+        { label: 'Lv 3', value: 3, isUse: true },
+        { label: 'Lv 4', value: 4, isUse: true },
         { label: 'Lv 5', value: 5, skillLv: 5, isUse: true },
       ],
     },
@@ -292,6 +350,10 @@ export class Doram extends CharacterBase {
       inputType: 'dropdown',
       dropdown: [
         { label: '-', value: 0, isUse: false },
+        { label: 'Lv 1', value: 1, isUse: true },
+        { label: 'Lv 2', value: 2, isUse: true },
+        { label: 'Lv 3', value: 3, isUse: true },
+        { label: 'Lv 4', value: 4, isUse: true },
         { label: 'Lv 5', value: 5, skillLv: 5, isUse: true },
       ],
     },
@@ -301,6 +363,10 @@ export class Doram extends CharacterBase {
       inputType: 'dropdown',
       dropdown: [
         { label: '-', value: 0, isUse: false },
+        { label: 'Lv 1', value: 1, isUse: true },
+        { label: 'Lv 2', value: 2, isUse: true },
+        { label: 'Lv 3', value: 3, isUse: true },
+        { label: 'Lv 4', value: 4, isUse: true },
         { label: 'Lv 5', value: 5, skillLv: 5, isUse: true },
       ],
     },
@@ -310,6 +376,10 @@ export class Doram extends CharacterBase {
       inputType: 'dropdown',
       dropdown: [
         { label: '-', value: 0, isUse: false },
+        { label: 'Lv 1', value: 1, isUse: true },
+        { label: 'Lv 2', value: 2, isUse: true },
+        { label: 'Lv 3', value: 3, isUse: true },
+        { label: 'Lv 4', value: 4, isUse: true },
         { label: 'Lv 5', value: 5, skillLv: 5, isUse: true },
       ],
     },
@@ -320,6 +390,58 @@ export class Doram extends CharacterBase {
       dropdown: [
         { label: 'Yes', value: 1, skillLv: 1, isUse: true },
         { label: 'No', value: 0, isUse: false },
+      ],
+    },
+    {
+      label: 'Picky Peck',
+      name: 'Picky Peck',
+      inputType: 'dropdown',
+      dropdown: [
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 1', value: 1, isUse: true },
+        { label: 'Lv 2', value: 2, isUse: true },
+        { label: 'Lv 3', value: 3, isUse: true },
+        { label: 'Lv 4', value: 4, isUse: true },
+        { label: 'Lv 5', value: 5, isUse: true },
+      ],
+    },
+    {
+      label: 'Silvervine Stem Spear',
+      name: 'Silvervine Stem Spear',
+      inputType: 'dropdown',
+      dropdown: [
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 1', value: 1, isUse: true },
+        { label: 'Lv 2', value: 2, isUse: true },
+        { label: 'Lv 3', value: 3, isUse: true },
+        { label: 'Lv 4', value: 4, isUse: true },
+        { label: 'Lv 5', value: 5, isUse: true },
+      ],
+    },
+    {
+      label: 'Frash Shrimp',
+      name: 'Frash Shrimp',
+      inputType: 'dropdown',
+      dropdown: [
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 1', value: 1, isUse: true },
+        { label: 'Lv 2', value: 2, isUse: true },
+        { label: 'Lv 3', value: 3, isUse: true },
+        { label: 'Lv 4', value: 4, isUse: true },
+        { label: 'Lv 5', value: 5, isUse: true },
+      ],
+    },
+    {
+      label: 'Arclouse Dash',
+      name: 'Arclouse Dash',
+      inputType: 'dropdown',
+      dropdown: [
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 1', value: 1, isUse: true },
+        { label: 'Lv 2', value: 2, isUse: true },
+        { label: 'Lv 3', value: 3, isUse: true },
+        { label: 'Lv 4', value: 4, isUse: true },
+        { label: 'Lv 5', value: 5, isUse: true },
       ],
     },
   ];
