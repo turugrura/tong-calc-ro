@@ -11186,6 +11186,29 @@
       ]
     }
   },
+  "12321": {
+    "id": 12321,
+    "aegisName": "Spicy_Sandwich",
+    "name": "Arunafeltz Desert Sandwich",
+    "unidName": "Arunafeltz Desert Sandwich",
+    "resName": "덱요리04",
+    "description": "ขนมที่ส่งมาจาก Arunafeltz แซนด์วิชนี้จะช่วยให้คุณอึดขึ้นเพราะรสเผ็ด\n^000088Critical +7 เป็นเวลา 10 นาที^000000\n^ffffff_^000000\nน้ำหนัก : ^77777730^000000",
+    "slots": 0,
+    "itemTypeId": 3,
+    "itemSubTypeId": 768,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 30,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "cri": [
+        "7"
+      ]
+    }
+  },
   "12414": {
     "id": 12414,
     "aegisName": "Guarana_Candy",
@@ -12751,6 +12774,29 @@
       ],
       "Fireball": [
         "9===30"
+      ]
+    }
+  },
+  "14536": {
+    "id": 14536,
+    "aegisName": "Abrasive",
+    "name": "Abrasive",
+    "unidName": "Abrasive",
+    "resName": "그린에일",
+    "description": "น้ำยาเพิ่มความคมให้กับอาวุธ\nเพิ่ม Critical Rate 30 เป็นเวลา 5 นาที\nเมื่อผู้ใช้อยู่ในสถานะที่ไม่สามารถต่อสู้ได้ ผลของ item นี้จะหมดลง\n^ffffff_^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 3,
+    "itemSubTypeId": 768,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "cri": [
+        "30"
       ]
     }
   },
