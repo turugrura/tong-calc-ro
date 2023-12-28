@@ -8,3 +8,7 @@ export * from './lerads-dew';
 export * from './severe-rainstorm';
 export * from './circling-nature-fn';
 export * from './friggs-song-fn';
+export * from './righthand-mastery-fn';
+export * from './pure-soul-fn';
+export * from './s16th-night-fn';
+export * from './illusion-shock-fn';

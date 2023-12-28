@@ -11,6 +11,7 @@ import { ShadowWarrior } from '../constants/share-active-skills/shadow-warrior';
 import { InfoForClass } from '../models/info-for-class.model';
 import { floor } from '../utils';
 import { DistortedCrescent, S16thNight } from '../constants/share-active-skills';
+import { IllusionShockFn, PureSoulFn, RighthandMasteryFn, S16thNightFn } from '../constants/share-passive-skills';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 0, 1, 0],
@@ -188,32 +189,35 @@ export class Kagerou extends CharacterBase {
 
   protected readonly _passiveSkillList: PassiveSkillModel[] = [
     {
-      label: 'Soul Cutter 5',
+      label: 'Soul Cutter',
       name: 'Soul Cutter',
-      inputType: 'selectButton',
+      inputType: 'dropdown',
       dropdown: [
-        { label: 'Yes', value: 5, isUse: true },
-        { label: 'No', value: 0, isUse: false },
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 1', value: 1, isUse: true },
+        { label: 'Lv 2', value: 2, isUse: true },
+        { label: 'Lv 3', value: 3, isUse: true },
+        { label: 'Lv 4', value: 4, isUse: true },
+        { label: 'Lv 5', value: 5, isUse: true },
       ],
     },
     {
-      label: 'Illusion - Shadow 5',
+      label: 'Illusion - Shadow',
       name: 'Illusion - Shadow',
-      inputType: 'selectButton',
+      inputType: 'dropdown',
       dropdown: [
-        { label: 'Yes', value: 5, isUse: true },
-        { label: 'No', value: 0, isUse: false },
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 1', value: 1, isUse: true },
+        { label: 'Lv 2', value: 2, isUse: true },
+        { label: 'Lv 3', value: 3, isUse: true },
+        { label: 'Lv 4', value: 4, isUse: true },
+        { label: 'Lv 5', value: 5, isUse: true },
       ],
     },
-    {
-      label: 'Illusion - Shock 5',
-      name: 'Illusion - Shock',
-      inputType: 'selectButton',
-      dropdown: [
-        { label: 'Yes', value: 5, isUse: true },
-        { label: 'No', value: 0, isUse: false },
-      ],
-    },
+    IllusionShockFn(),
+    RighthandMasteryFn(),
+    PureSoulFn(),
+    S16thNightFn(),
   ];
 
   constructor() {

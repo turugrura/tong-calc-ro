@@ -12,6 +12,7 @@ import { ElementType } from '../constants/element-type.const';
 import { InfoForClass } from '../models/info-for-class.model';
 import { floor } from '../utils';
 import { DistortedCrescent, S16thNight } from '../constants/share-active-skills';
+import { IllusionShockFn, PureSoulFn, RighthandMasteryFn, S16thNightFn } from '../constants/share-passive-skills';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 0, 1, 0],
@@ -213,34 +214,61 @@ export class Oboro extends CharacterBase {
 
   protected readonly _passiveSkillList: PassiveSkillModel[] = [
     {
-      label: 'Flaming Petals 10',
+      label: 'Flaming Petals',
       name: 'Flaming Petals',
-      inputType: 'selectButton',
+      inputType: 'dropdown',
       dropdown: [
-        { label: 'Yes', value: 10, skillLv: 10, isUse: true },
-        { label: 'No', value: 0, isUse: false },
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 1', value: 1, isUse: true },
+        { label: 'Lv 2', value: 2, isUse: true },
+        { label: 'Lv 3', value: 3, isUse: true },
+        { label: 'Lv 4', value: 4, isUse: true },
+        { label: 'Lv 5', value: 5, isUse: true },
+        { label: 'Lv 6', value: 6, isUse: true },
+        { label: 'Lv 7', value: 7, isUse: true },
+        { label: 'Lv 8', value: 8, isUse: true },
+        { label: 'Lv 9', value: 9, isUse: true },
+        { label: 'Lv 10', value: 10, isUse: true },
       ],
     },
     {
-      label: 'Freezing Spear 10',
+      label: 'Freezing Spear',
       name: 'Freezing Spear',
-      inputType: 'selectButton',
+      inputType: 'dropdown',
       dropdown: [
-        { label: 'Yes', value: 10, skillLv: 10, isUse: true },
-        { label: 'No', value: 0, isUse: false },
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 1', value: 1, isUse: true },
+        { label: 'Lv 2', value: 2, isUse: true },
+        { label: 'Lv 3', value: 3, isUse: true },
+        { label: 'Lv 4', value: 4, isUse: true },
+        { label: 'Lv 5', value: 5, isUse: true },
+        { label: 'Lv 6', value: 6, isUse: true },
+        { label: 'Lv 7', value: 7, isUse: true },
+        { label: 'Lv 8', value: 8, isUse: true },
+        { label: 'Lv 9', value: 9, isUse: true },
+        { label: 'Lv 10', value: 10, isUse: true },
       ],
     },
     {
-      label: 'Wind Blade 10',
+      label: 'Wind Blade',
       name: 'Wind Blade',
-      inputType: 'selectButton',
+      inputType: 'dropdown',
       dropdown: [
-        { label: 'Yes', value: 10, skillLv: 10, isUse: true },
-        { label: 'No', value: 0, isUse: false },
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 1', value: 1, isUse: true },
+        { label: 'Lv 2', value: 2, isUse: true },
+        { label: 'Lv 3', value: 3, isUse: true },
+        { label: 'Lv 4', value: 4, isUse: true },
+        { label: 'Lv 5', value: 5, isUse: true },
+        { label: 'Lv 6', value: 6, isUse: true },
+        { label: 'Lv 7', value: 7, isUse: true },
+        { label: 'Lv 8', value: 8, isUse: true },
+        { label: 'Lv 9', value: 9, isUse: true },
+        { label: 'Lv 10', value: 10, isUse: true },
       ],
     },
     {
-      label: 'Illusion-Bewitch',
+      label: 'Illusion - Bewitch',
       name: 'Illusion - Bewitch',
       inputType: 'dropdown',
       dropdown: [
@@ -253,7 +281,7 @@ export class Oboro extends CharacterBase {
       ],
     },
     {
-      label: 'Illusion-Death',
+      label: 'Illusion - Death',
       name: 'Illusion - Death',
       inputType: 'dropdown',
       dropdown: [
@@ -265,19 +293,7 @@ export class Oboro extends CharacterBase {
         { label: 'Lv 5', value: 5, skillLv: 5, isUse: true },
       ],
     },
-    {
-      label: 'Illusion-Shock',
-      name: 'Illusion - Shock',
-      inputType: 'dropdown',
-      dropdown: [
-        { label: '-', value: 0, isUse: false },
-        { label: 'Lv 1', value: 1, skillLv: 1, isUse: true },
-        { label: 'Lv 2', value: 2, skillLv: 2, isUse: true },
-        { label: 'Lv 3', value: 3, skillLv: 3, isUse: true },
-        { label: 'Lv 4', value: 4, skillLv: 4, isUse: true },
-        { label: 'Lv 5', value: 5, skillLv: 5, isUse: true },
-      ],
-    },
+    IllusionShockFn(),
     {
       label: 'Moonlight Fantasy',
       name: 'Moonlight Fantasy',
@@ -291,6 +307,9 @@ export class Oboro extends CharacterBase {
         { label: 'Lv 5', value: 5, skillLv: 5, isUse: true },
       ],
     },
+    RighthandMasteryFn(),
+    PureSoulFn(),
+    S16thNightFn(),
   ];
 
   constructor() {
