@@ -110,6 +110,18 @@ export class AppTopBarComponent {
 
   updates: { v: string; date: string; logs: string[] }[] = [
     {
+      v: 'V1.7.11',
+      date: '29-12-2566',
+      logs: [
+        'Fixed reported bugs',
+        'Added Official last updated items',
+        'Added EP 17.2 Card sets',
+        'Added 3rd Class costume enchant stones (Upper,Middle,Lower)',
+        'Added Royal Guard offensive skill (Gloria Domini)',
+        'Added requested items, monsters',
+      ],
+    },
+    {
       v: 'V1.7.10',
       date: '25-12-2566',
       logs: ['Fixed reported bugs', 'Added requested items'],
@@ -136,7 +148,7 @@ export class AppTopBarComponent {
         'Fixed Berserk potion unavailable for SR/SE',
         'Fixed reported bugs',
         'Added Rune Knight offensive skill (Dragon Breath & Improved versions)',
-        'Added Official latest update items',
+        'Added Official last updated items',
         'Added requested items',
       ],
     },
@@ -257,7 +269,7 @@ export class AppTopBarComponent {
       logs: [
         'Fixed One-hand Axe cannot equip shield',
         'Added Minstrel/Wanderer offensive skill (Reverberation)',
-        'Added Official latest update items',
+        'Added Official last updated items',
         'Added requested items',
       ],
     },
