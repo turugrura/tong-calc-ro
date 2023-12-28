@@ -9,7 +9,15 @@ import {
 import { Archer } from './archer';
 import { InfoForClass } from '../models/info-for-class.model';
 import { WeaponTypeName } from '../constants/weapon-type-mapper';
-import { DanceWithWug, LeradsDew, Lesson, SevereRainstorm, SongOfMana } from '../constants/share-passive-skills';
+import {
+  CirclingNatureFn,
+  DanceWithWug,
+  FriggsSongFn,
+  LeradsDew,
+  Lesson,
+  SevereRainstorm,
+  SongOfMana,
+} from '../constants/share-passive-skills';
 import { ElementType } from '../constants/element-type.const';
 import { BragisPoem } from '../constants/share-active-skills';
 
@@ -319,6 +327,8 @@ export class Wanderer extends CharacterBase {
     SongOfMana,
     DanceWithWug,
     LeradsDew,
+    CirclingNatureFn(),
+    FriggsSongFn(),
   ];
 
   constructor() {

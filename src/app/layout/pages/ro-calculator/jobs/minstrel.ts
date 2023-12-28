@@ -9,7 +9,15 @@ import {
 import { WeaponTypeName } from '../constants/weapon-type-mapper';
 import { InfoForClass } from '../models/info-for-class.model';
 import { Archer } from './archer';
-import { DanceWithWug, LeradsDew, Lesson, SevereRainstorm, SongOfMana } from '../constants/share-passive-skills';
+import {
+  CirclingNatureFn,
+  DanceWithWug,
+  FriggsSongFn,
+  LeradsDew,
+  Lesson,
+  SevereRainstorm,
+  SongOfMana,
+} from '../constants/share-passive-skills';
 import { ElementType } from '../constants/element-type.const';
 import { BragisPoem } from '../constants/share-active-skills';
 
@@ -324,6 +332,8 @@ export class Minstrel extends CharacterBase {
     SongOfMana,
     DanceWithWug,
     LeradsDew,
+    CirclingNatureFn(),
+    FriggsSongFn(),
   ];
 
   constructor() {

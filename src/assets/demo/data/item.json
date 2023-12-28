@@ -61118,7 +61118,7 @@
         "LEARN_SKILL[Lesson==1]---1"
       ],
       "Metalic Sound": [
-        "EQUIP[Wander Mins Stone II (Garment)]===15"
+        "EQUIP[Wanderer Minstrel Stone II (Garment)]===15"
       ]
     }
   },
@@ -61147,10 +61147,10 @@
         "LEARN_SKILL[Circling Nature==1]---0.1"
       ],
       "p_size_all": [
-        "EQUIP[Wander Mins Stone (Garment)]===15"
+        "EQUIP[Wanderer Minstrel Stone (Garment)]===15"
       ],
       "m_my_element_all": [
-        "EQUIP[Wander Mins Stone II (Garment)]===15"
+        "EQUIP[Wanderer Minstrel Stone II (Garment)]===15"
       ]
     }
   },
@@ -61176,10 +61176,10 @@
         "LEARN_SKILL[Frigg's Song==1]---0.1"
       ],
       "Severe Rainstorm": [
-        "EQUIP[Wander Mins Stone (Garment)]===15"
+        "EQUIP[Wanderer Minstrel Stone (Garment)]===15"
       ],
       "Reverberation": [
-        "EQUIP[Wander Mins Stone II (Garment)]===15"
+        "EQUIP[Wanderer Minstrel Stone II (Garment)]===15"
       ]
     }
   },
