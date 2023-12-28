@@ -62938,9 +62938,9 @@
     "id": 400078,
     "aegisName": "BioWeapon_Helm_RK",
     "name": "Goral Crown [1]",
-    "unidName": "Headgear",
+    "unidName": "Helm",
     "resName": "백양궁왕관",
-    "description": "Atk + 20 per 2 refine rate.\nIf refine rate is 7 or higher, increases attack speed (reduces delay after attack by 10%).\nIf refine rate is 9 or higher, increase long ranged physical damage by 15%.\nIf refine rate is 11 or higher, increases physical damage against all size enemies by 10%.\n\nWhen equipped with Volar, increases critical damage by 10%,\nincreases Ignition Break damage by 12% per refine rate of weapon.\n\nWhen equipped with Vernan, reduces global cooldown by 10%,\nincreases Sonic Wave damage by 10% per refine rate of weapon.\n\nWhen equipped with Argen Blanco, reduces skill cooldown of Hundred Spear by 0.5 seconds,\nincreases Hundred Spear damage by 10% per refine rate of weapon.\nClass: ^777777Headgear^000000 Defense: ^77777710^000000\nLocation: ^777777Upper ^000000 Weight: ^77777710^000000\nRequired Level: ^777777170^000000\nJobs: ^777777Rune Knight^000000",
+    "description": "มงกุฎที่ทำขึ้นเพื่อร่างทดลองเฉพาะ ทำขึ้นเป็นรูปร่างเหมือนเขากับแผงคอของสัตว์ป่าที่ตกแต่งด้วยอัญมณีสีแดง\nทุก ๆ การอัพเกรด 2 ขั้น ATK +20\nเมื่ออัพเกรดถึงขั้น 7, ASPD +10%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพระยะไกล 15%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 10%\n\nเมื่อสวมใส่ร่วมกับ Volar,\nCritical Damage +10%, ทุก ๆ การอัพเกรด Weapon 1 ขั้น เพิ่ม Damage สกิล Ignition Break 12%\nเมื่อสวมใส่ร่วมกับ Vernan,\nลด Delay หลังใช้สกิล 10%, ทุก ๆ การอัพเกรด Weapon 1 ขั้น เพิ่ม Damage สกิล Sonic Wave 10%\nเมื่อสวมใส่ร่วมกับ Argen Blanco,\nลด Cooldown สกิล Hundred Spears 0.5 วินาที, ทุก ๆ การอัพเกรด Weapon 1 ขั้น เพิ่ม Damage สกิล Hundred Spears 10%\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^77777710^000000\nตำแหน่ง : ^777777Upper ^000000 น้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่สวมใส่ : ^777777Rune Knight^000000",
     "slots": 1,
     "itemTypeId": 2,
     "itemSubTypeId": 512,
@@ -62991,9 +62991,9 @@
     "id": 400079,
     "aegisName": "BioWeapon_Helm_LG",
     "name": "Trial Diadem [1]",
-    "unidName": "Headgear",
+    "unidName": "Helm",
     "resName": "천칭궁보관",
-    "description": "Atk + 20 and Matk + 20 per 2 refine rate.\nIf refine rate is 7 or higher, increases attack speed (reduces delay after attack by 10%).\nIf refine rate is 9 or higher, Atk + 15%, increase holy property magical damage by 15%.\nIf refine rate is 11 or higher, increases physical and magical damage against all size enemies by 10%, reduces fixed casting time by 0.2 seconds.\n\nWhen equipped with Farthezan, reduces variable casting time by 10%,\nincreases Gloria Domini and Genesis Ray damage by 10% per refine rate of weapon.\n\nWhen equipped with Harve, reduces skill cooldown of Shield Press by 1 second,\nincreases Shield Press damage by 10% per refine rate of weapon.\n\nWhen equipped with Fortridge, reduces skill cooldown of Cannon Spear by 0.5 seconds,\nincreases Cannon Spear damage by 12% per refine rate of weapon.\nClass: ^777777Headgear^000000 Defense: ^77777710^000000\nLocation: ^777777Upper ^000000 Weight: ^77777710^000000\nRequired Level: ^777777170^000000\nJobs: ^777777Royal Guard^000000",
+    "description": "มงกุฎที่ทำขึ้นเพื่อร่างทดลองเฉพาะ ทำขึ้นเป็นรูปร่างพิลึกพิลั่นอย่างมีเอกลักษณ์ และตกแต่งด้วยอัญมณีสีน้ำเงิน\nทุก ๆ การอัพเกรด 2 ขั้น ATK +20, MATK +20\nเมื่ออัพเกรดถึงขั้น 7, ASPD +10%\nเมื่ออัพเกรดถึงขั้น 9, ATK +15%, เพิ่ม Damage ทางเวทมนตร์ธาตุ Holy 15%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูทุกขนาด 10%, ลดระยะเวลาร่ายแบบคงที่ 0.2 วินาที\n\nเมื่อสวมใส่ร่วมกับ Farthezan,\nลดระยะเวลาร่ายแบบแปรผัน 15%, ทุก ๆ การอัพเกรด Weapon 1 ขั้น เพิ่ม Damage สกิล Gloria Domini และ Genesis Ray 10%\nเมื่อสวมใส่ร่วมกับ Harve,\nลด Cooldown สกิล Shield Press 1 วินาที, ทุก ๆ การอัพเกรด Weapon 1 ขั้น เพิ่ม Damage สกิล Shield Press 10%\nเมื่อสวมใส่ร่วมกับ Fortridge,\nลด Cooldown สกิล Cannon Spear 0.5 วินาที, ทุก ๆ การอัพเกรด Weapon 1 ขั้น เพิ่ม Damage สกิล Cannon Spear 12%\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^77777710^000000\nตำแหน่ง : ^777777Upper ^000000 น้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่สวมใส่ : ^777777Royal Guard^000000",
     "slots": 1,
     "itemTypeId": 2,
     "itemSubTypeId": 512,
@@ -64231,6 +64231,58 @@
       ],
       "m_size_all": [
         "EQUIP[Temporal Int Manteau&&Robust Magical Armor]REFINE[armor,garment==22]===10"
+      ]
+    }
+  },
+  "420030": {
+    "id": 420030,
+    "aegisName": "Falconer_Flute_C",
+    "name": "Feather in Mouth",
+    "unidName": "Mask",
+    "resName": "매부리의피리",
+    "description": "ขนนกที่แสดงถึงความว่องไว\nเมือคาบเอาไว้ที่ปากและเป่ามันจะส่งเสียงออกมา\n\nเพิ่ม Damage ทางกายภาพระยะไกล 5%\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^7777770^000000\nตำแหน่ง : ^777777Lower^000000 น้ำหนัก : ^7777771^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่สวมใส่ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 1,
+    "requiredLevel": 1,
+    "location": "Lower",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "range": [
+        "5"
+      ]
+    }
+  },
+  "420031": {
+    "id": 420031,
+    "aegisName": "Mask_Of_Orochimaru_C",
+    "name": "Ninja's Blue Mask",
+    "unidName": "Mask",
+    "resName": "오로치마루의마스크",
+    "description": "หน้ากากสีน้ำเงินที่ให้ความรู้สึกราวกับนินจา\n\nเพิ่ม Damage ทางกายภาพระยะใกล้ 5%\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^7777770^000000\nตำแหน่ง : ^777777Lower^000000 น้ำหนัก : ^7777771^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่สวมใส่ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 1,
+    "requiredLevel": 1,
+    "location": "Lower",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "melee": [
+        "5"
       ]
     }
   },
@@ -65722,6 +65774,80 @@
       ]
     }
   },
+  "470255": {
+    "id": 470255,
+    "aegisName": null,
+    "name": "Zodiac Boots (Swordsman) [1]",
+    "unidName": "Zodiac Boots (Swordsman)",
+    "resName": "HalfBloodPrincess_Shoes",
+    "description": "รองเท้าคุณภาพดีที่ได้รับพลังจากกลุ่มดาว Aries และ Libra\n\nATK/MATK +50\nทุก ๆ การอัพเกรด 2 ขั้น ATK/MATK +10, ATK/MATK +1%\nทุก ๆ การอัพเกรด 4 ขั้น เพิ่ม Damage สกิล Sonic Wave และ Genesis Ray 15%\nเมื่ออัพเกรดตั้งแต่ 9 ขึ้นไป ลดระยะเวลาร่ายแบบคงที่ 0.5 วินาที\nเมื่ออัพเกรดตั้งแต่ 11 ขึ้นไป ลด Delay หลังใช้สกิล 10%\n\nเมื่อสวมใส่ร่วมกับ Seyren's Memory,\nลด Cooldown สกิล Sonic Wave 0.5 วินาที\nทุก ๆ การอัพเกรด Weapon 4 ขั้น Critical Damage +20%\n\nเมื่อสวมใส่ร่วมกับ Randel's Memory,\nลด Cooldown สกิล Genesis Ray 0.2 วินาที\nทุก ๆ การอัพเกรด Weapon 4 ขั้น เพิ่ม Damage สกิล Gloria Domini 40%\n\nเมื่อสวมใส่ร่วมกับ Seyren's Memory และ Goral Crown,\nเมื่อค่าอัพเกรดรวมกันของ Headgear, Shoes, Weapon ตั้งแต่ 33 ขึ้นไป เพิ่ม Damage ทางกายภาพระยะไกล 30%\nเมื่อค่าอัพเกรดรวมกันของ Headgear, Shoes, Weapon ตั้งแต่ 35 ขึ้นไป เพิกเฉยต่อพลังป้องกันทางกายภาพของมอนสเตอร์ทุกเผ่า 40% (ยกเว้น Player)\n\nเมื่อสวมใส่ร่วมกับ Randel's Memory และ Trial Diadem,\nเมื่อค่าอัพเกรดรวมกันของ Headgear, Shoes, Weapon ตั้งแต่ 33 ขึ้นไป เพิ่ม Damage ทางเวทมนตร์ธาตุ Holy 30%\nเมื่อค่าอัพเกรดรวมกันของ Headgear, Shoes, Weapon ตั้งแต่ 35 ขึ้นไป เพิกเฉยต่อพลังป้องกันทางเวทมนตร์ของมอนสเตอร์ทุกเผ่า 40% (ยกเว้น Player)\nประเภท : ^777777Shoes^000000  พลังป้องกัน : ^77777760^000000\nน้ำหนัก : ^77777790^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่สวมใส่ : ^777777Swordsman Class 3^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 516,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 60,
+    "weight": 90,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Rune Knight",
+      "Royal Guard"
+    ],
+    "script": {
+      "atk": [
+        "50",
+        "2---10"
+      ],
+      "atkPercent": [
+        "2---1"
+      ],
+      "matk": [
+        "50",
+        "2---10"
+      ],
+      "matkPercent": [
+        "2---1"
+      ],
+      "Sonic Wave": [
+        "4---15"
+      ],
+      "Genesis Ray": [
+        "4---15"
+      ],
+      "fct": [
+        "9===0.5"
+      ],
+      "acd": [
+        "11===10"
+      ],
+      "cd__Sonic Wave": [
+        "EQUIP[Seyren's Memory]===0.5"
+      ],
+      "criDmg": [
+        "EQUIP[Seyren's Memory]REFINE[weapon==4]---20"
+      ],
+      "cd__Genesis Ray": [
+        "EQUIP[Randel's Memory]===0.2"
+      ],
+      "Gloria Domini": [
+        "EQUIP[Randel's Memory]REFINE[weapon==4]---40"
+      ],
+      "range": [
+        "EQUIP[Seyren's Memory&&Goral Crown]REFINE[headUpper,weapon,boot==33]===30"
+      ],
+      "p_pene_race_all": [
+        "EQUIP[Seyren's Memory&&Goral Crown]REFINE[headUpper,weapon,boot==35]===40"
+      ],
+      "m_my_element_holy": [
+        "EQUIP[Randel's Memory&&Trial Diadem]REFINE[headUpper,weapon,boot==33]===30"
+      ],
+      "m_pene_race_all": [
+        "EQUIP[Randel's Memory&&Trial Diadem]REFINE[headUpper,weapon,boot==35]===40"
+      ]
+    }
+  },
   "480000": {
     "id": 480000,
     "aegisName": "Atker_Manteau",
@@ -65955,6 +66081,45 @@
       ],
       "m_my_element_all": [
         "EQUIP[Automatic Leg B-type]===15"
+      ]
+    }
+  },
+  "480023": {
+    "id": 480023,
+    "aegisName": "Arabian_Manteau",
+    "name": "Arabian Manteau [1]",
+    "unidName": "Hood",
+    "resName": "Arabian_Manteau",
+    "description": "MaxHP +10%, Critical Damage +5%\n\nเมื่ออัพเกรดถึงขั้น 7, CRI +5, Critical Damage +5%\nเมื่ออัพเกรดถึงขั้น 9, CRI +10, Critical Damage +10%\nเมื่ออัพเกรดถึงขั้น 11, CRI +20, Critical Damage +20%\nเมื่ออัพเกรดถึงขั้น 13, CRI +30, Critical Damage +30%\n\nประเภท : ^777777Garment^000000  พลังป้องกัน : ^77777710^000000\nน้ำหนัก : ^77777730^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่สวมใส่ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 515,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 10,
+    "weight": 30,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "hpPercent": [
+        "10"
+      ],
+      "criDmg": [
+        "5",
+        "7===5",
+        "9===10",
+        "11===20",
+        "13===30"
+      ],
+      "cri": [
+        "7===5",
+        "9===10",
+        "11===20",
+        "13===30"
       ]
     }
   },
@@ -69672,6 +69837,94 @@
       ],
       "Cross Slash": [
         "EQUIP[Patent Kiri no Tsuyu]REFINE[weapon==11]SUM[str,agi==12]---1"
+      ]
+    }
+  },
+  "490488": {
+    "id": 490488,
+    "aegisName": null,
+    "name": "Ring of Unknown Hero(Archbishop) [1]",
+    "unidName": "Ring of Unknown Hero(Archbishop)",
+    "resName": "Ullr_Bracelet",
+    "description": "แหวนของฮีโร่นิรนาม\n\nลด Delay หลังใช้สกิล 3%\nเพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูทุกประเภท 6%\n\nเมื่อสวมใส่ร่วมกับ Patent Saint Mace,\nเพิ่ม Damage ทางเวทมนตร์ต่อมอนสเตอร์ทุกเผ่า 8%\nเมื่ออัพเกรด Patent Saint Mace ตั้งแต่ 11 ขึ้นไป,\nเมื่อ Base INT และ LUK รวมกันได้ทุก ๆ 12 หน่วย เพิ่ม Damage สกิล Adoramus 1%\n\nเมื่อสวมใส่ร่วมกับ Patent Exorcist's Bible,\nเพิ่ม Damage ทางเวทมนตร์ต่อมอนสเตอร์ทุกเผ่า 8%\nเมื่ออัพเกรด Patent Exorcist's Bible ตั้งแต่ 11 ขึ้นไป,\nเมื่อ Base INT และ AGI รวมกันได้ทุก ๆ 12 หน่วย เพิ่ม Damage สกิล Judex 1%\nประเภท : ^777777Accessory (Right)^000000 พลังป้องกัน : ^7777777^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่สวมใส่ : ^777777Arch Bishop^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 510,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 7,
+    "weight": 10,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Arch Bishop"
+    ],
+    "script": {
+      "acd": [
+        "3"
+      ],
+      "p_class_all": [
+        "6"
+      ],
+      "m_class_all": [
+        "6"
+      ],
+      "m_race_all": [
+        "EQUIP[Patent Saint Mace]===8",
+        "EQUIP[Patent Exorcist's Bible]===8"
+      ],
+      "Adoramus": [
+        "EQUIP[Patent Saint Mace]REFINE[weapon==11]SUM[int,luk==12]---1"
+      ],
+      "Judex": [
+        "EQUIP[Patent Exorcist's Bible]REFINE[weapon==11]SUM[int,agi==12]---1"
+      ]
+    }
+  },
+  "490490": {
+    "id": 490490,
+    "aegisName": null,
+    "name": "Avaricia Encyclopedia [1]",
+    "unidName": "Avaricia Encyclopedia",
+    "resName": "뱀백과사전",
+    "description": "สัญลักษณ์ส่วนสุดท้ายของ Lady Justice ที่หลายคนมองข้าม ถูกแสดงออกมาในภาพลักษณ์ของงูที่สื่อถึงความอยุติธรรมซึ่ง Lady Justice นั้นได้เหยียบเอาไว้\n(Cave cave! dominus videt)\n\nMATK +10%\nลดระยะเวลาร่ายแบบแปรผัน 10%\nลด Delay หลังใช้สกิล 5%\nทุก ๆ Base Lv. 1 เพิ่ม Damage สกิล Gloria Domini 1%\n\nเมื่อสวมใส่ร่วมกับ Themis Balance หรือ [Not For Sale] Themis Balance,\nทุก ๆ การอัพเกรด Shield 3 ขั้น ลดระยะเวลาร่ายแบบแปรผัน 3%, ลด Delay หลังใช้สกิล 3%\n\nเมื่อสวมใส่ร่วมกับ Themis Balance หรือ [Not For Sale] Themis Balance และ Above B.E.2 475 หรือ [Not For Sale] Above B.E.2 475,\nทุก ๆ การอัพเกรด Shield 3 ขั้น เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกธาตุ 5%\n\nเมื่อสวมใส่ร่วมกับ Themis Balance หรือ [Not For Sale] Themis Balance และ Above B.E.2 475 หรือ [Not For Sale] Above B.E.2 475 และ Dark Blinkers หรือ Dark Blinkers [1],\nASPD +15%\nเมื่ออัพเกรด Shield ตั้งแต่ 9 ขึ้นไป เพิ่ม Damage ทางเวทมนตร์ต่อมอนสเตอร์ประเภท Boss 20%\nเมื่ออัพเกรด Shield ตั้งแต่ 11 ขึ้นไป เมื่อใช้สกิล Gloria Domini มีโอกาส 35% ที่จะร่าย Gloria Domini Lv. 5 ใส่เป้าหมาย\nประเภท : ^777777Accessory (Left)^000000 พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^77777760^000000\nอาชีพที่สวมใส่ : ^777777Royal Guard^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 511,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 60,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Royal Guard"
+    ],
+    "script": {
+      "matkPercent": [
+        "10"
+      ],
+      "vct": [
+        "10",
+        "EQUIP[Themis Balance]REFINE[shield==3]---3"
+      ],
+      "acd": [
+        "5",
+        "EQUIP[Themis Balance]REFINE[shield==3]---3"
+      ],
+      "Gloria Domini": [
+        "SUM[level==1]---1"
+      ],
+      "m_element_all": [
+        "EQUIP[Themis Balance&&Above B.E.2 475]REFINE[shield==3]---5"
+      ],
+      "aspdPercent": [
+        "EQUIP[Themis Balance&&Above B.E.2 475&&Dark Blinkers]===15"
+      ],
+      "m_class_boss": [
+        "EQUIP[Themis Balance&&Above B.E.2 475&&Dark Blinkers]REFINE[shield==9]===20"
       ]
     }
   },
