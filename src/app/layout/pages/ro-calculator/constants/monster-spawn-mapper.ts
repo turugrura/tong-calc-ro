@@ -1,5 +1,9 @@
 const Mapper = {
   iz_ac01: 'Test damage',
+  abyss_01: '115 - 125 มังกร 3',
+  abyss_02: '115 - 125 มังกร 3',
+  abyss_03: '115 - 125 มังกร 3',
+  lhz_dun02: '120 - 135 Lab 2',
   lasa_dun02: '125 - 133 Lasa แมว 2',
   lasa_dun03: '133 - 150 Lasa แมว 3',
   lhz_dun04: '140 - 150 แลป 4',
@@ -16,6 +20,7 @@ const Mapper = {
   hero_tra: 'Test damage',
   tra_fild: 'Test damage',
   prontera: 'Test damage',
+  lhz_dun03: 'Lab 3',
   lhz_dun_n: 'Lab 5',
 } as const;
 
