@@ -1,8 +1,15 @@
 import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
+import {
+  ActiveSkillModel,
+  AtkSkillFormulaInput,
+  AtkSkillModel,
+  CharacterBase,
+  PassiveSkillModel,
+} from './_character-base.abstract';
 import { Swordman } from './swordman';
 import { DemonBane, Heal, SpearMastery } from '../constants/share-passive-skills';
 import { CavalierMastery } from '../constants/share-passive-skills/cavalier-mastery';
+import { ElementType } from '../constants/element-type.const';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {};
 
@@ -12,7 +19,25 @@ export class Paladin extends CharacterBase {
 
   protected readonly initialStatusPoint = 40;
   protected readonly classNames = ['Hi-Class', 'Paladin', 'Paladin Cls', 'Paladin Class'];
-  protected readonly _atkSkillList: AtkSkillModel[] = [];
+  protected readonly _atkSkillList: AtkSkillModel[] = [
+    {
+      label: 'Gloria Domini Lv5',
+      name: 'Gloria Domini',
+      value: 'Gloria Domini==5',
+      acd: 1,
+      fct: 1,
+      vct: 1,
+      cd: 0,
+      isMatk: true,
+      element: ElementType.Holy,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
+
+        return (500 + skillLevel * 150) * (baseLevel / 100);
+      },
+    },
+  ];
   protected readonly _activeSkillList: ActiveSkillModel[] = [
     {
       label: 'Spear Quick 10',
