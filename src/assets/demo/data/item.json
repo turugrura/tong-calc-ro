@@ -60823,6 +60823,1549 @@
       ]
     }
   },
+  "310881": {
+    "id": 310881,
+    "aegisName": "Runeknight_Top3",
+    "name": "Rune Knight Stone (Upper)",
+    "unidName": "Rune Knight Stone (Upper)",
+    "resName": "Lord_Knight_Figure",
+    "description": "Increases critical damage by 2% per each level of Dragon Training user learned.\nWhen equipped with Rune Knight Stone (Garment), reduces variable casting time by 10%.\nWhen equipped with Rune Knight Stone II (Garment), increases Hundred Spears damage by 15%.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 71,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "criDmg": [
+        "LEARN_SKILL[Dragon Training==1]---2"
+      ],
+      "vct": [
+        "EQUIP[Rune Knight Stone (Garment)]===10"
+      ],
+      "Hundred Spears": [
+        "EQUIP[Rune Knight Stone II (Garment)]===15"
+      ]
+    }
+  },
+  "310882": {
+    "id": 310882,
+    "aegisName": "Runeknight_Middle3",
+    "name": "Rune Knight Stone (Middle)",
+    "unidName": "Rune Knight Stone (Middle)",
+    "resName": "Lord_Knight_Figure",
+    "description": "Increases melee and long ranged physical damage by 1% per 2 levels of Rune Mastery user learned.\nWhen equipped with Rune Knight Stone (Garment), increases Dragon Breath and Dragon Breath - Water damage by 15%.\nWhen equipped with Rune Knight Stone II (Garment), increases Sonic Wave damage by 15%.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 72,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "melee": [
+        "LEARN_SKILL[Rune Mastery==2]---1"
+      ],
+      "range": [
+        "LEARN_SKILL[Rune Mastery==2]---1"
+      ],
+      "Dragon Breath": [
+        "EQUIP[Rune Knight Stone (Garment)]===15"
+      ],
+      "Dragon Breath - WATER": [
+        "EQUIP[Rune Knight Stone (Garment)]===15"
+      ],
+      "Sonic Wave": [
+        "EQUIP[Rune Knight Stone II (Garment)]===15"
+      ]
+    }
+  },
+  "310883": {
+    "id": 310883,
+    "aegisName": "Runeknight_Bottom3",
+    "name": "Rune Knight Stone (Lower)",
+    "unidName": "Rune Knight Stone (Lower)",
+    "resName": "Lord_Knight_Figure",
+    "description": "Increases Wind Cutter damage by 5% per each level of Enchant Blade user learned.\nWhen equipped with Rune Knight Stone (Garment), MaxHP/MaxSP + 10%.\nWhen equipped with Rune Knight Stone II (Garment), increases Ignition Break damage by 15%.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 73,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "Wind Cutter": [
+        "LEARN_SKILL[Enchant Blade==1]---5"
+      ],
+      "hpPercent": [
+        "EQUIP[Rune Knight Stone (Garment)]===10"
+      ],
+      "spPercent": [
+        "EQUIP[Rune Knight Stone (Garment)]===10"
+      ],
+      "Ignition Break": [
+        "EQUIP[Rune Knight Stone II (Garment)]===15"
+      ]
+    }
+  },
+  "310884": {
+    "id": 310884,
+    "aegisName": "Warlock_Top3",
+    "name": "Warlock Stone (Upper)",
+    "unidName": "Warlock Stone (Upper)",
+    "resName": "High_Wizard_Figure",
+    "description": "Increases all property magical damage by 2% per each level of Soul Expansion user learned.\nWhen equipped with Warlock Stone (Garment), increases Soul Expansion damage by 15%.\nWhen equipped with Warlock Stone II (Garment), increases Jack Frost damage by 15%.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 71,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "m_my_element_all": [
+        "LEARN_SKILL[Soul Expansion==1]---2"
+      ],
+      "Soul Expansion": [
+        "EQUIP[Warlock Stone (Garment)]===15"
+      ],
+      "Jack Frost": [
+        "EQUIP[Warlock Stone II (Garment)]===15"
+      ]
+    }
+  },
+  "310885": {
+    "id": 310885,
+    "aegisName": "Warlock_Middle3",
+    "name": "Warlock Stone (Middle)",
+    "unidName": "Warlock Stone (Middle)",
+    "resName": "High_Wizard_Figure",
+    "description": "Reduces fixed casting time by 0.1 seconds per each level of Comet user learned.\nWhen equipped with Warlock Stone (Garment), increases Crimson Rock damage by 15%.\nWhen equipped with Warlock Stone II (Garment), increases Jack Frost damage by 15%.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 72,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "fct": [
+        "LEARN_SKILL[Comet==1]---0.1"
+      ],
+      "Crimson Rock": [
+        "EQUIP[Warlock Stone (Garment)]===15"
+      ],
+      "Jack Frost": [
+        "EQUIP[Warlock Stone II (Garment)]===15"
+      ]
+    }
+  },
+  "310886": {
+    "id": 310886,
+    "aegisName": "Warlock_Bottom3",
+    "name": "Warlock Stone (Lower)",
+    "unidName": "Warlock Stone (Lower)",
+    "resName": "High_Wizard_Figure",
+    "description": "Reduces global cooldown by 1% per each level of Chain Lightning user learned.\nWhen equipped with Warlock Stone (Garment), increases Chain Lightning damage by 15%.\nWhen equipped with Warlock Stone II (Garment), increases Comet damage by 15%.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 73,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "acd": [
+        "LEARN_SKILL[Chain Lightning==1]---1"
+      ],
+      "Chain Lightning": [
+        "EQUIP[Warlock Stone (Garment)]===15"
+      ],
+      "Comet": [
+        "EQUIP[Warlock Stone II (Garment)]===15"
+      ]
+    }
+  },
+  "310887": {
+    "id": 310887,
+    "aegisName": "Royalguard_Top3",
+    "name": "Royal Guard Stone (Upper)",
+    "unidName": "Royal Guard Stone (Upper)",
+    "resName": "Paladin_Figure",
+    "description": "Reduces fixed casting time by 0.1 seconds per each level of Inspiration user learned.\r\nWhen equipped with Royal Guard Stone (Garment), increases Cannon Spear damage by 15%.\r\nWhen equipped with Royal Guard Stone II (Garment), increases Genesis Ray damage by 15%.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 71,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "fct": [
+        "LEARN_SKILL[Inspiration==1]---0.1"
+      ],
+      "Cannon Spear": [
+        "EQUIP[Royal Guard Stone (Garment)]===15"
+      ],
+      "Genesis Ray": [
+        "EQUIP[Royal Guard Stone II (Garment)]===15"
+      ]
+    }
+  },
+  "310888": {
+    "id": 310888,
+    "aegisName": "Royalguard_Middle3",
+    "name": "Royal Guard Stone (Middle)",
+    "unidName": "Royal Guard Stone (Middle)",
+    "resName": "Paladin_Figure",
+    "description": "Increases long ranged physical damage and all property magical damage by 2% per each level of Piety user learned.\nWhen equipped with Royal Guard Stone (Garment), increases Vanishing Point damage by 15%.\nWhen equipped with Royal Guard Stone II (Garment), reduces SP consumption of Genesis Ray by 15%.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 72,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "range": [
+        "LEARN_SKILL[Piety==1]---2"
+      ],
+      "m_my_element_all": [
+        "LEARN_SKILL[Piety==1]---2"
+      ],
+      "Vanishing Point": [
+        "EQUIP[Royal Guard Stone (Garment)]===15"
+      ],
+      "spPercent__Genesis Ray": [
+        "EQUIP[Royal Guard Stone II (Garment)]===15"
+      ]
+    }
+  },
+  "310889": {
+    "id": 310889,
+    "aegisName": "Royalguard_Bottom3",
+    "name": "Royal Guard Stone (Lower)",
+    "unidName": "Royal Guard Stone (Lower)",
+    "resName": "Paladin_Figure",
+    "description": "Increases Overbrand damage by 5% per each level of Moonslasher user learned.\nWhen equipped with Royal Guard Stone (Garment), increases Cannon Spear damage by 15%.\nWhen equipped with Royal Guard Stone II (Garment), increases magical damage against all size enemies by 15%.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 73,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "Over Brand": [
+        "LEARN_SKILL[Moon Slasher==1]---5"
+      ],
+      "Cannon Spear": [
+        "EQUIP[Royal Guard Stone (Garment)]===15"
+      ],
+      "m_size_all": [
+        "EQUIP[Royal Guard Stone II (Garment)]===15"
+      ]
+    }
+  },
+  "311005": {
+    "id": 311005,
+    "aegisName": "WanderMins_Top3",
+    "name": "Wander Mins Stone (Upper)",
+    "unidName": "Wander Mins Stone (Upper)",
+    "resName": "ClownGypsy_Figure",
+    "description": "Reduces variable casting time by 1% per each level of Voice Lessons user learned.\nWhen equipped with Wander Mins Stone (Garment), has a 2% chance to restore 1% of damage as SP when dealing physical damage.\nWhen equipped with Wander Mins Stone II (Garment), increases Metallic Sound damage by 15%.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 71,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "vct": [
+        "LEARN_SKILL[Lesson==1]---1"
+      ],
+      "Metalic Sound": [
+        "EQUIP[Wander Mins Stone II (Garment)]===15"
+      ]
+    }
+  },
+  "311006": {
+    "id": 311006,
+    "aegisName": "WanderMins_Middle3",
+    "name": "Wander Mins Stone (Middle)",
+    "unidName": "Wander Mins Stone (Middle)",
+    "resName": "ClownGypsy_Figure",
+    "description": "Reduces skill cooldown of Severe Rainstorm and Metallic Sound by 0.1 seconds per each level of Circle of Nature user learned.\nWhen equipped with Wander Mins Stone (Garment), increases physical damage against all size enemies by 15%.\nWhen equipped with Wander Mins Stone II (Garment), increases all property magical damage by 15%.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 72,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "cd__Severe Rainstorm": [
+        "LEARN_SKILL[Circling Nature==1]---0.1"
+      ],
+      "cd__Metalic Sound": [
+        "LEARN_SKILL[Circling Nature==1]---0.1"
+      ],
+      "p_size_all": [
+        "EQUIP[Wander Mins Stone (Garment)]===15"
+      ],
+      "m_my_element_all": [
+        "EQUIP[Wander Mins Stone II (Garment)]===15"
+      ]
+    }
+  },
+  "311007": {
+    "id": 311007,
+    "aegisName": "WanderMins_Bottom3",
+    "name": "Wander Mins Stone (Lower)",
+    "unidName": "Wander Mins Stone (Lower)",
+    "resName": "ClownGypsy_Figure",
+    "description": "Reduces fixed casting time by 0.1 seconds per each level of Frigg's Song user learned.\nWhen equipped with Wander Mins Stone (Garment), increases Severe Rainstorm damage by 15%.\nWhen equipped with Wander Mins Stone II (Garment), increases Reverberation damage by 15%.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 73,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "fct": [
+        "LEARN_SKILL[Frigg's Song==1]---0.1"
+      ],
+      "Severe Rainstorm": [
+        "EQUIP[Wander Mins Stone (Garment)]===15"
+      ],
+      "Reverberation": [
+        "EQUIP[Wander Mins Stone II (Garment)]===15"
+      ]
+    }
+  },
+  "311008": {
+    "id": 311008,
+    "aegisName": "Genetic_Top3",
+    "name": "Genetic Stone (Upper)",
+    "unidName": "Genetic Stone (Upper)",
+    "resName": "Creator_Figure",
+    "description": "Increases long ranged physical damage by 2% per each level of Cart Cannon user learned.\nWhen equipped with Genetic Stone (Garment), increases Acid Bomb damage by 15%.\nWhen equipped with Genetic Stone II (Garment), increases Spore Explosion damage by 15%.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 71,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "range": [
+        "LEARN_SKILL[Cart Cannon==1]---2"
+      ],
+      "Acid Bomb": [
+        "EQUIP[Genetic Stone (Garment)]===15"
+      ],
+      "Spore Explosion": [
+        "EQUIP[Genetic Stone II (Garment)]===15"
+      ]
+    }
+  },
+  "311009": {
+    "id": 311009,
+    "aegisName": "Genetic_Middle3",
+    "name": "Genetic Stone (Middle)",
+    "unidName": "Genetic Stone (Middle)",
+    "resName": "Creator_Figure",
+    "description": "Reduces variable casting time by 2% per each level of Cart Remodeling user learned.\nWhen equipped with Genetic Stone (Garment), increases Cart Cannon damage by 15%.\nWhen equipped with Genetic Stone II (Garment), increases Cart Tornado damage by 15%.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 72,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "vct": [
+        "LEARN_SKILL[Cart Remodeling==1]---2"
+      ],
+      "Cart Cannon": [
+        "EQUIP[Genetic Stone (Garment)]===15"
+      ],
+      "Cart Tornado": [
+        "EQUIP[Genetic Stone II (Garment)]===15"
+      ]
+    }
+  },
+  "311010": {
+    "id": 311010,
+    "aegisName": "Genetic_Bottom3",
+    "name": "Genetic Stone (Lower)",
+    "unidName": "Genetic Stone (Lower)",
+    "resName": "Creator_Figure",
+    "description": "Reduces fixed casting time by 0.1 seconds per each level of Sword Training user learned.\nWhen equipped with Genetic Stone (Garment), increases Acid Bomb damage by 15%.\nWhen equipped with Genetic Stone II (Garment), increases Cart Tornado damage by 15%.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 73,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "fct": [
+        "LEARN_SKILL[Sword Mastery==1]---0.1"
+      ],
+      "Acid Bomb": [
+        "EQUIP[Genetic Stone (Garment)]===15"
+      ],
+      "Cart Tornado": [
+        "EQUIP[Genetic Stone II (Garment)]===15"
+      ]
+    }
+  },
+  "311011": {
+    "id": 311011,
+    "aegisName": "Sorcerer_Top3",
+    "name": "Sorcerer Stone (Upper)",
+    "unidName": "Sorcerer Stone (Upper)",
+    "resName": "Professor_Figure",
+    "description": "Reduces fixed casting time by 0.1 seconds per each level of Striking user learned.\nWhen equipped with Sorcerer Stone (Garment), reduces skill cooldown of Killing Cloud by 2 seconds.\nWhen equipped with Sorcerer Stone II (Garment), increases Earth Grave damage by 15%.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 71,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "fct": [
+        "LEARN_SKILL[Striking==1]---0.1"
+      ],
+      "cd__Killing Cloud": [
+        "EQUIP[Sorcerer Stone (Garment)]===2"
+      ],
+      "Earth Grave": [
+        "EQUIP[Sorcerer Stone II (Garment)]===15"
+      ]
+    }
+  },
+  "311012": {
+    "id": 311012,
+    "aegisName": "Sorcerer_Middle3",
+    "name": "Sorcerer Stone (Middle)",
+    "unidName": "Sorcerer Stone (Middle)",
+    "resName": "Professor_Figure",
+    "description": "Reduces variable casting time by 2% per each level of Diamond Dust user learned.\nWhen equipped with Sorcerer Stone (Garment), increases Psychic Wave damage by 15%.\nWhen equipped with Sorcerer Stone II (Garment), increases Varetyr Spear damage by 15%.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 72,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "vct": [
+        "LEARN_SKILL[Diamond Dust==1]---2"
+      ],
+      "Psychic Wave": [
+        "EQUIP[Sorcerer Stone (Garment)]===15"
+      ],
+      "Varetyr Spear": [
+        "EQUIP[Sorcerer Stone II (Garment)]===15"
+      ]
+    }
+  },
+  "311013": {
+    "id": 311013,
+    "aegisName": "Sorcerer_Bottom3",
+    "name": "Sorcerer Stone (Lower)",
+    "unidName": "Sorcerer Stone (Lower)",
+    "resName": "Professor_Figure",
+    "description": "Increases all property magical damage by 2% per each level of Earth Grave user learned.\nWhen equipped with Sorcerer Stone (Garment), increases Poison Burst damage by 15%.\nWhen equipped with Sorcerer Stone II (Garment), increases Diamond Dust damage by 15%.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 73,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "m_my_element_all": [
+        "LEARN_SKILL[Earth Grave==1]---2"
+      ],
+      "Poison Burst": [
+        "EQUIP[Sorcerer Stone (Garment)]===15"
+      ],
+      "Diamond Dust": [
+        "EQUIP[Sorcerer Stone II (Garment)]===15"
+      ]
+    }
+  },
+  "311356": {
+    "id": 311356,
+    "aegisName": "Archbishop_Top3",
+    "name": "Archbishop Stone (Upper)",
+    "unidName": "Archbishop Stone (Upper)",
+    "resName": "High_Priest_Figure",
+    "description": "Reduces global cooldown by 3% per each level of Clementia user learned.\nWhen equipped with Archbishop Stone (Garment), increases all property magical damage by 15%.\nWhen equipped with Archbishop Stone II (Garment), increases magical damage against all size enemies by 15%.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 71,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "acd": [
+        "LEARN_SKILL[Clementia==1]---3"
+      ],
+      "m_my_element_all": [
+        "EQUIP[Archbishop Stone (Garment)]===15"
+      ],
+      "m_size_all": [
+        "EQUIP[Archbishop Stone II (Garment)]===15"
+      ]
+    }
+  },
+  "311357": {
+    "id": 311357,
+    "aegisName": "Archbishop_Middle3",
+    "name": "Archbishop Stone (Middle)",
+    "unidName": "Archbishop Stone (Middle)",
+    "resName": "High_Priest_Figure",
+    "description": "Reduces variable casting time by 3% per each level of Lauda Agnus user learned.\nWhen equipped with Archbishop Stone (Garment), increases Adoramus damage by 15%.\nWhen equipped with Archbishop Stone II (Garment), increases Judex damage by 15%.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 72,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "vct": [
+        "LEARN_SKILL[Lauda Agnus==1]---3"
+      ],
+      "Adoramus": [
+        "EQUIP[Archbishop Stone (Garment)]===15"
+      ],
+      "Judex": [
+        "EQUIP[Archbishop Stone II (Garment)]===15"
+      ]
+    }
+  },
+  "311358": {
+    "id": 311358,
+    "aegisName": "Archbishop_Bottom3",
+    "name": "Archbishop Stone (Lower)",
+    "unidName": "Archbishop Stone (Lower)",
+    "resName": "High_Priest_Figure",
+    "description": "Reduces fixed casting time by 0.1 seconds per each level of Expiatio user learned.\nWhen equipped with Archbishop Stone (Garment), increases magical damage against all race monsters (except players) by 15%.\nWhen equipped with Archbishop Stone II (Garment), increases all property magical damage by 15%.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 73,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "fct": [
+        "LEARN_SKILL[Expiatio==1]---0.1"
+      ],
+      "m_race_all": [
+        "EQUIP[Archbishop Stone (Garment)]===15"
+      ],
+      "m_my_element_all": [
+        "EQUIP[Archbishop Stone II (Garment)]===15"
+      ]
+    }
+  },
+  "311359": {
+    "id": 311359,
+    "aegisName": "Ranger_Top3",
+    "name": "Ranger Stone (Upper)",
+    "unidName": "Ranger Stone (Upper)",
+    "resName": "Sniper_Figure",
+    "description": "Reduces global cooldown by 1% per 2 levels of Main Ranger user learned.\nWhen equipped with Ranger Stone (Garment), reduces skill cooldown of No Limits by 45 seconds.\nWhen equipped with Ranger Stone II (Garment), increases Focused Arrow Strike damage by 15%.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 71,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "acd": [
+        "LEARN_SKILL[Main Ranger==2]---1"
+      ],
+      "cd__No Limits": [
+        "EQUIP[Ranger Stone (Garment)]===45"
+      ],
+      "Focused Arrow Strike": [
+        "EQUIP[Ranger Stone II (Garment)]===15"
+      ]
+    }
+  },
+  "311360": {
+    "id": 311360,
+    "aegisName": "Ranger_Middle3",
+    "name": "Ranger Stone (Middle)",
+    "unidName": "Ranger Stone (Middle)",
+    "resName": "Sniper_Figure",
+    "description": "Reduces variable casting time by 1% per each level of Trap Research user learned.\nWhen equipped with Ranger Stone (Garment), increases Arrow Storm damage by 15%.\nWhen equipped with Ranger Stone II (Garment), increases Aimed Bolt damage by 15%.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 72,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "vct": [
+        "LEARN_SKILL[Trap Research==1]---1"
+      ],
+      "Arrow Storm": [
+        "EQUIP[Ranger Stone (Garment)]===15"
+      ],
+      "Aimed Bolt": [
+        "EQUIP[Ranger Stone II (Garment)]===15"
+      ]
+    }
+  },
+  "311361": {
+    "id": 311361,
+    "aegisName": "Ranger_Bottom3",
+    "name": "Ranger Stone (Lower)",
+    "unidName": "Ranger Stone (Lower)",
+    "resName": "Sniper_Figure",
+    "description": "Increases long range physical damage by 2% per each level of Fear Breeze user learned.\nWhen equipped with Ranger Stone (Garment), has a 2% chance to restore 1% of damage as SP when dealing physical damage.\nWhen equipped with Ranger Stone II (Garment), increases physical damage against all size enemies by 15%.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 73,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "range": [
+        "LEARN_SKILL[Fear Breeze==1]---2"
+      ],
+      "p_size_all": [
+        "EQUIP[Ranger Stone II (Garment)]===15"
+      ]
+    }
+  },
+  "311362": {
+    "id": 311362,
+    "aegisName": "Shadowchaser_Top3",
+    "name": "Shadow Chaser Stone (Upper)",
+    "unidName": "Shadow Chaser Stone (Upper)",
+    "resName": "Stalker_Figure",
+    "description": "Increases attack speed (reduces delay after attack by 2%) each level of Urgent Escape user learned.\nWhen equipped with Shadow Chaser Stone (Garment), increases Feint Bomb damage by 15%.\nWhen equipped with Shadow Chaser Stone II (Garment), has a 1% chance to restore 1% of damage as SP when dealing physical damage.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 71,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "aspdPercent": [
+        "LEARN_SKILL[Urgent Escape==1]---2"
+      ],
+      "Feint Bomb": [
+        "EQUIP[Shadow Chaser Stone (Garment)]===15"
+      ]
+    }
+  },
+  "311363": {
+    "id": 311363,
+    "aegisName": "Shadowchaser_Middle3",
+    "name": "Shadow Chaser Stone (Middle)",
+    "unidName": "Shadow Chaser Stone (Middle)",
+    "resName": "Stalker_Figure",
+    "description": "Reduces global cooldown by 1% each level of Shadow Formation user learned.\nWhen equipped with Shadow Chaser Stone (Garment), increases Triangle Shot damage by 15%.\nWhen equipped with Shadow Chaser Stone II (Garment), increases Fatal Menace damage by 15%.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 72,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "acd": [
+        "LEARN_SKILL[Shadow Formation==1]---1"
+      ],
+      "Triangle Shot": [
+        "EQUIP[Shadow Chaser Stone (Garment)]===15"
+      ],
+      "Fatal Manace": [
+        "EQUIP[Shadow Chaser Stone II (Garment)]===15"
+      ]
+    }
+  },
+  "311364": {
+    "id": 311364,
+    "aegisName": "Shadowchaser_Bottom3",
+    "name": "Shadow Chaser Stone (Lower)",
+    "unidName": "Shadow Chaser Stone (Lower)",
+    "resName": "Stalker_Figure",
+    "description": "Increases melee and long ranged physical damage by 1% each level of Reproduce user learned.\nWhen equipped with Shadow Chaser Stone (Garment), increases physical damage against all property enemies by 15%.\nWhen equipped with Shadow Chaser Stone II (Garment), increases physical damage against all size enemies by 15%.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 73,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "melee": [
+        "LEARN_SKILL[Reproduce==1]---1"
+      ],
+      "range": [
+        "LEARN_SKILL[Reproduce==1]---1"
+      ],
+      "p_element_all": [
+        "EQUIP[Shadow Chaser Stone (Garment)]===15"
+      ],
+      "p_size_all": [
+        "EQUIP[Shadow Chaser Stone II (Garment)]===15"
+      ]
+    }
+  },
+  "311427": {
+    "id": 311427,
+    "aegisName": null,
+    "name": "Sura Stone (Upper)",
+    "unidName": "Sura Stone (Upper)",
+    "resName": "Champion_Figure",
+    "description": "Reduces fixed casting time by 0.1 seconds per 2 levels of Rising Dragon user learned.\nWhen equipped with Sura Stone (Garment), increases Lightning Ride damage by 20%.\nWhen equipped with Sura Stone II (Garment), increases Knuckle Arrow damage by 15%.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 71,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "fct": [
+        "LEARN_SKILL[Rising Dragon==2]---0.1"
+      ],
+      "Lightning Ride": [
+        "EQUIP[Sura Stone (Garment)]===20"
+      ],
+      "Knuckle Arrow": [
+        "EQUIP[Sura Stone II (Garment)]===15"
+      ]
+    }
+  },
+  "311428": {
+    "id": 311428,
+    "aegisName": null,
+    "name": "Sura Stone (Middle)",
+    "unidName": "Sura Stone (Middle)",
+    "resName": "Champion_Figure",
+    "description": "Increases melee physical damage by 2% per each level of Gentle Touch-Revitalize user learned.\nWhen equipped with Sura Stone (Garment), increases Lightning Ride damage by 20%.\nWhen equipped with Sura Stone II (Garment), increases Tiger Cannon damage by 15%.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 72,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "melee": [
+        "LEARN_SKILL[Gentle Touch - Alive==1]---2"
+      ],
+      "Lightning Ride": [
+        "EQUIP[Sura Stone (Garment)]===20"
+      ],
+      "Tiger Cannon": [
+        "EQUIP[Sura Stone II (Garment)]===15"
+      ]
+    }
+  },
+  "311429": {
+    "id": 311429,
+    "aegisName": null,
+    "name": "Sura Stone (Lower)",
+    "unidName": "Sura Stone (Lower)",
+    "resName": "Champion_Figure",
+    "description": "Increases long ranged physical damage by 2% per each level of Gentle Touch-Convert user learned.\nWhen equipped with Sura Stone (Garment), increases Rampage Blast damage by 15%.\nWhen equipped with Sura Stone II (Garment), increases Knuckle Arrow damage by 15%.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 73,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "range": [
+        "LEARN_SKILL[Gentle Touch - Opposite==1]---2"
+      ],
+      "Rampage Blast": [
+        "EQUIP[Sura Stone (Garment)]===15"
+      ],
+      "Knuckle Arrow": [
+        "EQUIP[Sura Stone II (Garment)]===15"
+      ]
+    }
+  },
+  "311430": {
+    "id": 311430,
+    "aegisName": null,
+    "name": "Mechanic Stone (Upper)",
+    "unidName": "Mechanic Stone (Upper)",
+    "resName": "White_Smith_Figure",
+    "description": "Reduces variable casting time by 1% per each level of Fire Earth Research user learned.\nWhen equipped with Mechanic Stone (Garment), increases Axe Tornado damage by 15%.\nWhen equipped with Mechanic Stone II (Garment), increases Knuckle Boost damage by 15%.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 71,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "vct": [
+        "LEARN_SKILL[Fire Earth Research==1]---1"
+      ],
+      "Axe Tornado": [
+        "EQUIP[Mechanic Stone (Garment)]===15"
+      ],
+      "Knuckle Boost": [
+        "EQUIP[Mechanic Stone II (Garment)]===15"
+      ]
+    }
+  },
+  "311431": {
+    "id": 311431,
+    "aegisName": null,
+    "name": "Mechanic Stone (Middle)",
+    "unidName": "Mechanic Stone (Middle)",
+    "resName": "White_Smith_Figure",
+    "description": "Increases melee and long ranged physical damage by 1% per each level of Madogear License user learned.\nWhen equipped with Mechanic Stone (Garment), increases Axe Boomerang damage by 15%.\nWhen equipped with Mechanic Stone II (Garment), increases Arm Cannon damage by 15%.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 72,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "melee": [
+        "LEARN_SKILL[Madogear License==1]---1"
+      ],
+      "range": [
+        "LEARN_SKILL[Madogear License==1]---1"
+      ],
+      "Axe Boomerang": [
+        "EQUIP[Mechanic Stone (Garment)]===15"
+      ],
+      "Arm Cannon": [
+        "EQUIP[Mechanic Stone II (Garment)]===15"
+      ]
+    }
+  },
+  "311432": {
+    "id": 311432,
+    "aegisName": null,
+    "name": "Mechanic Stone (Lower)",
+    "unidName": "Mechanic Stone (Lower)",
+    "resName": "White_Smith_Figure",
+    "description": "Reduces global cooldown by 1% per each level of Axe Mastery user learned.\nWhen equipped with Mechanic Stone (Garment), increases Power Swing damage by 15%.\nWhen equipped with Mechanic Stone II (Garment), increases Vulcan Arm damage by 15%.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 73,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "acd": [
+        "LEARN_SKILL[Axe Mastery==1]---1"
+      ],
+      "Power Swing": [
+        "EQUIP[Mechanic Stone (Garment)]===15"
+      ],
+      "Vulcan Arm": [
+        "EQUIP[Mechanic Stone II (Garment)]===15"
+      ]
+    }
+  },
+  "311433": {
+    "id": 311433,
+    "aegisName": null,
+    "name": "Guillotine Cross Stone (Upper)",
+    "unidName": "Guillotine Cross Stone (Upper)",
+    "resName": "Assasin_Cross_Figure",
+    "description": "Reduces global cooldown by 1% per 2 levels of New Poison Research user learned.\nWhen equipped with Guillotine Cross Stone (Garment), increases Cross Ripper Slasher damage by 15%.\nWhen equipped with Guillotine Cross Stone II (Garment), increases Counter Slash damage by 15%.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 71,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "acd": [
+        "LEARN_SKILL[New Poison Research==2]---1"
+      ],
+      "Cross Ripper Slasher": [
+        "EQUIP[Guillotine Cross Stone (Garment)]===15"
+      ],
+      "Counter Slash": [
+        "EQUIP[Guillotine Cross Stone II (Garment)]===15"
+      ]
+    }
+  },
+  "311434": {
+    "id": 311434,
+    "aegisName": null,
+    "name": "Guillotine Cross Stone (Middle)",
+    "unidName": "Guillotine Cross Stone (Middle)",
+    "resName": "Assasin_Cross_Figure",
+    "description": "Increases melee physical damage by 2% per each level of Dark Illusion user learned.\nWhen equipped with Guillotine Cross Stone (Garment), increases Rolling Cutter Slasher damage by 15%.\nWhen equipped with Guillotine Cross Stone II (Garment), increases Cross Impact damage by 15%.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 72,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "melee physical": [
+        "LEARN_SKILL[Dark Illusion==1]---2"
+      ],
+      "Rolling Cutter": [
+        "EQUIP[Guillotine Cross Stone (Garment)]===15"
+      ],
+      "Cross Impact": [
+        "EQUIP[Guillotine Cross Stone II (Garment)]===15"
+      ]
+    }
+  },
+  "311435": {
+    "id": 311435,
+    "aegisName": null,
+    "name": "Guillotine Cross Stone (Lower)",
+    "unidName": "Guillotine Cross Stone (Lower)",
+    "resName": "Assasin_Cross_Figure",
+    "description": "Increases long ranged physical damage by 2% per each level of Cross Ripper Slasher user learned.\nWhen equipped with Guillotine Cross Stone (Garment), increases Cross Ripper Slasher Slasher damage by 15%.\nWhen equipped with Guillotine Cross Stone II (Garment), increases physical damage against all race monsters (except players) by 15%.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 73,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "range": [
+        "LEARN_SKILL[Cross Ripper Slasher==1]---2"
+      ],
+      "Cross Ripper Slasher": [
+        "EQUIP[Guillotine Cross Stone (Garment)]===15"
+      ],
+      "p_race_all": [
+        "EQUIP[Guillotine Cross Stone II (Garment)]===15"
+      ]
+    }
+  },
+  "311460": {
+    "id": 311460,
+    "aegisName": "",
+    "name": "Star Emperor Stone (Upper)",
+    "unidName": "Star Emperor Stone (Upper)",
+    "resName": "푸른야광석",
+    "description": "Increases Full Moon Kick damage by 3% per each level of Blessing of Moon user learned.\r\nWhen equipped with Star Emperor Stone (Garment), increases New Moon Kick damage by 15%.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 71,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "Full Moon Kick": [
+        "LEARN_SKILL[Blessing of Moon==1]---3"
+      ],
+      "New Moon Kick": [
+        "EQUIP[Star Emperor Stone (Garment)]===15"
+      ]
+    }
+  },
+  "311461": {
+    "id": 311461,
+    "aegisName": "",
+    "name": "Star Emperor Stone (Middle)",
+    "unidName": "Star Emperor Stone (Middle)",
+    "resName": "푸른야광석",
+    "description": "Increases melee physical damage by 2% per each level of Blessing of Sun user learned.\r\nWhen equipped with Star Emperor Stone (Garment), increases Solar Burst damage by 15%.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 72,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "melee": [
+        "LEARN_SKILL[Blessing of Sun==1]---2"
+      ],
+      "Solar Explosion": [
+        "EQUIP[Star Emperor Stone (Garment)]===15"
+      ]
+    }
+  },
+  "311462": {
+    "id": 311462,
+    "aegisName": "",
+    "name": "Star Emperor Stone (Lower)",
+    "unidName": "Star Emperor Stone (Lower)",
+    "resName": "푸른야광석",
+    "description": "Increases Falling Star damage by 4% per each level of Blessing of Star user learned.\r\nWhen equipped with Star Emperor Stone (Garment), has a 2% chance to restore 1% of damage as SP when dealing physical damage.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 73,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "Falling Star": [
+        "LEARN_SKILL[Blessing of Star==1]---4"
+      ]
+    }
+  },
+  "311463": {
+    "id": 311463,
+    "aegisName": "",
+    "name": "Rebellion Stone (Upper)",
+    "unidName": "Rebellion Stone (Upper)",
+    "resName": "정화탄",
+    "description": "Increases physical damage against all size enemies by 2% and increases Dragon Tail damage by 4% per each level of Platinum Altar user learned.\r\nWhen equipped with Rebellion Stone (Garment), increases Vanishing Buster damage by 15%.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 71,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "p_size_all": [
+        "LEARN_SKILL[Platinum Altar==1]---2"
+      ],
+      "Dragon Tail": [
+        "LEARN_SKILL[Platinum Altar==1]---4"
+      ],
+      "Vanishing Buster": [
+        "EQUIP[Rebellion Stone (Garment)]===15"
+      ]
+    }
+  },
+  "311464": {
+    "id": 311464,
+    "aegisName": "",
+    "name": "Rebellion Stone (Middle)",
+    "unidName": "Rebellion Stone (Middle)",
+    "resName": "정화탄",
+    "description": "Increases longed ranged physical damage by 2% per each level of Fire Rain user learned.\r\nWhen equipped with Rebellion Stone (Garment), increases Round Trip damage by 15%.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 72,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "range": [
+        "LEARN_SKILL[Fire Rain==1]---2"
+      ],
+      "Round Trip": [
+        "EQUIP[Rebellion Stone (Garment)]===15"
+      ]
+    }
+  },
+  "311465": {
+    "id": 311465,
+    "aegisName": "",
+    "name": "Rebellion Stone (Lower)",
+    "unidName": "Rebellion Stone (Lower)",
+    "resName": "정화탄",
+    "description": "Increases Fire Dance and Hammer of God damage by 4% per each level of Heat Barrel user learned.\r\nWhen equipped with Rebellion Stone (Garment), reduces fixed casting time by 0.5 seconds.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 73,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "Fire Dance": [
+        "LEARN_SKILL[Hot Barrel==1]---4"
+      ],
+      "God's Hammer": [
+        "LEARN_SKILL[Hot Barrel==1]---4"
+      ],
+      "fct": [
+        "EQUIP[Rebellion Stone (Garment)]===0.5"
+      ]
+    }
+  },
+  "311466": {
+    "id": 311466,
+    "aegisName": "",
+    "name": "Soul Reaper Stone (Upper)",
+    "unidName": "Soul Reaper Stone (Upper)",
+    "resName": "도깨비불",
+    "description": "Increases all property magical damage by 1% per each level of Espa user learned.\r\nWhen equipped with Soul Reaper Stone (Garment), reduces SP consumption of Espa by 15%.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 71,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "m_my_element_all": [
+        "LEARN_SKILL[Espa==1]---1"
+      ],
+      "spPercentCost__Espa": [
+        "EQUIP[Soul Reaper Stone (Garment)]===15"
+      ]
+    }
+  },
+  "311467": {
+    "id": 311467,
+    "aegisName": "",
+    "name": "Soul Reaper Stone (Middle)",
+    "unidName": "Soul Reaper Stone (Middle)",
+    "resName": "도깨비불",
+    "description": "Increases magical damage against all size enemies by 1% per each level of Eswhoo user learned.\r\nWhen equipped with Soul Reaper Stone (Garment), increases Eswhoo damage by 15%.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 72,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "m_size_all": [
+        "LEARN_SKILL[Eswhoo==1]---1"
+      ],
+      "Eswhoo": [
+        "EQUIP[Soul Reaper Stone (Garment)]===15"
+      ]
+    }
+  },
+  "311468": {
+    "id": 311468,
+    "aegisName": "",
+    "name": "Soul Reaper Stone (Lower)",
+    "unidName": "Soul Reaper Stone (Lower)",
+    "resName": "도깨비불",
+    "description": "Reduces skill cooldown of Curse Explosion by 0.1 seconds per each level of Evil Spirit's Curse user learned.\r\nWhen equipped with Soul Reaper Stone (Garment), reduces fixed casting time by 0.5 seconds.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 73,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "cd__Curse Explosion": [
+        "LEARN_SKILL[Evil Soul Curse==1]---0.1"
+      ],
+      "fct": [
+        "EQUIP[Soul Reaper Stone (Garment)]===0.5"
+      ]
+    }
+  },
+  "311912": {
+    "id": 311912,
+    "aegisName": null,
+    "name": "Kagerou Stone (Upper)",
+    "unidName": "Kagerou Stone (Upper)",
+    "resName": "불의부적",
+    "description": "Increases physical damage against all size enemies by 2% per each level of Kagerou & Oboro's Righthand Mastery user learned.\r\nWhen equipped with Kagerou Stone (Garment), increases Swirling Petal damage by 25%.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 71,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "p_size_all": [
+        "LEARN_SKILL[Righthand Mastery==1]---2"
+      ],
+      "Swirling Petal": [
+        "EQUIP[Kagerou Stone (Garment)]===25"
+      ]
+    }
+  },
+  "311913": {
+    "id": 311913,
+    "aegisName": null,
+    "name": "Kagerou Stone (Middle)",
+    "unidName": "Kagerou Stone (Middle)",
+    "resName": "불의부적",
+    "description": "Increases long ranged physical damage by 2% per each level of 16th Night user learned.\r\nWhen equipped with Kagerou Stone (Garment), increases Cross Slash damage by 25%.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 72,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "range": [
+        "LEARN_SKILL[16th Night==1]---2"
+      ],
+      "Cross Slash": [
+        "EQUIP[Kagerou Stone (Garment)]===25"
+      ]
+    }
+  },
+  "311914": {
+    "id": 311914,
+    "aegisName": null,
+    "name": "Kagerou Stone (Lower)",
+    "unidName": "Kagerou Stone (Lower)",
+    "resName": "불의부적",
+    "description": "Increases Kunai Splash damage by 5% per each level of Pure Soul user learned.\r\nWhen equipped with Kagerou Stone (Garment), increases Kunai Splash damage by 25%.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 73,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "Kunai Splash": [
+        "LEARN_SKILL[Pure Soul==1]---5",
+        "EQUIP[Kagerou Stone (Garment)]===25"
+      ]
+    }
+  },
+  "311915": {
+    "id": 311915,
+    "aegisName": null,
+    "name": "Oboro Stone (Upper)",
+    "unidName": "Oboro Stone (Upper)",
+    "resName": "불의부적",
+    "description": "Increases magical damage against all size enemies by 2% per each level of Kagerou & Oboro's Righthand Mastery user learned.\r\nWhen equipped with Oboro Stone (Garment), increases Freezing Spear and Wind Blade damage by 25%.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 71,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "m_size_all": [
+        "LEARN_SKILL[Righthand Mastery==1]---2"
+      ],
+      "Freezing Spear": [
+        "EQUIP[Oboro Stone (Garment)]===25"
+      ],
+      "Wind Blade": [
+        "EQUIP[Oboro Stone (Garment)]===25"
+      ]
+    }
+  },
+  "311916": {
+    "id": 311916,
+    "aegisName": null,
+    "name": "Oboro Stone (Middle)",
+    "unidName": "Oboro Stone (Middle)",
+    "resName": "불의부적",
+    "description": "Increases MaxSP by 3% per each level of Pure Soul user learned.\r\nWhen equipped with Oboro Stone (Garment), increases Exploding Dragon, Snow Flake Draft and First Wind damage by 30%.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 72,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "spPercent": [
+        "LEARN_SKILL[Pure Soul==1]---3"
+      ],
+      "Exploding Dragon": [
+        "EQUIP[Oboro Stone (Garment)]===30"
+      ],
+      "Snow Flake Draft": [
+        "EQUIP[Oboro Stone (Garment)]===30"
+      ],
+      "First Wind": [
+        "EQUIP[Oboro Stone (Garment)]===30"
+      ]
+    }
+  },
+  "311917": {
+    "id": 311917,
+    "aegisName": null,
+    "name": "Oboro Stone (Lower)",
+    "unidName": "Oboro Stone (Lower)",
+    "resName": "불의부적",
+    "description": "Increases Flaming Petals, Freezing Spear and Wind Blade damage by 4% per each level of 16th Night user learned.\r\nWhen equipped with Oboro Stone (Garment), reduces variable casting time by 15%.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 73,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "Flaming Petals": [
+        "LEARN_SKILL[16th Night==1]---4"
+      ],
+      "Freezing Spear": [
+        "LEARN_SKILL[16th Night==1]---4"
+      ],
+      "Wind Blade": [
+        "LEARN_SKILL[16th Night==1]---4"
+      ],
+      "vct": [
+        "EQUIP[Oboro Stone (Garment)]===15"
+      ]
+    }
+  },
+  "311918": {
+    "id": 311918,
+    "aegisName": null,
+    "name": "Summoner Stone (Upper)",
+    "unidName": "Summoner Stone (Upper)",
+    "resName": "블랙캣",
+    "description": "Increases Lunatic Carrot Beat damage by 5% per each level of Picky Peck user learned.\r\nIncreases Catnip Meteor damage by 5% per each level of Silvervine Stem Spear user learned.\r\nWhen equipped with Doram Stone (Garment), reduces fixed casting time by 0.5 seconds.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 71,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "Lunatic Carrot Beat": [
+        "LEARN_SKILL[Picky Peck==1]---5"
+      ],
+      "Catnip Meteor": [
+        "LEARN_SKILL[Silvervine Stem Spear==1]---5"
+      ],
+      "fct": [
+        "EQUIP[Doram Stone (Garment)]===0.5"
+      ]
+    }
+  },
+  "311919": {
+    "id": 311919,
+    "aegisName": null,
+    "name": "Summoner Stone (Middle)",
+    "unidName": "Summoner Stone (Middle)",
+    "resName": "블랙캣",
+    "description": "Reduces variable casting time by 2% per each level of Fresh Shrimp user learned.\r\nWhen equipped with Doram Stone (Garment), increases Catnip Meteor damage by 25%.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 72,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "vct": [
+        "LEARN_SKILL[Fresh Shrimp==1]---2"
+      ],
+      "Catnip Meteor": [
+        "EQUIP[Doram Stone (Garment)]===25"
+      ]
+    }
+  },
+  "311920": {
+    "id": 311920,
+    "aegisName": null,
+    "name": "Summoner Stone (Lower)",
+    "unidName": "Summoner Stone (Lower)",
+    "resName": "블랙캣",
+    "description": "Increases long ranged physical damage by 2% per each level of Arclouse Dash user learned.\r\nWhen equipped with Doram Stone (Garment), increases Lunatic Carrot Beat damage by 25%.",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 73,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "range": [
+        "LEARN_SKILL[Arclouse Dash==1]---2"
+      ],
+      "Lunatic Carrot Beat": [
+        "EQUIP[Doram Stone (Garment)]===25"
+      ]
+    }
+  },
   "400001": {
     "id": 400001,
     "aegisName": "Victory_Wing_Ear",
