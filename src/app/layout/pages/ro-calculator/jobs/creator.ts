@@ -25,12 +25,21 @@ export class Creator extends CharacterBase {
   protected readonly _activeSkillList: ActiveSkillModel[] = [];
   protected readonly _passiveSkillList: PassiveSkillModel[] = [
     {
-      label: 'Learn Potion 10',
+      label: 'Learn Potion',
       name: 'Learning Potion',
-      inputType: 'selectButton',
+      inputType: 'dropdown',
       dropdown: [
-        { label: 'Yes', value: 10, skillLv: 10, isUse: true },
-        { label: 'No', value: 0, isUse: false },
+        { label: '-', isUse: false, value: 0 },
+        { label: 'Lv 1', isUse: true, value: 1 },
+        { label: 'Lv 2', isUse: true, value: 2 },
+        { label: 'Lv 3', isUse: true, value: 3 },
+        { label: 'Lv 4', isUse: true, value: 4 },
+        { label: 'Lv 5', isUse: true, value: 5 },
+        { label: 'Lv 6', isUse: true, value: 6 },
+        { label: 'Lv 7', isUse: true, value: 7 },
+        { label: 'Lv 8', isUse: true, value: 8 },
+        { label: 'Lv 9', isUse: true, value: 9 },
+        { label: 'Lv 10', isUse: true, value: 10 },
       ],
     },
     {
@@ -44,12 +53,21 @@ export class Creator extends CharacterBase {
       ],
     },
     {
-      label: 'Acid Demons 10',
+      label: 'Acid Demonstration',
       name: 'Acid Demonstration',
-      inputType: 'selectButton',
+      inputType: 'dropdown',
       dropdown: [
-        { label: 'Yes', value: 10, skillLv: 10, isUse: true },
-        { label: 'No', value: 0, isUse: false },
+        { label: '-', isUse: false, value: 0 },
+        { label: 'Lv 1', isUse: true, value: 1 },
+        { label: 'Lv 2', isUse: true, value: 2 },
+        { label: 'Lv 3', isUse: true, value: 3 },
+        { label: 'Lv 4', isUse: true, value: 4 },
+        { label: 'Lv 5', isUse: true, value: 5 },
+        { label: 'Lv 6', isUse: true, value: 6 },
+        { label: 'Lv 7', isUse: true, value: 7 },
+        { label: 'Lv 8', isUse: true, value: 8 },
+        { label: 'Lv 9', isUse: true, value: 9 },
+        { label: 'Lv 10', isUse: true, value: 10 },
       ],
     },
     {
