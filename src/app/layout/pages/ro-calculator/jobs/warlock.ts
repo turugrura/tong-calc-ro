@@ -288,18 +288,6 @@ export class Warlock extends CharacterBase {
     },
     {
       inputType: 'dropdown',
-      label: 'Radius',
-      name: 'Radius',
-      isEquipAtk: true,
-      dropdown: [
-        { label: '-', isUse: false, value: 0 },
-        { label: 'Lv 1', isUse: true, value: 1, bonus: { fctPercent: 10 } },
-        { label: 'Lv 2', isUse: true, value: 2, bonus: { fctPercent: 20 } },
-        { label: 'Lv 3', isUse: true, value: 3, bonus: { fctPercent: 30 } },
-      ],
-    },
-    {
-      inputType: 'dropdown',
       label: 'Intensification',
       name: 'Intensification',
       isEquipAtk: true,
@@ -310,6 +298,15 @@ export class Warlock extends CharacterBase {
         { label: 'Lv 3', isUse: true, value: 3, bonus: { final_ghost: 120, vct: 30 } },
         { label: 'Lv 4', isUse: true, value: 4, bonus: { final_ghost: 160, vct: 40 } },
         { label: 'Lv 5', isUse: true, value: 5, bonus: { final_ghost: 200, vct: 50 } },
+      ],
+    },
+    {
+      label: 'Released',
+      name: 'Released',
+      inputType: 'selectButton',
+      dropdown: [
+        { label: 'Yes', isUse: true, value: 1, bonus: { releasedSkill: 1 } },
+        { label: 'No', isUse: false, value: 0 },
       ],
     },
   ];

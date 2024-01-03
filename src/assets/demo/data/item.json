@@ -799,6 +799,291 @@
       ]
     }
   },
+  "1691": {
+    "id": 1691,
+    "aegisName": "Strange_Foxtail",
+    "name": "Wondrous Foxtail Staff [2]",
+    "unidName": "Staff",
+    "resName": "잠자리앉은강아지풀",
+    "description": "หญ้าที่ตอนนี้ได้รวม Foxtail และแมลงปอกันเป็นหนึ่งเดียวแล้ว\nMATK + 240 MSP + 100\nMATK + 2%, MSP + 1% เพิ่มขึ้นทุก ๆการอัพเกรด 3ขั้น \n\n- ออปชั่นพิเศษสำหรับอาวุธ Doram - \nเมื่อ Refine ระดับ 7 จะเพิ่ม ATK&MATK ของอาวุธ 40%\nตั้งแต่ขั้นอัพเกรดมากกว่า 7 ขึ้นไป เมื่อเพิ่ม Refine 1 ระดับ จะเพิ่ม ATK&MATK ของอาวุธ 20%\n(Refine ได้ถึงระดับ 10)\nไม่สามารถทำลายได้\nประเภท : ^777777One-handed Staff^000000 โจมตี : ^777777100^000000\nน้ำหนัก : ^77777750^000000\nเลเวลอาวุธ : ^7777773^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Doram^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 265,
+    "itemLevel": 3,
+    "attack": 100,
+    "defense": null,
+    "weight": 50,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Doram"
+    ],
+    "script": {
+      "matk": [
+        "240",
+        "7===96",
+        "8===48",
+        "9===48",
+        "10===48"
+      ],
+      "sp": [
+        "100"
+      ],
+      "matkPercent": [
+        "3---2"
+      ],
+      "spPercent": [
+        "3---1"
+      ],
+      "atk": [
+        "7===40",
+        "8===20",
+        "9===20",
+        "10===20"
+      ]
+    }
+  },
+  "1692": {
+    "id": 1692,
+    "aegisName": "Magical_Foxtail",
+    "name": "Magic Foxtail Staff [2]",
+    "unidName": "Staff",
+    "resName": "잠자리앉은강아지풀",
+    "description": "หญ้าที่สัมผัสได้ถึงการทำงานร่วมกันของพลังเวทย์ลึกลับของแมลงปอและ Foxtail\nMATK + 260 MSP + 100\nMATK + 2%, MSP + 1% เพิ่มขึ้นทุก ๆ การอัพเกรด 2 ขั้น\n\n- ออปชั่นพิเศษสำหรับอาวุธ Doram - \nเมื่อ Refine ระดับ 7 จะเพิ่ม ATK&MATK ของอาวุธ 40%\nตั้งแต่ขั้นอัพเกรดมากกว่า 7 ขึ้นไป  เมื่อเพิ่ม Refine 1 ระดับ จะเพิ่ม ATK&MATK ของอาวุธ 20%\n(Refine ได้ถึงระดับ 10)\nไม่สามารถทำลายได้\nประเภท : ^777777One-handed Staff^000000 โจมตี : ^777777120^000000\nน้ำหนัก : ^77777760^000000\nเลเวลอาวุธ : ^7777773^000000\nเลเวลที่ต้องการ : ^777777140^000000\nอาชีพที่ใส่ได้ : ^777777Doram^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 265,
+    "itemLevel": 3,
+    "attack": 120,
+    "defense": null,
+    "weight": 60,
+    "requiredLevel": 140,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Doram"
+    ],
+    "script": {
+      "matk": [
+        "260",
+        "7===104",
+        "8===52",
+        "9===52",
+        "10===52"
+      ],
+      "sp": [
+        "100"
+      ],
+      "matkPercent": [
+        "2---2"
+      ],
+      "spPercent": [
+        "2---1"
+      ],
+      "atk": [
+        "7===48",
+        "8===24",
+        "9===24",
+        "10===24"
+      ]
+    }
+  },
+  "1693": {
+    "id": 1693,
+    "aegisName": "Magical_Y_Foxtail",
+    "name": "Magic Yellow Foxtail Staff [1]",
+    "unidName": "Staff",
+    "resName": "마력의노랑강아지풀",
+    "description": "Foxtail สีเหลืองและสุกพอดีที่มีแมลงปอนั่งอยู่\nMATK + 280, MATK + 3% ทุก ๆ การอัพเกรด 2 ขั้น\nเมื่อใช้สกิล [Fresh Shrimp] มีโอกาสเปิดใช้งาน Auto Spell [Arclouse Dash] Level 1 ให้กับตัวเอง เมื่อเรียนรู้สกิล [Arclouse Dash] แล้ว จะเปิดใช้งานตามเลเวลสกิล\nเมื่อใช้สกิล [Silvervine Stem Spear] มีโอกาสเปิดใช้งาน Auto Spell [Fresh Shrimp] Level 1 ให้กับตัวเอง เมื่อเรียนรู้สกิล [Fresh Shrimp] แล้ว จะเปิดใช้งานตามเลเวลสกิล\n\n- ออปชั่นพิเศษสำหรับอาวุธ Doram - \nเมื่อ Refine ระดับ 7 จะเพิ่ม ATK&MATK ของอาวุธ 40%\nตั้งแต่ขั้นอัพเกรดมากกว่า 7 ขึ้นไป เมื่อเพิ่ม Refine 1 ระดับ จะเพิ่ม ATK&MATK ของอาวุธ 20%\n(Refine ได้ถึงระดับ 10)\nไม่สามารถทำลายได้\nประเภท : ^777777One-handed Staff^000000 โจมตี : ^777777140^000000\nน้ำหนัก : ^77777770^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777175^000000\nอาชีพที่ใส่ได้ : ^777777Doram^000000",
+    "slots": 1,
+    "itemTypeId": 1,
+    "itemSubTypeId": 265,
+    "itemLevel": 4,
+    "attack": 140,
+    "defense": null,
+    "weight": 70,
+    "requiredLevel": 175,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Doram"
+    ],
+    "script": {
+      "matk": [
+        "280",
+        "7===112",
+        "8===56",
+        "9===56",
+        "10===56"
+      ],
+      "matkPercent": [
+        "2---3"
+      ],
+      "atk": [
+        "7===56",
+        "8===28",
+        "9===28",
+        "10===28"
+      ]
+    }
+  },
+  "1694": {
+    "id": 1694,
+    "aegisName": "Model_Foxtail",
+    "name": "Foxtail Model [3]",
+    "unidName": "Staff",
+    "resName": "커다란강아지풀",
+    "description": "โมเดลรูป Foxtail ที่ทำจากพลาสติก\nพลังโจมตีกายภาพระยะไกล + 8%, MHP + 100\nDEX + 2, MSP + 10 เพิ่มขึ้นทุก ๆ การอัพเกรด 3 ขั้น\nไม่สามารถทำลายได้\nประเภท : ^777777One-handed Staff^000000 โจมตี : ^777777150^000000\nน้ำหนัก : ^77777730^000000\nเลเวลอาวุธ : ^7777772^000000\nเลเวลที่ต้องการ : ^77777760^000000\nอาชีพที่ใส่ได้ : ^777777Doram^000000",
+    "slots": 3,
+    "itemTypeId": 1,
+    "itemSubTypeId": 265,
+    "itemLevel": 2,
+    "attack": 150,
+    "defense": null,
+    "weight": 30,
+    "requiredLevel": 60,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Doram"
+    ],
+    "script": {
+      "range": [
+        "8"
+      ],
+      "hp": [
+        "100"
+      ],
+      "dex": [
+        "3---2"
+      ],
+      "sp": [
+        "3---10"
+      ]
+    }
+  },
+  "1695": {
+    "id": 1695,
+    "aegisName": "Detail_Model_Foxtail",
+    "name": "Fine Foxtail Model [2]",
+    "unidName": "Staff",
+    "resName": "커다란강아지풀",
+    "description": "โมเดลรูป Foxtail ที่ทำขึ้นอย่างประณีตงดงาม\nพลังโจมตีกายภาพระยะไกล + 8%, MHP + 200\nDEX + 3, MSP + 15 เพิ่มขึ้นทุก ๆ การอัพเกรด 3 ขั้น\n\n- ออปชั่นพิเศษสำหรับอาวุธ Doram - \nเมื่อ Refine ระดับ 7 จะเพิ่ม ATK&MATK ของอาวุธ 40%\nตั้งแต่ขั้นอัพเกรดมากกว่า 7 ขึ้นไป  เมื่อเพิ่ม Refine 1 ระดับ จะเพิ่ม ATK&MATK ของอาวุธ 20%\n(Refine ได้ถึงระดับ 10)\nไม่สามารถทำลายได้\nประเภท : ^777777One-handed Staff^000000 โจมตี : ^777777195^000000\nน้ำหนัก : ^77777730^000000\nเลเวลอาวุธ : ^7777773^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Doram^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 265,
+    "itemLevel": 3,
+    "attack": 195,
+    "defense": null,
+    "weight": 30,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Doram"
+    ],
+    "script": {
+      "range": [
+        "8"
+      ],
+      "hp": [
+        "200"
+      ],
+      "dex": [
+        "3---3"
+      ],
+      "sp": [
+        "3---15"
+      ],
+      "atk": [
+        "7===78",
+        "8===39",
+        "9===39",
+        "10===39"
+      ]
+    }
+  },
+  "1696": {
+    "id": 1696,
+    "aegisName": "Ex_Model_Foxtail",
+    "name": "Exquisite Foxtail Model [2]",
+    "unidName": "Staff",
+    "resName": "커다란강아지풀",
+    "description": "โมเดลรูป Foxtail ที่ทำขึ้นอย่างซับซ้อนมาก\nพลังโจมตีกายภาพระยะไกล + 8%, MHP + 5%\nDEX + 3, MSP + 15 เพิ่มขึ้นทุก ๆการอัพเกรด 2 ขั้น\n\n- ออปชั่นพิเศษสำหรับอาวุธ Doram - \nเมื่อ Refine ระดับ 7 จะเพิ่ม ATK&MATK ของอาวุธ 40%\nตั้งแต่ขั้นอัพเกรดมากกว่า 7 ขึ้นไป  เมื่อเพิ่ม Refine 1 ระดับ จะเพิ่ม ATK&MATK ของอาวุธ 20%\n(Refine ได้ถึงระดับ 10)\nไม่สามารถทำลายได้\nประเภท : ^777777One-handed Staff^000000 โจมตี : ^777777240^000000\nน้ำหนัก : ^77777730^000000\nเลเวลอาวุธ : ^7777773^000000\nเลเวลที่ต้องการ : ^777777140^000000\nอาชีพที่ใส่ได้ : ^777777Doram^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 265,
+    "itemLevel": 3,
+    "attack": 240,
+    "defense": null,
+    "weight": 30,
+    "requiredLevel": 140,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Doram"
+    ],
+    "script": {
+      "range": [
+        "8"
+      ],
+      "hpPercent": [
+        "5"
+      ],
+      "dex": [
+        "2---3"
+      ],
+      "sp": [
+        "2---15"
+      ],
+      "atk": [
+        "7===96",
+        "8===48",
+        "9===48",
+        "10===48"
+      ]
+    }
+  },
+  "1697": {
+    "id": 1697,
+    "aegisName": "Ex_Y_Model_Foxtail",
+    "name": "Yellow Exquisite Foxtail Model [1]",
+    "unidName": "Staff",
+    "resName": "정교한노랑강아지풀모형",
+    "description": "โมเดลรูป Foxtail สีเหลืองที่ทำขึ้นอย่างซับซ้อนมาก\nพลังโจมตีกายภาพระยะไกล + 9%, MHP + 7%\nพลังโจมตีกายภาพระยะไกล+ 1%, MSP + 20 เพิ่มขึ้นทุก ๆ การอัพเกรด 2 ขั้น\nเมื่อใช้สกิล [Picky Peck] มีโอกาสเปิดใช้งาน Auto Spell [Fresh Shrimp] Level 1 ให้กับตัวเอง เมื่อเรียนรู้สกิล [Fresh Shrimp] แล้ว จะเปิดใช้งานตามเลเวลสกิล\n\n- ออปชั่นพิเศษสำหรับอาวุธ Doram - \nเมื่อ Refine ระดับ 7 จะเพิ่ม ATK&MATK ของอาวุธ 40%\nตั้งแต่ขั้นอัพเกรดมากกว่า 7 ขึ้นไป เมื่อเพิ่ม Refine 1 ระดับ จะเพิ่ม ATK&MATK ของอาวุธ 20%\n(Refine ได้ถึงระดับ 10)\nไม่สามารถทำลายได้\nประเภท : ^777777One-handed Staff^000000 โจมตี : ^777777270^000000\nน้ำหนัก : ^77777730^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777175^000000\nอาชีพที่ใส่ได้ : ^777777Doram^000000",
+    "slots": 1,
+    "itemTypeId": 1,
+    "itemSubTypeId": 265,
+    "itemLevel": 4,
+    "attack": 270,
+    "defense": null,
+    "weight": 30,
+    "requiredLevel": 175,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Doram"
+    ],
+    "script": {
+      "range": [
+        "9",
+        "2---1"
+      ],
+      "hpPercent": [
+        "7"
+      ],
+      "sp": [
+        "2---20"
+      ],
+      "atk": [
+        "7===108",
+        "8===54",
+        "9===54",
+        "10===54"
+      ]
+    }
+  },
   "1703": {
     "id": 1703,
     "aegisName": "Bow__",
@@ -17171,6 +17456,44 @@
       ],
       "chance__range": [
         "EQUIP[King Schmidt's Suit&&King Schmidt's Manteau]===10"
+      ]
+    }
+  },
+  "18509": {
+    "id": 18509,
+    "aegisName": "RWC2010_Indonesia",
+    "name": "RWC 2010 Indonesia [1]",
+    "unidName": "Hat",
+    "resName": "RWC2010인도네시아",
+    "description": "หมวกที่เต็มเปี่ยมไปด้วยพลังอำนาจ เพื่อใช้ในการเฉลิมฉลอง RWC 2010 ณ ประเทศ Indonesia\n\nเพิ่มความต้านทานต่อศัตรูประเภท Demi-Human 10%\nCRI +10\nเพิ่มปริมาณการฟื้นฟูของ Red Potion, White Potion 100%\nASPD +1, LUK +5\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกประเภท 3%\nMATK +3%\n\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^7777776^000000\nตำแหน่ง : ^777777Upper^000000 น้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^77777715^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพยกเว้น Novice^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 6,
+    "weight": 10,
+    "requiredLevel": 10,
+    "location": "Upper",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "cri": [
+        "10"
+      ],
+      "aspd": [
+        "1"
+      ],
+      "luk": [
+        "5"
+      ],
+      "p_class_all": [
+        "3"
+      ],
+      "matkPercent": [
+        "3"
       ]
     }
   },
@@ -41042,6 +41365,12 @@
       "p_element_dark": [
         "EQUIP[Familiar Card]20"
       ],
+      "p_size_l": [
+        "EQUIP[Desert Wolf Card]15"
+      ],
+      "p_size_m": [
+        "EQUIP[Desert Wolf Card]15"
+      ],
       "vct": [
         "EQUIP[Phen Card]25"
       ],
@@ -41668,6 +41997,42 @@
       "p_race_demon": [
         "5",
         "EQUIP[Cursed Raydric Card]5"
+      ]
+    }
+  },
+  "27394": {
+    "id": 27394,
+    "aegisName": "S_Kathryn_Card",
+    "name": "Kathryn Wigner Card",
+    "unidName": "Kathryn Wigner Card",
+    "resName": "이름없는카드",
+    "description": "ลดระยะเวลาร่ายแบบแปรผัน 5%\nเมื่อใช้ร่วมกับ Spica Nerious Card และ Nihil M. Heine Card, \nเพิ่ม Damage ทางเวทมนตร์ต่อศัตรูขนาดเล็กและศัตรูประเภท Brute 7%\nเมื่อใช้ร่วมกับ Wolf Lugenburg Card และ Poe Richard Card, \nเพิ่ม Damage ทางเวทมนตร์ต่อศัตรูขนาดกลาง 7%, ลด Delay หลังใช้สกิล 5%\n^ffffff_^000000\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Headgear^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 769,
+    "cardPrefix": "of Virtuos Wigner",
+    "script": {
+      "vct": [
+        "5"
+      ],
+      "m_size_s": [
+        "EQUIP[Spica Nerious Card&&Nihil M. Heine Card]===7"
+      ],
+      "m_race_brute": [
+        "EQUIP[Spica Nerious Card&&Nihil M. Heine Card]===7"
+      ],
+      "m_size_m": [
+        "EQUIP[Wolf Lugenburg Card&&Poe Richard Card]===7"
+      ],
+      "acd": [
+        "EQUIP[Wolf Lugenburg Card&&Poe Richard Card]===5"
       ]
     }
   },
@@ -57130,6 +57495,72 @@
       ]
     }
   },
+  "300128": {
+    "id": 300128,
+    "aegisName": "S_Wolf_Card",
+    "name": "Wolf Lugenburg Card",
+    "unidName": "Wolf Lugenburg Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูประเภท Insect 15%\nเมื่อใช้ร่วมกับ Poe Richard Card,\nATK +5%, MATK +5%, เพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูขนาดกลาง 5%\n^ffffff_^000000\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "of Wolf Lugenburg",
+    "script": {
+      "p_race_insect": [
+        "15"
+      ],
+      "m_race_insect": [
+        "15"
+      ],
+      "atkPercent": [
+        "EQUIP[Poe Richard Card]===5"
+      ],
+      "matkPercent": [
+        "EQUIP[Poe Richard Card]===5"
+      ],
+      "p_size_m": [
+        "EQUIP[Poe Richard Card]===5"
+      ],
+      "m_size_m": [
+        "EQUIP[Poe Richard Card]===5"
+      ]
+    }
+  },
+  "300130": {
+    "id": 300130,
+    "aegisName": "S_Poe_Card",
+    "name": "Poe Richard Card",
+    "unidName": "Poe Richard Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูประเภท Plant 15%\n\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "of Richard",
+    "script": {
+      "p_race_plant": [
+        "15"
+      ],
+      "m_race_plant": [
+        "15"
+      ]
+    }
+  },
   "300141": {
     "id": 300141,
     "aegisName": "ILL_Obeaune_Card",
@@ -57466,7 +57897,7 @@
         "15",
         "EQUIP[Sniper Stone II (Upper)]15"
       ],
-      "vct__Aimed Bolt": [
+      "fix_vct__Aimed Bolt": [
         "EQUIP[Sniper Stone II (Middle)]1"
       ],
       "cd__No Limits": [

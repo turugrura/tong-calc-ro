@@ -11,7 +11,13 @@ export const calcSkillAspd = (params: {
   status: StatusSummary;
 }): SkillAspdModel => {
   const { skillData, totalEquipStatus, status } = params;
-  const { name, acd: skillAcd, cd: skillCd, fct: skillFct, vct: skillVct } = skillData;
+  const { name, acd: skillAcd } = skillData;
+  let { cd: skillCd, fct: skillFct, vct: skillVct } = skillData;
+  if (totalEquipStatus['releasedSkill']) {
+    skillCd = 0;
+    skillFct = 0;
+    skillVct = 0;
+  }
 
   const reduceSkillCd = totalEquipStatus[`cd__${name}`] || 0;
   const reduceSkillVct = totalEquipStatus[`vct__${name}`] || 0;
