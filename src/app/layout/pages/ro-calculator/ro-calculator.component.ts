@@ -62,7 +62,7 @@ import { BasicDamageSummaryModel, SkillDamageSummaryModel } from './models/damag
 import { ChanceModel } from './models/chance-model';
 import { RaceType } from './constants/race-type.const';
 import { ElementType } from './constants/element-type.const';
-import { isNumber } from './utils';
+import { createBonusNameList, isNumber } from './utils';
 import { ExtraOptionTable } from './constants/extra-option-table';
 import { ItemOptionNumber } from './constants/item-option-number.enum';
 
@@ -107,6 +107,46 @@ const extraOptionList: [ItemTypeEnum, [ItemOptionNumber, ItemOptionNumber]][] = 
 const waitRxjs = (second: number = 0.1) => {
   return of(null).pipe(delay(1000 * second), take(1));
 };
+
+const positions: DropdownModel[] = [
+  { value: 'weaponList', label: 'Weapon' },
+
+  { value: 'headUpperList', label: 'Head Upper' },
+  { value: 'headMiddleList', label: 'Head Middle' },
+  { value: 'headLowerList', label: 'Head Lower' },
+  { value: 'headCardList', label: 'Head Card' },
+
+  { value: 'shieldList', label: 'Shield' },
+  { value: 'shieldCardList', label: 'Shield Card' },
+
+  { value: 'armorList', label: 'Armor' },
+  { value: 'armorCardList', label: 'Armor Card' },
+  { value: 'garmentList', label: 'Garment' },
+  { value: 'garmentCardList', label: 'Garment Card' },
+  { value: 'bootList', label: 'Boot' },
+  { value: 'bootCardList', label: 'Boot Card' },
+  { value: 'accList', label: 'Acc' },
+  { value: 'accCardList', label: 'Acc Card' },
+
+  { value: 'enchants', label: 'Enchant Stone' },
+  // { value: 'accRightList', label: 'Acc R' },
+  // { value: 'accLeftCardList', label: 'Acc R Card' },
+  // { value: 'accLeftList', label: 'Acc L' },
+  // { value: 'accRightCardList', label: 'Acc L Card' },
+
+  { value: 'petList', label: 'Pet' },
+
+  { value: 'costumeEnhUpperList', label: 'Costume Upper' },
+  { value: 'costumeEnhMiddleList', label: 'Costume Middle' },
+  { value: 'costumeEnhLowerList', label: 'Costume Lower' },
+
+  { value: 'shadowWeaponList', label: 'Shadow Weapon' },
+  { value: 'shadowArmorList', label: 'Shadow Armor' },
+  { value: 'shadowShieldList', label: 'Shadow Shield' },
+  { value: 'shadowBootList', label: 'Shadow Boot' },
+  { value: 'shadowEarringList', label: 'Shadow Earring' },
+  { value: 'shadowPendantList', label: 'Shadow Pendant' },
+];
 
 interface ClassModel extends Partial<Record<ItemTypeEnum, number>> {
   rawOptionTxts: string[];
@@ -161,12 +201,14 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   updateMonsterListEvent = new Subject();
   updateCompareEvent = new Subject();
   updateChanceEvent = new Subject();
+  isCalculatingEvent = new Subject();
 
   loadBtnItems: MenuItem[];
   monsterDataMap: Record<number, MonsterModel> = {};
   hpSpTable: HpSpTable;
   items!: Record<number, ItemModel>;
   mapEnchant!: Map<string, ItemModel>;
+  enchants: DropdownModel[] = [];
   skillBuffs = JobBuffs;
 
   preSets: DropdownModel[] = [];
@@ -232,6 +274,8 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   bootEnchant1List: DropdownModel[] = [];
   bootEnchant2List: DropdownModel[] = [];
   bootEnchant3List: DropdownModel[] = [];
+  accList: DropdownModel[] = [];
+  accCardList: DropdownModel[] = [];
   accLeftList: DropdownModel[] = [];
   accLeftCardList: DropdownModel[] = [];
   accLeftEnchant1List: DropdownModel[] = [];
@@ -356,6 +400,25 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   hideBasicAtk = this.layoutService.config.hideBasicAtk;
   readonly hideHpSp = HideHpSp;
 
+  isShowSearchDialog = false;
+  itemPositionOptions = positions;
+  selectedItemPositions: string[] = [];
+  itemSearchFirst = 0;
+  totalFilteredItems = 0;
+
+  bonusNameList = createBonusNameList() as any;
+  selectedBonus: any[] = [];
+
+  equipableItems: (DropdownModel & { id: number; position: string })[] = [];
+  filteredItems: DropdownModel[] = [];
+  isSerchMatchAllBonus = true;
+  selectedFilteredItem: string;
+  activeFilteredItemDesc: string;
+  activeFilteredItem: (typeof this.equipableItems)[0];
+
+  offensiveSkills: DropdownModel[] = [];
+  selectedOffensiveSkills: string[] = [];
+
   constructor(
     private roService: RoService,
     private messageService: MessageService,
@@ -376,6 +439,9 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       this.hideBasicAtk = c.hideBasicAtk;
     });
     this.allSubs.push(laySub);
+
+    const isCalcSubs = this.isCalculatingEvent.pipe(debounceTime(100)).subscribe(() => (this.isCalculating = false));
+    this.allSubs.push(isCalcSubs);
 
     const itemChanges = new Set<ItemTypeEnum>();
     const updateItemSubs = this.updateItemEvent
@@ -434,7 +500,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
           .map(({ name }) => name);
         this.selectedChances = fixedSelectedChances;
 
-        this.isCalculating = false;
+        this.isCalculatingEvent.next(false);
         itemChanges.clear();
       });
     this.allSubs.push(updateItemSubs);
@@ -447,7 +513,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       .subscribe(() => {
         this.calculateToSelectedMonsters(false);
         this.setCacheMonsterIdsForCalc();
-        this.isCalculating = false;
+        this.isCalculatingEvent.next(false);
       });
     this.allSubs.push(updateMonsterListSubs);
 
@@ -511,7 +577,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         }
         this.onSelectItemDescription(this.isEnableCompare && Boolean(this.selectedCompareItemDesc));
 
-        this.isCalculating = false;
+        this.isCalculatingEvent.next(false);
       });
     this.allSubs.push(x);
 
@@ -522,7 +588,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         filter(() => {
           const needCalc = this.selectedChances?.length > 0;
           if (!needCalc) {
-            this.isCalculating = false;
+            this.isCalculatingEvent.next(false);
             this.calculator.setSelectedChances([]);
             this.calculateToSelectedMonsters();
           }
@@ -537,7 +603,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         debounceTime(100),
       )
       .subscribe(() => {
-        this.isCalculating = false;
+        this.isCalculatingEvent.next(false);
       });
     this.allSubs.push(cObs);
   }
@@ -567,13 +633,20 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         this.calculator.setMasterItems(items).setHpSpTable(hpSpTable);
         this.calculator2.setMasterItems(items).setHpSpTable(hpSpTable);
 
+        const ens = [] as DropdownModel[];
         this.mapEnchant = new Map(
           Object.values(items)
             .filter((item) => item.itemTypeId === ItemTypeId.ENCHANT)
             .map((item) => {
+              ens.push({
+                label: item.name,
+                value: item.id,
+              });
+
               return [item.aegisName, item];
             }),
         );
+        this.enchants = ens;
 
         if (!this.env.production) {
           const enchants = EnchantTable.flatMap((a) => a.enchants)
@@ -1277,6 +1350,12 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     this.activeSkills = this.selectedCharacter.activeSkills;
     this.passiveSkills = this.selectedCharacter.passiveSkills;
     this.atkSkills = this.selectedCharacter.atkSkills;
+    this.offensiveSkills = [...new Set(this.atkSkills.map((a) => a.name)).values()].map((name) => {
+      return {
+        label: name,
+        value: name,
+      };
+    });
     this.atkSkillCascades = this.selectedCharacter.atkSkills;
   }
 
@@ -1420,6 +1499,8 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     const garmentCardList = [];
     const bootList = [];
     const bootCardList = [];
+    const accList = [];
+    const accCardList = [];
     const accLeftList = [];
     const accLeftCardList = [];
     const accRightList = [];
@@ -1485,13 +1566,16 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
           continue;
         case ItemSubTypeId.Acc_L:
           accLeftList.push(item);
+          accList.push(item);
           continue;
         case ItemSubTypeId.Acc_R:
           accRightList.push(item);
+          accList.push(item);
           continue;
         case ItemSubTypeId.Acc:
           accRightList.push(item);
           accLeftList.push(item);
+          accList.push(item);
           continue;
         case ItemSubTypeId.Pet:
           petList.push(item);
@@ -1556,13 +1640,16 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
             continue;
           case CardPosition.AccL:
             accLeftCardList.push(item);
+            accCardList.push(item);
             continue;
           case CardPosition.AccR:
             accRightCardList.push(item);
+            accCardList.push(item);
             continue;
           case CardPosition.Acc:
             accLeftCardList.push(item);
             accRightCardList.push(item);
+            accCardList.push(item);
             continue;
         }
       }
@@ -1584,6 +1671,8 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     this.itemList.garmentCardList = toDropdownList(garmentCardList, 'name', 'id', undefined, ['cardPrefix']);
     this.itemList.bootList = toDropdownList(bootList, 'name', 'id');
     this.itemList.bootCardList = toDropdownList(bootCardList, 'name', 'id', undefined, ['cardPrefix']);
+    this.itemList.accList = toDropdownList(accList, 'name', 'id');
+    this.itemList.accCardList = toDropdownList(accCardList, 'name', 'id');
     this.itemList.accLeftList = toDropdownList(accLeftList, 'name', 'id');
     this.itemList.accLeftCardList = toDropdownList(accLeftCardList, 'name', 'id', undefined, ['cardPrefix']);
     this.itemList.accRightList = toDropdownList(accRightList, 'name', 'id');
@@ -1642,6 +1731,8 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     this.garmentCardList = this.itemList.garmentCardList.filter(onlyMe);
     this.bootList = this.itemList.bootList.filter(onlyMe);
     this.bootCardList = this.itemList.bootCardList.filter(onlyMe);
+    this.accList = this.itemList.accList.filter(onlyMe);
+    this.accCardList = this.itemList.accCardList.filter(onlyMe);
     this.accLeftList = this.itemList.accLeftList.filter(onlyMe);
     this.accLeftCardList = this.itemList.accLeftCardList.filter(onlyMe);
     this.accRightList = this.itemList.accRightList.filter(onlyMe);
@@ -1662,6 +1753,59 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     this.shadowEarringList = this.itemList.shadowEarringList.filter(onlyMe);
     this.shadowPendantList = this.itemList.shadowPendantList.filter(onlyMe);
     this.shadowWeaponList = this.itemList.shadowWeaponList.filter(onlyMe);
+
+    this.setEquipableItems();
+    this.clearItemSearch();
+  }
+
+  private setEquipableItems() {
+    const items = [
+      { position: 'weaponList', values: this.weaponList },
+      { position: 'weaponCardList', values: this.weaponCardList },
+      { position: 'headUpperList', values: this.headUpperList },
+      { position: 'headMiddleList', values: this.headMiddleList },
+      { position: 'headLowerList', values: this.headLowerList },
+      { position: 'headCardList', values: this.headCardList },
+      { position: 'armorList', values: this.armorList },
+      { position: 'armorCardList', values: this.armorCardList },
+      { position: 'shieldList', values: this.shieldList },
+      { position: 'shieldCardList', values: this.shieldCardList },
+      { position: 'garmentList', values: this.garmentList },
+      { position: 'garmentCardList', values: this.garmentCardList },
+      { position: 'bootList', values: this.bootList },
+      { position: 'bootCardList', values: this.bootCardList },
+      { position: 'accList', values: this.accList },
+      { position: 'accCardList', values: this.accCardList },
+
+      { position: 'enchants', values: this.enchants },
+      // { position: 'accLeftCardList', values: this.accLeftCardList },
+      // { position: 'accRightList', values: this.accRightList },
+      // { position: 'accRightCardList', values: this.accRightCardList },
+      { position: 'petList', values: this.petList },
+      { position: 'costumeUpperList', values: this.costumeUpperList },
+      { position: 'costumeEnhUpperList', values: this.costumeEnhUpperList },
+      { position: 'costumeEnhMiddleList', values: this.costumeEnhMiddleList },
+      { position: 'costumeEnhLowerList', values: this.costumeEnhLowerList },
+      { position: 'costumeEnhGarmentList', values: this.costumeEnhGarmentList },
+      { position: 'costumeEnhGarment4List', values: this.costumeEnhGarment4List },
+      { position: 'shadowArmorList', values: this.shadowArmorList },
+      { position: 'shadowShieldList', values: this.shadowShieldList },
+      { position: 'shadowBootList', values: this.shadowBootList },
+      { position: 'shadowEarringList', values: this.shadowEarringList },
+      { position: 'shadowPendantList', values: this.shadowPendantList },
+      { position: 'shadowWeaponList', values: this.shadowWeaponList },
+    ];
+
+    this.equipableItems = items.flatMap((a) => {
+      return a.values.map((value) => {
+        return {
+          label: value.label,
+          id: value.value as number,
+          value: value.value,
+          position: a.position,
+        };
+      });
+    });
   }
 
   private setAmmoDropdownList() {
@@ -2063,7 +2207,72 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     });
   }
 
-  onSelecteChance(a: any) {
+  onSelecteChance(_a: any) {
     this.updateChanceEvent.next(1);
+  }
+
+  showSearchDialog() {
+    this.isShowSearchDialog = true;
+  }
+
+  onItemSearchFilterChange(searchText: any) {
+    const selectedBonus = [...this.selectedBonus.filter(Boolean)];
+    const selectedPositions = new Set([...(this.selectedItemPositions || []).filter(Boolean)]);
+
+    const displayItems = [];
+    for (const equipableItem of this.equipableItems) {
+      const item = this.items[equipableItem.value] as ItemModel;
+      if (!item?.script) {
+        console.log('No Script', { item, equipableItem });
+        continue;
+      }
+      if (selectedPositions.size > 0 && !selectedPositions.has(equipableItem.position)) continue;
+      if (this.selectedOffensiveSkills?.length > 0) {
+        const found = this.selectedOffensiveSkills.some(
+          (skillName) =>
+            item.script[skillName] ||
+            item.script[`chance__${skillName}`] ||
+            item.script[`cd__${skillName}`] ||
+            item.script[`vct__${skillName}`] ||
+            item.script[`fct__${skillName}`] ||
+            item.script[`fix_vct__${skillName}`],
+        );
+        if (!found) continue;
+      }
+      if (searchText && !item.name.includes(searchText)) continue;
+
+      const foundBonus = this.isSerchMatchAllBonus
+        ? selectedBonus.every((bonus) => item.script[bonus])
+        : selectedBonus.some((bonus) => item.script[bonus]);
+      if (foundBonus) {
+        displayItems.push(equipableItem);
+      }
+    }
+    this.totalFilteredItems = displayItems.length;
+    this.filteredItems = displayItems;
+    this.activeFilteredItem = undefined;
+    this.activeFilteredItemDesc = undefined;
+    setTimeout(() => {
+      this.itemSearchFirst = 0;
+    }, 10);
+  }
+
+  onSelectFilteredItem(_item: any) {
+    // console.log({ item, activeFilteredItemID: this.activeFilteredItemID });
+    // this.activeFilteredItemID = this.equipItemIdItemTypeMap.get(selectedType);
+
+    this.activeFilteredItemDesc = this.items[this.activeFilteredItem?.id]?.description
+      .replaceAll('\n', '<br>')
+      .replace(/\^(.{6})/g, '<font color="#$1">');
+  }
+
+  clearItemSearch() {
+    this.filteredItems = [];
+    this.selectedOffensiveSkills = [];
+    this.totalFilteredItems = 0;
+    this.itemSearchFirst = 0;
+    this.selectedFilteredItem = undefined;
+    this.activeFilteredItem = undefined;
+    this.activeFilteredItemDesc = undefined;
   }
 }

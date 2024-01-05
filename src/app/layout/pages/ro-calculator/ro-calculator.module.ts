@@ -27,6 +27,7 @@ import { ToastModule } from 'primeng/toast';
 import { ToggleButtonModule } from 'primeng/togglebutton';
 import { BlockUIModule } from 'primeng/blockui';
 import { DataViewModule } from 'primeng/dataview';
+import { TreeSelectModule } from 'primeng/treeselect';
 
 import { RoCalculatorComponent } from './ro-calculator.component';
 import { PrettyJsonPipe } from '../../prettier-json.pipe';
@@ -37,6 +38,7 @@ import { PresetTableComponent } from './preset-table/preset-table.component';
 import { MonsterDataViewComponent } from './monster-data-view/monster-data-view.component';
 import { FieldsetModule } from 'primeng/fieldset';
 import { MiscDetailComponent } from './misc-detail/misc-detail.component';
+import { DialogModule } from 'primeng/dialog';
 
 @NgModule({
   imports: [
@@ -68,7 +70,9 @@ import { MiscDetailComponent } from './misc-detail/misc-detail.component';
     ToggleButtonModule,
     BlockUIModule,
     DataViewModule,
+    TreeSelectModule,
     FieldsetModule,
+    DialogModule,
     RoCalculatorRoutingModule,
   ],
   declarations: [

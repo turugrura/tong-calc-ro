@@ -41,6 +41,8 @@ export interface ItemListModel {
   bootEnchant1List: DropdownModel[];
   bootEnchant2List: DropdownModel[];
   bootEnchant3List: DropdownModel[];
+  accList: DropdownModel[];
+  accCardList: DropdownModel[];
   accLeftList: DropdownModel[];
   accLeftCardList: DropdownModel[];
   accLeftEnchant1List: DropdownModel[];

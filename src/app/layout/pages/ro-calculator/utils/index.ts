@@ -5,3 +5,4 @@ export * from './calc-dmg-dps';
 export * from './round';
 export * from './is-number';
 export * from './sort-skill';
+export * from './create-bonus-name-list';
