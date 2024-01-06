@@ -219,6 +219,8 @@ export class DamageCalculator {
   }
 
   private getAdvanceKatar() {
+    if (this.weaponData.data.typeName !== 'katar') return 0;
+
     return this.totalBonus['advKatar'] || 0;
   }
 
