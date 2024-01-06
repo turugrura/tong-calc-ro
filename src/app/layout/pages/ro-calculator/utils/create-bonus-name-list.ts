@@ -108,21 +108,6 @@ export const createBonusNameList = () => {
   }
 
   items.push(createBaseStatOptionList(0, 0));
-  // const item: DropdownModel & { children: any[] } = {
-  //   label: 'Base Stat',
-  //   value: 'Base Stat',
-  //   children: [],
-  // };
-  // const optionBases: [string, string][] = [
-  //   ['All Stat', 'allStatus'],
-  //   ['Str', 'str'],
-  //   ['Agi', 'agi'],
-  //   ['Vit', 'vit'],
-  //   ['Int', 'int'],
-  //   ['Dex', 'dex'],
-  //   ['Luk', 'luk'],
-  // ];
-  // items.push(item);
 
   return items;
 };

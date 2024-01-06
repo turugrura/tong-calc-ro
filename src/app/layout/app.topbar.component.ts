@@ -101,6 +101,11 @@ export class AppTopBarComponent {
       writer: 'RO GGT',
       link: 'https://ro.gnjoy.in.th/geffen-magic-tournament-enchant-system-update/',
     },
+    {
+      label: 'คุณสมบัติลับยาแอส ทำยังไงให้ตีแรงที่สุด (โปรดเปิดคำบรรยายเพื่อข้อมูลที่ครบถ้วน)',
+      writer: '/\\ssing (แอสซิ่ง)',
+      link: 'https://youtu.be/WvSbULJ2CGU?si=Ae5vY9teaGZDXSRB',
+    },
     // {
     //   label: '',
     //   writer: '',
@@ -109,6 +114,20 @@ export class AppTopBarComponent {
   ];
 
   updates: { v: string; date: string; logs: string[] }[] = [
+    {
+      v: 'V1.7.12',
+      date: '06-01-2567',
+      logs: [
+        'Fixed Advance Katar Mastery to effect only Katar Weapon',
+        'Fixed reported bugs',
+        'Added Feature search item by bonus stat (search icon on center right screen)',
+        'Added Buff (Magnum Break)',
+        'Added Rune Knight offensive skills (Sonic Wave, Wind Cutter)',
+        'Added Sura offensive skill (Knuckle Arrow)',
+        'Added Warlock skill effect (Released ***effected to all skills)',
+        'Added requested items',
+      ],
+    },
     {
       v: 'V1.7.11',
       date: '29-12-2566',
