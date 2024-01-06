@@ -180,6 +180,27 @@ export class Sura extends CharacterBase {
         return damage + bonusDamge;
       },
     },
+    {
+      name: 'Knuckle Arrow',
+      label: 'Knuckle Arrow Lv10',
+      value: 'Knuckle Arrow==10',
+      fct: 0,
+      vct: 0,
+      acd: 1,
+      cd: 0,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, monster } = input;
+        const baseLevel = model.level;
+
+        let baseDamage = 500 + skillLevel * 100;
+
+        if (monster.isMvp) {
+          baseDamage = 500 + skillLevel * 200;
+        }
+
+        return baseDamage * (baseLevel / 100);
+      },
+    },
   ];
 
   protected readonly _activeSkillList: ActiveSkillModel[] = [
@@ -207,11 +228,36 @@ export class Sura extends CharacterBase {
       inputType: 'dropdown',
       dropdown: [
         { label: '-', value: 0, isUse: false },
-        { label: 'Lv 1', value: 1, isUse: true, bonus: { atk: 8 * 1, atkPercent: 1, 'Rampage Blast': 30 } },
-        { label: 'Lv 2', value: 2, isUse: true, bonus: { atk: 8 * 2, atkPercent: 2, 'Rampage Blast': 30 } },
-        { label: 'Lv 3', value: 3, isUse: true, bonus: { atk: 8 * 3, atkPercent: 3, 'Rampage Blast': 30 } },
-        { label: 'Lv 4', value: 4, isUse: true, bonus: { atk: 8 * 4, atkPercent: 4, 'Rampage Blast': 30 } },
-        { label: 'Lv 5', value: 5, isUse: true, bonus: { atk: 8 * 5, atkPercent: 5, 'Rampage Blast': 30 } },
+        {
+          label: 'Lv 1',
+          value: 1,
+          isUse: true,
+          bonus: { atk: 8 * 1, atkPercent: 1, 'Rampage Blast': 30, 'Knuckle Arrow': 30 },
+        },
+        {
+          label: 'Lv 2',
+          value: 2,
+          isUse: true,
+          bonus: { atk: 8 * 2, atkPercent: 2, 'Rampage Blast': 30, 'Knuckle Arrow': 30 },
+        },
+        {
+          label: 'Lv 3',
+          value: 3,
+          isUse: true,
+          bonus: { atk: 8 * 3, atkPercent: 3, 'Rampage Blast': 30, 'Knuckle Arrow': 30 },
+        },
+        {
+          label: 'Lv 4',
+          value: 4,
+          isUse: true,
+          bonus: { atk: 8 * 4, atkPercent: 4, 'Rampage Blast': 30, 'Knuckle Arrow': 30 },
+        },
+        {
+          label: 'Lv 5',
+          value: 5,
+          isUse: true,
+          bonus: { atk: 8 * 5, atkPercent: 5, 'Rampage Blast': 30, 'Knuckle Arrow': 30 },
+        },
       ],
     },
     {
