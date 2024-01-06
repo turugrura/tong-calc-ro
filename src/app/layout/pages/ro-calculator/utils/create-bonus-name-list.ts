@@ -1,6 +1,7 @@
 import { ElementType } from '../constants/element-type.const';
 import { RaceType } from '../constants/race-type.const';
 import { DropdownModel } from '../models/dropdown.model';
+import { createBaseStatOptionList } from './create-base-stat-option-list';
 
 interface X extends DropdownModel {
   children?: X[];
@@ -106,7 +107,22 @@ export const createBonusNameList = () => {
     }
   }
 
-  // items.push(createBaseStatOptionList(1, 30));
+  items.push(createBaseStatOptionList(0, 0));
+  // const item: DropdownModel & { children: any[] } = {
+  //   label: 'Base Stat',
+  //   value: 'Base Stat',
+  //   children: [],
+  // };
+  // const optionBases: [string, string][] = [
+  //   ['All Stat', 'allStatus'],
+  //   ['Str', 'str'],
+  //   ['Agi', 'agi'],
+  //   ['Vit', 'vit'],
+  //   ['Int', 'int'],
+  //   ['Dex', 'dex'],
+  //   ['Luk', 'luk'],
+  // ];
+  // items.push(item);
 
   return items;
 };

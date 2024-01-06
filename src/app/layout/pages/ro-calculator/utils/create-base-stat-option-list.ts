@@ -35,7 +35,7 @@ export const createBaseStatOptionList = (starVal: number, endVal: number) => {
           value: `${prop}:${num}`,
         };
       });
-    } else {
+    } else if (values.length > 1) {
       children = values.map((value) => {
         const { label: label2, min, max } = value;
 
@@ -51,6 +51,13 @@ export const createBaseStatOptionList = (starVal: number, endVal: number) => {
           }),
         };
       });
+    } else {
+      item.children.push({
+        label,
+        value: prop,
+      });
+
+      continue;
     }
 
     item.children.push({
