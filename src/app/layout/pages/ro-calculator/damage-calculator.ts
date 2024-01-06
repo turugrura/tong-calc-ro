@@ -629,7 +629,7 @@ export class DamageCalculator {
       name: skillName,
       element,
       canCri: _canCri,
-      isMelee,
+      isMelee: _isMelee,
       isHDefToSDef = false,
       isIgnoreDef = false,
       finalDmgFormula,
@@ -642,6 +642,8 @@ export class DamageCalculator {
     const softDef = finalSoftDef + (isHDefToSDef ? reducedHardDef : 0);
 
     const { range, melee, criDmg } = this.totalBonus;
+    const isMelee =
+      _isMelee != null && typeof _isMelee === 'function' ? _isMelee(this.weaponData.data.typeName) : !!_isMelee;
     const ranged = isMelee ? melee : range;
     const rangedMultiplier = this.toPercent(ranged + 100);
     const baseSkillMultiplier = this.toPercent(baseSkillDamage);
@@ -964,7 +966,7 @@ export class DamageCalculator {
       part2,
       baseCri: baseSkillCri = 0,
       isMatk,
-      isMelee,
+      isMelee: _isMelee,
       isHit100,
       isIgnoreDef = false,
       totalHit: _totalHit = 1,
@@ -1081,6 +1083,8 @@ export class DamageCalculator {
     const hitKill = Math.ceil(this.monsterData.hp / minDamage);
 
     const totalPene = isMatk ? this.getTotalMagicalPene() : basicDmg.totalPene;
+    const isMelee =
+      _isMelee != null && typeof _isMelee === 'function' ? _isMelee(this.weaponData.data.typeName) : !!_isMelee;
 
     const skillDmg: SkillDamageSummaryModel = {
       baseSkillDamage,

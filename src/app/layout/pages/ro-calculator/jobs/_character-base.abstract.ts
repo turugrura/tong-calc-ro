@@ -6,6 +6,7 @@ import { Weapon } from '../weapon';
 import { AspdTable } from './_aspd-table';
 import { ClassName } from './_class-name';
 import { sortSkill } from '../utils';
+import { WeaponTypeName } from '../constants/weapon-type-mapper';
 
 export interface AtkSkillFormulaInput extends InfoForClass {
   skillLevel: number;
@@ -60,7 +61,7 @@ export interface AtkSkillModel {
   hit?: number;
   totalHit?: number | ((monsterSize: 's' | 'm' | 'l') => number);
   isMatk?: boolean;
-  isMelee?: boolean;
+  isMelee?: boolean | ((weaponType: WeaponTypeName) => boolean);
   isDevMode?: boolean;
   isIgnoreDef?: boolean;
   isHDefToSDef?: boolean;

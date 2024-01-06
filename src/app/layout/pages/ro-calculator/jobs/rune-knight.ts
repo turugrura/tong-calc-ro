@@ -93,6 +93,122 @@ export class RuneKnight extends CharacterBase {
   protected readonly classNames = ['Only 3rd Cls', 'Rune Knight', 'Rune Knight Cls', 'Rune Knight Class'];
   protected readonly _atkSkillList: AtkSkillModel[] = [
     {
+      name: 'Sonic Wave',
+      label: 'Sonic Wave Lv10',
+      value: 'Sonic Wave==10',
+      acd: 1,
+      fct: 0,
+      vct: 0,
+      cd: 2,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
+
+        return (700 + skillLevel * 100) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Sonic Wave',
+      label: '[Improved 1st] Sonic Wave Lv10',
+      value: '[Improved 1st] Sonic Wave==10',
+      acd: 1,
+      fct: 0,
+      vct: 0,
+      cd: 2,
+      canCri: true,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
+
+        return (500 + skillLevel * 100) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Sonic Wave',
+      label: '[Improved 2nd] Sonic Wave Lv10',
+      value: '[Improved 2nd] Sonic Wave==10',
+      acd: 0.5,
+      fct: 0,
+      vct: 0,
+      cd: 1.75,
+      canCri: true,
+      criDmgPercentage: 0.5,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
+
+        return (1050 + skillLevel * 100) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Wind Cutter',
+      label: 'Wind Cutter Lv10',
+      value: 'Wind Cutter==10',
+      acd: 0,
+      fct: 0,
+      vct: 0,
+      cd: 2,
+      element: ElementType.Wind,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
+
+        return (100 + skillLevel * 50) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Wind Cutter',
+      label: '[Improved 1st] Wind Cutter Lv10',
+      value: '[Improved 1st] Wind Cutter==10',
+      acd: 1,
+      fct: 0,
+      vct: 0,
+      cd: 0.2,
+      isMelee: (weaponType) => weaponType !== 'spear',
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, weapon } = input;
+        const wTypeName = weapon.data.typeName;
+        const baseLevel = model.level;
+
+        let baseDamage = 0;
+        if (wTypeName === 'twohandSword') {
+          baseDamage = 250 * skillLevel;
+        } else if (wTypeName === 'spear') {
+          baseDamage = 400 * skillLevel;
+        } else {
+          baseDamage = 300 * skillLevel;
+        }
+
+        return baseDamage * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Wind Cutter',
+      label: '[Improved 2nd] Wind Cutter Lv10',
+      value: '[Improved 2nd] Wind Cutter==10',
+      acd: 0.5,
+      fct: 0,
+      vct: 0,
+      cd: 0.3,
+      isMelee: (weaponType) => weaponType !== 'spear',
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, weapon } = input;
+        const wTypeName = weapon.data.typeName;
+        const baseLevel = model.level;
+
+        let baseDamage = 0;
+        if (wTypeName === 'twohandSword') {
+          baseDamage = 250 * skillLevel;
+        } else if (wTypeName === 'spear') {
+          baseDamage = 400 * skillLevel;
+        } else {
+          baseDamage = 300 * skillLevel;
+        }
+
+        return baseDamage * (baseLevel / 100);
+      },
+    },
+    {
       label: 'Ignition Break Lv5 (3x3)',
       name: 'Ignition Break',
       value: 'Ignition Break3==5',
@@ -150,9 +266,27 @@ export class RuneKnight extends CharacterBase {
       },
     },
     {
-      label: 'Ignition Break Lv5 [Improved]',
       name: 'Ignition Break',
+      label: '[Improved 1st] Ignition Break Lv5',
       value: '[Improved] Ignition Break==5',
+      acd: 0,
+      fct: 0,
+      vct: 1,
+      cd: 2,
+      isMelee: true,
+      canCri: true,
+      baseCriPercentage: 0.5,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
+
+        return skillLevel * 400 * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Ignition Break',
+      label: '[Improved 2nd] Ignition Break Lv5',
+      value: '[Improved 2nd] Ignition Break==5',
       acd: 0,
       fct: 0,
       vct: 1,
