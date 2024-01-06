@@ -425,6 +425,48 @@
       ]
     }
   },
+  "1443": {
+    "id": 1443,
+    "aegisName": "Scarlet_Spear",
+    "name": "Spear of Crimson [2]",
+    "unidName": "Spear",
+    "resName": "진홍의스피어",
+    "description": "หอกมือเดียวที่เปล่งแสงสีแดงบนหอก\nเพิ่ม ATK เท่ากับ (ระดับ Refine*ระดับ Refine) (สามารถ Refine ได้ถึง 15)\nตัวละครเลเวล 70 ขึ้นไป : ทุกครั้งที่ BaseLv เพิ่มขึ้น 10 เลเวล จะเพิ่ม ATK ทีละ +5 \nประเภท : ^777777One-Handed Spear^000000 โจมตี : ^77777790^000000\nน้ำหนัก : ^77777790^000000\nเลเวลอาวุธ : ^7777773^000000\nเลเวลที่ต้องการ : ^77777770^000000\nอาชีพที่ใส่ได้ : ^777777 Swordman^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 259,
+    "itemLevel": 3,
+    "attack": 90,
+    "defense": null,
+    "weight": 90,
+    "requiredLevel": 70,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Swordman"
+    ],
+    "script": {
+      "atk": [
+        "1===1",
+        "2===3",
+        "3===5",
+        "4===7",
+        "5===9",
+        "6===11",
+        "7===13",
+        "8===15",
+        "9===17",
+        "10===19",
+        "11===21",
+        "12===23",
+        "13===25",
+        "14===27",
+        "15===29",
+        "SUM[level==70]===-35",
+        "SUM[level==10]---5"
+      ]
+    }
+  },
   "1447": {
     "id": 1447,
     "aegisName": "Poison_Forged_Spear",
@@ -3396,6 +3438,41 @@
       ]
     }
   },
+  "2928": {
+    "id": 2928,
+    "aegisName": "Luk_Glove_",
+    "name": "Luk Glove [1]",
+    "unidName": "Accssory",
+    "resName": "행운의글러브",
+    "description": "ถุงมือที่ตอบสนองความต้องการของผู้ใช้\nMHP + 100, MSP + 20\nเพิ่ม CRI+1 ต่อ LUK 10 หน่วย\nCri Damage+1% เมื่อ LUK 110 ขึ้นไป\nประเภท : ^777777Accessary^000000 ป้องกัน : ^7777770^000000\nน้ำหนัก : ^77777710^000000\nLv ที่ต้องการ : ^777777100^000000\nอาชีพ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 517,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "hp": [
+        "100"
+      ],
+      "sp": [
+        "20"
+      ],
+      "cri": [
+        "SUM[luk==10]---1"
+      ],
+      "criDmg": [
+        "SUM[luk==110]===1"
+      ]
+    }
+  },
   "2963": {
     "id": 2963,
     "aegisName": "Body_Power_Up_Ring",
@@ -4967,6 +5044,36 @@
       ]
     }
   },
+  "4430": {
+    "id": 4430,
+    "aegisName": "Ifrit_Card",
+    "name": "Ifrit Card",
+    "unidName": "Ifrit Card",
+    "resName": "이름없는카드",
+    "description": "ATK, CRI, HIT จะเพิ่มขึ้น โดยขึ้นทุกๆ 10 Job Level\nเพิ่มโอกาส 0.1% ในการร่ายสกิล Earthquake Lv.10 โดยอัตโนมัติ เมื่อได้รับการโจมตีทางกายภาพ\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Accessory^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 136,
+    "cardPrefix": "of Inferno",
+    "script": {
+      "atk": [
+        "SUM[jobLevel==10]---1"
+      ],
+      "cri": [
+        "SUM[jobLevel==10]---1"
+      ],
+      "hit": [
+        "SUM[jobLevel==10]---1"
+      ]
+    }
+  },
   "4441": {
     "id": 4441,
     "aegisName": "Fallen_Bishop_Card",
@@ -5180,6 +5287,36 @@
       "p_race_demon": [
         "20",
         "15===10"
+      ]
+    }
+  },
+  "4487": {
+    "id": 4487,
+    "aegisName": "Sealed_Ifrit_Card",
+    "name": "Sealed Ifrit Card",
+    "unidName": "Sealed Ifrit Card",
+    "resName": "이름없는카드",
+    "description": "ATK, CRI, HIT จะเพิ่มขึ้น โดยขึ้นทุกๆ 20 Job Level เพิ่มโอกาส 1% ในการร่ายสกิล Earthquake Lv.2 โดยอัตโนมัติ เมื่อได้รับการโจมตีทางกายภาพ\nประเภท : ^777777Card ^000000\nใช้กับ : ^777777Accessory^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 136,
+    "cardPrefix": "Half Inferno",
+    "script": {
+      "atk": [
+        "SUM[jobLevel==20]---1"
+      ],
+      "cri": [
+        "SUM[jobLevel==20]---1"
+      ],
+      "hit": [
+        "SUM[jobLevel==20]---1"
       ]
     }
   },
@@ -5786,6 +5923,62 @@
       ]
     }
   },
+  "4597": {
+    "id": 4597,
+    "aegisName": "LichternB_Card",
+    "name": "Lichtern Blue Card",
+    "unidName": "Lichtern Blue Card",
+    "resName": "이름없는카드",
+    "description": "MATK + 10, พลังโจมตีทางเวทย์ธาตุ Water เพิ่มขึ้น 5%\nเมื่อขั้นอัพเกรดตั้งแต่ 9 ขึ้นไป พลังโจมตีทางเวทย์ธาตุ Water เพิ่มอีก 5%\nประเภท : ^777777Card^000000\nใส่กับ : ^777777Headgear^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 769,
+    "cardPrefix": "of Water",
+    "script": {
+      "matk": [
+        "10"
+      ],
+      "m_my_element_water": [
+        "5",
+        "9===5"
+      ]
+    }
+  },
+  "4598": {
+    "id": 4598,
+    "aegisName": "LichternY_Card",
+    "name": "Lichtern Green Card",
+    "unidName": "Lichtern Green Card",
+    "resName": "이름없는카드",
+    "description": "MATK + 10, พลังโจมตีทางเวทย์ธาตุ Ghost เพิ่มขึ้น 5%\nเมื่อขั้นอัพเกรดตั้งแต่ 9 ขึ้นไป, พลังโจมตีทางเวทย์ธาตุ Ghost เพิ่มอีก 5%\nประเภท : ^777777Card^000000\nใส่กับ : ^777777Headgear^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 769,
+    "cardPrefix": "of Telekinesis",
+    "script": {
+      "matk": [
+        "10"
+      ],
+      "m_my_element_ghost": [
+        "5",
+        "9===5"
+      ]
+    }
+  },
   "4599": {
     "id": 4599,
     "aegisName": "LichternR_Card",
@@ -5809,6 +6002,34 @@
         "10"
       ],
       "m_my_element_fire": [
+        "5",
+        "9===5"
+      ]
+    }
+  },
+  "4600": {
+    "id": 4600,
+    "aegisName": "LichternG_Card",
+    "name": "Lichtern Yellow Card",
+    "unidName": "Lichtern Yellow Card",
+    "resName": "이름없는카드",
+    "description": "MATK + 10, พลังโจมตีทางเวทย์ธาตุ Earth เพิ่มขึ้น 5%\nเมื่อขั้นอัพเกรดตั้งแต่ 9 ขึ้นไป, พลังโจมตีทางเวทย์ธาตุ Earth เพิ่มอีก 5%\nประเภท : ^777777Card^000000\nใส่กับ : ^777777Headgear^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 769,
+    "cardPrefix": "of Ground",
+    "script": {
+      "matk": [
+        "10"
+      ],
+      "m_my_element_earth": [
         "5",
         "9===5"
       ]
@@ -17571,6 +17792,35 @@
       "matkPercent": [
         "7===2",
         "9===5"
+      ]
+    }
+  },
+  "18536": {
+    "id": 18536,
+    "aegisName": "Foxtail",
+    "name": "Foxtail",
+    "unidName": "accessory",
+    "resName": "강아지풀",
+    "description": "ไอเทมสไตล์ Wanderer\nMATK + 10, ลด fixed cast time ของ skill ลง 0.1 วินาที\nประเภท : ^777777Headgear^000000 ป้องกัน : ^7777770^000000\nตำแหน่ง ^777777Lower ^000000 น้ำหนัก : ^77777710^000000\nLv ที่ต้องการ : ^7777771^000000\nอาชีพ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 1,
+    "location": "Lower",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "matk": [
+        "10"
+      ],
+      "fct": [
+        "0.1"
       ]
     }
   },
@@ -44369,6 +44619,43 @@
       ]
     }
   },
+  "28618": {
+    "id": 28618,
+    "aegisName": "Time_Kamiji",
+    "name": "Book of the Sun God [3]",
+    "unidName": "Book",
+    "resName": "Time_Kamiji",
+    "description": "หนังสือที่ถูกบันทึกเรื่องราวคำสอนจากเทพเจ้าชั้นสูง มีพลังดึงดูดมวลสารมากมาย\nทุก ๆ การอัพเกรด 1 ขั้น ASPD +1%, MaxHP +200, SP +50\nเมื่อโจมตีทางกายภาพ มีโอกาส 5% ที่จะใช้สกิล Meteor Storm Lv. 3 ต่อศัตรูโดยอัตโนมัติ\nเมื่ออัพเกรดตั้งแต่ 12 ขึ้นไป,\nโอกาสที่จะใช้สกิล Meteor Storm เพิ่มขึ้น 5%\nเลเวลสกิลที่ใช้เป็น Lv. 4\nเมื่ออัพเกรดตั้งแต่ 14 ขึ้นไป,\nโอกาสที่จะใช้สกิล Meteor Storm เพิ่มขึ้น 5%\nเลเวลสกิลที่ใช้เป็น Lv. 5\nMATK +170\nประเภท : ^777777Book^000000 พลังโจมตี : ^777777180^000000\nน้ำหนัก : ^77777750^000000\nเลเวลของอาวุธ : ^7777773^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Priest/Sage/Star Emperor^000000",
+    "slots": 3,
+    "itemTypeId": 1,
+    "itemSubTypeId": 271,
+    "itemLevel": 3,
+    "attack": 180,
+    "defense": null,
+    "weight": 50,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Priest",
+      "Sage",
+      "Star Emperor"
+    ],
+    "script": {
+      "aspdPercent": [
+        "1---1"
+      ],
+      "hp": [
+        "1---200"
+      ],
+      "sp": [
+        "1---50"
+      ],
+      "matk": [
+        "170"
+      ]
+    }
+  },
   "28619": {
     "id": 28619,
     "aegisName": "Prisoner_Dairy",
@@ -53743,6 +54030,37 @@
       ]
     }
   },
+  "32019": {
+    "id": 32019,
+    "aegisName": "Boost_Lance_OS",
+    "name": "Boost Lance-OS [2]",
+    "unidName": "Spear",
+    "resName": "Boost_Lance_OS",
+    "description": "หอกที่มีการติดตั้งอุปกรณ์พุ่งทะลวงขนาดเล็กเอาไว้\nการที่ขนาดของมันเล็กกว่าหอกทั่วไป อาจเป็นไปเพื่อการพุ่งทะลวงนั้น\nเพิ่ม ASPD 3%\nเมื่ออัปเกรดถึงขั้น 7 เพิ่ม ASPD 7%\nเมื่ออัปเกรดถึงขั้น 9 เพิ่ม Damage สกิล Banishing Point 20%\nเมื่ออัปเกรดถึงขั้น 11 เพิ่ม Damage สกิล Banishing Point เพิ่มเติม 15%\n^ffffff_^000000\nประเภท : ^777777One-Handed Spear^000000 พลังโจมตี : ^777777190^000000\nน้ำหนัก : ^777777100^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777130^000000\nอาชีพที่ใส่ได้ : ^777777Royal Guard^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 259,
+    "itemLevel": 4,
+    "attack": 190,
+    "defense": null,
+    "weight": 100,
+    "requiredLevel": 130,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Royal Guard"
+    ],
+    "script": {
+      "aspdPercent": [
+        "3",
+        "7===7"
+      ],
+      "Banishing Point": [
+        "9===20",
+        "11===15"
+      ]
+    }
+  },
   "32023": {
     "id": 32023,
     "aegisName": "Argen_Blanco",
@@ -57585,6 +57903,30 @@
       ],
       "m_element_water": [
         "EQUIP[Boiling Water Piranha Card]15"
+      ]
+    }
+  },
+  "300149": {
+    "id": 300149,
+    "aegisName": "ILL_Phen_Card",
+    "name": "Abysmal Phen Card",
+    "unidName": "Abysmal Phen Card",
+    "resName": "이름없는카드",
+    "description": "Reduces damage taken from neutral property by 15%.\r\nIncreases wind property magical damage by 3% per refine rate.\r\nWhen equipped with Abysmal Obeaune Card, reduces damage taken from neutral property by additional 5%.\r\n^ffffff_^000000\r\nClass: ^777777Card^000000\r\nCompound on: ^777777Garment^000000\r\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 4,
+    "cardPrefix": "of Fish Killer",
+    "script": {
+      "m_my_element_wind": [
+        "1---3"
       ]
     }
   },
@@ -68552,7 +68894,7 @@
     "description": "บันทึกการสำรวจของกลุ่มอัศวินที่เข้าไปสำรวจยังพื้นที่ Tomb of Honor เป็นรายการบันทึกที่ดูเหมือนว่าเนื้อหาจะขาดหายไปบางส่วน\n\nATK + 5%\n\nทุก ๆ การเรียนรู้ Bash 2 เลเวล, ATK +15\nเมื่อสวมใส่ร่วมกับ Old Rune Circlet, เพิ่ม Damage ทางกายภาพระยะไกลต่อศัตรูทุกประเภท 15%\n\nเมื่อสวมใส่ร่วมกับ Old Casket of Protection\nลด Cooldown ของ Earth Drive 2.2 วินาที\nประเภท : ^777777Accessory^000000  พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
     "slots": 1,
     "itemTypeId": 2,
-    "itemSubTypeId": 510,
+    "itemSubTypeId": 517,
     "itemLevel": null,
     "attack": null,
     "defense": 0,
@@ -73412,6 +73754,67 @@
       ],
       "int": [
         "EQUIP[Great Hero Boots]===10"
+      ]
+    }
+  },
+  "600001": {
+    "id": 600001,
+    "aegisName": "Boost_TH_Sword",
+    "name": "Boosting Two-Handed Sword [2]",
+    "unidName": "Two-Handed Sword",
+    "resName": "FullForce",
+    "description": "ดาบสองมือสุดพิเศษที่เตรียมไว้เพื่อทำให้นักผจญภัยพัฒนาไปอย่างรวดเร็ว\n\nCRI +10, MHP +3%\nทุก ๆ การอัพเกรด 1 ขั้น ATK +3\nทุก ๆ Base Lv. 15, ATK +3 (ใช้งานสูงสุดถึง Lv. 180)\nเมื่ออัพเกรดถึงขั้น 7 ทุก ๆ การเรียนรู้สกิล Two hand Quicken 1 เลเวล ASPD +1%\nเมื่ออัพเกรดถึงขั้น 9 Critical Damage +10%\n\nเมื่อสวมใส่ร่วมกับ Attacker Booster (Plate/Manteau/Greaves/Ring), \nASPD +2, Critical Damage +10%,\nทุก ๆ Base Lv. 15 เพิ่ม Damage สกิล Sonic Wave 2% (ใช้งานสูงสุดถึง Lv. 180),\nเมื่อใช้สกิล Spear Dynamo เพิ่ม Damage สกิล Sonic Wave ขึ้นอีก 35% เป็นเวลา 60 วินาที\n\nเมื่อสวมใส่ร่วมกับ Range Booster (Suit/Manteau/Boots/Brooch), \nMHP +10%, ลด Delay หลังใช้สกิล 15%,\nทุก ๆ Base Lv. 15 เพิ่ม Damage สกิล Dragon Breath, Dragon Breath - WATER 1% (ใช้งานสูงสุดถึง Lv. 180),\nเมื่อใช้สกิล Spear Dynamo เพิ่ม Damage สกิล Dragon Breath, Dragon Breath - WATER ขึ้นอีก 20% เป็นเวลา 60 วินาที\nประเภท : ^777777Two-Handed Sword^000000 พลังโจมตี : ^777777250^000000\nน้ำหนัก : ^7777770^000000\nเลเวลของอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Rune Knight Cls^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 258,
+    "itemLevel": 4,
+    "attack": 250,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Rune Knight"
+    ],
+    "script": {
+      "cri": [
+        "10"
+      ],
+      "hpPercent": [
+        "3",
+        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]===10"
+      ],
+      "atk": [
+        "1---3",
+        "SUM[level==15]---3",
+        "SUM[level==195]===-3"
+      ],
+      "aspdPercent": [
+        "REFINE[7]LEARN_SKILL[Two hand Quicken==1]---1"
+      ],
+      "criDmg": [
+        "9===10",
+        "EQUIP[Attacker Booster Plate&&Attacker Booster Manteau&&Attacker Booster Greaves&&Attacker Booster Ring]===10"
+      ],
+      "aspd": [
+        "EQUIP[Attacker Booster Plate&&Attacker Booster Manteau&&Attacker Booster Greaves&&Attacker Booster Ring]===2"
+      ],
+      "Sonic Wave": [
+        "EQUIP[Attacker Booster Plate&&Attacker Booster Manteau&&Attacker Booster Greaves&&Attacker Booster Ring]level:15---2",
+        "EQUIP[Attacker Booster Plate&&Attacker Booster Manteau&&Attacker Booster Greaves&&Attacker Booster Ring]level:195===-2",
+        "EQUIP[Attacker Booster Plate&&Attacker Booster Manteau&&Attacker Booster Greaves&&Attacker Booster Ring]ACTIVE_SKILL[Spear Dynamo]===35"
+      ],
+      "acd": [
+        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]===15"
+      ],
+      "Dragon Breath - WATER": [
+        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]level:15---1",
+        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]level:195===-1",
+        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]ACTIVE_SKILL[Spear Dynamo]===20"
+      ],
+      "Dragon Breath": [
+        "EQUIP[Range Booster Suit&&Range Booster Manteau&&Range Booster Boots&&Range Booster Brooch]ACTIVE_SKILL[Spear Dynamo]===20"
       ]
     }
   },

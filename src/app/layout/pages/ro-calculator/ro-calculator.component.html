@@ -12,7 +12,9 @@
   <div class="pl-1">Items</div>
 </button>
 <p-dialog
-  header="แสดงตามคลาสเลือกอยู่ใช้งานได้ และมีแค่ไอเทมที่เว็บนี้รองรับเท่านั้น (ขอเพิ่มได้ที่ปุ่ม Request มุมขวาบน)"
+  header="เฉพาะ {{
+    selectedCharacter?.className
+  }} และมีแค่ไอเทมที่เว็บนี้รองรับเท่านั้น (ขอเพิ่มได้ที่ปุ่ม Request มุมขวาบน)"
   [draggable]="false"
   [resizable]="false"
   [modal]="true"
