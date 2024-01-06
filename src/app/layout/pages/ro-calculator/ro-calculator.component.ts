@@ -341,8 +341,10 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
   elementTable: ElementDataModel[];
   raceTable: RaceDataModel[];
+  peneRaceTable: RaceDataModel[];
   sizeTable: RaceDataModel[];
   classTable: RaceDataModel[];
+  peneClassTable: RaceDataModel[];
   skillMultiplierTable: SkillMultiplierModel[];
 
   /**
@@ -932,8 +934,17 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         magical: m_race_all + (this.totalSummary[`m_race_${race}`] || 0),
       });
     }
-
     this.raceTable = d;
+
+    const p_pene_race_all = this.totalSummary.p_pene_race_all || 0;
+    const m_pene_race_all = this.totalSummary.m_pene_race_all || 0;
+    this.peneRaceTable = races.map(([classShow, race]) => {
+      return {
+        name: classShow,
+        physical: p_pene_race_all + (this.totalSummary[`p_pene_race_${race}`] || 0),
+        magical: m_pene_race_all + (this.totalSummary[`m_pene_race_${race}`] || 0),
+      };
+    });
   }
 
   private setSizeTable(): void {
@@ -966,8 +977,17 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         magical: m_class_all + (this.totalSummary[`m_class_${_class}`] || 0),
       });
     }
-
     this.classTable = d;
+
+    const p_pene_class_all = this.totalSummary.p_pene_class_all || 0;
+    const m_pene_class_all = this.totalSummary.m_pene_class_all || 0;
+    this.peneClassTable = monsterTypes.map(([classShow, _class]) => {
+      return {
+        name: classShow,
+        physical: p_pene_class_all + (this.totalSummary[`p_pene_class_${_class}`] || 0),
+        magical: m_pene_class_all + (this.totalSummary[`m_pene_class_${_class}`] || 0),
+      };
+    });
   }
 
   private setSkillTable(): void {

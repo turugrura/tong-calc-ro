@@ -3,7 +3,7 @@
     <div class="grid grid-nogutter">
       <div class="col-6">
         <div class="grid grid-nogutter">
-          <div class="col-12">
+          <div class="col-12 pb-3" *ngIf="isShowSkillMultiplierTable">
             <p-table [value]="skillMultiplierTable" styleClass="p-datatable-sm" [tableStyle]="{ 'min-width': '10rem' }">
               <ng-template pTemplate="header">
                 <tr>
@@ -25,7 +25,7 @@
               </ng-template>
             </p-table>
           </div>
-          <div class="col-12">
+          <div class="col-12 pb-3">
             <p-table [value]="classTable" styleClass="p-datatable-sm" [tableStyle]="{ 'min-width': '10rem' }">
               <ng-template pTemplate="header">
                 <tr>
@@ -47,7 +47,7 @@
               </ng-template>
             </p-table>
           </div>
-          <div class="col-12">
+          <div class="col-12" *ngIf="isShowSizeTable">
             <p-table [value]="sizeTable" styleClass="p-datatable-sm" [tableStyle]="{ 'min-width': '10rem' }">
               <ng-template pTemplate="header">
                 <tr>
@@ -96,7 +96,7 @@
     </div>
   </div>
 
-  <div class="col-5">
+  <div class="col-5" *ngIf="isShowElementTable">
     <p-table [value]="elementTable" styleClass="p-datatable-sm" [tableStyle]="{ 'min-width': '15rem' }">
       <ng-template pTemplate="header">
         <tr>
@@ -127,5 +127,9 @@
         </tr>
       </ng-template>
     </p-table>
+  </div>
+
+  <div class="col-12">
+    <div class="grid grid-nogutter"></div>
   </div>
 </div>

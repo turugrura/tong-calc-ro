@@ -3499,7 +3499,7 @@
 
   <!-- Right Side -->
   <div class="p-fluid col-5">
-    <p-accordion [multiple]="true" [activeIndex]="[2, 6]">
+    <p-accordion [multiple]="true" [activeIndex]="[2, 7]">
       <p-accordionTab header="Consumables" class="consumable">
         <div class="grid grid-nogutter">
           <!-- Consumable -->
@@ -4315,6 +4315,15 @@
           [sizeTable]="sizeTable"
           [classTable]="classTable"
           [skillMultiplierTable]="skillMultiplierTable"
+        ></app-misc-detail>
+      </p-accordionTab>
+      <p-accordionTab header="Penetration Summary">
+        <app-misc-detail
+          [elementTable]="[]"
+          [raceTable]="peneRaceTable"
+          [sizeTable]="[]"
+          [classTable]="peneClassTable"
+          [skillMultiplierTable]="[]"
         ></app-misc-detail>
       </p-accordionTab>
 
