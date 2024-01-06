@@ -117,4 +117,14 @@ export const JobBuffs: ActiveSkillModel[] = [
       { label: 'No', isUse: false, value: 0 },
     ],
   },
+  {
+    label: 'Magnum Break',
+    name: 'Magnum Break',
+    inputType: 'dropdown',
+    dropdown: [
+      { label: '-', value: 0, isUse: false },
+      { label: 'Active', value: 1, isUse: true, bonus: { magnumBreakPsedoBonus: 1 } },
+      { label: 'Clear EDP', value: 2, isUse: true, bonus: { magnumBreakClearEDP: 1 } },
+    ],
+  },
 ];

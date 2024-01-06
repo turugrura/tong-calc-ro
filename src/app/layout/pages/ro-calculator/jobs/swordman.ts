@@ -16,7 +16,7 @@ export class Swordman extends CharacterBase {
       name: 'Magnum Break',
       inputType: 'selectButton',
       dropdown: [
-        { label: 'Yes', value: 10, isUse: true, bonus: { p_element_fire: 20 } },
+        { label: 'Yes', value: 10, isUse: true, bonus: { magnumBreakPsedoBonus: 1 } },
         { label: 'No', value: 0, isUse: false },
       ],
     },

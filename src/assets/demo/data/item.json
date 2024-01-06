@@ -77,6 +77,31 @@
     ],
     "script": {}
   },
+  "1103": {
+    "id": 1103,
+    "aegisName": "Sword__",
+    "name": "Sword",
+    "unidName": "Sword",
+    "resName": "소드",
+    "description": "ดาบธรรมดาแบบถือมือเดียว\nประเภท : ^777777Sword^000000 พลังโจมตี : ^77777725^000000\nน้ำหนัก : ^77777750^000000\nLv ของอาวุธ : ^7777771^000000\nLv ที่ต้องการ : ^7777772^000000\nอาชีพ : ^777777Novice/Swordman Cls/Merchant Cls/Thief Cls^000000",
+    "slots": 0,
+    "itemTypeId": 1,
+    "itemSubTypeId": 257,
+    "itemLevel": 1,
+    "attack": 25,
+    "defense": null,
+    "weight": 50,
+    "requiredLevel": 2,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Novice",
+      "Swordman",
+      "Merchant",
+      "Thief"
+    ],
+    "script": {}
+  },
   "1186": {
     "id": 1186,
     "aegisName": "Death_Guidance",
@@ -108,6 +133,34 @@
         "20"
       ]
     }
+  },
+  "1201": {
+    "id": 1201,
+    "aegisName": "Knife",
+    "name": "Knife [3]",
+    "unidName": "Dagger",
+    "resName": "나이프",
+    "description": "มีดธรรมดา ไม่มีอะไรพิเศษ\nประเภท : ^777777Dagger^000000 พลังโจมตี : ^77777717^000000\nน้ำหนัก : ^77777740^000000\nLv ของอาวุธ : ^7777771^000000\nLv ที่ต้องการ : ^777777None^000000\nอาชีพ : ^777777Novice/Swordman Cls/Magician Cls/Archer Cls/Merchant Cls/Thief Cls/Ninja Cls^000000",
+    "slots": 3,
+    "itemTypeId": 1,
+    "itemSubTypeId": 256,
+    "itemLevel": 1,
+    "attack": 17,
+    "defense": null,
+    "weight": 40,
+    "requiredLevel": 0,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Novice",
+      "Swordman",
+      "Magician",
+      "Archer",
+      "Merchant",
+      "Thief",
+      "Ninja"
+    ],
+    "script": {}
   },
   "1230": {
     "id": 1230,

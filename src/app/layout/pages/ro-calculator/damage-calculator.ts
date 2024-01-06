@@ -1,7 +1,6 @@
 import { ElementMapper } from './constants/element-mapper';
 import { ElementType } from './constants/element-type.const';
 import { ItemTypeEnum } from './constants/item-type.enum';
-import { PoisonPsoEleTable } from './constants/poison-psdo-ele-table';
 import { SizePenaltyMapper } from './constants/size-penalty-mapper';
 import { AtkSkillModel, CharacterBase } from './jobs/_character-base.abstract';
 import {
@@ -33,7 +32,8 @@ interface DamageResultModel {
 }
 
 export class DamageCalculator {
-  private readonly EDP_WEAPON_MULTIPLIER = 1.25;
+  private readonly EDP_WEAPON_MULTIPLIER = 0.25;
+  private readonly MAGNUM_BREAK_WEAPON_MULTIPLIER = 0.2;
   private readonly EDP_EQUIP_MULTIPLIER = 4;
   private readonly BASE_CRI_MULTIPLIER = 1.4;
 
@@ -490,9 +490,13 @@ export class DamageCalculator {
     return atk;
   }
 
+  private getEquipAtk() {
+    return this.totalBonus.atk;
+  }
+
   private getExtraAtk() {
     const { reducedHardDef } = this.getPhisicalDefData();
-    const equipAtk = this.totalBonus.atk;
+    const equipAtk = this.getEquipAtk();
     const ammoAtk = this.equipStatus.ammo?.atk || 0;
     const pseudoBuffATK = this.isActiveInfilltration ? reducedHardDef / 2 : 0;
     const skillAtk = this.getEquipAtkFromSkills();
@@ -529,9 +533,21 @@ export class DamageCalculator {
   private getWeaponAtk(params: { isEDP: boolean; sizePenalty: number }) {
     const { isEDP, sizePenalty } = params;
     const { baseWeaponAtk, baseWeaponLevel, refineBonus, overUpgradeBonus } = this.weaponData.data;
-    const { elementLevelN, elementUpper } = this.monsterData;
     const variant = baseWeaponAtk * baseWeaponLevel * 0.05;
-    const poisonPsudoMulti = 1 + PoisonPsoEleTable[elementLevelN][elementUpper] * 0.25;
+
+    let pseudoElementAtk = undefined;
+    if (isEDP) {
+      const pseudoPoison = this.getPurePropertyMultiplier(ElementType.Poison) * this.EDP_WEAPON_MULTIPLIER;
+      pseudoElementAtk = pseudoPoison;
+    }
+
+    const { magnumBreakPsedoBonus, magnumBreakClearEDP } = this.totalBonus;
+    if (magnumBreakPsedoBonus) {
+      const pseudoFire = this.getPurePropertyMultiplier(ElementType.Fire) * this.MAGNUM_BREAK_WEAPON_MULTIPLIER;
+      pseudoElementAtk = pseudoFire;
+    } else if (magnumBreakClearEDP) {
+      pseudoElementAtk = 0;
+    }
 
     const { totalStr, totalDex } = this.status;
     const mainState = this.isRangeAtk() ? totalDex : totalStr;
@@ -543,9 +559,8 @@ export class DamageCalculator {
       let total = baseWeaponAtk + _variant + (this.totalBonus['weaponAtk'] || 0);
       total += statBonus;
       total += upgradeBonus;
-      if (isEDP) {
-        total += upgradeBonus * (1 - poisonPsudoMulti);
-        total = total * this.EDP_WEAPON_MULTIPLIER;
+      if (pseudoElementAtk != null) {
+        total = total + total * pseudoElementAtk;
       }
       total = total * sizePenalty;
 
@@ -568,6 +583,12 @@ export class DamageCalculator {
     return round(this.toPercent(pMultiplier), 2);
   }
 
+  private getPurePropertyMultiplier(propertyAtk: ElementType) {
+    const pMultiplier = ElementMapper[this.monster.stats.elementName][propertyAtk];
+
+    return this.toPercent(pMultiplier);
+  }
+
   private calcTotalAtk(params: { propertyAtk: ElementType; isEDP: boolean; sizePenalty: number }) {
     const { propertyAtk, isEDP, sizePenalty } = params;
     const propertyMultiplier = this.getPropertyMultiplier(propertyAtk);
@@ -588,6 +609,8 @@ export class DamageCalculator {
     const aMax = this.getAtkGroupA({ totalAtk: weaMax + extraAtk });
     const aMaxOver = this.getAtkGroupA({ totalAtk: weaMaxOver + extraAtk });
 
+    // const equipAtk = this.getEquipAtk();
+    // const equipAtkFromEDP = isEDP ? equipAtk * (this.EDP_EQUIP_MULTIPLIER - 1) : 0;
     let bMin = this.getAtkGroupB({ totalAtk: weaMin + extraAtk });
     let bMax = this.getAtkGroupB({ totalAtk: weaMax + extraAtk });
     let bMaxOver = this.getAtkGroupB({ totalAtk: weaMaxOver + extraAtk });
