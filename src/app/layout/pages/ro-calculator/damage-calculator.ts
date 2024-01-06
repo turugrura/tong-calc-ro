@@ -466,6 +466,9 @@ export class DamageCalculator {
     if (skillName) {
       const flatSkill = this.totalBonus[`flat_${skillName}`] || 0;
       return base + flatSkill;
+    } else if (skillName === 'basicAtk') {
+      const flatBasicAtk = this.totalBonus['flatBasicDmg'] || 0;
+      return base + flatBasicAtk;
     }
 
     return base;
@@ -853,7 +856,7 @@ export class DamageCalculator {
     const { range, melee, dmg } = this.totalBonus;
     const rangedDmg = this.isRangeAtk() ? range : melee;
     const rangedMultiplier = this.toPercent(rangedDmg + 100);
-    const dmgMultiplier = this.toPercent(dmg + this.getFlatDmg() + 100);
+    const dmgMultiplier = this.toPercent(dmg + this.getFlatDmg('basicAtk') + 100);
     const { finalDmgReduction, finalSoftDef } = this.getPhisicalDefData();
     const hardDef = finalDmgReduction;
     const softDef = finalSoftDef;
@@ -881,7 +884,7 @@ export class DamageCalculator {
     const bonusCriDmgMultiplier = this.toPercent((criDmg || 0) + 100);
     const rangedDmg = this.isRangeAtk() ? range : melee;
     const rangedMultiplier = this.toPercent(rangedDmg + 100);
-    const dmgMultiplier = this.toPercent(dmg + this.getFlatDmg() + 100);
+    const dmgMultiplier = this.toPercent(dmg + this.getFlatDmg('basicAtk') + 100);
 
     const { finalDmgReduction, finalSoftDef } = this.getPhisicalDefData();
     const hardDef = finalDmgReduction;

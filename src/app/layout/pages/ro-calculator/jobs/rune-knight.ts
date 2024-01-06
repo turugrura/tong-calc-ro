@@ -440,7 +440,7 @@ export class RuneKnight extends CharacterBase {
       inputType: 'dropdown',
       dropdown: [
         { label: '-', value: 0, isUse: false },
-        { label: 'Active', value: 1, skillLv: 1, isUse: true, bonus: { p_final: 250, str: 30 } },
+        { label: 'Active', value: 1, skillLv: 1, isUse: true, bonus: { flatBasicDmg: 250, str: 30 } },
       ],
     },
     {
@@ -463,9 +463,10 @@ export class RuneKnight extends CharacterBase {
       label: 'Rune: Asir',
       name: 'Asir Runestone',
       inputType: 'dropdown',
+      isMasteryAtk: true,
       dropdown: [
         { label: '-', value: 0, isUse: false },
-        { label: 'Active', value: 1, skillLv: 1, isUse: true },
+        { label: 'Active', value: 1, skillLv: 1, isUse: true, bonus: { atk: 70 } },
       ],
     },
   ];
@@ -596,6 +597,12 @@ export class RuneKnight extends CharacterBase {
 
   override setAdditionalBonus(params: InfoForClass) {
     const { totalBonus, weapon } = params;
+
+    if (this.isSkillActive('Asir Runestone')) {
+      const asirRuneAspdBonus = 4 * this.learnLv('Rune Mastery');
+      totalBonus.aspdPercent = (totalBonus.aspdPercent || 0) + asirRuneAspdBonus;
+    }
+
     const wType = weapon.data?.typeName;
     if (!wType) return totalBonus;
 

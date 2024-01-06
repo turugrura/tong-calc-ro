@@ -53909,6 +53909,30 @@
       ]
     }
   },
+  "31023": {
+    "id": 31023,
+    "aegisName": "XM_Celine_Kimi_Card",
+    "name": "Celine Kimi Card",
+    "unidName": "Celine Kimi Card",
+    "resName": "이름없는카드",
+    "description": "MATK + 10%.\nเมื่อโจมตีด้วยเวทมนตร์ มีโอกาสที่จะทำให้ศัตรูติดสถานะ \"Critical Wound\" ให้แก่ตัวศัตรูเองและศัตรูที่อยู่ในระยะ 11*11 ช่อง\nทุกการอัพเกรด 3 ขั้น จะเพิ่มโอกาสสำเร็จในการที่จะทำให้ศัตรูติดสถานะ \"Critical Wound\"\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Maniac",
+    "script": {
+      "matkPercent": [
+        "10"
+      ]
+    }
+  },
   "31390": {
     "id": 31390,
     "aegisName": "C_Let_It_Snow",
