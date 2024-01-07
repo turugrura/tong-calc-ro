@@ -115,6 +115,17 @@ export class AppTopBarComponent {
 
   updates: { v: string; date: string; logs: string[] }[] = [
     {
+      v: 'V1.8.0',
+      date: '07-01-2567',
+      logs: [
+        'Fixed reported bugs',
+        'Supported Super Novice class',
+        'Added SC, Git-Cross learnable skill (Hiding ***กดอัพสกิลใหม่นะครับ ลำดับสกิลมันเปลี่ยน)',
+        'Added Penetration summary table (next to "Skill bonus / Multiplier Summary")',
+        'Added requested items',
+      ],
+    },
+    {
       v: 'V1.7.12',
       date: '06-01-2567',
       logs: [
