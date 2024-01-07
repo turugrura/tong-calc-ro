@@ -248,7 +248,7 @@ export class RoyalGuard extends CharacterBase {
       name: 'Ride Peco',
       inputType: 'selectButton',
       dropdown: [
-        { label: 'Yes', value: 1, skillLv: 1, isUse: true },
+        { label: 'Yes', value: 1, skillLv: 1, isUse: true, bonus: { ridePeco: 1 } },
         { label: 'No', value: 0, isUse: false },
       ],
     },
@@ -341,6 +341,11 @@ export class RoyalGuard extends CharacterBase {
     const c = this.getMasteryAtkByMonsterElement(info.monster.element);
 
     let sum = b.totalAtk + c.totalAtk;
+    const spearMasteryLv = this.learnLv('Spear Mastery');
+    if (spearMasteryLv > 0 && this.isSkillActive('Ride Peco')) {
+      sum += spearMasteryLv;
+    }
+
     for (const [, bonus] of Object.entries(bonuses)) {
       sum += bonus[`x_${weaponType}_atk`] || 0; // x_spear_atk
     }
