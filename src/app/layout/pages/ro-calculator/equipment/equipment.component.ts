@@ -132,6 +132,23 @@ export class EquipmentComponent implements AfterViewInit {
       this.itemIdChange.emit(this.itemId);
       this.itemRefineChange.emit(this.itemRefine);
 
+      if (this.totalCardSlots < 4 && this.card4Id) {
+        this.card4Id = undefined;
+        this.card4IdChange.emit();
+      }
+      if (this.totalCardSlots < 3 && this.card3Id) {
+        this.card3Id = undefined;
+        this.card3IdChange.emit();
+      }
+      if (this.totalCardSlots < 2 && this.card2Id) {
+        this.card2Id = undefined;
+        this.card2IdChange.emit();
+      }
+      if (this.totalCardSlots < 1 && this.card1Id) {
+        this.card1Id = undefined;
+        this.card1IdChange.emit();
+      }
+
       if (this.itemType !== ItemTypeEnum.weapon && OptionableItemTypeSet.has(this.itemType as any)) {
         const itemAegisName = this.items[itemId]?.aegisName;
         this.totalExtraOption = ExtraOptionTable[itemAegisName] || 0;
