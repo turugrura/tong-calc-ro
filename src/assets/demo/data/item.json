@@ -5888,6 +5888,34 @@
       ]
     }
   },
+  "4586": {
+    "id": 4586,
+    "aegisName": "Tikbalang_Card",
+    "name": "Tikbalang Card",
+    "unidName": "Tikbalang Card",
+    "resName": "이름없는카드",
+    "description": "MATK + 10, พลังโจมตีทางเวทย์ธาตุ Wind เพิ่มขึ้น 5%\nเมื่ออัพเกรดตั้งแต่ขั้น 9 ขึ้นไป พลังโจมตีทางเวทย์ธาตุ Wind เพิ่มขึ้นอีก 5%\nประเภท : ^777777Card^000000\nใส่กับ : ^777777Headgear^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 769,
+    "cardPrefix": "of Wind",
+    "script": {
+      "matk": [
+        "10"
+      ],
+      "m_my_element_wind": [
+        "5",
+        "9===5"
+      ]
+    }
+  },
   "4588": {
     "id": 4588,
     "aegisName": "Wakwak_Card",
@@ -31566,6 +31594,95 @@
       ]
     }
   },
+  "24440": {
+    "id": 24440,
+    "aegisName": "S_Sonic_Armor",
+    "name": "Sonic Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우",
+    "description": "ชุดเกราะที่เพิ่มพลังป้องกันเมื่อสวมใส่เพิ่มบนเกราะอีกที สามารถใส่แบบชิ้นเดียวได้ แต่ความสามารถในการป้องกันจะลดลงไปอีก\nเพิ่ม Damage สกิล Sonic Wave 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage สกิล Sonic Wave ขึ้นอีก 2%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Armor^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Rune Knight^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Armor",
+    "compositionPos": null,
+    "usableClass": [
+      "Rune Knight"
+    ],
+    "script": {
+      "Sonic Wave": [
+        "5",
+        "2---2"
+      ]
+    }
+  },
+  "24441": {
+    "id": 24441,
+    "aegisName": "S_Sonic_Shield",
+    "name": "Sonic Shadow Shield",
+    "unidName": "Shadow Shield",
+    "resName": "쉴드쉐도우",
+    "description": "โล่เล็กที่สามารถสวมใส่ที่แขนได้ สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์การป้องกันของมันจะลดน้อยลง\nเพิ่ม Damage ทางกายภาพระยะไกล 3%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางกายภาพระยะไกลขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพระยะไกลขึ้นอีก 4%\nเมื่อสวมใส่ Sonic Shadow Armor/Shield/Shoes ร่วมกัน,\nเพิ่ม Damage สกิล Sonic Wave % เท่ากับค่าอัพเกรดรวมกัน\nเมื่อสวมใส่ร่วมกับ Rune Knight Weapon Shadow,\nเพิกเฉยต่อพลังป้องกันทางกายภาพของทุกเผ่ายกเว้น Player 40% และเพิกเฉยต่อพลังป้องกันทางกายภาพเพิ่มอีกตามค่าอัพเกรดรวมกันของ Sonic Shadow Shield และ Rune Knight Weapon Shadow\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shield^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Rune Knight^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 527,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Shield",
+    "compositionPos": null,
+    "usableClass": [
+      "Rune Knight"
+    ],
+    "script": {
+      "range": [
+        "3",
+        "7===3",
+        "9===4"
+      ],
+      "Sonic Wave": [
+        "EQUIP[Sonic Shadow Armor&&Sonic Shadow Shoes]REFINE[shadowArmor,shadowShield,shadowBoot==1]---1"
+      ],
+      "p_pene_race_all": [
+        "EQUIP[Rune Knight Weapon Shadow]===40",
+        "EQUIP[Rune Knight Weapon Shadow]REFINE[shadowWeapon,shadowShield==1]---1"
+      ]
+    }
+  },
+  "24442": {
+    "id": 24442,
+    "aegisName": "S_Sonic_Shoes",
+    "name": "Sonic Shadow Shoes",
+    "unidName": "Shadow Shoes",
+    "resName": "슈즈쉐도우",
+    "description": "รองเท้าที่สวมใส่เพิ่มเติม สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์ของมันจะลดน้อยลง\nลดปริมาณการใช้ SP สกิล Sonic Wave 2%\nทุก ๆ การอัพเกรด 2 ขั้น ลดปริมาณการใช้ SP สกิล Sonic Wave ลงอีก 1%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shoes^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Rune Knight^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 528,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Shoes",
+    "compositionPos": null,
+    "usableClass": [
+      "Rune Knight"
+    ],
+    "script": {
+      "spPercent__Sonic Wave": [
+        "2",
+        "2---1"
+      ]
+    }
+  },
   "24443": {
     "id": 24443,
     "aegisName": "S_Ignition_Weapon",
@@ -33516,6 +33633,101 @@
     ],
     "script": {
       "spPercent__Crimson Rock": [
+        "4",
+        "2---1"
+      ]
+    }
+  },
+  "24521": {
+    "id": 24521,
+    "aegisName": "S_Chain_Weapon",
+    "name": "Chain Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา\nเพิ่ม Damage ทางเวทมนตร์ธาตุ Wind 3%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางเวทมนตร์ธาตุ Wind ขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางเวทมนตร์ธาตุ Wind ขึ้นอีก 4%\nเมื่อสวมใส่ Chain Shadow Weapon/Pendant/Earring ร่วมกัน,\nเพิ่ม Damage สกิล Chain Lightning % เท่ากับค่าอัพเกรดรวมกัน\nเมื่อสวมใส่ร่วมกับ Warlock Shadow Shield,\nเพิกเฉยต่อพลังป้องกันทางเวทมนตร์ของทุกเผ่ายกเว้น Player 40% และเพิกเฉยต่อพลังป้องกันทางเวทมนตร์เพิ่มอีกตามค่าอัพเกรดรวมกันของ Chain Shadow Weapon และ Warlock Shadow Shield\nประเภท : ^777777Shadow^000000 \nตำแหน่ง : ^777777Weapon^000000 น้ำหนัก : ^7777770^000000 \nเลเวลที่ต้องการ : ^77777799^000000 \nอาชีพที่ใส่ได้ : ^777777Warlock^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "Warlock"
+    ],
+    "script": {
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1"
+      ],
+      "m_my_element_wind": [
+        "3",
+        "7===3",
+        "9===4"
+      ],
+      "Chain Lightning": [
+        "EQUIP[Chain Shadow Pendant&&Chain Shadow Earring]REFINE[shadowWeapon,shadowPendant,shadowEarring==1]---1"
+      ],
+      "m_pene_race_all": [
+        "EQUIP[Warlock Shadow Shield]40",
+        "EQUIP[Warlock Shadow Shield]REFINE[shadowWeapon,shadowShield==1]---1"
+      ]
+    }
+  },
+  "24522": {
+    "id": 24522,
+    "aegisName": "S_Chain_Pendant",
+    "name": "Chain Shadow Pendant",
+    "unidName": "Shadow Pendant",
+    "resName": "펜던트쉐도우",
+    "description": "สร้อยคอศักดิ์สิทธิ์ที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา \nเพิ่ม Damage สกิล Chain Lightning 5%\nทุก ๆ การอัพเกรด 1 ขั้น เพิ่ม Damage สกิล Chain Lightning ขึ้นอีก 2%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Pendant ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Warlock^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 530,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "AccessoryLeft",
+    "compositionPos": null,
+    "usableClass": [
+      "Warlock"
+    ],
+    "script": {
+      "Chain Lightning": [
+        "5",
+        "1---2"
+      ]
+    }
+  },
+  "24523": {
+    "id": 24523,
+    "aegisName": "S_Chain_Earing",
+    "name": "Chain Shadow Earring",
+    "unidName": "Shadow Earring",
+    "resName": "이어링쉐도우",
+    "description": "ต่างหูมงคลที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา \nลดปริมาณการใช้ SP สกิล Chain Lightning 4%\nทุก ๆ การอัพเกรด 2 ขั้น ลดปริมาณการใช้ SP สกิล Chain Lightning ลงอีก 1%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Earring ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Warlock^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 529,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "AccessoryRight",
+    "compositionPos": null,
+    "usableClass": [
+      "Warlock"
+    ],
+    "script": {
+      "spPercent__Chain Lightning": [
         "4",
         "2---1"
       ]
@@ -69199,7 +69411,7 @@
         "10"
       ],
       "atk": [
-        "75"
+        "LEARN_SKILL[Hiding==2]---15"
       ],
       "p_pene_race_all": [
         "EQUIP[Old Bone Circlet]15"
