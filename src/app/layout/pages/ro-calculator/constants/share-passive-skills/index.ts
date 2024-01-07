@@ -12,3 +12,8 @@ export * from './righthand-mastery-fn';
 export * from './pure-soul-fn';
 export * from './s16th-night-fn';
 export * from './illusion-shock-fn';
+export * from './faith-fn';
+export * from './hilt-binding-fn';
+export * from './snatcher-fn';
+export * from './improve-dodge-fn';
+export * from './beastbace-fn';

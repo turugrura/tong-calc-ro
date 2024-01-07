@@ -337,7 +337,10 @@ export class RoyalGuard extends CharacterBase {
     const weaponType = weapon?.data?.typeName;
     const bonuses = this.bonuses?.masteryAtks || {};
 
-    let sum = 0;
+    const b = this.getMasteryAtkByMonsterRace(info.monster.race);
+    const c = this.getMasteryAtkByMonsterElement(info.monster.element);
+
+    let sum = b.totalAtk + c.totalAtk;
     for (const [, bonus] of Object.entries(bonuses)) {
       sum += bonus[`x_${weaponType}_atk`] || 0; // x_spear_atk
     }

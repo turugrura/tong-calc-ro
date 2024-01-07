@@ -318,6 +318,32 @@ export abstract class CharacterBase {
     return totalBonus;
   }
 
+  protected getMasteryAtkByMonsterRace(race: string) {
+    const allBonus = { ...(this.bonuses?.masteryAtks || {}), ...(this.bonuses?.equipAtks || {}) };
+
+    const attrAtk = `x_race_${race}_atk`; // Demon Bane ex: x_race_demon_atk
+    let totalAtk = 0;
+
+    for (const [, bonus] of Object.entries(allBonus)) {
+      totalAtk += bonus[attrAtk] || 0;
+    }
+
+    return { totalAtk };
+  }
+
+  protected getMasteryAtkByMonsterElement(element: string) {
+    const allBonus = { ...(this.bonuses?.masteryAtks || {}), ...(this.bonuses?.equipAtks || {}) };
+
+    const attrAtk = `x_element_${element}_atk`; // Demon Bane ex: x_element_undead_atk
+    let totalAtk = 0;
+
+    for (const [, bonus] of Object.entries(allBonus)) {
+      totalAtk += bonus[attrAtk] || 0;
+    }
+
+    return { totalAtk };
+  }
+
   protected calcHiddenMasteryAtk(_: InfoForClass, x?: { prefix?: string; suffix?: string }) {
     const allBonus = { ...(this.bonuses?.masteryAtks || {}), ...(this.bonuses?.equipAtks || {}) };
 

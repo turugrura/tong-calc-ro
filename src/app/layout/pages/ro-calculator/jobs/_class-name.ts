@@ -39,10 +39,13 @@ export enum ClassName {
   Warlock = 'Warlock',
 
   // extended
+  SuperNovice = 'SuperNovice',
   Doram = 'Doram',
+
   Taekwondo = 'Taekwondo',
   SoulLinker = 'SoulLinker',
   SoulReaper = 'SoulReaper',
+
   StarGladiator = 'StarGladiator',
   StarEmperor = 'StarEmperor',
 
@@ -74,6 +77,7 @@ export const ClassID = {
   33: 'Star Emperor',
   1: ClassName.Rebellion,
   31: ClassName.Doram,
+  30: 'Super Novice',
   17: ClassName.Oboro,
   18: ClassName.Kagerou,
 } as const;

@@ -2665,6 +2665,12 @@
     "requiredLevel": 65,
     "location": null,
     "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "unusableClass": [
+      "Novice"
+    ],
     "script": {
       "mdef": [
         "5"
@@ -2672,10 +2678,7 @@
       "def": [
         "2"
       ]
-    },
-    "usableClass": [
-      "all"
-    ]
+    }
   },
   "2153": {
     "id": 2153,
@@ -3019,8 +3022,10 @@
     "location": null,
     "compositionPos": null,
     "usableClass": [
-      "all",
-      "ยกเว้น Novice"
+      "all"
+    ],
+    "unusableClass": [
+      "Novice"
     ],
     "script": {
       "perfectDodge": [
@@ -3293,6 +3298,9 @@
     "compositionPos": null,
     "usableClass": [
       "Hi-Class"
+    ],
+    "unusableClass": [
+      "Novice"
     ],
     "script": {
       "acd": [
@@ -17753,6 +17761,9 @@
     "usableClass": [
       "all"
     ],
+    "unusableClass": [
+      "Novice"
+    ],
     "script": {
       "cri": [
         "10"
@@ -17966,8 +17977,10 @@
     "location": "Middle",
     "compositionPos": null,
     "usableClass": [
-      "all",
-      "ยกเว้น Novice"
+      "all"
+    ],
+    "unusableClass": [
+      "Novice"
     ],
     "script": {}
   },
@@ -20035,6 +20048,9 @@
     "usableClass": [
       "all"
     ],
+    "unusableClass": [
+      "Novice"
+    ],
     "script": {
       "dex": [
         "3",
@@ -20640,8 +20656,10 @@
     "weight": 10,
     "requiredLevel": 120,
     "usableClass": [
-      "all",
-      "ยกเว้น Novice"
+      "all"
+    ],
+    "unusableClass": [
+      "Novice"
     ],
     "script": {
       "str": [
@@ -20689,6 +20707,9 @@
     "compositionPos": null,
     "usableClass": [
       "all"
+    ],
+    "unusableClass": [
+      "Novice"
     ],
     "script": {
       "vit": [
@@ -22120,6 +22141,9 @@
     "compositionPos": null,
     "usableClass": [
       "all"
+    ],
+    "unusableClass": [
+      "Novice"
     ],
     "script": {
       "hp": [
@@ -24436,6 +24460,9 @@
     "usableClass": [
       "all"
     ],
+    "unusableClass": [
+      "Novice"
+    ],
     "script": {
       "hp": [
         "100",
@@ -24960,7 +24987,7 @@
   },
   "22257": {
     "id": 22257,
-    "aegisName": null,
+    "aegisName": "CUSTOM_Racing_Shoes",
     "name": "Racing Shoes [1]",
     "unidName": "Racing Shoes",
     "resName": "축구화",
@@ -38572,6 +38599,55 @@
       "Soul Reaper"
     ]
   },
+  "24744": {
+    "id": 24744,
+    "aegisName": "S_NV_Weapon",
+    "name": "Super Novice Booster Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우3",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา\n^000088ไม่สามารถอัพเกรดได้^000000\nATK +10, MATK +10, MHP +1500, MSP +300\nเมื่อสวมใส่กับ Booster Shadow Armor/Shield/Shoes/Earring/Pendant,\nเพิ่ม Damage ทางเวทมนตร์ทุกธาตุ 15%,\nเพิ่ม Damage ทางกายภาพระยะใกล้ 15%,\nเพิกเฉยต่อพลังป้องกันทางกายภาพ/เวทมนตร์ของมอนสเตอร์ทุกเผ่า 70% (ยกเว้น Player)\n^ffffff_^000000\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Novice^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "Novice"
+    ],
+    "script": {
+      "atk": [
+        "1---1",
+        "10"
+      ],
+      "matk": [
+        "1---1",
+        "10"
+      ],
+      "hp": [
+        "1500"
+      ],
+      "sp": [
+        "300"
+      ],
+      "m_my_element_all": [
+        "EQUIP[Booster Shadow Armor&&Booster Shadow Shield&&Booster Shadow Shoes&&Booster Shadow Earring&&Booster Shadow Pendant]15"
+      ],
+      "melee": [
+        "EQUIP[Booster Shadow Armor&&Booster Shadow Shield&&Booster Shadow Shoes&&Booster Shadow Earring&&Booster Shadow Pendant]15"
+      ],
+      "p_pene_race_all": [
+        "EQUIP[Booster Shadow Armor&&Booster Shadow Shield&&Booster Shadow Shoes&&Booster Shadow Earring&&Booster Shadow Pendant]70"
+      ],
+      "m_pene_race_all": [
+        "EQUIP[Booster Shadow Armor&&Booster Shadow Shield&&Booster Shadow Shoes&&Booster Shadow Earring&&Booster Shadow Pendant]70"
+      ]
+    }
+  },
   "24745": {
     "id": 24745,
     "aegisName": "S_KingbirdAnc_Weapon",
@@ -44400,6 +44476,9 @@
     "compositionPos": null,
     "usableClass": [
       "all"
+    ],
+    "unusableClass": [
+      "Novice"
     ],
     "script": {
       "str": [

@@ -342,15 +342,18 @@ const ea15 = [EA._1, EA._2, EA._3, EA._4, EA._5];
 const ea23 = [EA._2, EA._3];
 const ea25 = [EA._2, EA._3, EA._4, EA._5];
 const ea35 = [EA._3, EA._4, EA._5];
+const ea45 = [EA._4, EA._5];
 const ea410 = [EA._4, EA._5, EA._6, EA._7, EA._8, EA._9, EA._10];
 
 const sp23 = [Spell._2, Spell._3];
 const sp25 = [Spell._2, Spell._3, Spell._4, Spell._5];
 const sp34 = [Spell._3, Spell._4];
+const sp45 = [Spell._4, Spell._5];
 const sp46 = [Spell._4, Spell._5, Spell._6];
 
 const aspd13 = [AttackDelay._1, AttackDelay._2, AttackDelay._3];
 const aspd24 = [AttackDelay._2, AttackDelay._3, AttackDelay._4];
+const aspd34 = [AttackDelay._3, AttackDelay._4];
 
 const fatal13 = [Fatal._1, Fatal._2, Fatal._3];
 const fatal14 = [Fatal._1, Fatal._2, Fatal._3, Fatal._4];
@@ -359,6 +362,7 @@ const cri57 = [Cri._5, Cri._7, Cri._10];
 
 const critical23 = [Critical._2, Critical._3];
 const critical24 = [Critical._2, Critical._3, Critical._4];
+const critical34 = [Critical._3, Critical._4];
 
 const mhp34 = [MHP._3, MHP._4];
 
@@ -480,6 +484,8 @@ const twinCannon = [Fatal._3, AttackDelay._3, Spell._4, EA._3, ...BaseState._3];
 const whiteWingSuit = [...tempOpts._1_3, ...BaseState._1_3];
 const excelion = ['Reactor_A_DEF', 'Reactor_A_AVOI', 'Reactor_A_ATK', 'Reactor_A_MATK', 'Reactor_A_MHP', 'Reactor_A_MSP', 'Reactor_A_ASPD'];
 const excelionSuit = ['Reactor_A_STR', 'Reactor_A_INT', ...excelion];
+
+const racingShoes = [...ea45, FS._6, ...sp45, ...aspd34, ...critical34, ...BaseState._1_3];
 
 const labHead2 = [
   Acute._2,
@@ -673,6 +679,8 @@ export const EnchantTable: EntTable[] = [
 
   { name: 'Golden_Ninja_Suit', enchants: [null, goldenSet, goldenSet, goldenSet] },
   { name: 'Golden_Scarf', enchants: [null, goldenSet, goldenSet, goldenSet] },
+
+  { name: 'CUSTOM_Racing_Shoes', enchants: [null, null, racingShoes, racingShoes] },
 
   { name: 'Tree_Of_Sprout_JP', enchants: [null, BaseState._1_3, BaseState._1_3, infityEnt4] },
   { name: 'Tengu_Scroll', enchants: [null, BaseState._1_3, BaseState._1_3, infityEnt4] },

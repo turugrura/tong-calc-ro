@@ -65,6 +65,7 @@ import { ElementType } from './constants/element-type.const';
 import { createBonusNameList, isNumber } from './utils';
 import { ExtraOptionTable } from './constants/extra-option-table';
 import { ItemOptionNumber } from './constants/item-option-number.enum';
+import { SuperNovice } from './jobs/super-novice';
 
 interface MonsterSelectItemGroup extends SelectItemGroup {
   items: any[];
@@ -84,6 +85,7 @@ const Characters: DropdownModel[] = [
   { label: ClassID[8], value: 8, instant: new Sorcerer() },
   { label: ClassID[10], value: 10, instant: new Mechanic() },
   { label: ClassID[9], value: 9, instant: new Genetic() },
+  { label: ClassID[30], value: 30, instant: new SuperNovice() },
   { label: ClassID[3], value: 3, instant: new SoulReaper() },
   { label: ClassID[33], value: 33, instant: new StarEmperor() },
   { label: ClassID[17], value: 17, instant: new Oboro() },
@@ -183,6 +185,7 @@ const monsterTypes = [
 
 const HideHpSp = {
   [ClassName.Doram]: environment.production,
+  [ClassName.SuperNovice]: environment.production,
   [ClassName.Rebellion]: environment.production,
   [ClassName.Kagerou]: environment.production,
   [ClassName.Oboro]: environment.production,

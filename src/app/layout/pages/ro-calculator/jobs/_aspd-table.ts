@@ -31,6 +31,7 @@ export const AspdTable: Partial<Record<ClassName, XX>> = {
   [ClassName.Warlock]: { base: 151, shield: -5, Dagger: -7, Sword: -15, Rod: -5, 'Two-Handed Rod': -11 },
 
   [ClassName.Doram]: { base: 156, shield: -7, Rod: -20 },
+  [ClassName.SuperNovice]: { base: 156, shield: -10, Dagger: -5, Sword: -7, 'Two-Handed Sword': -14, Spear: -17, 'Two-Handed Spear': -25, Axe: -15, 'Two-Handed Axe': -20, Mace: -15 },
   [ClassName.SoulReaper]: { base: 151, shield: -5, Dagger: -7, 'Two-Handed Rod': -11, Rod: -5 },
   [ClassName.Rebellion]: { base: 148, shield: -6, Revolver: 5, Rifle: -5, Shotgun: -40, 'Gatling Gun': 0, 'Grenade Launcher': -50 },
   [ClassName.Oboro]: { base: 156, shield: -3, Dagger: -5, Shuriken: -10 },
