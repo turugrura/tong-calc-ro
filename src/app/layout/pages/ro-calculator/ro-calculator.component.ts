@@ -66,6 +66,7 @@ import { createBonusNameList, isNumber } from './utils';
 import { ExtraOptionTable } from './constants/extra-option-table';
 import { ItemOptionNumber } from './constants/item-option-number.enum';
 import { SuperNovice } from './jobs/super-novice';
+import { WeaponTypeNameMapBySubTypeId } from './constants/weapon-type-mapper';
 
 interface MonsterSelectItemGroup extends SelectItemGroup {
   items: any[];
@@ -1737,38 +1738,66 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
       return true;
     };
+    const onlySuperNoviceWeapon = (a: DropdownModel) => {
+      // supper novice allow to equip weapon lv4
+      if (this.selectedCharacter.className === ClassName.SuperNovice) {
+        const { itemLevel, itemSubTypeId } = this.items[a.value as number] ?? {};
+        const isLv4 = itemLevel === 4;
+        const wTypeNames = new Set(['dagger', 'sword', 'axe', 'mace', 'rod']);
+        const isSup = wTypeNames.has(WeaponTypeNameMapBySubTypeId[itemSubTypeId]);
 
-    this.weaponList = this.itemList.weaponList.filter(onlyMe);
-    this.leftWeaponList = this.itemList.leftWeaponList.filter(onlyMe);
-    this.weaponCardList = this.itemList.weaponCardList.filter(onlyMe);
+        if (isLv4 && isSup) return true;
+      }
+
+      if (Array.isArray(a.usableClass)) {
+        return a.usableClass.some((x) => classNameSet.has(x));
+      }
+
+      return true;
+    };
+    const onlySuperNoviceHeadGear = (a: DropdownModel) => {
+      if (this.selectedCharacter.className === ClassName.SuperNovice) {
+        return true;
+      }
+
+      if (Array.isArray(a.usableClass)) {
+        return a.usableClass.some((x) => classNameSet.has(x));
+      }
+
+      return true;
+    };
+
+    this.weaponList = this.itemList.weaponList.filter(onlySuperNoviceWeapon);
+    this.leftWeaponList = this.itemList.leftWeaponList.filter(onlySuperNoviceWeapon);
+    this.weaponCardList = this.itemList.weaponCardList.map((a) => a);
     // this.ammoList = this.itemList.ammoList.filter(onlyMe);
-    this.headUpperList = this.itemList.headUpperList.filter(onlyMe);
-    this.headMiddleList = this.itemList.headMiddleList.filter(onlyMe);
-    this.headLowerList = this.itemList.headLowerList.filter(onlyMe);
-    this.headCardList = this.itemList.headCardList.filter(onlyMe);
+    this.headUpperList = this.itemList.headUpperList.filter(onlySuperNoviceHeadGear);
+    this.headMiddleList = this.itemList.headMiddleList.filter(onlySuperNoviceHeadGear);
+    this.headLowerList = this.itemList.headLowerList.filter(onlySuperNoviceHeadGear);
+    this.headCardList = this.itemList.headCardList.map((a) => a);
     this.armorList = this.itemList.armorList.filter(onlyMe);
-    this.armorCardList = this.itemList.armorCardList.filter(onlyMe);
+    this.armorCardList = this.itemList.armorCardList.map((a) => a);
     this.shieldList = this.itemList.shieldList.filter(onlyMe);
-    this.shieldCardList = this.itemList.shieldCardList.filter(onlyMe);
+    this.shieldCardList = this.itemList.shieldCardList.map((a) => a);
     this.garmentList = this.itemList.garmentList.filter(onlyMe);
-    this.garmentCardList = this.itemList.garmentCardList.filter(onlyMe);
+    this.garmentCardList = this.itemList.garmentCardList.map((a) => a);
     this.bootList = this.itemList.bootList.filter(onlyMe);
-    this.bootCardList = this.itemList.bootCardList.filter(onlyMe);
+    this.bootCardList = this.itemList.bootCardList.map((a) => a);
     this.accList = this.itemList.accList.filter(onlyMe);
-    this.accCardList = this.itemList.accCardList.filter(onlyMe);
+    this.accCardList = this.itemList.accCardList.map((a) => a);
     this.accLeftList = this.itemList.accLeftList.filter(onlyMe);
-    this.accLeftCardList = this.itemList.accLeftCardList.filter(onlyMe);
+    this.accLeftCardList = this.itemList.accLeftCardList.map((a) => a);
     this.accRightList = this.itemList.accRightList.filter(onlyMe);
-    this.accRightCardList = this.itemList.accRightCardList.filter(onlyMe);
-    this.petList = this.itemList.petList.filter(onlyMe);
+    this.accRightCardList = this.itemList.accRightCardList.map((a) => a);
+    this.petList = this.itemList.petList.map((a) => a);
 
     this.costumeUpperList = this.itemList.costumeUpperList.filter(onlyMe);
 
-    this.costumeEnhUpperList = this.itemList.costumeEnhUpperList.filter(onlyMe);
-    this.costumeEnhMiddleList = this.itemList.costumeEnhMiddleList.filter(onlyMe);
-    this.costumeEnhLowerList = this.itemList.costumeEnhLowerList.filter(onlyMe);
-    this.costumeEnhGarmentList = this.itemList.costumeEnhGarmentList.filter(onlyMe);
-    this.costumeEnhGarment4List = this.itemList.costumeEnhGarment4List.filter(onlyMe);
+    this.costumeEnhUpperList = this.itemList.costumeEnhUpperList.map((a) => a);
+    this.costumeEnhMiddleList = this.itemList.costumeEnhMiddleList.map((a) => a);
+    this.costumeEnhLowerList = this.itemList.costumeEnhLowerList.map((a) => a);
+    this.costumeEnhGarmentList = this.itemList.costumeEnhGarmentList.map((a) => a);
+    this.costumeEnhGarment4List = this.itemList.costumeEnhGarment4List.map((a) => a);
 
     this.shadowArmorList = this.itemList.shadowArmorList.filter(onlyMe);
     this.shadowShieldList = this.itemList.shadowShieldList.filter(onlyMe);
