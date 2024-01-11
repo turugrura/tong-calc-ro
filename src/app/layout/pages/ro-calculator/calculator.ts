@@ -1521,9 +1521,12 @@ export class Calculator {
     };
   }
 
-  private getObjSummary(obj: Record<string, number>) {
+  private getObjSummary(obj: Record<string, number>, isRemoveFields = false) {
     const summary = {};
+    const removableFiels = new Set(['weight', 'baseDef']);
     for (const [key, value] of Object.entries(obj)) {
+      if (isRemoveFields && removableFiels.has(key)) continue;
+
       if (value !== 0 && value != null) {
         summary[key] = value;
       }
@@ -1625,7 +1628,7 @@ export class Calculator {
     for (const [itemType, itemData] of this.equipItem) {
       if (!itemData || !itemType) continue;
 
-      obj[itemType] = this.getObjSummary(this.equipStatus[itemType]);
+      obj[itemType] = this.getObjSummary(this.equipStatus[itemType], true);
     }
 
     return {
