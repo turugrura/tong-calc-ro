@@ -720,6 +720,46 @@
       ]
     }
   },
+  "1646": {
+    "id": 1646,
+    "aegisName": "La'cryma_Stick",
+    "name": "La'cryma Stick [2]",
+    "unidName": "Staff",
+    "resName": "라크리마스틱",
+    "description": "ไม้เท้าระดับสูงที่ตกแต่งด้วยขนสัตว์ราคาแพง มันทำขึ้นเพื่อสกิล 'Storm gust'\nMATK + 180, MDEF + 1 ทุกๆ 1 การ upgrade\nINT + 4, ความแรงของสกิล Stormgast เพิ่มขึ้น 1% ทุก 1 ระดับการอัพเกรด เมื่ออัพเกรดถึง +10 ความเร็วในการร่ายสกิล 'Storm gust' เร็วขึ้น 8%\nประเภท : ^777777Staff^000000 พลังโจมตี : ^77777730^000000\nน้ำหนัก : ^77777750^000000 ธาตุ : Holy\nอาวุธ Lv : ^7777773^000000\nเลเวลที่ต้องการ : ^77777750^000000\nอาชีพ : ^777777Hi-Mage Cls^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 265,
+    "itemLevel": 3,
+    "attack": 30,
+    "propertyAtk": "Holy",
+    "defense": null,
+    "weight": 50,
+    "requiredLevel": 50,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Warlock",
+      "Sorcerer"
+    ],
+    "script": {
+      "matk": [
+        "180"
+      ],
+      "mdef": [
+        "1---1"
+      ],
+      "int": [
+        "4"
+      ],
+      "Storm Gust": [
+        "1---1"
+      ],
+      "vct__Storm Gust": [
+        "10===8"
+      ]
+    }
+  },
   "1654": {
     "id": 1654,
     "aegisName": "Mental_Stick",
@@ -2715,6 +2755,50 @@
         "13===2",
         "14===2",
         "15===2"
+      ]
+    }
+  },
+  "2161": {
+    "id": 2161,
+    "aegisName": "Geffenia_Book_Water",
+    "name": "Geffenia Book Water [1]",
+    "unidName": "Book",
+    "resName": "게페니아의고서_물",
+    "description": "Geffenia หนึ่งในดินแดนแห่งคุมทรัพย์ที่ถูกลืมเลือน มีมนุษย์เพียงไม่กี่คนที่สามารถใช้งานอาวุธแห่งเวทมนตร์นี้ได้\nINT + 1, MDEF + 2.\nถ้ามี INT พื้นฐาน 120 จะได้รับ MATK + 10 และ MHP + 800\nเมื่อสวมใส่คู่กับ Lacryma Stick ลด Variable Cast Time ของ Jack Frost ,Frost Misty และ Storm Gust เป็น % ตามระดับการอัพเกรด x 4\nประเภท : ^777777Shield^000000 ป้องกัน : ^77777730^000000\nน้ำหนัก : ^777777100^000000\nLv ที่ต้องการ : ^777777100^000000\nอาชีพ : ^777777Warlock^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 514,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 30,
+    "weight": 100,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Warlock"
+    ],
+    "script": {
+      "int": [
+        "1"
+      ],
+      "matk": [
+        "SUM[int==120]===10"
+      ],
+      "mdef": [
+        "2"
+      ],
+      "hp": [
+        "SUM[int==120]===800"
+      ],
+      "vct__Jack Frost": [
+        "EQUIP[La'cryma Stick]REFINE[weapon==1]---4"
+      ],
+      "vct__Frost Misty": [
+        "EQUIP[La'cryma Stick]REFINE[weapon==1]---4"
+      ],
+      "vct__Storm Gust": [
+        "EQUIP[La'cryma Stick]REFINE[weapon==1]---4"
       ]
     }
   },
@@ -11325,6 +11409,32 @@
       ]
     }
   },
+  "9093": {
+    "id": 9093,
+    "aegisName": "Hyegun_Egg",
+    "name": "Hyegun Egg",
+    "unidName": "Hyegun Egg",
+    "resName": "암속성알",
+    "description": "ไข่ที่มี Q-Pet Hyegun อยู่ภายใน สามารถปลุกให้ตื่นขึ้นมาได้ด้วย [Pet Incubator]\nหากความสัมพันธ์อยู่ในระดับไม่คุ้นเคยหรือเขินอาย VIT +1, เพิ่มความต้านทานต่อสถานะ Stun 1%\nหากความสัมพันธ์อยู่ในระดับปกติ VIT +2, เพิ่มความต้านทานต่อสถานะ Stun 2%\nหากความสัมพันธ์อยู่ในระดับเป็นมิตร VIT +3, เพิ่มความต้านทานต่อสถานะ Stun 3%\nมีโอกาสเล็กน้อยที่จะฟื้นฟู SP ตนเอง 1% ของ Damage ทางกายภาพที่ทำต่อศัตรู\nหากความสัมพันธ์อยู่ในระดับสนิทสนม VIT +4, เพิ่มความต้านทานต่อสถานะ Stun 4%\nมีโอกาสเล็กน้อยที่จะฟื้นฟู SP ตนเอง 1% ของ Damage ทางกายภาพที่ทำต่อศัตรู\nประเภท : ^777777Monster Egg^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 518,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "vit": [
+        "4"
+      ]
+    }
+  },
   "9095": {
     "id": 9095,
     "aegisName": "Nine_Tail_Egg",
@@ -12530,6 +12640,35 @@
       ],
       "Fire Dance": [
         "9===25"
+      ]
+    }
+  },
+  "13189": {
+    "id": 13189,
+    "aegisName": "COLORSCOPE",
+    "name": "COLORSCOPE [2]",
+    "unidName": "Rifle",
+    "resName": "컬러스코프",
+    "description": "Medium Assault Rifle พลังโจมตีและความแม่นยำสูง\nความแม่นยำ +20 CRIT +30%\nประเภท : ^777777Rifle^000000\nพลังโจมตี : ^777777240^000000\nน้ำหนัก : ^777777120^000000\nเลเวลของอาวุธ : ^7777773^000000\nเลเวลที่ต้องการ : ^777777105^000000\nอาชีพที่ใส่ได้ : ^777777เฉพาะ Rebellion เท่านั้น^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 274,
+    "itemLevel": 3,
+    "attack": 240,
+    "defense": null,
+    "weight": 120,
+    "requiredLevel": 105,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Rebellion"
+    ],
+    "script": {
+      "hit": [
+        "20"
+      ],
+      "cri": [
+        "30"
       ]
     }
   },
@@ -25423,6 +25562,34 @@
       ]
     }
   },
+  "24048": {
+    "id": 24048,
+    "aegisName": "S_Caster_Pendant",
+    "name": "Caster Shadow Pendant",
+    "unidName": "Shadow Pendant",
+    "resName": "펜던트쉐도우",
+    "description": "ลด Variable Cast Time 1%\nเมื่อ +7 ลด Variable Cast Time 1%\nเมื่อ +9 ลด Variable Cast Time 2%\n[Set] Caster Earring,Weapon,Shadow Pendant\nสามารถร่ายเวทย์โดยไม่ถูกขัดขวาง\nเพิ่ม Variable Cast Time ขึ้น 40%\nลด Variable Cast Time ตามผลรวมค่าตีบวกของทั้งเซ็ต\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Pendant^000000 น้ำหนัก : ^7777770^000000\nต้องการ Lv. : ^7777771^000000\nอาชีพ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 530,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Accessory",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "vct": [
+        "1",
+        "7===1",
+        "9===2"
+      ]
+    }
+  },
   "24053": {
     "id": 24053,
     "aegisName": "S_Safeguard_Shield",
@@ -25474,6 +25641,69 @@
         "2",
         "7===1",
         "9===2"
+      ]
+    }
+  },
+  "24109": {
+    "id": 24109,
+    "aegisName": "S_Caster_earring",
+    "name": "Caster Shadow Earring",
+    "unidName": "Shadow Earring",
+    "resName": "이어링쉐도우",
+    "description": "ลด Variable Cast Time 1%\nเมื่อ +7 ขึ้นไป ลด Variable Cast Time 1%\n[Set] Caster Earring,Weapon,Shadow Pendant\nสามารถร่ายเวทย์โดยไม่ถูกขัดขวาง\nเพิ่ม Variable Cast Time ขึ้น 40%\nลด Variable Cast Time ตามผลรวมค่าตีบวกของทั้งเซ็ต\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Earring^000000 น้ำหนัก : ^7777770^000000\nต้องการ Lv : ^7777771^000000\nอาชีพ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 529,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Accessory",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "vct": [
+        "1",
+        "7===1"
+      ]
+    }
+  },
+  "24110": {
+    "id": 24110,
+    "aegisName": "S_Caster_Weapon",
+    "name": "Caster Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ลด Variable Cast Time 1%\nเมื่อ +7 ลด Variable Cast Time 1%\nเมื่อ +9 ลด Variable Cast Time 2%\n[Set] Caster Earring,Weapon,Shadow Pendant\nสามารถร่ายเวทย์โดยไม่ถูกขัดขวาง\nเพิ่ม Variable Cast Time ขึ้น 40%\nลด Variable Cast Time ตามผลรวมค่าตีบวกของทั้งเซ็ต\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon^000000 น้ำหนัก : ^7777770^000000\nต้องการ Lv : ^7777771^000000\nอาชีพ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1"
+      ],
+      "vct": [
+        "1",
+        "7===1",
+        "9===2",
+        "EQUIP[Caster Shadow Earring&&Caster Shadow Pendant]REFINE[shadowEarring,shadowWeapon,shadowPendant==1]---1",
+        "EQUIP[Caster Shadow Earring&&Caster Shadow Pendant]===-40"
       ]
     }
   },
@@ -26410,6 +26640,108 @@
       ]
     }
   },
+  "24223": {
+    "id": 24223,
+    "aegisName": "S_Enhance_Force_Weapon",
+    "name": "Enhanced Force Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา\nATK + 10\nทุกๆ การอัพเกรด 2 ขั้น เพิ่มดาเมจทางกายภาพแก่ศัตรูทุกประเภท (รวมทั้ง Player และ Boss Type) 1%\nเมื่อสวมใส่ ^32CD32Enhanced Force Shadow Weapon^000000 ร่วมกับ ^32CD32Force Shadow(Earring, Pendant)^000000 เพิ่มดาเมจทางกายภาพแก่ศัตรูทุกประเภท 1%\nเมื่อค่าอัพเกรดรวมกันมากกว่า 20 ขึ้นไป ดาเมจทางกายภาพแก่ศัตรูทุกประเภท(รวมทั้ง Player และ Boss Type) เพิ่มอีก 1% \nเมื่อค่าอัพเกรดรวมกันมากกว่า 25 ขึ้นไป ดาเมจทางกายภาพแก่ศัตรูทุกประเภท (รวมทั้ง Player และ Boss Type) เพิ่มอีก 1%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Class 3^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "Only 3rd Cls"
+    ],
+    "script": {
+      "atk": [
+        "1---1",
+        "10"
+      ],
+      "matk": [
+        "1---1"
+      ],
+      "p_class_all": [
+        "2---1",
+        "EQUIP[Force Shadow Earring&&Force Shadow Pendant]===1",
+        "EQUIP[Force Shadow Earring&&Force Shadow Pendant]REFINE[shadowWeapon,shadowEarring,shadowPendant==20]===1",
+        "EQUIP[Force Shadow Earring&&Force Shadow Pendant]REFINE[shadowWeapon,shadowEarring,shadowPendant==25]===1"
+      ]
+    }
+  },
+  "24225": {
+    "id": 24225,
+    "aegisName": "S_Force_Earring",
+    "name": "Force Shadow Earring",
+    "unidName": "Shadow Earring",
+    "resName": "이어링쉐도우",
+    "description": "ต่างหูศักดิ์สิทธิ์ช่วยปกป้องผู้สวมใส่ กระตุ้นศักยภาพของผู้สวมใส่\nATK + 5. ทุกการอัพเกรด 1 ขั้น เพิ่ม ATK ขั้นละ + 1\nเมื่ออัพเกรดขั้น 7 เพิ่ม MHP + 1%\nเมื่ออัพเกรดขั้น 9 พลังโจมตีทางกายภาพที่ทำต่อศัตรูทุกขนาดเพิ่มอีก 1%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Earring^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777770^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 529,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 70,
+    "location": "Accessory",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atk": [
+        "5",
+        "1---1"
+      ],
+      "hpPercent": [
+        "7===1"
+      ],
+      "p_size_all": [
+        "9===1"
+      ]
+    }
+  },
+  "24226": {
+    "id": 24226,
+    "aegisName": "S_Force_Pendant",
+    "name": "Force Shadow Pendant",
+    "unidName": "Shadow Pendant",
+    "resName": "펜던트쉐도우",
+    "description": "สร้อยคอศักดิ์สิทธิ์ช่วยปกป้องผู้สวมใส่ กระตุ้นศักยภาพของผู้สวมใส่\nATK + 5. ทุกการอัพเกรด 1 ขั้น เพิ่ม ATK ขั้นละ + 1\nเมื่ออัพเกรดขั้น 7 เพิ่ม MSP + 1%\nเมื่ออัพเกรดขั้น 9 พลังโจมตีทางกายภาพที่ทำต่อศัตรูทุกขนาดเพิ่ม 1%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Pendant^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777770^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 530,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 70,
+    "location": "Accessory",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atk": [
+        "5",
+        "1---1"
+      ],
+      "spPercent": [
+        "7===1"
+      ],
+      "p_size_all": [
+        "9===1"
+      ]
+    }
+  },
   "24231": {
     "id": 24231,
     "aegisName": "S_Blitz_Shoes",
@@ -26721,6 +27053,94 @@
       ],
       "atk": [
         "EQUIP[Gigantic Shadow Earring]5"
+      ]
+    }
+  },
+  "24240": {
+    "id": 24240,
+    "aegisName": "S_Caster_Shoes",
+    "name": "Caster Shadow Shoes",
+    "unidName": "Shadow Shoes",
+    "resName": "슈즈쉐도우",
+    "description": "รองเท้าที่สวมใส่เพิ่มเติม สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์ของมันจะลดน้อยลง\nMATK +5\nเมื่อใช้สกิล ลดปริมาณ SP ที่ใช้ 1%\nทุก ๆ การอัพเกรด 2 ขั้น ลดระยะเวลาร่ายแบบแปรผัน 1%\nเมื่อสวมใส่ ^32CD32Caster Shadow (Shoes, Shield, Armor)^000000 ร่วมกัน\nเมื่อใช้สกิล ลดปริมาณ SP ที่ใช้ 1%\nทุก ๆ ค่าอัพเกรดรวมของเซตไอเท็ม 5 ขั้น ลดระยะเวลาร่ายแบบแปรผัน 1%\nเมื่อค่าอัพเกรดรวมกันตั้งแต่ 25 ขึ้นไป เมื่อใช้สกิล ลดปริมาณ SP ที่ใช้ 1% เพิ่มเติม\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shoes^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 528,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Shoes",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "matk": [
+        "5"
+      ],
+      "vct": [
+        "2---1"
+      ]
+    }
+  },
+  "24241": {
+    "id": 24241,
+    "aegisName": "S_Caster_Shield",
+    "name": "Caster Shadow Shield",
+    "unidName": "Shadow Shield",
+    "resName": "쉴드쉐도우",
+    "description": "โล่เล็กที่สามารถสวมใส่ที่แขนได้ สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์การป้องกันของมันจะลดน้อยลง\nMATK +5\nเมื่อใช้สกิล ลดปริมาณ SP ที่ใช้ 1%\nทุก ๆ การอัพเกรด 2 ขั้น ลดระยะเวลาร่ายแบบแปรผัน 1%\nเมื่อสวมใส่ ^32CD32Caster Shadow (Shoes, Shield, Armor)^000000 ร่วมกัน\nเมื่อใช้สกิล ลดปริมาณ SP ที่ใช้ 1%\nทุก ๆ ค่าอัพเกรดรวมของเซตไอเท็ม 5 ขั้น ลดระยะเวลาร่ายแบบแปรผัน 1%\nเมื่อค่าอัพเกรดรวมกันตั้งแต่ 25 ขึ้นไป เมื่อใช้สกิล ลดปริมาณ SP ที่ใช้ 1% เพิ่มเติม\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shield^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 527,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Shield",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "matk": [
+        "5"
+      ],
+      "vct": [
+        "2---1",
+        "EQUIP[Caster Shadow Shoes&&Caster Shadow Armor]REFINE[shadowBoot,shadowShield,shadowArmor==5]---1"
+      ]
+    }
+  },
+  "24242": {
+    "id": 24242,
+    "aegisName": "S_Caster_Armor",
+    "name": "Caster Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우",
+    "description": "ชุดเกราะที่เพิ่มพลังป้องกันเมื่อสวมใส่เพิ่มบนเกราะอีกที สามารถใส่แบบชิ้นเดียวได้ แต่ความสามารถในการป้องกันจะลดลงไปอีก\nMATK +5\nเมื่อใช้สกิล ลดปริมาณ SP ที่ใช้ 1%\nทุก ๆ การอัพเกรด 2 ขั้น ลดระยะเวลาร่ายแบบแปรผัน 1%\nเมื่อสวมใส่ ^32CD32Caster Shadow (Shoes, Shield, Armor)^000000 ร่วมกัน\nเมื่อใช้สกิล ลดปริมาณ SP ที่ใช้ 1%\nทุก ๆ ค่าอัพเกรดรวมของเซตไอเท็ม 5 ขั้น ลดระยะเวลาร่ายแบบแปรผัน 1%\nเมื่อค่าอัพเกรดรวมกันตั้งแต่ 25 ขึ้นไป เมื่อใช้สกิล ลดปริมาณ SP ที่ใช้ 1% เพิ่มเติม\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Armor ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Armor",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "matk": [
+        "5"
+      ],
+      "vct": [
+        "2---1"
       ]
     }
   },
@@ -27846,6 +28266,57 @@
       "all"
     ],
     "script": {}
+  },
+  "24282": {
+    "id": 24282,
+    "aegisName": "S_SuperNovice_Weapon",
+    "name": "Super Novice Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา\nสวมใส่ได้เพียงอาชีพ Novice เท่านั้น\n------------- \nMaxHP +1000, MaxSP +200\nทุกๆ การอัพเลเวลสกิล [Sword Mastery] 1 ขั้น เพิกเฉยต่อพลังป้องกันทางกายภาพของศัตรูทั่วไป 3%\nทุกๆ การอัพเลเวลสกิล [Increase SP Recovery] 1 ขั้น เพิกเฉยต่อพลังป้องกันทางเวทย์ของศัตรูทั่วไป 3%\nทุกๆ การอัพเกรด 1 ขั้น เพิกเฉยต่อพลังป้องกันทางกายภาพและทางเวทย์ของศัตรูทั่วไป 3%\nเมื่ออัพเกรดถึงขั้น 7, MaxHP +5%, MaxSP +5%\nเมื่ออัพเกรดถึงขั้น 9, MaxHP +5%, MaxSP +5%, ฟื้นฟูพลัง SP + 100%\nประเภท : ^777777Shadow Equipment^000000\nตำแหน่ง : ^777777Weapon^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777Novice Class^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "Novice"
+    ],
+    "script": {
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1"
+      ],
+      "hp": [
+        "1000"
+      ],
+      "sp": [
+        "200"
+      ],
+      "hpPercent": [
+        "7===5",
+        "9===5"
+      ],
+      "spPercent": [
+        "7===5",
+        "9===5"
+      ],
+      "p_pene_class_normal": [
+        "LEARN_SKILL[Sword Mastery==1]---3",
+        "1---3"
+      ],
+      "m_pene_class_normal": [
+        "LEARN_SKILL[Increase SP Recovery==1]---3",
+        "1---3"
+      ]
+    }
   },
   "24283": {
     "id": 24283,
@@ -29313,6 +29784,63 @@
       ]
     }
   },
+  "24318": {
+    "id": 24318,
+    "aegisName": "S_SuperNovice_Shield",
+    "name": "Super Novice Shadow Shield",
+    "unidName": "Shadow Shield",
+    "resName": "쉴드쉐도우",
+    "description": "โล่เล็กที่สามารถสวมใส่ที่แขนได้ สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์การป้องกันของมันจะลดน้อยลง\nNovice Class เท่านั้นที่สามารถสวมใส่ได้\n------------- \nMaxHP + 1000, MaxSP + 200\nทุกๆ เลเวล1 ของสกิล [Double Attack] เพิ่ม ASPD 2%\nทุกๆ 1 เลเวลของสกิล [Owl Eye] ลด Variable Cast Time 2%\nทุกๆ การอัพเกรด 1 ขั้น ASPD + 1%, ลด Variable Cast Time 1%\nเมื่ออัพเกรดถึงขั้น 7, ATK, MATK + 2%\nเมื่ออัพเกรดถึงขั้น 9, ATK, MATK + 3%\n------------- \nเมื่อสวมใส่พร้อมกับ Super Novice Shadow Weapon,\nAll State + 3, MaxHP + 2%, MaxSP + 2% \nเมื่อใช้งานสกิล ลดปริมาณการใช้ SP 10% \nประเภท : ^777777Shadow Equipment^000000\nตำแหน่ง : ^777777Shield^000000 \nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777Novice Class^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 527,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Shield",
+    "compositionPos": null,
+    "usableClass": [
+      "Novice"
+    ],
+    "script": {
+      "hp": [
+        "1000"
+      ],
+      "sp": [
+        "200"
+      ],
+      "aspdPercent": [
+        "LEARN_SKILL[Double Attack==1]---2",
+        "1---1"
+      ],
+      "vct": [
+        "LEARN_SKILL[Owl's Eye==1]---2",
+        "1---1"
+      ],
+      "atkPercent": [
+        "7===2",
+        "9===3"
+      ],
+      "matkPercent": [
+        "7===2",
+        "9===3"
+      ],
+      "allStatus": [
+        "EQUIP[Super Novice Shadow Weapon]===3"
+      ],
+      "hpPercent": [
+        "EQUIP[Super Novice Shadow Weapon]===2"
+      ],
+      "spPercent": [
+        "EQUIP[Super Novice Shadow Weapon]===2"
+      ],
+      "spPercentCost": [
+        "EQUIP[Super Novice Shadow Weapon]===10"
+      ]
+    }
+  },
   "24319": {
     "id": 24319,
     "aegisName": "S_Gunslinger_Shield",
@@ -29354,6 +29882,37 @@
       ],
       "spPercentCost": [
         "EQUIP[Gunslinger Shadow Weapon]10"
+      ]
+    }
+  },
+  "24331": {
+    "id": 24331,
+    "aegisName": "S2_Reload_Armor",
+    "name": "Reload Shadow Armor II",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우2",
+    "description": "ชุดเกราะที่เพิ่มพลังป้องกันเมื่อสวมใส่เพิ่มบนเกราะอีกที สามารถใส่แบบชิ้นเดียวได้ แต่ความสามารถในการป้องกันจะลดลงไปอีก\nVIT +3, เพิ่มปริมาณการฟื้นฟู HP +20%\nทุก ๆ การอัพเกรด 3 ขั้น ลด Delay หลังใช้สกิล 1%\nเมื่อสวมใส่ ^32CD32Reload Shadow Shoes/Shield/Armor II^000000 ร่วมกัน ลด Delay หลังใช้สกิล 1%\nเมื่อค่าอัพเกรดรวมกันตั้งแต่ 25 ขึ้นไป ลด Delay หลังใช้สกิล 5%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Armor ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Armor",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "vit": [
+        "3"
+      ],
+      "acd": [
+        "3---1",
+        "EQUIP[Reload Shadow Shoes&&Reload Shadow Shield]===1",
+        "EQUIP[Reload Shadow Shoes&&Reload Shadow Shield]REFINE[shadowArmor,shadowBoot,shadowShield==25]===5"
       ]
     }
   },
@@ -36382,6 +36941,148 @@
       ]
     }
   },
+  "24616": {
+    "id": 24616,
+    "aegisName": "S_Super_Magic_Shield",
+    "name": "Super Magic Shadow Shield",
+    "unidName": "Shadow Shield",
+    "resName": "쉴드쉐도우",
+    "description": "โล่เล็กที่สามารถสวมใส่ที่แขนได้ สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์การป้องกันของมันจะลดน้อยลง\nเพิ่ม Damage ทางเวทมนตร์ธาตุ Neutral, Water, Wind, Earth, Fire 5%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางเวทมนตร์ธาตุ Neutral, Water, Wind, Earth, Fire ขึ้นอีก 5%\nเมื่ออัพเกรดถึงขั้น 9 สามารถใช้สกิล Gravitational Field ที่เลเวลเดียวกับสกิล Water Ball ที่เรียนรู้\nเมื่อสวมใส่ Super Magic Shadow Armor/Shield/Shoes ร่วมกัน,\nสามารถใช้สกิล Lucky Cast Lv. 5,\nเพิ่ม Damage สกิล Fire Bolt, Cold Bolt, Lightening Bolt, Storm Gust, Lord of Vermilion, Heaven's Drive, Meteor Storm % เท่ากับ 2 เท่าของค่าอัพเกรดรวมกัน\nเมื่อสวมใส่ร่วมกับ Super Novice Shadow Weapon,\nเพิกเฉยต่อพลังป้องกันทางเวทมนตร์ของทุกเผ่ายกเว้น Player 40% และเพิกเฉยต่อพลังป้องกันทางเวทมนตร์เพิ่มอีกตามค่าอัพเกรดรวมกันของ Super Magic Shadow Shield และ Super Novice Shadow Weapon\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shield^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Novice^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 527,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Shield",
+    "compositionPos": null,
+    "usableClass": [
+      "Novice"
+    ],
+    "script": {
+      "m_my_element_neutral": [
+        "5",
+        "7===5"
+      ],
+      "m_my_element_water": [
+        "5",
+        "7===5"
+      ],
+      "m_my_element_wind": [
+        "5",
+        "7===5"
+      ],
+      "m_my_element_earth": [
+        "5",
+        "7===5"
+      ],
+      "m_my_element_fire": [
+        "5",
+        "7===5"
+      ],
+      "Fire Bolt": [
+        "EQUIP[Super Magic Shadow Armor&&Super Magic Shadow Shoes]REFINE[shadowArmor,shadowShield,shadowBoot==1]---2"
+      ],
+      "Cold Bolt": [
+        "EQUIP[Super Magic Shadow Armor&&Super Magic Shadow Shoes]REFINE[shadowArmor,shadowShield,shadowBoot==1]---2"
+      ],
+      "Lightening Bolt": [
+        "EQUIP[Super Magic Shadow Armor&&Super Magic Shadow Shoes]REFINE[shadowArmor,shadowShield,shadowBoot==1]---2"
+      ],
+      "Storm Gust": [
+        "EQUIP[Super Magic Shadow Armor&&Super Magic Shadow Shoes]REFINE[shadowArmor,shadowShield,shadowBoot==1]---2"
+      ],
+      "Lord of Vermilion": [
+        "EQUIP[Super Magic Shadow Armor&&Super Magic Shadow Shoes]REFINE[shadowArmor,shadowShield,shadowBoot==1]---2"
+      ],
+      "Heaven's Drive": [
+        "EQUIP[Super Magic Shadow Armor&&Super Magic Shadow Shoes]REFINE[shadowArmor,shadowShield,shadowBoot==1]---2"
+      ],
+      "Meteor Storm": [
+        "EQUIP[Super Magic Shadow Armor&&Super Magic Shadow Shoes]REFINE[shadowArmor,shadowShield,shadowBoot==1]---2"
+      ],
+      "m_pene_race_all": [
+        "EQUIP[Super Novice Shadow Weapon]===40",
+        "EQUIP[Super Novice Shadow Weapon]REFINE[shadowWeapon,shadowShield==1]---1"
+      ]
+    }
+  },
+  "24617": {
+    "id": 24617,
+    "aegisName": "S_Super_Magic_Armor",
+    "name": "Super Magic Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우",
+    "description": "ชุดเกราะที่เพิ่มพลังป้องกันเมื่อสวมใส่เพิ่มบนเกราะอีกที สามารถใส่แบบชิ้นเดียวได้ แต่ความสามารถในการป้องกันจะลดลงไปอีก\nเพิ่ม Damage สกิล Fire Bolt, Cold Bolt, Lightening Bolt 10%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage สกิล Fire Bolt, Cold Bolt, Lightening Bolt ขึ้นอีก 4%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Armor^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Novice^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Armor",
+    "compositionPos": null,
+    "usableClass": [
+      "Novice"
+    ],
+    "script": {
+      "Fire Bolt": [
+        "10",
+        "2---4"
+      ],
+      "Cold Bolt": [
+        "10",
+        "2---4"
+      ],
+      "Lightening Bolt": [
+        "10",
+        "2---4"
+      ]
+    }
+  },
+  "24618": {
+    "id": 24618,
+    "aegisName": "S_Super_Magic_Shoes",
+    "name": "Super Magic Shadow Shoes",
+    "unidName": "Shadow Shoes",
+    "resName": "슈즈쉐도우",
+    "description": "รองเท้าที่สวมใส่เพิ่มเติม สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์ของมันจะลดน้อยลง\nเพิ่ม Damage สกิล Storm Gust, Lord of Vermilion, Heaven's Drive, Meteor Storm 10%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage สกิล Storm Gust, Lord of Vermilion, Heaven's Drive, Meteor Storm ขึ้นอีก 4%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shoes^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Novice^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 528,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Shoes",
+    "compositionPos": null,
+    "usableClass": [
+      "Novice"
+    ],
+    "script": {
+      "Storm Gust": [
+        "10",
+        "2---4"
+      ],
+      "Lord of Vermilion": [
+        "10",
+        "2---4"
+      ],
+      "Heaven's Drive": [
+        "10",
+        "2---4"
+      ],
+      "Meteor Storm": [
+        "10",
+        "2---4"
+      ]
+    }
+  },
   "24622": {
     "id": 24622,
     "aegisName": "S_Kunai_Weapon",
@@ -38897,6 +39598,41 @@
       ]
     }
   },
+  "24746": {
+    "id": 24746,
+    "aegisName": "S_S_Reload_Shield",
+    "name": "Separate Reload Shadow Shield",
+    "unidName": "Shadow Shield",
+    "resName": "쉴드쉐도우3",
+    "description": "โล่เล็กที่สามารถสวมใส่ที่แขนได้ สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์การป้องกันของมันจะลดน้อยลง\nทุก ๆ การอัพเกรด 1 ขั้น ลด Delay หลังใช้สกิล 1%\nทุก ๆ การอัพเกรด 2 ขั้น ASPD +3%\nเมื่ออัพเกรดถึงขั้น 9, ATK +3%, MATK +3%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shield^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 527,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 1,
+    "location": "Shield",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "acd": [
+        "1---1"
+      ],
+      "aspdPercent": [
+        "2---3"
+      ],
+      "atkPercent": [
+        "9===3"
+      ],
+      "matkPercent": [
+        "9===3"
+      ]
+    }
+  },
   "26118": {
     "id": 26118,
     "aegisName": "Shadow_Staff_K",
@@ -39917,7 +40653,7 @@
     "script": {
       "cri": [
         "5",
-        "10===5"
+        "10===10"
       ],
       "criDmg": [
         "10"
@@ -41835,6 +42571,56 @@
       ]
     }
   },
+  "27322": {
+    "id": 27322,
+    "aegisName": "Ahat_Card",
+    "name": "Apostle Ahat of Morroc Card",
+    "unidName": "Apostle Ahat of Morroc Card",
+    "resName": "이름없는카드",
+    "description": "MSP +5%\nเมื่อใช้ร่วมกับ Apostle Shnaim of Morroc Card, MSP +5% เพิ่มเติม\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Accessory^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 136,
+    "cardPrefix": "Dominator's",
+    "script": {
+      "spPercent": [
+        "5",
+        "EQUIP[Apostle Shnaim of Morroc Card]===5"
+      ]
+    }
+  },
+  "27323": {
+    "id": 27323,
+    "aegisName": "Shnaim_Card",
+    "name": "Apostle Shnaim of Morroc Card",
+    "unidName": "Apostle Shnaim of Morroc Card",
+    "resName": "이름없는카드",
+    "description": "MHP +5%\nเมื่อใช้ร่วมกับ Apostle Ahat of Morroc Card, MHP +5% เพิ่มเติม\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Accessory^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 136,
+    "cardPrefix": "Coordinator's",
+    "script": {
+      "hpPercent": [
+        "5",
+        "EQUIP[Apostle Ahat of Morroc Card]===5"
+      ]
+    }
+  },
   "27324": {
     "id": 27324,
     "aegisName": "Brinaranea_Card",
@@ -43243,9 +44029,7 @@
     ],
     "script": {
       "atkPercent": [
-        "3"
-      ],
-      "aspd": [
+        "3",
         "7===7"
       ],
       "Cross Ripper Slasher": [
@@ -55450,6 +56234,42 @@
       ]
     }
   },
+  "32270": {
+    "id": 32270,
+    "aegisName": "Luminous_Blue_Stone_TW",
+    "name": "Luminous Blue Stone [1]",
+    "unidName": "Clip",
+    "resName": "푸른야광석",
+    "description": "หินเรืองแสงที่ Engel Howard เคยครอบครอง\nว่ากันว่าเป็นจิตวิญญาณของช่างฝีมือที่มีพลังทำลายล้าง\n\nASPD +5%, CRI +5\nใช้งาน [Sight] Lv.1 ได้\nเพิ่ม Critical Damage 5%\n-\nเมื่อ Base LUK ตั้งแต่ 100 ขึ้นไป\nCRI+5.\nเพิ่ม Critical Damage 5%\n-\nเมื่อใส่กับ Sharp 1Lv\nเพิ่ม Critical Damage 5%\n-\nเมื่อใส่กับ Sharp 2Lv\nเพิ่ม Critical Damage 5%\nประเภท :  ^777777Accessory^000000  พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^77777740^000000\nเลเวลที่ต้องการ : ^77777790^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 517,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 40,
+    "requiredLevel": 90,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "aspdPercent": [
+        "5"
+      ],
+      "cri": [
+        "5",
+        "SUM[luk==100]===5"
+      ],
+      "criDmg": [
+        "5",
+        "SUM[luk==100]===5",
+        "EQUIP[Sharp 1Lv]SUM[luk==100]===5",
+        "EQUIP[Sharp 2Lv]SUM[luk==100]===5"
+      ]
+    }
+  },
   "32301": {
     "id": 32301,
     "aegisName": "Gold_Lux_IL",
@@ -58332,6 +59152,36 @@
       "m_race_demon": [
         "25",
         "15===12"
+      ]
+    }
+  },
+  "300252": {
+    "id": 300252,
+    "aegisName": "Deadre_Card",
+    "name": "Deadre Card",
+    "unidName": "Deadre Card",
+    "resName": "이름없는카드",
+    "description": "Matk + 15.\nIncreases holy property magical damage by 7%, increases SP consumption of skills by 5%.\nClass: ^777777Card^000000\nCompound on: ^777777Headgear^000000\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 769,
+    "cardPrefix": "of High Holy Power",
+    "script": {
+      "matk": [
+        "15"
+      ],
+      "m_my_element_holy": [
+        "7"
+      ],
+      "spPercentCost": [
+        "5"
       ]
     }
   },
@@ -64394,9 +65244,9 @@
     "id": 400094,
     "aegisName": "BioWeapon_Helm_WL",
     "name": "Jade Crown [1]",
-    "unidName": "Headgear",
+    "unidName": "Helm",
     "resName": "보병궁왕관",
-    "description": "Matk + 2% and increases SP recovery rate by 6% per 2 refine rate.\nIf refine rate is 7 or higher, all stat + 3.\nIf refine rate is 9 or higher, Matk + 4%.\nIf refine rate is 11 or higher, increases neutral, fire and ghost property magical damage by 20%.\n\nWhen equipped with Crimson Rose Stick, reduces skill cooldown of Crimson Rock by 1 second,\nincreases Crimson Rock damage by 3% per refine rate of weapon.\n\nWhen equipped with Staff of Miracle, increases ghost property magical damage by 3%,\nincreases Soul Expansion damage by 3% per refine rate of weapon.\n\nWhen equipped with Gravitation Staff, increases neutral property magical damage by 3%,\nincreases Gravitational Field and Comet damage by 3% per refine rate of weapon.\nClass: ^777777Headgear^000000 Defense: ^77777710^000000\nLocation: ^777777Upper ^000000 Weight: ^77777710^000000\nRequired Level: ^777777170^000000\nJobs: ^777777Warlock^000000",
+    "description": "มงกุฎประดับหินหยกที่ทำขึ้นเพื่อร่างทดลองเฉพาะ มีผ้าลูกไม้สีชมพูถักทอติดอยู่ด้วยกัน\nเล่าลือกันว่ามีหน้าที่เสริมพลังเวทมนตร์ให้แกร่งกล้ายิ่งขึ้น\nทุก ๆ การอัพเกรด 2 ขั้น MATK +2%, MATK +10\nเมื่ออัพเกรดถึงขั้น 7, All Status +3 \nเมื่ออัพเกรดถึงขั้น 9 ลดระยะเวลาร่ายแบบแปรผัน 10%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage ทางเวทมนตร์ธาตุ Neutral, Fire, Ghost 20%\n\nเมื่อสวมใส่ร่วมกับ Crimson Rose Stick, \nลด Cooldown สกิล Crimson Rock 1 วินาที\nทุก ๆ การอัพเกรด Weapon 1 ขั้น เพิ่ม Damage สกิล Crimson Rock 10%\n\nเมื่อสวมใส่ร่วมกับ Staff of Miracle, \nเพิ่ม Damage ทางเวทมนตร์ธาตุ Ghost 10%\nทุก ๆ การอัพเกรด Weapon 1 ขั้น เพิ่ม Damage สกิล Soul Expansion 10%\n\nเมื่อสวมใส่ร่วมกับ Gravitation Staff, \nเพิ่ม Damage ทางเวทมนตร์ธาตุ Neutral 10%\nทุก ๆ การอัพเกรด Weapon 1 ขั้น เพิ่ม Damage สกิล Gravitational Field, Comet 3%\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^77777710^000000\nตำแหน่ง : ^777777Upper ^000000 น้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Warlock^000000",
     "slots": 1,
     "itemTypeId": 2,
     "itemSubTypeId": 512,
@@ -64412,31 +65262,36 @@
     ],
     "script": {
       "matkPercent": [
-        "2---2",
-        "9===4"
+        "2---2"
+      ],
+      "matk": [
+        "2---10"
       ],
       "allStatus": [
         "7===3"
       ],
+      "vct": [
+        "9===10"
+      ],
       "m_my_element_neutral": [
         "11===20",
-        "EQUIP[Gravitation Staff]===3"
+        "EQUIP[Gravitation Staff]===10"
       ],
       "m_my_element_fire": [
         "11===20"
       ],
       "m_my_element_ghost": [
         "11===20",
-        "EQUIP[Staff of Miracle]===3"
+        "EQUIP[Staff of Miracle]===10"
       ],
       "cd__Crimson Rock": [
         "EQUIP[Crimson Rose Stick]===1"
       ],
       "Crimson Rock": [
-        "EQUIP[Crimson Rose Stick]REFINE[weapon==1]---3"
+        "EQUIP[Crimson Rose Stick]REFINE[weapon==1]---10"
       ],
       "Soul Expansion": [
-        "EQUIP[Staff of Miracle]REFINE[weapon==1]---3"
+        "EQUIP[Staff of Miracle]REFINE[weapon==1]---10"
       ],
       "Gravitational Field": [
         "EQUIP[Gravitation Staff]REFINE[weapon==1]---3"
@@ -64450,9 +65305,9 @@
     "id": 400095,
     "aegisName": "BioWeapon_Helm_SO",
     "name": "Spinel Diadem [1]",
-    "unidName": "Headgear",
+    "unidName": "Helm",
     "resName": "보병궁보관",
-    "description": "Matk + 2% and increases SP recovery rate by 6% per 2 refine rate.\r\nIf refine rate is 7 or higher, all stat + 3.\r\nIf refine rate is 9 or higher, reduces variable casting time by 10%.\r\nIf refine rate is 11 or higher, increases neutral, earth and water property magical damage by 20%.\r\n\r\nWhen equipped with Boltigin, Matk + 2%,\r\nincreases Fire Bolt, Cold Bolt and Lightning Bolt damage by 3% per refine rate of weapon.\r\n\r\nWhen equipped with Psychic Spear Rod, increases neutral and wind property magical damage by 3%,\r\nincreases Varetyr Spear damage by 3% per refine rate of weapon.\r\n\r\nWhen equipped with Dust Grave, increases water and earth property magical damage by 3%,\r\nincreases Diamond Dust damage by 3% per refine rate of weapon.\r\nClass: ^777777Headgear^000000 Defense: ^77777710^000000\r\nLocation: ^777777Upper ^000000 Weight: ^77777710^000000\r\nRequired Level: ^777777170^000000\r\nJobs: ^777777Sorcerer^000000",
+    "description": "มงกุฎที่ทำขึ้นเพื่อร่างทดลองเฉพาะ ถูกประดับตกแต่งด้วยสปิเนลสีน้ำเงิน ซึ่งเป็นตัวแทนของความหวังและการฟื้นฟู\nทุก ๆ การอัพเกรด 2 ขั้น MATK +2%, MATK +10\nเมื่ออัพเกรดถึงขั้น 7, All Status +3 \nเมื่ออัพเกรดถึงขั้น 9, ASPD +10%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage ทางเวทมนตร์ธาตุ Neutral, Earth, Water 20%\n\nเมื่อสวมใส่ร่วมกับ Boltigin, \nMATK +10%\nทุก ๆ การอัพเกรด Weapon 1 ขั้น เพิ่ม Damage สกิล Fire Bolt, Cold Bolt, Lightning Bolt 10%\n \nเมื่อสวมใส่ร่วมกับ Psychic Spear Rod, \nลด Cooldown สกิล Psychic Wave 1 วินาที\nทุก ๆ การอัพเกรด Weapon 1 ขั้น เพิ่ม Damage สกิล Psychic Wave 3%\n\nเมื่อสวมใส่ร่วมกับ Dust Grave, \nลดระยะเวลาร่ายแบบคงที่ 0.5 วินาที\nทุก ๆ การอัพเกรด Weapon 1 ขั้น เพิ่ม Damage สกิล Earth Grave 10%\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^77777710^000000\nตำแหน่ง : ^777777Upper ^000000 น้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Sorcerer^000000",
     "slots": 1,
     "itemTypeId": 2,
     "itemSubTypeId": 512,
@@ -64469,43 +65324,46 @@
     "script": {
       "matkPercent": [
         "2---2",
-        "EQUIP[Boltigin]===2"
+        "EQUIP[Boltigin]===10"
+      ],
+      "matk": [
+        "2---10"
       ],
       "allStatus": [
         "7===3"
       ],
-      "vct": [
+      "aspdPercent": [
         "9===10"
       ],
       "m_my_element_neutral": [
-        "11===20",
-        "EQUIP[Psychic Spear Rod]===3"
+        "11===20"
       ],
       "m_my_element_earth": [
-        "11===20",
-        "EQUIP[Dust Grave]===3"
+        "11===20"
       ],
       "m_my_element_water": [
-        "11===20",
-        "EQUIP[Dust Grave]===3"
+        "11===20"
       ],
       "Fire Bolt": [
-        "EQUIP[Boltigin]REFINE[weapon==1]---3"
+        "EQUIP[Boltigin]REFINE[weapon==1]---10"
       ],
       "Cold Bolt": [
-        "EQUIP[Boltigin]REFINE[weapon==1]---3"
+        "EQUIP[Boltigin]REFINE[weapon==1]---10"
       ],
       "Lightning Bolt": [
-        "EQUIP[Boltigin]REFINE[weapon==1]---3"
+        "EQUIP[Boltigin]REFINE[weapon==1]---10"
       ],
-      "m_my_element_wind": [
-        "EQUIP[Psychic Spear Rod]===3"
+      "cd__Psychic Wave": [
+        "EQUIP[Psychic Spear Rod]===1"
       ],
-      "Varetyr Spear": [
+      "Psychic Wave": [
         "EQUIP[Psychic Spear Rod]REFINE[weapon==1]---3"
       ],
-      "Diamond Dust": [
-        "EQUIP[Dust Grave]REFINE[weapon==1]---3"
+      "fct": [
+        "EQUIP[Dust Grave]===0.5"
+      ],
+      "Earth Grave": [
+        "EQUIP[Dust Grave]REFINE[weapon==1]---10"
       ]
     }
   },
@@ -67180,6 +68038,87 @@
       ],
       "m_pene_race_all": [
         "EQUIP[Randel's Memory&&Trial Diadem]REFINE[headUpper,weapon,boot==35]===40"
+      ]
+    }
+  },
+  "470258": {
+    "id": 470258,
+    "aegisName": null,
+    "name": "Zodiac Boots (Mage) [1]",
+    "unidName": "Zodiac Boots (Mage)",
+    "resName": "HalfBloodPrincess_Shoes",
+    "description": "รองเท้าคุณภาพดีที่ได้รับพลังจากกลุ่มดาว Aquarius\n\nMATK +50\nทุก ๆ การอัพเกรด 2 ขั้น MATK +10, MATK +1%\nทุก ๆ การอัพเกรด 4 ขั้น เพิ่ม Damage สกิล Crimson Rock, Psychic Wave 15%\nเมื่ออัพเกรดตั้งแต่ 9 ขึ้นไป ลดระยะเวลาร่ายแบบคงที่ 0.5 วินาที\nเมื่ออัพเกรดตั้งแต่ 11 ขึ้นไป ลด Delay หลังใช้สกิล 10%\n\nเมื่อสวมใส่ร่วมกับ Kathryne's Memory,\nลด Cooldown สกิล Crimson Rock 3 วินาที\nทุก ๆ การอัพเกรด Weapon 4 ขั้น เพิ่ม Damage ทางเวทมนตร์ธาตุ Fire 15% และลดระยะเวลาร่ายแบบแปรผัน 10%\n\nเมื่อสวมใส่ร่วมกับ Celia's Memory,\nลด Cooldown สกิล Psychic Wave 1 วินาที\nสามารถใช้สกิล Dark Claw Lv. 5\nลด Cooldown สกิล Dark Claw 30 วินาที\nทุก ๆ การอัพเกรด Weapon 4 ขั้น เพิ่ม Damage สกิล Fire Bolt, Cold Bolt, Lightning Bolt 40%\n\nเมื่อสวมใส่ร่วมกับ Kathryne's Memory และ Jade Crown,\nเมื่อค่าอัพเกรดรวมกันของ Headgear, Shoes, Weapon ตั้งแต่ 33 ขึ้นไป เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกประเภท 20%\nและเมื่อโจมตีทางเวทมนตร์ มีโอกาส 3% ที่จะ MATK +30% เป็นเวลา 10 วินาที\nเมื่อค่าอัพเกรดรวมกันของ Headgear, Shoes, Weapon ตั้งแต่ 35 ขึ้นไป เพิกเฉยต่อพลังป้องกันทางเวทมนตร์ของมอนสเตอร์ทุกเผ่า 40% (ยกเว้น Player)\n\nเมื่อสวมใส่ร่วมกับ Celia's Memory และ Spinel Diadem,\nเมื่อค่าอัพเกรดรวมกันของ Headgear, Shoes, Weapon ตั้งแต่ 33 ขึ้นไป เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกประเภท 20%\nและเมื่อโจมตีทางเวทมนตร์ มีโอกาส 3% ที่จะ INT +200 เป็นเวลา 10 วินาที\nเมื่อค่าอัพเกรดรวมกันของ Headgear, Shoes, Weapon ตั้งแต่ 35 ขึ้นไป เพิกเฉยต่อพลังป้องกันทางเวทมนตร์ของมอนสเตอร์ทุกเผ่า 40% (ยกเว้น Player)\nประเภท : ^777777Shoes^000000  พลังป้องกัน : ^77777760^000000\nน้ำหนัก : ^77777790^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Mage Class 3^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 516,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 60,
+    "weight": 90,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Warlock",
+      "Sorcerer"
+    ],
+    "script": {
+      "matk": [
+        "50",
+        "2---10"
+      ],
+      "matkPercent": [
+        "2---1"
+      ],
+      "Crimson Rock": [
+        "4---15"
+      ],
+      "Psychic Wave": [
+        "4---15"
+      ],
+      "fct": [
+        "9===0.5"
+      ],
+      "acd": [
+        "11===10"
+      ],
+      "cd__Crimson Rock": [
+        "EQUIP[Kathryne's Memory]===3"
+      ],
+      "m_my_element_fire": [
+        "EQUIP[Kathryne's Memory]REFINE[weapon==4]---15"
+      ],
+      "vct": [
+        "EQUIP[Kathryne's Memory]REFINE[weapon==4]---10"
+      ],
+      "cd__Psychic Wave": [
+        "EQUIP[Celia's Memory]===1"
+      ],
+      "cd__Dark Claw": [
+        "EQUIP[Celia's Memory]===30"
+      ],
+      "Fire Bolt": [
+        "EQUIP[Celia's Memory]REFINE[weapon==4]---40"
+      ],
+      "Cold Bolt": [
+        "EQUIP[Celia's Memory]REFINE[weapon==4]---40"
+      ],
+      "Lightning Bolt": [
+        "EQUIP[Celia's Memory]REFINE[weapon==4]---40"
+      ],
+      "m_class_all": [
+        "EQUIP[Kathryne's Memory&&Jade Crown]REFINE[headUpper,weapon,boot==33]===20",
+        "EQUIP[Celia's Memory&&Spinel Diadem]REFINE[headUpper,weapon,boot==33]===20"
+      ],
+      "chance__matkPercent": [
+        "EQUIP[Kathryne's Memory&&Jade Crown]REFINE[headUpper,weapon,boot==33]===30"
+      ],
+      "m_pene_race_all": [
+        "EQUIP[Kathryne's Memory&&Jade Crown]REFINE[headUpper,weapon,boot==35]===40",
+        "EQUIP[Celia's Memory&&Spinel Diadem]REFINE[headUpper,weapon,boot==35]===40"
+      ],
+      "chance__int": [
+        "EQUIP[Celia's Memory&&Spinel Diadem]REFINE[headUpper,weapon,boot==33]===200"
       ]
     }
   },
@@ -70509,6 +71448,56 @@
       ]
     }
   },
+  "490408": {
+    "id": 490408,
+    "aegisName": null,
+    "name": "Super Novice Figure [1]",
+    "unidName": "Super Novice Figure",
+    "resName": "피규어",
+    "description": "โมเดลสุดน่ารัก ไอต๊าวโนวิช<3\n\nลดระยะเวลาร่ายแบบแปรผัน 10%\nเพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูทุกประเภท 10%\n\nเมื่อสวมใส่ตำแหน่ง Accessory (Right),\nASPD +10%\nทุก ๆ BaseLv. 3 เพิ่ม Damage สกิล Shield Chain 1%\n\nเมื่อสวมใส่ตำแหน่ง Accessory (Left),\nเพิกเฉยต่อพลังป้องกันทางเวทมนตร์ของมอนสเตอร์ทุกเผ่า 50%\nเพิ่ม Damage สกิล Psychic Wave 20%\nเพิ่ม Damage ทางเวทมนตร์ธาตุ Earth, Neutral 10%\nประเภท : ^777777Accessory^000000  พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Super Novice^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 517,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Super Novice"
+    ],
+    "script": {
+      "vct": [
+        "10"
+      ],
+      "p_class_all": [
+        "10"
+      ],
+      "m_class_all": [
+        "10"
+      ],
+      "aspdPercent": [
+        "POS[accRight]===10"
+      ],
+      "Shield Chain": [
+        "POS[accRight]SUM[level==3]---1"
+      ],
+      "m_pene_race_all": [
+        "POS[accLeft]===50"
+      ],
+      "Psychic Wave": [
+        "POS[accLeft]===20"
+      ],
+      "m_my_element_earth": [
+        "POS[accLeft]===10"
+      ],
+      "m_my_element_neutral": [
+        "POS[accLeft]===10"
+      ]
+    }
+  },
   "490411": {
     "id": 490411,
     "aegisName": null,
@@ -71260,6 +72249,62 @@
       ],
       "m_class_boss": [
         "EQUIP[Themis Balance&&Above B.E.2 475&&Dark Blinkers]REFINE[shield==9]===20"
+      ]
+    }
+  },
+  "490498": {
+    "id": 490498,
+    "aegisName": null,
+    "name": "Ring of Unknown Hero(Rebellion) [1]",
+    "unidName": "Ring of Unknown Hero(Rebellion)",
+    "resName": "Ullr_Bracelet",
+    "description": "แหวนของฮีโร่นิรนาม\n\nลด Delay หลังใช้สกิล 3%\nเพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูทุกประเภท 6%\n\nเมื่อสวมใส่ร่วมกับ Patent Crimson Rose,\nเพิ่ม Damage ทางกายภาพต่อมอนสเตอร์ทุกเผ่า 8%\nเมื่ออัพเกรด Patent Crimson Rose ตั้งแต่ 11 ขึ้นไป,\nเมื่อ Base DEX และ STR รวมกันได้ทุก ๆ 12 หน่วย เพิ่ม Damage สกิล Fire Dance 1%\n\nเมื่อสวมใส่ร่วมกับ Patent The Black,\nเพิ่ม Damage ทางกายภาพต่อมอนสเตอร์ทุกเผ่า 8%\nเมื่ออัพเกรด Patent The Black ตั้งแต่ 11 ขึ้นไป,\nเมื่อ Base DEX และ STR รวมกันได้ทุก ๆ 12 หน่วย เพิ่ม Damage สกิล Round Trip 1%\n\nเมื่อสวมใส่ร่วมกับ Patent Demon Slayer Shot,\nเพิ่ม Damage ทางกายภาพต่อมอนสเตอร์ทุกเผ่า 8%\nเมื่ออัพเกรด Patent Demon Slayer Shot ตั้งแต่ 11 ขึ้นไป,\nเมื่อ Base DEX และ AGI รวมกันได้ทุก ๆ 12 หน่วย เพิ่ม Damage สกิล Vanishing Buster 1%\n\nเมื่อสวมใส่ร่วมกับ Patent Golden Lord Launcher,\nเพิ่ม Damage ทางกายภาพต่อมอนสเตอร์ทุกเผ่า 8%\nเมื่ออัพเกรด Patent Golden Lord Launcher ตั้งแต่ 11 ขึ้นไป,\nเมื่อ Base DEX และ AGI รวมกันได้ทุก ๆ 12 หน่วย เพิ่ม Damage สกิล Dragon Tail 1%\n\nเมื่อสวมใส่ร่วมกับ Patent Master Soul Rifle,\nเพิ่ม Damage ทางเวทมนตร์ต่อมอนสเตอร์ทุกเผ่า 8%\nเมื่ออัพเกรด Patent Master Soul Rifle ตั้งแต่ 11 ขึ้นไป,\nเมื่อ Base INT และ AGI รวมกันได้ทุก ๆ 12 หน่วย เพิ่ม Damage สกิล Soul Expansion 1%\nประเภท : ^777777Accessory (Right)^000000 พลังป้องกัน : ^7777777^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Rebellion^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 510,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 7,
+    "weight": 10,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Rebellion"
+    ],
+    "script": {
+      "acd": [
+        "3"
+      ],
+      "p_class_all": [
+        "6"
+      ],
+      "m_class_all": [
+        "6"
+      ],
+      "p_race_all": [
+        "EQUIP[Patent Crimson Rose]===8",
+        "EQUIP[Patent The Black]===8",
+        "EQUIP[Patent Demon Slayer Shot]===8",
+        "EQUIP[Patent Golden Lord Launcher]===8"
+      ],
+      "Fire Dance": [
+        "EQUIP[Patent Crimson Rose]REFINE[weapon==11]SUM[dex,str==12]---1"
+      ],
+      "Round Trip": [
+        "EQUIP[Patent The Black]REFINE[weapon==11]SUM[dex,str==12]---1"
+      ],
+      "Vanishing Buster": [
+        "EQUIP[Patent Demon Slayer Shot]REFINE[weapon==11]SUM[dex,agi==12]---1"
+      ],
+      "Dragon Tail": [
+        "EQUIP[Patent Golden Lord Launcher]REFINE[weapon==11]SUM[dex,agi==12]---1"
+      ],
+      "m_race_all": [
+        "EQUIP[Patent Master Soul Rifle]===8"
+      ],
+      "Soul Expansion": [
+        "EQUIP[Patent Master Soul Rifle]REFINE[weapon==11]SUM[int,agi==12]---1"
       ]
     }
   },
