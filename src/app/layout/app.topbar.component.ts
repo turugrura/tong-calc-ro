@@ -115,6 +115,17 @@ export class AppTopBarComponent {
 
   updates: { v: string; date: string; logs: string[] }[] = [
     {
+      v: 'V1.8.1',
+      date: '11-01-2567',
+      logs: [
+        'Fixed reported bugs',
+        'Added Official last updated items',
+        'Added Weapon Lv4 & all head gears for Super Novice',
+        'Added Super Novice offensive skill (Psychic Wave, Shield Chain)',
+        'Added requested items',
+      ],
+    },
+    {
       v: 'V1.8.0',
       date: '07-01-2567',
       logs: [

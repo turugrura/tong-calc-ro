@@ -4405,6 +4405,30 @@
       ]
     }
   },
+  "4145": {
+    "id": 4145,
+    "aegisName": "Berzebub_Card",
+    "name": "Berzebub Card",
+    "unidName": "Card",
+    "resName": "이름없는카드",
+    "description": "ลดระยะเวลาในการร่ายเวทมนตร์ลง 30%\nประเภท : ^777777Card^000000\nประเภท : ^777777Accessory^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 136,
+    "cardPrefix": "of Bigmouth",
+    "script": {
+      "vct": [
+        "30"
+      ]
+    }
+  },
   "4160": {
     "id": 4160,
     "aegisName": "Antique_Firelock_Card",
@@ -35484,6 +35508,95 @@
       "p_size_all": [
         "5",
         "2---1"
+      ]
+    }
+  },
+  "24566": {
+    "id": 24566,
+    "aegisName": "S_Spore_Bomb_Armor",
+    "name": "Spore Bomb Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우",
+    "description": "ชุดเกราะที่เพิ่มพลังป้องกันเมื่อสวมใส่เพิ่มบนเกราะอีกที สามารถใส่แบบชิ้นเดียวได้ แต่ความสามารถในการป้องกันจะลดลงไปอีก\nเพิ่ม Damage สกิล Spore Explosion 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage สกิล Spore Explosion ขึ้นอีก 2%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Armor^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Genetic^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Armor",
+    "compositionPos": null,
+    "usableClass": [
+      "Genetic"
+    ],
+    "script": {
+      "Spore Explosion": [
+        "5",
+        "2---2"
+      ]
+    }
+  },
+  "24567": {
+    "id": 24567,
+    "aegisName": "S_Spore_Bomb_Shield",
+    "name": "Spore Bomb Shadow Shield",
+    "unidName": "Shadow Shield",
+    "resName": "쉴드쉐도우",
+    "description": "โล่เล็กที่สามารถสวมใส่ที่แขนได้ สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์การป้องกันของมันจะลดน้อยลง\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 3%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาดขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาดขึ้นอีก 4%\nเมื่อสวมใส่ Spore Bomb Shadow Armor/Shield/Shoes ร่วมกัน,\nเพิ่ม Damage สกิล Spore Explosion % เท่ากับค่าอัพเกรดรวมกัน\nเมื่อสวมใส่ร่วมกับ Geneticist Weapon Shadow,\nเพิกเฉยต่อพลังป้องกันทางกายภาพของทุกเผ่ายกเว้น Player 40% และเพิกเฉยต่อพลังป้องกันทางกายภาพเพิ่มอีกตามค่าอัพเกรดรวมกันของ Spore Bomb Shadow Shield และ Geneticist Weapon Shadow\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shield^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Genetic^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 527,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Shield",
+    "compositionPos": null,
+    "usableClass": [
+      "Genetic"
+    ],
+    "script": {
+      "p_size_all": [
+        "3",
+        "7===3",
+        "9===4"
+      ],
+      "Spore Explosion": [
+        "EQUIP[Spore Bomb Shadow Armor&&Spore Bomb Shadow Shoes]REFINE[shadowShield,shadowArmor,shadowBoot==1]---1"
+      ],
+      "p_pene_race_all": [
+        "EQUIP[Geneticist Weapon Shadow]===40",
+        "EQUIP[Geneticist Weapon Shadow]REFINE[shadowShield,shadowWeapon==1]---1"
+      ]
+    }
+  },
+  "24568": {
+    "id": 24568,
+    "aegisName": "S_Spore_Bomb_Shoes",
+    "name": "Spore Bomb Shadow Shoes",
+    "unidName": "Shadow Shoes",
+    "resName": "슈즈쉐도우",
+    "description": "รองเท้าที่สวมใส่เพิ่มเติม สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์ของมันจะลดน้อยลง\nลด Cooldown สกิล Spore Explosion 0.2 วินาที\nทุก ๆ การอัพเกรด 3 ขั้น ลด Cooldown สกิล Spore Explosion ลงอีก 0.1 วินาที\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shoes ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Genetic^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 528,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Shoes",
+    "compositionPos": null,
+    "usableClass": [
+      "Genetic"
+    ],
+    "script": {
+      "cd__Spore Explosion": [
+        "0.2",
+        "3---0.1"
       ]
     }
   },
