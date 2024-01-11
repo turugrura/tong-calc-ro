@@ -10,9 +10,11 @@ import { InfoForClass } from '../models/info-for-class.model';
 import {
   BeastBaneFn,
   DemonBane,
+  DoubleAttackFn,
   FaithFn,
   HiltBindingFn,
   ImproveDodgeFn,
+  IncreaseSPRecoveryFn,
   SnatcherFn,
 } from '../constants/share-passive-skills';
 
@@ -126,6 +128,41 @@ export class SuperNovice extends CharacterBase {
         const baseLevel = model.level;
 
         return (100 + skillLevel * 100) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Psychic Wave',
+      label: 'Psychic Wave Lv5',
+      value: 'Psychic Wave==5',
+      fct: 0.6,
+      vct: 12,
+      cd: 5,
+      acd: 1,
+      totalHit: 7,
+      isMatk: true,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const baseLevel = model.level;
+        const totalInt = status.totalInt;
+
+        return (70 * skillLevel + 3 * totalInt) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Shield Chain',
+      label: 'Shield Chain Lv5',
+      value: 'Shield Chain==5',
+      fct: 0.2,
+      vct: 0.8,
+      cd: 0,
+      acd: 1,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, equipmentBonus } = input;
+        const baseLevel = model.level;
+        const { shield } = equipmentBonus;
+        if (!shield) return 0;
+
+        return (300 + skillLevel * 200 + (shield.refine || 0) * 4 + (shield.weight || 0)) * (baseLevel / 100);
       },
     },
   ];
@@ -281,6 +318,8 @@ export class SuperNovice extends CharacterBase {
         { label: 'Lv 10', value: 10, skillLv: 10, isUse: true, bonus: { x_atk: 20, hit: 20 } },
       ],
     },
+    IncreaseSPRecoveryFn(),
+    DoubleAttackFn(),
   ];
 
   override getMasteryAtk(info: InfoForClass): number {

@@ -17,3 +17,5 @@ export * from './hilt-binding-fn';
 export * from './snatcher-fn';
 export * from './improve-dodge-fn';
 export * from './beastbace-fn';
+export * from './increase-sp-rec-fn';
+export * from './double-attack-fn';
