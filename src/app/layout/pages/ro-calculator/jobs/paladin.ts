@@ -37,6 +37,23 @@ export class Paladin extends CharacterBase {
         return (500 + skillLevel * 150) * (baseLevel / 100);
       },
     },
+    {
+      name: 'Shield Chain',
+      label: 'Shield Chain Lv5',
+      value: 'Shield Chain==5',
+      fct: 0.2,
+      vct: 0.8,
+      cd: 0,
+      acd: 1,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, equipmentBonus } = input;
+        const baseLevel = model.level;
+        const { shield } = equipmentBonus;
+        if (!shield) return 0;
+
+        return (300 + skillLevel * 200 + (shield.refine || 0) * 4 + (shield.weight || 0)) * (baseLevel / 100);
+      },
+    },
   ];
   protected readonly _activeSkillList: ActiveSkillModel[] = [
     {
