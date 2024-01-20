@@ -9045,6 +9045,54 @@
       ]
     }
   },
+  "4801": {
+    "id": 4801,
+    "aegisName": "SP100",
+    "name": "SP+100",
+    "unidName": "SP+100",
+    "resName": "마력석_파랑",
+    "description": "SP + 100",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<SP+100>",
+    "script": {
+      "sp": [
+        "100"
+      ]
+    }
+  },
+  "4802": {
+    "id": 4802,
+    "aegisName": "SP150",
+    "name": "SP+150",
+    "unidName": "SP+150",
+    "resName": "마력석_파랑",
+    "description": "SP + 150",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "cardPrefix": "<SP+150>",
+    "script": {
+      "sp": [
+        "150"
+      ]
+    }
+  },
   "4806": {
     "id": 4806,
     "aegisName": "Matk3",

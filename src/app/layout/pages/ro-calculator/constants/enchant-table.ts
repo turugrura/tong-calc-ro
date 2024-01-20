@@ -125,6 +125,10 @@ enum MHP {
   _4 = 'MHP4',
   _5 = 'MHP5',
 }
+enum MSP {
+  _100 = 'SP100',
+  _150 = 'SP150',
+}
 enum Str {
   _1 = 'Strength1',
   _2 = 'Strength2',
@@ -358,13 +362,14 @@ const aspd34 = [AttackDelay._3, AttackDelay._4];
 const fatal13 = [Fatal._1, Fatal._2, Fatal._3];
 const fatal14 = [Fatal._1, Fatal._2, Fatal._3, Fatal._4];
 
-const cri57 = [Cri._5, Cri._7, Cri._10];
+const cri510 = [Cri._5, Cri._7, Cri._10];
 
 const critical23 = [Critical._2, Critical._3];
 const critical24 = [Critical._2, Critical._3, Critical._4];
 const critical34 = [Critical._3, Critical._4];
 
 const mhp34 = [MHP._3, MHP._4];
+const mhp35 = [MHP._3, MHP._5];
 
 const shedding12 = [Dodge._1, Dodge._2];
 
@@ -640,9 +645,8 @@ const base46 = createBaseStat(4, 6);
 
 const soutanes = ['Cassock_Str', 'Cassock_Agi', 'Cassock_Vit', 'Cassock_Dex', 'Cassock_Int', 'Cassock_Luk'];
 const specialBonus = [FS._5, FS._6, Spell._4, Spell._5, EA._4, EA._5, Sharp._4, Sharp._5];
-const odin2 = [...cri57, ...createBaseStat(6, 8)];
-const odin3 = [Cri._7, Cri._10, ...createBaseStat(7, 8)];
-const odin4 = [...soutanes, ...specialBonus, Cri._10, ...createBaseStat(7, 8)];
+const soutaneBase = [...cri510, ...mhp35, MSP._100, MSP._150, ...createBaseStat(6, 8)];
+const soutaneArmor = [...soutanes, ...specialBonus, ...soutaneBase];
 
 const infityEnt4 = [...ea13, ...delay13, ...aspd13, ...critical24, ...fatal13, ...matkP35, ...BaseState._3];
 const wing4 = [...ea23, ...fs23, ...sp23, ...sh23, ...matk12, ...specials, ...base12];
@@ -896,12 +900,15 @@ export const EnchantTable: EntTable[] = [
   { name: 'FaceWorm_Skin_', enchants: [null, specials, BaseState._3_5, BaseState._3_5] },
   { name: 'Archangel_Wing', enchants: [null, null, null, wing4] },
 
-  { name: 'CassockA_STR', enchants: [null, odin2, odin3, odin4] },
-  { name: 'CassockA_AGI', enchants: [null, odin2, odin3, odin4] },
-  { name: 'CassockA_VIT', enchants: [null, odin2, odin3, odin4] },
-  { name: 'CassockA_DEX', enchants: [null, odin2, odin3, odin4] },
-  { name: 'CassockA_INT', enchants: [null, odin2, odin3, odin4] },
-  { name: 'CassockA_LUK', enchants: [null, odin2, odin3, odin4] },
+  { name: 'Cassock_Manteau', enchants: [null, soutaneBase, soutaneBase, soutaneBase] },
+  { name: 'Cassock_Boots', enchants: [null, soutaneBase, soutaneBase, soutaneBase] },
+
+  { name: 'CassockA_STR', enchants: [null, soutaneBase, soutaneBase, soutaneArmor] },
+  { name: 'CassockA_AGI', enchants: [null, soutaneBase, soutaneBase, soutaneArmor] },
+  { name: 'CassockA_VIT', enchants: [null, soutaneBase, soutaneBase, soutaneArmor] },
+  { name: 'CassockA_DEX', enchants: [null, soutaneBase, soutaneBase, soutaneArmor] },
+  { name: 'CassockA_INT', enchants: [null, soutaneBase, soutaneBase, soutaneArmor] },
+  { name: 'CassockA_LUK', enchants: [null, soutaneBase, soutaneBase, soutaneArmor] },
 
   { name: 'Apollo_Armor_TH', enchants: [null, year2nd, year2nd, year2nd] },
   { name: 'Jupiter_Armor_TH', enchants: [null, year2nd, year2nd, year2nd] },
