@@ -277,6 +277,51 @@ export class ShadowChaser extends CharacterBase {
         return (1500 + skillLevel * 700) * (baseLevel / 100);
       },
     },
+    {
+      label: 'Meteor Storm Lv3',
+      name: 'Meteor Storm',
+      value: 'Meteor Storm==3',
+      acd: 1,
+      fct: 1.5,
+      vct: 6.3,
+      cd: 3.5,
+      isMatk: true,
+      element: ElementType.Fire,
+      totalHit: 3,
+      formula: (): number => {
+        return 125;
+      },
+    },
+    {
+      label: 'Meteor Storm Lv5',
+      name: 'Meteor Storm',
+      value: 'Meteor Storm==5',
+      acd: 1,
+      fct: 1.5,
+      vct: 6.3,
+      cd: 4.5,
+      isMatk: true,
+      element: ElementType.Fire,
+      totalHit: 4,
+      formula: (): number => {
+        return 125;
+      },
+    },
+    {
+      label: 'Meteor Storm Lv7',
+      name: 'Meteor Storm',
+      value: 'Meteor Storm==7',
+      acd: 1,
+      fct: 1.5,
+      vct: 6.3,
+      cd: 5.5,
+      isMatk: true,
+      element: ElementType.Fire,
+      totalHit: 5,
+      formula: (): number => {
+        return 125;
+      },
+    },
   ];
 
   protected _activeSkillList: ActiveSkillModel[] = [
