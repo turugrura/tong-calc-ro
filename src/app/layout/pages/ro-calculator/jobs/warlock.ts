@@ -175,7 +175,7 @@ export class Warlock extends CharacterBase {
         const { model, skillLevel, status } = input;
         const baseLevel = model.level;
 
-        return (status.totalInt + 1000 + skillLevel * 200) * (baseLevel / 100);
+        return (status.totalInt + 750 + skillLevel * 150) * (baseLevel / 100);
       },
     },
     {
