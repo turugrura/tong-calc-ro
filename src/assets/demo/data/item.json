@@ -20043,7 +20043,7 @@
       "Fire Ball": [
         "REFINE[8]LEARN_SKILL[Auto Spell==1]---5"
       ],
-      "Lightning Bolt": [
+      "Lightening Bolt": [
         "11===50"
       ],
       "Fire Bolt": [
@@ -27659,7 +27659,7 @@
         "20",
         "1---5"
       ],
-      "vct__Lightning Bolt": [
+      "vct__Lightening Bolt": [
         "20",
         "1---5"
       ],
@@ -37376,7 +37376,7 @@
       "Cold Bolt": [
         "EQUIP[Super Magic Shadow Armor&&Super Magic Shadow Shoes]REFINE[shadowArmor,shadowShield,shadowBoot==1]---2"
       ],
-      "Lightning Bolt": [
+      "Lightening Bolt": [
         "EQUIP[Super Magic Shadow Armor&&Super Magic Shadow Shoes]REFINE[shadowArmor,shadowShield,shadowBoot==1]---2"
       ],
       "Storm Gust": [
@@ -37426,7 +37426,7 @@
         "10",
         "2---4"
       ],
-      "Lightning Bolt": [
+      "Lightening Bolt": [
         "10",
         "2---4"
       ]
@@ -45722,7 +45722,7 @@
       "Cold Bolt": [
         "SUM[level==5]---1"
       ],
-      "Lightning Bolt": [
+      "Lightening Bolt": [
         "SUM[level==5]---1"
       ],
       "Earth Spike": [
@@ -46698,7 +46698,7 @@
       "Cold Bolt": [
         "9===30"
       ],
-      "Lightning Bolt": [
+      "Lightening Bolt": [
         "9===30"
       ],
       "Heaven's Drive": [
@@ -50922,7 +50922,7 @@
     "location": null,
     "compositionPos": null,
     "script": {
-      "Lightning Bolt": [
+      "Lightening Bolt": [
         "ACTIVE_SKILL[Striking]30"
       ]
     }
@@ -50945,7 +50945,7 @@
     "location": null,
     "compositionPos": null,
     "script": {
-      "Lightning Bolt": [
+      "Lightening Bolt": [
         "ACTIVE_SKILL[Striking]60"
       ]
     }
@@ -51962,7 +51962,7 @@
       "Cold Bolt": [
         "20"
       ],
-      "Lightning Bolt": [
+      "Lightening Bolt": [
         "20"
       ]
     }
@@ -54289,7 +54289,7 @@
       "Cold Bolt": [
         "20"
       ],
-      "Lightning Bolt": [
+      "Lightening Bolt": [
         "20"
       ]
     }
@@ -62257,7 +62257,7 @@
         "9===3",
         "11===7"
       ],
-      "Lightning Bolt": [
+      "Lightening Bolt": [
         "15",
         "9===3",
         "11===7"
@@ -66067,7 +66067,7 @@
       "Cold Bolt": [
         "EQUIP[Boltigin]REFINE[weapon==1]---10"
       ],
-      "Lightning Bolt": [
+      "Lightening Bolt": [
         "EQUIP[Boltigin]REFINE[weapon==1]---10"
       ],
       "cd__Psychic Wave": [
@@ -68820,7 +68820,7 @@
       "Cold Bolt": [
         "EQUIP[Celia's Memory]REFINE[weapon==4]---40"
       ],
-      "Lightning Bolt": [
+      "Lightening Bolt": [
         "EQUIP[Celia's Memory]REFINE[weapon==4]---40"
       ],
       "m_class_all": [
@@ -74269,7 +74269,7 @@
         "7===25",
         "11===30"
       ],
-      "Lightning Bolt": [
+      "Lightening Bolt": [
         "7===25",
         "11===30"
       ],

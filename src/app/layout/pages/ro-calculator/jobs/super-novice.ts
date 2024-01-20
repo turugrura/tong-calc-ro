@@ -17,6 +17,7 @@ import {
   IncreaseSPRecoveryFn,
   SnatcherFn,
 } from '../constants/share-passive-skills';
+import { ElementType } from '../constants/element-type.const';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [1, 0, 0, 0, 0, 0],
@@ -98,6 +99,83 @@ export class SuperNovice extends CharacterBase {
   protected readonly initialStatusPoint = 48;
   protected readonly classNames = ['Novice', 'Super Novice'];
   protected readonly _atkSkillList: AtkSkillModel[] = [
+    {
+      label: 'Fire Bolt Lv10',
+      name: 'Fire Bolt',
+      value: 'Fire Bolt==10',
+      acd: 2.8,
+      fct: 1.2,
+      vct: 3.2,
+      cd: 0,
+      totalHit: 10,
+      isMatk: true,
+      element: ElementType.Fire,
+      formula: (): number => {
+        return 100;
+      },
+    },
+    {
+      label: 'Cold Bolt Lv10',
+      name: 'Cold Bolt',
+      value: 'Cold Bolt==10',
+      acd: 2.8,
+      fct: 1.2,
+      vct: 3.2,
+      cd: 0,
+      totalHit: 10,
+      isMatk: true,
+      element: ElementType.Water,
+      formula: (): number => {
+        return 100;
+      },
+    },
+    {
+      label: 'Lightening Bolt Lv10',
+      name: 'Lightening Bolt',
+      value: 'Lightening Bolt==10',
+      acd: 2.8,
+      fct: 1.2,
+      vct: 3.2,
+      cd: 0,
+      totalHit: 10,
+      isMatk: true,
+      element: ElementType.Wind,
+      formula: (): number => {
+        return 100;
+      },
+    },
+    {
+      label: "Heaven's Drive Lv5",
+      name: "Heaven's Drive",
+      value: "Heaven's Drive==5",
+      fct: 0.8,
+      vct: 1.9,
+      acd: 0.5,
+      cd: 0,
+      isMatk: true,
+      element: ElementType.Earth,
+      totalHit: 5,
+      formula: (): number => {
+        return 125;
+      },
+    },
+    {
+      label: 'Lord of Vermilion Lv10',
+      name: 'Lord of Vermilion',
+      value: 'Lord of Vermilion==10',
+      acd: 5,
+      fct: 1.68,
+      vct: 6.72,
+      cd: 5,
+      isMatk: true,
+      hit: 20,
+      element: ElementType.Wind,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { skillLevel } = input;
+
+        return 400 + skillLevel * 100;
+      },
+    },
     {
       label: 'Fatal Manace Lv7',
       name: 'Fatal Manace',
