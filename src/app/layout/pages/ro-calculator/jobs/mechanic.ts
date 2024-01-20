@@ -126,6 +126,26 @@ export class Mechanic extends CharacterBase {
       },
     },
     {
+      label: 'Arm Cannon Lv3',
+      name: 'Arm Cannon',
+      value: 'Arm Cannon==3',
+      acd: 1,
+      fct: 0.4,
+      vct: 1.8,
+      cd: 0.3,
+      isHDefToSDef: true,
+      isHit100: true,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { skillLevel, model, monster } = input;
+        const baseLevel = model.level;
+        const monsterSize = monster.size;
+        const size = { s: 2, m: 1, l: 0 };
+        const additional = 50 * skillLevel * size[monsterSize];
+
+        return (additional + 300 + skillLevel * 300) * (baseLevel / 120);
+      },
+    },
+    {
       label: 'Arm Cannon Lv4',
       name: 'Arm Cannon',
       value: 'Arm Cannon==4',
@@ -133,7 +153,7 @@ export class Mechanic extends CharacterBase {
       fct: 0.2,
       vct: 2,
       cd: 0.45,
-      isIgnoreDef: true,
+      isHDefToSDef: true,
       isHit100: true,
       formula: (input: AtkSkillFormulaInput): number => {
         const { skillLevel, model, monster } = input;
@@ -153,7 +173,7 @@ export class Mechanic extends CharacterBase {
       fct: 0.2,
       vct: 2.2,
       cd: 0.65,
-      isIgnoreDef: true,
+      isHDefToSDef: true,
       isHit100: true,
       formula: (input: AtkSkillFormulaInput): number => {
         const { skillLevel, model, monster } = input;
