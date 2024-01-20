@@ -115,6 +115,19 @@ export class AppTopBarComponent {
 
   updates: { v: string; date: string; logs: string[] }[] = [
     {
+      v: 'V1.8.2',
+      date: '20-01-2567',
+      logs: [
+        'Fixed reported bugs',
+        'Expanded refine level to +18',
+        'Added SC offensive skills (Meteor Storm)',
+        "Added Super Novice offensive skills (Gravitational Field, Fire Bolt, Cold Bolt, Lightening Bolt, Heaven's Drive, Lord of Vermilion)",
+        'Added Warlock offensive skill (Gravitational Field)',
+        'Added Mechanic offensive skill (Arm Cannon lv4)',
+        'Added requested items & monsters',
+      ],
+    },
+    {
       v: 'V1.8.1',
       date: '11-01-2567',
       logs: [
