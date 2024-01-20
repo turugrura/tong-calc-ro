@@ -162,6 +162,34 @@
     ],
     "script": {}
   },
+  "1208": {
+    "id": 1208,
+    "aegisName": "Main_Gauche_",
+    "name": "Main Gauche [4]",
+    "unidName": "Dagger",
+    "resName": "망고슈",
+    "description": "มีดแบบฝรั่งเศส ใช้สำหรับมือซ้าย\nประเภท : ^777777Dagger^000000 พลังโจมตี : ^77777743^000000\nน้ำหนัก : ^77777760^000000\nLv ของอาวุธ : ^7777771^000000\nLv ที่ต้องการ : ^777777None^000000\nอาชีพ : ^777777Novice/Swordman Cls/Magician Cls/Archer Cls/Merchant Cls/Thief Cls/Ninja Cls^000000",
+    "slots": 4,
+    "itemTypeId": 1,
+    "itemSubTypeId": 256,
+    "itemLevel": 1,
+    "attack": 43,
+    "defense": null,
+    "weight": 60,
+    "requiredLevel": 0,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Novice",
+      "Swordman",
+      "Mage",
+      "Archer",
+      "Merchant",
+      "Thief",
+      "Ninja"
+    ],
+    "script": {}
+  },
   "1230": {
     "id": 1230,
     "aegisName": "House_Auger",
@@ -5726,6 +5754,42 @@
       ]
     }
   },
+  "4539": {
+    "id": 4539,
+    "aegisName": "Sealed_F_Bishop_Card",
+    "name": "Sealed Fallen Bishop Card",
+    "unidName": "Sealed Fallen Bishop Card",
+    "resName": "이름없는카드",
+    "description": "MATK +5%, MaxSP -50%\nเพิ่มความรุนแรงทางเวทมนตร์กับมอนสเตอร์ประเภท Demihuman และ Angel 25%\nหากไอเทม +15 ขึ้นไป เพิ่ม MATK อีก 3%\nเพิ่มความรุนแรงทางเวทมนตร์กับมอนสเตอร์ประเภท Demihuman และ Angel อีก 8%\n^ff0000ระวัง - ^000088Sillit Pong^ff0000ไม่สามารถใช้กับการ์ดนี้ได้!^000000\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Footwear^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 64,
+    "cardPrefix": "Half Arrogant",
+    "script": {
+      "matkPercent": [
+        "5",
+        "15===3"
+      ],
+      "spPercent": [
+        "-50"
+      ],
+      "m_race_demihuman": [
+        "25",
+        "15===8"
+      ],
+      "m_race_angel": [
+        "25",
+        "15===8"
+      ]
+    }
+  },
   "4550": {
     "id": 4550,
     "aegisName": "Upd_Bow_Guardian_Card",
@@ -6397,6 +6461,92 @@
       ]
     }
   },
+  "4626": {
+    "id": 4626,
+    "aegisName": "Big_Ben_Card",
+    "name": "Big Ben Card",
+    "unidName": "Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่มพลังโจมตีทางเวทย์ต่อมอนสเตอร์ประเภท Formless ขึ้น 5%\nเพิ่มพลังโจมตีทางเวทย์ต่อมอนสเตอร์ประเภท Demon ขึ้น 5%\nเมื่อใส่กับ Neo Punk Card จะเพิ่มคุณสมบัติไม่สน Mdef ของมอนสเตอร์ประเภท Formless และDemon อีก 50%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Vibration of",
+    "script": {
+      "m_race_formless": [
+        "5"
+      ],
+      "m_race_demon": [
+        "5"
+      ],
+      "m_pene_race_formless": [
+        "EQUIP[Neo Punk Card]===50"
+      ],
+      "m_pene_race_demon": [
+        "EQUIP[Neo Punk Card]===50"
+      ]
+    }
+  },
+  "4627": {
+    "id": 4627,
+    "aegisName": "Big_Bell_Card",
+    "name": "Big Bell Card",
+    "unidName": "Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่มพลังโจมตีทางกายภาพต่อมอนสเตอร์ Formless และ Demon 10%\nเมื่อใส่กับ Neo Punk Card จะเพิ่มคุณสมบัติ ไม่สน Def ของมอนสเตอร์ประเภท Formless และDemon อีก 50%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Shake of",
+    "script": {
+      "p_race_formless": [
+        "10"
+      ],
+      "p_race_demon": [
+        "10"
+      ],
+      "p_pene_race_formless": [
+        "EQUIP[Neo Punk Card]===50"
+      ],
+      "p_pene_race_demon": [
+        "EQUIP[Neo Punk Card]===50"
+      ]
+    }
+  },
+  "4628": {
+    "id": 4628,
+    "aegisName": "Neo_Punk_Card",
+    "name": "Neo Punk Card",
+    "unidName": "Card",
+    "resName": "이름없는카드",
+    "description": "ลดความเสียหายที่ได้รับจากมอนสเตอร์ประเภท Formless 20%\nลดความเสียหายที่ได้รับจากมอนสเตอร์ประเภท Demon 20%\n เมื่อใส่กับ Big Ben Card จะลดความเสียหายที่ได้รับจากมอนสเตอร์ Formless และ Demon เพิ่มขึ้นอีก 5%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Shield^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 32,
+    "cardPrefix": "Invisible Horror Orb",
+    "script": {}
+  },
   "4629": {
     "id": 4629,
     "aegisName": "Arc_Elder_Card",
@@ -6640,6 +6790,39 @@
       ],
       "p_pene_race_undead": [
         "EQUIP[Nightmare Minorous Card]50"
+      ]
+    }
+  },
+  "4654": {
+    "id": 4654,
+    "aegisName": "Grave_Mimic_Card",
+    "name": "Nightmare Mimic Card",
+    "unidName": "Nightmare Mimic Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่มพลังโจมตีทางเวทมนตร์ต่อมอนสเตอร์ประเภท Brute และ Undead +5%\n\nเมื่อสวมใส่กับ Nightmare Arclouse Card\nเพิ่มความทนทานต่อการโจมตีของมอนสเตอร์เผ่า Brute และเผ่า Undead +5%\nไม่สน MDEF 50% ของมอนสเตอร์เผ่า Brute และเผ่า Undead\n\nประเภท : ^777777Card^000000\nส่วนที่ใส่ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Tomb Raider",
+    "script": {
+      "m_race_brute": [
+        "5"
+      ],
+      "m_race_undead": [
+        "5"
+      ],
+      "m_pene_race_brute": [
+        "EQUIP[Nightmare Arclouse Card]===50"
+      ],
+      "m_pene_race_undead": [
+        "EQUIP[Nightmare Arclouse Card]===50"
       ]
     }
   },
@@ -16300,6 +16483,35 @@
       ]
     }
   },
+  "15950": {
+    "id": 15950,
+    "aegisName": null,
+    "name": "Eye Patch Of Power [1]",
+    "unidName": "Eye Patch Of Power",
+    "resName": "하트눈안대2",
+    "description": "ผ้าปิดตาที่บางคนนำมาใช้ปิดตาของเขาไว้\nเพราะเชื่อว่าในดวงตาของตนนั้นมีเปลวไฟแห่งพลังสถิตอยู่\nแม้ว่าจะกักขังพลังเหล่านั้นไว้แล้ว\nแต่พลังที่เอ่อล้นออกมาก็ยังทำให้แข็งแกร่งขึ้นได้อยู่ดี\n\nเพิ่มความต้านทานต่อสถานะ Bleeding 50%\nATK +40\nเมื่อเลเวลตัวละครตั้งแต่ Lv. 170 ขึ้นไป ATK +40 เพิ่มเติม\n\nเมื่อสวมใส่ร่วมกับ Orc Hero Card\nหรือ Sealed Orc Hero Card จะได้รับความสามารถเพิ่มเติมดังนี้\nATK +30\nเมื่อเลเวลตัวละครตั้งแต่ Lv. 170 ขึ้นไป ATK +30 เพิ่มเติม\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^7777770^000000\nตำแหน่ง : ^777777Middle^000000 น้ำหนัก : ^7777775^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 5,
+    "requiredLevel": 150,
+    "location": "Middle",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atk": [
+        "40",
+        "level:170===40",
+        "EQUIP[Orc Hero Card]30",
+        "EQUIP[Orc Hero Card]level:170===30"
+      ]
+    }
+  },
   "15956": {
     "id": 15956,
     "aegisName": null,
@@ -21071,6 +21283,28 @@
         "REFINE[11]ACTIVE_SKILL[Esma]30"
       ]
     }
+  },
+  "19404": {
+    "id": 19404,
+    "aegisName": "Biting_Off_Rideword",
+    "name": "Biting Rideword [1]",
+    "unidName": "Hat",
+    "resName": "라이드워드",
+    "description": "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้^000000\nไอเท็มที่ทำเลียนแบบ Rideword Hat สุดฮิต แต่เพราะความสามารถที่เหนือชั้นกว่า Rideword Hat กว่ามาก จึงทำให้เหล่านักผจญภัยทั้งหลายอยากได้มาครอบครอง!\n^ffffff_^000000\nเมื่อสวมใส่จะเสีย 10 HP ทุก 5 วินาที\nเมื่อโจมตีทางกายภาพ, จะมีโอกาส 4% ที่จะได้รับ 2% ของ Damage ในการโจมตีศัตรูมาฟื้นฟู HP  \nเมื่อโจมตีทางกายภาพ, จะมีโอกาส 4% ที่จะได้รับ 2% ของ Damage ในการโจมตีศัตรูมาฟื้นฟู SP  \nเมื่อโจมตีทางเวท, จะมีโอกาส 4% ที่จะฟื้นฟู 300 HP ทุกๆ 1วินาที 4 ครั้ง  \nเมื่อโจมตีทางเวท, จะมีโอกาส 4% ที่จะฟื้นฟู 70 SP ทุกๆ 1วินาที 4 ครั้ง  \nประเภท : ^777777Helm^000000 พลังป้องกัน : ^7777773^000000\nตำแหน่ง : ^777777Upper ^000000น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 3,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Upper",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {}
   },
   "19437": {
     "id": 19437,
@@ -26700,6 +26934,43 @@
       ]
     }
   },
+  "24224": {
+    "id": 24224,
+    "aegisName": "S_Force_Weapon",
+    "name": "Force Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "สวมใส่ที่มือข้างที่มีอาวุธ เป็นถุงมือที่จะกระตุ้นความสามารถของผู้สวมใส่\nพลังโจมตีทางกายภาพที่ทำต่อศัตรูทุกขนาด 1%\nเมื่ออัพเกรดขั้น 7 พลังโจมตีทางกายภาพที่ทำต่อศัตรูทุกขนาดเพิ่มอีก 1%\nเมื่ออัพเกรดขั้น 9 พลังโจมตีทางกายภาพที่ทำต่อศัตรูทุกขนาดเพิ่มอีก 1%\nเมื่อสวมใส่กับ ^32CD32 Force (Weapon, Earring, Pendant) Shadow^000000, ATK + 10.\nเมื่อขั้นอัพเกรดรวมกันได้มากกว่า 20 ขึ้นไป , พลังโจมตีทางกายภาพที่ทำต่อศัตรูทุกขนาดเพิ่มอีก 1%\nเมื่อขั้นอัพเกรดรวมกันได้มากกว่า 25 ขึ้นไป , พลังโจมตีทางกายภาพที่ทำต่อศัตรูทุกขนาดเพิ่มอีก 1%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777770^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 70,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atk": [
+        "1---1",
+        "EQUIP[Force Shadow Earring&&Force Shadow Pendant]===10"
+      ],
+      "matk": [
+        "1---1"
+      ],
+      "p_size_all": [
+        "1",
+        "7===1",
+        "9===1",
+        "EQUIP[Force Shadow Earring&&Force Shadow Pendant]REFINE[shadowWeapon,shadowEarring,shadowPendant==20]===1",
+        "EQUIP[Force Shadow Earring&&Force Shadow Pendant]REFINE[shadowWeapon,shadowEarring,shadowPendant==25]===1"
+      ]
+    }
+  },
   "24225": {
     "id": 24225,
     "aegisName": "S_Force_Earring",
@@ -27388,7 +27659,7 @@
         "20",
         "1---5"
       ],
-      "vct__Lightening Bolt": [
+      "vct__Lightning Bolt": [
         "20",
         "1---5"
       ],
@@ -27893,7 +28164,11 @@
     ],
     "script": {
       "atk": [
-        "LEARN_SKILL[Dancing Lesson==1]---2"
+        "LEARN_SKILL[Dancing Lesson==1]---1",
+        "REFINE[7]LEARN_SKILL[Dancing Lesson==1]---1",
+        "REFINE[8]LEARN_SKILL[Dancing Lesson==1]---1",
+        "REFINE[9]LEARN_SKILL[Dancing Lesson==1]---1",
+        "REFINE[10]LEARN_SKILL[Dancing Lesson==1]---1"
       ]
     }
   },
@@ -37101,7 +37376,7 @@
       "Cold Bolt": [
         "EQUIP[Super Magic Shadow Armor&&Super Magic Shadow Shoes]REFINE[shadowArmor,shadowShield,shadowBoot==1]---2"
       ],
-      "Lightening Bolt": [
+      "Lightning Bolt": [
         "EQUIP[Super Magic Shadow Armor&&Super Magic Shadow Shoes]REFINE[shadowArmor,shadowShield,shadowBoot==1]---2"
       ],
       "Storm Gust": [
@@ -37151,7 +37426,7 @@
         "10",
         "2---4"
       ],
-      "Lightening Bolt": [
+      "Lightning Bolt": [
         "10",
         "2---4"
       ]
@@ -38174,6 +38449,105 @@
       "New Moon Kick": [
         "5",
         "2---2"
+      ]
+    }
+  },
+  "24652": {
+    "id": 24652,
+    "aegisName": "S_Stardust_Weapon",
+    "name": "Stardust Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา\nเพิ่ม Damage สกิล Flash Kick 10%\nเมื่ออัพเกรดถึงขั้น 7, ASPD +5%\nเมื่ออัพเกรดถึงขั้น 9, ASPD +5% เพิ่มเติม\nเมื่อสวมใส่ Stardust Shadow Weapon/Shield/Armor ร่วมกัน,\nเพิ่ม Damage สกิล Falling Stars % เท่ากับค่าอัพเกรดรวมกัน\nเมื่อสวมใส่ร่วมกับ Star Emperor Shadow Shoes,\nเพิกเฉยต่อพลังป้องกันทางกายภาพของทุกเผ่ายกเว้น Player 40% และเพิกเฉยต่อพลังป้องกันทางกายภาพเพิ่มอีกตามค่าอัพเกรดรวมกันของ Stardust Shadow Weapon และ Star Emperor Shadow Shoes\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Star Gladiator^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "Star Gladiator"
+    ],
+    "script": {
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1"
+      ],
+      "Flash Kick": [
+        "10"
+      ],
+      "aspdPercent": [
+        "7===5",
+        "9===5"
+      ],
+      "Falling Stars": [
+        "EQUIP[Stardust Shadow Shield&&Stardust Shadow Armor]REFINE[shadowWeapon,shadowShield,shadowArmor==1]---1"
+      ],
+      "p_pene_race_all": [
+        "EQUIP[Star Emperor Shadow Shoes]40",
+        "EQUIP[Star Emperor Shadow Shoes]REFINE[shadowWeapon,shadowBoot==1]---1"
+      ]
+    }
+  },
+  "24653": {
+    "id": 24653,
+    "aegisName": "S_Stardust_Shield",
+    "name": "Stardust Shadow Shield",
+    "unidName": "Shadow Shield",
+    "resName": "쉴드쉐도우",
+    "description": "โล่เล็กที่สามารถสวมใส่ที่แขนได้ สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์การป้องกันของมันจะลดน้อยลง\nASPD +1\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage สกิล Falling Stars 3%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shield^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Star Gladiator^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 527,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Shield",
+    "compositionPos": null,
+    "usableClass": [
+      "Star Gladiator"
+    ],
+    "script": {
+      "aspd": [
+        "1"
+      ],
+      "Falling Stars": [
+        "2---3"
+      ]
+    }
+  },
+  "24654": {
+    "id": 24654,
+    "aegisName": "S_Stardust_Armor",
+    "name": "Stardust Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우",
+    "description": "ชุดเกราะที่เพิ่มพลังป้องกันเมื่อสวมใส่เพิ่มบนเกราะอีกที สามารถใส่แบบชิ้นเดียวได้ แต่ความสามารถในการป้องกันจะลดลงไปอีก\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกธาตุ 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage ทางกายภาพต่อศัตรูทุกธาตุขึ้นอีก 1%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Armor^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Star Gladiator^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Armor",
+    "compositionPos": null,
+    "usableClass": [
+      "Star Gladiator"
+    ],
+    "script": {
+      "p_element_all": [
+        "5",
+        "2---1"
       ]
     }
   },
@@ -40745,6 +41119,32 @@
       ]
     }
   },
+  "27028": {
+    "id": 27028,
+    "aegisName": "Fire_Frilldora_Card",
+    "name": "Fire Frilldora Card",
+    "unidName": "Fire Frilldora Card",
+    "resName": "이름없는카드",
+    "description": "พลังโจมตีทางเวทย์ที่ทำต่อมอนสเตอร์ธาตุ Earth +3%\nเมื่ออัพเกรดขั้น 7, พลังโจมตีทางเวทย์ที่ทำต่อมอนสเตอร์ธาตุ Earth +5%\nเมื่ออัพเกรดขั้น 9, พลังโจมตีทางเวทย์ที่ทำต่อมอนสเตอร์ธาตุ Earth +7%\nประเภท : ^777777Card^000000\nสวมใส่ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Blazing",
+    "script": {
+      "m_element_earth": [
+        "3",
+        "7===5",
+        "9===7"
+      ]
+    }
+  },
   "27082": {
     "id": 27082,
     "aegisName": "AngerNineTail_Card",
@@ -41944,6 +42344,36 @@
       ]
     }
   },
+  "27250": {
+    "id": 27250,
+    "aegisName": "Dio_Anemos_Card",
+    "name": "Dio Anemos Card",
+    "unidName": "Dio Anemos Card",
+    "resName": "이름없는카드",
+    "description": "MATK + 3%\nเพิ่มดาเมจทางเวทย์ธาตุ Earth, Neutral 5%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Shoes^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 64,
+    "cardPrefix": "Anemos",
+    "script": {
+      "matkPercent": [
+        "3"
+      ],
+      "m_my_element_earth": [
+        "5"
+      ],
+      "m_my_element_neutral": [
+        "5"
+      ]
+    }
+  },
   "27252": {
     "id": 27252,
     "aegisName": "Geffen_Thug_Card",
@@ -43126,6 +43556,57 @@
       ]
     }
   },
+  "27347": {
+    "id": 27347,
+    "aegisName": "Firm_Kaho_Card",
+    "name": "Rigid Kaho Card",
+    "unidName": "Rigid Kaho Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่ม Damage ทางเวทมนตร์แก่ศัตรูธาตุ Earth 10%\nเมื่อใช้ร่วมกับ Fire Frilldora Card,\nเพิ่ม Damage ทางเวทมนตร์แก่ศัตรูธาตุ Earth 8% เพิ่มเติม\n^ffffff_^000000\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Crack",
+    "script": {
+      "m_element_earth": [
+        "10",
+        "EQUIP[Fire Frilldora Card]===8"
+      ]
+    }
+  },
+  "27348": {
+    "id": 27348,
+    "aegisName": "Firm_Lava_G_Card",
+    "name": "Rigid Lava Golem Card",
+    "unidName": "Rigid Lava Golem Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่ม Damage ทางเวทมนตร์แก่ศัตรูธาตุ Neutral +3%\nเมื่อค่าอัพเกรดตั้งแต่ 7 ขึ้นไป เพิ่ม Damage ทางเวทมนตร์แก่ศัตรูธาตุ Neutral +5%\nเมื่อค่าอัพเกรดตั้งแต่ 9 ขึ้นไป เพิ่ม Damage ทางเวทมนตร์แก่ศัตรูธาตุ Neutral +7%\n^ffffff_^000000\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Nowhere",
+    "script": {
+      "m_element_neutral": [
+        "3",
+        "7===5",
+        "9===7"
+      ]
+    }
+  },
   "27351": {
     "id": 27351,
     "aegisName": "Firm_Deleter2_Card",
@@ -43198,6 +43679,31 @@
       "range": [
         "10",
         "EQUIP[Enchanted Archer Skeleton Card]5"
+      ]
+    }
+  },
+  "27360": {
+    "id": 27360,
+    "aegisName": "Flame_Ghost_Card",
+    "name": "Flame Ghost Card",
+    "unidName": "Flame Ghost Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่ม Damage ทางเวทมนตร์แก่ศัตรูธาตุ Fire 15%\nเมื่อใช้ร่วมกับ Fruit Pom Spider Card,\nเพิ่ม Damage ทางเวทมนตร์แก่ศัตรูธาตุ Fire 8% เพิ่มเติม\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Fire Magic",
+    "script": {
+      "m_element_fire": [
+        "15",
+        "EQUIP[Fruit Pom Spider Card]===8"
       ]
     }
   },
@@ -44117,6 +44623,54 @@
       ],
       "aspdPercent": [
         "1---1"
+      ]
+    }
+  },
+  "28022": {
+    "id": 28022,
+    "aegisName": "Infiltrator_IL",
+    "name": "Illusion Infiltrator [2]",
+    "unidName": "Katar",
+    "resName": "Infiltrator_IL",
+    "description": "มีดกาตาร์ที่ถูกทำขึ้นมาให้มีรูปร่างเหมือนคนเพื่อให้ง่ายต่อการโจมตีจุดตายของศัตรู มันเป็นอาวุธสำหรับนักฆ่าโดยเฉพาะ \nDEF +3, FLEE +5, Perfect Dodge +2 \nเพิ่มพลังโจมตีต่อศัตรูประเภท Demi-human 60% \nเมื่ออัพเกรดถึงขั้น 9, เพิ่ม FLEE + 5, Perfect Dodge + 2 \nเมื่ออัพเกรดถึงขั้น 10, เพิ่ม Damage ทางกายภาพต่อศัตรูทุกประเภท 5%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Illusion Ring\nเพิ่ม ASPD 10%, เมื่อ Illusion Infiltrator อัพเกรดถึงขั้น 9\nเพิ่มดาเมจคริติคอล 10% \nเมื่ออัพเกรดถึงขั้น 11 เพิ่มพลังโจมตีทางกายภาพต่อศัตรูประเภท Animal 25%\n^ffffff_^000000\nประเภท : ^777777Katar^000000 พลังโจมตี : ^777777200^000000\nน้ำหนัก : ^777777150^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Assassin Cross^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 272,
+    "itemLevel": 4,
+    "attack": 200,
+    "defense": null,
+    "weight": 150,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Assassin Cross"
+    ],
+    "script": {
+      "def": [
+        "3"
+      ],
+      "flee": [
+        "5",
+        "9===5"
+      ],
+      "perfectDodge": [
+        "9===2"
+      ],
+      "p_race_demihuman": [
+        "60"
+      ],
+      "p_class_all": [
+        "10===5"
+      ],
+      "aspdPercent": [
+        "EQUIP[Illusion Ring]10"
+      ],
+      "criDmg": [
+        "EQUIP[Illusion Ring]9===10"
+      ],
+      "p_race_brute": [
+        "EQUIP[Illusion Ring]11===25"
       ]
     }
   },
@@ -45126,6 +45680,53 @@
     "script": {
       "int": [
         "4"
+      ]
+    }
+  },
+  "28377": {
+    "id": 28377,
+    "aegisName": "Magical_Ring",
+    "name": "Magical Ring [1]",
+    "unidName": "Accessory",
+    "resName": "매지컬링",
+    "description": "แหวนที่สร้างขึ้นเพื่อเพิ่มพลังเวทย์โดย Rune Knight ที่เป็นที่เคารพนับถือในหมู่ Sorcerer\nถึงจะเพิ่มพลังเวทย์สำเร็จ แต่ดาบที่สำคัญกลับไม่ได้สวมใส่ไว้\nเพิ่ม Damage จากการโจมตีทางเวทย์ธาตุ Fire, ธาตุ Water, ธาตุ Earth, ธาตุ wind + 5%.\nทุกๆ 5 Base Level  เพิ่ม Damage สกิล Fire Bolt, Cold Bolt, Lighting Bolt, Eath Spike 1%\nประเภท : ^777777Accessory^000000 พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^77777720^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 517,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 20,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "m_my_element_fire": [
+        "5"
+      ],
+      "m_my_element_water": [
+        "5"
+      ],
+      "m_my_element_earth": [
+        "5"
+      ],
+      "m_my_element_wind": [
+        "5"
+      ],
+      "Fire Bolt": [
+        "SUM[level==5]---1"
+      ],
+      "Cold Bolt": [
+        "SUM[level==5]---1"
+      ],
+      "Lightning Bolt": [
+        "SUM[level==5]---1"
+      ],
+      "Earth Spike": [
+        "SUM[level==5]---1"
       ]
     }
   },
@@ -47516,6 +48117,9 @@
       ],
       "dex": [
         "9===10"
+      ],
+      "chance__int": [
+        "11===150"
       ]
     }
   },
@@ -55452,7 +56056,7 @@
       "atkPercent": [
         "10"
       ],
-      "Vanishing Point": [
+      "Banishing Point": [
         "10",
         "9===15"
       ],
@@ -57477,7 +58081,7 @@
       "hpPercent": [
         "10"
       ],
-      "Vanishing Point": [
+      "Banishing Point": [
         "10",
         "EQUIP[Verporta Card&&Senior Research Assistant Bot Card]===20",
         "EQUIP[Verporta Card&&Senior Research Assistant Bot Card]REFINE[boot==2]---5"
@@ -61122,7 +61726,7 @@
     "compositionPos": 65535,
     "cardPrefix": "<L-SnowFlip1>",
     "script": {
-      "Vanishing Point": [
+      "Banishing Point": [
         "15",
         "9===3",
         "11===7"
@@ -63357,7 +63961,7 @@
       "m_my_element_all": [
         "LEARN_SKILL[Piety==1]---2"
       ],
-      "Vanishing Point": [
+      "Banishing Point": [
         "EQUIP[Royal Guard Stone (Garment)]===15"
       ],
       "spPercent__Genesis Ray": [
@@ -64247,7 +64851,7 @@
     "location": null,
     "compositionPos": 65535,
     "script": {
-      "Falling Star": [
+      "Falling Stars": [
         "LEARN_SKILL[Blessing of Star==1]---4"
       ]
     }
