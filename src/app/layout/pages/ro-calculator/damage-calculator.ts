@@ -532,7 +532,7 @@ export class DamageCalculator {
 
   private getWeaponAtk(params: { isEDP: boolean; sizePenalty: number }) {
     const { isEDP, sizePenalty } = params;
-    const { baseWeaponAtk, baseWeaponLevel, refineBonus, overUpgradeBonus } = this.weaponData.data;
+    const { baseWeaponAtk, baseWeaponLevel, refineBonus, overUpgradeBonus, highUpgradeBonus } = this.weaponData.data;
     const variant = baseWeaponAtk * baseWeaponLevel * 0.05;
 
     let pseudoElementAtk = undefined;
@@ -556,7 +556,7 @@ export class DamageCalculator {
     const formula = (_variant: number, overUpg: number) => {
       const upgradeBonus = refineBonus + (this.isIncludingOverUpgrade() ? overUpg : 0);
 
-      let total = baseWeaponAtk + _variant + (this.totalBonus['weaponAtk'] || 0);
+      let total = baseWeaponAtk + highUpgradeBonus + _variant + (this.totalBonus['weaponAtk'] || 0);
       total += statBonus;
       total += upgradeBonus;
       if (pseudoElementAtk != null) {
@@ -759,8 +759,8 @@ export class DamageCalculator {
   }
 
   private getWeaponMatk() {
-    const { baseWeaponMatk, baseWeaponLevel, refineBonus, overUpgradeBonus } = this.weaponData.data;
-    const rawWeaponMATK = baseWeaponMatk + refineBonus;
+    const { baseWeaponMatk, baseWeaponLevel, refineBonus, overUpgradeBonus, highUpgradeBonus } = this.weaponData.data;
+    const rawWeaponMATK = baseWeaponMatk + refineBonus + highUpgradeBonus;
     const variance = round(0.1 * baseWeaponLevel * rawWeaponMATK, 2);
     const isMax = this.isMaximizeSpell;
 

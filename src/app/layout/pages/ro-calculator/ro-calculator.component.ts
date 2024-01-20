@@ -113,6 +113,7 @@ const waitRxjs = (second: number = 0.1) => {
 
 const positions: DropdownModel[] = [
   { value: 'weaponList', label: 'Weapon' },
+  { value: 'weaponCardList', label: 'Weapon Card' },
 
   { value: 'headUpperList', label: 'Head Upper' },
   { value: 'headMiddleList', label: 'Head Middle' },
@@ -225,7 +226,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   model2: ClassModel = { rawOptionTxts: [] };
 
   basicOptions = createMainStatOptionList();
-  refineList = createNumberDropdownList({ from: 0, to: 15 });
+  refineList = createNumberDropdownList({ from: 0, to: 18 });
   shadowRefineList = createNumberDropdownList({ from: 0, to: 10 });
   mainStatusList = createNumberDropdownList({ from: 1, to: 130 });
   levelList = createNumberDropdownList({ from: 99, to: 200 });
@@ -1743,7 +1744,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       if (this.selectedCharacter.className === ClassName.SuperNovice) {
         const { itemLevel, itemSubTypeId } = this.items[a.value as number] ?? {};
         const isLv4 = itemLevel === 4;
-        const wTypeNames = new Set(['dagger', 'sword', 'axe', 'mace', 'rod']);
+        const wTypeNames = new Set(['dagger', 'sword', 'axe', 'mace', 'rod', 'twohandRod']);
         const isSup = wTypeNames.has(WeaponTypeNameMapBySubTypeId[itemSubTypeId]);
 
         if (isLv4 && isSup) return true;
