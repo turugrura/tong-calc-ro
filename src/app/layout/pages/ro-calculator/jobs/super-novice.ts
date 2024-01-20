@@ -177,6 +177,24 @@ export class SuperNovice extends CharacterBase {
       },
     },
     {
+      label: 'Gravitational Field Lv5',
+      name: 'Gravitational Field',
+      value: 'Gravitational Field==5',
+      acd: 9,
+      fct: 5,
+      vct: 0,
+      cd: 0,
+      isMatk: true,
+      element: ElementType.Neutral,
+      totalHit: 18,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
+
+        return skillLevel * 50 * (baseLevel / 100);
+      },
+    },
+    {
       label: 'Fatal Manace Lv7',
       name: 'Fatal Manace',
       value: 'Fatal Manace==7',
