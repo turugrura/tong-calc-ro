@@ -26,6 +26,38 @@ export class Mage extends CharacterBase {
         return 100;
       },
     },
+    {
+      label: 'Fire Bolt Lv10',
+      name: 'Fire Bolt',
+      value: 'Fire Bolt==10',
+      acd: 2.8,
+      fct: 1.2,
+      vct: 3.2,
+      cd: 0,
+      totalHit: 10,
+      isMatk: true,
+      isDevMode: true,
+      element: ElementType.Fire,
+      formula: (): number => {
+        return 100;
+      },
+    },
+    {
+      label: 'Lightening Bolt Lv10',
+      name: 'Lightening Bolt',
+      value: 'Lightening Bolt==10',
+      acd: 2.8,
+      fct: 1.2,
+      vct: 3.2,
+      cd: 0,
+      totalHit: 10,
+      isMatk: true,
+      isDevMode: true,
+      element: ElementType.Wind,
+      formula: (): number => {
+        return 100;
+      },
+    },
   ];
   protected readonly _activeSkillList: ActiveSkillModel[] = [];
   protected readonly _passiveSkillList: PassiveSkillModel[] = [

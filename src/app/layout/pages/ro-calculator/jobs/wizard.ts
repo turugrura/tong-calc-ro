@@ -18,22 +18,22 @@ export class Wizard extends CharacterBase {
   protected initialStatusPoint = 100;
   protected classNames = ['Hi-Class', 'Wizard', 'Wizard Class', 'Wizard Cls'];
   protected _atkSkillList: AtkSkillModel[] = [
-    {
-      label: 'Soul Drain Lv10',
-      name: 'Soul Drain',
-      value: 'Soul Drain==10',
-      acd: 0,
-      fct: 0,
-      vct: 0,
-      cd: 0,
-      isMatk: true,
-      formula: (input: AtkSkillFormulaInput): number => {
-        const { model, skillLevel } = input;
-        const baseLevel = model.level;
+    // {
+    //   label: 'Soul Drain Lv10',
+    //   name: 'Soul Drain',
+    //   value: 'Soul Drain==10',
+    //   acd: 0,
+    //   fct: 0,
+    //   vct: 0,
+    //   cd: 0,
+    //   isMatk: true,
+    //   formula: (input: AtkSkillFormulaInput): number => {
+    //     const { model, skillLevel } = input;
+    //     const baseLevel = model.level;
 
-        return (95 + skillLevel * 15) * (baseLevel / 100);
-      },
-    },
+    //     return (95 + skillLevel * 15) * (baseLevel / 100);
+    //   },
+    // },
     {
       label: 'Napalm Vulcan Lv5',
       name: 'Napalm Vulcan',
@@ -44,11 +44,30 @@ export class Wizard extends CharacterBase {
       cd: 1,
       isMatk: true,
       element: ElementType.Ghost,
+      totalHit: 5,
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
 
         return skillLevel * 70 * (baseLevel / 100);
+      },
+    },
+    {
+      label: 'Lord of Vermilion Lv10',
+      name: 'Lord of Vermilion',
+      value: 'Lord of Vermilion==10',
+      acd: 5,
+      fct: 1.68,
+      vct: 6.72,
+      cd: 5,
+      isMatk: true,
+      isDevMode: true,
+      hit: 20,
+      element: ElementType.Wind,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { skillLevel } = input;
+
+        return 400 + skillLevel * 100;
       },
     },
     {
@@ -61,11 +80,44 @@ export class Wizard extends CharacterBase {
       cd: 0,
       isMatk: true,
       element: ElementType.Earth,
+      totalHit: 5,
+      formula: (): number => {
+        return 125;
+      },
+    },
+    {
+      label: 'Meteor Storm Lv10',
+      name: 'Meteor Storm',
+      value: 'Meteor Storm==10',
+      acd: 5,
+      fct: 1.5,
+      vct: 6.72,
+      cd: 7,
+      isMatk: true,
+      isDevMode: true,
+      element: ElementType.Fire,
+      totalHit: 2,
+      hit: 2,
+      formula: (): number => {
+        return 125;
+      },
+    },
+    {
+      label: 'Gravitational Field Lv5',
+      name: 'Gravitational Field',
+      value: 'Gravitational Field==5',
+      acd: 9,
+      fct: 5,
+      vct: 0,
+      cd: 0,
+      isMatk: true,
+      element: ElementType.Neutral,
+      totalHit: 18,
       formula: (input: AtkSkillFormulaInput): number => {
-        const { model } = input;
+        const { model, skillLevel } = input;
         const baseLevel = model.level;
 
-        return 125 * (baseLevel / 100);
+        return skillLevel * 50 * (baseLevel / 100);
       },
     },
   ];
