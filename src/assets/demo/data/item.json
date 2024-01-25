@@ -824,10 +824,31 @@
         "12===2",
         "13===2",
         "14===2",
-        "15===2"
+        "15===2",
+        "16===2",
+        "17===2",
+        "18===2",
+        "19===2",
+        "20===2"
       ],
       "matk": [
         "170"
+      ],
+      "hpPercent": [
+        "7===-2",
+        "8===-2",
+        "9===-2",
+        "10===-2",
+        "11===-2",
+        "12===-2",
+        "13===-2",
+        "14===-2",
+        "15===-2",
+        "16===-2",
+        "17===-2",
+        "18===-2",
+        "19===-2",
+        "20===-2"
       ]
     }
   },
@@ -2782,7 +2803,12 @@
         "12===2",
         "13===2",
         "14===2",
-        "15===2"
+        "15===2",
+        "16===2",
+        "17===2",
+        "18===2",
+        "19===2",
+        "20===2"
       ]
     }
   },
@@ -18573,47 +18599,47 @@
       ],
       "m_element_fire": [
         "5",
-        "1---2",
-        "11===-2",
-        "12===-2",
-        "13===-2",
-        "14===-2",
-        "15===-2"
+        "6===2",
+        "7===2",
+        "8===2",
+        "9===2",
+        "10===2"
       ],
       "m_element_water": [
         "5",
-        "1---2",
-        "11===-2",
-        "12===-2",
-        "13===-2",
-        "14===-2",
-        "15===-2"
+        "6===2",
+        "7===2",
+        "8===2",
+        "9===2",
+        "10===2"
       ],
       "m_element_wind": [
         "5",
-        "1---2",
-        "11===-2",
-        "12===-2",
-        "13===-2",
-        "14===-2",
-        "15===-2"
+        "6===2",
+        "7===2",
+        "8===2",
+        "9===2",
+        "10===2"
       ],
       "m_element_earth": [
         "5",
-        "1---2",
-        "11===-2",
-        "12===-2",
-        "13===-2",
-        "14===-2",
-        "15===-2"
+        "6===2",
+        "7===2",
+        "8===2",
+        "9===2",
+        "10===2"
       ],
       "matk": [
-        "EQUIP[Thorn Staff of Darkness]REFINE[weapon==1]---10",
-        "EQUIP[Thorn Staff of Darkness]REFINE[weapon==11]===-10",
-        "EQUIP[Thorn Staff of Darkness]REFINE[weapon==12]===-10",
-        "EQUIP[Thorn Staff of Darkness]REFINE[weapon==13]===-10",
-        "EQUIP[Thorn Staff of Darkness]REFINE[weapon==14]===-10",
-        "EQUIP[Thorn Staff of Darkness]REFINE[weapon==15]===-10"
+        "EQUIP[Thorn Staff of Darkness]REFINE[weapon==1]===10",
+        "EQUIP[Thorn Staff of Darkness]REFINE[weapon==2]===10",
+        "EQUIP[Thorn Staff of Darkness]REFINE[weapon==3]===10",
+        "EQUIP[Thorn Staff of Darkness]REFINE[weapon==4]===10",
+        "EQUIP[Thorn Staff of Darkness]REFINE[weapon==5]===10",
+        "EQUIP[Thorn Staff of Darkness]REFINE[weapon==6]===10",
+        "EQUIP[Thorn Staff of Darkness]REFINE[weapon==7]===10",
+        "EQUIP[Thorn Staff of Darkness]REFINE[weapon==8]===10",
+        "EQUIP[Thorn Staff of Darkness]REFINE[weapon==9]===10",
+        "EQUIP[Thorn Staff of Darkness]REFINE[weapon==10]===10"
       ]
     }
   },
@@ -22864,12 +22890,16 @@
       ],
       "matk": [
         "EQUIP[Survivor's Rod]===-50",
-        "EQUIP[Survivor's Rod]1---20",
-        "EQUIP[Survivor's Rod]11===-20",
-        "EQUIP[Survivor's Rod]12===-20",
-        "EQUIP[Survivor's Rod]13===-20",
-        "EQUIP[Survivor's Rod]14===-20",
-        "EQUIP[Survivor's Rod]15===-20"
+        "EQUIP[Survivor's Rod]REFINE[weapon==1]===20",
+        "EQUIP[Survivor's Rod]REFINE[weapon==2]===20",
+        "EQUIP[Survivor's Rod]REFINE[weapon==3]===20",
+        "EQUIP[Survivor's Rod]REFINE[weapon==4]===20",
+        "EQUIP[Survivor's Rod]REFINE[weapon==5]===20",
+        "EQUIP[Survivor's Rod]REFINE[weapon==6]===20",
+        "EQUIP[Survivor's Rod]REFINE[weapon==7]===20",
+        "EQUIP[Survivor's Rod]REFINE[weapon==8]===20",
+        "EQUIP[Survivor's Rod]REFINE[weapon==9]===20",
+        "EQUIP[Survivor's Rod]REFINE[weapon==10]===20"
       ],
       "acd": [
         "EQUIP[Survivor's Rod]3---3"
@@ -47830,7 +47860,11 @@
         "POS[leftWeapon]13===2",
         "POS[leftWeapon]14===2",
         "POS[leftWeapon]15===2",
-        "POS[leftWeapon]16===2"
+        "POS[leftWeapon]16===2",
+        "POS[leftWeapon]17===2",
+        "POS[leftWeapon]18===2",
+        "POS[leftWeapon]19===2",
+        "POS[leftWeapon]20===2"
       ]
     }
   },
