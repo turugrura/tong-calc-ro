@@ -5126,7 +5126,7 @@
     "compositionPos": 0,
     "cardPrefix": "of Elimination",
     "script": {
-      "atkPercent": [
+      "p_class_all": [
         "10"
       ]
     }
@@ -6571,6 +6571,30 @@
       ]
     }
   },
+  "4631": {
+    "id": 4631,
+    "aegisName": "Owl_Viscount_Card",
+    "name": "Owl Viscount Card",
+    "unidName": "Owl Viscount Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่มความเร็วในการโจมตี (ลดดีเลย์หลังโจมตีลง 3%)\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Accessory^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 136,
+    "cardPrefix": "Expeditious",
+    "script": {
+      "aspdPercent": [
+        "3"
+      ]
+    }
+  },
   "4633": {
     "id": 4633,
     "aegisName": "P_Archer_Skeleton_Card",
@@ -7130,6 +7154,40 @@
       ],
       "chance__atk": [
         "EQUIP[True Gertie Wie Card]100"
+      ]
+    }
+  },
+  "4683": {
+    "id": 4683,
+    "aegisName": "Wanderer_Card",
+    "name": "Wanderer Trentini Card",
+    "unidName": "Wanderer Trentini Card",
+    "resName": "이름없는카드",
+    "description": "ถ้าเป็น Wanderer จะได้รับ MaxHP +10% และ MaxSP +15%\nเมื่อ BaseLv 175 ขึ้นไป All State +10\nเมื่ออัพเกรดถึงขั้น 10 ขึ้นไป All State +10\nเมื่อใช้คู่กับ True Trentini Card\nเมื่อโจมตีทางกายภาพ เพิ่มโอกาส 3% ที่จะเปลี่ยนร่างเป็น Trentini เป็นเวลา 6 วินาที\nATK + 100 ตลอดระยะเวลาที่เปลี่ยนร่าง\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Garment^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 4,
+    "cardPrefix": "of Wanderer",
+    "script": {
+      "hpPercent": [
+        "USED[Wanderer]===10"
+      ],
+      "spPercent": [
+        "USED[Wanderer]===15"
+      ],
+      "allStatus": [
+        "SUM[level==175]===10",
+        "10===10"
+      ],
+      "chance__atk": [
+        "EQUIP[True Trentini Card]===100"
       ]
     }
   },
@@ -33327,6 +33385,95 @@
       ]
     }
   },
+  "24470": {
+    "id": 24470,
+    "aegisName": "S_Vulcan_Armor",
+    "name": "Vulcan Shadow Armor",
+    "unidName": "Shadow Armor",
+    "resName": "아머쉐도우",
+    "description": "ชุดเกราะที่เพิ่มพลังป้องกันเมื่อสวมใส่เพิ่มบนเกราะอีกที สามารถใส่แบบชิ้นเดียวได้ แต่ความสามารถในการป้องกันจะลดลงไปอีก\nเพิ่ม Damage สกิล Vulcan Arm 5%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage สกิล Vulcan Arm ขึ้นอีก 2%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Armor^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Mechanic^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Armor",
+    "compositionPos": null,
+    "usableClass": [
+      "Mechanic"
+    ],
+    "script": {
+      "Vulcan Arm": [
+        "5",
+        "2---2"
+      ]
+    }
+  },
+  "24471": {
+    "id": 24471,
+    "aegisName": "S_Vulcan_Shield",
+    "name": "Vulcan Shadow Shield",
+    "unidName": "Shadow Shield",
+    "resName": "쉴드쉐도우",
+    "description": "โล่เล็กที่สามารถสวมใส่ที่แขนได้ สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์การป้องกันของมันจะลดน้อยลง\nเพิ่ม Damage ทางกายภาพระยะไกล 3%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางกายภาพระยะไกลขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพระยะไกลขึ้นอีก 4%\nเมื่อสวมใส่ Vulcan Shadow Armor/Shield/Shoes ร่วมกัน,\nเพิ่ม Damage สกิล Vulcan Arm % เท่ากับค่าอัพเกรดรวมกัน\nเมื่อสวมใส่ร่วมกับ Mechanic Weapon Shadow,\nเพิกเฉยต่อพลังป้องกันทางกายภาพของทุกเผ่ายกเว้น Player 40% และเพิกเฉยต่อพลังป้องกันทางกายภาพเพิ่มอีกตามค่าอัพเกรดรวมกันของ Vulcan Shadow Shield และ Mechanic Weapon Shadow\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shield^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Mechanic^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 527,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Shield",
+    "compositionPos": null,
+    "usableClass": [
+      "Mechanic"
+    ],
+    "script": {
+      "range": [
+        "3",
+        "7===3",
+        "9===4"
+      ],
+      "Vulcan Arm": [
+        "EQUIP[Vulcan Shadow Armor&&Vulcan Shadow Shoes]REFINE[shadowArmor,shadowBoot,shadowShield==1]---1"
+      ],
+      "p_pene_race_all": [
+        "EQUIP[Mechanic Weapon Shadow]40",
+        "EQUIP[Mechanic Weapon Shadow]REFINE[shadowWeapon,shadowShield==1]---1"
+      ]
+    }
+  },
+  "24472": {
+    "id": 24472,
+    "aegisName": "S_Vulcan_Shoes",
+    "name": "Vulcan Shadow Shoes",
+    "unidName": "Shadow Shoes",
+    "resName": "슈즈쉐도우",
+    "description": "รองเท้าที่สวมใส่เพิ่มเติม สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์ของมันจะลดน้อยลง\nลดปริมาณการใช้ SP สกิล Vulcan Arm 2%\nทุก ๆ การอัพเกรด 2 ขั้น ลดปริมาณการใช้ SP สกิล Vulcan Arm ลงอีก 1%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Shoes^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Mechanic^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 528,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Shoes",
+    "compositionPos": null,
+    "usableClass": [
+      "Mechanic"
+    ],
+    "script": {
+      "spPercent__Vulcan Arm": [
+        "2",
+        "2---1"
+      ]
+    }
+  },
   "24473": {
     "id": 24473,
     "aegisName": "S_Arms_Weapon",
@@ -41295,7 +41442,60 @@
         "20"
       ],
       "atkPercent": [
-        "EQUIP[A Vampire's Servant]===1"
+        "EQUIP[A Vampire's Servant]REFINE[armor==3]---1"
+      ]
+    }
+  },
+  "27104": {
+    "id": 27104,
+    "aegisName": "Ill_Dracula_Card",
+    "name": "Furious Dracula Card",
+    "unidName": "Furious Dracula Card",
+    "resName": "이름없는카드",
+    "description": "สามารถใช้สกิล Indulge Level 1 ได้\nเมื่อสวมใส่ร่วมกับ A Vampire's Servant, ฟื้นฟู HP + 30 และ SP + 1 ทุก ๆ 3 วินาที\nเมื่อสวมใส่ร่วมกับ Bomi Card MHP + 1000, MSP + 50, เมื่อ Garment อัพเกรดถึงขั้น 9 ขึ้นไป MHP + 1000, MSP + 50\n\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Garment^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 4,
+    "cardPrefix": "Compassion",
+    "script": {
+      "hp": [
+        "EQUIP[Bomi Card]===1000",
+        "EQUIP[Bomi Card]9===1000"
+      ],
+      "sp": [
+        "EQUIP[Bomi Card]===50",
+        "EQUIP[Bomi Card]9===50"
+      ]
+    }
+  },
+  "27105": {
+    "id": 27105,
+    "aegisName": "Bomi_Card",
+    "name": "Bomi Card",
+    "unidName": "Bomi Card",
+    "resName": "이름없는카드",
+    "description": "สามารถใช้สกิล Napalm Vulcan Level 4 ได้\nเมื่อสวมใส่ร่วมกับ A Vampire's Servant, MATK + 30\nประเภท : ^777777Card^000000\nอาชีพที่ใส่ได้ : ^777777Accessory (Right)^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 8,
+    "cardPrefix": "Sorrow",
+    "script": {
+      "matk": [
+        "EQUIP[A Vampire's Servant]===30"
       ]
     }
   },
@@ -42449,6 +42649,36 @@
       ]
     }
   },
+  "27253": {
+    "id": 27253,
+    "aegisName": "Geffen_Thief_Card",
+    "name": "Geffen Shoplifter Card",
+    "unidName": "Geffen Shoplifter Card",
+    "resName": "이름없는카드",
+    "description": "MATK + 3%\nเพิ่มดาเมจทางเวทย์ธาตุ Fire, Holy 5%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Shoes^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 64,
+    "cardPrefix": "Shoplifter",
+    "script": {
+      "matkPercent": [
+        "3"
+      ],
+      "m_my_element_fire": [
+        "5"
+      ],
+      "m_my_element_holy": [
+        "5"
+      ]
+    }
+  },
   "27256": {
     "id": 27256,
     "aegisName": "Blut_Hase_Card",
@@ -43075,6 +43305,30 @@
     "cardPrefix": "Animal Hunter",
     "script": {
       "p_race_brute": [
+        "15"
+      ]
+    }
+  },
+  "27315": {
+    "id": 27315,
+    "aegisName": "Mt_Venenum_Card",
+    "name": "Mutant Venenum Card",
+    "unidName": "Mutant Venenum Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่ม Damage ทางเวทต่อศัตรูประเภท Brute 15%\n^ffffff_^000000\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Garment^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 4,
+    "cardPrefix": "Animal Magic Hunter",
+    "script": {
+      "m_race_brute": [
         "15"
       ]
     }
@@ -46246,6 +46500,28 @@
         "SUM[str==100]===30"
       ]
     }
+  },
+  "28510": {
+    "id": 28510,
+    "aegisName": "Vampire's_Servant",
+    "name": "A Vampire's Servant [1]",
+    "unidName": "Ring",
+    "resName": "Vampire's_Servant",
+    "description": "หนึ่งในทาสรับใช้ของแวมไพร์\nเมื่อทำการโจมตีทางกายภาพ มีโอกาสได้รับ SP 1% ของพลังโจมตีที่ทำกับศัตรู\nประเภท : ^777777Accessory (Right)^000000พลังป้องกัน : ^7777771^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 510,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 1,
+    "weight": 10,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {}
   },
   "28513": {
     "id": 28513,
@@ -63773,6 +64049,146 @@
       ]
     }
   },
+  "310325": {
+    "id": 310325,
+    "aegisName": "Range_Top",
+    "name": "Range Stone (Upper)",
+    "unidName": "Range Stone (Upper)",
+    "resName": "용의보주_황",
+    "description": "เพิ่ม Damage ทางกายภาพระยะไกล 3%\nเมื่อใช้กับ Range Stone (Middle) และ Range Stone (Lower) เพิ่ม Damage ทางกายภาพระยะไกลขึ้นอีก 6%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 71,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "range": [
+        "3",
+        "EQUIP[Range Stone (Middle)&&Range Stone (Lower)]===6"
+      ]
+    }
+  },
+  "310326": {
+    "id": 310326,
+    "aegisName": "Range_Bottom",
+    "name": "Range Stone (Lower)",
+    "unidName": "Range Stone (Lower)",
+    "resName": "용의보주_황",
+    "description": "เพิ่ม Damage ทางกายภาพระยะไกล 3%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 73,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "range": [
+        "3"
+      ]
+    }
+  },
+  "310327": {
+    "id": 310327,
+    "aegisName": "Melee_Top",
+    "name": "Melee Stone (Upper)",
+    "unidName": "Melee Stone (Upper)",
+    "resName": "용의보주_녹",
+    "description": "เพิ่ม Damage ทางกายภาพระยะใกล้ 3%\nเมื่อใช้กับ Melee Stone (Middle) และ Melee Stone (Lower) เพิ่ม Damage ทางกายภาพระยะใกล้ขึ้นอีก 6%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 71,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "melee": [
+        "3",
+        "EQUIP[Melee Stone (Middle)&&Melee Stone (Lower)]===6"
+      ]
+    }
+  },
+  "310328": {
+    "id": 310328,
+    "aegisName": "Melee_Middle",
+    "name": "Melee Stone (Middle)",
+    "unidName": "Melee Stone (Middle)",
+    "resName": "용의보주_녹",
+    "description": "เพิ่ม Damage ทางกายภาพระยะใกล้ 3%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 72,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "melee": [
+        "3"
+      ]
+    }
+  },
+  "310329": {
+    "id": 310329,
+    "aegisName": "Melee_Bottom",
+    "name": "Melee Stone (Lower)",
+    "unidName": "Melee Stone (Lower)",
+    "resName": "용의보주_녹",
+    "description": "เพิ่ม Damage ทางกายภาพระยะใกล้ 3%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 73,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "melee": [
+        "3"
+      ]
+    }
+  },
+  "310330": {
+    "id": 310330,
+    "aegisName": "Range_Middle",
+    "name": "Range Stone (Middle)",
+    "unidName": "Range Stone (Middle)",
+    "resName": "용의보주_황",
+    "description": "เพิ่ม Damage ทางกายภาพระยะไกล 3%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 72,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "range": [
+        "3"
+      ]
+    }
+  },
   "310881": {
     "id": 310881,
     "aegisName": "Runeknight_Top3",
@@ -67880,16 +68296,16 @@
         "11===10"
       ],
       "acd": [
-        "20"
+        "LEARN_SKILL[Arm Cannon==5]===20"
       ],
       "Arm Cannon": [
-        "75"
+        "LEARN_SKILL[Pile Bunker==1]---25"
       ],
       "Cold Slower": [
-        "75"
+        "LEARN_SKILL[Pile Bunker==1]---25"
       ],
       "Flame Launcher": [
-        "75"
+        "LEARN_SKILL[Pile Bunker==1]---25"
       ]
     }
   },
@@ -67968,6 +68384,56 @@
       ],
       "m_my_element_neutral": [
         "EQUIP[Celine's Brooch K]11===10"
+      ]
+    }
+  },
+  "450209": {
+    "id": 450209,
+    "aegisName": "Imp_Powered_Suit",
+    "name": "Improved Powered Suit [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Imp_Powered_Suit",
+    "description": "ชุดเกราะเสริมแกร่งที่ทำขึ้นจากเทคโนโลยีเกราะล่าสุด ถึงจะดูหนักและเทอะทะ แต่สบายกว่ารุ่นเก่าอย่างมาก\n\nMaxHP +10%, MaxSP +10%\nเมื่อเรียนรู้สกิล Arm Cannon เลเวล 3, ATK +100\nเมื่อเรียนรู้สกิล Neutral Barrier เลเวล 3 เพิ่ม Damage ทางกายภาพระยะไกล 20%\nทุก ๆ การเรียนรู้สกิล Pile Bunker 1 เลเวล ลด Delay หลังใช้สกิล 5%\n\nเมื่ออัพเกรดถึงขั้น 11, \nเพิ่ม Damage สกิล Arm Cannon, Cold Slower, Flame Launcher 50%\n\nเมื่ออัพเกรดถึงขั้น 13, \nเพิ่ม Damage สกิล Arm Cannon, Cold Slower, Flame Launcher 50%\n\nเมื่อสวมใส่ร่วมกับ Improved Powered Wing หรือ [Not For Sale] Improved Powered Wing,\nเพิ่มความต้านทานต่อการโจมตีธาตุ Neutral 15%\nเมื่อค่าอัพเกรดรวมกันตั้งแต่ 22 ขึ้นไป จะไม่สูญเสีย Magic Gear Fuel เมื่อใช้สกิล\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^777777120^000000\nน้ำหนัก : ^777777100^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 120,
+    "weight": 100,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "hpPercent": [
+        "10"
+      ],
+      "spPercent": [
+        "10"
+      ],
+      "atk": [
+        "LEARN_SKILL[Arm Cannon==3]===100"
+      ],
+      "range": [
+        "LEARN_SKILL[Neutral Barrier==3]===20"
+      ],
+      "acd": [
+        "LEARN_SKILL[Pile Bunker==1]---5"
+      ],
+      "Arm Cannon": [
+        "11===50",
+        "13===50"
+      ],
+      "Cold Slower": [
+        "11===50",
+        "13===50"
+      ],
+      "Flame Launcher": [
+        "11===50",
+        "13===50"
       ]
     }
   },
@@ -70105,6 +70571,53 @@
       ],
       "p_pene_race_all": [
         "11===20"
+      ]
+    }
+  },
+  "480417": {
+    "id": 480417,
+    "aegisName": null,
+    "name": "Bear Aimed Bag [1]",
+    "unidName": "Bear Aimed Bag",
+    "resName": "Ru_Bear_Bag",
+    "description": "กระเป๋าตุ๊กตาหมีสีน้ำตาลที่ให้ความรู้สึกถึงจิตใจเด็ดเดี่ยว\nสงสัยจังว่ามันมีชีวิตจริง ๆ หรือเปล่า..?\n\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 10%\nทุก ๆ การเรียนรู้สกิล Main Ranger 1 เลเวล Perfect Hit +10%\nทุก ๆ Base Lv. 10 เพิ่ม Damage สกิล Arrow Storm, Aimed Bolt 1%\n\nเมื่ออัพเกรดตั้งแต่ 7 ขึ้นไป,\nลดปริมาณการใช้ SP สกิล Aimed Bolt 20 หน่วย\n\nเมื่ออัพเกรดตั้งแต่ 9 ขึ้นไป,\nลด Delay หลังใช้สกิล 12%\n\nเมื่ออัพเกรดตั้งแต่ 11 ขึ้นไป,\nเพิ่ม Damage ทางกายกาพต่อมอนสเตอร์ประเภท Boss 15%\n\nเมื่ออัพเกรดตั้งแต่ 13 ขึ้นไป,\nยกเลิกการลงโทษขนาดของอาวุธ\nประเภท : ^777777Garment^000000  พลังป้องกัน : ^77777750^000000\nน้ำหนัก : ^777777150^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 515,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 50,
+    "weight": 150,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "p_size_all": [
+        "10"
+      ],
+      "perfectHit": [
+        "LEARN_SKILL[Main Ranger==1]---10"
+      ],
+      "Arrow Storm": [
+        "SUM[level==10]---1"
+      ],
+      "Aimed Bolt": [
+        "SUM[level==10]---1"
+      ],
+      "sp__Aimed Bolt": [
+        "7===20"
+      ],
+      "acd": [
+        "9===12"
+      ],
+      "p_class_boss": [
+        "11===15"
+      ],
+      "ignore_size_penalty": [
+        "13===1"
       ]
     }
   },
@@ -73070,6 +73583,50 @@
       ],
       "Soul Expansion": [
         "EQUIP[Patent Master Soul Rifle]REFINE[weapon==11]SUM[int,agi==12]---1"
+      ]
+    }
+  },
+  "490511": {
+    "id": 490511,
+    "aegisName": null,
+    "name": "Ring of Unknown Hero(Novice) [1]",
+    "unidName": "Ring of Unknown Hero(Novice)",
+    "resName": "Ullr_Bracelet",
+    "description": "แหวนของฮีโร่นิรนาม\n\nลด Delay หลังใช้สกิล 3%\nเพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูทุกประเภท 6%\n\nเมื่อสวมใส่ร่วมกับ Patent Blessed Knife,\nเพิ่ม Damage ทางกายภาพต่อมอนสเตอร์ทุกเผ่า 8%\nเมื่อ Patent Blessed Knife อัพเกรดตั้งแต่ 11 ขึ้นไป,\nเมื่อ Base STR และ AGI รวมกันได้ทุก ๆ 12 หน่วย เพิ่ม Damage สกิล Fatal Menace 1%\n\nเมื่อสวมใส่ร่วมกับ Patent Freedom Stick,\nเพิ่ม Damage ทางเวทมนตร์ต่อมอนสเตอร์ทุกเผ่า 8%\nเมื่อ Patent Freedom Stick อัพเกรดตั้งแต่ 11 ขึ้นไป,\nเมื่อ Base INT และ DEX รวมกันได้ทุก ๆ 12 หน่วย เพิ่ม Damage สกิล Psychic Wave 1%\nประเภท : ^777777Accessory (Right)^000000 พลังป้องกัน : ^7777777^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Novice^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 510,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 7,
+    "weight": 10,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Novice"
+    ],
+    "script": {
+      "acd": [
+        "3"
+      ],
+      "p_class_all": [
+        "6"
+      ],
+      "m_class_all": [
+        "6"
+      ],
+      "p_race_all": [
+        "EQUIP[Patent Blessed Knife]===8"
+      ],
+      "Fatal Manace": [
+        "EQUIP[Patent Blessed Knife]REFINE[weapon==11]SUM[str,agi==12]---1"
+      ],
+      "m_race_all": [
+        "EQUIP[Patent Freedom Stick]===8"
+      ],
+      "Psychic Wave": [
+        "EQUIP[Patent Freedom Stick]REFINE[weapon==11]SUM[int,dex==12]---1"
       ]
     }
   },

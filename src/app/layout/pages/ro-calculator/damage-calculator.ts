@@ -295,7 +295,7 @@ export class DamageCalculator {
     const { hitRequireFor100 } = this.monsterData;
 
     let accuracy = Math.max(5, floor(100 + totalHit - hitRequireFor100));
-    accuracy = Math.min(100, accuracy);
+    accuracy = Math.min(100, Math.max(accuracy, totalPerfectHit));
 
     const totalFlee = 100 + 0 + floor(baseLvl + totalAgi + totalLuk / 5 + flee) * 1;
     const totalPerfectDodge = floor(1 + totalLuk * 0.1 + perfectDodge);

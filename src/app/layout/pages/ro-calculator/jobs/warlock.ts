@@ -242,7 +242,6 @@ export class Warlock extends CharacterBase {
       isMatk: true,
       element: ElementType.Fire,
       value: 'Hell Inferno==5',
-      levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
