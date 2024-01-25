@@ -115,6 +115,17 @@ export class AppTopBarComponent {
 
   updates: { v: string; date: string; logs: string[] }[] = [
     {
+      v: 'V1.8.3',
+      date: '25-01-2567',
+      logs: [
+        'Fixed Skill half cri rate formula from [(Cri rate/2) - Cri shield] to [(Cri rate - Cri shield)/2]',
+        'Fixed reported bugs',
+        'Added Official last updated items',
+        'Added Warlock, Sorcerer offensive skills (Fire Bolt, Cold Bolt, Lightening Bolt)',
+        'Added requested items & monsters',
+      ],
+    },
+    {
       v: 'V1.8.2',
       date: '20-01-2567',
       logs: [
@@ -123,7 +134,7 @@ export class AppTopBarComponent {
         'Added SC offensive skills (Meteor Storm)',
         "Added Super Novice offensive skills (Gravitational Field, Fire Bolt, Cold Bolt, Lightening Bolt, Heaven's Drive, Lord of Vermilion)",
         'Added Warlock offensive skill (Gravitational Field)',
-        'Added Mechanic offensive skill (Arm Cannon lv4)',
+        'Added Mechanic offensive skill (Arm Cannon lv3)',
         'Added requested items & monsters',
       ],
     },
