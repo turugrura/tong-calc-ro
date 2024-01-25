@@ -1088,11 +1088,12 @@ export class DamageCalculator {
     const skillHitsPerSec = Math.min(basicAspd.hitsPerSec, skillAspd.totalHitPerSec);
 
     let actualCri = calculated.canCri
-      ? Math.max(0, (basicDmg.basicCriRate + baseSkillCri) * baseCriPercentage - criShield)
+      ? Math.max(0, (basicDmg.basicCriRate + baseSkillCri - criShield) * baseCriPercentage)
       : 0;
     if (this.isForceSkillCri) {
       actualCri = 100;
     }
+    actualCri = floor(actualCri);
 
     const skillAccRate = isHit100 || isMatk ? 100 : basicDmg.accuracy;
     const { avgCriDamage, avgNoCriDamage } = calculated;
