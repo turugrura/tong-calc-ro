@@ -12,21 +12,6 @@ export class Mage extends CharacterBase {
   protected readonly classNames = ['Mage', 'Mage Class', 'Mage Cls'];
   protected readonly _atkSkillList: AtkSkillModel[] = [
     {
-      label: 'Cold Bolt Lv1',
-      name: 'Cold Bolt',
-      acd: 0,
-      cd: 0,
-      fct: 0,
-      vct: 0,
-      isMatk: true,
-      isDevMode: true,
-      element: ElementType.Water,
-      value: 'Cold Bolt==1',
-      formula: (): number => {
-        return 100;
-      },
-    },
-    {
       label: 'Fire Bolt Lv10',
       name: 'Fire Bolt',
       value: 'Fire Bolt==10',
@@ -36,8 +21,22 @@ export class Mage extends CharacterBase {
       cd: 0,
       totalHit: 10,
       isMatk: true,
-      isDevMode: true,
       element: ElementType.Fire,
+      formula: (): number => {
+        return 100;
+      },
+    },
+    {
+      label: 'Cold Bolt Lv10',
+      name: 'Cold Bolt',
+      value: 'Cold Bolt==10',
+      acd: 2.8,
+      fct: 1.2,
+      vct: 3.2,
+      cd: 0,
+      totalHit: 10,
+      isMatk: true,
+      element: ElementType.Water,
       formula: (): number => {
         return 100;
       },
@@ -52,7 +51,6 @@ export class Mage extends CharacterBase {
       cd: 0,
       totalHit: 10,
       isMatk: true,
-      isDevMode: true,
       element: ElementType.Wind,
       formula: (): number => {
         return 100;
