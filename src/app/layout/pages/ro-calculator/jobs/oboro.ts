@@ -208,9 +208,40 @@ export class Oboro extends CharacterBase {
         return 100 + skillLevel * 100;
       },
     },
+    {
+      label: 'Cross Slash Lv10',
+      name: 'Cross Slash',
+      value: 'Cross Slash==10',
+      acd: 0,
+      fct: 0,
+      vct: 0,
+      cd: 3.1,
+      levelList: [],
+      hit: 2,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
+        const bonus = this.isSkillActive('Cross Wound') ? baseLevel * skillLevel : 0;
+
+        return skillLevel * 200 * (baseLevel / 100) + bonus;
+      },
+    },
   ];
 
-  protected readonly _activeSkillList: ActiveSkillModel[] = [ShadowWarrior, S16thNight, DistortedCrescent];
+  protected readonly _activeSkillList: ActiveSkillModel[] = [
+    ShadowWarrior,
+    S16thNight,
+    DistortedCrescent,
+    {
+      label: '[Debuf] Cross Wound',
+      name: 'Cross Wound',
+      inputType: 'selectButton',
+      dropdown: [
+        { label: 'Yes', value: 1, isUse: true },
+        { label: 'No', value: 0, isUse: false },
+      ],
+    },
+  ];
 
   protected readonly _passiveSkillList: PassiveSkillModel[] = [
     {
