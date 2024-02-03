@@ -67,6 +67,11 @@ export interface AtkSkillModel {
   isHDefToSDef?: boolean;
   isHit100?: boolean;
   isSudoElement?: boolean;
+  /**
+   * For DPS calucation
+   * undefined = 1, 0.2 = 20 %
+   */
+  autoSpellChance?: number;
   element?: ElementType;
   getElement?: () => ElementType;
 }

@@ -24,6 +24,7 @@ export enum SkillType {
 export interface SkillDamageSummaryModel {
   baseSkillDamage: number;
   dmgType: SkillType;
+  isAutoSpell: boolean;
   skillSizePenalty: number;
   skillCanCri: boolean;
   skillPropertyAtk: ElementType;

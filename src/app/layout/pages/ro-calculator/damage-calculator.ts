@@ -995,6 +995,7 @@ export class DamageCalculator {
       baseCri: baseSkillCri = 0,
       isMatk,
       isMelee: _isMelee,
+      autoSpellChance = 1,
       isHit100,
       isIgnoreDef = false,
       totalHit: _totalHit = 1,
@@ -1085,7 +1086,6 @@ export class DamageCalculator {
     }
 
     const skillAspd = calcSkillAspd({ skillData, status: this.status, totalEquipStatus: this.totalBonus });
-    const skillHitsPerSec = Math.min(basicAspd.hitsPerSec, skillAspd.totalHitPerSec);
 
     let actualCri = calculated.canCri
       ? Math.max(0, (basicDmg.basicCriRate + baseSkillCri - criShield) * baseCriPercentage)
@@ -1099,16 +1099,19 @@ export class DamageCalculator {
     const { avgCriDamage, avgNoCriDamage } = calculated;
 
     const totalHit = typeof _totalHit === 'function' ? _totalHit(this.monsterData.size) : _totalHit;
-    const skillDps =
-      totalHit *
-      calcDmgDps({
-        min: avgNoCriDamage || minDamage + skillMinDamage2,
-        max: avgNoCriDamage || maxDamage + skillMaxDamage2,
-        cri: actualCri,
-        criDmg: avgCriDamage || maxDamage + skillMaxDamage2,
-        hitsPerSec: floor(skillHitsPerSec),
-        accRate: skillAccRate,
-      });
+    const isAutoSpell = autoSpellChance != 1;
+    const skillHitsPerSec = Math.min(basicAspd.hitsPerSec, skillAspd.totalHitPerSec);
+    const oneHitDps = isAutoSpell
+      ? 0
+      : calcDmgDps({
+          min: avgNoCriDamage || minDamage + skillMinDamage2,
+          max: avgNoCriDamage || maxDamage + skillMaxDamage2,
+          cri: actualCri,
+          criDmg: avgCriDamage || maxDamage + skillMaxDamage2,
+          hitsPerSec: skillHitsPerSec,
+          accRate: skillAccRate,
+        });
+    const skillDps = floor(totalHit * oneHitDps * autoSpellChance);
     const hitKill = Math.ceil(this.monsterData.hp / minDamage);
 
     const totalPene = isMatk ? this.getTotalMagicalPene() : basicDmg.totalPene;
@@ -1135,6 +1138,7 @@ export class DamageCalculator {
       skillPart2Label,
       skillMinDamage2,
       skillMaxDamage2,
+      isAutoSpell,
     };
 
     return { basicDmg, misc, skillDmg, skillAspd, basicAspd };

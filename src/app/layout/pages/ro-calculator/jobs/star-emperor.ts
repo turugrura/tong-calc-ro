@@ -142,8 +142,7 @@ export class StarEmperor extends CharacterBase {
       isMelee: true,
       levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
-        const { model, skillLevel } = input;
-        const _baseLevel = model.level;
+        const { skillLevel } = input;
 
         return 150 + skillLevel * 50;
       },
@@ -157,13 +156,34 @@ export class StarEmperor extends CharacterBase {
       vct: 0,
       cd: 0,
       isMelee: true,
-      levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
         const bonus = this.isSkillActive('Solar Luminance') ? 1.25 : 1;
 
         return (1000 + skillLevel * 220) * (baseLevel / 100) * bonus;
+      },
+    },
+    {
+      name: 'Falling Stars',
+      label: 'Falling Stars Lv10',
+      value: 'Falling Stars==10',
+      acd: 0,
+      fct: 0,
+      vct: 0,
+      cd: 0,
+      hit: 3,
+      isMelee: true,
+      autoSpellChance: 0.15,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
+        const bonus = this.isSkillActive('Stellar Luminance') ? 1.25 : 1;
+
+        return (100 + skillLevel * 100) * (baseLevel / 100) * bonus;
+      },
+      finalDmgFormula: (input): number => {
+        return input.damage * 2;
       },
     },
   ];
@@ -197,6 +217,24 @@ export class StarEmperor extends CharacterBase {
       ],
     },
     FusionSunMoonStar(),
+    {
+      label: 'Stellar Stance 3',
+      name: 'Stellar Stance',
+      inputType: 'selectButton',
+      dropdown: [
+        { label: 'Yes', value: 3, skillLv: 3, isUse: true, bonus: { aspdPercent: 10 } },
+        { label: 'No', value: 0, isUse: false },
+      ],
+    },
+    {
+      label: 'Stellar Luminance 5',
+      name: 'Stellar Luminance',
+      inputType: 'selectButton',
+      dropdown: [
+        { label: 'Yes', value: 5, skillLv: 5, isUse: true },
+        { label: 'No', value: 0, isUse: false },
+      ],
+    },
   ];
 
   protected readonly _passiveSkillList: PassiveSkillModel[] = [

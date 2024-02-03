@@ -4048,7 +4048,7 @@
                       [max2]="totalSummary2?.dmg?.skillMaxDamageHE"
                     ></app-calc-value>
                   </div> -->
-                  <div class="col-12">
+                  <div class="col-12" [hidden]="totalSummary?.dmg?.isAutoSpell">
                     <app-calc-value
                       [enableCompare]="isEnableCompare && totalSummary2?.dmg"
                       label="DPS:"
