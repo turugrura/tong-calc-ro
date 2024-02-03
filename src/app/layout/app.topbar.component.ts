@@ -115,6 +115,17 @@ export class AppTopBarComponent {
 
   updates: { v: string; date: string; logs: string[] }[] = [
     {
+      v: 'V1.8.4',
+      date: '03-02-2567',
+      logs: [
+        'Fixed reported bugs',
+        'Added SE offensive skills (Falling Stars)',
+        'Added Kagerou offensive skills (Kunai Explosion)',
+        'Added Oboro offensive skills (Cross Slash)',
+        'Added requested items & monsters',
+      ],
+    },
+    {
       v: 'V1.8.3',
       date: '25-01-2567',
       logs: [
@@ -530,8 +541,14 @@ export class AppTopBarComponent {
   }
 
   onHideUpdateDialog() {
-    localStorage.setItem('version', this.updates[0].v);
-    this.showUnreadVersion = 0;
+    // localStorage.setItem('version', this.updates[0].v);
+    // this.showUnreadVersion = 0;
+  }
+
+  onReadUpdateClick(version: string) {
+    localStorage.setItem('version', version);
+    this.unreadVersion = this.updates.findIndex((a) => a.v === version);
+    this.showUnreadVersion = this.unreadVersion === -1 ? this.updates.length + 1 : this.unreadVersion;
   }
 
   showInfoDialog() {

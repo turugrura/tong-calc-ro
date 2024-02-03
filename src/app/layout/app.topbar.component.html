@@ -135,15 +135,32 @@
     (onHide)="onHideUpdateDialog()"
     [style]="{ width: '50vw', height: '70vh' }"
   >
-    <div style="color: var(--red-100)">
+    <!-- <div style="color: var(--red-100)">
       *** เมื่อมีอัพเดท ไอเทม,มอนเตอร์ ต้องเคลียร์แคช หรือ รอประมาณ10นาทีถึงจะเห็นครับ
-    </div>
+    </div> -->
     <div
       *ngFor="let update of updates; index as i"
       [ngStyle]="{ color: i + 1 > showUnreadVersion ? 'var(--gray-300)' : 'white' }"
     >
-      <span class="pr-2">{{ update.v }}</span> <span>{{ update.date }}</span>
-      <ul>
+      <div class="grid grid-nogutter">
+        <div
+          class="p-col-12"
+          style="display: flex; align-content: center; justify-content: center; align-items: center"
+        >
+          <span class="pr-2">{{ update.v }}</span>
+          <span>{{ update.date }} </span>
+          <span>
+            <button
+              *ngIf="unreadVersion > i"
+              pButton
+              class="p-button-text p-button-primary"
+              icon="pi pi-eye"
+              (click)="onReadUpdateClick(update.v)"
+            ></button>
+          </span>
+        </div>
+      </div>
+      <ul class="mt-0">
         <li *ngFor="let log of update.logs">{{ log }}</li>
       </ul>
     </div>
