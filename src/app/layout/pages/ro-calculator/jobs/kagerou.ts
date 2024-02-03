@@ -111,30 +111,29 @@ export class Kagerou extends CharacterBase {
         return skillLevel * 200 * (baseLevel / 100) + bonus;
       },
     },
-    // {
-    //   label: 'Kunai Explosion Lv5',
-    //   name: 'Kunai Explosion',
-    //   value: 'Kunai Explosion==5',
-    //   acd: 1,
-    //   fct: 0,
-    //   vct: 2.6,
-    //   cd: 3,
-    //   isHit100: true,
-    //   levelList: [],
-    //   formula: (input: AtkSkillFormulaInput): number => {
-    //     const {
-    //       model,
-    //       skillLevel,
-    //       status: { totalDex },
-    //       equipmentBonus,
-    //     } = input;
-    //     const { level: baseLevel, jobLevel } = model;
-    //     const ammoAtk = equipmentBonus?.ammo?.atk || 0;
-    //     const bonusDaggerThrow = 0.4 * this.learnLv('Dagger Throwing Practice');
+    {
+      label: 'Kunai Explosion Lv5',
+      name: 'Kunai Explosion',
+      value: 'Kunai Explosion==5',
+      acd: 1,
+      fct: 0,
+      vct: 2.6,
+      cd: 3,
+      isHit100: true,
+      levelList: [],
+      formula: (input: AtkSkillFormulaInput): number => {
+        const {
+          model,
+          skillLevel,
+          status: { totalDex },
+        } = input;
+        const { level: baseLevel, jobLevel } = model;
+        const explosiveKunai = 50;
+        const bonusDaggerThrow = 0.4 * this.learnLv('Dagger Throwing Practice');
 
-    //     return (ammoAtk + totalDex / 4) * skillLevel * bonusDaggerThrow * (baseLevel / 100) + jobLevel * 10;
-    //   },
-    // },
+        return (explosiveKunai + totalDex / 4) * skillLevel * bonusDaggerThrow * (baseLevel / 100) + jobLevel * 10;
+      },
+    },
     {
       label: 'Kunai Splash Lv5',
       name: 'Kunai Splash',
@@ -175,7 +174,7 @@ export class Kagerou extends CharacterBase {
   protected readonly _activeSkillList: ActiveSkillModel[] = [
     ShadowWarrior,
     {
-      label: 'Cross Wound',
+      label: '[Debuf] Cross Wound',
       name: 'Cross Wound',
       inputType: 'selectButton',
       dropdown: [
