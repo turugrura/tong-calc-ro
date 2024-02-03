@@ -337,6 +337,9 @@ const sh23 = [Sharp._2, Sharp._3];
 const sh25 = [Sharp._2, Sharp._3, Sharp._4, Sharp._5];
 // const sh35 = [Sharp._3, Sharp._4, Sharp._5];
 
+const perfectD12 = [Dodge._1, Dodge._2];
+const perfectD13 = [Dodge._1, Dodge._2, Dodge._3];
+
 const matk12 = [MatkPercent._1, MatkPercent._2];
 const matk13 = [MatkPercent._1, MatkPercent._2, MatkPercent._3];
 
@@ -355,10 +358,14 @@ const sp34 = [Spell._3, Spell._4];
 const sp45 = [Spell._4, Spell._5];
 const sp46 = [Spell._4, Spell._5, Spell._6];
 
+const aspd12 = [AttackDelay._1, AttackDelay._2];
 const aspd13 = [AttackDelay._1, AttackDelay._2, AttackDelay._3];
 const aspd24 = [AttackDelay._2, AttackDelay._3, AttackDelay._4];
 const aspd34 = [AttackDelay._3, AttackDelay._4];
 
+// const aspd122 = [ASPD._1, ASPD._2];
+
+const fatal12 = [Fatal._1, Fatal._2];
 const fatal13 = [Fatal._1, Fatal._2, Fatal._3];
 const fatal14 = [Fatal._1, Fatal._2, Fatal._3, Fatal._4];
 
@@ -373,7 +380,9 @@ const mhp35 = [MHP._3, MHP._5];
 
 const shedding12 = [Dodge._1, Dodge._2];
 
+const delay12 = [SkillDelay._1, SkillDelay._2];
 const delay13 = [SkillDelay._1, SkillDelay._2, SkillDelay._3];
+
 const matkP35 = [MATK_P._3, MATK_P._4, MATK_P._5];
 
 const tempOpts = {
@@ -563,6 +572,9 @@ const tempHead3 = [
   'Time_Jewely_Dex_3',
   ...tempHead4,
 ];
+
+const sarahAcc4 = [...critical23, ...fatal12, ...ea12, ...matk12, ...aspd12, ...delay12, ...perfectD12];
+const sarahAcc3 = [...critical24, ...fatal13, ...ea13, ...matk13, ...aspd13, ...delay13, ...perfectD13];
 
 const edda4 = [EA._1, EA._2, EA._3, FS._4, FS._5, FS._6, Sharp._1, Sharp._2, Sharp._3, Spell._1, Spell._2, Spell._3, Fatal._1, Fatal._2, Fatal._3];
 const edda3 = [
@@ -786,6 +798,9 @@ export const EnchantTable: EntTable[] = [
   { name: 'Twin Cannon', enchants: [null, twinCannon, twinCannon, twinCannon] },
 
   { name: 'Temporal_Ring_TW', enchants: [null, null, null, [...ea410, ...fs410, ...sp46, ...base46]] },
+
+  { name: 'Earring_Of_Sarah_L', enchants: [null, null, sarahAcc3, sarahAcc4] },
+  { name: 'Earring_Of_Sarah_R', enchants: [null, null, sarahAcc3, sarahAcc4] },
 
   { name: 'White_Wing_Suits', enchants: [null, whiteWingSuit, whiteWingSuit, whiteWingSuit] },
   { name: 'White_Wing_Manteau', enchants: [null, [...atkPer13, ...fs13], [...atkPer13, ...fs13], [...atkPer13, ...fs13]] },

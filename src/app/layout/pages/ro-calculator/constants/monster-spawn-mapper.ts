@@ -1,5 +1,9 @@
 const Mapper = {
   iz_ac01: 'Test damage',
+  abbey01: '110 - 125 nameless',
+  abbey02: '110 - 125 nameless',
+  abbey03: '110 - 125 nameless',
+  nameless_n: '110 - 125 nameless',
   abyss_01: '115 - 125 มังกร 3',
   abyss_02: '115 - 125 มังกร 3',
   abyss_03: '115 - 125 มังกร 3',

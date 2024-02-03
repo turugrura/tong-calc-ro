@@ -4170,6 +4170,30 @@
       ]
     }
   },
+  "4086": {
+    "id": 4086,
+    "aegisName": "Soldier_Skeleton_Card",
+    "name": "Soldier Skeleton Card",
+    "unidName": "Card",
+    "resName": "이름없는카드",
+    "description": "Critical + 9%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Critical",
+    "script": {
+      "criDmg": [
+        "9"
+      ]
+    }
+  },
   "4092": {
     "id": 4092,
     "aegisName": "Skel_Worker_Card",
@@ -4218,6 +4242,33 @@
     "script": {
       "range": [
         "10"
+      ]
+    }
+  },
+  "4107": {
+    "id": 4107,
+    "aegisName": "Verit_Card",
+    "name": "Verit Card",
+    "unidName": "Card",
+    "resName": "이름없는카드",
+    "description": "Maximum HP/SP + 8%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Foot Gear^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 64,
+    "cardPrefix": "Fledged",
+    "script": {
+      "hpPercent": [
+        "8"
+      ],
+      "spPercent": [
+        "8"
       ]
     }
   },
@@ -4344,6 +4395,30 @@
       ],
       "cri": [
         "1"
+      ]
+    }
+  },
+  "4130": {
+    "id": 4130,
+    "aegisName": "Scorpion_King_Card",
+    "name": "Scorpion King Card",
+    "unidName": "Card",
+    "resName": "이름없는카드",
+    "description": "โจมตี Monster Race Undead แรงขึ้น 20%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Divine",
+    "script": {
+      "p_race_undead": [
+        "20"
       ]
     }
   },
@@ -5513,6 +5588,30 @@
       ]
     }
   },
+  "4486": {
+    "id": 4486,
+    "aegisName": "Sealed_Berz_Card",
+    "name": "Sealed Berzebub Card",
+    "unidName": "Sealed Berzebub Card",
+    "resName": "이름없는카드",
+    "description": "ลดระยะเวลาในการร่ายเวทมนตร์ลง 15%\nประเภท : ^777777Card ^000000\nใช้กับ : ^777777Accessory^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 136,
+    "cardPrefix": "of Half Bigmouth",
+    "script": {
+      "vct": [
+        "15"
+      ]
+    }
+  },
   "4487": {
     "id": 4487,
     "aegisName": "Sealed_Ifrit_Card",
@@ -6646,6 +6745,34 @@
       ]
     }
   },
+  "4634": {
+    "id": 4634,
+    "aegisName": "P_Soldier_Skeleton_Card",
+    "name": "Enchanted Soldier Skeleton Card",
+    "unidName": "Card",
+    "resName": "이름없는카드",
+    "description": "CRI + 9\nเพิ่มดาเมจคริติคอล 5%, CRI + 1 เพิ่มขึ้น เมื่อ Base Level 100 ขึ้นไป \nประเภท : ^777777Card^000000\nติดตั้ง : ^777777อาวุธ^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Fatal",
+    "script": {
+      "cri": [
+        "9",
+        "SUM[level==100]===1"
+      ],
+      "criDmg": [
+        "SUM[level==100]===5"
+      ]
+    }
+  },
   "4636": {
     "id": 4636,
     "aegisName": "Bijou_Card",
@@ -6673,6 +6800,32 @@
       ]
     }
   },
+  "4642": {
+    "id": 4642,
+    "aegisName": "IFN_Toad_Card",
+    "name": "Infinite Toad Card",
+    "unidName": "Infinite Toad Card",
+    "resName": "이름없는카드",
+    "description": "Perfect Dodge + 2\nPerfect Dodge + 2 เพิ่มเติมเมื่ออัพเกรดขั้น 7\nPerfect Dodge + 3 เพิ่มเติมเมื่ออัพเกรดขั้น 9\nประเภท : ^777777Card^000000\nใส่กับ : ^777777Shoes^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 64,
+    "cardPrefix": "Side Step",
+    "script": {
+      "perfectDodge": [
+        "2",
+        "7===2",
+        "9===3"
+      ]
+    }
+  },
   "4643": {
     "id": 4643,
     "aegisName": "IFN_V_Wolf_Card",
@@ -6696,6 +6849,58 @@
         "10",
         "7===10",
         "9===15"
+      ]
+    }
+  },
+  "4644": {
+    "id": 4644,
+    "aegisName": "IFN_Vocal_Card",
+    "name": "Infinite Vocal Card",
+    "unidName": "Infinite Vocal Card",
+    "resName": "이름없는카드",
+    "description": "MDEF + 5\nเพิ่ม MDEF + 10 เมื่ออัพเกรดขั้น 7 \nเพิ่ม MDEF + 15 เมื่ออัพเกรดขั้น 9 \nประเภท : ^777777Card^000000\nใส่กับ : ^777777Shoes^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 64,
+    "cardPrefix": "Magic Shield",
+    "script": {
+      "mdef": [
+        "5",
+        "7===10",
+        "9===15"
+      ]
+    }
+  },
+  "4645": {
+    "id": 4645,
+    "aegisName": "IFN_Eclipse_Card",
+    "name": "Infinite Eclipse Card",
+    "unidName": "Infinite Eclipse Card",
+    "resName": "이름없는카드",
+    "description": "MHP + 300\nเพิ่ม MHP + 300 เมื่ออัพเกรดขั้น 7 \nเพิ่ม MHP + 400 เมื่ออัพเกรดขั้น 9 \nประเภท : ^777777Card^000000\nใส่กับ : ^777777Shoes^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 64,
+    "cardPrefix": "Physical",
+    "script": {
+      "hp": [
+        "300",
+        "7===300",
+        "9===400"
       ]
     }
   },
@@ -7013,6 +7218,173 @@
       ]
     }
   },
+  "4672": {
+    "id": 4672,
+    "aegisName": "Sura_Card",
+    "name": "Sura Chen Card",
+    "unidName": "Sura Chen Card",
+    "resName": "이름없는카드",
+    "description": "เมื่อใช้งานด้วยอาชีพ Sura, MaxHP +10%, เพิ่ม Damage ทางกายภาพต่อศัตรูทุกเผ่า 10%\nเมื่อเลเวลตัวละครตั้งแต่ Lv. 175 ขึ้นไป All State +10\nเมื่ออัพเกรด Garment ตั้งแต่ 10 ขึ้นไป All State +10\nเมื่อใช้ร่วมกับ True Chen Lio Card,\nเมื่อโจมตีทางกายภาพ มีโอกาส 3% ที่จะเปลี่ยนร่างเป็น Chen Lio เป็นเวลา 6 วินาที\nตลอดเวลาที่เปลี่ยนร่าง ATK +100\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Garment^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 4,
+    "cardPrefix": "of Sura",
+    "script": {
+      "hpPercent": [
+        "USED[Sura]10"
+      ],
+      "p_race_all": [
+        "USED[Sura]10"
+      ],
+      "allStatus": [
+        "SUM[level==175]===10",
+        "10===10"
+      ],
+      "chance__atk": [
+        "EQUIP[True Chen Lio Card]===100"
+      ]
+    }
+  },
+  "4673": {
+    "id": 4673,
+    "aegisName": "Minstrel_Card",
+    "name": "Minstrel Alphoccio Card",
+    "unidName": "Minstrel Alphoccio Card",
+    "resName": "이름없는카드",
+    "description": "MaxHP +15% และ MaxSP +10% ถ้าผู้สวมใส่เป็น Minstrel\nเมื่อ BaseLv 175 ขึ้นไป All State +10\nเมื่ออัพเกรดถึงขั้น 10 ขึ้นไป All State +10\nเมื่อใช้คู่กับ True Alphoccio Basil Card\nเมื่อโจมตีทางกายภาพ เพิ่มโอกาส 3% ที่จะเปลี่ยนร่างเป็น Alphoccio เป็นเวลา 6 วินาที\nATK + 100 ตลอดระยะเวลาที่เปลี่ยนร่าง\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Garment^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 4,
+    "cardPrefix": "of Minstrel",
+    "script": {
+      "hpPercent": [
+        "USED[Minstrel]15"
+      ],
+      "spPercent": [
+        "USED[Minstrel]10"
+      ],
+      "allStatus": [
+        "SUM[level==175]===10",
+        "10===10"
+      ],
+      "chance__atk": [
+        "EQUIP[True Alphoccio Basil Card]===100"
+      ]
+    }
+  },
+  "4674": {
+    "id": 4674,
+    "aegisName": "GuillotineCross_Card",
+    "name": "Guillotine Cross Eremes Card",
+    "unidName": "Guillotine Cross Eremes Card",
+    "resName": "이름없는카드",
+    "description": "เมื่อใช้งานด้วยอาชีพ Guillotine Cross, Perfect Dodge +10, เพิ่ม Damage ทางกายภาพต่อศัตรูทุกเผ่า 15%\nเมื่อเลเวลตัวละครตั้งแต่ Lv. 175 ขึ้นไป All State +10\nเมื่ออัพเกรด Garment ตั้งแต่ 10 ขึ้นไป All State +10\nเมื่อใช้ร่วมกับ True Eremes Guile Card,\nเมื่อโจมตีทางกายภาพ มีโอกาส 3% ที่จะเปลี่ยนร่างเป็น Eremes Guile เป็นเวลา 6 วินาที\nตลอดเวลาที่เปลี่ยนร่าง ATK +100\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Garment^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 4,
+    "cardPrefix": "of Guillotine Cross",
+    "script": {
+      "perfectDodge": [
+        "USED[GuillotineCross]10"
+      ],
+      "p_race_all": [
+        "USED[GuillotineCross]15"
+      ],
+      "allStatus": [
+        "SUM[level==175]===10",
+        "10===10"
+      ],
+      "chance__atk": [
+        "EQUIP[True Eremes Guile Card]===100"
+      ]
+    }
+  },
+  "4675": {
+    "id": 4675,
+    "aegisName": "Archbishop_Card",
+    "name": "Arch Bishop Margaretha Card",
+    "unidName": "Arch Bishop Margaretha Card",
+    "resName": "이름없는카드",
+    "description": "MaxHP +10% และเพิ่มผลของสกิลฟื้นฟู +15%. ถ้าผู้สวมใส่เป็น Arch Bishop\nเมื่อ BaseLv 175 ขึ้นไป All State +10\nเมื่ออัพเกรดถึงขั้น 10 ขึ้นไป All State +10\nเมื่อใช้คู่กับ True Margaretha Sorin Card\nเมื่อโจมตีทางเวทย์ เพิ่มโอกาส 3% ที่จะเปลี่ยนร่างเป็น Margaretha Sorin เป็นเวลา 6 นาที\nMATK + 100 ตลอดระยะเวลาที่เปลี่ยนร่าง\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Garment^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 4,
+    "cardPrefix": "of Archbishop",
+    "script": {
+      "hpPercent": [
+        "USED[ArchBishop]10"
+      ],
+      "allStatus": [
+        "SUM[level==175]===10",
+        "10===10"
+      ],
+      "chance__matk": [
+        "EQUIP[True Margaretha Sorin Card]===100"
+      ]
+    }
+  },
+  "4676": {
+    "id": 4676,
+    "aegisName": "Ranger_Card",
+    "name": "Ranger Cecil Card",
+    "unidName": "Ranger Cecil Card",
+    "resName": "이름없는카드",
+    "description": "CRI +20 และเพิ่มพลังโจมตีจากการใช้อาวุธประเภท Bow +15% ถ้าผู้สวมใส่เป็น Ranger\nเมื่อ BaseLv 175 ขึ้นไป All State +10\nเมื่ออัพเกรดถึงขั้น 10 ขึ้นไป All State +10\nเมื่อใช้คู่กับ True Cecil Damon Card\nเมื่อโจมตีทางกายภาพ เพิ่มโอกาส 3% ที่จะเปลี่ยนร่างเป็น Cecil Damon เป็นเวลา 6 วินาที \nATK + 100 ตลอดระยะเวลาที่เปลี่ยนร่าง\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Garment^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 4,
+    "cardPrefix": "of Ranger",
+    "script": {
+      "cri": [
+        "USED[Ranger]20"
+      ],
+      "bowRange": [
+        "USED[Ranger]15"
+      ],
+      "allStatus": [
+        "SUM[level==175]===10",
+        "10===10"
+      ],
+      "chance__atk": [
+        "EQUIP[True Cecil Damon Card]===100"
+      ]
+    }
+  },
   "4677": {
     "id": 4677,
     "aegisName": "Mechanic_Card",
@@ -7146,6 +7518,40 @@
       ],
       "chance__atk": [
         "EQUIP[True Randel Lawrence Card]100"
+      ]
+    }
+  },
+  "4681": {
+    "id": 4681,
+    "aegisName": "Genetic_Card",
+    "name": "Genetic Flamel Card",
+    "unidName": "Genetic Flamel Card",
+    "resName": "이름없는카드",
+    "description": "เมื่อใช้งานด้วยอาชีพ Genetic, FLEE +20, เพิ่ม Damage ทางกายภาพต่อศัตรูทุกเผ่า 15%\nเมื่อเลเวลตัวละครตั้งแต่ Lv. 175 ขึ้นไป All State +10\nเมื่ออัพเกรด Garment ตั้งแต่ 10 ขึ้นไป All State +10\nเมื่อใช้ร่วมกับ True Flamel Emure Card,\nเมื่อโจมตีทางกายภาพ มีโอกาส 3% ที่จะเปลี่ยนร่างเป็น Flamel Emure เป็นเวลา 6 วินาที\nตลอดเวลาที่เปลี่ยนร่าง ATK +100\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Garment^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 4,
+    "cardPrefix": "of Genetic",
+    "script": {
+      "flee": [
+        "USED[Genetic]20"
+      ],
+      "p_race_all": [
+        "USED[Genetic]15"
+      ],
+      "allStatus": [
+        "SUM[level==175]===10",
+        "10===10"
+      ],
+      "chance__atk": [
+        "EQUIP[True Flamel Emure Card]===100"
       ]
     }
   },
@@ -7289,6 +7695,32 @@
     "cardPrefix": "Crimson",
     "script": {
       "Crimson Rock": [
+        "20",
+        "WEAPON_LEVEL[4]===20",
+        "10===20"
+      ]
+    }
+  },
+  "4687": {
+    "id": 4687,
+    "aegisName": "Real_Shecil_Card",
+    "name": "True Cecil Damon Card",
+    "unidName": "True Cecil Damon Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่มความแรงสกิล Bomb Cluster 20% \nเพิ่มความแรงสกิล Bomb Cluster อีก 20% เมื่ออาวุธเลเวล 4 \nเพิ่มความแรงสกิล Bomb Cluster อีก 20% เมื่ออัพเกรดถึงขั้น 10 ขึ้นไป\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Cluster",
+    "script": {
+      "Bomb Cluster": [
         "20",
         "WEAPON_LEVEL[4]===20",
         "10===20"
@@ -20942,6 +21374,47 @@
       ]
     }
   },
+  "19295": {
+    "id": 19295,
+    "aegisName": "Red_Baby_Dragon_TW",
+    "name": "Red Baby Dragon [1]",
+    "unidName": "Hat",
+    "resName": "레드베이비드래곤",
+    "description": "MaxHP+5%.\nMaxSP+5%.\nเมื่อขั้นอัพเกรดมากกว่า 7, ASPD เพิ่มขึ้นอีก +1,\nเพิ่ม Damage ของสกิล [Dragon Breath] ขึ้นอีก 3%\nเมื่อขั้นอัพเกรดมากกว่า 10, ASPD เพิ่มขึ้นอีก +1,\nเพิ่ม Damage ของสกิล [Dragon Breath] ขึ้นอีก 7%\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^7777770^000000\nตำแหน่ง : ^777777Upper ^000000น้ำหนัก : ^77777770^000000\nเลเวลที่ต้องการ : ^77777790^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 70,
+    "requiredLevel": 90,
+    "location": "Upper",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "hpPercent": [
+        "5"
+      ],
+      "spPercent": [
+        "5"
+      ],
+      "aspd": [
+        "7===1",
+        "10===1"
+      ],
+      "Dragon Breath": [
+        "7===3",
+        "10===7"
+      ],
+      "Dragon Breath - WATER": [
+        "7===3",
+        "10===7"
+      ]
+    }
+  },
   "19296": {
     "id": 19296,
     "aegisName": "Classical_Fhat",
@@ -30826,12 +31299,12 @@
       "all"
     ],
     "script": {
-      "m_pene_race_demihuman": [
+      "m_pene_race_fish": [
         "5",
         "2---1",
         "EQUIP[Tempest Shadow Shoes&&Tempest Shadow Shield]REFINE[shadowArmor,shadowShield,shadowBoot==25]===100"
       ],
-      "m_pene_race_undead": [
+      "m_pene_race_insect": [
         "5",
         "2---1",
         "EQUIP[Tempest Shadow Shoes&&Tempest Shadow Shield]REFINE[shadowArmor,shadowShield,shadowBoot==25]===100"
@@ -37696,6 +38169,120 @@
       ]
     }
   },
+  "24619": {
+    "id": 24619,
+    "aegisName": "S_Super_Power_Weapon",
+    "name": "Super Power Shadow Weapon",
+    "unidName": "Shadow Weapon",
+    "resName": "웨폰쉐도우",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา\nเพิ่ม Damage ทางกายภาพระยะไกล 5%\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางกายภาพระยะใกล้และระยะไกลขึ้นอีก 5%\nเมื่ออัพเกรดถึงขั้น 9 สามารถใช้สกิล Shattering Strike ที่เลเวลเดียวกับสกิล Weaponry Research ที่เรียนรู้\nเมื่อสวมใส่ Super Power Shadow Weapon/Earring/Pendant ร่วมกัน,\nสามารถใช้สกิล Shield Chain Lv. 5,\nเพิ่ม Damage สกิล Back Stab, Raid, Shield Boomerang, Shield Chain % เท่ากับ 2 เท่าของค่าอัพเกรดรวมกัน\nเมื่อสวมใส่ร่วมกับ Super Novice Shadow Shield,\nเพิกเฉยต่อพลังป้องกันทางกายภาพของทุกเผ่ายกเว้น Player 40% และเพิกเฉยต่อพลังป้องกันทางกายภาพเพิ่มอีกตามค่าอัพเกรดรวมกันของ Super Power Shadow Weapon และ Super Novice Shadow Shield\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Weapon^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Novice^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 280,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "Weapon",
+    "compositionPos": null,
+    "usableClass": [
+      "Novice"
+    ],
+    "script": {
+      "atk": [
+        "1---1"
+      ],
+      "matk": [
+        "1---1"
+      ],
+      "range": [
+        "5",
+        "7===5"
+      ],
+      "melee": [
+        "7===5"
+      ],
+      "Back Stab": [
+        "EQUIP[Super Power Shadow Earring&&Super Power Shadow Pendant]REFINE[shadowWeapon,shadowEarring,shadowPendant==1]---2"
+      ],
+      "Raid": [
+        "EQUIP[Super Power Shadow Earring&&Super Power Shadow Pendant]REFINE[shadowWeapon,shadowEarring,shadowPendant==1]---2"
+      ],
+      "Shield Boomerang": [
+        "EQUIP[Super Power Shadow Earring&&Super Power Shadow Pendant]REFINE[shadowWeapon,shadowEarring,shadowPendant==1]---2"
+      ],
+      "Shield Chain": [
+        "EQUIP[Super Power Shadow Earring&&Super Power Shadow Pendant]REFINE[shadowWeapon,shadowEarring,shadowPendant==1]---2"
+      ],
+      "p_pene_race_all": [
+        "EQUIP[Super Novice Shadow Shield]===40",
+        "EQUIP[Super Novice Shadow Shield]REFINE[shadowWeapon,shadowShield==1]---1"
+      ]
+    }
+  },
+  "24620": {
+    "id": 24620,
+    "aegisName": "S_Super_Power_Pendant",
+    "name": "Super Power Shadow Pendant",
+    "unidName": "Shadow Pendant",
+    "resName": "펜던트쉐도우",
+    "description": "สร้อยคอศักดิ์สิทธิ์ที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา\nเพิ่ม Damage สกิล Back Stab, Raid 10%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage สกิล Back Stab, Raid ขึ้นอีก 4%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Pendant^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Novice^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 530,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "AccessoryLeft",
+    "compositionPos": null,
+    "usableClass": [
+      "Novice"
+    ],
+    "script": {
+      "Back Stab": [
+        "10",
+        "2---4"
+      ],
+      "Raid": [
+        "10",
+        "2---4"
+      ]
+    }
+  },
+  "24621": {
+    "id": 24621,
+    "aegisName": "S_Super_Power_Earing",
+    "name": "Super Power Shadow Earring",
+    "unidName": "Shadow Earring",
+    "resName": "이어링쉐도우",
+    "description": "ต่างหูมงคลที่กล่าวกันว่าปกป้องผู้สวมใส่ ดึงศักยภาพของผู้สวมใส่ออกมา\nเพิ่ม Damage สกิล Shield Boomerang, Shield Chain 10%\nทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage สกิล Shield Boomerang, Shield Chain ขึ้นอีก 4%\nประเภท : ^777777Shadow^000000\nตำแหน่ง : ^777777Earring^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777Novice^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 529,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": "AccessoryRight",
+    "compositionPos": null,
+    "usableClass": [
+      "Novice"
+    ],
+    "script": {
+      "Shield Boomerang": [
+        "10",
+        "2---4"
+      ],
+      "Shield Chain": [
+        "10",
+        "2---4"
+      ]
+    }
+  },
   "24622": {
     "id": 24622,
     "aegisName": "S_Kunai_Weapon",
@@ -43113,6 +43700,33 @@
       ]
     }
   },
+  "27297": {
+    "id": 27297,
+    "aegisName": "Ancient_W_Fighter_Card",
+    "name": "Ancient Wootan Fighter Card",
+    "unidName": "Ancient Wootan Fighter Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่ม Critical Damage 10%\nCRI + 5\n^ffffff_^000000\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Wootan Fist",
+    "script": {
+      "criDmg": [
+        "10"
+      ],
+      "cri": [
+        "5"
+      ]
+    }
+  },
   "27306": {
     "id": 27306,
     "aegisName": "Bellare_Card",
@@ -43279,6 +43893,30 @@
       "p_size_l": [
         "WEAPON_TYPE[fist]1---1",
         "WEAPON_TYPE[fist]10===15"
+      ]
+    }
+  },
+  "27312": {
+    "id": 27312,
+    "aegisName": "Dolor_Card",
+    "name": "Dolor Card",
+    "unidName": "Dolor Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่ม Damage ทางกายภาพต่อมอนสเตอร์ประเภท Demon 5%\n^ffffff_^000000\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Accessory^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 136,
+    "cardPrefix": "Evil Piercing",
+    "script": {
+      "p_race_demon": [
+        "5"
       ]
     }
   },
@@ -45958,6 +46596,50 @@
         "EQUIP[Ancient Hero Boots]10"
       ]
     }
+  },
+  "28310": {
+    "id": 28310,
+    "aegisName": "Earring_Of_Sarah_L",
+    "name": "Sarah's Left Earring",
+    "unidName": "Accessory",
+    "resName": "사라귀걸이",
+    "description": "Sarah's Left Earring ราวกับสามารถใช้พลังของ Sarah ได้เมื่อสวมใส่\nสามารถใช้ Heal Lv.1 ได้\n^ff0000ไอเทมนี้ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้^000000\nประเภท : ^777777Accessory^000000 ป้องกัน : ^7777770^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777145^000000\nติดตั้ง : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 517,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 145,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {}
+  },
+  "28311": {
+    "id": 28311,
+    "aegisName": "Earring_Of_Sarah_R",
+    "name": "Sarah's Right Earring",
+    "unidName": "Accessory",
+    "resName": "사라귀걸이",
+    "description": "Sarah's Right Earring ราวกับสามารถใช้พลังของ Sarah ได้เมื่อสวมใส่ \nสามารถใช้ Teleport Lv.1 ได้\n^ff0000ไอเทมนี้ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้^000000\nประเภท : ^777777Accessory^000000 ป้องกัน : ^7777770^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777145^000000\nติดตั้ง : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 517,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 145,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {}
   },
   "28326": {
     "id": 28326,
@@ -56136,6 +56818,30 @@
       ]
     }
   },
+  "31024": {
+    "id": 31024,
+    "aegisName": "As_Bdy_Knight_Card",
+    "name": "Immortal Bloody Knight Card",
+    "unidName": "Immortal Bloody Knight Card",
+    "resName": "이름없는카드",
+    "description": "ATK +10%\nมีโอกาสเปิดใช้งาน Auto Spell Ignition Break Lv5 เมื่อโจมตีทางกายภาพ\nประเภท : ^777777Card^000000\nติดตั้ง : ^777777อาวุธ^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Volcanic",
+    "script": {
+      "atkPercent": [
+        "10"
+      ]
+    }
+  },
   "31390": {
     "id": 31390,
     "aegisName": "C_Let_It_Snow",
@@ -56153,17 +56859,7 @@
     "requiredLevel": 1,
     "location": "Upper",
     "compositionPos": null,
-    "script": {
-      "hp": [
-        "SUM[level==20]---250"
-      ],
-      "p_class_all": [
-        "SUM[level==30]---2"
-      ],
-      "m_class_all": [
-        "SUM[level==30]---2"
-      ]
-    }
+    "script": {}
   },
   "32005": {
     "id": 32005,
@@ -58040,16 +58736,16 @@
     "compositionPos": 16,
     "cardPrefix": "Solid Break",
     "script": {
-      "m_element_water": [
+      "p_element_water": [
         "40"
       ],
-      "m_element_fire": [
+      "p_element_fire": [
         "40"
       ],
-      "m_race_plant": [
+      "p_race_plant": [
         "40"
       ],
-      "m_race_formless": [
+      "p_race_formless": [
         "40"
       ]
     }
