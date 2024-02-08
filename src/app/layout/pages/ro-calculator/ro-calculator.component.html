@@ -551,6 +551,13 @@
                           totalSummary?.calc?.maxSp || 0 | number
                         }}</span>
                       </div>
+                      <div
+                        [hidden]="model?.level < 176"
+                        class="summary_monster_value px-1"
+                        style="color: var(--red-500)"
+                      >
+                        *** Lv > 175 ข้อมูลไม่ตรง
+                      </div>
                     </div>
                   </div>
                 </div>
