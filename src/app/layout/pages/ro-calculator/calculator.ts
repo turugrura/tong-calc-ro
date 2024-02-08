@@ -50,6 +50,8 @@ const refinableItemTypes = [
 const mainStatuses = ['str', 'dex', 'int', 'agi', 'luk', 'vit'];
 
 export class Calculator {
+  private readonly DEFAULT_PERFECT_HIT = 5;
+
   private items!: Record<number, ItemModel>;
 
   private model: Partial<MainModel> = {
@@ -1198,7 +1200,7 @@ export class Calculator {
   prepareAllItemBonus() {
     const baseMatk = Number(this.equipItem.get(ItemTypeEnum.weapon)?.script?.['matk']?.[0]) || 0;
 
-    this.totalEquipStatus = { ...this.allStatus, matk: 0 - baseMatk };
+    this.totalEquipStatus = { ...this.allStatus, matk: 0 - baseMatk, perfectHit: this.DEFAULT_PERFECT_HIT };
     this.equipStatus = {} as any;
     this.propertyBasicAtk = ElementType.Neutral;
     this.propertyWindmind = undefined;
