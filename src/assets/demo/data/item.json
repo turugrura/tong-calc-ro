@@ -57443,25 +57443,6 @@
       ]
     }
   },
-  "31390": {
-    "id": 31390,
-    "aegisName": "C_Let_It_Snow",
-    "name": "Costume Let It Snow",
-    "unidName": "Cap",
-    "resName": "Let_It_Snow",
-    "description": "หมวกที่ถูกสร้างขึ้นมาด้วยแรงอธิษฐานของชาวบ้านในพื้นที่ที่หิมะไม่ตกแม้ในฤดูหนาว รูปร่างที่มีลักษณะเป็นหิมะโปรยปรายนั้นทำให้นึกถึง Stormgast\n^ffffff_^000000\nในช่วงเวลากิจกรรม ทุก ๆ 20 Base Lv. HP + 250\nเพิ่มพลังฟื้นฟูของ Ice Cream 50%\nทุก ๆ 30 Base Lv. เพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูทุกประเภท 2%\n(ความสามารถของไอเท็มนี้จะถูกลบหลังสิ้นสุดระยะเวลากิจกรรม)\n^ffffff_^000000\nประเภท : ^777777Costume^000000 พลังป้องกัน : ^7777770^000000\nตำแหน่ง : ^777777Upper ^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
-    "slots": 0,
-    "itemTypeId": 9,
-    "itemSubTypeId": 519,
-    "itemLevel": null,
-    "attack": null,
-    "defense": 0,
-    "weight": 0,
-    "requiredLevel": 1,
-    "location": "Upper",
-    "compositionPos": null,
-    "script": {}
-  },
   "32005": {
     "id": 32005,
     "aegisName": "Pole_Axe_IL",
