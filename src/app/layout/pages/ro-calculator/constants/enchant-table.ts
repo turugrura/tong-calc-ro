@@ -268,6 +268,13 @@ enum Tenacity {
   _10 = 'Tenacity10',
 }
 
+const str = (from: number, to: number) => Array.from({length: 1+to-from}).map((_, i) => Str[`_${i+from}`])
+const dex = (from: number, to: number) => Array.from({length: 1+to-from}).map((_, i) => Dex[`_${i+from}`])
+const int = (from: number, to: number) => Array.from({length: 1+to-from}).map((_, i) => Int[`_${i+from}`])
+const agi = (from: number, to: number) => Array.from({length: 1+to-from}).map((_, i) => Agi[`_${i+from}`])
+const vit = (from: number, to: number) => Array.from({length: 1+to-from}).map((_, i) => Vit[`_${i+from}`])
+const luk = (from: number, to: number) => Array.from({length: 1+to-from}).map((_, i) => Luk[`_${i+from}`])
+
 const statEnums = [Str, Int, Dex, Agi, Vit, Luk];
 const createBaseStat = (from: number, to: number): string[] => {
   const ls = [] as string[];
@@ -323,9 +330,11 @@ const AllState = {
 };
 
 const atkPer13 = [AtkPercent._1, AtkPercent._2, AtkPercent._3];
+const atkPer23 = [AtkPercent._2, AtkPercent._3];
 
 const fs13 = [FS._1, FS._2, FS._3];
 const fs23 = [FS._2, FS._3];
+const fs24 = [FS._2, FS._3, FS._4];
 const fs35 = [FS._3, FS._4, FS._5];
 const fs45 = [FS._4, FS._5];
 const fs36 = [FS._3, FS._4, FS._5, FS._6];
@@ -666,9 +675,28 @@ const subject = [...BaseState._5, ...fs68, ...ea35, ...sp46, ...delay13];
 
 const year2nd = [...allRunes, ...fs45, ...sp34, ...ea12, ...critical23, ...mhp34, ...shedding12, ...BaseState._1_3];
 
+const moraAtkType1 = [...atkPer13, ...fs13, ...str(1,3)]
+const moraAtkType2 = [...atkPer23, ...fs24, ...str(2,4)]
+const moraAtkType3 = [AtkPercent._3, ...fs36, ...str(3,5)]
+
+const moraSpellAbility1 = [MatkPercent._1, ...sp23, ...dex(2,3), ...int(2,3)]
+const moraSpellAbility2 = [...matk12, ...sp34, ...dex(3,4), ...int(3,4)]
+const moraSpellAbility3 = [...matk13, Spell._4, ...dex(3,5), ...int(3,5)]
+
+const maceOfJudge = [...dex(1,2), ...str(1,4), ...vit(1,2), AtkPercent._3]
+const robeOfJudge = [...dex(1,4), ...int(1,4), Str._4, Vit._1, AtkPercent._2, MatkPercent._2, Cri._5]
+const shawnOfJudge = [...dex(1,4), ...int(1,2), Vit._1]
+const shoeOfJudge = [...dex(2,4), ...int(1,2), AtkPercent._2]
+
 export const EnchantTable: EntTable[] = [
   { name: 'Lush_Rose', enchants: [null, null, BaseState._1_3, toyFactory] },
   { name: 'Celines_Ribbon', enchants: [null, null, BaseState._1_3, toyFactory] },
+
+  { name: 'Mace_Of_Judgement', enchants: [null, null, maceOfJudge, maceOfJudge] },
+  { name: 'Mace_Of_Judgement2', enchants: [null, [...moraAtkType3, ...moraSpellAbility3], [...moraAtkType2, ...moraSpellAbility2], [...moraAtkType1, ...moraSpellAbility1]] },
+  { name: 'Robe_Of_Judgement', enchants: [null, robeOfJudge, robeOfJudge, robeOfJudge] },
+  { name: 'Shawl_Of_Judgement', enchants: [null, shawnOfJudge, shawnOfJudge, shawnOfJudge] },
+  { name: 'Shoes_Of_Judgement', enchants: [null, shoeOfJudge, shoeOfJudge, shoeOfJudge] },
 
   { name: 'Dark_Rose', enchants: [null, null, malangdo, malangdo] },
   { name: 'Holy_Stick', enchants: [null, null, malangdo, malangdo] },
