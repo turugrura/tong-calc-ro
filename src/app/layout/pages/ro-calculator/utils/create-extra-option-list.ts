@@ -70,6 +70,61 @@ export const createExtraOptionList = () => {
     }),
   });
 
+  const peneList = [
+    { mainItemIdx: 0, label: 'เจาะกาย Race', prefixProp: 'p_pene_race_', properties: atkProps.Race },
+    { mainItemIdx: 0, label: 'เจาะกาย Class', prefixProp: 'p_pene_class_', properties: atkProps.Class },
+    { mainItemIdx: 1, label: 'เจาะเวท Race', prefixProp: 'm_pene_race_', properties: atkProps.Race },
+    { mainItemIdx: 1, label: 'เจาะเวท Class', prefixProp: 'm_pene_class_', properties: atkProps.Class },
+  ] as {
+    mainItemIdx: number;
+    label: string;
+    prefixProp: string;
+    properties: string[];
+  }[];
+  for (const { mainItemIdx, label, prefixProp, properties } of peneList) {
+    const VAL_CAP = 10;
+    const scale = 1;
+    const rawMin = 1;
+    const rawMax = 100;
+    const pre = mainItemIdx === 0 ? 'เจาะกาย' : 'เจาะเวท';
+
+    const children = [];
+    for (const prop of properties) {
+      const lower = prop.toLowerCase();
+      const values = [] as { label: string; min: number; max: number }[];
+      for (let i = rawMin; i < rawMax; i += VAL_CAP) {
+        const max = Math.min(i + VAL_CAP - 1, rawMax);
+        values.push({ label: `${i * scale} - ${max * scale}`, min: i, max: max });
+      }
+
+      children.push({
+        label: prop,
+        value: prop,
+        children: values.map((value) => {
+          const { label: label2, min, max } = value;
+
+          return {
+            label: `${prop} ${label2} %`,
+            value: label2,
+            children: Array.from({ length: max - min + 1 }, (_, k) => {
+              const num = k + min;
+              return {
+                label: `${pre} ${prop} ${num * scale} %`,
+                value: `${prefixProp}${lower}:${num * scale}`,
+              };
+            }),
+          };
+        }),
+      });
+    }
+
+    items.push({
+      label,
+      value: label,
+      children: children,
+    });
+  }
+
   const options: [string, string, number, number, number, string?][] = [
     ['Atk', 'atk', 1, 65, 1],
     ['Atk %', 'atkPercent', 1, 30, 1, ' %'],
