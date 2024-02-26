@@ -32,6 +32,9 @@ dependencies:
   '@angular/router':
     specifier: ^16.1.0
     version: 16.2.3(@angular/common@16.2.3)(@angular/core@16.2.3)(@angular/platform-browser@16.2.3)(rxjs@7.8.1)
+  '@auth0/angular-jwt':
+    specifier: ~5.2.0
+    version: 5.2.0(@angular/common@16.2.3)
   '@fullcalendar/angular':
     specifier: ^6.0.3
     version: 6.1.8(@angular/common@16.2.3)(@angular/core@16.2.3)(@fullcalendar/core@6.1.8)
@@ -630,6 +633,15 @@ packages:
   /@assemblyscript/loader@0.10.1:
     resolution: {integrity: sha512-H71nDOOL8Y7kWRLqf6Sums+01Q5msqBW2KhDUTemh1tvY04eSkSXrK0uj/4mmY0Xr16/3zyZmsrxN7CKuRbNRg==}
     dev: true
+
+  /@auth0/angular-jwt@5.2.0(@angular/common@16.2.3):
+    resolution: {integrity: sha512-9FS2L0QwGNlxA/zgeehCcsR9CZscouyXkoIj1fODM36A8BLfdzg9k9DWAXUQ2Drjk0AypGAFzeNZR4vsLMhdeQ==}
+    peerDependencies:
+      '@angular/common': '>=14.0.0'
+    dependencies:
+      '@angular/common': 16.2.3(@angular/core@16.2.3)(rxjs@7.8.1)
+      tslib: 2.6.2
+    dev: false
 
   /@babel/code-frame@7.22.13:
     resolution: {integrity: sha512-XktuhWlJ5g+3TJXc5upd9Ks1HutSArik6jf2eAjYFyIOf4ej3RN+184cZbzDvbPnuTJIUhPKKJE3cIsYTiAT3w==}

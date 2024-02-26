@@ -1,13 +1,15 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { LayoutService } from './service/app.layout.service';
 import { environment } from 'src/environments/environment';
+import { AuthService } from '../api-services';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-topbar',
   templateUrl: './app.topbar.component.html',
 })
-export class AppTopBarComponent {
+export class AppTopBarComponent implements OnInit, OnDestroy {
   items!: MenuItem[];
 
   @ViewChild('menubutton') menuButton!: ElementRef;
@@ -536,7 +538,28 @@ export class AppTopBarComponent {
 
   visibleUpdate = this.lastestVersion !== this.localVersion;
 
-  constructor(public layoutService: LayoutService) {}
+  username: string;
+
+  obs = [] as Subscription[];
+
+  constructor(public layoutService: LayoutService, private readonly authService: AuthService) {}
+
+  ngOnDestroy(): void {
+    for (const subscription of this.obs) {
+      subscription?.unsubscribe();
+    }
+  }
+
+  ngOnInit(): void {
+    const o = this.authService.profileEventObs$.subscribe((profile) => {
+      this.username = profile?.username;
+    });
+    this.obs.push(o);
+  }
+
+  logout() {
+    this.authService.logout();
+  }
 
   showDialog() {
     this.visible = true;

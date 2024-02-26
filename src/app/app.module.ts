@@ -5,12 +5,23 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppLayoutModule } from './layout/app.layout.module';
 import { RoService } from './demo/service/ro.service';
 import { PrettyJsonPipe } from './layout/prettier-json.pipe';
+import { ApiServiceModule } from './api-services';
+import { JwtModule } from '@auth0/angular-jwt';
 
 const customComponent = [PrettyJsonPipe];
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [AppRoutingModule, AppLayoutModule],
+  imports: [
+    AppRoutingModule,
+    AppLayoutModule,
+    ApiServiceModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: () => localStorage.getItem('accessToken'),
+      },
+    }),
+  ],
   providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }, RoService, ...customComponent],
   bootstrap: [AppComponent],
 })
