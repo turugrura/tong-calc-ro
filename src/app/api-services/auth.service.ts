@@ -1,87 +1,77 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { environment } from 'src/environments/environment';
-import { JwtModel, LoginResponse, Profile } from './models';
-import { ReplaySubject, of, tap } from 'rxjs';
+import { LoginResponse, Profile } from './models';
+import { ReplaySubject, of, switchMap, tap } from 'rxjs';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { BaseAPIService } from './base-api.service';
 
 @Injectable()
-export class AuthService {
-  private readonly BASE_URL = environment.roBackendUrl;
+export class AuthService extends BaseAPIService {
   private profileEvent = new ReplaySubject<Profile>(1);
   private profile: Profile;
   public profileEventObs$ = this.profileEvent.asObservable();
 
-  constructor(private readonly http: HttpClient, private readonly jwtHelper: JwtHelperService) {
-    this.storeProfile();
+  private loggedInSubject = new ReplaySubject<boolean>(1);
+  public loggedInEvent$ = this.loggedInSubject.asObservable();
+  public isLoggedIn = false;
+
+  constructor(protected readonly http: HttpClient, protected readonly jwtHelper: JwtHelperService) {
+    super();
+    this.getMyProfile().subscribe();
+    this.loggedInEvent$.subscribe((isLoggedIn) => (this.isLoggedIn = isLoggedIn));
   }
 
   login(authorizationCode: string) {
     this.profile = undefined;
 
-    return this.http.post<LoginResponse>(`${this.BASE_URL}/login`, { authorizationCode }).pipe(
+    return this.post<LoginResponse>(`${this.API.login}`, { authorizationCode }).pipe(
       tap((res) => this.storeToken(res)),
-      tap(() => this.storeProfile()),
+      switchMap(() => this.getMyProfile()),
     );
   }
 
   logout() {
-    this.profile = undefined;
-    const accessToken = this.jwtHelper.tokenGetter();
-    localStorage.removeItem('accessToken');
-    localStorage.removeItem('refreshToken');
-    this.storeProfile();
-
-    return this.http
-      .post<LoginResponse>(
-        `${this.BASE_URL}/me/logout`,
-        {},
-        {
-          headers: {
-            Authorization: `bearer ${accessToken}`,
-          },
-        },
-      )
-      .subscribe({
-        next: () => {
-          console.log('logout');
-        },
-        error: (err) => {
-          console.error({ err });
-        },
-      });
+    return this.post<LoginResponse>(`${this.API.logout}`, {}).subscribe({
+      next: () => {
+        console.log('logout');
+      },
+      error: (err) => {
+        console.error({ err });
+      },
+      complete: () => {
+        localStorage.removeItem('accessToken');
+        localStorage.removeItem('refreshToken');
+        this.storeProfile({} as any);
+        this.loggedInSubject.next(false);
+      },
+    });
   }
 
-  refreshToken() {
-    const refreshToken = this.getRfToken();
-    if (!refreshToken) return of(null);
+  getMyProfile() {
+    if (this.jwtHelper.isTokenExpired()) return of(null);
 
-    return this.http.post<LoginResponse>(`${this.BASE_URL}/refresh_token`, { refreshToken }).pipe(
-      tap((res) => this.storeToken(res)),
-      tap(() => this.storeProfile()),
+    const getProfileReq = this.get<Profile>(this.API.getMyProfile).pipe(
+      tap((res) => this.storeProfile(res)),
+      tap((res) => {
+        if (res?.id) {
+          this.loggedInSubject.next(true);
+        }
+      }),
     );
+
+    if (this.jwtHelper.isTokenExpired()) {
+      return this.refreshToken().pipe(switchMap(() => getProfileReq));
+    }
+
+    return getProfileReq;
   }
 
-  private storeProfile() {
-    const t = this.jwtHelper.decodeToken() as JwtModel;
-    this.profile = {
-      userId: t?.jti,
-      username: t?.iss,
-    };
-
+  private storeProfile(profile: Profile) {
+    this.profile = { ...profile };
     this.profileEvent.next(this.profile);
   }
 
   getProfile() {
     return this.profile;
-  }
-
-  private getRfToken() {
-    return localStorage.getItem('refreshToken');
-  }
-
-  private storeToken(res: LoginResponse) {
-    localStorage.setItem('accessToken', res.accessToken);
-    localStorage.setItem('refreshToken', res.refreshToken);
   }
 }

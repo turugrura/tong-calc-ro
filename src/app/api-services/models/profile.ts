@@ -1,4 +1,9 @@
 export interface Profile {
-  userId: string;
-  username: string;
+  id: string;
+  name: string;
+  email: string;
+  status: string;
+  role: string;
+  createdAt: string;
+  updatedAt: string;
 }

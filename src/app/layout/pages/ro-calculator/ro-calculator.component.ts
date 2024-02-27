@@ -1,5 +1,19 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { debounceTime, delay, filter, finalize, forkJoin, mergeMap, of, Subject, Subscription, take, tap } from 'rxjs';
+import {
+  debounceTime,
+  delay,
+  filter,
+  finalize,
+  forkJoin,
+  mergeMap,
+  Observable,
+  of,
+  Subject,
+  Subscription,
+  switchMap,
+  take,
+  tap,
+} from 'rxjs';
 import { BaseStateCalculator } from './base-state-calculator';
 import { Calculator } from './calculator';
 import {
@@ -67,6 +81,7 @@ import { ExtraOptionTable } from './constants/extra-option-table';
 import { ItemOptionNumber } from './constants/item-option-number.enum';
 import { SuperNovice } from './jobs/super-novice';
 import { WeaponTypeNameMapBySubTypeId } from './constants/weapon-type-mapper';
+import { AuthService, PresetService } from 'src/app/api-services';
 
 interface MonsterSelectItemGroup extends SelectItemGroup {
   items: any[];
@@ -107,8 +122,8 @@ const extraOptionList: [ItemTypeEnum, [ItemOptionNumber, ItemOptionNumber]][] = 
   [ItemTypeEnum.accRight, [ItemOptionNumber.A_Right_1, ItemOptionNumber.A_Right_2]],
 ];
 
-const waitRxjs = (second: number = 0.1) => {
-  return of(null).pipe(delay(1000 * second), take(1));
+const waitRxjs = <T>(second: number = 0.1, res = null as T) => {
+  return of(res).pipe(delay(1000 * second), take(1));
 };
 
 const positions: DropdownModel[] = [
@@ -426,12 +441,16 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   offensiveSkills: DropdownModel[] = [];
   selectedOffensiveSkills: string[] = [];
 
+  isLoggedIn = false;
+
   constructor(
     private roService: RoService,
     private messageService: MessageService,
     private confirmationService: ConfirmationService,
     private dialogService: DialogService,
     private readonly layoutService: LayoutService,
+    private readonly authService: AuthService,
+    private readonly presetService: PresetService,
   ) {}
 
   ngOnInit() {
@@ -613,6 +632,15 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         this.isCalculatingEvent.next(false);
       });
     this.allSubs.push(cObs);
+
+    const ob = this.authService.loggedInEvent$.pipe(delay(3 * 1000)).subscribe((isLoggedIn) => {
+      this.isLoggedIn = isLoggedIn;
+      if (isLoggedIn) {
+        this.confirmSync();
+        this.setPresetList();
+      }
+    });
+    this.allSubs.push(ob);
   }
 
   ngOnDestroy(): void {
@@ -1075,6 +1103,10 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     this.model = { ...createMainModel(), class: _class, level, jobLevel };
   }
 
+  private deleteLocalPresets() {
+    localStorage.removeItem('presets');
+  }
+
   private getPresetList(): DropdownModel[] {
     const presets = JSON.parse(localStorage.getItem('presets') || '[]') || [];
 
@@ -1086,7 +1118,24 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   }
 
   private setPresetList() {
-    this.preSets = this.getPresetList();
+    if (this.isLoggedIn) {
+      const ob = this.presetService.getMyPresets().pipe(
+        tap((presets) => {
+          if (presets) {
+            this.preSets = presets.map((p) => {
+              return {
+                label: p.label,
+                value: p.id,
+              };
+            });
+          }
+        }),
+      );
+
+      this.calAPIWithLoading(ob);
+    } else {
+      this.preSets = this.getPresetList();
+    }
   }
 
   private isMainItem(itemType: string) {
@@ -1095,6 +1144,35 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
   private isOptionableItem(itemType: string) {
     return OptionableItemTypeSet.has(itemType as any);
+  }
+
+  private waitConfirm(message: string, icon?: string) {
+    return new Promise((res) => {
+      this.confirmationService.confirm({
+        message: message,
+        header: 'Confirmation',
+        icon: icon || 'pi pi-exclamation-triangle',
+        accept: () => {
+          res(true);
+        },
+        reject: () => {
+          console.log('reject confirm');
+          res(false);
+        },
+      });
+    });
+  }
+
+  private calAPIWithLoading<T>(fn: Observable<T>) {
+    this.isInProcessingPreset = true;
+
+    return fn
+      .pipe(
+        finalize(() => {
+          this.isInProcessingPreset = false;
+        }),
+      )
+      .subscribe();
   }
 
   updatePreset(name: string) {
@@ -1170,6 +1248,46 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   }
 
   loadPreset(presetName?: string) {
+    if (this.isLoggedIn) {
+      const presetId = presetName || this.selectedPreset;
+      const pName = this.preSets.find((a) => a.value === presetId)?.label;
+
+      const ob = this.presetService.getPreset(presetId).pipe(
+        switchMap((preset) => {
+          if (preset) this.setModelByJSONString(preset.model);
+          return waitRxjs(0.1, preset);
+        }),
+        switchMap((preset) => {
+          if (preset) this.loadItemSet(true);
+
+          return waitRxjs(0.1, preset);
+        }),
+        switchMap((preset) => {
+          if (preset) {
+            this.messageService.add({
+              severity: 'success',
+              summary: 'Successed',
+              detail: `"${preset.label}" was loaded.`,
+            });
+          } else {
+            this.messageService.add({
+              severity: 'error',
+              summary: 'Failed',
+              detail: `Failed to load.`,
+            });
+          }
+
+          return waitRxjs(0.1);
+        }),
+      );
+
+      this.waitConfirm(`Load "${pName}" ?`).then((isConfirm) => {
+        if (isConfirm) this.calAPIWithLoading(ob);
+      });
+
+      return;
+    }
+
     const targePreset = presetName || this.selectedPreset;
     const selected = this.getPresetList().find((a) => a.value === targePreset);
     if (selected?.['model']) {
@@ -1192,8 +1310,8 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
               take(1),
               finalize(() => {
                 this.messageService.add({
-                  severity: 'info',
-                  summary: 'Confirmed',
+                  severity: 'success',
+                  summary: 'Successed',
                   detail: `"${targePreset}" was loaded.`,
                 });
                 this.isInProcessingPreset = false;
@@ -2327,5 +2445,52 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     this.selectedFilteredItem = undefined;
     this.activeFilteredItem = undefined;
     this.activeFilteredItemDesc = undefined;
+  }
+
+  confirmSync() {
+    const total = this.getPresetList().length;
+    if (total > 0) {
+      this.confirmationService.confirm({
+        message: `Sync ${total} presets to cloud ?`,
+        header: 'Confirmation',
+        icon: 'pi pi-exclamation-triangle',
+        accept: () => {
+          this.syncLocalPresetToCloud();
+        },
+      });
+    }
+  }
+
+  syncLocalPresetToCloud() {
+    if (!this.isLoggedIn) return;
+
+    const localPresets = this.getPresetList() as unknown as { value: string; model: typeof this.model }[];
+    if (localPresets.length === 0) return;
+
+    this.isInProcessingPreset = true;
+
+    this.presetService
+      .bulkCreatePresets({ bulkData: localPresets })
+      .pipe(
+        tap(() => {
+          this.deleteLocalPresets();
+          this.messageService.add({
+            severity: 'info',
+            summary: 'Confirmed',
+            detail: `Sync successed.`,
+          });
+
+          this.isInProcessingPreset = false;
+        }),
+      )
+      .subscribe((createdPresets) => {
+        this.preSets = createdPresets.map((a) => {
+          return {
+            label: a.label,
+            value: a.id,
+          };
+        });
+        console.log('preset sycned');
+      });
   }
 }

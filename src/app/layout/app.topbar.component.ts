@@ -552,7 +552,7 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     const o = this.authService.profileEventObs$.subscribe((profile) => {
-      this.username = profile?.username;
+      this.username = profile?.name;
     });
     this.obs.push(o);
   }

@@ -1,6 +1,22 @@
 <div class="grid grid-nogutter">
   <div class="col-3">
     <div class="grid grid-nogutter">
+      <div class="col-12" *ngIf="isLoggedIn">
+        <p-listbox
+          [options]="cloudPresets"
+          [(ngModel)]="selectedPreset"
+          [metaKeySelection]="false"
+          [listStyle]="{ 'max-height': '300px' }"
+          [disabled]="isProcessing"
+          (onChange)="onSelectPreset()"
+        >
+          <ng-template let-item pTemplate="item">
+            <div class="flex gap-1">
+              {{ item.label }}
+            </div>
+          </ng-template>
+        </p-listbox>
+      </div>
       <div class="col-fixed">
         <button
           type="button"
@@ -23,12 +39,23 @@
           (click)="deletePreset()"
         ></button>
       </div>
+      <div class="col-fixed" *ngIf="isLoggedIn">
+        <button
+          type="button"
+          class="p-button-success"
+          pButton
+          icon="pi pi-save"
+          label="Save To Cloud"
+          [disabled]="!selectedPreset || isProcessing"
+          (click)="saveToCloud()"
+        ></button>
+      </div>
       <div class="col-12">
         <p-listbox
           [options]="presets"
           [(ngModel)]="selectedPreset"
           [metaKeySelection]="false"
-          [listStyle]="{ 'max-height': '500px' }"
+          [listStyle]="{ 'max-height': '200px' }"
           (onChange)="onSelectPreset()"
         >
           <ng-template let-item pTemplate="item">
@@ -43,13 +70,13 @@
   <div class="col-9 pl-3">
     <div class="grid">
       <div class="col-fixed">
-        <span class="summary_highlight"> {{ classLabelMap[model?.class] }} </span>
+        <span class="summary_highlight font-xl"> {{ classLabelMap[model?.class] }} </span>
       </div>
       <div class="col-fixed">
-        Level: <span class="summary_highlight"> {{ model?.level }} </span>
+        Level: <span class="summary_highlight font-xl"> {{ model?.level }} </span>
       </div>
       <div class="col-fixed">
-        Job: <span class="summary_highlight"> {{ model?.jobLevel }} </span>
+        Job: <span class="summary_highlight font-xl"> {{ model?.jobLevel }} </span>
       </div>
       <div class="col-fixed">
         str: <span class="summary_stat_atk"> {{ model?.str }} </span>
