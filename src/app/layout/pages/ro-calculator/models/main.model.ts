@@ -7,22 +7,16 @@ export interface MainModel extends Partial<EquipmentModel> {
   jobLevel: number;
 
   str: number;
-  itemStr?: number;
   jobStr?: number;
   agi: number;
-  itemAgi?: number;
   jobAgi?: number;
   vit: number;
-  itemVit?: number;
   jobVit?: number;
   int: number;
-  itemInt?: number;
   jobInt?: number;
   dex: number;
-  itemDex?: number;
   jobDex?: number;
   luk: number;
-  itemLuk?: number;
   jobLuk?: number;
 
   selectedAtkSkill?: string;

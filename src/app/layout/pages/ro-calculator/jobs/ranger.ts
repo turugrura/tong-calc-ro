@@ -206,7 +206,7 @@ export class Ranger extends CharacterBase {
       label: 'Wind Walk 5',
       name: 'Wind Walk',
       dropdown: [
-        { label: 'Yes', value: 'Wind Walk==5', skillLv: 5, isUse: true, bonus: { flee: 5 } },
+        { label: 'Yes', value: 5, skillLv: 5, isUse: true, bonus: { flee: 5 } },
         { label: 'No', value: 0, isUse: false },
       ],
     },
@@ -216,13 +216,7 @@ export class Ranger extends CharacterBase {
       label: 'Falcon Eyes 10',
       name: 'Falcon Eyes',
       dropdown: [
-        {
-          label: 'Yes',
-          value: 'Falcon Eyes==10',
-          skillLv: 10,
-          isUse: true,
-          bonus: { flatDmg: 20, hit: 30, cri: 10, allStatus: 5 },
-        },
+        { label: 'Yes', value: 5, skillLv: 10, isUse: true, bonus: { flatDmg: 20, hit: 30, cri: 10, allStatus: 5 } },
         { label: 'No', value: 0, isUse: false },
       ],
     },

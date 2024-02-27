@@ -17,13 +17,7 @@ export class Archer extends CharacterBase {
       label: 'Improve 10',
       name: 'Improve Concentration',
       dropdown: [
-        {
-          label: 'Yes',
-          value: 'Improve Concentration==10',
-          skillLv: 10,
-          isUse: true,
-          bonus: { agiBoost: 12, dexBoost: 12 },
-        },
+        { label: 'Yes', value: 10, skillLv: 10, isUse: true, bonus: { agiBoost: 12, dexBoost: 12 } },
         { label: 'No', value: 0, isUse: false },
       ],
     },

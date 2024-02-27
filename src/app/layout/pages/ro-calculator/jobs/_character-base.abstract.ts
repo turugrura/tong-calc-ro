@@ -79,7 +79,7 @@ export interface AtkSkillModel {
 
 export interface SkillModel {
   label: string;
-  value: number | string;
+  value: number;
   /**
    * Determine whether the level is using skill or not
    */
