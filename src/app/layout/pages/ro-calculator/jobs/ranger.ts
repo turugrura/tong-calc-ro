@@ -216,7 +216,7 @@ export class Ranger extends CharacterBase {
       label: 'Falcon Eyes 10',
       name: 'Falcon Eyes',
       dropdown: [
-        { label: 'Yes', value: 5, skillLv: 10, isUse: true, bonus: { flatDmg: 20, hit: 30, cri: 10, allStatus: 5 } },
+        { label: 'Yes', value: 10, skillLv: 10, isUse: true, bonus: { flatDmg: 20, hit: 30, cri: 10, allStatus: 5 } },
         { label: 'No', value: 0, isUse: false },
       ],
     },

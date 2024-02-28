@@ -1,5 +1,8 @@
-const verifySyncPreset = (localPresets, createdPresets) => {
-  const map = new Map<string, typeof this.model>(localPresets.map((a) => [a.value, a.model]));
+import { RoPresetModel } from 'src/app/api-services';
+import { MainModel } from '../models/main.model';
+
+export const verifySyncPreset = (localPresets: any[], createdPresets: RoPresetModel[]) => {
+  const map = new Map<string, MainModel>(localPresets.map((a) => [a.value, a.model]));
 
   const successCreates = [] as { id: string; label: string }[];
   const failedCreates = [] as { label: string; errMessages: string[] }[];

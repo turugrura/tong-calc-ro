@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { Observable, catchError, of, tap } from 'rxjs';
+import { Observable, catchError, of, tap, throwError } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { LoginResponse } from './models';
 
@@ -70,7 +70,7 @@ export abstract class BaseAPIService {
     return ob.pipe(
       catchError((err) => {
         console.error({ err });
-        return of(null);
+        return throwError(() => err);
       }),
     );
   }
@@ -86,7 +86,23 @@ export abstract class BaseAPIService {
     return ob.pipe(
       catchError((err) => {
         console.error({ err });
-        return of(null);
+        return throwError(() => err);
+      }),
+    );
+  }
+
+  protected delete<T = any>(url: string, includeAuth = true) {
+    let ob: Observable<T>;
+    if (includeAuth) {
+      ob = this.http.delete<T>(url, this.getAuthHeaders());
+    } else {
+      ob = this.http.delete<T>(url);
+    }
+
+    return ob.pipe(
+      catchError((err) => {
+        console.error({ err });
+        return throwError(() => err);
       }),
     );
   }

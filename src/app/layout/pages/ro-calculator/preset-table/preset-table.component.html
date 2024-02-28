@@ -1,14 +1,36 @@
 <div class="grid grid-nogutter">
   <div class="col-3">
     <div class="grid grid-nogutter">
+      <div class="col-fixed" *ngIf="isLoggedIn">
+        <button
+          type="button"
+          class="p-button-help"
+          pButton
+          icon="pi pi-download"
+          label="Load"
+          [disabled]="!selectedCloudPreset"
+          (click)="onLoadPresetClick()"
+        ></button>
+      </div>
+      <div class="col-fixed" *ngIf="isLoggedIn">
+        <button
+          type="button"
+          class="p-button-danger"
+          pButton
+          icon="pi pi-trash"
+          label="Delete"
+          [disabled]="!selectedCloudPreset"
+          (click)="deletePreset()"
+        ></button>
+      </div>
       <div class="col-12" *ngIf="isLoggedIn">
         <p-listbox
           [options]="cloudPresets"
-          [(ngModel)]="selectedPreset"
+          [(ngModel)]="selectedCloudPreset"
           [metaKeySelection]="false"
-          [listStyle]="{ 'max-height': '300px' }"
+          [listStyle]="{ 'max-height': presets.length > 0 ? '300px' : '500px' }"
           [disabled]="isProcessing"
-          (onChange)="onSelectPreset()"
+          (onChange)="onSelectPreset(false)"
         >
           <ng-template let-item pTemplate="item">
             <div class="flex gap-1">
@@ -17,7 +39,7 @@
           </ng-template>
         </p-listbox>
       </div>
-      <div class="col-fixed">
+      <div class="col-fixed" *ngIf="presets.length > 0">
         <button
           type="button"
           class="p-button-help"
@@ -28,7 +50,7 @@
           (click)="onLoadPresetClick()"
         ></button>
       </div>
-      <div class="col-fixed">
+      <div class="col-fixed" *ngIf="presets.length > 0">
         <button
           type="button"
           class="p-button-danger"
@@ -39,7 +61,7 @@
           (click)="deletePreset()"
         ></button>
       </div>
-      <div class="col-fixed" *ngIf="isLoggedIn">
+      <div class="col-fixed" *ngIf="isLoggedIn && presets.length > 0">
         <button
           type="button"
           class="p-button-success"
@@ -50,13 +72,13 @@
           (click)="saveToCloud()"
         ></button>
       </div>
-      <div class="col-12">
+      <div class="col-12" *ngIf="presets.length > 0">
         <p-listbox
           [options]="presets"
           [(ngModel)]="selectedPreset"
           [metaKeySelection]="false"
-          [listStyle]="{ 'max-height': '200px' }"
-          (onChange)="onSelectPreset()"
+          [listStyle]="{ 'max-height': isLoggedIn ? '200px' : '500px' }"
+          (onChange)="onSelectPreset(true)"
         >
           <ng-template let-item pTemplate="item">
             <div class="flex gap-1">

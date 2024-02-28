@@ -3,8 +3,8 @@ import { DynamicDialogConfig, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { ItemTypeEnum } from '../constants/item-type.enum';
 import { ClassID } from '../jobs/_class-name';
 import { ConfirmationService, MessageService } from 'primeng/api';
-import { AuthService, PresetService } from 'src/app/api-services';
-import { finalize, of, switchMap, tap } from 'rxjs';
+import { AuthService, EntirePresetWithTagsModel, PresetService } from 'src/app/api-services';
+import { Subscription, finalize, of, switchMap, tap } from 'rxjs';
 
 const displayMainItemKeys = [
   ItemTypeEnum.weapon,
@@ -53,10 +53,14 @@ export class PresetTableComponent implements OnInit, OnDestroy {
   displayShadowItems = [] as any[];
   classLabelMap = ClassID;
 
-  cloudPresets: any[] = [];
+  cloudPresets: (EntirePresetWithTagsModel & { value: string })[] = [];
   items = this.dynamicDialogConfig.data.items;
+
+  subs: Subscription;
   isLoggedIn = this.authService.isLoggedIn;
   isProcessing = false;
+
+  selectedCloudPreset = undefined;
 
   constructor(
     private messageService: MessageService,
@@ -68,14 +72,16 @@ export class PresetTableComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnDestroy(): void {
-    console.log('ngOnDestroy');
+    if (typeof this.subs?.unsubscribe === 'function') {
+      this.subs.unsubscribe();
+    }
   }
 
   ngOnInit() {
     this.setPresetList();
-    this.selectedPreset = this.presets[0]?.value;
-    this.onSelectPreset();
-    this.loadFromCloud(false).subscribe();
+    this.subs = this.authService.loggedInEvent$.subscribe((isLoggedIn) => {
+      this.isLoggedIn = isLoggedIn;
+    });
   }
 
   private getPresets() {
@@ -83,15 +89,20 @@ export class PresetTableComponent implements OnInit, OnDestroy {
   }
 
   private setPresetList() {
-    this.presets = this.getPresets();
+    if (this.isLoggedIn) {
+      this.loadFromCloud(false).subscribe();
+    } else {
+      this.presets = this.getPresets();
+    }
   }
 
-  onSelectPreset() {
-    const local = this.presets.find((a) => a.value === this.selectedPreset);
-    if (local) {
-      this.model = local.model || {};
+  onSelectPreset(isLocal: boolean) {
+    if (isLocal) {
+      this.selectedCloudPreset = undefined;
+      this.model = this.presets.find((a) => a.value === this.selectedPreset)?.model || {};
     } else {
-      this.model = this.cloudPresets.find((a) => a.id === this.selectedPreset)?.model || {};
+      this.selectedPreset = undefined;
+      this.model = this.cloudPresets.find((a) => a.id === this.selectedCloudPreset)?.model || {};
     }
 
     this.displayMainItems = displayMainItemKeys
@@ -165,58 +176,67 @@ export class PresetTableComponent implements OnInit, OnDestroy {
   }
 
   onLoadPresetClick() {
-    this.dynamicDialogConfig.data.loadPresetFn(this.selectedPreset);
+    if (this.isLoggedIn) {
+      if (this.selectedCloudPreset) this.dynamicDialogConfig.data.loadPresetFn(this.selectedCloudPreset);
+    } else {
+      if (this.selectedPreset) this.dynamicDialogConfig.data.loadPresetFn(this.selectedPreset);
+    }
   }
 
   getItemLabel(itemId: number) {
     return this.items[itemId]?.name || 'empty';
   }
 
-  removePreset() {
-    const preSets = this.getPresets();
-    const removedSets = preSets.filter((a) => a.value !== this.selectedPreset);
-    this.dynamicDialogConfig.data.savePresetListFn(removedSets);
-    this.dynamicDialogConfig.data.setPresetListFn();
-    this.presets = removedSets;
-    this.model = {};
-  }
-
-  deletePreset() {
-    this.confirmationService.confirm({
-      message: `Delete "${this.selectedPreset}" ?`,
-      header: 'Confirmation',
-      icon: 'pi pi-exclamation-triangle',
-      accept: () => {
-        // this.isInProcessingPreset = true;
-        this.removePreset();
+  removePreset(targetPresetLabel: string, isMoveLocalToCloud = false) {
+    if (this.isLoggedIn && !isMoveLocalToCloud) {
+      this.isProcessing = true;
+      this.presetService.deletePreset(this.selectedCloudPreset).subscribe(() => {
+        this.cloudPresets = this.cloudPresets.filter((a) => a.id !== this.selectedCloudPreset);
+        this.model = {};
+        this.dynamicDialogConfig.data.removePresetFromListFn(this.selectedCloudPreset);
+        this.selectedCloudPreset = undefined;
 
         this.messageService.add({
           severity: 'error',
-          summary: `"${this.selectedPreset}" was deleted`,
+          summary: `"${targetPresetLabel}" was deleted`,
         });
-        this.selectedPreset = '';
 
-        // waitRxjs(0.2)
-        //   .pipe(
-        //     tap(() => {
-        //       const preSets = this.getPresets();
-        //       const removedSets = preSets.filter((a) => a.value !== value || this.selectedPreset);
-        //       this.dynamicDialogConfig.data.savePresetListFn(removedSets);
-        //     }),
-        //     delay(200),
-        //     tap(() => this.setPresetList()),
-        //     finalize(() => {
-        //       this.messageService.add({
-        //         severity: 'error',
-        //         summary: `"${value || this.selectedPreset}" was deleted`,
-        //       });
-        //       this.selectedPreset = '';
-        //       // this.isInProcessingPreset = false;
-        //     }),
-        //   )
-        //   .subscribe();
+        this.onSelectPreset(false);
+        this.isProcessing = false;
+      });
+    } else {
+      const preSets = this.getPresets();
+      const removedSets = preSets.filter((a) => a.value !== this.selectedPreset);
+      this.dynamicDialogConfig.data.savePresetListFn(removedSets);
+      this.dynamicDialogConfig.data.setPresetListFn();
+      this.presets = removedSets;
+      this.model = {};
+      this.selectedPreset = undefined;
 
-        // this.isInProcessingPreset = false;
+      if (!isMoveLocalToCloud) {
+        this.messageService.add({
+          severity: 'error',
+          summary: `"${targetPresetLabel}" was deleted`,
+        });
+      }
+
+      this.onSelectPreset(true);
+    }
+  }
+
+  deletePreset() {
+    let targetPreset = this.selectedPreset || this.selectedCloudPreset;
+    if (this.isLoggedIn) {
+      const name = this.cloudPresets.find((a) => a.id === targetPreset)?.label;
+      if (name) targetPreset = name;
+    }
+
+    this.confirmationService.confirm({
+      message: `Delete "${targetPreset}" ?`,
+      header: 'Confirmation',
+      icon: 'pi pi-exclamation-triangle',
+      accept: () => {
+        this.removePreset(targetPreset);
       },
     });
   }
@@ -235,13 +255,12 @@ export class PresetTableComponent implements OnInit, OnDestroy {
 
     return this.presetService.getEntirePresets().pipe(
       tap((res) => {
-        this.cloudPresets = (res as any[]).map((a) => {
+        this.cloudPresets = res.map((a) => {
           return {
             ...a,
             value: a.id,
           };
         });
-        console.log({ res });
       }),
       finalize(() => {
         if (!isInOtherProcessing) this.isProcessing = false;
@@ -265,8 +284,7 @@ export class PresetTableComponent implements OnInit, OnDestroy {
       )
       .subscribe(() => {
         this.showMoveToCloudSuccess();
-        this.removePreset();
-        this.selectedPreset = '';
+        this.removePreset(this.selectedPreset);
       });
   }
 }

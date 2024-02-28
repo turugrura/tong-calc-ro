@@ -22,11 +22,19 @@ export class PresetService extends BaseAPIService {
     return this.get<GetMyEntirePresetsResponse>(`${this.API.getMyEntirePreset}`);
   }
 
-  createPreset(preset: any) {
+  createPreset(preset: Pick<RoPresetModel, 'label' | 'model'>) {
     return this.post<RoPresetModel>(`${this.API.createMyPreset}`, preset);
   }
 
   bulkCreatePresets(bulkPreset: { bulkData: any[] }) {
     return this.post<RoPresetModel[]>(`${this.API.bulkCreateMyPresets}`, bulkPreset);
+  }
+
+  updatePreset(id: string, preset: Pick<RoPresetModel, 'label' | 'model'>) {
+    return this.post<RoPresetModel>(`${this.API.getMyPreset}/${id}`, preset);
+  }
+
+  deletePreset(id: string) {
+    return this.delete<RoPresetModel>(`${this.API.getMyPreset}/${id}`);
   }
 }
