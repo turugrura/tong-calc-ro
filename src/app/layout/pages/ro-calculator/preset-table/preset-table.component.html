@@ -1,7 +1,7 @@
 <div class="grid grid-nogutter">
   <div class="col-3">
     <div class="grid grid-nogutter">
-      <div class="col-fixed" *ngIf="isLoggedIn">
+      <div class="col-fixed mr-2" *ngIf="isLoggedIn">
         <button
           type="button"
           class="p-button-help"
@@ -12,7 +12,7 @@
           (click)="onLoadPresetClick()"
         ></button>
       </div>
-      <div class="col-fixed" *ngIf="isLoggedIn">
+      <div class="col-fixed mr-2" *ngIf="isLoggedIn">
         <button
           type="button"
           class="p-button-danger"
@@ -24,16 +24,38 @@
         ></button>
       </div>
       <div class="col-12" *ngIf="isLoggedIn">
+        <div class="p-inputgroup">
+          <input
+            #presetName
+            autocomplete="off"
+            type="text"
+            [value]="presetInfo?.label"
+            pInputText
+            placeholder="preset name"
+          />
+          <button
+            type="button"
+            class="p-button-info"
+            pButton
+            icon="pi pi-file-edit"
+            label="Rename"
+            [disabled]="!selectedCloudPreset || !presetName.value"
+            (click)="onRenamePresetClick(presetName.value)"
+          ></button>
+        </div>
+      </div>
+      <div class="col-12" *ngIf="isLoggedIn">
         <p-listbox
           [options]="cloudPresets"
           [(ngModel)]="selectedCloudPreset"
           [metaKeySelection]="false"
-          [listStyle]="{ 'max-height': presets.length > 0 ? '300px' : '500px' }"
+          [listStyle]="{ height: presets.length > 0 ? '350px' : '550px' }"
           [disabled]="isProcessing"
           (onChange)="onSelectPreset(false)"
         >
           <ng-template let-item pTemplate="item">
-            <div class="flex gap-1">
+            <div class="flex align-items-center gap-1">
+              <i *ngIf="item.isPublished" class="pi pi-send"></i>
               {{ item.label }}
             </div>
           </ng-template>
@@ -77,7 +99,7 @@
           [options]="presets"
           [(ngModel)]="selectedPreset"
           [metaKeySelection]="false"
-          [listStyle]="{ 'max-height': isLoggedIn ? '200px' : '500px' }"
+          [listStyle]="{ 'max-height': isLoggedIn ? '200px' : '550px' }"
           (onChange)="onSelectPreset(true)"
         >
           <ng-template let-item pTemplate="item">
@@ -90,33 +112,113 @@
     </div>
   </div>
   <div class="col-9 pl-3">
+    <div class="grid grid-nogutter" *ngIf="isLoggedIn">
+      <div class="col-3 text-lg font-semibold">
+        Updated at: <span class="text-primary-300"> {{ presetInfo?.updatedAt | date : 'dd-MM-yyyy HH:mm' }} </span>
+      </div>
+      <div class="col-3 text-lg font-semibold" *ngIf="isSharedPreset">
+        Shared at: <span class="text-primary-300"> {{ presetInfo?.publishedAt | date : 'dd-MM-yyyy HH:mm' }} </span
+        ><br />
+      </div>
+      <div class="col-6" *ngIf="isLoggedIn">
+        <div class="p-inputgroup">
+          <input
+            #sharedName
+            [autocomplete]="false"
+            autocomplete="off"
+            type="text"
+            pInputText
+            placeholder="Shared name"
+          />
+          <button
+            type="button"
+            class="p-button-info"
+            pButton
+            icon="pi pi-send"
+            label="Share"
+            [disabled]="!selectedCloudPreset || !sharedName.value || isSharedPreset"
+            (click)="sharePreset(sharedName.value)"
+          ></button>
+        </div>
+      </div>
+      <div class="col-12 text-lg font-semibold" *ngIf="isSharedPreset">
+        Shared name: <span class="text-primary-300"> {{ presetInfo?.publishName }} </span>
+      </div>
+      <div class="col-12">
+        <div class="grid p-fluid grid-nogutter" *ngIf="isSharedPreset">
+          <div class="col">
+            <p-multiSelect
+              [options]="availableTags"
+              [(ngModel)]="selectedTags"
+              [showClear]="true"
+              [showHeader]="false"
+              [showToggleAll]="false"
+              selectedItemsLabel="{0} tags selected"
+              placeholder="Available tags"
+              [maxSelectedLabels]="10"
+            >
+              <ng-template let-tags pTemplate="selectedItems">
+                <div *ngIf="!tags || tags.length === 0">Select Tags</div>
+                <div>
+                  <div class="inline-flex align-items-center gap-2 px-1" *ngFor="let tag of tags">
+                    <p-tag
+                      value="{{ tagSeverityMap[tag]?.label }}"
+                      severity="{{ tagSeverityMap[tag]?.severity }}"
+                      styleClass="text-base py-0"
+                    ></p-tag>
+                  </div>
+                </div>
+              </ng-template>
+            </p-multiSelect>
+          </div>
+          <div class="col-fixed">
+            <button
+              type="button"
+              class="p-button-warning"
+              pButton
+              icon="pi pi-tags"
+              label="Tag"
+              [disabled]="!selectedCloudPreset"
+              (click)="addTags()"
+            ></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid my-2">
+      <div class="col-12 py-1 divider">
+        <p-divider></p-divider>
+      </div>
+    </div>
+
     <div class="grid">
       <div class="col-fixed">
-        <span class="summary_highlight font-xl"> {{ classLabelMap[model?.class] }} </span>
+        <span class="summary_highlight text-xl"> {{ classLabelMap[model?.class] }} </span>
       </div>
       <div class="col-fixed">
-        Level: <span class="summary_highlight font-xl"> {{ model?.level }} </span>
+        Level: <span class="summary_highlight text-xl"> {{ model?.level }} </span>
       </div>
       <div class="col-fixed">
-        Job: <span class="summary_highlight font-xl"> {{ model?.jobLevel }} </span>
+        Job: <span class="summary_highlight text-xl"> {{ model?.jobLevel }} </span>
       </div>
       <div class="col-fixed">
-        str: <span class="summary_stat_atk"> {{ model?.str }} </span>
+        Str: <span class="summary_stat_atk text-xl"> {{ model?.str }} </span>
       </div>
       <div class="col-fixed">
-        int: <span class="summary_stat_matk"> {{ model?.int }} </span>
+        Int: <span class="summary_stat_matk text-xl"> {{ model?.int }} </span>
       </div>
       <div class="col-fixed">
-        dex: <span class="summary_stat_atk" style="color: var(--green-300)"> {{ model?.dex }} </span>
+        Dex: <span class="summary_stat_atk text-xl" style="color: var(--green-300)"> {{ model?.dex }} </span>
       </div>
       <div class="col-fixed">
-        agi: <span class="summary_stat_def"> {{ model?.agi }} </span>
+        Agi: <span class="summary_stat_def text-xl"> {{ model?.agi }} </span>
       </div>
       <div class="col-fixed">
-        vit: <span class="summary_stat_def"> {{ model?.vit }} </span>
+        Vit: <span class="summary_stat_def text-xl"> {{ model?.vit }} </span>
       </div>
       <div class="col-fixed">
-        luk: <span class="summary_stat_def"> {{ model?.luk }} </span>
+        Luk: <span class="summary_stat_def text-xl"> {{ model?.luk }} </span>
       </div>
     </div>
 

@@ -127,48 +127,6 @@ const waitRxjs = <T>(second: number = 0.1, res = null as T) => {
   return of(res).pipe(delay(1000 * second), take(1));
 };
 
-const waitSyncChain = () => {
-  const fns = [] as (() => any)[];
-  const chainFn = (fn?: () => any) => {
-    if (typeof fn === 'function') fns.push(fn);
-    return {
-      then: chainFn,
-      exe: <T = any>(final?: T) => {
-        // const x = [] as OperatorFunction<any, any>[];
-        const s = waitRxjs(0.1, final);
-        for (const f of fns) {
-          // x.push(switchMap(() => {
-          //   f()
-          //   return waitRxjs()
-          // }))
-          // x.push(f)
-          s.pipe(
-            switchMap(() => {
-              f();
-              return waitRxjs(0.1, final);
-            }),
-          );
-        }
-        console.log('pipes', fns.length);
-        return s;
-      },
-    };
-  };
-
-  return chainFn();
-};
-waitSyncChain()
-  .then(() => {
-    //
-  })
-  .then(() => {
-    //
-  })
-  .then(() => {
-    //
-  })
-  .exe();
-
 const positions: DropdownModel[] = [
   { value: 'weaponList', label: 'Weapon' },
   { value: 'weaponCardList', label: 'Weapon Card' },

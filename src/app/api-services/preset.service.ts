@@ -2,7 +2,14 @@ import { Injectable } from '@angular/core';
 import { BaseAPIService } from './base-api.service';
 import { HttpClient } from '@angular/common/http';
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { GetMyEntirePresetsResponse, GetMyPresetsResponse, RoPresetModel } from './models';
+import {
+  BulkOperationRequest,
+  GetMyEntirePresetsResponse,
+  GetMyPresetsResponse,
+  PresetWithTagsModel,
+  PublishPresetsReponse,
+  RoPresetModel,
+} from './models';
 
 @Injectable()
 export class PresetService extends BaseAPIService {
@@ -30,11 +37,44 @@ export class PresetService extends BaseAPIService {
     return this.post<RoPresetModel[]>(`${this.API.bulkCreateMyPresets}`, bulkPreset);
   }
 
-  updatePreset(id: string, preset: Pick<RoPresetModel, 'label' | 'model'>) {
+  updatePreset(id: string, preset: Partial<Pick<RoPresetModel, 'label' | 'model'>>) {
     return this.post<RoPresetModel>(`${this.API.getMyPreset}/${id}`, preset);
   }
 
   deletePreset(id: string) {
     return this.delete<RoPresetModel>(`${this.API.getMyPreset}/${id}`);
+  }
+
+  sharePreset(id: string, body: { publishName: string }) {
+    return this.post<PresetWithTagsModel>(`${this.API.getMyPreset}/${id}/publish`, body);
+  }
+
+  unsharePreset(id: string) {
+    return this.delete<Omit<RoPresetModel, 'model'>>(`${this.API.getMyPreset}/${id}/publish`);
+  }
+
+  addPresetTags(id: string, body: BulkOperationRequest) {
+    return this.post<PresetWithTagsModel>(`${this.API.getMyPreset}/${id}/tags`, body);
+  }
+
+  removePresetTag(params: { presetId: string; tagId: string }) {
+    const { presetId, tagId } = params;
+
+    return this.delete<Omit<RoPresetModel, 'model'>>(`${this.API.getMyPreset}/${presetId}/tags/${tagId}`);
+  }
+
+  likePresetTags(tagId: string) {
+    return this.post<Omit<RoPresetModel, 'model'>>(`${this.API.likePresetTags}/${tagId}/like`, {});
+  }
+
+  unlikePresetTag(tagId: string) {
+    return this.delete<Omit<RoPresetModel, 'model'>>(`${this.API.likePresetTags}/${tagId}/like`);
+  }
+
+  getPublishPresets(params: { classId: number; tagId: number; skip: number; take: number }) {
+    const { classId, tagId, skip, take } = params;
+    return this.get<PublishPresetsReponse>(
+      `${this.API.base}/class_by_tags/${classId}/${tagId}?skip=${skip || 0}&take=${take || 1}`,
+    );
   }
 }

@@ -24,6 +24,8 @@ export abstract class BaseAPIService {
     getMyPresets: `${BASE_URL}/me/ro_presets`,
     createMyPreset: `${BASE_URL}/me/ro_presets`,
     bulkCreateMyPresets: `${BASE_URL}/me/bulk_ro_presets`,
+
+    likePresetTags: `${BASE_URL}/preset_tags`,
   } as const;
 
   protected abstract readonly http: HttpClient;

@@ -10,3 +10,5 @@ export * from './get-my-presets.response';
 export * from './ro-preset-model';
 export * from './get-my-entire-presets.response';
 export * from './entire-preset-with-tags-model';
+export * from './published-presets.response';
+export * from './bulk-operation-tags.request';
