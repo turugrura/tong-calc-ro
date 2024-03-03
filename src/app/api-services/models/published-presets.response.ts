@@ -1,10 +1,7 @@
-import { RoPresetModel } from './ro-preset-model';
+import { PublishPresetModel } from './publish-preset-model';
 
 export interface PublishPresetsReponse {
-  items: (Pick<RoPresetModel, 'id' | 'publishName' | 'model' | 'createdAt'> & {
-    tags: Record<string, number>;
-    liked: boolean;
-  })[];
+  items: PublishPresetModel[];
   totalItem: number;
   skip: number;
   take: number;

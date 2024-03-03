@@ -11,6 +11,7 @@ import {
   RoPresetModel,
 } from 'src/app/api-services';
 import { Observable, Subscription, catchError, finalize, of, switchMap, tap } from 'rxjs';
+import { availableTags, tagSeverityMap } from '../constants/available-tags';
 
 const displayMainItemKeys = [
   ItemTypeEnum.weapon,
@@ -44,23 +45,6 @@ const displayShadowItemKeys = [
   ItemTypeEnum.shadowEarring,
   ItemTypeEnum.shadowPendant,
 ];
-
-const availableTags = [
-  { value: 'leveling_100_to_150', label: 'Leveling 100-150', severity: 'info' },
-  { value: 'leveling_150_to_170', label: 'Leveling 150-170', severity: 'info' },
-  { value: 'leveling_170_to_185', label: 'Leveling 170-185', severity: 'info' },
-  { value: 'leveling_185_to_192', label: 'Leveling 185-192', severity: 'info' },
-  { value: 'leveling_192_to_200', label: 'Leveling 192-200', severity: 'info' },
-  { value: 'lab_5', label: 'Lab 5', severity: 'warning' },
-  { value: 'boss', label: 'BOSS', severity: 'danger' },
-  { value: 'boss_lab', label: 'Boss Lab', severity: 'danger' },
-] as const;
-
-const tagSeverityMap = availableTags.reduce<Record<string, any>>((pre, cur) => {
-  pre[cur.value] = cur;
-
-  return pre;
-}, {});
 
 @Component({
   selector: 'app-preset-table',
@@ -185,12 +169,13 @@ export class PresetTableComponent implements OnInit, OnDestroy {
     const preset = this.getCurrentPreset() as (typeof this.cloudPresets)[0];
     if (!preset) return;
 
-    this.waitConfirm(`Want to rename "${preset.label}" to "${newName}" ?`).then((isConfirm) => {
+    const name = newName.substring(0, 100);
+    this.waitConfirm(`Want to rename "${preset.label}" to "${name}" ?`).then((isConfirm) => {
       if (!isConfirm) return;
 
       const ob = this.presetService
         .updatePreset(preset.id, {
-          label: newName,
+          label: name,
         })
         .pipe(
           tap((updatedPreset) => {
@@ -198,7 +183,7 @@ export class PresetTableComponent implements OnInit, OnDestroy {
           }),
         );
 
-      this.calAPIWithLoading(ob, `"${preset.label}" was renamed to "${newName}"`);
+      this.calAPIWithLoading(ob, `"${preset.label}" was renamed.`);
     });
   }
 
@@ -374,7 +359,27 @@ export class PresetTableComponent implements OnInit, OnDestroy {
           }),
         );
 
-      this.calAPIWithLoading(ob, `"${preset.label}" was shared`);
+      this.calAPIWithLoading(ob, `"${preset.label}" was share`);
+    });
+  }
+
+  unsharePreset() {
+    const preset = this.cloudPresets.find((a) => a.id === this.selectedCloudPreset);
+    if (!preset || !preset.isPublished) return;
+
+    this.waitConfirm(`Cancel sharing "${preset.label}" ?`).then((isConfirm) => {
+      if (!isConfirm) return;
+
+      const ob = this.presetService.unsharePreset(preset.id).pipe(
+        tap((sharedPreset) => {
+          preset.publishName = sharedPreset.publishName;
+          preset.isPublished = sharedPreset.isPublished;
+          preset.publishedAt = sharedPreset.publishedAt;
+          this.isSharedPreset = false;
+        }),
+      );
+
+      this.calAPIWithLoading(ob, `Sharing "${preset.label}" was cancel`);
     });
   }
 

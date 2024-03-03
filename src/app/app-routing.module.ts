@@ -15,6 +15,15 @@ import { AppLayoutComponent } from './layout/app.layout.component';
               loadChildren: () =>
                 import('./layout/pages/ro-calculator/ro-calculator.module').then((m) => m.RoCalculatorModule),
             },
+            {
+              path: 'shared-presets',
+              loadChildren: () =>
+                import('./layout/pages/shared-preset/shared-preset.module').then((m) => m.SharedPresetModule),
+            },
+            {
+              path: '**',
+              redirectTo: '',
+            },
           ],
         },
         {

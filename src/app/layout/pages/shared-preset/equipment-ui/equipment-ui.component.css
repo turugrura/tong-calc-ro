@@ -1,0 +1,56 @@
+.main_left_item .item_img {
+  margin-left: 7px;
+}
+
+.main_left_item .text_ellips {
+  width: 10rem;
+  height: 37px;
+  overflow: hidden;
+  text-align: left;
+}
+
+.main_right_item .item_img {
+  margin-right: 5px;
+}
+
+.main_right_item .text_ellips {
+  width: 9rem;
+  height: 37px;
+  overflow: hidden;
+  text-align: left;
+}
+
+.shadow_left_item .item_img {
+  margin-left: 7px;
+}
+
+.shadow_left_item .text_ellips {
+  width: 10rem;
+  height: 37px;
+  overflow: hidden;
+  text-align: left;
+}
+
+.shadow_right_item .item_img {
+  margin-right: 5px;
+}
+
+.shadow_right_item .text_ellips {
+  width: 9rem;
+  height: 37px;
+  overflow: hidden;
+  text-align: left;
+}
+
+.item_img {
+  height: fit-content;
+  width: 37px;
+}
+
+.equipmentTable {
+  width: 450px;
+  height: 209px;
+  background-image: Url(https://www.divine-pride.net/Content/basic_interface/equipwin_bg.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}

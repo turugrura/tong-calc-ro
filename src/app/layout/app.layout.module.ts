@@ -20,6 +20,9 @@ import { AppLayoutComponent } from './app.layout.component';
 import { ButtonModule } from 'primeng/button';
 import { DialogModule } from 'primeng/dialog';
 import { ChipModule } from 'primeng/chip';
+import { TabMenuModule } from 'primeng/tabmenu';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ToastModule } from 'primeng/toast';
 
 @NgModule({
   declarations: [
@@ -46,6 +49,9 @@ import { ChipModule } from 'primeng/chip';
     ButtonModule,
     DialogModule,
     ChipModule,
+    TabMenuModule,
+    ConfirmDialogModule,
+    ToastModule,
   ],
   exports: [AppLayoutComponent],
 })

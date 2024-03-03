@@ -6,6 +6,7 @@ import {
   BulkOperationRequest,
   GetMyEntirePresetsResponse,
   GetMyPresetsResponse,
+  LikeTagResponse,
   PresetWithTagsModel,
   PublishPresetsReponse,
   RoPresetModel,
@@ -64,17 +65,17 @@ export class PresetService extends BaseAPIService {
   }
 
   likePresetTags(tagId: string) {
-    return this.post<Omit<RoPresetModel, 'model'>>(`${this.API.likePresetTags}/${tagId}/like`, {});
+    return this.post<LikeTagResponse>(`${this.API.likePresetTags}/${tagId}/like`, {});
   }
 
   unlikePresetTag(tagId: string) {
-    return this.delete<Omit<RoPresetModel, 'model'>>(`${this.API.likePresetTags}/${tagId}/like`);
+    return this.delete<LikeTagResponse>(`${this.API.likePresetTags}/${tagId}/like`);
   }
 
-  getPublishPresets(params: { classId: number; tagId: number; skip: number; take: number }) {
-    const { classId, tagId, skip, take } = params;
+  getPublishPresets(params: { classId: number; tagName: string; skip: number; take: number }) {
+    const { classId, tagName, skip, take } = params;
     return this.get<PublishPresetsReponse>(
-      `${this.API.base}/class_by_tags/${classId}/${tagId}?skip=${skip || 0}&take=${take || 1}`,
+      `${this.API.sharedPresets}/class_by_tags/${classId}/${tagName}?skip=${skip || 0}&take=${take || 1}`,
     );
   }
 }

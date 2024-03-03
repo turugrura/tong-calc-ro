@@ -1,16 +1,34 @@
 import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { MenuItem } from 'primeng/api';
+import { ConfirmationService, MenuItem, MessageService } from 'primeng/api';
 import { LayoutService } from './service/app.layout.service';
 import { environment } from 'src/environments/environment';
 import { AuthService } from '../api-services';
 import { Subscription } from 'rxjs';
+import { DialogService } from 'primeng/dynamicdialog';
 
 @Component({
   selector: 'app-topbar',
   templateUrl: './app.topbar.component.html',
+  styleUrls: ['./app.topbar.component.css'],
+  providers: [ConfirmationService, MessageService, DialogService],
 })
 export class AppTopBarComponent implements OnInit, OnDestroy {
-  items!: MenuItem[];
+  activeItem: MenuItem | undefined;
+  items: MenuItem[] = [
+    {
+      label: 'Calculator',
+      icon: 'pi pi-fw pi-home',
+      routerLink: ['/'],
+      routerLinkActiveOptions: {
+        exact: true,
+      },
+    },
+    {
+      label: 'Shared Presets',
+      icon: 'pi pi-fw pi-list',
+      routerLink: ['/shared-presets'],
+    },
+  ];
 
   @ViewChild('menubutton') menuButton!: ElementRef;
 
@@ -542,7 +560,12 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
 
   obs = [] as Subscription[];
 
-  constructor(public layoutService: LayoutService, private readonly authService: AuthService) {}
+  constructor(
+    public layoutService: LayoutService,
+    private readonly authService: AuthService,
+    private messageService: MessageService,
+    private confirmationService: ConfirmationService,
+  ) {}
 
   ngOnDestroy(): void {
     for (const subscription of this.obs) {
@@ -558,7 +581,15 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
   }
 
   logout() {
-    this.authService.logout();
+    this.waitConfirm('Logout ?').then((isConfirm) => {
+      if (!isConfirm) return;
+
+      this.authService.logout();
+      this.messageService.add({
+        severity: 'success',
+        summary: 'Logout',
+      });
+    });
   }
 
   showDialog() {
@@ -586,5 +617,22 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
 
   showInfoDialog() {
     this.visibleInfo = true;
+  }
+
+  private waitConfirm(message: string, icon?: string) {
+    return new Promise((res) => {
+      this.confirmationService.confirm({
+        message: message,
+        header: 'Confirmation',
+        icon: icon || 'pi pi-exclamation-triangle',
+        accept: () => {
+          res(true);
+        },
+        reject: () => {
+          console.log('reject confirm');
+          res(false);
+        },
+      });
+    });
   }
 }

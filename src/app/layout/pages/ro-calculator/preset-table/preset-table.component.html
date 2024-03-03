@@ -29,7 +29,7 @@
             #presetName
             autocomplete="off"
             type="text"
-            [value]="presetInfo?.label"
+            [value]="presetInfo?.label || ''"
             pInputText
             placeholder="preset name"
           />
@@ -120,7 +120,7 @@
         Shared at: <span class="text-primary-300"> {{ presetInfo?.publishedAt | date : 'dd-MM-yyyy HH:mm' }} </span
         ><br />
       </div>
-      <div class="col-6" *ngIf="isLoggedIn">
+      <div class="col-6" *ngIf="!isSharedPreset">
         <div class="p-inputgroup">
           <input
             #sharedName
@@ -137,14 +137,15 @@
             icon="pi pi-send"
             label="Share"
             [disabled]="!selectedCloudPreset || !sharedName.value || isSharedPreset"
-            (click)="sharePreset(sharedName.value)"
+            (click)="sharePreset(sharedName.value); sharedName.value = ''"
           ></button>
         </div>
       </div>
       <div class="col-12 text-lg font-semibold" *ngIf="isSharedPreset">
         Shared name: <span class="text-primary-300"> {{ presetInfo?.publishName }} </span>
+        <button type="button" class="p-button-warning" pButton label="Cancel" (click)="unsharePreset()"></button>
       </div>
-      <div class="col-12">
+      <!-- <div class="col-12">
         <div class="grid p-fluid grid-nogutter" *ngIf="isSharedPreset">
           <div class="col">
             <p-multiSelect
@@ -183,7 +184,7 @@
             ></button>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
 
     <div class="grid my-2">

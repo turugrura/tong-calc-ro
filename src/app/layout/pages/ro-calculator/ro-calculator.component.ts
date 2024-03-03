@@ -468,7 +468,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
               this.confirmSync();
               this.setPresetList();
             } else {
-              this.preSets = [];
+              this.setPresetList();
               this.selectedPreset = undefined;
             }
           });

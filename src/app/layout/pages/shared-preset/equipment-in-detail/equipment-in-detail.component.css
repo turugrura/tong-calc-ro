@@ -1,0 +1,182 @@
+.item_template {
+  position: relative;
+  /* height: 1.2rem; */
+}
+
+.item_img {
+  /* position: absolute;
+  top: -3px;
+  left: -4px; */
+  height: 27px;
+  background-image: url(../../../../../assets/demo/images/others/item_bg.png);
+  /* background-image: url(assets/demo/images/others/item_bg.png); */
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.text_ellips {
+  height: 19px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.text_ellips_no_height {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.text_group_ellips {
+  width: 60%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+:host ::ng-deep .item_label_weapon,
+:host ::ng-deep .item_label_weaponCard1,
+:host ::ng-deep .item_label_weaponCard2,
+:host ::ng-deep .item_label_weaponCard3,
+:host ::ng-deep .item_label_weaponCard4,
+:host ::ng-deep .item_label_ammo,
+:host ::ng-deep .item_label_weaponEnchant1,
+:host ::ng-deep .item_label_weaponEnchant2,
+:host ::ng-deep .item_label_weaponEnchant3 {
+  /* background-color: var(--surface-0); */
+  /* background-color: #121212; */
+  color: var(--pink-200);
+}
+
+:host ::ng-deep .item_label_weapon_main .item_label_element_converter .p-inputtext {
+  /* background-color: var(--surface-0); */
+  /* background-color: #121212; */
+  color: var(--yellow-300);
+}
+
+:host ::ng-deep .item_label_leftWeapon_main .p-dropdown-label,
+:host ::ng-deep .item_label_leftWeapon_main .p-cascadeselect-label,
+:host ::ng-deep .item_label_leftWeapon,
+:host ::ng-deep .item_label_leftWeaponCard1,
+:host ::ng-deep .item_label_leftWeaponCard2,
+:host ::ng-deep .item_label_leftWeaponCard3,
+:host ::ng-deep .item_label_leftWeaponCard4,
+:host ::ng-deep .item_label_leftWeaponEnchant1,
+:host ::ng-deep .item_label_leftWeaponEnchant2,
+:host ::ng-deep .item_label_leftWeaponEnchant3 {
+  /* background-color: var(--surface-0); */
+  /* background-color: #121212; */
+  color: var(--pink-200);
+}
+
+:host ::ng-deep .item_label_shield_main .p-dropdown-label,
+:host ::ng-deep .item_label_shield_main .p-cascadeselect-label,
+:host ::ng-deep .item_label_shield,
+:host ::ng-deep .item_label_shieldCard,
+:host ::ng-deep .item_label_shieldEnchant1,
+:host ::ng-deep .item_label_shieldEnchant2,
+:host ::ng-deep .item_label_shieldEnchant3 {
+  /* background-color: var(--surface-0); */
+  /* background-color: #121212; */
+  color: var(--pink-200);
+}
+
+:host ::ng-deep .item_label_head .p-dropdown-label,
+:host ::ng-deep .item_label_head .p-cascadeselect-label,
+:host ::ng-deep .item_label_headUpper,
+:host ::ng-deep .item_label_headUpperCard,
+:host ::ng-deep .item_label_headUpperEnchant1,
+:host ::ng-deep .item_label_headUpperEnchant2,
+:host ::ng-deep .item_label_headUpperEnchant3,
+:host ::ng-deep .item_label_headMiddle,
+:host ::ng-deep .item_label_headMiddleCard,
+:host ::ng-deep .item_label_headMiddleEnchant1,
+:host ::ng-deep .item_label_headMiddleEnchant2,
+:host ::ng-deep .item_label_headMiddleEnchant3,
+:host ::ng-deep .item_label_headLower,
+:host ::ng-deep .item_label_headLowerEnchant1,
+:host ::ng-deep .item_label_headLowerEnchant2,
+:host ::ng-deep .item_label_headLowerEnchant3 {
+  /* background-color: var(--surface-0); */
+  /* background-color: #121212; */
+  color: var(--blue-200);
+}
+
+:host ::ng-deep .item_label_def .p-dropdown-label,
+:host ::ng-deep .item_label_def .p-cascadeselect-label,
+:host ::ng-deep .item_label_armor,
+:host ::ng-deep .item_label_armorCard,
+:host ::ng-deep .item_label_armorEnchant1,
+:host ::ng-deep .item_label_armorEnchant2,
+:host ::ng-deep .item_label_armorEnchant3,
+:host ::ng-deep .item_label_garment,
+:host ::ng-deep .item_label_garmentCard,
+:host ::ng-deep .item_label_garmentEnchant1,
+:host ::ng-deep .item_label_garmentEnchant2,
+:host ::ng-deep .item_label_garmentEnchant3,
+:host ::ng-deep .item_label_boot,
+:host ::ng-deep .item_label_bootCard,
+:host ::ng-deep .item_label_bootEnchant1,
+:host ::ng-deep .item_label_bootEnchant2,
+:host ::ng-deep .item_label_bootEnchant3 {
+  /* background-color: var(--surface-0); */
+  /* background-color: #121212; */
+  color: var(--red-200);
+}
+
+:host ::ng-deep .item_label_acc .p-dropdown-label,
+:host ::ng-deep .item_label_acc .p-cascadeselect-label,
+.item_float_label,
+:host ::ng-deep .item_label_accLeft,
+:host ::ng-deep .item_label_accLeftCard,
+:host ::ng-deep .item_label_accLeftEnchant1,
+:host ::ng-deep .item_label_accLeftEnchant2,
+:host ::ng-deep .item_label_accLeftEnchant3,
+:host ::ng-deep .item_label_accRight,
+:host ::ng-deep .item_label_accRightCard,
+:host ::ng-deep .item_label_accRightEnchant1,
+:host ::ng-deep .item_label_accRightEnchant2,
+:host ::ng-deep .item_label_accRightEnchant3 {
+  /* background-color: var(--surface-0); */
+  /* background-color: #121212; */
+  color: var(--purple-200);
+}
+
+:host ::ng-deep .item_label_pet .p-dropdown-label,
+:host ::ng-deep .item_label_pet .p-cascadeselect-label {
+  /* background-color: var(--surface-0); */
+  /* background-color: #121212; */
+  color: var(--orange-200);
+}
+
+:host ::ng-deep .item_label_costume .p-dropdown-label,
+:host ::ng-deep .item_label_costume .p-cascadeselect-label,
+:host ::ng-deep .item_label_costumeUpper,
+:host ::ng-deep .item_label_costumeEnchantUpper,
+:host ::ng-deep .item_label_costumeEnchantMiddle,
+:host ::ng-deep .item_label_costumeEnchantLower,
+:host ::ng-deep .item_label_costumeEnchantGarment,
+:host ::ng-deep .item_label_costumeEnchantGarment4 {
+  /* background-color: var(--surface-0); */
+  /* background-color: #121212; */
+  color: var(--yellow-400);
+}
+
+:host ::ng-deep .item_label_shadow .p-dropdown-label,
+:host ::ng-deep .item_label_shadow .p-cascadeselect-label,
+:host ::ng-deep .item_label_shadowWeapon,
+:host ::ng-deep .item_label_shadowArmor,
+:host ::ng-deep .item_label_shadowShield,
+:host ::ng-deep .item_label_shadowBoot,
+:host ::ng-deep .item_label_shadowEarring,
+:host ::ng-deep .item_label_shadowPendant {
+  /* background-color: var(--surface-0); */
+  /* background-color: #121212; */
+  color: var(--green-200);
+}
+
+:host ::ng-deep .item_label_compare .p-dropdown-label,
+:host ::ng-deep .item_label_compare .p-cascadeselect-label,
+:host ::ng-deep .item_label_compare .p-multiselect-label,
+:host ::ng-deep .item_label_compare .p-listbox-item {
+  /* background-color: var(--surface-50); */
+  background-color: #2a2a2a;
+  color: var(--yellow-300);
+}

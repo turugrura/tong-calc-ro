@@ -1,0 +1,4 @@
+:host ::ng-deep .router-link .p-menuitem-link {
+  padding-bottom: 0.75rem !important;
+  border-width: 0 0 4px 0 !important;
+}

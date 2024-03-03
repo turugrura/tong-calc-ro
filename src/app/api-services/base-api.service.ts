@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { Observable, catchError, of, tap, throwError } from 'rxjs';
+import { Observable, catchError, of, switchMap, tap, throwError } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { LoginResponse } from './models';
 
@@ -14,7 +14,7 @@ export abstract class BaseAPIService {
 
     login: `${BASE_URL}/login`,
     logout: `${BASE_URL}/me/logout`,
-    refreshToken: `${BASE_URL}/refreshToken`,
+    refreshToken: `${BASE_URL}/refresh_token`,
 
     getMyProfile: `${BASE_URL}/me`,
 
@@ -26,14 +26,11 @@ export abstract class BaseAPIService {
     bulkCreateMyPresets: `${BASE_URL}/me/bulk_ro_presets`,
 
     likePresetTags: `${BASE_URL}/preset_tags`,
+    sharedPresets: `${BASE_URL}/ro_presets`,
   } as const;
 
   protected abstract readonly http: HttpClient;
   protected abstract readonly jwtHelper: JwtHelperService;
-
-  private getAccessToken() {
-    return localStorage.getItem(ACCESS_TOKEN_KEY);
-  }
 
   private getRefreshToken() {
     return localStorage.getItem(REFRESH_TOKEN_KEY);
@@ -46,11 +43,11 @@ export abstract class BaseAPIService {
 
   protected refreshToken() {
     const refreshToken = this.getRefreshToken();
-    if (!refreshToken) return of(null);
+    if (!refreshToken) return throwError(() => new Error('Unauthorized'));
 
-    return this.post<LoginResponse>(`${this.API.refreshToken}`, { refreshToken }).pipe(
-      tap((res) => this.storeToken(res)),
-    );
+    return this.http
+      .post<LoginResponse>(`${this.API.refreshToken}`, { refreshToken })
+      .pipe(tap((res) => this.storeToken(res)));
   }
 
   private getAuthHeaders() {
@@ -64,7 +61,12 @@ export abstract class BaseAPIService {
   protected get<T = any>(url: string, includeAuth = true) {
     let ob: Observable<T>;
     if (includeAuth) {
-      ob = this.http.get<T>(url, this.getAuthHeaders());
+      const rfToken = this.jwtHelper.isTokenExpired() ? this.refreshToken() : of(null);
+      ob = rfToken.pipe(
+        switchMap(() => {
+          return this.http.get<T>(url, this.getAuthHeaders());
+        }),
+      );
     } else {
       ob = this.http.get<T>(url);
     }
@@ -80,7 +82,12 @@ export abstract class BaseAPIService {
   protected post<T = any, K = any>(url: string, body: K, includeAuth = true) {
     let ob: Observable<T>;
     if (includeAuth) {
-      ob = this.http.post<T>(url, body, this.getAuthHeaders());
+      const rfToken = this.jwtHelper.isTokenExpired() ? this.refreshToken() : of(null);
+      ob = rfToken.pipe(
+        switchMap(() => {
+          return this.http.post<T>(url, body, this.getAuthHeaders());
+        }),
+      );
     } else {
       ob = this.http.post<T>(url, body);
     }
@@ -96,7 +103,12 @@ export abstract class BaseAPIService {
   protected delete<T = any>(url: string, includeAuth = true) {
     let ob: Observable<T>;
     if (includeAuth) {
-      ob = this.http.delete<T>(url, this.getAuthHeaders());
+      const rfToken = this.jwtHelper.isTokenExpired() ? this.refreshToken() : of(null);
+      ob = rfToken.pipe(
+        switchMap(() => {
+          return this.http.delete<T>(url, this.getAuthHeaders());
+        }),
+      );
     } else {
       ob = this.http.delete<T>(url);
     }

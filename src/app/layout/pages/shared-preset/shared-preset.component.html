@@ -1,0 +1,142 @@
+<div class="grid" style="min-width: 1500px">
+  <div class="col-12">
+    <div class="grid grid-nogutter column_list">
+      <p-listbox
+        [options]="allClasses"
+        [(ngModel)]="selectedClassId"
+        [multiple]="false"
+        [metaKeySelection]="false"
+        (onChange)="search()"
+      >
+        <ng-template let-item pTemplate="item" class="py-0">
+          <div class="flex gap-2 py-0">
+            <img src="assets/demo/images/jobs/icon_jobs_{{ item.icon }}.png" alt="" class="job_img" />
+            <div class="text_ellips">{{ item.label }}</div>
+          </div>
+        </ng-template>
+      </p-listbox>
+    </div>
+  </div>
+  <!-- <div class="col-2">
+    <p-listbox
+      [options]="availableTags"
+      [(ngModel)]="selectedTag"
+      [multiple]="false"
+      [metaKeySelection]="false"
+      [listStyle]="{ height: '500px' }"
+      [disabled]="isLoading"
+    >
+      <ng-template let-item pTemplate="item">
+        <div class="flex align-items-center gap-1">
+          <i *ngIf="item.isPublished" class="pi pi-send"></i>
+          {{ item.label }}
+        </div>
+      </ng-template>
+    </p-listbox>
+  </div> -->
+  <div class="col-9">
+    <p-table
+      styleClass="p-datatable-striped"
+      filterValue="label"
+      [value]="items"
+      [loading]="isLoading"
+      [tableStyle]="{ 'min-width': '65rem' }"
+      [showCurrentPageReport]="true"
+    >
+      <!-- <ng-template pTemplate="header">
+        <tr>
+          <th>Name</th>
+        </tr>
+      </ng-template> -->
+      <ng-template pTemplate="body" let-presetTag>
+        <tr>
+          <td>
+            <div class="grid grid-nogutter">
+              <div class="col-12 flex align-items-center">
+                <div class="like_section pr-3">
+                  <button
+                    *ngIf="!presetTag.liked"
+                    pButton
+                    icon="pi pi-thumbs-up text-3xl"
+                    class="p-button-text p-button-rounded"
+                    (click)="likePreset(presetTag.tagId, !presetTag.liked)"
+                  ></button>
+                  <button
+                    *ngIf="presetTag.liked"
+                    pButton
+                    icon="pi pi-thumbs-up-fill text-3xl"
+                    class="p-button-text p-button-rounded"
+                    (click)="likePreset(presetTag.tagId, !presetTag.liked)"
+                  ></button>
+                  <span class="px-2 font-bold text-primary text-xl">{{ presetTag.tags?.no_tag || 0 }}</span>
+                </div>
+                <!-- <div class="font-bold text-3xl">{{ presetTag.publishName }}</div> -->
+                <div>
+                  <div class="font-bold text-2xl">{{ presetTag.publishName }}</div>
+                  <div class="font-medium">by. {{ presetTag.publisherName }}</div>
+                </div>
+                <div class="flex ml-3">
+                  <p-inputSwitch
+                    inputId="{{ presetTag.tagId }}"
+                    [(ngModel)]="viewDetail[presetTag.tagId]"
+                  ></p-inputSwitch>
+                  <label for="{{ presetTag.tagId }}">View detail</label>
+                </div>
+              </div>
+              <div class="col-{{ viewDetail[presetTag.tagId] ? 5 : 10 }}" style="min-width: 450px; overflow: hidden">
+                <app-equipment-ui [itemMap]="itemMap" [model]="presetTag.model"></app-equipment-ui>
+              </div>
+              <div class="col-5" *ngIf="viewDetail[presetTag.tagId]">
+                <app-equipment-in-detail [itemMap]="itemMap" [model]="presetTag.model"></app-equipment-in-detail>
+              </div>
+              <div class="col-2">
+                <div class="grid grid-nogutter">
+                  <div class="col-6">
+                    Level: <span class="summary_highlight text-xl font-semibold"> {{ presetTag.model?.level }} </span>
+                  </div>
+                  <div class="col-6">
+                    Job: <span class="summary_highlight text-xl font-semibold"> {{ presetTag.model?.jobLevel }} </span>
+                  </div>
+                  <div class="col-6">
+                    Str: <span class="summary_stat_atk text-xl"> {{ presetTag.model?.str }} </span>
+                  </div>
+                  <div class="col-6">
+                    Int: <span class="summary_stat_matk text-xl"> {{ presetTag.model?.int }} </span>
+                  </div>
+                  <div class="col-6">
+                    Dex:
+                    <span class="summary_stat_atk text-xl" style="color: var(--green-300)">
+                      {{ presetTag.model?.dex }}
+                    </span>
+                  </div>
+                  <div class="col-6">
+                    Agi: <span class="summary_stat_def text-xl"> {{ presetTag.model?.agi }} </span>
+                  </div>
+                  <div class="col-6">
+                    Vit: <span class="summary_stat_def text-xl"> {{ presetTag.model?.vit }} </span>
+                  </div>
+                  <div class="col-6">
+                    Luk: <span class="summary_stat_def text-xl"> {{ presetTag.model?.luk }} </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="emptymessage">
+        <tr>
+          <td>Not found</td>
+        </tr>
+      </ng-template>
+    </p-table>
+    <p-paginator
+      (onPageChange)="pageChange($event)"
+      [first]="firstRecord"
+      [rows]="pageLimit"
+      [totalRecords]="totalRecord"
+      [rowsPerPageOptions]="pageOptions"
+    ></p-paginator>
+  </div>
+  <div class="col-3"></div>
+</div>

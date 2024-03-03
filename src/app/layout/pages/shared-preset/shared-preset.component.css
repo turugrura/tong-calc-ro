@@ -1,0 +1,42 @@
+:host ::ng-deep .column_list p-listbox .p-listbox-list {
+  min-width: 1480px;
+  columns: 10;
+  padding: 0;
+}
+
+:host ::ng-deep .column_list .p-listbox-item {
+  padding: 0.5rem;
+}
+
+.job_img {
+  height: fit-content;
+}
+
+.like_section {
+  display: flex;
+  align-items: center;
+}
+
+.summary_stat_atk {
+  /* background-color: var(--surface-0); */
+  /* background-color: #121212; */
+  color: var(--orange-300);
+}
+
+.summary_stat_matk {
+  /* background-color: var(--surface-0); */
+  /* background-color: #121212; */
+  color: var(--blue-300);
+}
+
+.summary_stat_def {
+  /* background-color: var(--surface-0); */
+  /* background-color: #121212; */
+  color: var(--purple-200);
+}
+
+.summary_highlight {
+  /* background-color: var(--surface-0); */
+  /* background-color: #121212; */
+  color: var(--orange-400);
+}

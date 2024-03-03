@@ -12,3 +12,5 @@ export * from './get-my-entire-presets.response';
 export * from './entire-preset-with-tags-model';
 export * from './published-presets.response';
 export * from './bulk-operation-tags.request';
+export * from './publish-preset-model';
+export * from './like-tag.response';

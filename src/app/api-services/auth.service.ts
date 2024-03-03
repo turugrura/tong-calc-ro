@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { LoginResponse, Profile } from './models';
-import { ReplaySubject, of, switchMap, tap } from 'rxjs';
+import { ReplaySubject, catchError, of, switchMap, tap } from 'rxjs';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { BaseAPIService } from './base-api.service';
 
@@ -24,7 +24,7 @@ export class AuthService extends BaseAPIService {
   login(authorizationCode: string) {
     this.profile = undefined;
 
-    return this.post<LoginResponse>(`${this.API.login}`, { authorizationCode }).pipe(
+    return this.post<LoginResponse>(`${this.API.login}`, { authorizationCode }, false).pipe(
       tap((res) => this.storeToken(res)),
       switchMap(() => this.getMyProfile()),
     );
@@ -48,8 +48,6 @@ export class AuthService extends BaseAPIService {
   }
 
   getMyProfile() {
-    if (this.jwtHelper.isTokenExpired()) return of(null);
-
     const getProfileReq = this.get<Profile>(this.API.getMyProfile).pipe(
       tap((res) => this.storeProfile(res)),
       tap((res) => {
@@ -57,11 +55,11 @@ export class AuthService extends BaseAPIService {
           this.loggedInSubject.next(true);
         }
       }),
+      catchError(() => {
+        this.loggedInSubject.next(false);
+        return of(null);
+      }),
     );
-
-    if (this.jwtHelper.isTokenExpired()) {
-      return this.refreshToken().pipe(switchMap(() => getProfileReq));
-    }
 
     return getProfileReq;
   }

@@ -1,0 +1,110 @@
+<div class="grid grid-nogutter">
+  <div class="col-fixed mb-2">
+    <div class="equipmentPreview" style="width: 450px">
+      <div class="panel">
+        <table class="equipmentTable text-blue-500">
+          <tbody>
+            <tr *ngFor="let itemTypes of mainItemNames; let i = index">
+              <td class="main_left_item">
+                <div class="flex gap-1">
+                  <img
+                    [hidden]="!model[itemTypes[0]]"
+                    src="assets/demo/images/items/{{ model[itemTypes[0]] }}.png"
+                    alt=""
+                    class="item_img"
+                  />
+                  <div class="text_ellips font-medium">
+                    <span class="font-bold" [hidden]="!(model[itemTypes[0] + 'Refine'] > 0)"
+                      >+{{ model[itemTypes[0] + 'Refine'] }}</span
+                    >
+                    {{ itemMap[model[itemTypes[0]]]?.name || '' }}
+                  </div>
+                </div>
+              </td>
+              <td *ngIf="i === 0" rowspan="6">
+                <div class="ammo_container" [hidden]="!model.ammo">
+                  <img src="assets/demo/images/items/{{ model.ammo }}.png" alt="" class="item_img" />
+                  <div class="text_ellips font-medium">
+                    {{ itemMap[model.ammo]?.name || '' }}
+                  </div>
+                </div>
+              </td>
+
+              <td class="main_right_item">
+                <div class="flex flex-row-reverse gap-1">
+                  <img
+                    [hidden]="!model[itemTypes[1]] && !model[itemTypes[2]]"
+                    src="assets/demo/images/items/{{ model[itemTypes[1]] || model[itemTypes[2]] }}.png"
+                    alt=""
+                    class="item_img"
+                  />
+                  <div class="text_ellips font-medium">
+                    <span
+                      class="font-bold"
+                      [hidden]="!(model[itemTypes[1] + 'Refine'] > 0) && !(model[itemTypes[2] + 'Refine'] > 0)"
+                      >+{{ model[itemTypes[1] + 'Refine'] || model[itemTypes[2] + 'Refine'] }}</span
+                    >
+                    {{ itemMap[model[itemTypes[1]] || model[itemTypes[2]]]?.name || '' }}
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="col-fixed">
+    <div class="equipmentPreview" style="width: 450px">
+      <div class="panel">
+        <table class="equipmentTable text-blue-500">
+          <tbody>
+            <tr *ngFor="let itemTypes of shadowItemNames; let i = index">
+              <td class="shadow_left_item">
+                <div class="flex gap-1">
+                  <img
+                    [hidden]="!model[itemTypes[0]]"
+                    src="assets/demo/images/items/{{ model[itemTypes[0]] }}.png"
+                    alt=""
+                    class="item_img"
+                  />
+                  <div class="text_ellips font-medium">
+                    <span class="font-bold" [hidden]="!(model[itemTypes[0] + 'Refine'] > 0)"
+                      >+{{ model[itemTypes[0] + 'Refine'] }}</span
+                    >
+                    {{ itemMap[model[itemTypes[0]]]?.name || '' }}
+                  </div>
+                </div>
+              </td>
+              <td *ngIf="i === 0" rowspan="6">
+                <div class="ammo_container" [hidden]="!model.costumeEnchantGarment4">
+                  <img src="assets/demo/images/items/{{ model.costumeEnchantGarment4 }}.png" alt="" class="item_img" />
+                  <div class="text_ellips font-medium">
+                    {{ itemMap[model.costumeEnchantGarment4]?.name || '' }}
+                  </div>
+                </div>
+              </td>
+
+              <td class="shadow_right_item">
+                <div class="flex flex-row-reverse gap-1">
+                  <img
+                    [hidden]="!model[itemTypes[1]]"
+                    src="assets/demo/images/items/{{ model[itemTypes[1]] }}.png"
+                    alt=""
+                    class="item_img"
+                  />
+                  <div class="text_ellips font-medium">
+                    <span class="font-bold" [hidden]="!(model[itemTypes[1] + 'Refine'] > 0)"
+                      >+{{ model[itemTypes[1] + 'Refine'] }}</span
+                    >
+                    {{ itemMap[model[itemTypes[1]]]?.name || '' }}
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
