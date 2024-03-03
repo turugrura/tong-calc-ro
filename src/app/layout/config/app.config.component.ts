@@ -14,7 +14,9 @@ export class AppConfigComponent implements OnInit {
   isProd = environment.production;
   env = environment;
 
-  constructor(public layoutService: LayoutService, public menuService: MenuService) {}
+  constructor(public layoutService: LayoutService, public menuService: MenuService) {
+    console.log('HI AppConfigComponent');
+  }
 
   ngOnInit(): void {
     this.changeTheme(

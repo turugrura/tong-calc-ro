@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { LoginResponse, Profile } from './models';
-import { ReplaySubject, catchError, of, switchMap, tap } from 'rxjs';
+import { ReplaySubject, catchError, of, switchMap, tap, throwError } from 'rxjs';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { BaseAPIService } from './base-api.service';
 
@@ -62,6 +62,17 @@ export class AuthService extends BaseAPIService {
     );
 
     return getProfileReq;
+  }
+
+  updateMyProfile(body: { name: string }) {
+    return this.post<Profile>(this.API.getMyProfile, body).pipe(
+      tap((res) => this.storeProfile(res)),
+      catchError((err) => {
+        this.loggedInSubject.next(false);
+
+        return throwError(() => err);
+      }),
+    );
   }
 
   private storeProfile(profile: Profile) {

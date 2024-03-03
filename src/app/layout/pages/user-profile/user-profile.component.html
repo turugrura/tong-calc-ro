@@ -1,0 +1,45 @@
+<p-toast></p-toast>
+<p-sidebar
+  [(visible)]="visible"
+  position="right"
+  [transitionOptions]="'.3s cubic-bezier(0, 0, 0.2, 1)'"
+  styleClass="layout-config-sidebar w-30rem"
+  header
+>
+  <ng-template pTemplate="header">My Profile</ng-template>
+  <ng-template pTemplate="content">
+    <div class="grid p-fluid grid-nogutter" *ngIf="!!profile">
+      <div class="col-12 my-1">
+        <label class="font-bold mx-2" for="createdAt">Registered:</label
+        ><span id="createdAt">{{ profile.createdAt | date : 'dd-MM-yyyy HH:mm' }}</span>
+      </div>
+      <div class="col-12 my-1">
+        <label class="font-bold mx-2" for="updatedAt">Last Updated:</label
+        ><span id="updatedAt">{{ profile.updatedAt | date : 'dd-MM-yyyy HH:mm' }}</span>
+      </div>
+      <div class="col-12 my-1">
+        <label class="font-bold mx-2" for="myname">Name:</label>
+        <input
+          #myname
+          id="myname"
+          class="mb-3"
+          autocomplete="off"
+          type="text"
+          [value]="profile.name || ''"
+          pInputText
+          placeholder="name"
+        />
+        <button
+          type="button"
+          class="p-button-info"
+          pButton
+          icon="pi pi-file-edit"
+          label="Update"
+          [disabled]="!myname.value || isLoading"
+          [loading]="isLoading"
+          (click)="updateMyProfile(myname.value)"
+        ></button>
+      </div>
+    </div>
+  </ng-template>
+</p-sidebar>

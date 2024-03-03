@@ -619,6 +619,10 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
     this.visibleInfo = true;
   }
 
+  showMyProfile() {
+    this.layoutService.showMyProfileSidebar();
+  }
+
   private waitConfirm(message: string, icon?: string) {
     return new Promise((res) => {
       this.confirmationService.confirm({

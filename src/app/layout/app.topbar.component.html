@@ -109,10 +109,13 @@
       label="Support"
       (click)="showDialog()"
     ></button>
-    <div *ngIf="!!username">
-      <p-chip label="{{ username }}" icon="pi pi-google" styleClass="text-xl"></p-chip>
-      <button pButton class="p-button-text p-button-info" (click)="logout()">
-        <i class="pi pi-sign-out text-xl" severity="secondary"></i>
+    <div *ngIf="!!username" class="ml-3 flex align-items-center">
+      <p-chip label="{{ username }}" icon="pi pi-google" class="chip-profile" styleClass="text-xl"></p-chip>
+      <button class="p-link layout-topbar-button mx-0 icon-user" (click)="showMyProfile()">
+        <i class="pi pi-user"></i>
+      </button>
+      <button pButton class="p-button-text p-button-danger" (click)="logout()">
+        <i class="pi pi-sign-out text-xl"></i>
       </button>
     </div>
     <a

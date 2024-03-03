@@ -2,3 +2,14 @@
   padding-bottom: 0.75rem !important;
   border-width: 0 0 4px 0 !important;
 }
+
+:host ::ng-deep .chip-profile .p-chip {
+  max-width: 15rem;
+  overflow: hidden;
+  /* text-overflow: ellipsis;
+    white-space: nowrap; */
+}
+
+.icon-user {
+  color: var(--primary-color);
+}
