@@ -1,3 +1,4 @@
+<p-toast></p-toast>
 <div class="grid grid-nogutter" style="min-width: 1500px">
   <div class="col-12 mb-2">
     <div class="grid grid-nogutter column_list">
@@ -6,7 +7,7 @@
         [(ngModel)]="selectedClassId"
         [multiple]="false"
         [metaKeySelection]="false"
-        (onChange)="search()"
+        (onChange)="onSelectClassChange()"
       >
         <ng-template let-item pTemplate="item" class="py-0">
           <div class="flex gap-2 py-0">
@@ -52,35 +53,50 @@
         <tr>
           <td>
             <div class="grid grid-nogutter">
-              <div class="col-12 flex align-items-center">
-                <div class="like_section pr-3">
-                  <button
-                    *ngIf="!presetTag.liked"
-                    pButton
-                    icon="pi pi-thumbs-up text-3xl"
-                    class="p-button-text p-button-rounded"
-                    (click)="likePreset(presetTag.tagId, !presetTag.liked)"
-                  ></button>
-                  <button
-                    *ngIf="presetTag.liked"
-                    pButton
-                    icon="pi pi-thumbs-up-fill text-3xl"
-                    class="p-button-text p-button-rounded"
-                    (click)="likePreset(presetTag.tagId, !presetTag.liked)"
-                  ></button>
-                  <span class="px-2 font-bold text-primary text-xl">{{ presetTag.tags?.no_tag || 0 }}</span>
+              <div class="col-12 flex justify-content-between">
+                <div class="flex align-items-center">
+                  <div class="like_section pr-3">
+                    <button
+                      *ngIf="!presetTag.liked"
+                      pButton
+                      icon="pi pi-thumbs-up text-3xl"
+                      class="p-button-text p-button-rounded"
+                      (click)="likePreset(presetTag.tagId, !presetTag.liked)"
+                    ></button>
+                    <button
+                      *ngIf="presetTag.liked"
+                      pButton
+                      icon="pi pi-thumbs-up-fill text-3xl"
+                      class="p-button-text p-button-rounded"
+                      (click)="likePreset(presetTag.tagId, !presetTag.liked)"
+                    ></button>
+                    <span class="px-2 font-bold text-primary text-xl">{{ presetTag.tags?.no_tag || 0 }}</span>
+                  </div>
+                  <div>
+                    <div class="font-bold text-2xl">{{ presetTag.publishName }}</div>
+                    <div class="font-medium">by. {{ presetTag.publisherName }}</div>
+                  </div>
                 </div>
-                <!-- <div class="font-bold text-3xl">{{ presetTag.publishName }}</div> -->
-                <div>
-                  <div class="font-bold text-2xl">{{ presetTag.publishName }}</div>
-                  <div class="font-medium">by. {{ presetTag.publisherName }}</div>
-                </div>
-                <div class="flex ml-3">
-                  <p-inputSwitch
-                    inputId="{{ presetTag.tagId }}"
-                    [(ngModel)]="viewDetail[presetTag.tagId]"
-                  ></p-inputSwitch>
-                  <label for="{{ presetTag.tagId }}">View detail</label>
+
+                <div class="flex align-items-center">
+                  <div class="flex ml-3">
+                    <p-inputSwitch
+                      inputId="{{ presetTag.tagId }}"
+                      [(ngModel)]="viewDetail[presetTag.tagId]"
+                    ></p-inputSwitch>
+                    <label class="mx-2" for="{{ presetTag.tagId }}">View detail</label>
+                  </div>
+                  <div>
+                    <button
+                      pButton
+                      type="button"
+                      label="Calculate"
+                      class="p-button-info"
+                      [disabled]="isCalculating || isCalculated[presetTag.tagId]"
+                      [loading]="isCalculating"
+                      (click)="addToCalc(presetTag)"
+                    ></button>
+                  </div>
                 </div>
               </div>
               <div class="col-{{ viewDetail[presetTag.tagId] ? 5 : 10 }}" style="min-width: 450px; overflow: hidden">
@@ -138,5 +154,334 @@
       [rowsPerPageOptions]="pageOptions"
     ></p-paginator>
   </div>
-  <div class="col-3"></div>
+  <div class="p-fluid col-3">
+    <p-accordion [multiple]="true" [activeIndex]="[0]">
+      <p-accordionTab header="Battle Summary">
+        <div class="grid grid-nogutter battle_summary">
+          <!-- Monster -->
+          <div class="col-12">
+            <div class="grid grid-nogutter">
+              <div class="col-12">
+                <div class="p-inputgroup">
+                  <span class="p-inputgroup-addon monster_hilight_label">Monster</span>
+                  <p-dropdown
+                    inputId="monsterOpponent"
+                    [autoDisplayFirst]="false"
+                    [resetFilterOnHide]="true"
+                    [options]="groupMonsterList"
+                    [filter]="true"
+                    filterBy="label,searchVal"
+                    [group]="true"
+                    scrollHeight="300px"
+                    [(ngModel)]="selectedMonster"
+                    (onChange)="onMonsterChange()"
+                  >
+                    <ng-template let-group pTemplate="group">
+                      <div class="flex align-items-center font-bold dropdown_monster_group_label">
+                        <span>{{ group.label }}</span>
+                      </div>
+                    </ng-template>
+                  </p-dropdown>
+                </div>
+              </div>
+              <!-- <div class="col-12">{{ selectedMonsterName }}</div> -->
+              <div class="col-5 flex align-items-center justify-content-center">
+                <div class="grid grid-nogutter" style="height: 100%; width: 100%">
+                  <div class="col-12 flex align-items-center justify-content-center">
+                    <img
+                      src="https://static.divine-pride.net/images/mobs/png/{{ selectedMonster }}.png"
+                      class="img_monster"
+                      alt="-"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="col-7">
+                <div class="grid grid-nogutter">
+                  <div class="col-12">
+                    HP
+                    <span class="summary_monster_value px-1 font-semibold">{{
+                      totalSummary?.monster?.hp | number
+                    }}</span>
+                  </div>
+                  <div class="col-12">
+                    Def
+                    <span class="summary_monster_value px-1 font-semibold"
+                      >{{ totalSummary?.monster?.softDef }} + {{ totalSummary?.monster?.def }}</span
+                    >
+                  </div>
+                  <div class="col-12">
+                    Mdef
+                    <span class="summary_monster_value px-1 font-semibold"
+                      >{{ totalSummary?.monster?.softMDef }} + {{ totalSummary?.monster?.mdef }}</span
+                    >
+                  </div>
+                  <div class="col-12">
+                    Req.Hit100
+                    <span class="summary_monster_value px-1 font-semibold">{{
+                      totalSummary?.monster?.hitRequireFor100
+                    }}</span>
+                  </div>
+                  <div class="col-12">
+                    <span class="summary_monster_value px-1 font-bold" style="color: var(--red-500)">{{
+                      totalSummary?.monster?.typeUpper
+                    }}</span>
+                    <span *ngIf="totalSummary?.monster?.isMvp" class="font-bold px-1">MVP</span>
+                  </div>
+                  <div class="col-12">
+                    <span
+                      class="{{
+                        'property_' + totalSummary?.monster?.elementUpper
+                      }} summary_monster_value px-1 font-semibold"
+                      >{{ totalSummary?.monster?.elementLevelUpper }}</span
+                    >
+                  </div>
+                  <div class="col-12">
+                    <span class="summary_monster_value px-1 font-semibold" style="color: var(--yellow-300)">{{
+                      totalSummary?.monster?.raceUpper
+                    }}</span>
+                  </div>
+                  <div class="col-12">
+                    <span class="summary_monster_value px-1 font-semibold" style="color: var(--cyan-300)">{{
+                      totalSummary?.monster?.sizeFullUpper
+                    }}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Skill -->
+          <div class="col-12">
+            <div class="grid grid-nogutter" style="position: relative">
+              <div class="col-12">
+                <div class="p-inputgroup">
+                  <span class="p-inputgroup-addon skill_hilight_label">Skill</span>
+                  <p-dropdown
+                    inputId="skill"
+                    [autoDisplayFirst]="false"
+                    [resetFilterOnHide]="true"
+                    [options]="atkSkills"
+                    [(ngModel)]="selectedAtkSkill"
+                    (onChange)="onAtkSkillChange()"
+                  ></p-dropdown>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 my-2" *ngFor="let _s of summaries">
+            <div class="grid grid-nogutter" style="position: relative">
+              <div class="loading_block" *ngIf="isCalculating">
+                <i class="pi pi-spin pi-spinner" style="font-size: 2rem"></i>
+              </div>
+              <div class="col-12 flex align-items-center justify-content-between">
+                <div class="font-bold text-xl">{{ _s.name }}</div>
+                <div *ngIf="isCalculated[_s.id]">
+                  <button
+                    pButton
+                    type="button"
+                    class="p-button-text p-button-danger"
+                    [disabled]="isCalculating"
+                    (click)="removeCalculated(_s.id)"
+                  >
+                    <i class="pi pi-times text-xl"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="col-6">
+                Type <span class="summary_highlight font-semibold">{{ _s.summary?.calcSkill?.dmgType }}</span>
+              </div>
+              <div class="col-6">
+                Element:
+                <span class="{{ 'property_' + _s.summary?.calcSkill?.propertySkill }} px-1 font-semibold">{{
+                  _s.summary?.calcSkill?.propertySkill
+                }}</span
+                ><span class="summary_highlight px-2">( x {{ _s.summary?.dmg?.skillPropertyMultiplier }})</span>
+              </div>
+              <div class="col-6">
+                <app-calc-value
+                  [enableCompare]="false"
+                  label="BaseSkill:"
+                  unit="%"
+                  styleClass="summary_highlight"
+                  styleClass2="summary_compare"
+                  [max]="_s.summary?.calcSkill?.baseSkillDamage"
+                ></app-calc-value>
+              </div>
+              <div class="col-6">
+                <app-calc-value
+                  [enableCompare]="false"
+                  label="SizePenalty:"
+                  unit=" %"
+                  styleClass="summary_highlight"
+                  styleClass2="summary_compare"
+                  [max]="_s.summary?.dmg?.skillSizePenalty"
+                ></app-calc-value>
+              </div>
+              <div class="col-6">
+                <app-calc-value
+                  [enableCompare]="false"
+                  label="เจาะ:"
+                  unit="%"
+                  styleClass="summary_highlight"
+                  styleClass2="summary_compare"
+                  [max]="_s.summary?.dmg?.skillTotalPene"
+                ></app-calc-value>
+              </div>
+              <div class="col-6">
+                <app-calc-value
+                  [enableCompare]="false"
+                  label="แม่น:"
+                  unit="%"
+                  styleClass="summary_highlight"
+                  styleClass2="summary_compare"
+                  [max]="_s.summary?.dmg?.skillAccuracy"
+                ></app-calc-value>
+              </div>
+              <div class="col-6">
+                <app-calc-value
+                  [enableCompare]="false"
+                  label="ASPD:"
+                  unit=" Hits/s"
+                  styleClass="summary_highlight"
+                  styleClass2="summary_compare"
+                  [max]="_s.summary?.calc?.hitPerSecs"
+                ></app-calc-value>
+              </div>
+
+              <div class="col-12 py-1 divider">
+                <p-divider></p-divider>
+              </div>
+
+              <!-- Skill Summary -->
+              <div class="col-12">
+                <div class="grid grid-nogutter">
+                  <div class="col-6">
+                    <app-calc-value
+                      [enableCompare]="false"
+                      label="VCT:"
+                      styleClass="summary_value"
+                      styleClass2="summary_compare"
+                      [isGreaterIsBetter]="false"
+                      [max]="_s.summary?.calcSkill?.reducedVct"
+                    ></app-calc-value>
+                  </div>
+                  <div class="col-6">
+                    <app-calc-value
+                      [enableCompare]="false"
+                      label="FCT:"
+                      styleClass="summary_value"
+                      styleClass2="summary_compare"
+                      [isGreaterIsBetter]="false"
+                      [max]="_s.summary?.calcSkill?.reducedFct"
+                    ></app-calc-value>
+                  </div>
+                  <div class="col-6">
+                    <app-calc-value
+                      [enableCompare]="false"
+                      label="CD:"
+                      styleClass="summary_value"
+                      styleClass2="summary_compare"
+                      [isGreaterIsBetter]="false"
+                      [max]="_s.summary?.calcSkill?.reducedCd"
+                    ></app-calc-value>
+                  </div>
+                  <div class="col-6">
+                    <app-calc-value
+                      [enableCompare]="false"
+                      label="Delay:"
+                      styleClass="summary_value"
+                      styleClass2="summary_compare"
+                      [isGreaterIsBetter]="false"
+                      [max]="_s.summary?.calcSkill?.reducedAcd"
+                    ></app-calc-value>
+                  </div>
+                  <div class="col-6">
+                    <app-calc-value
+                      [enableCompare]="false"
+                      label="Cast:"
+                      styleClass="summary_damage"
+                      styleClass2="summary_compare"
+                      [isGreaterIsBetter]="false"
+                      [max]="_s.summary?.calcSkill?.castPeriod"
+                    ></app-calc-value>
+                  </div>
+                  <div class="col-6">
+                    <app-calc-value
+                      [enableCompare]="false"
+                      label="Skill/s:"
+                      unit=" Hits/s"
+                      styleClass="summary_highlight"
+                      styleClass2="summary_compare"
+                      [max]="_s.summary?.calcSkill?.totalHitPerSec"
+                    ></app-calc-value>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 py-1 divider">
+                <p-divider></p-divider>
+              </div>
+
+              <!-- Skill Damage -->
+              <div class="col-6" [hidden]="!_s.summary?.dmg?.skillCanCri">
+                <app-calc-value
+                  [enableCompare]="false"
+                  label="CriRate:"
+                  unit="%"
+                  styleClass="summary_damage"
+                  styleClass2="summary_compare"
+                  [max]="_s.summary?.dmg?.skillCriRateToMonster"
+                ></app-calc-value>
+              </div>
+              <div class="col-6" [hidden]="!_s.summary?.dmg?.skillCanCri">
+                <app-calc-value
+                  [enableCompare]="false"
+                  label="CriDmg:"
+                  unit="%"
+                  styleClass="summary_damage"
+                  styleClass2="summary_compare"
+                  [max]="_s.summary?.dmg?.skillCriDmgToMonster"
+                ></app-calc-value>
+              </div>
+              <div class="col-12">
+                <app-calc-value
+                  [enableCompare]="false"
+                  [label]="_s.summary?.dmg?.skillCanCri ? 'SkillDmgCri:' : 'SkillDmg:'"
+                  styleClass="summary_damage"
+                  styleClass2="summary_compare"
+                  [showPercentDiff]="true"
+                  [totalHit]="_s.summary?.calcSkill?.totalHits"
+                  [min]="_s.summary?.dmg?.skillMinDamage"
+                  [max]="_s.summary?.dmg?.skillMaxDamage"
+                ></app-calc-value>
+              </div>
+              <div class="col-12" *ngIf="_s.summary?.dmg?.skillPart2Label && _s.summary?.dmg?.skillMaxDamage2">
+                <app-calc-value
+                  [enableCompare]="false"
+                  [label]="_s.summary?.dmg?.skillPart2Label"
+                  styleClass="summary_damage"
+                  styleClass2="summary_compare"
+                  [totalHit]="_s.summary?.calcSkill?.totalHits"
+                  [min]="_s.summary?.dmg?.skillMinDamage2"
+                  [max]="_s.summary?.dmg?.skillMaxDamage2"
+                ></app-calc-value>
+              </div>
+              <div class="col-12" [hidden]="_s.summary?.dmg?.isAutoSpell">
+                <app-calc-value
+                  [enableCompare]="false"
+                  label="DPS:"
+                  styleClass="summary_highlight"
+                  styleClass2="summary_compare"
+                  [showPercentDiff]="true"
+                  [max]="_s.summary?.dmg?.skillDps"
+                ></app-calc-value>
+              </div>
+            </div>
+          </div>
+        </div>
+      </p-accordionTab>
+    </p-accordion>
+  </div>
 </div>

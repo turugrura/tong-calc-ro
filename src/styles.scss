@@ -7,3 +7,55 @@ $gutter: 1rem; //for primeflex grid system
 @import "../node_modules/primeng/resources/primeng.min.css";
 @import "../node_modules/primeflex/primeflex.scss";
 @import "../node_modules/primeicons/primeicons.css";
+
+
+.property_Water {
+  /* background-color: #7ba7e1; */
+  background-color: var(--blue-600);
+  color: white;
+}
+
+.property_Earth {
+  /* background-color: #daaf85; */
+  background-color: var(--orange-200);
+  color: black;
+}
+
+.property_Fire {
+  /* background-color: #ff7575; */
+  background-color: var(--red-600);
+  color: white;
+}
+
+.property_Wind {
+  /* background-color: #cafeb8; */
+  background-color: var(--green-400);
+  color: black;
+}
+
+.property_Poison {
+  /* background-color: var(--green-600); */
+  background-color: #4bfe78;
+  color: black;
+}
+
+.property_Holy {
+  /* background-color: #ffffaa; */
+  background-color: var(--yellow-300);
+  color: black;
+}
+
+.property_Dark {
+  background-color: #a55feb;
+  color: white;
+}
+
+.property_Ghost {
+  background-color: #aaaaaa;
+  color: black;
+}
+
+.property_Undead {
+  background-color: black;
+  color: white;
+}

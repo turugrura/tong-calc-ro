@@ -12,6 +12,9 @@ import { DividerModule } from 'primeng/divider';
 import { EquipmentInDetailComponent } from './equipment-in-detail/equipment-in-detail.component';
 import { PaginatorModule } from 'primeng/paginator';
 import { InputSwitchModule } from 'primeng/inputswitch';
+import { ToastModule } from 'primeng/toast';
+import { AccordionModule } from 'primeng/accordion';
+import { RoCalculatorModule } from '../ro-calculator/ro-calculator.module';
 
 @NgModule({
   imports: [
@@ -24,9 +27,11 @@ import { InputSwitchModule } from 'primeng/inputswitch';
     DividerModule,
     PaginatorModule,
     InputSwitchModule,
+    ToastModule,
+    AccordionModule,
     SharedPresetRoutingModule,
+    RoCalculatorModule,
   ],
   declarations: [SharedPresetComponent, EquipmentUiComponent, EquipmentInDetailComponent],
-  exports: [],
 })
 export class SharedPresetModule {}

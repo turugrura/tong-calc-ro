@@ -31,7 +31,6 @@ export class UserProfileComponent implements OnInit, OnDestroy {
 
   subscribeLogin() {
     this.subs = this.authService.loggedInEvent$.subscribe((_isLoggin) => {
-      console.log('re assign myprofile');
       this.setMyProfile();
     });
   }

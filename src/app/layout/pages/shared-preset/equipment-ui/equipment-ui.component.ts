@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MainModel } from '../../ro-calculator/models/main.model';
 import { ItemTypeEnum } from '../../ro-calculator/constants/item-type.enum';
 
@@ -7,7 +7,7 @@ import { ItemTypeEnum } from '../../ro-calculator/constants/item-type.enum';
   templateUrl: './equipment-ui.component.html',
   styleUrls: ['./equipment-ui.component.css'],
 })
-export class EquipmentUiComponent implements OnInit {
+export class EquipmentUiComponent {
   @Input({ required: true }) itemMap = {} as any;
   @Input({ required: true }) model = {} as any as MainModel;
 
@@ -27,8 +27,4 @@ export class EquipmentUiComponent implements OnInit {
   ];
 
   constructor() {}
-
-  ngOnInit() {
-    console.log('');
-  }
 }

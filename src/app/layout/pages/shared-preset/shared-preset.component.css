@@ -8,6 +8,58 @@
   padding: 0.5rem;
 }
 
+:host ::ng-deep .battle_summary .p-fieldset-content {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.p-inputgroup p-dropdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+:host ::ng-deep .p-inputgroup p-dropdown .p-dropdown-filter {
+  width: 100%;
+}
+
+:host ::ng-deep .divider .p-divider-horizontal {
+  margin: 0;
+  padding: 0;
+}
+
+.summary_monster_value {
+  /* background-color: var(--surface-0); */
+  background-color: #121212;
+  color: var(--red-300);
+}
+
+.monster_hilight_label {
+  background-color: #121212;
+  color: var(--red-500);
+  width: 75px;
+}
+
+.skill_hilight_label {
+  background-color: #121212;
+  color: var(--yellow-500);
+  width: 60px;
+}
+
+.dropdown_monster_group_label {
+  background-color: var(--green-900);
+  color: white;
+}
+
+.img_monster {
+  background-color: white;
+  height: 150px;
+}
+
+.border_default {
+  border: var(--border-radius) solid var(--surface-border);
+}
+
 .job_img {
   height: fit-content;
 }
@@ -15,6 +67,18 @@
 .like_section {
   display: flex;
   align-items: center;
+}
+
+.loading_block {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.4);
+  transition-duration: 0.2s;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 
 .summary_stat_atk {
@@ -39,4 +103,16 @@
   /* background-color: var(--surface-0); */
   /* background-color: #121212; */
   color: var(--orange-400);
+}
+
+.summary_value {
+  /* background-color: var(--surface-0); */
+  background-color: #121212;
+  color: var(--blue-300);
+}
+
+.summary_damage {
+  /* background-color: var(--surface-0); */
+  background-color: #121212;
+  color: var(--teal-300);
 }

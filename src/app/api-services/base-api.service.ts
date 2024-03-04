@@ -3,6 +3,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 import { Observable, catchError, of, switchMap, tap, throwError } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { LoginResponse } from './models';
+import { Unauthorized } from '../app-errors';
 
 const BASE_URL = environment.roBackendUrl;
 const ACCESS_TOKEN_KEY = 'accessToken';
@@ -43,7 +44,7 @@ export abstract class BaseAPIService {
 
   protected refreshToken() {
     const refreshToken = this.getRefreshToken();
-    if (!refreshToken) return throwError(() => new Error('Unauthorized'));
+    if (!refreshToken) return throwError(() => new Unauthorized());
 
     return this.http
       .post<LoginResponse>(`${this.API.refreshToken}`, { refreshToken })

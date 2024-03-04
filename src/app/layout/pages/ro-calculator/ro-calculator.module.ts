@@ -84,5 +84,6 @@ import { DialogModule } from 'primeng/dialog';
     MonsterDataViewComponent,
     MiscDetailComponent,
   ],
+  exports: [CalcValueComponent],
 })
 export class RoCalculatorModule {}
