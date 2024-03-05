@@ -22,7 +22,7 @@ import { ItemModel } from '../ro-calculator/models/item.model';
 import { MonsterModel } from '../ro-calculator/models/monster.model';
 import { PaginatorState } from 'primeng/paginator';
 import { Unauthorized } from 'src/app/app-errors';
-import { MessageService } from 'primeng/api';
+import { ConfirmationService, MessageService } from 'primeng/api';
 import { RoyalGuard } from '../ro-calculator/jobs/royal-guard';
 import { ActiveSkillModel, AtkSkillModel, CharacterBase } from '../ro-calculator/jobs/_character-base.abstract';
 import { ArchBishop } from '../ro-calculator/jobs/arch-bishop';
@@ -96,7 +96,7 @@ const extraOptionList: [ItemTypeEnum, [ItemOptionNumber, ItemOptionNumber]][] = 
   selector: 'app-shared-preset',
   templateUrl: './shared-preset.component.html',
   styleUrls: ['./shared-preset.component.css'],
-  providers: [MessageService],
+  providers: [MessageService, ConfirmationService],
 })
 export class SharedPresetComponent implements OnInit, OnDestroy {
   availableTags = availableTags.map((a) => {
@@ -109,7 +109,7 @@ export class SharedPresetComponent implements OnInit, OnDestroy {
   }, {});
 
   isLoading = false;
-  items: PublishPresetModel[] = [];
+  items: (PublishPresetModel & { summary: any } & any)[] = [];
   totalRecord = 0;
   firstRecord = 0;
   pageOptions = [5, 10, 20];
@@ -162,6 +162,7 @@ export class SharedPresetComponent implements OnInit, OnDestroy {
     private readonly presetService: PresetService,
     private readonly roService: RoService,
     private readonly messageService: MessageService,
+    private readonly confirmationService: ConfirmationService,
   ) {}
 
   ngOnInit() {
@@ -280,7 +281,21 @@ export class SharedPresetComponent implements OnInit, OnDestroy {
         }),
       )
       .subscribe((searchRes) => {
-        this.items = searchRes.items;
+        this.items = searchRes.items.map((a) => {
+          const c = this.prepare(a.model as any);
+          const s = c.getTotalSummary() as any;
+
+          return {
+            ...a,
+            str: a.model.jobStr + s.str,
+            agi: a.model.jobAgi + s.agi,
+            vit: a.model.jobVit + s.vit,
+            int: a.model.jobInt + s.int,
+            dex: a.model.jobDex + s.dex,
+            luk: a.model.jobLuk + s.luk,
+            summary: s,
+          };
+        });
         this.totalRecord = searchRes.totalItem;
         this.isLoading = false;
       });
@@ -336,6 +351,56 @@ export class SharedPresetComponent implements OnInit, OnDestroy {
 
   likePreset(tagId: string, isLike: boolean) {
     this.likeSource.next({ tagId, isLike });
+  }
+
+  private waitConfirm(message: string, icon?: string) {
+    return new Promise((res) => {
+      this.confirmationService.confirm({
+        message: message,
+        header: 'Confirmation',
+        icon: icon || 'pi pi-exclamation-triangle',
+        accept: () => {
+          res(true);
+        },
+        reject: () => {
+          console.log('reject confirm');
+          res(false);
+        },
+      });
+    });
+  }
+
+  copyPreset(presetTag: PublishPresetModel) {
+    console.log(presetTag.publishName);
+    this.waitConfirm(`Copy "${presetTag.publishName}" ?`).then((isConfirm) => {
+      if (!isConfirm) return;
+
+      this.isLoading = false;
+      this.presetService
+        .createPreset({
+          label: `copied ${presetTag.publishName}`,
+          model: presetTag.model,
+        })
+        .pipe(
+          tap(() => {
+            this.messageService.add({
+              severity: 'success',
+              summary: 'Copy preset success',
+            });
+          }),
+          catchError((err) => {
+            this.messageService.add({
+              severity: 'error',
+              summary: err?.error || err?.message,
+            });
+
+            return of(true);
+          }),
+        )
+        .subscribe(() => {
+          this.isLoading = false;
+        });
+    });
   }
 
   pageChange(event: PaginatorState) {

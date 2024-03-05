@@ -15,6 +15,7 @@ import { InputSwitchModule } from 'primeng/inputswitch';
 import { ToastModule } from 'primeng/toast';
 import { AccordionModule } from 'primeng/accordion';
 import { RoCalculatorModule } from '../ro-calculator/ro-calculator.module';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
 
 @NgModule({
   imports: [
@@ -30,6 +31,7 @@ import { RoCalculatorModule } from '../ro-calculator/ro-calculator.module';
     ToastModule,
     AccordionModule,
     SharedPresetRoutingModule,
+    ConfirmDialogModule,
     RoCalculatorModule,
   ],
   declarations: [SharedPresetComponent, EquipmentUiComponent, EquipmentInDetailComponent],

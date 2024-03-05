@@ -1,4 +1,6 @@
 <p-toast></p-toast>
+<p-confirmDialog [position]="'top'" [style]="{ width: '25vw' }"></p-confirmDialog>
+
 <div class="grid grid-nogutter" style="min-width: 1500px">
   <div class="col-12 mb-2">
     <div class="grid grid-nogutter column_list">
@@ -76,6 +78,15 @@
                     <div class="font-bold text-2xl">{{ presetTag.publishName }}</div>
                     <div class="font-medium">by. {{ presetTag.publisherName }}</div>
                   </div>
+                  <div>
+                    <button
+                      pButton
+                      icon="pi pi-copy text-3xl"
+                      class="p-button-text p-button-rounded p-button-warning"
+                      label="Copy"
+                      (click)="copyPreset(presetTag)"
+                    ></button>
+                  </div>
                 </div>
 
                 <div class="flex align-items-center">
@@ -114,25 +125,70 @@
                     Job: <span class="summary_highlight text-xl font-semibold"> {{ presetTag.model?.jobLevel }} </span>
                   </div>
                   <div class="col-6">
-                    Str: <span class="summary_stat_atk text-xl"> {{ presetTag.model?.str }} </span>
+                    Str: <span class="summary_stat_atk text-xl"> {{ presetTag.model?.str }} </span>+
+                    <span>{{ presetTag.str || 0 }}</span>
                   </div>
                   <div class="col-6">
-                    Int: <span class="summary_stat_matk text-xl"> {{ presetTag.model?.int }} </span>
+                    Int: <span class="summary_stat_matk text-xl"> {{ presetTag.model?.int }} </span>+
+                    <span>{{ presetTag.int || 0 }}</span>
                   </div>
                   <div class="col-6">
                     Dex:
                     <span class="summary_stat_atk text-xl" style="color: var(--green-300)">
-                      {{ presetTag.model?.dex }}
-                    </span>
+                      {{ presetTag.model?.dex }} </span
+                    >+ <span>{{ presetTag.dex || 0 }}</span>
                   </div>
                   <div class="col-6">
-                    Agi: <span class="summary_stat_def text-xl"> {{ presetTag.model?.agi }} </span>
+                    Agi: <span class="summary_stat_def text-xl"> {{ presetTag.model?.agi }} </span>+
+                    <span>{{ presetTag.agi || 0 }}</span>
                   </div>
                   <div class="col-6">
-                    Vit: <span class="summary_stat_def text-xl"> {{ presetTag.model?.vit }} </span>
+                    Vit: <span class="summary_stat_def text-xl"> {{ presetTag.model?.vit }} </span>+
+                    <span>{{ presetTag.vit || 0 }}</span>
                   </div>
                   <div class="col-6">
-                    Luk: <span class="summary_stat_def text-xl"> {{ presetTag.model?.luk }} </span>
+                    Luk: <span class="summary_stat_def text-xl"> {{ presetTag.model?.luk }} </span>+
+                    <span>{{ presetTag.luk || 0 }}</span>
+                  </div>
+                </div>
+                <div class="grid grid-nogutter mt-2">
+                  <div class="col-12">
+                    ASPD:
+                    <span class="font-semibold px-1 summary_stat_atk">{{
+                      presetTag.summary?.calc?.totalAspd || 0
+                    }}</span>
+                    <span class="font-semibold px-1 summary_highlight"
+                      >( {{ presetTag.summary?.calc?.hitPerSecs || 0 }} Hits/s )</span
+                    >
+                  </div>
+                  <div class="col-12">
+                    Hit:
+                    <span class="font-semibold px-1 summary_stat_atk">{{
+                      presetTag.summary?.calc?.totalHit || 0
+                    }}</span>
+                    Perfect:
+                    <span class="font-semibold px-1 summary_stat_atk"
+                      >{{ presetTag.summary?.calc?.totalPerfectHit || 0 }} %</span
+                    >
+                  </div>
+                  <div class="col-12">
+                    CriRate:
+                    <span class="font-semibold px-1 summary_stat_atk"
+                      >{{ presetTag.summary?.calc?.totalCri || 0 }} %</span
+                    >
+                    Dmg: <span class="font-semibold px-1 summary_stat_atk">{{ presetTag.summary?.criDmg || 0 }} %</span>
+                  </div>
+                  <div class="col-6">
+                    ACD:
+                    <span class="font-semibold px-1 summary_stat_matk">{{ presetTag.summary?.acd || 0 }}</span>
+                  </div>
+                  <div class="col-6">
+                    FCT:
+                    <span class="font-semibold px-1 summary_stat_matk">{{ presetTag.summary?.fct || 0 }}</span>
+                  </div>
+                  <div class="col-6">
+                    VCT:
+                    <span class="font-semibold px-1 summary_stat_matk">{{ presetTag.summary?.vct || 0 }}</span>
                   </div>
                 </div>
               </div>
