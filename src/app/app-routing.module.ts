@@ -20,15 +20,15 @@ import { AppLayoutComponent } from './layout/app.layout.component';
               loadChildren: () =>
                 import('./layout/pages/shared-preset/shared-preset.module').then((m) => m.SharedPresetModule),
             },
-            {
-              path: '**',
-              redirectTo: '',
-            },
           ],
         },
         {
           path: 'login',
           loadChildren: () => import('./layout/pages/auth/auth.module').then((m) => m.AuthModule),
+        },
+        {
+          path: '**',
+          redirectTo: '',
         },
       ],
       {

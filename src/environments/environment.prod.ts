@@ -5,5 +5,5 @@ export const environment: EnvironmentModel = {
   surveyUrl: 'https://forms.gle/aUYQKTfDym5Aakz9A',
   issueTrackingUrl:
     'https://docs.google.com/spreadsheets/d/1SBdqO0PzAY2rGawP_pvMAOA2erZK9_V0h2LxvcW-Epc/edit?usp=sharing',
-  roBackendUrl: 'http://localhost:3001',
+  roBackendUrl: 'https://prod---ro-backend-7a7aw5iyva-as.a.run.app',
 };

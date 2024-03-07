@@ -37,6 +37,17 @@ export abstract class BaseAPIService {
     return localStorage.getItem(REFRESH_TOKEN_KEY);
   }
 
+  protected isUnauthorizedErr(err: any) {
+    return err?.message === 'Unauthorized' || err?.status === 401;
+  }
+
+  protected handleUnauthErr() {
+    localStorage.removeItem('accessToken');
+    localStorage.removeItem('refreshToken');
+
+    return throwError(() => new Unauthorized());
+  }
+
   protected storeToken(res: LoginResponse) {
     localStorage.setItem('accessToken', res.accessToken);
     localStorage.setItem('refreshToken', res.refreshToken);
@@ -44,7 +55,7 @@ export abstract class BaseAPIService {
 
   protected refreshToken() {
     const refreshToken = this.getRefreshToken();
-    if (!refreshToken) return throwError(() => new Unauthorized());
+    if (!refreshToken) return this.handleUnauthErr();
 
     return this.http
       .post<LoginResponse>(`${this.API.refreshToken}`, { refreshToken })
@@ -74,7 +85,12 @@ export abstract class BaseAPIService {
 
     return ob.pipe(
       catchError((err) => {
-        console.error({ err });
+        if (this.isUnauthorizedErr(err)) {
+          return this.handleUnauthErr();
+        } else {
+          console.error({ err });
+        }
+
         return throwError(() => err);
       }),
     );
@@ -95,7 +111,12 @@ export abstract class BaseAPIService {
 
     return ob.pipe(
       catchError((err) => {
-        console.error({ err });
+        if (this.isUnauthorizedErr(err)) {
+          return this.handleUnauthErr();
+        } else {
+          console.error({ err });
+        }
+
         return throwError(() => err);
       }),
     );
@@ -116,7 +137,12 @@ export abstract class BaseAPIService {
 
     return ob.pipe(
       catchError((err) => {
-        console.error({ err });
+        if (this.isUnauthorizedErr(err)) {
+          return this.handleUnauthErr();
+        } else {
+          console.error({ err });
+        }
+
         return throwError(() => err);
       }),
     );

@@ -68,6 +68,20 @@ enum SkillDelay {
   _2 = 'Skill_Delay2',
   _3 = 'Skill_Delay3',
 }
+enum ExpertFighter {
+  _1 = 'Expert_Fighter1',
+  _2 = 'Expert_Fighter2',
+  _3 = 'Expert_Fighter3',
+  _4 = 'Expert_Fighter4',
+  _5 = 'Expert_Fighter5',
+}
+enum ExpertMagician {
+  _1 = 'Expert_Magician1',
+  _2 = 'Expert_Magician2',
+  _3 = 'Expert_Magician3',
+  _4 = 'Expert_Magician4',
+  _5 = 'Expert_Magician5',
+}
 enum Dodge {
   _1 = 'Dodge1',
   _2 = 'Dodge2',
@@ -268,12 +282,12 @@ enum Tenacity {
   _10 = 'Tenacity10',
 }
 
-const str = (from: number, to: number) => Array.from({length: 1+to-from}).map((_, i) => Str[`_${i+from}`])
-const dex = (from: number, to: number) => Array.from({length: 1+to-from}).map((_, i) => Dex[`_${i+from}`])
-const int = (from: number, to: number) => Array.from({length: 1+to-from}).map((_, i) => Int[`_${i+from}`])
-const agi = (from: number, to: number) => Array.from({length: 1+to-from}).map((_, i) => Agi[`_${i+from}`])
-const vit = (from: number, to: number) => Array.from({length: 1+to-from}).map((_, i) => Vit[`_${i+from}`])
-const luk = (from: number, to: number) => Array.from({length: 1+to-from}).map((_, i) => Luk[`_${i+from}`])
+const str = (from: number, to: number) => Array.from({ length: 1 + to - from }).map((_, i) => Str[`_${i + from}`]);
+const dex = (from: number, to: number) => Array.from({ length: 1 + to - from }).map((_, i) => Dex[`_${i + from}`]);
+const int = (from: number, to: number) => Array.from({ length: 1 + to - from }).map((_, i) => Int[`_${i + from}`]);
+const agi = (from: number, to: number) => Array.from({ length: 1 + to - from }).map((_, i) => Agi[`_${i + from}`]);
+const vit = (from: number, to: number) => Array.from({ length: 1 + to - from }).map((_, i) => Vit[`_${i + from}`]);
+const luk = (from: number, to: number) => Array.from({ length: 1 + to - from }).map((_, i) => Luk[`_${i + from}`]);
 
 const statEnums = [Str, Int, Dex, Agi, Vit, Luk];
 const createBaseStat = (from: number, to: number): string[] => {
@@ -360,6 +374,9 @@ const ea25 = [EA._2, EA._3, EA._4, EA._5];
 const ea35 = [EA._3, EA._4, EA._5];
 const ea45 = [EA._4, EA._5];
 const ea410 = [EA._4, EA._5, EA._6, EA._7, EA._8, EA._9, EA._10];
+
+const ef15 = [ExpertFighter._1, ExpertFighter._2, ExpertFighter._3, ExpertFighter._4, ExpertFighter._5];
+const em15 = [ExpertMagician._1, ExpertMagician._2, ExpertMagician._3, ExpertMagician._4, ExpertMagician._5];
 
 const sp23 = [Spell._2, Spell._3];
 const sp25 = [Spell._2, Spell._3, Spell._4, Spell._5];
@@ -627,6 +644,24 @@ const illusionDun = [...mhp14, RuneStr._1, RuneStr._2, RuneDex._1, RuneDex._2, R
 
 const specials = ['S_Str', 'S_Agi', 'S_Vital', 'S_Int', 'S_Dex', 'S_Luck'];
 
+const bpBioLab43 = [...ea15, ...ef15, ...em15];
+const bpBioLab2 = [
+  "[Event]_Seyren's Memory",
+  "[Event]_Howard's Memory",
+  "[Event]_Eremes's Memory",
+  "[Event]_Kathryne's Memory",
+  "[Event]_Margaretha's Memory",
+  "[Event]_Cecil's Memory",
+  "[Event]_Randel's Memory",
+  "[Event]_Flamel's Memory",
+  "[Event]_Gertie's Memory",
+  "[Event]_Celia's Memory",
+  "[Event]_Chen's Memory",
+  "[Event]_Trentini's Memory",
+  "[Event]_Alphoccio's Memory",
+  ...bpBioLab43,
+];
+
 const malangdo = [
   EA._2,
   EA._3,
@@ -675,18 +710,18 @@ const subject = [...BaseState._5, ...fs68, ...ea35, ...sp46, ...delay13];
 
 const year2nd = [...allRunes, ...fs45, ...sp34, ...ea12, ...critical23, ...mhp34, ...shedding12, ...BaseState._1_3];
 
-const moraAtkType1 = [...atkPer13, ...fs13, ...str(1,3)]
-const moraAtkType2 = [...atkPer23, ...fs24, ...str(2,4)]
-const moraAtkType3 = [AtkPercent._3, ...fs36, ...str(3,5)]
+const moraAtkType1 = [...atkPer13, ...fs13, ...str(1, 3)];
+const moraAtkType2 = [...atkPer23, ...fs24, ...str(2, 4)];
+const moraAtkType3 = [AtkPercent._3, ...fs36, ...str(3, 5)];
 
-const moraSpellAbility1 = [MatkPercent._1, ...sp23, ...dex(2,3), ...int(2,3)]
-const moraSpellAbility2 = [...matk12, ...sp34, ...dex(3,4), ...int(3,4)]
-const moraSpellAbility3 = [...matk13, Spell._4, ...dex(3,5), ...int(3,5)]
+const moraSpellAbility1 = [MatkPercent._1, ...sp23, ...dex(2, 3), ...int(2, 3)];
+const moraSpellAbility2 = [...matk12, ...sp34, ...dex(3, 4), ...int(3, 4)];
+const moraSpellAbility3 = [...matk13, Spell._4, ...dex(3, 5), ...int(3, 5)];
 
-const maceOfJudge = [...dex(1,2), ...str(1,4), ...vit(1,2), AtkPercent._3]
-const robeOfJudge = [...dex(1,4), ...int(1,4), Str._4, Vit._1, AtkPercent._2, MatkPercent._2, Cri._5]
-const shawnOfJudge = [...dex(1,4), ...int(1,2), Vit._1]
-const shoeOfJudge = [...dex(2,4), ...int(1,2), AtkPercent._2]
+const maceOfJudge = [...dex(1, 2), ...str(1, 4), ...vit(1, 2), AtkPercent._3];
+const robeOfJudge = [...dex(1, 4), ...int(1, 4), Str._4, Vit._1, AtkPercent._2, MatkPercent._2, Cri._5];
+const shawnOfJudge = [...dex(1, 4), ...int(1, 2), Vit._1];
+const shoeOfJudge = [...dex(2, 4), ...int(1, 2), AtkPercent._2];
 
 export const EnchantTable: EntTable[] = [
   { name: 'Lush_Rose', enchants: [null, null, BaseState._1_3, toyFactory] },
@@ -961,6 +996,10 @@ export const EnchantTable: EntTable[] = [
   { name: 'Vulcan_Armor_TH', enchants: [null, year2nd, year2nd, year2nd] },
   { name: 'Neptune_Armor_TH', enchants: [null, year2nd, year2nd, year2nd] },
   { name: 'Neptune_ArmorDoram_TH', enchants: [null, year2nd, year2nd, year2nd] },
+
+  { name: 'Biolab_Cape(Melee)', enchants: [null, bpBioLab2, bpBioLab43, bpBioLab43] },
+  { name: 'Biolab_Cape(Magic)', enchants: [null, bpBioLab2, bpBioLab43, bpBioLab43] },
+  { name: 'Biolab_Cape(Range)', enchants: [null, bpBioLab2, bpBioLab43, bpBioLab43] },
 ];
 
 Object.freeze(EnchantTable);

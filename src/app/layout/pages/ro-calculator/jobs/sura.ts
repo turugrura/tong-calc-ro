@@ -425,6 +425,24 @@ export class Sura extends CharacterBase {
         { label: 'Lv 5', value: 5, isUse: true },
       ],
     },
+    {
+      label: 'Rampage Blast',
+      name: 'Rampage Blast',
+      inputType: 'dropdown',
+      dropdown: [
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 5', value: 5, isUse: true },
+      ],
+    },
+    {
+      label: 'Lightning Ride',
+      name: 'Lightning Ride',
+      inputType: 'dropdown',
+      dropdown: [
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 5', value: 5, isUse: true },
+      ],
+    },
   ];
 
   constructor() {

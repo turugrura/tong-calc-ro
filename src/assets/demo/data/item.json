@@ -62221,6 +62221,449 @@
       ]
     }
   },
+  "300534": {
+    "id": 300534,
+    "aegisName": "[Event]_Seyren's Memory",
+    "name": "[Event] Seyren's Memory",
+    "unidName": "[Event] Seyren's Memory",
+    "resName": "검사의혼",
+    "description": "เมื่อสวมใส่ร่วมกับ Seyren's Memory และ Biolab Cape(Melee/Range/Magic),\nเมื่อโจมตีทางกายภาพ มีโอกาส 1% ที่จะเพิ่ม Damage ทางกายภาพระยะไกล 100% เป็นระยะเวลา 5 วินาที (ทุก ๆ การอัพเกรด Garment 3 ขั้น เพิ่มโอกาสขึ้นอีก 2%)\nทุก ๆ การอัพเกรด Garment 3 ขั้น\nเพิ่ม Damage สกิล Ignition Break 5%\nเพิ่ม Damage สกิล Sonic Wave 5%\nเพิ่ม Damage สกิล Hundred Spears 5%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "chance__range": [
+        "EQUIP[Seyren's Memory&&Biolab Cape(Melee)||Biolab Cape(Range)||Biolab Cape(Magic)]===100"
+      ],
+      "Ignition Break": [
+        "EQUIP[Seyren's Memory&&Biolab Cape(Melee)||Biolab Cape(Range)||Biolab Cape(Magic)]REFINE[garment==3]---5"
+      ],
+      "Sonic Wave": [
+        "EQUIP[Seyren's Memory&&Biolab Cape(Melee)||Biolab Cape(Range)||Biolab Cape(Magic)]REFINE[garment==3]---5"
+      ],
+      "Hundred Spears": [
+        "EQUIP[Seyren's Memory&&Biolab Cape(Melee)||Biolab Cape(Range)||Biolab Cape(Magic)]REFINE[garment==3]---5"
+      ]
+    }
+  },
+  "300535": {
+    "id": 300535,
+    "aegisName": "[Event]_Howard's Memory",
+    "name": "[Event] Howard's Memory",
+    "unidName": "[Event] Howard's Memory",
+    "resName": "상인의혼",
+    "description": "เมื่อสวมใส่ร่วมกับ Howard's Memory และ Biolab Cape(Melee/Range/Magic),\nทุก ๆ การอัพเกรด Garment 3 ขั้น\nลด Cooldown สกิล Arm Cannon 0.1 วินาที\nเพิ่ม Damage สกิล Power Swing 5%\nเพิ่ม Damage สกิล Arm Cannon 5%\nเพิ่ม Damage สกิล Axe Tornado 5%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "cd__Arm Cannon": [
+        "EQUIP[Howard's Memory&&Biolab Cape(Melee)||Biolab Cape(Range)||Biolab Cape(Magic)]REFINE[garment==3]---0.1"
+      ],
+      "Power Swing": [
+        "EQUIP[Howard's Memory&&Biolab Cape(Melee)||Biolab Cape(Range)||Biolab Cape(Magic)]REFINE[garment==3]---5"
+      ],
+      "Arm Cannon": [
+        "EQUIP[Howard's Memory&&Biolab Cape(Melee)||Biolab Cape(Range)||Biolab Cape(Magic)]REFINE[garment==3]---5"
+      ],
+      "Axe Tornado": [
+        "EQUIP[Howard's Memory&&Biolab Cape(Melee)||Biolab Cape(Range)||Biolab Cape(Magic)]REFINE[garment==3]---5"
+      ]
+    }
+  },
+  "300536": {
+    "id": 300536,
+    "aegisName": "[Event]_Eremes's Memory",
+    "name": "[Event] Eremes's Memory",
+    "unidName": "[Event] Eremes's Memory",
+    "resName": "도둑의혼",
+    "description": "เมื่อสวมใส่ร่วมกับ Eremes's Memory และ Biolab Cape(Melee/Range/Magic),\nทุก ๆ การอัพเกรด Garment 3 ขั้น\nCRI +7\nลด Delay หลังใช้สกิล 3%\nเพิ่ม Damage สกิล Cross Impact 5%\nเพิ่ม Damage สกิล Soul Destroyer 5%\nเพิ่ม Damage สกิล Rolling Cutter 5%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "cri": [
+        "EQUIP[Eremes's Memory&&Biolab Cape(Melee)||Biolab Cape(Range)||Biolab Cape(Magic)]REFINE[garment==3]---7"
+      ],
+      "acd": [
+        "EQUIP[Eremes's Memory&&Biolab Cape(Melee)||Biolab Cape(Range)||Biolab Cape(Magic)]REFINE[garment==3]---3"
+      ],
+      "Cross Impact": [
+        "EQUIP[Eremes's Memory&&Biolab Cape(Melee)||Biolab Cape(Range)||Biolab Cape(Magic)]REFINE[garment==3]---5"
+      ],
+      "Soul Destroyer": [
+        "EQUIP[Eremes's Memory&&Biolab Cape(Melee)||Biolab Cape(Range)||Biolab Cape(Magic)]REFINE[garment==3]---5"
+      ],
+      "Rolling Cutter": [
+        "EQUIP[Eremes's Memory&&Biolab Cape(Melee)||Biolab Cape(Range)||Biolab Cape(Magic)]REFINE[garment==3]---5"
+      ]
+    }
+  },
+  "300537": {
+    "id": 300537,
+    "aegisName": "[Event]_Kathryne's Memory",
+    "name": "[Event] Kathryne's Memory",
+    "unidName": "[Event] Kathryne's Memory",
+    "resName": "마법사의혼",
+    "description": "เมื่อสวมใส่ร่วมกับ Kathryne's Memory และ Biolab Cape(Melee/Range/Magic),\nทุก ๆ การอัพเกรด Garment 3 ขั้น\nลดระยะเวลาร่ายแบบแปรผัน 5%\nลด Delay หลังใช้สกิล 3%\nเพิ่ม Damage สกิล Crimson Rock 5%\nเพิ่ม Damage สกิล Soul Expansion 5%\nเพิ่ม Damage สกิล Comet 5%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "vct": [
+        "EQUIP[Kathryne's Memory&&Biolab Cape(Melee)||Biolab Cape(Range)||Biolab Cape(Magic)]REFINE[garment==3]---5"
+      ],
+      "acd": [
+        "EQUIP[Kathryne's Memory&&Biolab Cape(Melee)||Biolab Cape(Range)||Biolab Cape(Magic)]REFINE[garment==3]---3"
+      ],
+      "Crimson Rock": [
+        "EQUIP[Kathryne's Memory&&Biolab Cape(Melee)||Biolab Cape(Range)||Biolab Cape(Magic)]REFINE[garment==3]---5"
+      ],
+      "Soul Expansion": [
+        "EQUIP[Kathryne's Memory&&Biolab Cape(Melee)||Biolab Cape(Range)||Biolab Cape(Magic)]REFINE[garment==3]---5"
+      ],
+      "Comet": [
+        "EQUIP[Kathryne's Memory&&Biolab Cape(Melee)||Biolab Cape(Range)||Biolab Cape(Magic)]REFINE[garment==3]---5"
+      ]
+    }
+  },
+  "300538": {
+    "id": 300538,
+    "aegisName": "[Event]_Margaretha's Memory",
+    "name": "[Event] Margaretha's Memory",
+    "unidName": "[Event] Margaretha's Memory",
+    "resName": "복사의혼",
+    "description": "เมื่อสวมใส่ร่วมกับ Margaretha's Memory และ Biolab Cape(Melee/Range/Magic),\nทุก ๆ การอัพเกรด Garment 3 ขั้น\nลด Cooldown สกิล Adoramus 0.05 วินาที\nเพิ่ม Damage สกิล Judex 5%\nเพิ่ม Damage สกิล Adoramus 5%\nเพิ่ม Damage สกิล Duple Light 5%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "cd__Adoramus": [
+        "EQUIP[Margaretha's Memory&&Biolab Cape(Melee)||Biolab Cape(Range)||Biolab Cape(Magic)]REFINE[garment==3]---0.05"
+      ],
+      "Judex": [
+        "EQUIP[Margaretha's Memory&&Biolab Cape(Melee)||Biolab Cape(Range)||Biolab Cape(Magic)]REFINE[garment==3]---5"
+      ],
+      "Adoramus": [
+        "EQUIP[Margaretha's Memory&&Biolab Cape(Melee)||Biolab Cape(Range)||Biolab Cape(Magic)]REFINE[garment==3]---5"
+      ],
+      "Duple Light": [
+        "EQUIP[Margaretha's Memory&&Biolab Cape(Melee)||Biolab Cape(Range)||Biolab Cape(Magic)]REFINE[garment==3]---5"
+      ]
+    }
+  },
+  "300539": {
+    "id": 300539,
+    "aegisName": "[Event]_Cecil's Memory",
+    "name": "[Event] Cecil's Memory",
+    "unidName": "[Event] Cecil's Memory",
+    "resName": "궁수의혼",
+    "description": "เมื่อสวมใส่ร่วมกับ Cecil's Memory และ Biolab Cape(Melee/Range/Magic),\nทุก ๆ การอัพเกรด Garment 3 ขั้น\nลด Delay หลังใช้สกิล 3%\nCritical Damage +5%\nเพิ่ม Damage สกิล Focused Arrow Strike 5%\nเพิ่ม Damage สกิล Arrow Storm 5%\nเพิ่ม Damage สกิล Aimed Bolt 5%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "acd": [
+        "EQUIP[Cecil's Memory&&Biolab Cape(Melee)||Biolab Cape(Range)||Biolab Cape(Magic)]REFINE[garment==3]---3"
+      ],
+      "criDmg": [
+        "EQUIP[Cecil's Memory&&Biolab Cape(Melee)||Biolab Cape(Range)||Biolab Cape(Magic)]REFINE[garment==3]---5"
+      ],
+      "Focused Arrow Strike": [
+        "EQUIP[Cecil's Memory&&Biolab Cape(Melee)||Biolab Cape(Range)||Biolab Cape(Magic)]REFINE[garment==3]---5"
+      ],
+      "Arrow Storm": [
+        "EQUIP[Cecil's Memory&&Biolab Cape(Melee)||Biolab Cape(Range)||Biolab Cape(Magic)]REFINE[garment==3]---5"
+      ],
+      "Aimed Bolt": [
+        "EQUIP[Cecil's Memory&&Biolab Cape(Melee)||Biolab Cape(Range)||Biolab Cape(Magic)]REFINE[garment==3]---5"
+      ]
+    }
+  },
+  "300540": {
+    "id": 300540,
+    "aegisName": "[Event]_Randel's Memory",
+    "name": "[Event] Randel's Memory",
+    "unidName": "[Event] Randel's Memory",
+    "resName": "검사피규어",
+    "description": "เมื่อสวมใส่ร่วมกับ Randel's Memory และ Biolab Cape(Melee/Range/Magic),\nทุก ๆ การอัพเกรด Garment 3 ขั้น\nCRI +5\nเพิ่ม Damage ทางกายภาพระยะไกล 5%\nเพิ่ม Damage สกิล Genesis Ray 5%\nเพิ่ม Damage สกิล Shield Press 5%\nเพิ่ม Damage สกิล Cannon Spear 5%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "cri": [
+        "EQUIP[Randel's Memory&&Biolab Cape(Melee)||Biolab Cape(Range)||Biolab Cape(Magic)]REFINE[garment==3]---5"
+      ],
+      "range": [
+        "EQUIP[Randel's Memory&&Biolab Cape(Melee)||Biolab Cape(Range)||Biolab Cape(Magic)]REFINE[garment==3]---5"
+      ],
+      "Genesis Ray": [
+        "EQUIP[Randel's Memory&&Biolab Cape(Melee)||Biolab Cape(Range)||Biolab Cape(Magic)]REFINE[garment==3]---5"
+      ],
+      "Shield Press": [
+        "EQUIP[Randel's Memory&&Biolab Cape(Melee)||Biolab Cape(Range)||Biolab Cape(Magic)]REFINE[garment==3]---5"
+      ],
+      "Cannon Spear": [
+        "EQUIP[Randel's Memory&&Biolab Cape(Melee)||Biolab Cape(Range)||Biolab Cape(Magic)]REFINE[garment==3]---5"
+      ]
+    }
+  },
+  "300541": {
+    "id": 300541,
+    "aegisName": "[Event]_Flamel's Memory",
+    "name": "[Event] Flamel's Memory",
+    "unidName": "[Event] Flamel's Memory",
+    "resName": "상인피규어",
+    "description": "เมื่อสวมใส่ร่วมกับ Flamel's Memory และ Biolab Cape(Melee/Range/Magic),\nทุก ๆ การอัพเกรด Garment 3 ขั้น\nลดระยะเวลาร่ายแบบแปรผัน 10%\nเพิ่ม Damage ทางกายภาพระยะไกล 5%\nเพิ่ม Damage สกิล Spore Explosion 5%\nเพิ่ม Damage สกิล Cart Cannon 5%\nเพิ่ม Damage สกิล Crazy Weed 5%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "vct": [
+        "EQUIP[Flamel's Memory&&Biolab Cape(Melee)||Biolab Cape(Range)||Biolab Cape(Magic)]REFINE[garment==3]---10"
+      ],
+      "range": [
+        "EQUIP[Flamel's Memory&&Biolab Cape(Melee)||Biolab Cape(Range)||Biolab Cape(Magic)]REFINE[garment==3]---5"
+      ],
+      "Spore Explosion": [
+        "EQUIP[Flamel's Memory&&Biolab Cape(Melee)||Biolab Cape(Range)||Biolab Cape(Magic)]REFINE[garment==3]---5"
+      ],
+      "Cart Cannon": [
+        "EQUIP[Flamel's Memory&&Biolab Cape(Melee)||Biolab Cape(Range)||Biolab Cape(Magic)]REFINE[garment==3]---5"
+      ],
+      "Crazy Weed": [
+        "EQUIP[Flamel's Memory&&Biolab Cape(Melee)||Biolab Cape(Range)||Biolab Cape(Magic)]REFINE[garment==3]---5"
+      ]
+    }
+  },
+  "300542": {
+    "id": 300542,
+    "aegisName": "[Event]_Gertie's Memory",
+    "name": "[Event] Gertie's Memory",
+    "unidName": "[Event] Gertie's Memory",
+    "resName": "도둑피규어",
+    "description": "เมื่อสวมใส่ร่วมกับ Gertie's Memory และ Biolab Cape(Melee/Range/Magic),\nเมื่อโจมตีทางกายภาพระยะใกล้ มีโอกาส 1% ที่จะใช้สกิล Psychic Wave Lv. 5 (ทุก ๆ การอัพเกรด Garment 3 ขั้น เพิ่มโอกาสขึ้นอีก 6%)\nทุก ๆ การอัพเกรด Garment 3 ขั้น\nเพิ่ม Damage ทางเวทมนตร์ธาตุ Neutral 5%\nเพิ่ม Damage สกิล Fatal Menace 5%\nเพิ่ม Damage สกิล Psychic Wave 5%\nเพิ่ม Damage สกิล Triangle Shot 5%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "m_my_element_neutral": [
+        "EQUIP[Gertie's Memory&&Biolab Cape(Melee)||Biolab Cape(Range)||Biolab Cape(Magic)]REFINE[garment==3]---5"
+      ],
+      "Fatal Manace": [
+        "EQUIP[Gertie's Memory&&Biolab Cape(Melee)||Biolab Cape(Range)||Biolab Cape(Magic)]REFINE[garment==3]---5"
+      ],
+      "Psychic Wave": [
+        "EQUIP[Gertie's Memory&&Biolab Cape(Melee)||Biolab Cape(Range)||Biolab Cape(Magic)]REFINE[garment==3]---5"
+      ],
+      "Triangle Shot": [
+        "EQUIP[Gertie's Memory&&Biolab Cape(Melee)||Biolab Cape(Range)||Biolab Cape(Magic)]REFINE[garment==3]---5"
+      ]
+    }
+  },
+  "300543": {
+    "id": 300543,
+    "aegisName": "[Event]_Celia's Memory",
+    "name": "[Event] Celia's Memory",
+    "unidName": "[Event] Celia's Memory",
+    "resName": "마술사피규어",
+    "description": "เมื่อสวมใส่ร่วมกับ Celia's Memory และ Biolab Cape(Melee/Range/Magic),\nทุก ๆ การอัพเกรด Garment 3 ขั้น\nลด Cooldown สกิล Psychic Wave 0.07 วินาที\nเพิ่ม Damage ทางเวทมนตร์ธาตุ Neutral 5%\nเพิ่ม Damage สกิล Heaven's Drive 5%\nเพิ่ม Damage สกิล Psychic Wave 5%\nเพิ่ม Damage สกิล Earth Grave 5%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "cd__Psychic Wave": [
+        "EQUIP[Celia's Memory&&Biolab Cape(Melee)||Biolab Cape(Range)||Biolab Cape(Magic)]REFINE[garment==3]---0.07"
+      ],
+      "m_my_element_neutral": [
+        "EQUIP[Celia's Memory&&Biolab Cape(Melee)||Biolab Cape(Range)||Biolab Cape(Magic)]REFINE[garment==3]---5"
+      ],
+      "Heaven's Drive": [
+        "EQUIP[Celia's Memory&&Biolab Cape(Melee)||Biolab Cape(Range)||Biolab Cape(Magic)]REFINE[garment==3]---5"
+      ],
+      "Psychic Wave": [
+        "EQUIP[Celia's Memory&&Biolab Cape(Melee)||Biolab Cape(Range)||Biolab Cape(Magic)]REFINE[garment==3]---5"
+      ],
+      "Earth Grave": [
+        "EQUIP[Celia's Memory&&Biolab Cape(Melee)||Biolab Cape(Range)||Biolab Cape(Magic)]REFINE[garment==3]---5"
+      ]
+    }
+  },
+  "300544": {
+    "id": 300544,
+    "aegisName": "[Event]_Chen's Memory",
+    "name": "[Event] Chen's Memory",
+    "unidName": "[Event] Chen's Memory",
+    "resName": "복사피규어",
+    "description": "เมื่อสวมใส่ร่วมกับ Chen's Memory และ Biolab Cape(Melee/Range/Magic),\nทุก ๆ การอัพเกรด Garment 3 ขั้น\nPerfect Hit +20%\nเพิ่ม Damage ทางกายภาพระยะไกล 5%\nเพิ่ม Damage สกิล Chain Combo 5%\nเพิ่ม Damage สกิล Knuckle Arrow 5%\nเพิ่ม Damage สกิล Lightning Ride 5%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "perfectHit": [
+        "EQUIP[Chen's Memory&&Biolab Cape(Melee)||Biolab Cape(Range)||Biolab Cape(Magic)]REFINE[garment==3]---20"
+      ],
+      "range": [
+        "EQUIP[Chen's Memory&&Biolab Cape(Melee)||Biolab Cape(Range)||Biolab Cape(Magic)]REFINE[garment==3]---5"
+      ],
+      "Chain Combo": [
+        "EQUIP[Chen's Memory&&Biolab Cape(Melee)||Biolab Cape(Range)||Biolab Cape(Magic)]REFINE[garment==3]---5"
+      ],
+      "Knuckle Arrow": [
+        "EQUIP[Chen's Memory&&Biolab Cape(Melee)||Biolab Cape(Range)||Biolab Cape(Magic)]REFINE[garment==3]---5"
+      ],
+      "Lightning Ride": [
+        "EQUIP[Chen's Memory&&Biolab Cape(Melee)||Biolab Cape(Range)||Biolab Cape(Magic)]REFINE[garment==3]---5"
+      ]
+    }
+  },
+  "300545": {
+    "id": 300545,
+    "aegisName": "[Event]_Trentini's Memory",
+    "name": "[Event] Trentini's Memory",
+    "unidName": "[Event] Trentini's Memory",
+    "resName": "궁수피규어",
+    "description": "เมื่อสวมใส่ร่วมกับ Trentini's Memory และ Biolab Cape(Melee/Range/Magic),\nทุก ๆ การอัพเกรด Garment 3 ขั้น\nลดระยะเวลาร่ายแบบแปรผัน 10%\nเพิ่ม Damage ทางเวทมนตร์ธาตุ Neutral 5%\nเพิ่ม Damage สกิล Severe Rainstorm 5%\nเพิ่ม Damage สกิล Metalic Sound 5%\nเพิ่ม Damage สกิล Reverberation 5%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "vct": [
+        "EQUIP[Trentini's Memory&&Biolab Cape(Melee)||Biolab Cape(Range)||Biolab Cape(Magic)]REFINE[garment==3]---10"
+      ],
+      "m_my_element_neutral": [
+        "EQUIP[Trentini's Memory&&Biolab Cape(Melee)||Biolab Cape(Range)||Biolab Cape(Magic)]REFINE[garment==3]---5"
+      ],
+      "Severe Rainstorm": [
+        "EQUIP[Trentini's Memory&&Biolab Cape(Melee)||Biolab Cape(Range)||Biolab Cape(Magic)]REFINE[garment==3]---5"
+      ],
+      "Metalic Sound": [
+        "EQUIP[Trentini's Memory&&Biolab Cape(Melee)||Biolab Cape(Range)||Biolab Cape(Magic)]REFINE[garment==3]---5"
+      ],
+      "Reverberation": [
+        "EQUIP[Trentini's Memory&&Biolab Cape(Melee)||Biolab Cape(Range)||Biolab Cape(Magic)]REFINE[garment==3]---5"
+      ]
+    }
+  },
+  "300546": {
+    "id": 300546,
+    "aegisName": "[Event]_Alphoccio's Memory",
+    "name": "[Event] Alphoccio's Memory",
+    "unidName": "[Event] Alphoccio's Memory",
+    "resName": "궁수피규어",
+    "description": "เมื่อสวมใส่ร่วมกับ Alphoccio's Memory และ Biolab Cape(Melee/Range/Magic),\nทุก ๆ การอัพเกรด Garment 3 ขั้น\nลดระยะเวลาร่ายแบบแปรผัน 10%\nเพิ่ม Damage ทางเวทมนตร์ธาตุ Neutral 5%\nเพิ่ม Damage สกิล Severe Rainstorm 5%\nเพิ่ม Damage สกิล Metalic Sound 5%\nเพิ่ม Damage สกิล Reverberation 5%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "vct": [
+        "EQUIP[Alphoccio's Memory&&Biolab Cape(Melee)||Biolab Cape(Range)||Biolab Cape(Magic)]REFINE[garment==3]---10"
+      ],
+      "m_my_element_neutral": [
+        "EQUIP[Alphoccio's Memory&&Biolab Cape(Melee)||Biolab Cape(Range)||Biolab Cape(Magic)]REFINE[garment==3]---5"
+      ],
+      "Severe Rainstorm": [
+        "EQUIP[Alphoccio's Memory&&Biolab Cape(Melee)||Biolab Cape(Range)||Biolab Cape(Magic)]REFINE[garment==3]---5"
+      ],
+      "Metalic Sound": [
+        "EQUIP[Alphoccio's Memory&&Biolab Cape(Melee)||Biolab Cape(Range)||Biolab Cape(Magic)]REFINE[garment==3]---5"
+      ],
+      "Reverberation": [
+        "EQUIP[Alphoccio's Memory&&Biolab Cape(Melee)||Biolab Cape(Range)||Biolab Cape(Magic)]REFINE[garment==3]---5"
+      ]
+    }
+  },
   "310000": {
     "id": 310000,
     "aegisName": "Ranger_Top2",
@@ -66795,6 +67238,236 @@
       ]
     }
   },
+  "311384": {
+    "id": 311384,
+    "aegisName": "Expert_Fighter1",
+    "name": "Expert Fighter 1Lv",
+    "unidName": "Expert Fighter 1Lv",
+    "resName": "용의보주_홍",
+    "description": "เพิ่ม Damage ทางกายภาพระยะใกล้ 2%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "melee": [
+        "2"
+      ]
+    }
+  },
+  "311385": {
+    "id": 311385,
+    "aegisName": "Expert_Fighter2",
+    "name": "Expert Fighter 2Lv",
+    "unidName": "Expert Fighter 2Lv",
+    "resName": "용의보주_홍",
+    "description": "เพิ่ม Damage ทางกายภาพระยะใกล้ 4%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "melee": [
+        "4"
+      ]
+    }
+  },
+  "311386": {
+    "id": 311386,
+    "aegisName": "Expert_Fighter3",
+    "name": "Expert Fighter 3Lv",
+    "unidName": "Expert Fighter 3Lv",
+    "resName": "용의보주_홍",
+    "description": "เพิ่ม Damage ทางกายภาพระยะใกล้ 6%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "melee": [
+        "6"
+      ]
+    }
+  },
+  "311387": {
+    "id": 311387,
+    "aegisName": "Expert_Fighter4",
+    "name": "Expert Fighter 4Lv",
+    "unidName": "Expert Fighter 4Lv",
+    "resName": "용의보주_홍",
+    "description": "เพิ่ม Damage ทางกายภาพระยะใกล้ 8%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "melee": [
+        "8"
+      ]
+    }
+  },
+  "311388": {
+    "id": 311388,
+    "aegisName": "Expert_Fighter5",
+    "name": "Expert Fighter 5Lv",
+    "unidName": "Expert Fighter 5Lv",
+    "resName": "용의보주_홍",
+    "description": "เพิ่ม Damage ทางกายภาพระยะใกล้ 10%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "melee": [
+        "10"
+      ]
+    }
+  },
+  "311389": {
+    "id": 311389,
+    "aegisName": "Expert_Magician1",
+    "name": "Expert Magician 1Lv",
+    "unidName": "Expert Magician 1Lv",
+    "resName": "용의보주_청",
+    "description": "เพิ่ม Damage ทางเวทมนตร์ทุกธาตุ 2%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "m_my_element_all": [
+        "2"
+      ]
+    }
+  },
+  "311390": {
+    "id": 311390,
+    "aegisName": "Expert_Magician2",
+    "name": "Expert Magician 2Lv",
+    "unidName": "Expert Magician 2Lv",
+    "resName": "용의보주_청",
+    "description": "เพิ่ม Damage ทางเวทมนตร์ทุกธาตุ 4%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "m_my_element_all": [
+        "4"
+      ]
+    }
+  },
+  "311391": {
+    "id": 311391,
+    "aegisName": "Expert_Magician3",
+    "name": "Expert Magician 3Lv",
+    "unidName": "Expert Magician 3Lv",
+    "resName": "용의보주_청",
+    "description": "เพิ่ม Damage ทางเวทมนตร์ทุกธาตุ 6%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "m_my_element_all": [
+        "6"
+      ]
+    }
+  },
+  "311392": {
+    "id": 311392,
+    "aegisName": "Expert_Magician4",
+    "name": "Expert Magician 4Lv",
+    "unidName": "Expert Magician 4Lv",
+    "resName": "용의보주_청",
+    "description": "เพิ่ม Damage ทางเวทมนตร์ทุกธาตุ 8%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "m_my_element_all": [
+        "8"
+      ]
+    }
+  },
+  "311393": {
+    "id": 311393,
+    "aegisName": "Expert_Magician5",
+    "name": "Expert Magician 5Lv",
+    "unidName": "Expert Magician 5Lv",
+    "resName": "용의보주_청",
+    "description": "เพิ่ม Damage ทางเวทมนตร์ทุกธาตุ 10%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "m_my_element_all": [
+        "10"
+      ]
+    }
+  },
   "311427": {
     "id": 311427,
     "aegisName": null,
@@ -68624,9 +69297,9 @@
     "id": 400118,
     "aegisName": "BioWeapon_Helm_AB",
     "name": "Saint Crown [1]",
-    "unidName": "Headgear",
+    "unidName": "Helm",
     "resName": "거해궁보관",
-    "description": "Atk + 20 and Matk + 20 per 2 refine rate.\nIf refine rate is 7 or higher, increases attack speed (reduces delay after attack by 10%), reduces variable casting time by 10%.\nIf refine rate is 9 or higher, Atk + 15%, Matk + 15%.\nIf refine rate is 11 or higher, increases all property magical damage by 10%, increases physical damage against all size enemies by 10%.\n\nWhen equipped with ^32cd32Adorare Staff^000000, increase holy property magical damage by 10%,\nincreases Adoramus damage by 5% per refine rate of weapon.\n\nWhen equipped with ^32cd32Penitentia^000000, increase holy property magical damage by 10%,\nincreases Judex damage by 5% per refine rate of weapon.\n\nWhen equipped with ^32cd32Lucis Flail^000000, increases physical damage against all size enemies by 10%,\nincreases Duple Light damage by 10% per refine rate of weapon.\nClass: ^777777Headgear^000000 Defense: ^77777710^000000\nLocation: ^777777Upper^000000 Weight: ^77777710^000000\nRequired Level: ^777777170^000000\nJobs: ^777777Archbishop^000000",
+    "description": "มงกุฎที่ทำขึ้นเพื่อร่างทดลองเฉพาะ มีลักษณะคลุมทั้งหัว\nกล่าวขานกันมาว่า เคยมีนักบวชท่านหนึ่งเคยใช้ในอดีต\nทุก ๆ การอัพเกรด 2 ขั้น ATK +20, MATK +20\nเมื่ออัพเกรดถึงขั้น 7, ASPD +10%, ลดระยะเวลาร่ายแบบแปรผัน 10%\nเมื่ออัพเกรดถึงขั้น 9, ATK +15%, MATK +15%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage ทางเวทมนตร์ทุกธาตุ 10%, เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 10%\n\nเมื่อสวมใส่ร่วมกับ Adorare Staff,\nเพิ่ม Damage ทางเวทมนตร์ธาตุ Holy 10%\nทุก ๆ การอัพเกรด Weapon 1 ขั้น เพิ่ม Damage สกิล Adoramus 5%\n\nเมื่อสวมใส่ร่วมกับ Penitentia,\nเพิ่ม Damage ทางเวทมนตร์ธาตุ Holy 10%\nทุก ๆ การอัพเกรด Weapon 1 ขั้น เพิ่ม Damage สกิล Judex 10%\n\nเมื่อสวมใส่ร่วมกับ Lucis Flail,\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 10%\nทุก ๆ การอัพเกรด Weapon 1 ขั้น เพิ่ม Damage สกิล Duple Light 10%\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^77777710^000000\nตำแหน่ง : ^777777Upper^000000 น้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Arch Bishop^000000",
     "slots": 1,
     "itemTypeId": 2,
     "itemSubTypeId": 512,
@@ -68674,7 +69347,7 @@
         "EQUIP[Adorare Staff]REFINE[weapon==1]---5"
       ],
       "Judex": [
-        "EQUIP[Penitentia]REFINE[weapon==1]---5"
+        "EQUIP[Penitentia]REFINE[weapon==1]---10"
       ],
       "Duple Light": [
         "EQUIP[Lucis Flail]REFINE[weapon==1]---10"
@@ -68685,9 +69358,9 @@
     "id": 400119,
     "aegisName": "BioWeapon_Helm_SR",
     "name": "Lion Crown [1]",
-    "unidName": "Headgear",
+    "unidName": "Helm",
     "resName": "사자궁왕관",
-    "description": "Atk + 20 per 2 refine rate.\nIf refine rate is 7 or higher, increases attack speed (reduces delay after attack by 10%).\nIf refine rate is 9 or higher, increases MaxHP by 10%.\nIf refine rate is 11 or higher, increases physical damage against all size enemies by 10%.\n\nWhen equipped with ^32cd32Raging Dragon Fist^000000, increases physical damage against all size enemies by 10%,\nincreases Chain Crush Combo damage by 10% per refine rate of weapon.\n\nWhen equipped with ^32cd32Fighting God's Bandage^000000, increase long ranged physical damage by 10%,\nincreases Knuckle Arrow damage by 10% per refine rate of weapon.\n\nWhen equipped with ^32cd32Bright Pendulum^000000, increase long ranged physical damage by 10%,\nincreases Throw Spirit Sphere damage by 10% per refine rate of weapon.\nClass: ^777777Headgear^000000 Defense: ^77777710^000000\nLocation: ^777777Upper^000000 Weight: ^77777710^000000\nRequired Level: ^777777170^000000\nJobs: ^777777Sura^000000",
+    "description": "มงกุฎที่ทำขึ้นเพื่อร่างทดลองเฉพาะ\nด้วยรูปร่างที่แหลมคมประดับด้วยอัญมณีเม็ดโต ยิ่งให้ความรู้สึกถึงความมีอำนาจ\nทุก ๆ การอัพเกรด 2 ขั้น ATK +20\nเมื่ออัพเกรดถึงขั้น 7, ASPD +10%\nเมื่ออัพเกรดถึงขั้น 9, MaxHP +10%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 10%\n\nเมื่อสวมใส่ร่วมกับ Raging Dragon Fist,\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 10%\nทุก ๆ การอัพเกรด Weapon 1 ขั้น เพิ่ม Damage สกิล Chain Crush Combo 10%\n\nเมื่อสวมใส่ร่วมกับ Fighting God's Bandage,\nเพิ่ม Damage ทางกายภาพระยะไกล 10%\nทุก ๆ การอัพเกรด Weapon 1 ขั้น เพิ่ม Damage สกิล Knuckle Arrow 10%\n\nเมื่อสวมใส่ร่วมกับ Bright Pendulum,\nเพิ่ม Damage ทางกายภาพระยะไกล 10%\nทุก ๆ การอัพเกรด Weapon 1 ขั้น เพิ่ม Damage สกิล Finger Offensive 10%\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^77777710^000000\nตำแหน่ง : ^777777Upper^000000 น้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Sura^000000",
     "slots": 1,
     "itemTypeId": 2,
     "itemSubTypeId": 512,
@@ -71301,6 +71974,75 @@
       ]
     }
   },
+  "470270": {
+    "id": 470270,
+    "aegisName": null,
+    "name": "Zodiac Boots (Acolyte) [1]",
+    "unidName": "Zodiac Boots (Acolyte)",
+    "resName": "HalfBloodPrincess_Shoes",
+    "description": "รองเท้าคุณภาพดีที่ได้รับพลังจากกลุ่มดาว Leo และ Cancer\n\nATK/MATK +50\nทุก ๆ การอัพเกรด 2 ขั้น ATK/MATK +10, ATK/MATK +1%\nทุก ๆ การอัพเกรด 4 ขั้น เพิ่ม Damage สกิล Adoramus และ Knuckle Arrow 15% \nเมื่ออัพเกรดตั้งแต่ 9 ขึ้นไป ลดระยะเวลาร่ายแบบคงที่ 0.5 วินาที\nเมื่ออัพเกรดตั้งแต่ 11 ขึ้นไป ลด Delay หลังใช้สกิล 10%\n\nเมื่อสวมใส่ร่วมกับ Margaretha's Memory,\nลด Cooldown สกิล Adoramus 1.5 วินาที\nทุก ๆ การอัพเกรด Weapon 4 ขั้น เพิ่ม Damage ทางเวทมนตร์ธาตุ Holy 15%\n\nเมื่อสวมใส่ร่วมกับ Chen's Memory,\nลด Delay หลังใช้สกิล 15%\nทุก ๆ การอัพเกรด Weapon 4 ขั้น เพิ่ม Damage ทางกายภาพต่อมอนสเตอร์ประเภท Boss 10%\n\nเมื่อสวมใส่ร่วมกับ Margaretha's Memory และ Saint Crown,\nเมื่อค่าอัพเกรดรวมกันของ Headgear, Shoes, Weapon ตั้งแต่ 33 ขึ้นไป เมื่อใช้สกิล จะไม่สูญเสีย Gemstone\nเมื่อค่าอัพเกรดรวมกันของ Headgear, Shoes, Weapon ตั้งแต่ 35 ขึ้นไป เพิกเฉยต่อพลังป้องกันทางเวทมนตร์ของมอนสเตอร์ทุกเผ่า 40% (ยกเว้น Player)\n\nเมื่อสวมใส่ร่วมกับ Chen's Memory และ Lion Crown,\nเมื่อค่าอัพเกรดรวมกันของ Headgear, Shoes, Weapon ตั้งแต่ 33 ขึ้นไป เพิ่ม Damage ทางกายภาพระยะไกล 30%\nเมื่อค่าอัพเกรดรวมกันของ Headgear, Shoes, Weapon ตั้งแต่ 35 ขึ้นไป เพิกเฉยต่อพลังป้องกันทางกายภาพของมอนสเตอร์ทุกเผ่า 40% (ยกเว้น Player)\nประเภท : ^777777Shoes^000000  พลังป้องกัน : ^77777760^000000\nน้ำหนัก : ^77777790^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Acolyte Class 3^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 516,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 60,
+    "weight": 90,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Arch Bishop",
+      "Sura"
+    ],
+    "script": {
+      "atk": [
+        "50",
+        "2---10"
+      ],
+      "atkPercent": [
+        "2---1"
+      ],
+      "matk": [
+        "50",
+        "2---10"
+      ],
+      "matkPercent": [
+        "2---1"
+      ],
+      "Adoramus": [
+        "4---15"
+      ],
+      "Knuckle Arrow": [
+        "4---15"
+      ],
+      "fct": [
+        "9===0.5"
+      ],
+      "acd": [
+        "11===10",
+        "EQUIP[Chen's Memory]===15"
+      ],
+      "cd__Adoramus": [
+        "EQUIP[Margaretha's Memory]===1.5"
+      ],
+      "m_my_element_holy": [
+        "EQUIP[Margaretha's Memory]REFINE[weapon==4]---15"
+      ],
+      "p_class_boss": [
+        "EQUIP[Chen's Memory]REFINE[weapon==4]---10"
+      ],
+      "m_pene_race_all": [
+        "EQUIP[Margaretha's Memory&&Saint Crown]REFINE[headUpper,weapon,boot==35]===40"
+      ],
+      "range": [
+        "EQUIP[Chen's Memory&&Lion Crown]REFINE[headUpper,weapon,boot==33]===30"
+      ],
+      "p_pene_race_all": [
+        "EQUIP[Chen's Memory&&Lion Crown]REFINE[headUpper,weapon,boot==35]===40"
+      ]
+    }
+  },
   "480000": {
     "id": 480000,
     "aegisName": "Atker_Manteau",
@@ -72569,6 +73311,102 @@
       ]
     }
   },
+  "480425": {
+    "id": 480425,
+    "aegisName": "Biolab_Cape(Melee)",
+    "name": "Biolab Cape(Melee) [1]",
+    "unidName": "Biolab Cape(Melee)",
+    "resName": "작열의상의",
+    "description": "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้^000000\n^ff0000ไม่สามารถอัพเกรดทั่วไปได้^000000\nเพิ่มความต้านทานต่อการโจมตีธาตุ Neutral 10%\n\nเมื่ออัพเกรดตั้งแต่ 9 ขึ้นไป CRI +10\nเมื่ออัพเกรดตั้งแต่ 11 ขึ้นไป เพิ่ม Damage ทางกายภาพระยะใกล้ 10%\nเมื่ออัพเกรดตั้งแต่ 13 ขึ้นไป ลด Delay หลังใช้สกิล 10%\nประเภท : ^777777Garment^000000  พลังป้องกัน : ^77777755^000000\nน้ำหนัก : ^77777740^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 515,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 55,
+    "weight": 40,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "cri": [
+        "9===10"
+      ],
+      "melee": [
+        "11===10"
+      ],
+      "acd": [
+        "13===10"
+      ]
+    }
+  },
+  "480426": {
+    "id": 480426,
+    "aegisName": "Biolab_Cape(Magic)",
+    "name": "Biolab Cape(Magic) [1]",
+    "unidName": "Biolab Cape(Magic)",
+    "resName": "극한의상의",
+    "description": "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้^000000\n^ff0000ไม่สามารถอัพเกรดทั่วไปได้^000000\nเพิ่มความต้านทานต่อการโจมตีธาตุ Neutral 10%\n\nเมื่ออัพเกรดตั้งแต่ 9 ขึ้นไป ลดระยะเวลาร่ายแบบแปรผัน 10%\nเมื่ออัพเกรดตั้งแต่ 11 ขึ้นไป MATK +12%\nเมื่ออัพเกรดตั้งแต่ 13 ขึ้นไป ลด Delay หลังใช้สกิล 10%\nประเภท : ^777777Garment^000000  พลังป้องกัน : ^77777755^000000\nน้ำหนัก : ^77777740^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 515,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 55,
+    "weight": 40,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "vct": [
+        "9===10"
+      ],
+      "matkPercent": [
+        "11===12"
+      ],
+      "acd": [
+        "13===10"
+      ]
+    }
+  },
+  "480427": {
+    "id": 480427,
+    "aegisName": "Biolab_Cape(Range)",
+    "name": "Biolab Cape(Range) [1]",
+    "unidName": "Biolab Cape(Range)",
+    "resName": "열풍의상의",
+    "description": "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้^000000\n^ff0000ไม่สามารถอัพเกรดทั่วไปได้^000000\nเพิ่มความต้านทานต่อการโจมตีธาตุ Neutral 10%\n\nเมื่ออัพเกรดตั้งแต่ 9 ขึ้นไป Critical Damage +5%\nเมื่ออัพเกรดตั้งแต่ 11 ขึ้นไป เพิ่ม Damage ทางกายภาพระยะไกล 10%\nเมื่ออัพเกรดตั้งแต่ 13 ขึ้นไป ลด Delay หลังใช้สกิล 10%\nประเภท : ^777777Garment^000000  พลังป้องกัน : ^77777755^000000\nน้ำหนัก : ^77777740^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 515,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 55,
+    "weight": 40,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "criDmg": [
+        "9===5"
+      ],
+      "range": [
+        "11===10"
+      ],
+      "acd": [
+        "13===10"
+      ]
+    }
+  },
   "490004": {
     "id": 490004,
     "aegisName": "Atker_Ring",
@@ -72730,6 +73568,47 @@
       ],
       "range": [
         "2"
+      ]
+    }
+  },
+  "490013": {
+    "id": 490013,
+    "aegisName": "Devil_Ring",
+    "name": "Devil Ring [1]",
+    "unidName": "Ring",
+    "resName": "Devil_Ring",
+    "description": "เพิ่ม Damage ทางกายภาพต่อศัตรูทุกประเภท 5%\nลด Cooldown สกิล Power Absorb 3 วินาที\n\nเมื่อเรียนรู้สกิล Earth Shaker ถึงเลเวล 5, \nลดปริมาณการใช้ SP สกิล Lion Howling 35 หน่วย\nลดปริมาณการใช้ SP สกิล Knuckle Arrow 4 หน่วย\n\nเมื่อเรียนรู้สกิล Rampage Blast ถึงเลเวล 5,\nเพิ่ม Damage สกิล Lion Howling และ Knuckle Arrow 30%\n\nเมื่อเรียนรู้สกิล Lightning Ride ถึงเลเวล 5, \nASPD +10%, ลด Delay หลังใช้สกิล 5%\nประเภท : ^777777Accessory^000000  พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Sura^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 517,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Sura"
+    ],
+    "script": {
+      "p_class_all": [
+        "5"
+      ],
+      "cd__Power Absorb": [
+        "3"
+      ],
+      "Lion Howling": [
+        "LEARN_SKILL[Rampage Blast==5]===30"
+      ],
+      "Knuckle Arrow": [
+        "LEARN_SKILL[Rampage Blast==5]===30"
+      ],
+      "aspdPercent": [
+        "LEARN_SKILL[Lightning Ride==5]===10"
+      ],
+      "acd": [
+        "LEARN_SKILL[Lightning Ride==5]===5"
       ]
     }
   },
@@ -75726,6 +76605,133 @@
       "Reverberation": [
         "EQUIP[Patent Trumpet Shell]REFINE[weapon==11]SUM[int,dex==12]---1",
         "EQUIP[Patent Barbed Wire Whip]REFINE[weapon==11]SUM[int,dex==12]---1"
+      ]
+    }
+  },
+  "490531": {
+    "id": 490531,
+    "aegisName": null,
+    "name": "Ring of Unknown Hero(Mechanic) [1]",
+    "unidName": "Ring of Unknown Hero(Mechanic)",
+    "resName": "Ullr_Bracelet",
+    "description": "แหวนของฮีโร่นิรนาม\n\nลด Delay หลังใช้สกิล 3%\nเพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูทุกประเภท 6%\n\nเมื่อสวมใส่ร่วมกับ Patent Avenger,\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกเผ่า 8%\nเมื่ออัพเกรด Patent Avenger ตั้งแต่ 11 ขึ้นไป,\nเมื่อ Base STR และ VIT รวมกันได้ทุก ๆ 12 หน่วย เพิ่ม Damage สกิล Axe Tornado 1%\n\nเมื่อสวมใส่ร่วมกับ Patent Meteor Striker,\nเพิ่ม Damage ทางกายภาพระยะไกล 8%\nเมื่ออัพเกรด Patent Meteor Striker ตั้งแต่ 11 ขึ้นไป,\nเมื่อ Base STR และ DEX รวมกันได้ทุก ๆ 12 หน่วย เพิ่ม Damage สกิล Arm Cannon 1%\nประเภท : ^777777Accessory(Right)^000000 พลังป้องกัน : ^7777777^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Mechanic^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 510,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 7,
+    "weight": 10,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Mechanic"
+    ],
+    "script": {
+      "acd": [
+        "3"
+      ],
+      "p_class_all": [
+        "6"
+      ],
+      "m_class_all": [
+        "6"
+      ],
+      "p_race_all": [
+        "EQUIP[Patent Avenger]===8"
+      ],
+      "Axe Tornado": [
+        "EQUIP[Patent Avenger]REFINE[weapon==11]SUM[str,vit==12]---1"
+      ],
+      "range": [
+        "EQUIP[Patent Meteor Striker]===8"
+      ],
+      "Arm Cannon": [
+        "EQUIP[Patent Meteor Striker]REFINE[weapon==11]SUM[str,dex==12]---1"
+      ]
+    }
+  },
+  "490533": {
+    "id": 490533,
+    "aegisName": null,
+    "name": "Universal Blessing [1]",
+    "unidName": "Universal Blessing",
+    "resName": "Genesis_Of_Life",
+    "description": "MaxHP, MaxSP + 12%\nเพิ่ม Damage ทางกายภาพระยะใกล้ 8%\nเพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกประเภท 8%\nลด Delay หลังใช้สกิล 8%\n\nเมื่อสวมใส่ร่วมกับ Lunar Blessing หรือ [Not For Sale] Lunar Blessing,\nลดระยะเวลาร่ายแบบคงที่ 0.3 วินาที\nลด Cooldown สกิล New Moon Kick, Full Moon Kick 0.6 วินาที\nลด Cooldown สกิล Eswhoo 0.8 วินาที\nเพิ่ม Damage สกิล Full Moon Kick และ Eswhoo 16%\n\nเมื่อสวมใส่ร่วมกับ Solar Blessing หรือ [Not For Sale] Solar Blessing,\nลด Delay หลังใช้สกิล 8%\nลด Cooldown สกิล Curse Explosion 0.8 วินาที\nเพิ่ม Damage สกิล Curse Explosion และ Solar Explosion 16%\n\nเมื่อสวมใส่ร่วมกับ Stellar Blessing หรือ [Not For Sale] Stellar Blessing,\nเพิ่ม Damage ทางเวทมนตร์ต่อมอนสเตอร์ประเภท Boss 8%\nเพิ่ม Damage สกิล Falling Stars 32%\nเพิ่ม Damage สกิล Espa 16%\n\nเมื่อสวมใส่ร่วมกับ Lunar Eclipse Armor หรือ [Not For Sale] Lunar Eclipse Armor,\nเพิกเฉยต่อพลังป้องกันทางกายภาพ/เวทมนตร์ของมอนสเตอร์ทุกเผ่า 50% (ยกเว้น Player)\nทุก ๆ การอัพเกรด Armor 3 ขั้น MaxHP, MaxSP +3%\nประเภท : ^777777Accessory(Left)^000000 พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^77777720^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 511,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 20,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "hpPercent": [
+        "12",
+        "EQUIP[Lunar Eclipse Armor]REFINE[armor==3]---3"
+      ],
+      "spPercent": [
+        "12",
+        "EQUIP[Lunar Eclipse Armor]REFINE[armor==3]---3"
+      ],
+      "melee": [
+        "8"
+      ],
+      "m_class_all": [
+        "8"
+      ],
+      "acd": [
+        "8",
+        "EQUIP[Solar Blessing]===8"
+      ],
+      "fct": [
+        "EQUIP[Lunar Blessing]===0.3"
+      ],
+      "cd__New Moon Kick": [
+        "EQUIP[Lunar Blessing]===0.6"
+      ],
+      "cd__Full Moon Kick": [
+        "EQUIP[Lunar Blessing]===0.6"
+      ],
+      "cd__Eswhoo": [
+        "EQUIP[Lunar Blessing]===0.8"
+      ],
+      "Full Moon Kick": [
+        "EQUIP[Lunar Blessing]===16"
+      ],
+      "Eswhoo": [
+        "EQUIP[Lunar Blessing]===16"
+      ],
+      "cd__Curse Explosion": [
+        "EQUIP[Solar Blessing]===0.8"
+      ],
+      "Curse Explosion": [
+        "EQUIP[Solar Blessing]===16"
+      ],
+      "Solar Explosion": [
+        "EQUIP[Solar Blessing]===16"
+      ],
+      "m_class_boss": [
+        "EQUIP[Stellar Blessing]===8"
+      ],
+      "Falling Stars": [
+        "EQUIP[Stellar Blessing]===32"
+      ],
+      "Espa": [
+        "EQUIP[Stellar Blessing]===16"
+      ],
+      "p_pene_race_all": [
+        "EQUIP[Lunar Eclipse Armor]50"
+      ],
+      "m_pene_race_all": [
+        "EQUIP[Lunar Eclipse Armor]50"
       ]
     }
   },

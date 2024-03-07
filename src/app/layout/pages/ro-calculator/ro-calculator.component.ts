@@ -14,6 +14,7 @@ import {
   switchMap,
   take,
   tap,
+  throwError,
 } from 'rxjs';
 import { BaseStateCalculator } from './base-state-calculator';
 import { Calculator } from './calculator';
@@ -1181,6 +1182,9 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
     return fn
       .pipe(
+        catchError((err) => {
+          return this.handleAPIError(err);
+        }),
         finalize(() => {
           this.isInProcessingPreset = false;
         }),
@@ -2574,18 +2578,19 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   confirmSync() {
     const total = this.getPresetList().length;
     if (total > 0) {
-      this.confirmationService.confirm({
-        message: `Sync ${total} presets to cloud ?`,
-        header: 'Confirmation',
-        icon: 'pi pi-exclamation-triangle',
-        accept: () => {
-          this.syncLocalPresetToCloud();
-        },
-      });
+      // this.confirmationService.confirm({
+      //   message: `Sync ${total} presets to cloud ?`,
+      //   header: 'Confirmation',
+      //   icon: 'pi pi-exclamation-triangle',
+      //   accept: () => {
+      //     this.syncLocalPresetToCloud();
+      //   },
+      // });
+      this.syncLocalPresetToCloud();
     }
   }
 
-  syncLocalPresetToCloud() {
+  private syncLocalPresetToCloud() {
     if (!this.isLoggedIn) return;
 
     const localPresets = this.getPresetList() as unknown as { value: string; model: any }[];
@@ -2674,6 +2679,9 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
           this.isInProcessingPreset = false;
         }),
+        catchError((err) => {
+          return this.handleAPIError(err);
+        }),
       )
       .subscribe((createdPresets) => {
         this.preSets = createdPresets.map((a) => {
@@ -2684,5 +2692,14 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         });
         console.log('preset sycned');
       });
+  }
+
+  private handleAPIError(err: any) {
+    this.messageService.add({
+      severity: 'error',
+      summary: err?.error || err?.message,
+    });
+
+    return throwError(() => err);
   }
 }
