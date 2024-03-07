@@ -34879,7 +34879,7 @@
         "EQUIP[Arm Shadow Pendant&&Arm Shadow Earring]REFINE[shadowWeapon,shadowEarring,shadowPendant==2]---1"
       ],
       "vct": [
-        "EQUIP[Mechanic Shield Shadow]REFINE[shadowWeapon,shadowShield==1]---1"
+        "EQUIP[Mechanic Shield Shadow]REFINE[shadowWeapon,shadowShield==2]---1"
       ],
       "atk": [
         "1---1"
