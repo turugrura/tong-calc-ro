@@ -234,6 +234,12 @@ export class Calculator {
     def: 0,
     mdef: 0,
     hp: 0,
+    str: 0,
+    agi: 0,
+    dex: 0,
+    vit: 0,
+    int: 0,
+    luk: 0,
   };
   private monster: MonsterModel;
 
@@ -416,6 +422,8 @@ export class Calculator {
         vit,
         agi,
         luk,
+        str,
+        dex,
         level,
         elementName,
         health,
@@ -460,6 +468,12 @@ export class Calculator {
       softMDef: floor((level + int) / 4),
       criShield: floor(luk / 5),
       hitRequireFor100: 200 + level + agi,
+      str,
+      agi,
+      dex,
+      vit,
+      int,
+      luk,
     };
 
     return this;

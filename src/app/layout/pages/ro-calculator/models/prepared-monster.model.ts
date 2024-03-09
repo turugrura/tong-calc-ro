@@ -32,4 +32,10 @@ export interface PreparedMonsterModel {
   def: number;
   mdef: number;
   hp: number;
+  str: number;
+  agi: number;
+  dex: number;
+  vit: number;
+  int: number;
+  luk: number;
 }

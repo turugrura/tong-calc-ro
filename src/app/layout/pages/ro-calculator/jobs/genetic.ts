@@ -92,6 +92,23 @@ export class Genetic extends CharacterBase {
   protected readonly classNames = ['Only 3rd Cls', 'Genetic', 'Genetic Cls', 'Genetic Class'];
   protected readonly _atkSkillList: AtkSkillModel[] = [
     {
+      name: 'Acid Bomb',
+      label: '[Improved] Acid Bomb Lv10',
+      value: '[Improved] Acid Bomb==10',
+      acd: 1,
+      fct: 1,
+      vct: 0,
+      cd: 0.15,
+      isExcludeCannanball: true,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { skillLevel, model, status, monster } = input;
+        const baseLevel = model.level;
+        const bonusStat = status.totalInt + monster.vit;
+
+        return (skillLevel * 200 + bonusStat) * (baseLevel / 100);
+      },
+    },
+    {
       name: 'Cart Cannon',
       label: 'Cart Cannon Lv5',
       value: 'Cart Cannon==5',

@@ -64521,7 +64521,7 @@
     "compositionPos": 65535,
     "cardPrefix": "<L-Heal1>",
     "script": {
-      "Acid Demonstration": [
+      "Acid Bomb": [
         "15",
         "9===3",
         "11===7"
@@ -66169,7 +66169,7 @@
     "location": null,
     "compositionPos": null,
     "script": {
-      "Acid Demonstration": [
+      "Acid Bomb": [
         "25"
       ]
     }
@@ -68776,7 +68776,7 @@
       "cd__Rampage Blast": [
         "EQUIP[Burning Knuckle-OS]===1"
       ],
-      "Acid Demonstration": [
+      "Acid Bomb": [
         "EQUIP[Saphir Mace-OS]REFINE[weapon==2]---3"
       ],
       "God's Hammer": [
@@ -76984,7 +76984,7 @@
       "Cart Cannon": [
         "9===20"
       ],
-      "Acid Demonstration": [
+      "Acid Bomb": [
         "11===10"
       ],
       "dex": [
