@@ -159,7 +159,7 @@ export class Genetic extends CharacterBase {
         const totalInt = status.totalInt;
         const cartModelingLv = this.learnLv('Cart Remodeling');
 
-        return (250 * skillLevel + skillLevel * 20 * cartModelingLv + totalInt * 2) * (baseLevel / 100);
+        return (250 * skillLevel + 20 * skillLevel * cartModelingLv + totalInt * 2) * (baseLevel / 100);
       },
     },
     {

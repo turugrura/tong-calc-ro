@@ -8,6 +8,7 @@ import {
   PassiveSkillModel,
 } from './_character-base.abstract';
 import { Whitesmith } from './white-smith';
+import { ElementType } from '../constants/element-type.const';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 0, 0, 1],
@@ -90,8 +91,8 @@ export class Mechanic extends CharacterBase {
   protected readonly classNames = ['Hi-Class', 'Only 3rd Cls', 'Mechanic', 'Mechanic Cls', 'Mechanic Class'];
   protected readonly _atkSkillList: AtkSkillModel[] = [
     {
-      label: 'Axe Tornado Lv5',
       name: 'Axe Tornado',
+      label: 'Axe Tornado Lv5',
       value: 'Axe Tornado==5',
       acd: 0.5,
       fct: 0,
@@ -101,16 +102,36 @@ export class Mechanic extends CharacterBase {
       isMelee: true,
       isExcludeCannanball: true,
       formula: (input: AtkSkillFormulaInput): number => {
-        const { status, skillLevel, model } = input;
+        const { status, skillLevel, model, weapon } = input;
         const baseLevel = model.level;
-        const vit = status.totalVit;
+        const totalVit = status.totalVit;
+        const bonusWeapon = weapon?.data?.propertyAtk === ElementType.Wind ? 1.25 : 1;
 
-        return (vit + 200 + skillLevel * 100) * (baseLevel / 100);
+        return (totalVit + 200 + skillLevel * 100) * bonusWeapon * (baseLevel / 100);
       },
     },
     {
-      label: 'Axe Boomerang Lv5',
+      name: 'Axe Tornado',
+      label: '[Improved] Axe Tornado Lv5',
+      value: '[Improved] Axe Tornado==5',
+      acd: 0.5,
+      fct: 0,
+      vct: 0,
+      cd: 2,
+      hit: 6,
+      isMelee: true,
+      isExcludeCannanball: true,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { skillLevel, model, status } = input;
+        const baseLevel = model.level;
+        const totalVit = status.totalVit;
+
+        return (200 + skillLevel * 180 + totalVit) * (baseLevel / 100);
+      },
+    },
+    {
       name: 'Axe Boomerang',
+      label: 'Axe Boomerang Lv5',
       value: 'Axe Boomerang==5',
       acd: 0,
       fct: 0,
@@ -126,8 +147,8 @@ export class Mechanic extends CharacterBase {
       },
     },
     {
-      label: 'Arm Cannon Lv3',
       name: 'Arm Cannon',
+      label: 'Arm Cannon Lv3',
       value: 'Arm Cannon==3',
       acd: 1,
       fct: 0.4,
@@ -146,8 +167,8 @@ export class Mechanic extends CharacterBase {
       },
     },
     {
-      label: 'Arm Cannon Lv4',
       name: 'Arm Cannon',
+      label: 'Arm Cannon Lv4',
       value: 'Arm Cannon==4',
       acd: 1,
       fct: 0.2,
@@ -166,8 +187,8 @@ export class Mechanic extends CharacterBase {
       },
     },
     {
-      label: 'Arm Cannon Lv5',
       name: 'Arm Cannon',
+      label: 'Arm Cannon Lv5',
       value: 'Arm Cannon==5',
       acd: 1,
       fct: 0.2,
@@ -183,6 +204,59 @@ export class Mechanic extends CharacterBase {
         const additional = 50 * skillLevel * size[monsterSize];
 
         return (additional + 300 + skillLevel * 300) * (baseLevel / 120);
+      },
+    },
+    {
+      name: 'Arm Cannon',
+      label: '[Improved] Arm Cannon Lv5',
+      value: '[Improved] Arm Cannon==5',
+      acd: 1,
+      fct: 0.1,
+      vct: 2,
+      cd: 0.3,
+      isHDefToSDef: true,
+      isHit100: true,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { skillLevel, model } = input;
+        const baseLevel = model.level;
+
+        return (400 + skillLevel * 300) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Power Swing',
+      label: 'Power Swing Lv10',
+      value: 'Power Swing==10',
+      acd: 1,
+      fct: 0,
+      vct: 0,
+      cd: 0,
+      isMelee: true,
+      isExcludeCannanball: true,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { skillLevel, model, status } = input;
+        const baseLevel = model.level;
+        const { totalDex, totalStr } = status;
+
+        return 300 + skillLevel * 100 + (totalDex + totalStr) * (baseLevel / 120);
+      },
+    },
+    {
+      name: 'Power Swing',
+      label: '[Improved] Power Swing Lv10',
+      value: '[Improved] Power Swing==10',
+      acd: 1,
+      fct: 0,
+      vct: 0,
+      cd: 0,
+      isMelee: true,
+      isExcludeCannanball: true,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { skillLevel, model, status } = input;
+        const baseLevel = model.level;
+        const { totalDex, totalStr } = status;
+
+        return (300 + skillLevel * 100 + (totalDex + totalStr) / 2) * (baseLevel / 100);
       },
     },
   ];
