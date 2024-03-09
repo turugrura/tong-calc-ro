@@ -99,7 +99,7 @@ export class Mechanic extends CharacterBase {
       cd: 2,
       hit: 6,
       isMelee: true,
-      levelList: [{ label: 'Lv 5', value: 'Axe Tornado==5' }],
+      isExcludeCannanball: true,
       formula: (input: AtkSkillFormulaInput): number => {
         const { status, skillLevel, model } = input;
         const baseLevel = model.level;
@@ -116,7 +116,7 @@ export class Mechanic extends CharacterBase {
       fct: 0,
       vct: 0,
       cd: 3,
-      levelList: [{ label: 'Lv 5', value: 'Axe Boomerang==5' }],
+      isExcludeCannanball: true,
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, weapon } = input;
         const baseLevel = model.level;

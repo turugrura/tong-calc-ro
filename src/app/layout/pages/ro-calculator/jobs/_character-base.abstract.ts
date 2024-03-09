@@ -66,6 +66,7 @@ export interface AtkSkillModel {
   isIgnoreDef?: boolean;
   isHDefToSDef?: boolean;
   isHit100?: boolean;
+  isExcludeCannanball?: boolean;
   isSudoElement?: boolean;
   /**
    * For DPS calucation

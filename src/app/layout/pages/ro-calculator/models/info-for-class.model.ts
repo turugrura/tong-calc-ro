@@ -4,9 +4,11 @@ import { Weapon } from '../weapon';
 import { MainModel } from './main.model';
 import { EquipmentSummaryModel } from './equipment-summary.model';
 import { ItemTypeEnum } from '../constants/item-type.enum';
+import { ElementType } from '../constants/element-type.const';
 
 export interface InfoForClass {
   weapon: Weapon;
+  ammoElement: ElementType;
   monster: PreparedMonsterModel;
   model: Partial<MainModel>;
   status: StatusSummary;

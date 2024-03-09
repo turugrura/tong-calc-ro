@@ -43,13 +43,13 @@ export class Creator extends CharacterBase {
       ],
     },
     {
-      label: 'Axe Mastery 10',
+      label: 'Axe Mastery',
       name: 'Axe Mastery',
-      inputType: 'selectButton',
+      inputType: 'dropdown',
       isMasteryAtk: true,
       dropdown: [
-        { label: 'Yes', value: 10, skillLv: 10, isUse: true, bonus: { x_axe_atk: 30, x_sword_atk: 30 } },
-        { label: 'No', value: 0, isUse: false },
+        { label: '-', isUse: false, value: 0 },
+        { label: 'Lv 10', isUse: true, value: 10, bonus: { x_axe_atk: 30, x_sword_atk: 30 } },
       ],
     },
     {

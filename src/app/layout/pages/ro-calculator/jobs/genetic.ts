@@ -9,6 +9,7 @@ import {
 import { CartBoost } from '../constants/share-active-skills';
 import { Creator } from './creator';
 import { InfoForClass } from '../models/info-for-class.model';
+import { ElementType } from '../constants/element-type.const';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 1, 0, 0],
@@ -91,8 +92,8 @@ export class Genetic extends CharacterBase {
   protected readonly classNames = ['Only 3rd Cls', 'Genetic', 'Genetic Cls', 'Genetic Class'];
   protected readonly _atkSkillList: AtkSkillModel[] = [
     {
-      label: 'Cart Cannon Lv5',
       name: 'Cart Cannon',
+      label: 'Cart Cannon Lv5',
       value: 'Cart Cannon==5',
       acd: 0.5,
       fct: 0,
@@ -101,24 +102,76 @@ export class Genetic extends CharacterBase {
       isHit100: true,
       isHDefToSDef: true,
       formula: (input: AtkSkillFormulaInput): number => {
-        const {
-          skillLevel,
-          status: { totalInt },
-        } = input;
+        const { skillLevel, status, model, ammoElement, monster } = input;
+        const isCannonballNeutral = model.ammo > 0 && (!ammoElement || ammoElement === ElementType.Neutral);
+        if (isCannonballNeutral && monster.elementUpper === ElementType.Ghost) {
+          return 0;
+        }
+
         const cartModelingLv = this.learnLv('Cart Remodeling');
+        const totalInt = status.totalInt;
 
         return skillLevel * 60 + cartModelingLv * 50 * (totalInt / 40);
       },
     },
     {
-      label: 'Cart Tornado Lv10',
+      name: 'Cart Cannon',
+      label: '[Improved 1nd] Cart Cannon Lv5',
+      value: '[Improved 1nd] Cart Cannon==5',
+      acd: 0.5,
+      fct: 0,
+      vct: 3,
+      cd: 0,
+      isHit100: true,
+      isHDefToSDef: true,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { skillLevel, model, status, monster, ammoElement } = input;
+        const isCannonballNeutral = model.ammo > 0 && (!ammoElement || ammoElement === ElementType.Neutral);
+        if (isCannonballNeutral && monster.elementUpper === ElementType.Ghost) {
+          return 0;
+        }
+
+        const baseLevel = model.level;
+        const totalInt = status.totalInt;
+        const cartModelingLv = this.learnLv('Cart Remodeling');
+
+        return (350 * skillLevel + totalInt / (6 - cartModelingLv)) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Cart Cannon',
+      label: '[Improved 2nd] Cart Cannon Lv5',
+      value: '[Improved 2nd] Cart Cannon==5',
+      acd: 0.5,
+      fct: 0,
+      vct: 3,
+      cd: 0,
+      isHit100: true,
+      isHDefToSDef: true,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { skillLevel, model, status, monster, ammoElement } = input;
+        const isCannonballNeutral = model.ammo > 0 && (!ammoElement || ammoElement === ElementType.Neutral);
+        if (isCannonballNeutral && monster.elementUpper === ElementType.Ghost) {
+          return 0;
+        }
+
+        const baseLevel = model.level;
+        const totalInt = status.totalInt;
+        const cartModelingLv = this.learnLv('Cart Remodeling');
+
+        return (250 * skillLevel + skillLevel * 20 * cartModelingLv + totalInt * 2) * (baseLevel / 100);
+      },
+    },
+    {
       name: 'Cart Tornado',
+      label: 'Cart Tornado Lv10',
       value: 'Cart Tornado==10',
       acd: 1,
       fct: 0,
       vct: 0,
       cd: 2,
       isMelee: true,
+      isExcludeCannanball: true,
       formula: (input: AtkSkillFormulaInput): number => {
         const { skillLevel, status } = input;
         const { baseStr } = status;
@@ -127,6 +180,61 @@ export class Genetic extends CharacterBase {
         const cartWeight = this.bonuses.usedSkillMap.get('Cart Weight') || 0;
 
         return skillLevel * 100 + cartModelingLv * 50 + cartWeight / (150 - baseStr);
+      },
+    },
+    {
+      name: 'Cart Tornado',
+      label: '[Improved] Cart Tornado Lv10',
+      value: '[Improved] Cart Tornado==10',
+      acd: 1,
+      fct: 0,
+      vct: 0,
+      cd: 2,
+      isMelee: true,
+      isExcludeCannanball: true,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { skillLevel, status } = input;
+        const { baseStr } = status;
+
+        const cartModelingLv = this.learnLv('Cart Remodeling');
+        const cartWeight = this.bonuses.usedSkillMap.get('Cart Weight') || 0;
+        const bonusMultiplier = this.isSkillActive('Wooden Fairy') ? 2 : 1;
+
+        return skillLevel * 200 * bonusMultiplier + cartModelingLv * 50 + cartWeight / (150 - baseStr);
+      },
+    },
+    {
+      name: 'Spore Explosion',
+      label: '[Improved 1st] Spore Explosion Lv10',
+      value: '[Improved 1st] Spore Explosion==10',
+      acd: 0.5,
+      fct: 0,
+      vct: 1.5,
+      cd: 5,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { skillLevel, model } = input;
+        const baseLevel = model.level;
+        const primaryDmg = 200 + 180 * skillLevel;
+        const secondaryDmg = 180 * skillLevel;
+
+        return (primaryDmg + secondaryDmg) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Spore Explosion',
+      label: '[Improved 2nd] Spore Explosion Lv10',
+      value: '[Improved 2nd] Spore Explosion==10',
+      acd: 0.5,
+      fct: 0,
+      vct: 1.5,
+      cd: 5,
+      isExcludeCannanball: true,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { skillLevel, model } = input;
+        const baseLevel = model.level;
+        const bonusMultiplier = this.isSkillActive('Wooden Fairy') ? 2 : 1;
+
+        return (400 + 200 * skillLevel) * bonusMultiplier * (baseLevel / 100);
       },
     },
   ];

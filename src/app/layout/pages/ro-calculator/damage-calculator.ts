@@ -58,6 +58,7 @@ export class DamageCalculator {
   private weaponData: Weapon;
   private leftWeaponData: Weapon;
   private aspdPotion: number;
+  private ammoPropertyAtk: ElementType;
 
   setArgs(params: {
     equipStatus: Record<ItemTypeEnum, EquipmentSummaryModel>;
@@ -130,6 +131,12 @@ export class DamageCalculator {
     return this;
   }
 
+  setAmmoPropertyAtk(p: ElementType) {
+    this.ammoPropertyAtk = p;
+
+    return this;
+  }
+
   get status(): StatusSummary {
     const { str, jobStr, int, jobInt, luk, jobLuk, vit, jobVit, dex, jobDex, agi, jobAgi } = this.model;
 
@@ -169,6 +176,7 @@ export class DamageCalculator {
       status: this.status,
       equipmentBonus: this.equipStatus,
       skillName: this.skillName,
+      ammoElement: this.ammoPropertyAtk,
     };
   }
 
@@ -589,12 +597,17 @@ export class DamageCalculator {
     return this.toPercent(pMultiplier);
   }
 
-  private calcTotalAtk(params: { propertyAtk: ElementType; isEDP: boolean; sizePenalty: number }) {
-    const { propertyAtk, isEDP, sizePenalty } = params;
+  private calcTotalAtk(params: {
+    propertyAtk: ElementType;
+    isEDP: boolean;
+    sizePenalty: number;
+    isExcludeCannanball: boolean;
+  }) {
+    const { propertyAtk, isEDP, sizePenalty, isExcludeCannanball } = params;
     const propertyMultiplier = this.getPropertyMultiplier(propertyAtk);
 
     const extraAtk = this.getExtraAtk();
-    const cannonBallAtk = this.totalBonus.cannonballAtk || 0;
+    const cannonBallAtk = isExcludeCannanball ? 0 : this.totalBonus.cannonballAtk || 0;
     const masteryAtk = this.getMasteryAtk() + cannonBallAtk;
 
     const mildwindMultiplier = this.isActiveMildwind
@@ -660,6 +673,7 @@ export class DamageCalculator {
       isMelee: _isMelee,
       isHDefToSDef = false,
       isIgnoreDef = false,
+      isExcludeCannanball = false,
       finalDmgFormula,
     } = skillData;
     this.skillName = skillName;
@@ -712,6 +726,7 @@ export class DamageCalculator {
       propertyAtk,
       sizePenalty,
       isEDP: this.isActiveEDP(skillName),
+      isExcludeCannanball,
     });
 
     const rawMaxDamage = skillFormula(totalMaxOver, canCri);
@@ -945,6 +960,7 @@ export class DamageCalculator {
       propertyAtk,
       sizePenalty,
       isEDP: this.isActiveEDP(''),
+      isExcludeCannanball: true,
     });
 
     const { basicMinDamage, basicMaxDamage } = this.calcBasicDamage({ totalMin: totalMin, totalMax: totalMaxOver });

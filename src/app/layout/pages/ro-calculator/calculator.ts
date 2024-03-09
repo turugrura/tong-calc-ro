@@ -361,6 +361,7 @@ export class Calculator {
       status: this.status,
       equipmentBonus: this.equipStatus,
       skillName: this.skillName,
+      ammoElement: this.equipItem.get(ItemTypeEnum.ammo)?.propertyAtk,
     };
   }
 
@@ -721,23 +722,25 @@ export class Calculator {
     this.calcBuffAtk();
     this.calcStatusAtk();
 
-    this.dmgCalculator.setArgs({
-      equipStatus: this.equipStatus as any,
-      totalEquipStatus: this.totalEquipStatus,
-      model: this.model,
-      equipAtkSkillBonus: this.equipAtkSkillBonus,
-      buffMasteryAtkBonus: this.buffMasteryAtkBonus,
-      masteryAtkSkillBonus: this.masteryAtkSkillBonus,
-      finalMultipliers: this.finalMultipliers,
-      finalPhyMultipliers: this.finalPhyMultipliers,
-      finalMagicMultipliers: this.finalMagicMultipliers,
-      _class: this._class,
-      monster: this.monster,
-      monsterData: this.monsterData,
-      weaponData: this.weaponData,
-      aspdPotion: this.aspdPotion,
-      leftWeaponData: this.leftWeaponData,
-    });
+    this.dmgCalculator
+      .setArgs({
+        equipStatus: this.equipStatus as any,
+        totalEquipStatus: this.totalEquipStatus,
+        model: this.model,
+        equipAtkSkillBonus: this.equipAtkSkillBonus,
+        buffMasteryAtkBonus: this.buffMasteryAtkBonus,
+        masteryAtkSkillBonus: this.masteryAtkSkillBonus,
+        finalMultipliers: this.finalMultipliers,
+        finalPhyMultipliers: this.finalPhyMultipliers,
+        finalMagicMultipliers: this.finalMagicMultipliers,
+        _class: this._class,
+        monster: this.monster,
+        monsterData: this.monsterData,
+        weaponData: this.weaponData,
+        aspdPotion: this.aspdPotion,
+        leftWeaponData: this.leftWeaponData,
+      })
+      .setAmmoPropertyAtk(this.equipItem.get(ItemTypeEnum.ammo)?.propertyAtk);
 
     return this;
   }
