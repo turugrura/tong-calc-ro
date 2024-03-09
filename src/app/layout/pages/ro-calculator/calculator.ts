@@ -681,9 +681,18 @@ export class Calculator {
     const equipAtk = this.totalEquipStatus.atk;
     const skillAtk = this.getEquipAtkFromSkills();
 
-    this.totalEquipAtk = skillAtk + equipAtk;
+    this.totalEquipAtk = skillAtk + equipAtk + this.getStrikingAtk();
 
     return this;
+  }
+
+  private getStrikingAtk() {
+    const endowLearnedLv = this.totalEquipStatus['strikingEndowSkillLv'];
+    if (!endowLearnedLv) return 1;
+
+    const weaponLvl = this.weaponData.data?.baseWeaponLevel || 0;
+
+    return weaponLvl * 18 + endowLearnedLv * 5;
   }
 
   private calcStatusAtk() {

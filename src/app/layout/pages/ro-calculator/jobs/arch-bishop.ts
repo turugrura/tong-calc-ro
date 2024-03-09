@@ -104,32 +104,30 @@ export class ArchBishop extends CharacterBase {
   ];
   protected readonly _atkSkillList: AtkSkillModel[] = [
     {
-      label: 'Holy Light',
       name: 'Holy Light',
+      label: 'Holy Light',
+      value: 'Holy Light==1',
       acd: 0,
       cd: 0,
       fct: 0,
       vct: 0,
       isMatk: true,
       element: ElementType.Holy,
-      value: 'Holy Light==1',
-      levelList: [],
       formula: (): number => {
         return 125;
       },
     },
     {
-      label: 'Magnus Exorcismus Lv10',
       name: 'Magnus Exorcismus',
+      label: 'Magnus Exorcismus Lv10',
+      value: 'Magnus Exorcismus==10',
       acd: 1,
       cd: 6,
       fct: 1,
       vct: 4,
       isMatk: true,
       element: ElementType.Holy,
-      value: 'Magnus Exorcismus==10',
       totalHit: 10,
-      levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
         const { race, element } = input.monster;
         const inCludeBonus =
@@ -142,17 +140,16 @@ export class ArchBishop extends CharacterBase {
       },
     },
     {
-      label: 'Judex Lv10',
       name: 'Judex',
+      label: 'Judex Lv10',
+      value: 'Judex==10',
       fct: 0.5,
       vct: 2,
       acd: 0.58,
       cd: 0,
       isMatk: true,
       element: ElementType.Holy,
-      value: 'Judex==10',
       hit: 3,
-      levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
@@ -161,8 +158,9 @@ export class ArchBishop extends CharacterBase {
       },
     },
     {
-      label: 'Adoramus Lv10',
       name: 'Adoramus',
+      label: 'Adoramus Lv10',
+      value: 'Adoramus==10',
       fct: 0.5,
       vct: 2,
       acd: 0.5,
@@ -170,8 +168,6 @@ export class ArchBishop extends CharacterBase {
       isMatk: true,
       hit: 10,
       element: ElementType.Holy,
-      value: 'Adoramus==10',
-      levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
@@ -180,8 +176,8 @@ export class ArchBishop extends CharacterBase {
       },
     },
     {
-      label: '[Improved] Adoramus Lv10',
       name: 'Adoramus',
+      label: '[Improved] Adoramus Lv10',
       value: '[Improved] Adoramus==10',
       fct: 0.5,
       vct: 2,
@@ -190,7 +186,6 @@ export class ArchBishop extends CharacterBase {
       isMatk: true,
       hit: 10,
       element: ElementType.Holy,
-      levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
@@ -199,8 +194,8 @@ export class ArchBishop extends CharacterBase {
       },
     },
     {
-      label: '[Improved] Adoramus Lv10 (In Ancilla)',
       name: 'Adoramus',
+      label: '[Improved] Adoramus Lv10 (In Ancilla)',
       value: '[Improved] Adoramus Ancilla==10',
       fct: 0.5,
       vct: 2,
@@ -209,7 +204,6 @@ export class ArchBishop extends CharacterBase {
       isMatk: true,
       hit: 10,
       element: ElementType.Neutral,
-      levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
@@ -218,16 +212,15 @@ export class ArchBishop extends CharacterBase {
       },
     },
     {
-      label: 'Hell Inferno Lv5',
       name: 'Hell Inferno',
+      label: 'Hell Inferno Lv5',
+      value: 'Hell Inferno==5',
       fct: 1,
       vct: 3,
       acd: 0.5,
       cd: 3,
       isMatk: true,
       element: ElementType.Fire,
-      value: 'Hell Inferno==5',
-      levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;

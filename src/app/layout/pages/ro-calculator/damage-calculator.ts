@@ -215,6 +215,10 @@ export class DamageCalculator {
     return this.toPercent(100 + (this.totalBonus['comet'] || 0));
   }
 
+  /**
+   *
+   * @returns Final damage multiplier
+   */
   private getDarkClawBonus(atkType: 'melee' | 'range') {
     if (atkType === 'range') return 0;
 
@@ -226,10 +230,29 @@ export class DamageCalculator {
     return bonus;
   }
 
+  /**
+   *
+   * @returns Final damage multiplier
+   */
   private getAdvanceKatar() {
     if (this.weaponData.data.typeName !== 'katar') return 0;
 
     return this.totalBonus['advKatar'] || 0;
+  }
+
+  private getRaidMultiplier() {
+    if (!this.totalBonus['raid']) return 1;
+
+    return this.monsterData.type === 'boss' ? 1.15 : 1.3;
+  }
+
+  private getStrikingAtk() {
+    const endowLearnedLv = this.totalBonus['strikingEndowSkillLv'];
+    if (!endowLearnedLv) return 1;
+
+    const weaponLvl = this.weaponData.data?.baseWeaponLevel || 0;
+
+    return weaponLvl * 18 + endowLearnedLv * 5;
   }
 
   private getVIAmp(propertyAtk: ElementType) {
@@ -508,8 +531,9 @@ export class DamageCalculator {
     const ammoAtk = this.equipStatus.ammo?.atk || 0;
     const pseudoBuffATK = this.isActiveInfilltration ? reducedHardDef / 2 : 0;
     const skillAtk = this.getEquipAtkFromSkills();
+    const striking = this.getStrikingAtk();
 
-    return equipAtk + skillAtk + ammoAtk + pseudoBuffATK;
+    return equipAtk + skillAtk + ammoAtk + pseudoBuffATK + striking;
   }
 
   private getBuffMasteryAtk(atkType: 'atk' | 'matk') {
@@ -658,7 +682,7 @@ export class DamageCalculator {
     }, allFinalApplied);
   }
 
-  private calcSkillDamage(params: {
+  private calcPhysicalSkillDamage(params: {
     skillData: AtkSkillModel;
     baseSkillDamage: number;
     weaponPropertyAtk: ElementType;
@@ -695,6 +719,7 @@ export class DamageCalculator {
 
     const darkClaw = this.getDarkClawBonus(isMelee ? 'melee' : 'range');
     const advKatar = this.getAdvanceKatar();
+    const raid = this.getRaidMultiplier();
     const finalDmgMultipliers = [darkClaw, advKatar].map((b) => this.toPercent(100 + b));
     const infoForClass = this.infoForClass;
 
@@ -711,6 +736,8 @@ export class DamageCalculator {
       for (const final of finalDmgMultipliers) {
         total = floor(total * final);
       }
+
+      total = floor(total * raid);
 
       total = this.toPreventNegativeDmg(total);
 
@@ -789,7 +816,7 @@ export class DamageCalculator {
     return { weaponMinMatk, weaponMaxMatk };
   }
 
-  private calcMatkSkillDamage(params: {
+  private calcMagicalSkillDamage(params: {
     skillData: AtkSkillModel;
     baseSkillDamage: number;
     weaponPropertyAtk: ElementType;
@@ -819,6 +846,7 @@ export class DamageCalculator {
     const sizeMultiplier = this.toPercent(this.getSizeMultiplier('m'));
     const elementMultiplier = this.toPercent(this.getElementMultiplier('m'));
     const monsterTypeMultiplier = this.toPercent(this.getMonsterTypeMultiplier('m'));
+    const raid = this.getRaidMultiplier();
 
     const skillFormula = (totalAtk: number) => {
       let total = totalAtk;
@@ -839,6 +867,7 @@ export class DamageCalculator {
       total = floor(total * propertyMultiplier); //tested
       total = floor(total * finalDmgMultiplier);
       total = this.applyFinalMultiplier(total, 'magic');
+      total = floor(total * raid);
 
       return this.toPreventNegativeDmg(total);
     };
@@ -894,8 +923,12 @@ export class DamageCalculator {
   private calcBasicDamage(params: { totalMin: number; totalMax: number }) {
     const { totalMax, totalMin } = params;
     const { range, melee, dmg } = this.totalBonus;
-    const rangedDmg = this.isRangeAtk() ? range : melee;
+    const isRangeType = this.isRangeAtk();
+    const rangedDmg = isRangeType ? range : melee;
     const rangedMultiplier = this.toPercent(rangedDmg + 100);
+    const advKatarMultiplier = (100 + this.getAdvanceKatar()) / 100;
+    const darkClawMultiplier = (100 + this.getDarkClawBonus(isRangeType ? 'range' : 'melee')) / 100;
+    const raidMultiplier = this.getRaidMultiplier();
     const dmgMultiplier = this.toPercent(dmg + this.getFlatDmg('basicAtk') + 100);
     const { finalDmgReduction, finalSoftDef } = this.getPhisicalDefData();
     const hardDef = finalDmgReduction;
@@ -906,7 +939,9 @@ export class DamageCalculator {
       total = floor(total * dmgMultiplier);
       total = floor(total * hardDef);
       total = total - softDef;
-      // total = this.applyFinalMultiplier(total, 'phy');
+      total = floor(total * darkClawMultiplier);
+      total = floor(total * advKatarMultiplier);
+      total = floor(total * raidMultiplier);
 
       return this.toPreventNegativeDmg(total);
     };
@@ -937,7 +972,6 @@ export class DamageCalculator {
       total = floor(total * hardDef);
       total = total - softDef;
       total = floor(total * this.BASE_CRI_MULTIPLIER);
-      // total = this.applyFinalMultiplier(total, 'phy');
 
       return this.toPreventNegativeDmg(total);
     };
@@ -1062,7 +1096,7 @@ export class DamageCalculator {
         sizePenalty,
       };
     } else {
-      calculated = isMatk ? this.calcMatkSkillDamage(params) : this.calcSkillDamage(params);
+      calculated = isMatk ? this.calcMagicalSkillDamage(params) : this.calcPhysicalSkillDamage(params);
     }
 
     let { minDamage, maxDamage } = calculated;
@@ -1089,7 +1123,7 @@ export class DamageCalculator {
         skillLevel,
       };
 
-      const calcPart2 = isPart2Matk ? this.calcMatkSkillDamage(params2) : this.calcSkillDamage(params2);
+      const calcPart2 = isPart2Matk ? this.calcMagicalSkillDamage(params2) : this.calcPhysicalSkillDamage(params2);
 
       if (isIncludeMain) {
         minDamage += calcPart2.minDamage;

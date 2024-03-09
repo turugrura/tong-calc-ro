@@ -127,4 +127,36 @@ export const JobBuffs: ActiveSkillModel[] = [
       { label: 'Clear EDP', value: 2, isUse: true, bonus: { magnumBreakClearEDP: 1 } },
     ],
   },
+  {
+    inputType: 'dropdown',
+    label: 'Moonlight Ser 5',
+    name: 'Moonlight Serenade',
+    dropdown: [
+      { label: '-', isUse: false, value: 0 },
+      { label: 'Job 30', value: 13, isUse: true, bonus: { matk: 46 } },
+      { label: 'Job 40', value: 14, isUse: true, bonus: { matk: 48 } },
+      { label: 'Job 50', value: 15, isUse: true, bonus: { matk: 50 } },
+      { label: 'Job 60', value: 16, isUse: true, bonus: { matk: 52 } },
+      { label: 'Job 70', value: 17, isUse: true, bonus: { matk: 54 } },
+    ],
+  },
+  {
+    inputType: 'dropdown',
+    label: 'Striking 5',
+    name: 'Striking',
+    dropdown: [
+      { label: '-', isUse: false, value: 0 },
+      { label: '20 EndowLv', isUse: true, value: 20, bonus: { strikingEndowSkillLv: 20, cri: 5 } },
+      { label: '10 EndowLv', isUse: true, value: 10, bonus: { strikingEndowSkillLv: 10, cri: 5 } },
+    ],
+  },
+  {
+    inputType: 'selectButton',
+    label: 'Raid',
+    name: 'Raid',
+    dropdown: [
+      { label: 'Yes', isUse: true, value: 1, bonus: { raid: 1 } },
+      { label: 'No', isUse: false, value: 0 },
+    ],
+  },
 ];

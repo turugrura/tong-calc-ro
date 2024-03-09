@@ -53,7 +53,7 @@ export class Creator extends CharacterBase {
       ],
     },
     {
-      label: 'Acid Demonstration',
+      label: 'Acid Bomb',
       name: 'Acid Demonstration',
       inputType: 'dropdown',
       dropdown: [
