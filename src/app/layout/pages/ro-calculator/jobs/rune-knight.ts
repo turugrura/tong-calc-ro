@@ -209,8 +209,8 @@ export class RuneKnight extends CharacterBase {
       },
     },
     {
-      label: 'Ignition Break Lv5 (3x3)',
       name: 'Ignition Break',
+      label: 'Ignition Break Lv5 (3x3)',
       value: 'Ignition Break3==5',
       acd: 0,
       fct: 0,
@@ -228,8 +228,8 @@ export class RuneKnight extends CharacterBase {
       },
     },
     {
-      label: 'Ignition Break Lv5 (5x5)',
       name: 'Ignition Break',
+      label: 'Ignition Break Lv5 (5x5)',
       value: 'Ignition Break5==5',
       acd: 0,
       fct: 0,
@@ -247,8 +247,8 @@ export class RuneKnight extends CharacterBase {
       },
     },
     {
-      label: 'Ignition Break Lv5 (7x7)',
       name: 'Ignition Break',
+      label: 'Ignition Break Lv5 (7x7)',
       value: 'Ignition Break7==5',
       acd: 0,
       fct: 0,
@@ -319,8 +319,24 @@ export class RuneKnight extends CharacterBase {
       },
     },
     {
-      label: 'Dragon Breath Lv10',
+      name: 'Hundred Spears',
+      label: '[Improved] Hundred Spears Lv10',
+      value: '[Improved] Hundred Spears==10',
+      acd: 0.5,
+      fct: 0,
+      vct: 0.1,
+      cd: 3,
+      hit: 5,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
+
+        return (600 + 200 * skillLevel) * (baseLevel / 100);
+      },
+    },
+    {
       name: 'Dragon Breath',
+      label: 'Dragon Breath Lv10',
       value: 'Dragon Breath==10',
       acd: 2,
       fct: 0.5,
@@ -336,7 +352,7 @@ export class RuneKnight extends CharacterBase {
     },
     {
       name: 'Dragon Breath',
-      label: 'Dragon Breath Lv10 [Improved]',
+      label: '[Improved] Dragon Breath Lv10',
       value: '[Improved] Dragon Breath==10',
       acd: 2,
       fct: 0.5,
@@ -376,7 +392,7 @@ export class RuneKnight extends CharacterBase {
     },
     {
       name: 'Dragon Breath - WATER',
-      label: 'Dragon Breath - WATER Lv10 [Improved]',
+      label: '[Improved] Dragon Breath - WATER Lv10',
       value: '[Improved] Dragon Breath - WATER==10',
       acd: 2,
       fct: 0.5,
