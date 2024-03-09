@@ -19,8 +19,8 @@ export class Wizard extends CharacterBase {
   protected classNames = ['Hi-Class', 'Wizard', 'Wizard Class', 'Wizard Cls'];
   protected _atkSkillList: AtkSkillModel[] = [
     // {
-    //   label: 'Soul Drain Lv10',
     //   name: 'Soul Drain',
+    //   label: 'Soul Drain Lv10',
     //   value: 'Soul Drain==10',
     //   acd: 0,
     //   fct: 0,
@@ -35,8 +35,8 @@ export class Wizard extends CharacterBase {
     //   },
     // },
     {
-      label: 'Napalm Vulcan Lv5',
       name: 'Napalm Vulcan',
+      label: 'Napalm Vulcan Lv5',
       value: 'Napalm Vulcan==5',
       fct: 0.3,
       vct: 0.5,
@@ -53,8 +53,8 @@ export class Wizard extends CharacterBase {
       },
     },
     {
-      label: 'Lord of Vermilion Lv10',
       name: 'Lord of Vermilion',
+      label: 'Lord of Vermilion Lv10',
       value: 'Lord of Vermilion==10',
       acd: 5,
       fct: 1.68,
@@ -86,8 +86,8 @@ export class Wizard extends CharacterBase {
       },
     },
     {
-      label: 'Meteor Storm Lv10',
       name: 'Meteor Storm',
+      label: 'Meteor Storm Lv10',
       value: 'Meteor Storm==10',
       acd: 5,
       fct: 1.5,
@@ -103,13 +103,13 @@ export class Wizard extends CharacterBase {
       },
     },
     {
-      label: 'Gravitational Field Lv5',
       name: 'Gravitational Field',
+      label: 'Gravitational Field Lv5',
       value: 'Gravitational Field==5',
-      acd: 9,
-      fct: 5,
-      vct: 0,
-      cd: 0,
+      acd: 1,
+      fct: 1,
+      vct: 5,
+      cd: 5,
       isMatk: true,
       element: ElementType.Neutral,
       totalHit: 18,

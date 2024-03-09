@@ -100,8 +100,8 @@ export class SuperNovice extends CharacterBase {
   protected readonly classNames = ['Novice', 'Super Novice'];
   protected readonly _atkSkillList: AtkSkillModel[] = [
     {
-      label: 'Fire Bolt Lv10',
       name: 'Fire Bolt',
+      label: 'Fire Bolt Lv10',
       value: 'Fire Bolt==10',
       acd: 2.8,
       fct: 1.2,
@@ -115,8 +115,8 @@ export class SuperNovice extends CharacterBase {
       },
     },
     {
-      label: 'Cold Bolt Lv10',
       name: 'Cold Bolt',
+      label: 'Cold Bolt Lv10',
       value: 'Cold Bolt==10',
       acd: 2.8,
       fct: 1.2,
@@ -130,8 +130,8 @@ export class SuperNovice extends CharacterBase {
       },
     },
     {
-      label: 'Lightening Bolt Lv10',
       name: 'Lightening Bolt',
+      label: 'Lightening Bolt Lv10',
       value: 'Lightening Bolt==10',
       acd: 2.8,
       fct: 1.2,
@@ -160,8 +160,8 @@ export class SuperNovice extends CharacterBase {
       },
     },
     {
-      label: 'Lord of Vermilion Lv10',
       name: 'Lord of Vermilion',
+      label: 'Lord of Vermilion Lv10',
       value: 'Lord of Vermilion==10',
       acd: 5,
       fct: 1.68,
@@ -177,13 +177,13 @@ export class SuperNovice extends CharacterBase {
       },
     },
     {
-      label: 'Gravitational Field Lv5',
       name: 'Gravitational Field',
+      label: 'Gravitational Field Lv5',
       value: 'Gravitational Field==5',
-      acd: 9,
-      fct: 5,
-      vct: 0,
-      cd: 0,
+      acd: 1,
+      fct: 1,
+      vct: 5,
+      cd: 5,
       isMatk: true,
       element: ElementType.Neutral,
       totalHit: 18,
@@ -195,8 +195,8 @@ export class SuperNovice extends CharacterBase {
       },
     },
     {
-      label: 'Fatal Manace Lv7',
       name: 'Fatal Manace',
+      label: 'Fatal Manace Lv7',
       value: 'Fatal Manace==7',
       acd: 0.5,
       fct: 0,
@@ -211,8 +211,8 @@ export class SuperNovice extends CharacterBase {
       },
     },
     {
-      label: 'Fatal Manace Lv10',
       name: 'Fatal Manace',
+      label: 'Fatal Manace Lv10',
       value: 'Fatal Manace==10',
       acd: 0.5,
       fct: 0,
