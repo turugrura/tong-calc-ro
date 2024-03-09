@@ -104,8 +104,8 @@ export class Ranger extends CharacterBase {
   ];
   protected _atkSkillList: AtkSkillModel[] = [
     {
-      label: 'Arrow Storm Lv10',
       name: 'Arrow Storm',
+      label: 'Arrow Storm Lv10',
       value: 'Arrow Storm==10',
       acd: 0,
       fct: 0,
@@ -120,8 +120,8 @@ export class Ranger extends CharacterBase {
       },
     },
     {
-      label: '[Improved] Arrow Storm Lv10',
       name: 'Arrow Storm',
+      label: '[Improved] Arrow Storm Lv10',
       value: '[Improved] Arrow Storm==10',
       acd: 0,
       fct: 0.3,
@@ -137,8 +137,8 @@ export class Ranger extends CharacterBase {
       },
     },
     {
-      label: 'Focused Arrow Lv5',
       name: 'Focused Arrow Strike',
+      label: 'Focused Arrow Lv5',
       value: 'Focused Arrow Strike==5',
       acd: 0.5,
       fct: 0.5,
@@ -154,8 +154,26 @@ export class Ranger extends CharacterBase {
       },
     },
     {
-      label: 'Aimed Bolt Lv10',
+      name: 'Focused Arrow Strike',
+      label: '[Improved] Focused Arrow Lv5',
+      value: '[Improved] Focused Arrow Strike==5',
+      acd: 0.5,
+      fct: 0.5,
+      vct: 0.5,
+      cd: 0.15,
+      canCri: true,
+      baseCri: 50,
+      criDmgPercentage: 0.5,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
+
+        return (300 + skillLevel * 300) * (baseLevel / 100);
+      },
+    },
+    {
       name: 'Aimed Bolt',
+      label: 'Aimed Bolt Lv10',
       value: 'Aimed Bolt==10',
       acd: 2,
       fct: 1,
@@ -179,8 +197,8 @@ export class Ranger extends CharacterBase {
       },
     },
     {
-      label: '[Improved] Aimed Bolt Lv10',
       name: 'Aimed Bolt',
+      label: '[Improved] Aimed Bolt Lv10',
       value: '[Improved] Aimed Bolt==10',
       acd: 1,
       fct: 1,

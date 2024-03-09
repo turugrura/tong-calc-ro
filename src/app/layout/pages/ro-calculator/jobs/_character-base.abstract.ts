@@ -54,6 +54,9 @@ export interface AtkSkillModel {
    * 0.3 => baseCri * 0.3
    */
   baseCriPercentage?: number;
+  /**
+   * 0.3 => criDmg * 0.3
+   */
   criDmgPercentage?: number;
   /**
    * Will be round down
