@@ -110,7 +110,7 @@ export const JobBuffs: ActiveSkillModel[] = [
   },
   {
     inputType: 'selectButton',
-    label: 'Comet Amp',
+    label: '[Debuff] Comet Amp',
     name: 'Comet Amp',
     dropdown: [
       { label: 'Yes', isUse: true, value: 1, bonus: { comet: 50 } },
@@ -125,6 +125,15 @@ export const JobBuffs: ActiveSkillModel[] = [
       { label: '-', value: 0, isUse: false },
       { label: 'Active', value: 1, isUse: true, bonus: { magnumBreakPsedoBonus: 1 } },
       { label: 'Clear EDP', value: 2, isUse: true, bonus: { magnumBreakClearEDP: 1 } },
+    ],
+  },
+  {
+    label: 'Bunch of Shrimp',
+    name: 'Bunch of Shrimp',
+    inputType: 'selectButton',
+    dropdown: [
+      { label: 'Yes', isUse: true, value: 1, bonus: { atkPercent: 10, matkPercent: 10 } },
+      { label: 'No', isUse: false, value: 0 },
     ],
   },
   {
@@ -152,7 +161,7 @@ export const JobBuffs: ActiveSkillModel[] = [
   },
   {
     inputType: 'selectButton',
-    label: 'Raid',
+    label: '[Debuff] Raid',
     name: 'Raid',
     dropdown: [
       { label: 'Yes', isUse: true, value: 1, bonus: { raid: 1 } },

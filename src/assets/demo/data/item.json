@@ -1652,6 +1652,29 @@
     ],
     "script": {}
   },
+  "1763": {
+    "id": 1763,
+    "aegisName": "Poison_Arrow",
+    "name": "Poison Arrow",
+    "unidName": "Poison Arrow",
+    "resName": "독화살",
+    "description": "ลูกธนูที่มีหัวลูกศรอาบยาพิษ มีโอกาสทำให้ศัตรูถูก Poison\nประเภท : ^777777Arrow^000000 พลังโจมตี : ^7777771^000000\nน้ำหนัก : ^7777770.1^000000 ธาตุ : ^777777Poison^000000",
+    "slots": 0,
+    "itemTypeId": 4,
+    "itemSubTypeId": 1024,
+    "itemLevel": null,
+    "attack": 1,
+    "propertyAtk": "Poison",
+    "defense": null,
+    "weight": 0.1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {}
+  },
   "1765": {
     "id": 1765,
     "aegisName": "Oridecon_Arrow",

@@ -135,6 +135,18 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
 
   updates: { v: string; date: string; logs: string[] }[] = [
     {
+      v: 'V2.0.1',
+      date: '09-03-2567',
+      logs: [
+        'Added Rune Knight skill (Improved Hundred Spears)',
+        'Added Royal Guard skill (Improved Banishing Point, Genesis Ray, Cannon Spear)',
+        'Added Genetic skill (Improved Cart Tornado, Cart Cannon, Spore Explosion, Acid Bomb)',
+        'Added Mechanic skill (Improved Axe Tornado, Arm Cannon, Power Swing)',
+        'Added Ranger skill (Improved Focused Arrow)',
+        'Added Buff/Debuff (Bunch of Shrimp, Moonlight Serenade, Striking, Raid)',
+      ],
+    },
+    {
       v: 'V2.0.0',
       date: '07-03-2567',
       logs: [

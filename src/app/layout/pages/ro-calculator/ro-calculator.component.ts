@@ -2478,7 +2478,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
       const foundBonus = this.isSerchMatchAllBonus
         ? selectedBonus.every((bonus) => item.script[bonus])
-        : selectedBonus.some((bonus) => item.script[bonus]);
+        : selectedBonus.length === 0 || selectedBonus.some((bonus) => item.script[bonus]);
       if (foundBonus) {
         displayItems.push(equipableItem);
       }
