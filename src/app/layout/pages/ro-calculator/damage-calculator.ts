@@ -1033,7 +1033,7 @@ export class DamageCalculator {
     const params = {
       baseSkillDamage,
       skillData,
-      weaponPropertyAtk: propertyAtk,
+      weaponPropertyAtk: typeof getElement === 'function' && !!getElement ? getElement() : propertyAtk,
       sizePenalty,
       formulaParams,
     };

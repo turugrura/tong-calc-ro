@@ -250,7 +250,7 @@
                 (onChange)="onClassChange()"
               >
                 <ng-template let-job pTemplate="selectedItem">
-                  <div class="flex gap-2 py-0" *ngIf="model.class">
+                  <div class="flex gap-2 py-0 align-items-center" *ngIf="model.class">
                     <img src="assets/demo/images/jobs/icon_jobs_{{ job.icon }}.png" alt="" class="job_img" />
                     <div class="text_ellips">{{ job.label }}</div>
                   </div>

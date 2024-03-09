@@ -92,26 +92,42 @@ export class RoyalGuard extends CharacterBase {
   protected readonly classNames = ['Only 3rd Cls', 'Royal Guard', 'Royal Guard Cls', 'Royal Guard Class'];
   protected readonly _atkSkillList: AtkSkillModel[] = [
     {
-      label: 'Banishing Point Lv10',
       name: 'Banishing Point',
+      label: 'Banishing Point Lv10',
       value: 'Banishing Point==10',
       acd: 0,
       fct: 0,
       vct: 0,
       cd: 0,
-      levelList: [{ label: 'Lv 10', value: 'Banishing Point==10' }],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
-        const learnedBashLv = this.bonuses.learnedSkillMap.get('Bash') || 0;
+        const learnedBashLv = this.learnLv('Bash') || 0;
         const bonus = learnedBashLv * 30;
 
         return (bonus + skillLevel * 50) * (baseLevel / 100);
       },
     },
     {
-      label: 'Genesis Ray Lv10',
+      name: 'Banishing Point',
+      label: '[Improved] Banishing Point Lv10',
+      value: '[Improved] Banishing Point==10',
+      acd: 0,
+      fct: 0,
+      vct: 0,
+      cd: 0,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
+        const learnedBashLv = this.learnLv('Bash') || 0;
+        const bonus = learnedBashLv * 50;
+
+        return (bonus + skillLevel * 80) * (baseLevel / 100);
+      },
+    },
+    {
       name: 'Genesis Ray',
+      label: 'Genesis Ray Lv10',
       value: 'Genesis Ray==10',
       acd: 1,
       fct: 0.5,
@@ -119,7 +135,6 @@ export class RoyalGuard extends CharacterBase {
       cd: 2,
       isMatk: true,
       element: ElementType.Holy,
-      levelList: [{ label: 'Lv 10', value: 'Genesis Ray==10' }],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
@@ -128,15 +143,37 @@ export class RoyalGuard extends CharacterBase {
       },
     },
     {
-      label: 'Over Brand Lv5',
+      name: 'Genesis Ray',
+      label: '[Improved] Genesis Ray Lv10',
+      value: '[Improved] Genesis Ray==10',
+      acd: 1,
+      fct: 0.5,
+      vct: 6.5,
+      cd: 2,
+      isMatk: true,
+      getElement: () => {
+        if (this.isSkillActive('Inspiration')) return ElementType.Neutral;
+
+        return ElementType.Holy;
+      },
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const baseLevel = model.level;
+        const totalInt = status.totalInt;
+        const bonus = this.isSkillActive('Inspiration') ? 70 * skillLevel : 0;
+
+        return (skillLevel * 230 + bonus + totalInt * 2) * (baseLevel / 100);
+      },
+    },
+    {
       name: 'Over Brand',
+      label: 'Over Brand Lv5',
       value: 'Over Brand==5',
       acd: 2,
       fct: 0,
       vct: 0.5,
       cd: 0,
       isMelee: true,
-      levelList: [{ label: 'Lv 5', value: 'Over Brand==5' }],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
@@ -154,8 +191,8 @@ export class RoyalGuard extends CharacterBase {
       },
     },
     {
-      label: 'Shield Press Lv10',
       name: 'Shield Press',
+      label: 'Shield Press Lv10',
       value: 'Shield Press==10',
       acd: 0,
       fct: 0,
@@ -163,7 +200,6 @@ export class RoyalGuard extends CharacterBase {
       cd: 2,
       isMelee: true,
       hit: 5,
-      levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status, equipmentBonus } = input;
         const baseLevel = model.level;
@@ -174,14 +210,13 @@ export class RoyalGuard extends CharacterBase {
       },
     },
     {
-      label: 'Cannon Spear Lv5',
       name: 'Cannon Spear',
+      label: 'Cannon Spear Lv5',
       value: 'Cannon Spear==5',
       acd: 0,
       fct: 0,
       vct: 0,
       cd: 2,
-      levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
         const baseLevel = model.level;
@@ -191,8 +226,27 @@ export class RoyalGuard extends CharacterBase {
       },
     },
     {
-      label: 'Earth Drive Lv5',
+      name: 'Cannon Spear',
+      label: '[Improved] Cannon Spear Lv5',
+      value: '[Improved] Cannon Spear==5',
+      acd: 0,
+      fct: 0,
+      vct: 0,
+      cd: 2,
+      canCri: true,
+      baseCriPercentage: 0.5,
+      criDmgPercentage: 0.5,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const baseLevel = model.level;
+        const { totalStr } = status;
+
+        return (totalStr * skillLevel + skillLevel * 50) * (baseLevel / 100);
+      },
+    },
+    {
       name: 'Earth Drive',
+      label: 'Earth Drive Lv5',
       value: 'Earth Drive==5',
       acd: 1,
       fct: 0,
@@ -201,7 +255,6 @@ export class RoyalGuard extends CharacterBase {
       isMelee: true,
       hit: 5,
       element: ElementType.Earth,
-      levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, equipmentBonus } = input;
         const baseLevel = model.level;
@@ -211,8 +264,8 @@ export class RoyalGuard extends CharacterBase {
       },
     },
     {
-      label: '[Improved] Earth Drive Lv5',
       name: 'Earth Drive',
+      label: '[Improved] Earth Drive Lv5',
       value: '[Improved] Earth Drive==5',
       acd: 1,
       fct: 0,
@@ -220,7 +273,6 @@ export class RoyalGuard extends CharacterBase {
       cd: 2.5,
       isMelee: true,
       hit: 5,
-      levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, status, skillLevel } = input;
         const baseLevel = model.level;
@@ -252,7 +304,24 @@ export class RoyalGuard extends CharacterBase {
         { label: 'No', value: 0, isUse: false },
       ],
     },
+    {
+      label: '[Imp] Inspiration 5',
+      name: 'Inspiration',
+      inputType: 'selectButton',
+      isMasteryAtk: true,
+      dropdown: [
+        {
+          label: 'Yes',
+          value: 1,
+          skillLv: 1,
+          isUse: true,
+          bonus: { atk: 200, matk: 200, allStatus: 30, hit: 60, hpPercent: 20 },
+        },
+        { label: 'No', value: 0, isUse: false },
+      ],
+    },
   ];
+
   protected readonly _passiveSkillList: PassiveSkillModel[] = [
     {
       label: 'Shield Press',
