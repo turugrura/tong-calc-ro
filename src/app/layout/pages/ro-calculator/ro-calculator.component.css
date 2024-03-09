@@ -432,3 +432,15 @@
   /* color: white !important;
   background: var(--indigo-800) !important; */
 }
+
+.job_img {
+  height: fit-content;
+}
+
+:host ::ng-deep .dropdown-joblist .p-dropdown {
+  height: 100%;
+}
+:host ::ng-deep .dropdown-joblist .p-dropdown .p-dropdown-label {
+  padding-top: 0.25rem !important;
+  padding-bottom: 0.25rem !important;
+}

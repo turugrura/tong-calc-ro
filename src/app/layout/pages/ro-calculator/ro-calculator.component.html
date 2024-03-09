@@ -236,7 +236,7 @@
           </div>
 
           <div class="col-12">
-            <div class="p-inputgroup">
+            <div class="p-inputgroup dropdown-joblist">
               <span class="p-inputgroup-addon" style="width: 80px">Class</span>
               <p-dropdown
                 inputId="character"
@@ -248,7 +248,20 @@
                 [(ngModel)]="model.class"
                 placeholder="Class"
                 (onChange)="onClassChange()"
-              ></p-dropdown>
+              >
+                <ng-template let-job pTemplate="selectedItem">
+                  <div class="flex gap-2 py-0" *ngIf="model.class">
+                    <img src="assets/demo/images/jobs/icon_jobs_{{ job.icon }}.png" alt="" class="job_img" />
+                    <div class="text_ellips">{{ job.label }}</div>
+                  </div>
+                </ng-template>
+                <ng-template let-job pTemplate="item">
+                  <div class="flex gap-2 py-0">
+                    <img src="assets/demo/images/jobs/icon_jobs_{{ job.icon }}.png" alt="" class="job_img" />
+                    <div class="text_ellips">{{ job.label }}</div>
+                  </div>
+                </ng-template>
+              </p-dropdown>
             </div>
           </div>
           <div class="col-12">

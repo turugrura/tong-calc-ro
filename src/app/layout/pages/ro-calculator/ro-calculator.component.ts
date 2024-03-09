@@ -2,7 +2,6 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import {
   catchError,
   debounceTime,
-  delay,
   filter,
   finalize,
   forkJoin,
@@ -29,30 +28,17 @@ import { RoService } from 'src/app/demo/service/ro.service';
 import { ItemModel } from './models/item.model';
 import { ConfirmationService, MenuItem, MessageService, PrimeIcons, SelectItemGroup } from 'primeng/api';
 import { ActiveSkillModel, AtkSkillModel, CharacterBase, PassiveSkillModel } from './jobs/_character-base.abstract';
-import { Ranger } from './jobs/ranger';
 import { MonsterModel } from './models/monster.model';
 import { EnchantTable, getEnchants } from './constants/enchant-table';
-import { SoulReaper } from './jobs/soul-reaper';
 import { DropdownModel } from './models/dropdown.model';
 import { ItemListModel } from './models/item-list.model';
 import { getMonsterSpawnMap } from './constants/monster-spawn-mapper';
-import { Rebelion } from './jobs/rebellion';
-import { ShadowChaser } from './jobs/shadow-chaser';
-import { GitCross } from './jobs/git-cross';
-import { ArchBishop } from './jobs/arch-bishop';
-import { Warlock } from './jobs/warlock';
-import { Sorcerer } from './jobs/sorcerer';
 import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { PresetTableComponent } from './preset-table/preset-table.component';
-import { ClassID, ClassName } from './jobs/_class-name';
+import { ClassName } from './jobs/_class-name';
 import { JobBuffs } from './constants/job-buffs';
-import { Mechanic } from './jobs/mechanic';
-import { RoyalGuard } from './jobs/royal-guard';
 import { environment } from 'src/environments/environment';
-import { Doram } from './jobs/doram';
 import { MonsterDataViewComponent } from './monster-data-view/monster-data-view.component';
-import { Wanderer } from './jobs/wanderer';
-import { Minstrel } from './jobs/minstrel';
 import { ItemSubTypeId } from './constants/item-sub-type.enum';
 import { CardPosition } from './constants/card-position.enum';
 import { createNumberDropdownList } from './utils/create-number-dropdown-list';
@@ -63,70 +49,28 @@ import { toDropdownList } from './utils/to-drowdown-list';
 import { sortObj } from './utils/sort-obj';
 import { HpSpTable } from './models/hp-sp-table.model';
 import { AllowLeftWeaponMapper } from './constants/allow-left-weapon-mapper';
-import { Kagerou } from './jobs/kagerou';
-import { Genetic } from './jobs/genetic';
 import { LayoutService } from '../../service/app.layout.service';
-import { StarEmperor } from './jobs/star-emperor';
 import { createMainModel } from './utils/create-main-model';
 import { FoodStatList } from './constants/food-stat-list';
 import { ElementConverterList } from './constants/element-converter-list';
-import { RuneKnight } from './jobs/rune-knight';
-import { Oboro } from './jobs/oboro';
 import { AspdPotionList } from './constants/aspd-potion-list';
-import { Sura } from './jobs/sura';
 import { BasicDamageSummaryModel, SkillDamageSummaryModel } from './models/damage-summary.model';
 import { ChanceModel } from './models/chance-model';
 import { RaceType } from './constants/race-type.const';
 import { ElementType } from './constants/element-type.const';
-import { createBonusNameList, isNumber, toUpsertPresetModel, verifySyncPreset } from './utils';
+import { createBonusNameList, isNumber, toUpsertPresetModel, verifySyncPreset, waitRxjs } from './utils';
 import { ExtraOptionTable } from './constants/extra-option-table';
 import { ItemOptionNumber } from './constants/item-option-number.enum';
-import { SuperNovice } from './jobs/super-novice';
 import { WeaponTypeNameMapBySubTypeId } from './constants/weapon-type-mapper';
 import { AuthService, PresetService } from 'src/app/api-services';
+import { ItemOptionTable } from './constants/item-options-table';
+import { getClassDropdownList } from './jobs/_class-list';
 
 interface MonsterSelectItemGroup extends SelectItemGroup {
   items: any[];
 }
 
-const Characters: DropdownModel[] = [
-  { label: ClassID[11], value: 11, instant: new RoyalGuard() },
-  { label: ClassID[12], value: 12, instant: new RuneKnight() },
-  { label: ClassID[7], value: 7, instant: new ArchBishop() },
-  { label: ClassID[13], value: 13, instant: new Sura() },
-  { label: ClassID[2], value: 2, instant: new Ranger() },
-  { label: ClassID[21], value: 21, instant: new Minstrel() },
-  { label: ClassID[22], value: 22, instant: new Wanderer() },
-  { label: ClassID[5], value: 5, instant: new GitCross() },
-  { label: ClassID[4], value: 4, instant: new ShadowChaser() },
-  { label: ClassID[6], value: 6, instant: new Warlock() },
-  { label: ClassID[8], value: 8, instant: new Sorcerer() },
-  { label: ClassID[10], value: 10, instant: new Mechanic() },
-  { label: ClassID[9], value: 9, instant: new Genetic() },
-  { label: ClassID[30], value: 30, instant: new SuperNovice() },
-  { label: ClassID[3], value: 3, instant: new SoulReaper() },
-  { label: ClassID[33], value: 33, instant: new StarEmperor() },
-  { label: ClassID[17], value: 17, instant: new Oboro() },
-  { label: ClassID[18], value: 18, instant: new Kagerou() },
-  { label: ClassID[1], value: 1, instant: new Rebelion() },
-  { label: ClassID[31], value: 31, instant: new Doram() },
-];
-
-const extraOptionList: [ItemTypeEnum, [ItemOptionNumber, ItemOptionNumber]][] = [
-  [ItemTypeEnum.shield, [ItemOptionNumber.Shield_1, ItemOptionNumber.Shield_2]],
-  [ItemTypeEnum.headUpper, [ItemOptionNumber.H_Upper_1, ItemOptionNumber.H_Upper_2]],
-  [ItemTypeEnum.headMiddle, [ItemOptionNumber.H_Mid_1, ItemOptionNumber.H_Mid_2]],
-  // [ItemTypeEnum.headLower, [ExtraOption.H_Low_1, ExtraOption.H_Low_2]],
-  [ItemTypeEnum.armor, [ItemOptionNumber.Armor_1, ItemOptionNumber.Armor_2]],
-  [ItemTypeEnum.garment, [ItemOptionNumber.Garment_1, ItemOptionNumber.Garment_2]],
-  // [ItemTypeEnum.boot, [ExtraOption.Boot_1, ExtraOption.Boot_2]],
-  [ItemTypeEnum.accLeft, [ItemOptionNumber.A_Left_1, ItemOptionNumber.A_Left_2]],
-  [ItemTypeEnum.accRight, [ItemOptionNumber.A_Right_1, ItemOptionNumber.A_Right_2]],
-];
-
-const waitRxjs = <T>(second: number = 0.1, res = null as T) => {
-  return of(res).pipe(delay(1000 * second), take(1));
-};
+const Characters = getClassDropdownList();
 
 const positions: DropdownModel[] = [
   { value: 'weaponList', label: 'Weapon' },
@@ -818,7 +762,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         }
       }
 
-      for (const [_itemType, [min, max]] of extraOptionList) {
+      for (const [_itemType, [min, max]] of ItemOptionTable) {
         if (this.compareItemNames?.includes(_itemType)) {
           for (let i = min; i <= max; i++) {
             rawOptionTxts[i] = this.model2.rawOptionTxts[i];
@@ -841,7 +785,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       calc.loadItemFromModel(model2);
     } else {
       // clean if the itemType not allow to have options
-      for (const [_itemType, [min, max]] of extraOptionList) {
+      for (const [_itemType, [min, max]] of ItemOptionTable) {
         const itemId = this.model[_itemType];
 
         let startClear = 0;
