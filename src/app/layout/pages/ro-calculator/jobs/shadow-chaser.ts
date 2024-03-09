@@ -10,7 +10,7 @@ import { DarkClaw, NoLimit, ShieldSpellFn } from '../constants/share-active-skil
 import { Thief } from './thief';
 import { InfoForClass } from '../models/info-for-class.model';
 import { ElementType } from '../constants/element-type.const';
-import { SnatcherFn } from '../constants/share-passive-skills';
+import { DoubleStrafeFn, SnatcherFn, VulturesEyeFn } from '../constants/share-passive-skills';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 0, 0, 1],
@@ -350,26 +350,8 @@ export class ShadowChaser extends CharacterBase {
   ];
 
   protected _passiveSkillList: PassiveSkillModel[] = [
-    {
-      label: "Vulture's Eye 10",
-      name: "Vulture's Eye",
-      inputType: 'selectButton',
-      isEquipAtk: true,
-      dropdown: [
-        { label: 'Yes', value: 10, skillLv: 10, isUse: true, bonus: { hit: 10 } },
-        { label: 'No', value: 0, isUse: false },
-      ],
-    },
-    {
-      label: 'Double Strafe 10',
-      name: 'Double Strafe',
-      inputType: 'selectButton',
-      isEquipAtk: true,
-      dropdown: [
-        { label: 'Yes', value: 10, skillLv: 10, isUse: true },
-        { label: 'No', value: 0, isUse: false },
-      ],
-    },
+    VulturesEyeFn(),
+    DoubleStrafeFn(),
     {
       inputType: 'dropdown',
       label: 'Sword Mastery',

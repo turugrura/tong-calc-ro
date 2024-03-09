@@ -15,7 +15,7 @@ import {
   FriggsSongFn,
   LeradsDew,
   Lesson,
-  SevereRainstorm,
+  SevereRainstormFn,
   SongOfMana,
 } from '../constants/share-passive-skills';
 import { ElementType } from '../constants/element-type.const';
@@ -290,7 +290,7 @@ export class Wanderer extends CharacterBase {
   ];
 
   protected readonly _passiveSkillList: PassiveSkillModel[] = [
-    SevereRainstorm,
+    SevereRainstormFn(),
     {
       label: 'Dancing Lesson',
       name: 'Dancing Lesson',

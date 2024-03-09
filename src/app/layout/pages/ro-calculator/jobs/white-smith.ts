@@ -1,6 +1,7 @@
 import { ClassName } from './_class-name';
 import { ActiveSkillModel, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
 import { Merchant } from './merchant';
+import { HiltBindingFn } from '../constants/share-passive-skills';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {};
 
@@ -70,16 +71,7 @@ export class Whitesmith extends CharacterBase {
     },
   ];
   protected readonly _passiveSkillList: PassiveSkillModel[] = [
-    {
-      label: 'Hilt Binding',
-      name: 'Hilt Binding',
-      inputType: 'selectButton',
-      isMasteryAtk: true,
-      dropdown: [
-        { label: 'Yes', value: 1, skillLv: 1, isUse: true, bonus: { str: 1, x_atk: 4 } },
-        { label: 'No', value: 0, isUse: false },
-      ],
-    },
+    HiltBindingFn(),
     {
       label: 'Skin Tempering',
       name: 'Skin Tempering',

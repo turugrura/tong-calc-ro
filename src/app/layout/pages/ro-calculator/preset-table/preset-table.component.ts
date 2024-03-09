@@ -12,6 +12,7 @@ import {
 } from 'src/app/api-services';
 import { Observable, Subscription, catchError, finalize, of, switchMap, tap } from 'rxjs';
 import { availableTags, tagSeverityMap } from '../constants/available-tags';
+import { ToErrorDetail } from 'src/app/app-errors';
 
 const displayMainItemKeys = [
   ItemTypeEnum.weapon,
@@ -148,10 +149,10 @@ export class PresetTableComponent implements OnInit, OnDestroy {
           });
         }),
         catchError((err) => {
-          console.log({ err });
           this.messageService.add({
             severity: 'error',
-            summary: err?.error?.message || err?.statusText || 'server error',
+            summary: 'Error',
+            detail: ToErrorDetail(err),
           });
 
           return of(null);
@@ -295,7 +296,7 @@ export class PresetTableComponent implements OnInit, OnDestroy {
         this.selectedCloudPreset = undefined;
 
         this.messageService.add({
-          severity: 'error',
+          severity: 'success',
           summary: `"${targetPresetLabel}" was deleted`,
         });
 
@@ -313,7 +314,7 @@ export class PresetTableComponent implements OnInit, OnDestroy {
 
       if (!isMoveLocalToCloud) {
         this.messageService.add({
-          severity: 'error',
+          severity: 'success',
           summary: `"${targetPresetLabel}" was deleted`,
         });
       }

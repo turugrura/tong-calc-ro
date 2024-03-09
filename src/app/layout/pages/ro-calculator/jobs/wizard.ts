@@ -175,12 +175,12 @@ export class Wizard extends CharacterBase {
       ],
     },
     {
-      label: 'Mystical Amp 10',
+      label: 'Mystical Amp',
       name: 'Mystical Amplification',
-      inputType: 'selectButton',
+      inputType: 'dropdown',
       dropdown: [
-        { label: 'Yes', value: 10, isUse: true },
-        { label: 'No', value: 0, isUse: false },
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 10', value: 10, isUse: true },
       ],
     },
   ];

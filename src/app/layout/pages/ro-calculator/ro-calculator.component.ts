@@ -65,6 +65,7 @@ import { WeaponTypeNameMapBySubTypeId } from './constants/weapon-type-mapper';
 import { AuthService, PresetService } from 'src/app/api-services';
 import { ItemOptionTable } from './constants/item-options-table';
 import { getClassDropdownList } from './jobs/_class-list';
+import { ToErrorDetail } from 'src/app/app-errors';
 
 interface MonsterSelectItemGroup extends SelectItemGroup {
   items: any[];
@@ -1230,15 +1231,6 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
             detail: `"${preset.label}" was updated.`,
           });
           return waitRxjs();
-        }),
-        catchError((err) => {
-          this.messageService.add({
-            severity: 'error',
-            summary: 'Failed to update.',
-            detail: `${err}`,
-          });
-
-          return of(null);
         }),
       );
 
@@ -2641,7 +2633,8 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   private handleAPIError(err: any) {
     this.messageService.add({
       severity: 'error',
-      summary: err?.error || err?.message,
+      summary: 'Error',
+      detail: ToErrorDetail(err),
     });
 
     return throwError(() => err);
