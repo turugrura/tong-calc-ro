@@ -2970,7 +2970,6 @@
       </div>
     </div>
 
-    <!-- Costume Upper / Shadow Weapon -->
     <div class="grid grid-nogutter">
       <div class="col-3 item_label_costume">
         <p-dropdown
@@ -3000,519 +2999,529 @@
           </ng-template>
         </p-dropdown>
       </div>
-      <div class="col-3 item_label_costume">
-        <p-dropdown
-          inputId="costumeEnchantUpper"
-          [autoDisplayFirst]="false"
-          [resetFilterOnHide]="true"
-          [options]="costumeEnhUpperList"
-          [filter]="true"
-          filterBy="label"
-          [(ngModel)]="model.costumeEnchantUpper"
-          [showClear]="true"
-          [disabled]="costumeEnhUpperList.length === 0"
-          (onChange)="onSelectItem('costumeEnchantUpper', $event.value)"
-          placeholder="Upper Enchant"
-        >
-          <ng-template let-item pTemplate="selectedItem">
-            <div class="flex gap-1 item_template" *ngIf="model.costumeEnchantUpper">
-              <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
-              <div>{{ item.label }}</div>
-            </div>
-          </ng-template>
-          <ng-template let-item pTemplate="item">
-            <div class="flex gap-1">
-              <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
-              <div>{{ item.label }}</div>
-            </div>
-          </ng-template>
-        </p-dropdown>
-      </div>
-      <div class="col-3 item_label_shadow">
-        <p-dropdown
-          inputId="shadowWeapon"
-          [autoDisplayFirst]="false"
-          [resetFilterOnHide]="true"
-          [options]="shadowWeaponList"
-          [filter]="true"
-          filterBy="label"
-          [(ngModel)]="model.shadowWeapon"
-          [showClear]="true"
-          (onChange)="onSelectItem('shadowWeapon', $event.value)"
-          (onClear)="onClearItem('shadowWeapon')"
-          placeholder="Shadow Weapon"
-        >
-          <ng-template let-item pTemplate="selectedItem">
-            <div class="flex gap-1 item_template" *ngIf="model.shadowWeapon">
-              <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
-              <div>{{ item.label }}</div>
-            </div>
-          </ng-template>
-          <ng-template let-item pTemplate="item">
-            <div class="flex gap-1">
-              <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
-              <div>{{ item.label }}</div>
-            </div>
-          </ng-template>
-        </p-dropdown>
-      </div>
-      <div class="col-1 item_label_shadow" style="min-width: 70px">
-        <p-dropdown
-          inputId="shadowWeaponRefine"
-          [options]="shadowRefineList"
-          [(ngModel)]="model.shadowWeaponRefine"
-          [disabled]="!model.shadowWeapon"
-          (onChange)="onSelectItem('shadowWeapon', model.shadowWeapon, $event.value)"
-        >
-          <ng-template let-item pTemplate="selectedItem">
-            <div class="flex gap-1">
-              <div>{{ item.label > 0 ? '+ ' : '' }} {{ item.label || 0 }}</div>
-            </div>
-          </ng-template>
-        </p-dropdown>
-      </div>
-      <div class="col-2 item_label_shadow">
-        <p-cascadeSelect
-          [(ngModel)]="model.rawOptionTxts[itemOptionNumber.SD_Wp_1]"
-          [disabled]="!model.shadowWeapon"
-          [options]="basicOptions"
-          optionValue="value"
-          optionGroupLabel="label"
-          optionLabel="label"
-          [optionGroupChildren]="['children', 'children']"
-          placeholder="Options"
-          [showClear]="true"
-          (onChange)="onOptionChange()"
-          (onClear)="onOptionChange()"
-        ></p-cascadeSelect>
-      </div>
-    </div>
+      <div class="col-3 grid grid-nogutter item_label_costume">
+        <!-- Costume Upper -->
+        <div class="col-12">
+          <p-dropdown
+            inputId="costumeEnchantUpper"
+            [autoDisplayFirst]="false"
+            [resetFilterOnHide]="true"
+            [options]="costumeEnhUpperList"
+            [filter]="true"
+            filterBy="label"
+            [(ngModel)]="model.costumeEnchantUpper"
+            [showClear]="true"
+            [disabled]="costumeEnhUpperList.length === 0"
+            (onChange)="onSelectItem('costumeEnchantUpper', $event.value)"
+            placeholder="Upper Enchant"
+          >
+            <ng-template let-item pTemplate="selectedItem">
+              <div class="flex gap-1 item_template" *ngIf="model.costumeEnchantUpper">
+                <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
+                <div>{{ item.label }}</div>
+              </div>
+            </ng-template>
+            <ng-template let-item pTemplate="item">
+              <div class="flex gap-1">
+                <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
+                <div>{{ item.label }}</div>
+              </div>
+            </ng-template>
+          </p-dropdown>
+        </div>
 
-    <!-- Costume Middle / Shadow Armor -->
-    <div class="grid grid-nogutter">
-      <div class="col-3 item_label_costume"></div>
-      <div class="col-3 item_label_costume">
-        <p-dropdown
-          inputId="costumeEnchantMiddle"
-          [autoDisplayFirst]="false"
-          [resetFilterOnHide]="true"
-          [options]="costumeEnhMiddleList"
-          [filter]="true"
-          filterBy="label"
-          [(ngModel)]="model.costumeEnchantMiddle"
-          [showClear]="true"
-          [disabled]="costumeEnhMiddleList.length === 0"
-          (onChange)="onSelectItem('costumeEnchantMiddle', $event.value)"
-          placeholder="Middle Enchant"
-        >
-          <ng-template let-item pTemplate="selectedItem">
-            <div class="flex gap-1 item_template" *ngIf="model.costumeEnchantMiddle">
-              <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
-              <div>{{ item.label }}</div>
-            </div>
-          </ng-template>
-          <ng-template let-item pTemplate="item">
-            <div class="flex gap-1">
-              <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
-              <div>{{ item.label }}</div>
-            </div>
-          </ng-template>
-        </p-dropdown>
-      </div>
-      <div class="col-3 item_label_shadow">
-        <p-dropdown
-          inputId="shadowArmor"
-          [autoDisplayFirst]="false"
-          [resetFilterOnHide]="true"
-          [options]="shadowArmorList"
-          [filter]="true"
-          filterBy="label"
-          [(ngModel)]="model.shadowArmor"
-          [showClear]="true"
-          (onChange)="onSelectItem('shadowArmor', $event.value)"
-          (onClear)="onClearItem('shadowArmor')"
-          placeholder="Shadow Armor"
-        >
-          <ng-template let-item pTemplate="selectedItem">
-            <div class="flex gap-1 item_template" *ngIf="model.shadowArmor">
-              <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
-              <div>{{ item.label }}</div>
-            </div>
-          </ng-template>
-          <ng-template let-item pTemplate="item">
-            <div class="flex gap-1">
-              <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
-              <div>{{ item.label }}</div>
-            </div>
-          </ng-template>
-        </p-dropdown>
-      </div>
-      <div class="col-1 item_label_shadow" style="min-width: 70px">
-        <p-dropdown
-          inputId="shadowArmorRefine"
-          [options]="shadowRefineList"
-          [(ngModel)]="model.shadowArmorRefine"
-          [disabled]="!model.shadowArmor"
-          (onChange)="onSelectItem('shadowArmor', model.shadowArmor, $event.value)"
-        >
-          <ng-template let-item pTemplate="selectedItem">
-            <div class="flex gap-1">
-              <div>{{ item.label > 0 ? '+ ' : '' }} {{ item.label || 0 }}</div>
-            </div>
-          </ng-template>
-        </p-dropdown>
-      </div>
-      <div class="col-2 item_label_shadow">
-        <p-cascadeSelect
-          [(ngModel)]="model.rawOptionTxts[itemOptionNumber.SD_Ar_1]"
-          [disabled]="!model.shadowArmor"
-          [options]="basicOptions"
-          optionValue="value"
-          optionGroupLabel="label"
-          optionLabel="label"
-          [optionGroupChildren]="['children', 'children']"
-          placeholder="Options"
-          [showClear]="true"
-          (onChange)="onOptionChange()"
-          (onClear)="onOptionChange()"
-        ></p-cascadeSelect>
-      </div>
-    </div>
+        <!-- Costume Middle -->
+        <div class="col-12">
+          <p-dropdown
+            inputId="costumeEnchantMiddle"
+            [autoDisplayFirst]="false"
+            [resetFilterOnHide]="true"
+            [options]="costumeEnhMiddleList"
+            [filter]="true"
+            filterBy="label"
+            [(ngModel)]="model.costumeEnchantMiddle"
+            [showClear]="true"
+            [disabled]="costumeEnhMiddleList.length === 0"
+            (onChange)="onSelectItem('costumeEnchantMiddle', $event.value)"
+            placeholder="Middle Enchant"
+          >
+            <ng-template let-item pTemplate="selectedItem">
+              <div class="flex gap-1 item_template" *ngIf="model.costumeEnchantMiddle">
+                <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
+                <div>{{ item.label }}</div>
+              </div>
+            </ng-template>
+            <ng-template let-item pTemplate="item">
+              <div class="flex gap-1">
+                <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
+                <div>{{ item.label }}</div>
+              </div>
+            </ng-template>
+          </p-dropdown>
+        </div>
 
-    <!-- Costume Lower / Shadow Shield -->
-    <div class="grid grid-nogutter">
-      <div class="col-3 item_label_costume"></div>
-      <div class="col-3 item_label_costume">
-        <p-dropdown
-          inputId="costumeEnchantLower"
-          [autoDisplayFirst]="false"
-          [resetFilterOnHide]="true"
-          [options]="costumeEnhLowerList"
-          [filter]="true"
-          filterBy="label"
-          [(ngModel)]="model.costumeEnchantLower"
-          [showClear]="true"
-          [disabled]="costumeEnhLowerList.length === 0"
-          (onChange)="onSelectItem('costumeEnchantLower', $event.value)"
-          placeholder="Lower Enchant"
-        >
-          <ng-template let-item pTemplate="selectedItem">
-            <div class="flex gap-1 item_template" *ngIf="model.costumeEnchantLower">
-              <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
-              <div>{{ item.label }}</div>
-            </div>
-          </ng-template>
-          <ng-template let-item pTemplate="item">
-            <div class="flex gap-1">
-              <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
-              <div>{{ item.label }}</div>
-            </div>
-          </ng-template>
-        </p-dropdown>
-      </div>
-      <div class="col-3 item_label_shadow">
-        <p-dropdown
-          inputId="shadowShield"
-          [autoDisplayFirst]="false"
-          [resetFilterOnHide]="true"
-          [options]="shadowShieldList"
-          [filter]="true"
-          filterBy="label"
-          [(ngModel)]="model.shadowShield"
-          [showClear]="true"
-          (onChange)="onSelectItem('shadowShield', $event.value)"
-          (onClear)="onClearItem('shadowShield')"
-          placeholder="Shadow Shield"
-        >
-          <ng-template let-item pTemplate="selectedItem">
-            <div class="flex gap-1 item_template" *ngIf="model.shadowShield">
-              <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
-              <div>{{ item.label }}</div>
-            </div>
-          </ng-template>
-          <ng-template let-item pTemplate="item">
-            <div class="flex gap-1">
-              <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
-              <div>{{ item.label }}</div>
-            </div>
-          </ng-template>
-        </p-dropdown>
-      </div>
-      <div class="col-1 item_label_shadow" style="min-width: 70px">
-        <p-dropdown
-          inputId="shadowShieldRefine"
-          [options]="shadowRefineList"
-          [(ngModel)]="model.shadowShieldRefine"
-          [disabled]="!model.shadowShield"
-          (onChange)="onSelectItem('shadowShield', model.shadowShield, $event.value)"
-        >
-          <ng-template let-item pTemplate="selectedItem">
-            <div class="flex gap-1">
-              <div>{{ item.label > 0 ? '+ ' : '' }} {{ item.label || 0 }}</div>
-            </div>
-          </ng-template>
-        </p-dropdown>
-      </div>
-      <div class="col-2 item_label_shadow">
-        <p-cascadeSelect
-          [(ngModel)]="model.rawOptionTxts[itemOptionNumber.SD_Sh_1]"
-          [disabled]="!model.shadowShield"
-          [options]="basicOptions"
-          optionValue="value"
-          optionGroupLabel="label"
-          optionLabel="label"
-          [optionGroupChildren]="['children', 'children']"
-          placeholder="Options"
-          [showClear]="true"
-          (onChange)="onOptionChange()"
-          (onClear)="onOptionChange()"
-        ></p-cascadeSelect>
-      </div>
-    </div>
+        <!-- Costume Lower -->
+        <div class="col-12">
+          <p-dropdown
+            inputId="costumeEnchantLower"
+            [autoDisplayFirst]="false"
+            [resetFilterOnHide]="true"
+            [options]="costumeEnhLowerList"
+            [filter]="true"
+            filterBy="label"
+            [(ngModel)]="model.costumeEnchantLower"
+            [showClear]="true"
+            [disabled]="costumeEnhLowerList.length === 0"
+            (onChange)="onSelectItem('costumeEnchantLower', $event.value)"
+            placeholder="Lower Enchant"
+          >
+            <ng-template let-item pTemplate="selectedItem">
+              <div class="flex gap-1 item_template" *ngIf="model.costumeEnchantLower">
+                <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
+                <div>{{ item.label }}</div>
+              </div>
+            </ng-template>
+            <ng-template let-item pTemplate="item">
+              <div class="flex gap-1">
+                <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
+                <div>{{ item.label }}</div>
+              </div>
+            </ng-template>
+          </p-dropdown>
+        </div>
 
-    <!-- Costume Garment / Shadow Boot -->
-    <div class="grid grid-nogutter">
-      <div class="col-3 item_label_costume"></div>
-      <div class="col-3 item_label_costume">
-        <p-dropdown
-          inputId="costumeEnchantGarment"
-          [autoDisplayFirst]="false"
-          [resetFilterOnHide]="true"
-          [options]="costumeEnhGarmentList"
-          [filter]="true"
-          filterBy="label"
-          [(ngModel)]="model.costumeEnchantGarment"
-          [showClear]="true"
-          [disabled]="costumeEnhGarmentList.length === 0"
-          (onChange)="onSelectItem('costumeEnchantGarment', $event.value)"
-          placeholder="Garment Enchant"
-        >
-          <ng-template let-item pTemplate="selectedItem">
-            <div class="flex gap-1 item_template" *ngIf="model.costumeEnchantGarment">
-              <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
-              <div>{{ item.label }}</div>
-            </div>
-          </ng-template>
-          <ng-template let-item pTemplate="item">
-            <div class="flex gap-1">
-              <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
-              <div>{{ item.label }}</div>
-            </div>
-          </ng-template>
-        </p-dropdown>
-      </div>
-      <div class="col-3 item_label_shadow">
-        <p-dropdown
-          inputId="shadowBoot"
-          [autoDisplayFirst]="false"
-          [resetFilterOnHide]="true"
-          [options]="shadowBootList"
-          [filter]="true"
-          filterBy="label"
-          [(ngModel)]="model.shadowBoot"
-          [showClear]="true"
-          (onChange)="onSelectItem('shadowBoot', $event.value)"
-          (onClear)="onClearItem('shadowBoot')"
-          placeholder="Shadow Boot"
-        >
-          <ng-template let-item pTemplate="selectedItem">
-            <div class="flex gap-1 item_template" *ngIf="model.shadowBoot">
-              <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
-              <div>{{ item.label }}</div>
-            </div>
-          </ng-template>
-          <ng-template let-item pTemplate="item">
-            <div class="flex gap-1">
-              <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
-              <div>{{ item.label }}</div>
-            </div>
-          </ng-template>
-        </p-dropdown>
-      </div>
-      <div class="col-1 item_label_shadow" style="min-width: 70px">
-        <p-dropdown
-          inputId="shadowBootRefine"
-          [options]="shadowRefineList"
-          [(ngModel)]="model.shadowBootRefine"
-          [disabled]="!model.shadowBoot"
-          (onChange)="onSelectItem('shadowBoot', model.shadowBoot, $event.value)"
-        >
-          <ng-template let-item pTemplate="selectedItem">
-            <div class="flex gap-1">
-              <div>{{ item.label > 0 ? '+ ' : '' }} {{ item.label || 0 }}</div>
-            </div>
-          </ng-template>
-        </p-dropdown>
-      </div>
-      <div class="col-2 item_label_shadow">
-        <p-cascadeSelect
-          [(ngModel)]="model.rawOptionTxts[itemOptionNumber.SD_B_1]"
-          [disabled]="!model.shadowBoot"
-          [options]="basicOptions"
-          optionValue="value"
-          optionGroupLabel="label"
-          optionLabel="label"
-          [optionGroupChildren]="['children', 'children']"
-          placeholder="Options"
-          [showClear]="true"
-          (onChange)="onOptionChange()"
-          (onClear)="onOptionChange()"
-        ></p-cascadeSelect>
-      </div>
-    </div>
+        <!-- Costume Garment -->
+        <div class="col-12">
+          <p-dropdown
+            inputId="costumeEnchantGarment"
+            [autoDisplayFirst]="false"
+            [resetFilterOnHide]="true"
+            [options]="costumeEnhGarmentList"
+            [filter]="true"
+            filterBy="label"
+            [(ngModel)]="model.costumeEnchantGarment"
+            [showClear]="true"
+            [disabled]="costumeEnhGarmentList.length === 0"
+            (onChange)="onSelectItem('costumeEnchantGarment', $event.value)"
+            placeholder="Garment Enchant"
+          >
+            <ng-template let-item pTemplate="selectedItem">
+              <div class="flex gap-1 item_template" *ngIf="model.costumeEnchantGarment">
+                <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
+                <div>{{ item.label }}</div>
+              </div>
+            </ng-template>
+            <ng-template let-item pTemplate="item">
+              <div class="flex gap-1">
+                <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
+                <div>{{ item.label }}</div>
+              </div>
+            </ng-template>
+          </p-dropdown>
+        </div>
 
-    <!-- Shadow Earring -->
-    <div class="grid grid-nogutter">
-      <div class="col-3 item_label_costume"></div>
-      <div class="col-3 item_label_costume">
-        <p-dropdown
-          inputId="costumeEnchantGarment4"
-          [autoDisplayFirst]="false"
-          [resetFilterOnHide]="true"
-          [options]="costumeEnhGarment4List"
-          [filter]="true"
-          filterBy="label"
-          [(ngModel)]="model.costumeEnchantGarment4"
-          [showClear]="true"
-          [disabled]="costumeEnhGarment4List.length === 0"
-          (onChange)="onSelectItem('costumeEnchantGarment4', $event.value)"
-          placeholder="Garment Enchant 4th"
-        >
-          <ng-template let-item pTemplate="selectedItem">
-            <div class="flex gap-1 item_template" *ngIf="model.costumeEnchantGarment4">
-              <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
-              <div>{{ item.label }}</div>
-            </div>
-          </ng-template>
-          <ng-template let-item pTemplate="item">
-            <div class="flex gap-1">
-              <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
-              <div>{{ item.label }}</div>
-            </div>
-          </ng-template>
-        </p-dropdown>
+        <!-- Costume 4th Garment -->
+        <div class="col-12">
+          <p-dropdown
+            inputId="costumeEnchantGarment4"
+            [autoDisplayFirst]="false"
+            [resetFilterOnHide]="true"
+            [options]="costumeEnhGarment4List"
+            [filter]="true"
+            filterBy="label"
+            [(ngModel)]="model.costumeEnchantGarment4"
+            [showClear]="true"
+            [disabled]="costumeEnhGarment4List.length === 0"
+            (onChange)="onSelectItem('costumeEnchantGarment4', $event.value)"
+            placeholder="Garment Enchant 4th"
+          >
+            <ng-template let-item pTemplate="selectedItem">
+              <div class="flex gap-1 item_template" *ngIf="model.costumeEnchantGarment4">
+                <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
+                <div>{{ item.label }}</div>
+              </div>
+            </ng-template>
+            <ng-template let-item pTemplate="item">
+              <div class="flex gap-1">
+                <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
+                <div>{{ item.label }}</div>
+              </div>
+            </ng-template>
+          </p-dropdown>
+        </div>
       </div>
-      <div class="col-3 item_label_shadow">
-        <p-dropdown
-          inputId="shadowEarring"
-          [autoDisplayFirst]="false"
-          [resetFilterOnHide]="true"
-          [options]="shadowEarringList"
-          [filter]="true"
-          filterBy="label"
-          [(ngModel)]="model.shadowEarring"
-          [showClear]="true"
-          (onChange)="onSelectItem('shadowEarring', $event.value)"
-          (onClear)="onClearItem('shadowEarring')"
-          placeholder="Shadow Earring"
-        >
-          <ng-template let-item pTemplate="selectedItem">
-            <div class="flex gap-1 item_template" *ngIf="model.shadowEarring">
-              <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
-              <div>{{ item.label }}</div>
-            </div>
-          </ng-template>
-          <ng-template let-item pTemplate="item">
-            <div class="flex gap-1">
-              <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
-              <div>{{ item.label }}</div>
-            </div>
-          </ng-template>
-        </p-dropdown>
-      </div>
-      <div class="col-1 item_label_shadow" style="min-width: 70px">
-        <p-dropdown
-          inputId="shadowEarringRefine"
-          [options]="shadowRefineList"
-          [(ngModel)]="model.shadowEarringRefine"
-          [disabled]="!model.shadowEarring"
-          (onChange)="onSelectItem('shadowEarring', model.shadowEarring, $event.value)"
-        >
-          <ng-template let-item pTemplate="selectedItem">
-            <div class="flex gap-1">
-              <div>{{ item.label > 0 ? '+ ' : '' }} {{ item.label || 0 }}</div>
-            </div>
-          </ng-template>
-        </p-dropdown>
-      </div>
-      <div class="col-2 item_label_shadow">
-        <p-cascadeSelect
-          [(ngModel)]="model.rawOptionTxts[itemOptionNumber.SD_Ear_1]"
-          [disabled]="!model.shadowEarring"
-          [options]="basicOptions"
-          optionValue="value"
-          optionGroupLabel="label"
-          optionLabel="label"
-          [optionGroupChildren]="['children', 'children']"
-          placeholder="Options"
-          [showClear]="true"
-          (onChange)="onOptionChange()"
-          (onClear)="onOptionChange()"
-        ></p-cascadeSelect>
-      </div>
-    </div>
+      <div class="col-6 grid grid-nogutter item_label_shadow">
+        <div class="col-12 grid grid-nogutter">
+          <!-- Shadow Weapon -->
+          <div class="col-6">
+            <p-dropdown
+              inputId="shadowWeapon"
+              [autoDisplayFirst]="false"
+              [resetFilterOnHide]="true"
+              [options]="shadowWeaponList"
+              [filter]="true"
+              filterBy="label"
+              [(ngModel)]="model.shadowWeapon"
+              [showClear]="true"
+              (onChange)="onSelectItem('shadowWeapon', $event.value)"
+              (onClear)="onClearItem('shadowWeapon')"
+              placeholder="Shadow Weapon"
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1 item_template" *ngIf="model.shadowWeapon">
+                  <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+              <ng-template let-item pTemplate="item">
+                <div class="flex gap-1">
+                  <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
+          </div>
+          <div class="col-2 refine-list">
+            <p-dropdown
+              inputId="shadowWeaponRefine"
+              [options]="shadowRefineList"
+              [(ngModel)]="model.shadowWeaponRefine"
+              [disabled]="!model.shadowWeapon"
+              (onChange)="onSelectItem('shadowWeapon', model.shadowWeapon, $event.value)"
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1">
+                  <div>{{ item.label > 0 ? '+ ' : '' }} {{ item.label || 0 }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
+          </div>
+          <div class="col-4">
+            <p-cascadeSelect
+              [(ngModel)]="model.rawOptionTxts[itemOptionNumber.SD_Wp_1]"
+              [disabled]="!model.shadowWeapon"
+              [options]="basicOptions"
+              optionValue="value"
+              optionGroupLabel="label"
+              optionLabel="label"
+              [optionGroupChildren]="['children', 'children']"
+              placeholder="Options"
+              [showClear]="true"
+              (onChange)="onOptionChange()"
+              (onClear)="onOptionChange()"
+            ></p-cascadeSelect>
+          </div>
+        </div>
 
-    <!-- Shadow Pendant -->
-    <div class="grid grid-nogutter item_label_shadow">
-      <div class="col-3 item_label_costume"></div>
-      <div class="col-3"></div>
-      <div class="col-3">
-        <p-dropdown
-          inputId="shadowPendant"
-          [autoDisplayFirst]="false"
-          [resetFilterOnHide]="true"
-          [options]="shadowPendantList"
-          [filter]="true"
-          filterBy="label"
-          [(ngModel)]="model.shadowPendant"
-          [showClear]="true"
-          (onChange)="onSelectItem('shadowPendant', $event.value)"
-          (onClear)="onClearItem('shadowPendant')"
-          placeholder="Shadow Pendant"
-        >
-          <ng-template let-item pTemplate="selectedItem">
-            <div class="flex gap-1 item_template" *ngIf="model.shadowPendant">
-              <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
-              <div>{{ item.label }}</div>
-            </div>
-          </ng-template>
-          <ng-template let-item pTemplate="item">
-            <div class="flex gap-1">
-              <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
-              <div>{{ item.label }}</div>
-            </div>
-          </ng-template>
-        </p-dropdown>
-      </div>
-      <div class="col-1" style="min-width: 70px">
-        <p-dropdown
-          inputId="shadowPendantRefine"
-          [options]="shadowRefineList"
-          [(ngModel)]="model.shadowPendantRefine"
-          [disabled]="!model.shadowPendant"
-          (onChange)="onSelectItem('shadowPendant', model.shadowPendant, $event.value)"
-        >
-          <ng-template let-item pTemplate="selectedItem">
-            <div class="flex gap-1">
-              <div>{{ item.label > 0 ? '+ ' : '' }} {{ item.label || 0 }}</div>
-            </div>
-          </ng-template>
-        </p-dropdown>
-      </div>
-      <div class="col-2">
-        <p-cascadeSelect
-          [(ngModel)]="model.rawOptionTxts[itemOptionNumber.SD_Pan_1]"
-          [disabled]="!model.shadowPendant"
-          [options]="basicOptions"
-          optionValue="value"
-          optionGroupLabel="label"
-          optionLabel="label"
-          [optionGroupChildren]="['children', 'children']"
-          placeholder="Options"
-          [showClear]="true"
-          (onChange)="onOptionChange()"
-          (onClear)="onOptionChange()"
-        ></p-cascadeSelect>
+        <!-- Shadow Armor -->
+        <div class="col-12 grid grid-nogutter">
+          <div class="col-6">
+            <p-dropdown
+              inputId="shadowArmor"
+              [autoDisplayFirst]="false"
+              [resetFilterOnHide]="true"
+              [options]="shadowArmorList"
+              [filter]="true"
+              filterBy="label"
+              [(ngModel)]="model.shadowArmor"
+              [showClear]="true"
+              (onChange)="onSelectItem('shadowArmor', $event.value)"
+              (onClear)="onClearItem('shadowArmor')"
+              placeholder="Shadow Armor"
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1 item_template" *ngIf="model.shadowArmor">
+                  <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+              <ng-template let-item pTemplate="item">
+                <div class="flex gap-1">
+                  <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
+          </div>
+          <div class="col-2 refine-list">
+            <p-dropdown
+              inputId="shadowArmorRefine"
+              [options]="shadowRefineList"
+              [(ngModel)]="model.shadowArmorRefine"
+              [disabled]="!model.shadowArmor"
+              (onChange)="onSelectItem('shadowArmor', model.shadowArmor, $event.value)"
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1">
+                  <div>{{ item.label > 0 ? '+ ' : '' }} {{ item.label || 0 }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
+          </div>
+          <div class="col-4">
+            <p-cascadeSelect
+              [(ngModel)]="model.rawOptionTxts[itemOptionNumber.SD_Ar_1]"
+              [disabled]="!model.shadowArmor"
+              [options]="basicOptions"
+              optionValue="value"
+              optionGroupLabel="label"
+              optionLabel="label"
+              [optionGroupChildren]="['children', 'children']"
+              placeholder="Options"
+              [showClear]="true"
+              (onChange)="onOptionChange()"
+              (onClear)="onOptionChange()"
+            ></p-cascadeSelect>
+          </div>
+        </div>
+
+        <!-- Shadow Shield -->
+        <div class="col-12 grid grid-nogutter">
+          <div class="col-6">
+            <p-dropdown
+              inputId="shadowShield"
+              [autoDisplayFirst]="false"
+              [resetFilterOnHide]="true"
+              [options]="shadowShieldList"
+              [filter]="true"
+              filterBy="label"
+              [(ngModel)]="model.shadowShield"
+              [showClear]="true"
+              (onChange)="onSelectItem('shadowShield', $event.value)"
+              (onClear)="onClearItem('shadowShield')"
+              placeholder="Shadow Shield"
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1 item_template" *ngIf="model.shadowShield">
+                  <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+              <ng-template let-item pTemplate="item">
+                <div class="flex gap-1">
+                  <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
+          </div>
+          <div class="col-2 refine-list">
+            <p-dropdown
+              inputId="shadowShieldRefine"
+              [options]="shadowRefineList"
+              [(ngModel)]="model.shadowShieldRefine"
+              [disabled]="!model.shadowShield"
+              (onChange)="onSelectItem('shadowShield', model.shadowShield, $event.value)"
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1">
+                  <div>{{ item.label > 0 ? '+ ' : '' }} {{ item.label || 0 }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
+          </div>
+          <div class="col-4">
+            <p-cascadeSelect
+              [(ngModel)]="model.rawOptionTxts[itemOptionNumber.SD_Sh_1]"
+              [disabled]="!model.shadowShield"
+              [options]="basicOptions"
+              optionValue="value"
+              optionGroupLabel="label"
+              optionLabel="label"
+              [optionGroupChildren]="['children', 'children']"
+              placeholder="Options"
+              [showClear]="true"
+              (onChange)="onOptionChange()"
+              (onClear)="onOptionChange()"
+            ></p-cascadeSelect>
+          </div>
+        </div>
+
+        <!-- Shadow Boot -->
+        <div class="col-12 grid grid-nogutter">
+          <div class="col-6">
+            <p-dropdown
+              inputId="shadowBoot"
+              [autoDisplayFirst]="false"
+              [resetFilterOnHide]="true"
+              [options]="shadowBootList"
+              [filter]="true"
+              filterBy="label"
+              [(ngModel)]="model.shadowBoot"
+              [showClear]="true"
+              (onChange)="onSelectItem('shadowBoot', $event.value)"
+              (onClear)="onClearItem('shadowBoot')"
+              placeholder="Shadow Boot"
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1 item_template" *ngIf="model.shadowBoot">
+                  <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+              <ng-template let-item pTemplate="item">
+                <div class="flex gap-1">
+                  <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
+          </div>
+          <div class="col-2 refine-list">
+            <p-dropdown
+              inputId="shadowBootRefine"
+              [options]="shadowRefineList"
+              [(ngModel)]="model.shadowBootRefine"
+              [disabled]="!model.shadowBoot"
+              (onChange)="onSelectItem('shadowBoot', model.shadowBoot, $event.value)"
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1">
+                  <div>{{ item.label > 0 ? '+ ' : '' }} {{ item.label || 0 }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
+          </div>
+          <div class="col-4">
+            <p-cascadeSelect
+              [(ngModel)]="model.rawOptionTxts[itemOptionNumber.SD_B_1]"
+              [disabled]="!model.shadowBoot"
+              [options]="basicOptions"
+              optionValue="value"
+              optionGroupLabel="label"
+              optionLabel="label"
+              [optionGroupChildren]="['children', 'children']"
+              placeholder="Options"
+              [showClear]="true"
+              (onChange)="onOptionChange()"
+              (onClear)="onOptionChange()"
+            ></p-cascadeSelect>
+          </div>
+        </div>
+
+        <!-- Shadow Earring -->
+        <div class="col-12 grid grid-nogutter">
+          <div class="col-6">
+            <p-dropdown
+              inputId="shadowEarring"
+              [autoDisplayFirst]="false"
+              [resetFilterOnHide]="true"
+              [options]="shadowEarringList"
+              [filter]="true"
+              filterBy="label"
+              [(ngModel)]="model.shadowEarring"
+              [showClear]="true"
+              (onChange)="onSelectItem('shadowEarring', $event.value)"
+              (onClear)="onClearItem('shadowEarring')"
+              placeholder="Shadow Earring"
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1 item_template" *ngIf="model.shadowEarring">
+                  <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+              <ng-template let-item pTemplate="item">
+                <div class="flex gap-1">
+                  <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
+          </div>
+          <div class="col-2 refine-list">
+            <p-dropdown
+              inputId="shadowEarringRefine"
+              [options]="shadowRefineList"
+              [(ngModel)]="model.shadowEarringRefine"
+              [disabled]="!model.shadowEarring"
+              (onChange)="onSelectItem('shadowEarring', model.shadowEarring, $event.value)"
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1">
+                  <div>{{ item.label > 0 ? '+ ' : '' }} {{ item.label || 0 }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
+          </div>
+          <div class="col-4">
+            <p-cascadeSelect
+              [(ngModel)]="model.rawOptionTxts[itemOptionNumber.SD_Ear_1]"
+              [disabled]="!model.shadowEarring"
+              [options]="basicOptions"
+              optionValue="value"
+              optionGroupLabel="label"
+              optionLabel="label"
+              [optionGroupChildren]="['children', 'children']"
+              placeholder="Options"
+              [showClear]="true"
+              (onChange)="onOptionChange()"
+              (onClear)="onOptionChange()"
+            ></p-cascadeSelect>
+          </div>
+        </div>
+
+        <!-- Shadow Pendant -->
+        <div class="col-12 grid grid-nogutter">
+          <div class="col-6">
+            <p-dropdown
+              inputId="shadowPendant"
+              [autoDisplayFirst]="false"
+              [resetFilterOnHide]="true"
+              [options]="shadowPendantList"
+              [filter]="true"
+              filterBy="label"
+              [(ngModel)]="model.shadowPendant"
+              [showClear]="true"
+              (onChange)="onSelectItem('shadowPendant', $event.value)"
+              (onClear)="onClearItem('shadowPendant')"
+              placeholder="Shadow Pendant"
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1 item_template" *ngIf="model.shadowPendant">
+                  <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+              <ng-template let-item pTemplate="item">
+                <div class="flex gap-1">
+                  <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
+          </div>
+          <div class="col-2 refine-list">
+            <p-dropdown
+              inputId="shadowPendantRefine"
+              [options]="shadowRefineList"
+              [(ngModel)]="model.shadowPendantRefine"
+              [disabled]="!model.shadowPendant"
+              (onChange)="onSelectItem('shadowPendant', model.shadowPendant, $event.value)"
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1">
+                  <div>{{ item.label > 0 ? '+ ' : '' }} {{ item.label || 0 }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
+          </div>
+          <div class="col-4">
+            <p-cascadeSelect
+              [(ngModel)]="model.rawOptionTxts[itemOptionNumber.SD_Pan_1]"
+              [disabled]="!model.shadowPendant"
+              [options]="basicOptions"
+              optionValue="value"
+              optionGroupLabel="label"
+              optionLabel="label"
+              [optionGroupChildren]="['children', 'children']"
+              placeholder="Options"
+              [showClear]="true"
+              (onChange)="onOptionChange()"
+              (onClear)="onOptionChange()"
+            ></p-cascadeSelect>
+          </div>
+        </div>
       </div>
     </div>
   </div>
