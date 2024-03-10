@@ -29,32 +29,35 @@ export const calcSkillAspd = (params: {
   const { acd, vct, vct_inc = 0, fct, fctPercent, vctBySkill = 0 } = totalEquipStatus;
   const { totalDex, totalInt } = status;
 
-  const vctByStat = Math.max(0, 1 - Math.sqrt(floor((totalDex * 2 + totalInt) / 530, 4)));
+  const precision = 5;
+  const dex2Int1 = totalDex * 2 + totalInt;
+  const vctByStat = Math.max(0, 1 - Math.sqrt(floor(dex2Int1 / 530, precision)));
   const vctGlobal = Math.max(0, 1 - (vct - vct_inc) / 100);
   const vctSkill = Math.max(0, 1 - reduceSkillVct / 100);
   const vctBySkill_ = (100 - vctBySkill) / 100;
 
   const reducedVct = Math.max(
     0,
-    round((skillVct - reduceSkillVctFix) * vctByStat * vctGlobal * vctSkill * vctBySkill_, 2),
+    round((skillVct - reduceSkillVctFix) * vctByStat * vctGlobal * vctSkill * vctBySkill_, precision),
   );
-  const reducedCd = Math.max(0, round(skillCd - reduceSkillCd, 2));
-  const reducedAcd = Math.max(0, round((skillAcd - reduceSkillAcd) * (1 - acd * 0.01), 2));
+  const reducedCd = Math.max(0, round(skillCd - reduceSkillCd, precision));
+  const reducedAcd = Math.max(0, round((skillAcd - reduceSkillAcd) * (1 - acd * 0.01), precision));
 
   const reducedFct = Math.max(
     0,
-    round((skillFct - reduceSkillFct - fct) * (1 - fctPercent * 0.01) * (1 - reduceSkillFctPercent * 0.01), 2),
+    round((skillFct - reduceSkillFct - fct) * (1 - fctPercent * 0.01) * (1 - reduceSkillFctPercent * 0.01), precision),
   );
 
   const blockPeriod = Math.max(reducedCd, reducedAcd);
-  const castPeriod = round(reducedVct + reducedFct, 2);
-  const hitPeriod = round(blockPeriod + castPeriod, 2);
+  const castPeriod = round(reducedVct + reducedFct, precision);
+  const hitPeriod = round(blockPeriod + castPeriod, precision);
+  // console.log({ vctByStat, reducedVct, reducedCd, reducedAcd, hitPeriod });
 
   return {
     cd: skillCd,
     reducedCd,
     vct: skillVct,
-    sumDex2Int1: totalDex * 2 + totalInt,
+    sumDex2Int1: dex2Int1,
     vctByStat,
     vctSkill,
     reducedVct,
@@ -64,6 +67,6 @@ export const calcSkillAspd = (params: {
     reducedAcd,
     castPeriod: castPeriod,
     hitPeriod,
-    totalHitPerSec: floor(1 / hitPeriod, 2),
+    totalHitPerSec: floor(1 / hitPeriod, 0),
   };
 };
