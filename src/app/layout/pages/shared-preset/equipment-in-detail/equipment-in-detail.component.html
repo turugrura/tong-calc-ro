@@ -12,13 +12,13 @@
       </div> -->
       <div class="col-12">
         <div class="grid grid-nogutter">
-          <div class="col-2">
-            <div *ngIf="!item.mainId">{{ item.itemType }}</div>
+          <div class="col-1">
+            <!-- <div *ngIf="!item.mainId">{{ item.itemType }}</div> -->
             <div *ngIf="item.mainId" class="item_template flex">
               <img src="assets/demo/images/items/{{ item.mainId }}.png" alt="" class="item_img" />
             </div>
           </div>
-          <div class="col-10">
+          <div class="col-11">
             <div class="grid grid-nogutter">
               <div *ngFor="let cardId of item.cardIds" class="col-6">
                 <div class="item_template flex gap-1">

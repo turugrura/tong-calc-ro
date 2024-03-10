@@ -16,6 +16,7 @@ import { ToastModule } from 'primeng/toast';
 import { AccordionModule } from 'primeng/accordion';
 import { RoCalculatorModule } from '../ro-calculator/ro-calculator.module';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { SkillDetailComponent } from './skill-detail/skill-detail.component';
 
 @NgModule({
   imports: [
@@ -34,6 +35,6 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
     ConfirmDialogModule,
     RoCalculatorModule,
   ],
-  declarations: [SharedPresetComponent, EquipmentUiComponent, EquipmentInDetailComponent],
+  declarations: [SharedPresetComponent, EquipmentUiComponent, EquipmentInDetailComponent, SkillDetailComponent],
 })
 export class SharedPresetModule {}

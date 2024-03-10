@@ -195,7 +195,6 @@ export class SharedPresetComponent implements OnInit, OnDestroy {
     const s = this.searchEvent$
       .pipe(
         tap(() => (this.isLoading = true)),
-        debounceTime(500 * 1),
         switchMap(() => {
           const empty = of({ items: [], totalItem: 0 }) as Observable<PublishPresetsReponse>;
           if (!this.selectedClassId) return empty;
@@ -451,7 +450,7 @@ export class SharedPresetComponent implements OnInit, OnDestroy {
     const buffEquips = {};
     const buffMasterys = {};
     this.skillBuffs.forEach((skillBuff, i) => {
-      const buffVal = model.skillBuffs[i];
+      const buffVal = (model.skillBuffs || [])[i];
       const buff = skillBuff.dropdown.find((a) => a.value === buffVal);
       if (buff?.isUse && !activeSkillNames.has(skillBuff.name)) {
         if (skillBuff.isMasteryAtk) {

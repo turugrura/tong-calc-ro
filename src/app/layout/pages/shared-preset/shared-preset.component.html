@@ -10,6 +10,7 @@
         [multiple]="false"
         [metaKeySelection]="false"
         (onChange)="onSelectClassChange()"
+        [disabled]="isLoading"
       >
         <ng-template let-item pTemplate="item" class="py-0">
           <div class="flex gap-2 py-0">
@@ -110,11 +111,8 @@
                   </div>
                 </div>
               </div>
-              <div class="col-{{ viewDetail[presetTag.tagId] ? 5 : 10 }}" style="min-width: 450px; overflow: hidden">
+              <div class="col-10" style="min-width: 450px; overflow: hidden">
                 <app-equipment-ui [itemMap]="itemMap" [model]="presetTag.model"></app-equipment-ui>
-              </div>
-              <div class="col-5" *ngIf="viewDetail[presetTag.tagId]">
-                <app-equipment-in-detail [itemMap]="itemMap" [model]="presetTag.model"></app-equipment-in-detail>
               </div>
               <div class="col-2">
                 <div class="grid grid-nogutter">
@@ -189,6 +187,20 @@
                   <div class="col-6">
                     VCT:
                     <span class="font-semibold px-1 summary_stat_matk">{{ presetTag.summary?.vct || 0 }}</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12" *ngIf="viewDetail[presetTag.tagId]">
+                <div class="grid grid-nogutter">
+                  <div class="col-5">
+                    <app-equipment-in-detail [itemMap]="itemMap" [model]="presetTag.model"></app-equipment-in-detail>
+                  </div>
+                  <div class="col-7">
+                    <app-skill-detail
+                      [itemMap]="itemMap"
+                      [model]="presetTag.model"
+                      [job]="selectedCharacter"
+                    ></app-skill-detail>
                   </div>
                 </div>
               </div>

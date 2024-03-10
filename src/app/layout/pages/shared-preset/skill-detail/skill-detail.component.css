@@ -1,0 +1,12 @@
+.consumable-icon {
+  width: 19px;
+  height: fit-content;
+}
+
+.buff-value-hilight {
+  /* background-color: red; */
+  /* color: var(--highlight-text-color); */
+  /* background-color: var(--highlight-bg); */
+  color: var(--primary-color);
+  /* background-color: var(--primary-color-text); */
+}

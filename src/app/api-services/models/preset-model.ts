@@ -109,11 +109,8 @@ export interface PresetModel {
   activeSkills: number[];
   passiveSkillMap: { [key: string]: number };
   passiveSkills: number[];
-  consumableMap: { [key: string]: number };
   consumables: any[];
-  consumable2Map: { [key: string]: number };
   consumables2: any[];
   aspdPotion: number;
-  aspdPotionMap: { [key: string]: number };
   aspdPotions: any[];
 }
