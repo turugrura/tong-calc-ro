@@ -1,0 +1,60 @@
+<div class="grid grid-nogutter">
+  <div class="col-12 grid grid-nogutter">
+    <div class="col-6">
+      <p-dropdown
+        [autoDisplayFirst]="false"
+        [resetFilterOnHide]="true"
+        [options]="itemList"
+        [filter]="true"
+        filterBy="label"
+        [(ngModel)]="itemId"
+        [showClear]="true"
+        (onChange)="onSelectItem('itemId', $event.value)"
+        (onClear)="onClearItem()"
+        [placeholder]="placeholder"
+      >
+        <ng-template let-item pTemplate="selectedItem">
+          <div class="flex gap-1 item_template" *ngIf="itemId">
+            <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
+            <div>{{ item.label }}</div>
+          </div>
+        </ng-template>
+        <ng-template let-item pTemplate="item">
+          <div class="flex gap-1">
+            <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
+            <div>{{ item.label }}</div>
+          </div>
+        </ng-template>
+      </p-dropdown>
+    </div>
+    <div class="col-2 refine-list">
+      <p-dropdown
+        [options]="refineList"
+        [(ngModel)]="itemRefine"
+        [disabled]="!itemId"
+        (onChange)="onSelectItem('itemRefine', itemId, $event.value)"
+      >
+        <ng-template let-item pTemplate="selectedItem">
+          <div class="flex gap-1">
+            <div>{{ item.label > 0 ? '+ ' : '' }} {{ item.label || 0 }}</div>
+          </div>
+        </ng-template>
+      </p-dropdown>
+    </div>
+    <div class="col-4">
+      <p-cascadeSelect
+        [(ngModel)]="optionValue"
+        [disabled]="!itemId"
+        [options]="optionList"
+        optionValue="value"
+        optionGroupLabel="label"
+        optionLabel="label"
+        [optionGroupChildren]="['children', 'children']"
+        placeholder="Options"
+        [showClear]="true"
+        (onChange)="onOptionChange($event)"
+        (onClear)="onOptionChange($event)"
+      ></p-cascadeSelect>
+    </div>
+  </div>
+</div>

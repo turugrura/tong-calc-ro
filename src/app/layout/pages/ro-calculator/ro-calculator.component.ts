@@ -362,6 +362,12 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     'boot',
     'accRight',
     'accLeft',
+    'shadowWeapon',
+    'shadowArmor',
+    'shadowShield',
+    'shadowBoot',
+    'shadowEarring',
+    'shadowPendant',
   ];
 
   ref: DynamicDialogRef | undefined;
@@ -754,6 +760,14 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
     const calc = calculator;
     const rawOptionTxts = [...this.model.rawOptionTxts];
+    const isShadowOption = {
+      [ItemTypeEnum.shadowWeapon]: true,
+      [ItemTypeEnum.shadowArmor]: true,
+      [ItemTypeEnum.shadowShield]: true,
+      [ItemTypeEnum.shadowBoot]: true,
+      [ItemTypeEnum.shadowEarring]: true,
+      [ItemTypeEnum.shadowPendant]: true,
+    };
     if (compareModel) {
       // if compare the item, should get options from its.
       const model2 = { ...this.model, ...compareModel };
@@ -765,11 +779,21 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
       for (const [_itemType, [min, max]] of ItemOptionTable) {
         if (this.compareItemNames?.includes(_itemType)) {
+          const itemId = this.model2[_itemType];
+
+          if (isShadowOption[_itemType]) {
+            // force have only 1 option
+            if (!itemId) {
+              this.model2.rawOptionTxts[min] = null;
+            }
+            rawOptionTxts[min] = this.model2.rawOptionTxts[min];
+            continue;
+          }
+
           for (let i = min; i <= max; i++) {
             rawOptionTxts[i] = this.model2.rawOptionTxts[i];
           }
 
-          const itemId = this.model2[_itemType];
           let startClear = 0;
           if (itemId) {
             const aegisName = this.items[itemId]?.aegisName;
@@ -788,6 +812,11 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       // clean if the itemType not allow to have options
       for (const [_itemType, [min, max]] of ItemOptionTable) {
         const itemId = this.model[_itemType];
+
+        if (isShadowOption[_itemType]) {
+          if (!itemId) rawOptionTxts[min] = null;
+          continue;
+        }
 
         let startClear = 0;
         if (itemId) {
@@ -1060,6 +1089,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   private resetModel() {
     const { class: _class, level, jobLevel } = this.model;
     this.model = { ...createMainModel(), class: _class, level, jobLevel };
+    this.model2 = { rawOptionTxts: [] };
   }
 
   private deleteLocalPresets() {

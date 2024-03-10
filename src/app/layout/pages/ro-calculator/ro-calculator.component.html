@@ -2999,7 +2999,7 @@
           </ng-template>
         </p-dropdown>
       </div>
-      <div class="col-3 grid grid-nogutter item_label_costume">
+      <div class="col-3 grid grid-nogutter item_label_costume flex flex-column">
         <!-- Costume Upper -->
         <div class="col-12">
           <p-dropdown
@@ -3462,7 +3462,7 @@
         </div>
 
         <!-- Shadow Pendant -->
-        <div class="col-12 grid grid-nogutter">
+        <div class="col-12 grid grid-nogutter mb-3">
           <div class="col-6">
             <p-dropdown
               inputId="shadowPendant"
@@ -3521,6 +3521,91 @@
               (onClear)="onOptionChange()"
             ></p-cascadeSelect>
           </div>
+        </div>
+
+        <div class="col-12 item_label_compare" *ngIf="showCompareItemMap.shadowWeapon">
+          <app-equipment-shadow
+            [itemType]="'shadowWeapon'"
+            [placeholder]="'Shadow Weapon'"
+            [itemList]="shadowWeaponList"
+            [refineList]="shadowRefineList"
+            [optionList]="basicOptions"
+            [(itemId)]="model2.shadowWeapon"
+            [(itemRefine)]="model2.shadowWeaponRefine"
+            [(optionValue)]="model2.rawOptionTxts[itemOptionNumber.SD_Wp_1]"
+            (selectItemChange)="onCompareItemChange()"
+            (optionChange)="onCompareItemChange()"
+          ></app-equipment-shadow>
+        </div>
+        <div class="col-12 item_label_compare" *ngIf="showCompareItemMap.shadowArmor">
+          <app-equipment-shadow
+            [itemType]="'shadowArmor'"
+            [placeholder]="'Shadow Armor'"
+            [itemList]="shadowArmorList"
+            [refineList]="shadowRefineList"
+            [optionList]="basicOptions"
+            [(itemId)]="model2.shadowArmor"
+            [(itemRefine)]="model2.shadowArmorRefine"
+            [(optionValue)]="model2.rawOptionTxts[itemOptionNumber.SD_Ar_1]"
+            (selectItemChange)="onCompareItemChange()"
+            (optionChange)="onCompareItemChange()"
+          ></app-equipment-shadow>
+        </div>
+        <div class="col-12 item_label_compare" *ngIf="showCompareItemMap.shadowShield">
+          <app-equipment-shadow
+            [itemType]="'shadowShield'"
+            [placeholder]="'Shadow Shield'"
+            [itemList]="shadowShieldList"
+            [refineList]="shadowRefineList"
+            [optionList]="basicOptions"
+            [(itemId)]="model2.shadowShield"
+            [(itemRefine)]="model2.shadowShieldRefine"
+            [(optionValue)]="model2.rawOptionTxts[itemOptionNumber.SD_Sh_1]"
+            (selectItemChange)="onCompareItemChange()"
+            (optionChange)="onCompareItemChange()"
+          ></app-equipment-shadow>
+        </div>
+        <div class="col-12 item_label_compare" *ngIf="showCompareItemMap.shadowBoot">
+          <app-equipment-shadow
+            [itemType]="'shadowBoot'"
+            [placeholder]="'Shadow Boot'"
+            [itemList]="shadowBootList"
+            [refineList]="shadowRefineList"
+            [optionList]="basicOptions"
+            [(itemId)]="model2.shadowBoot"
+            [(itemRefine)]="model2.shadowBootRefine"
+            [(optionValue)]="model2.rawOptionTxts[itemOptionNumber.SD_B_1]"
+            (selectItemChange)="onCompareItemChange()"
+            (optionChange)="onCompareItemChange()"
+          ></app-equipment-shadow>
+        </div>
+        <div class="col-12 item_label_compare" *ngIf="showCompareItemMap.shadowEarring">
+          <app-equipment-shadow
+            [itemType]="'shadowEarring'"
+            [placeholder]="'Shadow Earring'"
+            [itemList]="shadowEarringList"
+            [refineList]="shadowRefineList"
+            [optionList]="basicOptions"
+            [(itemId)]="model2.shadowEarring"
+            [(itemRefine)]="model2.shadowEarringRefine"
+            [(optionValue)]="model2.rawOptionTxts[itemOptionNumber.SD_Ear_1]"
+            (selectItemChange)="onCompareItemChange()"
+            (optionChange)="onCompareItemChange()"
+          ></app-equipment-shadow>
+        </div>
+        <div class="col-12 item_label_compare" *ngIf="showCompareItemMap.shadowPendant">
+          <app-equipment-shadow
+            [itemType]="'shadowPendant'"
+            [placeholder]="'Shadow Pendant'"
+            [itemList]="shadowPendantList"
+            [refineList]="shadowRefineList"
+            [optionList]="basicOptions"
+            [(itemId)]="model2.shadowPendant"
+            [(itemRefine)]="model2.shadowPendantRefine"
+            [(optionValue)]="model2.rawOptionTxts[itemOptionNumber.SD_Pan_1]"
+            (selectItemChange)="onCompareItemChange()"
+            (optionChange)="onCompareItemChange()"
+          ></app-equipment-shadow>
         </div>
       </div>
     </div>

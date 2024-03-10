@@ -30,6 +30,7 @@ import { getMonsterSpawnMap } from '../ro-calculator/constants/monster-spawn-map
 import { getClassDropdownList } from '../ro-calculator/jobs/_class-list';
 import { waitRxjs } from '../ro-calculator/utils';
 import { ItemOptionTable } from '../ro-calculator/constants/item-options-table';
+import { ItemTypeEnum } from '../ro-calculator/constants/item-type.enum';
 
 const Characters = getClassDropdownList();
 
@@ -466,10 +467,23 @@ export class SharedPresetComponent implements OnInit, OnDestroy {
     });
 
     const rawOptionTxts = [...model.rawOptionTxts];
+    const isShadowOption = {
+      [ItemTypeEnum.shadowWeapon]: true,
+      [ItemTypeEnum.shadowArmor]: true,
+      [ItemTypeEnum.shadowShield]: true,
+      [ItemTypeEnum.shadowBoot]: true,
+      [ItemTypeEnum.shadowEarring]: true,
+      [ItemTypeEnum.shadowPendant]: true,
+    };
 
     // clean if the itemType not allow to have options
     for (const [_itemType, [min, max]] of ItemOptionTable) {
       const itemId = model[_itemType];
+
+      if (isShadowOption[_itemType]) {
+        if (!itemId) rawOptionTxts[min] = null;
+        continue;
+      }
 
       let startClear = 0;
       if (itemId) {

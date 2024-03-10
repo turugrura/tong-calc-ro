@@ -83,22 +83,16 @@ export enum ItemTypeEnum {
 
   shadowWeapon = 'shadowWeapon',
   shadowWeaponRefine = 'shadowWeaponRefine',
-  shadowWeaponEnchant1 = 'shadowWeaponEnchant1',
   shadowArmor = 'shadowArmor',
   shadowArmorRefine = 'shadowArmorRefine',
-  shadowArmorEnchant1 = 'shadowArmorEnchant1',
   shadowShield = 'shadowShield',
   shadowShieldRefine = 'shadowShieldRefine',
-  shadowShieldEnchant1 = 'shadowShieldEnchant1',
   shadowBoot = 'shadowBoot',
   shadowBootRefine = 'shadowBootRefine',
-  shadowBootEnchant1 = 'shadowBootEnchant1',
   shadowEarring = 'shadowEarring',
   shadowEarringRefine = 'shadowEarringRefine',
-  shadowEarringEnchant1 = 'shadowEarringEnchant1',
   shadowPendant = 'shadowPendant',
   shadowPendantRefine = 'shadowPendantRefine',
-  shadowPendantEnchant1 = 'shadowPendantEnchant1',
 }
 
 export const OptionableItemTypeSet = new Set([
@@ -219,12 +213,12 @@ export const MainItemWithRelations: Partial<Record<ItemTypeEnum, ItemTypeEnum[]>
   [ItemTypeEnum.costumeEnchantGarment]: [],
   [ItemTypeEnum.costumeEnchantGarment4]: [],
 
-  [ItemTypeEnum.shadowWeapon]: [ItemTypeEnum.shadowWeaponEnchant1],
-  [ItemTypeEnum.shadowArmor]: [ItemTypeEnum.shadowArmorEnchant1],
-  [ItemTypeEnum.shadowShield]: [ItemTypeEnum.shadowShieldEnchant1],
-  [ItemTypeEnum.shadowBoot]: [ItemTypeEnum.shadowBootEnchant1],
-  [ItemTypeEnum.shadowEarring]: [ItemTypeEnum.shadowEarringEnchant1],
-  [ItemTypeEnum.shadowPendant]: [ItemTypeEnum.shadowPendantEnchant1],
+  [ItemTypeEnum.shadowWeapon]: [],
+  [ItemTypeEnum.shadowArmor]: [],
+  [ItemTypeEnum.shadowShield]: [],
+  [ItemTypeEnum.shadowBoot]: [],
+  [ItemTypeEnum.shadowEarring]: [],
+  [ItemTypeEnum.shadowPendant]: [],
 };
 
 export type EquipmentModel = Record<ItemTypeEnum, number>;

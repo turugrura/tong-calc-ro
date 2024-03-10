@@ -39,6 +39,7 @@ import { MonsterDataViewComponent } from './monster-data-view/monster-data-view.
 import { FieldsetModule } from 'primeng/fieldset';
 import { MiscDetailComponent } from './misc-detail/misc-detail.component';
 import { DialogModule } from 'primeng/dialog';
+import { EquipmentShadowComponent } from './equipment-shadow/equipment-shadow.component';
 
 @NgModule({
   imports: [
@@ -83,6 +84,7 @@ import { DialogModule } from 'primeng/dialog';
     PresetTableComponent,
     MonsterDataViewComponent,
     MiscDetailComponent,
+    EquipmentShadowComponent,
   ],
   exports: [CalcValueComponent],
 })
