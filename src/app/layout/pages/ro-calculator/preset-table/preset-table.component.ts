@@ -349,7 +349,7 @@ export class PresetTableComponent implements OnInit, OnDestroy {
 
       const ob = this.presetService
         .sharePreset(preset.id, {
-          publishName: publishName.substring(0, 100),
+          publishName: publishName.substring(0, 200),
         })
         .pipe(
           tap((sharedPreset) => {
