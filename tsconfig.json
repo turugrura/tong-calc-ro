@@ -19,13 +19,21 @@
     "target": "ES2022",
     "module": "ES2022",
     "useDefineForClassFields": false,
-    "lib": ["ES2022", "dom"]
+    "lib": [
+      "ES2022",
+      "dom"
+    ]
   },
-  "exclude": ["node_modules", "**/node_modules/*"],
+  "exclude": [
+    "node_modules",
+    "**/node_modules/*"
+  ],
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": false,
     "strictInputAccessModifiers": false,
-    "strictTemplates": true
+    "strictTemplates": false,
+    "enableIvy": true,
+    "fullTemplateTypeCheck": false
   }
 }

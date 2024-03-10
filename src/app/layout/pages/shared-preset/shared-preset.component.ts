@@ -195,6 +195,10 @@ export class SharedPresetComponent implements OnInit, OnDestroy {
     const s = this.searchEvent$
       .pipe(
         tap(() => (this.isLoading = true)),
+        tap(() => {
+          this.viewDetail = {};
+          this.isCalculated = {};
+        }),
         switchMap(() => {
           const empty = of({ items: [], totalItem: 0 }) as Observable<PublishPresetsReponse>;
           if (!this.selectedClassId) return empty;
