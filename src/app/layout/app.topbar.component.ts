@@ -72,6 +72,16 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
       link: 'https://www.divine-pride.net/forum/index.php?/topic/3723-kro-jobs-improvement-project',
     },
     {
+      label: 'KRO : Episode 17.2 enchant info : Automatic equipment and Sin weapons.',
+      writer: 'Sigma',
+      link: 'https://www.divine-pride.net/forum/index.php?/topic/4176-kro-episode-172-enchant-info-automatic-equipment-and-sin-weapons',
+    },
+    {
+      label: 'KRO : Glast Heim challenge mode enchant',
+      writer: 'Sigma',
+      link: 'https://www.divine-pride.net/forum/index.php?/topic/3879-kro-glast-heim-challenge-mode-enchant/',
+    },
+    {
       label: 'ATK',
       writer: 'IRO Wiki',
       link: 'https://irowiki.org/wiki/ATK',
@@ -112,11 +122,6 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
       link: 'https://ro.gnjoy.in.th/newyear_adventure_2024/assets/img/additional/Ragnarok-Today/POP-UP-Job-BONUS.jpg',
     },
     {
-      label: 'KRO : Episode 17.2 enchant info : Automatic equipment and Sin weapons.',
-      writer: 'Sigma',
-      link: 'https://www.divine-pride.net/forum/index.php?/topic/4176-kro-episode-172-enchant-info-automatic-equipment-and-sin-weapons',
-    },
-    {
       label: 'Geffen Magic Tournament Enchant System Update!',
       writer: 'RO GGT',
       link: 'https://ro.gnjoy.in.th/geffen-magic-tournament-enchant-system-update/',
@@ -134,6 +139,11 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
   ];
 
   updates: { v: string; date: string; logs: string[] }[] = [
+    {
+      v: 'V2.0.2',
+      date: '11-03-2567',
+      logs: ['Added "คลิปวิธีใช้งานเว็บ"', 'Enable Shadow equipment comparing', 'Added requested items & monsters'],
+    },
     {
       v: 'V2.0.1',
       date: '09-03-2567',
