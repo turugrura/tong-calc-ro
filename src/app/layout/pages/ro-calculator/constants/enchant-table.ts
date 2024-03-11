@@ -356,6 +356,7 @@ const fs68 = [FS._6, FS._7, FS._8];
 const fs410 = [FS._4, FS._5, FS._6, FS._7, FS._8, FS._9, FS._10];
 
 const sh13 = [Sharp._1, Sharp._2, Sharp._3];
+const sh14 = [Sharp._1, Sharp._2, Sharp._3, Sharp._4];
 const sh23 = [Sharp._2, Sharp._3];
 const sh25 = [Sharp._2, Sharp._3, Sharp._4, Sharp._5];
 // const sh35 = [Sharp._3, Sharp._4, Sharp._5];
@@ -368,6 +369,7 @@ const matk13 = [MatkPercent._1, MatkPercent._2, MatkPercent._3];
 
 const ea12 = [EA._1, EA._2];
 const ea13 = [EA._1, EA._2, EA._3];
+const ea14 = [EA._1, EA._2, EA._3, EA._4];
 const ea15 = [EA._1, EA._2, EA._3, EA._4, EA._5];
 const ea23 = [EA._2, EA._3];
 const ea25 = [EA._2, EA._3, EA._4, EA._5];
@@ -379,6 +381,7 @@ const ef15 = [ExpertFighter._1, ExpertFighter._2, ExpertFighter._3, ExpertFighte
 const em15 = [ExpertMagician._1, ExpertMagician._2, ExpertMagician._3, ExpertMagician._4, ExpertMagician._5];
 
 const sp23 = [Spell._2, Spell._3];
+const sp14 = [Spell._1, Spell._2, Spell._3, Spell._4];
 const sp25 = [Spell._2, Spell._3, Spell._4, Spell._5];
 const sp34 = [Spell._3, Spell._4];
 const sp45 = [Spell._4, Spell._5];
@@ -386,6 +389,7 @@ const sp46 = [Spell._4, Spell._5, Spell._6];
 
 const aspd12 = [AttackDelay._1, AttackDelay._2];
 const aspd13 = [AttackDelay._1, AttackDelay._2, AttackDelay._3];
+const aspd14 = [AttackDelay._1, AttackDelay._2, AttackDelay._3, AttackDelay._4];
 const aspd24 = [AttackDelay._2, AttackDelay._3, AttackDelay._4];
 const aspd34 = [AttackDelay._3, AttackDelay._4];
 
@@ -513,7 +517,7 @@ const automaticAccR = [...automaticAcc, 'Automatic_Orb5', 'Automatic_Orb6'];
 const automaticAccL = [...automaticAcc, 'Automatic_Orb7', 'Automatic_Orb8'];
 
 const tempBoot_3 = ["Bear's_Power", 'Runaway_Magic', 'Speed_Of_Light', 'Muscle_Fool', 'Hawkeye', 'Lucky_Day'];
-const tempBoot_4 = [EA._4, FS._7, Spell._5, AttackDelay._4];
+const tempBoot_4 = [...ea14, FS._7, Spell._5, AttackDelay._4];
 const kingSmithAcc_2 = ['Gh_md_agi', 'Gh_md_str', 'Gh_md_dex', 'Gh_md_int', 'Gh_md_vit', 'Gh_md_luk'];
 const kingSmithAcc_3 = [EA._4, EA._5, FS._6, FS._7, Spell._4, Spell._5, Fatal._2, Fatal._3, Sharp._3, Sharp._4, Sharp._5];
 const kingSmithAcc_4 = [...BaseState._3_5];
@@ -598,6 +602,7 @@ const tempHead3 = [
   'Time_Jewely_Dex_3',
   ...tempHead4,
 ];
+const tempHead2 = [...labHead2, ...ea14, ...sh14, ...sp14, ...aspd14];
 
 const sarahAcc4 = [...critical23, ...fatal12, ...ea12, ...matk12, ...aspd12, ...delay12, ...perfectD12];
 const sarahAcc3 = [...critical24, ...fatal13, ...ea13, ...matk13, ...aspd13, ...delay13, ...perfectD13];
@@ -903,26 +908,26 @@ export const EnchantTable: EntTable[] = [
   { name: 'BioWeapon_Helm_SC', enchants: [null, bioHead2, base15, base15] },
   { name: 'BioWeapon_Helm_GC', enchants: [null, bioHead2, base15, base15] },
 
-  { name: 'S_Circlet_Of_Time_RK', enchants: [null, labHead2, tempHead3, tempHead4] },
-  { name: 'S_Circlet_Of_Time_LG', enchants: [null, labHead2, tempHead3, tempHead4] },
-  { name: 'S_Circlet_Of_Time_NC', enchants: [null, labHead2, tempHead3, tempHead4] },
-  { name: 'S_Circlet_Of_Time_GN', enchants: [null, labHead2, tempHead3, tempHead4] },
-  { name: 'S_Circlet_Of_Time_GC', enchants: [null, labHead2, tempHead3, tempHead4] },
-  { name: 'S_Circlet_Of_Time_SU', enchants: [null, labHead2, tempHead3, tempHead4] },
-  { name: 'S_Circlet_Of_Time_SC', enchants: [null, labHead2, tempHead3, tempHead4] },
-  { name: 'S_Circlet_Of_Time_AB', enchants: [null, labHead2, tempHead3, tempHead4] },
-  { name: 'S_Circlet_Of_Time_SR', enchants: [null, labHead2, tempHead3, tempHead4] },
-  { name: 'S_Circlet_Of_Time_WL', enchants: [null, labHead2, tempHead3, tempHead4] },
-  { name: 'S_Circlet_Of_Time_SO', enchants: [null, labHead2, tempHead3, tempHead4] },
-  { name: 'S_Circlet_Of_Time_RA', enchants: [null, labHead2, tempHead3, tempHead4] },
-  { name: 'S_Circlet_Of_Time_WM', enchants: [null, labHead2, tempHead3, tempHead4] },
-  { name: 'S_Circlet_Of_Time_SJ', enchants: [null, labHead2, tempHead3, tempHead4] },
-  { name: 'S_Circlet_Of_Time_SP', enchants: [null, labHead2, tempHead3, tempHead4] },
-  { name: 'S_Circlet_Of_Time_RL', enchants: [null, labHead2, tempHead3, tempHead4] },
-  { name: 'S_Circlet_Of_Time_OB', enchants: [null, labHead2, tempHead3, tempHead4] },
-  { name: 'S_Circlet_Of_Time_KG', enchants: [null, labHead2, tempHead3, tempHead4] },
-  { name: 'S_Circlet_Of_Time_NV', enchants: [null, labHead2, tempHead3, tempHead4] },
-  { name: 'S_Circlet_Of_Time_SU', enchants: [null, labHead2, tempHead3, tempHead4] },
+  { name: 'S_Circlet_Of_Time_RK', enchants: [null, tempHead2, tempHead3, tempHead4] },
+  { name: 'S_Circlet_Of_Time_LG', enchants: [null, tempHead2, tempHead3, tempHead4] },
+  { name: 'S_Circlet_Of_Time_NC', enchants: [null, tempHead2, tempHead3, tempHead4] },
+  { name: 'S_Circlet_Of_Time_GN', enchants: [null, tempHead2, tempHead3, tempHead4] },
+  { name: 'S_Circlet_Of_Time_GC', enchants: [null, tempHead2, tempHead3, tempHead4] },
+  { name: 'S_Circlet_Of_Time_SU', enchants: [null, tempHead2, tempHead3, tempHead4] },
+  { name: 'S_Circlet_Of_Time_SC', enchants: [null, tempHead2, tempHead3, tempHead4] },
+  { name: 'S_Circlet_Of_Time_AB', enchants: [null, tempHead2, tempHead3, tempHead4] },
+  { name: 'S_Circlet_Of_Time_SR', enchants: [null, tempHead2, tempHead3, tempHead4] },
+  { name: 'S_Circlet_Of_Time_WL', enchants: [null, tempHead2, tempHead3, tempHead4] },
+  { name: 'S_Circlet_Of_Time_SO', enchants: [null, tempHead2, tempHead3, tempHead4] },
+  { name: 'S_Circlet_Of_Time_RA', enchants: [null, tempHead2, tempHead3, tempHead4] },
+  { name: 'S_Circlet_Of_Time_WM', enchants: [null, tempHead2, tempHead3, tempHead4] },
+  { name: 'S_Circlet_Of_Time_SJ', enchants: [null, tempHead2, tempHead3, tempHead4] },
+  { name: 'S_Circlet_Of_Time_SP', enchants: [null, tempHead2, tempHead3, tempHead4] },
+  { name: 'S_Circlet_Of_Time_RL', enchants: [null, tempHead2, tempHead3, tempHead4] },
+  { name: 'S_Circlet_Of_Time_OB', enchants: [null, tempHead2, tempHead3, tempHead4] },
+  { name: 'S_Circlet_Of_Time_KG', enchants: [null, tempHead2, tempHead3, tempHead4] },
+  { name: 'S_Circlet_Of_Time_NV', enchants: [null, tempHead2, tempHead3, tempHead4] },
+  { name: 'S_Circlet_Of_Time_SU', enchants: [null, tempHead2, tempHead3, tempHead4] },
 
   { name: 'Sharp_Star_Bow', enchants: [null, null, edda3, edda4] },
   { name: 'Aiming_Bow', enchants: [null, null, edda3, edda4] },

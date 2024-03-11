@@ -212,7 +212,7 @@ export class Oboro extends CharacterBase {
       label: 'Cross Slash Lv10',
       name: 'Cross Slash',
       value: 'Cross Slash==10',
-      acd: 0,
+      acd: 0.5,
       fct: 0,
       vct: 0,
       cd: 3.1,

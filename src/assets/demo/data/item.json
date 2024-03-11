@@ -466,6 +466,28 @@
       ]
     }
   },
+  "1408": {
+    "id": 1408,
+    "aegisName": "Pike_",
+    "name": "Pike [4]",
+    "unidName": "Spear",
+    "resName": "파이크",
+    "description": "หอกธรรมดา สำหรับทหารราบ\nประเภท : ^777777One-Handed Spear^000000 พลังโจมตี : ^77777760^000000\nน้ำหนัก : ^777777100^000000\nLv ของอาวุธ : ^7777771^000000\nLv ที่ต้องการ : ^7777774^000000\nอาชีพ : ^777777Swordman Cls^000000",
+    "slots": 4,
+    "itemTypeId": 1,
+    "itemSubTypeId": 259,
+    "itemLevel": 1,
+    "attack": 60,
+    "defense": null,
+    "weight": 100,
+    "requiredLevel": 4,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Swordman"
+    ],
+    "script": {}
+  },
   "1433": {
     "id": 1433,
     "aegisName": "Imperial_Spear",
@@ -5690,6 +5712,30 @@
     "cardPrefix": "Resistant",
     "script": {}
   },
+  "4419": {
+    "id": 4419,
+    "aegisName": "Ktullanux_Card",
+    "name": "Ktullanux Card",
+    "unidName": "Ktullanux Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่มความรุนแรงในการโจมตีทางกายภาพแก่มอนสเตอร์ธาตุไฟ 50%\nเมื่อได้รับการโจมตีทางกายภาพและทางเวทมนตร์ มีโอกาสร่าย Frost Nova Lv.10 โดยอัตโนมัติ\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Armor^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 16,
+    "cardPrefix": "Jack Frost's",
+    "script": {
+      "p_element_fire": [
+        "50"
+      ]
+    }
+  },
   "4426": {
     "id": 4426,
     "aegisName": "Byorgue_Card",
@@ -5744,6 +5790,33 @@
       ],
       "hit": [
         "SUM[jobLevel==10]---1"
+      ]
+    }
+  },
+  "4433": {
+    "id": 4433,
+    "aegisName": "Imp_Card",
+    "name": "Imp Card",
+    "unidName": "Imp Card",
+    "resName": "이름없는카드",
+    "description": "ลดเวลาร่ายเวทย์และเพิ่มความรุนแรงให้กับสกิล Fire Bolt 25%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Accessory^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 136,
+    "cardPrefix": "of Ignis",
+    "script": {
+      "vct__Fire Bolt": [
+        "25"
+      ],
+      "Fire Bolt": [
+        "25"
       ]
     }
   },
@@ -5899,6 +5972,30 @@
     "cardPrefix": "Cannibal",
     "script": {
       "m_race_brute": [
+        "10"
+      ]
+    }
+  },
+  "4474": {
+    "id": 4474,
+    "aegisName": "Jakudam_Card",
+    "name": "Zakudam Card",
+    "unidName": "Zakudam Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่มความเสียหายทางด้านเวทย์มนตร์ให้กับ DemiHuman type monsters ขึ้น 10%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Mortal",
+    "script": {
+      "m_race_demihuman": [
         "10"
       ]
     }
@@ -16120,6 +16217,45 @@
       ]
     }
   },
+  "15383": {
+    "id": 15383,
+    "aegisName": "Time_Overload_Robe",
+    "name": "Temporal Transcendent Robe [1]",
+    "unidName": "Armor",
+    "resName": "미라쥬로브",
+    "description": "^ff0000ไอเท็มชิ้นนี้ไม่สามารถแลกเปลี่ยนกับผู้เล่นอื่นได้^000000\nเสื้อคลุมที่ถูกสร้างมาเพื่อท่านเท่านั้น มันรอคอยให้ท่านมาสวมใส่\n\nMHP + 500, MSP + 100\nATK + 50, MATK + 50\nลด Delay หลังใช้สกิล 10%\n\nเมื่อสวมใส่ร่วมกับ Temporal Transcendent Manteau,\nลด Delay หลังใช้สกิล 10%\nประเภท : ^777777Armor^000000 พลังป้องกัน : ^77777762^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 62,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "hp": [
+        "500"
+      ],
+      "sp": [
+        "100"
+      ],
+      "atk": [
+        "50"
+      ],
+      "matk": [
+        "50"
+      ],
+      "acd": [
+        "10",
+        "EQUIP[Temporal Transcendent Manteau]===10"
+      ]
+    }
+  },
   "15388": {
     "id": 15388,
     "aegisName": "Schmidt_Suits",
@@ -18109,6 +18245,63 @@
       ],
       "matk": [
         "120"
+      ]
+    }
+  },
+  "16033": {
+    "id": 16033,
+    "aegisName": "Robot's_Arm",
+    "name": "Robot's Mechanical Arm [2]",
+    "unidName": "Blunt Weapon",
+    "resName": "로봇의기계팔",
+    "description": "ก็แค่ดึงแขนจักรกลของ Kick And Kick มาใช้เป็นอาวุธ แต่มีประสิทธิภาพมากกว่าที่คิด\nไม่สามารถทำลายได้\nCRI +20\nประเภท : ^777777Mace^000000 โจมตี : ^777777195^000000\nน้ำหนัก : ^777777300^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777130^000000\nสวมใส่ : Swordman, Merchant, Acolyte ^777777Class 3 ^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 263,
+    "itemLevel": 4,
+    "attack": 195,
+    "defense": null,
+    "weight": 300,
+    "requiredLevel": 130,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Swordman",
+      "Merchant",
+      "Acolyte"
+    ],
+    "script": {
+      "cri": [
+        "20"
+      ]
+    }
+  },
+  "16039": {
+    "id": 16039,
+    "aegisName": "Spoon",
+    "name": "Spoon [1]",
+    "unidName": "Mace",
+    "resName": "숟가락",
+    "description": "ASPD + 10\nเพิ่มโอกาส (10%) ที่จะทำให้เป้าหมายติด Curse\n\nประเภท : ^777777Mace^000000 โจมตี : ^77777780^000000\nน้ำหนัก : ^777777100^000000\nเลเวลอาวุธ : ^7777773^000000\nเลเวลที่ต้องการ : ^77777740^000000\nติดตั้ง : ^777777อาชีพ Swordman / อาชีพ Novice / อาชีพ Acolyte / อาชีพ Merchant^000000",
+    "slots": 1,
+    "itemTypeId": 1,
+    "itemSubTypeId": 263,
+    "itemLevel": 3,
+    "attack": 80,
+    "defense": null,
+    "weight": 100,
+    "requiredLevel": 40,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Swordman",
+      "Novice",
+      "Acolyte",
+      "Merchant"
+    ],
+    "script": {
+      "aspd": [
+        "10"
       ]
     }
   },
@@ -20850,6 +21043,33 @@
       ],
       "range": [
         "10"
+      ],
+      "chance__acd": [
+        "100"
+      ],
+      "chance__flatDmg": [
+        "20"
+      ],
+      "chance__cri": [
+        "10"
+      ],
+      "chance__str": [
+        "5"
+      ],
+      "chance__int": [
+        "5"
+      ],
+      "chance__dex": [
+        "5"
+      ],
+      "chance__agi": [
+        "5"
+      ],
+      "chance__luk": [
+        "5"
+      ],
+      "chance__vit": [
+        "5"
       ]
     }
   },
@@ -24386,6 +24606,45 @@
       ]
     }
   },
+  "20939": {
+    "id": 20939,
+    "aegisName": "Time_Overload_Hood",
+    "name": "Temporal Transcendent Manteau [1]",
+    "unidName": "Garment",
+    "resName": "미라쥬망토",
+    "description": "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้^000000\nผ้าคลุมผืนเดียวในโลกที่ทำขึ้นมาเพื่อท่านผู้เดียวเท่านั้น\n\nเพิ่มการต้านทานต่อการโจมตีธาตุ Water, Wind, Earth และ Fire 10%\nFLEE + 30, HIT + 10\nเพิ่ม ASPD 10%, ลดระยะเวลาร่ายแบบแปรผัน 10%\n\nเมื่อสวมใส่ร่วมกับ Temporal Transcendent Boots,\nลดระยะเวลาแบบแปรผัน 10%, ลดระยะเวลาร่ายแบบคงที่ 0.5 วินาที\nประเภท : ^777777Garment^000000 พลังป้องกัน : ^77777730^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 515,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 30,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "flee": [
+        "30"
+      ],
+      "hit": [
+        "10"
+      ],
+      "aspdPercent": [
+        "10"
+      ],
+      "vct": [
+        "10",
+        "EQUIP[Temporal Transcendent Boots]===10"
+      ],
+      "fct": [
+        "EQUIP[Temporal Transcendent Boots]===0.5"
+      ]
+    }
+  },
   "20944": {
     "id": 20944,
     "aegisName": "Anti_Magic_Manteau",
@@ -24896,6 +25155,40 @@
       ],
       "matk": [
         "120"
+      ]
+    }
+  },
+  "21011": {
+    "id": 21011,
+    "aegisName": "Giant_Blade",
+    "name": "Giant Blade [1]",
+    "unidName": "Two-Handed Sword",
+    "resName": "기간트블레이드",
+    "description": "ติดด้ามจับที่คมดาบใหญ่ซึ่งทำขึ้นเพื่อตัดอะไรบางอย่าง\nไม่สามารถทำลายได้\nลด ASPD (เพิ่มดีเลย์หลังจากโจมตี 5%)\nเมื่อ STR พื้นฐานต่ำกว่า 110 จะลด ATK 250\nเพิ่ม Critical DMG 1% ต่อระดับการอัปเกรด\nประเภท : ^777777Two-Handed Sword^000000   โจมตี : ^777777300^000000\nน้ำหนัก : ^777777500^000000\nเลเวลอาวุธ : ^7777774^000000\nเลเวลที่ต้องการ : ^777777130^000000\nสวมใส่ : Swordman ขั้น ^7777773 ^000000",
+    "slots": 1,
+    "itemTypeId": 1,
+    "itemSubTypeId": 258,
+    "itemLevel": 4,
+    "attack": 300,
+    "defense": null,
+    "weight": 500,
+    "requiredLevel": 130,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Rune Knight",
+      "Royal Guard"
+    ],
+    "script": {
+      "aspdPercent": [
+        "-5"
+      ],
+      "atk": [
+        "-250",
+        "SUM[str==110]===250"
+      ],
+      "criDmg": [
+        "1---1"
       ]
     }
   },
@@ -26644,6 +26937,44 @@
       ],
       "allStatus": [
         "REFINE[10]===2"
+      ]
+    }
+  },
+  "22204": {
+    "id": 22204,
+    "aegisName": "Time_Overload_Boots",
+    "name": "Temporal Transcendent Boots [1]",
+    "unidName": "Shoes",
+    "resName": "미라쥬슈즈",
+    "description": "^ff0000ไอเท็มชิ้นนี้ไม่สามารถแลกเปลี่ยนกับผู้เล่นอื่นได้^000000\nรองเท้าบูทที่ถูกเตรียมไว้เพื่อท่าน\nCRI + 10\nเพิ่มพลังโจมตีเวทมนตร์ทุกธาตุ 10%, เพิ่ม Critical Damage 10%\n\nเมื่อสวมใส่ร่วมกับ Temporal Transcendent Robe, \nATK + 5%, MATK + 5%\nประเภท : ^777777Shoes^000000 พลังป้องกัน : ^77777715^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 516,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 15,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "cri": [
+        "10"
+      ],
+      "m_my_element_all": [
+        "10"
+      ],
+      "criDmg": [
+        "10"
+      ],
+      "atkPercent": [
+        "EQUIP[Temporal Transcendent Robe]===5"
+      ],
+      "matkPercent": [
+        "EQUIP[Temporal Transcendent Robe]===5"
       ]
     }
   },
@@ -47885,6 +48216,35 @@
       ]
     }
   },
+  "28422": {
+    "id": 28422,
+    "aegisName": "ShiningTwigCharm",
+    "name": "Shining Twig Charm [1]",
+    "unidName": "Accessory",
+    "resName": "엘더의가지",
+    "description": "Variable Cast Time ของ Silvervine Stem Spear ลดลง 50%\nDMG ของ Silvervine Stem Spear จะเพิ่มขึ้นตาม( Level ของสกิลที่เรียนรู้ * ทุกๆ 6 Base INT) \nประเภท : ^777777Accessory^000000 ป้องกัน : ^7777771^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Doram^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 517,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 1,
+    "weight": 10,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Doram"
+    ],
+    "script": {
+      "vct__Silvervine Stem Spear": [
+        "50"
+      ],
+      "Silvervine Stem Spear": [
+        "SUM[int==6]---5"
+      ]
+    }
+  },
   "28424": {
     "id": 28424,
     "aegisName": "PlumpyWormCharm",
@@ -58632,6 +58992,39 @@
       ]
     }
   },
+  "32221": {
+    "id": 32221,
+    "aegisName": "Time_Overload_Ring",
+    "name": "Temporal Transcendent Ring [1]",
+    "unidName": "Ring",
+    "resName": "Blue_Swear_Ring_Z",
+    "description": "^ff0000ไอเท็มชิ้นนี้ไม่สามารถแลกเปลี่ยนกับผู้เล่นอื่นได้^000000\nแหวนที่เตรียมไว้ต้อนรับท่านด้วยความยินดี\nเพิ่ม ASPD 10%\nลด Variable Cast Time 10%\n\nเมื่อสวมใส่ร่วมกับ Temporal Transcendent Robe, Temporal Transcendent Manteau, Temporal Transcendent Boots,\nASPD + 2, ลด Variable Cast Time 10%\nประเภท : ^777777Accessory^000000 พลังป้องกัน : ^77777715^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^77777799^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 517,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 15,
+    "weight": 0,
+    "requiredLevel": 99,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "aspdPercent": [
+        "10"
+      ],
+      "aspd": [
+        "EQUIP[Temporal Transcendent Robe&&Temporal Transcendent Manteau&&Temporal Transcendent Boots]===2"
+      ],
+      "vct": [
+        "10",
+        "EQUIP[Temporal Transcendent Robe&&Temporal Transcendent Manteau&&Temporal Transcendent Boots]===10"
+      ]
+    }
+  },
   "32227": {
     "id": 32227,
     "aegisName": "Fenrir_Chain",
@@ -62060,6 +62453,34 @@
       ]
     }
   },
+  "300271": {
+    "id": 300271,
+    "aegisName": "Happy_Giver_Card",
+    "name": "Happiness Giver Card",
+    "unidName": "Happiness Giver Card",
+    "resName": "이름없는카드",
+    "description": "Increases melee physical damage by 10%, MaxSP - 25%.\nWhen equipped with Mistress of Shelter Card and the user's base level is 200 or higher, increases melee physical damage by additional 15% per 40 base Str.\nClass: ^777777Card^000000\nCompound on: ^777777Garment^000000\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 4,
+    "cardPrefix": "Happy",
+    "script": {
+      "melee": [
+        "10",
+        "SUM[level==200]EQUIP[Mistress of Shelter Card]SUM[str==40]---15"
+      ],
+      "spPercent": [
+        "-25"
+      ]
+    }
+  },
   "300291": {
     "id": 300291,
     "aegisName": "1st_Anniver_Card",
@@ -62150,6 +62571,58 @@
       ],
       "atkPercent": [
         "EQUIP[Skia Nerious Card]3"
+      ]
+    }
+  },
+  "300422": {
+    "id": 300422,
+    "aegisName": "S_Catherine_Card",
+    "name": "Catherine Gaebolg Card",
+    "unidName": "Catherine Gaebolg Card",
+    "resName": "이름없는카드",
+    "description": "Increases damage taken from neutral property by 10%, increases melee physical damage by 5%.\r\nIncreases melee physical damage by additional 4% per 2 refine rate.\r\nWhen equipped with Helmut Lugenburg Card, increases melee physical damage by 5%.\r\n^ffffff_^000000\r\nClass: ^777777Card^000000\r\nCompound on: ^777777Garment^000000\r\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 4,
+    "cardPrefix": "of Gaebolg",
+    "script": {
+      "melee": [
+        "5",
+        "2---4",
+        "EQUIP[Helmut Lugenburg Card]===5"
+      ]
+    }
+  },
+  "300424": {
+    "id": 300424,
+    "aegisName": "S_Friedrich_Card",
+    "name": "Friedrich S. Heine Card",
+    "unidName": "Friedrich S. Heine Card",
+    "resName": "이름없는카드",
+    "description": "Increases damage taken from neutral property by 10%, increases all property magical damage by 5%.\r\nIncreases all property magical damage by additional 4% per 2 refine rate.\r\nWhen equipped with Meyer Lugenburg Card, increases all property magical damage by 5%.\r\n^ffffff_^000000\r\nClass: ^777777Card^000000\r\nCompound on: ^777777Garment^000000\r\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 4,
+    "cardPrefix": "of Stolz Heine",
+    "script": {
+      "m_my_element_all": [
+        "5",
+        "2---4",
+        "EQUIP[Meyer Lugenburg Card]===5"
       ]
     }
   },
@@ -66463,6 +66936,32 @@
     "script": {
       "range": [
         "3"
+      ]
+    }
+  },
+  "310659": {
+    "id": 310659,
+    "aegisName": "Cast_Robe_D",
+    "name": "Reduce Variable Casting (Dual)",
+    "unidName": "Reduce Variable Casting (Dual)",
+    "resName": "하늘색보석",
+    "description": "Decrease variable casting by 5%.\r\n------------------------\r\n^FF0000Set Bonus^000000\r\n^4D4DFFReduce Variable Casting (Dual)^000000\r\n^4D4DFFReduce Variable Casting (Garment)^000000\r\n\r\nReduces fixed casting by 0.5 seconds",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 75,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "vct": [
+        "5"
+      ],
+      "fct": [
+        "EQUIP[Variable Casting (Garment]===0.5"
       ]
     }
   },
@@ -77109,6 +77608,61 @@
       ],
       "matkPercent": [
         "EQUIP[Great Hero Boots]===7"
+      ]
+    }
+  },
+  "500030": {
+    "id": 500030,
+    "aegisName": "Excalibur_IL",
+    "name": "Illusion Excalibur [2]",
+    "unidName": "Sword",
+    "resName": "Excalibur_IL",
+    "description": "Matk + 180.\nMatk + 5%, reduces global cooldown by 5%.\nIf refine rate is 7 or higher, increases Genesis Ray damage by 15%.\nIf refine rate is 9 or higher, increases neutral and holy property magical damage by 15%, reduces variable casting time by 10%.\nIf refine rate is 11 or higher, increases Genesis Ray damage by additional 25%.\n\nWhen equipped with Illusion Sacred Mission, Matk + 50, reduces variable casting time by 10%.\nIf refine rate of each is 7 or higher, increases Genesis Ray damage by 10%.\nIf the sum of refine rate is 18 or higher, increases magical damage against all race monsters by 20%.\nIf the sum of refine rate is 22 or higher, reduces skill cooldown of Genesis Ray by 1 second, reduces global cooldown by 5%.\nClass: ^777777Sword^000000 Attack: ^777777120^000000\nWeight: ^777777100^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777120^000000\nJobs: ^777777Royal Guard^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 257,
+    "itemLevel": 4,
+    "attack": 120,
+    "defense": null,
+    "weight": 100,
+    "requiredLevel": 120,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Royal Guard"
+    ],
+    "script": {
+      "matk": [
+        "180",
+        "EQUIP[Illusion Sacred Mission]===50"
+      ],
+      "matkPercent": [
+        "5"
+      ],
+      "acd": [
+        "5",
+        "EQUIP[Illusion Sacred Mission]REFINE[shield,weapon==22]===5"
+      ],
+      "Genesis Ray": [
+        "7===15",
+        "11===25",
+        "EQUIP[Illusion Sacred Mission]REFINE[shield==7]7===10"
+      ],
+      "m_my_element_neutral": [
+        "9===15"
+      ],
+      "m_my_element_holy": [
+        "9===15"
+      ],
+      "vct": [
+        "9===10",
+        "EQUIP[Illusion Sacred Mission]===10"
+      ],
+      "m_race_all": [
+        "EQUIP[Illusion Sacred Mission]REFINE[shield,weapon==18]===20"
+      ],
+      "cd__Genesis Ray": [
+        "EQUIP[Illusion Sacred Mission]REFINE[shield,weapon==22]===1"
       ]
     }
   },

@@ -4186,6 +4186,59 @@
       "raceName": "Undead"
     }
   },
+  "3484": {
+    "id": 3484,
+    "dbname": "AS_D_RAGGED_GOLEM",
+    "name": "Stefan.J.E.Wolf",
+    "spawn": "",
+    "stats": {
+      "attackRange": 1,
+      "level": 160,
+      "health": 20000000,
+      "sp": 1,
+      "str": 248,
+      "int": 59,
+      "vit": 16,
+      "dex": 245,
+      "agi": 57,
+      "luk": 43,
+      "rechargeTime": 960,
+      "atk1": 8128,
+      "atk2": 640,
+      "attack": {
+        "minimum": 6910,
+        "maximum": 10161
+      },
+      "magicAttack": {
+        "minimum": 667,
+        "maximum": 1051
+      },
+      "defense": 146,
+      "baseExperience": 0,
+      "jobExperience": 0,
+      "aggroRange": 14,
+      "escapeRange": 16,
+      "movementSpeed": 300,
+      "attackSpeed": 1632,
+      "attackedSpeed": 480,
+      "element": 49,
+      "scale": 2,
+      "race": 1,
+      "magicDefense": 30,
+      "hit": 417,
+      "flee": 575,
+      "ai": "MONSTER_TYPE_21",
+      "mvp": 0,
+      "class": 1,
+      "attr": 8,
+      "res": 0,
+      "mres": 0,
+      "elementName": "Undead 2",
+      "elementShortName": "Undead",
+      "scaleName": "Large",
+      "raceName": "Undead"
+    }
+  },
   "3503": {
     "id": 3503,
     "dbname": "DR_BASILISK2",
