@@ -13,3 +13,7 @@
 .icon-user {
   color: var(--primary-color);
 }
+
+.youtube-link {
+  background-color: black;
+}

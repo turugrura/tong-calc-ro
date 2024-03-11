@@ -3,4 +3,5 @@ export interface EnvironmentModel {
   surveyUrl: string;
   issueTrackingUrl?: string;
   roBackendUrl: string;
+  youtubeVideoUrl: string;
 }

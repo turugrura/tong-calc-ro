@@ -67,6 +67,6 @@ export const calcSkillAspd = (params: {
     reducedAcd,
     castPeriod: castPeriod,
     hitPeriod,
-    totalHitPerSec: floor(1 / hitPeriod, 0),
+    totalHitPerSec: floor(1 / hitPeriod, 1),
   };
 };
