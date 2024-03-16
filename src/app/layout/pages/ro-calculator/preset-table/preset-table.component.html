@@ -56,6 +56,7 @@
           <ng-template let-item pTemplate="item">
             <div class="flex align-items-center gap-1">
               <i *ngIf="item.isPublished" class="pi pi-send"></i>
+              <img src="assets/demo/images/jobs/icon_jobs_{{ item.icon }}.png" alt="" class="job_img" />
               {{ item.label }}
             </div>
           </ng-template>
@@ -119,6 +120,9 @@
       <div class="col-3 text-lg font-semibold" *ngIf="isSharedPreset">
         Shared at: <span class="text-primary-300"> {{ presetInfo?.publishedAt | date : 'dd-MM-yyyy HH:mm' }} </span
         ><br />
+      </div>
+      <div class="col-3 text-lg font-medium" *ngIf="isSharedPreset">
+        Like: <span class="text-primary-400"> {{ presetInfo?.tags[0]?.totalLike }} </span><br />
       </div>
       <div class="col-6" *ngIf="!isSharedPreset">
         <div class="p-inputgroup">
@@ -194,7 +198,8 @@
     </div>
 
     <div class="grid">
-      <div class="col-fixed">
+      <div class="col-fixed flex gap-2">
+        <img src="assets/demo/images/jobs/icon_jobs_{{ jobIconMap[model?.class] }}.png" alt="" class="job_img" />
         <span class="summary_highlight text-xl"> {{ classLabelMap[model?.class] }} </span>
       </div>
       <div class="col-fixed">

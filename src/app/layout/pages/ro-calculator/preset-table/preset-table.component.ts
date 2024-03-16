@@ -1,15 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { DynamicDialogConfig, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { ItemTypeEnum } from '../constants/item-type.enum';
-import { ClassID } from '../jobs/_class-name';
+import { ClassID, ClassIcon } from '../jobs/_class-name';
 import { ConfirmationService, MessageService } from 'primeng/api';
-import {
-  AuthService,
-  EntirePresetWithTagsModel,
-  PresetService,
-  PresetTagModel,
-  RoPresetModel,
-} from 'src/app/api-services';
+import { AuthService, EntirePresetWithTagsModel, PresetService } from 'src/app/api-services';
 import { Observable, Subscription, catchError, finalize, of, switchMap, tap } from 'rxjs';
 import { availableTags, tagSeverityMap } from '../constants/available-tags';
 import { ToErrorDetail } from 'src/app/app-errors';
@@ -61,14 +55,15 @@ export class PresetTableComponent implements OnInit, OnDestroy {
   displayShadowItems = [] as any[];
   classLabelMap = ClassID;
 
-  cloudPresets: (EntirePresetWithTagsModel & { value: string })[] = [];
+  cloudPresets: (EntirePresetWithTagsModel & { value: string; icon: number })[] = [];
   items = this.dynamicDialogConfig.data.items;
+  jobIconMap = { ...ClassIcon };
 
   subs: Subscription;
   isLoggedIn = this.authService.isLoggedIn;
   isProcessing = false;
 
-  presetInfo = {} as RoPresetModel & { tags: PresetTagModel[] };
+  presetInfo = {} as EntirePresetWithTagsModel;
   selectedCloudPreset = undefined;
   isSharedPreset = false;
   availableTags = availableTags.map((a) => {
@@ -442,6 +437,7 @@ export class PresetTableComponent implements OnInit, OnDestroy {
           return {
             ...a,
             value: a.id,
+            icon: ClassIcon[a.model.class],
           };
         });
       }),

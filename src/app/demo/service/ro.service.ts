@@ -1,10 +1,18 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, shareReplay } from 'rxjs';
 
 @Injectable()
 export class RoService {
+  private cachedMonster$: Observable<any>;
+  private cachedItems$: Observable<any>;
+  private cachedHpSpTable$: Observable<any>;
+
   constructor(private http: HttpClient) {
+    this.cachedMonster$ = this.http.get<any>('assets/demo/data/monster.json').pipe(shareReplay(1));
+    this.cachedItems$ = this.http.get<any>('assets/demo/data/item.json').pipe(shareReplay(1));
+    this.cachedHpSpTable$ = this.http.get<any>('assets/demo/data/hp_sp_table.json').pipe(shareReplay(1));
+
     // const a = [] as any[];
     // this.getHpSpTable<{ Body: HpSpTable }>().subscribe(({ Body: data }) => {
     //   console.log({ data });
@@ -63,15 +71,15 @@ export class RoService {
   }
 
   getItems<T>(): Observable<T> {
-    return this.http.get<any>('assets/demo/data/item.json');
+    return this.cachedItems$;
   }
 
   getMonsters<T>(): Observable<T> {
-    return this.http.get<any>('assets/demo/data/monster.json');
+    return this.cachedMonster$;
   }
 
   getHpSpTable<T>(): Observable<T> {
-    return this.http.get<any>('assets/demo/data/hp_sp_table.json');
+    return this.cachedHpSpTable$;
   }
 
   // getHpSpTable<T>(): Observable<T> {
