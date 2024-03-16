@@ -496,12 +496,14 @@ export class DamageCalculator {
    */
   private getFlatDmg(skillName?: string) {
     const base = this.totalBonus['flatDmg'] || 0;
+    if (skillName === 'basicAtk') {
+      const flatBasicAtk = this.totalBonus['flatBasicDmg'] || 0;
+      return base + flatBasicAtk;
+    }
+
     if (skillName) {
       const flatSkill = this.totalBonus[`flat_${skillName}`] || 0;
       return base + flatSkill;
-    } else if (skillName === 'basicAtk') {
-      const flatBasicAtk = this.totalBonus['flatBasicDmg'] || 0;
-      return base + flatBasicAtk;
     }
 
     return base;
