@@ -6521,6 +6521,31 @@
       ]
     }
   },
+  "4563": {
+    "id": 4563,
+    "aegisName": "Creator_Card",
+    "name": "Creator Flamel Card",
+    "unidName": "Creator Flamel Card",
+    "resName": "이름없는카드",
+    "description": "เมื่อโดนโจมตีทางกายภาพ มีโอกาสสูงที่จะร่าย Acid Terror Lv.5 (จำเป็นต้องมี Acid Bottle)\nCRI + 20, เมื่อ STR 110 ขึ้นไป เพิ่ม CRI + 20\nประเภท : ^777777Card^000000\nใส่กับ : ^777777Armor^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 16,
+    "cardPrefix": "of Acid",
+    "script": {
+      "cri": [
+        "20",
+        "SUM[str==110]===20"
+      ]
+    }
+  },
   "4568": {
     "id": 4568,
     "aegisName": "Ceila_Card",
@@ -12849,6 +12874,35 @@
       ],
       "perfectHit": [
         "15"
+      ]
+    }
+  },
+  "9112": {
+    "id": 9112,
+    "aegisName": "Moonlight_Egg",
+    "name": "Moonlight Egg",
+    "unidName": "Moonlight Egg",
+    "resName": "Moonlight_Egg",
+    "description": "tไข่ที่มี Q-Pet Moonlight อยู่ภายใน สามารถปลุกให้ตื่นขึ้นมาได้ด้วย [Pet Incubator]\n\nในกรณีที่ความสัมพันธ์อยู่ระดับไม่คุ้นเคย หรือเขินอาย CRI + 3, HIT + 3\nหากความสัมพันธ์อยู่ระดับปกติ CRI + 4, HIT + 4, เมื่อโจมตีทางกายภาพ มีโอกาสเล็กน้อยที่จะฟื้นฟู 300HP 4 ครั้ง ทุกๆ 1 วินาที\nหากความสัมพันธ์อยู่ระดับเป็นมิตร CRI + 5, HIT + 5, เมื่อโจมตีทางกายภาพ มีโอกาสเล็กน้อยที่จะฟื้นฟู 400HP และ 10SP 4 ครั้ง ทุกๆ 1 วินาที\nหากความสัมพันธ์อยู่ระดับสนิทสนม CRI + 6, HIT + 6, เมื่อโจมตีทางกายภาพ มีโอกาสเล็กน้อยที่จะฟื้นฟู 500HP และ 20SP 4 ครั้ง ทุกๆ 1 วินาที\n\nประเภท : ^777777Monster Egg^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 518,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "cri": [
+        "6"
+      ],
+      "hit": [
+        "6"
       ]
     }
   },

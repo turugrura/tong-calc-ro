@@ -119,7 +119,6 @@ export class Rebelion extends CharacterBase {
       fct: 0,
       vct: 0,
       cd: 0,
-      levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
@@ -136,7 +135,6 @@ export class Rebelion extends CharacterBase {
       fct: 0.7,
       vct: 1,
       cd: 1.6,
-      levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
@@ -153,7 +151,6 @@ export class Rebelion extends CharacterBase {
       vct: 3,
       cd: 3.5,
       element: ElementType.Neutral,
-      levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
@@ -170,7 +167,6 @@ export class Rebelion extends CharacterBase {
       fct: 0,
       vct: 0,
       cd: 20,
-      levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
@@ -187,13 +183,26 @@ export class Rebelion extends CharacterBase {
       fct: 0,
       vct: 0,
       cd: 20,
-      levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
         const crimsonMarker = this.bonuses.activeSkillNames.has('Crimson Marker') ? 450 : 150;
 
         return (skillLevel * 100 + crimsonMarker * 10) * (baseLevel / 100);
+      },
+    },
+    {
+      label: 'Shatter Storm Lv5',
+      name: 'Shatter Storm',
+      value: 'Shatter Storm==5',
+      acd: 0,
+      fct: 1,
+      vct: 1,
+      cd: 2,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { skillLevel } = input;
+
+        return 1700 + skillLevel * 200;
       },
     },
   ];
