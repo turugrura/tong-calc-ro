@@ -74635,6 +74635,525 @@
       ]
     }
   },
+  "490044": {
+    "id": 490044,
+    "aegisName": "Sin_Ring_R",
+    "name": "Sinful Ruby Ring [1]",
+    "unidName": "Accessory",
+    "resName": "Sin_Ring_R",
+    "description": "Atk + 10%, increases attack speed (reduces delay after attack by 7%). \nWhen equipped with Red Dragon Plate, Dragon Scale Hood and Dragon Scale Boots,\nreduces global cooldown by 5%, reduces fixed casting time by 0.2 seconds, increases physical damage against angel and dragon race monsters by 20%, reduces damage taken from angel and dragon race monsters by 10%.\n^ffffff_^000000\nClass: ^777777Accessory (Right)^000000 Defense: ^7777770^000000\nWeight: ^77777710^000000\nRequired Level: ^777777170^000000\nJobs: ^777777All^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 510,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atkPercent": [
+        "10"
+      ],
+      "aspdPercent": [
+        "7"
+      ],
+      "acd": [
+        "EQUIP[Red Dragon Plate&&Dragon Scale Hood&&Dragon Scale Boots]===5"
+      ],
+      "fct": [
+        "EQUIP[Red Dragon Plate&&Dragon Scale Hood&&Dragon Scale Boots]===0.2"
+      ],
+      "p_race_angel": [
+        "EQUIP[Red Dragon Plate&&Dragon Scale Hood&&Dragon Scale Boots]===20"
+      ],
+      "p_race_dragon": [
+        "EQUIP[Red Dragon Plate&&Dragon Scale Hood&&Dragon Scale Boots]===20"
+      ]
+    }
+  },
+  "490045": {
+    "id": 490045,
+    "aegisName": "Sin_Necklace_R",
+    "name": "Sinful Ruby Necklace [1]",
+    "unidName": "Accessory",
+    "resName": "Sin_Necklace_R",
+    "description": "Atk + 10%, reduces variable casting time by 7%. \nWhen equipped with Sinful Ruby Ring,\nreduces global cooldown by 5%, reduces fixed casting time by 0.3 seconds, increases physical damage against angel and dragon race monsters by 15%.\n^ffffff_^000000\nClass: ^777777Accessory (Left)^000000\nDefense: ^7777770^000000\nWeight: ^77777710^000000\nRequired Level: ^777777170^000000\nJobs: ^777777All^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 511,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atkPercent": [
+        "10"
+      ],
+      "vct": [
+        "7"
+      ],
+      "acd": [
+        "EQUIP[Sinful Ruby Ring]===5"
+      ],
+      "fct": [
+        "EQUIP[Sinful Ruby Ring]===0.3"
+      ],
+      "p_race_angel": [
+        "EQUIP[Sinful Ruby Ring]===15"
+      ],
+      "p_race_dragon": [
+        "EQUIP[Sinful Ruby Ring]===15"
+      ]
+    }
+  },
+  "490046": {
+    "id": 490046,
+    "aegisName": "Sin_Ring_E",
+    "name": "Sinful Emerald Ring [1]",
+    "unidName": "Accessory",
+    "resName": "Sin_Ring_E",
+    "description": "Atk + 10%, increases attack speed (reduces delay after attack by 7%). \nWhen equipped with Green Dragon Plate, Dragon Scale Hood and Dragon Scale Boots,\nreduces global cooldown by 5%, reduces fixed casting time by 0.2 seconds, increases physical damage against angel and dragon race monsters by 20%, reduces damage taken from angel and dragon race monsters by 10%.\n^ffffff_^000000\nClass: ^777777Accessory (Right)^000000 Defense: ^7777770^000000\nWeight: ^77777710^000000\nRequired Level: ^777777170^000000\nJobs: ^777777All^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 510,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atkPercent": [
+        "10"
+      ],
+      "aspdPercent": [
+        "7"
+      ],
+      "acd": [
+        "EQUIP[Green Dragon Plate&&Dragon Scale Hood&&Dragon Scale Boots]===5"
+      ],
+      "fct": [
+        "EQUIP[Green Dragon Plate&&Dragon Scale Hood&&Dragon Scale Boots]===0.2"
+      ],
+      "p_race_angel": [
+        "EQUIP[Green Dragon Plate&&Dragon Scale Hood&&Dragon Scale Boots]===20"
+      ],
+      "p_race_dragon": [
+        "EQUIP[Green Dragon Plate&&Dragon Scale Hood&&Dragon Scale Boots]===20"
+      ]
+    }
+  },
+  "490047": {
+    "id": 490047,
+    "aegisName": "Sin_Necklace_E",
+    "name": "Sinful Emerald Necklace [1]",
+    "unidName": "Accessory",
+    "resName": "Sin_Necklace_E",
+    "description": "Atk + 10%, reduces variable casting time by 7%. \nWhen equipped with Sinful Emerald Ring,\nreduces global cooldown by 5%, reduces fixed casting time by 0.3 seconds, increases physical damage against angel and dragon race monsters by 15%.\n^ffffff_^000000\nClass: ^777777Accessory (Left)^000000\nDefense: ^7777770^000000\nWeight: ^77777710^000000\nRequired Level: ^777777170^000000\nJobs: ^777777All^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 511,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atkPercent": [
+        "10"
+      ],
+      "vct": [
+        "7"
+      ],
+      "acd": [
+        "EQUIP[Sinful Emerald Ring]===5"
+      ],
+      "fct": [
+        "EQUIP[Sinful Emerald Ring]===0.3"
+      ],
+      "p_race_angel": [
+        "EQUIP[Sinful Emerald Ring]===15"
+      ],
+      "p_race_dragon": [
+        "EQUIP[Sinful Emerald Ring]===15"
+      ]
+    }
+  },
+  "490048": {
+    "id": 490048,
+    "aegisName": "Sin_Ring_T",
+    "name": "Sinful Topaz Ring [1]",
+    "unidName": "Accessory",
+    "resName": "Sin_Ring_T",
+    "description": "Atk + 7%, Matk + 7%, increases attack speed (reduces delay after attack by 7%). \nWhen equipped with Gold Dragon Plate, Dragon Scale Hood and Dragon Scale Boots,\nreduces global cooldown by 5%, reduces fixed casting time by 0.2 seconds, increases physical and magical damage against angel and dragon race monsters by 20%, reduces damage taken from angel and dragon race monsters by 10%.\n^ffffff_^000000\nClass: ^777777Accessory (Right)^000000 Defense: ^7777770^000000\nWeight: ^77777710^000000\nRequired Level: ^777777170^000000\nJobs: ^777777All^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 510,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atkPercent": [
+        "7"
+      ],
+      "matkPercent": [
+        "7"
+      ],
+      "aspdPercent": [
+        "7"
+      ],
+      "acd": [
+        "EQUIP[Gold Dragon Plate&&Dragon Scale Hood&&Dragon Scale Boots]===5"
+      ],
+      "fct": [
+        "EQUIP[Gold Dragon Plate&&Dragon Scale Hood&&Dragon Scale Boots]===0.2"
+      ],
+      "m_race_angel": [
+        "EQUIP[Gold Dragon Plate&&Dragon Scale Hood&&Dragon Scale Boots]===20"
+      ],
+      "p_race_angel": [
+        "EQUIP[Gold Dragon Plate&&Dragon Scale Hood&&Dragon Scale Boots]===20"
+      ],
+      "m_race_dragon": [
+        "EQUIP[Gold Dragon Plate&&Dragon Scale Hood&&Dragon Scale Boots]===20"
+      ],
+      "p_race_dragon": [
+        "EQUIP[Gold Dragon Plate&&Dragon Scale Hood&&Dragon Scale Boots]===20"
+      ]
+    }
+  },
+  "490049": {
+    "id": 490049,
+    "aegisName": "Sin_Necklace_T",
+    "name": "Sinful Topaz Necklace [1]",
+    "unidName": "Accessory",
+    "resName": "Sin_Necklace_T",
+    "description": "Atk + 7%, Matk + 7%, reduces variable casting time by 7%. \nWhen equipped with Sinful Topaz Ring,\nreduces global cooldown by 5%, reduces fixed casting time by 0.3 seconds, increases physical and magical damage against angel and dragon race monsters by 15%.\n^ffffff_^000000\nClass: ^777777Accessory (Left)^000000\nDefense: ^7777770^000000\nWeight: ^77777710^000000\nRequired Level: ^777777170^000000\nJobs: ^777777All^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 511,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atkPercent": [
+        "7"
+      ],
+      "matkPercent": [
+        "7"
+      ],
+      "vct": [
+        "7"
+      ],
+      "acd": [
+        "EQUIP[Sinful Topaz Ring]===5"
+      ],
+      "fct": [
+        "EQUIP[Sinful Topaz Ring]===0.3"
+      ],
+      "p_race_angel": [
+        "EQUIP[Sinful Topaz Ring]===15"
+      ],
+      "p_race_dragon": [
+        "EQUIP[Sinful Topaz Ring]===15"
+      ],
+      "m_race_angel": [
+        "EQUIP[Sinful Topaz Ring]===15"
+      ],
+      "m_race_dragon": [
+        "EQUIP[Sinful Topaz Ring]===15"
+      ]
+    }
+  },
+  "490050": {
+    "id": 490050,
+    "aegisName": "Sin_Ring_A",
+    "name": "Sinful Amethyst Ring [1]",
+    "unidName": "Accessory",
+    "resName": "Sin_Ring_A",
+    "description": "When equipped with Purple Dragon Plate, Dragon Scale Hood and Dragon Scale Boots,\nreduces global cooldown by 5%, reduces fixed casting time by 0.2 seconds, increases physical and magical damage against angel and dragon race monsters by 20%, reduces damage taken from angel and dragon race monsters by 10%.\n^ffffff_^000000\nClass: ^777777Accessory (Right)^000000 Defense: ^7777770^000000\nWeight: ^77777710^000000\nRequired Level: ^777777170^000000\nJobs: ^777777All^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 510,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "acd": [
+        "EQUIP[Purple Dragon Plate&&Dragon Scale Hood&&Dragon Scale Boots]===5"
+      ],
+      "fct": [
+        "EQUIP[Purple Dragon Plate&&Dragon Scale Hood&&Dragon Scale Boots]===0.2"
+      ],
+      "p_race_angel": [
+        "EQUIP[Purple Dragon Plate&&Dragon Scale Hood&&Dragon Scale Boots]===20"
+      ],
+      "p_race_dragon": [
+        "EQUIP[Purple Dragon Plate&&Dragon Scale Hood&&Dragon Scale Boots]===20"
+      ],
+      "m_race_angel": [
+        "EQUIP[Purple Dragon Plate&&Dragon Scale Hood&&Dragon Scale Boots]===20"
+      ],
+      "m_race_dragon": [
+        "EQUIP[Purple Dragon Plate&&Dragon Scale Hood&&Dragon Scale Boots]===20"
+      ]
+    }
+  },
+  "490051": {
+    "id": 490051,
+    "aegisName": "Sin_Necklace_A",
+    "name": "Sinful Amethyst Necklace [1]",
+    "unidName": "Accessory",
+    "resName": "Sin_Necklace_A",
+    "description": "Atk + 7%, Matk + 7%, reduces variable casting time by 7%. \nWhen equipped with Sinful Amethyst Ring,\nreduces global cooldown by 5%, reduces fixed casting time by 0.3 seconds, increases physical and magical damage against angel and dragon race monsters by 15%.\n^ffffff_^000000\nClass: ^777777Accessory (Left)^000000\nDefense: ^7777770^000000\nWeight: ^77777710^000000\nRequired Level: ^777777170^000000\nJobs: ^777777All^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 511,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atkPercent": [
+        "7"
+      ],
+      "matkPercent": [
+        "7"
+      ],
+      "vct": [
+        "7"
+      ],
+      "acd": [
+        "EQUIP[Sinful Amethyst Ring]===5"
+      ],
+      "fct": [
+        "EQUIP[Sinful Amethyst Ring]===0.3"
+      ],
+      "p_race_angel": [
+        "EQUIP[Sinful Amethyst Ring]===15"
+      ],
+      "p_race_dragon": [
+        "EQUIP[Sinful Amethyst Ring]===15"
+      ],
+      "m_race_angel": [
+        "EQUIP[Sinful Amethyst Ring]===15"
+      ],
+      "m_race_dragon": [
+        "EQUIP[Sinful Amethyst Ring]===15"
+      ]
+    }
+  },
+  "490052": {
+    "id": 490052,
+    "aegisName": "Sin_Ring_S",
+    "name": "Sinful Sapphire Ring [1]",
+    "unidName": "Accessory",
+    "resName": "Sin_Ring_S",
+    "description": "Matk + 10%, increases attack speed (reduces delay after attack by 7%). \nWhen equipped with Blue Dragon Plate, Dragon Scale Hood and Dragon Scale Boots,\nreduces global cooldown by 5%, reduces fixed casting time by 0.2 seconds, increases magical damage against angel and dragon race monsters by 20%, reduces damage taken from angel and dragon race monsters by 10%.\n^ffffff_^000000\nClass: ^777777Accessory (Right)^000000 Defense: ^7777770^000000\nWeight: ^77777710^000000\nRequired Level: ^777777170^000000\nJobs: ^777777All^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 510,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "matkPercent": [
+        "10"
+      ],
+      "aspdPercent": [
+        "7"
+      ],
+      "acd": [
+        "EQUIP[Blue Dragon Plate&&Dragon Scale Hood&&Dragon Scale Boots]===5"
+      ],
+      "fct": [
+        "EQUIP[Blue Dragon Plate&&Dragon Scale Hood&&Dragon Scale Boots]===0.2"
+      ],
+      "m_race_angel": [
+        "EQUIP[Blue Dragon Plate&&Dragon Scale Hood&&Dragon Scale Boots]===20"
+      ],
+      "m_race_dragon": [
+        "EQUIP[Blue Dragon Plate&&Dragon Scale Hood&&Dragon Scale Boots]===20"
+      ]
+    }
+  },
+  "490053": {
+    "id": 490053,
+    "aegisName": "Sin_Necklace_S",
+    "name": "Sinful Sapphire Necklace [1]",
+    "unidName": "Accessory",
+    "resName": "Sin_Necklace_S",
+    "description": "Matk + 10%, reduces variable casting time by 7%. \nWhen equipped with Sinful Sapphire Ring,\nreduces global cooldown by 5%, reduces fixed casting time by 0.3 seconds, increases magical damage against angel and dragon race monsters by 15%.\n^ffffff_^000000\nClass: ^777777Accessory (Left)^000000\nDefense: ^7777770^000000\nWeight: ^77777710^000000\nRequired Level: ^777777170^000000\nJobs: ^777777All^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 511,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "matkPercent": [
+        "10"
+      ],
+      "vct": [
+        "7"
+      ],
+      "acd": [
+        "EQUIP[Sinful Sapphire Ring]===5"
+      ],
+      "fct": [
+        "EQUIP[Sinful Sapphire Ring]===0.3"
+      ],
+      "m_race_angel": [
+        "EQUIP[Sinful Sapphire Ring]===15"
+      ],
+      "m_race_dragon": [
+        "EQUIP[Sinful Sapphire Ring]===15"
+      ]
+    }
+  },
+  "490054": {
+    "id": 490054,
+    "aegisName": "Sin_Ring_O",
+    "name": "Sinful Opal Ring [1]",
+    "unidName": "Accessory",
+    "resName": "Sin_Ring_O",
+    "description": "Atk + 10%, increases attack speed (reduces delay after attack by 7%). \nWhen equipped with Silver Dragon Plate, Dragon Scale Hood and Dragon Scale Boots,\nreduces global cooldown by 5%, reduces fixed casting time by 0.2 seconds, increases physical damage against angel and dragon race monsters by 20%, reduces damage taken from angel and dragon race monsters by 10%.\n^ffffff_^000000\nClass: ^777777Accessory (Right)^000000 Defense: ^7777770^000000\nWeight: ^77777710^000000\nRequired Level: ^777777170^000000\nJobs: ^777777All^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 510,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atkPercent": [
+        "10"
+      ],
+      "aspdPercent": [
+        "7"
+      ],
+      "acd": [
+        "EQUIP[Silver Dragon Plate&&Dragon Scale Hood&&Dragon Scale Boots]===5"
+      ],
+      "fct": [
+        "EQUIP[Silver Dragon Plate&&Dragon Scale Hood&&Dragon Scale Boots]===0.2"
+      ],
+      "p_race_angel": [
+        "EQUIP[Silver Dragon Plate&&Dragon Scale Hood&&Dragon Scale Boots]===20"
+      ],
+      "p_race_dragon": [
+        "EQUIP[Silver Dragon Plate&&Dragon Scale Hood&&Dragon Scale Boots]===20"
+      ]
+    }
+  },
+  "490055": {
+    "id": 490055,
+    "aegisName": "Sin_Necklace_O",
+    "name": "Sinful Opal Necklace [1]",
+    "unidName": "Accessory",
+    "resName": "Sin_Necklace_O",
+    "description": "Atk + 10%, reduces variable casting time by 7%. \nWhen equipped with Sinful Opal Ring,\nreduces global cooldown by 5%, reduces fixed casting time by 0.3 seconds, increases physical damage against angel and dragon race monsters by 15%.\n^ffffff_^000000\nClass: ^777777Accessory (Left)^000000\nDefense: ^7777770^000000\nWeight: ^77777710^000000\nRequired Level: ^777777170^000000\nJobs: ^777777All^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 511,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atkPercent": [
+        "10"
+      ],
+      "vct": [
+        "7"
+      ],
+      "acd": [
+        "EQUIP[Sinful Opal Ring]===5"
+      ],
+      "fct": [
+        "EQUIP[Sinful Opal Ring]===0.3"
+      ],
+      "p_race_angel": [
+        "EQUIP[Sinful Opal Ring]===15"
+      ],
+      "p_race_dragon": [
+        "EQUIP[Sinful Opal Ring]===15"
+      ]
+    }
+  },
   "490089": {
     "id": 490089,
     "aegisName": "Alice_Hug_Pillow_TW",

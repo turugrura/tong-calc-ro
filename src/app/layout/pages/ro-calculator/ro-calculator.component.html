@@ -201,7 +201,7 @@
                 pButton
                 label="Save"
                 [loading]="isInProcessingPreset"
-                [disabled]="!presetName.value"
+                [disabled]="!presetName.value || isInProcessingPreset"
                 (click)="updatePreset(presetName.value)"
               ></button>
               <button
@@ -209,7 +209,7 @@
                 class="p-button-secondary"
                 pButton
                 icon="pi pi-cog"
-                [loading]="isInProcessingPreset"
+                [disabled]="isInProcessingPreset"
                 (click)="openPresetManagement()"
               ></button>
             </div>
