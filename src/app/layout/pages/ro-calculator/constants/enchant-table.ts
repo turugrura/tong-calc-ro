@@ -602,7 +602,7 @@ const tempHead3 = [
   'Time_Jewely_Dex_3',
   ...tempHead4,
 ];
-const tempHead2 = [...labHead2, ...ea14, ...sh14, ...sp14, ...aspd14];
+const tempHead2 = [...bioHead2, ...ea14, ...sh14, ...sp14, ...aspd14];
 
 const sarahAcc4 = [...critical23, ...fatal12, ...ea12, ...matk12, ...aspd12, ...delay12, ...perfectD12];
 const sarahAcc3 = [...critical24, ...fatal13, ...ea13, ...matk13, ...aspd13, ...delay13, ...perfectD13];

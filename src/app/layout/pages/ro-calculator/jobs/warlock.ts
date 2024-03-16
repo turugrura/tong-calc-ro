@@ -263,6 +263,23 @@ export class Warlock extends CharacterBase {
         },
       },
     },
+    {
+      label: 'Drain Life Lv5',
+      name: 'Drain Life',
+      value: 'Drain Life==5',
+      acd: 0,
+      fct: 1,
+      vct: 4,
+      cd: 2,
+      isMatk: true,
+      element: ElementType.Neutral,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const baseLevel = model.level;
+
+        return (skillLevel * 200 + status.totalInt) * (baseLevel / 100);
+      },
+    },
   ];
   protected _activeSkillList: ActiveSkillModel[] = [
     {
