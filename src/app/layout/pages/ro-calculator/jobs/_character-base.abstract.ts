@@ -160,11 +160,35 @@ export abstract class CharacterBase {
   }
 
   get atkSkills() {
+    const skills: AtkSkillModel[] = [
+      ...this._atkSkillList,
+      {
+        name: 'Napalm Vulcan',
+        label: 'Napalm Vulcan Lv4',
+        value: 'Napalm Vulcan==4',
+        fct: 0.3,
+        vct: 0.5,
+        acd: 0.5,
+        cd: 1,
+        isMatk: true,
+        element: ElementType.Ghost,
+        hit: 4,
+        formula: (input: AtkSkillFormulaInput): number => {
+          const { model, skillLevel } = input;
+          const baseLevel = model.level;
+
+          return skillLevel * 70 * (baseLevel / 100);
+        },
+        finalDmgFormula: (input) => {
+          return input.damage * input.skillLevel;
+        },
+      },
+    ];
     if (environment.production) {
-      return this._atkSkillList.filter((a) => !a.isDevMode);
+      return skills.filter((a) => !a.isDevMode);
     }
 
-    return this._atkSkillList;
+    return skills;
   }
 
   get passiveSkills() {

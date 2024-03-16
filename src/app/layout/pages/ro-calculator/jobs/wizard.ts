@@ -44,12 +44,15 @@ export class Wizard extends CharacterBase {
       cd: 1,
       isMatk: true,
       element: ElementType.Ghost,
-      totalHit: 5,
+      hit: 5,
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
 
         return skillLevel * 70 * (baseLevel / 100);
+      },
+      finalDmgFormula: (input) => {
+        return input.damage * input.skillLevel;
       },
     },
     {

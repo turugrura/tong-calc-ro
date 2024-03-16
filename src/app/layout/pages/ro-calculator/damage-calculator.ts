@@ -822,9 +822,10 @@ export class DamageCalculator {
     skillData: AtkSkillModel;
     baseSkillDamage: number;
     weaponPropertyAtk: ElementType;
+    formulaParams?: any;
   }): DamageResultModel {
-    const { skillData, baseSkillDamage, weaponPropertyAtk } = params;
-    const { name: skillName, element, isIgnoreDef = false } = skillData;
+    const { skillData, baseSkillDamage, weaponPropertyAtk, formulaParams } = params;
+    const { name: skillName, element, isIgnoreDef = false, finalDmgFormula } = skillData;
     const { softMDef } = this.monsterData;
 
     const skillPropertyAtk = element || weaponPropertyAtk;
@@ -870,6 +871,10 @@ export class DamageCalculator {
       total = floor(total * finalDmgMultiplier);
       total = this.applyFinalMultiplier(total, 'magic');
       total = floor(total * raid);
+
+      if (!!finalDmgFormula && typeof finalDmgFormula === 'function') {
+        return finalDmgFormula({ damage: total, ...formulaParams });
+      }
 
       return this.toPreventNegativeDmg(total);
     };
