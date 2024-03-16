@@ -215,7 +215,7 @@
             </div>
           </div>
           <div class="col-12">
-            <div class="p-inputgroup">
+            <div class="p-inputgroup dropdown-joblist">
               <p-dropdown
                 [autoDisplayFirst]="false"
                 [options]="preSets"
@@ -223,7 +223,20 @@
                 filterBy="label"
                 placeholder="Presets"
                 [(ngModel)]="selectedPreset"
-              ></p-dropdown>
+              >
+                <ng-template let-job pTemplate="selectedItem">
+                  <div class="flex gap-2 py-0 align-items-center" *ngIf="model.class">
+                    <img src="assets/demo/images/jobs/icon_jobs_{{ job.icon }}.png" alt="" class="job_img" />
+                    <div class="text_ellips">{{ job.label }}</div>
+                  </div>
+                </ng-template>
+                <ng-template let-job pTemplate="item">
+                  <div class="flex gap-2 py-0">
+                    <img src="assets/demo/images/jobs/icon_jobs_{{ job.icon }}.png" alt="" class="job_img" />
+                    <div class="text_ellips">{{ job.label }}</div>
+                  </div>
+                </ng-template>
+              </p-dropdown>
               <p-splitButton
                 styleClass="p-button-help"
                 icon="pi pi-download"

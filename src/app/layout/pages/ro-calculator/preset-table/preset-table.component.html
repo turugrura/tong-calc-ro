@@ -198,7 +198,7 @@
     </div>
 
     <div class="grid">
-      <div class="col-fixed flex gap-2">
+      <div class="col-fixed flex gap-2" *ngIf="!!model?.class">
         <img src="assets/demo/images/jobs/icon_jobs_{{ jobIconMap[model?.class] }}.png" alt="" class="job_img" />
         <span class="summary_highlight text-xl"> {{ classLabelMap[model?.class] }} </span>
       </div>

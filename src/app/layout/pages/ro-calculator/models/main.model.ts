@@ -24,9 +24,12 @@ export interface MainModel extends Partial<EquipmentModel> {
   rawOptionTxts: string[];
 
   skillBuffs: number[];
+  skillBuffMap: Record<string, number>;
 
   activeSkills: number[];
+  activeSkillMap: Record<string, number>;
   passiveSkills: number[];
+  passiveSkillMap: Record<string, number>;
   consumables: number[];
   consumables2: number[];
   aspdPotion?: number;

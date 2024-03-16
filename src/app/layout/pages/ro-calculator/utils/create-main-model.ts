@@ -111,9 +111,12 @@ export const createMainModel = (): MainModel => ({
   shadowPendantRefine: undefined,
 
   skillBuffs: [],
+  skillBuffMap: {},
 
+  activeSkillMap: {},
   activeSkills: [],
   passiveSkills: [],
+  passiveSkillMap: {},
   consumables: [],
   consumables2: [],
   aspdPotion: undefined,

@@ -35,7 +35,7 @@ import { ItemListModel } from './models/item-list.model';
 import { getMonsterSpawnMap } from './constants/monster-spawn-mapper';
 import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { PresetTableComponent } from './preset-table/preset-table.component';
-import { ClassName } from './jobs/_class-name';
+import { ClassIcon, ClassName } from './jobs/_class-name';
 import { JobBuffs } from './constants/job-buffs';
 import { environment } from 'src/environments/environment';
 import { MonsterDataViewComponent } from './monster-data-view/monster-data-view.component';
@@ -178,7 +178,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   enchants: DropdownModel[] = [];
   skillBuffs = JobBuffs;
 
-  preSets: DropdownModel[] = [];
+  preSets: (DropdownModel & { icon: string })[] = [];
   selectedPreset = undefined;
   isInProcessingPreset = false;
 
@@ -479,7 +479,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         }
         this.calculate();
         this.calcCompare();
-        this.saveItemSet();
+        this.saveCurrentStateItemset();
         this.resetItemDescription();
         this.onSelectItemDescription(Boolean(this.selectedCompareItemDesc));
         this.setRaceTable();
@@ -1115,6 +1115,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
               return {
                 label: p.label,
                 value: p.id,
+                icon: ClassIcon[p.classId],
               };
             });
           }
@@ -1123,7 +1124,12 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
       this.calAPIWithLoading(ob);
     } else {
-      this.preSets = this.getPresetList();
+      this.preSets = this.getPresetList().map((a) => {
+        return {
+          ...a,
+          icon: ClassIcon[(a as any)?.model?.class],
+        };
+      });
     }
   }
 
@@ -1213,6 +1219,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
                 return {
                   label: a.label,
                   value: a.id,
+                  icon: ClassIcon[a.classId],
                 };
               });
               return of(preset);
@@ -1540,8 +1547,8 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       .subscribe();
   }
 
-  saveItemSet() {
-    localStorage.setItem('ro-set', JSON.stringify(this.model));
+  private saveCurrentStateItemset() {
+    localStorage.setItem('ro-set', JSON.stringify(toUpsertPresetModel(this.model, this.selectedCharacter)));
   }
 
   private resetItemDescription() {
@@ -1593,7 +1600,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         value: name,
       };
     });
-    this.atkSkillCascades = this.selectedCharacter.atkSkills;
+    // this.atkSkillCascades = this.selectedCharacter.atkSkills;
   }
 
   private setDefaultSkill() {
@@ -1640,21 +1647,25 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
   private setSkillModelArray() {
     const { activeSkills, passiveSkills } = this.selectedCharacter;
+    let { skillBuffMap, activeSkillMap, passiveSkillMap } = this.model;
+    if (!skillBuffMap || typeof skillBuffMap !== 'object') skillBuffMap = {};
+    if (!activeSkillMap || typeof activeSkillMap !== 'object') activeSkillMap = {};
+    if (!passiveSkillMap || typeof passiveSkillMap !== 'object') passiveSkillMap = {};
 
     this.model.skillBuffs = this.skillBuffs.map((skill, i) => {
-      const savedVal = this.model.skillBuffs[i];
+      const savedVal = skillBuffMap[skill.name] ?? this.model.skillBuffs[i];
       const found = skill.dropdown.find((a) => a.value === savedVal);
 
       return found ? savedVal : 0;
     });
     this.model.activeSkills = activeSkills.map((skill, i) => {
-      const savedVal = this.model.activeSkills[i];
+      const savedVal = activeSkillMap[skill.name] ?? this.model.activeSkills[i];
       const found = skill.dropdown.find((a) => a.value === savedVal);
 
       return found ? savedVal : 0;
     });
     this.model.passiveSkills = passiveSkills.map((skill, i) => {
-      const savedVal = this.model.passiveSkills[i];
+      const savedVal = passiveSkillMap[skill.name] ?? this.model.passiveSkills[i];
       const found = skill.dropdown.find((a) => a.value === savedVal);
 
       return found ? savedVal : 0;
@@ -2654,6 +2665,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
           return {
             label: a.label,
             value: a.id,
+            icon: ClassIcon[a.classId],
           };
         });
         console.log('preset sycned');

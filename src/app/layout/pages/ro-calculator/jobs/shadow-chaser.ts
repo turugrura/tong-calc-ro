@@ -6,7 +6,7 @@ import {
   CharacterBase,
   PassiveSkillModel,
 } from './_character-base.abstract';
-import { DarkClaw, NoLimit, ShieldSpellFn } from '../constants/share-active-skills';
+import { DarkClawFn, NoLimit, ShieldSpellFn } from '../constants/share-active-skills';
 import { Thief } from './thief';
 import { InfoForClass } from '../models/info-for-class.model';
 import { ElementType } from '../constants/element-type.const';
@@ -345,7 +345,7 @@ export class ShadowChaser extends CharacterBase {
       ],
     },
     ShieldSpellFn(),
-    DarkClaw,
+    DarkClawFn(),
     NoLimit,
   ];
 

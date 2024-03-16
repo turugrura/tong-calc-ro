@@ -58363,11 +58363,11 @@
         "EQUIP[Illusion Shoes]40"
       ],
       "Hundred Spears": [
-        "EQUIP[ขั้นอัพเกรดของ Illusion Pole Axe&&Illusion Shoes]REFINE[boot==7]7===20",
-        "EQUIP[ขั้นอัพเกรดของ Illusion Pole Axe&&Illusion Shoes]REFINE[weapon,boot==22]20"
+        "EQUIP[Illusion Shoes]REFINE[boot==7]7===20",
+        "EQUIP[Illusion Shoes]REFINE[weapon,boot==22]20"
       ],
       "atkPercent": [
-        "EQUIP[ขั้นอัพเกรดของ Illusion Pole Axe&&Illusion Shoes]REFINE[weapon,boot==18]10"
+        "EQUIP[Illusion Shoes]REFINE[weapon,boot==18]10"
       ]
     }
   },

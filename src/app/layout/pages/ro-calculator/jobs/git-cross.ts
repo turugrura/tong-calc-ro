@@ -8,7 +8,7 @@ import {
   PassiveSkillModel,
 } from './_character-base.abstract';
 import { InfoForClass } from '../models/info-for-class.model';
-import { DarkClaw } from '../constants/share-active-skills';
+import { DarkClawFn } from '../constants/share-active-skills';
 import { ElementType } from '../constants/element-type.const';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
@@ -306,7 +306,7 @@ export class GitCross extends CharacterBase {
   ];
 
   protected _activeSkillList: ActiveSkillModel[] = [
-    DarkClaw,
+    DarkClawFn(),
     {
       inputType: 'dropdown',
       label: 'Spin Count',
