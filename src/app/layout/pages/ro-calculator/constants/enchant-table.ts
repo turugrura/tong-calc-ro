@@ -509,7 +509,7 @@ const automaticArmor2 = [
   'Automatic_Orb29',
   'Automatic_Orb36',
 ];
-const automaticArmor34 = [...automaticArmor2, ...automaticJobs];
+const automaticArmor = [...automaticArmor2, ...automaticJobs];
 const automaticGarment = ['Automatic_Orb21', 'Automatic_Orb22', 'Automatic_Orb23', 'Automatic_Orb38'];
 const automaticBoot = ['Automatic_Orb15', 'Automatic_Orb16', 'Automatic_Orb30', 'Automatic_Orb37', 'Automatic_Orb41', 'Automatic_Orb42', 'Automatic_Orb43', 'Automatic_Orb44', 'Automatic_Orb45'];
 const automaticAcc = ['Automatic_Orb39', 'Automatic_Orb11', 'Automatic_Orb12', 'Automatic_Orb13', 'Automatic_Orb14', 'Automatic_Orb3', 'Automatic_Orb4'];
@@ -815,8 +815,8 @@ export const EnchantTable: EntTable[] = [
   { name: '[Upgrade] Illusion Ring [1]', enchants: [null, illusionAcc, illusionAcc, illusionAcc] },
   { name: 'Secret Illusion Ring [1]', enchants: [null, ['Improve_Orb_L_Varmundt', ...illusionAcc], illusionAcc, illusionAcc] },
 
-  { name: 'Auto_Armor_A', enchants: [null, automaticArmor2, automaticArmor34, automaticArmor34] },
-  { name: 'Auto_Armor_B', enchants: [null, automaticArmor2, automaticArmor34, automaticArmor34] },
+  { name: 'Auto_Armor_A', enchants: [null, automaticArmor, automaticArmor, automaticArmor] },
+  { name: 'Auto_Armor_B', enchants: [null, automaticArmor, automaticArmor, automaticArmor] },
   { name: 'Auto_Engine_A', enchants: [null, automaticGarment, automaticGarment, automaticGarment] },
   { name: 'Auto_Engine_B', enchants: [null, automaticGarment, automaticGarment, automaticGarment] },
   { name: 'Auto_Leg_A', enchants: [null, automaticBoot, automaticBoot, automaticBoot] },

@@ -5476,6 +5476,60 @@
       ]
     }
   },
+  "4388": {
+    "id": 4388,
+    "aegisName": "Deathword_Card",
+    "name": "Death Word Card",
+    "unidName": "Death Word Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่มความรุนแรงของสกิล\nNapalm Beat,\nSoul Strike และ\nNapalm Vulcan 5%\nเสีย SP 50\nถ้าอาวุธถูกถอดออก\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Soul",
+    "script": {
+      "Napalm Beat": [
+        "5"
+      ],
+      "Soul Strike": [
+        "5"
+      ],
+      "Napalm Vulcan": [
+        "5"
+      ]
+    }
+  },
+  "4392": {
+    "id": 4392,
+    "aegisName": "Observation_Card",
+    "name": "Dame of Sentinel Card",
+    "unidName": "Dame of Sentinel Card",
+    "resName": "이름없는카드",
+    "description": "เพิ่มค่า DEX 1 หน่วย\nทุกๆ ค่า VIT 18 หน่วย\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Armor^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 16,
+    "cardPrefix": "of Dexterity Switching",
+    "script": {
+      "dex": [
+        "SUM[vit==18]---1"
+      ]
+    }
+  },
   "4393": {
     "id": 4393,
     "aegisName": "Shelter_Card",
@@ -5499,6 +5553,26 @@
         "SUM[str==18]---1"
       ]
     }
+  },
+  "4394": {
+    "id": 4394,
+    "aegisName": "Solace_Card",
+    "name": "Lady Solace Card",
+    "unidName": "Lady Solace Card",
+    "resName": "이름없는카드",
+    "description": "มีโอกาสร่ายสกิล\nGrand Cross Lv.5\nโดยอัตโนมัติ เมื่อโจมตีทางกายภาพ\n(เฉพาะ Priest / High Priest และ Arch Bishop เท่านั้น)\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Devine Cross",
+    "script": {}
   },
   "4398": {
     "id": 4398,
@@ -14050,6 +14124,28 @@
         "9===25"
       ]
     }
+  },
+  "13154": {
+    "id": 13154,
+    "aegisName": "Rolling_Stone",
+    "name": "Rolling Stone [1]",
+    "unidName": "Shotgun",
+    "resName": "싱글샷건",
+    "description": "ปืนลูกซองที่เสียงยิงเหมือนหินกระทบเหล็ก\nโจมตีแบบหมู่\nประเภท : ^777777Shotgun^000000\nพลังโจมตี : ^777777135^000000\nน้ำหนัก : ^77777790^000000\nอาวุธ Lv : ^7777771^000000\nเลเวลที่ต้องการ : ^77777714^000000\nอาชีพ : ^777777Gunslinger^000000",
+    "slots": 1,
+    "itemTypeId": 1,
+    "itemSubTypeId": 276,
+    "itemLevel": 1,
+    "attack": 135,
+    "defense": null,
+    "weight": 90,
+    "requiredLevel": 14,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Gunslinger"
+    ],
+    "script": {}
   },
   "13189": {
     "id": 13189,
@@ -62507,6 +62603,62 @@
       ]
     }
   },
+  "300269": {
+    "id": 300269,
+    "aegisName": "Eldest_Card",
+    "name": "Eldest Card",
+    "unidName": "Eldest Card",
+    "resName": "이름없는카드",
+    "description": "Increases ghost property magical damage by 10%, MaxSP - 25%.\nWhen equipped with Dame of Sentinel Card and the user's base level is 200 or higher, increases ghost property magical damage by additional 15% per 40 base Int.\nClass: ^777777Card^000000\nCompound on: ^777777Garment^000000\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 4,
+    "cardPrefix": "Eldest",
+    "script": {
+      "m_my_element_ghost": [
+        "10",
+        "SUM[level==200]EQUIP[Dame of Sentinel Card]SUM[int==40]---15"
+      ],
+      "spPercent": [
+        "-25"
+      ]
+    }
+  },
+  "300270": {
+    "id": 300270,
+    "aegisName": "Empathizer_Card",
+    "name": "Empathizer Card",
+    "unidName": "Empathizer Card",
+    "resName": "이름없는카드",
+    "description": "Increases long ranged physical damage by 10%, MaxSP - 25%.\nWhen equipped with Dame of Sentinel Card and the user's base level is 200 or higher, increases long ranged physical damage by additional 15% per 40 base Dex.\nClass: ^777777Card^000000\nCompound on: ^777777Garment^000000\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 4,
+    "cardPrefix": "Empathic",
+    "script": {
+      "range": [
+        "10",
+        "SUM[level==200]EQUIP[Dame of Sentinel Card]SUM[dex==40]---15"
+      ],
+      "spPercent": [
+        "-25"
+      ]
+    }
+  },
   "300271": {
     "id": 300271,
     "aegisName": "Happy_Giver_Card",
@@ -62532,6 +62684,140 @@
       ],
       "spPercent": [
         "-25"
+      ]
+    }
+  },
+  "300272": {
+    "id": 300272,
+    "aegisName": "Pray_Giver_Card",
+    "name": "Pray Giver Card",
+    "unidName": "Pray Giver Card",
+    "resName": "이름없는카드",
+    "description": "Increases holy property magical damage by 10%, MaxSP - 25%.\nWhen equipped with Lady Solace Card and the user's base level is 200 or higher, increases holy property magical damage by additional 15% per 40 base Int.\nClass: ^777777Card^000000\nCompound on: ^777777Garment^000000\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 4,
+    "cardPrefix": "Pray",
+    "script": {
+      "m_my_element_holy": [
+        "10",
+        "SUM[level==200]EQUIP[Lady Solace Card]SUM[int==40]---15"
+      ],
+      "spPercent": [
+        "-25"
+      ]
+    }
+  },
+  "300273": {
+    "id": 300273,
+    "aegisName": "Smile_Giver_Card",
+    "name": "Smile Giver Card",
+    "unidName": "Smile Giver Card",
+    "resName": "이름없는카드",
+    "description": "Increases neutral property magical damage by 10%, MaxSP - 25%.\nWhen equipped with Lady Solace Card and the user's base level is 200 or higher, increases neutral property magical damage by additional 15% per 40 base Int.\nClass: ^777777Card^000000\nCompound on: ^777777Garment^000000\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 4,
+    "cardPrefix": "Smile",
+    "script": {
+      "m_my_element_neutral": [
+        "10",
+        "SUM[level==200]EQUIP[Lady Solace Card]SUM[int==40]---15"
+      ],
+      "spPercent": [
+        "-25"
+      ]
+    }
+  },
+  "300276": {
+    "id": 300276,
+    "aegisName": "Tha_Regret_Card",
+    "name": "Regret of Thanatos Card",
+    "unidName": "Regret of Thanatos Card",
+    "resName": "이름없는카드",
+    "description": "Increases magical damage against angel race monsters by 10%.\nIf the user's base level is 200 or higher, increases magical damage against angel race monsters by additional 20%.\nWhen equipped with Dolor of Thanatos Card, increases magical damage against angel race monsters by additional 20%.\nClass: ^777777Card^000000\nCompound on: ^777777Weapon^000000\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Wing Breaker",
+    "script": {
+      "m_race_angel": [
+        "10",
+        "SUM[level==200]===20",
+        "EQUIP[Dolor of Thanatos Card]===20"
+      ]
+    }
+  },
+  "300278": {
+    "id": 300278,
+    "aegisName": "Void_Mimic_Card",
+    "name": "Void Mimic Card",
+    "unidName": "Void Mimic Card",
+    "resName": "이름없는카드",
+    "description": "Increases critical damage by 15%.\nWhen equipped with Treasure Mimic Card and the user's base level is 200 or higher, increases critical damage by additional 15%.\nClass: ^777777Card^000000\nCompound on: ^777777Accessory^000000\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 136,
+    "cardPrefix": "of Void",
+    "script": {
+      "criDmg": [
+        "15",
+        "EQUIP[Treasure Mimic Card]SUM[level==200]===15"
+      ]
+    }
+  },
+  "300279": {
+    "id": 300279,
+    "aegisName": "Book_Of_Death_Card",
+    "name": "Book of Death Card",
+    "unidName": "Book of Death Card",
+    "resName": "이름없는카드",
+    "description": "Increases Soul Expansion damage by 30%.\nWhen equipped with Death Word Card and the user's base level is 200 or higher, increases ghost property magical damage by 30%.\nClass: ^777777Card^000000\nCompound on: ^777777Weapon^000000\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "Dead-pansion",
+    "script": {
+      "Soul Expansion": [
+        "30"
+      ],
+      "m_my_element_ghost": [
+        "EQUIP[Death Word Card]SUM[level==200]===30"
       ]
     }
   },
