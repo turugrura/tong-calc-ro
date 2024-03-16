@@ -140,6 +140,17 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
 
   updates: { v: string; date: string; logs: string[] }[] = [
     {
+      v: 'V2.0.3',
+      date: '16-03-2567',
+      logs: [
+        'Fixed reported bugs',
+        'Added All class skill (Napalm Vulcan lv4)',
+        'Added Warlock skill (Drain Life)',
+        'Added Buff/Debuff (Shield spell, Dark Claw)',
+        'Added requested items',
+      ],
+    },
+    {
       v: 'V2.0.2',
       date: '11-03-2567',
       logs: ['Added "คลิปวิธีใช้งานเว็บ"', 'Enable Shadow equipment comparing', 'Added requested items & monsters'],
