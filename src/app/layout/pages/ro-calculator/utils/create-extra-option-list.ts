@@ -155,11 +155,7 @@ export const createExtraOptionList = () => {
 
   const DEFAULT_CAP = 10;
   for (const [label, prop, rawMin, rawMax, scale, suffix] of options) {
-    const labelNoPercent = label.startsWith('BaseHP')
-      ? 'BaseHP'
-      : label.startsWith('BaseSP')
-      ? 'BaseSP'
-      : label.replace(' %', '');
+    const labelNoPercent = label.replace(' %', '');
     const values = [] as { label: string; min: number; max: number }[];
     const sign = label === 'Delay' || label === 'VCT' ? '-' : '+';
     const cap = rawMax - rawMin > 20 ? DEFAULT_CAP : rawMax;
@@ -216,3 +212,22 @@ export const createExtraOptionList = () => {
 
   return items;
 };
+
+const optionMap = new Map<string, string>();
+const addToMap = (item: DropdownModel & { children: any[] }) => {
+  const children = item?.children;
+  if (Array.isArray(children) && children.length > 0) {
+    for (const child of children) {
+      addToMap(child);
+    }
+  } else {
+    optionMap.set(item.value as string, item.label);
+  }
+};
+
+const list = createExtraOptionList();
+for (const a of list) {
+  addToMap(a);
+}
+
+export const ExtraOptionMap = optionMap;

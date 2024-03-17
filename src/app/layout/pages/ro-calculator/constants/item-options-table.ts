@@ -19,3 +19,11 @@ export const ItemOptionTable: [ItemTypeEnum, ItemOptionNumber[]][] = [
   [ItemTypeEnum.shadowEarring, [ItemOptionNumber.SD_Ear_1]],
   [ItemTypeEnum.shadowPendant, [ItemOptionNumber.SD_Pan_1]],
 ];
+
+const WeaponTable: typeof ItemOptionTable = [
+  [ItemTypeEnum.leftWeapon, [ItemOptionNumber.W_Right_1, ItemOptionNumber.W_Right_2, ItemOptionNumber.W_Right_3]],
+  [ItemTypeEnum.weapon, [ItemOptionNumber.W_Left_1, ItemOptionNumber.W_Left_2, ItemOptionNumber.W_Left_3]],
+];
+const allTable: typeof ItemOptionTable = [...WeaponTable, ...ItemOptionTable];
+
+export const ItemOptionMap = new Map<ItemTypeEnum, ItemOptionNumber[]>(allTable.map((a) => [a[0], a[1]]));

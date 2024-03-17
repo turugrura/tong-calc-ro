@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MainModel } from '../../ro-calculator/models/main.model';
 import { ItemTypeEnum } from '../../ro-calculator/constants/item-type.enum';
+import { ItemOptionMap } from '../../ro-calculator/constants/item-options-table';
+import { ExtraOptionMap } from '../../ro-calculator/utils/create-extra-option-list';
 
 const displayMainItemKeys = [
   ItemTypeEnum.headUpper,
@@ -19,20 +21,13 @@ const allowHidden = {
   [ItemTypeEnum.leftWeapon]: true,
   [ItemTypeEnum.shield]: true,
 };
-const displayCostumeItemKeys = [
-  // ItemTypeEnum.costumeEnchantUpper,
-  // ItemTypeEnum.costumeEnchantMiddle,
-  // ItemTypeEnum.costumeEnchantLower,
-  // ItemTypeEnum.costumeEnchantGarment,
-  // ItemTypeEnum.costumeEnchantGarment4,
-];
 const displayShadowItemKeys = [
-  // ItemTypeEnum.shadowWeapon,
-  // ItemTypeEnum.shadowArmor,
-  // ItemTypeEnum.shadowShield,
-  // ItemTypeEnum.shadowBoot,
-  // ItemTypeEnum.shadowEarring,
-  // ItemTypeEnum.shadowPendant,
+  ItemTypeEnum.shadowWeapon,
+  ItemTypeEnum.shadowArmor,
+  ItemTypeEnum.shadowShield,
+  ItemTypeEnum.shadowBoot,
+  ItemTypeEnum.shadowEarring,
+  ItemTypeEnum.shadowPendant,
 ];
 
 @Component({
@@ -44,18 +39,31 @@ export class EquipmentInDetailComponent implements OnInit {
   @Input({ required: true }) itemMap = {} as any;
   @Input({ required: true }) model = {} as any as MainModel;
 
-  displayMainItems = [] as any[];
-  displayCostumeItems = [] as any[];
-  displayShadowItems = [] as any[];
+  displayMainItems = [] as {
+    mainId?: number;
+    itemType: ItemTypeEnum;
+    cardIds: any[];
+    enchantIds: any[];
+    optionTxts: string[];
+    isHead?: boolean;
+  }[];
+  // displayCostumeItems = [] as any[];
+  displayShadowItems = [] as {
+    itemType: any;
+    mainId?: number;
+    refineTxt?: string;
+    optionTxts?: string[];
+  }[];
 
   constructor() {}
 
   ngOnInit() {
+    const optTxts = [...(this.model.rawOptionTxts ?? [])];
     this.displayMainItems = displayMainItemKeys
       .map((itemType) => {
         const itemId = this.model[itemType];
         if (!itemId) {
-          return { itemType, cardIds: [], enchantIds: [], isHidden: allowHidden[itemType] || false };
+          return { itemType, cardIds: [], enchantIds: [], optionTxts: [], isHidden: allowHidden[itemType] || false };
         }
 
         const refine = this.model[`${itemType}Refine`];
@@ -81,6 +89,9 @@ export class EquipmentInDetailComponent implements OnInit {
           this.model[`${itemType}Enchant2`],
           this.model[`${itemType}Enchant3`],
         ];
+        const optionTxts = (ItemOptionMap.get(itemType) || []).map((a) => {
+          return ExtraOptionMap.get(optTxts[a]);
+        });
 
         return {
           itemType,
@@ -89,21 +100,22 @@ export class EquipmentInDetailComponent implements OnInit {
           refineTxt: refine > 0 ? `+${refine}` : '',
           cardIds: cardIds.filter(Boolean),
           enchantIds: enchantIds.filter(Boolean),
+          optionTxts: optionTxts.filter(Boolean),
         };
       })
       .filter((a) => !a.isHidden);
 
-    this.displayCostumeItems = displayCostumeItemKeys.map((itemType) => {
-      const itemId = this.model[itemType];
-      if (!itemId) {
-        return { itemType };
-      }
+    // this.displayCostumeItems = displayCostumeItemKeys.map((itemType) => {
+    //   const itemId = this.model[itemType];
+    //   if (!itemId) {
+    //     return { itemType };
+    //   }
 
-      return {
-        itemType,
-        mainId: itemId,
-      };
-    });
+    //   return {
+    //     itemType,
+    //     mainId: itemId,
+    //   };
+    // });
 
     this.displayShadowItems = displayShadowItemKeys.map((itemType) => {
       const itemId = this.model[itemType];
@@ -112,11 +124,15 @@ export class EquipmentInDetailComponent implements OnInit {
       }
 
       const refine = this.model[`${itemType}Refine`];
+      const optionTxts = (ItemOptionMap.get(itemType) || []).map((a) => {
+        return ExtraOptionMap.get(optTxts[a]);
+      });
 
       return {
         itemType,
         mainId: itemId,
         refineTxt: refine > 0 ? `+${refine}` : '',
+        optionTxts: optionTxts.filter(Boolean),
       };
     });
   }

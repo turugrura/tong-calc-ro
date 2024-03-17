@@ -1,80 +1,50 @@
 <div class="grid grid-nogutter">
-  <div class="col-12">
-    <div *ngFor="let item of displayMainItems" class="grid grid-nogutter p-1 item_label_{{ item.itemType }}">
-      <!-- <div class="col-4">
-        <div *ngIf="!item.mainId">--- {{ item.itemType }} ---</div>
-        <div *ngIf="item.mainId" class="item_template flex gap-1">
+  <div class="col-8">
+    <div *ngFor="let item of displayMainItems" class="grid grid-nogutter item_label_{{ item.itemType }}">
+      <div class="col-12 flex gap-2">
+        <div *ngIf="item.mainId" class="item_template mt-1">
           <img src="assets/demo/images/items/{{ item.mainId }}.png" alt="" class="item_img" />
-          <div class="text_ellips pr-2" style="text-overflow: ellipsis">
-            {{ item.refineTxt }} {{ getItemLabel(item.mainId) }}
-          </div>
         </div>
-      </div> -->
-      <div class="col-12">
-        <div class="grid grid-nogutter">
-          <div class="col-1">
-            <!-- <div *ngIf="!item.mainId">{{ item.itemType }}</div> -->
-            <div *ngIf="item.mainId" class="item_template flex">
-              <img src="assets/demo/images/items/{{ item.mainId }}.png" alt="" class="item_img" />
+        <div *ngIf="item.mainId" class="grid grid-nogutter mt-1">
+          <div *ngFor="let cardId of item.cardIds" class="col-12">
+            <div class="item_template flex gap-1">
+              <img *ngIf="item.isHead" src="assets/demo/images/items/{{ cardId }}.png" alt="" class="item_img" />
+              <img *ngIf="!item.isHead" src="assets/demo/images/items/card.png" alt="" class="item_img" />
+              <div class="text_ellips pr-2" style="text-overflow: ellipsis">
+                {{ getItemLabel(cardId) }}
+              </div>
             </div>
           </div>
-          <div class="col-11">
-            <div class="grid grid-nogutter">
-              <div *ngFor="let cardId of item.cardIds" class="col-6">
-                <div class="item_template flex gap-1">
-                  <img *ngIf="item.isHead" src="assets/demo/images/items/{{ cardId }}.png" alt="" class="item_img" />
-                  <img *ngIf="!item.isHead" src="assets/demo/images/items/card.png" alt="" class="item_img" />
-                  <div class="text_ellips pr-2" style="text-overflow: ellipsis">
-                    {{ getItemLabel(cardId) }}
-                  </div>
-                </div>
+          <div *ngFor="let enchantId of item.enchantIds" class="col-12">
+            <div class="item_template flex gap-1">
+              <img src="assets/demo/images/items/{{ enchantId }}.png" alt="" class="item_img" />
+              <div class="text_ellips pr-2" style="text-overflow: ellipsis">
+                {{ getItemLabel(enchantId) }}
               </div>
-              <div *ngFor="let enchantId of item.enchantIds" class="col-6">
-                <div class="item_template flex gap-1">
-                  <img src="assets/demo/images/items/{{ enchantId }}.png" alt="" class="item_img" />
-                  <div class="text_ellips pr-2" style="text-overflow: ellipsis">
-                    {{ getItemLabel(enchantId) }}
-                  </div>
-                </div>
-              </div>
+            </div>
+          </div>
+          <div class="col-12 flex gap-2">
+            <div *ngFor="let txt of item.optionTxts">
+              <div class="option-txt-label">{{ txt }}</div>
             </div>
           </div>
         </div>
       </div>
     </div>
-
-    <!-- <div class="grid grid-nogutter">
-      <div class="col-12 py-1 divider">
-        <p-divider></p-divider>
+  </div>
+  <div class="col-4">
+    <div *ngFor="let item of displayShadowItems" class="flex gap-2 item_label_{{ item.itemType }}">
+      <div *ngIf="item.mainId" class="item_template mt-1">
+        <img src="assets/demo/images/items/{{ item.mainId }}.png" alt="" class="item_img" />
       </div>
-      <div class="col-4">
-        <div
-          *ngFor="let item of displayCostumeItems"
-          class="grid grid-nogutter px-2 py-2 item_label_{{ item.itemType }}"
-          style="min-height: 2rem"
-        >
-          <div class="col-12">
-            <div *ngIf="!item.mainId">--- {{ item.itemType }} ---</div>
-            <div *ngIf="item.mainId" class="item_template flex gap-1">
-              <img src="assets/demo/images/items/{{ item.mainId }}.png" alt="" class="item_img" />
-            </div>
-          </div>
+      <div *ngIf="item.mainId" class="flex gap-2 mt-1">
+        <div *ngFor="let txt of item.optionTxts">
+          <div class="option-txt-label">{{ txt }}</div>
+        </div>
+        <div *ngIf="!item.optionTxts?.length">
+          <div class="option-txt-label">no option</div>
         </div>
       </div>
-      <div class="col-4">
-        <div
-          *ngFor="let item of displayShadowItems"
-          class="grid grid-nogutter px-2 py-2 item_label_{{ item.itemType }}"
-          style="min-height: 2rem"
-        >
-          <div class="col-12">
-            <div *ngIf="!item.mainId">--- {{ item.itemType }} ---</div>
-            <div *ngIf="item.mainId" class="item_template flex gap-1">
-              <img src="assets/demo/images/items/{{ item.mainId }}.png" alt="" class="item_img" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
+    </div>
   </div>
 </div>

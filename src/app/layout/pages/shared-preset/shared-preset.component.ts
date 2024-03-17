@@ -463,7 +463,7 @@ export class SharedPresetComponent implements OnInit, OnDestroy {
       }
     });
 
-    model.rawOptionTxts = toRawOptionTxtList(model, this.items);
+    model.rawOptionTxts = toRawOptionTxtList(model, this.itemMap);
 
     return (
       new Calculator()
