@@ -75154,6 +75154,534 @@
       ]
     }
   },
+  "490056": {
+    "id": 490056,
+    "aegisName": "Shine_Ring_R",
+    "name": "Brilliant Light Ruby Ring [1]",
+    "unidName": "Accessory",
+    "resName": "Shine_Ring_R",
+    "description": "Atk + 10%, increases attack speed (reduces delay after attack by 7%). \nWhen equipped with Str Soutane, Clergy's Manteau and Clergy's Boots,\nreduces global cooldown by 5%, reduces fixed casting time by 0.2 seconds, increases physical damage against angel and demon race monsters by 20%, reduces damage taken from angel and demon race monsters by 10%.\n^ffffff_^000000\nClass: ^777777Accessory (Right)^000000 Defense: ^7777770^000000\nWeight: ^77777710^000000\nRequired Level: ^777777170^000000\nJobs: ^777777All^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 510,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atkPercent": [
+        "10"
+      ],
+      "aspdPercent": [
+        "7"
+      ],
+      "acd": [
+        "EQUIP[Str Soutane&&Clergy's Boots&&Clergy's Manteau]===5"
+      ],
+      "fct": [
+        "EQUIP[Str Soutane&&Clergy's Boots&&Clergy's Manteau]===0.2"
+      ],
+      "p_race_angel": [
+        "EQUIP[Str Soutane&&Clergy's Boots&&Clergy's Manteau]===20"
+      ],
+      "p_race_demon": [
+        "EQUIP[Str Soutane&&Clergy's Boots&&Clergy's Manteau]===20"
+      ]
+    }
+  },
+  "490057": {
+    "id": 490057,
+    "aegisName": "Shine_Necklace_R",
+    "name": "Brilliant Light Ruby Necklace [1]",
+    "unidName": "Accessory",
+    "resName": "Shine_Necklace_R",
+    "description": "Atk + 10%, reduces variable casting time by 7%. \nWhen equipped with Brilliant Light Ruby Ring,\nreduces global cooldown by 5%, reduces fixed casting time by 0.2 seconds, increases physical damage against angel and demon race monsters by 15%.\n^ffffff_^000000\nClass: ^777777Accessory (Left)^000000\nDefense: ^7777770^000000\nWeight: ^77777710^000000\nRequired Level: ^777777170^000000\nJobs: ^777777All^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 511,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atkPercent": [
+        "10"
+      ],
+      "vct": [
+        "7"
+      ],
+      "acd": [
+        "EQUIP[Brilliant Light Ruby Ring]===5"
+      ],
+      "fct": [
+        "EQUIP[Brilliant Light Ruby Ring]===0.2"
+      ],
+      "p_race_angel": [
+        "EQUIP[Brilliant Light Ruby Ring]===15"
+      ],
+      "p_race_demon": [
+        "EQUIP[Brilliant Light Ruby Ring]===15"
+      ]
+    }
+  },
+  "490058": {
+    "id": 490058,
+    "aegisName": "Shine_Ring_A",
+    "name": "Brilliant Light Amethyst Ring [1]",
+    "unidName": "Accessory",
+    "resName": "Shine_Ring_A",
+    "description": "Atk + 7%, Matk + 7%, increases attack speed (reduces delay after attack by 7%). \nWhen equipped with Dex Soutane, Clergy's Manteau and Clergy's Boots,\nreduces global cooldown by 5%, reduces fixed casting time by 0.2 seconds, increases physical and magical damage against angel and demon race monsters by 20%, reduces damage taken from angel and demon race monsters by 10%.\n^ffffff_^000000\nClass: ^777777Accessory (Right)^000000 Defense: ^7777770^000000\nWeight: ^77777710^000000\nRequired Level: ^777777170^000000\nJobs: ^777777All^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 510,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atkPercent": [
+        "7"
+      ],
+      "matkPercent": [
+        "7"
+      ],
+      "aspdPercent": [
+        "7"
+      ],
+      "acd": [
+        "EQUIP[Dex Soutane&&Clergy's Boots&&Clergy's Manteau]===5"
+      ],
+      "fct": [
+        "EQUIP[Dex Soutane&&Clergy's Boots&&Clergy's Manteau]===0.2"
+      ],
+      "p_race_angel": [
+        "EQUIP[Dex Soutane&&Clergy's Boots&&Clergy's Manteau]===20"
+      ],
+      "p_race_demon": [
+        "EQUIP[Dex Soutane&&Clergy's Boots&&Clergy's Manteau]===20"
+      ],
+      "m_race_angel": [
+        "EQUIP[Dex Soutane&&Clergy's Boots&&Clergy's Manteau]===20"
+      ],
+      "m_race_demon": [
+        "EQUIP[Dex Soutane&&Clergy's Boots&&Clergy's Manteau]===20"
+      ]
+    }
+  },
+  "490059": {
+    "id": 490059,
+    "aegisName": "Shine_Necklace_A",
+    "name": "Brilliant Light Amethyst Necklace [1]",
+    "unidName": "Accessory",
+    "resName": "Shine_Necklace_A",
+    "description": "Atk + 7%, Matk + 7%, reduces variable casting time by 7%. \nWhen equipped with Brilliant Light Amethyst Ring,\nreduces global cooldown by 5%, reduces fixed casting time by 0.2 seconds, increases physical and magical damage against angel and demon race monsters by 15%.\n^ffffff_^000000\nClass: ^777777Accessory (Left)^000000\nDefense: ^7777770^000000\nWeight: ^77777710^000000\nRequired Level: ^777777170^000000\nJobs: ^777777All^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 511,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atkPercent": [
+        "7"
+      ],
+      "matkPercent": [
+        "7"
+      ],
+      "vct": [
+        "7"
+      ],
+      "acd": [
+        "EQUIP[Brilliant Light Amethyst Ring]===5"
+      ],
+      "fct": [
+        "EQUIP[Brilliant Light Amethyst Ring]===0.2"
+      ],
+      "p_race_angel": [
+        "EQUIP[Brilliant Light Amethyst Ring]===15"
+      ],
+      "p_race_demon": [
+        "EQUIP[Brilliant Light Amethyst Ring]===15"
+      ],
+      "m_race_angel": [
+        "EQUIP[Brilliant Light Amethyst Ring]===15"
+      ],
+      "m_race_demon": [
+        "EQUIP[Brilliant Light Amethyst Ring]===15"
+      ]
+    }
+  },
+  "490060": {
+    "id": 490060,
+    "aegisName": "Shine_Ring_E",
+    "name": "Brilliant Light Emerald Ring [1]",
+    "unidName": "Accessory",
+    "resName": "Shine_Ring_E",
+    "description": "Atk + 7%, Matk + 7%, increases attack speed (reduces delay after attack by 7%). \nWhen equipped with Vit Soutane, Clergy's Manteau and Clergy's Boots,\nreduces global cooldown by 5%, reduces fixed casting time by 0.2 seconds, increases physical and magical damage against angel and demon race monsters by 20%, reduces damage taken from angel and demon race monsters by 10%.\n^ffffff_^000000\nClass: ^777777Accessory (Right)^000000 Defense: ^7777770^000000\nWeight: ^77777710^000000\nRequired Level: ^777777170^000000\nJobs: ^777777All^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 510,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atkPercent": [
+        "7"
+      ],
+      "matkPercent": [
+        "7"
+      ],
+      "aspdPercent": [
+        "7"
+      ],
+      "acd": [
+        "EQUIP[Vit Soutane&&Clergy's Boots&&Clergy's Manteau]===5"
+      ],
+      "fct": [
+        "EQUIP[Vit Soutane&&Clergy's Boots&&Clergy's Manteau]===0.2"
+      ],
+      "p_race_angel": [
+        "EQUIP[Vit Soutane&&Clergy's Boots&&Clergy's Manteau]===20"
+      ],
+      "p_race_demon": [
+        "EQUIP[Vit Soutane&&Clergy's Boots&&Clergy's Manteau]===20"
+      ],
+      "m_race_angel": [
+        "EQUIP[Vit Soutane&&Clergy's Boots&&Clergy's Manteau]===20"
+      ],
+      "m_race_demon": [
+        "EQUIP[Vit Soutane&&Clergy's Boots&&Clergy's Manteau]===20"
+      ]
+    }
+  },
+  "490061": {
+    "id": 490061,
+    "aegisName": "Shine_Necklace_E",
+    "name": "Brilliant Light Emerald Necklace [1]",
+    "unidName": "Accessory",
+    "resName": "Shine_Necklace_E",
+    "description": "Atk + 7%, Matk + 7%, reduces variable casting time by 7%. \nWhen equipped with Brilliant Light Emerald Ring,\nreduces global cooldown by 5%, reduces fixed casting time by 0.2 seconds, increases physical and magical damage against angel and demon race monsters by 15%.\n^ffffff_^000000\nClass: ^777777Accessory (Left)^000000\nDefense: ^7777770^000000\nWeight: ^77777710^000000\nRequired Level: ^777777170^000000\nJobs: ^777777All^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 511,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atkPercent": [
+        "7"
+      ],
+      "matkPercent": [
+        "7"
+      ],
+      "vct": [
+        "7"
+      ],
+      "acd": [
+        "EQUIP[Brilliant Light Emerald Ring]===5"
+      ],
+      "fct": [
+        "EQUIP[Brilliant Light Emerald Ring]===0.2"
+      ],
+      "p_race_angel": [
+        "EQUIP[Brilliant Light Emerald Ring]===15"
+      ],
+      "p_race_demon": [
+        "EQUIP[Brilliant Light Emerald Ring]===15"
+      ],
+      "m_race_angel": [
+        "EQUIP[Brilliant Light Emerald Ring]===15"
+      ],
+      "m_race_demon": [
+        "EQUIP[Brilliant Light Emerald Ring]===15"
+      ]
+    }
+  },
+  "490062": {
+    "id": 490062,
+    "aegisName": "Shine_Ring_Z",
+    "name": "Brilliant Light Zircon Ring [1]",
+    "unidName": "Accessory",
+    "resName": "Shine_Ring_Z",
+    "description": "Atk + 10%, increases attack speed (reduces delay after attack by 7%). \nWhen equipped with Agi Soutane, Clergy's Manteau and Clergy's Boots,\nreduces global cooldown by 5%, reduces fixed casting time by 0.2 seconds, increases physical damage against angel and demon race monsters by 20%, reduces damage taken from angel and demon race monsters by 10%.\n^ffffff_^000000\nClass: ^777777Accessory (Right)^000000 Defense: ^7777770^000000\nWeight: ^77777710^000000\nRequired Level: ^777777170^000000\nJobs: ^777777All^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 510,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atkPercent": [
+        "10"
+      ],
+      "aspdPercent": [
+        "7"
+      ],
+      "acd": [
+        "EQUIP[Agi Soutane&&Clergy's Boots&&Clergy's Manteau]===5"
+      ],
+      "fct": [
+        "EQUIP[Agi Soutane&&Clergy's Boots&&Clergy's Manteau]===0.2"
+      ],
+      "p_race_angel": [
+        "EQUIP[Agi Soutane&&Clergy's Boots&&Clergy's Manteau]===20"
+      ],
+      "p_race_demon": [
+        "EQUIP[Agi Soutane&&Clergy's Boots&&Clergy's Manteau]===20"
+      ]
+    }
+  },
+  "490063": {
+    "id": 490063,
+    "aegisName": "Shine_Necklace_Z",
+    "name": "Brilliant Light Zircon Necklace [1]",
+    "unidName": "Accessory",
+    "resName": "Shine_Necklace_Z",
+    "description": "Atk + 10%, reduces variable casting time by 7%. \nWhen equipped with Brilliant Light Zircon Ring,\nreduces global cooldown by 5%, reduces fixed casting time by 0.2 seconds, increases physical damage against angel and demon race monsters by 15%.\n^ffffff_^000000\nClass: ^777777Accessory (Left)^000000\nDefense: ^7777770^000000\nWeight: ^77777710^000000\nRequired Level: ^777777170^000000\nJobs: ^777777All^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 511,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atkPercent": [
+        "10"
+      ],
+      "vct": [
+        "7"
+      ],
+      "acd": [
+        "EQUIP[Brilliant Light Zircon Ring]===5"
+      ],
+      "fct": [
+        "EQUIP[Brilliant Light Zircon Ring]===0.2"
+      ],
+      "p_race_angel": [
+        "EQUIP[Brilliant Light Zircon Ring]===15"
+      ],
+      "p_race_demon": [
+        "EQUIP[Brilliant Light Zircon Ring]===15"
+      ]
+    }
+  },
+  "490064": {
+    "id": 490064,
+    "aegisName": "Shine_Ring_S",
+    "name": "Brilliant Light Sapphire Ring [1]",
+    "unidName": "Accessory",
+    "resName": "Shine_Ring_S",
+    "description": "Matk + 10%, increases attack speed (reduces delay after attack by 7%). \nWhen equipped with Int Soutane, Clergy's Manteau and Clergy's Boots,\nreduces global cooldown by 5%, reduces fixed casting time by 0.2 seconds, increases magical damage against angel and demon race monsters by 20%, reduces damage taken from angel and demon race monsters by 10%.\n^ffffff_^000000\nClass: ^777777Accessory (Right)^000000 Defense: ^7777770^000000\nWeight: ^77777710^000000\nRequired Level: ^777777170^000000\nJobs: ^777777All^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 510,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "matkPercent": [
+        "10"
+      ],
+      "aspdPercent": [
+        "7"
+      ],
+      "acd": [
+        "EQUIP[Int Soutane&&Clergy's Boots&&Clergy's Manteau]===5"
+      ],
+      "fct": [
+        "EQUIP[Int Soutane&&Clergy's Boots&&Clergy's Manteau]===0.2"
+      ],
+      "m_race_angel": [
+        "EQUIP[Int Soutane&&Clergy's Boots&&Clergy's Manteau]===20"
+      ],
+      "m_race_demon": [
+        "EQUIP[Int Soutane&&Clergy's Boots&&Clergy's Manteau]===20"
+      ]
+    }
+  },
+  "490065": {
+    "id": 490065,
+    "aegisName": "Shine_Necklace_S",
+    "name": "Brilliant Light Sapphire Necklace [1]",
+    "unidName": "Accessory",
+    "resName": "Shine_Necklace_S",
+    "description": "Matk + 10%, reduces variable casting time by 7%.\n\nWhen equipped with Brilliant Light Sapphire Ring,\nreduces global cooldown by 5%, reduces fixed casting time by 0.2 seconds, increases magical damage against angel and demon race monsters by 15%.\n^ffffff_^000000\nClass: ^777777Accessory (Left)^000000\nDefense: ^7777770^000000\nWeight: ^77777710^000000\nRequired Level: ^777777170^000000\nJobs: ^777777All^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 511,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "matkPercent": [
+        "10"
+      ],
+      "vct": [
+        "7"
+      ],
+      "acd": [
+        "EQUIP[Brilliant Light Sapphire Ring]===5"
+      ],
+      "fct": [
+        "EQUIP[Brilliant Light Sapphire Ring]===0.2"
+      ],
+      "m_race_angel": [
+        "EQUIP[Brilliant Light Sapphire Ring]===15"
+      ],
+      "m_race_demon": [
+        "EQUIP[Brilliant Light Sapphire Ring]===15"
+      ]
+    }
+  },
+  "490066": {
+    "id": 490066,
+    "aegisName": "Shine_Ring_AQ",
+    "name": "Brilliant Light Aquamarine Ring [1]",
+    "unidName": "Accessory",
+    "resName": "Shine_Ring_AQ",
+    "description": "Atk + 10%, increases attack speed (reduces delay after attack by 7%).\n\nWhen equipped with Luk Soutane, Clergy's Manteau and Clergy's Boots,\nreduces global cooldown by 5%, reduces fixed casting time by 0.2 seconds, increases physical damage against angel and demon race monsters by 20%, reduces damage taken from angel and demon race monsters by 10%.\n^ffffff_^000000\nClass: ^777777Accessory (Right)^000000 Defense: ^7777770^000000\nWeight: ^77777710^000000\nRequired Level: ^777777170^000000\nJobs: ^777777All^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 510,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atkPercent": [
+        "10"
+      ],
+      "aspdPercent": [
+        "7"
+      ],
+      "acd": [
+        "EQUIP[Luk Soutane&&Clergy's Boots&&Clergy's Manteau]===5"
+      ],
+      "fct": [
+        "EQUIP[Luk Soutane&&Clergy's Boots&&Clergy's Manteau]===0.2"
+      ],
+      "p_race_angel": [
+        "EQUIP[Luk Soutane&&Clergy's Boots&&Clergy's Manteau]===20"
+      ],
+      "p_race_demon": [
+        "EQUIP[Luk Soutane&&Clergy's Boots&&Clergy's Manteau]===20"
+      ]
+    }
+  },
+  "490067": {
+    "id": 490067,
+    "aegisName": "Shine_Necklace_AQ",
+    "name": "Brilliant Light Aquamarine Necklace [1]",
+    "unidName": "Accessory",
+    "resName": "Shine_Necklace_AQ",
+    "description": "Atk + 10%, reduces variable casting time by 7%.\n\nWhen equipped with Brilliant Light Aquamarine Ring,\nreduces global cooldown by 5%, reduces fixed casting time by 0.2 seconds, increases physical damage against angel and demon race monsters by 15%.\n^ffffff_^000000\nClass: ^777777Accessory (Left)^000000\nDefense: ^7777770^000000\nWeight: ^77777710^000000\nRequired Level: ^777777170^000000\nJobs: ^777777All^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 511,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 170,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atkPercent": [
+        "10"
+      ],
+      "vct": [
+        "7"
+      ],
+      "acd": [
+        "EQUIP[Brilliant Light Aquamarine Ring]===5"
+      ],
+      "fct": [
+        "EQUIP[Brilliant Light Aquamarine Ring]===0.2"
+      ],
+      "p_race_angel": [
+        "EQUIP[Brilliant Light Aquamarine Ring]===15"
+      ],
+      "p_race_demon": [
+        "EQUIP[Brilliant Light Aquamarine Ring]===15"
+      ]
+    }
+  },
   "490089": {
     "id": 490089,
     "aegisName": "Alice_Hug_Pillow_TW",
