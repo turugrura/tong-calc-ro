@@ -102,6 +102,11 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
       link: 'https://www.divine-pride.net/forum/index.php?/topic/4277-kro-thanatos-tower-revamp/',
     },
     {
+      label: 'KRO : Illusion of Under Water',
+      writer: 'Sigma',
+      link: 'https://www.divine-pride.net/forum/index.php?/topic/4319-kro-illusion-of-under-water',
+    },
+    {
       label: 'เจาะลึก Stat ต่างๆ ใน Renewal Part I : Matk & Mdef',
       writer: 'Sigma the fallen',
       link: 'https://web.facebook.com/notes/3202008843255644/',
