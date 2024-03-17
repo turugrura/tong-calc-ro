@@ -67,6 +67,21 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
       link: 'https://irowiki.org/wiki/Main_Page',
     },
     {
+      label: 'ATK',
+      writer: 'IRO Wiki',
+      link: 'https://irowiki.org/wiki/ATK',
+    },
+    {
+      label: 'MATK',
+      writer: 'IRO Wiki',
+      link: 'https://irowiki.org/wiki/MATK',
+    },
+    {
+      label: 'Malangdo Enchants',
+      writer: 'IRO Wiki',
+      link: 'https://irowiki.org/wiki/Malangdo_Enchants',
+    },
+    {
       label: 'KRO : Jobs improvement project',
       writer: 'Sigma',
       link: 'https://www.divine-pride.net/forum/index.php?/topic/3723-kro-jobs-improvement-project',
@@ -82,14 +97,9 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
       link: 'https://www.divine-pride.net/forum/index.php?/topic/3879-kro-glast-heim-challenge-mode-enchant/',
     },
     {
-      label: 'ATK',
-      writer: 'IRO Wiki',
-      link: 'https://irowiki.org/wiki/ATK',
-    },
-    {
-      label: 'MATK',
-      writer: 'IRO Wiki',
-      link: 'https://irowiki.org/wiki/MATK',
+      label: 'KRO : Thanatos Tower revamp',
+      writer: 'Sigma',
+      link: 'https://www.divine-pride.net/forum/index.php?/topic/4277-kro-thanatos-tower-revamp/',
     },
     {
       label: 'เจาะลึก Stat ต่างๆ ใน Renewal Part I : Matk & Mdef',
@@ -102,14 +112,14 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
       link: 'https://www.pingbooster.com/th/blog/detail/ragnarok-online-edp-enchant-deadly-poison-assassin',
     },
     {
+      label: 'คุณสมบัติลับยาแอส ทำยังไงให้ตีแรงที่สุด (โปรดเปิดคำบรรยายเพื่อข้อมูลที่ครบถ้วน)',
+      writer: '/\\ssing (แอสซิ่ง)',
+      link: 'https://youtu.be/WvSbULJ2CGU?si=Ae5vY9teaGZDXSRB',
+    },
+    {
       label: 'Enchants',
       writer: 'trifectaro.com',
       link: 'https://trifectaro.com/mediawiki/index.php/Enchants',
-    },
-    {
-      label: 'Malangdo Enchants',
-      writer: 'IRO Wiki',
-      link: 'https://irowiki.org/wiki/Malangdo_Enchants',
     },
     {
       label: 'Open-source RO emulator',
@@ -125,11 +135,6 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
       label: 'Geffen Magic Tournament Enchant System Update!',
       writer: 'RO GGT',
       link: 'https://ro.gnjoy.in.th/geffen-magic-tournament-enchant-system-update/',
-    },
-    {
-      label: 'คุณสมบัติลับยาแอส ทำยังไงให้ตีแรงที่สุด (โปรดเปิดคำบรรยายเพื่อข้อมูลที่ครบถ้วน)',
-      writer: '/\\ssing (แอสซิ่ง)',
-      link: 'https://youtu.be/WvSbULJ2CGU?si=Ae5vY9teaGZDXSRB',
     },
     // {
     //   label: '',

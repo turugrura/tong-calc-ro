@@ -62743,6 +62743,58 @@
       ]
     }
   },
+  "300274": {
+    "id": 300274,
+    "aegisName": "Tha_Anger_Card",
+    "name": "Anger of Thanatos Card",
+    "unidName": "Anger of Thanatos Card",
+    "resName": "이름없는카드",
+    "description": "Atk - 10%.\nAtk + 3% per 3 refine rate of shield.\nIf refine rate of shield is 11 or higher, Atk + 5%.\nClass: ^777777Card^000000\nCompound on: ^777777Shield^000000\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 32,
+    "cardPrefix": "of Real Rage",
+    "script": {
+      "atkPercent": [
+        "-10",
+        "3---3",
+        "11===5"
+      ]
+    }
+  },
+  "300275": {
+    "id": 300275,
+    "aegisName": "Tha_Horror_Card",
+    "name": "Horror of Thanatos Card",
+    "unidName": "Horror of Thanatos Card",
+    "resName": "이름없는카드",
+    "description": "Matk - 10%.\nMatk + 3% per 3 refine rate of shield.\nIf refine rate of shield is 11 or higher, Matk + 5%.\nClass: ^777777Card^000000\nCompound on: ^777777Shield^000000\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 32,
+    "cardPrefix": "of Real Horror",
+    "script": {
+      "matkPercent": [
+        "-10",
+        "3---3",
+        "11===5"
+      ]
+    }
+  },
   "300276": {
     "id": 300276,
     "aegisName": "Tha_Regret_Card",
@@ -66830,6 +66882,1476 @@
     "script": {
       "acd": [
         "LEARN_SKILL[Soul Destroyer==1]---1"
+      ]
+    }
+  },
+  "310197": {
+    "id": 310197,
+    "aegisName": "Tha_Anger_1",
+    "name": "Anger Lv1",
+    "unidName": "Anger Lv1",
+    "resName": "에너지파편",
+    "description": "ATK + 1%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "atkPercent": [
+        "1"
+      ]
+    }
+  },
+  "310198": {
+    "id": 310198,
+    "aegisName": "Tha_Anger_2",
+    "name": "Anger Lv2",
+    "unidName": "Anger Lv2",
+    "resName": "에너지파편",
+    "description": "ATK + 3%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "atkPercent": [
+        "3"
+      ]
+    }
+  },
+  "310199": {
+    "id": 310199,
+    "aegisName": "Tha_Anger_3",
+    "name": "Anger Lv3",
+    "unidName": "Anger Lv3",
+    "resName": "에너지파편",
+    "description": "ATK + 5%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "atkPercent": [
+        "5"
+      ]
+    }
+  },
+  "310200": {
+    "id": 310200,
+    "aegisName": "Tha_Anger_4",
+    "name": "Anger Lv4",
+    "unidName": "Anger Lv4",
+    "resName": "에너지파편",
+    "description": "ATK + 7%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "atkPercent": [
+        "7"
+      ]
+    }
+  },
+  "310201": {
+    "id": 310201,
+    "aegisName": "Tha_Anger_5",
+    "name": "Anger Lv5",
+    "unidName": "Anger Lv5",
+    "resName": "에너지파편",
+    "description": "ATK + 10%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "atkPercent": [
+        "10"
+      ]
+    }
+  },
+  "310202": {
+    "id": 310202,
+    "aegisName": "Tha_Horror_1",
+    "name": "Horror Lv1",
+    "unidName": "Horror Lv1",
+    "resName": "에너지파편",
+    "description": "MATK + 1%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "matkPercent": [
+        "1"
+      ]
+    }
+  },
+  "310203": {
+    "id": 310203,
+    "aegisName": "Tha_Horror_2",
+    "name": "Horror Lv2",
+    "unidName": "Horror Lv2",
+    "resName": "에너지파편",
+    "description": "MATK + 3%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "matkPercent": [
+        "3"
+      ]
+    }
+  },
+  "310204": {
+    "id": 310204,
+    "aegisName": "Tha_Horror_3",
+    "name": "Horror Lv3",
+    "unidName": "Horror Lv3",
+    "resName": "에너지파편",
+    "description": "MATK + 5%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "matkPercent": [
+        "5"
+      ]
+    }
+  },
+  "310205": {
+    "id": 310205,
+    "aegisName": "Tha_Horror_4",
+    "name": "Horror Lv4",
+    "unidName": "Horror Lv4",
+    "resName": "에너지파편",
+    "description": "MATK + 7%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "matkPercent": [
+        "7"
+      ]
+    }
+  },
+  "310206": {
+    "id": 310206,
+    "aegisName": "Tha_Horror_5",
+    "name": "Horror Lv5",
+    "unidName": "Horror Lv5",
+    "resName": "에너지파편",
+    "description": "MATK + 10%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "matkPercent": [
+        "10"
+      ]
+    }
+  },
+  "310207": {
+    "id": 310207,
+    "aegisName": "Tha_Resent_1",
+    "name": "Resentment Lv1",
+    "unidName": "Resentment Lv1",
+    "resName": "에너지파편",
+    "description": "Increases critical damage by 1%.",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "criDmg": [
+        "1"
+      ]
+    }
+  },
+  "310208": {
+    "id": 310208,
+    "aegisName": "Tha_Resent_2",
+    "name": "Resentment Lv2",
+    "unidName": "Resentment Lv2",
+    "resName": "에너지파편",
+    "description": "Increases critical damage by 3%.",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "criDmg": [
+        "3"
+      ]
+    }
+  },
+  "310209": {
+    "id": 310209,
+    "aegisName": "Tha_Resent_3",
+    "name": "Resentment Lv3",
+    "unidName": "Resentment Lv3",
+    "resName": "에너지파편",
+    "description": "Increases critical damage by 5%.",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "criDmg": [
+        "5"
+      ]
+    }
+  },
+  "310210": {
+    "id": 310210,
+    "aegisName": "Tha_Resent_4",
+    "name": "Resentment Lv4",
+    "unidName": "Resentment Lv4",
+    "resName": "에너지파편",
+    "description": "Increases critical damage by 7%.",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "criDmg": [
+        "7"
+      ]
+    }
+  },
+  "310211": {
+    "id": 310211,
+    "aegisName": "Tha_Resent_5",
+    "name": "Resentment Lv5",
+    "unidName": "Resentment Lv5",
+    "resName": "에너지파편",
+    "description": "Increases critical damage by 10%.",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "criDmg": [
+        "10"
+      ]
+    }
+  },
+  "310212": {
+    "id": 310212,
+    "aegisName": "Tha_Regret_1",
+    "name": "Regret Lv1",
+    "unidName": "Regret Lv1",
+    "resName": "에너지파편",
+    "description": "MHP, MSP + 1%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "hpPercent": [
+        "1"
+      ],
+      "spPercent": [
+        "1"
+      ]
+    }
+  },
+  "310213": {
+    "id": 310213,
+    "aegisName": "Tha_Regret_2",
+    "name": "Regret Lv2",
+    "unidName": "Regret Lv2",
+    "resName": "에너지파편",
+    "description": "MHP, MSP + 3%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "hpPercent": [
+        "3"
+      ],
+      "spPercent": [
+        "3"
+      ]
+    }
+  },
+  "310214": {
+    "id": 310214,
+    "aegisName": "Tha_Regret_3",
+    "name": "Regret Lv3",
+    "unidName": "Regret Lv3",
+    "resName": "에너지파편",
+    "description": "MHP, MSP + 5%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "hpPercent": [
+        "5"
+      ],
+      "spPercent": [
+        "5"
+      ]
+    }
+  },
+  "310215": {
+    "id": 310215,
+    "aegisName": "Tha_Regret_4",
+    "name": "Regret Lv4",
+    "unidName": "Regret Lv4",
+    "resName": "에너지파편",
+    "description": "MHP, MSP + 7%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "hpPercent": [
+        "7"
+      ],
+      "spPercent": [
+        "7"
+      ]
+    }
+  },
+  "310216": {
+    "id": 310216,
+    "aegisName": "Tha_Regret_5",
+    "name": "Regret Lv5",
+    "unidName": "Regret Lv5",
+    "resName": "에너지파편",
+    "description": "MHP, MSP + 10%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "hpPercent": [
+        "10"
+      ],
+      "spPercent": [
+        "10"
+      ]
+    }
+  },
+  "310217": {
+    "id": 310217,
+    "aegisName": "Tha_Empatize_1",
+    "name": "Empathy Lv1",
+    "unidName": "Empathy Lv1",
+    "resName": "원념의파편",
+    "description": "ATK + 1%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "atkPercent": [
+        "1"
+      ]
+    }
+  },
+  "310218": {
+    "id": 310218,
+    "aegisName": "Tha_Empatize_2",
+    "name": "Empathy Lv2",
+    "unidName": "Empathy Lv2",
+    "resName": "원념의파편",
+    "description": "ATK + 3%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "atkPercent": [
+        "3"
+      ]
+    }
+  },
+  "310219": {
+    "id": 310219,
+    "aegisName": "Tha_Empatize_3",
+    "name": "Empathy Lv3",
+    "unidName": "Empathy Lv3",
+    "resName": "원념의파편",
+    "description": "ATK + 5%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "atkPercent": [
+        "5"
+      ]
+    }
+  },
+  "310220": {
+    "id": 310220,
+    "aegisName": "Tha_Empatize_4",
+    "name": "Empathy Lv4",
+    "unidName": "Empathy Lv4",
+    "resName": "원념의파편",
+    "description": "ATK + 7%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "atkPercent": [
+        "7"
+      ]
+    }
+  },
+  "310221": {
+    "id": 310221,
+    "aegisName": "Tha_Empatize_5",
+    "name": "Empathy Lv5",
+    "unidName": "Empathy Lv5",
+    "resName": "원념의파편",
+    "description": "ATK + 10%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "atkPercent": [
+        "10"
+      ]
+    }
+  },
+  "310222": {
+    "id": 310222,
+    "aegisName": "Tha_Happy_1",
+    "name": "Happiness Lv1",
+    "unidName": "Happiness Lv1",
+    "resName": "원념의파편",
+    "description": "MATK + 1%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "matkPercent": [
+        "1"
+      ]
+    }
+  },
+  "310223": {
+    "id": 310223,
+    "aegisName": "Tha_Happy_2",
+    "name": "Happiness Lv2",
+    "unidName": "Happiness Lv2",
+    "resName": "원념의파편",
+    "description": "MATK + 3%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "matkPercent": [
+        "3"
+      ]
+    }
+  },
+  "310224": {
+    "id": 310224,
+    "aegisName": "Tha_Happy_3",
+    "name": "Happiness Lv3",
+    "unidName": "Happiness Lv3",
+    "resName": "원념의파편",
+    "description": "MATK + 5%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "matkPercent": [
+        "5"
+      ]
+    }
+  },
+  "310225": {
+    "id": 310225,
+    "aegisName": "Tha_Happy_4",
+    "name": "Happiness Lv4",
+    "unidName": "Happiness Lv4",
+    "resName": "원념의파편",
+    "description": "MATK + 7%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "matkPercent": [
+        "7"
+      ]
+    }
+  },
+  "310226": {
+    "id": 310226,
+    "aegisName": "Tha_Happy_5",
+    "name": "Happiness Lv5",
+    "unidName": "Happiness Lv5",
+    "resName": "원념의파편",
+    "description": "MATK + 10%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "matkPercent": [
+        "10"
+      ]
+    }
+  },
+  "310227": {
+    "id": 310227,
+    "aegisName": "Tha_Comfort_1",
+    "name": "Shelter Lv1",
+    "unidName": "Shelter Lv1",
+    "resName": "원념의파편",
+    "description": "Increases critical damage by 1%.",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "criDmg": [
+        "1"
+      ]
+    }
+  },
+  "310228": {
+    "id": 310228,
+    "aegisName": "Tha_Comfort_2",
+    "name": "Shelter Lv2",
+    "unidName": "Shelter Lv2",
+    "resName": "원념의파편",
+    "description": "Increases critical damage by 3%.",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "criDmg": [
+        "3"
+      ]
+    }
+  },
+  "310229": {
+    "id": 310229,
+    "aegisName": "Tha_Comfort_3",
+    "name": "Shelter Lv3",
+    "unidName": "Shelter Lv3",
+    "resName": "원념의파편",
+    "description": "Increases critical damage by 5%.",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "criDmg": [
+        "5"
+      ]
+    }
+  },
+  "310230": {
+    "id": 310230,
+    "aegisName": "Tha_Comfort_4",
+    "name": "Shelter Lv4",
+    "unidName": "Shelter Lv4",
+    "resName": "원념의파편",
+    "description": "Increases critical damage by 7%.",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "criDmg": [
+        "7"
+      ]
+    }
+  },
+  "310231": {
+    "id": 310231,
+    "aegisName": "Tha_Comfort_5",
+    "name": "Shelter Lv5",
+    "unidName": "Shelter Lv5",
+    "resName": "원념의파편",
+    "description": "Increases critical damage by 10%.",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "criDmg": [
+        "10"
+      ]
+    }
+  },
+  "310232": {
+    "id": 310232,
+    "aegisName": "Tha_Console_1",
+    "name": "Solace Lv1",
+    "unidName": "Solace Lv1",
+    "resName": "원념의파편",
+    "description": "MHP, MSP + 1%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "hpPercent": [
+        "1"
+      ],
+      "spPercent": [
+        "1"
+      ]
+    }
+  },
+  "310233": {
+    "id": 310233,
+    "aegisName": "Tha_Console_2",
+    "name": "Solace Lv2",
+    "unidName": "Solace Lv2",
+    "resName": "원념의파편",
+    "description": "MHP, MSP + 3%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "hpPercent": [
+        "3"
+      ],
+      "spPercent": [
+        "3"
+      ]
+    }
+  },
+  "310234": {
+    "id": 310234,
+    "aegisName": "Tha_Console_3",
+    "name": "Solace Lv3",
+    "unidName": "Solace Lv3",
+    "resName": "원념의파편",
+    "description": "MHP, MSP + 5%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "hpPercent": [
+        "5"
+      ],
+      "spPercent": [
+        "5"
+      ]
+    }
+  },
+  "310235": {
+    "id": 310235,
+    "aegisName": "Tha_Console_4",
+    "name": "Solace Lv4",
+    "unidName": "Solace Lv4",
+    "resName": "원념의파편",
+    "description": "MHP, MSP + 7%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "hpPercent": [
+        "7"
+      ],
+      "spPercent": [
+        "7"
+      ]
+    }
+  },
+  "310236": {
+    "id": 310236,
+    "aegisName": "Tha_Console_5",
+    "name": "Solace Lv5",
+    "unidName": "Solace Lv5",
+    "resName": "원념의파편",
+    "description": "MHP, MSP + 10%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "hpPercent": [
+        "10"
+      ],
+      "spPercent": [
+        "10"
+      ]
+    }
+  },
+  "310237": {
+    "id": 310237,
+    "aegisName": "Tha_Wrath_1",
+    "name": "Inverse Scale Lv1",
+    "unidName": "Inverse Scale Lv1",
+    "resName": "유리구슬",
+    "description": "Increases physical damage against angel and dragon race monsters by 10%.",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "p_race_angel": [
+        "10"
+      ],
+      "p_race_dragon": [
+        "10"
+      ]
+    }
+  },
+  "310238": {
+    "id": 310238,
+    "aegisName": "Tha_Wrath_2",
+    "name": "Inverse Scale Lv2",
+    "unidName": "Inverse Scale Lv2",
+    "resName": "유리구슬",
+    "description": "Increases physical damage against angel and dragon race monsters by 15%.",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "p_race_angel": [
+        "15"
+      ],
+      "p_race_dragon": [
+        "15"
+      ]
+    }
+  },
+  "310239": {
+    "id": 310239,
+    "aegisName": "Tha_Wrath_3",
+    "name": "Inverse Scale Lv3",
+    "unidName": "Inverse Scale Lv3",
+    "resName": "유리구슬",
+    "description": "Increases physical damage against angel and dragon race monsters by 20%.",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "p_race_angel": [
+        "20"
+      ],
+      "p_race_dragon": [
+        "20"
+      ]
+    }
+  },
+  "310240": {
+    "id": 310240,
+    "aegisName": "Tha_Wrath_4",
+    "name": "Inverse Scale Lv4",
+    "unidName": "Inverse Scale Lv4",
+    "resName": "유리구슬",
+    "description": "Increases physical damage against angel and dragon race monsters by 25%.",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "p_race_angel": [
+        "25"
+      ],
+      "p_race_dragon": [
+        "25"
+      ]
+    }
+  },
+  "310241": {
+    "id": 310241,
+    "aegisName": "Tha_Wrath_5",
+    "name": "Inverse Scale Lv5",
+    "unidName": "Inverse Scale Lv5",
+    "resName": "유리구슬",
+    "description": "Increases physical damage against angel and dragon race monsters by 35%.",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "p_race_angel": [
+        "35"
+      ],
+      "p_race_dragon": [
+        "35"
+      ]
+    }
+  },
+  "310242": {
+    "id": 310242,
+    "aegisName": "Tha_Majesty_1",
+    "name": "Dragon Scale Lv1",
+    "unidName": "Dragon Scale Lv1",
+    "resName": "유리구슬",
+    "description": "Increases magical damage against angel and dragon race monsters by 10%.",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "m_race_angel": [
+        "10"
+      ],
+      "m_race_dragon": [
+        "10"
+      ]
+    }
+  },
+  "310243": {
+    "id": 310243,
+    "aegisName": "Tha_Majesty_2",
+    "name": "Dragon Scale Lv2",
+    "unidName": "Dragon Scale Lv2",
+    "resName": "유리구슬",
+    "description": "Increases magical damage against angel and dragon race monsters by 15%.",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "m_race_angel": [
+        "15"
+      ],
+      "m_race_dragon": [
+        "15"
+      ]
+    }
+  },
+  "310244": {
+    "id": 310244,
+    "aegisName": "Tha_Majesty_3",
+    "name": "Dragon Scale Lv3",
+    "unidName": "Dragon Scale Lv3",
+    "resName": "유리구슬",
+    "description": "Increases magical damage against angel and dragon race monsters by 20%.",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "m_race_angel": [
+        "20"
+      ],
+      "m_race_dragon": [
+        "20"
+      ]
+    }
+  },
+  "310245": {
+    "id": 310245,
+    "aegisName": "Tha_Majesty_4",
+    "name": "Dragon Scale Lv4",
+    "unidName": "Dragon Scale Lv4",
+    "resName": "유리구슬",
+    "description": "Increases magical damage against angel and dragon race monsters by 25%.",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "m_race_angel": [
+        "25"
+      ],
+      "m_race_dragon": [
+        "25"
+      ]
+    }
+  },
+  "310246": {
+    "id": 310246,
+    "aegisName": "Tha_Majesty_5",
+    "name": "Dragon Scale Lv5",
+    "unidName": "Dragon Scale Lv5",
+    "resName": "유리구슬",
+    "description": "Increases magical damage against angel and dragon race monsters by 35%.",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "m_race_angel": [
+        "35"
+      ],
+      "m_race_dragon": [
+        "35"
+      ]
+    }
+  },
+  "310247": {
+    "id": 310247,
+    "aegisName": "Tha_demigod_1",
+    "name": "Divine Evil Lv1",
+    "unidName": "Divine Evil Lv1",
+    "resName": "발키리의분노",
+    "description": "Increases physical damage against angel and demon race monsters by 10%.",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "p_race_angel": [
+        "10"
+      ],
+      "p_race_demon": [
+        "10"
+      ]
+    }
+  },
+  "310248": {
+    "id": 310248,
+    "aegisName": "Tha_demigod_2",
+    "name": "Divine Evil Lv2",
+    "unidName": "Divine Evil Lv2",
+    "resName": "발키리의분노",
+    "description": "Increases physical damage against angel and demon race monsters by 15%.",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "p_race_angel": [
+        "15"
+      ],
+      "p_race_demon": [
+        "15"
+      ]
+    }
+  },
+  "310249": {
+    "id": 310249,
+    "aegisName": "Tha_demigod_3",
+    "name": "Divine Evil Lv3",
+    "unidName": "Divine Evil Lv3",
+    "resName": "발키리의분노",
+    "description": "Increases physical damage against angel and demon race monsters by 20%.",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "p_race_angel": [
+        "20"
+      ],
+      "p_race_demon": [
+        "20"
+      ]
+    }
+  },
+  "310250": {
+    "id": 310250,
+    "aegisName": "Tha_demigod_4",
+    "name": "Divine Evil Lv4",
+    "unidName": "Divine Evil Lv4",
+    "resName": "발키리의분노",
+    "description": "Increases physical damage against angel and demon race monsters by 25%.",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "p_race_angel": [
+        "25"
+      ],
+      "p_race_demon": [
+        "25"
+      ]
+    }
+  },
+  "310251": {
+    "id": 310251,
+    "aegisName": "Tha_demigod_5",
+    "name": "Divine Evil Lv5",
+    "unidName": "Divine Evil Lv5",
+    "resName": "발키리의분노",
+    "description": "Increases physical damage against angel and demon race monsters by 35%.",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "p_race_angel": [
+        "35"
+      ],
+      "p_race_demon": [
+        "35"
+      ]
+    }
+  },
+  "310252": {
+    "id": 310252,
+    "aegisName": "Tha_Antigod_1",
+    "name": "Destructive Evil Lv1",
+    "unidName": "Destructive Evil Lv1",
+    "resName": "발키리의분노",
+    "description": "Increases magical damage against angel and demon race monsters by 10%.",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "m_race_angel": [
+        "10"
+      ],
+      "m_race_demon": [
+        "10"
+      ]
+    }
+  },
+  "310253": {
+    "id": 310253,
+    "aegisName": "Tha_Antigod_2",
+    "name": "Destructive Evil Lv2",
+    "unidName": "Destructive Evil Lv2",
+    "resName": "발키리의분노",
+    "description": "Increases magical damage against angel and demon race monsters by 15%.",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "m_race_angel": [
+        "15"
+      ],
+      "m_race_demon": [
+        "15"
+      ]
+    }
+  },
+  "310254": {
+    "id": 310254,
+    "aegisName": "Tha_Antigod_3",
+    "name": "Destructive Evil Lv3",
+    "unidName": "Destructive Evil Lv3",
+    "resName": "발키리의분노",
+    "description": "Increases magical damage against angel and demon race monsters by 20%.",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "m_race_angel": [
+        "20"
+      ],
+      "m_race_demon": [
+        "20"
+      ]
+    }
+  },
+  "310255": {
+    "id": 310255,
+    "aegisName": "Tha_Antigod_4",
+    "name": "Destructive Evil Lv4",
+    "unidName": "Destructive Evil Lv4",
+    "resName": "발키리의분노",
+    "description": "Increases magical damage against angel and demon race monsters by 25%.",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "m_race_angel": [
+        "25"
+      ],
+      "m_race_demon": [
+        "25"
+      ]
+    }
+  },
+  "310256": {
+    "id": 310256,
+    "aegisName": "Tha_Antigod_5",
+    "name": "Destructive Evil Lv5",
+    "unidName": "Destructive Evil Lv5",
+    "resName": "발키리의분노",
+    "description": "Increases magical damage against angel and demon race monsters by 35%.",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": null,
+    "script": {
+      "m_race_angel": [
+        "35"
+      ],
+      "m_race_demon": [
+        "35"
       ]
     }
   },

@@ -709,6 +709,54 @@ const specialBonus = [FS._5, FS._6, Spell._4, Spell._5, EA._4, EA._5, Sharp._4, 
 const soutaneBase = [...cri510, ...mhp35, MSP._100, MSP._150, ...createBaseStat(6, 8)];
 const soutaneArmor = [...soutanes, ...specialBonus, ...soutaneBase];
 
+const sinful4 = ['Tha_Wrath_1', 'Tha_Wrath_2', 'Tha_Wrath_3', 'Tha_Wrath_4', 'Tha_Wrath_5', 'Tha_Majesty_1', 'Tha_Majesty_2', 'Tha_Majesty_3', 'Tha_Majesty_4', 'Tha_Majesty_5'];
+const sinful3 = [
+  'Tha_Anger_1',
+  'Tha_Anger_2',
+  'Tha_Anger_3',
+  'Tha_Anger_4',
+  'Tha_Anger_5',
+  'Tha_Horror_1',
+  'Tha_Horror_2',
+  'Tha_Horror_3',
+  'Tha_Horror_4',
+  'Tha_Horror_5',
+  'Tha_Resent_1',
+  'Tha_Resent_2',
+  'Tha_Resent_3',
+  'Tha_Resent_4',
+  'Tha_Resent_5',
+  'Tha_Regret_1',
+  'Tha_Regret_2',
+  'Tha_Regret_3',
+  'Tha_Regret_4',
+  'Tha_Regret_5',
+];
+
+const brilliant4 = ['Tha_demigod_1', 'Tha_demigod_2', 'Tha_demigod_3', 'Tha_demigod_4', 'Tha_demigod_5', 'Tha_Antigod_1', 'Tha_Antigod_2', 'Tha_Antigod_3', 'Tha_Antigod_4', 'Tha_Antigod_5'];
+const brilliant3 = [
+  'Tha_Empatize_1',
+  'Tha_Empatize_2',
+  'Tha_Empatize_3',
+  'Tha_Empatize_4',
+  'Tha_Empatize_5',
+  'Tha_Happy_1',
+  'Tha_Happy_2',
+  'Tha_Happy_3',
+  'Tha_Happy_4',
+  'Tha_Happy_5',
+  'Tha_Comfort_1',
+  'Tha_Comfort_2',
+  'Tha_Comfort_3',
+  'Tha_Comfort_4',
+  'Tha_Comfort_5',
+  'Tha_Console_1',
+  'Tha_Console_2',
+  'Tha_Console_3',
+  'Tha_Console_4',
+  'Tha_Console_5',
+];
+
 const infityEnt4 = [...ea13, ...delay13, ...aspd13, ...critical24, ...fatal13, ...matkP35, ...BaseState._3];
 const wing4 = [...ea23, ...fs23, ...sp23, ...sh23, ...matk12, ...specials, ...base12];
 const subject = [...BaseState._5, ...fs68, ...ea35, ...sp46, ...delay13];
@@ -983,15 +1031,40 @@ export const EnchantTable: EntTable[] = [
   { name: 'FaceWorm_Skin_', enchants: [null, specials, BaseState._3_5, BaseState._3_5] },
   { name: 'Archangel_Wing', enchants: [null, null, null, wing4] },
 
+  { name: 'Sin_Necklace_R', enchants: [null, null, sinful3, sinful4] },
+  { name: 'Sin_Ring_R', enchants: [null, null, sinful3, sinful4] },
+  { name: 'Sin_Necklace_E', enchants: [null, null, sinful3, sinful4] },
+  { name: 'Sin_Ring_E', enchants: [null, null, sinful3, sinful4] },
+  { name: 'Sin_Necklace_T', enchants: [null, null, sinful3, sinful4] },
+  { name: 'Sin_Ring_T', enchants: [null, null, sinful3, sinful4] },
+  { name: 'Sin_Necklace_A', enchants: [null, null, sinful3, sinful4] },
+  { name: 'Sin_Ring_A', enchants: [null, null, sinful3, sinful4] },
+  { name: 'Sin_Necklace_S', enchants: [null, null, sinful3, sinful4] },
+  { name: 'Sin_Ring_S', enchants: [null, null, sinful3, sinful4] },
+  { name: 'Sin_Necklace_O', enchants: [null, null, sinful3, sinful4] },
+  { name: 'Sin_Ring_O', enchants: [null, null, sinful3, sinful4] },
+
   { name: 'Cassock_Manteau', enchants: [null, soutaneBase, soutaneBase, soutaneBase] },
   { name: 'Cassock_Boots', enchants: [null, soutaneBase, soutaneBase, soutaneBase] },
-
   { name: 'CassockA_STR', enchants: [null, soutaneBase, soutaneBase, soutaneArmor] },
   { name: 'CassockA_AGI', enchants: [null, soutaneBase, soutaneBase, soutaneArmor] },
   { name: 'CassockA_VIT', enchants: [null, soutaneBase, soutaneBase, soutaneArmor] },
   { name: 'CassockA_DEX', enchants: [null, soutaneBase, soutaneBase, soutaneArmor] },
   { name: 'CassockA_INT', enchants: [null, soutaneBase, soutaneBase, soutaneArmor] },
   { name: 'CassockA_LUK', enchants: [null, soutaneBase, soutaneBase, soutaneArmor] },
+
+  { name: 'Shine_Ring_R', enchants: [null, null, brilliant3, brilliant4] },
+  { name: 'Shine_Necklace_R', enchants: [null, null, brilliant3, brilliant4] },
+  { name: 'Shine_Ring_A', enchants: [null, null, brilliant3, brilliant4] },
+  { name: 'Shine_Necklace_A', enchants: [null, null, brilliant3, brilliant4] },
+  { name: 'Shine_Ring_E', enchants: [null, null, brilliant3, brilliant4] },
+  { name: 'Shine_Necklace_E', enchants: [null, null, brilliant3, brilliant4] },
+  { name: 'Shine_Ring_Z', enchants: [null, null, brilliant3, brilliant4] },
+  { name: 'Shine_Necklace_Z', enchants: [null, null, brilliant3, brilliant4] },
+  { name: 'Shine_Ring_S', enchants: [null, null, brilliant3, brilliant4] },
+  { name: 'Shine_Necklace_S', enchants: [null, null, brilliant3, brilliant4] },
+  { name: 'Shine_Ring_AQ', enchants: [null, null, brilliant3, brilliant4] },
+  { name: 'Shine_Necklace_AQ', enchants: [null, null, brilliant3, brilliant4] },
 
   { name: 'Apollo_Armor_TH', enchants: [null, year2nd, year2nd, year2nd] },
   { name: 'Jupiter_Armor_TH', enchants: [null, year2nd, year2nd, year2nd] },
