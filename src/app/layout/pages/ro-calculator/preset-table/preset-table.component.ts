@@ -7,6 +7,7 @@ import { AuthService, EntirePresetWithTagsModel, PresetService } from 'src/app/a
 import { Observable, Subscription, catchError, finalize, of, switchMap, tap } from 'rxjs';
 import { availableTags, tagSeverityMap } from '../constants/available-tags';
 import { ToErrorDetail } from 'src/app/app-errors';
+import { getClassDropdownList } from '../jobs/_class-list';
 
 const displayMainItemKeys = [
   ItemTypeEnum.weapon,
@@ -54,8 +55,11 @@ export class PresetTableComponent implements OnInit, OnDestroy {
   displayCostumeItems = [] as any[];
   displayShadowItems = [] as any[];
   classLabelMap = ClassID;
+  classList = getClassDropdownList();
+  selectedClassIdFilter = undefined;
 
   cloudPresets: (EntirePresetWithTagsModel & { value: string; icon: number })[] = [];
+  displayCloudPresets: typeof this.cloudPresets = [];
   items = this.dynamicDialogConfig.data.items;
   jobIconMap = { ...ClassIcon };
 
@@ -289,6 +293,7 @@ export class PresetTableComponent implements OnInit, OnDestroy {
         this.model = {};
         this.dynamicDialogConfig.data.removePresetFromListFn(this.selectedCloudPreset);
         this.selectedCloudPreset = undefined;
+        this.onClassFilterChange();
 
         this.messageService.add({
           severity: 'success',
@@ -440,6 +445,7 @@ export class PresetTableComponent implements OnInit, OnDestroy {
             icon: ClassIcon[a.model.class],
           };
         });
+        this.displayCloudPresets = this.cloudPresets;
       }),
       finalize(() => {
         if (!isInOtherProcessing) this.isProcessing = false;
@@ -465,5 +471,13 @@ export class PresetTableComponent implements OnInit, OnDestroy {
         this.showMoveToCloudSuccess();
         this.removePreset(this.selectedPreset);
       });
+  }
+
+  onClassFilterChange() {
+    if (this.selectedClassIdFilter) {
+      this.displayCloudPresets = this.cloudPresets.filter((a) => a.model.class === this.selectedClassIdFilter);
+    } else {
+      this.displayCloudPresets = this.cloudPresets;
+    }
   }
 }

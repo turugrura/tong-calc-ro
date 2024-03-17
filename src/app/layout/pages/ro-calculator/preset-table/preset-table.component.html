@@ -23,6 +23,36 @@
           (click)="deletePreset()"
         ></button>
       </div>
+      <div class="col-12">
+        <div class="p-inputgroup dropdown-joblist">
+          <span class="p-inputgroup-addon" style="width: 80px">Filter</span>
+          <p-dropdown
+            inputId="character"
+            [autoDisplayFirst]="false"
+            [resetFilterOnHide]="true"
+            [options]="classList"
+            [filter]="true"
+            [showClear]="true"
+            filterBy="label"
+            [(ngModel)]="selectedClassIdFilter"
+            placeholder="All classes"
+            (onChange)="onClassFilterChange()"
+          >
+            <ng-template let-job pTemplate="selectedItem">
+              <div class="flex gap-2 py-0 align-items-center" *ngIf="selectedClassIdFilter">
+                <img src="assets/demo/images/jobs/icon_jobs_{{ job.icon }}.png" alt="" class="job_img" />
+                <div class="text_ellips">{{ job.label }}</div>
+              </div>
+            </ng-template>
+            <ng-template let-job pTemplate="item">
+              <div class="flex gap-2 py-0">
+                <img src="assets/demo/images/jobs/icon_jobs_{{ job.icon }}.png" alt="" class="job_img" />
+                <div class="text_ellips">{{ job.label }}</div>
+              </div>
+            </ng-template>
+          </p-dropdown>
+        </div>
+      </div>
       <div class="col-12" *ngIf="isLoggedIn">
         <div class="p-inputgroup">
           <input
@@ -46,7 +76,7 @@
       </div>
       <div class="col-12" *ngIf="isLoggedIn">
         <p-listbox
-          [options]="cloudPresets"
+          [options]="displayCloudPresets"
           [(ngModel)]="selectedCloudPreset"
           [metaKeySelection]="false"
           [listStyle]="{ height: presets.length > 0 ? '350px' : '550px' }"
