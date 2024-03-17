@@ -9,3 +9,5 @@ export * from './create-bonus-name-list';
 export * from './vefify-sync-presets';
 export * from './to-upsert-preset-model';
 export * from './wait-rxjs';
+export * from './create-base-hp-sp-option-list';
+export * from './to-raw-option-txt-list';

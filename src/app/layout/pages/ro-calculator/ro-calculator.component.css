@@ -403,6 +403,19 @@
   min-width: 70px;
 }
 
+:host ::ng-deep .hp-sp-section .p-cascadeselect-label {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+:host ::ng-deep .hp-sp-section .p-cascadeselect-clearable {
+  width: inherit;
+}
+
+.hp-sp-section .summary_stat_yellow {
+  height: fit-content;
+}
+
 :host ::ng-deep .item_label_compare .p-dropdown-label,
 :host ::ng-deep .item_label_compare .p-cascadeselect-label,
 :host ::ng-deep .item_label_compare .p-multiselect-label,

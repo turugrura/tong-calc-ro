@@ -149,7 +149,7 @@
           </ng-template>
         </p-dropdown>
       </div>
-      <div class="col-4" *ngIf="itemType !== 'weapon'" [hidden]="totalExtraOption < 1">
+      <div class="col-4" *ngIf="itemType !== 'weapon' && totalExtraOption < 3" [hidden]="totalExtraOption < 1">
         <p-cascadeSelect
           [(ngModel)]="option1Value"
           [disabled]="!itemId"
@@ -164,7 +164,7 @@
           (onClear)="onOptionChange('option1Value', $event)"
         ></p-cascadeSelect>
       </div>
-      <div class="col-4" *ngIf="itemType !== 'weapon'" [hidden]="totalExtraOption < 2">
+      <div class="col-4" *ngIf="itemType !== 'weapon' && totalExtraOption < 3" [hidden]="totalExtraOption < 2">
         <p-cascadeSelect
           [(ngModel)]="option2Value"
           [disabled]="!itemId"
@@ -272,9 +272,9 @@
         </div>
       </div>
 
-      <div class="col-12" *ngIf="itemType === 'weapon'">
+      <div class="col-12" *ngIf="itemType === 'weapon' || totalExtraOption === 3">
         <div class="grid grid-nogutter">
-          <div class="col-4" [hidden]="totalOptions < 1">
+          <div class="col-4" [hidden]="totalExtraOption < 1">
             <p-cascadeSelect
               [(ngModel)]="option1Value"
               [disabled]="!itemId"
@@ -289,7 +289,7 @@
               (onClear)="onOptionChange('option1Value', $event)"
             ></p-cascadeSelect>
           </div>
-          <div class="col-4" [hidden]="totalOptions < 2">
+          <div class="col-4" [hidden]="totalExtraOption < 2">
             <p-cascadeSelect
               [(ngModel)]="option2Value"
               [disabled]="!itemId"
@@ -304,7 +304,7 @@
               (onClear)="onOptionChange('option2Value', $event)"
             ></p-cascadeSelect>
           </div>
-          <div class="col-4" [hidden]="totalOptions < 3">
+          <div class="col-4" [hidden]="totalExtraOption < 3">
             <p-cascadeSelect
               [(ngModel)]="option3Value"
               [disabled]="!itemId"

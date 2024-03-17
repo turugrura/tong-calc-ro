@@ -1,4 +1,7 @@
 export enum ItemOptionNumber {
+  /**
+   * !!! [Warning] system treat W_Left_1 as an Righ hand side
+   */
   W_Left_1 = 0,
   W_Left_2 = 1,
   W_Left_3 = 2,
@@ -23,6 +26,7 @@ export enum ItemOptionNumber {
 
   Armor_1 = 12,
   Armor_2 = 13,
+  Armor_3 = 28,
   // Armor_3,
   Garment_1 = 14,
   Garment_2 = 15,
@@ -44,4 +48,11 @@ export enum ItemOptionNumber {
   SD_B_1 = 23,
   SD_Ear_1 = 24,
   SD_Pan_1 = 25,
+
+  X_HP = 26,
+  X_SP = 27,
 }
+
+const slotNumbers = Object.values(ItemOptionNumber).filter((a) => Number.isInteger(a)) as number[];
+
+export const MAX_OPTION_NUMBER = Math.max(...slotNumbers);

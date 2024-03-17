@@ -58,9 +58,17 @@ import { BasicDamageSummaryModel, SkillDamageSummaryModel } from './models/damag
 import { ChanceModel } from './models/chance-model';
 import { RaceType } from './constants/race-type.const';
 import { ElementType } from './constants/element-type.const';
-import { createBonusNameList, isNumber, toUpsertPresetModel, verifySyncPreset, waitRxjs } from './utils';
+import {
+  createBaseHPSPOptionList,
+  createBonusNameList,
+  isNumber,
+  toRawOptionTxtList,
+  toUpsertPresetModel,
+  verifySyncPreset,
+  waitRxjs,
+} from './utils';
 import { ExtraOptionTable } from './constants/extra-option-table';
-import { ItemOptionNumber } from './constants/item-option-number.enum';
+import { ItemOptionNumber, MAX_OPTION_NUMBER } from './constants/item-option-number.enum';
 import { WeaponTypeNameMapBySubTypeId } from './constants/weapon-type-mapper';
 import { AuthService, PresetService } from 'src/app/api-services';
 import { ItemOptionTable } from './constants/item-options-table';
@@ -188,6 +196,8 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   model2: ClassModel = { rawOptionTxts: [] };
 
   basicOptions = createMainStatOptionList();
+  baseHpOptions = createBaseHPSPOptionList('BaseHP') as any;
+  baseSpOptions = createBaseHPSPOptionList('BaseSP') as any;
   refineList = createNumberDropdownList({ from: 0, to: 18 });
   shadowRefineList = createNumberDropdownList({ from: 0, to: 10 });
   mainStatusList = createNumberDropdownList({ from: 1, to: 130 });
@@ -772,37 +782,43 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       // if compare the item, should get options from its.
       const model2 = { ...this.model, ...compareModel };
       if (this.compareItemNames?.includes(ItemTypeEnum.weapon)) {
-        for (let i = ItemOptionNumber.W_Left_1; i <= ItemOptionNumber.W_Left_3; i++) {
-          rawOptionTxts[i] = this.model2.rawOptionTxts[i];
+        const itemId = this.model2[ItemTypeEnum.weapon];
+        for (let slot = ItemOptionNumber.W_Left_1; slot <= ItemOptionNumber.W_Left_3; slot++) {
+          if (!itemId) {
+            this.model2.rawOptionTxts[slot] = null;
+          }
+          rawOptionTxts[slot] = this.model2.rawOptionTxts[slot];
         }
       }
 
-      for (const [_itemType, [min, max]] of ItemOptionTable) {
+      for (const [_itemType, slotNumbers] of ItemOptionTable) {
         if (this.compareItemNames?.includes(_itemType)) {
           const itemId = this.model2[_itemType];
 
           if (isShadowOption[_itemType]) {
             // force have only 1 option
             if (!itemId) {
-              this.model2.rawOptionTxts[min] = null;
+              this.model2.rawOptionTxts[slotNumbers[0]] = null;
             }
-            rawOptionTxts[min] = this.model2.rawOptionTxts[min];
+            rawOptionTxts[slotNumbers[0]] = this.model2.rawOptionTxts[slotNumbers[0]];
             continue;
           }
 
-          for (let i = min; i <= max; i++) {
-            rawOptionTxts[i] = this.model2.rawOptionTxts[i];
+          for (const slot of slotNumbers) {
+            rawOptionTxts[slot] = this.model2.rawOptionTxts[slot];
           }
 
-          let startClear = 0;
+          let totalItemOptionSlot = 0;
           if (itemId) {
             const aegisName = this.items[itemId]?.aegisName;
-            startClear = ExtraOptionTable[aegisName] || 0;
+            totalItemOptionSlot = ExtraOptionTable[aegisName] || 0;
           }
 
-          for (let i = min + startClear; i <= max; i++) {
-            rawOptionTxts[i] = null;
-            this.model2.rawOptionTxts[i] = null;
+          for (const [index, slot] of slotNumbers.entries()) {
+            if (totalItemOptionSlot <= index) {
+              rawOptionTxts[slot] = null;
+              this.model2.rawOptionTxts[slot] = null;
+            }
           }
         }
       }
@@ -810,28 +826,11 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       calc.loadItemFromModel(model2);
     } else {
       // clean if the itemType not allow to have options
-      for (const [_itemType, [min, max]] of ItemOptionTable) {
-        const itemId = this.model[_itemType];
-
-        if (isShadowOption[_itemType]) {
-          if (!itemId) rawOptionTxts[min] = null;
-          continue;
-        }
-
-        let startClear = 0;
-        if (itemId) {
-          const aegisName = this.items[itemId]?.aegisName;
-          startClear = ExtraOptionTable[aegisName] || 0;
-        }
-
-        for (let i = min + startClear; i <= max; i++) {
-          rawOptionTxts[i] = null;
-        }
-      }
-      this.model.rawOptionTxts = rawOptionTxts;
+      this.model.rawOptionTxts = toRawOptionTxtList(this.model, this.items);
 
       calc.loadItemFromModel(this.model);
     }
+
     calc
       .setClass(this.selectedCharacter)
       .setMonster(this.monsterDataMap[this.selectedMonster])
@@ -840,7 +839,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       .setMasterySkillAtk(masteryAtks)
       .setConsumables(consumeData)
       .setAspdPotion(aspdPotion)
-      .setExtraOptions(this.getOptionScripts(rawOptionTxts))
+      .setExtraOptions(this.getOptionScripts(!compareModel ? this.model.rawOptionTxts : rawOptionTxts))
       .setUsedSkillNames(activeSkillNames)
       .setLearnedSkills(learnedSkillMap)
       .setOffensiveSkill(selectedAtkSkill)
@@ -1470,7 +1469,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
     const rawOptionTxts = [] as string[];
     // migrate
-    for (let i = 0; i <= 26; i++) {
+    for (let i = 0; i <= MAX_OPTION_NUMBER; i++) {
       if (model.rawOptionTxts[i]) {
         rawOptionTxts[i] = model.rawOptionTxts[i];
       }

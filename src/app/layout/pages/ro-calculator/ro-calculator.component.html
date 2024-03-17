@@ -563,19 +563,46 @@
                       '( อีก ' + totalSummary?.calc?.to530 + ' )'
                     }}</span>
                   </div>
-                  <div class="col-12 px-1 border_default" [hidden]="hideHpSp[selectedCharacter?.className]">
+                  <div
+                    class="col-12 px-1 border_default hp-sp-section"
+                    [hidden]="hideHpSp[selectedCharacter?.className]"
+                  >
                     <div class="grid grid-nogutter">
-                      <div class="col-12">
-                        MaxHP:
+                      <div class="col-12 flex gap-1">
+                        HP:
                         <span class="font-semibold px-1 summary_stat_yellow">{{
                           totalSummary?.calc?.maxHp || 0 | number
                         }}</span>
+                        <p-cascadeSelect
+                          [(ngModel)]="model.rawOptionTxts[itemOptionNumber.X_HP]"
+                          [options]="baseHpOptions"
+                          optionValue="value"
+                          optionGroupLabel="label"
+                          optionLabel="label"
+                          [optionGroupChildren]="['children']"
+                          placeholder="+ BaseHP"
+                          [showClear]="true"
+                          (onChange)="onOptionChange()"
+                          (onClear)="onOptionChange()"
+                        ></p-cascadeSelect>
                       </div>
-                      <div class="col-12">
-                        MaxSP:
+                      <div class="col-12 flex gap-1">
+                        SP:
                         <span class="font-semibold px-1 summary_stat_yellow">{{
                           totalSummary?.calc?.maxSp || 0 | number
                         }}</span>
+                        <p-cascadeSelect
+                          [(ngModel)]="model.rawOptionTxts[itemOptionNumber.X_SP]"
+                          [options]="baseSpOptions"
+                          optionValue="value"
+                          optionGroupLabel="label"
+                          optionLabel="label"
+                          [optionGroupChildren]="['children']"
+                          placeholder="+ BaseSP"
+                          [showClear]="true"
+                          (onChange)="onOptionChange()"
+                          (onClear)="onOptionChange()"
+                        ></p-cascadeSelect>
                       </div>
                       <div
                         [hidden]="model?.level < 176"
@@ -1251,7 +1278,6 @@
           [refineList]="refineList"
           [cardList]="weaponCardList"
           [optionList]="optionList"
-          [totalOptions]="3"
           [(itemId)]="model2.weapon"
           [(itemRefine)]="model2.weaponRefine"
           [(card1Id)]="model2.weaponCard1"
@@ -2002,9 +2028,12 @@
               </ng-template>
             </p-dropdown>
           </div>
-          <div class="col-8">
+          <div class="col-{{ itemTotalOptionMap['armor'] === 3 ? '12' : '8' }}">
             <div class="grid grid-nogutter">
-              <div class="col-6" [hidden]="!(itemTotalOptionMap['armor'] >= 1) || !model.armor">
+              <div
+                class="col-{{ itemTotalOptionMap['armor'] === 3 ? '4' : '6' }}"
+                [hidden]="!(itemTotalOptionMap['armor'] >= 1) || !model.armor"
+              >
                 <p-cascadeSelect
                   [(ngModel)]="model.rawOptionTxts[itemOptionNumber.Armor_1]"
                   [disabled]="!model.armor"
@@ -2019,7 +2048,10 @@
                   (onClear)="onOptionChange()"
                 ></p-cascadeSelect>
               </div>
-              <div class="col-6" [hidden]="!(itemTotalOptionMap['armor'] >= 2) || !model.armor">
+              <div
+                class="col-{{ itemTotalOptionMap['armor'] === 3 ? '4' : '6' }}"
+                [hidden]="!(itemTotalOptionMap['armor'] >= 2) || !model.armor"
+              >
                 <p-cascadeSelect
                   [(ngModel)]="model.rawOptionTxts[itemOptionNumber.Armor_2]"
                   [disabled]="!model.armor"
@@ -2029,6 +2061,21 @@
                   optionLabel="label"
                   [optionGroupChildren]="['children', 'children', 'children']"
                   placeholder="Option 2"
+                  [showClear]="true"
+                  (onChange)="onOptionChange()"
+                  (onClear)="onOptionChange()"
+                ></p-cascadeSelect>
+              </div>
+              <div class="col-4" [hidden]="!(itemTotalOptionMap['armor'] >= 3) || !model.armor">
+                <p-cascadeSelect
+                  [(ngModel)]="model.rawOptionTxts[itemOptionNumber.Armor_3]"
+                  [disabled]="!model.armor"
+                  [options]="optionList"
+                  optionValue="value"
+                  optionGroupLabel="label"
+                  optionLabel="label"
+                  [optionGroupChildren]="['children', 'children', 'children']"
+                  placeholder="Option 3"
                   [showClear]="true"
                   (onChange)="onOptionChange()"
                   (onClear)="onOptionChange()"
@@ -2142,6 +2189,7 @@
           [(enchant4Id)]="model2.armorEnchant3"
           [(option1Value)]="model2.rawOptionTxts[itemOptionNumber.Armor_1]"
           [(option2Value)]="model2.rawOptionTxts[itemOptionNumber.Armor_2]"
+          [(option3Value)]="model2.rawOptionTxts[itemOptionNumber.Armor_3]"
           (selectItemChange)="onCompareItemChange()"
           (optionChange)="onCompareItemChange()"
         ></app-equipment>

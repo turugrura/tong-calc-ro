@@ -16,6 +16,13 @@ export const ExtraOptionTable = {
   Overwhelm_Agi_Armor: 2,
   Overwhelm_Dex_Armor: 2,
 
+  DragonA_Red: 3,
+  DragonA_Green: 3,
+  DragonA_Gold: 3,
+  DragonA_Purple: 3,
+  DragonA_Blue: 3,
+  DragonA_Silver: 3,
+
   Victory_Wing_Ear_: 2,
   Deepblue_Sunglasses_: 2,
   Battle_Processor_: 2,

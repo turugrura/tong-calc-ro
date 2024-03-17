@@ -26,8 +26,6 @@ export class EquipmentComponent implements AfterViewInit {
   @Output() clearItemEvent = new EventEmitter<string>();
   @Output() optionChange = new EventEmitter<string>();
 
-  @Input() totalOptions = 0;
-
   @Input() itemId = undefined;
   @Output() itemIdChange = new EventEmitter<number>();
 
@@ -149,6 +147,9 @@ export class EquipmentComponent implements AfterViewInit {
         this.card1IdChange.emit();
       }
 
+      if (this.itemType === ItemTypeEnum.weapon) {
+        this.totalExtraOption = 3;
+      }
       if (this.itemType !== ItemTypeEnum.weapon && OptionableItemTypeSet.has(this.itemType as any)) {
         const itemAegisName = this.items[itemId]?.aegisName;
         this.totalExtraOption = ExtraOptionTable[itemAegisName] || 0;

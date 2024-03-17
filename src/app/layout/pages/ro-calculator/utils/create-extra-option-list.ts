@@ -138,10 +138,10 @@ export const createExtraOptionList = () => {
     ['ASPD %', 'aspdPercent', 1, 30, 1, ' %'],
     ['Delay', 'acd', 1, 30, 1, ' %'],
     ['VCT', 'vct', 1, 30, 1, ' %'],
-    ['BaseHP (ใช้ปรับ BaseHP)', 'baseHp', 1, 100, 100],
-    ['BaseSP (ใช้ปรับ BaseSP)', 'baseSp', 1, 100, 5],
-    ['HP %', 'hpPercent', 1, 100, 1, ' %'],
-    ['SP %', 'spPercent', 1, 100, 1, ' %'],
+    ['HP %', 'hpPercent', 1, 20, 1, ' %'],
+    ['HP', 'hp', 1, 20, 50],
+    ['SP %', 'spPercent', 1, 20, 1, ' %'],
+    ['SP', 'sp', 1, 20, 20],
   ];
 
   const subTypeMap = {
@@ -153,7 +153,7 @@ export const createExtraOptionList = () => {
     'Matk %': 'Magical',
   };
 
-  const VAL_CAP = 10;
+  const DEFAULT_CAP = 10;
   for (const [label, prop, rawMin, rawMax, scale, suffix] of options) {
     const labelNoPercent = label.startsWith('BaseHP')
       ? 'BaseHP'
@@ -162,8 +162,9 @@ export const createExtraOptionList = () => {
       : label.replace(' %', '');
     const values = [] as { label: string; min: number; max: number }[];
     const sign = label === 'Delay' || label === 'VCT' ? '-' : '+';
-    for (let i = rawMin; i < rawMax; i += VAL_CAP) {
-      const max = Math.min(i + VAL_CAP - 1, rawMax);
+    const cap = rawMax - rawMin > 20 ? DEFAULT_CAP : rawMax;
+    for (let i = rawMin; i < rawMax; i += cap) {
+      const max = Math.min(i + cap - 1, rawMax);
       values.push({ label: `${i * scale} - ${max * scale}`, min: i, max: max });
     }
 
@@ -173,8 +174,8 @@ export const createExtraOptionList = () => {
       children = Array.from({ length: max - min + 1 }, (_, k) => {
         const num = k + min;
         return {
-          label: `${labelNoPercent} ${sign}${num}${suffix || ''}`,
-          value: `${prop}:${num}`,
+          label: `${labelNoPercent} ${sign}${num * scale}${suffix || ''}`,
+          value: `${prop}:${num * scale}`,
         };
       });
     } else {

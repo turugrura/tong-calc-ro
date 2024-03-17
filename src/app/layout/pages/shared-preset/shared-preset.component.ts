@@ -23,14 +23,11 @@ import { ConfirmationService, MessageService } from 'primeng/api';
 import { ActiveSkillModel, AtkSkillModel, CharacterBase } from '../ro-calculator/jobs/_character-base.abstract';
 import { Calculator } from '../ro-calculator/calculator';
 import { JobBuffs } from '../ro-calculator/constants/job-buffs';
-import { ExtraOptionTable } from '../ro-calculator/constants/extra-option-table';
 import { MainModel } from '../ro-calculator/models/main.model';
 import { HpSpTable } from '../ro-calculator/models/hp-sp-table.model';
 import { getMonsterSpawnMap } from '../ro-calculator/constants/monster-spawn-mapper';
 import { getClassDropdownList } from '../ro-calculator/jobs/_class-list';
-import { waitRxjs } from '../ro-calculator/utils';
-import { ItemOptionTable } from '../ro-calculator/constants/item-options-table';
-import { ItemTypeEnum } from '../ro-calculator/constants/item-type.enum';
+import { toRawOptionTxtList, waitRxjs } from '../ro-calculator/utils';
 
 const Characters = getClassDropdownList();
 
@@ -232,12 +229,12 @@ export class SharedPresetComponent implements OnInit, OnDestroy {
 
           return {
             ...a,
-            str: a.model.jobStr + s.str,
-            agi: a.model.jobAgi + s.agi,
-            vit: a.model.jobVit + s.vit,
-            int: a.model.jobInt + s.int,
-            dex: a.model.jobDex + s.dex,
-            luk: a.model.jobLuk + s.luk,
+            str: (a.model.jobStr || 0) + (s.str || 0),
+            agi: (a.model.jobAgi || 0) + (s.agi || 0),
+            vit: (a.model.jobVit || 0) + (s.vit || 0),
+            int: (a.model.jobInt || 0) + (s.int || 0),
+            dex: (a.model.jobDex || 0) + (s.dex || 0),
+            luk: (a.model.jobLuk || 0) + (s.luk || 0),
             summary: s,
           };
         });
@@ -466,36 +463,7 @@ export class SharedPresetComponent implements OnInit, OnDestroy {
       }
     });
 
-    const rawOptionTxts = [...model.rawOptionTxts];
-    const isShadowOption = {
-      [ItemTypeEnum.shadowWeapon]: true,
-      [ItemTypeEnum.shadowArmor]: true,
-      [ItemTypeEnum.shadowShield]: true,
-      [ItemTypeEnum.shadowBoot]: true,
-      [ItemTypeEnum.shadowEarring]: true,
-      [ItemTypeEnum.shadowPendant]: true,
-    };
-
-    // clean if the itemType not allow to have options
-    for (const [_itemType, [min, max]] of ItemOptionTable) {
-      const itemId = model[_itemType];
-
-      if (isShadowOption[_itemType]) {
-        if (!itemId) rawOptionTxts[min] = null;
-        continue;
-      }
-
-      let startClear = 0;
-      if (itemId) {
-        const aegisName = this.itemMap[itemId]?.aegisName;
-        startClear = ExtraOptionTable[aegisName] || 0;
-      }
-
-      for (let i = min + startClear; i <= max; i++) {
-        rawOptionTxts[i] = null;
-      }
-    }
-    model.rawOptionTxts = rawOptionTxts;
+    model.rawOptionTxts = toRawOptionTxtList(model, this.items);
 
     return (
       new Calculator()
@@ -509,7 +477,7 @@ export class SharedPresetComponent implements OnInit, OnDestroy {
         .setMasterySkillAtk(masteryAtks)
         .setConsumables(consumeData)
         .setAspdPotion(aspdPotion)
-        .setExtraOptions(this.getOptionScripts(rawOptionTxts))
+        .setExtraOptions(this.getOptionScripts(model.rawOptionTxts))
         .setUsedSkillNames(activeSkillNames)
         .setLearnedSkills(learnedSkillMap)
         .setOffensiveSkill(this.selectedAtkSkill)
