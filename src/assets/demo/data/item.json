@@ -6472,6 +6472,34 @@
       ]
     }
   },
+  "4528": {
+    "id": 4528,
+    "aegisName": "Mutant_Coelacanth_Card",
+    "name": "Mutant Coelacanth Card",
+    "unidName": "Mutant Coelacanth Card",
+    "resName": "이름없는카드",
+    "description": "MATK + 2%, ทุกสองการอัพเกรดได้รับ MATK + 1%, MHP – 1%.\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Headgear^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 769,
+    "cardPrefix": "Willpower",
+    "script": {
+      "matkPercent": [
+        "2",
+        "2---1"
+      ],
+      "hpPercent": [
+        "-1"
+      ]
+    }
+  },
   "4529": {
     "id": 4529,
     "aegisName": "Cruel_Coelacanth_Card",
@@ -71325,6 +71353,68 @@
       ]
     }
   },
+  "400053": {
+    "id": 400053,
+    "aegisName": "Morrigane_Helm_IL",
+    "name": "Illusion Morrigane's Helm [1]",
+    "unidName": "Headgear",
+    "resName": "Morrigane_Helm_IL",
+    "description": "Str + 5, Cri + 5.\nIf refine rate is 7 or higher, Atk + 50.\nIf refine rate is 9 or higher, increases attack speed (reduces delay after attack by 10%).\n\nWhen equipped with Illusion Morrigane's Manteau, Belt and Pendant,\nStr + 5, Atk + 10%, Cri + 5, MaxHP + 10%, MaxSP + 10%, increases physical damage against small size monsters by 20%.\nIf the sum of refine rate is 18 or higher, Perfect Dodge + 10, Atk + 50.\nIf the sum of refine rate is 22 or higher, increases critical damage by 20%, increases physical damage against medium size monsters by 20%.\n^ffffff_^000000\nClass: ^777777Headgear^000000 Defense: ^77777715^000000\nLocation: ^777777Upper ^000000 Weight: ^77777750^000000\nRequired Level: ^777777130^000000\nJobs: ^777777All except Novice^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 15,
+    "weight": 50,
+    "requiredLevel": 130,
+    "location": "Upper",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "unusableClass": [
+      "Novice"
+    ],
+    "script": {
+      "str": [
+        "5",
+        "EQUIP[Illusion Morrigane's Manteau&&Illusion Morrigane's Belt&&Illusion Morrigane's Pendant]===5"
+      ],
+      "cri": [
+        "5",
+        "EQUIP[Illusion Morrigane's Manteau&&Illusion Morrigane's Belt&&Illusion Morrigane's Pendant]===5"
+      ],
+      "atk": [
+        "7===50",
+        "EQUIP[Illusion Morrigane's Manteau&&Illusion Morrigane's Belt&&Illusion Morrigane's Pendant]REFINE[headUpper,garment==18]===50"
+      ],
+      "aspdPercent": [
+        "9===10"
+      ],
+      "atkPercent": [
+        "EQUIP[Illusion Morrigane's Manteau&&Illusion Morrigane's Belt&&Illusion Morrigane's Pendant]===10"
+      ],
+      "hpPercent": [
+        "EQUIP[Illusion Morrigane's Manteau&&Illusion Morrigane's Belt&&Illusion Morrigane's Pendant]===10"
+      ],
+      "spPercent": [
+        "EQUIP[Illusion Morrigane's Manteau&&Illusion Morrigane's Belt&&Illusion Morrigane's Pendant]===10"
+      ],
+      "p_size_s": [
+        "EQUIP[Illusion Morrigane's Manteau&&Illusion Morrigane's Belt&&Illusion Morrigane's Pendant]===20"
+      ],
+      "perfectDodge": [
+        "EQUIP[Illusion Morrigane's Manteau&&Illusion Morrigane's Belt&&Illusion Morrigane's Pendant]REFINE[headUpper,garment==18]===10"
+      ],
+      "p_size_m": [
+        "EQUIP[Illusion Morrigane's Manteau&&Illusion Morrigane's Belt&&Illusion Morrigane's Pendant]REFINE[headUpper,garment==22]===20"
+      ],
+      "criDmg": [
+        "EQUIP[Illusion Morrigane's Manteau&&Illusion Morrigane's Belt&&Illusion Morrigane's Pendant]REFINE[headUpper,garment==22]===20"
+      ]
+    }
+  },
   "400054": {
     "id": 400054,
     "aegisName": "Large_Sorcerer_Crown",
@@ -73370,6 +73460,141 @@
       ]
     }
   },
+  "450144": {
+    "id": 450144,
+    "aegisName": "Saint_Robe_IL",
+    "name": "Illusion Saint Robe [1]",
+    "unidName": "Robe",
+    "resName": "Saint_Robe_IL",
+    "description": "MaxHP + 10%, MaxSP + 10%.\nMdef + 10.\nIf refine rate is 9 or higher, reduces physical and magical damage taken from fish race monsters by 15%.\nIf refine rate is 11 or higher, ignores defense rate of fish race monsters by 20%.\n\nWhen equipped with Illusion Combo Battle Glove, Atk + 30.\nIf refine rate of each is 7 or higher, Atk + 5%.\nIf the sum of refine rate is 18 or higher, increases Sky Blow damage by 20%.\nIf the sum of refine rate is 22 or higher, reduces global cooldown by 10%.\n^ffffff_^000000\nClass: ^777777Armor^000000  Defense: ^77777760^000000\nWeight: ^77777760^000000\nRequired Level: ^777777120^000000\nJobs: ^777777Acolyte classes, Merchant classes^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 60,
+    "weight": 60,
+    "requiredLevel": 120,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Acolyte",
+      "Merchant"
+    ],
+    "script": {
+      "hpPercent": [
+        "10"
+      ],
+      "spPercent": [
+        "10"
+      ],
+      "mdef": [
+        "10"
+      ],
+      "p_pene_race_fish": [
+        "11===20"
+      ],
+      "atk": [
+        "EQUIP[Illusion Combo Battle Glove]===30"
+      ],
+      "atkPercent": [
+        "EQUIP[Illusion Combo Battle Glove]REFINE[weapon==7]7===5"
+      ],
+      "Sky Blow": [
+        "EQUIP[Illusion Combo Battle Glove]REFINE[armor,weapon==18]===20"
+      ],
+      "acd": [
+        "EQUIP[Illusion Combo Battle Glove]REFINE[armor,weapon==22]===10"
+      ]
+    }
+  },
+  "450145": {
+    "id": 450145,
+    "aegisName": "Water_Sprits_Armor_IL",
+    "name": "Illusion Saphien's Armor of Ocean [1]",
+    "unidName": "Armor",
+    "resName": "Water_Sprits_Armor_IL",
+    "description": "MaxHP + 10%.\nMaxHP + 125 per refine rate.\nIf refine rate is 7 or higher, Def + 50.\nIf refine rate is 9 or higher, when dealing physical damage, has a chance to reduce damage taken from water property by 15% for 5 seconds.\n^ffffff_^000000\nClass: ^777777Armor^000000  Defense: ^77777750^000000\nWeight: ^777777220^000000\nRequired Level: ^777777120^000000\nJobs: ^777777Swordsman classes, Merchant classes^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 50,
+    "weight": 220,
+    "requiredLevel": 120,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Swordman",
+      "Merchant"
+    ],
+    "script": {
+      "hpPercent": [
+        "10"
+      ],
+      "hp": [
+        "1---125"
+      ],
+      "def": [
+        "7===50"
+      ]
+    }
+  },
+  "450146": {
+    "id": 450146,
+    "aegisName": "Chain_Mail_IL",
+    "name": "Illusion Chain Mail [1]",
+    "unidName": "Armor",
+    "resName": "Chain_Mail_IL",
+    "description": "MaxHP + 10%, MaxSP + 10%.\nAtk + 4 per refine rate.\nIncreases physical damage against fire and water property enemies by 4% per 3 refine rate.\nIf refine rate is 9 or higher, Atk + 10%.\n\nWhen equipped with Illusion Katar of Frozen Icicle, Atk + 5%.\nIf refine rate of each is 7 or higher, Cri + 5.\nIf the sum of refine rate is 18 or higher, increases critical damage by 15%.\nIf the sum of refine rate is 22 or higher, increases physical damage against fire property enemies and insect race monsters by 10%.\n^ffffff_^000000\nClass: ^777777Armor^000000  Defense: ^77777770^000000\nWeight: ^777777330^000000\nRequired Level: ^777777120^000000\nJobs: ^777777Swordsman classes, Merchant classes, Thief classes^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 70,
+    "weight": 330,
+    "requiredLevel": 120,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Swordman",
+      "Merchant",
+      "Thief"
+    ],
+    "script": {
+      "hpPercent": [
+        "10"
+      ],
+      "spPercent": [
+        "10"
+      ],
+      "atk": [
+        "1---4"
+      ],
+      "p_element_fire": [
+        "3---4",
+        "EQUIP[Illusion Katar of Frozen Icicle]REFINE[armor,weapon==22]===10"
+      ],
+      "p_element_water": [
+        "3---4"
+      ],
+      "atkPercent": [
+        "9===10",
+        "EQUIP[Illusion Katar of Frozen Icicle]===5"
+      ],
+      "cri": [
+        "EQUIP[Illusion Katar of Frozen Icicle]REFINE[weapon==7]7===5"
+      ],
+      "criDmg": [
+        "EQUIP[Illusion Katar of Frozen Icicle]REFINE[armor,weapon==18]===15"
+      ],
+      "p_race_insect": [
+        "EQUIP[Illusion Katar of Frozen Icicle]REFINE[armor,weapon==22]===10"
+      ]
+    }
+  },
   "450164": {
     "id": 450164,
     "aegisName": "Egirnion_Armor",
@@ -75028,6 +75253,54 @@
         "9===10",
         "11===20",
         "13===30"
+      ]
+    }
+  },
+  "480054": {
+    "id": 480054,
+    "aegisName": "Morrigane_Manyeau_IL",
+    "name": "Illusion Morrigane's Manteau [1]",
+    "unidName": "Garment",
+    "resName": "Morrigane_Manyeau_IL",
+    "description": "Luk + 5, Flee + 20.\nIf refine rate is 7 or higher, increases physical damage against demon, fish, insect and demihuman race monsters by 5%.\nIf refine rate is 9 or higher, increases physical damage against demon, fish, insect and demihuman race monsters by additional 10%.\n^ffffff_^000000\nClass: ^777777Garment^000000  Defense: ^77777712^000000\nWeight: ^77777760^000000\nRequired Level: ^777777130^000000\nJobs: ^777777All except Novice^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 515,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 12,
+    "weight": 60,
+    "requiredLevel": 130,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "unusableClass": [
+      "Novice"
+    ],
+    "script": {
+      "luk": [
+        "5"
+      ],
+      "flee": [
+        "20"
+      ],
+      "p_race_demon": [
+        "7===5",
+        "9===10"
+      ],
+      "p_race_fish": [
+        "7===5",
+        "9===10"
+      ],
+      "p_race_insect": [
+        "7===5",
+        "9===10"
+      ],
+      "p_race_demihuman": [
+        "7===5",
+        "9===10"
       ]
     }
   },
@@ -77533,6 +77806,76 @@
       ],
       "p_race_demon": [
         "EQUIP[Brilliant Light Aquamarine Ring]===15"
+      ]
+    }
+  },
+  "490069": {
+    "id": 490069,
+    "aegisName": "Morrigane_Belt_IL",
+    "name": "Illusion Morrigane's Belt [1]",
+    "unidName": "Accessory",
+    "resName": "Morrigane_Belt_IL",
+    "description": "Str + 3, MaxHP + 5%.\n\nWhen equipped with Illusion Morrigane's Pendant,\nincreases attack speed (reduces delay after attack by 10%).\n^ffffff_^000000\nClass: ^777777Accessory (Right)^000000 Defense: ^7777770^000000\nWeight: ^77777720^000000\nRequired Level: ^777777130^000000\nJobs: ^777777All except Novice^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 510,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 20,
+    "requiredLevel": 130,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "unusableClass": [
+      "Novice"
+    ],
+    "script": {
+      "str": [
+        "3"
+      ],
+      "hpPercent": [
+        "5"
+      ],
+      "aspdPercent": [
+        "EQUIP[Illusion Morrigane's Pendant]===10"
+      ]
+    }
+  },
+  "490070": {
+    "id": 490070,
+    "aegisName": "Morrigane_Pendant_IL",
+    "name": "Illusion Morrigane's Pendant [1]",
+    "unidName": "Accessory",
+    "resName": "Morrigane_Pendant_IL",
+    "description": "Atk + 20, Cri + 5.\n^ffffff_^000000\nWhen equipped with Illusion Morrigane's Belt,\nAtk + 10%.\n^ffffff_^000000\nClass: ^777777Accessory (Left)^000000 Defense: ^7777770^000000\nWeight: ^77777720^000000\nRequired Level: ^777777130^000000\nJobs: ^777777All except Novice^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 511,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 20,
+    "requiredLevel": 130,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "unusableClass": [
+      "Novice"
+    ],
+    "script": {
+      "atk": [
+        "20"
+      ],
+      "cri": [
+        "5"
+      ],
+      "atkPercent": [
+        "EQUIP[Illusion Morrigane's Belt]===10"
       ]
     }
   },
@@ -82402,6 +82745,67 @@
       ]
     }
   },
+  "550031": {
+    "id": 550031,
+    "aegisName": "Dea_Staff_IL",
+    "name": "Illusion Dea Staff [2]",
+    "unidName": "Staff",
+    "resName": "Dea_Staff_IL",
+    "description": "Matk + 190, Int + 6, Vit + 2.\nHas a low chance to recover 150 SP every second for 4 times when dealing magical damage.\nIncreases Judex damage by 20% per 3 refine rate.\nIf refine rate is 7 or higher, increases holy property magical damage by 15%.\nIf refine rate is 9 or higher, increases Judex damage by 30%, reduces global cooldown by 15%.\nIf refine rate is 11 or higher, increases magical damage against all size enemies by 20% for 15 seconds when using Magnus Exorcismus.\n\nWhen equipped with Illusion Saint Robe, Matk + 50, reduces global cooldown by 10%.\nIf refine rate of each is 7 or higher, Matk + 10%, ASPD + 2.\nIf the sum of refine rate is 18 or higher, increases magical damage against all race monsters by 20%.\nIf the sum of refine rate is 22 or higher, reduces variable casting time by 15%, reduces global cooldown by additional 10%.\nClass: ^777777Staff^000000 Attack: ^77777750^000000\nWeight: ^777777100^000000 Property ^777777Holy^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777120^000000\nJobs: ^777777Archbishop^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 265,
+    "itemLevel": 4,
+    "attack": 50,
+    "propertyAtk": "Holy",
+    "defense": null,
+    "weight": 100,
+    "requiredLevel": 120,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Arch Bishop"
+    ],
+    "script": {
+      "matk": [
+        "190",
+        "EQUIP[Illusion Saint Robe]===50"
+      ],
+      "int": [
+        "6"
+      ],
+      "vit": [
+        "2"
+      ],
+      "Judex": [
+        "3---20",
+        "9===30"
+      ],
+      "m_my_element_holy": [
+        "7===15"
+      ],
+      "acd": [
+        "9===15",
+        "EQUIP[Illusion Saint Robe]===10",
+        "EQUIP[Illusion Saint Robe]REFINE[weapon,armor==22]===10"
+      ],
+      "m_size_all": [
+        "11===20"
+      ],
+      "matkPercent": [
+        "EQUIP[Illusion Saint Robe]REFINE[armor==7]7===10"
+      ],
+      "aspd": [
+        "EQUIP[Illusion Saint Robe]REFINE[armor==7]7===2"
+      ],
+      "m_race_all": [
+        "EQUIP[Illusion Saint Robe]REFINE[weapon,armor==18]===20"
+      ],
+      "vct": [
+        "EQUIP[Illusion Saint Robe]REFINE[weapon,armor==22]===15"
+      ]
+    }
+  },
   "550080": {
     "id": 550080,
     "aegisName": "Freedom_Stick",
@@ -82877,6 +83281,63 @@
       ]
     }
   },
+  "570008": {
+    "id": 570008,
+    "aegisName": "Electronic_Guitar_IL",
+    "name": "Illusion Electric Guitar [2]",
+    "unidName": "Musical Instrument",
+    "resName": "Electronic_Guitar_IL",
+    "description": "Matk + 180\nMatk + 6 and increases long ranged physical damage by 3% per 2 refine rate.\nIf refine rate is 7 or higher, increases neutral property magical damage by 10%, reduces SP consumption of Severer Rainstorm by 10%.\nIf refine rate is 9 or higher, increases Reverberation and Severe Rainstorm damage by 15%.\nIf refine rate is 11 or higher, increases magical damage against water property monsters by 10%, reduces skill cooldown of Severe Rainstorm by 1 second.\n\nWhen equipped with Illusion Muffler, Atk + 30\nIf refine rate of each is 7 or higher, increases long ranged physical damage by 5%.\nIf the sum of refine rate is 18 or higher, increases Severe Rainstorm damage by 20%.\nIf the sum of refine rate is 22 or higher, reduces skill cooldown of Severe Rainstorm by 1 second.\n\nWhen equipped with Illusion Shoes, Matk + 40\nIf refine rate of each is 7 or higher, increases neutral property magical damage by 5%.\nIf the sum of refine rate is 18 or higher, increases Reverberation damage by 20%.\nIf the sum of refine rate is 22 or higher, reduces fixed casting time of Reverberation by 0.5 seconds.\n^ffffff_^000000\nClass: ^777777Instrument^000000 Attack: ^777777170^000000\nWeight: ^777777180^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777120^000000\nJobs: ^777777Minstrel^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 269,
+    "itemLevel": 4,
+    "attack": 170,
+    "defense": null,
+    "weight": 180,
+    "requiredLevel": 120,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Minstrel"
+    ],
+    "script": {
+      "matk": [
+        "180",
+        "2---6",
+        "EQUIP[Illusion Shoes]===40"
+      ],
+      "range": [
+        "2---3",
+        "EQUIP[Illusion Muffler]REFINE[garment==7]7===5"
+      ],
+      "m_my_element_neutral": [
+        "7===10",
+        "EQUIP[Illusion Shoes]REFINE[boot==7]7===5"
+      ],
+      "Reverberation": [
+        "9===15",
+        "EQUIP[Illusion Shoes]REFINE[weapon,boot==18]===20"
+      ],
+      "Severe Rainstorm": [
+        "9===15",
+        "EQUIP[Illusion Muffler]REFINE[weapon,garment==18]===20"
+      ],
+      "m_element_water": [
+        "11===10"
+      ],
+      "cd__Severe Rainstorm": [
+        "11===1",
+        "EQUIP[Illusion Muffler]REFINE[weapon,garment==22]===1"
+      ],
+      "atk": [
+        "EQUIP[Illusion Muffler]===30"
+      ],
+      "fct__Reverberation": [
+        "EQUIP[Illusion Shoes]REFINE[weapon,boot==22]===0.5"
+      ]
+    }
+  },
   "570009": {
     "id": 570009,
     "aegisName": "Up_Trumpet_Shell_K",
@@ -83076,6 +83537,63 @@
       ],
       "spPercentCost__Reverberation": [
         "11===20"
+      ]
+    }
+  },
+  "580008": {
+    "id": 580008,
+    "aegisName": "Electric_Eel_IL",
+    "name": "Illusion Electric Eel [2]",
+    "unidName": "Whip",
+    "resName": "Electric_Eel_IL",
+    "description": "Matk + 180\nMatk + 6 and increases long ranged physical damage by 3% per 2 refine rate.\nIf refine rate is 7 or higher, increases neutral property magical damage by 10%, reduces SP consumption of Severer Rainstorm by 10%.\nIf refine rate is 9 or higher, increases Reverberation and Severe Rainstorm damage by 15%.\nIf refine rate is 11 or higher, increases magical damage against water property monsters by 10%, reduces skill cooldown of Severe Rainstorm by 1 second.\n\nWhen equipped with Illusion Muffler, Atk + 30\nIf refine rate of each is 7 or higher, increases long ranged physical damage by 5%.\nIf the sum of refine rate is 18 or higher, increases Severe Rainstorm damage by 20%.\nIf the sum of refine rate is 22 or higher, reduces skill cooldown of Severe Rainstorm by 1 second.\n\nWhen equipped with Illusion Shoes, Matk + 40\nIf refine rate of each is 7 or higher, increases neutral property magical damage by 5%.\nIf the sum of refine rate is 18 or higher, increases Reverberation damage by 20%.\nIf the sum of refine rate is 22 or higher, reduces fixed casting time of Reverberation by 0.5 seconds.\n^ffffff_^000000\nClass: ^777777Whip^000000 Attack: ^777777170^000000\nWeight: ^777777180^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777120^000000\nJobs: ^777777Wanderer^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 270,
+    "itemLevel": 4,
+    "attack": 170,
+    "defense": null,
+    "weight": 180,
+    "requiredLevel": 120,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Wanderer"
+    ],
+    "script": {
+      "matk": [
+        "180",
+        "2---6",
+        "EQUIP[Illusion Shoes]===40"
+      ],
+      "range": [
+        "2---3",
+        "EQUIP[Illusion Muffler]REFINE[garment==7]7===5"
+      ],
+      "m_my_element_neutral": [
+        "7===10",
+        "EQUIP[Illusion Shoes]REFINE[boot==7]7===5"
+      ],
+      "Reverberation": [
+        "9===15",
+        "EQUIP[Illusion Shoes]REFINE[weapon,boot==18]===20"
+      ],
+      "Severe Rainstorm": [
+        "9===15",
+        "EQUIP[Illusion Muffler]REFINE[weapon,garment==18]===20"
+      ],
+      "m_element_water": [
+        "11===10"
+      ],
+      "cd__Severe Rainstorm": [
+        "11===1",
+        "EQUIP[Illusion Muffler]REFINE[weapon,garment==22]===1"
+      ],
+      "atk": [
+        "EQUIP[Illusion Muffler]===30"
+      ],
+      "fct__Reverberation": [
+        "EQUIP[Illusion Shoes]REFINE[weapon,boot==22]===0.5"
       ]
     }
   },
@@ -83595,6 +84113,50 @@
       ]
     }
   },
+  "600011": {
+    "id": 600011,
+    "aegisName": "Death_Guidance_IL",
+    "name": "Illusion Death Guidance [2]",
+    "unidName": "Two-handed Sword",
+    "resName": "Death_Guidance_IL",
+    "description": "Atk + 4 per refine rate.\nIf refine rate is 7 or higher, increases Storm Blast damage by 20%.\nIf refine rate is 9 or higher, when dealing physical damage, has a 3% chance to recover HP as 50 times of refine rate per second for 4 times.\nIf refine rate is 11 or higher, Cri + 15, increases critical damage by 15%.\n\nWhen equipped with Illusion Chain Mail, Atk + 30.\nIf refine rate of each is 7 or higher, Cri + 5.\nIf the sum of refine rate is 18 or higher, increases Storm Blast damage by 20%.\nIf the sum of refine rate is 22 or higher, increases physical damage against water property enemies and fish race monsters by 15%.\n^ffffff_^000000\nClass: ^777777Two-handed Sword^000000 Attack: ^777777240^000000\nWeight: ^777777200^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777120^000000\nJobs: ^777777Swordsman classes^000000",
+    "slots": 2,
+    "itemTypeId": 1,
+    "itemSubTypeId": 258,
+    "itemLevel": 4,
+    "attack": 240,
+    "defense": null,
+    "weight": 200,
+    "requiredLevel": 120,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Swordman"
+    ],
+    "script": {
+      "atk": [
+        "1---4",
+        "EQUIP[Illusion Chain Mail]===30"
+      ],
+      "Storm Blast": [
+        "7===20",
+        "EQUIP[Illusion Chain Mail]REFINE[weapon,armor==18]===20"
+      ],
+      "cri": [
+        "11===15",
+        "EQUIP[Illusion Chain Mail]REFINE[armor==7]7===5"
+      ],
+      "criDmg": [
+        "11===15"
+      ],
+      "p_element_water": [
+        "EQUIP[Illusion Chain Mail]REFINE[weapon,armor==22]===15"
+      ],
+      "p_race_fish": [
+        "EQUIP[Illusion Chain Mail]REFINE[weapon,armor==22]===15"
+      ]
+    }
+  },
   "610000": {
     "id": 610000,
     "aegisName": "Boost_Katar",
@@ -83830,6 +84392,54 @@
       ]
     }
   },
+  "610012": {
+    "id": 610012,
+    "aegisName": "KatarOfCold_Icicle_IL",
+    "name": "Illusion Katar of Frozen Icicle",
+    "unidName": "Katar",
+    "resName": "KatarOfCold_Icicle_IL",
+    "description": "Atk + 5 per refine rate.\nIf refine rate is 7 or higher, increases Cross Impact damage by 20%.\nIf refine rate is 9 or higher, increases attack speed (reduces delay after attack by 10%).\nIf refine rate is 11 or higher, Cri + 15, increases physical damage against fire property enemies and insect race monsters by 10%.\n\nWhen equipped with Illusion Ring, Atk + 5%.\nIf refine rate of Illusion Katar of Frozen Icicle is 9 or higher, increases critical damage by 20%.\nIf refine rate of Illusion Katar of Frozen Icicle is 11 or higher, Gains Cri + 15 for 30 seconds when using Venom Impression.\n^ffffff_^000000\nClass: ^777777Katar^000000 Attack: ^777777220^000000\nWeight: ^777777120^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777120^000000\nJobs: ^777777Assassin classes^000000",
+    "slots": 0,
+    "itemTypeId": 1,
+    "itemSubTypeId": 272,
+    "itemLevel": 4,
+    "attack": 220,
+    "defense": null,
+    "weight": 120,
+    "requiredLevel": 120,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Assassin"
+    ],
+    "script": {
+      "atk": [
+        "1---5"
+      ],
+      "Cross Impact": [
+        "7===20"
+      ],
+      "aspdPercent": [
+        "9===10"
+      ],
+      "cri": [
+        "11===15",
+        "EQUIP[Illusion Ring]ACTIVE_SKILL[Venom Impression]11===15"
+      ],
+      "p_element_fire": [
+        "11===10"
+      ],
+      "p_race_insect": [
+        "11===10"
+      ],
+      "atkPercent": [
+        "EQUIP[Illusion Ring]===5"
+      ],
+      "criDmg": [
+        "EQUIP[Illusion Ring]9===20"
+      ]
+    }
+  },
   "620004": {
     "id": 620004,
     "aegisName": "Up_Avenger",
@@ -83905,6 +84515,113 @@
       ],
       "cd__Hundred Spears": [
         "9===1.5"
+      ]
+    }
+  },
+  "630006": {
+    "id": 630006,
+    "aegisName": "Brionac_IL",
+    "name": "Illusion Brionac",
+    "unidName": "Spear",
+    "resName": "Brionac_IL",
+    "description": "Atk + 10%\nIncreases Overbrand damage by 5% per 2 refine rate.\nIf refine rate is 7 or higher, increases Overbrand damage by additional 20%.\nIf refine rate is 9 or higher, increases physical damage against medium and large size enemies by 15%.\nIf refine rate is 11 or higher, increases physical damage against fish and demon race monsters by 30%.\n\nWhen equipped with Illusion Saphien's Armor of Ocean, Atk + 5%.\nIf refine rate of each is 7 or higher, reduces global cooldown by 5%.\nIf the sum of refine rate is 18 or higher, increases Overbrand damage by 20%.\nIf the sum of refine rate is 22 or higher, when using Overbrand, has a chance to gain Atk + 50 and increases physical damage against fish and demon race monsters by 50% for 10 seconds.\n^ffffff_^000000\nClass: ^777777Two-handed Spear^000000 Attack: ^777777210^000000\nWeight: ^777777300^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777120^000000\nJobs: ^777777Swordsman classes^000000",
+    "slots": 0,
+    "itemTypeId": 1,
+    "itemSubTypeId": 260,
+    "itemLevel": 4,
+    "attack": 210,
+    "defense": null,
+    "weight": 300,
+    "requiredLevel": 120,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Swordman"
+    ],
+    "script": {
+      "atkPercent": [
+        "10",
+        "EQUIP[Illusion Saphien's Armor of Ocean]===5"
+      ],
+      "Over Brand": [
+        "2---5",
+        "7===20",
+        "EQUIP[Illusion Saphien's Armor of Ocean]REFINE[weapon,armor==18]===20"
+      ],
+      "p_size_m": [
+        "9===15"
+      ],
+      "p_size_l": [
+        "9===15"
+      ],
+      "p_race_fish": [
+        "11===30"
+      ],
+      "p_race_demon": [
+        "11===30"
+      ],
+      "acd": [
+        "EQUIP[Illusion Saphien's Armor of Ocean]REFINE[armor==7]7===5"
+      ],
+      "chance__atk": [
+        "EQUIP[Illusion Saphien's Armor of Ocean]REFINE[weapon,armor==22]===50"
+      ],
+      "chance__p_race_fish": [
+        "EQUIP[Illusion Saphien's Armor of Ocean]REFINE[weapon,armor==22]===50"
+      ],
+      "chance__p_race_demon": [
+        "EQUIP[Illusion Saphien's Armor of Ocean]REFINE[weapon,armor==22]===50"
+      ]
+    }
+  },
+  "630007": {
+    "id": 630007,
+    "aegisName": "Zephyrus_IL",
+    "name": "Illusion Zephyrus [3]",
+    "unidName": "Spear",
+    "resName": "Zephyrus_IL",
+    "description": "Atk + 4 per refine rate.\nIncreases long ranged physical damage by 3% per 2 refine rate.\nIf refine rate is 7 or higher, increases Clashing Spiral damage by 20%.\nIf refine rate is 9 or higher, increases long ranged physical damage by additional 5%.\nIf refine rate is 11 or higher, Hit + 10, increases physical damage against medium and large size monsters by 10%.\n\nWhen equipped with Illusion Chain Mail, Atk + 30.\nIf refine rate of each is 7 or higher, increases long ranged physical damage by 5%.\nIf the sum of refine rate is 18 or higher, increases Clashing Spiral damage by 20%.\nIf the sum of refine rate is 22 or higher, increases physical damage against water property enemies and fish race monsters by 15%.\n^ffffff_^000000\nClass: ^777777Two-handed Spear^000000 Attack: ^777777250^000000\nWeight: ^777777330^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777120^000000\nJobs: ^777777Swordsman classes^000000",
+    "slots": 3,
+    "itemTypeId": 1,
+    "itemSubTypeId": 260,
+    "itemLevel": 4,
+    "attack": 250,
+    "defense": null,
+    "weight": 330,
+    "requiredLevel": 120,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Swordman"
+    ],
+    "script": {
+      "atk": [
+        "1---4",
+        "EQUIP[Illusion Chain Mail]===30"
+      ],
+      "range": [
+        "2---3",
+        "9===5",
+        "EQUIP[Illusion Chain Mail]REFINE[armor==7]7===5"
+      ],
+      "Clashing Spiral": [
+        "7===20",
+        "EQUIP[Illusion Chain Mail]REFINE[weapon,armor==18]===20"
+      ],
+      "hit": [
+        "11===10"
+      ],
+      "p_size_m": [
+        "11===10"
+      ],
+      "p_size_l": [
+        "11===10"
+      ],
+      "p_element_water": [
+        "EQUIP[Illusion Chain Mail]REFINE[weapon,armor==22]===15"
+      ],
+      "p_race_fish": [
+        "EQUIP[Illusion Chain Mail]REFINE[weapon,armor==22]===15"
       ]
     }
   },
