@@ -1,4 +1,4 @@
-import { DropdownModel } from '../models/dropdown.model';
+import { ItemDropdownModel } from '../models/dropdown.model';
 
 export const toDropdownList = <T extends Record<string, any>>(
   list: T[],
@@ -6,7 +6,7 @@ export const toDropdownList = <T extends Record<string, any>>(
   valueKey: keyof T,
   elementKey?: keyof T,
   extraKeys?: (keyof T)[],
-): DropdownModel[] => {
+): ItemDropdownModel[] => {
   return list.map((a) => {
     const ex = (extraKeys || []).reduce<T>((extraAttr, key) => {
       extraAttr[key] = a[key];
@@ -18,6 +18,7 @@ export const toDropdownList = <T extends Record<string, any>>(
       label: a[labelKey],
       value: a[valueKey],
       usableClass: a['usableClass'] || undefined,
+      unusableClass: a['unusableClass'] || undefined,
       element: elementKey ? a[elementKey] || '' : undefined,
       ...ex,
     };

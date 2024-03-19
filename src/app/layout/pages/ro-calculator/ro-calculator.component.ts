@@ -30,7 +30,7 @@ import { ConfirmationService, MenuItem, MessageService, PrimeIcons, SelectItemGr
 import { ActiveSkillModel, AtkSkillModel, CharacterBase, PassiveSkillModel } from './jobs/_character-base.abstract';
 import { MonsterModel } from './models/monster.model';
 import { EnchantTable, getEnchants } from './constants/enchant-table';
-import { DropdownModel } from './models/dropdown.model';
+import { DropdownModel, ItemDropdownModel } from './models/dropdown.model';
 import { ItemListModel } from './models/item-list.model';
 import { getMonsterSpawnMap } from './constants/monster-spawn-mapper';
 import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
@@ -1954,14 +1954,18 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
   private setItemDropdownList() {
     const classNameSet = this.selectedCharacter.classNameSet;
-    const onlyMe = (a: DropdownModel) => {
+    const onlyMe = (a: ItemDropdownModel) => {
+      if (Array.isArray(a.unusableClass) && a.unusableClass.length > 0) {
+        const cannot = a.unusableClass.some((x) => classNameSet.has(x));
+        if (cannot) return false;
+      }
       if (Array.isArray(a.usableClass)) {
         return a.usableClass.some((x) => classNameSet.has(x));
       }
 
       return true;
     };
-    const onlySuperNoviceWeapon = (a: DropdownModel) => {
+    const onlySuperNoviceWeapon = (a: ItemDropdownModel) => {
       // supper novice allow to equip weapon lv4
       if (this.selectedCharacter.className === ClassName.SuperNovice) {
         const { itemLevel, itemSubTypeId } = this.items[a.value as number] ?? {};
@@ -1978,7 +1982,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
       return true;
     };
-    const onlySuperNoviceHeadGear = (a: DropdownModel) => {
+    const onlySuperNoviceHeadGear = (a: ItemDropdownModel) => {
       if (this.selectedCharacter.className === ClassName.SuperNovice) {
         return true;
       }
