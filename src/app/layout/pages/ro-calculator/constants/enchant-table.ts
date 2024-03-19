@@ -442,8 +442,8 @@ const illusionBoot = [
   'Improve_Orb_Health',
 ];
 const illusionAcc = [EA._5, FS._6, Spell._5, AttackDelay._4, Fatal._4, ...BaseState._3];
-const illusionAccR = [EA._5, FS._6, Spell._5, AttackDelay._4, Fatal._4, Str._3, Agi._3, Vit._3, Luk._3];
-const illusionAccL = [EA._5, FS._6, Spell._5, AttackDelay._4, Fatal._4, Int._3, Dex._3, Vit._3, Luk._3];
+const illusionAccR = [EA._5, Spell._5, AttackDelay._4, Fatal._4, Str._3, Agi._3, Vit._3, Luk._3];
+const illusionAccL = [EA._5, Spell._5, AttackDelay._4, Fatal._4, Int._3, Dex._3, Vit._3, Luk._3];
 
 const automaticJobs = [
   'Automatic_Orb46',
