@@ -15020,6 +15020,35 @@
       ]
     }
   },
+  "13442": {
+    "id": 13442,
+    "aegisName": "Old_Parasol",
+    "name": "Old Parasol [3]",
+    "unidName": "Sword",
+    "resName": "오래된양산",
+    "description": "ร่มที่ดูเก่าเอามากๆ จนประมาณเวลาไม่ถูก รู้สึกถึงพลังเวทแผ่ออกมา\nMATK +80, เพิ่ม MATK ตามระดับการอัพเกรด\nสามารถใช้ Skill Soul Strike Lv.10\nประเภท : ^777777Sword^000000\nพลังโจมตี : ^777777120^000000\nน้ำหนัก : ^77777750^000000\nอาวุธ Lv : ^7777773^000000\nต้องการ Lv : ^77777780^000000\nอาชีพ : ^777777Swordman Cls/Merchant Cls/Thief^000000",
+    "slots": 3,
+    "itemTypeId": 1,
+    "itemSubTypeId": 257,
+    "itemLevel": 3,
+    "attack": 120,
+    "defense": null,
+    "weight": 50,
+    "requiredLevel": 80,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Swordman",
+      "Merchant",
+      "Thief"
+    ],
+    "script": {
+      "matk": [
+        "80",
+        "1---10"
+      ]
+    }
+  },
   "13461": {
     "id": 13461,
     "aegisName": "Sealed_Evil_Sword",
@@ -21244,6 +21273,44 @@
       "hpPercent": [
         "SUM[vit==120]===3",
         "EQUIP[Feather Beret]REFINE[headUpper==9]===5"
+      ]
+    }
+  },
+  "19098": {
+    "id": 19098,
+    "aegisName": "Piamette_Hood",
+    "name": "Piamette Hood [1]",
+    "unidName": "Hat",
+    "resName": "피아멧트의두건",
+    "description": "ฮู้ดที่ Piamette ใส่อยู่ \nมันถูกห่อหุ้มด้วยพลังเวทมนต์มหาศาล \nINT + 2, DEX + 2.\nเพิ่ม Damage ทางเวทย์และทางกายภาพที่สร้างต่อศัตรูเผ่า Demi-Human 10%\nเมื่ออัพเกรดขั้น 12, ยกเลิกการลงโทษขนาดของอาวุธ \nเมื่อสวมใส่กับ Mad Bunny หรือ Cursed Mad Bunny,  แล้วทำการโจมตีทางกายภาพหรือทางเวทย์, มีโอกาสกลายร่างเป็น \"Piamette\" \nในขณะที่อยู่ในสถานะกลายร่างจะสูญเสีย HP ทีละ 50 ต่อวินาที, และจะได้รับพลังของ \"Piamette\" ชั่วคราว\nเพิ่มพลังของ \"Piamette\" และโอกาสในการกลายร่างมากขึ้นตามขั้นอัพเกรด\nและเพิ่มระยะเวลาในการกลายร่างตามขั้นอัพเกรดของ Mad Bunny\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^7777773^000000\nตำแหน่ง : ^777777Upper ^000000น้ำหนัก :  ^77777710^000000\nเลเวลที่ต้องการ: ^7777771^000000\nอาชีพที่สวมใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 3,
+    "weight": 10,
+    "requiredLevel": 1,
+    "location": "Upper",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "int": [
+        "2"
+      ],
+      "dex": [
+        "2"
+      ],
+      "p_race_demihuman": [
+        "10"
+      ],
+      "m_race_demihuman": [
+        "10"
+      ],
+      "ignore_size_penalty": [
+        "12===1"
       ]
     }
   },
@@ -62690,6 +62757,39 @@
       ],
       "spPercentCost": [
         "5"
+      ]
+    }
+  },
+  "300266": {
+    "id": 300266,
+    "aegisName": "Unknown_Swordman_Card",
+    "name": "Unknown Swordsman Card",
+    "unidName": "Unknown Swordsman Card",
+    "resName": "이름없는카드",
+    "description": "MaxHP + 15%.\nWhen equipped with Boss Egnigem Card and both are equipped by swordsman classes, increases melee and long ranged physical damage by 10%,\nadditional MaxHP + 2% and increases melee and long ranged physical damage by additional 2% per 4 sum of refine rate of armor and shoes.\nClass: ^777777Card^000000\nCompound on: ^777777Armor^000000\nWeight: ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 16,
+    "cardPrefix": "of Unknown Swordsman",
+    "script": {
+      "hpPercent": [
+        "15",
+        "EQUIP[Boss Egnigem Card]USED[Swordman]REFINE[armor,boot==4]---2"
+      ],
+      "melee": [
+        "EQUIP[Boss Egnigem Card]USED[Swordman]===10",
+        "EQUIP[Boss Egnigem Card]USED[Swordman]REFINE[armor,boot==4]---2"
+      ],
+      "range": [
+        "EQUIP[Boss Egnigem Card]USED[Swordman]===10",
+        "EQUIP[Boss Egnigem Card]USED[Swordman]REFINE[armor,boot==4]---2"
       ]
     }
   },

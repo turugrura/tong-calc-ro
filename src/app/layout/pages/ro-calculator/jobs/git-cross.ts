@@ -325,6 +325,16 @@ export class GitCross extends CharacterBase {
         { label: 'Lv 10', isUse: true, value: 10 },
       ],
     },
+    {
+      name: 'Poisonous Weapon',
+      inputType: 'dropdown',
+      label: 'Poisoning',
+      dropdown: [
+        { label: '-', isUse: false, value: 0 },
+        { label: 'Pyrexia', isUse: true, value: 1, bonus: { criDmg: 15, flatDmg: 5 } },
+        { label: 'Magic Mushroom', isUse: true, value: 2, bonus: { acd: 10 } },
+      ],
+    },
   ];
 
   protected _passiveSkillList: PassiveSkillModel[] = [
