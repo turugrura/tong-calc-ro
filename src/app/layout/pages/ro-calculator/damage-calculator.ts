@@ -416,6 +416,10 @@ export class DamageCalculator {
     return { dmgReductionByMHardDef };
   }
 
+  private getSkillBonus(skillName: string) {
+    return this.totalBonus[skillName] || 0;
+  }
+
   private getAtkGroupA(params: { totalAtk: number }) {
     const { totalAtk } = params;
     const atkPercent = this.toPercent(this.totalBonus.atkPercent);
@@ -715,7 +719,7 @@ export class DamageCalculator {
     const ranged = isMelee ? melee : range;
     const rangedMultiplier = this.toPercent(ranged + 100);
     const baseSkillMultiplier = this.toPercent(baseSkillDamage);
-    const equipSkillMultiplier = this.toPercent(100 + (this.totalBonus[skillName] || 0));
+    const equipSkillMultiplier = this.toPercent(100 + this.getSkillBonus(skillName));
     const criDmgToMonster = floor(criDmg * criDmgPercentage || 0);
     const criMultiplier = canCri ? this.toPercent(criDmgToMonster + 100) : 1;
 
@@ -833,7 +837,7 @@ export class DamageCalculator {
     const hardDef = isIgnoreDef ? 1 : dmgReductionByMHardDef;
 
     const baseSkillMultiplier = this.toPercent(baseSkillDamage);
-    const equipSkillMultiplier = this.toPercent(100 + (this.totalBonus[skillName] || 0));
+    const equipSkillMultiplier = this.toPercent(100 + this.getSkillBonus(skillName));
     const finalDmg = this.totalBonus[`final_${skillPropertyAtk?.toLowerCase()}`] || 0;
     const finalDmgMultiplier = this.toPercent(finalDmg + 100);
     const propertyMultiplier = this.getPropertyMultiplier(skillPropertyAtk);
@@ -1196,6 +1200,7 @@ export class DamageCalculator {
       skillMinDamage2,
       skillMaxDamage2,
       isAutoSpell,
+      skillBonusFromEquipment: this.getSkillBonus(skillName),
     };
 
     return { basicDmg, misc, skillDmg, skillAspd, basicAspd };

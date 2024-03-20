@@ -4134,6 +4134,17 @@
                   <div class="col-6">
                     <app-calc-value
                       [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+                      label="BonusSkill:"
+                      unit="%"
+                      styleClass="summary_highlight"
+                      styleClass2="summary_compare"
+                      [max]="totalSummary?.dmg?.skillBonusFromEquipment"
+                      [max2]="totalSummary2?.dmg?.skillBonusFromEquipment"
+                    ></app-calc-value>
+                  </div>
+                  <div class="col-6">
+                    <app-calc-value
+                      [enableCompare]="isEnableCompare && totalSummary2?.dmg"
                       label="SizePenalty:"
                       unit=" %"
                       styleClass="summary_highlight"

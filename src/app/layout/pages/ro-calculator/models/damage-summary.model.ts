@@ -42,6 +42,7 @@ export interface SkillDamageSummaryModel {
   skillPart2Label: string;
   skillMinDamage2: number;
   skillMaxDamage2: number;
+  skillBonusFromEquipment: number;
 
   /**
    * Calculated damage including chances bonus
