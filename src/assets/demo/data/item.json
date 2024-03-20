@@ -951,9 +951,6 @@
       "cd__Psychic Wave": [
         "3"
       ],
-      "sp__Psychic Wave": [
-        "60"
-      ],
       "Psychic Wave": [
         "7===2",
         "8===2",
@@ -2334,9 +2331,6 @@
       "Minstrel"
     ],
     "script": {
-      "sp__Rush To Windmill": [
-        "20"
-      ],
       "Arrow Vulcan": [
         "200"
       ]
@@ -3459,9 +3453,6 @@
     "script": {
       "agi": [
         "2"
-      ],
-      "sp__Aimed Bolt": [
-        "10"
       ]
     }
   },
@@ -3914,9 +3905,6 @@
     "script": {
       "Metalic Sound": [
         "150"
-      ],
-      "sp__Metalic Sound": [
-        "60"
       ],
       "vct": [
         "50"
@@ -12622,9 +12610,6 @@
       ],
       "range": [
         "5"
-      ],
-      "sp__Rush To Windmill": [
-        "10"
       ]
     }
   },
@@ -15102,9 +15087,6 @@
       "range": [
         "3---4"
       ],
-      "spPercent__Cart Cannon": [
-        "9===10"
-      ],
       "Cart Cannon": [
         "11===15"
       ],
@@ -15816,9 +15798,6 @@
       ],
       "Double Strafe": [
         "EQUIP[Vigilante Bow&&Vigilante Badge]50"
-      ],
-      "sp__Triangle Shot": [
-        "EQUIP[Vigilante Bow&&Vigilante Badge]10"
       ]
     }
   },
@@ -29529,10 +29508,6 @@
       "all"
     ],
     "script": {
-      "spPercent__Bash": [
-        "20",
-        "1---3"
-      ],
       "atkPercent": [
         "EQUIP[Swordsman Shadow Pendant]===1",
         "EQUIP[Swordsman Shadow Pendant]REFINE[shadowEarring,shadowPendant==10]2"
@@ -29599,10 +29574,6 @@
       "all"
     ],
     "script": {
-      "sp__Heal": [
-        "20",
-        "1---3"
-      ],
       "matkPercent": [
         "EQUIP[Acolyte Shadow Pendant]===1",
         "EQUIP[Acolyte Shadow Pendant]REFINE[shadowEarring,shadowPendant==10]===2"
@@ -29865,12 +29836,7 @@
     "usableClass": [
       "all"
     ],
-    "script": {
-      "spPercent__Holy Cross": [
-        "20",
-        "1---3"
-      ]
-    }
+    "script": {}
   },
   "24258": {
     "id": 24258,
@@ -29892,12 +29858,7 @@
     "usableClass": [
       "all"
     ],
-    "script": {
-      "spPercent__Hammer Fall": [
-        "20",
-        "1---5"
-      ]
-    }
+    "script": {}
   },
   "24259": {
     "id": 24259,
@@ -29941,16 +29902,7 @@
     "usableClass": [
       "all"
     ],
-    "script": {
-      "sp__Kyrie Eleison": [
-        "20",
-        "1---3"
-      ],
-      "sp__Lex Aeterna": [
-        "20",
-        "1---3"
-      ]
-    }
+    "script": {}
   },
   "24261": {
     "id": 24261,
@@ -30176,13 +30128,6 @@
       "all"
     ],
     "script": {
-      "spPercent__Bowling Bash": [
-        "20",
-        "1---3"
-      ],
-      "spPercent__Pierce": [
-        "EQUIP[Knight Shadow Shoes]20"
-      ],
       "Bowling Bash": [
         "EQUIP[Knight Shadow Shoes]20"
       ]
@@ -30214,9 +30159,6 @@
         "1---5"
       ],
       "Holy Cross": [
-        "EQUIP[Crusader Shadow Shoes]20"
-      ],
-      "spPercent__Grand Cross": [
         "EQUIP[Crusader Shadow Shoes]20"
       ]
     }
@@ -30367,13 +30309,6 @@
       "all"
     ],
     "script": {
-      "spPercent__Sonic Blow": [
-        "20",
-        "1---3"
-      ],
-      "spPercent__Grimtooth": [
-        "EQUIP[Assassin Shadow Shoes]20"
-      ],
       "Sonic Blow": [
         "EQUIP[Assassin Shadow Shoes]20"
       ]
@@ -31035,10 +30970,6 @@
       "Guillotine Cross"
     ],
     "script": {
-      "spPercent__Dark Illusion": [
-        "20",
-        "1---3"
-      ],
       "atk": [
         "1---1"
       ],
@@ -31281,9 +31212,6 @@
         "ACTIVE_SKILL[Enchant Blade]7===1",
         "ACTIVE_SKILL[Enchant Blade]9===1"
       ],
-      "spPercent__Sonic Wave": [
-        "EQUIP[Rune Knight Weapon Shadow]20"
-      ],
       "allStatus": [
         "EQUIP[Swordsman Shadow Earring&&Swordsman Shadow Pendant&&Knight Shadow Shoes&&Knight Shadow Armor&&Rune Knight Weapon Shadow]10"
       ],
@@ -31325,9 +31253,6 @@
       "Earth Drive": [
         "20",
         "1---5"
-      ],
-      "spPercent__Cannon Spear": [
-        "EQUIP[Royal Guard Shadow Weapon]20"
       ],
       "allStatus": [
         "EQUIP[Swordsman Shadow Earring&&Swordsman Shadow Pendant&&Crusader Shadow Shoes&&Crusader Shadow Armor&&Royal Guard Shadow Weapon]10"
@@ -31372,9 +31297,6 @@
         "1---5"
       ],
       "Vulcan Arm": [
-        "EQUIP[Mechanic Weapon Shadow]20"
-      ],
-      "spPercent__Flame Launcher": [
         "EQUIP[Mechanic Weapon Shadow]20"
       ],
       "allStatus": [
@@ -31750,10 +31672,6 @@
       "Ranger"
     ],
     "script": {
-      "spPercent__Aimed Bolt": [
-        "20",
-        "1---5"
-      ],
       "Aimed Bolt": [
         "EQUIP[Ranger Shadow Weapon]20"
       ],
@@ -32015,9 +31933,6 @@
       ],
       "spPercent": [
         "EQUIP[Doram Physical Shadow Weapon]2"
-      ],
-      "spPercent__all": [
-        "EQUIP[Doram Physical Shadow Weapon]10"
       ]
     }
   },
@@ -32060,9 +31975,6 @@
       ],
       "spPercent": [
         "EQUIP[Doram Magical Shadow Weapon]2"
-      ],
-      "spPercent__all": [
-        "EQUIP[Doram Magical Shadow Weapon]10"
       ]
     }
   },
@@ -34617,12 +34529,7 @@
     "usableClass": [
       "Rune Knight"
     ],
-    "script": {
-      "spPercent__Sonic Wave": [
-        "2",
-        "2---1"
-      ]
-    }
+    "script": {}
   },
   "24443": {
     "id": 24443,
@@ -34795,12 +34702,7 @@
     "usableClass": [
       "Rune Knight"
     ],
-    "script": {
-      "spPercent__Dragon Breath - WATER": [
-        "2",
-        "2---1"
-      ]
-    }
+    "script": {}
   },
   "24449": {
     "id": 24449,
@@ -34892,12 +34794,7 @@
     "usableClass": [
       "Rune Knight"
     ],
-    "script": {
-      "sp__Dragon Breath": [
-        "2",
-        "2---1"
-      ]
-    }
+    "script": {}
   },
   "24455": {
     "id": 24455,
@@ -35076,12 +34973,7 @@
     "usableClass": [
       "Ranger"
     ],
-    "script": {
-      "sp__Arrow Storm": [
-        "2",
-        "2---1"
-      ]
-    }
+    "script": {}
   },
   "24461": {
     "id": 24461,
@@ -35171,12 +35063,7 @@
     "usableClass": [
       "Ranger"
     ],
-    "script": {
-      "spPercent__Focused Arrow Strike": [
-        "2",
-        "2---1"
-      ]
-    }
+    "script": {}
   },
   "24464": {
     "id": 24464,
@@ -35260,12 +35147,7 @@
     "usableClass": [
       "Mechanic"
     ],
-    "script": {
-      "spPercent__Axe Tornado": [
-        "2",
-        "2---1"
-      ]
-    }
+    "script": {}
   },
   "24467": {
     "id": 24467,
@@ -35444,12 +35326,7 @@
     "usableClass": [
       "Mechanic"
     ],
-    "script": {
-      "spPercent__Vulcan Arm": [
-        "2",
-        "2---1"
-      ]
-    }
+    "script": {}
   },
   "24473": {
     "id": 24473,
@@ -35538,12 +35415,7 @@
     "usableClass": [
       "Mechanic"
     ],
-    "script": {
-      "spPercent__Arm Cannon": [
-        "2",
-        "2---1"
-      ]
-    }
+    "script": {}
   },
   "24476": {
     "id": 24476,
@@ -35816,12 +35688,7 @@
     "usableClass": [
       "Sura"
     ],
-    "script": {
-      "spPercent__Tiger Cannon": [
-        "2",
-        "2---1"
-      ]
-    }
+    "script": {}
   },
   "24491": {
     "id": 24491,
@@ -35909,12 +35776,7 @@
     "usableClass": [
       "Arch Bishop"
     ],
-    "script": {
-      "spPercent__Adoramus": [
-        "2",
-        "2---1"
-      ]
-    }
+    "script": {}
   },
   "24494": {
     "id": 24494,
@@ -36091,12 +35953,7 @@
     "usableClass": [
       "Arch Bishop"
     ],
-    "script": {
-      "sp__Magnus Exorcismus": [
-        "2",
-        "2---1"
-      ]
-    }
+    "script": {}
   },
   "24500": {
     "id": 24500,
@@ -36185,12 +36042,7 @@
       "Minstrel",
       "Wanderer"
     ],
-    "script": {
-      "spPercent__Severe Rainstorm": [
-        "2",
-        "2---1"
-      ]
-    }
+    "script": {}
   },
   "24503": {
     "id": 24503,
@@ -36377,12 +36229,7 @@
       "Minstrel",
       "Wanderer"
     ],
-    "script": {
-      "spPercent__Metalic Sound": [
-        "2",
-        "2---1"
-      ]
-    }
+    "script": {}
   },
   "24509": {
     "id": 24509,
@@ -36483,12 +36330,7 @@
       "Minstrel",
       "Wanderer"
     ],
-    "script": {
-      "spPercent__Reverberation": [
-        "2",
-        "2---1"
-      ]
-    }
+    "script": {}
   },
   "24512": {
     "id": 24512,
@@ -36661,12 +36503,7 @@
     "usableClass": [
       "Warlock"
     ],
-    "script": {
-      "spPercent__Crimson Rock": [
-        "4",
-        "2---1"
-      ]
-    }
+    "script": {}
   },
   "24521": {
     "id": 24521,
@@ -36756,12 +36593,7 @@
     "usableClass": [
       "Warlock"
     ],
-    "script": {
-      "spPercent__Chain Lightning": [
-        "4",
-        "2---1"
-      ]
-    }
+    "script": {}
   },
   "24524": {
     "id": 24524,
@@ -37028,12 +36860,7 @@
     "usableClass": [
       "Shadow Chaser"
     ],
-    "script": {
-      "sp__Fatal Manace": [
-        "2",
-        "2---1"
-      ]
-    }
+    "script": {}
   },
   "24536": {
     "id": 24536,
@@ -37117,12 +36944,7 @@
     "usableClass": [
       "Guillotine Cross"
     ],
-    "script": {
-      "spPercent__Rolling Cutter": [
-        "2",
-        "2---1"
-      ]
-    }
+    "script": {}
   },
   "24539": {
     "id": 24539,
@@ -37302,12 +37124,7 @@
     "usableClass": [
       "Guillotine Cross"
     ],
-    "script": {
-      "spPercent__Counter Slash": [
-        "2",
-        "2---1"
-      ]
-    }
+    "script": {}
   },
   "24545": {
     "id": 24545,
@@ -37486,12 +37303,7 @@
     "usableClass": [
       "Sorcerer"
     ],
-    "script": {
-      "spPercent__Diamond Dust": [
-        "4",
-        "2---1"
-      ]
-    }
+    "script": {}
   },
   "24551": {
     "id": 24551,
@@ -37670,12 +37482,7 @@
     "usableClass": [
       "Sorcerer"
     ],
-    "script": {
-      "sp__Psychic Wave": [
-        "4",
-        "2---1"
-      ]
-    }
+    "script": {}
   },
   "24557": {
     "id": 24557,
@@ -37768,12 +37575,7 @@
     "usableClass": [
       "Sorcerer"
     ],
-    "script": {
-      "spPercent__Varetyr Spear": [
-        "4",
-        "2---1"
-      ]
-    }
+    "script": {}
   },
   "24560": {
     "id": 24560,
@@ -37857,12 +37659,7 @@
     "usableClass": [
       "Genetic"
     ],
-    "script": {
-      "spPercent__Cart Tornado": [
-        "2",
-        "2---1"
-      ]
-    }
+    "script": {}
   },
   "24563": {
     "id": 24563,
@@ -39335,9 +39132,6 @@
       "range": [
         "7===7"
       ],
-      "spPercent__Vanishing Buster": [
-        "9===15"
-      ],
       "Shatter Storm": [
         "EQUIP[Shatter Buster Shadow Pendant&&Shatter Buster Shadow Shoes]REFINE[shadowWeapon,shadowEarring,shadowPendant==2]---1"
       ],
@@ -39877,9 +39671,6 @@
         "3",
         "7===3"
       ],
-      "spPercent__Cross Slash": [
-        "9===10"
-      ],
       "Swirling Petal": [
         "EQUIP[Cross Shuriken Shadow Shoes&&Cross Shuriken Shadow Pendant]REFINE[shadowEarring,shadowBoot,shadowPendant==2]---1"
       ],
@@ -40275,9 +40066,6 @@
         "5",
         "7===5"
       ],
-      "spPercent__Lunatic Carrot Beat": [
-        "9===10"
-      ],
       "Lunatic Carrot Beat": [
         "EQUIP[Savage Rabbit Shadow Shoes&&Savage Rabbit Shadow Pendant]REFINE[shadowEarring,shadowBoot,shadowPendant==1]---1"
       ],
@@ -40672,9 +40460,6 @@
         "3",
         "7===3"
       ],
-      "spPercent__Full Moon Kick": [
-        "9===10"
-      ],
       "Full Moon Kick": [
         "EQUIP[Moonlight Shadow Pendant&&Moonlight Shadow Shoes]REFINE[shadowEarring,shadowBoot,shadowPendant==2]---1"
       ],
@@ -40863,10 +40648,6 @@
       ],
       "Esma": [
         "7===10"
-      ],
-      "spPercent__Espa": [
-        "9===10",
-        "EQUIP[Es Shadow Shield&&Es Shadow Armor]REFINE[shadowWeapon,shadowShield,shadowArmor==1]---1"
       ],
       "Eswhoo": [
         "EQUIP[Es Shadow Shield&&Es Shadow Armor]REFINE[shadowWeapon,shadowShield,shadowArmor==1]---1"
@@ -43297,9 +43078,6 @@
       ],
       "cd__Severe Rainstorm": [
         "9===1"
-      ],
-      "spPercent__Severe Rainstorm": [
-        "11===20"
       ]
     }
   },
@@ -47948,9 +47726,6 @@
       ],
       "Round Trip": [
         "7===20"
-      ],
-      "spPercent__Round Trip": [
-        "9===5"
       ]
     }
   },
@@ -47984,9 +47759,6 @@
       ],
       "Vanishing Buster": [
         "7===20"
-      ],
-      "spPercent__Vanishing Buster": [
-        "12===15"
       ]
     }
   },
@@ -48239,9 +48011,6 @@
       "Round Trip": [
         "7===15",
         "11===15"
-      ],
-      "sp__Round Trip": [
-        "7===10"
       ],
       "chance__dex": [
         "EQUIP[Ancient Hero Boots]20"
@@ -48650,14 +48419,8 @@
       "vct": [
         "10"
       ],
-      "sp__Fire Dance": [
-        "5"
-      ],
       "Quick Draw Shot": [
         "50"
-      ],
-      "sp__Fire Rain": [
-        "20"
       ],
       "Fire Rain": [
         "25"
@@ -48673,9 +48436,6 @@
       ],
       "cd__Hot Barrel": [
         "20"
-      ],
-      "sp__Mass Spiral": [
-        "10"
       ],
       "Mass Spiral": [
         "25"
@@ -49924,9 +49684,6 @@
       ],
       "Fatal Manace": [
         "9===30"
-      ],
-      "spPercent__Fatal Manace": [
-        "11===10"
       ]
     }
   },
@@ -54813,12 +54570,6 @@
       "Dragon Breath - WATER": [
         "EQUIP[Lord Knight Stone (Upper)]===10"
       ],
-      "spPercent__Dragon Breath": [
-        "EQUIP[Lord Knight Stone (Middle)]===10"
-      ],
-      "spPercent__Dragon Breath - WATER": [
-        "EQUIP[Lord Knight Stone (Middle)]===10"
-      ],
       "acd": [
         "EQUIP[Lord Knight Stone (Lower)]===5"
       ]
@@ -55111,9 +54862,6 @@
       ],
       "range": [
         "EQUIP[Stalker Stone (Middle)]10"
-      ],
-      "sp__Triangle Shot": [
-        "EQUIP[Stalker Stone (Lower)]10"
       ]
     }
   },
@@ -56572,17 +56320,11 @@
       "Focused Arrow Strike": [
         "REFINE_NAME[Sharp Star==3]---7"
       ],
-      "spPercent__Arrow Storm": [
-        "REFINE_NAME[Falken Shooter==3]---2"
-      ],
       "cd__No Limits": [
         "REFINE_NAME[Falken Shooter==3]---15"
       ],
       "Aimed Bolt": [
         "REFINE_NAME[Aiming Bow==3]---7"
-      ],
-      "spPercent__Aimed Bolt": [
-        "REFINE_NAME[Aiming Bow==3]---2"
       ]
     }
   },
@@ -56812,9 +56554,6 @@
     "location": null,
     "compositionPos": null,
     "script": {
-      "spPercent__Severe Rainstorm": [
-        "REFINE_NAME[Wind Gale==3]---3"
-      ],
       "range": [
         "REFINE_NAME[Wind Gale==3]---2",
         "REFINE_NAME[Scarlet Ribbon==3]---2"
@@ -56848,9 +56587,6 @@
     "location": null,
     "compositionPos": null,
     "script": {
-      "spPercent__Severe Rainstorm": [
-        "REFINE_NAME[Wind Gale==3]---3"
-      ],
       "range": [
         "REFINE_NAME[Wind Gale==3]---2",
         "REFINE_NAME[Antique Cello==3]---2"
@@ -58955,9 +58691,6 @@
       ],
       "cd__Severe Rainstorm": [
         "9===1"
-      ],
-      "spPercent__Severe Rainstorm": [
-        "11===20"
       ]
     }
   },
@@ -60956,9 +60689,6 @@
     "script": {
       "Fire Dance": [
         "60"
-      ],
-      "spPercent__Fire Dance": [
-        "25"
       ]
     }
   },
@@ -64199,9 +63929,6 @@
       "Judex": [
         "15",
         "EQUIP[High Priest Stone II (Upper)]15"
-      ],
-      "spPercent__Judex": [
-        "EQUIP[High Priest Stone II (Middle)]-10"
       ],
       "m_my_element_holy": [
         "EQUIP[High Priest Stone II (Lower)]10"
@@ -68937,12 +68664,6 @@
         "15",
         "EQUIP[Clown Gypsy Stone II (Upper)]10"
       ],
-      "spPercent__Reverberation": [
-        "EQUIP[Clown Gypsy Stone II (Middle)]20"
-      ],
-      "spPercent__Metalic Sound": [
-        "EQUIP[Clown Gypsy Stone II (Middle)]20"
-      ],
       "Metalic Sound": [
         "EQUIP[Clown Gypsy Stone II (Lower)]20"
       ]
@@ -69425,9 +69146,6 @@
       ],
       "Banishing Point": [
         "EQUIP[Royal Guard Stone (Garment)]===15"
-      ],
-      "spPercent__Genesis Ray": [
-        "EQUIP[Royal Guard Stone II (Garment)]===15"
       ]
     }
   },
@@ -74167,9 +73885,6 @@
         "9===10",
         "11===10"
       ],
-      "sp__Catnip Meteor": [
-        "50"
-      ],
       "Silvervine Stem Spear": [
         "20"
       ],
@@ -76236,9 +75951,6 @@
       "p_size_all": [
         "4---5"
       ],
-      "spPercent__Fire Dance": [
-        "9===50"
-      ],
       "aspdPercent": [
         "9===10"
       ],
@@ -76282,9 +75994,6 @@
       ],
       "Aimed Bolt": [
         "SUM[level==10]---1"
-      ],
-      "sp__Aimed Bolt": [
-        "7===20"
       ],
       "acd": [
         "9===12"
@@ -78081,9 +77790,6 @@
       "Lord of Vermilion": [
         "level:3---2"
       ],
-      "sp__Chain Lightning": [
-        "20"
-      ],
       "vct": [
         "15"
       ],
@@ -79378,9 +79084,6 @@
       "m_class_boss": [
         "EQUIP[Lunar Eclipse Armor]8"
       ],
-      "sp__Espa": [
-        "EQUIP[Lunar Eclipse Armor]48"
-      ],
       "Falling Stars": [
         "EQUIP[Lunar Eclipse Armor]32"
       ],
@@ -80072,9 +79775,6 @@
       ],
       "vct__Focused Arrow Strike": [
         "EQUIP[Record of Archer]USED[Ranger]===100"
-      ],
-      "sp__Severe Rainstorm": [
-        "EQUIP[Record of Archer]USED[Minstrel||Wanderer]===60"
       ],
       "cd__Severe Rainstorm": [
         "EQUIP[Record of Archer]USED[Minstrel||Wanderer]===2"
@@ -81080,9 +80780,6 @@
         "3---4",
         "EQUIP[Great Hero Boots]===5"
       ],
-      "spPercent__Cart Cannon": [
-        "7===10"
-      ],
       "vct": [
         "7===7",
         "11===5"
@@ -81579,9 +81276,6 @@
       ],
       "Fatal Manace": [
         "7===25"
-      ],
-      "spPercent__Fatal Manace": [
-        "9===15"
       ],
       "acd": [
         "9===7",
@@ -83069,9 +82763,6 @@
       ],
       "cd__Earth Shaker": [
         "9===1"
-      ],
-      "spPercent__Rampage Blast": [
-        "11===15"
       ],
       "str": [
         "EQUIP[Great Hero Boots]===10"
@@ -85703,9 +85394,6 @@
       "Round Trip": [
         "7===20",
         "9===15"
-      ],
-      "spPercent__Round Trip": [
-        "7===10"
       ],
       "p_size_all": [
         "11===15"
