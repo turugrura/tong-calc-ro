@@ -688,7 +688,7 @@ export class Calculator {
 
   private getStrikingAtk() {
     const endowLearnedLv = this.totalEquipStatus['strikingEndowSkillLv'];
-    if (!endowLearnedLv) return 1;
+    if (!endowLearnedLv) return 0;
 
     const weaponLvl = this.weaponData.data?.baseWeaponLevel || 0;
 

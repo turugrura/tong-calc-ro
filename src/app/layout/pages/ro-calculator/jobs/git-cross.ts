@@ -9,7 +9,6 @@ import {
 } from './_character-base.abstract';
 import { InfoForClass } from '../models/info-for-class.model';
 import { DarkClawFn } from '../constants/share-active-skills';
-import { ElementType } from '../constants/element-type.const';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 1, 0, 0, 0, 0],
@@ -92,38 +91,9 @@ export class GitCross extends CharacterBase {
   protected classNames = ['Guillotine Cross', 'Guillotine Cross Class', 'Guillotine Cross Cls', 'Only 3rd Cls'];
   protected _atkSkillList: AtkSkillModel[] = [
     {
+      name: 'Soul Destroyer',
       label: 'Soul Destroyer Lv10',
-      name: 'Soul Destroyer',
       value: 'Soul Destroyer==10',
-      acd: 2.8,
-      fct: 0.25,
-      vct: 0.25,
-      cd: 0,
-      isHDefToSDef: true,
-      isHit100: true,
-      formula: (input: AtkSkillFormulaInput): number => {
-        const { skillLevel } = input;
-
-        return 350 + skillLevel * 50;
-      },
-      part2: {
-        label: '',
-        hit: 1,
-        element: ElementType.Neutral,
-        isMatk: true,
-        isIncludeMain: true,
-        isMelee: false,
-        formula: (input: AtkSkillFormulaInput): number => {
-          const { skillLevel } = input;
-
-          return 350 + skillLevel * 50;
-        },
-      },
-    },
-    {
-      label: '[Improved 1st] Soul Destroyer Lv10',
-      name: 'Soul Destroyer',
-      value: '[Improved 1st] Soul Destroyer==10',
       acd: 2,
       fct: 0.25,
       vct: 0.25,
@@ -158,26 +128,9 @@ export class GitCross extends CharacterBase {
       },
     },
     {
+      name: 'Rolling Cutter',
       label: 'Rolling Cutter Lv5',
-      name: 'Rolling Cutter',
       value: 'Rolling Cutter==5',
-      acd: 0.2,
-      fct: 0,
-      vct: 0,
-      cd: 0,
-      isMelee: true,
-      levelList: [],
-      formula: (input: AtkSkillFormulaInput): number => {
-        const { model, skillLevel } = input;
-        const baseLevel = model.level;
-
-        return (50 + skillLevel * 50) * (baseLevel / 100);
-      },
-    },
-    {
-      label: '[Improved] Rolling Cutter Lv5',
-      name: 'Rolling Cutter',
-      value: '[Improved] Rolling Cutter==5',
       acd: 0.2,
       fct: 0,
       vct: 0,
@@ -192,27 +145,9 @@ export class GitCross extends CharacterBase {
       },
     },
     {
+      name: 'Cross Impact',
       label: 'Cross Impact Lv5',
-      name: 'Cross Impact',
       value: 'Cross Impact==5',
-      acd: 0.5,
-      fct: 0,
-      vct: 0,
-      cd: 0,
-      isMelee: true,
-      hit: 7,
-      levelList: [],
-      formula: (input: AtkSkillFormulaInput): number => {
-        const { model, skillLevel } = input;
-        const baseLevel = model.level;
-
-        return (1000 + skillLevel * 100) * (baseLevel / 120);
-      },
-    },
-    {
-      label: '[Improved 1st] Cross Impact Lv5',
-      name: 'Cross Impact',
-      value: '[Improved 1st] Cross Impact==5',
       acd: 0.5,
       fct: 0,
       vct: 0,
@@ -270,26 +205,9 @@ export class GitCross extends CharacterBase {
       },
     },
     {
+      name: 'Cross Ripper Slasher',
       label: 'Cross Ripper Slasher Lv5',
-      name: 'Cross Ripper Slasher',
       value: 'Cross Ripper Slasher==5',
-      acd: 1,
-      fct: 0,
-      vct: 0,
-      cd: 0,
-      formula: (input: AtkSkillFormulaInput): number => {
-        const { model, skillLevel, status } = input;
-        const { level: baseLevel } = model;
-        const { totalAgi } = status;
-        const spinCnt = this.activeSkillLv('Spin Count');
-
-        return (400 + skillLevel * 80) * (baseLevel / 100) + totalAgi * spinCnt;
-      },
-    },
-    {
-      label: '[Improved] Cross Ripper Slasher Lv5',
-      name: 'Cross Ripper Slasher',
-      value: '[Improved] Cross Ripper Slasher==5',
       acd: 0.3,
       fct: 0,
       vct: 0,

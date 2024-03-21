@@ -248,7 +248,7 @@ export class DamageCalculator {
 
   private getStrikingAtk() {
     const endowLearnedLv = this.totalBonus['strikingEndowSkillLv'];
-    if (!endowLearnedLv) return 1;
+    if (!endowLearnedLv) return 0;
 
     const weaponLvl = this.weaponData.data?.baseWeaponLevel || 0;
 
