@@ -111,8 +111,8 @@ export class Wanderer extends CharacterBase {
   ];
   protected readonly _atkSkillList: AtkSkillModel[] = [
     {
-      label: 'Arrow Vulcan Lv10',
       name: 'Arrow Vulcan',
+      label: 'Arrow Vulcan Lv10',
       value: 'Arrow Vulcan==10',
       acd: 0.5,
       fct: 0.5,
@@ -128,8 +128,8 @@ export class Wanderer extends CharacterBase {
       },
     },
     {
-      label: 'Metalic Sound Lv10',
       name: 'Metalic Sound',
+      label: 'Metalic Sound Lv10',
       value: 'Metalic Sound==10',
       acd: 0.5,
       fct: 0,
@@ -148,8 +148,8 @@ export class Wanderer extends CharacterBase {
       },
     },
     {
-      label: 'Severe Rainstorm Lv4',
       name: 'Severe Rainstorm',
+      label: 'Severe Rainstorm Lv4',
       value: 'Severe Rainstorm==4',
       acd: 1,
       fct: 0.5,
@@ -173,8 +173,8 @@ export class Wanderer extends CharacterBase {
       },
     },
     {
-      label: 'Severe Rainstorm Lv5',
       name: 'Severe Rainstorm',
+      label: 'Severe Rainstorm Lv5',
       value: 'Severe Rainstorm==5',
       acd: 1,
       fct: 0.5,
@@ -198,8 +198,8 @@ export class Wanderer extends CharacterBase {
       },
     },
     {
-      label: '[Improved] Severe Rainstorm Lv5',
       name: 'Severe Rainstorm',
+      label: '[Improved] Severe Rainstorm Lv5',
       value: '[Improved] Severe Rainstorm==5',
       acd: 1,
       fct: 0.5,
@@ -223,40 +223,9 @@ export class Wanderer extends CharacterBase {
       },
     },
     {
+      name: 'Reverberation',
       label: 'Reverberation Lv5',
-      name: 'Reverberation',
       value: 'Reverberation==5',
-      acd: 1,
-      fct: 0,
-      vct: 1.5,
-      cd: 0,
-      levelList: [],
-      isMelee: true,
-      formula: (input: AtkSkillFormulaInput): number => {
-        const { skillLevel, model } = input;
-        const baseLevel = model.level;
-
-        return (300 + skillLevel * 100) * (baseLevel / 100);
-      },
-      part2: {
-        element: ElementType.Neutral,
-        isIncludeMain: true,
-        label: '',
-        hit: 1,
-        isMatk: true,
-        isMelee: false,
-        formula: (input: AtkSkillFormulaInput): number => {
-          const { skillLevel, model } = input;
-          const baseLevel = model.level;
-
-          return (400 + skillLevel * 300) * (baseLevel / 100);
-        },
-      },
-    },
-    {
-      label: '[Improved] Reverberation Lv5',
-      name: 'Reverberation',
-      value: '[Improved] Reverberation==5',
       acd: 0.5,
       fct: 0.5,
       vct: 1.5,

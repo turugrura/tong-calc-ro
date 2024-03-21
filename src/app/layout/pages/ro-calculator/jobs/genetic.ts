@@ -93,8 +93,8 @@ export class Genetic extends CharacterBase {
   protected readonly _atkSkillList: AtkSkillModel[] = [
     {
       name: 'Acid Bomb',
-      label: '[Improved] Acid Bomb Lv10',
-      value: '[Improved] Acid Bomb==10',
+      label: 'Acid Bomb Lv10',
+      value: 'Acid Bomb==10',
       acd: 1,
       fct: 1,
       vct: 0,
@@ -112,29 +112,6 @@ export class Genetic extends CharacterBase {
       name: 'Cart Cannon',
       label: 'Cart Cannon Lv5',
       value: 'Cart Cannon==5',
-      acd: 0.5,
-      fct: 0,
-      vct: 3,
-      cd: 0,
-      isHit100: true,
-      isHDefToSDef: true,
-      formula: (input: AtkSkillFormulaInput): number => {
-        const { skillLevel, status, model, ammoElement, monster } = input;
-        const isCannonballNeutral = model.ammo > 0 && (!ammoElement || ammoElement === ElementType.Neutral);
-        if (isCannonballNeutral && monster.elementUpper === ElementType.Ghost) {
-          return 0;
-        }
-
-        const cartModelingLv = this.learnLv('Cart Remodeling');
-        const totalInt = status.totalInt;
-
-        return skillLevel * 60 + cartModelingLv * 50 * (totalInt / 40);
-      },
-    },
-    {
-      name: 'Cart Cannon',
-      label: '[Improved 1nd] Cart Cannon Lv5',
-      value: '[Improved 1nd] Cart Cannon==5',
       acd: 0.5,
       fct: 0,
       vct: 3,
@@ -222,8 +199,8 @@ export class Genetic extends CharacterBase {
     },
     {
       name: 'Spore Explosion',
-      label: '[Improved 1st] Spore Explosion Lv10',
-      value: '[Improved 1st] Spore Explosion==10',
+      label: 'Spore Explosion Lv10',
+      value: 'Spore Explosion==10',
       acd: 0.5,
       fct: 0,
       vct: 1.5,
@@ -295,6 +272,17 @@ export class Genetic extends CharacterBase {
         { label: 'Lv 180', value: 180, isUse: true, bonus: { atk: 100 + 180 } },
         { label: 'Lv 190', value: 190, isUse: true, bonus: { atk: 100 + 190 } },
         { label: 'Lv 200', value: 200, isUse: true, bonus: { atk: 100 + 200 } },
+      ],
+    },
+    {
+      name: 'Special Pharmacy',
+      label: 'Pharmacy',
+      inputType: 'dropdown',
+      isEquipAtk: true,
+      dropdown: [
+        { label: '-', value: 0, isUse: false },
+        { label: 'Red Herb', value: 2, isUse: true, bonus: { melee: 15, range: 15 } },
+        { label: 'Blue Herb', value: 3, isUse: true, bonus: { m_my_element_all: 15 } },
       ],
     },
   ];

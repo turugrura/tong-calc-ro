@@ -100,21 +100,6 @@ export class RuneKnight extends CharacterBase {
       fct: 0,
       vct: 0,
       cd: 2,
-      formula: (input: AtkSkillFormulaInput): number => {
-        const { model, skillLevel } = input;
-        const baseLevel = model.level;
-
-        return (700 + skillLevel * 100) * (baseLevel / 100);
-      },
-    },
-    {
-      name: 'Sonic Wave',
-      label: '[Improved 1st] Sonic Wave Lv10',
-      value: '[Improved 1st] Sonic Wave==10',
-      acd: 1,
-      fct: 0,
-      vct: 0,
-      cd: 2,
       canCri: true,
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
@@ -144,22 +129,6 @@ export class RuneKnight extends CharacterBase {
       name: 'Wind Cutter',
       label: 'Wind Cutter Lv10',
       value: 'Wind Cutter==10',
-      acd: 0,
-      fct: 0,
-      vct: 0,
-      cd: 2,
-      element: ElementType.Wind,
-      formula: (input: AtkSkillFormulaInput): number => {
-        const { model, skillLevel } = input;
-        const baseLevel = model.level;
-
-        return (100 + skillLevel * 50) * (baseLevel / 100);
-      },
-    },
-    {
-      name: 'Wind Cutter',
-      label: '[Improved 1st] Wind Cutter Lv10',
-      value: '[Improved 1st] Wind Cutter==10',
       acd: 1,
       fct: 0,
       vct: 0,
@@ -210,65 +179,8 @@ export class RuneKnight extends CharacterBase {
     },
     {
       name: 'Ignition Break',
-      label: 'Ignition Break Lv5 (3x3)',
-      value: 'Ignition Break3==5',
-      acd: 0,
-      fct: 0,
-      vct: 1,
-      cd: 2,
-      isMelee: true,
-      formula: (input: AtkSkillFormulaInput): number => {
-        const { model, skillLevel, weapon } = input;
-        const baseLevel = model.level;
-        const isWeaponFire = weapon?.data?.propertyAtk === ElementType.Fire;
-        const bonusFire = isWeaponFire ? skillLevel * 100 : 0;
-        const rangeDmgBase = 300;
-
-        return (bonusFire + skillLevel * rangeDmgBase) * (baseLevel / 100);
-      },
-    },
-    {
-      name: 'Ignition Break',
-      label: 'Ignition Break Lv5 (5x5)',
-      value: 'Ignition Break5==5',
-      acd: 0,
-      fct: 0,
-      vct: 1,
-      cd: 2,
-      isMelee: true,
-      formula: (input: AtkSkillFormulaInput): number => {
-        const { model, skillLevel, weapon } = input;
-        const baseLevel = model.level;
-        const isWeaponFire = weapon?.data?.propertyAtk === ElementType.Fire;
-        const bonusFire = isWeaponFire ? skillLevel * 100 : 0;
-        const rangeDmgBase = 250;
-
-        return (bonusFire + skillLevel * rangeDmgBase) * (baseLevel / 100);
-      },
-    },
-    {
-      name: 'Ignition Break',
-      label: 'Ignition Break Lv5 (7x7)',
-      value: 'Ignition Break7==5',
-      acd: 0,
-      fct: 0,
-      vct: 1,
-      cd: 2,
-      isMelee: true,
-      formula: (input: AtkSkillFormulaInput): number => {
-        const { model, skillLevel, weapon } = input;
-        const baseLevel = model.level;
-        const isWeaponFire = weapon?.data?.propertyAtk === ElementType.Fire;
-        const bonusFire = isWeaponFire ? skillLevel * 100 : 0;
-        const rangeDmgBase = 200;
-
-        return (bonusFire + skillLevel * rangeDmgBase) * (baseLevel / 100);
-      },
-    },
-    {
-      name: 'Ignition Break',
-      label: '[Improved 1st] Ignition Break Lv5',
-      value: '[Improved] Ignition Break==5',
+      label: 'Ignition Break Lv5',
+      value: 'Ignition Break==5',
       acd: 0,
       fct: 0,
       vct: 1,
@@ -302,26 +214,9 @@ export class RuneKnight extends CharacterBase {
       },
     },
     {
+      name: 'Hundred Spears',
       label: 'Hundred Spears Lv10',
-      name: 'Hundred Spears',
       value: 'Hundred Spears==10',
-      acd: 0.5,
-      fct: 0,
-      vct: 0.1,
-      cd: 3,
-      hit: 5,
-      formula: (input: AtkSkillFormulaInput): number => {
-        const { model, skillLevel } = input;
-        const baseLevel = model.level;
-        const bonus = this.learnLv('Clashing Spiral') * 50;
-
-        return (600 + 80 * skillLevel + bonus) * (baseLevel / 100);
-      },
-    },
-    {
-      name: 'Hundred Spears',
-      label: '[Improved] Hundred Spears Lv10',
-      value: '[Improved] Hundred Spears==10',
       acd: 0.5,
       fct: 0,
       vct: 0.1,
@@ -342,7 +237,15 @@ export class RuneKnight extends CharacterBase {
       fct: 0.5,
       vct: 2,
       cd: 0.2,
-      element: ElementType.Fire,
+      getElement: () => {
+        if (this.isSkillActive('Lux Anima Runestone')) {
+          return ElementType.Dark;
+        } else if (this.isSkillActive('Turisus Runestone')) {
+          return ElementType.Holy;
+        }
+
+        return ElementType.Fire;
+      },
       formula: (input: AtkSkillFormulaInput): number => {
         return this.calcDragonBreathFormula(input);
       },
@@ -352,8 +255,8 @@ export class RuneKnight extends CharacterBase {
     },
     {
       name: 'Dragon Breath',
-      label: '[Improved] Dragon Breath Lv10',
-      value: '[Improved] Dragon Breath==10',
+      label: '[Improved 2nd] Dragon Breath Lv10',
+      value: '[Improved 2nd] Dragon Breath==10',
       acd: 2,
       fct: 0.5,
       vct: 2,
@@ -382,7 +285,15 @@ export class RuneKnight extends CharacterBase {
       fct: 0.5,
       vct: 2,
       cd: 0.2,
-      element: ElementType.Water,
+      getElement: () => {
+        if (this.isSkillActive('Lux Anima Runestone')) {
+          return ElementType.Ghost;
+        } else if (this.isSkillActive('Asir Runestone')) {
+          return ElementType.Neutral;
+        }
+
+        return ElementType.Water;
+      },
       formula: (input: AtkSkillFormulaInput): number => {
         return this.calcDragonBreathFormula(input);
       },
@@ -392,8 +303,8 @@ export class RuneKnight extends CharacterBase {
     },
     {
       name: 'Dragon Breath - WATER',
-      label: '[Improved] Dragon Breath - WATER Lv10',
-      value: '[Improved] Dragon Breath - WATER==10',
+      label: '[Improved 2nd] Dragon Breath - WATER Lv10',
+      value: '[Improved 2nd] Dragon Breath - WATER==10',
       acd: 2,
       fct: 0.5,
       vct: 2,
@@ -441,13 +352,13 @@ export class RuneKnight extends CharacterBase {
       inputType: 'dropdown',
       dropdown: [
         { label: '100 %', value: 0, isUse: false },
-        { label: '30 %', value: 30, skillLv: 30, isUse: true },
-        { label: '40 %', value: 40, skillLv: 40, isUse: true },
-        { label: '50 %', value: 50, skillLv: 50, isUse: true },
-        { label: '60 %', value: 60, skillLv: 60, isUse: true },
-        { label: '70 %', value: 70, skillLv: 70, isUse: true },
-        { label: '80 %', value: 80, skillLv: 80, isUse: true },
-        { label: '90 %', value: 90, skillLv: 90, isUse: true },
+        { label: '30 %', value: 30, isUse: true },
+        { label: '40 %', value: 40, isUse: true },
+        { label: '50 %', value: 50, isUse: true },
+        { label: '60 %', value: 60, isUse: true },
+        { label: '70 %', value: 70, isUse: true },
+        { label: '80 %', value: 80, isUse: true },
+        { label: '90 %', value: 90, isUse: true },
       ],
     },
     {
@@ -456,7 +367,7 @@ export class RuneKnight extends CharacterBase {
       inputType: 'dropdown',
       dropdown: [
         { label: '-', value: 0, isUse: false },
-        { label: 'Active', value: 1, skillLv: 1, isUse: true, bonus: { flatBasicDmg: 250, str: 30 } },
+        { label: 'Active', value: 1, isUse: true, bonus: { flatBasicDmg: 250, str: 30, melee: 15 } },
       ],
     },
     {
@@ -465,11 +376,10 @@ export class RuneKnight extends CharacterBase {
       inputType: 'dropdown',
       dropdown: [
         { label: '-', value: 0, isUse: false },
-        { label: 'Active', value: 1, skillLv: 1, isUse: true },
+        { label: 'Active', value: 1, isUse: true },
         {
           label: 'Improved',
           value: 2,
-          skillLv: 2,
           isUse: true,
           bonus: { p_size_all: 30, criDmg: 30, melee: 30, range: 30, hpPercent: 30, spPercent: 30 },
         },
@@ -482,7 +392,7 @@ export class RuneKnight extends CharacterBase {
       isMasteryAtk: true,
       dropdown: [
         { label: '-', value: 0, isUse: false },
-        { label: 'Active', value: 1, skillLv: 1, isUse: true, bonus: { atk: 70 } },
+        { label: 'Active', value: 1, isUse: true, bonus: { atk: 70 } },
       ],
     },
   ];

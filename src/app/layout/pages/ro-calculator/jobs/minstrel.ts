@@ -115,15 +115,14 @@ export class Minstrel extends CharacterBase {
 
   protected readonly _atkSkillList: AtkSkillModel[] = [
     {
-      label: 'Arrow Vulcan Lv10',
       name: 'Arrow Vulcan',
+      label: 'Arrow Vulcan Lv10',
       value: 'Arrow Vulcan==10',
       acd: 0.5,
       fct: 0.5,
       vct: 1.5,
       cd: 1.5,
       hit: 9,
-      levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
         const { skillLevel, model } = input;
         const baseLevel = model.level;
@@ -152,15 +151,14 @@ export class Minstrel extends CharacterBase {
       },
     },
     {
-      label: 'Severe Rainstorm Lv4',
       name: 'Severe Rainstorm',
+      label: 'Severe Rainstorm Lv4',
       value: 'Severe Rainstorm==4',
       acd: 1,
       fct: 0.5,
       vct: 3,
       cd: 6.5,
       totalHit: 12,
-      levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
         const { weapon, status, skillLevel, model } = input;
         const baseLevel = model.level;
@@ -177,15 +175,14 @@ export class Minstrel extends CharacterBase {
       },
     },
     {
-      label: 'Severe Rainstorm Lv5',
       name: 'Severe Rainstorm',
+      label: 'Severe Rainstorm Lv5',
       value: 'Severe Rainstorm==5',
       acd: 1,
       fct: 0.5,
       vct: 3.5,
       cd: 7,
       totalHit: 12,
-      levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
         const { weapon, status, skillLevel, model } = input;
         const baseLevel = model.level;
@@ -202,15 +199,14 @@ export class Minstrel extends CharacterBase {
       },
     },
     {
-      label: '[Improved] Severe Rainstorm Lv5',
       name: 'Severe Rainstorm',
+      label: '[Improved] Severe Rainstorm Lv5',
       value: '[Improved] Severe Rainstorm==5',
       acd: 1,
       fct: 0.5,
       vct: 3.5,
       cd: 7,
       totalHit: 12,
-      levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
         const { weapon, status, skillLevel, model } = input;
         const baseLevel = model.level;
@@ -227,46 +223,14 @@ export class Minstrel extends CharacterBase {
       },
     },
     {
+      name: 'Reverberation',
       label: 'Reverberation Lv5',
-      name: 'Reverberation',
       value: 'Reverberation==5',
-      acd: 1,
-      fct: 0,
-      vct: 1.5,
-      cd: 0,
-      levelList: [],
-      isMelee: true,
-      formula: (input: AtkSkillFormulaInput): number => {
-        const { skillLevel, model } = input;
-        const baseLevel = model.level;
-
-        return (300 + skillLevel * 100) * (baseLevel / 100);
-      },
-      part2: {
-        element: ElementType.Neutral,
-        isIncludeMain: true,
-        label: '',
-        hit: 1,
-        isMatk: true,
-        isMelee: false,
-        formula: (input: AtkSkillFormulaInput): number => {
-          const { skillLevel, model } = input;
-          const baseLevel = model.level;
-
-          return (400 + skillLevel * 300) * (baseLevel / 100);
-        },
-      },
-    },
-    {
-      label: '[Improved] Reverberation Lv5',
-      name: 'Reverberation',
-      value: '[Improved] Reverberation==5',
       acd: 0.5,
       fct: 0.5,
       vct: 1.5,
       cd: 0,
       isMatk: true,
-      levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
         const { skillLevel, model } = input;
         const baseLevel = model.level;
