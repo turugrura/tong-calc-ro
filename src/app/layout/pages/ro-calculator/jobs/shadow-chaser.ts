@@ -11,6 +11,7 @@ import { Thief } from './thief';
 import { InfoForClass } from '../models/info-for-class.model';
 import { ElementType } from '../constants/element-type.const';
 import { DoubleStrafeFn, SnatcherFn, VulturesEyeFn } from '../constants/share-passive-skills';
+import { WeaponTypeName } from '../constants/weapon-type-mapper';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 0, 0, 1],
@@ -320,6 +321,30 @@ export class ShadowChaser extends CharacterBase {
       totalHit: 5,
       formula: (): number => {
         return 125;
+      },
+    },
+    {
+      name: 'Severe Rainstorm',
+      label: 'Severe Rainstorm Lv5',
+      value: 'Severe Rainstorm==5',
+      acd: 1,
+      fct: 0.5,
+      vct: 3.5,
+      cd: 7,
+      totalHit: 12,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { weapon, status, skillLevel, model } = input;
+        const baseLevel = model.level;
+        const { totalDex, totalAgi } = status;
+        const weaType = weapon.data.typeName;
+        const weaMultiMap: Partial<Record<WeaponTypeName, number>> = {
+          bow: 1,
+          instrument: 1.5,
+          whip: 1.5,
+        };
+        const extra = weaMultiMap[weaType] || 0;
+
+        return extra * (totalDex + totalAgi) * (skillLevel / 5) * (baseLevel / 100);
       },
     },
   ];

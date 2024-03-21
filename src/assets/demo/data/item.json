@@ -72016,9 +72016,9 @@
     "id": 400120,
     "aegisName": "BioWeapon_Helm_SC",
     "name": "Goat Crown [1]",
-    "unidName": "Headgear",
+    "unidName": "Helm",
     "resName": "마갈궁왕관",
-    "description": "Atk + 20 and Matk + 20 per 2 refine rate.\nIf refine rate is 7 or higher, increases attack speed (reduces delay after attack by 10%).\nIf refine rate is 9 or higher, Atk + 15%, Matk + 15%.\nIf refine rate is 11 or higher, increases physical and magical damage against all size enemies by 10%.\n\nWhen equipped with ^32cd32Jack the Knife^000000, reduces global cooldown by 10%,\nincreases Fatal Menace damage by 10% per refine rate of weapon.\n\nWhen equipped with ^32cd32Platinum Dagger^000000, increase all property magical damage by 10%,\nincreases all property magical damage by 5% per refine rate of weapon.\n\nWhen equipped with ^32cd32Rapid Fire^000000, increase long ranged physical damage by 10%,\nincreases Triangle Shot damage by 10% per refine rate of weapon.\nClass: ^777777Headgear^000000 Defense: ^77777710^000000\nLocation: ^777777Upper^000000 Weight: ^77777710^000000\nRequired Level: ^777777170^000000\nJobs: ^777777Shadow Chaser^000000",
+    "description": "มงกุฎที่มีรูปร่างเหมือนกับเขาแพะ ทำขึ้นเพื่อร่างทดลองโดยเฉพาะ\nผู้สวมใส่มักมีบุคลิกนิสัยดื้อดึงและยึดติด แต่จะเอาตัวรอดได้อย่างเก่งกาจ\nทุก ๆ การอัพเกรด 2 ขั้น ATK +20, MATK +20\nเมื่ออัพเกรดถึงขั้น 7, ASPD +10%\nเมื่ออัพเกรดถึงขั้น 9, ATK +15%, MATK +15%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูทุกขนาด 10%\n\nเมื่อสวมใส่ร่วมกับ Jack the Knife,\nลด Delay หลังใช้สกิล 10%\nทุก ๆ การอัพเกรด Weapon 1 ขั้น เพิ่ม Damage สกิล Fatal Menace 10%\n\nเมื่อสวมใส่ร่วมกับ Platinum Dagger,\nเพิ่ม Damage ทางเวทมนตร์ทุกธาตุ 10%\nทุก ๆ การอัพเกรด Weapon 1 ขั้น เพิ่ม Damage ทางเวทมนตร์ทุกธาตุ 5%\n\nเมื่อสวมใส่ร่วมกับ Rapid Fire,\nเพิ่ม Damage ทางกายภาพระยะไกล 10%\nทุก ๆ การอัพเกรด Weapon 1 ขั้น เพิ่ม Damage สกิล Triangle Shot, Severe Rainstorm 10%\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^77777710^000000\nตำแหน่ง : ^777777Upper^000000 น้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Shadow Chaser^000000",
     "slots": 1,
     "itemTypeId": 2,
     "itemSubTypeId": 512,
@@ -72069,6 +72069,9 @@
       ],
       "Triangle Shot": [
         "EQUIP[Rapid Fire]REFINE[weapon==1]---10"
+      ],
+      "Severe Rainstorm": [
+        "EQUIP[Rapid Fire]REFINE[weapon==1]---10"
       ]
     }
   },
@@ -72076,9 +72079,9 @@
     "id": 400121,
     "aegisName": "BioWeapon_Helm_GC",
     "name": "Twin Crown [1]",
-    "unidName": "Headgear",
+    "unidName": "Helm",
     "resName": "쌍자궁왕관",
-    "description": "Atk + 20 per 2 refine rate.\nIf refine rate is 7 or higher, increases attack speed (reduces delay after attack by 10%).\nIf refine rate is 9 or higher, increases long ranged physical damage by 15%.\nIf refine rate is 11 or higher, increases physical damage against all size enemies by 10%.\n\nWhen equipped with ^32cd32Judgment Slasher and Repent Slasher^000000, increases critical damage by 20%,\nincreases melee and long ranged physical damage by 5% per 2 of the sum of refine rate of both weapons.\n\nWhen equipped with ^32cd32Agudo Filo^000000, increases Cross Impact damage by 20%,\nincreases melee physical damage by 5% per refine rate of weapon.\n\nWhen equipped with ^32cd32Ripper Cross^000000, increase long ranged physical damage by 10%,\nincreases Cross Ripper Slasher damage by 10% per refine rate of weapon.\nClass: ^777777Headgear^000000 Defense: ^77777710^000000\nLocation: ^777777Upper^000000 Weight: ^77777710^000000\nRequired Level: ^777777170^000000\nJobs: ^777777Guillotine Cross^000000",
+    "description": "มงกุฎทำขึ้นเพื่อร่างทดลองเฉพาะ\nด้านข้างตกแต่งด้วยใบหน้าของคู่แฝดหันออกจากกัน\nทุก ๆ การอัพเกรด 2 ขั้น ATK +20\nเมื่ออัพเกรดถึงขั้น 7, ASPD +10%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพระยะไกล 15%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 10%\n\nเมื่อสวมใส่ร่วมกับ Judgment Slasher และ Repent Slasher,\nCritical Damage +20%\nเมื่อค่าอัพเกรดของ Weapon รวมกันได้ทุก ๆ 2 ขั้น เพิ่ม Damage ทางกายภาพระยะใกล้/ระยะไกล 5%\n\nเมื่อสวมใส่ร่วมกับ Agudo Filo,\nเพิ่ม Damage สกิล Cross Impact 20%\nทุก ๆ การอัพเกรด Weapon 1 ขั้น เพิ่ม Damage ทางกายภาพระยะใกล้ 5%\n\nเมื่อสวมใส่ร่วมกับ Ripper Cross,\nเพิ่ม Damage ทางกายภาพระยะไกล 20%\nทุก ๆ การอัพเกรด Weapon 1 ขั้น เพิ่ม Damage สกิล Cross Ripper Slasher 10%\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^77777710^000000\nตำแหน่ง : ^777777Upper^000000 น้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777170^000000\nอาชีพที่ใส่ได้ : ^777777Guillotine Cross^000000",
     "slots": 1,
     "itemTypeId": 2,
     "itemSubTypeId": 512,
@@ -72447,6 +72450,59 @@
       ],
       "m_race_dragon": [
         "15"
+      ]
+    }
+  },
+  "410313": {
+    "id": 410313,
+    "aegisName": null,
+    "name": "Eye of the Storm",
+    "unidName": "Eye of the Storm",
+    "resName": "C_Black_Thunder",
+    "description": "ร่างกายที่ห้อมล้อมไปด้วยสายฟ้า ทั้งรวดเร็วและทรงพลัง\n\nเพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูประเภท Boss 10%\nลด Delay หลังใช้สกิล 10%\nทุก ๆ Base Lv. 2 เพิ่ม Damage สกิล Chain Lightning, Varetyr Spear, Lightning Ride 1%\n\nเมื่อสวมใส่ด้วย Sura,\nเพิ่ม Damage ทางกายภาพระยะไกล 10%\nลดระยะเวลาร่ายแบบแปรผันสกิล Lightning Ride 100%\n\nเมื่อสวมใส่ด้วย Sorcerer,\nลด Cooldown สกิล Varetyr Spear 1 วินาที\nลด Cooldown สกิล Water Insignia 55 วินาที\n\nเมื่อสวมใส่ด้วย Warlock,\nสามารถใช้สกิล Water Insignia Lv. 1\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^7777770^000000\nตำแหน่ง : ^777777Middle^000000 น้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 100,
+    "location": "Middle",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "p_class_boss": [
+        "10"
+      ],
+      "m_class_boss": [
+        "10"
+      ],
+      "acd": [
+        "10"
+      ],
+      "Chain Lightning": [
+        "SUM[level==2]---1"
+      ],
+      "Varetyr Spear": [
+        "SUM[level==2]---1"
+      ],
+      "Lightning Ride": [
+        "SUM[level==2]---1"
+      ],
+      "range": [
+        "USED[Sura]===10"
+      ],
+      "vct__Lightning Ride": [
+        "USED[Sura]===100"
+      ],
+      "cd__Varetyr Spear": [
+        "USED[Sorcerer]===1"
+      ],
+      "cd__Water Insignia": [
+        "USED[Sorcerer]===55"
       ]
     }
   },
@@ -74781,6 +74837,76 @@
       ],
       "p_pene_race_all": [
         "EQUIP[Chen's Memory&&Lion Crown]REFINE[headUpper,weapon,boot==35]===40"
+      ]
+    }
+  },
+  "470272": {
+    "id": 470272,
+    "aegisName": null,
+    "name": "Zodiac Boots (Thief) [1]",
+    "unidName": "Zodiac Boots (Thief)",
+    "resName": "HalfBloodPrincess_Shoes",
+    "description": "รองเท้าคุณภาพดีที่ได้รับพลังจากกลุ่มดาวแพะและคนคู่\n\nATK +50\nทุก ๆ การอัพเกรด 2 ขั้น ATK +10, ATK +1%\nทุก ๆ การอัพเกรด 4 ขั้น เพิ่ม Damage สกิล Severe Rainstorm, Soul Destroyer 15%\nเมื่ออัพเกรดตั้งแต่ 9 ขึ้นไป ลดระยะเวลาร่ายแบบคงที่ 0.5 วินาที\nเมื่ออัพเกรดตั้งแต่ 11 ขึ้นไป ลด Delay หลังใช้สกิล 10%\n\nเมื่อสวมใส่ร่วมกับ Eremes's Memory,\nลด Cooldown สกิล Soul Destroyer 0.1 วินาที\nทุก ๆ การอัพเกรด Weapon 4 ขั้น CRI +15\n\nเมื่อสวมใส่ร่วมกับ Gertie's Memory,\nลด Delay หลังใช้สกิล 15%\nทุก ๆ การอัพเกรด Weapon 4 ขั้น เพิ่ม Damage ทางกายภาพระยะไกล 15%\n\nเมื่อสวมใส่ร่วมกับ Eremes's Memory และ Twin Crown,\nเมื่อค่าอัพเกรดรวมกันของ Headgear, Shoes, Weapon ตั้งแต่ 33 ขึ้นไป ลด Delay หลังใช้สกิล 10%, เพิ่ม Damage สกิล Soul Destroyer 20%\nเมื่อค่าอัพเกรดรวมกันของ Headgear, Shoes, Weapon ตั้งแต่ 35 ขึ้นไป ยกเลิกการลงโทษขนาดของอาวุธ\n\nเมื่อสวมใส่ร่วมกับ Gertie's Memory และ Goat Crown,\nเมื่อค่าอัพเกรดรวมกันของ Headgear, Shoes, Weapon ตั้งแต่ 33 ขึ้นไป สามารถใช้สกิล Severe Rainstorm Lv. 5 และลด Cooldown สกิล Severe Rainstorm 6 วินาที, ลด Cooldown สกิล Feint Bomb 1.8 วินาที\nเมื่อโจมตีทางกายภาพ มีโอกาส 3% ที่ DEX +200 เป็นเวลา 10 วินาที\nเมื่อค่าอัพเกรดรวมกันของ Headgear, Shoes, Weapon ตั้งแต่ 35 ขึ้นไป เพิกเฉยต่อพลังป้องกันทางกายภาพของมอนสเตอร์ทุกเผ่า 40% (ยกเว้น Player)\nประเภท : ^777777Shoes^000000  พลังป้องกัน : ^77777760^000000\nน้ำหนัก : ^77777790^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Thief Class 3^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 516,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 60,
+    "weight": 90,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Guillotine Cross",
+      "Shadow Chaser"
+    ],
+    "script": {
+      "atk": [
+        "50",
+        "2---10"
+      ],
+      "atkPercent": [
+        "2---1"
+      ],
+      "Severe Rainstorm": [
+        "4---15"
+      ],
+      "Soul Destroyer": [
+        "4---15",
+        "EQUIP[Eremes's Memory&&Twin Crown]REFINE[weapon,headUpper,boot==33]===20"
+      ],
+      "fct": [
+        "9===0.5"
+      ],
+      "acd": [
+        "11===10",
+        "EQUIP[Gertie's Memory]===15",
+        "EQUIP[Eremes's Memory&&Twin Crown]REFINE[weapon,headUpper,boot==33]===10"
+      ],
+      "cd__Soul Destroyer": [
+        "EQUIP[Eremes's Memory]===0.1"
+      ],
+      "cri": [
+        "EQUIP[Eremes's Memory]REFINE[weapon==4]---15"
+      ],
+      "ignore_size_penalty": [
+        "EQUIP[Eremes's Memory&&Twin Crown]REFINE[weapon,headUpper,boot==35]===1"
+      ],
+      "range": [
+        "EQUIP[Gertie's Memory]REFINE[weapon==4]---15"
+      ],
+      "cd__Severe Rainstorm": [
+        "EQUIP[Gertie's Memory&&Goat Crown]REFINE[weapon,headUpper,boot==33]===6"
+      ],
+      "cd__Feint Bomb": [
+        "EQUIP[Gertie's Memory&&Goat Crown]REFINE[weapon,headUpper,boot==33]===1.8"
+      ],
+      "chance__dex": [
+        "EQUIP[Gertie's Memory&&Goat Crown]REFINE[weapon,headUpper,boot==33]===200"
+      ],
+      "p_pene_race_all": [
+        "EQUIP[Gertie's Memory&&Goat Crown]REFINE[weapon,headUpper,boot==35]===40"
       ]
     }
   },
@@ -80623,6 +80749,56 @@
       ],
       "m_pene_race_all": [
         "EQUIP[Lunar Eclipse Armor]50"
+      ]
+    }
+  },
+  "490539": {
+    "id": 490539,
+    "aegisName": null,
+    "name": "Ring of Unknown Hero(Summoner) [1]",
+    "unidName": "Ring of Unknown Hero(Summoner)",
+    "resName": "Ullr_Bracelet",
+    "description": "แหวนของฮีโร่นิรนาม\n\nลด Delay หลังใช้สกิล 3%\nเพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูทุกประเภท 6%\n\nเมื่อสวมใส่ร่วมกับ Patent Meowmeow Foxtail,\nเพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูทุกเผ่า 8%\nเมื่ออัพเกรด Patent Meowmeow Foxtail ตั้งแต่ 11 ขึ้นไป,\nลดระยะเวลาร่ายแบบคงที่สกิล Catnip Meteor 3 วินาที\nลดระยะเวลาร่ายแบบแปรผันสกิล Picky Peck 50%\nเมื่อ Base STR และ DEX รวมกันได้ทุก ๆ 12 หน่วย เพิ่ม Damage สกิล Picky Peck 1%\nเมื่อ Base INT และ DEX รวมกันได้ทุก ๆ 12 หน่วย เพิ่ม Damage สกิล Catnip Meteor 1%\nประเภท : ^777777Accessory(Right)^000000 พลังป้องกัน : ^7777777^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Summoner (Doram)^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 510,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 7,
+    "weight": 10,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Doram"
+    ],
+    "script": {
+      "acd": [
+        "3"
+      ],
+      "p_class_all": [
+        "6"
+      ],
+      "m_class_all": [
+        "6"
+      ],
+      "p_race_all": [
+        "EQUIP[Patent Meowmeow Foxtail]===8"
+      ],
+      "m_race_all": [
+        "EQUIP[Patent Meowmeow Foxtail]===8"
+      ],
+      "fct__Catnip Meteor": [
+        "EQUIP[Patent Meowmeow Foxtail]REFINE[weapon==11]===3"
+      ],
+      "vct__Picky Peck": [
+        "EQUIP[Patent Meowmeow Foxtail]REFINE[weapon==11]===50"
+      ],
+      "Picky Peck": [
+        "EQUIP[Patent Meowmeow Foxtail]REFINE[weapon==11]SUM[str,dex==12]---1"
+      ],
+      "Catnip Meteor": [
+        "EQUIP[Patent Meowmeow Foxtail]REFINE[weapon==11]SUM[int,dex==12]---1"
       ]
     }
   },
