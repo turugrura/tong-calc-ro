@@ -3422,9 +3422,6 @@
       "Judex": [
         "30"
       ],
-      "spFix__Judex": [
-        "40"
-      ],
       "sp": [
         "150"
       ]
@@ -4550,7 +4547,7 @@
     "compositionPos": 0,
     "cardPrefix": "Critical",
     "script": {
-      "criDmg": [
+      "cri": [
         "9"
       ]
     }
@@ -6810,9 +6807,6 @@
       ],
       "m_my_element_ghost": [
         "100"
-      ],
-      "damageTaken_element_all": [
-        "30"
       ]
     }
   },
@@ -18413,9 +18407,6 @@
       ],
       "Adoramus": [
         "EQUIP[Robe Of Judgement&&Shoes Of Judgement&&Shawl Of Judgement]200"
-      ],
-      "spFix__Adoramus": [
-        "EQUIP[Robe Of Judgement&&Shoes Of Judgement&&Shawl Of Judgement]30"
       ]
     }
   },
@@ -18464,9 +18455,6 @@
       ],
       "Adoramus": [
         "EQUIP[Robe Of Judgement&&Shoes Of Judgement&&Shawl Of Judgement]200"
-      ],
-      "spFix__Adoramus": [
-        "EQUIP[Robe Of Judgement&&Shoes Of Judgement&&Shawl Of Judgement]30"
       ]
     }
   },
@@ -80942,6 +80930,103 @@
       ]
     }
   },
+  "500015": {
+    "id": 500015,
+    "aegisName": "PG_B_Sword",
+    "name": "Pressure Genesis Booster Sword",
+    "unidName": "Sword",
+    "resName": "PG_B_Sword",
+    "description": "Can't be refined by normal means.\nMatk + 2%, Matk + 180.\nMatk + 3 per refine rate.\nMatk + 3 per 15 base level (up to level 195).\nIf refine rate is 7 or higher, increases holy property magical damage by 1% per each level of Faith user learned.\nIf refine rate is 9 or higher, reduces variable casting time by 10%, increases Gloria Domini and Genesis Ray damage by 25%.\nIf refine rate is 11 or higher, increases magical damage against all size enemies by 15%, increases holy property magical damage by 15%.\nIf refine rate is 13 or higher, increases Gloria Domini and Genesis Ray damage by additional 15%.\n^ffffff_^000000\nClass: ^777777Sword^000000 Attack: ^777777150^000000\nWeight: ^7777770^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777100^000000\nJobs: ^777777Royal Guard^000000",
+    "slots": 0,
+    "itemTypeId": 1,
+    "itemSubTypeId": 257,
+    "itemLevel": 4,
+    "attack": 150,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Royal Guard"
+    ],
+    "script": {
+      "matkPercent": [
+        "2"
+      ],
+      "matk": [
+        "180",
+        "1---3",
+        "level:15(1-195)---3"
+      ],
+      "m_my_element_holy": [
+        "REFINE[7]LEARN_SKILL[Faith==1]---1",
+        "11===15"
+      ],
+      "vct": [
+        "9===10"
+      ],
+      "Gloria Domini": [
+        "9===25",
+        "13===15"
+      ],
+      "Genesis Ray": [
+        "9===25",
+        "13===15"
+      ],
+      "m_size_all": [
+        "11===15"
+      ]
+    }
+  },
+  "500016": {
+    "id": 500016,
+    "aegisName": "HS_T_Sword",
+    "name": "Hell Tornado Booster Sword",
+    "unidName": "Sword",
+    "resName": "HS_T_Sword",
+    "description": "Can't be refined by normal means.\nAtk + 2%.\nAtk + 3 per refine rate.\nAtk + 3 per 15 base level (up to level 195).\nIf refine rate is 7 or higher, increases melee physical damage by 2% per each level of Sword Training user learned.\nIf refine rate is 9 or higher, reduces global cooldown by 5%, increases Hell Plant and Cart Tornado damage by 25%.\nIf refine rate is 11 or higher, reduces global cooldown by additional 10%, increases physical damage against all size enemies by 20%.\nIf refine rate is 13 or higher, increases Hell Plant and Cart Tornado damage by additional 15%.\n^ffffff_^000000\nClass: ^777777Sword^000000 Attack: ^777777190^000000\nWeight: ^7777770^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777100^000000\nJobs: ^777777Genetic^000000",
+    "slots": 0,
+    "itemTypeId": 1,
+    "itemSubTypeId": 257,
+    "itemLevel": 4,
+    "attack": 190,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Genetic"
+    ],
+    "script": {
+      "atkPercent": [
+        "2"
+      ],
+      "atk": [
+        "1---3",
+        "level:15(1-195)---3"
+      ],
+      "melee": [
+        "REFINE[7]LEARN_SKILL[Sword Mastery==1]---2"
+      ],
+      "acd": [
+        "9===5",
+        "11===10"
+      ],
+      "Hell Plant": [
+        "9===25",
+        "13===15"
+      ],
+      "Cart Tornado": [
+        "9===25",
+        "13===15"
+      ],
+      "p_size_all": [
+        "11===20"
+      ]
+    }
+  },
   "500017": {
     "id": 500017,
     "aegisName": "Up_Light_Blade",
@@ -81044,6 +81129,98 @@
       ],
       "cd__Genesis Ray": [
         "EQUIP[Illusion Sacred Mission]REFINE[shield,weapon==22]===1"
+      ]
+    }
+  },
+  "500042": {
+    "id": 500042,
+    "aegisName": "SP_B_Saber",
+    "name": "Super Psychic Booster Saber",
+    "unidName": "Sword",
+    "resName": "SP_B_Saber",
+    "description": "^000088Can't be refined by normal means.^000000\nMatk + 2%, Matk + 170.\nMatk + 3 per refine rate.\nMatk + 3 per 15 base level (up to level 195).\nIf refine rate is 7 or higher, increases attack speed (reduces delay after attack by 1%) per each level of Increase SP Recovery user learned.\nIf refine rate is 9 or higher, increases fire and neutral property magical damage by 10%, increases Psychic Wave damage by 25%, has a chance to auto-cast Psychic Wave level 2 when dealing normal melee physical damage.\nIf refine rate is 11 or higher, Matk + 10%, increases magical damage against all size enemies by 15%.\nIf refine rate is 13 or higher, increases Psychic Wave damage by additional 15%.\n^ffffff_^000000\nClass: ^777777Sword^000000 Attack: ^777777130^000000\nWeight: ^7777770^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777100^000000\nJobs: ^777777Novice classes^000000",
+    "slots": 0,
+    "itemTypeId": 1,
+    "itemSubTypeId": 257,
+    "itemLevel": 4,
+    "attack": 130,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Novice"
+    ],
+    "script": {
+      "matkPercent": [
+        "2",
+        "11===10"
+      ],
+      "matk": [
+        "170",
+        "1---3",
+        "level:15(1-195)---3"
+      ],
+      "aspdPercent": [
+        "REFINE[7]LEARN_SKILL[Increase SP Recovery==1]---1"
+      ],
+      "m_my_element_fire": [
+        "9===10"
+      ],
+      "m_my_element_neutral": [
+        "9===10"
+      ],
+      "Psychic Wave": [
+        "9===25",
+        "13===15"
+      ],
+      "m_size_all": [
+        "11===15"
+      ]
+    }
+  },
+  "500043": {
+    "id": 500043,
+    "aegisName": "SI_B_Saber",
+    "name": "Super Ignition Booster Saber",
+    "unidName": "Sword",
+    "resName": "SI_B_Saber",
+    "description": "^000088Can't be refined by normal means.^000000\nCri + 15.\nAtk + 3 per refine rate.\nAtk + 3 per 15 base level (up to level 195).\nIf refine rate is 7 or higher, increases attack speed (reduces delay after attack by 1%) per each level of Sword Mastery user learned.\nIf refine rate is 9 or higher, increases critical damage by 10%, increases Ignition Break damage by 25%, has a chance to auto-cast Ignition Break level 2 when dealing normal melee physical damage.\nIf refine rate is 11 or higher, additional Cri + 15, increases physical damage against all size enemies by 15%.\nIf refine rate is 13 or higher, increases Ignition Break damage by additional 15%.\n^ffffff_^000000\nClass: ^777777Sword^000000 Attack: ^777777190^000000\nWeight: ^7777770^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777100^000000\nJobs: ^777777Novice classes^000000",
+    "slots": 0,
+    "itemTypeId": 1,
+    "itemSubTypeId": 257,
+    "itemLevel": 4,
+    "attack": 190,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Novice"
+    ],
+    "script": {
+      "cri": [
+        "15",
+        "11===15"
+      ],
+      "atk": [
+        "1---3",
+        "level:15(1-195)---3"
+      ],
+      "aspdPercent": [
+        "REFINE[7]LEARN_SKILL[Sword Mastery==1]---1"
+      ],
+      "criDmg": [
+        "9===10"
+      ],
+      "Ignition Break": [
+        "9===25",
+        "13===15"
+      ],
+      "p_size_all": [
+        "11===15"
       ]
     }
   },
@@ -81308,6 +81485,117 @@
       ]
     }
   },
+  "510017": {
+    "id": 510017,
+    "aegisName": "CA_B_Dagger",
+    "name": "Counter Assault Booster Dagger",
+    "unidName": "Dagger",
+    "resName": "CA_B_Dagger",
+    "description": "Can't be refined by normal means.\nAtk + 2%.\nAtk + 3 per refine rate.\nAtk + 3 per 15 base level (up to level 195).\nIf refine rate is 7 or higher, reduces global cooldown by 1% per each level of Lefthand Mastery user learned.\nIf refine rate is 9 or higher, increases melee physical damage by 10%, increases Meteor Assault and Counter Slash damage by 25%.\nIf refine rate is 11 or higher, reduces global cooldown by additional 10%, increases physical damage against all size enemies by 15%.\nIf refine rate is 13 or higher, increases Meteor Assault and Counter Slash damage by additional 15%.\n^ffffff_^000000\nClass: ^777777Dagger^000000 Attack: ^777777180^000000\nWeight: ^7777770^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777100^000000\nJobs: ^777777Guillotine Cross^000000",
+    "slots": 0,
+    "itemTypeId": 1,
+    "itemSubTypeId": 256,
+    "itemLevel": 4,
+    "attack": 180,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Guillotine Cross"
+    ],
+    "script": {
+      "atkPercent": [
+        "2"
+      ],
+      "atk": [
+        "1---3",
+        "level:15(1-195)---3"
+      ],
+      "acd": [
+        "REFINE[7]LEARN_SKILL[Lefthand Mastery==1]---1",
+        "11===10"
+      ],
+      "melee": [
+        "9===10"
+      ],
+      "Meteor Assault": [
+        "9===25",
+        "13===15"
+      ],
+      "Counter Slash": [
+        "9===25",
+        "13===15"
+      ],
+      "p_size_all": [
+        "11===15"
+      ]
+    }
+  },
+  "510018": {
+    "id": 510018,
+    "aegisName": "MF_B_Dagger",
+    "name": "Magic Fatal Booster Dagger",
+    "unidName": "Dagger",
+    "resName": "MF_B_Dagger",
+    "description": "Can't be refined by normal means.\nMatk + 180.\nAtk + 2%, Matk + 2%.\nAtk + 3 and Matk + 3 per refine rate.\nAtk + 3 and Matk + 3 per 15 base level (up to level 195).\nIf refine rate is 7 or higher, increases neutral property magical damage by 1% per each level of Intimidate user learned, reduces global cooldown by 1% per each level of Back Stab user learned.\nIf refine rate is 9 or higher, ASPD + 1, increases Fatal Menace damage by 25%.\nIf refine rate is 11 or higher, increases physical and magical damage against all size enemies by 15%, increases melee physical damage by 15%.\nIf refine rate is 13 or higher, increases Fatal Menace damage by additional 15%, increases Psychic Wave damage by 15%.\n^ffffff_^000000\nClass: ^777777Dagger^000000 Attack: ^777777190^000000\nWeight: ^7777770^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777100^000000\nJobs: ^777777Shadow Chaser^000000",
+    "slots": 0,
+    "itemTypeId": 1,
+    "itemSubTypeId": 256,
+    "itemLevel": 4,
+    "attack": 190,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Shadow Chaser"
+    ],
+    "script": {
+      "matk": [
+        "180",
+        "1---3",
+        "level:15(1-195)---3"
+      ],
+      "atkPercent": [
+        "2"
+      ],
+      "matkPercent": [
+        "2"
+      ],
+      "atk": [
+        "1---3",
+        "level:15(1-195)---3"
+      ],
+      "m_my_element_neutral": [
+        "REFINE[7]LEARN_SKILL[Intimidate==1]---1"
+      ],
+      "acd": [
+        "REFINE[7]LEARN_SKILL[Back Stab==1]---1"
+      ],
+      "aspd": [
+        "9===1"
+      ],
+      "Fatal Manace": [
+        "9===25",
+        "13===15"
+      ],
+      "p_size_all": [
+        "11===15"
+      ],
+      "m_size_all": [
+        "11===15"
+      ],
+      "melee": [
+        "11===15"
+      ],
+      "Psychic Wave": [
+        "13===15"
+      ]
+    }
+  },
   "510019": {
     "id": 510019,
     "aegisName": "Up_Magic_Sword",
@@ -81432,6 +81720,57 @@
       ],
       "p_element_all": [
         "EQUIP[Surudoi Kaze]REFINE[weapon,leftWeapon==18]===15"
+      ]
+    }
+  },
+  "510069": {
+    "id": 510069,
+    "aegisName": "SN_B_Dagger",
+    "name": "Super Novice Booster Dagger",
+    "unidName": "Dagger",
+    "resName": "프리스트의검",
+    "description": "Can't be refined by normal means.\nAtk + 3%.\nAtk + 3 per refine rate.\nAtk + 3 per 15 base level (up to level 195).\nIf refine rate is 7 or higher, increases attack speed (reduces delay after attack by 1%) per each level of Sword Mastery user learned.\nIf refine rate is 9 or higher, increases melee and long ranged physical damage by 10%, increases Back Stab and Sightless Mind damage by 15%.\nIf refine rate is 11 or higher, additional Atk + 10%, increases physical damage against all size enemies by 15%.\nIf refine rate is 13 or higher, increases Back Stab and Sightless Mind damage by additional 25%.\n^ffffff_^000000\nClass: ^777777Dagger^000000 Attack: ^777777210^000000\nWeight: ^7777770^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777100^000000\nJobs: ^777777Novice classes^000000",
+    "slots": 0,
+    "itemTypeId": 1,
+    "itemSubTypeId": 256,
+    "itemLevel": 4,
+    "attack": 210,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Novice"
+    ],
+    "script": {
+      "atkPercent": [
+        "3",
+        "11===10"
+      ],
+      "atk": [
+        "1---3",
+        "level:15(1-195)---3"
+      ],
+      "aspdPercent": [
+        "REFINE[7]LEARN_SKILL[Sword Mastery==1]---1"
+      ],
+      "melee": [
+        "9===10"
+      ],
+      "range": [
+        "9===10"
+      ],
+      "Back Stab": [
+        "9===15",
+        "13===25"
+      ],
+      "Sightless Mind": [
+        "9===15",
+        "13===25"
+      ],
+      "p_size_all": [
+        "11===15"
       ]
     }
   },
@@ -81705,6 +82044,56 @@
       ]
     }
   },
+  "530005": {
+    "id": 530005,
+    "aegisName": "BC_B_Spear",
+    "name": "Vanishing Cannon Booster Spear",
+    "unidName": "Spear",
+    "resName": "BC_B_Spear",
+    "description": "Can't be refined by normal means.\nAtk + 2%.\nAtk + 3 per refine rate.\nAtk + 3 per 15 base level (up to level 195).\nIf refine rate is 7 or higher, increases attack speed (reduces delay after attack by 1%) per each level of Spear Quicken user learned.\nIf refine rate is 9 or higher, ASPD + 1, increases Vanishing Point and Cannon Spear damage by 25%.\nIf refine rate is 11 or higher, increases physical damage against all size enemies by 15%, increases long ranged physical damage by 15%\nIf refine rate is 13 or higher, increases Vanishing Point and Cannon Spear damage by additional 15%.\n^ffffff_^000000\nClass: ^777777Spear^000000 Attack: ^777777200^000000\nWeight: ^7777770^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777100^000000\nJobs: ^777777Royal Guard^000000",
+    "slots": 0,
+    "itemTypeId": 1,
+    "itemSubTypeId": 259,
+    "itemLevel": 4,
+    "attack": 200,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Royal Guard"
+    ],
+    "script": {
+      "atkPercent": [
+        "2"
+      ],
+      "atk": [
+        "1---3",
+        "level:15(1-195)---3"
+      ],
+      "aspdPercent": [
+        "REFINE[7]LEARN_SKILL[Spear Quicken==1]---1"
+      ],
+      "aspd": [
+        "9===1"
+      ],
+      "Banishing Point": [
+        "9===25",
+        "13===15"
+      ],
+      "Cannon Spear": [
+        "9===25",
+        "13===15"
+      ],
+      "p_size_all": [
+        "11===15"
+      ],
+      "range": [
+        "11===15"
+      ]
+    }
+  },
   "530006": {
     "id": 530006,
     "aegisName": "Up_Undine_Spear_K",
@@ -81940,6 +82329,77 @@
       ]
     }
   },
+  "540009": {
+    "id": 540009,
+    "aegisName": "SB_B_Book",
+    "name": "Spell Bolt Booster Book",
+    "unidName": "Book",
+    "resName": "SB_B_Book",
+    "description": "Can't be refined by normal means.\nCan't be destroyed.\nMatk + 2%, Matk + 160.\nMatk + 3 per refine rate.\nMatk + 3 per 15 base level (up to level 195).\nIf refine rate is 7 or higher, increases water, wind, earth and fire property magical damage by 1% per each level of Hindsight user learned.\nIf refine rate is 9 or higher, ASPD + 1, increases Fire Bolt, Cold Bolt, Lightning Bolt, Earth Spike and Heaven's Drive damage by 25%.\nIf refine rate is 11 or higher, additional ASPD + 1, increases water, wind, earth and fire property magical damage by additional 15%.\nIf refine rate is 13 or higher, increases Fire Bolt, Cold Bolt, Lightning Bolt, Earth Spike and Heaven's Drive damage by additional 15%.\n^ffffff_^000000\nClass: ^777777Book^000000 Attack: ^777777150^000000\nWeight: ^7777770^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777100^000000\nJobs: ^777777Sorcerer^000000",
+    "slots": 0,
+    "itemTypeId": 1,
+    "itemSubTypeId": 271,
+    "itemLevel": 4,
+    "attack": 150,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Sorcerer"
+    ],
+    "script": {
+      "matkPercent": [
+        "2"
+      ],
+      "matk": [
+        "160",
+        "1---3",
+        "level:15(1-195)---3"
+      ],
+      "m_my_element_water": [
+        "REFINE[7]LEARN_SKILL[Auto Spell==1]---1",
+        "11===15"
+      ],
+      "m_my_element_wind": [
+        "REFINE[7]LEARN_SKILL[Auto Spell==1]---1",
+        "11===15"
+      ],
+      "m_my_element_earth": [
+        "REFINE[7]LEARN_SKILL[Auto Spell==1]---1",
+        "11===15"
+      ],
+      "m_my_element_fire": [
+        "REFINE[7]LEARN_SKILL[Auto Spell==1]---1",
+        "11===15"
+      ],
+      "aspd": [
+        "9===1",
+        "11===1"
+      ],
+      "Fire Bolt": [
+        "9===25",
+        "13===15"
+      ],
+      "Cold Bolt": [
+        "9===25",
+        "13===15"
+      ],
+      "Lightening Bolt": [
+        "9===25",
+        "13===15"
+      ],
+      "Earth Spike": [
+        "9===25",
+        "13===15"
+      ],
+      "Heaven's Drive": [
+        "9===25",
+        "13===15"
+      ]
+    }
+  },
   "540010": {
     "id": 540010,
     "aegisName": "Up_OneSkyOneSun",
@@ -82034,6 +82494,102 @@
       ],
       "matkPercent": [
         "EQUIP[Great Hero Boots]===7"
+      ]
+    }
+  },
+  "540039": {
+    "id": 540039,
+    "aegisName": "ML_B_Book",
+    "name": "Moon Starlight Booster Book",
+    "unidName": "Book",
+    "resName": "ML_B_Book",
+    "description": "^000088Can't be refined by normal means.^000000\nAtk + 2%.\nAtk + 3 per refine rate.\nAtk + 3 per 15 base level (up to level 195).\nIf refine rate is 7 or higher, increases melee physical damage by 1% per each level of Kihop user learned.\nIf refine rate is 9 or higher, increases melee physical damage by additional 10%, increases Full Moon Kick, New Moon Kick and Falling Star damage by 25%.\nIf refine rate is 11 or higher, Atk + 10%, increases physical damage against all size enemies by 15%.\nIf refine rate is 13 or higher, increases Full Moon Kick, New Moon Kick and Falling Star damage by additional 15%.\n^ffffff_^000000\nClass: ^777777Book^000000 Attack: ^777777230^000000\nWeight: ^7777770^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777100^000000\nJobs: ^777777Star Emperor^000000",
+    "slots": 0,
+    "itemTypeId": 1,
+    "itemSubTypeId": 271,
+    "itemLevel": 4,
+    "attack": 230,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Star Emperor"
+    ],
+    "script": {
+      "atkPercent": [
+        "2",
+        "11===10"
+      ],
+      "atk": [
+        "1---3",
+        "level:15(1-195)---3"
+      ],
+      "melee": [
+        "REFINE[7]LEARN_SKILL[Power==1]---1",
+        "9===10"
+      ],
+      "p_size_all": [
+        "11===15"
+      ],
+      "Full Moon Kick": [
+        "9===25",
+        "13===15"
+      ],
+      "New Moon Kick": [
+        "9===25",
+        "13===15"
+      ],
+      "Falling Stars": [
+        "9===25",
+        "13===15"
+      ]
+    }
+  },
+  "540040": {
+    "id": 540040,
+    "aegisName": "SS_B_Book",
+    "name": "Sunshine Booster Book",
+    "unidName": "Book",
+    "resName": "SS_B_Book",
+    "description": "^000088Can't be refined by normal means.^000000\nAtk + 2%.\nAtk + 3 per refine rate.\nAtk + 3 per 15 base level (up to level 195).\nIf refine rate is 7 or higher, increases melee physical damage by 1% per each level of Kihop user learned.\nIf refine rate is 9 or higher, increases melee physical damage by additional 10%, increases Prominence Kick and Solar Burst damage by 25%.\nIf refine rate is 11 or higher, Atk + 10%, increases physical damage against all size enemies by 15%.\nIf refine rate is 13 or higher, increases Prominence Kick and Solar Burst damage by additional 15%.\n^ffffff_^000000\nClass: ^777777Book^000000 Attack: ^777777230^000000\nWeight: ^7777770^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777100^000000\nJobs: ^777777Star Emperor^000000",
+    "slots": 0,
+    "itemTypeId": 1,
+    "itemSubTypeId": 271,
+    "itemLevel": 4,
+    "attack": 230,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Star Emperor"
+    ],
+    "script": {
+      "atkPercent": [
+        "2",
+        "11===10"
+      ],
+      "atk": [
+        "1---3",
+        "level:15(1-195)---3"
+      ],
+      "melee": [
+        "REFINE[7]LEARN_SKILL[Power==1]---1",
+        "9===10"
+      ],
+      "Blaze Kick": [
+        "9===25",
+        "13===15"
+      ],
+      "Solar Explosion": [
+        "9===25",
+        "13===15"
+      ],
+      "p_size_all": [
+        "11===15"
       ]
     }
   },
@@ -82335,6 +82891,124 @@
       ]
     }
   },
+  "550010": {
+    "id": 550010,
+    "aegisName": "ES_B_Stick",
+    "name": "Elemental Spell Booster Stick",
+    "unidName": "Staff",
+    "resName": "ES_B_Stick",
+    "description": "Can't be refined by normal means.\nCan't be destroyed.\nMatk + 2%, Matk + 160.\nMatk + 3 per refine rate.\nMatk + 3 per 15 base level (up to level 195).\nIf refine rate is 7 or higher, increases water, wind, earth and neutral property magical damage by 1% per each level of Magnetic Earth user learned.\nIf refine rate is 9 or higher, reduces variable casting time by 10%, increases Psychic Wave, Diamond Dust, Earth Grave and Varetyr Spear damage by 25%.\nIf refine rate is 11 or higher, increases magical damage against all size enemies by 15%, increases water, wind, earth and neutral property magical damage by additional 15%.\nIf refine rate is 13 or higher, increases Psychic Wave, Diamond Dust, Earth Grave and Varetyr Spear damage by additional 15%.\n^ffffff_^000000\nClass: ^777777Staff^000000 Attack: ^777777150^000000\nWeight: ^7777770^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777100^000000\nJobs: ^777777Sorcerer^000000",
+    "slots": 0,
+    "itemTypeId": 1,
+    "itemSubTypeId": 265,
+    "itemLevel": 4,
+    "attack": 150,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Sorcerer"
+    ],
+    "script": {
+      "matkPercent": [
+        "2"
+      ],
+      "matk": [
+        "160",
+        "1---3",
+        "level:15(1-195)---3"
+      ],
+      "m_my_element_water": [
+        "REFINE[7]LEARN_SKILL[Land Protector==1]---1",
+        "11===15"
+      ],
+      "m_my_element_wind": [
+        "REFINE[7]LEARN_SKILL[Land Protector==1]---1",
+        "11===15"
+      ],
+      "m_my_element_earth": [
+        "REFINE[7]LEARN_SKILL[Land Protector==1]---1",
+        "11===15"
+      ],
+      "m_my_element_neutral": [
+        "REFINE[7]LEARN_SKILL[Land Protector==1]---1",
+        "11===15"
+      ],
+      "vct": [
+        "9===10"
+      ],
+      "m_size_all": [
+        "11===15"
+      ],
+      "Psychic Wave": [
+        "9===25",
+        "13===15"
+      ],
+      "Diamond Dust": [
+        "9===25",
+        "13===15"
+      ],
+      "Earth Grave": [
+        "9===25",
+        "13===15"
+      ],
+      "Varetyr Spear": [
+        "9===25",
+        "13===15"
+      ]
+    }
+  },
+  "550011": {
+    "id": 550011,
+    "aegisName": "AN_B_Wand",
+    "name": "Adonus Booster Wand",
+    "unidName": "Staff",
+    "resName": "AN_B_Wand",
+    "description": "Can't be refined by normal means.\nCan't be destroyed.\nMatk + 2%, Matk + 160.\nMatk + 3 per refine rate.\nMatk + 3 per 15 base level (up to level 195).\nIf refine rate is 7 or higher, increases holy property magical damage by 1% per each level of Meditation user learned.\nIf refine rate is 9 or higher, reduces variable casting time by 10%, increases Magnus Exorcismus and Adoramus damage by 25%.\nIf refine rate is 11 or higher, increases magical damage against all size enemies by 15%, increases holy property magical damage by additional 15%.\nIf refine rate is 13 or higher, increases Magnus Exorcismus and Adoramus damage by additional 15%.\n^ffffff_^000000\nClass: ^777777Staff^000000 Attack: ^777777150^000000\nWeight: ^7777770^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777100^000000\nJobs: ^777777Archbishop^000000",
+    "slots": 0,
+    "itemTypeId": 1,
+    "itemSubTypeId": 265,
+    "itemLevel": 4,
+    "attack": 150,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Arch Bishop"
+    ],
+    "script": {
+      "matkPercent": [
+        "2"
+      ],
+      "matk": [
+        "160",
+        "1---3",
+        "level:15(1-195)---3"
+      ],
+      "m_my_element_holy": [
+        "REFINE[7]LEARN_SKILL[Meditation==1]---1",
+        "11===15"
+      ],
+      "vct": [
+        "9===10"
+      ],
+      "Magnus Exorcismus": [
+        "9===25",
+        "13===15"
+      ],
+      "Adoramus": [
+        "9===25",
+        "13===15"
+      ],
+      "m_size_all": [
+        "11===15"
+      ]
+    }
+  },
   "550012": {
     "id": 550012,
     "aegisName": "Up_Shadow_Staff_K",
@@ -82600,6 +83274,256 @@
       ]
     }
   },
+  "550050": {
+    "id": 550050,
+    "aegisName": "SP_B_Fox",
+    "name": "Lunatic Picky Booster Foxtail",
+    "unidName": "Staff",
+    "resName": "SP_B_Fox",
+    "description": "^000088Can't be refined by normal means.^000000\nCan't be destroyed.\nAtk + 2%.\nAtk + 3 per refine rate.\nAtk + 3 per 15 base level (up to level 195).\nIf refine rate is 7 or higher, increases long ranged physical damage by 2% per each level of Picky Peck user learned.\nIf refine rate is 9 or higher, increases long ranged physical damage by 10%, increases Picky Peck and Lunatic Carrot Beat damage by 25%.\nIf refine rate is 11 or higher, increases long ranged physical damage by additional 10%, increases physical damage against all size enemies by 15%.\nIf refine rate is 13 or higher, increases Picky Peck and Lunatic Carrot Beat damage by additional 15%.\n^ffffff_^000000\nClass: ^777777Staff^000000 Attack: ^777777280^000000\nWeight: ^7777770^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777100^000000\nJobs: ^777777Summoner (Doram)^000000",
+    "slots": 0,
+    "itemTypeId": 1,
+    "itemSubTypeId": 265,
+    "itemLevel": 4,
+    "attack": 280,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Doram"
+    ],
+    "script": {
+      "atkPercent": [
+        "2"
+      ],
+      "atk": [
+        "1---3",
+        "level:15(1-195)---3"
+      ],
+      "range": [
+        "REFINE[7]LEARN_SKILL[Picky Peck==1]---2",
+        "9===10",
+        "11===10"
+      ],
+      "Picky Peck": [
+        "9===25",
+        "13===15"
+      ],
+      "Lunatic Carrot Beat": [
+        "9===25",
+        "13===15"
+      ],
+      "p_size_all": [
+        "11===15"
+      ]
+    }
+  },
+  "550051": {
+    "id": 550051,
+    "aegisName": "GB_B_Fox",
+    "name": "Catnip Booster Foxtail Model",
+    "unidName": "Staff",
+    "resName": "GB_B_Fox",
+    "description": "^000088Can't be refined by normal means.^000000\nMatk + 2%, Matk + 280.\nReduces skill cooldown of Catnip Meteor by 1.5 seconds.\nMatk + 3 per refine rate.\nMatk + 3 per 15 base level (up to level 195).\nIf refine rate is 7 or higher, Matk + 2% per each level of Silvervine Stem Spear user learned.\nIf refine rate is 9 or higher, increases all property magical damage by 10%, increases Silvervine Stem Spear and Catnip Meteor damage by 25%.\nIf refine rate is 11 or higher, reduces variable casting time by 10%, increases magical damage against all size enemies by 15%.\nIf refine rate is 13 or higher, increases Silvervine Stem Spear and Catnip Meteor damage by additional 15%.\n^ffffff_^000000\nClass: ^777777Staff^000000 Attack: ^777777120^000000\nWeight: ^7777770^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777100^000000\nJobs: ^777777Summoner (Doram)^000000",
+    "slots": 0,
+    "itemTypeId": 1,
+    "itemSubTypeId": 265,
+    "itemLevel": 4,
+    "attack": 120,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Doram"
+    ],
+    "script": {
+      "matkPercent": [
+        "2",
+        "REFINE[7]LEARN_SKILL[Silvervine Stem Spear==1]---2"
+      ],
+      "matk": [
+        "280",
+        "1---3",
+        "level:15(1-195)---3"
+      ],
+      "cd__Catnip Meteor": [
+        "1.5"
+      ],
+      "m_my_element_all": [
+        "9===10"
+      ],
+      "Silvervine Stem Spear": [
+        "9===25",
+        "13===15"
+      ],
+      "Catnip Meteor": [
+        "9===25",
+        "13===15"
+      ],
+      "vct": [
+        "11===10"
+      ],
+      "m_size_all": [
+        "11===15"
+      ]
+    }
+  },
+  "550052": {
+    "id": 550052,
+    "aegisName": "ES_B_Staff",
+    "name": "Es Booster Staff",
+    "unidName": "Staff",
+    "resName": "ES_B_Staff",
+    "description": "^000088Can't be refined by normal means.^000000\r\nCan't be destroyed.\r\nMatk + 2%, Matk + 175.\r\nMatk + 3 per refine rate.\r\nMatk + 3 per 15 base level (up to level 195).\r\nIf refine rate is 7 or higher, reduces variable casting time by 1% per each level of Happy Break user learned.\r\nIf refine rate is 9 or higher, increases all property magical damage by 10%, increases Espa and Eswhoo damage by 25%.\r\nIf refine rate is 11 or higher, reduces variable casting time by additional 10%, increases magical damage against all size enemies by 15%.\r\nIf refine rate is 13 or higher, increases Espa and Eswhoo damage by additional 15%.\r\n^ffffff_^000000\r\nClass: ^777777Staff^000000 Attack: ^777777110^000000\r\nWeight: ^7777770^000000\r\nWeapon Level: ^7777774^000000\r\nRequired Level: ^777777100^000000\r\nJobs: ^777777Soul Reaper^000000",
+    "slots": 0,
+    "itemTypeId": 1,
+    "itemSubTypeId": 265,
+    "itemLevel": 4,
+    "attack": 110,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Soul Reaper"
+    ],
+    "script": {
+      "matkPercent": [
+        "2"
+      ],
+      "matk": [
+        "175",
+        "1---3",
+        "level:15(1-195)---3"
+      ],
+      "vct": [
+        "REFINE[7]LEARN_SKILL[Happy Break==1]---1",
+        "11===10"
+      ],
+      "m_my_element_all": [
+        "9===10"
+      ],
+      "Espa": [
+        "9===25",
+        "13===15"
+      ],
+      "Eswhoo": [
+        "9===25",
+        "13===15"
+      ],
+      "m_size_all": [
+        "11===15"
+      ]
+    }
+  },
+  "550053": {
+    "id": 550053,
+    "aegisName": "EC_B_Staff",
+    "name": "Evil Curse Booster Staff",
+    "unidName": "Staff",
+    "resName": "EC_B_Staff",
+    "description": "^000088Can't be refined by normal means.^000000\r\nCan't be destroyed.\r\nMatk + 2%, Matk + 175.\r\nMatk + 3 per refine rate.\r\nMatk + 3 per 15 base level (up to level 195).\r\nIf refine rate is 7 or higher, reduces variable casting time by 1% per each level of Happy Break user learned.\r\nIf refine rate is 9 or higher, increases all property magical damage by 10%, increases Curse Explosion damage by 25%.\r\nIf refine rate is 11 or higher, reduces skill cooldown of Evil spirit's Curse by 2 seconds, increases magical damage against all size enemies by 15%.\r\nIf refine rate is 13 or higher, increases shadow property magical damage by 25%, increases Curse Explosion damage by additional 15%.\r\n^ffffff_^000000\r\nClass: ^777777Staff^000000 Attack: ^777777110^000000\r\nWeight: ^7777770^000000\r\nWeapon Level: ^7777774^000000\r\nRequired Level: ^777777100^000000\r\nJobs: ^777777Soul Reaper^000000",
+    "slots": 0,
+    "itemTypeId": 1,
+    "itemSubTypeId": 265,
+    "itemLevel": 4,
+    "attack": 110,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Soul Reaper"
+    ],
+    "script": {
+      "matkPercent": [
+        "2"
+      ],
+      "matk": [
+        "175",
+        "1---3",
+        "level:15(1-195)---3"
+      ],
+      "vct": [
+        "REFINE[7]LEARN_SKILL[Happy Break==1]---1"
+      ],
+      "m_my_element_all": [
+        "9===10"
+      ],
+      "Curse Explosion": [
+        "9===25",
+        "13===15"
+      ],
+      "cd__Evil Soul Curse": [
+        "11===2"
+      ],
+      "m_size_all": [
+        "11===15"
+      ],
+      "m_my_element_dark": [
+        "13===25"
+      ]
+    }
+  },
+  "550079": {
+    "id": 550079,
+    "aegisName": "SN_B_Wand",
+    "name": "Super Novice Booster Wand",
+    "unidName": "Staff",
+    "resName": "Wand_Of_Flame",
+    "description": "Can't be refined by normal means.\nCan't be destroyed.\nMatk + 2%, Matk + 200.\nMatk + 3 per refine rate.\nMatk + 3 per 15 base level (up to level 195).\nIf refine rate is 7 or higher, reduces variable casting time by 1% per each level of Increase SP Recovery user learned.\nIf refine rate is 9 or higher, increases all property magical damage by 10%, increases Fire Bolt, Cold Bolt and Lightning Bolt damage by 15%.\nIf refine rate is 11 or higher, additional Matk + 10%, increases magical damage against all size enemies by 15%.\nIf refine rate is 13 or higher, increases Fire Bolt, Cold Bolt and Lightning Bolt damage by additional 25%.\n^ffffff_^000000\nClass: ^777777Staff^000000 Attack: ^777777130^000000\nWeight: ^7777770^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777100^000000\nJobs: ^777777Novice classes^000000",
+    "slots": 0,
+    "itemTypeId": 1,
+    "itemSubTypeId": 265,
+    "itemLevel": 4,
+    "attack": 130,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Novice"
+    ],
+    "script": {
+      "matkPercent": [
+        "2",
+        "11===10"
+      ],
+      "matk": [
+        "200",
+        "1---3",
+        "level:15(1-195)---3"
+      ],
+      "vct": [
+        "REFINE[7]LEARN_SKILL[Increase SP Recovery==1]---1"
+      ],
+      "m_my_element_all": [
+        "9===10"
+      ],
+      "m_size_all": [
+        "11===15"
+      ],
+      "Fire Bolt": [
+        "9===15",
+        "13===25"
+      ],
+      "Cold Bolt": [
+        "9===15",
+        "13===25"
+      ],
+      "Lightening Bolt": [
+        "9===15",
+        "13===25"
+      ]
+    }
+  },
   "550080": {
     "id": 550080,
     "aegisName": "Freedom_Stick",
@@ -82820,6 +83744,107 @@
       ],
       "cd__Lion Howling": [
         "9===2"
+      ]
+    }
+  },
+  "560006": {
+    "id": 560006,
+    "aegisName": "PS_B_Knuckle",
+    "name": "Rampage Arrow Booster Knuckle",
+    "unidName": "Knuckle",
+    "resName": "PS_B_Knuckle",
+    "description": "Can't be refined by normal means.\nAtk + 2%.\nAtk + 3 per refine rate.\nAtk + 3 per 15 base level (up to level 195).\nIf refine rate is 7 or higher, increases long ranged physical damage by 1% per each level of Summon Spirit Sphere user learned.\nIf refine rate is 9 or higher, MaxSP + 10%, increases Rampage Blast and Knuckle Arrow damage by 25%.\nIf refine rate is 11 or higher, reduces global cooldown by 10%, increases physical damage against all size enemies by 15%.\nIf refine rate is 13 or higher, increases Rampage Blast and Knuckle Arrow damage by additional 15%.\n^ffffff_^000000\nClass: ^777777Knuckle^000000 Attack: ^777777190^000000\nWeight: ^7777770^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777100^000000\nJobs: ^777777Sura^000000",
+    "slots": 0,
+    "itemTypeId": 1,
+    "itemSubTypeId": 268,
+    "itemLevel": 4,
+    "attack": 190,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Sura"
+    ],
+    "script": {
+      "atkPercent": [
+        "2"
+      ],
+      "atk": [
+        "1---3",
+        "level:15(1-195)---3"
+      ],
+      "range": [
+        "REFINE[7]LEARN_SKILL[Vigor condensation==1]---1"
+      ],
+      "spPercent": [
+        "9===10"
+      ],
+      "Rampage Blast": [
+        "9===25",
+        "13===15"
+      ],
+      "Knuckle Arrow": [
+        "9===25",
+        "13===15"
+      ],
+      "acd": [
+        "11===10"
+      ],
+      "p_size_all": [
+        "11===15"
+      ]
+    }
+  },
+  "560007": {
+    "id": 560007,
+    "aegisName": "CP_B_Knuckle",
+    "name": "Sky Cannon Booster Knuckle",
+    "unidName": "Knuckle",
+    "resName": "CP_B_Knuckle",
+    "description": "Can't be refined by normal means.\nAtk + 2%.\nMaxHP + 250 and MaxSP + 20 per refine rate.\nAtk + 1% per 15 base level (up to level 195).\nIf refine rate is 7 or higher, MaxSP + 2% per each level of Raging Quadruple Blow user learned.\nIf refine rate is 9 or higher, additional Atk + 5%, increases Sky Blow and Tiger Cannon damage by 25%.\nIf refine rate is 11 or higher, reduces skill cooldown of Tiger Cannon by 1 second, increases melee physical damage by 15%.\nIf refine rate is 13 or higher, increases Sky Blow and Tiger Cannon damage by additional 15%.\n^ffffff_^000000\nClass: ^777777Knuckle^000000 Attack: ^777777190^000000\nWeight: ^7777770^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777100^000000\nJobs: ^777777Sura^000000",
+    "slots": 0,
+    "itemTypeId": 1,
+    "itemSubTypeId": 268,
+    "itemLevel": 4,
+    "attack": 190,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Sura"
+    ],
+    "script": {
+      "atkPercent": [
+        "2",
+        "level:15(1-195)---1",
+        "9===5"
+      ],
+      "hp": [
+        "1---250"
+      ],
+      "sp": [
+        "1---20"
+      ],
+      "spPercent": [
+        "REFINE[7]LEARN_SKILL[Chain Combo==1]---2"
+      ],
+      "Sky Blow": [
+        "9===25",
+        "13===15"
+      ],
+      "Tiger Cannon": [
+        "9===25",
+        "13===15"
+      ],
+      "cd__Tiger Cannon": [
+        "11===1"
+      ],
+      "melee": [
+        "11===15"
       ]
     }
   },
@@ -83177,6 +84202,99 @@
       ]
     }
   },
+  "570010": {
+    "id": 570010,
+    "aegisName": "MV_B_Violin",
+    "name": "Metallic Vibration Booster Violin",
+    "unidName": "Musical Instrument",
+    "resName": "MV_B_Violin",
+    "description": "Can't be refined by normal means.\nMatk + 2%, Matk + 180.\nMatk + 3 per refine rate.\nMatk + 1% per 15 base level (up to level 195).\nIf refine rate is 7 or higher, increases all property magical damage by 2% per each level of Music Lessons user learned.\nIf refine rate is 9 or higher, reduces skill cooldown of Metallic Sound by 2 seconds, increases Reverberation and Metallic Sound damage by 25%.\nIf refine rate is 11 or higher, reduces fixed casting time of Reverberation by 0.5 seconds, increases all property magical damage by additional 15%.\nIf refine rate is 13 or higher, increases Reverberation and Metallic Sound damage by additional 15%.\n^ffffff_^000000\nClass: ^777777Instrument^000000 Attack: ^777777150^000000\nWeight: ^7777770^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777100^000000\nJobs: ^777777Minstrel^000000",
+    "slots": 0,
+    "itemTypeId": 1,
+    "itemSubTypeId": 269,
+    "itemLevel": 4,
+    "attack": 150,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Minstrel"
+    ],
+    "script": {
+      "matkPercent": [
+        "2",
+        "level:15(1-195)---1"
+      ],
+      "matk": [
+        "180",
+        "1---3"
+      ],
+      "m_my_element_all": [
+        "REFINE[7]LEARN_SKILL[Musical Lesson==1]---2",
+        "11===15"
+      ],
+      "cd__Metalic Sound": [
+        "9===2"
+      ],
+      "Reverberation": [
+        "9===25",
+        "13===15"
+      ],
+      "Metalic Sound": [
+        "9===25",
+        "13===15"
+      ],
+      "fct__Reverberation": [
+        "11===0.5"
+      ]
+    }
+  },
+  "570024": {
+    "id": 570024,
+    "aegisName": "RS_B_Violin",
+    "name": "Rainstorm Booster Violin",
+    "unidName": "Musical Instrument",
+    "resName": "서늘한바이올린",
+    "description": "Can't be refined by normal means.\nAtk + 2%.\nAtk + 3 per refine rate.\nAtk + 3 per 15 base level (up to level 195).\nIf refine rate is 7 or higher, increases long ranged physical damage by by 2% per each level of Music Lessons user learned.\nIf refine rate is 9 or higher, reduces skill cooldown of Severe Rainstorm by 1 second, increases Severe Rainstorm damage by 25%.\nIf refine rate is 11 or higher, reduces skill cooldown of Severe Rainstorm by additional 1 second, increases physical damage against all size enemies by 15%.\nIf refine rate is 13 or higher, increases Severe Rainstorm damage by additional 15%.\nClass: ^777777Instrument^000000 Attack: ^777777150^000000\nWeight: ^7777770^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777100^000000\nJobs: ^777777Minstrel classes^000000",
+    "slots": 0,
+    "itemTypeId": 1,
+    "itemSubTypeId": 269,
+    "itemLevel": 4,
+    "attack": 150,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Minstrel"
+    ],
+    "script": {
+      "atkPercent": [
+        "2"
+      ],
+      "atk": [
+        "1---3",
+        "level:15(1-195)---3"
+      ],
+      "range": [
+        "REFINE[7]LEARN_SKILL[Musical Lesson==1]---2"
+      ],
+      "cd__Severe Rainstorm": [
+        "9===1",
+        "11===1"
+      ],
+      "Severe Rainstorm": [
+        "9===25",
+        "13===15"
+      ],
+      "p_size_all": [
+        "11===15"
+      ]
+    }
+  },
   "580000": {
     "id": 580000,
     "aegisName": "Boost_Whip",
@@ -83436,6 +84554,99 @@
       ]
     }
   },
+  "580010": {
+    "id": 580010,
+    "aegisName": "MV_B_Whip",
+    "name": "Metallic Vibration Booster Whip",
+    "unidName": "Whip",
+    "resName": "MV_B_Whip",
+    "description": "Can't be refined by normal means.\nMatk + 2%, Matk + 180.\nMatk + 3 per refine rate.\nMatk + 1% per 15 base level (up to level 195).\nIf refine rate is 7 or higher, increases all property magical damage by 2% per each level of Dance Lessons user learned.\nIf refine rate is 9 or higher, reduces skill cooldown of Metallic Sound by 2 seconds, increases Reverberation and Metallic Sound damage by 25%.\nIf refine rate is 11 or higher, reduces fixed casting time of Reverberation by 0.5 seconds, increases all property magical damage by additional 15%.\nIf refine rate is 13 or higher, increases Reverberation and Metallic Sound damage by additional 15%.\n^ffffff_^000000\nClass: ^777777Whip^000000 Attack: ^777777150^000000\nWeight: ^7777770^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777100^000000\nJobs: ^777777Wanderer^000000",
+    "slots": 0,
+    "itemTypeId": 1,
+    "itemSubTypeId": 270,
+    "itemLevel": 4,
+    "attack": 150,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Wanderer"
+    ],
+    "script": {
+      "matkPercent": [
+        "2",
+        "level:15(1-195)---1"
+      ],
+      "matk": [
+        "180",
+        "1---3"
+      ],
+      "m_my_element_all": [
+        "REFINE[7]LEARN_SKILL[Dancing Lesson==1]---2",
+        "11===15"
+      ],
+      "cd__Metalic Sound": [
+        "9===2"
+      ],
+      "Reverberation": [
+        "9===25",
+        "13===15"
+      ],
+      "Metalic Sound": [
+        "9===25",
+        "13===15"
+      ],
+      "fct__Reverberation": [
+        "11===0.5"
+      ]
+    }
+  },
+  "580024": {
+    "id": 580024,
+    "aegisName": "RS_B_Whip",
+    "name": "Rainstorm Booster Whip",
+    "unidName": "Whip",
+    "resName": "서늘한채찍",
+    "description": "Can't be refined by normal means.\nAtk + 2%.\nAtk + 3 per refine rate.\nAtk + 3 per 15 base level (up to level 195).\nIf refine rate is 7 or higher, increases long ranged physical damage by by 2% per each level of Dance Lessons user learned.\nIf refine rate is 9 or higher, reduces skill cooldown of Severe Rainstorm by 1 second, increases Severe Rainstorm damage by 25%.\nIf refine rate is 11 or higher, reduces skill cooldown of Severe Rainstorm by additional 1 second, increases physical damage against all size enemies by 15%.\nIf refine rate is 13 or higher, increases Severe Rainstorm damage by additional 15%.\n^ffffff_^000000\nClass: ^777777Whip^000000 Attack: ^777777150^000000\nWeight: ^7777770^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777100^000000\nJobs: ^777777Wanderer classes^000000",
+    "slots": 0,
+    "itemTypeId": 1,
+    "itemSubTypeId": 270,
+    "itemLevel": 4,
+    "attack": 150,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Wanderer"
+    ],
+    "script": {
+      "atkPercent": [
+        "2"
+      ],
+      "atk": [
+        "1---3",
+        "level:15(1-195)---3"
+      ],
+      "range": [
+        "REFINE[7]LEARN_SKILL[Dancing Lesson==1]---2"
+      ],
+      "cd__Severe Rainstorm": [
+        "9===1",
+        "11===1"
+      ],
+      "Severe Rainstorm": [
+        "9===25",
+        "13===15"
+      ],
+      "p_size_all": [
+        "11===15"
+      ]
+    }
+  },
   "590000": {
     "id": 590000,
     "aegisName": "Boost_Hall",
@@ -83624,6 +84835,168 @@
       ],
       "fct__Duple Light": [
         "11===0.5"
+      ]
+    }
+  },
+  "590008": {
+    "id": 590008,
+    "aegisName": "AK_B_Mace",
+    "name": "Arm Knuckle Booster Mace",
+    "unidName": "Mace",
+    "resName": "AK_B_Mace",
+    "description": "Can't be refined by normal means.\nCan't be destroyed.\nAtk + 2%.\nAtk + 3 per refine rate.\nAtk + 3 per 15 base level (up to level 195).\nIf refine rate is 7 or higher, increases long ranged physical damage by 2% per each level of Madogear License user learned.\nIf refine rate is 9 or higher, reduces variable casting time by 10%, increases Knuckle Boost and Arm Cannon damage by 25%.\nIf refine rate is 11 or higher, reduces global cooldown by 10%, increases physical damage against all size enemies by 20%.\nIf refine rate is 13 or higher, increases Knuckle Boost and Arm Cannon damage by additional 15%.\n^ffffff_^000000\nClass: ^777777Mace^000000 Attack: ^777777400^000000\nWeight: ^7777770^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777100^000000\nJobs: ^777777Mechanic^000000",
+    "slots": 0,
+    "itemTypeId": 1,
+    "itemSubTypeId": 263,
+    "itemLevel": 4,
+    "attack": 400,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Mechanic"
+    ],
+    "script": {
+      "atkPercent": [
+        "2"
+      ],
+      "atk": [
+        "1---3",
+        "level:15(1-195)---3"
+      ],
+      "range": [
+        "REFINE[7]LEARN_SKILL[Madogear License==1]---2"
+      ],
+      "vct": [
+        "9===10"
+      ],
+      "Knuckle Boost": [
+        "9===25",
+        "13===15"
+      ],
+      "Arm Cannon": [
+        "9===25",
+        "13===15"
+      ],
+      "acd": [
+        "11===10"
+      ],
+      "p_size_all": [
+        "11===20"
+      ]
+    }
+  },
+  "590009": {
+    "id": 590009,
+    "aegisName": "AC_B_Club",
+    "name": "Acid Cannon Booster Club",
+    "unidName": "Mace",
+    "resName": "AC_B_Club",
+    "description": "Can't be refined by normal means.\nCan't be destroyed.\nAtk + 2%.\nAtk + 3 per refine rate.\nAtk + 3 per 15 base level (up to level 195).\nIf refine rate is 7 or higher, increases long ranged physical damage by 2% per each level of Potion Research user learned.\nIf refine rate is 9 or higher, reduces variable casting time by 10%, increases Acid Bomb and Cart Cannon damage by 25%.\nIf refine rate is 11 or higher, reduces global cooldown by 10%, increases physical damage against all size enemies by 20%.\nIf refine rate is 13 or higher, increases Acid Bomb and Cart Cannon damage by additional 15%.\n^ffffff_^000000\nClass: ^777777Mace^000000 Attack: ^777777190^000000\nWeight: ^7777770^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777100^000000\nJobs: ^777777Genetic^000000",
+    "slots": 0,
+    "itemTypeId": 1,
+    "itemSubTypeId": 263,
+    "itemLevel": 4,
+    "attack": 190,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Genetic"
+    ],
+    "script": {
+      "atkPercent": [
+        "2"
+      ],
+      "atk": [
+        "1---3",
+        "level:15(1-195)---3"
+      ],
+      "range": [
+        "REFINE[7]LEARN_SKILL[Learning Potion==1]---2"
+      ],
+      "vct": [
+        "9===10"
+      ],
+      "Acid Bomb": [
+        "9===25",
+        "13===15"
+      ],
+      "Cart Cannon": [
+        "9===25",
+        "13===15"
+      ],
+      "acd": [
+        "11===10"
+      ],
+      "p_size_all": [
+        "11===20"
+      ]
+    }
+  },
+  "590010": {
+    "id": 590010,
+    "aegisName": "DD_B_Mace",
+    "name": "Dupledex Booster Mace",
+    "unidName": "Mace",
+    "resName": "DD_B_Mace",
+    "description": "Can't be refined by normal means.\nCan't be destroyed.\nAtk + 2%, Matk + 2%, Matk + 160.\nAtk + 3 and Matk + 3 per refine rate.\nAtk + 3 and Matk + 3 per 15 base level (up to level 195).\nIf refine rate is 7 or higher, increases melee physical damage and holy property magical damage by 1% per each level of Meditation user learned.\nIf refine rate is 9 or higher, reduces variable casting time and global cooldown by 10%, increases Judex and Duple Light damage by 25%.\nIf refine rate is 11 or higher, increases magical damage against all size enemies by 15%, increases holy property magical damage by 15%.\nIf refine rate is 13 or higher, increases Judex and Duple Light damage by additional 15%.\n^ffffff_^000000\nClass: ^777777Mace^000000 Attack: ^777777190^000000\nWeight: ^7777770^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777100^000000\nJobs: ^777777Archbishop^000000",
+    "slots": 0,
+    "itemTypeId": 1,
+    "itemSubTypeId": 263,
+    "itemLevel": 4,
+    "attack": 190,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Arch Bishop"
+    ],
+    "script": {
+      "atkPercent": [
+        "2"
+      ],
+      "matkPercent": [
+        "2"
+      ],
+      "matk": [
+        "160",
+        "1---3",
+        "level:15(1-195)---3"
+      ],
+      "atk": [
+        "1---3",
+        "level:15(1-195)---3"
+      ],
+      "melee": [
+        "REFINE[7]LEARN_SKILL[Meditation==1]---1"
+      ],
+      "m_my_element_holy": [
+        "REFINE[7]LEARN_SKILL[Meditation==1]---1",
+        "11===15"
+      ],
+      "vct": [
+        "9===10"
+      ],
+      "acd": [
+        "9===10"
+      ],
+      "Judex": [
+        "9===25",
+        "13===15"
+      ],
+      "Duple Light": [
+        "9===25",
+        "13===15"
+      ],
+      "m_size_all": [
+        "11===15"
       ]
     }
   },
@@ -83948,6 +85321,54 @@
       ]
     }
   },
+  "600012": {
+    "id": 600012,
+    "aegisName": "IW_B_T_Sword",
+    "name": "Ignition Wave Booster Two-handed Sword",
+    "unidName": "Two-handed Sword",
+    "resName": "IW_B_T_Sword",
+    "description": "Can't be refined by normal means.\nCri + 15.\nAtk + 3 per refine rate.\nAtk + 3 per 15 base level (up to level 195).\nIf refine rate is 7 or higher, increases attack speed (reduces delay after attack by 1%) per each level of Two Hand Quicken user learned.\nIf refine rate is 9 or higher, increases critical damage by 10%, increases Ignition Break and Sonic Wave damage by 25%, has a high chance to auto-cast Sonic Wave which has level as user learned when dealing normal melee damage\nIf refine rate is 11 or higher, additional Cri + 15, increases physical damage against all size enemies by 15%.\nIf refine rate is 13 or higher, increases Ignition Break and Sonic Wave damage by additional 15%.\n^ffffff_^000000\nClass: ^777777Two-handed Sword^000000 Attack: ^777777250^000000\nWeight: ^7777770^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777100^000000\nJobs: ^777777Rune Knight^000000",
+    "slots": 0,
+    "itemTypeId": 1,
+    "itemSubTypeId": 258,
+    "itemLevel": 4,
+    "attack": 250,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Rune Knight"
+    ],
+    "script": {
+      "cri": [
+        "15",
+        "11===15"
+      ],
+      "atk": [
+        "1---3",
+        "level:15(1-195)---3"
+      ],
+      "aspdPercent": [
+        "REFINE[7]LEARN_SKILL[Two hand Quicken==1]---1"
+      ],
+      "criDmg": [
+        "9===10"
+      ],
+      "Ignition Break": [
+        "9===25",
+        "13===15"
+      ],
+      "Sonic Wave": [
+        "9===25",
+        "13===15"
+      ],
+      "p_size_all": [
+        "11===15"
+      ]
+    }
+  },
   "610000": {
     "id": 610000,
     "aegisName": "Boost_Katar",
@@ -84231,6 +85652,152 @@
       ]
     }
   },
+  "610013": {
+    "id": 610013,
+    "aegisName": "RC_B_Katar",
+    "name": "Rolling Cross Booster Katar",
+    "unidName": "Katar",
+    "resName": "RC_B_Katar",
+    "description": "Cri + 15.\nAtk + 3 per refine rate.\nAtk + 3 per 15 base level (up to level 195).\nIf refine rate is 7 or higher, increases melee physical damage by 2% per each level of Advanced Katar Mastery user learned.\nIf refine rate is 9 or higher, reduces global cooldown by 5%, increases Cross Impact and Rolling Cutter damage by 25%.\nIf refine rate is 11 or higher, reduces global cooldown by additional 10%, increases physical damage against all size enemies by 15%.\nIf refine rate is 13 or higher, increases Cross Impact and Rolling Cutter damage by additional 15%.\n^ffffff_^000000\nClass: ^777777Katar^000000 Attack: ^777777200^000000\nWeight: ^7777770^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777100^000000\nJobs: ^777777Guillotine Cross^000000",
+    "slots": 0,
+    "itemTypeId": 1,
+    "itemSubTypeId": 272,
+    "itemLevel": 4,
+    "attack": 200,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Guillotine Cross"
+    ],
+    "script": {
+      "cri": [
+        "15"
+      ],
+      "atk": [
+        "1---3",
+        "level:15(1-195)---3"
+      ],
+      "melee": [
+        "REFINE[7]LEARN_SKILL[Advanced Katar Mastery==1]---2"
+      ],
+      "acd": [
+        "9===5",
+        "11===10"
+      ],
+      "Cross Impact": [
+        "9===25",
+        "13===15"
+      ],
+      "Rolling Cutter": [
+        "9===25",
+        "13===15"
+      ],
+      "p_size_all": [
+        "11===15"
+      ]
+    }
+  },
+  "610028": {
+    "id": 610028,
+    "aegisName": "CA_B_Katar",
+    "name": "Counter Assault Booster Katar",
+    "unidName": "Katar",
+    "resName": "어벤저블러디로어",
+    "description": "Can't be refined by normal means.\nAtk + 2%.\nAtk + 3 per refine rate.\nAtk + 3 per 15 base level (up to level 195).\nIf refine rate is 7 or higher, reduces global cooldown by 1% per 2 level of Katar Mastery user learned.\nIf refine rate is 9 or higher, increases melee physical damage by 10%, increases Meteor Assault and Counter Slash damage by 25%.\nIf refine rate is 11 or higher, reduces global cooldown by additional 10%, increases physical damage against all size enemies by 15%.\nIf refine rate is 13 or higher, increases Meteor Assault and Counter Slash damage by additional 15%.\n^ffffff_^000000\nClass: ^777777Katar^000000 Attack: ^777777240^000000\nWeight: ^7777770^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777100^000000\nJobs: ^777777Guillotine Cross classes^000000",
+    "slots": 0,
+    "itemTypeId": 1,
+    "itemSubTypeId": 272,
+    "itemLevel": 4,
+    "attack": 240,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Guillotine Cross"
+    ],
+    "script": {
+      "atkPercent": [
+        "2"
+      ],
+      "atk": [
+        "1---3",
+        "level:15(1-195)---3"
+      ],
+      "acd": [
+        "REFINE[7]LEARN_SKILL[Katar Mastery==2]---1",
+        "11===10"
+      ],
+      "melee": [
+        "9===10"
+      ],
+      "Meteor Assault": [
+        "9===25",
+        "13===15"
+      ],
+      "Counter Slash": [
+        "9===25",
+        "13===15"
+      ],
+      "p_size_all": [
+        "11===15"
+      ]
+    }
+  },
+  "620003": {
+    "id": 620003,
+    "aegisName": "PT_B_Axe",
+    "name": "Power Swing Booster Axe",
+    "unidName": "Two-handed Axe",
+    "resName": "PT_B_Axe",
+    "description": "Can't be refined by normal means.\nCan't be destroyed.\nAtk + 2%.\nAtk + 3 per refine rate.\nAtk + 3 per 15 base level (up to level 195).\nIf refine rate is 7 or higher, increases melee physical damage by 1% per each level of Weaponry Research user learned.\nIf refine rate is 9 or higher, reduces skill cooldown of Axe Tornado by 1 second, increases Axe Tornado and Power Swing damage by 25%.\nIf refine rate is 11 or higher, reduces global cooldown by 10%, increases physical damage against all size enemies by 20%.\nIf refine rate is 13 or higher, increases Axe Tornado and Power Swing damage by additional 15%.\n^ffffff_^000000\nClass: ^777777Two-handed Axe^000000 Attack: ^777777300^000000\nWeight: ^7777770^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777100^000000\nJobs: ^777777Mechanic^000000",
+    "slots": 0,
+    "itemTypeId": 1,
+    "itemSubTypeId": 262,
+    "itemLevel": 4,
+    "attack": 300,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Mechanic"
+    ],
+    "script": {
+      "atkPercent": [
+        "2"
+      ],
+      "atk": [
+        "1---3",
+        "level:15(1-195)---3"
+      ],
+      "melee": [
+        "REFINE[7]LEARN_SKILL[Weaponry Research==1]---1"
+      ],
+      "cd__Axe Tornado": [
+        "9===1"
+      ],
+      "Axe Tornado": [
+        "9===25",
+        "13===15"
+      ],
+      "Power Swing": [
+        "9===25",
+        "13===15"
+      ],
+      "acd": [
+        "11===10"
+      ],
+      "p_size_all": [
+        "11===20"
+      ]
+    }
+  },
   "620004": {
     "id": 620004,
     "aegisName": "Up_Avenger",
@@ -84416,6 +85983,63 @@
       ]
     }
   },
+  "630008": {
+    "id": 630008,
+    "aegisName": "HB_B_T_Spear",
+    "name": "Hundred Breath Booster Spear",
+    "unidName": "Two-handed Spear",
+    "resName": "HB_B_T_Spear",
+    "description": "Can't be refined by normal means.\nAtk + 2%.\nMaxHP + 250 and MaxSP + 20 per refine rate.\nAtk + 1% per 15 base level (up to level 195).\nIf refine rate is 7 or higher, reduces global cooldown by 3% per each level of Dragon Training user learned.\nIf refine rate is 9 or higher, reduces variable casting time by 10%, increases Dragon Breath, Dragon Breath - Water and Hundred Spears damage by 25%.\nIf refine rate is 11 or higher, reduces skill cooldown of Hundred Spears by 2 seconds, increases long ranged physical damage by 15%.\nIf refine rate is 13 or higher, increases Dragon Breath, Dragon Breath - Water and Hundred Spears damage by additional 15%.\n^ffffff_^000000\nClass: ^777777Two-handed Spear^000000 Attack: ^777777250^000000\nWeight: ^7777770^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777100^000000\nJobs: ^777777Rune Knight^000000",
+    "slots": 0,
+    "itemTypeId": 1,
+    "itemSubTypeId": 260,
+    "itemLevel": 4,
+    "attack": 250,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Rune Knight"
+    ],
+    "script": {
+      "atkPercent": [
+        "2",
+        "level:15(1-195)---1"
+      ],
+      "hp": [
+        "1---250"
+      ],
+      "sp": [
+        "1---20"
+      ],
+      "acd": [
+        "REFINE[7]LEARN_SKILL[Dragon Training==1]---3"
+      ],
+      "vct": [
+        "9===10"
+      ],
+      "cd__Hundred Spears": [
+        "11===2"
+      ],
+      "range": [
+        "11===15"
+      ],
+      "Dragon Breath": [
+        "9===25",
+        "13===15"
+      ],
+      "Dragon Breath - WATER": [
+        "9===25",
+        "13===15"
+      ],
+      "Hundred Spears": [
+        "9===25",
+        "13===15"
+      ]
+    }
+  },
   "640000": {
     "id": 640000,
     "aegisName": "Boost_Staff",
@@ -84571,6 +86195,112 @@
       ],
       "cd__Jack Frost": [
         "9===1.5"
+      ]
+    }
+  },
+  "640009": {
+    "id": 640009,
+    "aegisName": "CS_B_Staff",
+    "name": "Crimson Strain Booster Staff",
+    "unidName": "Staff",
+    "resName": "CS_B_Staff",
+    "description": "Can't be refined by normal means.\nCan't be destroyed.\nMatk + 2%, Matk + 230.\nMatk + 3 per refine rate.\nMatk + 3 per 15 base level (up to level 195).\nIf refine rate is 7 or higher, increases fire and earth property magical damage by 1% per each level of Mystical Amplification user learned.\nIf refine rate is 9 or higher, reduces variable casting time by 10%, increases Crimson Rock and Earth Strain damage by 25%.\nIf refine rate is 11 or higher, increases magical damage against all size enemies by 15%, increases fire and earth property magical damage by additional 15%.\nIf refine rate is 13 or higher, increases Crimson Rock and Earth Strain damage by additional 15%.\n^ffffff_^000000\nClass: ^777777Two-handed Staff^000000 Attack: ^777777150^000000\nWeight: ^7777770^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777100^000000\nJobs: ^777777Warlock^000000",
+    "slots": 0,
+    "itemTypeId": 1,
+    "itemSubTypeId": 266,
+    "itemLevel": 4,
+    "attack": 150,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Warlock"
+    ],
+    "script": {
+      "matkPercent": [
+        "2"
+      ],
+      "matk": [
+        "230",
+        "1---3",
+        "level:15(1-195)---3"
+      ],
+      "m_my_element_fire": [
+        "REFINE[7]LEARN_SKILL[Mystical Amplification==1]---1",
+        "11===15"
+      ],
+      "m_my_element_earth": [
+        "REFINE[7]LEARN_SKILL[Mystical Amplification==1]---1",
+        "11===15"
+      ],
+      "vct": [
+        "9===10"
+      ],
+      "Crimson Rock": [
+        "9===25",
+        "13===15"
+      ],
+      "Earth Strain": [
+        "9===25",
+        "13===15"
+      ],
+      "m_size_all": [
+        "11===15"
+      ]
+    }
+  },
+  "640010": {
+    "id": 640010,
+    "aegisName": "CJ_B_Staff",
+    "name": "Chain Jack Booster Staff",
+    "unidName": "Staff",
+    "resName": "CJ_B_Staff",
+    "description": "Can't be refined by normal means.\nCan't be destroyed.\nMatk + 2%, Matk + 230.\nMatk + 3 per refine rate.\nMatk + 3 per 15 base level (up to level 195).\nIf refine rate is 7 or higher, increases wind and water property magical damage by 1% per each level of Mystical Amplification user learned.\nIf refine rate is 9 or higher, reduces global cooldown by 10%, increases Chain Lightning and Jack Frost damage by 25%.\nIf refine rate is 11 or higher, increases magical damage against all size enemies by 15%, increases wind and water property magical damage by additional 15%.\nIf refine rate is 13 or higher, increases Chain Lightning and Jack Frost damage by additional 15%.\n^ffffff_^000000\nClass: ^777777Two-handed Staff^000000 Attack: ^777777150^000000\nWeight: ^7777770^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777100^000000\nJobs: ^777777Warlock^000000",
+    "slots": 0,
+    "itemTypeId": 1,
+    "itemSubTypeId": 266,
+    "itemLevel": 4,
+    "attack": 150,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Warlock"
+    ],
+    "script": {
+      "matkPercent": [
+        "2"
+      ],
+      "matk": [
+        "230",
+        "1---3",
+        "level:15(1-195)---3"
+      ],
+      "m_my_element_wind": [
+        "REFINE[7]LEARN_SKILL[Mystical Amplification==1]---1",
+        "11===15"
+      ],
+      "m_my_element_water": [
+        "REFINE[7]LEARN_SKILL[Mystical Amplification==1]---1",
+        "11===15"
+      ],
+      "acd": [
+        "9===10"
+      ],
+      "Chain Lightning": [
+        "9===25",
+        "13===15"
+      ],
+      "Jack Frost": [
+        "9===25",
+        "13===15"
+      ],
+      "m_size_all": [
+        "11===15"
       ]
     }
   },
@@ -84787,6 +86517,121 @@
       ],
       "str": [
         "EQUIP[Great Hero Boots]===10"
+      ]
+    }
+  },
+  "650017": {
+    "id": 650017,
+    "aegisName": "FCH_B_Huuma",
+    "name": "Wind Spear Petal Booster Huuma Shuriken",
+    "unidName": "Huuma Shuriken",
+    "resName": "FCH_B_Huuma",
+    "description": "^000088Can't be refined by normal means.^000000\nCan't be destroyed.\nMatk + 2%, Matk + 220.\nMatk + 3 per refine rate.\nMatk + 3 per 15 base level (up to level 195).\nIf refine rate is 7 or higher, reduces variable casting time by 1% per each level of Ninja Mastery user learned.\nIf refine rate is 9 or higher, increases fire, water and wind property magical damage by 10%, increases Flaming Petals, Freezing Spear and Wind Blade damage by 25%.\nIf refine rate is 11 or higher, reduces variable casting time by additional 10%, increases magical damage against all size enemies by 15%.\nIf refine rate is 13 or higher, increases shadow property magical damage by 25%, increases Flaming Petals, Freezing Spear and Wind Blade damage by additional 15%.\n^ffffff_^000000\nClass: ^777777Huuma Shuriken^000000 Attack: ^777777150^000000\nWeight: ^7777770^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777100^000000\nJobs: ^777777Kagerou classes, Oboro classes^000000",
+    "slots": 0,
+    "itemTypeId": 1,
+    "itemSubTypeId": 278,
+    "itemLevel": 4,
+    "attack": 150,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Kagerou",
+      "Oboro"
+    ],
+    "script": {
+      "matkPercent": [
+        "2"
+      ],
+      "matk": [
+        "220",
+        "1---3",
+        "level:15(1-195)---3"
+      ],
+      "vct": [
+        "REFINE[7]LEARN_SKILL[Ninja Mastery==1]---1",
+        "11===10"
+      ],
+      "m_my_element_fire": [
+        "9===10"
+      ],
+      "m_my_element_water": [
+        "9===10"
+      ],
+      "m_my_element_wind": [
+        "9===10"
+      ],
+      "Flaming Petals": [
+        "9===25",
+        "13===15"
+      ],
+      "Freezing Spear": [
+        "9===25",
+        "13===15"
+      ],
+      "Wind Blade": [
+        "9===25",
+        "13===15"
+      ],
+      "m_size_all": [
+        "11===15"
+      ],
+      "m_my_element_dark": [
+        "13===25"
+      ]
+    }
+  },
+  "650018": {
+    "id": 650018,
+    "aegisName": "SN_B_Huuma",
+    "name": "Cross Petal Booster Huuma Shuriken",
+    "unidName": "Huuma Shuriken",
+    "resName": "SN_B_Huuma",
+    "description": "^000088Can't be refined by normal means.^000000\nCan't be destroyed.\nAtk + 2%.\nAtk + 3 per refine rate.\nAtk + 3 per 15 base level (up to level 195).\nIf refine rate is 7 or higher, increases long ranged physical damage by 1% per each level of Dagger Throwing Practice user learned.\nIf refine rate is 9 or higher, reduces skill cooldown of Cross Slash by 2 seconds, increases long ranged physical damage by additional 10%, increases Cross Slash and Swirling Petal damage by 25%.\nIf refine rate is 11 or higher, reduces skill cooldown of Swirling Petal by 2 seconds, increases physical damage against all size enemies by 15%.\nIf refine rate is 13 or higher, increases Cross Slash and Swirling Petal damage by additional 15%.\n^ffffff_^000000\nClass: ^777777Huuma Shuriken^000000 Attack: ^777777250^000000\nWeight: ^7777770^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777100^000000\nJobs: ^777777Kagerou classes, Oboro classes^000000",
+    "slots": 0,
+    "itemTypeId": 1,
+    "itemSubTypeId": 278,
+    "itemLevel": 4,
+    "attack": 250,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Kagerou",
+      "Oboro"
+    ],
+    "script": {
+      "atkPercent": [
+        "2"
+      ],
+      "atk": [
+        "1---3",
+        "level:15(1-195)---3"
+      ],
+      "range": [
+        "REFINE[7]LEARN_SKILL[Dagger Throwing Practice==1]---1",
+        "9===10"
+      ],
+      "cd__Cross Slash": [
+        "9===2"
+      ],
+      "Cross Slash": [
+        "9===25",
+        "13===15"
+      ],
+      "Swirling Petal": [
+        "9===25",
+        "13===15"
+      ],
+      "cd__Swirling Petal": [
+        "11===2"
+      ],
+      "p_size_all": [
+        "11===15"
       ]
     }
   },
@@ -85040,6 +86885,196 @@
       ]
     }
   },
+  "700014": {
+    "id": 700014,
+    "aegisName": "TB_B_Bow",
+    "name": "Triangle Bomb Booster Bow",
+    "unidName": "Bow",
+    "resName": "TB_B_Bow",
+    "description": "Can't be refined by normal means.\nAtk + 2%.\nAtk + 3 per refine rate.\nAtk + 3 per 15 base level (up to level 195).\nIf refine rate is 7 or higher, reduces global cooldown by 1% per 2 level of Vulture's Eye user learned.\nIf refine rate is 9 or higher, reduces variable casting time by 10%, increases Triangle Shot and Feint Bomb damage by 25%.\nIf refine rate is 11 or higher, increases physical damage against all size enemies by 15%, increases long ranged physical damage by 15%.\nIf refine rate is 13 or higher, increases Triangle Shot and Feint Bomb damage by additional 15%.\n^ffffff_^000000\nClass: ^777777Bow^000000 Attack: ^777777210^000000\nWeight: ^7777770^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777100^000000\nJobs: ^777777Shadow Chaser^000000",
+    "slots": 0,
+    "itemTypeId": 1,
+    "itemSubTypeId": 267,
+    "itemLevel": 4,
+    "attack": 210,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Shadow Chaser"
+    ],
+    "script": {
+      "atkPercent": [
+        "2"
+      ],
+      "atk": [
+        "1---3",
+        "level:15(1-195)---3"
+      ],
+      "acd": [
+        "REFINE[7]LEARN_SKILL[Vulture's Eye==2]---1"
+      ],
+      "vct": [
+        "9===10"
+      ],
+      "Triangle Shot": [
+        "9===25",
+        "13===15"
+      ],
+      "Feint Bomb": [
+        "9===25",
+        "13===15"
+      ],
+      "p_size_all": [
+        "11===15"
+      ],
+      "range": [
+        "11===15"
+      ]
+    }
+  },
+  "700015": {
+    "id": 700015,
+    "aegisName": "AS_B_Bow",
+    "name": "Arrow Booster Bow",
+    "unidName": "Bow",
+    "resName": "AS_B_Bow",
+    "description": "Can't be refined by normal means.\nAtk + 2%.\nAtk + 3 per refine rate.\nAtk + 3 per 15 base level (up to level 195).\nIf refine rate is 7 or higher, increases long ranged physical damage by by 1% per each level of Owl's Eye user learned.\nIf refine rate is 9 or higher, MaxSP + 10%, increases Arrow Storm damage by 25%.\nIf refine rate is 11 or higher, reduces skill cooldown of Arrow Storm by 0.7 seconds, increases physical damage against all size enemies by 15%.\nIf refine rate is 13 or higher, increases Arrow Storm damage by additional 15%.\n^ffffff_^000000\nClass: ^777777Bow^000000 Attack: ^777777205^000000\nWeight: ^7777770^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777100^000000\nJobs: ^777777Ranger^000000",
+    "slots": 0,
+    "itemTypeId": 1,
+    "itemSubTypeId": 267,
+    "itemLevel": 4,
+    "attack": 205,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Ranger"
+    ],
+    "script": {
+      "atkPercent": [
+        "2"
+      ],
+      "atk": [
+        "1---3",
+        "level:15(1-195)---3"
+      ],
+      "range": [
+        "REFINE[7]LEARN_SKILL[Owl's Eye==1]---1"
+      ],
+      "spPercent": [
+        "9===10"
+      ],
+      "Arrow Storm": [
+        "9===25",
+        "13===15"
+      ],
+      "cd__Arrow Storm": [
+        "11===0.7"
+      ],
+      "p_size_all": [
+        "11===15"
+      ]
+    }
+  },
+  "700016": {
+    "id": 700016,
+    "aegisName": "SB_B_Bow",
+    "name": "Sharpbolt Booster Bow",
+    "unidName": "Bow",
+    "resName": "SB_B_Bow",
+    "description": "Can't be refined by normal means.\nAtk + 2%.\nAtk + 3 per refine rate.\nAtk + 3 per 15 base level (up to level 195).\nIf refine rate is 7 or higher, increases long ranged physical damage by by 1% per each level of Vulture's Eye user learned.\nIf refine rate is 9 or higher, reduces global cooldown by 10%, increases Focused Arrow Strike and Aimed Bolt damage by 25%.\nIf refine rate is 11 or higher, increases physical damage against all size enemies by 15%, Atk + 10%.\nIf refine rate is 13 or higher, increases Focused Arrow Strike and Aimed Bolt damage by additional 15%.\n^ffffff_^000000\nClass: ^777777Bow^000000 Attack: ^777777200^000000\nWeight: ^7777770^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777100^000000\nJobs: ^777777Ranger^000000",
+    "slots": 0,
+    "itemTypeId": 1,
+    "itemSubTypeId": 267,
+    "itemLevel": 4,
+    "attack": 200,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Ranger"
+    ],
+    "script": {
+      "atkPercent": [
+        "2",
+        "11===10"
+      ],
+      "atk": [
+        "1---3",
+        "level:15(1-195)---3"
+      ],
+      "range": [
+        "REFINE[7]LEARN_SKILL[Vulture's Eye==1]---1"
+      ],
+      "acd": [
+        "9===10"
+      ],
+      "Focused Arrow Strike": [
+        "9===25",
+        "13===15"
+      ],
+      "Aimed Bolt": [
+        "9===25",
+        "13===15"
+      ],
+      "p_size_all": [
+        "11===15"
+      ]
+    }
+  },
+  "700017": {
+    "id": 700017,
+    "aegisName": "RS_B_Bow",
+    "name": "Rainstorm Booster Bow",
+    "unidName": "Bow",
+    "resName": "RS_B_Bow",
+    "description": "Can't be refined by normal means.\nAtk + 2%.\nAtk + 3 per refine rate.\nAtk + 3 per 15 base level (up to level 195).\nIf refine rate is 7 or higher, increases long ranged physical damage by by 2% per each level of Dance Lessons or Music Lessons user learned.\nIf refine rate is 9 or higher, reduces skill cooldown of Severe Rainstorm by 1 second, increases Severe Rainstorm damage by 25%.\nIf refine rate is 11 or higher, reduces skill cooldown of Severe Rainstorm by additional 1 second, increases physical damage against all size enemies by 15%.\nIf refine rate is 13 or higher, increases Severe Rainstorm damage by additional 15%.\n^ffffff_^000000\nClass: ^777777Bow^000000 Attack: ^777777200^000000\nWeight: ^7777770^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777100^000000\nJobs: ^777777Minstrel, Wanderer^000000",
+    "slots": 0,
+    "itemTypeId": 1,
+    "itemSubTypeId": 267,
+    "itemLevel": 4,
+    "attack": 200,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Minstrel",
+      "Wanderer"
+    ],
+    "script": {
+      "atkPercent": [
+        "2"
+      ],
+      "atk": [
+        "1---3",
+        "level:15(1-195)---3"
+      ],
+      "range": [
+        "REFINE[7]LEARN_SKILL[Dancing Lesson==1]---2",
+        "REFINE[7]LEARN_SKILL[Musical Lesson==1]---2"
+      ],
+      "cd__Severe Rainstorm": [
+        "9===1",
+        "11===1"
+      ],
+      "Severe Rainstorm": [
+        "9===25",
+        "13===15"
+      ],
+      "p_size_all": [
+        "11===15"
+      ]
+    }
+  },
   "700018": {
     "id": 700018,
     "aegisName": "Up_Royal_Bow_K",
@@ -85184,6 +87219,54 @@
       ],
       "dex": [
         "EQUIP[Great Hero Boots]===10"
+      ]
+    }
+  },
+  "800008": {
+    "id": 800008,
+    "aegisName": "DF_B_Revolver",
+    "name": "Desperado Fire Booster Revolver",
+    "unidName": "Pistol",
+    "resName": "DF_B_Revolver",
+    "description": "^000088Can't be refined by normal means.^000000\nAtk + 2%.\nAtk + 3 per refine rate.\nAtk + 3 per 15 base level (up to level 195).\nIf refine rate is 7 or higher, increases long ranged physical damage by 1% per each level of Chain Action user learned.\nIf refine rate is 9 or higher, increases long ranged physical damage by additional 10%, increases Desperado and Fire Dance damage by 25%.\nIf refine rate is 11 or higher, reduces global cooldown by 15%, increases physical damage against all size enemies by 15%.\nIf refine rate is 13 or higher, increases Desperado and Fire Dance damage by additional 15%.\n^ffffff_^000000\nClass: ^777777Pistol^000000 Attack: ^777777220^000000\nWeight: ^7777770^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777100^000000\nJobs: ^777777Gunslinger classes^000000",
+    "slots": 0,
+    "itemTypeId": 1,
+    "itemSubTypeId": 273,
+    "itemLevel": 4,
+    "attack": 220,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Gunslinger"
+    ],
+    "script": {
+      "atkPercent": [
+        "2"
+      ],
+      "atk": [
+        "1---3",
+        "level:15(1-195)---3"
+      ],
+      "range": [
+        "REFINE[7]LEARN_SKILL[Chain Action==1]---1",
+        "9===10"
+      ],
+      "Desperado": [
+        "9===25",
+        "13===15"
+      ],
+      "Fire Dance": [
+        "9===25",
+        "13===15"
+      ],
+      "acd": [
+        "11===15"
+      ],
+      "p_size_all": [
+        "11===15"
       ]
     }
   },
@@ -85500,6 +87583,55 @@
       ],
       "dex": [
         "EQUIP[Great Hero Boots]===10"
+      ]
+    }
+  },
+  "830007": {
+    "id": 830007,
+    "aegisName": "FR_B_Gatling",
+    "name": "Fire Round Booster Gatling Gun",
+    "unidName": "Gatling Gun",
+    "resName": "FR_B_Gatling",
+    "description": "^000088Can't be refined by normal means.^000000\nAtk + 2%.\nAtk + 3 per refine rate.\nAtk + 3 per 15 base level (up to level 195).\nIf refine rate is 7 or higher, increases long ranged physical damage by 1% per each level of Single Action user learned.\nIf refine rate is 9 or higher, reduces skill cooldown of Fire Rain by 1 second, increases long ranged physical damage by additional 10%, increases Fire Rain and Round Trip damage by 25%.\nIf refine rate is 11 or higher, increases long ranged physical damage by additional 10%, increases physical damage against all size enemies by 15%.\nIf refine rate is 13 or higher, increases Fire Rain and Round Trip damage by additional 15%.\n^ffffff_^000000\nClass: ^777777Gatling Gun^000000 Attack: ^777777220^000000\nWeight: ^7777770^000000\nWeapon Level: ^7777774^000000\nRequired Level: ^777777100^000000\nJobs: ^777777Gunslinger classes^000000",
+    "slots": 0,
+    "itemTypeId": 1,
+    "itemSubTypeId": 275,
+    "itemLevel": 4,
+    "attack": 220,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Gunslinger"
+    ],
+    "script": {
+      "atkPercent": [
+        "2"
+      ],
+      "atk": [
+        "1---3",
+        "level:15(1-195)---3"
+      ],
+      "range": [
+        "REFINE[7]LEARN_SKILL[Single Action==1]---1",
+        "9===10",
+        "11===10"
+      ],
+      "cd__Fire Rain": [
+        "9===1"
+      ],
+      "Fire Rain": [
+        "9===25",
+        "13===15"
+      ],
+      "Round Trip": [
+        "9===25",
+        "13===15"
+      ],
+      "p_size_all": [
+        "11===15"
       ]
     }
   },

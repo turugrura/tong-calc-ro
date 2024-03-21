@@ -204,11 +204,24 @@ export class Sage extends CharacterBase {
         { label: 'Lv 5', isUse: true, value: 5 },
       ],
     },
-
     {
       inputType: 'dropdown',
       label: 'Seismic Weapon',
       name: 'Seismic Weapon',
+      dropdown: [
+        { label: '-', isUse: false, value: 0 },
+        { label: 'Lv 1', isUse: true, value: 1 },
+        { label: 'Lv 2', isUse: true, value: 2 },
+        { label: 'Lv 3', isUse: true, value: 3 },
+        { label: 'Lv 4', isUse: true, value: 4 },
+        { label: 'Lv 5', isUse: true, value: 5 },
+      ],
+    },
+
+    {
+      inputType: 'dropdown',
+      label: 'Land Protector',
+      name: 'Land Protector',
       dropdown: [
         { label: '-', isUse: false, value: 0 },
         { label: 'Lv 1', isUse: true, value: 1 },

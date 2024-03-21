@@ -1651,20 +1651,25 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     if (!activeSkillMap || typeof activeSkillMap !== 'object') activeSkillMap = {};
     if (!passiveSkillMap || typeof passiveSkillMap !== 'object') passiveSkillMap = {};
 
+    const isEqualBuffLenght = passiveSkills?.length === this.model.passiveSkills?.length;
     this.model.skillBuffs = this.skillBuffs.map((skill, i) => {
-      const savedVal = skillBuffMap[skill.name] ?? this.model.skillBuffs[i];
+      const savedVal = skillBuffMap[skill.name] ?? (isEqualBuffLenght ? this.model.skillBuffs[i] : 0);
       const found = skill.dropdown.find((a) => a.value === savedVal);
 
       return found ? savedVal : 0;
     });
+
+    const isEqualActiveLenght = activeSkills?.length === this.model.activeSkills?.length;
     this.model.activeSkills = activeSkills.map((skill, i) => {
-      const savedVal = activeSkillMap[skill.name] ?? this.model.activeSkills[i];
+      const savedVal = activeSkillMap[skill.name] ?? (isEqualActiveLenght ? this.model.activeSkills[i] : 0);
       const found = skill.dropdown.find((a) => a.value === savedVal);
 
       return found ? savedVal : 0;
     });
+
+    const isEqualPassiveLenght = passiveSkills?.length === this.model.passiveSkills?.length;
     this.model.passiveSkills = passiveSkills.map((skill, i) => {
-      const savedVal = passiveSkillMap[skill.name] ?? this.model.passiveSkills[i];
+      const savedVal = passiveSkillMap[skill.name] ?? (isEqualPassiveLenght ? this.model.passiveSkills[i] : 0);
       const found = skill.dropdown.find((a) => a.value === savedVal);
 
       return found ? savedVal : 0;
