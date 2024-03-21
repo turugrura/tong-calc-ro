@@ -57,6 +57,21 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
 
   references: { label: string; link: string; writer: string; date?: string }[] = [
     {
+      label: 'Bonus JOB LV.70',
+      writer: 'RO GGT',
+      link: 'https://ro.gnjoy.in.th/newyear_adventure_2024/assets/img/additional/Ragnarok-Today/POP-UP-Job-BONUS.jpg',
+    },
+    {
+      label: 'Geffen Magic Tournament Enchant System Update!',
+      writer: 'RO GGT',
+      link: 'https://ro.gnjoy.in.th/geffen-magic-tournament-enchant-system-update',
+    },
+    {
+      label: 'Quarter 1 Class Improvement 2024',
+      writer: 'RO GGT',
+      link: 'https://ro.gnjoy.in.th/quarter-1-class-improvement-2024',
+    },
+    {
       label: 'Items & Monsters & Skill infomation',
       writer: 'DIVINE PRIDE',
       link: 'https://www.divine-pride.net/',
@@ -131,16 +146,6 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
       writer: 'rAthena',
       link: 'https://github.com/rathena/rathena',
     },
-    {
-      label: 'Bonus JOB LV.70',
-      writer: 'RO GGT',
-      link: 'https://ro.gnjoy.in.th/newyear_adventure_2024/assets/img/additional/Ragnarok-Today/POP-UP-Job-BONUS.jpg',
-    },
-    {
-      label: 'Geffen Magic Tournament Enchant System Update!',
-      writer: 'RO GGT',
-      link: 'https://ro.gnjoy.in.th/geffen-magic-tournament-enchant-system-update/',
-    },
     // {
     //   label: '',
     //   writer: '',
@@ -149,6 +154,20 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
   ];
 
   updates: { v: string; date: string; logs: string[] }[] = [
+    {
+      v: 'V2.0.4',
+      date: '21-03-2567',
+      logs: [
+        'Fixed reported bugs',
+        'Added Official last updated items (exclude Grace, Emperial & Nobless sets)',
+        'Added Booster weapons',
+        'Added Accessories from Thanatos Tower revamp (Sinful & Brilliant)',
+        'Added Equipments from Illusion of Under Water',
+        'Added requested items',
+        'Added SC skill (Severe Rainstorm)',
+        'Removed old skill versions',
+      ],
+    },
     {
       v: 'V2.0.3',
       date: '16-03-2567',

@@ -105,16 +105,11 @@ export class SharedPresetComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
-    this.initData()
-      .pipe(
-        tap(() => {
-          return this.searchSource.next(1);
-        }),
-      )
-      .subscribe();
-
     this.subscribeSearch();
     this.subscribeLike();
+    this.initData().subscribe(() => {
+      // this.searchSource.next(1);
+    });
   }
 
   ngOnDestroy(): void {
