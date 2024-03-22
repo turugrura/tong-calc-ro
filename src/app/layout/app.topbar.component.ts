@@ -67,6 +67,11 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
       link: 'https://ro.gnjoy.in.th/geffen-magic-tournament-enchant-system-update',
     },
     {
+      label: 'Class Improvement [Sura, Warlock, Minstrel&Wanderer]',
+      writer: 'RO GGT',
+      link: 'https://ro.gnjoy.in.th/class-improvement-sura-warlock-minstrelwanderer',
+    },
+    {
       label: 'Quarter 1 Class Improvement 2024',
       writer: 'RO GGT',
       link: 'https://ro.gnjoy.in.th/quarter-1-class-improvement-2024',
@@ -155,11 +160,16 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
 
   updates: { v: string; date: string; logs: string[] }[] = [
     {
+      v: 'V2.0.5',
+      date: '22-03-2567',
+      logs: ['Fixed reported bugs', 'Added Noblesse, Imperial & Grace sets', 'Added Sura skill (Lightning Ride)'],
+    },
+    {
       v: 'V2.0.4',
       date: '21-03-2567',
       logs: [
         'Fixed reported bugs',
-        'Added Official last updated items (exclude Grace, Emperial & Nobless sets)',
+        'Added Official last updated items (exclude Noblesse, Imperial & Grace sets)',
         'Added Booster weapons',
         'Added Accessories from Thanatos Tower revamp (Sinful & Brilliant)',
         'Added Equipments from Illusion of Under Water',
