@@ -73254,6 +73254,1456 @@
       ]
     }
   },
+  "450018": {
+    "id": 450018,
+    "aegisName": "Noblesse_Breath_Armor",
+    "name": "Noblesse Breath Armor [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Noblesse_Breath_Armor",
+    "description": "ชุดเกราะของ Knight ระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nMaxHP +5%\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7 ลดระยะเวลาร่ายแบบแปรผัน 10%\nเมื่ออัพเกรดถึงขั้น 9, MaxHP +5%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Noblesse Attack Manteau, Noblesse Attack Boots, Noblesse Attack Ring,\nลด Delay หลังใช้สกิล 5%, MaxHP +5%, เพิ่ม Damage สกิล Dragon Breath และ Dragon Breath - WATER 10%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Noblesse Breath Armor, Noblesse Attack Manteau, Noblesse Attack Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nลด Delay หลังใช้สกิลลงอีก 5%, MaxHP +5%, เพิ่ม Damage สกิล Dragon Breath และ Dragon Breath - WATER ขึ้นอีก 10%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^777777100^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Rune Knight^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 100,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Rune Knight"
+    ],
+    "script": {
+      "hpPercent": [
+        "5",
+        "9===5",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===5",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===5"
+      ],
+      "vct": [
+        "7===10"
+      ],
+      "acd": [
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===5",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===5"
+      ],
+      "Dragon Breath": [
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===10",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===10"
+      ],
+      "Dragon Breath - WATER": [
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===10",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===10"
+      ]
+    }
+  },
+  "450019": {
+    "id": 450019,
+    "aegisName": "Noblesse_Knight_Armor",
+    "name": "Noblesse Knight Armor [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Noblesse_Knight_Armor",
+    "description": "ชุดเกราะของ Knight ระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nATK +50\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7, ASPD +3%\nเมื่ออัพเกรดถึงขั้น 9, Critical Damage +5%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Noblesse Attack Manteau, Noblesse Attack Boots, Noblesse Attack Ring,\nASPD +1, Critical Damage +5%, เพิ่ม Damage สกิล Ignition Break 10%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Noblesse Knight Armor, Noblesse Attack Manteau, Noblesse Attack Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nASPD +1, Critical Damage +5% เพิ่มเติม, เพิ่ม Damage สกิล Ignition Break ขึ้นอีก 10%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^777777100^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Rune Knight^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 100,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Rune Knight"
+    ],
+    "script": {
+      "atk": [
+        "50"
+      ],
+      "aspdPercent": [
+        "7===3"
+      ],
+      "criDmg": [
+        "9===5",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===5",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===5"
+      ],
+      "aspd": [
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===1",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===1"
+      ],
+      "Ignition Break": [
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===10",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===10"
+      ]
+    }
+  },
+  "450020": {
+    "id": 450020,
+    "aegisName": "Noblesse_Spear_Armor",
+    "name": "Noblesse Spear Armor [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Noblesse_Spear_Armor",
+    "description": "ชุดเกราะของ Royal Guard ระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nATK +50\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7, ASPD +3%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพระยะไกล 5%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Noblesse Attack Manteau, Noblesse Attack Boots, Noblesse Attack Ring,\nASPD +1, เพิ่ม Damage ทางกายภาพระยะไกล 5%, เพิ่ม Damage สกิล Cannon Spear 10%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Noblesse Spear Armor, Noblesse Attack Manteau, Noblesse Attack Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nASPD +1, เพิ่ม Damage ทางกายภาพระยะไกลขึ้นอีก 5%, เพิ่ม Damage สกิล Cannon Spear ขึ้นอีก 10%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^777777100^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Royal Guard^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 100,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Royal Guard"
+    ],
+    "script": {
+      "atk": [
+        "50"
+      ],
+      "aspdPercent": [
+        "7===3"
+      ],
+      "range": [
+        "9===5",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===5",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===5"
+      ],
+      "aspd": [
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===1",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===1"
+      ],
+      "Cannon Spear": [
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===10",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===10"
+      ]
+    }
+  },
+  "450021": {
+    "id": 450021,
+    "aegisName": "Noblesse_Genesis_Armor",
+    "name": "Noblesse Genesis Armor [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Noblesse_Genesis_Armor",
+    "description": "ชุดเกราะของ Royal Guard ระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nMATK +50\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage เวทมนตร์ธาตุ Holy 5%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage เวทมนตร์ธาตุ Holy ขึ้นอีก 5%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Noblesse Magic Manteau, Noblesse Magic Boots, Noblesse Magic Ring,\nMATK +25, ลด Delay หลังใช้สกิล 5%, เพิ่ม Damage สกิล Genesis Ray 10%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Noblesse Genesis Armor, Noblesse Magic Manteau, Noblesse Magic Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nMATK +25, ลด Delay หลังใช้สกิลลงอีก 5%, เพิ่ม Damage สกิล Genesis Ray ขึ้นอีก 10%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^777777100^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Royal Guard^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 100,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Royal Guard"
+    ],
+    "script": {
+      "matk": [
+        "50",
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]===25",
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]REFINE[armor,garment,boot==27]===25"
+      ],
+      "m_my_element_holy": [
+        "7===5",
+        "9===5"
+      ],
+      "acd": [
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]===5",
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]REFINE[armor,garment,boot==27]===5"
+      ],
+      "Genesis Ray": [
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]===10",
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]REFINE[armor,garment,boot==27]===10"
+      ]
+    }
+  },
+  "450022": {
+    "id": 450022,
+    "aegisName": "Noblesse_Sharp_Suit",
+    "name": "Noblesse Sharp Suit [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Noblesse_Sharp_Suit",
+    "description": "ชุดเกราะของ Ranger ระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nATK +50\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7, ASPD +3%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพระยะไกล 5%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Noblesse Attack Manteau, Noblesse Attack Boots, Noblesse Attack Ring,\nลด Delay หลังใช้สกิล 5%, Critical Damage +5%, เพิ่ม Damage สกิล Focused Arrow Strike 10%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Noblesse Sharp Suit, Noblesse Attack Manteau, Noblesse Attack Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nลด Delay หลังใช้สกิล 5%, Critical Damage +5% เพิ่มเติม, เพิ่ม Damage สกิล Focused Arrow Strike ขึ้นอีก 10%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^77777770^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Ranger^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 70,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Ranger"
+    ],
+    "script": {
+      "atk": [
+        "50"
+      ],
+      "aspdPercent": [
+        "7===3"
+      ],
+      "range": [
+        "9===5"
+      ],
+      "acd": [
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===5",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===5"
+      ],
+      "criDmg": [
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===5",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===5"
+      ],
+      "Focused Arrow Strike": [
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===10",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===10"
+      ]
+    }
+  },
+  "450023": {
+    "id": 450023,
+    "aegisName": "Noblesse_Aim_Suit",
+    "name": "Noblesse Aimed Suit [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Noblesse_Aim_Suit",
+    "description": "ชุดเกราะของ Ranger ระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nATK +50\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7, ASPD +3%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพระยะไกล 5%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Noblesse Attack Manteau, Noblesse Attack Boots, Noblesse Attack Ring,\nลด Delay หลังใช้สกิล 5%, ATK +2%, เพิ่ม Damage สกิล Aimed Bolt 10%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Noblesse Aimed Suit, Noblesse Attack Manteau, Noblesse Attack Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nลด Delay หลังใช้สกิลลงอีก 5%, ATK +3%, เพิ่ม Damage สกิล Aimed Bolt ขึ้นอีก 10%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^77777770^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Ranger^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 70,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Ranger"
+    ],
+    "script": {
+      "atk": [
+        "50"
+      ],
+      "aspdPercent": [
+        "7===3"
+      ],
+      "range": [
+        "9===5"
+      ],
+      "acd": [
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===5",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===5"
+      ],
+      "atkPercent": [
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===2",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===3"
+      ],
+      "Aimed Bolt": [
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===10",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===10"
+      ]
+    }
+  },
+  "450024": {
+    "id": 450024,
+    "aegisName": "Noblesse_Severe_Suit",
+    "name": "Noblesse Severe Suit [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Noblesse_Severe_Suit",
+    "description": "ชุดเกราะของนักดนตรีระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nATK +50\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7 ลดระยะเวลาร่ายแบบแปรผัน 10%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพระยะไกล 5%.\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Noblesse Manteau, Noblesse Boots, Noblesse Ring,\nเพิ่ม Damage ทางกายภาพระยะไกล 5%, ATK +2%, เพิ่ม Damage สกิล Severe Rainstorm 10%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Noblesse Severe Suit, Noblesse Attack Manteau, Noblesse Attack Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nเพิ่ม Damage ทางกายภาพระยะไกลขึ้นอีก 5%, ATK +3%, เพิ่ม Damage สกิล Severe Rainstorm ขึ้นอีก 10%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^77777770^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Minstrel, Wanderer^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 70,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Minstrel",
+      "Wanderer"
+    ],
+    "script": {
+      "atk": [
+        "50"
+      ],
+      "vct": [
+        "7===10"
+      ],
+      "range": [
+        "9===5",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===5",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===5"
+      ],
+      "atkPercent": [
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===2",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]REFINE[armor,garment,boot==27]===3"
+      ],
+      "Severe Rainstorm": [
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===10",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===10"
+      ]
+    }
+  },
+  "450025": {
+    "id": 450025,
+    "aegisName": "Noblesse_Reverb_Suit",
+    "name": "Noblesse Reverb Suit [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Noblesse_Reverb_Suit",
+    "description": "ชุดเกราะของนักดนตรีระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nMATK +50\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางเวทมนตร์ธาตุ Neutral 5%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางเวทมนตร์ธาตุ Neutral ขึ้นอีก 5%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Noblesse Magic Manteau, Noblesse Magic Boots, Noblesse Magic Ring,\nลดระยะเวลาร่ายแบบแปรผัน 5%, MATK +2%, เพิ่ม Damage สกิล Reverberation 10%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Noblesse Reverb Suit, Noblesse Magic Manteau, Noblesse Magic Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nลดระยะเวลาร่ายแบบแปรผันลงอีก 5%, MATK +3%, เพิ่ม Damage สกิล Reverberation ขึ้นอีก 10%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^77777770^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Minstrel, Wanderer^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 70,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Minstrel",
+      "Wanderer"
+    ],
+    "script": {
+      "matk": [
+        "50"
+      ],
+      "m_my_element_neutral": [
+        "7===5",
+        "9===5"
+      ],
+      "vct": [
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]===5",
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]REFINE[armor,garment,boot==27]===5"
+      ],
+      "matkPercent": [
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]===2",
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]REFINE[armor,garment,boot==27]===3"
+      ],
+      "Reverberation": [
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]===10",
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]REFINE[armor,garment,boot==27]===10"
+      ]
+    }
+  },
+  "450026": {
+    "id": 450026,
+    "aegisName": "Noblesse_Adora_Robe",
+    "name": "Noblesse Adora Robe [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Noblesse_Adora_Robe",
+    "description": "เสื้อคลุมของ Archbishop ระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nMATK +50\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage เวทมนตร์ธาตุ Holy 5%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage เวทมนตร์ธาตุ Holy ขึ้นอีก 5%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Noblesse Magic Manteau, Noblesse Magic Boots, Noblesse Magic Ring,\nลดระยะเวลาร่ายแบบแปรผัน 5%, MATK +2%, เพิ่ม Damage สกิล Adoramus 10%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Noblesse Adora Robe, Noblesse Magic Manteau, Noblesse Magic Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nลดระยะเวลาร่ายแบบแปรผันลงอีก 5%, MATK +3%, เพิ่ม Damage สกิล Adoramus ขึ้นอีก 10%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^77777770^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Archbishop^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 70,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Arch Bishop"
+    ],
+    "script": {
+      "matk": [
+        "50"
+      ],
+      "m_my_element_holy": [
+        "7===5",
+        "9===5"
+      ],
+      "vct": [
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]===5",
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]REFINE[armor,garment,boot==27]===5"
+      ],
+      "matkPercent": [
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]===2",
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]REFINE[armor,garment,boot==27]===3"
+      ],
+      "Adoramus": [
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]===10",
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]REFINE[armor,garment,boot==27]===10"
+      ]
+    }
+  },
+  "450027": {
+    "id": 450027,
+    "aegisName": "Noblesse_Duple_Robe",
+    "name": "Noblesse Duple Robe [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Noblesse_Duple_Robe",
+    "description": "เสื้อคลุมของ Archbishop ระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nATK +50\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7, ASPD +3%\nเมื่ออัพเกรดถึงขั้น 9, Critical Damage +5%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Noblesse Attack Manteau, Noblesse Attack Boots, Noblesse Attack Ring,\nASPD +1, ATK +2%, เพิ่ม Damage สกิล Duple Light 10%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Noblesse Duple Robe, Noblesse Attack Manteau, Noblesse Attack Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nASPD +1, ATK +3%, เพิ่ม Damage สกิล Duple Light ขึ้นอีก 10%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^77777770^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Archbishop^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 70,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Arch Bishop"
+    ],
+    "script": {
+      "atk": [
+        "50"
+      ],
+      "aspdPercent": [
+        "7===3"
+      ],
+      "criDmg": [
+        "9===5"
+      ],
+      "aspd": [
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===1",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===1"
+      ],
+      "atkPercent": [
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===2",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===3"
+      ],
+      "Duple Light": [
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===10",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===10"
+      ]
+    }
+  },
+  "450028": {
+    "id": 450028,
+    "aegisName": "Noblesse_Tonado_Armor",
+    "name": "Noblesse Tornado Armor [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Noblesse_Tonado_Armor",
+    "description": "ชุดเกราะของ Mechanic ที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nATK +50\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7, ASPD +3%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพต่อศัตรูทุกประเภท 5%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Noblesse Attack Manteau, Noblesse Attack Boots, Noblesse Attack Ring,\nASPD +1, ลด Delay หลังใช้สกิล 5%, เพิ่ม Damage สกิล Axe Tornado 10%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Noblesse Tornado Armor, Noblesse Attack Manteau, Noblesse Attack Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nASPD +1, ลด Delay หลังใช้สกิลลงอีก 5%, เพิ่ม Damage สกิล Axe Tornado ขึ้นอีก 10%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^77777770^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Mechanic^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 70,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Mechanic"
+    ],
+    "script": {
+      "atk": [
+        "50"
+      ],
+      "aspdPercent": [
+        "7===3"
+      ],
+      "p_class_all": [
+        "9===5"
+      ],
+      "aspd": [
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===1",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===1"
+      ],
+      "acd": [
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===5",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===5"
+      ],
+      "Axe Tornado": [
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===10",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===10"
+      ]
+    }
+  },
+  "450029": {
+    "id": 450029,
+    "aegisName": "Noblesse_Vulcan_Armor",
+    "name": "Noblesse Vulcan Armor [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Noblesse_Vulcan_Armor",
+    "description": "ชุดเกราะของ Mechanic ที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nATK +50\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7, ASPD +3%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพระยะไกล 5%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Noblesse Attack Manteau, Noblesse Attack Boots, Noblesse Attack Ring,\nASPD +1, เพิ่ม Damage ทางกายภาพระยะไกล 5%, เพิ่ม Damage สกิล Vulcan Arm 10%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Noblesse Vulcan Armor, Noblesse Attack Manteau, Noblesse Attack Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nASPD +1, เพิ่ม Damage ทางกายภาพระยะไกลขึ้นอีก 5%, เพิ่ม Damage สกิล Vulcan Arm ขึ้นอีก 10%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^77777770^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Mechanic^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 70,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Mechanic"
+    ],
+    "script": {
+      "atk": [
+        "50"
+      ],
+      "aspdPercent": [
+        "7===3"
+      ],
+      "range": [
+        "9===5",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===5",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===5"
+      ],
+      "aspd": [
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===1",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===1"
+      ],
+      "Vulcan Arm": [
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===10",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===10"
+      ]
+    }
+  },
+  "450030": {
+    "id": 450030,
+    "aegisName": "Noblesse_Kart_Suit",
+    "name": "Noblesse Cart Cannon Suit [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Noblesse_Kart_Suit",
+    "description": "ชุดสำหรับนักวิจัยของ Genetic ระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nATK +50\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7 ลดระยะเวลาร่ายแบบแปรผัน 10%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพระยะไกล 5%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Noblesse Attack Manteau, Noblesse Attack Boots, Noblesse Attack Ring,\nลดระยะเวลาร่ายแบบแปรผัน 5%, ATK +2%, เพิ่ม Damage สกิล Cart Cannon 10%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Noblesse Cart Cannon Suit, Noblesse Attack Manteau, Noblesse Attack Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nลดระยะเวลาร่ายแบบแปรผันลงอีก 5%, ATK +3%, เพิ่ม Damage สกิล Cart Cannon ขึ้นอีก 10%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^77777770^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Genetic^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 70,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Genetic"
+    ],
+    "script": {
+      "atk": [
+        "50"
+      ],
+      "vct": [
+        "7===10",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===5",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===5"
+      ],
+      "range": [
+        "9===5"
+      ],
+      "atkPercent": [
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===2",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===3"
+      ],
+      "Cart Cannon": [
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===10",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===10"
+      ]
+    }
+  },
+  "450031": {
+    "id": 450031,
+    "aegisName": "Noblesse_Kart_Suit2",
+    "name": "Noblesse Cart Tornado Suit [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Noblesse_Kart_Suit2",
+    "description": "ชุดสำหรับนักวิจัยของ Genetic ระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nATK +50\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7, ASPD +3%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพต่อศัตรูทุกประเภท 5%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Noblesse Attack Manteau, Noblesse Attack Boots, Noblesse Attack Ring,\nASPD +1, ATK +2%, เพิ่ม Damage สกิล Cart Tornado Attack 10%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Noblesse Cart Tornado Suit, Noblesse Attack Manteau, Noblesse Attack Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nASPD +1, ATK +3%, เพิ่ม Damage สกิล Cart Tornado Attack ขึ้นอีก 10%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^77777770^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Genetic^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 70,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Genetic"
+    ],
+    "script": {
+      "atk": [
+        "50"
+      ],
+      "aspdPercent": [
+        "7===3"
+      ],
+      "p_class_all": [
+        "9===5"
+      ],
+      "aspd": [
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===1",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===1"
+      ],
+      "atkPercent": [
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===2",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===3"
+      ],
+      "Cart Tornado": [
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===10",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===10"
+      ]
+    }
+  },
+  "450032": {
+    "id": 450032,
+    "aegisName": "Noblesse_Rolling_Suit",
+    "name": "Noblesse Rolling Suit [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Noblesse_Rolling_Suit",
+    "description": "ชุดของ Guillotine Cross ระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nATK +50\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7, ASPD +3%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพระยะไกล 5%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Noblesse Attack Manteau, Noblesse Attack Boots, Noblesse Attack Ring,\nลด Delay หลังใช้สกิล 5%, ATK +2%, เพิ่ม Damage สกิล Rolling Cutter 10%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Noblesse Rolling Suit, Noblesse Attack Manteau, Noblesse Attack Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nลด Delay หลังใช้สกิลลงอีก 5%, ATK +3%, เพิ่ม Damage สกิล Rolling Cutter ขึ้นอีก 10%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^77777770^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Guillotine Cross^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 70,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Guillotine Cross"
+    ],
+    "script": {
+      "atk": [
+        "50"
+      ],
+      "aspdPercent": [
+        "7===3"
+      ],
+      "range": [
+        "9===5"
+      ],
+      "acd": [
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===5",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===5"
+      ],
+      "atkPercent": [
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===2",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===3"
+      ],
+      "Rolling Cutter": [
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===10",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===10"
+      ]
+    }
+  },
+  "450033": {
+    "id": 450033,
+    "aegisName": "Noblesse_Assasin_Suit",
+    "name": "Noblesse Assassin Suit [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Noblesse_Assasin_Suit",
+    "description": "ชุดของ Guillotine Cross ระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nATK +50\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7, ASPD +3%\nเมื่ออัพเกรดถึงขั้น 9, Critical Damage +5%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Noblesse Attack Manteau, Noblesse Attack Boots, Noblesse Attack Ring,\nASPD +1, Critical Damage +5%,  ATK +2% \n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Noblesse Assassin Suit, Noblesse Attack Manteau, Noblesse Attack Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nASPD +1, Critical Damage +5% เพิ่มเติม, ATK +3% \n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^77777770^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Guillotine Cross^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 70,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Guillotine Cross"
+    ],
+    "script": {
+      "atk": [
+        "50"
+      ],
+      "aspdPercent": [
+        "7===3"
+      ],
+      "criDmg": [
+        "9===5",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===5",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===5"
+      ],
+      "aspd": [
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===1",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===1"
+      ],
+      "atkPercent": [
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===2",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===3"
+      ]
+    }
+  },
+  "450034": {
+    "id": 450034,
+    "aegisName": "Noblesse_Fatal_Suit",
+    "name": "Noblesse Fatal Suit [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Noblesse_Fatal_Suit",
+    "description": "ชุดเกราะของ Shadow Chaser ระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nATK +50\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7, ASPD +3%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพต่อศัตรูทุกประเภท 5%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Noblesse Attack Manteau, Noblesse Attack Boots, Noblesse Attack Ring,\nลด Delay หลังใช้สกิล 5%, ATK +2%, เพิ่ม Damage สกิล Fatal Menace 10%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Noblesse Fatal Suit, Noblesse Attack Manteau, Noblesse Attack Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nลด Delay หลังใช้สกิลลงอีก 5%, ATK +3%, เพิ่ม Damage สกิล Fatal Menace ขึ้นอีก 10%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^77777770^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Shadow Chaser^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 70,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Shadow Chaser"
+    ],
+    "script": {
+      "atk": [
+        "50"
+      ],
+      "aspdPercent": [
+        "7===3"
+      ],
+      "p_class_all": [
+        "9===5"
+      ],
+      "acd": [
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===5",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===5"
+      ],
+      "atkPercent": [
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===2",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===3"
+      ],
+      "Fatal Manace": [
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===10",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===10"
+      ]
+    }
+  },
+  "450035": {
+    "id": 450035,
+    "aegisName": "Noblesse_Stalker_Suit",
+    "name": "Noblesse Stalker Suit [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Noblesse_Stalker_Suit",
+    "description": "ชุดเกราะของ Shadow Chaser ระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nMATK +50\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7, ASPD +3%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางเวทมนตร์ธาตุ Fire 5%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Noblesse Magic Manteau, Noblesse Magic Boots, Noblesse Magic Ring,\nASPD +1, MATK +2%, เพิ่ม Damage สกิล Meteor Storm 20%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Noblesse Stalker Suit, Noblesse Magic Manteau, Noblesse Magic Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nASPD +1, MATK +3%, เพิ่ม Damage สกิล Meteor Storm ขึ้นอีก 20%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^77777770^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Shadow Chaser^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 70,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Shadow Chaser"
+    ],
+    "script": {
+      "matk": [
+        "50"
+      ],
+      "aspdPercent": [
+        "7===3"
+      ],
+      "m_my_element_fire": [
+        "9===5"
+      ],
+      "aspd": [
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]===1",
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]REFINE[armor,garment,boot==27]===1"
+      ],
+      "matkPercent": [
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]===2",
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]REFINE[armor,garment,boot==27]===3"
+      ],
+      "Meteor Storm": [
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]===20",
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]REFINE[armor,garment,boot==27]===20"
+      ]
+    }
+  },
+  "450036": {
+    "id": 450036,
+    "aegisName": "Noblesse_Picky_Robe",
+    "name": "Noblesse Picky Robe [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Noblesse_Picky_Robe",
+    "description": "เครื่องแต่งกายของ Summoner ระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nATK +50\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7 ลดระยะเวลาร่ายแบบแปรผัน 10%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพระยะไกล 5%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Noblesse Attack Manteau, Noblesse Attack Boots, Noblesse Attack Ring,\nลด Delay หลังใช้สกิล 5%, ATK +2%, เพิ่ม Damage สกิล Picky Peck 10%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Noblesse Picky Robe, Noblesse Attack Manteau, Noblesse Attack Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nลด Delay หลังใช้สกิลลงอีก 5%, ATK +3%, เพิ่ม Damage สกิล Picky Peck ขึ้นอีก 10%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^77777770^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Doram (Summoner)^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 70,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Doram"
+    ],
+    "script": {
+      "atk": [
+        "50"
+      ],
+      "vct": [
+        "7===10"
+      ],
+      "range": [
+        "9===5"
+      ],
+      "acd": [
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===5",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===5"
+      ],
+      "atkPercent": [
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===2",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===3"
+      ],
+      "Picky Peck": [
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===10",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===10"
+      ]
+    }
+  },
+  "450037": {
+    "id": 450037,
+    "aegisName": "Noblesse_Carrot_Robe",
+    "name": "Noblesse Catnip Robe [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Noblesse_Carrot_Robe",
+    "description": "เครื่องแต่งกายของ Summoner ระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nMATK +50\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7 ลดระยะเวลาร่ายแบบแปรผัน 10%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางเวทมนตร์ธาตุ Neutral 5%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Noblesse Magic Manteau, Noblesse Magic Boots, Noblesse Magic Ring,\nลดระยะเวลาร่ายแบบแปรผัน 5%, MATK +2%, เพิ่ม Damage สกิล Catnip Meteor 10%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Noblesse Catnip Robe, Noblesse Magic Manteau, Noblesse Magic Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nลดระยะเวลาร่ายแบบแปรผันลงอีก 5%, MATK +3%, เพิ่ม Damage สกิล Catnip Meteor ขึ้นอีก 10%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^77777770^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Doram (Summoner)^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 70,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Doram"
+    ],
+    "script": {
+      "matk": [
+        "50"
+      ],
+      "vct": [
+        "7===10",
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]===5",
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]REFINE[armor,garment,boot==27]===5"
+      ],
+      "m_my_element_neutral": [
+        "9===5"
+      ],
+      "matkPercent": [
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]===2",
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]REFINE[armor,garment,boot==27]===3"
+      ],
+      "Catnip Meteor": [
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]===10",
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]REFINE[armor,garment,boot==27]===10"
+      ]
+    }
+  },
+  "450038": {
+    "id": 450038,
+    "aegisName": "Noblesse_Trip_Suit",
+    "name": "Noblesse Trip Suit [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Noblesse_Trip_Suit",
+    "description": "ชุดของ Rebellion ระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nATK +50\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7, ATK +5%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพระยะไกล 5%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Noblesse Attack Manteau, Noblesse Attack Boots, Noblesse Attack Ring,\nเพิ่ม Damage ทางกายภาพระยะไกล 5%, ATK +2%, เพิ่ม Damage สกิล Round Trip 10%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Noblesse Trip Suit, Noblesse Attack Manteau, Noblesse Attack Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nเพิ่ม Damage ทางกายภาพระยะไกลขึ้นอีก 5%, ATK +3%, เพิ่ม Damage สกิล Round Trip ขึ้นอีก 10%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^77777770^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Rebellion^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 70,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Rebellion"
+    ],
+    "script": {
+      "atk": [
+        "50"
+      ],
+      "atkPercent": [
+        "7===5",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===2",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===3"
+      ],
+      "range": [
+        "9===5",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===5",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===5"
+      ],
+      "Round Trip": [
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===10",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===10"
+      ]
+    }
+  },
+  "450039": {
+    "id": 450039,
+    "aegisName": "Noblesse_Firerain_Suit",
+    "name": "Noblesse Fire Rain Suit [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Noblesse_Firerain_Suit",
+    "description": "เครื่องแต่งกายของ Rebellion ระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nATK +50\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7, ATK +5%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพระยะไกล 5%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Noblesse Attack Manteau, Noblesse Attack Boots, Noblesse Attack Ring,\nASPD +1, ATK +2%, เพิ่ม Damage สกิล Fire Rain 10%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Noblesse Fire Rain Suit, Noblesse Attack Manteau, Noblesse Attack Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nASPD +1, ATK +3%, เพิ่ม Damage สกิล Fire Rain ขึ้นอีก 10%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^77777770^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Rebellion^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 70,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Rebellion"
+    ],
+    "script": {
+      "atk": [
+        "50"
+      ],
+      "atkPercent": [
+        "7===5",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===2",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===3"
+      ],
+      "range": [
+        "9===5"
+      ],
+      "aspd": [
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===1",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===1"
+      ],
+      "Fire Rain": [
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===10",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===10"
+      ]
+    }
+  },
+  "450040": {
+    "id": 450040,
+    "aegisName": "Noblesse_Crimson_Robe",
+    "name": "Noblesse Crimson Robe [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Noblesse_Crimson_Robe",
+    "description": "เสื้อคลุมของ Warlock ระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nMATK +50\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7 ลดระยะเวลาร่ายแบบแปรผัน 10%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางเวทมนตร์ธาตุ Fire 5%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Noblesse Magic Manteau, Noblesse Magic Boots, Noblesse Magic Ring,\nลดระยะเวลาร่ายแบบแปรผัน 5%, MATK +2%, เพิ่ม Damage สกิล Crimson Rock 10%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Noblesse Crimson Robe, Noblesse Magic Manteau, Noblesse Magic Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nลดระยะเวลาร่ายแบบแปรผันลงอีก 5%, MATK +3%, เพิ่ม Damage สกิล Crimson Rock ขึ้นอีก 10%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^77777770^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Warlock^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 70,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Warlock"
+    ],
+    "script": {
+      "matk": [
+        "50"
+      ],
+      "vct": [
+        "7===10",
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]===5",
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]REFINE[armor,garment,boot==27]===5"
+      ],
+      "m_my_element_fire": [
+        "9===5"
+      ],
+      "matkPercent": [
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]===2",
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]REFINE[armor,garment,boot==27]===3"
+      ],
+      "Crimson Rock": [
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]===10",
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]REFINE[armor,garment,boot==27]===10"
+      ]
+    }
+  },
+  "450041": {
+    "id": 450041,
+    "aegisName": "Noblesse_Frost_Robe",
+    "name": "Noblesse Frost Robe [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Noblesse_Frost_Robe",
+    "description": "เสื้อคลุมของ Warlock ระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nMATK +50\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7 ลดระยะเวลาร่ายแบบแปรผัน 10%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางเวทมนตร์ธาตุ Water 5%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Noblesse Magic Manteau, Noblesse Magic Boots, Noblesse Magic Ring,\nลดระยะเวลาร่ายแบบแปรผัน 5%, MATK +2%, เพิ่ม Damage สกิล Jack Frost 10%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Noblesse Frost Robe, Noblesse Magic Manteau, Noblesse Magic Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nลดระยะเวลาร่ายแบบแปรผันลงอีก 5%, MATK +3%, เพิ่ม Damage สกิล Jack Frost ขึ้นอีก 10%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^77777770^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Warlock^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 70,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Warlock"
+    ],
+    "script": {
+      "matk": [
+        "50"
+      ],
+      "vct": [
+        "7===10",
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]===5",
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]REFINE[armor,garment,boot==27]===5"
+      ],
+      "m_my_element_water": [
+        "9===5"
+      ],
+      "matkPercent": [
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]===2",
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]REFINE[armor,garment,boot==27]===3"
+      ],
+      "Jack Frost": [
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]===10",
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]REFINE[armor,garment,boot==27]===10"
+      ]
+    }
+  },
+  "450042": {
+    "id": 450042,
+    "aegisName": "Noblesse_Psychic_Robe",
+    "name": "Noblesse Psychic Robe [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Noblesse_Psychic_Robe",
+    "description": "เสื้อคลุมของ Sorcerer ระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nMATK +50\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7 ลดระยะเวลาร่ายแบบแปรผัน 10%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางเวทมนตร์ธาตุ Neutral 5%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Noblesse Magic Manteau, Noblesse Magic Boots, Noblesse Magic Ring,\nลดระยะเวลาร่ายแบบแปรผัน 5%, MATK +2%, เพิ่ม Damage สกิล Psychic Wave 10%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Noblesse Psychic Robe, Noblesse Magic Manteau, Noblesse Magic Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nลดระยะเวลาร่ายแบบแปรผันลงอีก 5%, MATK +3%, เพิ่ม Damage สกิล Psychic Wave ขึ้นอีก 10%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^77777770^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Sorcerer^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 70,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Sorcerer"
+    ],
+    "script": {
+      "matk": [
+        "50"
+      ],
+      "vct": [
+        "7===10",
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]===5",
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]REFINE[armor,garment,boot==27]===5"
+      ],
+      "m_my_element_neutral": [
+        "9===5"
+      ],
+      "matkPercent": [
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]===2",
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]REFINE[armor,garment,boot==27]===3"
+      ],
+      "Psychic Wave": [
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]===10",
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]REFINE[armor,garment,boot==27]===10"
+      ]
+    }
+  },
+  "450043": {
+    "id": 450043,
+    "aegisName": "Noblesse_Dust_Robe",
+    "name": "Noblesse Dust Robe [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Noblesse_Dust_Robe",
+    "description": "เสื้อคลุมของ Sorcerer ระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nMATK +50\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7 ลดระยะเวลาร่ายแบบแปรผัน 10%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางเวทมนตร์ธาตุ Water 5%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Noblesse Magic Manteau, Noblesse Magic Boots, Noblesse Magic Ring,\nลดระยะเวลาร่ายแบบแปรผัน 5%, MATK +2%, เพิ่ม Damage สกิล Diamond Dust 10%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Noblesse Dust Robe, Noblesse Magic Manteau, Noblesse Magic Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nลดระยะเวลาร่ายแบบแปรผันลงอีก 5%, MATK +3%, เพิ่ม Damage สกิล Diamond Dust ขึ้นอีก 10%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^77777770^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Sorcerer^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 70,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Sorcerer"
+    ],
+    "script": {
+      "matk": [
+        "50"
+      ],
+      "vct": [
+        "7===10",
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]===5",
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]REFINE[armor,garment,boot==27]===5"
+      ],
+      "m_my_element_water": [
+        "9===5"
+      ],
+      "matkPercent": [
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]===2",
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]REFINE[armor,garment,boot==27]===3"
+      ],
+      "Diamond Dust": [
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]===10",
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]REFINE[armor,garment,boot==27]===10"
+      ]
+    }
+  },
+  "450044": {
+    "id": 450044,
+    "aegisName": "Noblesse_Sun_Suit",
+    "name": "Noblesse Sun Suit [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Noblesse_Sun_Suit",
+    "description": "เครื่องแบบของ Star Emperor ระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nATK +50\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7, ASPD +3%\nเมื่ออัพเกรดถึงขั้น 9, ATK +5%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Noblesse Attack Manteau, Noblesse Attack Boots, Noblesse Attack Ring,\nASPD +1, ATK +2%, เพิ่ม Damage สกิล Solar Explosion 10%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Noblesse Sun Suit, Noblesse Attack Manteau, Noblesse Attack Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nASPD +1, ATK +3%, เพิ่ม Damage สกิล Solar Explosion ขึ้นอีก 10%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^77777770^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Star Emperor^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 70,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Star Emperor"
+    ],
+    "script": {
+      "atk": [
+        "50"
+      ],
+      "aspdPercent": [
+        "7===3"
+      ],
+      "atkPercent": [
+        "9===5",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===2",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===3"
+      ],
+      "aspd": [
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===1",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===1"
+      ],
+      "Solar Explosion": [
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===10",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===10"
+      ]
+    }
+  },
+  "450045": {
+    "id": 450045,
+    "aegisName": "Noblesse_Moon_Suit",
+    "name": "Noblesse Moon Suit [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Noblesse_Moon_Suit",
+    "description": "เครื่องแบบของ Star Emperor ระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nATK +50\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางกายภาพต่อศัตรูทุกประเภท 5%\nเมื่ออัพเกรดถึงขั้น 9, ATK +5%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Noblesse Attack Manteau, Noblesse Attack Boots, Noblesse Attack Ring,\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกประเภท 5%, ATK +2%, เพิ่ม Damage สกิล Full Moon Kick 10%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Noblesse Moon Suit, Noblesse Attack Manteau, Noblesse Attack Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกประเภทขึ้นอีก 5%, ATK +3%, เพิ่ม Damage สกิล Full Moon Kick ขึ้นอีก 10%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^77777770^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Star Emperor^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 70,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Star Emperor"
+    ],
+    "script": {
+      "atk": [
+        "50"
+      ],
+      "p_class_all": [
+        "7===5",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===5",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===5"
+      ],
+      "atkPercent": [
+        "9===5",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===2",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===3"
+      ],
+      "Full Moon Kick": [
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===10",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===10"
+      ]
+    }
+  },
+  "450046": {
+    "id": 450046,
+    "aegisName": "Noblesse_Ninja_Suit",
+    "name": "Noblesse Ninja Suit [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Noblesse_Ninja_Suit",
+    "description": "เครื่องแบบของ Ninja ระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nMATK +50\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7 ลดระยะเวลาร่ายแบบแปรผัน 10%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางเวทมนตร์ทุกธาตุ 5%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Noblesse Magic Manteau, Noblesse Magic Boots, Noblesse Magic Ring,\nลดระยะเวลาร่ายแบบแปรผัน 5%, MATK +2%, เพิ่ม Damage สกิล Flaming Petals, Freezing Spear, Wind Blade 10%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Noblesse Ninja Suit, Noblesse Magic Manteau, Noblesse Magic Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nลดระยะเวลาร่ายแบบแปรผันลงอีก 5%, MATK +3%, เพิ่ม Damage สกิล Flaming Petals, Freezing Spear, Wind Blade ขึ้นอีก 10%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^77777770^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Ninja^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 70,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Ninja"
+    ],
+    "script": {
+      "matk": [
+        "50"
+      ],
+      "vct": [
+        "7===10",
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]===5",
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]REFINE[armor,garment,boot==27]===5"
+      ],
+      "m_my_element_all": [
+        "9===5"
+      ],
+      "matkPercent": [
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]===2",
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]REFINE[armor,garment,boot==27]===3"
+      ],
+      "Flaming Petals": [
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]===10",
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]REFINE[armor,garment,boot==27]===10"
+      ],
+      "Freezing Spear": [
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]===10",
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]REFINE[armor,garment,boot==27]===10"
+      ],
+      "Wind Blade": [
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]===10",
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]REFINE[armor,garment,boot==27]===10"
+      ]
+    }
+  },
+  "450047": {
+    "id": 450047,
+    "aegisName": "Noblesse_Kunai_Suit",
+    "name": "Noblesse Kunai Suit [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Noblesse_Kunai_Suit",
+    "description": "เครื่องแบบของ Ninja ระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nATK +50\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7, ATK +5%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพระยะไกล 5%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Noblesse Attack Manteau, Noblesse Attack Boots, Noblesse Attack Ring,\nเพิ่ม Damage ทางกายภาพระยะไกล 5%, ATK +2%, เพิ่ม Damage สกิล Kunai Splash 10%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Noblesse Kunai Suit, Noblesse Attack Manteau, Noblesse Attack Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nเพิ่ม Damage ทางกายภาพระยะไกลขึ้นอีก 5%, ATK +3%, เพิ่ม Damage สกิล Kunai Splash ขึ้นอีก 10%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^77777770^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Ninja^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 70,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Ninja"
+    ],
+    "script": {
+      "atk": [
+        "50"
+      ],
+      "atkPercent": [
+        "7===5",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===2",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===3"
+      ],
+      "range": [
+        "9===5",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===5",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===5"
+      ],
+      "Kunai Splash": [
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===10",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===10"
+      ]
+    }
+  },
+  "450048": {
+    "id": 450048,
+    "aegisName": "Noblesse_Swhoo_Robe",
+    "name": "Noblesse Eswhoo Robe [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Noblesse_Swhoo_Robe",
+    "description": "เสื้อคลุมของ Soul Reaper ระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nMATK +50\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางเวทมนตร์ธาตุ Shadow 5%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางเวทมนตร์ธาตุ Shadow 5%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Noblesse Magic Manteau, Noblesse Magic Boots, Noblesse Magic Ring,\nลดระยะเวลาร่ายแบบแปรผัน 5%, MATK +2%, เพิ่ม Damage สกิล Eswhoo 10%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Noblesse Eswhoo Robe, Noblesse Magic Manteau, Noblesse Magic Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nลดระยะเวลาร่ายแบบแปรผันลงอีก 5%, MATK +3%, เพิ่ม Damage สกิล Eswhoo ขึ้นอีก 10%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^77777770^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Soul Reaper^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 70,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Soul Reaper"
+    ],
+    "script": {
+      "matk": [
+        "50"
+      ],
+      "m_my_element_dark": [
+        "7===5",
+        "9===5"
+      ],
+      "vct": [
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]===5",
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]REFINE[armor,garment,boot==27]===5"
+      ],
+      "matkPercent": [
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]===2",
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]REFINE[armor,garment,boot==27]===3"
+      ],
+      "Eswhoo": [
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]===10",
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]REFINE[armor,garment,boot==27]===10"
+      ]
+    }
+  },
+  "450049": {
+    "id": 450049,
+    "aegisName": "Noblesse_Explosion_Robe",
+    "name": "Noblesse Explosion Robe [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Noblesse_Explosion_Robe",
+    "description": "เสื้อคลุมของ Soul Reaper ระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nMATK +50\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางเวทมนตร์ธาตุ Shadow 5%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางเวทมนตร์ธาตุ Shadow 5%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Noblesse Magic Manteau, Noblesse Magic Boots, Noblesse Magic Ring,\nลดระยะเวลาร่ายแบบแปรผัน 5%, MATK +2%, เพิ่ม Damage สกิล Curse Explosion 10%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Noblesse Explosion Robe, Noblesse Magic Manteau, Noblesse Magic Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nลดระยะเวลาร่ายแบบแปรผันลงอีก 5%, MATK +3%, เพิ่ม Damage สกิล Curse Explosion ขึ้นอีก 10%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^77777770^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Soul Reaper^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 70,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Soul Reaper"
+    ],
+    "script": {
+      "matk": [
+        "50"
+      ],
+      "m_my_element_dark": [
+        "7===5",
+        "9===5"
+      ],
+      "vct": [
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]===5",
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]REFINE[armor,garment,boot==27]===5"
+      ],
+      "matkPercent": [
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]===2",
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]REFINE[armor,garment,boot==27]===3"
+      ],
+      "Curse Explosion": [
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]===10",
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]REFINE[armor,garment,boot==27]===10"
+      ]
+    }
+  },
+  "450050": {
+    "id": 450050,
+    "aegisName": "Noblesse_Knuckle_Suit",
+    "name": "Noblesse Knuckle Suit [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Noblesse_Knuckle_Suit",
+    "description": "ชุดเกราะของ Sura ระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nATK +50\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7, MaxSP + 10%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพต่อศัตรูทุกประเภท 5%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Noblesse Attack Manteau, Noblesse Attack Boots, Noblesse Attack Ring,\nลด Delay หลังใช้สกิล 5%, ATK +2%, เพิ่ม Damage สกิล Knuckle Arrow 10%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Noblesse Knuckle Suit, Noblesse Attack Manteau, Noblesse Attack Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nลด Delay หลังใช้สกิลลงอีก 5%, ATK +3%, เพิ่ม Damage สกิล Knuckle Arrow ขึ้นอีก 10%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^77777770^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Sura^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 70,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Sura"
+    ],
+    "script": {
+      "atk": [
+        "50"
+      ],
+      "spPercent": [
+        "7===10"
+      ],
+      "p_class_all": [
+        "9===5"
+      ],
+      "acd": [
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===5",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===5"
+      ],
+      "atkPercent": [
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===2",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===3"
+      ],
+      "Knuckle Arrow": [
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===10",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===10"
+      ]
+    }
+  },
+  "450051": {
+    "id": 450051,
+    "aegisName": "Noblesse_Tiger_Suit",
+    "name": "Noblesse Tiger Suit [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Noblesse_Tiger_Suit",
+    "description": "เครื่องแบบของนักบวชระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nMaxSP +5%\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7, MaxHP +3%\nเมื่ออัพเกรดถึงขั้น 9, MaxHP +3%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Noblesse Attack Manteau, Noblesse Attack Boots, Noblesse Attack Ring,\nMaxHP +5%, ATK +2%, เพิ่ม Damage สกิล Tiger Cannon 10%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Noblesse Tiger Suit, Noblesse Attack Manteau, Noblesse Attack Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nMaxHP +5%, ATK +3%, เพิ่ม Damage สกิล Tiger Cannon ขึ้นอีก 10%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^77777770^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Sura^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 70,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Sura"
+    ],
+    "script": {
+      "spPercent": [
+        "5"
+      ],
+      "hpPercent": [
+        "7===3",
+        "9===3",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===5",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===5"
+      ],
+      "atkPercent": [
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===2",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===3"
+      ],
+      "Tiger Cannon": [
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===10",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===10"
+      ]
+    }
+  },
   "450086": {
     "id": 450086,
     "aegisName": "Grace_Breath_Armor",
@@ -74704,6 +76154,89 @@
       ]
     }
   },
+  "450121": {
+    "id": 450121,
+    "aegisName": "Noblesse_Snovice_Suit",
+    "name": "Noblesse Super Novice Suit [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Noblesse_Snovice_Suit",
+    "description": "เกราะของ Super Novice ระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nATK +50\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7, ASPD +3%\nเมื่ออัพเกรดถึงขั้น 9, MaxHP + 5%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Noblesse Attack Manteau, Noblesse Attack Boots, Noblesse Attack Ring,\nMaxHP +5%, ATK +2%, Critical Damage +5%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Noblesse Super Novice Suit, Noblesse Attack Manteau, Noblesse Attack Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nMaxHP +5%, ATK +3%, Critical Damage +5% เพิ่มเติม\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^77777770^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Novice^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 70,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Novice"
+    ],
+    "script": {
+      "atk": [
+        "50"
+      ],
+      "aspdPercent": [
+        "7===3"
+      ],
+      "hpPercent": [
+        "9===5",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===5",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===5"
+      ],
+      "atkPercent": [
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===2",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===3"
+      ],
+      "criDmg": [
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]===5",
+        "EQUIP[Noblesse Attack Manteau&&Noblesse Attack Boots&&Noblesse Attack Ring]REFINE[armor,garment,boot==27]===5"
+      ]
+    }
+  },
+  "450122": {
+    "id": 450122,
+    "aegisName": "Noblesse_Snovice_Robe",
+    "name": "Noblesse Super Novice Robe [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Noblesse_Snovice_Robe",
+    "description": "เสื้อคลุมของ Super Novice ระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nMATK +50\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7, ASPD +3%\nเมื่ออัพเกรดถึงขั้น 9, MaxHP +5%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Noblesse Magic Manteau, Noblesse Magic Boots, Noblesse Magic Ring,\nMaxHP +5%, MATK +2%, เมื่อโจมตีทางกายภาพระยะใกล้ มีโอกาสที่จะใช้สกิล Psychic Wave Lv. 1\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Noblesse Super Novice Robe, Noblesse Magic Manteau, Noblesse Magic Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nMaxHP +5%, MATK +3%, เพิ่ม Damage สกิล Psychic Wave ขึ้นอีก 5%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^77777770^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777Novice^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 70,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Novice"
+    ],
+    "script": {
+      "matk": [
+        "50"
+      ],
+      "aspdPercent": [
+        "7===3"
+      ],
+      "hpPercent": [
+        "9===5",
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]===5",
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]REFINE[armor,garment,boot==27]===5"
+      ],
+      "matkPercent": [
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]===2",
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]REFINE[armor,garment,boot==27]===3"
+      ],
+      "Psychic Wave": [
+        "EQUIP[Noblesse Magic Manteau&&Noblesse Magic Boots&&Noblesse Magic Ring]REFINE[armor,garment,boot==27]===5"
+      ]
+    }
+  },
   "450125": {
     "id": 450125,
     "aegisName": "Grace_Snovice_Suit",
@@ -75577,6 +77110,76 @@
       ],
       "m_pene_race_all": [
         "LEARN_SKILL[Nyang Grass==5]100"
+      ]
+    }
+  },
+  "470016": {
+    "id": 470016,
+    "aegisName": "Noblesse_Attack_Boots",
+    "name": "Noblesse Attack Boots [1]",
+    "unidName": "Shoes",
+    "resName": "Noblesse_Attack_Boots",
+    "description": "รองเท้าระดับสูงที่สลักลวดลายของ Rune Midgarts\n\nATK +10, HIT +10\n\nเมื่ออัพเกรดถึงขั้น 7 ลดระยะเวลาร่ายแบบคงที่ 0.5 วินาที\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพระยะไกล 5%\n\nประเภท : ^777777Shoes^000000  พลังป้องกัน : ^77777720^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 516,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 20,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atk": [
+        "10"
+      ],
+      "hit": [
+        "10"
+      ],
+      "fct": [
+        "7===0.5"
+      ],
+      "range": [
+        "9===5"
+      ]
+    }
+  },
+  "470017": {
+    "id": 470017,
+    "aegisName": "Noblesse_Magic_Boots",
+    "name": "Noblesse Magic Boots [1]",
+    "unidName": "Shoes",
+    "resName": "Noblesse_Magic_Boots",
+    "description": "รองเท้าระดับสูงที่สลักลวดลายของ Rune Midgarts\n\nMATK +10, FLEE +10\n\nเมื่ออัพเกรดถึงขั้น 7 ลดระยะเวลาร่ายแบบคงที่ 0.5 วินาที\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางเวทมนตร์ทุกธาตุ 5%\n\nประเภท : ^777777Shoes^000000  พลังป้องกัน : ^77777720^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 516,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 20,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "matk": [
+        "10"
+      ],
+      "flee": [
+        "10"
+      ],
+      "fct": [
+        "7===0.5"
+      ],
+      "m_my_element_all": [
+        "9===5"
       ]
     }
   },
@@ -76674,6 +78277,70 @@
       ],
       "acd": [
         "9===10"
+      ]
+    }
+  },
+  "480012": {
+    "id": 480012,
+    "aegisName": "Noblesse_Attack_Manteau",
+    "name": "Noblesse Attack Manteau [1]",
+    "unidName": "Hood",
+    "resName": "Noblesse_Attack_Manteau",
+    "description": "ผ้าคลุมระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nASPD +3%\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7 ลด Delay หลังใช้สกิล 5%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพต่อศัตรูทุกประเภท 5%\n^ffffff_^000000\n\nประเภท : ^777777Garment^000000  พลังป้องกัน : ^77777720^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 515,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 20,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "aspdPercent": [
+        "3"
+      ],
+      "acd": [
+        "7===5"
+      ],
+      "p_class_all": [
+        "9===5"
+      ]
+    }
+  },
+  "480014": {
+    "id": 480014,
+    "aegisName": "Noblesse_Magic_Manteau",
+    "name": "Noblesse Magic Manteau [1]",
+    "unidName": "Hood",
+    "resName": "Noblesse_Magic_Manteau",
+    "description": "ผ้าคลุมระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nลดระยะเวลาร่ายแบบแปรผัน 5% \n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7 ลด Delay หลังใช้สกิล 5%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางเวทมนตร์ทุกธาตุ 5%\n^ffffff_^000000\nประเภท : ^777777Garment^000000  พลังป้องกัน : ^77777720^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 515,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 20,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "vct": [
+        "5"
+      ],
+      "acd": [
+        "7===5"
+      ],
+      "m_my_element_all": [
+        "9===5"
       ]
     }
   },
@@ -78185,6 +79852,70 @@
       ],
       "acd": [
         "LEARN_SKILL[Lightning Ride==5]===5"
+      ]
+    }
+  },
+  "490014": {
+    "id": 490014,
+    "aegisName": "Noblesse_Attack_Ring",
+    "name": "Noblesse Attack Ring [1]",
+    "unidName": "Ring",
+    "resName": "Noblesse_Attack_Ring",
+    "description": "แหวนระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nASPD +3%\nลดระยะเวลาร่ายแบบแปรผัน 5%\nCritical Damage +5%\n^ffffff_^000000\nประเภท : ^777777Accessory (Right)^000000 พลังป้องกัน : ^7777775^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 510,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 5,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "aspdPercent": [
+        "3"
+      ],
+      "vct": [
+        "5"
+      ],
+      "criDmg": [
+        "5"
+      ]
+    }
+  },
+  "490015": {
+    "id": 490015,
+    "aegisName": "Noblesse_Magic_Ring",
+    "name": "Noblesse Magic Ring [1]",
+    "unidName": "Ring",
+    "resName": "Noblesse_Magic_Ring",
+    "description": "แหวนระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nASPD +3%\nลดระยะเวลาร่ายแบบแปรผัน 5%\nเพิ่ม Damage ทางเวทมนตร์ทุกธาตุ 5%\n^ffffff_^000000\nประเภท : ^777777Accessory (Right)^000000 พลังป้องกัน : ^7777775^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 510,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 5,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "aspdPercent": [
+        "3"
+      ],
+      "vct": [
+        "5"
+      ],
+      "m_my_element_all": [
+        "5"
       ]
     }
   },
