@@ -73254,6 +73254,1539 @@
       ]
     }
   },
+  "450086": {
+    "id": 450086,
+    "aegisName": "Grace_Breath_Armor",
+    "name": "Grace Breath Armor [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Grace_Breath_Armor",
+    "description": "ชุดเกราะของ Knight ระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nMaxHP + 10%\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7 ลดระยะเวลาร่ายแบบแปรผัน 20%\nเมื่ออัพเกรดถึงขั้น 9, MaxHP + 10%.\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Grace Attack Manteau, Grace Attack Boots, Grace Attack Ring,\nลด Delay หลังใช้สกิล 10%, MaxHP + 5%, เพิ่ม Damage สกิล Dragon Breath และ Dragon Breath - WATER 15%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Grace Breath Armor, Grace Attack Manteau, Grace Attack Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nลด Delay หลังใช้สกิลลงอีก 10%, MaxHP +5%, เพิ่ม Damage สกิล Dragon Breath และ Dragon Breath - WATER ขึ้นอีก 15%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^777777130^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Rune Knight^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 130,
+    "weight": 0,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Rune Knight"
+    ],
+    "script": {
+      "hpPercent": [
+        "10",
+        "9===10",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===5",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===5"
+      ],
+      "vct": [
+        "7===20"
+      ],
+      "acd": [
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===10",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===10"
+      ],
+      "Dragon Breath": [
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===15",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===15"
+      ],
+      "Dragon Breath - WATER": [
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===15",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===15"
+      ]
+    }
+  },
+  "450087": {
+    "id": 450087,
+    "aegisName": "Grace_Knight_Armor",
+    "name": "Grace Knight Armor [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Grace_Knight_Armor",
+    "description": "ชุดเกราะของ Knight ระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nATK +100\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7, ASPD +7%\nเมื่ออัพเกรดถึงขั้น 9, Critical Damage +10%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Grace Attack Manteau, Grace Attack Boots, Grace Attack Ring,\nASPD +1, Critical Damage +5% เพิ่ม Damage สกิล Ignition Break 15%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Grace Knight Armor, Grace Attack Manteau, Grace Attack Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nASPD +1, Critical Damage +5% เพิ่มเติม, เพิ่ม Damage สกิล Ignition Break ขึ้นอีก 15%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^777777130^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Rune Knight^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 130,
+    "weight": 0,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Rune Knight"
+    ],
+    "script": {
+      "atk": [
+        "100"
+      ],
+      "aspdPercent": [
+        "7===7"
+      ],
+      "criDmg": [
+        "9===10",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===5",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===5"
+      ],
+      "aspd": [
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===1",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===1"
+      ],
+      "Ignition Break": [
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===15",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===15"
+      ]
+    }
+  },
+  "450088": {
+    "id": 450088,
+    "aegisName": "Grace_Spear_Armor",
+    "name": "Grace Spear Armor [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Grace_Spear_Armor",
+    "description": "ชุดเกราะของ Royal Guard ระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nATK +100\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7, ASPD +7%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพระยะไกล 10%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Grace Attack Manteau, Grace Attack Boots, Grace Attack Ring,\nASPD +1, เพิ่ม Damage ทางกายภาพระยะไกล 5%, เพิ่ม Damage สกิล Cannon Spear 15%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Grace Spear Armor, Grace Attack Manteau, Grace Attack Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nASPD +1, เพิ่ม Damage ทางกายภาพระยะไกลขึ้นอีก 5%, เพิ่ม Damage สกิล Cannon Spear ขึ้นอีก 15%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^777777130^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Royal Guard^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 130,
+    "weight": 0,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Royal Guard"
+    ],
+    "script": {
+      "atk": [
+        "100"
+      ],
+      "aspdPercent": [
+        "7===7"
+      ],
+      "range": [
+        "9===10",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===5",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===5"
+      ],
+      "aspd": [
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===1",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===1"
+      ],
+      "Cannon Spear": [
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===15",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===15"
+      ]
+    }
+  },
+  "450089": {
+    "id": 450089,
+    "aegisName": "Grace_Genesis_Armor",
+    "name": "Grace Genesis Armor [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Grace_Genesis_Armor",
+    "description": "ชุดเกราะของ Royal Guard ระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nMATK +100\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางเวทมนตร์ธาตุ Holy 10%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางเวทมนตร์ธาตุ Holy ขึ้นอีก 10%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Grace Magic Manteau, Grace Magic Boots, Grace Magic Ring,\nMATK +25, ลด Delay หลังใช้สกิล 10%, เพิ่ม Damage สกิล Genesis Ray 15%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Grace Genesis Armor, Grace Magic Manteau, Grace Magic Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nMATK +25, ลด Delay หลังใช้สกิลลงอีก 10%, เพิ่ม Damage สกิล Genesis Ray ขึ้นอีก 15%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^777777130^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Royal Guard^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 130,
+    "weight": 0,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Royal Guard"
+    ],
+    "script": {
+      "matk": [
+        "100",
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]===25",
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]REFINE[armor,garment,boot==27]===25"
+      ],
+      "m_my_element_holy": [
+        "7===10",
+        "9===10"
+      ],
+      "acd": [
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]===10",
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]REFINE[armor,garment,boot==27]===10"
+      ],
+      "Genesis Ray": [
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]===15",
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]REFINE[armor,garment,boot==27]===15"
+      ]
+    }
+  },
+  "450090": {
+    "id": 450090,
+    "aegisName": "Grace_Sharp_Suit",
+    "name": "Grace Sharp Suit [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Grace_Sharp_Suit",
+    "description": "ชุดเกราะของ Ranger ระดับสูงที่สลักลวดลายของ Rune Midgarts.\n^ffffff_^000000\nATK +100\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7, ASPD +7%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพระยะไกล 10%\n\nเมื่อสวมใส่ร่วมกับ Grace Attack Manteau, Grace Attack Boots, Grace Attack Ring,\nลด Delay หลังใช้สกิล 10%, Critical Damage +5%, เพิ่ม Damage สกิล Focused Arrow Strike 15%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Grace Sharp Suit, Grace Attack Manteau, Grace Attack Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nลด Delay หลังใช้สกิล 10%, Critical Damage +5% เพิ่มเติม, เพิ่ม Damage สกิล Focused Arrow Strike ขึ้นอีก 15%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^777777100^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Ranger^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 100,
+    "weight": 0,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Ranger"
+    ],
+    "script": {
+      "atk": [
+        "100"
+      ],
+      "aspdPercent": [
+        "7===7"
+      ],
+      "range": [
+        "9===10"
+      ],
+      "acd": [
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===10",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===10"
+      ],
+      "criDmg": [
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===5",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===5"
+      ],
+      "Focused Arrow Strike": [
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===15",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===15"
+      ]
+    }
+  },
+  "450091": {
+    "id": 450091,
+    "aegisName": "Grace_Aim_Suit",
+    "name": "Grace Aimed Suit [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Grace_Aim_Suit",
+    "description": "Armor ของ Sniper ระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nATK +100\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7, ASPD +7%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพระยะไกล 10%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Grace Attack Manteau, Grace Attack Boots, Grace Attack Ring,\nลด Delay หลังใช้สกิล 10%, ATK +2%, เพิ่ม Damage สกิล Aimed Bolt 15%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Grace Aimed Suit, Grace Attack Manteau, Grace Attack Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nลด Delay หลังใช้สกิลลงอีก 10%, ATK +3%, เพิ่ม Damage สกิล Aimed Bolt ขึ้นอีก 15%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^777777100^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Ranger^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 100,
+    "weight": 0,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Ranger"
+    ],
+    "script": {
+      "atk": [
+        "100"
+      ],
+      "aspdPercent": [
+        "7===7"
+      ],
+      "range": [
+        "9===10"
+      ],
+      "acd": [
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===10",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===10"
+      ],
+      "atkPercent": [
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===2",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===3"
+      ],
+      "Aimed Bolt": [
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===15",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===15"
+      ]
+    }
+  },
+  "450092": {
+    "id": 450092,
+    "aegisName": "Grace_Severe_Suit",
+    "name": "Grace Severe Suit [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Grace_Severe_Suit",
+    "description": "ชุดเกราะของนักดนตรีระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nATK +100\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7 ลดระยะเวลาร่ายแบบแปรผัน 20%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพระยะไกล 10%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Grace Manteau, Grace Boots, Grace Ring,\nเพิ่ม Damage ทางกายภาพระยะไกล 5%, ATK +2%, เพิ่ม Damage สกิล Severe Rainstorm 15%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Grace Severe Suit, Grace Attack Manteau, Grace Attack Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nเพิ่ม Damage ทางกายภาพระยะไกลขึ้นอีก 5%, ATK +3%, เพิ่ม Damage สกิล Severe Rainstorm ขึ้นอีก 15%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^777777100^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Minstrel, Wanderer^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 100,
+    "weight": 0,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Minstrel",
+      "Wanderer"
+    ],
+    "script": {
+      "atk": [
+        "100"
+      ],
+      "vct": [
+        "7===20"
+      ],
+      "range": [
+        "9===10",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===5",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===5"
+      ],
+      "atkPercent": [
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===2",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===3"
+      ],
+      "Severe Rainstorm": [
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===15",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===15"
+      ]
+    }
+  },
+  "450093": {
+    "id": 450093,
+    "aegisName": "Grace_Reverb_Suit",
+    "name": "Grace Reverb Suit [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Grace_Reverb_Suit",
+    "description": "ชุดเกราะของนักดนตรีระดับสูงที่สลักลวดลายของ Rune Midgarts.\n^ffffff_^000000\nMATK +100\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางเวทมนตร์ธาตุ Neutral 10%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางเวทมนตร์ธาตุ Neutral ขึ้นอีก 10%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Grace Magic Manteau, Grace Magic Boots, Grace Magic Ring,\nลดระยะเวลาร่ายแบบแปรผัน 5%, MATK +2%, เพิ่ม Damage สกิล Reverberation 15%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Grace Reverb Suit, Grace Magic Manteau, Grace Magic Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nลดระยะเวลาร่ายแบบแปรผันลงอีก 5%, MATK +3%, เพิ่ม Damage สกิล Reverberation ขึ้นอีก 15%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^777777100^000000\nน้ำหนัก : ^77777790^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Minstrel, Wanderer^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 100,
+    "weight": 90,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Minstrel",
+      "Wanderer"
+    ],
+    "script": {
+      "matk": [
+        "100"
+      ],
+      "m_my_element_neutral": [
+        "7===10",
+        "9===10"
+      ],
+      "vct": [
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]===5",
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]REFINE[armor,garment,boot==27]===5"
+      ],
+      "matkPercent": [
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]===2",
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]REFINE[armor,garment,boot==27]===3"
+      ],
+      "Reverberation": [
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]===15",
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]REFINE[armor,garment,boot==27]===15"
+      ]
+    }
+  },
+  "450094": {
+    "id": 450094,
+    "aegisName": "Grace_Adora_Robe",
+    "name": "Grace Adora Robe [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Grace_Adora_Robe",
+    "description": "เสื้อคลุมของ Archbishop ระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nMATK +100.\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางเวทมนตร์ธาตุ Holy 10%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางเวทมนตร์ธาตุ Holy ขึ้นอีก 10%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Grace Magic Manteau, Grace Magic Boots, Grace Magic Ring,\nลดระยะเวลาร่ายแบบแปรผัน 5%, MATK +2%, เพิ่ม Damage สกิล Adoramus 15%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Grace Adora Robe, Grace Magic Manteau, Grace Magic Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nลดระยะเวลาร่ายแบบแปรผันลงอีก 5%, MATK +3%, เพิ่ม Damage สกิล Adoramus ขึ้นอีก 15%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^777777100^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Archbishop^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 100,
+    "weight": 0,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Arch Bishop"
+    ],
+    "script": {
+      "matk": [
+        "100"
+      ],
+      "m_my_element_holy": [
+        "7===10",
+        "9===10"
+      ],
+      "vct": [
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]===5",
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]REFINE[armor,garment,boot==27]===5"
+      ],
+      "matkPercent": [
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]===2",
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]REFINE[armor,garment,boot==27]===3"
+      ],
+      "Adoramus": [
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]===15",
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]REFINE[armor,garment,boot==27]===15"
+      ]
+    }
+  },
+  "450095": {
+    "id": 450095,
+    "aegisName": "Grace_Duple_Robe",
+    "name": "Grace Duple Robe [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Grace_Duple_Robe",
+    "description": "เสื้อคลุมของ Archbishop ระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nATK +100.\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7, ASPD +7%)\nเมื่ออัพเกรดถึงขั้น 9, Critical Damage +10%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Grace Attack Manteau, Grace Attack Boots, Grace Attack Ring,\nASPD +1, ATK +2%, เพิ่ม Damage สกิล Duple Light 15%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Grace Duple Robe, Grace Attack Manteau, Grace Attack Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nASPD +1, ATK +3%, เพิ่ม Damage สกิล Duple Light ขึ้นอีก 15%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^777777100^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Archbishop^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 100,
+    "weight": 0,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Arch Bishop"
+    ],
+    "script": {
+      "atk": [
+        "100"
+      ],
+      "aspdPercent": [
+        "7===7"
+      ],
+      "criDmg": [
+        "9===10"
+      ],
+      "aspd": [
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===1",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===1"
+      ],
+      "atkPercent": [
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===2",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===3"
+      ],
+      "Duple Light": [
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===15",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===15"
+      ]
+    }
+  },
+  "450096": {
+    "id": 450096,
+    "aegisName": "Grace_Knuckle_Suit",
+    "name": "Grace Knuckle Suit [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Grace_Knuckle_Suit",
+    "description": "ชุดเกราะของ Sura ระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nATK +100.\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7, MaxSP +20%.\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพต่อศัตรูทุกประเภท 10%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Grace Attack Manteau, Grace Attack Boots, Grace Attack Ring,\nลด Delay หลังใช้สกิล 10%, ATK +2%, เพิ่ม Damage สกิล Knuckle Arrow 15%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Grace Knuckle Suit, Grace Attack Manteau, Grace Attack Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nลด Delay หลังใช้สกิลลงอีก 10%, ATK +3%, เพิ่ม Damage สกิล Knuckle Arrow ขึ้นอีก 15%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^777777100^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Sura^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 100,
+    "weight": 0,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Sura"
+    ],
+    "script": {
+      "atk": [
+        "100"
+      ],
+      "spPercent": [
+        "7===20"
+      ],
+      "p_class_all": [
+        "9===10"
+      ],
+      "acd": [
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===10",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===10"
+      ],
+      "atkPercent": [
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===2",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===3"
+      ],
+      "Knuckle Arrow": [
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===15",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===15"
+      ]
+    }
+  },
+  "450097": {
+    "id": 450097,
+    "aegisName": "Grace_Tiger_Suit",
+    "name": "Grace Tiger Suit [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Grace_Tiger_Suit",
+    "description": "เครื่องแบบของนักบวชระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nMaxSP +10%\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7, MaxHP +5%\nเมื่ออัพเกรดถึงขั้น 9, MaxHP +5%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Grace Attack Manteau, Grace Attack Boots, Grace Attack Ring,\nMaxHP +5%, ATK +2%, เพิ่ม Damage สกิล Tiger Cannon 15%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Grace Tiger Suit, Grace Attack Manteau, Grace Attack Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nMaxHP +5%, ATK +3%, เพิ่ม Damage สกิล Tiger Cannon ขึ้นอีก 15%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^777777100^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Sura^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 100,
+    "weight": 0,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Sura"
+    ],
+    "script": {
+      "spPercent": [
+        "10"
+      ],
+      "hpPercent": [
+        "7===5",
+        "9===5",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===5",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===5"
+      ],
+      "atkPercent": [
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===2",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===3"
+      ],
+      "Tiger Cannon": [
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===15",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===15"
+      ]
+    }
+  },
+  "450098": {
+    "id": 450098,
+    "aegisName": "Grace_Tonado_Armor",
+    "name": "Grace Tornado Armor [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Grace_Tonado_Armor",
+    "description": "ชุดเกราะของ Mechanic ที่สลักลวดลายของ Rune Midgarts.\n^ffffff_^000000\nATK +100\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7, ASPD +7%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพต่อศัตรูทุกประเภท 10%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Grace Attack Manteau, Grace Attack Boots, Grace Attack Ring,\nASPD +1, ลด Delay หลังใช้สกิล 10%, เพิ่ม Damage สกิล Axe Tornado 15%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Grace Tornado Armor, Grace Attack Manteau, Grace Attack Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nASPD +1, ลด Delay หลังใช้สกิลลงอีก 10%, เพิ่ม Damage สกิล Axe Tornado ขึ้นอีก 15%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^777777100^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Mechanic^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 100,
+    "weight": 0,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Mechanic"
+    ],
+    "script": {
+      "atk": [
+        "100"
+      ],
+      "aspdPercent": [
+        "7===7"
+      ],
+      "p_class_all": [
+        "9===10"
+      ],
+      "aspd": [
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===1",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===1"
+      ],
+      "acd": [
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===10",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===10"
+      ],
+      "Axe Tornado": [
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===15",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===15"
+      ]
+    }
+  },
+  "450099": {
+    "id": 450099,
+    "aegisName": "Grace_Vulcan_Armor",
+    "name": "Grace Vulcan Armor [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Grace_Vulcan_Armor",
+    "description": "ชุดเกราะของ Mechanic ที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nATK +100\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7, ASPD +7% \nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพระยะไกล 10%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Grace Attack Manteau, Grace Attack Boots, Grace Attack Ring,\nASPD +1, เพิ่ม Damage ทางกายภาพระยะไกล 5%, เพิ่ม Damage สกิล Vulcan Arm 15%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Grace Vulcan Armor, Grace Attack Manteau, Grace Attack Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nASPD +1, เพิ่ม Damage ทางกายภาพระยะไกลขึ้นอีก 5%, เพิ่ม Damage สกิล Vulcan Arm ขึ้นอีก 15%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^777777100^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Mechanic^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 100,
+    "weight": 0,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Mechanic"
+    ],
+    "script": {
+      "atk": [
+        "100"
+      ],
+      "aspdPercent": [
+        "7===7"
+      ],
+      "range": [
+        "9===10",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===5",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===5"
+      ],
+      "aspd": [
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===1",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===1"
+      ],
+      "Vulcan Arm": [
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===15",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===15"
+      ]
+    }
+  },
+  "450100": {
+    "id": 450100,
+    "aegisName": "Grace_Kart_Suit",
+    "name": "Grace Cart Cannon Suit [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Grace_Kart_Suit",
+    "description": "ชุดสำหรับนักวิจัยของ Genetic ระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nATK +100\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7 ลดระยะเวลาร่ายแบบแปรผัน 20%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพระยะไกล 10%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Grace Attack Manteau, Grace Attack Boots, Grace Attack Ring,\nลดระยะเวลาร่ายแบบแปรผัน 5%, ATK +2%, เพิ่ม Damage สกิล Cart Cannon 15%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Grace Cart Cannon Suit, Grace Attack Manteau, Grace Attack Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nลดระยะเวลาร่ายแบบแปรผันลงอีก 5%, ATK +3%, เพิ่ม Damage สกิล Cart Cannon ขึ้นอีก 15%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^777777100^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Genetic^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 100,
+    "weight": 0,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Genetic"
+    ],
+    "script": {
+      "atk": [
+        "100"
+      ],
+      "vct": [
+        "7===20",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===5",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===5"
+      ],
+      "range": [
+        "9===10"
+      ],
+      "atkPercent": [
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===2",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===3"
+      ],
+      "Cart Cannon": [
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===15",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===15"
+      ]
+    }
+  },
+  "450101": {
+    "id": 450101,
+    "aegisName": "Grace_Kart_Suit2",
+    "name": "Grace Cart Tornado Suit [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Grace_Kart_Suit2",
+    "description": "ชุดสำหรับนักวิจัยของ Genetic ระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nATK +100\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7, ASPD +7%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพต่อศัตรูทุกประเภท 10%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Grace Attack Manteau, Grace Attack Boots, Grace Attack Ring,\nASPD +1, ATK +2%, เพิ่ม Damage สกิล Cart Tornado Attack 15%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Grace Cart Tornado Suit, Grace Attack Manteau, Grace Attack Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nASPD +1, ATK +3%, เพิ่ม Damage สกิล Cart Tornado Attack ขึ้นอีก 15%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^777777100^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Genetic^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 100,
+    "weight": 0,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Genetic"
+    ],
+    "script": {
+      "atk": [
+        "100"
+      ],
+      "aspdPercent": [
+        "7===7"
+      ],
+      "p_class_all": [
+        "9===10"
+      ],
+      "aspd": [
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===1",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===1"
+      ],
+      "atkPercent": [
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===2",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===3"
+      ],
+      "Cart Tornado": [
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===15",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===15"
+      ]
+    }
+  },
+  "450102": {
+    "id": 450102,
+    "aegisName": "Grace_Rolling_Suit",
+    "name": "Grace Rolling Suit [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Grace_Rolling_Suit",
+    "description": "ชุดของ Guillotine Cross ระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nATK +100\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7, ASPD +7%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพระยะไกล 10%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Grace Attack Manteau, Grace Attack Boots, Grace Attack Ring,\nลด Delay หลังใช้สกิล 10%, ATK +2%, เพิ่ม Damage สกิล Rolling Cutter 15%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Grace Rolling Suit, Grace Attack Manteau, Grace Attack Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nลด Delay หลังใช้สกิลลงอีก 10%, ATK +3%, เพิ่ม Damage สกิล Rolling Cutter ขึ้นอีก 15%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^777777100^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Guillotine Cross^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 100,
+    "weight": 0,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Guillotine Cross"
+    ],
+    "script": {
+      "atk": [
+        "100"
+      ],
+      "aspdPercent": [
+        "7===7"
+      ],
+      "range": [
+        "9===10"
+      ],
+      "acd": [
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===10",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===10"
+      ],
+      "atkPercent": [
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===2",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===3"
+      ],
+      "Rolling Cutter": [
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===15",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===15"
+      ]
+    }
+  },
+  "450103": {
+    "id": 450103,
+    "aegisName": "Grace_Assasin_Suit",
+    "name": "Grace Assassin Suit [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Grace_Assasin_Suit",
+    "description": "ชุดของ Guillotine Cross ระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nATK +100\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7, ASPD +7%\nเมื่ออัพเกรดถึงขั้น 9, Critical Damage +10%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Grace Attack Manteau, Grace Attack Boots, Grace Attack Ring,\nASPD +1, Critical Damage +5%,  ATK +2% \n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Grace Assassin Suit, Grace Attack Manteau, Grace Attack Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nASPD +1, Critical Damage +5% เพิ่มเติม, ATK +3%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^777777100^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Guillotine Cross^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 100,
+    "weight": 0,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Guillotine Cross"
+    ],
+    "script": {
+      "atk": [
+        "100"
+      ],
+      "aspdPercent": [
+        "7===7"
+      ],
+      "criDmg": [
+        "9===10",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===5",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===5"
+      ],
+      "aspd": [
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===1",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===1"
+      ],
+      "atkPercent": [
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===2",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===3"
+      ]
+    }
+  },
+  "450104": {
+    "id": 450104,
+    "aegisName": "Grace_Fatal_Suit",
+    "name": "Grace Fatal Suit [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Grace_Fatal_Suit",
+    "description": "ชุดเกราะของ Shadow Chaser ระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nATK +100\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7, ASPD +7%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพต่อศัตรูทุกประเภท 10%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Grace Attack Manteau, Grace Attack Boots, Grace Attack Ring,\nลด Delay หลังใช้สกิล 10%, ATK +2%, เพิ่ม Damage สกิล Fatal Menace 15%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Grace Fatal Suit, Grace Attack Manteau, Grace Attack Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nลด Delay หลังใช้สกิลลงอีก 10%, ATK +3%, เพิ่ม Damage สกิล Fatal Menace ขึ้นอีก 15%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^777777100^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Shadow Chaser^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 100,
+    "weight": 0,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Shadow Chaser"
+    ],
+    "script": {
+      "atk": [
+        "100"
+      ],
+      "aspdPercent": [
+        "7===7"
+      ],
+      "p_class_all": [
+        "9===10"
+      ],
+      "acd": [
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===10",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===10"
+      ],
+      "atkPercent": [
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===2",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===3"
+      ],
+      "Fatal Manace": [
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===15",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===15"
+      ]
+    }
+  },
+  "450105": {
+    "id": 450105,
+    "aegisName": "Grace_Stalker_Suit",
+    "name": "Grace Stalker Suit [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Grace_Stalker_Suit",
+    "description": "ชุดเกราะของ Shadow Chaser ระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nMATK +100\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7, ASPD +7%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางเวทมนตร์ธาตุ Fire 10%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Grace Magic Manteau, Grace Magic Boots, Grace Magic Ring,\nASPD +1, MATK +2%, เพิ่ม Damage สกิล Meteor Storm 30%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Grace Stalker Suit, Grace Magic Manteau, Grace Magic Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nASPD +1, MATK +3%, เพิ่ม Damage สกิล Meteor Storm ขึ้นอีก 30%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^777777100^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Shadow Chaser^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 100,
+    "weight": 0,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Shadow Chaser"
+    ],
+    "script": {
+      "matk": [
+        "100"
+      ],
+      "aspdPercent": [
+        "7===7"
+      ],
+      "m_my_element_fire": [
+        "9===10"
+      ],
+      "aspd": [
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]===1",
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]REFINE[armor,garment,boot==27]===1"
+      ],
+      "matkPercent": [
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]===2",
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]REFINE[armor,garment,boot==27]===3"
+      ],
+      "Meteor Storm": [
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]===30",
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]REFINE[armor,garment,boot==27]===30"
+      ]
+    }
+  },
+  "450106": {
+    "id": 450106,
+    "aegisName": "Grace_Picky_Robe",
+    "name": "Grace Picky Robe [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Grace_Picky_Robe",
+    "description": "ชุดของ Summoner ระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nATK +100\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7 ลดระยะเวลาร่ายแบบแปรผัน 20%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพระยะไกล 10%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Grace Attack Manteau, Grace Attack Boots, Grace Attack Ring,\nลด Delay หลังใช้สกิล 10%, ATK +2%, เพิ่ม Damage สกิล Picky Peck 15%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Grace Picky Robe, Grace Attack Manteau, Grace Attack Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nลด Delay หลังใช้สกิลลงอีก 10%, ATK +3%, เพิ่ม Damage สกิล Picky Peck ขึ้นอีก 15%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^777777100^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Doram (Summoner)^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 100,
+    "weight": 0,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Doram"
+    ],
+    "script": {
+      "atk": [
+        "100"
+      ],
+      "vct": [
+        "7===20"
+      ],
+      "range": [
+        "9===10"
+      ],
+      "acd": [
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===10",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===10"
+      ],
+      "atkPercent": [
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===2",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===3"
+      ],
+      "Picky Peck": [
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===15",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===15"
+      ]
+    }
+  },
+  "450107": {
+    "id": 450107,
+    "aegisName": "Grace_Carrot_Robe",
+    "name": "Grace Catnip Robe [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Grace_Carrot_Robe",
+    "description": "ชุดของ Summoner ระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nMATK +100\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7 ลดระยะเวลาร่ายแบบแปรผัน 20%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางเวทมนตร์ธาตุ Neutral 10%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Grace Magic Manteau, Grace Magic Boots, Grace Magic Ring,\nลดระยะเวลาร่ายแบบแปรผัน 5%, MATK +2%, เพิ่ม Damage สกิล Catnip Meteor 15%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Grace Catnip Robe, Grace Magic Manteau, Grace Magic Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nลดระยะเวลาร่ายแบบแปรผันลงอีก 5%, MATK +3%, เพิ่ม Damage สกิล Catnip Meteor ขึ้นอีก 15%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^777777100^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Doram (Summoner)^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 100,
+    "weight": 0,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Doram"
+    ],
+    "script": {
+      "matk": [
+        "100"
+      ],
+      "vct": [
+        "7===20",
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]===5",
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]REFINE[armor,garment,boot==27]===5"
+      ],
+      "m_my_element_neutral": [
+        "9===10"
+      ],
+      "matkPercent": [
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]===2",
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]REFINE[armor,garment,boot==27]===3"
+      ],
+      "Catnip Meteor": [
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]===15",
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]REFINE[armor,garment,boot==27]===15"
+      ]
+    }
+  },
+  "450108": {
+    "id": 450108,
+    "aegisName": "Grace_Trip_Suit",
+    "name": "Grace Trip Suit [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Grace_Trip_Suit",
+    "description": "ชุดของ Rebellion ระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nATK +100\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7 ATK +10%.\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพระยะไกล 10%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Grace Attack Manteau, Grace Attack Boots, Grace Attack Ring,\nเพิ่ม Damage ทางกายภาพระยะไกล 5%, ATK +2%, เพิ่ม Damage สกิล Round Trip 15%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Grace Trip Suit, Grace Attack Manteau, Grace Attack Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nเพิ่ม Damage ทางกายภาพระยะไกลขึ้นอีก 5%, ATK +3%, เพิ่ม Damage สกิล Round Trip ขึ้นอีก 15%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^777777100^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Rebellion^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 100,
+    "weight": 0,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Rebellion"
+    ],
+    "script": {
+      "atk": [
+        "100"
+      ],
+      "atkPercent": [
+        "7===10",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===2",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===3"
+      ],
+      "range": [
+        "9===10",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===5",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===5"
+      ],
+      "Round Trip": [
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===15",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===15"
+      ]
+    }
+  },
+  "450109": {
+    "id": 450109,
+    "aegisName": "Grace_Firerain_Suit",
+    "name": "Grace Fire Rain Suit [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Grace_Firerain_Suit",
+    "description": "เครื่องแต่งกายของ Rebellion ระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nATK +100\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7, ATK +10%.\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพระยะไกล 10%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Grace Attack Manteau, Grace Attack Boots, Grace Attack Ring,\nASPD +1, ATK +2%, เพิ่ม Damage สกิล Fire Rain 15%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Grace Fire Rain Suit, Grace Attack Manteau, Grace Attack Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nASPD +1, ATK +3%, เพิ่ม Damage สกิล Fire Rain ขึ้นอีก 15%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^777777100^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Rebellion^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 100,
+    "weight": 0,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Rebellion"
+    ],
+    "script": {
+      "atk": [
+        "100"
+      ],
+      "atkPercent": [
+        "7===10",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===2",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===3"
+      ],
+      "range": [
+        "9===10"
+      ],
+      "aspd": [
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===1",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===1"
+      ],
+      "Fire Rain": [
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===15",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===15"
+      ]
+    }
+  },
+  "450110": {
+    "id": 450110,
+    "aegisName": "Grace_Crimson_Robe",
+    "name": "Grace Crimson Robe [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Grace_Crimson_Robe",
+    "description": "เสื้อคลุมของ Warlock ระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nATK +100\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7 ลดระยะเวลาร่ายแบบแปรผัน 20%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางเวทมนตร์ธาตุ Fire 10%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Grace Magic Manteau, Grace Magic Boots, Grace Magic Ring,\nลดระยะเวลาร่ายแบบแปรผัน 5%, MATK +2%, เพิ่ม Damage สกิล Crimson Rock 15%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Grace Crimson Robe, Grace Magic Manteau, Grace Magic Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nลดระยะเวลาร่ายแบบแปรผันลงอีก 5%, MATK +3%, เพิ่ม Damage สกิล Crimson Rock ขึ้นอีก 15%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^777777100^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Warlock^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 100,
+    "weight": 0,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Warlock"
+    ],
+    "script": {
+      "matk": [
+        "100"
+      ],
+      "vct": [
+        "7===20",
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]===5",
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]REFINE[armor,garment,boot==27]===5"
+      ],
+      "m_my_element_fire": [
+        "9===10"
+      ],
+      "matkPercent": [
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]===2",
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]REFINE[armor,garment,boot==27]===3"
+      ],
+      "Crimson Rock": [
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]===15",
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]REFINE[armor,garment,boot==27]===15"
+      ]
+    }
+  },
+  "450111": {
+    "id": 450111,
+    "aegisName": "Grace_Frost_Robe",
+    "name": "Grace Frost Robe [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Grace_Frost_Robe",
+    "description": "เสื้อคลุมของ Warlock ระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nMATK +100\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7 ลดระยะเวลาร่ายแบบแปรผัน 20%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางเวทมนตร์ธาตุ Water 10%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Grace Magic Manteau, Grace Magic Boots, Grace Magic Ring,\nลดระยะเวลาร่ายแบบแปรผัน 5%, MATK +2%, เพิ่ม Damage สกิล Jack Frost 15%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Grace Frost Robe, Grace Magic Manteau, Grace Magic Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nลดระยะเวลาร่ายแบบแปรผันลงอีก 5%, MATK +3%, เพิ่ม Damage สกิล Jack Frost ขึ้นอีก 15%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^777777100^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Warlock^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 100,
+    "weight": 0,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Warlock"
+    ],
+    "script": {
+      "matk": [
+        "100"
+      ],
+      "vct": [
+        "7===20",
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]===5",
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]REFINE[armor,garment,boot==27]===5"
+      ],
+      "m_my_element_water": [
+        "9===10"
+      ],
+      "matkPercent": [
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]===2",
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]REFINE[armor,garment,boot==27]===3"
+      ],
+      "Jack Frost": [
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]===15",
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]REFINE[armor,garment,boot==27]===15"
+      ]
+    }
+  },
+  "450112": {
+    "id": 450112,
+    "aegisName": "Grace_Psychic_Robe",
+    "name": "Grace Psychic Robe [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Grace_Psychic_Robe",
+    "description": "เสื้อคลุมของ Sorcerer ระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nMATK +100\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7 ลดระยะเวลาร่ายแบบแปรผัน 20%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางเวทมนตร์ธาตุ Neutral 10%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Grace Magic Manteau, Grace Magic Boots, Grace Magic Ring,\nลดระยะเวลาร่ายแบบแปรผัน 5%, MATK +2%, เพิ่ม Damage สกิล Psychic Wave 15%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Grace Psychic Robe, Grace Magic Manteau, Grace Magic Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nลดระยะเวลาร่ายแบบแปรผันลงอีก 5%, MATK +3%, เพิ่ม Damage สกิล Psychic Wave ขึ้นอีก 15%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^777777100^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Sorcerer^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 100,
+    "weight": 0,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Sorcerer"
+    ],
+    "script": {
+      "matk": [
+        "100"
+      ],
+      "vct": [
+        "7===20",
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]===5",
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]REFINE[armor,garment,boot==27]===5"
+      ],
+      "m_my_element_neutral": [
+        "9===10"
+      ],
+      "matkPercent": [
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]===2",
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]REFINE[armor,garment,boot==27]===3"
+      ],
+      "Psychic Wave": [
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]===15",
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]REFINE[armor,garment,boot==27]===15"
+      ]
+    }
+  },
+  "450113": {
+    "id": 450113,
+    "aegisName": "Grace_Dust_Robe",
+    "name": "Grace Dust Robe [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Grace_Dust_Robe",
+    "description": "เสื้อคลุมของ Sorcerer ระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nMATK +100\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7 ลดระยะเวลาร่ายแบบแปรผัน 20%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางเวทมนตร์ธาตุ Water 10%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Grace Magic Manteau, Grace Magic Boots, Grace Magic Ring,\nลดระยะเวลาร่ายแบบแปรผัน 5%, MATK +2%, เพิ่ม Damage สกิล Diamond Dust 15%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Grace Dust Robe, Grace Magic Manteau, Grace Magic Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nลดระยะเวลาร่ายแบบแปรผันลงอีก 5%, MATK +3%, เพิ่ม Damage สกิล Diamond Dust ขึ้นอีก 15%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^777777100^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Sorcerer^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 100,
+    "weight": 0,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Sorcerer"
+    ],
+    "script": {
+      "matk": [
+        "100"
+      ],
+      "vct": [
+        "7===20",
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]===5",
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]REFINE[armor,garment,boot==27]===5"
+      ],
+      "m_my_element_water": [
+        "9===10"
+      ],
+      "matkPercent": [
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]===2",
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]REFINE[armor,garment,boot==27]===3"
+      ],
+      "Diamond Dust": [
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]===15",
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]REFINE[armor,garment,boot==27]===15"
+      ]
+    }
+  },
+  "450114": {
+    "id": 450114,
+    "aegisName": "Grace_Sun_Suit",
+    "name": "Grace Sun Suit [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Grace_Sun_Suit",
+    "description": "เครื่องแบบของ Star Emperor ระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nATK +100\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7, ASPD +7%\nเมื่ออัพเกรดถึงขั้น 9, ATK +10%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Grace Attack Manteau, Grace Attack Boots, Grace Attack Ring,\nASPD +1, ATK +2%, เพิ่ม Damage สกิล Solar Explosion 15%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Grace Sun Suit, Grace Attack Manteau, Grace Attack Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nASPD +1, ATK +3%, เพิ่ม Damage สกิล Solar Explosion ขึ้นอีก 15%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^777777100^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Star Emperor^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 100,
+    "weight": 0,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Star Emperor"
+    ],
+    "script": {
+      "atk": [
+        "100"
+      ],
+      "aspdPercent": [
+        "7===7"
+      ],
+      "atkPercent": [
+        "9===10",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===2",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===3"
+      ],
+      "aspd": [
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===1",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===1"
+      ],
+      "Solar Explosion": [
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===15",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===15"
+      ]
+    }
+  },
+  "450115": {
+    "id": 450115,
+    "aegisName": "Grace_Moon_Suit",
+    "name": "Grace Moon Suit [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Grace_Moon_Suit",
+    "description": "เครื่องแบบของ Star Emperor ระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nATK +100\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางกายภาพต่อศัตรูทุกประเภท 10%\nเมื่ออัพเกรดถึงขั้น 9, ATK +10%.\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Grace Attack Manteau, Grace Attack Boots, Grace Attack Ring,\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกประเภท 5%, ATK +2%, เพิ่ม Damage สกิล Full Moon Kick 15%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Grace Moon Suit, Grace Attack Manteau, Grace Attack Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกประเภทขึ้นอีก 5%, ATK +3%, เพิ่ม Damage สกิล Full Moon Kick ขึ้นอีก 15%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^777777100^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Star Emperor^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 100,
+    "weight": 0,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Star Emperor"
+    ],
+    "script": {
+      "atk": [
+        "100"
+      ],
+      "p_class_all": [
+        "7===10",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===5",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===5"
+      ],
+      "atkPercent": [
+        "9===10",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===2",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===3"
+      ],
+      "Full Moon Kick": [
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===15",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===15"
+      ]
+    }
+  },
+  "450116": {
+    "id": 450116,
+    "aegisName": "Grace_Ninja_Suit",
+    "name": "Grace Ninja Suit [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Grace_Ninja_Suit",
+    "description": "เครื่องแบบของ Ninja ระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nMATK +100\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7 ลดระยะเวลาร่ายแบบแปรผัน 20%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางเวทมนตร์ทุกธาตุ 10%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Grace Magic Manteau, Grace Magic Boots, Grace Magic Ring,\nลดระยะเวลาร่ายแบบแปรผัน 5%, MATK +2%, เพิ่ม Damage สกิล Flaming Petals, Freezing Spear, Wind Blade 15%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Grace Ninja Suit, Grace Magic Manteau, Grace Magic Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nลดระยะเวลาร่ายแบบแปรผันลงอีก 5%, MATK +3%, เพิ่ม Damage สกิล Flaming Petals, Freezing Spear, Wind Blade ขึ้นอีก 15%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^777777100^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Ninja^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 100,
+    "weight": 0,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Ninja"
+    ],
+    "script": {
+      "matk": [
+        "100"
+      ],
+      "vct": [
+        "7===20",
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]===5",
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]REFINE[armor,garment,boot==27]===5"
+      ],
+      "m_my_element_all": [
+        "9===10"
+      ],
+      "matkPercent": [
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]===2",
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]REFINE[armor,garment,boot==27]===3"
+      ],
+      "Flaming Petals": [
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]===15",
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]REFINE[armor,garment,boot==27]===15"
+      ],
+      "Freezing Spear": [
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]===15",
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]REFINE[armor,garment,boot==27]===15"
+      ],
+      "Wind Blade": [
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]===15",
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]REFINE[armor,garment,boot==27]===15"
+      ]
+    }
+  },
+  "450117": {
+    "id": 450117,
+    "aegisName": "Grace_Kunai_Suit",
+    "name": "Grace Kunai Suit [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Grace_Kunai_Suit",
+    "description": "เครื่องแบบของ Ninja ระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nATK +100\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7, ATK +10%.\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพระยะไกล 10%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Grace Attack Manteau, Grace Attack Boots, Grace Attack Ring,\nเพิ่ม Damage ทางกายภาพระยะไกล 5%, ATK +2%, เพิ่ม Damage สกิล Kunai Splash 15%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Grace Kunai Suit, Grace Attack Manteau, Grace Attack Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nเพิ่ม Damage ทางกายภาพระยะไกลขึ้นอีก 5%, ATK +3%, เพิ่ม Damage สกิล Kunai Splash ขึ้นอีก 15%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^777777100^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Ninja^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 100,
+    "weight": 0,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Ninja"
+    ],
+    "script": {
+      "atk": [
+        "100"
+      ],
+      "atkPercent": [
+        "7===10",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===2",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===3"
+      ],
+      "range": [
+        "9===10",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===5",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===5"
+      ],
+      "Kunai Splash": [
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===15",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===15"
+      ]
+    }
+  },
+  "450118": {
+    "id": 450118,
+    "aegisName": "Grace_Swhoo_Robe",
+    "name": "Grace Eswhoo Robe [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Grace_Swhoo_Robe",
+    "description": "เสื้อคลุมของ Soul Reaper ระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nMATK +100\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางเวทมนตร์ธาตุ Shadow 10%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางเวทมนตร์ธาตุ Shadow 10%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Grace Magic Manteau, Grace Magic Boots, Grace Magic Ring,\nลดระยะเวลาร่ายแบบแปรผัน 5%, MATK +2%, เพิ่ม Damage สกิล Eswhoo 15%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Grace Eswhoo Robe, Grace Magic Manteau, Grace Magic Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nลดระยะเวลาร่ายแบบแปรผันลงอีก 5%, MATK +3%, เพิ่ม Damage สกิล Eswhoo ขึ้นอีก 15% \n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^777777100^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Soul Reaper^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 100,
+    "weight": 0,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Soul Reaper"
+    ],
+    "script": {
+      "matk": [
+        "100"
+      ],
+      "m_my_element_dark": [
+        "7===10",
+        "9===10"
+      ],
+      "vct": [
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]===5",
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]REFINE[armor,garment,boot==27]===5"
+      ],
+      "matkPercent": [
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]===2",
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]REFINE[armor,garment,boot==27]===3"
+      ],
+      "Eswhoo": [
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]===15",
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]REFINE[armor,garment,boot==27]===15"
+      ]
+    }
+  },
+  "450119": {
+    "id": 450119,
+    "aegisName": "Grace_Explosion_Robe",
+    "name": "Grace Explosion Robe [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Grace_Explosion_Robe",
+    "description": "เสื้อคลุมของ Soul Reaper ระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nMATK +100\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางเวทมนตร์ธาตุ Shadow 10%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางเวทมนตร์ธาตุ Shadow 10%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Grace Magic Manteau, Grace Magic Boots, Grace Magic Ring,\nลดระยะเวลาร่ายแบบแปรผัน 5%, MATK +2%, เพิ่ม Damage สกิล Curse Explosion 15%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Grace Explosion Robe, Grace Magic Manteau, Grace Magic Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nลดระยะเวลาร่ายแบบแปรผันลงอีก 5%, MATK +3%, เพิ่ม Damage สกิล Curse Explosion ขึ้นอีก 15%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^777777100^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Soul Reaper^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 100,
+    "weight": 0,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Soul Reaper"
+    ],
+    "script": {
+      "matk": [
+        "100"
+      ],
+      "m_my_element_dark": [
+        "7===10",
+        "9===10"
+      ],
+      "vct": [
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]===5",
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]REFINE[armor,garment,boot==27]===5"
+      ],
+      "matkPercent": [
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]===2",
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]REFINE[armor,garment,boot==27]===3"
+      ],
+      "Curse Explosion": [
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]===15",
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]REFINE[armor,garment,boot==27]===15"
+      ]
+    }
+  },
+  "450125": {
+    "id": 450125,
+    "aegisName": "Grace_Snovice_Suit",
+    "name": "Grace Super Novice Suit [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Grace_Snovice_Suit",
+    "description": "เกราะของ Super Novice ระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nATK +100\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7, ASPD +7%\nเมื่ออัพเกรดถึงขั้น 9, MaxHP +10%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Grace Attack Manteau, Grace Attack Boots, Grace Attack Ring,\nMaxHP +5%, ATK +2%, Critical Damage +5%\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Grace Super Novice Shoes, Grace Attack Manteau, Grace Attack Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nMaxHP +5%, ATK +3%, Critical Damage +5% เพิ่มเติม\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^777777100^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Novice^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 100,
+    "weight": 0,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Novice"
+    ],
+    "script": {
+      "atk": [
+        "100"
+      ],
+      "aspdPercent": [
+        "7===7"
+      ],
+      "hpPercent": [
+        "9===10",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===5",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===5"
+      ],
+      "atkPercent": [
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===2",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===3"
+      ],
+      "criDmg": [
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]===5",
+        "EQUIP[Grace Attack Manteau&&Grace Attack Boots&&Grace Attack Ring]REFINE[armor,garment,boot==27]===5"
+      ]
+    }
+  },
+  "450126": {
+    "id": 450126,
+    "aegisName": "Grace_Snovice_Robe",
+    "name": "Grace Super Novice Robe [1]",
+    "unidName": "Cotton Shirt",
+    "resName": "Grace_Snovice_Robe",
+    "description": "เสื้อคลุมของ Super Novice ระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nMATK +100\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7 ASPD +7%\nเมื่ออัพเกรดถึงขั้น 9, MaxHP +10%\n^ffffff_^000000\nเมื่อสวมใส่ร่วมกับ Grace Magic Manteau, Grace Magic Boots, Grace Magic Ring,\nMaxHP +5%, MATK +2%, เมื่อโจมตีทางกายภาพระยะใกล้ มีโอกาสที่จะใช้สกิล Psychic Wave Lv. 1\n^ffffff_^000000\nเมื่อค่าอัพเกรดของ Grace Super Novice Robe, Grace Magic Manteau, Grace Magic Boots รวมกันตั้งแต่ 27 ขึ้นไป,\nMaxHP +5%, MATK +3%, เพิ่ม Damage สกิล Psychic Wave ขึ้นอีก 10%\n^ffffff_^000000\nประเภท : ^777777Armor^000000  พลังป้องกัน : ^777777100^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777Novice^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 513,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 100,
+    "weight": 0,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Novice"
+    ],
+    "script": {
+      "matk": [
+        "100"
+      ],
+      "aspdPercent": [
+        "7===7"
+      ],
+      "hpPercent": [
+        "9===10",
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]===5",
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]REFINE[armor,garment,boot==27]===5"
+      ],
+      "matkPercent": [
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]===2",
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]REFINE[armor,garment,boot==27]===3"
+      ],
+      "Psychic Wave": [
+        "EQUIP[Grace Magic Manteau&&Grace Magic Boots&&Grace Magic Ring]REFINE[armor,garment,boot==27]===10"
+      ]
+    }
+  },
   "450127": {
     "id": 450127,
     "aegisName": "Auto_Armor_A",
@@ -74044,6 +75577,76 @@
       ],
       "m_pene_race_all": [
         "LEARN_SKILL[Nyang Grass==5]100"
+      ]
+    }
+  },
+  "470020": {
+    "id": 470020,
+    "aegisName": "Grace_Attack_Boots",
+    "name": "Grace Attack Boots [1]",
+    "unidName": "Shoes",
+    "resName": "Grace_Attack_Boots",
+    "description": "รองเท้าระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nATK +20, HIT +20\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7 ลดระยะเวลาร่ายแบบคงที่ 0.5 วินาที\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพระยะไกล 10%\n^ffffff_^000000\nประเภท : ^777777Shoes^000000  พลังป้องกัน : ^77777730^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 516,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 30,
+    "weight": 0,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atk": [
+        "20"
+      ],
+      "hit": [
+        "20"
+      ],
+      "fct": [
+        "7===0.5"
+      ],
+      "range": [
+        "9===10"
+      ]
+    }
+  },
+  "470021": {
+    "id": 470021,
+    "aegisName": "Grace_Magic_Boots",
+    "name": "Grace Magic Boots [1]",
+    "unidName": "Shoes",
+    "resName": "Grace_Magic_Boots",
+    "description": "รองเท้าระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nMATK +20, FLEE +20\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7 ลดระยะเวลาร่ายแบบคงที่ 0.5 วินาที\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางเวทมนตร์ทุกธาตุ 10%\n^ffffff_^000000\nประเภท : ^777777Shoes^000000  พลังป้องกัน : ^77777730^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 516,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 30,
+    "weight": 0,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "matk": [
+        "20"
+      ],
+      "flee": [
+        "20"
+      ],
+      "fct": [
+        "7===0.5"
+      ],
+      "m_my_element_all": [
+        "9===10"
       ]
     }
   },
@@ -75070,6 +76673,70 @@
         "7===5"
       ],
       "acd": [
+        "9===10"
+      ]
+    }
+  },
+  "480018": {
+    "id": 480018,
+    "aegisName": "Grace_Attack_Manteau",
+    "name": "Grace Attack Manteau [1]",
+    "unidName": "Hood",
+    "resName": "Grace_Attack_Manteau",
+    "description": "ผ้าคลุมระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nASPD +7%\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7 ลด Delay หลังใช้สกิล 5%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพต่อศัตรูทุกประเภท 10%\n^ffffff_^000000\nประเภท : ^777777Garment^000000  พลังป้องกัน : ^77777730^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 515,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 30,
+    "weight": 0,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "aspdPercent": [
+        "7"
+      ],
+      "acd": [
+        "7===5"
+      ],
+      "p_class_all": [
+        "9===10"
+      ]
+    }
+  },
+  "480019": {
+    "id": 480019,
+    "aegisName": "Grace_Magic_Manteau",
+    "name": "Grace Magic Manteau [1]",
+    "unidName": "Hood",
+    "resName": "Grace_Magic_Manteau",
+    "description": "ผ้าคลุมระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nลดระยะเวลาร่ายแบบแปรผัน 10%\n^ffffff_^000000\nเมื่ออัพเกรดถึงขั้น 7 ลด Delay หลังใช้สกิล 5%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางเวทมนตร์ทุกธาตุ 10%\n^ffffff_^000000\nประเภท : ^777777Garment^000000  พลังป้องกัน : ^77777730^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 515,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 30,
+    "weight": 0,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "vct": [
+        "10"
+      ],
+      "acd": [
+        "7===5"
+      ],
+      "m_my_element_all": [
         "9===10"
       ]
     }
@@ -76518,6 +78185,70 @@
       ],
       "acd": [
         "LEARN_SKILL[Lightning Ride==5]===5"
+      ]
+    }
+  },
+  "490019": {
+    "id": 490019,
+    "aegisName": "Grace_Attack_Ring",
+    "name": "Grace Attack Ring [1]",
+    "unidName": "Ring",
+    "resName": "Grace_Attack_Ring",
+    "description": "แหวนระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nASPD +7%\nลดระยะเวลาร่ายแบบแปรผัน 10%\nCritical Damage +10%\n^ffffff_^000000\nประเภท : ^777777Accessory (Right)^000000 พลังป้องกัน : ^77777710^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 510,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 10,
+    "weight": 0,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "aspdPercent": [
+        "7"
+      ],
+      "vct": [
+        "10"
+      ],
+      "criDmg": [
+        "10"
+      ]
+    }
+  },
+  "490020": {
+    "id": 490020,
+    "aegisName": "Grace_Magic_Ring",
+    "name": "Grace Magic Ring [1]",
+    "unidName": "Ring",
+    "resName": "Grace_Magic_Ring",
+    "description": "แหวนระดับสูงที่สลักลวดลายของ Rune Midgarts\n^ffffff_^000000\nASPD +7%\nลดระยะเวลาร่ายแบบแปรผัน 10%\nเพิ่ม Damage ทางเวทมนตร์ทุกธาตุ 10%\n^ffffff_^000000\nประเภท : ^777777Accessory (Right)^000000 พลังป้องกัน : ^77777710^000000\nน้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777150^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 510,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 10,
+    "weight": 0,
+    "requiredLevel": 150,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "aspdPercent": [
+        "7"
+      ],
+      "vct": [
+        "10"
+      ],
+      "m_my_element_all": [
+        "10"
       ]
     }
   },
