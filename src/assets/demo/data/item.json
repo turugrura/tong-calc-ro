@@ -60673,13 +60673,13 @@
       ],
       "Banishing Point": [
         "10",
-        "EQUIP[Verporta Card&&Senior Research Assistant Bot Card]===20",
-        "EQUIP[Verporta Card&&Senior Research Assistant Bot Card]REFINE[boot==2]---5"
+        "EQUIP[Verporta Card&&Senior Assistant Bot Card]===20",
+        "EQUIP[Verporta Card&&Senior Assistant Bot Card]REFINE[boot==2]---5"
       ],
       "Cannon Spear": [
         "10",
-        "EQUIP[Verporta Card&&Senior Research Assistant Bot Card]===20",
-        "EQUIP[Verporta Card&&Senior Research Assistant Bot Card]REFINE[weapon==2]---5"
+        "EQUIP[Verporta Card&&Senior Assistant Bot Card]===20",
+        "EQUIP[Verporta Card&&Senior Assistant Bot Card]REFINE[weapon==2]---5"
       ]
     }
   },
@@ -61562,13 +61562,13 @@
       ],
       "Psychic Wave": [
         "10",
-        "EQUIP[Blue Pitaya Card&&Research Assistant Bot Card]===20",
-        "EQUIP[Blue Pitaya Card&&Research Assistant Bot Card]REFINE[boot==2]---5"
+        "EQUIP[Blue Pitaya Card&&Assistant Bot Card]===20",
+        "EQUIP[Blue Pitaya Card&&Assistant Bot Card]REFINE[boot==2]---5"
       ],
       "Diamond Dust": [
         "10",
-        "EQUIP[Blue Pitaya Card&&Research Assistant Bot Card]===20",
-        "EQUIP[Blue Pitaya Card&&Research Assistant Bot Card]REFINE[weapon==2]---5"
+        "EQUIP[Blue Pitaya Card&&Assistant Bot Card]===20",
+        "EQUIP[Blue Pitaya Card&&Assistant Bot Card]REFINE[weapon==2]---5"
       ]
     }
   },
@@ -61602,13 +61602,13 @@
       ],
       "Crimson Rock": [
         "10",
-        "EQUIP[Red Pitaya Card&&Research Assistant Bot Card]===20",
-        "EQUIP[Red Pitaya Card&&Research Assistant Bot Card]REFINE[weapon==2]---5"
+        "EQUIP[Red Pitaya Card&&Assistant Bot Card]===20",
+        "EQUIP[Red Pitaya Card&&Assistant Bot Card]REFINE[weapon==2]---5"
       ],
       "Comet": [
         "10",
-        "EQUIP[Red Pitaya Card&&Research Assistant Bot Card]===20",
-        "EQUIP[Red Pitaya Card&&Research Assistant Bot Card]REFINE[boot==2]---5"
+        "EQUIP[Red Pitaya Card&&Assistant Bot Card]===20",
+        "EQUIP[Red Pitaya Card&&Assistant Bot Card]REFINE[boot==2]---5"
       ]
     }
   },
@@ -61769,13 +61769,13 @@
       ],
       "Kunai Explosion": [
         "10",
-        "EQUIP[Armed Guard Soheon Card&&Dried Rafflesia Card]===20",
-        "EQUIP[Armed Guard Soheon Card&&Dried Rafflesia Card]REFINE[boot==3]---5"
+        "EQUIP[Armed Guard Soheon Card&&Dry Rafflesia Card]===20",
+        "EQUIP[Armed Guard Soheon Card&&Dry Rafflesia Card]REFINE[boot==3]---5"
       ],
       "Cross Slash": [
         "10",
-        "EQUIP[Armed Guard Soheon Card&&Dried Rafflesia Card]===20",
-        "EQUIP[Armed Guard Soheon Card&&Dried Rafflesia Card]REFINE[boot==3]---5"
+        "EQUIP[Armed Guard Soheon Card&&Dry Rafflesia Card]===20",
+        "EQUIP[Armed Guard Soheon Card&&Dry Rafflesia Card]REFINE[boot==3]---5"
       ]
     }
   },
@@ -61809,18 +61809,18 @@
       ],
       "Flaming Petals": [
         "10",
-        "EQUIP[E-EA1L Card&&Dried Rafflesia Card]===20",
-        "EQUIP[E-EA1L Card&&Dried Rafflesia Card]REFINE[boot==3]---5"
+        "EQUIP[E-EA1L Card&&Dry Rafflesia Card]===20",
+        "EQUIP[E-EA1L Card&&Dry Rafflesia Card]REFINE[boot==3]---5"
       ],
       "Freezing Spear": [
         "10",
-        "EQUIP[E-EA1L Card&&Dried Rafflesia Card]===20",
-        "EQUIP[E-EA1L Card&&Dried Rafflesia Card]REFINE[boot==3]---5"
+        "EQUIP[E-EA1L Card&&Dry Rafflesia Card]===20",
+        "EQUIP[E-EA1L Card&&Dry Rafflesia Card]REFINE[boot==3]---5"
       ],
       "Wind Blade": [
         "10",
-        "EQUIP[E-EA1L Card&&Dried Rafflesia Card]===20",
-        "EQUIP[E-EA1L Card&&Dried Rafflesia Card]REFINE[boot==3]---5"
+        "EQUIP[E-EA1L Card&&Dry Rafflesia Card]===20",
+        "EQUIP[E-EA1L Card&&Dry Rafflesia Card]REFINE[boot==3]---5"
       ]
     }
   },
@@ -64253,7 +64253,7 @@
   "310084": {
     "id": 310084,
     "aegisName": "Automatic_Orb3",
-    "name": "Automatic Modification Orb (Vit)",
+    "name": "Automatic (Vit)",
     "unidName": "Automatic Modification Orb (Vit)",
     "resName": "마법석수",
     "description": "VIT + 3, MHP + 1%",
@@ -64280,7 +64280,7 @@
   "310085": {
     "id": 310085,
     "aegisName": "Automatic_Orb4",
-    "name": "Automatic Modification Orb (Luk)",
+    "name": "Automatic (Luk)",
     "unidName": "Automatic Modification Orb (Luk)",
     "resName": "마법석수",
     "description": "LUK + 3, Critical Damage + 1%",
@@ -64307,7 +64307,7 @@
   "310086": {
     "id": 310086,
     "aegisName": "Automatic_Orb5",
-    "name": "Automatic Modification Orb (Str)",
+    "name": "Automatic (Str)",
     "unidName": "Automatic Modification Orb (Str)",
     "resName": "마법석수",
     "description": "STR + 3, ATK + 2%",
@@ -64334,7 +64334,7 @@
   "310087": {
     "id": 310087,
     "aegisName": "Automatic_Orb6",
-    "name": "Automatic Modification Orb (Agi)",
+    "name": "Automatic (Agi)",
     "unidName": "Automatic Modification Orb (Agi)",
     "resName": "마법석수",
     "description": "AGI + 3, ASPD + 2%",
@@ -64361,7 +64361,7 @@
   "310088": {
     "id": 310088,
     "aegisName": "Automatic_Orb7",
-    "name": "Automatic Modification Orb (Int)",
+    "name": "Automatic (Int)",
     "unidName": "Automatic Modification Orb (Int)",
     "resName": "마법석수",
     "description": "INT + 3, MATK + 2%",
@@ -64388,7 +64388,7 @@
   "310089": {
     "id": 310089,
     "aegisName": "Automatic_Orb8",
-    "name": "Automatic Modification Orb (Dex)",
+    "name": "Automatic (Dex)",
     "unidName": "Automatic Modification Orb (Dex)",
     "resName": "마법석수",
     "description": "DEX + 3, เพิ่ม Damage ทางกายภาพระยะไกล 2%",
@@ -64415,7 +64415,7 @@
   "310092": {
     "id": 310092,
     "aegisName": "Automatic_Orb11",
-    "name": "Automatic Modification Orb (Spell)",
+    "name": "Automatic (Spell)",
     "unidName": "Automatic Modification Orb (Spell)",
     "resName": "마법석암",
     "description": "MATK + 20, ลดระยะเวลาร่ายแบบแปรผัน 10%",
@@ -64442,7 +64442,7 @@
   "310093": {
     "id": 310093,
     "aegisName": "Automatic_Orb12",
-    "name": "Automatic Modification Orb (Attack Speed)",
+    "name": "Automatic (Attack Speed)",
     "unidName": "Automatic Modification Orb (Attack Speed)",
     "resName": "마법석암",
     "description": "ATK + 20, ASPD + 10%",
@@ -64469,7 +64469,7 @@
   "310094": {
     "id": 310094,
     "aegisName": "Automatic_Orb13",
-    "name": "Automatic Modification Orb (Fatal)",
+    "name": "Automatic (Fatal)",
     "unidName": "Automatic Modification Orb (Fatal)",
     "resName": "마법석암",
     "description": "CRI + 10, Critical Damage + 10%",
@@ -64496,7 +64496,7 @@
   "310095": {
     "id": 310095,
     "aegisName": "Automatic_Orb14",
-    "name": "Automatic Modification Orb (Expert Archer)",
+    "name": "Automatic (Expert Archer)",
     "unidName": "Automatic Modification Orb (Expert Archer)",
     "resName": "마법석암",
     "description": "HIT + 10, เพิ่ม Damage ทางกายภาพระยะไกล 10%",
@@ -64523,7 +64523,7 @@
   "310096": {
     "id": 310096,
     "aegisName": "Automatic_Orb15",
-    "name": "Automatic Modification Orb (Vital)",
+    "name": "Automatic (Vital)",
     "unidName": "Automatic Modification Orb (Vital)",
     "resName": "마법석암",
     "description": "MHP + 5%, MHP + 1500\nเมื่ออัพเกรดถึงขั้น 9, MHP + 2% เพิ่มเติม\nเมื่ออัพเกรดถึงขั้น 11, MHP + 3% เพิ่มเติม",
@@ -64552,7 +64552,7 @@
   "310097": {
     "id": 310097,
     "aegisName": "Automatic_Orb16",
-    "name": "Automatic Modification Orb (SPR)",
+    "name": "Automatic (SPR)",
     "unidName": "Automatic Modification Orb (SPR)",
     "resName": "마법석암",
     "description": "MSP + 5%, MSP + 300\nเมื่ออัพเกรดถึงขั้น 9, MSP + 2% เพิ่มเติม\nเมื่ออัพเกรดถึงขั้น 11, MSP + 3% เพิ่มเติม",
@@ -64581,7 +64581,7 @@
   "310099": {
     "id": 310099,
     "aegisName": "Automatic_Orb18",
-    "name": "Automatic Modification Orb (Attack Power)",
+    "name": "Automatic (Attack Power)",
     "unidName": "Automatic Modification Orb (Attack Power)",
     "resName": "마법석암",
     "description": "ATK + 5%, ATK + 75\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพระยะใกล้ 2%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage ทางกายภาพระยะใกล้ขึ้นอีก 3%",
@@ -64612,7 +64612,7 @@
   "310100": {
     "id": 310100,
     "aegisName": "Automatic_Orb19",
-    "name": "Automatic Modification Orb (Magic Power)",
+    "name": "Automatic (Magic Power)",
     "unidName": "Automatic Modification Orb (Magic Power)",
     "resName": "마법석암",
     "description": "MATK + 5%, MATK + 75\nเมื่ออัพเกรดถึงขั้น 9, MATK + 2% เพิ่มเติม\nเมื่ออัพเกรดถึงขั้น 11, MATK + 3% เพิ่มเติม",
@@ -64641,7 +64641,7 @@
   "310101": {
     "id": 310101,
     "aegisName": "Automatic_Orb20",
-    "name": "Automatic Modification Orb (Shooter)",
+    "name": "Automatic (Shooter)",
     "unidName": "Automatic Modification Orb (Shooter)",
     "resName": "마법석암",
     "description": "เพิ่ม Damage ทางกายภาพระยะไกล 3%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพระยะไกลขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage ทางกายภาพระยะไกลขึ้นอีก 3%",
@@ -64667,7 +64667,7 @@
   "310102": {
     "id": 310102,
     "aegisName": "Automatic_Orb21",
-    "name": "Automatic Modification Orb (Fast)",
+    "name": "Automatic (Fast)",
     "unidName": "Automatic Modification Orb (Fast)",
     "resName": "마법석암",
     "description": "ASPD + 1\nเมื่ออัพเกรดถึงขั้น 9, ASPD + 5%\nเมื่ออัพเกรดถึงขั้น 11, ASPD + 5% เพิ่มเติม",
@@ -64695,7 +64695,7 @@
   "310103": {
     "id": 310103,
     "aegisName": "Automatic_Orb22",
-    "name": "Automatic Modification Orb (Caster)",
+    "name": "Automatic (Caster)",
     "unidName": "Automatic Modification Orb (Caster)",
     "resName": "마법석암",
     "description": "ลดระยะเวลาร่ายแบบแปรผัน 5%\nเมื่ออัพเกรดถึงขั้น 9 ลดระยะเวลาร่ายแบบแปรผันลงอีก 5%\nเมื่ออัพเกรดถึงขั้น 11 ลดระยะเวลาร่ายแบบแปรผันลงอีก 5%",
@@ -64721,7 +64721,7 @@
   "310104": {
     "id": 310104,
     "aegisName": "Automatic_Orb23",
-    "name": "Automatic Modification Orb (Critical)",
+    "name": "Automatic (Critical)",
     "unidName": "Automatic Modification Orb (Critical)",
     "resName": "마법석암",
     "description": "CRI + 10\nเมื่ออัพเกรดถึงขั้น 9, Critical Damage + 5%\nเมื่ออัพเกรดถึงขั้น 11, Critical Damage + 7% เพิ่มเติม",
@@ -64749,7 +64749,7 @@
   "310105": {
     "id": 310105,
     "aegisName": "Automatic_Orb24",
-    "name": "Automatic Modification Orb (Magical Force)",
+    "name": "Automatic (Magical Force)",
     "unidName": "Automatic Modification Orb (Magical Force)",
     "resName": "마법석화",
     "description": "MATK + 20, ลดระยะเวลาร่ายแบบแปรผัน 10%, เพิ่ม Damage ทางเวทมนตร์ทุกธาตุ 2%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางเวทมนตร์ทุกธาตุขึ้นอีก 1%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage ทางเวทมนตร์ทุกธาตุขึ้นอีก 2%",
@@ -64781,7 +64781,7 @@
   "310106": {
     "id": 310106,
     "aegisName": "Automatic_Orb25",
-    "name": "Automatic Modification Orb (Attacker Force)",
+    "name": "Automatic (Attacker Force)",
     "unidName": "Automatic Modification Orb (Attacker Force)",
     "resName": "마법석화",
     "description": "ATK + 20, เพิ่ม Damage ทางกายภาพระยะใกล้ 10%, เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 3%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาดขึ้นอีก 1%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาดขึ้นอีก 1%",
@@ -64813,7 +64813,7 @@
   "310107": {
     "id": 310107,
     "aegisName": "Automatic_Orb26",
-    "name": "Automatic Modification Orb (Range Force)",
+    "name": "Automatic (Range Force)",
     "unidName": "Automatic Modification Orb (Range Force)",
     "resName": "마법석지",
     "description": "ATK + 20, เพิ่ม Damage ทางกายภาพระยะไกล 10%, เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 3%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาดขึ้นอีก 1%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาดขึ้นอีก 1%",
@@ -64845,7 +64845,7 @@
   "310108": {
     "id": 310108,
     "aegisName": "Automatic_Orb27",
-    "name": "Automatic Modification Orb (Critical Force)",
+    "name": "Automatic (Critical Force)",
     "unidName": "Automatic Modification Orb (Critical Force)",
     "resName": "마법석화",
     "description": "CRI + 5, Critical Damage + 10%, เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 3%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาดขึ้นอีก 1%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาดขึ้นอีก 1%",
@@ -64877,7 +64877,7 @@
   "310109": {
     "id": 310109,
     "aegisName": "Automatic_Orb28",
-    "name": "Automatic Modification Orb (Recovery Force)",
+    "name": "Automatic (Recovery Force)",
     "unidName": "Automatic Modification Orb (Recovery Force)",
     "resName": "마법석화",
     "description": "MATK + 20, ลดระยะเวลาร่ายแบบแปรผัน 10%, เพิ่มปริมาณฟื้นฟูด้วย Heal 5%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่มปริมาณฟื้นฟูด้วย Heal ขึ้นอีก 5%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่มปริมาณฟื้นฟูด้วย Heal ขึ้นอีก 5%",
@@ -64903,7 +64903,7 @@
   "310110": {
     "id": 310110,
     "aegisName": "Automatic_Orb29",
-    "name": "Automatic Modification Orb (Global Cooldown)",
+    "name": "Automatic (Global Cooldown)",
     "unidName": "Automatic Modification Orb (Global Cooldown)",
     "resName": "마법석화",
     "description": "ลด Delay หลังใช้สกิล 4%\nเมื่ออัพเกรดถึงขั้น 9 ลด Delay หลังใช้สกิลลงอีก 6%\nเมื่ออัพเกรดถึงขั้น 11 ลด Delay หลังใช้สกิลลงอีก 6%",
@@ -64928,7 +64928,7 @@
   "310111": {
     "id": 310111,
     "aegisName": "Automatic_Orb30",
-    "name": "Automatic Modification Orb (Fixed Casting)",
+    "name": "Automatic (Fixed Casting)",
     "unidName": "Automatic Modification Orb (Fixed Casting)",
     "resName": "마법석화",
     "description": "ลดระยะเวลาร่ายแบบคงที่ 0.1 วินาที\nเมื่ออัพเกรดถึงขั้น 9 ลดระยะเวลาร่ายแบบคงที่ลงอีก 0.2 วินาที\nเมื่ออัพเกรดถึงขั้น 11 ลดระยะเวลาร่ายแบบคงที่ลงอีก 0.5 วินาที",
@@ -64953,7 +64953,7 @@
   "310117": {
     "id": 310117,
     "aegisName": "Automatic_Orb36",
-    "name": "Automatic Modification Orb (Power Force)",
+    "name": "Automatic (Power Force)",
     "unidName": "Automatic Modification Orb (Power Force)",
     "resName": "마법석화",
     "description": "ATK + 3%, MATK + 3%\nเมื่ออัพเกรดถึงขั้น 9, ATK + 3%, MATK + 3% เพิ่มเติม\nเมื่ออัพเกรดถึงขั้น 11, ATK + 4%, MATK + 4% เพิ่มเติม",
@@ -64983,7 +64983,7 @@
   "310118": {
     "id": 310118,
     "aegisName": "Automatic_Orb37",
-    "name": "Automatic Modification Orb (Robust)",
+    "name": "Automatic (Robust)",
     "unidName": "Automatic Modification Orb (Robust)",
     "resName": "마법석화",
     "description": "MHP + 2000, MSP + 300, MHP + 5%, MSP + 5%\nเมื่ออัพเกรดถึงขั้น 9, MHP + 2%, MSP + 2% เพิ่มเติม\nเมื่ออัพเกรดถึงขั้น 11, MHP + 3%, MSP + 3% เพิ่มเติม",
@@ -65019,7 +65019,7 @@
   "310119": {
     "id": 310119,
     "aegisName": "Automatic_Orb38",
-    "name": "Automatic Modification Orb (Powerful)",
+    "name": "Automatic (Powerful)",
     "unidName": "Automatic Modification Orb (Powerful)",
     "resName": "마법석화",
     "description": "เพิ่ม Damage ทางกายภาพระยะใกล้/ระยะไกล 5%, เพิ่ม Damage ทางเวทมนตร์ทุกธาตุ 5%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพระยะใกล้/ระยะไกลขึ้นอีก 2%, เพิ่ม Damage ทางเวทมนตร์ทุกธาตุขึ้นอีก 2%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage ทางกายภาพระยะใกล้/ระยะไกลขึ้นอีก 3%, เพิ่ม Damage ทางเวทมนตร์ทุกธาตุขึ้นอีก 3%",
@@ -65054,7 +65054,7 @@
   "310120": {
     "id": 310120,
     "aegisName": "Automatic_Orb39",
-    "name": "Automatic Modification Orb (All Force)",
+    "name": "Automatic (All Force)",
     "unidName": "Automatic Modification Orb (All Force)",
     "resName": "마법석화",
     "description": "เพิ่ม Damage ทางกายภาพระยะใกล้/ระยะไกล 5%, เพิ่ม Damage ทางเวทมนตร์ทุกธาตุ 5%",
@@ -65083,7 +65083,7 @@
   "310122": {
     "id": 310122,
     "aegisName": "Automatic_Orb41",
-    "name": "Automatic Orb (Spell Buster)",
+    "name": "Automatic (Spell Buster)",
     "unidName": "Automatic Orb (Spell Buster)",
     "resName": "마법석성",
     "description": "เมื่อโจมตีทางเวทมนตร์ มีโอกาส 3% ที่จะเกิด \"พายุเวทย์เสริมแกร่ง\" เป็นเวลา 10 วินาที\nพายุเวทย์เสริมแกร่ง : ทุก ๆ 10 วินาที INT + 50, MATK + 25%",
@@ -65110,7 +65110,7 @@
   "310123": {
     "id": 310123,
     "aegisName": "Automatic_Orb42",
-    "name": "Automatic Orb (Firing Shot)",
+    "name": "Automatic (Firing Shot)",
     "unidName": "Automatic Orb (Firing Shot)",
     "resName": "마법석성",
     "description": "เมื่อโจมตีทางกายภาพ มีโอกาส 3% ที่จะเกิด \"นักแม่นปืนเสริมแกร่ง\" เป็นเวลา 10 วินาที\nนักแม่นปืนเสริมแกร่ง : DEX + 50, เพิ่ม Damage ทางกายภาพระยะไกล 15% เป็นเวลา 10 วินาที",
@@ -65137,7 +65137,7 @@
   "310124": {
     "id": 310124,
     "aegisName": "Automatic_Orb43",
-    "name": "Automatic Orb (Overpower)",
+    "name": "Automatic (Overpower)",
     "unidName": "Automatic Orb (Overpower)",
     "resName": "마법석성",
     "description": "เมื่อโจมตีทางกายภาพ มีโอกาส 3% ที่จะเกิด \"จิตวิญญาณการต่อสู้เสริมแกร่ง\" เป็นเวลา 10 วินาที\nจิตวิญญาณการต่อสู้เสริมแกร่ง : STR + 50, ATK + 15%, เพิ่ม Damage ทางกายภาพระยะใกล้ 10% เป็นเวลา 10 วินาที",
@@ -65167,7 +65167,7 @@
   "310125": {
     "id": 310125,
     "aegisName": "Automatic_Orb44",
-    "name": "Automatic Orb (Fatal Flash)",
+    "name": "Automatic (Fatal Flash)",
     "unidName": "Automatic Orb (Fatal Flash)",
     "resName": "마법석성",
     "description": "เมื่อโจมตีทางกายภาพ มีโอกาส 3% ที่จะเกิด \"ผู้คลั่งไคล้ความเร็วเสริมแกร่ง\" เป็นเวลา 10 วินาที\nผู้คลั่งไคล้ความเร็วเสริมแกร่ง : AGI + 50, Critical Damage + 15% เป็นเวลา 10 วินาที",
@@ -65194,7 +65194,7 @@
   "310126": {
     "id": 310126,
     "aegisName": "Automatic_Orb45",
-    "name": "Automatic Orb (Lucky Strike)",
+    "name": "Automatic (Lucky Strike)",
     "unidName": "Automatic Orb (Lucky Strike)",
     "resName": "마법석성",
     "description": "เมื่อโจมตีทางเวทมนตร์ มีโอกาส 3% ที่จะเกิด \"มหาโชคเสริมแกร่ง\" เป็นเวลา 10 วินาที\nมหาโชคเสริมแกร่ง : LUK + 50, เพิ่ม Damage ทางเวทมนตร์ทุกธาตุ 15% เป็นเวลา 10 วินาที",
@@ -65221,7 +65221,7 @@
   "310127": {
     "id": 310127,
     "aegisName": "Automatic_Orb46",
-    "name": "Automatic Orb (Dragonic Breath)",
+    "name": "Automatic (Dragonic Breath)",
     "unidName": "Automatic Orb (Dragonic Breath)",
     "resName": "Auto_Orb_Swordman",
     "description": "เพิ่ม Damage สกิล Dragon Breath, Dragon Breath - WATER 15%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Dragon Breath, Dragon Breath - WATER ขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Dragon Breath, Dragon Breath - WATER ขึ้นอีก 7%",
@@ -65252,7 +65252,7 @@
   "310128": {
     "id": 310128,
     "aegisName": "Automatic_Orb47",
-    "name": "Automatic Orb (Wave Break)",
+    "name": "Automatic (Wave Break)",
     "unidName": "Automatic Orb (Wave Break)",
     "resName": "Auto_Orb_Swordman",
     "description": "เพิ่ม Damage สกิล Sonic Wave, Ignition Break 15%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Sonic Wave, Ignition Break ขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Sonic Wave 7%, ลด Cooldown สกิล Ignition Break 0.25 วินาที",
@@ -65286,7 +65286,7 @@
   "310129": {
     "id": 310129,
     "aegisName": "Automatic_Orb48",
-    "name": "Automatic Orb (Hundred Spiral)",
+    "name": "Automatic (Hundred Spiral)",
     "unidName": "Automatic Orb (Hundred Spiral)",
     "resName": "Auto_Orb_Swordman",
     "description": "เพิ่ม Damage สกิล Clashing Spiral, Hundred Spears 15%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Clashing Spiral, Hundred Spears ขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Clashing Spiral 7%, ลด Cooldown สกิล Hundred Spears 0.25 วินาที",
@@ -65320,7 +65320,7 @@
   "310130": {
     "id": 310130,
     "aegisName": "Automatic_Orb49",
-    "name": "Automatic Orb (Drive Press)",
+    "name": "Automatic (Drive Press)",
     "unidName": "Automatic Orb (Drive Press)",
     "resName": "Auto_Orb_Swordman",
     "description": "เพิ่ม Damage สกิล Earth Drive, Shield Press 15%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Earth Drive, Shield Press ขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Earth Drive, Shield Press ขึ้นอีก 7%",
@@ -65351,7 +65351,7 @@
   "310131": {
     "id": 310131,
     "aegisName": "Automatic_Orb50",
-    "name": "Automatic Orb (Vanishing Cannon)",
+    "name": "Automatic (Vanishing Cannon)",
     "unidName": "Automatic Orb (Vanishing Cannon)",
     "resName": "Auto_Orb_Swordman",
     "description": "เพิ่ม Damage สกิล Banishing Point, Cannon Spear 15%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Banishing Point, Cannon Spear ขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Banishing Point, Cannon Spear ขึ้นอีก 7%",
@@ -65382,7 +65382,7 @@
   "310132": {
     "id": 310132,
     "aegisName": "Automatic_Orb51",
-    "name": "Automatic Orb (Genesis Pressure)",
+    "name": "Automatic (Genesis Pressure)",
     "unidName": "Automatic Orb (Genesis Pressure)",
     "resName": "Auto_Orb_Swordman",
     "description": "เพิ่ม Damage สกิล Gloria Domini, Genesis Ray 15%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Gloria Domini, Genesis Ray ขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Gloria Domini, Genesis Ray ขึ้นอีก 7%",
@@ -65413,7 +65413,7 @@
   "310133": {
     "id": 310133,
     "aegisName": "Automatic_Orb52",
-    "name": "Automatic Orb (Boost Cannon)",
+    "name": "Automatic (Boost Cannon)",
     "unidName": "Automatic Orb (Boost Cannon)",
     "resName": "Auto_Orb_Merchant",
     "description": "เพิ่ม Damage สกิล Knuckle Boost, Arm Cannon 15%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Knuckle Boost, Arm Cannon ขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Knuckle Boost, Arm Cannon ขึ้นอีก 7%",
@@ -65444,7 +65444,7 @@
   "310134": {
     "id": 310134,
     "aegisName": "Automatic_Orb53",
-    "name": "Automatic Orb (Cold Flare)",
+    "name": "Automatic (Cold Flare)",
     "unidName": "Automatic Orb (Cold Flare)",
     "resName": "Auto_Orb_Merchant",
     "description": "เพิ่ม Damage สกิล Cold Slower, Flame Launcher 15%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Cold Slower, Flame Launcher ขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Cold Slower, Flame Launcher ขึ้นอีก 7%",
@@ -65475,7 +65475,7 @@
   "310135": {
     "id": 310135,
     "aegisName": "Automatic_Orb54",
-    "name": "Automatic Orb (Tornado Swing)",
+    "name": "Automatic (Tornado Swing)",
     "unidName": "Automatic Orb (Tornado Swing)",
     "resName": "Auto_Orb_Merchant",
     "description": "เพิ่ม Damage สกิล Axe Tornado, Power Swing 15%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Axe Tornado, Power Swing ขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Axe Tornado, Power Swing ขึ้นอีก 7%",
@@ -65506,7 +65506,7 @@
   "310136": {
     "id": 310136,
     "aegisName": "Automatic_Orb55",
-    "name": "Automatic Orb (Cannon Tornado)",
+    "name": "Automatic (Cannon Tornado)",
     "unidName": "Automatic Orb (Cannon Tornado)",
     "resName": "Auto_Orb_Merchant",
     "description": "เพิ่ม Damage สกิล Cart Tornado Attack, Cart Cannon 15%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Cart Tornado Attack, Cart Cannon ขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Cart Tornado Attack, Cart Cannon ขึ้นอีก 7%",
@@ -65537,7 +65537,7 @@
   "310137": {
     "id": 310137,
     "aegisName": "Automatic_Orb56",
-    "name": "Automatic Orb (Crazy Mandragora)",
+    "name": "Automatic (Crazy Mandragora)",
     "unidName": "Automatic Orb (Crazy Mandragora)",
     "resName": "Auto_Orb_Merchant",
     "description": "เพิ่ม Damage สกิล Crazy Weed 15%, ลด Cooldown สกิล Mandragora Howling 0.3 วินาที\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Crazy Weed ขึ้นอีก 3%, ลด Cooldown สกิล Mandragora Howling ลงอีก 0.3 วินาที\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Crazy Weed ขึ้นอีก 7%, ลด Cooldown สกิล Mandragora Howling ลงอีก 0.4 วินาที",
@@ -65568,7 +65568,7 @@
   "310138": {
     "id": 310138,
     "aegisName": "Automatic_Orb57",
-    "name": "Automatic Orb (Acid Explosion)",
+    "name": "Automatic (Acid Explosion)",
     "unidName": "Automatic Orb (Acid Explosion)",
     "resName": "Auto_Orb_Merchant",
     "description": "เพิ่ม Damage สกิล Acid Demonstration, Spore Explosion 15%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Acid Demonstration, Spore Explosion ขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Acid Demonstration, Spore Explosion ขึ้นอีก 7%",
@@ -65599,7 +65599,7 @@
   "310139": {
     "id": 310139,
     "aegisName": "Automatic_Orb58",
-    "name": "Automatic Orb (Sonic Impact)",
+    "name": "Automatic (Sonic Impact)",
     "unidName": "Automatic Orb (Sonic Impact)",
     "resName": "Auto_Orb_Thief",
     "description": "เพิ่ม Damage สกิล Sonic Blow, Cross Impact 15%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Sonic Blow, Cross Impact ขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Sonic Blow, Cross Impact ขึ้นอีก 7%",
@@ -65630,7 +65630,7 @@
   "310140": {
     "id": 310140,
     "aegisName": "Automatic_Orb59",
-    "name": "Automatic Orb (Cutter Slasher)",
+    "name": "Automatic (Cutter Slasher)",
     "unidName": "Automatic Orb (Cutter Slasher)",
     "resName": "Auto_Orb_Thief",
     "description": "เพิ่ม Damage สกิล Cross Ripper Slasher, Rolling Cutter 15%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Cross Ripper Slasher, Rolling Cutter ขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Cross Ripper Slasher, Rolling Cutter ขึ้นอีก 7%",
@@ -65661,7 +65661,7 @@
   "310141": {
     "id": 310141,
     "aegisName": "Automatic_Orb60",
-    "name": "Automatic Orb (Berserk Slash)",
+    "name": "Automatic (Berserk Slash)",
     "unidName": "Automatic Orb (Berserk Slash)",
     "resName": "Auto_Orb_Thief",
     "description": "เพิ่ม Damage สกิล Soul Destroyer, Counter Slash 15%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Soul Destroyer, Counter Slash ขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Soul Destroyer, Counter Slash ขึ้นอีก 7%",
@@ -65692,7 +65692,7 @@
   "310142": {
     "id": 310142,
     "aegisName": "Automatic_Orb61",
-    "name": "Automatic Orb (Fatal Raid)",
+    "name": "Automatic (Fatal Raid)",
     "unidName": "Automatic Orb (Fatal Raid)",
     "resName": "Auto_Orb_Thief",
     "description": "เพิ่ม Damage สกิล Fatal Menace, Raid 15%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Fatal Menace, Raid ขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Fatal Menace, Raid ขึ้นอีก 7%",
@@ -65723,7 +65723,7 @@
   "310143": {
     "id": 310143,
     "aegisName": "Automatic_Orb62",
-    "name": "Automatic Orb (Shadow Spell)",
+    "name": "Automatic (Shadow Spell)",
     "unidName": "Automatic Orb (Shadow Spell)",
     "resName": "Auto_Orb_Thief",
     "description": "เพิ่ม Damage ทางเวทมนตร์ทุกธาตุ 15%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางเวทมนตร์ทุกธาตุขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage ทางเวทมนตร์ทุกธาตุขึ้นอีก 7%",
@@ -65749,7 +65749,7 @@
   "310144": {
     "id": 310144,
     "aegisName": "Automatic_Orb63",
-    "name": "Automatic Orb (Angle Shot)",
+    "name": "Automatic (Angle Shot)",
     "unidName": "Automatic Orb (Angle Shot)",
     "resName": "Auto_Orb_Thief",
     "description": "เพิ่ม Damage สกิล Triangle Shot 15%, เพิ่ม Damage ทางกายภาพ 10%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Triangle Shot ขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Triangle Shot ขึ้นอีก 7%, เพิ่ม Damage ทางกายภาพขึ้นอีก 5%",
@@ -65779,7 +65779,7 @@
   "310145": {
     "id": 310145,
     "aegisName": "Automatic_Orb64",
-    "name": "Automatic Orb (Crimson Strain)",
+    "name": "Automatic (Crimson Strain)",
     "unidName": "Automatic Orb (Crimson Strain)",
     "resName": "Auto_Orb_Magician",
     "description": "เพิ่ม Damage สกิล Crimson Rock, Earth Strain 15%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Crimson Rock, Earth Strain ขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Crimson Rock, Earth Strain ขึ้นอีก 7%",
@@ -65810,7 +65810,7 @@
   "310146": {
     "id": 310146,
     "aegisName": "Automatic_Orb65",
-    "name": "Automatic Orb (Jack Lightning)",
+    "name": "Automatic (Jack Lightning)",
     "unidName": "Automatic Orb (Jack Lightning)",
     "resName": "Auto_Orb_Magician",
     "description": "เพิ่ม Damage สกิล Jack Frost, Chain Lightning 15%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Jack Frost, Chain Lightning ขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Jack Frost, Chain Lightning ขึ้นอีก 7%",
@@ -65841,7 +65841,7 @@
   "310147": {
     "id": 310147,
     "aegisName": "Automatic_Orb66",
-    "name": "Automatic Orb (Comet Vortex)",
+    "name": "Automatic (Comet Vortex)",
     "unidName": "Automatic Orb (Comet Vortex)",
     "resName": "Auto_Orb_Magician",
     "description": "เพิ่ม Damage สกิล Comet, Tetra Vortex 15%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Comet, Tetra Vortex ขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Comet, Tetra Vortex ขึ้นอีก 7%",
@@ -65872,7 +65872,7 @@
   "310148": {
     "id": 310148,
     "aegisName": "Automatic_Orb67",
-    "name": "Automatic Orb (Double Bolt)",
+    "name": "Automatic (Double Bolt)",
     "unidName": "Automatic Orb (Double Bolt)",
     "resName": "Auto_Orb_Magician",
     "description": "เพิ่ม Damage สกิล Fire Bolt, Cold Bolt, Lightning Bolt 15%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Fire Bolt, Cold Bolt, Lightning Bolt ขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Fire Bolt, Cold Bolt, Lightning Bolt ขึ้นอีก 7%",
@@ -65908,7 +65908,7 @@
   "310149": {
     "id": 310149,
     "aegisName": "Automatic_Orb68",
-    "name": "Automatic Orb (Warm Wave)",
+    "name": "Automatic (Warm Wave)",
     "unidName": "Automatic Orb (Warm Wave)",
     "resName": "Auto_Orb_Magician",
     "description": "เพิ่ม Damage สกิล Psychic Wave 15%, ลด Cooldown สกิล Warmer 1 วินาที\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Psychic Wave ขึ้นอีก 3%, ลด Cooldown สกิล Warmer 2 วินาที\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Psychic Wave ขึ้นอีก 7%, ลด Cooldown สกิล Warmer 4 วินาที",
@@ -65939,7 +65939,7 @@
   "310150": {
     "id": 310150,
     "aegisName": "Automatic_Orb69",
-    "name": "Automatic Orb (Diamond Grave)",
+    "name": "Automatic (Diamond Grave)",
     "unidName": "Automatic Orb (Diamond Grave)",
     "resName": "Auto_Orb_Magician",
     "description": "เพิ่ม Damage สกิล Diamond Dust, Earth Grave 15%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Diamond Dust, Earth Grave ขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Diamond Dust, Earth Grave ขึ้นอีก 7%",
@@ -65970,7 +65970,7 @@
   "310151": {
     "id": 310151,
     "aegisName": "Automatic_Orb70",
-    "name": "Automatic Orb (Magnusmus)",
+    "name": "Automatic (Magnusmus)",
     "unidName": "Automatic Orb (Magnusmus)",
     "resName": "Auto_Orb_Priest",
     "description": "เพิ่ม Damage สกิล Magnus Exorcismus, Adoramus 15%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Magnus Exorcismus, Adoramus ขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Magnus Exorcismus, Adoramus ขึ้นอีก 7%",
@@ -66001,7 +66001,7 @@
   "310152": {
     "id": 310152,
     "aegisName": "Automatic_Orb71",
-    "name": "Automatic Orb (Holy Judex)",
+    "name": "Automatic (Holy Judex)",
     "unidName": "Automatic Orb (Holy Judex)",
     "resName": "Auto_Orb_Priest",
     "description": "เพิ่ม Damage สกิล Holy Light, Judex 15%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Holy Light, Judex ขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Holy Light, Judex ขึ้นอีก 7%",
@@ -66032,7 +66032,7 @@
   "310153": {
     "id": 310153,
     "aegisName": "Automatic_Orb72",
-    "name": "Automatic Orb (Duple Lica)",
+    "name": "Automatic (Duple Lica)",
     "unidName": "Automatic Orb (Duple Lica)",
     "resName": "Auto_Orb_Priest",
     "description": "เพิ่ม Damage สกิล Duple Light 15%, ลด Cooldown สกิล Basilica 2 วินาที\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Duple Light ขึ้นอีก 3%, ลด Cooldown สกิล Basilica ลงอีก 3 วินาที\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Duple Light ขึ้นอีก 7%, ลด Cooldown สกิล Basilica ลงอีก 5 วินาที",
@@ -66058,7 +66058,7 @@
   "310154": {
     "id": 310154,
     "aegisName": "Automatic_Orb73",
-    "name": "Automatic Orb (Tiger Empire)",
+    "name": "Automatic (Tiger Empire)",
     "unidName": "Automatic Orb (Tiger Empire)",
     "resName": "Auto_Orb_Priest",
     "description": "เพิ่ม Damage สกิล Tiger Cannon, Fallen Empire 15%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Tiger Cannon, Fallen Empire ขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Tiger Cannon, Fallen Empire ขึ้นอีก 7%",
@@ -66089,7 +66089,7 @@
   "310155": {
     "id": 310155,
     "aegisName": "Automatic_Orb74",
-    "name": "Automatic Orb (Rampage Arrow)",
+    "name": "Automatic (Rampage Arrow)",
     "unidName": "Automatic Orb (Rampage Arrow)",
     "resName": "Auto_Orb_Priest",
     "description": "เพิ่ม Damage สกิล Rampage Blast, Knuckle Arrow 15%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Rampage Blast, Knuckle Arrow ขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Rampage Blast, Knuckle Arrow ขึ้นอีก 7%",
@@ -66120,7 +66120,7 @@
   "310156": {
     "id": 310156,
     "aegisName": "Automatic_Orb75",
-    "name": "Automatic Orb (Raging Combo)",
+    "name": "Automatic (Raging Combo)",
     "unidName": "Automatic Orb (Raging Combo)",
     "resName": "Auto_Orb_Priest",
     "description": "เพิ่ม Damage สกิล Combo Finish, Chain Crush Combo 15%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Combo Finish, Chain Crush Combo ขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Combo Finish, Chain Crush Combo ขึ้นอีก 7%",
@@ -66151,7 +66151,7 @@
   "310157": {
     "id": 310157,
     "aegisName": "Automatic_Orb76",
-    "name": "Automatic Orb (Cluster)",
+    "name": "Automatic (Cluster)",
     "unidName": "Automatic Orb (Cluster)",
     "resName": "Auto_Orb_Archer",
     "description": "เพิ่ม Damage สกิล Bomb Cluster 15%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Bomb Cluster ขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Bomb Cluster ขึ้นอีก 7%",
@@ -66177,7 +66177,7 @@
   "310158": {
     "id": 310158,
     "aegisName": "Automatic_Orb77",
-    "name": "Automatic Orb (Breeze Shooting)",
+    "name": "Automatic (Breeze Shooting)",
     "unidName": "Automatic Orb (Breeze Shooting)",
     "resName": "Auto_Orb_Archer",
     "description": "เพิ่ม Damage สกิล Focused Arrow Strike 15%, Critical Damage + 10%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Focused Arrow Strike ขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Focused Arrow Strike ขึ้นอีก 7%, Critical Damage + 5% เพิ่มเติม",
@@ -66207,7 +66207,7 @@
   "310159": {
     "id": 310159,
     "aegisName": "Automatic_Orb78",
-    "name": "Automatic Orb (Aimed Storm)",
+    "name": "Automatic (Aimed Storm)",
     "unidName": "Automatic Orb (Aimed Storm)",
     "resName": "Auto_Orb_Archer",
     "description": "เพิ่ม Damage สกิล Aimed Bolt, Arrow Storm 15%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Aimed Bolt, Arrow Storm ขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Aimed Bolt, Arrow Storm ขึ้นอีก 7%",
@@ -66238,7 +66238,7 @@
   "310160": {
     "id": 310160,
     "aegisName": "Automatic_Orb79",
-    "name": "Automatic Orb (Metal Echo)",
+    "name": "Automatic (Metal Echo)",
     "unidName": "Automatic Orb (Metal Echo)",
     "resName": "Auto_Orb_Archer",
     "description": "เพิ่ม Damage สกิล Metalic Sound, Great Echo 15%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Metalic Sound, Great Echo ขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Metalic Sound, Great Echo ขึ้นอีก 7%",
@@ -66269,7 +66269,7 @@
   "310161": {
     "id": 310161,
     "aegisName": "Automatic_Orb80",
-    "name": "Automatic Orb (Reverberation)",
+    "name": "Automatic (Reverberation)",
     "unidName": "Automatic Orb (Reverberation)",
     "resName": "Auto_Orb_Archer",
     "description": "เพิ่ม Damage สกิล Reverberation 15%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Reverberation ขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Reverberation ขึ้นอีก 7%",
@@ -66295,7 +66295,7 @@
   "310162": {
     "id": 310162,
     "aegisName": "Automatic_Orb81",
-    "name": "Automatic Orb (Vulcan Severe)",
+    "name": "Automatic (Vulcan Severe)",
     "unidName": "Automatic Orb (Vulcan Severe)",
     "resName": "Auto_Orb_Archer",
     "description": "เพิ่ม Damage สกิล Arrow Vulcan, Severe Rainstorm 15%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Arrow Vulcan, Severe Rainstorm ขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Arrow Vulcan, Severe Rainstorm ขึ้นอีก 7%",
@@ -66326,7 +66326,7 @@
   "310163": {
     "id": 310163,
     "aegisName": "Automatic_Orb82",
-    "name": "Automatic Orb (Prominence Burst)",
+    "name": "Automatic (Prominence Burst)",
     "unidName": "Automatic Orb (Prominence Burst)",
     "resName": "Auto_Orb_Ex1",
     "description": "เพิ่ม Damage สกิล Blaze Kick, Solar Explosion 15%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Blaze Kick, Solar Explosion ขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Blaze Kick, Solar Explosion ขึ้นอีก 7%",
@@ -66357,7 +66357,7 @@
   "310164": {
     "id": 310164,
     "aegisName": "Automatic_Orb83",
-    "name": "Automatic Orb (Moon Kick)",
+    "name": "Automatic (Moon Kick)",
     "unidName": "Automatic Orb (Moon Kick)",
     "resName": "Auto_Orb_Ex1",
     "description": "เพิ่ม Damage สกิล New Moon Kick, Full Moon Kick 15%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล New Moon Kick, Full Moon Kick ขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล New Moon Kick, Full Moon Kick ขึ้นอีก 7%, Critical Damage + 5%",
@@ -66391,7 +66391,7 @@
   "310165": {
     "id": 310165,
     "aegisName": "Automatic_Orb84",
-    "name": "Automatic Orb (Flash Falling)",
+    "name": "Automatic (Flash Falling)",
     "unidName": "Automatic Orb (Flash Falling)",
     "resName": "Auto_Orb_Ex1",
     "description": "เพิ่ม Damage สกิล Flash Kick, Falling Stars 15%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Flash Kick, Falling Stars ขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Flash Kick, Falling Stars ขึ้นอีก 7%",
@@ -66422,7 +66422,7 @@
   "310166": {
     "id": 310166,
     "aegisName": "Automatic_Orb85",
-    "name": "Automatic Orb (Eswhoo)",
+    "name": "Automatic (Eswhoo)",
     "unidName": "Automatic Orb (Eswhoo)",
     "resName": "Auto_Orb_Ex1",
     "description": "เพิ่ม Damage สกิล Esma, Eswhoo 15%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Esma, Eswhoo ขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Esma, Eswhoo ขึ้นอีก 7%",
@@ -66453,7 +66453,7 @@
   "310167": {
     "id": 310167,
     "aegisName": "Automatic_Orb86",
-    "name": "Automatic Orb (Espa)",
+    "name": "Automatic (Espa)",
     "unidName": "Automatic Orb (Espa)",
     "resName": "Auto_Orb_Ex1",
     "description": "เพิ่ม Damage สกิล Espa 15%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Espa ขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Espa ขึ้นอีก 7%",
@@ -66478,7 +66478,7 @@
   "310168": {
     "id": 310168,
     "aegisName": "Automatic_Orb87",
-    "name": "Automatic Orb (Curse Explosion)",
+    "name": "Automatic (Curse Explosion)",
     "unidName": "Automatic Orb (Curse Explosion)",
     "resName": "Auto_Orb_Ex1",
     "description": "เพิ่ม Damage สกิล Curse Explosion 15%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Curse Explosion ขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Curse Explosion ขึ้นอีก 7%",
@@ -66503,7 +66503,7 @@
   "310169": {
     "id": 310169,
     "aegisName": "Automatic_Orb88",
-    "name": "Automatic Orb (Des Hammer Dance)",
+    "name": "Automatic (Des Hammer Dance)",
     "unidName": "Automatic Orb (Des Hammer Dance)",
     "resName": "Auto_Orb_Ex2",
     "description": "เพิ่ม Damage สกิล Desperado, Fire Dance, God's Hammer 15%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Desperado, Fire Dance, God's Hammer ขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Desperado, Fire Dance, God's Hammer ขึ้นอีก 7%",
@@ -66538,7 +66538,7 @@
   "310170": {
     "id": 310170,
     "aegisName": "Automatic_Orb89",
-    "name": "Automatic Orb (Fire Howling Tail)",
+    "name": "Automatic (Fire Howling Tail)",
     "unidName": "Automatic Orb (Fire Howling Tail)",
     "resName": "Auto_Orb_Ex2",
     "description": "เพิ่ม Damage สกิล Fire Rain, Howling Mine, Dragon Tail 15%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Fire Rain, Howling Mine, Dragon Tail ขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Fire Rain, Howling Mine, Dragon Tail ขึ้นอีก 7%",
@@ -66573,7 +66573,7 @@
   "310171": {
     "id": 310171,
     "aegisName": "Automatic_Orb90",
-    "name": "Automatic Orb (Storm Buster Trip)",
+    "name": "Automatic (Storm Buster Trip)",
     "unidName": "Automatic Orb (Storm Buster Trip)",
     "resName": "Auto_Orb_Ex2",
     "description": "เพิ่ม Damage สกิล shatter storm, Vanishing Buster, Round Trip 15%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล shatter storm, Vanishing Buster, Round Trip ขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล shatter storm, Vanishing Buster, Round Trip ขึ้นอีก 7%",
@@ -66608,7 +66608,7 @@
   "310172": {
     "id": 310172,
     "aegisName": "Automatic_Orb91",
-    "name": "Automatic Orb (Flame Ice Wind)",
+    "name": "Automatic (Flame Ice Wind)",
     "unidName": "Automatic Orb (Flame Ice Wind)",
     "resName": "Auto_Orb_Ex2",
     "description": "เพิ่ม Damage สกิล Flaming Petals, Freezing Spear, Wind Blade 15%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Flaming Petals, Freezing Spear, Wind Blade ขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Flaming Petals, Freezing Spear, Wind Blade ขึ้นอีก 7%",
@@ -66643,7 +66643,7 @@
   "310173": {
     "id": 310173,
     "aegisName": "Automatic_Orb92",
-    "name": "Automatic Orb (Cross Slash)",
+    "name": "Automatic (Cross Slash)",
     "unidName": "Automatic Orb (Cross Slash)",
     "resName": "Auto_Orb_Ex2",
     "description": "เพิ่ม Damage สกิล Cross Slash 15%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Cross Slash ขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Cross Slash ขึ้นอีก 7%",
@@ -66668,7 +66668,7 @@
   "310174": {
     "id": 310174,
     "aegisName": "Automatic_Orb93",
-    "name": "Automatic Orb (Exploding Flake Wind)",
+    "name": "Automatic (Exploding Flake Wind)",
     "unidName": "Automatic Orb (Exploding Flake Wind)",
     "resName": "Auto_Orb_Ex2",
     "description": "เพิ่ม Damage สกิล Exploding Dragon, Snow Flake Draft, First Wind 15%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Exploding Dragon, Snow Flake Draft, First Wind ขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Exploding Dragon, Snow Flake Draft, First Wind ขึ้นอีก 7%",
@@ -66703,7 +66703,7 @@
   "310176": {
     "id": 310176,
     "aegisName": "Automatic_Orb95",
-    "name": "Automatic Orb (Power of Land)",
+    "name": "Automatic (Power of Land)",
     "unidName": "Automatic Orb (Power of Land)",
     "resName": "Auto_Orb_Summoner",
     "description": "เพิ่ม Damage สกิล Silvervine Stem Spear, Catnip Meteor 15%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Silvervine Stem Spear, Catnip Meteor ขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Silvervine Stem Spear, Catnip Meteor ขึ้นอีก 7%",
@@ -66733,7 +66733,7 @@
   "310177": {
     "id": 310177,
     "aegisName": "Automatic_Orb96",
-    "name": "Automatic Orb (Power of Life)",
+    "name": "Automatic (Power of Life)",
     "unidName": "Automatic Orb (Power of Life)",
     "resName": "Auto_Orb_Summoner",
     "description": "เพิ่ม Damage สกิล Picky Peck, Lunatic Carrot Beat 15%\nเมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage สกิล Picky Peck, Lunatic Carrot Beat ขึ้นอีก 3%\nเมื่ออัพเกรดถึงขั้น 11 เพิ่ม Damage สกิล Picky Peck, Lunatic Carrot Beat ขึ้นอีก 7%",
@@ -86998,7 +86998,8 @@
     "location": null,
     "compositionPos": null,
     "usableClass": [
-      "Minstrel, Wanderer"
+      "Minstrel",
+      "Wanderer"
     ],
     "script": {
       "Severe Rainstorm": [

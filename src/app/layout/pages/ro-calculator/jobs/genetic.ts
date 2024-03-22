@@ -274,17 +274,6 @@ export class Genetic extends CharacterBase {
         { label: 'Lv 200', value: 200, isUse: true, bonus: { atk: 100 + 200 } },
       ],
     },
-    {
-      name: 'Special Pharmacy',
-      label: 'Pharmacy',
-      inputType: 'dropdown',
-      isEquipAtk: true,
-      dropdown: [
-        { label: '-', value: 0, isUse: false },
-        { label: 'Red Herb', value: 2, isUse: true, bonus: { melee: 15, range: 15 } },
-        { label: 'Blue Herb', value: 3, isUse: true, bonus: { m_my_element_all: 15 } },
-      ],
-    },
   ];
 
   protected readonly _passiveSkillList: PassiveSkillModel[] = [
