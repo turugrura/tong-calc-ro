@@ -201,6 +201,31 @@ export class Sura extends CharacterBase {
         return baseDamage * (baseLevel / 100);
       },
     },
+    {
+      name: 'Lightning Ride',
+      label: 'Lightning Ride Lv5',
+      value: 'Lightning Ride==5',
+      fct: 0,
+      vct: 1,
+      acd: 1,
+      cd: 0.5,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, weapon } = input;
+        const baseLevel = model.level;
+        const isKnuckle = weapon?.data?.typeName === 'fist';
+
+        let baseDamage = 40 * skillLevel;
+
+        if (isKnuckle) {
+          baseDamage += 50 * skillLevel;
+        }
+
+        return baseDamage * (baseLevel / 100);
+      },
+      finalDmgFormula: (input) => {
+        return input.skillLevel * input.damage;
+      },
+    },
   ];
 
   protected readonly _activeSkillList: ActiveSkillModel[] = [
