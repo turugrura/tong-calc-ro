@@ -188,7 +188,6 @@ export class Ranger extends CharacterBase {
 
         return map[monsterSize];
       },
-      levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
@@ -200,12 +199,11 @@ export class Ranger extends CharacterBase {
       name: 'Aimed Bolt',
       label: '[Improved] Aimed Bolt Lv10',
       value: '[Improved] Aimed Bolt==10',
-      acd: 1,
+      acd: 2,
       fct: 1,
-      vct: 0,
+      vct: 2,
       cd: 1,
       totalHit: 5,
-      levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
