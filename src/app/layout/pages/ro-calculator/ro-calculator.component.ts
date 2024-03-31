@@ -1482,8 +1482,18 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
     model.rawOptionTxts = rawOptionTxts;
 
+    const mapPhamacy = {
+      2: 100232,
+      3: 100233,
+    };
+    const p = mapPhamacy[model?.skillBuffMap['Special Pharmacy']];
+    if (Boolean(p) && Array.isArray(model.consumables)) {
+      if (!model.consumables.includes(p)) {
+        model.consumables.push(p);
+      }
+    }
+
     this.model = model;
-    // console.log('model', { ...model });
   }
 
   loadItemSet(fromCurrentModel = false) {
@@ -1677,7 +1687,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     });
   }
 
-  setJobBonus() {
+  private setJobBonus() {
     const { str, agi, vit, int, dex, luk } = this.selectedCharacter.getJobBonusStatus(this.model.jobLevel);
     this.model.jobStr = str;
     this.model.jobAgi = agi;
