@@ -281,11 +281,12 @@ export class DamageCalculator {
     return mysticAmp;
   }
 
-  private getBaseCriRate() {
+  private getBaseCriRate(isActual = false) {
     const { cri } = this.totalBonus;
     const { totalLuk } = this.status;
 
-    const base = 1 + cri + floor(totalLuk / 3);
+    const criFromLuk = isActual ? floor(totalLuk * 0.3) : floor(totalLuk / 3);
+    const base = 1 + cri + criFromLuk;
 
     return this.weaponData.data?.typeName === 'katar' ? base * 2 : base;
   }
@@ -1016,9 +1017,9 @@ export class DamageCalculator {
 
     const criShield = this.monsterData.criShield;
     const misc = this.getMiscData();
-    const basicCriRate = this.getBaseCriRate();
+    const actualBasicCriRate = this.getBaseCriRate(true);
     const basicAspd = this.getBasicAspd();
-    const criRateToMonster = Math.max(0, basicCriRate + this.getExtraCriRateToMonster() - criShield);
+    const criRateToMonster = Math.max(0, actualBasicCriRate + this.getExtraCriRateToMonster() - criShield);
     const basicDps = calcDmgDps({
       accRate: misc.accuracy,
       cri: criRateToMonster,
@@ -1036,7 +1037,7 @@ export class DamageCalculator {
       sizePenalty: floor(sizePenalty * 100, 0),
       propertyAtk,
       propertyMultiplier,
-      basicCriRate: basicCriRate,
+      basicCriRate: this.getBaseCriRate(),
       criRateToMonster,
       totalPene: this.isActiveInfilltration ? 100 : this.getTotalPhysicalPene(),
       accuracy: misc.accuracy,
@@ -1149,7 +1150,7 @@ export class DamageCalculator {
     const skillAspd = calcSkillAspd({ skillData, status: this.status, totalEquipStatus: this.totalBonus });
 
     let actualCri = calculated.canCri
-      ? Math.max(0, (basicDmg.basicCriRate + baseSkillCri - criShield) * baseCriPercentage)
+      ? Math.max(0, floor((actualBasicCriRate + baseSkillCri) * baseCriPercentage) - criShield)
       : 0;
     if (this.isForceSkillCri) {
       actualCri = 100;
