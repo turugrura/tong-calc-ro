@@ -119,7 +119,6 @@ export class Wanderer extends CharacterBase {
       vct: 1.5,
       cd: 1.5,
       hit: 9,
-      levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
         const { skillLevel, model } = input;
         const baseLevel = model.level;
@@ -138,7 +137,6 @@ export class Wanderer extends CharacterBase {
       hit: 2,
       isMatk: true,
       element: ElementType.Neutral,
-      levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
         const { skillLevel, model } = input;
         const baseLevel = model.level;
@@ -156,7 +154,6 @@ export class Wanderer extends CharacterBase {
       vct: 3,
       cd: 6.5,
       totalHit: 12,
-      levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
         const { weapon, status, skillLevel, model } = input;
         const baseLevel = model.level;
@@ -181,7 +178,6 @@ export class Wanderer extends CharacterBase {
       vct: 3.5,
       cd: 7,
       totalHit: 12,
-      levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
         const { weapon, status, skillLevel, model } = input;
         const baseLevel = model.level;
@@ -206,7 +202,6 @@ export class Wanderer extends CharacterBase {
       vct: 3.5,
       cd: 7,
       totalHit: 12,
-      levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
         const { weapon, status, skillLevel, model } = input;
         const baseLevel = model.level;
@@ -232,7 +227,6 @@ export class Wanderer extends CharacterBase {
       vct: 1.5,
       cd: 0,
       isMatk: true,
-      levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
         const { skillLevel, model } = input;
         const baseLevel = model.level;

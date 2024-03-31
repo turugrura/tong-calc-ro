@@ -347,6 +347,66 @@ export class ShadowChaser extends CharacterBase {
         return extra * (totalDex + totalAgi) * (skillLevel / 5) * (baseLevel / 100);
       },
     },
+    {
+      name: 'Severe Rainstorm',
+      label: '[Improved] Severe Rainstorm Lv5',
+      value: '[Improved] Severe Rainstorm==5',
+      acd: 1,
+      fct: 0.5,
+      vct: 3.5,
+      cd: 7,
+      totalHit: 12,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { weapon, status, skillLevel, model } = input;
+        const baseLevel = model.level;
+        const { totalDex, totalAgi } = status;
+        const weaType = weapon.data.typeName;
+        const weaMultiMap: Partial<Record<WeaponTypeName, number>> = {
+          bow: 100,
+          instrument: 120,
+          whip: 120,
+        };
+        const extra = weaMultiMap[weaType] || 0;
+
+        return ((totalDex + totalAgi) / 2 + skillLevel * extra) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Ignition Break',
+      label: 'Ignition Break Lv5',
+      value: 'Ignition Break==5',
+      acd: 0,
+      fct: 0,
+      vct: 1,
+      cd: 2,
+      isMelee: true,
+      canCri: true,
+      baseCriPercentage: 0.5,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
+
+        return skillLevel * 400 * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Ignition Break',
+      label: '[Improved 2nd] Ignition Break Lv5',
+      value: '[Improved 2nd] Ignition Break==5',
+      acd: 0,
+      fct: 0,
+      vct: 1,
+      cd: 2,
+      isMelee: true,
+      canCri: true,
+      criDmgPercentage: 0.5,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
+
+        return skillLevel * 450 * (baseLevel / 100);
+      },
+    },
   ];
 
   protected _activeSkillList: ActiveSkillModel[] = [
