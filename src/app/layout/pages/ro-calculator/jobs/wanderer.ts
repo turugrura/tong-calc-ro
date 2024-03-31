@@ -226,6 +226,7 @@ export class Wanderer extends CharacterBase {
       name: 'Reverberation',
       label: 'Reverberation Lv5',
       value: 'Reverberation==5',
+      values: ['[Improved] Reverberation==5'],
       acd: 0.5,
       fct: 0.5,
       vct: 1.5,

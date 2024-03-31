@@ -25,6 +25,7 @@ export interface AtkSkillModel {
   label: string;
   name: string;
   value: string;
+  values?: string[];
   acd: number;
   fct: number;
   vct: number;

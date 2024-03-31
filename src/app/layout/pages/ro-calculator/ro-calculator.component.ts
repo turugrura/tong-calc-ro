@@ -1495,6 +1495,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       this.setModelByJSONString(str);
     }
     this.model.selectedAtkSkill = this.model.selectedAtkSkill || this.atkSkills[0]?.value;
+    const selectedAtkSkill = this.model.selectedAtkSkill;
 
     this.setClassInstant();
     this.setSkillModelArray();
@@ -1509,7 +1510,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         }),
         mergeMap(() => {
           this.setAspdPotionList();
-          this.setDefaultSkill();
+          this.setDefaultSkill(selectedAtkSkill);
           this.setItemDropdownList();
           return waitRxjs();
         }),
@@ -1602,18 +1603,18 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     // this.atkSkillCascades = this.selectedCharacter.atkSkills;
   }
 
-  private setDefaultSkill() {
+  private setDefaultSkill(selectedSkill?: string) {
     const defaultAtkSkill = this.atkSkills[0].value;
-    if (!this.model.selectedAtkSkill) {
+    const selectedAtkSkill = this.model.selectedAtkSkill || selectedSkill;
+    if (!selectedAtkSkill) {
       this.model.selectedAtkSkill = defaultAtkSkill;
       return;
     }
 
-    const selectedValidSkill = this.atkSkills.some((a) => a.value === this.model.selectedAtkSkill);
-
-    if (!selectedValidSkill) {
-      this.model.selectedAtkSkill = defaultAtkSkill;
-    }
+    const selectedValidSkill = this.atkSkills.find(
+      (a) => a.value === selectedAtkSkill || (Array.isArray(a.values) && a.values?.includes(selectedAtkSkill)),
+    );
+    this.model.selectedAtkSkill = selectedValidSkill?.value || defaultAtkSkill;
   }
 
   private setAspdPotionList() {

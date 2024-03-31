@@ -217,6 +217,7 @@ export class RuneKnight extends CharacterBase {
       name: 'Hundred Spears',
       label: 'Hundred Spears Lv10',
       value: 'Hundred Spears==10',
+      values: ['[Improved] Hundred Spears==10'],
       acd: 0.5,
       fct: 0,
       vct: 0.1,

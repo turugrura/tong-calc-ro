@@ -94,6 +94,7 @@ export class GitCross extends CharacterBase {
       name: 'Soul Destroyer',
       label: 'Soul Destroyer Lv10',
       value: 'Soul Destroyer==10',
+      values: ['[Improved 1st] Soul Destroyer==10'],
       acd: 2,
       fct: 0.25,
       vct: 0.25,
@@ -131,12 +132,12 @@ export class GitCross extends CharacterBase {
       name: 'Rolling Cutter',
       label: 'Rolling Cutter Lv5',
       value: 'Rolling Cutter==5',
+      values: ['[Improved] Rolling Cutter==5'],
       acd: 0.2,
       fct: 0,
       vct: 0,
       cd: 0,
       isMelee: true,
-      levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
@@ -148,6 +149,7 @@ export class GitCross extends CharacterBase {
       name: 'Cross Impact',
       label: 'Cross Impact Lv5',
       value: 'Cross Impact==5',
+      values: ['[Improved 1st] Cross Impact==5'],
       acd: 0.5,
       fct: 0,
       vct: 0,
@@ -208,6 +210,7 @@ export class GitCross extends CharacterBase {
       name: 'Cross Ripper Slasher',
       label: 'Cross Ripper Slasher Lv5',
       value: 'Cross Ripper Slasher==5',
+      values: ['[Improved] Cross Ripper Slasher==5'],
       acd: 0.3,
       fct: 0,
       vct: 0,
