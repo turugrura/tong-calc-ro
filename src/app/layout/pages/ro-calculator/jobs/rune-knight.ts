@@ -133,7 +133,7 @@ export class RuneKnight extends CharacterBase {
       fct: 0,
       vct: 0,
       cd: 0.2,
-      isMelee: (weaponType) => weaponType !== 'spear',
+      isMelee: (weaponType) => weaponType !== 'spear' && weaponType !== 'twohandSpear',
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, weapon } = input;
         const wTypeName = weapon.data.typeName;
@@ -142,7 +142,7 @@ export class RuneKnight extends CharacterBase {
         let baseDamage = 0;
         if (wTypeName === 'twohandSword') {
           baseDamage = 250 * skillLevel;
-        } else if (wTypeName === 'spear') {
+        } else if (wTypeName === 'spear' || wTypeName === 'twohandSpear') {
           baseDamage = 400 * skillLevel;
         } else {
           baseDamage = 300 * skillLevel;
@@ -159,7 +159,7 @@ export class RuneKnight extends CharacterBase {
       fct: 0,
       vct: 0,
       cd: 0.3,
-      isMelee: (weaponType) => weaponType !== 'spear',
+      isMelee: (weaponType) => weaponType !== 'spear' && weaponType !== 'twohandSpear',
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, weapon } = input;
         const wTypeName = weapon.data.typeName;
@@ -168,7 +168,7 @@ export class RuneKnight extends CharacterBase {
         let baseDamage = 0;
         if (wTypeName === 'twohandSword') {
           baseDamage = 250 * skillLevel;
-        } else if (wTypeName === 'spear') {
+        } else if (wTypeName === 'spear' || wTypeName === 'twohandSpear') {
           baseDamage = 400 * skillLevel;
         } else {
           baseDamage = 300 * skillLevel;
