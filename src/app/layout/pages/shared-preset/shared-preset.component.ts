@@ -219,6 +219,17 @@ export class SharedPresetComponent implements OnInit, OnDestroy {
       )
       .subscribe((searchRes) => {
         this.items = searchRes.items.map((a) => {
+          const mapPhamacy = {
+            2: 100232,
+            3: 100233,
+          };
+          const p = mapPhamacy[a.model?.skillBuffMap['Special Pharmacy']];
+          if (Boolean(p) && Array.isArray(a.model.consumables)) {
+            if (!a.model.consumables.includes(p)) {
+              a.model.consumables.push(p);
+            }
+          }
+
           const c = this.prepare(a.model as any);
           const s = c.getTotalSummary() as any;
 
