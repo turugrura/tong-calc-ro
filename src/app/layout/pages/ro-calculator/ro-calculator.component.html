@@ -3850,7 +3850,10 @@
         </div>
       </p-accordionTab>
 
-      <p-accordionTab header="Skills ***กดอัพสกิลด้วย เพราะไอเทมบางชิ้นต้องอัพสกิลถึงจะได้ bonus" class="select_skill">
+      <p-accordionTab
+        header="Skills ***กดอัพสกิลด้วยนะ เพราะไอเทมบางชิ้นต้องอัพสกิลถึงจะได้ bonus"
+        class="select_skill"
+      >
         <div class="grid grid-nogutter">
           <!--  Buffs -->
           <div class="col-4">
@@ -3868,6 +3871,7 @@
                         [(ngModel)]="model.skillBuffs[i]"
                         (onChange)="onSkillClassChange()"
                         styleClass="'width: 50%'"
+                        scrollHeight="380px"
                       ></p-dropdown>
                     </div>
                   </div>
@@ -3903,6 +3907,7 @@
                         [(ngModel)]="model.passiveSkills[i]"
                         (onChange)="onSkillClassChange()"
                         styleClass="'width: 50%'"
+                        scrollHeight="380px"
                       ></p-dropdown>
                     </div>
                   </div>
@@ -3938,6 +3943,7 @@
                         [(ngModel)]="model.activeSkills[i]"
                         (onChange)="onSkillClassChange()"
                         styleClass="'width: 50%'"
+                        scrollHeight="380px"
                       ></p-dropdown>
                     </div>
                   </div>
@@ -4185,6 +4191,31 @@
                       styleClass2="summary_compare"
                       [max]="totalSummary?.calc?.hitPerSecs"
                       [max2]="totalSummary2?.calc?.hitPerSecs"
+                    ></app-calc-value>
+                  </div>
+
+                  <div class="col-12 py-1 divider" [hidden]="!totalSummary?.dmg?.isUsedCurrentHP">
+                    <p-divider></p-divider>
+                  </div>
+
+                  <div class="col-6" [hidden]="!totalSummary?.dmg?.isUsedCurrentHP">
+                    <app-calc-value
+                      [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+                      label="CurrentHP:"
+                      styleClass="summary_highlight"
+                      styleClass2="summary_compare"
+                      [max]="totalSummary?.dmg?.currentHp"
+                      [max2]="totalSummary2?.dmg?.currentHp"
+                    ></app-calc-value>
+                  </div>
+                  <div class="col-6" [hidden]="!totalSummary?.dmg?.isUsedCurrentSP">
+                    <app-calc-value
+                      [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+                      label="CurrentSp:"
+                      styleClass="summary_highlight"
+                      styleClass2="summary_compare"
+                      [max]="totalSummary?.dmg?.currentSp"
+                      [max2]="totalSummary2?.dmg?.currentSp"
                     ></app-calc-value>
                   </div>
 

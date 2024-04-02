@@ -12,6 +12,8 @@ export interface AtkSkillFormulaInput extends InfoForClass {
   skillLevel: number;
   maxHp: number;
   maxSp: number;
+  currentHp?: number;
+  currentSp?: number;
 }
 
 export interface DefForCalcModel {
@@ -72,6 +74,8 @@ export interface AtkSkillModel {
   isHit100?: boolean;
   isExcludeCannanball?: boolean;
   isSudoElement?: boolean;
+  currentHpFn?: (maxHp: number) => number;
+  currentSpFn?: (maxSp: number) => number;
   /**
    * For DPS calucation
    * undefined = 1, 0.2 = 20 %

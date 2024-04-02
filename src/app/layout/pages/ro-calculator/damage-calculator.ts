@@ -1065,13 +1065,19 @@ export class DamageCalculator {
       baseCriPercentage = 1,
       customFormula,
       getElement,
+      currentHpFn,
+      currentSpFn,
     } = skillData;
 
+    const currentHp = typeof currentHpFn === 'function' ? currentHpFn(maxHp) : 0;
+    const currentSp = typeof currentSpFn === 'function' ? currentSpFn(maxSp) : 0;
     const formulaParams = {
       ...this.infoForClass,
       skillLevel,
       maxHp,
       maxSp,
+      currentHp,
+      currentSp,
     };
     const _baseSkillDamage = formula(formulaParams) + this.getFlatDmg(skillName);
     let baseSkillDamage = floor(_baseSkillDamage);
@@ -1201,6 +1207,10 @@ export class DamageCalculator {
       skillMinDamage2,
       skillMaxDamage2,
       isAutoSpell,
+      isUsedCurrentHP: typeof currentHpFn === 'function',
+      isUsedCurrentSP: typeof currentSpFn === 'function',
+      currentHp,
+      currentSp,
       skillBonusFromEquipment: this.getSkillBonus(skillName),
     };
 

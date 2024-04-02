@@ -43,6 +43,10 @@ export interface SkillDamageSummaryModel {
   skillMinDamage2: number;
   skillMaxDamage2: number;
   skillBonusFromEquipment: number;
+  isUsedCurrentHP: boolean;
+  isUsedCurrentSP: boolean;
+  currentHp: number;
+  currentSp: number;
 
   /**
    * Calculated damage including chances bonus

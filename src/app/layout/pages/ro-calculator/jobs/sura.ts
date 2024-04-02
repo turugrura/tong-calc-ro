@@ -111,7 +111,6 @@ export class Sura extends CharacterBase {
       vct: 0,
       acd: 1,
       cd: 10,
-      levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
@@ -137,7 +136,6 @@ export class Sura extends CharacterBase {
       cd: 3,
       isMelee: true,
       isSudoElement: true,
-      levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, maxHp, maxSp, monster } = input;
         if (monster.elementUpper === ElementType.Ghost) return 0;
@@ -163,7 +161,6 @@ export class Sura extends CharacterBase {
       acd: 1,
       cd: 3,
       isMelee: true,
-      levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, monster, maxHp, maxSp } = input;
         if (monster.elementUpper === ElementType.Ghost) return 0;
@@ -224,6 +221,62 @@ export class Sura extends CharacterBase {
       },
       finalDmgFormula: (input) => {
         return input.skillLevel * input.damage;
+      },
+    },
+    {
+      name: 'Hell Gate',
+      label: 'Hell Gate Lv10',
+      value: 'Hell Gate==10',
+      fct: 0,
+      vct: 2.8,
+      acd: 1,
+      cd: 0,
+      isHit100: true,
+      hit: 7,
+      currentHpFn: (maxHp) => this.getCurrentHP(maxHp),
+      currentSpFn: (maxSp) => this.getCurrentSP(maxSp),
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
+
+        return 500 * skillLevel * (baseLevel / 100);
+      },
+      finalDmgFormula: (input) => {
+        const { model, skillLevel, maxHp, currentHp, currentSp, damage: baseDamage } = input;
+        const baseLevel = model.level;
+
+        const spModifier = 1 + skillLevel * 0.2;
+        const bonusDamge = floor(maxHp - (currentHp || 0) + (currentSp || 0) * spModifier + baseLevel * 10);
+
+        return baseDamage + bonusDamge;
+      },
+    },
+    {
+      name: 'Hell Gate',
+      label: 'Hell Gate (Combo) Lv10',
+      value: 'Hell Gate (Combo)==10',
+      fct: 0,
+      vct: 2.8,
+      acd: 1,
+      cd: 0,
+      isHit100: true,
+      hit: 7,
+      currentHpFn: (maxHp) => this.getCurrentHP(maxHp),
+      currentSpFn: (maxSp) => this.getCurrentSP(maxSp),
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
+
+        return 800 * skillLevel * (baseLevel / 100);
+      },
+      finalDmgFormula: (input) => {
+        const { model, skillLevel, maxHp, currentHp, maxSp, damage: baseDamage } = input;
+        const baseLevel = model.level;
+
+        const spModifier = 1 + skillLevel * 0.2;
+        const bonusDamge = floor(maxHp - (currentHp || 0) + maxSp * spModifier + baseLevel * 40);
+
+        return baseDamage + bonusDamge;
       },
     },
   ];
@@ -314,11 +367,11 @@ export class Sura extends CharacterBase {
       isMasteryAtk: true,
       dropdown: [
         { label: '-', value: 0, isUse: false },
-        { label: 'Lv 1', value: 1, isUse: true, bonus: { atk: 1 * 3 } },
-        { label: 'Lv 2', value: 2, isUse: true, bonus: { atk: 2 * 3 } },
-        { label: 'Lv 3', value: 3, isUse: true, bonus: { atk: 3 * 3 } },
-        { label: 'Lv 4', value: 4, isUse: true, bonus: { atk: 4 * 3 } },
-        { label: 'Lv 5', value: 5, isUse: true, bonus: { atk: 5 * 3 } },
+        { label: '1', value: 1, isUse: true, bonus: { atk: 1 * 3 } },
+        { label: '2', value: 2, isUse: true, bonus: { atk: 2 * 3 } },
+        { label: '3', value: 3, isUse: true, bonus: { atk: 3 * 3 } },
+        { label: '4', value: 4, isUse: true, bonus: { atk: 4 * 3 } },
+        { label: '5', value: 5, isUse: true, bonus: { atk: 5 * 3 } },
       ],
     },
     {
@@ -333,6 +386,38 @@ export class Sura extends CharacterBase {
         { label: 'Lv 3', value: 3, isUse: true },
         { label: 'Lv 4', value: 4, isUse: true },
         { label: 'Lv 5', value: 5, isUse: true },
+      ],
+    },
+    {
+      label: 'Current HP',
+      name: 'Current HP',
+      inputType: 'dropdown',
+      dropdown: [
+        { label: '100 %', value: 0, isUse: false },
+        { label: '10 %', value: 10, isUse: true },
+        { label: '20 %', value: 20, isUse: true },
+        { label: '30 %', value: 30, isUse: true },
+        { label: '40 %', value: 40, isUse: true },
+        { label: '50 %', value: 50, isUse: true },
+        { label: '60 %', value: 60, isUse: true },
+        { label: '70 %', value: 70, isUse: true },
+        { label: '80 %', value: 80, isUse: true },
+      ],
+    },
+    {
+      label: 'Current SP',
+      name: 'Current SP',
+      inputType: 'dropdown',
+      dropdown: [
+        { label: '100 %', value: 0, isUse: false },
+        { label: '10 %', value: 10, isUse: true },
+        { label: '20 %', value: 20, isUse: true },
+        { label: '30 %', value: 30, isUse: true },
+        { label: '40 %', value: 40, isUse: true },
+        { label: '50 %', value: 50, isUse: true },
+        { label: '60 %', value: 60, isUse: true },
+        { label: '70 %', value: 70, isUse: true },
+        { label: '80 %', value: 80, isUse: true },
       ],
     },
   ];
@@ -517,5 +602,17 @@ export class Sura extends CharacterBase {
     }
 
     return totalBonus;
+  }
+
+  private getCurrentHP(maxHp: number) {
+    const currentHp = this.activeSkillLv('Current HP') || 100;
+
+    return floor(maxHp * currentHp * 0.01);
+  }
+
+  private getCurrentSP(maxSp: number) {
+    const currentSp = this.activeSkillLv('Current SP') || 100;
+
+    return floor(maxSp * currentSp * 0.01);
   }
 }
