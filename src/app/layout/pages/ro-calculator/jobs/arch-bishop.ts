@@ -145,7 +145,7 @@ export class ArchBishop extends CharacterBase {
       value: 'Judex==10',
       fct: 0.5,
       vct: 2,
-      acd: 0.58,
+      acd: 0.5,
       cd: 0,
       isMatk: true,
       element: ElementType.Holy,
@@ -155,6 +155,24 @@ export class ArchBishop extends CharacterBase {
         const baseLevel = model.level;
 
         return (300 + skillLevel * 40) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Judex',
+      label: '[Improved] Judex Lv10',
+      value: '[Improved] Judex==10',
+      fct: 0.5,
+      vct: 2,
+      acd: 0.5,
+      cd: 0,
+      isMatk: true,
+      element: ElementType.Holy,
+      hit: 3,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
+
+        return (300 + skillLevel * 70) * (baseLevel / 100);
       },
     },
     {
