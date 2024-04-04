@@ -104,6 +104,38 @@ export class Sura extends CharacterBase {
   ];
   protected readonly _atkSkillList: AtkSkillModel[] = [
     {
+      name: 'Sky Blow',
+      label: 'Sky Blow Lv5',
+      value: 'Sky Blow==5',
+      fct: 0,
+      vct: 0,
+      acd: 0.5,
+      cd: 0,
+      isMelee: true,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const baseLevel = model.level;
+
+        return (skillLevel * 80 + status.totalAgi) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Sky Blow',
+      label: '[Improved] Sky Blow Lv5',
+      value: '[Improved] Sky Blow==5',
+      fct: 0,
+      vct: 0,
+      acd: 0.5,
+      cd: 0,
+      isMelee: true,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const baseLevel = model.level;
+
+        return (skillLevel * 200 + status.totalAgi) * (baseLevel / 100);
+      },
+    },
+    {
       name: 'Rampage Blast',
       label: 'Rampage Blast Lv5',
       value: 'Rampage Blast==5',
