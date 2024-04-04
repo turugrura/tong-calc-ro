@@ -106,8 +106,8 @@ export class ShadowChaser extends CharacterBase {
   ];
   protected _atkSkillList: AtkSkillModel[] = [
     {
-      label: 'Fatal Manace Lv10',
       name: 'Fatal Manace',
+      label: 'Fatal Manace Lv10',
       value: 'Fatal Manace==10',
       acd: 0.5,
       fct: 0,
@@ -122,8 +122,25 @@ export class ShadowChaser extends CharacterBase {
       },
     },
     {
-      label: 'Triangle Shot Lv10',
+      name: 'Fatal Manace',
+      label: '[Improved] Fatal Manace Lv10',
+      value: '[Improved] Fatal Manace==10',
+      acd: 0.5,
+      fct: 0,
+      vct: 0,
+      cd: 0,
+      isMelee: true,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const baseLevel = model.level;
+        const totalAgi = status.totalAgi;
+
+        return (skillLevel * 120 + totalAgi * 2) * (baseLevel / 100);
+      },
+    },
+    {
       name: 'Triangle Shot',
+      label: 'Triangle Shot Lv10',
       value: 'Triangle Shot==10',
       acd: 0.5,
       fct: 0,
@@ -139,8 +156,8 @@ export class ShadowChaser extends CharacterBase {
       },
     },
     {
-      label: '[Improved] Triangle Shot Lv10',
       name: 'Triangle Shot',
+      label: '[Improved] Triangle Shot Lv10',
       value: '[Improved] Triangle Shot==10',
       acd: 0.32,
       fct: 0,
@@ -156,8 +173,8 @@ export class ShadowChaser extends CharacterBase {
       },
     },
     {
-      label: 'Feint Bomb Lv10',
       name: 'Feint Bomb',
+      label: 'Feint Bomb Lv10',
       value: 'Feint Bomb==10',
       acd: 0,
       fct: 0,
@@ -173,8 +190,8 @@ export class ShadowChaser extends CharacterBase {
       },
     },
     {
-      label: 'Arrow Storm Lv10',
       name: 'Arrow Storm',
+      label: 'Arrow Storm Lv10',
       value: 'Arrow Storm==10',
       acd: 0,
       fct: 0, // 0.3 future

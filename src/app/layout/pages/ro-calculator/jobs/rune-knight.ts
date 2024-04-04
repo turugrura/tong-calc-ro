@@ -92,6 +92,27 @@ export class RuneKnight extends CharacterBase {
   protected readonly initialStatusPoint = 100;
   protected readonly classNames = ['Only 3rd Cls', 'Rune Knight', 'Rune Knight Cls', 'Rune Knight Class'];
   protected readonly _atkSkillList: AtkSkillModel[] = [
+    // {
+    //   name: 'Clashing Spiral',
+    //   label: 'Clashing Spiral Lv5',
+    //   value: 'Clashing Spiral==5',
+    //   acd: 1,
+    //   fct: 0.3,
+    //   vct: 0.25,
+    //   cd: 0,
+    //   formula: (input: AtkSkillFormulaInput): number => {
+    //     const { model, skillLevel, monster, weapon } = input;
+    //     const baseLevel = model.level;
+    //     const weaponWeight = weapon.data?.weight ?? 0
+    //     const sizeModifier = {
+    //       'l': 1,
+    //       'm': 1.15,
+    //       's': 1.3,
+    //     }[monster.size]
+
+    //     return (ATK+weaponWeight*0.7*sizeModifier + masterAtk)*(150 + skillLevel * 50) * (baseLevel / 100);
+    //   },
+    // },
     {
       name: 'Sonic Wave',
       label: 'Sonic Wave Lv10',
