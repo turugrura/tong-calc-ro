@@ -225,6 +225,146 @@ export class Sura extends CharacterBase {
     },
     {
       name: 'Hell Gate',
+      label: 'Hell Gate Lv1',
+      value: 'Hell Gate==1',
+      fct: 0,
+      vct: 1,
+      acd: 0.1,
+      cd: 0,
+      isHit100: true,
+      hit: 7,
+      currentHpFn: (maxHp) => this.getCurrentHP(maxHp),
+      currentSpFn: (maxSp) => this.getCurrentSP(maxSp),
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
+
+        return 500 * skillLevel * (baseLevel / 100);
+      },
+      finalDmgFormula: (input) => {
+        const { model, skillLevel, maxHp, currentHp, currentSp, damage: baseDamage } = input;
+        const baseLevel = model.level;
+
+        const spModifier = 1 + skillLevel * 0.2;
+        const bonusDamge = floor(maxHp - (currentHp || 0) + (currentSp || 0) * spModifier + baseLevel * 10);
+
+        return baseDamage + bonusDamge;
+      },
+    },
+    {
+      name: 'Hell Gate',
+      label: 'Hell Gate Lv2',
+      value: 'Hell Gate==2',
+      fct: 0,
+      vct: 1.2,
+      acd: 0.2,
+      cd: 0,
+      isHit100: true,
+      hit: 7,
+      currentHpFn: (maxHp) => this.getCurrentHP(maxHp),
+      currentSpFn: (maxSp) => this.getCurrentSP(maxSp),
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
+
+        return 500 * skillLevel * (baseLevel / 100);
+      },
+      finalDmgFormula: (input) => {
+        const { model, skillLevel, maxHp, currentHp, currentSp, damage: baseDamage } = input;
+        const baseLevel = model.level;
+
+        const spModifier = 1 + skillLevel * 0.2;
+        const bonusDamge = floor(maxHp - (currentHp || 0) + (currentSp || 0) * spModifier + baseLevel * 10);
+
+        return baseDamage + bonusDamge;
+      },
+    },
+    {
+      name: 'Hell Gate',
+      label: 'Hell Gate Lv3',
+      value: 'Hell Gate==3',
+      fct: 0,
+      vct: 1.4,
+      acd: 0.3,
+      cd: 0,
+      isHit100: true,
+      hit: 7,
+      currentHpFn: (maxHp) => this.getCurrentHP(maxHp),
+      currentSpFn: (maxSp) => this.getCurrentSP(maxSp),
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
+
+        return 500 * skillLevel * (baseLevel / 100);
+      },
+      finalDmgFormula: (input) => {
+        const { model, skillLevel, maxHp, currentHp, currentSp, damage: baseDamage } = input;
+        const baseLevel = model.level;
+
+        const spModifier = 1 + skillLevel * 0.2;
+        const bonusDamge = floor(maxHp - (currentHp || 0) + (currentSp || 0) * spModifier + baseLevel * 10);
+
+        return baseDamage + bonusDamge;
+      },
+    },
+    {
+      name: 'Hell Gate',
+      label: 'Hell Gate Lv4',
+      value: 'Hell Gate==4',
+      fct: 0,
+      vct: 1.6,
+      acd: 0.4,
+      cd: 0,
+      isHit100: true,
+      hit: 7,
+      currentHpFn: (maxHp) => this.getCurrentHP(maxHp),
+      currentSpFn: (maxSp) => this.getCurrentSP(maxSp),
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
+
+        return 500 * skillLevel * (baseLevel / 100);
+      },
+      finalDmgFormula: (input) => {
+        const { model, skillLevel, maxHp, currentHp, currentSp, damage: baseDamage } = input;
+        const baseLevel = model.level;
+
+        const spModifier = 1 + skillLevel * 0.2;
+        const bonusDamge = floor(maxHp - (currentHp || 0) + (currentSp || 0) * spModifier + baseLevel * 10);
+
+        return baseDamage + bonusDamge;
+      },
+    },
+    {
+      name: 'Hell Gate',
+      label: 'Hell Gate Lv5',
+      value: 'Hell Gate==5',
+      fct: 0,
+      vct: 1.8,
+      acd: 0.5,
+      cd: 0,
+      isHit100: true,
+      hit: 7,
+      currentHpFn: (maxHp) => this.getCurrentHP(maxHp),
+      currentSpFn: (maxSp) => this.getCurrentSP(maxSp),
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
+
+        return 500 * skillLevel * (baseLevel / 100);
+      },
+      finalDmgFormula: (input) => {
+        const { model, skillLevel, maxHp, currentHp, currentSp, damage: baseDamage } = input;
+        const baseLevel = model.level;
+
+        const spModifier = 1 + skillLevel * 0.2;
+        const bonusDamge = floor(maxHp - (currentHp || 0) + (currentSp || 0) * spModifier + baseLevel * 10);
+
+        return baseDamage + bonusDamge;
+      },
+    },
+    {
+      name: 'Hell Gate',
       label: 'Hell Gate Lv10',
       value: 'Hell Gate==10',
       fct: 0,
@@ -396,6 +536,7 @@ export class Sura extends CharacterBase {
         { label: '100 %', value: 0, isUse: false },
         { label: '10 %', value: 10, isUse: true },
         { label: '20 %', value: 20, isUse: true },
+        { label: '25 %', value: 25, isUse: true },
         { label: '30 %', value: 30, isUse: true },
         { label: '40 %', value: 40, isUse: true },
         { label: '50 %', value: 50, isUse: true },
