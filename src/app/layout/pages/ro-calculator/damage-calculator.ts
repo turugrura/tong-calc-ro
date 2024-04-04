@@ -22,6 +22,8 @@ import { Weapon } from './weapon';
 interface DamageResultModel {
   minDamage: number;
   maxDamage: number;
+  rawMinNoCri: number;
+  rawMaxNoCri: number;
   avgNoCriDamage: number;
   avgCriDamage: number;
   propertyAtk: ElementType;
@@ -784,6 +786,8 @@ export class DamageCalculator {
       minDamage,
       maxDamage,
       avgNoCriDamage: round((rawMinNoCri + rawMaxNoCri) / 2, 0),
+      rawMinNoCri,
+      rawMaxNoCri,
       avgCriDamage: round((minDamage + maxDamage) / 2, 0),
       propertyAtk,
       propertyMultiplier,
@@ -924,6 +928,8 @@ export class DamageCalculator {
       propertyMultiplier,
       minDamage,
       maxDamage,
+      rawMinNoCri: minDamage,
+      rawMaxNoCri: maxDamage,
       avgNoCriDamage: 0,
       avgCriDamage: 0,
       sizePenalty: 1,
@@ -1106,6 +1112,8 @@ export class DamageCalculator {
         canCri: false,
         minDamage: d,
         maxDamage: d,
+        rawMinNoCri: d,
+        rawMaxNoCri: d,
         propertyAtk: skillPropertyAtk,
         propertyMultiplier: propertyMultiplier,
         avgCriDamage: d,
@@ -1197,6 +1205,8 @@ export class DamageCalculator {
       skillTotalPene: isIgnoreDef ? 100 : totalPene,
       skillMinDamage: minDamage,
       skillMaxDamage: maxDamage,
+      skillMinDamageNoCri: calculated.rawMinNoCri,
+      skillMaxDamageNoCri: calculated.rawMaxNoCri,
       skillHit: skillData?.hit || 1,
       skillAccuracy: skillAccRate,
       skillDps,

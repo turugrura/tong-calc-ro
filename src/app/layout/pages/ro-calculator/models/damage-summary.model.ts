@@ -32,6 +32,8 @@ export interface SkillDamageSummaryModel {
   skillTotalPene: number;
   skillMinDamage: number;
   skillMaxDamage: number;
+  skillMaxDamageNoCri: number;
+  skillMinDamageNoCri: number;
   skillTotalHit: number;
   skillHit: number;
   skillAccuracy: number;

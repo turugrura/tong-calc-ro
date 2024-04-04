@@ -4322,6 +4322,19 @@
                       [max2]="totalSummary2?.dmg?.skillCriDmgToMonster"
                     ></app-calc-value>
                   </div>
+                  <div class="col-12" [hidden]="!totalSummary?.dmg?.skillCanCri">
+                    <app-calc-value
+                      [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+                      label="SkillDmg:"
+                      styleClass="summary_damage"
+                      styleClass2="summary_compare"
+                      [showPercentDiff]="true"
+                      [min]="totalSummary?.dmg?.skillMinDamageNoCri"
+                      [max]="totalSummary?.dmg?.skillMaxDamageNoCri"
+                      [min2]="totalSummary2?.dmg?.skillMinDamageNoCri"
+                      [max2]="totalSummary2?.dmg?.skillMaxDamageNoCri"
+                    ></app-calc-value>
+                  </div>
                   <div class="col-12">
                     <app-calc-value
                       [enableCompare]="isEnableCompare && totalSummary2?.dmg"
