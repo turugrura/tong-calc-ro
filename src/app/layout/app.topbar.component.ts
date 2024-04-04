@@ -67,6 +67,16 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
       link: 'https://ro.gnjoy.in.th/geffen-magic-tournament-enchant-system-update',
     },
     {
+      label: 'Develop note ! Balance Skill ขยายขีดจำกัดเลเวลสูงสุดของ Extended Class',
+      writer: 'RO GGT',
+      link: 'https://ro.gnjoy.in.th/develop-note-extended',
+    },
+    {
+      label: 'Skills Balance (1st, 2nd and transcendent classes skills)',
+      writer: 'RO GGT',
+      link: 'https://ro.gnjoy.in.th/skills-balance-1st-2nd-and-transcendent-classes-skills',
+    },
+    {
       label: 'Class Improvement [Sura, Warlock, Minstrel&Wanderer]',
       writer: 'RO GGT',
       link: 'https://ro.gnjoy.in.th/class-improvement-sura-warlock-minstrelwanderer',
@@ -159,6 +169,19 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
   ];
 
   updates: { v: string; date: string; logs: string[] }[] = [
+    {
+      v: 'V2.0.7',
+      date: '04-04-2567',
+      logs: [
+        'Fixed reported bugs',
+        'Added Sura skill [ Hell Gate, Sky Blow ]',
+        'Added RG skill [ Improved Over Brand ]',
+        'Added ArchBishop skill [ Improved Judex ]',
+        'Added SC skill [ Improved Fatal Manance ]',
+        'Added Official last updated items',
+        'Added requested items',
+      ],
+    },
     {
       v: 'V2.0.6',
       date: '31-03-2567',
