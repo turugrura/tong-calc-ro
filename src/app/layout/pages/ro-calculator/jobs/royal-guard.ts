@@ -191,6 +191,24 @@ export class RoyalGuard extends CharacterBase {
       },
     },
     {
+      name: 'Over Brand',
+      label: '[Improved] Over Brand Lv5',
+      value: '[Improved] Over Brand==5',
+      acd: 1,
+      fct: 0.5,
+      vct: 0,
+      cd: 0.3,
+      isMelee: true,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const baseLevel = model.level;
+        const { totalStr, totalDex } = status;
+        const moonSlasherBonus = this.isSkillActive('Moon Slasher') ? 150 : 0;
+
+        return (skillLevel * (300 + moonSlasherBonus) + totalStr + totalDex) * (baseLevel / 100);
+      },
+    },
+    {
       name: 'Shield Press',
       label: 'Shield Press Lv10',
       value: 'Shield Press==10',
@@ -317,6 +335,16 @@ export class RoyalGuard extends CharacterBase {
           isUse: true,
           bonus: { atk: 200, matk: 200, allStatus: 30, hit: 60, hpPercent: 20 },
         },
+        { label: 'No', value: 0, isUse: false },
+      ],
+    },
+    {
+      label: 'Moon Slasher',
+      name: 'Moon Slasher',
+      inputType: 'selectButton',
+      isMasteryAtk: true,
+      dropdown: [
+        { label: 'Yes', value: 5, isUse: true },
         { label: 'No', value: 0, isUse: false },
       ],
     },
