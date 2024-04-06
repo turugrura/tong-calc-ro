@@ -256,6 +256,7 @@ export class SharedPresetComponent implements OnInit, OnDestroy {
   }
 
   onSelectClassChange() {
+    this.firstRecord = 0;
     this.searchSource.next(1);
 
     if (this.selectedClassId) {

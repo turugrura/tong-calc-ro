@@ -143,7 +143,7 @@ export class RuneKnight extends CharacterBase {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
 
-        return (1050 + skillLevel * 100) * (baseLevel / 100);
+        return (1050 + skillLevel * 150) * (baseLevel / 100);
       },
     },
     {
