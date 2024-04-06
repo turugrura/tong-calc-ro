@@ -259,6 +259,8 @@ export class RuneKnight extends CharacterBase {
       fct: 0.5,
       vct: 2,
       cd: 0.2,
+      isHit100: true,
+      currentHpFn: (maxHp) => this.getCurrentHp(maxHp),
       getElement: () => {
         if (this.isSkillActive('Lux Anima Runestone')) {
           return ElementType.Dark;
@@ -283,6 +285,8 @@ export class RuneKnight extends CharacterBase {
       fct: 0.5,
       vct: 2,
       cd: 0,
+      isHit100: true,
+      currentHpFn: (maxHp) => this.getCurrentHp(maxHp),
       getElement: () => {
         if (this.isSkillActive('Lux Anima Runestone')) {
           return ElementType.Dark;
@@ -307,11 +311,13 @@ export class RuneKnight extends CharacterBase {
       fct: 0.5,
       vct: 2,
       cd: 0.2,
+      isHit100: true,
+      currentHpFn: (maxHp) => this.getCurrentHp(maxHp),
       getElement: () => {
         if (this.isSkillActive('Lux Anima Runestone')) {
-          return ElementType.Ghost;
-        } else if (this.isSkillActive('Asir Runestone')) {
           return ElementType.Neutral;
+        } else if (this.isSkillActive('Asir Runestone')) {
+          return ElementType.Ghost;
         }
 
         return ElementType.Water;
@@ -331,11 +337,13 @@ export class RuneKnight extends CharacterBase {
       fct: 0.5,
       vct: 2,
       cd: 0,
+      isHit100: true,
+      currentHpFn: (maxHp) => this.getCurrentHp(maxHp),
       getElement: () => {
         if (this.isSkillActive('Lux Anima Runestone')) {
-          return ElementType.Ghost;
-        } else if (this.isSkillActive('Asir Runestone')) {
           return ElementType.Neutral;
+        } else if (this.isSkillActive('Asir Runestone')) {
+          return ElementType.Ghost;
         }
 
         return ElementType.Water;
@@ -602,36 +610,26 @@ export class RuneKnight extends CharacterBase {
     return totalBonus;
   }
 
-  private getCurHP(maxHp: number) {
+  private getCurrentHp(maxHp: number) {
     const curHp = this.activeSkillLv('Current HP') || 100;
 
     return maxHp * curHp * 0.01;
   }
 
   private calcDragonBreathFormula(input: AtkSkillFormulaInput) {
-    const { model, skillLevel, maxHp, maxSp } = input;
+    const { model, skillLevel, maxSp, currentHp } = input;
     const baseLevel = model.level;
     const dragonTrainingLv = this.learnLv('Dragon Training');
 
-    return (
-      floor(this.getCurHP(maxHp) / 50 + maxSp / 4) *
-      ((skillLevel * baseLevel) / 150) *
-      (95 + dragonTrainingLv * 5) *
-      0.01
-    );
+    return floor(currentHp / 50 + maxSp / 4) * ((skillLevel * baseLevel) / 150) * (95 + dragonTrainingLv * 5) * 0.01;
   }
 
   private calcDragonBreathFormulaImproved(input: AtkSkillFormulaInput) {
-    const { model, skillLevel, maxHp, maxSp } = input;
+    const { model, skillLevel, currentHp, maxSp } = input;
     const baseLevel = model.level;
     const dragonTrainingLv = this.learnLv('Dragon Training');
 
-    return (
-      floor(this.getCurHP(maxHp) / 50 + maxSp / 4) *
-      ((skillLevel * baseLevel) / 100) *
-      (90 + dragonTrainingLv * 10) *
-      0.01
-    );
+    return floor(currentHp / 50 + maxSp / 4) * ((skillLevel * baseLevel) / 100) * (90 + dragonTrainingLv * 10) * 0.01;
   }
 
   private calcPostSkillDamgeDragonBreath(
