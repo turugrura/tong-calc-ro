@@ -40,6 +40,7 @@ import { FieldsetModule } from 'primeng/fieldset';
 import { MiscDetailComponent } from './misc-detail/misc-detail.component';
 import { DialogModule } from 'primeng/dialog';
 import { EquipmentShadowComponent } from './equipment-shadow/equipment-shadow.component';
+import { ItemSearchComponent } from './item-search/item-search.component';
 
 @NgModule({
   imports: [
@@ -85,6 +86,7 @@ import { EquipmentShadowComponent } from './equipment-shadow/equipment-shadow.co
     MonsterDataViewComponent,
     MiscDetailComponent,
     EquipmentShadowComponent,
+    ItemSearchComponent,
   ],
   exports: [CalcValueComponent],
 })

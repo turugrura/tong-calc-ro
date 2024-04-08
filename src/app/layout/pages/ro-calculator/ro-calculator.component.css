@@ -256,6 +256,8 @@
   border: var(--border-radius) solid var(--surface-border);
 }
 
+:host ::ng-deep .item-position-weaponList,
+:host ::ng-deep .item-position-weaponCardList,
 :host ::ng-deep .item_label_weapon_main .p-dropdown-label,
 :host ::ng-deep .item_label_weapon_main .p-cascadeselect-label,
 :host ::ng-deep .item_label_weapon,
@@ -293,6 +295,8 @@
   color: var(--pink-200);
 }
 
+:host ::ng-deep .item-position-shieldList,
+:host ::ng-deep .item-position-shieldCardList,
 :host ::ng-deep .item_label_shield_main .p-dropdown-label,
 :host ::ng-deep .item_label_shield_main .p-cascadeselect-label,
 :host ::ng-deep .item_label_shield,
@@ -305,6 +309,10 @@
   color: var(--pink-200);
 }
 
+:host ::ng-deep .item-position-headUpperList,
+:host ::ng-deep .item-position-headMiddleList,
+:host ::ng-deep .item-position-headLowerList,
+:host ::ng-deep .item-position-headCardList,
 :host ::ng-deep .item_label_head .p-dropdown-label,
 :host ::ng-deep .item_label_head .p-cascadeselect-label,
 :host ::ng-deep .item_label_headUpper,
@@ -326,6 +334,12 @@
   color: var(--blue-200);
 }
 
+:host ::ng-deep .item-position-armorList,
+:host ::ng-deep .item-position-armorCardList,
+:host ::ng-deep .item-position-garmentList,
+:host ::ng-deep .item-position-garmentCardList,
+:host ::ng-deep .item-position-bootList,
+:host ::ng-deep .item-position-bootCardList,
 :host ::ng-deep .item_label_def .p-dropdown-label,
 :host ::ng-deep .item_label_def .p-cascadeselect-label,
 :host ::ng-deep .item_label_armor,
@@ -348,6 +362,8 @@
   color: var(--red-200);
 }
 
+:host ::ng-deep .item-position-accList,
+:host ::ng-deep .item-position-accCardList,
 :host ::ng-deep .item_label_acc .p-dropdown-label,
 :host ::ng-deep .item_label_acc .p-cascadeselect-label,
 .item_float_label,
@@ -366,6 +382,7 @@
   color: var(--purple-200);
 }
 
+:host ::ng-deep .item-position-petList,
 :host ::ng-deep .item_label_pet .p-dropdown-label,
 :host ::ng-deep .item_label_pet .p-cascadeselect-label {
   /* background-color: var(--surface-0); */
@@ -373,6 +390,7 @@
   color: var(--orange-200);
 }
 
+:host ::ng-deep .item-position-costumeList,
 :host ::ng-deep .item_label_costume .p-dropdown-label,
 :host ::ng-deep .item_label_costume .p-cascadeselect-label,
 :host ::ng-deep .item_label_costumeUpper,
@@ -386,6 +404,12 @@
   color: var(--yellow-400);
 }
 
+:host ::ng-deep .item-position-shadowWeaponList,
+:host ::ng-deep .item-position-shadowArmorList,
+:host ::ng-deep .item-position-shadowShieldList,
+:host ::ng-deep .item-position-shadowBootList,
+:host ::ng-deep .item-position-shadowEarringList,
+:host ::ng-deep .item-position-shadowPendantList,
 :host ::ng-deep .item_label_shadow .p-dropdown-label,
 :host ::ng-deep .item_label_shadow .p-cascadeselect-label,
 :host ::ng-deep .item_label_shadowWeapon,

@@ -1,0 +1,29 @@
+:host ::ng-deep .item-position-list p-listbox .p-listbox-list {
+  /* columns: 9;
+  padding: 0; */
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(9, auto);
+}
+
+:host ::ng-deep .item-position-list .p-listbox-item {
+  padding: 0.25rem 0.25rem;
+}
+
+:host ::ng-deep .skill-list p-listbox .p-listbox-list {
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+}
+
+:host ::ng-deep .skill-list .p-listbox-item {
+  padding: 0.25rem 0.25rem;
+}
+
+:host ::ng-deep .p-dialog-header {
+  padding: 0.5rem 1.5rem;
+}
+
+:host ::ng-deep .p-dialog-content {
+  padding-bottom: 0;
+}
