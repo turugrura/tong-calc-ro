@@ -252,8 +252,8 @@ export class GitCross extends CharacterBase {
       label: 'Poisoning',
       dropdown: [
         { label: '-', isUse: false, value: 0 },
-        { label: 'Pyrexia', isUse: true, value: 1, bonus: { criDmg: 15, flatDmg: 5 } },
-        { label: 'Magic Mushroom', isUse: true, value: 2, bonus: { acd: 10 } },
+        { label: 'Pyrexia', isUse: true, value: 1, bonus: { criDmg: 15, flatDmg: 5, melee: 10 } },
+        { label: 'Magic Mushroom', isUse: true, value: 2, bonus: { acd: 10, melee: 10 } },
       ],
     },
   ];
