@@ -47,7 +47,7 @@
               </ng-template>
             </p-table>
           </div>
-          <div class="col-12" *ngIf="isShowSizeTable">
+          <div class="col-12 pb-3" *ngIf="isShowSizeTable">
             <p-table [value]="sizeTable" styleClass="p-datatable-sm" [tableStyle]="{ 'min-width': '10rem' }">
               <ng-template pTemplate="header">
                 <tr>
@@ -64,6 +64,33 @@
                   </td>
                   <td>
                     <span class="{{ val.magical != 0 ? 'summary_stat_matk' : '' }}">{{ val.magical || '-' }}</span>
+                  </td>
+                </tr>
+              </ng-template>
+            </p-table>
+          </div>
+          <div class="col-12" *ngIf="isShowAtkTypeTable">
+            <p-table [value]="atkTypeTable" styleClass="p-datatable-sm" [tableStyle]="{ 'min-width': '10rem' }">
+              <ng-template pTemplate="header">
+                <tr>
+                  <th></th>
+                  <th class="color_highlight">%</th>
+                </tr>
+              </ng-template>
+              <ng-template pTemplate="body" let-val>
+                <tr>
+                  <td>{{ val.name }}</td>
+                  <td>
+                    <span
+                      class="{{
+                        val.value == 0
+                          ? ''
+                          : val.name == 'Melee' || val.name == 'Range'
+                          ? 'summary_stat_atk'
+                          : 'summary_stat_matk'
+                      }}"
+                      >{{ val.value || '-' }}</span
+                    >
                   </td>
                 </tr>
               </ng-template>

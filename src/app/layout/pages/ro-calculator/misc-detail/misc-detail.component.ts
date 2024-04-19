@@ -11,6 +11,7 @@ export class MiscDetailComponent {
   @Input({ required: true }) sizeTable: any[];
   @Input({ required: true }) classTable: any[];
   @Input({ required: true }) skillMultiplierTable: any[];
+  @Input() atkTypeTable: any[] = [];
 
   constructor() {}
 
@@ -24,5 +25,9 @@ export class MiscDetailComponent {
 
   get isShowSkillMultiplierTable() {
     return this.skillMultiplierTable?.length > 0;
+  }
+
+  get isShowAtkTypeTable() {
+    return this.atkTypeTable?.length > 0;
   }
 }

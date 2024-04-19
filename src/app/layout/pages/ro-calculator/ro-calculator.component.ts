@@ -279,6 +279,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   peneRaceTable: RaceDataModel[];
   sizeTable: RaceDataModel[];
   classTable: RaceDataModel[];
+  atkTypeTable: any[];
   peneClassTable: RaceDataModel[];
   skillMultiplierTable: SkillMultiplierModel[];
 
@@ -441,6 +442,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         this.setElementTable();
         this.setSizeTable();
         this.setMonsterTypeTable();
+        this.setAtkTypeTable();
         this.setSkillTable();
 
         this.chanceList = this.calculator.chanceList;
@@ -953,6 +955,14 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         magical: m_pene_class_all + (this.totalSummary[`m_pene_class_${_class}`] || 0),
       };
     });
+  }
+
+  private setAtkTypeTable(): void {
+    this.atkTypeTable = [
+      { name: 'Melee', value: this.totalSummary.melee || 0 },
+      { name: 'Range', value: this.totalSummary.range || 0 },
+      { name: 'MATK', value: this.totalSummary.matkPercent || 0 },
+    ];
   }
 
   private setSkillTable(): void {
