@@ -790,6 +790,7 @@ export const EnchantTable: EntTable[] = [
   { name: 'Just_Finish', enchants: [null, null, malangdo, malangdo] },
   { name: 'Holy_Stick', enchants: [null, null, malangdo, malangdo] },
   { name: 'Katar_170', enchants: [null, null, malangdo, malangdo] },
+  { name: 'Krishna', enchants: [null, null, malangdo, malangdo] },
   { name: 'Two_Hand_Spear_170', enchants: [null, null, malangdo, malangdo] },
   { name: 'Staff_170', enchants: [null, null, malangdo, malangdo] },
   { name: 'Cakram', enchants: [null, null, malangdo, malangdo] },

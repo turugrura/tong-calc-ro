@@ -21,6 +21,7 @@ const Mapper = {
   abyss_04: '192 - 200 มังกร 4',
   iz_d04_i: '135 - 150 Illuion of under water 4',
   iz_d05_i: '190 - 200 Illuion of under water 5',
+  gl_cas01_: 'Abyss Glast Heim 1st Floor',
   hero_tra: 'Test damage',
   tra_fild: 'Test damage',
   prontera: 'Test damage',
