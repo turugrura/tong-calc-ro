@@ -149,6 +149,30 @@ export class Wanderer extends CharacterBase {
     },
     {
       name: 'Severe Rainstorm',
+      label: 'Severe Rainstorm Lv3',
+      value: 'Severe Rainstorm==3',
+      acd: 1,
+      fct: 0.5,
+      vct: 2.5,
+      cd: 6,
+      totalHit: 12,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { weapon, status, skillLevel, model } = input;
+        const baseLevel = model.level;
+        const { totalDex, totalAgi } = status;
+        const weaType = weapon.data.typeName;
+        const weaMultiMap: Partial<Record<WeaponTypeName, number>> = {
+          bow: 1,
+          instrument: 1.5,
+          whip: 1.5,
+        };
+        const extra = weaMultiMap[weaType] || 0;
+
+        return extra * (totalDex + totalAgi) * (skillLevel / 5) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Severe Rainstorm',
       label: 'Severe Rainstorm Lv4',
       value: 'Severe Rainstorm==4',
       acd: 1,
