@@ -22,3 +22,5 @@ export * from './double-attack-fn';
 export * from './vultures-eye-fn';
 export * from './double-strafe';
 export * from './owls-eye-fn';
+export * from './great-echo-fn';
+export * from './metalic-sound-fn';

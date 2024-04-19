@@ -13,8 +13,10 @@ import {
   CirclingNatureFn,
   DanceWithWug,
   FriggsSongFn,
+  GreatEchoFn,
   LeradsDew,
   Lesson,
+  MetalicSoundFn,
   SevereRainstormFn,
   SongOfMana,
 } from '../constants/share-passive-skills';
@@ -299,6 +301,8 @@ export class Minstrel extends CharacterBase {
     LeradsDew,
     CirclingNatureFn(),
     FriggsSongFn(),
+    MetalicSoundFn(),
+    GreatEchoFn(),
   ];
 
   constructor() {

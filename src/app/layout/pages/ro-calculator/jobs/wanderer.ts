@@ -13,8 +13,10 @@ import {
   CirclingNatureFn,
   DanceWithWug,
   FriggsSongFn,
+  GreatEchoFn,
   LeradsDew,
   Lesson,
+  MetalicSoundFn,
   SevereRainstormFn,
   SongOfMana,
 } from '../constants/share-passive-skills';
@@ -293,6 +295,8 @@ export class Wanderer extends CharacterBase {
     LeradsDew,
     CirclingNatureFn(),
     FriggsSongFn(),
+    MetalicSoundFn(),
+    GreatEchoFn(),
   ];
 
   constructor() {
