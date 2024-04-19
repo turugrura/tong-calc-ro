@@ -62,7 +62,7 @@ export class SharedPresetComponent implements OnInit, OnDestroy {
   selectedTag = 'no_tag'; //this.availableTags[0].value as string;
   selectedClassId = this.allClasses[0].value as number;
 
-  searchSource = new Subject<number>();
+  searchSource = new Subject<boolean>();
   searchEvent$ = this.searchSource.asObservable();
 
   likeSource = new Subject<{ tagId: string; isLike: boolean }>();
@@ -188,9 +188,11 @@ export class SharedPresetComponent implements OnInit, OnDestroy {
     const s = this.searchEvent$
       .pipe(
         tap(() => (this.isLoading = true)),
-        tap(() => {
+        tap((isChangeClass) => {
           this.viewDetail = {};
-          this.isCalculated = {};
+          if (isChangeClass) {
+            this.isCalculated = {};
+          }
         }),
         switchMap(() => {
           const empty = of({ items: [], totalItem: 0 }) as Observable<PublishPresetsReponse>;
@@ -251,13 +253,13 @@ export class SharedPresetComponent implements OnInit, OnDestroy {
     this.subscriptions.push(s);
   }
 
-  search() {
-    this.searchSource.next(1);
+  search(isChangeClass: boolean) {
+    this.searchSource.next(isChangeClass);
   }
 
   onSelectClassChange() {
     this.firstRecord = 0;
-    this.searchSource.next(1);
+    this.searchSource.next(true);
 
     if (this.selectedClassId) {
       this.selectedCharacter = Characters.find((a) => a.value === this.selectedClassId)?.instant;
@@ -355,7 +357,7 @@ export class SharedPresetComponent implements OnInit, OnDestroy {
   pageChange(event: PaginatorState) {
     this.firstRecord = event.first;
     this.pageLimit = event.rows;
-    this.search();
+    this.search(false);
   }
 
   addToCalc(presetTag: PublishPresetModel) {
