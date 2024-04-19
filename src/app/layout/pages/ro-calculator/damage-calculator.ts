@@ -1163,8 +1163,11 @@ export class DamageCalculator {
 
     const skillAspd = calcSkillAspd({ skillData, status: this.status, totalEquipStatus: this.totalBonus });
 
+    const isKatar = this.weaponData.data?.typeName === 'katar';
     let actualCri = calculated.canCri
-      ? Math.max(0, floor((actualBasicCriRate + baseSkillCri) * baseCriPercentage) - criShield)
+      ? isKatar
+        ? Math.max(0, floor(actualBasicCriRate + baseSkillCri - criShield) * baseCriPercentage)
+        : Math.max(0, floor((actualBasicCriRate + baseSkillCri) * baseCriPercentage) - criShield)
       : 0;
     if (this.isForceSkillCri) {
       actualCri = 100;
