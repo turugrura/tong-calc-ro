@@ -148,8 +148,9 @@ export class RuneKnight extends CharacterBase {
     },
     {
       name: 'Wind Cutter',
-      label: 'Wind Cutter Lv10',
-      value: 'Wind Cutter==10',
+      label: 'Wind Cutter Lv5',
+      value: 'Wind Cutter==5',
+      values: ['Wind Cutter==10'],
       acd: 1,
       fct: 0,
       vct: 0,
@@ -174,8 +175,9 @@ export class RuneKnight extends CharacterBase {
     },
     {
       name: 'Wind Cutter',
-      label: '[Improved 2nd] Wind Cutter Lv10',
-      value: '[Improved 2nd] Wind Cutter==10',
+      label: '[Improved 2nd] Wind Cutter Lv5',
+      value: '[Improved 2nd] Wind Cutter==5',
+      values: ['[Improved 2nd] Wind Cutter==10'],
       acd: 0.5,
       fct: 0,
       vct: 0,
