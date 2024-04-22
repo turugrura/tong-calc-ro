@@ -664,7 +664,6 @@ const bpBioLab2 = [
   "[Event]_Chen's Memory",
   "[Event]_Trentini's Memory",
   "[Event]_Alphoccio's Memory",
-  ...bpBioLab43,
 ];
 
 const malangdo = [
