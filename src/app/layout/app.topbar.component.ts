@@ -28,6 +28,12 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
       icon: 'pi pi-fw pi-list',
       routerLink: ['/shared-presets'],
     },
+    {
+      label: 'Item Ranking',
+      icon: 'pi pi-fw pi-sort-amount-down',
+      routerLink: ['/preset-summary'],
+      isNew: true,
+    } as any,
   ];
 
   @ViewChild('menubutton') menuButton!: ElementRef;

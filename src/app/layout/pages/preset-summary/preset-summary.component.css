@@ -1,0 +1,29 @@
+:host ::ng-deep .column_list p-listbox .p-listbox-list {
+  min-width: 1480px;
+  columns: 10;
+  padding: 0;
+}
+
+:host ::ng-deep .column_list .p-listbox-item {
+  padding: 0.5rem;
+}
+
+.job_img {
+  height: fit-content;
+}
+
+.desc-sticky {
+  top: 40px;
+  height: 100vh;
+}
+
+/* .item_img {
+  position: absolute;
+  top: -3px;
+  left: -4px;
+  height: 25px;
+} */
+.item_img {
+  height: fit-content;
+  /* width: 37px; */
+}

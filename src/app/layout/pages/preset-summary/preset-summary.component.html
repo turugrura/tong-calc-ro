@@ -1,0 +1,81 @@
+<div class="grid grid-nogutter" style="min-width: 1500px">
+  <div class="col-12 mb-2">
+    <div class="grid grid-nogutter column_list">
+      <p-listbox [options]="allClasses" [(ngModel)]="selectedJobId" (onChange)="onJobChange()" [disabled]="isLoading">
+        <ng-template let-item pTemplate="item" class="py-0">
+          <div class="flex gap-2 py-0">
+            <img src="assets/demo/images/jobs/icon_jobs_{{ item.icon }}.png" alt="" class="job_img" />
+            <div class="text_ellips">{{ item.label }}</div>
+          </div>
+        </ng-template>
+      </p-listbox>
+    </div>
+  </div>
+  <div class="col-12 grid grid-nogutter">
+    <div class="col-3">
+      <div class="card text-lg m-0 p-2">
+        <div>From {{ jobSummary[0] || 0 }} accounts</div>
+        <div>
+          This job <span>{{ totalAccounts }}</span> accounts
+        </div>
+      </div>
+
+      <p-listbox
+        [options]="skillRankingList"
+        [(ngModel)]="selectedSkillName"
+        (onChange)="onSkillChange()"
+        [disabled]="isLoading"
+      >
+        <ng-template let-item pTemplate="item" class="py-0">
+          <div class="w-full flex justify-content-between">
+            <div class="text_ellips">{{ item.label }}</div>
+            <div class="text_ellips">({{ item.total }} accounts)</div>
+          </div>
+        </ng-template>
+      </p-listbox>
+      <div class="card px-1 py-3 sticky desc-sticky">
+        <div class="text-lg font-bold mb-3">Item Description</div>
+        <div class="flex gap-1 mb-3" *ngIf="selectedItemId">
+          <img src="assets/demo/images/items/{{ selectedItemId }}.png" alt="" class="item_img" />
+          <div class="text_ellips font-medium">
+            {{ itemMap[selectedItemId]?.name }}
+          </div>
+        </div>
+        <div
+          [hidden]="!selectedItemDesc"
+          class="px-2 py-2"
+          style="color: #000; background-color: #fff"
+          [innerHTML]="selectedItemDesc"
+        ></div>
+      </div>
+    </div>
+    <div class="col-9 grid grid-nogutter">
+      <div class="col-6 p-1" *ngFor="let position of allItemPositions" [hidden]="!rankingMap[position].length">
+        <div class="card font-bold text-lg m-0 p-2">{{ position }}</div>
+        <p-listbox
+          [options]="rankingMap[position]"
+          [(ngModel)]="selectedItemId"
+          (onChange)="onItemChange()"
+          optionValue="ItemId"
+        >
+          <ng-template let-rank pTemplate="item" class="py-0">
+            <div class="flex w-full justify-content-between">
+              <div class="flex gap-1" *ngIf="rank.ItemId">
+                <img src="assets/demo/images/items/{{ rank.ItemId }}.png" alt="" class="item_img" />
+                <div class="text_ellips font-medium">
+                  {{ rank.ItemName }}
+                </div>
+              </div>
+              <div class="mt-2 md:mt-0 flex align-items-center" style="width: 130px">
+                <div class="surface-300 border-round overflow-hidden w-10rem lg:w-6rem" [ngStyle]="{ height: '8px' }">
+                  <div class="bg-{{ rank.ColorStyle }} h-full" [ngStyle]="{ width: rank.Percentage + '%' }"></div>
+                </div>
+                <span class="text-{{ rank.ColorStyle }} ml-3 font-medium">{{ rank.Percentage }} %</span>
+              </div>
+            </div>
+          </ng-template>
+        </p-listbox>
+      </div>
+    </div>
+  </div>
+</div>

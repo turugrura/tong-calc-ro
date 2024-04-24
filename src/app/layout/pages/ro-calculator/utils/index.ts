@@ -11,3 +11,4 @@ export * from './to-upsert-preset-model';
 export * from './wait-rxjs';
 export * from './create-base-hp-sp-option-list';
 export * from './to-raw-option-txt-list';
+export * from './pretty-item-desc';

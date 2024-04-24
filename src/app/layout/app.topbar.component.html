@@ -29,6 +29,7 @@
             <span [class]="item.icon"></span>
             <span> {{ item.label }}</span>
           </div>
+          <span *ngIf="item.isNew" class="p-tag p-tag-warning ml-2">NEW</span>
         </a>
       </ng-template>
     </p-tabMenu>

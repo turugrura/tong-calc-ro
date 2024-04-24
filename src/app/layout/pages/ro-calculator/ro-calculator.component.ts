@@ -61,6 +61,7 @@ import { ElementType } from './constants/element-type.const';
 import {
   createBaseHPSPOptionList,
   isNumber,
+  prettyItemDesc,
   toRawOptionTxtList,
   toUpsertPresetModel,
   verifySyncPreset,
@@ -2346,9 +2347,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
     this.itemId = itemId;
     this.itemBonus = bonus; //{ script, bonus };
-    this.itemDescription = this.items[itemId]?.description
-      .replaceAll('\n', '<br>')
-      .replace(/\^(.{6})/g, '<font color="#$1">');
+    this.itemDescription = prettyItemDesc(this.items[itemId]?.description);
   }
 
   onLog(inputs) {
