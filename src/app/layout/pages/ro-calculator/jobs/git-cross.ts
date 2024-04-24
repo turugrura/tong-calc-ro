@@ -167,7 +167,7 @@ export class GitCross extends CharacterBase {
       },
     },
     {
-      label: '[Improved 2rd] Cross Impact Lv5',
+      label: '[Improved 2nd] Cross Impact Lv5',
       name: 'Cross Impact',
       value: '[Improved 2rd] Cross Impact==5',
       acd: 0.5,
