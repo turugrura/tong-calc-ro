@@ -14,9 +14,11 @@
   <div class="col-12 grid grid-nogutter">
     <div class="col-3">
       <div class="card text-lg m-0 p-2">
-        <div>From {{ jobSummary[0] || 0 }} accounts</div>
         <div>
-          This job <span>{{ totalAccounts }}</span> accounts
+          Total <span class="text-primary font-semibold text-lg">{{ jobSummary[0] || 0 }}</span> accounts
+        </div>
+        <div>
+          {{ selectedJobName }} <span class="text-primary font-medium">{{ totalAccounts }}</span> accounts
         </div>
       </div>
 
@@ -29,24 +31,21 @@
         <ng-template let-item pTemplate="item" class="py-0">
           <div class="w-full flex justify-content-between">
             <div class="text_ellips">{{ item.label }}</div>
-            <div class="text_ellips">({{ item.total }} accounts)</div>
+            <div class="text_ellips">( {{ item.total }} accounts )</div>
           </div>
         </ng-template>
       </p-listbox>
       <div class="card px-1 py-3 sticky desc-sticky">
         <div class="text-lg font-bold mb-3">Item Description</div>
-        <div class="flex gap-1 mb-3" *ngIf="selectedItemId">
-          <img src="assets/demo/images/items/{{ selectedItemId }}.png" alt="" class="item_img" />
-          <div class="text_ellips font-medium">
-            {{ itemMap[selectedItemId]?.name }}
+        <div class="mb-4" *ngFor="let selectedItem of displaySelectedItems">
+          <div class="flex gap-1 mb-2" *ngIf="selectedItemId">
+            <img src="assets/demo/images/items/{{ selectedItem.id }}.png" alt="" class="item_img" />
+            <div class="text_ellips font-medium">
+              {{ selectedItem.name }}
+            </div>
           </div>
+          <div class="px-2 py-2" style="color: #000; background-color: #fff" [innerHTML]="selectedItem.desc"></div>
         </div>
-        <div
-          [hidden]="!selectedItemDesc"
-          class="px-2 py-2"
-          style="color: #000; background-color: #fff"
-          [innerHTML]="selectedItemDesc"
-        ></div>
       </div>
     </div>
     <div class="col-9 grid grid-nogutter">
@@ -59,20 +58,54 @@
           optionValue="ItemId"
         >
           <ng-template let-rank pTemplate="item" class="py-0">
-            <div class="flex w-full justify-content-between">
+            <div *ngIf="!rank.IsEnchant" class="flex w-full justify-content-between">
               <div class="flex gap-1" *ngIf="rank.ItemId">
                 <img src="assets/demo/images/items/{{ rank.ItemId }}.png" alt="" class="item_img" />
                 <div class="text_ellips font-medium">
                   {{ rank.ItemName }}
                 </div>
               </div>
-              <div class="mt-2 md:mt-0 flex align-items-center" style="width: 130px">
+              <div class="mt-2 md:mt-0 flex align-items-center" style="min-width: 130px">
                 <div class="surface-300 border-round overflow-hidden w-10rem lg:w-6rem" [ngStyle]="{ height: '8px' }">
                   <div class="bg-{{ rank.ColorStyle }} h-full" [ngStyle]="{ width: rank.Percentage + '%' }"></div>
                 </div>
-                <span class="text-{{ rank.ColorStyle }} ml-3 font-medium">{{ rank.Percentage }} %</span>
+                <span class="text-{{ rank.ColorStyle }} ml-2">{{ rank.Percentage }} %</span>
               </div>
             </div>
+
+            <div *ngIf="rank.IsEnchant" class="flex pl-4 w-full justify-content-between">
+              <div class="flex gap-2 w-full">
+                <div
+                  class="flex gap-1 {{ rank.EnchantInfos.length === 3 ? 'item_enchant' : '' }}"
+                  *ngFor="let enchant of rank.EnchantInfos"
+                >
+                  <img src="assets/demo/images/items/{{ enchant.id }}.png" alt="" class="item_img" />
+                  <div>{{ enchant.name }}</div>
+                </div>
+              </div>
+              <div class="mt-2 md:mt-0 flex align-items-center" style="min-width: 130px">
+                <div class="surface-300 border-round overflow-hidden w-10rem lg:w-6rem" [ngStyle]="{ height: '8px' }">
+                  <div class="bg-yellow-300 h-full" [ngStyle]="{ width: rank.Percentage + '%' }"></div>
+                </div>
+                <span class="text-yellow-300 ml-2">{{ rank.Percentage }} %</span>
+              </div>
+            </div>
+            <!-- <div class="flex" *ngIf="rank.EnchantIds.length">
+              <div class="w-full flex justify-content-between" *ngFor="let e of rank.EnchantIds">
+                <div class="flex">
+                  <div *ngIf="e.id1 > 0">
+                    <img src="assets/demo/images/items/{{ e.id1 }}.png" alt="" class="item_img" />
+                  </div>
+                  <div *ngIf="e.id2 > 0">
+                    <img src="assets/demo/images/items/{{ e.id2 }}.png" alt="" class="item_img" />
+                  </div>
+                  <div *ngIf="e.id3 > 0">
+                    <img src="assets/demo/images/items/{{ e.id3 }}.png" alt="" class="item_img" />
+                  </div>
+                </div>
+                <div>{{ e.percentage }} %</div>
+              </div>
+            </div> -->
           </ng-template>
         </p-listbox>
       </div>

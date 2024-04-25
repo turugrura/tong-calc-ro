@@ -10,7 +10,7 @@ import { prettyItemDesc } from '../ro-calculator/utils';
 type JobIdMapType<T> = Record<keyof typeof ClassID, T>;
 
 interface ItemRankingModel {
-  ItemId: number;
+  ItemId: number | string;
   ItemName: string;
   ColorStyle: string;
   Percentage: number;
@@ -19,6 +19,8 @@ interface ItemRankingModel {
   TotalAccount: number;
   TotalEnchant: number;
   Enchants: Record<string, number>;
+  EnchantInfos: { id: number; name: string }[];
+  IsEnchant: boolean;
 }
 
 enum EquipmentPosition {
@@ -97,11 +99,13 @@ export class PresetSummaryComponent implements OnInit, OnDestroy {
 
   allItemPositions = Object.values(EquipmentPosition);
   allClasses = getClassDropdownList();
+  allClasseMap = new Map(this.allClasses.map((a) => [a.value, a.label]));
   selectedJobId = this.allClasses[0].value as number;
+  selectedJobName = this.allClasses[0].label;
   selectedSkillName = '';
 
-  selectedItemId: number;
-  selectedItemDesc = '';
+  displaySelectedItems: { id: number; name: string; desc: string }[];
+  selectedItemId: number | string;
 
   itemMap = {} as Record<number, ItemModel>;
   jobSkillSummary = {} as JobSkillSummary;
@@ -150,6 +154,7 @@ export class PresetSummaryComponent implements OnInit, OnDestroy {
       .subscribe(() => {
         this.setSkillRankingBySelection();
         this.setRankingBySelection();
+        this.selectedJobName = this.allClasseMap.get(this.selectedJobId) || '';
         this.isLoading = false;
       });
     const e2 = this.skillChangeEvent$
@@ -162,7 +167,16 @@ export class PresetSummaryComponent implements OnInit, OnDestroy {
         this.isLoading = false;
       });
     const e3 = this.itemChangeEvent$.pipe(debounceTime(100)).subscribe(() => {
-      this.selectedItemDesc = prettyItemDesc(this.itemMap[this.selectedItemId]?.description);
+      const itemIds = `${this.selectedItemId}`.split('-').map(Number).filter(Boolean);
+      this.displaySelectedItems = [...new Set(itemIds)].map((id) => {
+        const item = this.itemMap[id] || ({} as ItemModel);
+
+        return {
+          id,
+          desc: prettyItemDesc(item.description),
+          name: item.name,
+        };
+      });
     });
 
     this.subscribtions.push(e1, e2, e3);
@@ -195,18 +209,55 @@ export class PresetSummaryComponent implements OnInit, OnDestroy {
   private setRankingBySelection() {
     const totalPresets = 0;
     for (const position of this.allItemPositions) {
-      this.rankingMap[position] = this.itemRankingList[position].map((a) => {
+      const rankingMap = [] as ItemRankingModel[];
+
+      for (const a of this.itemRankingList[position]) {
         const percentage = Math.ceil(
           (a.UsingRate * 100) / this.jobSkillSummary[this.selectedJobId][this.selectedSkillName],
         );
-
-        return {
+        rankingMap.push({
           ...a,
           Percentage: percentage,
           ItemName: this.itemMap[a.ItemId]?.name,
           ColorStyle: this.getItemBarColorStyle(position),
-        };
-      });
+          IsEnchant: false,
+          EnchantInfos: [],
+        });
+
+        const sortedEnchants = Object.entries(a.Enchants)
+          .sort(([_, usingRate1], [__, usingRate2]) => usingRate2 - usingRate1)
+          .filter(([_, usingRate], i) => i <= 4 && usingRate >= 0.5);
+        for (const [key, value] of sortedEnchants) {
+          const percentage = Math.floor((value * 100) / (a.TotalEnchant || 1));
+          if (percentage <= 0) continue;
+
+          const [id1, id2, id3] = key.split('-').map(Number);
+          if (!!id1 || !!id2 || !!id3) {
+            const ids = [id1, id2, id3].filter(Number);
+
+            rankingMap.push({
+              ItemId: key,
+              Enchants: {},
+              UsingRate: 0,
+              ItemName: '',
+              TotalAccount: 0,
+              TotalEnchant: 0,
+              TotalPreset: 0,
+              IsEnchant: true,
+              Percentage: percentage,
+              ColorStyle: this.getItemBarColorStyle(position),
+              EnchantInfos: ids.map((id) => {
+                return {
+                  id,
+                  name: this.itemMap[id]?.name,
+                };
+              }),
+            });
+          }
+        }
+      }
+
+      this.rankingMap[position] = rankingMap;
     }
 
     this.totalPresets = totalPresets;
