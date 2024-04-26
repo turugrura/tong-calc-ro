@@ -1,0 +1,37 @@
+export enum EquipmentPosition {
+  Weapon = 'Weapon',
+  WeaponCard = 'WeaponCard',
+  LeftWeapon = 'LeftWeapon',
+  LeftWeaponCard = 'LeftWeaponCard',
+  Shield = 'Shield',
+  ShieldCard = 'ShieldCard',
+
+  HeadUpper = 'HeadUpper',
+  HeadUpperCard = 'HeadUpperCard',
+  HeadMiddle = 'HeadMiddle',
+  HeadMiddleCard = 'HeadMiddleCard',
+  HeadLower = 'HeadLower',
+
+  Armor = 'Armor',
+  ArmorCard = 'ArmorCard',
+  Garment = 'Garment',
+  GarmentCard = 'GarmentCard',
+  Boot = 'Boot',
+  BootCard = 'BootCard',
+  AccLeft = 'AccLeft',
+  AccLeftCard = 'AccLeftCard',
+  AccRight = 'AccRight',
+  AccRightCard = 'AccRightCard',
+
+  CostumeEnchantUpper = 'CostumeEnchantUpper',
+  CostumeEnchantMiddle = 'CostumeEnchantMiddle',
+  CostumeEnchantLower = 'CostumeEnchantLower',
+  CostumeEnchantGarment = 'CostumeEnchantGarment',
+
+  ShadowWeapon = 'ShadowWeapon',
+  ShadowShield = 'ShadowShield',
+  ShadowArmor = 'ShadowArmor',
+  ShadowBoot = 'ShadowBoot',
+  ShadowEarring = 'ShadowEarring',
+  ShadowPendant = 'ShadowPendant',
+}

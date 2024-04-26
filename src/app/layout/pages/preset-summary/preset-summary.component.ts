@@ -2,80 +2,31 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { getClassDropdownList } from '../ro-calculator/jobs/_class-list';
 import { SummaryService } from 'src/app/demo/service/summary.service';
 import { Subject, Subscription, debounceTime, forkJoin, tap } from 'rxjs';
-import { ClassID } from '../ro-calculator/jobs/_class-name';
 import { RoService } from 'src/app/demo/service/ro.service';
 import { ItemModel } from '../ro-calculator/models/item.model';
 import { prettyItemDesc } from '../ro-calculator/utils';
-
-type JobIdMapType<T> = Record<keyof typeof ClassID, T>;
-
-interface ItemRankingModel {
-  ItemId: number | string;
-  ItemName: string;
-  ColorStyle: string;
-  Percentage: number;
-  UsingRate: number;
-  TotalPreset: number;
-  TotalAccount: number;
-  TotalEnchant: number;
-  Enchants: Record<string, number>;
-  EnchantInfos: { id: number; name: string }[];
-  IsEnchant: boolean;
-}
-
-enum EquipmentPosition {
-  Weapon = 'Weapon',
-  WeaponCard = 'WeaponCard',
-  LeftWeapon = 'LeftWeapon',
-  LeftWeaponCard = 'LeftWeaponCard',
-  Shield = 'Shield',
-  ShieldCard = 'ShieldCard',
-
-  HeadUpper = 'HeadUpper',
-  HeadUpperCard = 'HeadUpperCard',
-  HeadMiddle = 'HeadMiddle',
-  HeadMiddleCard = 'HeadMiddleCard',
-  HeadLower = 'HeadLower',
-
-  Armor = 'Armor',
-  ArmorCard = 'ArmorCard',
-  Garment = 'Garment',
-  GarmentCard = 'GarmentCard',
-  Boot = 'Boot',
-  BootCard = 'BootCard',
-  AccLeft = 'AccLeft',
-  AccLeftCard = 'AccLeftCard',
-  AccRight = 'AccRight',
-  AccRightCard = 'AccRightCard',
-
-  CostumeEnchantUpper = 'CostumeEnchantUpper',
-  CostumeEnchantMiddle = 'CostumeEnchantMiddle',
-  CostumeEnchantLower = 'CostumeEnchantLower',
-  CostumeEnchantGarment = 'CostumeEnchantGarment',
-
-  ShadowWeapon = 'ShadowWeapon',
-  ShadowShield = 'ShadowShield',
-  ShadowArmor = 'ShadowArmor',
-  ShadowBoot = 'ShadowBoot',
-  ShadowEarring = 'ShadowEarring',
-  ShadowPendant = 'ShadowPendant',
-}
-
-type ItemPositionType = EquipmentPosition;
-
-type EquipmentRankingModel = Record<ItemPositionType, ItemRankingModel[]>;
-
-type TotalSummaryModel = JobIdMapType<Record<string, EquipmentRankingModel>>;
-
-type JobSummary = JobIdMapType<number>;
-
-type JobSkillSummary = JobIdMapType<Record<string, number>>;
+import {
+  EquipmentPosition,
+  EquipmentRankingModel,
+  ItemRankingModel,
+  JobSkillSummary,
+  JobSummary,
+  TotalSummaryModel,
+} from './model';
 
 const getEmptyRanking = () => {
   return Object.values(EquipmentPosition).reduce((pre, item) => {
     pre[item] = [];
     return pre;
   }, {}) as Record<EquipmentPosition, ItemRankingModel[]>;
+};
+
+const getInitShowIEnchant = (b: boolean) => {
+  return Object.values(EquipmentPosition).reduce((pre, item) => {
+    pre[item] = b;
+
+    return pre;
+  }, {});
 };
 
 @Component({
@@ -93,6 +44,9 @@ export class PresetSummaryComponent implements OnInit, OnDestroy {
   private itemChangeSource = new Subject();
   private itemChangeEvent$ = this.itemChangeSource.asObservable();
 
+  private toggleShowEnchantSource = new Subject<string>();
+  private toggleShowEnchantEvent$ = this.toggleShowEnchantSource.asObservable();
+
   private subscribtions = [] as Subscription[];
 
   isLoading = false;
@@ -107,13 +61,17 @@ export class PresetSummaryComponent implements OnInit, OnDestroy {
   displaySelectedItems: { id: number; name: string; desc: string }[];
   selectedItemId: number | string;
 
-  itemMap = {} as Record<number, ItemModel>;
+  private itemMap = {} as Record<number, ItemModel>;
   jobSkillSummary = {} as JobSkillSummary;
+  presetSummary = {} as JobSkillSummary;
   jobSummary = {} as JobSummary;
   totalSummary = {} as TotalSummaryModel;
   totalPresets = 0;
+  totalCurrentJobPresets = 0;
+  isShowEnchant = getInitShowIEnchant(true);
+  isItemHasEnchant = getInitShowIEnchant(false);
 
-  skillRankingList = [] as { value: string; label: string; total: number }[];
+  skillRankingList = [] as { value: string; label: string; total: number; totalPresets: number }[];
   rankingMap = getEmptyRanking();
 
   constructor(private readonly summaryService: SummaryService, private readonly roService: RoService) {}
@@ -131,15 +89,23 @@ export class PresetSummaryComponent implements OnInit, OnDestroy {
 
   private loadData() {
     forkJoin([
-      this.summaryService.getClassSkillSummary<JobSkillSummary>(),
+      this.summaryService.getJobSkillSummary<JobSkillSummary>(),
+      this.summaryService.getJobPresetSummary<JobSkillSummary>(),
       this.summaryService.getJobSummary<JobSummary>(),
       this.summaryService.getTotalSummary<TotalSummaryModel>(),
       this.roService.getItems<Record<number, ItemModel>>(),
-    ]).subscribe(([jobSkillSummary, jobSummary, totalSummary, itemMap]) => {
+    ]).subscribe(([jobSkillSummary, presetSummary, jobSummary, totalSummary, itemMap]) => {
       this.jobSkillSummary = jobSkillSummary;
+      this.presetSummary = presetSummary;
       this.jobSummary = jobSummary;
       this.totalSummary = totalSummary;
       this.itemMap = itemMap;
+
+      this.totalPresets = Object.values(presetSummary).reduce(
+        (total, cur) => total + Object.values(cur).reduce((t, c) => t + c, 0),
+        0,
+      );
+
       this.setSkillRankingBySelection();
       this.setRankingBySelection();
     });
@@ -149,23 +115,26 @@ export class PresetSummaryComponent implements OnInit, OnDestroy {
     const e1 = this.jobChangeEvent$
       .pipe(
         tap(() => (this.isLoading = true)),
-        debounceTime(75),
+        debounceTime(100),
       )
       .subscribe(() => {
         this.setSkillRankingBySelection();
         this.setRankingBySelection();
         this.selectedJobName = this.allClasseMap.get(this.selectedJobId) || '';
+
         this.isLoading = false;
       });
+
     const e2 = this.skillChangeEvent$
       .pipe(
         tap(() => (this.isLoading = true)),
-        debounceTime(75),
+        debounceTime(100),
       )
       .subscribe(() => {
         this.setRankingBySelection();
         this.isLoading = false;
       });
+
     const e3 = this.itemChangeEvent$.pipe(debounceTime(100)).subscribe(() => {
       const itemIds = `${this.selectedItemId}`.split('-').map(Number).filter(Boolean);
       this.displaySelectedItems = [...new Set(itemIds)].map((id) => {
@@ -179,7 +148,11 @@ export class PresetSummaryComponent implements OnInit, OnDestroy {
       });
     });
 
-    this.subscribtions.push(e1, e2, e3);
+    const e4 = this.toggleShowEnchantEvent$.pipe(debounceTime(100)).subscribe((position) => {
+      this.setRankingBySelection(position);
+    });
+
+    this.subscribtions.push(e1, e2, e3, e4);
   }
 
   private get itemRankingList(): EquipmentRankingModel {
@@ -200,16 +173,23 @@ export class PresetSummaryComponent implements OnInit, OnDestroy {
         value: skillName,
         label: skillName,
         total: Number(total),
+        totalPresets: this.presetSummary[this.selectedJobId]?.[skillName] || 0,
       });
     }
     this.skillRankingList = skillRankingList.sort((a, b) => b.total - a.total);
     this.selectedSkillName = skillRankingList[0]?.value;
+    this.totalCurrentJobPresets = Object.values(this.presetSummary[this.selectedJobId]).reduce<number>(
+      (total, cur: number) => total + cur,
+      0,
+    );
   }
 
-  private setRankingBySelection() {
-    const totalPresets = 0;
+  private setRankingBySelection(specificPosition?: string) {
     for (const position of this.allItemPositions) {
+      if (specificPosition && position !== specificPosition) continue;
+
       const rankingMap = [] as ItemRankingModel[];
+      let isPositionHaveEnchant = false;
 
       for (const a of this.itemRankingList[position]) {
         const percentage = Math.ceil(
@@ -224,7 +204,20 @@ export class PresetSummaryComponent implements OnInit, OnDestroy {
           EnchantInfos: [],
         });
 
-        const sortedEnchants = Object.entries(a.Enchants)
+        const enchants = Object.entries(a.Enchants);
+        if (!isPositionHaveEnchant) {
+          if (enchants.length === 0) {
+            isPositionHaveEnchant = false;
+          } else if (enchants.length === 1 && enchants[0][0] === '0-0-0') {
+            isPositionHaveEnchant = false;
+          } else {
+            isPositionHaveEnchant = true;
+          }
+        }
+
+        if (this.isShowEnchant[position] === false) continue;
+
+        const sortedEnchants = enchants
           .sort(([_, usingRate1], [__, usingRate2]) => usingRate2 - usingRate1)
           .filter(([_, usingRate], i) => i <= 4 && usingRate >= 0.5);
         for (const [key, value] of sortedEnchants) {
@@ -257,10 +250,9 @@ export class PresetSummaryComponent implements OnInit, OnDestroy {
         }
       }
 
+      this.isItemHasEnchant[position] = isPositionHaveEnchant;
       this.rankingMap[position] = rankingMap;
     }
-
-    this.totalPresets = totalPresets;
   }
 
   private getItemBarColorStyle(position: EquipmentPosition) {
@@ -323,5 +315,9 @@ export class PresetSummaryComponent implements OnInit, OnDestroy {
 
   onItemChange() {
     this.itemChangeSource.next(1);
+  }
+
+  onToggleShowEnchantClick(position: string) {
+    this.toggleShowEnchantSource.next(position);
   }
 }

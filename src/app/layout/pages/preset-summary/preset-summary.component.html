@@ -14,11 +14,15 @@
   <div class="col-12 grid grid-nogutter">
     <div class="col-3">
       <div class="card text-lg m-0 p-2">
+        <div>Updated data: 25-04-2564</div>
         <div>
-          Total <span class="text-primary font-semibold text-lg">{{ jobSummary[0] || 0 }}</span> accounts
+          Total <span class="text-primary text-lg">{{ jobSummary[0] | number }}</span> accounts,
+          <span class="text-primary text-lg">{{ totalPresets | number }}</span> presets
         </div>
         <div>
-          {{ selectedJobName }} <span class="text-primary font-medium">{{ totalAccounts }}</span> accounts
+          <span class="mr-2 font-medium">{{ selectedJobName }}</span>
+          <span class="text-primary">{{ totalAccounts | number }}</span> accounts,
+          <span class="text-primary">{{ totalCurrentJobPresets | number }}</span> presets
         </div>
       </div>
 
@@ -31,7 +35,9 @@
         <ng-template let-item pTemplate="item" class="py-0">
           <div class="w-full flex justify-content-between">
             <div class="text_ellips">{{ item.label }}</div>
-            <div class="text_ellips">( {{ item.total }} accounts )</div>
+            <div class="text_ellips">
+              ( {{ item.total | number }} accounts, {{ item.totalPresets | number }} presets )
+            </div>
           </div>
         </ng-template>
       </p-listbox>
@@ -50,14 +56,26 @@
     </div>
     <div class="col-9 grid grid-nogutter">
       <div class="col-6 p-1" *ngFor="let position of allItemPositions" [hidden]="!rankingMap[position].length">
-        <div class="card font-bold text-lg m-0 p-2">{{ position }}</div>
+        <div class="card m-0 p-2 flex justify-content-around">
+          <div class="font-bold text-lg">
+            {{ position }}
+          </div>
+          <div *ngIf="isItemHasEnchant[position]">
+            <p-checkbox
+              [(ngModel)]="isShowEnchant[position]"
+              [binary]="true"
+              label="Show enchant"
+              (ngModelChange)="onToggleShowEnchantClick(position)"
+            ></p-checkbox>
+          </div>
+        </div>
         <p-listbox
           [options]="rankingMap[position]"
           [(ngModel)]="selectedItemId"
           (onChange)="onItemChange()"
           optionValue="ItemId"
         >
-          <ng-template let-rank pTemplate="item" class="py-0">
+          <ng-template let-rank pTemplate="item" styleClass="py-0 xxx">
             <div *ngIf="!rank.IsEnchant" class="flex w-full justify-content-between">
               <div class="flex gap-1" *ngIf="rank.ItemId">
                 <img src="assets/demo/images/items/{{ rank.ItemId }}.png" alt="" class="item_img" />
@@ -90,22 +108,6 @@
                 <span class="text-yellow-300 ml-2">{{ rank.Percentage }} %</span>
               </div>
             </div>
-            <!-- <div class="flex" *ngIf="rank.EnchantIds.length">
-              <div class="w-full flex justify-content-between" *ngFor="let e of rank.EnchantIds">
-                <div class="flex">
-                  <div *ngIf="e.id1 > 0">
-                    <img src="assets/demo/images/items/{{ e.id1 }}.png" alt="" class="item_img" />
-                  </div>
-                  <div *ngIf="e.id2 > 0">
-                    <img src="assets/demo/images/items/{{ e.id2 }}.png" alt="" class="item_img" />
-                  </div>
-                  <div *ngIf="e.id3 > 0">
-                    <img src="assets/demo/images/items/{{ e.id3 }}.png" alt="" class="item_img" />
-                  </div>
-                </div>
-                <div>{{ e.percentage }} %</div>
-              </div>
-            </div> -->
           </ng-template>
         </p-listbox>
       </div>

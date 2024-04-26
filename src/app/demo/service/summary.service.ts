@@ -5,14 +5,16 @@ import { Observable, shareReplay } from 'rxjs';
 @Injectable()
 export class SummaryService {
   private cachedTotalSummary$: Observable<any>;
-  private cachedClassSkillSummary$: Observable<any>;
+  private cachedJobSkillSummary$: Observable<any>;
+  private cachedJobPresetSummary$: Observable<any>;
   private cachedJobSummary$: Observable<any>;
 
   constructor(private http: HttpClient) {
     this.cachedTotalSummary$ = this.http.get<any>('assets/demo/data/x.json').pipe(shareReplay(1));
-    this.cachedClassSkillSummary$ = this.http
+    this.cachedJobSkillSummary$ = this.http
       .get<any>('assets/demo/data/x_summaryClassSkillMap.json')
       .pipe(shareReplay(1));
+    this.cachedJobPresetSummary$ = this.http.get<any>('assets/demo/data/x_presetSummaryMap.json').pipe(shareReplay(1));
     this.cachedJobSummary$ = this.http.get<any>('assets/demo/data/x_totalSelectedJobMap.json').pipe(shareReplay(1));
   }
 
@@ -20,8 +22,12 @@ export class SummaryService {
     return this.cachedTotalSummary$;
   }
 
-  getClassSkillSummary<T>(): Observable<T> {
-    return this.cachedClassSkillSummary$;
+  getJobSkillSummary<T>(): Observable<T> {
+    return this.cachedJobSkillSummary$;
+  }
+
+  getJobPresetSummary<T>(): Observable<T> {
+    return this.cachedJobPresetSummary$;
   }
 
   getJobSummary<T>(): Observable<T> {
