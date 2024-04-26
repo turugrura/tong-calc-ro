@@ -2861,6 +2861,59 @@
       "raceName": "Undead"
     }
   },
+  "2529": {
+    "id": 2529,
+    "dbname": "FACEWORM_QUEEN",
+    "name": "Faceworm Queen",
+    "spawn": "",
+    "stats": {
+      "attackRange": 2,
+      "level": 155,
+      "health": 50000000,
+      "sp": 1,
+      "str": 200,
+      "int": 200,
+      "vit": 200,
+      "dex": 200,
+      "agi": 100,
+      "luk": 100,
+      "rechargeTime": 768,
+      "atk1": 4024,
+      "atk2": 4006,
+      "attack": {
+        "minimum": 3574,
+        "maximum": 5183
+      },
+      "magicAttack": {
+        "minimum": 3159,
+        "maximum": 5562
+      },
+      "defense": 100,
+      "baseExperience": 200000,
+      "jobExperience": 220000,
+      "aggroRange": 10,
+      "escapeRange": 12,
+      "movementSpeed": 200,
+      "attackSpeed": 540,
+      "attackedSpeed": 480,
+      "element": 85,
+      "scale": 2,
+      "race": 4,
+      "magicDefense": 60,
+      "hit": 455,
+      "flee": 525,
+      "ai": "MONSTER_TYPE_26",
+      "mvp": 1,
+      "class": 1,
+      "attr": 8,
+      "res": 0,
+      "mres": 0,
+      "elementName": "Poison 4",
+      "elementShortName": "Poison",
+      "scaleName": "Large",
+      "raceName": "Insect"
+    }
+  },
   "2564": {
     "id": 2564,
     "dbname": "GEFFEN_FENRIR",
