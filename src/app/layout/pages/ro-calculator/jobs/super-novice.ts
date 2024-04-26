@@ -261,6 +261,73 @@ export class SuperNovice extends CharacterBase {
         return (300 + skillLevel * 200 + (shield.refine || 0) * 4 + (shield.weight || 0)) * (baseLevel / 100);
       },
     },
+    {
+      name: 'Bowling Bash',
+      label: 'Bowling Bash Lv10',
+      value: 'Bowling Bash==10',
+      fct: 0.35,
+      vct: 0,
+      cd: 1,
+      acd: 0,
+      isMelee: true,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { skillLevel } = input;
+
+        return 100 + skillLevel * 40;
+      },
+    },
+    {
+      name: 'Wind Cutter',
+      label: 'Wind Cutter Lv5',
+      value: 'Wind Cutter==5',
+      acd: 1,
+      fct: 0,
+      vct: 0,
+      cd: 0.2,
+      isMelee: (weaponType) => weaponType !== 'spear' && weaponType !== 'twohandSpear',
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, weapon } = input;
+        const wTypeName = weapon.data.typeName;
+        const baseLevel = model.level;
+
+        let baseDamage = 0;
+        if (wTypeName === 'twohandSword') {
+          baseDamage = 250 * skillLevel;
+        } else if (wTypeName === 'spear' || wTypeName === 'twohandSpear') {
+          baseDamage = 400 * skillLevel;
+        } else {
+          baseDamage = 300 * skillLevel;
+        }
+
+        return baseDamage * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Wind Cutter',
+      label: '[Improved 2nd] Wind Cutter Lv5',
+      value: '[Improved 2nd] Wind Cutter==5',
+      acd: 0.5,
+      fct: 0,
+      vct: 0,
+      cd: 0.3,
+      isMelee: (weaponType) => weaponType !== 'spear' && weaponType !== 'twohandSpear',
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, weapon } = input;
+        const wTypeName = weapon.data.typeName;
+        const baseLevel = model.level;
+
+        let baseDamage = 0;
+        if (wTypeName === 'twohandSword') {
+          baseDamage = 250 * skillLevel;
+        } else if (wTypeName === 'spear' || wTypeName === 'twohandSpear') {
+          baseDamage = 400 * skillLevel;
+        } else {
+          baseDamage = 300 * skillLevel;
+        }
+
+        return baseDamage * (baseLevel / 100);
+      },
+    },
   ];
   protected readonly _activeSkillList: ActiveSkillModel[] = [
     {
