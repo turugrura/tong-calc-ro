@@ -6,3 +6,4 @@ export * from './fusion-sun-moon-star';
 export * from './distorted-crescent';
 export * from './s16th-night';
 export * from './shield-spell';
+export * from './swing-dance-fn';

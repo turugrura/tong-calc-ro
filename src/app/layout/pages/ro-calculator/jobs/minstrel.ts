@@ -21,7 +21,7 @@ import {
   SongOfMana,
 } from '../constants/share-passive-skills';
 import { ElementType } from '../constants/element-type.const';
-import { BragisPoem } from '../constants/share-active-skills';
+import { BragisPoem, SwingDanceFn } from '../constants/share-active-skills';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 1, 0, 0],
@@ -283,6 +283,7 @@ export class Minstrel extends CharacterBase {
       ],
     },
     BragisPoem,
+    SwingDanceFn(),
   ];
 
   protected readonly _passiveSkillList: PassiveSkillModel[] = [

@@ -21,7 +21,7 @@ import {
   SongOfMana,
 } from '../constants/share-passive-skills';
 import { ElementType } from '../constants/element-type.const';
-import { BragisPoem } from '../constants/share-active-skills';
+import { BragisPoem, SwingDanceFn } from '../constants/share-active-skills';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 0, 1, 0],
@@ -262,22 +262,7 @@ export class Wanderer extends CharacterBase {
     },
   ];
 
-  protected readonly _activeSkillList: ActiveSkillModel[] = [
-    {
-      label: 'Swing Dance',
-      name: 'Swing Dance',
-      inputType: 'dropdown',
-      dropdown: [
-        { label: '-', value: 0, isUse: false },
-        { label: 'Lv 1', value: 1, isUse: true, bonus: { skillAspd: 1 * 4, fctPercent: 1 * 6 } },
-        { label: 'Lv 2', value: 2, isUse: true, bonus: { skillAspd: 2 * 4, fctPercent: 2 * 6 } },
-        { label: 'Lv 3', value: 3, isUse: true, bonus: { skillAspd: 3 * 4, fctPercent: 3 * 6 } },
-        { label: 'Lv 4', value: 4, isUse: true, bonus: { skillAspd: 4 * 4, fctPercent: 4 * 6 } },
-        { label: 'Lv 5', value: 5, isUse: true, bonus: { skillAspd: 5 * 4, fctPercent: 5 * 6 } },
-      ],
-    },
-    BragisPoem,
-  ];
+  protected readonly _activeSkillList: ActiveSkillModel[] = [SwingDanceFn(), BragisPoem];
 
   protected readonly _passiveSkillList: PassiveSkillModel[] = [
     SevereRainstormFn(),
