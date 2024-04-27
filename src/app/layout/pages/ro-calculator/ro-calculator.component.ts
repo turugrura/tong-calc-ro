@@ -53,7 +53,7 @@ import { LayoutService } from '../../service/app.layout.service';
 import { createMainModel } from './utils/create-main-model';
 import { FoodStatList } from './constants/food-stat-list';
 import { ElementConverterList } from './constants/element-converter-list';
-import { AspdPotionList } from './constants/aspd-potion-list';
+import { AspdPotionList, AspdPotionList2 } from './constants/aspd-potion-list';
 import { BasicDamageSummaryModel, SkillDamageSummaryModel } from './models/damage-summary.model';
 import { ChanceModel } from './models/chance-model';
 import { RaceType } from './constants/race-type.const';
@@ -248,10 +248,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   consumableList: DropdownModel[] = [];
   consumableList2: DropdownModel[][] = FoodStatList;
   aspdPotionList: DropdownModel[] = [];
-  aspdPotionList2: DropdownModel[] = [
-    { label: 'Enrich Celermine', value: 12437 },
-    // { label: 'Guarana Candy', value: 12414 },
-  ];
+  aspdPotionList2: DropdownModel[] = AspdPotionList2;
 
   totalPoints = 0;
   availablePoints = 0;

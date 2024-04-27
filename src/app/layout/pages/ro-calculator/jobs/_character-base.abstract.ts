@@ -407,11 +407,13 @@ export abstract class CharacterBase {
   }
 
   calcAspd(a: AspdInput): number {
-    const potion = { 645: 4, 656: 6, 657: 9 };
-    const { weapon, weapon2, isEquipShield, aspd, aspdPercent, totalAgi, totalDex, potionAspd, skillAspd } = a;
-    const aspdByPotion = potion[potionAspd] || 0;
+    const { weapon, weapon2, isEquipShield, aspd, aspdPercent, totalAgi, totalDex, potionAspds, skillAspd } = a;
+    const aspdByPotion = potionAspds.reduce(
+      (total, potionAspd) => total + (AspdPotionFixBonus.get(potionAspd) || 0),
+      0,
+    );
 
-    const { rangeType, subTypeName: subTypeName } = weapon.data;
+    const { rangeType, subTypeName } = weapon.data;
     const { baseAspd, shieldPenalty } = this.calcBaseAspd(subTypeName);
     const leftWeapon = this.calcLeftWeaponAspd(weapon2?.data?.subTypeName);
     const isRange = rangeType === 'range';

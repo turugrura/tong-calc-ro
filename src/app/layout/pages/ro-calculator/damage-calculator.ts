@@ -297,7 +297,7 @@ export class DamageCalculator {
     const { totalAgi, totalDex } = this.status;
 
     const totalAspd = this._class.calcAspd({
-      potionAspd: this.aspdPotion,
+      potionAspds: [this.aspdPotion, ...(this.model.aspdPotions || [])],
       potionAspdPercent: 0,
       skillAspd: this.totalBonus.skillAspd || 0,
       skillAspdPercent: this.totalBonus.skillAspdPercent || 0,

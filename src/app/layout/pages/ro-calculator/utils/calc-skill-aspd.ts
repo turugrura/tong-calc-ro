@@ -9,10 +9,16 @@ export const calcSkillAspd = (params: {
   skillData: AtkSkillModel;
   totalEquipStatus: EquipmentSummaryModel;
   status: StatusSummary;
+  skillLevel: number;
 }): SkillAspdModel => {
-  const { skillData, totalEquipStatus, status } = params;
-  const { name, acd: skillAcd } = skillData;
-  let { cd: skillCd, fct: skillFct, vct: skillVct } = skillData;
+  const { skillData, totalEquipStatus, status, skillLevel } = params;
+  const { name, acd: baseSkillAcd } = skillData;
+  const { cd: baseSkillCd, fct: baseSkillFct, vct: baseSkillVct } = skillData;
+
+  const skillAcd = typeof baseSkillAcd === 'function' ? baseSkillAcd(skillLevel) : baseSkillAcd;
+  let skillCd = typeof baseSkillCd === 'function' ? baseSkillCd(skillLevel) : baseSkillCd;
+  let skillFct = typeof baseSkillFct === 'function' ? baseSkillFct(skillLevel) : baseSkillFct;
+  let skillVct = typeof baseSkillVct === 'function' ? baseSkillVct(skillLevel) : baseSkillVct;
   if (totalEquipStatus['releasedSkill']) {
     skillCd = 0;
     skillFct = 0;

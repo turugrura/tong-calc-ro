@@ -7,8 +7,6 @@
       <p-listbox
         [options]="allClasses"
         [(ngModel)]="selectedClassId"
-        [multiple]="false"
-        [metaKeySelection]="false"
         (onChange)="onSelectClassChange()"
         [disabled]="isLoading"
       >
