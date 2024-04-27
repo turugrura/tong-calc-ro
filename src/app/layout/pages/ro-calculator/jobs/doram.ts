@@ -100,71 +100,31 @@ export class Doram extends CharacterBase {
 
   protected readonly _atkSkillList: AtkSkillModel[] = [
     {
-      label: 'Silvervine Stem Spear (Earth)',
       name: 'Silvervine Stem Spear',
-      value: 'Silvervine Stem Spear Earth==5',
+      label: 'Silvervine Stem Spear',
+      value: 'Silvervine Stem Spear==1',
       acd: 1,
       fct: 0.5,
       vct: 2,
       cd: 1,
       isMatk: true,
-      element: ElementType.Earth,
-      formula: (_input: AtkSkillFormulaInput): number => {
-        return 700;
+      getElement: (lv) => {
+        const map = {
+          1: ElementType.Earth,
+          2: ElementType.Fire,
+          3: ElementType.Water,
+          4: ElementType.Wind,
+          5: ElementType.Ghost,
+        };
+        return map[lv];
       },
-    },
-    {
-      label: 'Silvervine Stem Spear (Fire)',
-      name: 'Silvervine Stem Spear',
-      value: 'Silvervine Stem Spear Fire==5',
-      acd: 1,
-      fct: 0.5,
-      vct: 2,
-      cd: 1,
-      isMatk: true,
-      element: ElementType.Fire,
-      formula: (_input: AtkSkillFormulaInput): number => {
-        return 700;
-      },
-    },
-    {
-      label: 'Silvervine Stem Spear (Water)',
-      name: 'Silvervine Stem Spear',
-      value: 'Silvervine Stem Spear Water==5',
-      acd: 1,
-      fct: 0.5,
-      vct: 2,
-      cd: 1,
-      isMatk: true,
-      element: ElementType.Water,
-      formula: (_input: AtkSkillFormulaInput): number => {
-        return 700;
-      },
-    },
-    {
-      label: 'Silvervine Stem Spear (Wind)',
-      name: 'Silvervine Stem Spear',
-      value: 'Silvervine Stem Spear Wind==5',
-      acd: 1,
-      fct: 0.5,
-      vct: 2,
-      cd: 1,
-      isMatk: true,
-      element: ElementType.Wind,
-      formula: (_input: AtkSkillFormulaInput): number => {
-        return 700;
-      },
-    },
-    {
-      label: 'Silvervine Stem Spear (Ghost)',
-      name: 'Silvervine Stem Spear',
-      value: 'Silvervine Stem Spear Ghost==5',
-      acd: 1,
-      fct: 0.5,
-      vct: 2,
-      cd: 1,
-      isMatk: true,
-      element: ElementType.Ghost,
+      levelList: [
+        { label: 'Silvervine Stem Spear Lv1 (Earth)', value: 'Silvervine Stem Spear==1' },
+        { label: 'Silvervine Stem Spear Lv2 (Fire)', value: 'Silvervine Stem Spear==2' },
+        { label: 'Silvervine Stem Spear Lv3 (Wind)', value: 'Silvervine Stem Spear==3' },
+        { label: 'Silvervine Stem Spear Lv4 (Water)', value: 'Silvervine Stem Spear==4' },
+        { label: 'Silvervine Stem Spear Lv5 (Ghost)', value: 'Silvervine Stem Spear==5' },
+      ],
       formula: (_input: AtkSkillFormulaInput): number => {
         return 700;
       },
@@ -180,7 +140,6 @@ export class Doram extends CharacterBase {
       isMatk: true,
       totalHit: 7,
       element: ElementType.Neutral,
-      levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
         const { skillLevel } = input;
 
@@ -195,7 +154,6 @@ export class Doram extends CharacterBase {
       fct: 0,
       vct: 1,
       cd: 0,
-      levelList: [],
       hit: 5,
       formula: (input: AtkSkillFormulaInput): number => {
         const { skillLevel } = input;
@@ -213,7 +171,6 @@ export class Doram extends CharacterBase {
       vct: 0,
       cd: 6,
       hit: 3,
-      levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
         const { skillLevel } = input;
 
