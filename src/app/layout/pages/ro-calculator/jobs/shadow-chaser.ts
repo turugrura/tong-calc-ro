@@ -207,68 +207,21 @@ export class ShadowChaser extends CharacterBase {
     },
     {
       name: 'Psychic Wave',
-      label: 'Psychic Wave Lv1',
-      value: 'Psychic Wave==1',
-      fct: 1,
-      vct: 8,
-      cd: 5,
-      acd: 1,
-      totalHit: 3,
-      isMatk: true,
-      formula: (input: AtkSkillFormulaInput): number => {
-        const { model, skillLevel, status } = input;
-        const baseLevel = model.level;
-        const totalInt = status.totalInt;
-
-        return (70 * skillLevel + 3 * totalInt) * (baseLevel / 100);
-      },
-    },
-    {
-      name: 'Psychic Wave',
-      label: 'Psychic Wave Lv3',
-      value: 'Psychic Wave==3',
-      fct: 0.8,
-      vct: 10,
-      cd: 5,
-      acd: 1,
-      totalHit: 7,
-      isMatk: true,
-      formula: (input: AtkSkillFormulaInput): number => {
-        const { model, skillLevel, status } = input;
-        const baseLevel = model.level;
-        const totalInt = status.totalInt;
-
-        return (70 * skillLevel + 3 * totalInt) * (baseLevel / 100);
-      },
-    },
-    {
-      name: 'Psychic Wave',
-      label: 'Psychic Wave Lv4',
-      value: 'Psychic Wave==4',
-      fct: 0.7,
-      vct: 11,
-      cd: 5,
-      acd: 1,
-      totalHit: 7,
-      isMatk: true,
-      formula: (input: AtkSkillFormulaInput): number => {
-        const { model, skillLevel, status } = input;
-        const baseLevel = model.level;
-        const totalInt = status.totalInt;
-
-        return (70 * skillLevel + 3 * totalInt) * (baseLevel / 100);
-      },
-    },
-    {
-      name: 'Psychic Wave',
-      label: 'Psychic Wave Lv5',
+      label: 'Psychic Wave',
       value: 'Psychic Wave==5',
-      fct: 0.6,
-      vct: 12,
+      fct: (lv) => 1.1 - lv * 0.1,
+      vct: (lv) => 7 + lv,
       cd: 5,
       acd: 1,
-      totalHit: 7,
+      totalHit: (_, lv) => 2 + lv,
       isMatk: true,
+      levelList: [
+        { label: 'Psychic Wave Lv1', value: 'Psychic Wave==1' },
+        { label: 'Psychic Wave Lv2', value: 'Psychic Wave==2' },
+        { label: 'Psychic Wave Lv3', value: 'Psychic Wave==3' },
+        { label: 'Psychic Wave Lv4', value: 'Psychic Wave==4' },
+        { label: 'Psychic Wave Lv5', value: 'Psychic Wave==5' },
+      ],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
         const baseLevel = model.level;
@@ -278,8 +231,8 @@ export class ShadowChaser extends CharacterBase {
       },
     },
     {
-      label: 'Comet Lv5',
       name: 'Comet',
+      label: 'Comet Lv5',
       value: 'Comet==5',
       acd: 1.5,
       fct: 2,
@@ -296,107 +249,48 @@ export class ShadowChaser extends CharacterBase {
       },
     },
     {
-      label: 'Meteor Storm Lv3',
       name: 'Meteor Storm',
+      label: 'Meteor Storm',
       value: 'Meteor Storm==3',
       acd: 1,
       fct: 1.5,
       vct: 6.3,
-      cd: 3.5,
+      cd: (lv) => 2 + lv * 0.5,
       isMatk: true,
       element: ElementType.Fire,
-      totalHit: 3,
-      formula: (): number => {
-        return 125;
-      },
-    },
-    {
-      label: 'Meteor Storm Lv5',
-      name: 'Meteor Storm',
-      value: 'Meteor Storm==5',
-      acd: 1,
-      fct: 1.5,
-      vct: 6.3,
-      cd: 4.5,
-      isMatk: true,
-      element: ElementType.Fire,
-      totalHit: 4,
-      formula: (): number => {
-        return 125;
-      },
-    },
-    {
-      label: 'Meteor Storm Lv7',
-      name: 'Meteor Storm',
-      value: 'Meteor Storm==7',
-      acd: 1,
-      fct: 1.5,
-      vct: 6.3,
-      cd: 5.5,
-      isMatk: true,
-      element: ElementType.Fire,
-      totalHit: 5,
+      totalHit: (_, lv) => ({ 1: 2, 2: 3, 3: 3, 4: 4, 5: 4, 6: 5, 7: 5, 8: 6, 9: 6, 10: 7 }[lv]),
+      levelList: [
+        { label: 'Meteor Storm Lv1', value: 'Meteor Storm==1' },
+        { label: 'Meteor Storm Lv2', value: 'Meteor Storm==2' },
+        { label: 'Meteor Storm Lv3', value: 'Meteor Storm==3' },
+        { label: 'Meteor Storm Lv4', value: 'Meteor Storm==4' },
+        { label: 'Meteor Storm Lv5', value: 'Meteor Storm==5' },
+        { label: 'Meteor Storm Lv6', value: 'Meteor Storm==6' },
+        { label: 'Meteor Storm Lv7', value: 'Meteor Storm==7' },
+        { label: 'Meteor Storm Lv8', value: 'Meteor Storm==8' },
+        { label: 'Meteor Storm Lv9', value: 'Meteor Storm==9' },
+        { label: 'Meteor Storm Lv10', value: 'Meteor Storm==10' },
+      ],
       formula: (): number => {
         return 125;
       },
     },
     {
       name: 'Severe Rainstorm',
-      label: 'Severe Rainstorm Lv3',
-      value: 'Severe Rainstorm==3',
-      acd: 1,
-      fct: 0.5,
-      vct: 2.5,
-      cd: 6,
-      totalHit: 12,
-      formula: (input: AtkSkillFormulaInput): number => {
-        const { weapon, status, skillLevel, model } = input;
-        const baseLevel = model.level;
-        const { totalDex, totalAgi } = status;
-        const weaType = weapon.data.typeName;
-        const weaMultiMap: Partial<Record<WeaponTypeName, number>> = {
-          bow: 1,
-          instrument: 1.5,
-          whip: 1.5,
-        };
-        const extra = weaMultiMap[weaType] || 0;
-
-        return extra * (totalDex + totalAgi) * (skillLevel / 5) * (baseLevel / 100);
-      },
-    },
-    {
-      name: 'Severe Rainstorm',
-      label: 'Severe Rainstorm Lv4',
-      value: 'Severe Rainstorm==4',
-      acd: 1,
-      fct: 0.5,
-      vct: 3,
-      cd: 6.5,
-      totalHit: 12,
-      formula: (input: AtkSkillFormulaInput): number => {
-        const { weapon, status, skillLevel, model } = input;
-        const baseLevel = model.level;
-        const { totalDex, totalAgi } = status;
-        const weaType = weapon.data.typeName;
-        const weaMultiMap: Partial<Record<WeaponTypeName, number>> = {
-          bow: 1,
-          instrument: 1.5,
-          whip: 1.5,
-        };
-        const extra = weaMultiMap[weaType] || 0;
-
-        return extra * (totalDex + totalAgi) * (skillLevel / 5) * (baseLevel / 100);
-      },
-    },
-    {
-      name: 'Severe Rainstorm',
-      label: 'Severe Rainstorm Lv5',
+      label: 'Severe Rainstorm',
       value: 'Severe Rainstorm==5',
       acd: 1,
       fct: 0.5,
-      vct: 3.5,
-      cd: 7,
+      vct: (lv) => 1 + lv * 0.5,
+      cd: (lv) => 4.5 + lv * 0.5,
       totalHit: 12,
+      levelList: [
+        { label: 'Severe Rainstorm Lv1', value: 'Severe Rainstorm==1' },
+        { label: 'Severe Rainstorm Lv2', value: 'Severe Rainstorm==2' },
+        { label: 'Severe Rainstorm Lv3', value: 'Severe Rainstorm==3' },
+        { label: 'Severe Rainstorm Lv4', value: 'Severe Rainstorm==4' },
+        { label: 'Severe Rainstorm Lv5', value: 'Severe Rainstorm==5' },
+      ],
       formula: (input: AtkSkillFormulaInput): number => {
         const { weapon, status, skillLevel, model } = input;
         const baseLevel = model.level;
@@ -414,13 +308,20 @@ export class ShadowChaser extends CharacterBase {
     },
     {
       name: 'Severe Rainstorm',
-      label: '[Improved] Severe Rainstorm Lv5',
+      label: '[Improved] Severe Rainstorm',
       value: '[Improved] Severe Rainstorm==5',
       acd: 1,
       fct: 0.5,
-      vct: 3.5,
-      cd: 7,
+      vct: (lv) => 1 + lv * 0.5,
+      cd: (lv) => 4.5 + lv * 0.5,
       totalHit: 12,
+      levelList: [
+        { label: '[Improved] Severe Rainstorm Lv1', value: '[Improved] Severe Rainstorm==1' },
+        { label: '[Improved] Severe Rainstorm Lv2', value: '[Improved] Severe Rainstorm==2' },
+        { label: '[Improved] Severe Rainstorm Lv3', value: '[Improved] Severe Rainstorm==3' },
+        { label: '[Improved] Severe Rainstorm Lv4', value: '[Improved] Severe Rainstorm==4' },
+        { label: '[Improved] Severe Rainstorm Lv5', value: '[Improved] Severe Rainstorm==5' },
+      ],
       formula: (input: AtkSkillFormulaInput): number => {
         const { weapon, status, skillLevel, model } = input;
         const baseLevel = model.level;
