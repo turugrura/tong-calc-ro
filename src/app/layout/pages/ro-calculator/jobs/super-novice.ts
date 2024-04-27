@@ -196,13 +196,17 @@ export class SuperNovice extends CharacterBase {
     },
     {
       name: 'Fatal Manace',
-      label: 'Fatal Manace Lv7',
-      value: 'Fatal Manace==7',
+      label: 'Fatal Manace',
+      value: 'Fatal Manace==10',
       acd: 0.5,
       fct: 0,
       vct: 0,
       cd: 0,
       isMelee: true,
+      levelList: [
+        { label: 'Fatal Manace Lv7', value: 'Fatal Manace==7' },
+        { label: 'Fatal Manace Lv10', value: 'Fatal Manace==10' },
+      ],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
@@ -212,30 +216,42 @@ export class SuperNovice extends CharacterBase {
     },
     {
       name: 'Fatal Manace',
-      label: 'Fatal Manace Lv10',
-      value: 'Fatal Manace==10',
+      label: '[Improved] Fatal Manace',
+      value: '[Improved] Fatal Manace==10',
       acd: 0.5,
       fct: 0,
       vct: 0,
       cd: 0,
       isMelee: true,
+      levelList: [
+        { label: '[Improved] Fatal Manace Lv7', value: '[Improved] Fatal Manace==7' },
+        { label: '[Improved] Fatal Manace Lv10', value: '[Improved] Fatal Manace==10' },
+      ],
       formula: (input: AtkSkillFormulaInput): number => {
-        const { model, skillLevel } = input;
+        const { model, skillLevel, status } = input;
         const baseLevel = model.level;
+        const totalAgi = status.totalAgi;
 
-        return (100 + skillLevel * 100) * (baseLevel / 100);
+        return (skillLevel * 120 + totalAgi * 2) * (baseLevel / 100);
       },
     },
     {
       name: 'Psychic Wave',
-      label: 'Psychic Wave Lv5',
+      label: 'Psychic Wave',
       value: 'Psychic Wave==5',
-      fct: 0.6,
-      vct: 12,
+      fct: (lv) => 1.1 - lv * 0.1,
+      vct: (lv) => 7 + lv,
       cd: 5,
       acd: 1,
-      totalHit: 7,
+      totalHit: (_, lv) => 2 + lv,
       isMatk: true,
+      levelList: [
+        { label: 'Psychic Wave Lv1', value: 'Psychic Wave==1' },
+        { label: 'Psychic Wave Lv2', value: 'Psychic Wave==2' },
+        { label: 'Psychic Wave Lv3', value: 'Psychic Wave==3' },
+        { label: 'Psychic Wave Lv4', value: 'Psychic Wave==4' },
+        { label: 'Psychic Wave Lv5', value: 'Psychic Wave==5' },
+      ],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
         const baseLevel = model.level;
