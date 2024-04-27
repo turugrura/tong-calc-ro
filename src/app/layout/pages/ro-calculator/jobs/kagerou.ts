@@ -101,7 +101,6 @@ export class Kagerou extends CharacterBase {
       fct: 0,
       vct: 0,
       cd: 3.1,
-      levelList: [],
       hit: 2,
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
@@ -120,7 +119,6 @@ export class Kagerou extends CharacterBase {
       vct: 2.6,
       cd: 3,
       isHit100: true,
-      levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
         const {
           model,
@@ -142,7 +140,6 @@ export class Kagerou extends CharacterBase {
       fct: 0,
       vct: 0,
       cd: 0,
-      levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;

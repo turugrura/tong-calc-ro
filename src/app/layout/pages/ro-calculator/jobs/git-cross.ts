@@ -158,7 +158,6 @@ export class GitCross extends CharacterBase {
       canCri: true,
       baseCriPercentage: 0.5,
       hit: 7,
-      levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
@@ -179,7 +178,6 @@ export class GitCross extends CharacterBase {
       baseCriPercentage: 0.5,
       criDmgPercentage: 0.5,
       hit: 7,
-      levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
@@ -197,7 +195,6 @@ export class GitCross extends CharacterBase {
       cd: 0,
       isMelee: true,
       isIgnoreDef: true,
-      levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
         const { level: baseLevel, jobLevel } = model;

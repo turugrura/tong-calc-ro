@@ -34,7 +34,6 @@ export class AssassinCross extends CharacterBase {
       cd: 0.5,
       acd: 0,
       isMelee: true,
-      levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
         const baseLevel = model.level;

@@ -216,7 +216,6 @@ export class Oboro extends CharacterBase {
       fct: 0,
       vct: 0,
       cd: 3.1,
-      levelList: [],
       hit: 2,
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
