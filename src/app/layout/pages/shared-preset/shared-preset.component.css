@@ -116,3 +116,16 @@
   background-color: #121212;
   color: var(--teal-300);
 }
+
+.bg_surface {
+  background-color: #121212;
+}
+
+:host ::ng-deep .skill-selection .p-cascadeselect-sublist {
+  left: -70% !important;
+  min-width: 70%;
+}
+
+:host ::ng-deep .skill-selection .p-inputgroup .p-cascadeselect {
+  width: 100%;
+}

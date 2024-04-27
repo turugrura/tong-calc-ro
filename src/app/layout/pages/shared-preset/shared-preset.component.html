@@ -320,6 +320,48 @@
                       totalSummary?.monster?.sizeFullUpper
                     }}</span>
                   </div>
+                  <div class="col-12 flex justify-content-around">
+                    <div>
+                      STR
+                      <span class="summary_monster_value px-1 font-semibold" style="color: var(--red-300)">
+                        {{ totalSummary?.monster?.str }}
+                      </span>
+                    </div>
+                    <div>
+                      INT
+                      <span class="summary_monster_value px-1 font-semibold" style="color: var(--blue-300)">
+                        {{ totalSummary?.monster?.int }}
+                      </span>
+                    </div>
+                  </div>
+                  <div class="col-12 flex justify-content-around">
+                    <div>
+                      DEX
+                      <span class="summary_monster_value px-1 font-semibold" style="color: var(--green-300)">
+                        {{ totalSummary?.monster?.dex }}
+                      </span>
+                    </div>
+                    <div>
+                      AGI
+                      <span class="summary_monster_value px-1 font-semibold" style="color: var(--green-300)">
+                        {{ totalSummary?.monster?.agi }}
+                      </span>
+                    </div>
+                  </div>
+                  <div class="col-12 flex justify-content-around">
+                    <div>
+                      VIT
+                      <span class="summary_monster_value px-1 font-semibold" style="color: var(--yellow-300)">
+                        {{ totalSummary?.monster?.vit }}
+                      </span>
+                    </div>
+                    <div>
+                      LUK
+                      <span class="summary_monster_value px-1 font-semibold" style="color: var(--yellow-300)">
+                        {{ totalSummary?.monster?.luk }}
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -328,8 +370,8 @@
           <!-- Skill -->
           <div class="col-12">
             <div class="grid grid-nogutter" style="position: relative">
-              <div class="col-12">
-                <div class="p-inputgroup">
+              <div class="col-12 skill-selection">
+                <!-- <div class="p-inputgroup">
                   <span class="p-inputgroup-addon skill_hilight_label">Skill</span>
                   <p-dropdown
                     inputId="skill"
@@ -339,6 +381,21 @@
                     [(ngModel)]="selectedAtkSkill"
                     (onChange)="onAtkSkillChange()"
                   ></p-dropdown>
+                </div> -->
+
+                <div class="p-inputgroup">
+                  <span class="p-inputgroup-addon skill_hilight_label">Skill</span>
+                  <p-cascadeSelect
+                    inputId="skill"
+                    [(ngModel)]="selectedAtkSkill"
+                    [options]="atkSkillCascades"
+                    optionValue="value"
+                    optionLabel="label"
+                    optionGroupLabel="label"
+                    [optionGroupChildren]="['levelList']"
+                    placeholder="-"
+                    (onChange)="onAtkSkillChange()"
+                  ></p-cascadeSelect>
                 </div>
               </div>
             </div>
@@ -364,14 +421,17 @@
                 </div>
               </div>
               <div class="col-6">
-                Type <span class="summary_highlight font-semibold">{{ _s.summary?.calcSkill?.dmgType }}</span>
+                Type
+                <span class="summary_highlight bg_surface font-semibold">{{ _s.summary?.calcSkill?.dmgType }}</span>
               </div>
               <div class="col-6">
                 Element:
                 <span class="{{ 'property_' + _s.summary?.calcSkill?.propertySkill }} px-1 font-semibold">{{
                   _s.summary?.calcSkill?.propertySkill
                 }}</span
-                ><span class="summary_highlight px-2">( x {{ _s.summary?.dmg?.skillPropertyMultiplier }})</span>
+                ><span class="summary_highlight bg_surface px-2"
+                  >( x {{ _s.summary?.dmg?.skillPropertyMultiplier }})</span
+                >
               </div>
               <div class="col-6">
                 <app-calc-value

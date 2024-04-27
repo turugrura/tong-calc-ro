@@ -79,6 +79,7 @@ export class SharedPresetComponent implements OnInit, OnDestroy {
 
   isCalculating = false;
   offensiveSkills: DropdownModel[] = [];
+  atkSkillCascades: any[] = [];
   skillBuffs = JobBuffs;
   atkSkills: AtkSkillModel[] = [];
   activeSkills: ActiveSkillModel[] = [];
@@ -413,6 +414,7 @@ export class SharedPresetComponent implements OnInit, OnDestroy {
     this.activeSkills = this.selectedCharacter.activeSkills;
     // this.passiveSkills = this.selectedCharacter.passiveSkills;
     this.atkSkills = this.selectedCharacter.atkSkills;
+    this.atkSkillCascades = this.selectedCharacter.atkSkills;
     this.offensiveSkills = [...new Set(this.atkSkills.map((a) => a.name)).values()].map((name) => {
       return {
         label: name,

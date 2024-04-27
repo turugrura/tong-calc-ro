@@ -17,6 +17,7 @@ import { AccordionModule } from 'primeng/accordion';
 import { RoCalculatorModule } from '../ro-calculator/ro-calculator.module';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { SkillDetailComponent } from './skill-detail/skill-detail.component';
+import { CascadeSelectModule } from 'primeng/cascadeselect';
 
 @NgModule({
   imports: [
@@ -33,6 +34,7 @@ import { SkillDetailComponent } from './skill-detail/skill-detail.component';
     AccordionModule,
     SharedPresetRoutingModule,
     ConfirmDialogModule,
+    CascadeSelectModule,
     RoCalculatorModule,
   ],
   declarations: [SharedPresetComponent, EquipmentUiComponent, EquipmentInDetailComponent, SkillDetailComponent],
