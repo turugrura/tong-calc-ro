@@ -148,54 +148,21 @@ export class Mechanic extends CharacterBase {
     },
     {
       name: 'Arm Cannon',
-      label: 'Arm Cannon Lv3',
-      value: 'Arm Cannon==3',
-      acd: 1,
-      fct: 0.4,
-      vct: 1.8,
-      cd: 0.3,
-      isHDefToSDef: true,
-      isHit100: true,
-      formula: (input: AtkSkillFormulaInput): number => {
-        const { skillLevel, model, monster } = input;
-        const baseLevel = model.level;
-        const monsterSize = monster.size;
-        const size = { s: 2, m: 1, l: 0 };
-        const additional = 50 * skillLevel * size[monsterSize];
-
-        return (additional + 300 + skillLevel * 300) * (baseLevel / 120);
-      },
-    },
-    {
-      name: 'Arm Cannon',
-      label: 'Arm Cannon Lv4',
-      value: 'Arm Cannon==4',
-      acd: 1,
-      fct: 0.2,
-      vct: 2,
-      cd: 0.45,
-      isHDefToSDef: true,
-      isHit100: true,
-      formula: (input: AtkSkillFormulaInput): number => {
-        const { skillLevel, model, monster } = input;
-        const baseLevel = model.level;
-        const monsterSize = monster.size;
-        const size = { s: 2, m: 1, l: 0 };
-        const additional = 50 * skillLevel * size[monsterSize];
-
-        return (additional + 300 + skillLevel * 300) * (baseLevel / 120);
-      },
-    },
-    {
-      name: 'Arm Cannon',
-      label: 'Arm Cannon Lv5',
+      label: 'Arm Cannon',
       value: 'Arm Cannon==5',
       acd: 1,
-      fct: 0.2,
-      vct: 2.2,
-      cd: 0.65,
+      fct: (lv) => ({ 1: 0.6, 2: 0.4, 3: 0.4, 4: 0.2, 5: 0.2 }[lv]),
+      vct: (lv) => 1.2 + lv * 0.2,
+      cd: (lv) => ({ 1: 0.15, 2: 0.2, 3: 0.3, 4: 0.45, 5: 0.65 }[lv]),
       isHDefToSDef: true,
       isHit100: true,
+      levelList: [
+        { label: 'Arm Cannon Lv1', value: 'Arm Cannon==1' },
+        { label: 'Arm Cannon Lv2', value: 'Arm Cannon==2' },
+        { label: 'Arm Cannon Lv3', value: 'Arm Cannon==3' },
+        { label: 'Arm Cannon Lv4', value: 'Arm Cannon==4' },
+        { label: 'Arm Cannon Lv5', value: 'Arm Cannon==5' },
+      ],
       formula: (input: AtkSkillFormulaInput): number => {
         const { skillLevel, model, monster } = input;
         const baseLevel = model.level;
