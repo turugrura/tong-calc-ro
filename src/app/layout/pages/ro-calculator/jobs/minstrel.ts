@@ -143,7 +143,6 @@ export class Minstrel extends CharacterBase {
       hit: 2,
       isMatk: true,
       element: ElementType.Neutral,
-      levelList: [],
       formula: (input: AtkSkillFormulaInput): number => {
         const { skillLevel, model } = input;
         const baseLevel = model.level;
@@ -154,61 +153,20 @@ export class Minstrel extends CharacterBase {
     },
     {
       name: 'Severe Rainstorm',
-      label: 'Severe Rainstorm Lv3',
-      value: 'Severe Rainstorm==3',
-      acd: 1,
-      fct: 0.5,
-      vct: 2.5,
-      cd: 6,
-      totalHit: 12,
-      formula: (input: AtkSkillFormulaInput): number => {
-        const { weapon, status, skillLevel, model } = input;
-        const baseLevel = model.level;
-        const { totalDex, totalAgi } = status;
-        const weaType = weapon.data.typeName;
-        const weaMultiMap: Partial<Record<WeaponTypeName, number>> = {
-          bow: 1,
-          instrument: 1.5,
-          whip: 1.5,
-        };
-        const extra = weaMultiMap[weaType] || 0;
-
-        return extra * (totalDex + totalAgi) * (skillLevel / 5) * (baseLevel / 100);
-      },
-    },
-    {
-      name: 'Severe Rainstorm',
-      label: 'Severe Rainstorm Lv4',
-      value: 'Severe Rainstorm==4',
-      acd: 1,
-      fct: 0.5,
-      vct: 3,
-      cd: 6.5,
-      totalHit: 12,
-      formula: (input: AtkSkillFormulaInput): number => {
-        const { weapon, status, skillLevel, model } = input;
-        const baseLevel = model.level;
-        const { totalDex, totalAgi } = status;
-        const weaType = weapon.data.typeName;
-        const weaMultiMap: Partial<Record<WeaponTypeName, number>> = {
-          bow: 1,
-          instrument: 1.5,
-          whip: 1.5,
-        };
-        const extra = weaMultiMap[weaType] || 0;
-
-        return extra * (totalDex + totalAgi) * (skillLevel / 5) * (baseLevel / 100);
-      },
-    },
-    {
-      name: 'Severe Rainstorm',
-      label: 'Severe Rainstorm Lv5',
+      label: 'Severe Rainstorm',
       value: 'Severe Rainstorm==5',
       acd: 1,
       fct: 0.5,
-      vct: 3.5,
-      cd: 7,
+      vct: (lv) => 1 + lv * 0.5,
+      cd: (lv) => 4.5 + lv * 0.5,
       totalHit: 12,
+      levelList: [
+        { label: 'Severe Rainstorm Lv1', value: 'Severe Rainstorm==1' },
+        { label: 'Severe Rainstorm Lv2', value: 'Severe Rainstorm==2' },
+        { label: 'Severe Rainstorm Lv3', value: 'Severe Rainstorm==3' },
+        { label: 'Severe Rainstorm Lv4', value: 'Severe Rainstorm==4' },
+        { label: 'Severe Rainstorm Lv5', value: 'Severe Rainstorm==5' },
+      ],
       formula: (input: AtkSkillFormulaInput): number => {
         const { weapon, status, skillLevel, model } = input;
         const baseLevel = model.level;
@@ -226,13 +184,20 @@ export class Minstrel extends CharacterBase {
     },
     {
       name: 'Severe Rainstorm',
-      label: '[Improved] Severe Rainstorm Lv5',
+      label: '[Improved] Severe Rainstorm',
       value: '[Improved] Severe Rainstorm==5',
       acd: 1,
       fct: 0.5,
-      vct: 3.5,
-      cd: 7,
+      vct: (lv) => 1 + lv * 0.5,
+      cd: (lv) => 4.5 + lv * 0.5,
       totalHit: 12,
+      levelList: [
+        { label: '[Improved] Severe Rainstorm Lv1', value: '[Improved] Severe Rainstorm==1' },
+        { label: '[Improved] Severe Rainstorm Lv2', value: '[Improved] Severe Rainstorm==2' },
+        { label: '[Improved] Severe Rainstorm Lv3', value: '[Improved] Severe Rainstorm==3' },
+        { label: '[Improved] Severe Rainstorm Lv4', value: '[Improved] Severe Rainstorm==4' },
+        { label: '[Improved] Severe Rainstorm Lv5', value: '[Improved] Severe Rainstorm==5' },
+      ],
       formula: (input: AtkSkillFormulaInput): number => {
         const { weapon, status, skillLevel, model } = input;
         const baseLevel = model.level;
