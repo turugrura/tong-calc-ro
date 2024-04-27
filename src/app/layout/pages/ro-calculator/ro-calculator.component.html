@@ -3955,8 +3955,8 @@
           <!-- Skill -->
           <div class="col-7">
             <div class="grid grid-nogutter" style="position: relative">
-              <div class="col-12">
-                <div class="p-inputgroup">
+              <div class="col-12 skill-selection">
+                <!-- <div class="p-inputgroup">
                   <span class="p-inputgroup-addon skill_hilight_label">Skill</span>
                   <p-dropdown
                     inputId="skill"
@@ -3967,17 +3967,22 @@
                     [(ngModel)]="model.selectedAtkSkill"
                     (onChange)="onAtkSkillChange()"
                   ></p-dropdown>
+                </div> -->
+
+                <div class="p-inputgroup">
+                  <span class="p-inputgroup-addon skill_hilight_label">Skill</span>
+                  <p-cascadeSelect
+                    inputId="skill"
+                    [(ngModel)]="model.selectedAtkSkill"
+                    [options]="atkSkillCascades"
+                    optionValue="value"
+                    optionLabel="label"
+                    optionGroupLabel="label"
+                    [optionGroupChildren]="['levelList']"
+                    placeholder="-"
+                    (onChange)="onAtkSkillChange()"
+                  ></p-cascadeSelect>
                 </div>
-                <!-- <span class="skill_hilight_label">Skill</span>
-                <p-cascadeSelect
-                  [(ngModel)]="model.selectedAtkSkill"
-                  [options]="atkSkillCascades"
-                  optionValue="value"
-                  optionGroupLabel="label"
-                  optionLabel="label"
-                  [optionGroupChildren]="['levelList']"
-                  (onChange)="onAtkSkillChange()"
-                ></p-cascadeSelect> -->
               </div>
               <div class="col-12">
                 <div class="grid grid-nogutter">

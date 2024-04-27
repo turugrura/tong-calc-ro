@@ -485,3 +485,12 @@
   padding-top: 0.25rem !important;
   padding-bottom: 0.25rem !important;
 }
+
+:host ::ng-deep .skill-selection .p-cascadeselect-sublist {
+  left: -70% !important;
+  min-width: 70%;
+}
+
+:host ::ng-deep .skill-selection .p-inputgroup .p-cascadeselect {
+  width: 100%;
+}

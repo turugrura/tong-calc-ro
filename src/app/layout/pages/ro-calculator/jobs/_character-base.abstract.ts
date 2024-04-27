@@ -7,6 +7,7 @@ import { AspdTable } from './_aspd-table';
 import { ClassName } from './_class-name';
 import { sortSkill } from '../utils';
 import { WeaponTypeName } from '../constants/weapon-type-mapper';
+import { AspdPotionFixBonus } from '../constants';
 
 export interface AtkSkillFormulaInput extends InfoForClass {
   skillLevel: number;
@@ -28,10 +29,10 @@ export interface AtkSkillModel {
   name: string;
   value: string;
   values?: string[];
-  acd: number;
-  fct: number;
-  vct: number;
-  cd: number;
+  acd: number | ((skillLevel: number) => number);
+  fct: number | ((skillLevel: number) => number);
+  vct: number | ((skillLevel: number) => number);
+  cd: number | ((skillLevel: number) => number);
   levelList?: { label: string; value: any }[];
   formula: (input: AtkSkillFormulaInput) => number;
   customFormula?: (
@@ -65,7 +66,7 @@ export interface AtkSkillModel {
    * Will be round down
    */
   hit?: number;
-  totalHit?: number | ((monsterSize: 's' | 'm' | 'l') => number);
+  totalHit?: number | ((monsterSize: 's' | 'm' | 'l', skillLevel: number) => number);
   isMatk?: boolean;
   isMelee?: boolean | ((weaponType: WeaponTypeName) => boolean);
   isDevMode?: boolean;
@@ -82,7 +83,7 @@ export interface AtkSkillModel {
    */
   autoSpellChance?: number;
   element?: ElementType;
-  getElement?: () => ElementType;
+  getElement?: (skillValue: number) => ElementType;
 }
 [];
 
@@ -116,7 +117,7 @@ export interface AspdInput {
   aspdPercent: number;
   totalAgi: number;
   totalDex: number;
-  potionAspd: number;
+  potionAspds: number[];
   potionAspdPercent: number;
   skillAspd: number;
   skillAspdPercent: number;

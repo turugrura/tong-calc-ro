@@ -70,7 +70,7 @@ import {
 import { ExtraOptionTable } from './constants/extra-option-table';
 import { ItemOptionNumber, MAX_OPTION_NUMBER } from './constants/item-option-number.enum';
 import { WeaponTypeNameMapBySubTypeId } from './constants/weapon-type-mapper';
-import { AuthService, PresetService } from 'src/app/api-services';
+import { AuthService, PresetModel, PresetService } from 'src/app/api-services';
 import { ItemOptionTable } from './constants/item-options-table';
 import { getClassDropdownList } from './jobs/_class-list';
 import { ToErrorDetail } from 'src/app/app-errors';
@@ -365,7 +365,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     this.initCalcTableColumns();
     this.initData()
       .pipe(
-        tap(() => this.loadItemSet()),
+        switchMap(() => this.loadItemSet(localStorage.getItem('ro-set'))),
         tap(() => {
           const ob = this.authService.loggedInEvent$.subscribe((isLoggedIn) => {
             this.isLoggedIn = isLoggedIn;
@@ -1156,13 +1156,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       })
       .pipe(
         switchMap((preset) => {
-          this.setModelByJSONString(preset.model);
-          return waitRxjs(0.1, preset);
-        }),
-        switchMap((preset) => {
-          this.loadItemSet(true);
-
-          return waitRxjs(0.1, preset);
+          return this.loadItemSet(preset.model).pipe(switchMap(() => waitRxjs(0.1, preset)));
         }),
         switchMap((preset) => {
           return this.presetService.getMyPresets().pipe(
@@ -1300,12 +1294,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
       const obs = this.presetService.getPreset(presetId).pipe(
         switchMap((preset) => {
-          this.setModelByJSONString(preset.model);
-          return waitRxjs(0.1, preset);
-        }),
-        switchMap((preset) => {
-          this.loadItemSet(true);
-          return waitRxjs(0.1, preset);
+          return this.loadItemSet(preset.model).pipe(switchMap(() => waitRxjs(0.1, preset)));
         }),
         tap((preset) => {
           if (presetName) this.selectedPreset = presetName;
@@ -1347,12 +1336,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
           waitRxjs()
             .pipe(
               mergeMap(() => {
-                this.setModelByJSONString(selected['model']);
-                return waitRxjs();
-              }),
-              mergeMap(() => {
-                this.loadItemSet(true);
-                return waitRxjs(1);
+                return this.loadItemSet(selected['model']).pipe(switchMap(() => waitRxjs(1)));
               }),
               take(1),
               finalize(() => {
@@ -1406,9 +1390,9 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
   private setModelByJSONString(savedModel: string | any) {
     const savedData = typeof savedModel === 'string' ? JSON.parse(savedModel || '{}') : savedModel;
-    const model = createMainModel();
+    const rawModel = createMainModel();
     if (!savedData) {
-      this.model = model;
+      this.model = rawModel;
       return;
     }
 
@@ -1417,97 +1401,84 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
       const savedValue = savedData[key];
       const validValue = isAttrArray ? (Array.isArray(savedValue) ? savedValue : []) : savedValue ?? initialValue;
-      model[key] = validValue;
+      rawModel[key] = validValue;
     }
 
     const rawOptionTxts = [] as string[];
     // migrate
     for (let i = 0; i <= MAX_OPTION_NUMBER; i++) {
-      if (model.rawOptionTxts[i]) {
-        rawOptionTxts[i] = model.rawOptionTxts[i];
+      if (rawModel.rawOptionTxts[i]) {
+        rawOptionTxts[i] = rawModel.rawOptionTxts[i];
       }
     }
     for (let i = 51; i <= 56; i++) {
-      if (model.rawOptionTxts[i]) {
-        rawOptionTxts[i - 31] = model.rawOptionTxts[i];
+      if (rawModel.rawOptionTxts[i]) {
+        rawOptionTxts[i - 31] = rawModel.rawOptionTxts[i];
       }
     }
 
-    model.rawOptionTxts = rawOptionTxts;
+    rawModel.rawOptionTxts = rawOptionTxts;
 
     const mapPhamacy = {
       2: 100232,
       3: 100233,
     };
-    const p = mapPhamacy[model?.skillBuffMap['Special Pharmacy']];
-    if (Boolean(p) && Array.isArray(model.consumables)) {
-      if (!model.consumables.includes(p)) {
-        model.consumables.push(p);
+    const p = mapPhamacy[rawModel?.skillBuffMap['Special Pharmacy']];
+    if (Boolean(p) && Array.isArray(rawModel.consumables)) {
+      if (!rawModel.consumables.includes(p)) {
+        rawModel.consumables.push(p);
       }
     }
 
-    this.model = model;
+    this.model = rawModel;
   }
 
-  loadItemSet(fromCurrentModel = false) {
+  loadItemSet(presetStrOrModel: string | PresetModel) {
     this.isInProcessingPreset = true;
 
-    let str = '';
-    if (!fromCurrentModel) {
-      str = localStorage.getItem('ro-set');
-      this.setModelByJSONString(str);
-    }
+    this.setModelByJSONString(presetStrOrModel);
+
     this.model.selectedAtkSkill = this.model.selectedAtkSkill || this.atkSkills[0]?.value;
     const selectedAtkSkill = this.model.selectedAtkSkill;
 
     this.setClassInstant();
     this.setSkillModelArray();
-    this.setJobBonus();
+    this.setClassSkill();
 
-    return waitRxjs()
-      .pipe(
-        take(1),
-        mergeMap(() => {
-          this.setClassSkill();
-          return waitRxjs();
-        }),
-        mergeMap(() => {
-          this.setAspdPotionList();
-          this.setDefaultSkill(selectedAtkSkill);
-          this.setItemDropdownList();
-          return waitRxjs();
-        }),
-        mergeMap(() => {
-          try {
-            if (str || fromCurrentModel) {
-              for (const itemType of Object.keys(MainItemWithRelations) as ItemTypeEnum[]) {
-                const refine = this.model[`${itemType}Refine`];
-                const itemId = this.model[itemType];
-                this.onSelectItem(itemType, itemId, refine);
-                // console.log('Set Main Item', { itemType, itemId, refine });
-                for (const relatedItemType of MainItemWithRelations[itemType] ?? []) {
-                  this.onSelectItem(relatedItemType, this.model[relatedItemType], refine);
-                }
-              }
-              this.onBaseStatusChange();
+    return waitRxjs().pipe(
+      take(1),
+      mergeMap(() => {
+        this.setJobBonus();
+        return waitRxjs();
+      }),
+      mergeMap(() => {
+        this.setAspdPotionList();
+        this.setDefaultSkill(selectedAtkSkill);
+        this.setItemDropdownList();
+        return waitRxjs();
+      }),
+      mergeMap(() => {
+        try {
+          for (const itemType of Object.keys(MainItemWithRelations) as ItemTypeEnum[]) {
+            const refine = this.model[`${itemType}Refine`];
+            const itemId = this.model[itemType];
+            this.onSelectItem(itemType, itemId, refine);
+            // console.log('Set Main Item', { itemType, itemId, refine });
+            for (const relatedItemType of MainItemWithRelations[itemType] ?? []) {
+              this.onSelectItem(relatedItemType, this.model[relatedItemType], refine);
             }
-          } catch (error) {
-            console.error(error);
           }
+          this.onBaseStatusChange();
+        } catch (error) {
+          console.error(error);
+        }
 
-          return waitRxjs(1);
-        }),
-        finalize(() => {
-          this.isInProcessingPreset = false;
-          if (!fromCurrentModel) {
-            this.messageService.add({
-              severity: 'success',
-              summary: 'Loaded',
-            });
-          }
-        }),
-      )
-      .subscribe();
+        return waitRxjs(1);
+      }),
+      finalize(() => {
+        this.isInProcessingPreset = false;
+      }),
+    );
   }
 
   private saveCurrentStateItemset() {
@@ -1563,7 +1534,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         value: name,
       };
     });
-    // this.atkSkillCascades = this.selectedCharacter.atkSkills;
+    this.atkSkillCascades = this.selectedCharacter.atkSkills;
   }
 
   private setDefaultSkill(selectedSkill?: string) {
@@ -1577,7 +1548,17 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     const selectedValidSkill = this.atkSkills.find(
       (a) => a.value === selectedAtkSkill || (Array.isArray(a.values) && a.values?.includes(selectedAtkSkill)),
     );
-    this.model.selectedAtkSkill = selectedValidSkill?.value || defaultAtkSkill;
+    const selectedValidSkill2 = this.atkSkills.find(
+      (a) =>
+        Array.isArray(a.levelList) && a.levelList.length > 0 && a.levelList.find((lv) => lv.value === selectedAtkSkill),
+    );
+    if (selectedValidSkill?.value) {
+      this.model.selectedAtkSkill = selectedValidSkill.value;
+    } else if (selectedValidSkill2?.value) {
+      this.model.selectedAtkSkill = selectedAtkSkill;
+    } else {
+      this.model.selectedAtkSkill = defaultAtkSkill;
+    }
   }
 
   private setAspdPotionList() {
@@ -2368,6 +2349,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
           mergeMap(() => {
             this.calculator = new Calculator();
             this.setClassInstant();
+            this.setClassSkill();
             this.calculator.setMasterItems(this.items).setHpSpTable(this.hpSpTable);
 
             this.calculator2.setClass(this.selectedCharacter);
@@ -2382,7 +2364,6 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
           }),
           mergeMap(() => {
             this.setAspdPotionList();
-            this.setClassSkill();
             this.setDefaultSkill();
             return waitRxjs();
           }),

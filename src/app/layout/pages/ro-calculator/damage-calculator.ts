@@ -1051,7 +1051,9 @@ export class DamageCalculator {
     };
 
     const [, _skillName, skillLevelStr] = skillValue?.match(/(.+)==(\d+)/) ?? [];
-    const skillData = this._class.atkSkills.find((a) => a.value === skillValue);
+    const skillData = this._class.atkSkills.find(
+      (a) => a.value === skillValue || a.levelList?.findIndex((b) => b.value === skillValue) >= 0,
+    );
     const isValidSkill = !!_skillName && !!skillLevelStr && typeof skillData?.formula === 'function';
 
     if (!isValidSkill) return { basicDmg, misc, basicAspd };
@@ -1091,14 +1093,15 @@ export class DamageCalculator {
     const params = {
       baseSkillDamage,
       skillData,
-      weaponPropertyAtk: typeof getElement === 'function' && !!getElement ? getElement() : propertyAtk,
+      weaponPropertyAtk: typeof getElement === 'function' && !!getElement ? getElement(skillLevel) : propertyAtk,
       sizePenalty,
       formulaParams,
     };
 
     let calculated: DamageResultModel;
     if (customFormula && typeof customFormula === 'function') {
-      const skillPropertyAtk = typeof getElement === 'function' ? getElement() : skillData.element || propertyAtk;
+      const skillPropertyAtk =
+        typeof getElement === 'function' ? getElement(skillLevel) : skillData.element || propertyAtk;
       const propertyMultiplier = this.getPropertyMultiplier(skillPropertyAtk);
 
       const d = customFormula({
@@ -1161,7 +1164,7 @@ export class DamageCalculator {
       }
     }
 
-    const skillAspd = calcSkillAspd({ skillData, status: this.status, totalEquipStatus: this.totalBonus });
+    const skillAspd = calcSkillAspd({ skillData, status: this.status, totalEquipStatus: this.totalBonus, skillLevel });
 
     const isKatar = this.weaponData.data?.typeName === 'katar';
     let actualCri = calculated.canCri
@@ -1177,7 +1180,7 @@ export class DamageCalculator {
     const skillAccRate = isHit100 || isMatk ? 100 : basicDmg.accuracy;
     const { avgCriDamage, avgNoCriDamage } = calculated;
 
-    const totalHit = typeof _totalHit === 'function' ? _totalHit(this.monsterData.size) : _totalHit;
+    const totalHit = typeof _totalHit === 'function' ? _totalHit(this.monsterData.size, skillLevel) : _totalHit;
     const isAutoSpell = autoSpellChance != 1;
     const skillHitsPerSec = Math.min(basicAspd.hitsPerSec, skillAspd.totalHitPerSec);
     const oneHitDps = isAutoSpell
