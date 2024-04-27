@@ -257,154 +257,26 @@ export class Sura extends CharacterBase {
     },
     {
       name: 'Hell Gate',
-      label: 'Hell Gate Lv1',
-      value: 'Hell Gate==1',
-      fct: 0,
-      vct: 1,
-      acd: 0.1,
-      cd: 0,
-      isHit100: true,
-      hit: 7,
-      currentHpFn: (maxHp) => this.getCurrentHP(maxHp),
-      currentSpFn: (maxSp) => this.getCurrentSP(maxSp),
-      formula: (input: AtkSkillFormulaInput): number => {
-        const { model, skillLevel } = input;
-        const baseLevel = model.level;
-
-        return 500 * skillLevel * (baseLevel / 100);
-      },
-      finalDmgFormula: (input) => {
-        const { model, skillLevel, maxHp, currentHp, currentSp, damage: baseDamage } = input;
-        const baseLevel = model.level;
-
-        const spModifier = 1 + skillLevel * 0.2;
-        const bonusDamge = floor(maxHp - (currentHp || 0) + (currentSp || 0) * spModifier + baseLevel * 10);
-
-        return baseDamage + bonusDamge;
-      },
-    },
-    {
-      name: 'Hell Gate',
-      label: 'Hell Gate Lv2',
-      value: 'Hell Gate==2',
-      fct: 0,
-      vct: 1.2,
-      acd: 0.2,
-      cd: 0,
-      isHit100: true,
-      hit: 7,
-      currentHpFn: (maxHp) => this.getCurrentHP(maxHp),
-      currentSpFn: (maxSp) => this.getCurrentSP(maxSp),
-      formula: (input: AtkSkillFormulaInput): number => {
-        const { model, skillLevel } = input;
-        const baseLevel = model.level;
-
-        return 500 * skillLevel * (baseLevel / 100);
-      },
-      finalDmgFormula: (input) => {
-        const { model, skillLevel, maxHp, currentHp, currentSp, damage: baseDamage } = input;
-        const baseLevel = model.level;
-
-        const spModifier = 1 + skillLevel * 0.2;
-        const bonusDamge = floor(maxHp - (currentHp || 0) + (currentSp || 0) * spModifier + baseLevel * 10);
-
-        return baseDamage + bonusDamge;
-      },
-    },
-    {
-      name: 'Hell Gate',
-      label: 'Hell Gate Lv3',
-      value: 'Hell Gate==3',
-      fct: 0,
-      vct: 1.4,
-      acd: 0.3,
-      cd: 0,
-      isHit100: true,
-      hit: 7,
-      currentHpFn: (maxHp) => this.getCurrentHP(maxHp),
-      currentSpFn: (maxSp) => this.getCurrentSP(maxSp),
-      formula: (input: AtkSkillFormulaInput): number => {
-        const { model, skillLevel } = input;
-        const baseLevel = model.level;
-
-        return 500 * skillLevel * (baseLevel / 100);
-      },
-      finalDmgFormula: (input) => {
-        const { model, skillLevel, maxHp, currentHp, currentSp, damage: baseDamage } = input;
-        const baseLevel = model.level;
-
-        const spModifier = 1 + skillLevel * 0.2;
-        const bonusDamge = floor(maxHp - (currentHp || 0) + (currentSp || 0) * spModifier + baseLevel * 10);
-
-        return baseDamage + bonusDamge;
-      },
-    },
-    {
-      name: 'Hell Gate',
-      label: 'Hell Gate Lv4',
-      value: 'Hell Gate==4',
-      fct: 0,
-      vct: 1.6,
-      acd: 0.4,
-      cd: 0,
-      isHit100: true,
-      hit: 7,
-      currentHpFn: (maxHp) => this.getCurrentHP(maxHp),
-      currentSpFn: (maxSp) => this.getCurrentSP(maxSp),
-      formula: (input: AtkSkillFormulaInput): number => {
-        const { model, skillLevel } = input;
-        const baseLevel = model.level;
-
-        return 500 * skillLevel * (baseLevel / 100);
-      },
-      finalDmgFormula: (input) => {
-        const { model, skillLevel, maxHp, currentHp, currentSp, damage: baseDamage } = input;
-        const baseLevel = model.level;
-
-        const spModifier = 1 + skillLevel * 0.2;
-        const bonusDamge = floor(maxHp - (currentHp || 0) + (currentSp || 0) * spModifier + baseLevel * 10);
-
-        return baseDamage + bonusDamge;
-      },
-    },
-    {
-      name: 'Hell Gate',
-      label: 'Hell Gate Lv5',
-      value: 'Hell Gate==5',
-      fct: 0,
-      vct: 1.8,
-      acd: 0.5,
-      cd: 0,
-      isHit100: true,
-      hit: 7,
-      currentHpFn: (maxHp) => this.getCurrentHP(maxHp),
-      currentSpFn: (maxSp) => this.getCurrentSP(maxSp),
-      formula: (input: AtkSkillFormulaInput): number => {
-        const { model, skillLevel } = input;
-        const baseLevel = model.level;
-
-        return 500 * skillLevel * (baseLevel / 100);
-      },
-      finalDmgFormula: (input) => {
-        const { model, skillLevel, maxHp, currentHp, currentSp, damage: baseDamage } = input;
-        const baseLevel = model.level;
-
-        const spModifier = 1 + skillLevel * 0.2;
-        const bonusDamge = floor(maxHp - (currentHp || 0) + (currentSp || 0) * spModifier + baseLevel * 10);
-
-        return baseDamage + bonusDamge;
-      },
-    },
-    {
-      name: 'Hell Gate',
-      label: 'Hell Gate Lv10',
+      label: 'Hell Gate',
       value: 'Hell Gate==10',
       fct: 0,
-      vct: 2.8,
-      acd: 1,
+      vct: (lv) => 0.8 + lv * 0.2,
+      acd: (lv) => lv * 0.1,
       cd: 0,
       isHit100: true,
       hit: 7,
+      levelList: [
+        { label: 'Hell Gate Lv1', value: 'Hell Gate==1' },
+        { label: 'Hell Gate Lv2', value: 'Hell Gate==2' },
+        { label: 'Hell Gate Lv3', value: 'Hell Gate==3' },
+        { label: 'Hell Gate Lv4', value: 'Hell Gate==4' },
+        { label: 'Hell Gate Lv5', value: 'Hell Gate==5' },
+        { label: 'Hell Gate Lv6', value: 'Hell Gate==6' },
+        { label: 'Hell Gate Lv7', value: 'Hell Gate==7' },
+        { label: 'Hell Gate Lv8', value: 'Hell Gate==8' },
+        { label: 'Hell Gate Lv9', value: 'Hell Gate==9' },
+        { label: 'Hell Gate Lv10', value: 'Hell Gate==10' },
+      ],
       currentHpFn: (maxHp) => this.getCurrentHP(maxHp),
       currentSpFn: (maxSp) => this.getCurrentSP(maxSp),
       formula: (input: AtkSkillFormulaInput): number => {
@@ -425,14 +297,26 @@ export class Sura extends CharacterBase {
     },
     {
       name: 'Hell Gate',
-      label: 'Hell Gate (Combo) Lv10',
+      label: 'Hell Gate (Combo)',
       value: 'Hell Gate (Combo)==10',
       fct: 0,
-      vct: 2.8,
-      acd: 1,
+      vct: (lv) => 0.8 + lv * 0.2,
+      acd: (lv) => lv * 0.1,
       cd: 0,
       isHit100: true,
       hit: 7,
+      levelList: [
+        { label: 'Hell Gate (Combo) Lv1', value: 'Hell Gate (Combo)==1' },
+        { label: 'Hell Gate (Combo) Lv2', value: 'Hell Gate (Combo)==2' },
+        { label: 'Hell Gate (Combo) Lv3', value: 'Hell Gate (Combo)==3' },
+        { label: 'Hell Gate (Combo) Lv4', value: 'Hell Gate (Combo)==4' },
+        { label: 'Hell Gate (Combo) Lv5', value: 'Hell Gate (Combo)==5' },
+        { label: 'Hell Gate (Combo) Lv6', value: 'Hell Gate (Combo)==6' },
+        { label: 'Hell Gate (Combo) Lv7', value: 'Hell Gate (Combo)==7' },
+        { label: 'Hell Gate (Combo) Lv8', value: 'Hell Gate (Combo)==8' },
+        { label: 'Hell Gate (Combo) Lv9', value: 'Hell Gate (Combo)==9' },
+        { label: 'Hell Gate (Combo) Lv10', value: 'Hell Gate (Combo)==10' },
+      ],
       currentHpFn: (maxHp) => this.getCurrentHP(maxHp),
       currentSpFn: (maxSp) => this.getCurrentSP(maxSp),
       formula: (input: AtkSkillFormulaInput): number => {
