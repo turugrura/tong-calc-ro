@@ -1926,22 +1926,14 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         if (isLv4 && isSup) return true;
       }
 
-      if (Array.isArray(a.usableClass)) {
-        return a.usableClass.some((x) => classNameSet.has(x));
-      }
-
-      return true;
+      return onlyMe(a);
     };
     const onlySuperNoviceHeadGear = (a: ItemDropdownModel) => {
       if (this.selectedCharacter.className === ClassName.SuperNovice) {
         return true;
       }
 
-      if (Array.isArray(a.usableClass)) {
-        return a.usableClass.some((x) => classNameSet.has(x));
-      }
-
-      return true;
+      return onlyMe(a);
     };
 
     this.weaponList = this.itemList.weaponList.filter(onlySuperNoviceWeapon);
