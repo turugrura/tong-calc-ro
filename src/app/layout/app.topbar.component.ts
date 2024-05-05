@@ -176,6 +176,18 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
 
   updates: { v: string; date: string; logs: string[] }[] = [
     {
+      v: 'V2.1.1',
+      date: '02-05-2567',
+      logs: [
+        'Fixed reported bugs',
+        'Added Official last updated items',
+        'Added Geffen Night Arena cards',
+        'Added requested items/monsters',
+        'Supported skill level selection [ Arm Cannon, Hell Gate, Psychic Wave, Severe Rainstorm ]',
+        'Updated data for Item Ranking',
+      ],
+    },
+    {
       v: 'V2.1.0',
       date: '26-04-2567',
       logs: [
