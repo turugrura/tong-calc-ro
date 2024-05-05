@@ -2542,6 +2542,11 @@
               <div>{{ item.label }}</div>
             </div>
           </ng-template>
+          <ng-template let-item pTemplate="item">
+            <div class="flex {{ item.isHilight ? 'text-orange-300' : '' }}">
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
         </p-dropdown>
       </div>
       <div class="col-3" [hidden]="!(itemTotalOptionMap['accRight'] >= 1) || !model.accRight">
@@ -2749,6 +2754,11 @@
           <ng-template let-item pTemplate="selectedItem">
             <div class="flex gap-1 item_template" *ngIf="model.accLeftCard">
               <img src="assets/demo/images/items/card.png" alt="" class="item_img" />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+          <ng-template let-item pTemplate="item">
+            <div class="flex {{ item.isHilight ? 'text-orange-300' : '' }}">
               <div>{{ item.label }}</div>
             </div>
           </ng-template>

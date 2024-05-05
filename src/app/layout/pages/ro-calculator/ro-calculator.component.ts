@@ -1836,11 +1836,19 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
             bootCardList.push(item);
             continue;
           case CardPosition.AccL:
-            accLeftCardList.push(item);
+            accLeftCardList.push({
+              ...item,
+              name: '[Left] ' + item.name,
+              isHilight: true,
+            });
             accCardList.push(item);
             continue;
           case CardPosition.AccR:
-            accRightCardList.push(item);
+            accRightCardList.push({
+              ...item,
+              name: '[Right] ' + item.name,
+              isHilight: true,
+            });
             accCardList.push(item);
             continue;
           case CardPosition.Acc:
@@ -1871,9 +1879,15 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     this.itemList.accList = toDropdownList(accList, 'name', 'id');
     this.itemList.accCardList = toDropdownList(accCardList, 'name', 'id');
     this.itemList.accLeftList = toDropdownList(accLeftList, 'name', 'id');
-    this.itemList.accLeftCardList = toDropdownList(accLeftCardList, 'name', 'id', undefined, ['cardPrefix']);
+    this.itemList.accLeftCardList = toDropdownList(accLeftCardList, 'name', 'id', undefined, [
+      'cardPrefix',
+      'isHilight',
+    ]);
     this.itemList.accRightList = toDropdownList(accRightList, 'name', 'id');
-    this.itemList.accRightCardList = toDropdownList(accRightCardList, 'name', 'id', undefined, ['cardPrefix']);
+    this.itemList.accRightCardList = toDropdownList(accRightCardList, 'name', 'id', undefined, [
+      'cardPrefix',
+      'isHilight',
+    ]);
     this.itemList.petList = petList.map((a) => ({ label: a.name, value: a.id }));
 
     this.itemList.costumeUpperList = toDropdownList(costumeUpperList, 'name', 'id');
