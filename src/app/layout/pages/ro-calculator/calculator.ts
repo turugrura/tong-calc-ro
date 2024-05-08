@@ -904,7 +904,7 @@ export class Calculator {
     // WEAPON_TYPE[bow]5
     const [toRemoveB, wType] = restCondition.match(/WEAPON_TYPE\[(\D+)]/) ?? [];
     if (wType) {
-      const isValid = this.weaponData.data.typeName === wType;
+      const isValid = wType.split('||').includes(this.weaponData.data.typeName);
       if (!isValid) return { isValid, restCondition };
 
       restCondition = restCondition.replace(toRemoveB, '');
