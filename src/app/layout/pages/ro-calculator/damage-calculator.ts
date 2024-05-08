@@ -345,9 +345,9 @@ export class DamageCalculator {
 
   private getExtraCriRateToMonster() {
     const { race, element, size } = this.monsterData;
-    const toRace = this.model[`cri_race_${race}`] || 0;
-    const toElement = this.model[`cri_element_${element}`] || 0;
-    const toSize = this.model[`cri_size_${size}`] || 0;
+    const toRace = this.totalBonus[`cri_race_${race}`] || 0;
+    const toElement = this.totalBonus[`cri_element_${element}`] || 0;
+    const toSize = this.totalBonus[`cri_size_${size}`] || 0;
 
     return toRace + toElement + toSize;
   }
