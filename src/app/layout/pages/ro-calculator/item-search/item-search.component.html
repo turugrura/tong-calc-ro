@@ -117,7 +117,7 @@
         [rows]="14"
         [showCurrentPageReport]="true"
         currentPageReportTemplate="{totalRecords} items"
-        [pageLinks]="3"
+        [pageLinks]="4"
         [(first)]="itemSearchFirst"
         [totalRecords]="totalFilteredItems"
         (onRowSelect)="onSelectFilteredItem($event.data)"
@@ -146,12 +146,12 @@
           ID: {{ activeFilteredItem?.id }} <br />
           Name: {{ activeFilteredItem?.label }}
         </div>
-        <div
-          class="col-fixed px-2 py-2"
-          style="color: #000; background-color: #fff; width: 100px"
-          *ngIf="activeFilteredItem?.id"
-        >
-          <img src="https://www.divine-pride.net/img/items/collection/thROG/{{ activeFilteredItem?.id }}" alt="" />
+        <div class="col-fixed px-2 py-2" style="color: #000; background-color: #fff; width: 100px">
+          <img
+            *ngIf="seletedItemId"
+            src="https://www.divine-pride.net/img/items/collection/thROG/{{ seletedItemId }}"
+            alt=""
+          />
         </div>
         <div
           class="col px-2 py-2"

@@ -1,8 +1,8 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { createBonusNameList } from '../utils';
+import { createBonusNameList, prettyItemDesc } from '../utils';
 import { DropdownModel } from '../models/dropdown.model';
 import { ItemModel } from '../models/item.model';
-import { Observable, Subscription } from 'rxjs';
+import { Observable, Subject, Subscription, debounceTime, tap } from 'rxjs';
 
 const positions: DropdownModel[] = [
   { value: 'weaponList', label: 'Weapon' },
@@ -52,6 +52,10 @@ export class ItemSearchComponent implements OnInit, OnDestroy {
   @Input({ required: true }) onClassChanged: Observable<boolean>;
 
   private subscription: Subscription;
+  private subscription2: Subscription;
+
+  private selectItemSource = new Subject<number>();
+  private onSelectItemChange$ = this.selectItemSource.asObservable();
 
   isShowSearchDialog = false;
   itemPositionOptions = positions;
@@ -67,6 +71,7 @@ export class ItemSearchComponent implements OnInit, OnDestroy {
   selectedFilteredItem: string;
   activeFilteredItemDesc: string;
   activeFilteredItem: (typeof this.equipableItems)[0];
+  seletedItemId = 0;
 
   selectedOffensiveSkills: string[] = [];
 
@@ -74,10 +79,19 @@ export class ItemSearchComponent implements OnInit, OnDestroy {
     this.subscription = this.onClassChanged.subscribe(() => {
       this.clearItemSearch();
     });
+    this.subscription2 = this.onSelectItemChange$
+      .pipe(
+        tap(() => (this.seletedItemId = null)),
+        debounceTime(50),
+      )
+      .subscribe((itemId) => {
+        this.seletedItemId = itemId;
+      });
   }
 
   ngOnDestroy(): void {
     this.subscription?.unsubscribe();
+    this.subscription2?.unsubscribe();
   }
 
   onItemSearchFilterChange() {
@@ -116,18 +130,18 @@ export class ItemSearchComponent implements OnInit, OnDestroy {
     this.filteredItems = displayItems;
     this.activeFilteredItem = undefined;
     this.activeFilteredItemDesc = undefined;
+    this.selectItemSource.next(null);
     setTimeout(() => {
       this.itemSearchFirst = 0;
     }, 10);
   }
 
-  onSelectFilteredItem(_item: any) {
+  onSelectFilteredItem(item: any) {
     // console.log({ item, activeFilteredItemID: this.activeFilteredItemID });
-    // this.activeFilteredItemID = this.equipItemIdItemTypeMap.get(selectedType);
+    // console.log({ item });
+    this.selectItemSource.next((item as (typeof this.equipableItems)[0]).value as number);
 
-    this.activeFilteredItemDesc = this.items[this.activeFilteredItem?.id]?.description
-      .replaceAll('\n', '<br>')
-      .replace(/\^(.{6})/g, '<font color="#$1">');
+    this.activeFilteredItemDesc = prettyItemDesc(this.items[this.activeFilteredItem?.id]?.description);
   }
 
   private clearItemSearch() {
