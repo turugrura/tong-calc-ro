@@ -1,145 +1,146 @@
 {
  "1": {
   "Dragon Tail": 5,
-  "Fire Dance": 22,
-  "Round Trip": 88,
+  "Fire Dance": 25,
+  "Round Trip": 98,
   "Shatter Storm": 1,
   "Vanishing Buster": 4
  },
  "10": {
-  "Arm Cannon": 76,
+  "Arm Cannon": 75,
   "Axe Boomerang": 10,
-  "Axe Tornado": 63,
+  "Axe Tornado": 69,
   "Power Swing": 1
  },
  "11": {
   "Banishing Point": 29,
   "Cannon Spear": 21,
   "Earth Drive": 25,
-  "Genesis Ray": 33,
-  "Gloria Domini": 14,
-  "Over Brand": 1,
+  "Genesis Ray": 36,
+  "Gloria Domini": 15,
+  "Over Brand": 3,
   "Shield Chain": 2,
-  "Shield Press": 4
+  "Shield Press": 5
  },
  "12": {
-  "Dragon Breath": 11,
+  "Dragon Breath": 13,
   "Dragon Breath - WATER": 3,
-  "Hundred Spears": 27,
-  "Ignition Break": 139,
-  "Sonic Wave": 44,
-  "Wind Cutter": 36
+  "Hundred Spears": 28,
+  "Ignition Break": 146,
+  "Sonic Wave": 46,
+  "Wind Cutter": 37
  },
  "13": {
-  "Knuckle Arrow": 18,
-  "Lightning Ride": 6,
-  "Rampage Blast": 37,
-  "Sky Blow": 4,
-  "Tiger Cannon": 79
+  "Knuckle Arrow": 19,
+  "Lightning Ride": 8,
+  "Rampage Blast": 39,
+  "Sky Blow": 3,
+  "Tiger Cannon": 90
  },
  "17": {
   "Exploding Dragon": 1,
   "First Wind": 1,
   "Flaming Petals": 10,
-  "Freezing Spear": 7,
+  "Freezing Spear": 8,
   "Freezing Spear Water": 4,
   "Snow Flake Draft": 8
  },
  "18": {
-  "Cross Slash": 33,
+  "Cross Slash": 35,
   "Kunai Splash": 2,
-  "Swirling Petal": 9
+  "Swirling Petal": 10
  },
  "2": {
-  "Aimed Bolt": 156,
-  "Arrow Storm": 104,
-  "Focused Arrow Strike": 239
+  "Aimed Bolt": 165,
+  "Arrow Storm": 110,
+  "Focused Arrow Strike": 248
  },
  "21": {
-  "Arrow Vulcan": 15,
-  "Metalic Sound": 11,
-  "Reverberation": 160,
-  "Severe Rainstorm": 85
+  "Arrow Vulcan": 18,
+  "Metalic Sound": 14,
+  "Reverberation": 179,
+  "Severe Rainstorm": 97
  },
  "22": {
   "Arrow Vulcan": 10,
-  "Metalic Sound": 43,
-  "Reverberation": 149,
-  "Severe Rainstorm": 32
+  "Metalic Sound": 47,
+  "Reverberation": 161,
+  "Severe Rainstorm": 39
  },
  "3": {
   "Curse Explosion": 2,
-  "Espa": 94,
+  "Espa": 100,
   "Eswhoo": 2
  },
  "30": {
-  "Fatal Manace": 13,
+  "Fatal Manace": 16,
   "Fire Bolt": 5,
   "Psychic Wave": 8,
   "Shield Chain": 1
  },
  "31": {
-  "Catnip Meteor": 27,
+  "Catnip Meteor": 29,
   "Lunatic Carrot Beat": 6,
-  "Picky Peck": 20,
+  "Picky Peck": 25,
   "Silvervine Stem Spear": 3
  },
  "33": {
-  "Blaze Kick": 1,
-  "Falling Stars": 16,
+  "Blaze Kick": 2,
+  "Falling Stars": 17,
   "Full Moon Kick": 13,
   "New Moon Kick": 3,
-  "Solar Explosion": 73
+  "Solar Explosion": 74
  },
  "4": {
+  "Arrow Storm": 1,
   "Comet": 3,
-  "Fatal Manace": 175,
-  "Feint Bomb": 1,
+  "Fatal Manace": 190,
+  "Feint Bomb": 2,
   "Meteor Storm": 1,
-  "Psychic Wave": 28,
-  "Severe Rainstorm": 26,
-  "Triangle Shot": 60
+  "Psychic Wave": 31,
+  "Severe Rainstorm": 29,
+  "Triangle Shot": 63
  },
  "5": {
-  "Counter Slash": 40,
-  "Cross Impact": 378,
-  "Cross Ripper Slasher": 9,
-  "Meteor Assault": 62,
-  "Rolling Cutter": 132,
-  "Soul Destroyer": 102
+  "Counter Slash": 45,
+  "Cross Impact": 416,
+  "Cross Ripper Slasher": 8,
+  "Meteor Assault": 67,
+  "Rolling Cutter": 156,
+  "Soul Destroyer": 115
  },
  "6": {
-  "Chain Lightning": 9,
+  "Chain Lightning": 12,
   "Cold Bolt": 1,
-  "Comet": 121,
-  "Crimson Rock": 136,
+  "Comet": 131,
+  "Crimson Rock": 146,
   "Fire Bolt": 2,
   "Heaven's Drive": 1,
   "Hell Inferno": 1,
-  "Jack Frost": 14,
+  "Jack Frost": 16,
   "Jack Frost Frost": 2,
   "Napalm Vulcan": 1,
   "Soul Drain": 4,
   "Soul Expansion": 3
  },
  "7": {
-  "Adoramus": 134,
-  "Holy Light": 29,
-  "Judex": 34,
+  "Adoramus": 151,
+  "Holy Light": 30,
+  "Judex": 41,
   "Magnus Exorcismus": 2
  },
  "8": {
   "Cold Bolt": 2,
-  "Diamond Dust": 18,
+  "Diamond Dust": 16,
   "Earth Grave": 7,
   "Fire Bolt": 7,
-  "Psychic Wave": 60,
+  "Psychic Wave": 67,
   "Varetyr Spear": 14
  },
  "9": {
-  "Acid Bomb": 4,
-  "Cart Cannon": 105,
-  "Cart Tornado": 14,
-  "Spore Explosion": 5
+  "Acid Bomb": 5,
+  "Cart Cannon": 124,
+  "Cart Tornado": 15,
+  "Spore Explosion": 6
  }
 }

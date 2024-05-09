@@ -1,145 +1,146 @@
 {
  "1": {
   "Dragon Tail": 8,
-  "Fire Dance": 30,
-  "Round Trip": 153,
+  "Fire Dance": 36,
+  "Round Trip": 166,
   "Shatter Storm": 1,
   "Vanishing Buster": 6
  },
  "10": {
-  "Arm Cannon": 213,
+  "Arm Cannon": 214,
   "Axe Boomerang": 18,
-  "Axe Tornado": 87,
+  "Axe Tornado": 97,
   "Power Swing": 1
  },
  "11": {
   "Banishing Point": 42,
-  "Cannon Spear": 28,
+  "Cannon Spear": 27,
   "Earth Drive": 34,
-  "Genesis Ray": 41,
-  "Gloria Domini": 22,
-  "Over Brand": 2,
+  "Genesis Ray": 46,
+  "Gloria Domini": 24,
+  "Over Brand": 4,
   "Shield Chain": 3,
-  "Shield Press": 4
+  "Shield Press": 5
  },
  "12": {
-  "Dragon Breath": 12,
+  "Dragon Breath": 14,
   "Dragon Breath - WATER": 4,
-  "Hundred Spears": 38,
-  "Ignition Break": 322,
-  "Sonic Wave": 81,
-  "Wind Cutter": 53
+  "Hundred Spears": 40,
+  "Ignition Break": 344,
+  "Sonic Wave": 85,
+  "Wind Cutter": 58
  },
  "13": {
-  "Knuckle Arrow": 22,
-  "Lightning Ride": 8,
-  "Rampage Blast": 67,
-  "Sky Blow": 5,
-  "Tiger Cannon": 154
+  "Knuckle Arrow": 23,
+  "Lightning Ride": 10,
+  "Rampage Blast": 68,
+  "Sky Blow": 3,
+  "Tiger Cannon": 171
  },
  "17": {
   "Exploding Dragon": 1,
   "First Wind": 1,
   "Flaming Petals": 12,
-  "Freezing Spear": 10,
-  "Freezing Spear Water": 6,
+  "Freezing Spear": 11,
+  "Freezing Spear Water": 8,
   "Snow Flake Draft": 11
  },
  "18": {
-  "Cross Slash": 59,
+  "Cross Slash": 65,
   "Kunai Splash": 2,
-  "Swirling Petal": 11
+  "Swirling Petal": 13
  },
  "2": {
-  "Aimed Bolt": 338,
-  "Arrow Storm": 178,
-  "Focused Arrow Strike": 561
+  "Aimed Bolt": 363,
+  "Arrow Storm": 188,
+  "Focused Arrow Strike": 602
  },
  "21": {
-  "Arrow Vulcan": 20,
-  "Metalic Sound": 16,
-  "Reverberation": 349,
-  "Severe Rainstorm": 151
+  "Arrow Vulcan": 23,
+  "Metalic Sound": 19,
+  "Reverberation": 376,
+  "Severe Rainstorm": 174
  },
  "22": {
   "Arrow Vulcan": 12,
-  "Metalic Sound": 57,
-  "Reverberation": 320,
-  "Severe Rainstorm": 51
+  "Metalic Sound": 61,
+  "Reverberation": 353,
+  "Severe Rainstorm": 61
  },
  "3": {
   "Curse Explosion": 2,
-  "Espa": 205,
+  "Espa": 214,
   "Eswhoo": 3
  },
  "30": {
-  "Fatal Manace": 15,
+  "Fatal Manace": 20,
   "Fire Bolt": 8,
   "Psychic Wave": 10,
   "Shield Chain": 2
  },
  "31": {
-  "Catnip Meteor": 33,
+  "Catnip Meteor": 38,
   "Lunatic Carrot Beat": 7,
-  "Picky Peck": 22,
+  "Picky Peck": 29,
   "Silvervine Stem Spear": 3
  },
  "33": {
-  "Blaze Kick": 1,
-  "Falling Stars": 24,
+  "Blaze Kick": 2,
+  "Falling Stars": 27,
   "Full Moon Kick": 18,
   "New Moon Kick": 3,
-  "Solar Explosion": 105
+  "Solar Explosion": 109
  },
  "4": {
+  "Arrow Storm": 1,
   "Comet": 11,
-  "Fatal Manace": 315,
-  "Feint Bomb": 1,
+  "Fatal Manace": 357,
+  "Feint Bomb": 2,
   "Meteor Storm": 2,
-  "Psychic Wave": 46,
-  "Severe Rainstorm": 44,
-  "Triangle Shot": 106
+  "Psychic Wave": 50,
+  "Severe Rainstorm": 47,
+  "Triangle Shot": 100
  },
  "5": {
-  "Counter Slash": 56,
-  "Cross Impact": 974,
-  "Cross Ripper Slasher": 10,
-  "Meteor Assault": 109,
-  "Rolling Cutter": 229,
-  "Soul Destroyer": 219
+  "Counter Slash": 66,
+  "Cross Impact": 1134,
+  "Cross Ripper Slasher": 9,
+  "Meteor Assault": 118,
+  "Rolling Cutter": 270,
+  "Soul Destroyer": 260
  },
  "6": {
-  "Chain Lightning": 16,
+  "Chain Lightning": 19,
   "Cold Bolt": 1,
-  "Comet": 310,
-  "Crimson Rock": 255,
+  "Comet": 328,
+  "Crimson Rock": 277,
   "Fire Bolt": 3,
   "Heaven's Drive": 1,
   "Hell Inferno": 1,
-  "Jack Frost": 21,
+  "Jack Frost": 23,
   "Jack Frost Frost": 2,
   "Napalm Vulcan": 1,
   "Soul Drain": 4,
   "Soul Expansion": 3
  },
  "7": {
-  "Adoramus": 308,
+  "Adoramus": 337,
   "Holy Light": 36,
-  "Judex": 51,
+  "Judex": 61,
   "Magnus Exorcismus": 2
  },
  "8": {
   "Cold Bolt": 2,
-  "Diamond Dust": 21,
+  "Diamond Dust": 20,
   "Earth Grave": 8,
-  "Fire Bolt": 21,
-  "Psychic Wave": 106,
-  "Varetyr Spear": 18
+  "Fire Bolt": 22,
+  "Psychic Wave": 123,
+  "Varetyr Spear": 19
  },
  "9": {
-  "Acid Bomb": 4,
-  "Cart Cannon": 167,
-  "Cart Tornado": 25,
-  "Spore Explosion": 7
+  "Acid Bomb": 5,
+  "Cart Cannon": 210,
+  "Cart Tornado": 28,
+  "Spore Explosion": 8
  }
 }

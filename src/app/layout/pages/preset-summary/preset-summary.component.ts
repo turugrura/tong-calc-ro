@@ -68,7 +68,7 @@ export class PresetSummaryComponent implements OnInit, OnDestroy {
   totalSummary = {} as TotalSummaryModel;
   totalPresets = 0;
   totalCurrentJobPresets = 0;
-  isShowEnchant = getInitShowIEnchant(true);
+  isShowEnchant = getInitShowIEnchant(false);
   isItemHasEnchant = getInitShowIEnchant(false);
 
   skillRankingList = [] as { value: string; label: string; total: number; totalPresets: number }[];
@@ -106,8 +106,15 @@ export class PresetSummaryComponent implements OnInit, OnDestroy {
         0,
       );
 
-      this.setSkillRankingBySelection();
-      this.setRankingBySelection();
+      this.setSkillRanking();
+      this.setItemRanking();
+
+      // const all = {};
+      // for (const job of this.allClasses) {
+      //   const allRankingMap = this.setItemRanking2(job.value as any);
+      //   all[job.value] = allRankingMap;
+      // }
+      // console.log(all);
     });
   }
 
@@ -115,11 +122,11 @@ export class PresetSummaryComponent implements OnInit, OnDestroy {
     const e1 = this.jobChangeEvent$
       .pipe(
         tap(() => (this.isLoading = true)),
-        debounceTime(100),
+        debounceTime(50),
       )
       .subscribe(() => {
-        this.setSkillRankingBySelection();
-        this.setRankingBySelection();
+        this.setSkillRanking();
+        this.setItemRanking();
         this.selectedJobName = this.allClasseMap.get(this.selectedJobId) || '';
 
         this.isLoading = false;
@@ -128,14 +135,14 @@ export class PresetSummaryComponent implements OnInit, OnDestroy {
     const e2 = this.skillChangeEvent$
       .pipe(
         tap(() => (this.isLoading = true)),
-        debounceTime(100),
+        debounceTime(50),
       )
       .subscribe(() => {
-        this.setRankingBySelection();
+        this.setItemRanking();
         this.isLoading = false;
       });
 
-    const e3 = this.itemChangeEvent$.pipe(debounceTime(100)).subscribe(() => {
+    const e3 = this.itemChangeEvent$.pipe(debounceTime(50)).subscribe(() => {
       const itemIds = `${this.selectedItemId}`.split('-').map(Number).filter(Boolean);
       this.displaySelectedItems = [...new Set(itemIds)].map((id) => {
         const item = this.itemMap[id] || ({} as ItemModel);
@@ -148,8 +155,8 @@ export class PresetSummaryComponent implements OnInit, OnDestroy {
       });
     });
 
-    const e4 = this.toggleShowEnchantEvent$.pipe(debounceTime(100)).subscribe((position) => {
-      this.setRankingBySelection(position);
+    const e4 = this.toggleShowEnchantEvent$.pipe(debounceTime(50)).subscribe((position) => {
+      this.setItemRanking(position);
     });
 
     this.subscribtions.push(e1, e2, e3, e4);
@@ -165,7 +172,7 @@ export class PresetSummaryComponent implements OnInit, OnDestroy {
     return this.jobSummary[this.selectedJobId] || 0;
   }
 
-  private setSkillRankingBySelection(): void {
+  private setSkillRanking(): void {
     const data = this.jobSkillSummary[this.selectedJobId] || {};
     const skillRankingList = [] as typeof this.skillRankingList;
     for (const [skillName, total] of Object.entries(data)) {
@@ -184,9 +191,9 @@ export class PresetSummaryComponent implements OnInit, OnDestroy {
     );
   }
 
-  private setRankingBySelection(specificPosition?: string) {
+  private setItemRanking(hideEnchantPosition?: string) {
     for (const position of this.allItemPositions) {
-      if (specificPosition && position !== specificPosition) continue;
+      if (hideEnchantPosition && position !== hideEnchantPosition) continue;
 
       const rankingMap = [] as ItemRankingModel[];
       let isPositionHaveEnchant = false;
@@ -215,7 +222,7 @@ export class PresetSummaryComponent implements OnInit, OnDestroy {
           }
         }
 
-        if (this.isShowEnchant[position] === false) continue;
+        if (this.isShowEnchant[position] !== true) continue;
 
         const sortedEnchants = enchants
           .sort(([_, usingRate1], [__, usingRate2]) => usingRate2 - usingRate1)
@@ -253,6 +260,82 @@ export class PresetSummaryComponent implements OnInit, OnDestroy {
       this.isItemHasEnchant[position] = isPositionHaveEnchant;
       this.rankingMap[position] = rankingMap;
     }
+  }
+
+  private setItemRanking2(selectedJobId: number) {
+    const data = this.jobSkillSummary[selectedJobId] || {};
+    const allRankingMap = {};
+
+    for (const [selectedSkillName] of Object.entries(data)) {
+      if (!allRankingMap[selectedSkillName]) allRankingMap[selectedSkillName] = {};
+
+      const itemRankingList = this.totalSummary[selectedJobId][selectedSkillName] as EquipmentRankingModel;
+      for (const position of this.allItemPositions) {
+        const rankingMap = [] as ItemRankingModel[];
+        let isPositionHaveEnchant = false;
+
+        for (const a of itemRankingList[position]) {
+          const percentage = Math.ceil((a.UsingRate * 100) / this.jobSkillSummary[selectedJobId][selectedSkillName]);
+          rankingMap.push({
+            ...a,
+            Percentage: percentage,
+            ItemName: this.itemMap[a.ItemId]?.name,
+            ColorStyle: this.getItemBarColorStyle(position),
+            IsEnchant: false,
+            EnchantInfos: [],
+          });
+
+          const enchants = Object.entries(a.Enchants);
+          if (!isPositionHaveEnchant) {
+            if (enchants.length === 0) {
+              isPositionHaveEnchant = false;
+            } else if (enchants.length === 1 && enchants[0][0] === '0-0-0') {
+              isPositionHaveEnchant = false;
+            } else {
+              isPositionHaveEnchant = true;
+            }
+          }
+
+          if (this.isShowEnchant[position] === false) continue;
+
+          const sortedEnchants = enchants
+            .sort(([_, usingRate1], [__, usingRate2]) => usingRate2 - usingRate1)
+            .filter(([_, usingRate], i) => i <= 4 && usingRate >= 0.5);
+          for (const [key, value] of sortedEnchants) {
+            const percentage = Math.floor((value * 100) / (a.TotalEnchant || 1));
+            if (percentage <= 0) continue;
+
+            const [id1, id2, id3] = key.split('-').map(Number);
+            if (!!id1 || !!id2 || !!id3) {
+              const ids = [id1, id2, id3].filter(Number);
+
+              rankingMap.push({
+                ItemId: key,
+                Enchants: {},
+                UsingRate: 0,
+                ItemName: '',
+                TotalAccount: 0,
+                TotalEnchant: 0,
+                TotalPreset: 0,
+                IsEnchant: true,
+                Percentage: percentage,
+                ColorStyle: this.getItemBarColorStyle(position),
+                EnchantInfos: ids.map((id) => {
+                  return {
+                    id,
+                    name: this.itemMap[id]?.name,
+                  };
+                }),
+              });
+            }
+          }
+        }
+
+        allRankingMap[selectedSkillName][position] = rankingMap;
+      }
+    }
+
+    return allRankingMap;
   }
 
   private getItemBarColorStyle(position: EquipmentPosition) {

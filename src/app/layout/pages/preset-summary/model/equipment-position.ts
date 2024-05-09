@@ -18,10 +18,10 @@ export enum EquipmentPosition {
   GarmentCard = 'GarmentCard',
   Boot = 'Boot',
   BootCard = 'BootCard',
-  AccLeft = 'AccLeft',
-  AccLeftCard = 'AccLeftCard',
   AccRight = 'AccRight',
   AccRightCard = 'AccRightCard',
+  AccLeft = 'AccLeft',
+  AccLeftCard = 'AccLeftCard',
 
   CostumeEnchantUpper = 'CostumeEnchantUpper',
   CostumeEnchantMiddle = 'CostumeEnchantMiddle',
