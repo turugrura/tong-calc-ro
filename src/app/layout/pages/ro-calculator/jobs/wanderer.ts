@@ -21,7 +21,7 @@ import {
   SongOfMana,
 } from '../constants/share-passive-skills';
 import { ElementType } from '../constants/element-type.const';
-import { BragisPoem, SwingDanceFn } from '../constants/share-active-skills';
+import { BragisPoemFn, SwingDanceFn } from '../constants/share-active-skills';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 0, 1, 0],
@@ -228,7 +228,7 @@ export class Wanderer extends CharacterBase {
     },
   ];
 
-  protected readonly _activeSkillList: ActiveSkillModel[] = [SwingDanceFn(), BragisPoem];
+  protected readonly _activeSkillList: ActiveSkillModel[] = [SwingDanceFn(), BragisPoemFn()];
 
   protected readonly _passiveSkillList: PassiveSkillModel[] = [
     SevereRainstormFn(),

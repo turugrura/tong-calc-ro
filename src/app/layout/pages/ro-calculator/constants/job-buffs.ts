@@ -1,5 +1,5 @@
 import { ActiveSkillModel } from '../jobs/_character-base.abstract';
-import { DarkClawFn, ShieldSpellFn } from './share-active-skills';
+import { BragisPoemFn, DarkClawFn, ShieldSpellFn } from './share-active-skills';
 
 export const JobBuffs: ActiveSkillModel[] = [
   {
@@ -171,4 +171,6 @@ export const JobBuffs: ActiveSkillModel[] = [
   },
   DarkClawFn(),
   ShieldSpellFn(),
+  BragisPoemFn(),
+  // SwingDanceFn(),
 ];
