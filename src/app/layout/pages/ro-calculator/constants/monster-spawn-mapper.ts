@@ -28,6 +28,7 @@ const Mapper = {
   lhz_dun03: 'Lab 3',
   lhz_dun_n: 'Lab 5',
   ba_pw03: 'Magic Power Plant 2',
+  ba_lost: 'Farm Lost Valley',
 } as const;
 
 export const MonsterGroupNames = [...new Set(Object.values(Mapper))].sort((a, b) => (a > b ? 1 : -1));
