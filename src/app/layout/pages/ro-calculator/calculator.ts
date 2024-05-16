@@ -1399,7 +1399,8 @@ export class Calculator {
     const consumAllStat = consumableBonus['allStatus'] || 0;
     for (const [attr, value] of Object.entries(consumableBonus)) {
       let newVal = value;
-      if (mainStatuses.includes(attr)) {
+      // stat +20 can stack with other
+      if (mainStatuses.includes(attr) && newVal !== 20) {
         newVal = Math.max(value - consumAllStat, 0);
       }
 
