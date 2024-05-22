@@ -14,3 +14,8 @@ export * from './published-presets.response';
 export * from './bulk-operation-tags.request';
 export * from './publish-preset-model';
 export * from './like-tag.response';
+export * from './ecommerce/search-product.request';
+export * from './ecommerce/search-product.model';
+export * from './ecommerce/create-product-list.request';
+export * from './ecommerce/create-store.request';
+export * from './ecommerce/store.model';

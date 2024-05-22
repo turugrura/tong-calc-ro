@@ -1,0 +1,10 @@
+.p-inputgroup p-dropdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+:host ::ng-deep .p-inputgroup p-dropdown .p-dropdown-filter,
+:host ::ng-deep .p-inputgroup p-autocomplete .p-autocomplete {
+  width: 100%;
+}

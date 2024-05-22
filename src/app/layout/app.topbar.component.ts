@@ -34,6 +34,11 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
       routerLink: ['/preset-summary'],
       isNew: true,
     } as any,
+    {
+      label: 'Market',
+      icon: 'pi pi-fw pi-shopping-cart',
+      routerLink: ['/marketplace'],
+    } as any,
   ];
 
   @ViewChild('menubutton') menuButton!: ElementRef;

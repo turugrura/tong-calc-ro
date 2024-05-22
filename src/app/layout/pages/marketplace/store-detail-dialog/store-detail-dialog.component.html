@@ -1,0 +1,42 @@
+<p-dialog [(visible)]="showDialog" [style]="{ width: '450px' }" header="Store Details" [modal]="true" class="p-fluid">
+  <ng-template pTemplate="content">
+    <div class="grid grid-nogutter">
+      <div class="col-12">
+        <div class="p-inputgroup">
+          <span class="p-inputgroup-addon" for="store_name" style="width: 120px">Store name</span>
+          <input id="store_name" pInputText [(ngModel)]="store.name" />
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="p-inputgroup">
+          <span class="p-inputgroup-addon" for="store_desc" style="width: 120px">Description</span>
+          <input id="store_desc" pInputText [(ngModel)]="store.description" />
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="p-inputgroup">
+          <span class="p-inputgroup-addon" for="contact_fb" style="width: 120px">FB</span>
+          <input id="contact_fb" pInputText [(ngModel)]="store.fb" />
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="p-inputgroup">
+          <span class="p-inputgroup-addon" for="contact_charname" style="width: 120px">Char</span>
+          <input id="contact_charname" pInputText [(ngModel)]="store.characterName" />
+        </div>
+      </div>
+    </div>
+  </ng-template>
+
+  <ng-template pTemplate="footer">
+    <button
+      pButton
+      pRipple
+      label="Cancel"
+      icon="pi pi-times"
+      class="p-button-text"
+      (click)="onCancelBtnClick()"
+    ></button>
+    <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text" (click)="onSaveBtnClick()"></button>
+  </ng-template>
+</p-dialog>

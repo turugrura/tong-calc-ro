@@ -28,6 +28,17 @@ export abstract class BaseAPIService {
 
     likePresetTags: `${BASE_URL}/preset_tags`,
     sharedPresets: `${BASE_URL}/ro_presets`,
+
+    getStore: `${BASE_URL}/product/store`,
+    getMyStore: `${BASE_URL}/me/store`,
+    createMyStore: `${BASE_URL}/store`,
+    updateMyStore: `${BASE_URL}/me/store`,
+
+    searchProducts: `${BASE_URL}/product/search`,
+    getMyProducts: `${BASE_URL}/me/products/search`,
+    bulkCreateMyProducts: `${BASE_URL}/me/products/bulk_create`,
+    bulkUpdateMyProducts: `${BASE_URL}/me/products/bulk_update`,
+    bulkDeleteMyProducts: `${BASE_URL}/me/products/bulk_delete`,
   } as const;
 
   protected abstract readonly http: HttpClient;
