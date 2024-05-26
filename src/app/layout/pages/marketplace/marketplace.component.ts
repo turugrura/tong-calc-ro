@@ -17,25 +17,34 @@ const filterableItemTypes: DropdownModel[] = [
   { label: 'ETC', value: ItemTypeId.ETC },
 ];
 
+interface ProductItemModelX extends ProductItemModel {
+  typeName: string;
+  enchantInfos: { id: number; name: string }[];
+}
+
 @Component({
   selector: 'app-marketplace',
   templateUrl: './marketplace.component.html',
   styleUrls: ['./marketplace.component.css'],
 })
 export class MarketplaceComponent implements OnInit, OnDestroy {
-  private searchSource = new Subject<boolean>();
-  private searchEvent$ = this.searchSource.asObservable();
+  private searchSource$ = new Subject<boolean>();
+  private searchEvent = this.searchSource$.asObservable();
 
-  private textSearchSource = new Subject<AutoCompleteCompleteEvent>();
-  private textSearchEvent$ = this.textSearchSource.asObservable();
+  private textSearchSource$ = new Subject<AutoCompleteCompleteEvent>();
+  private textSearchEvent = this.textSearchSource$.asObservable();
+
+  private selecteItemSource$ = new Subject<number>();
+  private selecteItemEvent = this.selecteItemSource$.asObservable();
 
   private itemNames = [] as { raw: string; lower: string }[];
-  item = {} as Record<number, ItemModel>;
+  item: Record<number, ItemModel>;
   suggestionTexts = [] as string[];
 
   private subs: Subscription[] = [];
 
-  products: (ProductItemModel & { typeName: string })[] = [];
+  products: ProductItemModelX[] = [];
+  productMap = new Map<number, ProductItemModel>();
   itemTypeIds = filterableItemTypes;
   itemTypeNameMap = filterableItemTypes.reduce((mapped, item) => {
     mapped[item.value] = item.label;
@@ -51,7 +60,7 @@ export class MarketplaceComponent implements OnInit, OnDestroy {
   pageLimit = this.pageOptions[0];
 
   selectedItemRow = undefined;
-  selectedItemDescription = '';
+  selectedItemDescs: { id: number; name: string; desc: string }[];
 
   searchText = '';
   selectedStoreId = '';
@@ -62,7 +71,6 @@ export class MarketplaceComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.loadItemNames();
     this.subscribeSearch();
-    this.searchSource.next(true);
   }
 
   ngOnDestroy(): void {
@@ -87,7 +95,7 @@ export class MarketplaceComponent implements OnInit, OnDestroy {
   }
 
   private subscribeSearch() {
-    const s1 = this.searchEvent$
+    const s1 = this.searchEvent
       .pipe(
         tap(() => (this.isLoading = true)),
         debounceTime(500),
@@ -103,7 +111,7 @@ export class MarketplaceComponent implements OnInit, OnDestroy {
       });
     this.subs.push(s1);
 
-    const s2 = this.textSearchEvent$.pipe(debounceTime(300)).subscribe((e) => {
+    const s2 = this.textSearchEvent.pipe(debounceTime(300)).subscribe((e) => {
       const suggestionTexts: typeof this.suggestionTexts = [];
       const searchText = e.query?.toLowerCase() || '';
       for (const { raw, lower } of this.itemNames) {
@@ -116,6 +124,29 @@ export class MarketplaceComponent implements OnInit, OnDestroy {
       this.suggestionTexts = suggestionTexts;
     });
     this.subs.push(s2);
+
+    const s3 = this.selecteItemEvent.pipe(debounceTime(300)).subscribe((itemId) => {
+      const productItem = this.productMap.get(itemId);
+      if (!productItem) {
+        this.selectedItemDescs = [];
+        return;
+      }
+
+      const uniqueItemId = new Set([...(productItem.cardIds || []), ...(productItem.enchantIds || [])]);
+      uniqueItemId.delete(0);
+
+      const itemIds = [itemId, ...uniqueItemId];
+      this.selectedItemDescs = itemIds.map((id) => {
+        const item = this.item[id];
+
+        return {
+          id,
+          desc: prettyItemDesc(item?.description),
+          name: item?.name,
+        };
+      });
+    });
+    this.subs.push(s3);
   }
 
   private searchProducts() {
@@ -129,18 +160,24 @@ export class MarketplaceComponent implements OnInit, OnDestroy {
       })
       .pipe(
         switchMap((item) => {
-          console.log({ searched: item });
+          this.productMap.clear();
           this.products = item.items.map((a) => {
+            this.productMap.set(a.itemId, a);
+            const xIds = [...(a.cardIds || []), ...(a.enchantIds || [])].filter(Boolean);
+
             return {
               ...a,
               typeName: this.itemTypeNameMap[a.type],
+              enchantInfos: xIds.map((id) => ({ id, name: this.item[id]?.name || '' })),
             };
           });
+          this.totalRecord = item.totalItem;
 
           return of(item);
         }),
         catchError((err) => {
           this.products = [];
+          this.totalRecord = 0;
 
           return throwError(() => err);
         }),
@@ -150,25 +187,20 @@ export class MarketplaceComponent implements OnInit, OnDestroy {
   pageChange(event: PaginatorState) {
     this.firstRecord = event.first;
     this.pageLimit = event.rows;
-    this.searchSource.next(true);
+    this.searchSource$.next(true);
   }
 
   search(event: AutoCompleteCompleteEvent) {
-    this.textSearchSource.next(event);
+    this.textSearchSource$.next(event);
   }
 
   onSearchBtnClick() {
     this.firstRecord = 0;
     this.pageLimit = 20;
-    this.searchSource.next(true);
+    this.searchSource$.next(true);
   }
 
   onRowSelect(e) {
-    const itemId = e?.data?.itemId;
-    if (typeof itemId === 'number') {
-      this.selectedItemDescription = prettyItemDesc(this.item[itemId]?.description);
-    }
-
-    console.log({ itemId, s: this.selectedItemDescription });
+    this.selecteItemSource$.next(e?.data?.itemId);
   }
 }

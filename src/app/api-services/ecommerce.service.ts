@@ -3,11 +3,14 @@ import { Injectable } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { BaseAPIService } from './base-api.service';
 import {
-  CreateProductListRequest,
+  CreateItemListRequest,
   CreateStoreRequest,
+  DeleteItemListRequest,
+  ProductItemModel,
   SearchProductModel,
   SearchProductRequest,
   StoreModel,
+  UpdateItemListRequest,
 } from './models';
 
 @Injectable()
@@ -36,7 +39,15 @@ export class EcommerceService extends BaseAPIService {
     return this.post<SearchProductModel>(this.API.getMyProducts, body);
   }
 
-  bulkCreateMyProducts(body: CreateProductListRequest) {
-    return this.post<SearchProductModel>(this.API.getMyProducts, body);
+  bulkCreateMyProducts(body: CreateItemListRequest) {
+    return this.post<ProductItemModel[]>(this.API.bulkCreateMyProducts, body);
+  }
+
+  bulkUpdateMyProducts(body: UpdateItemListRequest) {
+    return this.post<ProductItemModel[]>(this.API.bulkUpdateMyProducts, body);
+  }
+
+  bulkDeleteMyProducts(body: DeleteItemListRequest) {
+    return this.post<null>(this.API.bulkDeleteMyProducts, body);
   }
 }

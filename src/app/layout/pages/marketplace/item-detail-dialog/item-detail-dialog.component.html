@@ -1,10 +1,317 @@
-<p-dialog [(visible)]="showDialog" [style]="{ width: '450px' }" header="Product Details" [modal]="true" class="p-fluid">
+<p-dialog
+  header="Item Details"
+  [(visible)]="showDialog"
+  position="topleft"
+  [style]="{ width: '1300px', height: '770px' }"
+  [modal]="true"
+  [draggable]="false"
+  (onHide)="onCancelBtnClick()"
+>
   <ng-template pTemplate="content">
-    <div>Hello</div>
+    <div class="grid grid-nogutter">
+      <div class="p-fluid col-4 search_table">
+        <div class="flex">
+          <span class="p-input-icon-left">
+            <i class="pi pi-search"></i>
+            <input
+              pInputText
+              type="text"
+              (input)="onTextFilterChange($event)"
+              placeholder="Search..."
+              [disabled]="isLoading"
+            />
+          </span>
+        </div>
+        <p-table
+          #dt2
+          datakey="value"
+          [value]="filteredItems"
+          selectionMode="single"
+          [(selection)]="activeFilteredItem"
+          [tableStyle]="{ 'min-width': '20rem' }"
+          styleClass="p-datatable-sm"
+          [paginator]="true"
+          [rows]="14"
+          [showCurrentPageReport]="true"
+          currentPageReportTemplate="{totalRecords} items"
+          [pageLinks]="4"
+          [(first)]="itemSearchFirst"
+          [totalRecords]="totalFilteredItems"
+          [globalFilterFields]="['label']"
+          [loading]="itemFilterLoading || isLoading"
+          (onRowSelect)="onSelectFilteredItem($event.data)"
+          (onRowUnselect)="onSelectFilteredItem($event.data)"
+        >
+          <ng-template pTemplate="body" let-item let-rowIndex="rowIndex">
+            <tr [pSelectableRow]="item" [pSelectableRowIndex]="rowIndex">
+              <td>
+                <div
+                  class="flex gap-1 item_template item_label_{{ item.value }}"
+                  style="background-color: var(--border-radius)"
+                >
+                  <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
+                  <div class="text_ellips">
+                    {{ item.label }}
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </div>
+      <div class="p-fluid col-8">
+        <div class="grid grid-nogutter ml-2">
+          <div class="col-12">
+            <div class="grid grid-nogutter">
+              <div class="col-12">ID: {{ activeFilteredItem?.value }}, {{ activeFilteredItem?.label }}</div>
+              <div class="col-12 flex gap-3 pb-3">
+                <div class="p-inputgroup" style="width: 240px">
+                  <span class="p-inputgroup-addon" style="width: 70px">Price</span>
+                  <p-inputNumber
+                    [(ngModel)]="itemDetail.zeny"
+                    [disabled]="isLoading || !activeFilteredItem"
+                    [max]="10000000000"
+                  />
+                  <span class="p-inputgroup-addon" style="width: 40px">Zeny</span>
+                </div>
+                <div class="p-inputgroup" style="width: 210px">
+                  <span class="p-inputgroup-addon" style="width: 70px">Price</span>
+                  <p-inputNumber
+                    [(ngModel)]="itemDetail.baht"
+                    [disabled]="isLoading || !activeFilteredItem"
+                    [max]="1000000"
+                  />
+                  <span class="p-inputgroup-addon" style="width: 40px">Baht</span>
+                </div>
+                <div class="p-inputgroup" style="width: 300px">
+                  <span class="p-inputgroup-addon" style="width: 70px">Remark</span>
+                  <input
+                    [(ngModel)]="itemDetail.desc"
+                    pInputText
+                    type="text"
+                    [disabled]="isLoading || !activeFilteredItem"
+                    [maxLength]="100"
+                  />
+                </div>
+              </div>
+
+              <div class="col-fixed" style="width: 160px" [hidden]="!isRefinable || !activeFilteredItem">
+                <div class="p-inputgroup">
+                  <label class="p-inputgroup-addon" for="item_refine" style="width: 70px">Refine</label>
+                  <p-dropdown
+                    inputId="item_refine"
+                    appendTo="body"
+                    [options]="refineList"
+                    scrollHeight="500px"
+                    [(ngModel)]="itemDetail.refine"
+                    [disabled]="isLoading"
+                  >
+                    <ng-template let-item pTemplate="selectedItem">
+                      <div class="flex">
+                        <div>{{ item.value > 0 ? '+ ' + item.label : '-' }}</div>
+                      </div>
+                    </ng-template>
+                    <ng-template let-item pTemplate="item">
+                      <div class="flex">
+                        <div>{{ item.value > 0 ? '+ ' + item.label : '-' }}</div>
+                      </div>
+                    </ng-template>
+                  </p-dropdown>
+                </div>
+              </div>
+              <div class="col-3" *ngFor="let i of [0, 1, 2, 3] | slice : 0 : totalCardSlots">
+                <p-dropdown
+                  appendTo="body"
+                  [autoDisplayFirst]="false"
+                  [resetFilterOnHide]="true"
+                  [options]="cardList"
+                  [filter]="true"
+                  filterBy="label,cardPrefix"
+                  scrollHeight="350px"
+                  [(ngModel)]="itemDetail.cardIds[i]"
+                  [disabled]="isLoading || totalCardSlots <= i"
+                  [showClear]="true"
+                  placeholder="Card {{ i + 1 }}"
+                >
+                  <ng-template let-item pTemplate="selectedItem">
+                    <div class="flex gap-1 item_template" *ngIf="itemDetail.cardIds[i]">
+                      <img src="assets/demo/images/items/card.png" alt="" class="item_img" />
+                      <div>{{ item.label }}</div>
+                    </div>
+                  </ng-template>
+                </p-dropdown>
+              </div>
+              <div
+                class="col-12"
+                [hidden]="
+                  (enchant2List.length === 0 && enchant3List.length === 0 && enchant4List.length === 0) ||
+                  !activeFilteredItem
+                "
+              >
+                <div class="grid grid-nogutter">
+                  <div class="col-4">
+                    <p-dropdown
+                      inputId="enchant2"
+                      appendTo="body"
+                      [autoDisplayFirst]="false"
+                      [resetFilterOnHide]="true"
+                      [options]="enchant2List"
+                      [filter]="true"
+                      filterBy="label"
+                      scrollHeight="350px"
+                      [(ngModel)]="itemDetail.enchantIds[1]"
+                      [showClear]="true"
+                      [disabled]="enchant2List.length === 0"
+                      placeholder="Enchant 2"
+                    >
+                      <ng-template let-item pTemplate="selectedItem">
+                        <div class="flex gap-1 item_template" *ngIf="itemDetail.enchantIds[1]">
+                          <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
+                          <div>{{ item.label }}</div>
+                        </div>
+                      </ng-template>
+                      <ng-template let-item pTemplate="item">
+                        <div class="flex gap-1">
+                          <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
+                          <div>{{ item.label }}</div>
+                        </div>
+                      </ng-template>
+                    </p-dropdown>
+                  </div>
+                  <div class="col-4">
+                    <p-dropdown
+                      inputId="enchant3"
+                      appendTo="body"
+                      [autoDisplayFirst]="false"
+                      [resetFilterOnHide]="true"
+                      [options]="enchant3List"
+                      [filter]="true"
+                      filterBy="label"
+                      scrollHeight="350px"
+                      [(ngModel)]="itemDetail.enchantIds[2]"
+                      [showClear]="true"
+                      [disabled]="enchant3List.length === 0"
+                      placeholder="Enchant 3"
+                    >
+                      <ng-template let-item pTemplate="selectedItem">
+                        <div class="flex gap-1 item_template" *ngIf="itemDetail.enchantIds[2]">
+                          <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
+                          <div>{{ item.label }}</div>
+                        </div>
+                      </ng-template>
+                      <ng-template let-item pTemplate="item">
+                        <div class="flex gap-1">
+                          <img src="assets/demo/images/items/{{ item.value }}.png" alt="" />
+                          <div>{{ item.label }}</div>
+                        </div>
+                      </ng-template>
+                    </p-dropdown>
+                  </div>
+                  <div class="col-4">
+                    <p-dropdown
+                      inputId="enchant4"
+                      appendTo="body"
+                      [autoDisplayFirst]="false"
+                      [resetFilterOnHide]="true"
+                      [options]="enchant4List"
+                      [filter]="true"
+                      filterBy="label"
+                      scrollHeight="350px"
+                      [(ngModel)]="itemDetail.enchantIds[3]"
+                      [showClear]="true"
+                      [disabled]="enchant4List.length === 0"
+                      placeholder="Enchant 4"
+                    >
+                      <ng-template let-item pTemplate="selectedItem">
+                        <div class="flex gap-1 item_template" *ngIf="itemDetail.enchantIds[3]">
+                          <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
+                          <div>{{ item.label }}</div>
+                        </div>
+                      </ng-template>
+                      <ng-template let-item pTemplate="item">
+                        <div class="flex gap-1">
+                          <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
+                          <div>{{ item.label }}</div>
+                        </div>
+                      </ng-template>
+                    </p-dropdown>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 grid grid-nogutter">
+                <div class="col-3" [hidden]="!isRefinable || !activeFilteredItem">
+                  <p-cascadeSelect
+                    appendTo="body"
+                    [(ngModel)]="itemDetail.opts[0]"
+                    [disabled]="isLoading"
+                    [options]="optionList"
+                    optionValue="value"
+                    optionGroupLabel="label"
+                    optionLabel="label"
+                    [optionGroupChildren]="['children', 'children', 'children']"
+                    placeholder="Option 1"
+                    [showClear]="true"
+                  ></p-cascadeSelect>
+                </div>
+                <div class="col-3" [hidden]="!isRefinable || !activeFilteredItem">
+                  <p-cascadeSelect
+                    appendTo="body"
+                    [(ngModel)]="itemDetail.opts[1]"
+                    [disabled]="isLoading"
+                    [options]="optionList"
+                    optionValue="value"
+                    optionGroupLabel="label"
+                    optionLabel="label"
+                    [optionGroupChildren]="['children', 'children', 'children']"
+                    placeholder="Option 2"
+                    [showClear]="true"
+                  ></p-cascadeSelect>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-fixed p-2 mt-3"
+            style="color: #000; background-color: #fff; width: 100px"
+            [hidden]="!activeFilteredItem"
+          >
+            <img
+              *ngIf="seletedItemId"
+              src="https://www.divine-pride.net/img/items/collection/thROG/{{ seletedItemId }}"
+              alt=""
+            />
+          </div>
+          <div
+            class="col p-2 mt-3"
+            style="color: #000; background-color: #fff; max-height: 450px; overflow: auto"
+            [hidden]="!activeFilteredItemDesc"
+            [innerHTML]="activeFilteredItemDesc"
+          ></div>
+        </div>
+      </div>
+    </div>
   </ng-template>
 
   <ng-template pTemplate="footer">
-    <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text" (click)="hideDialog()"></button>
-    <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text" (click)="saveProduct()"></button>
+    <button
+      pButton
+      pRipple
+      label="Cancel"
+      icon="pi pi-times"
+      class="p-button-text"
+      [disabled]="isLoading"
+      (click)="onCancelBtnClick()"
+    ></button>
+    <button
+      pButton
+      pRipple
+      label="{{ isCreateItem ? 'Create' : 'Update' }}"
+      icon="pi pi-check"
+      class="p-button-text"
+      [disabled]="isLoading || !activeFilteredItem || isLoading"
+      [loading]="isLoading"
+      (click)="onSaveBtnClick()"
+    ></button>
   </ng-template>
 </p-dialog>

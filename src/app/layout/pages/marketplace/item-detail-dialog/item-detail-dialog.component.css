@@ -1,0 +1,41 @@
+:host ::ng-deep .item-position-list p-listbox .p-listbox-list {
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+}
+
+:host ::ng-deep .item-position-list .p-listbox-item {
+  padding: 0.25rem 0.25rem;
+}
+
+.p-inputgroup p-dropdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+:host ::ng-deep .p-inputgroup p-dropdown .p-dropdown-filter {
+  width: 100%;
+}
+
+.item_template {
+  position: relative;
+  /* height: 1.2rem; */
+}
+
+.item_template div {
+  margin-left: 24px;
+}
+
+.item_img {
+  position: absolute;
+  top: -3px;
+  left: -4px;
+  height: 25px;
+}
+
+.text_ellips {
+  height: 19px;
+  overflow: hidden;
+  white-space: nowrap;
+}

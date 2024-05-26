@@ -1,22 +1,4 @@
-export interface ProductItemModel {
-  id: string;
-  storeId: string;
-  itemId: number;
-  bundleId: string;
-  name: string;
-  desc: string;
-  enchantIds: null;
-  opts: null;
-  baht: number;
-  m: number;
-  quantity: number;
-  type: number;
-  subType: number;
-  isPublished: boolean;
-  expDate: string;
-  createdAt: string;
-  updatedAt: string;
-}
+import { ProductItemModel } from './product-item.model';
 
 export interface SearchProductModel {
   items: ProductItemModel[];

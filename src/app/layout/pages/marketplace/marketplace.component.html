@@ -1,6 +1,6 @@
 <div class="grid grid-nogutter" style="min-width: 1500px">
   <div class="p-fluid col-12 grid grid-nogutter">
-    <div class="col-2">
+    <!-- <div class="col-2">
       <div class="p-inputgroup">
         <span class="p-inputgroup-addon" style="width: 80px">ItemType</span>
         <p-dropdown
@@ -12,7 +12,7 @@
         >
         </p-dropdown>
       </div>
-    </div>
+    </div> -->
     <div class="col-3">
       <div class="p-inputgroup">
         <span class="p-inputgroup-addon" for="search-autoComplete" style="width: 80px">Name</span>
@@ -25,18 +25,23 @@
       </div>
     </div>
     <div class="col-fixed">
-      <button type="button" pButton icon="pi pi-search" class="p-button-warning" (click)="onSearchBtnClick()"></button>
+      <button
+        type="button"
+        pButton
+        icon="pi pi-search"
+        class="p-button-warning"
+        [disabled]="isLoading"
+        (click)="onSearchBtnClick()"
+      ></button>
     </div>
   </div>
 
   <div class="col-12 grid grid-nogutter">
-    <div class="col-8">
+    <div class="col-6">
       <p-table
         styleClass="p-datatable-sm"
         [value]="products"
         [loading]="isLoading"
-        [tableStyle]="{ 'min-width': '65rem' }"
-        [showCurrentPageReport]="true"
         selectionMode="single"
         [selection]="selectedItemRow"
         (onRowSelect)="onRowSelect($event)"
@@ -44,25 +49,35 @@
       >
         <ng-template pTemplate="header">
           <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>ItemType</th>
-            <th>Price (M)</th>
-            <th>Price (Bath)</th>
+            <th></th>
+            <th width="100px">Zeny</th>
+            <th width="80px">Bath</th>
+            <th width="12px">Contact</th>
           </tr>
         </ng-template>
         <ng-template pTemplate="body" let-product>
           <tr [pSelectableRow]="product">
-            <td>{{ product.itemId }}</td>
-            <td>{{ product.name }}</td>
-            <td>{{ product.typeName }}</td>
-            <td>{{ product.m }}</td>
-            <td>{{ product.baht }}</td>
+            <td>
+              <div class="flex flex-wrap">
+                <div class="flex align-items-center">
+                  <span class="mr-1" [hidden]="product.refine == 0">{{ '+' + product.refine }}</span>
+                  <img src="assets/demo/images/items/{{ product.itemId }}.png" alt="" class="item_img h-fit" />
+                  <span>{{ product.name }}</span>
+                </div>
+                <div class="flex align-items-center ml-2" *ngFor="let enchant of product.enchantInfos">
+                  <img src="assets/demo/images/items/{{ enchant.id }}.png" alt="" class="item_img h-fit" />
+                  <div>{{ enchant.name }}</div>
+                </div>
+              </div>
+            </td>
+            <td>{{ product.zeny | number }}</td>
+            <td>{{ product.baht | number }}</td>
+            <td>{{ product.fb }}</td>
           </tr>
         </ng-template>
         <ng-template pTemplate="emptymessage">
           <tr>
-            <td colspan="5">Not found</td>
+            <td colspan="99">Not found</td>
           </tr>
         </ng-template>
       </p-table>
@@ -71,21 +86,27 @@
         [first]="firstRecord"
         [rows]="pageLimit"
         [totalRecords]="totalRecord"
-        [rowsPerPageOptions]="pageOptions"
+        [rowsPerPageOptions]="[]"
+        [showCurrentPageReport]="true"
+        currentPageReportTemplate="{totalRecords} items"
       ></p-paginator>
     </div>
 
-    <div class="col-4 grid grid-nogutter">
-      <div class="col-12">
-        <app-store-management [item]="item"></app-store-management>
+    <div class="col-4 pl-2 grid grid-nogutter">
+      <div class="col-12" *ngIf="item">
+        <app-store-management [itemMap]="item" [filterableItemTypes]="itemTypeIds"></app-store-management>
       </div>
-      <div class="col-12" [hidden]="!selectedItemDescription">
-        <div class="grid grid-nogutter ml-2" style="max-height: 600px; overflow: auto">
-          <div
-            class="col-12 px-2 py-2"
-            style="color: #000; background-color: #fff"
-            [innerHTML]="selectedItemDescription"
-          ></div>
+
+      <div class="card w-full px-1 py-3 mt-3" [hidden]="!!selectedItemRow">
+        <div class="text-lg font-bold mb-3">Item Description</div>
+        <div class="mb-4" *ngFor="let selectedItem of selectedItemDescs">
+          <div class="flex gap-1 mb-2">
+            <img src="assets/demo/images/items/{{ selectedItem.id }}.png" alt="" class="item_img" />
+            <div class="text_ellips font-medium">
+              {{ selectedItem.name }}
+            </div>
+          </div>
+          <div class="px-2 py-2" style="color: #000; background-color: #fff" [innerHTML]="selectedItem.desc"></div>
         </div>
       </div>
     </div>
