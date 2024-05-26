@@ -32,7 +32,7 @@ export class LayoutService {
     colorScheme: 'dark',
     theme: 'vela-green',
     scale: +localStorage.getItem('scale') || 14,
-    hideBasicAtk: localStorage.getItem('hideBasicAtk') === 'true',
+    hideBasicAtk: localStorage.getItem('hideBasicAtk') !== 'false',
   };
 
   state: LayoutState = {
