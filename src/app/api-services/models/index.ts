@@ -22,3 +22,5 @@ export * from './ecommerce/update-item-list.request';
 export * from './ecommerce/create-store.request';
 export * from './ecommerce/store.model';
 export * from './ecommerce/delete-item-list.request';
+export * from './ecommerce/patch-item-list.request';
+export * from './ecommerce/item-and-store.model';

@@ -6,6 +6,7 @@ import {
   CreateItemListRequest,
   CreateStoreRequest,
   DeleteItemListRequest,
+  PatchProductItemRequest,
   ProductItemModel,
   SearchProductModel,
   SearchProductRequest,
@@ -17,10 +18,6 @@ import {
 export class EcommerceService extends BaseAPIService {
   constructor(protected readonly http: HttpClient, protected readonly jwtHelper: JwtHelperService) {
     super();
-  }
-
-  searchProducts(body: SearchProductRequest) {
-    return this.post<SearchProductModel>(this.API.searchProducts, body, false);
   }
 
   getMyStore() {
@@ -35,6 +32,10 @@ export class EcommerceService extends BaseAPIService {
     return this.post<StoreModel>(this.API.updateMyStore, body);
   }
 
+  searchProducts(body: SearchProductRequest) {
+    return this.post<SearchProductModel>(this.API.searchProducts, body, false);
+  }
+
   getMyProducts(body: Pick<SearchProductRequest, 'skip' | 'take'>) {
     return this.post<SearchProductModel>(this.API.getMyProducts, body);
   }
@@ -45,6 +46,14 @@ export class EcommerceService extends BaseAPIService {
 
   bulkUpdateMyProducts(body: UpdateItemListRequest) {
     return this.post<ProductItemModel[]>(this.API.bulkUpdateMyProducts, body);
+  }
+
+  bulkPatchMyProducts(body: PatchProductItemRequest) {
+    return this.post<ProductItemModel[]>(this.API.bulkPatchMyProducts, body);
+  }
+
+  bulkRenewExpDateMyProducts(body: { ids: string[] }) {
+    return this.post<ProductItemModel[]>(this.API.bulkRenewExpDateMyProducts, body);
   }
 
   bulkDeleteMyProducts(body: DeleteItemListRequest) {

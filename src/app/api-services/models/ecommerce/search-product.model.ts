@@ -1,7 +1,7 @@
-import { ProductItemModel } from './product-item.model';
+import { ItemAndStoreModel } from './item-and-store.model';
 
 export interface SearchProductModel {
-  items: ProductItemModel[];
+  items: ItemAndStoreModel[];
   totalItem: number;
   skip: number;
   take: number;

@@ -38,6 +38,8 @@ export abstract class BaseAPIService {
     getMyProducts: `${BASE_URL}/me/products/search`,
     bulkCreateMyProducts: `${BASE_URL}/me/products/bulk_create`,
     bulkUpdateMyProducts: `${BASE_URL}/me/products/bulk_update`,
+    bulkPatchMyProducts: `${BASE_URL}/me/products/bulk_patch`,
+    bulkRenewExpDateMyProducts: `${BASE_URL}/me/products/bulk_renew_exp_date`,
     bulkDeleteMyProducts: `${BASE_URL}/me/products/bulk_delete`,
   } as const;
 

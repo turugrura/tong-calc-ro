@@ -1,7 +1,7 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { PaginatorState } from 'primeng/paginator';
-import { EMPTY, Subject, Subscription, catchError, debounceTime, of, switchMap, tap, throwError } from 'rxjs';
-import { EcommerceService, ProductItemModel, StoreModel } from 'src/app/api-services';
+import { EMPTY, Observable, Subject, Subscription, catchError, debounceTime, switchMap, tap, throwError } from 'rxjs';
+import { EcommerceService, ItemAndStoreModel, ProductItemModel, StoreModel } from 'src/app/api-services';
 import { ItemModel } from '../../ro-calculator/models/item.model';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { DropdownModel } from '../../ro-calculator/models/dropdown.model';
@@ -21,7 +21,7 @@ export class StoreManagementComponent implements OnInit, OnDestroy {
   private searchEvent$ = this.searchSource.asObservable();
 
   myStore = {} as StoreModel;
-  myProductItems: (ProductItemModel & { enchantInfos: { id: number; name: string }[] })[] = [];
+  myProductItems: (ItemAndStoreModel & { name: string; enchantInfos: { id: number; name: string }[] })[] = [];
   isLoading = false;
 
   totalRecord = 0;
@@ -32,7 +32,7 @@ export class StoreManagementComponent implements OnInit, OnDestroy {
   itemModel = { cardIds: [], opts: [], enchantIds: [] } as Partial<ProductItemModel>;
   showStoreDialog = false;
   showItemManagementDialog = false;
-  selectedItems = [] as ProductItemModel[];
+  selectedItems = [] as typeof this.myProductItems;
 
   constructor(
     private readonly ecommerceService: EcommerceService,
@@ -51,7 +51,11 @@ export class StoreManagementComponent implements OnInit, OnDestroy {
             return this.loadMyItems();
           }
 
-          return of(null);
+          return EMPTY;
+        }),
+        catchError(() => {
+          this.isLoading = false;
+          return EMPTY;
         }),
       )
       .subscribe(() => {
@@ -99,6 +103,7 @@ export class StoreManagementComponent implements OnInit, OnDestroy {
 
           return {
             ...a,
+            name: this.itemMap[a.itemId]?.name,
             enchantInfos: xIds.map((id) => ({ id, name: this.itemMap[id]?.name || '' })),
           };
         });
@@ -156,7 +161,7 @@ export class StoreManagementComponent implements OnInit, OnDestroy {
     this.showItemManagementDialog = true;
   }
 
-  onDeleteProductClick(item: ProductItemModel | ProductItemModel[]) {
+  onDeleteProductClick(item: (typeof this.myProductItems)[0] | typeof this.myProductItems) {
     let message: string;
     let ids = [];
     if (Array.isArray(item)) {
@@ -167,16 +172,104 @@ export class StoreManagementComponent implements OnInit, OnDestroy {
       ids = [item.id];
     }
 
+    const operation = this.ecommerceService.bulkDeleteMyProducts({ ids }).pipe(
+      switchMap(() => this.loadMyItems()),
+      catchError((err) => {
+        this.messageService.add({
+          severity: 'error',
+          detail: 'Error: ' + err?.message || err?.statusText,
+          life: 3000,
+        });
+        this.isLoading = false;
+
+        return EMPTY;
+      }),
+    );
+    this.confirmOperation(operation, {
+      message,
+      icon: 'pi pi-exclamation-triangle',
+      successMsg: 'Deleted',
+    });
+  }
+
+  onPublishItemBtnClick(isPublished: boolean) {
+    const targetItems = this.selectedItems
+      .filter((item) => item.isPublished !== isPublished)
+      .map((a) => ({ id: a.id, isPublished }));
+    if (!targetItems.length) return;
+
+    const operation = this.ecommerceService.bulkPatchMyProducts(targetItems).pipe(
+      tap((updatedItems) => {
+        for (const item of updatedItems) {
+          const found = this.selectedItems.find((a) => a.id === item.id);
+          if (!found) continue;
+
+          found.isPublished = item.isPublished;
+        }
+      }),
+      catchError((err) => {
+        this.messageService.add({
+          severity: 'error',
+          detail: 'Error: ' + err?.message || err?.statusText,
+          life: 3000,
+        });
+        this.isLoading = false;
+
+        return EMPTY;
+      }),
+    );
+
+    this.confirmOperation(operation, {
+      message: `Publish ${this.selectedItems.length} items ?`,
+      icon: 'pi pi-exclamation-triangle',
+      successMsg: 'Published',
+    });
+  }
+
+  onRenewExpDateItemBtnClick() {
+    if (!this.selectedItems.length) return;
+
+    const operation = this.ecommerceService
+      .bulkRenewExpDateMyProducts({ ids: this.selectedItems.map((a) => a.id) })
+      .pipe(
+        tap((updatedItems) => {
+          for (const item of updatedItems) {
+            const found = this.selectedItems.find((a) => a.id === item.id);
+            if (!found) continue;
+
+            found.expDate = item.expDate;
+          }
+        }),
+        catchError((err) => {
+          this.messageService.add({
+            severity: 'error',
+            detail: 'Error: ' + err?.message || err?.statusText,
+            life: 3000,
+          });
+          this.isLoading = false;
+
+          return EMPTY;
+        }),
+      );
+    this.confirmOperation(operation, {
+      message: `Renew an expire date ${this.selectedItems.length} items ?`,
+      icon: 'pi pi-exclamation-triangle',
+      successMsg: 'Renewed',
+    });
+  }
+
+  private confirmOperation<T>(obs: Observable<T>, confirmMsg: { message: string; icon: string; successMsg: string }) {
+    const { message, icon, successMsg } = confirmMsg;
+
     this.confirmationService.confirm({
       header: 'Confirm',
       message,
-      icon: 'pi pi-exclamation-triangle',
+      icon,
       accept: () => {
         this.isLoading = true;
-        this.ecommerceService
-          .bulkDeleteMyProducts({ ids })
+
+        obs
           .pipe(
-            switchMap(() => this.loadMyItems()),
             catchError((err) => {
               this.messageService.add({
                 severity: 'error',
@@ -189,7 +282,7 @@ export class StoreManagementComponent implements OnInit, OnDestroy {
             }),
           )
           .subscribe(() => {
-            this.messageService.add({ severity: 'success', detail: 'Deleted', life: 3000 });
+            this.messageService.add({ severity: 'success', detail: successMsg, life: 3000 });
             this.isLoading = false;
           });
       },

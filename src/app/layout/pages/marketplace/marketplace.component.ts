@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { AutoCompleteCompleteEvent } from 'primeng/autocomplete';
 import { PaginatorState } from 'primeng/paginator';
-import { Subject, Subscription, catchError, debounceTime, of, switchMap, tap, throwError } from 'rxjs';
-import { EcommerceService, ProductItemModel } from 'src/app/api-services';
+import { EMPTY, Subject, Subscription, catchError, debounceTime, of, switchMap, tap } from 'rxjs';
+import { EcommerceService, ItemAndStoreModel } from 'src/app/api-services';
 import { RoService } from 'src/app/demo/service/ro.service';
 import { ItemModel } from '../ro-calculator/models/item.model';
 import { ItemTypeId } from '../ro-calculator/constants/item.const';
@@ -17,8 +17,8 @@ const filterableItemTypes: DropdownModel[] = [
   { label: 'ETC', value: ItemTypeId.ETC },
 ];
 
-interface ProductItemModelX extends ProductItemModel {
-  typeName: string;
+interface ProductItemModelX extends ItemAndStoreModel {
+  name: string;
   enchantInfos: { id: number; name: string }[];
 }
 
@@ -44,7 +44,7 @@ export class MarketplaceComponent implements OnInit, OnDestroy {
   private subs: Subscription[] = [];
 
   products: ProductItemModelX[] = [];
-  productMap = new Map<number, ProductItemModel>();
+  productMap = new Map<number, ItemAndStoreModel>();
   itemTypeIds = filterableItemTypes;
   itemTypeNameMap = filterableItemTypes.reduce((mapped, item) => {
     mapped[item.value] = item.label;
@@ -100,10 +100,10 @@ export class MarketplaceComponent implements OnInit, OnDestroy {
         tap(() => (this.isLoading = true)),
         debounceTime(500),
         switchMap(() => this.searchProducts()),
-        catchError((err) => {
-          console.error(err);
+        catchError(() => {
+          this.isLoading = false;
 
-          return of({});
+          return EMPTY;
         }),
       )
       .subscribe(() => {
@@ -167,7 +167,7 @@ export class MarketplaceComponent implements OnInit, OnDestroy {
 
             return {
               ...a,
-              typeName: this.itemTypeNameMap[a.type],
+              name: this.item[a.itemId]?.name,
               enchantInfos: xIds.map((id) => ({ id, name: this.item[id]?.name || '' })),
             };
           });
@@ -175,11 +175,11 @@ export class MarketplaceComponent implements OnInit, OnDestroy {
 
           return of(item);
         }),
-        catchError((err) => {
+        catchError(() => {
           this.products = [];
           this.totalRecord = 0;
 
-          return throwError(() => err);
+          return of(null);
         }),
       );
   }
@@ -197,6 +197,8 @@ export class MarketplaceComponent implements OnInit, OnDestroy {
   onSearchBtnClick() {
     this.firstRecord = 0;
     this.pageLimit = 20;
+    console.log('onSearchBtnClick');
+    console.log('closed', this.subs[0].closed);
     this.searchSource$.next(true);
   }
 

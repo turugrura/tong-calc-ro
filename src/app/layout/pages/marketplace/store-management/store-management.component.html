@@ -2,24 +2,55 @@
 <p-confirmDialog [style]="{ width: '450px' }" />
 
 <div *ngIf="!!myStore?.id" class="grid grid-nogutter">
-  <div class="col-12 flex">
-    <button
-      pButton
-      pRipple
-      label="New"
-      icon="pi pi-plus"
-      class="p-button-success mr-2"
-      (click)="onCreateItemBtnClick()"
-    ></button>
-    <button
-      pButton
-      pRipple
-      label="Delete"
-      icon="pi pi-trash"
-      class="p-button-danger"
-      (click)="onDeleteSelectedItemsClick()"
-      [disabled]="!selectedItems || !selectedItems.length"
-    ></button>
+  <div class="col-12 flex justify-content-between">
+    <div class="flex">
+      <button
+        pButton
+        pRipple
+        label="New"
+        icon="pi pi-plus"
+        class="p-button-success mr-2"
+        (click)="onCreateItemBtnClick()"
+      ></button>
+      <button
+        pButton
+        pRipple
+        label="Renew Expired Date"
+        icon="pi pi-clock"
+        class="p-button-warning mr-2"
+        (click)="onRenewExpDateItemBtnClick()"
+        [disabled]="!selectedItems || !selectedItems.length"
+      ></button>
+      <button
+        pButton
+        pRipple
+        label="Publish"
+        icon="pi pi-flag-fill"
+        class="p-button-warning mr-2"
+        (click)="onPublishItemBtnClick(true)"
+        [disabled]="!selectedItems || !selectedItems.length"
+      ></button>
+      <button
+        pButton
+        pRipple
+        label="Unpublish"
+        icon="pi pi-flag"
+        class="p-button-warning mr-2"
+        (click)="onPublishItemBtnClick(false)"
+        [disabled]="!selectedItems || !selectedItems.length"
+      ></button>
+    </div>
+    <div class="flex">
+      <button
+        pButton
+        pRipple
+        label="Delete"
+        icon="pi pi-trash"
+        class="p-button-danger"
+        (click)="onDeleteSelectedItemsClick()"
+        [disabled]="!selectedItems || !selectedItems.length"
+      ></button>
+    </div>
   </div>
   <div class="col-12">
     <p-table
@@ -31,27 +62,28 @@
     >
       <ng-template pTemplate="header">
         <tr>
-          <th style="width: 4rem">
+          <th class="flex justify-content-center" style="width: 4rem">
             <p-tableHeaderCheckbox />
           </th>
           <th></th>
           <th>Zeny</th>
           <th>Baht</th>
           <th>Quantity</th>
+          <th>Published</th>
           <th>Expired</th>
           <th width="90px"></th>
         </tr>
       </ng-template>
       <ng-template pTemplate="body" let-product>
         <tr>
-          <td>
+          <td class="flex justify-content-center">
             <p-tableCheckbox [value]="product" />
           </td>
           <td>
             <div class="flex flex-wrap">
               <div class="flex align-items-center">
-                <span class="mr-1" [hidden]="product.refine == 0">{{ '+' + product.refine }}</span>
                 <img src="assets/demo/images/items/{{ product.itemId }}.png" alt="" class="item_img h-fit" />
+                <span class="mr-1" [hidden]="product.refine == 0">{{ '+' + product.refine }}</span>
                 <span>{{ product.name }}</span>
               </div>
               <div class="flex align-items-center ml-2" *ngFor="let enchant of product.enchantInfos">
@@ -63,7 +95,8 @@
           <td>{{ product.zeny | number }}</td>
           <td>{{ product.baht | number }}</td>
           <td>{{ product.quantity | number }}</td>
-          <td>{{ product.expDate | date }}</td>
+          <td>{{ product.isPublished }}</td>
+          <td>{{ product.expDate | date : 'YYYY-mm-dd HH:MM' }}</td>
           <td>
             <button
               pButton
@@ -84,7 +117,7 @@
       </ng-template>
       <ng-template pTemplate="emptymessage">
         <tr>
-          <td colspan="3">Not found</td>
+          <td>Not found</td>
         </tr>
       </ng-template>
     </p-table>

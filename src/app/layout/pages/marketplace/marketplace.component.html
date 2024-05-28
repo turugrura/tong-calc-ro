@@ -52,7 +52,10 @@
             <th></th>
             <th width="100px">Zeny</th>
             <th width="80px">Bath</th>
+            <th width="12px">Store</th>
             <th width="12px">Contact</th>
+            <th width="12px">InGame</th>
+            <th width="12px">Rating</th>
           </tr>
         </ng-template>
         <ng-template pTemplate="body" let-product>
@@ -60,8 +63,8 @@
             <td>
               <div class="flex flex-wrap">
                 <div class="flex align-items-center">
-                  <span class="mr-1" [hidden]="product.refine == 0">{{ '+' + product.refine }}</span>
                   <img src="assets/demo/images/items/{{ product.itemId }}.png" alt="" class="item_img h-fit" />
+                  <span class="mr-1" [hidden]="product.refine == 0">{{ '+' + product.refine }}</span>
                   <span>{{ product.name }}</span>
                 </div>
                 <div class="flex align-items-center ml-2" *ngFor="let enchant of product.enchantInfos">
@@ -72,7 +75,10 @@
             </td>
             <td>{{ product.zeny | number }}</td>
             <td>{{ product.baht | number }}</td>
-            <td>{{ product.fb }}</td>
+            <td>{{ product.store.name }}</td>
+            <td>{{ product.store.fb }}</td>
+            <td>{{ product.store.characterName }}</td>
+            <td>{{ product.store.rating }}</td>
           </tr>
         </ng-template>
         <ng-template pTemplate="emptymessage">
@@ -92,7 +98,7 @@
       ></p-paginator>
     </div>
 
-    <div class="col-4 pl-2 grid grid-nogutter">
+    <div class="col-6 pl-2 grid grid-nogutter">
       <div class="col-12" *ngIf="item">
         <app-store-management [itemMap]="item" [filterableItemTypes]="itemTypeIds"></app-store-management>
       </div>
