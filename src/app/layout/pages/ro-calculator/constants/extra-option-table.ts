@@ -123,4 +123,6 @@ export const ExtraOptionTable = {
   Droop_Gunslinger: 2,
   Cat_Lace_Hairband_K: 2,
   Kafra_Suit: 1,
+  SeeOtter_Fan: 2,
+  FurSeal_Fan: 2,
 } as const;
