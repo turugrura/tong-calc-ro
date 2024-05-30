@@ -765,7 +765,10 @@ export class DamageCalculator {
       isExcludeCannanball,
     });
 
-    const rawMaxDamage = skillFormula(totalMaxOver, canCri);
+    const extraDmg = this._class.getAdditionalDmg(infoForClass);
+    const extraDmgCri = canCri ? floor(extraDmg * criMultiplier) : extraDmg;
+
+    const rawMaxDamage = skillFormula(totalMaxOver, canCri) + extraDmgCri;
     const maxDamage = this._class.calcSkillDmgByTotalHit({
       info: this.infoForClass,
       finalDamage: rawMaxDamage,
@@ -775,12 +778,12 @@ export class DamageCalculator {
     const rawMinDamage = canCri ? skillFormula(totalMax, canCri) : skillFormula(totalMin, canCri);
     const minDamage = this._class.calcSkillDmgByTotalHit({
       info: this.infoForClass,
-      finalDamage: rawMinDamage,
+      finalDamage: rawMinDamage + extraDmgCri,
       skill: skillData,
     });
 
-    const rawMinNoCri = canCri ? skillFormula(totalMax, false) : 0;
-    const rawMaxNoCri = canCri ? skillFormula(totalMaxOver, false) : 0;
+    const rawMinNoCri = canCri ? skillFormula(totalMax, false) + extraDmgCri : 0;
+    const rawMaxNoCri = canCri ? skillFormula(totalMaxOver, false) + extraDmgCri : 0;
 
     return {
       minDamage,

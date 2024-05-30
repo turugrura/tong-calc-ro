@@ -573,17 +573,13 @@ export class RuneKnight extends CharacterBase {
   }
 
   override getMasteryAtk(info: InfoForClass): number {
-    const { weapon, model } = info;
+    const { weapon } = info;
     const weaponType = weapon?.data?.typeName;
     const bonuses = this.bonuses?.masteryAtks || {};
 
     let sum = 0;
     for (const [, bonus] of Object.entries(bonuses)) {
       sum += bonus[`x_${weaponType}_atk`] || 0; // x_spear_atk
-    }
-
-    if (this.isSkillActive('Aura Blade')) {
-      sum += model.level * 8;
     }
 
     return sum;
@@ -650,5 +646,13 @@ export class RuneKnight extends CharacterBase {
     totalDamage = floor(totalDamage * propertyMultiplier);
 
     return totalDamage;
+  }
+
+  override getAdditionalDmg(info: InfoForClass): number {
+    if (this.isSkillActive('Aura Blade')) {
+      return info.model.level * 8;
+    }
+
+    return 0;
   }
 }

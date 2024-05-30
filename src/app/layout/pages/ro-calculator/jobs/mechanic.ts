@@ -105,7 +105,8 @@ export class Mechanic extends CharacterBase {
         const { status, skillLevel, model, weapon } = input;
         const baseLevel = model.level;
         const totalVit = status.totalVit;
-        const bonusWeapon = weapon?.data?.propertyAtk === ElementType.Wind ? 1.25 : 1;
+        const bonusWeapon =
+          weapon?.data?.propertyAtk === ElementType.Wind || model.propertyAtk === ElementType.Wind ? 1.25 : 1;
 
         return (totalVit + 200 + skillLevel * 100) * bonusWeapon * (baseLevel / 100);
       },

@@ -486,6 +486,10 @@ export abstract class CharacterBase {
     return 0;
   }
 
+  getAdditionalDmg(_: InfoForClass) {
+    return 0;
+  }
+
   modifyFinalAtk(currentAtk: number, _: InfoForClass) {
     return currentAtk;
   }
