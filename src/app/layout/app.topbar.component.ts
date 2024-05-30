@@ -176,11 +176,21 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
 
   updates: { v: string; date: string; logs: string[] }[] = [
     {
+      v: 'V2.1.4',
+      date: '30-05-2567',
+      logs: [
+        'Fixed reported bugs',
+        'Added Official updated items',
+        'Added requested items',
+        'Updated data for Item Ranking',
+      ],
+    },
+    {
       v: 'V2.1.3',
       date: '16-05-2567',
       logs: [
         'Fixed reported bugs',
-        'Added Official last updated items',
+        'Added Official updated items',
         'Added requested items/monsters',
         'Updated data for Item Ranking',
       ],
@@ -200,7 +210,7 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
       date: '02-05-2567',
       logs: [
         'Fixed reported bugs',
-        'Added Official last updated items',
+        'Added Official updated items',
         'Added Geffen Night Arena cards',
         'Added requested items/monsters',
         'Supported skill level selection [ Arm Cannon, Hell Gate, Psychic Wave, Severe Rainstorm ]',
@@ -220,7 +230,7 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
     {
       v: 'V2.0.9',
       date: '19-04-2567',
-      logs: ['Fixed reported bugs', 'Added Official last updated items', 'Added requested items/monsters'],
+      logs: ['Fixed reported bugs', 'Added Official updated items', 'Added requested items/monsters'],
     },
     {
       v: 'V2.0.8',
@@ -236,7 +246,7 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
         'Added RG skill [ Improved Over Brand ]',
         'Added ArchBishop skill [ Improved Judex ]',
         'Added SC skill [ Improved Fatal Manance ]',
-        'Added Official last updated items',
+        'Added Official updated items',
         'Added requested items',
       ],
     },
@@ -255,7 +265,7 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
       date: '21-03-2567',
       logs: [
         'Fixed reported bugs',
-        'Added Official last updated items (exclude Noblesse, Imperial & Grace sets)',
+        'Added Official updated items (exclude Noblesse, Imperial & Grace sets)',
         'Added Booster weapons',
         'Added Accessories from Thanatos Tower revamp (Sinful & Brilliant)',
         'Added Equipments from Illusion of Under Water',
@@ -295,21 +305,17 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
     {
       v: 'V2.0.0',
       date: '07-03-2567',
-      logs: [
-        'Added Official last updated items',
-        'Added "Login" to saving presets on cloud',
-        'Added "Shared presets" page',
-      ],
+      logs: ['Added Official updated items', 'Added "Login" to saving presets on cloud', 'Added "Shared presets" page'],
     },
     {
       v: 'V1.8.6',
       date: '22-02-2567',
-      logs: ['Added Penetration item options', 'Added Official last updated items', 'Added requested items'],
+      logs: ['Added Penetration item options', 'Added Official updated items', 'Added requested items'],
     },
     {
       v: 'V1.8.5',
       date: '08-02-2567',
-      logs: ['Fixed reported bugs', 'Added Official last updated items', 'Added requested items'],
+      logs: ['Fixed reported bugs', 'Added Official updated items', 'Added requested items'],
     },
     {
       v: 'V1.8.4',
@@ -328,7 +334,7 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
       logs: [
         'Fixed Skill half cri rate formula from [(Cri rate/2) - Cri shield] to [(Cri rate - Cri shield)/2]',
         'Fixed reported bugs',
-        'Added Official last updated items',
+        'Added Official updated items',
         'Added Warlock, Sorcerer offensive skills (Fire Bolt, Cold Bolt, Lightening Bolt)',
         'Added requested items & monsters',
       ],
@@ -351,7 +357,7 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
       date: '11-01-2567',
       logs: [
         'Fixed reported bugs',
-        'Added Official last updated items',
+        'Added Official updated items',
         'Added Weapon Lv4 & all head gears for Super Novice',
         'Added Super Novice offensive skill (Psychic Wave, Shield Chain)',
         'Added requested items',
@@ -387,7 +393,7 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
       date: '29-12-2566',
       logs: [
         'Fixed reported bugs',
-        'Added Official last updated items',
+        'Added Official updated items',
         'Added EP 17.2 Card sets',
         'Added 3rd Class costume enchant stones (Upper,Middle,Lower)',
         'Added Royal Guard offensive skill (Gloria Domini)',
@@ -421,7 +427,7 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
         'Fixed Berserk potion unavailable for SR/SE',
         'Fixed reported bugs',
         'Added Rune Knight offensive skill (Dragon Breath & Improved versions)',
-        'Added Official last updated items',
+        'Added Official updated items',
         'Added requested items',
       ],
     },
@@ -542,7 +548,7 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
       logs: [
         'Fixed One-hand Axe cannot equip shield',
         'Added Minstrel/Wanderer offensive skill (Reverberation)',
-        'Added Official last updated items',
+        'Added Official updated items',
         'Added requested items',
       ],
     },
