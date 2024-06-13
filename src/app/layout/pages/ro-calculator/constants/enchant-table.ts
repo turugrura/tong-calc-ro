@@ -441,9 +441,10 @@ const illusionBoot = [
   'Improve_Orb_L_LUK',
   'Improve_Orb_Health',
 ];
-const illusionAcc = [EA._5, FS._6, Spell._5, AttackDelay._4, Fatal._4, ...BaseState._3];
+const illusionAcc = [EA._5, Spell._5, AttackDelay._4, Fatal._4, ...BaseState._3];
 const illusionAccR = [EA._5, Spell._5, AttackDelay._4, Fatal._4, Str._3, Agi._3, Vit._3, Luk._3];
 const illusionAccL = [EA._5, Spell._5, AttackDelay._4, Fatal._4, Int._3, Dex._3, Vit._3, Luk._3];
+const illusionShield = [...illusionArmor, ...illusionBoot, ...illusionGarment, ...illusionAcc];
 
 const automaticJobs = [
   'Automatic_Orb46',
@@ -861,6 +862,8 @@ export const EnchantTable: EntTable[] = [
   { name: 'Illusion_BC_R', enchants: [null, illusionAccR, illusionAccR, illusionAccR] },
   { name: 'Illusion_B_L', enchants: [null, illusionAccL, illusionAccL, illusionAccL] },
   { name: 'Illusion_BC_L', enchants: [null, illusionAccL, illusionAccL, illusionAccL] },
+  { name: 'Illusion_Shield_A', enchants: [null, illusionShield, illusionShield, illusionShield] },
+  { name: 'Illusion_Shield_B', enchants: [null, illusionShield, illusionShield, illusionShield] },
 
   { name: '[Upgrade] Illusion Ring [1]', enchants: [null, illusionAcc, illusionAcc, illusionAcc] },
   { name: 'Secret Illusion Ring [1]', enchants: [null, ['Improve_Orb_L_Varmundt', ...illusionAcc], illusionAcc, illusionAcc] },
@@ -1024,6 +1027,7 @@ export const EnchantTable: EntTable[] = [
   { name: 'Fancy_Flower_IL', enchants: [null, null, [...mhp14, ...BaseState._1_4], illusionDun] },
   { name: 'Goibne_Helmet_IL', enchants: [null, null, [...mhp14, ...BaseState._1_4], illusionDun] },
   { name: 'Herald_Of_GOD_IL', enchants: [null, null, [...mhp14, ...BaseState._1_4], illusionDun] },
+  { name: 'Morpheus_Hood_IL', enchants: [null, null, [...mhp14, ...BaseState._1_4], illusionDun] },
   { name: 'Boots_IL', enchants: [null, null, [...mhp14, ...BaseState._1_4], illusionDun] },
   { name: 'Shoes_IL', enchants: [null, null, [...mhp14, ...BaseState._1_4], illusionDun] },
   { name: 'Muffler_IL', enchants: [null, null, [...mhp14, ...BaseState._1_4], illusionDun] },

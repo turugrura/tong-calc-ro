@@ -5,7 +5,7 @@ export const BragisPoemFn = (): ActiveSkillModel => ({
   name: "Bragi's Poem",
   inputType: 'selectButton',
   dropdown: [
-    { label: 'Yes', value: 10, isUse: true, bonus: { vctBySkill: 20, acd: 30 } },
+    { label: 'Yes', value: 10, isUse: true, bonus: { vct: 20, acd: 30 } },
     { label: 'No', value: 0, isUse: false },
   ],
 });
