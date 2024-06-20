@@ -230,8 +230,8 @@
   >
     <ul>
       <li *ngFor="let reference of references">
-        <span class="mx-2">{{ reference.label }}</span
-        >By<span class="mx-2">{{ reference.writer }}</span>
+        <span class="">[ by {{ reference.writer }} ]</span>
+        <span class="mx-2">{{ reference.label }}</span>
         <a href="{{ reference.link }}" target="_blank" rel="noreferrer noopener">Link</a>
       </li>
     </ul>

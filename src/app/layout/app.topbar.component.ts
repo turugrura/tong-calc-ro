@@ -98,6 +98,11 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
       link: 'https://ro.gnjoy.in.th/old-headgear-enchant-improve',
     },
     {
+      label: 'New Elemental Table Adjustment',
+      writer: 'RO GGT',
+      link: 'https://ro.gnjoy.in.th/new-elemental-table-adjustment',
+    },
+    {
       label: 'Items & Monsters & Skill infomation',
       writer: 'DIVINE PRIDE',
       link: 'https://www.divine-pride.net/',
