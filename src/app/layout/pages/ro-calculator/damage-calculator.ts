@@ -225,9 +225,9 @@ export class DamageCalculator {
     if (atkType === 'range') return 0;
 
     const bonus = this.totalBonus['darkClaw'] || 0;
-    // if (this.monsterData.type === 'boss') {
-    //   bonus = bonus / 2;
-    // }
+    if (this.monsterData.type === 'boss') {
+      return bonus / 2;
+    }
 
     return bonus;
   }
@@ -978,7 +978,11 @@ export class DamageCalculator {
     const { range, melee, criDmg, dmg } = this.totalBonus;
 
     const bonusCriDmgMultiplier = this.toPercent((criDmg || 0) + 100);
-    const rangedDmg = this.isRangeAtk() ? range : melee;
+    const isRangeType = this.isRangeAtk();
+    const rangedDmg = isRangeType ? range : melee;
+    const advKatarMultiplier = (100 + this.getAdvanceKatar()) / 100;
+    const darkClawMultiplier = (100 + this.getDarkClawBonus(isRangeType ? 'range' : 'melee')) / 100;
+    const raidMultiplier = this.getRaidMultiplier();
     const rangedMultiplier = this.toPercent(rangedDmg + 100);
     const dmgMultiplier = this.toPercent(dmg + this.getFlatDmg('basicAtk') + 100);
 
@@ -991,8 +995,11 @@ export class DamageCalculator {
       total = floor(total * rangedMultiplier);
       total = total * dmgMultiplier;
       total = floor(total * hardDef);
+      total = floor(total * advKatarMultiplier);
       total = total - softDef;
       total = floor(total * this.BASE_CRI_MULTIPLIER);
+      total = floor(total * darkClawMultiplier);
+      total = floor(total * raidMultiplier);
 
       return this.toPreventNegativeDmg(total);
     };
