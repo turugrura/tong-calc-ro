@@ -444,7 +444,7 @@ const illusionBoot = [
 const illusionAcc = [EA._5, Spell._5, AttackDelay._4, Fatal._4, ...BaseState._3];
 const illusionAccR = [EA._5, Spell._5, AttackDelay._4, Fatal._4, Str._3, Agi._3, Vit._3, Luk._3];
 const illusionAccL = [EA._5, Spell._5, AttackDelay._4, Fatal._4, Int._3, Dex._3, Vit._3, Luk._3];
-const illusionShield = [...illusionArmor, ...illusionBoot, ...illusionGarment, ...illusionAcc];
+const illusionShield = [...illusionArmor, ...illusionBoot.filter((a) => a !== 'Improve_Orb_Fix'), ...illusionGarment.filter((a) => a !== 'Improve_Orb_Above'), ...illusionAcc];
 
 const automaticJobs = [
   'Automatic_Orb46',
@@ -534,6 +534,15 @@ const excelionSuit = ['Reactor_A_STR', 'Reactor_A_INT', ...excelion];
 const racingShoes = [...ea45, FS._6, ...sp45, ...aspd34, ...critical34, ...BaseState._1_3];
 
 const labHead2 = [
+  Tenacity._2,
+  Tenacity._3,
+  Tenacity._4,
+  Tenacity._5,
+  Tenacity._6,
+  Tenacity._7,
+  Tenacity._8,
+  Tenacity._9,
+  Tenacity._10,
   Acute._2,
   Acute._3,
   Acute._4,
@@ -580,7 +589,7 @@ const labHead2 = [
   Adamatine._9,
   Adamatine._10,
 ];
-const bioHead2 = [...labHead2, Tenacity._2, Tenacity._3, Tenacity._4, Tenacity._5, Tenacity._6, Tenacity._7, Tenacity._8, Tenacity._9, Tenacity._10];
+const bioHead2 = [...labHead2];
 
 const tempHead4 = [Str._1, Str._2, Str._3, Str._4, Int._1, Int._2, Int._3, Int._4, Vit._1, Vit._2, Vit._3, Vit._4, Luk._1, Luk._2, Luk._3, Luk._4];
 const tempHead3 = [
