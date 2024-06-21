@@ -10,14 +10,7 @@ export class Whitesmith extends CharacterBase {
   protected readonly JobBonusTable = jobBonusTable;
 
   protected readonly initialStatusPoint = 40;
-  protected readonly classNames = [
-    'Blacksmith',
-    'Blacksmith Cls',
-    'Blacksmith Class',
-    'Whitesmith',
-    'Whitesmith Cls',
-    'Whitesmith Class',
-  ];
+  protected readonly classNames = ['Blacksmith', 'Blacksmith Cls', 'Blacksmith Class', 'Whitesmith', 'Whitesmith Cls', 'Whitesmith Class'];
   protected readonly _atkSkillList: AtkSkillModel[] = [];
   protected readonly _activeSkillList: ActiveSkillModel[] = [
     {
@@ -28,15 +21,20 @@ export class Whitesmith extends CharacterBase {
         {
           label: 'Yes',
           value: 5,
-          skillLv: 5,
           isUse: true,
           bonus: {
             axe_hit: 20,
             axe_aspdPercent: 10,
             axe_skillAspd: 7,
+            twohandAxe_hit: 20,
+            twohandAxe_aspdPercent: 10,
+            twohandAxe_skillAspd: 7,
             mace_hit: 20,
             mace_aspdPercent: 10,
             mace_skillAspd: 7,
+            twohandMace_hit: 20,
+            twohandMace_aspdPercent: 10,
+            twohandMace_skillAspd: 7,
           },
         },
         { label: 'No', value: 0, isUse: false },
@@ -47,7 +45,7 @@ export class Whitesmith extends CharacterBase {
       name: 'Power Thrust',
       inputType: 'selectButton',
       dropdown: [
-        { label: 'Yes', value: 5, skillLv: 5, isUse: true, bonus: { flatDmg: 25 } },
+        { label: 'Yes', value: 5, isUse: true, bonus: { flatDmg: 25 } },
         { label: 'No', value: 0, isUse: false },
       ],
     },
@@ -56,7 +54,7 @@ export class Whitesmith extends CharacterBase {
       name: 'Weapon Perfection',
       inputType: 'selectButton',
       dropdown: [
-        { label: 'Yes', value: 5, skillLv: 5, isUse: true, bonus: { ignore_size_penalty: 1 } },
+        { label: 'Yes', value: 5, isUse: true, bonus: { ignore_size_penalty: 1 } },
         { label: 'No', value: 0, isUse: false },
       ],
     },
@@ -65,7 +63,7 @@ export class Whitesmith extends CharacterBase {
       name: 'Power Maximize',
       inputType: 'selectButton',
       dropdown: [
-        { label: 'Yes', value: 5, skillLv: 5, isUse: true, bonus: { weapon_maximize: 1 } },
+        { label: 'Yes', value: 5, isUse: true, bonus: { weapon_maximize: 1 } },
         { label: 'No', value: 0, isUse: false },
       ],
     },
@@ -79,11 +77,11 @@ export class Whitesmith extends CharacterBase {
       isMasteryAtk: true,
       dropdown: [
         { label: '-', value: 0, isUse: false },
-        { label: 'Lv 1', value: 1, skillLv: 1, isUse: true, bonus: { x_resist_fire: 4, x_resist_neutral: 1 } },
-        { label: 'Lv 2', value: 2, skillLv: 2, isUse: true, bonus: { x_resist_fire: 8, x_resist_neutral: 2 } },
-        { label: 'Lv 3', value: 3, skillLv: 3, isUse: true, bonus: { x_resist_fire: 12, x_resist_neutral: 3 } },
-        { label: 'Lv 4', value: 4, skillLv: 4, isUse: true, bonus: { x_resist_fire: 16, x_resist_neutral: 4 } },
-        { label: 'Lv 5', value: 5, skillLv: 5, isUse: true, bonus: { x_resist_fire: 20, x_resist_neutral: 5 } },
+        { label: 'Lv 1', value: 1, isUse: true, bonus: { x_resist_fire: 4, x_resist_neutral: 1 } },
+        { label: 'Lv 2', value: 2, isUse: true, bonus: { x_resist_fire: 8, x_resist_neutral: 2 } },
+        { label: 'Lv 3', value: 3, isUse: true, bonus: { x_resist_fire: 12, x_resist_neutral: 3 } },
+        { label: 'Lv 4', value: 4, isUse: true, bonus: { x_resist_fire: 16, x_resist_neutral: 4 } },
+        { label: 'Lv 5', value: 5, isUse: true, bonus: { x_resist_fire: 20, x_resist_neutral: 5 } },
       ],
     },
     {
@@ -93,16 +91,16 @@ export class Whitesmith extends CharacterBase {
       isMasteryAtk: true,
       dropdown: [
         { label: '-', value: 0, isUse: false },
-        { label: 'Lv 1', value: 1, skillLv: 1, isUse: true, bonus: { x_atk: 2 } },
-        { label: 'Lv 2', value: 2, skillLv: 2, isUse: true, bonus: { x_atk: 4 } },
-        { label: 'Lv 3', value: 3, skillLv: 3, isUse: true, bonus: { x_atk: 6 } },
-        { label: 'Lv 4', value: 4, skillLv: 4, isUse: true, bonus: { x_atk: 8 } },
-        { label: 'Lv 5', value: 5, skillLv: 5, isUse: true, bonus: { x_atk: 10 } },
-        { label: 'Lv 6', value: 6, skillLv: 6, isUse: true, bonus: { x_atk: 12 } },
-        { label: 'Lv 7', value: 7, skillLv: 7, isUse: true, bonus: { x_atk: 14 } },
-        { label: 'Lv 8', value: 8, skillLv: 8, isUse: true, bonus: { x_atk: 16 } },
-        { label: 'Lv 9', value: 9, skillLv: 9, isUse: true, bonus: { x_atk: 18 } },
-        { label: 'Lv 10', value: 10, skillLv: 10, isUse: true, bonus: { x_atk: 20 } },
+        { label: 'Lv 1', value: 1, isUse: true, bonus: { x_atk: 2 } },
+        { label: 'Lv 2', value: 2, isUse: true, bonus: { x_atk: 4 } },
+        { label: 'Lv 3', value: 3, isUse: true, bonus: { x_atk: 6 } },
+        { label: 'Lv 4', value: 4, isUse: true, bonus: { x_atk: 8 } },
+        { label: 'Lv 5', value: 5, isUse: true, bonus: { x_atk: 10 } },
+        { label: 'Lv 6', value: 6, isUse: true, bonus: { x_atk: 12 } },
+        { label: 'Lv 7', value: 7, isUse: true, bonus: { x_atk: 14 } },
+        { label: 'Lv 8', value: 8, isUse: true, bonus: { x_atk: 16 } },
+        { label: 'Lv 9', value: 9, isUse: true, bonus: { x_atk: 18 } },
+        { label: 'Lv 10', value: 10, isUse: true, bonus: { x_atk: 20 } },
       ],
     },
   ];

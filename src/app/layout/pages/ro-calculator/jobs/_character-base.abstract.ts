@@ -291,8 +291,7 @@ export abstract class CharacterBase {
     });
 
     this._passiveSkillList.forEach((skill, index) => {
-      const { bonus, isUse, value, skillLv } =
-        (skill.dropdown as any[]).find((x) => x.value === this.passiveSkillIds[index]) ?? {};
+      const { bonus, isUse, value, skillLv } = (skill.dropdown as any[]).find((x) => x.value === this.passiveSkillIds[index]) ?? {};
       if (!isUse) return;
 
       learnedSkillMap.set(skill.name, skillLv ?? Number(value));
@@ -410,10 +409,7 @@ export abstract class CharacterBase {
 
   calcAspd(a: AspdInput): number {
     const { weapon, weapon2, isEquipShield, aspd, aspdPercent, totalAgi, totalDex, potionAspds, skillAspd } = a;
-    const aspdByPotion = potionAspds.reduce(
-      (total, potionAspd) => total + (AspdPotionFixBonus.get(potionAspd) || 0),
-      0,
-    );
+    const aspdByPotion = potionAspds.reduce((total, potionAspd) => total + (AspdPotionFixBonus.get(potionAspd) || 0), 0);
 
     const { rangeType, subTypeName } = weapon.data;
     const { baseAspd, shieldPenalty } = this.calcBaseAspd(subTypeName);

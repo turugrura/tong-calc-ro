@@ -3,13 +3,7 @@ import { ElementType } from './constants/element-type.const';
 import { ItemTypeEnum } from './constants/item-type.enum';
 import { SizePenaltyMapper } from './constants/size-penalty-mapper';
 import { AtkSkillModel, CharacterBase } from './jobs/_character-base.abstract';
-import {
-  BasicDamageSummaryModel,
-  DamageSummaryModel,
-  MiscModel,
-  SkillDamageSummaryModel,
-  SkillType,
-} from './models/damage-summary.model';
+import { BasicDamageSummaryModel, DamageSummaryModel, MiscModel, SkillDamageSummaryModel, SkillType } from './models/damage-summary.model';
 import { EquipmentSummaryModel } from './models/equipment-summary.model';
 import { InfoForClass } from './models/info-for-class.model';
 import { MainModel } from './models/main.model';
@@ -631,12 +625,7 @@ export class DamageCalculator {
     return this.toPercent(pMultiplier);
   }
 
-  private calcTotalAtk(params: {
-    propertyAtk: ElementType;
-    isEDP: boolean;
-    sizePenalty: number;
-    isExcludeCannanball: boolean;
-  }) {
+  private calcTotalAtk(params: { propertyAtk: ElementType; isEDP: boolean; sizePenalty: number; isExcludeCannanball: boolean }) {
     const { propertyAtk, isEDP, sizePenalty, isExcludeCannanball } = params;
     const propertyMultiplier = this.getPropertyMultiplier(propertyAtk);
 
@@ -644,9 +633,7 @@ export class DamageCalculator {
     const cannonBallAtk = isExcludeCannanball ? 0 : this.totalBonus.cannonballAtk || 0;
     const masteryAtk = this.getMasteryAtk() + cannonBallAtk;
 
-    const mildwindMultiplier = this.isActiveMildwind
-      ? propertyMultiplier
-      : this.getPropertyMultiplier(ElementType.Neutral);
+    const mildwindMultiplier = this.isActiveMildwind ? propertyMultiplier : this.getPropertyMultiplier(ElementType.Neutral);
     const statusAtk = this.getStatusAtk() * mildwindMultiplier;
 
     const { totalMin: _weaMin, totalMax: weaMax, totalMaxOver: weaMaxOver } = this.getWeaponAtk({ sizePenalty, isEDP });
@@ -718,8 +705,7 @@ export class DamageCalculator {
     const softDef = finalSoftDef + (isHDefToSDef ? reducedHardDef : 0);
 
     const { range, melee, criDmg } = this.totalBonus;
-    const isMelee =
-      _isMelee != null && typeof _isMelee === 'function' ? _isMelee(this.weaponData.data.typeName) : !!_isMelee;
+    const isMelee = _isMelee != null && typeof _isMelee === 'function' ? _isMelee(this.weaponData.data.typeName) : !!_isMelee;
     const ranged = isMelee ? melee : range;
     const rangedMultiplier = this.toPercent(ranged + 100);
     const baseSkillMultiplier = this.toPercent(baseSkillDamage);
@@ -831,12 +817,7 @@ export class DamageCalculator {
     return { weaponMinMatk, weaponMaxMatk };
   }
 
-  private calcMagicalSkillDamage(params: {
-    skillData: AtkSkillModel;
-    baseSkillDamage: number;
-    weaponPropertyAtk: ElementType;
-    formulaParams?: any;
-  }): DamageResultModel {
+  private calcMagicalSkillDamage(params: { skillData: AtkSkillModel; baseSkillDamage: number; weaponPropertyAtk: ElementType; formulaParams?: any }): DamageResultModel {
     const { skillData, baseSkillDamage, weaponPropertyAtk, formulaParams } = params;
     const { name: skillName, element, isIgnoreDef = false, finalDmgFormula } = skillData;
     const { softMDef } = this.monsterData;
@@ -851,9 +832,7 @@ export class DamageCalculator {
     const finalDmgMultiplier = this.toPercent(finalDmg + 100);
     const propertyMultiplier = this.getPropertyMultiplier(skillPropertyAtk);
 
-    const elementBonus =
-      (this.totalBonus.m_my_element_all || 0) +
-      (this.totalBonus[`m_my_element_${skillPropertyAtk.toLowerCase()}`] || 0);
+    const elementBonus = (this.totalBonus.m_my_element_all || 0) + (this.totalBonus[`m_my_element_${skillPropertyAtk.toLowerCase()}`] || 0);
     const myElementMultiplier = this.toPercent(100 + elementBonus);
     const matkPercentMultiplier = this.toPercent(100 + this.totalBonus.matkPercent);
 
@@ -1016,12 +995,7 @@ export class DamageCalculator {
     return { criMinDamage, criMaxDamage, sizePenalty: 100 };
   }
 
-  calculateAllDamages(args: {
-    skillValue: string;
-    propertyAtk: ElementType;
-    maxHp: number;
-    maxSp: number;
-  }): DamageSummaryModel {
+  calculateAllDamages(args: { skillValue: string; propertyAtk: ElementType; maxHp: number; maxSp: number }): DamageSummaryModel {
     const { skillValue, propertyAtk, maxHp, maxSp } = args;
     const sizePenalty = this.getSizePenalty();
     const { totalMin, totalMax, totalMaxOver, propertyMultiplier } = this.calcTotalAtk({
@@ -1067,9 +1041,7 @@ export class DamageCalculator {
     };
 
     const [, _skillName, skillLevelStr] = skillValue?.match(/(.+)==(\d+)/) ?? [];
-    const skillData = this._class.atkSkills.find(
-      (a) => a.value === skillValue || a.levelList?.findIndex((b) => b.value === skillValue) >= 0,
-    );
+    const skillData = this._class.atkSkills.find((a) => a.value === skillValue || a.levelList?.findIndex((b) => b.value === skillValue) >= 0);
     const isValidSkill = !!_skillName && !!skillLevelStr && typeof skillData?.formula === 'function';
 
     if (!isValidSkill) return { basicDmg, misc, basicAspd };
@@ -1116,8 +1088,7 @@ export class DamageCalculator {
 
     let calculated: DamageResultModel;
     if (customFormula && typeof customFormula === 'function') {
-      const skillPropertyAtk =
-        typeof getElement === 'function' ? getElement(skillLevel) : skillData.element || propertyAtk;
+      const skillPropertyAtk = typeof getElement === 'function' ? getElement(skillLevel) : skillData.element || propertyAtk;
       const propertyMultiplier = this.getPropertyMultiplier(skillPropertyAtk);
 
       const d = customFormula({
@@ -1213,8 +1184,7 @@ export class DamageCalculator {
     const hitKill = Math.ceil(this.monsterData.hp / minDamage);
 
     const totalPene = isMatk ? this.getTotalMagicalPene() : basicDmg.totalPene;
-    const isMelee =
-      _isMelee != null && typeof _isMelee === 'function' ? _isMelee(this.weaponData.data.typeName) : !!_isMelee;
+    const isMelee = _isMelee != null && typeof _isMelee === 'function' ? _isMelee(this.weaponData.data.typeName) : !!_isMelee;
 
     const skillDmg: SkillDamageSummaryModel = {
       baseSkillDamage,

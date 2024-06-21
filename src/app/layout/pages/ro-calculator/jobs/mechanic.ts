@@ -1,14 +1,7 @@
 import { InfoForClass } from '../models/info-for-class.model';
 import { ClassName } from './_class-name';
-import {
-  ActiveSkillModel,
-  AtkSkillFormulaInput,
-  AtkSkillModel,
-  CharacterBase,
-  PassiveSkillModel,
-} from './_character-base.abstract';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
 import { Whitesmith } from './white-smith';
-import { ElementType } from '../constants/element-type.const';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 0, 0, 1],
@@ -94,27 +87,7 @@ export class Mechanic extends CharacterBase {
       name: 'Axe Tornado',
       label: 'Axe Tornado Lv5',
       value: 'Axe Tornado==5',
-      acd: 0.5,
-      fct: 0,
-      vct: 0,
-      cd: 2,
-      hit: 6,
-      isMelee: true,
-      isExcludeCannanball: true,
-      formula: (input: AtkSkillFormulaInput): number => {
-        const { status, skillLevel, model, weapon } = input;
-        const baseLevel = model.level;
-        const totalVit = status.totalVit;
-        const bonusWeapon =
-          weapon?.data?.propertyAtk === ElementType.Wind || model.propertyAtk === ElementType.Wind ? 1.25 : 1;
-
-        return (totalVit + 200 + skillLevel * 100) * bonusWeapon * (baseLevel / 100);
-      },
-    },
-    {
-      name: 'Axe Tornado',
-      label: '[Improved] Axe Tornado Lv5',
-      value: '[Improved] Axe Tornado==5',
+      values: ['[Improved] Axe Tornado==5'],
       acd: 0.5,
       fct: 0,
       vct: 0,
@@ -131,6 +104,40 @@ export class Mechanic extends CharacterBase {
       },
     },
     {
+      name: 'Knuckle Boost',
+      label: 'Knuckle Boost Lv5',
+      value: 'Knuckle Boost==5',
+      acd: 0,
+      fct: 0,
+      vct: 0.5,
+      cd: 0,
+      isExcludeCannanball: true,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { skillLevel, model, status } = input;
+        const baseLevel = model.level;
+        const { totalDex } = status;
+
+        return (100 + skillLevel * 200 + totalDex) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Vulcan Arm',
+      label: 'Vulcan Arm Lv3',
+      value: 'Vulcan Arm==3',
+      acd: 0.1,
+      fct: 0,
+      vct: 0.2,
+      cd: 0.1,
+      isExcludeCannanball: true,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { skillLevel, model, status } = input;
+        const baseLevel = model.level;
+        const { totalDex } = status;
+
+        return (skillLevel * 140 + totalDex) * (baseLevel / 100);
+      },
+    },
+    {
       name: 'Axe Boomerang',
       label: 'Axe Boomerang Lv5',
       value: 'Axe Boomerang==5',
@@ -141,6 +148,8 @@ export class Mechanic extends CharacterBase {
       isExcludeCannanball: true,
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, weapon } = input;
+        if (weapon.data?.typeName !== 'axe' && weapon.data?.typeName !== 'twohandAxe') return 0;
+
         const baseLevel = model.level;
         const weaponWeight = weapon?.data?.weight || 0;
 
@@ -149,35 +158,9 @@ export class Mechanic extends CharacterBase {
     },
     {
       name: 'Arm Cannon',
-      label: 'Arm Cannon',
+      label: 'Arm Cannon Lv5',
       value: 'Arm Cannon==5',
-      acd: 1,
-      fct: (lv) => ({ 1: 0.6, 2: 0.4, 3: 0.4, 4: 0.2, 5: 0.2 }[lv]),
-      vct: (lv) => 1.2 + lv * 0.2,
-      cd: (lv) => ({ 1: 0.15, 2: 0.2, 3: 0.3, 4: 0.45, 5: 0.65 }[lv]),
-      isHDefToSDef: true,
-      isHit100: true,
-      levelList: [
-        { label: 'Arm Cannon Lv1', value: 'Arm Cannon==1' },
-        { label: 'Arm Cannon Lv2', value: 'Arm Cannon==2' },
-        { label: 'Arm Cannon Lv3', value: 'Arm Cannon==3' },
-        { label: 'Arm Cannon Lv4', value: 'Arm Cannon==4' },
-        { label: 'Arm Cannon Lv5', value: 'Arm Cannon==5' },
-      ],
-      formula: (input: AtkSkillFormulaInput): number => {
-        const { skillLevel, model, monster } = input;
-        const baseLevel = model.level;
-        const monsterSize = monster.size;
-        const size = { s: 2, m: 1, l: 0 };
-        const additional = 50 * skillLevel * size[monsterSize];
-
-        return (additional + 300 + skillLevel * 300) * (baseLevel / 120);
-      },
-    },
-    {
-      name: 'Arm Cannon',
-      label: '[Improved] Arm Cannon Lv5',
-      value: '[Improved] Arm Cannon==5',
+      values: ['[Improved] Arm Cannon==5', 'Arm Cannon==1', 'Arm Cannon==2', 'Arm Cannon==3', 'Arm Cannon==4'],
       acd: 1,
       fct: 0.1,
       vct: 2,
@@ -194,25 +177,8 @@ export class Mechanic extends CharacterBase {
     {
       name: 'Power Swing',
       label: 'Power Swing Lv10',
-      value: 'Power Swing==10',
-      acd: 1,
-      fct: 0,
-      vct: 0,
-      cd: 0,
-      isMelee: true,
-      isExcludeCannanball: true,
-      formula: (input: AtkSkillFormulaInput): number => {
-        const { skillLevel, model, status } = input;
-        const baseLevel = model.level;
-        const { totalDex, totalStr } = status;
-
-        return 300 + skillLevel * 100 + (totalDex + totalStr) * (baseLevel / 120);
-      },
-    },
-    {
-      name: 'Power Swing',
-      label: '[Improved] Power Swing Lv10',
-      value: '[Improved] Power Swing==10',
+      value: 'Power Swing==1',
+      values: ['[Improved] Power Swing==10'],
       acd: 1,
       fct: 0,
       vct: 0,
@@ -228,7 +194,18 @@ export class Mechanic extends CharacterBase {
       },
     },
   ];
-  protected readonly _activeSkillList: ActiveSkillModel[] = [];
+  protected readonly _activeSkillList: ActiveSkillModel[] = [
+    {
+      label: 'On Magogear',
+      name: 'On Magogear',
+      inputType: 'selectButton',
+      dropdown: [
+        { label: 'Yes', value: 1, isUse: true },
+        { label: 'No', value: 0, isUse: false },
+      ],
+    },
+  ];
+
   protected readonly _passiveSkillList: PassiveSkillModel[] = [
     {
       label: 'Axe Mastery',
@@ -237,16 +214,16 @@ export class Mechanic extends CharacterBase {
       isMasteryAtk: true,
       dropdown: [
         { label: '-', value: 0, isUse: false },
-        { label: 'Lv 1', value: 1, isUse: true, bonus: { x_axe_atk: 5, axe_hit: 3, x_mace_atk: 4, mace_hit: 2 } },
-        { label: 'Lv 2', value: 2, isUse: true, bonus: { x_axe_atk: 10, axe_hit: 6, x_mace_atk: 8, mace_hit: 4 } },
-        { label: 'Lv 3', value: 3, isUse: true, bonus: { x_axe_atk: 15, axe_hit: 9, x_mace_atk: 12, mace_hit: 6 } },
-        { label: 'Lv 4', value: 4, isUse: true, bonus: { x_axe_atk: 20, axe_hit: 12, x_mace_atk: 16, mace_hit: 8 } },
-        { label: 'Lv 5', value: 5, isUse: true, bonus: { x_axe_atk: 25, axe_hit: 15, x_mace_atk: 20, mace_hit: 10 } },
-        { label: 'Lv 6', value: 6, isUse: true, bonus: { x_axe_atk: 30, axe_hit: 18, x_mace_atk: 24, mace_hit: 12 } },
-        { label: 'Lv 7', value: 7, isUse: true, bonus: { x_axe_atk: 35, axe_hit: 21, x_mace_atk: 28, mace_hit: 14 } },
-        { label: 'Lv 8', value: 8, isUse: true, bonus: { x_axe_atk: 40, axe_hit: 24, x_mace_atk: 32, mace_hit: 16 } },
-        { label: 'Lv 9', value: 9, isUse: true, bonus: { x_axe_atk: 45, axe_hit: 27, x_mace_atk: 36, mace_hit: 18 } },
-        { label: 'Lv 10', value: 10, isUse: true, bonus: { x_axe_atk: 50, axe_hit: 30, x_mace_atk: 40, mace_hit: 20 } },
+        { label: 'Lv 1', value: 1, isUse: true },
+        { label: 'Lv 2', value: 2, isUse: true },
+        { label: 'Lv 3', value: 3, isUse: true },
+        { label: 'Lv 4', value: 4, isUse: true },
+        { label: 'Lv 5', value: 5, isUse: true },
+        { label: 'Lv 6', value: 6, isUse: true },
+        { label: 'Lv 7', value: 7, isUse: true },
+        { label: 'Lv 8', value: 8, isUse: true },
+        { label: 'Lv 9', value: 9, isUse: true },
+        { label: 'Lv 10', value: 10, isUse: true },
       ],
     },
     {
@@ -377,6 +354,16 @@ export class Mechanic extends CharacterBase {
       sum += bonus[`x_atk_element_${element}`] || 0;
     }
 
+    if (this.isSkillActive('On Magogear')) {
+      sum += this.learnLv('Madogear License') * 15;
+    }
+
+    if (weaponType === 'axe' || weaponType === 'twohandAxe') {
+      sum += this.learnLv('Axe Mastery') * 5;
+    } else if (weaponType === 'mace' || weaponType === 'twohandMace') {
+      sum += this.learnLv('Axe Mastery') * 4;
+    }
+
     return sum;
   }
 
@@ -394,6 +381,13 @@ export class Mechanic extends CharacterBase {
           totalBonus[actualAttr] += value;
         }
       }
+    }
+
+    const weaponType = weapon?.data?.typeName;
+    if (weaponType === 'axe' || weaponType === 'twohandAxe') {
+      totalBonus.hit = (totalBonus.hit || 0) + this.learnLv('Axe Mastery') * 3;
+    } else if (weaponType === 'mace' || weaponType === 'twohandMace') {
+      totalBonus.hit = (totalBonus.hit || 0) + this.learnLv('Axe Mastery') * 2;
     }
 
     return totalBonus;
