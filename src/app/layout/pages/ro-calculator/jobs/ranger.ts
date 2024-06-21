@@ -107,22 +107,7 @@ export class Ranger extends CharacterBase {
       name: 'Arrow Storm',
       label: 'Arrow Storm Lv10',
       value: 'Arrow Storm==10',
-      acd: 0,
-      fct: 0,
-      vct: 2,
-      cd: 3.2,
-      hit: 3,
-      formula: (input: AtkSkillFormulaInput): number => {
-        const { model, skillLevel } = input;
-        const baseLevel = model.level;
-
-        return (1000 + 80 * skillLevel) * (baseLevel / 100);
-      },
-    },
-    {
-      name: 'Arrow Storm',
-      label: '[Improved] Arrow Storm Lv10',
-      value: '[Improved] Arrow Storm==10',
+      values: ['[Improved] Arrow Storm==10'],
       acd: 0,
       fct: 0.3,
       vct: 2,
@@ -140,23 +125,7 @@ export class Ranger extends CharacterBase {
       name: 'Focused Arrow Strike',
       label: 'Focused Arrow Lv5',
       value: 'Focused Arrow Strike==5',
-      acd: 0.5,
-      fct: 0.5,
-      vct: 0.5,
-      cd: 0.15,
-      canCri: true,
-      baseCri: 50,
-      formula: (input: AtkSkillFormulaInput): number => {
-        const { model, skillLevel } = input;
-        const baseLevel = model.level;
-
-        return (150 + skillLevel * 200) * (baseLevel / 100);
-      },
-    },
-    {
-      name: 'Focused Arrow Strike',
-      label: '[Improved] Focused Arrow Lv5',
-      value: '[Improved] Focused Arrow Strike==5',
+      values: ['[Improved] Focused Arrow Strike==5'],
       acd: 0.5,
       fct: 0.5,
       vct: 0.5,
@@ -175,35 +144,11 @@ export class Ranger extends CharacterBase {
       name: 'Aimed Bolt',
       label: 'Aimed Bolt Lv10',
       value: 'Aimed Bolt==10',
+      values: ['Aimed Bolt==10'],
       acd: 2,
       fct: 1,
       vct: 2,
       cd: 1,
-      totalHit: (monsterSize) => {
-        const map = {
-          s: 3,
-          m: 4,
-          l: 5,
-        } as const;
-
-        return map[monsterSize];
-      },
-      formula: (input: AtkSkillFormulaInput): number => {
-        const { model, skillLevel } = input;
-        const baseLevel = model.level;
-
-        return (500 + skillLevel * 20) * (baseLevel / 100);
-      },
-    },
-    {
-      name: 'Aimed Bolt',
-      label: '[Improved] Aimed Bolt Lv10',
-      value: '[Improved] Aimed Bolt==10',
-      acd: 2,
-      fct: 1,
-      vct: 2,
-      cd: 1,
-      totalHit: 5,
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
@@ -212,6 +157,9 @@ export class Ranger extends CharacterBase {
         }
 
         return (500 + skillLevel * 20) * (baseLevel / 100);
+      },
+      finalDmgFormula(input) {
+        return input.damage * 5;
       },
     },
   ];

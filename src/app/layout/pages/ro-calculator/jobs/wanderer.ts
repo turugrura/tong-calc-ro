@@ -146,11 +146,21 @@ export class Wanderer extends CharacterBase {
 
         return (skillLevel * 120 + lessonLv * 60) * (baseLevel / 100);
       },
+      finalDmgFormula(input) {
+        return input.damage * 2;
+      },
     },
     {
       name: 'Severe Rainstorm',
       label: 'Severe Rainstorm',
       value: 'Severe Rainstorm==5',
+      values: [
+        '[Improved] Severe Rainstorm==1',
+        '[Improved] Severe Rainstorm==2',
+        '[Improved] Severe Rainstorm==3',
+        '[Improved] Severe Rainstorm==4',
+        '[Improved] Severe Rainstorm==5',
+      ],
       acd: 1,
       fct: 0.5,
       vct: (lv) => 1 + lv * 0.5,
@@ -162,37 +172,6 @@ export class Wanderer extends CharacterBase {
         { label: 'Severe Rainstorm Lv3', value: 'Severe Rainstorm==3' },
         { label: 'Severe Rainstorm Lv4', value: 'Severe Rainstorm==4' },
         { label: 'Severe Rainstorm Lv5', value: 'Severe Rainstorm==5' },
-      ],
-      formula: (input: AtkSkillFormulaInput): number => {
-        const { weapon, status, skillLevel, model } = input;
-        const baseLevel = model.level;
-        const { totalDex, totalAgi } = status;
-        const weaType = weapon.data.typeName;
-        const weaMultiMap: Partial<Record<WeaponTypeName, number>> = {
-          bow: 1,
-          instrument: 1.5,
-          whip: 1.5,
-        };
-        const extra = weaMultiMap[weaType] || 0;
-
-        return extra * (totalDex + totalAgi) * (skillLevel / 5) * (baseLevel / 100);
-      },
-    },
-    {
-      name: 'Severe Rainstorm',
-      label: '[Improved] Severe Rainstorm',
-      value: '[Improved] Severe Rainstorm==5',
-      acd: 1,
-      fct: 0.5,
-      vct: (lv) => 1 + lv * 0.5,
-      cd: (lv) => 4.5 + lv * 0.5,
-      totalHit: 12,
-      levelList: [
-        { label: '[Improved] Severe Rainstorm Lv1', value: '[Improved] Severe Rainstorm==1' },
-        { label: '[Improved] Severe Rainstorm Lv2', value: '[Improved] Severe Rainstorm==2' },
-        { label: '[Improved] Severe Rainstorm Lv3', value: '[Improved] Severe Rainstorm==3' },
-        { label: '[Improved] Severe Rainstorm Lv4', value: '[Improved] Severe Rainstorm==4' },
-        { label: '[Improved] Severe Rainstorm Lv5', value: '[Improved] Severe Rainstorm==5' },
       ],
       formula: (input: AtkSkillFormulaInput): number => {
         const { weapon, status, skillLevel, model } = input;
