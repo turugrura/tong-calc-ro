@@ -21,6 +21,7 @@ export interface EquipmentSummaryModel {
   aspdPercent: number;
   skillAspd: number;
   skillAspdPercent: number;
+  decreaseSkillAspdPercent: number;
 
   atk: number;
   x_atk: number;

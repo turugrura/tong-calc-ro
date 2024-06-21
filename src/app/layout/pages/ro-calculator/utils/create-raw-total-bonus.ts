@@ -23,6 +23,7 @@ export const createRawTotalBonus = (): EquipmentSummaryModel => {
     aspdPercent: 0,
     skillAspd: 0,
     skillAspdPercent: 0,
+    decreaseSkillAspdPercent: 0,
 
     atk: 0,
     x_atk: 0,

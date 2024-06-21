@@ -6,7 +6,7 @@ export const SizePenaltyMapper: Record<WeaponTypeName, { s: number; m: number; l
   twohandSword: { s: 75, m: 75, l: 100 },
   axe: { s: 50, m: 75, l: 100 },
   twohandAxe: { s: 50, m: 75, l: 100 },
-  mace: { s: 100, m: 100, l: 100 },
+  mace: { s: 75, m: 100, l: 100 },
   twohandMace: { s: 100, m: 100, l: 100 },
   spear: { s: 75, m: 75, l: 100 },
   twohandSpear: { s: 75, m: 75, l: 100 },

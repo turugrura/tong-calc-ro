@@ -121,6 +121,7 @@ export interface AspdInput {
   potionAspdPercent: number;
   skillAspd: number;
   skillAspdPercent: number;
+  decreaseSkillAspdPercent: number;
 }
 
 export abstract class CharacterBase {
@@ -422,7 +423,7 @@ export abstract class CharacterBase {
     const potionSkillAspd = ((aspdByPotion + skillAspd) * totalAgi) / 200;
     const rawCalcAspd = Math.floor(statAspd + potionSkillAspd + (isEquipShield ? shieldPenalty : 0));
 
-    const baseAspd2 = baseAspd + leftWeapon + rawCalcAspd;
+    const baseAspd2 = Math.floor((baseAspd + leftWeapon + rawCalcAspd) * (100 - a.decreaseSkillAspdPercent) * 0.01);
     const equip = Math.floor((195 - baseAspd2) * (aspdPercent * 0.01));
     const final = Math.min(baseAspd2 + equip + aspd, 193);
 
@@ -487,6 +488,10 @@ export abstract class CharacterBase {
   }
 
   getAdditionalDmg(_: InfoForClass) {
+    return 0;
+  }
+
+  getAdditionalBasicDmg(_: InfoForClass) {
     return 0;
   }
 

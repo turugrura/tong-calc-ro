@@ -371,12 +371,13 @@ export class RoyalGuard extends CharacterBase {
 
     let sum = b.totalAtk + c.totalAtk;
     const spearMasteryLv = this.learnLv('Spear Mastery');
-    if (spearMasteryLv > 0 && this.isSkillActive('Ride Peco')) {
-      sum += spearMasteryLv;
+    if ((weaponType === 'spear' || weaponType === 'twohandSpear') && spearMasteryLv > 0) {
+      sum += spearMasteryLv * 4;
+      if (this.isSkillActive('Ride Peco')) sum += spearMasteryLv;
     }
 
     for (const [, bonus] of Object.entries(bonuses)) {
-      sum += bonus[`x_${weaponType}_atk`] || 0; // x_spear_atk
+      sum += bonus[`x_${weaponType}_atk`] || 0;
     }
 
     return sum;
@@ -398,11 +399,16 @@ export class RoyalGuard extends CharacterBase {
       }
     }
 
-    if (this.isSkillActive('Ride Peco') && typeName === 'spear') {
-      totalBonus['sizePenalty_m'] = 100;
+    if (this.isSkillActive('Ride Peco')) {
+      totalBonus.decreaseSkillAspdPercent =
+        (totalBonus.decreaseSkillAspdPercent || 0) + (50 - this.learnLv('Cavalier Mastery') * 10);
+
+      if (typeName === 'spear' || typeName === 'twohandSpear') {
+        totalBonus['sizePenalty_m'] = 100;
+      }
     }
 
-    if (this.isSkillActive('Spear Quicken') && (typeName === 'spear' || typeName === 'twohandSpear')) {
+    if (this.isSkillActive('Spear Quicken')) {
       totalBonus.cri = (totalBonus.cri || 0) + 30;
       totalBonus.flee = (totalBonus.flee || 0) + 20;
       totalBonus.skillAspd = (totalBonus.skillAspd || 0) + 7;

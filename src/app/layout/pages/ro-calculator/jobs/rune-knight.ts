@@ -95,89 +95,68 @@ export class RuneKnight extends CharacterBase {
     // {
     //   name: 'Clashing Spiral',
     //   label: 'Clashing Spiral Lv5',
-    //   value: 'Clashing Spiral==5',
+    //   value: 'Clashing Spiral==1',
     //   acd: 1,
     //   fct: 0.3,
     //   vct: 0.25,
     //   cd: 0,
+    //   hit: 5,
     //   formula: (input: AtkSkillFormulaInput): number => {
     //     const { model, skillLevel, monster, weapon } = input;
     //     const baseLevel = model.level;
-    //     const weaponWeight = weapon.data?.weight ?? 0
+    //     const weaponWeight = weapon.data?.weight || 1;
     //     const sizeModifier = {
-    //       'l': 1,
-    //       'm': 1.15,
-    //       's': 1.3,
-    //     }[monster.size]
+    //       l: 1,
+    //       m: 1.15,
+    //       s: 1.3,
+    //     }[monster.size];
 
-    //     return (ATK+weaponWeight*0.7*sizeModifier + masterAtk)*(150 + skillLevel * 50) * (baseLevel / 100);
+    //     return weaponWeight * 0.7 * sizeModifier * (150 + skillLevel * 50) * (baseLevel / 100);
+    //   },
+    //   finalDmgFormula(input) {
+    //     const { model, skillLevel, monster, weapon, statusAtk, equipmentAtk } = input;
+    //     const baseLevel = model.level;
+    //     const weaponWeight = weapon.data?.weight ?? 0;
+    //     const sizeModifier = {
+    //       l: 1,
+    //       m: 1.15,
+    //       s: 1.3,
+    //     }[monster.size];
+    //     const masterAtk = 0;
+
+    //     return (
+    //       (((floor(statusAtk * 0.9) + floor(equipmentAtk + weaponWeight) * 0.7 + masterAtk) *
+    //         floor(150 + skillLevel * 50)) /
+    //         100) *
+    //       (baseLevel / 100) *
+    //       5
+    //     );
     //   },
     // },
     {
       name: 'Sonic Wave',
       label: 'Sonic Wave Lv10',
       value: 'Sonic Wave==10',
-      acd: 1,
-      fct: 0,
-      vct: 0,
-      cd: 2,
-      canCri: true,
-      formula: (input: AtkSkillFormulaInput): number => {
-        const { model, skillLevel } = input;
-        const baseLevel = model.level;
-
-        return (500 + skillLevel * 100) * (baseLevel / 100);
-      },
-    },
-    {
-      name: 'Sonic Wave',
-      label: '[Improved 2nd] Sonic Wave Lv10',
-      value: '[Improved 2nd] Sonic Wave==10',
+      values: ['[Improved 2nd] Sonic Wave==10'],
       acd: 0.5,
       fct: 0,
       vct: 0,
       cd: 1.75,
       canCri: true,
       criDmgPercentage: 0.5,
+      hit: 3,
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
 
-        return (1050 + skillLevel * 150) * (baseLevel / 100);
+        return (1050 + skillLevel * 150) * (1 + (baseLevel - 100) / 100);
       },
     },
     {
       name: 'Wind Cutter',
       label: 'Wind Cutter Lv5',
       value: 'Wind Cutter==5',
-      values: ['Wind Cutter==10'],
-      acd: 1,
-      fct: 0,
-      vct: 0,
-      cd: 0.2,
-      isMelee: (weaponType) => weaponType !== 'spear' && weaponType !== 'twohandSpear',
-      formula: (input: AtkSkillFormulaInput): number => {
-        const { model, skillLevel, weapon } = input;
-        const wTypeName = weapon.data.typeName;
-        const baseLevel = model.level;
-
-        let baseDamage = 0;
-        if (wTypeName === 'twohandSword') {
-          baseDamage = 250 * skillLevel;
-        } else if (wTypeName === 'spear' || wTypeName === 'twohandSpear') {
-          baseDamage = 400 * skillLevel;
-        } else {
-          baseDamage = 300 * skillLevel;
-        }
-
-        return baseDamage * (baseLevel / 100);
-      },
-    },
-    {
-      name: 'Wind Cutter',
-      label: '[Improved 2nd] Wind Cutter Lv5',
-      value: '[Improved 2nd] Wind Cutter==5',
-      values: ['[Improved 2nd] Wind Cutter==10'],
+      values: ['Wind Cutter==10', '[Improved 2nd] Wind Cutter==5', '[Improved 2nd] Wind Cutter==10'],
       acd: 0.5,
       fct: 0,
       vct: 0,
@@ -190,7 +169,7 @@ export class RuneKnight extends CharacterBase {
 
         let baseDamage = 0;
         if (wTypeName === 'twohandSword') {
-          baseDamage = 250 * skillLevel;
+          baseDamage = 250 * skillLevel * 2;
         } else if (wTypeName === 'spear' || wTypeName === 'twohandSpear') {
           baseDamage = 400 * skillLevel;
         } else {
@@ -204,24 +183,7 @@ export class RuneKnight extends CharacterBase {
       name: 'Ignition Break',
       label: 'Ignition Break Lv5',
       value: 'Ignition Break==5',
-      acd: 0,
-      fct: 0,
-      vct: 1,
-      cd: 2,
-      isMelee: true,
-      canCri: true,
-      baseCriPercentage: 0.5,
-      formula: (input: AtkSkillFormulaInput): number => {
-        const { model, skillLevel } = input;
-        const baseLevel = model.level;
-
-        return skillLevel * 400 * (baseLevel / 100);
-      },
-    },
-    {
-      name: 'Ignition Break',
-      label: '[Improved 2nd] Ignition Break Lv5',
-      value: '[Improved 2nd] Ignition Break==5',
+      values: ['[Improved 2nd] Ignition Break==5'],
       acd: 0,
       fct: 0,
       vct: 1,
@@ -249,40 +211,16 @@ export class RuneKnight extends CharacterBase {
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
+        const clashingSpiralBonus = this.learnLv('Clashing Spiral') * 50;
 
-        return (600 + 200 * skillLevel) * (baseLevel / 100);
+        return (600 + 200 * skillLevel) * (baseLevel / 100) + clashingSpiralBonus;
       },
     },
     {
       name: 'Dragon Breath',
       label: 'Dragon Breath Lv10',
       value: 'Dragon Breath==10',
-      acd: 2,
-      fct: 0.5,
-      vct: 2,
-      cd: 0.2,
-      isHit100: true,
-      currentHpFn: (maxHp) => this.getCurrentHp(maxHp),
-      getElement: () => {
-        if (this.isSkillActive('Lux Anima Runestone')) {
-          return ElementType.Dark;
-        } else if (this.isSkillActive('Turisus Runestone')) {
-          return ElementType.Holy;
-        }
-
-        return ElementType.Fire;
-      },
-      formula: (input: AtkSkillFormulaInput): number => {
-        return this.calcDragonBreathFormula(input);
-      },
-      customFormula: (input): number => {
-        return this.calcPostSkillDamgeDragonBreath(input, 'Dragon Breath');
-      },
-    },
-    {
-      name: 'Dragon Breath',
-      label: '[Improved 2nd] Dragon Breath Lv10',
-      value: '[Improved 2nd] Dragon Breath==10',
+      values: ['[Improved 2nd] Dragon Breath==10'],
       acd: 2,
       fct: 0.5,
       vct: 2,
@@ -299,7 +237,7 @@ export class RuneKnight extends CharacterBase {
         return ElementType.Fire;
       },
       formula: (input: AtkSkillFormulaInput): number => {
-        return this.calcDragonBreathFormulaImproved(input);
+        return this.calcDragonBreathFormula(input);
       },
       customFormula: (input): number => {
         return this.calcPostSkillDamgeDragonBreath(input, 'Dragon Breath');
@@ -309,10 +247,11 @@ export class RuneKnight extends CharacterBase {
       name: 'Dragon Breath - WATER',
       label: 'Dragon Breath - WATER Lv10',
       value: 'Dragon Breath - WATER==10',
+      values: ['[Improved 2nd] Dragon Breath - WATER==10'],
       acd: 2,
       fct: 0.5,
       vct: 2,
-      cd: 0.2,
+      cd: 0,
       isHit100: true,
       currentHpFn: (maxHp) => this.getCurrentHp(maxHp),
       getElement: () => {
@@ -331,38 +270,12 @@ export class RuneKnight extends CharacterBase {
         return this.calcPostSkillDamgeDragonBreath(input, 'Dragon Breath - WATER');
       },
     },
-    {
-      name: 'Dragon Breath - WATER',
-      label: '[Improved 2nd] Dragon Breath - WATER Lv10',
-      value: '[Improved 2nd] Dragon Breath - WATER==10',
-      acd: 2,
-      fct: 0.5,
-      vct: 2,
-      cd: 0,
-      isHit100: true,
-      currentHpFn: (maxHp) => this.getCurrentHp(maxHp),
-      getElement: () => {
-        if (this.isSkillActive('Lux Anima Runestone')) {
-          return ElementType.Neutral;
-        } else if (this.isSkillActive('Asir Runestone')) {
-          return ElementType.Ghost;
-        }
-
-        return ElementType.Water;
-      },
-      formula: (input: AtkSkillFormulaInput): number => {
-        return this.calcDragonBreathFormulaImproved(input);
-      },
-      customFormula: (input): number => {
-        return this.calcPostSkillDamgeDragonBreath(input, 'Dragon Breath - WATER');
-      },
-    },
   ];
 
   protected readonly _activeSkillList: ActiveSkillModel[] = [
     {
-      label: 'Aura Blade 5',
       name: 'Aura Blade',
+      label: 'Aura Blade 5',
       inputType: 'selectButton',
       dropdown: [
         { label: 'Yes', value: 5, isUse: true },
@@ -370,8 +283,8 @@ export class RuneKnight extends CharacterBase {
       ],
     },
     {
-      label: 'Spear Dynamo 5',
       name: 'Spear Dynamo',
+      label: 'Spear Dynamo 5',
       inputType: 'selectButton',
       dropdown: [
         { label: 'Yes', value: 5, isUse: true, bonus: { atkPercent: 15, hit: 50, defPercent: -15 } },
@@ -379,8 +292,26 @@ export class RuneKnight extends CharacterBase {
       ],
     },
     {
-      label: 'Current HP',
+      name: 'Enchant Blade',
+      label: 'Enchant Blade 10',
+      inputType: 'selectButton',
+      dropdown: [
+        { label: 'Yes', value: 10, isUse: true },
+        { label: 'No', value: 0, isUse: false },
+      ],
+    },
+    {
+      name: 'Ride Dragon',
+      label: 'Ride Dragon',
+      inputType: 'selectButton',
+      dropdown: [
+        { label: 'Yes', value: 5, isUse: true },
+        { label: 'No', value: 0, isUse: false },
+      ],
+    },
+    {
       name: 'Current HP',
+      label: 'Current HP',
       inputType: 'dropdown',
       dropdown: [
         { label: '100 %', value: 0, isUse: false },
@@ -394,37 +325,36 @@ export class RuneKnight extends CharacterBase {
       ],
     },
     {
-      label: 'Rune: Turisus',
       name: 'Turisus Runestone',
-      inputType: 'dropdown',
+      label: 'Rune: Turisus',
+      inputType: 'selectButton',
       dropdown: [
-        { label: '-', value: 0, isUse: false },
-        { label: 'Active', value: 1, isUse: true, bonus: { flatBasicDmg: 250, str: 30, melee: 15 } },
+        { label: 'Yes', value: 1, isUse: true, bonus: { flatBasicDmg: 250, str: 30, melee: 15 } },
+        { label: 'No', value: 0, isUse: false },
       ],
     },
     {
-      label: 'Rune: Lux Anima',
       name: 'Lux Anima Runestone',
-      inputType: 'dropdown',
+      label: 'Rune: Lux Anima',
+      inputType: 'selectButton',
       dropdown: [
-        { label: '-', value: 0, isUse: false },
-        { label: 'Active', value: 1, isUse: true },
         {
-          label: 'Improved',
+          label: 'Yes',
           value: 2,
           isUse: true,
           bonus: { p_size_all: 30, criDmg: 30, melee: 30, range: 30, hpPercent: 30, spPercent: 30 },
         },
+        { label: 'No', value: 0, isUse: false },
       ],
     },
     {
-      label: 'Rune: Asir',
       name: 'Asir Runestone',
-      inputType: 'dropdown',
+      label: 'Rune: Asir',
+      inputType: 'selectButton',
       isMasteryAtk: true,
       dropdown: [
-        { label: '-', value: 0, isUse: false },
-        { label: 'Active', value: 1, isUse: true, bonus: { atk: 70 } },
+        { label: 'Yes', value: 1, isUse: true, bonus: { atk: 70 } },
+        { label: 'No', value: 0, isUse: false },
       ],
     },
   ];
@@ -578,8 +508,15 @@ export class RuneKnight extends CharacterBase {
     const bonuses = this.bonuses?.masteryAtks || {};
 
     let sum = 0;
+    const spearMasteryLv = this.learnLv('Spear Mastery');
+    if ((weaponType === 'spear' || weaponType === 'twohandSpear') && spearMasteryLv > 0) {
+      sum += spearMasteryLv * 4;
+      if (this.isSkillActive('Ride Dragon')) sum += spearMasteryLv;
+      if (this.learnLv('Dragon Training')) sum += spearMasteryLv * 10;
+    }
+
     for (const [, bonus] of Object.entries(bonuses)) {
-      sum += bonus[`x_${weaponType}_atk`] || 0; // x_spear_atk
+      sum += bonus[`x_${weaponType}_atk`] || 0;
     }
 
     return sum;
@@ -594,6 +531,23 @@ export class RuneKnight extends CharacterBase {
     }
 
     const wType = weapon.data?.typeName;
+    if (this.isSkillActive('Two hand Quicken') && wType === 'twohandSword') {
+      totalBonus.skillAspd = (totalBonus.skillAspd || 0) + 7;
+      totalBonus.aspdPercent = (totalBonus.aspdPercent || 0) + 10;
+      totalBonus.cri = (totalBonus.cri || 0) + 12;
+      totalBonus.hit = (totalBonus.hit || 0) + 20;
+    }
+
+    const isRideDragon = this.isSkillActive('Ride Dragon');
+    if (isRideDragon) {
+      totalBonus.decreaseSkillAspdPercent =
+        (totalBonus.decreaseSkillAspdPercent || 0) + (25 - this.learnLv('Dragon Training') * 5);
+
+      if (wType === 'spear' || wType === 'twohandSpear') {
+        totalBonus['ignore_size_penalty'] = 100;
+      }
+    }
+
     if (!wType) return totalBonus;
 
     const bonus = this.getDynimicBonusFromSkill(`${wType}_`);
@@ -615,19 +569,11 @@ export class RuneKnight extends CharacterBase {
   }
 
   private calcDragonBreathFormula(input: AtkSkillFormulaInput) {
-    const { model, skillLevel, maxSp, currentHp } = input;
-    const baseLevel = model.level;
-    const dragonTrainingLv = this.learnLv('Dragon Training');
-
-    return floor(currentHp / 50 + maxSp / 4) * ((skillLevel * baseLevel) / 150) * (95 + dragonTrainingLv * 5) * 0.01;
-  }
-
-  private calcDragonBreathFormulaImproved(input: AtkSkillFormulaInput) {
     const { model, skillLevel, currentHp, maxSp } = input;
     const baseLevel = model.level;
     const dragonTrainingLv = this.learnLv('Dragon Training');
 
-    return floor(currentHp / 50 + maxSp / 4) * ((skillLevel * baseLevel) / 100) * (90 + dragonTrainingLv * 10) * 0.01;
+    return (currentHp / 50 + maxSp / 4) * ((skillLevel * baseLevel) / 100) * (90 + dragonTrainingLv * 10) * 0.01;
   }
 
   private calcPostSkillDamgeDragonBreath(
@@ -651,6 +597,14 @@ export class RuneKnight extends CharacterBase {
   override getAdditionalDmg(info: InfoForClass): number {
     if (this.isSkillActive('Aura Blade')) {
       return info.model.level * 8;
+    }
+
+    return 0;
+  }
+
+  override getAdditionalBasicDmg(info: InfoForClass): number {
+    if (this.isSkillActive('Enchant Blade')) {
+      return 300 * (info.model.level / 100) + info.status.totalInt + info.totalBonus.matk;
     }
 
     return 0;

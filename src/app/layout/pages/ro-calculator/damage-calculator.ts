@@ -308,6 +308,7 @@ export class DamageCalculator {
       isEquipShield: this.model.shield > 0,
       aspd: this.totalBonus.aspd,
       aspdPercent: this.totalBonus.aspdPercent,
+      decreaseSkillAspdPercent: this.totalBonus.decreaseSkillAspdPercent,
     });
 
     const hitsPerSec = floor(50 / (200 - totalAspd));
@@ -782,7 +783,7 @@ export class DamageCalculator {
       skill: skillData,
     });
 
-    const rawMinNoCri = canCri ? skillFormula(totalMax, false) + extraDmgCri : 0;
+    const rawMinNoCri = canCri ? skillFormula(totalMin, false) + extraDmgCri : 0;
     const rawMaxNoCri = canCri ? skillFormula(totalMaxOver, false) + extraDmgCri : 0;
 
     return {
@@ -951,15 +952,18 @@ export class DamageCalculator {
     const darkClawMultiplier = (100 + this.getDarkClawBonus(isRangeType ? 'range' : 'melee')) / 100;
     const raidMultiplier = this.getRaidMultiplier();
     const dmgMultiplier = this.toPercent(dmg + this.getFlatDmg('basicAtk') + 100);
+    const extraDmg = this._class.getAdditionalDmg(this.infoForClass);
+    const extraBasicDmg = this._class.getAdditionalBasicDmg(this.infoForClass);
+
     const { finalDmgReduction, finalSoftDef } = this.getPhisicalDefData();
     const hardDef = finalDmgReduction;
     const softDef = finalSoftDef;
 
-    const formula = (totalAtk: number) => {
+    const formula = (totalAtk: number, isCalcDef = true) => {
       let total = floor(totalAtk * rangedMultiplier);
       total = floor(total * dmgMultiplier);
-      total = floor(total * hardDef);
-      total = total - softDef;
+      if (isCalcDef) total = floor(total * hardDef);
+      if (isCalcDef) total = total - softDef;
       total = floor(total * darkClawMultiplier);
       total = floor(total * advKatarMultiplier);
       total = floor(total * raidMultiplier);
@@ -967,8 +971,8 @@ export class DamageCalculator {
       return this.toPreventNegativeDmg(total);
     };
 
-    const basicMinDamage = formula(totalMin);
-    const basicMaxDamage = formula(totalMax);
+    const basicMinDamage = formula(totalMin + extraDmg + extraBasicDmg);
+    const basicMaxDamage = formula(totalMax + extraDmg + extraBasicDmg);
 
     return { basicMinDamage, basicMaxDamage };
   }
@@ -985,18 +989,20 @@ export class DamageCalculator {
     const raidMultiplier = this.getRaidMultiplier();
     const rangedMultiplier = this.toPercent(rangedDmg + 100);
     const dmgMultiplier = this.toPercent(dmg + this.getFlatDmg('basicAtk') + 100);
+    const extraDmg = this._class.getAdditionalDmg(this.infoForClass) * this.BASE_CRI_MULTIPLIER;
+    const extraBasic = this._class.getAdditionalBasicDmg(this.infoForClass);
 
     const { finalDmgReduction, finalSoftDef } = this.getPhisicalDefData();
     const hardDef = finalDmgReduction;
     const softDef = finalSoftDef;
 
-    const formula = (totalAtk: number) => {
+    const formula = (totalAtk: number, isCalcDef = true) => {
       let total = floor(totalAtk * bonusCriDmgMultiplier);
       total = floor(total * rangedMultiplier);
-      total = total * dmgMultiplier;
+      if (isCalcDef) total = total * dmgMultiplier;
       total = floor(total * hardDef);
       total = floor(total * advKatarMultiplier);
-      total = total - softDef;
+      if (isCalcDef) total = total - softDef;
       total = floor(total * this.BASE_CRI_MULTIPLIER);
       total = floor(total * darkClawMultiplier);
       total = floor(total * raidMultiplier);
@@ -1004,8 +1010,8 @@ export class DamageCalculator {
       return this.toPreventNegativeDmg(total);
     };
 
-    const criMinDamage = formula(totalMaxAtk);
-    const criMaxDamage = formula(totalMaxAtkOver);
+    const criMinDamage = formula(totalMaxAtk) + extraDmg + formula(extraBasic, false);
+    const criMaxDamage = formula(totalMaxAtkOver) + extraDmg + formula(extraBasic, false);
 
     return { criMinDamage, criMaxDamage, sizePenalty: 100 };
   }

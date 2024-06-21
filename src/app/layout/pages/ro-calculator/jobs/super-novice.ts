@@ -524,6 +524,11 @@ export class SuperNovice extends CharacterBase {
     const c = this.getMasteryAtkByMonsterElement(info.monster.element);
 
     let sum = a.totalAtk + b.totalAtk + c.totalAtk;
+    const spearMasteryLv = this.learnLv('Spear Mastery');
+    if ((weaponType === 'spear' || weaponType === 'twohandSpear') && spearMasteryLv > 0) {
+      sum += spearMasteryLv * 4;
+    }
+
     for (const [, bonus] of Object.entries(bonuses)) {
       sum += bonus[`x_${weaponType}_atk`] || 0; // x_spear_atk
     }

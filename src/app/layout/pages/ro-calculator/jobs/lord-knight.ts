@@ -19,13 +19,7 @@ export class LordKnight extends CharacterBase {
       name: 'Two hand Quicken',
       inputType: 'selectButton',
       dropdown: [
-        {
-          label: 'Yes',
-          value: 10,
-          skillLv: 10,
-          isUse: true,
-          bonus: { twohandSword_skillAspd: 7, twohandSword_cri: 12, twohandSword_hit: 20 },
-        },
+        { label: 'Yes', value: 10, skillLv: 10, isUse: true },
         { label: 'No', value: 0, isUse: false },
       ],
     },
