@@ -62,7 +62,7 @@ export class Paladin extends CharacterBase {
       inputType: 'selectButton',
       isMasteryAtk: true,
       dropdown: [
-        { label: 'Yes', value: 10, isUse: true, bonus: { spear_skillAspd: 7, cri: 30 } },
+        { label: 'Yes', value: 10, isUse: true },
         { label: 'No', value: 0, isUse: false },
       ],
     },

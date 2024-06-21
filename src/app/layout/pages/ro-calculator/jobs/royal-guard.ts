@@ -95,6 +95,7 @@ export class RoyalGuard extends CharacterBase {
       name: 'Banishing Point',
       label: 'Banishing Point Lv10',
       value: 'Banishing Point==10',
+      values: ['[Improved] Banishing Point==10'],
       acd: 0,
       fct: 0,
       vct: 0,
@@ -102,54 +103,21 @@ export class RoyalGuard extends CharacterBase {
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
-        const learnedBashLv = this.learnLv('Bash') || 0;
-        const bonus = learnedBashLv * 30;
+        const bashBonus = this.learnLv('Bash') * 50;
 
-        return (bonus + skillLevel * 50) * (baseLevel / 100);
-      },
-    },
-    {
-      name: 'Banishing Point',
-      label: '[Improved] Banishing Point Lv10',
-      value: '[Improved] Banishing Point==10',
-      acd: 0,
-      fct: 0,
-      vct: 0,
-      cd: 0,
-      formula: (input: AtkSkillFormulaInput): number => {
-        const { model, skillLevel } = input;
-        const baseLevel = model.level;
-        const learnedBashLv = this.learnLv('Bash') || 0;
-        const bonus = learnedBashLv * 50;
-
-        return (bonus + skillLevel * 80) * (baseLevel / 100);
+        return (bashBonus + skillLevel * 80) * (baseLevel / 100);
       },
     },
     {
       name: 'Genesis Ray',
       label: 'Genesis Ray Lv10',
       value: 'Genesis Ray==10',
-      acd: 1,
-      fct: 0.5,
-      vct: 6,
-      cd: 2,
-      isMatk: true,
-      element: ElementType.Holy,
-      formula: (input: AtkSkillFormulaInput): number => {
-        const { model, skillLevel } = input;
-        const baseLevel = model.level;
-
-        return skillLevel * 200 * (baseLevel / 100);
-      },
-    },
-    {
-      name: 'Genesis Ray',
-      label: '[Improved] Genesis Ray Lv10',
-      value: '[Improved] Genesis Ray==10',
+      values: ['[Improved] Genesis Ray==10'],
       acd: 1,
       fct: 0.5,
       vct: 6.5,
       cd: 2,
+      hit: 7,
       isMatk: true,
       getElement: () => {
         if (this.isSkillActive('Inspiration')) return ElementType.Neutral;
@@ -160,45 +128,24 @@ export class RoyalGuard extends CharacterBase {
         const { model, skillLevel, status } = input;
         const baseLevel = model.level;
         const totalInt = status.totalInt;
-        const bonus = this.isSkillActive('Inspiration') ? 70 * skillLevel : 0;
+        if (this.isSkillActive('Inspiration')) {
+          return (skillLevel * 300 + totalInt * 3) * (baseLevel / 100);
+        }
 
-        return (skillLevel * 230 + bonus + totalInt * 2) * (baseLevel / 100);
+        return (skillLevel * 230 + totalInt * 2) * (baseLevel / 100);
       },
     },
     {
       name: 'Over Brand',
       label: 'Over Brand Lv5',
       value: 'Over Brand==5',
-      acd: 2,
-      fct: 0,
-      vct: 0.5,
-      cd: 0,
-      isMelee: true,
-      formula: (input: AtkSkillFormulaInput): number => {
-        const { model, skillLevel } = input;
-        const baseLevel = model.level;
-        const bonusLevel = baseLevel / 100;
-
-        const spearQuicBonus = 50 * (this.bonuses.learnedSkillMap.get('Spear Quicken') || 0);
-        const pierceDmg = Math.floor((skillLevel * 200 + spearQuicBonus) * bonusLevel);
-
-        const {
-          status: { totalStr, totalDex },
-        } = input;
-        const swingDmg = Math.floor((skillLevel * 100 + totalStr + totalDex) * bonusLevel);
-
-        return pierceDmg + swingDmg;
-      },
-    },
-    {
-      name: 'Over Brand',
-      label: '[Improved] Over Brand Lv5',
-      value: '[Improved] Over Brand==5',
+      values: ['[Improved] Over Brand==5'],
       acd: 1,
       fct: 0.5,
       vct: 0,
       cd: 0.3,
       isMelee: true,
+      hit: 3,
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
         const baseLevel = model.level;
@@ -231,22 +178,7 @@ export class RoyalGuard extends CharacterBase {
       name: 'Cannon Spear',
       label: 'Cannon Spear Lv5',
       value: 'Cannon Spear==5',
-      acd: 0,
-      fct: 0,
-      vct: 0,
-      cd: 2,
-      formula: (input: AtkSkillFormulaInput): number => {
-        const { model, skillLevel, status } = input;
-        const baseLevel = model.level;
-        const { totalStr } = status;
-
-        return (totalStr * skillLevel + skillLevel * 50) * (baseLevel / 100);
-      },
-    },
-    {
-      name: 'Cannon Spear',
-      label: '[Improved] Cannon Spear Lv5',
-      value: '[Improved] Cannon Spear==5',
+      values: ['[Improved] Cannon Spear==5'],
       acd: 0,
       fct: 0,
       vct: 0,
@@ -266,25 +198,7 @@ export class RoyalGuard extends CharacterBase {
       name: 'Earth Drive',
       label: 'Earth Drive Lv5',
       value: 'Earth Drive==5',
-      acd: 1,
-      fct: 0,
-      vct: 1,
-      cd: 3,
-      isMelee: true,
-      hit: 5,
-      element: ElementType.Earth,
-      formula: (input: AtkSkillFormulaInput): number => {
-        const { model, skillLevel, equipmentBonus } = input;
-        const baseLevel = model.level;
-        const shieldWeight = equipmentBonus.shield?.weight || 0;
-
-        return shieldWeight * (skillLevel + 1) * (baseLevel / 100);
-      },
-    },
-    {
-      name: 'Earth Drive',
-      label: '[Improved] Earth Drive Lv5',
-      value: '[Improved] Earth Drive==5',
+      values: ['[Improved] Earth Drive==5'],
       acd: 1,
       fct: 0,
       vct: 1,
@@ -297,6 +211,24 @@ export class RoyalGuard extends CharacterBase {
         const { totalVit, totalStr } = status;
 
         return (totalVit + totalStr + skillLevel * 380) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Moon Slasher',
+      label: 'Moon Slasher Lv5',
+      value: 'Moon Slasher==5',
+      acd: 1,
+      fct: 0,
+      vct: 1,
+      cd: 2,
+      isMelee: true,
+      hit: 5,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
+        const overbrandLv = this.learnLv('Over Brand');
+
+        return (120 * skillLevel + overbrandLv * 80) * (baseLevel / 100);
       },
     },
   ];
@@ -323,10 +255,10 @@ export class RoyalGuard extends CharacterBase {
       ],
     },
     {
-      label: '[Imp] Inspiration 5',
+      label: 'Inspiration 5',
       name: 'Inspiration',
       inputType: 'selectButton',
-      isMasteryAtk: true,
+      isEquipAtk: true,
       dropdown: [
         {
           label: 'Yes',
@@ -468,6 +400,13 @@ export class RoyalGuard extends CharacterBase {
 
     if (this.isSkillActive('Ride Peco') && typeName === 'spear') {
       totalBonus['sizePenalty_m'] = 100;
+    }
+
+    if (this.isSkillActive('Spear Quicken') && (typeName === 'spear' || typeName === 'twohandSpear')) {
+      totalBonus.cri = (totalBonus.cri || 0) + 30;
+      totalBonus.flee = (totalBonus.flee || 0) + 20;
+      totalBonus.skillAspd = (totalBonus.skillAspd || 0) + 7;
+      totalBonus.aspdPercent = (totalBonus.aspdPercent || 0) + 10;
     }
 
     return totalBonus;
