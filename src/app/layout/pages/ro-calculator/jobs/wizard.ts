@@ -1,12 +1,6 @@
 import { ElementType } from '../constants/element-type.const';
 import { ClassName } from './_class-name';
-import {
-  ActiveSkillModel,
-  AtkSkillFormulaInput,
-  AtkSkillModel,
-  CharacterBase,
-  PassiveSkillModel,
-} from './_character-base.abstract';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
 import { Mage } from './mage';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {};
@@ -115,33 +109,28 @@ export class Wizard extends CharacterBase {
       cd: 5,
       isMatk: true,
       element: ElementType.Neutral,
-      totalHit: 18,
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
 
-        return skillLevel * 50 * (baseLevel / 100);
+        return skillLevel * 100 * (baseLevel / 100);
+      },
+      finalDmgFormula(input) {
+        const totalHit = input.skillLevel * 2;
+
+        return input.damage * totalHit;
       },
     },
   ];
   protected _activeSkillList: ActiveSkillModel[] = [
     {
-      inputType: 'dropdown',
-      label: 'Mystical Amp',
+      inputType: 'selectButton',
+      label: 'Mystical Amp 10',
       name: 'Mystical Amplification',
       isEquipAtk: true,
       dropdown: [
-        { label: '-', isUse: false, value: 0 },
-        { label: 'Lv 1', isUse: true, value: 1, bonus: { mysticAmp: 5 } },
-        { label: 'Lv 2', isUse: true, value: 2, bonus: { mysticAmp: 10 } },
-        { label: 'Lv 3', isUse: true, value: 3, bonus: { mysticAmp: 15 } },
-        { label: 'Lv 4', isUse: true, value: 4, bonus: { mysticAmp: 20 } },
-        { label: 'Lv 5', isUse: true, value: 5, bonus: { mysticAmp: 25 } },
-        { label: 'Lv 6', isUse: true, value: 6, bonus: { mysticAmp: 30 } },
-        { label: 'Lv 7', isUse: true, value: 7, bonus: { mysticAmp: 35 } },
-        { label: 'Lv 8', isUse: true, value: 8, bonus: { mysticAmp: 40 } },
-        { label: 'Lv 9', isUse: true, value: 9, bonus: { mysticAmp: 45 } },
-        { label: 'Lv 10', isUse: true, value: 10, bonus: { mysticAmp: 50 } },
+        { label: 'Yes', isUse: true, value: 10, bonus: { mysticAmp: 50 } },
+        { label: 'No', isUse: false, value: 0 },
       ],
     },
   ];

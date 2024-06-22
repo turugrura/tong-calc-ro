@@ -1,12 +1,6 @@
 import { ElementType } from '../constants/element-type.const';
 import { ClassName } from './_class-name';
-import {
-  ActiveSkillModel,
-  AtkSkillFormulaInput,
-  AtkSkillModel,
-  CharacterBase,
-  PassiveSkillModel,
-} from './_character-base.abstract';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
 import { Wizard } from './wizard';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
@@ -90,8 +84,8 @@ export class Warlock extends CharacterBase {
   protected classNames = ['Warlock', 'Warlock Class', 'Warlock Cls', 'Only 3rd Cls'];
   protected _atkSkillList: AtkSkillModel[] = [
     {
-      label: 'Comet Lv5',
       name: 'Comet',
+      label: 'Comet Lv5',
       value: 'Comet==5',
       acd: 1.5,
       fct: 2,
@@ -104,12 +98,12 @@ export class Warlock extends CharacterBase {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
 
-        return (1500 + skillLevel * 700) * (baseLevel / 100);
+        return (2500 + skillLevel * 700) * (baseLevel / 100);
       },
     },
     {
-      label: 'Crimson Rock Lv5',
       name: 'Crimson Rock',
+      label: 'Crimson Rock Lv5',
       value: 'Crimson Rock==5',
       fct: 1,
       vct: 5,
@@ -126,8 +120,8 @@ export class Warlock extends CharacterBase {
       },
     },
     {
-      label: 'Jack Frost Lv5',
       name: 'Jack Frost',
+      label: 'Jack Frost Lv5',
       value: 'Jack Frost==5',
       acd: 1,
       fct: 1,
@@ -139,13 +133,12 @@ export class Warlock extends CharacterBase {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
 
-        // return (1200 + skillLevel * 600) * (baseLevel / 100); -- Frost
         return (1000 + skillLevel * 300) * (baseLevel / 100);
       },
     },
     {
-      label: 'Jack Frost Lv5 (in Frost)',
       name: 'Jack Frost',
+      label: 'Jack Frost Lv5 (in Frost)',
       value: 'Jack Frost Frost==5',
       acd: 1,
       fct: 1,
@@ -161,8 +154,8 @@ export class Warlock extends CharacterBase {
       },
     },
     {
-      label: 'Soul Expansion Lv5',
       name: 'Soul Expansion',
+      label: 'Soul Expansion Lv5',
       value: 'Soul Expansion==5',
       acd: 0.5,
       fct: 0,
@@ -175,12 +168,12 @@ export class Warlock extends CharacterBase {
         const { model, skillLevel, status } = input;
         const baseLevel = model.level;
 
-        return (status.totalInt + 750 + skillLevel * 150) * (baseLevel / 100);
+        return (1000 + skillLevel * 200 + status.totalInt) * (baseLevel / 100);
       },
     },
     {
-      label: 'Chain Lightning Lv5',
       name: 'Chain Lightning',
+      label: 'Chain Lightning Lv5',
       value: 'Chain Lightning==5',
       acd: 3,
       fct: 1,
@@ -197,8 +190,8 @@ export class Warlock extends CharacterBase {
       },
     },
     {
-      label: 'Earth Strain Lv5',
       name: 'Earth Strain',
+      label: 'Earth Strain Lv5',
       value: 'Earth Strain==5',
       acd: 1,
       fct: 1,
@@ -215,8 +208,8 @@ export class Warlock extends CharacterBase {
       },
     },
     {
-      label: 'Frost Misty Lv5',
       name: 'Frost Misty',
+      label: 'Frost Misty Lv5',
       value: 'Frost Misty==5',
       acd: 1,
       fct: 0.5,
@@ -233,15 +226,15 @@ export class Warlock extends CharacterBase {
       },
     },
     {
-      label: 'Hell Inferno Lv5',
       name: 'Hell Inferno',
+      label: 'Hell Inferno Lv5',
+      value: 'Hell Inferno==5',
       fct: 1,
       vct: 3,
       acd: 0.5,
       cd: 3,
       isMatk: true,
       element: ElementType.Fire,
-      value: 'Hell Inferno==5',
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
@@ -264,8 +257,8 @@ export class Warlock extends CharacterBase {
       },
     },
     {
-      label: 'Drain Life Lv5',
       name: 'Drain Life',
+      label: 'Drain Life Lv5',
       value: 'Drain Life==5',
       acd: 0,
       fct: 1,
