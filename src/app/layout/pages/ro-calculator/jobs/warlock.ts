@@ -273,6 +273,26 @@ export class Warlock extends CharacterBase {
         return (skillLevel * 200 + status.totalInt) * (baseLevel / 100);
       },
     },
+    // {
+    //   name: 'Tetra Vortex',
+    //   label: 'Tetra Vortex Lv10',
+    //   value: 'Tetra Vortex==10',
+    //   acd: 0,
+    //   fct: 1,
+    //   vct: 14,
+    //   cd: 15,
+    //   isMatk: true,
+    //   // getElement(skillValue) {
+
+    //   // },
+    //   totalHit: 4,
+    //   formula: (input: AtkSkillFormulaInput): number => {
+    //     const { model, skillLevel } = input;
+    //     const baseLevel = model.level;
+
+    //     return 800 + skillLevel * 400;
+    //   },
+    // },
   ];
   protected _activeSkillList: ActiveSkillModel[] = [
     {

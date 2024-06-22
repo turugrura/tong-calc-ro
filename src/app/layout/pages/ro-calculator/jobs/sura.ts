@@ -100,7 +100,7 @@ export class Sura extends CharacterBase {
     {
       name: 'Dragon Combo',
       label: 'Dragon Combo Lv10',
-      value: 'Dragon Combo==3',
+      value: 'Dragon Combo==10',
       fct: 0,
       vct: 0,
       acd: 1,
@@ -117,7 +117,7 @@ export class Sura extends CharacterBase {
     {
       name: 'Fallen Empire',
       label: 'Fallen Empire Lv10',
-      value: 'Fallen Empire==3',
+      value: 'Fallen Empire==10',
       fct: 0,
       vct: 0,
       acd: 1,
@@ -158,7 +158,7 @@ export class Sura extends CharacterBase {
     {
       name: 'Lion Howling',
       label: 'Lion Howling Lv5',
-      value: 'Lion Howling==1',
+      value: 'Lion Howling==5',
       fct: 0,
       vct: 0,
       acd: 1,
@@ -174,7 +174,7 @@ export class Sura extends CharacterBase {
     {
       name: 'Sky Blow',
       label: 'Sky Blow Lv5',
-      value: 'Sky Blow==1',
+      value: 'Sky Blow==5',
       values: ['[Improved] Sky Blow==5'],
       fct: 0,
       vct: 0,
@@ -208,7 +208,7 @@ export class Sura extends CharacterBase {
     {
       name: 'Rampage Blast',
       label: 'Rampage Blast Lv5',
-      value: 'Rampage Blast==1',
+      value: 'Rampage Blast==5',
       fct: 0,
       vct: 0,
       acd: 1,
@@ -231,7 +231,7 @@ export class Sura extends CharacterBase {
     {
       name: 'Tiger Cannon',
       label: 'Tiger Cannon Lv10',
-      value: 'Tiger Cannon==5',
+      value: 'Tiger Cannon==10',
       fct: 0,
       vct: 2,
       acd: 1,
