@@ -1,11 +1,5 @@
 import { ClassName } from './_class-name';
-import {
-  ActiveSkillModel,
-  AtkSkillFormulaInput,
-  AtkSkillModel,
-  CharacterBase,
-  PassiveSkillModel,
-} from './_character-base.abstract';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
 import { Acolyte } from './acolyte';
 import { InfoForClass } from '../models/info-for-class.model';
 import { floor } from '../utils';
@@ -104,29 +98,89 @@ export class Sura extends CharacterBase {
   ];
   protected readonly _atkSkillList: AtkSkillModel[] = [
     {
-      name: 'Sky Blow',
-      label: 'Sky Blow Lv5',
-      value: 'Sky Blow==5',
+      name: 'Dragon Combo',
+      label: 'Dragon Combo Lv10',
+      value: 'Dragon Combo==3',
       fct: 0,
       vct: 0,
-      acd: 0.5,
+      acd: 1,
+      cd: 0,
+      hit: 2,
+      isMelee: true,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
+
+        return (100 + skillLevel * 80) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Fallen Empire',
+      label: 'Fallen Empire Lv10',
+      value: 'Fallen Empire==3',
+      fct: 0,
+      vct: 0,
+      acd: 1,
+      cd: 0,
+      hit: 2,
+      isMelee: true,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const {
+          model,
+          skillLevel,
+          status: { totalStr },
+        } = input;
+        const baseLevel = model.level;
+
+        return (100 + skillLevel * 300) * (baseLevel / 100) + totalStr * 100;
+      },
+    },
+    // {
+    //   name: 'Flash Combo',
+    //   label: 'Flash Combo Lv5',
+    //   value: 'Flash Combo==1',
+    //   fct: 0,
+    //   vct: 0,
+    //   acd: 1,
+    //   cd: 3,
+    //   isMelee: true,
+    //   formula: (input: AtkSkillFormulaInput): number => {
+    //     const {
+    //       model,
+    //       skillLevel,
+    //       status: { totalStr },
+    //     } = input;
+    //     const baseLevel = model.level;
+
+    //     return (100 + skillLevel * 300) * (baseLevel / 100) + totalStr * 100;
+    //   },
+    // },
+    {
+      name: 'Lion Howling',
+      label: 'Lion Howling Lv5',
+      value: 'Lion Howling==1',
+      fct: 0,
+      vct: 0,
+      acd: 1,
       cd: 0,
       isMelee: true,
       formula: (input: AtkSkillFormulaInput): number => {
-        const { model, skillLevel, status } = input;
+        const { model, skillLevel } = input;
         const baseLevel = model.level;
 
-        return (skillLevel * 80 + status.totalAgi) * (baseLevel / 100);
+        return skillLevel * 500 * (baseLevel / 100);
       },
     },
     {
       name: 'Sky Blow',
-      label: '[Improved] Sky Blow Lv5',
-      value: '[Improved] Sky Blow==5',
+      label: 'Sky Blow Lv5',
+      value: 'Sky Blow==1',
+      values: ['[Improved] Sky Blow==5'],
       fct: 0,
       vct: 0,
       acd: 0.5,
       cd: 0,
+      hit: 3,
       isMelee: true,
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
@@ -136,9 +190,25 @@ export class Sura extends CharacterBase {
       },
     },
     {
+      name: 'Earth Shaker',
+      label: 'Earth Shaker Lv5',
+      value: 'Earth Shaker==5',
+      fct: 0,
+      vct: 0,
+      acd: 0,
+      cd: 3,
+      isMelee: true,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const baseLevel = model.level;
+
+        return skillLevel * 300 * (baseLevel / 100) + status.totalStr * 3;
+      },
+    },
+    {
       name: 'Rampage Blast',
       label: 'Rampage Blast Lv5',
-      value: 'Rampage Blast==5',
+      value: 'Rampage Blast==1',
       fct: 0,
       vct: 0,
       acd: 1,
@@ -161,7 +231,7 @@ export class Sura extends CharacterBase {
     {
       name: 'Tiger Cannon',
       label: 'Tiger Cannon Lv10',
-      value: 'Tiger Cannon==10',
+      value: 'Tiger Cannon==5',
       fct: 0,
       vct: 2,
       acd: 1,
@@ -344,16 +414,16 @@ export class Sura extends CharacterBase {
       inputType: 'dropdown',
       dropdown: [
         { label: '-', value: 0, isUse: false },
-        { label: 'Lv 1', value: 1, isUse: true, bonus: { hpPercent: 1 + 2, spPercent: 1 + 2 } },
-        { label: 'Lv 2', value: 2, isUse: true, bonus: { hpPercent: 2 + 2, spPercent: 2 + 2 } },
-        { label: 'Lv 3', value: 3, isUse: true, bonus: { hpPercent: 3 + 2, spPercent: 3 + 2 } },
-        { label: 'Lv 4', value: 4, isUse: true, bonus: { hpPercent: 4 + 2, spPercent: 4 + 2 } },
-        { label: 'Lv 5', value: 5, isUse: true, bonus: { hpPercent: 5 + 2, spPercent: 5 + 2 } },
-        { label: 'Lv 6', value: 6, isUse: true, bonus: { hpPercent: 6 + 2, spPercent: 6 + 2 } },
-        { label: 'Lv 7', value: 7, isUse: true, bonus: { hpPercent: 7 + 2, spPercent: 7 + 2 } },
-        { label: 'Lv 8', value: 8, isUse: true, bonus: { hpPercent: 8 + 2, spPercent: 8 + 2 } },
-        { label: 'Lv 9', value: 9, isUse: true, bonus: { hpPercent: 9 + 2, spPercent: 9 + 2 } },
-        { label: 'Lv 10', value: 10, isUse: true, bonus: { hpPercent: 10 + 2, spPercent: 10 + 2 } },
+        { label: 'Lv 1', value: 1, isUse: true, bonus: { hpPercent: 1, spPercent: 1 } },
+        { label: 'Lv 2', value: 2, isUse: true, bonus: { hpPercent: 2, spPercent: 2 } },
+        { label: 'Lv 3', value: 3, isUse: true, bonus: { hpPercent: 3, spPercent: 3 } },
+        { label: 'Lv 4', value: 4, isUse: true, bonus: { hpPercent: 4, spPercent: 4 } },
+        { label: 'Lv 5', value: 5, isUse: true, bonus: { hpPercent: 5, spPercent: 5 } },
+        { label: 'Lv 6', value: 6, isUse: true, bonus: { hpPercent: 6, spPercent: 6 } },
+        { label: 'Lv 7', value: 7, isUse: true, bonus: { hpPercent: 7, spPercent: 7 } },
+        { label: 'Lv 8', value: 8, isUse: true, bonus: { hpPercent: 8, spPercent: 8 } },
+        { label: 'Lv 9', value: 9, isUse: true, bonus: { hpPercent: 9, spPercent: 9 } },
+        { label: 'Lv 10', value: 10, isUse: true, bonus: { hpPercent: 10, spPercent: 10 } },
       ],
     },
     {
@@ -428,6 +498,8 @@ export class Sura extends CharacterBase {
         { label: '3', value: 3, isUse: true, bonus: { atk: 3 * 3 } },
         { label: '4', value: 4, isUse: true, bonus: { atk: 4 * 3 } },
         { label: '5', value: 5, isUse: true, bonus: { atk: 5 * 3 } },
+        { label: '10', value: 10, isUse: true, bonus: { atk: 10 * 3 } },
+        { label: '15', value: 15, isUse: true, bonus: { atk: 15 * 3 } },
       ],
     },
     {
