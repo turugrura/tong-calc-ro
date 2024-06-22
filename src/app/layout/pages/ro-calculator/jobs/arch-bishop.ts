@@ -1,13 +1,7 @@
 import { ElementType } from '../constants/element-type.const';
 import { InfoForClass } from '../models/info-for-class.model';
 import { ClassName } from './_class-name';
-import {
-  ActiveSkillModel,
-  AtkSkillFormulaInput,
-  AtkSkillModel,
-  CharacterBase,
-  PassiveSkillModel,
-} from './_character-base.abstract';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
 import { RaceType } from '../constants/race-type.const';
 import { Acolyte } from './acolyte';
 
@@ -143,24 +137,7 @@ export class ArchBishop extends CharacterBase {
       name: 'Judex',
       label: 'Judex Lv10',
       value: 'Judex==10',
-      fct: 0.5,
-      vct: 2,
-      acd: 0.5,
-      cd: 0,
-      isMatk: true,
-      element: ElementType.Holy,
-      hit: 3,
-      formula: (input: AtkSkillFormulaInput): number => {
-        const { model, skillLevel } = input;
-        const baseLevel = model.level;
-
-        return (300 + skillLevel * 40) * (baseLevel / 100);
-      },
-    },
-    {
-      name: 'Judex',
-      label: '[Improved] Judex Lv10',
-      value: '[Improved] Judex==10',
+      values: ['[Improved] Judex==10'],
       fct: 0.5,
       vct: 2,
       acd: 0.5,
@@ -179,24 +156,7 @@ export class ArchBishop extends CharacterBase {
       name: 'Adoramus',
       label: 'Adoramus Lv10',
       value: 'Adoramus==10',
-      fct: 0.5,
-      vct: 2,
-      acd: 0.5,
-      cd: 2.5,
-      isMatk: true,
-      hit: 10,
-      element: ElementType.Holy,
-      formula: (input: AtkSkillFormulaInput): number => {
-        const { model, skillLevel } = input;
-        const baseLevel = model.level;
-
-        return (330 + skillLevel * 70) * (baseLevel / 100);
-      },
-    },
-    {
-      name: 'Adoramus',
-      label: '[Improved] Adoramus Lv10',
-      value: '[Improved] Adoramus==10',
+      values: ['[Improved] Adoramus==10'],
       fct: 0.5,
       vct: 2,
       acd: 0.5,
@@ -213,7 +173,7 @@ export class ArchBishop extends CharacterBase {
     },
     {
       name: 'Adoramus',
-      label: '[Improved] Adoramus Lv10 (In Ancilla)',
+      label: 'Adoramus Lv10 (In Ancilla)',
       value: '[Improved] Adoramus Ancilla==10',
       fct: 0.5,
       vct: 2,
@@ -429,9 +389,7 @@ export class ArchBishop extends CharacterBase {
     const { weapon, monster, model } = info;
     const weaponSubType = weapon?.data?.subTypeName;
     const bonusBaseLv = 0.05 * (model['level'] + 1);
-    const bonuses = this._passiveSkillList
-      .map((s, idx) => s.dropdown.find((d) => d.value === this.passiveSkillIds[idx])?.bonus)
-      .filter(Boolean);
+    const bonuses = this._passiveSkillList.map((s, idx) => s.dropdown.find((d) => d.value === this.passiveSkillIds[idx])?.bonus).filter(Boolean);
     const { race, element } = monster;
 
     let totalAtk = 0;
