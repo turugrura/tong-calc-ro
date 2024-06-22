@@ -156,7 +156,7 @@ export const JobBuffs: ActiveSkillModel[] = [
     name: 'Striking',
     isEquipAtk: true,
     dropdown: [
-      { label: 'Yes', isUse: true, value: 20, bonus: { atk: 100 } },
+      { label: 'Yes', isUse: true, value: 20, bonus: { atk: 100, perfectHit: 70 } },
       { label: 'No', isUse: false, value: 0 },
     ],
   },

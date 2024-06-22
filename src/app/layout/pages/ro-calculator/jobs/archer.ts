@@ -14,12 +14,12 @@ export class Archer extends CharacterBase {
   protected _activeSkillList: ActiveSkillModel[] = [
     {
       isEquipAtk: true,
-      inputType: 'dropdown',
-      label: 'Improve Concen',
+      inputType: 'selectButton',
+      label: 'Improve Concen 10',
       name: 'Improve Concentration',
       dropdown: [
-        { label: '-', value: 0, isUse: false },
-        { label: 'Lv 10', value: 10, skillLv: 10, isUse: true, bonus: { agiBoost: 12, dexBoost: 12 } },
+        { label: 'Yes', value: 10, skillLv: 10, isUse: true, bonus: { agiBoost: 12, dexBoost: 12 } },
+        { label: 'No', value: 0, isUse: false },
       ],
     },
   ];
