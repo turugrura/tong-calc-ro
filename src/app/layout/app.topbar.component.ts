@@ -63,34 +63,9 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
 
   references: { label: string; link: string; writer: string; date?: string }[] = [
     {
-      label: 'Bonus JOB LV.70',
+      label: 'Jobs Improvement Bundle Update (20 June 2024)',
       writer: 'RO GGT',
-      link: 'https://ro.gnjoy.in.th/newyear_adventure_2024/assets/img/additional/Ragnarok-Today/POP-UP-Job-BONUS.jpg',
-    },
-    {
-      label: 'Geffen Magic Tournament Enchant System Update!',
-      writer: 'RO GGT',
-      link: 'https://ro.gnjoy.in.th/geffen-magic-tournament-enchant-system-update',
-    },
-    {
-      label: 'Develop note ! Balance Skill ขยายขีดจำกัดเลเวลสูงสุดของ Extended Class',
-      writer: 'RO GGT',
-      link: 'https://ro.gnjoy.in.th/develop-note-extended',
-    },
-    {
-      label: 'Skills Balance (1st, 2nd and transcendent classes skills)',
-      writer: 'RO GGT',
-      link: 'https://ro.gnjoy.in.th/skills-balance-1st-2nd-and-transcendent-classes-skills',
-    },
-    {
-      label: 'Class Improvement [Sura, Warlock, Minstrel&Wanderer]',
-      writer: 'RO GGT',
-      link: 'https://ro.gnjoy.in.th/class-improvement-sura-warlock-minstrelwanderer',
-    },
-    {
-      label: 'Quarter 1 Class Improvement 2024',
-      writer: 'RO GGT',
-      link: 'https://ro.gnjoy.in.th/quarter-1-class-improvement-2024',
+      link: 'https://ro.gnjoy.in.th/bundleupdate13',
     },
     {
       label: 'Old Headgear & Enchant Improve',
@@ -101,6 +76,36 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
       label: 'New Elemental Table Adjustment',
       writer: 'RO GGT',
       link: 'https://ro.gnjoy.in.th/new-elemental-table-adjustment',
+    },
+    {
+      label: 'Quarter 1 Class Improvement 2024',
+      writer: 'RO GGT',
+      link: 'https://ro.gnjoy.in.th/quarter-1-class-improvement-2024',
+    },
+    {
+      label: 'Bonus JOB LV.70',
+      writer: 'RO GGT',
+      link: 'https://ro.gnjoy.in.th/newyear_adventure_2024/assets/img/additional/Ragnarok-Today/POP-UP-Job-BONUS.jpg',
+    },
+    {
+      label: 'Class Improvement [Sura, Warlock, Minstrel&Wanderer]',
+      writer: 'RO GGT',
+      link: 'https://ro.gnjoy.in.th/class-improvement-sura-warlock-minstrelwanderer',
+    },
+    {
+      label: 'Skills Balance (1st, 2nd and transcendent classes skills)',
+      writer: 'RO GGT',
+      link: 'https://ro.gnjoy.in.th/skills-balance-1st-2nd-and-transcendent-classes-skills',
+    },
+    {
+      label: 'Geffen Magic Tournament Enchant System Update!',
+      writer: 'RO GGT',
+      link: 'https://ro.gnjoy.in.th/geffen-magic-tournament-enchant-system-update',
+    },
+    {
+      label: 'Develop note ! Balance Skill ขยายขีดจำกัดเลเวลสูงสุดของ Extended Class',
+      writer: 'RO GGT',
+      link: 'https://ro.gnjoy.in.th/develop-note-extended',
     },
     {
       label: 'Items & Monsters & Skill infomation',
@@ -188,42 +193,22 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
     {
       v: 'V2.1.5',
       date: '13-06-2567',
-      logs: [
-        'Fixed reported bugs',
-        'Added Official updated items',
-        'Added requested items',
-        'Updated data for Item Ranking',
-      ],
+      logs: ['Fixed reported bugs', 'Added Official updated items', 'Added requested items', 'Updated data for Item Ranking'],
     },
     {
       v: 'V2.1.4',
       date: '30-05-2567',
-      logs: [
-        'Fixed reported bugs',
-        'Added Official updated items',
-        'Added requested items',
-        'Updated data for Item Ranking',
-      ],
+      logs: ['Fixed reported bugs', 'Added Official updated items', 'Added requested items', 'Updated data for Item Ranking'],
     },
     {
       v: 'V2.1.3',
       date: '16-05-2567',
-      logs: [
-        'Fixed reported bugs',
-        'Added Official updated items',
-        'Added requested items/monsters',
-        'Updated data for Item Ranking',
-      ],
+      logs: ['Fixed reported bugs', 'Added Official updated items', 'Added requested items/monsters', 'Updated data for Item Ranking'],
     },
     {
       v: 'V2.1.2',
       date: '09-05-2567',
-      logs: [
-        'Fixed reported bugs',
-        'Added requested items',
-        'Highlight fix position accessory card',
-        'Updated data for Item Ranking',
-      ],
+      logs: ['Fixed reported bugs', 'Added requested items', 'Highlight fix position accessory card', 'Updated data for Item Ranking'],
     },
     {
       v: 'V2.1.1',
@@ -240,12 +225,7 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
     {
       v: 'V2.1.0',
       date: '26-04-2567',
-      logs: [
-        'Fixed reported bugs',
-        'Added Item Ranking page',
-        'Added Super Novice skill [ Bowling Bash, Wind Cutter ]',
-        'Added requested items/monsters',
-      ],
+      logs: ['Fixed reported bugs', 'Added Item Ranking page', 'Added Super Novice skill [ Bowling Bash, Wind Cutter ]', 'Added requested items/monsters'],
     },
     {
       v: 'V2.0.9',
@@ -433,12 +413,7 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
     {
       v: 'V1.7.8',
       date: '16-12-2566',
-      logs: [
-        'Fixed reported bugs',
-        'Added Warlock, Sorcerer learnable skill (Fire Wall)',
-        'Added SC offensive skill (Comet)',
-        'Added requested items',
-      ],
+      logs: ['Fixed reported bugs', 'Added Warlock, Sorcerer learnable skill (Fire Wall)', 'Added SC offensive skill (Comet)', 'Added requested items'],
     },
     {
       v: 'V1.7.7',
@@ -485,12 +460,7 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
     {
       v: 'V1.7.3',
       date: '28-11-2566',
-      logs: [
-        'Fixed reported bugs',
-        'Display dex*2 + int*1 on stat summary',
-        'Added Automatic sets (17.2)',
-        'Added requested items',
-      ],
+      logs: ['Fixed reported bugs', 'Display dex*2 + int*1 on stat summary', 'Added Automatic sets (17.2)', 'Added requested items'],
     },
     {
       v: 'V1.7.2',
@@ -514,13 +484,7 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
     {
       v: 'V1.7.0',
       date: '25-11-2566',
-      logs: [
-        'Fixed Soul Reaper ASPD',
-        'Fixed Judex formula',
-        'Fixed reported bugs',
-        'Supported Oboro class',
-        'Added requested items & monsters',
-      ],
+      logs: ['Fixed Soul Reaper ASPD', 'Fixed Judex formula', 'Fixed reported bugs', 'Supported Oboro class', 'Added requested items & monsters'],
     },
     {
       v: 'V1.6.5',
@@ -620,22 +584,12 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
     {
       v: 'V1.4.2',
       date: '07-11-2566',
-      logs: [
-        'Fixed Magma3 monsters stat',
-        'Fixed reported bugs',
-        'Added MC learnable skill (Power Swing)',
-        'Added requested items',
-      ],
+      logs: ['Fixed Magma3 monsters stat', 'Fixed reported bugs', 'Added MC learnable skill (Power Swing)', 'Added requested items'],
     },
     {
       v: 'V1.4.1',
       date: '06-11-2566',
-      logs: [
-        'Fixed reported bugs',
-        'Added Doram passive skill (Spirit of life)',
-        'Added MC offensive skill (Arm Cannon lv4)',
-        'Added requested items',
-      ],
+      logs: ['Fixed reported bugs', 'Added Doram passive skill (Spirit of life)', 'Added MC offensive skill (Arm Cannon lv4)', 'Added requested items'],
     },
     {
       v: 'V1.4.0',
@@ -679,12 +633,7 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
     {
       v: 'V1.2.0',
       date: '02-11-2566',
-      logs: [
-        'Fixed reported bugs',
-        'Supported Dual weapon',
-        'Added offensive skill (Canon Spear)',
-        'Added requested items & lastest update items',
-      ],
+      logs: ['Fixed reported bugs', 'Supported Dual weapon', 'Added offensive skill (Canon Spear)', 'Added requested items & lastest update items'],
     },
     {
       v: 'V1.1.4',
@@ -699,21 +648,12 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
     {
       v: 'V1.1.2',
       date: '30-10-2566',
-      logs: [
-        'Fixed Aimed Bolt by remove bonus from Fear Breeze',
-        'Added offensive skill (Dragon Tail, Gods Hammer, Cross Impact)',
-        'Added requested items',
-      ],
+      logs: ['Fixed Aimed Bolt by remove bonus from Fear Breeze', 'Added offensive skill (Dragon Tail, Gods Hammer, Cross Impact)', 'Added requested items'],
     },
     {
       v: 'V1.1.1',
       date: '29-10-2566',
-      logs: [
-        'Fixed SR job bonus',
-        'Fixed size multiplier option not working',
-        'Supported Thananos card',
-        'Added requested items.',
-      ],
+      logs: ['Fixed SR job bonus', 'Fixed size multiplier option not working', 'Supported Thananos card', 'Added requested items.'],
     },
     {
       v: 'V1.1.0',

@@ -19,8 +19,12 @@ const Mapper = {
   ein_dun03: '180 - 190 เหมือง 3',
   odin_past: '187 - 200 odin 3',
   abyss_04: '192 - 200 มังกร 4',
-  iz_d04_i: '135 - 150 Illuion of under water 4',
-  iz_d05_i: '190 - 200 Illuion of under water 5',
+  iz_d04_i: '140 - 150 น้ำ Under water 1',
+  iz_d05_i: '180 - 200 น้ำ Under water 2',
+  tha_t09: 'Thana ทานา 09',
+  tha_t10: 'Thana ทานา 10',
+  tha_t11: 'Thana ทานา 11',
+  tha_t12: 'Thana ทานา 12',
   gl_cas01_: 'Abyss Glast Heim 1st Floor',
   hero_tra: 'Test damage',
   tra_fild: 'Test damage',
@@ -36,5 +40,5 @@ export const MonsterGroupNames = [...new Set(Object.values(Mapper))].sort((a, b)
 export const getMonsterSpawnMap = (spawn: string) => {
   const spawns = spawn.split(',').map((a) => Mapper[a]);
 
-  return [...new Set(spawns)].join(',');
+  return [...new Set(spawns)].join(', ');
 };

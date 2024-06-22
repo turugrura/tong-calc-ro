@@ -1,28 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import {
-  catchError,
-  debounceTime,
-  filter,
-  finalize,
-  forkJoin,
-  mergeMap,
-  Observable,
-  of,
-  Subject,
-  Subscription,
-  switchMap,
-  take,
-  tap,
-  throwError,
-} from 'rxjs';
+import { catchError, debounceTime, filter, finalize, forkJoin, mergeMap, Observable, of, Subject, Subscription, switchMap, take, tap, throwError } from 'rxjs';
 import { BaseStateCalculator } from './base-state-calculator';
 import { Calculator } from './calculator';
-import {
-  ItemTypeEnum,
-  MainItemTypeSet,
-  MainItemWithRelations,
-  OptionableItemTypeSet,
-} from './constants/item-type.enum';
+import { ItemTypeEnum, MainItemTypeSet, MainItemWithRelations, OptionableItemTypeSet } from './constants/item-type.enum';
 import { ItemTypeId } from './constants/item.const';
 import { RoService } from 'src/app/demo/service/ro.service';
 import { ItemModel } from './models/item.model';
@@ -58,15 +38,7 @@ import { BasicDamageSummaryModel, SkillDamageSummaryModel } from './models/damag
 import { ChanceModel } from './models/chance-model';
 import { RaceType } from './constants/race-type.const';
 import { ElementType } from './constants/element-type.const';
-import {
-  createBaseHPSPOptionList,
-  isNumber,
-  prettyItemDesc,
-  toRawOptionTxtList,
-  toUpsertPresetModel,
-  verifySyncPreset,
-  waitRxjs,
-} from './utils';
+import { createBaseHPSPOptionList, isNumber, prettyItemDesc, toRawOptionTxtList, toUpsertPresetModel, verifySyncPreset, waitRxjs } from './utils';
 import { ExtraOptionTable } from './constants/extra-option-table';
 import { ItemOptionNumber, MAX_OPTION_NUMBER } from './constants/item-option-number.enum';
 import { WeaponTypeNameMapBySubTypeId } from './constants/weapon-type-mapper';
@@ -1013,20 +985,17 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     const isUseHpL = this.model.consumables.includes(12424);
     this.calcDamages = selectedMonsterIds.map((monsterId) => {
       const monster = this.monsterDataMap[monsterId];
-      const calculated = this.calculator
-        .setMonster(monster)
-        .prepareAllItemBonus()
-        .calcDmgWithExtraBonus({ skillValue: this.model.selectedAtkSkill, isUseHpL });
+      const calculated = this.calculator.setMonster(monster).prepareAllItemBonus().calcDmgWithExtraBonus({ skillValue: this.model.selectedAtkSkill, isUseHpL });
 
       const {
         id,
         name,
-        stats: { elementShortName, level, raceName, scaleName, health, class: _class },
+        stats: { elementShortName, level, elementName, raceName, scaleName, health, class: _class },
       } = monster;
 
       return {
         id,
-        label: `${level} ${name} (${raceName} ${scaleName.at(0)})`,
+        label: `${level} ${name} (${raceName}, ${scaleName.at(0)}, ${elementName})`,
         health,
         monsterClass: classMap[_class],
         elementName: elementShortName,
@@ -1545,12 +1514,9 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       return;
     }
 
-    const selectedValidSkill = this.atkSkills.find(
-      (a) => a.value === selectedAtkSkill || (Array.isArray(a.values) && a.values?.includes(selectedAtkSkill)),
-    );
+    const selectedValidSkill = this.atkSkills.find((a) => a.value === selectedAtkSkill || (Array.isArray(a.values) && a.values?.includes(selectedAtkSkill)));
     const selectedValidSkill2 = this.atkSkills.find(
-      (a) =>
-        Array.isArray(a.levelList) && a.levelList.length > 0 && a.levelList.find((lv) => lv.value === selectedAtkSkill),
+      (a) => Array.isArray(a.levelList) && a.levelList.length > 0 && a.levelList.find((lv) => lv.value === selectedAtkSkill),
     );
     if (selectedValidSkill?.value) {
       this.model.selectedAtkSkill = selectedValidSkill.value;
@@ -1879,15 +1845,9 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     this.itemList.accList = toDropdownList(accList, 'name', 'id');
     this.itemList.accCardList = toDropdownList(accCardList, 'name', 'id');
     this.itemList.accLeftList = toDropdownList(accLeftList, 'name', 'id');
-    this.itemList.accLeftCardList = toDropdownList(accLeftCardList, 'name', 'id', undefined, [
-      'cardPrefix',
-      'isHilight',
-    ]);
+    this.itemList.accLeftCardList = toDropdownList(accLeftCardList, 'name', 'id', undefined, ['cardPrefix', 'isHilight']);
     this.itemList.accRightList = toDropdownList(accRightList, 'name', 'id');
-    this.itemList.accRightCardList = toDropdownList(accRightCardList, 'name', 'id', undefined, [
-      'cardPrefix',
-      'isHilight',
-    ]);
+    this.itemList.accRightCardList = toDropdownList(accRightCardList, 'name', 'id', undefined, ['cardPrefix', 'isHilight']);
     this.itemList.petList = petList.map((a) => ({ label: a.name, value: a.id }));
 
     this.itemList.costumeUpperList = toDropdownList(costumeUpperList, 'name', 'id');

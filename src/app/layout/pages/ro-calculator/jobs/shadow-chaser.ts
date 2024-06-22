@@ -344,6 +344,16 @@ export class ShadowChaser extends CharacterBase {
     ShieldSpellFn(),
     DarkClawFn(),
     NoLimit,
+    {
+      inputType: 'selectButton',
+      label: 'Mystical Amp 5',
+      name: 'Mystical Amplification',
+      isEquipAtk: true,
+      dropdown: [
+        { label: 'Yes', isUse: true, value: 5, bonus: { mysticAmp: 25 } },
+        { label: 'No', isUse: false, value: 0 },
+      ],
+    },
   ];
 
   protected _passiveSkillList: PassiveSkillModel[] = [

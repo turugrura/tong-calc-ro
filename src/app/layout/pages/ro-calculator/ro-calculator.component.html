@@ -29,14 +29,7 @@
                 [disabled]="!presetName.value || isInProcessingPreset"
                 (click)="updatePreset(presetName.value)"
               ></button>
-              <button
-                type="button"
-                class="p-button-secondary"
-                pButton
-                icon="pi pi-cog"
-                [disabled]="isInProcessingPreset"
-                (click)="openPresetManagement()"
-              ></button>
+              <button type="button" class="p-button-secondary" pButton icon="pi pi-cog" [disabled]="isInProcessingPreset" (click)="openPresetManagement()"></button>
             </div>
           </div>
           <div class="col-12">
@@ -168,11 +161,7 @@
                     [(ngModel)]="model.str"
                     (ngModelChange)="onBaseStatusChange()"
                   ></p-dropdown>
-                  <p-badge
-                    value="+{{ (model.jobStr || 0) + (totalSummary?.str || 0) }}"
-                    size="large"
-                    severity="info"
-                  ></p-badge>
+                  <p-badge value="+{{ (model.jobStr || 0) + (totalSummary?.str || 0) }}" size="large" severity="info"></p-badge>
                 </div>
               </div>
               <!-- AGI -->
@@ -190,11 +179,7 @@
                     [(ngModel)]="model.agi"
                     (ngModelChange)="onBaseStatusChange()"
                   ></p-dropdown>
-                  <p-badge
-                    value="+{{ (model.jobAgi || 0) + (totalSummary?.agi || 0) }}"
-                    size="large"
-                    severity="info"
-                  ></p-badge>
+                  <p-badge value="+{{ (model.jobAgi || 0) + (totalSummary?.agi || 0) }}" size="large" severity="info"></p-badge>
                 </div>
               </div>
               <!-- VIT -->
@@ -212,11 +197,7 @@
                     [(ngModel)]="model.vit"
                     (ngModelChange)="onBaseStatusChange()"
                   ></p-dropdown>
-                  <p-badge
-                    value="+{{ (model.jobVit || 0) + (totalSummary?.vit || 0) }}"
-                    size="large"
-                    severity="info"
-                  ></p-badge>
+                  <p-badge value="+{{ (model.jobVit || 0) + (totalSummary?.vit || 0) }}" size="large" severity="info"></p-badge>
                 </div>
               </div>
               <!-- INT -->
@@ -234,11 +215,7 @@
                     [(ngModel)]="model.int"
                     (ngModelChange)="onBaseStatusChange()"
                   ></p-dropdown>
-                  <p-badge
-                    value="+{{ (model.jobInt || 0) + (totalSummary?.int || 0) }}"
-                    size="large"
-                    severity="info"
-                  ></p-badge>
+                  <p-badge value="+{{ (model.jobInt || 0) + (totalSummary?.int || 0) }}" size="large" severity="info"></p-badge>
                 </div>
               </div>
               <!-- DEX -->
@@ -256,11 +233,7 @@
                     [(ngModel)]="model.dex"
                     (ngModelChange)="onBaseStatusChange()"
                   ></p-dropdown>
-                  <p-badge
-                    value="+{{ (model.jobDex || 0) + (totalSummary?.dex || 0) }}"
-                    size="large"
-                    severity="info"
-                  ></p-badge>
+                  <p-badge value="+{{ (model.jobDex || 0) + (totalSummary?.dex || 0) }}" size="large" severity="info"></p-badge>
                 </div>
               </div>
               <!-- LUK -->
@@ -278,11 +251,7 @@
                     [(ngModel)]="model.luk"
                     (ngModelChange)="onBaseStatusChange()"
                   ></p-dropdown>
-                  <p-badge
-                    value="+{{ (model.jobLuk || 0) + (totalSummary?.luk || 0) }}"
-                    size="large"
-                    severity="info"
-                  ></p-badge>
+                  <p-badge value="+{{ (model.jobLuk || 0) + (totalSummary?.luk || 0) }}" size="large" severity="info"></p-badge>
                 </div>
               </div>
             </div>
@@ -310,24 +279,18 @@
                   </div>
                   <div [hidden]="env.production" class="col-12">
                     Equip Atk:
-                    <span class="font-semibold px-1 summary_stat_atk"
-                      >{{ totalSummary?.atk || 0 }} + {{ totalSummary?.atkPercent || 0 }} %</span
-                    >
+                    <span class="font-semibold px-1 summary_stat_atk">{{ totalSummary?.atk || 0 }} + {{ totalSummary?.atkPercent || 0 }} %</span>
                   </div>
                   <div class="col-12">
                     ASPD:
                     <span class="font-semibold px-1 summary_stat_atk">{{ totalSummary?.calc?.totalAspd || 0 }}</span>
-                    <span class="font-semibold px-1 summary_highlight"
-                      >( {{ totalSummary?.calc?.hitPerSecs || 0 }} Hits/s )</span
-                    >
+                    <span class="font-semibold px-1 summary_highlight">( {{ totalSummary?.calc?.hitPerSecs || 0 }} Hits/s )</span>
                   </div>
                   <div class="col-12">
                     Hit:
                     <span class="font-semibold px-1 summary_stat_atk">{{ totalSummary?.calc?.totalHit || 0 }}</span>
                     Perfect:
-                    <span class="font-semibold px-1 summary_stat_atk"
-                      >{{ totalSummary?.calc?.totalPerfectHit || 0 }} %</span
-                    >
+                    <span class="font-semibold px-1 summary_stat_atk">{{ totalSummary?.calc?.totalPerfectHit || 0 }} %</span>
                   </div>
                   <div class="col-12">
                     CriRate:
@@ -341,21 +304,15 @@
                   </div>
                   <div class="col-12">
                     Def:
-                    <span class="font-semibold px-1 summary_stat_def"
-                      >{{ totalSummary?.calc?.softDef || 0 }} + {{ totalSummary?.calc?.def || 0 }}</span
-                    >
+                    <span class="font-semibold px-1 summary_stat_def">{{ totalSummary?.calc?.softDef || 0 }} + {{ totalSummary?.calc?.def || 0 }}</span>
                   </div>
                   <div class="col-12">
                     Mdef:
-                    <span class="font-semibold px-1 summary_stat_def"
-                      >{{ totalSummary?.calc?.softMdef || 0 }} + {{ totalSummary?.calc?.mdef || 0 }}</span
-                    >
+                    <span class="font-semibold px-1 summary_stat_def">{{ totalSummary?.calc?.softMdef || 0 }} + {{ totalSummary?.calc?.mdef || 0 }}</span>
                   </div>
                   <div class="col-12">
                     Flee:
-                    <span class="font-semibold px-1 summary_stat_def"
-                      >{{ totalSummary?.calc?.totalFlee || 0 }} + {{ totalSummary?.calc?.totalPerfectDodge || 0 }}</span
-                    >
+                    <span class="font-semibold px-1 summary_stat_def">{{ totalSummary?.calc?.totalFlee || 0 }} + {{ totalSummary?.calc?.totalPerfectDodge || 0 }}</span>
                   </div>
                 </div>
               </div>
@@ -375,9 +332,7 @@
                   </div>
                   <div [hidden]="env.production" class="col-12">
                     Equip Matk:
-                    <span class="font-semibold px-1 summary_stat_matk"
-                      >{{ totalSummary?.matk || 0 }} + {{ totalSummary?.matkPercent || 0 }} %</span
-                    >
+                    <span class="font-semibold px-1 summary_stat_matk">{{ totalSummary?.matk || 0 }} + {{ totalSummary?.matkPercent || 0 }} %</span>
                   </div>
                   <div class="col-12">
                     After Cast Delay:
@@ -394,20 +349,13 @@
                   <div class="col-12">
                     Dex2 Int1:
                     <span class="font-semibold px-1 summary_stat_yellow">{{ totalSummary?.calc?.dex2int1 || 0 }}</span>
-                    <span [hidden]="totalSummary?.calc?.to530 <= 0">{{
-                      '( อีก ' + totalSummary?.calc?.to530 + ' )'
-                    }}</span>
+                    <span [hidden]="totalSummary?.calc?.to530 <= 0">{{ '( อีก ' + totalSummary?.calc?.to530 + ' )' }}</span>
                   </div>
-                  <div
-                    class="col-12 px-1 border_default hp-sp-section"
-                    [hidden]="hideHpSp[selectedCharacter?.className]"
-                  >
+                  <div class="col-12 px-1 border_default hp-sp-section" [hidden]="hideHpSp[selectedCharacter?.className]">
                     <div class="grid grid-nogutter">
                       <div class="col-12 flex gap-1">
                         HP:
-                        <span class="font-semibold px-1 summary_stat_yellow">{{
-                          totalSummary?.calc?.maxHp || 0 | number
-                        }}</span>
+                        <span class="font-semibold px-1 summary_stat_yellow">{{ totalSummary?.calc?.maxHp || 0 | number }}</span>
                         <p-cascadeSelect
                           [(ngModel)]="model.rawOptionTxts[itemOptionNumber.X_HP]"
                           [options]="baseHpOptions"
@@ -423,9 +371,7 @@
                       </div>
                       <div class="col-12 flex gap-1">
                         SP:
-                        <span class="font-semibold px-1 summary_stat_yellow">{{
-                          totalSummary?.calc?.maxSp || 0 | number
-                        }}</span>
+                        <span class="font-semibold px-1 summary_stat_yellow">{{ totalSummary?.calc?.maxSp || 0 | number }}</span>
                         <p-cascadeSelect
                           [(ngModel)]="model.rawOptionTxts[itemOptionNumber.X_SP]"
                           [options]="baseSpOptions"
@@ -439,13 +385,7 @@
                           (onClear)="onOptionChange()"
                         ></p-cascadeSelect>
                       </div>
-                      <div
-                        [hidden]="model?.level < 176"
-                        class="summary_monster_value px-1"
-                        style="color: var(--red-500)"
-                      >
-                        *** Lv > 175 ข้อมูลไม่ตรง
-                      </div>
+                      <div [hidden]="model?.level < 176" class="summary_monster_value px-1" style="color: var(--red-500)">*** Lv > 175 ข้อมูลไม่ตรง</div>
                     </div>
                   </div>
                 </div>
@@ -679,13 +619,7 @@
               </ng-template>
             </p-dropdown>
           </div>
-          <div
-            class="col-12"
-            [hidden]="
-              (weaponEnchant1List.length === 0 && weaponEnchant2List.length === 0 && weaponEnchant3List.length === 0) ||
-              !model.weapon
-            "
-          >
+          <div class="col-12" [hidden]="(weaponEnchant1List.length === 0 && weaponEnchant2List.length === 0 && weaponEnchant3List.length === 0) || !model.weapon">
             <div class="grid grid-nogutter">
               <div class="col-4">
                 <p-dropdown
@@ -973,12 +907,7 @@
           </div>
           <div
             class="col-12"
-            [hidden]="
-              (leftWeaponEnchant1List.length === 0 &&
-                leftWeaponEnchant2List.length === 0 &&
-                leftWeaponEnchant3List.length === 0) ||
-              !model.leftWeapon
-            "
+            [hidden]="(leftWeaponEnchant1List.length === 0 && leftWeaponEnchant2List.length === 0 && leftWeaponEnchant3List.length === 0) || !model.leftWeapon"
           >
             <div class="grid grid-nogutter">
               <div class="col-4">
@@ -1906,10 +1835,7 @@
           </div>
           <div class="col-{{ itemTotalOptionMap['armor'] === 3 ? '12' : '8' }}">
             <div class="grid grid-nogutter">
-              <div
-                class="col-{{ itemTotalOptionMap['armor'] === 3 ? '4' : '6' }}"
-                [hidden]="!(itemTotalOptionMap['armor'] >= 1) || !model.armor"
-              >
+              <div class="col-{{ itemTotalOptionMap['armor'] === 3 ? '4' : '6' }}" [hidden]="!(itemTotalOptionMap['armor'] >= 1) || !model.armor">
                 <p-cascadeSelect
                   [(ngModel)]="model.rawOptionTxts[itemOptionNumber.Armor_1]"
                   [disabled]="!model.armor"
@@ -1924,10 +1850,7 @@
                   (onClear)="onOptionChange()"
                 ></p-cascadeSelect>
               </div>
-              <div
-                class="col-{{ itemTotalOptionMap['armor'] === 3 ? '4' : '6' }}"
-                [hidden]="!(itemTotalOptionMap['armor'] >= 2) || !model.armor"
-              >
+              <div class="col-{{ itemTotalOptionMap['armor'] === 3 ? '4' : '6' }}" [hidden]="!(itemTotalOptionMap['armor'] >= 2) || !model.armor">
                 <p-cascadeSelect
                   [(ngModel)]="model.rawOptionTxts[itemOptionNumber.Armor_2]"
                   [disabled]="!model.armor"
@@ -2671,10 +2594,7 @@
           </div>
         </div>
       </div>
-      <div
-        class="col-12 mb-5"
-        [hidden]="!(accRightEnchant3List.length === 0 || !model.accRight) || showCompareItemMap.accRight"
-      ></div>
+      <div class="col-12 mb-5" [hidden]="!(accRightEnchant3List.length === 0 || !model.accRight) || showCompareItemMap.accRight"></div>
     </div>
     <div class="grid grid-nogutter item_label_compare" *ngIf="showCompareItemMap.accRight">
       <div class="col-12">
@@ -3609,13 +3529,7 @@
         <div class="grid grid-nogutter">
           <!-- Consumable -->
           <div class="col-4">
-            <p-listbox
-              [options]="consumableList"
-              [(ngModel)]="model.consumables"
-              [multiple]="true"
-              [metaKeySelection]="false"
-              (onChange)="onConsumableChange()"
-            >
+            <p-listbox [options]="consumableList" [(ngModel)]="model.consumables" [multiple]="true" [metaKeySelection]="false" (onChange)="onConsumableChange()">
               <ng-template let-item pTemplate="item">
                 <div class="flex gap-2">
                   <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
@@ -3628,13 +3542,7 @@
           <div class="col-4">
             <div class="grid grid-nogutter column_list">
               <div *ngFor="let con of consumableList2; let i = index" class="col-12">
-                <p-listbox
-                  [options]="con"
-                  [(ngModel)]="model.consumables2[i]"
-                  [multiple]="false"
-                  [metaKeySelection]="false"
-                  (onChange)="onConsumableChange()"
-                >
+                <p-listbox [options]="con" [(ngModel)]="model.consumables2[i]" [multiple]="false" [metaKeySelection]="false" (onChange)="onConsumableChange()">
                   <ng-template let-item pTemplate="item">
                     <div class="flex gap-2">
                       <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
@@ -3649,13 +3557,7 @@
           <div class="col-4">
             <div class="grid grid-nogutter">
               <div class="col-12">
-                <p-listbox
-                  [options]="aspdPotionList"
-                  [(ngModel)]="model.aspdPotion"
-                  [multiple]="false"
-                  [metaKeySelection]="false"
-                  (onChange)="onConsumableChange()"
-                >
+                <p-listbox [options]="aspdPotionList" [(ngModel)]="model.aspdPotion" [multiple]="false" [metaKeySelection]="false" (onChange)="onConsumableChange()">
                   <ng-template let-item pTemplate="item">
                     <div class="flex gap-2">
                       <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
@@ -3665,13 +3567,7 @@
                 </p-listbox>
               </div>
               <div class="col-12">
-                <p-listbox
-                  [options]="aspdPotionList2"
-                  [(ngModel)]="model.aspdPotions"
-                  [multiple]="true"
-                  [metaKeySelection]="false"
-                  (onChange)="onConsumableChange()"
-                >
+                <p-listbox [options]="aspdPotionList2" [(ngModel)]="model.aspdPotions" [multiple]="true" [metaKeySelection]="false" (onChange)="onConsumableChange()">
                   <ng-template let-item pTemplate="item">
                     <div class="flex gap-2">
                       <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
@@ -3685,10 +3581,7 @@
         </div>
       </p-accordionTab>
 
-      <p-accordionTab
-        header="Skills ***กดอัพสกิลด้วยนะ เพราะไอเทมบางชิ้นต้องอัพสกิลถึงจะได้ bonus"
-        class="select_skill"
-      >
+      <p-accordionTab header="Skills ***กดอัพสกิลด้วยนะ เพราะไอเทมบางชิ้นต้องอัพสกิลถึงจะได้ bonus" class="select_skill">
         <div class="grid grid-nogutter">
           <!--  Buffs -->
           <div class="col-4">
@@ -3857,11 +3750,7 @@
               <div class="col-5 flex align-items-center justify-content-center">
                 <div class="grid grid-nogutter" style="height: 100%; width: 100%">
                   <div class="col-12 flex align-items-center justify-content-center">
-                    <img
-                      src="https://static.divine-pride.net/images/mobs/png/{{ selectedMonster }}.png"
-                      class="img_monster"
-                      alt="-"
-                    />
+                    <img src="https://static.divine-pride.net/images/mobs/png/{{ selectedMonster }}.png" class="img_monster" alt="-" />
                   </div>
                 </div>
               </div>
@@ -3869,51 +3758,34 @@
                 <div class="grid grid-nogutter">
                   <div class="col-12">
                     HP
-                    <span class="summary_monster_value px-1 font-semibold">{{
-                      totalSummary?.monster?.hp | number
-                    }}</span>
+                    <span class="summary_monster_value px-1 font-semibold">{{ totalSummary?.monster?.hp | number }}</span>
                   </div>
                   <div class="col-12">
                     Def
-                    <span class="summary_monster_value px-1 font-semibold"
-                      >{{ totalSummary?.monster?.softDef }} + {{ totalSummary?.monster?.def }}</span
-                    >
+                    <span class="summary_monster_value px-1 font-semibold">{{ totalSummary?.monster?.softDef }} + {{ totalSummary?.monster?.def }}</span>
                   </div>
                   <div class="col-12">
                     Mdef
-                    <span class="summary_monster_value px-1 font-semibold"
-                      >{{ totalSummary?.monster?.softMDef }} + {{ totalSummary?.monster?.mdef }}</span
-                    >
+                    <span class="summary_monster_value px-1 font-semibold">{{ totalSummary?.monster?.softMDef }} + {{ totalSummary?.monster?.mdef }}</span>
                   </div>
                   <div class="col-12">
                     Req.Hit100
-                    <span class="summary_monster_value px-1 font-semibold">{{
-                      totalSummary?.monster?.hitRequireFor100
-                    }}</span>
+                    <span class="summary_monster_value px-1 font-semibold">{{ totalSummary?.monster?.hitRequireFor100 }}</span>
                   </div>
                   <div class="col-12">
-                    <span class="summary_monster_value px-1 font-bold" style="color: var(--red-500)">{{
-                      totalSummary?.monster?.typeUpper
-                    }}</span>
+                    <span class="summary_monster_value px-1 font-bold" style="color: var(--red-500)">{{ totalSummary?.monster?.typeUpper }}</span>
                     <span *ngIf="totalSummary?.monster?.isMvp" class="font-bold px-1">MVP</span>
                   </div>
                   <div class="col-12">
-                    <span
-                      class="{{
-                        'property_' + totalSummary?.monster?.elementUpper
-                      }} summary_monster_value px-1 font-semibold"
-                      >{{ totalSummary?.monster?.elementLevelUpper }}</span
-                    >
-                  </div>
-                  <div class="col-12">
-                    <span class="summary_monster_value px-1 font-semibold" style="color: var(--yellow-300)">{{
-                      totalSummary?.monster?.raceUpper
+                    <span class="{{ 'property_' + totalSummary?.monster?.elementUpper }} summary_monster_value px-1 font-semibold">{{
+                      totalSummary?.monster?.elementLevelUpper
                     }}</span>
                   </div>
                   <div class="col-12">
-                    <span class="summary_monster_value px-1 font-semibold" style="color: var(--cyan-300)">{{
-                      totalSummary?.monster?.sizeFullUpper
-                    }}</span>
+                    <span class="summary_monster_value px-1 font-semibold" style="color: var(--yellow-300)">{{ totalSummary?.monster?.raceUpper }}</span>
+                  </div>
+                  <div class="col-12">
+                    <span class="summary_monster_value px-1 font-semibold" style="color: var(--cyan-300)">{{ totalSummary?.monster?.sizeFullUpper }}</span>
                   </div>
                   <div class="col-12 flex justify-content-around">
                     <div>
@@ -4004,9 +3876,7 @@
                   </div>
                   <div class="col-6">
                     Element:
-                    <span class="{{ 'property_' + totalSummary?.calcSkill?.propertySkill }} px-1 font-semibold">{{
-                      totalSummary?.calcSkill?.propertySkill
-                    }}</span
+                    <span class="{{ 'property_' + totalSummary?.calcSkill?.propertySkill }} px-1 font-semibold">{{ totalSummary?.calcSkill?.propertySkill }}</span
                     ><span class="summary_highlight px-2">( x {{ totalSummary?.dmg?.skillPropertyMultiplier }})</span>
                   </div>
                   <div class="col-6">
@@ -4204,10 +4074,7 @@
                       [max2]="totalSummary2?.dmg?.skillCriDmgToMonster"
                     ></app-calc-value>
                   </div>
-                  <div
-                    class="col-12"
-                    [hidden]="!totalSummary?.dmg?.skillCanCri || totalSummary?.dmg?.skillCriRateToMonster >= 100"
-                  >
+                  <div class="col-12" [hidden]="!totalSummary?.dmg?.skillCanCri || totalSummary?.dmg?.skillCriRateToMonster >= 100">
                     <app-calc-value
                       [enableCompare]="isEnableCompare && totalSummary2?.dmg"
                       label="SkillDmg:"
@@ -4270,10 +4137,7 @@
                       [max2]="totalSummary2?.dmg?.skillDps"
                     ></app-calc-value>
                   </div>
-                  <div
-                    class="col-12"
-                    [hidden]="totalSummary?.dmg?.effectedSkillDamageMin <= 0 || !selectedChances?.length"
-                  >
+                  <div class="col-12" [hidden]="totalSummary?.dmg?.effectedSkillDamageMin <= 0 || !selectedChances?.length">
                     <app-calc-value
                       [enableCompare]="isEnableCompare && totalSummary2?.dmg"
                       label="Triggered:"
@@ -4286,10 +4150,7 @@
                       [max2]="totalSummary2?.dmg?.effectedSkillDamageMax"
                     ></app-calc-value>
                   </div>
-                  <div
-                    class="col-12"
-                    [hidden]="totalSummary?.dmg?.effectedSkillDamageMin <= 0 || !selectedChances?.length"
-                  >
+                  <div class="col-12" [hidden]="totalSummary?.dmg?.effectedSkillDamageMin <= 0 || !selectedChances?.length">
                     <app-calc-value
                       [enableCompare]="isEnableCompare && totalSummary2?.dmg"
                       label="Skill/s:"
@@ -4299,10 +4160,7 @@
                       [max2]="totalSummary2?.dmg?.effectedSkillHitsPerSec"
                     ></app-calc-value>
                   </div>
-                  <div
-                    class="col-12"
-                    [hidden]="totalSummary?.dmg?.effectedSkillDamageMin <= 0 || !selectedChances?.length"
-                  >
+                  <div class="col-12" [hidden]="totalSummary?.dmg?.effectedSkillDamageMin <= 0 || !selectedChances?.length">
                     <app-calc-value
                       [enableCompare]="isEnableCompare && totalSummary2?.dmg"
                       label="DPS:"
@@ -4323,14 +4181,9 @@
                     <div class="grid grid-nogutter">
                       <div class="col-12">
                         Element:
-                        <span class="{{ 'property_' + totalSummary?.propertyAtk }} px-1 font-semibold">{{
-                          totalSummary?.propertyAtk
-                        }}</span
+                        <span class="{{ 'property_' + totalSummary?.propertyAtk }} px-1 font-semibold">{{ totalSummary?.propertyAtk }}</span
                         ><span class="summary_highlight px-2">( x {{ totalSummary?.dmg?.propertyMultiplier }})</span>
-                        <span
-                          class="summary_monster_value px-1 font-bold"
-                          style="color: var(--red-500)"
-                          [hidden]="!showLeftWeapon || !model.leftWeapon"
+                        <span class="summary_monster_value px-1 font-bold" style="color: var(--red-500)" [hidden]="!showLeftWeapon || !model.leftWeapon"
                           >***ยังไม่คิด Atk มือซ้าย</span
                         >
                       </div>
@@ -4402,10 +4255,7 @@
                           [max2]="totalSummary2?.dmg?.basicDps"
                         ></app-calc-value>
                       </div>
-                      <div
-                        class="col-12"
-                        [hidden]="totalSummary?.dmg?.effectedBasicDamageMin <= 0 || !selectedChances?.length"
-                      >
+                      <div class="col-12" [hidden]="totalSummary?.dmg?.effectedBasicDamageMin <= 0 || !selectedChances?.length">
                         <app-calc-value
                           [enableCompare]="isEnableCompare && totalSummary2?.dmg"
                           label="Triggered DmgCri:"
@@ -4428,10 +4278,7 @@
                           [max2]="totalSummary2?.dmg?.effectedBasicHitsPerSec"
                         ></app-calc-value>
                       </div> -->
-                      <div
-                        class="col-12"
-                        [hidden]="totalSummary?.dmg?.effectedBasicDamageMin <= 0 || !selectedChances?.length"
-                      >
+                      <div class="col-12" [hidden]="totalSummary?.dmg?.effectedBasicDamageMin <= 0 || !selectedChances?.length">
                         <app-calc-value
                           [enableCompare]="isEnableCompare && totalSummary2?.dmg"
                           label="DPS:"
@@ -4470,7 +4317,7 @@
                       filterBy="label,searchVal"
                       [showClear]="true"
                       [showToggleAll]="false"
-                      scrollHeight="300px"
+                      scrollHeight="400px"
                       selectedItemsLabel="{0} monsters selected"
                       placeholder="Choose Monsters"
                       [maxSelectedLabels]="2"
@@ -4530,13 +4377,7 @@
         ></app-misc-detail>
       </p-accordionTab>
       <p-accordionTab header="Penetration Summary">
-        <app-misc-detail
-          [elementTable]="[]"
-          [raceTable]="peneRaceTable"
-          [sizeTable]="[]"
-          [classTable]="peneClassTable"
-          [skillMultiplierTable]="[]"
-        ></app-misc-detail>
+        <app-misc-detail [elementTable]="[]" [raceTable]="peneRaceTable" [sizeTable]="[]" [classTable]="peneClassTable" [skillMultiplierTable]="[]"></app-misc-detail>
       </p-accordionTab>
 
       <p-accordionTab header="Summary">
@@ -4591,10 +4432,7 @@
               (onChange)="onSelectItemDescription()"
             >
               <ng-template let-item pTemplate="item">
-                <div
-                  class="flex gap-1 item_template item_label_{{ item.value }}"
-                  style="background-color: var(--border-radius)"
-                >
+                <div class="flex gap-1 item_template item_label_{{ item.value }}" style="background-color: var(--border-radius)">
                   <img src="assets/demo/images/items/{{ item.id }}.png" alt="" class="item_img" />
                   <div class="text_ellips">
                     {{ item.label }}
@@ -4609,11 +4447,7 @@
                 ItemID: {{ itemId }}
                 <pre [innerHTML]="itemBonus | prettyjson : [true, 3]"></pre>
               </div>
-              <div
-                class="col-12 px-2 py-2"
-                style="color: #000; background-color: #fff"
-                [innerHTML]="itemDescription"
-              ></div>
+              <div class="col-12 px-2 py-2" style="color: #000; background-color: #fff" [innerHTML]="itemDescription"></div>
             </div>
           </div>
         </div>

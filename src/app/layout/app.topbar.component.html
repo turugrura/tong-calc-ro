@@ -1,25 +1,17 @@
 <p-toast></p-toast>
-<p-confirmDialog [position]="'top'" [style]="{ width: '25vw' }"></p-confirmDialog>
+<p-confirmDialog [position]="'top'"></p-confirmDialog>
 
-<div class="layout-topbar">
+<div class="layout-topbar" style="min-width: 1500px">
   <!-- <a class="layout-topbar-logo" routerLink="">
         <img src="assets/layout/images/{{layoutService.config.colorScheme === 'light' ? 'logo-dark' : 'logo-white'}}.svg" alt="logo">
         <span>SAKAI</span>
       </a> -->
   <span class="px-2">{{ lastestVersion }}</span>
   <button pButton class="p-button-text p-button-info" (click)="showUpdateDialog()">
-    <i
-      *ngIf="showUnreadVersion > 0"
-      class="pi pi-bell text-xl"
-      severity="danger"
-      pBadge
-      value="{{ showUnreadVersion }}"
-    ></i>
+    <i *ngIf="showUnreadVersion > 0" class="pi pi-bell text-xl" severity="danger" pBadge value="{{ showUnreadVersion }}"></i>
     <i *ngIf="showUnreadVersion === 0" class="pi pi-bell text-xl" severity="danger"></i>
   </button>
-  <button pButton class="pl-2 p-button-text p-button-info p-button-raised" (click)="showReferenceDialog()">
-    References
-  </button>
+  <button pButton class="pl-2 p-button-text p-button-info p-button-raised" (click)="showReferenceDialog()">References</button>
 
   <div class="router-link px-3" style="position: relative; top: -5px">
     <p-tabMenu [model]="items" [activeItem]="activeItem">
@@ -58,11 +50,7 @@
     ไม่เกิน175</span
   > -->
 
-  <div
-    #topbarmenu
-    class="layout-topbar-menu"
-    [ngClass]="{ 'layout-topbar-menu-mobile-active': layoutService.state.profileSidebarVisible }"
-  >
+  <div #topbarmenu class="layout-topbar-menu" [ngClass]="{ 'layout-topbar-menu-mobile-active': layoutService.state.profileSidebarVisible }">
     <!-- <button class="p-link layout-topbar-button">
             <i class="pi pi-calendar"></i>
             <span>Calendar</span>
@@ -76,11 +64,7 @@
             <span>Settings</span>
         </button> -->
 
-    <a
-      class="flex align-items-center gap-2 px-2 mx-2 my-1 youtube-link"
-      target="_blank"
-      href="{{ env.youtubeVideoUrl }}"
-    >
+    <a class="flex align-items-center gap-2 px-2 mx-2 my-1 youtube-link" target="_blank" href="{{ env.youtubeVideoUrl }}">
       <i class="pi pi-youtube text-4xl text-red-500"></i>
       <span class="text-xl text-white-alpha-90">วิธีใช้งาน</span>
     </a>
@@ -103,14 +87,7 @@
         label="Issues Tracking"
         (click)="tracking.click()"
       ></button>
-      <button
-        class="font-bold p-button-primary p-button-rounded p-button-raised"
-        icon="pi pi-heart"
-        pButton
-        pRipple
-        label="Support"
-        (click)="showDialog()"
-      ></button>
+      <button class="font-bold p-button-primary p-button-rounded p-button-raised" icon="pi pi-heart" pButton pRipple label="Support" (click)="showDialog()"></button>
     </div>
     <div *ngIf="!!username" class="ml-3 flex align-items-center">
       <p-chip label="{{ username }}" icon="pi pi-google" class="chip-profile" styleClass="text-xl"></p-chip>
@@ -121,24 +98,9 @@
         <i class="pi pi-sign-out text-xl"></i>
       </button>
     </div>
-    <a
-      *ngIf="!username"
-      class="font-bold p-button-secondary"
-      icon="pi pi-google"
-      pButton
-      pRipple
-      label="Login"
-      href="{{ env.roBackendUrl + '/auth/google' }}"
-    ></a>
+    <a *ngIf="!username" class="font-bold p-button-secondary" icon="pi pi-google" pButton pRipple label="Login" href="{{ env.roBackendUrl + '/auth/google' }}"></a>
   </div>
-  <p-dialog
-    header="Support"
-    [draggable]="false"
-    [resizable]="false"
-    [modal]="true"
-    [(visible)]="visible"
-    [style]="{ 'min-width': '300px' }"
-  >
+  <p-dialog header="Support" [draggable]="false" [resizable]="false" [modal]="true" [(visible)]="visible" [style]="{ 'min-width': '300px' }">
     <div class="card flex flex-column align-items-center gap-2 flex-wrap">
       <div>
         <img src="assets/demo/images/others/qr.jpg" alt="QR" style="width: 300px" />
@@ -152,14 +114,7 @@
     </div>
   </p-dialog>
 
-  <p-dialog
-    header="ข้อมูลเพิ่มเติม"
-    [draggable]="false"
-    [resizable]="false"
-    [modal]="true"
-    [(visible)]="visibleInfo"
-    [style]="{ width: '50vw' }"
-  >
+  <p-dialog header="ข้อมูลเพิ่มเติม" [draggable]="false" [resizable]="false" [modal]="true" [(visible)]="visibleInfo" [style]="{ width: '50vw' }">
     <div class="card flex flex-column align-items-center gap-2 flex-wrap">
       <ul>
         <li *ngFor="let info of infos">{{ info }}</li>
@@ -192,15 +147,9 @@
       </div>
     </ng-template>
 
-    <div
-      *ngFor="let update of updates; index as i"
-      [ngStyle]="{ color: i + 1 > showUnreadVersion ? 'var(--gray-300)' : 'white' }"
-    >
+    <div *ngFor="let update of updates; index as i" [ngStyle]="{ color: i + 1 > showUnreadVersion ? 'var(--gray-300)' : 'white' }">
       <div class="grid grid-nogutter">
-        <div
-          class="p-col-12"
-          style="display: flex; align-content: center; justify-content: center; align-items: center"
-        >
+        <div class="p-col-12" style="display: flex; align-content: center; justify-content: center; align-items: center">
           <span class="pr-2">{{ update.v }}</span>
           <span>{{ update.date }} </span>
           <span>
@@ -220,14 +169,7 @@
     </div>
   </p-dialog>
 
-  <p-dialog
-    header="References"
-    [draggable]="false"
-    [resizable]="false"
-    [modal]="true"
-    [(visible)]="visibleReference"
-    [style]="{ width: '50vw', height: '70vh' }"
-  >
+  <p-dialog header="References" [draggable]="false" [resizable]="false" [modal]="true" [(visible)]="visibleReference" [style]="{ width: '50vw', height: '70vh' }">
     <ul>
       <li *ngFor="let reference of references">
         <span class="">[ by {{ reference.writer }} ]</span>
