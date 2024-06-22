@@ -1,11 +1,5 @@
 import { ClassName } from './_class-name';
-import {
-  ActiveSkillModel,
-  AtkSkillFormulaInput,
-  AtkSkillModel,
-  CharacterBase,
-  PassiveSkillModel,
-} from './_character-base.abstract';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
 import { DarkClawFn, NoLimit, ShieldSpellFn } from '../constants/share-active-skills';
 import { Thief } from './thief';
 import { InfoForClass } from '../models/info-for-class.model';
@@ -109,22 +103,7 @@ export class ShadowChaser extends CharacterBase {
       name: 'Fatal Manace',
       label: 'Fatal Manace Lv10',
       value: 'Fatal Manace==10',
-      acd: 0.5,
-      fct: 0,
-      vct: 0,
-      cd: 0,
-      isMelee: true,
-      formula: (input: AtkSkillFormulaInput): number => {
-        const { model, skillLevel } = input;
-        const baseLevel = model.level;
-
-        return (100 + skillLevel * 100) * (baseLevel / 100);
-      },
-    },
-    {
-      name: 'Fatal Manace',
-      label: '[Improved] Fatal Manace Lv10',
-      value: '[Improved] Fatal Manace==10',
+      values: ['[Improved] Fatal Manace==10'],
       acd: 0.5,
       fct: 0,
       vct: 0,
@@ -142,23 +121,7 @@ export class ShadowChaser extends CharacterBase {
       name: 'Triangle Shot',
       label: 'Triangle Shot Lv10',
       value: 'Triangle Shot==10',
-      acd: 0.5,
-      fct: 0,
-      vct: 1,
-      cd: 0,
-      hit: 3,
-      formula: (input: AtkSkillFormulaInput): number => {
-        const { model, skillLevel, status } = input;
-        const baseLevel = model.level;
-        const { totalAgi } = status;
-
-        return (300 + (skillLevel - 1) * 0.5 * totalAgi) * (baseLevel / 120);
-      },
-    },
-    {
-      name: 'Triangle Shot',
-      label: '[Improved] Triangle Shot Lv10',
-      value: '[Improved] Triangle Shot==10',
+      values: ['[Improved] Triangle Shot==10'],
       acd: 0.32,
       fct: 0,
       vct: 0,
@@ -194,15 +157,16 @@ export class ShadowChaser extends CharacterBase {
       label: 'Arrow Storm Lv10',
       value: 'Arrow Storm==10',
       acd: 0,
-      fct: 0, // 0.3 future
+      fct: 0.3,
       vct: 2,
       cd: 3.2,
       hit: 3,
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
+        const fearBreezeBonus = this.isSkillActive('Fear Breeze') ? 70 : 0;
 
-        return (1000 + 80 * skillLevel) * (baseLevel / 100);
+        return (200 + (180 + fearBreezeBonus) * skillLevel) * (baseLevel / 100);
       },
     },
     {
@@ -229,6 +193,14 @@ export class ShadowChaser extends CharacterBase {
 
         return (70 * skillLevel + 3 * totalInt) * (baseLevel / 100);
       },
+      finalDmgFormula(input) {
+        const weaponType = input.weapon.data?.typeName;
+        if (weaponType === 'book' || weaponType === 'rod' || weaponType === 'twohandRod') {
+          return input.damage * 2;
+        }
+
+        return input.damage;
+      },
     },
     {
       name: 'Comet',
@@ -245,7 +217,7 @@ export class ShadowChaser extends CharacterBase {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
 
-        return (1500 + skillLevel * 700) * (baseLevel / 100);
+        return (2500 + skillLevel * 700) * (baseLevel / 100);
       },
     },
     {
@@ -279,6 +251,13 @@ export class ShadowChaser extends CharacterBase {
       name: 'Severe Rainstorm',
       label: 'Severe Rainstorm',
       value: 'Severe Rainstorm==5',
+      values: [
+        '[Improved] Severe Rainstorm==1',
+        '[Improved] Severe Rainstorm==2',
+        '[Improved] Severe Rainstorm==3',
+        '[Improved] Severe Rainstorm==4',
+        '[Improved] Severe Rainstorm==5',
+      ],
       acd: 1,
       fct: 0.5,
       vct: (lv) => 1 + lv * 0.5,
@@ -290,37 +269,6 @@ export class ShadowChaser extends CharacterBase {
         { label: 'Severe Rainstorm Lv3', value: 'Severe Rainstorm==3' },
         { label: 'Severe Rainstorm Lv4', value: 'Severe Rainstorm==4' },
         { label: 'Severe Rainstorm Lv5', value: 'Severe Rainstorm==5' },
-      ],
-      formula: (input: AtkSkillFormulaInput): number => {
-        const { weapon, status, skillLevel, model } = input;
-        const baseLevel = model.level;
-        const { totalDex, totalAgi } = status;
-        const weaType = weapon.data.typeName;
-        const weaMultiMap: Partial<Record<WeaponTypeName, number>> = {
-          bow: 1,
-          instrument: 1.5,
-          whip: 1.5,
-        };
-        const extra = weaMultiMap[weaType] || 0;
-
-        return extra * (totalDex + totalAgi) * (skillLevel / 5) * (baseLevel / 100);
-      },
-    },
-    {
-      name: 'Severe Rainstorm',
-      label: '[Improved] Severe Rainstorm',
-      value: '[Improved] Severe Rainstorm==5',
-      acd: 1,
-      fct: 0.5,
-      vct: (lv) => 1 + lv * 0.5,
-      cd: (lv) => 4.5 + lv * 0.5,
-      totalHit: 12,
-      levelList: [
-        { label: '[Improved] Severe Rainstorm Lv1', value: '[Improved] Severe Rainstorm==1' },
-        { label: '[Improved] Severe Rainstorm Lv2', value: '[Improved] Severe Rainstorm==2' },
-        { label: '[Improved] Severe Rainstorm Lv3', value: '[Improved] Severe Rainstorm==3' },
-        { label: '[Improved] Severe Rainstorm Lv4', value: '[Improved] Severe Rainstorm==4' },
-        { label: '[Improved] Severe Rainstorm Lv5', value: '[Improved] Severe Rainstorm==5' },
       ],
       formula: (input: AtkSkillFormulaInput): number => {
         const { weapon, status, skillLevel, model } = input;
@@ -341,24 +289,7 @@ export class ShadowChaser extends CharacterBase {
       name: 'Ignition Break',
       label: 'Ignition Break Lv5',
       value: 'Ignition Break==5',
-      acd: 0,
-      fct: 0,
-      vct: 1,
-      cd: 2,
-      isMelee: true,
-      canCri: true,
-      baseCriPercentage: 0.5,
-      formula: (input: AtkSkillFormulaInput): number => {
-        const { model, skillLevel } = input;
-        const baseLevel = model.level;
-
-        return skillLevel * 400 * (baseLevel / 100);
-      },
-    },
-    {
-      name: 'Ignition Break',
-      label: '[Improved 2nd] Ignition Break Lv5',
-      value: '[Improved 2nd] Ignition Break==5',
+      values: ['[Improved 2nd] Ignition Break==5'],
       acd: 0,
       fct: 0,
       vct: 1,
@@ -405,9 +336,8 @@ export class ShadowChaser extends CharacterBase {
       label: 'Shadow Spell Lv10',
       name: 'Shadow Spell',
       inputType: 'selectButton',
-      isMasteryAtk: true,
       dropdown: [
-        { label: 'Yes', value: 10, isUse: true },
+        { label: 'Yes', value: 10, isUse: true, bonus: { matk: 50 } },
         { label: 'No', value: 0, isUse: false },
       ],
     },

@@ -1,22 +1,7 @@
 import { ClassName } from './_class-name';
-import {
-  ActiveSkillModel,
-  AtkSkillFormulaInput,
-  AtkSkillModel,
-  CharacterBase,
-  PassiveSkillModel,
-} from './_character-base.abstract';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
 import { InfoForClass } from '../models/info-for-class.model';
-import {
-  BeastBaneFn,
-  DemonBane,
-  DoubleAttackFn,
-  FaithFn,
-  HiltBindingFn,
-  ImproveDodgeFn,
-  IncreaseSPRecoveryFn,
-  SnatcherFn,
-} from '../constants/share-passive-skills';
+import { BeastBaneFn, DemonBane, DoubleAttackFn, FaithFn, HiltBindingFn, ImproveDodgeFn, IncreaseSPRecoveryFn, SnatcherFn } from '../constants/share-passive-skills';
 import { ElementType } from '../constants/element-type.const';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
@@ -186,18 +171,23 @@ export class SuperNovice extends CharacterBase {
       cd: 5,
       isMatk: true,
       element: ElementType.Neutral,
-      totalHit: 18,
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
 
-        return skillLevel * 50 * (baseLevel / 100);
+        return skillLevel * 100 * (baseLevel / 100);
+      },
+      finalDmgFormula(input) {
+        const totalHit = input.skillLevel * 2;
+
+        return input.damage * totalHit;
       },
     },
     {
       name: 'Fatal Manace',
       label: 'Fatal Manace',
       value: 'Fatal Manace==10',
+      values: ['Fatal Manace Lv7', '[Improved] Fatal Manace==7', '[Improved] Fatal Manace==10'],
       acd: 0.5,
       fct: 0,
       vct: 0,
@@ -206,26 +196,6 @@ export class SuperNovice extends CharacterBase {
       levelList: [
         { label: 'Fatal Manace Lv7', value: 'Fatal Manace==7' },
         { label: 'Fatal Manace Lv10', value: 'Fatal Manace==10' },
-      ],
-      formula: (input: AtkSkillFormulaInput): number => {
-        const { model, skillLevel } = input;
-        const baseLevel = model.level;
-
-        return (100 + skillLevel * 100) * (baseLevel / 100);
-      },
-    },
-    {
-      name: 'Fatal Manace',
-      label: '[Improved] Fatal Manace',
-      value: '[Improved] Fatal Manace==10',
-      acd: 0.5,
-      fct: 0,
-      vct: 0,
-      cd: 0,
-      isMelee: true,
-      levelList: [
-        { label: '[Improved] Fatal Manace Lv7', value: '[Improved] Fatal Manace==7' },
-        { label: '[Improved] Fatal Manace Lv10', value: '[Improved] Fatal Manace==10' },
       ],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
@@ -258,6 +228,14 @@ export class SuperNovice extends CharacterBase {
         const totalInt = status.totalInt;
 
         return (70 * skillLevel + 3 * totalInt) * (baseLevel / 100);
+      },
+      finalDmgFormula(input) {
+        const weaponType = input.weapon.data?.typeName;
+        if (weaponType === 'book' || weaponType === 'rod' || weaponType === 'twohandRod') {
+          return input.damage * 2;
+        }
+
+        return input.damage;
       },
     },
     {
@@ -296,32 +274,7 @@ export class SuperNovice extends CharacterBase {
       name: 'Wind Cutter',
       label: 'Wind Cutter Lv5',
       value: 'Wind Cutter==5',
-      acd: 1,
-      fct: 0,
-      vct: 0,
-      cd: 0.2,
-      isMelee: (weaponType) => weaponType !== 'spear' && weaponType !== 'twohandSpear',
-      formula: (input: AtkSkillFormulaInput): number => {
-        const { model, skillLevel, weapon } = input;
-        const wTypeName = weapon.data.typeName;
-        const baseLevel = model.level;
-
-        let baseDamage = 0;
-        if (wTypeName === 'twohandSword') {
-          baseDamage = 250 * skillLevel;
-        } else if (wTypeName === 'spear' || wTypeName === 'twohandSpear') {
-          baseDamage = 400 * skillLevel;
-        } else {
-          baseDamage = 300 * skillLevel;
-        }
-
-        return baseDamage * (baseLevel / 100);
-      },
-    },
-    {
-      name: 'Wind Cutter',
-      label: '[Improved 2nd] Wind Cutter Lv5',
-      value: '[Improved 2nd] Wind Cutter==5',
+      values: ['Wind Cutter==10', '[Improved 2nd] Wind Cutter==5', '[Improved 2nd] Wind Cutter==10'],
       acd: 0.5,
       fct: 0,
       vct: 0,
@@ -334,7 +287,7 @@ export class SuperNovice extends CharacterBase {
 
         let baseDamage = 0;
         if (wTypeName === 'twohandSword') {
-          baseDamage = 250 * skillLevel;
+          baseDamage = 250 * skillLevel * 2;
         } else if (wTypeName === 'spear' || wTypeName === 'twohandSpear') {
           baseDamage = 400 * skillLevel;
         } else {
