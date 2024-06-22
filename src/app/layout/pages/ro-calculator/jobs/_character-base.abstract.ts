@@ -73,6 +73,7 @@ export interface AtkSkillModel {
   isIgnoreDef?: boolean;
   isHDefToSDef?: boolean;
   isHit100?: boolean;
+  treatedAsSkillNameFn?: (skillValue: string) => string;
   isExcludeCannanball?: boolean;
   isSudoElement?: boolean;
   currentHpFn?: (maxHp: number) => number;
@@ -83,7 +84,7 @@ export interface AtkSkillModel {
    */
   autoSpellChance?: number;
   element?: ElementType;
-  getElement?: (skillValue: number) => ElementType;
+  getElement?: (skillValue: string) => ElementType;
 }
 [];
 

@@ -1,13 +1,7 @@
 import { ElementType } from '../constants/element-type.const';
 import { InfoForClass } from '../models/info-for-class.model';
 import { ClassName } from './_class-name';
-import {
-  ActiveSkillModel,
-  AtkSkillFormulaInput,
-  AtkSkillModel,
-  CharacterBase,
-  PassiveSkillModel,
-} from './_character-base.abstract';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
 import { Sage } from './sage';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
@@ -91,6 +85,47 @@ export class Sorcerer extends CharacterBase {
   protected readonly classNames = ['Only 3rd Cls', 'Sorcerer', 'Sorcerer Cls', 'Sorcerer Class'];
   protected readonly _atkSkillList: AtkSkillModel[] = [
     {
+      name: 'Fist Spell',
+      label: 'Fist Spell Lv10',
+      value: 'Fist Spell==10',
+      levelList: [
+        { label: 'Fist Spell Lv10 (Fire Bolt Lv10)', value: 'Fist Spell Fire Bolt==10' },
+        { label: 'Fist Spell Lv10 (Cold Bolt Lv10)', value: 'Fist Spell Cold Bolt==10' },
+        { label: 'Fist Spell Lv10 (Lightening Bolt Lv10)', value: 'Fist Spell Lightening Bolt==10' },
+      ],
+      fct: 0,
+      vct: 0,
+      cd: 0,
+      acd: 0,
+      isMatk: true,
+      getElement(skillValue) {
+        const map = {
+          'Fist Spell Fire Bolt==10': ElementType.Fire,
+          'Fist Spell Cold Bolt==10': ElementType.Water,
+          'Fist Spell Lightening Bolt==10': ElementType.Wind,
+        };
+
+        return map[skillValue];
+      },
+      treatedAsSkillNameFn(skillValue) {
+        const map = {
+          'Fist Spell Fire Bolt==10': 'Fire Bolt==10',
+          'Fist Spell Cold Bolt==10': 'Cold Bolt==10',
+          'Fist Spell Lightening Bolt==10': 'Lightening Bolt==10',
+        };
+
+        return map[skillValue];
+      },
+      formula: (_input: AtkSkillFormulaInput): number => {
+        return 100;
+      },
+      finalDmgFormula(input) {
+        const boltLv = 10;
+
+        return input.damage * (boltLv + 2);
+      },
+    },
+    {
       name: 'Diamond Dust',
       label: 'Diamond Dust Lv 5',
       value: 'Diamond Dust==5',
@@ -100,14 +135,14 @@ export class Sorcerer extends CharacterBase {
       acd: 1,
       element: ElementType.Water,
       isMatk: true,
+      hit: 2,
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
         const baseLevel = model.level;
         const totalInt = status.totalInt;
-        const learnedLv = this.learnSkillMap.get('Lightning Loader') || 0;
+        const bonus = this.learnLv('Frost Weapon') * 300;
 
-        // return ((skillLevel + 2) * totalInt + learnedLv * 300) * (baseLevel / 100); Rebalance
-        return (skillLevel * totalInt + learnedLv * 200) * (baseLevel / 100);
+        return ((skillLevel + 2) * totalInt + bonus) * (baseLevel / 100);
       },
     },
     {
@@ -124,10 +159,9 @@ export class Sorcerer extends CharacterBase {
         const { model, skillLevel, status } = input;
         const baseLevel = model.level;
         const totalInt = status.totalInt;
-        const learnedLv = this.learnSkillMap.get('Seismic Weapon') || 0;
+        const bonus = this.learnLv('Seismic Weapon') * 300;
 
-        // return ((skillLevel + 2) * totalInt + learnedLv * 300) * (baseLevel / 100); Rebalance
-        return (skillLevel * totalInt + learnedLv * 200) * (baseLevel / 100);
+        return ((skillLevel + 2) * totalInt + bonus) * (baseLevel / 100);
       },
     },
     {
@@ -138,7 +172,7 @@ export class Sorcerer extends CharacterBase {
       vct: 12,
       cd: 5,
       acd: 1,
-      // element: ElementType.Neutral,
+      element: ElementType.Neutral,
       totalHit: 7,
       isMatk: true,
       formula: (input: AtkSkillFormulaInput): number => {
@@ -147,6 +181,14 @@ export class Sorcerer extends CharacterBase {
         const totalInt = status.totalInt;
 
         return (70 * skillLevel + 3 * totalInt) * (baseLevel / 100);
+      },
+      finalDmgFormula(input) {
+        const weaponType = input.weapon.data?.typeName;
+        if (weaponType === 'book' || weaponType === 'rod' || weaponType === 'twohandRod') {
+          return input.damage * 2;
+        }
+
+        return input.damage;
       },
     },
     {
@@ -159,15 +201,33 @@ export class Sorcerer extends CharacterBase {
       acd: 1,
       element: ElementType.Wind,
       isMatk: true,
+      hit: 3,
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
         const baseLevel = model.level;
         const totalInt = status.totalInt;
-        const strikingLvl = this.learnSkillMap.get('Striking') || 0;
-        const endowLvl = this.learnSkillMap.get('Endow Tornado') || 0;
+        const strikingLvl = this.learnLv('Striking');
+        const endowLvl = this.learnLv('Lightning Loader');
 
-        // return (((skillLevel + 2) * totalInt) / 2 + (strikingLvl + endowLvl) * 150) * (baseLevel / 100); Rebalance
-        return ((skillLevel * totalInt) / 2 + (strikingLvl + endowLvl) * 120) * (baseLevel / 100);
+        return (((skillLevel + 4) * totalInt) / 2 + (strikingLvl + endowLvl) * 150) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Poison Burst',
+      label: 'Poison Burst Lv5',
+      value: 'Poison Burst==5',
+      fct: 0,
+      vct: 6,
+      cd: 2,
+      acd: 1,
+      element: ElementType.Poison,
+      isMatk: true,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const baseLevel = model.level;
+        const totalInt = status.totalInt;
+
+        return (1000 + skillLevel * 300 + totalInt) * (baseLevel / 100);
       },
     },
   ];

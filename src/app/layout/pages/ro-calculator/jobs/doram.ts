@@ -1,11 +1,5 @@
 import { ClassName } from './_class-name';
-import {
-  ActiveSkillModel,
-  AtkSkillFormulaInput,
-  AtkSkillModel,
-  CharacterBase,
-  PassiveSkillModel,
-} from './_character-base.abstract';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
 import { ElementType } from '../constants/element-type.const';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
@@ -108,15 +102,15 @@ export class Doram extends CharacterBase {
       vct: 2,
       cd: 1,
       isMatk: true,
-      getElement: (lv) => {
+      getElement: (skillValue) => {
         const map = {
-          1: ElementType.Earth,
-          2: ElementType.Fire,
-          3: ElementType.Water,
-          4: ElementType.Wind,
-          5: ElementType.Ghost,
+          'Silvervine Stem Spear==1': ElementType.Earth,
+          'Silvervine Stem Spear==2': ElementType.Fire,
+          'Silvervine Stem Spear==3': ElementType.Water,
+          'Silvervine Stem Spear==4': ElementType.Wind,
+          'Silvervine Stem Spear==5': ElementType.Ghost,
         };
-        return map[lv];
+        return map[skillValue];
       },
       levelList: [
         { label: 'Silvervine Stem Spear Lv1 (Earth)', value: 'Silvervine Stem Spear==1' },

@@ -27,7 +27,7 @@ export const AspdTable: Partial<Record<ClassName, XX>> = {
   [ClassName.GuillotineCross]: { base: 156, shield: -9, Dagger: -2, Sword: -25, Axe: -40, Katar: -2, 'left-Dagger': -10, 'left-Sword': -16 },
   [ClassName.ShadowChaser]: { base: 156, shield: -4, Dagger: -3, Sword: -7, Bow: -7 },
 
-  [ClassName.Sorcerer]: { base: 156, shield: -5, Dagger: -10, Sword: -10, Rod: -5, 'Two-Handed Rod': -15, Book: -5 },
+  [ClassName.Sorcerer]: { base: 156, shield: -5, Dagger: -10, Sword: -10, Rod: -5, 'Two-Handed Rod': -15, Book: -3 },
   [ClassName.Warlock]: { base: 151, shield: -5, Dagger: -7, Sword: -15, Rod: -5, 'Two-Handed Rod': -11 },
 
   [ClassName.Doram]: { base: 156, shield: -7, Rod: -20 },

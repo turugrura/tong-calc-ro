@@ -854,11 +854,11 @@ export class DamageCalculator {
       total = floor(total * cometMultiplier);
 
       total = floor(total * baseSkillMultiplier); //tested
-      total = floor(total * equipSkillMultiplier);
 
       total = floor(total * myElementMultiplier); //tested
       total = floor(total * round(hardDef, 4)); //tested
       total = total - softMDef; //tested
+      total = floor(total * equipSkillMultiplier);
       total = floor(total * propertyMultiplier); //tested
       total = floor(total * finalDmgMultiplier);
       total = this.applyFinalMultiplier(total, 'magic');
@@ -1081,14 +1081,28 @@ export class DamageCalculator {
     const params = {
       baseSkillDamage,
       skillData,
-      weaponPropertyAtk: typeof getElement === 'function' && !!getElement ? getElement(skillLevel) : propertyAtk,
+      weaponPropertyAtk: typeof getElement === 'function' && !!getElement ? getElement(skillValue) : propertyAtk,
       sizePenalty,
       formulaParams,
     };
 
     let calculated: DamageResultModel;
-    if (customFormula && typeof customFormula === 'function') {
-      const skillPropertyAtk = typeof getElement === 'function' ? getElement(skillLevel) : skillData.element || propertyAtk;
+
+    if (skillName === 'Fist Spell' && typeof skillData.treatedAsSkillNameFn === 'function') {
+      const newSkillValue = skillData.treatedAsSkillNameFn(skillValue);
+      const newSkillData = this._class.atkSkills.find((a) => a.value === newSkillValue || a.levelList?.findIndex((b) => b.value === newSkillValue) >= 0);
+      if (newSkillData) {
+        calculated = this.calcMagicalSkillDamage({
+          ...params,
+          skillData: {
+            ...params.skillData,
+            formula: newSkillData.formula,
+            name: newSkillData.name,
+          },
+        });
+      }
+    } else if (customFormula && typeof customFormula === 'function') {
+      const skillPropertyAtk = typeof getElement === 'function' ? getElement(skillValue) : skillData.element || propertyAtk;
       const propertyMultiplier = this.getPropertyMultiplier(skillPropertyAtk);
 
       const d = customFormula({
