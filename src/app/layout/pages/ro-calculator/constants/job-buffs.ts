@@ -151,13 +151,13 @@ export const JobBuffs: ActiveSkillModel[] = [
     ],
   },
   {
-    inputType: 'dropdown',
+    inputType: 'selectButton',
     label: 'Striking 5',
     name: 'Striking',
+    isEquipAtk: true,
     dropdown: [
-      { label: '-', isUse: false, value: 0 },
-      { label: '20 EndowLv', isUse: true, value: 20, bonus: { strikingEndowSkillLv: 20, cri: 5 } },
-      { label: '10 EndowLv', isUse: true, value: 10, bonus: { strikingEndowSkillLv: 10, cri: 5 } },
+      { label: 'Yes', isUse: true, value: 20, bonus: { atk: 100 } },
+      { label: 'No', isUse: false, value: 0 },
     ],
   },
   {
