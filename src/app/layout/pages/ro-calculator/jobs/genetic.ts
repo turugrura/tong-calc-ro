@@ -1,11 +1,5 @@
 import { ClassName } from './_class-name';
-import {
-  ActiveSkillModel,
-  AtkSkillFormulaInput,
-  AtkSkillModel,
-  CharacterBase,
-  PassiveSkillModel,
-} from './_character-base.abstract';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
 import { CartBoost } from '../constants/share-active-skills';
 import { Creator } from './creator';
 import { InfoForClass } from '../models/info-for-class.model';
@@ -113,31 +107,7 @@ export class Genetic extends CharacterBase {
       name: 'Cart Cannon',
       label: 'Cart Cannon Lv5',
       value: 'Cart Cannon==5',
-      values: ['[Improved 1nd] Cart Cannon==5'],
-      acd: 0.5,
-      fct: 0,
-      vct: 3,
-      cd: 0,
-      isHit100: true,
-      isHDefToSDef: true,
-      formula: (input: AtkSkillFormulaInput): number => {
-        const { skillLevel, model, status, monster, ammoElement } = input;
-        const isCannonballNeutral = model.ammo > 0 && (!ammoElement || ammoElement === ElementType.Neutral);
-        if (isCannonballNeutral && monster.elementUpper === ElementType.Ghost) {
-          return 0;
-        }
-
-        const baseLevel = model.level;
-        const totalInt = status.totalInt;
-        const cartModelingLv = this.learnLv('Cart Remodeling');
-
-        return (350 * skillLevel + totalInt / (6 - cartModelingLv)) * (baseLevel / 100);
-      },
-    },
-    {
-      name: 'Cart Cannon',
-      label: '[Improved 2nd] Cart Cannon Lv5',
-      value: '[Improved 2nd] Cart Cannon==5',
+      values: ['[Improved 1nd] Cart Cannon==5', '[Improved 2nd] Cart Cannon==5'],
       acd: 0.5,
       fct: 0,
       vct: 3,
@@ -160,32 +130,14 @@ export class Genetic extends CharacterBase {
     },
     {
       name: 'Cart Tornado',
-      label: 'Cart Tornado Lv10',
+      label: 'Cart Tornado Attack Lv10',
       value: 'Cart Tornado==10',
+      values: ['[Improved] Cart Tornado==10'],
       acd: 1,
       fct: 0,
       vct: 0,
       cd: 2,
-      isMelee: true,
-      isExcludeCannanball: true,
-      formula: (input: AtkSkillFormulaInput): number => {
-        const { skillLevel, status } = input;
-        const { baseStr } = status;
-
-        const cartModelingLv = this.learnLv('Cart Remodeling');
-        const cartWeight = this.bonuses.usedSkillMap.get('Cart Weight') || 0;
-
-        return skillLevel * 100 + cartModelingLv * 50 + cartWeight / (150 - baseStr);
-      },
-    },
-    {
-      name: 'Cart Tornado',
-      label: '[Improved] Cart Tornado Lv10',
-      value: '[Improved] Cart Tornado==10',
-      acd: 1,
-      fct: 0,
-      vct: 0,
-      cd: 2,
+      hit: 3,
       isMelee: true,
       isExcludeCannanball: true,
       formula: (input: AtkSkillFormulaInput): number => {
@@ -203,23 +155,7 @@ export class Genetic extends CharacterBase {
       name: 'Spore Explosion',
       label: 'Spore Explosion Lv10',
       value: 'Spore Explosion==10',
-      acd: 0.5,
-      fct: 0,
-      vct: 1.5,
-      cd: 5,
-      formula: (input: AtkSkillFormulaInput): number => {
-        const { skillLevel, model } = input;
-        const baseLevel = model.level;
-        const primaryDmg = 200 + 180 * skillLevel;
-        const secondaryDmg = 180 * skillLevel;
-
-        return (primaryDmg + secondaryDmg) * (baseLevel / 100);
-      },
-    },
-    {
-      name: 'Spore Explosion',
-      label: '[Improved 2nd] Spore Explosion Lv10',
-      value: '[Improved 2nd] Spore Explosion==10',
+      values: ['[Improved 2nd] Spore Explosion==10'],
       acd: 0.5,
       fct: 0,
       vct: 1.5,
@@ -368,8 +304,14 @@ export class Genetic extends CharacterBase {
   override getMasteryAtk(info: InfoForClass): number {
     const { weapon } = info;
     const weaponType = weapon?.data?.typeName;
-    if (weaponType !== 'sword' && weaponType !== 'axe') return 0;
 
-    return this.calcHiddenMasteryAtk(info, { prefix: `x_${weaponType}` }).totalAtk;
+    let sum = 0;
+
+    const axeMastery = this.learnLv('Axe Mastery');
+    if (weaponType === 'sword' || weaponType === 'axe' || weaponType === 'twohandAxe') {
+      sum += axeMastery * 3;
+    }
+
+    return sum;
   }
 }

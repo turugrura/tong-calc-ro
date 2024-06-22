@@ -49,7 +49,7 @@ export class Creator extends CharacterBase {
       isMasteryAtk: true,
       dropdown: [
         { label: '-', isUse: false, value: 0 },
-        { label: 'Lv 10', isUse: true, value: 10, bonus: { x_axe_atk: 30, x_sword_atk: 30 } },
+        { label: 'Lv 10', isUse: true, value: 10 },
       ],
     },
     {
