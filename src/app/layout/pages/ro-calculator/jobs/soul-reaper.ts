@@ -1,12 +1,6 @@
 import { ElementType } from '../constants/element-type.const';
 import { ClassName } from './_class-name';
-import {
-  ActiveSkillModel,
-  AtkSkillFormulaInput,
-  AtkSkillModel,
-  CharacterBase,
-  PassiveSkillModel,
-} from './_character-base.abstract';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
 import { SoulLinker } from './soul-linker';
 import { InfoForClass } from '../models/info-for-class.model';
 
@@ -137,6 +131,24 @@ export class SoulReaper extends CharacterBase {
         const baseLevel = model.level;
 
         return (400 + skillLevel * 100) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Adoramus',
+      label: 'Adoramus Lv6',
+      value: 'Adoramus==6',
+      fct: 0.5,
+      vct: 2,
+      acd: 0.5,
+      cd: 2.5,
+      isMatk: true,
+      hit: 10,
+      element: ElementType.Holy,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
+
+        return (300 + skillLevel * 250) * (baseLevel / 100);
       },
     },
   ];
