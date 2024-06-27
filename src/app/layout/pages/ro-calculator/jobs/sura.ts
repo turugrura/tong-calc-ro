@@ -237,7 +237,6 @@ export class Sura extends CharacterBase {
       acd: 1,
       cd: 3,
       isMelee: true,
-      isSudoElement: true,
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, maxHp, maxSp, monster } = input;
         if (monster.elementUpper === ElementType.Ghost) return 0;
