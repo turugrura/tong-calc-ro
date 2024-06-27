@@ -1,12 +1,6 @@
 import { ClassName } from './_class-name';
 import { AssassinCross } from './assassin-cross';
-import {
-  ActiveSkillModel,
-  AtkSkillFormulaInput,
-  AtkSkillModel,
-  CharacterBase,
-  PassiveSkillModel,
-} from './_character-base.abstract';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
 import { InfoForClass } from '../models/info-for-class.model';
 import { DarkClawFn } from '../constants/share-active-skills';
 
@@ -182,6 +176,32 @@ export class GitCross extends CharacterBase {
         const spinCnt = this.activeSkillLv('Spin Count');
 
         return skillLevel * 80 * (baseLevel / 100) + 200 * spinCnt + totalAgi * 3;
+      },
+    },
+    {
+      name: 'Wind Cutter',
+      label: 'Wind Cutter Lv5',
+      value: 'Wind Cutter==5',
+      acd: 0.5,
+      fct: 0,
+      vct: 0,
+      cd: 0.3,
+      isMelee: (weaponType) => weaponType !== 'spear' && weaponType !== 'twohandSpear',
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, weapon } = input;
+        const wTypeName = weapon.data.typeName;
+        const baseLevel = model.level;
+
+        let baseDamage = 0;
+        if (wTypeName === 'twohandSword') {
+          baseDamage = 250 * skillLevel * 2;
+        } else if (wTypeName === 'spear' || wTypeName === 'twohandSpear') {
+          baseDamage = 400 * skillLevel;
+        } else {
+          baseDamage = 300 * skillLevel;
+        }
+
+        return baseDamage * (baseLevel / 100);
       },
     },
   ];

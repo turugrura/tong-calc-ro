@@ -1,11 +1,5 @@
 import { ClassName } from './_class-name';
-import {
-  ActiveSkillModel,
-  AtkSkillFormulaInput,
-  AtkSkillModel,
-  CharacterBase,
-  PassiveSkillModel,
-} from './_character-base.abstract';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
 import { InfoForClass } from '../models/info-for-class.model';
 import { StarGladiator } from './star-gladiator';
 import { FusionSunMoonStar } from '../constants/share-active-skills';
@@ -88,14 +82,7 @@ export class StarEmperor extends CharacterBase {
   protected readonly JobBonusTable = jobBonusTable;
 
   protected readonly initialStatusPoint = 48;
-  protected readonly classNames = [
-    'Star Emperor',
-    'Star Emperor Cls',
-    'Star Emperor Class',
-    'StarEmperor',
-    'StarEmperor Cls',
-    'StarEmperor Class',
-  ];
+  protected readonly classNames = ['Star Emperor', 'Star Emperor Cls', 'Star Emperor Class', 'StarEmperor', 'StarEmperor Cls', 'StarEmperor Class'];
   protected readonly _atkSkillList: AtkSkillModel[] = [
     {
       label: 'New Moon Kick Lv7',
@@ -181,6 +168,32 @@ export class StarEmperor extends CharacterBase {
       },
       finalDmgFormula: (input): number => {
         return input.damage * 2;
+      },
+    },
+    {
+      name: 'Wind Cutter',
+      label: 'Wind Cutter Lv5',
+      value: 'Wind Cutter==5',
+      acd: 0.5,
+      fct: 0,
+      vct: 0,
+      cd: 0.3,
+      isMelee: (weaponType) => weaponType !== 'spear' && weaponType !== 'twohandSpear',
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, weapon } = input;
+        const wTypeName = weapon.data.typeName;
+        const baseLevel = model.level;
+
+        let baseDamage = 0;
+        if (wTypeName === 'twohandSword') {
+          baseDamage = 250 * skillLevel * 2;
+        } else if (wTypeName === 'spear' || wTypeName === 'twohandSpear') {
+          baseDamage = 400 * skillLevel;
+        } else {
+          baseDamage = 300 * skillLevel;
+        }
+
+        return baseDamage * (baseLevel / 100);
       },
     },
   ];
