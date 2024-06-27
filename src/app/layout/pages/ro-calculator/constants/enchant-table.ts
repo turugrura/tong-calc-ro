@@ -301,6 +301,10 @@ const createBaseStat = (from: number, to: number): string[] => {
 
   return ls;
 };
+const base12 = createBaseStat(1, 2);
+const base15 = createBaseStat(1, 5);
+const base46 = createBaseStat(4, 6);
+
 const BaseState = {
   _1: [Str._1, Int._1, Dex._1, Agi._1, Vit._1, Luk._1],
   _2: [Str._2, Int._2, Dex._2, Agi._2, Vit._2, Luk._2],
@@ -591,7 +595,7 @@ const labHead2 = [
 ];
 const bioHead2 = [...labHead2];
 
-const tempHead4 = [Str._1, Str._2, Str._3, Str._4, Int._1, Int._2, Int._3, Int._4, Vit._1, Vit._2, Vit._3, Vit._4, Luk._1, Luk._2, Luk._3, Luk._4];
+const tempHead4 = [...base15];
 const tempHead3 = [
   'Time_Jewely_Str_1',
   'Time_Jewely_Str_2',
@@ -709,10 +713,6 @@ interface EntTable {
   name: string;
   enchants: [null, any[], any[], any[]];
 }
-
-const base12 = createBaseStat(1, 2);
-const base15 = createBaseStat(1, 5);
-const base46 = createBaseStat(4, 6);
 
 const soutanes = ['Cassock_Str', 'Cassock_Agi', 'Cassock_Vit', 'Cassock_Dex', 'Cassock_Int', 'Cassock_Luk'];
 const specialBonus = [FS._5, FS._6, Spell._4, Spell._5, EA._4, EA._5, Sharp._4, Sharp._5];
