@@ -172,7 +172,7 @@ export class Sorcerer extends CharacterBase {
       vct: 12,
       cd: 5,
       acd: 1,
-      element: ElementType.Neutral,
+      // element: ElementType.Neutral,
       totalHit: 7,
       isMatk: true,
       formula: (input: AtkSkillFormulaInput): number => {

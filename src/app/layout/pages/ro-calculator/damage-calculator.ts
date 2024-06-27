@@ -364,28 +364,20 @@ export class DamageCalculator {
   }
 
   private getTotalPhysicalPene() {
-    const { size, race, element, type } = this.monsterData;
-    const { p_pene_race_all, p_pene_size_all, p_pene_class_all } = this.totalBonus;
-    const rawP_Pene = p_pene_race_all + p_pene_size_all + p_pene_class_all;
-    const pByMonster =
-      (this.totalBonus[`p_pene_size_${size}`] ?? 0) +
-      (this.totalBonus[`p_pene_element_${element}`] ?? 0) +
-      (this.totalBonus[`p_pene_race_${race}`] ?? 0) +
-      (this.totalBonus[`p_pene_class_${type}`] ?? 0);
+    const { race, type } = this.monsterData;
+    const { p_pene_race_all } = this.totalBonus;
+    const rawP_Pene = p_pene_race_all;
+    const pByMonster = (this.totalBonus[`p_pene_race_${race}`] || 0) + (this.totalBonus[`p_pene_class_${type}`] || 0);
     const totalP_Pene = rawP_Pene + pByMonster;
 
     return Math.min(100, totalP_Pene);
   }
 
   private getTotalMagicalPene() {
-    const { size, race, element, type } = this.monsterData;
-    const { m_pene_race_all, m_pene_size_all, m_pene_class_all } = this.totalBonus;
-    const rawM_Pene = m_pene_race_all + m_pene_size_all + m_pene_class_all;
-    const mByMonster =
-      (this.totalBonus[`m_pene_size_${size}`] ?? 0) +
-      (this.totalBonus[`m_pene_element_${element}`] ?? 0) +
-      (this.totalBonus[`m_pene_race_${race}`] ?? 0) +
-      (this.totalBonus[`m_pene_class_${type}`] ?? 0);
+    const { race, type } = this.monsterData;
+    const { m_pene_race_all } = this.totalBonus;
+    const rawM_Pene = m_pene_race_all;
+    const mByMonster = (this.totalBonus[`m_pene_race_${race}`] || 0) + (this.totalBonus[`m_pene_class_${type}`] || 0);
     const totalM_Pene = rawM_Pene + mByMonster;
 
     return Math.min(100, totalM_Pene);

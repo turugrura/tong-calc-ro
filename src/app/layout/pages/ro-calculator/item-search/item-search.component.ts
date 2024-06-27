@@ -63,7 +63,7 @@ export class ItemSearchComponent implements OnInit, OnDestroy {
   itemSearchFirst = 0;
   totalFilteredItems = 0;
 
-  bonusNameList = createBonusNameList() as any;
+  bonusNameList = createBonusNameList() as any[];
   selectedBonus: string[] = [];
 
   filteredItems: DropdownModel[] = [];
@@ -76,6 +76,11 @@ export class ItemSearchComponent implements OnInit, OnDestroy {
   selectedOffensiveSkills: string[] = [];
 
   ngOnInit(): void {
+    this.bonusNameList.push({
+      label: 'Perfect Dodge',
+      value: 'perfectDodge',
+    });
+
     this.subscription = this.onClassChanged.subscribe(() => {
       this.clearItemSearch();
     });

@@ -200,6 +200,7 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
         'Added Sorcerer skill [ Fist Spell ]',
         'Added Sura skills [ Dragon Combo, Fallen Empire, Lion Howling, Earth Shaker ]',
         'Added MC skills [ Knuckle Boost, Vulcan Arm ]',
+        'Added Adanvanced Eden Shadow Equipments',
         'Added requested items',
       ],
     },

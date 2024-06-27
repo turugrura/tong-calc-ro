@@ -1,16 +1,53 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, shareReplay } from 'rxjs';
+import { Observable, shareReplay, tap } from 'rxjs';
+import { createRawTotalBonus } from 'src/app/layout/pages/ro-calculator/utils/create-raw-total-bonus';
+import { validBonusSet } from './valid-bonuses';
 
 @Injectable()
 export class RoService {
   private cachedMonster$: Observable<any>;
   private cachedItems$: Observable<any>;
   private cachedHpSpTable$: Observable<any>;
+  private _isFirst = true;
 
   constructor(private http: HttpClient) {
     this.cachedMonster$ = this.http.get<any>('assets/demo/data/monster.json').pipe(shareReplay(1));
-    this.cachedItems$ = this.http.get<any>('assets/demo/data/item.json').pipe(shareReplay(1));
+    this.cachedItems$ = this.http.get<any>('assets/demo/data/item.json').pipe(
+      shareReplay(1),
+      tap((items) => {
+        if (!this._isFirst) return;
+
+        this._isFirst = false;
+
+        const validBonus = createRawTotalBonus();
+        const validStatusSet = new Set(Object.keys(validBonus));
+
+        const its = Object.values(items) as any[];
+        const invalidBonusSet = new Set();
+        for (const item of its) {
+          const script = item.script;
+          if (!script) continue;
+          for (const bonusKey of Object.keys(script)) {
+            const realKey = bonusKey
+              .replace('fix_vct__', '')
+              .replace('vct__', '')
+              .replace('chance__', '')
+              .replace('fctPercent__', '')
+              .replace('fct__', '')
+              .replace('acd__', '')
+              .replace('cd__', '');
+            if (validStatusSet.has(realKey)) continue;
+            if (invalidBonusSet.has(realKey)) continue;
+            if (validBonusSet.has(realKey)) continue;
+
+            invalidBonusSet.add(realKey);
+          }
+        }
+
+        if (invalidBonusSet.size > 0) console.error([...invalidBonusSet]);
+      }),
+    );
     this.cachedHpSpTable$ = this.http.get<any>('assets/demo/data/hp_sp_table.json').pipe(shareReplay(1));
 
     // const a = [] as any[];
