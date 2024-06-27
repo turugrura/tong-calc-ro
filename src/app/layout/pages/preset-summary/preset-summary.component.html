@@ -14,30 +14,22 @@
   <div class="col-12 grid grid-nogutter">
     <div class="col-3">
       <div class="card text-lg m-0 p-2">
-        <div>Information date: 13-06-2567</div>
+        <div>Information date: 27-06-2567</div>
         <div>
           Total <span class="text-primary text-lg">{{ jobSummary[0] | number }}</span> accounts,
           <span class="text-primary text-lg">{{ totalPresets | number }}</span> presets
         </div>
         <div>
           <span class="mr-2 font-medium">{{ selectedJobName }}</span>
-          <span class="text-primary">{{ totalAccounts | number }}</span> accounts,
-          <span class="text-primary">{{ totalCurrentJobPresets | number }}</span> presets
+          <span class="text-primary">{{ totalAccounts | number }}</span> accounts, <span class="text-primary">{{ totalCurrentJobPresets | number }}</span> presets
         </div>
       </div>
 
-      <p-listbox
-        [options]="skillRankingList"
-        [(ngModel)]="selectedSkillName"
-        (onChange)="onSkillChange()"
-        [disabled]="isLoading"
-      >
+      <p-listbox [options]="skillRankingList" [(ngModel)]="selectedSkillName" (onChange)="onSkillChange()" [disabled]="isLoading">
         <ng-template let-item pTemplate="item" class="py-0">
           <div class="w-full flex justify-content-between">
             <div class="text_ellips">{{ item.label }}</div>
-            <div class="text_ellips">
-              ( {{ item.total | number }} accounts, {{ item.totalPresets | number }} presets )
-            </div>
+            <div class="text_ellips">( {{ item.total | number }} accounts, {{ item.totalPresets | number }} presets )</div>
           </div>
         </ng-template>
       </p-listbox>
@@ -61,20 +53,10 @@
             {{ position }}
           </div>
           <div *ngIf="isItemHasEnchant[position]">
-            <p-checkbox
-              [(ngModel)]="isShowEnchant[position]"
-              [binary]="true"
-              label="Show enchant"
-              (ngModelChange)="onToggleShowEnchantClick(position)"
-            ></p-checkbox>
+            <p-checkbox [(ngModel)]="isShowEnchant[position]" [binary]="true" label="Show enchant" (ngModelChange)="onToggleShowEnchantClick(position)"></p-checkbox>
           </div>
         </div>
-        <p-listbox
-          [options]="rankingMap[position]"
-          [(ngModel)]="selectedItemId"
-          (onChange)="onItemChange()"
-          optionValue="ItemId"
-        >
+        <p-listbox [options]="rankingMap[position]" [(ngModel)]="selectedItemId" (onChange)="onItemChange()" optionValue="ItemId">
           <ng-template let-rank pTemplate="item" styleClass="py-0 xxx">
             <div *ngIf="!rank.IsEnchant" class="flex w-full justify-content-between">
               <div class="flex gap-1" *ngIf="rank.ItemId">
@@ -93,10 +75,7 @@
 
             <div *ngIf="rank.IsEnchant" class="flex pl-4 w-full justify-content-between">
               <div class="flex gap-2 w-full">
-                <div
-                  class="flex gap-1 {{ rank.EnchantInfos.length === 3 ? 'item_enchant' : '' }}"
-                  *ngFor="let enchant of rank.EnchantInfos"
-                >
+                <div class="flex gap-1 {{ rank.EnchantInfos.length === 3 ? 'item_enchant' : '' }}" *ngFor="let enchant of rank.EnchantInfos">
                   <img src="assets/demo/images/items/{{ enchant.id }}.png" alt="" class="item_img" />
                   <div>{{ enchant.name }}</div>
                 </div>
