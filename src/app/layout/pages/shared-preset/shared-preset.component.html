@@ -4,12 +4,7 @@
 <div class="grid grid-nogutter" style="min-width: 1500px">
   <div class="col-12 mb-2">
     <div class="grid grid-nogutter column_list">
-      <p-listbox
-        [options]="allClasses"
-        [(ngModel)]="selectedClassId"
-        (onChange)="onSelectClassChange()"
-        [disabled]="isLoading"
-      >
+      <p-listbox [options]="allClasses" [(ngModel)]="selectedClassId" (onChange)="onSelectClassChange()" [disabled]="isLoading">
         <ng-template let-item pTemplate="item" class="py-0">
           <div class="flex gap-2 py-0">
             <img src="assets/demo/images/jobs/icon_jobs_{{ item.icon }}.png" alt="" class="job_img" />
@@ -44,6 +39,13 @@
       [loading]="isLoading"
       [tableStyle]="{ 'min-width': '65rem' }"
       [showCurrentPageReport]="true"
+      [paginator]="true"
+      (onPage)="pageChange($event)"
+      [first]="firstRecord"
+      [rows]="pageLimit"
+      [totalRecords]="totalRecord"
+      [lazy]="true"
+      [rowsPerPageOptions]="pageOptions"
     >
       <!-- <ng-template pTemplate="header">
         <tr>
@@ -90,10 +92,7 @@
 
                 <div class="flex align-items-center">
                   <div class="flex ml-3">
-                    <p-inputSwitch
-                      inputId="{{ presetTag.tagId }}"
-                      [(ngModel)]="viewDetail[presetTag.tagId]"
-                    ></p-inputSwitch>
+                    <p-inputSwitch inputId="{{ presetTag.tagId }}" [(ngModel)]="viewDetail[presetTag.tagId]"></p-inputSwitch>
                     <label class="mx-2" for="{{ presetTag.tagId }}">View detail</label>
                   </div>
                   <div>
@@ -130,9 +129,7 @@
                   </div>
                   <div class="col-6">
                     Dex:
-                    <span class="summary_stat_atk text-xl" style="color: var(--green-300)">
-                      {{ presetTag.model?.dex }} </span
-                    >+ <span>{{ presetTag.dex || 0 }}</span>
+                    <span class="summary_stat_atk text-xl" style="color: var(--green-300)"> {{ presetTag.model?.dex }} </span>+ <span>{{ presetTag.dex || 0 }}</span>
                   </div>
                   <div class="col-6">
                     Agi: <span class="summary_stat_def text-xl"> {{ presetTag.model?.agi }} </span>+
@@ -158,28 +155,18 @@
                   </div>
                   <div class="col-12">
                     ASPD:
-                    <span class="font-semibold px-1 summary_stat_atk">{{
-                      presetTag.summary?.calc?.totalAspd || 0
-                    }}</span>
-                    <span class="font-semibold px-1 summary_highlight"
-                      >( {{ presetTag.summary?.calc?.hitPerSecs || 0 }} Hits/s )</span
-                    >
+                    <span class="font-semibold px-1 summary_stat_atk">{{ presetTag.summary?.calc?.totalAspd || 0 }}</span>
+                    <span class="font-semibold px-1 summary_highlight">( {{ presetTag.summary?.calc?.hitPerSecs || 0 }} Hits/s )</span>
                   </div>
                   <div class="col-12">
                     Hit:
-                    <span class="font-semibold px-1 summary_stat_atk">{{
-                      presetTag.summary?.calc?.totalHit || 0
-                    }}</span>
+                    <span class="font-semibold px-1 summary_stat_atk">{{ presetTag.summary?.calc?.totalHit || 0 }}</span>
                     Perfect:
-                    <span class="font-semibold px-1 summary_stat_atk"
-                      >{{ presetTag.summary?.calc?.totalPerfectHit || 0 }} %</span
-                    >
+                    <span class="font-semibold px-1 summary_stat_atk">{{ presetTag.summary?.calc?.totalPerfectHit || 0 }} %</span>
                   </div>
                   <div class="col-12">
                     CriRate:
-                    <span class="font-semibold px-1 summary_stat_atk"
-                      >{{ presetTag.summary?.calc?.totalCri || 0 }} %</span
-                    >
+                    <span class="font-semibold px-1 summary_stat_atk">{{ presetTag.summary?.calc?.totalCri || 0 }} %</span>
                     Dmg: <span class="font-semibold px-1 summary_stat_atk">{{ presetTag.summary?.criDmg || 0 }} %</span>
                   </div>
                   <div class="col-6">
@@ -202,11 +189,7 @@
                     <app-equipment-in-detail [itemMap]="itemMap" [model]="presetTag.model"></app-equipment-in-detail>
                   </div>
                   <div class="col-7">
-                    <app-skill-detail
-                      [itemMap]="itemMap"
-                      [model]="presetTag.model"
-                      [job]="selectedCharacter"
-                    ></app-skill-detail>
+                    <app-skill-detail [itemMap]="itemMap" [model]="presetTag.model" [job]="selectedCharacter"></app-skill-detail>
                   </div>
                 </div>
               </div>
@@ -220,13 +203,6 @@
         </tr>
       </ng-template>
     </p-table>
-    <p-paginator
-      (onPageChange)="pageChange($event)"
-      [first]="firstRecord"
-      [rows]="pageLimit"
-      [totalRecords]="totalRecord"
-      [rowsPerPageOptions]="pageOptions"
-    ></p-paginator>
   </div>
   <div class="p-fluid col-3">
     <p-accordion [multiple]="true" [activeIndex]="[0]">
@@ -262,11 +238,7 @@
               <div class="col-6 flex align-items-center justify-content-center">
                 <div class="grid grid-nogutter" style="height: 100%; width: 100%">
                   <div class="col-12 flex align-items-center justify-content-center">
-                    <img
-                      src="https://static.divine-pride.net/images/mobs/png/{{ selectedMonster }}.png"
-                      class="img_monster"
-                      alt="-"
-                    />
+                    <img src="https://static.divine-pride.net/images/mobs/png/{{ selectedMonster }}.png" class="img_monster" alt="-" />
                   </div>
                 </div>
               </div>
@@ -274,51 +246,34 @@
                 <div class="grid grid-nogutter">
                   <div class="col-12">
                     HP
-                    <span class="summary_monster_value px-1 font-semibold">{{
-                      totalSummary?.monster?.hp | number
-                    }}</span>
+                    <span class="summary_monster_value px-1 font-semibold">{{ totalSummary?.monster?.hp | number }}</span>
                   </div>
                   <div class="col-12">
                     Def
-                    <span class="summary_monster_value px-1 font-semibold"
-                      >{{ totalSummary?.monster?.softDef }} + {{ totalSummary?.monster?.def }}</span
-                    >
+                    <span class="summary_monster_value px-1 font-semibold">{{ totalSummary?.monster?.softDef }} + {{ totalSummary?.monster?.def }}</span>
                   </div>
                   <div class="col-12">
                     Mdef
-                    <span class="summary_monster_value px-1 font-semibold"
-                      >{{ totalSummary?.monster?.softMDef }} + {{ totalSummary?.monster?.mdef }}</span
-                    >
+                    <span class="summary_monster_value px-1 font-semibold">{{ totalSummary?.monster?.softMDef }} + {{ totalSummary?.monster?.mdef }}</span>
                   </div>
                   <div class="col-12">
                     Req.Hit100
-                    <span class="summary_monster_value px-1 font-semibold">{{
-                      totalSummary?.monster?.hitRequireFor100
-                    }}</span>
+                    <span class="summary_monster_value px-1 font-semibold">{{ totalSummary?.monster?.hitRequireFor100 }}</span>
                   </div>
                   <div class="col-12">
-                    <span class="summary_monster_value px-1 font-bold" style="color: var(--red-500)">{{
-                      totalSummary?.monster?.typeUpper
-                    }}</span>
+                    <span class="summary_monster_value px-1 font-bold" style="color: var(--red-500)">{{ totalSummary?.monster?.typeUpper }}</span>
                     <span *ngIf="totalSummary?.monster?.isMvp" class="font-bold px-1">MVP</span>
                   </div>
                   <div class="col-12">
-                    <span
-                      class="{{
-                        'property_' + totalSummary?.monster?.elementUpper
-                      }} summary_monster_value px-1 font-semibold"
-                      >{{ totalSummary?.monster?.elementLevelUpper }}</span
-                    >
-                  </div>
-                  <div class="col-12">
-                    <span class="summary_monster_value px-1 font-semibold" style="color: var(--yellow-300)">{{
-                      totalSummary?.monster?.raceUpper
+                    <span class="{{ 'property_' + totalSummary?.monster?.elementUpper }} summary_monster_value px-1 font-semibold">{{
+                      totalSummary?.monster?.elementLevelUpper
                     }}</span>
                   </div>
                   <div class="col-12">
-                    <span class="summary_monster_value px-1 font-semibold" style="color: var(--cyan-300)">{{
-                      totalSummary?.monster?.sizeFullUpper
-                    }}</span>
+                    <span class="summary_monster_value px-1 font-semibold" style="color: var(--yellow-300)">{{ totalSummary?.monster?.raceUpper }}</span>
+                  </div>
+                  <div class="col-12">
+                    <span class="summary_monster_value px-1 font-semibold" style="color: var(--cyan-300)">{{ totalSummary?.monster?.sizeFullUpper }}</span>
                   </div>
                   <div class="col-12 flex justify-content-around">
                     <div>
@@ -409,13 +364,7 @@
               <div class="col-12 flex align-items-center justify-content-between">
                 <div class="font-bold text-xl">{{ _s.name }}</div>
                 <div *ngIf="isCalculated[_s.id]">
-                  <button
-                    pButton
-                    type="button"
-                    class="p-button-text p-button-rounded p-button-danger"
-                    [disabled]="isCalculating"
-                    (click)="removeCalculated(_s.id)"
-                  >
+                  <button pButton type="button" class="p-button-text p-button-rounded p-button-danger" [disabled]="isCalculating" (click)="removeCalculated(_s.id)">
                     <i class="pi pi-times text-xl"></i>
                   </button>
                 </div>
@@ -426,12 +375,8 @@
               </div>
               <div class="col-6">
                 Element:
-                <span class="{{ 'property_' + _s.summary?.calcSkill?.propertySkill }} px-1 font-semibold">{{
-                  _s.summary?.calcSkill?.propertySkill
-                }}</span
-                ><span class="summary_highlight bg_surface px-2"
-                  >( x {{ _s.summary?.dmg?.skillPropertyMultiplier }})</span
-                >
+                <span class="{{ 'property_' + _s.summary?.calcSkill?.propertySkill }} px-1 font-semibold">{{ _s.summary?.calcSkill?.propertySkill }}</span
+                ><span class="summary_highlight bg_surface px-2">( x {{ _s.summary?.dmg?.skillPropertyMultiplier }})</span>
               </div>
               <div class="col-6">
                 <app-calc-value

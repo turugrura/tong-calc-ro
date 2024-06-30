@@ -76,10 +76,20 @@ export class ItemSearchComponent implements OnInit, OnDestroy {
   selectedOffensiveSkills: string[] = [];
 
   ngOnInit(): void {
-    this.bonusNameList.push({
-      label: 'Perfect Dodge',
-      value: 'perfectDodge',
-    });
+    this.bonusNameList.push(
+      {
+        label: 'FCT',
+        value: 'fct',
+      },
+      {
+        label: 'Perfect Dodge',
+        value: 'perfectDodge',
+      },
+      {
+        label: 'ลด Cooldown',
+        value: 'cd__',
+      },
+    );
 
     this.subscription = this.onClassChanged.subscribe(() => {
       this.clearItemSearch();
@@ -100,7 +110,17 @@ export class ItemSearchComponent implements OnInit, OnDestroy {
   }
 
   onItemSearchFilterChange() {
-    const selectedBonus = [...this.selectedBonus.filter(Boolean)];
+    let isIncludeCdReduction = false;
+    const selectedBonus = [
+      ...this.selectedBonus.filter(Boolean).filter((v) => {
+        if (v === 'cd__') {
+          isIncludeCdReduction = true;
+          return false;
+        }
+
+        return true;
+      }),
+    ];
     const selectedPositions = new Set([...(this.selectedItemPositions || []).filter(Boolean)]);
 
     const displayItems = [];
@@ -111,22 +131,28 @@ export class ItemSearchComponent implements OnInit, OnDestroy {
         continue;
       }
       if (selectedPositions.size > 0 && !selectedPositions.has(equipableItem.position)) continue;
+      let isFoundCD = true;
       if (this.selectedOffensiveSkills?.length > 0) {
-        const found = this.selectedOffensiveSkills.some(
-          (skillName) =>
-            item.script[skillName] ||
-            item.script[`chance__${skillName}`] ||
-            item.script[`cd__${skillName}`] ||
-            item.script[`vct__${skillName}`] ||
-            item.script[`fct__${skillName}`] ||
-            item.script[`fix_vct__${skillName}`],
-        );
-        if (!found) continue;
+        if (isIncludeCdReduction) {
+          isFoundCD = this.selectedOffensiveSkills.some((skillName) => item.script[`cd__${skillName}`]);
+        } else {
+          const found = this.selectedOffensiveSkills.some(
+            (skillName) =>
+              item.script[skillName] ||
+              item.script[`chance__${skillName}`] ||
+              item.script[`cd__${skillName}`] ||
+              item.script[`vct__${skillName}`] ||
+              item.script[`fct__${skillName}`] ||
+              item.script[`fix_vct__${skillName}`],
+          );
+          if (!found) continue;
+        }
       }
 
-      const foundBonus = this.isSerchMatchAllBonus
-        ? selectedBonus.every((bonus) => item.script[bonus])
-        : selectedBonus.length === 0 || selectedBonus.some((bonus) => item.script[bonus]);
+      const foundBonus =
+        this.isSerchMatchAllBonus || selectedBonus.length === 1
+          ? isFoundCD && selectedBonus.every((bonus) => item.script[bonus])
+          : isFoundCD || selectedBonus.length === 0 || selectedBonus.some((bonus) => item.script[bonus]);
       if (foundBonus) {
         displayItems.push(equipableItem);
       }
