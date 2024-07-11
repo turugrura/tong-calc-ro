@@ -193,32 +193,6 @@ export class Mechanic extends CharacterBase {
         return (300 + skillLevel * 100 + (totalDex + totalStr) / 2) * (baseLevel / 100);
       },
     },
-    {
-      name: 'Wind Cutter',
-      label: 'Wind Cutter Lv5',
-      value: 'Wind Cutter==5',
-      acd: 0.5,
-      fct: 0,
-      vct: 0,
-      cd: 0.3,
-      isMelee: (weaponType) => weaponType !== 'spear' && weaponType !== 'twohandSpear',
-      formula: (input: AtkSkillFormulaInput): number => {
-        const { model, skillLevel, weapon } = input;
-        const wTypeName = weapon.data.typeName;
-        const baseLevel = model.level;
-
-        let baseDamage = 0;
-        if (wTypeName === 'twohandSword') {
-          baseDamage = 250 * skillLevel * 2;
-        } else if (wTypeName === 'spear' || wTypeName === 'twohandSpear') {
-          baseDamage = 400 * skillLevel;
-        } else {
-          baseDamage = 300 * skillLevel;
-        }
-
-        return baseDamage * (baseLevel / 100);
-      },
-    },
   ];
   protected readonly _activeSkillList: ActiveSkillModel[] = [
     {

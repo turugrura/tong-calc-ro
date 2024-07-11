@@ -230,24 +230,6 @@ export class Sorcerer extends CharacterBase {
         return (1000 + skillLevel * 300 + totalInt) * (baseLevel / 100);
       },
     },
-    {
-      name: 'Adoramus',
-      label: 'Adoramus Lv6',
-      value: 'Adoramus==6',
-      fct: 0.5,
-      vct: 2,
-      acd: 0.5,
-      cd: 2.5,
-      isMatk: true,
-      hit: 10,
-      element: ElementType.Holy,
-      formula: (input: AtkSkillFormulaInput): number => {
-        const { model, skillLevel } = input;
-        const baseLevel = model.level;
-
-        return (300 + skillLevel * 250) * (baseLevel / 100);
-      },
-    },
   ];
   protected readonly _activeSkillList: ActiveSkillModel[] = [];
   protected readonly _passiveSkillList: PassiveSkillModel[] = [

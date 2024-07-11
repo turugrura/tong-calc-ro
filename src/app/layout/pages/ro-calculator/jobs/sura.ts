@@ -246,8 +246,11 @@ export class Sura extends CharacterBase {
 
         return floor(baseDamage * (baseLevel / 100));
       },
-      finalDmgFormula: ({ damage, skillLevel, monster }): number => {
-        if (monster.elementUpper === ElementType.Ghost) return 0;
+      finalDmgFormula: ({ damage, skillLevel, monster, model }): number => {
+        if (!model.propertyAtk || model.propertyAtk === ElementType.Neutral) {
+          if (monster.elementUpper === ElementType.Ghost) return 0;
+        }
+
         const bonusDamge = skillLevel * 240 + monster.level * 40;
 
         return damage + bonusDamge;
@@ -271,8 +274,11 @@ export class Sura extends CharacterBase {
 
         return floor((baseDamage * (baseLevel / 100) * 4) / 3);
       },
-      finalDmgFormula: ({ damage, skillLevel, monster }): number => {
-        if (monster.elementUpper === ElementType.Ghost) return 0;
+      finalDmgFormula: ({ damage, skillLevel, monster, model }): number => {
+        if (!model.propertyAtk || model.propertyAtk === ElementType.Neutral) {
+          if (monster.elementUpper === ElementType.Ghost) return 0;
+        }
+
         const bonusDamge = skillLevel * 500 + monster.level * 40;
 
         return damage + bonusDamge;
