@@ -281,6 +281,20 @@ enum Tenacity {
   _9 = 'Tenacity9',
   _10 = 'Tenacity10',
 }
+enum TimeJewel {
+  Str2 = 'aegis_313347',
+  Str3 = 'aegis_313348',
+  Agi2 = 'aegis_313349',
+  Agi3 = 'aegis_313350',
+  Vit2 = 'aegis_313351',
+  Vit3 = 'aegis_313352',
+  Int2 = 'aegis_313353',
+  Int3 = 'aegis_313354',
+  Dex2 = 'aegis_313355',
+  Dex3 = 'aegis_313356',
+  Luk2 = 'aegis_313357',
+  Luk3 = 'aegis_313358',
+}
 
 const str = (from: number, to: number) => Array.from({ length: 1 + to - from }).map((_, i) => Str[`_${i + from}`]);
 const dex = (from: number, to: number) => Array.from({ length: 1 + to - from }).map((_, i) => Dex[`_${i + from}`]);
@@ -356,6 +370,7 @@ const fs24 = [FS._2, FS._3, FS._4];
 const fs35 = [FS._3, FS._4, FS._5];
 const fs45 = [FS._4, FS._5];
 const fs36 = [FS._3, FS._4, FS._5, FS._6];
+const fs67 = [FS._6, FS._7];
 const fs68 = [FS._6, FS._7, FS._8];
 const fs410 = [FS._4, FS._5, FS._6, FS._7, FS._8, FS._9, FS._10];
 
@@ -363,6 +378,7 @@ const sh13 = [Sharp._1, Sharp._2, Sharp._3];
 const sh14 = [Sharp._1, Sharp._2, Sharp._3, Sharp._4];
 const sh23 = [Sharp._2, Sharp._3];
 const sh25 = [Sharp._2, Sharp._3, Sharp._4, Sharp._5];
+const sh45 = [Sharp._4, Sharp._5];
 // const sh35 = [Sharp._3, Sharp._4, Sharp._5];
 
 const perfectD12 = [Dodge._1, Dodge._2];
@@ -773,6 +789,10 @@ const subject = [...BaseState._5, ...fs68, ...ea35, ...sp46, ...delay13];
 
 const year2nd = [...allRunes, ...fs45, ...sp34, ...ea12, ...critical23, ...mhp34, ...shedding12, ...BaseState._1_3];
 
+const timeJewel2_4 = [...sp45, ...ea45, ...fs67, ...sh45, ...critical23];
+const timeJewel2_3 = [TimeJewel.Str2, TimeJewel.Agi2, TimeJewel.Vit2, TimeJewel.Int2, TimeJewel.Dex2, TimeJewel.Luk2];
+const timeJewel3_3 = [TimeJewel.Str3, TimeJewel.Agi3, TimeJewel.Vit3, TimeJewel.Int3, TimeJewel.Dex3, TimeJewel.Luk3];
+
 const moraAtkType1 = [...atkPer13, ...fs13, ...str(1, 3)];
 const moraAtkType2 = [...atkPer23, ...fs24, ...str(2, 4)];
 const moraAtkType3 = [AtkPercent._3, ...fs36, ...str(3, 5)];
@@ -1094,6 +1114,9 @@ export const EnchantTable: EntTable[] = [
   { name: 'Biolab_Cape(Melee)', enchants: [null, bpBioLab2, bpBioLab43, bpBioLab43] },
   { name: 'Biolab_Cape(Magic)', enchants: [null, bpBioLab2, bpBioLab43, bpBioLab43] },
   { name: 'Biolab_Cape(Range)', enchants: [null, bpBioLab2, bpBioLab43, bpBioLab43] },
+
+  { name: 'aegis_490583', enchants: [null, null, timeJewel2_3, timeJewel2_4] },
+  { name: 'aegis_490584', enchants: [null, null, timeJewel3_3, timeJewel2_4] },
 ];
 
 Object.freeze(EnchantTable);

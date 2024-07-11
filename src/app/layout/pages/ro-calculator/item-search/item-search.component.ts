@@ -131,7 +131,7 @@ export class ItemSearchComponent implements OnInit, OnDestroy {
         continue;
       }
       if (selectedPositions.size > 0 && !selectedPositions.has(equipableItem.position)) continue;
-      let isFoundCD = true;
+      let isFoundCD = false;
       if (this.selectedOffensiveSkills?.length > 0) {
         if (isIncludeCdReduction) {
           isFoundCD = this.selectedOffensiveSkills.some((skillName) => item.script[`cd__${skillName}`]);
@@ -149,10 +149,23 @@ export class ItemSearchComponent implements OnInit, OnDestroy {
         }
       }
 
-      const foundBonus =
-        this.isSerchMatchAllBonus || selectedBonus.length === 1
-          ? isFoundCD && selectedBonus.every((bonus) => item.script[bonus])
-          : isFoundCD || selectedBonus.length === 0 || selectedBonus.some((bonus) => item.script[bonus]);
+      let foundBonus = false;
+      if (isIncludeCdReduction) {
+        foundBonus =
+          this.isSerchMatchAllBonus || selectedBonus.length === 0
+            ? isFoundCD && selectedBonus.every((bonus) => item.script[bonus])
+            : isFoundCD || selectedBonus.some((bonus) => item.script[bonus]);
+      } else {
+        foundBonus =
+          this.isSerchMatchAllBonus || selectedBonus.length === 1
+            ? selectedBonus.every((bonus) => item.script[bonus])
+            : selectedBonus.some((bonus) => item.script[bonus]);
+      }
+
+      // const foundBonus =
+      //   this.isSerchMatchAllBonus || selectedBonus.length === 1 || (selectedBonus.length === 0 && isIncludeCdReduction)
+      //     ? isFoundCD && selectedBonus.every((bonus) => item.script[bonus])
+      //     : isFoundCD || selectedBonus.length === 0 || selectedBonus.some((bonus) => item.script[bonus]);
       if (foundBonus) {
         displayItems.push(equipableItem);
       }
