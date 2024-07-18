@@ -1599,6 +1599,96 @@
           (onClear)="onOptionChange()"
         ></p-cascadeSelect>
       </div>
+      <div class="col-12 grid grid-nogutter">
+        <div class="col-3"></div>
+        <div class="col-3" [hidden]="headMiddleEnchant3List.length === 0 || !model.headMiddle">
+          <p-dropdown
+            inputId="headMiddleEnchant1"
+            [autoDisplayFirst]="false"
+            [resetFilterOnHide]="true"
+            [options]="headMiddleEnchant1List"
+            [filter]="true"
+            filterBy="label"
+            scrollHeight="350px"
+            [(ngModel)]="model.headMiddleEnchant1"
+            [showClear]="true"
+            [disabled]="headMiddleEnchant1List.length === 0 || !model.headMiddle"
+            (onChange)="onSelectItem('headMiddleEnchant1', $event.value)"
+            placeholder="Enchant 2"
+          >
+            <ng-template let-item pTemplate="selectedItem">
+              <div class="flex gap-1 item_template" *ngIf="model.headMiddleEnchant1">
+                <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
+                <div>{{ item.label }}</div>
+              </div>
+            </ng-template>
+            <ng-template let-item pTemplate="item">
+              <div class="flex gap-1">
+                <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
+                <div>{{ item.label }}</div>
+              </div>
+            </ng-template>
+          </p-dropdown>
+        </div>
+        <div class="col-3" [hidden]="headMiddleEnchant3List.length === 0 || !model.headMiddle">
+          <p-dropdown
+            inputId="headMiddleEnchant2"
+            [autoDisplayFirst]="false"
+            [resetFilterOnHide]="true"
+            [options]="headMiddleEnchant2List"
+            [filter]="true"
+            filterBy="label"
+            scrollHeight="350px"
+            [(ngModel)]="model.headMiddleEnchant2"
+            [showClear]="true"
+            [disabled]="headMiddleEnchant2List.length === 0 || !model.headMiddle"
+            (onChange)="onSelectItem('headMiddleEnchant2', $event.value)"
+            placeholder="Enchant 3"
+          >
+            <ng-template let-item pTemplate="selectedItem">
+              <div class="flex gap-1 item_template" *ngIf="model.headMiddleEnchant2">
+                <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
+                <div>{{ item.label }}</div>
+              </div>
+            </ng-template>
+            <ng-template let-item pTemplate="item">
+              <div class="flex gap-1">
+                <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
+                <div>{{ item.label }}</div>
+              </div>
+            </ng-template>
+          </p-dropdown>
+        </div>
+        <div class="col-3" [hidden]="headMiddleEnchant3List.length === 0 || !model.headMiddle">
+          <p-dropdown
+            inputId="headMiddleEnchant3"
+            [autoDisplayFirst]="false"
+            [resetFilterOnHide]="true"
+            [options]="headMiddleEnchant3List"
+            [filter]="true"
+            filterBy="label"
+            scrollHeight="350px"
+            [(ngModel)]="model.headMiddleEnchant3"
+            [showClear]="true"
+            [disabled]="headMiddleEnchant3List.length === 0 || !model.headMiddle"
+            (onChange)="onSelectItem('headMiddleEnchant3', $event.value)"
+            placeholder="Enchant 4"
+          >
+            <ng-template let-item pTemplate="selectedItem">
+              <div class="flex gap-1 item_template" *ngIf="model.headMiddleEnchant3">
+                <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
+                <div>{{ item.label }}</div>
+              </div>
+            </ng-template>
+            <ng-template let-item pTemplate="item">
+              <div class="flex gap-1">
+                <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
+                <div>{{ item.label }}</div>
+              </div>
+            </ng-template>
+          </p-dropdown>
+        </div>
+      </div>
     </div>
     <div class="grid grid-nogutter item_label_compare" *ngIf="showCompareItemMap.headMiddle">
       <div class="col-12">
@@ -1606,6 +1696,7 @@
           [itemType]="'headMiddle'"
           [placeholder]="'Middle'"
           [items]="items"
+          [mapEnchant]="mapEnchant"
           [itemList]="headMiddleList"
           [cardList]="headCardList"
           [optionList]="optionList"

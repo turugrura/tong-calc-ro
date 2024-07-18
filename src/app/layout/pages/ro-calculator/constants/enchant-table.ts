@@ -793,6 +793,17 @@ const timeJewel2_4 = [...sp45, ...ea45, ...fs67, ...sh45, ...critical23];
 const timeJewel2_3 = [TimeJewel.Str2, TimeJewel.Agi2, TimeJewel.Vit2, TimeJewel.Int2, TimeJewel.Dex2, TimeJewel.Luk2];
 const timeJewel3_3 = [TimeJewel.Str3, TimeJewel.Agi3, TimeJewel.Vit3, TimeJewel.Int3, TimeJewel.Dex3, TimeJewel.Luk3];
 
+const bp5Armor = [
+  'Battle_Pass_ATK',
+  'Battle_Pass_MATK',
+  'Battle_Pass_Magical Force',
+  'Battle_Pass_Attacker Force',
+  'Battle_Pass_Range Force',
+  'Battle_Pass_Critical Force',
+  'Battle_Pass_Global Cooldown',
+];
+const bp5Mask = ['Essence_of_Sin_Fate_Lv1', 'Essence_of_Sin_Fate_Lv2', 'Essence_of_Sin_Fate_Lv3'];
+
 const moraAtkType1 = [...atkPer13, ...fs13, ...str(1, 3)];
 const moraAtkType2 = [...atkPer23, ...fs24, ...str(2, 4)];
 const moraAtkType3 = [AtkPercent._3, ...fs36, ...str(3, 5)];
@@ -1117,6 +1128,13 @@ export const EnchantTable: EntTable[] = [
 
   { name: 'aegis_490583', enchants: [null, null, timeJewel2_3, timeJewel2_4] },
   { name: 'aegis_490584', enchants: [null, null, timeJewel3_3, timeJewel2_4] },
+
+  { name: 'Abyss_Dress', enchants: [null, bp5Armor, bp5Armor, bp5Armor] },
+  { name: 'Neutral_Dress', enchants: [null, bp5Armor, bp5Armor, bp5Armor] },
+  { name: 'Gabriel_Dress', enchants: [null, bp5Armor, bp5Armor, bp5Armor] },
+  { name: 'Ice_Flame_Dress', enchants: [null, bp5Armor, bp5Armor, bp5Armor] },
+  { name: 'Red_Serpent_Dress', enchants: [null, bp5Armor, bp5Armor, bp5Armor] },
+  { name: 'Mask_of_Sin_Fate', enchants: [null, null, null, bp5Mask] },
 ];
 
 Object.freeze(EnchantTable);
