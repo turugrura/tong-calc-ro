@@ -417,6 +417,7 @@ const aspd34 = [AttackDelay._3, AttackDelay._4];
 
 const fatal12 = [Fatal._1, Fatal._2];
 const fatal13 = [Fatal._1, Fatal._2, Fatal._3];
+const fatal23 = [Fatal._2, Fatal._3];
 const fatal14 = [Fatal._1, Fatal._2, Fatal._3, Fatal._4];
 
 const cri510 = [Cri._5, Cri._7, Cri._10];
@@ -789,7 +790,7 @@ const subject = [...BaseState._5, ...fs68, ...ea35, ...sp46, ...delay13];
 
 const year2nd = [...allRunes, ...fs45, ...sp34, ...ea12, ...critical23, ...mhp34, ...shedding12, ...BaseState._1_3];
 
-const timeJewel2_4 = [...sp45, ...ea45, ...fs67, ...sh45, ...critical23];
+const timeJewel2_4 = [...sp45, ...ea45, ...fs67, ...sh45, ...fatal23];
 const timeJewel2_3 = [TimeJewel.Str2, TimeJewel.Agi2, TimeJewel.Vit2, TimeJewel.Int2, TimeJewel.Dex2, TimeJewel.Luk2];
 const timeJewel3_3 = [TimeJewel.Str3, TimeJewel.Agi3, TimeJewel.Vit3, TimeJewel.Int3, TimeJewel.Dex3, TimeJewel.Luk3];
 

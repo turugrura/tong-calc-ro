@@ -11659,6 +11659,59 @@
       "raceName": "Demon"
     }
   },
+  "20994": {
+    "id": 20994,
+    "dbname": "MD_BETELGEUSE",
+    "name": "Betelgeuse",
+    "spawn": "",
+    "stats": {
+      "attackRange": 3,
+      "level": 250,
+      "health": 2000000000,
+      "sp": 0,
+      "str": 211,
+      "int": 152,
+      "vit": 132,
+      "dex": 279,
+      "agi": 211,
+      "luk": 108,
+      "rechargeTime": 720,
+      "atk1": 9748,
+      "atk2": 6481,
+      "attack": {
+        "minimum": 8259,
+        "maximum": 12158
+      },
+      "magicAttack": {
+        "minimum": 4938,
+        "maximum": 8827
+      },
+      "defense": 346,
+      "baseExperience": 0,
+      "jobExperience": 0,
+      "aggroRange": 10,
+      "escapeRange": 12,
+      "movementSpeed": 150,
+      "attackSpeed": 720,
+      "attackedSpeed": 360,
+      "element": 40,
+      "scale": 2,
+      "race": 9,
+      "magicDefense": 102,
+      "hit": 661,
+      "flee": 699,
+      "ai": "MONSTER_TYPE_21",
+      "mvp": 1,
+      "class": 1,
+      "attr": 1032,
+      "res": 500,
+      "mres": 500,
+      "elementName": "Neutral 2",
+      "elementShortName": "Neutral",
+      "scaleName": "Large",
+      "raceName": "Dragon"
+    }
+  },
   "21064": {
     "id": 21064,
     "dbname": "S_DUMMY_100_SMALL",
