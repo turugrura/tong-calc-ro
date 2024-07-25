@@ -1,11 +1,5 @@
 import { ClassName } from './_class-name';
-import {
-  ActiveSkillModel,
-  AtkSkillFormulaInput,
-  AtkSkillModel,
-  CharacterBase,
-  PassiveSkillModel,
-} from './_character-base.abstract';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
 import { Paladin } from './paladin';
 import { ElementType } from '../constants/element-type.const';
 import { InfoForClass } from '../models/info-for-class.model';
@@ -184,7 +178,6 @@ export class RoyalGuard extends CharacterBase {
       vct: 0,
       cd: 2,
       canCri: true,
-      baseCriPercentage: 0.5,
       criDmgPercentage: 0.5,
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
@@ -400,8 +393,7 @@ export class RoyalGuard extends CharacterBase {
     }
 
     if (this.isSkillActive('Ride Peco')) {
-      totalBonus.decreaseSkillAspdPercent =
-        (totalBonus.decreaseSkillAspdPercent || 0) + (50 - this.learnLv('Cavalier Mastery') * 10);
+      totalBonus.decreaseSkillAspdPercent = (totalBonus.decreaseSkillAspdPercent || 0) + (50 - this.learnLv('Cavalier Mastery') * 10);
 
       if (typeName === 'spear' || typeName === 'twohandSpear') {
         totalBonus['sizePenalty_m'] = 100;
