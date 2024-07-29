@@ -1,0 +1,30 @@
+<div class="grid grid-nogutter">
+  <div class="col-12">
+    <p-dropdown
+      [autoDisplayFirst]="false"
+      [resetFilterOnHide]="true"
+      [options]="itemList"
+      [filter]="true"
+      filterBy="label"
+      scrollHeight="350px"
+      [(ngModel)]="itemId"
+      [showClear]="true"
+      (onChange)="onSelectItem('itemId', $event.value)"
+      (onClear)="onClearItem()"
+      [placeholder]="placeholder"
+    >
+      <ng-template let-item pTemplate="selectedItem">
+        <div class="flex gap-1 item_template" *ngIf="itemId">
+          <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
+          <div>{{ item.label }}</div>
+        </div>
+      </ng-template>
+      <ng-template let-item pTemplate="item">
+        <div class="flex gap-1">
+          <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
+          <div>{{ item.label }}</div>
+        </div>
+      </ng-template>
+    </p-dropdown>
+  </div>
+</div>

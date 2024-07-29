@@ -303,6 +303,13 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     'boot',
     'accRight',
     'accLeft',
+
+    'costumeEnchantUpper',
+    'costumeEnchantMiddle',
+    'costumeEnchantLower',
+    'costumeEnchantGarment',
+    'costumeEnchantGarment4',
+
     'shadowWeapon',
     'shadowArmor',
     'shadowShield',

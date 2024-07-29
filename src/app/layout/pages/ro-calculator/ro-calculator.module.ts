@@ -45,6 +45,7 @@ import { ElementalTableComponent } from './elemental-table/elemental-table.compo
 import { ElementalTableRawComponent } from './elemental-table-raw/elemental-table-raw.component';
 import { BattleDmgSummaryComponent } from './battle-dmg-summary/battle-dmg-summary.component';
 import { BattleMonsterSummaryComponent } from './battle-monster-summary/battle-monster-summary.component';
+import { EquipmentCosEnchantComponent } from './equipment-cos-enchant/equipment-cos-enchant.component';
 
 @NgModule({
   imports: [
@@ -95,6 +96,7 @@ import { BattleMonsterSummaryComponent } from './battle-monster-summary/battle-m
     ElementalTableRawComponent,
     BattleDmgSummaryComponent,
     BattleMonsterSummaryComponent,
+    EquipmentCosEnchantComponent,
   ],
   exports: [CalcValueComponent],
 })

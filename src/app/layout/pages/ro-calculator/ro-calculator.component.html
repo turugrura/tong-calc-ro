@@ -409,6 +409,7 @@
                   [showClear]="true"
                   [showHeader]="false"
                   [showToggleAll]="false"
+                  scrollHeight="400px"
                   selectedItemsLabel="{0} slot selected"
                   placeholder="Enable item slot to compare"
                   [maxSelectedLabels]="6"
@@ -3122,7 +3123,7 @@
         </div>
 
         <!-- Costume 4th Garment -->
-        <div class="col-12">
+        <div class="col-12 mb-3">
           <p-dropdown
             inputId="costumeEnchantGarment4"
             [autoDisplayFirst]="false"
@@ -3151,10 +3152,56 @@
             </ng-template>
           </p-dropdown>
         </div>
+
+        <div class="col-12 item_label_compare" *ngIf="showCompareItemMap.costumeEnchantUpper">
+          <app-equipment-cos-enchant
+            [itemType]="'costumeEnchantUpper'"
+            [placeholder]="'Upper Enchant'"
+            [itemList]="costumeEnhUpperList"
+            [(itemId)]="model2.costumeEnchantUpper"
+            (selectItemChange)="onCompareItemChange()"
+          ></app-equipment-cos-enchant>
+        </div>
+        <div class="col-12 item_label_compare" *ngIf="showCompareItemMap.costumeEnchantMiddle">
+          <app-equipment-cos-enchant
+            [itemType]="'costumeEnchantMiddle'"
+            [placeholder]="'Middle Enchant'"
+            [itemList]="costumeEnhMiddleList"
+            [(itemId)]="model2.costumeEnchantMiddle"
+            (selectItemChange)="onCompareItemChange()"
+          ></app-equipment-cos-enchant>
+        </div>
+        <div class="col-12 item_label_compare" *ngIf="showCompareItemMap.costumeEnchantLower">
+          <app-equipment-cos-enchant
+            [itemType]="'costumeEnchantLower'"
+            [placeholder]="'Lower Enchant'"
+            [itemList]="costumeEnhLowerList"
+            [(itemId)]="model2.costumeEnchantLower"
+            (selectItemChange)="onCompareItemChange()"
+          ></app-equipment-cos-enchant>
+        </div>
+        <div class="col-12 item_label_compare" *ngIf="showCompareItemMap.costumeEnchantGarment">
+          <app-equipment-cos-enchant
+            [itemType]="'costumeEnchantGarment'"
+            [placeholder]="'Garment Enchant'"
+            [itemList]="costumeEnhGarmentList"
+            [(itemId)]="model2.costumeEnchantGarment"
+            (selectItemChange)="onCompareItemChange()"
+          ></app-equipment-cos-enchant>
+        </div>
+        <div class="col-12 item_label_compare" *ngIf="showCompareItemMap.costumeEnchantGarment4">
+          <app-equipment-cos-enchant
+            [itemType]="'costumeEnchantGarment4'"
+            [placeholder]="'Garment Enchant 4th'"
+            [itemList]="costumeEnhGarment4List"
+            [(itemId)]="model2.costumeEnchantGarment4"
+            (selectItemChange)="onCompareItemChange()"
+          ></app-equipment-cos-enchant>
+        </div>
       </div>
-      <div class="col-6 grid grid-nogutter item_label_shadow">
+      <div class="col-6 grid grid-nogutter item_label_shadow align-content-start">
+        <!-- Shadow Weapon -->
         <div class="col-12 grid grid-nogutter">
-          <!-- Shadow Weapon -->
           <div class="col-6">
             <p-dropdown
               inputId="shadowWeapon"
