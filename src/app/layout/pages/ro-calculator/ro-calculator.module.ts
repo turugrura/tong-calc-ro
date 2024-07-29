@@ -41,6 +41,8 @@ import { MiscDetailComponent } from './misc-detail/misc-detail.component';
 import { DialogModule } from 'primeng/dialog';
 import { EquipmentShadowComponent } from './equipment-shadow/equipment-shadow.component';
 import { ItemSearchComponent } from './item-search/item-search.component';
+import { ElementalTableComponent } from './elemental-table/elemental-table.component';
+import { ElementalTableRawComponent } from './elemental-table-raw/elemental-table-raw.component';
 
 @NgModule({
   imports: [
@@ -87,6 +89,8 @@ import { ItemSearchComponent } from './item-search/item-search.component';
     MiscDetailComponent,
     EquipmentShadowComponent,
     ItemSearchComponent,
+    ElementalTableComponent,
+    ElementalTableRawComponent,
   ],
   exports: [CalcValueComponent],
 })

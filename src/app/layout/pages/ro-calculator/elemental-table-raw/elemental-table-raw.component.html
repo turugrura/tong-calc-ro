@@ -1,0 +1,37 @@
+<div class="p-fluid">
+  <p-table styleClass="p-datatable-striped p-datatable-sm" [loading]="isLoading" filterValue="label" [value]="calcMonsters" [tableStyle]="{ 'min-width': '550px' }">
+    <ng-template pTemplate="header" let-columns>
+      <tr>
+        <th rowspan="2" class="text-center font-semibold">Monster</th>
+        <th colspan="10" class="text-center font-semibold">Attacker</th>
+      </tr>
+      <tr>
+        <th class="property_Neutral text-center px-1">Neutral</th>
+        <th class="property_Water text-center px-1">Water</th>
+        <th class="property_Earth text-center px-1">Earth</th>
+        <th class="property_Fire text-center px-1">Fire</th>
+        <th class="property_Wind text-center px-1">Wind</th>
+        <th class="property_Poison text-center px-1">Poison</th>
+        <th class="property_Holy text-center px-1">Holy</th>
+        <th class="property_Dark text-center px-1">Dark</th>
+        <th class="property_Ghost text-center px-1">Ghost</th>
+        <th class="property_Undead text-center px-1">Undead</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-item let-columns="columns">
+      <tr>
+        <td class="{{ 'property_' + item.pureElementName }}">{{ item.info }}</td>
+        <td class="{{ 'text-center font-semibold text-lg ' + item.NeutralStyle }}">{{ item.Neutral }}</td>
+        <td class="{{ 'text-center font-semibold text-lg ' + item.WaterStyle }}">{{ item.Water }}</td>
+        <td class="{{ 'text-center font-semibold text-lg ' + item.EarthStyle }}">{{ item.Earth }}</td>
+        <td class="{{ 'text-center font-semibold text-lg ' + item.FireStyle }}">{{ item.Fire }}</td>
+        <td class="{{ 'text-center font-semibold text-lg ' + item.WindStyle }}">{{ item.Wind }}</td>
+        <td class="{{ 'text-center font-semibold text-lg ' + item.PoisonStyle }}">{{ item.Poison }}</td>
+        <td class="{{ 'text-center font-semibold text-lg ' + item.HolyStyle }}">{{ item.Holy }}</td>
+        <td class="{{ 'text-center font-semibold text-lg ' + item.DarkStyle }}">{{ item.Dark }}</td>
+        <td class="{{ 'text-center font-semibold text-lg ' + item.GhostStyle }}">{{ item.Ghost }}</td>
+        <td class="{{ 'text-center font-semibold text-lg ' + item.UndeadStyle }}">{{ item.Undead }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

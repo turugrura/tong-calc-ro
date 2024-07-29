@@ -229,6 +229,8 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   monsterList: DropdownModel[] = [];
   selectedMonsterName = '';
   selectedMonster = Number(localStorage.getItem('monster')) || 21067;
+  isShowMonsterEle = false;
+  allSelectedMonsterIds: number[];
 
   chanceList = [] as ChanceModel[];
   selectedChances = [] as string[];
@@ -2532,5 +2534,10 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     });
 
     return throwError(() => err);
+  }
+
+  onShowElementalTableClick() {
+    this.allSelectedMonsterIds = [this.selectedMonster, ...(this.selectedMonsterIds || [])];
+    this.isShowMonsterEle = true;
   }
 }

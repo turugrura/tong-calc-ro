@@ -10,6 +10,18 @@
   [onClassChanged]="onClassChanged$"
 ></app-item-search>
 
+<p-dialog
+  header=""
+  position="left"
+  [modal]="true"
+  [(visible)]="isShowMonsterEle"
+  [style]="{ width: '50vw', 'min-width': '1378px', height: '100vh', 'min-height': '500px' }"
+  [draggable]="false"
+  [resizable]="false"
+>
+  <app-elemental-table [monsterMap]="monsterDataMap" [groupMonsterList]="groupMonsterList" [allSelectedMonsterIds]="allSelectedMonsterIds"></app-elemental-table>
+</p-dialog>
+
 <div class="grid grid-nogutter" style="min-width: 1500px">
   <!-- Left Side -->
   <div class="p-fluid col-7">
@@ -3871,6 +3883,16 @@
                     <span class="{{ 'property_' + totalSummary?.monster?.elementUpper }} summary_monster_value px-1 font-semibold">{{
                       totalSummary?.monster?.elementLevelUpper
                     }}</span>
+                    <span>
+                      <button
+                        pButton
+                        type="button"
+                        class="p-button-text p-button-warning py-0"
+                        icon="pi pi-search"
+                        [disabled]="isInProcessingPreset"
+                        (click)="onShowElementalTableClick()"
+                      ></button>
+                    </span>
                   </div>
                   <div class="col-12">
                     <span class="summary_monster_value px-1 font-semibold" style="color: var(--yellow-300)">{{ totalSummary?.monster?.raceUpper }}</span>
@@ -3969,6 +3991,16 @@
                     Element:
                     <span class="{{ 'property_' + totalSummary?.calcSkill?.propertySkill }} px-1 font-semibold">{{ totalSummary?.calcSkill?.propertySkill }}</span
                     ><span class="summary_highlight px-2">( x {{ totalSummary?.dmg?.skillPropertyMultiplier }})</span>
+                    <span>
+                      <button
+                        pButton
+                        type="button"
+                        class="p-button-text p-button-warning py-0"
+                        icon="pi pi-search"
+                        [disabled]="isInProcessingPreset"
+                        (click)="onShowElementalTableClick()"
+                      ></button>
+                    </span>
                   </div>
                   <div class="col-6">
                     <app-calc-value
