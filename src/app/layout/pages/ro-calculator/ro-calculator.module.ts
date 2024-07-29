@@ -43,6 +43,8 @@ import { EquipmentShadowComponent } from './equipment-shadow/equipment-shadow.co
 import { ItemSearchComponent } from './item-search/item-search.component';
 import { ElementalTableComponent } from './elemental-table/elemental-table.component';
 import { ElementalTableRawComponent } from './elemental-table-raw/elemental-table-raw.component';
+import { BattleDmgSummaryComponent } from './battle-dmg-summary/battle-dmg-summary.component';
+import { BattleMonsterSummaryComponent } from './battle-monster-summary/battle-monster-summary.component';
 
 @NgModule({
   imports: [
@@ -91,6 +93,8 @@ import { ElementalTableRawComponent } from './elemental-table-raw/elemental-tabl
     ItemSearchComponent,
     ElementalTableComponent,
     ElementalTableRawComponent,
+    BattleDmgSummaryComponent,
+    BattleMonsterSummaryComponent,
   ],
   exports: [CalcValueComponent],
 })

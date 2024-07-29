@@ -1,0 +1,433 @@
+<div class="grid grid-nogutter">
+  <div class="loading_block" *ngIf="isCalculating">
+    <i class="pi pi-spin pi-spinner" style="font-size: 2rem"></i>
+  </div>
+  <div class="col-6">
+    Type <span class="summary_highlight font-semibold">{{ totalSummary?.calcSkill?.dmgType }}</span>
+  </div>
+  <div class="col-6">
+    Element:
+    <span class="{{ 'property_' + totalSummary?.calcSkill?.propertySkill }} px-1 font-semibold">{{ totalSummary?.calcSkill?.propertySkill }}</span
+    ><span class="summary_highlight px-2">( x {{ totalSummary?.dmg?.skillPropertyMultiplier }})</span>
+    <span>
+      <button
+        pButton
+        type="button"
+        class="p-button-text p-button-warning py-0"
+        icon="pi pi-search"
+        [disabled]="isInProcessingPreset"
+        (click)="onShowElementalTableClick()"
+      ></button>
+    </span>
+  </div>
+  <div class="col-6">
+    <app-calc-value
+      [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+      label="BaseSkill:"
+      unit="%"
+      styleClass="summary_highlight"
+      styleClass2="summary_compare"
+      [max]="totalSummary?.calcSkill?.baseSkillDamage"
+      [max2]="totalSummary2?.calcSkill?.baseSkillDamage"
+    ></app-calc-value>
+  </div>
+  <div class="col-6">
+    <app-calc-value
+      [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+      label="BonusSkill:"
+      unit="%"
+      styleClass="summary_highlight"
+      styleClass2="summary_compare"
+      [max]="totalSummary?.dmg?.skillBonusFromEquipment"
+      [max2]="totalSummary2?.dmg?.skillBonusFromEquipment"
+    ></app-calc-value>
+  </div>
+  <div class="col-6">
+    <app-calc-value
+      [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+      label="SizePenalty:"
+      unit=" %"
+      styleClass="summary_highlight"
+      styleClass2="summary_compare"
+      [max]="totalSummary?.dmg?.skillSizePenalty"
+      [max2]="totalSummary2?.dmg?.skillSizePenalty"
+    ></app-calc-value>
+  </div>
+  <div class="col-6">
+    <app-calc-value
+      [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+      label="เจาะ:"
+      unit="%"
+      styleClass="summary_highlight"
+      styleClass2="summary_compare"
+      [max]="totalSummary?.dmg?.skillTotalPene"
+      [max2]="totalSummary2?.dmg?.skillTotalPene"
+    ></app-calc-value>
+  </div>
+  <div class="col-6">
+    <app-calc-value
+      [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+      label="แม่น:"
+      unit="%"
+      styleClass="summary_highlight"
+      styleClass2="summary_compare"
+      [max]="totalSummary?.dmg?.skillAccuracy"
+      [max2]="totalSummary2?.dmg?.skillAccuracy"
+    ></app-calc-value>
+  </div>
+  <div class="col-6">
+    <app-calc-value
+      [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+      label="ASPD:"
+      unit=" Hits/s"
+      styleClass="summary_highlight"
+      styleClass2="summary_compare"
+      [max]="totalSummary?.calc?.hitPerSecs"
+      [max2]="totalSummary2?.calc?.hitPerSecs"
+    ></app-calc-value>
+  </div>
+
+  <div class="col-12 py-1 divider" [hidden]="!totalSummary?.dmg?.isUsedCurrentHP">
+    <p-divider></p-divider>
+  </div>
+
+  <div class="col-6" [hidden]="!totalSummary?.dmg?.isUsedCurrentHP">
+    <app-calc-value
+      [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+      label="CurrentHP:"
+      styleClass="summary_highlight"
+      styleClass2="summary_compare"
+      [max]="totalSummary?.dmg?.currentHp"
+      [max2]="totalSummary2?.dmg?.currentHp"
+    ></app-calc-value>
+  </div>
+  <div class="col-6" [hidden]="!totalSummary?.dmg?.isUsedCurrentSP">
+    <app-calc-value
+      [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+      label="CurrentSp:"
+      styleClass="summary_highlight"
+      styleClass2="summary_compare"
+      [max]="totalSummary?.dmg?.currentSp"
+      [max2]="totalSummary2?.dmg?.currentSp"
+    ></app-calc-value>
+  </div>
+
+  <div class="col-12 py-1 divider">
+    <p-divider></p-divider>
+  </div>
+
+  <!-- Skill Summary -->
+  <div class="col-12">
+    <div class="grid grid-nogutter">
+      <div class="col-6">
+        <app-calc-value
+          [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+          label="VCT:"
+          styleClass="summary_value"
+          styleClass2="summary_compare"
+          [isGreaterIsBetter]="false"
+          [max]="totalSummary?.calcSkill?.reducedVct"
+          [max2]="totalSummary2?.calcSkill?.reducedVct"
+        ></app-calc-value>
+      </div>
+      <div class="col-6">
+        <app-calc-value
+          [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+          label="FCT:"
+          styleClass="summary_value"
+          styleClass2="summary_compare"
+          [isGreaterIsBetter]="false"
+          [max]="totalSummary?.calcSkill?.reducedFct"
+          [max2]="totalSummary2?.calcSkill?.reducedFct"
+        ></app-calc-value>
+      </div>
+      <div class="col-6">
+        <app-calc-value
+          [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+          label="CD:"
+          styleClass="summary_value"
+          styleClass2="summary_compare"
+          [isGreaterIsBetter]="false"
+          [max]="totalSummary?.calcSkill?.reducedCd"
+          [max2]="totalSummary2?.calcSkill?.reducedCd"
+        ></app-calc-value>
+      </div>
+      <div class="col-6">
+        <app-calc-value
+          [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+          label="Delay:"
+          styleClass="summary_value"
+          styleClass2="summary_compare"
+          [isGreaterIsBetter]="false"
+          [max]="totalSummary?.calcSkill?.reducedAcd"
+          [max2]="totalSummary2?.calcSkill?.reducedAcd"
+        ></app-calc-value>
+      </div>
+      <div class="col-6">
+        <app-calc-value
+          [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+          label="Cast:"
+          styleClass="summary_damage"
+          styleClass2="summary_compare"
+          [isGreaterIsBetter]="false"
+          [max]="totalSummary?.calcSkill?.castPeriod"
+          [max2]="totalSummary2?.calcSkill?.castPeriod"
+        ></app-calc-value>
+      </div>
+      <div class="col-6">
+        <app-calc-value
+          [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+          label="Skill/s:"
+          unit=" Hits/s"
+          styleClass="summary_highlight"
+          styleClass2="summary_compare"
+          [max]="totalSummary?.calcSkill?.totalHitPerSec"
+          [max2]="totalSummary2?.calcSkill?.totalHitPerSec"
+        ></app-calc-value>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12 py-1 divider">
+    <p-divider></p-divider>
+  </div>
+
+  <!-- Skill Damage -->
+  <div class="col-6" [hidden]="!totalSummary?.dmg?.skillCanCri">
+    <app-calc-value
+      [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+      label="CriRate:"
+      unit="%"
+      styleClass="summary_damage"
+      styleClass2="summary_compare"
+      [max]="totalSummary?.dmg?.skillCriRateToMonster"
+      [max2]="totalSummary2?.dmg?.skillCriRateToMonster"
+    ></app-calc-value>
+  </div>
+  <div class="col-6" [hidden]="!totalSummary?.dmg?.skillCanCri">
+    <app-calc-value
+      [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+      label="CriDmg:"
+      unit="%"
+      styleClass="summary_damage"
+      styleClass2="summary_compare"
+      [max]="totalSummary?.dmg?.skillCriDmgToMonster"
+      [max2]="totalSummary2?.dmg?.skillCriDmgToMonster"
+    ></app-calc-value>
+  </div>
+  <div class="col-12" [hidden]="!totalSummary?.dmg?.skillCanCri || totalSummary?.dmg?.skillCriRateToMonster >= 100">
+    <app-calc-value
+      [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+      label="SkillDmg:"
+      styleClass="summary_damage"
+      styleClass2="summary_compare"
+      [showPercentDiff]="true"
+      [min]="totalSummary?.dmg?.skillMinDamageNoCri"
+      [max]="totalSummary?.dmg?.skillMaxDamageNoCri"
+      [min2]="totalSummary2?.dmg?.skillMinDamageNoCri"
+      [max2]="totalSummary2?.dmg?.skillMaxDamageNoCri"
+    ></app-calc-value>
+  </div>
+  <div class="col-12">
+    <app-calc-value
+      [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+      [label]="totalSummary?.dmg?.skillCanCri ? 'SkillDmgCri:' : 'SkillDmg:'"
+      styleClass="summary_damage"
+      styleClass2="summary_compare"
+      [showPercentDiff]="true"
+      [totalHit]="totalSummary?.calcSkill?.totalHits"
+      [min]="totalSummary?.dmg?.skillMinDamage"
+      [max]="totalSummary?.dmg?.skillMaxDamage"
+      [min2]="totalSummary2?.dmg?.skillMinDamage"
+      [max2]="totalSummary2?.dmg?.skillMaxDamage"
+    ></app-calc-value>
+  </div>
+  <div class="col-12" *ngIf="totalSummary?.dmg?.skillPart2Label && totalSummary?.dmg?.skillMaxDamage2">
+    <app-calc-value
+      [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+      [label]="totalSummary?.dmg?.skillPart2Label"
+      styleClass="summary_damage"
+      styleClass2="summary_compare"
+      [totalHit]="totalSummary?.calcSkill?.totalHits"
+      [min]="totalSummary?.dmg?.skillMinDamage2"
+      [max]="totalSummary?.dmg?.skillMaxDamage2"
+      [min2]="totalSummary2?.dmg?.skillMinDamage2"
+      [max2]="totalSummary2?.dmg?.skillMaxDamage2"
+    ></app-calc-value>
+  </div>
+  <!-- <div class="col-12" [hidden]="totalSummary?.dmg?.skillMaxDamageHE <= 0">
+      <app-calc-value
+        [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+        label="HE:"
+        styleClass="summary_damage"
+        styleClass2="summary_compare"
+        [min]="totalSummary?.dmg?.skillMinDamageHE"
+        [max]="totalSummary?.dmg?.skillMaxDamageHE"
+        [min2]="totalSummary2?.dmg?.skillMinDamageHE"
+        [max2]="totalSummary2?.dmg?.skillMaxDamageHE"
+      ></app-calc-value>
+    </div> -->
+  <div class="col-12" [hidden]="totalSummary?.dmg?.isAutoSpell">
+    <app-calc-value
+      [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+      label="DPS:"
+      styleClass="summary_highlight"
+      styleClass2="summary_compare"
+      [showPercentDiff]="true"
+      [max]="totalSummary?.dmg?.skillDps"
+      [max2]="totalSummary2?.dmg?.skillDps"
+    ></app-calc-value>
+  </div>
+  <div class="col-12" [hidden]="totalSummary?.dmg?.effectedSkillDamageMin <= 0 || !selectedChances?.length">
+    <app-calc-value
+      [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+      label="Triggered:"
+      styleClass="summary_chance"
+      styleClass2="summary_compare"
+      [totalHit]="totalSummary?.calcSkill?.totalHits"
+      [min]="totalSummary?.dmg?.effectedSkillDamageMin"
+      [max]="totalSummary?.dmg?.effectedSkillDamageMax"
+      [min2]="totalSummary2?.dmg?.effectedSkillDamageMin"
+      [max2]="totalSummary2?.dmg?.effectedSkillDamageMax"
+    ></app-calc-value>
+  </div>
+  <div class="col-12" [hidden]="totalSummary?.dmg?.effectedSkillDamageMin <= 0 || !selectedChances?.length">
+    <app-calc-value
+      [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+      label="Skill/s:"
+      styleClass="summary_chance_hilight"
+      styleClass2="summary_compare"
+      [max]="totalSummary?.dmg?.effectedSkillHitsPerSec"
+      [max2]="totalSummary2?.dmg?.effectedSkillHitsPerSec"
+    ></app-calc-value>
+  </div>
+  <div class="col-12" [hidden]="totalSummary?.dmg?.effectedSkillDamageMin <= 0 || !selectedChances?.length">
+    <app-calc-value
+      [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+      label="DPS:"
+      styleClass="summary_chance_hilight"
+      styleClass2="summary_compare"
+      [showPercentDiff]="true"
+      [max]="totalSummary?.dmg?.effectedSkillDps"
+      [max2]="totalSummary2?.dmg?.effectedSkillDps"
+    ></app-calc-value>
+  </div>
+
+  <div class="col-12 py-1 divider">
+    <p-divider></p-divider>
+  </div>
+
+  <!-- Basic Damage -->
+  <div class="col-12" [hidden]="hideBasicAtk">
+    <div class="grid grid-nogutter">
+      <div class="col-12">
+        Element:
+        <span class="{{ 'property_' + totalSummary?.propertyAtk }} px-1 font-semibold">{{ totalSummary?.propertyAtk }}</span
+        ><span class="summary_highlight px-2">( x {{ totalSummary?.dmg?.propertyMultiplier }})</span>
+        <span class="summary_monster_value px-1 font-bold" style="color: var(--red-500)" [hidden]="!showLeftWeapon || !model.leftWeapon">***ยังไม่คิด Atk มือซ้าย</span>
+      </div>
+      <div class="col-6" [hidden]="totalSummary?.dmg?.totalPene === totalSummary?.dmg?.skillTotalPene">
+        <app-calc-value
+          [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+          label="เจาะ:"
+          unit="%"
+          styleClass="summary_highlight"
+          styleClass2="summary_compare"
+          [max]="totalSummary?.dmg?.totalPene"
+          [max2]="totalSummary2?.dmg?.totalPene"
+        ></app-calc-value>
+      </div>
+      <div class="col-6" [hidden]="totalSummary?.dmg?.accuracy === totalSummary?.dmg?.skillAccuracy">
+        <app-calc-value
+          [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+          label="แม่น:"
+          unit="%"
+          styleClass="summary_highlight"
+          styleClass2="summary_compare"
+          [max]="totalSummary?.dmg?.accuracy"
+          [max2]="totalSummary2?.dmg?.accuracy"
+        ></app-calc-value>
+      </div>
+      <div class="col-12">
+        <app-calc-value
+          [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+          label="Basic:"
+          styleClass="summary_damage"
+          styleClass2="summary_compare"
+          [min]="totalSummary?.dmg?.basicMinDamage"
+          [max]="totalSummary?.dmg?.basicMaxDamage"
+          [min2]="totalSummary2?.dmg?.basicMinDamage"
+          [max2]="totalSummary2?.dmg?.basicMaxDamage"
+        ></app-calc-value>
+      </div>
+      <div class="col-12">
+        <app-calc-value
+          [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+          label="CriRate:"
+          unit="%"
+          styleClass="summary_damage"
+          styleClass2="summary_compare"
+          [max]="totalSummary?.dmg?.criRateToMonster"
+          [max2]="totalSummary2?.dmg?.criRateToMonster"
+        ></app-calc-value>
+      </div>
+      <div class="col-12">
+        <app-calc-value
+          [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+          label="DmgCri:"
+          styleClass="summary_damage"
+          styleClass2="summary_compare"
+          [min]="totalSummary?.dmg?.criMinDamage"
+          [max]="totalSummary?.dmg?.criMaxDamage"
+          [min2]="totalSummary2?.dmg?.criMinDamage"
+          [max2]="totalSummary2?.dmg?.criMaxDamage"
+        ></app-calc-value>
+      </div>
+      <div class="col-12">
+        <app-calc-value
+          [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+          label="DPS:"
+          styleClass="summary_highlight"
+          styleClass2="summary_compare"
+          [showPercentDiff]="true"
+          [max]="totalSummary?.dmg?.basicDps"
+          [max2]="totalSummary2?.dmg?.basicDps"
+        ></app-calc-value>
+      </div>
+      <div class="col-12" [hidden]="totalSummary?.dmg?.effectedBasicDamageMin <= 0 || !selectedChances?.length">
+        <app-calc-value
+          [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+          label="Triggered DmgCri:"
+          styleClass="summary_chance"
+          styleClass2="summary_compare"
+          [min]="totalSummary?.dmg?.effectedBasicCriDamageMin"
+          [max]="totalSummary?.dmg?.effectedBasicCriDamageMax"
+          [min2]="totalSummary2?.dmg?.effectedBasicCriDamageMin"
+          [max2]="totalSummary2?.dmg?.effectedBasicCriDamageMax"
+        ></app-calc-value>
+      </div>
+      <!-- <div class="col-12" [hidden]="totalSummary?.dmg?.effectedBasicDamageMin <= 0 || !selectedChances?.length">
+          <app-calc-value
+            [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+            label="ASPD:"
+            unit="Hits/s"
+            styleClass="summary_chance"
+            styleClass2="summary_compare"
+            [max]="totalSummary?.dmg?.effectedBasicHitsPerSec"
+            [max2]="totalSummary2?.dmg?.effectedBasicHitsPerSec"
+          ></app-calc-value>
+        </div> -->
+      <div class="col-12" [hidden]="totalSummary?.dmg?.effectedBasicDamageMin <= 0 || !selectedChances?.length">
+        <app-calc-value
+          [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+          label="DPS:"
+          styleClass="summary_chance_hilight"
+          styleClass2="summary_compare"
+          [showPercentDiff]="true"
+          [max]="totalSummary?.dmg?.effectedBasicDps"
+          [max2]="totalSummary2?.dmg?.effectedBasicDps"
+        ></app-calc-value>
+      </div>
+    </div>
+  </div>
+</div>
