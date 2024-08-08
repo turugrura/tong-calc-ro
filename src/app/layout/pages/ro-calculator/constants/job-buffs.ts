@@ -173,4 +173,13 @@ export const JobBuffs: ActiveSkillModel[] = [
   ShieldSpellFn(),
   BragisPoemFn(),
   // SwingDanceFn(),
+  {
+    inputType: 'selectButton',
+    label: 'Mystical Amp 10',
+    name: 'Mystical Amplification',
+    dropdown: [
+      { label: 'Yes', isUse: true, value: 1, bonus: { mysticAmp: 50 } },
+      { label: 'No', isUse: false, value: 0 },
+    ],
+  },
 ];

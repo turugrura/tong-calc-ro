@@ -172,7 +172,6 @@ export class RoyalGuard extends CharacterBase {
       name: 'Cannon Spear',
       label: 'Cannon Spear Lv5',
       value: 'Cannon Spear==5',
-      values: ['[Improved] Cannon Spear==5'],
       acd: 0,
       fct: 0,
       vct: 0,
@@ -185,6 +184,24 @@ export class RoyalGuard extends CharacterBase {
         const { totalStr } = status;
 
         return (totalStr * skillLevel + skillLevel * 50) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Cannon Spear',
+      label: '[Improved] Cannon Spear Lv5',
+      value: '[Improved] Cannon Spear==5',
+      acd: 0,
+      fct: 0,
+      vct: 0,
+      cd: 1.7,
+      canCri: true,
+      criDmgPercentage: 0.5,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const baseLevel = model.level;
+        const { totalStr } = status;
+
+        return (totalStr * skillLevel + skillLevel * 120) * (baseLevel / 100);
       },
     },
     {
