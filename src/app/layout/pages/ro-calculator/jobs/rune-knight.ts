@@ -1,12 +1,5 @@
 import { ClassName } from './_class-name';
-import {
-  ActiveSkillModel,
-  AtkSkillFormulaInput,
-  AtkSkillModel,
-  CharacterBase,
-  DefForCalcModel,
-  PassiveSkillModel,
-} from './_character-base.abstract';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, CharacterBase, DefForCalcModel, PassiveSkillModel } from './_character-base.abstract';
 import { LordKnight } from './lord-knight';
 import { ElementType } from '../constants/element-type.const';
 import { InfoForClass } from '../models/info-for-class.model';
@@ -494,6 +487,19 @@ export class RuneKnight extends CharacterBase {
         { label: 'Lv 10', value: 10, isUse: true },
       ],
     },
+    {
+      label: 'Dragon Howling',
+      name: 'Dragon Howling',
+      inputType: 'dropdown',
+      dropdown: [
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 1', value: 1, isUse: true },
+        { label: 'Lv 2', value: 2, isUse: true },
+        { label: 'Lv 3', value: 3, isUse: true },
+        { label: 'Lv 4', value: 4, isUse: true },
+        { label: 'Lv 5', value: 5, isUse: true },
+      ],
+    },
   ];
 
   constructor() {
@@ -540,8 +546,7 @@ export class RuneKnight extends CharacterBase {
 
     const isRideDragon = this.isSkillActive('Ride Dragon');
     if (isRideDragon) {
-      totalBonus.decreaseSkillAspdPercent =
-        (totalBonus.decreaseSkillAspdPercent || 0) + (25 - this.learnLv('Dragon Training') * 5);
+      totalBonus.decreaseSkillAspdPercent = (totalBonus.decreaseSkillAspdPercent || 0) + (25 - this.learnLv('Dragon Training') * 5);
 
       if (wType === 'spear' || wType === 'twohandSpear') {
         totalBonus['ignore_size_penalty'] = 100;
