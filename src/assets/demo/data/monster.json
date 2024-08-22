@@ -1271,6 +1271,59 @@
       "raceName": "Formless"
     }
   },
+  "1751": {
+    "id": 1751,
+    "dbname": "RANDGRIS",
+    "name": "Valkyrie Randgris",
+    "spawn": "odin_tem03",
+    "stats": {
+      "attackRange": 3,
+      "level": 141,
+      "health": 3205000,
+      "sp": 1,
+      "str": 196,
+      "int": 276,
+      "vit": 125,
+      "dex": 401,
+      "agi": 131,
+      "luk": 156,
+      "rechargeTime": 576,
+      "atk1": 7343,
+      "atk2": 4412,
+      "attack": {
+        "minimum": 6211,
+        "maximum": 9148
+      },
+      "magicAttack": {
+        "minimum": 3505,
+        "maximum": 6152
+      },
+      "defense": 588,
+      "baseExperience": 1300000,
+      "jobExperience": 1210000,
+      "aggroRange": 10,
+      "escapeRange": 12,
+      "movementSpeed": 100,
+      "attackSpeed": 576,
+      "attackedSpeed": 480,
+      "element": 86,
+      "scale": 2,
+      "race": 8,
+      "magicDefense": 506,
+      "hit": 472,
+      "flee": 712,
+      "ai": "MONSTER_TYPE_21",
+      "mvp": 1,
+      "class": 1,
+      "attr": 520,
+      "res": 0,
+      "mres": 0,
+      "elementName": "Holy 4",
+      "elementShortName": "Holy",
+      "scaleName": "Large",
+      "raceName": "Angel"
+    }
+  },
   "1768": {
     "id": 1768,
     "dbname": "GLOOMUNDERNIGHT",

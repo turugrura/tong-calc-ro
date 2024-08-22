@@ -1,171 +1,179 @@
 {
  "1": {
-  "Dragon Tail": 5,
-  "Fire Dance": 61,
-  "God's Hammer": 1,
-  "Napalm Vulcan": 2,
-  "Round Trip": 212,
-  "Shatter Storm": 4,
-  "Vanishing Buster": 8
+  "Adoramus": 1,
+  "Dragon Tail": 4,
+  "Fire Dance": 71,
+  "God's Hammer": 3,
+  "Napalm Vulcan": 3,
+  "Round Trip": 226,
+  "Shatter Storm": 5,
+  "Vanishing Buster": 10
  },
  "10": {
-  "Arm Cannon": 164,
-  "Axe Boomerang": 12,
-  "Axe Tornado": 281,
-  "Power Swing": 2
+  "Arm Cannon": 187,
+  "Axe Boomerang": 15,
+  "Axe Tornado": 336,
+  "Knuckle Boost": 2,
+  "Power Swing": 1
  },
  "11": {
-  "Banishing Point": 84,
-  "Cannon Spear": 191,
-  "Earth Drive": 55,
-  "Genesis Ray": 89,
-  "Gloria Domini": 43,
-  "Over Brand": 25,
+  "Banishing Point": 87,
+  "Cannon Spear": 271,
+  "Earth Drive": 56,
+  "Genesis Ray": 103,
+  "Gloria Domini": 51,
+  "Over Brand": 36,
   "Shield Chain": 2,
-  "Shield Press": 14
+  "Shield Press": 15
  },
  "12": {
-  "Dragon Breath": 56,
-  "Dragon Breath - WATER": 7,
-  "Hundred Spears": 81,
-  "Ignition Break": 481,
+  "Dragon Breath": 64,
+  "Dragon Breath - WATER": 14,
+  "Hundred Spears": 92,
+  "Ignition Break": 542,
   "Ignition Break5": 1,
-  "Sonic Wave": 135,
+  "Sonic Wave": 180,
   "Wind Cutter": 54
  },
  "13": {
+  "Adoramus": 1,
   "Dragon Combo": 5,
-  "Fallen Empire": 2,
+  "Earth Shaker": 1,
+  "Fallen Empire": 3,
   "Hell Gate": 1,
   "Knuckle Arrow": 37,
   "Lightning Ride": 15,
-  "Rampage Blast": 115,
-  "Sky Blow": 6,
-  "Tiger Cannon": 383
+  "Rampage Blast": 130,
+  "Sky Blow": 8,
+  "Tiger Cannon": 455
  },
  "17": {
   "Cross Slash": 1,
   "Exploding Dragon": 2,
-  "First Wind": 2,
-  "Flaming Petals": 21,
-  "Freezing Spear": 13,
-  "Freezing Spear Water": 17,
-  "Snow Flake Draft": 13,
+  "First Wind": 1,
+  "Flaming Petals": 22,
+  "Freezing Spear": 14,
+  "Freezing Spear Water": 25,
+  "Snow Flake Draft": 12,
   "Wind Blade": 4
  },
  "18": {
-  "Cross Slash": 85,
-  "Kunai Splash": 5,
-  "Swirling Petal": 38
+  "Cross Slash": 95,
+  "Kunai Splash": 6,
+  "Swirling Petal": 46
  },
  "2": {
-  "Aimed Bolt": 396,
-  "Arrow Storm": 266,
-  "Focused Arrow Strike": 727,
+  "Aimed Bolt": 554,
+  "Arrow Storm": 292,
+  "Focused Arrow Strike": 846,
   "Napalm Vulcan": 1
  },
  "21": {
-  "Arrow Vulcan": 47,
-  "Metalic Sound": 40,
+  "Arrow Vulcan": 50,
+  "Metalic Sound": 54,
   "Napalm Vulcan": 1,
-  "Reverberation": 509,
-  "Severe Rainstorm": 454
+  "Reverberation": 524,
+  "Severe Rainstorm": 531
  },
  "22": {
-  "Arrow Vulcan": 24,
-  "Metalic Sound": 78,
-  "Reverberation": 378,
-  "Severe Rainstorm": 176
+  "Arrow Vulcan": 27,
+  "Metalic Sound": 101,
+  "Reverberation": 389,
+  "Severe Rainstorm": 197
  },
  "3": {
   "Curse Explosion": 3,
-  "Espa": 201,
-  "Eswhoo": 6
+  "Espa": 220,
+  "Eswhoo": 9
  },
  "30": {
-  "Bowling Bash": 1,
-  "Fatal Manace": 27,
-  "Fire Bolt": 8,
+  "Adoramus": 2,
+  "Fatal Manace": 36,
+  "Fire Bolt": 12,
   "Lightening Bolt": 1,
   "Napalm Vulcan": 1,
-  "Psychic Wave": 17,
-  "Shield Chain": 5,
-  "Wind Cutter": 1
+  "Psychic Wave": 20,
+  "Shield Chain": 7,
+  "Wind Cutter": 3
  },
  "31": {
-  "Catnip Meteor": 65,
-  "Lunatic Carrot Beat": 13,
-  "Picky Peck": 59,
+  "Catnip Meteor": 73,
+  "Lunatic Carrot Beat": 16,
+  "Picky Peck": 65,
   "Silvervine Stem Spear": 5,
   "Silvervine Stem Spear Water": 5
  },
  "33": {
   "Blaze Kick": 2,
-  "Falling Stars": 37,
-  "Full Moon Kick": 33,
-  "New Moon Kick": 8,
-  "Solar Explosion": 144,
-  "Wind Cutter": 2
+  "Falling Stars": 39,
+  "Full Moon Kick": 40,
+  "New Moon Kick": 9,
+  "Solar Explosion": 153,
+  "Wind Cutter": 1
  },
  "4": {
   "Arrow Storm": 5,
-  "Comet": 9,
-  "Fatal Manace": 604,
+  "Comet": 12,
+  "Fatal Manace": 681,
   "Feint Bomb": 3,
-  "Ignition Break": 2,
-  "Meteor Storm": 6,
-  "Psychic Wave": 85,
+  "Ignition Break": 3,
+  "Meteor Storm": 7,
+  "Psychic Wave": 115,
   "Reverberation": 1,
-  "Severe Rainstorm": 97,
-  "Triangle Shot": 269
+  "Severe Rainstorm": 132,
+  "Triangle Shot": 303,
+  "Wind Cutter": 1
  },
  "5": {
-  "Counter Slash": 114,
-  "Cross Impact": 1039,
-  "Cross Ripper Slasher": 14,
-  "Meteor Assault": 148,
-  "Rolling Cutter": 515,
-  "Soul Destroyer": 247,
-  "Wind Cutter": 2
+  "Counter Slash": 119,
+  "Cross Impact": 1221,
+  "Cross Ripper Slasher": 18,
+  "Meteor Assault": 163,
+  "Napalm Vulcan": 1,
+  "Rolling Cutter": 547,
+  "Soul Destroyer": 288,
+  "Wind Cutter": 3
  },
  "6": {
-  "Chain Lightning": 24,
+  "Chain Lightning": 33,
   "Cold Bolt": 1,
-  "Comet": 428,
-  "Crimson Rock": 470,
+  "Comet": 504,
+  "Crimson Rock": 503,
   "Drain Life": 1,
   "Earth Strain": 1,
-  "Fire Bolt": 27,
-  "Gravitational Field": 1,
-  "Heaven's Drive": 2,
-  "Jack Frost": 25,
-  "Jack Frost Frost": 4,
+  "Fire Bolt": 28,
+  "Gravitational Field": 2,
+  "Heaven's Drive": 1,
+  "Jack Frost": 32,
+  "Jack Frost Frost": 11,
   "Napalm Vulcan": 2,
   "Soul Drain": 5,
-  "Soul Expansion": 10
+  "Soul Expansion": 15
  },
  "7": {
-  "Adoramus": 487,
-  "Holy Light": 72,
-  "Judex": 130,
+  "Adoramus": 572,
+  "Hell Inferno": 1,
+  "Holy Light": 78,
+  "Judex": 146,
   "Magnus Exorcismus": 3,
   "Napalm Vulcan": 3
  },
  "8": {
   "Cold Bolt": 1,
-  "Diamond Dust": 72,
+  "Diamond Dust": 111,
   "Earth Grave": 18,
-  "Fire Bolt": 14,
+  "Fire Bolt": 17,
   "Fist Spell Cold Bolt": 4,
-  "Fist Spell Fire Bolt": 5,
-  "Psychic Wave": 285,
-  "Varetyr Spear": 30
+  "Fist Spell Fire Bolt": 8,
+  "Poison Burst": 1,
+  "Psychic Wave": 407,
+  "Varetyr Spear": 34
  },
  "9": {
-  "Acid Bomb": 19,
-  "Cart Cannon": 382,
-  "Cart Tornado": 40,
+  "Acid Bomb": 25,
+  "Cart Cannon": 426,
+  "Cart Tornado": 44,
   "Napalm Vulcan": 2,
-  "Spore Explosion": 16
+  "Spore Explosion": 21
  }
 }
