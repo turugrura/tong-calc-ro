@@ -21,13 +21,7 @@ import { environment } from 'src/environments/environment';
 import { DamageCalculator } from './damage-calculator';
 import { createRawTotalBonus } from './utils/create-raw-total-bonus';
 import { floor, isNumber, round } from './utils';
-import {
-  BasicAspdModel,
-  BasicDamageSummaryModel,
-  MiscModel,
-  SkillAspdModel,
-  SkillDamageSummaryModel,
-} from './models/damage-summary.model';
+import { BasicAspdModel, BasicDamageSummaryModel, MiscModel, SkillAspdModel, SkillDamageSummaryModel } from './models/damage-summary.model';
 import { ChanceModel } from './models/chance-model';
 
 // const getItem = (id: number) => items[id] as ItemModel;
@@ -417,23 +411,7 @@ export class Calculator {
   setMonster(monster: MonsterModel) {
     const {
       name,
-      stats: {
-        int,
-        vit,
-        agi,
-        luk,
-        str,
-        dex,
-        level,
-        elementName,
-        health,
-        defense,
-        magicDefense,
-        raceName,
-        class: monsterTypeId,
-        scaleName,
-        mvp,
-      },
+      stats: { int, vit, agi, luk, str, dex, level, elementName, health, defense, magicDefense, raceName, class: monsterTypeId, scaleName, mvp },
     } = monster;
     const [pureElement] = elementName.split(' ');
 
@@ -894,7 +872,8 @@ export class Calculator {
     const [toRemoveA, wLevel] = restCondition.match(/WEAPON_LEVEL\[(\d+)]/) ?? [];
     if (wLevel) {
       const wLv = Number(wLevel);
-      const isValid = this.weaponData.data.baseWeaponLevel === wLv;
+      const weaponLvl = (itemType || '').toLowerCase().startsWith('left') ? this.leftWeaponData?.data?.baseWeaponLevel : this.weaponData.data.baseWeaponLevel;
+      const isValid = weaponLvl === wLv;
       if (!isValid) return { isValid, restCondition };
 
       restCondition = restCondition.replace(toRemoveA, '');
@@ -935,12 +914,7 @@ export class Calculator {
     const [toRemove, usedByClass] = restCondition.match(/USED\[(.+?)\]/) ?? [];
     if (usedByClass) {
       const cName = this._class.className.replace(' ', '');
-      const isUsed = usedByClass
-        .split('||')
-        .some(
-          (className) =>
-            className === cName || className === this._class.className || this._class.classNameSet.has(className),
-        );
+      const isUsed = usedByClass.split('||').some((className) => className === cName || className === this._class.className || this._class.classNameSet.has(className));
       if (!isUsed) return { isValid: false, restCondition };
 
       restCondition = restCondition.replace(toRemove, '');
@@ -1517,10 +1491,7 @@ export class Calculator {
     return this;
   }
 
-  calcDmgWithExtraBonus(params: {
-    skillValue: string;
-    isUseHpL: boolean;
-  }): BasicDamageSummaryModel & SkillDamageSummaryModel {
+  calcDmgWithExtraBonus(params: { skillValue: string; isUseHpL: boolean }): BasicDamageSummaryModel & SkillDamageSummaryModel {
     this.calcAllAtk();
 
     const c = this.getChanceBonus();
@@ -1577,9 +1548,7 @@ export class Calculator {
       return bonus.filter((_, i) => i + 1 <= refine).reduce((sum, val) => sum + val, 0);
     };
     const { headUpperRefine, armorRefine, shieldRefine, garmentRefine, bootRefine } = this.model;
-    const refines = [headUpperRefine, armorRefine, shieldRefine, garmentRefine, bootRefine].filter(
-      (a) => Number(a) > 0,
-    );
+    const refines = [headUpperRefine, armorRefine, shieldRefine, garmentRefine, bootRefine].filter((a) => Number(a) > 0);
     const bonusDefByRefine = refines.reduce((sum, refine) => sum + calcDefByRefine(refine), 0);
     this.def = floor((def + bonusDefByRefine) * this.toPercent(100 + defPercent));
 
