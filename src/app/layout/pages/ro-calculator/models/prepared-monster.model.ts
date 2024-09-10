@@ -38,4 +38,6 @@ export interface PreparedMonsterModel {
   vit: number;
   int: number;
   luk: number;
+  res: number;
+  mres: number;
 }

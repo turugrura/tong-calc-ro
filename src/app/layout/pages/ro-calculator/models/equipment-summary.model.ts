@@ -30,12 +30,21 @@ export interface EquipmentSummaryModel {
   matk: number;
   matkPercent: number;
   allStatus: number;
+
   str: number;
   int: number;
   dex: number;
   luk: number;
   vit: number;
   agi: number;
+
+  pow: number;
+  sta: number;
+  wis: number;
+  spl: number;
+  con: number;
+  crt: number;
+
   melee: number;
   range: number;
   bowRange: number;
@@ -89,6 +98,9 @@ export interface EquipmentSummaryModel {
   p_class_all: number;
   p_class_normal: number;
   p_class_boss: number;
+
+  pene_res: number;
+  pene_mres: number;
 
   p_pene_class_all: number;
   p_pene_class_normal: number;

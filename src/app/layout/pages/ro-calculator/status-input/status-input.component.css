@@ -1,0 +1,7 @@
+:host ::ng-deep .status_input .p-dropdown-panel .p-dropdown-header {
+  padding: 0.5rem;
+}
+
+:host ::ng-deep .status_input .p-dropdown-trigger {
+  width: 24px;
+}

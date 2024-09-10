@@ -19,6 +19,19 @@ export interface MainModel extends Partial<EquipmentModel> {
   luk: number;
   jobLuk?: number;
 
+  pow: number;
+  jobPow: number;
+  sta: number;
+  jobSta: number;
+  wis: number;
+  jobWis: number;
+  spl: number;
+  jobSpl: number;
+  con: number;
+  jobCon: number;
+  crt: number;
+  jobCrt: number;
+
   selectedAtkSkill?: string;
   propertyAtk?: ElementType;
   rawOptionTxts: string[];

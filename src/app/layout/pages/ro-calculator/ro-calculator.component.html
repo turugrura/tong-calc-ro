@@ -115,11 +115,11 @@
               <p-dropdown
                 inputId="level"
                 [autoDisplayFirst]="false"
-                [resetFilterOnHide]="true"
                 [options]="levelList"
                 [filter]="true"
-                scrollHeight="350px"
                 filterBy="label"
+                scrollHeight="350px"
+                [resetFilterOnHide]="true"
                 [(ngModel)]="model.level"
                 (ngModelChange)="onBaseStatusChange()"
               ></p-dropdown>
@@ -143,12 +143,20 @@
           </div>
           <div class="col-12">
             <span class="p-inputgroup-addon"
-              >Available Point:
+              >Status:
               <span [className]="availablePoints < 0 ? 'ml-2 summary_monster_value px-1 font-semibold' : 'ml-2'">
                 {{ availablePoints }}
-                <span [hidden]="!appropriateLevel">(Lv {{ appropriateLevel > 200 ? '> 200' : appropriateLevel }})</span>
-              </span></span
-            >
+                <span [hidden]="!appropriateLevel">(Lv {{ appropriateLevel > 200 ? 'x' : appropriateLevel }})</span>
+              </span>
+
+              <span
+                >, Trait:
+                <span [className]="availableTraitPoints < 0 ? ' summary_monster_value px-1 font-semibold' : ''">
+                  {{ availableTraitPoints }}
+                  <span [hidden]="!appropriateLevelForTrait">(Lv {{ appropriateLevelForTrait > 300 ? 'x' : appropriateLevelForTrait }})</span>
+                </span>
+              </span>
+            </span>
           </div>
         </div>
       </div>
@@ -156,121 +164,150 @@
       <!-- Status -->
       <div class="col-8">
         <div class="grid grid-nogutter">
-          <div class="col-4">
+          <div class="col-5">
             <div class="grid grid-nogutter">
               <!-- STR -->
-              <div class="col-12">
-                <div class="p-inputgroup">
-                  <span class="p-inputgroup-addon" style="width: 45px">Str</span>
-                  <p-dropdown
-                    inputId="str"
-                    [autoDisplayFirst]="false"
-                    [options]="mainStatusList"
-                    [filter]="true"
-                    filterBy="label"
-                    scrollHeight="350px"
-                    [resetFilterOnHide]="true"
-                    [(ngModel)]="model.str"
-                    (ngModelChange)="onBaseStatusChange()"
-                  ></p-dropdown>
-                  <p-badge value="+{{ (model.jobStr || 0) + (totalSummary?.str || 0) }}" size="large" severity="info"></p-badge>
+              <div class="col-12 grid grid-nogutter">
+                <div class="col-6">
+                  <app-status-input
+                    label="Str"
+                    [dropdownList]="mainStatusList"
+                    [(value)]="model.str"
+                    (valueChange)="onBaseStatusChange()"
+                    [extraValue]="(model.jobStr || 0) + (totalSummary?.str || 0)"
+                  ></app-status-input>
+                </div>
+                <div class="col-6">
+                  <app-status-input
+                    label="Pow"
+                    [dropdownList]="traitStatusList"
+                    [(value)]="model.pow"
+                    (valueChange)="onBaseStatusChange()"
+                    [extraValue]="(model.jobPow || 0) + (totalSummary?.pow || 0)"
+                    badgeSeverity="danger"
+                  ></app-status-input>
                 </div>
               </div>
+
               <!-- AGI -->
-              <div class="col-12">
-                <div class="p-inputgroup">
-                  <span class="p-inputgroup-addon" style="width: 45px">Agi</span>
-                  <p-dropdown
-                    inputId="agi"
-                    [autoDisplayFirst]="false"
-                    [options]="mainStatusList"
-                    [filter]="true"
-                    filterBy="label"
-                    scrollHeight="350px"
-                    [resetFilterOnHide]="true"
-                    [(ngModel)]="model.agi"
-                    (ngModelChange)="onBaseStatusChange()"
-                  ></p-dropdown>
-                  <p-badge value="+{{ (model.jobAgi || 0) + (totalSummary?.agi || 0) }}" size="large" severity="info"></p-badge>
+              <div class="col-12 grid grid-nogutter">
+                <div class="col-6">
+                  <app-status-input
+                    label="Agi"
+                    [dropdownList]="mainStatusList"
+                    [(value)]="model.agi"
+                    (valueChange)="onBaseStatusChange()"
+                    [extraValue]="(model.jobAgi || 0) + (totalSummary?.agi || 0)"
+                  ></app-status-input>
+                </div>
+                <div class="col-6">
+                  <app-status-input
+                    label="Sta"
+                    [dropdownList]="traitStatusList"
+                    [(value)]="model.sta"
+                    (valueChange)="onBaseStatusChange()"
+                    [extraValue]="(model.jobSta || 0) + (totalSummary?.sta || 0)"
+                    badgeSeverity="danger"
+                  ></app-status-input>
                 </div>
               </div>
+
               <!-- VIT -->
-              <div class="col-12">
-                <div class="p-inputgroup">
-                  <span class="p-inputgroup-addon" style="width: 45px">Vit</span>
-                  <p-dropdown
-                    inputId="vit"
-                    [autoDisplayFirst]="false"
-                    [options]="mainStatusList"
-                    [filter]="true"
-                    filterBy="label"
-                    scrollHeight="350px"
-                    [resetFilterOnHide]="true"
-                    [(ngModel)]="model.vit"
-                    (ngModelChange)="onBaseStatusChange()"
-                  ></p-dropdown>
-                  <p-badge value="+{{ (model.jobVit || 0) + (totalSummary?.vit || 0) }}" size="large" severity="info"></p-badge>
+              <div class="col-12 grid grid-nogutter">
+                <div class="col-6">
+                  <app-status-input
+                    label="Vit"
+                    [dropdownList]="mainStatusList"
+                    [(value)]="model.vit"
+                    (valueChange)="onBaseStatusChange()"
+                    [extraValue]="(model.jobVit || 0) + (totalSummary?.vit || 0)"
+                  ></app-status-input>
+                </div>
+                <div class="col-6">
+                  <app-status-input
+                    label="Wis"
+                    [dropdownList]="traitStatusList"
+                    [(value)]="model.wis"
+                    (valueChange)="onBaseStatusChange()"
+                    [extraValue]="(model.jobWis || 0) + (totalSummary?.wis || 0)"
+                    badgeSeverity="danger"
+                  ></app-status-input>
                 </div>
               </div>
+
               <!-- INT -->
-              <div class="col-12">
-                <div class="p-inputgroup">
-                  <span class="p-inputgroup-addon" style="width: 45px">Int</span>
-                  <p-dropdown
-                    inputId="int"
-                    [autoDisplayFirst]="false"
-                    [options]="mainStatusList"
-                    [filter]="true"
-                    filterBy="label"
-                    scrollHeight="350px"
-                    [resetFilterOnHide]="true"
-                    [(ngModel)]="model.int"
-                    (ngModelChange)="onBaseStatusChange()"
-                  ></p-dropdown>
-                  <p-badge value="+{{ (model.jobInt || 0) + (totalSummary?.int || 0) }}" size="large" severity="info"></p-badge>
+              <div class="col-12 grid grid-nogutter">
+                <div class="col-6">
+                  <app-status-input
+                    label="Int"
+                    [dropdownList]="mainStatusList"
+                    [(value)]="model.int"
+                    (valueChange)="onBaseStatusChange()"
+                    [extraValue]="(model.jobInt || 0) + (totalSummary?.int || 0)"
+                  ></app-status-input>
+                </div>
+                <div class="col-6">
+                  <app-status-input
+                    label="Spl"
+                    [dropdownList]="traitStatusList"
+                    [(value)]="model.spl"
+                    (valueChange)="onBaseStatusChange()"
+                    [extraValue]="(model.jobSpl || 0) + (totalSummary?.spl || 0)"
+                    badgeSeverity="danger"
+                  ></app-status-input>
                 </div>
               </div>
+
               <!-- DEX -->
-              <div class="col-12">
-                <div class="p-inputgroup">
-                  <span class="p-inputgroup-addon" style="width: 45px">Dex</span>
-                  <p-dropdown
-                    inputId="dex"
-                    [autoDisplayFirst]="false"
-                    [options]="mainStatusList"
-                    [filter]="true"
-                    filterBy="label"
-                    scrollHeight="350px"
-                    [resetFilterOnHide]="true"
-                    [(ngModel)]="model.dex"
-                    (ngModelChange)="onBaseStatusChange()"
-                  ></p-dropdown>
-                  <p-badge value="+{{ (model.jobDex || 0) + (totalSummary?.dex || 0) }}" size="large" severity="info"></p-badge>
+              <div class="col-12 grid grid-nogutter">
+                <div class="col-6">
+                  <app-status-input
+                    label="Dex"
+                    [dropdownList]="mainStatusList"
+                    [(value)]="model.dex"
+                    (valueChange)="onBaseStatusChange()"
+                    [extraValue]="(model.jobDex || 0) + (totalSummary?.dex || 0)"
+                  ></app-status-input>
+                </div>
+                <div class="col-6">
+                  <app-status-input
+                    label="Con"
+                    [dropdownList]="traitStatusList"
+                    [(value)]="model.con"
+                    (valueChange)="onBaseStatusChange()"
+                    [extraValue]="(model.jobCon || 0) + (totalSummary?.con || 0)"
+                    badgeSeverity="danger"
+                  ></app-status-input>
                 </div>
               </div>
+
               <!-- LUK -->
-              <div class="col-12">
-                <div class="p-inputgroup">
-                  <span class="p-inputgroup-addon" style="width: 45px">Luk</span>
-                  <p-dropdown
-                    inputId="luk"
-                    [autoDisplayFirst]="false"
-                    [options]="mainStatusList"
-                    [filter]="true"
-                    filterBy="label"
-                    scrollHeight="350px"
-                    [resetFilterOnHide]="true"
-                    [(ngModel)]="model.luk"
-                    (ngModelChange)="onBaseStatusChange()"
-                  ></p-dropdown>
-                  <p-badge value="+{{ (model.jobLuk || 0) + (totalSummary?.luk || 0) }}" size="large" severity="info"></p-badge>
+              <div class="col-12 grid grid-nogutter">
+                <div class="col-6">
+                  <app-status-input
+                    label="Luk"
+                    [dropdownList]="mainStatusList"
+                    [(value)]="model.luk"
+                    (valueChange)="onBaseStatusChange()"
+                    [extraValue]="(model.jobLuk || 0) + (totalSummary?.luk || 0)"
+                  ></app-status-input>
+                </div>
+                <div class="col-6">
+                  <app-status-input
+                    label="Crt"
+                    [dropdownList]="traitStatusList"
+                    [(value)]="model.crt"
+                    (valueChange)="onBaseStatusChange()"
+                    [extraValue]="(model.jobCrt || 0) + (totalSummary?.crt || 0)"
+                    badgeSeverity="danger"
+                  ></app-status-input>
                 </div>
               </div>
             </div>
           </div>
 
           <!-- Summary -->
-          <div class="col-8">
+          <div class="col-7">
             <div class="grid grid-nogutter" style="position: relative">
               <div class="loading_block" *ngIf="isCalculating">
                 <i class="pi pi-spin pi-spinner" style="font-size: 2rem"></i>
@@ -292,6 +329,14 @@
                   <div [hidden]="env.production" class="col-12">
                     Equip Atk:
                     <span class="font-semibold px-1 summary_stat_atk">{{ totalSummary?.atk || 0 }} + {{ totalSummary?.atkPercent || 0 }} %</span>
+                  </div>
+                  <div [hidden]="env.production" class="col-6">
+                    P.Atk:
+                    <span class="font-semibold px-1 summary_stat_atk2">{{ totalSummary?.dmg?.pAtk || 0 }}</span>
+                  </div>
+                  <div [hidden]="env.production" class="col-6">
+                    C.Rate:
+                    <span class="font-semibold px-1 summary_stat_atk2">{{ totalSummary?.dmg?.cRate || 0 }}</span>
                   </div>
                   <div class="col-12">
                     ASPD:
@@ -345,6 +390,10 @@
                   <div [hidden]="env.production" class="col-12">
                     Equip Matk:
                     <span class="font-semibold px-1 summary_stat_matk">{{ totalSummary?.matk || 0 }} + {{ totalSummary?.matkPercent || 0 }} %</span>
+                  </div>
+                  <div [hidden]="env.production" class="col-12">
+                    S.Matk:
+                    <span class="font-semibold px-1 summary_stat_matk2">{{ totalSummary?.sMatk || 0 }}</span>
                   </div>
                   <div class="col-12">
                     After Cast Delay:

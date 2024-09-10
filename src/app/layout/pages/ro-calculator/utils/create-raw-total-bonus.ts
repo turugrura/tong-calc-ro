@@ -31,12 +31,21 @@ export const createRawTotalBonus = (): EquipmentSummaryModel => {
     matk: 0,
     matkPercent: 0,
     allStatus: 0,
+
     str: 0,
     int: 0,
     dex: 0,
     luk: 0,
     vit: 0,
     agi: 0,
+
+    pow: 0,
+    sta: 0,
+    wis: 0,
+    spl: 0,
+    con: 0,
+    crt: 0,
+
     melee: 0,
     range: 0,
     bowRange: 0,
@@ -91,6 +100,9 @@ export const createRawTotalBonus = (): EquipmentSummaryModel => {
     p_class_all: 0,
     p_class_normal: 0,
     p_class_boss: 0,
+
+    pene_res: 0,
+    pene_mres: 0,
 
     p_pene_class_all: 0,
     p_pene_class_normal: 0,

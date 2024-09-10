@@ -149,11 +149,21 @@
   background-color: #121212;
   color: var(--orange-300);
 }
+.summary_stat_atk2 {
+  /* background-color: var(--surface-0); */
+  background-color: #121212;
+  color: var(--orange-200);
+}
 
 .summary_stat_matk {
   /* background-color: var(--surface-0); */
   background-color: #121212;
   color: var(--blue-300);
+}
+.summary_stat_matk2 {
+  /* background-color: var(--surface-0); */
+  background-color: #121212;
+  color: var(--blue-200);
 }
 
 .summary_stat_yellow {

@@ -234,6 +234,8 @@ export class Calculator {
     vit: 0,
     int: 0,
     luk: 0,
+    res: 0,
+    mres: 0,
   };
   private monster: MonsterModel;
 
@@ -302,6 +304,7 @@ export class Calculator {
 
   private get status(): StatusSummary {
     const { str, jobStr, int, jobInt, luk, jobLuk, vit, jobVit, dex, jobDex, agi, jobAgi } = this.model;
+    const { pow, sta, wis, spl, con, crt, jobPow, jobSta, jobWis, jobSpl, jobCon, jobCrt } = this.model;
 
     return {
       baseStr: str,
@@ -327,6 +330,30 @@ export class Calculator {
       baseAgi: agi,
       equipAgi: this.totalEquipStatus.agi ?? 0,
       totalAgi: agi + (jobAgi ?? 0) + (this.totalEquipStatus.agi ?? 0),
+
+      basePow: pow,
+      equipPow: this.totalEquipStatus.pow,
+      totalPow: pow + (jobPow ?? 0) + (this.totalEquipStatus.pow ?? 0),
+
+      baseSta: sta,
+      equipSta: this.totalEquipStatus.sta,
+      totalSta: sta + (jobSta ?? 0) + (this.totalEquipStatus.sta ?? 0),
+
+      baseWis: wis,
+      equipWis: this.totalEquipStatus.wis,
+      totalWis: wis + (jobWis ?? 0) + (this.totalEquipStatus.wis ?? 0),
+
+      baseSpl: spl,
+      equipSpl: this.totalEquipStatus.spl,
+      totalSpl: spl + (jobSpl ?? 0) + (this.totalEquipStatus.spl ?? 0),
+
+      baseCon: con,
+      equipCon: this.totalEquipStatus.con,
+      totalCon: con + (jobCon ?? 0) + (this.totalEquipStatus.con ?? 0),
+
+      baseCrt: crt,
+      equipCrt: this.totalEquipStatus.crt,
+      totalCrt: crt + (jobCrt ?? 0) + (this.totalEquipStatus.crt ?? 0),
     };
   }
 
@@ -411,7 +438,7 @@ export class Calculator {
   setMonster(monster: MonsterModel) {
     const {
       name,
-      stats: { int, vit, agi, luk, str, dex, level, elementName, health, defense, magicDefense, raceName, class: monsterTypeId, scaleName, mvp },
+      stats: { int, vit, agi, luk, str, dex, level, elementName, health, defense, magicDefense, res, mres, raceName, class: monsterTypeId, scaleName, mvp },
     } = monster;
     const [pureElement] = elementName.split(' ');
 
@@ -452,6 +479,8 @@ export class Calculator {
       vit,
       int,
       luk,
+      res,
+      mres,
     };
 
     return this;

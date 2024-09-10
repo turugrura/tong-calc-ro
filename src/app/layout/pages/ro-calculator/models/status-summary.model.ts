@@ -1,4 +1,30 @@
-export interface StatusSummary {
+export interface TraitStatus {
+  basePow: number;
+  equipPow: number;
+  totalPow: number;
+
+  baseSta: number;
+  equipSta: number;
+  totalSta: number;
+
+  baseWis: number;
+  equipWis: number;
+  totalWis: number;
+
+  baseSpl: number;
+  equipSpl: number;
+  totalSpl: number;
+
+  baseCon: number;
+  equipCon: number;
+  totalCon: number;
+
+  baseCrt: number;
+  equipCrt: number;
+  totalCrt: number;
+}
+
+export interface StatusSummary extends TraitStatus {
   baseStr: number;
   equipStr: number;
   totalStr: number;

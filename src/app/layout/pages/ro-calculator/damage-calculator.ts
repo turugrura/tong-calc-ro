@@ -31,7 +31,7 @@ export class DamageCalculator {
   private readonly EDP_WEAPON_MULTIPLIER = 0.25;
   private readonly MAGNUM_BREAK_WEAPON_MULTIPLIER = 0.2;
   private readonly EDP_EQUIP_MULTIPLIER = 4;
-  private readonly BASE_CRI_MULTIPLIER = 1.4;
+  private readonly _BASE_CRI_MULTIPLIER = 1.4;
 
   private skillName = '';
   private equipStatus: Record<ItemTypeEnum, EquipmentSummaryModel>;
@@ -135,6 +135,7 @@ export class DamageCalculator {
 
   get status(): StatusSummary {
     const { str, jobStr, int, jobInt, luk, jobLuk, vit, jobVit, dex, jobDex, agi, jobAgi } = this.model;
+    const { pow, sta, wis, spl, con, crt, jobPow, jobSta, jobWis, jobSpl, jobCon, jobCrt } = this.model;
 
     return {
       baseStr: str,
@@ -160,7 +161,45 @@ export class DamageCalculator {
       baseAgi: agi,
       equipAgi: this.totalBonus.agi ?? 0,
       totalAgi: agi + (jobAgi ?? 0) + (this.totalBonus.agi ?? 0),
+
+      basePow: pow,
+      equipPow: this.totalBonus.pow,
+      totalPow: pow + (jobPow ?? 0) + (this.totalBonus.pow ?? 0),
+
+      baseSta: sta,
+      equipSta: this.totalBonus.sta,
+      totalSta: sta + (jobSta ?? 0) + (this.totalBonus.sta ?? 0),
+
+      baseWis: wis,
+      equipWis: this.totalBonus.wis,
+      totalWis: wis + (jobWis ?? 0) + (this.totalBonus.wis ?? 0),
+
+      baseSpl: spl,
+      equipSpl: this.totalBonus.spl,
+      totalSpl: spl + (jobSpl ?? 0) + (this.totalBonus.spl ?? 0),
+
+      baseCon: con,
+      equipCon: this.totalBonus.con,
+      totalCon: con + (jobCon ?? 0) + (this.totalBonus.con ?? 0),
+
+      baseCrt: crt,
+      equipCrt: this.totalBonus.crt,
+      totalCrt: crt + (jobCrt ?? 0) + (this.totalBonus.crt ?? 0),
     };
+  }
+
+  get traitBonus(): { pAtk: number; sMatk: number; cRate: number } {
+    const { totalPow, totalSpl, totalCon, totalCrt } = this.status;
+
+    return {
+      pAtk: floor(totalPow / 3 + totalCon / 5),
+      sMatk: floor(totalSpl / 3 + totalCon / 5),
+      cRate: floor(totalCrt / 3),
+    };
+  }
+
+  get criMultiplier() {
+    return this._BASE_CRI_MULTIPLIER + this.traitBonus.cRate * 0.01;
   }
 
   get infoForClass(): InfoForClass {
@@ -311,11 +350,11 @@ export class DamageCalculator {
   }
 
   private getMiscData(): MiscModel {
-    const { totalLuk, totalDex, totalAgi } = this.status;
+    const { totalLuk, totalDex, totalAgi, totalCon } = this.status;
     const { hit, perfectHit, flee, perfectDodge } = this.totalBonus;
     const baseLvl = this.model.level;
     const formula = () => {
-      return 175 + baseLvl + totalDex + floor(totalLuk / 3) + hit;
+      return 175 + baseLvl + totalDex + floor(totalLuk / 3) + hit + totalCon * 2;
     };
 
     const totalHit = formula();
@@ -326,7 +365,7 @@ export class DamageCalculator {
     let accuracy = Math.max(5, floor(100 + totalHit - hitRequireFor100));
     accuracy = Math.min(100, Math.max(accuracy, totalPerfectHit));
 
-    const totalFlee = 100 + 0 + floor(baseLvl + totalAgi + totalLuk / 5 + flee) * 1;
+    const totalFlee = 100 + 0 + floor(baseLvl + totalAgi + totalLuk / 5 + flee) * 1 + totalCon * 2;
     const totalPerfectDodge = floor(1 + totalLuk * 0.1 + perfectDodge);
 
     return {
@@ -384,7 +423,7 @@ export class DamageCalculator {
   }
 
   private getPhisicalDefData() {
-    const { def, softDef } = this.monsterData;
+    const { def, softDef, res } = this.monsterData;
     const p_pene = this.getTotalPhysicalPene();
 
     const reducedHardDef = def * ((100 - p_pene) / 100);
@@ -394,16 +433,22 @@ export class DamageCalculator {
     const finalDmgReduction = isActiveInfilltration ? 1 : dmgReductionByHardDef;
     const finalSoftDef = isActiveInfilltration ? 0 : softDef;
 
-    return { reducedHardDef, dmgReductionByHardDef, finalDmgReduction, finalSoftDef };
+    const restRes = res * ((100 - this.totalBonus.pene_res) / 100);
+    const resReduction = (2000 + restRes) / (2000 + restRes * 5);
+
+    return { reducedHardDef, dmgReductionByHardDef, finalDmgReduction, finalSoftDef, resReduction };
   }
 
   private getMagicalDefData() {
-    const { mdef } = this.monsterData;
+    const { mdef, mres } = this.monsterData;
     const m_pene = this.getTotalMagicalPene();
     const mDefBypassed = round(mdef - mdef * this.toPercent(m_pene), 4);
     const dmgReductionByMHardDef = (1000 + mDefBypassed) / (1000 + mDefBypassed * 10);
 
-    return { dmgReductionByMHardDef };
+    const restMres = mres * ((100 - this.totalBonus.pene_mres) / 100);
+    const mresReduction = (2000 + restMres) / (2000 + restMres * 5);
+
+    return { dmgReductionByMHardDef, mresReduction };
   }
 
   private getSkillBonus(skillName: string) {
@@ -440,11 +485,11 @@ export class DamageCalculator {
   }
 
   private getStatusAtk() {
-    const { totalStr, totalDex, totalLuk } = this.status;
+    const { totalStr, totalDex, totalLuk, totalPow } = this.status;
     const baseLvl = this.model.level;
     const [primaryStatus, secondStatus] = this.isRangeAtk() ? [totalDex, totalStr] : [totalStr, totalDex];
 
-    const rawStatusAtk = floor(baseLvl / 4 + secondStatus / 5 + primaryStatus + totalLuk / 3);
+    const rawStatusAtk = floor(baseLvl / 4 + secondStatus / 5 + primaryStatus + totalLuk / 3) + totalPow * 5;
 
     return rawStatusAtk * 2;
   }
@@ -646,15 +691,11 @@ export class DamageCalculator {
       bMaxOver = bMaxOver * this.EDP_EQUIP_MULTIPLIER;
     }
 
-    let totalMin = statusAtk + masteryAtk + floor((aMin + bMin) * propertyMultiplier); // tested
-    const totalMax = statusAtk + masteryAtk + floor((aMax + bMax) * propertyMultiplier);
-    let totalMaxOver = statusAtk + masteryAtk + floor((aMaxOver + bMaxOver) * propertyMultiplier);
-    if (totalMin > totalMax) {
-      const minBk = Math.min(totalMin, totalMax, totalMaxOver, 0);
-      const maxBk = Math.max(totalMin, totalMax, totalMaxOver);
-      totalMin = minBk;
-      totalMaxOver = maxBk;
-    }
+    const pAtkMultiplier = 1 + this.traitBonus.pAtk / 100;
+
+    const totalMin = (statusAtk + floor((aMin + bMin) * propertyMultiplier)) * pAtkMultiplier + masteryAtk;
+    const totalMax = (statusAtk + floor((aMax + bMax) * propertyMultiplier)) * pAtkMultiplier + masteryAtk;
+    const totalMaxOver = (statusAtk + floor((aMaxOver + bMaxOver) * propertyMultiplier)) * pAtkMultiplier + masteryAtk;
 
     return { totalMin, totalMax, totalMaxOver, propertyMultiplier };
   }
@@ -692,7 +733,7 @@ export class DamageCalculator {
     this.skillName = skillName;
     const { criDmgPercentage = 1 } = skillData;
     const canCri = this.isForceSkillCri || _canCri;
-    const { reducedHardDef, finalDmgReduction, finalSoftDef } = this.getPhisicalDefData();
+    const { reducedHardDef, finalDmgReduction, finalSoftDef, resReduction } = this.getPhisicalDefData();
     const hardDef = isIgnoreDef || isHDefToSDef ? 1 : finalDmgReduction;
     const softDef = finalSoftDef + (isHDefToSDef ? reducedHardDef : 0);
 
@@ -717,9 +758,10 @@ export class DamageCalculator {
       total = floor(total * rangedMultiplier); // tested
       total = floor(total * baseSkillMultiplier); // tested
       total = floor(total * equipSkillMultiplier);
+      total = floor(total * resReduction);
       total = floor(total * hardDef);
       total = total - softDef; // tested
-      if (_calcCri) total = floor(total * this.BASE_CRI_MULTIPLIER);
+      if (_calcCri) total = floor(total * this.criMultiplier);
 
       for (const final of finalDmgMultipliers) {
         total = floor(total * final);
@@ -780,11 +822,11 @@ export class DamageCalculator {
   }
 
   private getStatusMatk() {
-    const { totalDex, totalLuk, totalInt } = this.status;
+    const { totalDex, totalLuk, totalInt, totalSpl } = this.status;
     const baseLvl = this.model.level;
     const priStat = floor(totalInt / 2) + floor(totalDex / 5) + floor(totalLuk / 3);
 
-    return floor(floor(baseLvl / 4) + totalInt + priStat);
+    return floor(floor(baseLvl / 4) + totalInt + priStat) + totalSpl * 5;
   }
 
   private getExtraMatk() {
@@ -815,7 +857,7 @@ export class DamageCalculator {
     const { softMDef } = this.monsterData;
 
     const skillPropertyAtk = element || weaponPropertyAtk;
-    const { dmgReductionByMHardDef } = this.getMagicalDefData();
+    const { dmgReductionByMHardDef, mresReduction } = this.getMagicalDefData();
     const hardDef = isIgnoreDef ? 1 : dmgReductionByMHardDef;
 
     const baseSkillMultiplier = this.toPercent(baseSkillDamage);
@@ -848,6 +890,7 @@ export class DamageCalculator {
       total = floor(total * baseSkillMultiplier); //tested
 
       total = floor(total * myElementMultiplier); //tested
+      total = floor(total * mresReduction);
       total = floor(total * round(hardDef, 4)); //tested
       total = total - softMDef; //tested
       total = floor(total * equipSkillMultiplier);
@@ -926,13 +969,14 @@ export class DamageCalculator {
     const extraDmg = this._class.getAdditionalDmg(this.infoForClass);
     const extraBasicDmg = this._class.getAdditionalBasicDmg(this.infoForClass);
 
-    const { finalDmgReduction, finalSoftDef } = this.getPhisicalDefData();
+    const { finalDmgReduction, finalSoftDef, resReduction } = this.getPhisicalDefData();
     const hardDef = finalDmgReduction;
     const softDef = finalSoftDef;
 
     const formula = (totalAtk: number, isCalcDef = true) => {
       let total = floor(totalAtk * rangedMultiplier);
       total = floor(total * dmgMultiplier);
+      total = floor(total * resReduction);
       if (isCalcDef) total = floor(total * hardDef);
       if (isCalcDef) total = total - softDef;
       total = floor(total * darkClawMultiplier);
@@ -960,10 +1004,10 @@ export class DamageCalculator {
     const raidMultiplier = this.getRaidMultiplier();
     const rangedMultiplier = this.toPercent(rangedDmg + 100);
     const dmgMultiplier = this.toPercent(dmg + this.getFlatDmg('basicAtk') + 100);
-    const extraDmg = this._class.getAdditionalDmg(this.infoForClass) * this.BASE_CRI_MULTIPLIER;
+    const extraDmg = this._class.getAdditionalDmg(this.infoForClass) * this.criMultiplier;
     const extraBasic = this._class.getAdditionalBasicDmg(this.infoForClass);
 
-    const { finalDmgReduction, finalSoftDef } = this.getPhisicalDefData();
+    const { finalDmgReduction, finalSoftDef, resReduction } = this.getPhisicalDefData();
     const hardDef = finalDmgReduction;
     const softDef = finalSoftDef;
 
@@ -971,10 +1015,11 @@ export class DamageCalculator {
       let total = floor(totalAtk * bonusCriDmgMultiplier);
       total = floor(total * rangedMultiplier);
       if (isCalcDef) total = total * dmgMultiplier;
+      total = floor(total * resReduction);
       total = floor(total * hardDef);
       total = floor(total * advKatarMultiplier);
       if (isCalcDef) total = total - softDef;
-      total = floor(total * this.BASE_CRI_MULTIPLIER);
+      total = floor(total * this.criMultiplier);
       total = floor(total * darkClawMultiplier);
       total = floor(total * raidMultiplier);
 
@@ -1017,6 +1062,7 @@ export class DamageCalculator {
       min: basicMinDamage,
     });
 
+    const { pAtk, sMatk, cRate } = this.traitBonus;
     const basicDmg: BasicDamageSummaryModel = {
       basicMinDamage,
       basicMaxDamage,
@@ -1030,6 +1076,9 @@ export class DamageCalculator {
       totalPene: this.isActiveInfilltration ? 100 : this.getTotalPhysicalPene(),
       accuracy: misc.accuracy,
       basicDps,
+      pAtk,
+      sMatk,
+      cRate,
     };
 
     const [, _skillName, skillLevelStr] = skillValue?.match(/(.+)==(\d+)/) ?? [];

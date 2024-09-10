@@ -132,8 +132,9 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   refineList = createNumberDropdownList({ from: 0, to: 18 });
   shadowRefineList = createNumberDropdownList({ from: 0, to: 10 });
   mainStatusList = createNumberDropdownList({ from: 1, to: 130 });
-  levelList = createNumberDropdownList({ from: 99, to: 200 });
-  jobList = createNumberDropdownList({ from: 1, to: 70, excludingNumbers: [66, 67, 68, 69] });
+  traitStatusList = createNumberDropdownList({ from: 0, to: 110 });
+  levelList = [];
+  jobList = [];
   propertyAtkList = ElementConverterList;
 
   optionList: any[] = createExtraOptionList();
@@ -225,6 +226,11 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   totalPoints = 0;
   availablePoints = 0;
   appropriateLevel = 0;
+
+  totalTraitPoints = 0;
+  availableTraitPoints = 0;
+  appropriateLevelForTrait = 0;
+
   groupMonsterList: MonsterSelectItemGroup[] = [];
   monsterList: DropdownModel[] = [];
   selectedMonsterName = '';
@@ -1418,14 +1424,17 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
     this.model.selectedAtkSkill = this.model.selectedAtkSkill || this.atkSkills[0]?.value;
     const selectedAtkSkill = this.model.selectedAtkSkill;
+    const lvl = this.model.level;
 
     this.setClassInstant();
     this.setSkillModelArray();
     this.setClassSkill();
+    this.setClassMinMaxLvl();
 
     return waitRxjs().pipe(
       take(1),
       mergeMap(() => {
+        this.setClassLvl(lvl);
         this.setJobBonus();
         return waitRxjs();
       }),
@@ -1515,6 +1524,34 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     this.atkSkillCascades = this.selectedCharacter.atkSkills;
   }
 
+  private setClassMinMaxLvl() {
+    const {
+      minMaxLevel: [min, max],
+      maxJob,
+    } = this.selectedCharacter.minMaxLevelCap;
+
+    this.levelList = createNumberDropdownList({ from: min, to: max });
+    this.jobList = createNumberDropdownList({ from: 1, to: maxJob, excludingNumbers: [66, 67, 68, 69] });
+  }
+
+  private setClassLvl(currentLvl: number) {
+    const {
+      minMaxLevel: [min, max],
+      maxJob,
+    } = this.selectedCharacter.minMaxLevelCap;
+
+    this.model.level = currentLvl;
+    const { level, jobLevel } = this.model;
+
+    if (level < min || level > max) {
+      this.model.level = min;
+    }
+
+    if (!jobLevel || jobLevel > maxJob) {
+      this.model.jobLevel = maxJob;
+    }
+  }
+
   private setDefaultSkill(selectedSkill?: string) {
     const defaultAtkSkill = this.atkSkills[0].value;
     const selectedAtkSkill = this.model.selectedAtkSkill || selectedSkill;
@@ -1597,13 +1634,20 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   }
 
   private setJobBonus() {
-    const { str, agi, vit, int, dex, luk } = this.selectedCharacter.getJobBonusStatus(this.model.jobLevel);
+    const { str, agi, vit, int, dex, luk, pow, sta, wis, spl, con, crt } = this.selectedCharacter.getJobBonusStatus(this.model.jobLevel);
     this.model.jobStr = str;
     this.model.jobAgi = agi;
     this.model.jobVit = vit;
     this.model.jobInt = int;
     this.model.jobDex = dex;
     this.model.jobLuk = luk;
+
+    this.model.jobPow = pow;
+    this.model.jobSta = sta;
+    this.model.jobWis = wis;
+    this.model.jobSpl = spl;
+    this.model.jobCon = con;
+    this.model.jobCrt = crt;
   }
 
   private setMonsterDropdownList() {
@@ -2164,13 +2208,22 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   private updateAvailablePoints() {
     const { str, agi, vit, int, dex, luk } = this.model;
     const mainStatuses = [str, agi, vit, int, dex, luk];
-    const { availablePoint, appropriateLevel } = this.stateCalculator
+
+    const { pow, sta, wis, spl, con, crt } = this.model;
+    const traitStatus = [pow, sta, wis, spl, con, crt];
+
+    const { availablePoint, appropriateLevel, availableTraitPoint, appropriateLevelForTrait } = this.stateCalculator
       .setLevel(this.model.level)
       .setClass(this.selectedCharacter)
       .setMainStatusLevels(mainStatuses)
+      .setTraitStatusLevels(traitStatus)
       .calculate().summary;
+
     this.availablePoints = availablePoint;
     this.appropriateLevel = appropriateLevel;
+
+    this.availableTraitPoints = availableTraitPoint;
+    this.appropriateLevelForTrait = appropriateLevelForTrait;
   }
 
   private clearCard(itemType: string) {
@@ -2315,6 +2368,8 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     if (isChangeByInput) {
       this.isInProcessingPreset = true;
 
+      const baseLvl = this.model.level;
+
       waitRxjs()
         .pipe(
           mergeMap(() => {
@@ -2325,6 +2380,11 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
             this.calculator = new Calculator();
             this.setClassInstant();
             this.setClassSkill();
+            this.setClassMinMaxLvl();
+            return waitRxjs();
+          }),
+          mergeMap(() => {
+            this.setClassLvl(baseLvl);
             this.calculator.setMasterItems(this.items).setHpSpTable(this.hpSpTable);
 
             this.calculator2.setClass(this.selectedCharacter);

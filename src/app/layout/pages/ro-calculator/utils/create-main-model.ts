@@ -4,6 +4,7 @@ export const createMainModel = (): MainModel => ({
   class: 1,
   level: 99,
   jobLevel: 1,
+
   str: 1,
   jobStr: undefined,
   agi: 1,
@@ -16,6 +17,20 @@ export const createMainModel = (): MainModel => ({
   jobDex: undefined,
   luk: 1,
   jobLuk: undefined,
+
+  pow: 0,
+  jobPow: 0,
+  sta: 0,
+  jobSta: 0,
+  wis: 0,
+  jobWis: 0,
+  spl: 0,
+  jobSpl: 0,
+  con: 0,
+  jobCon: 0,
+  crt: 0,
+  jobCrt: 0,
+
   selectedAtkSkill: undefined,
   rawOptionTxts: [],
   propertyAtk: undefined,

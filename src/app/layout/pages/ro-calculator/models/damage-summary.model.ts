@@ -13,6 +13,9 @@ export interface BasicDamageSummaryModel {
   totalPene: number;
   accuracy: number;
   basicDps: number;
+  pAtk: number;
+  sMatk: number;
+  cRate: number;
 }
 
 export enum SkillType {
