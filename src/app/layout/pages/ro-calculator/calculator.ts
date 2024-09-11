@@ -129,6 +129,7 @@ export class Calculator {
   private equipItemName = new Map<ItemTypeEnum, string>();
   private equipItemNameSet = new Set<string>();
   private mapRefine = new Map<ItemTypeEnum, number>();
+  private mapGrade = new Map<ItemTypeEnum, string>();
   private mapItemNameRefine = new Map<string, number>();
   private usedSkillNames = new Set<string>();
   private learnedSkillMap = new Map<string, number>();
@@ -492,7 +493,9 @@ export class Calculator {
     return this;
   }
 
-  setWeapon(itemId: number, refine: number) {
+  setWeapon(params: { itemId: number; refine: number; grade?: string }) {
+    const { itemId, refine, grade } = params;
+
     const itemData = this.getItem(itemId);
     this.equipItem.set(ItemTypeEnum.weapon, itemData);
     if (itemData) {
@@ -502,12 +505,14 @@ export class Calculator {
     }
 
     this.mapRefine.set(ItemTypeEnum.weapon, refine);
+    this.mapGrade.set(ItemTypeEnum.weapon, grade);
     this.weaponData.set(itemData, refine);
 
     return this;
   }
 
-  setItem(itemType: ItemTypeEnum, itemId: number, refine?: number) {
+  setItem(params: { itemType: ItemTypeEnum; itemId: number; refine?: number; grade?: string }) {
+    const { itemId, itemType, refine, grade } = params;
     const itemData = this.getItem(itemId);
     this.equipItem.set(itemType, itemData);
     if (itemData) {
@@ -518,6 +523,10 @@ export class Calculator {
 
     if (refine != null) {
       this.mapRefine.set(itemType, refine);
+    }
+
+    if (grade != null) {
+      this.mapGrade.set(itemType, grade);
     }
 
     return this;
@@ -592,6 +601,7 @@ export class Calculator {
     this.leftWeaponData.set({} as any, 0);
     this.equipItem.clear();
     this.equipItemName.clear();
+    this.mapGrade.clear();
 
     this.mapRefine.clear();
     this.mapItemNameRefine.clear();
@@ -603,12 +613,13 @@ export class Calculator {
       if (!isNumber(itemId)) continue;
 
       const refine = model[`${mainItemType}Refine`];
+      const grade = model[`${mainItemType}Grade`];
       // console.log({itemId, refine, itemRelations})
       if (mainItemType === ItemTypeEnum.weapon) {
-        this.setWeapon(itemId, refine);
+        this.setWeapon({ itemId, refine, grade });
       } else {
         // console.log({ mainItemType, refine });
-        this.setItem(mainItemType, itemId, refine);
+        this.setItem({ itemType: mainItemType, itemId, refine, grade });
       }
 
       if (mainItemType === ItemTypeEnum.leftWeapon && itemId) {
@@ -619,7 +630,7 @@ export class Calculator {
         const itemId2 = model[itemRelation];
         if (!isNumber(itemId2)) continue;
 
-        this.setItem(itemRelation, itemId2);
+        this.setItem({ itemType: itemRelation, itemId: itemId2 });
       }
     }
 
@@ -880,14 +891,28 @@ export class Calculator {
     return 0;
   }
 
-  private validateCondition(
-    itemType: ItemTypeEnum,
-    itemRefine: number,
-    script: string,
-  ): {
+  private isValidGrade(itemGrade: string, targetGrade: string): boolean {
+    if (!itemGrade || !targetGrade) return false;
+
+    const x = {
+      a: 1,
+      A: 1,
+      b: 2,
+      B: 2,
+      c: 3,
+      C: 3,
+      d: 4,
+      D: 4,
+    };
+
+    return x[itemGrade] <= x[targetGrade];
+  }
+
+  private validateCondition(params: { itemType: ItemTypeEnum; itemRefine: number; script: string }): {
     isValid: boolean;
     restCondition: string;
   } {
+    const { itemRefine, itemType, script } = params;
     let restCondition = script;
     const mainStatusRegex = /^(str|int|dex|agi|vit|luk|level):(\d+)&&(\d+===.+)/;
     const [, status, statusCondition, raw] = restCondition.match(mainStatusRegex) ?? [];
@@ -916,6 +941,18 @@ export class Calculator {
       if (!isValid) return { isValid, restCondition };
 
       restCondition = restCondition.replace(toRemoveB, '');
+      if (restCondition.startsWith('===')) return { isValid, restCondition: restCondition.replace('===', '') };
+    }
+
+    // GRADE[armor==A]===5
+    const [toRemoveGrade, conditionGrade] = restCondition.match(/GRADE\[(\D+)]/) ?? [];
+    if (conditionGrade) {
+      const [itemType, targetGrade] = conditionGrade.split('==') ?? [];
+      const itemGrade = this.mapGrade.get(itemType as ItemTypeEnum);
+      const isValid = this.isValidGrade(itemGrade, targetGrade);
+      if (!isValid) return { isValid, restCondition };
+
+      restCondition = restCondition.replace(toRemoveGrade, '');
       if (restCondition.startsWith('===')) return { isValid, restCondition: restCondition.replace('===', '') };
     }
 
@@ -1037,7 +1074,7 @@ export class Calculator {
         if (totalRefine >= Number(refineCond)) {
           restCondition = restCondition.replace(unused, '');
           if (!restCondition.startsWith('===')) {
-            return this.validateCondition(itemType, itemRefine, restCondition);
+            return this.validateCondition({ itemType, itemRefine, script: restCondition });
           }
         } else {
           return { isValid: false, restCondition };
@@ -1133,7 +1170,8 @@ export class Calculator {
     return false;
   }
 
-  private calcItemStatus(itemType: ItemTypeEnum, itemRefine: number, item: ItemModel) {
+  private calcItemStatus(params: { itemType: ItemTypeEnum; itemRefine: number; item: ItemModel }) {
+    const { item, itemRefine, itemType } = params;
     const total: Record<string, number> = {};
     const chance = {};
     const addChance = (attr: string, val: number) => {
@@ -1155,7 +1193,7 @@ export class Calculator {
           return sum;
         }
 
-        const { isValid, restCondition } = this.validateCondition(itemType, itemRefine, lineScript);
+        const { isValid, restCondition } = this.validateCondition({ itemType, itemRefine, script: lineScript });
         // console.log({ lineScript, restCondition, isValid });
         if (!isValid) return sum;
 
@@ -1298,7 +1336,7 @@ export class Calculator {
         this.equipStatus[itemType].weight = itemData.weight;
       }
 
-      const calculatedItem = this.calcItemStatus(itemType, refine, itemData);
+      const calculatedItem = this.calcItemStatus({ itemType, itemRefine: refine, item: itemData });
       for (const [attr, value] of Object.entries(calculatedItem)) {
         if (attr === 'p_final') {
           this.finalPhyMultipliers.push(value);

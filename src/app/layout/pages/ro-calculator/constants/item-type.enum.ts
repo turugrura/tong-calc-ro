@@ -45,6 +45,7 @@ export enum ItemTypeEnum {
   headLowerEnchant3 = 'headLowerEnchant3',
   armor = 'armor',
   armorRefine = 'armorRefine',
+  armorGrade = 'armorGrade',
   armorCard = 'armorCard',
   armorEnchant1 = 'armorEnchant1',
   armorEnchant2 = 'armorEnchant2',
@@ -149,59 +150,15 @@ export const MainItemWithRelations: Partial<Record<ItemTypeEnum, ItemTypeEnum[]>
     ItemTypeEnum.leftWeaponEnchant2,
     ItemTypeEnum.leftWeaponEnchant3,
   ],
-  [ItemTypeEnum.shield]: [
-    ItemTypeEnum.shieldCard,
-    ItemTypeEnum.shieldEnchant1,
-    ItemTypeEnum.shieldEnchant2,
-    ItemTypeEnum.shieldEnchant3,
-  ],
-  [ItemTypeEnum.headUpper]: [
-    ItemTypeEnum.headUpperCard,
-    ItemTypeEnum.headUpperEnchant1,
-    ItemTypeEnum.headUpperEnchant2,
-    ItemTypeEnum.headUpperEnchant3,
-  ],
-  [ItemTypeEnum.headMiddle]: [
-    ItemTypeEnum.headMiddleCard,
-    ItemTypeEnum.headMiddleEnchant1,
-    ItemTypeEnum.headMiddleEnchant2,
-    ItemTypeEnum.headMiddleEnchant3,
-  ],
-  [ItemTypeEnum.headLower]: [
-    ItemTypeEnum.headLowerEnchant1,
-    ItemTypeEnum.headLowerEnchant2,
-    ItemTypeEnum.headLowerEnchant3,
-  ],
-  [ItemTypeEnum.armor]: [
-    ItemTypeEnum.armorCard,
-    ItemTypeEnum.armorEnchant1,
-    ItemTypeEnum.armorEnchant2,
-    ItemTypeEnum.armorEnchant3,
-  ],
-  [ItemTypeEnum.garment]: [
-    ItemTypeEnum.garmentCard,
-    ItemTypeEnum.garmentEnchant1,
-    ItemTypeEnum.garmentEnchant2,
-    ItemTypeEnum.garmentEnchant3,
-  ],
-  [ItemTypeEnum.boot]: [
-    ItemTypeEnum.bootCard,
-    ItemTypeEnum.bootEnchant1,
-    ItemTypeEnum.bootEnchant2,
-    ItemTypeEnum.bootEnchant3,
-  ],
-  [ItemTypeEnum.accRight]: [
-    ItemTypeEnum.accRightCard,
-    ItemTypeEnum.accRightEnchant1,
-    ItemTypeEnum.accRightEnchant2,
-    ItemTypeEnum.accRightEnchant3,
-  ],
-  [ItemTypeEnum.accLeft]: [
-    ItemTypeEnum.accLeftCard,
-    ItemTypeEnum.accLeftEnchant1,
-    ItemTypeEnum.accLeftEnchant2,
-    ItemTypeEnum.accLeftEnchant3,
-  ],
+  [ItemTypeEnum.shield]: [ItemTypeEnum.shieldCard, ItemTypeEnum.shieldEnchant1, ItemTypeEnum.shieldEnchant2, ItemTypeEnum.shieldEnchant3],
+  [ItemTypeEnum.headUpper]: [ItemTypeEnum.headUpperCard, ItemTypeEnum.headUpperEnchant1, ItemTypeEnum.headUpperEnchant2, ItemTypeEnum.headUpperEnchant3],
+  [ItemTypeEnum.headMiddle]: [ItemTypeEnum.headMiddleCard, ItemTypeEnum.headMiddleEnchant1, ItemTypeEnum.headMiddleEnchant2, ItemTypeEnum.headMiddleEnchant3],
+  [ItemTypeEnum.headLower]: [ItemTypeEnum.headLowerEnchant1, ItemTypeEnum.headLowerEnchant2, ItemTypeEnum.headLowerEnchant3],
+  [ItemTypeEnum.armor]: [ItemTypeEnum.armorCard, ItemTypeEnum.armorEnchant1, ItemTypeEnum.armorEnchant2, ItemTypeEnum.armorEnchant3],
+  [ItemTypeEnum.garment]: [ItemTypeEnum.garmentCard, ItemTypeEnum.garmentEnchant1, ItemTypeEnum.garmentEnchant2, ItemTypeEnum.garmentEnchant3],
+  [ItemTypeEnum.boot]: [ItemTypeEnum.bootCard, ItemTypeEnum.bootEnchant1, ItemTypeEnum.bootEnchant2, ItemTypeEnum.bootEnchant3],
+  [ItemTypeEnum.accRight]: [ItemTypeEnum.accRightCard, ItemTypeEnum.accRightEnchant1, ItemTypeEnum.accRightEnchant2, ItemTypeEnum.accRightEnchant3],
+  [ItemTypeEnum.accLeft]: [ItemTypeEnum.accLeftCard, ItemTypeEnum.accLeftEnchant1, ItemTypeEnum.accLeftEnchant2, ItemTypeEnum.accLeftEnchant3],
 
   [ItemTypeEnum.pet]: [],
 
@@ -221,4 +178,4 @@ export const MainItemWithRelations: Partial<Record<ItemTypeEnum, ItemTypeEnum[]>
   [ItemTypeEnum.shadowPendant]: [],
 };
 
-export type EquipmentModel = Record<ItemTypeEnum, number>;
+export type EquipmentModel = Record<ItemTypeEnum, number> & { armorGrade: any };

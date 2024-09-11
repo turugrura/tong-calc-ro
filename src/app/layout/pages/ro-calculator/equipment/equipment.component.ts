@@ -4,6 +4,7 @@ import { ItemModel } from '../models/item.model';
 import { getEnchants } from '../constants/enchant-table';
 import { ItemTypeEnum, OptionableItemTypeSet } from '../constants/item-type.enum';
 import { ExtraOptionTable } from '../constants/extra-option-table';
+import { toGradeList } from '../utils';
 
 @Component({
   selector: 'app-equipment',
@@ -25,12 +26,16 @@ export class EquipmentComponent implements AfterViewInit {
   @Output() selectItemChange = new EventEmitter<any>();
   @Output() clearItemEvent = new EventEmitter<string>();
   @Output() optionChange = new EventEmitter<string>();
+  @Output() gradeChange = new EventEmitter<string>();
 
   @Input() itemId = undefined;
   @Output() itemIdChange = new EventEmitter<number>();
 
   @Input() itemRefine = undefined;
   @Output() itemRefineChange = new EventEmitter<number>();
+
+  @Input() itemGrade: string = undefined;
+  @Output() itemGradeChange = new EventEmitter<string>();
 
   @Input() card1Id = undefined;
   @Output() card1IdChange = new EventEmitter<number>();
@@ -67,6 +72,7 @@ export class EquipmentComponent implements AfterViewInit {
   enchant3List: DropdownModel[] = [];
   enchant4List: DropdownModel[] = [];
   totalExtraOption = 0;
+  gradeList: DropdownModel[] = [];
 
   private itemTypeMap = {};
 
@@ -77,6 +83,7 @@ export class EquipmentComponent implements AfterViewInit {
       this.itemTypeMap = {
         itemId: this.itemType,
         itemRefine: `${this.itemType}Refine`,
+        itemGrade: `${this.itemType}Grade`,
         card1Id: this.isWeapon ? `${this.itemType}Card1` : `${this.itemType}Card`,
         card2Id: `${this.itemType}Card2`,
         card3Id: `${this.itemType}Card3`,
@@ -94,7 +101,7 @@ export class EquipmentComponent implements AfterViewInit {
   }
 
   private setEnchantList(mainItemId: number) {
-    const { aegisName, name } = this.items[mainItemId] ?? ({} as ItemModel);
+    const { aegisName, name, grades } = this.items[mainItemId] ?? ({} as ItemModel);
     const enchants = getEnchants(aegisName) ?? getEnchants(name);
 
     const [_, e2, e3, e4] = Array.isArray(enchants) ? enchants : [];
@@ -110,25 +117,24 @@ export class EquipmentComponent implements AfterViewInit {
       }
     };
 
-    this.enchant2List = (e2 ?? [])
-      .map((a: any) => this.mapEnchant.get(a))
-      .map((a: any) => ({ label: a.name, value: a.id }));
-    this.enchant3List = (e3 ?? [])
-      .map((a: any) => this.mapEnchant.get(a))
-      .map((a: any) => ({ label: a.name, value: a.id }));
-    this.enchant4List = (e4 ?? [])
-      .map((a: any) => this.mapEnchant.get(a))
-      .map((a: any) => ({ label: a.name, value: a.id }));
+    this.enchant2List = (e2 ?? []).map((a: any) => this.mapEnchant.get(a)).map((a: any) => ({ label: a.name, value: a.id }));
+    this.enchant3List = (e3 ?? []).map((a: any) => this.mapEnchant.get(a)).map((a: any) => ({ label: a.name, value: a.id }));
+    this.enchant4List = (e4 ?? []).map((a: any) => this.mapEnchant.get(a)).map((a: any) => ({ label: a.name, value: a.id }));
+
+    this.gradeList = toGradeList(grades || []);
 
     clearModel();
   }
 
   onSelectItem(itemType: string, itemId = 0, refine = 0, isEmit = true) {
     if (itemType === 'itemId') {
-      this.totalCardSlots = this.items[itemId]?.slots || 0;
+      const item = this.items[itemId];
+      this.totalCardSlots = item?.slots || 0;
       this.setEnchantList(itemId);
       this.itemIdChange.emit(this.itemId);
       this.itemRefineChange.emit(this.itemRefine);
+      this.itemGrade = null;
+      this.itemGradeChange.emit(this.itemGrade);
 
       if (this.totalCardSlots < 4 && this.card4Id) {
         this.card4Id = undefined;
@@ -151,7 +157,7 @@ export class EquipmentComponent implements AfterViewInit {
         this.totalExtraOption = 3;
       }
       if (this.itemType !== ItemTypeEnum.weapon && OptionableItemTypeSet.has(this.itemType as any)) {
-        const itemAegisName = this.items[itemId]?.aegisName;
+        const itemAegisName = item?.aegisName;
         this.totalExtraOption = ExtraOptionTable[itemAegisName] || 0;
       }
     } else {
@@ -169,6 +175,11 @@ export class EquipmentComponent implements AfterViewInit {
 
   onClearItem(itemType: string) {
     this.clearItemEvent.emit(itemType);
+  }
+
+  onSelectGrade(grade: string) {
+    this.itemGradeChange.emit(grade);
+    this.gradeChange.emit(grade);
   }
 
   onOptionChange(optionType: string, optionValue: any) {

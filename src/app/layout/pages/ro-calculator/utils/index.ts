@@ -12,3 +12,4 @@ export * from './wait-rxjs';
 export * from './create-base-hp-sp-option-list';
 export * from './to-raw-option-txt-list';
 export * from './pretty-item-desc';
+export * from './to-grade-list';

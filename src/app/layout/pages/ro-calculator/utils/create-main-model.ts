@@ -70,6 +70,7 @@ export const createMainModel = (): MainModel => ({
   headLowerEnchant3: undefined,
   armor: undefined,
   armorRefine: undefined,
+  armorGrade: undefined,
   armorCard: undefined,
   armorEnchant1: undefined,
   armorEnchant2: undefined,

@@ -39,12 +39,17 @@ export const createRawTotalBonus = (): EquipmentSummaryModel => {
     vit: 0,
     agi: 0,
 
+    pAtk: 0,
+    sMatk: 0,
     pow: 0,
     sta: 0,
     wis: 0,
     spl: 0,
     con: 0,
     crt: 0,
+
+    res: 0,
+    mres: 0,
 
     melee: 0,
     range: 0,

@@ -17,6 +17,6 @@ export interface ItemModel {
   location: any;
   compositionPos: number;
   cardPrefix?: string;
-  enchants: [null, string[], string[], string[]];
+  grades?: string[];
   script: Record<string, any[]>;
 }

@@ -15,6 +15,20 @@
     Req.Hit100
     <span class="summary_monster_value px-1 font-semibold">{{ totalSummary?.monster?.hitRequireFor100 }}</span>
   </div>
+  <div class="col-12 flex justify-content-around">
+    <div>
+      Res
+      <span class="summary_monster_value px-1 font-semibold" style="color: var(--orange-300)">
+        {{ totalSummary?.monster?.res }}
+      </span>
+    </div>
+    <div>
+      M.Res
+      <span class="summary_monster_value px-1 font-semibold" style="color: var(--blue-300)">
+        {{ totalSummary?.monster?.mres }}
+      </span>
+    </div>
+  </div>
   <div class="col-12">
     <span class="summary_monster_value px-1 font-bold" style="color: var(--red-500)">{{ totalSummary?.monster?.typeUpper }}</span>
     <span *ngIf="totalSummary?.monster?.isMvp" class="font-bold px-1">MVP</span>

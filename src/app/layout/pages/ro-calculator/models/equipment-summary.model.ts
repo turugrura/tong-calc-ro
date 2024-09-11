@@ -38,12 +38,17 @@ export interface EquipmentSummaryModel {
   vit: number;
   agi: number;
 
+  pAtk: number;
+  sMatk: number;
   pow: number;
   sta: number;
   wis: number;
   spl: number;
   con: number;
   crt: number;
+
+  res: number;
+  mres: number;
 
   melee: number;
   range: number;

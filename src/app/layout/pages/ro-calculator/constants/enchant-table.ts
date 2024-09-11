@@ -805,6 +805,45 @@ const bp5Armor = [
 ];
 const bp5Mask = ['Essence_of_Sin_Fate_Lv1', 'Essence_of_Sin_Fate_Lv2', 'Essence_of_Sin_Fate_Lv3'];
 
+const nebular2 = [
+  'Star_Cluster_Of_Pow1',
+  'Star_Cluster_Of_Pow2',
+  'Star_Cluster_Of_Pow3',
+  'Star_Cluster_Of_Sta1',
+  'Star_Cluster_Of_Sta2',
+  'Star_Cluster_Of_Sta3',
+  'Star_Cluster_Of_Con1',
+  'Star_Cluster_Of_Con2',
+  'Star_Cluster_Of_Con3',
+  'Star_Cluster_Of_Crt1',
+  'Star_Cluster_Of_Crt2',
+  'Star_Cluster_Of_Crt3',
+  'Star_Cluster_Of_Spl1',
+  'Star_Cluster_Of_Spl2',
+  'Star_Cluster_Of_Spl3',
+  'Star_Cluster_Of_Wis1',
+  'Star_Cluster_Of_Wis2',
+  'Star_Cluster_Of_Wis3',
+];
+const nebular3 = [
+  'Nebula_Of_FS1',
+  'Nebula_Of_FS2',
+  'Nebula_Of_FS3',
+  'Nebula_Of_EA1',
+  'Nebula_Of_EA2',
+  'Nebula_Of_EA3',
+  'Nebula_Of_SH1',
+  'Nebula_Of_SH2',
+  'Nebula_Of_SH3',
+  'Nebula_Of_SP1',
+  'Nebula_Of_SP2',
+  'Nebula_Of_SP3',
+  'Nebula_Of_HP1',
+  'Nebula_Of_HP2',
+  'Nebula_Of_HP3',
+];
+const nebular4 = [...str(3, 5), ...int(3, 5), ...dex(2, 4), ...agi(3, 5), ...vit(3, 5)];
+
 const moraAtkType1 = [...atkPer13, ...fs13, ...str(1, 3)];
 const moraAtkType2 = [...atkPer23, ...fs24, ...str(2, 4)];
 const moraAtkType3 = [AtkPercent._3, ...fs36, ...str(3, 5)];
@@ -1136,6 +1175,8 @@ export const EnchantTable: EntTable[] = [
   { name: 'Ice_Flame_Dress', enchants: [null, bp5Armor, bp5Armor, bp5Armor] },
   { name: 'Red_Serpent_Dress', enchants: [null, bp5Armor, bp5Armor, bp5Armor] },
   { name: 'Mask_of_Sin_Fate', enchants: [null, null, null, bp5Mask] },
+
+  { name: 'Star_Armor_Of_Pow', enchants: [null, nebular2, nebular3, nebular4] },
 ];
 
 Object.freeze(EnchantTable);

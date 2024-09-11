@@ -1944,6 +1944,18 @@
               </ng-template>
             </p-dropdown>
           </div>
+          <div class="col-6" [hidden]="armorGradeList.length === 0 || !model.armor">
+            <p-dropdown
+              [options]="armorGradeList"
+              scrollHeight="350px"
+              [showClear]="true"
+              [(ngModel)]="model.armorGrade"
+              [disabled]="!model.armor"
+              (onChange)="onSelectGrade('armor', model.armor, $event.value)"
+              (onClear)="onSelectGrade('armor', model.armor, '')"
+              placeholder="grade"
+            ></p-dropdown>
+          </div>
           <div class="col-4" style="min-width: 70px">
             <p-dropdown
               [options]="refineList"
@@ -2138,6 +2150,7 @@
           [optionList]="optionList"
           [(itemId)]="model2.armor"
           [(itemRefine)]="model2.armorRefine"
+          [(itemGrade)]="model2.armorGrade"
           [(card1Id)]="model2.armorCard"
           [(enchant2Id)]="model2.armorEnchant1"
           [(enchant3Id)]="model2.armorEnchant2"
@@ -2147,6 +2160,7 @@
           [(option3Value)]="model2.rawOptionTxts[itemOptionNumber.Armor_3]"
           (selectItemChange)="onCompareItemChange()"
           (optionChange)="onCompareItemChange()"
+          (gradeChange)="onCompareItemChange()"
         ></app-equipment>
       </div>
     </div>

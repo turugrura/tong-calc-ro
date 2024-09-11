@@ -38,7 +38,7 @@ import { BasicDamageSummaryModel, SkillDamageSummaryModel } from './models/damag
 import { ChanceModel } from './models/chance-model';
 import { RaceType } from './constants/race-type.const';
 import { ElementType } from './constants/element-type.const';
-import { createBaseHPSPOptionList, isNumber, prettyItemDesc, toRawOptionTxtList, toUpsertPresetModel, verifySyncPreset, waitRxjs } from './utils';
+import { createBaseHPSPOptionList, isNumber, prettyItemDesc, toGradeList, toRawOptionTxtList, toUpsertPresetModel, verifySyncPreset, waitRxjs } from './utils';
 import { ExtraOptionTable } from './constants/extra-option-table';
 import { ItemOptionNumber, MAX_OPTION_NUMBER } from './constants/item-option-number.enum';
 import { WeaponTypeNameMapBySubTypeId } from './constants/weapon-type-mapper';
@@ -55,6 +55,7 @@ const Characters = getClassDropdownList();
 
 interface ClassModel extends Partial<Record<ItemTypeEnum, number>> {
   rawOptionTxts: string[];
+  armorGrade?: any;
 }
 
 interface ElementDataModel {
@@ -165,6 +166,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   headCardList: DropdownModel[] = [];
   armorList: DropdownModel[] = [];
   armorCardList: DropdownModel[] = [];
+  armorGradeList: DropdownModel[] = [];
   armorEnchant1List: DropdownModel[] = [];
   armorEnchant2List: DropdownModel[] = [];
   armorEnchant3List: DropdownModel[] = [];
@@ -490,10 +492,12 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
             if (!hasMainItem) {
               model2[`${itemTypeName}Refine`] = null;
+              model2[`${itemTypeName}Grade`] = null;
               return agg;
             }
 
             model2[`${itemTypeName}Refine`] = this.model2[`${itemTypeName}Refine`] || 0;
+            model2[`${itemTypeName}Grade`] = this.model2[`${itemTypeName}Grade`];
 
             return agg;
           }, {});
@@ -2092,7 +2096,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
   private setEnchantList(mainItemId: number, positionEnum?: ItemTypeEnum | string) {
     // console.log({ itemId });
-    const { itemTypeId, location, aegisName, name } = this.items[mainItemId] ?? ({} as ItemModel);
+    const { itemTypeId, location, aegisName, name, grades } = this.items[mainItemId] ?? ({} as ItemModel);
     let { itemSubTypeId } = this.items[mainItemId] ?? ({} as ItemModel);
     const enchants = getEnchants(aegisName) ?? getEnchants(name);
 
@@ -2176,6 +2180,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         this.armorEnchant1List = (e2 ?? []).map(mapToEnchant).map(mapToOption);
         this.armorEnchant2List = (e3 ?? []).map(mapToEnchant).map(mapToOption);
         this.armorEnchant3List = (e4 ?? []).map(mapToEnchant).map(mapToOption);
+        this.armorGradeList = toGradeList(grades ?? []);
         clearModel('armor');
         break;
       case ItemSubTypeId.Garment:
@@ -2266,8 +2271,14 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
     // console.log({ itemType, itemId, refine });
     if (itemType === ItemTypeEnum.weapon) {
-      this.calculator.setWeapon(itemId, refine);
+      this.calculator.setWeapon({ itemId, refine });
     }
+
+    this.updateItemEvent.next(itemType);
+  }
+
+  onSelectGrade(itemType: string, itemId: number, grade: string) {
+    this.calculator.setItem({ itemType: itemType as ItemTypeEnum, itemId, grade });
 
     this.updateItemEvent.next(itemType);
   }

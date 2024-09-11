@@ -192,8 +192,8 @@ export class DamageCalculator {
     const { totalPow, totalSpl, totalCon, totalCrt } = this.status;
 
     return {
-      pAtk: floor(totalPow / 3 + totalCon / 5),
-      sMatk: floor(totalSpl / 3 + totalCon / 5),
+      pAtk: floor(totalPow / 3) + floor(totalCon / 5) + this.totalBonus.pAtk,
+      sMatk: floor(totalSpl / 3) + floor(totalCon / 5) + this.totalBonus.sMatk,
       cRate: floor(totalCrt / 3),
     };
   }
