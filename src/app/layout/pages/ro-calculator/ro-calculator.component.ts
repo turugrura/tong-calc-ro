@@ -55,7 +55,15 @@ const Characters = getClassDropdownList();
 
 interface ClassModel extends Partial<Record<ItemTypeEnum, number>> {
   rawOptionTxts: string[];
+  weaponGrade?: any;
+  leftWeaponGrade?: any;
+  shieldGrade?: any;
+  headUpperGrade?: any;
   armorGrade?: any;
+  garmentGrade?: any;
+  bootGrade?: any;
+  accLeftGrade?: any;
+  accRightGrade?: any;
 }
 
 interface ElementDataModel {
@@ -142,7 +150,9 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   itemList: ItemListModel = {} as any;
 
   weaponList: DropdownModel[] = [];
+  weaponGradeList: DropdownModel[] = [];
   leftWeaponList: DropdownModel[] = [];
+  leftWeaponGradeList: DropdownModel[] = [];
   weaponCardList: DropdownModel[] = [];
   weaponEnchant1List: DropdownModel[] = [];
   weaponEnchant2List: DropdownModel[] = [];
@@ -152,14 +162,17 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   leftWeaponEnchant3List: DropdownModel[] = [];
   ammoList: DropdownModel[] = [];
   headUpperList: DropdownModel[] = [];
+  headUpperGradeList: DropdownModel[] = [];
   headUpperEnchant1List: DropdownModel[] = [];
   headUpperEnchant2List: DropdownModel[] = [];
   headUpperEnchant3List: DropdownModel[] = [];
   headMiddleList: DropdownModel[] = [];
+  headMiddleGradeList: DropdownModel[] = [];
   headMiddleEnchant1List: DropdownModel[] = [];
   headMiddleEnchant2List: DropdownModel[] = [];
   headMiddleEnchant3List: DropdownModel[] = [];
   headLowerList: DropdownModel[] = [];
+  headLowerGradeList: DropdownModel[] = [];
   headLowerEnchant1List: DropdownModel[] = [];
   headLowerEnchant2List: DropdownModel[] = [];
   headLowerEnchant3List: DropdownModel[] = [];
@@ -172,16 +185,19 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   armorEnchant3List: DropdownModel[] = [];
   shieldList: DropdownModel[] = [];
   shieldCardList: DropdownModel[] = [];
+  shieldGradeList: DropdownModel[] = [];
   shieldEnchant1List: DropdownModel[] = [];
   shieldEnchant2List: DropdownModel[] = [];
   shieldEnchant3List: DropdownModel[] = [];
   garmentList: DropdownModel[] = [];
   garmentCardList: DropdownModel[] = [];
+  garmentGradeList: DropdownModel[] = [];
   garmentEnchant1List: DropdownModel[] = [];
   garmentEnchant2List: DropdownModel[] = [];
   garmentEnchant3List: DropdownModel[] = [];
   bootList: DropdownModel[] = [];
   bootCardList: DropdownModel[] = [];
+  bootGradeList: DropdownModel[] = [];
   bootEnchant1List: DropdownModel[] = [];
   bootEnchant2List: DropdownModel[] = [];
   bootEnchant3List: DropdownModel[] = [];
@@ -189,11 +205,13 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   accCardList: DropdownModel[] = [];
   accLeftList: DropdownModel[] = [];
   accLeftCardList: DropdownModel[] = [];
+  accLeftGradeList: DropdownModel[] = [];
   accLeftEnchant1List: DropdownModel[] = [];
   accLeftEnchant2List: DropdownModel[] = [];
   accLeftEnchant3List: DropdownModel[] = [];
   accRightList: DropdownModel[] = [];
   accRightCardList: DropdownModel[] = [];
+  accRightGradeList: DropdownModel[] = [];
   accRightEnchant1List: DropdownModel[] = [];
   accRightEnchant2List: DropdownModel[] = [];
   accRightEnchant3List: DropdownModel[] = [];
@@ -2132,11 +2150,13 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         this.leftWeaponEnchant1List = (e2 ?? []).map(mapToEnchant).map(mapToOption);
         this.leftWeaponEnchant2List = (e3 ?? []).map(mapToEnchant).map(mapToOption);
         this.leftWeaponEnchant3List = (e4 ?? []).map(mapToEnchant).map(mapToOption);
+        this.leftWeaponGradeList = toGradeList(grades ?? []);
         clearModel('leftWeapon');
       } else {
         this.weaponEnchant1List = (e2 ?? []).map(mapToEnchant).map(mapToOption);
         this.weaponEnchant2List = (e3 ?? []).map(mapToEnchant).map(mapToOption);
         this.weaponEnchant3List = (e4 ?? []).map(mapToEnchant).map(mapToOption);
+        this.weaponGradeList = toGradeList(grades ?? []);
         clearModel('weapon');
       }
 
@@ -2157,16 +2177,19 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
           this.headMiddleEnchant1List = (e2 ?? []).map(mapToEnchant).map(mapToOption);
           this.headMiddleEnchant2List = (e3 ?? []).map(mapToEnchant).map(mapToOption);
           this.headMiddleEnchant3List = (e4 ?? []).map(mapToEnchant).map(mapToOption);
+          this.headUpperGradeList = toGradeList(grades ?? []);
           clearModel('headMiddle');
         } else if (location === HeadGearLocation.Lower) {
           this.headLowerEnchant1List = (e2 ?? []).map(mapToEnchant).map(mapToOption);
           this.headLowerEnchant2List = (e3 ?? []).map(mapToEnchant).map(mapToOption);
           this.headLowerEnchant3List = (e4 ?? []).map(mapToEnchant).map(mapToOption);
+          this.headLowerGradeList = toGradeList(grades ?? []);
           clearModel('headLower');
         } else {
           this.headUpperEnchant1List = (e2 ?? []).map(mapToEnchant).map(mapToOption);
           this.headUpperEnchant2List = (e3 ?? []).map(mapToEnchant).map(mapToOption);
           this.headUpperEnchant3List = (e4 ?? []).map(mapToEnchant).map(mapToOption);
+          this.headUpperGradeList = toGradeList(grades ?? []);
           clearModel('headUpper');
         }
         break;
@@ -2174,6 +2197,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         this.shieldEnchant1List = (e2 ?? []).map(mapToEnchant).map(mapToOption);
         this.shieldEnchant2List = (e3 ?? []).map(mapToEnchant).map(mapToOption);
         this.shieldEnchant3List = (e4 ?? []).map(mapToEnchant).map(mapToOption);
+        this.shieldGradeList = toGradeList(grades ?? []);
         clearModel('shield');
         break;
       case ItemSubTypeId.Armor:
@@ -2187,24 +2211,28 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         this.garmentEnchant1List = (e2 ?? []).map(mapToEnchant).map(mapToOption);
         this.garmentEnchant2List = (e3 ?? []).map(mapToEnchant).map(mapToOption);
         this.garmentEnchant3List = (e4 ?? []).map(mapToEnchant).map(mapToOption);
+        this.garmentGradeList = toGradeList(grades ?? []);
         clearModel('garment');
         break;
       case ItemSubTypeId.Boot:
         this.bootEnchant1List = (e2 ?? []).map(mapToEnchant).map(mapToOption);
         this.bootEnchant2List = (e3 ?? []).map(mapToEnchant).map(mapToOption);
         this.bootEnchant3List = (e4 ?? []).map(mapToEnchant).map(mapToOption);
+        this.bootGradeList = toGradeList(grades ?? []);
         clearModel('boot');
         break;
       case ItemSubTypeId.Acc_L:
         this.accLeftEnchant1List = (e2 ?? []).map(mapToEnchant).map(mapToOption);
         this.accLeftEnchant2List = (e3 ?? []).map(mapToEnchant).map(mapToOption);
         this.accLeftEnchant3List = (e4 ?? []).map(mapToEnchant).map(mapToOption);
+        this.accLeftGradeList = toGradeList(grades ?? []);
         clearModel('accLeft');
         break;
       case ItemSubTypeId.Acc_R:
         this.accRightEnchant1List = (e2 ?? []).map(mapToEnchant).map(mapToOption);
         this.accRightEnchant2List = (e3 ?? []).map(mapToEnchant).map(mapToOption);
         this.accRightEnchant3List = (e4 ?? []).map(mapToEnchant).map(mapToOption);
+        this.accRightGradeList = toGradeList(grades ?? []);
         clearModel('accRight');
         break;
     }

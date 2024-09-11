@@ -190,10 +190,11 @@ export class DamageCalculator {
 
   get traitBonus(): { pAtk: number; sMatk: number; cRate: number } {
     const { totalPow, totalSpl, totalCon, totalCrt } = this.status;
+    const { pAtkOrSMatk } = this.weaponData?.data || { pAtkOrSMatk: 0 };
 
     return {
-      pAtk: floor(totalPow / 3) + floor(totalCon / 5) + this.totalBonus.pAtk,
-      sMatk: floor(totalSpl / 3) + floor(totalCon / 5) + this.totalBonus.sMatk,
+      pAtk: floor(totalPow / 3) + floor(totalCon / 5) + this.totalBonus.pAtk + pAtkOrSMatk,
+      sMatk: floor(totalSpl / 3) + floor(totalCon / 5) + this.totalBonus.sMatk + pAtkOrSMatk,
       cRate: floor(totalCrt / 3),
     };
   }

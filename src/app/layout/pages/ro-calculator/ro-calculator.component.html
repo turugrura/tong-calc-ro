@@ -393,7 +393,7 @@
                   </div>
                   <div [hidden]="env.production" class="col-12">
                     S.Matk:
-                    <span class="font-semibold px-1 summary_stat_matk2">{{ totalSummary?.sMatk || 0 }}</span>
+                    <span class="font-semibold px-1 summary_stat_matk2">{{ totalSummary?.dmg?.sMatk || 0 }}</span>
                   </div>
                   <div class="col-12">
                     After Cast Delay:
@@ -552,7 +552,19 @@
               </ng-template>
             </p-dropdown>
           </div>
-          <div class="col-10" [hidden]="hiddenMap.ammu">
+          <div class="col-6" [hidden]="weaponGradeList.length === 0 || !model.weapon">
+            <p-dropdown
+              [options]="weaponGradeList"
+              scrollHeight="350px"
+              [showClear]="true"
+              [(ngModel)]="model.weaponGrade"
+              [disabled]="!model.weapon"
+              (onChange)="onSelectGrade('weapon', model.weapon, $event.value)"
+              (onClear)="onSelectGrade('weapon', model.weapon, '')"
+              placeholder="grade"
+            ></p-dropdown>
+          </div>
+          <div class="col-{{ !weaponGradeList.length ? 10 : 6 }}" [hidden]="hiddenMap.ammu">
             <p-dropdown
               inputId="ammo"
               [autoDisplayFirst]="false"
@@ -1138,6 +1150,8 @@
           [(option3Value)]="model2.rawOptionTxts[itemOptionNumber.W_Left_3]"
           (selectItemChange)="onCompareItemChange()"
           (optionChange)="onCompareItemChange()"
+          [(itemGrade)]="model2.weaponGrade"
+          (gradeChange)="onCompareItemChange()"
         ></app-equipment>
       </div>
     </div>
@@ -1175,6 +1189,18 @@
                 </div>
               </ng-template>
             </p-dropdown>
+          </div>
+          <div class="col-6" [hidden]="shieldGradeList.length === 0 || !model.shield">
+            <p-dropdown
+              [options]="shieldGradeList"
+              scrollHeight="350px"
+              [showClear]="true"
+              [(ngModel)]="model.shieldGrade"
+              [disabled]="!model.shield"
+              (onChange)="onSelectGrade('shield', model.shield, $event.value)"
+              (onClear)="onSelectGrade('shield', model.shield, '')"
+              placeholder="grade"
+            ></p-dropdown>
           </div>
           <div class="col-4" style="min-width: 70px">
             <p-dropdown
@@ -1374,6 +1400,18 @@
               </ng-template>
             </p-dropdown>
           </div>
+          <div class="col-6" [hidden]="headUpperGradeList.length === 0 || !model.headUpper">
+            <p-dropdown
+              [options]="headUpperGradeList"
+              scrollHeight="350px"
+              [showClear]="true"
+              [(ngModel)]="model.headUpperGrade"
+              [disabled]="!model.headUpper"
+              (onChange)="onSelectGrade('headUpper', model.headUpper, $event.value)"
+              (onClear)="onSelectGrade('headUpper', model.headUpper, '')"
+              placeholder="grade"
+            ></p-dropdown>
+          </div>
           <div class="col-4" style="min-width: 70px">
             <p-dropdown
               [options]="refineList"
@@ -1567,6 +1605,8 @@
           [(option2Value)]="model2.rawOptionTxts[itemOptionNumber.H_Upper_2]"
           (selectItemChange)="onCompareItemChange()"
           (optionChange)="onCompareItemChange()"
+          [(itemGrade)]="model2.headUpperGrade"
+          (gradeChange)="onCompareItemChange()"
         ></app-equipment>
       </div>
     </div>
@@ -2198,6 +2238,18 @@
               </ng-template>
             </p-dropdown>
           </div>
+          <div class="col-6" [hidden]="garmentGradeList.length === 0 || !model.garment">
+            <p-dropdown
+              [options]="garmentGradeList"
+              scrollHeight="350px"
+              [showClear]="true"
+              [(ngModel)]="model.garmentGrade"
+              [disabled]="!model.garment"
+              (onChange)="onSelectGrade('garment', model.garment, $event.value)"
+              (onClear)="onSelectGrade('garment', model.garment, '')"
+              placeholder="grade"
+            ></p-dropdown>
+          </div>
           <div class="col-4" style="min-width: 70px">
             <p-dropdown
               [options]="refineList"
@@ -2385,6 +2437,8 @@
           [(option2Value)]="model2.rawOptionTxts[itemOptionNumber.Garment_2]"
           (selectItemChange)="onCompareItemChange()"
           (optionChange)="onCompareItemChange()"
+          [(itemGrade)]="model2.garmentGrade"
+          (gradeChange)="onCompareItemChange()"
         ></app-equipment>
       </div>
     </div>
@@ -2421,6 +2475,18 @@
                 </div>
               </ng-template>
             </p-dropdown>
+          </div>
+          <div class="col-6" [hidden]="bootGradeList.length === 0 || !model.boot">
+            <p-dropdown
+              [options]="bootGradeList"
+              scrollHeight="350px"
+              [showClear]="true"
+              [(ngModel)]="model.bootGrade"
+              [disabled]="!model.boot"
+              (onChange)="onSelectGrade('boot', model.boot, $event.value)"
+              (onClear)="onSelectGrade('boot', model.boot, '')"
+              placeholder="grade"
+            ></p-dropdown>
           </div>
           <div class="col-4" style="min-width: 70px">
             <p-dropdown
@@ -2573,6 +2639,8 @@
           [(enchant3Id)]="model2.bootEnchant2"
           [(enchant4Id)]="model2.bootEnchant3"
           (selectItemChange)="onCompareItemChange()"
+          [(itemGrade)]="model2.bootGrade"
+          (gradeChange)="onCompareItemChange()"
         ></app-equipment>
       </div>
     </div>
