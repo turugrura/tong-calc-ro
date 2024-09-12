@@ -3,11 +3,11 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppLayoutModule } from './layout/app.layout.module';
-import { RoService } from './demo/service/ro.service';
+import { RoService } from './api-services/ro.service';
 import { PrettyJsonPipe } from './layout/prettier-json.pipe';
 import { ApiServiceModule } from './api-services';
 import { JwtModule } from '@auth0/angular-jwt';
-import { SummaryService } from './demo/service/summary.service';
+import { SummaryService } from './api-services/summary.service';
 
 const customComponent = [PrettyJsonPipe];
 
@@ -23,12 +23,7 @@ const customComponent = [PrettyJsonPipe];
       },
     }),
   ],
-  providers: [
-    { provide: LocationStrategy, useClass: HashLocationStrategy },
-    RoService,
-    SummaryService,
-    ...customComponent,
-  ],
+  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }, RoService, SummaryService, ...customComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

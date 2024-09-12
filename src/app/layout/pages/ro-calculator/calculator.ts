@@ -1,28 +1,31 @@
-import { CharacterBase } from './jobs/_character-base.abstract';
-import { ElementType } from './constants/element-type.const';
-import { ItemTypeEnum, MainItemTypeSet, MainItemWithRelations } from './constants/item-type.enum';
-import { ItemModel } from './models/item.model';
-import { MonsterModel } from './models/monster.model';
+import { ItemModel } from '../../../models/item.model';
+import { MonsterModel } from '../../../models/monster.model';
 import { Weapon } from './weapon';
-import { AllowShieldTable } from './constants/allow-shield-table';
-import { PreparedMonsterModel } from './models/prepared-monster.model';
-import { SizePenaltyMapper } from './constants/size-penalty-mapper';
-import { StatusSummary } from './models/status-summary.model';
-import { EquipmentSummaryModel } from './models/equipment-summary.model';
-import { MainModel } from './models/main.model';
-import { AllowAmmoMapper } from './constants/allow-ammo-mapper';
-import { ClassAmmoMapper, WeaponAmmoMapper } from './constants/weapon-ammo-mapper';
-import { InfoForClass } from './models/info-for-class.model';
+import { PreparedMonsterModel } from '../../../models/prepared-monster.model';
+import { StatusSummary } from '../../../models/status-summary.model';
+import { EquipmentSummaryModel } from '../../../models/equipment-summary.model';
+import { MainModel } from '../../../models/main.model';
+import { InfoForClass } from '../../../models/info-for-class.model';
 import { HpSpCalculator } from './hp-sp-calculator';
-import { HpSpTable } from './models/hp-sp-table.model';
-import { ItemSubTypeId } from './constants/item-sub-type.enum';
-import { ClassName } from './jobs/_class-name';
+import { HpSpTable } from '../../../models/hp-sp-table.model';
 import { environment } from 'src/environments/environment';
 import { DamageCalculator } from './damage-calculator';
-import { createRawTotalBonus } from './utils/create-raw-total-bonus';
-import { floor, isNumber, round } from './utils';
-import { BasicAspdModel, BasicDamageSummaryModel, MiscModel, SkillAspdModel, SkillDamageSummaryModel } from './models/damage-summary.model';
-import { ChanceModel } from './models/chance-model';
+import { BasicAspdModel, BasicDamageSummaryModel, MiscModel, SkillAspdModel, SkillDamageSummaryModel } from '../../../models/damage-summary.model';
+import { ChanceModel } from '../../../models/chance-model';
+import {
+  AllowAmmoMapper,
+  AllowShieldTable,
+  ClassAmmoMapper,
+  ElementType,
+  ItemSubTypeId,
+  ItemTypeEnum,
+  MainItemTypeSet,
+  MainItemWithRelations,
+  SizePenaltyMapper,
+  WeaponAmmoMapper,
+} from 'src/app/constants';
+import { CharacterBase, ClassName } from 'src/app/jobs';
+import { createRawTotalBonus, floor, isNumber, round } from 'src/app/utils';
 
 // const getItem = (id: number) => items[id] as ItemModel;
 const refinableItemTypes = [
@@ -506,7 +509,7 @@ export class Calculator {
 
     this.mapRefine.set(ItemTypeEnum.weapon, refine);
     this.mapGrade.set(ItemTypeEnum.weapon, grade);
-    this.weaponData.set(itemData, refine);
+    this.weaponData.set({ itemData, refineLevel: refine, grade });
 
     return this;
   }
@@ -597,8 +600,8 @@ export class Calculator {
 
   loadItemFromModel(model: any) {
     this.model = { ...model };
-    this.weaponData.set({} as any, 0);
-    this.leftWeaponData.set({} as any, 0);
+    this.weaponData.set({ itemData: {} as any, refineLevel: 0, grade: '' });
+    this.leftWeaponData.set({ itemData: {} as any, refineLevel: 0, grade: '' });
     this.equipItem.clear();
     this.equipItemName.clear();
     this.mapGrade.clear();
@@ -623,7 +626,7 @@ export class Calculator {
       }
 
       if (mainItemType === ItemTypeEnum.leftWeapon && itemId) {
-        this.leftWeaponData.set(this.items[itemId], refine);
+        this.leftWeaponData.set({ itemData: this.items[itemId], refineLevel: refine, grade });
       }
 
       for (const itemRelation of itemRelations) {

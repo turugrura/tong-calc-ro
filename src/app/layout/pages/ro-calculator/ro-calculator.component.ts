@@ -2,50 +2,66 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { catchError, debounceTime, filter, finalize, forkJoin, mergeMap, Observable, of, Subject, Subscription, switchMap, take, tap, throwError } from 'rxjs';
 import { BaseStateCalculator } from './base-state-calculator';
 import { Calculator } from './calculator';
-import { ItemTypeEnum, MainItemTypeSet, MainItemWithRelations, OptionableItemTypeSet } from './constants/item-type.enum';
-import { ItemTypeId } from './constants/item.const';
-import { RoService } from 'src/app/demo/service/ro.service';
-import { ItemModel } from './models/item.model';
+import { RoService } from 'src/app/api-services/ro.service';
+import { ItemModel } from '../../../models/item.model';
 import { ConfirmationService, MenuItem, MessageService, PrimeIcons, SelectItemGroup } from 'primeng/api';
-import { ActiveSkillModel, AtkSkillModel, CharacterBase, PassiveSkillModel } from './jobs/_character-base.abstract';
-import { MonsterModel } from './models/monster.model';
-import { EnchantTable, getEnchants } from './constants/enchant-table';
-import { DropdownModel, ItemDropdownModel } from './models/dropdown.model';
-import { ItemListModel } from './models/item-list.model';
-import { getMonsterSpawnMap } from './constants/monster-spawn-mapper';
+import { MonsterModel } from '../../../models/monster.model';
+import { DropdownModel, ItemDropdownModel } from '../../../models/dropdown.model';
+import { ItemListModel } from '../../../models/item-list.model';
 import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { PresetTableComponent } from './preset-table/preset-table.component';
-import { ClassIcon, ClassName } from './jobs/_class-name';
-import { JobBuffs } from './constants/job-buffs';
 import { environment } from 'src/environments/environment';
 import { MonsterDataViewComponent } from './monster-data-view/monster-data-view.component';
-import { ItemSubTypeId } from './constants/item-sub-type.enum';
-import { CardPosition } from './constants/card-position.enum';
-import { createNumberDropdownList } from './utils/create-number-dropdown-list';
-import { HeadGearLocation } from './constants/head-gear-location';
-import { createMainStatOptionList } from './utils/create-main-stat-opton-list';
-import { createExtraOptionList } from './utils/create-extra-option-list';
-import { toDropdownList } from './utils/to-drowdown-list';
-import { sortObj } from './utils/sort-obj';
-import { HpSpTable } from './models/hp-sp-table.model';
-import { AllowLeftWeaponMapper } from './constants/allow-left-weapon-mapper';
+import { HpSpTable } from '../../../models/hp-sp-table.model';
 import { LayoutService } from '../../service/app.layout.service';
-import { createMainModel } from './utils/create-main-model';
-import { FoodStatList } from './constants/food-stat-list';
-import { ElementConverterList } from './constants/element-converter-list';
-import { AspdPotionList, AspdPotionList2 } from './constants/aspd-potion-list';
-import { BasicDamageSummaryModel, SkillDamageSummaryModel } from './models/damage-summary.model';
-import { ChanceModel } from './models/chance-model';
-import { RaceType } from './constants/race-type.const';
-import { ElementType } from './constants/element-type.const';
-import { createBaseHPSPOptionList, isNumber, prettyItemDesc, toGradeList, toRawOptionTxtList, toUpsertPresetModel, verifySyncPreset, waitRxjs } from './utils';
-import { ExtraOptionTable } from './constants/extra-option-table';
-import { ItemOptionNumber, MAX_OPTION_NUMBER } from './constants/item-option-number.enum';
-import { WeaponTypeNameMapBySubTypeId } from './constants/weapon-type-mapper';
+import { BasicDamageSummaryModel, SkillDamageSummaryModel } from '../../../models/damage-summary.model';
+import { ChanceModel } from '../../../models/chance-model';
+import {
+  createBaseHPSPOptionList,
+  createExtraOptionList,
+  createMainModel,
+  createMainStatOptionList,
+  createNumberDropdownList,
+  isNumber,
+  prettyItemDesc,
+  sortObj,
+  toDropdownList,
+  toGradeList,
+  toRawOptionTxtList,
+  toUpsertPresetModel,
+  verifySyncPreset,
+  waitRxjs,
+} from 'src/app/utils';
 import { AuthService, PresetModel, PresetService } from 'src/app/api-services';
-import { ItemOptionTable } from './constants/item-options-table';
-import { getClassDropdownList } from './jobs/_class-list';
+import { getClassDropdownList } from '../../../jobs/_class-list';
 import { ToErrorDetail } from 'src/app/app-errors';
+import {
+  AllowLeftWeaponMapper,
+  AspdPotionList,
+  AspdPotionList2,
+  CardPosition,
+  ElementConverterList,
+  ElementType,
+  EnchantTable,
+  ExtraOptionTable,
+  FoodStatList,
+  HeadGearLocation,
+  ItemOptionNumber,
+  ItemOptionTable,
+  ItemSubTypeId,
+  ItemTypeEnum,
+  ItemTypeId,
+  JobBuffs,
+  MAX_OPTION_NUMBER,
+  MainItemTypeSet,
+  MainItemWithRelations,
+  OptionableItemTypeSet,
+  RaceType,
+  WeaponTypeNameMapBySubTypeId,
+  getEnchants,
+  getMonsterSpawnMap,
+} from 'src/app/constants';
+import { ActiveSkillModel, AtkSkillModel, CharacterBase, ClassIcon, ClassName, PassiveSkillModel } from 'src/app/jobs';
 
 interface MonsterSelectItemGroup extends SelectItemGroup {
   items: any[];

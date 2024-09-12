@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, EventEmitter, Input, Output } from '@angular/core';
-import { DropdownModel } from '../models/dropdown.model';
+import { DropdownModel } from '../../../../models/dropdown.model';
 
 @Component({
   selector: 'app-equipment-cos-enchant',

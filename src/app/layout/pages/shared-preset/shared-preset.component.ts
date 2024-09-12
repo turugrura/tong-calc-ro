@@ -1,33 +1,19 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { PresetService, PublishPresetModel, PublishPresetsReponse } from 'src/app/api-services';
-import { availableTags } from '../ro-calculator/constants/available-tags';
-import { DropdownModel } from '../ro-calculator/models/dropdown.model';
-import { RoService } from 'src/app/demo/service/ro.service';
-import {
-  Observable,
-  Subject,
-  Subscription,
-  catchError,
-  debounceTime,
-  forkJoin,
-  of,
-  switchMap,
-  tap,
-  throwError,
-} from 'rxjs';
-import { ItemModel } from '../ro-calculator/models/item.model';
-import { MonsterModel } from '../ro-calculator/models/monster.model';
+import { DropdownModel } from '../../../models/dropdown.model';
+import { RoService } from 'src/app/api-services/ro.service';
+import { Observable, Subject, Subscription, catchError, debounceTime, forkJoin, of, switchMap, tap, throwError } from 'rxjs';
+import { ItemModel } from '../../../models/item.model';
+import { MonsterModel } from '../../../models/monster.model';
 import { PaginatorState } from 'primeng/paginator';
 import { Unauthorized } from 'src/app/app-errors';
 import { ConfirmationService, MessageService } from 'primeng/api';
-import { ActiveSkillModel, AtkSkillModel, CharacterBase } from '../ro-calculator/jobs/_character-base.abstract';
 import { Calculator } from '../ro-calculator/calculator';
-import { JobBuffs } from '../ro-calculator/constants/job-buffs';
-import { MainModel } from '../ro-calculator/models/main.model';
-import { HpSpTable } from '../ro-calculator/models/hp-sp-table.model';
-import { getMonsterSpawnMap } from '../ro-calculator/constants/monster-spawn-mapper';
-import { getClassDropdownList } from '../ro-calculator/jobs/_class-list';
-import { toRawOptionTxtList, waitRxjs } from '../ro-calculator/utils';
+import { MainModel } from '../../../models/main.model';
+import { HpSpTable } from '../../../models/hp-sp-table.model';
+import { toRawOptionTxtList, waitRxjs } from '../../../utils';
+import { JobBuffs, availableTags, getMonsterSpawnMap } from 'src/app/constants';
+import { ActiveSkillModel, AtkSkillModel, CharacterBase, getClassDropdownList } from 'src/app/jobs';
 
 const Characters = getClassDropdownList();
 

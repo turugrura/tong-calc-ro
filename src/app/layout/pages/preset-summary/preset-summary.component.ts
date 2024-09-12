@@ -1,18 +1,11 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { getClassDropdownList } from '../ro-calculator/jobs/_class-list';
-import { SummaryService } from 'src/app/demo/service/summary.service';
+import { getClassDropdownList } from '../../../jobs/_class-list';
+import { SummaryService } from 'src/app/api-services/summary.service';
 import { Subject, Subscription, debounceTime, forkJoin, tap } from 'rxjs';
-import { RoService } from 'src/app/demo/service/ro.service';
-import { ItemModel } from '../ro-calculator/models/item.model';
-import { prettyItemDesc } from '../ro-calculator/utils';
-import {
-  EquipmentPosition,
-  EquipmentRankingModel,
-  ItemRankingModel,
-  JobSkillSummary,
-  JobSummary,
-  TotalSummaryModel,
-} from './model';
+import { RoService } from 'src/app/api-services/ro.service';
+import { ItemModel } from '../../../models/item.model';
+import { EquipmentPosition, EquipmentRankingModel, ItemRankingModel, JobSkillSummary, JobSummary, TotalSummaryModel } from './model';
+import { prettyItemDesc } from 'src/app/utils';
 
 const getEmptyRanking = () => {
   return Object.values(EquipmentPosition).reduce((pre, item) => {
@@ -101,10 +94,7 @@ export class PresetSummaryComponent implements OnInit, OnDestroy {
       this.totalSummary = totalSummary;
       this.itemMap = itemMap;
 
-      this.totalPresets = Object.values(presetSummary).reduce(
-        (total, cur) => total + Object.values(cur).reduce((t, c) => t + c, 0),
-        0,
-      );
+      this.totalPresets = Object.values(presetSummary).reduce((total, cur) => total + Object.values(cur).reduce((t, c) => t + c, 0), 0);
 
       this.setSkillRanking();
       this.setItemRanking();
@@ -185,10 +175,7 @@ export class PresetSummaryComponent implements OnInit, OnDestroy {
     }
     this.skillRankingList = skillRankingList.sort((a, b) => b.total - a.total);
     this.selectedSkillName = skillRankingList[0]?.value;
-    this.totalCurrentJobPresets = Object.values(this.presetSummary[this.selectedJobId]).reduce<number>(
-      (total, cur: number) => total + cur,
-      0,
-    );
+    this.totalCurrentJobPresets = Object.values(this.presetSummary[this.selectedJobId]).reduce<number>((total, cur: number) => total + cur, 0);
   }
 
   private setItemRanking(hideEnchantPosition?: string) {
@@ -199,9 +186,7 @@ export class PresetSummaryComponent implements OnInit, OnDestroy {
       let isPositionHaveEnchant = false;
 
       for (const a of this.itemRankingList[position]) {
-        const percentage = Math.ceil(
-          (a.UsingRate * 100) / this.jobSkillSummary[this.selectedJobId][this.selectedSkillName],
-        );
+        const percentage = Math.ceil((a.UsingRate * 100) / this.jobSkillSummary[this.selectedJobId][this.selectedSkillName]);
         rankingMap.push({
           ...a,
           Percentage: percentage,
@@ -224,9 +209,7 @@ export class PresetSummaryComponent implements OnInit, OnDestroy {
 
         if (this.isShowEnchant[position] !== true) continue;
 
-        const sortedEnchants = enchants
-          .sort(([_, usingRate1], [__, usingRate2]) => usingRate2 - usingRate1)
-          .filter(([_, usingRate], i) => i <= 4 && usingRate >= 0.5);
+        const sortedEnchants = enchants.sort(([_, usingRate1], [__, usingRate2]) => usingRate2 - usingRate1).filter(([_, usingRate], i) => i <= 4 && usingRate >= 0.5);
         for (const [key, value] of sortedEnchants) {
           const percentage = Math.floor((value * 100) / (a.TotalEnchant || 1));
           if (percentage <= 0) continue;
@@ -298,9 +281,7 @@ export class PresetSummaryComponent implements OnInit, OnDestroy {
 
           if (this.isShowEnchant[position] === false) continue;
 
-          const sortedEnchants = enchants
-            .sort(([_, usingRate1], [__, usingRate2]) => usingRate2 - usingRate1)
-            .filter(([_, usingRate], i) => i <= 4 && usingRate >= 0.5);
+          const sortedEnchants = enchants.sort(([_, usingRate1], [__, usingRate2]) => usingRate2 - usingRate1).filter(([_, usingRate], i) => i <= 4 && usingRate >= 0.5);
           for (const [key, value] of sortedEnchants) {
             const percentage = Math.floor((value * 100) / (a.TotalEnchant || 1));
             if (percentage <= 0) continue;

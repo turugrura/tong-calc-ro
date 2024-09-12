@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { floor } from '../utils';
+import { floor } from '../../../../utils';
 
 @Component({
   selector: 'app-calc-value',

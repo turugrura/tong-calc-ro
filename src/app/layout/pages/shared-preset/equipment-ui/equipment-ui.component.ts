@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { MainModel } from '../../ro-calculator/models/main.model';
-import { ItemTypeEnum } from '../../ro-calculator/constants/item-type.enum';
+import { MainModel } from '../../../../models/main.model';
+import { ItemTypeEnum } from '../../../../constants/item-type.enum';
 
 @Component({
   selector: 'app-equipment-ui',

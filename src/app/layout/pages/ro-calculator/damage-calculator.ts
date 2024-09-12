@@ -1,16 +1,13 @@
-import { ElementMapper } from './constants/element-mapper';
-import { ElementType } from './constants/element-type.const';
-import { ItemTypeEnum } from './constants/item-type.enum';
-import { SizePenaltyMapper } from './constants/size-penalty-mapper';
-import { AtkSkillModel, CharacterBase } from './jobs/_character-base.abstract';
-import { BasicDamageSummaryModel, DamageSummaryModel, MiscModel, SkillDamageSummaryModel, SkillType } from './models/damage-summary.model';
-import { EquipmentSummaryModel } from './models/equipment-summary.model';
-import { InfoForClass } from './models/info-for-class.model';
-import { MainModel } from './models/main.model';
-import { MonsterModel } from './models/monster.model';
-import { PreparedMonsterModel } from './models/prepared-monster.model';
-import { StatusSummary } from './models/status-summary.model';
-import { calcDmgDps, calcSkillAspd, floor, isSkillCanEDP, round } from './utils';
+import { ElementMapper, ElementType, ItemTypeEnum, SizePenaltyMapper } from 'src/app/constants';
+import { AtkSkillModel, CharacterBase } from '../../../jobs/_character-base.abstract';
+import { BasicDamageSummaryModel, DamageSummaryModel, MiscModel, SkillDamageSummaryModel, SkillType } from '../../../models/damage-summary.model';
+import { EquipmentSummaryModel } from '../../../models/equipment-summary.model';
+import { InfoForClass } from '../../../models/info-for-class.model';
+import { MainModel } from '../../../models/main.model';
+import { MonsterModel } from '../../../models/monster.model';
+import { PreparedMonsterModel } from '../../../models/prepared-monster.model';
+import { StatusSummary } from '../../../models/status-summary.model';
+import { calcDmgDps, calcSkillAspd, floor, isSkillCanEDP, round } from '../../../utils';
 import { Weapon } from './weapon';
 
 interface DamageResultModel {

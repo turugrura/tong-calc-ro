@@ -1,4 +1,4 @@
-import { ClassID } from '../../ro-calculator/jobs/_class-name';
+import { ClassID } from '../../../../jobs/_class-name';
 import { EquipmentPosition } from './equipment-position';
 import { ItemRankingModel } from './item-ranking.model';
 

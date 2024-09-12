@@ -1,9 +1,9 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { ElementType } from '../constants/element-type.const';
-import { MonsterModel } from '../models/monster.model';
+import { ElementType } from '../../../../constants/element-type.const';
+import { MonsterModel } from '../../../../models/monster.model';
 import { SelectItemGroup } from 'primeng/api';
 import { Subject, Subscription, debounceTime, tap } from 'rxjs';
-import { ElementMapper } from '../constants/element-mapper';
+import { ElementMapper } from '../../../../constants/element-mapper';
 
 interface MonsterSelectItemGroup extends SelectItemGroup {
   items: any[];

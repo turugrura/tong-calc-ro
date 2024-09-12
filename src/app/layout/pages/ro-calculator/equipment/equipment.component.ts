@@ -1,10 +1,10 @@
 import { AfterViewInit, Component, EventEmitter, Input, Output } from '@angular/core';
-import { DropdownModel } from '../models/dropdown.model';
-import { ItemModel } from '../models/item.model';
-import { getEnchants } from '../constants/enchant-table';
-import { ItemTypeEnum, OptionableItemTypeSet } from '../constants/item-type.enum';
-import { ExtraOptionTable } from '../constants/extra-option-table';
-import { toGradeList } from '../utils';
+import { DropdownModel } from '../../../../models/dropdown.model';
+import { ItemModel } from '../../../../models/item.model';
+import { getEnchants } from '../../../../constants/enchant-table';
+import { ItemTypeEnum, OptionableItemTypeSet } from '../../../../constants/item-type.enum';
+import { ExtraOptionTable } from '../../../../constants/extra-option-table';
+import { toGradeList } from '../../../../utils';
 
 @Component({
   selector: 'app-equipment',

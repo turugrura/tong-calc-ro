@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnDestroy, OnInit } from '@angular/core';
 import { DynamicDialogConfig, DynamicDialogRef } from 'primeng/dynamicdialog';
-import { MonsterGroupNames } from '../constants/monster-spawn-mapper';
+import { MonsterGroupNames } from '../../../../constants/monster-spawn-mapper';
 import { Subscription, debounceTime } from 'rxjs';
 import { FilterService } from 'primeng/api';
 
@@ -19,11 +19,7 @@ export class MonsterDataViewComponent implements OnInit, OnDestroy {
   textSearchChangeEvent = new EventEmitter();
   sub: Subscription;
 
-  constructor(
-    private ref: DynamicDialogRef,
-    private dynamicDialogConfig: DynamicDialogConfig,
-    private filterService: FilterService,
-  ) {}
+  constructor(private ref: DynamicDialogRef, private dynamicDialogConfig: DynamicDialogConfig, private filterService: FilterService) {}
 
   ngOnInit() {
     this.allMonsters = this.getMonsters();

@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { PresetModel } from 'src/app/api-services';
-import { ActiveSkillModel, CharacterBase } from '../../ro-calculator/jobs/_character-base.abstract';
-import { JobBuffs } from '../../ro-calculator/constants/job-buffs';
+import { ActiveSkillModel, CharacterBase } from '../../../../jobs/_character-base.abstract';
+import { JobBuffs } from '../../../../constants/job-buffs';
 
 @Component({
   selector: 'app-skill-detail',
@@ -27,12 +27,7 @@ export class SkillDetailComponent implements OnInit {
   private formatSKillToDisplay() {
     if (!this.job || !this.model) return;
 
-    const consumables = [
-      ...(this.model.consumables || []),
-      ...(this.model.consumables2 || []),
-      ...(this.model.aspdPotions || []),
-      this.model.aspdPotion,
-    ].filter(Boolean);
+    const consumables = [...(this.model.consumables || []), ...(this.model.consumables2 || []), ...(this.model.aspdPotions || []), this.model.aspdPotion].filter(Boolean);
     const arr = [] as typeof this.consumables;
     for (const itemId of consumables) {
       const item = this.itemMap[itemId];

@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { MainModel } from '../../ro-calculator/models/main.model';
-import { ItemTypeEnum } from '../../ro-calculator/constants/item-type.enum';
-import { ItemOptionMap } from '../../ro-calculator/constants/item-options-table';
-import { ExtraOptionMap } from '../../ro-calculator/utils/create-extra-option-list';
+import { MainModel } from '../../../../models/main.model';
+import { ItemTypeEnum } from '../../../../constants/item-type.enum';
+import { ItemOptionMap } from '../../../../constants/item-options-table';
+import { ExtraOptionMap } from '../../../../utils/create-extra-option-list';
 
 const displayMainItemKeys = [
   ItemTypeEnum.headUpper,
@@ -69,12 +69,7 @@ export class EquipmentInDetailComponent implements OnInit {
         const refine = this.model[`${itemType}Refine`];
         const cardIds =
           itemType === ItemTypeEnum.weapon
-            ? [
-                this.model[ItemTypeEnum.weaponCard1],
-                this.model[ItemTypeEnum.weaponCard2],
-                this.model[ItemTypeEnum.weaponCard3],
-                this.model[ItemTypeEnum.weaponCard4],
-              ]
+            ? [this.model[ItemTypeEnum.weaponCard1], this.model[ItemTypeEnum.weaponCard2], this.model[ItemTypeEnum.weaponCard3], this.model[ItemTypeEnum.weaponCard4]]
             : itemType === ItemTypeEnum.leftWeapon
             ? [
                 this.model[ItemTypeEnum.leftWeaponCard1],
@@ -84,11 +79,7 @@ export class EquipmentInDetailComponent implements OnInit {
               ]
             : [this.model[`${itemType}Card`]];
 
-        const enchantIds = [
-          this.model[`${itemType}Enchant1`],
-          this.model[`${itemType}Enchant2`],
-          this.model[`${itemType}Enchant3`],
-        ];
+        const enchantIds = [this.model[`${itemType}Enchant1`], this.model[`${itemType}Enchant2`], this.model[`${itemType}Enchant3`]];
         const optionTxts = (ItemOptionMap.get(itemType) || []).map((a) => {
           return ExtraOptionMap.get(optTxts[a]);
         });

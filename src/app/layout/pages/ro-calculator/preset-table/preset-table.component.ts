@@ -1,13 +1,13 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { DynamicDialogConfig, DynamicDialogRef } from 'primeng/dynamicdialog';
-import { ItemTypeEnum } from '../constants/item-type.enum';
-import { ClassID, ClassIcon } from '../jobs/_class-name';
+import { ItemTypeEnum } from '../../../../constants/item-type.enum';
+import { ClassID, ClassIcon } from '../../../../jobs/_class-name';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { AuthService, EntirePresetWithTagsModel, PresetService } from 'src/app/api-services';
 import { Observable, Subscription, catchError, finalize, of, switchMap, tap } from 'rxjs';
-import { availableTags, tagSeverityMap } from '../constants/available-tags';
+import { availableTags, tagSeverityMap } from '../../../../constants/available-tags';
 import { ToErrorDetail } from 'src/app/app-errors';
-import { getClassDropdownList } from '../jobs/_class-list';
+import { getClassDropdownList } from '../../../../jobs/_class-list';
 
 const displayMainItemKeys = [
   ItemTypeEnum.weapon,
@@ -196,8 +196,7 @@ export class PresetTableComponent implements OnInit, OnDestroy {
       this.selectedPreset = undefined;
       this.presetInfo = this.cloudPresets.find((a) => a.id === this.selectedCloudPreset);
       this.isSharedPreset = this.presetInfo?.isPublished ?? false;
-      this.currentTags =
-        this.presetInfo?.tags?.map((a, i) => ({ tag: a.tag, severity: this.getTagSeverity(a.tag, i) })) || [];
+      this.currentTags = this.presetInfo?.tags?.map((a, i) => ({ tag: a.tag, severity: this.getTagSeverity(a.tag, i) })) || [];
 
       this.selectedTags = this.presetInfo?.tags?.map((a) => a.tag);
       this.model = this.presetInfo?.model || {};
@@ -213,12 +212,7 @@ export class PresetTableComponent implements OnInit, OnDestroy {
         const refine = this.model[`${itemType}Refine`];
         const cardIds =
           itemType === ItemTypeEnum.weapon
-            ? [
-                this.model[ItemTypeEnum.weaponCard1],
-                this.model[ItemTypeEnum.weaponCard2],
-                this.model[ItemTypeEnum.weaponCard3],
-                this.model[ItemTypeEnum.weaponCard4],
-              ]
+            ? [this.model[ItemTypeEnum.weaponCard1], this.model[ItemTypeEnum.weaponCard2], this.model[ItemTypeEnum.weaponCard3], this.model[ItemTypeEnum.weaponCard4]]
             : itemType === ItemTypeEnum.leftWeapon
             ? [
                 this.model[ItemTypeEnum.leftWeaponCard1],
@@ -228,11 +222,7 @@ export class PresetTableComponent implements OnInit, OnDestroy {
               ]
             : [this.model[`${itemType}Card`]];
 
-        const enchantIds = [
-          this.model[`${itemType}Enchant1`],
-          this.model[`${itemType}Enchant2`],
-          this.model[`${itemType}Enchant3`],
-        ];
+        const enchantIds = [this.model[`${itemType}Enchant1`], this.model[`${itemType}Enchant2`], this.model[`${itemType}Enchant3`]];
 
         return {
           itemType,

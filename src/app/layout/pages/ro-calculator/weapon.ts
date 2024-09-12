@@ -1,6 +1,7 @@
-import { ItemModel } from './models/item.model';
-import { WeaponSubTypeName, WeaponSubTypeNameMapById, WeaponTypeName, WeaponTypeNameMapBySubTypeId } from './constants/weapon-type-mapper';
-import { ElementType } from './constants/element-type.const';
+import { ItemModel } from '../../../models/item.model';
+import { WeaponSubTypeName, WeaponSubTypeNameMapById, WeaponTypeName, WeaponTypeNameMapBySubTypeId } from '../../../constants/weapon-type-mapper';
+import { ElementType } from '../../../constants/element-type.const';
+import { floor } from 'src/app/utils';
 
 const weaponUpgradeTable: Record<number, Record<number, { bonus: number; overUpgrade: number; highUpgrade: number; pAtkOrSMatk: number }>> = {
   1: {
@@ -122,6 +123,13 @@ const IsLongRange: Partial<Record<WeaponTypeName, boolean>> = {
   instrument: true,
 };
 
+const gradeBonusPercentage = {
+  D: 0.8,
+  C: 2.4,
+  B: 4,
+  A: 8,
+};
+
 export class Weapon {
   private _propertyAtk: ElementType = ElementType.Neutral;
   private _rangeType = '';
@@ -137,7 +145,8 @@ export class Weapon {
   private _pAtkOrSMatk = 0;
   private _weight = 0;
 
-  set(itemData: ItemModel, refineLevel: number) {
+  set(params: { itemData: ItemModel; refineLevel: number; grade: string }) {
+    const { itemData, refineLevel, grade } = params;
     const { itemLevel, attack, script, itemSubTypeId, weight, propertyAtk } = itemData || {};
     this._propertyAtk = propertyAtk;
     this._baseWeaponAtk = attack || 0;
@@ -151,7 +160,8 @@ export class Weapon {
 
     if (refineLevel > 0 && itemLevel > 0) {
       const { bonus, highUpgrade, overUpgrade, pAtkOrSMatk } = weaponUpgradeTable[itemLevel][refineLevel];
-      this._refineBonus = bonus;
+      const gradeBonus = floor((gradeBonusPercentage[grade?.toUpperCase()] || 0) * refineLevel);
+      this._refineBonus = bonus + gradeBonus;
       this._overUpgradeBonus = overUpgrade;
       this._highUpgradeBonus = highUpgrade;
       this._pAtkOrSMatk = pAtkOrSMatk;
