@@ -17,6 +17,6 @@ export interface ItemModel {
   location: any;
   compositionPos: number;
   cardPrefix?: string;
-  grades?: string[];
+  canGrade?: boolean;
   script: Record<string, any[]>;
 }

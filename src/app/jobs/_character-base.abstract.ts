@@ -15,6 +15,7 @@ export interface AtkSkillFormulaInput extends InfoForClass {
   maxSp: number;
   currentHp?: number;
   currentSp?: number;
+  stack?: number;
 }
 
 export interface DefForCalcModel {
@@ -52,7 +53,7 @@ export interface AtkSkillModel {
     formula: (input: AtkSkillFormulaInput) => number;
   };
   finalDmgFormula?: (input: AtkSkillFormulaInput & { damage: number }) => number;
-  totalStack?: number;
+  maxStack?: number;
   canCri?: boolean;
   baseCri?: number;
   /**

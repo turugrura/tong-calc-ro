@@ -269,6 +269,9 @@ export class Calculator {
   private mdef = 0;
   private softMdef = 0;
 
+  private res = 0;
+  private mres = 0;
+
   private damageSummary = {} as BasicDamageSummaryModel & Partial<SkillDamageSummaryModel>;
   private miscSummary = {} as MiscModel;
   private basicAspd = { hitsPerSec: 0, totalAspd: 0 } as BasicAspdModel;
@@ -1608,7 +1611,7 @@ export class Calculator {
   calcAllDefs() {
     const { level } = this.model;
     const { def = 0, defPercent = 0, softDef = 0, softDefPercent = 0 } = this.totalEquipStatus;
-    const { totalVit, totalAgi } = this.status;
+    const { totalVit, totalAgi, totalSta, totalWis } = this.status;
 
     const rawSoftDef = floor(totalVit / 2 + totalAgi / 5 + level / 2);
     this.softDef = floor((rawSoftDef + softDef) * this.toPercent(100 + softDefPercent));
@@ -1618,15 +1621,38 @@ export class Calculator {
       return bonus.filter((_, i) => i + 1 <= refine).reduce((sum, val) => sum + val, 0);
     };
     const { headUpperRefine, armorRefine, shieldRefine, garmentRefine, bootRefine } = this.model;
+
+    const { headUpper, armor, shield, garment, boot } = this.model;
+    const { additionalDef, bonusRes } = [
+      [headUpper, headUpperRefine],
+      [armor, armorRefine],
+      [shield, shieldRefine],
+      [garment, garmentRefine],
+      [boot, bootRefine],
+    ]
+      .filter(([id]) => this.getItem(id)?.itemLevel === 2)
+      .reduce(
+        ({ additionalDef, bonusRes }, [_, refine]) => {
+          return {
+            additionalDef: additionalDef + round(calcDefByRefine(refine) * 0.2, 0),
+            bonusRes: bonusRes + refine * 2,
+          };
+        },
+        { additionalDef: 0, bonusRes: 0 },
+      );
+
     const refines = [headUpperRefine, armorRefine, shieldRefine, garmentRefine, bootRefine].filter((a) => Number(a) > 0);
     const bonusDefByRefine = refines.reduce((sum, refine) => sum + calcDefByRefine(refine), 0);
-    this.def = floor((def + bonusDefByRefine) * this.toPercent(100 + defPercent));
+    this.def = floor((def + bonusDefByRefine) * this.toPercent(100 + defPercent)) + additionalDef;
 
     const { totalDex, totalInt } = this.status;
     const { mdef = 0, mdefPercent = 0, softMdef = 0, softMdefPercent = 0 } = this.totalEquipStatus;
     const rawSoftMdef = floor(totalInt + totalVit / 5 + totalDex / 5 + level / 4);
     this.softMdef = floor((rawSoftMdef + softMdef) * this.toPercent(100 + softMdefPercent));
     this.mdef = floor(mdef * this.toPercent(100 + mdefPercent));
+
+    this.res = totalSta + floor(totalSta / 3) * 5 + bonusRes;
+    this.mres = totalWis + floor(totalWis / 3) * 5 + bonusRes;
 
     return this;
   }
@@ -1660,6 +1686,8 @@ export class Calculator {
         softDef: this.softDef,
         mdef: this.mdef,
         softMdef: this.softMdef,
+        res: this.res,
+        mres: this.mres,
         totalAspd: this.basicAspd.totalAspd,
         hitPerSecs: this.basicAspd.hitsPerSec,
         totalCri: this.damageSummary.basicCriRate,

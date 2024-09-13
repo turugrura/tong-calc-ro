@@ -46,6 +46,8 @@ export interface EquipmentSummaryModel {
   spl: number;
   con: number;
   crt: number;
+  cRate: number;
+  hplus: number;
 
   res: number;
   mres: number;

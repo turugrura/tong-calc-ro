@@ -25,6 +25,8 @@ export enum SkillType {
 }
 
 export interface SkillDamageSummaryModel {
+  skillDamageLabel: string;
+  skillNoStackDamageLabel: string;
   baseSkillDamage: number;
   dmgType: SkillType;
   isAutoSpell: boolean;
@@ -52,6 +54,12 @@ export interface SkillDamageSummaryModel {
   isUsedCurrentSP: boolean;
   currentHp: number;
   currentSp: number;
+
+  maxStack: number;
+  noStackMinDamage: number;
+  noStackMaxDamage: number;
+  noStackMinCriDamage: number;
+  noStackMaxCriDamage: number;
 
   /**
    * Calculated damage including chances bonus

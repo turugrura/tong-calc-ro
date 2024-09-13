@@ -465,7 +465,12 @@ const illusionBoot = [
 const illusionAcc = [EA._5, Spell._5, AttackDelay._4, Fatal._4, ...BaseState._3];
 const illusionAccR = [EA._5, Spell._5, AttackDelay._4, Fatal._4, Str._3, Agi._3, Vit._3, Luk._3];
 const illusionAccL = [EA._5, Spell._5, AttackDelay._4, Fatal._4, Int._3, Dex._3, Vit._3, Luk._3];
-const illusionShield = [...illusionArmor, ...illusionBoot.filter((a) => a !== 'Improve_Orb_Fix'), ...illusionGarment.filter((a) => a !== 'Improve_Orb_Above'), ...illusionAcc];
+const illusionShield = [
+  ...illusionArmor,
+  ...illusionBoot.filter((a) => a !== 'Improve_Orb_Fix'),
+  ...illusionGarment.filter((a) => a !== 'Improve_Orb_Above'),
+  ...illusionAcc,
+];
 
 const automaticJobs = [
   'Automatic_Orb46',
@@ -533,7 +538,17 @@ const automaticArmor2 = [
 ];
 const automaticArmor = [...automaticArmor2, ...automaticJobs];
 const automaticGarment = ['Automatic_Orb21', 'Automatic_Orb22', 'Automatic_Orb23', 'Automatic_Orb38'];
-const automaticBoot = ['Automatic_Orb15', 'Automatic_Orb16', 'Automatic_Orb30', 'Automatic_Orb37', 'Automatic_Orb41', 'Automatic_Orb42', 'Automatic_Orb43', 'Automatic_Orb44', 'Automatic_Orb45'];
+const automaticBoot = [
+  'Automatic_Orb15',
+  'Automatic_Orb16',
+  'Automatic_Orb30',
+  'Automatic_Orb37',
+  'Automatic_Orb41',
+  'Automatic_Orb42',
+  'Automatic_Orb43',
+  'Automatic_Orb44',
+  'Automatic_Orb45',
+];
 const automaticAcc = ['Automatic_Orb39', 'Automatic_Orb11', 'Automatic_Orb12', 'Automatic_Orb13', 'Automatic_Orb14', 'Automatic_Orb3', 'Automatic_Orb4'];
 const automaticAccR = [...automaticAcc, 'Automatic_Orb5', 'Automatic_Orb6'];
 const automaticAccL = [...automaticAcc, 'Automatic_Orb7', 'Automatic_Orb8'];
@@ -677,7 +692,21 @@ const allRunes = [
   RuneVit._3,
 ];
 const mhp14 = [MHP._1, MHP._2, MHP._3, MHP._4];
-const illusionDun = [...mhp14, RuneStr._1, RuneStr._2, RuneDex._1, RuneDex._2, RuneInt._1, RuneInt._2, RuneLuk._1, RuneLuk._2, RuneAgi._1, RuneAgi._2, RuneVit._1, RuneVit._2];
+const illusionDun = [
+  ...mhp14,
+  RuneStr._1,
+  RuneStr._2,
+  RuneDex._1,
+  RuneDex._2,
+  RuneInt._1,
+  RuneInt._2,
+  RuneLuk._1,
+  RuneLuk._2,
+  RuneAgi._1,
+  RuneAgi._2,
+  RuneVit._1,
+  RuneVit._2,
+];
 
 const specials = ['S_Str', 'S_Agi', 'S_Vital', 'S_Int', 'S_Dex', 'S_Luck'];
 
@@ -736,7 +765,18 @@ const specialBonus = [FS._5, FS._6, Spell._4, Spell._5, EA._4, EA._5, Sharp._4, 
 const soutaneBase = [...cri510, ...mhp35, MSP._100, MSP._150, ...createBaseStat(6, 8)];
 const soutaneArmor = [...soutanes, ...specialBonus, ...soutaneBase];
 
-const sinful4 = ['Tha_Wrath_1', 'Tha_Wrath_2', 'Tha_Wrath_3', 'Tha_Wrath_4', 'Tha_Wrath_5', 'Tha_Majesty_1', 'Tha_Majesty_2', 'Tha_Majesty_3', 'Tha_Majesty_4', 'Tha_Majesty_5'];
+const sinful4 = [
+  'Tha_Wrath_1',
+  'Tha_Wrath_2',
+  'Tha_Wrath_3',
+  'Tha_Wrath_4',
+  'Tha_Wrath_5',
+  'Tha_Majesty_1',
+  'Tha_Majesty_2',
+  'Tha_Majesty_3',
+  'Tha_Majesty_4',
+  'Tha_Majesty_5',
+];
 const sinful3 = [
   'Tha_Anger_1',
   'Tha_Anger_2',
@@ -760,7 +800,18 @@ const sinful3 = [
   'Tha_Regret_5',
 ];
 
-const brilliant4 = ['Tha_demigod_1', 'Tha_demigod_2', 'Tha_demigod_3', 'Tha_demigod_4', 'Tha_demigod_5', 'Tha_Antigod_1', 'Tha_Antigod_2', 'Tha_Antigod_3', 'Tha_Antigod_4', 'Tha_Antigod_5'];
+const brilliant4 = [
+  'Tha_demigod_1',
+  'Tha_demigod_2',
+  'Tha_demigod_3',
+  'Tha_demigod_4',
+  'Tha_demigod_5',
+  'Tha_Antigod_1',
+  'Tha_Antigod_2',
+  'Tha_Antigod_3',
+  'Tha_Antigod_4',
+  'Tha_Antigod_5',
+];
 const brilliant3 = [
   'Tha_Empatize_1',
   'Tha_Empatize_2',
@@ -862,7 +913,10 @@ export const EnchantTable: EntTable[] = [
   { name: 'Celines_Ribbon', enchants: [null, null, BaseState._1_3, toyFactory] },
 
   { name: 'Mace_Of_Judgement', enchants: [null, null, maceOfJudge, maceOfJudge] },
-  { name: 'Mace_Of_Judgement2', enchants: [null, [...moraAtkType3, ...moraSpellAbility3], [...moraAtkType2, ...moraSpellAbility2], [...moraAtkType1, ...moraSpellAbility1]] },
+  {
+    name: 'Mace_Of_Judgement2',
+    enchants: [null, [...moraAtkType3, ...moraSpellAbility3], [...moraAtkType2, ...moraSpellAbility2], [...moraAtkType1, ...moraSpellAbility1]],
+  },
   { name: 'Robe_Of_Judgement', enchants: [null, robeOfJudge, robeOfJudge, robeOfJudge] },
   { name: 'Shawl_Of_Judgement', enchants: [null, shawnOfJudge, shawnOfJudge, shawnOfJudge] },
   { name: 'Shoes_Of_Judgement', enchants: [null, shoeOfJudge, shoeOfJudge, shoeOfJudge] },
@@ -1177,6 +1231,11 @@ export const EnchantTable: EntTable[] = [
   { name: 'Mask_of_Sin_Fate', enchants: [null, null, null, bp5Mask] },
 
   { name: 'Star_Armor_Of_Pow', enchants: [null, nebular2, nebular3, nebular4] },
+  { name: 'Star_Armor_Of_Sta', enchants: [null, nebular2, nebular3, nebular4] },
+  { name: 'Star_Suit_Of_Con', enchants: [null, nebular2, nebular3, nebular4] },
+  { name: 'Star_Suit_Of_Crt', enchants: [null, nebular2, nebular3, nebular4] },
+  { name: 'Star_Robe_Of_Spl', enchants: [null, nebular2, nebular3, nebular4] },
+  { name: 'Star_Robe_Of_Wis', enchants: [null, nebular2, nebular3, nebular4] },
 ];
 
 Object.freeze(EnchantTable);

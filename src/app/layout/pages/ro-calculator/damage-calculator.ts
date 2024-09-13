@@ -1,5 +1,5 @@
 import { ElementMapper, ElementType, ItemTypeEnum, SizePenaltyMapper } from 'src/app/constants';
-import { AtkSkillModel, CharacterBase } from '../../../jobs/_character-base.abstract';
+import { AtkSkillFormulaInput, AtkSkillModel, CharacterBase } from '../../../jobs/_character-base.abstract';
 import { BasicDamageSummaryModel, DamageSummaryModel, MiscModel, SkillDamageSummaryModel, SkillType } from '../../../models/damage-summary.model';
 import { EquipmentSummaryModel } from '../../../models/equipment-summary.model';
 import { InfoForClass } from '../../../models/info-for-class.model';
@@ -192,7 +192,7 @@ export class DamageCalculator {
     return {
       pAtk: floor(totalPow / 3) + floor(totalCon / 5) + this.totalBonus.pAtk + pAtkOrSMatk,
       sMatk: floor(totalSpl / 3) + floor(totalCon / 5) + this.totalBonus.sMatk + pAtkOrSMatk,
-      cRate: floor(totalCrt / 3),
+      cRate: floor(totalCrt / 3) + this.totalBonus.cRate,
     };
   }
 
@@ -1102,20 +1102,25 @@ export class DamageCalculator {
       getElement,
       currentHpFn,
       currentSpFn,
+      maxStack = 0,
     } = skillData;
 
     const currentHp = typeof currentHpFn === 'function' ? currentHpFn(maxHp) : 0;
     const currentSp = typeof currentSpFn === 'function' ? currentSpFn(maxSp) : 0;
-    const formulaParams = {
+    const formulaParams: AtkSkillFormulaInput = {
       ...this.infoForClass,
       skillLevel,
       maxHp,
       maxSp,
       currentHp,
       currentSp,
+      stack: maxStack,
     };
     const _baseSkillDamage = formula(formulaParams) + this.getFlatDmg(skillName);
     let baseSkillDamage = floor(_baseSkillDamage);
+
+    const _NoStackbaseSkillDamage = formula({ ...formulaParams, stack: 0 }) + this.getFlatDmg(skillName);
+    const noStackNaseSkillDamage = floor(_NoStackbaseSkillDamage);
 
     const params = {
       baseSkillDamage,
@@ -1126,6 +1131,10 @@ export class DamageCalculator {
     };
 
     let calculated: DamageResultModel;
+    let noStackMaxCriDamage = 0;
+    let noStackMaxDamage = 0;
+    let noStackMinCriDamage = 0;
+    let noStackMinDamage = 0;
 
     if (skillName === 'Fist Spell' && typeof skillData.treatedAsSkillNameFn === 'function') {
       const newSkillValue = skillData.treatedAsSkillNameFn(skillValue);
@@ -1166,6 +1175,15 @@ export class DamageCalculator {
       };
     } else {
       calculated = isMatk ? this.calcMagicalSkillDamage(params) : this.calcPhysicalSkillDamage(params);
+
+      if (maxStack > 0) {
+        const noStackParam = { ...params, baseSkillDamage: noStackNaseSkillDamage };
+        const noStackCalculated = isMatk ? this.calcMagicalSkillDamage(noStackParam) : this.calcPhysicalSkillDamage(noStackParam);
+        noStackMinDamage = noStackCalculated.rawMinNoCri;
+        noStackMaxDamage = noStackCalculated.rawMaxNoCri;
+        noStackMaxCriDamage = noStackCalculated.minDamage;
+        noStackMinCriDamage = noStackCalculated.maxDamage;
+      }
     }
 
     let { minDamage, maxDamage } = calculated;
@@ -1239,7 +1257,11 @@ export class DamageCalculator {
     const totalPene = isMatk ? this.getTotalMagicalPene() : basicDmg.totalPene;
     const isMelee = _isMelee != null && typeof _isMelee === 'function' ? _isMelee(this.weaponData.data.typeName) : !!_isMelee;
 
+    const label = calculated.canCri ? 'SkillCri' : 'Skill';
+
     const skillDmg: SkillDamageSummaryModel = {
+      skillDamageLabel: `${label}` + (maxStack > 0 ? ` ${maxStack} stacks` : ''),
+      skillNoStackDamageLabel: `${label} 0 stack`,
       baseSkillDamage,
       dmgType: isMatk ? SkillType.MAGICAL : isMelee ? SkillType.MELEE : SkillType.RANGE,
       skillSizePenalty: round(calculated.sizePenalty * 100, 0),
@@ -1261,6 +1283,11 @@ export class DamageCalculator {
       skillPart2Label,
       skillMinDamage2,
       skillMaxDamage2,
+      maxStack,
+      noStackMaxCriDamage,
+      noStackMaxDamage,
+      noStackMinCriDamage,
+      noStackMinDamage,
       isAutoSpell,
       isUsedCurrentHP: typeof currentHpFn === 'function',
       isUsedCurrentSP: typeof currentSpFn === 'function',

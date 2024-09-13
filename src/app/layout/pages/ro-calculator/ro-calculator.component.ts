@@ -22,11 +22,11 @@ import {
   createMainModel,
   createMainStatOptionList,
   createNumberDropdownList,
+  getGradeList,
   isNumber,
   prettyItemDesc,
   sortObj,
   toDropdownList,
-  toGradeList,
   toRawOptionTxtList,
   toUpsertPresetModel,
   verifySyncPreset,
@@ -2130,7 +2130,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
   private setEnchantList(mainItemId: number, positionEnum?: ItemTypeEnum | string) {
     // console.log({ itemId });
-    const { itemTypeId, location, aegisName, name, grades } = this.items[mainItemId] ?? ({} as ItemModel);
+    const { itemTypeId, location, aegisName, name, canGrade } = this.items[mainItemId] ?? ({} as ItemModel);
     let { itemSubTypeId } = this.items[mainItemId] ?? ({} as ItemModel);
     const enchants = getEnchants(aegisName) ?? getEnchants(name);
 
@@ -2166,13 +2166,13 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         this.leftWeaponEnchant1List = (e2 ?? []).map(mapToEnchant).map(mapToOption);
         this.leftWeaponEnchant2List = (e3 ?? []).map(mapToEnchant).map(mapToOption);
         this.leftWeaponEnchant3List = (e4 ?? []).map(mapToEnchant).map(mapToOption);
-        this.leftWeaponGradeList = toGradeList(grades ?? []);
+        this.leftWeaponGradeList = canGrade ? getGradeList() : [];
         clearModel('leftWeapon');
       } else {
         this.weaponEnchant1List = (e2 ?? []).map(mapToEnchant).map(mapToOption);
         this.weaponEnchant2List = (e3 ?? []).map(mapToEnchant).map(mapToOption);
         this.weaponEnchant3List = (e4 ?? []).map(mapToEnchant).map(mapToOption);
-        this.weaponGradeList = toGradeList(grades ?? []);
+        this.weaponGradeList = canGrade ? getGradeList() : [];
         clearModel('weapon');
       }
 
@@ -2193,19 +2193,19 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
           this.headMiddleEnchant1List = (e2 ?? []).map(mapToEnchant).map(mapToOption);
           this.headMiddleEnchant2List = (e3 ?? []).map(mapToEnchant).map(mapToOption);
           this.headMiddleEnchant3List = (e4 ?? []).map(mapToEnchant).map(mapToOption);
-          this.headUpperGradeList = toGradeList(grades ?? []);
+          this.headUpperGradeList = canGrade ? getGradeList() : [];
           clearModel('headMiddle');
         } else if (location === HeadGearLocation.Lower) {
           this.headLowerEnchant1List = (e2 ?? []).map(mapToEnchant).map(mapToOption);
           this.headLowerEnchant2List = (e3 ?? []).map(mapToEnchant).map(mapToOption);
           this.headLowerEnchant3List = (e4 ?? []).map(mapToEnchant).map(mapToOption);
-          this.headLowerGradeList = toGradeList(grades ?? []);
+          this.headLowerGradeList = canGrade ? getGradeList() : [];
           clearModel('headLower');
         } else {
           this.headUpperEnchant1List = (e2 ?? []).map(mapToEnchant).map(mapToOption);
           this.headUpperEnchant2List = (e3 ?? []).map(mapToEnchant).map(mapToOption);
           this.headUpperEnchant3List = (e4 ?? []).map(mapToEnchant).map(mapToOption);
-          this.headUpperGradeList = toGradeList(grades ?? []);
+          this.headUpperGradeList = canGrade ? getGradeList() : [];
           clearModel('headUpper');
         }
         break;
@@ -2213,42 +2213,42 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         this.shieldEnchant1List = (e2 ?? []).map(mapToEnchant).map(mapToOption);
         this.shieldEnchant2List = (e3 ?? []).map(mapToEnchant).map(mapToOption);
         this.shieldEnchant3List = (e4 ?? []).map(mapToEnchant).map(mapToOption);
-        this.shieldGradeList = toGradeList(grades ?? []);
+        this.shieldGradeList = canGrade ? getGradeList() : [];
         clearModel('shield');
         break;
       case ItemSubTypeId.Armor:
         this.armorEnchant1List = (e2 ?? []).map(mapToEnchant).map(mapToOption);
         this.armorEnchant2List = (e3 ?? []).map(mapToEnchant).map(mapToOption);
         this.armorEnchant3List = (e4 ?? []).map(mapToEnchant).map(mapToOption);
-        this.armorGradeList = toGradeList(grades ?? []);
+        this.armorGradeList = canGrade ? getGradeList() : [];
         clearModel('armor');
         break;
       case ItemSubTypeId.Garment:
         this.garmentEnchant1List = (e2 ?? []).map(mapToEnchant).map(mapToOption);
         this.garmentEnchant2List = (e3 ?? []).map(mapToEnchant).map(mapToOption);
         this.garmentEnchant3List = (e4 ?? []).map(mapToEnchant).map(mapToOption);
-        this.garmentGradeList = toGradeList(grades ?? []);
+        this.garmentGradeList = canGrade ? getGradeList() : [];
         clearModel('garment');
         break;
       case ItemSubTypeId.Boot:
         this.bootEnchant1List = (e2 ?? []).map(mapToEnchant).map(mapToOption);
         this.bootEnchant2List = (e3 ?? []).map(mapToEnchant).map(mapToOption);
         this.bootEnchant3List = (e4 ?? []).map(mapToEnchant).map(mapToOption);
-        this.bootGradeList = toGradeList(grades ?? []);
+        this.bootGradeList = canGrade ? getGradeList() : [];
         clearModel('boot');
         break;
       case ItemSubTypeId.Acc_L:
         this.accLeftEnchant1List = (e2 ?? []).map(mapToEnchant).map(mapToOption);
         this.accLeftEnchant2List = (e3 ?? []).map(mapToEnchant).map(mapToOption);
         this.accLeftEnchant3List = (e4 ?? []).map(mapToEnchant).map(mapToOption);
-        this.accLeftGradeList = toGradeList(grades ?? []);
+        this.accLeftGradeList = canGrade ? getGradeList() : [];
         clearModel('accLeft');
         break;
       case ItemSubTypeId.Acc_R:
         this.accRightEnchant1List = (e2 ?? []).map(mapToEnchant).map(mapToOption);
         this.accRightEnchant2List = (e3 ?? []).map(mapToEnchant).map(mapToOption);
         this.accRightEnchant3List = (e4 ?? []).map(mapToEnchant).map(mapToOption);
-        this.accRightGradeList = toGradeList(grades ?? []);
+        this.accRightGradeList = canGrade ? getGradeList() : [];
         clearModel('accRight');
         break;
     }

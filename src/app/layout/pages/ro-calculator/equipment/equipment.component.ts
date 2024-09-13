@@ -4,7 +4,7 @@ import { ItemModel } from '../../../../models/item.model';
 import { getEnchants } from '../../../../constants/enchant-table';
 import { ItemTypeEnum, OptionableItemTypeSet } from '../../../../constants/item-type.enum';
 import { ExtraOptionTable } from '../../../../constants/extra-option-table';
-import { toGradeList } from '../../../../utils';
+import { getGradeList } from '../../../../utils';
 
 @Component({
   selector: 'app-equipment',
@@ -101,7 +101,7 @@ export class EquipmentComponent implements AfterViewInit {
   }
 
   private setEnchantList(mainItemId: number) {
-    const { aegisName, name, grades } = this.items[mainItemId] ?? ({} as ItemModel);
+    const { aegisName, name, canGrade } = this.items[mainItemId] ?? ({} as ItemModel);
     const enchants = getEnchants(aegisName) ?? getEnchants(name);
 
     const [_, e2, e3, e4] = Array.isArray(enchants) ? enchants : [];
@@ -121,7 +121,7 @@ export class EquipmentComponent implements AfterViewInit {
     this.enchant3List = (e3 ?? []).map((a: any) => this.mapEnchant.get(a)).map((a: any) => ({ label: a.name, value: a.id }));
     this.enchant4List = (e4 ?? []).map((a: any) => this.mapEnchant.get(a)).map((a: any) => ({ label: a.name, value: a.id }));
 
-    this.gradeList = toGradeList(grades || []);
+    this.gradeList = canGrade ? getGradeList() : [];
 
     clearModel();
   }

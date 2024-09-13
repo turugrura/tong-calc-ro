@@ -131,32 +131,33 @@ export class Windhawk extends Ranger {
   protected atkSkillList4: AtkSkillModel[] = [
     {
       name: 'Crescive Bolt',
-      label: 'Crescive Bolt Lv10',
+      label: '[V2] Crescive Bolt Lv10',
       value: 'Crescive Bolt==10',
       acd: 0.5,
       fct: 1,
       vct: 1,
       cd: 0.15,
-      totalStack: 3,
+      maxStack: 3,
       canCri: true,
       criDmgPercentage: 1,
       baseCriPercentage: 1,
       formula: (input: AtkSkillFormulaInput): number => {
-        const { model, skillLevel, status } = input;
+        const { model, skillLevel, status, stack } = input;
         const baseLevel = model.level;
-        const totalStack = 0;
+        const totalStack = stack;
 
         return (skillLevel * 300 + status.totalCon * 10) * (baseLevel / 100) * (1 + 0.1 * totalStack);
       },
     },
     {
       name: 'Gale Storm',
-      label: 'Gale Storm Lv10',
+      label: '[V2] Gale Storm Lv10',
       value: 'Gale Storm==10',
       acd: 0.15,
       fct: 0.5,
       vct: 1,
       cd: 2,
+      hit: 5,
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
         const baseLevel = model.level;
