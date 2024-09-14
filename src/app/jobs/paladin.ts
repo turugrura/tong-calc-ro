@@ -1,19 +1,90 @@
 import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
-import { Swordman } from './swordman';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
+import { Swordman } from './Swordman';
 import { DemonBane, FaithFn, Heal, SpearMastery } from '../constants/share-passive-skills';
 import { CavalierMastery } from '../constants/share-passive-skills/cavalier-mastery';
 import { ElementType } from '../constants/element-type.const';
 
-const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {};
+const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
+  1: [0, 0, 1, 0, 0, 0],
+  2: [1, 0, 1, 0, 0, 0],
+  3: [1, 1, 1, 0, 0, 0],
+  4: [1, 1, 1, 0, 0, 0],
+  5: [1, 1, 1, 0, 0, 0],
+  6: [1, 1, 1, 0, 1, 0],
+  7: [1, 1, 1, 1, 1, 0],
+  8: [1, 2, 1, 1, 1, 0],
+  9: [1, 2, 2, 1, 1, 0],
+  10: [2, 2, 2, 1, 1, 0],
+  11: [2, 2, 2, 1, 1, 0],
+  12: [2, 2, 2, 1, 2, 0],
+  13: [2, 2, 2, 1, 2, 0],
+  14: [2, 2, 2, 2, 2, 0],
+  15: [2, 2, 3, 2, 2, 0],
+  16: [2, 3, 3, 2, 2, 0],
+  17: [2, 3, 3, 2, 3, 0],
+  18: [3, 3, 3, 2, 3, 0],
+  19: [3, 3, 3, 2, 3, 0],
+  20: [3, 3, 3, 2, 3, 0],
+  21: [3, 3, 4, 2, 3, 0],
+  22: [3, 3, 4, 2, 3, 0],
+  23: [3, 3, 4, 2, 4, 0],
+  24: [3, 4, 4, 2, 4, 0],
+  25: [3, 4, 4, 2, 4, 0],
+  26: [4, 4, 4, 2, 4, 0],
+  27: [4, 4, 4, 2, 4, 0],
+  28: [4, 4, 4, 2, 4, 0],
+  29: [4, 4, 4, 3, 4, 0],
+  30: [4, 4, 5, 3, 4, 0],
+  31: [4, 4, 5, 3, 4, 0],
+  32: [4, 4, 5, 3, 4, 0],
+  33: [5, 4, 5, 3, 4, 0],
+  34: [5, 4, 5, 3, 4, 0],
+  35: [5, 4, 5, 3, 4, 0],
+  36: [5, 4, 5, 3, 5, 0],
+  37: [5, 5, 5, 3, 5, 0],
+  38: [5, 5, 5, 3, 5, 0],
+  39: [5, 5, 5, 3, 5, 1],
+  40: [6, 5, 5, 3, 5, 1],
+  41: [6, 5, 5, 3, 5, 1],
+  42: [6, 5, 6, 3, 5, 1],
+  43: [6, 5, 6, 4, 5, 1],
+  44: [6, 5, 6, 4, 5, 1],
+  45: [6, 5, 6, 4, 6, 1],
+  46: [6, 5, 6, 4, 6, 1],
+  47: [6, 5, 6, 4, 6, 1],
+  48: [7, 5, 6, 4, 6, 1],
+  49: [7, 5, 7, 4, 6, 1],
+  50: [7, 5, 7, 4, 6, 1],
+  51: [7, 5, 7, 4, 6, 1],
+  52: [7, 6, 7, 4, 6, 1],
+  53: [7, 6, 8, 4, 6, 1],
+  54: [7, 6, 8, 5, 6, 1],
+  55: [8, 6, 8, 5, 6, 1],
+  56: [8, 6, 8, 5, 6, 1],
+  57: [8, 6, 8, 5, 7, 1],
+  58: [8, 6, 8, 5, 7, 1],
+  59: [8, 6, 8, 5, 7, 2],
+  60: [8, 7, 8, 5, 7, 2],
+  61: [8, 7, 8, 6, 7, 2],
+  62: [8, 7, 8, 6, 7, 2],
+  63: [8, 7, 9, 6, 7, 2],
+  64: [9, 7, 9, 6, 7, 2],
+  65: [9, 7, 9, 7, 7, 2],
+  66: [9, 7, 9, 7, 7, 2],
+  67: [9, 7, 9, 7, 7, 3],
+  68: [9, 7, 9, 7, 8, 3],
+  69: [9, 7, 10, 7, 8, 3],
+  70: [9, 8, 10, 7, 8, 3],
+};
 
-export class Paladin extends CharacterBase {
-  protected readonly CLASS_NAME = ClassName.Paladin;
-  protected readonly JobBonusTable = jobBonusTable;
+export class Paladin extends Swordman {
+  protected override CLASS_NAME = ClassName.Paladin;
+  protected override JobBonusTable = jobBonusTable;
+  protected override initialStatusPoint = 100;
 
-  protected readonly initialStatusPoint = 40;
-  protected readonly classNames = [ClassName.HiClass, ClassName.Paladin];
-  protected readonly _atkSkillList: AtkSkillModel[] = [
+  protected readonly classNamesHi = [ClassName.Crusader, ClassName.HiClass, ClassName.Paladin];
+  protected readonly atkSkillListHi: AtkSkillModel[] = [
     {
       label: 'Gloria Domini Lv5',
       name: 'Gloria Domini',
@@ -49,7 +120,7 @@ export class Paladin extends CharacterBase {
       },
     },
   ];
-  protected readonly _activeSkillList: ActiveSkillModel[] = [
+  protected readonly activeSkillListHi: ActiveSkillModel[] = [
     {
       label: 'Spear Quick 10',
       name: 'Spear Quicken',
@@ -61,7 +132,7 @@ export class Paladin extends CharacterBase {
       ],
     },
   ];
-  protected readonly _passiveSkillList: PassiveSkillModel[] = [
+  protected readonly passiveSkillListHi: PassiveSkillModel[] = [
     DemonBane,
     FaithFn(),
     Heal,
@@ -126,6 +197,11 @@ export class Paladin extends CharacterBase {
   constructor() {
     super();
 
-    this.inheritBaseClass(new Swordman());
+    this.inheritSkills({
+      activeSkillList: this.activeSkillListHi,
+      atkSkillList: this.atkSkillListHi,
+      passiveSkillList: this.passiveSkillListHi,
+      classNames: this.classNamesHi,
+    });
   }
 }

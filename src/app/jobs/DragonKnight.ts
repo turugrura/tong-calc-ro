@@ -1,6 +1,6 @@
 import { ClassName } from './_class-name';
 import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
-import { RuneKnight } from './rune-knight';
+import { RuneKnight } from './RuneKnight';
 import { JOB_4_MAX_JOB_LEVEL, JOB_4_MIN_MAX_LEVEL } from '../app-config';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
@@ -59,6 +59,21 @@ const jobBonusTable: Record<number, [number, number, number, number, number, num
   53: [6, 8, 7, 8, 8, 6],
   54: [6, 8, 7, 8, 8, 6],
   55: [6, 8, 7, 8, 8, 6],
+  56: [6, 8, 7, 8, 8, 6],
+  57: [6, 8, 7, 8, 8, 6],
+  58: [6, 8, 7, 8, 8, 6],
+  59: [6, 8, 7, 8, 8, 6],
+  60: [6, 8, 7, 8, 8, 6],
+  61: [6, 8, 7, 8, 8, 6],
+  62: [6, 8, 7, 8, 8, 6],
+  63: [6, 8, 7, 8, 8, 6],
+  64: [6, 8, 7, 8, 8, 6],
+  65: [6, 8, 7, 8, 8, 6],
+  66: [6, 8, 7, 8, 8, 6],
+  67: [6, 8, 7, 8, 8, 6],
+  68: [6, 8, 7, 8, 8, 6],
+  69: [6, 8, 7, 8, 8, 6],
+  70: [6, 8, 7, 8, 8, 6],
 };
 
 const TraitBonusTable: Record<number, [number, number, number, number, number, number]> = {
@@ -117,6 +132,21 @@ const TraitBonusTable: Record<number, [number, number, number, number, number, n
   53: [9, 5, 3, 5, 6, 7],
   54: [10, 5, 3, 5, 6, 8],
   55: [10, 6, 3, 5, 6, 8],
+  56: [10, 7, 3, 5, 6, 8],
+  57: [10, 7, 3, 5, 6, 8],
+  58: [10, 7, 3, 5, 7, 8],
+  59: [10, 7, 3, 5, 7, 8],
+  60: [10, 7, 3, 5, 7, 8],
+  61: [10, 7, 3, 5, 7, 8],
+  62: [10, 7, 3, 5, 7, 8],
+  63: [10, 7, 3, 5, 7, 8],
+  64: [10, 7, 3, 5, 7, 8],
+  65: [10, 7, 3, 5, 7, 8],
+  66: [10, 7, 3, 5, 7, 8],
+  67: [10, 7, 3, 5, 7, 8],
+  68: [10, 7, 3, 5, 7, 8],
+  69: [10, 7, 3, 5, 7, 8],
+  70: [10, 7, 3, 5, 7, 8],
 };
 
 export class DragonKnight extends RuneKnight {
@@ -127,9 +157,9 @@ export class DragonKnight extends RuneKnight {
   protected override minMaxLevel = JOB_4_MIN_MAX_LEVEL;
   protected override maxJob = JOB_4_MAX_JOB_LEVEL;
 
-  protected readonly classNames4th = [ClassName.Only_4th, ClassName.DragonKnight];
+  private readonly classNames4th = [ClassName.Only_4th, ClassName.DragonKnight];
 
-  protected readonly atkSkillList4th: AtkSkillModel[] = [
+  private readonly atkSkillList4th: AtkSkillModel[] = [
     {
       name: 'Servant Weapon',
       label: '[V2] Servant Weapon Lv5',
@@ -217,7 +247,7 @@ export class DragonKnight extends RuneKnight {
       },
     },
   ];
-  protected readonly activeSkillList4th: ActiveSkillModel[] = [
+  private readonly activeSkillList4th: ActiveSkillModel[] = [
     {
       label: 'Dragonic Aura 10',
       name: 'Dragonic Aura',
@@ -228,7 +258,7 @@ export class DragonKnight extends RuneKnight {
       ],
     },
   ];
-  protected readonly passiveSkillList4th: PassiveSkillModel[] = [
+  private readonly passiveSkillList4th: PassiveSkillModel[] = [
     {
       label: 'Dragonic Aura',
       name: 'Dragonic Aura',

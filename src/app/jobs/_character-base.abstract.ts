@@ -395,15 +395,6 @@ export abstract class CharacterBase {
     return AspdTable[this.className]?.[`left-${weaponSubType}`] || 0;
   }
 
-  protected inheritBaseClass(baseClass: CharacterBase) {
-    const { _atkSkillList, _passiveSkillList, _activeSkillList, classNames } = baseClass;
-
-    this._atkSkillList = [..._atkSkillList, ...this._atkSkillList];
-    this._activeSkillList = [..._activeSkillList, ...this._activeSkillList];
-    this._passiveSkillList = [..._passiveSkillList, ...this._passiveSkillList];
-    this.classNames = [...classNames, ...this.classNames];
-  }
-
   protected getDynimicBonusFromSkill(prefix: string): Record<string, number> {
     const totalBonus = {};
     const addBonus = (key: string, val: number) => {

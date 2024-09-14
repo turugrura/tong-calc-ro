@@ -1,18 +1,89 @@
 import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
-import { Merchant } from './merchant';
+import { ActiveSkillModel, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
+import { Merchant } from './Merchant';
 import { HiltBindingFn } from '../constants/share-passive-skills';
 
-const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {};
+const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
+  1: [0, 0, 0, 0, 1, 0],
+  2: [1, 0, 0, 0, 1, 0],
+  3: [2, 0, 0, 0, 1, 0],
+  4: [2, 0, 0, 1, 1, 0],
+  5: [2, 0, 0, 1, 1, 0],
+  6: [2, 0, 0, 1, 2, 0],
+  7: [2, 1, 0, 1, 2, 0],
+  8: [2, 1, 0, 1, 2, 1],
+  9: [2, 1, 1, 1, 2, 1],
+  10: [2, 1, 1, 1, 2, 1],
+  11: [2, 1, 1, 1, 2, 1],
+  12: [2, 1, 1, 1, 3, 1],
+  13: [2, 1, 2, 1, 3, 1],
+  14: [2, 1, 2, 1, 3, 1],
+  15: [2, 1, 2, 2, 3, 1],
+  16: [2, 1, 2, 2, 3, 2],
+  17: [3, 1, 2, 2, 3, 2],
+  18: [3, 1, 2, 2, 3, 2],
+  19: [3, 2, 2, 2, 3, 2],
+  20: [3, 3, 2, 2, 3, 2],
+  21: [3, 3, 2, 2, 3, 2],
+  22: [3, 3, 2, 3, 3, 2],
+  23: [3, 3, 2, 3, 4, 2],
+  24: [3, 3, 2, 3, 4, 2],
+  25: [3, 3, 2, 3, 4, 2],
+  26: [4, 3, 2, 3, 4, 2],
+  27: [4, 3, 2, 3, 4, 2],
+  28: [4, 3, 2, 3, 4, 3],
+  29: [4, 3, 3, 3, 4, 3],
+  30: [4, 3, 3, 3, 4, 3],
+  31: [4, 4, 3, 3, 4, 3],
+  32: [4, 4, 3, 3, 5, 3],
+  33: [5, 4, 3, 3, 5, 3],
+  34: [5, 4, 3, 4, 5, 3],
+  35: [5, 4, 3, 4, 5, 3],
+  36: [5, 5, 3, 4, 5, 3],
+  37: [5, 5, 3, 4, 5, 3],
+  38: [5, 5, 3, 4, 6, 3],
+  39: [5, 5, 3, 4, 6, 4],
+  40: [5, 5, 3, 4, 6, 4],
+  41: [5, 5, 3, 4, 7, 4],
+  42: [5, 5, 3, 4, 7, 4],
+  43: [5, 5, 3, 4, 7, 4],
+  44: [5, 5, 3, 4, 7, 5],
+  45: [5, 5, 3, 4, 7, 6],
+  46: [5, 5, 3, 4, 7, 6],
+  47: [5, 5, 3, 4, 8, 6],
+  48: [5, 5, 4, 4, 8, 6],
+  49: [5, 5, 4, 4, 8, 6],
+  50: [5, 5, 4, 5, 8, 6],
+  51: [5, 5, 4, 5, 8, 6],
+  52: [6, 5, 4, 5, 8, 6],
+  53: [6, 5, 4, 5, 8, 6],
+  54: [6, 5, 4, 5, 8, 6],
+  55: [6, 5, 4, 5, 9, 6],
+  56: [6, 5, 4, 5, 10, 6],
+  57: [6, 5, 4, 5, 10, 6],
+  58: [6, 6, 4, 5, 10, 6],
+  59: [6, 6, 4, 5, 10, 6],
+  60: [6, 6, 5, 5, 10, 6],
+  61: [6, 6, 5, 6, 10, 6],
+  62: [6, 6, 5, 6, 11, 6],
+  63: [6, 6, 5, 6, 11, 6],
+  64: [6, 7, 5, 6, 11, 6],
+  65: [6, 7, 6, 6, 11, 6],
+  66: [6, 7, 6, 6, 11, 7],
+  67: [6, 7, 6, 6, 11, 8],
+  68: [6, 7, 6, 6, 11, 8],
+  69: [6, 7, 6, 6, 11, 8],
+  70: [6, 7, 6, 6, 12, 8],
+};
 
-export class Whitesmith extends CharacterBase {
-  protected readonly CLASS_NAME = ClassName.Whitesmith;
-  protected readonly JobBonusTable = jobBonusTable;
+export class Whitesmith extends Merchant {
+  protected override CLASS_NAME = ClassName.Whitesmith;
+  protected override JobBonusTable = jobBonusTable;
+  protected override initialStatusPoint = 100;
 
-  protected readonly initialStatusPoint = 40;
-  protected readonly classNames = [ClassName.Blacksmith, ClassName.Whitesmith];
-  protected readonly _atkSkillList: AtkSkillModel[] = [];
-  protected readonly _activeSkillList: ActiveSkillModel[] = [
+  protected readonly classNamesHi = [ClassName.Blacksmith, ClassName.HiClass, ClassName.Whitesmith];
+  protected readonly atkSkillListHi: AtkSkillModel[] = [];
+  protected readonly activeSkillListHi: ActiveSkillModel[] = [
     {
       label: 'Adrenaline Lv5',
       name: 'Adrenaline Rush',
@@ -68,7 +139,7 @@ export class Whitesmith extends CharacterBase {
       ],
     },
   ];
-  protected readonly _passiveSkillList: PassiveSkillModel[] = [
+  protected readonly passiveSkillListHi: PassiveSkillModel[] = [
     HiltBindingFn(),
     {
       label: 'Skin Tempering',
@@ -108,6 +179,11 @@ export class Whitesmith extends CharacterBase {
   constructor() {
     super();
 
-    this.inheritBaseClass(new Merchant());
+    this.inheritSkills({
+      activeSkillList: this.activeSkillListHi,
+      atkSkillList: this.atkSkillListHi,
+      passiveSkillList: this.passiveSkillListHi,
+      classNames: this.classNamesHi,
+    });
   }
 }

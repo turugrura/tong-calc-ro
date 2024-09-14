@@ -1,6 +1,6 @@
 import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
-import { Paladin } from './paladin';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
+import { Paladin } from './Paladin';
 import { ElementType } from '../constants/element-type.const';
 import { InfoForClass } from '../models/info-for-class.model';
 import { ShieldSpellFn } from '../constants/share-active-skills';
@@ -78,13 +78,12 @@ const jobBonusTable: Record<number, [number, number, number, number, number, num
   70: [9, 3, 9, 10, 9, 3],
 };
 
-export class RoyalGuard extends CharacterBase {
-  protected readonly CLASS_NAME = ClassName.RoyalGuard;
-  protected readonly JobBonusTable = jobBonusTable;
+export class RoyalGuard extends Paladin {
+  protected override CLASS_NAME = ClassName.RoyalGuard;
+  protected override JobBonusTable = jobBonusTable;
 
-  protected readonly initialStatusPoint = 100;
-  protected readonly classNames = [ClassName.Only_3rd, ClassName.RoyalGuard];
-  protected readonly _atkSkillList: AtkSkillModel[] = [
+  protected readonly classNames3rd = [ClassName.Only_3rd, ClassName.RoyalGuard];
+  protected readonly atkSkillList3rd: AtkSkillModel[] = [
     {
       name: 'Banishing Point',
       label: 'Banishing Point Lv10',
@@ -243,7 +242,7 @@ export class RoyalGuard extends CharacterBase {
     },
   ];
 
-  protected readonly _activeSkillList: ActiveSkillModel[] = [
+  protected readonly activeSkillList3rd: ActiveSkillModel[] = [
     ShieldSpellFn(),
     {
       label: 'Earth Drive',
@@ -292,7 +291,7 @@ export class RoyalGuard extends CharacterBase {
     },
   ];
 
-  protected readonly _passiveSkillList: PassiveSkillModel[] = [
+  protected readonly passiveSkillList3rd: PassiveSkillModel[] = [
     {
       label: 'Shield Press',
       name: 'Shield Press',
@@ -368,7 +367,12 @@ export class RoyalGuard extends CharacterBase {
   constructor() {
     super();
 
-    this.inheritBaseClass(new Paladin());
+    this.inheritSkills({
+      activeSkillList: this.activeSkillList3rd,
+      atkSkillList: this.atkSkillList3rd,
+      passiveSkillList: this.passiveSkillList3rd,
+      classNames: this.classNames3rd,
+    });
   }
 
   override getMasteryAtk(info: InfoForClass): number {

@@ -1,8 +1,7 @@
 import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
 import { WeaponTypeName } from '../constants/weapon-type-mapper';
 import { InfoForClass } from '../models/info-for-class.model';
-import { Archer } from './archer';
 import {
   CirclingNatureFn,
   DanceWithWug,
@@ -16,6 +15,7 @@ import {
 } from '../constants/share-passive-skills';
 import { ElementType } from '../constants/element-type.const';
 import { BragisPoemFn, SwingDanceFn } from '../constants/share-active-skills';
+import { Dancer } from './Dancer';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 1, 0, 0],
@@ -90,14 +90,13 @@ const jobBonusTable: Record<number, [number, number, number, number, number, num
   70: [7, 7, 7, 9, 10, 3],
 };
 
-export class Minstrel extends CharacterBase {
-  protected readonly CLASS_NAME = ClassName.Minstrel;
-  protected readonly JobBonusTable = jobBonusTable;
+export class Minstrel extends Dancer {
+  protected override CLASS_NAME = ClassName.Minstrel;
+  protected override JobBonusTable = jobBonusTable;
 
-  protected readonly initialStatusPoint = 100;
-  protected readonly classNames = [ClassName.HiClass, ClassName.Only_3rd, ClassName.Bard, ClassName.Clown, ClassName.Minstrel];
+  private readonly classNames3rd = [ClassName.Only_3rd, ClassName.Minstrel];
 
-  protected readonly _atkSkillList: AtkSkillModel[] = [
+  private readonly atkSkillList3rd: AtkSkillModel[] = [
     {
       name: 'Arrow Vulcan',
       label: 'Arrow Vulcan Lv10',
@@ -193,7 +192,7 @@ export class Minstrel extends CharacterBase {
     },
   ];
 
-  protected readonly _activeSkillList: ActiveSkillModel[] = [
+  private readonly activeSkillList3rd: ActiveSkillModel[] = [
     {
       label: 'Rush To Windmill',
       name: 'Rush To Windmill',
@@ -212,7 +211,7 @@ export class Minstrel extends CharacterBase {
     SwingDanceFn(),
   ];
 
-  protected readonly _passiveSkillList: PassiveSkillModel[] = [
+  private readonly passiveSkillList3rd: PassiveSkillModel[] = [
     SevereRainstormFn(),
     {
       label: 'Musical Lesson',
@@ -259,7 +258,12 @@ export class Minstrel extends CharacterBase {
   constructor() {
     super();
 
-    this.inheritBaseClass(new Archer());
+    this.inheritSkills({
+      activeSkillList: this.activeSkillList3rd,
+      atkSkillList: this.atkSkillList3rd,
+      passiveSkillList: this.passiveSkillList3rd,
+      classNames: this.classNames3rd,
+    });
   }
 
   override getUiMasteryAtk(info: InfoForClass): number {

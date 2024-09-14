@@ -1,7 +1,7 @@
 import { ElementType } from '../constants/element-type.const';
 import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
-import { SoulLinker } from './soul-linker';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
+import { SoulLinker } from './SoulLinker';
 import { InfoForClass } from '../models/info-for-class.model';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
@@ -77,13 +77,13 @@ const jobBonusTable: Record<number, [number, number, number, number, number, num
   70: [3, 7, 7, 11, 13, 2],
 };
 
-export class SoulReaper extends CharacterBase {
-  protected readonly CLASS_NAME = ClassName.SoulReaper;
-  protected readonly JobBonusTable = jobBonusTable;
+export class SoulReaper extends SoulLinker {
+  protected override CLASS_NAME = ClassName.SoulReaper;
+  protected override JobBonusTable = jobBonusTable;
 
-  protected initialStatusPoint = 48;
-  protected classNames = [ClassName.SoulReaper, ClassName.HiClass];
-  protected _atkSkillList: AtkSkillModel[] = [
+  protected override initialStatusPoint = 48;
+  protected readonly classNames3rd = [ClassName.SoulReaper];
+  protected readonly atkSkillList3rd: AtkSkillModel[] = [
     {
       label: 'Espa Lv10',
       name: 'Espa',
@@ -134,7 +134,7 @@ export class SoulReaper extends CharacterBase {
       },
     },
   ];
-  protected _activeSkillList: ActiveSkillModel[] = [
+  protected readonly activeSkillList3rd: ActiveSkillModel[] = [
     // {
     //   inputType: 'dropdown',
     //   label: 'Fairy Soul',
@@ -161,7 +161,7 @@ export class SoulReaper extends CharacterBase {
       ],
     },
   ];
-  protected _passiveSkillList: PassiveSkillModel[] = [
+  protected readonly passiveSkillList3rd: PassiveSkillModel[] = [
     {
       label: 'Espa',
       name: 'Espa',
@@ -216,7 +216,12 @@ export class SoulReaper extends CharacterBase {
   constructor() {
     super();
 
-    this.inheritBaseClass(new SoulLinker());
+    this.inheritSkills({
+      activeSkillList: this.activeSkillList3rd,
+      atkSkillList: this.atkSkillList3rd,
+      passiveSkillList: this.passiveSkillList3rd,
+      classNames: this.classNames3rd,
+    });
   }
 
   override getMasteryMatk(info: InfoForClass): number {

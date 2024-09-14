@@ -1,6 +1,6 @@
 import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
-import { Ninja } from './ninja';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
+import { Ninja } from './Ninja';
 import { ShadowWarrior } from '../constants/share-active-skills/shadow-warrior';
 import { ElementType } from '../constants/element-type.const';
 import { InfoForClass } from '../models/info-for-class.model';
@@ -81,14 +81,14 @@ const jobBonusTable: Record<number, [number, number, number, number, number, num
   70: [7, 10, 6, 6, 8, 6],
 };
 
-export class Oboro extends CharacterBase {
-  protected readonly CLASS_NAME = ClassName.Oboro;
-  protected readonly JobBonusTable = jobBonusTable;
+export class Oboro extends Ninja {
+  protected override CLASS_NAME = ClassName.Oboro;
+  protected override JobBonusTable = jobBonusTable;
+  protected override initialStatusPoint = 48;
 
-  protected readonly initialStatusPoint = 48;
-  protected readonly classNames = [ClassName.Oboro];
+  private readonly classNames2nd = [ClassName.Oboro];
 
-  protected readonly _atkSkillList: AtkSkillModel[] = [
+  private readonly atkSkillList2nd: AtkSkillModel[] = [
     {
       label: 'Flaming Petals Lv10',
       name: 'Flaming Petals',
@@ -221,7 +221,7 @@ export class Oboro extends CharacterBase {
     },
   ];
 
-  protected readonly _activeSkillList: ActiveSkillModel[] = [
+  private readonly activeSkillList2nd: ActiveSkillModel[] = [
     ShadowWarrior,
     S16thNight,
     DistortedCrescent,
@@ -236,7 +236,7 @@ export class Oboro extends CharacterBase {
     },
   ];
 
-  protected readonly _passiveSkillList: PassiveSkillModel[] = [
+  private readonly passiveSkillList2nd: PassiveSkillModel[] = [
     {
       label: 'Flaming Petals',
       name: 'Flaming Petals',
@@ -339,7 +339,12 @@ export class Oboro extends CharacterBase {
   constructor() {
     super();
 
-    this.inheritBaseClass(new Ninja());
+    this.inheritSkills({
+      activeSkillList: this.activeSkillList2nd,
+      atkSkillList: this.atkSkillList2nd,
+      passiveSkillList: this.passiveSkillList2nd,
+      classNames: this.classNames2nd,
+    });
   }
 
   override getMasteryAtk(info: InfoForClass): number {

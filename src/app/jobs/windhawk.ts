@@ -1,6 +1,6 @@
 import { ClassName } from './_class-name';
 import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
-import { Ranger } from './ranger';
+import { Ranger } from './Ranger';
 import { EquipmentSummaryModel } from '../models/equipment-summary.model';
 import { InfoForClass } from '../models/info-for-class.model';
 import { JOB_4_MAX_JOB_LEVEL, JOB_4_MIN_MAX_LEVEL } from '../app-config';
@@ -61,6 +61,21 @@ const jobBonusTable: Record<number, [number, number, number, number, number, num
   53: [2, 12, 8, 9, 8, 4],
   54: [2, 12, 8, 9, 8, 4],
   55: [2, 12, 8, 9, 8, 4],
+  56: [2, 12, 8, 9, 8, 4],
+  57: [2, 12, 8, 9, 8, 4],
+  58: [2, 12, 8, 9, 8, 4],
+  59: [2, 12, 8, 9, 8, 4],
+  60: [2, 12, 8, 9, 8, 4],
+  61: [2, 12, 8, 9, 8, 4],
+  62: [2, 12, 8, 9, 8, 4],
+  63: [2, 12, 8, 9, 8, 4],
+  64: [2, 12, 8, 9, 8, 4],
+  65: [2, 12, 8, 9, 8, 4],
+  66: [2, 12, 8, 9, 8, 4],
+  67: [2, 12, 8, 9, 8, 4],
+  68: [2, 12, 8, 9, 8, 4],
+  69: [2, 12, 8, 9, 8, 4],
+  70: [2, 12, 8, 9, 8, 4],
 };
 
 const traitBonusTable: Record<number, [number, number, number, number, number, number]> = {
@@ -119,6 +134,21 @@ const traitBonusTable: Record<number, [number, number, number, number, number, n
   53: [8, 5, 5, 4, 11, 4],
   54: [8, 5, 5, 4, 11, 4],
   55: [9, 5, 5, 4, 11, 4],
+  56: [9, 5, 5, 4, 11, 4],
+  57: [9, 5, 5, 4, 11, 5],
+  58: [9, 5, 5, 4, 11, 5],
+  59: [10, 5, 5, 4, 11, 5],
+  60: [10, 5, 5, 4, 11, 5],
+  61: [10, 5, 5, 4, 11, 5],
+  62: [10, 5, 5, 4, 11, 5],
+  63: [10, 5, 5, 4, 11, 5],
+  64: [10, 5, 5, 4, 11, 5],
+  65: [10, 5, 5, 4, 11, 5],
+  66: [10, 5, 5, 4, 11, 5],
+  67: [10, 5, 5, 4, 11, 5],
+  68: [10, 5, 5, 4, 11, 5],
+  69: [10, 5, 5, 4, 11, 5],
+  70: [10, 5, 5, 4, 11, 5],
 };
 
 export class Windhawk extends Ranger {
@@ -129,9 +159,8 @@ export class Windhawk extends Ranger {
   protected override minMaxLevel = JOB_4_MIN_MAX_LEVEL;
   protected override maxJob = JOB_4_MAX_JOB_LEVEL;
 
-  // protected readonly initialStatusPoint = 100;
-  protected classNames4th = [ClassName.Only_4th, ClassName.Windhawk];
-  protected atkSkillList4th: AtkSkillModel[] = [
+  private readonly classNames4th = [ClassName.Only_4th, ClassName.Windhawk];
+  private readonly atkSkillList4th: AtkSkillModel[] = [
     {
       name: 'Crescive Bolt',
       label: '[V2] Crescive Bolt Lv10',
@@ -171,7 +200,7 @@ export class Windhawk extends Ranger {
       },
     },
   ];
-  protected activeSkillList4th: ActiveSkillModel[] = [
+  private readonly activeSkillList4th: ActiveSkillModel[] = [
     {
       name: 'Calamity Gale',
       label: 'Calamity Gale',
@@ -182,7 +211,7 @@ export class Windhawk extends Ranger {
       ],
     },
   ];
-  protected passiveSkillList4th: PassiveSkillModel[] = [];
+  private readonly passiveSkillList4th: PassiveSkillModel[] = [];
 
   constructor() {
     super();

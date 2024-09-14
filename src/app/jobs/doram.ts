@@ -76,10 +76,10 @@ const jobBonusTable: Record<number, [number, number, number, number, number, num
 };
 
 export class Doram extends CharacterBase {
-  protected readonly CLASS_NAME = ClassName.Doram;
-  protected readonly JobBonusTable = jobBonusTable;
+  protected override CLASS_NAME = ClassName.Doram;
+  protected override JobBonusTable = jobBonusTable;
+  protected override initialStatusPoint = 48;
 
-  protected readonly initialStatusPoint = 48;
   protected readonly classNames = [ClassName.Doram];
 
   protected readonly _atkSkillList: AtkSkillModel[] = [

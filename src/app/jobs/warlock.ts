@@ -1,7 +1,7 @@
 import { ElementType } from '../constants/element-type.const';
 import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
-import { Wizard } from './wizard';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
+import { HighWizard } from './HighWizard';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 1, 0, 0],
@@ -76,13 +76,12 @@ const jobBonusTable: Record<number, [number, number, number, number, number, num
   70: [1, 7, 8, 15, 8, 4],
 };
 
-export class Warlock extends CharacterBase {
-  protected readonly CLASS_NAME = ClassName.Warlock;
-  protected readonly JobBonusTable = jobBonusTable;
+export class Warlock extends HighWizard {
+  protected override CLASS_NAME = ClassName.Warlock;
+  protected override JobBonusTable = jobBonusTable;
 
-  protected initialStatusPoint = 100;
-  protected classNames = [ClassName.Only_3rd, ClassName.Warlock];
-  protected _atkSkillList: AtkSkillModel[] = [
+  private readonly classNames3rd = [ClassName.Only_3rd, ClassName.Warlock];
+  private readonly atkSkillList3rd: AtkSkillModel[] = [
     {
       name: 'Comet',
       label: 'Comet Lv5',
@@ -294,7 +293,7 @@ export class Warlock extends CharacterBase {
     //   },
     // },
   ];
-  protected _activeSkillList: ActiveSkillModel[] = [
+  private readonly activeSkillList3rd: ActiveSkillModel[] = [
     {
       inputType: 'selectButton',
       label: 'Recogn Spell',
@@ -339,7 +338,7 @@ export class Warlock extends CharacterBase {
       ],
     },
   ];
-  protected _passiveSkillList: PassiveSkillModel[] = [
+  protected readonly passiveSkillList3rd: PassiveSkillModel[] = [
     {
       inputType: 'dropdown',
       label: 'Freezing Spell',
@@ -427,6 +426,11 @@ export class Warlock extends CharacterBase {
   constructor() {
     super();
 
-    this.inheritBaseClass(new Wizard());
+    this.inheritSkills({
+      activeSkillList: this.activeSkillList3rd,
+      atkSkillList: this.atkSkillList3rd,
+      passiveSkillList: this.passiveSkillList3rd,
+      classNames: this.classNames3rd,
+    });
   }
 }

@@ -2,13 +2,84 @@ import { ClassName } from './_class-name';
 import { ActiveSkillModel, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
 import { ElementType } from '../constants/element-type.const';
 
-const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {};
+const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
+  1: [1, 0, 0, 0, 0, 0],
+  2: [2, 0, 0, 0, 0, 0],
+  3: [3, 0, 0, 0, 0, 0],
+  4: [4, 0, 0, 0, 0, 0],
+  5: [5, 0, 0, 0, 0, 0],
+  6: [6, 0, 0, 0, 0, 0],
+  7: [6, 0, 0, 0, 0, 0],
+  8: [6, 0, 0, 0, 0, 0],
+  9: [6, 0, 0, 0, 0, 0],
+  10: [6, 0, 0, 0, 1, 0],
+  11: [6, 0, 0, 0, 2, 0],
+  12: [6, 0, 0, 0, 3, 0],
+  13: [6, 0, 0, 0, 4, 0],
+  14: [6, 0, 0, 0, 5, 0],
+  15: [6, 0, 0, 0, 6, 0],
+  16: [6, 0, 0, 0, 6, 0],
+  17: [6, 0, 0, 0, 6, 0],
+  18: [6, 0, 0, 0, 6, 0],
+  19: [6, 0, 0, 0, 6, 0],
+  20: [6, 1, 0, 0, 6, 0],
+  21: [6, 2, 0, 0, 6, 0],
+  22: [6, 3, 0, 0, 6, 0],
+  23: [6, 4, 0, 0, 6, 0],
+  24: [6, 5, 0, 0, 6, 0],
+  25: [6, 6, 0, 0, 6, 0],
+  26: [6, 6, 0, 0, 6, 0],
+  27: [6, 6, 0, 0, 6, 0],
+  28: [6, 6, 0, 0, 6, 0],
+  29: [6, 6, 0, 0, 6, 0],
+  30: [6, 6, 0, 0, 6, 0],
+  31: [6, 6, 0, 0, 6, 0],
+  32: [6, 6, 0, 0, 6, 0],
+  33: [6, 6, 0, 0, 6, 0],
+  34: [6, 6, 0, 0, 6, 0],
+  35: [6, 6, 0, 0, 6, 0],
+  36: [6, 6, 0, 0, 6, 0],
+  37: [6, 6, 0, 0, 6, 0],
+  38: [6, 6, 0, 0, 6, 0],
+  39: [6, 6, 0, 0, 6, 0],
+  40: [6, 6, 0, 0, 6, 0],
+  41: [6, 6, 0, 0, 6, 0],
+  42: [6, 6, 0, 0, 6, 0],
+  43: [6, 6, 0, 0, 6, 0],
+  44: [6, 6, 0, 0, 6, 0],
+  45: [6, 6, 0, 0, 6, 0],
+  46: [6, 6, 0, 0, 6, 0],
+  47: [6, 6, 0, 0, 6, 0],
+  48: [6, 6, 0, 0, 6, 0],
+  49: [6, 6, 0, 0, 6, 0],
+  50: [6, 6, 0, 0, 6, 0],
+  51: [6, 6, 0, 0, 6, 0],
+  52: [6, 6, 0, 0, 6, 0],
+  53: [6, 6, 0, 0, 6, 0],
+  54: [6, 6, 0, 0, 6, 0],
+  55: [6, 6, 0, 0, 6, 0],
+  56: [6, 6, 0, 0, 6, 0],
+  57: [6, 6, 0, 0, 6, 0],
+  58: [6, 6, 0, 0, 6, 0],
+  59: [6, 6, 0, 0, 6, 0],
+  60: [6, 6, 0, 0, 6, 0],
+  61: [6, 6, 0, 0, 6, 0],
+  62: [6, 6, 0, 0, 6, 0],
+  63: [6, 6, 0, 0, 6, 0],
+  64: [6, 6, 0, 0, 6, 0],
+  65: [6, 6, 0, 0, 6, 0],
+  66: [6, 6, 0, 0, 6, 0],
+  67: [6, 6, 0, 0, 6, 0],
+  68: [6, 6, 0, 0, 6, 0],
+  69: [6, 6, 0, 0, 6, 0],
+  70: [6, 6, 0, 0, 6, 0],
+};
 
 export class Taekwondo extends CharacterBase {
-  protected readonly CLASS_NAME = ClassName.Taekwondo;
-  protected readonly JobBonusTable = jobBonusTable;
+  protected CLASS_NAME = ClassName.Taekwondo;
+  protected JobBonusTable = jobBonusTable;
+  protected initialStatusPoint = 40;
 
-  protected readonly initialStatusPoint = 40;
   protected readonly classNames = [ClassName.Taekwondo];
   protected readonly _atkSkillList: AtkSkillModel[] = [];
   protected readonly _activeSkillList: ActiveSkillModel[] = [

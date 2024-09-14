@@ -2,13 +2,84 @@ import { ClassName } from './_class-name';
 import { ActiveSkillModel, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
 import { ElementCharm } from '../constants/share-active-skills/element-charm';
 
-const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {};
+const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
+  1: [0, 1, 0, 0, 0, 0],
+  2: [0, 2, 0, 0, 0, 0],
+  3: [0, 2, 0, 0, 0, 0],
+  4: [0, 2, 0, 0, 0, 0],
+  5: [0, 2, 0, 0, 0, 0],
+  6: [0, 2, 0, 0, 0, 0],
+  7: [0, 2, 0, 0, 0, 0],
+  8: [0, 2, 0, 0, 0, 0],
+  9: [0, 2, 0, 0, 0, 0],
+  10: [0, 2, 0, 0, 1, 0],
+  11: [0, 3, 0, 0, 1, 0],
+  12: [0, 3, 0, 0, 1, 0],
+  13: [0, 3, 0, 0, 1, 0],
+  14: [0, 3, 0, 0, 1, 0],
+  15: [0, 3, 0, 0, 1, 0],
+  16: [0, 3, 0, 0, 1, 0],
+  17: [0, 3, 0, 0, 1, 0],
+  18: [0, 3, 0, 0, 1, 0],
+  19: [0, 3, 0, 0, 1, 0],
+  20: [0, 3, 0, 1, 1, 0],
+  21: [0, 4, 0, 1, 1, 0],
+  22: [0, 4, 0, 1, 2, 0],
+  23: [0, 4, 0, 1, 2, 0],
+  24: [0, 4, 0, 1, 2, 0],
+  25: [0, 4, 0, 1, 2, 0],
+  26: [0, 4, 0, 1, 2, 0],
+  27: [0, 4, 0, 1, 2, 0],
+  28: [0, 4, 0, 1, 2, 0],
+  29: [0, 4, 0, 2, 2, 0],
+  30: [0, 4, 0, 2, 2, 1],
+  31: [0, 5, 0, 2, 2, 1],
+  32: [0, 5, 0, 2, 3, 1],
+  33: [0, 5, 0, 2, 3, 1],
+  34: [0, 5, 0, 2, 3, 1],
+  35: [0, 5, 0, 2, 3, 1],
+  36: [0, 5, 0, 2, 3, 1],
+  37: [0, 5, 0, 2, 3, 1],
+  38: [0, 5, 0, 2, 3, 1],
+  39: [0, 5, 0, 2, 3, 1],
+  40: [0, 5, 0, 2, 3, 2],
+  41: [0, 6, 0, 2, 3, 2],
+  42: [0, 6, 0, 3, 3, 2],
+  43: [0, 6, 0, 3, 4, 2],
+  44: [0, 6, 0, 3, 4, 2],
+  45: [0, 6, 0, 3, 4, 2],
+  46: [0, 6, 0, 3, 4, 2],
+  47: [0, 6, 0, 3, 4, 2],
+  48: [0, 6, 0, 3, 4, 2],
+  49: [0, 6, 0, 3, 4, 2],
+  50: [0, 6, 0, 4, 4, 2],
+  51: [0, 7, 0, 4, 4, 2],
+  52: [0, 7, 0, 4, 4, 3],
+  53: [0, 7, 0, 4, 5, 3],
+  54: [0, 7, 0, 4, 5, 3],
+  55: [0, 7, 0, 4, 5, 3],
+  56: [0, 7, 0, 4, 5, 3],
+  57: [0, 7, 0, 4, 5, 3],
+  58: [0, 7, 0, 4, 5, 3],
+  59: [1, 7, 0, 4, 5, 3],
+  60: [1, 7, 1, 4, 5, 3],
+  61: [1, 8, 1, 4, 5, 3],
+  62: [1, 8, 1, 5, 5, 3],
+  63: [1, 8, 1, 5, 6, 3],
+  64: [1, 8, 1, 5, 6, 4],
+  65: [1, 8, 1, 5, 6, 4],
+  66: [1, 8, 1, 5, 6, 4],
+  67: [1, 8, 1, 5, 6, 4],
+  68: [1, 8, 1, 5, 6, 4],
+  69: [1, 8, 1, 5, 6, 4],
+  70: [1, 8, 1, 5, 6, 4],
+};
 
 export class Ninja extends CharacterBase {
-  protected readonly CLASS_NAME = ClassName.Ninja;
-  protected readonly JobBonusTable = jobBonusTable;
+  protected CLASS_NAME = ClassName.Ninja;
+  protected JobBonusTable = jobBonusTable;
+  protected initialStatusPoint = 40;
 
-  protected readonly initialStatusPoint = 40;
   protected readonly classNames = [ClassName.Ninja];
   protected readonly _atkSkillList: AtkSkillModel[] = [];
   protected readonly _activeSkillList: ActiveSkillModel[] = [

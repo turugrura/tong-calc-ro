@@ -1,11 +1,11 @@
 import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
 import { DarkClawFn, NoLimitFn, ShieldSpellFn } from '../constants/share-active-skills';
-import { Thief } from './thief';
 import { InfoForClass } from '../models/info-for-class.model';
 import { ElementType } from '../constants/element-type.const';
 import { DoubleStrafeFn, SnatcherFn, VulturesEyeFn } from '../constants/share-passive-skills';
 import { WeaponTypeName } from '../constants/weapon-type-mapper';
+import { Stalker } from './Stalker';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 0, 0, 1],
@@ -80,13 +80,12 @@ const jobBonusTable: Record<number, [number, number, number, number, number, num
   70: [8, 9, 8, 6, 6, 6],
 };
 
-export class ShadowChaser extends CharacterBase {
-  protected readonly CLASS_NAME = ClassName.ShadowChaser;
-  protected readonly JobBonusTable = jobBonusTable;
+export class ShadowChaser extends Stalker {
+  protected override CLASS_NAME = ClassName.ShadowChaser;
+  protected override JobBonusTable = jobBonusTable;
 
-  protected initialStatusPoint = 100;
-  protected classNames = [ClassName.HiClass, ClassName.Only_3rd, ClassName.Rogue, ClassName.Stalker, ClassName.ShadowChaser];
-  protected _atkSkillList: AtkSkillModel[] = [
+  protected readonly classNames3rd = [ClassName.Only_3rd, ClassName.ShadowChaser];
+  protected readonly atkSkillList3rd: AtkSkillModel[] = [
     {
       name: 'Fatal Manace',
       label: 'Fatal Manace Lv10',
@@ -310,7 +309,7 @@ export class ShadowChaser extends CharacterBase {
     },
   ];
 
-  protected _activeSkillList: ActiveSkillModel[] = [
+  protected readonly activeSkillList3rd: ActiveSkillModel[] = [
     {
       label: 'Preserve',
       name: 'Preserve',
@@ -344,7 +343,7 @@ export class ShadowChaser extends CharacterBase {
     },
   ];
 
-  protected _passiveSkillList: PassiveSkillModel[] = [
+  protected readonly passiveSkillList3rd: PassiveSkillModel[] = [
     VulturesEyeFn(),
     DoubleStrafeFn(),
     {
@@ -495,7 +494,12 @@ export class ShadowChaser extends CharacterBase {
   constructor() {
     super();
 
-    this.inheritBaseClass(new Thief());
+    this.inheritSkills({
+      activeSkillList: this.activeSkillList3rd,
+      atkSkillList: this.atkSkillList3rd,
+      passiveSkillList: this.passiveSkillList3rd,
+      classNames: this.classNames3rd,
+    });
   }
 
   override calcSkillDmgByTotalHit(params: { finalDamage: number; skill: AtkSkillModel; info: InfoForClass }) {

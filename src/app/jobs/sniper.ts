@@ -1,17 +1,88 @@
 import { ClassName } from './_class-name';
 import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
 import { BeastBaneFn } from '../constants/share-passive-skills';
-import { Archer } from './archer';
+import { Archer } from './Archer';
 
-const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {};
+const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
+  1: [0, 0, 0, 0, 1, 0],
+  2: [0, 1, 0, 0, 1, 0],
+  3: [0, 1, 0, 0, 2, 0],
+  4: [0, 1, 0, 0, 3, 0],
+  5: [0, 1, 0, 1, 3, 0],
+  6: [0, 2, 0, 1, 3, 0],
+  7: [0, 2, 0, 1, 3, 0],
+  8: [1, 2, 0, 1, 3, 0],
+  9: [1, 2, 0, 1, 3, 0],
+  10: [1, 3, 0, 1, 3, 0],
+  11: [1, 4, 0, 1, 3, 0],
+  12: [1, 4, 1, 1, 3, 0],
+  13: [1, 4, 1, 1, 3, 0],
+  14: [1, 4, 1, 1, 3, 1],
+  15: [1, 4, 1, 1, 3, 1],
+  16: [1, 4, 1, 1, 4, 1],
+  17: [1, 4, 1, 1, 5, 1],
+  18: [1, 4, 1, 1, 5, 1],
+  19: [1, 4, 1, 1, 5, 1],
+  20: [1, 4, 1, 2, 5, 1],
+  21: [1, 5, 1, 2, 5, 1],
+  22: [1, 5, 1, 2, 6, 1],
+  23: [1, 5, 1, 2, 6, 1],
+  24: [2, 5, 1, 2, 6, 1],
+  25: [2, 5, 1, 2, 6, 2],
+  26: [2, 5, 1, 2, 7, 2],
+  27: [2, 5, 1, 2, 7, 2],
+  28: [2, 6, 1, 2, 7, 2],
+  29: [2, 6, 1, 2, 7, 2],
+  30: [2, 6, 1, 2, 8, 2],
+  31: [2, 6, 1, 2, 8, 3],
+  32: [2, 6, 2, 2, 8, 3],
+  33: [2, 7, 2, 2, 8, 3],
+  34: [2, 7, 2, 2, 8, 3],
+  35: [2, 7, 2, 2, 9, 3],
+  36: [2, 7, 2, 2, 9, 4],
+  37: [2, 7, 2, 2, 9, 4],
+  38: [2, 8, 2, 2, 9, 4],
+  39: [2, 8, 2, 2, 9, 4],
+  40: [2, 8, 2, 2, 10, 4],
+  41: [2, 8, 2, 2, 10, 4],
+  42: [2, 8, 2, 3, 10, 4],
+  43: [2, 9, 2, 3, 10, 4],
+  44: [2, 9, 2, 3, 10, 4],
+  45: [3, 9, 2, 3, 10, 4],
+  46: [3, 9, 2, 3, 11, 4],
+  47: [3, 9, 2, 3, 11, 4],
+  48: [3, 10, 2, 3, 11, 4],
+  49: [3, 10, 2, 3, 11, 4],
+  50: [3, 10, 2, 3, 11, 5],
+  51: [3, 10, 2, 3, 12, 5],
+  52: [3, 10, 2, 3, 12, 5],
+  53: [3, 10, 2, 3, 12, 5],
+  54: [3, 10, 2, 4, 12, 5],
+  55: [3, 10, 3, 4, 12, 5],
+  56: [3, 10, 3, 4, 12, 5],
+  57: [3, 10, 3, 4, 12, 6],
+  58: [3, 11, 3, 4, 12, 6],
+  59: [3, 11, 3, 4, 12, 6],
+  60: [3, 11, 3, 4, 13, 6],
+  61: [4, 11, 3, 4, 13, 6],
+  62: [4, 11, 3, 4, 13, 7],
+  63: [4, 11, 3, 4, 13, 7],
+  64: [4, 11, 3, 4, 13, 7],
+  65: [4, 11, 3, 5, 13, 7],
+  66: [4, 11, 3, 5, 13, 7],
+  67: [4, 11, 3, 5, 13, 7],
+  68: [4, 11, 3, 5, 13, 7],
+  69: [4, 11, 3, 5, 14, 7],
+  70: [4, 11, 3, 5, 14, 8],
+};
 
 export class Sniper extends Archer {
   protected override CLASS_NAME = ClassName.Sniper;
   protected override JobBonusTable = jobBonusTable;
+  protected override initialStatusPoint = 100;
 
-  protected override initialStatusPoint = 40;
-  private classNamesHi = [ClassName.Hunter, ClassName.HiClass, ClassName.Sniper];
-  private atkSkillListHi: AtkSkillModel[] = [
+  private readonly classNamesHi = [ClassName.Hunter, ClassName.HiClass, ClassName.Sniper];
+  private readonly atkSkillListHi: AtkSkillModel[] = [
     {
       name: 'Focused Arrow Strike',
       label: 'Focused Arrow Lv5',
@@ -32,7 +103,7 @@ export class Sniper extends Archer {
       },
     },
   ];
-  private activeSkillListHi: ActiveSkillModel[] = [
+  private readonly activeSkillListHi: ActiveSkillModel[] = [
     {
       isEquipAtk: true,
       inputType: 'selectButton',

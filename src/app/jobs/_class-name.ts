@@ -5,6 +5,7 @@ export enum ClassName {
   Only_4th = '4th',
 
   Swordman = 'Swordman',
+  Crusader = 'Crusader',
   Paladin = 'Paladin',
   RoyalGuard = 'RoyalGuard',
   ImperialGuard = 'ImperialGuard',
@@ -26,6 +27,7 @@ export enum ClassName {
   Trouvere = 'Trouvere',
 
   Dancer = 'Dancer',
+  Gypsy = 'Gypsy',
   Minstrel = 'Minstrel',
   Troubadour = 'Troubadour',
 
@@ -42,6 +44,7 @@ export enum ClassName {
 
   Acolyte = 'Acolyte',
   Priest = 'Priest',
+  HighPriest = 'HighPriest',
   ArchBishop = 'ArchBishop',
   Cardinal = 'Cardinal',
 
@@ -62,11 +65,13 @@ export enum ClassName {
   AbyssChaser = 'AbyssChaser',
 
   Sage = 'Sage',
+  Scholar = 'Scholar',
   Sorcerer = 'Sorcerer',
   ElementalMaster = 'ElementalMaster',
 
   Mage = 'Mage',
   Wizard = 'Wizard',
+  HighWizard = 'HighWizard',
   Warlock = 'Warlock',
   ArchMage = 'ArchMage',
 
@@ -93,8 +98,8 @@ export enum ClassName {
 
   Ninja = 'Ninja',
   Oboro = 'Oboro',
-  Kagerou = 'Kagerou',
   Shiranui = 'Shiranui',
+  Kagerou = 'Kagerou',
   Shinkiro = 'Shinkiro',
 }
 

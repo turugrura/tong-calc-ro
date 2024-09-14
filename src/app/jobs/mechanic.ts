@@ -1,7 +1,7 @@
 import { InfoForClass } from '../models/info-for-class.model';
 import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
-import { Whitesmith } from './white-smith';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
+import { Whitesmith } from './Whitesmith';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 0, 0, 1],
@@ -76,13 +76,12 @@ const jobBonusTable: Record<number, [number, number, number, number, number, num
   70: [10, 6, 10, 6, 5, 6],
 };
 
-export class Mechanic extends CharacterBase {
-  protected readonly CLASS_NAME = ClassName.Mechanic;
-  protected readonly JobBonusTable = jobBonusTable;
+export class Mechanic extends Whitesmith {
+  protected override CLASS_NAME = ClassName.Mechanic;
+  protected override JobBonusTable = jobBonusTable;
 
-  protected readonly initialStatusPoint = 100;
-  protected readonly classNames = [ClassName.HiClass, ClassName.Only_3rd, ClassName.Mechanic];
-  protected readonly _atkSkillList: AtkSkillModel[] = [
+  protected readonly classNames3rd = [ClassName.Only_3rd, ClassName.Mechanic];
+  protected readonly atkSkillList3rd: AtkSkillModel[] = [
     {
       name: 'Axe Tornado',
       label: 'Axe Tornado Lv5',
@@ -194,7 +193,7 @@ export class Mechanic extends CharacterBase {
       },
     },
   ];
-  protected readonly _activeSkillList: ActiveSkillModel[] = [
+  protected readonly activeSkillList3rd: ActiveSkillModel[] = [
     {
       label: 'On Magogear',
       name: 'On Magogear',
@@ -206,7 +205,7 @@ export class Mechanic extends CharacterBase {
     },
   ];
 
-  protected readonly _passiveSkillList: PassiveSkillModel[] = [
+  protected readonly passiveSkillList3rd: PassiveSkillModel[] = [
     {
       label: 'Axe Mastery',
       name: 'Axe Mastery',
@@ -337,7 +336,12 @@ export class Mechanic extends CharacterBase {
   constructor() {
     super();
 
-    this.inheritBaseClass(new Whitesmith());
+    this.inheritSkills({
+      activeSkillList: this.activeSkillList3rd,
+      atkSkillList: this.atkSkillList3rd,
+      passiveSkillList: this.passiveSkillList3rd,
+      classNames: this.classNames3rd,
+    });
   }
 
   override getMasteryAtk(info: InfoForClass): number {

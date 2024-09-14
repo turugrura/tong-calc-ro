@@ -1,6 +1,6 @@
 import { ClassName } from './_class-name';
-import { AssassinCross } from './assassin-cross';
-import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
+import { AssassinCross } from './AssassinCross';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
 import { InfoForClass } from '../models/info-for-class.model';
 import { DarkClawFn } from '../constants/share-active-skills';
 
@@ -77,13 +77,12 @@ const jobBonusTable: Record<number, [number, number, number, number, number, num
   70: [8, 11, 6, 5, 9, 4],
 };
 
-export class GitCross extends CharacterBase {
-  protected readonly CLASS_NAME = ClassName.GuillotineCross;
-  protected readonly JobBonusTable = jobBonusTable;
+export class GuillotineCross extends AssassinCross {
+  protected override CLASS_NAME = ClassName.GuillotineCross;
+  protected override JobBonusTable = jobBonusTable;
 
-  protected initialStatusPoint = 100;
-  protected classNames = [ClassName.Only_3rd, ClassName.GuillotineCross];
-  protected _atkSkillList: AtkSkillModel[] = [
+  private readonly classNames3rd = [ClassName.Only_3rd, ClassName.GuillotineCross];
+  private readonly atkSkillList3rd: AtkSkillModel[] = [
     {
       label: 'Soul Destroyer',
       name: 'Soul Destroyer',
@@ -180,7 +179,7 @@ export class GitCross extends CharacterBase {
     },
   ];
 
-  protected _activeSkillList: ActiveSkillModel[] = [
+  private readonly activeSkillList3rd: ActiveSkillModel[] = [
     DarkClawFn(),
     {
       inputType: 'dropdown',
@@ -212,7 +211,7 @@ export class GitCross extends CharacterBase {
     },
   ];
 
-  protected _passiveSkillList: PassiveSkillModel[] = [
+  private readonly passiveSkillList3rd: PassiveSkillModel[] = [
     {
       inputType: 'dropdown',
       label: 'New Poison Research',
@@ -301,7 +300,12 @@ export class GitCross extends CharacterBase {
   constructor() {
     super();
 
-    this.inheritBaseClass(new AssassinCross());
+    this.inheritSkills({
+      activeSkillList: this.activeSkillList3rd,
+      atkSkillList: this.atkSkillList3rd,
+      passiveSkillList: this.passiveSkillList3rd,
+      classNames: this.classNames3rd,
+    });
   }
 
   override getMasteryAtk(info: InfoForClass): number {

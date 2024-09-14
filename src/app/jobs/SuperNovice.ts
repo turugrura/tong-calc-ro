@@ -78,10 +78,10 @@ const jobBonusTable: Record<number, [number, number, number, number, number, num
 };
 
 export class SuperNovice extends CharacterBase {
-  protected readonly CLASS_NAME = ClassName.SuperNovice;
-  protected readonly JobBonusTable = jobBonusTable;
+  protected override CLASS_NAME = ClassName.SuperNovice;
+  protected override JobBonusTable = jobBonusTable;
+  protected override initialStatusPoint = 48;
 
-  protected readonly initialStatusPoint = 48;
   protected readonly classNames = [ClassName.Novice, ClassName.SuperNovice];
   protected readonly _atkSkillList: AtkSkillModel[] = [
     {

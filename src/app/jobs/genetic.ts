@@ -1,7 +1,7 @@
 import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
 import { CartBoost } from '../constants/share-active-skills';
-import { Creator } from './creator';
+import { Creator } from './Creator';
 import { InfoForClass } from '../models/info-for-class.model';
 import { ElementType } from '../constants/element-type.const';
 
@@ -78,13 +78,12 @@ const jobBonusTable: Record<number, [number, number, number, number, number, num
   70: [5, 6, 8, 12, 8, 4],
 };
 
-export class Genetic extends CharacterBase {
-  protected readonly CLASS_NAME = ClassName.Genetic;
-  protected readonly JobBonusTable = jobBonusTable;
+export class Genetic extends Creator {
+  protected override CLASS_NAME = ClassName.Genetic;
+  protected override JobBonusTable = jobBonusTable;
 
-  protected readonly initialStatusPoint = 100;
-  protected readonly classNames = [ClassName.Only_3rd, ClassName.Genetic];
-  protected readonly _atkSkillList: AtkSkillModel[] = [
+  private readonly classNames3rd = [ClassName.Only_3rd, ClassName.Genetic];
+  private readonly atkSkillList3rd: AtkSkillModel[] = [
     {
       name: 'Acid Bomb',
       label: 'Acid Bomb Lv10',
@@ -171,7 +170,7 @@ export class Genetic extends CharacterBase {
     },
   ];
 
-  protected readonly _activeSkillList: ActiveSkillModel[] = [
+  private readonly activeSkillList3rd: ActiveSkillModel[] = [
     CartBoost,
     {
       label: 'Cart Weight',
@@ -214,7 +213,7 @@ export class Genetic extends CharacterBase {
     },
   ];
 
-  protected readonly _passiveSkillList: PassiveSkillModel[] = [
+  private readonly passiveSkillList3rd: PassiveSkillModel[] = [
     {
       label: 'Sword Mastery',
       name: 'Sword Mastery',
@@ -298,7 +297,12 @@ export class Genetic extends CharacterBase {
   constructor() {
     super();
 
-    this.inheritBaseClass(new Creator());
+    this.inheritSkills({
+      activeSkillList: this.activeSkillList3rd,
+      atkSkillList: this.atkSkillList3rd,
+      passiveSkillList: this.passiveSkillList3rd,
+      classNames: this.classNames3rd,
+    });
   }
 
   override getMasteryAtk(info: InfoForClass): number {

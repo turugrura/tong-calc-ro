@@ -1,8 +1,8 @@
 import { ElementType } from '../constants/element-type.const';
 import { InfoForClass } from '../models/info-for-class.model';
 import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
-import { Sage } from './sage';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
+import { Scholar } from './Scholar';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 1, 0, 0],
@@ -77,13 +77,12 @@ const jobBonusTable: Record<number, [number, number, number, number, number, num
   70: [4, 4, 8, 13, 9, 5],
 };
 
-export class Sorcerer extends CharacterBase {
-  protected readonly CLASS_NAME = ClassName.Sorcerer;
-  protected readonly JobBonusTable = jobBonusTable;
+export class Sorcerer extends Scholar {
+  protected override CLASS_NAME = ClassName.Sorcerer;
+  protected override JobBonusTable = jobBonusTable;
 
-  protected readonly initialStatusPoint = 100;
-  protected readonly classNames = [ClassName.Only_3rd, ClassName.Sorcerer];
-  protected readonly _atkSkillList: AtkSkillModel[] = [
+  private readonly classNames3rd = [ClassName.Only_3rd, ClassName.Sorcerer];
+  private readonly atkSkillList3rd: AtkSkillModel[] = [
     {
       name: 'Fist Spell',
       label: 'Fist Spell Lv10',
@@ -231,8 +230,8 @@ export class Sorcerer extends CharacterBase {
       },
     },
   ];
-  protected readonly _activeSkillList: ActiveSkillModel[] = [];
-  protected readonly _passiveSkillList: PassiveSkillModel[] = [
+  private readonly activeSkillList3rd: ActiveSkillModel[] = [];
+  private readonly passiveSkillList3rd: PassiveSkillModel[] = [
     {
       inputType: 'dropdown',
       label: 'Striking',
@@ -277,7 +276,12 @@ export class Sorcerer extends CharacterBase {
   constructor() {
     super();
 
-    this.inheritBaseClass(new Sage());
+    this.inheritSkills({
+      activeSkillList: this.activeSkillList3rd,
+      atkSkillList: this.atkSkillList3rd,
+      passiveSkillList: this.passiveSkillList3rd,
+      classNames: this.classNames3rd,
+    });
   }
 
   override getMasteryAtk(params: InfoForClass): number {

@@ -2,7 +2,7 @@ import { ClassName } from './_class-name';
 import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
 import { NoLimitFn } from '../constants/share-active-skills';
 import { InfoForClass } from '../models/info-for-class.model';
-import { Sniper } from './sniper';
+import { Sniper } from './Sniper';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 0, 1, 0],
@@ -81,9 +81,8 @@ export class Ranger extends Sniper {
   protected override CLASS_NAME = ClassName.Ranger;
   protected override JobBonusTable = jobBonusTable;
 
-  protected override initialStatusPoint = 100;
-  private classNames3rd: ClassName[] = [ClassName.Ranger, ClassName.Only_3rd];
-  protected atkSkillList3rd: AtkSkillModel[] = [
+  private readonly classNames3rd = [ClassName.Only_3rd, ClassName.Ranger];
+  private readonly atkSkillList3rd: AtkSkillModel[] = [
     {
       name: 'Arrow Storm',
       label: 'Arrow Storm Lv10',
@@ -125,7 +124,7 @@ export class Ranger extends Sniper {
       },
     },
   ];
-  protected activeSkillList3rd: ActiveSkillModel[] = [
+  private readonly activeSkillList3rd: ActiveSkillModel[] = [
     {
       label: 'Fear Breeze 5',
       name: 'Fear Breeze',
@@ -139,7 +138,7 @@ export class Ranger extends Sniper {
     NoLimitFn(),
   ];
 
-  protected passiveSkillList3rd: PassiveSkillModel[] = [
+  private readonly passiveSkillList3rd: PassiveSkillModel[] = [
     {
       isMasteryAtk: true,
       inputType: 'dropdown',
@@ -293,7 +292,6 @@ export class Ranger extends Sniper {
   constructor() {
     super();
 
-    // this.inheritBaseClass(new Archer());
     this.inheritSkills({
       activeSkillList: this.activeSkillList3rd,
       atkSkillList: this.atkSkillList3rd,

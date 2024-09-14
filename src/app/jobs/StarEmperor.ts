@@ -1,7 +1,7 @@
 import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
 import { InfoForClass } from '../models/info-for-class.model';
-import { StarGladiator } from './star-gladiator';
+import { StarGladiator } from './StarGladiator';
 import { FusionSunMoonStar } from '../constants/share-active-skills';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
@@ -77,13 +77,13 @@ const jobBonusTable: Record<number, [number, number, number, number, number, num
   70: [12, 10, 6, 3, 9, 3],
 };
 
-export class StarEmperor extends CharacterBase {
-  protected readonly CLASS_NAME = ClassName.StarEmperor;
-  protected readonly JobBonusTable = jobBonusTable;
+export class StarEmperor extends StarGladiator {
+  protected override CLASS_NAME = ClassName.StarEmperor;
+  protected override JobBonusTable = jobBonusTable;
+  protected override initialStatusPoint = 48;
 
-  protected readonly initialStatusPoint = 48;
-  protected readonly classNames = [ClassName.StarEmperor];
-  protected readonly _atkSkillList: AtkSkillModel[] = [
+  private readonly classNames3rd = [ClassName.StarEmperor];
+  private readonly atkSkillList3rd: AtkSkillModel[] = [
     {
       label: 'New Moon Kick Lv7',
       name: 'New Moon Kick',
@@ -172,7 +172,7 @@ export class StarEmperor extends CharacterBase {
     },
   ];
 
-  protected readonly _activeSkillList: ActiveSkillModel[] = [
+  private readonly activeSkillList3rd: ActiveSkillModel[] = [
     {
       label: 'Lunar Luminance 5',
       name: 'Lunar Luminance',
@@ -221,7 +221,7 @@ export class StarEmperor extends CharacterBase {
     },
   ];
 
-  protected readonly _passiveSkillList: PassiveSkillModel[] = [
+  private readonly passiveSkillList3rd: PassiveSkillModel[] = [
     {
       label: 'Blessing of Sun',
       name: 'Blessing of Sun',
@@ -266,7 +266,12 @@ export class StarEmperor extends CharacterBase {
   constructor() {
     super();
 
-    this.inheritBaseClass(new StarGladiator());
+    this.inheritSkills({
+      activeSkillList: this.activeSkillList3rd,
+      atkSkillList: this.atkSkillList3rd,
+      passiveSkillList: this.passiveSkillList3rd,
+      classNames: this.classNames3rd,
+    });
   }
 
   getWrathAtkBonus(info: InfoForClass): number {

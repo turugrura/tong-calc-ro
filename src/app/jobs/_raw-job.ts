@@ -1,7 +1,7 @@
 import { ClassName } from './_class-name';
 import { ActiveSkillModel, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
 import { InfoForClass } from '../models/info-for-class.model';
-import { Swordman } from './swordman';
+import { Swordman } from './Swordman';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {};
 

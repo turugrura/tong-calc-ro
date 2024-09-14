@@ -1,17 +1,88 @@
-import { ElementType } from '../constants/element-type.const';
 import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
-import { Mage } from './mage';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
+import { Mage } from './Mage';
+import { ElementType } from '../constants';
 
-const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {};
+const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
+  1: [0, 0, 0, 1, 0, 0],
+  2: [0, 0, 0, 1, 1, 0],
+  3: [0, 0, 1, 1, 1, 0],
+  4: [0, 0, 1, 1, 1, 0],
+  5: [0, 0, 1, 2, 1, 0],
+  6: [0, 0, 1, 2, 1, 0],
+  7: [0, 0, 1, 2, 1, 0],
+  8: [0, 1, 1, 2, 1, 0],
+  9: [0, 1, 1, 2, 2, 0],
+  10: [0, 1, 1, 3, 2, 0],
+  11: [0, 1, 1, 3, 2, 0],
+  12: [0, 1, 1, 3, 2, 1],
+  13: [0, 1, 1, 3, 2, 1],
+  14: [0, 1, 1, 4, 2, 1],
+  15: [0, 1, 1, 4, 2, 1],
+  16: [0, 1, 1, 4, 2, 1],
+  17: [0, 1, 1, 4, 3, 1],
+  18: [0, 2, 1, 4, 3, 1],
+  19: [0, 2, 1, 5, 3, 1],
+  20: [1, 2, 1, 5, 3, 1],
+  21: [1, 2, 1, 5, 3, 1],
+  22: [1, 2, 1, 5, 4, 1],
+  23: [1, 2, 1, 5, 5, 1],
+  24: [1, 2, 1, 6, 5, 1],
+  25: [1, 2, 1, 6, 5, 1],
+  26: [1, 3, 1, 6, 5, 1],
+  27: [1, 3, 1, 6, 5, 1],
+  28: [1, 3, 1, 7, 5, 1],
+  29: [1, 3, 2, 7, 5, 1],
+  30: [1, 3, 2, 7, 5, 1],
+  31: [1, 3, 2, 7, 6, 1],
+  32: [1, 3, 2, 8, 6, 1],
+  33: [1, 3, 2, 8, 6, 1],
+  34: [1, 4, 2, 8, 6, 1],
+  35: [1, 4, 2, 8, 6, 1],
+  36: [1, 4, 2, 8, 6, 1],
+  37: [1, 4, 2, 9, 6, 1],
+  38: [1, 4, 2, 10, 6, 1],
+  39: [1, 4, 2, 11, 6, 1],
+  40: [2, 4, 2, 11, 6, 1],
+  41: [2, 4, 2, 11, 6, 2],
+  42: [2, 4, 2, 11, 6, 2],
+  43: [2, 4, 2, 11, 7, 2],
+  44: [2, 4, 2, 11, 7, 2],
+  45: [2, 4, 2, 11, 7, 2],
+  46: [2, 4, 2, 12, 7, 2],
+  47: [2, 4, 3, 12, 7, 2],
+  48: [2, 4, 3, 12, 7, 2],
+  49: [2, 4, 3, 13, 7, 2],
+  50: [2, 5, 3, 13, 7, 2],
+  51: [2, 5, 3, 13, 7, 2],
+  52: [2, 5, 3, 13, 7, 2],
+  53: [2, 5, 4, 13, 7, 2],
+  54: [2, 5, 4, 13, 7, 2],
+  55: [2, 5, 4, 14, 7, 2],
+  56: [2, 6, 4, 14, 7, 2],
+  57: [2, 6, 4, 14, 7, 3],
+  58: [2, 6, 4, 14, 7, 3],
+  59: [2, 6, 4, 15, 7, 3],
+  60: [3, 6, 4, 15, 7, 3],
+  61: [3, 6, 4, 15, 8, 3],
+  62: [3, 6, 4, 16, 8, 3],
+  63: [3, 6, 4, 16, 8, 3],
+  64: [3, 6, 4, 16, 8, 3],
+  65: [3, 7, 4, 16, 8, 3],
+  66: [3, 7, 5, 16, 8, 3],
+  67: [3, 7, 5, 16, 9, 3],
+  68: [3, 7, 5, 16, 9, 3],
+  69: [3, 8, 5, 16, 9, 3],
+  70: [3, 8, 5, 17, 9, 3],
+};
 
-export class Wizard extends CharacterBase {
-  protected readonly CLASS_NAME = ClassName.Wizard;
-  protected readonly JobBonusTable = jobBonusTable;
+export class HighWizard extends Mage {
+  protected override CLASS_NAME = ClassName.HighWizard;
+  protected override JobBonusTable = jobBonusTable;
+  protected override initialStatusPoint = 100;
 
-  protected initialStatusPoint = 100;
-  protected classNames = [ClassName.HiClass, ClassName.Wizard];
-  protected _atkSkillList: AtkSkillModel[] = [
+  protected readonly classNamesHi = [ClassName.Wizard, ClassName.HiClass, ClassName.HighWizard];
+  protected readonly atkSkillListHi: AtkSkillModel[] = [
     // {
     //   name: 'Soul Drain',
     //   label: 'Soul Drain Lv10',
@@ -122,7 +193,7 @@ export class Wizard extends CharacterBase {
       },
     },
   ];
-  protected _activeSkillList: ActiveSkillModel[] = [
+  protected readonly activeSkillListHi: ActiveSkillModel[] = [
     {
       inputType: 'selectButton',
       label: 'Mystical Amp 10',
@@ -134,7 +205,7 @@ export class Wizard extends CharacterBase {
       ],
     },
   ];
-  protected _passiveSkillList: PassiveSkillModel[] = [
+  protected readonly passiveSkillListHi: PassiveSkillModel[] = [
     {
       label: 'Soul Drain',
       name: 'Soul Drain',
@@ -180,6 +251,11 @@ export class Wizard extends CharacterBase {
   constructor() {
     super();
 
-    this.inheritBaseClass(new Mage());
+    this.inheritSkills({
+      activeSkillList: this.activeSkillListHi,
+      atkSkillList: this.atkSkillListHi,
+      passiveSkillList: this.passiveSkillListHi,
+      classNames: this.classNamesHi,
+    });
   }
 }

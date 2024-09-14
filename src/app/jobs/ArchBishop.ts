@@ -1,9 +1,9 @@
 import { ElementType } from '../constants/element-type.const';
 import { InfoForClass } from '../models/info-for-class.model';
 import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
 import { RaceType } from '../constants/race-type.const';
-import { Acolyte } from './acolyte';
+import { HighPriest } from './HighPriest';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 1, 0, 0],
@@ -78,13 +78,12 @@ const jobBonusTable: Record<number, [number, number, number, number, number, num
   70: [6, 7, 7, 12, 7, 4],
 };
 
-export class ArchBishop extends CharacterBase {
-  protected readonly CLASS_NAME = ClassName.ArchBishop;
-  protected readonly JobBonusTable = jobBonusTable;
+export class ArchBishop extends HighPriest {
+  protected override CLASS_NAME = ClassName.ArchBishop;
+  protected override JobBonusTable = jobBonusTable;
 
-  protected readonly initialStatusPoint = 100;
-  protected readonly classNames = [ClassName.HiClass, ClassName.Priest, ClassName.ArchBishop, ClassName.Only_3rd];
-  protected readonly _atkSkillList: AtkSkillModel[] = [
+  protected readonly classNames3rd = [ClassName.Only_3rd, ClassName.ArchBishop];
+  protected readonly atkSkillList3rd: AtkSkillModel[] = [
     {
       name: 'Holy Light',
       label: 'Holy Light',
@@ -209,7 +208,7 @@ export class ArchBishop extends CharacterBase {
       },
     },
   ];
-  protected readonly _activeSkillList: ActiveSkillModel[] = [
+  protected readonly activeSkillList3rd: ActiveSkillModel[] = [
     {
       inputType: 'dropdown',
       label: 'Magnificat',
@@ -247,7 +246,7 @@ export class ArchBishop extends CharacterBase {
       ],
     },
   ];
-  protected readonly _passiveSkillList: PassiveSkillModel[] = [
+  protected readonly passiveSkillList3rd: PassiveSkillModel[] = [
     {
       inputType: 'dropdown',
       label: 'Mace Mastery',
@@ -370,7 +369,12 @@ export class ArchBishop extends CharacterBase {
   constructor() {
     super();
 
-    this.inheritBaseClass(new Acolyte());
+    this.inheritSkills({
+      activeSkillList: this.activeSkillList3rd,
+      atkSkillList: this.atkSkillList3rd,
+      passiveSkillList: this.passiveSkillList3rd,
+      classNames: this.classNames3rd,
+    });
   }
 
   override getMasteryAtk(info: InfoForClass): number {

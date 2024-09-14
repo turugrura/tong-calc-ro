@@ -1,9 +1,9 @@
 import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
-import { Acolyte } from './acolyte';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
 import { InfoForClass } from '../models/info-for-class.model';
 import { floor } from '../utils';
 import { ElementType } from '../constants/element-type.const';
+import { Champion } from './Champion';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 1, 0, 0, 0, 0],
@@ -78,13 +78,12 @@ const jobBonusTable: Record<number, [number, number, number, number, number, num
   70: [10, 10, 6, 8, 8, 1],
 };
 
-export class Sura extends CharacterBase {
-  protected readonly CLASS_NAME = ClassName.Sura;
-  protected readonly JobBonusTable = jobBonusTable;
+export class Sura extends Champion {
+  protected override CLASS_NAME = ClassName.Sura;
+  protected override JobBonusTable = jobBonusTable;
 
-  protected readonly initialStatusPoint = 100;
-  protected readonly classNames = [ClassName.Only_3rd, ClassName.HiClass, ClassName.Monk, ClassName.Champion, ClassName.Sura];
-  protected readonly _atkSkillList: AtkSkillModel[] = [
+  private readonly classNames3rd = [ClassName.Only_3rd, ClassName.Sura];
+  private readonly atkSkillList3rd: AtkSkillModel[] = [
     {
       name: 'Dragon Combo',
       label: 'Dragon Combo Lv10',
@@ -400,7 +399,7 @@ export class Sura extends CharacterBase {
     },
   ];
 
-  protected readonly _activeSkillList: ActiveSkillModel[] = [
+  private readonly activeSkillList3rd: ActiveSkillModel[] = [
     {
       label: 'Rising Dragon',
       name: 'Rising Dragon',
@@ -544,7 +543,7 @@ export class Sura extends CharacterBase {
     },
   ];
 
-  protected readonly _passiveSkillList: PassiveSkillModel[] = [
+  private readonly passiveSkillList3rd: PassiveSkillModel[] = [
     {
       label: 'Divine Protection',
       name: 'Divine Protection',
@@ -706,7 +705,12 @@ export class Sura extends CharacterBase {
   constructor() {
     super();
 
-    this.inheritBaseClass(new Acolyte());
+    this.inheritSkills({
+      activeSkillList: this.activeSkillList3rd,
+      atkSkillList: this.atkSkillList3rd,
+      passiveSkillList: this.passiveSkillList3rd,
+      classNames: this.classNames3rd,
+    });
   }
 
   override getMasteryAtk(info: InfoForClass): number {

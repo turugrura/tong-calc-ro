@@ -1,6 +1,5 @@
 import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
-import { Archer } from './archer';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
 import { InfoForClass } from '../models/info-for-class.model';
 import { WeaponTypeName } from '../constants/weapon-type-mapper';
 import {
@@ -16,6 +15,7 @@ import {
 } from '../constants/share-passive-skills';
 import { ElementType } from '../constants/element-type.const';
 import { BragisPoemFn, SwingDanceFn } from '../constants/share-active-skills';
+import { Bard } from './Bard';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 0, 1, 0],
@@ -90,13 +90,12 @@ const jobBonusTable: Record<number, [number, number, number, number, number, num
   70: [7, 9, 7, 9, 8, 3],
 };
 
-export class Wanderer extends CharacterBase {
-  protected readonly CLASS_NAME = ClassName.Wanderer;
-  protected readonly JobBonusTable = jobBonusTable;
+export class Wanderer extends Bard {
+  protected override CLASS_NAME = ClassName.Wanderer;
+  protected override JobBonusTable = jobBonusTable;
 
-  protected readonly initialStatusPoint = 100;
-  protected readonly classNames = [ClassName.HiClass, ClassName.Only_3rd, ClassName.Wanderer, ClassName.Dancer];
-  protected readonly _atkSkillList: AtkSkillModel[] = [
+  private readonly classNames3rd = [ClassName.Only_3rd, ClassName.Wanderer];
+  private readonly atkSkillList3rd: AtkSkillModel[] = [
     {
       name: 'Arrow Vulcan',
       label: 'Arrow Vulcan Lv10',
@@ -192,9 +191,9 @@ export class Wanderer extends CharacterBase {
     },
   ];
 
-  protected readonly _activeSkillList: ActiveSkillModel[] = [SwingDanceFn(), BragisPoemFn()];
+  private readonly activeSkillList3rd: ActiveSkillModel[] = [SwingDanceFn(), BragisPoemFn()];
 
-  protected readonly _passiveSkillList: PassiveSkillModel[] = [
+  private readonly passiveSkillList3rd: PassiveSkillModel[] = [
     SevereRainstormFn(),
     {
       label: 'Dancing Lesson',
@@ -241,7 +240,12 @@ export class Wanderer extends CharacterBase {
   constructor() {
     super();
 
-    this.inheritBaseClass(new Archer());
+    this.inheritSkills({
+      activeSkillList: this.activeSkillList3rd,
+      atkSkillList: this.atkSkillList3rd,
+      passiveSkillList: this.passiveSkillList3rd,
+      classNames: this.classNames3rd,
+    });
   }
 
   override getUiMasteryAtk(info: InfoForClass): number {

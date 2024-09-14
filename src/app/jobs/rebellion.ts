@@ -1,6 +1,7 @@
 import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
 import { ElementType } from '../constants/element-type.const';
+import { Gunslinger } from './Gunslinger';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 0, 0, 0],
@@ -75,13 +76,13 @@ const jobBonusTable: Record<number, [number, number, number, number, number, num
   70: [3, 8, 6, 8, 11, 7],
 };
 
-export class Rebelion extends CharacterBase {
-  protected readonly CLASS_NAME = ClassName.Rebellion;
-  protected readonly JobBonusTable = jobBonusTable;
+export class Rebellion extends Gunslinger {
+  protected override CLASS_NAME = ClassName.Rebellion;
+  protected override JobBonusTable = jobBonusTable;
+  protected override initialStatusPoint = 48;
 
-  protected initialStatusPoint = 48;
-  protected classNames = [ClassName.Gunslinger, ClassName.Rebellion];
-  protected _atkSkillList: AtkSkillModel[] = [
+  private readonly classNames2nd = [ClassName.Rebellion];
+  private readonly atkSkillList2nd: AtkSkillModel[] = [
     {
       label: 'Round Trip Lv10',
       name: 'Round Trip',
@@ -193,7 +194,7 @@ export class Rebelion extends CharacterBase {
     },
   ];
 
-  protected _activeSkillList: ActiveSkillModel[] = [
+  private readonly activeSkillList2nd: ActiveSkillModel[] = [
     {
       isEquipAtk: true,
       inputType: 'selectButton',
@@ -244,7 +245,7 @@ export class Rebelion extends CharacterBase {
     },
   ];
 
-  protected _passiveSkillList: PassiveSkillModel[] = [
+  private readonly passiveSkillList2nd: PassiveSkillModel[] = [
     {
       inputType: 'dropdown',
       label: 'Desperado',
@@ -390,4 +391,15 @@ export class Rebelion extends CharacterBase {
       ],
     },
   ];
+
+  constructor() {
+    super();
+
+    this.inheritSkills({
+      activeSkillList: this.activeSkillList2nd,
+      atkSkillList: this.atkSkillList2nd,
+      passiveSkillList: this.passiveSkillList2nd,
+      classNames: this.classNames2nd,
+    });
+  }
 }

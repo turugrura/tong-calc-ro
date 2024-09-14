@@ -1,17 +1,88 @@
 import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
-import { Mage } from './mage';
+import { ActiveSkillModel, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
+import { Mage } from './Mage';
 
-const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {};
+const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
+  1: [0, 0, 0, 1, 0, 0],
+  2: [0, 0, 0, 2, 0, 0],
+  3: [0, 1, 0, 2, 0, 0],
+  4: [0, 1, 0, 2, 0, 0],
+  5: [1, 1, 0, 2, 0, 0],
+  6: [1, 1, 0, 2, 0, 0],
+  7: [1, 1, 1, 2, 0, 0],
+  8: [1, 1, 1, 2, 1, 0],
+  9: [1, 1, 1, 2, 1, 0],
+  10: [1, 1, 1, 2, 1, 0],
+  11: [1, 1, 1, 3, 1, 0],
+  12: [1, 2, 1, 3, 1, 0],
+  13: [1, 2, 1, 3, 1, 0],
+  14: [1, 2, 1, 4, 1, 0],
+  15: [1, 2, 1, 4, 1, 0],
+  16: [1, 2, 1, 4, 2, 0],
+  17: [1, 2, 1, 4, 2, 0],
+  18: [2, 2, 1, 4, 2, 0],
+  19: [2, 2, 1, 4, 2, 0],
+  20: [2, 2, 1, 4, 3, 0],
+  21: [2, 2, 1, 4, 3, 1],
+  22: [2, 2, 1, 5, 3, 1],
+  23: [2, 3, 1, 5, 3, 1],
+  24: [2, 3, 2, 5, 3, 1],
+  25: [2, 3, 2, 5, 3, 1],
+  26: [2, 3, 2, 5, 4, 1],
+  27: [3, 3, 2, 5, 4, 1],
+  28: [3, 3, 2, 5, 4, 1],
+  29: [3, 3, 2, 5, 5, 1],
+  30: [3, 3, 2, 6, 5, 1],
+  31: [3, 3, 2, 6, 5, 1],
+  32: [3, 4, 2, 6, 5, 1],
+  33: [3, 4, 2, 6, 5, 1],
+  34: [3, 4, 2, 6, 6, 1],
+  35: [3, 4, 2, 6, 6, 1],
+  36: [4, 4, 2, 6, 6, 1],
+  37: [4, 4, 2, 6, 7, 1],
+  38: [4, 4, 2, 7, 7, 1],
+  39: [4, 4, 3, 7, 7, 1],
+  40: [4, 4, 3, 7, 7, 1],
+  41: [4, 4, 3, 8, 7, 1],
+  42: [4, 4, 3, 8, 7, 1],
+  43: [4, 5, 3, 8, 7, 1],
+  44: [4, 5, 3, 8, 7, 1],
+  45: [5, 5, 3, 8, 7, 1],
+  46: [5, 5, 3, 8, 8, 1],
+  47: [5, 5, 3, 8, 8, 1],
+  48: [5, 5, 3, 8, 8, 1],
+  49: [5, 5, 3, 9, 8, 1],
+  50: [5, 6, 3, 9, 8, 1],
+  51: [5, 6, 3, 9, 8, 1],
+  52: [5, 6, 3, 9, 9, 1],
+  53: [5, 6, 3, 9, 9, 1],
+  54: [5, 7, 3, 9, 9, 1],
+  55: [5, 7, 3, 9, 10, 1],
+  56: [6, 7, 3, 9, 10, 1],
+  57: [6, 7, 3, 10, 10, 1],
+  58: [6, 7, 3, 10, 10, 1],
+  59: [6, 7, 3, 10, 10, 1],
+  60: [6, 8, 3, 10, 10, 1],
+  61: [6, 8, 3, 10, 10, 1],
+  62: [6, 8, 3, 10, 11, 1],
+  63: [6, 8, 4, 10, 11, 1],
+  64: [6, 8, 4, 11, 11, 1],
+  65: [6, 8, 4, 11, 11, 1],
+  66: [6, 8, 4, 11, 11, 2],
+  67: [6, 8, 4, 11, 11, 2],
+  68: [6, 8, 4, 12, 11, 2],
+  69: [6, 9, 4, 12, 11, 2],
+  70: [6, 9, 4, 13, 11, 2],
+};
 
-export class Sage extends CharacterBase {
-  protected readonly CLASS_NAME = ClassName.Sage;
-  protected readonly JobBonusTable = jobBonusTable;
+export class Scholar extends Mage {
+  protected override CLASS_NAME = ClassName.Scholar;
+  protected override JobBonusTable = jobBonusTable;
+  protected override initialStatusPoint = 100;
 
-  protected readonly initialStatusPoint = 48;
-  protected readonly classNames = [ClassName.HiClass, ClassName.Sage];
-  protected readonly _atkSkillList: AtkSkillModel[] = [];
-  protected readonly _activeSkillList: ActiveSkillModel[] = [
+  protected readonly classNamesHi = [ClassName.Sage, ClassName.HiClass, ClassName.Scholar];
+  protected readonly atkSkillListHi: AtkSkillModel[] = [];
+  protected readonly activeSkillListHi: ActiveSkillModel[] = [
     {
       inputType: 'selectButton',
       label: 'Foresight',
@@ -75,7 +146,7 @@ export class Sage extends CharacterBase {
       ],
     },
   ];
-  protected readonly _passiveSkillList: PassiveSkillModel[] = [
+  protected readonly passiveSkillListHi: PassiveSkillModel[] = [
     {
       inputType: 'dropdown',
       label: 'Adv Book',
@@ -236,6 +307,11 @@ export class Sage extends CharacterBase {
   constructor() {
     super();
 
-    this.inheritBaseClass(new Mage());
+    this.inheritSkills({
+      activeSkillList: this.activeSkillListHi,
+      atkSkillList: this.atkSkillListHi,
+      passiveSkillList: this.passiveSkillListHi,
+      classNames: this.classNamesHi,
+    });
   }
 }

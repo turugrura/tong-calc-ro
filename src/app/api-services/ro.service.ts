@@ -1,8 +1,19 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, shareReplay, tap } from 'rxjs';
+import { Observable, map, shareReplay, tap } from 'rxjs';
 import { validBonusSet, validClassNameSet } from './valid-bonuses';
 import { createRawTotalBonus } from 'src/app/utils';
+import * as yaml from 'js-yaml';
+
+type baseStat = 'Str' | 'Agi' | 'Int' | 'Dex' | 'Luk' | 'Vit' | 'Pow' | 'Con' | 'Crt' | 'Spl' | 'Sta' | 'Wis';
+
+interface JobStatBody {
+  Jobs: Record<string, boolean>;
+  BonusStats: ({ Level: number } & Partial<Record<baseStat, number>>)[];
+  HpFactor: number;
+  SpIncrease: number;
+  MaxWeight: number;
+}
 
 @Injectable()
 export class RoService {
@@ -60,7 +71,23 @@ export class RoService {
     );
     this.cachedHpSpTable$ = this.http.get<any>('assets/demo/data/hp_sp_table.json').pipe(shareReplay(1));
 
-    // const a = [] as any[];
+    // this.doX();
+  }
+
+  getItems<T>(): Observable<T> {
+    return this.cachedItems$;
+  }
+
+  getMonsters<T>(): Observable<T> {
+    return this.cachedMonster$;
+  }
+
+  getHpSpTable<T>(): Observable<T> {
+    return this.cachedHpSpTable$;
+  }
+
+  private generateHpSp() {
+    const a = [] as any[];
     // this.getHpSpTable<{ Body: HpSpTable }>().subscribe(({ Body: data }) => {
     //   console.log({ data });
     //   for (const rec of data) {
@@ -117,23 +144,59 @@ export class RoService {
     // });
   }
 
-  getItems<T>(): Observable<T> {
-    return this.cachedItems$;
-  }
-
-  getMonsters<T>(): Observable<T> {
-    return this.cachedMonster$;
-  }
-
-  getHpSpTable<T>(): Observable<T> {
-    return this.cachedHpSpTable$;
-  }
-
   // getHpSpTable<T>(): Observable<T> {
   //   return this.fetchYaml('job_basepoints.yml');
   // }
 
-  // private fetchYaml(fileName: string): any {
-  //   return this.http.get(`/assets/demo/data/${fileName}`, { responseType: 'text' }).pipe(map(yaml.load));
-  // }
+  // 1: [0, 0, 0, 0, 0, 1],
+  // 2: [1, 0, 0, 0, 0, 1],
+  doX() {
+    this.fetchYaml<{ Body: JobStatBody[] }>('job_stats.yml').subscribe(({ Body }) => {
+      console.log({ Body });
+      for (const job of Body) {
+        const bastStat = {} as any;
+        const traitStat = {} as any;
+        for (let i = 1; i <= 70; i++) {
+          let [str, agi, vit, int, dex, luk] = i === 1 ? [0, 0, 0, 0, 0, 0] : bastStat[i - 1];
+          let [pow, sta, wis, spl, con, crt] = i === 1 ? [0, 0, 0, 0, 0, 0] : traitStat[i - 1];
+
+          if (!job.BonusStats) {
+            console.error({ ...job });
+            break;
+          }
+
+          const { Level, Str, Agi, Vit, Int, Dex, Luk, Pow, Con, Crt, Spl, Sta, Wis } = job.BonusStats.find((a) => a.Level === i) || {};
+          if (i === Level) {
+            if (Str && Str > 0) str++;
+            if (Agi && Agi > 0) agi++;
+            if (Vit && Vit > 0) vit++;
+            if (Int && Int > 0) int++;
+            if (Dex && Dex > 0) dex++;
+            if (Luk && Luk > 0) luk++;
+
+            if (Pow && Pow > 0) pow++;
+            if (Sta && Sta > 0) sta++;
+            if (Wis && Wis > 0) wis++;
+            if (Spl && Spl > 0) spl++;
+            if (Con && Con > 0) con++;
+            if (Crt && Crt > 0) crt++;
+          }
+
+          bastStat[i] = [str, agi, vit, int, dex, luk];
+          traitStat[i] = [pow, sta, wis, spl, con, crt];
+        }
+
+        const jobNames = Object.keys(job.Jobs).join(',');
+        if (traitStat[70]?.[0] === 0 && traitStat[70]?.[1] === 0 && traitStat[70]?.[2] === 0 && traitStat[70]?.[3] === 0) {
+          console.log(jobNames, { bastStat });
+        } else {
+          console.log(jobNames, { bastStat, traitStat });
+        }
+      }
+    });
+  }
+
+  private fetchYaml<T>(fileName: string): Observable<T> {
+    return this.http.get(`/assets/demo/data/${fileName}`, { responseType: 'text' }).pipe(map(yaml.load));
+  }
 }

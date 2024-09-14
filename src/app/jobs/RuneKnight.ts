@@ -1,6 +1,6 @@
 import { ClassName } from './_class-name';
 import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, DefForCalcModel, PassiveSkillModel } from './_character-base.abstract';
-import { LordKnight } from './lord-knight';
+import { LordKnight } from './LordKnight';
 import { ElementType } from '../constants/element-type.const';
 import { InfoForClass } from '../models/info-for-class.model';
 import { floor } from '../utils';
@@ -82,9 +82,8 @@ export class RuneKnight extends LordKnight {
   protected override CLASS_NAME = ClassName.RuneKnight;
   protected override JobBonusTable = jobBonusTable;
 
-  protected override initialStatusPoint = 100;
-  protected readonly classNames3rd = [ClassName.Only_3rd, ClassName.RuneKnight];
-  protected readonly atkSkillList3rd: AtkSkillModel[] = [
+  private readonly classNames3rd = [ClassName.Only_3rd, ClassName.RuneKnight];
+  private readonly atkSkillList3rd: AtkSkillModel[] = [
     // {
     //   name: 'Clashing Spiral',
     //   label: 'Clashing Spiral Lv5',
@@ -269,7 +268,7 @@ export class RuneKnight extends LordKnight {
     },
   ];
 
-  protected readonly activeSkillList3rd: ActiveSkillModel[] = [
+  private readonly activeSkillList3rd: ActiveSkillModel[] = [
     {
       name: 'Enchant Blade',
       label: 'Enchant Blade 10',
