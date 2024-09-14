@@ -263,6 +263,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   availablePoints = 0;
   appropriateLevel = 0;
 
+  isAllowTraitStat = false;
   totalTraitPoints = 0;
   availableTraitPoints = 0;
   appropriateLevelForTrait = 0;
@@ -278,9 +279,9 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   selectedChances = [] as string[];
 
   isCalculating = false;
-  calculator = new Calculator();
-  calculator2 = new Calculator();
-  stateCalculator = new BaseStateCalculator();
+  private calculator = new Calculator();
+  private calculator2 = new Calculator();
+  private stateCalculator = new BaseStateCalculator();
 
   possiblyDamages: DropdownModel[];
   itemSummary: any;
@@ -1547,6 +1548,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     const c = Characters.find((a) => a.value === this.model.class)?.['instant'] as CharacterBase;
     this.selectedCharacter = c || Characters[0]['instant'];
     this.calculator.setClass(this.selectedCharacter);
+    this.isAllowTraitStat = this.selectedCharacter.isAllowTraitStat();
   }
 
   private setClassSkill() {
@@ -2271,8 +2273,13 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     this.availablePoints = availablePoint;
     this.appropriateLevel = appropriateLevel;
 
-    this.availableTraitPoints = availableTraitPoint;
-    this.appropriateLevelForTrait = appropriateLevelForTrait;
+    if (this.isAllowTraitStat) {
+      this.availableTraitPoints = availableTraitPoint;
+      this.appropriateLevelForTrait = appropriateLevelForTrait;
+    } else {
+      this.availableTraitPoints = 0;
+      this.appropriateLevelForTrait = 0;
+    }
   }
 
   private clearCard(itemType: string) {
@@ -2433,16 +2440,16 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
           }),
           mergeMap(() => {
             this.calculator = new Calculator();
+            this.calculator.setMasterItems(this.items).setHpSpTable(this.hpSpTable);
+
             this.setClassInstant();
+            this.setSkillModelArray();
             this.setClassSkill();
             this.setClassMinMaxLvl();
             return waitRxjs();
           }),
           mergeMap(() => {
             this.setClassLvl(baseLvl);
-            this.calculator.setMasterItems(this.items).setHpSpTable(this.hpSpTable);
-
-            this.calculator2.setClass(this.selectedCharacter);
             this.onListItemComparingChange(true);
 
             this.updateAvailablePoints();
@@ -2455,13 +2462,6 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
           mergeMap(() => {
             this.setAspdPotionList();
             this.setDefaultSkill();
-            return waitRxjs();
-          }),
-          mergeMap(() => {
-            this.setSkillModelArray();
-            return waitRxjs();
-          }),
-          mergeMap(() => {
             this.setItemDropdownList();
             this.setAmmoDropdownList();
             return waitRxjs(0.5);

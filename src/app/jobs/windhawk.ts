@@ -3,6 +3,7 @@ import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillMode
 import { Ranger } from './ranger';
 import { EquipmentSummaryModel } from '../models/equipment-summary.model';
 import { InfoForClass } from '../models/info-for-class.model';
+import { JOB_4_MAX_JOB_LEVEL, JOB_4_MIN_MAX_LEVEL } from '../app-config';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 0, 1, 0],
@@ -125,12 +126,12 @@ export class Windhawk extends Ranger {
   protected override JobBonusTable = jobBonusTable;
   protected override TraitBonusTable = traitBonusTable;
 
-  protected override minMaxLevel: [number, number] = [200, 260];
-  protected override maxJob = 50;
+  protected override minMaxLevel = JOB_4_MIN_MAX_LEVEL;
+  protected override maxJob = JOB_4_MAX_JOB_LEVEL;
 
   // protected readonly initialStatusPoint = 100;
-  protected classNames4 = [ClassName.Only_4th, ClassName.Windhawk];
-  protected atkSkillList4: AtkSkillModel[] = [
+  protected classNames4th = [ClassName.Only_4th, ClassName.Windhawk];
+  protected atkSkillList4th: AtkSkillModel[] = [
     {
       name: 'Crescive Bolt',
       label: '[V2] Crescive Bolt Lv10',
@@ -170,7 +171,7 @@ export class Windhawk extends Ranger {
       },
     },
   ];
-  protected activeSkillList4: ActiveSkillModel[] = [
+  protected activeSkillList4th: ActiveSkillModel[] = [
     {
       name: 'Calamity Gale',
       label: 'Calamity Gale',
@@ -181,20 +182,16 @@ export class Windhawk extends Ranger {
       ],
     },
   ];
-  protected passiveSkillList4: PassiveSkillModel[] = [];
+  protected passiveSkillList4th: PassiveSkillModel[] = [];
 
   constructor() {
     super();
 
-    // this._atkSkillList.push(...this.this_atkSkillList);
-    // this._activeSkillList.push(...this._activeSkillList);
-    // this._passiveSkillList.push(...this._passiveSkillList);
-    // this.classNames = [...this.this_classNames, ...this.classNames];
     this.inheritSkills({
-      activeSkillList: this.activeSkillList4,
-      atkSkillList: this.atkSkillList4,
-      passiveSkillList: this.passiveSkillList4,
-      classNames: this.classNames4,
+      activeSkillList: this.activeSkillList4th,
+      atkSkillList: this.atkSkillList4th,
+      passiveSkillList: this.passiveSkillList4th,
+      classNames: this.classNames4th,
     });
   }
 

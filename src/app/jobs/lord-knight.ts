@@ -1,19 +1,19 @@
 import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
+import { ActiveSkillModel, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
 import { Swordman } from './swordman';
 import { SpearMastery } from '../constants/share-passive-skills';
 import { CavalierMastery } from '../constants/share-passive-skills/cavalier-mastery';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {};
 
-export class LordKnight extends CharacterBase {
-  protected readonly CLASS_NAME = ClassName.LordKnight;
-  protected readonly JobBonusTable = jobBonusTable;
+export class LordKnight extends Swordman {
+  protected override CLASS_NAME = ClassName.LordKnight;
+  protected override JobBonusTable = jobBonusTable;
 
-  protected readonly initialStatusPoint = 40;
-  protected readonly classNames = [ClassName.HiClass, ClassName.LordKnight];
-  protected readonly _atkSkillList: AtkSkillModel[] = [];
-  protected readonly _activeSkillList: ActiveSkillModel[] = [
+  protected override initialStatusPoint = 100;
+  protected readonly classNamesHi = [ClassName.HiClass, ClassName.LordKnight];
+  protected readonly atkSkillListHi: AtkSkillModel[] = [];
+  protected readonly activeSkillListHi: ActiveSkillModel[] = [
     {
       label: 'Two hand Quick 10',
       name: 'Two hand Quicken',
@@ -23,8 +23,26 @@ export class LordKnight extends CharacterBase {
         { label: 'No', value: 0, isUse: false },
       ],
     },
+    {
+      name: 'Aura Blade',
+      label: 'Aura Blade 5',
+      inputType: 'selectButton',
+      dropdown: [
+        { label: 'Yes', value: 5, isUse: true },
+        { label: 'No', value: 0, isUse: false },
+      ],
+    },
+    {
+      name: 'Spear Dynamo',
+      label: 'Spear Dynamo 5',
+      inputType: 'selectButton',
+      dropdown: [
+        { label: 'Yes', value: 5, isUse: true, bonus: { atkPercent: 15, hit: 50, defPercent: -15 } },
+        { label: 'No', value: 0, isUse: false },
+      ],
+    },
   ];
-  protected readonly _passiveSkillList: PassiveSkillModel[] = [
+  protected readonly passiveSkillListHi: PassiveSkillModel[] = [
     SpearMastery,
     CavalierMastery,
     {
@@ -63,6 +81,11 @@ export class LordKnight extends CharacterBase {
   constructor() {
     super();
 
-    this.inheritBaseClass(new Swordman());
+    this.inheritSkills({
+      activeSkillList: this.activeSkillListHi,
+      atkSkillList: this.atkSkillListHi,
+      passiveSkillList: this.passiveSkillListHi,
+      classNames: this.classNamesHi,
+    });
   }
 }

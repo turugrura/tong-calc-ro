@@ -7,73 +7,95 @@ export enum ClassName {
   Swordman = 'Swordman',
   Paladin = 'Paladin',
   RoyalGuard = 'RoyalGuard',
+  ImperialGuard = 'ImperialGuard',
 
+  Knight = 'Knight',
   LordKnight = 'LordKnight',
   RuneKnight = 'RuneKnight',
+  DragonKnight = 'DragonKnight',
 
   Archer = 'Archer',
   Hunter = 'Hunter',
   Sniper = 'Sniper',
   Ranger = 'Ranger',
+  Windhawk = 'Windhawk',
 
   Bard = 'Bard',
   Clown = 'Clown',
   Wanderer = 'Wanderer',
+  Trouvere = 'Trouvere',
 
   Dancer = 'Dancer',
   Minstrel = 'Minstrel',
-
-  Windhawk = 'Windhawk',
+  Troubadour = 'Troubadour',
 
   Merchant = 'Merchant',
   Blacksmith = 'Blacksmith',
   Whitesmith = 'Whitesmith',
   Mechanic = 'Mechanic',
+  Meister = 'Meister',
 
   Alchemist = 'Alchemist',
   Creator = 'Creator',
   Genetic = 'Genetic',
+  Biolo = 'Biolo',
 
   Acolyte = 'Acolyte',
   Priest = 'Priest',
   ArchBishop = 'ArchBishop',
+  Cardinal = 'Cardinal',
 
   Monk = 'Monk',
   Champion = 'Champion',
   Sura = 'Sura',
+  Inquisitor = 'Inquisitor',
 
   Thief = 'Thief',
   Assassin = 'Assassin',
   AssassinCross = 'AssassinCross',
   GuillotineCross = 'GuillotineCross',
+  ShadowCross = 'ShadowCross',
+
   Rogue = 'Rogue',
   Stalker = 'Stalker',
   ShadowChaser = 'ShadowChaser',
+  AbyssChaser = 'AbyssChaser',
 
   Sage = 'Sage',
   Sorcerer = 'Sorcerer',
+  ElementalMaster = 'ElementalMaster',
+
   Mage = 'Mage',
   Wizard = 'Wizard',
   Warlock = 'Warlock',
+  ArchMage = 'ArchMage',
 
   // extended
   Novice = 'Novice',
   SuperNovice = 'SuperNovice',
+  HyperNovice = 'HyperNovice',
+
   Doram = 'Doram',
+  SpiritHandler = 'SpiritHandler',
 
   Taekwondo = 'Taekwondo',
   SoulLinker = 'SoulLinker',
   SoulReaper = 'SoulReaper',
+  SoulAscetic = 'SoulAscetic',
 
   StarGladiator = 'StarGladiator',
   StarEmperor = 'StarEmperor',
+  SkyEmperor = 'SkyEmperor',
 
   Gunslinger = 'Gunslinger',
   Rebellion = 'Rebellion',
+  NightWatch = 'NightWatch',
 
   Ninja = 'Ninja',
   Oboro = 'Oboro',
   Kagerou = 'Kagerou',
+  Shiranui = 'Shiranui',
+  Shinkiro = 'Shinkiro',
 }
 
 /**
@@ -100,7 +122,26 @@ export const ClassID = {
   30: 'Super Novice',
   17: ClassName.Oboro,
   18: ClassName.Kagerou,
+  4252: ClassName.DragonKnight,
+  4253: ClassName.Meister,
+  4254: ClassName.ShadowCross,
+  4255: ClassName.ArchMage,
+  4256: ClassName.Cardinal,
   4257: ClassName.Windhawk,
+  4258: ClassName.ImperialGuard,
+  4259: ClassName.Biolo,
+  4260: ClassName.AbyssChaser,
+  4261: ClassName.ElementalMaster,
+  4262: ClassName.Inquisitor,
+  4263: ClassName.Troubadour,
+  4264: ClassName.Trouvere,
+  4302: ClassName.SkyEmperor,
+  4303: ClassName.SoulAscetic,
+  4304: ClassName.Shinkiro,
+  4305: ClassName.Shiranui,
+  4306: ClassName.NightWatch,
+  4307: ClassName.HyperNovice,
+  4308: ClassName.SpiritHandler,
 } as const;
 
 /**
@@ -145,5 +186,24 @@ export const ClassIcon: Record<keyof typeof ClassID, number> = {
   30: 4190,
   17: 4212,
   18: 4211,
+  4252: 4252,
+  4253: 4253,
+  4254: 4254,
+  4255: 4255,
+  4256: 4256,
   4257: 4257,
+  4258: 4258,
+  4259: 4259,
+  4260: 4260,
+  4261: 4261,
+  4262: 4262,
+  4263: 4263,
+  4264: 4264,
+  4302: 4302,
+  4303: 4303,
+  4304: 4304,
+  4305: 4305,
+  4306: 4306,
+  4307: 4307,
+  4308: 4308,
 } as const;

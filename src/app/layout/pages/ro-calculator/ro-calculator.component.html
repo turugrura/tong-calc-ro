@@ -149,7 +149,7 @@
                 <span [hidden]="!appropriateLevel">(Lv {{ appropriateLevel > 200 ? 'x' : appropriateLevel }})</span>
               </span>
 
-              <span
+              <span [hidden]="!isAllowTraitStat"
                 >, Trait:
                 <span [className]="availableTraitPoints < 0 ? ' summary_monster_value px-1 font-semibold' : ''">
                   {{ availableTraitPoints }}
@@ -180,6 +180,7 @@
                 <div class="col-6">
                   <app-status-input
                     label="Pow"
+                    [disabled]="!isAllowTraitStat"
                     [dropdownList]="traitStatusList"
                     [(value)]="model.pow"
                     (valueChange)="onBaseStatusChange()"
@@ -203,6 +204,7 @@
                 <div class="col-6">
                   <app-status-input
                     label="Sta"
+                    [disabled]="!isAllowTraitStat"
                     [dropdownList]="traitStatusList"
                     [(value)]="model.sta"
                     (valueChange)="onBaseStatusChange()"
@@ -226,6 +228,7 @@
                 <div class="col-6">
                   <app-status-input
                     label="Wis"
+                    [disabled]="!isAllowTraitStat"
                     [dropdownList]="traitStatusList"
                     [(value)]="model.wis"
                     (valueChange)="onBaseStatusChange()"
@@ -249,6 +252,7 @@
                 <div class="col-6">
                   <app-status-input
                     label="Spl"
+                    [disabled]="!isAllowTraitStat"
                     [dropdownList]="traitStatusList"
                     [(value)]="model.spl"
                     (valueChange)="onBaseStatusChange()"
@@ -272,6 +276,7 @@
                 <div class="col-6">
                   <app-status-input
                     label="Con"
+                    [disabled]="!isAllowTraitStat"
                     [dropdownList]="traitStatusList"
                     [(value)]="model.con"
                     (valueChange)="onBaseStatusChange()"
@@ -295,6 +300,7 @@
                 <div class="col-6">
                   <app-status-input
                     label="Crt"
+                    [disabled]="!isAllowTraitStat"
                     [dropdownList]="traitStatusList"
                     [(value)]="model.crt"
                     (valueChange)="onBaseStatusChange()"

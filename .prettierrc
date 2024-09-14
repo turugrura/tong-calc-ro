@@ -5,19 +5,19 @@
   "printWidth": 170,
   "overrides": [
     {
-      "files": "src\\app\\layout\\pages\\ro-calculator\\jobs\\_aspd-table.ts",
+      "files": "src\\app\\jobs\\_aspd-table.ts",
       "options": {
-        "printWidth": 220
+        "printWidth": 240
       }
     },
     {
-      "files": "src\\app\\layout\\pages\\ro-calculator\\constants\\enchant-table.ts",
+      "files": "src\\app\\constants\\enchant-table.ts",
       "options": {
         "printWidth": 200
       }
     },
     {
-      "files": "src\\app\\layout\\pages\\ro-calculator\\constants\\element-mapper.ts",
+      "files": "src\\app\\constants\\element-mapper.ts",
       "options": {
         "printWidth": 200
       }

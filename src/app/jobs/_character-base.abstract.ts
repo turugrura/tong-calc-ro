@@ -522,6 +522,10 @@ export abstract class CharacterBase {
     return finalDamage;
   }
 
+  isAllowTraitStat() {
+    return !!this.TraitBonusTable[50];
+  }
+
   getJobBonusStatus(jobLevel: number) {
     const [str, agi, vit, int, dex, luk] = this.JobBonusTable[jobLevel] || [0, 0, 0, 0, 0, 0];
     const [pow, sta, wis, spl, con, crt] = this.TraitBonusTable[jobLevel] || [0, 0, 0, 0, 0, 0];

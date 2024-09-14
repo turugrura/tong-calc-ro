@@ -3,6 +3,7 @@ import { CharacterBase } from './_character-base.abstract';
 import { ClassID, ClassIcon } from './_class-name';
 import { ArchBishop } from './arch-bishop';
 import { Doram } from './doram';
+import { DragonKnight } from './dragon-knight';
 import { Genetic } from './genetic';
 import { GitCross } from './git-cross';
 import { Kagerou } from './kagerou';
@@ -30,7 +31,6 @@ export const getClassDropdownList = (): (DropdownModel & { icon: number; instant
     { label: ClassID[7], value: 7, icon: ClassIcon[7], instant: new ArchBishop() },
     { label: ClassID[13], value: 13, icon: ClassIcon[13], instant: new Sura() },
     { label: ClassID[2], value: 2, icon: ClassIcon[2], instant: new Ranger() },
-    { label: ClassID[4257], value: 4257, icon: ClassIcon[4257], instant: new Windhawk() },
     { label: ClassID[21], value: 21, icon: ClassIcon[21], instant: new Minstrel() },
     { label: ClassID[22], value: 22, icon: ClassIcon[22], instant: new Wanderer() },
     { label: ClassID[5], value: 5, icon: ClassIcon[5], instant: new GitCross() },
@@ -46,5 +46,8 @@ export const getClassDropdownList = (): (DropdownModel & { icon: number; instant
     { label: ClassID[18], value: 18, icon: ClassIcon[18], instant: new Kagerou() },
     { label: ClassID[1], value: 1, icon: ClassIcon[1], instant: new Rebelion() },
     { label: ClassID[31], value: 31, icon: ClassIcon[31], instant: new Doram() },
+
+    { label: ClassID[4252], value: 4252, icon: ClassIcon[4252], instant: new DragonKnight() },
+    { label: ClassID[4257], value: 4257, icon: ClassIcon[4257], instant: new Windhawk() },
   ];
 };

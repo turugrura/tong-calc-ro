@@ -2,6 +2,7 @@
   <div class="p-inputgroup">
     <span class="p-inputgroup-addon" style="width: 32px">{{ label }}</span>
     <p-dropdown
+      [disabled]="disabled"
       inputId="{{ label }}"
       [autoDisplayFirst]="false"
       [options]="dropdownList"

@@ -82,8 +82,8 @@ export class Ranger extends Sniper {
   protected override JobBonusTable = jobBonusTable;
 
   protected override initialStatusPoint = 100;
-  private classNames2: ClassName[] = [ClassName.Ranger, ClassName.Only_3rd];
-  protected _atkSkillList2: AtkSkillModel[] = [
+  private classNames3rd: ClassName[] = [ClassName.Ranger, ClassName.Only_3rd];
+  protected atkSkillList3rd: AtkSkillModel[] = [
     {
       name: 'Arrow Storm',
       label: 'Arrow Storm Lv10',
@@ -125,7 +125,7 @@ export class Ranger extends Sniper {
       },
     },
   ];
-  protected _activeSkillList2: ActiveSkillModel[] = [
+  protected activeSkillList3rd: ActiveSkillModel[] = [
     {
       label: 'Fear Breeze 5',
       name: 'Fear Breeze',
@@ -139,7 +139,7 @@ export class Ranger extends Sniper {
     NoLimitFn(),
   ];
 
-  protected _passiveSkillList2: PassiveSkillModel[] = [
+  protected passiveSkillList3rd: PassiveSkillModel[] = [
     {
       isMasteryAtk: true,
       inputType: 'dropdown',
@@ -295,10 +295,10 @@ export class Ranger extends Sniper {
 
     // this.inheritBaseClass(new Archer());
     this.inheritSkills({
-      activeSkillList: this._activeSkillList2,
-      atkSkillList: this._atkSkillList2,
-      passiveSkillList: this._passiveSkillList2,
-      classNames: this.classNames2,
+      activeSkillList: this.activeSkillList3rd,
+      atkSkillList: this.atkSkillList3rd,
+      passiveSkillList: this.passiveSkillList3rd,
+      classNames: this.classNames3rd,
     });
   }
 

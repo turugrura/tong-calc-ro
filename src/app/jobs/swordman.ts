@@ -4,11 +4,11 @@ import { ActiveSkillModel, AtkSkillModel, CharacterBase, PassiveSkillModel } fro
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {};
 
 export class Swordman extends CharacterBase {
-  protected readonly CLASS_NAME = ClassName.Swordman;
-  protected readonly JobBonusTable = jobBonusTable;
+  protected override CLASS_NAME = ClassName.Swordman;
+  protected override JobBonusTable = jobBonusTable;
 
-  protected readonly initialStatusPoint = 40;
-  protected readonly classNames = [ClassName.Swordman];
+  protected override initialStatusPoint = 40;
+  protected override classNames = [ClassName.Swordman];
   protected readonly _atkSkillList: AtkSkillModel[] = [];
   protected readonly _activeSkillList: ActiveSkillModel[] = [
     {

@@ -1,17 +1,18 @@
 import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
+import { ActiveSkillModel, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
 import { InfoForClass } from '../models/info-for-class.model';
+import { Swordman } from './swordman';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {};
 
-export class RawJob extends CharacterBase {
-  protected readonly CLASS_NAME = ClassName.SoulLinker;
-  protected readonly JobBonusTable = jobBonusTable;
+export class RawJob extends Swordman {
+  protected override CLASS_NAME = ClassName.DragonKnight;
+  protected override JobBonusTable = jobBonusTable;
 
-  protected readonly initialStatusPoint = 40;
-  protected readonly classNames = [ClassName.SoulLinker];
-  protected readonly _atkSkillList: AtkSkillModel[] = [];
-  protected readonly _activeSkillList: ActiveSkillModel[] = [
+  protected override initialStatusPoint = 100;
+  protected readonly classNames4th = [ClassName.DragonKnight];
+  protected readonly atkSkillList4th: AtkSkillModel[] = [];
+  protected readonly activeSkillList4th: ActiveSkillModel[] = [
     {
       label: "Owl's Eye 10",
       name: "Owl's Eye",
@@ -23,7 +24,7 @@ export class RawJob extends CharacterBase {
       ],
     },
   ];
-  protected readonly _passiveSkillList: PassiveSkillModel[] = [
+  protected readonly passiveSkillList4th: PassiveSkillModel[] = [
     {
       label: 'Axe Boomerang',
       name: 'Axe Boomerang',
@@ -96,5 +97,16 @@ export class RawJob extends CharacterBase {
     }
 
     return totalBonus;
+  }
+
+  constructor() {
+    super();
+
+    this.inheritSkills({
+      activeSkillList: this.activeSkillList4th,
+      atkSkillList: this.atkSkillList4th,
+      passiveSkillList: this.passiveSkillList4th,
+      classNames: this.classNames4th,
+    });
   }
 }

@@ -1,5 +1,5 @@
 import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, CharacterBase, DefForCalcModel, PassiveSkillModel } from './_character-base.abstract';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, DefForCalcModel, PassiveSkillModel } from './_character-base.abstract';
 import { LordKnight } from './lord-knight';
 import { ElementType } from '../constants/element-type.const';
 import { InfoForClass } from '../models/info-for-class.model';
@@ -78,13 +78,13 @@ const jobBonusTable: Record<number, [number, number, number, number, number, num
   70: [6, 6, 7, 10, 9, 5],
 };
 
-export class RuneKnight extends CharacterBase {
-  protected readonly CLASS_NAME = ClassName.RuneKnight;
-  protected readonly JobBonusTable = jobBonusTable;
+export class RuneKnight extends LordKnight {
+  protected override CLASS_NAME = ClassName.RuneKnight;
+  protected override JobBonusTable = jobBonusTable;
 
-  protected readonly initialStatusPoint = 100;
-  protected readonly classNames = [ClassName.Only_3rd, ClassName.RuneKnight];
-  protected readonly _atkSkillList: AtkSkillModel[] = [
+  protected override initialStatusPoint = 100;
+  protected readonly classNames3rd = [ClassName.Only_3rd, ClassName.RuneKnight];
+  protected readonly atkSkillList3rd: AtkSkillModel[] = [
     // {
     //   name: 'Clashing Spiral',
     //   label: 'Clashing Spiral Lv5',
@@ -206,6 +206,10 @@ export class RuneKnight extends CharacterBase {
         const baseLevel = model.level;
         const clashingSpiralBonus = this.learnLv('Clashing Spiral') * 50;
 
+        if (this.isSkillActive('Dragonic Aura')) {
+          return (700 + 350 * skillLevel) * (baseLevel / 100) + clashingSpiralBonus;
+        }
+
         return (600 + 200 * skillLevel) * (baseLevel / 100) + clashingSpiralBonus;
       },
     },
@@ -265,25 +269,7 @@ export class RuneKnight extends CharacterBase {
     },
   ];
 
-  protected readonly _activeSkillList: ActiveSkillModel[] = [
-    {
-      name: 'Aura Blade',
-      label: 'Aura Blade 5',
-      inputType: 'selectButton',
-      dropdown: [
-        { label: 'Yes', value: 5, isUse: true },
-        { label: 'No', value: 0, isUse: false },
-      ],
-    },
-    {
-      name: 'Spear Dynamo',
-      label: 'Spear Dynamo 5',
-      inputType: 'selectButton',
-      dropdown: [
-        { label: 'Yes', value: 5, isUse: true, bonus: { atkPercent: 15, hit: 50, defPercent: -15 } },
-        { label: 'No', value: 0, isUse: false },
-      ],
-    },
+  protected readonly activeSkillList3rd: ActiveSkillModel[] = [
     {
       name: 'Enchant Blade',
       label: 'Enchant Blade 10',
@@ -352,7 +338,7 @@ export class RuneKnight extends CharacterBase {
     },
   ];
 
-  protected readonly _passiveSkillList: PassiveSkillModel[] = [
+  protected readonly passiveSkillList3rd: PassiveSkillModel[] = [
     {
       label: 'Ignition Break',
       name: 'Ignition Break',
@@ -505,7 +491,12 @@ export class RuneKnight extends CharacterBase {
   constructor() {
     super();
 
-    this.inheritBaseClass(new LordKnight());
+    this.inheritSkills({
+      activeSkillList: this.activeSkillList3rd,
+      atkSkillList: this.atkSkillList3rd,
+      passiveSkillList: this.passiveSkillList3rd,
+      classNames: this.classNames3rd,
+    });
   }
 
   override getMasteryAtk(info: InfoForClass): number {
@@ -574,11 +565,15 @@ export class RuneKnight extends CharacterBase {
   }
 
   private calcDragonBreathFormula(input: AtkSkillFormulaInput) {
-    const { model, skillLevel, currentHp, maxSp } = input;
+    const { model, skillLevel, currentHp, maxSp, status, totalBonus } = input;
     const baseLevel = model.level;
     const dragonTrainingLv = this.learnLv('Dragon Training');
 
-    return (currentHp / 50 + maxSp / 4) * ((skillLevel * baseLevel) / 100) * (90 + dragonTrainingLv * 10) * 0.01;
+    const { totalPow } = status;
+    const { pAtk } = totalBonus;
+    const dragonnicBonus = this.learnLv('Dragonic Aura') > 0 ? (totalPow / 5) * (1 + pAtk / 100) : 0;
+
+    return (floor(currentHp / 50) + floor(maxSp / 4)) * ((skillLevel * baseLevel) / 100) * (90 + dragonTrainingLv * 10 + dragonnicBonus) * 0.01;
   }
 
   private calcPostSkillDamgeDragonBreath(
@@ -595,6 +590,10 @@ export class RuneKnight extends CharacterBase {
     totalDamage = floor(totalDamage * (100 + totalBonus.range) * 0.01);
     totalDamage = floor(totalDamage * (100 + (totalBonus[skillName] || 0)) * 0.01);
     totalDamage = floor(totalDamage * propertyMultiplier);
+
+    // if (this.isSkillActive('Dragonic Aura')) {
+    //   totalDamage += (totalDamage * this.learnLv('Dragonic Aura')) / 10;
+    // }
 
     return totalDamage;
   }

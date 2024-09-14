@@ -14,6 +14,7 @@ export class StatusInputComponent {
 
   @Input({ required: true }) extraValue: number;
   @Input() badgeSeverity: 'success' | 'info' | 'warning' | 'danger' = 'info';
+  @Input() disabled = false;
 
   constructor() {}
 
