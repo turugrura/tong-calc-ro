@@ -418,10 +418,12 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     this.allSubs.push(isCalcSubs);
 
     const itemChanges = new Set<ItemTypeEnum>();
+    // let n = 0;
     const updateItemSubs = this.updateItemEvent
       .pipe(
         tap((itemChange: ItemTypeEnum) => {
           this.isCalculating = true;
+          // console.log('updateItemSubs ', ++n);
           itemChanges.add(itemChange);
         }),
         debounceTime(250),
@@ -2337,7 +2339,6 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
   onSelectGrade(itemType: string, itemId: number, grade: string) {
     this.calculator.setItem({ itemType: itemType as ItemTypeEnum, itemId, grade });
-
     this.updateItemEvent.next(itemType);
   }
 

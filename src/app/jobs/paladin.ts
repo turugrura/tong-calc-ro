@@ -110,13 +110,18 @@ export class Paladin extends Swordman {
       vct: 0.8,
       cd: 0,
       acd: 1,
+      isRequireShield: true,
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, equipmentBonus } = input;
         const baseLevel = model.level;
-        const { shield } = equipmentBonus;
-        if (!shield) return 0;
+        const { refine = 0, weight = 0 } = equipmentBonus.shield;
 
-        return (300 + skillLevel * 200 + (shield.refine || 0) * 4 + (shield.weight || 0)) * (baseLevel / 100);
+        if (this.isSkillActive('Shield Shooting')) {
+          const shieldMastLv = this.learnLv('Shield Mastery');
+          return (300 + skillLevel * (650 + shieldMastLv * 15) + refine * 4 + weight) * (baseLevel / 100);
+        }
+
+        return (300 + skillLevel * 200 + refine * 4 + weight) * (baseLevel / 100);
       },
     },
   ];

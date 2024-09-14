@@ -259,10 +259,19 @@ export class ImperialGuard extends RoyalGuard {
     },
     {
       name: 'Grand Judgement',
-      label: 'Grand Judg 10',
+      label: 'Grand Judgement',
       inputType: 'selectButton',
       dropdown: [
         { label: 'Yes', value: 10, isUse: true },
+        { label: 'No', value: 0, isUse: false },
+      ],
+    },
+    {
+      name: 'Shield Shooting',
+      label: 'Shield Shooting',
+      inputType: 'selectButton',
+      dropdown: [
+        { label: 'Yes', value: 5, isUse: true },
         { label: 'No', value: 0, isUse: false },
       ],
     },

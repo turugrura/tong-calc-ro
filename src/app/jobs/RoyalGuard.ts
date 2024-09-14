@@ -162,11 +162,17 @@ export class RoyalGuard extends Paladin {
       cd: 2,
       isMelee: true,
       hit: 5,
+      isRequireShield: true,
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status, equipmentBonus } = input;
         const baseLevel = model.level;
         const { totalStr, totalVit } = status;
         const { weight = 0, refine = 0 } = equipmentBonus.shield || {};
+
+        if (this.isSkillActive('Shield Shooting')) {
+          const shieldMastLv = this.learnLv('Shield Mastery');
+          return (totalStr + weight + skillLevel * (260 + shieldMastLv * 15)) * (baseLevel / 100) + totalVit * refine;
+        }
 
         return (totalStr + weight + skillLevel * 200) * (baseLevel / 100) + totalVit * refine;
       },
@@ -229,6 +235,11 @@ export class RoyalGuard extends Paladin {
         const { model, status, skillLevel } = input;
         const baseLevel = model.level;
         const { totalVit, totalStr } = status;
+
+        if (this.isSkillActive('Shield Shooting')) {
+          const shieldMastLv = this.learnLv('Shield Mastery');
+          return (totalVit + totalStr + skillLevel * (600 + shieldMastLv * 15)) * (baseLevel / 100);
+        }
 
         return (totalVit + totalStr + skillLevel * 380) * (baseLevel / 100);
       },
