@@ -54,7 +54,7 @@ export interface AtkSkillModel {
   };
   finalDmgFormula?: (input: AtkSkillFormulaInput & { damage: number }) => number;
   maxStack?: number;
-  canCri?: boolean;
+  canCri?: boolean | (() => boolean);
   baseCri?: number;
   /**
    * 0.3 => baseCri * 0.3

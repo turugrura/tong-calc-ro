@@ -1,6 +1,8 @@
 import { ClassName } from './_class-name';
 import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
 import { Ranger } from './ranger';
+import { EquipmentSummaryModel } from '../models/equipment-summary.model';
+import { InfoForClass } from '../models/info-for-class.model';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 0, 1, 0],
@@ -145,8 +147,9 @@ export class Windhawk extends Ranger {
         const { model, skillLevel, status, stack } = input;
         const baseLevel = model.level;
         const totalStack = stack;
+        const calaBonus = this.isSkillActive('Calamity Gale') ? 1.2 : 1;
 
-        return (skillLevel * 300 + status.totalCon * 10) * (baseLevel / 100) * (1 + 0.1 * totalStack);
+        return (skillLevel * 300 + status.totalCon * 10) * (baseLevel / 100) * (1 + 0.1 * totalStack) * calaBonus;
       },
     },
     {
@@ -158,6 +161,7 @@ export class Windhawk extends Ranger {
       vct: 1,
       cd: 2,
       hit: 5,
+      canCri: () => this.isSkillActive('Calamity Gale'),
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
         const baseLevel = model.level;
@@ -166,7 +170,17 @@ export class Windhawk extends Ranger {
       },
     },
   ];
-  protected activeSkillList4: ActiveSkillModel[] = [];
+  protected activeSkillList4: ActiveSkillModel[] = [
+    {
+      name: 'Calamity Gale',
+      label: 'Calamity Gale',
+      inputType: 'selectButton',
+      dropdown: [
+        { label: 'Yes', value: 1, isUse: true, bonus: { range: 350 } },
+        { label: 'No', value: 0, isUse: false },
+      ],
+    },
+  ];
   protected passiveSkillList4: PassiveSkillModel[] = [];
 
   constructor() {
@@ -183,4 +197,36 @@ export class Windhawk extends Ranger {
       classNames: this.classNames4,
     });
   }
+
+  override setAdditionalBonus(params: InfoForClass): EquipmentSummaryModel {
+    const { totalBonus, skillName } = params;
+    // const {race, elementUpper} = monster;
+
+    if (this.isSkillActive('Calamity Gale')) {
+      // if (race === '' || elementUpper === ElementType.Water) {
+      // }
+      const noLimitLv = this.activeSkillLv('No Limits');
+      if (noLimitLv > 0) {
+        totalBonus.range -= 100 + noLimitLv * 50;
+      }
+
+      if (skillName === 'Crescive Bolt' || skillName === 'Gale Storm') {
+        totalBonus.p_race_fish = (totalBonus.p_race_fish || 0) + 50;
+        totalBonus.p_element_water = (totalBonus.p_element_water || 0) + 50;
+      }
+    }
+
+    return totalBonus;
+  }
+
+  // override modifyFinalAtk(currentAtk: number, params: InfoForClass): number {
+  //   const {totalBonus, skillName, monster} = params;
+  //   const {race, elementUpper} = monster;
+
+  //   if (this.isSkillActive('Calamity Gale') && (skillName === 'Crescive Bolt' || skillName === 'Gale Storm')) {
+  //     if (race === '' || elementUpper === ElementType.Water) {
+
+  //     }
+  //   }
+  // }
 }

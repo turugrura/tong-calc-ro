@@ -1,6 +1,6 @@
 import { ClassName } from './_class-name';
 import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
-import { NoLimit } from '../constants/share-active-skills';
+import { NoLimitFn } from '../constants/share-active-skills';
 import { InfoForClass } from '../models/info-for-class.model';
 import { Sniper } from './sniper';
 
@@ -136,7 +136,7 @@ export class Ranger extends Sniper {
         { label: 'No', value: 0, isUse: false },
       ],
     },
-    NoLimit,
+    NoLimitFn(),
   ];
 
   protected _passiveSkillList2: PassiveSkillModel[] = [

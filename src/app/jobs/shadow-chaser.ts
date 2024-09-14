@@ -1,6 +1,6 @@
 import { ClassName } from './_class-name';
 import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
-import { DarkClawFn, NoLimit, ShieldSpellFn } from '../constants/share-active-skills';
+import { DarkClawFn, NoLimitFn, ShieldSpellFn } from '../constants/share-active-skills';
 import { Thief } from './thief';
 import { InfoForClass } from '../models/info-for-class.model';
 import { ElementType } from '../constants/element-type.const';
@@ -331,7 +331,7 @@ export class ShadowChaser extends CharacterBase {
     },
     ShieldSpellFn(),
     DarkClawFn(),
-    NoLimit,
+    NoLimitFn(),
     {
       inputType: 'selectButton',
       label: 'Mystical Amp 5',

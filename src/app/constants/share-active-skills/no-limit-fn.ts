@@ -1,6 +1,6 @@
 import { ActiveSkillModel } from '../../jobs/_character-base.abstract';
 
-export const NoLimit: ActiveSkillModel = {
+export const NoLimitFn = (): ActiveSkillModel => ({
   isEquipAtk: true,
   inputType: 'dropdown',
   label: 'No Limits',
@@ -13,4 +13,4 @@ export const NoLimit: ActiveSkillModel = {
     { label: 'Lv 4', value: 4, skillLv: 4, isUse: true, bonus: { range: 300 } },
     { label: 'Lv 5', value: 5, skillLv: 5, isUse: true, bonus: { range: 350 } },
   ],
-};
+});

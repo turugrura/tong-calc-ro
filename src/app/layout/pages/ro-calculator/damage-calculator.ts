@@ -721,7 +721,7 @@ export class DamageCalculator {
     const {
       name: skillName,
       element,
-      canCri: _canCri,
+      canCri: canCriFn,
       isMelee: _isMelee,
       isHDefToSDef = false,
       isIgnoreDef = false,
@@ -730,6 +730,7 @@ export class DamageCalculator {
     } = skillData;
     this.skillName = skillName;
     const { criDmgPercentage = 1 } = skillData;
+    const _canCri = typeof canCriFn === 'function' ? canCriFn() : canCriFn;
     const canCri = this.isForceSkillCri || _canCri;
     const { reducedHardDef, finalDmgReduction, finalSoftDef, resReduction } = this.getPhisicalDefData();
     const hardDef = isIgnoreDef || isHDefToSDef ? 1 : finalDmgReduction;
