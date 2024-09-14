@@ -188,15 +188,14 @@ export class DragonKnight extends RuneKnight {
       fct: 0,
       vct: 0,
       cd: 0.3,
+      requireWeaponTypes: ['twohandSword', 'twohandSpear'],
       isMelee: (weaponType) => {
         return weaponType === 'twohandSword';
       },
       formula: (input: AtkSkillFormulaInput): number => {
-        const { model, skillLevel, status, weapon } = input;
+        const { model, skillLevel, status } = input;
         const { totalPow } = status;
         const baseLevel = model.level;
-        const wType = weapon.data?.typeName;
-        if (wType !== 'twohandSword' && wType !== 'twohandSpear') return 0;
 
         return (500 + skillLevel * 250 + totalPow * 5) * (baseLevel / 100);
       },
@@ -212,11 +211,9 @@ export class DragonKnight extends RuneKnight {
       canCri: true,
       baseCriPercentage: 1,
       isMelee: true,
+      requireWeaponTypes: ['twohandSword', 'twohandAxe'],
       formula: (input: AtkSkillFormulaInput): number => {
-        const { model, skillLevel, status, weapon } = input;
-        const wType = weapon.data?.typeName;
-        if (wType !== 'twohandSword' && wType !== 'twohandAxe') return 0;
-
+        const { model, skillLevel, status } = input;
         const { totalPow } = status;
         const baseLevel = model.level;
 
@@ -236,11 +233,9 @@ export class DragonKnight extends RuneKnight {
       fct: 0.4,
       vct: 0.4,
       cd: 0.35,
+      requireWeaponTypes: ['twohandSword', 'twohandSpear'],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status, weapon } = input;
-        const wType = weapon.data?.typeName;
-        if (wType !== 'twohandSword' && wType !== 'twohandSpear') return 0;
-
         const { totalPow } = status;
         const baseLevel = model.level;
         const { weight, baseWeaponLevel } = weapon.data;

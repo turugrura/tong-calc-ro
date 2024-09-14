@@ -8,17 +8,13 @@
     <span *ngIf="isDisplayRangeDmg" class="text-lg font-medium px-1 {{ styleClass }}"
       >{{ _min | number : '1.0-5' }} - {{ _max | number : '1.0-5' }}{{ isDisplayCompare ? '' : unit }}</span
     >
-    <span *ngIf="!isDisplayRangeDmg" class="text-lg font-medium px-1 {{ styleClass }}"
-      >{{ _max | number : '1.0-5' }}{{ isDisplayCompare ? '' : unit }}</span
-    >
+    <span *ngIf="!isDisplayRangeDmg" class="text-lg font-medium px-1 {{ styleClass }}">{{ _max | number : '1.0-5' }}{{ isDisplayCompare ? '' : unit }}</span>
     <span [hidden]="!isDisplayCompare">
       <i class="pi pi-arrow-right vs_sign px-1"></i>
       <span *ngIf="isDisplayRangeDmg2" class="text-lg font-medium px-1  {{ compareStyleClass }}"
         >{{ _min2 | number : '1.0-5' }} - {{ _max2 | number : '1.0-5' }}{{ unit }}</span
       >
-      <span *ngIf="!isDisplayRangeDmg2" class="text-lg font-medium px-1  {{ compareStyleClass }}"
-        >{{ _max2 | number : '1.0-5' }}{{ unit }}</span
-      >
+      <span *ngIf="!isDisplayRangeDmg2" class="text-lg font-medium px-1  {{ compareStyleClass }}">{{ _max2 | number : '1.0-5' }}{{ unit }}</span>
       <span [hidden]="!_diffPercent" class="text-lg font-medium px-1 {{ compareStyleClass }}">{{ _diffPercent }}</span>
     </span>
   </div>

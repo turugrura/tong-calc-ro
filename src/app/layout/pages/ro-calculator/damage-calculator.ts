@@ -1108,7 +1108,20 @@ export class DamageCalculator {
       currentHpFn,
       currentSpFn,
       maxStack = 0,
+      requireWeaponTypes = [],
+      isRequireShield = false,
     } = skillData;
+
+    if (isRequireShield && !this.model.shield) {
+      basicDmg.requireTxt = 'Shield';
+      return { basicDmg, misc, basicAspd };
+    }
+
+    const weaponType = this.weaponData.data?.typeName;
+    if (requireWeaponTypes.length && requireWeaponTypes.every((require) => require !== weaponType)) {
+      basicDmg.requireTxt = requireWeaponTypes.map((w) => w.replace('onehand', '1-Handed ').replace('twohand', '2-Handed ')).join(' / ');
+      return { basicDmg, misc, basicAspd };
+    }
 
     const currentHp = typeof currentHpFn === 'function' ? currentHpFn(maxHp) : 0;
     const currentSp = typeof currentSpFn === 'function' ? currentSpFn(maxSp) : 0;

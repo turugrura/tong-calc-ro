@@ -2,6 +2,9 @@
   <div class="loading_block" *ngIf="isCalculating">
     <i class="pi pi-spin pi-spinner" style="font-size: 2rem"></i>
   </div>
+  <div class="col-12" [hidden]="!totalSummary?.dmg?.requireTxt">
+    Require: <span class="summary_monster_value text-lg px-1" style="color: var(--red-500)">{{ totalSummary?.dmg?.requireTxt }}</span>
+  </div>
   <div class="col-6">
     Type <span class="summary_highlight font-semibold">{{ totalSummary?.calcSkill?.dmgType }}</span>
   </div>
@@ -112,12 +115,12 @@
     ></app-calc-value>
   </div>
 
-  <div class="col-12 py-1 divider">
+  <div class="col-12 py-1 divider" [hidden]="!!totalSummary?.dmg?.requireTxt">
     <p-divider></p-divider>
   </div>
 
   <!-- Skill Summary -->
-  <div class="col-12">
+  <div class="col-12" [hidden]="!!totalSummary?.dmg?.requireTxt">
     <div class="grid grid-nogutter">
       <div class="col-6">
         <app-calc-value
@@ -188,7 +191,7 @@
     </div>
   </div>
 
-  <div class="col-12 py-1 divider">
+  <div class="col-12 py-1 divider" [hidden]="!!totalSummary?.dmg?.requireTxt">
     <p-divider></p-divider>
   </div>
 
@@ -242,7 +245,7 @@
       [max2]="totalSummary2?.dmg?.noStackMaxCriDamage"
     ></app-calc-value>
   </div>
-  <div class="col-12">
+  <div class="col-12" [hidden]="!!totalSummary?.dmg?.requireTxt">
     <app-calc-value
       [enableCompare]="isEnableCompare && totalSummary2?.dmg"
       [label]="totalSummary?.dmg?.skillDamageLabel"
@@ -281,7 +284,7 @@
         [max2]="totalSummary2?.dmg?.skillMaxDamageHE"
       ></app-calc-value>
     </div> -->
-  <div class="col-12" [hidden]="totalSummary?.dmg?.isAutoSpell">
+  <div class="col-12" [hidden]="totalSummary?.dmg?.isAutoSpell || !!totalSummary?.dmg?.requireTxt">
     <app-calc-value
       [enableCompare]="isEnableCompare && totalSummary2?.dmg"
       label="DPS:"

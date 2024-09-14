@@ -190,11 +190,10 @@ export class ImperialGuard extends RoyalGuard {
       vct: 0.5,
       cd: 1,
       hit: 7,
+      isRequireShield: true,
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status, equipmentBonus } = input;
-        if (!equipmentBonus.shield || !model.shield) return 0;
-
-        const { weight = 0, refine = 0 } = equipmentBonus.shield;
+        const { weight, refine } = equipmentBonus.shield;
         const { totalPow } = status;
         const { level: baseLevel } = model;
         const shieldMastLv = this.learnLv('Shield Mastery');

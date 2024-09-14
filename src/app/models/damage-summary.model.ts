@@ -16,6 +16,7 @@ export interface BasicDamageSummaryModel {
   pAtk: number;
   sMatk: number;
   cRate: number;
+  requireTxt?: string;
 }
 
 export enum SkillType {

@@ -47,47 +47,54 @@ const toClassItem = (id: number) => ({ label: ClassID[id], value: id, icon: Clas
 export const getClassDropdownList = (): (DropdownModel & { icon: number; instant: CharacterBase })[] => {
   return [
     { ...toClassItem(11), instant: new RoyalGuard() },
-    { ...toClassItem(12), instant: new RuneKnight() },
-    { ...toClassItem(7), instant: new ArchBishop() },
-    { ...toClassItem(13), instant: new Sura() },
-    { ...toClassItem(2), instant: new Ranger() },
-    { ...toClassItem(21), instant: new Minstrel() },
-    { ...toClassItem(22), instant: new Wanderer() },
-    { ...toClassItem(5), instant: new GuillotineCross() },
-    { ...toClassItem(4), instant: new ShadowChaser() },
-    { ...toClassItem(6), instant: new Warlock() },
-    { ...toClassItem(8), instant: new Sorcerer() },
-    { ...toClassItem(10), instant: new Mechanic() },
-    { ...toClassItem(9), instant: new Genetic() },
-
-    { ...toClassItem(30), instant: new SuperNovice() },
-    { ...toClassItem(3), instant: new SoulReaper() },
-    { ...toClassItem(33), instant: new StarEmperor() },
-    { ...toClassItem(17), instant: new Oboro() },
-    { ...toClassItem(18), instant: new Kagerou() },
-    { ...toClassItem(1), instant: new Rebellion() },
-    { ...toClassItem(31), instant: new Doram() },
-
-    { ...toClassItem(4252), instant: new DragonKnight() },
     { ...toClassItem(4258), instant: new ImperialGuard() },
+    { ...toClassItem(12), instant: new RuneKnight() },
+    { ...toClassItem(4252), instant: new DragonKnight() },
+
+    { ...toClassItem(7), instant: new ArchBishop() },
     { ...toClassItem(4256), instant: new Cardinal() },
+    { ...toClassItem(13), instant: new Sura() },
     { ...toClassItem(4262), instant: new Inquisitor() },
+
+    { ...toClassItem(2), instant: new Ranger() },
     { ...toClassItem(4257), instant: new Windhawk() },
-    { ...toClassItem(4254), instant: new ShadowCross() },
-    { ...toClassItem(4260), instant: new AbyssChaser() },
+    { ...toClassItem(21), instant: new Minstrel() },
     { ...toClassItem(4263), instant: new Troubadour() },
+    { ...toClassItem(22), instant: new Wanderer() },
     { ...toClassItem(4264), instant: new Trouvere() },
+
+    { ...toClassItem(5), instant: new GuillotineCross() },
+    { ...toClassItem(4254), instant: new ShadowCross() },
+    { ...toClassItem(4), instant: new ShadowChaser() },
+    { ...toClassItem(4260), instant: new AbyssChaser() },
+
+    { ...toClassItem(6), instant: new Warlock() },
     { ...toClassItem(4255), instant: new ArchMage() },
+    { ...toClassItem(8), instant: new Sorcerer() },
     { ...toClassItem(4261), instant: new ElementalMaster() },
+
+    { ...toClassItem(10), instant: new Mechanic() },
     { ...toClassItem(4253), instant: new Meister() },
+    { ...toClassItem(9), instant: new Genetic() },
     { ...toClassItem(4259), instant: new Biolo() },
 
-    { ...toClassItem(4307), instant: new HyperNovice() },
-    { ...toClassItem(4303), instant: new SoulAscetic() },
+    { ...toClassItem(33), instant: new StarEmperor() },
     { ...toClassItem(4302), instant: new SkyEmperor() },
-    { ...toClassItem(4305), instant: new Shiranui() },
+    { ...toClassItem(3), instant: new SoulReaper() },
+    { ...toClassItem(4303), instant: new SoulAscetic() },
+
+    { ...toClassItem(18), instant: new Kagerou() },
     { ...toClassItem(4304), instant: new Shinkiro() },
+    { ...toClassItem(17), instant: new Oboro() },
+    { ...toClassItem(4305), instant: new Shiranui() },
+
+    { ...toClassItem(1), instant: new Rebellion() },
     { ...toClassItem(4306), instant: new NightWatch() },
+
+    { ...toClassItem(30), instant: new SuperNovice() },
+    { ...toClassItem(4307), instant: new HyperNovice() },
+
+    { ...toClassItem(31), instant: new Doram() },
     { ...toClassItem(4308), instant: new SpiritHandler() },
   ];
 };
