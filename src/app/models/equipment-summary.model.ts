@@ -189,5 +189,8 @@ export interface EquipmentSummaryModel {
 
   // Other from skill
   forceCri?: number;
-  [key: string]: number;
+  magnumBreakPsedoBonus?: number;
+  magnumBreakClearEDP?: number;
+  vctBySkill?: number;
+  // [key: string]: number;
 }

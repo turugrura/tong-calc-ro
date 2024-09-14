@@ -75,7 +75,7 @@ const jobBonusTableHi: Record<number, [number, number, number, number, number, n
   70: [3, 2, 3, 3, 3, 4],
 };
 
-const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
+const _jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 0, 0, 0],
   2: [0, 0, 0, 0, 0, 1],
   3: [0, 0, 0, 0, 0, 1],

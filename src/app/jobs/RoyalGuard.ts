@@ -96,9 +96,13 @@ export class RoyalGuard extends Paladin {
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
-        const bashBonus = this.learnLv('Bash') * 50;
+        const bashLv = this.learnLv('Bash');
 
-        return (bashBonus + skillLevel * 80) * (baseLevel / 100);
+        if (this.isSkillActive('Grand Judgement')) {
+          return skillLevel * 180 + bashLv * 70;
+        }
+
+        return (skillLevel * 80 + bashLv * 50) * (baseLevel / 100);
       },
     },
     {
@@ -182,7 +186,11 @@ export class RoyalGuard extends Paladin {
         const baseLevel = model.level;
         const { totalStr } = status;
 
-        return (totalStr * skillLevel + skillLevel * 50) * (baseLevel / 100);
+        if (this.isSkillActive('Grand Judgement')) {
+          return skillLevel * (200 + totalStr) * (baseLevel / 100);
+        }
+
+        return skillLevel * (50 + totalStr) * (baseLevel / 100);
       },
     },
     {
@@ -199,8 +207,11 @@ export class RoyalGuard extends Paladin {
         const { model, skillLevel, status } = input;
         const baseLevel = model.level;
         const { totalStr } = status;
+        if (this.isSkillActive('Grand Judgement')) {
+          return skillLevel * (200 + totalStr) * (baseLevel / 100);
+        }
 
-        return (totalStr * skillLevel + skillLevel * 120) * (baseLevel / 100);
+        return skillLevel * (120 + totalStr) * (baseLevel / 100);
       },
     },
     {

@@ -8,6 +8,7 @@ import { ClassName } from './_class-name';
 import { sortSkill } from '../utils';
 import { WeaponTypeName } from '../constants/weapon-type-mapper';
 import { AspdPotionFixBonus } from '../constants';
+import { SKILL_NAME } from './_skill_names';
 
 export interface AtkSkillFormulaInput extends InfoForClass {
   skillLevel: number;
@@ -27,7 +28,7 @@ export interface DefForCalcModel {
 
 export interface AtkSkillModel {
   label: string;
-  name: string;
+  name: SKILL_NAME;
   value: string;
   values?: string[];
   acd: number | ((skillLevel: number) => number);
@@ -106,7 +107,7 @@ export interface ActiveSkillModel {
   isMasteryAtk?: boolean;
   inputType: 'dropdown' | 'selectButton';
   label: string;
-  name: string;
+  name: SKILL_NAME;
   dropdown: SkillModel[];
   isDevMode?: boolean;
 }
@@ -177,7 +178,7 @@ export abstract class CharacterBase {
     const skills: AtkSkillModel[] = [...this._atkSkillList];
 
     const cName = this.className;
-    if (cName !== ClassName.RuneKnight) {
+    if (cName !== ClassName.RuneKnight && cName !== ClassName.DragonKnight) {
       skills.push({
         name: 'Wind Cutter',
         label: 'Wind Cutter Lv5',
@@ -205,7 +206,7 @@ export abstract class CharacterBase {
         },
       });
     }
-    if (cName !== ClassName.ArchBishop) {
+    if (cName !== ClassName.ArchBishop && cName !== ClassName.Cardinal) {
       skills.push({
         name: 'Adoramus',
         label: 'Adoramus Lv6',
@@ -225,7 +226,7 @@ export abstract class CharacterBase {
         },
       });
     }
-    if (cName !== ClassName.Warlock) {
+    if (cName !== ClassName.Warlock && cName !== ClassName.ArchMage) {
       skills.push({
         name: 'Napalm Vulcan',
         label: 'Napalm Vulcan Lv4',
@@ -308,15 +309,15 @@ export abstract class CharacterBase {
     };
   }
 
-  protected learnLv(skillName: string) {
+  protected learnLv(skillName: SKILL_NAME) {
     return this.bonuses.learnedSkillMap.get(skillName) || 0;
   }
 
-  protected isSkillActive(skillName: string) {
+  protected isSkillActive(skillName: SKILL_NAME) {
     return this.bonuses.activeSkillNames.has(skillName);
   }
 
-  protected activeSkillLv(skillName: string) {
+  protected activeSkillLv(skillName: SKILL_NAME) {
     return this.bonuses.usedSkillMap.get(skillName) || 0;
   }
 
@@ -568,6 +569,14 @@ export abstract class CharacterBase {
 
   setAdditionalBonus(params: InfoForClass): EquipmentSummaryModel {
     return params.totalBonus;
+  }
+
+  isWeaponType(params: InfoForClass, ...wTypes: WeaponTypeName[]): boolean {
+    const _wType = params.weapon?.data?.typeName;
+
+    if (!_wType) return false;
+
+    return wTypes.some((t) => t === _wType);
   }
 
   protected inheritSkills(params: { atkSkillList: AtkSkillModel[]; activeSkillList: ActiveSkillModel[]; passiveSkillList: ActiveSkillModel[]; classNames: ClassName[] }) {

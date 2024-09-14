@@ -23,3 +23,4 @@ export * from './to-raw-option-txt-list';
 export * from './to-upsert-preset-model';
 export * from './vefify-sync-presets';
 export * from './wait-rxjs';
+export * from './add-bonus';

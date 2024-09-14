@@ -92,6 +92,7 @@
                 [(ngModel)]="model.class"
                 placeholder="Class"
                 scrollHeight="350px"
+                [disabled]="isInProcessingPreset"
                 (onChange)="onClassChange()"
               >
                 <ng-template let-job pTemplate="selectedItem">

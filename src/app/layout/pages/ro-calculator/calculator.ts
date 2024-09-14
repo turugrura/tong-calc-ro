@@ -1301,7 +1301,7 @@ export class Calculator {
           this.equipStatus['extra'][attr] = value;
         }
 
-        updateTotalStatus(attr, value);
+        updateTotalStatus(attr as any, value);
       }
     }
 
@@ -1353,7 +1353,7 @@ export class Calculator {
 
         this.equipStatus[itemType][attr] = value;
 
-        updateTotalStatus(attr, value);
+        updateTotalStatus(attr as any, value);
       }
     }
 
@@ -1377,7 +1377,7 @@ export class Calculator {
 
         this.equipStatus[skillName] = { ...this.allStatus, [attr]: val };
 
-        updateTotalStatus(attr, val);
+        updateTotalStatus(attr as any, val);
 
         this.updateBaseEquipStat(attr, val);
       }
@@ -1400,7 +1400,7 @@ export class Calculator {
 
         this.equipStatus[skillName] = { ...this.allStatus, [attr]: val };
 
-        updateTotalStatus(attr, val);
+        updateTotalStatus(attr as any, val);
 
         this.updateBaseEquipStat(attr, val);
       }
@@ -1413,7 +1413,7 @@ export class Calculator {
 
         this.equipStatus[buffName] = { ...this.allStatus, [attr]: val };
 
-        updateTotalStatus(attr, value);
+        updateTotalStatus(attr as any, value);
       }
     }
     for (const [buffName, scripts] of Object.entries(this.buffMasteryAtkBonus)) {
@@ -1423,7 +1423,7 @@ export class Calculator {
 
         this.equipStatus[buffName] = { ...this.allStatus, [attr]: val };
 
-        updateTotalStatus(attr, value);
+        updateTotalStatus(attr as any, value);
       }
     }
 
@@ -1451,12 +1451,12 @@ export class Calculator {
         newVal = Math.max(value - consumAllStat, 0);
       }
 
-      updateTotalStatus(attr, newVal);
+      updateTotalStatus(attr as any, newVal);
     }
 
     const allStatus = this.totalEquipStatus.allStatus ?? 0;
     for (const status of mainStatuses) {
-      updateTotalStatus(status, allStatus);
+      updateTotalStatus(status as any, allStatus);
     }
 
     if (this.totalEquipStatus['agiBoost'] > 0) {
@@ -1594,9 +1594,9 @@ export class Calculator {
     };
   }
 
-  private getObjSummary(obj: Record<string, number>, isRemoveFields = false) {
+  private getObjSummary(obj: EquipmentSummaryModel, isRemoveFields = false) {
     const summary = {};
-    const removableFiels = new Set(['weight', 'baseDef']);
+    const removableFiels = new Set(['weight', 'baseDef', 'refine']);
     for (const [key, value] of Object.entries(obj)) {
       if (isRemoveFields && removableFiels.has(key)) continue;
 

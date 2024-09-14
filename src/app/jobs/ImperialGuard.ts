@@ -1,7 +1,11 @@
 import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
 import { JOB_4_MAX_JOB_LEVEL, JOB_4_MIN_MAX_LEVEL } from '../app-config';
 import { RoyalGuard } from './RoyalGuard';
+import { EquipmentSummaryModel } from '../models/equipment-summary.model';
+import { InfoForClass } from '../models/info-for-class.model';
+import { addBonus } from '../utils';
+import { ElementType } from '../constants';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 0, 0, 0],
@@ -158,9 +162,132 @@ export class ImperialGuard extends RoyalGuard {
   protected override maxJob = JOB_4_MAX_JOB_LEVEL;
 
   private readonly classNames4th = [ClassName.Only_4th, ClassName.ImperialGuard];
-  private readonly atkSkillList4th: AtkSkillModel[] = [];
-  private readonly activeSkillList4th: ActiveSkillModel[] = [];
-  private readonly passiveSkillList4th: PassiveSkillModel[] = [];
+  private readonly atkSkillList4th: AtkSkillModel[] = [
+    {
+      name: 'Overslash',
+      label: '[V2] Overslash Lv10 (1 hit)',
+      value: 'Overslash==10',
+      acd: 0.5,
+      fct: 0.5,
+      vct: 0,
+      cd: 1,
+      isMelee: true,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalPow } = status;
+        const baseLevel = model.level;
+        const ssMastLv = this.learnLv('Spear & Sword Mastery');
+
+        return (skillLevel * (60 + ssMastLv * 10) + totalPow * 2) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Shield Shooting',
+      label: '[V2] Shield Shooting Lv5',
+      value: 'Shield Shooting==5',
+      acd: 0.5,
+      fct: 0.5,
+      vct: 0.5,
+      cd: 1,
+      hit: 7,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status, equipmentBonus } = input;
+        if (!equipmentBonus.shield || !model.shield) return 0;
+
+        const { weight = 0, refine = 0 } = equipmentBonus.shield;
+        const { totalPow } = status;
+        const { level: baseLevel } = model;
+        const shieldMastLv = this.learnLv('Shield Mastery');
+
+        return (500 + skillLevel * (600 + shieldMastLv * 15) + totalPow * 3 + weight + refine * 4) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Cross Rain',
+      label: '[V2] Cross Rain Lv10',
+      value: 'Cross Rain==10',
+      acd: 0.5,
+      fct: 1.5,
+      vct: 4,
+      cd: 5,
+      isMatk: true,
+      element: ElementType.Holy,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalSpl } = status;
+        const baseLevel = model.level;
+        const ssMastLv = this.learnLv('Spear & Sword Mastery');
+
+        if (this.isSkillActive('Holy Shield')) {
+          return (skillLevel * (250 + ssMastLv * 10) + totalSpl * 5) * (baseLevel / 100);
+        }
+
+        return (skillLevel * (150 + ssMastLv * 5) + totalSpl * 2) * (baseLevel / 100);
+      },
+      finalDmgFormula(input) {
+        const totalHit = 15;
+
+        return input.damage * totalHit;
+      },
+    },
+  ];
+  private readonly activeSkillList4th: ActiveSkillModel[] = [
+    {
+      name: 'Attack Stance',
+      label: 'Attack Stance',
+      inputType: 'dropdown',
+      dropdown: [
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 1', value: 1, isUse: true, bonus: { pAtk: 1 * 3, sMatk: 1 * 3, def: -1 * 40 } },
+        { label: 'Lv 2', value: 2, isUse: true, bonus: { pAtk: 2 * 3, sMatk: 2 * 3, def: -2 * 40 } },
+        { label: 'Lv 3', value: 3, isUse: true, bonus: { pAtk: 3 * 3, sMatk: 3 * 3, def: -3 * 40 } },
+        { label: 'Lv 4', value: 4, isUse: true, bonus: { pAtk: 4 * 3, sMatk: 4 * 3, def: -4 * 40 } },
+        { label: 'Lv 5', value: 5, isUse: true, bonus: { pAtk: 5 * 3, sMatk: 5 * 3, def: -5 * 40 } },
+      ],
+    },
+    {
+      name: 'Holy Shield',
+      label: 'Holy Shield',
+      inputType: 'dropdown',
+      dropdown: [
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 1', value: 1, isUse: true, bonus: { m_my_element_holy: 5 + 2 * 1 } },
+        { label: 'Lv 2', value: 2, isUse: true, bonus: { m_my_element_holy: 5 + 2 * 2 } },
+        { label: 'Lv 3', value: 3, isUse: true, bonus: { m_my_element_holy: 5 + 2 * 3 } },
+        { label: 'Lv 4', value: 4, isUse: true, bonus: { m_my_element_holy: 5 + 2 * 4 } },
+        { label: 'Lv 5', value: 5, isUse: true, bonus: { m_my_element_holy: 5 + 2 * 5 } },
+      ],
+    },
+    {
+      name: 'Grand Judgement',
+      label: 'Grand Judg 10',
+      inputType: 'selectButton',
+      dropdown: [
+        { label: 'Yes', value: 10, isUse: true },
+        { label: 'No', value: 0, isUse: false },
+      ],
+    },
+  ];
+  private readonly passiveSkillList4th: PassiveSkillModel[] = [
+    {
+      name: 'Spear & Sword Mastery',
+      label: 'Spear & Sword Mastery',
+      inputType: 'selectButton',
+      dropdown: [
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 10', value: 10, isUse: true, bonus: { flee: 100 } },
+      ],
+    },
+    {
+      name: 'Shield Mastery',
+      label: 'Shield Mastery',
+      inputType: 'selectButton',
+      dropdown: [
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 10', value: 10, isUse: true, bonus: { res: 30 } },
+      ],
+    },
+  ];
 
   constructor() {
     super();
@@ -171,5 +298,18 @@ export class ImperialGuard extends RoyalGuard {
       passiveSkillList: this.passiveSkillList4th,
       classNames: this.classNames4th,
     });
+  }
+
+  override setAdditionalBonus(params: InfoForClass): EquipmentSummaryModel {
+    super.setAdditionalBonus(params);
+
+    const { totalBonus } = params;
+
+    const ssMastLv = this.learnLv('Spear & Sword Mastery');
+    if (ssMastLv > 0 && this.isWeaponType(params, 'sword', 'twohandSword', 'spear', 'twohandSpear')) {
+      addBonus(totalBonus, 'hit', ssMastLv * 3);
+    }
+
+    return totalBonus;
   }
 }

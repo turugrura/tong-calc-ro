@@ -2,7 +2,6 @@ import { ClassName } from './_class-name';
 import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
 import { InfoForClass } from '../models/info-for-class.model';
 import { StarGladiator } from './StarGladiator';
-import { FusionSunMoonStar } from '../constants/share-active-skills';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [1, 0, 0, 0, 0, 0],
@@ -200,7 +199,15 @@ export class StarEmperor extends StarGladiator {
         { label: 'No', value: 0, isUse: false },
       ],
     },
-    FusionSunMoonStar(),
+    {
+      label: 'ตัวลอย',
+      name: 'Fusion of Sun, Moon and Star',
+      inputType: 'selectButton',
+      dropdown: [
+        { label: 'Yes', value: 1, skillLv: 1, isUse: true, bonus: { forceCri: 1 } },
+        { label: 'No', value: 0, isUse: false },
+      ],
+    },
     {
       label: 'Stellar Stance 3',
       name: 'Stellar Stance',

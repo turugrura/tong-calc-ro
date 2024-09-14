@@ -219,9 +219,13 @@ export class DragonKnight extends RuneKnight {
 
         const { totalPow } = status;
         const baseLevel = model.level;
-        const totalHit = skillLevel;
 
-        return (skillLevel * 120 + totalPow * 5) * (baseLevel / 100) * totalHit;
+        return (skillLevel * 120 + totalPow * 5) * (baseLevel / 100);
+      },
+      finalDmgFormula(input) {
+        const totalHit = input.skillLevel;
+
+        return input.damage * totalHit;
       },
     },
     {
@@ -232,8 +236,6 @@ export class DragonKnight extends RuneKnight {
       fct: 0.4,
       vct: 0.4,
       cd: 0.35,
-      canCri: true,
-      baseCriPercentage: 1,
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status, weapon } = input;
         const wType = weapon.data?.typeName;
