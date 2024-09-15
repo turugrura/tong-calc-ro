@@ -1,7 +1,11 @@
 import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
 import { JOB_4_MAX_JOB_LEVEL, JOB_4_MIN_MAX_LEVEL } from '../app-config';
 import { ArchBishop } from './ArchBishop';
+import { addBonus, floor } from '../utils';
+import { ElementType } from '../constants';
+import { EquipmentSummaryModel } from '../models/equipment-summary.model';
+import { InfoForClass } from '../models/info-for-class.model';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [1, 0, 0, 1, 0, 0],
@@ -158,9 +162,114 @@ export class Cardinal extends ArchBishop {
   protected override maxJob = JOB_4_MAX_JOB_LEVEL;
 
   private readonly classNames4th = [ClassName.Only_4th, ClassName.Cardinal];
-  private readonly atkSkillList4th: AtkSkillModel[] = [];
+  private readonly atkSkillList4th: AtkSkillModel[] = [
+    {
+      name: 'Framen',
+      label: '[V2] Framen Lv5',
+      value: 'Framen==5',
+      acd: 0.5,
+      fct: 1.5,
+      vct: 5,
+      cd: 0.3,
+      isMatk: true,
+      element: ElementType.Holy,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status, monster } = input;
+        const { totalSpl } = status;
+        const baseLevel = model.level;
+        const fidusLv = this.learnLv('Fidus Animus');
+
+        if (monster.race === 'demon' || monster.race === 'undead') {
+          return (skillLevel * (650 + fidusLv * 5) + totalSpl * 5) * (baseLevel / 100);
+        }
+
+        return (skillLevel * (500 + fidusLv * 5) + totalSpl * 3) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Arbitrium',
+      label: '[V2] Arbitrium Lv10',
+      value: 'Arbitrium==10',
+      acd: 0.5,
+      fct: 1.5,
+      vct: 4,
+      cd: 2,
+      isMatk: true,
+      element: ElementType.Holy,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalSpl } = status;
+        const baseLevel = model.level;
+        const fidusLv = this.learnLv('Fidus Animus');
+
+        const primaryDmg = (skillLevel * (400 + fidusLv * 10) + totalSpl * 7) * (baseLevel / 100);
+        const secondaryDmg = (skillLevel * (550 + fidusLv * 10) + totalSpl * 7) * (baseLevel / 100);
+
+        return primaryDmg + secondaryDmg;
+      },
+    },
+    {
+      name: 'Petitio',
+      label: '[V2] Petitio Lv10',
+      value: 'Petitio==10',
+      acd: 0.5,
+      fct: 0,
+      vct: 0,
+      cd: 1,
+      canCri: true,
+      isMelee: (weaponType) => {
+        return weaponType === 'book';
+      },
+      requireWeaponTypes: ['mace', 'twohandMace', 'book'],
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalPow } = status;
+        const baseLevel = model.level;
+        const mAndBookLv = this.learnLv('Mace & Book Mastery');
+
+        return (skillLevel * (270 + mAndBookLv * 5) + totalPow * 5) * (baseLevel / 100);
+      },
+    },
+  ];
   private readonly activeSkillList4th: ActiveSkillModel[] = [];
-  private readonly passiveSkillList4th: PassiveSkillModel[] = [];
+  private readonly passiveSkillList4th: PassiveSkillModel[] = [
+    {
+      name: 'Mace & Book Mastery',
+      label: 'Mace & Book Mastery',
+      inputType: 'dropdown',
+      dropdown: [
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 1', value: 1, isUse: true },
+        { label: 'Lv 2', value: 2, isUse: true },
+        { label: 'Lv 3', value: 3, isUse: true },
+        { label: 'Lv 4', value: 4, isUse: true },
+        { label: 'Lv 5', value: 5, isUse: true },
+        { label: 'Lv 6', value: 6, isUse: true },
+        { label: 'Lv 7', value: 7, isUse: true },
+        { label: 'Lv 8', value: 8, isUse: true },
+        { label: 'Lv 9', value: 9, isUse: true },
+        { label: 'Lv 10', value: 10, isUse: true },
+      ],
+    },
+    {
+      name: 'Fidus Animus',
+      label: 'Fidus Animus',
+      inputType: 'dropdown',
+      dropdown: [
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 1', value: 1, isUse: true, bonus: { m_my_element_holy: floor(1 * 1.5) } },
+        { label: 'Lv 2', value: 2, isUse: true, bonus: { m_my_element_holy: floor(2 * 1.5) } },
+        { label: 'Lv 3', value: 3, isUse: true, bonus: { m_my_element_holy: floor(3 * 1.5) } },
+        { label: 'Lv 4', value: 4, isUse: true, bonus: { m_my_element_holy: floor(4 * 1.5) } },
+        { label: 'Lv 5', value: 5, isUse: true, bonus: { m_my_element_holy: floor(5 * 1.5) } },
+        { label: 'Lv 6', value: 6, isUse: true, bonus: { m_my_element_holy: floor(6 * 1.5) } },
+        { label: 'Lv 7', value: 7, isUse: true, bonus: { m_my_element_holy: floor(7 * 1.5) } },
+        { label: 'Lv 8', value: 8, isUse: true, bonus: { m_my_element_holy: floor(8 * 1.5) } },
+        { label: 'Lv 9', value: 9, isUse: true, bonus: { m_my_element_holy: floor(9 * 1.5) } },
+        { label: 'Lv 10', value: 10, isUse: true, bonus: { m_my_element_holy: floor(10 * 1.5) } },
+      ],
+    },
+  ];
 
   constructor() {
     super();
@@ -171,5 +280,22 @@ export class Cardinal extends ArchBishop {
       passiveSkillList: this.passiveSkillList4th,
       classNames: this.classNames4th,
     });
+  }
+
+  override setAdditionalBonus(params: InfoForClass): EquipmentSummaryModel {
+    super.setAdditionalBonus(params);
+
+    const { totalBonus } = params;
+
+    const mAndBookLv = this.learnLv('Mace & Book Mastery');
+    if (mAndBookLv > 0 && this.isWeaponType(params, 'mace', 'book', 'twohandMace')) {
+      const mapM = [0, 2, 3, 5, 6, 8, 9, 11, 12, 14, 15];
+      const mapL = [0, 3, 5, 7, 9, 10, 12, 13, 15, 16, 18];
+      addBonus(totalBonus, 'p_size_s', mAndBookLv);
+      addBonus(totalBonus, 'p_size_m', mapM[mAndBookLv]);
+      addBonus(totalBonus, 'p_size_l', mapL[mAndBookLv]);
+    }
+
+    return totalBonus;
   }
 }

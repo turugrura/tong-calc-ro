@@ -34,20 +34,83 @@ export const JobBuffs: ActiveSkillModel[] = [
     ],
   },
   {
-    inputType: 'selectButton',
-    label: 'Impositio 5',
     name: 'Impositio Manus',
+    label: 'Impositio 5',
+    inputType: 'selectButton',
     dropdown: [
       { label: 'Yes', isUse: true, value: 5, bonus: { atk: 25, matk: 25 } },
       { label: 'No', isUse: false, value: 0 },
     ],
   },
   {
-    inputType: 'selectButton',
-    label: 'Expiatio 5',
     name: 'Expiatio',
+    label: 'Expiatio 5',
+    inputType: 'selectButton',
     dropdown: [
       { label: 'Yes', isUse: true, value: 5, bonus: { p_pene_race_all: 25, m_pene_race_all: 25 } },
+      { label: 'No', isUse: false, value: 0 },
+    ],
+  },
+  {
+    name: '_Religio_Benedictum',
+    label: 'All Trait 10',
+    inputType: 'selectButton',
+    dropdown: [
+      { label: 'Yes', isUse: true, value: 5, bonus: { spl: 10, wis: 10, sta: 10, pow: 10, crt: 10, con: 10 } },
+      { label: 'No', isUse: false, value: 0 },
+    ],
+  },
+  {
+    name: '_Argutus Vita_Telum',
+    label: 'เจาะ m/res 25',
+    inputType: 'selectButton',
+    dropdown: [
+      { label: 'Yes', isUse: true, value: 5, bonus: { pene_res: 25, pene_mres: 25 } },
+      { label: 'No', isUse: false, value: 0 },
+    ],
+  },
+  // {
+  //   name: 'Religio',
+  //   label: 'Religio 5',
+  //   inputType: 'selectButton',
+  //   dropdown: [
+  //     { label: 'Yes', isUse: true, value: 5, bonus: { spl: 10, wis: 10, sta: 10 } },
+  //     { label: 'No', isUse: false, value: 0 },
+  //   ],
+  // },
+  // {
+  //   name: 'Benedictum',
+  //   label: 'Benedictum 5',
+  //   inputType: 'selectButton',
+  //   dropdown: [
+  //     { label: 'Yes', isUse: true, value: 5, bonus: { pow: 10, crt: 10, con: 10 } },
+  //     { label: 'No', isUse: false, value: 0 },
+  //   ],
+  // },
+  // {
+  //   name: 'Argutus Vita',
+  //   label: 'Argutus Vita 5',
+  //   inputType: 'selectButton',
+  //   dropdown: [
+  //     { label: 'Yes', isUse: true, value: 5, bonus: { pene_mres: 25 } },
+  //     { label: 'No', isUse: false, value: 0 },
+  //   ],
+  // },
+  // {
+  //   name: 'Argutus Telum',
+  //   label: 'Argutus Telum 5',
+  //   inputType: 'selectButton',
+  //   dropdown: [
+  //     { label: 'Yes', isUse: true, value: 5, bonus: { pene_res: 25 } },
+  //     { label: 'No', isUse: false, value: 0 },
+  //   ],
+  // },
+  {
+    name: 'Presens Acies',
+    label: 'Presens Acies 5',
+    inputType: 'selectButton',
+    dropdown: [
+      { label: 'Yes', isUse: true, value: 5, bonus: { cRate: 10 } },
       { label: 'No', isUse: false, value: 0 },
     ],
   },
