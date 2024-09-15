@@ -4,12 +4,10 @@ import { BasicDamageSummaryModel, DamageSummaryModel, MiscModel, SkillDamageSumm
 import { EquipmentSummaryModel } from '../../../models/equipment-summary.model';
 import { InfoForClass } from '../../../models/info-for-class.model';
 import { MainModel } from '../../../models/main.model';
-import { MonsterModel } from '../../../models/monster.model';
-import { PreparedMonsterModel } from '../../../models/prepared-monster.model';
 import { StatusSummary } from '../../../models/status-summary.model';
 import { calcDmgDps, calcSkillAspd, firstUppercase, floor, isSkillCanEDP, round } from '../../../utils';
 import { SKILL_NAME } from 'src/app/jobs/_skill_names';
-import { Weapon } from 'src/app/domain';
+import { Monster, Weapon } from 'src/app/domain';
 
 interface DamageResultModel {
   minDamage: number;
@@ -46,8 +44,7 @@ export class DamageCalculator {
   private finalMagicMultipliers = [] as number[];
 
   private _class: CharacterBase;
-  private monster: MonsterModel;
-  private monsterData: PreparedMonsterModel;
+  private monster: Monster;
 
   private weaponData: Weapon;
   private leftWeaponData: Weapon;
@@ -65,8 +62,7 @@ export class DamageCalculator {
     finalPhyMultipliers: number[];
     finalMagicMultipliers: number[];
     _class: CharacterBase;
-    monster: MonsterModel;
-    monsterData: PreparedMonsterModel;
+    monster: Monster;
     weaponData: Weapon;
     leftWeaponData: Weapon;
     aspdPotion: number;
@@ -83,7 +79,6 @@ export class DamageCalculator {
       finalMagicMultipliers,
       _class,
       monster,
-      monsterData,
       weaponData,
       leftWeaponData,
       aspdPotion,
@@ -100,7 +95,6 @@ export class DamageCalculator {
     this.finalMagicMultipliers = finalMagicMultipliers;
     this._class = _class;
     this.monster = monster;
-    this.monsterData = monsterData;
     this.weaponData = weaponData;
     this.leftWeaponData = leftWeaponData;
     this.aspdPotion = aspdPotion;
@@ -204,7 +198,7 @@ export class DamageCalculator {
   get infoForClass(): InfoForClass {
     return {
       model: this.model,
-      monster: this.monsterData,
+      monster: this.monster,
       totalBonus: this.totalBonus,
       weapon: this.weaponData,
       status: this.status,
@@ -257,7 +251,7 @@ export class DamageCalculator {
     if (atkType === 'range') return 0;
 
     const bonus = this.totalBonus['darkClaw'] || 0;
-    if (this.monsterData.type === 'boss') {
+    if (this.monster.isBoss) {
       return bonus / 2;
     }
 
@@ -277,7 +271,7 @@ export class DamageCalculator {
   private getRaidMultiplier() {
     if (!this.totalBonus['raid']) return 1;
 
-    return this.monsterData.type === 'boss' ? 1.15 : 1.3;
+    return this.monster.isBoss ? 1.15 : 1.3;
   }
 
   private getStrikingAtk() {
@@ -359,7 +353,7 @@ export class DamageCalculator {
     const totalHit = formula();
     const totalPerfectHit = floor(totalLuk / 10) + perfectHit;
 
-    const { hitRequireFor100 } = this.monsterData;
+    const { hitRequireFor100 } = this.monster.data;
 
     let accuracy = Math.max(5, floor(100 + totalHit - hitRequireFor100));
     accuracy = Math.min(100, Math.max(accuracy, totalPerfectHit));
@@ -377,7 +371,7 @@ export class DamageCalculator {
   }
 
   private getExtraCriRateToMonster() {
-    const { race, element, size } = this.monsterData;
+    const { race, element, size } = this.monster;
     const toRace = this.totalBonus[`cri_race_${race}`] || 0;
     const toElement = this.totalBonus[`cri_element_${element}`] || 0;
     const toSize = this.totalBonus[`cri_size_${size}`] || 0;
@@ -390,7 +384,7 @@ export class DamageCalculator {
       return 1;
     }
 
-    const size = this.monsterData.size;
+    const size = this.monster.size;
     const fixedSize = this.totalBonus[`sizePenalty_${size}`];
     if (fixedSize > 0) {
       return this.toPercent(fixedSize);
@@ -411,7 +405,7 @@ export class DamageCalculator {
   }
 
   private getTotalPhysicalPene() {
-    const { race, type } = this.monsterData;
+    const { race, type } = this.monster;
     const { p_pene_race_all, p_pene_class_all } = this.totalBonus;
     const rawP_Pene = p_pene_race_all + (p_pene_class_all || 0);
     const pByMonster = (this.totalBonus[`p_pene_race_${race}`] || 0) + (this.totalBonus[`p_pene_class_${type}`] || 0);
@@ -421,7 +415,7 @@ export class DamageCalculator {
   }
 
   private getTotalMagicalPene() {
-    const { race, type } = this.monsterData;
+    const { race, type } = this.monster;
     const { m_pene_race_all, m_pene_class_all } = this.totalBonus;
     const rawM_Pene = m_pene_race_all + (m_pene_class_all || 0);
     const mByMonster = (this.totalBonus[`m_pene_race_${race}`] || 0) + (this.totalBonus[`m_pene_class_${type}`] || 0);
@@ -431,7 +425,7 @@ export class DamageCalculator {
   }
 
   private getPhisicalDefData() {
-    const { def, softDef, res } = this.monsterData;
+    const { def, softDef, res } = this.monster.data;
     const p_pene = this.getTotalPhysicalPene();
 
     const reducedHardDef = def * ((100 - p_pene) / 100);
@@ -450,7 +444,7 @@ export class DamageCalculator {
   }
 
   private getMagicalDefData() {
-    const { mdef, mres } = this.monsterData;
+    const { mdef, mres } = this.monster.data;
     const m_pene = this.getTotalMagicalPene();
     const mDefBypassed = round(mdef - mdef * this.toPercent(m_pene), 4);
     const dmgReductionByMHardDef = (1000 + mDefBypassed) / (1000 + mDefBypassed * 10);
@@ -510,7 +504,7 @@ export class DamageCalculator {
     const prefix = `${atkType}_race`;
     const base = this.totalBonus[`${prefix}_all`] || 0;
 
-    const total = 100 + base + (this.totalBonus[`${prefix}_${this.monsterData.race}`] ?? 0);
+    const total = 100 + base + (this.totalBonus[`${prefix}_${this.monster.race}`] ?? 0);
 
     return round(total, 3);
   }
@@ -519,7 +513,7 @@ export class DamageCalculator {
     const prefix = `${atkType}_size`;
     const base = this.totalBonus[`${prefix}_all`] || 0;
 
-    const total = 100 + base + (this.totalBonus[`${prefix}_${this.monsterData.size}`] ?? 0);
+    const total = 100 + base + (this.totalBonus[`${prefix}_${this.monster.size}`] ?? 0);
 
     return round(total, 3);
   }
@@ -528,7 +522,7 @@ export class DamageCalculator {
     const prefix = `${atkType}_element`;
     const base = this.totalBonus[`${prefix}_all`] || 0;
 
-    const total = 100 + base + (this.totalBonus[`${prefix}_${this.monsterData.element}`] ?? 0);
+    const total = 100 + base + (this.totalBonus[`${prefix}_${this.monster.element}`] ?? 0);
 
     return round(total, 3);
   }
@@ -536,7 +530,7 @@ export class DamageCalculator {
   private getMonsterTypeMultiplier(atkType: 'p' | 'm') {
     const base = this.totalBonus[`${atkType}_class_all`] || 0;
 
-    const total = 100 + base + (this.totalBonus[`${atkType}_class_${this.monsterData.type}`] ?? 0);
+    const total = 100 + base + (this.totalBonus[`${atkType}_class_${this.monster.type}`] ?? 0);
 
     return round(total, 3);
   }
@@ -662,14 +656,15 @@ export class DamageCalculator {
   }
 
   private getPropertyMultiplier(propertyAtk: ElementType) {
-    let pMultiplier = ElementMapper[this.monster.stats.elementName][propertyAtk];
+    // Neutral 1
+    let pMultiplier = ElementMapper[this.monster.elementName][propertyAtk];
     pMultiplier = pMultiplier * this.getVIAmp(propertyAtk);
 
     return round(this.toPercent(pMultiplier), 2);
   }
 
   private getPurePropertyMultiplier(propertyAtk: ElementType) {
-    const pMultiplier = ElementMapper[this.monster.stats.elementName][propertyAtk];
+    const pMultiplier = ElementMapper[this.monster.elementName][propertyAtk];
 
     return this.toPercent(pMultiplier);
   }
@@ -872,7 +867,7 @@ export class DamageCalculator {
   private calcMagicalSkillDamage(params: { skillData: AtkSkillModel; baseSkillDamage: number; weaponPropertyAtk: ElementType; formulaParams?: any }): DamageResultModel {
     const { skillData, baseSkillDamage, weaponPropertyAtk, formulaParams } = params;
     const { name: skillName, element, isIgnoreDef = false, finalDmgFormula } = skillData;
-    const { softMDef } = this.monsterData;
+    const { softMDef } = this.monster.data;
 
     const skillPropertyAtk = element || weaponPropertyAtk;
     const { dmgReductionByMHardDef, mresReduction } = this.getMagicalDefData();
@@ -1066,7 +1061,7 @@ export class DamageCalculator {
       totalMaxAtkOver: totalMaxOver,
     });
 
-    const criShield = this.monsterData.criShield;
+    const criShield = this.monster.data.criShield;
     const misc = this.getMiscData();
     const actualBasicCriRate = this.getBaseCriRate(true);
     const basicAspd = this.getBasicAspd();
@@ -1275,7 +1270,7 @@ export class DamageCalculator {
     const skillAccRate = isHit100 || isMatk ? 100 : basicDmg.accuracy;
     const { avgCriDamage, avgNoCriDamage } = calculated;
 
-    const totalHit = typeof _totalHit === 'function' ? _totalHit(this.monsterData.size, skillLevel) : _totalHit;
+    const totalHit = typeof _totalHit === 'function' ? _totalHit(this.monster.size, skillLevel) : _totalHit;
     const isAutoSpell = autoSpellChance != 1;
     const skillHitsPerSec = Math.min(basicAspd.hitsPerSec, skillAspd.totalHitPerSec);
     const oneHitDps = isAutoSpell
@@ -1289,7 +1284,7 @@ export class DamageCalculator {
           accRate: skillAccRate,
         });
     const skillDps = floor(totalHit * oneHitDps * autoSpellChance);
-    const hitKill = Math.ceil(this.monsterData.hp / minDamage);
+    const hitKill = Math.ceil(this.monster.data.hp / minDamage);
 
     const totalPene = isMatk ? this.getTotalMagicalPene() : basicDmg.totalPene;
     const isMelee = _isMelee != null && typeof _isMelee === 'function' ? _isMelee(this.weaponData.data.typeName) : !!_isMelee;

@@ -8,7 +8,6 @@ import { sortSkill } from '../utils';
 import { WeaponTypeName } from '../constants/weapon-type-mapper';
 import { AspdPotionFixBonus } from '../constants';
 import { SKILL_NAME } from './_skill_names';
-import { PreparedMonsterModel } from '../models/prepared-monster.model';
 import { Weapon } from '../domain';
 
 export interface AtkSkillFormulaInput extends InfoForClass {
@@ -574,14 +573,6 @@ export abstract class CharacterBase {
 
   setAdditionalBonus(params: InfoForClass): EquipmentSummaryModel {
     return params.totalBonus;
-  }
-
-  isMonsterRace(monster: PreparedMonsterModel, ...races: PreparedMonsterModel['race'][]): boolean {
-    const race = monster.race;
-
-    if (!race) return false;
-
-    return races.some((r) => r === race);
   }
 
   protected inheritSkills(params: { atkSkillList: AtkSkillModel[]; activeSkillList: ActiveSkillModel[]; passiveSkillList: ActiveSkillModel[]; classNames: ClassName[] }) {

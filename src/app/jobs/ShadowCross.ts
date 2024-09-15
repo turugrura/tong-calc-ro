@@ -280,7 +280,7 @@ export class ShadowCross extends GuillotineCross {
         const { model, skillLevel, status, monster } = input;
         const { totalPow } = status;
         const baseLevel = model.level;
-        const raceBonus = this.isMonsterRace(monster, 'demihuman', 'dragon') ? 300 : 0;
+        const raceBonus = monster.isRace('demihuman', 'dragon') ? 300 : 0;
 
         return (skillLevel * (650 + raceBonus) + totalPow * 10) * (baseLevel / 100);
       },

@@ -273,7 +273,7 @@ export class AbyssChaser extends ShadowChaser {
         const { model, skillLevel, status, monster } = input;
         const { totalSpl } = status;
         const { level: baseLevel } = model;
-        const raceBonus = this.isMonsterRace(monster, 'angel', 'demon') ? 550 : 0;
+        const raceBonus = monster.isRace('angel', 'demon') ? 550 : 0;
 
         return (skillLevel * (600 + raceBonus) + totalSpl * 10) * (baseLevel / 100);
       },

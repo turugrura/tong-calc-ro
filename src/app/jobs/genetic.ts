@@ -97,7 +97,7 @@ export class Genetic extends Creator {
       formula: (input: AtkSkillFormulaInput): number => {
         const { skillLevel, model, status, monster } = input;
         const baseLevel = model.level;
-        const bonusStat = status.totalInt + monster.vit;
+        const bonusStat = status.totalInt + monster.data.vit;
 
         return (skillLevel * 200 + bonusStat) * (baseLevel / 100);
       },
@@ -116,7 +116,7 @@ export class Genetic extends Creator {
       formula: (input: AtkSkillFormulaInput): number => {
         const { skillLevel, model, status, monster, ammoElement } = input;
         const isCannonballNeutral = model.ammo > 0 && (!ammoElement || ammoElement === ElementType.Neutral);
-        if (isCannonballNeutral && monster.elementUpper === ElementType.Ghost) {
+        if (isCannonballNeutral && monster.isElement(ElementType.Ghost)) {
           return 0;
         }
 

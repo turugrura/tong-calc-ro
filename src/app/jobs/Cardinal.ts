@@ -179,7 +179,7 @@ export class Cardinal extends ArchBishop {
         const baseLevel = model.level;
         const fidusLv = this.learnLv('Fidus Animus');
 
-        if (monster.race === 'demon' || monster.race === 'undead') {
+        if (monster.isRace('demon', 'undead')) {
           return (skillLevel * (650 + fidusLv * 5) + totalSpl * 5) * (baseLevel / 100);
         }
 

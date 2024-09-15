@@ -226,7 +226,7 @@ export class Sura extends Champion {
       isMelee: true,
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, maxHp, maxSp, monster } = input;
-        if (monster.elementUpper === ElementType.Ghost) return 0;
+        if (monster.isElement(ElementType.Ghost)) return 0;
 
         const baseLevel = model.level;
         const baseDamage = (maxHp * (10 + skillLevel * 2) * 0.01 + maxSp * (5 + skillLevel) * 0.01) / 4;
@@ -235,7 +235,7 @@ export class Sura extends Champion {
       },
       finalDmgFormula: ({ damage, skillLevel, monster, model }): number => {
         if (!model.propertyAtk || model.propertyAtk === ElementType.Neutral) {
-          if (monster.elementUpper === ElementType.Ghost) return 0;
+          if (monster.isElement(ElementType.Ghost)) return 0;
         }
 
         const bonusDamge = skillLevel * 240 + monster.level * 40;
@@ -254,7 +254,7 @@ export class Sura extends Champion {
       isMelee: true,
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, monster, maxHp, maxSp } = input;
-        if (monster.elementUpper === ElementType.Ghost) return 0;
+        if (monster.isElement(ElementType.Ghost)) return 0;
 
         const baseLevel = model.level;
         const baseDamage = (maxHp * (10 + skillLevel * 2) * 0.01 + maxSp * (5 + skillLevel) * 0.01) / 2;
@@ -263,7 +263,7 @@ export class Sura extends Champion {
       },
       finalDmgFormula: ({ damage, skillLevel, monster, model }): number => {
         if (!model.propertyAtk || model.propertyAtk === ElementType.Neutral) {
-          if (monster.elementUpper === ElementType.Ghost) return 0;
+          if (monster.isElement(ElementType.Ghost)) return 0;
         }
 
         const bonusDamge = skillLevel * 500 + monster.level * 40;
@@ -285,7 +285,7 @@ export class Sura extends Champion {
 
         let baseDamage = 500 + skillLevel * 100;
 
-        if (monster.isMvp) {
+        if (monster.isMVP) {
           baseDamage = 500 + skillLevel * 200;
         }
 

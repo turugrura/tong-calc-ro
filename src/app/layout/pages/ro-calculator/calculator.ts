@@ -1,6 +1,5 @@
 import { ItemModel } from '../../../models/item.model';
 import { MonsterModel } from '../../../models/monster.model';
-import { PreparedMonsterModel } from '../../../models/prepared-monster.model';
 import { StatusSummary } from '../../../models/status-summary.model';
 import { EquipmentSummaryModel } from '../../../models/equipment-summary.model';
 import { MainModel } from '../../../models/main.model';
@@ -24,9 +23,9 @@ import {
   WeaponAmmoMapper,
 } from 'src/app/constants';
 import { CharacterBase, ClassName } from 'src/app/jobs';
-import { createRawTotalBonus, firstUppercase, floor, isNumber, round } from 'src/app/utils';
+import { createRawTotalBonus, floor, isNumber, round } from 'src/app/utils';
 import { SKILL_NAME } from 'src/app/jobs/_skill_names';
-import { Weapon } from 'src/app/domain';
+import { Monster, Weapon } from 'src/app/domain';
 
 // const getItem = (id: number) => items[id] as ItemModel;
 const refinableItemTypes = [
@@ -210,39 +209,7 @@ export class Calculator {
   private extraOptions: Record<string, number>[] = [];
   private weaponData = new Weapon();
   private leftWeaponData = new Weapon();
-  private monsterData: PreparedMonsterModel = {
-    name: '',
-    level: 1,
-    race: 'formless',
-    raceUpper: '',
-    size: 'm',
-    sizeUpper: '',
-    sizeFullUpper: '',
-    element: '',
-    elementUpper: ElementType.Neutral,
-    elementLevel: '',
-    elementLevelN: 1,
-    elementLevelUpper: '',
-    type: 'normal',
-    isMvp: false,
-    typeUpper: '',
-    softDef: 1,
-    softMDef: 1,
-    hitRequireFor100: 1,
-    criShield: 1,
-    def: 0,
-    mdef: 0,
-    hp: 0,
-    str: 0,
-    agi: 0,
-    dex: 0,
-    vit: 0,
-    int: 0,
-    luk: 0,
-    res: 0,
-    mres: 0,
-  };
-  private monster: MonsterModel;
+  private monster = new Monster();
 
   private hpSpCalculator = new HpSpCalculator();
 
@@ -390,7 +357,7 @@ export class Calculator {
   private get infoForClass(): InfoForClass {
     return {
       model: this.model,
-      monster: this.monsterData,
+      monster: this.monster,
       totalBonus: this.totalEquipStatus,
       weapon: this.weaponData,
       status: this.status,
@@ -444,49 +411,7 @@ export class Calculator {
   }
 
   setMonster(monster: MonsterModel) {
-    const {
-      name,
-      stats: { int, vit, agi, luk, str, dex, level, elementName, health, defense, magicDefense, res, mres, raceName, class: monsterTypeId, scaleName, mvp },
-    } = monster;
-    const [pureElement] = elementName.split(' ');
-
-    const _class = monsterTypeId === 0 ? 'normal' : 'boss';
-    const elementLevel = elementName.toLowerCase();
-    const [_, eleLvl] = elementName.split(' ');
-
-    this.monster = monster;
-    this.monsterData = {
-      name,
-      level,
-      element: pureElement.toLowerCase(),
-      elementUpper: firstUppercase(pureElement) as ElementType,
-      elementLevel,
-      elementLevelN: Number(eleLvl),
-      elementLevelUpper: firstUppercase(elementLevel),
-      race: raceName.toLowerCase() as any,
-      raceUpper: raceName,
-      size: scaleName.at(0).toLowerCase() as any,
-      sizeUpper: scaleName.at(0),
-      sizeFullUpper: scaleName,
-      type: _class,
-      isMvp: mvp === 1,
-      typeUpper: firstUppercase(_class),
-      hp: health,
-      def: defense,
-      softDef: floor((level + vit) / 2),
-      mdef: magicDefense,
-      softMDef: floor((level + int) / 4),
-      criShield: floor(luk / 5),
-      hitRequireFor100: 200 + level + agi,
-      str,
-      agi,
-      dex,
-      vit,
-      int,
-      luk,
-      res,
-      mres,
-    };
+    this.monster.setData(monster);
 
     return this;
   }
@@ -656,7 +581,7 @@ export class Calculator {
       return this;
     }
 
-    const penalty = SizePenaltyMapper[this.weaponData?.data?.typeName]?.[this.monsterData.size];
+    const penalty = SizePenaltyMapper[this.weaponData?.data?.typeName]?.[this.monster.size];
     this.sizePenalty = this.toPercent(penalty || 100);
 
     return this;
@@ -780,7 +705,6 @@ export class Calculator {
         finalMagicMultipliers: this.finalMagicMultipliers,
         _class: this._class,
         monster: this.monster,
-        monsterData: this.monsterData,
         weaponData: this.weaponData,
         aspdPotion: this.aspdPotion,
         leftWeaponData: this.leftWeaponData,
@@ -1661,7 +1585,7 @@ export class Calculator {
 
     return {
       ...this.getObjSummary(this.totalEquipStatus),
-      monster: { ...this.monsterData },
+      monster: { ...this.monster.data },
       propertyAtk: this.propertyBasicAtk,
       propertyMultiplier: this.propertyMultiplier,
       weapon: this.weaponData.data,
