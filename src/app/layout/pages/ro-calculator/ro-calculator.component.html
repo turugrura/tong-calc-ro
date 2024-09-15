@@ -3880,12 +3880,13 @@
           <!--  Buffs -->
           <div class="col-4">
             <p-tag severity="info" value="Buffs"></p-tag>
+            <span class="skill_debuff pl-2">สีแดง = Debuff monster</span>
             <div class="grid grid-nogutter">
               <div *ngFor="let bishopBuff of skillBuffs; let i = index" class="col-12">
                 <div [ngSwitch]="bishopBuff.inputType">
                   <div *ngSwitchCase="'dropdown'">
                     <div class="p-inputgroup">
-                      <span class="p-inputgroup-addon text_group_ellips">{{ bishopBuff.label }}</span>
+                      <span class="p-inputgroup-addon text_group_ellips {{ bishopBuff.isDebuff ? 'skill_debuff' : '' }}">{{ bishopBuff.label }}</span>
                       <p-dropdown
                         [autoDisplayFirst]="false"
                         [resetFilterOnHide]="true"
@@ -3899,7 +3900,7 @@
                   </div>
                   <div *ngSwitchDefault>
                     <div class="p-inputgroup">
-                      <span class="p-inputgroup-addon text_group_ellips">{{ bishopBuff.label }}</span>
+                      <span class="p-inputgroup-addon text_group_ellips {{ bishopBuff.isDebuff ? 'skill_debuff' : '' }}">{{ bishopBuff.label }}</span>
                       <p-selectButton
                         [options]="bishopBuff.dropdown"
                         [(ngModel)]="model.skillBuffs[i]"
@@ -3957,7 +3958,7 @@
                 <div [ngSwitch]="activeSkill.inputType">
                   <div *ngSwitchCase="'dropdown'">
                     <div class="p-inputgroup">
-                      <span class="p-inputgroup-addon text_group_ellips">{{ activeSkill.label }}</span>
+                      <span class="p-inputgroup-addon text_group_ellips {{ activeSkill.isDebuff ? 'skill_debuff' : '' }}">{{ activeSkill.label }}</span>
                       <p-dropdown
                         [autoDisplayFirst]="false"
                         [resetFilterOnHide]="true"
@@ -3971,7 +3972,7 @@
                   </div>
                   <div *ngSwitchDefault>
                     <div class="p-inputgroup">
-                      <span class="p-inputgroup-addon text_group_ellips">{{ activeSkill.label }}</span>
+                      <span class="p-inputgroup-addon text_group_ellips {{ activeSkill.isDebuff ? 'skill_debuff' : '' }}">{{ activeSkill.label }}</span>
                       <p-selectButton
                         [options]="activeSkill.dropdown"
                         [(ngModel)]="model.activeSkills[i]"

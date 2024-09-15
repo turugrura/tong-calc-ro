@@ -1,10 +1,11 @@
 import { ActiveSkillModel } from '../../jobs/_character-base.abstract';
 
 export const DarkClawFn = (): ActiveSkillModel => ({
-  inputType: 'dropdown',
-  label: '[Debuff] Dark Claw',
   name: 'Dark Claw',
+  label: 'Dark Claw',
   isEquipAtk: true,
+  isDebuff: true,
+  inputType: 'dropdown',
   dropdown: [
     { label: '-', isUse: false, value: 0 },
     { label: 'Lv 5', isUse: true, value: 5, bonus: { darkClaw: 150 } },

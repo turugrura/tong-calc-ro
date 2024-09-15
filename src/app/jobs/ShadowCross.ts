@@ -225,6 +225,7 @@ export class ShadowCross extends GuillotineCross {
       isMelee: true,
       canCri: true,
       baseCriPercentage: 0.5,
+      requireWeaponTypes: ['katar'],
       totalHit: () => {
         if (this.isSkillActive('Cloaking Exceed')) return 5;
 
@@ -288,7 +289,8 @@ export class ShadowCross extends GuillotineCross {
   private readonly activeSkillList4th: ActiveSkillModel[] = [
     {
       name: 'Shadow Wound',
-      label: '[Debuf] Shadow Wound',
+      label: 'Shadow Wound',
+      isDebuff: true,
       inputType: 'dropdown',
       dropdown: genSkillListWithLabel(
         20,

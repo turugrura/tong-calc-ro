@@ -218,6 +218,10 @@
   color: var(--orange-400);
 }
 
+.skill_debuff {
+  color: var(--red-300);
+}
+
 .color_primary {
   background: var(--primary-color) !important;
   color: var(--primary-color-text) !important;

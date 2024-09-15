@@ -111,6 +111,7 @@ export interface ActiveSkillModel {
   isMasteryAtk?: boolean;
   inputType: 'dropdown' | 'selectButton';
   label: string;
+  isDebuff?: boolean;
   name: SKILL_NAME;
   dropdown: SkillModel[];
   isDevMode?: boolean;

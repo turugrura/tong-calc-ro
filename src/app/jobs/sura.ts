@@ -470,8 +470,9 @@ export class Sura extends Champion {
       ],
     },
     {
-      label: '[Debuff] Earth Shaker',
+      label: 'Earth Shaker',
       name: 'Earth Shaker',
+      isDebuff: true,
       inputType: 'selectButton',
       dropdown: [
         { label: 'Yes', value: 5, isUse: true },

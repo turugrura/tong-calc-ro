@@ -3,9 +3,9 @@ import { BragisPoemFn, DarkClawFn, ShieldSpellFn } from './share-active-skills';
 
 export const JobBuffs: ActiveSkillModel[] = [
   {
-    inputType: 'dropdown',
-    label: 'Agi Up',
     name: 'Cantocandidus',
+    label: 'Agi Up',
+    inputType: 'dropdown',
     dropdown: [
       { label: '-', value: 0, isUse: false },
       { label: 'Lv 3', value: 3, isUse: true, bonus: { agi: 5, aspdPercent: 3 } },
@@ -19,9 +19,9 @@ export const JobBuffs: ActiveSkillModel[] = [
     ],
   },
   {
-    inputType: 'dropdown',
-    label: 'Blessing',
     name: 'Clementia',
+    label: 'Blessing',
+    inputType: 'dropdown',
     dropdown: [
       { label: '-', value: 0, isUse: false },
       { label: 'Lv 10', value: 10, isUse: true, bonus: { str: 10, int: 10, dex: 10, hit: 20 } },
@@ -115,8 +115,8 @@ export const JobBuffs: ActiveSkillModel[] = [
     ],
   },
   {
-    label: 'Crazy Uproar',
     name: 'Crazy Uproar',
+    label: 'Crazy Uproar',
     inputType: 'selectButton',
     isMasteryAtk: true,
     dropdown: [
@@ -125,8 +125,8 @@ export const JobBuffs: ActiveSkillModel[] = [
     ],
   },
   {
-    label: 'Adrenaline 5',
     name: 'Adrenaline Rush',
+    label: 'Adrenaline 5',
     inputType: 'selectButton',
     dropdown: [
       { label: 'Yes', value: 5, skillLv: 5, isUse: true, bonus: { hit: 20, skillAspd: 5 } },
@@ -134,8 +134,8 @@ export const JobBuffs: ActiveSkillModel[] = [
     ],
   },
   {
-    label: 'Power Thrust 5',
     name: 'Power Thrust',
+    label: 'Power Thrust 5',
     inputType: 'selectButton',
     dropdown: [
       { label: 'Yes', value: 5, skillLv: 5, isUse: true, bonus: { flatDmg: 15 } },
@@ -143,8 +143,8 @@ export const JobBuffs: ActiveSkillModel[] = [
     ],
   },
   {
-    inputType: 'selectButton',
     label: 'Weapon Perfect 5',
+    inputType: 'selectButton',
     name: 'Weapon Perfection',
     dropdown: [
       { label: 'Yes', value: 5, skillLv: 5, isUse: true, bonus: { ignore_size_penalty: 1 } },
@@ -152,9 +152,9 @@ export const JobBuffs: ActiveSkillModel[] = [
     ],
   },
   {
-    inputType: 'dropdown',
-    label: 'Soul 5',
     name: 'Soul',
+    label: 'Soul 5',
+    inputType: 'dropdown',
     dropdown: [
       { label: '-', isUse: false, value: 0 },
       { label: 'Shadow Soul', isUse: true, value: 1, bonus: { cri: 20, aspd: 3 } },
@@ -163,9 +163,9 @@ export const JobBuffs: ActiveSkillModel[] = [
     ],
   },
   {
-    inputType: 'dropdown',
-    label: "Odin's Power",
     name: "Odin's Power",
+    label: "Odin's Power",
+    inputType: 'dropdown',
     dropdown: [
       { label: '-', isUse: false, value: 0 },
       { label: 'Lv 1', isUse: true, value: 1, bonus: { atk: 70, matk: 70, def: -20, mdef: -20 } },
@@ -173,9 +173,10 @@ export const JobBuffs: ActiveSkillModel[] = [
     ],
   },
   {
-    inputType: 'selectButton',
-    label: '[Debuff] Comet Amp',
     name: 'Comet Amp',
+    label: 'Comet Amp',
+    inputType: 'selectButton',
+    isDebuff: true,
     dropdown: [
       { label: 'Yes', isUse: true, value: 1, bonus: { comet: 50 } },
       { label: 'No', isUse: false, value: 0 },
@@ -201,9 +202,9 @@ export const JobBuffs: ActiveSkillModel[] = [
     ],
   },
   {
-    inputType: 'dropdown',
-    label: 'Moonlight Ser 5',
     name: 'Moonlight Serenade',
+    label: 'Moonlight Ser 5',
+    inputType: 'dropdown',
     dropdown: [
       { label: '-', isUse: false, value: 0 },
       { label: 'Job 30', value: 13, isUse: true, bonus: { matk: 46 } },
@@ -214,9 +215,9 @@ export const JobBuffs: ActiveSkillModel[] = [
     ],
   },
   {
-    inputType: 'selectButton',
-    label: 'Striking 5',
     name: 'Striking',
+    label: 'Striking 5',
+    inputType: 'selectButton',
     isEquipAtk: true,
     dropdown: [
       { label: 'Yes', isUse: true, value: 20, bonus: { atk: 100, perfectHit: 70 } },
@@ -224,9 +225,10 @@ export const JobBuffs: ActiveSkillModel[] = [
     ],
   },
   {
-    inputType: 'selectButton',
-    label: '[Debuff] Raid',
     name: 'Raid',
+    label: 'Raid',
+    inputType: 'selectButton',
+    isDebuff: true,
     dropdown: [
       { label: 'Yes', isUse: true, value: 1, bonus: { raid: 1 } },
       { label: 'No', isUse: false, value: 0 },
@@ -237,9 +239,9 @@ export const JobBuffs: ActiveSkillModel[] = [
   BragisPoemFn(),
   // SwingDanceFn(),
   {
-    inputType: 'selectButton',
-    label: 'Mystical Amp 10',
     name: 'Mystical Amplification',
+    label: 'Mystical Amp 10',
+    inputType: 'selectButton',
     dropdown: [
       { label: 'Yes', isUse: true, value: 1, bonus: { mysticAmp: 50 } },
       { label: 'No', isUse: false, value: 0 },
