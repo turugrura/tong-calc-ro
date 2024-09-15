@@ -883,6 +883,7 @@ export class DamageCalculator {
     const myElementMultiplier = this.toPercent(100 + elementBonus);
     const matkPercentMultiplier = this.toPercent(100 + this.totalBonus.matkPercent);
 
+    const sMatkMultiplier = 1 + this.traitBonus.sMatk * 0.01;
     const cometMultiplier = this.getCometMultiplier();
     const raceMultiplier = this.toPercent(this.getRaceMultiplier('m'));
     const sizeMultiplier = this.toPercent(this.getSizeMultiplier('m'));
@@ -890,9 +891,10 @@ export class DamageCalculator {
     const monsterTypeMultiplier = this.toPercent(this.getMonsterTypeMultiplier('m'));
     const raid = this.getRaidMultiplier();
 
-    const skillFormula = (totalAtk: number) => {
-      let total = totalAtk;
+    const skillFormula = (totalMatk: number) => {
+      let total = totalMatk;
 
+      total = floor(total * sMatkMultiplier);
       total = floor(total * raceMultiplier);
       total = floor(total * sizeMultiplier);
       total = floor(total * elementMultiplier); //tested
