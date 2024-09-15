@@ -189,10 +189,6 @@ export class DamageCalculator {
     const { totalPow, totalSpl, totalCon, totalCrt } = this.status;
     const { pAtkOrSMatk } = this.weaponData?.data || { pAtkOrSMatk: 0 };
 
-    if (!this._class.isAllowTraitStat()) {
-      return { cRate: 0, pAtk: 0, sMatk: 0 };
-    }
-
     return {
       pAtk: floor(totalPow / 3) + floor(totalCon / 5) + this.totalBonus.pAtk + pAtkOrSMatk,
       sMatk: floor(totalSpl / 3) + floor(totalCon / 5) + this.totalBonus.sMatk + pAtkOrSMatk,

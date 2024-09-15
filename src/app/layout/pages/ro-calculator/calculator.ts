@@ -212,7 +212,7 @@ export class Calculator {
   private monsterData: PreparedMonsterModel = {
     name: '',
     level: 1,
-    race: '',
+    race: 'formless',
     raceUpper: '',
     size: 'm',
     sizeUpper: '',
@@ -465,7 +465,7 @@ export class Calculator {
       elementLevel,
       elementLevelN: Number(eleLvl),
       elementLevelUpper: upperFirst(elementLevel),
-      race: raceName.toLowerCase(),
+      race: raceName.toLowerCase() as any,
       raceUpper: raceName,
       size: scaleName.at(0).toLowerCase() as any,
       sizeUpper: scaleName.at(0),
@@ -1610,7 +1610,7 @@ export class Calculator {
 
   calcAllDefs() {
     const { level } = this.model;
-    const { def = 0, defPercent = 0, softDef = 0, softDefPercent = 0 } = this.totalEquipStatus;
+    const { def = 0, defPercent = 0, softDef = 0, softDefPercent = 0, res = 0, mres = 0 } = this.totalEquipStatus;
     const { totalVit, totalAgi, totalSta, totalWis } = this.status;
 
     const rawSoftDef = floor(totalVit / 2 + totalAgi / 5 + level / 2);
@@ -1651,8 +1651,8 @@ export class Calculator {
     this.softMdef = floor((rawSoftMdef + softMdef) * this.toPercent(100 + softMdefPercent));
     this.mdef = floor(mdef * this.toPercent(100 + mdefPercent));
 
-    this.res = totalSta + floor(totalSta / 3) * 5 + bonusRes;
-    this.mres = totalWis + floor(totalWis / 3) * 5 + bonusRes;
+    this.res = res + totalSta + floor(totalSta / 3) * 5 + bonusRes;
+    this.mres = mres + totalWis + floor(totalWis / 3) * 5 + bonusRes;
 
     return this;
   }

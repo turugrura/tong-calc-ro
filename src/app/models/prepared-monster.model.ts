@@ -6,7 +6,7 @@ export interface PreparedMonsterModel {
   /**
    * lowercase
    */
-  race: string;
+  race: 'formless' | 'undead' | 'brute' | 'plant' | 'insect' | 'fish' | 'demon' | 'demihuman' | 'angel' | 'dragon';
   raceUpper: string;
   size: 's' | 'm' | 'l';
   sizeUpper: string;

@@ -176,6 +176,11 @@
   background-color: #121212;
   color: var(--purple-200);
 }
+.summary_stat_def2 {
+  /* background-color: var(--surface-0); */
+  background-color: #121212;
+  color: var(--purple-100);
+}
 
 .summary_value {
   /* background-color: var(--surface-0); */
