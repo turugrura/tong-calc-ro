@@ -25,7 +25,7 @@ import {
   WeaponAmmoMapper,
 } from 'src/app/constants';
 import { CharacterBase, ClassName } from 'src/app/jobs';
-import { createRawTotalBonus, floor, isNumber, round } from 'src/app/utils';
+import { createRawTotalBonus, firstUppercase, floor, isNumber, round } from 'src/app/utils';
 
 // const getItem = (id: number) => items[id] as ItemModel;
 const refinableItemTypes = [
@@ -452,19 +452,16 @@ export class Calculator {
     const _class = monsterTypeId === 0 ? 'normal' : 'boss';
     const elementLevel = elementName.toLowerCase();
     const [_, eleLvl] = elementName.split(' ');
-    const upperFirst = (s: string) => {
-      return s.at(0).toUpperCase() + s.substring(1);
-    };
 
     this.monster = monster;
     this.monsterData = {
       name,
       level,
       element: pureElement.toLowerCase(),
-      elementUpper: upperFirst(pureElement) as ElementType,
+      elementUpper: firstUppercase(pureElement) as ElementType,
       elementLevel,
       elementLevelN: Number(eleLvl),
-      elementLevelUpper: upperFirst(elementLevel),
+      elementLevelUpper: firstUppercase(elementLevel),
       race: raceName.toLowerCase() as any,
       raceUpper: raceName,
       size: scaleName.at(0).toLowerCase() as any,
@@ -472,7 +469,7 @@ export class Calculator {
       sizeFullUpper: scaleName,
       type: _class,
       isMvp: mvp === 1,
-      typeUpper: upperFirst(_class),
+      typeUpper: firstUppercase(_class),
       hp: health,
       def: defense,
       softDef: floor((level + vit) / 2),

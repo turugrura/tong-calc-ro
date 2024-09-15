@@ -1,3 +1,5 @@
+// export * from './generate-job-script'
+export * from './add-bonus';
 export * from './calc-dmg-dps';
 export * from './calc-skill-aspd';
 export * from './can-used-by-class';
@@ -9,8 +11,8 @@ export * from './create-main-model';
 export * from './create-main-stat-opton-list';
 export * from './create-number-dropdown-list';
 export * from './create-raw-total-bonus';
+export * from './first-upper-case';
 export * from './floor';
-// export * from './generate-job-script'
 export * from './is-number';
 export * from './is-skill-can-edp';
 export * from './pretty-item-desc';
@@ -23,4 +25,3 @@ export * from './to-raw-option-txt-list';
 export * from './to-upsert-preset-model';
 export * from './vefify-sync-presets';
 export * from './wait-rxjs';
-export * from './add-bonus';

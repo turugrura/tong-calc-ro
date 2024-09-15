@@ -36,6 +36,9 @@ export interface SkillDamageSummaryModel {
   skillPropertyAtk: ElementType;
   skillPropertyMultiplier: number;
   skillTotalPene: number;
+  skillTotalPeneLabel: string;
+  skillTotalPeneRes: number;
+  skillTotalPeneResLabel: string;
   skillMinDamage: number;
   skillMaxDamage: number;
   skillMaxDamageNoCri: number;

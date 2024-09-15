@@ -7,7 +7,7 @@ import { MainModel } from '../../../models/main.model';
 import { MonsterModel } from '../../../models/monster.model';
 import { PreparedMonsterModel } from '../../../models/prepared-monster.model';
 import { StatusSummary } from '../../../models/status-summary.model';
-import { calcDmgDps, calcSkillAspd, floor, isSkillCanEDP, round } from '../../../utils';
+import { calcDmgDps, calcSkillAspd, firstUppercase, floor, isSkillCanEDP, round } from '../../../utils';
 import { Weapon } from './weapon';
 
 interface DamageResultModel {
@@ -400,6 +400,15 @@ export class DamageCalculator {
     return this.toPercent(penalty || 100);
   }
 
+  private getPeneResMres() {
+    const { pene_res = 0, pene_mres = 0 } = this.totalBonus;
+
+    return {
+      effected_pene_res: Math.min(pene_res, 50),
+      effected_pene_mres: Math.min(pene_mres, 50),
+    };
+  }
+
   private getTotalPhysicalPene() {
     const { race, type } = this.monsterData;
     const { p_pene_race_all, p_pene_class_all } = this.totalBonus;
@@ -431,7 +440,8 @@ export class DamageCalculator {
     const finalDmgReduction = isActiveInfilltration ? 1 : dmgReductionByHardDef;
     const finalSoftDef = isActiveInfilltration ? 0 : softDef;
 
-    const restRes = res * ((100 - this.totalBonus.pene_res) / 100);
+    const { effected_pene_res } = this.getPeneResMres();
+    const restRes = res * ((100 - effected_pene_res) / 100);
     const resReduction = (2000 + restRes) / (2000 + restRes * 5);
 
     return { reducedHardDef, dmgReductionByHardDef, finalDmgReduction, finalSoftDef, resReduction };
@@ -443,7 +453,8 @@ export class DamageCalculator {
     const mDefBypassed = round(mdef - mdef * this.toPercent(m_pene), 4);
     const dmgReductionByMHardDef = (1000 + mDefBypassed) / (1000 + mDefBypassed * 10);
 
-    const restMres = mres * ((100 - this.totalBonus.pene_mres) / 100);
+    const { effected_pene_mres } = this.getPeneResMres();
+    const restMres = mres * ((100 - effected_pene_mres) / 100);
     const mresReduction = (2000 + restMres) / (2000 + restMres * 5);
 
     return { dmgReductionByMHardDef, mresReduction };
@@ -1115,7 +1126,10 @@ export class DamageCalculator {
 
     const weaponType = this.weaponData.data?.typeName;
     if (requireWeaponTypes.length && requireWeaponTypes.every((require) => require !== weaponType)) {
-      basicDmg.requireTxt = requireWeaponTypes.map((w) => w.replace('onehand', '1-Handed ').replace('twohand', '2-Handed ')).join(' / ');
+      basicDmg.requireTxt = requireWeaponTypes
+        .map((w) => w.replace('onehand', '1-Handed ').replace('twohand', '2-Handed '))
+        .map(firstUppercase)
+        .join(' / ');
       return { basicDmg, misc, basicAspd };
     }
 
@@ -1284,6 +1298,9 @@ export class DamageCalculator {
       skillPropertyMultiplier: calculated.propertyMultiplier,
       skillCanCri: calculated.canCri,
       skillTotalPene: isIgnoreDef ? 100 : totalPene,
+      skillTotalPeneLabel: isMatk ? 'เจาะเวท' : 'เจาะกาย',
+      skillTotalPeneRes: isMatk ? this.totalBonus.pene_mres : this.totalBonus.pene_res,
+      skillTotalPeneResLabel: isMatk ? 'เจาะ MRes' : 'เจาะ Res',
       skillMinDamage: minDamage,
       skillMaxDamage: maxDamage,
       skillMinDamageNoCri: calculated.rawMinNoCri,
