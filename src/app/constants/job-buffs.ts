@@ -247,4 +247,26 @@ export const JobBuffs: ActiveSkillModel[] = [
       { label: 'No', isUse: false, value: 0 },
     ],
   },
+  {
+    name: 'Spell Enchanting',
+    label: 'Spell Enchanting 5',
+    inputType: 'selectButton',
+    dropdown: [
+      { label: 'Yes', isUse: true, value: 1, bonus: { sMatk: 5 * 4 } },
+      { label: 'No', isUse: false, value: 0 },
+    ],
+  },
+  // {
+  //   name: 'Climax',
+  //   label: 'Climax',
+  //   inputType: 'dropdown',
+  //   dropdown: [
+  //     { label: '-', value: 0, isUse: false },
+  //     { label: 'Lv 1', value: 1, isUse: true, bonus:{def: 300, mdef: 100, m_my_element_water: 30} },
+  //     { label: 'Lv 2', value: 2, isUse: true },
+  //     { label: 'Lv 3', value: 3, isUse: true },
+  //     { label: 'Lv 4', value: 4, isUse: true },
+  //     { label: 'Lv 5', value: 5, isUse: true },
+  //   ],
+  // },
 ];

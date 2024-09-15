@@ -1,7 +1,12 @@
 import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
 import { JOB_4_MAX_JOB_LEVEL, JOB_4_MIN_MAX_LEVEL } from '../app-config';
 import { Sorcerer } from './Sorcerer';
+import { addBonus, genSkillList } from '../utils';
+import { EquipmentSummaryModel } from '../models/equipment-summary.model';
+import { InfoForClass } from '../models/info-for-class.model';
+import { ElementType, ElementalMasterSpirit } from '../constants';
+import { SKILL_NAME } from './_skill_names';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 1, 0, 0],
@@ -157,10 +162,185 @@ export class ElementalMaster extends Sorcerer {
   protected override minMaxLevel = JOB_4_MIN_MAX_LEVEL;
   protected override maxJob = JOB_4_MAX_JOB_LEVEL;
 
+  private readonly _spirit = {
+    1: 'Divulio',
+    2: 'Ardor',
+    3: 'Procella',
+    4: 'Terramotus',
+    5: 'Serpens',
+  } as const;
+
   private readonly classNames4th = [ClassName.Only_4th, ClassName.ElementalMaster];
-  private readonly atkSkillList4th: AtkSkillModel[] = [];
-  private readonly activeSkillList4th: ActiveSkillModel[] = [];
-  private readonly passiveSkillList4th: PassiveSkillModel[] = [];
+  private readonly atkSkillList4th: AtkSkillModel[] = [
+    {
+      name: 'Diamond Storm',
+      label: '[V2] Diamond Storm Lv5',
+      value: 'Diamond Storm==5',
+      acd: 0.5,
+      fct: 1.5,
+      vct: 5,
+      cd: 2,
+      hit: 5,
+      isMatk: true,
+      element: ElementType.Water,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalSpl } = status;
+        const { level: baseLevel } = model;
+
+        if (this.isSpirit('Divulio')) {
+          return (3500 + skillLevel * 1750 + totalSpl * 7) * (baseLevel / 100);
+        }
+
+        return (skillLevel * 1250 + totalSpl * 5) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Conflagration',
+      label: '[V2] Conflagration Lv5',
+      value: 'Conflagration==5',
+      acd: 0.5,
+      fct: 1.5,
+      vct: 5,
+      cd: 2,
+      isMatk: true,
+      element: ElementType.Fire,
+      totalHit: 10,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalSpl } = status;
+        const { level: baseLevel } = model;
+
+        if (this.isSpirit('Ardor')) {
+          return (skillLevel * 800 + totalSpl * 7) * (baseLevel / 100);
+        }
+
+        return (skillLevel * 400 + totalSpl * 5) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Lightning Land',
+      label: '[V2] Lightning Land Lv5',
+      value: 'Lightning Land==5',
+      acd: 0.5,
+      fct: 1.5,
+      vct: 5,
+      cd: 2,
+      isMatk: true,
+      element: ElementType.Wind,
+      totalHit: 10,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalSpl } = status;
+        const { level: baseLevel } = model;
+
+        if (this.isSpirit('Procella')) {
+          return (skillLevel * 800 + totalSpl * 7) * (baseLevel / 100);
+        }
+
+        return (skillLevel * 400 + totalSpl * 5) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Terra Drive',
+      label: '[V2] Terra Drive Lv5',
+      value: 'Terra Drive==5',
+      acd: 0.5,
+      fct: 1.5,
+      vct: 5,
+      cd: 2,
+      hit: 5,
+      isMatk: true,
+      element: ElementType.Earth,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalSpl } = status;
+        const { level: baseLevel } = model;
+
+        if (this.isSpirit('Terramotus')) {
+          return (3500 + skillLevel * 1750 + totalSpl * 7) * (baseLevel / 100);
+        }
+
+        return (skillLevel * 1250 + totalSpl * 5) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Venom Swamp',
+      label: '[V2] Venom Swamp Lv5',
+      value: 'Venom Swamp==5',
+      acd: 0.5,
+      fct: 1.5,
+      vct: 5,
+      cd: 2,
+      isMatk: true,
+      element: ElementType.Poison,
+      totalHit: 10,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalSpl } = status;
+        const { level: baseLevel } = model;
+
+        if (this.isSpirit('Serpens')) {
+          return (skillLevel * 800 + totalSpl * 7) * (baseLevel / 100);
+        }
+
+        return (skillLevel * 400 + totalSpl * 5) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Elemental Buster',
+      label: '[V2] Elemental Buster Lv10',
+      value: 'Elemental Buster==10',
+      acd: 1.5,
+      fct: 2,
+      vct: 4,
+      cd: 60,
+      isMatk: true,
+      hit: 3,
+      getElement: () => {
+        const spiritLv = this.activeSkillLv('_ElementalMaster_spirit');
+
+        return ElementalMasterSpirit[spiritLv] ?? ElementType.Neutral;
+      },
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status, monster } = input;
+        const { totalSpl } = status;
+        const { level: baseLevel } = model;
+        const raceBonus = monster.isRace('dragon', 'formless') ? 620 : 0;
+
+        return (skillLevel * (480 + raceBonus) + totalSpl * 10) * (baseLevel / 100);
+      },
+    },
+  ];
+  private readonly activeSkillList4th: ActiveSkillModel[] = [
+    {
+      name: '_ElementalMaster_spirit',
+      label: 'Summon',
+      inputType: 'dropdown',
+      dropdown: [
+        { label: '-', value: 0, isUse: false },
+        { label: this._spirit[1], value: 1, isUse: true },
+        { label: this._spirit[2], value: 2, isUse: true },
+        { label: this._spirit[3], value: 3, isUse: true },
+        { label: this._spirit[4], value: 4, isUse: true },
+        { label: this._spirit[5], value: 5, isUse: true },
+      ],
+    },
+  ];
+  private readonly passiveSkillList4th: PassiveSkillModel[] = [
+    {
+      name: 'Magic Book Mastery',
+      label: 'Magic Book Mastery',
+      inputType: 'dropdown',
+      dropdown: genSkillList(10),
+    },
+    // {
+    //   name: 'Elemental Spirit Mastery',
+    //   label: 'Elemental Spirit',
+    //   inputType: 'dropdown',
+    //   dropdown: genSkillList(10)
+    // },
+  ];
 
   constructor() {
     super();
@@ -171,5 +351,60 @@ export class ElementalMaster extends Sorcerer {
       passiveSkillList: this.passiveSkillList4th,
       classNames: this.classNames4th,
     });
+  }
+
+  override setAdditionalBonus(params: InfoForClass): EquipmentSummaryModel {
+    super.setAdditionalBonus(params);
+
+    const { totalBonus, weapon } = params;
+
+    const magicBookLv = this.learnLv('Magic Book Mastery');
+    if (magicBookLv > 0 && weapon.isType('book')) {
+      addBonus(totalBonus, 'm_element_water', magicBookLv);
+      addBonus(totalBonus, 'm_element_wind', magicBookLv);
+      addBonus(totalBonus, 'm_element_earth', magicBookLv);
+      addBonus(totalBonus, 'm_element_fire', magicBookLv);
+      addBonus(totalBonus, 'm_element_poison', magicBookLv);
+    }
+
+    this.setSpiritBonus(totalBonus);
+
+    return totalBonus;
+  }
+
+  private setSpiritBonus(totalBonus: EquipmentSummaryModel) {
+    const spiritName = this.spiritName;
+    const mapSkill: Record<typeof spiritName, [SKILL_NAME, number]> = {
+      Divulio: ['Cold Bolt', 100],
+      Ardor: ['Fire Bolt', 100],
+      Procella: ['Lightening Bolt', 100],
+      Terramotus: ['Earth Spike', 80],
+      Serpens: ['Kiling Cloud', 50],
+    };
+    const mapMyEle: Record<typeof spiritName, keyof typeof totalBonus> = {
+      Divulio: 'm_my_element_water',
+      Ardor: 'm_my_element_fire',
+      Procella: 'm_my_element_wind',
+      Terramotus: 'm_my_element_earth',
+      Serpens: 'm_my_element_poison',
+    };
+
+    if (mapSkill[spiritName]) {
+      const [skillName, bonus] = mapSkill[spiritName];
+      addBonus(totalBonus, skillName as any, bonus);
+    }
+    if (mapMyEle[spiritName]) {
+      addBonus(totalBonus, mapMyEle[spiritName], 10);
+    }
+  }
+
+  private get spiritName(): (typeof this._spirit)[keyof typeof this._spirit] {
+    const spirit = this.activeSkillLv('_ElementalMaster_spirit');
+
+    return this._spirit[spirit];
+  }
+
+  private isSpirit(name: typeof this.spiritName) {
+    return this.spiritName === name;
   }
 }

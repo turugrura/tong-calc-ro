@@ -1,4 +1,4 @@
-import { ElementType } from '../constants/element-type.const';
+import { ElementType, ElementalMasterSpirit } from '../constants/element-type.const';
 import { InfoForClass } from '../models/info-for-class.model';
 import { ClassName } from './_class-name';
 import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
@@ -171,7 +171,11 @@ export class Sorcerer extends Scholar {
       vct: 12,
       cd: 5,
       acd: 1,
-      // element: ElementType.Neutral,
+      getElement: () => {
+        const spiritLv = this.activeSkillLv('_ElementalMaster_spirit');
+
+        return ElementalMasterSpirit[spiritLv] ?? ElementType.Neutral;
+      },
       totalHit: 7,
       isMatk: true,
       formula: (input: AtkSkillFormulaInput): number => {
