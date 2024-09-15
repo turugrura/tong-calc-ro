@@ -140,6 +140,8 @@
           styleClass="summary_value"
           styleClass2="summary_compare"
           [isGreaterIsBetter]="false"
+          [displayRaw]="true"
+          [raw]="totalSummary?.calcSkill?.vct"
           [max]="totalSummary?.calcSkill?.reducedVct"
           [max2]="totalSummary2?.calcSkill?.reducedVct"
         ></app-calc-value>
@@ -151,6 +153,8 @@
           styleClass="summary_value"
           styleClass2="summary_compare"
           [isGreaterIsBetter]="false"
+          [displayRaw]="true"
+          [raw]="totalSummary?.calcSkill?.fct"
           [max]="totalSummary?.calcSkill?.reducedFct"
           [max2]="totalSummary2?.calcSkill?.reducedFct"
         ></app-calc-value>
@@ -162,6 +166,8 @@
           styleClass="summary_value"
           styleClass2="summary_compare"
           [isGreaterIsBetter]="false"
+          [displayRaw]="true"
+          [raw]="totalSummary?.calcSkill?.cd"
           [max]="totalSummary?.calcSkill?.reducedCd"
           [max2]="totalSummary2?.calcSkill?.reducedCd"
         ></app-calc-value>
@@ -173,6 +179,8 @@
           styleClass="summary_value"
           styleClass2="summary_compare"
           [isGreaterIsBetter]="false"
+          [displayRaw]="true"
+          [raw]="totalSummary?.calcSkill?.acd"
           [max]="totalSummary?.calcSkill?.reducedAcd"
           [max2]="totalSummary2?.calcSkill?.reducedAcd"
         ></app-calc-value>

@@ -20,6 +20,8 @@ export class CalcValueComponent {
   @Input() styleClass2: string;
   @Input() min2: number;
   @Input() max2: number;
+  @Input() raw: number;
+  @Input() displayRaw = false;
 
   constructor() {}
 
