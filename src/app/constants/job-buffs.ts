@@ -62,7 +62,7 @@ export const JobBuffs: ActiveSkillModel[] = [
   },
   {
     name: '_Argutus Vita_Telum',
-    label: 'เจาะ m/res 25',
+    label: 'เจาะ M/Res 25',
     inputType: 'selectButton',
     dropdown: [
       { label: 'Yes', isUse: true, value: 5, bonus: { pene_res: 25, pene_mres: 25 } },
@@ -252,8 +252,68 @@ export const JobBuffs: ActiveSkillModel[] = [
     label: 'Spell Enchanting 5',
     inputType: 'selectButton',
     dropdown: [
-      { label: 'Yes', isUse: true, value: 1, bonus: { sMatk: 5 * 4 } },
+      { label: 'Yes', isUse: true, value: 5, bonus: { sMatk: 5 * 4 } },
       { label: 'No', isUse: false, value: 0 },
+    ],
+  },
+  // {
+  //   name: 'Geffenia Nocturne',
+  //   label: 'Geffenia Nocturne 10',
+  //   inputType: 'selectButton',
+  //   isDebuff: true,
+  //   dropdown: [
+  //     { label: 'Yes', isUse: true, value: 10, bonus: { monster_mres: -10*10 } },
+  //     { label: 'No', isUse: false, value: 0 },
+  //   ],
+  // },
+  // {
+  //   name: 'Rhapsody of Mineworker',
+  //   label: 'Rhapsody of Mineworker 10',
+  //   inputType: 'selectButton',
+  //   isDebuff: true,
+  //   dropdown: [
+  //     { label: 'Yes', isUse: true, value: 10, bonus: { monster_res: -10*10 } },
+  //     { label: 'No', isUse: false, value: 0 },
+  //   ],
+  // },
+  {
+    name: '_Trouvere_Troubadour_ignore_res_mres',
+    label: 'M/Res -100',
+    inputType: 'selectButton',
+    isDebuff: true,
+    dropdown: [
+      { label: 'Yes', isUse: true, value: 10, bonus: { monster_res: -10 * 10, monster_mres: -10 * 10 } },
+      { label: 'No', isUse: false, value: 0 },
+    ],
+  },
+  // {
+  //   name: 'Serenade of Jawaii',
+  //   label: 'Serenade of Jawaii 5',
+  //   inputType: 'selectButton',
+  //   isDebuff: true,
+  //   dropdown: [
+  //     { label: 'Yes', isUse: true, value: 5, bonus: { sMatk: 5*3 } },
+  //     { label: 'No', isUse: false, value: 0 },
+  //   ],
+  // },
+  // {
+  //   name: 'March of Prontera',
+  //   label: 'Serenade of Jawaii 5',
+  //   inputType: 'selectButton',
+  //   isDebuff: true,
+  //   dropdown: [
+  //     { label: 'Yes', isUse: true, value: 5, bonus: { pAtk: 5*3 } },
+  //     { label: 'No', isUse: false, value: 0 },
+  //   ],
+  // },
+  {
+    name: '_Trouvere_Troubadour_pAtk_sMatk',
+    label: '+ P.ATK S.Matk',
+    inputType: 'dropdown',
+    dropdown: [
+      { label: '-', isUse: false, value: 0 },
+      { label: '+ 15', isUse: true, value: 5, bonus: { sMatk: 15, pAtk: 15 } },
+      { label: '+ 22', isUse: true, value: 6, bonus: { sMatk: 22, pAtk: 22 } },
     ],
   },
   // {

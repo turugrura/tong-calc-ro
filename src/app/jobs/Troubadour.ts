@@ -1,7 +1,11 @@
 import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
 import { JOB_4_MAX_JOB_LEVEL, JOB_4_MIN_MAX_LEVEL } from '../app-config';
 import { Minstrel } from './Minstrel';
+import { MysticSymphonyFn, StageMannerFn } from '../constants/share-passive-skills';
+import { InfoForClass } from '../models/info-for-class.model';
+import { EquipmentSummaryModel } from '../models/equipment-summary.model';
+import { addBonus } from '../utils';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 1, 0, 0],
@@ -158,9 +162,30 @@ export class Troubadour extends Minstrel {
   protected override maxJob = JOB_4_MAX_JOB_LEVEL;
 
   private readonly classNames4th = [ClassName.Only_4th, ClassName.Troubadour];
-  private readonly atkSkillList4th: AtkSkillModel[] = [];
-  private readonly activeSkillList4th: ActiveSkillModel[] = [];
-  private readonly passiveSkillList4th: PassiveSkillModel[] = [];
+  private readonly atkSkillList4th: AtkSkillModel[] = [
+    {
+      name: 'Rhythm Shooting',
+      label: '[V2] Rhythm Shooting Lv5',
+      value: 'Rhythm Shooting==5',
+      acd: 0.15,
+      fct: 0,
+      vct: 2,
+      cd: 0,
+      totalHit: 3,
+      requireWeaponTypes: ['bow', 'instrument', 'whip'],
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const baseLevel = model.level;
+        const stageMannerLv = this.learnLv('Stage Manner');
+
+        // if (this.isSkillActive('Sonic Brand'))
+
+        return (skillLevel * 120 + status.totalCon * 2 * stageMannerLv) * (baseLevel / 100);
+      },
+    },
+  ];
+  private readonly activeSkillList4th: ActiveSkillModel[] = [MysticSymphonyFn()];
+  private readonly passiveSkillList4th: PassiveSkillModel[] = [StageMannerFn()];
 
   constructor() {
     super();
@@ -171,5 +196,19 @@ export class Troubadour extends Minstrel {
       passiveSkillList: this.passiveSkillList4th,
       classNames: this.classNames4th,
     });
+  }
+
+  override setAdditionalBonus(params: InfoForClass): EquipmentSummaryModel {
+    super.setAdditionalBonus(params);
+
+    const { totalBonus, weapon } = params;
+
+    const stageMannerLv = this.learnLv('Stage Manner');
+    if (stageMannerLv > 0 && weapon.isType('bow', 'instrument', 'whip')) {
+      addBonus(totalBonus, 'pAtk', stageMannerLv * 3);
+      addBonus(totalBonus, 'sMatk', stageMannerLv * 3);
+    }
+
+    return totalBonus;
   }
 }
