@@ -9,6 +9,7 @@ import { sortSkill } from '../utils';
 import { WeaponTypeName } from '../constants/weapon-type-mapper';
 import { AspdPotionFixBonus } from '../constants';
 import { SKILL_NAME } from './_skill_names';
+import { PreparedMonsterModel } from '../models/prepared-monster.model';
 
 export interface AtkSkillFormulaInput extends InfoForClass {
   skillLevel: number;
@@ -57,6 +58,7 @@ export interface AtkSkillModel {
   maxStack?: number;
   canCri?: boolean | (() => boolean);
   baseCri?: number;
+  forceCri?: boolean;
   /**
    * 0.3 => baseCri * 0.3
    */
@@ -579,6 +581,14 @@ export abstract class CharacterBase {
     if (!_wType) return false;
 
     return wTypes.some((t) => t === _wType);
+  }
+
+  isMonsterRace(monster: PreparedMonsterModel, ...races: PreparedMonsterModel['race'][]): boolean {
+    const race = monster.race;
+
+    if (!race) return false;
+
+    return races.some((r) => r === race);
   }
 
   protected inheritSkills(params: { atkSkillList: AtkSkillModel[]; activeSkillList: ActiveSkillModel[]; passiveSkillList: ActiveSkillModel[]; classNames: ClassName[] }) {

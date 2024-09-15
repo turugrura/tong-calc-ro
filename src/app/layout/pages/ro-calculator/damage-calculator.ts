@@ -9,6 +9,7 @@ import { PreparedMonsterModel } from '../../../models/prepared-monster.model';
 import { StatusSummary } from '../../../models/status-summary.model';
 import { calcDmgDps, calcSkillAspd, firstUppercase, floor, isSkillCanEDP, round } from '../../../utils';
 import { Weapon } from './weapon';
+import { SKILL_NAME } from 'src/app/jobs/_skill_names';
 
 interface DamageResultModel {
   minDamage: number;
@@ -30,7 +31,7 @@ export class DamageCalculator {
   private readonly EDP_EQUIP_MULTIPLIER = 4;
   private readonly _BASE_CRI_MULTIPLIER = 1.4;
 
-  private skillName = '';
+  private skillName: SKILL_NAME = '' as any;
   private equipStatus: Record<ItemTypeEnum, EquipmentSummaryModel>;
   totalBonus: EquipmentSummaryModel;
   private _totalEquipStatus: EquipmentSummaryModel;
@@ -738,20 +739,22 @@ export class DamageCalculator {
       isIgnoreDef = false,
       isExcludeCannanball = false,
       finalDmgFormula,
+      forceCri = false,
     } = skillData;
     this.skillName = skillName;
     const { criDmgPercentage = 1 } = skillData;
     const _canCri = typeof canCriFn === 'function' ? canCriFn() : canCriFn;
-    const canCri = this.isForceSkillCri || _canCri;
+    const canCri = this.isForceSkillCri || _canCri || forceCri;
     const { reducedHardDef, finalDmgReduction, finalSoftDef, resReduction } = this.getPhisicalDefData();
     const hardDef = isIgnoreDef || isHDefToSDef ? 1 : finalDmgReduction;
     const softDef = finalSoftDef + (isHDefToSDef ? reducedHardDef : 0);
 
-    const { range, melee, criDmg, rangedReduction } = this.totalBonus;
+    const { range, melee, criDmg, rangedReduction, meleeReduction } = this.totalBonus;
     const isMelee = _isMelee != null && typeof _isMelee === 'function' ? _isMelee(this.weaponData.data.typeName) : !!_isMelee;
     const ranged = isMelee ? melee : range;
     const rangedMultiplier = this.toPercent(ranged + 100);
     const rangedReduct = 1 + rangedReduction * 0.01;
+    const meleeReduct = 1 + meleeReduction * 0.01;
     const baseSkillMultiplier = this.toPercent(baseSkillDamage);
     const equipSkillMultiplier = this.toPercent(100 + this.getSkillBonus(skillName));
     const criDmgToMonster = floor(criDmg * criDmgPercentage || 0);
@@ -767,6 +770,7 @@ export class DamageCalculator {
       let total = this._class.modifyFinalAtk(_totalAtk, infoForClass);
       if (_calcCri) total = floor(total * criMultiplier); // tested
       total = floor(total * rangedMultiplier); // tested
+      if (isMelee) total = floor(total * meleeReduct);
       if (!isMelee) total = floor(total * rangedReduct);
       total = floor(total * baseSkillMultiplier); // tested
       total = floor(total * equipSkillMultiplier);
@@ -1119,6 +1123,7 @@ export class DamageCalculator {
       maxStack = 0,
       requireWeaponTypes = [],
       isRequireShield = false,
+      forceCri = false,
     } = skillData;
 
     if (isRequireShield && !this.model.shield) {
@@ -1260,7 +1265,7 @@ export class DamageCalculator {
         ? Math.max(0, floor(actualBasicCriRate + baseSkillCri - criShield) * baseCriPercentage)
         : Math.max(0, floor((actualBasicCriRate + baseSkillCri) * baseCriPercentage) - criShield)
       : 0;
-    if (this.isForceSkillCri) {
+    if (this.isForceSkillCri || forceCri) {
       actualCri = 100;
     }
     actualCri = floor(actualCri);

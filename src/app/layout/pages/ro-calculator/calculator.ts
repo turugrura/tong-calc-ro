@@ -26,6 +26,7 @@ import {
 } from 'src/app/constants';
 import { CharacterBase, ClassName } from 'src/app/jobs';
 import { createRawTotalBonus, firstUppercase, floor, isNumber, round } from 'src/app/utils';
+import { SKILL_NAME } from 'src/app/jobs/_skill_names';
 
 // const getItem = (id: number) => items[id] as ItemModel;
 const refinableItemTypes = [
@@ -143,7 +144,7 @@ export class Calculator {
   private consumableBonuses: any[] = [];
   private aspdPotion: number = undefined;
 
-  private skillName = '';
+  private skillName: SKILL_NAME = '' as any;
   private allStatus = createRawTotalBonus();
   private totalEquipStatus = createRawTotalBonus();
   private equipStatus: Partial<Record<ItemTypeEnum, EquipmentSummaryModel>> = {
@@ -549,7 +550,7 @@ export class Calculator {
 
   setOffensiveSkill(skillValue: string) {
     const [, _skillName] = skillValue?.match(/(.+)==(\d+)/) ?? [];
-    this.skillName = _skillName;
+    this.skillName = _skillName as SKILL_NAME;
 
     return this;
   }

@@ -56,6 +56,7 @@ export interface EquipmentSummaryModel {
   range: number;
   bowRange: number;
   rangedReduction: number;
+  meleeReduction: number;
   vct: number;
   vct_inc: number;
   acd: number;
