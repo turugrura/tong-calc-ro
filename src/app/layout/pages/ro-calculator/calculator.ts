@@ -1,6 +1,5 @@
 import { ItemModel } from '../../../models/item.model';
 import { MonsterModel } from '../../../models/monster.model';
-import { Weapon } from './weapon';
 import { PreparedMonsterModel } from '../../../models/prepared-monster.model';
 import { StatusSummary } from '../../../models/status-summary.model';
 import { EquipmentSummaryModel } from '../../../models/equipment-summary.model';
@@ -27,6 +26,7 @@ import {
 import { CharacterBase, ClassName } from 'src/app/jobs';
 import { createRawTotalBonus, firstUppercase, floor, isNumber, round } from 'src/app/utils';
 import { SKILL_NAME } from 'src/app/jobs/_skill_names';
+import { Weapon } from 'src/app/domain';
 
 // const getItem = (id: number) => items[id] as ItemModel;
 const refinableItemTypes = [

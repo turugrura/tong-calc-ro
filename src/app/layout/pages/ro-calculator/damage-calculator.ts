@@ -8,8 +8,8 @@ import { MonsterModel } from '../../../models/monster.model';
 import { PreparedMonsterModel } from '../../../models/prepared-monster.model';
 import { StatusSummary } from '../../../models/status-summary.model';
 import { calcDmgDps, calcSkillAspd, firstUppercase, floor, isSkillCanEDP, round } from '../../../utils';
-import { Weapon } from './weapon';
 import { SKILL_NAME } from 'src/app/jobs/_skill_names';
+import { Weapon } from 'src/app/domain';
 
 interface DamageResultModel {
   minDamage: number;
@@ -441,8 +441,9 @@ export class DamageCalculator {
     const finalDmgReduction = isActiveInfilltration ? 1 : dmgReductionByHardDef;
     const finalSoftDef = isActiveInfilltration ? 0 : softDef;
 
+    const { monster_res } = this.totalBonus;
     const { effected_pene_res } = this.getPeneResMres();
-    const restRes = res * ((100 - effected_pene_res) / 100);
+    const restRes = Math.max(res + monster_res, 0) * ((100 - effected_pene_res) / 100);
     const resReduction = (2000 + restRes) / (2000 + restRes * 5);
 
     return { reducedHardDef, dmgReductionByHardDef, finalDmgReduction, finalSoftDef, resReduction };
@@ -454,8 +455,9 @@ export class DamageCalculator {
     const mDefBypassed = round(mdef - mdef * this.toPercent(m_pene), 4);
     const dmgReductionByMHardDef = (1000 + mDefBypassed) / (1000 + mDefBypassed * 10);
 
+    const { monster_mres } = this.totalBonus;
     const { effected_pene_mres } = this.getPeneResMres();
-    const restMres = mres * ((100 - effected_pene_mres) / 100);
+    const restMres = Math.max(mres + monster_mres, 0) * ((100 - effected_pene_mres) / 100);
     const mresReduction = (2000 + restMres) / (2000 + restMres * 5);
 
     return { dmgReductionByMHardDef, mresReduction };

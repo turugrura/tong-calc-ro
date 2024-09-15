@@ -390,10 +390,10 @@ export class Inquisitor extends Sura {
   override setAdditionalBonus(params: InfoForClass): EquipmentSummaryModel {
     super.setAdditionalBonus(params);
 
-    const { totalBonus } = params;
+    const { totalBonus, weapon } = params;
 
     const willOfFaithLv = this.learnLv('Will of Faith');
-    if (willOfFaithLv > 0 && this.isWeaponType(params, 'fist')) {
+    if (willOfFaithLv > 0 && weapon.isType('fist')) {
       addBonus(totalBonus, 'p_race_demon', willOfFaithLv + 2);
       addBonus(totalBonus, 'p_race_undead', willOfFaithLv + 2);
     }

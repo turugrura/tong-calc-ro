@@ -101,6 +101,10 @@ export class ShadowChaser extends Stalker {
         const baseLevel = model.level;
         const totalAgi = status.totalAgi;
 
+        if (this.isSkillActive('Abyss Dagger')) {
+          return (skillLevel * 150 + totalAgi * 3) * (baseLevel / 100);
+        }
+
         return (skillLevel * 120 + totalAgi * 2) * (baseLevel / 100);
       },
     },

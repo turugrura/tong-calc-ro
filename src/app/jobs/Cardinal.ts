@@ -285,10 +285,10 @@ export class Cardinal extends ArchBishop {
   override setAdditionalBonus(params: InfoForClass): EquipmentSummaryModel {
     super.setAdditionalBonus(params);
 
-    const { totalBonus } = params;
+    const { totalBonus, weapon } = params;
 
     const mAndBookLv = this.learnLv('Mace & Book Mastery');
-    if (mAndBookLv > 0 && this.isWeaponType(params, 'mace', 'book', 'twohandMace')) {
+    if (mAndBookLv > 0 && weapon.isType('mace', 'book', 'twohandMace')) {
       const mapM = [0, 2, 3, 5, 6, 8, 9, 11, 12, 14, 15];
       const mapL = [0, 3, 5, 7, 9, 10, 12, 13, 15, 16, 18];
       addBonus(totalBonus, 'p_size_s', mAndBookLv);

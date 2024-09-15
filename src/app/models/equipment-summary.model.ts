@@ -51,6 +51,8 @@ export interface EquipmentSummaryModel {
 
   res: number;
   mres: number;
+  monster_res: number;
+  monster_mres: number;
 
   melee: number;
   range: number;

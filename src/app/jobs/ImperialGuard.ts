@@ -329,10 +329,10 @@ export class ImperialGuard extends RoyalGuard {
   override setAdditionalBonus(params: InfoForClass): EquipmentSummaryModel {
     super.setAdditionalBonus(params);
 
-    const { totalBonus } = params;
+    const { totalBonus, weapon } = params;
 
     const ssMastLv = this.learnLv('Spear & Sword Mastery');
-    if (ssMastLv > 0 && this.isWeaponType(params, 'sword', 'twohandSword', 'spear', 'twohandSpear')) {
+    if (ssMastLv > 0 && weapon.isType('sword', 'twohandSword', 'spear', 'twohandSpear')) {
       addBonus(totalBonus, 'hit', ssMastLv * 3);
     }
 

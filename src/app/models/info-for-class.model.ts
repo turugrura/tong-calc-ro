@@ -1,11 +1,11 @@
 import { StatusSummary } from './status-summary.model';
 import { PreparedMonsterModel } from './prepared-monster.model';
-import { Weapon } from '../layout/pages/ro-calculator/weapon';
 import { MainModel } from './main.model';
 import { EquipmentSummaryModel } from './equipment-summary.model';
 import { ItemTypeEnum } from '../constants/item-type.enum';
 import { ElementType } from '../constants/element-type.const';
 import { SKILL_NAME } from '../jobs/_skill_names';
+import { Weapon } from '../domain';
 
 export interface InfoForClass {
   weapon: Weapon;

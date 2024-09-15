@@ -1,7 +1,11 @@
 import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
 import { JOB_4_MAX_JOB_LEVEL, JOB_4_MIN_MAX_LEVEL } from '../app-config';
 import { ShadowChaser } from './ShadowChaser';
+import { addBonus, floor, genSkillList } from '../utils';
+import { EquipmentSummaryModel } from '../models/equipment-summary.model';
+import { InfoForClass } from '../models/info-for-class.model';
+import { ElementType } from '../constants';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 0, 0, 1],
@@ -158,9 +162,164 @@ export class AbyssChaser extends ShadowChaser {
   protected override maxJob = JOB_4_MAX_JOB_LEVEL;
 
   private readonly classNames4th = [ClassName.Only_4th, ClassName.AbyssChaser];
-  private readonly atkSkillList4th: AtkSkillModel[] = [];
-  private readonly activeSkillList4th: ActiveSkillModel[] = [];
-  private readonly passiveSkillList4th: PassiveSkillModel[] = [];
+  private readonly atkSkillList4th: AtkSkillModel[] = [
+    {
+      name: 'Abyss Dagger',
+      label: '[V2] Abyss Dagger Lv5',
+      value: 'Abyss Dagger==5',
+      acd: 0.5,
+      fct: 0,
+      vct: 0,
+      cd: 0.3,
+      isMelee: true,
+      requireWeaponTypes: ['dagger', 'sword'],
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalPow } = status;
+        const { level: baseLevel } = model;
+
+        return (skillLevel * 350 + totalPow * 5) * (baseLevel / 100);
+      },
+      finalDmgFormula(input) {
+        const totalHit = 2;
+        return input.damage * totalHit;
+      },
+    },
+    {
+      name: 'Unlucky Rush',
+      label: '[V2] Unlucky Rush Lv5',
+      value: 'Unlucky Rush==5',
+      acd: 0.5,
+      fct: 0,
+      vct: 0,
+      cd: 0.25,
+      isMelee: true,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalPow } = status;
+        const { level: baseLevel } = model;
+
+        return (100 + skillLevel * 300 + totalPow * 5) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Deft Stab',
+      label: '[V2] Deft Stab Lv5',
+      value: 'Deft Stab==5',
+      acd: 0.5,
+      fct: 0,
+      vct: 0,
+      cd: 0.3,
+      isMelee: true,
+      hit: 5,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalPow } = status;
+        const { level: baseLevel } = model;
+
+        return (skillLevel * 360 + totalPow * 5) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Chain Reaction Shot',
+      label: '[V2] Chain Reaction Shot Lv5',
+      value: 'Chain Reaction Shot==5',
+      acd: 0.5,
+      fct: 1,
+      vct: 1,
+      cd: 1.5,
+      requireWeaponTypes: ['bow'],
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalCon } = status;
+        const { level: baseLevel } = model;
+
+        const primary = (skillLevel * 600 + totalCon * 5) * (baseLevel / 100);
+        const second = (skillLevel * 950 + totalCon * 5) * (baseLevel / 100);
+
+        return floor(primary) + floor(second);
+      },
+    },
+    {
+      name: 'Frenzy Shot',
+      label: '[V2] Frenzy Shot Lv10 (1 hit)',
+      value: 'Frenzy Shot==10',
+      acd: 0.5,
+      fct: 0,
+      vct: 0,
+      cd: 0.2,
+      canCri: true,
+      baseCriPercentage: 1,
+      requireWeaponTypes: ['bow'],
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalCon } = status;
+        const { level: baseLevel } = model;
+
+        return (skillLevel * 350 + totalCon * 5) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Omega Abyss Strike',
+      label: '[V2] Omega Abyss Strike Lv10',
+      value: 'Omega Abyss Strike==10',
+      acd: 0.5,
+      fct: 1.5,
+      vct: 4,
+      cd: 60,
+      isMatk: true,
+      element: ElementType.Neutral,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status, monster } = input;
+        const { totalSpl } = status;
+        const { level: baseLevel } = model;
+        const raceBonus = this.isMonsterRace(monster, 'angel', 'demon') ? 550 : 0;
+
+        return (skillLevel * (600 + raceBonus) + totalSpl * 10) * (baseLevel / 100);
+      },
+    },
+  ];
+  private readonly activeSkillList4th: ActiveSkillModel[] = [
+    {
+      name: 'Strip Shadow',
+      label: 'Strip Shadow',
+      isDebuff: true,
+      inputType: 'selectButton',
+      dropdown: [
+        { label: 'Yes', value: 5, isUse: true, bonus: { monster_res: -50, monster_mres: -50 } },
+        { label: 'No', value: 0, isUse: false },
+      ],
+    },
+    {
+      name: 'Abyss Slayer',
+      label: 'Abyss Slayer',
+      inputType: 'dropdown',
+      dropdown: genSkillList(10, (lv) => ({ pAtk: 10 + lv * 2, sMatk: 10 + lv * 2, hit: 100 + lv * 20 })),
+    },
+    {
+      name: 'Abyss Dagger',
+      label: 'Abyss Dagger',
+      inputType: 'selectButton',
+      dropdown: [
+        { label: 'Yes', value: 5, isUse: true },
+        { label: 'No', value: 0, isUse: false },
+      ],
+    },
+  ];
+  private readonly passiveSkillList4th: PassiveSkillModel[] = [
+    {
+      name: 'Dagger & Bow Mastery',
+      label: 'Dagger & Bow Mastery',
+      inputType: 'dropdown',
+      dropdown: genSkillList(10),
+    },
+    {
+      name: 'Magic Sword Mastery',
+      label: 'Magic Sword Mastery',
+      inputType: 'dropdown',
+      dropdown: genSkillList(10),
+    },
+  ];
 
   constructor() {
     super();
@@ -171,5 +330,26 @@ export class AbyssChaser extends ShadowChaser {
       passiveSkillList: this.passiveSkillList4th,
       classNames: this.classNames4th,
     });
+  }
+
+  override setAdditionalBonus(params: InfoForClass): EquipmentSummaryModel {
+    super.setAdditionalBonus(params);
+
+    const { totalBonus, weapon } = params;
+
+    const dAndBowLv = this.learnLv('Dagger & Bow Mastery');
+    if (dAndBowLv > 0 && weapon.isType('dagger', 'bow')) {
+      const mapM = [0, 2, 3, 5, 6, 8, 9, 11, 12, 14, 15];
+      addBonus(totalBonus, 'p_size_s', dAndBowLv);
+      addBonus(totalBonus, 'p_size_m', mapM[dAndBowLv]);
+      addBonus(totalBonus, 'p_size_l', dAndBowLv * 2);
+    }
+
+    const magicLv = this.learnLv('Magic Sword Mastery');
+    if (magicLv > 0 && weapon.isType('dagger', 'sword')) {
+      addBonus(totalBonus, 'm_size_all', Math.ceil(magicLv * 1.5));
+    }
+
+    return totalBonus;
   }
 }

@@ -1,7 +1,6 @@
-import { ItemModel } from '../../../models/item.model';
-import { WeaponSubTypeName, WeaponSubTypeNameMapById, WeaponTypeName, WeaponTypeNameMapBySubTypeId } from '../../../constants/weapon-type-mapper';
-import { ElementType } from '../../../constants/element-type.const';
-import { floor } from 'src/app/utils';
+import { ElementType, WeaponSubTypeName, WeaponSubTypeNameMapById, WeaponTypeName, WeaponTypeNameMapBySubTypeId } from '../constants';
+import { ItemModel } from '../models/item.model';
+import { floor } from '../utils';
 
 const weaponUpgradeTable: Record<number, Record<number, { bonus: number; overUpgrade: number; highUpgrade: number; pAtkOrSMatk: number }>> = {
   1: {
@@ -173,6 +172,12 @@ export class Weapon {
     }
 
     return this;
+  }
+
+  isType(...wTypes: WeaponTypeName[]): boolean {
+    if (!this._typeName) return false;
+
+    return wTypes.some((t) => t === this._typeName);
   }
 
   get data() {

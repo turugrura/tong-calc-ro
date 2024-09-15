@@ -2,7 +2,6 @@ import { environment } from 'src/environments/environment';
 import { ElementType } from '../constants/element-type.const';
 import { EquipmentSummaryModel } from '../models/equipment-summary.model';
 import { InfoForClass } from '../models/info-for-class.model';
-import { Weapon } from '../layout/pages/ro-calculator/weapon';
 import { AspdTable } from './_aspd-table';
 import { ClassName } from './_class-name';
 import { sortSkill } from '../utils';
@@ -10,6 +9,7 @@ import { WeaponTypeName } from '../constants/weapon-type-mapper';
 import { AspdPotionFixBonus } from '../constants';
 import { SKILL_NAME } from './_skill_names';
 import { PreparedMonsterModel } from '../models/prepared-monster.model';
+import { Weapon } from '../domain';
 
 export interface AtkSkillFormulaInput extends InfoForClass {
   skillLevel: number;
@@ -574,14 +574,6 @@ export abstract class CharacterBase {
 
   setAdditionalBonus(params: InfoForClass): EquipmentSummaryModel {
     return params.totalBonus;
-  }
-
-  isWeaponType(params: InfoForClass, ...wTypes: WeaponTypeName[]): boolean {
-    const _wType = params.weapon?.data?.typeName;
-
-    if (!_wType) return false;
-
-    return wTypes.some((t) => t === _wType);
   }
 
   isMonsterRace(monster: PreparedMonsterModel, ...races: PreparedMonsterModel['race'][]): boolean {

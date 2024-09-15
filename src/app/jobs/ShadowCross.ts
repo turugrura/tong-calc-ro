@@ -337,13 +337,13 @@ export class ShadowCross extends GuillotineCross {
   override setAdditionalBonus(params: InfoForClass): EquipmentSummaryModel {
     super.setAdditionalBonus(params);
 
-    const { totalBonus } = params;
+    const { totalBonus, weapon } = params;
 
     const shadowSenseLv = this.learnLv('Shadow Sense');
     if (shadowSenseLv > 0) {
       let criBonus = 0;
-      if (this.isWeaponType(params, 'dagger')) criBonus = 10 + shadowSenseLv * 4;
-      if (this.isWeaponType(params, 'katar')) criBonus = 5 + shadowSenseLv * 2;
+      if (weapon.isType('dagger')) criBonus = 10 + shadowSenseLv * 4;
+      if (weapon.isType('katar')) criBonus = 5 + shadowSenseLv * 2;
       addBonus(totalBonus, 'cri', criBonus);
     }
 
