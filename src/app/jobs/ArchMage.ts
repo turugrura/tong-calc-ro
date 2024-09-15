@@ -1,7 +1,11 @@
 import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
 import { JOB_4_MAX_JOB_LEVEL, JOB_4_MIN_MAX_LEVEL } from '../app-config';
 import { Warlock } from './Warlock';
+import { addBonus, floor, genSkillList } from '../utils';
+import { EquipmentSummaryModel } from '../models/equipment-summary.model';
+import { InfoForClass } from '../models/info-for-class.model';
+import { ElementType } from '../constants';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 1, 0, 0],
@@ -158,9 +162,263 @@ export class ArchMage extends Warlock {
   protected override maxJob = JOB_4_MAX_JOB_LEVEL;
 
   private readonly classNames4th = [ClassName.Only_4th, ClassName.ArchMage];
-  private readonly atkSkillList4th: AtkSkillModel[] = [];
-  private readonly activeSkillList4th: ActiveSkillModel[] = [];
-  private readonly passiveSkillList4th: PassiveSkillModel[] = [];
+  private readonly atkSkillList4th: AtkSkillModel[] = [
+    {
+      name: 'Soul Vulcan Strike',
+      label: '[V2] Soul Vulcan Strike Lv5',
+      value: 'Soul Vulcan Strike==5',
+      acd: 0.7,
+      fct: 1,
+      vct: 3,
+      cd: 0.7,
+      isMatk: true,
+      element: ElementType.Ghost,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalSpl } = status;
+        const { level: baseLevel } = model;
+
+        return (skillLevel * 180 + totalSpl * 3) * (baseLevel / 100);
+      },
+      finalDmgFormula(input) {
+        const totalHit = input.skillLevel + 2;
+        return input.damage * totalHit;
+      },
+    },
+    {
+      name: 'Mystery Illusion',
+      label: '[V2] Mystery Illusion Lv5',
+      value: 'Mystery Illusion==5',
+      acd: 1,
+      fct: 1.5,
+      vct: 4,
+      cd: 4,
+      isMatk: true,
+      element: ElementType.Dark,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalSpl } = status;
+        const { level: baseLevel } = model;
+
+        return (skillLevel * 500 + totalSpl * 5) * (baseLevel / 100);
+      },
+      finalDmgFormula(input) {
+        const totalHit = [0, 7, 7, 10, 10, 14][input.skillLevel];
+        return input.damage * totalHit;
+      },
+    },
+    {
+      name: 'Floral Flare Road',
+      label: '[V2] Floral Flare Road Lv5',
+      value: 'Floral Flare Road==5',
+      acd: 0.5,
+      fct: 1.5,
+      vct: 3,
+      cd: 5,
+      isMatk: true,
+      element: ElementType.Fire,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalSpl } = status;
+        const { level: baseLevel } = model;
+
+        return (skillLevel * 200 + totalSpl * 5) * (baseLevel / 100);
+      },
+      finalDmgFormula(input) {
+        const totalHit = 10;
+        return input.damage * totalHit;
+      },
+    },
+    {
+      name: 'Rain of Crystal',
+      label: '[V2] Rain of Crystal Lv5',
+      value: 'Rain of Crystal==5',
+      acd: 0.5,
+      fct: 1.5,
+      vct: 3,
+      cd: 5,
+      isMatk: true,
+      element: ElementType.Water,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalSpl } = status;
+        const { level: baseLevel } = model;
+
+        return (skillLevel * 150 + totalSpl * 5) * (baseLevel / 100);
+      },
+      finalDmgFormula(input) {
+        const totalHit = 8;
+        return input.damage * totalHit;
+      },
+    },
+    {
+      name: 'Tornado Storm',
+      label: '[V2] Tornado Storm Lv5',
+      value: 'Tornado Storm==5',
+      acd: 0.5,
+      fct: 1.5,
+      vct: 3,
+      cd: 5,
+      isMatk: true,
+      element: ElementType.Wind,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalSpl } = status;
+        const { level: baseLevel } = model;
+
+        return (skillLevel * 90 + totalSpl * 5) * (baseLevel / 100);
+      },
+      finalDmgFormula(input) {
+        const totalHit = 10;
+        return input.damage * totalHit;
+      },
+    },
+    {
+      name: 'Stratum Tremor',
+      label: '[V2] Stratum Tremor Lv5',
+      value: 'Stratum Tremor==5',
+      acd: 0.5,
+      fct: 1.5,
+      vct: 3,
+      cd: 4,
+      isMatk: true,
+      element: ElementType.Earth,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalSpl } = status;
+        const { level: baseLevel } = model;
+
+        return (skillLevel * 250 + totalSpl * 5) * (baseLevel / 100);
+      },
+      finalDmgFormula(input) {
+        const totalHit = 10;
+        return input.damage * totalHit;
+      },
+    },
+    {
+      name: 'Crimson Arrow',
+      label: '[V2] Crimson Arrow Lv5',
+      value: 'Crimson Arrow==5',
+      acd: 0.5,
+      fct: 1.5,
+      vct: 4,
+      cd: 0.3,
+      isMatk: true,
+      element: ElementType.Fire,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalSpl } = status;
+        const { level: baseLevel } = model;
+        const blimaxBonus = this.isSkillActive('Climax') ? 600 : 0;
+
+        const directDmg = floor((skillLevel * 300 + totalSpl * 3) * (baseLevel / 100));
+        const bomDmg = floor((skillLevel * (600 + blimaxBonus) + totalSpl * 5) * (baseLevel / 100));
+
+        return directDmg + bomDmg;
+      },
+    },
+    {
+      name: 'Frozen Slash',
+      label: '[V2] Frozen Slash Lv5',
+      value: 'Frozen Slash==5',
+      acd: 0.5,
+      fct: 1.5,
+      vct: 4,
+      cd: 0.3,
+      isMatk: true,
+      element: ElementType.Water,
+      hit: 3,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalSpl } = status;
+        const { level: baseLevel } = model;
+        const blimaxBonus = this.isSkillActive('Climax') ? 250 : 0;
+
+        return (skillLevel * (600 + blimaxBonus) + totalSpl * 5) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Storm Cannon',
+      label: '[V2] Storm Cannon Lv5',
+      value: 'Storm Cannon==5',
+      acd: 0.5,
+      fct: 1.5,
+      vct: 4,
+      cd: 0.3,
+      isMatk: true,
+      element: ElementType.Wind,
+      hit: 2,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalSpl } = status;
+        const { level: baseLevel } = model;
+        const blimaxBonus = this.isSkillActive('Climax') ? 250 : 0;
+
+        return (skillLevel * (600 + blimaxBonus) + totalSpl * 5) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Rock Down',
+      label: '[V2] Rock Down Lv5',
+      value: 'Rock Down==5',
+      acd: 0.5,
+      fct: 1.5,
+      vct: 4,
+      cd: 0.3,
+      isMatk: true,
+      element: ElementType.Earth,
+      hit: 5,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalSpl } = status;
+        const { level: baseLevel } = model;
+        const blimaxBonus = this.isSkillActive('Climax') ? 250 : 0;
+
+        return (skillLevel * (600 + blimaxBonus) + totalSpl * 5) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Astral Strike',
+      label: '[V2] Astral Strike Lv10',
+      value: 'Astral Strike==10',
+      acd: 0.5,
+      fct: 1.5,
+      vct: 4,
+      cd: 60,
+      isMatk: true,
+      element: ElementType.Neutral,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status, monster } = input;
+        const { totalSpl } = status;
+        const { level: baseLevel } = model;
+        const raceBonus = monster.isRace('undead', 'dragon') ? 600 : 0;
+
+        const primary = floor((skillLevel * (500 + raceBonus) + totalSpl * 10) * (baseLevel / 100));
+        const second = floor((skillLevel * 200 + totalSpl * 10) * (baseLevel / 100));
+
+        return primary + second * 50;
+      },
+    },
+  ];
+  private readonly activeSkillList4th: ActiveSkillModel[] = [
+    {
+      name: 'Climax',
+      label: 'Climax',
+      inputType: 'selectButton',
+      dropdown: [
+        { label: 'Yes', value: 5, isUse: true },
+        { label: 'No', value: 0, isUse: false },
+      ],
+    },
+  ];
+  private readonly passiveSkillList4th: PassiveSkillModel[] = [
+    {
+      name: 'Two hand Staff Mastery',
+      label: 'Two hand Staff Mastery',
+      inputType: 'dropdown',
+      dropdown: genSkillList(10),
+    },
+  ];
 
   constructor() {
     super();
@@ -171,5 +429,18 @@ export class ArchMage extends Warlock {
       passiveSkillList: this.passiveSkillList4th,
       classNames: this.classNames4th,
     });
+  }
+
+  override setAdditionalBonus(params: InfoForClass): EquipmentSummaryModel {
+    super.setAdditionalBonus(params);
+
+    const { totalBonus, weapon } = params;
+
+    const tHandStaffLv = this.learnLv('Two hand Staff Mastery');
+    if (tHandStaffLv > 0 && weapon.isType('twohandRod')) {
+      addBonus(totalBonus, 'sMatk', tHandStaffLv * 2);
+    }
+
+    return totalBonus;
   }
 }
