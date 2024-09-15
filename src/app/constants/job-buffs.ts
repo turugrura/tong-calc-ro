@@ -316,6 +316,15 @@ export const JobBuffs: ActiveSkillModel[] = [
       { label: '+ 22', isUse: true, value: 6, bonus: { sMatk: 22, pAtk: 22 } },
     ],
   },
+  {
+    name: '_Meister_Quake',
+    label: 'Quake 10',
+    inputType: 'selectButton',
+    dropdown: [
+      { label: 'Yes', value: 10, isUse: true, bonus: { rangedReduction: 50, meleeReduction: 50 } },
+      { label: 'No', value: 0, isUse: false },
+    ],
+  },
   // {
   //   name: 'Climax',
   //   label: 'Climax',

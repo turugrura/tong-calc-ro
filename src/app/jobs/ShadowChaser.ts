@@ -168,7 +168,7 @@ export class ShadowChaser extends Stalker {
       vct: (lv) => 7 + lv,
       cd: 5,
       acd: 1,
-      totalHit: (_, lv) => 2 + lv,
+      totalHit: ({ skillLevel: lv }) => 2 + lv,
       isMatk: true,
       levelList: [
         { label: 'Psychic Wave Lv1', value: 'Psychic Wave==1' },
@@ -221,7 +221,7 @@ export class ShadowChaser extends Stalker {
       cd: (lv) => 2 + lv * 0.5,
       isMatk: true,
       element: ElementType.Fire,
-      totalHit: (_, lv) => ({ 1: 2, 2: 3, 3: 3, 4: 4, 5: 4, 6: 5, 7: 5, 8: 6, 9: 6, 10: 7 }[lv]),
+      totalHit: ({ skillLevel: lv }) => ({ 1: 2, 2: 3, 3: 3, 4: 4, 5: 4, 6: 5, 7: 5, 8: 6, 9: 6, 10: 7 }[lv]),
       levelList: [
         { label: 'Meteor Storm Lv1', value: 'Meteor Storm==1' },
         { label: 'Meteor Storm Lv2', value: 'Meteor Storm==2' },

@@ -70,7 +70,7 @@ export interface AtkSkillModel {
    * Will be round down
    */
   hit?: number;
-  totalHit?: number | ((monsterSize: 's' | 'm' | 'l', skillLevel: number) => number);
+  totalHit?: number | ((parmas: AtkSkillFormulaInput) => number);
   isMatk?: boolean;
   isMelee?: boolean | ((weaponType: WeaponTypeName) => boolean);
   isDevMode?: boolean;

@@ -213,7 +213,7 @@ export class SuperNovice extends CharacterBase {
       vct: (lv) => 7 + lv,
       cd: 5,
       acd: 1,
-      totalHit: (_, lv) => 2 + lv,
+      totalHit: ({ skillLevel: lv }) => 2 + lv,
       isMatk: true,
       levelList: [
         { label: 'Psychic Wave Lv1', value: 'Psychic Wave==1' },

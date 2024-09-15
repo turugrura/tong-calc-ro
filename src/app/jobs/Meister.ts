@@ -1,7 +1,9 @@
 import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
 import { JOB_4_MAX_JOB_LEVEL, JOB_4_MIN_MAX_LEVEL } from '../app-config';
 import { Mechanic } from './Mechanic';
+import { genSkillList } from '../utils';
+import { genMeisterMonsterSkillList } from './summons';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [1, 0, 0, 0, 0, 0],
@@ -158,9 +160,69 @@ export class Meister extends Mechanic {
   protected override maxJob = JOB_4_MAX_JOB_LEVEL;
 
   private classNames4th = [ClassName.Only_4th, ClassName.Meister];
-  private atkSkillList4th: AtkSkillModel[] = [];
-  private activeSkillList4th: ActiveSkillModel[] = [];
-  private passiveSkillList4th: PassiveSkillModel[] = [];
+  private atkSkillList4th: AtkSkillModel[] = [
+    {
+      name: 'Axe Stomp',
+      label: '[V2] Axe Stomp Lv5',
+      value: 'Axe Stomp==5',
+      acd: 0.5,
+      fct: 0,
+      vct: 0,
+      cd: 1,
+      isMelee: true,
+      totalHit: ({ weapon }) => (weapon.isType('twohandAxe') ? 3 : 1),
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const baseLevel = model.level;
+        const { totalPow } = status;
+
+        return (skillLevel * 400 + totalPow * 5) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Rush Quake',
+      label: '[V2] Rush Quake Lv10',
+      value: 'Rush Quake==10',
+      acd: 0.5,
+      fct: 0,
+      vct: 0,
+      cd: 60,
+      isMelee: true,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status, monster } = input;
+        const baseLevel = model.level;
+        const { totalPow } = status;
+        const raceBonus = monster.isRace('formless', 'insect') ? 350 : 0;
+
+        return (skillLevel * (750 + raceBonus) + totalPow * 10) * (baseLevel / 100);
+      },
+    },
+  ];
+  private activeSkillList4th: ActiveSkillModel[] = [
+    {
+      name: '_Meister_Rush',
+      label: 'Rush 10',
+      inputType: 'selectButton',
+      dropdown: [
+        { label: 'Yes', value: 10, isUse: true, bonus: { range: 10 * 5, melee: 10 * 5 } },
+        { label: 'No', value: 0, isUse: false },
+      ],
+    },
+    {
+      name: '_Meister_ABR_List',
+      label: 'ABR Summon',
+      inputType: 'dropdown',
+      dropdown: genMeisterMonsterSkillList(),
+    },
+  ];
+  private passiveSkillList4th: PassiveSkillModel[] = [
+    {
+      name: 'Two Hand Defending',
+      label: 'Two Hand Defending',
+      inputType: 'dropdown',
+      dropdown: genSkillList(10),
+    },
+  ];
 
   constructor() {
     super();

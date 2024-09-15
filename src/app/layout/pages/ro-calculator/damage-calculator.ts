@@ -771,7 +771,7 @@ export class DamageCalculator {
       if (!isMelee) total = floor(total * rangedReduct);
       total = floor(total * baseSkillMultiplier); // tested
       total = floor(total * equipSkillMultiplier);
-      total = floor(total * resReduction);
+      if (!isHDefToSDef) total = floor(total * resReduction);
       total = floor(total * hardDef);
       total = total - softDef; // tested
       if (_calcCri) total = floor(total * this.criMultiplier);
@@ -1272,7 +1272,7 @@ export class DamageCalculator {
     const skillAccRate = isHit100 || isMatk ? 100 : basicDmg.accuracy;
     const { avgCriDamage, avgNoCriDamage } = calculated;
 
-    const totalHit = typeof _totalHit === 'function' ? _totalHit(this.monster.size, skillLevel) : _totalHit;
+    const totalHit = typeof _totalHit === 'function' ? _totalHit(formulaParams) : _totalHit;
     const isAutoSpell = autoSpellChance != 1;
     const skillHitsPerSec = Math.min(basicAspd.hitsPerSec, skillAspd.totalHitPerSec);
     const oneHitDps = isAutoSpell

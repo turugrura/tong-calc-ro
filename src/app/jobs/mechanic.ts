@@ -2,6 +2,7 @@ import { InfoForClass } from '../models/info-for-class.model';
 import { ClassName } from './_class-name';
 import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
 import { Whitesmith } from './Whitesmith';
+import { isBattleWarrior, isDualCannon } from './summons';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 0, 0, 1],
@@ -99,6 +100,10 @@ export class Mechanic extends Whitesmith {
         const baseLevel = model.level;
         const totalVit = status.totalVit;
 
+        if (this.isSkillActive('Rhythm Shooting')) {
+          return (230 + skillLevel * 250 + totalVit * 2) * (baseLevel / 100);
+        }
+
         return (200 + skillLevel * 180 + totalVit) * (baseLevel / 100);
       },
     },
@@ -111,6 +116,7 @@ export class Mechanic extends Whitesmith {
       vct: 0.5,
       cd: 0,
       isExcludeCannanball: true,
+      totalHit: () => (isDualCannon(this.abrLv) ? 2 : 1),
       formula: (input: AtkSkillFormulaInput): number => {
         const { skillLevel, model, status } = input;
         const baseLevel = model.level;
@@ -128,6 +134,7 @@ export class Mechanic extends Whitesmith {
       vct: 0.2,
       cd: 0.1,
       isExcludeCannanball: true,
+      totalHit: () => (isDualCannon(this.abrLv) ? 2 : 1),
       formula: (input: AtkSkillFormulaInput): number => {
         const { skillLevel, model, status } = input;
         const baseLevel = model.level;
@@ -145,6 +152,7 @@ export class Mechanic extends Whitesmith {
       vct: 0,
       cd: 3,
       isExcludeCannanball: true,
+      requireWeaponTypes: ['axe', 'twohandAxe'],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, weapon } = input;
         if (weapon.data?.typeName !== 'axe' && weapon.data?.typeName !== 'twohandAxe') return 0;
@@ -166,6 +174,7 @@ export class Mechanic extends Whitesmith {
       cd: 0.3,
       isHDefToSDef: true,
       isHit100: true,
+      totalHit: () => (isDualCannon(this.abrLv) ? 2 : 1),
       formula: (input: AtkSkillFormulaInput): number => {
         const { skillLevel, model } = input;
         const baseLevel = model.level;
@@ -188,6 +197,10 @@ export class Mechanic extends Whitesmith {
         const { skillLevel, model, status } = input;
         const baseLevel = model.level;
         const { totalDex, totalStr } = status;
+
+        if (isBattleWarrior(this.abrLv)) {
+          return (500 + skillLevel * 150 + (totalDex + totalStr) / 2) * (baseLevel / 100);
+        }
 
         return (300 + skillLevel * 100 + (totalDex + totalStr) / 2) * (baseLevel / 100);
       },
@@ -395,5 +408,9 @@ export class Mechanic extends Whitesmith {
     }
 
     return totalBonus;
+  }
+
+  protected get abrLv() {
+    return this.activeSkillLv('_Meister_ABR_List');
   }
 }
