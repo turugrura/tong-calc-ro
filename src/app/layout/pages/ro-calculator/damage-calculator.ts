@@ -747,10 +747,11 @@ export class DamageCalculator {
     const hardDef = isIgnoreDef || isHDefToSDef ? 1 : finalDmgReduction;
     const softDef = finalSoftDef + (isHDefToSDef ? reducedHardDef : 0);
 
-    const { range, melee, criDmg } = this.totalBonus;
+    const { range, melee, criDmg, rangedReduction } = this.totalBonus;
     const isMelee = _isMelee != null && typeof _isMelee === 'function' ? _isMelee(this.weaponData.data.typeName) : !!_isMelee;
     const ranged = isMelee ? melee : range;
     const rangedMultiplier = this.toPercent(ranged + 100);
+    const rangedReduct = 1 + rangedReduction * 0.01;
     const baseSkillMultiplier = this.toPercent(baseSkillDamage);
     const equipSkillMultiplier = this.toPercent(100 + this.getSkillBonus(skillName));
     const criDmgToMonster = floor(criDmg * criDmgPercentage || 0);
@@ -766,6 +767,7 @@ export class DamageCalculator {
       let total = this._class.modifyFinalAtk(_totalAtk, infoForClass);
       if (_calcCri) total = floor(total * criMultiplier); // tested
       total = floor(total * rangedMultiplier); // tested
+      if (!isMelee) total = floor(total * rangedReduct);
       total = floor(total * baseSkillMultiplier); // tested
       total = floor(total * equipSkillMultiplier);
       total = floor(total * resReduction);

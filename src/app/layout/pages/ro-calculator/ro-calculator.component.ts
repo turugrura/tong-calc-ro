@@ -1593,7 +1593,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     const { level, jobLevel } = this.model;
 
     if (level < min || level > max) {
-      this.model.level = min;
+      this.model.level = max;
     }
 
     if (!jobLevel || jobLevel > maxJob) {
