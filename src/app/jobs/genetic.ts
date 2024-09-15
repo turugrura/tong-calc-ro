@@ -4,6 +4,7 @@ import { CartBoost } from '../constants/share-active-skills';
 import { Creator } from './Creator';
 import { InfoForClass } from '../models/info-for-class.model';
 import { ElementType } from '../constants/element-type.const';
+import { isBioloWoodenFairy, isBioloWoodenWarrior } from './summons';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 1, 0, 0],
@@ -113,6 +114,7 @@ export class Genetic extends Creator {
       cd: 0,
       isHit100: true,
       isHDefToSDef: true,
+      totalHit: () => (isBioloWoodenWarrior(this.summonLv) ? 2 : 1),
       formula: (input: AtkSkillFormulaInput): number => {
         const { skillLevel, model, status, monster, ammoElement } = input;
         const isCannonballNeutral = model.ammo > 0 && (!ammoElement || ammoElement === ElementType.Neutral);
@@ -145,9 +147,12 @@ export class Genetic extends Creator {
 
         const cartModelingLv = this.learnLv('Cart Remodeling');
         const cartWeight = this.bonuses.usedSkillMap.get('Cart Weight') || 0;
-        const bonusMultiplier = this.isSkillActive('Wooden Fairy') ? 2 : 1;
 
-        return skillLevel * 200 * bonusMultiplier + cartModelingLv * 50 + cartWeight / (150 - baseStr);
+        if (isBioloWoodenWarrior(this.summonLv)) {
+          return skillLevel * 400 + cartModelingLv * 50 + cartWeight / (150 - baseStr);
+        }
+
+        return skillLevel * 200 + cartModelingLv * 50 + cartWeight / (150 - baseStr);
       },
     },
     {
@@ -161,11 +166,15 @@ export class Genetic extends Creator {
       cd: 5,
       isExcludeCannanball: true,
       formula: (input: AtkSkillFormulaInput): number => {
-        const { skillLevel, model } = input;
+        const { skillLevel, model, status } = input;
         const baseLevel = model.level;
-        const bonusMultiplier = this.isSkillActive('Wooden Fairy') ? 2 : 1;
+        const { totalInt } = status;
 
-        return (400 + 200 * skillLevel) * bonusMultiplier * (baseLevel / 100);
+        if (isBioloWoodenFairy(this.summonLv)) {
+          return (400 + 500 * skillLevel + totalInt) * (baseLevel / 100);
+        }
+
+        return (400 + 200 * skillLevel) * (baseLevel / 100);
       },
     },
   ];
@@ -317,5 +326,9 @@ export class Genetic extends Creator {
     }
 
     return sum;
+  }
+
+  protected get summonLv() {
+    return this.activeSkillLv('_Biolo_Monster_List');
   }
 }

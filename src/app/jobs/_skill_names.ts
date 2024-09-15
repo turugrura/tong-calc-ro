@@ -19,6 +19,7 @@ export type SKILL_NAME =
   | 'Two Hand Defending'
   | 'Axe Stomp'
   | 'Rush Quake'
+  | '_Biolo_Monster_List'
   | '_Meister_Quake'
   | '_Meister_Rush'
   | '_Meister_ABR_List'

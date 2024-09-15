@@ -2,6 +2,7 @@ import { ClassName } from './_class-name';
 import { ActiveSkillModel, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
 import { JOB_4_MAX_JOB_LEVEL, JOB_4_MIN_MAX_LEVEL } from '../app-config';
 import { Genetic } from './Genetic';
+import { genBioloMonsterSkillList } from './summons';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 1, 0, 0],
@@ -159,7 +160,14 @@ export class Biolo extends Genetic {
 
   private readonly classNames4th = [ClassName.Only_4th, ClassName.Biolo];
   private readonly atkSkillList4th: AtkSkillModel[] = [];
-  private readonly activeSkillList4th: ActiveSkillModel[] = [];
+  private readonly activeSkillList4th: ActiveSkillModel[] = [
+    {
+      name: '_Biolo_Monster_List',
+      label: 'Wooden',
+      inputType: 'dropdown',
+      dropdown: genBioloMonsterSkillList(),
+    },
+  ];
   private readonly passiveSkillList4th: PassiveSkillModel[] = [];
 
   constructor() {
