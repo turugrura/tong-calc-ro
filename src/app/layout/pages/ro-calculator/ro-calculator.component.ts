@@ -250,6 +250,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
   characterList = Characters;
   selectedCharacter: CharacterBase;
+  isShowSelectableSkillLevel = true;
   atkSkills: AtkSkillModel[] = [];
   atkSkillCascades: any[] = [];
   passiveSkills: PassiveSkillModel[] = [];
@@ -1571,6 +1572,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       };
     });
     this.atkSkillCascades = this.selectedCharacter.atkSkills;
+    this.isShowSelectableSkillLevel = this.selectedCharacter.atkSkills.some((a) => a.levelList?.length > 0);
   }
 
   private setClassMinMaxLvl() {
