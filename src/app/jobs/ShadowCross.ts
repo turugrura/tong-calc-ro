@@ -1,7 +1,10 @@
 import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
 import { JOB_4_MAX_JOB_LEVEL, JOB_4_MIN_MAX_LEVEL } from '../app-config';
 import { GuillotineCross } from './GuillotineCross';
+import { EquipmentSummaryModel } from '../models/equipment-summary.model';
+import { InfoForClass } from '../models/info-for-class.model';
+import { addBonus, genSkillList, genSkillListWithLabel } from '../utils';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [1, 1, 0, 0, 0, 0],
@@ -158,9 +161,165 @@ export class ShadowCross extends GuillotineCross {
   protected override maxJob = JOB_4_MAX_JOB_LEVEL;
 
   private readonly classNames4th = [ClassName.Only_4th, ClassName.ShadowCross];
-  private readonly atkSkillList4th: AtkSkillModel[] = [];
-  private readonly activeSkillList4th: ActiveSkillModel[] = [];
-  private readonly passiveSkillList4th: PassiveSkillModel[] = [];
+  private readonly atkSkillList4th: AtkSkillModel[] = [
+    {
+      name: 'Shadow Stab',
+      label: '[V2] Shadow Stab Lv5',
+      value: 'Shadow Stab==5',
+      acd: 0.5,
+      fct: 0,
+      vct: 0,
+      cd: 1,
+      isMelee: true,
+      requireWeaponTypes: ['dagger'],
+      isIgnoreDef: true,
+      totalHit: () => {
+        if (this.isSkillActive('Cloaking Exceed')) return 2;
+
+        return 1;
+      },
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalPow } = status;
+        const baseLevel = model.level;
+
+        return (skillLevel * 750 + totalPow * 5) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Eternal Slash',
+      label: '[V2] Eternal Slash Lv5 (1 hit)',
+      value: 'Eternal Slash==5',
+      acd: 0.5,
+      fct: 0,
+      vct: 0,
+      cd: 0.75,
+      isMelee: true,
+      canCri: true,
+      baseCriPercentage: 0.5,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalPow } = status;
+        const baseLevel = model.level;
+
+        if (this.isSkillActive('Shadow Exceed')) {
+          return (skillLevel * 500 + totalPow * 7) * (baseLevel / 100);
+        }
+
+        return (skillLevel * 350 + totalPow * 5) * (baseLevel / 100);
+      },
+      // finalDmgFormula(input) {
+      //   const totalHit = input.stack || 1;
+
+      //   return input.damage * totalHit;
+      // },
+    },
+    {
+      name: 'Savage Impact',
+      label: '[V2] Savage Impact Lv5',
+      value: 'Savage Impact==5',
+      acd: 0.3,
+      fct: 0,
+      vct: 0,
+      cd: 1,
+      isMelee: true,
+      canCri: true,
+      baseCriPercentage: 0.5,
+      totalHit: () => {
+        if (this.isSkillActive('Cloaking Exceed')) return 5;
+
+        return 3;
+      },
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalPow } = status;
+        const baseLevel = model.level;
+
+        if (this.isSkillActive('Shadow Exceed')) {
+          return (skillLevel * 100 + totalPow * 7) * (baseLevel / 100);
+        }
+
+        return (skillLevel * 60 + totalPow * 5) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Impact Crater',
+      label: '[V2] Impact Crater Lv5',
+      value: 'Impact Crater==5',
+      acd: 0.5,
+      fct: 0,
+      vct: 0,
+      cd: 5,
+      isMelee: true,
+      canCri: true,
+      baseCriPercentage: 0.5,
+      requireWeaponTypes: ['katar'],
+      totalHit: () => {
+        return this.activeSkillLv('Spin Count') || 1;
+      },
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalPow } = status;
+        const baseLevel = model.level;
+
+        return (skillLevel * 65 + totalPow * 3) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Fatal Shadow Claw',
+      label: '[V2] Fatal Shadow Claw Lv10',
+      value: 'Fatal Shadow Claw==10',
+      acd: 0.5,
+      fct: 1.5,
+      vct: 4,
+      cd: 60,
+      isMelee: true,
+      forceCri: true,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status, monster } = input;
+        const { totalPow } = status;
+        const baseLevel = model.level;
+        const raceBonus = this.isMonsterRace(monster, 'demihuman', 'dragon') ? 300 : 0;
+
+        return (skillLevel * (650 + raceBonus) + totalPow * 10) * (baseLevel / 100);
+      },
+    },
+  ];
+  private readonly activeSkillList4th: ActiveSkillModel[] = [
+    {
+      name: 'Shadow Wound',
+      label: '[Debuf] Shadow Wound',
+      inputType: 'dropdown',
+      dropdown: genSkillListWithLabel(
+        20,
+        (lv) => `${lv} stack`,
+        (lv) => ({ meleeReduction: lv * 3 }),
+      ),
+    },
+    {
+      name: 'Potent Venom',
+      label: 'Potent Venom',
+      inputType: 'dropdown',
+      dropdown: genSkillList(10, (lv) => ({ pene_res: lv * 3 })),
+    },
+    {
+      name: 'Shadow Exceed',
+      label: 'Shadow Exceed 10',
+      inputType: 'selectButton',
+      dropdown: [
+        { label: 'Yes', value: 10, isUse: true },
+        { label: 'No', value: 0, isUse: false },
+      ],
+    },
+  ];
+  private readonly passiveSkillList4th: PassiveSkillModel[] = [
+    {
+      name: 'Shadow Sense',
+      label: 'Shadow Sense',
+      inputType: 'dropdown',
+      dropdown: genSkillList(10, (lv) => ({ flee: lv * 10 })),
+    },
+  ];
 
   constructor() {
     super();
@@ -171,5 +330,21 @@ export class ShadowCross extends GuillotineCross {
       passiveSkillList: this.passiveSkillList4th,
       classNames: this.classNames4th,
     });
+  }
+
+  override setAdditionalBonus(params: InfoForClass): EquipmentSummaryModel {
+    super.setAdditionalBonus(params);
+
+    const { totalBonus } = params;
+
+    const shadowSenseLv = this.learnLv('Shadow Sense');
+    if (shadowSenseLv > 0) {
+      let criBonus = 0;
+      if (this.isWeaponType(params, 'dagger')) criBonus = 10 + shadowSenseLv * 4;
+      if (this.isWeaponType(params, 'katar')) criBonus = 5 + shadowSenseLv * 2;
+      addBonus(totalBonus, 'cri', criBonus);
+    }
+
+    return totalBonus;
   }
 }

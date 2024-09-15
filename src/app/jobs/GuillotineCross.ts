@@ -182,40 +182,49 @@ export class GuillotineCross extends AssassinCross {
   private readonly activeSkillList3rd: ActiveSkillModel[] = [
     DarkClawFn(),
     {
-      inputType: 'dropdown',
-      label: 'Spin Count',
       name: 'Spin Count',
+      label: 'Spin Count',
+      inputType: 'dropdown',
       dropdown: [
         { label: '-', isUse: false, value: 0 },
-        { label: 'Lv 1', isUse: true, value: 1 },
-        { label: 'Lv 2', isUse: true, value: 2 },
-        { label: 'Lv 3', isUse: true, value: 3 },
-        { label: 'Lv 4', isUse: true, value: 4 },
-        { label: 'Lv 5', isUse: true, value: 5 },
-        { label: 'Lv 6', isUse: true, value: 6 },
-        { label: 'Lv 7', isUse: true, value: 7 },
-        { label: 'Lv 8', isUse: true, value: 8 },
-        { label: 'Lv 9', isUse: true, value: 9 },
-        { label: 'Lv 10', isUse: true, value: 10 },
+        { label: '1', isUse: true, value: 1 },
+        { label: '2', isUse: true, value: 2 },
+        { label: '3', isUse: true, value: 3 },
+        { label: '4', isUse: true, value: 4 },
+        { label: '5', isUse: true, value: 5 },
+        { label: '6', isUse: true, value: 6 },
+        { label: '7', isUse: true, value: 7 },
+        { label: '8', isUse: true, value: 8 },
+        { label: '9', isUse: true, value: 9 },
+        { label: '10', isUse: true, value: 10 },
       ],
     },
     {
       name: 'Poisonous Weapon',
-      inputType: 'dropdown',
       label: 'Poisoning',
+      inputType: 'dropdown',
       dropdown: [
         { label: '-', isUse: false, value: 0 },
         { label: 'Pyrexia', isUse: true, value: 1, bonus: { criDmg: 15, flatDmg: 5, melee: 10 } },
         { label: 'Magic Mushroom', isUse: true, value: 2, bonus: { acd: 10, melee: 10 } },
       ],
     },
+    {
+      name: 'Cloaking Exceed',
+      label: 'Cloaking Exceed 5',
+      inputType: 'selectButton',
+      dropdown: [
+        { label: 'Yes', isUse: true, value: 5 },
+        { label: 'No', isUse: false, value: 0 },
+      ],
+    },
   ];
 
   private readonly passiveSkillList3rd: PassiveSkillModel[] = [
     {
-      inputType: 'dropdown',
-      label: 'New Poison Research',
       name: 'New Poison Research',
+      label: 'New Poison Research',
+      inputType: 'dropdown',
       dropdown: [
         { label: '-', isUse: false, value: 0 },
         { label: 'Lv 1', isUse: true, value: 1 },
@@ -231,9 +240,9 @@ export class GuillotineCross extends AssassinCross {
       ],
     },
     {
-      inputType: 'dropdown',
-      label: 'Dark Illusion',
       name: 'Dark Illusion',
+      label: 'Dark Illusion',
+      inputType: 'dropdown',
       dropdown: [
         { label: '-', isUse: false, value: 0 },
         { label: 'Lv 1', isUse: true, value: 1 },
@@ -244,9 +253,9 @@ export class GuillotineCross extends AssassinCross {
       ],
     },
     {
-      inputType: 'dropdown',
-      label: 'Cross Ripper Slasher',
       name: 'Cross Ripper Slasher',
+      label: 'Cross Ripper Slasher',
+      inputType: 'dropdown',
       dropdown: [
         { label: '-', isUse: false, value: 0 },
         { label: 'Lv 1', isUse: true, value: 1 },
@@ -257,9 +266,9 @@ export class GuillotineCross extends AssassinCross {
       ],
     },
     {
-      inputType: 'dropdown',
-      label: 'Cross Impact',
       name: 'Cross Impact',
+      label: 'Cross Impact',
+      inputType: 'dropdown',
       dropdown: [
         { label: '-', isUse: false, value: 0 },
         { label: 'Lv 1', isUse: true, value: 1 },
@@ -270,9 +279,9 @@ export class GuillotineCross extends AssassinCross {
       ],
     },
     {
-      inputType: 'dropdown',
-      label: 'Weapon Blocking',
       name: 'Weapon Blocking',
+      label: 'Weapon Blocking',
+      inputType: 'dropdown',
       dropdown: [
         { label: '-', isUse: false, value: 0 },
         { label: 'Lv 1', isUse: true, value: 1 },
@@ -283,9 +292,9 @@ export class GuillotineCross extends AssassinCross {
       ],
     },
     {
-      inputType: 'dropdown',
-      label: 'Cloaking Exceed',
       name: 'Cloaking Exceed',
+      label: 'Cloaking Exceed',
+      inputType: 'dropdown',
       dropdown: [
         { label: '-', isUse: false, value: 0 },
         { label: 'Lv 1', isUse: true, value: 1 },
