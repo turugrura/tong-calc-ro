@@ -6,7 +6,7 @@ import { addBonus, genSkillList } from '../utils';
 import { EquipmentSummaryModel } from '../models/equipment-summary.model';
 import { InfoForClass } from '../models/info-for-class.model';
 import { ElementType, ElementalMasterSpirit } from '../constants';
-import { SKILL_NAME } from './_skill_names';
+import { SKILL_NAME } from '../constants/skill-name';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 1, 0, 0],

@@ -5,7 +5,10 @@
       <span class="text-lg font-medium px-1 {{ styleClass }}" style="color: var(--pink-300)">{{ totalHit }}</span>
       <span>x</span>
     </span>
-    <span *ngIf="displayRaw && raw > 0">{{ raw }} -></span>
+    <span *ngIf="displayRaw && raw > 0"
+      ><span class="text-lg px-1 summary_compare">{{ raw }}</span
+      >-></span
+    >
     <span *ngIf="isDisplayRangeDmg" class="text-lg font-medium px-1 {{ styleClass }}"
       >{{ _min | number : '1.0-5' }} - {{ _max | number : '1.0-5' }}{{ isDisplayCompare ? '' : unit }}</span
     >

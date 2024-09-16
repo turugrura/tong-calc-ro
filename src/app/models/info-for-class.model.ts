@@ -3,8 +3,8 @@ import { MainModel } from './main.model';
 import { EquipmentSummaryModel } from './equipment-summary.model';
 import { ItemTypeEnum } from '../constants/item-type.enum';
 import { ElementType } from '../constants/element-type.const';
-import { SKILL_NAME } from '../jobs/_skill_names';
 import { Monster, Weapon } from '../domain';
+import { SKILL_NAME } from '../constants/skill-name';
 
 export interface InfoForClass {
   weapon: Weapon;

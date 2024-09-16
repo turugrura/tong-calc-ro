@@ -1,9 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map, shareReplay, tap } from 'rxjs';
-import { validBonusSet, validClassNameSet } from './valid-bonuses';
+import { validClassNameSet } from './valid-bonuses';
 import { createRawTotalBonus } from 'src/app/utils';
 import * as yaml from 'js-yaml';
+import { OFFENSIVE_SKILL_NAMES } from '../constants/skill-name';
 
 type baseStat = 'Str' | 'Agi' | 'Int' | 'Dex' | 'Luk' | 'Vit' | 'Pow' | 'Con' | 'Crt' | 'Spl' | 'Sta' | 'Wis';
 
@@ -37,6 +38,7 @@ export class RoService {
         const its = Object.values(items) as any[];
         const invalidBonusSet = new Set();
         const invalidClassNameSet = new Set();
+        const validSkillNameSet = new Set(OFFENSIVE_SKILL_NAMES as any);
 
         for (const item of its) {
           const script = item.script;
@@ -59,7 +61,7 @@ export class RoService {
               .replace('cd__', '');
             if (validStatusSet.has(realKey)) continue;
             if (invalidBonusSet.has(realKey)) continue;
-            if (validBonusSet.has(realKey)) continue;
+            if (validSkillNameSet.has(realKey)) continue;
 
             invalidBonusSet.add(realKey);
           }

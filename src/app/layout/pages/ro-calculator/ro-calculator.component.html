@@ -4224,7 +4224,7 @@
                 [options]="equipCompareItems"
                 [(ngModel)]="selectedCompareItemDesc"
                 [metaKeySelection]="false"
-                [listStyle]="{ 'max-height': '600px' }"
+                [listStyle]="{ 'max-height': '700px' }"
                 (onChange)="onSelectItemDescription(true)"
               >
                 <ng-template let-item pTemplate="item">
@@ -4241,7 +4241,7 @@
               [options]="equipItems"
               [(ngModel)]="selectedItemDesc"
               [metaKeySelection]="false"
-              [listStyle]="{ 'max-height': '600px' }"
+              [listStyle]="{ 'max-height': '700px' }"
               (onChange)="onSelectItemDescription()"
             >
               <ng-template let-item pTemplate="item">
@@ -4255,7 +4255,7 @@
             </p-listbox>
           </div>
           <div class="col-8">
-            <div class="grid grid-nogutter ml-2" style="max-height: 600px; overflow: auto">
+            <div class="grid grid-nogutter ml-2" style="max-height: 700px; overflow: auto">
               <div class="col-12 json_display">
                 ItemID: {{ itemId }}
                 <pre [innerHTML]="itemBonus | prettyjson : [true, 3]"></pre>

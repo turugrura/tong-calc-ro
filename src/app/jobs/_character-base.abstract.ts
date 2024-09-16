@@ -7,8 +7,8 @@ import { ClassName } from './_class-name';
 import { sortSkill } from '../utils';
 import { WeaponTypeName } from '../constants/weapon-type-mapper';
 import { AspdPotionFixBonus } from '../constants';
-import { SKILL_NAME } from './_skill_names';
 import { Weapon } from '../domain';
+import { SKILL_NAME } from '../constants/skill-name';
 
 export interface AtkSkillFormulaInput extends InfoForClass {
   skillLevel: number;

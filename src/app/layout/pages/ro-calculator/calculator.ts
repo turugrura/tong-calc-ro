@@ -24,8 +24,8 @@ import {
 } from 'src/app/constants';
 import { CharacterBase, ClassName } from 'src/app/jobs';
 import { createRawTotalBonus, floor, isNumber, round } from 'src/app/utils';
-import { SKILL_NAME } from 'src/app/jobs/_skill_names';
 import { Monster, Weapon } from 'src/app/domain';
+import { SKILL_NAME } from 'src/app/constants/skill-name';
 
 // const getItem = (id: number) => items[id] as ItemModel;
 const refinableItemTypes = [

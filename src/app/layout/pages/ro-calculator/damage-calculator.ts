@@ -6,8 +6,8 @@ import { InfoForClass } from '../../../models/info-for-class.model';
 import { MainModel } from '../../../models/main.model';
 import { StatusSummary } from '../../../models/status-summary.model';
 import { calcDmgDps, calcSkillAspd, firstUppercase, floor, isSkillCanEDP, round } from '../../../utils';
-import { SKILL_NAME } from 'src/app/jobs/_skill_names';
 import { Monster, Weapon } from 'src/app/domain';
+import { SKILL_NAME } from 'src/app/constants/skill-name';
 
 interface DamageResultModel {
   minDamage: number;
