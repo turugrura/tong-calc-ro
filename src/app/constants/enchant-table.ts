@@ -216,6 +216,7 @@ enum Luk {
   _10 = 'Luck10',
 }
 enum Acute {
+  _1 = 'Acute1',
   _2 = 'Acute2',
   _3 = 'Acute3',
   _4 = 'Acute4',
@@ -227,6 +228,7 @@ enum Acute {
   _10 = 'Acute10',
 }
 enum Mettle {
+  _1 = 'Mettle1',
   _2 = 'Mettle2',
   _3 = 'Mettle3',
   _4 = 'Mettle4',
@@ -238,6 +240,7 @@ enum Mettle {
   _10 = 'Mettle10',
 }
 enum MasterArc {
+  _1 = 'MasterArcher1',
   _2 = 'MasterArcher2',
   _3 = 'MasterArcher3',
   _4 = 'MasterArcher4',
@@ -249,6 +252,7 @@ enum MasterArc {
   _10 = 'MasterArcher10',
 }
 enum MagicEess {
+  _1 = 'MagicEessence1',
   _2 = 'MagicEessence2',
   _3 = 'MagicEessence3',
   _4 = 'MagicEessence4',
@@ -260,6 +264,7 @@ enum MagicEess {
   _10 = 'MagicEessence10',
 }
 enum Adamatine {
+  _1 = 'Adamatine1',
   _2 = 'Adamatine2',
   _3 = 'Adamatine3',
   _4 = 'Adamatine4',
@@ -271,6 +276,7 @@ enum Adamatine {
   _10 = 'Adamatine10',
 }
 enum Tenacity {
+  _1 = 'Tenacity1',
   _2 = 'Tenacity2',
   _3 = 'Tenacity3',
   _4 = 'Tenacity4',
@@ -377,9 +383,9 @@ const fs410 = [FS._4, FS._5, FS._6, FS._7, FS._8, FS._9, FS._10];
 const sh13 = [Sharp._1, Sharp._2, Sharp._3];
 const sh14 = [Sharp._1, Sharp._2, Sharp._3, Sharp._4];
 const sh23 = [Sharp._2, Sharp._3];
+const sh34 = [Sharp._3, Sharp._4];
 const sh25 = [Sharp._2, Sharp._3, Sharp._4, Sharp._5];
 const sh45 = [Sharp._4, Sharp._5];
-// const sh35 = [Sharp._3, Sharp._4, Sharp._5];
 
 const perfectD12 = [Dodge._1, Dodge._2];
 const perfectD13 = [Dodge._1, Dodge._2, Dodge._3];
@@ -393,6 +399,7 @@ const ea14 = [EA._1, EA._2, EA._3, EA._4];
 const ea15 = [EA._1, EA._2, EA._3, EA._4, EA._5];
 const ea23 = [EA._2, EA._3];
 const ea25 = [EA._2, EA._3, EA._4, EA._5];
+const ea34 = [EA._3, EA._4];
 const ea35 = [EA._3, EA._4, EA._5];
 const ea45 = [EA._4, EA._5];
 const ea410 = [EA._4, EA._5, EA._6, EA._7, EA._8, EA._9, EA._10];
@@ -858,6 +865,88 @@ const thanosHead3 = [
   'Gray_Fight2',
   'Gray_Fight3',
 ];
+const thanosHead4 = [
+  Tenacity._1,
+  Tenacity._2,
+  Tenacity._3,
+  Acute._1,
+  Acute._2,
+  Acute._3,
+  Mettle._1,
+  Mettle._2,
+  Mettle._3,
+  MasterArc._1,
+  MasterArc._2,
+  MasterArc._3,
+  MagicEess._1,
+  MagicEess._2,
+  MagicEess._3,
+  Adamatine._1,
+  Adamatine._2,
+  Adamatine._3,
+];
+
+const stellar = [
+  'Star_Of_Mettle1',
+  'Star_Of_Mettle2',
+  'Star_Of_Mettle3',
+  'Star_Of_Mettle4',
+  'Star_Of_Mettle5',
+  'Star_Of_MasterArcher1',
+  'Star_Of_MasterArcher2',
+  'Star_Of_MasterArcher3',
+  'Star_Of_MasterArcher4',
+  'Star_Of_MasterArcher5',
+  'Star_Of_Sharp1',
+  'Star_Of_Sharp2',
+  'Star_Of_Sharp3',
+  'Star_Of_Sharp4',
+  'Star_Of_Sharp5',
+  'Star_Of_Spell1',
+  'Star_Of_Spell2',
+  'Star_Of_Spell3',
+  'Star_Of_Spell4',
+  'Star_Of_Spell5',
+  'Star_Of_Speed1',
+  'Star_Of_Speed2',
+  'Star_Of_Speed3',
+  'Star_Of_Speed4',
+  'Star_Of_Speed5',
+  'Star_Of_Vital1',
+  'Star_Of_Vital2',
+  'Star_Of_Vital3',
+  'Star_Of_Vital4',
+  'Star_Of_Vital5',
+  // 'Star_Of_Spirit1', non damage
+  // 'Star_Of_Spirit2',
+  // 'Star_Of_Spirit3',
+  // 'Star_Of_Spirit4',
+  // 'Star_Of_Spirit5',
+];
+const stellarAcc4 = [...fs45, ...sp34, ...ea34, ...sh34, ...stellar];
+const stellarAcc3 = [...stellarAcc4];
+const stellarAcc2 = [
+  'Star_Cluster_Of_Str1',
+  'Star_Cluster_Of_Str2',
+  'Star_Cluster_Of_Str3',
+  'Star_Cluster_Of_Str4',
+  'Star_Cluster_Of_Str5',
+  'Star_Cluster_Of_Luk1',
+  'Star_Cluster_Of_Luk2',
+  'Star_Cluster_Of_Luk3',
+  'Star_Cluster_Of_Luk4',
+  'Star_Cluster_Of_Luk5',
+  'Star_Cluster_Of_Int1',
+  'Star_Cluster_Of_Int2',
+  'Star_Cluster_Of_Int3',
+  'Star_Cluster_Of_Int4',
+  'Star_Cluster_Of_Int5',
+  'Star_Cluster_Of_Res1',
+  'Star_Cluster_Of_Res2',
+  'Star_Cluster_Of_Res3',
+  'Star_Cluster_Of_Res4',
+  'Star_Cluster_Of_Res5',
+];
 
 const moraAtkType1 = [...atkPer13, ...fs13, ...str(1, 3)];
 const moraAtkType2 = [...atkPer23, ...fs24, ...str(2, 4)];
@@ -1201,10 +1290,17 @@ export const EnchantTable: EntTable[] = [
   { name: 'Star_Robe_Of_Spl', enchants: [null, nebular2, nebular3, nebular4] },
   { name: 'Star_Robe_Of_Wis', enchants: [null, nebular2, nebular3, nebular4] },
 
-  { name: 'Thanos_Helm1_LT', enchants: [null, null, thanosHead3, tempHead2] },
-  { name: 'Thanos_Helm2_LT', enchants: [null, null, thanosHead3, tempHead2] },
-  { name: 'Thanos_Helm3_LT', enchants: [null, null, thanosHead3, tempHead2] },
-  { name: 'Thanos_Helm4_LT', enchants: [null, null, thanosHead3, tempHead2] },
+  { name: 'Thanos_Helm1_LT', enchants: [null, null, thanosHead3, thanosHead4] },
+  { name: 'Thanos_Helm2_LT', enchants: [null, null, thanosHead3, thanosHead4] },
+  { name: 'Thanos_Helm3_LT', enchants: [null, null, thanosHead3, thanosHead4] },
+  { name: 'Thanos_Helm4_LT', enchants: [null, null, thanosHead3, thanosHead4] },
+
+  { name: 'Signet_Of_Pow_Star', enchants: [null, stellarAcc2, stellarAcc3, stellarAcc4] },
+  { name: 'Signet_Of_Sta_Star', enchants: [null, stellarAcc2, stellarAcc3, stellarAcc4] },
+  { name: 'Signet_Of_Con_Star', enchants: [null, stellarAcc2, stellarAcc3, stellarAcc4] },
+  { name: 'Signet_Of_Crt_Star', enchants: [null, stellarAcc2, stellarAcc3, stellarAcc4] },
+  { name: 'Signet_Of_Spl_Star', enchants: [null, stellarAcc2, stellarAcc3, stellarAcc4] },
+  { name: 'Signet_Of_Wis_Star', enchants: [null, stellarAcc2, stellarAcc3, stellarAcc4] },
 ];
 
 Object.freeze(EnchantTable);
