@@ -38,6 +38,7 @@ export interface EquipmentSummaryModel {
   vit: number;
   agi: number;
 
+  allTrait: number;
   pAtk: number;
   sMatk: number;
   pow: number;

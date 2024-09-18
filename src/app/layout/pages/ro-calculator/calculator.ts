@@ -44,7 +44,8 @@ const refinableItemTypes = [
   ItemTypeEnum.shadowPendant,
   ItemTypeEnum.shadowShield,
 ];
-const mainStatuses = ['str', 'dex', 'int', 'agi', 'luk', 'vit'];
+const mainStatuses: (keyof EquipmentSummaryModel)[] = ['str', 'dex', 'int', 'agi', 'luk', 'vit'];
+const traitStatuses: (keyof EquipmentSummaryModel)[] = ['pow', 'sta', 'wis', 'spl', 'con', 'crt'];
 
 export class Calculator {
   private readonly DEFAULT_PERFECT_HIT = 5;
@@ -1353,7 +1354,7 @@ export class Calculator {
     for (const cons of this.consumableBonuses) {
       for (const [attr, value] of Object.entries(cons)) {
         const valNum = Number(value);
-        if (mainStatuses.includes(attr) && consumableBonus[attr]) {
+        if (mainStatuses.includes(attr as any) && consumableBonus[attr]) {
           consumableBonus[attr] = Math.max(consumableBonus[attr], valNum);
           continue;
         }
@@ -1369,7 +1370,7 @@ export class Calculator {
     for (const [attr, value] of Object.entries(consumableBonus)) {
       let newVal = value;
       // stat +20 can stack with other
-      if (mainStatuses.includes(attr) && newVal !== 20) {
+      if (mainStatuses.includes(attr as any) && newVal !== 20) {
         newVal = Math.max(value - consumAllStat, 0);
       }
 
@@ -1379,6 +1380,11 @@ export class Calculator {
     const allStatus = this.totalEquipStatus.allStatus ?? 0;
     for (const status of mainStatuses) {
       updateTotalStatus(status as any, allStatus);
+    }
+
+    const allTrait = this.totalEquipStatus.allTrait ?? 0;
+    for (const status of traitStatuses) {
+      updateTotalStatus(status as any, allTrait);
     }
 
     if (this.totalEquipStatus['agiBoost'] > 0) {

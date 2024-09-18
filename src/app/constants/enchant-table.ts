@@ -301,6 +301,10 @@ enum TimeJewel {
   Luk2 = 'aegis_313357',
   Luk3 = 'aegis_313358',
 }
+enum HitPlus {
+  _3 = 'Hit_Plus3',
+  _4 = 'Hit_Plus4',
+}
 
 const str = (from: number, to: number) => Array.from({ length: 1 + to - from }).map((_, i) => Str[`_${i + from}`]);
 const dex = (from: number, to: number) => Array.from({ length: 1 + to - from }).map((_, i) => Dex[`_${i + from}`]);
@@ -392,6 +396,8 @@ const perfectD13 = [Dodge._1, Dodge._2, Dodge._3];
 
 const matk12 = [MatkPercent._1, MatkPercent._2];
 const matk13 = [MatkPercent._1, MatkPercent._2, MatkPercent._3];
+
+const hitPlus34 = [HitPlus._3, HitPlus._4];
 
 const ea12 = [EA._1, EA._2];
 const ea13 = [EA._1, EA._2, EA._3];
@@ -948,6 +954,44 @@ const stellarAcc2 = [
   'Star_Cluster_Of_Res5',
 ];
 
+const circualLife4 = ['Token_Of_Life'];
+const circualLife3 = [
+  ...sp34,
+  ...ea34,
+  ...sh34,
+  ...hitPlus34,
+  'Signet_Of_Pow1',
+  'Signet_Of_Pow2',
+  'Signet_Of_Pow3',
+  'Signet_Of_Pow4',
+  'Signet_Of_Pow5',
+  'Signet_Of_Con1',
+  'Signet_Of_Con2',
+  'Signet_Of_Con3',
+  'Signet_Of_Con4',
+  'Signet_Of_Con5',
+  'Signet_Of_Spl1',
+  'Signet_Of_Spl2',
+  'Signet_Of_Spl3',
+  'Signet_Of_Spl4',
+  'Signet_Of_Spl5',
+  'Signet_Of_Sta1',
+  'Signet_Of_Sta2',
+  'Signet_Of_Sta3',
+  'Signet_Of_Sta4',
+  'Signet_Of_Sta5',
+  'Signet_Of_Crt1',
+  'Signet_Of_Crt2',
+  'Signet_Of_Crt3',
+  'Signet_Of_Crt4',
+  'Signet_Of_Crt5',
+  // 'Signet_Of_Wis1', non damage
+  // 'Signet_Of_Wis2',
+  // 'Signet_Of_Wis3',
+  // 'Signet_Of_Wis4',
+  // 'Signet_Of_Wis5',
+];
+
 const moraAtkType1 = [...atkPer13, ...fs13, ...str(1, 3)];
 const moraAtkType2 = [...atkPer23, ...fs24, ...str(2, 4)];
 const moraAtkType3 = [AtkPercent._3, ...fs36, ...str(3, 5)];
@@ -1301,6 +1345,11 @@ export const EnchantTable: EntTable[] = [
   { name: 'Signet_Of_Crt_Star', enchants: [null, stellarAcc2, stellarAcc3, stellarAcc4] },
   { name: 'Signet_Of_Spl_Star', enchants: [null, stellarAcc2, stellarAcc3, stellarAcc4] },
   { name: 'Signet_Of_Wis_Star', enchants: [null, stellarAcc2, stellarAcc3, stellarAcc4] },
+
+  { name: 'Signet_Of_Spring', enchants: [null, null, circualLife3, circualLife4] },
+  { name: 'Signet_Of_Summer', enchants: [null, null, circualLife3, circualLife4] },
+  { name: 'Signet_Of_Autumn', enchants: [null, null, circualLife3, circualLife4] },
+  { name: 'Signet_Of_Winter', enchants: [null, null, circualLife3, circualLife4] },
 ];
 
 Object.freeze(EnchantTable);
