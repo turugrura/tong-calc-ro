@@ -158,6 +158,7 @@ export class StarEmperor extends StarGladiator {
       hit: 3,
       isMelee: true,
       autoSpellChance: 0.15,
+      criDmgPercentage: 0.5,
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
