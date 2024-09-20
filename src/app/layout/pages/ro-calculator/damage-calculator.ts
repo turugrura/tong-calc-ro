@@ -1274,7 +1274,7 @@ export class DamageCalculator {
 
     const totalHit = typeof _totalHit === 'function' ? _totalHit(formulaParams) : _totalHit;
     const isAutoSpell = autoSpellChance != 1;
-    const skillHitsPerSec = Math.min(basicAspd.hitsPerSec, skillAspd.totalHitPerSec);
+    const skillHitsPerSec = Math.min(basicAspd.hitsPerSec || skillAspd.totalHitPerSec, skillAspd.totalHitPerSec);
     const oneHitDps = isAutoSpell
       ? 0
       : calcDmgDps({

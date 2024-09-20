@@ -1483,10 +1483,10 @@ export class Calculator {
       effectedBasicDps: basicDmg.basicDps,
       effectedBasicHitsPerSec: basicAspd.hitsPerSec,
 
-      effectedSkillDamageMin: skillDmg.skillMinDamage,
-      effectedSkillDamageMax: skillDmg.skillMaxDamage,
-      effectedSkillDps: skillDmg.skillDps,
-      effectedSkillHitsPerSec: skillAspd.totalHitPerSec,
+      effectedSkillDamageMin: skillDmg?.skillMinDamage || 0,
+      effectedSkillDamageMax: skillDmg?.skillMaxDamage || 0,
+      effectedSkillDps: skillDmg?.skillDps || 0,
+      effectedSkillHitsPerSec: skillAspd?.totalHitPerSec || 0,
     };
 
     return this;

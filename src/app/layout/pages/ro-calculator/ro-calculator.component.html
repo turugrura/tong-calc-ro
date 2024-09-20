@@ -437,7 +437,7 @@
                           optionGroupLabel="label"
                           optionLabel="label"
                           [optionGroupChildren]="['children']"
-                          placeholder="+ BaseHP"
+                          placeholder="+BaseHP"
                           [showClear]="true"
                           (onChange)="onOptionChange()"
                           (onClear)="onOptionChange()"
@@ -453,13 +453,13 @@
                           optionGroupLabel="label"
                           optionLabel="label"
                           [optionGroupChildren]="['children']"
-                          placeholder="+ BaseSP"
+                          placeholder="+BaseSP"
                           [showClear]="true"
                           (onChange)="onOptionChange()"
                           (onClear)="onOptionChange()"
                         ></p-cascadeSelect>
                       </div>
-                      <div [hidden]="model?.level < 176" class="summary_monster_value px-1" style="color: var(--red-500)">*** Lv > 175 ข้อมูลไม่ตรง</div>
+                      <div [hidden]="model?.level < 176" class="summary_monster_value px-1" style="color: var(--red-500)">*** Lv > 175 ไม่ตรง</div>
                     </div>
                   </div>
                 </div>
@@ -518,7 +518,37 @@
               </ng-template>
             </p-dropdown>
           </div>
-          <div class="col-8 item_label_element_converter" style="min-width: 100px">
+
+          <div class="col-6" [hidden]="weaponGradeList.length === 0 || !model.weapon">
+            <p-dropdown
+              [options]="weaponGradeList"
+              scrollHeight="350px"
+              [showClear]="true"
+              [(ngModel)]="model.weaponGrade"
+              [disabled]="!model.weapon"
+              (onChange)="onSelectGrade('weapon', model.weapon, $event.value)"
+              (onClear)="onSelectGrade('weapon', model.weapon, '')"
+              placeholder="ungrade"
+            ></p-dropdown>
+          </div>
+
+          <div class="col-4" style="min-width: 70px">
+            <p-dropdown
+              inputId="weaponRefine"
+              [options]="refineList"
+              scrollHeight="350px"
+              [(ngModel)]="model.weaponRefine"
+              [disabled]="!model.weapon"
+              (onChange)="onSelectItem('weapon', model.weapon, $event.value)"
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1">
+                  <div>{{ item.label > 0 ? '+ ' : '' }} {{ item.label || 0 }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
+          </div>
+          <div class="col-6 item_label_element_converter" style="min-width: 100px">
             <p-dropdown
               [options]="propertyAtkList"
               [(ngModel)]="model.propertyAtk"
@@ -548,34 +578,6 @@
                 </div>
               </ng-template>
             </p-dropdown>
-          </div>
-          <div class="col-4" style="min-width: 70px">
-            <p-dropdown
-              inputId="weaponRefine"
-              [options]="refineList"
-              scrollHeight="350px"
-              [(ngModel)]="model.weaponRefine"
-              [disabled]="!model.weapon"
-              (onChange)="onSelectItem('weapon', model.weapon, $event.value)"
-            >
-              <ng-template let-item pTemplate="selectedItem">
-                <div class="flex gap-1">
-                  <div>{{ item.label > 0 ? '+ ' : '' }} {{ item.label || 0 }}</div>
-                </div>
-              </ng-template>
-            </p-dropdown>
-          </div>
-          <div class="col-6" [hidden]="weaponGradeList.length === 0 || !model.weapon">
-            <p-dropdown
-              [options]="weaponGradeList"
-              scrollHeight="350px"
-              [showClear]="true"
-              [(ngModel)]="model.weaponGrade"
-              [disabled]="!model.weapon"
-              (onChange)="onSelectGrade('weapon', model.weapon, $event.value)"
-              (onClear)="onSelectGrade('weapon', model.weapon, '')"
-              placeholder="ungrade"
-            ></p-dropdown>
           </div>
           <div class="col-{{ !weaponGradeList.length ? 10 : 6 }}" [hidden]="hiddenMap.ammu">
             <p-dropdown
@@ -879,6 +881,18 @@
                 </div>
               </ng-template>
             </p-dropdown>
+          </div>
+          <div class="col-6" [hidden]="leftWeaponGradeList.length === 0 || !model.leftWeapon">
+            <p-dropdown
+              [options]="leftWeaponGradeList"
+              scrollHeight="350px"
+              [showClear]="true"
+              [(ngModel)]="model.leftWeaponGrade"
+              [disabled]="!model.leftWeapon"
+              (onChange)="onSelectGrade('leftWeapon', model.leftWeapon, $event.value)"
+              (onClear)="onSelectGrade('leftWeapon', model.leftWeapon, '')"
+              placeholder="ungrade"
+            ></p-dropdown>
           </div>
           <div class="col-4" style="min-width: 70px">
             <p-dropdown
