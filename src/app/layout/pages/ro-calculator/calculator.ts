@@ -1474,7 +1474,7 @@ export class Calculator {
     const { basicDmg, skillDmg, basicAspd, skillAspd } = this.dmgCalculator
       .setExtraBonus(c)
       .calculateAllDamages({ skillValue, propertyAtk: this.propertyBasicAtk, maxHp: this.maxHp, maxSp: this.maxSp });
-    console.log(skillDmg);
+    // console.log(skillDmg);
 
     this.damageSummary = {
       ...this.damageSummary,

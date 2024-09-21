@@ -61,6 +61,7 @@ export interface ItemListModel {
   costumeEnhMiddleList: DropdownModel[];
   costumeEnhLowerList: DropdownModel[];
   costumeEnhGarmentList: DropdownModel[];
+  costumeEnhGarment2List: DropdownModel[];
   costumeEnhGarment4List: DropdownModel[];
 
   shadowWeaponList: DropdownModel[];

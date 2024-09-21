@@ -85,11 +85,14 @@ export enum ItemTypeEnum {
   pet = 'pet',
 
   costumeUpper = 'costumeUpper',
+  costumeMiddle = 'costumeMiddle',
+  costumeLower = 'costumeLower',
 
   costumeEnchantUpper = 'costumeEnchantUpper',
   costumeEnchantMiddle = 'costumeEnchantMiddle',
   costumeEnchantLower = 'costumeEnchantLower',
   costumeEnchantGarment = 'costumeEnchantGarment',
+  costumeEnchantGarment2 = 'costumeEnchantGarment2',
   costumeEnchantGarment4 = 'costumeEnchantGarment4',
 
   shadowWeapon = 'shadowWeapon',
@@ -173,11 +176,14 @@ export const MainItemWithRelations: Partial<Record<ItemTypeEnum, ItemTypeEnum[]>
   [ItemTypeEnum.pet]: [],
 
   [ItemTypeEnum.costumeUpper]: [],
+  [ItemTypeEnum.costumeMiddle]: [],
+  [ItemTypeEnum.costumeLower]: [],
 
   [ItemTypeEnum.costumeEnchantUpper]: [],
   [ItemTypeEnum.costumeEnchantMiddle]: [],
   [ItemTypeEnum.costumeEnchantLower]: [],
   [ItemTypeEnum.costumeEnchantGarment]: [],
+  [ItemTypeEnum.costumeEnchantGarment2]: [],
   [ItemTypeEnum.costumeEnchantGarment4]: [],
 
   [ItemTypeEnum.shadowWeapon]: [],

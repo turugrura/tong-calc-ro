@@ -116,11 +116,14 @@ export const createMainModel = (): MainModel => ({
   pet: undefined,
 
   costumeUpper: undefined,
+  costumeMiddle: undefined,
+  costumeLower: undefined,
 
   costumeEnchantUpper: undefined,
   costumeEnchantMiddle: undefined,
   costumeEnchantLower: undefined,
   costumeEnchantGarment: undefined,
+  costumeEnchantGarment2: undefined,
   costumeEnchantGarment4: undefined,
 
   shadowWeapon: undefined,

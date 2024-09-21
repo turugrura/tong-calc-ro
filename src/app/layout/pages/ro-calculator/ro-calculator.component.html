@@ -320,7 +320,7 @@
                 <i class="pi pi-spin pi-spinner" style="font-size: 2rem"></i>
               </div>
               <div class="col-6">
-                <div class="grid grid-nogutter mx-2">
+                <div class="grid grid-nogutter">
                   <div class="col-12">
                     Alt+Q Atk:
                     <span class="font-semibold px-1 summary_stat_atk">
@@ -385,7 +385,7 @@
                 </div>
               </div>
               <div class="col-6">
-                <div class="grid grid-nogutter mx-2">
+                <div class="grid grid-nogutter mx-1">
                   <div class="col-12">
                     Alt+Q Matk:
                     <span class="font-semibold px-1 summary_stat_matk"
@@ -488,7 +488,7 @@
     <!-- Weapon + Ammo -->
     <div class="grid grid-nogutter item_label_weapon_main">
       <div class="col-3">
-        <div class="grid grid-nogutter justify-content-end">
+        <div class="grid grid-nogutter {{ weaponGradeList.length === 0 ? 'flex-row-reverse' : 'justify-content-end' }}">
           <div class="col-12">
             <p-dropdown
               inputId="weapon"
@@ -3158,157 +3158,66 @@
       <div class="col-3 grid grid-nogutter item_label_costume flex flex-column">
         <!-- Costume Upper -->
         <div class="col-12">
-          <p-dropdown
-            inputId="costumeEnchantUpper"
-            [autoDisplayFirst]="false"
-            [resetFilterOnHide]="true"
-            [options]="costumeEnhUpperList"
-            [filter]="true"
-            filterBy="label"
-            scrollHeight="350px"
-            [(ngModel)]="model.costumeEnchantUpper"
-            [showClear]="true"
-            [disabled]="costumeEnhUpperList.length === 0"
-            (onChange)="onSelectItem('costumeEnchantUpper', $event.value)"
-            placeholder="Upper Enchant"
-          >
-            <ng-template let-item pTemplate="selectedItem">
-              <div class="flex gap-1 item_template" *ngIf="model.costumeEnchantUpper">
-                <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
-                <div>{{ item.label }}</div>
-              </div>
-            </ng-template>
-            <ng-template let-item pTemplate="item">
-              <div class="flex gap-1">
-                <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
-                <div>{{ item.label }}</div>
-              </div>
-            </ng-template>
-          </p-dropdown>
+          <app-equipment-cos-enchant
+            [itemType]="'costumeEnchantUpper'"
+            [placeholder]="'Upper Enchant'"
+            [itemList]="costumeEnhUpperList"
+            [(itemId)]="model.costumeEnchantUpper"
+            (selectItemChange)="onSelectItem('costumeEnchantUpper', $event.itemId)"
+          ></app-equipment-cos-enchant>
         </div>
 
         <!-- Costume Middle -->
         <div class="col-12">
-          <p-dropdown
-            inputId="costumeEnchantMiddle"
-            [autoDisplayFirst]="false"
-            [resetFilterOnHide]="true"
-            [options]="costumeEnhMiddleList"
-            [filter]="true"
-            filterBy="label"
-            scrollHeight="350px"
-            [(ngModel)]="model.costumeEnchantMiddle"
-            [showClear]="true"
-            [disabled]="costumeEnhMiddleList.length === 0"
-            (onChange)="onSelectItem('costumeEnchantMiddle', $event.value)"
-            placeholder="Middle Enchant"
-          >
-            <ng-template let-item pTemplate="selectedItem">
-              <div class="flex gap-1 item_template" *ngIf="model.costumeEnchantMiddle">
-                <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
-                <div>{{ item.label }}</div>
-              </div>
-            </ng-template>
-            <ng-template let-item pTemplate="item">
-              <div class="flex gap-1">
-                <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
-                <div>{{ item.label }}</div>
-              </div>
-            </ng-template>
-          </p-dropdown>
+          <app-equipment-cos-enchant
+            [itemType]="'costumeEnchantMiddle'"
+            [placeholder]="'Middle Enchant'"
+            [itemList]="costumeEnhMiddleList"
+            [(itemId)]="model.costumeEnchantMiddle"
+            (selectItemChange)="onSelectItem('costumeEnchantMiddle', $event.itemId)"
+          ></app-equipment-cos-enchant>
         </div>
 
         <!-- Costume Lower -->
         <div class="col-12">
-          <p-dropdown
-            inputId="costumeEnchantLower"
-            [autoDisplayFirst]="false"
-            [resetFilterOnHide]="true"
-            [options]="costumeEnhLowerList"
-            [filter]="true"
-            filterBy="label"
-            scrollHeight="350px"
-            [(ngModel)]="model.costumeEnchantLower"
-            [showClear]="true"
-            [disabled]="costumeEnhLowerList.length === 0"
-            (onChange)="onSelectItem('costumeEnchantLower', $event.value)"
-            placeholder="Lower Enchant"
-          >
-            <ng-template let-item pTemplate="selectedItem">
-              <div class="flex gap-1 item_template" *ngIf="model.costumeEnchantLower">
-                <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
-                <div>{{ item.label }}</div>
-              </div>
-            </ng-template>
-            <ng-template let-item pTemplate="item">
-              <div class="flex gap-1">
-                <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
-                <div>{{ item.label }}</div>
-              </div>
-            </ng-template>
-          </p-dropdown>
+          <app-equipment-cos-enchant
+            [itemType]="'costumeEnchantLower'"
+            [placeholder]="'Lower Enchant'"
+            [itemList]="costumeEnhLowerList"
+            [(itemId)]="model.costumeEnchantLower"
+            (selectItemChange)="onSelectItem('costumeEnchantLower', $event.itemId)"
+          ></app-equipment-cos-enchant>
         </div>
 
         <!-- Costume Garment -->
-        <div class="col-12">
-          <p-dropdown
-            inputId="costumeEnchantGarment"
-            [autoDisplayFirst]="false"
-            [resetFilterOnHide]="true"
-            [options]="costumeEnhGarmentList"
-            [filter]="true"
-            filterBy="label"
-            scrollHeight="350px"
-            [(ngModel)]="model.costumeEnchantGarment"
-            [showClear]="true"
-            [disabled]="costumeEnhGarmentList.length === 0"
-            (onChange)="onSelectItem('costumeEnchantGarment', $event.value)"
-            placeholder="Garment Enchant"
-          >
-            <ng-template let-item pTemplate="selectedItem">
-              <div class="flex gap-1 item_template" *ngIf="model.costumeEnchantGarment">
-                <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
-                <div>{{ item.label }}</div>
-              </div>
-            </ng-template>
-            <ng-template let-item pTemplate="item">
-              <div class="flex gap-1">
-                <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
-                <div>{{ item.label }}</div>
-              </div>
-            </ng-template>
-          </p-dropdown>
+        <div class="col-12 mt-2">
+          <app-equipment-cos-enchant
+            [itemType]="'costumeEnchantGarment'"
+            [placeholder]="'Garment Enchant'"
+            [itemList]="costumeEnhGarmentList"
+            [(itemId)]="model.costumeEnchantGarment"
+            (selectItemChange)="onSelectItem('costumeEnchantGarment', $event.itemId)"
+          ></app-equipment-cos-enchant>
         </div>
 
-        <!-- Costume 4th Garment -->
+        <!-- Costume 2nd Garment -->
+        <div class="col-12">
+          <app-equipment-cos-enchant
+            [itemType]="'costumeEnchantGarment2'"
+            [placeholder]="'Garment Enchant 2'"
+            [itemList]="costumeEnhGarment2List"
+            [(itemId)]="model.costumeEnchantGarment2"
+            (selectItemChange)="onSelectItem('costumeEnchantGarment2', $event.itemId)"
+          ></app-equipment-cos-enchant>
+        </div>
         <div class="col-12 mb-3">
-          <p-dropdown
-            inputId="costumeEnchantGarment4"
-            [autoDisplayFirst]="false"
-            [resetFilterOnHide]="true"
-            [options]="costumeEnhGarment4List"
-            [filter]="true"
-            filterBy="label"
-            scrollHeight="350px"
-            [(ngModel)]="model.costumeEnchantGarment4"
-            [showClear]="true"
-            [disabled]="costumeEnhGarment4List.length === 0"
-            (onChange)="onSelectItem('costumeEnchantGarment4', $event.value)"
-            placeholder="Garment Enchant 4th"
-          >
-            <ng-template let-item pTemplate="selectedItem">
-              <div class="flex gap-1 item_template" *ngIf="model.costumeEnchantGarment4">
-                <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
-                <div>{{ item.label }}</div>
-              </div>
-            </ng-template>
-            <ng-template let-item pTemplate="item">
-              <div class="flex gap-1">
-                <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
-                <div>{{ item.label }}</div>
-              </div>
-            </ng-template>
-          </p-dropdown>
+          <app-equipment-cos-enchant
+            [itemType]="'costumeEnchantGarment4'"
+            [placeholder]="'Garment Enchant 4'"
+            [itemList]="costumeEnhGarment4List"
+            [(itemId)]="model.costumeEnchantGarment4"
+            (selectItemChange)="onSelectItem('costumeEnchantGarment4', $event.itemId)"
+          ></app-equipment-cos-enchant>
         </div>
 
         <div class="col-12 item_label_compare" *ngIf="showCompareItemMap.costumeEnchantUpper">
@@ -3347,10 +3256,19 @@
             (selectItemChange)="onCompareItemChange()"
           ></app-equipment-cos-enchant>
         </div>
+        <div class="col-12 item_label_compare" *ngIf="showCompareItemMap.costumeEnchantGarment2">
+          <app-equipment-cos-enchant
+            [itemType]="'costumeEnchantGarment2'"
+            [placeholder]="'Garment Enchant 2'"
+            [itemList]="costumeEnhGarment2List"
+            [(itemId)]="model2.costumeEnchantGarment2"
+            (selectItemChange)="onCompareItemChange()"
+          ></app-equipment-cos-enchant>
+        </div>
         <div class="col-12 item_label_compare" *ngIf="showCompareItemMap.costumeEnchantGarment4">
           <app-equipment-cos-enchant
             [itemType]="'costumeEnchantGarment4'"
-            [placeholder]="'Garment Enchant 4th'"
+            [placeholder]="'Garment Enchant 4'"
             [itemList]="costumeEnhGarment4List"
             [(itemId)]="model2.costumeEnchantGarment4"
             (selectItemChange)="onCompareItemChange()"

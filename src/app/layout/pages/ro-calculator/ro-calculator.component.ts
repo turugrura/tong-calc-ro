@@ -62,6 +62,7 @@ import {
   getMonsterSpawnMap,
 } from 'src/app/constants';
 import { ActiveSkillModel, AtkSkillModel, CharacterBase, ClassIcon, ClassName, PassiveSkillModel } from 'src/app/jobs';
+import { AllowedCompareItemTypes } from 'src/app/app-config';
 
 interface MonsterSelectItemGroup extends SelectItemGroup {
   items: any[];
@@ -239,6 +240,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   costumeEnhMiddleList: DropdownModel[] = [];
   costumeEnhLowerList: DropdownModel[] = [];
   costumeEnhGarmentList: DropdownModel[] = [];
+  costumeEnhGarment2List: DropdownModel[] = [];
   costumeEnhGarment4List: DropdownModel[] = [];
 
   shadowWeaponList: DropdownModel[] = [];
@@ -337,30 +339,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   isEnableCompare = false;
   showCompareItemMap = {} as any;
   compareItemNames = [] as ItemTypeEnum[];
-  compareItemList: (keyof typeof ItemTypeEnum)[] = [
-    'weapon',
-    'headUpper',
-    'headMiddle',
-    'headLower',
-    'armor',
-    'garment',
-    'boot',
-    'accRight',
-    'accLeft',
-
-    'costumeEnchantUpper',
-    'costumeEnchantMiddle',
-    'costumeEnchantLower',
-    'costumeEnchantGarment',
-    'costumeEnchantGarment4',
-
-    'shadowWeapon',
-    'shadowArmor',
-    'shadowShield',
-    'shadowBoot',
-    'shadowEarring',
-    'shadowPendant',
-  ];
+  compareItemList: (keyof typeof ItemTypeEnum)[] = [...AllowedCompareItemTypes]
 
   ref: DynamicDialogRef | undefined;
   monsterRef: DynamicDialogRef | undefined;
@@ -383,7 +362,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     private readonly layoutService: LayoutService,
     private readonly authService: AuthService,
     private readonly presetService: PresetService,
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.initLoadItemsBtn();
@@ -667,13 +646,13 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
           }
         },
       },
-      // {
-      //   label: 'Delete',
-      //   icon: PrimeIcons.TRASH,
-      //   command: () => {
-      //     this.deletePreset();
-      //   },
-      // },
+      {
+        label: 'Delete',
+        icon: PrimeIcons.TRASH,
+        command: () => {
+          this.deletePreset();
+        },
+      },
     ];
   }
 
@@ -1175,6 +1154,8 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   }
 
   createCloudPreset(label: string) {
+    const classId = this.model.class
+
     const obs = this.presetService
       .createPreset({
         label,
@@ -1184,26 +1165,31 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         switchMap((preset) => {
           return this.loadItemSet(preset.model).pipe(switchMap(() => waitRxjs(0.1, preset)));
         }),
-        switchMap((preset) => {
-          return this.presetService.getMyPresets().pipe(
-            switchMap((presets) => {
-              this.preSets = presets.map((a) => {
-                return {
-                  label: a.label,
-                  value: a.id,
-                  icon: ClassIcon[a.classId],
-                };
-              });
-              return of(preset);
-            }),
-          );
-        }),
+        // switchMap((preset) => {
+        //   return this.presetService.getMyPresets().pipe(
+        //     switchMap((presets) => {
+        //       this.preSets = presets.map((a) => {
+        //         return {
+        //           label: a.label,
+        //           value: a.id,
+        //           icon: ClassIcon[a.classId],
+        //         };
+        //       });
+        //       return of(preset);
+        //     }),
+        //   );
+        // }),
         tap((preset) => {
           this.messageService.add({
             severity: 'success',
             summary: 'Created',
             detail: `"${preset.label}" was created.`,
           });
+          this.preSets = [{
+            label: preset.label,
+            value: preset.id,
+            icon: ClassIcon[classId],
+          }, ...this.preSets]
           return waitRxjs();
         }),
         catchError((err) => {
@@ -1289,28 +1275,45 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
             .subscribe();
         },
         reject: () => {
-          // switch (type as ConfirmEventType) {
-          //   case ConfirmEventType.REJECT:
-          //     this.messageService.add({
-          //       severity: 'error',
-          //       summary: 'Rejected',
-          //       detail: 'You have rejected',
-          //     });
-          //     break;
-          //   default:
-          //     this.messageService.add({
-          //       severity: 'warn',
-          //       summary: 'Cancelled',
-          //       detail: 'You have cancelled',
-          //     });
-          //     break;
-          // }
           this.isInProcessingPreset = false;
         },
       });
     } else {
       this.createPreset(name);
     }
+  }
+
+  deletePreset() {
+    if (!this.isLoggedIn) {
+      // this.deleteLocalPresets(name);
+      return;
+    }
+
+    const id = this.selectedPreset;
+    if (!id || typeof id !== 'string') return;
+
+    const label = this.preSets.find((a) => a.value === id)?.label;
+    if (!label) return;
+
+    const obs = this.presetService
+      .deletePreset(id)
+      .pipe(
+        tap(() => {
+          this.messageService.add({
+            severity: 'success',
+            summary: 'Deleted',
+            detail: `"${label}" was deleted.`,
+          });
+          this.preSets = this.preSets.filter(a => a.value !== id)
+          this.selectedPreset = undefined;
+
+          return waitRxjs();
+        }),
+      );
+
+    this.waitConfirm(`Delete "${label}" ?`).then((isConfirm) => {
+      if (isConfirm) this.calAPIWithLoading(obs);
+    });
   }
 
   loadPreset(presetName?: string) {
@@ -1466,7 +1469,9 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
     this.model.selectedAtkSkill = this.model.selectedAtkSkill || this.atkSkills[0]?.value;
     const selectedAtkSkill = this.model.selectedAtkSkill;
-    const lvl = this.model.level;
+
+    const { level, jobLevel } = this.model;
+    // console.log({ level, jobLevel })
 
     this.setClassInstant();
     this.setSkillModelArray();
@@ -1476,7 +1481,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     return waitRxjs().pipe(
       take(1),
       mergeMap(() => {
-        this.setClassLvl(lvl);
+        this.setClassLvl({ currentLvl: level, currentJob: jobLevel });
         this.setJobBonus();
         return waitRxjs();
       }),
@@ -1585,13 +1590,15 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     this.jobList = createNumberDropdownList({ from: 1, to: maxJob, excludingNumbers: [66, 67, 68, 69] });
   }
 
-  private setClassLvl(currentLvl: number) {
+  private setClassLvl({ currentJob, currentLvl }: { currentLvl: number; currentJob: number }) {
     const {
       minMaxLevel: [min, max],
       maxJob,
     } = this.selectedCharacter.minMaxLevelCap;
 
     this.model.level = currentLvl;
+    this.model.jobLevel = currentJob;
+
     const { level, jobLevel } = this.model;
 
     if (level < min || level > max) {
@@ -1779,6 +1786,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     const costumeEnhMiddleList = [];
     const costumeEnhLowerList = [];
     const costumeEnhGarmentList = [];
+    const costumeEnhGarment2List = [];
     const costumeEnhGarment4List = [];
 
     const shadowArmorList = [];
@@ -1880,6 +1888,9 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         case ItemSubTypeId.CostumeEnhGarment:
           costumeEnhGarmentList.push(item);
           continue;
+        case ItemSubTypeId.CostumeEnhGarment2:
+          costumeEnhGarment2List.push(item);
+          continue;
         case ItemSubTypeId.CostumeEnhGarment4:
           costumeEnhGarment4List.push(item);
           continue;
@@ -1960,6 +1971,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     this.itemList.costumeEnhMiddleList = toDropdownList(costumeEnhMiddleList, 'name', 'id');
     this.itemList.costumeEnhLowerList = toDropdownList(costumeEnhLowerList, 'name', 'id');
     this.itemList.costumeEnhGarmentList = toDropdownList(costumeEnhGarmentList, 'name', 'id');
+    this.itemList.costumeEnhGarment2List = toDropdownList(costumeEnhGarment2List, 'name', 'id');
     this.itemList.costumeEnhGarment4List = toDropdownList(costumeEnhGarment4List, 'name', 'id');
 
     this.itemList.shadowArmorList = toDropdownList(shadowArmorList, 'name', 'id');
@@ -2044,6 +2056,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     this.costumeEnhMiddleList = this.itemList.costumeEnhMiddleList.map((a) => a);
     this.costumeEnhLowerList = this.itemList.costumeEnhLowerList.map((a) => a);
     this.costumeEnhGarmentList = this.itemList.costumeEnhGarmentList.map((a) => a);
+    this.costumeEnhGarment2List = this.itemList.costumeEnhGarment2List.map((a) => a);
     this.costumeEnhGarment4List = this.itemList.costumeEnhGarment4List.map((a) => a);
 
     this.shadowArmorList = this.itemList.shadowArmorList.filter(onlyMe);
@@ -2086,6 +2099,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       { position: 'costumeList', values: this.costumeEnhMiddleList },
       { position: 'costumeList', values: this.costumeEnhLowerList },
       { position: 'costumeList', values: this.costumeEnhGarmentList },
+      { position: 'costumeList', values: this.costumeEnhGarment2List },
       { position: 'costumeList', values: this.costumeEnhGarment4List },
       { position: 'shadowArmorList', values: this.shadowArmorList },
       { position: 'shadowShieldList', values: this.shadowShieldList },
@@ -2206,7 +2220,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
           this.headMiddleEnchant1List = (e2 ?? []).map(mapToEnchant).map(mapToOption);
           this.headMiddleEnchant2List = (e3 ?? []).map(mapToEnchant).map(mapToOption);
           this.headMiddleEnchant3List = (e4 ?? []).map(mapToEnchant).map(mapToOption);
-          this.headUpperGradeList = canGrade ? getGradeList() : [];
+          this.headMiddleGradeList = canGrade ? getGradeList() : [];
           clearModel('headMiddle');
         } else if (location === HeadGearLocation.Lower) {
           this.headLowerEnchant1List = (e2 ?? []).map(mapToEnchant).map(mapToOption);
@@ -2319,6 +2333,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   }
 
   onSelectItem(itemType: string, itemId = 0, refine = 0) {
+    // console.log({ itemType, itemId, refine })
     this.equipItemMap.set(itemType as ItemTypeEnum, itemId);
 
     if (this.isMainItem(itemType)) {
@@ -2440,7 +2455,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     if (isChangeByInput) {
       this.isInProcessingPreset = true;
 
-      const baseLvl = this.model.level;
+      const { level, jobLevel } = this.model;
 
       waitRxjs()
         .pipe(
@@ -2459,7 +2474,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
             return waitRxjs();
           }),
           mergeMap(() => {
-            this.setClassLvl(baseLvl);
+            this.setClassLvl({ currentLvl: level, currentJob: jobLevel });
             this.onListItemComparingChange(true);
 
             this.updateAvailablePoints();

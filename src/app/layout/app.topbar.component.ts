@@ -158,9 +158,19 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
       link: 'https://www.divine-pride.net/forum/index.php?/topic/4319-kro-illusion-of-under-water',
     },
     {
+      label: 'สกิล Class 4 V2',
+      writer: 'Sigma the fallen',
+      link: 'https://sigmathefallen.blogspot.com/',
+    },
+    {
       label: 'เจาะลึก Stat ต่างๆ ใน Renewal Part I : Matk & Mdef',
       writer: 'Sigma the fallen',
       link: 'https://web.facebook.com/notes/3202008843255644/',
+    },
+    {
+      label: 'Enchantment System',
+      writer: 'Hazy Forest',
+      link: 'https://hazyforest.com/equipment:enchantment_system',
     },
     {
       label: 'Enchant Deadly Poison หรือที่เรียกติดปากกันว่า EDP',
@@ -752,7 +762,7 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
     private readonly authService: AuthService,
     private messageService: MessageService,
     private confirmationService: ConfirmationService,
-  ) {}
+  ) { }
 
   ngOnDestroy(): void {
     for (const subscription of this.obs) {
