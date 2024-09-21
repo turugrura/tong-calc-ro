@@ -110,6 +110,7 @@ import {
   grayWolfGarment_slot4,
 } from './gray-wolf';
 import { heroBootLt2, heroBootLt3, heroBootLt4 } from './hero-boots-lt';
+import { madBunnyLt4 } from './mad-bunny-lt';
 import { varmundt3, varmundt4, varmundtAcc3, varmundtAcc4, varmundtHiAcc2 } from './varmundt';
 
 enum TimeJewel {
@@ -1172,6 +1173,8 @@ export const EnchantTable: EntTable[] = [
   { name: "Soul_M_Ring", enchants: [null, varmundtHiAcc2, varmundtAcc3, varmundtAcc4] },
   { name: "Venom_M_Ring", enchants: [null, varmundtHiAcc2, varmundtAcc3, varmundtAcc4] },
   { name: "Temple_M_Ring", enchants: [null, varmundtHiAcc2, varmundtAcc3, varmundtAcc4] },
+
+  { name: "Mad_Bunny_K_LT", enchants: [null, null, null, madBunnyLt4] },
 ];
 
 Object.freeze(EnchantTable);
