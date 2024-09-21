@@ -180,6 +180,12 @@ export class Weapon {
     return wTypes.some((t) => t === this._typeName);
   }
 
+  isSubType(...wSubTypes: WeaponSubTypeName[]): boolean {
+    if (!this._typeName) return false;
+
+    return wSubTypes.some((t) => t === this._subTypeName);
+  }
+
   get data() {
     return {
       propertyAtk: this._propertyAtk,

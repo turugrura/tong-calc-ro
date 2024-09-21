@@ -110,7 +110,7 @@
               </p-dropdown>
             </div>
           </div>
-          <div class="col-12">
+          <div class="col">
             <div class="p-inputgroup">
               <span class="p-inputgroup-addon" style="width: 80px">Level</span>
               <p-dropdown
@@ -125,6 +125,16 @@
                 (onChange)="onBaseStatusChange()"
               ></p-dropdown>
             </div>
+          </div>
+          <div class="col-fixed">
+            <button
+              type="button"
+              class="p-button-warning"
+              pButton
+              label="Up Class"
+              [disabled]="!canPromote || isInProcessingPreset"
+              (click)="onJobPromotionClick()"
+            ></button>
           </div>
           <div class="col-12">
             <div class="p-inputgroup">

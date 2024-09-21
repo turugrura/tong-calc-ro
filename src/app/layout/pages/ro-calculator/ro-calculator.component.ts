@@ -61,7 +61,7 @@ import {
   getEnchants,
   getMonsterSpawnMap,
 } from 'src/app/constants';
-import { ActiveSkillModel, AtkSkillModel, CharacterBase, ClassIcon, ClassName, PassiveSkillModel } from 'src/app/jobs';
+import { ActiveSkillModel, AtkSkillModel, CharacterBase, ClassID, ClassIcon, ClassName, JobPromotionMapper, PassiveSkillModel } from 'src/app/jobs';
 import { AllowedCompareItemTypes } from 'src/app/app-config';
 
 interface MonsterSelectItemGroup extends SelectItemGroup {
@@ -114,12 +114,19 @@ const monsterTypes = [
 
 const HideHpSp = {
   [ClassName.Doram]: environment.production,
+  [ClassName.SpiritHandler]: environment.production,
   [ClassName.SuperNovice]: environment.production,
+  [ClassName.HyperNovice]: environment.production,
   [ClassName.Rebellion]: environment.production,
+  [ClassName.NightWatch]: environment.production,
   [ClassName.Kagerou]: environment.production,
+  [ClassName.Shinkiro]: environment.production,
   [ClassName.Oboro]: environment.production,
+  [ClassName.Shiranui]: environment.production,
   [ClassName.SoulReaper]: environment.production,
+  [ClassName.SoulAscetic]: environment.production,
   [ClassName.StarEmperor]: environment.production,
+  [ClassName.SkyEmperor]: environment.production,
 };
 
 @Component({
@@ -142,6 +149,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   mapEnchant!: Map<string, ItemModel>;
   enchants: DropdownModel[] = [];
   skillBuffs = JobBuffs;
+  canPromote = false;
 
   preSets: (DropdownModel & { icon: string })[] = [];
   selectedPreset = undefined;
@@ -1462,7 +1470,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     this.model = rawModel;
   }
 
-  loadItemSet(presetStrOrModel: string | PresetModel) {
+  loadItemSet(presetStrOrModel: string | PresetModel, isSetMinLevel = false) {
     this.isInProcessingPreset = true;
 
     this.setModelByJSONString(presetStrOrModel);
@@ -1481,7 +1489,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     return waitRxjs().pipe(
       take(1),
       mergeMap(() => {
-        this.setClassLvl({ currentLvl: level, currentJob: jobLevel });
+        this.setClassLvl({ currentLvl: level, currentJob: jobLevel, isSetMinLevel });
         this.setJobBonus();
         return waitRxjs();
       }),
@@ -1564,6 +1572,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     this.selectedCharacter = c || Characters[0]['instant'];
     this.calculator.setClass(this.selectedCharacter);
     this.isAllowTraitStat = this.selectedCharacter.isAllowTraitStat();
+    this.canPromote = !!JobPromotionMapper[this.model.class]
   }
 
   private setClassSkill() {
@@ -1590,23 +1599,24 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     this.jobList = createNumberDropdownList({ from: 1, to: maxJob, excludingNumbers: [66, 67, 68, 69] });
   }
 
-  private setClassLvl({ currentJob, currentLvl }: { currentLvl: number; currentJob: number }) {
+  private setClassLvl(params: { currentLvl: number; currentJob: number; isSetMinLevel?: boolean }) {
+    const { currentJob, currentLvl, isSetMinLevel = false } = params;
     const {
       minMaxLevel: [min, max],
       maxJob,
     } = this.selectedCharacter.minMaxLevelCap;
 
-    this.model.level = currentLvl;
-    this.model.jobLevel = currentJob;
+    this.model.level = isSetMinLevel ? min : currentLvl;
+    this.model.jobLevel = isSetMinLevel ? 1 : currentJob;
 
     const { level, jobLevel } = this.model;
 
     if (level < min || level > max) {
-      this.model.level = max;
+      this.model.level = 200;
     }
 
     if (!jobLevel || jobLevel > maxJob) {
-      this.model.jobLevel = maxJob;
+      this.model.jobLevel = 1;
     }
   }
 
@@ -2551,6 +2561,41 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
   onSelecteChance(_a: any) {
     this.updateChanceEvent.next(1);
+  }
+
+  onJobPromotionClick() {
+    const nextJobId = JobPromotionMapper[this.model?.class]
+    if (!nextJobId) return;
+
+    this.waitConfirm(`Change to "${ClassID[nextJobId]}" with current equipment ?`).then((isConfirm) => {
+      if (!isConfirm) return
+
+      this.saveCurrentStateItemset()
+
+      const j = JSON.parse(localStorage.getItem('ro-set')) || {}
+      j.class = nextJobId
+
+      this.loadItemSet(j, true)
+        .pipe(
+          tap(() => {
+            this.messageService.add({
+              severity: 'success',
+              summary: 'Job Changed',
+            });
+            return waitRxjs();
+          }),
+          catchError((err) => {
+            this.messageService.add({
+              severity: 'error',
+              summary: 'Failed',
+              detail: `${err}`,
+            });
+
+            return of(null);
+          }),
+        ).subscribe()
+    });
+
   }
 
   confirmSync() {
