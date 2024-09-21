@@ -211,6 +211,7 @@ export class ImperialGuard extends RoyalGuard {
       cd: 5,
       isMatk: true,
       element: ElementType.Holy,
+      totalHit: 15,
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
         const { totalSpl } = status;
@@ -222,11 +223,6 @@ export class ImperialGuard extends RoyalGuard {
         }
 
         return (skillLevel * (150 + ssMastLv * 5) + totalSpl * 2) * (baseLevel / 100);
-      },
-      finalDmgFormula(input) {
-        const totalHit = 15;
-
-        return input.damage * totalHit;
       },
     },
   ];

@@ -51,6 +51,47 @@ export class DamageCalculator {
   private aspdPotion: number;
   private ammoPropertyAtk: ElementType;
 
+  private zeroSkillDmg: SkillDamageSummaryModel = {
+    skillDamageLabel: '',
+    skillNoStackDamageLabel: '',
+    baseSkillDamage: 0,
+    dmgType: SkillType.RANGE,
+    isAutoSpell: false,
+    skillSizePenalty: 0,
+    skillCanCri: false,
+    skillPropertyAtk: ElementType.Neutral,
+    skillPropertyMultiplier: 0,
+    skillTotalPene: 0,
+    skillTotalPeneLabel: '',
+    skillTotalPeneRes: 0,
+    skillTotalPeneResLabel: '',
+    skillMinDamage: 1,
+    skillMaxDamage: 1,
+    skillMaxDamageNoCri: 1,
+    skillMinDamageNoCri: 1,
+    skillTotalHit: 0,
+    skillHit: 0,
+    skillAccuracy: 0,
+    skillDps: 0,
+    skillHitKill: 0,
+    skillCriRateToMonster: 0,
+    skillCriDmgToMonster: 0,
+    skillPart2Label: '',
+    skillMinDamage2: 0,
+    skillMaxDamage2: 0,
+    skillBonusFromEquipment: 0,
+    isUsedCurrentHP: false,
+    isUsedCurrentSP: false,
+    currentHp: 0,
+    currentSp: 0,
+
+    maxStack: 0,
+    noStackMinDamage: 0,
+    noStackMaxDamage: 0,
+    noStackMinCriDamage: 0,
+    noStackMaxCriDamage: 0,
+  }
+
   setArgs(params: {
     equipStatus: Record<ItemTypeEnum, EquipmentSummaryModel>;
     totalEquipStatus: EquipmentSummaryModel;
@@ -1136,7 +1177,7 @@ export class DamageCalculator {
         .map((w) => w.replace('onehand', '1-Handed ').replace('twohand', '2-Handed '))
         .map(firstUppercase)
         .join(' / ');
-      return { basicDmg, misc, basicAspd };
+      return { basicDmg, misc, basicAspd, skillDmg: { ...this.zeroSkillDmg } };
     }
 
     const currentHp = typeof currentHpFn === 'function' ? currentHpFn(maxHp) : 0;
@@ -1278,13 +1319,13 @@ export class DamageCalculator {
     const oneHitDps = isAutoSpell
       ? 0
       : calcDmgDps({
-          min: avgNoCriDamage || minDamage + skillMinDamage2,
-          max: avgNoCriDamage || maxDamage + skillMaxDamage2,
-          cri: actualCri,
-          criDmg: avgCriDamage || maxDamage + skillMaxDamage2,
-          hitsPerSec: skillHitsPerSec,
-          accRate: skillAccRate,
-        });
+        min: avgNoCriDamage || minDamage + skillMinDamage2,
+        max: avgNoCriDamage || maxDamage + skillMaxDamage2,
+        cri: actualCri,
+        criDmg: avgCriDamage || maxDamage + skillMaxDamage2,
+        hitsPerSec: skillHitsPerSec,
+        accRate: skillAccRate,
+      });
     const skillDps = floor(totalHit * oneHitDps * autoSpellChance);
     const hitKill = Math.ceil(this.monster.data.hp / minDamage);
 

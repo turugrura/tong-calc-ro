@@ -214,16 +214,13 @@ export class Inquisitor extends Sura {
       isMelee: true,
       canCri: true,
       baseCriPercentage: 1,
+      totalHit: 2,
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
         const { totalPow } = status;
         const baseLevel = model.level;
 
         return (skillLevel * 650 + totalPow * 5) * (baseLevel / 100);
-      },
-      finalDmgFormula(input) {
-        const totalHit = 2;
-        return input.damage * totalHit;
       },
     },
     {
@@ -252,16 +249,13 @@ export class Inquisitor extends Sura {
       vct: 0,
       cd: 2,
       isMelee: true,
+      totalHit: 5,
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
         const { totalPow } = status;
         const baseLevel = model.level;
 
         return (skillLevel * 650 + totalPow * 5) * (baseLevel / 100);
-      },
-      finalDmgFormula(input) {
-        const totalHit = 5;
-        return input.damage * totalHit;
       },
     },
     {

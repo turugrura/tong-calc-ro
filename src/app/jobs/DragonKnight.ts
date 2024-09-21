@@ -212,17 +212,13 @@ export class DragonKnight extends RuneKnight {
       baseCriPercentage: 1,
       isMelee: true,
       requireWeaponTypes: ['twohandSword', 'twohandAxe'],
+      totalHit: ({ skillLevel }) => skillLevel,
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
         const { totalPow } = status;
         const baseLevel = model.level;
 
         return (skillLevel * 120 + totalPow * 5) * (baseLevel / 100);
-      },
-      finalDmgFormula(input) {
-        const totalHit = input.skillLevel;
-
-        return input.damage * totalHit;
       },
     },
     {

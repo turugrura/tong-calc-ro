@@ -159,15 +159,13 @@ export class StarEmperor extends StarGladiator {
       isMelee: true,
       autoSpellChance: 0.15,
       criDmgPercentage: 0.5,
+      totalHit: 2,
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
         const bonus = this.isSkillActive('Stellar Luminance') ? 1.25 : 1;
 
         return (100 + skillLevel * 100) * (baseLevel / 100) * bonus;
-      },
-      finalDmgFormula: (input): number => {
-        return input.damage * 2;
       },
     },
   ];

@@ -13,6 +13,7 @@ export class CalcValueComponent {
   @Input() min: number;
   @Input({ required: true }) max: number;
   @Input() totalHit: number;
+  @Input() totalHit2: number;
 
   @Input() showPercentDiff = false;
   @Input() enableCompare = false;
@@ -23,7 +24,7 @@ export class CalcValueComponent {
   @Input() raw: number;
   @Input() displayRaw = false;
 
-  constructor() {}
+  constructor() { }
 
   get compareStyleClass() {
     if (!this.isDisplayCompare) return this.styleClass2;

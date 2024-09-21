@@ -172,6 +172,7 @@ export class AbyssChaser extends ShadowChaser {
       vct: 0,
       cd: 0.3,
       isMelee: true,
+      totalHit: 2,
       requireWeaponTypes: ['dagger', 'sword'],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
@@ -179,10 +180,6 @@ export class AbyssChaser extends ShadowChaser {
         const { level: baseLevel } = model;
 
         return (skillLevel * 350 + totalPow * 5) * (baseLevel / 100);
-      },
-      finalDmgFormula(input) {
-        const totalHit = 2;
-        return input.damage * totalHit;
       },
     },
     {

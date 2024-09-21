@@ -173,17 +173,14 @@ export class ArchMage extends Warlock {
       cd: 0.7,
       isMatk: true,
       element: ElementType.Ghost,
+      totalHit: ({ skillLevel }) => skillLevel + 2,
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
         const { totalSpl } = status;
         const { level: baseLevel } = model;
 
         return (skillLevel * 180 + totalSpl * 3) * (baseLevel / 100);
-      },
-      finalDmgFormula(input) {
-        const totalHit = input.skillLevel + 2;
-        return input.damage * totalHit;
-      },
+      }
     },
     {
       name: 'Mystery Illusion',
@@ -195,17 +192,14 @@ export class ArchMage extends Warlock {
       cd: 4,
       isMatk: true,
       element: ElementType.Dark,
+      totalHit: ({ skillLevel }) => [0, 7, 7, 10, 10, 14][skillLevel],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
         const { totalSpl } = status;
         const { level: baseLevel } = model;
 
         return (skillLevel * 500 + totalSpl * 5) * (baseLevel / 100);
-      },
-      finalDmgFormula(input) {
-        const totalHit = [0, 7, 7, 10, 10, 14][input.skillLevel];
-        return input.damage * totalHit;
-      },
+      }
     },
     {
       name: 'Floral Flare Road',
@@ -217,16 +211,13 @@ export class ArchMage extends Warlock {
       cd: 5,
       isMatk: true,
       element: ElementType.Fire,
+      totalHit: 10,
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
         const { totalSpl } = status;
         const { level: baseLevel } = model;
 
         return (skillLevel * 200 + totalSpl * 5) * (baseLevel / 100);
-      },
-      finalDmgFormula(input) {
-        const totalHit = 10;
-        return input.damage * totalHit;
       },
     },
     {
@@ -239,16 +230,13 @@ export class ArchMage extends Warlock {
       cd: 5,
       isMatk: true,
       element: ElementType.Water,
+      totalHit: 8,
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
         const { totalSpl } = status;
         const { level: baseLevel } = model;
 
         return (skillLevel * 150 + totalSpl * 5) * (baseLevel / 100);
-      },
-      finalDmgFormula(input) {
-        const totalHit = 8;
-        return input.damage * totalHit;
       },
     },
     {
@@ -261,16 +249,13 @@ export class ArchMage extends Warlock {
       cd: 5,
       isMatk: true,
       element: ElementType.Wind,
+      totalHit: 10,
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
         const { totalSpl } = status;
         const { level: baseLevel } = model;
 
         return (skillLevel * 90 + totalSpl * 5) * (baseLevel / 100);
-      },
-      finalDmgFormula(input) {
-        const totalHit = 10;
-        return input.damage * totalHit;
       },
     },
     {
@@ -283,16 +268,13 @@ export class ArchMage extends Warlock {
       cd: 4,
       isMatk: true,
       element: ElementType.Earth,
+      totalHit: 10,
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
         const { totalSpl } = status;
         const { level: baseLevel } = model;
 
         return (skillLevel * 250 + totalSpl * 5) * (baseLevel / 100);
-      },
-      finalDmgFormula(input) {
-        const totalHit = 10;
-        return input.damage * totalHit;
       },
     },
     {
@@ -377,28 +359,28 @@ export class ArchMage extends Warlock {
         return (skillLevel * (600 + blimaxBonus) + totalSpl * 5) * (baseLevel / 100);
       },
     },
-    {
-      name: 'Astral Strike',
-      label: '[V2] Astral Strike Lv10',
-      value: 'Astral Strike==10',
-      acd: 0.5,
-      fct: 1.5,
-      vct: 4,
-      cd: 60,
-      isMatk: true,
-      element: ElementType.Neutral,
-      formula: (input: AtkSkillFormulaInput): number => {
-        const { model, skillLevel, status, monster } = input;
-        const { totalSpl } = status;
-        const { level: baseLevel } = model;
-        const raceBonus = monster.isRace('undead', 'dragon') ? 600 : 0;
+    // {
+    //   name: 'Astral Strike',
+    //   label: '[V2] Astral Strike Lv10',
+    //   value: 'Astral Strike==10',
+    //   acd: 0.5,
+    //   fct: 1.5,
+    //   vct: 4,
+    //   cd: 60,
+    //   isMatk: true,
+    //   element: ElementType.Neutral,
+    //   formula: (input: AtkSkillFormulaInput): number => {
+    //     const { model, skillLevel, status, monster } = input;
+    //     const { totalSpl } = status;
+    //     const { level: baseLevel } = model;
+    //     const raceBonus = monster.isRace('undead', 'dragon') ? 600 : 0;
 
-        const primary = floor((skillLevel * (500 + raceBonus) + totalSpl * 10) * (baseLevel / 100));
-        const second = floor((skillLevel * 200 + totalSpl * 10) * (baseLevel / 100));
+    //     const primary = floor((skillLevel * (500 + raceBonus) + totalSpl * 10) * (baseLevel / 100));
+    //     const second = floor((skillLevel * 200 + totalSpl * 10) * (baseLevel / 100));
 
-        return primary + second * 50;
-      },
-    },
+    //     return primary + second * 50;
+    //   },
+    // },
   ];
   private readonly activeSkillList4th: ActiveSkillModel[] = [
     {
