@@ -876,8 +876,10 @@ export class Calculator {
     // GRADE[armor==A]===5
     const [toRemoveGrade, conditionGrade] = restCondition.match(/GRADE\[(\D+)]/) ?? [];
     if (conditionGrade) {
-      const [itemType, targetGrade] = conditionGrade.split('==') ?? [];
-      const itemGrade = this.mapGrade.get(itemType as ItemTypeEnum);
+      const [rawitemType, targetGrade] = conditionGrade.split('==') ?? [];
+      const tarGetitemType = rawitemType === 'me' ? itemType.replace(/Enchant\d/, '') : rawitemType;
+      // console.log({ itemType, tarGetitemType, rawitemType })
+      const itemGrade = this.mapGrade.get(tarGetitemType as ItemTypeEnum);
       const isValid = this.isValidGrade(itemGrade, targetGrade);
       if (!isValid) return { isValid, restCondition };
 

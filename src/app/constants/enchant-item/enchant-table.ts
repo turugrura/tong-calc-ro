@@ -110,6 +110,7 @@ import {
   grayWolfGarment_slot4,
 } from './gray-wolf';
 import { heroBootLt2, heroBootLt3, heroBootLt4 } from './hero-boots-lt';
+import { varmundt3, varmundt4, varmundtAcc3, varmundtAcc4, varmundtHiAcc2 } from './varmundt';
 
 enum TimeJewel {
   Str2 = 'aegis_313347',
@@ -1149,6 +1150,28 @@ export const EnchantTable: EntTable[] = [
   { name: 'Gray_W_Necklace', enchants: [null, grayWolfAccL_slot2, grayWolfAccL_slot3, grayWolfAccL_slot4] },
 
   { name: 'Hero_Boots_LT', enchants: [null, heroBootLt2, heroBootLt3, heroBootLt4] },
+
+  { name: 'Barmund_Flame_Armor', enchants: [null, null, varmundt3, varmundt4] },
+  { name: 'Barmund_Plain_Armor', enchants: [null, null, varmundt3, varmundt4] },
+  { name: 'Barmund_Death_Armor', enchants: [null, null, varmundt3, varmundt4] },
+  { name: 'Barmund_Ice_Armor', enchants: [null, null, varmundt3, varmundt4] },
+  { name: 'Barmund_Plain_Boots', enchants: [null, null, varmundt3, varmundt4] },
+  { name: 'Barmund_Flame_Boots', enchants: [null, null, varmundt3, varmundt4] },
+  { name: 'Barmund_Death_Boots', enchants: [null, null, varmundt3, varmundt4] },
+  { name: 'Barmund_Ice_Boots', enchants: [null, null, varmundt3, varmundt4] },
+  { name: 'Barmund_Plain_Hood', enchants: [null, null, varmundt3, varmundt4] },
+  { name: 'Barmund_Flame_Hood', enchants: [null, null, varmundt3, varmundt4] },
+  { name: 'Barmund_Death_Hood', enchants: [null, null, varmundt3, varmundt4] },
+  { name: 'Barmund_Ice_Hood', enchants: [null, null, varmundt3, varmundt4] },
+  { name: 'Barmund_Soul_Ring', enchants: [null, null, varmundtAcc3, varmundtAcc4] },
+  { name: 'Barmund_Venom_Ring', enchants: [null, null, varmundtAcc3, varmundtAcc4] },
+  { name: 'Barmund_Temple_Ring', enchants: [null, null, varmundtAcc3, varmundtAcc4] },
+  { name: "Soul_Rune_Ring", enchants: [null, varmundtHiAcc2, varmundtAcc3, varmundtAcc4] },
+  { name: "Venom_Rune_Ring", enchants: [null, varmundtHiAcc2, varmundtAcc3, varmundtAcc4] },
+  { name: "Temple_Rune_Ring", enchants: [null, varmundtHiAcc2, varmundtAcc3, varmundtAcc4] },
+  { name: "Soul_M_Ring", enchants: [null, varmundtHiAcc2, varmundtAcc3, varmundtAcc4] },
+  { name: "Venom_M_Ring", enchants: [null, varmundtHiAcc2, varmundtAcc3, varmundtAcc4] },
+  { name: "Temple_M_Ring", enchants: [null, varmundtHiAcc2, varmundtAcc3, varmundtAcc4] },
 ];
 
 Object.freeze(EnchantTable);
