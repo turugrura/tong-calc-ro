@@ -1,7 +1,11 @@
 import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
 import { JOB_4_MAX_JOB_LEVEL, JOB_4_MIN_MAX_LEVEL } from '../app-config';
 import { Rebellion } from './Rebellion';
+import { EquipmentSummaryModel } from '../models/equipment-summary.model';
+import { InfoForClass } from '../models/info-for-class.model';
+import { addBonus, genSkillList, genSkillListWithLabel } from '../utils';
+import { ElementType, WeaponSubTypeName } from '../constants';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [1, 0, 0, 0, 0, 0],
@@ -158,9 +162,378 @@ export class NightWatch extends Rebellion {
   protected override maxJob = JOB_4_MAX_JOB_LEVEL;
 
   private readonly classNames4th = [ClassName.Only_4th, ClassName.NightWatch];
-  private readonly atkSkillList4th: AtkSkillModel[] = [];
-  private readonly activeSkillList4th: ActiveSkillModel[] = [];
-  private readonly passiveSkillList4th: PassiveSkillModel[] = [];
+  private readonly atkSkillList4th: AtkSkillModel[] = [
+    {
+      name: 'The Vigilante at Night',
+      label: 'The Vigilante at Night Lv5',
+      value: 'The Vigilante at Night==5',
+      acd: 1,
+      fct: 1.5,
+      vct: 0,
+      cd: 0.5,
+      isIgnoreDef: ({ weapon }) => weapon.isSubType('Gatling Gun'),
+      totalHit: ({ weapon }) => weapon.isSubType('Gatling Gun') ? 7 : 4,
+      verifyItemFn: ({ weapon }) => {
+        const requires: WeaponSubTypeName[] = ['Gatling Gun', 'Shotgun']
+        if (requires.some(subT => weapon.isSubType(subT))) return ''
+
+        return requires.join(', ')
+      },
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status, weapon } = input;
+        const { totalCon } = status;
+        const baseLevel = model.level;
+
+        const aimningCnt = this.activeSkillLv('_NightWatch_Aiming Count')
+
+        if (weapon.isSubType('Gatling Gun')) {
+          return (300 * skillLevel + aimningCnt * skillLevel * 100 + totalCon * 5) * (baseLevel / 100);
+        }
+
+        return (800 + 700 * skillLevel + aimningCnt * skillLevel * 200 + totalCon * 5) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Only One Bullet',
+      label: 'Only One Bullet Lv5',
+      value: 'Only One Bullet==5',
+      acd: 0.5,
+      fct: 1,
+      vct: 0,
+      cd: 0.35,
+      isIgnoreDef: ({ weapon }) => weapon.isSubType('Revolver'),
+      verifyItemFn: ({ weapon }) => {
+        const requires: WeaponSubTypeName[] = ['Rifle', 'Revolver']
+        if (requires.some(subT => weapon.isSubType(subT))) return ''
+
+        return requires.join(', ')
+      },
+      canCri: ({ weapon }) => weapon.isSubType('Rifle'),
+      baseCriPercentage: 1,
+      criDmgPercentage: 0.5,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status, weapon } = input;
+        const { totalCon } = status;
+        const baseLevel = model.level;
+
+        const aimningCnt = this.activeSkillLv('_NightWatch_Aiming Count')
+
+        let dmg = 1200 + 3000 * skillLevel + 5 * totalCon + aimningCnt * 350 * skillLevel
+
+        if (weapon.isSubType('Revolver')) {
+          dmg += 400 * skillLevel
+        }
+
+        return dmg * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Spiral Shooting',
+      label: 'Spiral Shooting Lv5',
+      value: 'Spiral Shooting==5',
+      acd: 1,
+      fct: 1,
+      vct: 0,
+      cd: 0.5,
+      canCri: ({ weapon }) => weapon.isSubType('Rifle'),
+      baseCriPercentage: 1,
+      criDmgPercentage: 0.5,
+      totalHit: ({ weapon }) => weapon.isSubType('Grenade Launcher') ? 2 : 1,
+      verifyItemFn: ({ weapon }) => {
+        const requires: WeaponSubTypeName[] = ['Grenade Launcher', 'Rifle']
+        if (requires.some(subT => weapon.isSubType(subT))) return ''
+
+        return requires.join(', ')
+      },
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status, weapon } = input;
+        const { totalCon } = status;
+        const baseLevel = model.level;
+
+        const aimningCnt = this.activeSkillLv('_NightWatch_Aiming Count')
+
+        let dmg = 1200 + 1700 * skillLevel + 5 * totalCon + aimningCnt * 150 * skillLevel
+
+        if (weapon.isSubType('Rifle')) {
+          dmg += (200 + 1100 * skillLevel)
+        }
+
+        return dmg * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Magazine for One',
+      label: 'Magazine for One Lv5',
+      value: 'Magazine for One==5',
+      acd: 1,
+      fct: 1,
+      vct: 0,
+      cd: 0.5,
+      canCri: ({ weapon }) => weapon.isSubType('Revolver'),
+      criDmgPercentage: 0.5,
+      totalHit: ({ weapon }) => weapon.isSubType('Gatling Gun') ? 10 : 6,
+      verifyItemFn: ({ weapon }) => {
+        const requires: WeaponSubTypeName[] = ['Gatling Gun', 'Revolver']
+        if (requires.some(subT => weapon.isSubType(subT))) return ''
+
+        return requires.join(', ')
+      },
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status, weapon } = input;
+        const { totalCon } = status;
+        const baseLevel = model.level;
+
+        const aimningCnt = this.activeSkillLv('_NightWatch_Aiming Count')
+
+        let dmg = 250 + 500 * skillLevel + 5 * totalCon + aimningCnt * 100 * skillLevel
+
+        if (weapon.isSubType('Revolver')) {
+          dmg += (50 + 300 * skillLevel)
+        }
+
+        return dmg * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Wild Fire',
+      label: 'Wild Fire Lv5',
+      value: 'Wild Fire==5',
+      acd: 1,
+      fct: 1,
+      vct: 0,
+      cd: 0.5,
+      verifyItemFn: ({ weapon }) => {
+        const requires: WeaponSubTypeName[] = ['Shotgun', 'Grenade Launcher']
+        if (requires.some(subT => weapon.isSubType(subT))) return ''
+
+        return requires.join(', ')
+      },
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status, weapon } = input;
+        const { totalCon } = status;
+        const baseLevel = model.level;
+
+        const aimningCnt = this.activeSkillLv('_NightWatch_Aiming Count')
+
+        let dmg = 1500 + 3000 * skillLevel + 5 * totalCon + aimningCnt * 500 * skillLevel
+
+        if (weapon.isSubType('Shotgun')) {
+          dmg += 200 * skillLevel
+        }
+
+        return dmg * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Basic Grenade',
+      label: 'Basic Grenade Lv5',
+      value: 'Basic Grenade==5',
+      acd: 0,
+      fct: 1,
+      vct: 0,
+      cd: 0.3,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status, } = input;
+        const { totalCon } = status;
+        const baseLevel = model.level;
+
+        const grenadeMaster = this.learnLv('Grenade Mastery')
+
+        return (1500 + 2100 * skillLevel + grenadeMaster * 50 + totalCon * 5) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Hasty Fire in the Hole',
+      label: 'Hasty Fire in the Hole Lv5',
+      value: 'Hasty Fire in the Hole==5',
+      acd: 1.5,
+      fct: 1,
+      vct: 0,
+      cd: 1,
+      totalHit: 2,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status, } = input;
+        const { totalCon } = status;
+        const baseLevel = model.level;
+
+        const grenadeMaster = this.learnLv('Grenade Mastery')
+
+        return (1500 + 1500 * skillLevel + grenadeMaster * 20 + totalCon * 5) * (baseLevel / 100);
+      },
+    },
+    // {
+    //   name: 'Grenade Dropping',
+    //   label: 'Grenade Dropping Lv5',
+    //   value: 'Grenade Dropping==5',
+    //   acd: 0,
+    //   fct: 1,
+    //   vct: 0,
+    //   cd: 4.5,
+    //   isIgnoreDef: ({weapon}) => weapon.isSubType('Gatling Gun'),
+    //   totalHit: ({weapon}) => weapon.isSubType('Gatling Gun') ? 7 : 4,
+    //   verifyItemFn: ({weapon}) => {
+    //     const requires: WeaponSubTypeName[] = ['Gatling Gun', 'Shotgun']
+    //     if (requires.some(subT => weapon.isSubType(subT))) return ''
+
+    //     return requires.join(', ')
+    //   },
+    //   formula: (input: AtkSkillFormulaInput): number => {
+    //     const { model, skillLevel, status, weapon } = input;
+    //     const { totalCon } = status;
+    //     const baseLevel = model.level;
+
+    //     const aimningCnt = this.activeSkillLv('_NightWatch_Aiming Count')
+
+    //     if (weapon.isSubType('Gatling Gun')) {
+    //       return (300*skillLevel+ aimningCnt*skillLevel* 100+totalCon*5) * (baseLevel / 100);
+    //     }
+
+    //     return (800 +700*skillLevel+ aimningCnt*skillLevel* 200+totalCon*5) * (baseLevel / 100);
+    //   },
+    // },
+    {
+      name: 'Mission Bombard',
+      label: 'Mission Bombard Lv10',
+      value: 'Mission Bombard==10',
+      acd: 1,
+      fct: 1,
+      vct: 0,
+      cd: 10,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalCon } = status;
+        const baseLevel = model.level;
+
+        const grenadeMaster = this.learnLv('Grenade Mastery')
+
+        return (5000 + 1800 * skillLevel + grenadeMaster * 100 + totalCon * 5) * (baseLevel / 100);
+      },
+      secondaryDmgInput: {
+        label: 'Bomb',
+        isIncludeMain: false,
+        totalHit: 10,
+        formula: (input: AtkSkillFormulaInput): number => {
+          const { model, skillLevel, status } = input;
+          const { totalCon } = status;
+          const baseLevel = model.level;
+
+          const grenadeMaster = this.learnLv('Grenade Mastery')
+
+          return (800 + 200 * skillLevel + grenadeMaster * 30 + totalCon * 5) * (baseLevel / 100);
+        },
+      }
+    },
+    // {
+    //   name: 'Wild Shot',
+    //   label: 'Wild Shot Lv5',
+    //   value: 'Wild Shot==5',
+    //   acd: 1,
+    //   fct: 1,
+    //   vct: 0,
+    //   cd: 0.5,
+    // canCri: true,
+    //   criDmgPercentage: 0.5,
+    //   totalHit: 7,
+    //   verifyItemFn: ({weapon}) => {
+    //     const requires: WeaponSubTypeName[] = ['Gatling Gun', 'Shotgun']
+    //     if (requires.some(subT => weapon.isSubType(subT))) return ''
+
+    //     return requires.join(', ')
+    //   },
+    //   formula: (input: AtkSkillFormulaInput): number => {
+    //     const { model, skillLevel, status, weapon } = input;
+    //     const { totalCon } = status;
+    //     const baseLevel = model.level;
+
+    //     const aimningCnt = this.activeSkillLv('_NightWatch_Aiming Count')
+
+    //     if (weapon.isSubType('Gatling Gun')) {
+    //       return (300*skillLevel+ aimningCnt*skillLevel* 100+totalCon*5) * (baseLevel / 100);
+    //     }
+
+    //     return (800 +700*skillLevel+ aimningCnt*skillLevel* 200+totalCon*5) * (baseLevel / 100);
+    //   },
+    // },
+    // {
+    //   name: 'Midnight Fallen',
+    //   label: 'Midnight Fallen Lv5',
+    //   value: 'Midnight Fallen==5',
+    //   acd: 1,
+    //   fct: 1.5,
+    //   vct: 0,
+    //   cd: 1.5,
+    //   isIgnoreDef: true,
+    //   totalHit: 3,
+    //   verifyItemFn: ({weapon}) => {
+    //     const requires: WeaponSubTypeName[] = ['Shotgun', 'Gatling Gun', 'Grenade Launcher']
+    //     if (requires.some(subT => weapon.isSubType(subT))) return ''
+
+    //     return requires.join(', ')
+    //   },
+    //   formula: (input: AtkSkillFormulaInput): number => {
+    //     const { model, skillLevel, status, weapon } = input;
+    //     const { totalCon } = status;
+    //     const baseLevel = model.level;
+    //     const hiddenCardBonusMap: Partial<Record<WeaponSubTypeName, number>> = {
+    //       Shotgun: 400,
+    //       "Gatling Gun": 200,
+    //       "Grenade Launcher": 340,
+    //     }
+
+    //     const hiddenCardBonus = this.isSkillActive('Hidden Card') ? hiddenCardBonusMap[weapon.data.subTypeName] : 0
+
+
+    //     return (2400+800*skillLevel+hiddenCardBonus*skillLevel) * (baseLevel / 100);
+    //   },
+    // },
+  ];
+  private readonly activeSkillList4th: ActiveSkillModel[] = [
+    {
+      name: 'Hidden Card',
+      label: 'Hidden Card',
+      inputType: 'dropdown',
+      dropdown: genSkillList(10, lv => ({ range: lv * 10, pAtk: lv * 3 }))
+    },
+    {
+      name: 'Intensive Aim',
+      label: 'Intensive Aim',
+      inputType: 'selectButton',
+      isEquipAtk: true,
+      dropdown: [
+        { label: 'Yes', value: 1, isUse: true, bonus: { atk: 150, hit: 250, cri: 30 } },
+        { label: 'No', value: 0, isUse: false, },
+      ]
+    },
+    {
+      name: 'Grenade Fragment',
+      label: 'Grenade Fragment',
+      inputType: 'dropdown',
+      dropdown: genSkillListWithLabel(6
+        , lv => `${['-', 'Water', 'Wind', 'Earth', 'Fire', 'Dark', 'Holy'][lv]}`
+        , lv => ({ propertyAtk: [0, ElementType.Water, ElementType.Wind, ElementType.Earth, ElementType.Fire, ElementType.Dark, ElementType.Holy][lv] })
+      )
+    },
+    {
+      name: '_NightWatch_Aiming Count',
+      label: 'Aiming Count',
+      inputType: 'dropdown',
+      dropdown: genSkillListWithLabel(10, lv => (`${lv}`))
+    },
+  ];
+  private readonly passiveSkillList4th: PassiveSkillModel[] = [
+    {
+      name: 'P.F.I.',
+      label: 'P.F.I.',
+      inputType: 'dropdown',
+      dropdown: genSkillList(10)
+    },
+    {
+      name: 'Grenade Mastery',
+      label: 'Grenade Mastery',
+      inputType: 'dropdown',
+      dropdown: genSkillList(10, lv => ({ con: lv }))
+    },
+  ];
 
   constructor() {
     super();
@@ -171,5 +544,18 @@ export class NightWatch extends Rebellion {
       passiveSkillList: this.passiveSkillList4th,
       classNames: this.classNames4th,
     });
+  }
+
+  override setAdditionalBonus(params: InfoForClass): EquipmentSummaryModel {
+    super.setAdditionalBonus(params)
+
+    const { totalBonus, weapon } = params;
+
+    const pfiLv = this.learnLv('P.F.I.')
+    if (pfiLv > 0 && weapon.isType('gun')) {
+      addBonus(totalBonus, 'pAtk', pfiLv + 2)
+    }
+
+    return totalBonus
   }
 }
