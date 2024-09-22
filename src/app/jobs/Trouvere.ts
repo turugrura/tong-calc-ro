@@ -6,6 +6,7 @@ import { MysticSymphonyFn, StageMannerFn } from '../constants/share-passive-skil
 import { EquipmentSummaryModel } from '../models/equipment-summary.model';
 import { InfoForClass } from '../models/info-for-class.model';
 import { addBonus } from '../utils';
+import { WeaponTypeName } from '../constants';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 0, 1, 0],
@@ -172,7 +173,12 @@ export class Trouvere extends Wanderer {
       vct: 2,
       cd: 0,
       totalHit: 3,
-      requireWeaponTypes: ['bow', 'instrument', 'whip'],
+      verifyItemFn: ({ weapon }) => {
+        const requires: WeaponTypeName[] = ['bow', 'instrument', 'whip']
+        if (requires.some(wType => weapon.isType(wType))) return ''
+
+        return requires.join(', ')
+      },
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
         const baseLevel = model.level;

@@ -347,11 +347,11 @@
                     Equip Atk:
                     <span class="font-semibold px-1 summary_stat_atk">{{ totalSummary?.atk || 0 }} + {{ totalSummary?.atkPercent || 0 }} %</span>
                   </div>
-                  <div [hidden]="env.production" class="col-6">
+                  <div class="col-6">
                     P.Atk:
                     <span class="font-semibold px-1 summary_stat_atk2">{{ totalSummary?.dmg?.pAtk || 0 }}</span>
                   </div>
-                  <div [hidden]="env.production" class="col-6">
+                  <div class="col-6">
                     C.Rate:
                     <span class="font-semibold px-1 summary_stat_atk2">{{ totalSummary?.dmg?.cRate || 0 }}</span>
                   </div>
@@ -412,7 +412,7 @@
                     Equip Matk:
                     <span class="font-semibold px-1 summary_stat_matk">{{ totalSummary?.matk || 0 }} + {{ totalSummary?.matkPercent || 0 }} %</span>
                   </div>
-                  <div [hidden]="env.production" class="col-12">
+                  <div class="col-12">
                     Matk
                     <span class="font-semibold px-1 summary_stat_matk">{{ totalSummary?.matkPercent || 0 }} %</span>
                     S.Matk:

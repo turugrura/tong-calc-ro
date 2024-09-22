@@ -2,6 +2,7 @@ import { ClassName } from './_class-name';
 import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
 import { RuneKnight } from './RuneKnight';
 import { JOB_4_MAX_JOB_LEVEL, JOB_4_MIN_MAX_LEVEL } from '../app-config';
+import { WeaponTypeName } from '../constants';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [1, 0, 0, 0, 0, 0],
@@ -188,7 +189,12 @@ export class DragonKnight extends RuneKnight {
       fct: 0,
       vct: 0,
       cd: 0.3,
-      requireWeaponTypes: ['twohandSword', 'twohandSpear'],
+      verifyItemFn: ({ weapon }) => {
+        const requires: WeaponTypeName[] = ['twohandSword', 'twohandSpear']
+        if (requires.some(wType => weapon.isType(wType))) return ''
+
+        return requires.join(', ')
+      },
       isMelee: (weaponType) => {
         return weaponType === 'twohandSword';
       },
@@ -211,7 +217,12 @@ export class DragonKnight extends RuneKnight {
       canCri: true,
       baseCriPercentage: 1,
       isMelee: true,
-      requireWeaponTypes: ['twohandSword', 'twohandAxe'],
+      verifyItemFn: ({ weapon }) => {
+        const requires: WeaponTypeName[] = ['twohandSword', 'twohandAxe']
+        if (requires.some(wType => weapon.isType(wType))) return ''
+
+        return requires.join(', ')
+      },
       totalHit: ({ skillLevel }) => skillLevel,
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
@@ -229,7 +240,12 @@ export class DragonKnight extends RuneKnight {
       fct: 0.4,
       vct: 0.4,
       cd: 0.35,
-      requireWeaponTypes: ['twohandSword', 'twohandSpear'],
+      verifyItemFn: ({ weapon }) => {
+        const requires: WeaponTypeName[] = ['twohandSword', 'twohandSpear']
+        if (requires.some(wType => weapon.isType(wType))) return ''
+
+        return requires.join(', ')
+      },
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status, weapon } = input;
         const { totalPow } = status;

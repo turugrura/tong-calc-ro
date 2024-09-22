@@ -110,7 +110,7 @@ export class Paladin extends Swordman {
       vct: 0.8,
       cd: 0,
       acd: 1,
-      isRequireShield: true,
+      verifyItemFn: ({ model }) => !model.shield ? 'Shield' : '',
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, equipmentBonus } = input;
         const baseLevel = model.level;

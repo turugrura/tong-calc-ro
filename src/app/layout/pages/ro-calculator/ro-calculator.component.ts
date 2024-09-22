@@ -1651,14 +1651,23 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         case 657: {
           const usable = [
             ClassName.RuneKnight,
+            ClassName.DragonKnight,
             ClassName.RoyalGuard,
+            ClassName.ImperialGuard,
             ClassName.Genetic,
+            ClassName.Biolo,
             ClassName.Mechanic,
+            ClassName.Meister,
             ClassName.ShadowChaser,
+            ClassName.AbyssChaser,
             ClassName.Warlock,
+            ClassName.ArchMage,
             ClassName.Rebellion,
+            ClassName.NightWatch,
             ClassName.SoulReaper,
+            ClassName.SoulAscetic,
             ClassName.StarEmperor,
+            ClassName.SkyEmperor,
           ];
 
           return usable.includes(this.selectedCharacter.className);

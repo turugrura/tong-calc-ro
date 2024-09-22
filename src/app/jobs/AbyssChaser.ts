@@ -5,7 +5,7 @@ import { ShadowChaser } from './ShadowChaser';
 import { addBonus, floor, genSkillList } from '../utils';
 import { EquipmentSummaryModel } from '../models/equipment-summary.model';
 import { InfoForClass } from '../models/info-for-class.model';
-import { ElementType } from '../constants';
+import { ElementType, WeaponTypeName } from '../constants';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 0, 0, 1],
@@ -173,7 +173,12 @@ export class AbyssChaser extends ShadowChaser {
       cd: 0.3,
       isMelee: true,
       totalHit: 2,
-      requireWeaponTypes: ['dagger', 'sword'],
+      verifyItemFn: ({ weapon }) => {
+        const requires: WeaponTypeName[] = ['dagger', 'sword']
+        if (requires.some(wType => weapon.isType(wType))) return ''
+
+        return requires.join(', ')
+      },
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
         const { totalPow } = status;
@@ -225,7 +230,12 @@ export class AbyssChaser extends ShadowChaser {
       fct: 1,
       vct: 1,
       cd: 1.5,
-      requireWeaponTypes: ['bow'],
+      verifyItemFn: ({ weapon }) => {
+        const requires: WeaponTypeName[] = ['bow']
+        if (requires.some(wType => weapon.isType(wType))) return ''
+
+        return requires.join(', ')
+      },
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
         const { totalCon } = status;
@@ -247,7 +257,12 @@ export class AbyssChaser extends ShadowChaser {
       cd: 0.2,
       canCri: true,
       baseCriPercentage: 1,
-      requireWeaponTypes: ['bow'],
+      verifyItemFn: ({ weapon }) => {
+        const requires: WeaponTypeName[] = ['bow']
+        if (requires.some(wType => weapon.isType(wType))) return ''
+
+        return requires.join(', ')
+      },
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
         const { totalCon } = status;

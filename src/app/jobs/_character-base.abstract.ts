@@ -80,8 +80,7 @@ export interface AtkSkillModel {
   treatedAsSkillNameFn?: (skillValue: string) => string;
   isExcludeCannanball?: boolean;
   isSudoElement?: boolean;
-  requireWeaponTypes?: WeaponTypeName[];
-  isRequireShield?: boolean;
+  verifyItemFn?: ((parmas: AtkSkillFormulaInput) => string);
   currentHpFn?: (maxHp: number) => number;
   currentSpFn?: (maxSp: number) => number;
   /**

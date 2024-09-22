@@ -162,7 +162,7 @@ export class RoyalGuard extends Paladin {
       cd: 2,
       isMelee: true,
       hit: 5,
-      isRequireShield: true,
+      verifyItemFn: ({ model }) => !model.shield ? 'Shield' : '',
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status, equipmentBonus } = input;
         const baseLevel = model.level;

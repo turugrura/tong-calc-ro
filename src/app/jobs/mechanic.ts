@@ -3,6 +3,7 @@ import { ClassName } from './_class-name';
 import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
 import { Whitesmith } from './Whitesmith';
 import { isBattleWarrior, isDualCannon } from './summons';
+import { WeaponTypeName } from '../constants';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 0, 0, 1],
@@ -152,7 +153,12 @@ export class Mechanic extends Whitesmith {
       vct: 0,
       cd: 3,
       isExcludeCannanball: true,
-      requireWeaponTypes: ['axe', 'twohandAxe'],
+      verifyItemFn: ({ weapon }) => {
+        const requires: WeaponTypeName[] = ['axe', 'twohandAxe']
+        if (requires.some(wType => weapon.isType(wType))) return ''
+
+        return requires.join(', ')
+      },
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, weapon } = input;
         if (weapon.data?.typeName !== 'axe' && weapon.data?.typeName !== 'twohandAxe') return 0;

@@ -5,6 +5,7 @@ import { GuillotineCross } from './GuillotineCross';
 import { EquipmentSummaryModel } from '../models/equipment-summary.model';
 import { InfoForClass } from '../models/info-for-class.model';
 import { addBonus, genSkillList, genSkillListWithLabel } from '../utils';
+import { WeaponTypeName } from '../constants';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [1, 1, 0, 0, 0, 0],
@@ -171,7 +172,12 @@ export class ShadowCross extends GuillotineCross {
       vct: 0,
       cd: 1,
       isMelee: true,
-      requireWeaponTypes: ['dagger'],
+      verifyItemFn: ({ weapon }) => {
+        const requires: WeaponTypeName[] = ['dagger']
+        if (requires.some(wType => weapon.isType(wType))) return ''
+
+        return requires.join(', ')
+      },
       isIgnoreDef: true,
       totalHit: () => {
         if (this.isSkillActive('Cloaking Exceed')) return 2;
@@ -225,7 +231,12 @@ export class ShadowCross extends GuillotineCross {
       isMelee: true,
       canCri: true,
       baseCriPercentage: 0.5,
-      requireWeaponTypes: ['katar'],
+      verifyItemFn: ({ weapon }) => {
+        const requires: WeaponTypeName[] = ['katar']
+        if (requires.some(wType => weapon.isType(wType))) return ''
+
+        return requires.join(', ')
+      },
       totalHit: () => {
         if (this.isSkillActive('Cloaking Exceed')) return 5;
 
@@ -254,7 +265,12 @@ export class ShadowCross extends GuillotineCross {
       isMelee: true,
       canCri: true,
       baseCriPercentage: 0.5,
-      requireWeaponTypes: ['katar'],
+      verifyItemFn: ({ weapon }) => {
+        const requires: WeaponTypeName[] = ['katar']
+        if (requires.some(wType => weapon.isType(wType))) return ''
+
+        return requires.join(', ')
+      },
       totalHit: () => {
         return this.activeSkillLv('Spin Count') || 1;
       },

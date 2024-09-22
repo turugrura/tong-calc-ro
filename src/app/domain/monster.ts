@@ -102,7 +102,7 @@ export class Monster {
    * For bonus programatic
    */
   get element() {
-    return this._monsterData.elementName;
+    return this._monsterData.element;
   }
   /**
    * For sudo element mapping

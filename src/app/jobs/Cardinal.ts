@@ -3,7 +3,7 @@ import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillMode
 import { JOB_4_MAX_JOB_LEVEL, JOB_4_MIN_MAX_LEVEL } from '../app-config';
 import { ArchBishop } from './ArchBishop';
 import { addBonus, floor } from '../utils';
-import { ElementType } from '../constants';
+import { ElementType, WeaponTypeName } from '../constants';
 import { EquipmentSummaryModel } from '../models/equipment-summary.model';
 import { InfoForClass } from '../models/info-for-class.model';
 
@@ -220,7 +220,12 @@ export class Cardinal extends ArchBishop {
       isMelee: (weaponType) => {
         return weaponType === 'book';
       },
-      requireWeaponTypes: ['mace', 'twohandMace', 'book'],
+      verifyItemFn: ({ weapon }) => {
+        const requires: WeaponTypeName[] = ['mace', 'twohandMace', 'book']
+        if (requires.some(wType => weapon.isType(wType))) return ''
+
+        return requires.join(', ')
+      },
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
         const { totalPow } = status;
