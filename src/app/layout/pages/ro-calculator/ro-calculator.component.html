@@ -440,7 +440,7 @@
                       <div class="col-12 flex gap-1">
                         HP:
                         <span class="font-semibold px-1 summary_stat_yellow">{{ totalSummary?.calc?.maxHp || 0 | number }}</span>
-                        <p-cascadeSelect
+                        <!-- <p-cascadeSelect
                           [(ngModel)]="model.rawOptionTxts[itemOptionNumber.X_HP]"
                           [options]="baseHpOptions"
                           optionValue="value"
@@ -451,12 +451,12 @@
                           [showClear]="true"
                           (onChange)="onOptionChange()"
                           (onClear)="onOptionChange()"
-                        ></p-cascadeSelect>
+                        ></p-cascadeSelect> -->
                       </div>
                       <div class="col-12 flex gap-1">
                         SP:
                         <span class="font-semibold px-1 summary_stat_yellow">{{ totalSummary?.calc?.maxSp || 0 | number }}</span>
-                        <p-cascadeSelect
+                        <!-- <p-cascadeSelect
                           [(ngModel)]="model.rawOptionTxts[itemOptionNumber.X_SP]"
                           [options]="baseSpOptions"
                           optionValue="value"
@@ -467,9 +467,9 @@
                           [showClear]="true"
                           (onChange)="onOptionChange()"
                           (onClear)="onOptionChange()"
-                        ></p-cascadeSelect>
+                        ></p-cascadeSelect> -->
                       </div>
-                      <div [hidden]="model?.level < 176" class="summary_monster_value px-1" style="color: var(--red-500)">*** Lv > 175 ไม่ตรง</div>
+                      <!-- <div [hidden]="model?.level < 176" class="summary_monster_value px-1" style="color: var(--red-500)">*** Lv > 175 ไม่ตรง</div> -->
                     </div>
                   </div>
                 </div>

@@ -178,6 +178,36 @@ export abstract class CharacterBase {
     return new Set([this.allClass, ...this.classNames]);
   }
 
+  get isExpandedClass() {
+    return [
+      ClassName.Novice,
+      ClassName.SuperNovice,
+      ClassName.HyperNovice,
+
+      ClassName.Doram,
+      ClassName.SpiritHandler,
+
+      ClassName.Taekwondo,
+      ClassName.SoulLinker,
+      ClassName.SoulReaper,
+      ClassName.SoulAscetic,
+
+      ClassName.StarGladiator,
+      ClassName.StarEmperor,
+      ClassName.SkyEmperor,
+
+      ClassName.Gunslinger,
+      ClassName.Rebellion,
+      ClassName.NightWatch,
+
+      ClassName.Ninja,
+      ClassName.Oboro,
+      ClassName.Shiranui,
+      ClassName.Kagerou,
+      ClassName.Shinkiro,
+    ].includes(this.className)
+  }
+
   get atkSkills() {
     const skills: AtkSkillModel[] = [...this._atkSkillList];
 
