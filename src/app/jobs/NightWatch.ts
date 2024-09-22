@@ -391,38 +391,38 @@ export class NightWatch extends Rebellion {
     //     return (800 +700*skillLevel+ aimningCnt*skillLevel* 200+totalCon*5) * (baseLevel / 100);
     //   },
     // },
-    {
-      name: 'Mission Bombard',
-      label: 'Mission Bombard Lv10',
-      value: 'Mission Bombard==10',
-      acd: 1,
-      fct: 1,
-      vct: 0,
-      cd: 10,
-      formula: (input: AtkSkillFormulaInput): number => {
-        const { model, skillLevel, status } = input;
-        const { totalCon } = status;
-        const baseLevel = model.level;
+    // {
+    //   name: 'Mission Bombard',
+    //   label: 'Mission Bombard Lv10',
+    //   value: 'Mission Bombard==10',
+    //   acd: 1,
+    //   fct: 1,
+    //   vct: 0,
+    //   cd: 10,
+    //   formula: (input: AtkSkillFormulaInput): number => {
+    //     const { model, skillLevel, status } = input;
+    //     const { totalCon } = status;
+    //     const baseLevel = model.level;
 
-        const grenadeMaster = this.learnLv('Grenade Mastery')
+    //     const grenadeMaster = this.learnLv('Grenade Mastery')
 
-        return (5000 + 1800 * skillLevel + grenadeMaster * 100 + totalCon * 5) * (baseLevel / 100);
-      },
-      secondaryDmgInput: {
-        label: 'Bomb',
-        isIncludeMain: false,
-        totalHit: 10,
-        formula: (input: AtkSkillFormulaInput): number => {
-          const { model, skillLevel, status } = input;
-          const { totalCon } = status;
-          const baseLevel = model.level;
+    //     return (5000 + 1800 * skillLevel + grenadeMaster * 100 + totalCon * 5) * (baseLevel / 100);
+    //   },
+    //   secondaryDmgInput: {
+    //     label: 'Bomb',
+    //     isIncludeMain: false,
+    //     totalHit: 10,
+    //     formula: (input: AtkSkillFormulaInput): number => {
+    //       const { model, skillLevel, status } = input;
+    //       const { totalCon } = status;
+    //       const baseLevel = model.level;
 
-          const grenadeMaster = this.learnLv('Grenade Mastery')
+    //       const grenadeMaster = this.learnLv('Grenade Mastery')
 
-          return (800 + 200 * skillLevel + grenadeMaster * 30 + totalCon * 5) * (baseLevel / 100);
-        },
-      }
-    },
+    //       return (800 + 200 * skillLevel + grenadeMaster * 30 + totalCon * 5) * (baseLevel / 100);
+    //     },
+    //   }
+    // },
     // {
     //   name: 'Wild Shot',
     //   label: 'Wild Shot Lv5',
