@@ -55,7 +55,7 @@ export interface AtkSkillModel {
   };
   finalDmgFormula?: (input: AtkSkillFormulaInput & { damage: number }) => number;
   maxStack?: number;
-  canCri?: boolean | (() => boolean);
+  canCri?: boolean | ((input: AtkSkillFormulaInput) => boolean);
   baseCri?: number;
   forceCri?: boolean;
   /**
@@ -74,7 +74,7 @@ export interface AtkSkillModel {
   isMatk?: boolean;
   isMelee?: boolean | ((weaponType: WeaponTypeName) => boolean);
   isDevMode?: boolean;
-  isIgnoreDef?: boolean;
+  isIgnoreDef?: boolean | ((parmas: AtkSkillFormulaInput) => boolean);
   isHDefToSDef?: boolean;
   isHit100?: boolean;
   treatedAsSkillNameFn?: (skillValue: string) => string;
@@ -90,6 +90,7 @@ export interface AtkSkillModel {
   autoSpellChance?: number;
   element?: ElementType;
   getElement?: (skillValue: string) => ElementType;
+  secondaryDmgInput?: Omit<AtkSkillModel, 'secondaryDmg' | 'part2' | 'acd' | 'vct' | 'cd' | 'fct' | 'name' | 'value'> & { isIncludeMain: boolean }
 }
 [];
 

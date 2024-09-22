@@ -5,7 +5,7 @@ import { EquipmentSummaryModel } from '../../../models/equipment-summary.model';
 import { InfoForClass } from '../../../models/info-for-class.model';
 import { MainModel } from '../../../models/main.model';
 import { StatusSummary } from '../../../models/status-summary.model';
-import { calcDmgDps, calcSkillAspd, firstUppercase, floor, isSkillCanEDP, round } from '../../../utils';
+import { calcDmgDps, calcSkillAspd, floor, isSkillCanEDP, round } from '../../../utils';
 import { Monster, Weapon } from 'src/app/domain';
 import { SKILL_NAME } from 'src/app/constants/skill-name';
 
@@ -765,7 +765,7 @@ export class DamageCalculator {
     baseSkillDamage: number;
     weaponPropertyAtk: ElementType;
     sizePenalty: number;
-    formulaParams?: any;
+    formulaParams?: AtkSkillFormulaInput;
   }): DamageResultModel {
     const { skillData, baseSkillDamage, weaponPropertyAtk, sizePenalty, formulaParams } = params;
     const {
@@ -781,7 +781,7 @@ export class DamageCalculator {
     } = skillData;
     this.skillName = skillName;
     const { criDmgPercentage = 1 } = skillData;
-    const _canCri = typeof canCriFn === 'function' ? canCriFn() : canCriFn;
+    const _canCri = typeof canCriFn === 'function' ? canCriFn(formulaParams) : canCriFn;
     const canCri = this.isForceSkillCri || _canCri || forceCri;
     const { reducedHardDef, finalDmgReduction, finalSoftDef, resReduction } = this.getPhisicalDefData();
     const hardDef = isIgnoreDef || isHDefToSDef ? 1 : finalDmgReduction;
@@ -1161,24 +1161,9 @@ export class DamageCalculator {
       currentHpFn,
       currentSpFn,
       maxStack = 0,
-      requireWeaponTypes = [],
-      isRequireShield = false,
       forceCri = false,
+      verifyItemFn,
     } = skillData;
-
-    if (isRequireShield && !this.model.shield) {
-      basicDmg.requireTxt = 'Shield';
-      return { basicDmg, misc, basicAspd };
-    }
-
-    const weaponType = this.weaponData.data?.typeName;
-    if (requireWeaponTypes.length && requireWeaponTypes.every((require) => require !== weaponType)) {
-      basicDmg.requireTxt = requireWeaponTypes
-        .map((w) => w.replace('onehand', '1-Handed ').replace('twohand', '2-Handed '))
-        .map(firstUppercase)
-        .join(' / ');
-      return { basicDmg, misc, basicAspd, skillDmg: { ...this.zeroSkillDmg } };
-    }
 
     const currentHp = typeof currentHpFn === 'function' ? currentHpFn(maxHp) : 0;
     const currentSp = typeof currentSpFn === 'function' ? currentSpFn(maxSp) : 0;
@@ -1191,6 +1176,14 @@ export class DamageCalculator {
       currentSp,
       stack: maxStack,
     };
+
+
+    const invalidMsg = verifyItemFn && typeof verifyItemFn === 'function' ? verifyItemFn(formulaParams) : ''
+    if (invalidMsg) {
+      basicDmg.requireTxt = invalidMsg;
+      return { basicDmg, misc, basicAspd, skillDmg: { ...this.zeroSkillDmg } };
+    }
+
     const _baseSkillDamage = formula(formulaParams) + this.getFlatDmg(skillName);
     let baseSkillDamage = floor(_baseSkillDamage);
 
