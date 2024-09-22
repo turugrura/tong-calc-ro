@@ -111,6 +111,7 @@ import {
 } from './gray-wolf';
 import { heroBootLt2, heroBootLt3, heroBootLt4 } from './hero-boots-lt';
 import { madBunnyLt4 } from './mad-bunny-lt';
+import { oasdWeapon3, oasdWeapon4 } from './osad-weapon';
 import { varmundt3, varmundt4, varmundtAcc3, varmundtAcc4, varmundtHiAcc2 } from './varmundt';
 
 enum TimeJewel {
@@ -1175,6 +1176,23 @@ export const EnchantTable: EntTable[] = [
   { name: "Temple_M_Ring", enchants: [null, varmundtHiAcc2, varmundtAcc3, varmundtAcc4] },
 
   { name: "Mad_Bunny_K_LT", enchants: [null, null, null, madBunnyLt4] },
+
+  { name: 'Cannon_Rapier_AD', enchants: [null, null, oasdWeapon3, oasdWeapon4] },
+  { name: 'Kuroiro_AD', enchants: [null, null, oasdWeapon3, oasdWeapon4] },
+  { name: 'Boost_Lance_AD', enchants: [null, null, oasdWeapon3, oasdWeapon4] },
+  { name: 'Circuit_Board_AD', enchants: [null, null, oasdWeapon3, oasdWeapon4] },
+  { name: 'Rutilus_Stick_AD', enchants: [null, null, oasdWeapon3, oasdWeapon4] },
+  { name: 'ElectricFox_AD', enchants: [null, null, oasdWeapon3, oasdWeapon4] },
+  { name: 'Burning_Knuckle_AD', enchants: [null, null, oasdWeapon3, oasdWeapon4] },
+  { name: 'Saphir_Hall_AD', enchants: [null, null, oasdWeapon3, oasdWeapon4] },
+  { name: 'Ultio_Spes_AD', enchants: [null, null, oasdWeapon3, oasdWeapon4] },
+  { name: 'Beam_Claymore_AD', enchants: [null, null, oasdWeapon3, oasdWeapon4] },
+  { name: 'Meuchler_AD', enchants: [null, null, oasdWeapon3, oasdWeapon4] },
+  { name: 'Blasti_AD', enchants: [null, null, oasdWeapon3, oasdWeapon4] },
+  { name: 'Virtual_Bow_AD', enchants: [null, null, oasdWeapon3, oasdWeapon4] },
+  { name: 'MH_P89_AD', enchants: [null, null, oasdWeapon3, oasdWeapon4] },
+  { name: 'AC_B44_AD', enchants: [null, null, oasdWeapon3, oasdWeapon4] },
+  { name: 'HR_S55_AD', enchants: [null, null, oasdWeapon3, oasdWeapon4] },
 ];
 
 Object.freeze(EnchantTable);

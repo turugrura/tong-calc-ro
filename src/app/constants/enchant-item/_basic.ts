@@ -27,6 +27,7 @@ export enum AttackDelay {
   _2 = 'Attack_Delay_2',
   _3 = 'Attack_Delay_3',
   _4 = 'Attack_Delay_4',
+  _5 = 'Attack_Delay_5',
 }
 export enum Spell {
   _1 = 'Spell1',
@@ -289,8 +290,19 @@ export enum Tenacity {
 }
 
 export enum HitPlus {
+  _1 = 'Hit_Plus1',
+  _2 = 'Hit_Plus2',
   _3 = 'Hit_Plus3',
   _4 = 'Hit_Plus4',
+  _5 = 'Hit_Plus5',
+}
+
+export enum Caster {
+  _1 = 'Caster1',
+  _2 = 'Caster2',
+  _3 = 'Caster3',
+  _4 = 'Caster4',
+  _5 = 'Caster5',
 }
 
 export const str = (from: number, to: number) => Array.from({ length: 1 + to - from }).map((_, i) => Str[`_${i + from}`]);
@@ -316,6 +328,7 @@ export const fs410 = [FS._4, FS._5, FS._6, FS._7, FS._8, FS._9, FS._10];
 
 export const sh13 = [Sharp._1, Sharp._2, Sharp._3];
 export const sh14 = [Sharp._1, Sharp._2, Sharp._3, Sharp._4];
+export const sh15 = [Sharp._1, Sharp._2, Sharp._3, Sharp._4, Sharp._5];
 export const sh23 = [Sharp._2, Sharp._3];
 export const sh34 = [Sharp._3, Sharp._4];
 export const sh25 = [Sharp._2, Sharp._3, Sharp._4, Sharp._5];
@@ -327,7 +340,10 @@ export const perfectD13 = [Dodge._1, Dodge._2, Dodge._3];
 export const matk12 = [MatkPercent._1, MatkPercent._2];
 export const matk13 = [MatkPercent._1, MatkPercent._2, MatkPercent._3];
 
+export const hitPlus15 = [HitPlus._1, HitPlus._2, HitPlus._3, HitPlus._4, HitPlus._5];
 export const hitPlus34 = [HitPlus._3, HitPlus._4];
+
+export const caster15 = [Caster._1, Caster._2, Caster._3, Caster._4, Caster._5];
 
 export const ea12 = [EA._1, EA._2];
 export const ea13 = [EA._1, EA._2, EA._3];
@@ -345,6 +361,7 @@ export const em15 = [ExpertMagician._1, ExpertMagician._2, ExpertMagician._3, Ex
 
 export const sp23 = [Spell._2, Spell._3];
 export const sp14 = [Spell._1, Spell._2, Spell._3, Spell._4];
+export const sp15 = [Spell._1, Spell._2, Spell._3, Spell._4, Spell._5];
 export const sp25 = [Spell._2, Spell._3, Spell._4, Spell._5];
 export const sp34 = [Spell._3, Spell._4];
 export const sp45 = [Spell._4, Spell._5];
@@ -353,6 +370,7 @@ export const sp46 = [Spell._4, Spell._5, Spell._6];
 export const aspd12 = [AttackDelay._1, AttackDelay._2];
 export const aspd13 = [AttackDelay._1, AttackDelay._2, AttackDelay._3];
 export const aspd14 = [AttackDelay._1, AttackDelay._2, AttackDelay._3, AttackDelay._4];
+export const aspd15 = [AttackDelay._1, AttackDelay._2, AttackDelay._3, AttackDelay._4, AttackDelay._5];
 export const aspd24 = [AttackDelay._2, AttackDelay._3, AttackDelay._4];
 export const aspd34 = [AttackDelay._3, AttackDelay._4];
 
