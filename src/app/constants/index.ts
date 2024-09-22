@@ -7,7 +7,7 @@ export * from './card-position.enum';
 export * from './element-converter-list';
 export * from './element-mapper';
 export * from './element-type.const';
-export * from './enchant-item/enchant-table';
+export * from './enchant_item/enchant_table';
 export * from './extra-option-table';
 export * from './food-stat-list';
 export * from './head-gear-location';

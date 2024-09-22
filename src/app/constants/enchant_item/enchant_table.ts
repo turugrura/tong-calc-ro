@@ -95,6 +95,7 @@ import {
   str,
   vit,
 } from './_basic';
+import { dimWeapon2, dimWeapon3, dimWeapon4 } from './dim_gracier';
 import {
   grayWolfAccL_slot2,
   grayWolfAccL_slot3,
@@ -108,10 +109,10 @@ import {
   grayWolfGarment_slot2,
   grayWolfGarment_slot3,
   grayWolfGarment_slot4,
-} from './gray-wolf';
-import { heroBootLt2, heroBootLt3, heroBootLt4 } from './hero-boots-lt';
-import { madBunnyLt4 } from './mad-bunny-lt';
-import { oasdWeapon3, oasdWeapon4 } from './osad-weapon';
+} from './gray_wolf';
+import { heroBootLt2, heroBootLt3, heroBootLt4 } from './hero_boots_lt';
+import { madBunnyLt4 } from './mad_bunny_lt';
+import { oasdWeapon3, oasdWeapon4 } from './osad_weapon';
 import { varmundt3, varmundt4, varmundtAcc3, varmundtAcc4, varmundtHiAcc2 } from './varmundt';
 
 enum TimeJewel {
@@ -1193,6 +1194,35 @@ export const EnchantTable: EntTable[] = [
   { name: 'MH_P89_AD', enchants: [null, null, oasdWeapon3, oasdWeapon4] },
   { name: 'AC_B44_AD', enchants: [null, null, oasdWeapon3, oasdWeapon4] },
   { name: 'HR_S55_AD', enchants: [null, null, oasdWeapon3, oasdWeapon4] },
+
+  { name: "D_Glacier_Sword", enchants: [null, dimWeapon2, dimWeapon3, dimWeapon4] },
+  { name: "D_Glacier_B_Sword", enchants: [null, dimWeapon2, dimWeapon3, dimWeapon4] },
+  { name: "D_Glacier_R_Knife", enchants: [null, dimWeapon2, dimWeapon3, dimWeapon4] },
+  { name: "D_Glacier_B_Knife", enchants: [null, dimWeapon2, dimWeapon3, dimWeapon4] },
+  { name: "D_Glacier_Axe", enchants: [null, dimWeapon2, dimWeapon3, dimWeapon4] },
+  { name: "D_Glacier_Spear", enchants: [null, dimWeapon2, dimWeapon3, dimWeapon4] },
+  { name: "D_Glacier_Book", enchants: [null, dimWeapon2, dimWeapon3, dimWeapon4] },
+  { name: "D_Glacier_Wand", enchants: [null, dimWeapon2, dimWeapon3, dimWeapon4] },
+  { name: "D_Glacier_Foxtail", enchants: [null, dimWeapon2, dimWeapon3, dimWeapon4] },
+  { name: "D_Glacier_Knuckle", enchants: [null, dimWeapon2, dimWeapon3, dimWeapon4] },
+  { name: "D_Glacier_Violin", enchants: [null, dimWeapon2, dimWeapon3, dimWeapon4] },
+  { name: "D_Glacier_Whip", enchants: [null, dimWeapon2, dimWeapon3, dimWeapon4] },
+  { name: "D_Glacier_Mace", enchants: [null, dimWeapon2, dimWeapon3, dimWeapon4] },
+  { name: "D_Glacier_M_Mace", enchants: [null, dimWeapon2, dimWeapon3, dimWeapon4] },
+  { name: "D_Glacier_T_Sword", enchants: [null, dimWeapon2, dimWeapon3, dimWeapon4] },
+  { name: "D_Glacier_Katar", enchants: [null, dimWeapon2, dimWeapon3, dimWeapon4] },
+  { name: "D_Glacier_T_Axe", enchants: [null, dimWeapon2, dimWeapon3, dimWeapon4] },
+  { name: "D_Glacier_Lance", enchants: [null, dimWeapon2, dimWeapon3, dimWeapon4] },
+  { name: "D_Glacier_Staff", enchants: [null, dimWeapon2, dimWeapon3, dimWeapon4] },
+  { name: "D_Glacier_Humma", enchants: [null, dimWeapon2, dimWeapon3, dimWeapon4] },
+  { name: "D_Glacier_Bow", enchants: [null, dimWeapon2, dimWeapon3, dimWeapon4] },
+  { name: "D_Glacier_Revolver", enchants: [null, dimWeapon2, dimWeapon3, dimWeapon4] },
+  { name: "D_Glacier_Rifle", enchants: [null, dimWeapon2, dimWeapon3, dimWeapon4] },
+  { name: "D_Glacier_Shotgun", enchants: [null, dimWeapon2, dimWeapon3, dimWeapon4] },
+  { name: "D_Glacier_Gatling", enchants: [null, dimWeapon2, dimWeapon3, dimWeapon4] },
+  { name: "D_Glacier_Launcher", enchants: [null, dimWeapon2, dimWeapon3, dimWeapon4] },
+
+
 ];
 
 Object.freeze(EnchantTable);

@@ -1035,6 +1035,7 @@ export class Calculator {
 
     // REFINE[11]
     const [, unused, refineCond] = restCondition.match(/(REFINE\[(\d+)?])[^-]/) ?? [];
+    // console.log({ restCondition, unused, refineCond })
     if (refineCond && itemRefine >= Number(refineCond)) {
       restCondition = restCondition.replace(unused, '');
       if (restCondition.startsWith('===')) {
@@ -1048,6 +1049,21 @@ export class Calculator {
     } else if (refineCond) {
       return { isValid: false, restCondition };
     }
+
+    // const [unusedRefineCond, refineCombo, refineCond2] = restCondition.match(/^REFINE\[(\D*?)=*=*(\d+)]/) ?? [];
+    // if (refineCombo && refineCond2) {
+    //   const totalRefine = refineCombo
+    //     .split(',')
+    //     .map((itemType) => this.mapRefine.get(itemType as ItemTypeEnum))
+    //     .reduce((sum, cur) => sum + (cur || 0), 0);
+    //   // console.log({ totalRefine, unusedRefineCond, refineCombo, anotherRefine });
+    //   if (totalRefine >= Number(refineCond)) {
+    //     restCondition = restCondition.replace(unused, '');
+    //     if (!restCondition.startsWith('===')) {
+    //       return this.validateCondition({ itemType, itemRefine, script: restCondition });
+    //     }
+    //   }
+    // }
 
     // POS[accRight]50
     const [unusedPos, position] = restCondition.match(/POS\[(\D+)]/) ?? [];

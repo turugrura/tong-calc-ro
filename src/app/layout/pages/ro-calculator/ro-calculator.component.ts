@@ -2033,7 +2033,10 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         const isSup = wTypeNames.has(WeaponTypeNameMapBySubTypeId[itemSubTypeId]);
 
         if (isLv4 && isSup) return true;
+        // return true
       }
+
+      if (a.label.startsWith('Dim Gla')) return true
 
       return onlyMe(a);
     };

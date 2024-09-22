@@ -1,10 +1,10 @@
 import { AfterViewInit, Component, EventEmitter, Input, Output } from '@angular/core';
 import { DropdownModel } from '../../../../models/dropdown.model';
 import { ItemModel } from '../../../../models/item.model';
-import { getEnchants } from '../../../../constants/enchant-item/enchant-table';
 import { ItemTypeEnum, OptionableItemTypeSet } from '../../../../constants/item-type.enum';
 import { ExtraOptionTable } from '../../../../constants/extra-option-table';
 import { getGradeList } from '../../../../utils';
+import { getEnchants } from 'src/app/constants/enchant_item';
 
 @Component({
   selector: 'app-equipment',
@@ -76,7 +76,7 @@ export class EquipmentComponent implements AfterViewInit {
 
   private itemTypeMap = {};
 
-  constructor() {}
+  constructor() { }
 
   ngAfterViewInit(): void {
     setTimeout(() => {

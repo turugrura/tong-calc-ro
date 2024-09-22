@@ -8,7 +8,7 @@ import { sortSkill } from '../utils';
 import { WeaponTypeName } from '../constants/weapon-type-mapper';
 import { AspdPotionFixBonus } from '../constants';
 import { Weapon } from '../domain';
-import { SKILL_NAME } from '../constants/skill-name';
+import { OFFENSIVE_SKILL_NAMES, SKILL_NAME } from '../constants/skill-name';
 
 export interface AtkSkillFormulaInput extends InfoForClass {
   skillLevel: number;
@@ -28,7 +28,7 @@ export interface DefForCalcModel {
 
 export interface AtkSkillModel {
   label: string;
-  name: SKILL_NAME;
+  name: typeof OFFENSIVE_SKILL_NAMES[number];
   value: string;
   values?: string[];
   acd: number | ((skillLevel: number) => number);

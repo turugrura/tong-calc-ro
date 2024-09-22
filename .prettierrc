@@ -11,7 +11,7 @@
       }
     },
     {
-      "files": "src\\app\\constants\\enchant-table.ts",
+      "files": "src\\app\\constants\\enchant_item\\enchant_table.ts",
       "options": {
         "printWidth": 200
       }
