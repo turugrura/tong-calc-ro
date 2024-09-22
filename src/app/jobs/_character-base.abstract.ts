@@ -46,7 +46,7 @@ export interface AtkSkillModel {
   ) => number;
   part2?: {
     label: string;
-    element: ElementType;
+    element?: ElementType;
     isIncludeMain: boolean;
     hit: number;
     isMatk: boolean;
@@ -75,7 +75,7 @@ export interface AtkSkillModel {
   isMelee?: boolean | ((weaponType: WeaponTypeName) => boolean);
   isDevMode?: boolean;
   isIgnoreDef?: boolean | ((parmas: AtkSkillFormulaInput) => boolean);
-  isHDefToSDef?: boolean;
+  isHDefToSDef?: boolean
   isHit100?: boolean;
   treatedAsSkillNameFn?: (skillValue: string) => string;
   isExcludeCannanball?: boolean;

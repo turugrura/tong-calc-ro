@@ -5,7 +5,7 @@ import { EquipmentSummaryModel } from '../../../models/equipment-summary.model';
 import { InfoForClass } from '../../../models/info-for-class.model';
 import { MainModel } from '../../../models/main.model';
 import { StatusSummary } from '../../../models/status-summary.model';
-import { calcDmgDps, calcSkillAspd, firstUppercase, floor, isSkillCanEDP, round } from '../../../utils';
+import { calcDmgDps, calcSkillAspd, floor, isSkillCanEDP, round } from '../../../utils';
 import { Monster, Weapon } from 'src/app/domain';
 import { SKILL_NAME } from 'src/app/constants/skill-name';
 
@@ -21,6 +21,43 @@ interface DamageResultModel {
   sizePenalty: number;
   canCri: boolean;
   criDmgToMonster: number;
+}
+
+interface SecondDamageResultModel extends DamageResultModel { label: string; totalHit: number; }
+
+interface DamageStackResultModel {
+  noStackMaxCriDamage: number;
+  noStackMaxDamage: number;
+  noStackMinCriDamage: number;
+  noStackMinDamage: number;
+}
+
+interface SkillDamagePart2ResultModel {
+  skillPart2Label: string;
+  skillMinDamage2: number;
+  skillMaxDamage2: number;
+}
+
+interface CalcAllSkillDamageResultModel {
+  baseSkillDamage: number;
+  damage: DamageResultModel;
+  damagePart2: SkillDamagePart2ResultModel;
+  secondaryDamage?: SecondDamageResultModel
+  stackDamage: DamageStackResultModel;
+}
+
+interface CalcAllDamageInput {
+  skillValue: string;
+  propertyAtk: ElementType;
+  maxHp: number;
+  maxSp: number
+}
+
+interface CalcSkillDamageInput {
+  allDamageInput: CalcAllDamageInput;
+  skillData: AtkSkillModel;
+  skillLevel: number;
+  sizePenalty: number;
 }
 
 export class DamageCalculator {
@@ -765,7 +802,7 @@ export class DamageCalculator {
     baseSkillDamage: number;
     weaponPropertyAtk: ElementType;
     sizePenalty: number;
-    formulaParams?: any;
+    formulaParams: AtkSkillFormulaInput
   }): DamageResultModel {
     const { skillData, baseSkillDamage, weaponPropertyAtk, sizePenalty, formulaParams } = params;
     const {
@@ -781,7 +818,7 @@ export class DamageCalculator {
     } = skillData;
     this.skillName = skillName;
     const { criDmgPercentage = 1 } = skillData;
-    const _canCri = typeof canCriFn === 'function' ? canCriFn() : canCriFn;
+    const _canCri = typeof canCriFn === 'function' ? canCriFn(formulaParams) : canCriFn;
     const canCri = this.isForceSkillCri || _canCri || forceCri;
     const { reducedHardDef, finalDmgReduction, finalSoftDef, resReduction } = this.getPhisicalDefData();
     const hardDef = isIgnoreDef || isHDefToSDef ? 1 : finalDmgReduction;
@@ -1088,7 +1125,172 @@ export class DamageCalculator {
     return { criMinDamage, criMaxDamage, sizePenalty: 100 };
   }
 
-  calculateAllDamages(args: { skillValue: string; propertyAtk: ElementType; maxHp: number; maxSp: number }): DamageSummaryModel {
+  calculateSkillDamage(calcInput: CalcSkillDamageInput): CalcAllSkillDamageResultModel {
+    const { allDamageInput, skillData, skillLevel, sizePenalty } = calcInput;
+    const { skillValue, propertyAtk, maxHp, maxSp } = allDamageInput;
+    const {
+      formula,
+      part2,
+      secondaryDmgInput,
+      isMatk,
+      isMelee: _isMelee,
+      totalHit: _totalHit = 1,
+      name: skillName,
+      customFormula,
+      getElement,
+      currentHpFn,
+      currentSpFn,
+      maxStack = 0,
+    } = skillData;
+
+    const currentHp = typeof currentHpFn === 'function' ? currentHpFn(maxHp) : 0;
+    const currentSp = typeof currentSpFn === 'function' ? currentSpFn(maxSp) : 0;
+    const calcBaseSkillDmgInput: AtkSkillFormulaInput = {
+      ...this.infoForClass,
+      skillLevel,
+      maxHp,
+      maxSp,
+      currentHp,
+      currentSp,
+      stack: maxStack,
+    };
+
+    const _baseSkillDamage = formula(calcBaseSkillDmgInput) + this.getFlatDmg(skillName);
+    let baseSkillDamage = floor(_baseSkillDamage);
+
+    const _NoStackbaseSkillDamage = formula({ ...calcBaseSkillDmgInput, stack: 0 }) + this.getFlatDmg(skillName);
+    const noStackNaseSkillDamage = floor(_NoStackbaseSkillDamage);
+
+    const params = {
+      baseSkillDamage,
+      skillData,
+      weaponPropertyAtk: typeof getElement === 'function' && !!getElement ? getElement(skillValue) : propertyAtk,
+      sizePenalty,
+      formulaParams: calcBaseSkillDmgInput,
+    };
+
+    let calculated: DamageResultModel;
+    const calculatedStack: DamageStackResultModel = {
+      noStackMaxCriDamage: 0,
+      noStackMaxDamage: 0,
+      noStackMinCriDamage: 0,
+      noStackMinDamage: 0,
+    };
+
+    if (skillName === 'Fist Spell' && typeof skillData.treatedAsSkillNameFn === 'function') {
+      const newSkillValue = skillData.treatedAsSkillNameFn(skillValue);
+      const newSkillData = this._class.atkSkills.find((a) => a.value === newSkillValue || a.levelList?.findIndex((b) => b.value === newSkillValue) >= 0);
+      if (newSkillData) {
+        calculated = this.calcMagicalSkillDamage({
+          ...params,
+          skillData: {
+            ...params.skillData,
+            formula: newSkillData.formula,
+            name: newSkillData.name,
+          },
+        });
+      }
+    } else if (customFormula && typeof customFormula === 'function') {
+      const skillPropertyAtk = typeof getElement === 'function' ? getElement(skillValue) : skillData.element || propertyAtk;
+      const propertyMultiplier = this.getPropertyMultiplier(skillPropertyAtk);
+
+      const d = customFormula({
+        ...calcBaseSkillDmgInput,
+        baseSkillDamage,
+        sizePenalty,
+        propertyMultiplier,
+        ...this.getPhisicalDefData(),
+      });
+      calculated = {
+        canCri: false,
+        minDamage: d,
+        maxDamage: d,
+        rawMinNoCri: d,
+        rawMaxNoCri: d,
+        propertyAtk: skillPropertyAtk,
+        propertyMultiplier: propertyMultiplier,
+        avgCriDamage: d,
+        avgNoCriDamage: d,
+        criDmgToMonster: d,
+        sizePenalty,
+      };
+    } else {
+      calculated = isMatk ? this.calcMagicalSkillDamage(params) : this.calcPhysicalSkillDamage(params);
+
+      if (maxStack > 0) {
+        const noStackParam = { ...params, baseSkillDamage: noStackNaseSkillDamage };
+        const noStackCalculated = isMatk ? this.calcMagicalSkillDamage(noStackParam) : this.calcPhysicalSkillDamage(noStackParam);
+        calculatedStack.noStackMinDamage = noStackCalculated.rawMinNoCri;
+        calculatedStack.noStackMaxDamage = noStackCalculated.rawMaxNoCri;
+        calculatedStack.noStackMaxCriDamage = noStackCalculated.minDamage;
+        calculatedStack.noStackMinCriDamage = noStackCalculated.maxDamage;
+      }
+    }
+
+    const skillDmgPart2: SkillDamagePart2ResultModel = {
+      skillPart2Label: '',
+      skillMaxDamage2: 0,
+      skillMinDamage2: 0,
+    }
+    if (typeof part2?.formula === 'function') {
+      const { formula: formula2, isMatk: isPart2Matk, isIncludeMain, label } = part2;
+      const _baseSkillDamage2 =
+        formula2({
+          ...this.infoForClass,
+          skillLevel,
+          maxHp,
+          maxSp,
+        }) + this.getFlatDmg(skillName);
+      const baseSkillDamage2 = floor(_baseSkillDamage2);
+      baseSkillDamage += baseSkillDamage2;
+
+      const params2 = {
+        baseSkillDamage: baseSkillDamage2,
+        skillData: { ...skillData, ...part2 },
+        weaponPropertyAtk: propertyAtk,
+        sizePenalty,
+        skillLevel,
+        formulaParams: calcBaseSkillDmgInput,
+      };
+
+      const calcPart2 = isPart2Matk ? this.calcMagicalSkillDamage(params2) : this.calcPhysicalSkillDamage(params2);
+
+      if (isIncludeMain) {
+        calculated.minDamage += calcPart2.minDamage;
+        calculated.maxDamage += calcPart2.maxDamage;
+      } else {
+        skillDmgPart2.skillPart2Label = label;
+        skillDmgPart2.skillMinDamage2 = calcPart2.minDamage;
+        skillDmgPart2.skillMaxDamage2 = calcPart2.maxDamage;
+      }
+    }
+
+    let secondaryDamage: SecondDamageResultModel;
+    if (typeof secondaryDmgInput?.formula === 'function') {
+      const r = this.calculateSkillDamage({
+        allDamageInput,
+        sizePenalty,
+        skillLevel,
+        skillData: { ...skillData, ...secondaryDmgInput, secondaryDmgInput: undefined }
+      })
+      const { totalHit, label } = secondaryDmgInput
+      secondaryDamage = {
+        ...r.damage,
+        label: label,
+        totalHit: typeof totalHit === 'function' ? totalHit(calcBaseSkillDmgInput) : totalHit,
+      }
+    }
+
+    return {
+      baseSkillDamage,
+      damage: calculated,
+      stackDamage: calculatedStack,
+      damagePart2: skillDmgPart2,
+      secondaryDamage
+    }
+  }
+
+  calculateAllDamages(args: CalcAllDamageInput): DamageSummaryModel {
     const { skillValue, propertyAtk, maxHp, maxSp } = args;
     const sizePenalty = this.getSizePenalty();
     const { totalMin, totalMax, totalMaxOver, propertyMultiplier } = this.calcTotalAtk({
@@ -1145,8 +1347,6 @@ export class DamageCalculator {
 
     const skillLevel = Number(skillLevelStr);
     const {
-      formula,
-      part2,
       baseCri: baseSkillCri = 0,
       isMatk,
       isMelee: _isMelee,
@@ -1156,33 +1356,16 @@ export class DamageCalculator {
       totalHit: _totalHit = 1,
       name: skillName,
       baseCriPercentage = 1,
-      customFormula,
-      getElement,
       currentHpFn,
       currentSpFn,
       maxStack = 0,
-      requireWeaponTypes = [],
-      isRequireShield = false,
+      verifyItemFn,
       forceCri = false,
     } = skillData;
 
-    if (isRequireShield && !this.model.shield) {
-      basicDmg.requireTxt = 'Shield';
-      return { basicDmg, misc, basicAspd };
-    }
-
-    const weaponType = this.weaponData.data?.typeName;
-    if (requireWeaponTypes.length && requireWeaponTypes.every((require) => require !== weaponType)) {
-      basicDmg.requireTxt = requireWeaponTypes
-        .map((w) => w.replace('onehand', '1-Handed ').replace('twohand', '2-Handed '))
-        .map(firstUppercase)
-        .join(' / ');
-      return { basicDmg, misc, basicAspd, skillDmg: { ...this.zeroSkillDmg } };
-    }
-
     const currentHp = typeof currentHpFn === 'function' ? currentHpFn(maxHp) : 0;
     const currentSp = typeof currentSpFn === 'function' ? currentSpFn(maxSp) : 0;
-    const formulaParams: AtkSkillFormulaInput = {
+    const calcBaseSkillDmgInput: AtkSkillFormulaInput = {
       ...this.infoForClass,
       skillLevel,
       maxHp,
@@ -1191,111 +1374,17 @@ export class DamageCalculator {
       currentSp,
       stack: maxStack,
     };
-    const _baseSkillDamage = formula(formulaParams) + this.getFlatDmg(skillName);
-    let baseSkillDamage = floor(_baseSkillDamage);
 
-    const _NoStackbaseSkillDamage = formula({ ...formulaParams, stack: 0 }) + this.getFlatDmg(skillName);
-    const noStackNaseSkillDamage = floor(_NoStackbaseSkillDamage);
-
-    const params = {
-      baseSkillDamage,
-      skillData,
-      weaponPropertyAtk: typeof getElement === 'function' && !!getElement ? getElement(skillValue) : propertyAtk,
-      sizePenalty,
-      formulaParams,
-    };
-
-    let calculated: DamageResultModel;
-    let noStackMaxCriDamage = 0;
-    let noStackMaxDamage = 0;
-    let noStackMinCriDamage = 0;
-    let noStackMinDamage = 0;
-
-    if (skillName === 'Fist Spell' && typeof skillData.treatedAsSkillNameFn === 'function') {
-      const newSkillValue = skillData.treatedAsSkillNameFn(skillValue);
-      const newSkillData = this._class.atkSkills.find((a) => a.value === newSkillValue || a.levelList?.findIndex((b) => b.value === newSkillValue) >= 0);
-      if (newSkillData) {
-        calculated = this.calcMagicalSkillDamage({
-          ...params,
-          skillData: {
-            ...params.skillData,
-            formula: newSkillData.formula,
-            name: newSkillData.name,
-          },
-        });
-      }
-    } else if (customFormula && typeof customFormula === 'function') {
-      const skillPropertyAtk = typeof getElement === 'function' ? getElement(skillValue) : skillData.element || propertyAtk;
-      const propertyMultiplier = this.getPropertyMultiplier(skillPropertyAtk);
-
-      const d = customFormula({
-        ...formulaParams,
-        baseSkillDamage,
-        sizePenalty,
-        propertyMultiplier,
-        ...this.getPhisicalDefData(),
-      });
-      calculated = {
-        canCri: false,
-        minDamage: d,
-        maxDamage: d,
-        rawMinNoCri: d,
-        rawMaxNoCri: d,
-        propertyAtk: skillPropertyAtk,
-        propertyMultiplier: propertyMultiplier,
-        avgCriDamage: d,
-        avgNoCriDamage: d,
-        criDmgToMonster: d,
-        sizePenalty,
-      };
-    } else {
-      calculated = isMatk ? this.calcMagicalSkillDamage(params) : this.calcPhysicalSkillDamage(params);
-
-      if (maxStack > 0) {
-        const noStackParam = { ...params, baseSkillDamage: noStackNaseSkillDamage };
-        const noStackCalculated = isMatk ? this.calcMagicalSkillDamage(noStackParam) : this.calcPhysicalSkillDamage(noStackParam);
-        noStackMinDamage = noStackCalculated.rawMinNoCri;
-        noStackMaxDamage = noStackCalculated.rawMaxNoCri;
-        noStackMaxCriDamage = noStackCalculated.minDamage;
-        noStackMinCriDamage = noStackCalculated.maxDamage;
-      }
+    const invalidMsg = verifyItemFn && typeof verifyItemFn === 'function' ? verifyItemFn(calcBaseSkillDmgInput) : ''
+    if (invalidMsg) {
+      basicDmg.requireTxt = invalidMsg;
+      return { basicDmg, misc, basicAspd, skillDmg: { ...this.zeroSkillDmg } };
     }
 
-    let { minDamage, maxDamage } = calculated;
-    let skillPart2Label = '';
-    let skillMinDamage2 = 0;
-    let skillMaxDamage2 = 0;
-    if (typeof part2?.formula === 'function') {
-      const { formula: formula2, isMatk: isPart2Matk, isIncludeMain, label } = part2;
-      const _baseSkillDamage2 =
-        formula2({
-          ...this.infoForClass,
-          skillLevel,
-          maxHp,
-          maxSp,
-        }) + this.getFlatDmg(skillName);
-      const baseSkillDamage2 = floor(_baseSkillDamage2);
-      baseSkillDamage += baseSkillDamage2;
-
-      const params2 = {
-        baseSkillDamage: baseSkillDamage2,
-        skillData: { ...skillData, ...part2 },
-        weaponPropertyAtk: propertyAtk,
-        sizePenalty,
-        skillLevel,
-      };
-
-      const calcPart2 = isPart2Matk ? this.calcMagicalSkillDamage(params2) : this.calcPhysicalSkillDamage(params2);
-
-      if (isIncludeMain) {
-        minDamage += calcPart2.minDamage;
-        maxDamage += calcPart2.maxDamage;
-      } else {
-        skillPart2Label = label;
-        skillMinDamage2 = calcPart2.minDamage;
-        skillMaxDamage2 = calcPart2.maxDamage;
-      }
-    }
+    const skillDmgResult = this.calculateSkillDamage({ allDamageInput: args, sizePenalty, skillData, skillLevel })
+    const { baseSkillDamage, damage: calculated, damagePart2, stackDamage, secondaryDamage } = skillDmgResult
+    const { minDamage, maxDamage, } = calculated;
+    const { skillPart2Label, skillMaxDamage2, skillMinDamage2 } = damagePart2;
 
     const skillAspd = calcSkillAspd({ skillData, status: this.status, totalEquipStatus: this.totalBonus, skillLevel });
 
@@ -1313,7 +1402,7 @@ export class DamageCalculator {
     const skillAccRate = isHit100 || isMatk ? 100 : basicDmg.accuracy;
     const { avgCriDamage, avgNoCriDamage } = calculated;
 
-    const totalHit = typeof _totalHit === 'function' ? _totalHit(formulaParams) : _totalHit;
+    const totalHit = typeof _totalHit === 'function' ? _totalHit(calcBaseSkillDmgInput) : _totalHit;
     const isAutoSpell = autoSpellChance != 1;
     const skillHitsPerSec = Math.min(basicAspd.hitsPerSec || skillAspd.totalHitPerSec, skillAspd.totalHitPerSec);
     const oneHitDps = isAutoSpell
@@ -1362,16 +1451,19 @@ export class DamageCalculator {
       skillMinDamage2,
       skillMaxDamage2,
       maxStack,
-      noStackMaxCriDamage,
-      noStackMaxDamage,
-      noStackMinCriDamage,
-      noStackMinDamage,
       isAutoSpell,
       isUsedCurrentHP: typeof currentHpFn === 'function',
       isUsedCurrentSP: typeof currentSpFn === 'function',
       currentHp,
       currentSp,
       skillBonusFromEquipment: this.getSkillBonus(skillName),
+      secondSkillMinDamageLabel: secondaryDamage?.label,
+      secondSkillMinDamage: secondaryDamage?.minDamage,
+      secondSkillMaxDamage: secondaryDamage?.maxDamage,
+      secondSkillMinDamageNoCri: secondaryDamage?.rawMinNoCri,
+      secondSkillMaxDamageNoCri: secondaryDamage?.rawMaxNoCri,
+      secondSkillTotalHit: secondaryDamage?.totalHit,
+      ...stackDamage,
     };
 
     return { basicDmg, misc, skillDmg, skillAspd, basicAspd };

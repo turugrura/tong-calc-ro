@@ -78,6 +78,16 @@ export interface SkillDamageSummaryModel {
   effectedSkillDamageMax?: number;
   effectedSkillHitsPerSec?: number;
   effectedSkillDps?: number;
+
+  /**
+   * Secondary damage
+   */
+  secondSkillMinDamageLabel?: string;
+  secondSkillMinDamage?: number;
+  secondSkillMaxDamage?: number;
+  secondSkillMaxDamageNoCri?: number;
+  secondSkillMinDamageNoCri?: number;
+  secondSkillTotalHit?: number;
 }
 
 export interface SkillAspdModel {
