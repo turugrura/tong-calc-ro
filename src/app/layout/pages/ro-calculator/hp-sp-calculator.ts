@@ -127,8 +127,8 @@ export class HpSpCalculator {
 
   calculate() {
     try {
-      const baseHp = this.hpSpTable[this._dataIndex].baseHp[this._level];
-      const baseSp = this.hpSpTable[this._dataIndex].baseSp[this._level];
+      const baseHp = this.hpSpTable[this._dataIndex].baseHp[Math.min(this._level, 250)];
+      const baseSp = this.hpSpTable[this._dataIndex].baseSp[Math.min(this._level, 250)];
 
       const { hp, hpPercent, sp, spPercent } = this._totalBonus;
       // console.log({ baseHp, baseSp, hp, hpPercent, sp, spPercent });

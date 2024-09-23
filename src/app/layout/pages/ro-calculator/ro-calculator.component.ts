@@ -113,19 +113,12 @@ const monsterTypes = [
 ];
 
 const HideHpSp = {
-  [ClassName.Doram]: environment.production,
   [ClassName.SpiritHandler]: environment.production,
-  [ClassName.SuperNovice]: environment.production,
   [ClassName.HyperNovice]: environment.production,
-  [ClassName.Rebellion]: environment.production,
   [ClassName.NightWatch]: environment.production,
-  [ClassName.Kagerou]: environment.production,
   [ClassName.Shinkiro]: environment.production,
-  [ClassName.Oboro]: environment.production,
   [ClassName.Shiranui]: environment.production,
-  [ClassName.SoulReaper]: environment.production,
   [ClassName.SoulAscetic]: environment.production,
-  [ClassName.StarEmperor]: environment.production,
   [ClassName.SkyEmperor]: environment.production,
 };
 
