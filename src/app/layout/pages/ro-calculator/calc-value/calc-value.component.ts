@@ -68,8 +68,8 @@ export class CalcValueComponent {
   get _diffPercent() {
     if (!this.isDisplayCompare || !this.showPercentDiff) return '';
 
-    const avg1 = (this._min + this.max) / 2;
-    const avg2 = (this._min2 + this.max2) / 2;
+    const avg1 = (this.totalHit || 1) * (this._min + this.max) / 2;
+    const avg2 = (this.totalHit2 || 1) * (this._min2 + this.max2) / 2;
 
     const percentage = ((avg2 - avg1) * 100) / avg1;
     const prefix = percentage > 0 ? '+' : '';
