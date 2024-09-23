@@ -114,6 +114,7 @@ import { heroBootLt2, heroBootLt3, heroBootLt4 } from './hero_boots_lt';
 import { madBunnyLt4 } from './mad_bunny_lt';
 import { oasdWeapon3, oasdWeapon4 } from './osad_weapon';
 import { varmundt3, varmundt4, varmundtAcc3, varmundtAcc4, varmundtHiAcc2 } from './varmundt';
+import { vivatusHead3, vivatusHead4 } from './vivatus';
 
 enum TimeJewel {
   Str2 = 'aegis_313347',
@@ -1222,6 +1223,40 @@ export const EnchantTable: EntTable[] = [
   { name: "D_Glacier_Gatling", enchants: [null, dimWeapon2, dimWeapon3, dimWeapon4] },
   { name: "D_Glacier_Launcher", enchants: [null, dimWeapon2, dimWeapon3, dimWeapon4] },
 
+  { name: "Viva_Adul_Hat_WL1", enchants: [null, null, vivatusHead3, vivatusHead4] },
+  { name: "Viva_Adul_Hat_WL2", enchants: [null, null, vivatusHead3, vivatusHead4] },
+  { name: "Viva_Adul_Hat_SR1", enchants: [null, null, vivatusHead3, vivatusHead4] },
+  { name: "Viva_Adul_Hat_SR2", enchants: [null, null, vivatusHead3, vivatusHead4] },
+  { name: "Viva_Adul_Hat_AB1", enchants: [null, null, vivatusHead3, vivatusHead4] },
+  { name: "Viva_Adul_Hat_AB2", enchants: [null, null, vivatusHead3, vivatusHead4] },
+  { name: "Viva_Adul_Hat_SC1", enchants: [null, null, vivatusHead3, vivatusHead4] },
+  { name: "Viva_Adul_Hat_SC2", enchants: [null, null, vivatusHead3, vivatusHead4] },
+  { name: "Viva_Adul_Hat_RA1", enchants: [null, null, vivatusHead3, vivatusHead4] },
+  { name: "Viva_Adul_Hat_RA2", enchants: [null, null, vivatusHead3, vivatusHead4] },
+  { name: "Viva_Adul_Hat_LG1", enchants: [null, null, vivatusHead3, vivatusHead4] },
+  { name: "Viva_Adul_Hat_LG2", enchants: [null, null, vivatusHead3, vivatusHead4] },
+  { name: "Viva_Adul_Hat_GC1", enchants: [null, null, vivatusHead3, vivatusHead4] },
+  { name: "Viva_Adul_Hat_GC2", enchants: [null, null, vivatusHead3, vivatusHead4] },
+  { name: "Viva_Adul_Hat_SO1", enchants: [null, null, vivatusHead3, vivatusHead4] },
+  { name: "Viva_Adul_Hat_SO2", enchants: [null, null, vivatusHead3, vivatusHead4] },
+  { name: "Viva_Adul_Hat_RK1", enchants: [null, null, vivatusHead3, vivatusHead4] },
+  { name: "Viva_Adul_Hat_RK2", enchants: [null, null, vivatusHead3, vivatusHead4] },
+  { name: "Viva_Adul_Hat_WM1", enchants: [null, null, vivatusHead3, vivatusHead4] },
+  { name: "Viva_Adul_Hat_WM2", enchants: [null, null, vivatusHead3, vivatusHead4] },
+  { name: "Viva_Adul_Hat_NC1", enchants: [null, null, vivatusHead3, vivatusHead4] },
+  { name: "Viva_Adul_Hat_NC2", enchants: [null, null, vivatusHead3, vivatusHead4] },
+  { name: "Viva_Adul_Hat_GN1", enchants: [null, null, vivatusHead3, vivatusHead4] },
+  { name: "Viva_Adul_Hat_GN2", enchants: [null, null, vivatusHead3, vivatusHead4] },
+  { name: "Viva_Adul_Hat_KO1", enchants: [null, null, vivatusHead3, vivatusHead4] },
+  { name: "Viva_Adul_Hat_KO2", enchants: [null, null, vivatusHead3, vivatusHead4] },
+  { name: "Viva_Adul_Hat_RL1", enchants: [null, null, vivatusHead3, vivatusHead4] },
+  { name: "Viva_Adul_Hat_RL2", enchants: [null, null, vivatusHead3, vivatusHead4] },
+  { name: "Viva_Adul_Hat_SP1", enchants: [null, null, vivatusHead3, vivatusHead4] },
+  { name: "Viva_Adul_Hat_SP2", enchants: [null, null, vivatusHead3, vivatusHead4] },
+  { name: "Viva_Adul_Hat_SJ1", enchants: [null, null, vivatusHead3, vivatusHead4] },
+  { name: "Viva_Adul_Hat_SJ2", enchants: [null, null, vivatusHead3, vivatusHead4] },
+  { name: "Viva_Adul_Hat_SU1", enchants: [null, null, vivatusHead3, vivatusHead4] },
+  { name: "Viva_Adul_Hat_SU2", enchants: [null, null, vivatusHead3, vivatusHead4] },
 
 ];
 

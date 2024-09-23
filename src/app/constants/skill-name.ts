@@ -545,6 +545,7 @@ export const OFFENSIVE_SKILL_NAMES = [
   "Hawk Boomerang",
   "Metallic Fury",
   "Rose Blossom",
+  "Activation Attack Machine",
   "Noon Blast",
   "Sunset Blast",
   "Midnight Kick",

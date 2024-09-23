@@ -2033,10 +2033,9 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         const isSup = wTypeNames.has(WeaponTypeNameMapBySubTypeId[itemSubTypeId]);
 
         if (isLv4 && isSup) return true;
-        // return true
       }
 
-      if (a.label.startsWith('Dim Gla')) return true
+      // if (a.label.startsWith('Vivatus')) return true
 
       return onlyMe(a);
     };
@@ -2044,6 +2043,8 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       if (this.selectedCharacter.className === ClassName.SuperNovice) {
         return true;
       }
+
+      // if (a.label.startsWith('Helm of Faith')) return true
 
       return onlyMe(a);
     };

@@ -360,6 +360,7 @@ export const ef15 = [ExpertFighter._1, ExpertFighter._2, ExpertFighter._3, Exper
 export const em15 = [ExpertMagician._1, ExpertMagician._2, ExpertMagician._3, ExpertMagician._4, ExpertMagician._5];
 
 export const sp23 = [Spell._2, Spell._3];
+export const sp13 = [Spell._1, Spell._2, Spell._3];
 export const sp14 = [Spell._1, Spell._2, Spell._3, Spell._4];
 export const sp15 = [Spell._1, Spell._2, Spell._3, Spell._4, Spell._5];
 export const sp25 = [Spell._2, Spell._3, Spell._4, Spell._5];
