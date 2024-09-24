@@ -113,6 +113,7 @@ import {
 import { heroBootLt2, heroBootLt3, heroBootLt4 } from './hero_boots_lt';
 import { madBunnyLt4 } from './mad_bunny_lt';
 import { oasdWeapon3, oasdWeapon4 } from './osad_weapon';
+import { snowFwAccL2, snowFwAccL3, snowFwAccL4, snowFwAccR2, snowFwAccR3, snowFwAccR4, snowFwArmor2, snowFwArmor3, snowFwArmor4, snowFwBoot2, snowFwBoot3, snowFwBoot4, snowFwGarment2, snowFwGarment3, snowFwGarment4 } from './snow_flower';
 import { varmundt3, varmundt4, varmundtAcc3, varmundtAcc4, varmundtHiAcc2 } from './varmundt';
 import { vivatusHead3, vivatusHead4 } from './vivatus';
 
@@ -1258,6 +1259,16 @@ export const EnchantTable: EntTable[] = [
   { name: "Viva_Adul_Hat_SU1", enchants: [null, null, vivatusHead3, vivatusHead4] },
   { name: "Viva_Adul_Hat_SU2", enchants: [null, null, vivatusHead3, vivatusHead4] },
 
+  { name: "Snowflower_Armor", enchants: [null, snowFwArmor2, snowFwArmor3, snowFwArmor4] },
+  { name: "Snowflower_Robe", enchants: [null, snowFwArmor2, snowFwArmor3, snowFwArmor4] },
+  { name: "Snowflower_Boots", enchants: [null, snowFwBoot2, snowFwBoot3, snowFwBoot4] },
+  { name: "Snowflower_Shoes", enchants: [null, snowFwBoot2, snowFwBoot3, snowFwBoot4] },
+  { name: "Snowflower_Manteau", enchants: [null, snowFwGarment2, snowFwGarment3, snowFwGarment4] },
+  { name: "Snowflower_Muffler", enchants: [null, snowFwGarment2, snowFwGarment3, snowFwGarment4] },
+  { name: "Snowflower_Pendant", enchants: [null, snowFwAccR2, snowFwAccR3, snowFwAccR4] },
+  { name: "Snowflower_Necklace", enchants: [null, snowFwAccR2, snowFwAccR3, snowFwAccR4] },
+  { name: "Snowflower_Ring", enchants: [null, snowFwAccL2, snowFwAccL3, snowFwAccL4] },
+  { name: "Snowflower_Earring", enchants: [null, snowFwAccL2, snowFwAccL3, snowFwAccL4] },
 ];
 
 Object.freeze(EnchantTable);
