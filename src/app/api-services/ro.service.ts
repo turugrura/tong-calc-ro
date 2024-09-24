@@ -73,12 +73,12 @@ export class RoService {
             invalidBonusSet.add(realKey);
           }
 
-          for (const lineScript of Object.values(script).flat()) {
-            const [_, jobStr] = lineScript.match(/USED\[(.+?)\]/i) || []
-            if (jobStr) {
-              jobStr.split('||').filter(jobName => !validClassNameSet.has(jobName as any)).forEach((c) => invalidClassNameSet.add(c))
-            }
-          }
+          // for (const lineScript of Object.values(script).flat()) {
+          //   const [_, jobStr] = lineScript.match(/USED\[(.+?)\]/i) || []
+          //   if (jobStr) {
+          //     jobStr.split('||').filter(jobName => !validClassNameSet.has(jobName as any)).forEach((c) => invalidClassNameSet.add(c))
+          //   }
+          // }
         }
 
         if (invalidBonusSet.size > 0) console.error([...invalidBonusSet]);

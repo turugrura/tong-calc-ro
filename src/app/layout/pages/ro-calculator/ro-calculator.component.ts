@@ -2028,7 +2028,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         if (isLv4 && isSup) return true;
       }
 
-      // if (a.label.startsWith('Vivatus')) return true
+      // if (a.label.startsWith('Poenitentia')) return true
 
       return onlyMe(a);
     };
