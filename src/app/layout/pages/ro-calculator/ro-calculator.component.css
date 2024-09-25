@@ -519,3 +519,7 @@
 :host ::ng-deep .skill-selection .p-inputgroup .p-cascadeselect {
   width: 100%;
 }
+
+.lv200 {
+  color: var(--yellow-200);
+}

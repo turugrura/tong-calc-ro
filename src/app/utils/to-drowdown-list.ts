@@ -7,7 +7,7 @@ export const toDropdownList = <T extends Record<string, any>>(
   elementKey?: keyof T,
   extraKeys?: (keyof T)[],
 ): ItemDropdownModel[] => {
-  return list.map((a) => {
+  return list.map<ItemDropdownModel>((a) => {
     const ex = (extraKeys || []).reduce<T>((extraAttr, key) => {
       extraAttr[key] = a[key];
 
@@ -20,6 +20,7 @@ export const toDropdownList = <T extends Record<string, any>>(
       usableClass: a['usableClass'] || undefined,
       unusableClass: a['unusableClass'] || undefined,
       element: elementKey ? a[elementKey] || '' : undefined,
+      lv200ClassName: a['requiredLevel'] >= 200 ? 'lv200' : '',
       ...ex,
     };
   });
