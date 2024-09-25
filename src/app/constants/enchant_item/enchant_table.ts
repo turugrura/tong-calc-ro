@@ -95,6 +95,7 @@ import {
   str,
   vit,
 } from './_basic';
+import { crafted3, crafted4 } from './crafted_weapon';
 import { dimWeapon2, dimWeapon3, dimWeapon4 } from './dim_gracier';
 import {
   grayWolfAccL_slot2,
@@ -1269,6 +1270,34 @@ export const EnchantTable: EntTable[] = [
   { name: "Snowflower_Necklace", enchants: [null, snowFwAccR2, snowFwAccR3, snowFwAccR4] },
   { name: "Snowflower_Ring", enchants: [null, snowFwAccL2, snowFwAccL3, snowFwAccL4] },
   { name: "Snowflower_Earring", enchants: [null, snowFwAccL2, snowFwAccL3, snowFwAccL4] },
+
+  { name: "Solid_Claymore", enchants: [null, null, crafted3, crafted4] },
+  { name: "Solid_Edge", enchants: [null, null, crafted3, crafted4] },
+  { name: "Solid_Dagger", enchants: [null, null, crafted3, crafted4] },
+  { name: "Solid_Spear", enchants: [null, null, crafted3, crafted4] },
+  { name: "Solid_Manual", enchants: [null, null, crafted3, crafted4] },
+  { name: "Solid_Wand", enchants: [null, null, crafted3, crafted4] },
+  { name: "Solid_Rod", enchants: [null, null, crafted3, crafted4] },
+  { name: "Solid_Staff", enchants: [null, null, crafted3, crafted4] },
+  { name: "Precision_Fist", enchants: [null, null, crafted3, crafted4] },
+  { name: "Precision_Lute", enchants: [null, null, crafted3, crafted4] },
+  { name: "Precision_Whip", enchants: [null, null, crafted3, crafted4] },
+  { name: "Precision_Fuuma", enchants: [null, null, crafted3, crafted4] },
+  { name: "Precision_Bow", enchants: [null, null, crafted3, crafted4] },
+  { name: "Precision_Pistol", enchants: [null, null, crafted3, crafted4] },
+  { name: "Precision_Rifle", enchants: [null, null, crafted3, crafted4] },
+  { name: "Precision_Shotgun", enchants: [null, null, crafted3, crafted4] },
+  { name: "Precision_Gatling", enchants: [null, null, crafted3, crafted4] },
+  { name: "Precision_Grenade", enchants: [null, null, crafted3, crafted4] },
+  { name: "Wicked_Nymph_Card", enchants: [null, null, crafted3, crafted4] },
+  { name: "Wicked_Blade", enchants: [null, null, crafted3, crafted4] },
+  { name: "Wicked_Dagger", enchants: [null, null, crafted3, crafted4] },
+  { name: "Wicked_Edge", enchants: [null, null, crafted3, crafted4] },
+  { name: "Wicked_Book", enchants: [null, null, crafted3, crafted4] },
+  { name: "Wicked_Plant", enchants: [null, null, crafted3, crafted4] },
+  { name: "Wicked_Cross", enchants: [null, null, crafted3, crafted4] },
+  { name: "Wicked_Katar", enchants: [null, null, crafted3, crafted4] },
+  { name: "Wicked_Axe", enchants: [null, null, crafted3, crafted4] },
 ];
 
 Object.freeze(EnchantTable);

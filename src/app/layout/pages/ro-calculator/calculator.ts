@@ -817,24 +817,36 @@ export class Calculator {
       return calc(totalRefine, Number(refineCond2));
     }
 
+    // GVALUE[weapon==1]---2
+    const [, itemPosition, gradeRate] = condition.match(/GVALUE\[(\D+)==(\d+)]/) ?? [];
+    if (itemPosition && gradeRate) {
+      const grade = this.getGradeValue(this.mapGrade.get(itemPosition as any));
+
+      return calc(grade, Number(gradeRate));
+    }
+
     return 0;
+  }
+
+  private getGradeValue(grade: string) {
+    const x = {
+      d: 1,
+      D: 1,
+      c: 2,
+      C: 2,
+      b: 3,
+      B: 3,
+      a: 4,
+      A: 4,
+    };
+
+    return x[grade] || 0
   }
 
   private isValidGrade(itemGrade: string, targetGrade: string): boolean {
     if (!itemGrade || !targetGrade) return false;
 
-    const x = {
-      a: 1,
-      A: 1,
-      b: 2,
-      B: 2,
-      c: 3,
-      C: 3,
-      d: 4,
-      D: 4,
-    };
-
-    return x[itemGrade] <= x[targetGrade];
+    return this.getGradeValue(itemGrade) >= this.getGradeValue(targetGrade);
   }
 
   private validateCondition(params: { itemType: ItemTypeEnum; itemRefine: number; script: string }): {
