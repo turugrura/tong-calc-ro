@@ -1,1 +1,1 @@
-export * from './enchant_table'
+export * from './_enchant_table'

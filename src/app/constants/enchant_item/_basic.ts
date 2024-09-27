@@ -36,6 +36,7 @@ export enum Spell {
   _4 = 'Spell4',
   _5 = 'Spell5',
   _6 = 'Spell6',
+  _7 = 'Spell7',
 }
 export enum Fatal {
   _1 = 'Fatal1',
@@ -357,7 +358,10 @@ export const ea45 = [EA._4, EA._5];
 export const ea410 = [EA._4, EA._5, EA._6, EA._7, EA._8, EA._9, EA._10];
 
 export const ef15 = [ExpertFighter._1, ExpertFighter._2, ExpertFighter._3, ExpertFighter._4, ExpertFighter._5];
+export const ef35 = [ExpertFighter._3, ExpertFighter._4, ExpertFighter._5];
+
 export const em15 = [ExpertMagician._1, ExpertMagician._2, ExpertMagician._3, ExpertMagician._4, ExpertMagician._5];
+export const em35 = [ExpertMagician._3, ExpertMagician._4, ExpertMagician._5];
 
 export const sp23 = [Spell._2, Spell._3];
 export const sp13 = [Spell._1, Spell._2, Spell._3];
@@ -367,6 +371,7 @@ export const sp25 = [Spell._2, Spell._3, Spell._4, Spell._5];
 export const sp34 = [Spell._3, Spell._4];
 export const sp45 = [Spell._4, Spell._5];
 export const sp46 = [Spell._4, Spell._5, Spell._6];
+export const sp57 = [Spell._5, Spell._6, Spell._7];
 
 export const aspd12 = [AttackDelay._1, AttackDelay._2];
 export const aspd13 = [AttackDelay._1, AttackDelay._2, AttackDelay._3];
