@@ -51,7 +51,6 @@ import {
   ea15,
   ea23,
   ea25,
-  ea34,
   ea35,
   ea410,
   ea45,
@@ -70,7 +69,6 @@ import {
   fs45,
   fs67,
   fs68,
-  hitPlus34,
   int,
   matk12,
   matk13,
@@ -83,7 +81,6 @@ import {
   sh14,
   sh23,
   sh25,
-  sh34,
   sh45,
   shedding12,
   sp14,
@@ -95,6 +92,7 @@ import {
   str,
   vit,
 } from './_basic';
+import { cirAutumnGarment2, cirAutumnGarment3, cirAutumnGarment4, cirAutumnSummer2, cirAutumnWinter2, cirSpringGarment2, cirSpringGarment3, cirSpringGarment4, signetAcc3, signetAcc4, stellarAcc2, stellarAcc3, stellarAcc4 } from './constellation_tower';
 import { crafted3, crafted4 } from './crafted_weapon';
 import { dimWeapon2, dimWeapon3, dimWeapon4 } from './dim_gracier';
 import { droopingLt3, droopingLt4, redBlueLt3, redBlueLt4 } from './drooping_thanatos_lt';
@@ -687,106 +685,6 @@ const thanosHead4 = [
   Adamatine._3,
 ];
 
-const stellar = [
-  'Star_Of_Mettle1',
-  'Star_Of_Mettle2',
-  'Star_Of_Mettle3',
-  'Star_Of_Mettle4',
-  'Star_Of_Mettle5',
-  'Star_Of_MasterArcher1',
-  'Star_Of_MasterArcher2',
-  'Star_Of_MasterArcher3',
-  'Star_Of_MasterArcher4',
-  'Star_Of_MasterArcher5',
-  'Star_Of_Sharp1',
-  'Star_Of_Sharp2',
-  'Star_Of_Sharp3',
-  'Star_Of_Sharp4',
-  'Star_Of_Sharp5',
-  'Star_Of_Spell1',
-  'Star_Of_Spell2',
-  'Star_Of_Spell3',
-  'Star_Of_Spell4',
-  'Star_Of_Spell5',
-  'Star_Of_Speed1',
-  'Star_Of_Speed2',
-  'Star_Of_Speed3',
-  'Star_Of_Speed4',
-  'Star_Of_Speed5',
-  'Star_Of_Vital1',
-  'Star_Of_Vital2',
-  'Star_Of_Vital3',
-  'Star_Of_Vital4',
-  'Star_Of_Vital5',
-  // 'Star_Of_Spirit1', non damage
-  // 'Star_Of_Spirit2',
-  // 'Star_Of_Spirit3',
-  // 'Star_Of_Spirit4',
-  // 'Star_Of_Spirit5',
-];
-const stellarAcc4 = [...fs45, ...sp34, ...ea34, ...sh34, ...stellar];
-const stellarAcc3 = [...stellarAcc4];
-const stellarAcc2 = [
-  'Star_Cluster_Of_Str1',
-  'Star_Cluster_Of_Str2',
-  'Star_Cluster_Of_Str3',
-  'Star_Cluster_Of_Str4',
-  'Star_Cluster_Of_Str5',
-  'Star_Cluster_Of_Luk1',
-  'Star_Cluster_Of_Luk2',
-  'Star_Cluster_Of_Luk3',
-  'Star_Cluster_Of_Luk4',
-  'Star_Cluster_Of_Luk5',
-  'Star_Cluster_Of_Int1',
-  'Star_Cluster_Of_Int2',
-  'Star_Cluster_Of_Int3',
-  'Star_Cluster_Of_Int4',
-  'Star_Cluster_Of_Int5',
-  'Star_Cluster_Of_Res1',
-  'Star_Cluster_Of_Res2',
-  'Star_Cluster_Of_Res3',
-  'Star_Cluster_Of_Res4',
-  'Star_Cluster_Of_Res5',
-];
-
-const circualLife4 = ['Token_Of_Life'];
-const circualLife3 = [
-  ...sp34,
-  ...ea34,
-  ...sh34,
-  ...hitPlus34,
-  'Signet_Of_Pow1',
-  'Signet_Of_Pow2',
-  'Signet_Of_Pow3',
-  'Signet_Of_Pow4',
-  'Signet_Of_Pow5',
-  'Signet_Of_Con1',
-  'Signet_Of_Con2',
-  'Signet_Of_Con3',
-  'Signet_Of_Con4',
-  'Signet_Of_Con5',
-  'Signet_Of_Spl1',
-  'Signet_Of_Spl2',
-  'Signet_Of_Spl3',
-  'Signet_Of_Spl4',
-  'Signet_Of_Spl5',
-  'Signet_Of_Sta1',
-  'Signet_Of_Sta2',
-  'Signet_Of_Sta3',
-  'Signet_Of_Sta4',
-  'Signet_Of_Sta5',
-  'Signet_Of_Crt1',
-  'Signet_Of_Crt2',
-  'Signet_Of_Crt3',
-  'Signet_Of_Crt4',
-  'Signet_Of_Crt5',
-  // 'Signet_Of_Wis1', non damage
-  // 'Signet_Of_Wis2',
-  // 'Signet_Of_Wis3',
-  // 'Signet_Of_Wis4',
-  // 'Signet_Of_Wis5',
-];
-
 const moraAtkType1 = [...atkPer13, ...fs13, ...str(1, 3)];
 const moraAtkType2 = [...atkPer23, ...fs24, ...str(2, 4)];
 const moraAtkType3 = [AtkPercent._3, ...fs36, ...str(3, 5)];
@@ -1141,10 +1039,15 @@ export const EnchantTable: EntTable[] = [
   { name: 'Signet_Of_Spl_Star', enchants: [null, stellarAcc2, stellarAcc3, stellarAcc4] },
   { name: 'Signet_Of_Wis_Star', enchants: [null, stellarAcc2, stellarAcc3, stellarAcc4] },
 
-  { name: 'Signet_Of_Spring', enchants: [null, null, circualLife3, circualLife4] },
-  { name: 'Signet_Of_Summer', enchants: [null, null, circualLife3, circualLife4] },
-  { name: 'Signet_Of_Autumn', enchants: [null, null, circualLife3, circualLife4] },
-  { name: 'Signet_Of_Winter', enchants: [null, null, circualLife3, circualLife4] },
+  { name: 'Signet_Of_Spring', enchants: [null, null, signetAcc3, signetAcc4] },
+  { name: 'Signet_Of_Summer', enchants: [null, null, signetAcc3, signetAcc4] },
+  { name: 'Signet_Of_Autumn', enchants: [null, null, signetAcc3, signetAcc4] },
+  { name: 'Signet_Of_Winter', enchants: [null, null, signetAcc3, signetAcc4] },
+
+  { "name": "Circul_Of_Life_Spring", enchants: [null, cirSpringGarment2, cirSpringGarment3, cirSpringGarment4] },
+  { "name": "Circul_Of_Life_Summer", enchants: [null, cirAutumnSummer2, cirSpringGarment3, cirSpringGarment4] },
+  { "name": "Circul_Of_Life_Autumn", enchants: [null, cirAutumnGarment2, cirAutumnGarment3, cirAutumnGarment4] },
+  { "name": "Circul_Of_Life_Winter", enchants: [null, cirAutumnWinter2, cirSpringGarment3, cirSpringGarment4] },
 
   { name: 'Gray_W_Suits', enchants: [null, grayWolfArmor_slot2, grayWolfArmor_slot3, grayWolfArmor_slot4] },
   { name: 'Gray_W_Robe', enchants: [null, grayWolfArmor_slot2, grayWolfArmor_slot3, grayWolfArmor_slot4] },
