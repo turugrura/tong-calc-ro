@@ -136,3 +136,111 @@ export const flameRuneArmor2 = [
   'Barmund_Death4',
   'Barmund_Death5',
 ]
+
+export const fieryEarthArmor4 = [
+  'Flame_R_1',
+  'Flame_R_2',
+  'Flame_R_3',
+  'Flame_R_4',
+  'Flame_R_5',
+]
+export const fieryEarthArmor3 = [
+  'Earth_R_1',
+  'Earth_R_2',
+  'Earth_R_3',
+  'Earth_R_4',
+  'Earth_R_5',
+]
+export const fieryEarthArmor2 = [
+  'Flame_Earth_R_1',
+  'Flame_Earth_R_2',
+  'Flame_Earth_R_3',
+  'Flame_Earth_R_4',
+  'Flame_Earth_R_5',
+  'Flame_Earth_R_6',
+  'Flame_Earth_R_7',
+  'Flame_Earth_R_8',
+  'Flame_Earth_R_9',
+  'Flame_Earth_R_10',
+]
+
+export const icyStromArmor4 = [
+  'Ice_R_1',
+  'Ice_R_2',
+  'Ice_R_3',
+  'Ice_R_4',
+  'Ice_R_5',
+]
+export const icyStromArmor3 = [
+  'Storm_R_1',
+  'Storm_R_2',
+  'Storm_R_3',
+  'Storm_R_4',
+  'Storm_R_5',
+]
+export const icyStromArmor2 = [
+  'Ice_Storm_R_1',
+  'Ice_Storm_R_2',
+  'Ice_Storm_R_3',
+  'Ice_Storm_R_4',
+  'Ice_Storm_R_5',
+  'Ice_Storm_R_6',
+  'Ice_Storm_R_7',
+  'Ice_Storm_R_8',
+  'Ice_Storm_R_9',
+  'Ice_Storm_R_10',
+]
+
+export const soulPurifyArmor4 = [
+  'Soul_R_1',
+  'Soul_R_2',
+  'Soul_R_3',
+  'Soul_R_4',
+  'Soul_R_5',
+]
+export const soulPurifyArmor3 = [
+  'Purify_R_1',
+  'Purify_R_2',
+  'Purify_R_3',
+  'Purify_R_4',
+  'Purify_R_5',
+]
+export const soulPurifyArmor2 = [
+  'Soul_Purify_R_1',
+  'Soul_Purify_R_2',
+  'Soul_Purify_R_3',
+  'Soul_Purify_R_4',
+  'Soul_Purify_R_5',
+  'Soul_Purify_R_6',
+  'Soul_Purify_R_7',
+  'Soul_Purify_R_8',
+  'Soul_Purify_R_9',
+  'Soul_Purify_R_10',
+]
+
+export const corruptedPoisonArmor4 = [
+  'Corrupt_R_1',
+  'Corrupt_R_2',
+  'Corrupt_R_3',
+  'Corrupt_R_4',
+  'Corrupt_R_5',
+]
+export const corruptedPoisonArmor3 = [
+  'Poison_R_1',
+  'Poison_R_2',
+  'Poison_R_3',
+  'Poison_R_4',
+  'Poison_R_5',
+]
+export const corruptedPoisonArmor2 = [
+  'Corrupt_Poison_R_1',
+  'Corrupt_Poison_R_2',
+  'Corrupt_Poison_R_3',
+  'Corrupt_Poison_R_4',
+  'Corrupt_Poison_R_5',
+  'Corrupt_Poison_R_6',
+  'Corrupt_Poison_R_7',
+  'Corrupt_Poison_R_8',
+  'Corrupt_Poison_R_9',
+  'Corrupt_Poison_R_10',
+]

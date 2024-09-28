@@ -116,7 +116,7 @@ import { madBunnyLt4 } from './mad_bunny_lt';
 import { oasdWeapon3, oasdWeapon4 } from './osad_weapon';
 import { goodEvilBoot3_ABC, goodEvilBoot3_AG, goodEvilBoot3_BO, goodEvilBoot3_CD, goodEvilBoot3_DK, goodEvilBoot3_EM, goodEvilBoot3_HN, goodEvilBoot3_IG, goodEvilBoot3_IQ, goodEvilBoot3_MT, goodEvilBoot3_NW, goodEvilBoot3_SH, goodEvilBoot3_SHC, goodEvilBoot3_SKE, goodEvilBoot3_SOA, goodEvilBoot3_SS, goodEvilBoot3_TR, goodEvilBoot3_WH, goodEvilBoot4, goodEvilHead3, goodEvilHead4, sinsFateWeapon3, sinsFateWeapon4 } from './sins_and_fate';
 import { snowFwAccL2, snowFwAccL3, snowFwAccL4, snowFwAccR2, snowFwAccR3, snowFwAccR4, snowFwArmor2, snowFwArmor3, snowFwArmor4, snowFwBoot2, snowFwBoot3, snowFwBoot4, snowFwGarment2, snowFwGarment3, snowFwGarment4 } from './snow_flower';
-import { flameRuneArmor2, varmundt3, varmundt4, varmundtAcc3, varmundtAcc4, varmundtHiAcc2 } from './varmundt';
+import { corruptedPoisonArmor2, corruptedPoisonArmor3, corruptedPoisonArmor4, fieryEarthArmor2, fieryEarthArmor3, fieryEarthArmor4, flameRuneArmor2, icyStromArmor2, icyStromArmor3, icyStromArmor4, soulPurifyArmor2, soulPurifyArmor3, soulPurifyArmor4, varmundt3, varmundt4, varmundtAcc3, varmundtAcc4, varmundtHiAcc2 } from './varmundt';
 import { vivatusHead3, vivatusHead4 } from './vivatus';
 
 enum TimeJewel {
@@ -1192,6 +1192,15 @@ export const EnchantTable: EntTable[] = [
   { name: 'Death_Rune_Armor', enchants: [null, flameRuneArmor2, varmundt3, varmundt4] },
   { name: 'Death_Rune_Boots', enchants: [null, flameRuneArmor2, varmundt3, varmundt4] },
   { name: 'Death_Rune_Hood', enchants: [null, flameRuneArmor2, varmundt3, varmundt4] },
+
+  { name: 'Flame_E_R_Armor', enchants: [null, fieryEarthArmor2, fieryEarthArmor3, fieryEarthArmor4] },
+  { name: 'Flame_E_R_Armor2', enchants: [null, fieryEarthArmor2, fieryEarthArmor3, fieryEarthArmor4] },
+  { name: 'Ice_S_R_Suits', enchants: [null, icyStromArmor2, icyStromArmor3, icyStromArmor4] },
+  { name: 'Ice_S_R_Suits2', enchants: [null, icyStromArmor2, icyStromArmor3, icyStromArmor4] },
+  { name: 'Soul_P_R_Robe', enchants: [null, soulPurifyArmor2, soulPurifyArmor3, soulPurifyArmor4] },
+  { name: 'Soul_P_R_Robe2', enchants: [null, soulPurifyArmor2, soulPurifyArmor3, soulPurifyArmor4] },
+  { name: 'Corrupt_P_R_Cloth', enchants: [null, corruptedPoisonArmor2, corruptedPoisonArmor3, corruptedPoisonArmor4] },
+  { name: 'Corrupt_P_R_Cloth2', enchants: [null, corruptedPoisonArmor2, corruptedPoisonArmor3, corruptedPoisonArmor4] },
 
   { name: "Mad_Bunny_K_LT", enchants: [null, null, null, madBunnyLt4] },
 
