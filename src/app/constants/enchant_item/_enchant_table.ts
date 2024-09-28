@@ -97,6 +97,7 @@ import {
 } from './_basic';
 import { crafted3, crafted4 } from './crafted_weapon';
 import { dimWeapon2, dimWeapon3, dimWeapon4 } from './dim_gracier';
+import { droopingLt3, droopingLt4, redBlueLt3, redBlueLt4 } from './drooping_thanatos_lt';
 import {
   grayWolfAccL_slot2,
   grayWolfAccL_slot3,
@@ -1411,6 +1412,10 @@ export const EnchantTable: EntTable[] = [
   { name: 'FateSin_Boots_IG', enchants: [null, null, goodEvilBoot3_IG, goodEvilBoot4] },
   { name: 'FateSin_Boots_AG', enchants: [null, null, goodEvilBoot3_AG, goodEvilBoot4] },
   { name: 'FateSin_Boots_NW', enchants: [null, null, goodEvilBoot3_NW, goodEvilBoot4] },
+
+  { name: 'Dolor_HatK_LT', enchants: [null, null, droopingLt3, droopingLt4] },
+  { name: 'Red_Force_Pendant_LT', enchants: [null, null, redBlueLt3, redBlueLt4] },
+  { name: 'Blue_Mental_Pendant_LT', enchants: [null, null, redBlueLt3, redBlueLt4] },
 ];
 
 Object.freeze(EnchantTable);
