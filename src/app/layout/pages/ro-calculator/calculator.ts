@@ -47,6 +47,12 @@ const refinableItemTypes = [
 const mainStatuses: (keyof EquipmentSummaryModel)[] = ['str', 'dex', 'int', 'agi', 'luk', 'vit'];
 const traitStatuses: (keyof EquipmentSummaryModel)[] = ['pow', 'sta', 'wis', 'spl', 'con', 'crt'];
 
+interface ValidationResult {
+  isValid: boolean;
+  isEndValidate?: boolean;
+  restCondition: string;
+}
+
 export class Calculator {
   private readonly DEFAULT_PERFECT_HIT = 5;
 
@@ -849,10 +855,7 @@ export class Calculator {
     return this.getGradeValue(itemGrade) >= this.getGradeValue(targetGrade);
   }
 
-  private validateCondition(params: { itemType: ItemTypeEnum; itemRefine: number; script: string }): {
-    isValid: boolean;
-    restCondition: string;
-  } {
+  private validateCondition(params: { itemType: ItemTypeEnum; itemRefine: number; script: string }): ValidationResult {
     const { itemRefine, itemType, script } = params;
     let restCondition = script;
     const mainStatusRegex = /^(str|int|dex|agi|vit|luk|level):(\d+)&&(\d+===.+)/;
@@ -886,17 +889,22 @@ export class Calculator {
     }
 
     // GRADE[armor==A]===5
-    const [toRemoveGrade, conditionGrade] = restCondition.match(/GRADE\[(\D+)]/) ?? [];
-    if (conditionGrade) {
+    // EQUIP[Time Dimensions Rune Crown (Abyss Chaser)]GRADE[weapon==A]GRADE[headUpper==A]REFINE[weapon,headUpper==1]---1
+    for (let index = 0; index < 2; index++) {
+      const [toRemoveGrade, conditionGrade] = restCondition.match(/GRADE\[(\D+?)]/) ?? [];
+      if (!conditionGrade) break;
+
       const [rawitemType, targetGrade] = conditionGrade.split('==') ?? [];
       const tarGetitemType = rawitemType === 'me' ? itemType.replace(/Enchant\d/, '') : rawitemType;
-      // console.log({ itemType, tarGetitemType, rawitemType })
+      // console.log({ restCondition, itemType, tarGetitemType, rawitemType, targetGrade })
       const itemGrade = this.mapGrade.get(tarGetitemType as ItemTypeEnum);
       const isValid = this.isValidGrade(itemGrade, targetGrade);
       if (!isValid) return { isValid, restCondition };
 
       restCondition = restCondition.replace(toRemoveGrade, '');
       if (restCondition.startsWith('===')) return { isValid, restCondition: restCondition.replace('===', '') };
+
+      if (!restCondition.includes('GRADE[')) break;
     }
 
     // [weaponType=Pistol]20
@@ -1061,21 +1069,6 @@ export class Calculator {
     } else if (refineCond) {
       return { isValid: false, restCondition };
     }
-
-    // const [unusedRefineCond, refineCombo, refineCond2] = restCondition.match(/^REFINE\[(\D*?)=*=*(\d+)]/) ?? [];
-    // if (refineCombo && refineCond2) {
-    //   const totalRefine = refineCombo
-    //     .split(',')
-    //     .map((itemType) => this.mapRefine.get(itemType as ItemTypeEnum))
-    //     .reduce((sum, cur) => sum + (cur || 0), 0);
-    //   // console.log({ totalRefine, unusedRefineCond, refineCombo, anotherRefine });
-    //   if (totalRefine >= Number(refineCond)) {
-    //     restCondition = restCondition.replace(unused, '');
-    //     if (!restCondition.startsWith('===')) {
-    //       return this.validateCondition({ itemType, itemRefine, script: restCondition });
-    //     }
-    //   }
-    // }
 
     // POS[accRight]50
     const [unusedPos, position] = restCondition.match(/POS\[(\D+)]/) ?? [];
