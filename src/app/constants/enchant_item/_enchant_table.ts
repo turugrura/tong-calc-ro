@@ -92,7 +92,7 @@ import {
   str,
   vit,
 } from './_basic';
-import { cirAutumnGarment2, cirAutumnGarment3, cirAutumnGarment4, cirAutumnSummer2, cirAutumnWinter2, cirSpringGarment2, cirSpringGarment3, cirSpringGarment4, signetAcc3, signetAcc4, stellarAcc2, stellarAcc3, stellarAcc4 } from './constellation_tower';
+import { cirAutumnGarment2, cirAutumnGarment3, cirAutumnGarment4, cirAutumnSummer2, cirAutumnWinter2, cirSpringGarment2, cirSpringGarment3, cirSpringGarment4, manAutumnGarment2, manAutumnGarment3, manAutumnGarment4, manAutumnSummer2, manAutumnWinter2, manSpringGarment2, manSpringGarment3, manSpringGarment4, signetAcc3, signetAcc4, stellarAcc2, stellarAcc3, stellarAcc4 } from './constellation_tower';
 import { crafted3, crafted4 } from './crafted_weapon';
 import { dimWeapon2, dimWeapon3, dimWeapon4 } from './dim_gracier';
 import { droopingLt3, droopingLt4, redBlueLt3, redBlueLt4 } from './drooping_thanatos_lt';
@@ -1044,10 +1044,14 @@ export const EnchantTable: EntTable[] = [
   { name: 'Signet_Of_Autumn', enchants: [null, null, signetAcc3, signetAcc4] },
   { name: 'Signet_Of_Winter', enchants: [null, null, signetAcc3, signetAcc4] },
 
-  { "name": "Circul_Of_Life_Spring", enchants: [null, cirSpringGarment2, cirSpringGarment3, cirSpringGarment4] },
-  { "name": "Circul_Of_Life_Summer", enchants: [null, cirAutumnSummer2, cirSpringGarment3, cirSpringGarment4] },
-  { "name": "Circul_Of_Life_Autumn", enchants: [null, cirAutumnGarment2, cirAutumnGarment3, cirAutumnGarment4] },
-  { "name": "Circul_Of_Life_Winter", enchants: [null, cirAutumnWinter2, cirSpringGarment3, cirSpringGarment4] },
+  { name: "Circul_Of_Life_Spring", enchants: [null, cirSpringGarment2, cirSpringGarment3, cirSpringGarment4] },
+  { name: "Circul_Of_Life_Summer", enchants: [null, cirAutumnSummer2, cirSpringGarment3, cirSpringGarment4] },
+  { name: "Circul_Of_Life_Autumn", enchants: [null, cirAutumnGarment2, cirAutumnGarment3, cirAutumnGarment4] },
+  { name: "Circul_Of_Life_Winter", enchants: [null, cirAutumnWinter2, cirSpringGarment3, cirSpringGarment4] },
+  { name: "Season_Hood_Spring", enchants: [null, manSpringGarment2, manSpringGarment3, manSpringGarment4] },
+  { name: "Season_Hood_Summer", enchants: [null, manAutumnSummer2, manSpringGarment3, manSpringGarment4] },
+  { name: "Season_Hood_Autumn", enchants: [null, manAutumnGarment2, manAutumnGarment3, manAutumnGarment4] },
+  { name: "Season_Hood_Winter", enchants: [null, manAutumnWinter2, manSpringGarment3, manSpringGarment4] },
 
   { name: 'Gray_W_Suits', enchants: [null, grayWolfArmor_slot2, grayWolfArmor_slot3, grayWolfArmor_slot4] },
   { name: 'Gray_W_Robe', enchants: [null, grayWolfArmor_slot2, grayWolfArmor_slot3, grayWolfArmor_slot4] },

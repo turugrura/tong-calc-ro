@@ -100,7 +100,7 @@ export const signetAcc3 = [
   // 'Signet_Of_Wis5',
 ];
 
-export const cirSpringGarment4 = [
+export const manSpringGarment4 = [
   "Physical_Seed_1",
   "Physical_Seed_2",
   "Physical_Seed_3",
@@ -116,13 +116,16 @@ export const cirSpringGarment4 = [
   'Physical_Leaf_3',
   'Physical_Leaf_4',
   'Physical_Leaf_5',
+]
+export const cirSpringGarment4 = [
+  ...manSpringGarment4,
   'Physical_Flower_1',
   'Physical_Flower_2',
   'Physical_Flower_3',
   'Physical_Flower_4',
   'Physical_Flower_5',
 ]
-export const cirSpringGarment3 = [
+export const manSpringGarment3 = [
   "Physical_Fruit_1",
   "Physical_Fruit_2",
   "Physical_Fruit_3",
@@ -138,16 +141,16 @@ export const cirSpringGarment3 = [
   "Physical_Fruit_13",
   "Physical_Fruit_14",
   "Physical_Fruit_15",
+]
+export const cirSpringGarment3 = [
+  ...manSpringGarment3,
   "Physical_Fruit_16",
   "Physical_Fruit_17",
   "Physical_Fruit_18",
   "Physical_Fruit_19",
   "Physical_Fruit_20",
 ]
-export const cirSpringGarment2 = [
-  'Life_of_Spring_Pow',
-  'Life_of_Spring_Sta',
-  'Life_of_Spring_Crt',
+export const manSpringGarment2 = [
   "Life_of_Spring_1",
   "Life_of_Spring_2",
   "Life_of_Spring_3",
@@ -163,6 +166,12 @@ export const cirSpringGarment2 = [
   "Life_of_Spring_13",
   "Life_of_Spring_14",
   "Life_of_Spring_15",
+]
+export const cirSpringGarment2 = [
+  'Life_of_Spring_Pow',
+  'Life_of_Spring_Sta',
+  'Life_of_Spring_Crt',
+  ...manSpringGarment2,
   "Life_of_Spring_16",
   "Life_of_Spring_17",
   "Life_of_Spring_18",
@@ -170,10 +179,8 @@ export const cirSpringGarment2 = [
   "Life_of_Spring_20",
 ]
 
-export const cirAutumnSummer2 = [
-  'Life_of_Summer_Con',
-  'Life_of_Summer_Sta',
-  'Life_of_Summer_Crt',
+export const manAutumnSummer2 = [
+
   "Life_of_Summer_1",
   "Life_of_Summer_2",
   "Life_of_Summer_3",
@@ -189,6 +196,12 @@ export const cirAutumnSummer2 = [
   "Life_of_Summer_13",
   "Life_of_Summer_14",
   "Life_of_Summer_15",
+]
+export const cirAutumnSummer2 = [
+  'Life_of_Summer_Con',
+  'Life_of_Summer_Sta',
+  'Life_of_Summer_Crt',
+  ...manAutumnSummer2,
   "Life_of_Summer_16",
   "Life_of_Summer_17",
   "Life_of_Summer_18",
@@ -196,10 +209,7 @@ export const cirAutumnSummer2 = [
   "Life_of_Summer_20",
 ]
 
-export const cirAutumnWinter2 = [
-  'Life_of_Winter_Pow',
-  'Life_of_Winter_Con',
-  'Life_of_Winter_Crt',
+export const manAutumnWinter2 = [
   "Life_of_Winter_1",
   "Life_of_Winter_2",
   "Life_of_Winter_3",
@@ -215,6 +225,12 @@ export const cirAutumnWinter2 = [
   "Life_of_Winter_13",
   "Life_of_Winter_14",
   "Life_of_Winter_15",
+]
+export const cirAutumnWinter2 = [
+  'Life_of_Winter_Pow',
+  'Life_of_Winter_Con',
+  'Life_of_Winter_Crt',
+  ...manAutumnWinter2,
   "Life_of_Winter_16",
   "Life_of_Winter_17",
   "Life_of_Winter_18",
@@ -222,7 +238,7 @@ export const cirAutumnWinter2 = [
   "Life_of_Winter_20",
 ]
 
-export const cirAutumnGarment4 = [
+export const manAutumnGarment4 = [
   'Magical_Seed_1',
   'Magical_Seed_2',
   'Magical_Seed_3',
@@ -238,13 +254,16 @@ export const cirAutumnGarment4 = [
   'Magical_Leaf_3',
   'Magical_Leaf_4',
   'Magical_Leaf_5',
+]
+export const cirAutumnGarment4 = [
+  ...manAutumnGarment4,
   'Magical_Flower_1',
   'Magical_Flower_2',
   'Magical_Flower_3',
   'Magical_Flower_4',
   'Magical_Flower_5',
 ]
-export const cirAutumnGarment3 = [
+export const manAutumnGarment3 = [
   'Magical_Fruit_1',
   'Magical_Fruit_2',
   'Magical_Fruit_3',
@@ -260,16 +279,16 @@ export const cirAutumnGarment3 = [
   'Magical_Fruit_13',
   'Magical_Fruit_14',
   'Magical_Fruit_15',
+]
+export const cirAutumnGarment3 = [
+  ...manAutumnGarment3,
   'Magical_Fruit_16',
   'Magical_Fruit_17',
   'Magical_Fruit_18',
   'Magical_Fruit_19',
   'Magical_Fruit_20',
 ]
-export const cirAutumnGarment2 = [
-  'Life_of_Autumn_Spl',
-  'Life_of_Autumn_Sta',
-  'Life_of_Autumn_Wis',
+export const manAutumnGarment2 = [
   "Life_of_Autumn_1",
   "Life_of_Autumn_2",
   "Life_of_Autumn_3",
@@ -285,6 +304,12 @@ export const cirAutumnGarment2 = [
   "Life_of_Autumn_13",
   "Life_of_Autumn_14",
   "Life_of_Autumn_15",
+]
+export const cirAutumnGarment2 = [
+  'Life_of_Autumn_Spl',
+  'Life_of_Autumn_Sta',
+  'Life_of_Autumn_Wis',
+  ...manAutumnGarment2,
   "Life_of_Autumn_16",
   "Life_of_Autumn_17",
   "Life_of_Autumn_18",
