@@ -116,7 +116,7 @@ import { madBunnyLt4 } from './mad_bunny_lt';
 import { oasdWeapon3, oasdWeapon4 } from './osad_weapon';
 import { goodEvilBoot3_ABC, goodEvilBoot3_AG, goodEvilBoot3_BO, goodEvilBoot3_CD, goodEvilBoot3_DK, goodEvilBoot3_EM, goodEvilBoot3_HN, goodEvilBoot3_IG, goodEvilBoot3_IQ, goodEvilBoot3_MT, goodEvilBoot3_NW, goodEvilBoot3_SH, goodEvilBoot3_SHC, goodEvilBoot3_SKE, goodEvilBoot3_SOA, goodEvilBoot3_SS, goodEvilBoot3_TR, goodEvilBoot3_WH, goodEvilBoot4, goodEvilHead3, goodEvilHead4, sinsFateWeapon3, sinsFateWeapon4 } from './sins_and_fate';
 import { snowFwAccL2, snowFwAccL3, snowFwAccL4, snowFwAccR2, snowFwAccR3, snowFwAccR4, snowFwArmor2, snowFwArmor3, snowFwArmor4, snowFwBoot2, snowFwBoot3, snowFwBoot4, snowFwGarment2, snowFwGarment3, snowFwGarment4 } from './snow_flower';
-import { varmundt3, varmundt4, varmundtAcc3, varmundtAcc4, varmundtHiAcc2 } from './varmundt';
+import { flameRuneArmor2, varmundt3, varmundt4, varmundtAcc3, varmundtAcc4, varmundtHiAcc2 } from './varmundt';
 import { vivatusHead3, vivatusHead4 } from './vivatus';
 
 enum TimeJewel {
@@ -1179,6 +1179,19 @@ export const EnchantTable: EntTable[] = [
   { name: "Soul_M_Ring", enchants: [null, varmundtHiAcc2, varmundtAcc3, varmundtAcc4] },
   { name: "Venom_M_Ring", enchants: [null, varmundtHiAcc2, varmundtAcc3, varmundtAcc4] },
   { name: "Temple_M_Ring", enchants: [null, varmundtHiAcc2, varmundtAcc3, varmundtAcc4] },
+
+  { name: 'Flame_Rune_Armor', enchants: [null, flameRuneArmor2, varmundt3, varmundt4] },
+  { name: 'Flame_Rune_Boots', enchants: [null, flameRuneArmor2, varmundt3, varmundt4] },
+  { name: 'Flame_Rune_Hood', enchants: [null, flameRuneArmor2, varmundt3, varmundt4] },
+  { name: 'Plain_Rune_Armor', enchants: [null, flameRuneArmor2, varmundt3, varmundt4] },
+  { name: 'Plain_Rune_Boots', enchants: [null, flameRuneArmor2, varmundt3, varmundt4] },
+  { name: 'Plain_Rune_Hood', enchants: [null, flameRuneArmor2, varmundt3, varmundt4] },
+  { name: 'Ice_Rune_Armor', enchants: [null, flameRuneArmor2, varmundt3, varmundt4] },
+  { name: 'Ice_Rune_Boots', enchants: [null, flameRuneArmor2, varmundt3, varmundt4] },
+  { name: 'Ice_Rune_Hood', enchants: [null, flameRuneArmor2, varmundt3, varmundt4] },
+  { name: 'Death_Rune_Armor', enchants: [null, flameRuneArmor2, varmundt3, varmundt4] },
+  { name: 'Death_Rune_Boots', enchants: [null, flameRuneArmor2, varmundt3, varmundt4] },
+  { name: 'Death_Rune_Hood', enchants: [null, flameRuneArmor2, varmundt3, varmundt4] },
 
   { name: "Mad_Bunny_K_LT", enchants: [null, null, null, madBunnyLt4] },
 

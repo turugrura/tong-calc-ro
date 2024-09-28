@@ -113,3 +113,26 @@ export const varmundtHiAcc2 = [
   "Bio_Jam_Normal",
   "Bio_Jam_Boss",
 ]
+
+export const flameRuneArmor2 = [
+  'Barmund_Flame1',
+  'Barmund_Flame2',
+  'Barmund_Flame3',
+  'Barmund_Flame4',
+  'Barmund_Flame5',
+  'Barmund_Ice1',
+  'Barmund_Ice2',
+  'Barmund_Ice3',
+  'Barmund_Ice4',
+  'Barmund_Ice5',
+  'Barmund_Plain1',
+  'Barmund_Plain2',
+  'Barmund_Plain3',
+  'Barmund_Plain4',
+  'Barmund_Plain5',
+  'Barmund_Death1',
+  'Barmund_Death2',
+  'Barmund_Death3',
+  'Barmund_Death4',
+  'Barmund_Death5',
+]
