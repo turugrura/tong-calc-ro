@@ -437,11 +437,18 @@ export class DamageCalculator {
   }
 
   private getPeneResMres() {
+    const { race, type } = this.monster;
     const { pene_res = 0, pene_mres = 0 } = this.totalBonus;
+    const resByMonster = (this.totalBonus[`pene_res_race_${race}`] || 0) + (this.totalBonus[`pene_res_class_${type}`] || 0);
+    const mresByMonster = (this.totalBonus[`pene_mres_race_${race}`] || 0) + (this.totalBonus[`pene_mres_class_${type}`] || 0);
+    const totalPeneRes = pene_res + resByMonster;
+    const totalPeneMres = pene_mres + mresByMonster;
 
     return {
-      effected_pene_res: Math.min(pene_res, 50),
-      effected_pene_mres: Math.min(pene_mres, 50),
+      totalPeneRes,
+      totalPeneMres,
+      effected_pene_res: Math.min(totalPeneRes, 50),
+      effected_pene_mres: Math.min(totalPeneMres, 50),
     };
   }
 
@@ -1326,6 +1333,7 @@ export class DamageCalculator {
     const isMelee = _isMelee != null && typeof _isMelee === 'function' ? _isMelee(this.weaponData.data.typeName) : !!_isMelee;
 
     const label = calculated.canCri ? 'SkillCri' : 'Skill';
+    const { totalPeneRes, totalPeneMres } = this.getPeneResMres()
 
     const skillDmg: SkillDamageSummaryModel = {
       skillDamageLabel: `${label}` + (maxStack > 0 ? ` ${maxStack} stacks` : ''),
@@ -1339,7 +1347,7 @@ export class DamageCalculator {
       skillCanCri: calculated.canCri,
       skillTotalPene: isIgnoreDef ? 100 : totalPene,
       skillTotalPeneLabel: isMatk ? 'เจาะเวท' : 'เจาะกาย',
-      skillTotalPeneRes: isMatk ? this.totalBonus.pene_mres : this.totalBonus.pene_res,
+      skillTotalPeneRes: isMatk ? totalPeneMres : totalPeneRes,
       skillTotalPeneResLabel: isMatk ? 'เจาะ MRes' : 'เจาะ Res',
       skillMinDamage: minDamage,
       skillMaxDamage: maxDamage,

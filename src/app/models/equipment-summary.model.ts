@@ -111,9 +111,6 @@ export interface EquipmentSummaryModel {
   p_class_normal: number;
   p_class_boss: number;
 
-  pene_res: number;
-  pene_mres: number;
-
   p_pene_class_all: number;
   p_pene_class_normal: number;
   p_pene_class_boss: number;
@@ -129,6 +126,18 @@ export interface EquipmentSummaryModel {
   p_pene_race_demihuman: number;
   p_pene_race_angel: number;
   p_pene_race_dragon: number;
+
+  pene_res: number;
+  pene_res_race_formless: number;
+  pene_res_race_undead: number;
+  pene_res_race_brute: number;
+  pene_res_race_plant: number;
+  pene_res_race_insect: number;
+  pene_res_race_fish: number;
+  pene_res_race_demon: number;
+  pene_res_race_demihuman: number;
+  pene_res_race_angel: number;
+  pene_res_race_dragon: number;
 
   m_final: number;
   m_size_all: number;
@@ -191,6 +200,18 @@ export interface EquipmentSummaryModel {
   m_pene_race_demihuman: number;
   m_pene_race_brute: number;
   m_pene_race_angel: number;
+
+  pene_mres: number;
+  pene_mres_race_formless: number;
+  pene_mres_race_undead: number;
+  pene_mres_race_brute: number;
+  pene_mres_race_plant: number;
+  pene_mres_race_insect: number;
+  pene_mres_race_fish: number;
+  pene_mres_race_demon: number;
+  pene_mres_race_demihuman: number;
+  pene_mres_race_angel: number;
+  pene_mres_race_dragon: number;
 
   // Other from skill
   forceCri?: number;
