@@ -263,6 +263,7 @@ export const OFFENSIVE_SKILL_NAMES = [
   'Acidified Zone Water',
   'Acidified Zone Wind',
   'Adoramus',
+  'All Bloom',
   'Aimed Bolt',
   'Anti-Material Blast',
   'Arbitrium',
