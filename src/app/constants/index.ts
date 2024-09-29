@@ -1,6 +1,5 @@
 export * from './allow-ammo-mapper';
 export * from './allow-left-weapon-mapper';
-export * from './allow-shield-table';
 export * from './aspd-potion-list';
 export * from './available-tags';
 export * from './card-position.enum';

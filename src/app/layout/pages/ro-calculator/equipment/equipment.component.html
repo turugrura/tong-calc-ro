@@ -23,7 +23,7 @@
             </div>
           </ng-template>
           <ng-template let-item pTemplate="item">
-            <div class="flex gap-1">
+            <div class="flex gap-1 {{ item.lv200ClassName }}">
               <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
               <div>{{ item.label }}</div>
             </div>
@@ -38,7 +38,7 @@
           [(ngModel)]="itemGrade"
           (onChange)="onSelectGrade($event.value)"
           (onClear)="onSelectGrade('')"
-          placeholder="grade"
+          placeholder="ungrade"
         ></p-dropdown>
       </div>
       <div class="col-4" style="min-width: 70px" *ngIf="refineList.length > 0">

@@ -6,13 +6,11 @@ import { MainModel } from '../../../models/main.model';
 import { InfoForClass } from '../../../models/info-for-class.model';
 import { HpSpCalculator } from './hp-sp-calculator';
 import { HpSpTable } from '../../../models/hp-sp-table.model';
-import { environment } from 'src/environments/environment';
 import { DamageCalculator } from './damage-calculator';
 import { BasicAspdModel, BasicDamageSummaryModel, MiscModel, SkillAspdModel, SkillDamageSummaryModel } from '../../../models/damage-summary.model';
 import { ChanceModel } from '../../../models/chance-model';
 import {
   AllowAmmoMapper,
-  AllowShieldTable,
   ClassAmmoMapper,
   ElementType,
   ItemSubTypeId,
@@ -22,7 +20,7 @@ import {
   SizePenaltyMapper,
   WeaponAmmoMapper,
 } from 'src/app/constants';
-import { CharacterBase, ClassName } from 'src/app/jobs';
+import { CharacterBase } from 'src/app/jobs';
 import { createRawTotalBonus, floor, isNumber, round } from 'src/app/utils';
 import { Monster, Weapon } from 'src/app/domain';
 import { SKILL_NAME } from 'src/app/constants/skill-name';
@@ -386,16 +384,16 @@ export class Calculator {
   }
 
   isAllowShield() {
-    if (!this.weaponData.data?.typeName && !environment.production) {
-      switch (this._class.className) {
-        case ClassName.Warlock:
-          return true;
-      }
+    // if (!this.weaponData.data?.typeName && !environment.production) {
+    //   switch (this._class.className) {
+    //     case ClassName.Warlock:
+    //       return true;
+    //   }
 
-      return false;
-    }
+    //   return false;
+    // }
 
-    return AllowShieldTable[this.weaponData.data?.typeName] || false;
+    return this.weaponData.isAllowShield();
   }
 
   getAmmoSubTypeId() {

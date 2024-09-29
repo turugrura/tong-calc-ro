@@ -335,6 +335,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   private allSubs: Subscription[] = [];
 
   hiddenMap = { ammu: true, shield: true };
+  isAllowLeftWeaponByClass = false;
   showLeftWeapon = false;
 
   isEnableCompare = false;
@@ -426,8 +427,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
           return;
         }
 
-        const isClassAllow = AllowLeftWeaponMapper[this.selectedCharacter.className] || false;
-        this.showLeftWeapon = isClassAllow && !this.hiddenMap.shield;
+        this.showLeftWeapon = this.isAllowLeftWeaponByClass && !this.hiddenMap.shield;
         if (this.model.leftWeapon && !this.showLeftWeapon) {
           this.model.leftWeapon = undefined;
           this.onSelectItem(ItemTypeEnum.leftWeapon);
@@ -722,7 +722,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       }
     });
 
-    const calc = calculator;
+    const calc = calculator.setClass(this.selectedCharacter);
     const rawOptionTxts = [...this.model.rawOptionTxts];
     const isShadowOption = {
       [ItemTypeEnum.shadowWeapon]: true,
@@ -733,8 +733,27 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       [ItemTypeEnum.shadowPendant]: true,
     };
     if (compareModel) {
-      // if compare the item, should get options from its.
       const model2 = { ...this.model, ...compareModel };
+      calc.loadItemFromModel(model2);
+
+      const isAllowShield = calc.isAllowShield()
+      if (!isAllowShield) {
+        const clearList = [ItemTypeEnum.shield, ItemTypeEnum.leftWeapon]
+        for (const itemT of clearList) {
+          calc.setItem({ itemId: undefined, itemType: itemT })
+          for (const relatedItemType of MainItemWithRelations[itemT]) {
+            calc.setItem({ itemId: undefined, itemType: relatedItemType })
+          }
+        }
+
+        const [_, slots] = ItemOptionTable.find(([itemType]) => itemType === ItemTypeEnum.shield) || ['', []]
+        for (const slot of slots) {
+          rawOptionTxts[slot] = null;
+          this.model2.rawOptionTxts[slot] = null;
+        }
+      }
+
+      // if compare the item, should get options from its.
       if (this.compareItemNames?.includes(ItemTypeEnum.weapon)) {
         const itemId = this.model2[ItemTypeEnum.weapon];
         for (let slot = ItemOptionNumber.W_Left_1; slot <= ItemOptionNumber.W_Left_3; slot++) {
@@ -742,6 +761,13 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
             this.model2.rawOptionTxts[slot] = null;
           }
           rawOptionTxts[slot] = this.model2.rawOptionTxts[slot];
+        }
+
+        for (let slot = ItemOptionNumber.W_Right_1; slot <= ItemOptionNumber.W_Right_3; slot++) {
+          if (!itemId || !isAllowShield) {
+            this.model2.rawOptionTxts[slot] = null;
+            rawOptionTxts[slot] = this.model2.rawOptionTxts[slot];
+          }
         }
       }
 
@@ -776,8 +802,6 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
           }
         }
       }
-
-      calc.loadItemFromModel(model2);
     } else {
       // clean if the itemType not allow to have options
       this.model.rawOptionTxts = toRawOptionTxtList(this.model, this.items);
@@ -786,7 +810,6 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     }
 
     calc
-      .setClass(this.selectedCharacter)
       .setMonster(this.monsterDataMap[this.selectedMonster])
       .setEquipAtkSkillAtk(equipAtks)
       .setBuffBonus({ masteryAtk: buffMasterys, equipAtk: buffEquips })
@@ -1566,6 +1589,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     this.calculator.setClass(this.selectedCharacter);
     this.isAllowTraitStat = this.selectedCharacter.isAllowTraitStat();
     this.canPromote = !!JobPromotionMapper[this.model.class]
+    this.isAllowLeftWeaponByClass = AllowLeftWeaponMapper[this.selectedCharacter.className] || false;
   }
 
   private setClassSkill() {
@@ -1816,6 +1840,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
       switch (itemTypeId) {
         case ItemTypeId.WEAPON:
+          // if (!item.name.startsWith('Furious')) continue;
           weaponList.push(item);
           if (itemSubTypeId === 256 || itemSubTypeId === 257) {
             leftWeaponList.push(item);
@@ -1836,6 +1861,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
           } else if (location === HeadGearLocation.Lower) {
             headLowerList.push(item);
           } else {
+            // if (!item.name.startsWith('Furious')) continue;
             headUpperList.push(item);
           }
           continue;
@@ -2007,6 +2033,8 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   private setItemDropdownList() {
     const classNameSet = this.selectedCharacter.classNameSet;
     const onlyMe = (a: ItemDropdownModel) => {
+      // if (a.label.startsWith('Boots of Good')) return true
+
       if (Array.isArray(a.unusableClass) && a.unusableClass.length > 0) {
         const cannot = a.unusableClass.some((x) => classNameSet.has(x));
         if (cannot) return false;
@@ -2028,7 +2056,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         if (isLv4 && isSup) return true;
       }
 
-      // if (a.label.startsWith('Poenitentia')) return true
+      // if (a.label.startsWith('Furious')) return true
 
       return onlyMe(a);
     };
@@ -2037,7 +2065,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         return true;
       }
 
-      // if (a.label.startsWith('Helm of Faith')) return true
+      // if (a.label.startsWith('Furious')) return true
 
       return onlyMe(a);
     };
@@ -2370,14 +2398,17 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     this.updateItemEvent.next(itemType);
   }
 
-  onSelectGrade(itemType: string, itemId: number, grade: string) {
-    this.calculator.setItem({ itemType: itemType as ItemTypeEnum, itemId, grade });
+  onSelectGrade(itemType: string, _itemId: number, _grade: string) {
+    // this.calculator.setItem({ itemType: itemType as ItemTypeEnum, itemId, grade });
     this.updateItemEvent.next(itemType);
   }
 
   onClearItem(itemType: string) {
     if (this.model[`${itemType}Refine`] > 0) {
       this.model[`${itemType}Refine`] = 0;
+    }
+    if (this.model[`${itemType}Grade`]) {
+      this.model[`${itemType}Grade`] = '';
     }
 
     if (itemType === ItemTypeEnum.weapon) {

@@ -506,13 +506,15 @@ export abstract class CharacterBase {
     const { weapon, weapon2, isEquipShield, aspd, aspdPercent, totalAgi, totalDex, potionAspds, skillAspd } = a;
     const aspdByPotion = potionAspds.reduce((total, potionAspd) => total + (AspdPotionFixBonus.get(potionAspd) || 0), 0);
 
+    const isAllowShield = weapon.isAllowShield()
+
     const { rangeType, subTypeName } = weapon.data;
     const { baseAspd, shieldPenalty } = this.calcBaseAspd(subTypeName);
-    const leftWeapon = this.calcLeftWeaponAspd(weapon2?.data?.subTypeName);
+    const leftWeapon = isAllowShield ? this.calcLeftWeaponAspd(weapon2?.data?.subTypeName) : 0;
     const isRange = rangeType === 'range';
     const statAspd = Math.sqrt((totalAgi * totalAgi) / 2 + (totalDex * totalDex) / (isRange ? 7 : 5)) / 4;
     const potionSkillAspd = ((aspdByPotion + skillAspd) * totalAgi) / 200;
-    const rawCalcAspd = Math.floor(statAspd + potionSkillAspd + (isEquipShield ? shieldPenalty : 0));
+    const rawCalcAspd = Math.floor(statAspd + potionSkillAspd + ((isAllowShield && isEquipShield) ? shieldPenalty : 0));
 
     const baseAspd2 = Math.floor((baseAspd + leftWeapon + rawCalcAspd) * (100 - a.decreaseSkillAspdPercent) * 0.01);
     const equip = Math.floor((195 - baseAspd2) * (aspdPercent * 0.01));

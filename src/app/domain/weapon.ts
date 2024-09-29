@@ -115,6 +115,20 @@ const weaponUpgradeTable: Record<number, Record<number, { bonus: number; overUpg
   },
 };
 
+export const AllowShieldTable: Partial<Record<WeaponTypeName, true>> = {
+  sword: true,
+  whip: true,
+  instrument: true,
+  fist: true,
+  dagger: true,
+  mace: true,
+  rod: true,
+  book: true,
+  spear: true,
+  axe: true,
+};
+
+
 const IsLongRange: Partial<Record<WeaponTypeName, boolean>> = {
   gun: true,
   bow: true,
@@ -184,6 +198,12 @@ export class Weapon {
     if (!this._typeName) return false;
 
     return wSubTypes.some((t) => t === this._subTypeName);
+  }
+
+  isAllowShield() {
+    if (!this._typeName) return true
+
+    return AllowShieldTable[this._typeName] || false;
   }
 
   get data() {
