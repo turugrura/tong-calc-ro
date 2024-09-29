@@ -275,6 +275,6 @@ export const JobPromotionMapper: Partial<Record<ClassIDEnum, number>> = {
   [ClassIDEnum.Rebellion]: ClassIDEnum.NightWatch,
   [ClassIDEnum.Doram]: ClassIDEnum.SpiritHandler,
   [ClassIDEnum.SuperNovice]: ClassIDEnum.HyperNovice,
-  [ClassIDEnum.Oboro]: ClassIDEnum.Shinkiro,
-  [ClassIDEnum.Kagerou]: ClassIDEnum.Shiranui,
+  [ClassIDEnum.Oboro]: ClassIDEnum.Shiranui,
+  [ClassIDEnum.Kagerou]: ClassIDEnum.Shinkiro,
 } as const
