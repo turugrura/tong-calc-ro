@@ -15,4 +15,5 @@ export interface InfoForClass {
   totalBonus: EquipmentSummaryModel;
   equipmentBonus: Partial<Record<ItemTypeEnum, EquipmentSummaryModel>>;
   skillName: SKILL_NAME;
+  raidMultiplier: number;
 }
