@@ -994,6 +994,15 @@ export class Calculator {
       break;
     }
 
+    // POS[accRight]50
+    const [unusedPos, position] = restCondition.match(/POS\[(\D+?)]/) ?? [];
+    if (position) {
+      if (position !== itemType) return { isValid: false, restCondition }
+
+      restCondition = restCondition.replace(unusedPos, '');
+      if (restCondition.startsWith('===')) return { isValid: true, restCondition };
+    }
+
     // EQUIP[Bear's Power]===50
     const [setCondition, itemSet] = restCondition.match(/^EQUIP\[(.+?)]/) ?? [];
     if (itemSet) {
@@ -1067,19 +1076,6 @@ export class Calculator {
         restCondition,
       };
     } else if (refineCond) {
-      return { isValid: false, restCondition };
-    }
-
-    // POS[accRight]50
-    const [unusedPos, position] = restCondition.match(/POS\[(\D+)]/) ?? [];
-    if (position) {
-      if (position === itemType) {
-        return {
-          isValid: true,
-          restCondition: restCondition.replace(unusedPos, ''),
-        };
-      }
-
       return { isValid: false, restCondition };
     }
 
