@@ -201,12 +201,23 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
 
   updates: { v: string; date: string; logs: string[] }[] = [
     {
+      v: 'V3.1.1',
+      date: '29-09-2567',
+      logs: [
+        "Added item series (Poenitentia, Snow Flower, Geffen Night Arena, Crafted weapons, Varmundt's Biosphere, Hall of Life, Furious, Heroic Token)",
+        'Added requested items/monsters',
+        'Higlight dropdown item lv >= 200',
+        'Fixed 2-handed weapon comparing',
+        'Fixed reported bugs',
+      ],
+    },
+    {
       v: 'V3.1.0',
       date: '23-09-2567',
       logs: [
         'Added Night Watch skills',
         'Updated base HP/SP (ขอบคุณข้อมูลจากปู่Sigma)',
-        'Added items (OSAD, Dim Glacier, Vivatus)',
+        'Added item series (OSAD, Dim Glacier, Vivatus)',
         'Added requested items',
         'Fixed reported bugs'
       ],
@@ -216,7 +227,7 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
       date: '21-09-2567',
       logs: [
         'Supported 4th class with 2nd skill version (only main Class)',
-        'Added items (Thanos AD weapon, The Hero LT weapon, Nebula set, Gray wolf set, Varmundt set)',
+        'Added item series (Thanos AD weapon, The Hero LT weapon, Nebula set, Gray wolf set, Varmundt set)',
         'Added Official updated items'
       ],
     },

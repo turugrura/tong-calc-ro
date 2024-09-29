@@ -11023,6 +11023,59 @@
       "raceName": "Formless"
     }
   },
+  "20928": {
+    "id": 20928,
+    "dbname": "CHIMERA_THEONE",
+    "name": "The One",
+    "spawn": "amicitia2",
+    "stats": {
+      "attackRange": 2,
+      "level": 245,
+      "health": 275042400,
+      "sp": 1,
+      "str": 415,
+      "int": 384,
+      "vit": 221,
+      "dex": 264,
+      "agi": 244,
+      "luk": 188,
+      "rechargeTime": 1440,
+      "atk1": 14541,
+      "atk2": 2756,
+      "attack": {
+        "minimum": 12292,
+        "maximum": 18109
+      },
+      "magicAttack": {
+        "minimum": 2558,
+        "maximum": 4211
+      },
+      "defense": 654,
+      "baseExperience": 7599887,
+      "jobExperience": 5319921,
+      "aggroRange": 10,
+      "escapeRange": 12,
+      "movementSpeed": 150,
+      "attackSpeed": 2880,
+      "attackedSpeed": 576,
+      "element": 60,
+      "scale": 2,
+      "race": 0,
+      "magicDefense": 114,
+      "hit": 689,
+      "flee": 679,
+      "ai": "MONSTER_TYPE_21",
+      "mvp": 1,
+      "class": 1,
+      "attr": 520,
+      "res": 271,
+      "mres": 470,
+      "elementName": "Neutral 3",
+      "elementShortName": "Neutral",
+      "scaleName": "Large",
+      "raceName": "Formless"
+    }
+  },
   "20929": {
     "id": 20929,
     "dbname": "GIANT_CAPUT",
@@ -11710,6 +11763,59 @@
       "elementShortName": "Dark",
       "scaleName": "Medium",
       "raceName": "Demon"
+    }
+  },
+  "20943": {
+    "id": 20943,
+    "dbname": "DEATH_WITCH",
+    "name": "Death Witch",
+    "spawn": "nif_dun02",
+    "stats": {
+      "attackRange": 3,
+      "level": 255,
+      "health": 398856250,
+      "sp": 1,
+      "str": 424,
+      "int": 423,
+      "vit": 214,
+      "dex": 241,
+      "agi": 236,
+      "luk": 174,
+      "rechargeTime": 517,
+      "atk1": 14658,
+      "atk2": 2687,
+      "attack": {
+        "minimum": 12405,
+        "maximum": 18268
+      },
+      "magicAttack": {
+        "minimum": 2558,
+        "maximum": 4171
+      },
+      "defense": 687,
+      "baseExperience": 9051055,
+      "jobExperience": 6335739,
+      "aggroRange": 10,
+      "escapeRange": 12,
+      "movementSpeed": 150,
+      "attackSpeed": 1134,
+      "attackedSpeed": 480,
+      "element": 47,
+      "scale": 1,
+      "race": 7,
+      "magicDefense": 210,
+      "hit": 691,
+      "flee": 666,
+      "ai": "MONSTER_TYPE_21",
+      "mvp": 1,
+      "class": 1,
+      "attr": 520,
+      "res": 273,
+      "mres": 539,
+      "elementName": "Dark 2",
+      "elementShortName": "Dark",
+      "scaleName": "Medium",
+      "raceName": "DemiHuman"
     }
   },
   "20994": {
