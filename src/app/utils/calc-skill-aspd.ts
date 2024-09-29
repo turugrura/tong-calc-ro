@@ -19,6 +19,9 @@ export const calcSkillAspd = (params: {
   let skillCd = typeof baseSkillCd === 'function' ? baseSkillCd(skillLevel) : baseSkillCd;
   let skillFct = typeof baseSkillFct === 'function' ? baseSkillFct(skillLevel) : baseSkillFct;
   let skillVct = typeof baseSkillVct === 'function' ? baseSkillVct(skillLevel) : baseSkillVct;
+  skillCd = floor(skillCd, 3)
+  skillFct = floor(skillFct, 3)
+  skillVct = floor(skillVct, 3)
   if (totalEquipStatus['releasedSkill']) {
     skillCd = 0;
     skillFct = 0;
