@@ -380,7 +380,7 @@ export class DamageCalculator {
 
     const hitsPerSec = floor(50 / (200 - totalAspd));
 
-    return { totalAspd, hitsPerSec };
+    return { totalAspd, hitsPerSec: Math.max(hitsPerSec, 1) };
   }
 
   private getMiscData(): MiscModel {
@@ -1315,7 +1315,7 @@ export class DamageCalculator {
 
     const totalHit = typeof _totalHit === 'function' ? _totalHit(formulaParams) : _totalHit;
     const isAutoSpell = autoSpellChance != 1;
-    const skillHitsPerSec = Math.min(basicAspd.hitsPerSec || skillAspd.totalHitPerSec, skillAspd.totalHitPerSec);
+    const skillHitsPerSec = Math.min(skillAspd.totalHitPerSec || basicAspd.hitsPerSec, basicAspd.hitsPerSec);
     const oneHitDps = isAutoSpell
       ? 0
       : calcDmgDps({
