@@ -1488,9 +1488,17 @@ export class Calculator {
       return this;
     }
 
-    const { basicDmg, skillDmg, basicAspd, skillAspd } = this.dmgCalculator
-      .setExtraBonus(c)
-      .calculateAllDamages({ skillValue, propertyAtk: this.propertyBasicAtk, maxHp: this.maxHp, maxSp: this.maxSp });
+    const calc = this.dmgCalculator.setExtraBonus(c)
+    const { maxHp, maxSp } = this.hpSpCalculator.setAllInfo({
+      ...calc.infoForClass,
+      baseHp: 0,
+      baseSp: 0,
+    })
+      .calculate()
+      .getTotalSummary()
+
+    const { basicDmg, skillDmg, basicAspd, skillAspd } = calc
+      .calculateAllDamages({ skillValue, propertyAtk: this.propertyBasicAtk, maxHp, maxSp });
     // console.log(skillDmg);
 
     this.damageSummary = {
