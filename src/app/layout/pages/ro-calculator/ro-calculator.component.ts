@@ -1523,7 +1523,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   private resetItemDescription() {
     const equipItemTypes: string[] = [];
     const map = new Map<ItemTypeEnum, number>();
-    const mapRefine = new Map<number, number>();
+    const mapRefine = new Map<string, number>();
 
     for (const [itemType, relations] of Object.entries(MainItemWithRelations)) {
       const itemId = this.equipItemMap.get(itemType as any);
@@ -1531,7 +1531,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         equipItemTypes.push(itemType);
         map.set(itemType as any, itemId);
 
-        mapRefine.set(itemId, this.model[`${itemType}Refine`]);
+        mapRefine.set(itemType, this.model[`${itemType}Refine`]);
       }
 
       for (const itemType2 of relations) {
@@ -1549,7 +1549,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       this.selectedItemDesc = undefined;
     }
     this.equipItems = [...this.equipItemIdItemTypeMap.entries()].map(([itemType, id]) => {
-      const refine = mapRefine.get(id);
+      const refine = mapRefine.get(itemType);
       const prefixLabel = refine && refine > 0 ? ` +${refine} ` : '';
 
       return {
