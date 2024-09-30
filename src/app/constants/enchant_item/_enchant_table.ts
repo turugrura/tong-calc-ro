@@ -98,6 +98,7 @@ import { dimWeapon2, dimWeapon3, dimWeapon4 } from './dim_gracier';
 import { dimensionHead2, dimensionHead3, dimensionHead4, dimensionWeapon3, dimensionWeapon4 } from './dimention';
 import { droopingLt3, droopingLt4, redBlueLt3, redBlueLt4 } from './drooping_thanatos_lt';
 import { furiousHeadUp3, furiousHeadUp4, furiousWeaponUp3, furiousWeaponUp4 } from './furious';
+import { gbAcc2, gbAcc3, gbAcc4, gbArmor2, gbArmor3, gbArmor4, gbBoot2, gbBoot3, gbBoot4, gbGarment2, gbGarment3, gbGarment4 } from './gaebolg';
 import {
   grayWolfAccL_slot2,
   grayWolfAccL_slot3,
@@ -1443,6 +1444,17 @@ export const EnchantTable: EntTable[] = [
   { name: 'TornadoBow_Furious', enchants: [null, null, furiousWeaponUp3, furiousWeaponUp4] },
   { name: 'Rifle_Furious', enchants: [null, null, furiousWeaponUp3, furiousWeaponUp4] },
   { name: 'Gatling_Furious', enchants: [null, null, furiousWeaponUp3, furiousWeaponUp4] },
+
+  { name: 'Gaebolg_Armor', enchants: [null, gbArmor2, gbArmor3, gbArmor4] },
+  { name: 'Gaebolg_Robe', enchants: [null, gbArmor2, gbArmor3, gbArmor4] },
+  { name: 'Gaebolg_Manteau', enchants: [null, gbGarment2, gbGarment3, gbGarment4] },
+  { name: 'Gaebolg_Muffler', enchants: [null, gbGarment2, gbGarment3, gbGarment4] },
+  { name: 'Gaebolg_Boots', enchants: [null, gbBoot2, gbBoot3, gbBoot4] },
+  { name: 'Gaebolg_Shoes', enchants: [null, gbBoot2, gbBoot3, gbBoot4] },
+  { name: 'Gaebolg_Ring', enchants: [null, gbAcc2, gbAcc3, gbAcc4] },
+  { name: 'Gaebolg_Glove', enchants: [null, gbAcc2, gbAcc3, gbAcc4] },
+  { name: 'Gaebolg_Earring', enchants: [null, gbAcc2, gbAcc3, gbAcc4] },
+  { name: 'Gaebolg_Necklace', enchants: [null, gbAcc2, gbAcc3, gbAcc4] },
 ];
 
 Object.freeze(EnchantTable);
