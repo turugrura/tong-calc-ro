@@ -16,4 +16,5 @@ export interface InfoForClass {
   equipmentBonus: Partial<Record<ItemTypeEnum, EquipmentSummaryModel>>;
   skillName: SKILL_NAME;
   raidMultiplier: number;
+  cometMultiplier: number;
 }

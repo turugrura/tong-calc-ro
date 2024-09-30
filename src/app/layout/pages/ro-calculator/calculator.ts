@@ -370,6 +370,7 @@ export class Calculator {
       skillName: this.skillName,
       ammoElement: this.equipItem.get(ItemTypeEnum.ammo)?.propertyAtk,
       raidMultiplier: 1,
+      cometMultiplier: 1,
     };
   }
 

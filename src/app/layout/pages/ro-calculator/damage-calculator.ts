@@ -246,7 +246,8 @@ export class DamageCalculator {
       equipmentBonus: this.equipStatus,
       skillName: this.skillName,
       ammoElement: this.ammoPropertyAtk,
-      raidMultiplier: this.getRaidMultiplier()
+      raidMultiplier: this.getRaidMultiplier(),
+      cometMultiplier: this.getCometMultiplier(),
     };
   }
 

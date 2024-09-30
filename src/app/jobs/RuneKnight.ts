@@ -583,13 +583,15 @@ export class RuneKnight extends LordKnight {
     } & DefForCalcModel,
     skillName: string,
   ) {
-    const { baseSkillDamage, propertyMultiplier, totalBonus, reducedHardDef, finalSoftDef, raidMultiplier } = input;
+    const { baseSkillDamage, propertyMultiplier, totalBonus, reducedHardDef, finalSoftDef } = input;
+    const { cometMultiplier, raidMultiplier } = input
     let totalDamage = baseSkillDamage;
     totalDamage = totalDamage - (reducedHardDef + finalSoftDef);
     totalDamage = floor(totalDamage * (100 + totalBonus.range) * 0.01);
     totalDamage = floor(totalDamage * (100 + (totalBonus[skillName] || 0)) * 0.01);
     totalDamage = floor(totalDamage * propertyMultiplier);
 
+    totalDamage = floor(totalDamage * cometMultiplier);
     totalDamage = floor(totalDamage * raidMultiplier);
     // if (this.isSkillActive('Dragonic Aura')) {
     //   totalDamage += (totalDamage * this.learnLv('Dragonic Aura')) / 10;
