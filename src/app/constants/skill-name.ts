@@ -553,6 +553,7 @@ export const OFFENSIVE_SKILL_NAMES = [
   "Crystal Impact",
   "Darkening Cannon",
   "Dawn Break",
+  "Destructive Hurricane",
   "Double Bowling Bash",
   "Dragonic Breath",
   "Effligo",
@@ -605,8 +606,8 @@ export const OFFENSIVE_SKILL_NAMES = [
   "Thundering Cannon",
   "Triple Laser",
   "Twinkling Galaxy",
-  "Warg Strike",
   "Violent Quake",
+  "Warg Strike",
 ] as const;
 
 const dup = [];

@@ -117,6 +117,7 @@ import { heroBootLt2, heroBootLt3, heroBootLt4 } from './hero_boots_lt';
 import { madBunnyLt4 } from './mad_bunny_lt';
 import { muqaddas3, muqaddas4 } from './muqaddas';
 import { oasdWeapon3, oasdWeapon4 } from './osad_weapon';
+import { plusWeapon3, plusWeapon4 } from './plus_weapon';
 import { goodEvilBoot3_ABC, goodEvilBoot3_AG, goodEvilBoot3_BO, goodEvilBoot3_CD, goodEvilBoot3_DK, goodEvilBoot3_EM, goodEvilBoot3_HN, goodEvilBoot3_IG, goodEvilBoot3_IQ, goodEvilBoot3_MT, goodEvilBoot3_NW, goodEvilBoot3_SH, goodEvilBoot3_SHC, goodEvilBoot3_SKE, goodEvilBoot3_SOA, goodEvilBoot3_SS, goodEvilBoot3_TR, goodEvilBoot3_WH, goodEvilBoot4, goodEvilHead3, goodEvilHead4, sinsFateWeapon3, sinsFateWeapon4 } from './sins_and_fate';
 import { snowFwAccL2, snowFwAccL3, snowFwAccL4, snowFwAccR2, snowFwAccR3, snowFwAccR4, snowFwArmor2, snowFwArmor3, snowFwArmor4, snowFwBoot2, snowFwBoot3, snowFwBoot4, snowFwGarment2, snowFwGarment3, snowFwGarment4 } from './snow_flower';
 import { corruptedPoisonArmor2, corruptedPoisonArmor3, corruptedPoisonArmor4, fieryEarthArmor2, fieryEarthArmor3, fieryEarthArmor4, flameRuneArmor2, icyStromArmor2, icyStromArmor3, icyStromArmor4, soulPurifyArmor2, soulPurifyArmor3, soulPurifyArmor4, varmundt3, varmundt4, varmundtAcc3, varmundtAcc4, varmundtHiAcc2 } from './varmundt';
@@ -1350,6 +1351,25 @@ export const EnchantTable: EntTable[] = [
   { name: 'Mocadas_Shotgun', enchants: [null, null, muqaddas3, muqaddas4] },
   { name: 'Mocadas_Gatling', enchants: [null, null, muqaddas3, muqaddas4] },
   { name: 'Mocadas_Launcher', enchants: [null, null, muqaddas3, muqaddas4] },
+
+  { name: 'F_Ein_1HDAGGER', enchants: [null, null, plusWeapon3, plusWeapon4] },
+  { name: 'F_Ein_1HMAGGER', enchants: [null, null, plusWeapon3, plusWeapon4] },
+  { name: 'F_Ein_1HSWORD', enchants: [null, null, plusWeapon3, plusWeapon4] },
+  { name: 'F_Ein_1H_Foxtail', enchants: [null, null, plusWeapon3, plusWeapon4] },
+  { name: 'F_Ein_1HSPEAR', enchants: [null, null, plusWeapon3, plusWeapon4] },
+  { name: 'F_Ein_BHSWORD', enchants: [null, null, plusWeapon3, plusWeapon4] },
+  { name: 'F_Ein_1HHAMMER', enchants: [null, null, plusWeapon3, plusWeapon4] },
+  { name: 'F_Ein_BHAXE', enchants: [null, null, plusWeapon3, plusWeapon4] },
+  { name: 'F_Ein_1HKNUCK', enchants: [null, null, plusWeapon3, plusWeapon4] },
+  { name: 'F_Ein_1HBOOK', enchants: [null, null, plusWeapon3, plusWeapon4] },
+  { name: 'F_Ein_1HWAND', enchants: [null, null, plusWeapon3, plusWeapon4] },
+  { name: 'F_Ein_BHSTAFF', enchants: [null, null, plusWeapon3, plusWeapon4] },
+  { name: 'F_Ein_BHHuuma', enchants: [null, null, plusWeapon3, plusWeapon4] },
+  { name: 'F_Ein_BHBOW', enchants: [null, null, plusWeapon3, plusWeapon4] },
+  { name: 'F_Ein_BHKATAR', enchants: [null, null, plusWeapon3, plusWeapon4] },
+  { name: 'F_Ein_1HGUN', enchants: [null, null, plusWeapon3, plusWeapon4] },
+  { name: 'F_Ein_1HWHIP', enchants: [null, null, plusWeapon3, plusWeapon4] },
+  { name: 'F_Ein_1HLUTE', enchants: [null, null, plusWeapon3, plusWeapon4] },
 
   { name: 'Time_DM_R_Crown_DK', enchants: [null, dimensionHead2, dimensionHead3, dimensionHead4] },
   { name: 'Time_DM_R_Crown_IG', enchants: [null, dimensionHead2, dimensionHead3, dimensionHead4] },
