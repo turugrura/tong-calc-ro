@@ -606,6 +606,7 @@ export const OFFENSIVE_SKILL_NAMES = [
   "Triple Laser",
   "Twinkling Galaxy",
   "Warg Strike",
+  "Violent Quake",
 ] as const;
 
 const dup = [];

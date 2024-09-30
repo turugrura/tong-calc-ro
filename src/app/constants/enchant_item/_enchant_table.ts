@@ -115,6 +115,7 @@ import {
 } from './gray_wolf';
 import { heroBootLt2, heroBootLt3, heroBootLt4 } from './hero_boots_lt';
 import { madBunnyLt4 } from './mad_bunny_lt';
+import { muqaddas3, muqaddas4 } from './muqaddas';
 import { oasdWeapon3, oasdWeapon4 } from './osad_weapon';
 import { goodEvilBoot3_ABC, goodEvilBoot3_AG, goodEvilBoot3_BO, goodEvilBoot3_CD, goodEvilBoot3_DK, goodEvilBoot3_EM, goodEvilBoot3_HN, goodEvilBoot3_IG, goodEvilBoot3_IQ, goodEvilBoot3_MT, goodEvilBoot3_NW, goodEvilBoot3_SH, goodEvilBoot3_SHC, goodEvilBoot3_SKE, goodEvilBoot3_SOA, goodEvilBoot3_SS, goodEvilBoot3_TR, goodEvilBoot3_WH, goodEvilBoot4, goodEvilHead3, goodEvilHead4, sinsFateWeapon3, sinsFateWeapon4 } from './sins_and_fate';
 import { snowFwAccL2, snowFwAccL3, snowFwAccL4, snowFwAccR2, snowFwAccR3, snowFwAccR4, snowFwArmor2, snowFwArmor3, snowFwArmor4, snowFwBoot2, snowFwBoot3, snowFwBoot4, snowFwGarment2, snowFwGarment3, snowFwGarment4 } from './snow_flower';
@@ -1326,6 +1327,29 @@ export const EnchantTable: EntTable[] = [
   { name: 'Dolor_HatK_LT', enchants: [null, null, droopingLt3, droopingLt4] },
   { name: 'Red_Force_Pendant_LT', enchants: [null, null, redBlueLt3, redBlueLt4] },
   { name: 'Blue_Mental_Pendant_LT', enchants: [null, null, redBlueLt3, redBlueLt4] },
+
+  { name: 'Mocadas_G_Sword', enchants: [null, null, muqaddas3, muqaddas4] },
+  { name: 'Mocadas_C_Sword', enchants: [null, null, muqaddas3, muqaddas4] },
+  { name: 'Mocadas_Knife', enchants: [null, null, muqaddas3, muqaddas4] },
+  { name: 'Mocadas_Axe', enchants: [null, null, muqaddas3, muqaddas4] },
+  { name: 'Mocadas_Spellbooks', enchants: [null, null, muqaddas3, muqaddas4] },
+  { name: 'Mocadas_Book', enchants: [null, null, muqaddas3, muqaddas4] },
+  { name: 'Mocadas_Rod', enchants: [null, null, muqaddas3, muqaddas4] },
+  { name: 'Mocadas_Foxtail', enchants: [null, null, muqaddas3, muqaddas4] },
+  { name: 'Mocadas_Wand', enchants: [null, null, muqaddas3, muqaddas4] },
+  { name: 'Mocadas_Knuckle', enchants: [null, null, muqaddas3, muqaddas4] },
+  { name: 'Mocadas_Instrument', enchants: [null, null, muqaddas3, muqaddas4] },
+  { name: 'Mocadas_Whip', enchants: [null, null, muqaddas3, muqaddas4] },
+  { name: 'Mocadas_Judgement', enchants: [null, null, muqaddas3, muqaddas4] },
+  { name: 'Mocadas_Hall', enchants: [null, null, muqaddas3, muqaddas4] },
+  { name: 'Mocadas_Katar', enchants: [null, null, muqaddas3, muqaddas4] },
+  { name: 'Mocadas_Spear', enchants: [null, null, muqaddas3, muqaddas4] },
+  { name: 'Mocadas_Stem', enchants: [null, null, muqaddas3, muqaddas4] },
+  { name: 'Mocadas_Bow', enchants: [null, null, muqaddas3, muqaddas4] },
+  { name: 'Mocadas_Rifle', enchants: [null, null, muqaddas3, muqaddas4] },
+  { name: 'Mocadas_Shotgun', enchants: [null, null, muqaddas3, muqaddas4] },
+  { name: 'Mocadas_Gatling', enchants: [null, null, muqaddas3, muqaddas4] },
+  { name: 'Mocadas_Launcher', enchants: [null, null, muqaddas3, muqaddas4] },
 
   { name: 'Time_DM_R_Crown_DK', enchants: [null, dimensionHead2, dimensionHead3, dimensionHead4] },
   { name: 'Time_DM_R_Crown_IG', enchants: [null, dimensionHead2, dimensionHead3, dimensionHead4] },

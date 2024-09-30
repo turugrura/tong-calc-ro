@@ -898,7 +898,7 @@
               scrollHeight="350px"
               [showClear]="true"
               [(ngModel)]="model.leftWeaponGrade"
-              [disabled]="!model.leftWeapon"
+              [disabled]="!model.leftWeapon || !model.weapon"
               (onChange)="onSelectGrade('leftWeapon', model.leftWeapon, $event.value)"
               (onClear)="onSelectGrade('leftWeapon', model.leftWeapon, '')"
               placeholder="ungrade"
@@ -910,7 +910,7 @@
               [options]="refineList"
               scrollHeight="350px"
               [(ngModel)]="model.leftWeaponRefine"
-              [disabled]="!model.leftWeapon"
+              [disabled]="!model.leftWeapon || !model.weapon"
               (onChange)="onSelectItem('leftWeapon', model.leftWeapon, $event.value)"
             >
               <ng-template let-item pTemplate="selectedItem">

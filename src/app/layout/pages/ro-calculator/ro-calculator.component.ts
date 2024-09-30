@@ -736,23 +736,6 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       const model2 = { ...this.model, ...compareModel };
       calc.loadItemFromModel(model2);
 
-      const isAllowShield = calc.isAllowShield()
-      if (!isAllowShield) {
-        const clearList = [ItemTypeEnum.shield, ItemTypeEnum.leftWeapon]
-        for (const itemT of clearList) {
-          calc.setItem({ itemId: undefined, itemType: itemT })
-          for (const relatedItemType of MainItemWithRelations[itemT]) {
-            calc.setItem({ itemId: undefined, itemType: relatedItemType })
-          }
-        }
-
-        const [_, slots] = ItemOptionTable.find(([itemType]) => itemType === ItemTypeEnum.shield) || ['', []]
-        for (const slot of slots) {
-          rawOptionTxts[slot] = null;
-          this.model2.rawOptionTxts[slot] = null;
-        }
-      }
-
       // if compare the item, should get options from its.
       if (this.compareItemNames?.includes(ItemTypeEnum.weapon)) {
         const itemId = this.model2[ItemTypeEnum.weapon];
@@ -763,10 +746,27 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
           rawOptionTxts[slot] = this.model2.rawOptionTxts[slot];
         }
 
+        const isAllowShield = calc.isAllowShield()
         for (let slot = ItemOptionNumber.W_Right_1; slot <= ItemOptionNumber.W_Right_3; slot++) {
           if (!itemId || !isAllowShield) {
             this.model2.rawOptionTxts[slot] = null;
             rawOptionTxts[slot] = this.model2.rawOptionTxts[slot];
+          }
+        }
+
+        if (!isAllowShield) {
+          const clearList = [ItemTypeEnum.shield, ItemTypeEnum.leftWeapon]
+          for (const itemT of clearList) {
+            calc.setItem({ itemId: undefined, itemType: itemT })
+            for (const relatedItemType of MainItemWithRelations[itemT]) {
+              calc.setItem({ itemId: undefined, itemType: relatedItemType })
+            }
+          }
+
+          const [_, slots] = ItemOptionTable.find(([itemType]) => itemType === ItemTypeEnum.shield) || ['', []]
+          for (const slot of slots) {
+            rawOptionTxts[slot] = null;
+            this.model2.rawOptionTxts[slot] = null;
           }
         }
       }
@@ -2033,7 +2033,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   private setItemDropdownList() {
     const classNameSet = this.selectedCharacter.classNameSet;
     const onlyMe = (a: ItemDropdownModel) => {
-      // if (a.label.startsWith('Boots of Good')) return true
+      // if (a.label.startsWith('Heroic Token')) return true
 
       if (Array.isArray(a.unusableClass) && a.unusableClass.length > 0) {
         const cannot = a.unusableClass.some((x) => classNameSet.has(x));
@@ -2056,7 +2056,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         if (isLv4 && isSup) return true;
       }
 
-      // if (a.label.startsWith('Furious')) return true
+      // return a.label.includes('Muqaddas')
 
       return onlyMe(a);
     };
