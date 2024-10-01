@@ -94,7 +94,7 @@ import {
 } from './_basic';
 import { cirAutumnGarment2, cirAutumnGarment3, cirAutumnGarment4, cirAutumnSummer2, cirAutumnWinter2, cirSpringGarment2, cirSpringGarment3, cirSpringGarment4, manAutumnGarment2, manAutumnGarment3, manAutumnGarment4, manAutumnSummer2, manAutumnWinter2, manSpringGarment2, manSpringGarment3, manSpringGarment4, signetAcc3, signetAcc4, stellarAcc2, stellarAcc3, stellarAcc4 } from './constellation_tower';
 import { crafted3, crafted4 } from './crafted_weapon';
-import { dimWeapon2, dimWeapon3, dimWeapon4 } from './dim_gracier';
+import { dimWeapon2, dimWeapon3, dimWeapon4, dimGlaArmor2, dimGlaArmor3, dimGlaArmor4, dimGlaBoot2, dimGlaBoot3, dimGlaBoot4, dimGlaGarment2, dimGlaGarment3, dimGlaGarment4 } from './dim_glacier';
 import { dimensionHead2, dimensionHead3, dimensionHead4, dimensionWeapon3, dimensionWeapon4 } from './dimention';
 import { droopingLt3, droopingLt4, redBlueLt3, redBlueLt4 } from './drooping_thanatos_lt';
 import { furiousHeadUp3, furiousHeadUp4, furiousWeaponUp3, furiousWeaponUp4 } from './furious';
@@ -1179,6 +1179,13 @@ export const EnchantTable: EntTable[] = [
   // {name: 'Glacier_Shotgun', enchants: [null, null, oasdWeapon3, oasdWeapon4] },
   // {name: 'Glacier_Gatling', enchants: [null, null, oasdWeapon3, oasdWeapon4] },
   // {name: 'Glacier_Launcher', enchants: [null, null, oasdWeapon3, oasdWeapon4] },
+
+  { name: 'D_Glacier_Armor', enchants: [null, dimGlaArmor2, dimGlaArmor3, dimGlaArmor4] },
+  { name: 'D_Glacier_Robe', enchants: [null, dimGlaArmor2, dimGlaArmor3, dimGlaArmor4] },
+  { name: 'D_Glacier_Manteau', enchants: [null, dimGlaGarment2, dimGlaGarment3, dimGlaGarment4] },
+  { name: 'D_Glacier_Muffler', enchants: [null, dimGlaGarment2, dimGlaGarment3, dimGlaGarment4] },
+  { name: 'D_Glacier_Boots', enchants: [null, dimGlaBoot2, dimGlaBoot3, dimGlaBoot4] },
+  { name: 'D_Glacier_Shoes', enchants: [null, dimGlaBoot2, dimGlaBoot3, dimGlaBoot4] },
 
   { name: "D_Glacier_Sword", enchants: [null, dimWeapon2, dimWeapon3, dimWeapon4] },
   { name: "D_Glacier_B_Sword", enchants: [null, dimWeapon2, dimWeapon3, dimWeapon4] },
