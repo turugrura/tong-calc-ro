@@ -616,7 +616,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
           console.log({ allEnchantSet });
           for (const enchtName of allEnchantSet.values()) {
             if (!this.mapEnchant.has(enchtName)) {
-              console.log({ enchtName });
+              console.log('not found in data.json', { enchtName });
             }
           }
         }
@@ -1576,7 +1576,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       const prefixLabel = refine && refine > 0 ? ` +${refine} ` : '';
 
       return {
-        label: `${prefixLabel}${this.items[id].name}`,
+        label: `${prefixLabel}${this.items[id]?.name}`,
         value: itemType,
         id,
       };
