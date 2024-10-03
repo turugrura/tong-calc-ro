@@ -236,6 +236,9 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   petList: DropdownModel[] = [];
 
   costumeUpperList: DropdownModel[] = [];
+  costumeMiddleList: DropdownModel[] = [];
+  costumeLowerList: DropdownModel[] = [];
+  costumeGarmentList: DropdownModel[] = [];
 
   costumeEnhUpperList: DropdownModel[] = [];
   costumeEnhMiddleList: DropdownModel[] = [];
@@ -1818,6 +1821,9 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     const petList = [];
 
     const costumeUpperList = [];
+    const costumeMiddleList = [];
+    const costumeLowerList = [];
+    const costumeGarmentList = [];
     const costumeEnhUpperList = [];
     const costumeEnhMiddleList = [];
     const costumeEnhLowerList = [];
@@ -1914,6 +1920,15 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         case ItemSubTypeId.CostumeUpper:
           costumeUpperList.push(item);
           continue;
+        case ItemSubTypeId.CostumeMiddle:
+          costumeMiddleList.push(item);
+          continue;
+        case ItemSubTypeId.CostumeLower:
+          costumeLowerList.push(item);
+          continue;
+        case ItemSubTypeId.CostumeGarment:
+          costumeGarmentList.push(item);
+          continue;
         case ItemSubTypeId.CostumeEnhUpper:
           costumeEnhUpperList.push(item);
           continue;
@@ -2004,6 +2019,9 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     this.itemList.petList = petList.map((a) => ({ label: a.name, value: a.id }));
 
     this.itemList.costumeUpperList = toDropdownList(costumeUpperList, 'name', 'id');
+    this.itemList.costumeMiddleList = toDropdownList(costumeMiddleList, 'name', 'id');
+    this.itemList.costumeLowerList = toDropdownList(costumeLowerList, 'name', 'id');
+    this.itemList.costumeGarmentList = toDropdownList(costumeGarmentList, 'name', 'id');
 
     this.itemList.costumeEnhUpperList = toDropdownList(costumeEnhUpperList, 'name', 'id');
     this.itemList.costumeEnhMiddleList = toDropdownList(costumeEnhMiddleList, 'name', 'id');
@@ -2065,7 +2083,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         return true;
       }
 
-      // if (a.label.startsWith('Furious')) return true
+      // return a.label.startsWith('Temporal Circlet')
 
       return onlyMe(a);
     };
@@ -2095,6 +2113,9 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     this.petList = this.itemList.petList.map((a) => a);
 
     this.costumeUpperList = this.itemList.costumeUpperList.filter(onlyMe);
+    this.costumeMiddleList = this.itemList.costumeMiddleList.filter(onlyMe);
+    this.costumeLowerList = this.itemList.costumeLowerList.filter(onlyMe);
+    this.costumeGarmentList = this.itemList.costumeGarmentList.filter(onlyMe);
 
     this.costumeEnhUpperList = this.itemList.costumeEnhUpperList.map((a) => a);
     this.costumeEnhMiddleList = this.itemList.costumeEnhMiddleList.map((a) => a);
@@ -2139,6 +2160,9 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       // { position: 'accRightCardList', values: this.accRightCardList },
       { position: 'petList', values: this.petList },
       { position: 'costumeList', values: this.costumeUpperList },
+      { position: 'costumeList', values: this.costumeMiddleList },
+      { position: 'costumeList', values: this.costumeLowerList },
+      { position: 'costumeList', values: this.costumeGarmentList },
       { position: 'costumeList', values: this.costumeEnhUpperList },
       { position: 'costumeList', values: this.costumeEnhMiddleList },
       { position: 'costumeList', values: this.costumeEnhLowerList },

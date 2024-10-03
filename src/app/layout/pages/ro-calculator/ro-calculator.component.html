@@ -3136,35 +3136,45 @@
     </div>
 
     <div class="grid grid-nogutter">
-      <div class="col-3 item_label_costume">
-        <p-dropdown
-          inputId="costumeUpper"
-          [autoDisplayFirst]="false"
-          [resetFilterOnHide]="true"
-          [options]="costumeUpperList"
-          [filter]="true"
-          filterBy="label"
-          scrollHeight="350px"
-          [(ngModel)]="model.costumeUpper"
-          [showClear]="true"
-          [disabled]="costumeUpperList.length === 0"
-          (onChange)="onSelectItem('costumeUpper', $event.value)"
-          placeholder="Costume Upper"
-        >
-          <ng-template let-item pTemplate="selectedItem">
-            <div class="flex gap-1 item_template" *ngIf="model.costumeUpper">
-              <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
-              <div>{{ item.label }}</div>
-            </div>
-          </ng-template>
-          <ng-template let-item pTemplate="item">
-            <div class="flex gap-1">
-              <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
-              <div>{{ item.label }}</div>
-            </div>
-          </ng-template>
-        </p-dropdown>
+      <div class="col-3 grid grid-nogutter item_label_costume flex flex-column">
+        <div class="col-12">
+          <app-equipment-cos-enchant
+            [itemType]="'costumeUpper'"
+            [placeholder]="'Costume Upper'"
+            [itemList]="costumeUpperList"
+            [(itemId)]="model.costumeUpper"
+            (selectItemChange)="onSelectItem('costumeUpper', $event.itemId)"
+          ></app-equipment-cos-enchant>
+        </div>
+        <div class="col-12">
+          <app-equipment-cos-enchant
+            [itemType]="'costumeMiddle'"
+            [placeholder]="'Costume Middle'"
+            [itemList]="costumeMiddleList"
+            [(itemId)]="model.costumeMiddle"
+            (selectItemChange)="onSelectItem('costumeMiddle', $event.itemId)"
+          ></app-equipment-cos-enchant>
+        </div>
+        <!-- <div class="col-12" [hidden]="!costumeLowerList.length">
+          <app-equipment-cos-enchant
+            [itemType]="'costumeLower'"
+            [placeholder]="'Costume Lower'"
+            [itemList]="costumeLowerList"
+            [(itemId)]="model.costumeLower"
+            (selectItemChange)="onSelectItem('costumeLower', $event.itemId)"
+          ></app-equipment-cos-enchant>
+        </div> -->
+        <div class="col-12 mt-2">
+          <app-equipment-cos-enchant
+            [itemType]="'costumeGarment'"
+            [placeholder]="'Costume Garment'"
+            [itemList]="costumeGarmentList"
+            [(itemId)]="model.costumeGarment"
+            (selectItemChange)="onSelectItem('costumeGarment', $event.itemId)"
+          ></app-equipment-cos-enchant>
+        </div>
       </div>
+
       <div class="col-3 grid grid-nogutter item_label_costume flex flex-column">
         <!-- Costume Upper -->
         <div class="col-12">

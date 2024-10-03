@@ -10,6 +10,8 @@ export class EquipmentCosEnchantComponent implements AfterViewInit {
   @Input({ required: true }) itemType!: string;
   @Input({ required: true }) placeholder: string;
 
+  @Input() disabled = false;
+
   @Input() itemList: DropdownModel[] = [];
   @Output() selectItemChange = new EventEmitter<any>();
   @Output() clearItemEvent = new EventEmitter<string>();
@@ -19,7 +21,7 @@ export class EquipmentCosEnchantComponent implements AfterViewInit {
 
   private itemTypeMap = {};
 
-  constructor() {}
+  constructor() { }
 
   ngAfterViewInit(): void {
     setTimeout(() => {

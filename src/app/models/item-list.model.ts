@@ -56,6 +56,9 @@ export interface ItemListModel {
   petList: DropdownModel[];
 
   costumeUpperList: DropdownModel[];
+  costumeMiddleList: DropdownModel[];
+  costumeLowerList: DropdownModel[];
+  costumeGarmentList: DropdownModel[];
 
   costumeEnhUpperList: DropdownModel[];
   costumeEnhMiddleList: DropdownModel[];

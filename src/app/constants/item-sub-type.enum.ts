@@ -17,6 +17,10 @@ export enum ItemSubTypeId {
   Enchant = 0,
 
   CostumeUpper = 519,
+  CostumeMiddle = 520,
+  CostumeLower = 521,
+  CostumeGarment = 522,
+
   CostumeEnhUpper = 71,
   CostumeEnhMiddle = 72,
   CostumeEnhLower = 73,
