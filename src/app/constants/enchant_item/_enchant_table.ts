@@ -123,6 +123,7 @@ import { goodEvilBoot3_ABC, goodEvilBoot3_AG, goodEvilBoot3_BO, goodEvilBoot3_CD
 import { snowFwAccL2, snowFwAccL3, snowFwAccL4, snowFwAccR2, snowFwAccR3, snowFwAccR4, snowFwArmor2, snowFwArmor3, snowFwArmor4, snowFwBoot2, snowFwBoot3, snowFwBoot4, snowFwGarment2, snowFwGarment3, snowFwGarment4 } from './snow_flower';
 import { corruptedPoisonArmor2, corruptedPoisonArmor3, corruptedPoisonArmor4, fieryEarthArmor2, fieryEarthArmor3, fieryEarthArmor4, flameRuneArmor2, icyStromArmor2, icyStromArmor3, icyStromArmor4, soulPurifyArmor2, soulPurifyArmor3, soulPurifyArmor4, varmundt3, varmundt4, varmundtAcc3, varmundtAcc4, varmundtHiAcc2 } from './varmundt';
 import { vivatusHead3, vivatusHead4 } from './vivatus';
+import { whiteKnight2, whiteKnight34 } from './white_knigh_man';
 
 enum TimeJewel {
   Str2 = 'aegis_313347',
@@ -1552,6 +1553,10 @@ export const EnchantTable: EntTable[] = [
   { name: 'Gaebolg_Glove', enchants: [null, gbAcc2, gbAcc3, gbAcc4] },
   { name: 'Gaebolg_Earring', enchants: [null, gbAcc2, gbAcc3, gbAcc4] },
   { name: 'Gaebolg_Necklace', enchants: [null, gbAcc2, gbAcc3, gbAcc4] },
+
+  { name: "WK_Mantle_Melee_TH", enchants: [null, whiteKnight2, whiteKnight34, whiteKnight34] },
+  { name: "WK_Mantle_Range_TH", enchants: [null, whiteKnight2, whiteKnight34, whiteKnight34] },
+  { name: "WK_Mantle_Magic_TH", enchants: [null, whiteKnight2, whiteKnight34, whiteKnight34] },
 ];
 
 Object.freeze(EnchantTable);

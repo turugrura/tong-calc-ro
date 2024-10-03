@@ -369,6 +369,7 @@ export const sp14 = [Spell._1, Spell._2, Spell._3, Spell._4];
 export const sp15 = [Spell._1, Spell._2, Spell._3, Spell._4, Spell._5];
 export const sp25 = [Spell._2, Spell._3, Spell._4, Spell._5];
 export const sp34 = [Spell._3, Spell._4];
+export const sp35 = [Spell._3, Spell._4, Spell._5];
 export const sp45 = [Spell._4, Spell._5];
 export const sp46 = [Spell._4, Spell._5, Spell._6];
 export const sp57 = [Spell._5, Spell._6, Spell._7];
@@ -386,6 +387,7 @@ export const fatal12 = [Fatal._1, Fatal._2];
 export const fatal13 = [Fatal._1, Fatal._2, Fatal._3];
 export const fatal23 = [Fatal._2, Fatal._3];
 export const fatal14 = [Fatal._1, Fatal._2, Fatal._3, Fatal._4];
+export const fatal24 = [Fatal._2, Fatal._3, Fatal._4];
 
 export const cri510 = [Cri._5, Cri._7, Cri._10];
 
