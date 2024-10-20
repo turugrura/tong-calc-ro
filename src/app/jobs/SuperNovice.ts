@@ -271,6 +271,24 @@ export class SuperNovice extends CharacterBase {
         return 100 + skillLevel * 40;
       },
     },
+    {
+      name: 'Ignition Break',
+      label: 'Ignition Break Lv5',
+      value: 'Ignition Break==5',
+      acd: 0,
+      fct: 0,
+      vct: 1,
+      cd: 2,
+      isMelee: true,
+      canCri: true,
+      criDmgPercentage: 0.5,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
+
+        return skillLevel * 450 * (baseLevel / 100);
+      },
+    },
   ];
   protected readonly _activeSkillList: ActiveSkillModel[] = [
     {
