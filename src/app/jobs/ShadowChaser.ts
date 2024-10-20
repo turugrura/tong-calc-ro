@@ -311,6 +311,33 @@ export class ShadowChaser extends Stalker {
         return (700 + skillLevel * 300) * (baseLevel / 100);
       },
     },
+    {
+      name: 'Genesis Ray',
+      label: 'Genesis Ray Lv10',
+      value: 'Genesis Ray==10',
+      values: ['[Improved] Genesis Ray==10'],
+      acd: 1,
+      fct: 0.5,
+      vct: 6.5,
+      cd: 2,
+      hit: 7,
+      isMatk: true,
+      getElement: () => {
+        if (this.isSkillActive('Inspiration')) return ElementType.Neutral;
+
+        return ElementType.Holy;
+      },
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const baseLevel = model.level;
+        const totalInt = status.totalInt;
+        if (this.isSkillActive('Inspiration')) {
+          return (skillLevel * 300 + totalInt * 3) * (baseLevel / 100);
+        }
+
+        return (skillLevel * 230 + totalInt * 2) * (baseLevel / 100);
+      },
+    },
   ];
 
   protected readonly activeSkillList3rd: ActiveSkillModel[] = [
