@@ -141,6 +141,11 @@ export enum MHP {
   _4 = 'MHP4',
   _5 = 'MHP5',
 }
+export enum MaxHP {
+  _3 = 'HP300',
+  _4 = 'HP400',
+  _5 = 'HP500',
+}
 export enum MSP {
   _50 = 'SP50',
   _75 = 'SP75',
@@ -425,9 +430,9 @@ export const illusionDunArmor = [
   RuneVit._2,
 ];
 export const illusionDunAcc = [
-  MHP._3,
-  MHP._4,
-  MHP._5,
+  MaxHP._3,
+  MaxHP._4,
+  MaxHP._5,
   MSP._50,
   MSP._75,
   MSP._100,

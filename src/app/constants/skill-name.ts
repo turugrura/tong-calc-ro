@@ -199,7 +199,7 @@ const ACTIVE_PASSIVE_SKILL_NAMES = [
   'P.F.I.',
   'Intensive Aim',
   'Grenade Fragment',
-
+  'Debuff_Spore Explosion',
   'Solar Luminance',
   'Solar Stance',
   'Song Of Mana',
