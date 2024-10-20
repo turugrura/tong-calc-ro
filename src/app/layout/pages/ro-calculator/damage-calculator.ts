@@ -246,7 +246,6 @@ export class DamageCalculator {
       equipmentBonus: this.equipStatus,
       skillName: this.skillName,
       ammoElement: this.ammoPropertyAtk,
-      raidMultiplier: this.getRaidMultiplier(),
       cometMultiplier: this.getCometMultiplier(),
     };
   }
@@ -290,31 +289,80 @@ export class DamageCalculator {
    *
    * @returns Final damage multiplier
    */
-  private getDarkClawBonus(atkType: 'melee' | 'range') {
-    if (atkType === 'range') return 0;
+  private _getDarkClawBonus(atkType: SkillType): number {
+    if (atkType !== SkillType.MELEE) return 0;
 
     const bonus = this.totalBonus['darkClaw'] || 0;
+    if (!bonus) return 0
+
     if (this.monster.isBoss) {
-      return bonus / 2;
+      return 100 + bonus / 2;
     }
 
-    return bonus;
+    return 100 + bonus;
   }
 
-  /**
-   *
-   * @returns Final damage multiplier
-   */
+  private _getQuakeBonus(atkType: SkillType): number {
+    if (atkType === SkillType.MAGICAL) return 0;
+
+    const bonus = this.totalBonus['quake'] || 0;
+    if (!bonus) return 0
+
+    return 100 + bonus;
+  }
+
+  private _getSporeExplosionBonus(atkType: SkillType): number {
+    if (atkType !== SkillType.RANGE) return 0;
+
+    const bonus = this.totalBonus['sporeExplosion'] || 0;
+    if (!bonus) return 0
+
+    if (this.monster.isBoss) {
+      return 100 + bonus / 2;
+    }
+
+    return 100 + bonus;
+  }
+
+  private _getOleumSanctumBonus(atkType: SkillType): number {
+    if (atkType !== SkillType.RANGE) return 0;
+
+    const bonus = this.totalBonus['oleumSanctum'] || 0;
+    if (!bonus) return 0
+
+    return 100 + bonus;
+  }
+
+  private _getRaidMultiplier() {
+    if (!this.totalBonus['raid']) return 0;
+
+    return this.monster.isBoss ? 115 : 130;
+  }
+
+  private getDebuffMultiplier(atkType: SkillType) {
+    let totalBonus = 0
+
+    totalBonus += this._getRaidMultiplier();
+    totalBonus += this._getQuakeBonus(atkType);
+
+    switch (atkType) {
+      case SkillType.MELEE: {
+        totalBonus += this._getDarkClawBonus(atkType);
+        break;
+      }
+      case SkillType.RANGE:
+        totalBonus += this._getSporeExplosionBonus(atkType);
+        totalBonus += this._getOleumSanctumBonus(atkType);
+        break;
+    }
+
+    return this.toPercent(totalBonus || 100)
+  }
+
   private getAdvanceKatar() {
     if (this.weaponData.data.typeName !== 'katar') return 0;
 
     return this.totalBonus['advKatar'] || 0;
-  }
-
-  private getRaidMultiplier() {
-    if (!this.totalBonus['raid']) return 1;
-
-    return this.monster.isBoss ? 1.15 : 1.3;
   }
 
   private getStrikingAtk() {
@@ -796,29 +844,25 @@ export class DamageCalculator {
     const hardDef = isIgnoreDef || isHDefToSDef ? 1 : finalDmgReduction;
     const softDef = finalSoftDef + (isHDefToSDef ? reducedHardDef : 0);
 
-    const { range, melee, criDmg, rangedReduction, meleeReduction } = this.totalBonus;
+    const { range, melee, criDmg } = this.totalBonus;
     const isMelee = _isMelee != null && typeof _isMelee === 'function' ? _isMelee(this.weaponData.data.typeName) : !!_isMelee;
     const ranged = isMelee ? melee : range;
     const rangedMultiplier = this.toPercent(ranged + 100);
-    const rangedReduct = 1 + rangedReduction * 0.01;
-    const meleeReduct = 1 + meleeReduction * 0.01;
     const baseSkillMultiplier = this.toPercent(baseSkillDamage);
     const equipSkillMultiplier = this.toPercent(100 + this.getSkillBonus(skillName));
     const criDmgToMonster = floor(criDmg * criDmgPercentage || 0);
     const criMultiplier = canCri ? this.toPercent(criDmgToMonster + 100) : 1;
 
-    const darkClaw = this.getDarkClawBonus(isMelee ? 'melee' : 'range');
-    const advKatar = this.getAdvanceKatar();
-    const raid = this.getRaidMultiplier();
-    const finalDmgMultipliers = [darkClaw, advKatar].map((b) => this.toPercent(100 + b));
+    const dmgType = isMelee ? SkillType.MELEE : SkillType.RANGE
+    const advKatar = 100 + this.getAdvanceKatar();
+    const debuffMultiplier = this.getDebuffMultiplier(dmgType);
+    const finalDmgMultipliers = [advKatar].map((b) => this.toPercent(b));
     const infoForClass = this.infoForClass;
 
     const skillFormula = (_totalAtk: number, _calcCri: boolean) => {
       let total = this._class.modifyFinalAtk(_totalAtk, infoForClass);
       if (_calcCri) total = floor(total * criMultiplier); // tested
       total = floor(total * rangedMultiplier); // tested
-      if (isMelee) total = floor(total * meleeReduct);
-      if (!isMelee) total = floor(total * rangedReduct);
       total = floor(total * baseSkillMultiplier); // tested
       total = floor(total * equipSkillMultiplier);
       if (!isHDefToSDef) total = floor(total * resReduction);
@@ -830,7 +874,7 @@ export class DamageCalculator {
         total = floor(total * final);
       }
 
-      total = floor(total * raid);
+      total = floor(total * debuffMultiplier);
 
       total = this.toPreventNegativeDmg(total);
 
@@ -939,7 +983,7 @@ export class DamageCalculator {
     const sizeMultiplier = this.toPercent(this.getSizeMultiplier('m'));
     const elementMultiplier = this.toPercent(this.getElementMultiplier('m'));
     const monsterTypeMultiplier = this.toPercent(this.getMonsterTypeMultiplier('m'));
-    const raid = this.getRaidMultiplier();
+    const debuffMultiplier = this.getDebuffMultiplier(SkillType.MAGICAL);
 
     const skillFormula = (totalMatk: number) => {
       let total = totalMatk;
@@ -962,7 +1006,7 @@ export class DamageCalculator {
       total = floor(total * propertyMultiplier); //tested
       total = floor(total * finalDmgMultiplier);
       total = this.applyFinalMultiplier(total, 'magic');
-      total = floor(total * raid);
+      total = floor(total * debuffMultiplier);
 
       if (!!finalDmgFormula && typeof finalDmgFormula === 'function') {
         return finalDmgFormula({ damage: total, ...formulaParams });
@@ -1025,11 +1069,11 @@ export class DamageCalculator {
     const { totalMax, totalMin } = params;
     const { range, melee, dmg } = this.totalBonus;
     const isRangeType = this.isRangeAtk();
+    const dmgType = isRangeType ? SkillType.RANGE : SkillType.MELEE;
     const rangedDmg = isRangeType ? range : melee;
     const rangedMultiplier = this.toPercent(rangedDmg + 100);
     const advKatarMultiplier = (100 + this.getAdvanceKatar()) / 100;
-    const darkClawMultiplier = (100 + this.getDarkClawBonus(isRangeType ? 'range' : 'melee')) / 100;
-    const raidMultiplier = this.getRaidMultiplier();
+    const debuffMultiplier = this.getDebuffMultiplier(dmgType);
     const dmgMultiplier = this.toPercent(dmg + this.getFlatDmg('basicAtk') + 100);
     const extraDmg = this._class.getAdditionalDmg(this.infoForClass);
     const extraBasicDmg = this._class.getAdditionalBasicDmg(this.infoForClass);
@@ -1044,9 +1088,8 @@ export class DamageCalculator {
       total = floor(total * resReduction);
       if (isCalcDef) total = floor(total * hardDef);
       if (isCalcDef) total = total - softDef;
-      total = floor(total * darkClawMultiplier);
       total = floor(total * advKatarMultiplier);
-      total = floor(total * raidMultiplier);
+      total = floor(total * debuffMultiplier);
 
       return this.toPreventNegativeDmg(total);
     };
@@ -1063,10 +1106,10 @@ export class DamageCalculator {
 
     const bonusCriDmgMultiplier = this.toPercent((criDmg || 0) + 100);
     const isRangeType = this.isRangeAtk();
+    const dmgType = isRangeType ? SkillType.RANGE : SkillType.MELEE;
     const rangedDmg = isRangeType ? range : melee;
     const advKatarMultiplier = (100 + this.getAdvanceKatar()) / 100;
-    const darkClawMultiplier = (100 + this.getDarkClawBonus(isRangeType ? 'range' : 'melee')) / 100;
-    const raidMultiplier = this.getRaidMultiplier();
+    const debuffMultiplier = this.getDebuffMultiplier(dmgType);
     const rangedMultiplier = this.toPercent(rangedDmg + 100);
     const dmgMultiplier = this.toPercent(dmg + this.getFlatDmg('basicAtk') + 100);
     const extraDmg = this._class.getAdditionalDmg(this.infoForClass) * this.criMultiplier;
@@ -1085,8 +1128,7 @@ export class DamageCalculator {
       total = floor(total * advKatarMultiplier);
       if (isCalcDef) total = total - softDef;
       total = floor(total * this.criMultiplier);
-      total = floor(total * darkClawMultiplier);
-      total = floor(total * raidMultiplier);
+      total = floor(total * debuffMultiplier);
 
       return this.toPreventNegativeDmg(total);
     };

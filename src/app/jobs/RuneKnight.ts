@@ -3,7 +3,7 @@ import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, DefForCalcModel,
 import { LordKnight } from './LordKnight';
 import { ElementType } from '../constants/element-type.const';
 import { InfoForClass } from '../models/info-for-class.model';
-import { floor } from '../utils';
+import { floor, round } from '../utils';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 1, 0, 0],
@@ -583,8 +583,50 @@ export class RuneKnight extends LordKnight {
     } & DefForCalcModel,
     skillName: string,
   ) {
-    const { baseSkillDamage, propertyMultiplier, totalBonus, reducedHardDef, finalSoftDef } = input;
-    const { cometMultiplier, raidMultiplier } = input
+    const { baseSkillDamage, propertyMultiplier, totalBonus, reducedHardDef, finalSoftDef, monster } = input;
+    const { cometMultiplier } = input
+    const _getRaidMultiplier = (): number => {
+      if (!totalBonus['raid']) return 0;
+
+      return monster.isBoss ? 115 : 130;
+    }
+
+    const _getQuakeBonus = (): number => {
+      const bonus = totalBonus['quake'] || 0;
+      if (!bonus) return 0
+
+      return 100 + bonus;
+    }
+
+    const _getSporeExplosionBonus = (): number => {
+      const bonus = totalBonus['sporeExplosion'] || 0;
+      if (!bonus) return 0
+
+      if (monster.isBoss) {
+        return 100 + bonus / 2;
+      }
+
+      return 100 + bonus;
+    }
+
+    const _getOleumSanctumBonus = (): number => {
+      const bonus = totalBonus['oleumSanctum'] || 0;
+      if (!bonus) return 0
+
+      return 100 + bonus;
+    }
+
+    const getDebuffMultiplier = () => {
+      let totalBonus = 0
+
+      totalBonus += _getRaidMultiplier();
+      totalBonus += _getQuakeBonus();
+      totalBonus += _getSporeExplosionBonus()
+      totalBonus += _getOleumSanctumBonus()
+
+      return round((totalBonus || 100) * 0.01, 4)
+    }
+
     let totalDamage = baseSkillDamage;
     totalDamage = totalDamage - (reducedHardDef + finalSoftDef);
     totalDamage = floor(totalDamage * (100 + totalBonus.range) * 0.01);
@@ -592,7 +634,7 @@ export class RuneKnight extends LordKnight {
     totalDamage = floor(totalDamage * propertyMultiplier);
 
     totalDamage = floor(totalDamage * cometMultiplier);
-    totalDamage = floor(totalDamage * raidMultiplier);
+    totalDamage = floor(totalDamage * getDebuffMultiplier());
     // if (this.isSkillActive('Dragonic Aura')) {
     //   totalDamage += (totalDamage * this.learnLv('Dragonic Aura')) / 10;
     // }

@@ -59,8 +59,6 @@ export const createRawTotalBonus = (): EquipmentSummaryModel => {
     melee: 0,
     range: 0,
     bowRange: 0,
-    rangedReduction: 0,
-    meleeReduction: 0,
     vct: 0,
     vct_inc: 0,
     acd: 0,

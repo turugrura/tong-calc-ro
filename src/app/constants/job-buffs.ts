@@ -1,5 +1,5 @@
 import { ActiveSkillModel } from '../jobs/_character-base.abstract';
-import { BragisPoemFn, DarkClawFn, ShieldSpellFn } from './share-active-skills';
+import { BragisPoemFn, DarkClawFn, ShieldSpellFn, SwingDanceFn } from './share-active-skills';
 
 export const JobBuffs: ActiveSkillModel[] = [
   {
@@ -235,9 +235,19 @@ export const JobBuffs: ActiveSkillModel[] = [
     ],
   },
   DarkClawFn(),
+  {
+    name: 'Debuff_Spore Explosion',
+    label: 'Spore Explosion',
+    inputType: 'selectButton',
+    isDebuff: true,
+    dropdown: [
+      { label: 'Yes', isUse: true, value: 1, bonus: { sporeExplosion: 10 } },
+      { label: 'No', isUse: false, value: 0 },
+    ],
+  },
   ShieldSpellFn(),
   BragisPoemFn(),
-  // SwingDanceFn(),
+  SwingDanceFn(),
   {
     name: 'Mystical Amplification',
     label: 'Mystical Amp 10',
@@ -276,16 +286,6 @@ export const JobBuffs: ActiveSkillModel[] = [
   //     { label: 'No', isUse: false, value: 0 },
   //   ],
   // },
-  {
-    name: '_Trouvere_Troubadour_ignore_res_mres',
-    label: 'M/Res -100',
-    inputType: 'selectButton',
-    isDebuff: true,
-    dropdown: [
-      { label: 'Yes', isUse: true, value: 10, bonus: { monster_res: -10 * 10, monster_mres: -10 * 10 } },
-      { label: 'No', isUse: false, value: 0 },
-    ],
-  },
   // {
   //   name: 'Serenade of Jawaii',
   //   label: 'Serenade of Jawaii 5',
@@ -316,12 +316,38 @@ export const JobBuffs: ActiveSkillModel[] = [
       { label: '+ 22', isUse: true, value: 6, bonus: { sMatk: 22, pAtk: 22 } },
     ],
   },
+
+  {
+    name: '_Trouvere_Troubadour_ignore_res_mres',
+    label: 'M/Res -100',
+    inputType: 'selectButton',
+    isDebuff: true,
+    dropdown: [
+      { label: 'Yes', isUse: true, value: 10, bonus: { monster_res: -10 * 10, monster_mres: -10 * 10 } },
+      { label: 'No', isUse: false, value: 0 },
+    ],
+  },
   {
     name: '_Meister_Quake',
     label: 'Quake 10',
     inputType: 'selectButton',
+    isDebuff: true,
     dropdown: [
-      { label: 'Yes', value: 10, isUse: true, bonus: { rangedReduction: 50, meleeReduction: 50 } },
+      { label: 'Yes', value: 10, isUse: true, bonus: { quake: 50 } },
+      { label: 'No', value: 0, isUse: false },
+    ],
+  },
+  {
+    name: 'Oleum Sanctum',
+    label: 'Oleum Sanctum 5',
+    inputType: 'selectButton',
+    isDebuff: true,
+    dropdown: [
+      // { label: 'Lv 1', value: 1, isUse: true, bonus: { oleumSanctum: 1 * 3 } },
+      // { label: 'Lv 2', value: 2, isUse: true, bonus: { oleumSanctum: 2 * 3 } },
+      // { label: 'Lv 3', value: 3, isUse: true, bonus: { oleumSanctum: 3 * 3 } },
+      // { label: 'Lv 4', value: 4, isUse: true, bonus: { oleumSanctum: 4 * 3 } },
+      { label: 'Yes', value: 5, isUse: true, bonus: { oleumSanctum: 5 * 3 } },
       { label: 'No', value: 0, isUse: false },
     ],
   },
