@@ -126,6 +126,7 @@ export class Warlock extends HighWizard {
       fct: 1,
       vct: 4,
       cd: 4,
+      hit: 4,
       isMatk: true,
       element: ElementType.Water,
       formula: (input: AtkSkillFormulaInput): number => {
@@ -143,6 +144,7 @@ export class Warlock extends HighWizard {
       fct: 1,
       vct: 4,
       cd: 4,
+      hit: 4,
       isMatk: true,
       element: ElementType.Water,
       formula: (input: AtkSkillFormulaInput): number => {
