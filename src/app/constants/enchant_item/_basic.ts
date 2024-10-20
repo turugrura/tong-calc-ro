@@ -142,6 +142,8 @@ export enum MHP {
   _5 = 'MHP5',
 }
 export enum MSP {
+  _50 = 'SP50',
+  _75 = 'SP75',
   _100 = 'SP100',
   _150 = 'SP150',
 }
@@ -404,3 +406,35 @@ export const delay12 = [SkillDelay._1, SkillDelay._2];
 export const delay13 = [SkillDelay._1, SkillDelay._2, SkillDelay._3];
 
 export const matkP35 = [MATK_P._3, MATK_P._4, MATK_P._5];
+
+export const mhp14 = [MHP._1, MHP._2, MHP._3, MHP._4];
+
+export const illusionDunArmor = [
+  ...mhp14,
+  RuneStr._1,
+  RuneStr._2,
+  RuneDex._1,
+  RuneDex._2,
+  RuneInt._1,
+  RuneInt._2,
+  RuneLuk._1,
+  RuneLuk._2,
+  RuneAgi._1,
+  RuneAgi._2,
+  RuneVit._1,
+  RuneVit._2,
+];
+export const illusionDunAcc = [
+  MHP._3,
+  MHP._4,
+  MHP._5,
+  MSP._50,
+  MSP._75,
+  MSP._100,
+  ...str(1, 4),
+  ...int(1, 4),
+  ...dex(1, 4),
+  ...agi(1, 4),
+  ...luk(1, 4),
+  ...vit(1, 4),
+];
