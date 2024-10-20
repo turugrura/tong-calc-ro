@@ -315,7 +315,6 @@ export class ShadowChaser extends Stalker {
       name: 'Genesis Ray',
       label: 'Genesis Ray Lv10',
       value: 'Genesis Ray==10',
-      values: ['[Improved] Genesis Ray==10'],
       acd: 1,
       fct: 0.5,
       vct: 6.5,

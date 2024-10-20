@@ -201,6 +201,17 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
 
   updates: { v: string; date: string; logs: string[] }[] = [
     {
+      v: 'V3.1.4',
+      date: '20-10-2567',
+      logs: [
+        "Changed monsters HP (Rudus4, Amiticia, Niffheim)",
+        "Calculate debuff as bug version [Raid + DC = melee 290%, + Quake = 440%] [Raid + Spore = Range 220%, + Oleum + Quake = 485%]",
+        "Added Adulter Fides weapons",
+        'Added requested items/monsters',
+        'Fixed reported bugs',
+      ],
+    },
+    {
       v: 'V3.1.3',
       date: '03-10-2567',
       logs: [

@@ -45,7 +45,7 @@
       [max2]="totalSummary2?.dmg?.skillBonusFromEquipment"
     ></app-calc-value>
   </div>
-  <div class="col-6">
+  <div class="col-6" [hidden]="totalSummary?.calcSkill?.dmgType === 'Magical'">
     <app-calc-value
       [enableCompare]="isEnableCompare && totalSummary2?.dmg"
       label="SizePenalty:"
@@ -56,7 +56,7 @@
       [max2]="totalSummary2?.dmg?.skillSizePenalty"
     ></app-calc-value>
   </div>
-  <div class="col-6">
+  <div class="col-6" [hidden]="totalSummary?.calcSkill?.dmgType === 'Magical'">
     <app-calc-value
       [enableCompare]="isEnableCompare && totalSummary2?.dmg"
       label="แม่น:"

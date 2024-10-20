@@ -649,14 +649,14 @@ export class Calculator {
   }
 
   private calcStatusAtk() {
-    const { totalStr, totalDex, totalLuk, totalInt } = this.status;
+    const { totalStr, totalInt, totalDex, totalLuk, totalPow, totalSpl } = this.status;
     const baseLvl = this.model.level;
-    const [mainStatus, secondStatus] = this.isRangeAtk() ? [totalDex, totalStr] : [totalStr, totalDex];
 
-    this.totalStatusAtk = floor(baseLvl / 4 + secondStatus / 5 + mainStatus + totalLuk / 3);
+    const [primaryStatus, secondStatus] = this.isRangeAtk() ? [totalDex, totalStr] : [totalStr, totalDex];
+    this.totalStatusAtk = floor(baseLvl / 4 + secondStatus / 5 + primaryStatus + totalLuk / 3) + totalPow * 5;
 
-    const priStat = floor(totalInt / 2) + floor(totalDex / 5) + floor(totalLuk / 3);
-    this.totalStatusMatk = floor(floor(baseLvl / 4) + totalInt + priStat);
+    const priMatkStat = floor(totalInt / 2) + floor(totalDex / 5) + floor(totalLuk / 3);
+    this.totalStatusMatk = floor(floor(baseLvl / 4) + totalInt + priMatkStat) + totalSpl * 5;
   }
 
   private calcMasteryAtk() {
