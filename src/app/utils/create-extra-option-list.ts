@@ -69,6 +69,11 @@ export const createExtraOptionList = () => {
       };
     }),
   });
+  items[0].children.push({
+    label: 'Ignore Size penalty',
+    value: 'ignore_size_penalty:1',
+    // children: [],
+  });
 
   const peneList = [
     { mainItemIdx: 0, label: 'เจาะกาย Race', prefixProp: 'p_pene_race_', properties: atkProps.Race },
