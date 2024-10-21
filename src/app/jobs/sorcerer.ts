@@ -3,6 +3,7 @@ import { InfoForClass } from '../models/info-for-class.model';
 import { ClassName } from './_class-name';
 import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
 import { Scholar } from './Scholar';
+import { addBonus } from '../utils';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 1, 0, 0],
@@ -77,6 +78,13 @@ const jobBonusTable: Record<number, [number, number, number, number, number, num
   70: [4, 4, 8, 13, 9, 5],
 };
 
+enum ElementalSpiritValue {
+  Agni_2 = 12,
+  Aqua_2 = 22,
+  Ventus_2 = 32,
+  Tera_2 = 42,
+}
+
 export class Sorcerer extends Scholar {
   protected override CLASS_NAME = ClassName.Sorcerer;
   protected override JobBonusTable = jobBonusTable;
@@ -140,8 +148,9 @@ export class Sorcerer extends Scholar {
         const baseLevel = model.level;
         const totalInt = status.totalInt;
         const bonus = this.learnLv('Frost Weapon') * 300;
+        const summonerBonus = this.isSummon(ElementalSpiritValue.Aqua_2) ? model.jobLevel * 5 : 0
 
-        return ((skillLevel + 2) * totalInt + bonus) * (baseLevel / 100);
+        return ((skillLevel + 2) * totalInt + bonus) * (baseLevel / 100) + summonerBonus;
       },
     },
     {
@@ -159,8 +168,9 @@ export class Sorcerer extends Scholar {
         const baseLevel = model.level;
         const totalInt = status.totalInt;
         const bonus = this.learnLv('Seismic Weapon') * 300;
+        const summonerBonus = this.isSummon(ElementalSpiritValue.Tera_2) ? model.jobLevel * 5 : 0
 
-        return ((skillLevel + 2) * totalInt + bonus) * (baseLevel / 100);
+        return ((skillLevel + 2) * totalInt + bonus) * (baseLevel / 100) + summonerBonus;
       },
     },
     {
@@ -173,8 +183,18 @@ export class Sorcerer extends Scholar {
       acd: 1,
       getElement: () => {
         const spiritLv = this.activeSkillLv('_ElementalMaster_spirit');
+        if (spiritLv) return ElementalMasterSpirit[spiritLv] || ElementType.Neutral
 
-        return ElementalMasterSpirit[spiritLv] ?? ElementType.Neutral;
+        const elementalMapper = {
+          [ElementalSpiritValue.Agni_2]: ElementType.Fire,
+          [ElementalSpiritValue.Aqua_2]: ElementType.Water,
+          [ElementalSpiritValue.Ventus_2]: ElementType.Wind,
+          [ElementalSpiritValue.Tera_2]: ElementType.Earth,
+        }
+        const eleSpiritVal = this.activeSkillLv('_Sorcerer_Elemental_Spirit')
+        if (eleSpiritVal) return elementalMapper[eleSpiritVal] || ElementType.Neutral
+
+        return ElementType.Neutral;
       },
       totalHit: 7,
       isMatk: true,
@@ -211,8 +231,9 @@ export class Sorcerer extends Scholar {
         const totalInt = status.totalInt;
         const strikingLvl = this.learnLv('Striking');
         const endowLvl = this.learnLv('Lightning Loader');
+        const summonerBonus = this.isSummon(ElementalSpiritValue.Ventus_2) ? model.jobLevel * 5 : 0
 
-        return (((skillLevel + 4) * totalInt) / 2 + (strikingLvl + endowLvl) * 150) * (baseLevel / 100);
+        return (((skillLevel + 4) * totalInt) / 2 + (strikingLvl + endowLvl) * 150) * (baseLevel / 100) + summonerBonus;
       },
     },
     {
@@ -229,17 +250,31 @@ export class Sorcerer extends Scholar {
         const { model, skillLevel, status } = input;
         const baseLevel = model.level;
         const totalInt = status.totalInt;
+        const summonerBonus = this.isSummon(ElementalSpiritValue.Tera_2) ? model.jobLevel * 5 : 0
 
-        return (1000 + skillLevel * 300 + totalInt) * (baseLevel / 100);
+        return (1000 + skillLevel * 300 + totalInt) * (baseLevel / 100) + summonerBonus;
       },
     },
   ];
-  private readonly activeSkillList3rd: ActiveSkillModel[] = [];
+  private readonly activeSkillList3rd: ActiveSkillModel[] = [
+    {
+      name: '_Sorcerer_Elemental_Spirit',
+      label: 'Elemental Spirit',
+      inputType: 'dropdown',
+      dropdown: [
+        { label: '-', isUse: false, value: 0 },
+        { label: 'Agni Lv 2', isUse: true, value: ElementalSpiritValue.Agni_2, },
+        { label: 'Aqua Lv 2', isUse: true, value: ElementalSpiritValue.Aqua_2 },
+        { label: 'Ventus Lv 2', isUse: true, value: ElementalSpiritValue.Ventus_2 },
+        { label: 'Tera Lv 2', isUse: true, value: ElementalSpiritValue.Tera_2, },
+      ],
+    },
+  ];
   private readonly passiveSkillList3rd: PassiveSkillModel[] = [
     {
-      inputType: 'dropdown',
-      label: 'Striking',
       name: 'Striking',
+      label: 'Striking',
+      inputType: 'dropdown',
       dropdown: [
         { label: '-', isUse: false, value: 0 },
         { label: 'Lv 1', isUse: true, value: 1 },
@@ -250,9 +285,9 @@ export class Sorcerer extends Scholar {
       ],
     },
     {
-      inputType: 'dropdown',
-      label: 'Diamond Dust',
       name: 'Diamond Dust',
+      label: 'Diamond Dust',
+      inputType: 'dropdown',
       dropdown: [
         { label: '-', isUse: false, value: 0 },
         { label: 'Lv 1', isUse: true, value: 1 },
@@ -263,9 +298,9 @@ export class Sorcerer extends Scholar {
       ],
     },
     {
-      inputType: 'dropdown',
-      label: 'Earth Grave',
       name: 'Earth Grave',
+      label: 'Earth Grave',
+      inputType: 'dropdown',
       dropdown: [
         { label: '-', isUse: false, value: 0 },
         { label: 'Lv 1', isUse: true, value: 1 },
@@ -316,6 +351,25 @@ export class Sorcerer extends Scholar {
     }
     totalBonus.aspdPercent = (totalBonus.aspdPercent || 0) + aspdPercent;
 
+    if (!this.activeSkillLv('_ElementalMaster_spirit')) {
+      if (this.isSummon(ElementalSpiritValue.Agni_2)) {
+        addBonus(totalBonus, 'atk', 120)
+      } else if (this.isSummon(ElementalSpiritValue.Aqua_2)) {
+        addBonus(totalBonus, 'matk', 80)
+      } else if (this.isSummon(ElementalSpiritValue.Ventus_2)) {
+        addBonus(totalBonus, 'skillAspd', 5)
+        addBonus(totalBonus, 'fct', 1)
+      } else if (this.isSummon(ElementalSpiritValue.Tera_2)) {
+        addBonus(totalBonus, 'hpPercent', 10)
+      }
+    }
+
     return totalBonus;
+  }
+
+  private isSummon(spirit: ElementalSpiritValue) {
+    if (this.activeSkillLv('_ElementalMaster_spirit')) return false;
+
+    return this.activeSkillLv('_Sorcerer_Elemental_Spirit') === spirit
   }
 }

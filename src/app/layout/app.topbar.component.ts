@@ -158,6 +158,11 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
       link: 'https://www.divine-pride.net/forum/index.php?/topic/4319-kro-illusion-of-under-water',
     },
     {
+      label: 'RO Podcast EP 7 : ส่อง KRO patchnote Q4 + คุยเรื่อง debuff',
+      writer: 'Sigma the fallen',
+      link: 'https://www.youtube.com/live/xUiYYi6o6gA?si=EdJvXnchwtionL_4&t=1515',
+    },
+    {
       label: 'สกิล Class 4 V2',
       writer: 'Sigma the fallen',
       link: 'https://sigmathefallen.blogspot.com/',

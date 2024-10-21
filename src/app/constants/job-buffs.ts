@@ -62,7 +62,7 @@ export const JobBuffs: ActiveSkillModel[] = [
   },
   {
     name: '_Argutus Vita_Telum',
-    label: 'เจาะ M/Res 25',
+    label: 'เจาะ Res/MRes 25',
     inputType: 'selectButton',
     dropdown: [
       { label: 'Yes', isUse: true, value: 5, bonus: { pene_res: 25, pene_mres: 25 } },
@@ -319,7 +319,7 @@ export const JobBuffs: ActiveSkillModel[] = [
 
   {
     name: '_Trouvere_Troubadour_ignore_res_mres',
-    label: 'M/Res -100',
+    label: 'Res/MRes -100',
     inputType: 'selectButton',
     isDebuff: true,
     dropdown: [

@@ -315,7 +315,7 @@ export class ElementalMaster extends Sorcerer {
   private readonly activeSkillList4th: ActiveSkillModel[] = [
     {
       name: '_ElementalMaster_spirit',
-      label: 'Summon',
+      label: 'Master spirit',
       inputType: 'dropdown',
       dropdown: [
         { label: '-', value: 0, isUse: false },

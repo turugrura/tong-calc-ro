@@ -3,6 +3,7 @@ const ACTIVE_PASSIVE_SKILL_NAMES = [
   '_Argutus Vita_Telum',
   '_Biolo_Monster_List',
   '_ElementalMaster_spirit',
+  '_Sorcerer_Elemental_Spirit',
   '_Meister_ABR_List',
   '_Meister_Quake',
   '_Meister_Rush',
