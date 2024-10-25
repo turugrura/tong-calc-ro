@@ -24,6 +24,7 @@ export interface PresetModel {
   weaponCard2: number;
   weaponCard3: number;
   weaponCard4: number;
+  weaponEnchant0: number;
   weaponEnchant1: number;
   weaponEnchant2: number;
   weaponEnchant3: number;
@@ -33,6 +34,7 @@ export interface PresetModel {
   leftWeaponCard2: number;
   leftWeaponCard3: number;
   leftWeaponCard4: number;
+  leftWeaponEnchant0: number;
   leftWeaponEnchant1: number;
   leftWeaponEnchant2: number;
   leftWeaponEnchant3: number;

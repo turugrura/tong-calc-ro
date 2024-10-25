@@ -172,9 +172,11 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   leftWeaponList: DropdownModel[] = [];
   leftWeaponGradeList: DropdownModel[] = [];
   weaponCardList: DropdownModel[] = [];
+  weaponEnchant0List: DropdownModel[] = [];
   weaponEnchant1List: DropdownModel[] = [];
   weaponEnchant2List: DropdownModel[] = [];
   weaponEnchant3List: DropdownModel[] = [];
+  leftWeaponEnchant0List: DropdownModel[] = [];
   leftWeaponEnchant1List: DropdownModel[] = [];
   leftWeaponEnchant2List: DropdownModel[] = [];
   leftWeaponEnchant3List: DropdownModel[] = [];
@@ -2074,7 +2076,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         if (isLv4 && isSup) return true;
       }
 
-      // return a.label.includes('Muqaddas')
+      // return a.label.startsWith('Glacier')
 
       return onlyMe(a);
     };
@@ -2229,10 +2231,10 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     let { itemSubTypeId } = this.items[mainItemId] ?? ({} as ItemModel);
     const enchants = getEnchants(aegisName) ?? getEnchants(name);
 
-    const [_, e2, e3, e4] = Array.isArray(enchants) ? enchants : [];
+    const [e1, e2, e3, e4] = Array.isArray(enchants) ? enchants : [];
     // console.log({ itemId, e2, e3, e4 });
     const clearModel = (prefix) => {
-      for (const idx of [1, 2, 3]) {
+      for (const idx of [0, 1, 2, 3]) {
         const enchantList = this[`${prefix}Enchant${idx}List`] as DropdownModel[];
         const itemType = `${prefix}Enchant${idx}` as ItemTypeEnum;
         const itemId = this.model[itemType];
@@ -2258,12 +2260,14 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
     if (itemTypeId === ItemTypeId.WEAPON) {
       if (positionEnum === ItemTypeEnum.leftWeapon) {
+        this.leftWeaponEnchant0List = (e1 ?? []).map(mapToEnchant).map(mapToOption);
         this.leftWeaponEnchant1List = (e2 ?? []).map(mapToEnchant).map(mapToOption);
         this.leftWeaponEnchant2List = (e3 ?? []).map(mapToEnchant).map(mapToOption);
         this.leftWeaponEnchant3List = (e4 ?? []).map(mapToEnchant).map(mapToOption);
         this.leftWeaponGradeList = canGrade ? getGradeList() : [];
         clearModel('leftWeapon');
       } else {
+        this.weaponEnchant0List = (e1 ?? []).map(mapToEnchant).map(mapToOption);
         this.weaponEnchant1List = (e2 ?? []).map(mapToEnchant).map(mapToOption);
         this.weaponEnchant2List = (e3 ?? []).map(mapToEnchant).map(mapToOption);
         this.weaponEnchant3List = (e4 ?? []).map(mapToEnchant).map(mapToOption);

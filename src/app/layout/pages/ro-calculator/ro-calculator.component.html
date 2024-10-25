@@ -626,7 +626,7 @@
       </div>
       <div class="col-9">
         <div class="grid grid-nogutter">
-          <div class="col-4">
+          <div class="col-4" [hidden]="itemSlotsMap.weapon < 1">
             <p-dropdown
               inputId="weaponCard1"
               [autoDisplayFirst]="false"
@@ -649,7 +649,7 @@
               </ng-template>
             </p-dropdown>
           </div>
-          <div class="col-4">
+          <div class="col-4" [hidden]="itemSlotsMap.weapon < 2">
             <p-dropdown
               inputId="weaponCard2"
               [autoDisplayFirst]="false"
@@ -720,6 +720,35 @@
           </div>
           <div class="col-12" [hidden]="(weaponEnchant1List.length === 0 && weaponEnchant2List.length === 0 && weaponEnchant3List.length === 0) || !model.weapon">
             <div class="grid grid-nogutter">
+              <div class="col-4" [hidden]="weaponEnchant0List.length === 0">
+                <p-dropdown
+                  inputId="weaponEnchant0"
+                  [autoDisplayFirst]="false"
+                  [resetFilterOnHide]="true"
+                  [options]="weaponEnchant0List"
+                  [filter]="true"
+                  filterBy="label"
+                  scrollHeight="350px"
+                  [(ngModel)]="model.weaponEnchant0"
+                  [showClear]="true"
+                  [disabled]="weaponEnchant0List.length === 0 || !model.weapon"
+                  (onChange)="onSelectItem('weaponEnchant0', $event.value)"
+                  placeholder="Enchant 1"
+                >
+                  <ng-template let-item pTemplate="selectedItem">
+                    <div class="flex gap-1 item_template" *ngIf="model.weaponEnchant0">
+                      <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
+                      <div>{{ item.label }}</div>
+                    </div>
+                  </ng-template>
+                  <ng-template let-item pTemplate="item">
+                    <div class="flex gap-1">
+                      <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
+                      <div>{{ item.label }}</div>
+                    </div>
+                  </ng-template>
+                </p-dropdown>
+              </div>
               <div class="col-4">
                 <p-dropdown
                   inputId="weaponEnchant1"
@@ -1021,6 +1050,35 @@
             [hidden]="(leftWeaponEnchant1List.length === 0 && leftWeaponEnchant2List.length === 0 && leftWeaponEnchant3List.length === 0) || !model.leftWeapon"
           >
             <div class="grid grid-nogutter">
+              <div class="col-4" [hidden]="leftWeaponEnchant0List.length === 0">
+                <p-dropdown
+                  inputId="leftWeaponEnchant0"
+                  [autoDisplayFirst]="false"
+                  [resetFilterOnHide]="true"
+                  [options]="leftWeaponEnchant0List"
+                  [filter]="true"
+                  filterBy="label"
+                  scrollHeight="350px"
+                  [(ngModel)]="model.leftWeaponEnchant0"
+                  [showClear]="true"
+                  [disabled]="leftWeaponEnchant0List.length === 0 || !model.leftWeapon || !model.weapon"
+                  (onChange)="onSelectItem('leftWeaponEnchant0', $event.value)"
+                  placeholder="Enchant 1"
+                >
+                  <ng-template let-item pTemplate="selectedItem">
+                    <div class="flex gap-1 item_template" *ngIf="model.leftWeaponEnchant0">
+                      <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
+                      <div>{{ item.label }}</div>
+                    </div>
+                  </ng-template>
+                  <ng-template let-item pTemplate="item">
+                    <div class="flex gap-1">
+                      <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
+                      <div>{{ item.label }}</div>
+                    </div>
+                  </ng-template>
+                </p-dropdown>
+              </div>
               <div class="col-4">
                 <p-dropdown
                   inputId="leftWeaponEnchant1"
@@ -1179,6 +1237,7 @@
           [(card2Id)]="model2.weaponCard2"
           [(card3Id)]="model2.weaponCard3"
           [(card4Id)]="model2.weaponCard4"
+          [(enchant1Id)]="model2.weaponEnchant0"
           [(enchant2Id)]="model2.weaponEnchant1"
           [(enchant3Id)]="model2.weaponEnchant2"
           [(enchant4Id)]="model2.weaponEnchant3"

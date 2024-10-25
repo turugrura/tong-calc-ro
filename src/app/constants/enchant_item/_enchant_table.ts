@@ -101,7 +101,7 @@ import { dimensionHead2, dimensionHead3, dimensionHead4, dimensionWeapon3, dimen
 import { droopingLt3, droopingLt4, redBlueLt3, redBlueLt4 } from './drooping_thanatos_lt';
 import { furiousHeadUp3, furiousHeadUp4, furiousWeaponUp3, furiousWeaponUp4 } from './furious';
 import { gbAcc2, gbAcc3, gbAcc4, gbArmor2, gbArmor3, gbArmor4, gbBoot2, gbBoot3, gbBoot4, gbGarment2, gbGarment3, gbGarment4 } from './gaebolg';
-import { glacierAcc2, glacierAcc3, glacierAccL4, glacierAccR4, glacierArmor2, glacierArmor3, glacierArmor4, glacierBoot2, glacierBoot3, glacierBoot4, glacierGarment2, glacierGarment3, glacierGarment4, glacierGuard2, glacierGuard3, glacierGuard4, issgardCrown2, issgardCrown3, issgardCrown4 } from './glacier';
+import { glacierAcc2, glacierAcc3, glacierAccL4, glacierAccR4, glacierArmor2, glacierArmor3, glacierArmor4, glacierBoot2, glacierBoot3, glacierBoot4, glacierGarment2, glacierGarment3, glacierGarment4, glacierGuard2, glacierGuard3, glacierGuard4, glacierWea1, glacierWea2, glacierWea3, glacierWea4, issgardCrown2, issgardCrown3, issgardCrown4 } from './glacier';
 import {
   grayWolfAccL_slot2,
   grayWolfAccL_slot3,
@@ -505,7 +505,7 @@ const goldenSet = [...all25];
 
 interface EntTable {
   name: string;
-  enchants: [null, any[], any[], any[]];
+  enchants: [null | string[], string[], string[], string[]];
 }
 
 const soutanes = ['Cassock_Str', 'Cassock_Agi', 'Cassock_Vit', 'Cassock_Dex', 'Cassock_Int', 'Cassock_Luk'];
@@ -1146,32 +1146,32 @@ export const EnchantTable: EntTable[] = [
 
   { name: 'Glacier_Guard', enchants: [null, glacierGuard2, glacierGuard3, glacierGuard4] },
 
-  //   {name: 'Glacier_Sword', enchants: [null, null, oasdWeapon3, oasdWeapon4] },
-  // {name: 'Glacier_B_Sword', enchants: [null, null, oasdWeapon3, oasdWeapon4] },
-  // {name: 'Glacier_R_Knife', enchants: [null, null, oasdWeapon3, oasdWeapon4] },
-  // {name: 'Glacier_B_Knife', enchants: [null, null, oasdWeapon3, oasdWeapon4] },
-  // {name: 'Glacier_Axe', enchants: [null, null, oasdWeapon3, oasdWeapon4] },
-  // {name: 'Glacier_Spear', enchants: [null, null, oasdWeapon3, oasdWeapon4] },
-  // {name: 'Glacier_Book', enchants: [null, null, oasdWeapon3, oasdWeapon4] },
-  // {name: 'Glacier_Wand', enchants: [null, null, oasdWeapon3, oasdWeapon4] },
-  // {name: 'Glacier_Foxtail', enchants: [null, null, oasdWeapon3, oasdWeapon4] },
-  // {name: 'Glacier_Knuckle', enchants: [null, null, oasdWeapon3, oasdWeapon4] },
-  // {name: 'Glacier_Violin', enchants: [null, null, oasdWeapon3, oasdWeapon4] },
-  // {name: 'Glacier_Whip', enchants: [null, null, oasdWeapon3, oasdWeapon4] },
-  // {name: 'Glacier_Mace', enchants: [null, null, oasdWeapon3, oasdWeapon4] },
-  // {name: 'Glacier_M_Mace', enchants: [null, null, oasdWeapon3, oasdWeapon4] },
-  // {name: 'Glacier_T_Sword', enchants: [null, null, oasdWeapon3, oasdWeapon4] },
-  // {name: 'Glacier_Katar', enchants: [null, null, oasdWeapon3, oasdWeapon4] },
-  // {name: 'Glacier_T_Axe', enchants: [null, null, oasdWeapon3, oasdWeapon4] },
-  // {name: 'Glacier_Lance', enchants: [null, null, oasdWeapon3, oasdWeapon4] },
-  // {name: 'Glacier_Staff', enchants: [null, null, oasdWeapon3, oasdWeapon4] },
-  // {name: 'Glacier_Humma', enchants: [null, null, oasdWeapon3, oasdWeapon4] },
-  // {name: 'Glacier_Bow', enchants: [null, null, oasdWeapon3, oasdWeapon4] },
-  // {name: 'Glacier_Revolver', enchants: [null, null, oasdWeapon3, oasdWeapon4] },
-  // {name: 'Glacier_Rifle', enchants: [null, null, oasdWeapon3, oasdWeapon4] },
-  // {name: 'Glacier_Shotgun', enchants: [null, null, oasdWeapon3, oasdWeapon4] },
-  // {name: 'Glacier_Gatling', enchants: [null, null, oasdWeapon3, oasdWeapon4] },
-  // {name: 'Glacier_Launcher', enchants: [null, null, oasdWeapon3, oasdWeapon4] },
+  { name: 'Glacier_Sword', enchants: [glacierWea1, glacierWea2, glacierWea3, glacierWea4] },
+  { name: 'Glacier_B_Sword', enchants: [glacierWea1, glacierWea2, glacierWea3, glacierWea4] },
+  { name: 'Glacier_R_Knife', enchants: [glacierWea1, glacierWea2, glacierWea3, glacierWea4] },
+  { name: 'Glacier_B_Knife', enchants: [glacierWea1, glacierWea2, glacierWea3, glacierWea4] },
+  { name: 'Glacier_Axe', enchants: [glacierWea1, glacierWea2, glacierWea3, glacierWea4] },
+  { name: 'Glacier_Spear', enchants: [glacierWea1, glacierWea2, glacierWea3, glacierWea4] },
+  { name: 'Glacier_Book', enchants: [glacierWea1, glacierWea2, glacierWea3, glacierWea4] },
+  { name: 'Glacier_Wand', enchants: [glacierWea1, glacierWea2, glacierWea3, glacierWea4] },
+  { name: 'Glacier_Foxtail', enchants: [glacierWea1, glacierWea2, glacierWea3, glacierWea4] },
+  { name: 'Glacier_Knuckle', enchants: [glacierWea1, glacierWea2, glacierWea3, glacierWea4] },
+  { name: 'Glacier_Violin', enchants: [glacierWea1, glacierWea2, glacierWea3, glacierWea4] },
+  { name: 'Glacier_Whip', enchants: [glacierWea1, glacierWea2, glacierWea3, glacierWea4] },
+  { name: 'Glacier_Mace', enchants: [glacierWea1, glacierWea2, glacierWea3, glacierWea4] },
+  { name: 'Glacier_M_Mace', enchants: [glacierWea1, glacierWea2, glacierWea3, glacierWea4] },
+  { name: 'Glacier_T_Sword', enchants: [glacierWea1, glacierWea2, glacierWea3, glacierWea4] },
+  { name: 'Glacier_Katar', enchants: [glacierWea1, glacierWea2, glacierWea3, glacierWea4] },
+  { name: 'Glacier_T_Axe', enchants: [glacierWea1, glacierWea2, glacierWea3, glacierWea4] },
+  { name: 'Glacier_Lance', enchants: [glacierWea1, glacierWea2, glacierWea3, glacierWea4] },
+  { name: 'Glacier_Staff', enchants: [glacierWea1, glacierWea2, glacierWea3, glacierWea4] },
+  { name: 'Glacier_Humma', enchants: [glacierWea1, glacierWea2, glacierWea3, glacierWea4] },
+  { name: 'Glacier_Bow', enchants: [glacierWea1, glacierWea2, glacierWea3, glacierWea4] },
+  { name: 'Glacier_Revolver', enchants: [glacierWea1, glacierWea2, glacierWea3, glacierWea4] },
+  { name: 'Glacier_Rifle', enchants: [glacierWea1, glacierWea2, glacierWea3, glacierWea4] },
+  { name: 'Glacier_Shotgun', enchants: [glacierWea1, glacierWea2, glacierWea3, glacierWea4] },
+  { name: 'Glacier_Gatling', enchants: [glacierWea1, glacierWea2, glacierWea3, glacierWea4] },
+  { name: 'Glacier_Launcher', enchants: [glacierWea1, glacierWea2, glacierWea3, glacierWea4] },
 
   { name: 'D_Glacier_Armor', enchants: [null, dimGlaArmor2, dimGlaArmor3, dimGlaArmor4] },
   { name: 'D_Glacier_Robe', enchants: [null, dimGlaArmor2, dimGlaArmor3, dimGlaArmor4] },

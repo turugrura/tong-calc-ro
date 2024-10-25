@@ -6,7 +6,6 @@ import { LoginResponse } from './models';
 import { Unauthorized } from '../app-errors';
 
 const BASE_URL = environment.roBackendUrl;
-const ACCESS_TOKEN_KEY = 'accessToken';
 const REFRESH_TOKEN_KEY = 'refreshToken';
 
 export abstract class BaseAPIService {

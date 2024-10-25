@@ -46,7 +46,7 @@ export const calcSkillAspd = (params: {
   const vctBySkill_ = (100 - vctBySkill) / 100;
 
   const reducedVct = Math.max(0, roundUp((skillVct - reduceSkillVctFix) * vctByStat * vctGlobal * vctSkill * vctBySkill_, precision));
-  const reducedCd = Math.max(0, roundUp(skillCd - reduceSkillCd, precision));
+  const reducedCd = Math.max(0, round(skillCd - reduceSkillCd, precision));
   const reducedAcd = Math.max(0, round((skillAcd - reduceSkillAcd) * (1 - acd * 0.01), precision));
 
   const reducedFct = Math.max(0, roundUp((skillFct - reduceSkillFct - fct) * (1 - fctPercent * 0.01) * (1 - reduceSkillFctPercent * 0.01), precision));

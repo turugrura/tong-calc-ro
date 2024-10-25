@@ -49,6 +49,9 @@ export class EquipmentComponent implements AfterViewInit {
   @Input() card4Id = undefined;
   @Output() card4IdChange = new EventEmitter<number>();
 
+  @Input() enchant1Id = undefined;
+  @Output() enchant1IdChange = new EventEmitter<number>();
+
   @Input() enchant2Id = undefined;
   @Output() enchant2IdChange = new EventEmitter<number>();
 
@@ -68,6 +71,7 @@ export class EquipmentComponent implements AfterViewInit {
   @Output() option3ValueChange = new EventEmitter<string>();
 
   totalCardSlots = 0;
+  enchant1List: DropdownModel[] = [];
   enchant2List: DropdownModel[] = [];
   enchant3List: DropdownModel[] = [];
   enchant4List: DropdownModel[] = [];
@@ -88,6 +92,7 @@ export class EquipmentComponent implements AfterViewInit {
         card2Id: `${this.itemType}Card2`,
         card3Id: `${this.itemType}Card3`,
         card4Id: `${this.itemType}Card4`,
+        enchant1Id: `${this.itemType}Enchant0`,
         enchant2Id: `${this.itemType}Enchant1`,
         enchant3Id: `${this.itemType}Enchant2`,
         enchant4Id: `${this.itemType}Enchant3`,
@@ -104,19 +109,21 @@ export class EquipmentComponent implements AfterViewInit {
     const { aegisName, name, canGrade } = this.items[mainItemId] ?? ({} as ItemModel);
     const enchants = getEnchants(aegisName) ?? getEnchants(name);
 
-    const [_, e2, e3, e4] = Array.isArray(enchants) ? enchants : [];
+    const [e1, e2, e3, e4] = Array.isArray(enchants) ? enchants : [];
     // console.log({ mainItemId, e2, e3, e4 });
     const clearModel = () => {
-      for (const idx of [2, 3, 4]) {
+      for (const idx of [1, 2, 3, 4]) {
         const enchantList = this[`enchant${idx}List`] as DropdownModel[];
-        if (this.itemId && !enchantList.find((a) => a.value === this.itemId)) {
-          const property = `enchant${idx}Id`;
+        const property = `enchant${idx}Id`;
+        const currentEnchantValue = this[property]
+        if (this.itemId && !enchantList.find((a) => a.value === currentEnchantValue)) {
           this[property] = undefined;
           this.onSelectItem(property);
         }
       }
     };
 
+    this.enchant1List = (e1 ?? []).map((a: any) => this.mapEnchant.get(a)).map((a: any) => ({ label: a.name, value: a.id }));
     this.enchant2List = (e2 ?? []).map((a: any) => this.mapEnchant.get(a)).map((a: any) => ({ label: a.name, value: a.id }));
     this.enchant3List = (e3 ?? []).map((a: any) => this.mapEnchant.get(a)).map((a: any) => ({ label: a.name, value: a.id }));
     this.enchant4List = (e4 ?? []).map((a: any) => this.mapEnchant.get(a)).map((a: any) => ({ label: a.name, value: a.id }));

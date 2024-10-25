@@ -37,6 +37,7 @@
 :host ::ng-deep .item_label_weaponCard3,
 :host ::ng-deep .item_label_weaponCard4,
 :host ::ng-deep .item_label_ammo,
+:host ::ng-deep .item_label_weaponEnchant0,
 :host ::ng-deep .item_label_weaponEnchant1,
 :host ::ng-deep .item_label_weaponEnchant2,
 :host ::ng-deep .item_label_weaponEnchant3 {
@@ -58,6 +59,7 @@
 :host ::ng-deep .item_label_leftWeaponCard2,
 :host ::ng-deep .item_label_leftWeaponCard3,
 :host ::ng-deep .item_label_leftWeaponCard4,
+:host ::ng-deep .item_label_leftWeaponEnchant0,
 :host ::ng-deep .item_label_leftWeaponEnchant1,
 :host ::ng-deep .item_label_leftWeaponEnchant2,
 :host ::ng-deep .item_label_leftWeaponEnchant3 {
