@@ -5,10 +5,10 @@
   <div class="col-12" [hidden]="!totalSummary?.dmg?.requireTxt">
     Require: <span class="summary_monster_value text-lg px-1" style="color: var(--red-500)">{{ totalSummary?.dmg?.requireTxt }}</span>
   </div>
-  <div class="col-6">
+  <div class="col-5">
     Type <span class="summary_highlight font-semibold">{{ totalSummary?.calcSkill?.dmgType }}</span>
   </div>
-  <div class="col-6">
+  <div class="col-7">
     Element:
     <span class="{{ 'property_' + totalSummary?.calcSkill?.propertySkill }} px-1 font-semibold">{{ totalSummary?.calcSkill?.propertySkill }}</span
     ><span class="summary_highlight px-2">( x {{ totalSummary?.dmg?.skillPropertyMultiplier }})</span>

@@ -1,7 +1,7 @@
 <div class="grid grid-nogutter">
   <div class="col-3">
     <div class="grid grid-nogutter justify-content-end">
-      <div class="col-12">
+      <div class="col-12" style="display: block; position: relative">
         <p-dropdown
           inputId="baseItem"
           [autoDisplayFirst]="false"
@@ -29,6 +29,7 @@
             </div>
           </ng-template>
         </p-dropdown>
+        <label *ngIf="overlayLabel" for="baseItem" class="item_float_label" style="position: absolute; top: -1.5rem">{{ overlayLabel }}</label>
       </div>
       <div class="col-6" [hidden]="!gradeList.length || !itemId">
         <p-dropdown
@@ -166,7 +167,7 @@
           </ng-template>
         </p-dropdown>
       </div>
-      <div class="col-4" *ngIf="itemType !== 'weapon' && totalExtraOption < 3" [hidden]="totalExtraOption < 1">
+      <div class="col-4" *ngIf="!isWeapon && totalExtraOption < 3" [hidden]="totalExtraOption < 1">
         <p-cascadeSelect
           [(ngModel)]="option1Value"
           [disabled]="!itemId"
@@ -181,7 +182,7 @@
           (onClear)="onOptionChange('option1Value', $event)"
         ></p-cascadeSelect>
       </div>
-      <div class="col-4" *ngIf="itemType !== 'weapon' && totalExtraOption < 3" [hidden]="totalExtraOption < 2">
+      <div class="col-4" *ngIf="!isWeapon && totalExtraOption < 3" [hidden]="totalExtraOption < 2">
         <p-cascadeSelect
           [(ngModel)]="option2Value"
           [disabled]="!itemId"
@@ -318,7 +319,7 @@
         </div>
       </div>
 
-      <div class="col-12" *ngIf="itemType === 'weapon' || totalExtraOption === 3">
+      <div class="col-12" *ngIf="isWeapon || totalExtraOption === 3">
         <div class="grid grid-nogutter">
           <div class="col-4" [hidden]="totalExtraOption < 1">
             <p-cascadeSelect

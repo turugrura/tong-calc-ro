@@ -520,7 +520,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
             }
 
             model2[`${itemTypeName}Refine`] = this.model2[`${itemTypeName}Refine`] || 0;
-            model2[`${itemTypeName}Grade`] = this.model2[`${itemTypeName}Grade`];
+            model2[`${itemTypeName}Grade`] = this.model2[`${itemTypeName}Grade`] || null;
 
             return agg;
           }, {});

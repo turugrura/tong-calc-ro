@@ -16,6 +16,7 @@ export interface ItemModel {
   requiredLevel: any;
   location: any;
   compositionPos: number;
+  isRefinable?: boolean;
   cardPrefix?: string;
   canGrade?: boolean;
   script: Record<string, any[]>;

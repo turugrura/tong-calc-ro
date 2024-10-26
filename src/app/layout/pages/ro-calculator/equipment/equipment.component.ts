@@ -6,27 +6,35 @@ import { ExtraOptionTable } from '../../../../constants/extra-option-table';
 import { getGradeList } from '../../../../utils';
 import { getEnchants } from 'src/app/constants/enchant_item';
 
+interface EventEmitterResultModel {
+  itemType: string;
+  itemId?: number;
+  refine?: number;
+  grade?: string;
+}
+
 @Component({
   selector: 'app-equipment',
   templateUrl: './equipment.component.html',
   styleUrls: ['../ro-calculator.component.css'],
 })
 export class EquipmentComponent implements AfterViewInit {
-  @Input({ required: true }) itemType!: string;
-  @Input({ required: true }) placeholder: string;
-  @Input() isWeapon = false;
+  @Input({ required: true }) readonly itemType!: string;
+  @Input({ required: true }) readonly placeholder: string;
+  @Input() readonly overlayLabel!: string;
+  readonly isWeapon = this.itemType === ItemTypeEnum.weapon || this.itemType === ItemTypeEnum.leftWeapon;
 
-  @Input() items!: Record<number, ItemModel>;
+  @Input() readonly items!: Record<number, ItemModel>;
   @Input() itemList: DropdownModel[] = [];
   @Input() refineList: DropdownModel[] = [];
   @Input() cardList: DropdownModel[] = [];
   @Input() mapEnchant!: Map<string, ItemModel>;
   @Input() optionList: any[] = [];
 
-  @Output() selectItemChange = new EventEmitter<any>();
+  @Output() selectItemChange = new EventEmitter<EventEmitterResultModel>();
   @Output() clearItemEvent = new EventEmitter<string>();
   @Output() optionChange = new EventEmitter<string>();
-  @Output() gradeChange = new EventEmitter<string>();
+  @Output() gradeChange = new EventEmitter<EventEmitterResultModel>();
 
   @Input() itemId = undefined;
   @Output() itemIdChange = new EventEmitter<number>();
@@ -102,11 +110,23 @@ export class EquipmentComponent implements AfterViewInit {
   }
 
   get isHeadCardable() {
-    return this.itemType === 'headMiddle' || this.itemType === 'headUpper';
+    return this.itemType === ItemTypeEnum.headMiddle || this.itemType === ItemTypeEnum.headUpper;
   }
 
-  private setEnchantList(mainItemId: number) {
-    const { aegisName, name, canGrade } = this.items[mainItemId] ?? ({} as ItemModel);
+  get isAcc() {
+    return this.itemType === ItemTypeEnum.accLeft || this.itemType === ItemTypeEnum.accRight;
+  }
+
+  get isRefinable() {
+    return this.getItem(this.itemId).isRefinable ?? false
+  }
+
+  private getItem(mainItemId?: number) {
+    return this.items?.[mainItemId || this.itemId] ?? ({} as ItemModel);
+  }
+
+  private setEnchantList() {
+    const { aegisName, name, canGrade } = this.getItem();
     const enchants = getEnchants(aegisName) ?? getEnchants(name);
 
     const [e1, e2, e3, e4] = Array.isArray(enchants) ? enchants : [];
@@ -116,7 +136,8 @@ export class EquipmentComponent implements AfterViewInit {
         const enchantList = this[`enchant${idx}List`] as DropdownModel[];
         const property = `enchant${idx}Id`;
         const currentEnchantValue = this[property]
-        if (this.itemId && !enchantList.find((a) => a.value === currentEnchantValue)) {
+        if (this.itemId && currentEnchantValue != null && !enchantList.find((a) => a.value === currentEnchantValue)) {
+          // console.log({ property })
           this[property] = undefined;
           this.onSelectItem(property);
         }
@@ -133,15 +154,19 @@ export class EquipmentComponent implements AfterViewInit {
     clearModel();
   }
 
-  onSelectItem(itemType: string, itemId = 0, refine = 0, isEmit = true) {
+  onSelectItem(itemType: string, itemId = 0, refine = 0, isEmitItemChange = true) {
+    // console.log('_onSelectItem', { itemType, itemId, refine })
     if (itemType === 'itemId') {
-      const item = this.items[itemId];
+      const item = this.getItem(itemId);
       this.totalCardSlots = item?.slots || 0;
-      this.setEnchantList(itemId);
+      this.setEnchantList();
       this.itemIdChange.emit(this.itemId);
       this.itemRefineChange.emit(this.itemRefine);
-      this.itemGrade = null;
-      this.itemGradeChange.emit(this.itemGrade);
+
+      if (!this.gradeList.length) {
+        this.itemGrade = null;
+        this.onSelectGrade(this.itemGrade);
+      }
 
       if (this.totalCardSlots < 4 && this.card4Id) {
         this.card4Id = undefined;
@@ -160,10 +185,9 @@ export class EquipmentComponent implements AfterViewInit {
         this.card1IdChange.emit();
       }
 
-      if (this.itemType === ItemTypeEnum.weapon) {
+      if (this.isWeapon) {
         this.totalExtraOption = 3;
-      }
-      if (this.itemType !== ItemTypeEnum.weapon && OptionableItemTypeSet.has(this.itemType as any)) {
+      } else if (OptionableItemTypeSet.has(this.itemType as any)) {
         const itemAegisName = item?.aegisName;
         this.totalExtraOption = ExtraOptionTable[itemAegisName] || 0;
       }
@@ -175,7 +199,7 @@ export class EquipmentComponent implements AfterViewInit {
       }
     }
 
-    if (isEmit) {
+    if (isEmitItemChange) {
       this.selectItemChange.emit({ itemType: this.itemTypeMap[itemType], itemId, refine });
     }
   }
@@ -186,7 +210,7 @@ export class EquipmentComponent implements AfterViewInit {
 
   onSelectGrade(grade: string) {
     this.itemGradeChange.emit(grade);
-    this.gradeChange.emit(grade);
+    this.gradeChange.emit({ itemType: this.itemType, itemId: this.itemId, grade });
   }
 
   onOptionChange(optionType: string, optionValue: any) {

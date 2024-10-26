@@ -78,11 +78,13 @@ export interface PresetModel {
   bootEnchant2: number;
   bootEnchant3: number;
   accLeft: number;
+  accLeftRefine: number;
   accLeftCard: number;
   accLeftEnchant1: number;
   accLeftEnchant2: number;
   accLeftEnchant3: number;
   accRight: number;
+  accRightRefine: number;
   accRightCard: number;
   accRightEnchant1: number;
   accRightEnchant2: number;

@@ -97,7 +97,7 @@ import {
 import { cirAutumnGarment2, cirAutumnGarment3, cirAutumnGarment4, cirAutumnSummer2, cirAutumnWinter2, cirSpringGarment2, cirSpringGarment3, cirSpringGarment4, manAutumnGarment2, manAutumnGarment3, manAutumnGarment4, manAutumnSummer2, manAutumnWinter2, manSpringGarment2, manSpringGarment3, manSpringGarment4, signetAcc3, signetAcc4, stellarAcc2, stellarAcc3, stellarAcc4 } from './constellation_tower';
 import { crafted3, crafted4 } from './crafted_weapon';
 import { dimWeapon2, dimWeapon3, dimWeapon4, dimGlaArmor2, dimGlaArmor3, dimGlaArmor4, dimGlaBoot2, dimGlaBoot3, dimGlaBoot4, dimGlaGarment2, dimGlaGarment3, dimGlaGarment4 } from './dim_glacier';
-import { dimensionHead2, dimensionHead3, dimensionHead4, dimensionWeapon3, dimensionWeapon4 } from './dimention';
+import { dimensionAcc3, dimensionAcc4, dimensionHead2, dimensionHead3, dimensionHead4, dimensionWeapon3, dimensionWeapon4 } from './dimention';
 import { droopingLt3, droopingLt4, redBlueLt3, redBlueLt4 } from './drooping_thanatos_lt';
 import { furiousHeadUp3, furiousHeadUp4, furiousWeaponUp3, furiousWeaponUp4 } from './furious';
 import { gbAcc2, gbAcc3, gbAcc4, gbArmor2, gbArmor3, gbArmor4, gbBoot2, gbBoot3, gbBoot4, gbGarment2, gbGarment3, gbGarment4 } from './gaebolg';
@@ -1474,6 +1474,10 @@ export const EnchantTable: EntTable[] = [
   { name: 'Dimen_WH_Bow', enchants: [null, null, dimensionWeapon3, dimensionWeapon4] },
   { name: 'Dimen_NW_Rifle', enchants: [null, null, dimensionWeapon3, dimensionWeapon4] },
   { name: 'Dimen_NW_Launcher', enchants: [null, null, dimensionWeapon3, dimensionWeapon4] },
+
+  { name: 'Dimmension_W_Key', enchants: [null, null, dimensionAcc3, dimensionAcc4] },
+  { name: 'Dimmension_W_Padlock', enchants: [null, null, dimensionAcc3, dimensionAcc4] },
+  { name: 'Dimmension_W_Keyring', enchants: [null, null, dimensionAcc3, dimensionAcc4] },
 
   { name: 'FuriousCirclet_WH', enchants: [null, null, furiousHeadUp3, furiousHeadUp4] },
   { name: 'FuriousCirclet_CD', enchants: [null, null, furiousHeadUp3, furiousHeadUp4] },

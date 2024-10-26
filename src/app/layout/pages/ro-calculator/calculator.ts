@@ -34,6 +34,8 @@ const refinableItemTypes = [
   ItemTypeEnum.armor,
   ItemTypeEnum.garment,
   ItemTypeEnum.boot,
+  ItemTypeEnum.accLeft,
+  ItemTypeEnum.accRight,
 
   ItemTypeEnum.shadowWeapon,
   ItemTypeEnum.shadowArmor,
@@ -122,11 +124,13 @@ export class Calculator {
     bootEnchant2: undefined,
     bootEnchant3: undefined,
     accLeft: undefined,
+    accLeftRefine: undefined,
     accLeftCard: undefined,
     accLeftEnchant1: undefined,
     accLeftEnchant2: undefined,
     accLeftEnchant3: undefined,
     accRight: undefined,
+    accRightRefine: undefined,
     accRightCard: undefined,
     accRightEnchant1: undefined,
     accRightEnchant2: undefined,
@@ -562,7 +566,7 @@ export class Calculator {
       }
 
       for (const itemRelation of itemRelations) {
-        const itemId2 = model[itemRelation];
+        const itemId2 = this.equipItem.get(mainItemType) ? model[itemRelation] : 0;
         if (!isNumber(itemId2)) continue;
 
         this.setItem({ itemType: itemRelation, itemId: itemId2 });
