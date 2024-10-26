@@ -2743,188 +2743,33 @@
 
     <!-- Acc Right -->
     <div class="grid grid-nogutter item_label_acc">
-      <div class="col-3">
-        <span class="p-float-label">
-          <p-dropdown
-            inputId="accRight"
-            [autoDisplayFirst]="false"
-            [resetFilterOnHide]="true"
-            [options]="accRightList"
-            [filter]="true"
-            filterBy="label"
-            scrollHeight="350px"
-            [(ngModel)]="model.accRight"
-            [showClear]="true"
-            (onChange)="onSelectItem('accRight', $event.value)"
-            (onClear)="onClearItem('accRight')"
-            placeholder="Acc R"
-          >
-            <ng-template let-item pTemplate="selectedItem">
-              <div class="flex gap-1 item_template" *ngIf="model.accRight">
-                <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
-                <div>{{ item.label }}</div>
-              </div>
-            </ng-template>
-            <ng-template let-item pTemplate="item">
-              <div class="flex gap-1 {{ item.lv200ClassName }}">
-                <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
-                <div>{{ item.label }}</div>
-              </div>
-            </ng-template>
-          </p-dropdown>
-          <label for="accRight" class="item_float_label font-semibold">Right</label>
-        </span>
-      </div>
-      <div class="col-3">
-        <p-dropdown
-          inputId="accRightCard"
-          [autoDisplayFirst]="false"
-          [resetFilterOnHide]="true"
-          [options]="accRightCardList"
-          [filter]="true"
-          filterBy="label,cardPrefix"
-          scrollHeight="350px"
-          [(ngModel)]="model.accRightCard"
-          [disabled]="!model.accRight || itemSlotsMap.accRight < 1"
-          [showClear]="true"
-          (onChange)="onSelectItem('accRightCard', $event.value)"
-          placeholder="Card"
-        >
-          <ng-template let-item pTemplate="selectedItem">
-            <div class="flex gap-1 item_template" *ngIf="model.accRightCard">
-              <img src="assets/demo/images/items/card.png" alt="" class="item_img" />
-              <div>{{ item.label }}</div>
-            </div>
-          </ng-template>
-          <ng-template let-item pTemplate="item">
-            <div class="flex {{ item.isHilight ? 'text-orange-300' : '' }}">
-              <div>{{ item.label }}</div>
-            </div>
-          </ng-template>
-        </p-dropdown>
-      </div>
-      <div class="col-3" [hidden]="!(itemTotalOptionMap['accRight'] >= 1) || !model.accRight">
-        <p-cascadeSelect
-          [(ngModel)]="model.rawOptionTxts[itemOptionNumber.A_Right_1]"
-          [disabled]="!model.accRight"
-          [options]="optionList"
-          optionValue="value"
-          optionGroupLabel="label"
-          optionLabel="label"
-          [optionGroupChildren]="['children', 'children', 'children']"
-          placeholder="Option 1"
-          [showClear]="true"
-          (onChange)="onOptionChange()"
-          (onClear)="onOptionChange()"
-        ></p-cascadeSelect>
-      </div>
-      <div class="col-3" [hidden]="!(itemTotalOptionMap['accRight'] >= 2) || !model.accRight">
-        <p-cascadeSelect
-          [(ngModel)]="model.rawOptionTxts[itemOptionNumber.A_Right_2]"
-          [disabled]="!model.accRight"
-          [options]="optionList"
-          optionValue="value"
-          optionGroupLabel="label"
-          optionLabel="label"
-          [optionGroupChildren]="['children', 'children', 'children']"
-          placeholder="Option 2"
-          [showClear]="true"
-          (onChange)="onOptionChange()"
-          (onClear)="onOptionChange()"
-        ></p-cascadeSelect>
-      </div>
       <div class="col-12">
-        <div class="grid grid-nogutter">
-          <div class="col-3"></div>
-          <div class="col-3" [hidden]="accRightEnchant3List.length === 0 || !model.accRight">
-            <p-dropdown
-              inputId="accRightEnchant1"
-              [autoDisplayFirst]="false"
-              [resetFilterOnHide]="true"
-              [options]="accRightEnchant1List"
-              [filter]="true"
-              filterBy="label"
-              scrollHeight="350px"
-              [(ngModel)]="model.accRightEnchant1"
-              [showClear]="true"
-              (onChange)="onSelectItem('accRightEnchant1', $event.value)"
-              [disabled]="accRightEnchant1List.length === 0 || !model.accRight"
-              placeholder="Enchant 2"
-            >
-              <ng-template let-item pTemplate="selectedItem">
-                <div class="flex gap-1 item_template" *ngIf="model.accRightEnchant1">
-                  <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
-                  <div>{{ item.label }}</div>
-                </div>
-              </ng-template>
-              <ng-template let-item pTemplate="item">
-                <div class="flex gap-1">
-                  <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
-                  <div>{{ item.label }}</div>
-                </div>
-              </ng-template>
-            </p-dropdown>
-          </div>
-          <div class="col-3" [hidden]="accRightEnchant3List.length === 0 || !model.accRight">
-            <p-dropdown
-              inputId="accRightEnchant2"
-              [autoDisplayFirst]="false"
-              [resetFilterOnHide]="true"
-              [options]="accRightEnchant2List"
-              [filter]="true"
-              filterBy="label"
-              scrollHeight="350px"
-              [(ngModel)]="model.accRightEnchant2"
-              [showClear]="true"
-              (onChange)="onSelectItem('accRightEnchant2', $event.value)"
-              [disabled]="accRightEnchant2List.length === 0 || !model.accRight"
-              placeholder="Enchant 3"
-            >
-              <ng-template let-item pTemplate="selectedItem">
-                <div class="flex gap-1 item_template" *ngIf="model.accRightEnchant2">
-                  <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
-                  <div>{{ item.label }}</div>
-                </div>
-              </ng-template>
-              <ng-template let-item pTemplate="item">
-                <div class="flex gap-1">
-                  <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
-                  <div>{{ item.label }}</div>
-                </div>
-              </ng-template>
-            </p-dropdown>
-          </div>
-          <div class="col-3" [hidden]="accRightEnchant3List.length === 0 || !model.accRight">
-            <p-dropdown
-              inputId="accRightEnchant3"
-              [autoDisplayFirst]="false"
-              [resetFilterOnHide]="true"
-              [options]="accRightEnchant3List"
-              [filter]="true"
-              filterBy="label"
-              scrollHeight="350px"
-              [(ngModel)]="model.accRightEnchant3"
-              [showClear]="true"
-              [disabled]="accRightEnchant3List.length === 0 || !model.accRight"
-              (onChange)="onSelectItem('accRightEnchant3', $event.value)"
-              placeholder="Enchant 4"
-            >
-              <ng-template let-item pTemplate="selectedItem">
-                <div class="flex gap-1 item_template" *ngIf="model.accRightEnchant3">
-                  <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
-                  <div>{{ item.label }}</div>
-                </div>
-              </ng-template>
-              <ng-template let-item pTemplate="item">
-                <div class="flex gap-1">
-                  <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
-                  <div>{{ item.label }}</div>
-                </div>
-              </ng-template>
-            </p-dropdown>
-          </div>
-        </div>
+        <app-equipment
+          [itemType]="'accRight'"
+          [placeholder]="'AccRight'"
+          [overlayLabel]="'Right'"
+          [items]="items"
+          [mapEnchant]="mapEnchant"
+          [itemList]="accRightList"
+          [cardList]="accRightCardList"
+          [optionList]="optionList"
+          [(itemId)]="model.accRight"
+          [(itemRefine)]="model.accRightRefine"
+          [(card1Id)]="model.accRightCard"
+          [(itemGrade)]="model.accRightGrade"
+          [(enchant2Id)]="model.accRightEnchant1"
+          [(enchant3Id)]="model.accRightEnchant2"
+          [(enchant4Id)]="model.accRightEnchant3"
+          [(option1Value)]="model.rawOptionTxts[itemOptionNumber.A_Right_1]"
+          [(option2Value)]="model.rawOptionTxts[itemOptionNumber.A_Right_2]"
+          (selectItemChange)="onSelectItem($event.itemType, $event.itemId, $event.refine)"
+          (clearItemEvent)="onClearItem($event)"
+          (gradeChange)="onSelectGrade($event.itemType, $event.itemId, $event.grade)"
+          (optionChange)="onOptionChange()"
+        ></app-equipment>
       </div>
+    </div>
+    <div class="grid grid-nogutter">
       <div class="col-12 mb-5" [hidden]="!(accRightEnchant3List.length === 0 || !model.accRight) || showCompareItemMap.accRight"></div>
     </div>
     <div class="grid grid-nogutter item_label_compare" *ngIf="showCompareItemMap.accRight">
@@ -2938,7 +2783,9 @@
           [cardList]="accRightCardList"
           [optionList]="optionList"
           [(itemId)]="model2.accRight"
+          [(itemRefine)]="model2.accRightRefine"
           [(card1Id)]="model2.accRightCard"
+          [(itemGrade)]="model2.accRightGrade"
           [(enchant2Id)]="model2.accRightEnchant1"
           [(enchant3Id)]="model2.accRightEnchant2"
           [(enchant4Id)]="model2.accRightEnchant3"
@@ -2946,6 +2793,7 @@
           [(option2Value)]="model2.rawOptionTxts[itemOptionNumber.A_Right_2]"
           (selectItemChange)="onCompareItemChange()"
           (optionChange)="onCompareItemChange()"
+          (gradeChange)="onCompareItemChange()"
         ></app-equipment>
       </div>
     </div>
@@ -2955,188 +2803,30 @@
 
     <!-- Acc Left -->
     <div class="grid grid-nogutter item_label_acc">
-      <div class="col-3">
-        <span class="p-float-label">
-          <p-dropdown
-            inputId="accLeft"
-            [autoDisplayFirst]="false"
-            [resetFilterOnHide]="true"
-            [options]="accLeftList"
-            [filter]="true"
-            filterBy="label"
-            scrollHeight="350px"
-            [(ngModel)]="model.accLeft"
-            [showClear]="true"
-            (onChange)="onSelectItem('accLeft', $event.value)"
-            (onClear)="onClearItem('accLeft')"
-            placeholder="Acc Left"
-          >
-            <ng-template let-item pTemplate="selectedItem">
-              <div class="flex gap-1 item_template" *ngIf="model.accLeft">
-                <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
-                <div>{{ item.label }}</div>
-              </div>
-            </ng-template>
-            <ng-template let-item pTemplate="item">
-              <div class="flex gap-1 {{ item.lv200ClassName }}">
-                <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
-                <div>{{ item.label }}</div>
-              </div>
-            </ng-template>
-          </p-dropdown>
-          <label for="accLeft" class="item_float_label font-semibold">Left</label>
-        </span>
-      </div>
-      <div class="col-3">
-        <p-dropdown
-          inputId="accLeftCard"
-          [autoDisplayFirst]="false"
-          [resetFilterOnHide]="true"
-          [options]="accLeftCardList"
-          [filter]="true"
-          filterBy="label,cardPrefix"
-          scrollHeight="350px"
-          [(ngModel)]="model.accLeftCard"
-          [disabled]="!model.accLeft || itemSlotsMap.accLeft < 1"
-          [showClear]="true"
-          (onChange)="onSelectItem('accLeftCard', $event.value)"
-          placeholder="Card"
-        >
-          <ng-template let-item pTemplate="selectedItem">
-            <div class="flex gap-1 item_template" *ngIf="model.accLeftCard">
-              <img src="assets/demo/images/items/card.png" alt="" class="item_img" />
-              <div>{{ item.label }}</div>
-            </div>
-          </ng-template>
-          <ng-template let-item pTemplate="item">
-            <div class="flex {{ item.isHilight ? 'text-orange-300' : '' }}">
-              <div>{{ item.label }}</div>
-            </div>
-          </ng-template>
-        </p-dropdown>
-      </div>
-      <div class="col-3" [hidden]="!(itemTotalOptionMap['accLeft'] >= 1) || !model.accLeft">
-        <p-cascadeSelect
-          [(ngModel)]="model.rawOptionTxts[itemOptionNumber.A_Left_1]"
-          [disabled]="!model.accLeft"
-          [options]="optionList"
-          optionValue="value"
-          optionGroupLabel="label"
-          optionLabel="label"
-          [optionGroupChildren]="['children', 'children', 'children']"
-          placeholder="Option 1"
-          [showClear]="true"
-          (onChange)="onOptionChange()"
-          (onClear)="onOptionChange()"
-        ></p-cascadeSelect>
-      </div>
-      <div class="col-3" [hidden]="!(itemTotalOptionMap['accLeft'] >= 2) || !model.accLeft">
-        <p-cascadeSelect
-          [(ngModel)]="model.rawOptionTxts[itemOptionNumber.A_Left_2]"
-          [disabled]="!model.accLeft"
-          [options]="optionList"
-          optionValue="value"
-          optionGroupLabel="label"
-          optionLabel="label"
-          [optionGroupChildren]="['children', 'children', 'children']"
-          placeholder="Option 2"
-          [showClear]="true"
-          (onChange)="onOptionChange()"
-          (onClear)="onOptionChange()"
-        ></p-cascadeSelect>
-      </div>
-
       <div class="col-12">
-        <div class="grid grid-nogutter">
-          <div class="col-3"></div>
-          <div class="col-3" [hidden]="accLeftEnchant3List.length === 0 || !model.accLeft">
-            <p-dropdown
-              inputId="accLeftEnchant1"
-              [autoDisplayFirst]="false"
-              [resetFilterOnHide]="true"
-              [options]="accLeftEnchant1List"
-              [filter]="true"
-              filterBy="label"
-              scrollHeight="350px"
-              [(ngModel)]="model.accLeftEnchant1"
-              [showClear]="true"
-              [disabled]="accLeftEnchant1List.length === 0 || !model.accLeft"
-              (onChange)="onSelectItem('accLeftEnchant1', $event.value)"
-              placeholder="Enchant 2"
-            >
-              <ng-template let-item pTemplate="selectedItem">
-                <div class="flex gap-1 item_template" *ngIf="model.accLeftEnchant1">
-                  <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
-                  <div>{{ item.label }}</div>
-                </div>
-              </ng-template>
-              <ng-template let-item pTemplate="item">
-                <div class="flex gap-1">
-                  <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
-                  <div>{{ item.label }}</div>
-                </div>
-              </ng-template>
-            </p-dropdown>
-          </div>
-          <div class="col-3" [hidden]="accLeftEnchant3List.length === 0 || !model.accLeft">
-            <p-dropdown
-              inputId="accLeftEnchant2"
-              [autoDisplayFirst]="false"
-              [resetFilterOnHide]="true"
-              [options]="accLeftEnchant2List"
-              [filter]="true"
-              filterBy="label"
-              scrollHeight="350px"
-              [(ngModel)]="model.accLeftEnchant2"
-              [showClear]="true"
-              [disabled]="accLeftEnchant2List.length === 0 || !model.accLeft"
-              (onChange)="onSelectItem('accLeftEnchant2', $event.value)"
-              placeholder="Enchant 3"
-            >
-              <ng-template let-item pTemplate="selectedItem">
-                <div class="flex gap-1 item_template" *ngIf="model.accLeftEnchant2">
-                  <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
-                  <div>{{ item.label }}</div>
-                </div>
-              </ng-template>
-              <ng-template let-item pTemplate="item">
-                <div class="flex gap-1">
-                  <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
-                  <div>{{ item.label }}</div>
-                </div>
-              </ng-template>
-            </p-dropdown>
-          </div>
-          <div class="col-3" [hidden]="accLeftEnchant3List.length === 0 || !model.accLeft">
-            <p-dropdown
-              inputId="accLeftEnchant3"
-              [autoDisplayFirst]="false"
-              [resetFilterOnHide]="true"
-              [options]="accLeftEnchant3List"
-              [filter]="true"
-              filterBy="label"
-              scrollHeight="350px"
-              [(ngModel)]="model.accLeftEnchant3"
-              [showClear]="true"
-              [disabled]="accLeftEnchant3List.length === 0 || !model.accLeft"
-              (onChange)="onSelectItem('accLeftEnchant3', $event.value)"
-              placeholder="Enchant 4"
-            >
-              <ng-template let-item pTemplate="selectedItem">
-                <div class="flex gap-1 item_template" *ngIf="model.accLeftEnchant3">
-                  <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
-                  <div>{{ item.label }}</div>
-                </div>
-              </ng-template>
-              <ng-template let-item pTemplate="item">
-                <div class="flex gap-1">
-                  <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
-                  <div>{{ item.label }}</div>
-                </div>
-              </ng-template>
-            </p-dropdown>
-          </div>
-        </div>
+        <app-equipment
+          [itemType]="'accLeft'"
+          [placeholder]="'AccLeft'"
+          [overlayLabel]="'Left'"
+          [items]="items"
+          [mapEnchant]="mapEnchant"
+          [itemList]="accLeftList"
+          [cardList]="accLeftCardList"
+          [optionList]="optionList"
+          [(itemId)]="model.accLeft"
+          [(itemRefine)]="model.accLeftRefine"
+          [(card1Id)]="model.accLeftCard"
+          [(itemGrade)]="model.accLeftGrade"
+          [(enchant2Id)]="model.accLeftEnchant1"
+          [(enchant3Id)]="model.accLeftEnchant2"
+          [(enchant4Id)]="model.accLeftEnchant3"
+          [(option1Value)]="model.rawOptionTxts[itemOptionNumber.A_Left_1]"
+          [(option2Value)]="model.rawOptionTxts[itemOptionNumber.A_Left_2]"
+          (selectItemChange)="onSelectItem($event.itemType, $event.itemId, $event.refine)"
+          (clearItemEvent)="onClearItem($event)"
+          (gradeChange)="onSelectGrade($event.itemType, $event.itemId, $event.grade)"
+          (optionChange)="onOptionChange()"
+        ></app-equipment>
       </div>
     </div>
     <div class="grid grid-nogutter item_label_compare" *ngIf="showCompareItemMap.accLeft">
@@ -3150,7 +2840,9 @@
           [cardList]="accLeftCardList"
           [optionList]="optionList"
           [(itemId)]="model2.accLeft"
+          [(itemRefine)]="model2.accLeftRefine"
           [(card1Id)]="model2.accLeftCard"
+          [(itemGrade)]="model2.accLeftGrade"
           [(enchant2Id)]="model2.accLeftEnchant1"
           [(enchant3Id)]="model2.accLeftEnchant2"
           [(enchant4Id)]="model2.accLeftEnchant3"
@@ -3158,6 +2850,7 @@
           [(option2Value)]="model2.rawOptionTxts[itemOptionNumber.A_Left_2]"
           (selectItemChange)="onCompareItemChange()"
           (optionChange)="onCompareItemChange()"
+          (gradeChange)="onCompareItemChange()"
         ></app-equipment>
       </div>
     </div>

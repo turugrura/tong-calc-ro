@@ -1,9 +1,9 @@
-import { AfterViewInit, Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 import { DropdownModel } from '../../../../models/dropdown.model';
 import { ItemModel } from '../../../../models/item.model';
 import { ItemTypeEnum, OptionableItemTypeSet } from '../../../../constants/item-type.enum';
 import { ExtraOptionTable } from '../../../../constants/extra-option-table';
-import { getGradeList } from '../../../../utils';
+import { createNumberDropdownList, getGradeList } from '../../../../utils';
 import { getEnchants } from 'src/app/constants/enchant_item';
 
 interface EventEmitterResultModel {
@@ -18,7 +18,7 @@ interface EventEmitterResultModel {
   templateUrl: './equipment.component.html',
   styleUrls: ['../ro-calculator.component.css'],
 })
-export class EquipmentComponent implements AfterViewInit {
+export class EquipmentComponent implements OnChanges {
   @Input({ required: true }) readonly itemType!: string;
   @Input({ required: true }) readonly placeholder: string;
   @Input() readonly overlayLabel!: string;
@@ -87,26 +87,60 @@ export class EquipmentComponent implements AfterViewInit {
   gradeList: DropdownModel[] = [];
 
   private itemTypeMap = {};
+  private readonly requireSet = new Set(['items', 'itemList', 'mapEnchant', 'cardList'])
+  private isInternalItemIdChange = false;
 
   constructor() { }
 
-  ngAfterViewInit(): void {
-    setTimeout(() => {
-      this.itemTypeMap = {
-        itemId: this.itemType,
-        itemRefine: `${this.itemType}Refine`,
-        itemGrade: `${this.itemType}Grade`,
-        card1Id: this.isWeapon ? `${this.itemType}Card1` : `${this.itemType}Card`,
-        card2Id: `${this.itemType}Card2`,
-        card3Id: `${this.itemType}Card3`,
-        card4Id: `${this.itemType}Card4`,
-        enchant1Id: `${this.itemType}Enchant0`,
-        enchant2Id: `${this.itemType}Enchant1`,
-        enchant3Id: `${this.itemType}Enchant2`,
-        enchant4Id: `${this.itemType}Enchant3`,
-      };
-      this.onSelectItem('itemId', this.itemId, this.itemRefine, false);
-    }, 300);
+  ngOnChanges(changes: SimpleChanges): void {
+    // console.log('changes', changes)
+    if (changes['items'] && !changes['items']?.isFirstChange()) {
+      this.requireSet.delete('items')
+    }
+    if (changes['itemList'] && !changes['itemList']?.isFirstChange()) {
+      this.requireSet.delete('itemList')
+    }
+    if (changes['mapEnchant'] && !changes['mapEnchant']?.isFirstChange()) {
+      this.requireSet.delete('mapEnchant')
+    }
+    if (changes['cardList'] && !changes['cardList']?.isFirstChange()) {
+      this.requireSet.delete('cardList')
+    }
+    if (changes['optionList'] && !changes['optionList']?.isFirstChange()) {
+      this.requireSet.delete('optionList')
+    }
+    if (this.requireSet.size === 0) {
+      // console.log('initial item')
+      this.requireSet.add('x1').add('x2').add('x3').add('x4').add('x5').add('x6')
+
+      setTimeout(() => {
+        // console.log('initial item ____ ', this.isInternalItemIdChange, changes['itemId'])
+        this.itemTypeMap = {
+          itemId: this.itemType,
+          itemRefine: `${this.itemType}Refine`,
+          itemGrade: `${this.itemType}Grade`,
+          card1Id: this.isWeapon ? `${this.itemType}Card1` : `${this.itemType}Card`,
+          card2Id: `${this.itemType}Card2`,
+          card3Id: `${this.itemType}Card3`,
+          card4Id: `${this.itemType}Card4`,
+          enchant1Id: `${this.itemType}Enchant0`,
+          enchant2Id: `${this.itemType}Enchant1`,
+          enchant3Id: `${this.itemType}Enchant2`,
+          enchant4Id: `${this.itemType}Enchant3`,
+        }
+        this.onSelectItem('itemId', this.itemId, this.itemRefine, false)
+      }, 0);
+    } else if (changes['itemId'] && this.requireSet.size === 6) {
+      // handle property was set from main component (when load data)
+      if (!this.isInternalItemIdChange) {
+        setTimeout(() => {
+          // console.log('changes itemId isInternalItemIdChange ____ ', this.isInternalItemIdChange, changes['itemId'])
+          this.onSelectItem('itemId', this.itemId, this.itemRefine, false)
+        }, 0);
+      }
+
+      this.isInternalItemIdChange = false;
+    }
   }
 
   get isHeadCardable() {
@@ -190,6 +224,18 @@ export class EquipmentComponent implements AfterViewInit {
       } else if (OptionableItemTypeSet.has(this.itemType as any)) {
         const itemAegisName = item?.aegisName;
         this.totalExtraOption = ExtraOptionTable[itemAegisName] || 0;
+      }
+
+      if (this.isAcc) {
+        if (this.isRefinable) {
+          this.refineList = createNumberDropdownList({ from: 0, to: 18 })
+        } else {
+          this.refineList = []
+          if (this.itemRefine > 0) {
+            this.itemRefine = 0;
+            this.itemRefineChange.emit(this.itemRefine);
+          }
+        }
       }
     } else {
       const e = this[`${itemType}Change`];
