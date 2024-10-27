@@ -57,6 +57,7 @@ import {
   MainItemWithRelations,
   OptionableItemTypeSet,
   RaceType,
+  WeaponTypeName,
   WeaponTypeNameMapBySubTypeId,
   getEnchants,
   getMonsterSpawnMap,
@@ -526,19 +527,13 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
           }, {});
 
         this.equipCompareItemIdItemTypeMap = equipItemIdItemTypeMap2;
-        this.equipCompareItems = [...this.equipCompareItemIdItemTypeMap.entries()].map(([itemType, id]) => {
-          return {
-            label: this.items[id].name,
-            value: itemType,
-            id,
-          };
-        });
-
+        this.equipCompareItems = this.buildEquipItemList(this.equipCompareItemIdItemTypeMap, model2);
+        // console.log('model2', { ...model2 })
         if (this.isEnableCompare) {
           this.model2 = model2;
           this.calcCompare();
         } else {
-          this.model2 = { rawOptionTxts: [] };
+          this.resetModel2();
         }
         this.onSelectItemDescription(this.isEnableCompare && Boolean(this.selectedCompareItemDesc));
 
@@ -1075,6 +1070,10 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   private resetModel() {
     const { class: _class, level, jobLevel } = this.model;
     this.model = { ...createMainModel(), class: _class, level, jobLevel };
+    this.resetModel2()
+  }
+
+  private resetModel2() {
     this.model2 = { rawOptionTxts: [] };
   }
 
@@ -1352,9 +1351,11 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
       const obs = this.presetService.getPreset(presetId).pipe(
         switchMap((preset) => {
+          this.resetModel2();
           return this.loadItemSet(preset.model).pipe(switchMap(() => waitRxjs(0.1, preset)));
         }),
         tap((preset) => {
+          this.updateCompareEvent.next(1)
           if (presetName) this.selectedPreset = presetName;
           this.messageService.add({
             severity: 'success',
@@ -1576,8 +1577,12 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     if (!equipItemTypes.includes(this.selectedItemDesc)) {
       this.selectedItemDesc = undefined;
     }
-    this.equipItems = [...this.equipItemIdItemTypeMap.entries()].map(([itemType, id]) => {
-      const refine = mapRefine.get(itemType);
+    this.equipItems = this.buildEquipItemList(this.equipItemIdItemTypeMap, this.model);
+  }
+
+  private buildEquipItemList(itemMap: Map<ItemTypeEnum, number>, model: typeof this.model | typeof this.model2) {
+    return [...itemMap.entries()].map(([itemType, id]) => {
+      const refine = model[`${itemType}Refine`];
       const prefixLabel = refine && refine > 0 ? ` +${refine} ` : '';
 
       return {
@@ -2070,7 +2075,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       if (this.selectedCharacter.className === ClassName.SuperNovice) {
         const { itemLevel, itemSubTypeId } = this.items[a.value as number] ?? {};
         const isLv4 = itemLevel === 4;
-        const wTypeNames = new Set(['dagger', 'sword', 'axe', 'mace', 'rod', 'twohandRod']);
+        const wTypeNames = new Set<WeaponTypeName>(['dagger', 'sword', 'axe', 'mace', 'rod', 'twohandRod']);
         const isSup = wTypeNames.has(WeaponTypeNameMapBySubTypeId[itemSubTypeId]);
 
         if (isLv4 && isSup) return true;
@@ -2569,7 +2574,10 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
           take(1),
           finalize(() => (this.isInProcessingPreset = false)),
         )
-        .subscribe(() => this.updateItemEvent.next(1));
+        .subscribe(() => {
+          this.updateItemEvent.next(1)
+          this.updateCompareEvent.next(1)
+        });
     }
   }
 
