@@ -22,7 +22,6 @@ import {
   createMainModel,
   createMainStatOptionList,
   createNumberDropdownList,
-  getGradeList,
   isNumber,
   prettyItemDesc,
   sortObj,
@@ -53,13 +52,10 @@ import {
   ItemTypeId,
   JobBuffs,
   MAX_OPTION_NUMBER,
-  MainItemTypeSet,
   MainItemWithRelations,
-  OptionableItemTypeSet,
   RaceType,
   WeaponTypeName,
   WeaponTypeNameMapBySubTypeId,
-  getEnchants,
   getMonsterSpawnMap,
 } from 'src/app/constants';
 import { ActiveSkillModel, AtkSkillModel, CharacterBase, ClassID, ClassIcon, ClassName, JobPromotionMapper, PassiveSkillModel } from 'src/app/jobs';
@@ -77,6 +73,8 @@ interface ClassModel extends Partial<Record<ItemTypeEnum, number>> {
   leftWeaponGrade?: any;
   shieldGrade?: any;
   headUpperGrade?: any;
+  headMiddleGrade?: any;
+  headLowerGrade?: any;
   armorGrade?: any;
   garmentGrade?: any;
   bootGrade?: any;
@@ -327,7 +325,6 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   itemDescription = '';
 
   itemOptionNumber = ItemOptionNumber;
-  itemTotalOptionMap: Partial<Record<ItemTypeEnum, number>> = {};
 
   cols: {
     field: keyof BasicDamageSummaryModel | keyof SkillDamageSummaryModel | 'health' | 'monsterClass';
@@ -1116,14 +1113,6 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         };
       });
     }
-  }
-
-  private isMainItem(itemType: string) {
-    return MainItemTypeSet.has(itemType as any);
-  }
-
-  private isOptionableItem(itemType: string) {
-    return OptionableItemTypeSet.has(itemType as any);
   }
 
   private waitConfirm(message: string, icon?: string) {
@@ -2230,133 +2219,6 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       .filter(Boolean);
   }
 
-  private setEnchantList(mainItemId: number, positionEnum?: ItemTypeEnum | string) {
-    // console.log({ itemId });
-    const { itemTypeId, location, aegisName, name, canGrade } = this.items[mainItemId] ?? ({} as ItemModel);
-    let { itemSubTypeId } = this.items[mainItemId] ?? ({} as ItemModel);
-    const enchants = getEnchants(aegisName) ?? getEnchants(name);
-
-    const [e1, e2, e3, e4] = Array.isArray(enchants) ? enchants : [];
-    // console.log({ itemId, e2, e3, e4 });
-    const clearModel = (prefix) => {
-      for (const idx of [0, 1, 2, 3]) {
-        const enchantList = this[`${prefix}Enchant${idx}List`] as DropdownModel[];
-        const itemType = `${prefix}Enchant${idx}` as ItemTypeEnum;
-        const itemId = this.model[itemType];
-        if (itemId && !enchantList.find((a) => a.value === itemId)) {
-          this.model[itemType] = undefined;
-          // this.calculator.setItem(itemType, null);
-          this.equipItemMap.set(itemType, null);
-        }
-      }
-    };
-
-    const mapToEnchant = (enchantName) => {
-      const val = this.mapEnchant.get(enchantName);
-      if (!val) {
-        console.log({ mainItemId, positionEnum, enchantName, mapEnchant: this.mapEnchant });
-      }
-
-      return val;
-    };
-    const mapToOption = (a: any) => {
-      return { label: a.name, value: a.id };
-    };
-
-    if (itemTypeId === ItemTypeId.WEAPON) {
-      if (positionEnum === ItemTypeEnum.leftWeapon) {
-        this.leftWeaponEnchant0List = (e1 ?? []).map(mapToEnchant).map(mapToOption);
-        this.leftWeaponEnchant1List = (e2 ?? []).map(mapToEnchant).map(mapToOption);
-        this.leftWeaponEnchant2List = (e3 ?? []).map(mapToEnchant).map(mapToOption);
-        this.leftWeaponEnchant3List = (e4 ?? []).map(mapToEnchant).map(mapToOption);
-        this.leftWeaponGradeList = canGrade ? getGradeList() : [];
-        clearModel('leftWeapon');
-      } else {
-        this.weaponEnchant0List = (e1 ?? []).map(mapToEnchant).map(mapToOption);
-        this.weaponEnchant1List = (e2 ?? []).map(mapToEnchant).map(mapToOption);
-        this.weaponEnchant2List = (e3 ?? []).map(mapToEnchant).map(mapToOption);
-        this.weaponEnchant3List = (e4 ?? []).map(mapToEnchant).map(mapToOption);
-        this.weaponGradeList = canGrade ? getGradeList() : [];
-        clearModel('weapon');
-      }
-
-      return;
-    }
-
-    if (itemSubTypeId === ItemSubTypeId.Acc && positionEnum) {
-      if (positionEnum === ItemTypeEnum.accLeft) {
-        itemSubTypeId = ItemSubTypeId.Acc_L;
-      } else if (positionEnum === ItemTypeEnum.accRight) {
-        itemSubTypeId = ItemSubTypeId.Acc_R;
-      }
-    }
-
-    switch (itemSubTypeId) {
-      case ItemSubTypeId.Upper:
-        if (location === HeadGearLocation.Middle) {
-          this.headMiddleEnchant1List = (e2 ?? []).map(mapToEnchant).map(mapToOption);
-          this.headMiddleEnchant2List = (e3 ?? []).map(mapToEnchant).map(mapToOption);
-          this.headMiddleEnchant3List = (e4 ?? []).map(mapToEnchant).map(mapToOption);
-          this.headMiddleGradeList = canGrade ? getGradeList() : [];
-          clearModel('headMiddle');
-        } else if (location === HeadGearLocation.Lower) {
-          this.headLowerEnchant1List = (e2 ?? []).map(mapToEnchant).map(mapToOption);
-          this.headLowerEnchant2List = (e3 ?? []).map(mapToEnchant).map(mapToOption);
-          this.headLowerEnchant3List = (e4 ?? []).map(mapToEnchant).map(mapToOption);
-          this.headLowerGradeList = canGrade ? getGradeList() : [];
-          clearModel('headLower');
-        } else {
-          this.headUpperEnchant1List = (e2 ?? []).map(mapToEnchant).map(mapToOption);
-          this.headUpperEnchant2List = (e3 ?? []).map(mapToEnchant).map(mapToOption);
-          this.headUpperEnchant3List = (e4 ?? []).map(mapToEnchant).map(mapToOption);
-          this.headUpperGradeList = canGrade ? getGradeList() : [];
-          clearModel('headUpper');
-        }
-        break;
-      case ItemSubTypeId.Shield:
-        this.shieldEnchant1List = (e2 ?? []).map(mapToEnchant).map(mapToOption);
-        this.shieldEnchant2List = (e3 ?? []).map(mapToEnchant).map(mapToOption);
-        this.shieldEnchant3List = (e4 ?? []).map(mapToEnchant).map(mapToOption);
-        this.shieldGradeList = canGrade ? getGradeList() : [];
-        clearModel('shield');
-        break;
-      case ItemSubTypeId.Armor:
-        this.armorEnchant1List = (e2 ?? []).map(mapToEnchant).map(mapToOption);
-        this.armorEnchant2List = (e3 ?? []).map(mapToEnchant).map(mapToOption);
-        this.armorEnchant3List = (e4 ?? []).map(mapToEnchant).map(mapToOption);
-        this.armorGradeList = canGrade ? getGradeList() : [];
-        clearModel('armor');
-        break;
-      case ItemSubTypeId.Garment:
-        this.garmentEnchant1List = (e2 ?? []).map(mapToEnchant).map(mapToOption);
-        this.garmentEnchant2List = (e3 ?? []).map(mapToEnchant).map(mapToOption);
-        this.garmentEnchant3List = (e4 ?? []).map(mapToEnchant).map(mapToOption);
-        this.garmentGradeList = canGrade ? getGradeList() : [];
-        clearModel('garment');
-        break;
-      case ItemSubTypeId.Boot:
-        this.bootEnchant1List = (e2 ?? []).map(mapToEnchant).map(mapToOption);
-        this.bootEnchant2List = (e3 ?? []).map(mapToEnchant).map(mapToOption);
-        this.bootEnchant3List = (e4 ?? []).map(mapToEnchant).map(mapToOption);
-        this.bootGradeList = canGrade ? getGradeList() : [];
-        clearModel('boot');
-        break;
-      case ItemSubTypeId.Acc_L:
-        this.accLeftEnchant1List = (e2 ?? []).map(mapToEnchant).map(mapToOption);
-        this.accLeftEnchant2List = (e3 ?? []).map(mapToEnchant).map(mapToOption);
-        this.accLeftEnchant3List = (e4 ?? []).map(mapToEnchant).map(mapToOption);
-        this.accLeftGradeList = canGrade ? getGradeList() : [];
-        clearModel('accLeft');
-        break;
-      case ItemSubTypeId.Acc_R:
-        this.accRightEnchant1List = (e2 ?? []).map(mapToEnchant).map(mapToOption);
-        this.accRightEnchant2List = (e3 ?? []).map(mapToEnchant).map(mapToOption);
-        this.accRightEnchant3List = (e4 ?? []).map(mapToEnchant).map(mapToOption);
-        this.accRightGradeList = canGrade ? getGradeList() : [];
-        clearModel('accRight');
-        break;
-    }
-  }
 
   private updateAvailablePoints() {
     const { str, agi, vit, int, dex, luk } = this.model;
@@ -2384,46 +2246,26 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     }
   }
 
-  private clearCard(itemType: string) {
-    const slots = this.itemSlotsMap[itemType];
-    const cardTypeName = `${itemType}Card` as ItemTypeEnum;
-    const seletedCard = this.model[cardTypeName];
-
-    if ((!slots || slots < 1) && seletedCard) {
-      this.model[cardTypeName] = undefined;
-      this.equipItemMap.set(cardTypeName, undefined);
-    }
-
-    if (itemType === ItemTypeEnum.weapon) {
-      for (let i = (slots || 0) + 1; i <= 4; i++) {
-        const cTypeName = `weaponCard${i}` as ItemTypeEnum;
-        this.model[cTypeName] = undefined;
-        this.equipItemMap.set(cTypeName, undefined);
-      }
-    } else if (itemType === ItemTypeEnum.leftWeapon) {
-      for (let i = (slots || 0) + 1; i <= 4; i++) {
-        const cTypeName = `${ItemTypeEnum.leftWeapon}Card${i}` as ItemTypeEnum;
-        this.model[cTypeName] = undefined;
-        this.equipItemMap.set(cTypeName, undefined);
-      }
-    }
-  }
-
   onSelectItem(itemType: string, itemId = 0, refine = 0) {
     // console.log({ itemType, itemId, refine })
     this.equipItemMap.set(itemType as ItemTypeEnum, itemId);
 
-    if (this.isMainItem(itemType)) {
-      this.itemSlotsMap[itemType] = this.items[itemId]?.slots || 0;
-      this.setEnchantList(itemId, itemType);
-      this.clearCard(itemType);
-    }
-    if (this.isOptionableItem(itemType)) {
-      const itemAegisName = this.items[itemId]?.aegisName;
-      this.itemTotalOptionMap[itemType] = ExtraOptionTable[itemAegisName] || 0;
-    }
+    // if (!itemType.startsWith('weapon')) {
+    //   this.updateItemEvent.next(itemType);
+    //   return;
+    // }
 
-    // console.log({ itemType, itemId, refine });
+    // if (this.isMainItem(itemType)) {
+    //   this.itemSlotsMap[itemType] = this.items[itemId]?.slots || 0;
+    //   this.setEnchantList(itemId, itemType);
+    //   this.clearCard(itemType);
+    // }
+    // if (this.isOptionableItem(itemType)) {
+    //   const itemAegisName = this.items[itemId]?.aegisName;
+    //   this.itemTotalOptionMap[itemType] = ExtraOptionTable[itemAegisName] || 0;
+    // }
+
+    // in order to check is the weapon allow to hold shield or left weapon or not
     if (itemType === ItemTypeEnum.weapon) {
       this.calculator.setWeapon({ itemId, refine });
     }
@@ -2432,7 +2274,6 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   }
 
   onSelectGrade(itemType: string, _itemId: number, _grade: string) {
-    // this.calculator.setItem({ itemType: itemType as ItemTypeEnum, itemId, grade });
     this.updateItemEvent.next(itemType);
   }
 

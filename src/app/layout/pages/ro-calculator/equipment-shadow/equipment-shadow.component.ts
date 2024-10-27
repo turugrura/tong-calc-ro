@@ -1,12 +1,18 @@
-import { AfterViewInit, Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 import { DropdownModel } from '../../../../models/dropdown.model';
+
+interface EventEmitterResultModel {
+  itemType: string;
+  itemId?: number;
+  refine?: number;
+}
 
 @Component({
   selector: 'app-equipment-shadow',
   templateUrl: './equipment-shadow.component.html',
   styleUrls: ['../ro-calculator.component.css'],
 })
-export class EquipmentShadowComponent implements AfterViewInit {
+export class EquipmentShadowComponent implements OnChanges {
   @Input({ required: true }) itemType!: string;
   @Input({ required: true }) placeholder: string;
 
@@ -14,7 +20,7 @@ export class EquipmentShadowComponent implements AfterViewInit {
   @Input() refineList: DropdownModel[] = [];
   @Input() optionList: any[] = [];
 
-  @Output() selectItemChange = new EventEmitter<any>();
+  @Output() selectItemChange = new EventEmitter<EventEmitterResultModel>();
   @Output() clearItemEvent = new EventEmitter<string>();
   @Output() optionChange = new EventEmitter<string>();
 
@@ -29,16 +35,28 @@ export class EquipmentShadowComponent implements AfterViewInit {
 
   private itemTypeMap = {};
 
-  constructor() {}
+  private readonly requireSet = new Set(['itemList', 'optionList'])
 
-  ngAfterViewInit(): void {
-    setTimeout(() => {
-      this.itemTypeMap = {
-        itemId: this.itemType,
-        itemRefine: `${this.itemType}Refine`,
-      };
-      this.onSelectItem('itemId', this.itemId, this.itemRefine, false);
-    }, 300);
+  constructor() { }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['itemList'] && !changes['itemList']?.isFirstChange()) {
+      this.requireSet.delete('itemList')
+    }
+    if (changes['optionList'] && !changes['optionList']?.isFirstChange()) {
+      this.requireSet.delete('optionList')
+    }
+    if (this.requireSet.size === 0) {
+      this.requireSet.add('x1').add('x2').add('x3').add('x4').add('x5').add('x6')
+
+      setTimeout(() => {
+        this.itemTypeMap = {
+          itemId: this.itemType,
+          itemRefine: `${this.itemType}Refine`,
+        };
+        this.onSelectItem('itemId', this.itemId, this.itemRefine, false);
+      }, 0);
+    }
   }
 
   onSelectItem(itemType: string, itemId = 0, refine = 0, isEmit = true) {

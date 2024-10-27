@@ -21,8 +21,8 @@ interface EventEmitterResultModel {
 export class EquipmentComponent implements OnChanges {
   @Input({ required: true }) readonly itemType!: string;
   @Input({ required: true }) readonly placeholder: string;
+  @Input() isEndWithSpace = false;
   @Input() readonly overlayLabel!: string;
-  readonly isWeapon = this.itemType === ItemTypeEnum.weapon || this.itemType === ItemTypeEnum.leftWeapon;
 
   @Input() readonly items!: Record<number, ItemModel>;
   @Input() itemList: DropdownModel[] = [];
@@ -149,6 +149,18 @@ export class EquipmentComponent implements OnChanges {
 
   get isAcc() {
     return this.itemType === ItemTypeEnum.accLeft || this.itemType === ItemTypeEnum.accRight;
+  }
+
+  get isWeapon() {
+    return this.itemType === ItemTypeEnum.weapon || this.itemType === ItemTypeEnum.leftWeapon;
+  }
+
+  get isAccR() {
+    return this.itemType === ItemTypeEnum.accRight;
+  }
+
+  get isEndWithSpace2() {
+    return this.isAccR && this.isEndWithSpace && (!this.itemId || !this.enchant3List.length);
   }
 
   get isRefinable() {
