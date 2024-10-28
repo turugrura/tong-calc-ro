@@ -2,7 +2,7 @@ import { ClassName } from './_class-name';
 import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, DefForCalcModel, PassiveSkillModel } from './_character-base.abstract';
 import { LordKnight } from './LordKnight';
 import { ElementType } from '../constants/element-type.const';
-import { InfoForClass } from '../models/info-for-class.model';
+import { AdditionalBonusInput, InfoForClass } from '../models/info-for-class.model';
 import { floor, round } from '../utils';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
@@ -518,7 +518,7 @@ export class RuneKnight extends LordKnight {
     return sum;
   }
 
-  override setAdditionalBonus(params: InfoForClass) {
+  override setAdditionalBonus(params: AdditionalBonusInput) {
     const { totalBonus, weapon } = params;
 
     if (this.isSkillActive('Asir Runestone')) {

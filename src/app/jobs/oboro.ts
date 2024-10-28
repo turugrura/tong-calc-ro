@@ -3,7 +3,7 @@ import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillMode
 import { Ninja } from './Ninja';
 import { ShadowWarrior } from '../constants/share-active-skills/shadow-warrior';
 import { ElementType } from '../constants/element-type.const';
-import { InfoForClass } from '../models/info-for-class.model';
+import { AdditionalBonusInput, InfoForClass } from '../models/info-for-class.model';
 import { floor } from '../utils';
 import { DistortedCrescent, S16thNight } from '../constants/share-active-skills';
 import { IllusionShockFn, PureSoulFn, RighthandMasteryFn, S16thNightFn } from '../constants/share-passive-skills';
@@ -360,7 +360,7 @@ export class Oboro extends Ninja {
     return floor((model.jobLevel * _16Night) / 2);
   }
 
-  override setAdditionalBonus(params: InfoForClass) {
+  override setAdditionalBonus(params: AdditionalBonusInput) {
     const { totalBonus, model } = params;
     if (this.isSkillActive('Distorted Crescent')) {
       const bonus = floor(model.level / 3) + 100;

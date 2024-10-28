@@ -1,4 +1,4 @@
-import { InfoForClass } from '../models/info-for-class.model';
+import { AdditionalBonusInput, InfoForClass } from '../models/info-for-class.model';
 import { ClassName } from './_class-name';
 import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
 import { Whitesmith } from './Whitesmith';
@@ -390,7 +390,7 @@ export class Mechanic extends Whitesmith {
     return sum;
   }
 
-  override setAdditionalBonus(params: InfoForClass) {
+  override setAdditionalBonus(params: AdditionalBonusInput) {
     const { totalBonus, weapon } = params;
     const { typeName } = weapon.data;
 

@@ -5,7 +5,7 @@ import { ArchBishop } from './ArchBishop';
 import { addBonus, floor } from '../utils';
 import { ElementType, WeaponTypeName } from '../constants';
 import { EquipmentSummaryModel } from '../models/equipment-summary.model';
-import { InfoForClass } from '../models/info-for-class.model';
+import { AdditionalBonusInput } from '../models/info-for-class.model';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [1, 0, 0, 1, 0, 0],
@@ -287,7 +287,7 @@ export class Cardinal extends ArchBishop {
     });
   }
 
-  override setAdditionalBonus(params: InfoForClass): EquipmentSummaryModel {
+  override setAdditionalBonus(params: AdditionalBonusInput): EquipmentSummaryModel {
     super.setAdditionalBonus(params);
 
     const { totalBonus, weapon } = params;

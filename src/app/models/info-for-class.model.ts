@@ -17,3 +17,12 @@ export interface InfoForClass {
   skillName: SKILL_NAME;
   cometMultiplier: number;
 }
+
+export interface AdditionalBonusInput {
+  weapon: Weapon;
+  ammoElement: ElementType;
+  monster: Monster;
+  model: Partial<MainModel>;
+  totalBonus: EquipmentSummaryModel;
+  skillName: SKILL_NAME;
+}

@@ -1,6 +1,6 @@
 import { ClassName } from './_class-name';
 import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
-import { InfoForClass } from '../models/info-for-class.model';
+import { AdditionalBonusInput, InfoForClass } from '../models/info-for-class.model';
 import { floor } from '../utils';
 import { ElementType } from '../constants/element-type.const';
 import { Champion } from './Champion';
@@ -721,7 +721,7 @@ export class Sura extends Champion {
     return this.calcHiddenMasteryAtk(info, { prefix: `x_${wTypeName}` }).totalAtk;
   }
 
-  override setAdditionalBonus(params: InfoForClass) {
+  override setAdditionalBonus(params: AdditionalBonusInput) {
     const { totalBonus, skillName } = params;
     const flashComboLv = this.activeSkillLv('Flash Combo');
     if (skillName === 'Tiger Cannon' && flashComboLv > 0) {

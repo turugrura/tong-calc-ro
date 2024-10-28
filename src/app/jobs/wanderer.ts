@@ -1,6 +1,6 @@
 import { ClassName } from './_class-name';
 import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
-import { InfoForClass } from '../models/info-for-class.model';
+import { AdditionalBonusInput, InfoForClass } from '../models/info-for-class.model';
 import { WeaponTypeName } from '../constants/weapon-type-mapper';
 import {
   CirclingNatureFn,
@@ -257,7 +257,7 @@ export class Wanderer extends Bard {
     return totalAtk;
   }
 
-  override setAdditionalBonus(params: InfoForClass) {
+  override setAdditionalBonus(params: AdditionalBonusInput) {
     const { totalBonus, weapon } = params;
     const { typeName } = weapon.data;
 

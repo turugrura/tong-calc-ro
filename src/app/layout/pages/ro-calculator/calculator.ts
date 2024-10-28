@@ -1,9 +1,8 @@
 import { ItemModel } from '../../../models/item.model';
 import { MonsterModel } from '../../../models/monster.model';
-import { StatusSummary } from '../../../models/status-summary.model';
 import { EquipmentSummaryModel } from '../../../models/equipment-summary.model';
 import { MainModel } from '../../../models/main.model';
-import { InfoForClass } from '../../../models/info-for-class.model';
+import { AdditionalBonusInput } from '../../../models/info-for-class.model';
 import { HpSpCalculator } from './hp-sp-calculator';
 import { HpSpTable } from '../../../models/hp-sp-table.model';
 import { DamageCalculator } from './damage-calculator';
@@ -17,7 +16,6 @@ import {
   ItemTypeEnum,
   MainItemTypeSet,
   MainItemWithRelations,
-  SizePenaltyMapper,
   WeaponAmmoMapper,
 } from 'src/app/constants';
 import { CharacterBase } from 'src/app/jobs';
@@ -226,17 +224,10 @@ export class Calculator {
   private dmgCalculator = new DamageCalculator();
   private propertyBasicAtk = ElementType.Neutral;
   private propertyWindmind: ElementType;
-  private sizePenalty = 1;
-  private propertyMultiplier = 1;
   private baseEquipmentStat: Record<string, number> = {};
   private finalMultipliers = [] as number[];
   private finalPhyMultipliers = [] as number[];
   private finalMagicMultipliers = [] as number[];
-
-  private reducedHardDef = 0;
-  private dmgReductionByHardDef = 0;
-  private totalPhysicalPene = 0;
-  private totalMagicalPene = 0;
 
   private maxHp = 0;
   private maxSp = 0;
@@ -252,16 +243,6 @@ export class Calculator {
   private damageSummary = {} as BasicDamageSummaryModel & Partial<SkillDamageSummaryModel>;
   private miscSummary = {} as MiscModel;
   private basicAspd = { hitsPerSec: 0, totalAspd: 0 } as BasicAspdModel;
-
-  private totalMasteryAtk = 0;
-  private totalHideMasteryAtk = 0;
-  private totalBuffAtk = 0;
-  private totalStatusAtk = 0;
-  private totalEquipAtk = 0;
-  private isMagicalSkill = false;
-
-  private totalStatusMatk = 0;
-  private totalMasteryMatk = 0;
 
   private selectedChanceList = [] as string[];
   private _chanceList = [] as ChanceModel[];
@@ -286,61 +267,6 @@ export class Calculator {
 
   private possiblyDamages: any[] = [];
 
-  private get status(): StatusSummary {
-    const { str, jobStr, int, jobInt, luk, jobLuk, vit, jobVit, dex, jobDex, agi, jobAgi } = this.model;
-    const { pow, sta, wis, spl, con, crt, jobPow, jobSta, jobWis, jobSpl, jobCon, jobCrt } = this.model;
-
-    return {
-      baseStr: str,
-      equipStr: this.totalEquipStatus.str ?? 0,
-      totalStr: str + (jobStr ?? 0) + (this.totalEquipStatus.str ?? 0),
-
-      baseInt: int,
-      equipInt: this.totalEquipStatus.int ?? 0,
-      totalInt: int + (jobInt ?? 0) + (this.totalEquipStatus.int ?? 0),
-
-      baseLuk: luk,
-      equipLuk: this.totalEquipStatus.luk ?? 0,
-      totalLuk: luk + (jobLuk ?? 0) + (this.totalEquipStatus.luk ?? 0),
-
-      baseVit: vit,
-      equipVit: this.totalEquipStatus.vit ?? 0,
-      totalVit: vit + (jobVit ?? 0) + (this.totalEquipStatus.vit ?? 0),
-
-      baseDex: dex,
-      equipDex: this.totalEquipStatus.dex ?? 0,
-      totalDex: dex + (jobDex ?? 0) + (this.totalEquipStatus.dex ?? 0),
-
-      baseAgi: agi,
-      equipAgi: this.totalEquipStatus.agi ?? 0,
-      totalAgi: agi + (jobAgi ?? 0) + (this.totalEquipStatus.agi ?? 0),
-
-      basePow: pow,
-      equipPow: this.totalEquipStatus.pow,
-      totalPow: pow + (jobPow ?? 0) + (this.totalEquipStatus.pow ?? 0),
-
-      baseSta: sta,
-      equipSta: this.totalEquipStatus.sta,
-      totalSta: sta + (jobSta ?? 0) + (this.totalEquipStatus.sta ?? 0),
-
-      baseWis: wis,
-      equipWis: this.totalEquipStatus.wis,
-      totalWis: wis + (jobWis ?? 0) + (this.totalEquipStatus.wis ?? 0),
-
-      baseSpl: spl,
-      equipSpl: this.totalEquipStatus.spl,
-      totalSpl: spl + (jobSpl ?? 0) + (this.totalEquipStatus.spl ?? 0),
-
-      baseCon: con,
-      equipCon: this.totalEquipStatus.con,
-      totalCon: con + (jobCon ?? 0) + (this.totalEquipStatus.con ?? 0),
-
-      baseCrt: crt,
-      equipCrt: this.totalEquipStatus.crt,
-      totalCrt: crt + (jobCrt ?? 0) + (this.totalEquipStatus.crt ?? 0),
-    };
-  }
-
   get chanceList() {
     return this._chanceList;
   }
@@ -355,25 +281,18 @@ export class Calculator {
     return this.items[id];
   }
 
-  private isRangeAtk() {
-    return this.weaponData?.data?.rangeType === 'range';
-  }
-
   private isUsedSkill(skillName: string) {
     return this.usedSkillNames.has(skillName);
   }
 
-  private get infoForClass(): InfoForClass {
+  private get additionalBonusInput(): AdditionalBonusInput {
     return {
       model: this.model,
       monster: this.monster,
       totalBonus: this.totalEquipStatus,
       weapon: this.weaponData,
-      status: this.status,
-      equipmentBonus: this.equipStatus,
       skillName: this.skillName,
       ammoElement: this.equipItem.get(ItemTypeEnum.ammo)?.propertyAtk,
-      cometMultiplier: 1,
     };
   }
 
@@ -581,22 +500,6 @@ export class Calculator {
     return this;
   }
 
-  get isMaximizeWeapon() {
-    return this.totalEquipStatus['weapon_maximize'] > 0;
-  }
-
-  private calcSizePenalty() {
-    if (this.totalEquipStatus.ignore_size_penalty > 0) {
-      this.sizePenalty = 1;
-      return this;
-    }
-
-    const penalty = SizePenaltyMapper[this.weaponData?.data?.typeName]?.[this.monster.size];
-    this.sizePenalty = this.toPercent(penalty || 100);
-
-    return this;
-  }
-
   private calcPropertyAtkType() {
     const weaponEle = this.weaponData?.data?.propertyAtk;
     const buff = this.model.propertyAtk;
@@ -606,101 +509,8 @@ export class Calculator {
     this.propertyBasicAtk = windmind ?? buff ?? ammo ?? weaponEle ?? ElementType.Neutral;
   }
 
-  private getEquipAtkFromSkills(atkType: 'atk' | 'matk' = 'atk') {
-    let atk = 0;
-    for (const [, scripts] of Object.entries(this.equipAtkSkillBonus)) {
-      for (const [attr, value] of Object.entries(scripts)) {
-        const val = Number(value);
-        if (attr === atkType) {
-          atk += val;
-        }
-      }
-    }
-
-    return atk;
-  }
-
-  private calcBuffMasteryAtk(atkType: 'atk' | 'matk') {
-    let atk = 0;
-    for (const [, scripts] of Object.entries(this.buffMasteryAtkBonus)) {
-      for (const [attr, value] of Object.entries(scripts)) {
-        const val = Number(value);
-        if (attr === atkType) {
-          atk += val;
-        }
-      }
-    }
-
-    return atk;
-  }
-
-  private calcExtraAtk() {
-    const equipAtk = this.totalEquipStatus.atk;
-    const skillAtk = this.getEquipAtkFromSkills();
-
-    this.totalEquipAtk = skillAtk + equipAtk + this.getStrikingAtk();
-
-    return this;
-  }
-
-  private getStrikingAtk() {
-    const endowLearnedLv = this.totalEquipStatus['strikingEndowSkillLv'];
-    if (!endowLearnedLv) return 0;
-
-    const weaponLvl = this.weaponData.data?.baseWeaponLevel || 0;
-
-    return weaponLvl * 18 + endowLearnedLv * 5;
-  }
-
-  private calcStatusAtk() {
-    const { totalStr, totalInt, totalDex, totalLuk, totalPow, totalSpl } = this.status;
-    const baseLvl = this.model.level;
-
-    const [primaryStatus, secondStatus] = this.isRangeAtk() ? [totalDex, totalStr] : [totalStr, totalDex];
-    this.totalStatusAtk = floor(baseLvl / 4 + secondStatus / 5 + primaryStatus + totalLuk / 3) + totalPow * 5;
-
-    const priMatkStat = floor(totalInt / 2) + floor(totalDex / 5) + floor(totalLuk / 3);
-    this.totalStatusMatk = floor(floor(baseLvl / 4) + totalInt + priMatkStat) + totalSpl * 5;
-  }
-
-  private calcMasteryAtk() {
-    const skillAtk = Object.values(this.masteryAtkSkillBonus)
-      .map((a) => Number(a.atk))
-      .filter((a) => Number.isNaN(a) === false)
-      .reduce((sum, m) => sum + m, 0);
-
-    const buffAtk = this.calcBuffMasteryAtk('atk');
-    const uiMastery = this._class.getUiMasteryAtk(this.infoForClass);
-    const hiddenMastery = this._class.getMasteryAtk(this.infoForClass);
-
-    this.totalMasteryAtk = skillAtk + buffAtk + uiMastery;
-    this.totalHideMasteryAtk = hiddenMastery;
-  }
-
-  private calcMasteryMatk() {
-    const skillAtk = Object.values(this.masteryAtkSkillBonus)
-      .map((a) => Number(a.matk))
-      .filter((a) => Number.isNaN(a) === false)
-      .reduce((sum, m) => sum + m, 0);
-
-    this.totalMasteryMatk = skillAtk;
-  }
-
-  private calcBuffAtk() {
-    // ex. camoflage
-    this.totalBuffAtk = 0;
-  }
-
   calcAllAtk() {
     this.calcPropertyAtkType();
-
-    this.calcSizePenalty();
-
-    this.calcExtraAtk();
-    this.calcMasteryAtk();
-    this.calcMasteryMatk();
-    this.calcBuffAtk();
-    this.calcStatusAtk();
 
     this.dmgCalculator
       .setArgs({
@@ -1422,7 +1232,7 @@ export class Calculator {
       this.totalEquipStatus.range += this.totalEquipStatus.bowRange || 0;
     }
 
-    this._class.setAdditionalBonus(this.infoForClass);
+    this._class.setAdditionalBonus(this.additionalBonusInput);
 
     // fix floating point
     for (const [attr, val] of Object.entries(this.totalEquipStatus)) {
@@ -1438,8 +1248,6 @@ export class Calculator {
   }
 
   calculateAllDamages(skillValue: string) {
-    this.calcAllAtk();
-
     const { basicDmg, misc, skillDmg, skillAspd, basicAspd } = this.dmgCalculator
       .setExtraBonus([])
       .calculateAllDamages({ skillValue, propertyAtk: this.propertyBasicAtk, maxHp: this.maxHp, maxSp: this.maxSp });
@@ -1469,11 +1277,7 @@ export class Calculator {
   calculateHpSp(params: { isUseHpL: boolean }) {
     const { maxHp, maxSp } = this.hpSpCalculator
       .setClass(this._class)
-      .setAllInfo({
-        ...this.infoForClass,
-        baseHp: this.totalEquipStatus['baseHp'],
-        baseSp: this.totalEquipStatus['baseSp'],
-      })
+      .setAllInfo(this.dmgCalculator.infoForClass)
       .setBonusFlag(params)
       .calculate()
       .getTotalSummary();
@@ -1492,11 +1296,7 @@ export class Calculator {
     }
 
     const calc = this.dmgCalculator.setExtraBonus(c)
-    const { maxHp, maxSp } = this.hpSpCalculator.setAllInfo({
-      ...calc.infoForClass,
-      baseHp: 0,
-      baseSp: 0,
-    })
+    const { maxHp, maxSp } = this.hpSpCalculator.setAllInfo(calc.infoForClass)
       .calculate()
       .getTotalSummary()
 
@@ -1529,11 +1329,7 @@ export class Calculator {
     const calculator = this.dmgCalculator.setExtraBonus(c);
     const { maxHp, maxSp } = this.hpSpCalculator
       .setClass(this._class)
-      .setAllInfo({
-        ...calculator.infoForClass,
-        baseHp: calculator.totalBonus['baseHp'],
-        baseSp: calculator.totalBonus['baseSp'],
-      })
+      .setAllInfo(calculator.infoForClass)
       .setBonusFlag(params)
       .calculate()
       .getTotalSummary();
@@ -1569,7 +1365,7 @@ export class Calculator {
   calcAllDefs() {
     const { level } = this.model;
     const { def = 0, defPercent = 0, softDef = 0, softDefPercent = 0, res = 0, mres = 0 } = this.totalEquipStatus;
-    const { totalVit, totalAgi, totalSta, totalWis } = this.status;
+    const { totalVit, totalAgi, totalSta, totalWis } = this.dmgCalculator.status;
 
     const rawSoftDef = floor(totalVit / 2 + totalAgi / 5 + level / 2);
     this.softDef = floor((rawSoftDef + softDef) * this.toPercent(100 + softDefPercent));
@@ -1603,7 +1399,7 @@ export class Calculator {
     const bonusDefByRefine = refines.reduce((sum, refine) => sum + calcDefByRefine(refine), 0);
     this.def = floor((def + bonusDefByRefine) * this.toPercent(100 + defPercent)) + additionalDef;
 
-    const { totalDex, totalInt } = this.status;
+    const { totalDex, totalInt } = this.dmgCalculator.status;
     const { mdef = 0, mdefPercent = 0, softMdef = 0, softMdefPercent = 0 } = this.totalEquipStatus;
     const rawSoftMdef = floor(totalInt + totalVit / 5 + totalDex / 5 + level / 4);
     this.softMdef = floor((rawSoftMdef + softMdef) * this.toPercent(100 + softMdefPercent));
@@ -1617,13 +1413,13 @@ export class Calculator {
 
   getTotalSummary() {
     const { baseWeaponAtk = 0, refineBonus = 0 } = this.leftWeaponData?.data || {};
+    const { totalBuffAtk, totalEquipAtk, totalHideMasteryAtk, totalMasteryAtk, totalStatusAtk, totalStatusMatk } = this.dmgCalculator.atkSummaryForUI
     const leftWeaponAtk = baseWeaponAtk + refineBonus;
 
     return {
       ...this.getObjSummary(this.totalEquipStatus),
       monster: { ...this.monster.data },
       propertyAtk: this.propertyBasicAtk,
-      propertyMultiplier: this.propertyMultiplier,
       weapon: this.weaponData.data,
       calcSkill: {
         dmgType: this.damageSummary.dmgType,
@@ -1636,6 +1432,7 @@ export class Calculator {
         ...this.skillFrequency,
       },
       calc: {
+        // display on stat summary
         maxHp: this.maxHp,
         maxSp: this.maxSp,
         dex2int1: this.skillFrequency.sumDex2Int1 || 0,
@@ -1652,23 +1449,16 @@ export class Calculator {
         ...this.miscSummary,
         hitRate: this.miscSummary.accuracy,
         dps: this.damageSummary.basicDps,
-        dmgReductionByHardDef: this.dmgReductionByHardDef,
-        sizePenalty: this.sizePenalty,
-        isMagicalSkill: this.isMagicalSkill,
-        totalPhysicalPene: this.totalPhysicalPene,
-        totalMagicalPene: this.totalMagicalPene,
-        totalPene: this.isMagicalSkill ? this.totalMagicalPene : this.totalPhysicalPene,
         leftWeaponRefineBonus: refineBonus,
 
-        totalStatusAtk: this.totalStatusAtk,
-        totalEquipAtk: this.totalEquipAtk + leftWeaponAtk,
+        totalStatusAtk: totalStatusAtk,
+        totalEquipAtk: totalEquipAtk + leftWeaponAtk,
         ammuAtk: this.equipStatus.ammo?.atk || 0,
-        totalMasteryAtk: this.totalMasteryAtk,
-        totalHideMasteryAtk: this.totalHideMasteryAtk,
-        totalBuffAtk: this.totalBuffAtk,
+        totalMasteryAtk: totalMasteryAtk,
+        totalHideMasteryAtk: totalHideMasteryAtk,
+        totalBuffAtk: totalBuffAtk,
 
-        totalStatusMatk: this.totalStatusMatk,
-        totalMasteryMatk: this.totalMasteryMatk,
+        totalStatusMatk: totalStatusMatk,
       },
       dmg: {
         ...this.damageSummary,

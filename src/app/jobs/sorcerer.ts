@@ -1,5 +1,5 @@
 import { ElementType, ElementalMasterSpirit } from '../constants/element-type.const';
-import { InfoForClass } from '../models/info-for-class.model';
+import { AdditionalBonusInput, InfoForClass } from '../models/info-for-class.model';
 import { ClassName } from './_class-name';
 import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
 import { Scholar } from './Scholar';
@@ -337,7 +337,7 @@ export class Sorcerer extends Scholar {
     return atk;
   }
 
-  override setAdditionalBonus(params: InfoForClass) {
+  override setAdditionalBonus(params: AdditionalBonusInput) {
     if (!this.bonuses?.masteryAtks) return params.totalBonus;
 
     const { totalBonus, weapon } = params;

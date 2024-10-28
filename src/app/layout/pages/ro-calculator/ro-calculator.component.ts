@@ -818,6 +818,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       .setLearnedSkills(learnedSkillMap)
       .setOffensiveSkill(selectedAtkSkill)
       .prepareAllItemBonus()
+      .calcAllAtk()
       .setSelectedChances(this.selectedChances)
       .calcAllDefs()
       .calculateHpSp({ isUseHpL: usedHpL })

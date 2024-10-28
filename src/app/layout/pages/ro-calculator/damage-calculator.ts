@@ -595,7 +595,7 @@ export class DamageCalculator {
 
     const rawStatusAtk = floor(baseLvl / 4 + secondStatus / 5 + primaryStatus + totalLuk / 3) + totalPow * 5;
 
-    return rawStatusAtk * 2;
+    return rawStatusAtk;
   }
 
   private getRaceMultiplier(atkType: 'p' | 'm') {
@@ -678,7 +678,7 @@ export class DamageCalculator {
     const skillAtk = this.getEquipAtkFromSkills();
     const striking = this.getStrikingAtk();
 
-    return equipAtk + skillAtk + ammoAtk + pseudoBuffATK + striking;
+    return { total: equipAtk + skillAtk + ammoAtk + pseudoBuffATK + striking, equipAtk, skillAtk, ammoAtk, pseudoBuffATK, striking };
   }
 
   private getBuffMasteryAtk(atkType: 'atk' | 'matk') {
@@ -704,7 +704,7 @@ export class DamageCalculator {
     const uiMastery = this._class.getUiMasteryAtk(this.infoForClass);
     const hiddenMastery = this._class.getMasteryAtk(this.infoForClass);
 
-    return skillAtk + buffAtk + uiMastery + hiddenMastery;
+    return { total: skillAtk + buffAtk + uiMastery + hiddenMastery, skillAtk, buffAtk, uiMastery, hiddenMastery }
   }
 
   private getWeaponAtk(params: { isEDP: boolean; sizePenalty: number }) {
@@ -771,12 +771,12 @@ export class DamageCalculator {
     const { propertyAtk, isEDP, sizePenalty, isExcludeCannanball } = params;
     const propertyMultiplier = this.getPropertyMultiplier(propertyAtk);
 
-    const extraAtk = this.getExtraAtk();
+    const extraAtk = this.getExtraAtk().total;
     const cannonBallAtk = isExcludeCannanball ? 0 : this.totalBonus.cannonballAtk || 0;
-    const masteryAtk = this.getMasteryAtk() + cannonBallAtk;
+    const masteryAtk = this.getMasteryAtk().total + cannonBallAtk;
 
     const mildwindMultiplier = this.isActiveMildwind ? propertyMultiplier : this.getPropertyMultiplier(ElementType.Neutral);
-    const statusAtk = this.getStatusAtk() * mildwindMultiplier;
+    const statusAtk = this.getStatusAtk() * 2 * mildwindMultiplier;
 
     const { totalMin: _weaMin, totalMax: weaMax, totalMaxOver: weaMaxOver } = this.getWeaponAtk({ sizePenalty, isEDP });
     const weaMin = this.isMaximizeWeapon ? weaMax : _weaMin;
@@ -1420,5 +1420,19 @@ export class DamageCalculator {
     };
 
     return { basicDmg, misc, skillDmg, skillAspd, basicAspd };
+  }
+
+  get atkSummaryForUI() {
+    const { skillAtk: skillAtkMastery, hiddenMastery, buffAtk, uiMastery } = this.getMasteryAtk()
+    const { equipAtk, skillAtk, striking } = this.getExtraAtk()
+
+    return {
+      totalStatusAtk: this.getStatusAtk(),
+      totalEquipAtk: equipAtk + skillAtk + striking,
+      totalMasteryAtk: skillAtkMastery + buffAtk + uiMastery,
+      totalHideMasteryAtk: hiddenMastery,
+      totalBuffAtk: buffAtk,
+      totalStatusMatk: this.getStatusMatk(),
+    }
   }
 }

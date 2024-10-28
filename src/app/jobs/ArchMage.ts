@@ -4,7 +4,7 @@ import { JOB_4_MAX_JOB_LEVEL, JOB_4_MIN_MAX_LEVEL } from '../app-config';
 import { Warlock } from './Warlock';
 import { addBonus, floor, genSkillList } from '../utils';
 import { EquipmentSummaryModel } from '../models/equipment-summary.model';
-import { InfoForClass } from '../models/info-for-class.model';
+import { AdditionalBonusInput } from '../models/info-for-class.model';
 import { ElementType } from '../constants';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
@@ -413,7 +413,7 @@ export class ArchMage extends Warlock {
     });
   }
 
-  override setAdditionalBonus(params: InfoForClass): EquipmentSummaryModel {
+  override setAdditionalBonus(params: AdditionalBonusInput): EquipmentSummaryModel {
     super.setAdditionalBonus(params);
 
     const { totalBonus, weapon } = params;

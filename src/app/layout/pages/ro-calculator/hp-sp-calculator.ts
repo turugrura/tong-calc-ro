@@ -53,8 +53,8 @@ export class HpSpCalculator {
     return this;
   }
 
-  setAllInfo(info: Omit<InfoForClass, 'weapon' | 'monster'> & { baseHp: number; baseSp: number }) {
-    const { model, status, totalBonus, equipmentBonus, baseHp, baseSp } = info;
+  setAllInfo(info: Omit<InfoForClass, 'weapon' | 'monster'>) {
+    const { model, status, totalBonus, equipmentBonus } = info;
     // this._baseHp = baseHp || 0;
     // this._baseSp = baseSp || 0;
 

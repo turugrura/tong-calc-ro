@@ -3,7 +3,7 @@ import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillMode
 import { JOB_4_MAX_JOB_LEVEL, JOB_4_MIN_MAX_LEVEL } from '../app-config';
 import { Minstrel } from './Minstrel';
 import { MysticSymphonyFn, StageMannerFn } from '../constants/share-passive-skills';
-import { InfoForClass } from '../models/info-for-class.model';
+import { AdditionalBonusInput } from '../models/info-for-class.model';
 import { EquipmentSummaryModel } from '../models/equipment-summary.model';
 import { addBonus } from '../utils';
 import { WeaponTypeName } from '../constants';
@@ -204,7 +204,7 @@ export class Troubadour extends Minstrel {
     });
   }
 
-  override setAdditionalBonus(params: InfoForClass): EquipmentSummaryModel {
+  override setAdditionalBonus(params: AdditionalBonusInput): EquipmentSummaryModel {
     super.setAdditionalBonus(params);
 
     const { totalBonus, weapon } = params;

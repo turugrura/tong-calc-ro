@@ -1,6 +1,6 @@
 import { ClassName } from './_class-name';
 import { ActiveSkillModel, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
-import { InfoForClass } from '../models/info-for-class.model';
+import { AdditionalBonusInput, InfoForClass } from '../models/info-for-class.model';
 import { Swordman } from './Swordman';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {};
@@ -80,7 +80,7 @@ export class RawJob extends Swordman {
     return sum;
   }
 
-  override setAdditionalBonus(params: InfoForClass) {
+  override setAdditionalBonus(params: AdditionalBonusInput) {
     const { totalBonus, weapon } = params;
     const { typeName } = weapon.data;
 

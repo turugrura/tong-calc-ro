@@ -2,7 +2,7 @@ import { ClassName } from './_class-name';
 import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
 import { Ranger } from './Ranger';
 import { EquipmentSummaryModel } from '../models/equipment-summary.model';
-import { InfoForClass } from '../models/info-for-class.model';
+import { AdditionalBonusInput } from '../models/info-for-class.model';
 import { JOB_4_MAX_JOB_LEVEL, JOB_4_MIN_MAX_LEVEL } from '../app-config';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
@@ -224,7 +224,7 @@ export class Windhawk extends Ranger {
     });
   }
 
-  override setAdditionalBonus(params: InfoForClass): EquipmentSummaryModel {
+  override setAdditionalBonus(params: AdditionalBonusInput): EquipmentSummaryModel {
     const { totalBonus, skillName } = params;
     // const {race, elementUpper} = monster;
 

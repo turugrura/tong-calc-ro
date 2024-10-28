@@ -1,7 +1,7 @@
 import { environment } from 'src/environments/environment';
 import { ElementType } from '../constants/element-type.const';
 import { EquipmentSummaryModel } from '../models/equipment-summary.model';
-import { InfoForClass } from '../models/info-for-class.model';
+import { AdditionalBonusInput, InfoForClass } from '../models/info-for-class.model';
 import { AspdTable } from './_aspd-table';
 import { ClassName } from './_class-name';
 import { sortSkill } from '../utils';
@@ -603,7 +603,7 @@ export abstract class CharacterBase {
     return currentAtk;
   }
 
-  setAdditionalBonus(params: InfoForClass): EquipmentSummaryModel {
+  setAdditionalBonus(params: AdditionalBonusInput): EquipmentSummaryModel {
     return params.totalBonus;
   }
 

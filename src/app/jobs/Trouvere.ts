@@ -4,7 +4,7 @@ import { JOB_4_MAX_JOB_LEVEL, JOB_4_MIN_MAX_LEVEL } from '../app-config';
 import { Wanderer } from './Wanderer';
 import { MysticSymphonyFn, StageMannerFn } from '../constants/share-passive-skills';
 import { EquipmentSummaryModel } from '../models/equipment-summary.model';
-import { InfoForClass } from '../models/info-for-class.model';
+import { AdditionalBonusInput } from '../models/info-for-class.model';
 import { addBonus } from '../utils';
 import { WeaponTypeName } from '../constants';
 
@@ -204,7 +204,7 @@ export class Trouvere extends Wanderer {
     });
   }
 
-  override setAdditionalBonus(params: InfoForClass): EquipmentSummaryModel {
+  override setAdditionalBonus(params: AdditionalBonusInput): EquipmentSummaryModel {
     super.setAdditionalBonus(params);
 
     const { totalBonus, weapon } = params;
