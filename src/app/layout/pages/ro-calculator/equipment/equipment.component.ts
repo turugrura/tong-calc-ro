@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { DropdownModel } from '../../../../models/dropdown.model';
 import { ItemModel } from '../../../../models/item.model';
 import { ItemTypeEnum, OptionableItemTypeSet } from '../../../../constants/item-type.enum';
@@ -18,7 +18,7 @@ interface EventEmitterResultModel {
   templateUrl: './equipment.component.html',
   styleUrls: ['../ro-calculator.component.css'],
 })
-export class EquipmentComponent implements OnChanges {
+export class EquipmentComponent implements OnChanges, OnInit {
   @Input({ required: true }) readonly itemType!: string;
   @Input({ required: true }) readonly placeholder: string;
   @Input() isEndWithSpace = false;
@@ -87,10 +87,26 @@ export class EquipmentComponent implements OnChanges {
   gradeList: DropdownModel[] = [];
 
   private itemTypeMap = {};
-  private readonly requireSet = new Set(['items', 'itemList', 'mapEnchant', 'cardList'])
+  private readonly requireSet = new Set(['items', 'itemList', 'mapEnchant',])
   private isInternalItemIdChange = false;
 
   constructor() { }
+
+  ngOnInit(): void {
+    this.itemTypeMap = {
+      itemId: this.itemType,
+      itemRefine: `${this.itemType}Refine`,
+      itemGrade: `${this.itemType}Grade`,
+      card1Id: this.isWeapon ? `${this.itemType}Card1` : `${this.itemType}Card`,
+      card2Id: `${this.itemType}Card2`,
+      card3Id: `${this.itemType}Card3`,
+      card4Id: `${this.itemType}Card4`,
+      enchant1Id: `${this.itemType}Enchant0`,
+      enchant2Id: `${this.itemType}Enchant1`,
+      enchant3Id: `${this.itemType}Enchant2`,
+      enchant4Id: `${this.itemType}Enchant3`,
+    }
+  }
 
   ngOnChanges(changes: SimpleChanges): void {
     // console.log('changes', changes)
@@ -103,31 +119,12 @@ export class EquipmentComponent implements OnChanges {
     if (changes['mapEnchant'] && !changes['mapEnchant']?.isFirstChange()) {
       this.requireSet.delete('mapEnchant')
     }
-    if (changes['cardList'] && !changes['cardList']?.isFirstChange()) {
-      this.requireSet.delete('cardList')
-    }
-    if (changes['optionList'] && !changes['optionList']?.isFirstChange()) {
-      this.requireSet.delete('optionList')
-    }
+
     if (this.requireSet.size === 0) {
-      // console.log('initial item')
       this.requireSet.add('x1').add('x2').add('x3').add('x4').add('x5').add('x6')
 
       setTimeout(() => {
         // console.log('initial item ____ ', this.isInternalItemIdChange, changes['itemId'])
-        this.itemTypeMap = {
-          itemId: this.itemType,
-          itemRefine: `${this.itemType}Refine`,
-          itemGrade: `${this.itemType}Grade`,
-          card1Id: this.isWeapon ? `${this.itemType}Card1` : `${this.itemType}Card`,
-          card2Id: `${this.itemType}Card2`,
-          card3Id: `${this.itemType}Card3`,
-          card4Id: `${this.itemType}Card4`,
-          enchant1Id: `${this.itemType}Enchant0`,
-          enchant2Id: `${this.itemType}Enchant1`,
-          enchant3Id: `${this.itemType}Enchant2`,
-          enchant4Id: `${this.itemType}Enchant3`,
-        }
         this.onSelectItem('itemId', this.itemId, this.itemRefine, false)
       }, 0);
     } else if (changes['itemId'] && this.requireSet.size === 6) {
@@ -256,6 +253,8 @@ export class EquipmentComponent implements OnChanges {
         e.emit(val);
       }
     }
+
+    // console.log({ itemType, t: this.itemTypeMap[itemType], itemId })
 
     if (isEmitItemChange) {
       this.selectItemChange.emit({ itemType: this.itemTypeMap[itemType], itemId, refine });

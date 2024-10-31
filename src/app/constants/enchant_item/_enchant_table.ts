@@ -121,6 +121,7 @@ import { madBunnyLt4 } from './mad_bunny_lt';
 import { muqaddas3, muqaddas4 } from './muqaddas';
 import { oasdWeapon3, oasdWeapon4 } from './osad_weapon';
 import { plusWeapon3, plusWeapon4 } from './plus_weapon';
+import { rockPaperScissor } from './rock_paper_scissor';
 import { goodEvilBoot3_ABC, goodEvilBoot3_AG, goodEvilBoot3_BO, goodEvilBoot3_CD, goodEvilBoot3_DK, goodEvilBoot3_EM, goodEvilBoot3_HN, goodEvilBoot3_IG, goodEvilBoot3_IQ, goodEvilBoot3_MT, goodEvilBoot3_NW, goodEvilBoot3_SH, goodEvilBoot3_SHC, goodEvilBoot3_SKE, goodEvilBoot3_SOA, goodEvilBoot3_SS, goodEvilBoot3_TR, goodEvilBoot3_WH, goodEvilBoot4, goodEvilHead3, goodEvilHead4, sinsFateWeapon3, sinsFateWeapon4 } from './sins_and_fate';
 import { snowFwAccL2, snowFwAccL3, snowFwAccL4, snowFwAccR2, snowFwAccR3, snowFwAccR4, snowFwArmor2, snowFwArmor3, snowFwArmor4, snowFwBoot2, snowFwBoot3, snowFwBoot4, snowFwGarment2, snowFwGarment3, snowFwGarment4 } from './snow_flower';
 import { corruptedPoisonArmor2, corruptedPoisonArmor3, corruptedPoisonArmor4, fieryEarthArmor2, fieryEarthArmor3, fieryEarthArmor4, flameRuneArmor2, icyStromArmor2, icyStromArmor3, icyStromArmor4, soulPurifyArmor2, soulPurifyArmor3, soulPurifyArmor4, varmundt3, varmundt4, varmundtAcc3, varmundtAcc4, varmundtHiAcc2 } from './varmundt';
@@ -1553,6 +1554,10 @@ export const EnchantTable: EntTable[] = [
   { name: "WK_Mantle_Melee_TH", enchants: [null, whiteKnight2, whiteKnight34, whiteKnight34] },
   { name: "WK_Mantle_Range_TH", enchants: [null, whiteKnight2, whiteKnight34, whiteKnight34] },
   { name: "WK_Mantle_Magic_TH", enchants: [null, whiteKnight2, whiteKnight34, whiteKnight34] },
+
+  { name: "aegis_Kankrai", enchants: [null, rockPaperScissor, rockPaperScissor, rockPaperScissor] },
+  { name: "aegis_Khon", enchants: [null, rockPaperScissor, rockPaperScissor, rockPaperScissor] },
+  { name: "aegis_Kradat", enchants: [null, rockPaperScissor, rockPaperScissor, rockPaperScissor] },
 ];
 
 Object.freeze(EnchantTable);

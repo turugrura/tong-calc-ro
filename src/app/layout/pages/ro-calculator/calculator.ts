@@ -934,7 +934,7 @@ export class Calculator {
   private calcItemStatus(params: { itemType: ItemTypeEnum; itemRefine: number; item: ItemModel }) {
     const { item, itemRefine, itemType } = params;
     const total: Record<string, number> = {};
-    const chance = {};
+    const chance = {} as Record<string, number>;
     const addChance = (attr: string, val: number) => {
       if (chance[attr]) {
         chance[attr] += val;
@@ -985,7 +985,7 @@ export class Calculator {
       this._chanceList.push({
         name: item.name,
         label: `${item.name}`,
-        label2: `[ ${chances.map((c) => `${c} +${chance[c]}`).join(', ')} ]`,
+        label2: `[ ${chances.map((c) => `${c} ${c.startsWith('cd__') ? '-' : '+'}${chance[c]}`).join(', ')} ]`,
         bonus: chance,
       });
     }
