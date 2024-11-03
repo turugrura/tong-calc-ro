@@ -109,29 +109,36 @@ export class EquipmentComponent implements OnChanges, OnInit {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    // console.log('changes', changes)
-    if (changes['items'] && !changes['items']?.isFirstChange()) {
-      this.requireSet.delete('items')
+    // console.log(this.itemType, 'changes', changes)
+    if ((changes['items'])) {
+      if (!changes['items']?.isFirstChange() || changes['items'].currentValue) {
+        this.requireSet.delete('items')
+      }
     }
     if (changes['itemList'] && !changes['itemList']?.isFirstChange()) {
       this.requireSet.delete('itemList')
     }
-    if (changes['mapEnchant'] && !changes['mapEnchant']?.isFirstChange()) {
-      this.requireSet.delete('mapEnchant')
+    if ((changes['mapEnchant'])) {
+      if (!changes['mapEnchant']?.isFirstChange() || changes['mapEnchant'].currentValue?.size) {
+        this.requireSet.delete('mapEnchant')
+      }
     }
+    // if (this.itemType === 'weapon' && changes['mapEnchant']) {
+    //   console.log({ size: this.mapEnchant?.size, isFirst: changes['mapEnchant']?.isFirstChange() })
+    // }
 
     if (this.requireSet.size === 0) {
       this.requireSet.add('x1').add('x2').add('x3').add('x4').add('x5').add('x6')
 
       setTimeout(() => {
-        // console.log('initial item ____ ', this.isInternalItemIdChange, changes['itemId'])
+        // console.log(this.itemType, 'initial item ____ ', this.isInternalItemIdChange, changes['itemId'])
         this.onSelectItem('itemId', this.itemId, this.itemRefine, false)
       }, 0);
     } else if (changes['itemId'] && this.requireSet.size === 6) {
       // handle property was set from main component (when load data)
       if (!this.isInternalItemIdChange) {
         setTimeout(() => {
-          // console.log('changes itemId isInternalItemIdChange ____ ', this.isInternalItemIdChange, changes['itemId'])
+          // console.log(this.itemType, 'changes itemId isInternalItemIdChange ____ ', this.isInternalItemIdChange, changes['itemId'])
           this.onSelectItem('itemId', this.itemId, this.itemRefine, false)
         }, 0);
       }

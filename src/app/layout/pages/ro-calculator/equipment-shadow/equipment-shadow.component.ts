@@ -35,7 +35,7 @@ export class EquipmentShadowComponent implements OnChanges {
 
   private itemTypeMap = {};
 
-  private readonly requireSet = new Set(['itemList', 'optionList'])
+  private readonly requireSet = new Set(['itemList',])
 
   constructor() { }
 
@@ -43,9 +43,7 @@ export class EquipmentShadowComponent implements OnChanges {
     if (changes['itemList'] && !changes['itemList']?.isFirstChange()) {
       this.requireSet.delete('itemList')
     }
-    if (changes['optionList'] && !changes['optionList']?.isFirstChange()) {
-      this.requireSet.delete('optionList')
-    }
+
     if (this.requireSet.size === 0) {
       this.requireSet.add('x1').add('x2').add('x3').add('x4').add('x5').add('x6')
 
