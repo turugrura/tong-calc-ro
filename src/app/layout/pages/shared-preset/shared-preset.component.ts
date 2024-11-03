@@ -89,7 +89,7 @@ export class SharedPresetComponent implements OnInit, OnDestroy {
     private readonly roService: RoService,
     private readonly messageService: MessageService,
     private readonly confirmationService: ConfirmationService,
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.subscribeSearch();
@@ -479,6 +479,7 @@ export class SharedPresetComponent implements OnInit, OnDestroy {
         .setLearnedSkills(learnedSkillMap)
         .setOffensiveSkill(this.selectedAtkSkill)
         .prepareAllItemBonus()
+        .calcAllAtk()
         // .setSelectedChances(this.selectedChances)
         .calcAllDefs()
         .calculateHpSp({ isUseHpL: usedHpL })
@@ -491,7 +492,7 @@ export class SharedPresetComponent implements OnInit, OnDestroy {
   }
 
   onMonsterChange() {
-    this.totalSummary = this.monsterCalculator.setMonster(this.monsterDataMap[this.selectedMonster]).getTotalSummary();
+    this.totalSummary = this.monsterCalculator.setMonster(this.monsterDataMap[this.selectedMonster]).getMonsterSummary();
     this.recalcSummary();
   }
 

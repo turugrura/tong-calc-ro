@@ -1411,6 +1411,12 @@ export class Calculator {
     return this;
   }
 
+  getMonsterSummary() {
+    return {
+      monster: { ...this.monster.data }
+    }
+  }
+
   getTotalSummary() {
     const { baseWeaponAtk = 0, refineBonus = 0 } = this.leftWeaponData?.data || {};
     const { totalBuffAtk, totalEquipAtk, totalHideMasteryAtk, totalMasteryAtk, totalStatusAtk, totalStatusMatk } = this.dmgCalculator.atkSummaryForUI
