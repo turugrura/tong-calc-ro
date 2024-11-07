@@ -210,6 +210,7 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
       date: '07-11-2567',
       logs: [
         "Added Official updated items",
+        'Updated Ranking data',
       ],
     },
     {
