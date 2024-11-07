@@ -19,7 +19,7 @@ const ACTIVE_PASSIVE_SKILL_NAMES = [
   'Advanced Katar Mastery',
   'Arclouse Dash',
   'Ardor',
-  'Ardor',
+  'Competentia',
   'Argutus Telum',
   'Argutus Vita',
   'Asir Runestone',
