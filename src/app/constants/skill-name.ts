@@ -197,7 +197,7 @@ const ACTIVE_PASSIVE_SKILL_NAMES = [
   'Skin Tempering',
   'Snake Eyes',
   'Snatcher',
-  'P.F.I.',
+  'PFI',
   'Intensive Aim',
   'Grenade Fragment',
   'Debuff_Spore Explosion',

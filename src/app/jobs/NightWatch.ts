@@ -522,7 +522,7 @@ export class NightWatch extends Rebellion {
   ];
   private readonly passiveSkillList4th: PassiveSkillModel[] = [
     {
-      name: 'P.F.I.',
+      name: 'PFI',
       label: 'P.F.I.',
       inputType: 'dropdown',
       dropdown: genSkillList(10)
@@ -551,7 +551,7 @@ export class NightWatch extends Rebellion {
 
     const { totalBonus, weapon } = params;
 
-    const pfiLv = this.learnLv('P.F.I.')
+    const pfiLv = this.learnLv('PFI')
     if (pfiLv > 0 && weapon.isType('gun')) {
       addBonus(totalBonus, 'pAtk', pfiLv + 2)
     }
