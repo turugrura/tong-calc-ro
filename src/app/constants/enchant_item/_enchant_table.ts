@@ -116,7 +116,7 @@ import {
   grayWolfGarment_slot3,
   grayWolfGarment_slot4,
 } from './gray_wolf';
-import { heroBootLt2, heroBootLt3, heroBootLt4 } from './hero_boots_lt';
+import { heroBadge2, heroBootLt2, heroBootLt3, heroBootLt4 } from './hero_boots_lt';
 import { madBunnyLt4 } from './mad_bunny_lt';
 import { muqaddas3, muqaddas4 } from './muqaddas';
 import { oasdWeapon3, oasdWeapon4 } from './osad_weapon';
@@ -1065,7 +1065,9 @@ export const EnchantTable: EntTable[] = [
   { name: 'Gray_W_Earing', enchants: [null, grayWolfAccL_slot2, grayWolfAccL_slot3, grayWolfAccL_slot4] },
   { name: 'Gray_W_Necklace', enchants: [null, grayWolfAccL_slot2, grayWolfAccL_slot3, grayWolfAccL_slot4] },
 
+  { name: 'Officer_Cap_LT', enchants: [null, null, null, BaseState._3] },
   { name: 'Hero_Boots_LT', enchants: [null, heroBootLt2, heroBootLt3, heroBootLt4] },
+  { name: 'Hero_Insignia', enchants: [null, heroBadge2, heroBootLt3, heroBootLt4] },
 
   { name: 'Barmund_Flame_Armor', enchants: [null, null, varmundt3, varmundt4] },
   { name: 'Barmund_Plain_Armor', enchants: [null, null, varmundt3, varmundt4] },
