@@ -167,9 +167,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   itemList: ItemListModel = {} as any;
 
   weaponList: DropdownModel[] = [];
-  weaponGradeList: DropdownModel[] = [];
   leftWeaponList: DropdownModel[] = [];
-  leftWeaponGradeList: DropdownModel[] = [];
   weaponCardList: DropdownModel[] = [];
   weaponEnchant0List: DropdownModel[] = [];
   weaponEnchant1List: DropdownModel[] = [];
@@ -181,42 +179,35 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   leftWeaponEnchant3List: DropdownModel[] = [];
   ammoList: DropdownModel[] = [];
   headUpperList: DropdownModel[] = [];
-  headUpperGradeList: DropdownModel[] = [];
   headUpperEnchant1List: DropdownModel[] = [];
   headUpperEnchant2List: DropdownModel[] = [];
   headUpperEnchant3List: DropdownModel[] = [];
   headMiddleList: DropdownModel[] = [];
-  headMiddleGradeList: DropdownModel[] = [];
   headMiddleEnchant1List: DropdownModel[] = [];
   headMiddleEnchant2List: DropdownModel[] = [];
   headMiddleEnchant3List: DropdownModel[] = [];
   headLowerList: DropdownModel[] = [];
-  headLowerGradeList: DropdownModel[] = [];
   headLowerEnchant1List: DropdownModel[] = [];
   headLowerEnchant2List: DropdownModel[] = [];
   headLowerEnchant3List: DropdownModel[] = [];
   headCardList: DropdownModel[] = [];
   armorList: DropdownModel[] = [];
   armorCardList: DropdownModel[] = [];
-  armorGradeList: DropdownModel[] = [];
   armorEnchant1List: DropdownModel[] = [];
   armorEnchant2List: DropdownModel[] = [];
   armorEnchant3List: DropdownModel[] = [];
   shieldList: DropdownModel[] = [];
   shieldCardList: DropdownModel[] = [];
-  shieldGradeList: DropdownModel[] = [];
   shieldEnchant1List: DropdownModel[] = [];
   shieldEnchant2List: DropdownModel[] = [];
   shieldEnchant3List: DropdownModel[] = [];
   garmentList: DropdownModel[] = [];
   garmentCardList: DropdownModel[] = [];
-  garmentGradeList: DropdownModel[] = [];
   garmentEnchant1List: DropdownModel[] = [];
   garmentEnchant2List: DropdownModel[] = [];
   garmentEnchant3List: DropdownModel[] = [];
   bootList: DropdownModel[] = [];
   bootCardList: DropdownModel[] = [];
-  bootGradeList: DropdownModel[] = [];
   bootEnchant1List: DropdownModel[] = [];
   bootEnchant2List: DropdownModel[] = [];
   bootEnchant3List: DropdownModel[] = [];
@@ -224,13 +215,11 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   accCardList: DropdownModel[] = [];
   accLeftList: DropdownModel[] = [];
   accLeftCardList: DropdownModel[] = [];
-  accLeftGradeList: DropdownModel[] = [];
   accLeftEnchant1List: DropdownModel[] = [];
   accLeftEnchant2List: DropdownModel[] = [];
   accLeftEnchant3List: DropdownModel[] = [];
   accRightList: DropdownModel[] = [];
   accRightCardList: DropdownModel[] = [];
-  accRightGradeList: DropdownModel[] = [];
   accRightEnchant1List: DropdownModel[] = [];
   accRightEnchant2List: DropdownModel[] = [];
   accRightEnchant3List: DropdownModel[] = [];
@@ -340,6 +329,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   hiddenMap = { ammu: true, shield: true };
   isAllowLeftWeaponByClass = false;
   showLeftWeapon = false;
+  isWeaponCanGrade = false;
 
   isEnableCompare = false;
   showCompareItemMap = {} as any;
@@ -2269,6 +2259,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     // in order to check is the weapon allow to hold shield or left weapon or not
     if (itemType === ItemTypeEnum.weapon) {
       this.calculator.setWeapon({ itemId, refine });
+      this.isWeaponCanGrade = this.items[itemId]?.canGrade || false
     }
 
     this.updateItemEvent.next(itemType);

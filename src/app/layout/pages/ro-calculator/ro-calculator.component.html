@@ -554,7 +554,7 @@
               </ng-template>
             </p-dropdown>
           </div>
-          <div class="col-{{ !weaponGradeList.length ? 10 : 6 }}" [hidden]="hiddenMap.ammu">
+          <div class="col-{{ isWeaponCanGrade ? 6 : 10 }}" [hidden]="hiddenMap.ammu">
             <p-dropdown
               inputId="ammo"
               [autoDisplayFirst]="false"
