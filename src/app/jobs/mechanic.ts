@@ -101,7 +101,7 @@ export class Mechanic extends Whitesmith {
         const baseLevel = model.level;
         const totalVit = status.totalVit;
 
-        if (this.isSkillActive('Rhythm Shooting')) {
+        if (this.isSkillActive('Axe Stomp')) {
           return (230 + skillLevel * 250 + totalVit * 2) * (baseLevel / 100);
         }
 

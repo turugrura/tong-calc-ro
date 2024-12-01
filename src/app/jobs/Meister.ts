@@ -214,6 +214,15 @@ export class Meister extends Mechanic {
       inputType: 'dropdown',
       dropdown: genMeisterMonsterSkillList(),
     },
+    {
+      name: 'Axe Stomp',
+      label: 'Axe Stomp',
+      inputType: 'selectButton',
+      dropdown: [
+        { label: 'Yes', value: 5, isUse: true },
+        { label: 'No', value: 0, isUse: false },
+      ],
+    },
   ];
   private passiveSkillList4th: PassiveSkillModel[] = [
     {
