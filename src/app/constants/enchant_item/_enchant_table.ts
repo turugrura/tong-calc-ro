@@ -124,6 +124,7 @@ import { plusWeapon3, plusWeapon4 } from './plus_weapon';
 import { rockPaperScissor } from './rock_paper_scissor';
 import { goodEvilBoot3_ABC, goodEvilBoot3_AG, goodEvilBoot3_BO, goodEvilBoot3_CD, goodEvilBoot3_DK, goodEvilBoot3_EM, goodEvilBoot3_HN, goodEvilBoot3_IG, goodEvilBoot3_IQ, goodEvilBoot3_MT, goodEvilBoot3_NW, goodEvilBoot3_SH, goodEvilBoot3_SHC, goodEvilBoot3_SKE, goodEvilBoot3_SOA, goodEvilBoot3_SS, goodEvilBoot3_TR, goodEvilBoot3_WH, goodEvilBoot4, goodEvilHead3, goodEvilHead4, sinsFateWeapon3, sinsFateWeapon4 } from './sins_and_fate';
 import { snowFwAccL2, snowFwAccL3, snowFwAccL4, snowFwAccR2, snowFwAccR3, snowFwAccR4, snowFwArmor2, snowFwArmor3, snowFwArmor4, snowFwBoot2, snowFwBoot3, snowFwBoot4, snowFwGarment2, snowFwGarment3, snowFwGarment4 } from './snow_flower';
+import { thanosBoot3, thanosBoot4, thanosHead3, thanosHead4 } from './thanos';
 import { corruptedPoisonArmor2, corruptedPoisonArmor3, corruptedPoisonArmor4, fieryEarthArmor2, fieryEarthArmor3, fieryEarthArmor4, flameRuneArmor2, icyStromArmor2, icyStromArmor3, icyStromArmor4, soulPurifyArmor2, soulPurifyArmor3, soulPurifyArmor4, varmundt3, varmundt4, varmundtAcc3, varmundtAcc4, varmundtHiAcc2 } from './varmundt';
 import { vivatusHead3, vivatusHead4 } from './vivatus';
 import { whiteKnight2, whiteKnight34 } from './white_knigh_man';
@@ -644,41 +645,6 @@ const nebular3 = [
 ];
 const nebular4 = [...str(3, 5), ...int(3, 5), ...dex(2, 4), ...agi(3, 5), ...vit(3, 5)];
 
-const thanosHead3 = [
-  'Gray_Melee1',
-  'Gray_Melee2',
-  'Gray_Melee3',
-  'Gray_Range1',
-  'Gray_Range2',
-  'Gray_Range3',
-  'Gray_Magic1',
-  'Gray_Magic2',
-  'Gray_Magic3',
-  'Gray_Fight1',
-  'Gray_Fight2',
-  'Gray_Fight3',
-];
-const thanosHead4 = [
-  Tenacity._1,
-  Tenacity._2,
-  Tenacity._3,
-  Acute._1,
-  Acute._2,
-  Acute._3,
-  Mettle._1,
-  Mettle._2,
-  Mettle._3,
-  MasterArc._1,
-  MasterArc._2,
-  MasterArc._3,
-  MagicEess._1,
-  MagicEess._2,
-  MagicEess._3,
-  Adamatine._1,
-  Adamatine._2,
-  Adamatine._3,
-];
-
 const moraAtkType1 = [...atkPer13, ...fs13, ...str(1, 3)];
 const moraAtkType2 = [...atkPer23, ...fs24, ...str(2, 4)];
 const moraAtkType3 = [AtkPercent._3, ...fs36, ...str(3, 5)];
@@ -1033,6 +999,11 @@ export const EnchantTable: EntTable[] = [
   { name: 'Thanos_Helm3_LT', enchants: [null, null, thanosHead3, thanosHead4] },
   { name: 'Thanos_Helm4_LT', enchants: [null, null, thanosHead3, thanosHead4] },
 
+  { name: "Thanos_Boots1", enchants: [null, null, thanosBoot3, thanosBoot4] },
+  { name: "Thanos_Boots2", enchants: [null, null, thanosBoot3, thanosBoot4] },
+  { name: "Thanos_Boots3", enchants: [null, null, thanosBoot3, thanosBoot4] },
+  { name: "Thanos_Boots4", enchants: [null, null, thanosBoot3, thanosBoot4] },
+
   { name: 'Signet_Of_Pow_Star', enchants: [null, stellarAcc2, stellarAcc3, stellarAcc4] },
   { name: 'Signet_Of_Sta_Star', enchants: [null, stellarAcc2, stellarAcc3, stellarAcc4] },
   { name: 'Signet_Of_Con_Star', enchants: [null, stellarAcc2, stellarAcc3, stellarAcc4] },
@@ -1068,6 +1039,25 @@ export const EnchantTable: EntTable[] = [
   { name: 'Officer_Cap_LT', enchants: [null, null, null, BaseState._3] },
   { name: 'Hero_Boots_LT', enchants: [null, heroBootLt2, heroBootLt3, heroBootLt4] },
   { name: 'Hero_Insignia', enchants: [null, heroBadge2, heroBootLt3, heroBootLt4] },
+
+  { name: "Hero_Token_AG", enchants: [null, heroBadge2, heroBootLt3, heroBootLt4] },
+  { name: "Hero_Token_WH", enchants: [null, heroBadge2, heroBootLt3, heroBootLt4] },
+  { name: "Hero_Token_IG", enchants: [null, heroBadge2, heroBootLt3, heroBootLt4] },
+  { name: "Hero_Token_CD", enchants: [null, heroBadge2, heroBootLt3, heroBootLt4] },
+  { name: "Hero_Token_SHC", enchants: [null, heroBadge2, heroBootLt3, heroBootLt4] },
+  { name: "Hero_Token_ABC", enchants: [null, heroBadge2, heroBootLt3, heroBootLt4] },
+  { name: "Hero_Token_DK", enchants: [null, heroBadge2, heroBootLt3, heroBootLt4] },
+  { name: "Hero_Token_BO", enchants: [null, heroBadge2, heroBootLt3, heroBootLt4] },
+  { name: "Hero_Token_EM", enchants: [null, heroBadge2, heroBootLt3, heroBootLt4] },
+  { name: "Hero_Token_TR", enchants: [null, heroBadge2, heroBootLt3, heroBootLt4] },
+  { name: "Hero_Token_MT", enchants: [null, heroBadge2, heroBootLt3, heroBootLt4] },
+  { name: "Hero_Token_IQ", enchants: [null, heroBadge2, heroBootLt3, heroBootLt4] },
+  { name: "Hero_Token_SS", enchants: [null, heroBadge2, heroBootLt3, heroBootLt4] },
+  { name: "Hero_Token_NW", enchants: [null, heroBadge2, heroBootLt3, heroBootLt4] },
+  { name: "Hero_Token_SOA", enchants: [null, heroBadge2, heroBootLt3, heroBootLt4] },
+  { name: "Hero_Token_SKE", enchants: [null, heroBadge2, heroBootLt3, heroBootLt4] },
+  { name: "Hero_Token_SH", enchants: [null, heroBadge2, heroBootLt3, heroBootLt4] },
+  { name: "Hero_Token_HN", enchants: [null, heroBadge2, heroBootLt3, heroBootLt4] },
 
   { name: 'Barmund_Flame_Armor', enchants: [null, null, varmundt3, varmundt4] },
   { name: 'Barmund_Plain_Armor', enchants: [null, null, varmundt3, varmundt4] },

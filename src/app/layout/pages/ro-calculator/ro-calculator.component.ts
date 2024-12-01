@@ -2052,6 +2052,8 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     };
     const onlySuperNoviceWeapon = (a: ItemDropdownModel) => {
       // if (this.items[+a.value]?.aegisName?.startsWith('Ep172_')) return true
+      // if (a.label.includes('-AD')) return true
+
       // supper novice allow to equip weapon lv4
       if (this.selectedCharacter.className === ClassName.SuperNovice) {
         const { itemLevel, itemSubTypeId } = this.items[a.value as number] ?? {};
