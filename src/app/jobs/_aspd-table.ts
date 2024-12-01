@@ -8,7 +8,7 @@ type X = {
 type Y = {
   [key in MainAspdEffect]: number;
 };
-interface XX extends Y, X {}
+interface XX extends Y, X { }
 
 export const AspdTable: Partial<Record<ClassName, XX>> = {
   [ClassName.RuneKnight]: { base: 156, shield: -5, Dagger: -10, Sword: -12, 'Two-Handed Sword': -15, Axe: -8, 'Two-Handed Axe': -12, Mace: -5, 'Two-Handed Mace': -12, Spear: -20, 'Two-Handed Spear': -18 },
@@ -31,7 +31,7 @@ export const AspdTable: Partial<Record<ClassName, XX>> = {
   [ClassName.ArchBishop]: { base: 151, shield: -5, Mace: 0, 'Two-Handed Mace': 0, Rod: -15, 'Two-Handed Rod': -10, Book: 1, Fistweapon: -5 },
   [ClassName.Cardinal]: { base: 151, shield: -5, Mace: 0, 'Two-Handed Mace': 0, Rod: -15, 'Two-Handed Rod': -10, Book: 1, Fistweapon: -5 },
   [ClassName.Sura]: { base: 158, shield: -5, Mace: -5, 'Two-Handed Mace': -7, Rod: -10, 'Two-Handed Rod': -12, Fistweapon: -1 },
-  [ClassName.Inquisitor]: { base: 158, shield: -5, Mace: -5, 'Two-Handed Mace': -7, Rod: -10, 'Two-Handed Rod': -12, Fistweapon: -1 },
+  [ClassName.Inquisitor]: { base: 156, shield: -5, Mace: -10, 'Two-Handed Mace': -10, Rod: -10, 'Two-Handed Rod': -10, Fistweapon: -10 },
 
   [ClassName.GuillotineCross]: { base: 156, shield: -9, Dagger: -2, Sword: -25, Axe: -40, Katar: -2, 'left-Dagger': -10, 'left-Sword': -16 },
   [ClassName.ShadowCross]: { base: 156, shield: -9, Dagger: -2, Sword: -25, Axe: -40, Katar: -2, 'left-Dagger': -10, 'left-Sword': -16 },
