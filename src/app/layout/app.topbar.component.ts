@@ -206,6 +206,15 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
 
   updates: { v: string; date: string; logs: string[] }[] = [
     {
+      v: 'V3.1.9',
+      date: '01-12-2567',
+      logs: [
+        "Fixed cri damage effective of 4th class skills from 100% to 50%",
+        "Fixed Inquisitor aspd",
+        "Added Official updated items",
+      ],
+    },
+    {
       v: 'V3.1.8',
       date: '21-11-2567',
       logs: [
