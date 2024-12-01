@@ -257,6 +257,7 @@ export class AbyssChaser extends ShadowChaser {
       cd: 0.2,
       canCri: true,
       baseCriPercentage: 1,
+      criDmgPercentage: 0.5,
       verifyItemFn: ({ weapon }) => {
         const requires: WeaponTypeName[] = ['bow']
         if (requires.some(wType => weapon.isType(wType))) return ''

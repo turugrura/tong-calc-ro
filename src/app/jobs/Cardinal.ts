@@ -217,6 +217,7 @@ export class Cardinal extends ArchBishop {
       vct: 0,
       cd: 1,
       canCri: true,
+      criDmgPercentage: 0.5,
       isMelee: (weaponType) => {
         return weaponType === 'book';
       },

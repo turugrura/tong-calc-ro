@@ -171,8 +171,8 @@ export class Windhawk extends Ranger {
       cd: 0.15,
       maxStack: 3,
       canCri: true,
-      criDmgPercentage: 1,
-      baseCriPercentage: 1,
+      criDmgPercentage: 0.5,
+      baseCriPercentage: 0.5,
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status, stack } = input;
         const baseLevel = model.level;

@@ -170,7 +170,7 @@ export class DragonKnight extends RuneKnight {
       vct: 0,
       cd: 0,
       canCri: true,
-      criDmgPercentage: 1,
+      criDmgPercentage: 0.5,
       baseCriPercentage: 1,
       isMelee: true,
       formula: (input: AtkSkillFormulaInput): number => {
@@ -216,6 +216,7 @@ export class DragonKnight extends RuneKnight {
       cd: 0.35,
       canCri: true,
       baseCriPercentage: 1,
+      criDmgPercentage: 0.5,
       isMelee: true,
       verifyItemFn: ({ weapon }) => {
         const requires: WeaponTypeName[] = ['twohandSword', 'twohandAxe']

@@ -203,6 +203,7 @@ export class ShadowCross extends GuillotineCross {
       isMelee: true,
       canCri: true,
       baseCriPercentage: 0.5,
+      criDmgPercentage: 0.5,
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
         const { totalPow } = status;
@@ -231,6 +232,7 @@ export class ShadowCross extends GuillotineCross {
       isMelee: true,
       canCri: true,
       baseCriPercentage: 0.5,
+      criDmgPercentage: 0.5,
       verifyItemFn: ({ weapon }) => {
         const requires: WeaponTypeName[] = ['katar']
         if (requires.some(wType => weapon.isType(wType))) return ''
@@ -265,6 +267,7 @@ export class ShadowCross extends GuillotineCross {
       isMelee: true,
       canCri: true,
       baseCriPercentage: 0.5,
+      criDmgPercentage: 0.5,
       verifyItemFn: ({ weapon }) => {
         const requires: WeaponTypeName[] = ['katar']
         if (requires.some(wType => weapon.isType(wType))) return ''

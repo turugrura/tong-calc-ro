@@ -214,6 +214,7 @@ export class Inquisitor extends Sura {
       isMelee: true,
       canCri: true,
       baseCriPercentage: 1,
+      criDmgPercentage: 0.5,
       totalHit: 2,
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
@@ -302,6 +303,7 @@ export class Inquisitor extends Sura {
       cd: 1,
       canCri: true,
       baseCriPercentage: 1,
+      criDmgPercentage: 0.5,
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
         const { totalPow } = status;
@@ -324,6 +326,7 @@ export class Inquisitor extends Sura {
       cd: 60,
       canCri: true,
       baseCriPercentage: 1,
+      criDmgPercentage: 0.5,
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status, monster } = input;
         const { totalPow } = status;
