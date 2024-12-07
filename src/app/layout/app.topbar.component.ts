@@ -206,6 +206,14 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
 
   updates: { v: string; date: string; logs: string[] }[] = [
     {
+      v: 'V3.1.10',
+      date: '07-12-2567',
+      logs: [
+        "Fixed cri rate effective of Crescive Bolt from 50% to 100%",
+        "Added skills Hawk Rush, Dancing Knife, From the Abyss, Abyss Square",
+      ],
+    },
+    {
       v: 'V3.1.9',
       date: '01-12-2567',
       logs: [

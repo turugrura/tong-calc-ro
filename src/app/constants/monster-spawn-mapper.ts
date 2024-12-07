@@ -24,10 +24,10 @@ const Mapper = {
   abyss_04: '192 - 200 มังกร 4',
   iz_d04_i: '140 - 150 น้ำ Under water 1',
   iz_d05_i: '180 - 200 น้ำ Under water 2',
-  tha_t09: 'Thana 09',
-  tha_t10: 'Thana 10',
-  tha_t11: 'Thana 11',
-  tha_t12: 'Thana 12',
+  tha_t09: '190 - 215 Thana 09',
+  tha_t10: '190 - 215 Thana 10',
+  tha_t11: '190 - 215 Thana 11',
+  tha_t12: '190 - 215 Thana 12',
   sp_rudus4: '200 - 215 Rudus 4',
   amicitia1: '215 - 230 Amicitia 1',
   amicitia2: '230 - 250 Amicitia 2',
@@ -40,7 +40,7 @@ const Mapper = {
   lhz_dun03: 'Lab 3',
   lhz_dun_n: 'Lab 5',
   ba_pw03: 'Magic Power Plant 2',
-  ba_lost: 'Farm Lost Valley',
+  ba_lost: '150 - 160 Farm Lost Valley',
 } as const;
 
 export const MonsterGroupNames = [...new Set(Object.values(Mapper))].sort((a, b) => (a > b ? 1 : -1));
