@@ -27,6 +27,7 @@ const ACTIVE_PASSIVE_SKILL_NAMES = [
   'Astral Strike',
   'Attack Stance',
   'Aura Blade',
+  'Nature Friendly',
   'Auto Guard',
   'Auto Spell',
   'Axe Mastery',
@@ -258,6 +259,7 @@ const ACTIVE_PASSIVE_SKILL_NAMES = [
 export const OFFENSIVE_SKILL_NAMES = [
   'Abyss Dagger',
   'Acid Bomb',
+  'Dancing Knife',
   'Acid Terror',
   'Acidified Zone Earth',
   'Acidified Zone Fire',

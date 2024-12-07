@@ -12,7 +12,7 @@ export const calcSkillAspd = (params: {
   skillLevel: number;
 }): SkillAspdModel => {
   const { skillData, totalEquipStatus, status, skillLevel } = params;
-  const { name, acd: baseSkillAcd } = skillData;
+  const { name, acd: baseSkillAcd, hitEveryNSec } = skillData;
   const { cd: baseSkillCd, fct: baseSkillFct, vct: baseSkillVct } = skillData;
 
   const skillAcd = typeof baseSkillAcd === 'function' ? baseSkillAcd(skillLevel) : baseSkillAcd;
@@ -51,8 +51,8 @@ export const calcSkillAspd = (params: {
 
   const reducedFct = Math.max(0, roundUp((skillFct - reduceSkillFct - fct) * (1 - fctPercent * 0.01) * (1 - reduceSkillFctPercent * 0.01), precision));
 
-  const blockPeriod = Math.max(reducedCd, reducedAcd);
-  const castPeriod = roundUp(reducedVct + reducedFct, precision);
+  const blockPeriod = hitEveryNSec > 0 ? 0 : Math.max(reducedCd, reducedAcd);
+  const castPeriod = hitEveryNSec > 0 ? round(hitEveryNSec, 2) : roundUp(reducedVct + reducedFct, precision);
   const hitPeriod = round(blockPeriod + castPeriod, 5);
   // console.log({ vctByStat, reducedVct, reducedCd, reducedAcd, hitPeriod });
 

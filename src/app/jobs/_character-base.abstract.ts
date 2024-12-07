@@ -71,6 +71,7 @@ export interface AtkSkillModel {
    */
   hit?: number;
   totalHit?: number | ((parmas: AtkSkillFormulaInput) => number);
+  hitEveryNSec?: number;
   isMatk?: boolean;
   isMelee?: boolean | ((weaponType: WeaponTypeName) => boolean);
   isDevMode?: boolean;

@@ -193,6 +193,30 @@ export class ShadowCross extends GuillotineCross {
       },
     },
     {
+      name: 'Dancing Knife',
+      label: '[V2] Dancing Knife Lv5',
+      value: 'Dancing Knife==5',
+      acd: 1,
+      fct: 1,
+      vct: 1,
+      cd: 30,
+      hitEveryNSec: 0.3,
+      isMelee: true,
+      verifyItemFn: ({ weapon }) => {
+        const requires: WeaponTypeName[] = ['dagger']
+        if (requires.some(wType => weapon.isType(wType))) return ''
+
+        return requires.join(', ')
+      },
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalPow } = status;
+        const baseLevel = model.level;
+
+        return (skillLevel * 200 + totalPow * 5) * (baseLevel / 100);
+      },
+    },
+    {
       name: 'Eternal Slash',
       label: '[V2] Eternal Slash Lv5 (1 hit)',
       value: 'Eternal Slash==5',
