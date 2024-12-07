@@ -273,6 +273,44 @@ export class AbyssChaser extends ShadowChaser {
       },
     },
     {
+      name: 'From the Abyss',
+      label: '[V2] From the Abyss Lv5',
+      value: 'From the Abyss==5',
+      acd: 0,
+      fct: 0,
+      vct: 0,
+      cd: 60,
+      isMatk: true,
+      element: ElementType.Neutral,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalSpl } = status;
+        const { level: baseLevel } = model;
+
+        return (150 + skillLevel * 70 + totalSpl * 5) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Abyss Square',
+      label: '[V2] Abyss Square Lv5 (อยู่นอกพื้นที่สกิล)',
+      value: 'Abyss Square==5',
+      acd: 0.5,
+      fct: 1.5,
+      vct: 5,
+      cd: 3,
+      totalHit: 10,
+      isMatk: true,
+      element: ElementType.Neutral,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalSpl } = status;
+        const { level: baseLevel } = model;
+        const magicSwordMasLv = this.learnLv('Magic Sword Mastery')
+
+        return (skillLevel * (250 + magicSwordMasLv * 15) + totalSpl * 5) * (baseLevel / 100);
+      },
+    },
+    {
       name: 'Omega Abyss Strike',
       label: '[V2] Omega Abyss Strike Lv10',
       value: 'Omega Abyss Strike==10',

@@ -278,12 +278,13 @@ export class Inquisitor extends Sura {
     },
     {
       name: 'Third Flame Bomb',
-      label: '[V2] Third Flame Bomb Lv5 (1 hit)',
+      label: '[V2] Third Flame Bomb Lv5',
       value: 'Third Flame Bomb==5',
       acd: 0,
       fct: 0,
       vct: 0,
       cd: 2,
+      totalHit: 3,
       isMelee: true,
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status, maxHp } = input;
