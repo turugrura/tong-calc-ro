@@ -4,6 +4,7 @@ import { Ranger } from './Ranger';
 import { EquipmentSummaryModel } from '../models/equipment-summary.model';
 import { AdditionalBonusInput } from '../models/info-for-class.model';
 import { JOB_4_MAX_JOB_LEVEL, JOB_4_MIN_MAX_LEVEL } from '../app-config';
+import { WeaponTypeName } from '../constants';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 0, 1, 0],
@@ -199,6 +200,31 @@ export class Windhawk extends Ranger {
         return (skillLevel * 250 + status.totalCon * 5) * (baseLevel / 100);
       },
     },
+    {
+      name: 'Hawk Rush',
+      label: '[V2] Hawk Rush Lv5',
+      value: 'Hawk Rush==5',
+      acd: 0,
+      fct: 0,
+      vct: 0,
+      cd: 0.15,
+      canCri: true,
+      criDmgPercentage: 0.5,
+      baseCriPercentage: 1,
+      verifyItemFn: ({ weapon }) => {
+        const requires: WeaponTypeName[] = ['bow']
+        if (requires.some(wType => weapon.isType(wType))) return ''
+
+        return requires.join(', ')
+      },
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const baseLevel = model.level;
+        const natureFrieldlyLv = this.learnLv('Nature Friendly')
+
+        return (skillLevel * 200 + status.totalCon * 5) * (1 + 0.1 * natureFrieldlyLv) * (baseLevel / 100);
+      },
+    },
   ];
   private readonly activeSkillList4th: ActiveSkillModel[] = [
     {
@@ -211,7 +237,21 @@ export class Windhawk extends Ranger {
       ],
     },
   ];
-  private readonly passiveSkillList4th: PassiveSkillModel[] = [];
+  private readonly passiveSkillList4th: PassiveSkillModel[] = [
+    {
+      name: 'Nature Friendly',
+      label: 'Nature Friendly',
+      inputType: 'dropdown',
+      dropdown: [
+        { label: 'Lv 1', value: 1, isUse: true },
+        { label: 'Lv 2', value: 2, isUse: true },
+        { label: 'Lv 3', value: 3, isUse: true },
+        { label: 'Lv 4', value: 4, isUse: true },
+        { label: 'Lv 5', value: 5, isUse: true },
+        { label: '-', value: 0, isUse: false },
+      ],
+    },
+  ];
 
   constructor() {
     super();
