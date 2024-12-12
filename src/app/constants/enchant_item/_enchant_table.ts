@@ -1103,7 +1103,7 @@ export const EnchantTable: EntTable[] = [
   { name: 'Corrupt_P_R_Cloth', enchants: [null, corruptedPoisonArmor2, corruptedPoisonArmor3, corruptedPoisonArmor4] },
   { name: 'Corrupt_P_R_Cloth2', enchants: [null, corruptedPoisonArmor2, corruptedPoisonArmor3, corruptedPoisonArmor4] },
 
-  { name: "Mad_Bunny_K_LT", enchants: [null, null, null, madBunnyLt4] },
+  { name: "Mad_Bunny_K_LT", enchants: [null, null, madBunnyLt4, madBunnyLt4] },
 
   { name: 'Cannon_Rapier_AD', enchants: [null, null, oasdWeapon3, oasdWeapon4] },
   { name: 'Kuroiro_AD', enchants: [null, null, oasdWeapon3, oasdWeapon4] },

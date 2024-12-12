@@ -1480,8 +1480,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     this.model.selectedAtkSkill = this.model.selectedAtkSkill || this.atkSkills[0]?.value;
     const selectedAtkSkill = this.model.selectedAtkSkill;
 
-    const { level, jobLevel } = this.model;
-    // console.log({ level, jobLevel })
+    const { level, jobLevel, ...bkModel } = this.model;
 
     this.setClassInstant();
     this.setSkillModelArray();
@@ -1503,6 +1502,14 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       }),
       mergeMap(() => {
         try {
+          this.model.shield = bkModel.shield;
+          this.model.shieldCard = bkModel.shieldCard;
+          this.model.shieldGrade = bkModel.shieldGrade;
+          this.model.shieldRefine = bkModel.shieldRefine;
+          this.model.shieldEnchant1 = bkModel.shieldEnchant1;
+          this.model.shieldEnchant2 = bkModel.shieldEnchant2;
+          this.model.shieldEnchant3 = bkModel.shieldEnchant3;
+
           for (const itemType of Object.keys(MainItemWithRelations) as ItemTypeEnum[]) {
             const refine = this.model[`${itemType}Refine`];
             const itemId = this.model[itemType];
@@ -1562,11 +1569,14 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
   private buildEquipItemList(itemMap: Map<ItemTypeEnum, number>, model: typeof this.model | typeof this.model2) {
     return [...itemMap.entries()].map(([itemType, id]) => {
+      const grade = model[`${itemType}Grade`];
+      const prefixGrade = grade && typeof grade === 'string' ? ` [${grade}] ` : '';
+
       const refine = model[`${itemType}Refine`];
-      const prefixLabel = refine && refine > 0 ? ` +${refine} ` : '';
+      const prefixRefine = refine && refine > 0 ? ` +${refine} ` : '';
 
       return {
-        label: `${prefixLabel}${this.items[id]?.name}`,
+        label: `${prefixRefine}${prefixGrade}${this.items[id]?.name}`,
         value: itemType,
         id,
       };
