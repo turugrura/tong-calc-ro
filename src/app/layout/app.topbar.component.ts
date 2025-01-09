@@ -206,6 +206,13 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
 
   updates: { v: string; date: string; logs: string[] }[] = [
     {
+      v: 'V3.1.12',
+      date: '09-01-2568',
+      logs: [
+        "Added Official updated items",
+      ],
+    },
+    {
       v: 'V3.1.11',
       date: '12-12-2567',
       logs: [
