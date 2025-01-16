@@ -322,6 +322,7 @@ const auto4ThAnniGlove = [ExpertMagician._5, ...automaticAcc, 'Automatic_Orb5', 
 
 const tempBoot_3 = ["Bear's_Power", 'Runaway_Magic', 'Speed_Of_Light', 'Muscle_Fool', 'Hawkeye', 'Lucky_Day'];
 const tempBoot_4 = [...ea14, FS._7, Spell._5, AttackDelay._4];
+const exoticBootLt4 = [...tempBoot_4, Vit._2, Luk._3];
 const kingSmithAcc_2 = ['Gh_md_agi', 'Gh_md_str', 'Gh_md_dex', 'Gh_md_int', 'Gh_md_vit', 'Gh_md_luk'];
 const kingSmithAcc_3 = [EA._4, EA._5, FS._6, FS._7, Spell._4, Spell._5, Fatal._2, Fatal._3, Sharp._3, Sharp._4, Sharp._5];
 const kingSmithAcc_4 = [...BaseState._3_5];
@@ -764,6 +765,9 @@ export const EnchantTable: EntTable[] = [
   { name: 'Auto_BC_R', enchants: [null, automaticAccR, automaticAccR, automaticAccR] },
   { name: 'Auto_BC_L', enchants: [null, automaticAccL, automaticAccL, automaticAccL] },
   { name: 'aegisName_490565', enchants: [null, auto4ThAnniGlove, auto4ThAnniGlove, auto4ThAnniGlove] },
+
+  { name: 'Temporal_Cape_TW_LT', enchants: [null, whiteKnight2, whiteKnight34, whiteKnight34] },
+  { name: 'Temporal_Boots_LT_TW', enchants: [null, null, tempBoot_3, exoticBootLt4] },
 
   { name: 'Temporal_Boots_TW', enchants: [null, null, tempBoot_3, tempBoot_4] },
   { name: 'Temporal_Str_Boots', enchants: [null, null, tempBoot_3, tempBoot_4] },
