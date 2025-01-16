@@ -206,6 +206,14 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
 
   updates: { v: string; date: string; logs: string[] }[] = [
     {
+      v: 'V3.1.13',
+      date: '16-01-2568',
+      logs: [
+        "Added Exotic-LT enchantment",
+        "Fixed Inquisitor aspd penalty for knuckle (-10 --> -1)",
+      ],
+    },
+    {
       v: 'V3.1.12',
       date: '09-01-2568',
       logs: [
