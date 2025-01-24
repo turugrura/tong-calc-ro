@@ -26,3 +26,4 @@ export * from './to-upsert-preset-model';
 export * from './vefify-sync-presets';
 export * from './wait-rxjs';
 export * from './gen-skill-list';
+export * from './create-trait-stat-option-list'

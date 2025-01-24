@@ -1,4 +1,5 @@
 import { createBaseStatOptionList } from './create-base-stat-option-list';
+import { createTraitStatOptionList } from './create-trait-stat-option-list';
 
 export const createMainStatOptionList = () => {
   const items = [];
@@ -38,6 +39,7 @@ export const createMainStatOptionList = () => {
   }
 
   items.push(createBaseStatOptionList(1, 10));
+  items.push(createTraitStatOptionList(1, 10));
 
   return items;
 };

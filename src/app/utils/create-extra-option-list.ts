@@ -2,6 +2,7 @@ import { ElementType } from '../constants/element-type.const';
 import { RaceType } from '../constants/race-type.const';
 import { DropdownModel } from '../models/dropdown.model';
 import { createBaseStatOptionList } from './create-base-stat-option-list';
+import { createTraitStatOptionList } from './create-trait-stat-option-list';
 
 export const createExtraOptionList = () => {
   const atkTypes = ['Physical', 'Magical'];
@@ -214,6 +215,7 @@ export const createExtraOptionList = () => {
   }
 
   items.push(createBaseStatOptionList(1, 30));
+  items.push(createTraitStatOptionList(1, 20));
 
   return items;
 };
