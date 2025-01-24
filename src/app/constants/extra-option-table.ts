@@ -125,4 +125,8 @@ export const ExtraOptionTable = {
   Kafra_Suit: 1,
   SeeOtter_Fan: 2,
   FurSeal_Fan: 2,
+
+  Ear_Of_Flame_TH: 2,
+  Ear_Of_Soul_TH: 2,
+  Ear_Of_Abyss_TH: 3,
 } as const;
