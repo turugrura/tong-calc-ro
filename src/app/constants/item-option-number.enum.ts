@@ -19,7 +19,7 @@ export enum ItemOptionNumber {
   // H_Upper_3,
   H_Mid_1 = 10,
   H_Mid_2 = 11,
-  // H_Mid_3,
+  H_Mid_3 = 29,
   // H_Low_1,
   // H_Low_2,
   // H_Low_3,
