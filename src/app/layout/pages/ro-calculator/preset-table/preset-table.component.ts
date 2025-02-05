@@ -470,4 +470,101 @@ export class PresetTableComponent implements OnInit, OnDestroy {
       this.displayCloudPresets = this.cloudPresets;
     }
   }
+
+  exportPresetsToFile() {
+    // Chuyển đổi presets thành chuỗi JSON
+    const presetsString = JSON.stringify(this.presets, null, 2);
+    
+    // Tạo blob từ chuỗi
+    const blob = new Blob([presetsString], { type: 'text/plain;charset=utf-8' });
+    
+    // Tạo URL cho blob
+    const url = window.URL.createObjectURL(blob);
+    
+    // Tạo timestamp cho tên file
+    const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+    
+    // Tạo element a để download
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `ro-presets_${timestamp}.txt`;
+    
+    // Thêm link vào document, click để download và xóa đi
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    
+    // Giải phóng URL object
+    window.URL.revokeObjectURL(url);
+  }
+
+  importPresetsFromFile(event: any) {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      try {
+        const importedPresets = JSON.parse(e.target?.result as string);
+        
+        if (!Array.isArray(importedPresets)) {
+          this.messageService.add({
+            severity: 'error',
+            summary: 'Error',
+            detail: 'Invalid preset file format'
+          });
+          return;
+        }
+
+        this.confirmationService.confirm({
+          message: `Import ${importedPresets.length} presets?`,
+          header: 'Confirmation',
+          icon: 'pi pi-exclamation-triangle',
+          accept: () => {
+            const currentPresets = this.getPresets();
+            const mergedPresets = [...currentPresets];
+            
+            importedPresets.forEach(newPreset => {
+              let newValue = newPreset.value;
+              let counter = 1;
+              
+              // Kiểm tra nếu value đã tồn tại thì thêm số vào sau
+              while (mergedPresets.some(p => p.value === newValue)) {
+                newValue = `${newPreset.value}_${counter}`;
+                counter++;
+              }
+              
+              // Cập nhật value và label nếu có thay đổi
+              if (newValue !== newPreset.value) {
+                newPreset.value = newValue;
+                newPreset.label = `${newPreset.label}_${counter-1}`;
+              }
+              
+              mergedPresets.push(newPreset);
+            });
+
+            this.dynamicDialogConfig.data.savePresetListFn(mergedPresets);
+            this.dynamicDialogConfig.data.setPresetListFn();
+            this.presets = mergedPresets;
+
+            this.messageService.add({
+              severity: 'success',
+              summary: 'Success',
+              detail: `Imported ${importedPresets.length} presets successfully`
+            });
+          }
+        });
+
+      } catch (error) {
+        this.messageService.add({
+          severity: 'error',
+          summary: 'Error',
+          detail: 'Failed to parse preset file'
+        });
+      }
+    };
+
+    reader.readAsText(file);
+    event.target.value = '';
+  }
 }

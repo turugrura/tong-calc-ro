@@ -126,6 +126,33 @@
           (click)="saveToCloud()"
         ></button>
       </div>
+      <div class="col-fixed" *ngIf="presets.length > 0">
+        <button
+          type="button"
+          class="p-button-help"
+          pButton
+          icon="pi pi-download"
+          label="Export"
+          (click)="exportPresetsToFile()"
+        ></button>
+      </div>
+      <div class="col-fixed">
+        <input
+          #fileInput
+          type="file"
+          (change)="importPresetsFromFile($event)"
+          accept=".txt"
+          style="display: none"
+        />
+        <button
+          type="button"
+          class="p-button-info"
+          pButton
+          icon="pi pi-upload"
+          label="Import"
+          (click)="fileInput.click()"
+        ></button>
+      </div>
       <div class="col-12" *ngIf="presets.length > 0">
         <p-listbox
           [options]="presets"
