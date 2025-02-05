@@ -433,7 +433,7 @@
                   <div class="col-12">
                     Dex2 Int1:
                     <span class="font-semibold px-1 summary_stat_yellow">{{ totalSummary?.calc?.dex2int1 || 0 }}</span>
-                    <span [hidden]="totalSummary?.calc?.to530 <= 0">{{ '( อีก ' + totalSummary?.calc?.to530 + ' )' }}</span>
+                    <span [hidden]="totalSummary?.calc?.to530 <= 0">{{ '( More ' + totalSummary?.calc?.to530 + ' )' }}</span>
                   </div>
                   <div class="col-12 px-1 border_default hp-sp-section" [hidden]="hideHpSp[selectedCharacter?.className]">
                     <div class="grid grid-nogutter">
@@ -532,7 +532,7 @@
               [(ngModel)]="model.propertyAtk"
               [disabled]="!model.weapon"
               [showClear]="true"
-              placeholder="เคลือบ"
+              placeholder="Coating"
               scrollHeight="300px"
               (onChange)="onPropertyAtkChange()"
             >
@@ -1540,12 +1540,12 @@
         </div>
       </p-accordionTab>
 
-      <p-accordionTab header="Skills ***กดอัพสกิลด้วยนะ เพราะไอเทมบางชิ้นต้องอัพสกิลถึงจะได้ bonus" class="select_skill">
+      <p-accordionTab header="Skills ***Please level up your skills because some items require skill levels to receive bonuses" class="select_skill">
         <div class="grid grid-nogutter">
           <!--  Buffs -->
           <div class="col-4">
             <p-tag severity="info" value="Buffs"></p-tag>
-            <span class="skill_debuff pl-2">สีแดง = Debuff monster</span>
+            <span class="skill_debuff pl-2">Red = Debuff monster</span>
             <div class="grid grid-nogutter">
               <div *ngFor="let bishopBuff of skillBuffs; let i = index" class="col-12">
                 <div [ngSwitch]="bishopBuff.inputType">
