@@ -84,10 +84,28 @@ export class GuillotineCross extends AssassinCross {
   private readonly classNames3rd = [ClassName.Only_3rd, ClassName.GuillotineCross];
   private readonly atkSkillList3rd: AtkSkillModel[] = [
     {
-      label: 'Soul Destroyer',
       name: 'Soul Destroyer',
+      label: 'Soul Destroyer Lv10',
       value: 'Soul Destroyer==10',
-      values: ['[Improved 1st] Soul Destroyer==10', '[Improved 2nd] Soul Destroyer==10'],
+      values: ['[Improved 1st] Soul Destroyer==10'],
+      acd: 2,
+      fct: 0.25,
+      vct: 0.25,
+      cd: 0.15,
+      canCri: true,
+      baseCriPercentage: 0.5,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { skillLevel, model, status } = input;
+        const baseLevel = model.level;
+        const { totalStr, totalInt } = status;
+
+        return (skillLevel * 140 + totalStr + totalInt) * (baseLevel / 100);
+      },
+    },
+    {
+      label: '[Improved 2nd] Soul Destroyer Lv10',
+      name: 'Soul Destroyer',
+      value: '[Improved 2nd] Soul Destroyer==10',
       acd: 1,
       fct: 0.25,
       vct: 0.25,
@@ -124,7 +142,26 @@ export class GuillotineCross extends AssassinCross {
       name: 'Cross Impact',
       label: 'Cross Impact Lv5',
       value: 'Cross Impact==5',
-      values: ['[Improved 1st] Cross Impact==5', '[Improved 2rd] Cross Impact==5'],
+      values: ['[Improved 1st] Cross Impact==5'],
+      acd: 0.5,
+      fct: 0,
+      vct: 0,
+      cd: 0.7,
+      isMelee: true,
+      canCri: true,
+      baseCriPercentage: 0.5,
+      hit: 7,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
+
+        return (1000 + skillLevel * 150) * (baseLevel / 100);
+      },
+    },
+    {
+      label: '[Improved 2nd] Cross Impact Lv5',
+      name: 'Cross Impact',
+      value: '[Improved 2rd] Cross Impact==5',
       acd: 0.5,
       fct: 0,
       vct: 0,
