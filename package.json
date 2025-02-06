@@ -9,7 +9,7 @@
         "test": "ng test",
         "lint": "ng lint --fix",
         "e2e": "ng e2e",
-        "predeploy": "ng build --output-hashing all --output-path ro-cal/docs --base-href /",
+        "predeploy": "ng build --output-hashing all --output-path ../ro-cal/docs --base-href /",
         "deploy": "cp ./ro-cal/docs/index.html ./ro-cal/docs/404.html"
     },
     "private": true,
