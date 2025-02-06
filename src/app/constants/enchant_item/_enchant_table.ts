@@ -129,6 +129,7 @@ import { thanosBoot3, thanosBoot4, thanosHead3, thanosHead4 } from './thanos';
 import { corruptedPoisonArmor2, corruptedPoisonArmor3, corruptedPoisonArmor4, fieryEarthArmor2, fieryEarthArmor3, fieryEarthArmor4, flameRuneArmor2, icyStromArmor2, icyStromArmor3, icyStromArmor4, soulPurifyArmor2, soulPurifyArmor3, soulPurifyArmor4, varmundt3, varmundt4, varmundtAcc3, varmundtAcc4, varmundtHiAcc2 } from './varmundt';
 import { vivatusHead3, vivatusHead4 } from './vivatus';
 import { whiteKnight2, whiteKnight34 } from './white_knigh_man';
+import { yorscalpAcc2, yorscalpAcc3, yorscalpAcc4, yorscalpArmor2, yorscalpArmor3, yorscalpArmor4, yorscalpBoot2, yorscalpBoot3, yorscalpBoot4, yorscalpGarment2, yorscalpGarment3, yorscalpGarment4, yorscalpHeadUpper2, yorscalpHeadUpper3, yorscalpHeadUpper4 } from './yorscalp';
 
 enum TimeJewel {
   Str2 = 'aegis_313347',
@@ -1581,6 +1582,19 @@ export const EnchantTable: EntTable[] = [
   { name: 'Time_Gap_Staff_AG', enchants: [null, null, timeGap3, timeGap4] },
   { name: 'Time_Gap_WH_Bow', enchants: [null, null, timeGap3, timeGap4] },
   { name: 'Time_Gap_Revolver_NW', enchants: [null, null, timeGap3, timeGap4] },
+
+  { name: 'Yorscalp_Armor', enchants: [null, yorscalpArmor2, yorscalpArmor3, yorscalpArmor4] },
+  { name: 'Yorscalp_Robe', enchants: [null, yorscalpArmor2, yorscalpArmor3, yorscalpArmor4] },
+  { name: 'Yorscalp_Manteau', enchants: [null, yorscalpGarment2, yorscalpGarment3, yorscalpGarment4] },
+  { name: 'Yorscalp_Muffler', enchants: [null, yorscalpGarment2, yorscalpGarment3, yorscalpGarment4] },
+  { name: 'Yorscalp_Boots', enchants: [null, yorscalpBoot2, yorscalpBoot3, yorscalpBoot4] },
+  { name: 'Yorscalp_Shoes', enchants: [null, yorscalpBoot2, yorscalpBoot3, yorscalpBoot4] },
+  { name: 'Yorscalp_Ring', enchants: [null, yorscalpAcc2, yorscalpAcc3, yorscalpAcc4] },
+  { name: 'Yorscalp_Glove', enchants: [null, yorscalpAcc2, yorscalpAcc3, yorscalpAcc4] },
+  { name: 'Yorscalp_Earring', enchants: [null, yorscalpAcc2, yorscalpAcc3, yorscalpAcc4] },
+  { name: 'Yorscalp_Necklace', enchants: [null, yorscalpAcc2, yorscalpAcc3, yorscalpAcc4] },
+  { name: 'Yorscalp_P_Circlet', enchants: [null, yorscalpHeadUpper2, yorscalpHeadUpper3, yorscalpHeadUpper4] },
+  { name: 'Yorscalp_M_Circlet', enchants: [null, yorscalpHeadUpper2, yorscalpHeadUpper3, yorscalpHeadUpper4] },
 ];
 
 Object.freeze(EnchantTable);
