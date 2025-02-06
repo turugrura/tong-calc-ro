@@ -8,6 +8,7 @@ import {
   Cri,
   Dex,
   EA,
+  ExpertFighter,
   ExpertMagician,
   FS,
   Fatal,
@@ -658,6 +659,8 @@ const maceOfJudge = [...dex(1, 2), ...str(1, 4), ...vit(1, 2), AtkPercent._3];
 const robeOfJudge = [...dex(1, 4), ...int(1, 4), Str._4, Vit._1, AtkPercent._2, MatkPercent._2, Cri._5];
 const shawnOfJudge = [...dex(1, 4), ...int(1, 2), Vit._1];
 const shoeOfJudge = [...dex(2, 4), ...int(1, 2), AtkPercent._2];
+
+const heroRing4 = [Spell._3, Spell._5, EA._3, EA._5, AttackDelay._2, AttackDelay._4, ExpertFighter._3, ExpertFighter._5, ExpertMagician._3, ExpertMagician._5]
 
 export const EnchantTable: EntTable[] = [
   { name: 'Lush_Rose', enchants: [null, null, BaseState._1_3, toyFactory] },
@@ -1554,6 +1557,8 @@ export const EnchantTable: EntTable[] = [
   { name: "aegis_Kankrai", enchants: [null, rockPaperScissor, rockPaperScissor, rockPaperScissor] },
   { name: "aegis_Khon", enchants: [null, rockPaperScissor, rockPaperScissor, rockPaperScissor] },
   { name: "aegis_Kradat", enchants: [null, rockPaperScissor, rockPaperScissor, rockPaperScissor] },
+
+  { name: "Volcano_H_Ring_TH", enchants: [null, ['HeroAcc_AG1'], ['HeroAcc_WL1'], heroRing4] },
 ];
 
 Object.freeze(EnchantTable);
