@@ -701,23 +701,41 @@ export class Calculator {
       if (restCondition.startsWith('===')) return { isValid, restCondition: restCondition.replace('===', '') };
     }
 
-    // GRADE[armor==A]===5
-    // EQUIP[Time Dimensions Rune Crown (Abyss Chaser)]GRADE[weapon==A]GRADE[headUpper==A]REFINE[weapon,headUpper==1]---1
-    for (let index = 0; index < 2; index++) {
-      const [toRemoveGrade, conditionGrade] = restCondition.match(/GRADE\[(\D+?)]/) ?? [];
-      if (!conditionGrade) break;
+    if (restCondition.includes('GRADE')) {
+      // GRADE[armor==A]===5
+      // EQUIP[Time Dimensions Rune Crown (Abyss Chaser)]GRADE[weapon==A]GRADE[headUpper==A]REFINE[weapon,headUpper==1]---1
+      for (let index = 0; index < 2; index++) {
+        const [toRemoveGrade, conditionGrade] = restCondition.match(/GRADE\[(\D+?)]/) ?? [];
+        if (!conditionGrade) break;
 
-      const [rawitemType, targetGrade] = conditionGrade.split('==') ?? [];
-      const tarGetitemType = rawitemType === 'me' ? itemType.replace(/Enchant\d/, '') : rawitemType;
-      // console.log({ restCondition, itemType, tarGetitemType, rawitemType, targetGrade })
-      const itemGrade = this.mapGrade.get(tarGetitemType as ItemTypeEnum);
-      const isValid = this.isValidGrade(itemGrade, targetGrade);
-      if (!isValid) return { isValid, restCondition };
+        const [rawitemType, targetGrade] = conditionGrade.split('==') ?? [];
+        const tarGetitemType = rawitemType === 'me' ? itemType.replace(/Enchant\d/, '') : rawitemType;
+        // console.log({ restCondition, itemType, tarGetitemType, rawitemType, targetGrade })
+        const itemGrade = this.mapGrade.get(tarGetitemType as ItemTypeEnum);
+        const isValid = this.isValidGrade(itemGrade, targetGrade);
+        if (!isValid) return { isValid, restCondition };
 
-      restCondition = restCondition.replace(toRemoveGrade, '');
-      if (restCondition.startsWith('===')) return { isValid, restCondition: restCondition.replace('===', '') };
+        restCondition = restCondition.replace(toRemoveGrade, '');
+        if (restCondition.startsWith('===')) return { isValid, restCondition: restCondition.replace('===', '') };
 
-      if (!restCondition.includes('GRADE[')) break;
+        if (!restCondition.includes('GRADE[')) break;
+      }
+
+      // EQUIP[Time Gap Kurojin (B)&&Time Dimensions Rune Crown (Shinkiro & Shiranui)]GRADES[weapon==A&&leftWeapon==A&&headUpper==A]===0.7
+      const [toRemoveGrade, conditionGrades] = restCondition.match(/GRADES\[(\D+?)]/) ?? [];
+      if (conditionGrades) {
+        for (const conditionGrade of conditionGrades.split('&&')) {
+          const [rawitemType, targetGrade] = conditionGrade.split('==') ?? [];
+          const tarGetitemType = rawitemType === 'me' ? itemType.replace(/Enchant\d/, '') : rawitemType;
+          // console.log({ restCondition, itemType, tarGetitemType, rawitemType, targetGrade })
+          const itemGrade = this.mapGrade.get(tarGetitemType as ItemTypeEnum);
+          const isValid = this.isValidGrade(itemGrade, targetGrade);
+          if (!isValid) return { isValid, restCondition };
+        }
+
+        restCondition = restCondition.replace(toRemoveGrade, '');
+        if (restCondition.startsWith('===')) return { isValid: true, restCondition: restCondition.replace('===', '') };
+      }
     }
 
     // [weaponType=Pistol]20
