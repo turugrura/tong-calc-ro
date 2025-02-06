@@ -611,6 +611,23 @@ export const OFFENSIVE_SKILL_NAMES = [
   "Twinkling Galaxy",
   "Violent Quake",
   "Warg Strike",
+
+  'Abyss Flame',
+  'Dust Explosion',
+  'Radiant Spear',
+  'Star Light Kick',
+  'Sky Sun',
+  'Sky Moon',
+  'Psychic Stream',
+  'Divinus Flos',
+  'Pneumaticus Procella',
+  'Chulho Battering',
+  'Blazing Flame Blast',
+  'Rhythmical Wave',
+  'Powerful Swing',
+  'Rush Strike',
+  'Dragonic Pierce',
+  'Soul Gathering',
 ] as const;
 
 const dup = [];

@@ -195,3 +195,19 @@ export const dimensionAcc3 = [
   'Magician_Orb_14',
   'Magician_Orb_15',
 ]
+
+export const timeGap4 = [
+  'Bio_Jam_Df2',
+  'Bio_Jam_Es2',
+  'Bio_Jam_Vl2',
+  'Bio_Jam_Eq2',
+  'Bio_Jam_Hd2',
+]
+
+export const timeGap3 = [
+  'Barmund_Flame3',
+  'Barmund_Ice3',
+  'Barmund_Plain3',
+  'Barmund_Death3',
+  'Barmund_Poison3',
+]
