@@ -123,6 +123,7 @@ import { muqaddas3, muqaddas4 } from './muqaddas';
 import { oasdWeapon3, oasdWeapon4 } from './osad_weapon';
 import { plusWeapon3, plusWeapon4 } from './plus_weapon';
 import { rockPaperScissor } from './rock_paper_scissor';
+import { royalHArmor2, royalHArmor3, royalHArmor4, royalHBoot3, royalHBoot4, royalHGarment3, royalHGarment4 } from './royal_hunting';
 import { goodEvilBoot3_ABC, goodEvilBoot3_AG, goodEvilBoot3_BO, goodEvilBoot3_CD, goodEvilBoot3_DK, goodEvilBoot3_EM, goodEvilBoot3_HN, goodEvilBoot3_IG, goodEvilBoot3_IQ, goodEvilBoot3_MT, goodEvilBoot3_NW, goodEvilBoot3_SH, goodEvilBoot3_SHC, goodEvilBoot3_SKE, goodEvilBoot3_SOA, goodEvilBoot3_SS, goodEvilBoot3_TR, goodEvilBoot3_WH, goodEvilBoot4, goodEvilHead3, goodEvilHead4, sinsFateWeapon3, sinsFateWeapon4 } from './sins_and_fate';
 import { snowFwAccL2, snowFwAccL3, snowFwAccL4, snowFwAccR2, snowFwAccR3, snowFwAccR4, snowFwArmor2, snowFwArmor3, snowFwArmor4, snowFwBoot2, snowFwBoot3, snowFwBoot4, snowFwGarment2, snowFwGarment3, snowFwGarment4 } from './snow_flower';
 import { thanosBoot3, thanosBoot4, thanosHead3, thanosHead4 } from './thanos';
@@ -661,7 +662,7 @@ const robeOfJudge = [...dex(1, 4), ...int(1, 4), Str._4, Vit._1, AtkPercent._2, 
 const shawnOfJudge = [...dex(1, 4), ...int(1, 2), Vit._1];
 const shoeOfJudge = [...dex(2, 4), ...int(1, 2), AtkPercent._2];
 
-const heroRing4 = [Spell._3, Spell._5, EA._3, EA._5, AttackDelay._2, AttackDelay._4, ExpertFighter._3, ExpertFighter._5, ExpertMagician._3, ExpertMagician._5]
+const heroRing4 = [Spell._3, Spell._5, EA._3, EA._5, AttackDelay._2, AttackDelay._4, ExpertFighter._3, ExpertFighter._5, ExpertMagician._3, ExpertMagician._5];
 
 export const EnchantTable: EntTable[] = [
   { name: 'Lush_Rose', enchants: [null, null, BaseState._1_3, toyFactory] },
@@ -1595,6 +1596,13 @@ export const EnchantTable: EntTable[] = [
   { name: 'Yorscalp_Necklace', enchants: [null, yorscalpAcc2, yorscalpAcc3, yorscalpAcc4] },
   { name: 'Yorscalp_P_Circlet', enchants: [null, yorscalpHeadUpper2, yorscalpHeadUpper3, yorscalpHeadUpper4] },
   { name: 'Yorscalp_M_Circlet', enchants: [null, yorscalpHeadUpper2, yorscalpHeadUpper3, yorscalpHeadUpper4] },
+
+  { name: 'Royal_H_Mail_A', enchants: [null, royalHArmor2, royalHArmor3, royalHArmor4] },
+  { name: 'Royal_H_Mail_B', enchants: [null, royalHArmor2, royalHArmor3, royalHArmor4] },
+  { name: 'Royal_H_Manteau_A', enchants: [null, null, royalHGarment3, royalHGarment4] },
+  { name: 'Royal_H_Manteau_B', enchants: [null, null, royalHGarment3, royalHGarment4] },
+  { name: 'Royal_H_Boots_A', enchants: [null, null, royalHBoot3, royalHBoot4] },
+  { name: 'Royal_H_Boots_B', enchants: [null, null, royalHBoot3, royalHBoot4] },
 ];
 
 Object.freeze(EnchantTable);
