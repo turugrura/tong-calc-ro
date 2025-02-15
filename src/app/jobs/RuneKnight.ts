@@ -175,6 +175,24 @@ export class RuneKnight extends LordKnight {
       name: 'Ignition Break',
       label: 'Ignition Break Lv5',
       value: 'Ignition Break==5',
+      acd: 0,
+      fct: 0,
+      vct: 1,
+      cd: 2,
+      isMelee: true,
+      canCri: true,
+      baseCriPercentage: 0.5,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel } = input;
+        const baseLevel = model.level;
+
+        return skillLevel * 400 * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Ignition Break',
+      label: '[Improved 2nd] Ignition Break Lv5',
+      value: '[Improved 2nd] Ignition Break==5',
       values: ['[Improved 2nd] Ignition Break==5'],
       acd: 0,
       fct: 0,
