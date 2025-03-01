@@ -1,11 +1,11 @@
-import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
 import { JOB_4_MAX_JOB_LEVEL, JOB_4_MIN_MAX_LEVEL } from '../app-config';
-import { RoyalGuard } from './RoyalGuard';
+import { ElementType } from '../constants';
 import { EquipmentSummaryModel } from '../models/equipment-summary.model';
 import { AdditionalBonusInput } from '../models/info-for-class.model';
 import { addBonus } from '../utils';
-import { ElementType } from '../constants';
+import { RoyalGuard } from './RoyalGuard';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
+import { ClassName } from './_class-name';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 0, 0, 0],
@@ -165,12 +165,12 @@ export class ImperialGuard extends RoyalGuard {
   private readonly atkSkillList4th: AtkSkillModel[] = [
     {
       name: 'Overslash',
-      label: '[V2] Overslash Lv10 (1 hit)',
+      label: '[V3] Overslash Lv10 (1 hit)',
       value: 'Overslash==10',
       acd: 0.5,
       fct: 0.5,
       vct: 0,
-      cd: 1,
+      cd: 0.7,
       isMelee: true,
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
@@ -178,17 +178,17 @@ export class ImperialGuard extends RoyalGuard {
         const baseLevel = model.level;
         const ssMastLv = this.learnLv('Spear & Sword Mastery');
 
-        return (skillLevel * (60 + ssMastLv * 10) + totalPow * 2) * (baseLevel / 100);
+        return (skillLevel * (120 + ssMastLv * 10) + totalPow * 5) * (baseLevel / 100);
       },
     },
     {
       name: 'Shield Shooting',
-      label: '[V2] Shield Shooting Lv5',
+      label: '[V3] Shield Shooting Lv5',
       value: 'Shield Shooting==5',
       acd: 0.5,
       fct: 0.5,
       vct: 0.5,
-      cd: 1,
+      cd: 0.7,
       hit: 7,
       verifyItemFn: ({ model }) => !model.shield ? 'Shield' : '',
       formula: (input: AtkSkillFormulaInput): number => {
@@ -198,17 +198,17 @@ export class ImperialGuard extends RoyalGuard {
         const { level: baseLevel } = model;
         const shieldMastLv = this.learnLv('Shield Mastery');
 
-        return (500 + skillLevel * (600 + shieldMastLv * 15) + totalPow * 3 + weight + refine * 4) * (baseLevel / 100);
+        return (200 + skillLevel * (1300 + shieldMastLv * 15) + totalPow * 5 + weight + refine * 4) * (baseLevel / 100);
       },
     },
     {
       name: 'Cross Rain',
-      label: '[V2] Cross Rain Lv10',
+      label: '[V3] Cross Rain Lv10',
       value: 'Cross Rain==10',
-      acd: 0.5,
+      acd: 0.15,
       fct: 1.5,
       vct: 4,
-      cd: 5,
+      cd: 4.5,
       isMatk: true,
       element: ElementType.Holy,
       totalHit: 15,
@@ -219,10 +219,10 @@ export class ImperialGuard extends RoyalGuard {
         const ssMastLv = this.learnLv('Spear & Sword Mastery');
 
         if (this.isSkillActive('Holy Shield')) {
-          return (skillLevel * (250 + ssMastLv * 10) + totalSpl * 5) * (baseLevel / 100);
+          return (skillLevel * (450 + ssMastLv * 10) + totalSpl * 5) * (baseLevel / 100);
         }
 
-        return (skillLevel * (150 + ssMastLv * 5) + totalSpl * 2) * (baseLevel / 100);
+        return (skillLevel * (320 + ssMastLv * 5) + totalSpl * 2) * (baseLevel / 100);
       },
     },
   ];
