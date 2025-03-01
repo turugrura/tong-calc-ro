@@ -1,12 +1,12 @@
-import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
 import { JOB_4_MAX_JOB_LEVEL, JOB_4_MIN_MAX_LEVEL } from '../app-config';
-import { Sorcerer } from './Sorcerer';
-import { addBonus, genSkillList } from '../utils';
-import { EquipmentSummaryModel } from '../models/equipment-summary.model';
-import { AdditionalBonusInput } from '../models/info-for-class.model';
 import { ElementType, ElementalMasterSpirit } from '../constants';
 import { SKILL_NAME } from '../constants/skill-name';
+import { EquipmentSummaryModel } from '../models/equipment-summary.model';
+import { AdditionalBonusInput } from '../models/info-for-class.model';
+import { addBonus, genSkillList } from '../utils';
+import { Sorcerer } from './Sorcerer';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
+import { ClassName } from './_class-name';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 1, 0, 0],
@@ -174,12 +174,12 @@ export class ElementalMaster extends Sorcerer {
   private readonly atkSkillList4th: AtkSkillModel[] = [
     {
       name: 'Diamond Storm',
-      label: '[V2] Diamond Storm Lv5',
+      label: '[V3] Diamond Storm Lv5',
       value: 'Diamond Storm==5',
       acd: 0.5,
       fct: 1.5,
       vct: 5,
-      cd: 2,
+      cd: 1,
       hit: 5,
       isMatk: true,
       element: ElementType.Water,
@@ -189,15 +189,15 @@ export class ElementalMaster extends Sorcerer {
         const { level: baseLevel } = model;
 
         if (this.isSpirit('Divulio')) {
-          return (3500 + skillLevel * 1750 + totalSpl * 7) * (baseLevel / 100);
+          return (5400 + skillLevel * 1800 + totalSpl * 10) * (baseLevel / 100);
         }
 
-        return (skillLevel * 1250 + totalSpl * 5) * (baseLevel / 100);
+        return (400 + skillLevel * 1550 + totalSpl * 5) * (baseLevel / 100);
       },
     },
     {
       name: 'Conflagration',
-      label: '[V2] Conflagration Lv5',
+      label: '[V3] Conflagration Lv5',
       value: 'Conflagration==5',
       acd: 0.5,
       fct: 1.5,
@@ -212,15 +212,15 @@ export class ElementalMaster extends Sorcerer {
         const { level: baseLevel } = model;
 
         if (this.isSpirit('Ardor')) {
-          return (skillLevel * 800 + totalSpl * 7) * (baseLevel / 100);
+          return (500 + skillLevel * 1050 + totalSpl * 7) * (baseLevel / 100);
         }
 
-        return (skillLevel * 400 + totalSpl * 5) * (baseLevel / 100);
+        return (500 + skillLevel * 650 + totalSpl * 5) * (baseLevel / 100);
       },
     },
     {
       name: 'Lightning Land',
-      label: '[V2] Lightning Land Lv5',
+      label: '[V3] Lightning Land Lv5',
       value: 'Lightning Land==5',
       acd: 0.5,
       fct: 1.5,
@@ -235,15 +235,15 @@ export class ElementalMaster extends Sorcerer {
         const { level: baseLevel } = model;
 
         if (this.isSpirit('Procella')) {
-          return (skillLevel * 800 + totalSpl * 7) * (baseLevel / 100);
+          return (500 + skillLevel * 1050 + totalSpl * 7) * (baseLevel / 100);
         }
 
-        return (skillLevel * 400 + totalSpl * 5) * (baseLevel / 100);
+        return (500 + skillLevel * 650 + totalSpl * 5) * (baseLevel / 100);
       },
     },
     {
       name: 'Terra Drive',
-      label: '[V2] Terra Drive Lv5',
+      label: '[V3] Terra Drive Lv5',
       value: 'Terra Drive==5',
       acd: 0.5,
       fct: 1.5,
@@ -258,15 +258,15 @@ export class ElementalMaster extends Sorcerer {
         const { level: baseLevel } = model;
 
         if (this.isSpirit('Terramotus')) {
-          return (3500 + skillLevel * 1750 + totalSpl * 7) * (baseLevel / 100);
+          return (5400 + skillLevel * 1800 + totalSpl * 10) * (baseLevel / 100);
         }
 
-        return (skillLevel * 1250 + totalSpl * 5) * (baseLevel / 100);
+        return (400 + skillLevel * 1500 + totalSpl * 5) * (baseLevel / 100);
       },
     },
     {
       name: 'Venom Swamp',
-      label: '[V2] Venom Swamp Lv5',
+      label: '[V3] Venom Swamp Lv5',
       value: 'Venom Swamp==5',
       acd: 0.5,
       fct: 1.5,
@@ -281,20 +281,20 @@ export class ElementalMaster extends Sorcerer {
         const { level: baseLevel } = model;
 
         if (this.isSpirit('Serpens')) {
-          return (skillLevel * 800 + totalSpl * 7) * (baseLevel / 100);
+          return (500 + skillLevel * 1050 + totalSpl * 7) * (baseLevel / 100);
         }
 
-        return (skillLevel * 400 + totalSpl * 5) * (baseLevel / 100);
+        return (500 + skillLevel * 650 + totalSpl * 5) * (baseLevel / 100);
       },
     },
     {
       name: 'Elemental Buster',
-      label: '[V2] Elemental Buster Lv10',
+      label: '[V3] Elemental Buster Lv10',
       value: 'Elemental Buster==10',
-      acd: 1.5,
-      fct: 2,
+      acd: 0.5,
+      fct: 1.5,
       vct: 4,
-      cd: 60,
+      cd: 5,
       isMatk: true,
       hit: 3,
       getElement: () => {
@@ -306,9 +306,9 @@ export class ElementalMaster extends Sorcerer {
         const { model, skillLevel, status, monster } = input;
         const { totalSpl } = status;
         const { level: baseLevel } = model;
-        const raceBonus = monster.isRace('dragon', 'formless') ? 620 : 0;
+        const raceBonus = monster.isRace('dragon', 'formless') ? 150 : 0;
 
-        return (skillLevel * (480 + raceBonus) + totalSpl * 10) * (baseLevel / 100);
+        return (500 + skillLevel * (2200 + raceBonus) + totalSpl * 10) * (baseLevel / 100);
       },
     },
   ];
