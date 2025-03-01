@@ -601,6 +601,7 @@ export const OFFENSIVE_SKILL_NAMES = [
   "Rose Blossom",
   "Shadow Dance",
   "Shadow Flash",
+  "Shadow Hunting",
   "Shield Chain Rush",
   "Spark Blaster",
   "Spiral Pierce Max",

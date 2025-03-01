@@ -1,7 +1,9 @@
-import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
 import { JOB_4_MAX_JOB_LEVEL, JOB_4_MIN_MAX_LEVEL } from '../app-config';
+import { ElementType } from '../constants';
+import { genSkillList } from '../utils';
 import { Kagerou } from './Kagerou';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
+import { ClassName } from './_class-name';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [1, 0, 0, 0, 1, 0],
@@ -158,9 +160,310 @@ export class Shinkiro extends Kagerou {
   protected override maxJob = JOB_4_MAX_JOB_LEVEL;
 
   private readonly classNames4th = [ClassName.Only_4th, ClassName.Shinkiro];
-  private readonly atkSkillList4th: AtkSkillModel[] = [];
+  private readonly atkSkillList4th: AtkSkillModel[] = [
+    {
+      name: 'Shadow Hunting',
+      label: '[V2] Shadow Hunting Lv10',
+      value: 'Shadow Hunting==10',
+      acd: 0.15,
+      fct: 0,
+      vct: 0,
+      cd: 0.3,
+      isMelee: true,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalPow } = status;
+        const baseLevel = model.level;
+        const skillBonusLv = this.learnLv('Shadow Flash');
+
+        return (500 + skillLevel * (400 + skillBonusLv * 5) + totalPow * 3) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Shadow Dance',
+      label: '[V2] Shadow Dance Lv10',
+      value: 'Shadow Dance==10',
+      acd: 0.25,
+      fct: 1,
+      vct: 1,
+      cd: 0.5,
+      isMelee: true,
+      hit: 5,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalPow } = status;
+        const baseLevel = model.level;
+        const skillBonusLv = this.learnLv('Shadow Hunting');
+
+        return (400 + skillLevel * (550 + skillBonusLv * 50) + totalPow * 4) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Shadow Flash',
+      label: '[V2] Shadow Flash Lv10',
+      value: 'Shadow Flash==10',
+      acd: 0.25,
+      fct: 0,
+      vct: 0,
+      cd: 1,
+      isMelee: true,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalPow } = status;
+        const baseLevel = model.level;
+        const skillBonusLv = this.learnLv('Shadow Dance');
+
+        return (1600 + skillLevel * (700 + skillBonusLv * 100) + totalPow * 5) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Huuma Shuriken - Grasp',
+      label: '[V2] Huuma Shuriken - Grasp Lv10',
+      value: 'Huuma Shuriken - Grasp==10',
+      acd: 0,
+      fct: 1,
+      vct: 1.2,
+      cd: 1,
+      hit: 20,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalPow } = status;
+        const baseLevel = model.level;
+        const skillBonusLv = this.learnLv('Huuma Shuriken - Construct');
+
+        return (700 + skillLevel * (200 + skillBonusLv * 5) + totalPow * 3) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Huuma Shuriken - Construct',
+      label: '[V2] Huuma Shuriken - Construct Lv10',
+      value: 'Huuma Shuriken - Construct==10',
+      acd: 0,
+      fct: 1,
+      vct: 1.2,
+      cd: 1,
+      hit: 20,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalPow } = status;
+        const baseLevel = model.level;
+        const skillBonusLv = this.learnLv('Huuma Shuriken - Grasp');
+        const primary = (600 + skillLevel * (400 + skillBonusLv * 30) + totalPow * 5) * (baseLevel / 100);
+        const secondary = (800 + skillLevel * (600 + skillBonusLv * 30) + totalPow * 5) * (baseLevel / 100);
+
+        return primary + secondary;
+      },
+    },
+    {
+      name: 'Kunai - Distortion',
+      label: '[V2] Kunai - Distortion Lv10',
+      value: 'Kunai - Distortion==10',
+      acd: 0,
+      fct: 0,
+      vct: 0.2,
+      cd: 0.35,
+      hit: 2,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalPow } = status;
+        const baseLevel = model.level;
+        const skillBonusLv = this.learnLv('Kunai - Refraction');
+
+        return (300 + skillLevel * (600 + skillBonusLv * 10) + totalPow * 3) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Kunai - Rotation',
+      label: '[V2] Kunai - Rotation Lv5',
+      value: 'Kunai - Rotation==5',
+      acd: 0.5,
+      fct: 0,
+      vct: 0,
+      cd: 2,
+      totalHit: 4,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalPow } = status;
+        const baseLevel = model.level;
+        const skillBonusLv = this.learnLv('Kunai - Distortion');
+
+        return (800 + skillLevel * (700 + skillBonusLv * 70) + totalPow * 4) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Kunai - Refraction',
+      label: '[V2] Kunai - Refraction Lv10',
+      value: 'Kunai - Refraction==10',
+      acd: 0.5,
+      fct: 0.5,
+      vct: 1.5,
+      cd: 2,
+      totalHit: 8,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalPow } = status;
+        const baseLevel = model.level;
+        const skillBonusLv = this.learnLv('Kunai - Rotation');
+
+        return (200 + skillLevel * (360 + skillBonusLv * 10) + totalPow * 5) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Red Flame Cannon',
+      label: '[V2] Red Flame Cannon Lv10',
+      value: 'Red Flame Cannon==10',
+      acd: 0,
+      fct: 1,
+      vct: 2,
+      cd: 0.7,
+      element: ElementType.Fire,
+      isMatk: true,
+      hit: 3,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalSpl } = status;
+        const baseLevel = model.level;
+        const skillBonusLv = this.learnLv('Darkening Cannon');
+
+        return (850 + skillLevel * (1250 + skillBonusLv * 70) + totalSpl * 5) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Cold Blooded Cannon',
+      label: '[V2] Cold Blooded Cannon Lv10',
+      value: 'Cold Blooded Cannon==10',
+      acd: 0,
+      fct: 1,
+      vct: 3,
+      cd: 0.5,
+      element: ElementType.Water,
+      isMatk: true,
+      hit: 6,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalSpl } = status;
+        const baseLevel = model.level;
+        const skillBonusLv = this.learnLv('Darkening Cannon');
+
+        return (250 + skillLevel * (550 + skillBonusLv * 40) + totalSpl * 5) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Thundering Cannon',
+      label: '[V2] Thundering Cannon Lv10',
+      value: 'Thundering Cannon==10',
+      acd: 0,
+      fct: 1,
+      vct: 2,
+      cd: 0.7,
+      element: ElementType.Wind,
+      isMatk: true,
+      hit: 2,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalSpl } = status;
+        const baseLevel = model.level;
+        const skillBonusLv = this.learnLv('Darkening Cannon');
+
+        return (600 + skillLevel * (1300 + skillBonusLv * 70) + totalSpl * 5) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Golden Dragon Cannon',
+      label: '[V2] Golden Dragon Cannon Lv10',
+      value: 'Golden Dragon Cannon==10',
+      acd: 0,
+      fct: 1,
+      vct: 3,
+      cd: 0.3,
+      element: ElementType.Earth,
+      isMatk: true,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalSpl } = status;
+        const baseLevel = model.level;
+        const skillBonusLv = this.learnLv('Darkening Cannon');
+
+        return (300 + skillLevel * (400 + skillBonusLv * 15) + totalSpl * 5) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Darkening Cannon',
+      label: '[V2] Darkening Cannon Lv10',
+      value: 'Darkening Cannon==10',
+      acd: 0,
+      fct: 1,
+      vct: 3,
+      cd: 0.5,
+      element: ElementType.Dark,
+      isMatk: true,
+      hit: 2,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalSpl } = status;
+        const baseLevel = model.level;
+
+        return (450 + skillLevel * (950) + totalSpl * 5) * (baseLevel / 100);
+      },
+    },
+  ];
   private readonly activeSkillList4th: ActiveSkillModel[] = [];
-  private readonly passiveSkillList4th: PassiveSkillModel[] = [];
+  private readonly passiveSkillList4th: PassiveSkillModel[] = [
+    {
+      name: 'Shadow Hunting',
+      label: 'Shadow Hunting',
+      inputType: 'dropdown',
+      dropdown: genSkillList(10),
+    },
+    {
+      name: 'Shadow Dance',
+      label: 'Shadow Dance',
+      inputType: 'dropdown',
+      dropdown: genSkillList(10),
+    },
+    {
+      name: 'Shadow Flash',
+      label: 'Shadow Flash',
+      inputType: 'dropdown',
+      dropdown: genSkillList(10),
+    },
+    {
+      name: 'Huuma Shuriken - Construct',
+      label: 'Huuma - Construct',
+      inputType: 'dropdown',
+      dropdown: genSkillList(10),
+    },
+    {
+      name: 'Huuma Shuriken - Grasp',
+      label: 'Huuma - Grasp',
+      inputType: 'dropdown',
+      dropdown: genSkillList(10),
+    },
+    {
+      name: 'Kunai - Distortion',
+      label: 'Kunai - Distortion',
+      inputType: 'dropdown',
+      dropdown: genSkillList(10),
+    },
+    {
+      name: 'Kunai - Rotation',
+      label: 'Kunai - Rotation',
+      inputType: 'dropdown',
+      dropdown: genSkillList(5),
+    },
+    {
+      name: 'Kunai - Refraction',
+      label: 'Kunai - Refraction',
+      inputType: 'dropdown',
+      dropdown: genSkillList(10),
+    },
+    {
+      name: 'Darkening Cannon',
+      label: 'Darkening Cannon',
+      inputType: 'dropdown',
+      dropdown: genSkillList(10),
+    },
+  ];
 
   constructor() {
     super();
