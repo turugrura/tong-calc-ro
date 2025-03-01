@@ -1,8 +1,9 @@
-import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
 import { JOB_4_MAX_JOB_LEVEL, JOB_4_MIN_MAX_LEVEL } from '../app-config';
-import { Mechanic } from './Mechanic';
+import { WeaponTypeName } from '../constants';
 import { genSkillList } from '../utils';
+import { Mechanic } from './Mechanic';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
+import { ClassName } from './_class-name';
 import { genMeisterMonsterSkillList } from './summons';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
@@ -163,12 +164,12 @@ export class Meister extends Mechanic {
   private atkSkillList4th: AtkSkillModel[] = [
     {
       name: 'Axe Stomp',
-      label: '[V2] Axe Stomp Lv5',
+      label: '[V3] Axe Stomp Lv5',
       value: 'Axe Stomp==5',
-      acd: 0.5,
+      acd: 0.25,
       fct: 0,
       vct: 0,
-      cd: 1,
+      cd: 0.7,
       isMelee: true,
       totalHit: ({ weapon }) => (weapon.isType('twohandAxe') ? 3 : 1),
       formula: (input: AtkSkillFormulaInput): number => {
@@ -176,25 +177,88 @@ export class Meister extends Mechanic {
         const baseLevel = model.level;
         const { totalPow } = status;
 
-        return (skillLevel * 400 + totalPow * 5) * (baseLevel / 100);
+        return (350 + skillLevel * 850 + totalPow * 5) * (baseLevel / 100);
+      },
+    },
+    // {
+    //   name: 'Rush Quake',
+    //   label: '[V3] Rush Quake Lv10',
+    //   value: 'Rush Quake==10',
+    //   acd: 0.5,
+    //   fct: 0,
+    //   vct: 0,
+    //   cd: 60,
+    //   isMelee: true,
+    //   formula: (input: AtkSkillFormulaInput): number => {
+    //     const { model, skillLevel, status, monster } = input;
+    //     const baseLevel = model.level;
+    //     const { totalPow } = status;
+    //     const raceBonus = monster.isRace('formless', 'insect') ? 350 : 0;
+
+    //     return (skillLevel * (750 + raceBonus) + totalPow * 10) * (baseLevel / 100);
+    //   },
+    // },
+    {
+      name: 'Spark Blaster',
+      label: '[V3] Spark Blaster Lv10',
+      value: 'Spark Blaster==10',
+      acd: 0.25,
+      fct: 0.5,
+      vct: 1.5,
+      cd: 0.7,
+      totalHit: 2,
+      isIgnoreDef: true,
+      isIgnoreSDef: true,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const baseLevel = model.level;
+        const { totalPow } = status;
+
+        return (250 + skillLevel * 750 + totalPow * 7) * (baseLevel / 100);
       },
     },
     {
-      name: 'Rush Quake',
-      label: '[V2] Rush Quake Lv10',
-      value: 'Rush Quake==10',
-      acd: 0.5,
-      fct: 0,
-      vct: 0,
-      cd: 60,
-      isMelee: true,
+      name: 'Triple Laser',
+      label: '[V3] Triple Laser Lv5',
+      value: 'Triple Laser==5',
+      acd: 0.25,
+      fct: 0.5,
+      vct: 1.5,
+      cd: 0.7,
+      totalHit: 3,
+      canCri: true,
+      criDmgPercentage: 0.5,
+      baseCriPercentage: 1,
       formula: (input: AtkSkillFormulaInput): number => {
-        const { model, skillLevel, status, monster } = input;
+        const { model, skillLevel, status } = input;
         const baseLevel = model.level;
         const { totalPow } = status;
-        const raceBonus = monster.isRace('formless', 'insect') ? 350 : 0;
 
-        return (skillLevel * (750 + raceBonus) + totalPow * 10) * (baseLevel / 100);
+        return (300 + skillLevel * 600 + totalPow * 10) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Mighty Smash',
+      label: '[V3] Mighty Smash Lv10',
+      value: 'Mighty Smash==10',
+      acd: 0,
+      fct: 0,
+      vct: 0,
+      cd: 0.3,
+      isMelee: true,
+      totalHit: () => this.isSkillActive('Axe Stomp') ? 5 : 3,
+      verifyItemFn: ({ weapon }) => {
+        const requires: WeaponTypeName[] = ['axe', 'twohandAxe'];
+        if (requires.some(wType => weapon.isType(wType))) return '';
+
+        return requires.join(', ');
+      },
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const baseLevel = model.level;
+        const { totalPow } = status;
+
+        return (100 + skillLevel * 300 + totalPow * 7) * (baseLevel / 100);
       },
     },
   ];

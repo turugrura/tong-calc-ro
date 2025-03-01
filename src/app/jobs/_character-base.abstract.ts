@@ -77,6 +77,7 @@ export interface AtkSkillModel {
   isDevMode?: boolean;
   isIgnoreDef?: boolean | ((parmas: AtkSkillFormulaInput) => boolean);
   isIgnoreSDef?: boolean | ((parmas: AtkSkillFormulaInput) => boolean);
+  isIgnoreRes?: boolean | ((parmas: AtkSkillFormulaInput) => boolean);
   isHDefToSDef?: boolean;
   isHit100?: boolean;
   treatedAsSkillNameFn?: (skillValue: string) => string;

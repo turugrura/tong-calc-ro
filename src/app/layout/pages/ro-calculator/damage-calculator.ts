@@ -833,6 +833,7 @@ export class DamageCalculator {
       isHDefToSDef = false,
       isIgnoreDef = false,
       isIgnoreSDef = false,
+      isIgnoreRes = false,
       isExcludeCannanball = false,
       finalDmgFormula,
       forceCri = false,
@@ -866,7 +867,7 @@ export class DamageCalculator {
       total = floor(total * rangedMultiplier); // tested
       total = floor(total * baseSkillMultiplier); // tested
       total = floor(total * equipSkillMultiplier);
-      if (!isHDefToSDef) total = floor(total * resReduction);
+      if (!isHDefToSDef || isIgnoreRes) total = floor(total * resReduction);
       total = floor(total * hardDef);
       total = total - softDef; // tested
       if (_calcCri) total = floor(total * this.criMultiplier);

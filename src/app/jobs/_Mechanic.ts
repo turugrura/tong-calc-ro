@@ -1,9 +1,9 @@
-import { AdditionalBonusInput, InfoForClass } from '../models/info-for-class.model';
-import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
-import { Whitesmith } from './Whitesmith';
-import { isBattleWarrior, isDualCannon } from './summons';
 import { WeaponTypeName } from '../constants';
+import { AdditionalBonusInput, InfoForClass } from '../models/info-for-class.model';
+import { Whitesmith } from './Whitesmith';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
+import { ClassName } from './_class-name';
+import { isBattleWarrior, isDualCannon } from './summons';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 0, 0, 1],
@@ -154,10 +154,10 @@ export class Mechanic extends Whitesmith {
       cd: 3,
       isExcludeCannanball: true,
       verifyItemFn: ({ weapon }) => {
-        const requires: WeaponTypeName[] = ['axe', 'twohandAxe']
-        if (requires.some(wType => weapon.isType(wType))) return ''
+        const requires: WeaponTypeName[] = ['axe', 'twohandAxe'];
+        if (requires.some(wType => weapon.isType(wType))) return '';
 
-        return requires.join(', ')
+        return requires.join(', ');
       },
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, weapon } = input;
@@ -179,6 +179,7 @@ export class Mechanic extends Whitesmith {
       vct: 2,
       cd: 0.3,
       isHDefToSDef: true,
+      isIgnoreRes: true,
       isHit100: true,
       totalHit: () => (isDualCannon(this.abrLv) ? 2 : 1),
       formula: (input: AtkSkillFormulaInput): number => {
