@@ -205,6 +205,7 @@ const ACTIVE_PASSIVE_SKILL_NAMES = [
   'Solar Luminance',
   'Solar Stance',
   'Song Of Mana',
+  'Research Report',
   'Soul Cutter',
   'Soul Drain',
   'Soul',

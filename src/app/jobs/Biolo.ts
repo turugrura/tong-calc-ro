@@ -1,7 +1,7 @@
-import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
 import { JOB_4_MAX_JOB_LEVEL, JOB_4_MIN_MAX_LEVEL } from '../app-config';
 import { Genetic } from './Genetic';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
+import { ClassName } from './_class-name';
 import { genBioloMonsterSkillList } from './summons';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
@@ -159,13 +159,67 @@ export class Biolo extends Genetic {
   protected override maxJob = JOB_4_MAX_JOB_LEVEL;
 
   private readonly classNames4th = [ClassName.Only_4th, ClassName.Biolo];
-  private readonly atkSkillList4th: AtkSkillModel[] = [];
+  private readonly atkSkillList4th: AtkSkillModel[] = [
+    {
+      name: 'Explosive Powder',
+      label: '[V3] Explosive Powder Lv5',
+      value: 'Explosive Powder==5',
+      acd: 0.25,
+      fct: 0,
+      vct: 0,
+      cd: 0.7,
+      isMelee: true,
+      totalHit: () => this.isSkillActive('Research Report') ? 5 : 3,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalPow } = status;
+        const baseLevel = model.level;
+        if (this.isSkillActive('Research Report')) {
+          return (400 + skillLevel * 550 + totalPow * 10) * (baseLevel / 100);
+        }
+
+        return (400 + skillLevel * 450 + totalPow * 7) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Mayhemic Thorns',
+      label: '[V3] Mayhemic Thorns Lv10',
+      value: 'Mayhemic Thorns==10',
+      acd: 0.25,
+      fct: 0.5,
+      vct: 1.5,
+      cd: 0.7,
+      totalHit: () => this.isSkillActive('Research Report') ? 5 : 3,
+      canCri: true,
+      baseCriPercentage: 1,
+      criDmgPercentage: 0.5,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalPow } = status;
+        const baseLevel = model.level;
+        if (this.isSkillActive('Research Report')) {
+          return (250 + skillLevel * 300 + totalPow * 10) * (baseLevel / 100);
+        }
+
+        return (200 + skillLevel * 250 + totalPow * 7) * (baseLevel / 100);
+      },
+    },
+  ];
   private readonly activeSkillList4th: ActiveSkillModel[] = [
     {
       name: '_Biolo_Monster_List',
       label: 'Wooden',
       inputType: 'dropdown',
       dropdown: genBioloMonsterSkillList(),
+    },
+    {
+      name: 'Research Report',
+      label: 'Research Report',
+      inputType: 'selectButton',
+      dropdown: [
+        { label: 'Yes', value: 1, isUse: true },
+        { label: 'No', value: 0, isUse: false },
+      ],
     },
   ];
   private readonly passiveSkillList4th: PassiveSkillModel[] = [];
