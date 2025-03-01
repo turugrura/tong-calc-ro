@@ -1,6 +1,6 @@
-import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
 import { ElementType } from '../constants/element-type.const';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, CharacterBase, PassiveSkillModel } from './_character-base.abstract';
+import { ClassName } from './_class-name';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 0, 1, 0],
@@ -75,6 +75,16 @@ const jobBonusTable: Record<number, [number, number, number, number, number, num
   70: [0, 7, 5, 9, 12, 5],
 };
 
+export const ColorOfHyunrokValue = {
+  1: ElementType.Water,
+  2: ElementType.Wind,
+  3: ElementType.Earth,
+  4: ElementType.Fire,
+  5: ElementType.Dark,
+  6: ElementType.Holy,
+  7: ElementType.Neutral,
+} as const;
+
 export class Doram extends CharacterBase {
   protected override CLASS_NAME = ClassName.Doram;
   protected override JobBonusTable = jobBonusTable;
@@ -123,7 +133,7 @@ export class Doram extends CharacterBase {
       cd: 5,
       isMatk: true,
       totalHit: 7,
-      element: ElementType.Neutral,
+      getElement: () => ColorOfHyunrokValue[this.activeSkillLv('Colors of Hynrok')] || ElementType.Neutral,
       formula: (input: AtkSkillFormulaInput): number => {
         const { skillLevel } = input;
 

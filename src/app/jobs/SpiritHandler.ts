@@ -1,7 +1,9 @@
-import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
 import { JOB_4_MAX_JOB_LEVEL, JOB_4_MIN_MAX_LEVEL } from '../app-config';
-import { Doram } from './Doram';
+import { ElementType } from '../constants';
+import { floor, genSkillList } from '../utils';
+import { ColorOfHyunrokValue, Doram } from './Doram';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
+import { ClassName } from './_class-name';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 0, 1, 0],
@@ -158,9 +160,163 @@ export class SpiritHandler extends Doram {
   protected override maxJob = JOB_4_MAX_JOB_LEVEL;
 
   private readonly classNames4th = [ClassName.Only_4th, ClassName.SpiritHandler];
-  private readonly atkSkillList4th: AtkSkillModel[] = [];
-  private readonly activeSkillList4th: ActiveSkillModel[] = [];
-  private readonly passiveSkillList4th: PassiveSkillModel[] = [];
+  private readonly atkSkillList4th: AtkSkillModel[] = [
+    {
+      name: 'Chulho Sonic Claw',
+      label: '[V2] Chulho Sonic Claw Lv7',
+      value: 'Chulho Sonic Claw==7',
+      acd: 0.5,
+      fct: 0,
+      vct: 0,
+      cd: 0.25,
+      hit: 2,
+      canCri: () => this.learnLv('Commune with Chulho') >= 1,
+      criDmgPercentage: 0.5,
+      baseCriPercentage: 1,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalPow } = status;
+        const baseLevel = model.level;
+        const skillBonusLv = this.learnLv('Mystical Creature Mastery');
+        if (this.learnLv('Commune with Chulho')) {
+          return (500 + skillLevel * (850) + skillBonusLv * 100 + totalPow * 5) * (baseLevel / 100);
+        }
+
+        return (400 + skillLevel * (750) + skillBonusLv * 50 + totalPow * 5) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Howling of Chulho',
+      label: '[V2] Howling of Chulho Lv7',
+      value: 'Howling of Chulho==7',
+      acd: 0,
+      fct: 1,
+      vct: 0,
+      cd: 1,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalPow } = status;
+        const baseLevel = model.level;
+        const skillBonusLv = this.learnLv('Mystical Creature Mastery');
+        if (this.learnLv('Commune with Chulho')) {
+          return (700 + skillLevel * (1150) + skillBonusLv * 100 + totalPow * 5) * (baseLevel / 100);
+        }
+
+        return (600 + skillLevel * (1050) + skillBonusLv * 50 + totalPow * 5) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Hogogong Strike',
+      label: '[V2] Hogogong Strike Lv7',
+      value: 'Hogogong Strike==7',
+      acd: 0,
+      fct: 1,
+      vct: 0,
+      cd: 0.35,
+      hit: 3,
+      canCri: () => true,
+      criDmgPercentage: 0.5,
+      baseCriPercentage: 1,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalPow } = status;
+        const baseLevel = model.level;
+        const skillBonusLv = this.learnLv('Mystical Creature Mastery');
+        if (this.learnLv('Commune with Chulho')) {
+          return (250 + skillLevel * (350) + skillBonusLv * 20 + totalPow * 5) * (baseLevel / 100);
+        }
+
+        return (180 + skillLevel * (200) + skillBonusLv * 10 + totalPow * 5) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Hyunrok Breeze',
+      label: '[V2] Hyunrok Breeze Lv7',
+      value: 'Hyunrok Breeze==7',
+      acd: 0.5,
+      fct: 1.5,
+      vct: 3,
+      cd: 4.5,
+      isMatk: true,
+      getElement: () => ColorOfHyunrokValue[this.activeSkillLv('Colors of Hynrok')] || ElementType.Neutral,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalSpl } = status;
+        const baseLevel = model.level;
+        const skillBonusLv = this.learnLv('Mystical Creature Mastery');
+        if (this.learnLv('Commune with Hyunrok')) {
+          return (700 + skillLevel * 800 + skillBonusLv * 40 + totalSpl * 5) * (baseLevel / 100);
+        }
+
+        return (600 + skillLevel * 600 + skillBonusLv * 20 + totalSpl * 5) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Hyunrok Cannon',
+      label: '[V2] Hyunrok Cannon Lv7',
+      value: 'Hyunrok Cannon==7',
+      acd: 0,
+      fct: 1.5,
+      vct: 2,
+      cd: 0.3,
+      isMatk: true,
+      getElement: () => ColorOfHyunrokValue[this.activeSkillLv('Colors of Hynrok')] || ElementType.Neutral,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalSpl } = status;
+        const baseLevel = model.level;
+        const skillBonusLv = this.learnLv('Mystical Creature Mastery');
+        if (this.learnLv('Commune with Hyunrok')) {
+          return (800 + skillLevel * 1100 + skillBonusLv * 75 + totalSpl * 5) * (baseLevel / 100);
+        }
+
+        return (700 + skillLevel * 950 + skillBonusLv * 50 + totalSpl * 5) * (baseLevel / 100);
+      },
+    },
+  ];
+  private readonly activeSkillList4th: ActiveSkillModel[] = [
+    {
+      label: 'Colors of Hynrok',
+      name: 'Colors of Hynrok',
+      inputType: 'dropdown',
+      dropdown: [
+        { label: '-', value: 0, isUse: false },
+        { label: 'Water', value: 1, isUse: true, },
+        { label: 'Wind', value: 2, isUse: true, },
+        { label: 'Earth', value: 3, isUse: true, },
+        { label: 'Fire', value: 4, isUse: true, },
+        { label: 'Darkness', value: 5, isUse: true, },
+        { label: 'Holy', value: 6, isUse: true, },
+        { label: 'Nuetral', value: 7, isUse: true, },
+      ],
+    },
+  ];
+  private readonly passiveSkillList4th: PassiveSkillModel[] = [
+    {
+      name: 'Commune with Chulho',
+      label: 'Commune Chulho',
+      inputType: 'dropdown',
+      dropdown: [
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 1', value: 1, isUse: true },
+      ],
+    },
+    {
+      name: 'Commune with Hyunrok',
+      label: 'Commune Hyunrok',
+      inputType: 'dropdown',
+      dropdown: [
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 1', value: 1, isUse: true },
+      ],
+    },
+    {
+      name: 'Mystical Creature Mastery',
+      label: 'Mystical Cre Mastery',
+      inputType: 'dropdown',
+      dropdown: genSkillList(10, lv => ({ pAtk: floor(lv * 1.5), sMatk: floor(lv * 1.5) }))
+    },
+  ];
 
   constructor() {
     super();
