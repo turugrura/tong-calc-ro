@@ -1,7 +1,8 @@
-import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
 import { JOB_4_MAX_JOB_LEVEL, JOB_4_MIN_MAX_LEVEL } from '../app-config';
+import { genSkillList } from '../utils';
 import { SoulReaper } from './SoulReaper';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
+import { ClassName } from './_class-name';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 1, 1, 0, 0],
@@ -149,6 +150,16 @@ const traitBonusTable: Record<number, [number, number, number, number, number, n
   70: [0, 4, 8, 13, 8, 3],
 };
 
+const BlessingValue = {
+  East: 1,
+  South: 2,
+  West: 3,
+  North: 4,
+  Four_Directions: 5,
+} as const;
+
+type BlessingValueT = typeof BlessingValue[keyof typeof BlessingValue];
+
 export class SoulAscetic extends SoulReaper {
   protected override CLASS_NAME = ClassName.SoulAscetic;
   protected override JobBonusTable = jobBonusTable;
@@ -158,9 +169,213 @@ export class SoulAscetic extends SoulReaper {
   protected override maxJob = JOB_4_MAX_JOB_LEVEL;
 
   private readonly classNames4th = [ClassName.Only_4th, ClassName.SoulAscetic];
-  private readonly atkSkillList4th: AtkSkillModel[] = [];
-  private readonly activeSkillList4th: ActiveSkillModel[] = [];
-  private readonly passiveSkillList4th: PassiveSkillModel[] = [];
+  private readonly atkSkillList4th: AtkSkillModel[] = [
+    {
+      name: 'Exorcism of Malicious Soul',
+      label: '[V2] Exorcism of Malicious Soul Lv5',
+      value: 'Exorcism of Malicious Soul==5',
+      acd: 0,
+      fct: 1.5,
+      vct: 2.2,
+      cd: 1,
+      isMatk: true,
+      hit: 5,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalSpl } = status;
+        const baseLevel = model.level;
+        const soulMasteryLv = this.learnLv('Soul Mastery');
+        const totalSoul = this.activeSkillLv('Total Soul') || 1;
+
+        if (this.isSkillActive('Totem of Tutelary')) {
+          return (150 * skillLevel + soulMasteryLv * 2 + totalSpl) * totalSoul * (baseLevel / 100);
+
+        }
+
+        return (250 * skillLevel + soulMasteryLv * 2 + totalSpl) * totalSoul * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Talisman of Blue Dragon',
+      label: '[V2] Talisman of Blue Dragon Lv5',
+      value: 'Talisman of Blue Dragon==5',
+      acd: 0,
+      fct: 1.5,
+      vct: 1,
+      cd: 0.3,
+      isMatk: true,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalSpl } = status;
+        const baseLevel = model.level;
+        const talisMaster = this.learnLv('Talisman Mastery');
+
+        if (this.isSkillActive('Talisman of Five Elements')) {
+          return (350 + skillLevel * (1650 + talisMaster * 15) + totalSpl * 5) * (baseLevel / 100);
+
+        }
+
+        return (250 + skillLevel * (1450 + talisMaster * 15) + totalSpl * 5) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Talisman of White Tiger',
+      label: '[V2] Talisman of White Tiger Lv5',
+      value: 'Talisman of White Tiger==5',
+      acd: 0,
+      fct: 1.5,
+      vct: 1,
+      cd: 0.4,
+      isMatk: true,
+      hit: 2,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalSpl } = status;
+        const baseLevel = model.level;
+        const talisMaster = this.learnLv('Talisman Mastery');
+
+        if (this.isSkillActive('Talisman of Five Elements')) {
+          return (350 + skillLevel * (1350 + talisMaster * 15) + totalSpl * 5) * (baseLevel / 100);
+
+        }
+
+        return (350 + skillLevel * (950 + talisMaster * 15) + totalSpl * 5) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Talisman of Red Phoenix',
+      label: '[V2] Talisman of Red Phoenix Lv5',
+      value: 'Talisman of Red Phoenix==5',
+      acd: 0,
+      fct: 1.5,
+      vct: 1,
+      cd: 0.5,
+      isMatk: true,
+      hit: 3,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalSpl } = status;
+        const baseLevel = model.level;
+        const talisMaster = this.learnLv('Talisman Mastery');
+
+        if (this.isSkillActive('Talisman of Five Elements')) {
+          return (1200 + skillLevel * (1300 + talisMaster * 15) + totalSpl * 5) * (baseLevel / 100);
+
+        }
+
+        return (1000 + skillLevel * (900 + talisMaster * 15) + totalSpl * 5) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Talisman of Black Tortoise',
+      label: '[V2] Talisman of Black Tortoise Lv5',
+      value: 'Talisman of Black Tortoise==5',
+      acd: 0,
+      fct: 1.5,
+      vct: 1,
+      cd: 0.75,
+      isMatk: true,
+      hit: 3,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalSpl } = status;
+        const baseLevel = model.level;
+        const talisMaster = this.learnLv('Talisman Mastery');
+
+        if (this.isSkillActive('Talisman of Five Elements')) {
+          return (1850 + skillLevel * (1850 + talisMaster * 15) + totalSpl * 5) * (baseLevel / 100);
+
+        }
+
+        return (2150 + skillLevel * (1450 + talisMaster * 15) + totalSpl * 5) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Talisman of Four Bearing God',
+      label: '[V2] Talisman of Four Bearing God Lv5',
+      value: 'Talisman of Four Bearing God==5',
+      acd: 0,
+      fct: 1.5,
+      vct: 1.5,
+      cd: 1,
+      isMatk: true,
+      totalHit: () => {
+        const blessing = this.activeSkillLv('_SoulAscetic_Blessing') as BlessingValueT;
+        const hitMap = {
+          [BlessingValue.East]: 2,
+          [BlessingValue.South]: 3,
+          [BlessingValue.West]: 4,
+          [BlessingValue.North]: 5,
+          [BlessingValue.Four_Directions]: 7,
+        };
+
+        return hitMap[blessing] || (this.isSkillActive('Talisman of Five Elements') ? 7 : 1);
+      },
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalSpl } = status;
+        const baseLevel = model.level;
+        const talisMaster = this.learnLv('Talisman Mastery');
+
+        return (50 + skillLevel * (250 + talisMaster * 15) + totalSpl * 5) * (baseLevel / 100);
+      },
+    },
+  ];
+  private readonly activeSkillList4th: ActiveSkillModel[] = [
+    {
+      name: 'Talisman of Five Elements',
+      label: 'Five Elements',
+      inputType: 'dropdown',
+      dropdown: genSkillList(5, lv => ({
+        p_element_water: lv * 4,
+        p_element_wind: lv * 4,
+        p_element_earth: lv * 4,
+        p_element_fire: lv * 4,
+        p_element_neutral: lv * 4,
+        m_element_water: lv * 4,
+        m_element_wind: lv * 4,
+        m_element_earth: lv * 4,
+        m_element_fire: lv * 4,
+        m_element_neutral: lv * 4,
+      })),
+    },
+    {
+      name: '_SoulAscetic_Blessing',
+      label: 'Blessing of',
+      inputType: 'dropdown',
+      dropdown: [
+        { label: '-', value: 0, isUse: false },
+        { label: 'East', value: BlessingValue.East, isUse: true },
+        { label: 'South', value: BlessingValue.South, isUse: true },
+        { label: 'West', value: BlessingValue.West, isUse: true },
+        { label: 'North', value: BlessingValue.North, isUse: true },
+        { label: 'Four Directions', value: BlessingValue.Four_Directions, isUse: true },
+      ],
+    },
+    {
+      name: 'Totem of Tutelary',
+      label: 'Totem of Tutelary 5',
+      inputType: 'selectButton',
+      dropdown: [
+        { label: 'Yes', value: 1, isUse: true },
+        { label: 'No', value: 0, isUse: false },
+      ],
+    },
+  ];
+  private readonly passiveSkillList4th: PassiveSkillModel[] = [
+    {
+      name: 'Talisman Mastery',
+      label: 'Talisman Mastery',
+      inputType: 'dropdown',
+      dropdown: genSkillList(10, lv => ({ sMatk: lv })),
+    },
+    {
+      name: 'Soul Mastery',
+      label: 'Soul Mastery',
+      inputType: 'dropdown',
+      dropdown: genSkillList(10, lv => ({ spl: lv })),
+    },
+  ];
 
   constructor() {
     super();

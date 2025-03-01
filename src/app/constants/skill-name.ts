@@ -11,6 +11,9 @@ const ACTIVE_PASSIVE_SKILL_NAMES = [
   '_Religio_Benedictum',
   '_Trouvere_Troubadour_ignore_res_mres',
   '_Trouvere_Troubadour_pAtk_sMatk',
+  '_SoulAscetic_Blessing',
+  'Talisman of Five Elements',
+  'Totem of Tutelary',
   '16th Night',
   'Abyss Slayer',
   'Acid Demonstration',
@@ -255,6 +258,8 @@ const ACTIVE_PASSIVE_SKILL_NAMES = [
   "Odin's Power",
   "Owl's Eye",
   "Vulture's Eye",
+  'Talisman Mastery',
+  'Soul Mastery',
 ] as const;
 
 export const OFFENSIVE_SKILL_NAMES = [
