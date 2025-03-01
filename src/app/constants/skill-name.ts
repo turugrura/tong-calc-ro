@@ -167,6 +167,8 @@ const ACTIVE_PASSIVE_SKILL_NAMES = [
   'Power of Sea',
   'Power Thrust',
   'Power',
+  'Self Study Tactics',
+  'Self Study Sorcery',
   'Mystical Creature Mastery',
   'Commune with Chulho',
   'Commune with Hyunrok',

@@ -1,7 +1,9 @@
-import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
 import { JOB_4_MAX_JOB_LEVEL, JOB_4_MIN_MAX_LEVEL } from '../app-config';
+import { ElementType } from '../constants';
+import { genSkillList } from '../utils';
 import { SuperNovice } from './SuperNovice';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
+import { ClassName } from './_class-name';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [1, 1, 0, 0, 0, 0],
@@ -158,9 +160,139 @@ export class HyperNovice extends SuperNovice {
   protected override maxJob = JOB_4_MAX_JOB_LEVEL;
 
   private readonly classNames4th = [ClassName.Only_4th, ClassName.HyperNovice];
-  private readonly atkSkillList4th: AtkSkillModel[] = [];
+  private readonly atkSkillList4th: AtkSkillModel[] = [
+    {
+      name: 'Double Bowling Bash',
+      label: '[V2] Double Bowling Bash Lv10',
+      value: 'Double Bowling Bash==10',
+      acd: 1,
+      fct: 0,
+      vct: 0,
+      cd: 0.7,
+      totalHit: 3,
+      isMelee: true,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalPow } = status;
+        const baseLevel = model.level;
+        const skillBonusLv = this.learnLv('Self Study Tactics');
+
+        return (150 + skillLevel * (250 + skillBonusLv * 3) + totalPow * 2) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Mega Sonic Blow',
+      label: '[V2] Mega Sonic Blow Lv10',
+      value: 'Mega Sonic Blow==10',
+      acd: 0.5,
+      fct: 0,
+      vct: 0,
+      cd: 0.3,
+      hit: 8,
+      isMelee: true,
+      canCri: true,
+      criDmgPercentage: 0.5,
+      baseCriPercentage: 1,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalPow } = status;
+        const baseLevel = model.level;
+        const skillBonusLv = this.learnLv('Self Study Tactics');
+
+        return (850 + skillLevel * (450 + skillBonusLv * 5) + totalPow * 4) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Shield Chain Rush',
+      label: '[V2] Shield Chain Rush Lv10',
+      value: 'Shield Chain Rush==10',
+      acd: 0.5,
+      fct: 0.3,
+      vct: 1.2,
+      cd: 0.3,
+      hit: 5,
+      verifyItemFn: ({ model }) => !model.shield ? 'Shield' : '',
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalPow } = status;
+        const baseLevel = model.level;
+        const skillBonusLv = this.learnLv('Self Study Tactics');
+
+        return (600 + skillLevel * (450 + skillBonusLv * 3) + totalPow * 3) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Spiral Pierce Max',
+      label: '[V2] Spiral Pierce Max Lv10',
+      value: 'Spiral Pierce Max==10',
+      acd: 0.5,
+      fct: 0.3,
+      vct: 1,
+      cd: 0.3,
+      hit: 5,
+      verifyItemFn: ({ model }) => !model.shield ? 'Shield' : '',
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status, monster } = input;
+        const { totalPow } = status;
+        const baseLevel = model.level;
+        const skillBonusLv = this.learnLv('Self Study Tactics');
+        const sizeMap = {
+          s: 1.5,
+          m: 1.3,
+          l: 1.2,
+        };
+        const sizeModifier = sizeMap[monster.size];
+
+        return (550 + skillLevel * (350 + skillBonusLv * 3) * sizeModifier + totalPow * 3) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Napalm Vulcan Strike',
+      label: '[V2] Napalm Vulcan Strike Lv10',
+      value: 'Napalm Vulcan Strike==10',
+      acd: 0.5,
+      fct: 1,
+      vct: 0.5,
+      cd: 0.3,
+      hit: 7,
+      isMatk: true,
+      element: ElementType.Ghost,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalSpl } = status;
+        const baseLevel = model.level;
+        const skillBonusLv = this.learnLv('Self Study Sorcery');
+
+        return (350 + skillLevel * (650 + skillBonusLv * 4) + totalSpl * 3) * (baseLevel / 100);
+      },
+    },
+  ];
   private readonly activeSkillList4th: ActiveSkillModel[] = [];
-  private readonly passiveSkillList4th: PassiveSkillModel[] = [];
+  private readonly passiveSkillList4th: PassiveSkillModel[] = [
+    {
+      name: 'Self Study Tactics',
+      label: 'Self Study Tactics',
+      inputType: 'dropdown',
+      dropdown: genSkillList(10, lv => ({
+        pAtk: lv,
+        'Double Bowling Bash': lv + 5,
+        'Mega Sonic Blow': lv + 5,
+        'Spiral Pierce Max': lv + 5,
+        'Shield Chain Rush': lv * 2 + 10,
+      }))
+    },
+    {
+      name: 'Self Study Sorcery',
+      label: 'Self Study Sorcery',
+      inputType: 'dropdown',
+      dropdown: genSkillList(10, lv => ({
+        sMatk: lv,
+        'Jupitel Thunderstorm': lv,
+        "Hell's Drive": lv,
+        'Napalm Vulcan Strike': lv * 2,
+      }))
+    },
+  ];
 
   constructor() {
     super();
