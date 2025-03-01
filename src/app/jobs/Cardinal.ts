@@ -1,11 +1,11 @@
-import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
 import { JOB_4_MAX_JOB_LEVEL, JOB_4_MIN_MAX_LEVEL } from '../app-config';
-import { ArchBishop } from './ArchBishop';
-import { addBonus, floor } from '../utils';
 import { ElementType, WeaponTypeName } from '../constants';
 import { EquipmentSummaryModel } from '../models/equipment-summary.model';
 import { AdditionalBonusInput } from '../models/info-for-class.model';
+import { addBonus, floor } from '../utils';
+import { ArchBishop } from './ArchBishop';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
+import { ClassName } from './_class-name';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [1, 0, 0, 1, 0, 0],
@@ -165,7 +165,7 @@ export class Cardinal extends ArchBishop {
   private readonly atkSkillList4th: AtkSkillModel[] = [
     {
       name: 'Framen',
-      label: '[V2] Framen Lv5',
+      label: '[V3] Framen Lv5',
       value: 'Framen==5',
       acd: 0.5,
       fct: 1.5,
@@ -180,20 +180,20 @@ export class Cardinal extends ArchBishop {
         const fidusLv = this.learnLv('Fidus Animus');
 
         if (monster.isRace('demon', 'undead')) {
-          return (skillLevel * (650 + fidusLv * 5) + totalSpl * 5) * (baseLevel / 100);
+          return (skillLevel * (900 + fidusLv * 5) + totalSpl * 5) * (baseLevel / 100);
         }
 
-        return (skillLevel * (500 + fidusLv * 5) + totalSpl * 3) * (baseLevel / 100);
+        return (skillLevel * (800 + fidusLv * 5) + totalSpl * 3) * (baseLevel / 100);
       },
     },
     {
       name: 'Arbitrium',
-      label: '[V2] Arbitrium Lv10',
+      label: '[V3] Arbitrium Lv10',
       value: 'Arbitrium==10',
       acd: 0.5,
       fct: 1.5,
       vct: 4,
-      cd: 2,
+      cd: 1.5,
       isMatk: true,
       element: ElementType.Holy,
       formula: (input: AtkSkillFormulaInput): number => {
@@ -202,30 +202,30 @@ export class Cardinal extends ArchBishop {
         const baseLevel = model.level;
         const fidusLv = this.learnLv('Fidus Animus');
 
-        const primaryDmg = (skillLevel * (400 + fidusLv * 10) + totalSpl * 7) * (baseLevel / 100);
-        const secondaryDmg = (skillLevel * (550 + fidusLv * 10) + totalSpl * 7) * (baseLevel / 100);
+        const primaryDmg = (skillLevel * (1250 + fidusLv * 10) + totalSpl * 7) * (baseLevel / 100);
+        const secondaryDmg = (skillLevel * (1000 + fidusLv * 10) + totalSpl * 7) * (baseLevel / 100);
 
         return primaryDmg + secondaryDmg;
       },
     },
     {
       name: 'Petitio',
-      label: '[V2] Petitio Lv10',
+      label: '[V3] Petitio Lv10',
       value: 'Petitio==10',
       acd: 0.5,
       fct: 0,
       vct: 0,
-      cd: 1,
+      cd: 0.5,
       canCri: true,
       criDmgPercentage: 0.5,
       isMelee: (weaponType) => {
         return weaponType === 'book';
       },
       verifyItemFn: ({ weapon }) => {
-        const requires: WeaponTypeName[] = ['mace', 'twohandMace', 'book']
-        if (requires.some(wType => weapon.isType(wType))) return ''
+        const requires: WeaponTypeName[] = ['mace', 'twohandMace', 'book'];
+        if (requires.some(wType => weapon.isType(wType))) return '';
 
-        return requires.join(', ')
+        return requires.join(', ');
       },
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
@@ -233,7 +233,7 @@ export class Cardinal extends ArchBishop {
         const baseLevel = model.level;
         const mAndBookLv = this.learnLv('Mace & Book Mastery');
 
-        return (skillLevel * (270 + mAndBookLv * 5) + totalPow * 5) * (baseLevel / 100);
+        return (skillLevel * (1050 + mAndBookLv * 10) + totalPow * 5) * (baseLevel / 100);
       },
     },
   ];
