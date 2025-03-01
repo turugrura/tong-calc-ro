@@ -1,8 +1,8 @@
-import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
-import { RuneKnight } from './RuneKnight';
 import { JOB_4_MAX_JOB_LEVEL, JOB_4_MIN_MAX_LEVEL } from '../app-config';
 import { WeaponTypeName } from '../constants';
+import { RuneKnight } from './RuneKnight';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
+import { ClassName } from './_class-name';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [1, 0, 0, 0, 0, 0],
@@ -163,7 +163,7 @@ export class DragonKnight extends RuneKnight {
   private readonly atkSkillList4th: AtkSkillModel[] = [
     {
       name: 'Servant Weapon',
-      label: '[V2] Servant Weapon Lv5',
+      label: '[V3] Servant Weapon Lv5',
       value: 'Servant Weapon==5',
       acd: 0,
       fct: 0,
@@ -173,27 +173,29 @@ export class DragonKnight extends RuneKnight {
       criDmgPercentage: 0.5,
       baseCriPercentage: 1,
       isMelee: true,
+      totalHit: 2,
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
         const { totalPow } = status;
         const baseLevel = model.level;
 
-        return (200 + skillLevel * 50 + totalPow * 5) * (baseLevel / 100);
+        return (500 + skillLevel * 400 + totalPow * 5) * (baseLevel / 100);
       },
     },
     {
       name: 'Hack and Slasher',
-      label: '[V2] Hack and Slasher Lv10',
+      label: '[V3] Hack and Slasher Lv10',
       value: 'Hack and Slasher==10',
-      acd: 0.5,
+      acd: 0.25,
       fct: 0,
       vct: 0,
-      cd: 0.3,
+      cd: 0.7,
+      totalHit: 2,
       verifyItemFn: ({ weapon }) => {
-        const requires: WeaponTypeName[] = ['twohandSword', 'twohandSpear']
-        if (requires.some(wType => weapon.isType(wType))) return ''
+        const requires: WeaponTypeName[] = ['twohandSword', 'twohandSpear'];
+        if (requires.some(wType => weapon.isType(wType))) return '';
 
-        return requires.join(', ')
+        return requires.join(', ');
       },
       isMelee: (weaponType) => {
         return weaponType === 'twohandSword';
@@ -203,26 +205,26 @@ export class DragonKnight extends RuneKnight {
         const { totalPow } = status;
         const baseLevel = model.level;
 
-        return (500 + skillLevel * 250 + totalPow * 5) * (baseLevel / 100);
+        return (300 + skillLevel * 700 + totalPow * 7) * (baseLevel / 100);
       },
     },
     {
       name: 'Storm Slash',
-      label: '[V2] Storm Slash Lv5',
+      label: '[V3] Storm Slash Lv5',
       value: 'Storm Slash==5',
       acd: 0.5,
       fct: 0,
       vct: 0,
-      cd: 0.35,
+      cd: 0.3,
       canCri: true,
       baseCriPercentage: 1,
       criDmgPercentage: 0.5,
       isMelee: true,
       verifyItemFn: ({ weapon }) => {
-        const requires: WeaponTypeName[] = ['twohandSword', 'twohandAxe']
-        if (requires.some(wType => weapon.isType(wType))) return ''
+        const requires: WeaponTypeName[] = ['twohandSword', 'twohandAxe'];
+        if (requires.some(wType => weapon.isType(wType))) return '';
 
-        return requires.join(', ')
+        return requires.join(', ');
       },
       totalHit: ({ skillLevel }) => skillLevel,
       formula: (input: AtkSkillFormulaInput): number => {
@@ -230,22 +232,22 @@ export class DragonKnight extends RuneKnight {
         const { totalPow } = status;
         const baseLevel = model.level;
 
-        return (skillLevel * 120 + totalPow * 5) * (baseLevel / 100);
+        return (100 + skillLevel * 170 + totalPow * 5) * (baseLevel / 100);
       },
     },
     {
       name: 'Madness Crusher',
-      label: '[V2] Madness Crusher Lv5',
+      label: '[V3] Madness Crusher Lv5',
       value: 'Madness Crusher==5',
       acd: 0.5,
-      fct: 0.4,
-      vct: 0.4,
+      fct: 0.5,
+      vct: 0,
       cd: 0.35,
       verifyItemFn: ({ weapon }) => {
-        const requires: WeaponTypeName[] = ['twohandSword', 'twohandSpear']
-        if (requires.some(wType => weapon.isType(wType))) return ''
+        const requires: WeaponTypeName[] = ['twohandSword', 'twohandSpear'];
+        if (requires.some(wType => weapon.isType(wType))) return '';
 
-        return requires.join(', ')
+        return requires.join(', ');
       },
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status, weapon } = input;
@@ -253,7 +255,29 @@ export class DragonKnight extends RuneKnight {
         const baseLevel = model.level;
         const { weight, baseWeaponLevel } = weapon.data;
 
-        return (skillLevel * 600 + totalPow * 5 + weight * baseWeaponLevel) * (baseLevel / 100);
+        return (400 + skillLevel * 600 + totalPow * 5 + weight * baseWeaponLevel) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Dragonic Breath',
+      label: '[V3] Dragonic Breath Lv10',
+      value: 'Dragonic Breath==10',
+      acd: 0.15,
+      fct: 0.5,
+      vct: 2,
+      cd: 0.5,
+      hit: 2,
+      isIgnoreDef: true,
+      isIgnoreSDef: true,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status, maxHp, maxSp } = input;
+        const { totalPow } = status;
+        const baseLevel = model.level;
+        if (this.activeSkillLv('Dragonic Aura')) {
+          return (50 + skillLevel * (350 + 0.07 * (maxHp / 8 + maxSp / 4)) + totalPow * 10) * (baseLevel / 100);
+        }
+
+        return (50 + skillLevel * (350 + 0.05 * (maxHp / 8 + maxSp / 4)) + totalPow * 7) * (baseLevel / 100);
       },
     },
   ];

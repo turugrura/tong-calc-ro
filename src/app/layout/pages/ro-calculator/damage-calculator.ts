@@ -1,4 +1,6 @@
 import { ElementMapper, ElementType, ItemTypeEnum, SizePenaltyMapper } from 'src/app/constants';
+import { SKILL_NAME } from 'src/app/constants/skill-name';
+import { Monster, Weapon } from 'src/app/domain';
 import { AtkSkillFormulaInput, AtkSkillModel, CharacterBase } from '../../../jobs/_character-base.abstract';
 import { BasicDamageSummaryModel, DamageSummaryModel, MiscModel, SkillDamageSummaryModel, SkillType } from '../../../models/damage-summary.model';
 import { EquipmentSummaryModel } from '../../../models/equipment-summary.model';
@@ -6,8 +8,6 @@ import { InfoForClass } from '../../../models/info-for-class.model';
 import { MainModel } from '../../../models/main.model';
 import { StatusSummary } from '../../../models/status-summary.model';
 import { calcDmgDps, calcSkillAspd, floor, isSkillCanEDP, round } from '../../../utils';
-import { Monster, Weapon } from 'src/app/domain';
-import { SKILL_NAME } from 'src/app/constants/skill-name';
 
 interface DamageResultModel {
   minDamage: number;
@@ -90,7 +90,7 @@ export class DamageCalculator {
     noStackMaxDamage: 0,
     noStackMinCriDamage: 0,
     noStackMaxCriDamage: 0,
-  }
+  };
 
   setArgs(params: {
     equipStatus: Record<ItemTypeEnum, EquipmentSummaryModel>;
@@ -221,7 +221,7 @@ export class DamageCalculator {
     };
   }
 
-  get traitBonus(): { pAtk: number; sMatk: number; cRate: number } {
+  get traitBonus(): { pAtk: number; sMatk: number; cRate: number; } {
     const { totalPow, totalSpl, totalCon, totalCrt } = this.status;
     const { pAtkOrSMatk } = this.weaponData?.data || { pAtkOrSMatk: 0 };
 
@@ -293,7 +293,7 @@ export class DamageCalculator {
     if (atkType !== SkillType.MELEE) return 0;
 
     const bonus = this.totalBonus['darkClaw'] || 0;
-    if (!bonus) return 0
+    if (!bonus) return 0;
 
     if (this.monster.isBoss) {
       return 100 + bonus / 2;
@@ -306,7 +306,7 @@ export class DamageCalculator {
     if (atkType === SkillType.MAGICAL) return 0;
 
     const bonus = this.totalBonus['quake'] || 0;
-    if (!bonus) return 0
+    if (!bonus) return 0;
 
     return 100 + bonus;
   }
@@ -315,7 +315,7 @@ export class DamageCalculator {
     if (atkType !== SkillType.RANGE) return 0;
 
     const bonus = this.totalBonus['sporeExplosion'] || 0;
-    if (!bonus) return 0
+    if (!bonus) return 0;
 
     if (this.monster.isBoss) {
       return 100 + bonus / 2;
@@ -328,7 +328,7 @@ export class DamageCalculator {
     if (atkType !== SkillType.RANGE) return 0;
 
     const bonus = this.totalBonus['oleumSanctum'] || 0;
-    if (!bonus) return 0
+    if (!bonus) return 0;
 
     return 100 + bonus;
   }
@@ -340,7 +340,7 @@ export class DamageCalculator {
   }
 
   private getDebuffMultiplier(atkType: SkillType) {
-    let totalBonus = 0
+    let totalBonus = 0;
 
     totalBonus += this._getRaidMultiplier();
     totalBonus += this._getQuakeBonus(atkType);
@@ -356,7 +356,7 @@ export class DamageCalculator {
         break;
     }
 
-    return this.toPercent(totalBonus || 100)
+    return this.toPercent(totalBonus || 100);
   }
 
   private getAdvanceKatar() {
@@ -559,7 +559,7 @@ export class DamageCalculator {
     return this.totalBonus[skillName] || 0;
   }
 
-  private getAtkGroupA(params: { totalAtk: number }) {
+  private getAtkGroupA(params: { totalAtk: number; }) {
     const { totalAtk } = params;
     const atkPercent = this.toPercent(this.totalBonus.atkPercent);
 
@@ -569,7 +569,7 @@ export class DamageCalculator {
     return total;
   }
 
-  private getAtkGroupB(params: { totalAtk: number }) {
+  private getAtkGroupB(params: { totalAtk: number; }) {
     const { totalAtk } = params;
     const race = this.toPercent(this.getRaceMultiplier('p'));
     const size = this.toPercent(this.getSizeMultiplier('p'));
@@ -704,10 +704,10 @@ export class DamageCalculator {
     const uiMastery = this._class.getUiMasteryAtk(this.infoForClass);
     const hiddenMastery = this._class.getMasteryAtk(this.infoForClass);
 
-    return { total: skillAtk + buffAtk + uiMastery + hiddenMastery, skillAtk, buffAtk, uiMastery, hiddenMastery }
+    return { total: skillAtk + buffAtk + uiMastery + hiddenMastery, skillAtk, buffAtk, uiMastery, hiddenMastery };
   }
 
-  private getWeaponAtk(params: { isEDP: boolean; sizePenalty: number }) {
+  private getWeaponAtk(params: { isEDP: boolean; sizePenalty: number; }) {
     const { isEDP, sizePenalty } = params;
     const { baseWeaponAtk, baseWeaponLevel, refineBonus, overUpgradeBonus, highUpgradeBonus } = this.weaponData.data;
     const variant = baseWeaponAtk * baseWeaponLevel * 0.05;
@@ -767,7 +767,7 @@ export class DamageCalculator {
     return this.toPercent(pMultiplier);
   }
 
-  private calcTotalAtk(params: { propertyAtk: ElementType; isEDP: boolean; sizePenalty: number; isExcludeCannanball: boolean }) {
+  private calcTotalAtk(params: { propertyAtk: ElementType; isEDP: boolean; sizePenalty: number; isExcludeCannanball: boolean; }) {
     const { propertyAtk, isEDP, sizePenalty, isExcludeCannanball } = params;
     const propertyMultiplier = this.getPropertyMultiplier(propertyAtk);
 
@@ -832,6 +832,7 @@ export class DamageCalculator {
       isMelee: _isMelee,
       isHDefToSDef = false,
       isIgnoreDef = false,
+      isIgnoreSDef = false,
       isExcludeCannanball = false,
       finalDmgFormula,
       forceCri = false,
@@ -842,7 +843,7 @@ export class DamageCalculator {
     const canCri = this.isForceSkillCri || _canCri || forceCri;
     const { reducedHardDef, finalDmgReduction, finalSoftDef, resReduction } = this.getPhisicalDefData();
     const hardDef = isIgnoreDef || isHDefToSDef ? 1 : finalDmgReduction;
-    const softDef = finalSoftDef + (isHDefToSDef ? reducedHardDef : 0);
+    const softDef = isIgnoreSDef ? 0 : finalSoftDef + (isHDefToSDef ? reducedHardDef : 0);
 
     const { range, melee, criDmg } = this.totalBonus;
     const isMelee = _isMelee != null && typeof _isMelee === 'function' ? _isMelee(this.weaponData.data.typeName) : !!_isMelee;
@@ -853,7 +854,7 @@ export class DamageCalculator {
     const criDmgToMonster = floor(criDmg * criDmgPercentage || 0);
     const criMultiplier = canCri ? this.toPercent(criDmgToMonster + 100) : 1;
 
-    const dmgType = isMelee ? SkillType.MELEE : SkillType.RANGE
+    const dmgType = isMelee ? SkillType.MELEE : SkillType.RANGE;
     const advKatar = 100 + this.getAdvanceKatar();
     const debuffMultiplier = this.getDebuffMultiplier(dmgType);
     const finalDmgMultipliers = [advKatar].map((b) => this.toPercent(b));
@@ -958,7 +959,7 @@ export class DamageCalculator {
     return { weaponMinMatk, weaponMaxMatk };
   }
 
-  private calcMagicalSkillDamage(params: { skillData: AtkSkillModel; baseSkillDamage: number; weaponPropertyAtk: ElementType; formulaParams?: any }): DamageResultModel {
+  private calcMagicalSkillDamage(params: { skillData: AtkSkillModel; baseSkillDamage: number; weaponPropertyAtk: ElementType; formulaParams?: any; }): DamageResultModel {
     const { skillData, baseSkillDamage, weaponPropertyAtk, formulaParams } = params;
     const { name: skillName, element, isIgnoreDef = false, finalDmgFormula } = skillData;
     const { softMDef } = this.monster.data;
@@ -1065,7 +1066,7 @@ export class DamageCalculator {
     };
   }
 
-  private calcBasicDamage(params: { totalMin: number; totalMax: number }) {
+  private calcBasicDamage(params: { totalMin: number; totalMax: number; }) {
     const { totalMax, totalMin } = params;
     const { range, melee, dmg } = this.totalBonus;
     const isRangeType = this.isRangeAtk();
@@ -1100,7 +1101,7 @@ export class DamageCalculator {
     return { basicMinDamage, basicMaxDamage };
   }
 
-  private calcBasicCriDamage(params: { totalMaxAtk: number; totalMaxAtkOver: number }) {
+  private calcBasicCriDamage(params: { totalMaxAtk: number; totalMaxAtkOver: number; }) {
     const { totalMaxAtk, totalMaxAtkOver } = params;
     const { range, melee, criDmg, dmg } = this.totalBonus;
 
@@ -1139,7 +1140,7 @@ export class DamageCalculator {
     return { criMinDamage, criMaxDamage, sizePenalty: 100 };
   }
 
-  calculateAllDamages(args: { skillValue: string; propertyAtk: ElementType; maxHp: number; maxSp: number }): DamageSummaryModel {
+  calculateAllDamages(args: { skillValue: string; propertyAtk: ElementType; maxHp: number; maxSp: number; }): DamageSummaryModel {
     const { skillValue, propertyAtk, maxHp, maxSp } = args;
     const sizePenalty = this.getSizePenalty();
     const { totalMin, totalMax, totalMaxOver, propertyMultiplier } = this.calcTotalAtk({
@@ -1229,7 +1230,7 @@ export class DamageCalculator {
     };
 
 
-    const invalidMsg = verifyItemFn && typeof verifyItemFn === 'function' ? verifyItemFn(formulaParams) : ''
+    const invalidMsg = verifyItemFn && typeof verifyItemFn === 'function' ? verifyItemFn(formulaParams) : '';
     if (invalidMsg) {
       basicDmg.requireTxt = invalidMsg;
       return { basicDmg, misc, basicAspd, skillDmg: { ...this.zeroSkillDmg } };
@@ -1377,7 +1378,7 @@ export class DamageCalculator {
     const isMelee = _isMelee != null && typeof _isMelee === 'function' ? _isMelee(this.weaponData.data.typeName) : !!_isMelee;
 
     const label = calculated.canCri ? 'SkillCri' : 'Skill';
-    const { totalPeneRes, totalPeneMres } = this.getPeneResMres()
+    const { totalPeneRes, totalPeneMres } = this.getPeneResMres();
 
     const skillDmg: SkillDamageSummaryModel = {
       skillDamageLabel: `${label}` + (maxStack > 0 ? ` ${maxStack} stacks` : ''),
@@ -1423,8 +1424,8 @@ export class DamageCalculator {
   }
 
   get atkSummaryForUI() {
-    const { skillAtk: skillAtkMastery, hiddenMastery, buffAtk, uiMastery } = this.getMasteryAtk()
-    const { equipAtk, skillAtk, striking } = this.getExtraAtk()
+    const { skillAtk: skillAtkMastery, hiddenMastery, buffAtk, uiMastery } = this.getMasteryAtk();
+    const { equipAtk, skillAtk, striking } = this.getExtraAtk();
 
     return {
       totalStatusAtk: this.getStatusAtk(),
@@ -1433,6 +1434,6 @@ export class DamageCalculator {
       totalHideMasteryAtk: hiddenMastery,
       totalBuffAtk: buffAtk,
       totalStatusMatk: this.getStatusMatk(),
-    }
+    };
   }
 }

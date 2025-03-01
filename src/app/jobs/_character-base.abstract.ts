@@ -1,14 +1,14 @@
 import { environment } from 'src/environments/environment';
+import { AspdPotionFixBonus } from '../constants';
 import { ElementType } from '../constants/element-type.const';
+import { OFFENSIVE_SKILL_NAMES, SKILL_NAME } from '../constants/skill-name';
+import { WeaponTypeName } from '../constants/weapon-type-mapper';
+import { Weapon } from '../domain';
 import { EquipmentSummaryModel } from '../models/equipment-summary.model';
 import { AdditionalBonusInput, InfoForClass } from '../models/info-for-class.model';
+import { sortSkill } from '../utils';
 import { AspdTable } from './_aspd-table';
 import { ClassName } from './_class-name';
-import { sortSkill } from '../utils';
-import { WeaponTypeName } from '../constants/weapon-type-mapper';
-import { AspdPotionFixBonus } from '../constants';
-import { Weapon } from '../domain';
-import { OFFENSIVE_SKILL_NAMES, SKILL_NAME } from '../constants/skill-name';
 
 export interface AtkSkillFormulaInput extends InfoForClass {
   skillLevel: number;
@@ -35,7 +35,7 @@ export interface AtkSkillModel {
   fct: number | ((skillLevel: number) => number);
   vct: number | ((skillLevel: number) => number);
   cd: number | ((skillLevel: number) => number);
-  levelList?: { label: string; value: any }[];
+  levelList?: { label: string; value: any; }[];
   formula: (input: AtkSkillFormulaInput) => number;
   customFormula?: (
     input: AtkSkillFormulaInput & {
@@ -53,7 +53,7 @@ export interface AtkSkillModel {
     isMelee: boolean;
     formula: (input: AtkSkillFormulaInput) => number;
   };
-  finalDmgFormula?: (input: AtkSkillFormulaInput & { damage: number }) => number;
+  finalDmgFormula?: (input: AtkSkillFormulaInput & { damage: number; }) => number;
   maxStack?: number;
   canCri?: boolean | ((input: AtkSkillFormulaInput) => boolean);
   baseCri?: number;
@@ -76,6 +76,7 @@ export interface AtkSkillModel {
   isMelee?: boolean | ((weaponType: WeaponTypeName) => boolean);
   isDevMode?: boolean;
   isIgnoreDef?: boolean | ((parmas: AtkSkillFormulaInput) => boolean);
+  isIgnoreSDef?: boolean | ((parmas: AtkSkillFormulaInput) => boolean);
   isHDefToSDef?: boolean;
   isHit100?: boolean;
   treatedAsSkillNameFn?: (skillValue: string) => string;
@@ -91,7 +92,7 @@ export interface AtkSkillModel {
   autoSpellChance?: number;
   element?: ElementType;
   getElement?: (skillValue: string) => ElementType;
-  secondaryDmgInput?: Omit<AtkSkillModel, 'secondaryDmg' | 'part2' | 'acd' | 'vct' | 'cd' | 'fct' | 'name' | 'value'> & { isIncludeMain: boolean }
+  secondaryDmgInput?: Omit<AtkSkillModel, 'secondaryDmg' | 'part2' | 'acd' | 'vct' | 'cd' | 'fct' | 'name' | 'value'> & { isIncludeMain: boolean; };
 }
 [];
 
@@ -206,7 +207,7 @@ export abstract class CharacterBase {
       ClassName.Shiranui,
       ClassName.Kagerou,
       ClassName.Shinkiro,
-    ].includes(this.className)
+    ].includes(this.className);
   }
 
   get atkSkills() {
@@ -356,7 +357,7 @@ export abstract class CharacterBase {
     return this.bonuses.usedSkillMap.get(skillName) || 0;
   }
 
-  setLearnSkills(a: { activeSkillIds: number[]; passiveSkillIds: number[] }) {
+  setLearnSkills(a: { activeSkillIds: number[]; passiveSkillIds: number[]; }) {
     const { activeSkillIds, passiveSkillIds } = a;
     this.activeSkillIds = [...activeSkillIds];
     this.passiveSkillIds = [...passiveSkillIds];
@@ -416,7 +417,7 @@ export abstract class CharacterBase {
     return { activeSkillNames, equipAtks, masteryAtks, learnedSkillMap, usedSkillMap };
   }
 
-  private calcBaseAspd(weaponSubType: string): { baseAspd: number; shieldPenalty: number } {
+  private calcBaseAspd(weaponSubType: string): { baseAspd: number; shieldPenalty: number; } {
     const data = AspdTable[this.className] || { base: 156, shield: 0 };
 
     return {
@@ -479,7 +480,7 @@ export abstract class CharacterBase {
     return { totalAtk };
   }
 
-  protected calcHiddenMasteryAtk(_: InfoForClass, x?: { prefix?: string; suffix?: string }) {
+  protected calcHiddenMasteryAtk(_: InfoForClass, x?: { prefix?: string; suffix?: string; }) {
     const allBonus = { ...(this.bonuses?.masteryAtks || {}), ...(this.bonuses?.equipAtks || {}) };
 
     let attrAtk = 'x_atk';
@@ -507,7 +508,7 @@ export abstract class CharacterBase {
     const { weapon, weapon2, isEquipShield, aspd, aspdPercent, totalAgi, totalDex, potionAspds, skillAspd } = a;
     const aspdByPotion = potionAspds.reduce((total, potionAspd) => total + (AspdPotionFixBonus.get(potionAspd) || 0), 0);
 
-    const isAllowShield = weapon.isAllowShield()
+    const isAllowShield = weapon.isAllowShield();
 
     const { rangeType, subTypeName } = weapon.data;
     const { baseAspd, shieldPenalty } = this.calcBaseAspd(subTypeName);
@@ -541,7 +542,7 @@ export abstract class CharacterBase {
     return final;
   }
 
-  calcSkillDmgByTotalHit(params: { finalDamage: number; skill: AtkSkillModel; info: InfoForClass }): number {
+  calcSkillDmgByTotalHit(params: { finalDamage: number; skill: AtkSkillModel; info: InfoForClass; }): number {
     const { finalDamage, skill } = params;
     const skillHit = skill?.hit || 1;
     if (skillHit > 1) {
@@ -608,7 +609,7 @@ export abstract class CharacterBase {
     return params.totalBonus;
   }
 
-  protected inheritSkills(params: { atkSkillList: AtkSkillModel[]; activeSkillList: ActiveSkillModel[]; passiveSkillList: ActiveSkillModel[]; classNames: ClassName[] }) {
+  protected inheritSkills(params: { atkSkillList: AtkSkillModel[]; activeSkillList: ActiveSkillModel[]; passiveSkillList: ActiveSkillModel[]; classNames: ClassName[]; }) {
     const { activeSkillList, atkSkillList, classNames, passiveSkillList } = params;
 
     this._atkSkillList.push(...atkSkillList);
