@@ -1,10 +1,10 @@
-import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
-import { Ranger } from './Ranger';
-import { EquipmentSummaryModel } from '../models/equipment-summary.model';
-import { AdditionalBonusInput } from '../models/info-for-class.model';
 import { JOB_4_MAX_JOB_LEVEL, JOB_4_MIN_MAX_LEVEL } from '../app-config';
 import { WeaponTypeName } from '../constants';
+import { EquipmentSummaryModel } from '../models/equipment-summary.model';
+import { AdditionalBonusInput } from '../models/info-for-class.model';
+import { Ranger } from './Ranger';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
+import { ClassName } from './_class-name';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 0, 1, 0],
@@ -164,9 +164,9 @@ export class Windhawk extends Ranger {
   private readonly atkSkillList4th: AtkSkillModel[] = [
     {
       name: 'Crescive Bolt',
-      label: '[V2] Crescive Bolt Lv10',
+      label: '[V3] Crescive Bolt Lv10',
       value: 'Crescive Bolt==10',
-      acd: 0.5,
+      acd: 0.3,
       fct: 1,
       vct: 1,
       cd: 0.15,
@@ -180,29 +180,29 @@ export class Windhawk extends Ranger {
         const totalStack = stack;
         const calaBonus = this.isSkillActive('Calamity Gale') ? 1.2 : 1;
 
-        return (skillLevel * 300 + status.totalCon * 10) * (baseLevel / 100) * (1 + 0.1 * totalStack) * calaBonus;
+        return (skillLevel * 340 + status.totalCon * 10) * (baseLevel / 100) * (1 + 0.1 * totalStack) * calaBonus;
       },
     },
     {
       name: 'Gale Storm',
-      label: '[V2] Gale Storm Lv10',
+      label: '[V3] Gale Storm Lv10',
       value: 'Gale Storm==10',
       acd: 0.15,
       fct: 0.5,
       vct: 1,
-      cd: 2,
+      cd: 1.5,
       hit: 5,
       canCri: () => this.isSkillActive('Calamity Gale'),
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
         const baseLevel = model.level;
 
-        return (skillLevel * 250 + status.totalCon * 5) * (baseLevel / 100);
+        return (skillLevel * 950 + status.totalCon * 5) * (baseLevel / 100);
       },
     },
     {
       name: 'Hawk Rush',
-      label: '[V2] Hawk Rush Lv5',
+      label: '[V3] Hawk Rush Lv5',
       value: 'Hawk Rush==5',
       acd: 0,
       fct: 0,
@@ -212,17 +212,17 @@ export class Windhawk extends Ranger {
       criDmgPercentage: 0.5,
       baseCriPercentage: 1,
       verifyItemFn: ({ weapon }) => {
-        const requires: WeaponTypeName[] = ['bow']
-        if (requires.some(wType => weapon.isType(wType))) return ''
+        const requires: WeaponTypeName[] = ['bow'];
+        if (requires.some(wType => weapon.isType(wType))) return '';
 
-        return requires.join(', ')
+        return requires.join(', ');
       },
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
         const baseLevel = model.level;
-        const natureFrieldlyLv = this.learnLv('Nature Friendly')
+        const natureFrieldlyLv = this.learnLv('Nature Friendly');
 
-        return (skillLevel * 200 + status.totalCon * 5) * (1 + 0.1 * natureFrieldlyLv) * (baseLevel / 100);
+        return (skillLevel * 500 + status.totalCon * 5) * (1 + 0.1 * natureFrieldlyLv) * (baseLevel / 100);
       },
     },
   ];
