@@ -1,7 +1,8 @@
-import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
 import { InfoForClass } from '../models/info-for-class.model';
+import { floor } from '../utils';
 import { StarGladiator } from './StarGladiator';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
+import { ClassName } from './_class-name';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [1, 0, 0, 0, 0, 0],
@@ -293,10 +294,11 @@ export class StarEmperor extends StarGladiator {
   }
 
   override modifyFinalAtk(currentAtk: number, _params: InfoForClass) {
-    const partyCnt = this.bonuses.usedSkillMap.get('Power') || 1;
+    const powerLv = this.bonuses.usedSkillMap.get('Power');
     const wratBonus = (100 + this.getWrathAtkBonus(_params)) / 100;
 
-    let totalAtk = Math.floor(currentAtk * ((100 + (partyCnt - 1) * 10) / 100));
+    let totalAtk = currentAtk;
+    if (powerLv >= 1) totalAtk = totalAtk + floor(totalAtk * (powerLv * 15 + 10) * 0.01);
     totalAtk = totalAtk * wratBonus;
 
     return totalAtk;

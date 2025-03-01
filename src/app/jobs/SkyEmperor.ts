@@ -1,7 +1,10 @@
-import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
 import { JOB_4_MAX_JOB_LEVEL, JOB_4_MIN_MAX_LEVEL } from '../app-config';
+import { EquipmentSummaryModel } from '../models/equipment-summary.model';
+import { AdditionalBonusInput } from '../models/info-for-class.model';
+import { addBonus, genSkillList } from '../utils';
 import { StarEmperor } from './StarEmperor';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
+import { ClassName } from './_class-name';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [1, 0, 0, 0, 1, 0],
@@ -149,6 +152,17 @@ const traitBonusTable: Record<number, [number, number, number, number, number, n
   70: [12, 14, 3, 0, 8, 7],
 };
 
+const RisingSun = {
+  Sunrise: 1,
+  Noon: 2,
+  Sunset: 3,
+} as const;
+const RisingMoon = {
+  Moonrise: 1,
+  Midnight: 2,
+  Moonset: 3,
+} as const;
+
 export class SkyEmperor extends StarEmperor {
   protected override CLASS_NAME = ClassName.SkyEmperor;
   protected override JobBonusTable = jobBonusTable;
@@ -158,9 +172,154 @@ export class SkyEmperor extends StarEmperor {
   protected override maxJob = JOB_4_MAX_JOB_LEVEL;
 
   private readonly classNames4th = [ClassName.Only_4th, ClassName.SkyEmperor];
-  private readonly atkSkillList4th: AtkSkillModel[] = [];
-  private readonly activeSkillList4th: ActiveSkillModel[] = [];
-  private readonly passiveSkillList4th: PassiveSkillModel[] = [];
+  private readonly atkSkillList4th: AtkSkillModel[] = [
+    {
+      name: 'Noon Blast',
+      label: '[V2] Noon Blast Lv5',
+      value: 'Noon Blast==5',
+      acd: 0.5,
+      fct: 0,
+      vct: 0,
+      cd: 0.7,
+      isMelee: true,
+      hit: 2,
+      canCri: () => this.activeSkillLv('_SkyEmperor_Rising_Sun') === RisingSun.Noon,
+      criDmgPercentage: 0.5,
+      baseCriPercentage: 1,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalPow } = status;
+        const baseLevel = model.level;
+        const skillBonusLv = this.learnLv('Sky Mastery');
+
+        return (1600 + skillLevel * (1250 + skillBonusLv * 5) + totalPow * 5) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Sunset Blast',
+      label: '[V2] Sunset Blast Lv5',
+      value: 'Sunset Blast==5',
+      acd: 0.5,
+      fct: 0,
+      vct: 0,
+      cd: 0.3,
+      isMelee: true,
+      hit: 2,
+      canCri: () => this.activeSkillLv('_SkyEmperor_Rising_Sun') === RisingSun.Sunset,
+      criDmgPercentage: 0.5,
+      baseCriPercentage: 1,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalPow } = status;
+        const baseLevel = model.level;
+        const skillBonusLv = this.learnLv('Sky Mastery');
+
+        return (950 + skillLevel * (400 + skillBonusLv * 5) + totalPow * 5) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Midnight Kick',
+      label: '[V2] Midnight Kick Lv5',
+      value: 'Midnight Kick==5',
+      acd: 0,
+      fct: 0.5,
+      vct: 1,
+      cd: 0.7,
+      isMelee: true,
+      hit: 2,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalPow } = status;
+        const baseLevel = model.level;
+        const skillBonusLv = this.learnLv('Sky Mastery');
+
+        if (this.activeSkillLv('_SkyEmperor_Rising_Moon') === RisingMoon.Midnight) {
+          return (1550 + skillLevel * (1450 + skillBonusLv * 5) + totalPow * 5) * (baseLevel / 100);
+        }
+
+        return (600 + skillLevel * (1200 + skillBonusLv * 5) + totalPow * 5) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Dawn Break',
+      label: '[V2] Dawn Break Lv5',
+      value: 'Dawn Break==5',
+      acd: 0,
+      fct: 0.5,
+      vct: 1,
+      cd: 0.3,
+      isMelee: true,
+      hit: 2,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalPow } = status;
+        const baseLevel = model.level;
+        const skillBonusLv = this.learnLv('Sky Mastery');
+
+        if (this.activeSkillLv('_SkyEmperor_Rising_Moon') === RisingMoon.Moonset) {
+          return (400 + skillLevel * (600 + skillBonusLv * 5) + totalPow * 5) * (baseLevel / 100);
+        }
+
+        return (400 + skillLevel * (400 + skillBonusLv * 5) + totalPow * 5) * (baseLevel / 100);
+      },
+    },
+    {
+      name: 'Star Cannon',
+      label: '[V2] Star Cannon Lv5 (1 hit)',
+      value: 'Star Cannon==5',
+      acd: 0,
+      fct: 0.5,
+      vct: 1,
+      cd: 0.3,
+      isMelee: true,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalPow } = status;
+        const baseLevel = model.level;
+        const skillBonusLv = this.learnLv('Sky Mastery');
+
+        return (200 + skillLevel * (500 + skillBonusLv * 5) + totalPow * 5) * (baseLevel / 100);
+      },
+    },
+  ];
+  private readonly activeSkillList4th: ActiveSkillModel[] = [
+    {
+      name: '_SkyEmperor_Rising_Sun',
+      label: 'Rising Sun',
+      inputType: 'dropdown',
+      dropdown: [
+        { label: '-', value: 0, isUse: false },
+        { label: 'Sunrise', value: RisingSun.Sunrise, isUse: true },
+        { label: 'Noon', value: RisingSun.Noon, isUse: true },
+        { label: 'Sunset', value: RisingSun.Sunset, isUse: true },
+      ]
+    },
+    {
+      name: '_SkyEmperor_Rising_Moon',
+      label: 'Rising Moon',
+      inputType: 'dropdown',
+      dropdown: [
+        { label: '-', value: 0, isUse: false },
+        { label: 'Moonrise', value: RisingMoon.Moonrise, isUse: true },
+        { label: 'Midnight', value: RisingMoon.Midnight, isUse: true },
+        { label: 'Moonset', value: RisingMoon.Moonset, isUse: true },
+      ]
+    },
+  ];
+  private readonly passiveSkillList4th: PassiveSkillModel[] = [
+    {
+      name: 'Sky Mastery',
+      label: 'Sky Mastery',
+      inputType: 'dropdown',
+      dropdown: genSkillList(10)
+    },
+    {
+      name: 'War Book Mastery',
+      label: 'War Book Mastery',
+      inputType: 'dropdown',
+      dropdown: genSkillList(10)
+    },
+  ];
 
   constructor() {
     super();
@@ -171,5 +330,19 @@ export class SkyEmperor extends StarEmperor {
       passiveSkillList: this.passiveSkillList4th,
       classNames: this.classNames4th,
     });
+  }
+
+  override setAdditionalBonus(params: AdditionalBonusInput): EquipmentSummaryModel {
+    super.setAdditionalBonus(params);
+
+    const { totalBonus, weapon } = params;
+
+    const warMastLv = this.learnLv('War Book Mastery');
+    if (warMastLv > 0 && weapon.isType('book')) {
+      addBonus(totalBonus, 'pAtk', warMastLv + 2);
+      addBonus(totalBonus, 'hit', warMastLv * 3);
+    }
+
+    return totalBonus;
   }
 }

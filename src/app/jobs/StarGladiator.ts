@@ -1,6 +1,6 @@
-import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
 import { Taekwondo } from './Taekwondo';
+import { ActiveSkillModel, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
+import { ClassName } from './_class-name';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [1, 0, 0, 0, 0, 0],
@@ -86,22 +86,16 @@ export class StarGladiator extends Taekwondo {
 
   protected readonly activeSkillListHi: ActiveSkillModel[] = [
     {
-      label: 'Power 5',
+      label: 'Power',
       name: 'Power',
       inputType: 'dropdown',
       dropdown: [
         { label: '-', value: 0, isUse: false },
-        { label: '2 Players', value: 2, isUse: true },
-        { label: '3 Players', value: 3, isUse: true },
-        { label: '4 Players', value: 4, isUse: true },
-        { label: '5 Players', value: 5, isUse: true },
-        { label: '6 Players', value: 6, isUse: true },
-        { label: '7 Players', value: 7, isUse: true },
-        { label: '8 Players', value: 8, isUse: true },
-        { label: '9 Players', value: 9, isUse: true },
-        { label: '10 Players', value: 10, isUse: true },
-        { label: '11 Players', value: 11, isUse: true },
-        { label: '12 Players', value: 12, isUse: true },
+        { label: 'Lv 1', value: 1, isUse: true },
+        { label: 'Lv 2', value: 2, isUse: true },
+        { label: 'Lv 3', value: 3, isUse: true },
+        { label: 'Lv 4', value: 4, isUse: true },
+        { label: 'Lv 5', value: 5, isUse: true },
       ],
     },
     {
