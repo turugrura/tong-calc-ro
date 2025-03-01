@@ -1,11 +1,11 @@
-import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
 import { JOB_4_MAX_JOB_LEVEL, JOB_4_MIN_MAX_LEVEL } from '../app-config';
-import { Warlock } from './Warlock';
-import { addBonus, floor, genSkillList } from '../utils';
+import { ElementType } from '../constants';
 import { EquipmentSummaryModel } from '../models/equipment-summary.model';
 import { AdditionalBonusInput } from '../models/info-for-class.model';
-import { ElementType } from '../constants';
+import { addBonus, floor, genSkillList } from '../utils';
+import { Warlock } from './Warlock';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
+import { ClassName } from './_class-name';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 1, 0, 0],
@@ -165,9 +165,9 @@ export class ArchMage extends Warlock {
   private readonly atkSkillList4th: AtkSkillModel[] = [
     {
       name: 'Soul Vulcan Strike',
-      label: '[V2] Soul Vulcan Strike Lv5',
+      label: '[V3] Soul Vulcan Strike Lv5',
       value: 'Soul Vulcan Strike==5',
-      acd: 0.7,
+      acd: 0.5,
       fct: 1,
       vct: 3,
       cd: 0.7,
@@ -179,14 +179,14 @@ export class ArchMage extends Warlock {
         const { totalSpl } = status;
         const { level: baseLevel } = model;
 
-        return (skillLevel * 180 + totalSpl * 3) * (baseLevel / 100);
+        return (skillLevel * 250 + totalSpl * 3) * (baseLevel / 100);
       }
     },
     {
       name: 'Mystery Illusion',
-      label: '[V2] Mystery Illusion Lv5',
+      label: '[V3] Mystery Illusion Lv5',
       value: 'Mystery Illusion==5',
-      acd: 1,
+      acd: 0.5,
       fct: 1.5,
       vct: 4,
       cd: 4,
@@ -198,14 +198,14 @@ export class ArchMage extends Warlock {
         const { totalSpl } = status;
         const { level: baseLevel } = model;
 
-        return (skillLevel * 500 + totalSpl * 5) * (baseLevel / 100);
+        return (skillLevel * 950 + totalSpl * 5) * (baseLevel / 100);
       }
     },
     {
       name: 'Floral Flare Road',
-      label: '[V2] Floral Flare Road Lv5',
+      label: '[V3] Floral Flare Road Lv5',
       value: 'Floral Flare Road==5',
-      acd: 0.5,
+      acd: 0.25,
       fct: 1.5,
       vct: 3,
       cd: 5,
@@ -217,14 +217,14 @@ export class ArchMage extends Warlock {
         const { totalSpl } = status;
         const { level: baseLevel } = model;
 
-        return (skillLevel * 200 + totalSpl * 5) * (baseLevel / 100);
+        return (50 + skillLevel * 740 + totalSpl * 5) * (baseLevel / 100);
       },
     },
     {
       name: 'Rain of Crystal',
-      label: '[V2] Rain of Crystal Lv5',
+      label: '[V3] Rain of Crystal Lv5',
       value: 'Rain of Crystal==5',
-      acd: 0.5,
+      acd: 0.25,
       fct: 1.5,
       vct: 3,
       cd: 5,
@@ -236,14 +236,14 @@ export class ArchMage extends Warlock {
         const { totalSpl } = status;
         const { level: baseLevel } = model;
 
-        return (skillLevel * 150 + totalSpl * 5) * (baseLevel / 100);
+        return (180 + skillLevel * 760 + totalSpl * 5) * (baseLevel / 100);
       },
     },
     {
       name: 'Tornado Storm',
-      label: '[V2] Tornado Storm Lv5',
+      label: '[V3] Tornado Storm Lv5',
       value: 'Tornado Storm==5',
-      acd: 0.5,
+      acd: 0.25,
       fct: 1.5,
       vct: 3,
       cd: 5,
@@ -255,14 +255,14 @@ export class ArchMage extends Warlock {
         const { totalSpl } = status;
         const { level: baseLevel } = model;
 
-        return (skillLevel * 90 + totalSpl * 5) * (baseLevel / 100);
+        return (100 + skillLevel * 760 + totalSpl * 5) * (baseLevel / 100);
       },
     },
     {
       name: 'Stratum Tremor',
-      label: '[V2] Stratum Tremor Lv5',
+      label: '[V3] Stratum Tremor Lv5',
       value: 'Stratum Tremor==5',
-      acd: 0.5,
+      acd: 0.25,
       fct: 1.5,
       vct: 3,
       cd: 4,
@@ -274,12 +274,12 @@ export class ArchMage extends Warlock {
         const { totalSpl } = status;
         const { level: baseLevel } = model;
 
-        return (skillLevel * 250 + totalSpl * 5) * (baseLevel / 100);
+        return (100 + skillLevel * 730 + totalSpl * 5) * (baseLevel / 100);
       },
     },
     {
       name: 'Crimson Arrow',
-      label: '[V2] Crimson Arrow Lv5',
+      label: '[V3] Crimson Arrow Lv5',
       value: 'Crimson Arrow==5',
       acd: 0.5,
       fct: 1.5,
@@ -301,12 +301,12 @@ export class ArchMage extends Warlock {
     },
     {
       name: 'Frozen Slash',
-      label: '[V2] Frozen Slash Lv5',
+      label: '[V3] Frozen Slash Lv5',
       value: 'Frozen Slash==5',
       acd: 0.5,
       fct: 1.5,
       vct: 4,
-      cd: 0.3,
+      cd: 0.45,
       isMatk: true,
       element: ElementType.Water,
       hit: 3,
@@ -314,14 +314,16 @@ export class ArchMage extends Warlock {
         const { model, skillLevel, status } = input;
         const { totalSpl } = status;
         const { level: baseLevel } = model;
-        const blimaxBonus = this.isSkillActive('Climax') ? 250 : 0;
+        if (this.isSkillActive('Climax')) {
+          return (400 + skillLevel * 1250 + totalSpl * 5) * (baseLevel / 100);
+        }
 
-        return (skillLevel * (600 + blimaxBonus) + totalSpl * 5) * (baseLevel / 100);
+        return (250 + skillLevel * 900 + totalSpl * 5) * (baseLevel / 100);
       },
     },
     {
       name: 'Storm Cannon',
-      label: '[V2] Storm Cannon Lv5',
+      label: '[V3] Storm Cannon Lv5',
       value: 'Storm Cannon==5',
       acd: 0.5,
       fct: 1.5,
@@ -334,14 +336,16 @@ export class ArchMage extends Warlock {
         const { model, skillLevel, status } = input;
         const { totalSpl } = status;
         const { level: baseLevel } = model;
-        const blimaxBonus = this.isSkillActive('Climax') ? 250 : 0;
+        if (this.isSkillActive('Climax')) {
+          return (skillLevel * 1250 + totalSpl * 5) * (baseLevel / 100);
+        }
 
-        return (skillLevel * (600 + blimaxBonus) + totalSpl * 5) * (baseLevel / 100);
+        return (skillLevel * 950 + totalSpl * 5) * (baseLevel / 100);
       },
     },
     {
       name: 'Rock Down',
-      label: '[V2] Rock Down Lv5',
+      label: '[V3] Rock Down Lv5',
       value: 'Rock Down==5',
       acd: 0.5,
       fct: 1.5,
@@ -354,9 +358,11 @@ export class ArchMage extends Warlock {
         const { model, skillLevel, status } = input;
         const { totalSpl } = status;
         const { level: baseLevel } = model;
-        const blimaxBonus = this.isSkillActive('Climax') ? 250 : 0;
+        if (this.isSkillActive('Climax')) {
+          return (skillLevel * 1250 + totalSpl * 5) * (baseLevel / 100);
+        }
 
-        return (skillLevel * (600 + blimaxBonus) + totalSpl * 5) * (baseLevel / 100);
+        return (skillLevel * 950 + totalSpl * 5) * (baseLevel / 100);
       },
     },
     // {
