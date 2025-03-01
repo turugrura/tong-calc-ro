@@ -1,12 +1,12 @@
-import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
 import { JOB_4_MAX_JOB_LEVEL, JOB_4_MIN_MAX_LEVEL } from '../app-config';
-import { Wanderer } from './Wanderer';
+import { WeaponTypeName } from '../constants';
 import { MysticSymphonyFn, StageMannerFn } from '../constants/share-passive-skills';
 import { EquipmentSummaryModel } from '../models/equipment-summary.model';
 import { AdditionalBonusInput } from '../models/info-for-class.model';
 import { addBonus } from '../utils';
-import { WeaponTypeName } from '../constants';
+import { Wanderer } from './Wanderer';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
+import { ClassName } from './_class-name';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 0, 1, 0],
@@ -166,18 +166,18 @@ export class Trouvere extends Wanderer {
   private readonly atkSkillList4th: AtkSkillModel[] = [
     {
       name: 'Rhythm Shooting',
-      label: '[V2] Rhythm Shooting Lv5',
+      label: '[V3] Rhythm Shooting Lv5',
       value: 'Rhythm Shooting==5',
-      acd: 0.15,
+      acd: 0,
       fct: 0,
       vct: 2,
-      cd: 0,
+      cd: 0.15,
       totalHit: 3,
       verifyItemFn: ({ weapon }) => {
-        const requires: WeaponTypeName[] = ['bow', 'instrument', 'whip']
-        if (requires.some(wType => weapon.isType(wType))) return ''
+        const requires: WeaponTypeName[] = ['bow', 'instrument', 'whip'];
+        if (requires.some(wType => weapon.isType(wType))) return '';
 
-        return requires.join(', ')
+        return requires.join(', ');
       },
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
@@ -186,7 +186,7 @@ export class Trouvere extends Wanderer {
 
         // if (this.isSkillActive('Sonic Brand'))
 
-        return (skillLevel * 120 + status.totalCon * 2 * stageMannerLv) * (baseLevel / 100);
+        return (200 + skillLevel * 120 + status.totalCon * 3 * stageMannerLv) * (baseLevel / 100);
       },
     },
   ];
