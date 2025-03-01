@@ -1,11 +1,11 @@
-import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
 import { JOB_4_MAX_JOB_LEVEL, JOB_4_MIN_MAX_LEVEL } from '../app-config';
-import { ShadowChaser } from './ShadowChaser';
-import { addBonus, floor, genSkillList } from '../utils';
+import { ElementType, WeaponTypeName } from '../constants';
 import { EquipmentSummaryModel } from '../models/equipment-summary.model';
 import { AdditionalBonusInput } from '../models/info-for-class.model';
-import { ElementType, WeaponTypeName } from '../constants';
+import { addBonus, floor, genSkillList } from '../utils';
+import { ShadowChaser } from './ShadowChaser';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
+import { ClassName } from './_class-name';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 0, 0, 1],
@@ -165,7 +165,7 @@ export class AbyssChaser extends ShadowChaser {
   private readonly atkSkillList4th: AtkSkillModel[] = [
     {
       name: 'Abyss Dagger',
-      label: '[V2] Abyss Dagger Lv5',
+      label: '[V3] Abyss Dagger Lv5',
       value: 'Abyss Dagger==5',
       acd: 0.5,
       fct: 0,
@@ -174,22 +174,22 @@ export class AbyssChaser extends ShadowChaser {
       isMelee: true,
       totalHit: 2,
       verifyItemFn: ({ weapon }) => {
-        const requires: WeaponTypeName[] = ['dagger', 'sword']
-        if (requires.some(wType => weapon.isType(wType))) return ''
+        const requires: WeaponTypeName[] = ['dagger', 'sword'];
+        if (requires.some(wType => weapon.isType(wType))) return '';
 
-        return requires.join(', ')
+        return requires.join(', ');
       },
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
         const { totalPow } = status;
         const { level: baseLevel } = model;
 
-        return (skillLevel * 350 + totalPow * 5) * (baseLevel / 100);
+        return (100 + skillLevel * 500 + totalPow * 5) * (baseLevel / 100);
       },
     },
     {
       name: 'Unlucky Rush',
-      label: '[V2] Unlucky Rush Lv5',
+      label: '[V3] Unlucky Rush Lv5',
       value: 'Unlucky Rush==5',
       acd: 0.5,
       fct: 0,
@@ -206,7 +206,7 @@ export class AbyssChaser extends ShadowChaser {
     },
     {
       name: 'Deft Stab',
-      label: '[V2] Deft Stab Lv5',
+      label: '[V3] Deft Stab Lv5',
       value: 'Deft Stab==5',
       acd: 0.5,
       fct: 0,
@@ -219,37 +219,37 @@ export class AbyssChaser extends ShadowChaser {
         const { totalPow } = status;
         const { level: baseLevel } = model;
 
-        return (skillLevel * 360 + totalPow * 5) * (baseLevel / 100);
+        return (350 + skillLevel * 550 + totalPow * 5) * (baseLevel / 100);
       },
     },
     {
       name: 'Chain Reaction Shot',
-      label: '[V2] Chain Reaction Shot Lv5',
+      label: '[V3] Chain Reaction Shot Lv5',
       value: 'Chain Reaction Shot==5',
-      acd: 0.5,
+      acd: 0,
       fct: 1,
       vct: 1,
-      cd: 1.5,
+      cd: 1,
       verifyItemFn: ({ weapon }) => {
-        const requires: WeaponTypeName[] = ['bow']
-        if (requires.some(wType => weapon.isType(wType))) return ''
+        const requires: WeaponTypeName[] = ['bow'];
+        if (requires.some(wType => weapon.isType(wType))) return '';
 
-        return requires.join(', ')
+        return requires.join(', ');
       },
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
         const { totalCon } = status;
         const { level: baseLevel } = model;
 
-        const primary = (skillLevel * 600 + totalCon * 5) * (baseLevel / 100);
-        const second = (skillLevel * 950 + totalCon * 5) * (baseLevel / 100);
+        const primary = (skillLevel * 850 + totalCon * 15) * (baseLevel / 100);
+        const second = (600 + skillLevel * 2350 + totalCon * 15) * (baseLevel / 100);
 
         return floor(primary) + floor(second);
       },
     },
     {
       name: 'Frenzy Shot',
-      label: '[V2] Frenzy Shot Lv10 (1 hit)',
+      label: '[V3] Frenzy Shot Lv10 (1 hit)',
       value: 'Frenzy Shot==10',
       acd: 0.5,
       fct: 0,
@@ -259,22 +259,22 @@ export class AbyssChaser extends ShadowChaser {
       baseCriPercentage: 1,
       criDmgPercentage: 0.5,
       verifyItemFn: ({ weapon }) => {
-        const requires: WeaponTypeName[] = ['bow']
-        if (requires.some(wType => weapon.isType(wType))) return ''
+        const requires: WeaponTypeName[] = ['bow'];
+        if (requires.some(wType => weapon.isType(wType))) return '';
 
-        return requires.join(', ')
+        return requires.join(', ');
       },
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
         const { totalCon } = status;
         const { level: baseLevel } = model;
 
-        return (skillLevel * 350 + totalCon * 5) * (baseLevel / 100);
+        return (skillLevel * 400 + totalCon * 5) * (baseLevel / 100);
       },
     },
     {
       name: 'From the Abyss',
-      label: '[V2] From the Abyss Lv5',
+      label: '[V3] From the Abyss Lv5',
       value: 'From the Abyss==5',
       acd: 0,
       fct: 0,
@@ -282,17 +282,18 @@ export class AbyssChaser extends ShadowChaser {
       cd: 60,
       isMatk: true,
       element: ElementType.Neutral,
+      totalHit: 2,
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
         const { totalSpl } = status;
         const { level: baseLevel } = model;
 
-        return (150 + skillLevel * 70 + totalSpl * 5) * (baseLevel / 100);
+        return (100 + skillLevel * 500 + totalSpl * 5) * (baseLevel / 100);
       },
     },
     {
       name: 'Abyss Square',
-      label: '[V2] Abyss Square Lv5 (อยู่นอกพื้นที่สกิล)',
+      label: '[V3] Abyss Square Lv5 (อยู่นอกพื้นที่สกิล)',
       value: 'Abyss Square==5',
       acd: 0.5,
       fct: 1.5,
@@ -305,28 +306,28 @@ export class AbyssChaser extends ShadowChaser {
         const { model, skillLevel, status } = input;
         const { totalSpl } = status;
         const { level: baseLevel } = model;
-        const magicSwordMasLv = this.learnLv('Magic Sword Mastery')
+        const magicSwordMasLv = this.learnLv('Magic Sword Mastery');
 
-        return (skillLevel * (250 + magicSwordMasLv * 15) + totalSpl * 5) * (baseLevel / 100);
+        return (skillLevel * (570 + magicSwordMasLv * 20) + totalSpl * 5) * (baseLevel / 100);
       },
     },
     {
       name: 'Omega Abyss Strike',
-      label: '[V2] Omega Abyss Strike Lv10',
+      label: '[V3] Omega Abyss Strike Lv10',
       value: 'Omega Abyss Strike==10',
       acd: 0.5,
       fct: 1.5,
       vct: 4,
-      cd: 60,
+      cd: 3,
       isMatk: true,
       element: ElementType.Neutral,
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status, monster } = input;
         const { totalSpl } = status;
         const { level: baseLevel } = model;
-        const raceBonus = monster.isRace('angel', 'demon') ? 550 : 0;
+        const raceBonus = monster.isRace('angel', 'demon') ? 150 : 0;
 
-        return (skillLevel * (600 + raceBonus) + totalSpl * 10) * (baseLevel / 100);
+        return (skillLevel * (2200 + raceBonus) + totalSpl * 10) * (baseLevel / 100);
       },
     },
   ];
