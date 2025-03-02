@@ -12,21 +12,21 @@ export abstract class BaseAPIService {
   protected readonly API = {
     base: BASE_URL,
 
-    login: `${BASE_URL}/login`,
-    logout: `${BASE_URL}/me/logout`,
-    refreshToken: `${BASE_URL}/refresh_token`,
+    login: `${BASE_URL}/auth/login`,
+    logout: `${BASE_URL}/auth/logout`,
+    refreshToken: `${BASE_URL}/auth/refresh_token`,
 
-    getMyProfile: `${BASE_URL}/me`,
+    getMyProfile: `${BASE_URL}/auth/profile`,
 
-    getMyEntirePreset: `${BASE_URL}/me/ro_entire_presets`,
+    getMyEntirePreset: `${BASE_URL}/presets/entire`,
 
-    getMyPreset: `${BASE_URL}/me/ro_presets`,
-    getMyPresets: `${BASE_URL}/me/ro_presets`,
-    createMyPreset: `${BASE_URL}/me/ro_presets`,
-    bulkCreateMyPresets: `${BASE_URL}/me/bulk_ro_presets`,
+    getMyPreset: `${BASE_URL}/presets`,
+    getMyPresets: `${BASE_URL}/presets`,
+    createMyPreset: `${BASE_URL}/presets`,
+    bulkCreateMyPresets: `${BASE_URL}/presets/bulk`,
 
-    likePresetTags: `${BASE_URL}/preset_tags`,
-    sharedPresets: `${BASE_URL}/ro_presets`,
+    likePresetTags: `${BASE_URL}/presets/tags`,
+    sharedPresets: `${BASE_URL}/presets/tags/search`,
   } as const;
 
   protected abstract readonly http: HttpClient;

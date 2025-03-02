@@ -51,7 +51,7 @@ export class PresetService extends BaseAPIService {
   }
 
   unsharePreset(id: string) {
-    return this.delete<Omit<RoPresetModel, 'model'>>(`${this.API.getMyPreset}/${id}/publish`);
+    return this.delete<Omit<RoPresetModel, 'model'>>(`${this.API.getMyPreset}/${id}/unpublish`);
   }
 
   addPresetTags(id: string, body: BulkOperationRequest) {
@@ -69,13 +69,13 @@ export class PresetService extends BaseAPIService {
   }
 
   unlikePresetTag(tagId: string) {
-    return this.delete<LikeTagResponse>(`${this.API.likePresetTags}/${tagId}/like`);
+    return this.delete<LikeTagResponse>(`${this.API.likePresetTags}/${tagId}/unlike`);
   }
 
   getPublishPresets(params: { classId: number; tagName: string; skip: number; take: number }) {
     const { classId, tagName, skip, take } = params;
     return this.get<PublishPresetsReponse>(
-      `${this.API.sharedPresets}/class_by_tags/${classId}/${tagName}?skip=${skip || 0}&take=${take || 1}`,
+      `${this.API.sharedPresets}/${classId}/${tagName}?skip=${skip || 0}&take=${take || 1}`,
     );
   }
 }
