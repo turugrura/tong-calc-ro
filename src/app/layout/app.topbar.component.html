@@ -65,17 +65,13 @@
         </button> -->
 
     <!-- <a class="flex align-items-center gap-2 px-2 mx-2 my-1 youtube-link" target="_blank" href="{{ env.youtubeVideoUrl }}">
-      Credit to 
       <i class="pi pi-youtube text-4xl text-red-500"></i>
       <span class="text-xl text-white-alpha-90">วิธีใช้งาน</span>
-    </a> -->
-    <a href="https://web.facebook.com/zfehu.oivgwhy" target="_blank" rel="noreferrer noopener">
-      Credit to <p-chip label="Tong Aphisit" icon="pi pi-facebook"></p-chip>
     </a>
-    <!-- <a #survey [hidden]="true" href="{{ env.surveyUrl }}" target="_blank" rel="noreferrer noopener"> </a>
-    <a #tracking [hidden]="true" href="{{ env.issueTrackingUrl }}" target="_blank" rel="noreferrer noopener"> </a> -->
+    <a #survey [hidden]="true" href="{{ env.surveyUrl }}" target="_blank" rel="noreferrer noopener"> </a>
+    <a #tracking [hidden]="true" href="{{ env.issueTrackingUrl }}" target="_blank" rel="noreferrer noopener"> </a>
     <div class="flex align-items-center">
-      <!-- <button
+      <button
         class="font-bold p-button-danger p-button-rounded p-button-raised"
         icon="pi pi-exclamation-triangle"
         pButton
@@ -90,10 +86,10 @@
         pRipple
         label="Issues Tracking"
         (click)="tracking.click()"
-      ></button> -->
-      <!-- <button class="font-bold p-button-primary p-button-rounded p-button-raised" icon="pi pi-heart" pButton pRipple label="Support" (click)="showDialog()"></button> -->
-    </div>
-    <!-- <div *ngIf="!!username" class="ml-3 flex align-items-center">
+      ></button>
+      <button class="font-bold p-button-primary p-button-rounded p-button-raised" icon="pi pi-heart" pButton pRipple label="Support" (click)="showDialog()"></button>
+    </div> -->
+    <div *ngIf="!!username" class="ml-3 flex align-items-center">
       <p-chip label="{{ username }}" icon="pi pi-google" class="chip-profile" styleClass="text-xl"></p-chip>
       <button class="p-link layout-topbar-button mx-0 icon-user" (click)="showMyProfile()">
         <i class="pi pi-user"></i>
@@ -102,7 +98,7 @@
         <i class="pi pi-sign-out text-xl"></i>
       </button>
     </div>
-    <a *ngIf="!username" class="font-bold p-button-secondary" icon="pi pi-google" pButton pRipple label="Login" href="{{ env.roBackendUrl + '/auth/google' }}"></a> -->
+    <a *ngIf="!username" class="font-bold p-button-secondary" icon="pi pi-google" pButton pRipple label="Login" href="{{ env.roBackendUrl + '/auth/google' }}"></a>
   </div>
   <p-dialog header="Support" [draggable]="false" [resizable]="false" [modal]="true" [(visible)]="visible" [style]="{ 'min-width': '300px' }">
     <div class="card flex flex-column align-items-center gap-2 flex-wrap">
@@ -173,7 +169,7 @@
     </div>
   </p-dialog> -->
 
-  <p-dialog header="References" [draggable]="false" [resizable]="false" [modal]="true" [(visible)]="visibleReference" [style]="{ width: '50vw', height: '70vh' }">
+  <!-- <p-dialog header="References" [draggable]="false" [resizable]="false" [modal]="true" [(visible)]="visibleReference" [style]="{ width: '50vw', height: '70vh' }">
     <ul>
       <li *ngFor="let reference of references">
         <span class="">[ by {{ reference.writer }} ]</span>
@@ -181,5 +177,5 @@
         <a href="{{ reference.link }}" target="_blank" rel="noreferrer noopener">Link</a>
       </li>
     </ul>
-  </p-dialog>
+  </p-dialog> -->
 </div>
