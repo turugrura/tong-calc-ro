@@ -12,7 +12,7 @@ export const crafted4 = [
   "Gear_CON",
   "Gear_PATK",
   "Gear_SMATK",
-]
+];
 
 export const crafted3 = [
   "Gear_DN1",
@@ -43,16 +43,16 @@ export const crafted3 = [
   "Gear_SOA2",
   "Gear_NW1",
   "Gear_NW2",
-  // "Gear_NW3", 311379,311381,311382,311380
-  // "Gear_NW4",
-  // "Gear_NW5",
+  "Gear_NW3",
+  "Gear_NW4",
+  "Gear_NW5",
   "Gear_HN1",
   "Gear_HN2",
   "Gear_SS1",
   "Gear_SS2",
-  // "Gear_SS3",
+  "Gear_SS3",
   "Gear_TR1",
   "Gear_TR2",
   "Gear_SH1",
   "Gear_SH2",
-]
+];

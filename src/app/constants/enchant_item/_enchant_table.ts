@@ -97,7 +97,7 @@ import {
 } from './_basic';
 import { cirAutumnGarment2, cirAutumnGarment3, cirAutumnGarment4, cirAutumnSummer2, cirAutumnWinter2, cirSpringGarment2, cirSpringGarment3, cirSpringGarment4, manAutumnGarment2, manAutumnGarment3, manAutumnGarment4, manAutumnSummer2, manAutumnWinter2, manSpringGarment2, manSpringGarment3, manSpringGarment4, signetAcc3, signetAcc4, stellarAcc2, stellarAcc3, stellarAcc4 } from './constellation_tower';
 import { crafted3, crafted4 } from './crafted_weapon';
-import { dimWeapon2, dimWeapon3, dimWeapon4, dimGlaArmor2, dimGlaArmor3, dimGlaArmor4, dimGlaBoot2, dimGlaBoot3, dimGlaBoot4, dimGlaGarment2, dimGlaGarment3, dimGlaGarment4 } from './dim_glacier';
+import { dimGlaArmor2, dimGlaArmor3, dimGlaArmor4, dimGlaBoot2, dimGlaBoot3, dimGlaBoot4, dimGlaGarment2, dimGlaGarment3, dimGlaGarment4, dimWeapon2, dimWeapon3, dimWeapon4 } from './dim_glacier';
 import { dimensionAcc3, dimensionAcc4, dimensionHead2, dimensionHead3, dimensionHead4, dimensionWeapon3, dimensionWeapon4, timeGap3, timeGap4 } from './dimention';
 import { droopingLt3, droopingLt4, redBlueLt3, redBlueLt4 } from './drooping_thanatos_lt';
 import { furiousHeadUp3, furiousHeadUp4, furiousWeaponUp3, furiousWeaponUp4 } from './furious';
@@ -1282,6 +1282,33 @@ export const EnchantTable: EntTable[] = [
   { name: "Wicked_Cross", enchants: [null, null, crafted3, crafted4] },
   { name: "Wicked_Katar", enchants: [null, null, crafted3, crafted4] },
   { name: "Wicked_Axe", enchants: [null, null, crafted3, crafted4] },
+
+  { name: "Fourth_1h_Nindo", enchants: [null, null, crafted3, crafted4] },
+  { name: "Fourth_1h_Edge", enchants: [null, null, crafted3, crafted4] },
+  { name: "Fourth_1h_Spear", enchants: [null, null, crafted3, crafted4] },
+  { name: "Fourth_1h_Book", enchants: [null, null, crafted3, crafted4] },
+  { name: "Fourth_1h_Rod", enchants: [null, null, crafted3, crafted4] },
+  { name: "Fourth_1h_Wand", enchants: [null, null, crafted3, crafted4] },
+  { name: "Fourth_Bh_Sword", enchants: [null, null, crafted3, crafted4] },
+  { name: "Fourth_Bh_Staff", enchants: [null, null, crafted3, crafted4] },
+  { name: "Fourth_1h_Sword", enchants: [null, null, crafted3, crafted4] },
+  { name: "Fourth_1h_Dagger", enchants: [null, null, crafted3, crafted4] },
+  { name: "Fourth_1h_Nindo2", enchants: [null, null, crafted3, crafted4] },
+  { name: "Fourth_1h_Manual", enchants: [null, null, crafted3, crafted4] },
+  { name: "Fourth_1h_Plant", enchants: [null, null, crafted3, crafted4] },
+  { name: "Fourth_1h_Mace", enchants: [null, null, crafted3, crafted4] },
+  { name: "Fourth_Bh_Katar", enchants: [null, null, crafted3, crafted4] },
+  { name: "Fourth_Bh_Axe", enchants: [null, null, crafted3, crafted4] },
+  { name: "Fourth_1h_Knuckle", enchants: [null, null, crafted3, crafted4] },
+  { name: "Fourth_Bh_Lute", enchants: [null, null, crafted3, crafted4] },
+  { name: "Fourth_1h_Whip", enchants: [null, null, crafted3, crafted4] },
+  { name: "Fourth_Bh_Fuuma", enchants: [null, null, crafted3, crafted4] },
+  { name: "Fourth_Bh_Bow", enchants: [null, null, crafted3, crafted4] },
+  { name: "Fourth_Revolver", enchants: [null, null, crafted3, crafted4] },
+  { name: "Fourth_Rifle", enchants: [null, null, crafted3, crafted4] },
+  { name: "Fourth_Shotgun", enchants: [null, null, crafted3, crafted4] },
+  { name: "Fourth_Gatling", enchants: [null, null, crafted3, crafted4] },
+  { name: "Fourth_Grenade", enchants: [null, null, crafted3, crafted4] },
 
   { name: "GoodnEvil_Circlet_DK", enchants: [null, null, goodEvilHead3, goodEvilHead4] },
   { name: "GoodnEvil_Circlet_IG", enchants: [null, null, goodEvilHead3, goodEvilHead4] },
