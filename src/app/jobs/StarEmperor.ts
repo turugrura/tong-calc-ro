@@ -173,30 +173,30 @@ export class StarEmperor extends StarGladiator {
 
   private readonly activeSkillList3rd: ActiveSkillModel[] = [
     {
-      label: 'Lunar Luminance 5',
+      label: 'Lunar Luminance',
       name: 'Lunar Luminance',
-      inputType: 'selectButton',
+      inputType: 'dropdown',
       dropdown: [
-        { label: 'Yes', value: 5, skillLv: 5, isUse: true },
-        { label: 'No', value: 0, isUse: false },
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 5', value: 5, skillLv: 5, isUse: true },
       ],
     },
     {
-      label: 'Solar Stance 3',
+      label: 'Solar Stance',
       name: 'Solar Stance',
-      inputType: 'selectButton',
+      inputType: 'dropdown',
       dropdown: [
-        { label: 'Yes', value: 3, skillLv: 3, isUse: true, bonus: { atkPercent: 5 } },
-        { label: 'No', value: 0, isUse: false },
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 3', value: 3, skillLv: 3, isUse: true, bonus: { atkPercent: 5 } },
       ],
     },
     {
-      label: 'Solar Luminance 5',
+      label: 'Solar Luminance',
       name: 'Solar Luminance',
-      inputType: 'selectButton',
+      inputType: 'dropdown',
       dropdown: [
-        { label: 'Yes', value: 5, skillLv: 5, isUse: true },
-        { label: 'No', value: 0, isUse: false },
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 5', value: 5, skillLv: 5, isUse: true },
       ],
     },
     {
@@ -209,21 +209,21 @@ export class StarEmperor extends StarGladiator {
       ],
     },
     {
-      label: 'Stellar Stance 3',
+      label: 'Stellar Stance',
       name: 'Stellar Stance',
-      inputType: 'selectButton',
+      inputType: 'dropdown',
       dropdown: [
-        { label: 'Yes', value: 3, skillLv: 3, isUse: true, bonus: { aspdPercent: 10 } },
-        { label: 'No', value: 0, isUse: false },
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 3', value: 3, skillLv: 3, isUse: true, bonus: { aspdPercent: 10 } },
       ],
     },
     {
-      label: 'Stellar Luminance 5',
+      label: 'Stellar Luminance',
       name: 'Stellar Luminance',
-      inputType: 'selectButton',
+      inputType: 'dropdown',
       dropdown: [
-        { label: 'Yes', value: 5, skillLv: 5, isUse: true },
-        { label: 'No', value: 0, isUse: false },
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 5', value: 5, skillLv: 5, isUse: true },
       ],
     },
   ];
