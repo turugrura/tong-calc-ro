@@ -1,10 +1,10 @@
 import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { ConfirmationService, MenuItem, MessageService } from 'primeng/api';
-import { LayoutService } from './service/app.layout.service';
+import { DialogService } from 'primeng/dynamicdialog';
+import { Subscription } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { AuthService } from '../api-services';
-import { Subscription } from 'rxjs';
-import { DialogService } from 'primeng/dynamicdialog';
+import { LayoutService } from './service/app.layout.service';
 
 @Component({
   selector: 'app-topbar',
@@ -61,7 +61,7 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
     'Tab "Item Descriptions" คือ bonus ของไอเทมแต่ละชิ้นและคำอธิบาย (เอาไว้ตรวจสอบว่าได้ bonus ถูกไหม)',
   ];
 
-  references: { label: string; link: string; writer: string; date?: string }[] = [
+  references: { label: string; link: string; writer: string; date?: string; }[] = [
     {
       label: 'Jobs Improvement Bundle Update (20 June 2024)',
       writer: 'RO GGT',
@@ -204,7 +204,16 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
     // },
   ];
 
-  updates: { v: string; date: string; logs: string[] }[] = [
+  updates: { v: string; date: string; logs: string[]; }[] = [
+    {
+      v: 'V3.2.0',
+      date: '02-03-2568',
+      logs: [
+        "Updated Main class skill V3",
+        "Updated Extended class skill V2",
+        "Added Official updated items",
+      ],
+    },
     {
       v: 'V3.1.15',
       date: '06-02-2568',

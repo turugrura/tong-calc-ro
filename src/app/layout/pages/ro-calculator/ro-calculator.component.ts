@@ -1,38 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { catchError, debounceTime, filter, finalize, forkJoin, mergeMap, Observable, of, Subject, Subscription, switchMap, take, tap, throwError } from 'rxjs';
-import { BaseStateCalculator } from './base-state-calculator';
-import { Calculator } from './calculator';
-import { RoService } from 'src/app/api-services/ro.service';
-import { ItemModel } from '../../../models/item.model';
 import { ConfirmationService, MenuItem, MessageService, PrimeIcons, SelectItemGroup } from 'primeng/api';
-import { MonsterModel } from '../../../models/monster.model';
-import { DropdownModel, ItemDropdownModel } from '../../../models/dropdown.model';
-import { ItemListModel } from '../../../models/item-list.model';
 import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
-import { PresetTableComponent } from './preset-table/preset-table.component';
-import { environment } from 'src/environments/environment';
-import { MonsterDataViewComponent } from './monster-data-view/monster-data-view.component';
-import { HpSpTable } from '../../../models/hp-sp-table.model';
-import { LayoutService } from '../../service/app.layout.service';
-import { BasicDamageSummaryModel, SkillDamageSummaryModel } from '../../../models/damage-summary.model';
-import { ChanceModel } from '../../../models/chance-model';
-import {
-  createBaseHPSPOptionList,
-  createExtraOptionList,
-  createMainModel,
-  createMainStatOptionList,
-  createNumberDropdownList,
-  isNumber,
-  prettyItemDesc,
-  sortObj,
-  toDropdownList,
-  toRawOptionTxtList,
-  toUpsertPresetModel,
-  verifySyncPreset,
-  waitRxjs,
-} from 'src/app/utils';
+import { Observable, Subject, Subscription, catchError, debounceTime, filter, finalize, forkJoin, mergeMap, of, switchMap, take, tap, throwError } from 'rxjs';
 import { AuthService, PresetModel, PresetService } from 'src/app/api-services';
-import { getClassDropdownList } from '../../../jobs/_class-list';
+import { RoService } from 'src/app/api-services/ro.service';
+import { AllowedCompareItemTypes } from 'src/app/app-config';
 import { ToErrorDetail } from 'src/app/app-errors';
 import {
   AllowLeftWeaponMapper,
@@ -59,7 +31,35 @@ import {
   getMonsterSpawnMap,
 } from 'src/app/constants';
 import { ActiveSkillModel, AtkSkillModel, CharacterBase, ClassID, ClassIcon, ClassName, JobPromotionMapper, PassiveSkillModel } from 'src/app/jobs';
-import { AllowedCompareItemTypes } from 'src/app/app-config';
+import {
+  createBaseHPSPOptionList,
+  createExtraOptionList,
+  createMainModel,
+  createMainStatOptionList,
+  createNumberDropdownList,
+  isNumber,
+  prettyItemDesc,
+  sortObj,
+  toDropdownList,
+  toRawOptionTxtList,
+  toUpsertPresetModel,
+  verifySyncPreset,
+  waitRxjs,
+} from 'src/app/utils';
+import { environment } from 'src/environments/environment';
+import { getClassDropdownList } from '../../../jobs/_class-list';
+import { ChanceModel } from '../../../models/chance-model';
+import { BasicDamageSummaryModel, SkillDamageSummaryModel } from '../../../models/damage-summary.model';
+import { DropdownModel, ItemDropdownModel } from '../../../models/dropdown.model';
+import { HpSpTable } from '../../../models/hp-sp-table.model';
+import { ItemListModel } from '../../../models/item-list.model';
+import { ItemModel } from '../../../models/item.model';
+import { MonsterModel } from '../../../models/monster.model';
+import { LayoutService } from '../../service/app.layout.service';
+import { BaseStateCalculator } from './base-state-calculator';
+import { Calculator } from './calculator';
+import { MonsterDataViewComponent } from './monster-data-view/monster-data-view.component';
+import { PresetTableComponent } from './preset-table/preset-table.component';
 
 interface MonsterSelectItemGroup extends SelectItemGroup {
   items: any[];
@@ -143,7 +143,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   skillBuffs = JobBuffs;
   canPromote = false;
 
-  preSets: (DropdownModel & { icon: string })[] = [];
+  preSets: (DropdownModel & { icon: string; })[] = [];
   selectedPreset = undefined;
   isInProcessingPreset = false;
 
@@ -320,7 +320,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     header: string;
     default?: boolean;
   }[] = [];
-  selectedColumns: { field: string; header: string }[] = [];
+  selectedColumns: { field: string; header: string; }[] = [];
   selectedMonsterIds: number[] = this.getCachedMonsterIdsForCalc();
   calcDamages: any[] = [];
 
@@ -334,14 +334,14 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   isEnableCompare = false;
   showCompareItemMap = {} as any;
   compareItemNames = [] as ItemTypeEnum[];
-  compareItemList: (keyof typeof ItemTypeEnum)[] = [...AllowedCompareItemTypes]
+  compareItemList: (keyof typeof ItemTypeEnum)[] = [...AllowedCompareItemTypes];
 
   ref: DynamicDialogRef | undefined;
   monsterRef: DynamicDialogRef | undefined;
   hideBasicAtk = this.layoutService.config.hideBasicAtk;
   readonly hideHpSp = HideHpSp;
 
-  equipableItems: (DropdownModel & { id: number; position: string })[] = [];
+  equipableItems: (DropdownModel & { id: number; position: string; })[] = [];
   offensiveSkills: DropdownModel[] = [];
 
   onClassChangedSubject = new Subject<boolean>();
@@ -733,7 +733,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
           rawOptionTxts[slot] = this.model2.rawOptionTxts[slot];
         }
 
-        const isAllowShield = calc.isAllowShield()
+        const isAllowShield = calc.isAllowShield();
         for (let slot = ItemOptionNumber.W_Right_1; slot <= ItemOptionNumber.W_Right_3; slot++) {
           if (!itemId || !isAllowShield) {
             this.model2.rawOptionTxts[slot] = null;
@@ -742,15 +742,15 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         }
 
         if (!isAllowShield) {
-          const clearList = [ItemTypeEnum.shield, ItemTypeEnum.leftWeapon]
+          const clearList = [ItemTypeEnum.shield, ItemTypeEnum.leftWeapon];
           for (const itemT of clearList) {
-            calc.setItem({ itemId: undefined, itemType: itemT })
+            calc.setItem({ itemId: undefined, itemType: itemT });
             for (const relatedItemType of MainItemWithRelations[itemT]) {
-              calc.setItem({ itemId: undefined, itemType: relatedItemType })
+              calc.setItem({ itemId: undefined, itemType: relatedItemType });
             }
           }
 
-          const [_, slots] = ItemOptionTable.find(([itemType]) => itemType === ItemTypeEnum.shield) || ['', []]
+          const [_, slots] = ItemOptionTable.find(([itemType]) => itemType === ItemTypeEnum.shield) || ['', []];
           for (const slot of slots) {
             rawOptionTxts[slot] = null;
             this.model2.rawOptionTxts[slot] = null;
@@ -1058,7 +1058,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   private resetModel() {
     const { class: _class, level, jobLevel } = this.model;
     this.model = { ...createMainModel(), class: _class, level, jobLevel };
-    this.resetModel2()
+    this.resetModel2();
   }
 
   private resetModel2() {
@@ -1162,7 +1162,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   }
 
   createCloudPreset(label: string) {
-    const classId = this.model.class
+    const classId = this.model.class;
 
     const obs = this.presetService
       .createPreset({
@@ -1197,7 +1197,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
             label: preset.label,
             value: preset.id,
             icon: ClassIcon[classId],
-          }, ...this.preSets]
+          }, ...this.preSets];
           return waitRxjs();
         }),
         catchError((err) => {
@@ -1312,7 +1312,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
             summary: 'Deleted',
             detail: `"${label}" was deleted.`,
           });
-          this.preSets = this.preSets.filter(a => a.value !== id)
+          this.preSets = this.preSets.filter(a => a.value !== id);
           this.selectedPreset = undefined;
 
           return waitRxjs();
@@ -1335,7 +1335,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
           return this.loadItemSet(preset.model).pipe(switchMap(() => waitRxjs(0.1, preset)));
         }),
         tap((preset) => {
-          this.updateCompareEvent.next(1)
+          this.updateCompareEvent.next(1);
           if (presetName) this.selectedPreset = presetName;
           this.messageService.add({
             severity: 'success',
@@ -1590,7 +1590,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     this.selectedCharacter = c || Characters[0]['instant'];
     this.calculator.setClass(this.selectedCharacter);
     this.isAllowTraitStat = this.selectedCharacter.isAllowTraitStat();
-    this.canPromote = !!JobPromotionMapper[this.model.class]
+    this.canPromote = !!JobPromotionMapper[this.model.class];
     this.isAllowLeftWeaponByClass = AllowLeftWeaponMapper[this.selectedCharacter.className] || false;
   }
 
@@ -1618,7 +1618,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     this.jobList = createNumberDropdownList({ from: 1, to: maxJob, excludingNumbers: [66, 67, 68, 69] });
   }
 
-  private setClassLvl(params: { currentLvl: number; currentJob: number; isSetMinLevel?: boolean }) {
+  private setClassLvl(params: { currentLvl: number; currentJob: number; isSetMinLevel?: boolean; }) {
     const { currentJob, currentLvl, isSetMinLevel = false } = params;
     const {
       minMaxLevel: [min, max],
@@ -2077,6 +2077,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       }
 
       // return a.label.startsWith('Glacier')
+      // return this.items[+a.value]?.aegisName?.startsWith('Fourth');
 
       return onlyMe(a);
     };
@@ -2274,7 +2275,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     // in order to check is the weapon allow to hold shield or left weapon or not
     if (itemType === ItemTypeEnum.weapon) {
       this.calculator.setWeapon({ itemId, refine });
-      this.isWeaponCanGrade = this.items[itemId]?.canGrade || false
+      this.isWeaponCanGrade = this.items[itemId]?.canGrade || false;
     }
 
     this.updateItemEvent.next(itemType);
@@ -2423,8 +2424,8 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
           finalize(() => (this.isInProcessingPreset = false)),
         )
         .subscribe(() => {
-          this.updateItemEvent.next(1)
-          this.updateCompareEvent.next(1)
+          this.updateItemEvent.next(1);
+          this.updateCompareEvent.next(1);
         });
     }
   }
@@ -2485,16 +2486,16 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   }
 
   onJobPromotionClick() {
-    const nextJobId = JobPromotionMapper[this.model?.class]
+    const nextJobId = JobPromotionMapper[this.model?.class];
     if (!nextJobId) return;
 
     this.waitConfirm(`Change to "${ClassID[nextJobId]}" with current equipment ?`).then((isConfirm) => {
-      if (!isConfirm) return
+      if (!isConfirm) return;
 
-      this.saveCurrentStateItemset()
+      this.saveCurrentStateItemset();
 
-      const j = JSON.parse(localStorage.getItem('ro-set')) || {}
-      j.class = nextJobId
+      const j = JSON.parse(localStorage.getItem('ro-set')) || {};
+      j.class = nextJobId;
 
       this.loadItemSet(j, true)
         .pipe(
@@ -2514,7 +2515,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
             return of(null);
           }),
-        ).subscribe()
+        ).subscribe();
     });
 
   }
@@ -2537,7 +2538,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   private syncLocalPresetToCloud() {
     if (!this.isLoggedIn) return;
 
-    const localPresets = this.getPresetList() as unknown as { value: string; model: any }[];
+    const localPresets = this.getPresetList() as unknown as { value: string; model: any; }[];
     if (localPresets.length === 0) return;
 
     this.isInProcessingPreset = true;
