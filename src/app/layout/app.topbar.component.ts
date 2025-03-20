@@ -206,6 +206,15 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
 
   updates: { v: string; date: string; logs: string[]; }[] = [
     {
+      v: 'V3.2.2',
+      date: '20-03-2568',
+      logs: [
+        "Added Official updated items",
+        "Fixed cri damage percentage of StarEmperor skills",
+        "Fixed Doram skill not be the latest version (Catnip Meteor, Lunatic Carrot Beat)",
+      ],
+    },
+    {
       v: 'V3.2.1',
       date: '06-03-2568',
       logs: [

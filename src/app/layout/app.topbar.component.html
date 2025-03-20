@@ -135,7 +135,8 @@
     [modal]="true"
     [(visible)]="visibleUpdate"
     (onHide)="onHideUpdateDialog()"
-    [style]="{ width: '50vw', height: '70vh' }"
+    [style]="{ height: '70vh' }"
+    [position]="'top'"
   >
     <ng-template pTemplate="header">
       <div class="flex">
@@ -160,6 +161,7 @@
               icon="pi pi-eye"
               (click)="onReadUpdateClick(update.v)"
             ></button>
+            <i *ngIf="!(unreadVersion === -1 || unreadVersion > i)" class="pi pi-fw pi-eye-slash ml-2"></i>
           </span>
         </div>
       </div>
