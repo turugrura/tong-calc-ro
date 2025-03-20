@@ -227,6 +227,7 @@ export class SkyEmperor extends StarEmperor {
       cd: 0.7,
       isMelee: true,
       hit: 2,
+      criDmgPercentage: 0.5,
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
         const { totalPow } = status;
@@ -250,6 +251,7 @@ export class SkyEmperor extends StarEmperor {
       cd: 0.3,
       isMelee: true,
       hit: 2,
+      criDmgPercentage: 0.5,
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
         const { totalPow } = status;
@@ -272,6 +274,7 @@ export class SkyEmperor extends StarEmperor {
       vct: 1,
       cd: 0.3,
       isMelee: true,
+      criDmgPercentage: 0.5,
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
         const { totalPow } = status;

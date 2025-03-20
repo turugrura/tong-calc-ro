@@ -93,6 +93,7 @@ export class StarEmperor extends StarGladiator {
       vct: 0,
       cd: 1,
       isMelee: true,
+      criDmgPercentage: 0.5,
       formula: (input: AtkSkillFormulaInput): number => {
         const { skillLevel } = input;
 
@@ -108,6 +109,7 @@ export class StarEmperor extends StarGladiator {
       vct: 0,
       cd: 1,
       isMelee: true,
+      criDmgPercentage: 0.5,
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
@@ -125,6 +127,7 @@ export class StarEmperor extends StarGladiator {
       vct: 0,
       cd: 0,
       isMelee: true,
+      criDmgPercentage: 0.5,
       formula: (input: AtkSkillFormulaInput): number => {
         const { skillLevel } = input;
 
@@ -140,6 +143,7 @@ export class StarEmperor extends StarGladiator {
       vct: 0,
       cd: 0,
       isMelee: true,
+      criDmgPercentage: 0.5,
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel } = input;
         const baseLevel = model.level;
