@@ -682,6 +682,17 @@
         ></app-equipment>
       </div>
     </div>
+    <div class="grid grid-nogutter item_label_compare" *ngIf="showCompareItemMap.shield">
+      <div class="col-12">
+        <app-equipment [itemType]="'shield'" [placeholder]="'Shield'" [items]="items" [mapEnchant]="mapEnchant"
+          [itemList]="shieldList" [refineList]="refineList" [cardList]="shieldCardList" [optionList]="optionList"
+          [(itemId)]="model2.shield" [(itemRefine)]="model2.shieldRefine" [(card1Id)]="model.shieldCard"
+          [(itemGrade)]="model.shieldGrade" [(enchant2Id)]="model.shieldEnchant1" [(enchant3Id)]="model.shieldEnchant2"
+          [(enchant4Id)]="model.shieldEnchant3" [(option1Value)]="model.rawOptionTxts[itemOptionNumber.Shield_1]"
+          [(option2Value)]="model.rawOptionTxts[itemOptionNumber.Shield_2]" (selectItemChange)="onCompareItemChange()"
+          (optionChange)="onCompareItemChange()" (gradeChange)="onCompareItemChange()"></app-equipment>
+      </div>
+    </div>
 
     <!-- Head Upper -->
     <div class="grid grid-nogutter item_label_head">
