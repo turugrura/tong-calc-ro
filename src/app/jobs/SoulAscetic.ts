@@ -354,11 +354,11 @@ export class SoulAscetic extends SoulReaper {
     },
     {
       name: 'Totem of Tutelary',
-      label: 'Totem of Tutelary 5',
-      inputType: 'selectButton',
+      label: 'Totem of Tutelary',
+      inputType: 'dropdown',
       dropdown: [
-        { label: 'Yes', value: 1, isUse: true },
-        { label: 'No', value: 0, isUse: false },
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 5', value: 1, isUse: true },
       ],
     },
   ];

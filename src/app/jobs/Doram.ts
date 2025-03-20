@@ -135,10 +135,11 @@ export class Doram extends CharacterBase {
       totalHit: 7,
       getElement: () => ColorOfHyunrokValue[this.activeSkillLv('Colors of Hynrok')] || ElementType.Neutral,
       formula: (input: AtkSkillFormulaInput): number => {
-        const { skillLevel, model } = input;
+        const { skillLevel, model, status } = input;
         const baseLevel = model.level;
+        const { totalInt } = status;
 
-        return (200 + skillLevel * 100) * (baseLevel / 100);
+        return (200 + skillLevel * 100 + totalInt * 5) * (baseLevel / 100);
       },
     },
     {
@@ -167,12 +168,13 @@ export class Doram extends CharacterBase {
       cd: 6,
       hit: 3,
       formula: (input: AtkSkillFormulaInput): number => {
-        const { skillLevel, model } = input;
+        const { skillLevel, model, status } = input;
         const baseLevel = model.level;
+        const { totalStr } = status;
 
         const bonus = this.learnLv('Sprit Of Life') > 0 ? 2.2 : 1;
 
-        return (200 + skillLevel * 100) * bonus * (baseLevel / 100);
+        return (200 + skillLevel * 100 + totalStr * 5) * bonus * (baseLevel / 100);
       },
     },
   ];
