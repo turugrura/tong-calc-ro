@@ -1044,6 +1044,7 @@ export const EnchantTable: EntTable[] = [
   { name: 'Gray_W_Ring', enchants: [null, grayWolfAccL_slot2, grayWolfAccL_slot3, grayWolfAccL_slot4] },
   { name: 'Gray_W_Earing', enchants: [null, grayWolfAccL_slot2, grayWolfAccL_slot3, grayWolfAccL_slot4] },
   { name: 'Gray_W_Necklace', enchants: [null, grayWolfAccL_slot2, grayWolfAccL_slot3, grayWolfAccL_slot4] },
+  { name: 'GreyW_S_Ring_TH', enchants: [null, grayWolfAccL_slot2, grayWolfAccL_slot3, grayWolfAccL_slot4] },
 
   { name: 'Officer_Cap_LT', enchants: [null, null, null, BaseState._3] },
   { name: 'Hero_Boots_LT', enchants: [null, heroBootLt2, heroBootLt3, heroBootLt4] },
