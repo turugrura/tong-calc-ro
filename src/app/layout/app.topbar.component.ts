@@ -7,10 +7,11 @@ import { AuthService } from '../api-services';
 import { LayoutService } from './service/app.layout.service';
 
 @Component({
-  selector: 'app-topbar',
-  templateUrl: './app.topbar.component.html',
-  styleUrls: ['./app.topbar.component.css'],
-  providers: [ConfirmationService, MessageService, DialogService],
+    selector: 'app-topbar',
+    templateUrl: './app.topbar.component.html',
+    styleUrls: ['./app.topbar.component.css'],
+    providers: [ConfirmationService, MessageService, DialogService],
+    standalone: false
 })
 export class AppTopBarComponent implements OnInit, OnDestroy {
   activeItem: MenuItem | undefined;

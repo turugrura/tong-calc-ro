@@ -8,9 +8,10 @@ interface EventEmitterResultModel {
 }
 
 @Component({
-  selector: 'app-equipment-shadow',
-  templateUrl: './equipment-shadow.component.html',
-  styleUrls: ['../ro-calculator.component.css'],
+    selector: 'app-equipment-shadow',
+    templateUrl: './equipment-shadow.component.html',
+    styleUrls: ['../ro-calculator.component.css'],
+    standalone: false
 })
 export class EquipmentShadowComponent implements OnChanges {
   @Input({ required: true }) itemType!: string;

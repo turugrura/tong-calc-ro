@@ -1,9 +1,10 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-misc-detail',
-  templateUrl: './misc-detail.component.html',
-  styleUrls: ['../ro-calculator.component.css'],
+    selector: 'app-misc-detail',
+    templateUrl: './misc-detail.component.html',
+    styleUrls: ['../ro-calculator.component.css'],
+    standalone: false
 })
 export class MiscDetailComponent {
   @Input({ required: true }) elementTable: any[];

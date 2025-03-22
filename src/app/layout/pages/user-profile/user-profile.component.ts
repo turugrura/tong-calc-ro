@@ -5,10 +5,11 @@ import { Subscription, catchError, of, tap } from 'rxjs';
 import { MessageService } from 'primeng/api';
 
 @Component({
-  selector: 'app-user-profile',
-  templateUrl: './user-profile.component.html',
-  styleUrls: ['./user-profile.component.css'],
-  providers: [MessageService],
+    selector: 'app-user-profile',
+    templateUrl: './user-profile.component.html',
+    styleUrls: ['./user-profile.component.css'],
+    providers: [MessageService],
+    standalone: false
 })
 export class UserProfileComponent implements OnInit, OnDestroy {
   profile: Profile;

@@ -4,9 +4,10 @@ import { ActiveSkillModel, CharacterBase } from '../../../../jobs/_character-bas
 import { JobBuffs } from '../../../../constants/job-buffs';
 
 @Component({
-  selector: 'app-skill-detail',
-  templateUrl: './skill-detail.component.html',
-  styleUrls: ['./skill-detail.component.css'],
+    selector: 'app-skill-detail',
+    templateUrl: './skill-detail.component.html',
+    styleUrls: ['./skill-detail.component.css'],
+    standalone: false
 })
 export class SkillDetailComponent implements OnInit {
   @Input({ required: true }) itemMap = {} as any;

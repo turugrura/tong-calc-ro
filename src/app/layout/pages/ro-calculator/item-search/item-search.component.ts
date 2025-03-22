@@ -40,9 +40,10 @@ const positions: DropdownModel[] = [
 ];
 
 @Component({
-  selector: 'app-item-search',
-  templateUrl: './item-search.component.html',
-  styleUrls: ['../ro-calculator.component.css', './item-search.component.css'],
+    selector: 'app-item-search',
+    templateUrl: './item-search.component.html',
+    styleUrls: ['../ro-calculator.component.css', './item-search.component.css'],
+    standalone: false
 })
 export class ItemSearchComponent implements OnInit, OnDestroy {
   @Input({ required: true }) items!: Record<number, ItemModel>;

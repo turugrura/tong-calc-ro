@@ -1,9 +1,10 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-elemental-table-raw',
-  templateUrl: './elemental-table-raw.component.html',
-  styleUrls: ['./elemental-table-raw.component.css'],
+    selector: 'app-elemental-table-raw',
+    templateUrl: './elemental-table-raw.component.html',
+    styleUrls: ['./elemental-table-raw.component.css'],
+    standalone: false
 })
 export class ElementalTableRawComponent {
   @Input({ required: true }) calcMonsters = [] as any[];

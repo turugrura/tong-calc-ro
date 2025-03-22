@@ -43,9 +43,10 @@ const displayShadowItemKeys = [
 ];
 
 @Component({
-  selector: 'app-preset-table',
-  templateUrl: './preset-table.component.html',
-  styleUrls: ['../ro-calculator.component.css'],
+    selector: 'app-preset-table',
+    templateUrl: './preset-table.component.html',
+    styleUrls: ['../ro-calculator.component.css'],
+    standalone: false
 })
 export class PresetTableComponent implements OnInit, OnDestroy {
   presets: any[] = [];

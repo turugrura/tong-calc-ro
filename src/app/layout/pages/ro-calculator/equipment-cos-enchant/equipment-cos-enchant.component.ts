@@ -2,9 +2,10 @@ import { AfterViewInit, Component, EventEmitter, Input, Output } from '@angular/
 import { DropdownModel } from '../../../../models/dropdown.model';
 
 @Component({
-  selector: 'app-equipment-cos-enchant',
-  templateUrl: './equipment-cos-enchant.component.html',
-  styleUrls: ['./equipment-cos-enchant.component.css', '../ro-calculator.component.css'],
+    selector: 'app-equipment-cos-enchant',
+    templateUrl: './equipment-cos-enchant.component.html',
+    styleUrls: ['./equipment-cos-enchant.component.css', '../ro-calculator.component.css'],
+    standalone: false
 })
 export class EquipmentCosEnchantComponent implements AfterViewInit {
   @Input({ required: true }) itemType!: string;

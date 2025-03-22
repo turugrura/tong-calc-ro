@@ -5,9 +5,10 @@ import { Subscription, debounceTime } from 'rxjs';
 import { FilterService } from 'primeng/api';
 
 @Component({
-  selector: 'app-monster-data-view',
-  templateUrl: './monster-data-view.component.html',
-  styleUrls: ['../ro-calculator.component.css'],
+    selector: 'app-monster-data-view',
+    templateUrl: './monster-data-view.component.html',
+    styleUrls: ['../ro-calculator.component.css'],
+    standalone: false
 })
 export class MonsterDataViewComponent implements OnInit, OnDestroy {
   allMonsters: any[];

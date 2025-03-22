@@ -122,10 +122,11 @@ const HideHpSp = {
 };
 
 @Component({
-  selector: 'app-ro-calculator',
-  templateUrl: './ro-calculator.component.html',
-  styleUrls: ['./ro-calculator.component.css'],
-  providers: [ConfirmationService, MessageService, DialogService],
+    selector: 'app-ro-calculator',
+    templateUrl: './ro-calculator.component.html',
+    styleUrls: ['./ro-calculator.component.css'],
+    providers: [ConfirmationService, MessageService, DialogService],
+    standalone: false
 })
 export class RoCalculatorComponent implements OnInit, OnDestroy {
   updateItemEvent = new Subject();

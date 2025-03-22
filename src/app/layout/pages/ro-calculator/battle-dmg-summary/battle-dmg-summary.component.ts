@@ -1,9 +1,10 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-battle-dmg-summary',
-  templateUrl: './battle-dmg-summary.component.html',
-  styleUrls: ['./battle-dmg-summary.component.css', '../ro-calculator.component.css'],
+    selector: 'app-battle-dmg-summary',
+    templateUrl: './battle-dmg-summary.component.html',
+    styleUrls: ['./battle-dmg-summary.component.css', '../ro-calculator.component.css'],
+    standalone: false
 })
 export class BattleDmgSummaryComponent {
   @Input({ required: true }) model = {} as any;

@@ -14,9 +14,10 @@ interface EventEmitterResultModel {
 }
 
 @Component({
-  selector: 'app-equipment',
-  templateUrl: './equipment.component.html',
-  styleUrls: ['../ro-calculator.component.css'],
+    selector: 'app-equipment',
+    templateUrl: './equipment.component.html',
+    styleUrls: ['../ro-calculator.component.css'],
+    standalone: false
 })
 export class EquipmentComponent implements OnChanges, OnInit {
   @Input({ required: true }) readonly itemType!: string;

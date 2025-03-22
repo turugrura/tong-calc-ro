@@ -1,9 +1,10 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-status-input',
-  templateUrl: './status-input.component.html',
-  styleUrls: ['./status-input.component.css', '../ro-calculator.component.css'],
+    selector: 'app-status-input',
+    templateUrl: './status-input.component.html',
+    styleUrls: ['./status-input.component.css', '../ro-calculator.component.css'],
+    standalone: false
 })
 export class StatusInputComponent {
   @Input({ required: true }) label: string;

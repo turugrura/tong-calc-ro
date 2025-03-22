@@ -3,9 +3,10 @@ import { MainModel } from '../../../../models/main.model';
 import { ItemTypeEnum } from '../../../../constants/item-type.enum';
 
 @Component({
-  selector: 'app-equipment-ui',
-  templateUrl: './equipment-ui.component.html',
-  styleUrls: ['./equipment-ui.component.css'],
+    selector: 'app-equipment-ui',
+    templateUrl: './equipment-ui.component.html',
+    styleUrls: ['./equipment-ui.component.css'],
+    standalone: false
 })
 export class EquipmentUiComponent {
   @Input({ required: true }) itemMap = {} as any;

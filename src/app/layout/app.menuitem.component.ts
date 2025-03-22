@@ -7,9 +7,9 @@ import { MenuService } from './app.menu.service';
 import { LayoutService } from './service/app.layout.service';
 
 @Component({
-  // eslint-disable-next-line @angular-eslint/component-selector
-  selector: '[app-menuitem]',
-  template: `
+    // eslint-disable-next-line @angular-eslint/component-selector
+    selector: '[app-menuitem]',
+    template: `
     <ng-container>
       <div *ngIf="root && item.visible !== false" class="layout-menuitem-root-text">{{ item.label }}</div>
       <a
@@ -62,23 +62,18 @@ import { LayoutService } from './service/app.layout.service';
       </ul>
     </ng-container>
   `,
-  animations: [
-    trigger('children', [
-      state(
-        'collapsed',
-        style({
-          height: '0',
-        }),
-      ),
-      state(
-        'expanded',
-        style({
-          height: '*',
-        }),
-      ),
-      transition('collapsed <=> expanded', animate('400ms cubic-bezier(0.86, 0, 0.07, 1)')),
-    ]),
-  ],
+    animations: [
+        trigger('children', [
+            state('collapsed', style({
+                height: '0',
+            })),
+            state('expanded', style({
+                height: '*',
+            })),
+            transition('collapsed <=> expanded', animate('400ms cubic-bezier(0.86, 0, 0.07, 1)')),
+        ]),
+    ],
+    standalone: false
 })
 export class AppMenuitemComponent implements OnInit, OnDestroy {
   @Input() item: any;

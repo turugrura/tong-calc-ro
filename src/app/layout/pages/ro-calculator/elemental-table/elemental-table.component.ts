@@ -25,9 +25,10 @@ interface MonsterElementSummary extends Record<ElementType, number> {
 }
 
 @Component({
-  selector: 'app-elemental-table',
-  templateUrl: './elemental-table.component.html',
-  styleUrls: ['./elemental-table.component.css', '../ro-calculator.component.css'],
+    selector: 'app-elemental-table',
+    templateUrl: './elemental-table.component.html',
+    styleUrls: ['./elemental-table.component.css', '../ro-calculator.component.css'],
+    standalone: false
 })
 export class ElementalTableComponent implements OnInit, OnDestroy {
   @Input({ required: true }) monsterMap: Record<number, MonsterModel>;

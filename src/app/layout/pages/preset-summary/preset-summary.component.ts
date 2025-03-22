@@ -23,9 +23,10 @@ const getInitShowIEnchant = (b: boolean) => {
 };
 
 @Component({
-  selector: 'app-preset-summary',
-  templateUrl: './preset-summary.component.html',
-  styleUrls: ['./preset-summary.component.css'],
+    selector: 'app-preset-summary',
+    templateUrl: './preset-summary.component.html',
+    styleUrls: ['./preset-summary.component.css'],
+    standalone: false
 })
 export class PresetSummaryComponent implements OnInit, OnDestroy {
   private jobChangeSource = new Subject();

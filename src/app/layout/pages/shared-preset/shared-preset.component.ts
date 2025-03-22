@@ -18,10 +18,11 @@ import { ActiveSkillModel, AtkSkillModel, CharacterBase, getClassDropdownList } 
 const Characters = getClassDropdownList();
 
 @Component({
-  selector: 'app-shared-preset',
-  templateUrl: './shared-preset.component.html',
-  styleUrls: ['./shared-preset.component.css'],
-  providers: [MessageService, ConfirmationService],
+    selector: 'app-shared-preset',
+    templateUrl: './shared-preset.component.html',
+    styleUrls: ['./shared-preset.component.css'],
+    providers: [MessageService, ConfirmationService],
+    standalone: false
 })
 export class SharedPresetComponent implements OnInit, OnDestroy {
   availableTags = availableTags.map((a) => {

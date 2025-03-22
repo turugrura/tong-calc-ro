@@ -31,9 +31,10 @@ const displayShadowItemKeys = [
 ];
 
 @Component({
-  selector: 'app-equipment-in-detail',
-  templateUrl: './equipment-in-detail.component.html',
-  styleUrls: ['./equipment-in-detail.component.css'],
+    selector: 'app-equipment-in-detail',
+    templateUrl: './equipment-in-detail.component.html',
+    styleUrls: ['./equipment-in-detail.component.css'],
+    standalone: false
 })
 export class EquipmentInDetailComponent implements OnInit {
   @Input({ required: true }) itemMap = {} as any;

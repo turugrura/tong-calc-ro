@@ -4,8 +4,9 @@ import { MenuService } from '../app.menu.service';
 import { environment } from 'src/environments/environment';
 
 @Component({
-  selector: 'app-config',
-  templateUrl: './app.config.component.html',
+    selector: 'app-config',
+    templateUrl: './app.config.component.html',
+    standalone: false
 })
 export class AppConfigComponent implements OnInit {
   @Input() minimal: boolean = false;
