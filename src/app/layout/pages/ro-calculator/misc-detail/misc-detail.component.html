@@ -1,4 +1,4 @@
-<div class="grid p-fluid grid-nogutter">
+<div class="grid p-fluid fluid grid-nogutter">
   <div class="col-7">
     <div class="grid grid-nogutter">
       <div class="col-6">
@@ -81,16 +81,9 @@
                 <tr>
                   <td>{{ val.name }}</td>
                   <td>
-                    <span
-                      class="{{
-                        val.value == 0
-                          ? ''
-                          : val.name == 'Melee' || val.name == 'Range'
-                          ? 'summary_stat_atk'
-                          : 'summary_stat_matk'
-                      }}"
-                      >{{ val.value || '-' }}</span
-                    >
+                    <span class="{{ val.value == 0 ? '' : val.name == 'Melee' || val.name == 'Range' ? 'summary_stat_atk' : 'summary_stat_matk' }}">{{
+                      val.value || '-'
+                    }}</span>
                   </td>
                 </tr>
               </ng-template>
@@ -139,14 +132,10 @@
             <span class="{{ 'font-medium property_' + val.name }}">{{ val.name }}</span>
           </td>
           <td>
-            <span class="{{ val.physicalElementToMonster != 0 ? 'summary_stat_atk' : '' }}">{{
-              val.physicalElementToMonster || '-'
-            }}</span>
+            <span class="{{ val.physicalElementToMonster != 0 ? 'summary_stat_atk' : '' }}">{{ val.physicalElementToMonster || '-' }}</span>
           </td>
           <td>
-            <span class="{{ val.magicalElementToMonster != 0 ? 'summary_stat_matk' : '' }}">{{
-              val.magicalElementToMonster || '-'
-            }}</span>
+            <span class="{{ val.magicalElementToMonster != 0 ? 'summary_stat_matk' : '' }}">{{ val.magicalElementToMonster || '-' }}</span>
           </td>
           <td>
             <span class="{{ val.myElement != 0 ? 'summary_stat_matk' : '' }}">{{ val.myElement || '-' }}</span>

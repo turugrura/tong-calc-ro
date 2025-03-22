@@ -1,10 +1,13 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { SidebarModule } from 'primeng/sidebar';
-import { RadioButtonModule } from 'primeng/radiobutton';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import Aura from '@primeng/themes/aura';
 import { ButtonModule } from 'primeng/button';
+import { providePrimeNG } from 'primeng/config';
 import { InputSwitchModule } from 'primeng/inputswitch';
+import { RadioButtonModule } from 'primeng/radiobutton';
+import { SidebarModule } from 'primeng/sidebar';
 import { AppConfigComponent } from './app.config.component';
 
 @NgModule({
@@ -21,6 +24,14 @@ import { AppConfigComponent } from './app.config.component';
     ],
     exports: [
         AppConfigComponent
+    ],
+    providers: [
+        provideAnimationsAsync(),
+        providePrimeNG({
+            theme: {
+                preset: Aura
+            }
+        })
     ]
 })
 export class AppConfigModule { }

@@ -122,11 +122,11 @@ const HideHpSp = {
 };
 
 @Component({
-    selector: 'app-ro-calculator',
-    templateUrl: './ro-calculator.component.html',
-    styleUrls: ['./ro-calculator.component.css'],
-    providers: [ConfirmationService, MessageService, DialogService],
-    standalone: false
+  selector: 'app-ro-calculator',
+  templateUrl: './ro-calculator.component.html',
+  styleUrls: ['./ro-calculator.component.css'],
+  providers: [ConfirmationService, MessageService, DialogService],
+  standalone: false
 })
 export class RoCalculatorComponent implements OnInit, OnDestroy {
   updateItemEvent = new Subject();
@@ -668,7 +668,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     const availableCols = new Map(this.cols.map((a) => [a.field, a]));
 
     const cached = this.getCachedBattleColNames()
-      .map((col) => availableCols.get(col))
+      .map((col) => availableCols.get(col as any))
       .filter(Boolean);
     if (cached.length > 0) {
       this.selectedColumns = cached;

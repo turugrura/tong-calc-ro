@@ -1,9 +1,4 @@
-<button
-  pButton
-  (click)="showSearchDialog()"
-  class="p-button-info p-button-raised px-1"
-  style="position: fixed; top: 42%; z-index: 999; right: 0"
->
+<button pButton (click)="showSearchDialog()" class="p-button-info p-button-raised px-1" style="position: fixed; top: 42%; z-index: 999; right: 0">
   <i class="pi pi-search"></i>
   <div class="pl-1">Items</div>
 </button>
@@ -16,15 +11,9 @@
   [(visible)]="isShowSearchDialog"
   [style]="{ width: '75vw', height: '90vh', 'min-width': '750px' }"
 >
-  <div class="p-fluid grid grid-nogutter">
+  <div class="p-fluid fluid grid grid-nogutter">
     <div class="col-12 item-position-list">
-      <p-listbox
-        [options]="itemPositionOptions"
-        [(ngModel)]="selectedItemPositions"
-        [metaKeySelection]="false"
-        [multiple]="true"
-        [listStyle]="{ 'max-height': '600px' }"
-      >
+      <p-listbox [options]="itemPositionOptions" [(ngModel)]="selectedItemPositions" [metaKeySelection]="false" [multiple]="true" [listStyle]="{ 'max-height': '600px' }">
         <ng-template let-item pTemplate="item">
           <div class="flex item-position-{{ item.value }}" style="background-color: var(--border-radius)">
             <div>{{ item.label }}</div>
@@ -95,12 +84,7 @@
       </div>
       <div class="col-6 grid grid-nogutter">
         <div class="col-12 skill-list">
-          <p-listbox
-            [options]="offensiveSkills"
-            [(ngModel)]="selectedOffensiveSkills"
-            [metaKeySelection]="false"
-            [multiple]="true"
-          ></p-listbox>
+          <p-listbox [options]="offensiveSkills" [(ngModel)]="selectedOffensiveSkills" [metaKeySelection]="false" [multiple]="true"></p-listbox>
         </div>
       </div>
     </div>
@@ -126,10 +110,7 @@
         <ng-template pTemplate="body" let-item let-rowIndex="rowIndex">
           <tr [pSelectableRow]="item" [pSelectableRowIndex]="rowIndex">
             <td>
-              <div
-                class="flex gap-1 item_template item_label_{{ item.value }}"
-                style="background-color: var(--border-radius)"
-              >
+              <div class="flex gap-1 item_template item_label_{{ item.value }}" style="background-color: var(--border-radius)">
                 <img src="assets/demo/images/items/{{ item.id }}.png" alt="" class="item_img" />
                 <div class="text_ellips">
                   {{ item.label }}
@@ -147,17 +128,9 @@
           Name: {{ activeFilteredItem?.label }}
         </div>
         <div class="col-fixed px-2 py-2" style="color: #000; background-color: #fff; width: 100px">
-          <img
-            *ngIf="seletedItemId"
-            src="https://www.divine-pride.net/img/items/collection/thROG/{{ seletedItemId }}"
-            alt=""
-          />
+          <img *ngIf="seletedItemId" src="https://www.divine-pride.net/img/items/collection/thROG/{{ seletedItemId }}" alt="" />
         </div>
-        <div
-          class="col px-2 py-2"
-          style="color: #000; background-color: #fff"
-          [innerHTML]="activeFilteredItemDesc"
-        ></div>
+        <div class="col px-2 py-2" style="color: #000; background-color: #fff" [innerHTML]="activeFilteredItemDesc"></div>
       </div>
     </div>
   </div>

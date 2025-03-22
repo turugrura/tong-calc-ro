@@ -1,7 +1,7 @@
 <div class="flex align-items-center status_input">
   <div class="p-inputgroup">
     <span class="p-inputgroup-addon" style="width: 32px">{{ label }}</span>
-    <p-dropdown
+    <p-select
       [disabled]="disabled"
       inputId="{{ label }}"
       [autoDisplayFirst]="false"
@@ -16,7 +16,7 @@
       dropdownIcon=""
     >
       <ng-template pTemplate="filtericon"> </ng-template>
-    </p-dropdown>
+    </p-select>
   </div>
   <span *ngIf="badgeSeverity === 'info'" class="_font-medium text-lg text-cyan-300 mr-1" style="min-width: 35px">+{{ extraValue }}</span>
   <span *ngIf="badgeSeverity !== 'info'" class="_font-medium text-lg text-yellow-400" style="min-width: 35px">+{{ extraValue }}</span>

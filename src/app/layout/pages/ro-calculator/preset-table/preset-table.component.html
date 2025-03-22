@@ -2,31 +2,15 @@
   <div class="col-3">
     <div class="grid grid-nogutter">
       <div class="col-fixed mr-2" *ngIf="isLoggedIn">
-        <button
-          type="button"
-          class="p-button-help"
-          pButton
-          icon="pi pi-download"
-          label="Load"
-          [disabled]="!selectedCloudPreset"
-          (click)="onLoadPresetClick()"
-        ></button>
+        <button type="button" class="p-button-help" pButton icon="pi pi-download" label="Load" [disabled]="!selectedCloudPreset" (click)="onLoadPresetClick()"></button>
       </div>
       <div class="col-fixed mr-2" *ngIf="isLoggedIn">
-        <button
-          type="button"
-          class="p-button-danger"
-          pButton
-          icon="pi pi-trash"
-          label="Delete"
-          [disabled]="!selectedCloudPreset"
-          (click)="deletePreset()"
-        ></button>
+        <button type="button" class="p-button-danger" pButton icon="pi pi-trash" label="Delete" [disabled]="!selectedCloudPreset" (click)="deletePreset()"></button>
       </div>
       <div class="col-12">
         <div class="p-inputgroup dropdown-joblist">
           <span class="p-inputgroup-addon" style="width: 80px">Filter</span>
-          <p-dropdown
+          <p-select
             inputId="character"
             [autoDisplayFirst]="false"
             [resetFilterOnHide]="true"
@@ -51,19 +35,12 @@
                 <div class="text_ellips">{{ job.label }}</div>
               </div>
             </ng-template>
-          </p-dropdown>
+          </p-select>
         </div>
       </div>
       <div class="col-12" *ngIf="isLoggedIn">
         <div class="p-inputgroup">
-          <input
-            #presetName
-            autocomplete="off"
-            type="text"
-            [value]="presetInfo?.label || ''"
-            pInputText
-            placeholder="preset name"
-          />
+          <input #presetName autocomplete="off" type="text" [value]="presetInfo?.label || ''" pInputText placeholder="preset name" />
           <button
             type="button"
             class="p-button-info"
@@ -94,26 +71,10 @@
         </p-listbox>
       </div>
       <div class="col-fixed" *ngIf="presets.length > 0">
-        <button
-          type="button"
-          class="p-button-help"
-          pButton
-          icon="pi pi-download"
-          label="Load"
-          [disabled]="!selectedPreset"
-          (click)="onLoadPresetClick()"
-        ></button>
+        <button type="button" class="p-button-help" pButton icon="pi pi-download" label="Load" [disabled]="!selectedPreset" (click)="onLoadPresetClick()"></button>
       </div>
       <div class="col-fixed" *ngIf="presets.length > 0">
-        <button
-          type="button"
-          class="p-button-danger"
-          pButton
-          icon="pi pi-trash"
-          label="Delete"
-          [disabled]="!selectedPreset"
-          (click)="deletePreset()"
-        ></button>
+        <button type="button" class="p-button-danger" pButton icon="pi pi-trash" label="Delete" [disabled]="!selectedPreset" (click)="deletePreset()"></button>
       </div>
       <div class="col-fixed" *ngIf="isLoggedIn && presets.length > 0">
         <button
@@ -149,22 +110,14 @@
         Updated at: <span class="text-primary-300"> {{ presetInfo?.updatedAt | date : 'dd-MM-yyyy HH:mm' }} </span>
       </div>
       <div class="col-3 text-lg font-semibold" *ngIf="isSharedPreset">
-        Shared at: <span class="text-primary-300"> {{ presetInfo?.publishedAt | date : 'dd-MM-yyyy HH:mm' }} </span
-        ><br />
+        Shared at: <span class="text-primary-300"> {{ presetInfo?.publishedAt | date : 'dd-MM-yyyy HH:mm' }} </span><br />
       </div>
       <div class="col-3 text-lg font-medium" *ngIf="isSharedPreset">
         Like: <span class="text-primary-400"> {{ presetInfo?.tags[0]?.totalLike }} </span><br />
       </div>
       <div class="col-6" *ngIf="!isSharedPreset">
         <div class="p-inputgroup">
-          <input
-            #sharedName
-            [autocomplete]="false"
-            autocomplete="off"
-            type="text"
-            pInputText
-            placeholder="Shared name"
-          />
+          <input #sharedName [autocomplete]="false" autocomplete="off" type="text" pInputText placeholder="Shared name" />
           <button
             type="button"
             class="p-button-info"
@@ -181,7 +134,7 @@
         <button type="button" class="p-button-warning" pButton label="Cancel" (click)="unsharePreset()"></button>
       </div>
       <!-- <div class="col-12">
-        <div class="grid p-fluid grid-nogutter" *ngIf="isSharedPreset">
+        <div class="grid p-fluid fluid grid-nogutter" *ngIf="isSharedPreset">
           <div class="col">
             <p-multiSelect
               [options]="availableTags"
@@ -259,18 +212,12 @@
       </div>
     </div>
 
-    <div
-      *ngFor="let item of displayMainItems"
-      class="grid grid-nogutter px-2 py-2 item_label_{{ item.itemType }}"
-      style="min-height: 2rem"
-    >
+    <div *ngFor="let item of displayMainItems" class="grid grid-nogutter px-2 py-2 item_label_{{ item.itemType }}" style="min-height: 2rem">
       <div class="col-4">
         <div *ngIf="!item.mainId">--- {{ item.itemType }} ---</div>
         <div *ngIf="item.mainId" class="item_template flex gap-1">
           <img src="assets/demo/images/items/{{ item.mainId }}.png" alt="" class="item_img" />
-          <div class="text_ellips pr-2" style="text-overflow: ellipsis">
-            {{ item.refineTxt }} {{ getItemLabel(item.mainId) }}
-          </div>
+          <div class="text_ellips pr-2" style="text-overflow: ellipsis">{{ item.refineTxt }} {{ getItemLabel(item.mainId) }}</div>
         </div>
       </div>
       <div *ngFor="let cardId of item.cardIds" class="col-2">
@@ -297,11 +244,7 @@
         <p-divider></p-divider>
       </div>
       <div class="col-4">
-        <div
-          *ngFor="let item of displayCostumeItems"
-          class="grid grid-nogutter px-2 py-2 item_label_{{ item.itemType }}"
-          style="min-height: 2rem"
-        >
+        <div *ngFor="let item of displayCostumeItems" class="grid grid-nogutter px-2 py-2 item_label_{{ item.itemType }}" style="min-height: 2rem">
           <div class="col-12">
             <div *ngIf="!item.mainId">--- {{ item.itemType }} ---</div>
             <div *ngIf="item.mainId" class="item_template flex gap-1">
@@ -312,18 +255,12 @@
         </div>
       </div>
       <div class="col-4">
-        <div
-          *ngFor="let item of displayShadowItems"
-          class="grid grid-nogutter px-2 py-2 item_label_{{ item.itemType }}"
-          style="min-height: 2rem"
-        >
+        <div *ngFor="let item of displayShadowItems" class="grid grid-nogutter px-2 py-2 item_label_{{ item.itemType }}" style="min-height: 2rem">
           <div class="col-12">
             <div *ngIf="!item.mainId">--- {{ item.itemType }} ---</div>
             <div *ngIf="item.mainId" class="item_template flex gap-1">
               <img src="assets/demo/images/items/{{ item.mainId }}.png" alt="" class="item_img" />
-              <div class="text_ellips pr-2" style="text-overflow: ellipsis">
-                {{ item.refineTxt }} {{ getItemLabel(item.mainId) }}
-              </div>
+              <div class="text_ellips pr-2" style="text-overflow: ellipsis">{{ item.refineTxt }} {{ getItemLabel(item.mainId) }}</div>
             </div>
           </div>
         </div>

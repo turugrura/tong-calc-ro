@@ -24,7 +24,7 @@
 
 <div class="grid grid-nogutter" style="min-width: 1500px">
   <!-- Left Side -->
-  <div class="p-fluid col-7">
+  <div class="p-fluid fluid col-7">
     <!-- Create Update Class -->
     <div class="grid grid-nogutter">
       <div class="col-4">
@@ -46,7 +46,7 @@
           </div>
           <div class="col-12">
             <div class="p-inputgroup dropdown-joblist">
-              <p-dropdown
+              <p-select
                 [autoDisplayFirst]="false"
                 [options]="preSets"
                 [filter]="true"
@@ -67,7 +67,7 @@
                     <div class="text_ellips">{{ job.label }}</div>
                   </div>
                 </ng-template>
-              </p-dropdown>
+              </p-select>
               <p-splitButton
                 styleClass="p-button-help"
                 icon="pi pi-download"
@@ -82,7 +82,7 @@
           <div class="col-12">
             <div class="p-inputgroup dropdown-joblist">
               <span class="p-inputgroup-addon" style="width: 80px">Class</span>
-              <p-dropdown
+              <p-select
                 inputId="character"
                 [autoDisplayFirst]="false"
                 [resetFilterOnHide]="true"
@@ -107,13 +107,13 @@
                     <div class="text_ellips">{{ job.label }}</div>
                   </div>
                 </ng-template>
-              </p-dropdown>
+              </p-select>
             </div>
           </div>
           <div class="col">
             <div class="p-inputgroup">
               <span class="p-inputgroup-addon" style="width: 80px">Level</span>
-              <p-dropdown
+              <p-select
                 inputId="level"
                 [autoDisplayFirst]="false"
                 [options]="levelList"
@@ -123,7 +123,7 @@
                 [resetFilterOnHide]="true"
                 [(ngModel)]="model.level"
                 (onChange)="onBaseStatusChange()"
-              ></p-dropdown>
+              ></p-select>
             </div>
           </div>
           <div class="col-fixed">
@@ -139,7 +139,7 @@
           <div class="col-12">
             <div class="p-inputgroup">
               <span class="p-inputgroup-addon" style="width: 80px">Job</span>
-              <p-dropdown
+              <p-select
                 inputId="jobLevel"
                 [autoDisplayFirst]="false"
                 [options]="jobList"
@@ -149,7 +149,7 @@
                 [resetFilterOnHide]="true"
                 [(ngModel)]="model.jobLevel"
                 (onChange)="onJobLevelChange()"
-              ></p-dropdown>
+              ></p-select>
             </div>
           </div>
           <div class="col-12">
@@ -527,7 +527,7 @@
           (optionChange)="onOptionChange()"
         >
           <div class="col-6 item_label_element_converter" style="min-width: 100px">
-            <p-dropdown
+            <p-select
               [options]="propertyAtkList"
               [(ngModel)]="model.propertyAtk"
               [disabled]="!model.weapon"
@@ -552,10 +552,10 @@
                   </div>
                 </div>
               </ng-template>
-            </p-dropdown>
+            </p-select>
           </div>
           <div class="col-{{ isWeaponCanGrade ? 6 : 10 }}" [hidden]="hiddenMap.ammu">
-            <p-dropdown
+            <p-select
               inputId="ammo"
               [autoDisplayFirst]="false"
               [resetFilterOnHide]="true"
@@ -585,7 +585,7 @@
                   </div>
                 </div>
               </ng-template>
-            </p-dropdown>
+            </p-select>
           </div>
         </app-equipment>
       </div>
@@ -1107,7 +1107,7 @@
     <!-- Pet -->
     <div class="grid grid-nogutter py-3 item_label_pet">
       <div class="col-3">
-        <p-dropdown
+        <p-select
           inputId="pet"
           [autoDisplayFirst]="false"
           [resetFilterOnHide]="true"
@@ -1132,7 +1132,7 @@
               <div>{{ item.label }}</div>
             </div>
           </ng-template>
-        </p-dropdown>
+        </p-select>
       </div>
     </div>
 
@@ -1482,7 +1482,7 @@
   </div>
 
   <!-- Right Side -->
-  <div class="p-fluid col-5">
+  <div class="p-fluid fluid col-5">
     <p-accordion [multiple]="true" [activeIndex]="[2, 7]">
       <p-accordionTab header="Consumables" class="consumable">
         <div class="grid grid-nogutter">
@@ -1552,7 +1552,7 @@
                   <div *ngSwitchCase="'dropdown'">
                     <div class="p-inputgroup">
                       <span class="p-inputgroup-addon text_group_ellips {{ bishopBuff.isDebuff ? 'skill_debuff' : '' }}">{{ bishopBuff.label }}</span>
-                      <p-dropdown
+                      <p-select
                         [autoDisplayFirst]="false"
                         [resetFilterOnHide]="true"
                         [options]="bishopBuff.dropdown"
@@ -1560,7 +1560,7 @@
                         (onChange)="onSkillClassChange()"
                         styleClass="'width: 50%'"
                         scrollHeight="380px"
-                      ></p-dropdown>
+                      ></p-select>
                     </div>
                   </div>
                   <div *ngSwitchDefault>
@@ -1581,14 +1581,14 @@
 
           <!-- Learned Skills -->
           <div class="col-4" [hidden]="passiveSkills.length === 0">
-            <p-tag severity="warning" value="Learn to get bonuses"></p-tag>
+            <p-tag severity="warn" value="Learn to get bonuses"></p-tag>
             <div class="grid grid-nogutter">
               <div *ngFor="let passiveSkill of passiveSkills; let i = index" class="col-12">
                 <div [ngSwitch]="passiveSkill.inputType">
                   <div *ngSwitchCase="'dropdown'">
                     <div class="p-inputgroup">
                       <span class="p-inputgroup-addon text_group_ellips">{{ passiveSkill.label }}</span>
-                      <p-dropdown
+                      <p-select
                         [autoDisplayFirst]="false"
                         [resetFilterOnHide]="true"
                         [options]="passiveSkill.dropdown"
@@ -1596,7 +1596,7 @@
                         (onChange)="onSkillClassChange()"
                         styleClass="'width: 50%'"
                         scrollHeight="380px"
-                      ></p-dropdown>
+                      ></p-select>
                     </div>
                   </div>
                   <div *ngSwitchDefault>
@@ -1624,7 +1624,7 @@
                   <div *ngSwitchCase="'dropdown'">
                     <div class="p-inputgroup">
                       <span class="p-inputgroup-addon text_group_ellips {{ activeSkill.isDebuff ? 'skill_debuff' : '' }}">{{ activeSkill.label }}</span>
-                      <p-dropdown
+                      <p-select
                         [autoDisplayFirst]="false"
                         [resetFilterOnHide]="true"
                         [options]="activeSkill.dropdown"
@@ -1632,7 +1632,7 @@
                         (onChange)="onSkillClassChange()"
                         styleClass="'width: 50%'"
                         scrollHeight="380px"
-                      ></p-dropdown>
+                      ></p-select>
                     </div>
                   </div>
                   <div *ngSwitchDefault>
@@ -1678,7 +1678,7 @@
               <div class="col-12">
                 <div class="p-inputgroup">
                   <span class="p-inputgroup-addon monster_hilight_label">Monster</span>
-                  <p-dropdown
+                  <p-select
                     inputId="monsterOpponent"
                     [autoDisplayFirst]="false"
                     [resetFilterOnHide]="true"
@@ -1695,7 +1695,7 @@
                         <span>{{ group.label }}</span>
                       </div>
                     </ng-template>
-                  </p-dropdown>
+                  </p-select>
                   <!-- <button
                     type="button"
                     class="p-button-success"
@@ -1730,7 +1730,7 @@
               <div class="col-12 skill-selection" [hidden]="isShowSelectableSkillLevel">
                 <div class="p-inputgroup">
                   <span class="p-inputgroup-addon skill_hilight_label">Skill</span>
-                  <p-dropdown
+                  <p-select
                     inputId="skill"
                     [autoDisplayFirst]="false"
                     [resetFilterOnHide]="true"
@@ -1738,7 +1738,7 @@
                     scrollHeight="400px"
                     [(ngModel)]="model.selectedAtkSkill"
                     (onChange)="onAtkSkillChange()"
-                  ></p-dropdown>
+                  ></p-select>
                 </div>
               </div>
               <div class="col-12 skill-selection" [hidden]="!isShowSelectableSkillLevel">

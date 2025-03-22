@@ -204,7 +204,7 @@
       </ng-template>
     </p-table>
   </div>
-  <div class="p-fluid col-3">
+  <div class="p-fluid fluid col-3">
     <p-accordion [multiple]="true" [activeIndex]="[0]">
       <p-accordionTab header="Battle Summary">
         <div class="grid grid-nogutter battle_summary">
@@ -214,7 +214,7 @@
               <div class="col-12">
                 <div class="p-inputgroup">
                   <span class="p-inputgroup-addon monster_hilight_label">Monster</span>
-                  <p-dropdown
+                  <p-select
                     inputId="monsterOpponent"
                     [autoDisplayFirst]="false"
                     [resetFilterOnHide]="true"
@@ -231,7 +231,7 @@
                         <span>{{ group.label }}</span>
                       </div>
                     </ng-template>
-                  </p-dropdown>
+                  </p-select>
                 </div>
               </div>
               <!-- <div class="col-12">{{ selectedMonsterName }}</div> -->
@@ -328,14 +328,14 @@
               <div class="col-12 skill-selection">
                 <!-- <div class="p-inputgroup">
                   <span class="p-inputgroup-addon skill_hilight_label">Skill</span>
-                  <p-dropdown
+                  <p-select
                     inputId="skill"
                     [autoDisplayFirst]="false"
                     [resetFilterOnHide]="true"
                     [options]="atkSkills"
                     [(ngModel)]="selectedAtkSkill"
                     (onChange)="onAtkSkillChange()"
-                  ></p-dropdown>
+                  ></p-select>
                 </div> -->
 
                 <div class="p-inputgroup">

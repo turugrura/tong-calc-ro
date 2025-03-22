@@ -1,3 +1,6 @@
+@use './_variables' as *;
+@use './mixins' as *;
+
 * {
     box-sizing: border-box;
 }

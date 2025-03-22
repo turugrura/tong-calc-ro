@@ -13,13 +13,13 @@
   padding-bottom: 0;
 }
 
-.p-inputgroup p-dropdown {
+.p-inputgroup p-select {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-:host ::ng-deep .p-inputgroup p-dropdown .p-dropdown-filter {
+:host ::ng-deep .p-inputgroup p-select .p-select-filter {
   width: 100%;
 }
 

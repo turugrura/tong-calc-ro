@@ -26,17 +26,17 @@
   color: #fff !important;
 }
 
-.p-inputgroup p-dropdown {
+.p-inputgroup p-select {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-:host ::ng-deep .p-inputgroup p-dropdown .p-dropdown-filter {
+:host ::ng-deep .p-inputgroup p-select .p-select-filter {
   width: 100%;
 }
 
-:host ::ng-deep .p-dropdown-items-wrapper,
+:host ::ng-deep .p-select-items-wrapper,
 :host ::ng-deep .p-multiselect-items-wrapper {
   overscroll-behavior: none;
 }
@@ -282,7 +282,7 @@
 
 :host ::ng-deep .item-position-weaponList,
 :host ::ng-deep .item-position-weaponCardList,
-:host ::ng-deep .item_label_weapon_main .p-dropdown-label,
+:host ::ng-deep .item_label_weapon_main .p-select-label,
 :host ::ng-deep .item_label_weapon_main .p-cascadeselect-label,
 :host ::ng-deep .item_label_weapon,
 :host ::ng-deep .item_label_weaponCard1,
@@ -305,7 +305,7 @@
   color: var(--yellow-300);
 }
 
-:host ::ng-deep .item_label_leftWeapon_main .p-dropdown-label,
+:host ::ng-deep .item_label_leftWeapon_main .p-select-label,
 :host ::ng-deep .item_label_leftWeapon_main .p-cascadeselect-label,
 :host ::ng-deep .item_label_leftWeapon,
 :host ::ng-deep .item_label_leftWeaponCard1,
@@ -323,7 +323,7 @@
 
 :host ::ng-deep .item-position-shieldList,
 :host ::ng-deep .item-position-shieldCardList,
-:host ::ng-deep .item_label_shield_main .p-dropdown-label,
+:host ::ng-deep .item_label_shield_main .p-select-label,
 :host ::ng-deep .item_label_shield_main .p-cascadeselect-label,
 :host ::ng-deep .item_label_shield,
 :host ::ng-deep .item_label_shieldCard,
@@ -339,7 +339,7 @@
 :host ::ng-deep .item-position-headMiddleList,
 :host ::ng-deep .item-position-headLowerList,
 :host ::ng-deep .item-position-headCardList,
-:host ::ng-deep .item_label_head .p-dropdown-label,
+:host ::ng-deep .item_label_head .p-select-label,
 :host ::ng-deep .item_label_head .p-cascadeselect-label,
 :host ::ng-deep .item_label_headUpper,
 :host ::ng-deep .item_label_headUpperCard,
@@ -366,7 +366,7 @@
 :host ::ng-deep .item-position-garmentCardList,
 :host ::ng-deep .item-position-bootList,
 :host ::ng-deep .item-position-bootCardList,
-:host ::ng-deep .item_label_def .p-dropdown-label,
+:host ::ng-deep .item_label_def .p-select-label,
 :host ::ng-deep .item_label_def .p-cascadeselect-label,
 :host ::ng-deep .item_label_armor,
 :host ::ng-deep .item_label_armorCard,
@@ -390,7 +390,7 @@
 
 :host ::ng-deep .item-position-accList,
 :host ::ng-deep .item-position-accCardList,
-:host ::ng-deep .item_label_acc .p-dropdown-label,
+:host ::ng-deep .item_label_acc .p-select-label,
 :host ::ng-deep .item_label_acc .p-cascadeselect-label,
 .item_float_label,
 :host ::ng-deep .item_label_accLeft,
@@ -409,7 +409,7 @@
 }
 
 :host ::ng-deep .item-position-petList,
-:host ::ng-deep .item_label_pet .p-dropdown-label,
+:host ::ng-deep .item_label_pet .p-select-label,
 :host ::ng-deep .item_label_pet .p-cascadeselect-label {
   /* background-color: var(--surface-0); */
   background-color: #121212;
@@ -417,7 +417,7 @@
 }
 
 :host ::ng-deep .item-position-costumeList,
-:host ::ng-deep .item_label_costume .p-dropdown-label,
+:host ::ng-deep .item_label_costume .p-select-label,
 :host ::ng-deep .item_label_costume .p-cascadeselect-label,
 :host ::ng-deep .item_label_costumeUpper,
 :host ::ng-deep .item_label_costumeMiddle,
@@ -440,7 +440,7 @@
 :host ::ng-deep .item-position-shadowBootList,
 :host ::ng-deep .item-position-shadowEarringList,
 :host ::ng-deep .item-position-shadowPendantList,
-:host ::ng-deep .item_label_shadow .p-dropdown-label,
+:host ::ng-deep .item_label_shadow .p-select-label,
 :host ::ng-deep .item_label_shadow .p-cascadeselect-label,
 :host ::ng-deep .item_label_shadowWeapon,
 :host ::ng-deep .item_label_shadowArmor,
@@ -470,7 +470,7 @@
   height: fit-content;
 }
 
-:host ::ng-deep .item_label_compare .p-dropdown-label,
+:host ::ng-deep .item_label_compare .p-select-label,
 :host ::ng-deep .item_label_compare .p-cascadeselect-label,
 :host ::ng-deep .item_label_compare .p-multiselect-label,
 :host ::ng-deep .item_label_compare .p-listbox-item {
@@ -508,10 +508,10 @@
   height: fit-content;
 }
 
-:host ::ng-deep .dropdown-joblist .p-dropdown {
+:host ::ng-deep .dropdown-joblist .p-select {
   height: 100%;
 }
-:host ::ng-deep .dropdown-joblist .p-dropdown .p-dropdown-label {
+:host ::ng-deep .dropdown-joblist .p-select .p-select-label {
   padding-top: 0.25rem !important;
   padding-bottom: 0.25rem !important;
 }

@@ -1,7 +1,7 @@
 <div class="grid grid-nogutter">
   <div class="col-12 grid grid-nogutter">
     <div class="col-6">
-      <p-dropdown
+      <p-select
         [autoDisplayFirst]="false"
         [resetFilterOnHide]="true"
         [options]="itemList"
@@ -26,16 +26,16 @@
             <div>{{ item.label }}</div>
           </div>
         </ng-template>
-      </p-dropdown>
+      </p-select>
     </div>
     <div class="col-2 refine-list">
-      <p-dropdown [options]="refineList" [(ngModel)]="itemRefine" scrollHeight="350px" [disabled]="!itemId" (onChange)="onSelectItem('itemRefine', itemId, $event.value)">
+      <p-select [options]="refineList" [(ngModel)]="itemRefine" scrollHeight="350px" [disabled]="!itemId" (onChange)="onSelectItem('itemRefine', itemId, $event.value)">
         <ng-template let-item pTemplate="selectedItem">
           <div class="flex gap-1">
             <div>{{ item.label > 0 ? '+ ' : '' }} {{ item.label || 0 }}</div>
           </div>
         </ng-template>
-      </p-dropdown>
+      </p-select>
     </div>
     <div class="col-4">
       <p-cascadeSelect

@@ -2,7 +2,7 @@
   <div class="col-3">
     <div class="grid grid-nogutter {{ !gradeList.length ? 'flex-row-reverse' : 'justify-content-end' }}">
       <div class="col-12" style="display: block; position: relative">
-        <p-dropdown
+        <p-select
           inputId="baseItem"
           [autoDisplayFirst]="false"
           [resetFilterOnHide]="true"
@@ -28,11 +28,11 @@
               <div>{{ item.label }}</div>
             </div>
           </ng-template>
-        </p-dropdown>
+        </p-select>
         <label *ngIf="overlayLabel" for="baseItem" class="item_float_label" style="position: absolute; top: -1.5rem">{{ overlayLabel }}</label>
       </div>
       <div class="col-6" [hidden]="!gradeList.length || !itemId">
-        <p-dropdown
+        <p-select
           [options]="gradeList"
           scrollHeight="350px"
           [showClear]="true"
@@ -40,10 +40,10 @@
           (onChange)="onSelectGrade($event.value)"
           (onClear)="onSelectGrade('')"
           placeholder="ungrade"
-        ></p-dropdown>
+        ></p-select>
       </div>
       <div class="col-4" style="min-width: 70px" *ngIf="refineList.length > 0">
-        <p-dropdown
+        <p-select
           inputId="baseItemRefine"
           [options]="refineList"
           [(ngModel)]="itemRefine"
@@ -56,7 +56,7 @@
               <div>{{ item.label > 0 ? '+ ' : '' }} {{ item.label || 0 }}</div>
             </div>
           </ng-template>
-        </p-dropdown>
+        </p-select>
       </div>
       <ng-content></ng-content>
     </div>
@@ -64,7 +64,7 @@
   <div class="col-9">
     <div class="grid grid-nogutter">
       <div class="col-4" [hidden]="totalCardSlots < 1">
-        <p-dropdown
+        <p-select
           inputId="baseItemCard1"
           [autoDisplayFirst]="false"
           [resetFilterOnHide]="true"
@@ -97,10 +97,10 @@
               <div>{{ item.label }}</div>
             </div>
           </ng-template>
-        </p-dropdown>
+        </p-select>
       </div>
       <div class="col-4" [hidden]="totalCardSlots < 2">
-        <p-dropdown
+        <p-select
           inputId="baseItemCard2"
           [autoDisplayFirst]="false"
           [resetFilterOnHide]="true"
@@ -120,10 +120,10 @@
               <div>{{ item.label }}</div>
             </div>
           </ng-template>
-        </p-dropdown>
+        </p-select>
       </div>
       <div class="col-4" [hidden]="totalCardSlots < 3">
-        <p-dropdown
+        <p-select
           inputId="baseItemCard3"
           [autoDisplayFirst]="false"
           [resetFilterOnHide]="true"
@@ -143,10 +143,10 @@
               <div>{{ item.label }}</div>
             </div>
           </ng-template>
-        </p-dropdown>
+        </p-select>
       </div>
       <div class="col-4" [hidden]="totalCardSlots < 4">
-        <p-dropdown
+        <p-select
           inputId="baseItemCard3"
           [autoDisplayFirst]="false"
           [resetFilterOnHide]="true"
@@ -166,7 +166,7 @@
               <div>{{ item.label }}</div>
             </div>
           </ng-template>
-        </p-dropdown>
+        </p-select>
       </div>
       <div class="col-4" *ngIf="!isWeapon && totalExtraOption < 3" [hidden]="totalExtraOption < 1">
         <p-cascadeSelect
@@ -202,7 +202,7 @@
       <div class="col-12" [hidden]="(enchant2List.length === 0 && enchant3List.length === 0 && enchant4List.length === 0) || !itemId">
         <div class="grid grid-nogutter">
           <div class="col-4" [hidden]="enchant1List.length === 0">
-            <p-dropdown
+            <p-select
               inputId="baseItemEnchant0"
               [autoDisplayFirst]="false"
               [resetFilterOnHide]="true"
@@ -228,10 +228,10 @@
                   <div>{{ item.label }}</div>
                 </div>
               </ng-template>
-            </p-dropdown>
+            </p-select>
           </div>
           <div class="col-4">
-            <p-dropdown
+            <p-select
               inputId="baseItemEnchant1"
               [autoDisplayFirst]="false"
               [resetFilterOnHide]="true"
@@ -257,10 +257,10 @@
                   <div>{{ item.label }}</div>
                 </div>
               </ng-template>
-            </p-dropdown>
+            </p-select>
           </div>
           <div class="col-4">
-            <p-dropdown
+            <p-select
               inputId="baseItemEnchant2"
               [autoDisplayFirst]="false"
               [resetFilterOnHide]="true"
@@ -286,10 +286,10 @@
                   <div>{{ item.label }}</div>
                 </div>
               </ng-template>
-            </p-dropdown>
+            </p-select>
           </div>
           <div class="col-4">
-            <p-dropdown
+            <p-select
               inputId="baseItemEnchant3"
               [autoDisplayFirst]="false"
               [resetFilterOnHide]="true"
@@ -315,7 +315,7 @@
                   <div>{{ item.label }}</div>
                 </div>
               </ng-template>
-            </p-dropdown>
+            </p-select>
           </div>
         </div>
       </div>
