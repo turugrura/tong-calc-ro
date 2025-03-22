@@ -1,11 +1,7 @@
 import { NgModule } from '@angular/core';
 import { AuthService } from './auth.service';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { PresetService } from './preset.service';
 
-@NgModule({
-  imports: [HttpClientModule],
-  providers: [AuthService, PresetService],
-  exports: [],
-})
+@NgModule({ exports: [], imports: [], providers: [AuthService, PresetService, provideHttpClient(withInterceptorsFromDi())] })
 export class ApiServiceModule {}

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InputTextModule } from 'primeng/inputtext';
 import { SidebarModule } from 'primeng/sidebar';
@@ -25,36 +25,30 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ToastModule } from 'primeng/toast';
 import { UserProfileModule } from './pages/user-profile/user-profile.module';
 
-@NgModule({
-  declarations: [
-    AppMenuitemComponent,
-    AppTopBarComponent,
-    AppFooterComponent,
-    AppMenuComponent,
-    AppSidebarComponent,
-    AppLayoutComponent,
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    InputTextModule,
-    SidebarModule,
-    BadgeModule,
-    RadioButtonModule,
-    InputSwitchModule,
-    RippleModule,
-    RouterModule,
-    AppConfigModule,
-    ButtonModule,
-    DialogModule,
-    ChipModule,
-    TabMenuModule,
-    ConfirmDialogModule,
-    ToastModule,
-    UserProfileModule,
-  ],
-  exports: [AppLayoutComponent],
-})
+@NgModule({ declarations: [
+        AppMenuitemComponent,
+        AppTopBarComponent,
+        AppFooterComponent,
+        AppMenuComponent,
+        AppSidebarComponent,
+        AppLayoutComponent,
+    ],
+    exports: [AppLayoutComponent], imports: [BrowserModule,
+        FormsModule,
+        BrowserAnimationsModule,
+        InputTextModule,
+        SidebarModule,
+        BadgeModule,
+        RadioButtonModule,
+        InputSwitchModule,
+        RippleModule,
+        RouterModule,
+        AppConfigModule,
+        ButtonModule,
+        DialogModule,
+        ChipModule,
+        TabMenuModule,
+        ConfirmDialogModule,
+        ToastModule,
+        UserProfileModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppLayoutModule {}
