@@ -55,7 +55,6 @@ import { HpSpTable } from '../../../models/hp-sp-table.model';
 import { ItemListModel } from '../../../models/item-list.model';
 import { ItemModel } from '../../../models/item.model';
 import { MonsterModel } from '../../../models/monster.model';
-import { LayoutService } from '../../service/app.layout.service';
 import { BaseStateCalculator } from './base-state-calculator';
 import { Calculator } from './calculator';
 import { MonsterDataViewComponent } from './monster-data-view/monster-data-view.component';
@@ -339,7 +338,8 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
   ref: DynamicDialogRef | undefined;
   monsterRef: DynamicDialogRef | undefined;
-  hideBasicAtk = this.layoutService.config.hideBasicAtk;
+  // hideBasicAtk = this.layoutService.config.hideBasicAtk;
+  hideBasicAtk = false;
   readonly hideHpSp = HideHpSp;
 
   equipableItems: (DropdownModel & { id: number; position: string; })[] = [];
@@ -355,7 +355,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     private messageService: MessageService,
     private confirmationService: ConfirmationService,
     private dialogService: DialogService,
-    private readonly layoutService: LayoutService,
+    // private readonly layoutService: LayoutService,
     private readonly authService: AuthService,
     private readonly presetService: PresetService,
   ) { }
@@ -385,10 +385,10 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         //
       });
 
-    const laySub = this.layoutService.configUpdate$.pipe(debounceTime(300)).subscribe((c) => {
-      this.hideBasicAtk = c.hideBasicAtk;
-    });
-    this.allSubs.push(laySub);
+    // const laySub = this.layoutService.configUpdate$.pipe(debounceTime(300)).subscribe((c) => {
+    //   this.hideBasicAtk = c.hideBasicAtk;
+    // });
+    // this.allSubs.push(laySub);
 
     const isCalcSubs = this.isCalculatingEvent.pipe(debounceTime(100)).subscribe(() => (this.isCalculating = false));
     this.allSubs.push(isCalcSubs);
