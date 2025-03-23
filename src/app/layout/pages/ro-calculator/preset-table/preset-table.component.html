@@ -1,6 +1,6 @@
-<div class="grid grid-cols-12 gap-4 grid-nogutter">
+<div class="grid grid-cols-12">
   <div class="col-span-3">
-    <div class="grid grid-cols-12 gap-4 grid-nogutter">
+    <div class="grid grid-cols-12">
       <div class="col-fixed mr-2" *ngIf="isLoggedIn">
         <button type="button" class="p-button-help" pButton icon="pi pi-download" label="Load" [disabled]="!selectedCloudPreset" (click)="onLoadPresetClick()"></button>
       </div>
@@ -105,12 +105,12 @@
     </div>
   </div>
   <div class="col-span-9 pl-4">
-    <div class="grid grid-cols-12 gap-4 grid-nogutter" *ngIf="isLoggedIn">
+    <div class="grid grid-cols-12" *ngIf="isLoggedIn">
       <div class="col-span-3 text-lg font-semibold">
-        Updated at: <span class="text-primary-300"> {{ presetInfo?.updatedAt | date : 'dd-MM-yyyy HH:mm' }} </span>
+        Updated at: <span class="text-primary-300"> {{ presetInfo?.updatedAt | date: 'dd-MM-yyyy HH:mm' }} </span>
       </div>
       <div class="col-span-3 text-lg font-semibold" *ngIf="isSharedPreset">
-        Shared at: <span class="text-primary-300"> {{ presetInfo?.publishedAt | date : 'dd-MM-yyyy HH:mm' }} </span><br />
+        Shared at: <span class="text-primary-300"> {{ presetInfo?.publishedAt | date: 'dd-MM-yyyy HH:mm' }} </span><br />
       </div>
       <div class="col-span-3 text-lg font-medium" *ngIf="isSharedPreset">
         Like: <span class="text-primary-400"> {{ presetInfo?.tags[0]?.totalLike }} </span><br />
@@ -134,7 +134,7 @@
         <button type="button" class="p-button-warning" pButton label="Cancel" (click)="unsharePreset()"></button>
       </div>
       <!-- <div class="col-span-12">
-        <div class="grid grid-cols-12 gap-4 p-fluid fluid grid-nogutter" *ngIf="isSharedPreset">
+        <div class="grid grid-cols-12 p-fluid fluid" *ngIf="isSharedPreset">
           <div class="col">
             <p-multiSelect
               [options]="availableTags"
@@ -175,13 +175,13 @@
       </div> -->
     </div>
 
-    <div class="grid grid-cols-12 gap-4 my-2">
+    <div class="grid grid-cols-12 my-2">
       <div class="col-span-12 py-1 divider">
         <p-divider></p-divider>
       </div>
     </div>
 
-    <div class="grid grid-cols-12 gap-4">
+    <div class="grid grid-cols-12">
       <div class="col-fixed flex gap-2" *ngIf="!!model?.class">
         <img src="assets/demo/images/jobs/icon_jobs_{{ jobIconMap[model?.class] }}.png" alt="" class="job_img" />
         <span class="summary_highlight text-xl"> {{ classLabelMap[model?.class] }} </span>
@@ -212,7 +212,7 @@
       </div>
     </div>
 
-    <div *ngFor="let item of displayMainItems" class="grid grid-cols-12 gap-4 grid-nogutter px-2 py-2 item_label_{{ item.itemType }}" style="min-height: 2rem">
+    <div *ngFor="let item of displayMainItems" class="grid grid-cols-12 px-2 py-2 item_label_{{ item.itemType }}" style="min-height: 2rem">
       <div class="col-span-4">
         <div *ngIf="!item.mainId">--- {{ item.itemType }} ---</div>
         <div *ngIf="item.mainId" class="item_template flex gap-1">
@@ -239,12 +239,12 @@
       </div>
     </div>
 
-    <div class="grid grid-cols-12 gap-4 grid-nogutter">
+    <div class="grid grid-cols-12">
       <div class="col-span-12 py-1 divider">
         <p-divider></p-divider>
       </div>
       <div class="col-span-4">
-        <div *ngFor="let item of displayCostumeItems" class="grid grid-cols-12 gap-4 grid-nogutter px-2 py-2 item_label_{{ item.itemType }}" style="min-height: 2rem">
+        <div *ngFor="let item of displayCostumeItems" class="grid grid-cols-12 px-2 py-2 item_label_{{ item.itemType }}" style="min-height: 2rem">
           <div class="col-span-12">
             <div *ngIf="!item.mainId">--- {{ item.itemType }} ---</div>
             <div *ngIf="item.mainId" class="item_template flex gap-1">
@@ -255,7 +255,7 @@
         </div>
       </div>
       <div class="col-span-4">
-        <div *ngFor="let item of displayShadowItems" class="grid grid-cols-12 gap-4 grid-nogutter px-2 py-2 item_label_{{ item.itemType }}" style="min-height: 2rem">
+        <div *ngFor="let item of displayShadowItems" class="grid grid-cols-12 px-2 py-2 item_label_{{ item.itemType }}" style="min-height: 2rem">
           <div class="col-span-12">
             <div *ngIf="!item.mainId">--- {{ item.itemType }} ---</div>
             <div *ngIf="item.mainId" class="item_template flex gap-1">

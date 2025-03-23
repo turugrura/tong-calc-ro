@@ -1,4 +1,4 @@
-<div class="grid grid-cols-12 gap-4 grid-nogutter">
+<div class="grid grid-cols-12">
   <div class="loading_block" *ngIf="isCalculating">
     <i class="pi pi-spin pi-spinner" style="font-size: 2rem"></i>
   </div>
@@ -132,7 +132,7 @@
 
   <!-- Skill Summary -->
   <div class="col-span-12" [hidden]="!!totalSummary?.dmg?.requireTxt">
-    <div class="grid grid-cols-12 gap-4 grid-nogutter">
+    <div class="grid grid-cols-12">
       <div class="col-span-6">
         <app-calc-value
           [enableCompare]="isEnableCompare && totalSummary2?.dmg"
@@ -361,7 +361,7 @@
 
   <!-- Basic Damage -->
   <div class="col-span-12" [hidden]="hideBasicAtk">
-    <div class="grid grid-cols-12 gap-4 grid-nogutter">
+    <div class="grid grid-cols-12">
       <div class="col-span-12">
         Element:
         <span class="{{ 'property_' + totalSummary?.propertyAtk }} px-1 font-semibold">{{ totalSummary?.propertyAtk }}</span

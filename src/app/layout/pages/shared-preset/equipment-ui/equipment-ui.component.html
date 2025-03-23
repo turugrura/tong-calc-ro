@@ -1,4 +1,4 @@
-<div class="grid grid-cols-12 gap-4 grid-nogutter">
+<div class="grid grid-cols-12">
   <div class="col-fixed mb-2">
     <div class="equipmentPreview" style="width: 450px">
       <div class="panel">
@@ -7,16 +7,9 @@
             <tr *ngFor="let itemTypes of mainItemNames; let i = index">
               <td class="main_left_item">
                 <div class="flex gap-1">
-                  <img
-                    *ngIf="model[itemTypes[0]]"
-                    src="assets/demo/images/items/{{ model[itemTypes[0]] }}.png"
-                    alt=""
-                    class="item_img"
-                  />
+                  <img *ngIf="model[itemTypes[0]]" src="assets/demo/images/items/{{ model[itemTypes[0]] }}.png" alt="" class="item_img" />
                   <div class="text_ellips font-medium">
-                    <span class="font-bold" *ngIf="model[itemTypes[0] + 'Refine'] > 0"
-                      >+{{ model[itemTypes[0] + 'Refine'] }}</span
-                    >
+                    <span class="font-bold" *ngIf="model[itemTypes[0] + 'Refine'] > 0">+{{ model[itemTypes[0] + 'Refine'] }}</span>
                     {{ itemMap[model[itemTypes[0]]]?.name || '' }}
                   </div>
                 </div>
@@ -39,9 +32,7 @@
                     class="item_img"
                   />
                   <div class="text_ellips font-medium">
-                    <span
-                      class="font-bold"
-                      *ngIf="model[itemTypes[1] + 'Refine'] > 0 || model[itemTypes[2] + 'Refine'] > 0"
+                    <span class="font-bold" *ngIf="model[itemTypes[1] + 'Refine'] > 0 || model[itemTypes[2] + 'Refine'] > 0"
                       >+{{ model[itemTypes[1] + 'Refine'] || model[itemTypes[2] + 'Refine'] }}</span
                     >
                     {{ itemMap[model[itemTypes[1]] || model[itemTypes[2]]]?.name || '' }}
@@ -62,16 +53,9 @@
             <tr *ngFor="let itemTypes of shadowItemNames; let i = index">
               <td class="shadow_left_item">
                 <div class="flex gap-1">
-                  <img
-                    *ngIf="model[itemTypes[0]]"
-                    src="assets/demo/images/items/{{ model[itemTypes[0]] }}.png"
-                    alt=""
-                    class="item_img"
-                  />
+                  <img *ngIf="model[itemTypes[0]]" src="assets/demo/images/items/{{ model[itemTypes[0]] }}.png" alt="" class="item_img" />
                   <div class="text_ellips font-medium">
-                    <span class="font-bold" *ngIf="model[itemTypes[0] + 'Refine'] > 0"
-                      >+{{ model[itemTypes[0] + 'Refine'] }}</span
-                    >
+                    <span class="font-bold" *ngIf="model[itemTypes[0] + 'Refine'] > 0">+{{ model[itemTypes[0] + 'Refine'] }}</span>
                     {{ itemMap[model[itemTypes[0]]]?.name || '' }}
                   </div>
                 </div>
@@ -87,16 +71,9 @@
 
               <td class="shadow_right_item">
                 <div class="flex flex-row-reverse gap-1">
-                  <img
-                    *ngIf="model[itemTypes[1]]"
-                    src="assets/demo/images/items/{{ model[itemTypes[1]] }}.png"
-                    alt=""
-                    class="item_img"
-                  />
+                  <img *ngIf="model[itemTypes[1]]" src="assets/demo/images/items/{{ model[itemTypes[1]] }}.png" alt="" class="item_img" />
                   <div class="text_ellips font-medium">
-                    <span class="font-bold" *ngIf="model[itemTypes[1] + 'Refine'] > 0"
-                      >+{{ model[itemTypes[1] + 'Refine'] }}</span
-                    >
+                    <span class="font-bold" *ngIf="model[itemTypes[1] + 'Refine'] > 0">+{{ model[itemTypes[1] + 'Refine'] }}</span>
                     {{ itemMap[model[itemTypes[1]]]?.name || '' }}
                   </div>
                 </div>

@@ -26,7 +26,7 @@
       </ng-template>
     </p-tabMenu>
   </div>
-  <!-- <div class="grid grid-cols-12 gap-4 router_link">
+  <!-- <div class="grid grid-cols-12 router_link">
     <div class="col-fixed">
       <a routerLink="/" routerLinkActive="/">Calculator</a>
     </div>
@@ -149,7 +149,7 @@
     </ng-template>
 
     <div *ngFor="let update of updates; index as i" [ngStyle]="{ color: i + 1 > showUnreadVersion ? 'var(--gray-300)' : 'white' }">
-      <div class="grid grid-cols-12 gap-4 grid-nogutter">
+      <div class="grid grid-cols-12">
         <div class="p-col-12" style="display: flex; align-content: center; justify-content: center; align-items: center">
           <span class="pr-2">{{ update.v }}</span>
           <span>{{ update.date }} </span>

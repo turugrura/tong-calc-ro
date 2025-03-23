@@ -1,8 +1,8 @@
 <p-dataView #dv [value]="products" [layout]="'grid'" [rows]="12" [paginator]="true" filterBy="label">
   <ng-template pTemplate="header">
-    <div class="p-fluid fluid grid grid-cols-12 gap-4 grid-nogutter">
+    <div class="p-fluid fluid grid grid-cols-12">
       <div class="col">
-        <div class="grid grid-cols-12 gap-4 grid-nogutter">
+        <div class="grid grid-cols-12">
           <div class="col-span-4">
             <p-multiSelect
               [options]="groupNames"

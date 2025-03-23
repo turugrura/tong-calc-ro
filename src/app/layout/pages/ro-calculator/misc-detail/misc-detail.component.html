@@ -1,8 +1,8 @@
-<div class="grid grid-cols-12 gap-4 p-fluid fluid grid-nogutter">
+<div class="grid grid-cols-12 p-fluid fluid">
   <div class="col-span-7">
-    <div class="grid grid-cols-12 gap-4 grid-nogutter">
+    <div class="grid grid-cols-12">
       <div class="col-span-6">
-        <div class="grid grid-cols-12 gap-4 grid-nogutter">
+        <div class="grid grid-cols-12">
           <div class="col-span-12 pb-4" *ngIf="isShowSkillMultiplierTable">
             <p-table [value]="skillMultiplierTable" styleClass="p-datatable-sm" [tableStyle]="{ 'min-width': '10rem' }">
               <ng-template pTemplate="header">
@@ -146,6 +146,6 @@
   </div>
 
   <div class="col-span-12">
-    <div class="grid grid-cols-12 gap-4 grid-nogutter"></div>
+    <div class="grid grid-cols-12"></div>
   </div>
 </div>

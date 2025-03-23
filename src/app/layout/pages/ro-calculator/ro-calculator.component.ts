@@ -402,7 +402,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
           // console.log('updateItemSubs ', ++n);
           itemChanges.add(itemChange);
         }),
-        debounceTime(1250),
+        debounceTime(250),
       )
       .subscribe(() => {
         this.hiddenMap = {
@@ -601,7 +601,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
             .filter(Boolean)
             .flat();
           const allEnchantSet = new Set(enchants);
-          console.log({ allEnchantSet });
+          // console.log({ allEnchantSet });
           for (const enchtName of allEnchantSet.values()) {
             if (!this.mapEnchant.has(enchtName)) {
               console.log('not found in data.json', { enchtName });

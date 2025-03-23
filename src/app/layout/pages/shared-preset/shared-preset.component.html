@@ -1,9 +1,9 @@
 <p-toast></p-toast>
 <p-confirmDialog [position]="'top'" [style]="{ width: '25vw' }"></p-confirmDialog>
 
-<div class="grid grid-cols-12 gap-4 grid-nogutter" style="min-width: 1500px">
+<div class="grid grid-cols-12" style="min-width: 1500px">
   <div class="col-span-12 mb-2">
-    <div class="grid grid-cols-12 gap-4 grid-nogutter column_list">
+    <div class="grid grid-cols-12 column_list">
       <p-listbox [options]="allClasses" [(ngModel)]="selectedClassId" (onChange)="onSelectClassChange()" [disabled]="isLoading">
         <ng-template let-item pTemplate="item" class="py-0">
           <div class="flex gap-2 py-0">
@@ -55,7 +55,7 @@
       <ng-template pTemplate="body" let-presetTag>
         <tr>
           <td>
-            <div class="grid grid-cols-12 gap-4 grid-nogutter">
+            <div class="grid grid-cols-12">
               <div class="col-span-12 flex justify-between">
                 <div class="flex items-center">
                   <div class="like_section pr-4">
@@ -112,7 +112,7 @@
                 <app-equipment-ui [itemMap]="itemMap" [model]="presetTag.model"></app-equipment-ui>
               </div>
               <div class="col-span-2">
-                <div class="grid grid-cols-12 gap-4 grid-nogutter">
+                <div class="grid grid-cols-12">
                   <div class="col-span-6">
                     Level: <span class="summary_highlight text-xl font-semibold"> {{ presetTag.model?.level }} </span>
                   </div>
@@ -144,7 +144,7 @@
                     <span>{{ presetTag.luk || 0 }}</span>
                   </div>
                 </div>
-                <div class="grid grid-cols-12 gap-4 grid-nogutter mt-2">
+                <div class="grid grid-cols-12 mt-2">
                   <div class="col-span-6">
                     Melee:
                     <span class="font-semibold px-1 summary_stat_atk">{{ presetTag.summary?.melee || 0 }}</span>
@@ -184,7 +184,7 @@
                 </div>
               </div>
               <div class="col-span-12" *ngIf="viewDetail[presetTag.tagId]">
-                <div class="grid grid-cols-12 gap-4 grid-nogutter">
+                <div class="grid grid-cols-12">
                   <div class="col-span-5">
                     <app-equipment-in-detail [itemMap]="itemMap" [model]="presetTag.model"></app-equipment-in-detail>
                   </div>
@@ -207,10 +207,10 @@
   <div class="p-fluid fluid col-span-3">
     <p-accordion [multiple]="true" [activeIndex]="[0]">
       <p-accordionTab header="Battle Summary">
-        <div class="grid grid-cols-12 gap-4 grid-nogutter battle_summary">
+        <div class="grid grid-cols-12 battle_summary">
           <!-- Monster -->
           <div class="col-span-12">
-            <div class="grid grid-cols-12 gap-4 grid-nogutter">
+            <div class="grid grid-cols-12">
               <div class="col-span-12">
                 <div class="p-inputgroup">
                   <span class="p-inputgroup-addon monster_hilight_label">Monster</span>
@@ -236,14 +236,14 @@
               </div>
               <!-- <div class="col-span-12">{{ selectedMonsterName }}</div> -->
               <div class="col-span-6 flex items-center justify-center">
-                <div class="grid grid-cols-12 gap-4 grid-nogutter" style="height: 100%; width: 100%">
+                <div class="grid grid-cols-12" style="height: 100%; width: 100%">
                   <div class="col-span-12 flex items-center justify-center">
                     <img src="https://static.divine-pride.net/images/mobs/png/{{ selectedMonster }}.png" class="img_monster" alt="-" />
                   </div>
                 </div>
               </div>
               <div class="col-span-6">
-                <div class="grid grid-cols-12 gap-4 grid-nogutter">
+                <div class="grid grid-cols-12">
                   <div class="col-span-12">
                     HP
                     <span class="summary_monster_value px-1 font-semibold">{{ totalSummary?.monster?.hp | number }}</span>
@@ -324,7 +324,7 @@
 
           <!-- Skill -->
           <div class="col-span-12">
-            <div class="grid grid-cols-12 gap-4 grid-nogutter" style="position: relative">
+            <div class="grid grid-cols-12" style="position: relative">
               <div class="col-span-12 skill-selection">
                 <!-- <div class="p-inputgroup">
                   <span class="p-inputgroup-addon skill_hilight_label">Skill</span>
@@ -357,7 +357,7 @@
           </div>
 
           <div class="col-span-12 my-2" *ngFor="let _s of summaries">
-            <div class="grid grid-cols-12 gap-4 grid-nogutter" style="position: relative">
+            <div class="grid grid-cols-12" style="position: relative">
               <div class="loading_block" *ngIf="isCalculating">
                 <i class="pi pi-spin pi-spinner" style="font-size: 2rem"></i>
               </div>
@@ -435,7 +435,7 @@
 
               <!-- Skill Summary -->
               <div class="col-span-12">
-                <div class="grid grid-cols-12 gap-4 grid-nogutter">
+                <div class="grid grid-cols-12">
                   <div class="col-span-6">
                     <app-calc-value
                       [enableCompare]="false"

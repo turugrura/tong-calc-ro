@@ -22,15 +22,15 @@
   <app-elemental-table [monsterMap]="monsterDataMap" [groupMonsterList]="groupMonsterList" [allSelectedMonsterIds]="allSelectedMonsterIds"></app-elemental-table>
 </p-dialog>
 
-<div class="grid grid-cols-12 gap-4 grid-nogutter" style="min-width: 1500px">
+<div class="grid grid-cols-12" style="min-width: 1500px">
   <!-- Left Side -->
-  <div class="p-fluid fluid col-span-7">
+  <p-fluid class="col-span-7">
     <!-- Create Update Class -->
-    <div class="grid grid-cols-12 gap-4 grid-nogutter">
+    <div class="grid grid-cols-12">
       <div class="col-span-4">
-        <div class="grid grid-cols-12 gap-4 grid-nogutter">
+        <div class="grid grid-cols-12">
           <div class="col-span-12">
-            <div class="p-inputgroup">
+            <p-inputgroup>
               <input #presetName [autocomplete]="false" type="text" pInputText placeholder="Name" />
               <button
                 type="button"
@@ -42,10 +42,10 @@
                 (click)="updatePreset(presetName.value)"
               ></button>
               <button type="button" class="p-button-secondary" pButton icon="pi pi-cog" [disabled]="isInProcessingPreset" (click)="openPresetManagement()"></button>
-            </div>
+            </p-inputgroup>
           </div>
           <div class="col-span-12">
-            <div class="p-inputgroup dropdown-joblist">
+            <p-inputgroup class="dropdown-joblist">
               <p-select
                 [autoDisplayFirst]="false"
                 [options]="preSets"
@@ -76,12 +76,12 @@
                 [disabled]="!selectedPreset || isInProcessingPreset"
                 [model]="loadBtnItems"
               ></p-splitButton>
-            </div>
+            </p-inputgroup>
           </div>
 
           <div class="col-span-12">
-            <div class="p-inputgroup dropdown-joblist">
-              <span class="p-inputgroup-addon" style="width: 80px">Class</span>
+            <p-inputgroup class="dropdown-joblist">
+              <p-inputgroup-addon [style]="{ width: '80px' }">Class</p-inputgroup-addon>
               <p-select
                 inputId="character"
                 [autoDisplayFirst]="false"
@@ -108,11 +108,11 @@
                   </div>
                 </ng-template>
               </p-select>
-            </div>
+            </p-inputgroup>
           </div>
-          <div class="col">
-            <div class="p-inputgroup">
-              <span class="p-inputgroup-addon" style="width: 80px">Level</span>
+          <div class="col-span-full">
+            <p-inputgroup>
+              <p-inputgroup-addon [style]="{ width: '80px' }">Level</p-inputgroup-addon>
               <p-select
                 inputId="level"
                 [autoDisplayFirst]="false"
@@ -124,21 +124,19 @@
                 [(ngModel)]="model.level"
                 (onChange)="onBaseStatusChange()"
               ></p-select>
-            </div>
-          </div>
-          <div class="col-fixed">
-            <button
-              type="button"
-              class="p-button-warning"
-              pButton
-              label="Up Class"
-              [disabled]="!canPromote || isInProcessingPreset"
-              (click)="onJobPromotionClick()"
-            ></button>
+              <button
+                type="button"
+                class="p-button-warning"
+                pButton
+                label="Up Class"
+                [disabled]="!canPromote || isInProcessingPreset"
+                (click)="onJobPromotionClick()"
+              ></button>
+            </p-inputgroup>
           </div>
           <div class="col-span-12">
-            <div class="p-inputgroup">
-              <span class="p-inputgroup-addon" style="width: 80px">Job</span>
+            <p-inputgroup>
+              <p-inputgroup-addon [style]="{ width: '80px' }">Job</p-inputgroup-addon>
               <p-select
                 inputId="jobLevel"
                 [autoDisplayFirst]="false"
@@ -150,10 +148,10 @@
                 [(ngModel)]="model.jobLevel"
                 (onChange)="onJobLevelChange()"
               ></p-select>
-            </div>
+            </p-inputgroup>
           </div>
           <div class="col-span-12">
-            <span class="p-inputgroup-addon"
+            <p-inputgroup-addon
               >Status:
               <span [className]="availablePoints < 0 ? 'ml-2 summary_monster_value px-1 font-semibold' : 'ml-2'">
                 {{ availablePoints }}
@@ -167,18 +165,18 @@
                   <span [hidden]="!appropriateLevelForTrait">(Lv {{ appropriateLevelForTrait > 300 ? 'x' : appropriateLevelForTrait }})</span>
                 </span>
               </span>
-            </span>
+            </p-inputgroup-addon>
           </div>
         </div>
       </div>
 
       <!-- Status -->
       <div class="col-span-8">
-        <div class="grid grid-cols-12 gap-4 grid-nogutter">
+        <div class="grid grid-cols-12">
           <div class="col-span-5">
-            <div class="grid grid-cols-12 gap-4 grid-nogutter">
+            <div class="grid grid-cols-12">
               <!-- STR -->
-              <div class="col-span-12 grid grid-cols-12 gap-4 grid-nogutter">
+              <div class="col-span-12 grid grid-cols-12">
                 <div class="col-span-6">
                   <app-status-input
                     label="Str"
@@ -202,7 +200,7 @@
               </div>
 
               <!-- AGI -->
-              <div class="col-span-12 grid grid-cols-12 gap-4 grid-nogutter">
+              <div class="col-span-12 grid grid-cols-12">
                 <div class="col-span-6">
                   <app-status-input
                     label="Agi"
@@ -226,7 +224,7 @@
               </div>
 
               <!-- VIT -->
-              <div class="col-span-12 grid grid-cols-12 gap-4 grid-nogutter">
+              <div class="col-span-12 grid grid-cols-12">
                 <div class="col-span-6">
                   <app-status-input
                     label="Vit"
@@ -250,7 +248,7 @@
               </div>
 
               <!-- INT -->
-              <div class="col-span-12 grid grid-cols-12 gap-4 grid-nogutter">
+              <div class="col-span-12 grid grid-cols-12">
                 <div class="col-span-6">
                   <app-status-input
                     label="Int"
@@ -274,7 +272,7 @@
               </div>
 
               <!-- DEX -->
-              <div class="col-span-12 grid grid-cols-12 gap-4 grid-nogutter">
+              <div class="col-span-12 grid grid-cols-12">
                 <div class="col-span-6">
                   <app-status-input
                     label="Dex"
@@ -298,7 +296,7 @@
               </div>
 
               <!-- LUK -->
-              <div class="col-span-12 grid grid-cols-12 gap-4 grid-nogutter">
+              <div class="col-span-12 grid grid-cols-12">
                 <div class="col-span-6">
                   <app-status-input
                     label="Luk"
@@ -325,12 +323,12 @@
 
           <!-- Summary -->
           <div class="col-span-7">
-            <div class="grid grid-cols-12 gap-4 grid-nogutter" style="position: relative">
+            <div class="grid grid-cols-12" style="position: relative">
               <div class="loading_block" *ngIf="isCalculating">
                 <i class="pi pi-spin pi-spinner" style="font-size: 2rem"></i>
               </div>
               <div class="col-span-6">
-                <div class="grid grid-cols-12 gap-4 grid-nogutter">
+                <div class="grid grid-cols-12">
                   <div class="col-span-12">
                     Alt+Q Atk:
                     <span class="font-semibold px-1 summary_stat_atk">
@@ -395,7 +393,7 @@
                 </div>
               </div>
               <div class="col-span-6">
-                <div class="grid grid-cols-12 gap-4 grid-nogutter mx-1">
+                <div class="grid grid-cols-12 mx-1">
                   <div class="col-span-12">
                     Alt+Q Matk:
                     <span class="font-semibold px-1 summary_stat_matk"
@@ -436,7 +434,7 @@
                     <span [hidden]="totalSummary?.calc?.to530 <= 0">{{ '( อีก ' + totalSummary?.calc?.to530 + ' )' }}</span>
                   </div>
                   <div class="col-span-12 px-1 border_default hp-sp-section" [hidden]="hideHpSp[selectedCharacter?.className]">
-                    <div class="grid grid-cols-12 gap-4 grid-nogutter">
+                    <div class="grid grid-cols-12">
                       <div class="col-span-12 flex gap-1">
                         HP:
                         <span class="font-semibold px-1 summary_stat_yellow">{{ totalSummary?.calc?.maxHp || 0 | number }}</span>
@@ -474,7 +472,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-span-12 item_label_compare">
+              <!-- <div class="col-span-12 item_label_compare">
                 <p-multiSelect
                   [options]="compareItemList"
                   [(ngModel)]="compareItemNames"
@@ -488,7 +486,7 @@
                   (onChange)="onListItemComparingChange()"
                   (onClear)="onListItemComparingChange(true)"
                 ></p-multiSelect>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
@@ -496,7 +494,7 @@
     </div>
 
     <!-- Weapon + Ammo -->
-    <div class="grid grid-cols-12 gap-4 grid-nogutter item_label_weapon_main">
+    <div class="grid grid-cols-12 item_label_weapon_main">
       <div class="col-span-12">
         <app-equipment
           [itemType]="'weapon'"
@@ -526,7 +524,7 @@
           (gradeChange)="onSelectGrade($event.itemType, $event.itemId, $event.grade)"
           (optionChange)="onOptionChange()"
         >
-          <div class="col-span-6 item_label_element_converter" style="min-width: 100px">
+          <div class="col-span-6 item_label_element_converter col-end-9" style="min-width: 100px">
             <p-select
               [options]="propertyAtkList"
               [(ngModel)]="model.propertyAtk"
@@ -554,7 +552,7 @@
               </ng-template>
             </p-select>
           </div>
-          <div class="col-{{ isWeaponCanGrade ? 6 : 10 }}" [hidden]="hiddenMap.ammu">
+          <div class="col-span-{{ isWeaponCanGrade ? 6 : 10 }}" [hidden]="hiddenMap.ammu">
             <p-select
               inputId="ammo"
               [autoDisplayFirst]="false"
@@ -590,7 +588,7 @@
         </app-equipment>
       </div>
     </div>
-    <div class="grid grid-cols-12 gap-4 grid-nogutter item_label_leftWeapon_main">
+    <div class="grid grid-cols-12 item_label_leftWeapon_main">
       <div class="col-span-12" [hidden]="!model.weapon || !showLeftWeapon">
         <app-equipment
           [itemType]="'leftWeapon'"
@@ -622,7 +620,7 @@
         ></app-equipment>
       </div>
     </div>
-    <div class="grid grid-cols-12 gap-4 grid-nogutter item_label_compare" *ngIf="showCompareItemMap.weapon">
+    <div class="grid grid-cols-12 item_label_compare" *ngIf="showCompareItemMap.weapon">
       <div class="col-span-12">
         <app-equipment
           [itemType]="'weapon'"
@@ -655,7 +653,7 @@
     </div>
 
     <!-- Shield -->
-    <div class="grid grid-cols-12 gap-4 grid-nogutter item_label_shield_main">
+    <div class="grid grid-cols-12 item_label_shield_main">
       <div class="col-span-12" [hidden]="!model.weapon || hiddenMap.shield || !!model.leftWeapon">
         <app-equipment
           [itemType]="'shield'"
@@ -684,7 +682,7 @@
     </div>
 
     <!-- Head Upper -->
-    <div class="grid grid-cols-12 gap-4 grid-nogutter item_label_head">
+    <div class="grid grid-cols-12 item_label_head">
       <div class="col-span-12">
         <app-equipment
           [itemType]="'headUpper'"
@@ -711,7 +709,7 @@
         ></app-equipment>
       </div>
     </div>
-    <div class="grid grid-cols-12 gap-4 grid-nogutter item_label_compare" *ngIf="showCompareItemMap.headUpper">
+    <div class="grid grid-cols-12 item_label_compare" *ngIf="showCompareItemMap.headUpper">
       <div class="col-span-12">
         <app-equipment
           [itemType]="'headUpper'"
@@ -739,7 +737,7 @@
     </div>
 
     <!-- Head Middle -->
-    <div class="grid grid-cols-12 gap-4 grid-nogutter item_label_head">
+    <div class="grid grid-cols-12 item_label_head">
       <div class="col-span-12">
         <app-equipment
           [itemType]="'headMiddle'"
@@ -765,7 +763,7 @@
         ></app-equipment>
       </div>
     </div>
-    <div class="grid grid-cols-12 gap-4 grid-nogutter item_label_compare" *ngIf="showCompareItemMap.headMiddle">
+    <div class="grid grid-cols-12 item_label_compare" *ngIf="showCompareItemMap.headMiddle">
       <div class="col-span-12">
         <app-equipment
           [itemType]="'headMiddle'"
@@ -792,7 +790,7 @@
     </div>
 
     <!-- Head Lower -->
-    <div class="grid grid-cols-12 gap-4 grid-nogutter item_label_head">
+    <div class="grid grid-cols-12 item_label_head">
       <div class="col-span-12">
         <app-equipment
           [itemType]="'headLower'"
@@ -813,7 +811,7 @@
         ></app-equipment>
       </div>
     </div>
-    <div class="grid grid-cols-12 gap-4 grid-nogutter item_label_compare" *ngIf="showCompareItemMap.headLower">
+    <div class="grid grid-cols-12 item_label_compare" *ngIf="showCompareItemMap.headLower">
       <div class="col-span-12">
         <app-equipment
           [itemType]="'headLower'"
@@ -834,7 +832,7 @@
     </div>
 
     <!-- Armor -->
-    <div class="grid grid-cols-12 gap-4 grid-nogutter item_label_def">
+    <div class="grid grid-cols-12 item_label_def">
       <div class="col-span-12">
         <app-equipment
           [itemType]="'armor'"
@@ -862,7 +860,7 @@
         ></app-equipment>
       </div>
     </div>
-    <div class="grid grid-cols-12 gap-4 grid-nogutter item_label_compare" *ngIf="showCompareItemMap.armor">
+    <div class="grid grid-cols-12 item_label_compare" *ngIf="showCompareItemMap.armor">
       <div class="col-span-12">
         <app-equipment
           [itemType]="'armor'"
@@ -891,7 +889,7 @@
     </div>
 
     <!-- Garment -->
-    <div class="grid grid-cols-12 gap-4 grid-nogutter item_label_def">
+    <div class="grid grid-cols-12 item_label_def">
       <div class="col-span-12">
         <app-equipment
           [itemType]="'garment'"
@@ -918,7 +916,7 @@
         ></app-equipment>
       </div>
     </div>
-    <div class="grid grid-cols-12 gap-4 grid-nogutter item_label_compare" *ngIf="showCompareItemMap.garment">
+    <div class="grid grid-cols-12 item_label_compare" *ngIf="showCompareItemMap.garment">
       <div class="col-span-12">
         <app-equipment
           [itemType]="'garment'"
@@ -946,7 +944,7 @@
     </div>
 
     <!-- Boot -->
-    <div class="grid grid-cols-12 gap-4 grid-nogutter item_label_def">
+    <div class="grid grid-cols-12 item_label_def">
       <div class="col-span-12">
         <app-equipment
           [itemType]="'boot'"
@@ -970,7 +968,7 @@
         ></app-equipment>
       </div>
     </div>
-    <div class="grid grid-cols-12 gap-4 grid-nogutter item_label_compare" *ngIf="showCompareItemMap.boot">
+    <div class="grid grid-cols-12 item_label_compare" *ngIf="showCompareItemMap.boot">
       <div class="col-span-12">
         <app-equipment
           [itemType]="'Boot'"
@@ -995,7 +993,7 @@
     </div>
 
     <!-- Acc Right -->
-    <div class="grid grid-cols-12 gap-4 grid-nogutter item_label_acc">
+    <div class="grid grid-cols-12 item_label_acc">
       <div class="col-span-12">
         <app-equipment
           [itemType]="'accRight'"
@@ -1023,7 +1021,7 @@
         ></app-equipment>
       </div>
     </div>
-    <div class="grid grid-cols-12 gap-4 grid-nogutter item_label_compare" *ngIf="showCompareItemMap.accRight">
+    <div class="grid grid-cols-12 item_label_compare" *ngIf="showCompareItemMap.accRight">
       <div class="col-span-12">
         <app-equipment
           [itemType]="'accRight'"
@@ -1051,7 +1049,7 @@
     </div>
 
     <!-- Acc Left -->
-    <div class="grid grid-cols-12 gap-4 grid-nogutter item_label_acc">
+    <div class="grid grid-cols-12 item_label_acc">
       <div class="col-span-12">
         <app-equipment
           [itemType]="'accLeft'"
@@ -1078,7 +1076,7 @@
         ></app-equipment>
       </div>
     </div>
-    <div class="grid grid-cols-12 gap-4 grid-nogutter item_label_compare" *ngIf="showCompareItemMap.accLeft">
+    <div class="grid grid-cols-12 item_label_compare" *ngIf="showCompareItemMap.accLeft">
       <div class="col-span-12">
         <app-equipment
           [itemType]="'accLeft'"
@@ -1105,7 +1103,7 @@
     </div>
 
     <!-- Pet -->
-    <div class="grid grid-cols-12 gap-4 grid-nogutter py-4 item_label_pet">
+    <div class="grid grid-cols-12 py-4 item_label_pet">
       <div class="col-span-3">
         <p-select
           inputId="pet"
@@ -1136,8 +1134,8 @@
       </div>
     </div>
 
-    <div class="grid grid-cols-12 gap-4 grid-nogutter">
-      <div class="col-span-3 grid grid-cols-12 gap-4 grid-nogutter item_label_costume flex flex-col">
+    <div class="grid grid-cols-12">
+      <div class="col-span-3 grid grid-cols-12 item_label_costume flex flex-col">
         <div class="col-span-12">
           <app-equipment-cos-enchant
             [itemType]="'costumeUpper'"
@@ -1176,7 +1174,7 @@
         </div>
       </div>
 
-      <div class="col-span-3 grid grid-cols-12 gap-4 grid-nogutter item_label_costume flex flex-col">
+      <div class="col-span-3 grid grid-cols-12 item_label_costume flex flex-col">
         <!-- Costume Upper -->
         <div class="col-span-12">
           <app-equipment-cos-enchant
@@ -1296,7 +1294,7 @@
           ></app-equipment-cos-enchant>
         </div>
       </div>
-      <div class="col-span-6 grid grid-cols-12 gap-4 grid-nogutter item_label_shadow content-start">
+      <div class="col-span-6 grid grid-cols-12 item_label_shadow content-start">
         <!-- Shadow Weapon -->
         <div class="col-span-12">
           <app-equipment-shadow
@@ -1479,421 +1477,465 @@
         </div>
       </div>
     </div>
-  </div>
+  </p-fluid>
 
   <!-- Right Side -->
-  <div class="p-fluid fluid col-span-5">
-    <p-accordion [multiple]="true" [activeIndex]="[2, 7]">
-      <p-accordionTab header="Consumables" class="consumable">
-        <div class="grid grid-cols-12 gap-4 grid-nogutter">
-          <!-- Consumable -->
-          <div class="col-span-4">
-            <p-listbox [options]="consumableList" [(ngModel)]="model.consumables" [multiple]="true" [metaKeySelection]="false" (onChange)="onConsumableChange()">
-              <ng-template let-item pTemplate="item">
-                <div class="flex gap-2">
-                  <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
-                  <div class="text_ellips">{{ item.label }}</div>
-                </div>
-              </ng-template>
-            </p-listbox>
-          </div>
-
-          <div class="col-span-4">
-            <div class="grid grid-cols-12 gap-4 grid-nogutter column_list">
-              <div *ngFor="let con of consumableList2; let i = index" class="col-span-12">
-                <p-listbox [options]="con" [(ngModel)]="model.consumables2[i]" [multiple]="false" [metaKeySelection]="false" (onChange)="onConsumableChange()">
-                  <ng-template let-item pTemplate="item">
-                    <div class="flex gap-2">
-                      <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
-                      <div class="text_ellips">{{ item.label }}</div>
-                    </div>
-                  </ng-template>
-                </p-listbox>
-              </div>
+  <p-fluid class="col-span-5">
+    <p-accordion [multiple]="true" [value]="['2', '7']">
+      <p-accordion-panel class="consumable" value="0">
+        <p-accordion-header>Consumables</p-accordion-header>
+        <p-accordion-content>
+          <div class="grid grid-cols-12">
+            <!-- Consumable -->
+            <div class="col-span-4">
+              <p-listbox [options]="consumableList" [(ngModel)]="model.consumables" [multiple]="true" [metaKeySelection]="false" (onChange)="onConsumableChange()">
+                <ng-template let-item pTemplate="item">
+                  <div class="flex gap-2">
+                    <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
+                    <div class="text_ellips">{{ item.label }}</div>
+                  </div>
+                </ng-template>
+              </p-listbox>
             </div>
-          </div>
 
-          <div class="col-span-4">
-            <div class="grid grid-cols-12 gap-4 grid-nogutter">
-              <div class="col-span-12">
-                <p-listbox [options]="aspdPotionList" [(ngModel)]="model.aspdPotion" [multiple]="false" [metaKeySelection]="false" (onChange)="onConsumableChange()">
-                  <ng-template let-item pTemplate="item">
-                    <div class="flex gap-2">
-                      <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
-                      <div class="text_ellips">{{ item.label }}</div>
-                    </div>
-                  </ng-template>
-                </p-listbox>
-              </div>
-              <div class="col-span-12">
-                <p-listbox [options]="aspdPotionList2" [(ngModel)]="model.aspdPotions" [multiple]="true" [metaKeySelection]="false" (onChange)="onConsumableChange()">
-                  <ng-template let-item pTemplate="item">
-                    <div class="flex gap-2">
-                      <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
-                      <div class="text_ellips">{{ item.label }}</div>
-                    </div>
-                  </ng-template>
-                </p-listbox>
-              </div>
-            </div>
-          </div>
-        </div>
-      </p-accordionTab>
-
-      <p-accordionTab header="Skills ***กดอัพสกิลด้วยนะ เพราะไอเทมบางชิ้นต้องอัพสกิลถึงจะได้ bonus" class="select_skill">
-        <div class="grid grid-cols-12 gap-4 grid-nogutter">
-          <!--  Buffs -->
-          <div class="col-span-4">
-            <p-tag severity="info" value="Buffs"></p-tag>
-            <span class="skill_debuff pl-2">สีแดง = Debuff monster</span>
-            <div class="grid grid-cols-12 gap-4 grid-nogutter">
-              <div *ngFor="let bishopBuff of skillBuffs; let i = index" class="col-span-12">
-                <div [ngSwitch]="bishopBuff.inputType">
-                  <div *ngSwitchCase="'dropdown'">
-                    <div class="p-inputgroup">
-                      <span class="p-inputgroup-addon text_group_ellips {{ bishopBuff.isDebuff ? 'skill_debuff' : '' }}">{{ bishopBuff.label }}</span>
-                      <p-select
-                        [autoDisplayFirst]="false"
-                        [resetFilterOnHide]="true"
-                        [options]="bishopBuff.dropdown"
-                        [(ngModel)]="model.skillBuffs[i]"
-                        (onChange)="onSkillClassChange()"
-                        styleClass="'width: 50%'"
-                        scrollHeight="380px"
-                      ></p-select>
-                    </div>
-                  </div>
-                  <div *ngSwitchDefault>
-                    <div class="p-inputgroup">
-                      <span class="p-inputgroup-addon text_group_ellips {{ bishopBuff.isDebuff ? 'skill_debuff' : '' }}">{{ bishopBuff.label }}</span>
-                      <p-selectButton
-                        [options]="bishopBuff.dropdown"
-                        [(ngModel)]="model.skillBuffs[i]"
-                        (ngModelChange)="onSkillClassChange()"
-                        styleClass="'width: 50%'"
-                      ></p-selectButton>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Learned Skills -->
-          <div class="col-span-4" [hidden]="passiveSkills.length === 0">
-            <p-tag severity="warn" value="Learn to get bonuses"></p-tag>
-            <div class="grid grid-cols-12 gap-4 grid-nogutter">
-              <div *ngFor="let passiveSkill of passiveSkills; let i = index" class="col-span-12">
-                <div [ngSwitch]="passiveSkill.inputType">
-                  <div *ngSwitchCase="'dropdown'">
-                    <div class="p-inputgroup">
-                      <span class="p-inputgroup-addon text_group_ellips">{{ passiveSkill.label }}</span>
-                      <p-select
-                        [autoDisplayFirst]="false"
-                        [resetFilterOnHide]="true"
-                        [options]="passiveSkill.dropdown"
-                        [(ngModel)]="model.passiveSkills[i]"
-                        (onChange)="onSkillClassChange()"
-                        styleClass="'width: 50%'"
-                        scrollHeight="380px"
-                      ></p-select>
-                    </div>
-                  </div>
-                  <div *ngSwitchDefault>
-                    <div class="p-inputgroup">
-                      <span class="p-inputgroup-addon text_group_ellips">{{ passiveSkill.label }}</span>
-                      <p-selectButton
-                        [options]="passiveSkill.dropdown"
-                        [(ngModel)]="model.passiveSkills[i]"
-                        (ngModelChange)="onSkillClassChange()"
-                        styleClass="'width: 50%'"
-                      ></p-selectButton>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Active SKills -->
-          <div class="col-span-4">
-            <p-tag severity="danger" value="Activating Skills/Effects"></p-tag>
-            <div class="grid grid-cols-12 gap-4 grid-nogutter">
-              <div *ngFor="let activeSkill of activeSkills; let i = index" class="col-span-12">
-                <div [ngSwitch]="activeSkill.inputType">
-                  <div *ngSwitchCase="'dropdown'">
-                    <div class="p-inputgroup">
-                      <span class="p-inputgroup-addon text_group_ellips {{ activeSkill.isDebuff ? 'skill_debuff' : '' }}">{{ activeSkill.label }}</span>
-                      <p-select
-                        [autoDisplayFirst]="false"
-                        [resetFilterOnHide]="true"
-                        [options]="activeSkill.dropdown"
-                        [(ngModel)]="model.activeSkills[i]"
-                        (onChange)="onSkillClassChange()"
-                        styleClass="'width: 50%'"
-                        scrollHeight="380px"
-                      ></p-select>
-                    </div>
-                  </div>
-                  <div *ngSwitchDefault>
-                    <div class="p-inputgroup">
-                      <span class="p-inputgroup-addon text_group_ellips {{ activeSkill.isDebuff ? 'skill_debuff' : '' }}">{{ activeSkill.label }}</span>
-                      <p-selectButton
-                        [options]="activeSkill.dropdown"
-                        [(ngModel)]="model.activeSkills[i]"
-                        (onChange)="onSkillClassChange()"
-                        styleClass="'width: 50%'"
-                      ></p-selectButton>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </p-accordionTab>
-
-      <p-accordionTab header="Battle Summary">
-        <div class="grid grid-cols-12 gap-4 grid-nogutter battle_summary">
-          <div class="col-span-12" [hidden]="!chanceList?.length">
-            <p-fieldset legend="Has a chance" [toggleable]="true">
-              <div *ngFor="let category of chanceList" class="field-checkbox my-2">
-                <p-checkbox
-                  name="group"
-                  [value]="category.name"
-                  [(ngModel)]="selectedChances"
-                  [inputId]="category.name"
-                  (ngModelChange)="onSelecteChance($event)"
-                ></p-checkbox>
-                <label class="font-semibold summary_chance" [for]="category.name">{{ category.label }}</label
-                ><i class="pi pi-arrow-right px-1"></i>
-                <span>{{ category.label2 }}</span>
-              </div>
-            </p-fieldset>
-          </div>
-
-          <!-- Monster -->
-          <div class="col-span-5">
-            <div class="grid grid-cols-12 gap-4 grid-nogutter">
-              <div class="col-span-12">
-                <div class="p-inputgroup">
-                  <span class="p-inputgroup-addon monster_hilight_label">Monster</span>
-                  <p-select
-                    inputId="monsterOpponent"
-                    [autoDisplayFirst]="false"
-                    [resetFilterOnHide]="true"
-                    [options]="groupMonsterList"
-                    [filter]="true"
-                    filterBy="label,searchVal"
-                    [group]="true"
-                    scrollHeight="400px"
-                    [(ngModel)]="selectedMonster"
-                    (onChange)="onMonsterChange()"
-                  >
-                    <ng-template let-group pTemplate="group">
-                      <div class="flex items-center font-bold dropdown_monster_group_label">
-                        <span>{{ group.label }}</span>
+            <div class="col-span-4">
+              <div class="grid grid-cols-12 column_list">
+                <div *ngFor="let con of consumableList2; let i = index" class="col-span-12">
+                  <p-listbox [options]="con" [(ngModel)]="model.consumables2[i]" [multiple]="false" [metaKeySelection]="false" (onChange)="onConsumableChange()">
+                    <ng-template let-item pTemplate="item">
+                      <div class="flex gap-2">
+                        <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
+                        <div class="text_ellips">{{ item.label }}</div>
                       </div>
                     </ng-template>
-                  </p-select>
-                  <!-- <button
-                    type="button"
-                    class="p-button-success"
-                    pButton
-                    label="Choose Monster"
-                    [loading]="isInProcessingPreset"
-                    (click)="onClickMonster()"
-                  ></button> -->
+                  </p-listbox>
                 </div>
               </div>
-              <!-- <div class="col-span-12">{{ selectedMonsterName }}</div> -->
-              <div class="col-span-5 flex items-center justify-center">
-                <div class="grid grid-cols-12 gap-4 grid-nogutter" style="height: 100%; width: 100%">
-                  <div class="col-span-12 flex items-center justify-center">
-                    <img src="https://static.divine-pride.net/images/mobs/png/{{ selectedMonster }}.png" class="img_monster" alt="-" />
+            </div>
+
+            <div class="col-span-4">
+              <div class="grid grid-cols-12">
+                <div class="col-span-12">
+                  <p-listbox [options]="aspdPotionList" [(ngModel)]="model.aspdPotion" [multiple]="false" [metaKeySelection]="false" (onChange)="onConsumableChange()">
+                    <ng-template let-item pTemplate="item">
+                      <div class="flex gap-2">
+                        <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
+                        <div class="text_ellips">{{ item.label }}</div>
+                      </div>
+                    </ng-template>
+                  </p-listbox>
+                </div>
+                <div class="col-span-12">
+                  <p-listbox [options]="aspdPotionList2" [(ngModel)]="model.aspdPotions" [multiple]="true" [metaKeySelection]="false" (onChange)="onConsumableChange()">
+                    <ng-template let-item pTemplate="item">
+                      <div class="flex gap-2">
+                        <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
+                        <div class="text_ellips">{{ item.label }}</div>
+                      </div>
+                    </ng-template>
+                  </p-listbox>
+                </div>
+              </div>
+            </div>
+          </div>
+        </p-accordion-content>
+      </p-accordion-panel>
+
+      <p-accordion-panel class="select_skill" value="1">
+        <p-accordion-header>Skills ***กดอัพสกิลด้วยนะ เพราะไอเทมบางชิ้นต้องอัพสกิลถึงจะได้ bonus</p-accordion-header>
+        <p-accordion-content>
+          <div class="grid grid-cols-12">
+            <!--  Buffs -->
+            <div class="col-span-4">
+              <p-tag severity="info" value="Buffs"></p-tag>
+              <span class="skill_debuff pl-2">สีแดง = Debuff monster</span>
+              <div class="grid grid-cols-12">
+                <div *ngFor="let bishopBuff of skillBuffs; let i = index" class="col-span-12">
+                  <div [ngSwitch]="bishopBuff.inputType">
+                    <div *ngSwitchCase="'dropdown'">
+                      <p-inputgroup>
+                        <p-inputgroup-addon class="text_group_ellips {{ bishopBuff.isDebuff ? 'skill_debuff' : '' }}">{{ bishopBuff.label }}</p-inputgroup-addon>
+                        <p-select
+                          [autoDisplayFirst]="false"
+                          [resetFilterOnHide]="true"
+                          [options]="bishopBuff.dropdown"
+                          [(ngModel)]="model.skillBuffs[i]"
+                          (onChange)="onSkillClassChange()"
+                          styleClass="'width: 50%'"
+                          scrollHeight="380px"
+                        ></p-select>
+                      </p-inputgroup>
+                    </div>
+                    <div *ngSwitchDefault>
+                      <p-inputgroup>
+                        <p-inputgroup-addon class="text_group_ellips {{ bishopBuff.isDebuff ? 'skill_debuff' : '' }}">{{ bishopBuff.label }}</p-inputgroup-addon>
+                        <p-selectButton
+                          [options]="bishopBuff.dropdown"
+                          [(ngModel)]="model.skillBuffs[i]"
+                          (ngModelChange)="onSkillClassChange()"
+                          styleClass="'width: 50%'"
+                        ></p-selectButton>
+                      </p-inputgroup>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="col-span-7">
-                <app-battle-monster-summary
-                  [totalSummary]="totalSummary"
-                  [isInProcessingPreset]="isInProcessingPreset"
-                  (showElementTableClick)="onShowElementalTableClick()"
-                ></app-battle-monster-summary>
+            </div>
+
+            <!-- Learned Skills -->
+            <div class="col-span-4" [hidden]="passiveSkills.length === 0">
+              <p-tag severity="warn" value="Learn to get bonuses"></p-tag>
+              <div class="grid grid-cols-12">
+                <div *ngFor="let passiveSkill of passiveSkills; let i = index" class="col-span-12">
+                  <div [ngSwitch]="passiveSkill.inputType">
+                    <div *ngSwitchCase="'dropdown'">
+                      <p-inputgroup>
+                        <p-inputgroup-addon class="text_group_ellips">{{ passiveSkill.label }}</p-inputgroup-addon>
+                        <p-select
+                          [autoDisplayFirst]="false"
+                          [resetFilterOnHide]="true"
+                          [options]="passiveSkill.dropdown"
+                          [(ngModel)]="model.passiveSkills[i]"
+                          (onChange)="onSkillClassChange()"
+                          styleClass="'width: 50%'"
+                          scrollHeight="380px"
+                        ></p-select>
+                      </p-inputgroup>
+                    </div>
+                    <div *ngSwitchDefault>
+                      <p-inputgroup>
+                        <p-inputgroup-addon class="text_group_ellips">{{ passiveSkill.label }}</p-inputgroup-addon>
+                        <p-selectButton
+                          [options]="passiveSkill.dropdown"
+                          [(ngModel)]="model.passiveSkills[i]"
+                          (ngModelChange)="onSkillClassChange()"
+                          styleClass="'width: 50%'"
+                        ></p-selectButton>
+                      </p-inputgroup>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Active SKills -->
+            <div class="col-span-4">
+              <p-tag severity="danger" value="Activating Skills/Effects"></p-tag>
+              <div class="grid grid-cols-12">
+                <div *ngFor="let activeSkill of activeSkills; let i = index" class="col-span-12">
+                  <div [ngSwitch]="activeSkill.inputType">
+                    <div *ngSwitchCase="'dropdown'">
+                      <p-inputgroup>
+                        <p-inputgroup-addon class="text_group_ellips {{ activeSkill.isDebuff ? 'skill_debuff' : '' }}">{{ activeSkill.label }}</p-inputgroup-addon>
+                        <p-select
+                          [autoDisplayFirst]="false"
+                          [resetFilterOnHide]="true"
+                          [options]="activeSkill.dropdown"
+                          [(ngModel)]="model.activeSkills[i]"
+                          (onChange)="onSkillClassChange()"
+                          styleClass="'width: 50%'"
+                          scrollHeight="380px"
+                        ></p-select>
+                      </p-inputgroup>
+                    </div>
+                    <div *ngSwitchDefault>
+                      <p-inputgroup>
+                        <p-inputgroup-addon class="text_group_ellips {{ activeSkill.isDebuff ? 'skill_debuff' : '' }}">{{ activeSkill.label }}</p-inputgroup-addon>
+                        <p-selectButton
+                          [options]="activeSkill.dropdown"
+                          [(ngModel)]="model.activeSkills[i]"
+                          (onChange)="onSkillClassChange()"
+                          styleClass="'width: 50%'"
+                        ></p-selectButton>
+                      </p-inputgroup>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+        </p-accordion-content>
+      </p-accordion-panel>
 
-          <!-- Skill -->
-          <div class="col-span-7">
-            <div class="grid grid-cols-12 gap-4 grid-nogutter" style="position: relative">
-              <div class="col-span-12 skill-selection" [hidden]="isShowSelectableSkillLevel">
-                <div class="p-inputgroup">
-                  <span class="p-inputgroup-addon skill_hilight_label">Skill</span>
-                  <p-select
-                    inputId="skill"
-                    [autoDisplayFirst]="false"
-                    [resetFilterOnHide]="true"
-                    [options]="atkSkills"
-                    scrollHeight="400px"
-                    [(ngModel)]="model.selectedAtkSkill"
-                    (onChange)="onAtkSkillChange()"
-                  ></p-select>
+      <p-accordion-panel value="2">
+        <p-accordion-header>Battle Summary</p-accordion-header>
+        <p-accordion-content>
+          <div class="grid grid-cols-12 battle_summary">
+            <div class="col-span-12" [hidden]="!chanceList?.length">
+              <p-fieldset legend="Has a chance" [toggleable]="true">
+                <div *ngFor="let category of chanceList" class="field-checkbox my-2">
+                  <p-checkbox
+                    name="group"
+                    [value]="category.name"
+                    [(ngModel)]="selectedChances"
+                    [inputId]="category.name"
+                    (ngModelChange)="onSelecteChance($event)"
+                  ></p-checkbox>
+                  <label class="font-semibold summary_chance" [for]="category.name">{{ category.label }}</label
+                  ><i class="pi pi-arrow-right px-1"></i>
+                  <span>{{ category.label2 }}</span>
                 </div>
-              </div>
-              <div class="col-span-12 skill-selection" [hidden]="!isShowSelectableSkillLevel">
-                <div class="p-inputgroup">
-                  <span class="p-inputgroup-addon skill_hilight_label">Skill</span>
-                  <p-cascadeSelect
-                    inputId="skill"
-                    [(ngModel)]="model.selectedAtkSkill"
-                    [options]="atkSkillCascades"
-                    optionValue="value"
-                    optionLabel="label"
-                    optionGroupLabel="label"
-                    [optionGroupChildren]="['levelList']"
-                    placeholder="-"
-                    (onChange)="onAtkSkillChange()"
-                  ></p-cascadeSelect>
-                </div>
-              </div>
-              <div class="col-span-12">
-                <app-battle-dmg-summary
-                  [model]="model"
-                  [totalSummary]="totalSummary"
-                  [totalSummary2]="totalSummary2"
-                  [isCalculating]="isCalculating"
-                  [isEnableCompare]="isEnableCompare"
-                  [isInProcessingPreset]="isInProcessingPreset"
-                  [selectedChances]="selectedChances"
-                  [hideBasicAtk]="hideBasicAtk"
-                  [showLeftWeapon]="showLeftWeapon"
-                  (showElementTableClick)="onShowElementalTableClick()"
-                ></app-battle-dmg-summary>
-              </div>
+              </p-fieldset>
+
+              <p-fieldset legend="Header" [toggleable]="true">
+                <p class="m-0">Lorem ipsum dolor sit amet...</p>
+              </p-fieldset>
             </div>
-          </div>
 
-          <!-- Table -->
-          <div class="col-span-12 damage_table">
-            <p-table
-              styleClass="p-datatable-striped"
-              filterValue="label"
-              [columns]="selectedColumns"
-              [value]="calcDamages"
-              [loading]="isCalculating"
-              [tableStyle]="{ 'min-width': '40rem' }"
-            >
-              <ng-template pTemplate="caption">
-                <div class="grid grid-cols-12 gap-4 grid-nogutter">
-                  <div class="col-span-6">
-                    <p-multiSelect
+            <!-- Monster -->
+            <div class="col-span-5">
+              <div class="grid grid-cols-12">
+                <div class="col-span-12">
+                  <p-inputgroup>
+                    <p-inputgroup-addon class="monster_hilight_label">Monster</p-inputgroup-addon>
+                    <p-select
+                      inputId="monsterOpponent"
+                      [autoDisplayFirst]="false"
+                      [resetFilterOnHide]="true"
                       [options]="groupMonsterList"
-                      [group]="true"
-                      [(ngModel)]="selectedMonsterIds"
                       [filter]="true"
                       filterBy="label,searchVal"
-                      [showClear]="true"
-                      [showToggleAll]="false"
+                      [group]="true"
                       scrollHeight="400px"
-                      selectedItemsLabel="{0} monsters selected"
-                      placeholder="Choose Monsters"
-                      [maxSelectedLabels]="2"
-                      (onChange)="onMonsterListChange()"
-                      (onClear)="onMonsterListChange()"
+                      [(ngModel)]="selectedMonster"
+                      (onChange)="onMonsterChange()"
                     >
                       <ng-template let-group pTemplate="group">
                         <div class="flex items-center font-bold dropdown_monster_group_label">
                           <span>{{ group.label }}</span>
                         </div>
                       </ng-template>
-                    </p-multiSelect>
-                  </div>
-                  <div class="col-span-6">
-                    <p-multiSelect
-                      [options]="cols"
-                      [(ngModel)]="selectedColumns"
-                      optionLabel="header"
-                      selectedItemsLabel="{0} columns selected"
-                      placeholder="Choose Columns"
-                      [maxSelectedLabels]="5"
-                      (onChange)="onSelectedColChange()"
-                      (onClear)="onSelectedColChange()"
-                    ></p-multiSelect>
+                    </p-select>
+                    <!-- <button
+                      type="button"
+                      class="p-button-success"
+                      pButton
+                      label="Choose Monster"
+                      [loading]="isInProcessingPreset"
+                      (click)="onClickMonster()"
+                    ></button> -->
+                  </p-inputgroup>
+                </div>
+                <!-- <div class="col-span-12">{{ selectedMonsterName }}</div> -->
+                <div class="col-span-5 flex items-center justify-center">
+                  <div class="grid grid-cols-12" style="height: 100%; width: 100%">
+                    <div class="col-span-12 flex items-center justify-center">
+                      <img src="https://static.divine-pride.net/images/mobs/png/{{ selectedMonster }}.png" class="img_monster" alt="-" />
+                    </div>
                   </div>
                 </div>
-              </ng-template>
-              <ng-template pTemplate="header" let-columns>
-                <tr>
-                  <th>Name</th>
-                  <th *ngFor="let col of columns">
-                    {{ col.header }}
-                  </th>
-                </tr>
-              </ng-template>
-              <ng-template pTemplate="body" let-item let-columns="columns">
-                <tr>
-                  <td class="{{ 'property_' + item.elementName }}">{{ item.label }}</td>
-                  <td *ngFor="let col of columns" class="battle_row_{{ col.field }}">
-                    {{ item[col.field] > 0 ? (item[col.field] | number) : item[col.field] }}
-                  </td>
-                </tr>
-              </ng-template>
-            </p-table>
-          </div>
-        </div>
-      </p-accordionTab>
+                <div class="col-span-7">
+                  <app-battle-monster-summary
+                    [totalSummary]="totalSummary"
+                    [isInProcessingPreset]="isInProcessingPreset"
+                    (showElementTableClick)="onShowElementalTableClick()"
+                  ></app-battle-monster-summary>
+                </div>
+              </div>
+            </div>
 
-      <p-accordionTab header="Skill bonus / Multiplier Summary">
-        <app-misc-detail
-          [elementTable]="elementTable"
-          [raceTable]="raceTable"
-          [sizeTable]="sizeTable"
-          [classTable]="classTable"
-          [atkTypeTable]="atkTypeTable"
-          [skillMultiplierTable]="skillMultiplierTable"
-        ></app-misc-detail>
-      </p-accordionTab>
-      <p-accordionTab header="Penetration Summary">
-        <app-misc-detail [elementTable]="[]" [raceTable]="peneRaceTable" [sizeTable]="[]" [classTable]="peneClassTable" [skillMultiplierTable]="[]"></app-misc-detail>
-      </p-accordionTab>
+            <!-- Skill -->
+            <div class="col-span-7">
+              <div class="grid grid-cols-12" style="position: relative">
+                <div class="col-span-12 skill-selection" [hidden]="isShowSelectableSkillLevel">
+                  <p-inputgroup>
+                    <p-inputgroup-addon class="skill_hilight_label">Skill</p-inputgroup-addon>
+                    <p-select
+                      inputId="skill"
+                      [autoDisplayFirst]="false"
+                      [resetFilterOnHide]="true"
+                      [options]="atkSkills"
+                      scrollHeight="400px"
+                      [(ngModel)]="model.selectedAtkSkill"
+                      (onChange)="onAtkSkillChange()"
+                    ></p-select>
+                  </p-inputgroup>
+                </div>
+                <div class="col-span-12 skill-selection" [hidden]="!isShowSelectableSkillLevel">
+                  <p-inputgroup>
+                    <p-inputgroup-addon class="skill_hilight_label">Skill</p-inputgroup-addon>
+                    <p-cascadeSelect
+                      inputId="skill"
+                      [(ngModel)]="model.selectedAtkSkill"
+                      [options]="atkSkillCascades"
+                      optionValue="value"
+                      optionLabel="label"
+                      optionGroupLabel="label"
+                      [optionGroupChildren]="['levelList']"
+                      placeholder="-"
+                      (onChange)="onAtkSkillChange()"
+                    ></p-cascadeSelect>
+                  </p-inputgroup>
+                </div>
+                <div class="col-span-12">
+                  <app-battle-dmg-summary
+                    [model]="model"
+                    [totalSummary]="totalSummary"
+                    [totalSummary2]="totalSummary2"
+                    [isCalculating]="isCalculating"
+                    [isEnableCompare]="isEnableCompare"
+                    [isInProcessingPreset]="isInProcessingPreset"
+                    [selectedChances]="selectedChances"
+                    [hideBasicAtk]="hideBasicAtk"
+                    [showLeftWeapon]="showLeftWeapon"
+                    (showElementTableClick)="onShowElementalTableClick()"
+                  ></app-battle-dmg-summary>
+                </div>
+              </div>
+            </div>
 
-      <p-accordionTab header="Summary">
-        <div class="grid grid-cols-12 gap-4 grid-nogutter" style="overflow: auto">
-          <div class="col-span-6 json_display">
-            <pre [innerHTML]="modelSummary | prettyjson: [true, 3]"></pre>
-            <pre *ngIf="isEnableCompare" [innerHTML]="model2 | prettyjson: [true, 3]"></pre>
+            <!-- Table -->
+            <div class="col-span-12 damage_table">
+              <p-table
+                styleClass="p-datatable-striped"
+                filterValue="label"
+                [columns]="selectedColumns"
+                [value]="calcDamages"
+                [loading]="isCalculating"
+                [tableStyle]="{ 'min-width': '40rem' }"
+              >
+                <ng-template pTemplate="caption">
+                  <div class="grid grid-cols-12">
+                    <div class="col-span-6">
+                      <p-multiSelect
+                        [options]="groupMonsterList"
+                        [group]="true"
+                        [(ngModel)]="selectedMonsterIds"
+                        [filter]="true"
+                        filterBy="label,searchVal"
+                        [showClear]="true"
+                        [showToggleAll]="false"
+                        scrollHeight="400px"
+                        selectedItemsLabel="{0} monsters selected"
+                        placeholder="Choose Monsters"
+                        [maxSelectedLabels]="2"
+                        (onChange)="onMonsterListChange()"
+                        (onClear)="onMonsterListChange()"
+                      >
+                        <ng-template let-group pTemplate="group">
+                          <div class="flex items-center font-bold dropdown_monster_group_label">
+                            <span>{{ group.label }}</span>
+                          </div>
+                        </ng-template>
+                      </p-multiSelect>
+                    </div>
+                    <div class="col-span-6">
+                      <p-multiSelect
+                        [options]="cols"
+                        [(ngModel)]="selectedColumns"
+                        optionLabel="header"
+                        selectedItemsLabel="{0} columns selected"
+                        placeholder="Choose Columns"
+                        [maxSelectedLabels]="5"
+                        (onChange)="onSelectedColChange()"
+                        (onClear)="onSelectedColChange()"
+                      ></p-multiSelect>
+                    </div>
+                  </div>
+                </ng-template>
+                <ng-template pTemplate="header" let-columns>
+                  <tr>
+                    <th>Name</th>
+                    <th *ngFor="let col of columns">
+                      {{ col.header }}
+                    </th>
+                  </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-item let-columns="columns">
+                  <tr>
+                    <td class="{{ 'property_' + item.elementName }}">{{ item.label }}</td>
+                    <td *ngFor="let col of columns" class="battle_row_{{ col.field }}">
+                      {{ item[col.field] > 0 ? (item[col.field] | number) : item[col.field] }}
+                    </td>
+                  </tr>
+                </ng-template>
+              </p-table>
+            </div>
           </div>
-          <div class="col-span-6 json_display">
-            <pre [innerHTML]="totalSummary | prettyjson: [true, 3]"></pre>
-          </div>
-        </div>
-      </p-accordionTab>
+        </p-accordion-content>
+      </p-accordion-panel>
 
-      <p-accordionTab header="Equipments Summary">
-        <div class="grid grid-cols-12 gap-4 grid-nogutter">
-          <div class="col-span-6 json_display">
-            <pre [innerHTML]="itemSummary | prettyjson: [true, 3]"></pre>
-          </div>
-          <div class="col-span-6 json_display">
-            <pre [innerHTML]="itemSummary2 | prettyjson: [true, 3]"></pre>
-          </div>
-        </div>
-      </p-accordionTab>
+      <p-accordion-panel value="3">
+        <p-accordion-header>Skill bonus / Multiplier Summary</p-accordion-header>
+        <p-accordion-content>
+          <app-misc-detail
+            [elementTable]="elementTable"
+            [raceTable]="raceTable"
+            [sizeTable]="sizeTable"
+            [classTable]="classTable"
+            [atkTypeTable]="atkTypeTable"
+            [skillMultiplierTable]="skillMultiplierTable"
+          ></app-misc-detail>
+        </p-accordion-content>
+      </p-accordion-panel>
+      <p-accordion-panel value="4">
+        <p-accordion-header>Penetration Summary</p-accordion-header>
+        <p-accordion-content>
+          <app-misc-detail [elementTable]="[]" [raceTable]="peneRaceTable" [sizeTable]="[]" [classTable]="peneClassTable" [skillMultiplierTable]="[]"></app-misc-detail>
+        </p-accordion-content>
+      </p-accordion-panel>
 
-      <p-accordionTab header="Item Descriptions">
-        <div class="grid grid-cols-12 gap-4 grid-nogutter">
-          <div class="col-span-4">
-            <div class="item_label_compare" *ngIf="isEnableCompare && equipCompareItems?.length">
+      <p-accordion-panel value="5">
+        <p-accordion-header>Summary</p-accordion-header>
+        <p-accordion-content>
+          <div class="grid grid-cols-12" style="overflow: auto">
+            <div class="col-span-6 json_display">
+              <pre [innerHTML]="modelSummary | prettyjson: [true, 3]"></pre>
+              <pre *ngIf="isEnableCompare" [innerHTML]="model2 | prettyjson: [true, 3]"></pre>
+            </div>
+            <div class="col-span-6 json_display">
+              <pre [innerHTML]="totalSummary | prettyjson: [true, 3]"></pre>
+            </div>
+          </div>
+        </p-accordion-content>
+      </p-accordion-panel>
+
+      <p-accordion-panel value="6">
+        <p-accordion-header>Equipments Summary</p-accordion-header>
+        <p-accordion-content>
+          <div class="grid grid-cols-12">
+            <div class="col-span-6 json_display">
+              <pre [innerHTML]="itemSummary | prettyjson: [true, 3]"></pre>
+            </div>
+            <div class="col-span-6 json_display">
+              <pre [innerHTML]="itemSummary2 | prettyjson: [true, 3]"></pre>
+            </div>
+          </div>
+        </p-accordion-content>
+      </p-accordion-panel>
+
+      <p-accordion-panel value="7">
+        <p-accordion-header>Item Descriptions</p-accordion-header>
+        <p-accordion-content>
+          <div class="grid grid-cols-12">
+            <div class="col-span-4">
+              <div class="item_label_compare" *ngIf="isEnableCompare && equipCompareItems?.length">
+                <p-listbox
+                  [options]="equipCompareItems"
+                  [(ngModel)]="selectedCompareItemDesc"
+                  [metaKeySelection]="false"
+                  [listStyle]="{ 'max-height': '700px' }"
+                  (onChange)="onSelectItemDescription(true)"
+                >
+                  <ng-template let-item pTemplate="item">
+                    <div class="flex gap-1 item_template">
+                      <img src="assets/demo/images/items/{{ item.id }}.png" alt="" class="item_img" />
+                      <div class="text_ellips">
+                        {{ item.label }}
+                      </div>
+                    </div>
+                  </ng-template>
+                </p-listbox>
+              </div>
               <p-listbox
-                [options]="equipCompareItems"
-                [(ngModel)]="selectedCompareItemDesc"
+                [options]="equipItems"
+                [(ngModel)]="selectedItemDesc"
                 [metaKeySelection]="false"
                 [listStyle]="{ 'max-height': '700px' }"
-                (onChange)="onSelectItemDescription(true)"
+                (onChange)="onSelectItemDescription()"
               >
                 <ng-template let-item pTemplate="item">
-                  <div class="flex gap-1 item_template">
+                  <div class="flex gap-1 item_template item_label_{{ item.value }}" style="background-color: var(--border-radius)">
                     <img src="assets/demo/images/items/{{ item.id }}.png" alt="" class="item_img" />
                     <div class="text_ellips">
                       {{ item.label }}
@@ -1902,34 +1944,18 @@
                 </ng-template>
               </p-listbox>
             </div>
-            <p-listbox
-              [options]="equipItems"
-              [(ngModel)]="selectedItemDesc"
-              [metaKeySelection]="false"
-              [listStyle]="{ 'max-height': '700px' }"
-              (onChange)="onSelectItemDescription()"
-            >
-              <ng-template let-item pTemplate="item">
-                <div class="flex gap-1 item_template item_label_{{ item.value }}" style="background-color: var(--border-radius)">
-                  <img src="assets/demo/images/items/{{ item.id }}.png" alt="" class="item_img" />
-                  <div class="text_ellips">
-                    {{ item.label }}
-                  </div>
+            <div class="col-span-8">
+              <div class="grid grid-cols-12 ml-2" style="max-height: 700px; overflow: auto">
+                <div class="col-span-12 json_display">
+                  ItemID: {{ itemId }}
+                  <pre [innerHTML]="itemBonus | prettyjson: [true, 3]"></pre>
                 </div>
-              </ng-template>
-            </p-listbox>
-          </div>
-          <div class="col-span-8">
-            <div class="grid grid-cols-12 gap-4 grid-nogutter ml-2" style="max-height: 700px; overflow: auto">
-              <div class="col-span-12 json_display">
-                ItemID: {{ itemId }}
-                <pre [innerHTML]="itemBonus | prettyjson: [true, 3]"></pre>
+                <div class="col-span-12 px-2 py-2" style="color: #000; background-color: #fff" [innerHTML]="itemDescription"></div>
               </div>
-              <div class="col-span-12 px-2 py-2" style="color: #000; background-color: #fff" [innerHTML]="itemDescription"></div>
             </div>
           </div>
-        </div>
-      </p-accordionTab>
+        </p-accordion-content>
+      </p-accordion-panel>
     </p-accordion>
-  </div>
+  </p-fluid>
 </div>

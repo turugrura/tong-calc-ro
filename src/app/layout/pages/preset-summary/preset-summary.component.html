@@ -1,6 +1,6 @@
-<div class="grid grid-cols-12 gap-4 grid-nogutter" style="min-width: 1500px">
+<div class="grid grid-cols-12" style="min-width: 1500px">
   <div class="col-span-12 mb-2">
-    <div class="grid grid-cols-12 gap-4 grid-nogutter column_list">
+    <div class="grid grid-cols-12 column_list">
       <p-listbox [options]="allClasses" [(ngModel)]="selectedJobId" (onChange)="onJobChange()" [disabled]="isLoading">
         <ng-template let-item pTemplate="item" class="py-0">
           <div class="flex gap-2 py-0">
@@ -11,7 +11,7 @@
       </p-listbox>
     </div>
   </div>
-  <div class="col-span-12 grid grid-cols-12 gap-4 grid-nogutter">
+  <div class="col-span-12 grid grid-cols-12">
     <div class="col-span-3">
       <div class="card text-lg m-0 p-2">
         <div>Information date: 07-11-2567</div>
@@ -46,7 +46,7 @@
         </div>
       </div>
     </div>
-    <div class="col-span-9 grid grid-cols-12 gap-4 grid-nogutter">
+    <div class="col-span-9 grid grid-cols-12">
       <div class="col-span-6 p-1" *ngFor="let position of allItemPositions" [hidden]="!rankingMap[position].length">
         <div class="card m-0 p-2 flex justify-around">
           <div class="font-bold text-lg">

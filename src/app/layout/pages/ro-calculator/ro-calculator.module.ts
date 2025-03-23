@@ -11,6 +11,8 @@ import { CheckboxModule } from 'primeng/checkbox';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { DataViewModule } from 'primeng/dataview';
 import { DividerModule } from 'primeng/divider';
+import { InputGroupModule } from 'primeng/inputgroup';
+import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { InputTextModule } from 'primeng/inputtext';
@@ -85,6 +87,8 @@ import { StatusInputComponent } from './status-input/status-input.component';
     FieldsetModule,
     DialogModule,
     FluidModule,
+    InputGroupModule,
+    InputGroupAddonModule,
     RoCalculatorRoutingModule,
   ],
   declarations: [
