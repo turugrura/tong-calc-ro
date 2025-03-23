@@ -32,6 +32,7 @@ import { TreeSelectModule } from 'primeng/treeselect';
 
 import { DialogModule } from 'primeng/dialog';
 import { FieldsetModule } from 'primeng/fieldset';
+import { FluidModule } from 'primeng/fluid';
 import { PrettyJsonPipe } from '../../prettier-json.pipe';
 import { BattleDmgSummaryComponent } from './battle-dmg-summary/battle-dmg-summary.component';
 import { BattleMonsterSummaryComponent } from './battle-monster-summary/battle-monster-summary.component';
@@ -48,7 +49,6 @@ import { PresetTableComponent } from './preset-table/preset-table.component';
 import { RoCalculatorRoutingModule } from './ro-calculator-routing.module';
 import { RoCalculatorComponent } from './ro-calculator.component';
 import { StatusInputComponent } from './status-input/status-input.component';
-
 @NgModule({
   imports: [
     FormsModule,
@@ -84,6 +84,7 @@ import { StatusInputComponent } from './status-input/status-input.component';
     TreeSelectModule,
     FieldsetModule,
     DialogModule,
+    FluidModule,
     RoCalculatorRoutingModule,
   ],
   declarations: [
