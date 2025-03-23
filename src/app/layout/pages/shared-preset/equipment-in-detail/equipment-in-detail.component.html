@@ -1,12 +1,12 @@
-<div class="grid grid-nogutter">
-  <div class="col-8">
-    <div *ngFor="let item of displayMainItems" class="grid grid-nogutter item_label_{{ item.itemType }}">
-      <div class="col-12 flex gap-2">
+<div class="grid grid-cols-12 gap-4 grid-nogutter">
+  <div class="col-span-8">
+    <div *ngFor="let item of displayMainItems" class="grid grid-cols-12 gap-4 grid-nogutter item_label_{{ item.itemType }}">
+      <div class="col-span-12 flex gap-2">
         <div *ngIf="item.mainId" class="item_template mt-1">
           <img src="assets/demo/images/items/{{ item.mainId }}.png" alt="" class="item_img" />
         </div>
-        <div *ngIf="item.mainId" class="grid grid-nogutter mt-1">
-          <div *ngFor="let cardId of item.cardIds" class="col-12">
+        <div *ngIf="item.mainId" class="grid grid-cols-12 gap-4 grid-nogutter mt-1">
+          <div *ngFor="let cardId of item.cardIds" class="col-span-12">
             <div class="item_template flex gap-1">
               <img *ngIf="item.isHead" src="assets/demo/images/items/{{ cardId }}.png" alt="" class="item_img" />
               <img *ngIf="!item.isHead" src="assets/demo/images/items/card.png" alt="" class="item_img" />
@@ -15,7 +15,7 @@
               </div>
             </div>
           </div>
-          <div *ngFor="let enchantId of item.enchantIds" class="col-12">
+          <div *ngFor="let enchantId of item.enchantIds" class="col-span-12">
             <div class="item_template flex gap-1">
               <img src="assets/demo/images/items/{{ enchantId }}.png" alt="" class="item_img" />
               <div class="text_ellips pr-2" style="text-overflow: ellipsis">
@@ -23,7 +23,7 @@
               </div>
             </div>
           </div>
-          <div class="col-12 flex gap-2">
+          <div class="col-span-12 flex gap-2">
             <div *ngFor="let txt of item.optionTxts">
               <div class="option-txt-label">{{ txt }}</div>
             </div>
@@ -32,7 +32,7 @@
       </div>
     </div>
   </div>
-  <div class="col-4">
+  <div class="col-span-4">
     <div *ngFor="let item of displayShadowItems" class="flex gap-2 item_label_{{ item.itemType }}">
       <div *ngIf="item.mainId" class="item_template mt-1">
         <img src="assets/demo/images/items/{{ item.mainId }}.png" alt="" class="item_img" />

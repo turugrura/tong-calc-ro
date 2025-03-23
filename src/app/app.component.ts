@@ -1,16 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
     selector: 'app-root',
-    templateUrl: './app.component.html',
-    standalone: false
+    standalone: false,
+    template: `<router-outlet></router-outlet>`
 })
-export class AppComponent implements OnInit {
-
-    // constructor(private primengConfig: PrimeNGConfig) { }
-
-    ngOnInit() {
-        // this.primengConfig.ripple = true;
-        console.log('TODO: primengConfig.ripple');
-    }
-}
+export class AppComponent { }

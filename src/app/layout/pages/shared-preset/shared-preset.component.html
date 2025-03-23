@@ -1,9 +1,9 @@
 <p-toast></p-toast>
 <p-confirmDialog [position]="'top'" [style]="{ width: '25vw' }"></p-confirmDialog>
 
-<div class="grid grid-nogutter" style="min-width: 1500px">
-  <div class="col-12 mb-2">
-    <div class="grid grid-nogutter column_list">
+<div class="grid grid-cols-12 gap-4 grid-nogutter" style="min-width: 1500px">
+  <div class="col-span-12 mb-2">
+    <div class="grid grid-cols-12 gap-4 grid-nogutter column_list">
       <p-listbox [options]="allClasses" [(ngModel)]="selectedClassId" (onChange)="onSelectClassChange()" [disabled]="isLoading">
         <ng-template let-item pTemplate="item" class="py-0">
           <div class="flex gap-2 py-0">
@@ -14,7 +14,7 @@
       </p-listbox>
     </div>
   </div>
-  <!-- <div class="col-2">
+  <!-- <div class="col-span-2">
     <p-listbox
       [options]="availableTags"
       [(ngModel)]="selectedTag"
@@ -24,14 +24,14 @@
       [disabled]="isLoading"
     >
       <ng-template let-item pTemplate="item">
-        <div class="flex align-items-center gap-1">
+        <div class="flex items-center gap-1">
           <i *ngIf="item.isPublished" class="pi pi-send"></i>
           {{ item.label }}
         </div>
       </ng-template>
     </p-listbox>
   </div> -->
-  <div class="col-9">
+  <div class="col-span-9">
     <p-table
       styleClass="p-datatable-striped"
       filterValue="label"
@@ -55,10 +55,10 @@
       <ng-template pTemplate="body" let-presetTag>
         <tr>
           <td>
-            <div class="grid grid-nogutter">
-              <div class="col-12 flex justify-content-between">
-                <div class="flex align-items-center">
-                  <div class="like_section pr-3">
+            <div class="grid grid-cols-12 gap-4 grid-nogutter">
+              <div class="col-span-12 flex justify-between">
+                <div class="flex items-center">
+                  <div class="like_section pr-4">
                     <button
                       *ngIf="!presetTag.liked"
                       pButton
@@ -90,8 +90,8 @@
                   </div>
                 </div>
 
-                <div class="flex align-items-center">
-                  <div class="flex ml-3">
+                <div class="flex items-center">
+                  <div class="flex ml-4">
                     <p-inputSwitch inputId="{{ presetTag.tagId }}" [(ngModel)]="viewDetail[presetTag.tagId]"></p-inputSwitch>
                     <label class="mx-2" for="{{ presetTag.tagId }}">View detail</label>
                   </div>
@@ -108,87 +108,87 @@
                   </div>
                 </div>
               </div>
-              <div class="col-10" style="min-width: 450px; overflow: hidden">
+              <div class="col-span-10" style="min-width: 450px; overflow: hidden">
                 <app-equipment-ui [itemMap]="itemMap" [model]="presetTag.model"></app-equipment-ui>
               </div>
-              <div class="col-2">
-                <div class="grid grid-nogutter">
-                  <div class="col-6">
+              <div class="col-span-2">
+                <div class="grid grid-cols-12 gap-4 grid-nogutter">
+                  <div class="col-span-6">
                     Level: <span class="summary_highlight text-xl font-semibold"> {{ presetTag.model?.level }} </span>
                   </div>
-                  <div class="col-6">
+                  <div class="col-span-6">
                     Job: <span class="summary_highlight text-xl font-semibold"> {{ presetTag.model?.jobLevel }} </span>
                   </div>
-                  <div class="col-6">
+                  <div class="col-span-6">
                     Str: <span class="summary_stat_atk text-xl"> {{ presetTag.model?.str }} </span>+
                     <span>{{ presetTag.str || 0 }}</span>
                   </div>
-                  <div class="col-6">
+                  <div class="col-span-6">
                     Int: <span class="summary_stat_matk text-xl"> {{ presetTag.model?.int }} </span>+
                     <span>{{ presetTag.int || 0 }}</span>
                   </div>
-                  <div class="col-6">
+                  <div class="col-span-6">
                     Dex:
                     <span class="summary_stat_atk text-xl" style="color: var(--green-300)"> {{ presetTag.model?.dex }} </span>+ <span>{{ presetTag.dex || 0 }}</span>
                   </div>
-                  <div class="col-6">
+                  <div class="col-span-6">
                     Agi: <span class="summary_stat_def text-xl"> {{ presetTag.model?.agi }} </span>+
                     <span>{{ presetTag.agi || 0 }}</span>
                   </div>
-                  <div class="col-6">
+                  <div class="col-span-6">
                     Vit: <span class="summary_stat_def text-xl"> {{ presetTag.model?.vit }} </span>+
                     <span>{{ presetTag.vit || 0 }}</span>
                   </div>
-                  <div class="col-6">
+                  <div class="col-span-6">
                     Luk: <span class="summary_stat_def text-xl"> {{ presetTag.model?.luk }} </span>+
                     <span>{{ presetTag.luk || 0 }}</span>
                   </div>
                 </div>
-                <div class="grid grid-nogutter mt-2">
-                  <div class="col-6">
+                <div class="grid grid-cols-12 gap-4 grid-nogutter mt-2">
+                  <div class="col-span-6">
                     Melee:
                     <span class="font-semibold px-1 summary_stat_atk">{{ presetTag.summary?.melee || 0 }}</span>
                   </div>
-                  <div class="col-6">
+                  <div class="col-span-6">
                     Range:
                     <span class="font-semibold px-1 summary_stat_atk">{{ presetTag.summary?.range || 0 }}</span>
                   </div>
-                  <div class="col-12">
+                  <div class="col-span-12">
                     ASPD:
                     <span class="font-semibold px-1 summary_stat_atk">{{ presetTag.summary?.calc?.totalAspd || 0 }}</span>
                     <span class="font-semibold px-1 summary_highlight">( {{ presetTag.summary?.calc?.hitPerSecs || 0 }} Hits/s )</span>
                   </div>
-                  <div class="col-12">
+                  <div class="col-span-12">
                     Hit:
                     <span class="font-semibold px-1 summary_stat_atk">{{ presetTag.summary?.calc?.totalHit || 0 }}</span>
                     Perfect:
                     <span class="font-semibold px-1 summary_stat_atk">{{ presetTag.summary?.calc?.totalPerfectHit || 0 }} %</span>
                   </div>
-                  <div class="col-12">
+                  <div class="col-span-12">
                     CriRate:
                     <span class="font-semibold px-1 summary_stat_atk">{{ presetTag.summary?.calc?.totalCri || 0 }} %</span>
                     Dmg: <span class="font-semibold px-1 summary_stat_atk">{{ presetTag.summary?.criDmg || 0 }} %</span>
                   </div>
-                  <div class="col-6">
+                  <div class="col-span-6">
                     ACD:
                     <span class="font-semibold px-1 summary_stat_matk">{{ presetTag.summary?.acd || 0 }}</span>
                   </div>
-                  <div class="col-6">
+                  <div class="col-span-6">
                     FCT:
                     <span class="font-semibold px-1 summary_stat_matk">{{ presetTag.summary?.fct || 0 }}</span>
                   </div>
-                  <div class="col-6">
+                  <div class="col-span-6">
                     VCT:
                     <span class="font-semibold px-1 summary_stat_matk">{{ presetTag.summary?.vct || 0 }}</span>
                   </div>
                 </div>
               </div>
-              <div class="col-12" *ngIf="viewDetail[presetTag.tagId]">
-                <div class="grid grid-nogutter">
-                  <div class="col-5">
+              <div class="col-span-12" *ngIf="viewDetail[presetTag.tagId]">
+                <div class="grid grid-cols-12 gap-4 grid-nogutter">
+                  <div class="col-span-5">
                     <app-equipment-in-detail [itemMap]="itemMap" [model]="presetTag.model"></app-equipment-in-detail>
                   </div>
-                  <div class="col-7">
+                  <div class="col-span-7">
                     <app-skill-detail [itemMap]="itemMap" [model]="presetTag.model" [job]="selectedCharacter"></app-skill-detail>
                   </div>
                 </div>
@@ -204,14 +204,14 @@
       </ng-template>
     </p-table>
   </div>
-  <div class="p-fluid fluid col-3">
+  <div class="p-fluid fluid col-span-3">
     <p-accordion [multiple]="true" [activeIndex]="[0]">
       <p-accordionTab header="Battle Summary">
-        <div class="grid grid-nogutter battle_summary">
+        <div class="grid grid-cols-12 gap-4 grid-nogutter battle_summary">
           <!-- Monster -->
-          <div class="col-12">
-            <div class="grid grid-nogutter">
-              <div class="col-12">
+          <div class="col-span-12">
+            <div class="grid grid-cols-12 gap-4 grid-nogutter">
+              <div class="col-span-12">
                 <div class="p-inputgroup">
                   <span class="p-inputgroup-addon monster_hilight_label">Monster</span>
                   <p-select
@@ -227,55 +227,55 @@
                     (onChange)="onMonsterChange()"
                   >
                     <ng-template let-group pTemplate="group">
-                      <div class="flex align-items-center font-bold dropdown_monster_group_label">
+                      <div class="flex items-center font-bold dropdown_monster_group_label">
                         <span>{{ group.label }}</span>
                       </div>
                     </ng-template>
                   </p-select>
                 </div>
               </div>
-              <!-- <div class="col-12">{{ selectedMonsterName }}</div> -->
-              <div class="col-6 flex align-items-center justify-content-center">
-                <div class="grid grid-nogutter" style="height: 100%; width: 100%">
-                  <div class="col-12 flex align-items-center justify-content-center">
+              <!-- <div class="col-span-12">{{ selectedMonsterName }}</div> -->
+              <div class="col-span-6 flex items-center justify-center">
+                <div class="grid grid-cols-12 gap-4 grid-nogutter" style="height: 100%; width: 100%">
+                  <div class="col-span-12 flex items-center justify-center">
                     <img src="https://static.divine-pride.net/images/mobs/png/{{ selectedMonster }}.png" class="img_monster" alt="-" />
                   </div>
                 </div>
               </div>
-              <div class="col-6">
-                <div class="grid grid-nogutter">
-                  <div class="col-12">
+              <div class="col-span-6">
+                <div class="grid grid-cols-12 gap-4 grid-nogutter">
+                  <div class="col-span-12">
                     HP
                     <span class="summary_monster_value px-1 font-semibold">{{ totalSummary?.monster?.hp | number }}</span>
                   </div>
-                  <div class="col-12">
+                  <div class="col-span-12">
                     Def
                     <span class="summary_monster_value px-1 font-semibold">{{ totalSummary?.monster?.softDef }} + {{ totalSummary?.monster?.def }}</span>
                   </div>
-                  <div class="col-12">
+                  <div class="col-span-12">
                     Mdef
                     <span class="summary_monster_value px-1 font-semibold">{{ totalSummary?.monster?.softMDef }} + {{ totalSummary?.monster?.mdef }}</span>
                   </div>
-                  <div class="col-12">
+                  <div class="col-span-12">
                     Req.Hit100
                     <span class="summary_monster_value px-1 font-semibold">{{ totalSummary?.monster?.hitRequireFor100 }}</span>
                   </div>
-                  <div class="col-12">
+                  <div class="col-span-12">
                     <span class="summary_monster_value px-1 font-bold" style="color: var(--red-500)">{{ totalSummary?.monster?.typeUpper }}</span>
                     <span *ngIf="totalSummary?.monster?.isMvp" class="font-bold px-1">MVP</span>
                   </div>
-                  <div class="col-12">
+                  <div class="col-span-12">
                     <span class="{{ 'property_' + totalSummary?.monster?.elementUpper }} summary_monster_value px-1 font-semibold">{{
                       totalSummary?.monster?.elementLevelUpper
                     }}</span>
                   </div>
-                  <div class="col-12">
+                  <div class="col-span-12">
                     <span class="summary_monster_value px-1 font-semibold" style="color: var(--yellow-300)">{{ totalSummary?.monster?.raceUpper }}</span>
                   </div>
-                  <div class="col-12">
+                  <div class="col-span-12">
                     <span class="summary_monster_value px-1 font-semibold" style="color: var(--cyan-300)">{{ totalSummary?.monster?.sizeFullUpper }}</span>
                   </div>
-                  <div class="col-12 flex justify-content-around">
+                  <div class="col-span-12 flex justify-around">
                     <div>
                       STR
                       <span class="summary_monster_value px-1 font-semibold" style="color: var(--red-300)">
@@ -289,7 +289,7 @@
                       </span>
                     </div>
                   </div>
-                  <div class="col-12 flex justify-content-around">
+                  <div class="col-span-12 flex justify-around">
                     <div>
                       DEX
                       <span class="summary_monster_value px-1 font-semibold" style="color: var(--green-300)">
@@ -303,7 +303,7 @@
                       </span>
                     </div>
                   </div>
-                  <div class="col-12 flex justify-content-around">
+                  <div class="col-span-12 flex justify-around">
                     <div>
                       VIT
                       <span class="summary_monster_value px-1 font-semibold" style="color: var(--yellow-300)">
@@ -323,9 +323,9 @@
           </div>
 
           <!-- Skill -->
-          <div class="col-12">
-            <div class="grid grid-nogutter" style="position: relative">
-              <div class="col-12 skill-selection">
+          <div class="col-span-12">
+            <div class="grid grid-cols-12 gap-4 grid-nogutter" style="position: relative">
+              <div class="col-span-12 skill-selection">
                 <!-- <div class="p-inputgroup">
                   <span class="p-inputgroup-addon skill_hilight_label">Skill</span>
                   <p-select
@@ -356,12 +356,12 @@
             </div>
           </div>
 
-          <div class="col-12 my-2" *ngFor="let _s of summaries">
-            <div class="grid grid-nogutter" style="position: relative">
+          <div class="col-span-12 my-2" *ngFor="let _s of summaries">
+            <div class="grid grid-cols-12 gap-4 grid-nogutter" style="position: relative">
               <div class="loading_block" *ngIf="isCalculating">
                 <i class="pi pi-spin pi-spinner" style="font-size: 2rem"></i>
               </div>
-              <div class="col-12 flex align-items-center justify-content-between">
+              <div class="col-span-12 flex items-center justify-between">
                 <div class="font-bold text-xl">{{ _s.name }}</div>
                 <div *ngIf="isCalculated[_s.id]">
                   <button pButton type="button" class="p-button-text p-button-rounded p-button-danger" [disabled]="isCalculating" (click)="removeCalculated(_s.id)">
@@ -369,16 +369,16 @@
                   </button>
                 </div>
               </div>
-              <div class="col-6">
+              <div class="col-span-6">
                 Type
                 <span class="summary_highlight bg_surface font-semibold">{{ _s.summary?.calcSkill?.dmgType }}</span>
               </div>
-              <div class="col-6">
+              <div class="col-span-6">
                 Element:
                 <span class="{{ 'property_' + _s.summary?.calcSkill?.propertySkill }} px-1 font-semibold">{{ _s.summary?.calcSkill?.propertySkill }}</span
                 ><span class="summary_highlight bg_surface px-2">( x {{ _s.summary?.dmg?.skillPropertyMultiplier }})</span>
               </div>
-              <div class="col-6">
+              <div class="col-span-6">
                 <app-calc-value
                   [enableCompare]="false"
                   label="BaseSkill:"
@@ -388,7 +388,7 @@
                   [max]="_s.summary?.calcSkill?.baseSkillDamage"
                 ></app-calc-value>
               </div>
-              <div class="col-6">
+              <div class="col-span-6">
                 <app-calc-value
                   [enableCompare]="false"
                   label="SizePenalty:"
@@ -398,7 +398,7 @@
                   [max]="_s.summary?.dmg?.skillSizePenalty"
                 ></app-calc-value>
               </div>
-              <div class="col-6">
+              <div class="col-span-6">
                 <app-calc-value
                   [enableCompare]="false"
                   label="เจาะ:"
@@ -408,7 +408,7 @@
                   [max]="_s.summary?.dmg?.skillTotalPene"
                 ></app-calc-value>
               </div>
-              <div class="col-6">
+              <div class="col-span-6">
                 <app-calc-value
                   [enableCompare]="false"
                   label="แม่น:"
@@ -418,7 +418,7 @@
                   [max]="_s.summary?.dmg?.skillAccuracy"
                 ></app-calc-value>
               </div>
-              <div class="col-6">
+              <div class="col-span-6">
                 <app-calc-value
                   [enableCompare]="false"
                   label="ASPD:"
@@ -429,14 +429,14 @@
                 ></app-calc-value>
               </div>
 
-              <div class="col-12 py-1 divider">
+              <div class="col-span-12 py-1 divider">
                 <p-divider></p-divider>
               </div>
 
               <!-- Skill Summary -->
-              <div class="col-12">
-                <div class="grid grid-nogutter">
-                  <div class="col-6">
+              <div class="col-span-12">
+                <div class="grid grid-cols-12 gap-4 grid-nogutter">
+                  <div class="col-span-6">
                     <app-calc-value
                       [enableCompare]="false"
                       label="VCT:"
@@ -446,7 +446,7 @@
                       [max]="_s.summary?.calcSkill?.reducedVct"
                     ></app-calc-value>
                   </div>
-                  <div class="col-6">
+                  <div class="col-span-6">
                     <app-calc-value
                       [enableCompare]="false"
                       label="FCT:"
@@ -456,7 +456,7 @@
                       [max]="_s.summary?.calcSkill?.reducedFct"
                     ></app-calc-value>
                   </div>
-                  <div class="col-6">
+                  <div class="col-span-6">
                     <app-calc-value
                       [enableCompare]="false"
                       label="CD:"
@@ -466,7 +466,7 @@
                       [max]="_s.summary?.calcSkill?.reducedCd"
                     ></app-calc-value>
                   </div>
-                  <div class="col-6">
+                  <div class="col-span-6">
                     <app-calc-value
                       [enableCompare]="false"
                       label="Delay:"
@@ -476,7 +476,7 @@
                       [max]="_s.summary?.calcSkill?.reducedAcd"
                     ></app-calc-value>
                   </div>
-                  <div class="col-6">
+                  <div class="col-span-6">
                     <app-calc-value
                       [enableCompare]="false"
                       label="Cast:"
@@ -486,7 +486,7 @@
                       [max]="_s.summary?.calcSkill?.castPeriod"
                     ></app-calc-value>
                   </div>
-                  <div class="col-6">
+                  <div class="col-span-6">
                     <app-calc-value
                       [enableCompare]="false"
                       label="Skill/s:"
@@ -499,12 +499,12 @@
                 </div>
               </div>
 
-              <div class="col-12 py-1 divider">
+              <div class="col-span-12 py-1 divider">
                 <p-divider></p-divider>
               </div>
 
               <!-- Skill Damage -->
-              <div class="col-6" [hidden]="!_s.summary?.dmg?.skillCanCri">
+              <div class="col-span-6" [hidden]="!_s.summary?.dmg?.skillCanCri">
                 <app-calc-value
                   [enableCompare]="false"
                   label="CriRate:"
@@ -514,7 +514,7 @@
                   [max]="_s.summary?.dmg?.skillCriRateToMonster"
                 ></app-calc-value>
               </div>
-              <div class="col-6" [hidden]="!_s.summary?.dmg?.skillCanCri">
+              <div class="col-span-6" [hidden]="!_s.summary?.dmg?.skillCanCri">
                 <app-calc-value
                   [enableCompare]="false"
                   label="CriDmg:"
@@ -524,7 +524,7 @@
                   [max]="_s.summary?.dmg?.skillCriDmgToMonster"
                 ></app-calc-value>
               </div>
-              <div class="col-12">
+              <div class="col-span-12">
                 <app-calc-value
                   [enableCompare]="false"
                   [label]="_s.summary?.dmg?.skillCanCri ? 'SkillDmgCri:' : 'SkillDmg:'"
@@ -536,7 +536,7 @@
                   [max]="_s.summary?.dmg?.skillMaxDamage"
                 ></app-calc-value>
               </div>
-              <div class="col-12" *ngIf="_s.summary?.dmg?.skillPart2Label && _s.summary?.dmg?.skillMaxDamage2">
+              <div class="col-span-12" *ngIf="_s.summary?.dmg?.skillPart2Label && _s.summary?.dmg?.skillMaxDamage2">
                 <app-calc-value
                   [enableCompare]="false"
                   [label]="_s.summary?.dmg?.skillPart2Label"
@@ -547,7 +547,7 @@
                   [max]="_s.summary?.dmg?.skillMaxDamage2"
                 ></app-calc-value>
               </div>
-              <div class="col-12" [hidden]="_s.summary?.dmg?.isAutoSpell">
+              <div class="col-span-12" [hidden]="_s.summary?.dmg?.isAutoSpell">
                 <app-calc-value
                   [enableCompare]="false"
                   label="DPS:"

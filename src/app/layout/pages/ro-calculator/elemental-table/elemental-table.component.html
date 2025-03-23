@@ -1,26 +1,26 @@
 <div class="p-fluid fluid">
-  <div class="grid grid-nogutter">
-    <div class="grid grid-nogutter col-5">
-      <div class="col-12" [hidden]="!isShowElementalTable">
+  <div class="grid grid-cols-12 gap-4 grid-nogutter">
+    <div class="grid grid-cols-12 gap-4 grid-nogutter col-span-5">
+      <div class="col-span-12" [hidden]="!isShowElementalTable">
         <app-elemental-table-raw [calcMonsters]="elementalTable1"></app-elemental-table-raw>
       </div>
-      <div class="col-12" [hidden]="!isShowElementalTable">
+      <div class="col-span-12" [hidden]="!isShowElementalTable">
         <app-elemental-table-raw [calcMonsters]="elementalTable2"></app-elemental-table-raw>
       </div>
-      <div class="col-12" [hidden]="!isShowElementalTable">
+      <div class="col-span-12" [hidden]="!isShowElementalTable">
         <app-elemental-table-raw [calcMonsters]="elementalTable3"></app-elemental-table-raw>
       </div>
-      <div class="col-12" [hidden]="!isShowElementalTable">
+      <div class="col-span-12" [hidden]="!isShowElementalTable">
         <app-elemental-table-raw [calcMonsters]="elementalTable4"></app-elemental-table-raw>
       </div>
     </div>
 
     <div class="{{ isShowElementalTable ? 'col-7' : 'col-12' }}">
-      <div class="grid grid-nogutter align-content-center">
-        <div class="col-4">
+      <div class="grid grid-cols-12 gap-4 grid-nogutter content-center">
+        <div class="col-span-4">
           <p-checkbox [(ngModel)]="isShowElementalTable" [binary]="true" label="Show elemental table" (ngModelChange)="onToggleShowEleTableClick()"></p-checkbox>
         </div>
-        <div class="col-8">
+        <div class="col-span-8">
           <p-multiSelect
             [options]="groupMonsterList"
             [group]="true"
@@ -36,13 +36,13 @@
             (onClear)="onMonsterListChange()"
           >
             <ng-template let-group pTemplate="group">
-              <div class="flex align-items-center font-bold dropdown_monster_group_label">
+              <div class="flex items-center font-bold dropdown_monster_group_label">
                 <span>{{ group.label }}</span>
               </div>
             </ng-template>
           </p-multiSelect>
         </div>
-        <div class="col-12">
+        <div class="col-span-12">
           <app-elemental-table-raw [calcMonsters]="calcMonsters" [isLoading]="isProcessing"></app-elemental-table-raw>
         </div>
       </div>

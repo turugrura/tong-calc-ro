@@ -1,5 +1,5 @@
-<div class="grid grid-nogutter p-fluid fluid">
-  <div class="col-3">
+<div class="grid grid-cols-12 gap-4 grid-nogutter p-fluid fluid">
+  <div class="col-span-3">
     <div class="text-xl font-semibold">Consumables</div>
     <div class="pt-1" *ngFor="let item of consumables">
       <div class="flex gap-1">
@@ -8,22 +8,22 @@
       </div>
     </div>
   </div>
-  <div class="col-3">
+  <div class="col-span-3">
     <div class="text-xl font-semibold">Buffs</div>
     <div class="pt-1" *ngFor="let s of buffSkills">
       <span>{{ s.label }}</span
       >:<span class="buff-value-hilight ml-1 font-semibold">{{ s.value }}</span>
     </div>
   </div>
-  <div class="col-3">
+  <div class="col-span-3">
     <div class="text-xl font-semibold">Learned skills</div>
     <div class="pt-1" *ngFor="let s of learnedSkills">
       <span>{{ s.label }}</span
       >:<span class="buff-value-hilight ml-1 font-semibold">{{ s.value }}</span>
     </div>
   </div>
-  <div class="col-3">
-    <div class="text-xl font-semibold white-space-nowrap">Activating Skills/Effects</div>
+  <div class="col-span-3">
+    <div class="text-xl font-semibold whitespace-nowrap">Activating Skills/Effects</div>
     <div class="pt-1" *ngFor="let s of activeSkills">
       <span>{{ s.label }}</span
       >:<span class="buff-value-hilight ml-1 font-semibold">{{ s.value }}</span>

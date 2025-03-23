@@ -1,13 +1,10 @@
-@use './_variables' as *;
-@use './mixins' as *;
-
 @media screen and (min-width: 1960px) {
-    // .layout-main, .landing-wrapper {
-    //     width: 1504px;
-    //     margin-left: auto !important;
-    //     margin-right: auto !important;
-    // }
-
+    .layout-main,
+    .landing-wrapper {
+        width: 1504px;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
 }
 
 @media (min-width: 992px) {
@@ -25,6 +22,14 @@
                 height: 100vh;
                 border-top-left-radius: 0;
                 border-bottom-left-radius: 0;
+                border-right: 1px solid var(--surface-border);
+                transition:
+                    transform 0.4s cubic-bezier(0.05, 0.74, 0.2, 0.99),
+                    left 0.4s cubic-bezier(0.05, 0.74, 0.2, 0.99);
+                box-shadow:
+                    0px 3px 5px rgba(0, 0, 0, 0.02),
+                    0px 0px 2px rgba(0, 0, 0, 0.05),
+                    0px 1px 4px rgba(0, 0, 0, 0.08);
             }
 
             &.layout-overlay-active {
@@ -36,7 +41,7 @@
 
         &.layout-static {
             .layout-main-container {
-                margin-left: 300px;
+                margin-left: 22rem;
             }
 
             &.layout-static-inactive {
@@ -76,6 +81,9 @@
             height: 100vh;
             border-top-left-radius: 0;
             border-bottom-left-radius: 0;
+            transition:
+                transform 0.4s cubic-bezier(0.05, 0.74, 0.2, 0.99),
+                left 0.4s cubic-bezier(0.05, 0.74, 0.2, 0.99);
         }
 
         .layout-mask {
@@ -96,7 +104,6 @@
 
             .layout-mask {
                 display: block;
-                animation: fadein $transitionDuration;
             }
         }
     }

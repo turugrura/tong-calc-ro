@@ -1,21 +1,21 @@
-<div class="grid grid-nogutter">
-  <div class="col-12">
+<div class="grid grid-cols-12 gap-4 grid-nogutter">
+  <div class="col-span-12">
     HP
     <span class="summary_monster_value px-1 font-semibold">{{ totalSummary?.monster?.hp | number }}</span>
   </div>
-  <div class="col-12">
+  <div class="col-span-12">
     Def
     <span class="summary_monster_value px-1 font-semibold">{{ totalSummary?.monster?.softDef }} + {{ totalSummary?.monster?.def }}</span>
   </div>
-  <div class="col-12">
+  <div class="col-span-12">
     Mdef
     <span class="summary_monster_value px-1 font-semibold">{{ totalSummary?.monster?.softMDef }} + {{ totalSummary?.monster?.mdef }}</span>
   </div>
-  <div class="col-12">
+  <div class="col-span-12">
     Req.Hit100
     <span class="summary_monster_value px-1 font-semibold">{{ totalSummary?.monster?.hitRequireFor100 }}</span>
   </div>
-  <div class="col-12 flex justify-content-around">
+  <div class="col-span-12 flex justify-around">
     <div>
       Res
       <span class="summary_monster_value px-1 font-semibold" style="color: var(--orange-300)">
@@ -29,11 +29,11 @@
       </span>
     </div>
   </div>
-  <div class="col-12">
+  <div class="col-span-12">
     <span class="summary_monster_value px-1 font-bold" style="color: var(--red-500)">{{ totalSummary?.monster?.typeUpper }}</span>
     <span *ngIf="totalSummary?.monster?.isMvp" class="font-bold px-1">MVP</span>
   </div>
-  <div class="col-12">
+  <div class="col-span-12">
     <span class="{{ 'property_' + totalSummary?.monster?.elementUpper }} summary_monster_value px-1 font-semibold">{{ totalSummary?.monster?.elementLevelUpper }}</span>
     <span>
       <button
@@ -46,13 +46,13 @@
       ></button>
     </span>
   </div>
-  <div class="col-12">
+  <div class="col-span-12">
     <span class="summary_monster_value px-1 font-semibold" style="color: var(--yellow-300)">{{ totalSummary?.monster?.raceUpper }}</span>
   </div>
-  <div class="col-12">
+  <div class="col-span-12">
     <span class="summary_monster_value px-1 font-semibold" style="color: var(--cyan-300)">{{ totalSummary?.monster?.sizeFullUpper }}</span>
   </div>
-  <div class="col-12 flex justify-content-around">
+  <div class="col-span-12 flex justify-around">
     <div>
       STR
       <span class="summary_monster_value px-1 font-semibold" style="color: var(--red-300)">
@@ -66,7 +66,7 @@
       </span>
     </div>
   </div>
-  <div class="col-12 flex justify-content-around">
+  <div class="col-span-12 flex justify-around">
     <div>
       DEX
       <span class="summary_monster_value px-1 font-semibold" style="color: var(--green-300)">
@@ -80,7 +80,7 @@
       </span>
     </div>
   </div>
-  <div class="col-12 flex justify-content-around">
+  <div class="col-span-12 flex justify-around">
     <div>
       VIT
       <span class="summary_monster_value px-1 font-semibold" style="color: var(--yellow-300)">

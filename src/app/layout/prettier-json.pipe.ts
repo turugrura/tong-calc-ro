@@ -65,7 +65,7 @@ export class PrettyJsonPipe implements PipeTransform {
      * Regex for the start of the line, insert a number-line themeClass tag before each line
      */
     return showNumebrLine
-      ? obj.replace(/^/gm, () => `<span class="number-line pl-3 select-none" >${String(line++).padEnd(padding)}</span>`)
+      ? obj.replace(/^/gm, () => `<span class="number-line pl-4 select-none" >${String(line++).padEnd(padding)}</span>`)
       : obj;
   }
 }

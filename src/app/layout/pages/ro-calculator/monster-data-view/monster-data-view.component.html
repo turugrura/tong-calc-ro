@@ -1,9 +1,9 @@
 <p-dataView #dv [value]="products" [layout]="'grid'" [rows]="12" [paginator]="true" filterBy="label">
   <ng-template pTemplate="header">
-    <div class="p-fluid fluid grid grid-nogutter">
+    <div class="p-fluid fluid grid grid-cols-12 gap-4 grid-nogutter">
       <div class="col">
-        <div class="grid grid-nogutter">
-          <div class="col-4">
+        <div class="grid grid-cols-12 gap-4 grid-nogutter">
+          <div class="col-span-4">
             <p-multiSelect
               [options]="groupNames"
               [(ngModel)]="seletedGroupNames"
@@ -16,7 +16,7 @@
             >
             </p-multiSelect>
           </div>
-          <div class="col-4">
+          <div class="col-span-4">
             <input #presetName autocomplete="off" type="text" pInputText placeholder="search" [(ngModel)]="textSearch" (ngModelChange)="onTextSearchChange()" />
           </div>
         </div>
@@ -27,10 +27,10 @@
     </div>
   </ng-template>
   <ng-template let-product pTemplate="gridItem">
-    <div class="col-12 sm:col-6 lg:col-4 xl:col-3 p-2" style="height: 200px">
-      <div class="p-2 border-1 surface-border surface-card border-round" style="height: 100%">
-        <div class="flex flex-wrap align-items-center justify-content-between gap-2">
-          <span class="flex align-items-center gap-2">
+    <div class="col-span-12 sm:col-span-6 lg:col-span-4 xl:col-span-3 p-2" style="height: 200px">
+      <div class="p-2 border border-surface bg-surface-0 dark:bg-surface-900 rounded-border" style="height: 100%">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <span class="flex items-center gap-2">
             <!-- <i class="pi pi-tag"></i> -->
             <span>{{ 'Lv ' + product.level }}</span>
           </span>
@@ -38,16 +38,16 @@
           <span *ngIf="product.className !== 'Boss'">{{ product.className }}</span>
           <button pButton icon="pi pi-check" class="p-button-rounded" (click)="onSelectMonster(product)"></button>
         </div>
-        <div class="flex flex-column align-items-center gap-2 py-2" style="height: 70%">
+        <div class="flex flex-col items-center gap-2 py-2" style="height: 70%">
           <img
-            class="shadow-2 border-round bg-white"
+            class="shadow rounded-border bg-white"
             style="height: 75%"
             [src]="'https://static.divine-pride.net/images/mobs/png/' + product.value + '.png'"
             [alt]="product.name"
           />
           <div class="font-semibold">{{ product.name }}</div>
         </div>
-        <div class="flex align-items-center justify-content-between">
+        <div class="flex items-center justify-between">
           <span>
             <span class="{{ 'font-semibold property_' + product.elementName }}">{{ product.elementName }}</span>
             <span> / {{ product.raceName }}</span>

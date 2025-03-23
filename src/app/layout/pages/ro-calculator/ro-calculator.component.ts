@@ -402,7 +402,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
           // console.log('updateItemSubs ', ++n);
           itemChanges.add(itemChange);
         }),
-        debounceTime(250),
+        debounceTime(1250),
       )
       .subscribe(() => {
         this.hiddenMap = {

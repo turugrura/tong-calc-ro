@@ -11,8 +11,8 @@
   [(visible)]="isShowSearchDialog"
   [style]="{ width: '75vw', height: '90vh', 'min-width': '750px' }"
 >
-  <div class="p-fluid fluid grid grid-nogutter">
-    <div class="col-12 item-position-list">
+  <div class="p-fluid fluid grid grid-cols-12 gap-4 grid-nogutter">
+    <div class="col-span-12 item-position-list">
       <p-listbox [options]="itemPositionOptions" [(ngModel)]="selectedItemPositions" [metaKeySelection]="false" [multiple]="true" [listStyle]="{ 'max-height': '600px' }">
         <ng-template let-item pTemplate="item">
           <div class="flex item-position-{{ item.value }}" style="background-color: var(--border-radius)">
@@ -21,9 +21,9 @@
         </ng-template>
       </p-listbox>
     </div>
-    <div class="col-12 grid grid-nogutter">
-      <div class="col-6 grid grid-nogutter">
-        <div class="col-6">
+    <div class="col-span-12 grid grid-cols-12 gap-4 grid-nogutter">
+      <div class="col-span-6 grid grid-cols-12 gap-4 grid-nogutter">
+        <div class="col-span-6">
           <p-cascadeSelect
             [(ngModel)]="selectedBonus[0]"
             [options]="bonusNameList"
@@ -35,7 +35,7 @@
             [showClear]="true"
           ></p-cascadeSelect>
         </div>
-        <div class="col-6">
+        <div class="col-span-6">
           <p-cascadeSelect
             [(ngModel)]="selectedBonus[1]"
             [options]="bonusNameList"
@@ -47,7 +47,7 @@
             [showClear]="true"
           ></p-cascadeSelect>
         </div>
-        <div class="col-6">
+        <div class="col-span-6">
           <p-cascadeSelect
             [(ngModel)]="selectedBonus[2]"
             [options]="bonusNameList"
@@ -59,7 +59,7 @@
             [showClear]="true"
           ></p-cascadeSelect>
         </div>
-        <div class="col-6">
+        <div class="col-span-6">
           <p-cascadeSelect
             [(ngModel)]="selectedBonus[3]"
             [options]="bonusNameList"
@@ -71,7 +71,7 @@
             [showClear]="true"
           ></p-cascadeSelect>
         </div>
-        <div class="col-12 px-2 py-2 flex justify-content-between">
+        <div class="col-span-12 px-2 py-2 flex justify-between">
           <div class="search-mode flex">
             <p-inputSwitch inputId="search_mode" [(ngModel)]="isSerchMatchAllBonus"></p-inputSwitch>
             <span *ngIf="isSerchMatchAllBonus" class="px-2">Item must include all selected bonuses</span>
@@ -82,14 +82,14 @@
           </div>
         </div>
       </div>
-      <div class="col-6 grid grid-nogutter">
-        <div class="col-12 skill-list">
+      <div class="col-span-6 grid grid-cols-12 gap-4 grid-nogutter">
+        <div class="col-span-12 skill-list">
           <p-listbox [options]="offensiveSkills" [(ngModel)]="selectedOffensiveSkills" [metaKeySelection]="false" [multiple]="true"></p-listbox>
         </div>
       </div>
     </div>
 
-    <div class="col-4 search_table">
+    <div class="col-span-4 search_table">
       <p-table
         datakey="id"
         [value]="filteredItems"
@@ -121,9 +121,9 @@
         </ng-template>
       </p-table>
     </div>
-    <div class="col-8">
-      <div class="grid grid-nogutter ml-2" style="max-height: 500px; overflow: auto">
-        <div class="col-12">
+    <div class="col-span-8">
+      <div class="grid grid-cols-12 gap-4 grid-nogutter ml-2" style="max-height: 500px; overflow: auto">
+        <div class="col-span-12">
           ID: {{ activeFilteredItem?.id }} <br />
           Name: {{ activeFilteredItem?.label }}
         </div>

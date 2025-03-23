@@ -1,11 +1,8 @@
-@use './_variables' as *;
-@use './mixins' as *;
-
 .layout-footer {
-    transition: margin-left $transitionDuration;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 1rem;
+    padding: 1rem 0 1rem 0;
+    gap: 0.5rem;
     border-top: 1px solid var(--surface-border);
 }

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "sakai-ng": {
+    "ro-calculator": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -18,7 +18,7 @@
           "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": {
-              "base": "dist/sakai-ng"
+              "base": "dist/ro-calculator"
             },
             "index": "src/index.html",
             "polyfills": [
@@ -34,10 +34,7 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": [
-              "node_modules/prismjs/prism.js",
-              "node_modules/prismjs/components/prism-typescript.js"
-            ],
+            "scripts": [],
             "browser": "src/main.ts"
           },
           "configurations": {
@@ -74,14 +71,14 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "buildTarget": "sakai-ng:build"
+            "buildTarget": "ro-calculator:build"
           },
           "configurations": {
             "production": {
-              "buildTarget": "sakai-ng:build:production"
+              "buildTarget": "ro-calculator:build:production"
             },
             "development": {
-              "buildTarget": "sakai-ng:build:development"
+              "buildTarget": "ro-calculator:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -89,7 +86,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "sakai-ng:build"
+            "buildTarget": "ro-calculator:build"
           }
         },
         "test": {
@@ -126,6 +123,9 @@
     }
   },
   "cli": {
-    "analytics": false
+    "analytics": false,
+    "schematicCollections": [
+      "angular-eslint"
+    ]
   }
 }

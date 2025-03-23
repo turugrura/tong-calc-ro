@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { AppLayoutComponent } from './layout/app.layout.component';
+import { AppLayoutComponent } from './layout/component/app.layout';
 
 export const appRoutes = [
   {

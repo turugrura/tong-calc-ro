@@ -1,6 +1,6 @@
-<div class="grid grid-nogutter">
-  <div class="col-12 grid grid-nogutter">
-    <div class="col-6">
+<div class="grid grid-cols-12 gap-4 grid-nogutter">
+  <div class="col-span-12 grid grid-cols-12 gap-4 grid-nogutter">
+    <div class="col-span-6">
       <p-select
         [autoDisplayFirst]="false"
         [resetFilterOnHide]="true"
@@ -28,7 +28,7 @@
         </ng-template>
       </p-select>
     </div>
-    <div class="col-2 refine-list">
+    <div class="col-span-2 refine-list">
       <p-select [options]="refineList" [(ngModel)]="itemRefine" scrollHeight="350px" [disabled]="!itemId" (onChange)="onSelectItem('itemRefine', itemId, $event.value)">
         <ng-template let-item pTemplate="selectedItem">
           <div class="flex gap-1">
@@ -37,7 +37,7 @@
         </ng-template>
       </p-select>
     </div>
-    <div class="col-4">
+    <div class="col-span-4">
       <p-cascadeSelect
         [(ngModel)]="optionValue"
         [disabled]="!itemId"

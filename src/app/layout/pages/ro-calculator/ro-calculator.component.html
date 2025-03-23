@@ -22,14 +22,14 @@
   <app-elemental-table [monsterMap]="monsterDataMap" [groupMonsterList]="groupMonsterList" [allSelectedMonsterIds]="allSelectedMonsterIds"></app-elemental-table>
 </p-dialog>
 
-<div class="grid grid-nogutter" style="min-width: 1500px">
+<div class="grid grid-cols-12 gap-4 grid-nogutter" style="min-width: 1500px">
   <!-- Left Side -->
-  <div class="p-fluid fluid col-7">
+  <div class="p-fluid fluid col-span-7">
     <!-- Create Update Class -->
-    <div class="grid grid-nogutter">
-      <div class="col-4">
-        <div class="grid grid-nogutter">
-          <div class="col-12">
+    <div class="grid grid-cols-12 gap-4 grid-nogutter">
+      <div class="col-span-4">
+        <div class="grid grid-cols-12 gap-4 grid-nogutter">
+          <div class="col-span-12">
             <div class="p-inputgroup">
               <input #presetName [autocomplete]="false" type="text" pInputText placeholder="Name" />
               <button
@@ -44,7 +44,7 @@
               <button type="button" class="p-button-secondary" pButton icon="pi pi-cog" [disabled]="isInProcessingPreset" (click)="openPresetManagement()"></button>
             </div>
           </div>
-          <div class="col-12">
+          <div class="col-span-12">
             <div class="p-inputgroup dropdown-joblist">
               <p-select
                 [autoDisplayFirst]="false"
@@ -56,7 +56,7 @@
                 [(ngModel)]="selectedPreset"
               >
                 <ng-template let-job pTemplate="selectedItem">
-                  <div class="flex gap-2 py-0 align-items-center" *ngIf="model.class">
+                  <div class="flex gap-2 py-0 items-center" *ngIf="model.class">
                     <img src="assets/demo/images/jobs/icon_jobs_{{ job.icon }}.png" alt="" class="job_img" />
                     <div class="text_ellips">{{ job.label }}</div>
                   </div>
@@ -79,7 +79,7 @@
             </div>
           </div>
 
-          <div class="col-12">
+          <div class="col-span-12">
             <div class="p-inputgroup dropdown-joblist">
               <span class="p-inputgroup-addon" style="width: 80px">Class</span>
               <p-select
@@ -96,7 +96,7 @@
                 (onChange)="onClassChange()"
               >
                 <ng-template let-job pTemplate="selectedItem">
-                  <div class="flex gap-2 py-0 align-items-center" *ngIf="model.class">
+                  <div class="flex gap-2 py-0 items-center" *ngIf="model.class">
                     <img src="assets/demo/images/jobs/icon_jobs_{{ job.icon }}.png" alt="" class="job_img" />
                     <div class="text_ellips">{{ job.label }}</div>
                   </div>
@@ -136,7 +136,7 @@
               (click)="onJobPromotionClick()"
             ></button>
           </div>
-          <div class="col-12">
+          <div class="col-span-12">
             <div class="p-inputgroup">
               <span class="p-inputgroup-addon" style="width: 80px">Job</span>
               <p-select
@@ -152,7 +152,7 @@
               ></p-select>
             </div>
           </div>
-          <div class="col-12">
+          <div class="col-span-12">
             <span class="p-inputgroup-addon"
               >Status:
               <span [className]="availablePoints < 0 ? 'ml-2 summary_monster_value px-1 font-semibold' : 'ml-2'">
@@ -173,13 +173,13 @@
       </div>
 
       <!-- Status -->
-      <div class="col-8">
-        <div class="grid grid-nogutter">
-          <div class="col-5">
-            <div class="grid grid-nogutter">
+      <div class="col-span-8">
+        <div class="grid grid-cols-12 gap-4 grid-nogutter">
+          <div class="col-span-5">
+            <div class="grid grid-cols-12 gap-4 grid-nogutter">
               <!-- STR -->
-              <div class="col-12 grid grid-nogutter">
-                <div class="col-6">
+              <div class="col-span-12 grid grid-cols-12 gap-4 grid-nogutter">
+                <div class="col-span-6">
                   <app-status-input
                     label="Str"
                     [dropdownList]="mainStatusList"
@@ -188,7 +188,7 @@
                     [extraValue]="(model.jobStr || 0) + (totalSummary?.str || 0)"
                   ></app-status-input>
                 </div>
-                <div class="col-6">
+                <div class="col-span-6">
                   <app-status-input
                     label="Pow"
                     [disabled]="!isAllowTraitStat"
@@ -202,8 +202,8 @@
               </div>
 
               <!-- AGI -->
-              <div class="col-12 grid grid-nogutter">
-                <div class="col-6">
+              <div class="col-span-12 grid grid-cols-12 gap-4 grid-nogutter">
+                <div class="col-span-6">
                   <app-status-input
                     label="Agi"
                     [dropdownList]="mainStatusList"
@@ -212,7 +212,7 @@
                     [extraValue]="(model.jobAgi || 0) + (totalSummary?.agi || 0)"
                   ></app-status-input>
                 </div>
-                <div class="col-6">
+                <div class="col-span-6">
                   <app-status-input
                     label="Sta"
                     [disabled]="!isAllowTraitStat"
@@ -226,8 +226,8 @@
               </div>
 
               <!-- VIT -->
-              <div class="col-12 grid grid-nogutter">
-                <div class="col-6">
+              <div class="col-span-12 grid grid-cols-12 gap-4 grid-nogutter">
+                <div class="col-span-6">
                   <app-status-input
                     label="Vit"
                     [dropdownList]="mainStatusList"
@@ -236,7 +236,7 @@
                     [extraValue]="(model.jobVit || 0) + (totalSummary?.vit || 0)"
                   ></app-status-input>
                 </div>
-                <div class="col-6">
+                <div class="col-span-6">
                   <app-status-input
                     label="Wis"
                     [disabled]="!isAllowTraitStat"
@@ -250,8 +250,8 @@
               </div>
 
               <!-- INT -->
-              <div class="col-12 grid grid-nogutter">
-                <div class="col-6">
+              <div class="col-span-12 grid grid-cols-12 gap-4 grid-nogutter">
+                <div class="col-span-6">
                   <app-status-input
                     label="Int"
                     [dropdownList]="mainStatusList"
@@ -260,7 +260,7 @@
                     [extraValue]="(model.jobInt || 0) + (totalSummary?.int || 0)"
                   ></app-status-input>
                 </div>
-                <div class="col-6">
+                <div class="col-span-6">
                   <app-status-input
                     label="Spl"
                     [disabled]="!isAllowTraitStat"
@@ -274,8 +274,8 @@
               </div>
 
               <!-- DEX -->
-              <div class="col-12 grid grid-nogutter">
-                <div class="col-6">
+              <div class="col-span-12 grid grid-cols-12 gap-4 grid-nogutter">
+                <div class="col-span-6">
                   <app-status-input
                     label="Dex"
                     [dropdownList]="mainStatusList"
@@ -284,7 +284,7 @@
                     [extraValue]="(model.jobDex || 0) + (totalSummary?.dex || 0)"
                   ></app-status-input>
                 </div>
-                <div class="col-6">
+                <div class="col-span-6">
                   <app-status-input
                     label="Con"
                     [disabled]="!isAllowTraitStat"
@@ -298,8 +298,8 @@
               </div>
 
               <!-- LUK -->
-              <div class="col-12 grid grid-nogutter">
-                <div class="col-6">
+              <div class="col-span-12 grid grid-cols-12 gap-4 grid-nogutter">
+                <div class="col-span-6">
                   <app-status-input
                     label="Luk"
                     [dropdownList]="mainStatusList"
@@ -308,7 +308,7 @@
                     [extraValue]="(model.jobLuk || 0) + (totalSummary?.luk || 0)"
                   ></app-status-input>
                 </div>
-                <div class="col-6">
+                <div class="col-span-6">
                   <app-status-input
                     label="Crt"
                     [disabled]="!isAllowTraitStat"
@@ -324,14 +324,14 @@
           </div>
 
           <!-- Summary -->
-          <div class="col-7">
-            <div class="grid grid-nogutter" style="position: relative">
+          <div class="col-span-7">
+            <div class="grid grid-cols-12 gap-4 grid-nogutter" style="position: relative">
               <div class="loading_block" *ngIf="isCalculating">
                 <i class="pi pi-spin pi-spinner" style="font-size: 2rem"></i>
               </div>
-              <div class="col-6">
-                <div class="grid grid-nogutter">
-                  <div class="col-12">
+              <div class="col-span-6">
+                <div class="grid grid-cols-12 gap-4 grid-nogutter">
+                  <div class="col-span-12">
                     Alt+Q Atk:
                     <span class="font-semibold px-1 summary_stat_atk">
                       {{ totalSummary?.calc?.totalStatusAtk || 0 }} +
@@ -343,60 +343,60 @@
                       }}
                     </span>
                   </div>
-                  <div [hidden]="env.production" class="col-12">
+                  <div [hidden]="env.production" class="col-span-12">
                     Equip Atk:
                     <span class="font-semibold px-1 summary_stat_atk">{{ totalSummary?.atk || 0 }} + {{ totalSummary?.atkPercent || 0 }} %</span>
                   </div>
-                  <div class="col-6">
+                  <div class="col-span-6">
                     P.Atk:
                     <span class="font-semibold px-1 summary_stat_atk2">{{ totalSummary?.dmg?.pAtk || 0 }}</span>
                   </div>
-                  <div class="col-6">
+                  <div class="col-span-6">
                     C.Rate:
                     <span class="font-semibold px-1 summary_stat_atk2">{{ totalSummary?.dmg?.cRate || 0 }}</span>
                   </div>
-                  <div class="col-12">
+                  <div class="col-span-12">
                     ASPD:
                     <span class="font-semibold px-1 summary_stat_atk">{{ totalSummary?.calc?.totalAspd || 0 }}</span>
                     <span class="font-semibold px-1 summary_highlight">( {{ totalSummary?.calc?.hitPerSecs || 0 }} Hits/s )</span>
                   </div>
-                  <div class="col-12">
+                  <div class="col-span-12">
                     Hit:
                     <span class="font-semibold px-1 summary_stat_atk">{{ totalSummary?.calc?.totalHit || 0 }}</span>
                     Perfect:
                     <span class="font-semibold px-1 summary_stat_atk">{{ totalSummary?.calc?.totalPerfectHit || 0 }} %</span>
                   </div>
-                  <div class="col-12">
+                  <div class="col-span-12">
                     CriRate:
                     <span class="font-semibold px-1 summary_stat_atk">{{ totalSummary?.calc?.totalCri || 0 }} %</span>
                     Dmg: <span class="font-semibold px-1 summary_stat_atk">{{ totalSummary?.criDmg || 0 }} %</span>
                   </div>
-                  <div class="col-12">
+                  <div class="col-span-12">
                     Melee:
                     <span class="font-semibold px-1 summary_stat_atk">{{ totalSummary?.melee || 0 }} %</span> Range:
                     <Span class="font-semibold px-1 summary_stat_atk">{{ totalSummary?.range || 0 }} %</Span>
                   </div>
-                  <div class="col-12">
+                  <div class="col-span-12">
                     Def:
                     <span class="font-semibold px-1 summary_stat_def">{{ totalSummary?.calc?.softDef || 0 }} + {{ totalSummary?.calc?.def || 0 }}</span>
                     Res:
                     <span class="font-semibold px-1 summary_stat_def2">{{ totalSummary?.calc?.res || 0 }}</span>
                   </div>
-                  <div class="col-12">
+                  <div class="col-span-12">
                     Mdef:
                     <span class="font-semibold px-1 summary_stat_def">{{ totalSummary?.calc?.softMdef || 0 }} + {{ totalSummary?.calc?.mdef || 0 }}</span>
                     MRes:
                     <span class="font-semibold px-1 summary_stat_def2">{{ totalSummary?.calc?.mres || 0 }}</span>
                   </div>
-                  <div class="col-12">
+                  <div class="col-span-12">
                     Flee:
                     <span class="font-semibold px-1 summary_stat_def">{{ totalSummary?.calc?.totalFlee || 0 }} + {{ totalSummary?.calc?.totalPerfectDodge || 0 }}</span>
                   </div>
                 </div>
               </div>
-              <div class="col-6">
-                <div class="grid grid-nogutter mx-1">
-                  <div class="col-12">
+              <div class="col-span-6">
+                <div class="grid grid-cols-12 gap-4 grid-nogutter mx-1">
+                  <div class="col-span-12">
                     Alt+Q Matk:
                     <span class="font-semibold px-1 summary_stat_matk"
                       >{{ totalSummary?.calc?.totalStatusMatk || 0 }} +
@@ -408,36 +408,36 @@
                       }}</span
                     >
                   </div>
-                  <div [hidden]="env.production" class="col-12">
+                  <div [hidden]="env.production" class="col-span-12">
                     Equip Matk:
                     <span class="font-semibold px-1 summary_stat_matk">{{ totalSummary?.matk || 0 }} + {{ totalSummary?.matkPercent || 0 }} %</span>
                   </div>
-                  <div class="col-12">
+                  <div class="col-span-12">
                     Matk
                     <span class="font-semibold px-1 summary_stat_matk">{{ totalSummary?.matkPercent || 0 }} %</span>
                     S.Matk:
                     <span class="font-semibold px-1 summary_stat_matk2">{{ totalSummary?.dmg?.sMatk || 0 }}</span>
                   </div>
-                  <div class="col-12">
+                  <div class="col-span-12">
                     After Cast Delay:
                     <span class="font-semibold px-1 summary_stat_matk">{{ totalSummary?.acd || 0 }}</span>
                   </div>
-                  <div class="col-12">
+                  <div class="col-span-12">
                     Fixed Cast Time:
                     <span class="font-semibold px-1 summary_stat_matk">{{ totalSummary?.fct || 0 }}</span>
                   </div>
-                  <div class="col-12">
+                  <div class="col-span-12">
                     Variable Cast Time:
                     <span class="font-semibold px-1 summary_stat_matk">{{ totalSummary?.vct || 0 }}</span>
                   </div>
-                  <div class="col-12">
+                  <div class="col-span-12">
                     Dex2 Int1:
                     <span class="font-semibold px-1 summary_stat_yellow">{{ totalSummary?.calc?.dex2int1 || 0 }}</span>
                     <span [hidden]="totalSummary?.calc?.to530 <= 0">{{ '( อีก ' + totalSummary?.calc?.to530 + ' )' }}</span>
                   </div>
-                  <div class="col-12 px-1 border_default hp-sp-section" [hidden]="hideHpSp[selectedCharacter?.className]">
-                    <div class="grid grid-nogutter">
-                      <div class="col-12 flex gap-1">
+                  <div class="col-span-12 px-1 border_default hp-sp-section" [hidden]="hideHpSp[selectedCharacter?.className]">
+                    <div class="grid grid-cols-12 gap-4 grid-nogutter">
+                      <div class="col-span-12 flex gap-1">
                         HP:
                         <span class="font-semibold px-1 summary_stat_yellow">{{ totalSummary?.calc?.maxHp || 0 | number }}</span>
                         <!-- <p-cascadeSelect
@@ -453,7 +453,7 @@
                           (onClear)="onOptionChange()"
                         ></p-cascadeSelect> -->
                       </div>
-                      <div class="col-12 flex gap-1">
+                      <div class="col-span-12 flex gap-1">
                         SP:
                         <span class="font-semibold px-1 summary_stat_yellow">{{ totalSummary?.calc?.maxSp || 0 | number }}</span>
                         <!-- <p-cascadeSelect
@@ -474,7 +474,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-12 item_label_compare">
+              <div class="col-span-12 item_label_compare">
                 <p-multiSelect
                   [options]="compareItemList"
                   [(ngModel)]="compareItemNames"
@@ -496,8 +496,8 @@
     </div>
 
     <!-- Weapon + Ammo -->
-    <div class="grid grid-nogutter item_label_weapon_main">
-      <div class="col-12">
+    <div class="grid grid-cols-12 gap-4 grid-nogutter item_label_weapon_main">
+      <div class="col-span-12">
         <app-equipment
           [itemType]="'weapon'"
           [placeholder]="'Weapon'"
@@ -526,7 +526,7 @@
           (gradeChange)="onSelectGrade($event.itemType, $event.itemId, $event.grade)"
           (optionChange)="onOptionChange()"
         >
-          <div class="col-6 item_label_element_converter" style="min-width: 100px">
+          <div class="col-span-6 item_label_element_converter" style="min-width: 100px">
             <p-select
               [options]="propertyAtkList"
               [(ngModel)]="model.propertyAtk"
@@ -590,8 +590,8 @@
         </app-equipment>
       </div>
     </div>
-    <div class="grid grid-nogutter item_label_leftWeapon_main">
-      <div class="col-12" [hidden]="!model.weapon || !showLeftWeapon">
+    <div class="grid grid-cols-12 gap-4 grid-nogutter item_label_leftWeapon_main">
+      <div class="col-span-12" [hidden]="!model.weapon || !showLeftWeapon">
         <app-equipment
           [itemType]="'leftWeapon'"
           [placeholder]="'leftWeapon'"
@@ -622,8 +622,8 @@
         ></app-equipment>
       </div>
     </div>
-    <div class="grid grid-nogutter item_label_compare" *ngIf="showCompareItemMap.weapon">
-      <div class="col-12">
+    <div class="grid grid-cols-12 gap-4 grid-nogutter item_label_compare" *ngIf="showCompareItemMap.weapon">
+      <div class="col-span-12">
         <app-equipment
           [itemType]="'weapon'"
           [placeholder]="'Weapon'"
@@ -655,8 +655,8 @@
     </div>
 
     <!-- Shield -->
-    <div class="grid grid-nogutter item_label_shield_main">
-      <div class="col-12" [hidden]="!model.weapon || hiddenMap.shield || !!model.leftWeapon">
+    <div class="grid grid-cols-12 gap-4 grid-nogutter item_label_shield_main">
+      <div class="col-span-12" [hidden]="!model.weapon || hiddenMap.shield || !!model.leftWeapon">
         <app-equipment
           [itemType]="'shield'"
           [placeholder]="'Shield'"
@@ -684,8 +684,8 @@
     </div>
 
     <!-- Head Upper -->
-    <div class="grid grid-nogutter item_label_head">
-      <div class="col-12">
+    <div class="grid grid-cols-12 gap-4 grid-nogutter item_label_head">
+      <div class="col-span-12">
         <app-equipment
           [itemType]="'headUpper'"
           [placeholder]="'Upper'"
@@ -711,8 +711,8 @@
         ></app-equipment>
       </div>
     </div>
-    <div class="grid grid-nogutter item_label_compare" *ngIf="showCompareItemMap.headUpper">
-      <div class="col-12">
+    <div class="grid grid-cols-12 gap-4 grid-nogutter item_label_compare" *ngIf="showCompareItemMap.headUpper">
+      <div class="col-span-12">
         <app-equipment
           [itemType]="'headUpper'"
           [placeholder]="'Upper'"
@@ -739,8 +739,8 @@
     </div>
 
     <!-- Head Middle -->
-    <div class="grid grid-nogutter item_label_head">
-      <div class="col-12">
+    <div class="grid grid-cols-12 gap-4 grid-nogutter item_label_head">
+      <div class="col-span-12">
         <app-equipment
           [itemType]="'headMiddle'"
           [placeholder]="'Middle'"
@@ -765,8 +765,8 @@
         ></app-equipment>
       </div>
     </div>
-    <div class="grid grid-nogutter item_label_compare" *ngIf="showCompareItemMap.headMiddle">
-      <div class="col-12">
+    <div class="grid grid-cols-12 gap-4 grid-nogutter item_label_compare" *ngIf="showCompareItemMap.headMiddle">
+      <div class="col-span-12">
         <app-equipment
           [itemType]="'headMiddle'"
           [placeholder]="'Middle'"
@@ -792,8 +792,8 @@
     </div>
 
     <!-- Head Lower -->
-    <div class="grid grid-nogutter item_label_head">
-      <div class="col-12">
+    <div class="grid grid-cols-12 gap-4 grid-nogutter item_label_head">
+      <div class="col-span-12">
         <app-equipment
           [itemType]="'headLower'"
           [placeholder]="'Lower'"
@@ -813,8 +813,8 @@
         ></app-equipment>
       </div>
     </div>
-    <div class="grid grid-nogutter item_label_compare" *ngIf="showCompareItemMap.headLower">
-      <div class="col-12">
+    <div class="grid grid-cols-12 gap-4 grid-nogutter item_label_compare" *ngIf="showCompareItemMap.headLower">
+      <div class="col-span-12">
         <app-equipment
           [itemType]="'headLower'"
           [placeholder]="'Lower'"
@@ -834,8 +834,8 @@
     </div>
 
     <!-- Armor -->
-    <div class="grid grid-nogutter item_label_def">
-      <div class="col-12">
+    <div class="grid grid-cols-12 gap-4 grid-nogutter item_label_def">
+      <div class="col-span-12">
         <app-equipment
           [itemType]="'armor'"
           [placeholder]="'Armor'"
@@ -862,8 +862,8 @@
         ></app-equipment>
       </div>
     </div>
-    <div class="grid grid-nogutter item_label_compare" *ngIf="showCompareItemMap.armor">
-      <div class="col-12">
+    <div class="grid grid-cols-12 gap-4 grid-nogutter item_label_compare" *ngIf="showCompareItemMap.armor">
+      <div class="col-span-12">
         <app-equipment
           [itemType]="'armor'"
           [placeholder]="'Armor'"
@@ -891,8 +891,8 @@
     </div>
 
     <!-- Garment -->
-    <div class="grid grid-nogutter item_label_def">
-      <div class="col-12">
+    <div class="grid grid-cols-12 gap-4 grid-nogutter item_label_def">
+      <div class="col-span-12">
         <app-equipment
           [itemType]="'garment'"
           [placeholder]="'Garment'"
@@ -918,8 +918,8 @@
         ></app-equipment>
       </div>
     </div>
-    <div class="grid grid-nogutter item_label_compare" *ngIf="showCompareItemMap.garment">
-      <div class="col-12">
+    <div class="grid grid-cols-12 gap-4 grid-nogutter item_label_compare" *ngIf="showCompareItemMap.garment">
+      <div class="col-span-12">
         <app-equipment
           [itemType]="'garment'"
           [placeholder]="'Garment'"
@@ -946,8 +946,8 @@
     </div>
 
     <!-- Boot -->
-    <div class="grid grid-nogutter item_label_def">
-      <div class="col-12">
+    <div class="grid grid-cols-12 gap-4 grid-nogutter item_label_def">
+      <div class="col-span-12">
         <app-equipment
           [itemType]="'boot'"
           [placeholder]="'Boot'"
@@ -970,8 +970,8 @@
         ></app-equipment>
       </div>
     </div>
-    <div class="grid grid-nogutter item_label_compare" *ngIf="showCompareItemMap.boot">
-      <div class="col-12">
+    <div class="grid grid-cols-12 gap-4 grid-nogutter item_label_compare" *ngIf="showCompareItemMap.boot">
+      <div class="col-span-12">
         <app-equipment
           [itemType]="'Boot'"
           [placeholder]="'boot'"
@@ -995,8 +995,8 @@
     </div>
 
     <!-- Acc Right -->
-    <div class="grid grid-nogutter item_label_acc">
-      <div class="col-12">
+    <div class="grid grid-cols-12 gap-4 grid-nogutter item_label_acc">
+      <div class="col-span-12">
         <app-equipment
           [itemType]="'accRight'"
           [placeholder]="'AccRight'"
@@ -1023,8 +1023,8 @@
         ></app-equipment>
       </div>
     </div>
-    <div class="grid grid-nogutter item_label_compare" *ngIf="showCompareItemMap.accRight">
-      <div class="col-12">
+    <div class="grid grid-cols-12 gap-4 grid-nogutter item_label_compare" *ngIf="showCompareItemMap.accRight">
+      <div class="col-span-12">
         <app-equipment
           [itemType]="'accRight'"
           [placeholder]="'AccRight'"
@@ -1051,8 +1051,8 @@
     </div>
 
     <!-- Acc Left -->
-    <div class="grid grid-nogutter item_label_acc">
-      <div class="col-12">
+    <div class="grid grid-cols-12 gap-4 grid-nogutter item_label_acc">
+      <div class="col-span-12">
         <app-equipment
           [itemType]="'accLeft'"
           [placeholder]="'AccLeft'"
@@ -1078,8 +1078,8 @@
         ></app-equipment>
       </div>
     </div>
-    <div class="grid grid-nogutter item_label_compare" *ngIf="showCompareItemMap.accLeft">
-      <div class="col-12">
+    <div class="grid grid-cols-12 gap-4 grid-nogutter item_label_compare" *ngIf="showCompareItemMap.accLeft">
+      <div class="col-span-12">
         <app-equipment
           [itemType]="'accLeft'"
           [placeholder]="'AccLeft'"
@@ -1105,8 +1105,8 @@
     </div>
 
     <!-- Pet -->
-    <div class="grid grid-nogutter py-3 item_label_pet">
-      <div class="col-3">
+    <div class="grid grid-cols-12 gap-4 grid-nogutter py-4 item_label_pet">
+      <div class="col-span-3">
         <p-select
           inputId="pet"
           [autoDisplayFirst]="false"
@@ -1136,9 +1136,9 @@
       </div>
     </div>
 
-    <div class="grid grid-nogutter">
-      <div class="col-3 grid grid-nogutter item_label_costume flex flex-column">
-        <div class="col-12">
+    <div class="grid grid-cols-12 gap-4 grid-nogutter">
+      <div class="col-span-3 grid grid-cols-12 gap-4 grid-nogutter item_label_costume flex flex-col">
+        <div class="col-span-12">
           <app-equipment-cos-enchant
             [itemType]="'costumeUpper'"
             [placeholder]="'Costume Upper'"
@@ -1147,7 +1147,7 @@
             (selectItemChange)="onSelectItem('costumeUpper', $event.itemId)"
           ></app-equipment-cos-enchant>
         </div>
-        <div class="col-12">
+        <div class="col-span-12">
           <app-equipment-cos-enchant
             [itemType]="'costumeMiddle'"
             [placeholder]="'Costume Middle'"
@@ -1156,7 +1156,7 @@
             (selectItemChange)="onSelectItem('costumeMiddle', $event.itemId)"
           ></app-equipment-cos-enchant>
         </div>
-        <div class="col-12" [hidden]="!costumeLowerList.length">
+        <div class="col-span-12" [hidden]="!costumeLowerList.length">
           <app-equipment-cos-enchant
             [itemType]="'costumeLower'"
             [placeholder]="'Costume Lower'"
@@ -1165,7 +1165,7 @@
             (selectItemChange)="onSelectItem('costumeLower', $event.itemId)"
           ></app-equipment-cos-enchant>
         </div>
-        <div class="col-12 mt-2">
+        <div class="col-span-12 mt-2">
           <app-equipment-cos-enchant
             [itemType]="'costumeGarment'"
             [placeholder]="'Costume Garment'"
@@ -1176,9 +1176,9 @@
         </div>
       </div>
 
-      <div class="col-3 grid grid-nogutter item_label_costume flex flex-column">
+      <div class="col-span-3 grid grid-cols-12 gap-4 grid-nogutter item_label_costume flex flex-col">
         <!-- Costume Upper -->
-        <div class="col-12">
+        <div class="col-span-12">
           <app-equipment-cos-enchant
             [itemType]="'costumeEnchantUpper'"
             [placeholder]="'Upper Enchant'"
@@ -1189,7 +1189,7 @@
         </div>
 
         <!-- Costume Middle -->
-        <div class="col-12">
+        <div class="col-span-12">
           <app-equipment-cos-enchant
             [itemType]="'costumeEnchantMiddle'"
             [placeholder]="'Middle Enchant'"
@@ -1200,7 +1200,7 @@
         </div>
 
         <!-- Costume Lower -->
-        <div class="col-12">
+        <div class="col-span-12">
           <app-equipment-cos-enchant
             [itemType]="'costumeEnchantLower'"
             [placeholder]="'Lower Enchant'"
@@ -1211,7 +1211,7 @@
         </div>
 
         <!-- Costume Garment -->
-        <div class="col-12 mt-2">
+        <div class="col-span-12 mt-2">
           <app-equipment-cos-enchant
             [itemType]="'costumeEnchantGarment'"
             [placeholder]="'Garment Enchant'"
@@ -1222,7 +1222,7 @@
         </div>
 
         <!-- Costume 2nd Garment -->
-        <div class="col-12">
+        <div class="col-span-12">
           <app-equipment-cos-enchant
             [itemType]="'costumeEnchantGarment2'"
             [placeholder]="'Garment Enchant 2'"
@@ -1231,7 +1231,7 @@
             (selectItemChange)="onSelectItem('costumeEnchantGarment2', $event.itemId)"
           ></app-equipment-cos-enchant>
         </div>
-        <div class="col-12 mb-3">
+        <div class="col-span-12 mb-4">
           <app-equipment-cos-enchant
             [itemType]="'costumeEnchantGarment4'"
             [placeholder]="'Garment Enchant 4'"
@@ -1241,7 +1241,7 @@
           ></app-equipment-cos-enchant>
         </div>
 
-        <div class="col-12 item_label_compare" *ngIf="showCompareItemMap.costumeEnchantUpper">
+        <div class="col-span-12 item_label_compare" *ngIf="showCompareItemMap.costumeEnchantUpper">
           <app-equipment-cos-enchant
             [itemType]="'costumeEnchantUpper'"
             [placeholder]="'Upper Enchant'"
@@ -1250,7 +1250,7 @@
             (selectItemChange)="onCompareItemChange()"
           ></app-equipment-cos-enchant>
         </div>
-        <div class="col-12 item_label_compare" *ngIf="showCompareItemMap.costumeEnchantMiddle">
+        <div class="col-span-12 item_label_compare" *ngIf="showCompareItemMap.costumeEnchantMiddle">
           <app-equipment-cos-enchant
             [itemType]="'costumeEnchantMiddle'"
             [placeholder]="'Middle Enchant'"
@@ -1259,7 +1259,7 @@
             (selectItemChange)="onCompareItemChange()"
           ></app-equipment-cos-enchant>
         </div>
-        <div class="col-12 item_label_compare" *ngIf="showCompareItemMap.costumeEnchantLower">
+        <div class="col-span-12 item_label_compare" *ngIf="showCompareItemMap.costumeEnchantLower">
           <app-equipment-cos-enchant
             [itemType]="'costumeEnchantLower'"
             [placeholder]="'Lower Enchant'"
@@ -1268,7 +1268,7 @@
             (selectItemChange)="onCompareItemChange()"
           ></app-equipment-cos-enchant>
         </div>
-        <div class="col-12 item_label_compare" *ngIf="showCompareItemMap.costumeEnchantGarment">
+        <div class="col-span-12 item_label_compare" *ngIf="showCompareItemMap.costumeEnchantGarment">
           <app-equipment-cos-enchant
             [itemType]="'costumeEnchantGarment'"
             [placeholder]="'Garment Enchant'"
@@ -1277,7 +1277,7 @@
             (selectItemChange)="onCompareItemChange()"
           ></app-equipment-cos-enchant>
         </div>
-        <div class="col-12 item_label_compare" *ngIf="showCompareItemMap.costumeEnchantGarment2">
+        <div class="col-span-12 item_label_compare" *ngIf="showCompareItemMap.costumeEnchantGarment2">
           <app-equipment-cos-enchant
             [itemType]="'costumeEnchantGarment2'"
             [placeholder]="'Garment Enchant 2'"
@@ -1286,7 +1286,7 @@
             (selectItemChange)="onCompareItemChange()"
           ></app-equipment-cos-enchant>
         </div>
-        <div class="col-12 item_label_compare" *ngIf="showCompareItemMap.costumeEnchantGarment4">
+        <div class="col-span-12 item_label_compare" *ngIf="showCompareItemMap.costumeEnchantGarment4">
           <app-equipment-cos-enchant
             [itemType]="'costumeEnchantGarment4'"
             [placeholder]="'Garment Enchant 4'"
@@ -1296,9 +1296,9 @@
           ></app-equipment-cos-enchant>
         </div>
       </div>
-      <div class="col-6 grid grid-nogutter item_label_shadow align-content-start">
+      <div class="col-span-6 grid grid-cols-12 gap-4 grid-nogutter item_label_shadow content-start">
         <!-- Shadow Weapon -->
-        <div class="col-12">
+        <div class="col-span-12">
           <app-equipment-shadow
             [itemType]="'shadowWeapon'"
             [placeholder]="'Shadow Weapon'"
@@ -1314,7 +1314,7 @@
         </div>
 
         <!-- Shadow Armor -->
-        <div class="col-12">
+        <div class="col-span-12">
           <app-equipment-shadow
             [itemType]="'shadowArmor'"
             [placeholder]="'Shadow Armor'"
@@ -1330,7 +1330,7 @@
         </div>
 
         <!-- Shadow Shield -->
-        <div class="col-12">
+        <div class="col-span-12">
           <app-equipment-shadow
             [itemType]="'shadowShield'"
             [placeholder]="'Shadow Shield'"
@@ -1346,7 +1346,7 @@
         </div>
 
         <!-- Shadow Boot -->
-        <div class="col-12">
+        <div class="col-span-12">
           <app-equipment-shadow
             [itemType]="'shadowBoot'"
             [placeholder]="'Shadow Boot'"
@@ -1362,7 +1362,7 @@
         </div>
 
         <!-- Shadow Earring -->
-        <div class="col-12">
+        <div class="col-span-12">
           <app-equipment-shadow
             [itemType]="'shadowEarring'"
             [placeholder]="'Shadow Earring'"
@@ -1378,7 +1378,7 @@
         </div>
 
         <!-- Shadow Pendant -->
-        <div class="col-12">
+        <div class="col-span-12">
           <app-equipment-shadow
             [itemType]="'shadowPendant'"
             [placeholder]="'Shadow Pendant'"
@@ -1393,7 +1393,7 @@
           ></app-equipment-shadow>
         </div>
 
-        <div class="col-12 item_label_compare" *ngIf="showCompareItemMap.shadowWeapon">
+        <div class="col-span-12 item_label_compare" *ngIf="showCompareItemMap.shadowWeapon">
           <app-equipment-shadow
             [itemType]="'shadowWeapon'"
             [placeholder]="'Shadow Weapon'"
@@ -1407,7 +1407,7 @@
             (optionChange)="onCompareItemChange()"
           ></app-equipment-shadow>
         </div>
-        <div class="col-12 item_label_compare" *ngIf="showCompareItemMap.shadowArmor">
+        <div class="col-span-12 item_label_compare" *ngIf="showCompareItemMap.shadowArmor">
           <app-equipment-shadow
             [itemType]="'shadowArmor'"
             [placeholder]="'Shadow Armor'"
@@ -1421,7 +1421,7 @@
             (optionChange)="onCompareItemChange()"
           ></app-equipment-shadow>
         </div>
-        <div class="col-12 item_label_compare" *ngIf="showCompareItemMap.shadowShield">
+        <div class="col-span-12 item_label_compare" *ngIf="showCompareItemMap.shadowShield">
           <app-equipment-shadow
             [itemType]="'shadowShield'"
             [placeholder]="'Shadow Shield'"
@@ -1435,7 +1435,7 @@
             (optionChange)="onCompareItemChange()"
           ></app-equipment-shadow>
         </div>
-        <div class="col-12 item_label_compare" *ngIf="showCompareItemMap.shadowBoot">
+        <div class="col-span-12 item_label_compare" *ngIf="showCompareItemMap.shadowBoot">
           <app-equipment-shadow
             [itemType]="'shadowBoot'"
             [placeholder]="'Shadow Boot'"
@@ -1449,7 +1449,7 @@
             (optionChange)="onCompareItemChange()"
           ></app-equipment-shadow>
         </div>
-        <div class="col-12 item_label_compare" *ngIf="showCompareItemMap.shadowEarring">
+        <div class="col-span-12 item_label_compare" *ngIf="showCompareItemMap.shadowEarring">
           <app-equipment-shadow
             [itemType]="'shadowEarring'"
             [placeholder]="'Shadow Earring'"
@@ -1463,7 +1463,7 @@
             (optionChange)="onCompareItemChange()"
           ></app-equipment-shadow>
         </div>
-        <div class="col-12 item_label_compare" *ngIf="showCompareItemMap.shadowPendant">
+        <div class="col-span-12 item_label_compare" *ngIf="showCompareItemMap.shadowPendant">
           <app-equipment-shadow
             [itemType]="'shadowPendant'"
             [placeholder]="'Shadow Pendant'"
@@ -1482,12 +1482,12 @@
   </div>
 
   <!-- Right Side -->
-  <div class="p-fluid fluid col-5">
+  <div class="p-fluid fluid col-span-5">
     <p-accordion [multiple]="true" [activeIndex]="[2, 7]">
       <p-accordionTab header="Consumables" class="consumable">
-        <div class="grid grid-nogutter">
+        <div class="grid grid-cols-12 gap-4 grid-nogutter">
           <!-- Consumable -->
-          <div class="col-4">
+          <div class="col-span-4">
             <p-listbox [options]="consumableList" [(ngModel)]="model.consumables" [multiple]="true" [metaKeySelection]="false" (onChange)="onConsumableChange()">
               <ng-template let-item pTemplate="item">
                 <div class="flex gap-2">
@@ -1498,9 +1498,9 @@
             </p-listbox>
           </div>
 
-          <div class="col-4">
-            <div class="grid grid-nogutter column_list">
-              <div *ngFor="let con of consumableList2; let i = index" class="col-12">
+          <div class="col-span-4">
+            <div class="grid grid-cols-12 gap-4 grid-nogutter column_list">
+              <div *ngFor="let con of consumableList2; let i = index" class="col-span-12">
                 <p-listbox [options]="con" [(ngModel)]="model.consumables2[i]" [multiple]="false" [metaKeySelection]="false" (onChange)="onConsumableChange()">
                   <ng-template let-item pTemplate="item">
                     <div class="flex gap-2">
@@ -1513,9 +1513,9 @@
             </div>
           </div>
 
-          <div class="col-4">
-            <div class="grid grid-nogutter">
-              <div class="col-12">
+          <div class="col-span-4">
+            <div class="grid grid-cols-12 gap-4 grid-nogutter">
+              <div class="col-span-12">
                 <p-listbox [options]="aspdPotionList" [(ngModel)]="model.aspdPotion" [multiple]="false" [metaKeySelection]="false" (onChange)="onConsumableChange()">
                   <ng-template let-item pTemplate="item">
                     <div class="flex gap-2">
@@ -1525,7 +1525,7 @@
                   </ng-template>
                 </p-listbox>
               </div>
-              <div class="col-12">
+              <div class="col-span-12">
                 <p-listbox [options]="aspdPotionList2" [(ngModel)]="model.aspdPotions" [multiple]="true" [metaKeySelection]="false" (onChange)="onConsumableChange()">
                   <ng-template let-item pTemplate="item">
                     <div class="flex gap-2">
@@ -1541,13 +1541,13 @@
       </p-accordionTab>
 
       <p-accordionTab header="Skills ***กดอัพสกิลด้วยนะ เพราะไอเทมบางชิ้นต้องอัพสกิลถึงจะได้ bonus" class="select_skill">
-        <div class="grid grid-nogutter">
+        <div class="grid grid-cols-12 gap-4 grid-nogutter">
           <!--  Buffs -->
-          <div class="col-4">
+          <div class="col-span-4">
             <p-tag severity="info" value="Buffs"></p-tag>
             <span class="skill_debuff pl-2">สีแดง = Debuff monster</span>
-            <div class="grid grid-nogutter">
-              <div *ngFor="let bishopBuff of skillBuffs; let i = index" class="col-12">
+            <div class="grid grid-cols-12 gap-4 grid-nogutter">
+              <div *ngFor="let bishopBuff of skillBuffs; let i = index" class="col-span-12">
                 <div [ngSwitch]="bishopBuff.inputType">
                   <div *ngSwitchCase="'dropdown'">
                     <div class="p-inputgroup">
@@ -1580,10 +1580,10 @@
           </div>
 
           <!-- Learned Skills -->
-          <div class="col-4" [hidden]="passiveSkills.length === 0">
+          <div class="col-span-4" [hidden]="passiveSkills.length === 0">
             <p-tag severity="warn" value="Learn to get bonuses"></p-tag>
-            <div class="grid grid-nogutter">
-              <div *ngFor="let passiveSkill of passiveSkills; let i = index" class="col-12">
+            <div class="grid grid-cols-12 gap-4 grid-nogutter">
+              <div *ngFor="let passiveSkill of passiveSkills; let i = index" class="col-span-12">
                 <div [ngSwitch]="passiveSkill.inputType">
                   <div *ngSwitchCase="'dropdown'">
                     <div class="p-inputgroup">
@@ -1616,10 +1616,10 @@
           </div>
 
           <!-- Active SKills -->
-          <div class="col-4">
+          <div class="col-span-4">
             <p-tag severity="danger" value="Activating Skills/Effects"></p-tag>
-            <div class="grid grid-nogutter">
-              <div *ngFor="let activeSkill of activeSkills; let i = index" class="col-12">
+            <div class="grid grid-cols-12 gap-4 grid-nogutter">
+              <div *ngFor="let activeSkill of activeSkills; let i = index" class="col-span-12">
                 <div [ngSwitch]="activeSkill.inputType">
                   <div *ngSwitchCase="'dropdown'">
                     <div class="p-inputgroup">
@@ -1654,8 +1654,8 @@
       </p-accordionTab>
 
       <p-accordionTab header="Battle Summary">
-        <div class="grid grid-nogutter battle_summary">
-          <div class="col-12" [hidden]="!chanceList?.length">
+        <div class="grid grid-cols-12 gap-4 grid-nogutter battle_summary">
+          <div class="col-span-12" [hidden]="!chanceList?.length">
             <p-fieldset legend="Has a chance" [toggleable]="true">
               <div *ngFor="let category of chanceList" class="field-checkbox my-2">
                 <p-checkbox
@@ -1673,9 +1673,9 @@
           </div>
 
           <!-- Monster -->
-          <div class="col-5">
-            <div class="grid grid-nogutter">
-              <div class="col-12">
+          <div class="col-span-5">
+            <div class="grid grid-cols-12 gap-4 grid-nogutter">
+              <div class="col-span-12">
                 <div class="p-inputgroup">
                   <span class="p-inputgroup-addon monster_hilight_label">Monster</span>
                   <p-select
@@ -1691,7 +1691,7 @@
                     (onChange)="onMonsterChange()"
                   >
                     <ng-template let-group pTemplate="group">
-                      <div class="flex align-items-center font-bold dropdown_monster_group_label">
+                      <div class="flex items-center font-bold dropdown_monster_group_label">
                         <span>{{ group.label }}</span>
                       </div>
                     </ng-template>
@@ -1706,15 +1706,15 @@
                   ></button> -->
                 </div>
               </div>
-              <!-- <div class="col-12">{{ selectedMonsterName }}</div> -->
-              <div class="col-5 flex align-items-center justify-content-center">
-                <div class="grid grid-nogutter" style="height: 100%; width: 100%">
-                  <div class="col-12 flex align-items-center justify-content-center">
+              <!-- <div class="col-span-12">{{ selectedMonsterName }}</div> -->
+              <div class="col-span-5 flex items-center justify-center">
+                <div class="grid grid-cols-12 gap-4 grid-nogutter" style="height: 100%; width: 100%">
+                  <div class="col-span-12 flex items-center justify-center">
                     <img src="https://static.divine-pride.net/images/mobs/png/{{ selectedMonster }}.png" class="img_monster" alt="-" />
                   </div>
                 </div>
               </div>
-              <div class="col-7">
+              <div class="col-span-7">
                 <app-battle-monster-summary
                   [totalSummary]="totalSummary"
                   [isInProcessingPreset]="isInProcessingPreset"
@@ -1725,9 +1725,9 @@
           </div>
 
           <!-- Skill -->
-          <div class="col-7">
-            <div class="grid grid-nogutter" style="position: relative">
-              <div class="col-12 skill-selection" [hidden]="isShowSelectableSkillLevel">
+          <div class="col-span-7">
+            <div class="grid grid-cols-12 gap-4 grid-nogutter" style="position: relative">
+              <div class="col-span-12 skill-selection" [hidden]="isShowSelectableSkillLevel">
                 <div class="p-inputgroup">
                   <span class="p-inputgroup-addon skill_hilight_label">Skill</span>
                   <p-select
@@ -1741,7 +1741,7 @@
                   ></p-select>
                 </div>
               </div>
-              <div class="col-12 skill-selection" [hidden]="!isShowSelectableSkillLevel">
+              <div class="col-span-12 skill-selection" [hidden]="!isShowSelectableSkillLevel">
                 <div class="p-inputgroup">
                   <span class="p-inputgroup-addon skill_hilight_label">Skill</span>
                   <p-cascadeSelect
@@ -1757,7 +1757,7 @@
                   ></p-cascadeSelect>
                 </div>
               </div>
-              <div class="col-12">
+              <div class="col-span-12">
                 <app-battle-dmg-summary
                   [model]="model"
                   [totalSummary]="totalSummary"
@@ -1775,7 +1775,7 @@
           </div>
 
           <!-- Table -->
-          <div class="col-12 damage_table">
+          <div class="col-span-12 damage_table">
             <p-table
               styleClass="p-datatable-striped"
               filterValue="label"
@@ -1785,8 +1785,8 @@
               [tableStyle]="{ 'min-width': '40rem' }"
             >
               <ng-template pTemplate="caption">
-                <div class="grid grid-nogutter">
-                  <div class="col-6">
+                <div class="grid grid-cols-12 gap-4 grid-nogutter">
+                  <div class="col-span-6">
                     <p-multiSelect
                       [options]="groupMonsterList"
                       [group]="true"
@@ -1803,13 +1803,13 @@
                       (onClear)="onMonsterListChange()"
                     >
                       <ng-template let-group pTemplate="group">
-                        <div class="flex align-items-center font-bold dropdown_monster_group_label">
+                        <div class="flex items-center font-bold dropdown_monster_group_label">
                           <span>{{ group.label }}</span>
                         </div>
                       </ng-template>
                     </p-multiSelect>
                   </div>
-                  <div class="col-6">
+                  <div class="col-span-6">
                     <p-multiSelect
                       [options]="cols"
                       [(ngModel)]="selectedColumns"
@@ -1859,31 +1859,31 @@
       </p-accordionTab>
 
       <p-accordionTab header="Summary">
-        <div class="grid grid-nogutter" style="overflow: auto">
-          <div class="col-6 json_display">
-            <pre [innerHTML]="modelSummary | prettyjson : [true, 3]"></pre>
-            <pre *ngIf="isEnableCompare" [innerHTML]="model2 | prettyjson : [true, 3]"></pre>
+        <div class="grid grid-cols-12 gap-4 grid-nogutter" style="overflow: auto">
+          <div class="col-span-6 json_display">
+            <pre [innerHTML]="modelSummary | prettyjson: [true, 3]"></pre>
+            <pre *ngIf="isEnableCompare" [innerHTML]="model2 | prettyjson: [true, 3]"></pre>
           </div>
-          <div class="col-6 json_display">
-            <pre [innerHTML]="totalSummary | prettyjson : [true, 3]"></pre>
+          <div class="col-span-6 json_display">
+            <pre [innerHTML]="totalSummary | prettyjson: [true, 3]"></pre>
           </div>
         </div>
       </p-accordionTab>
 
       <p-accordionTab header="Equipments Summary">
-        <div class="grid grid-nogutter">
-          <div class="col-6 json_display">
-            <pre [innerHTML]="itemSummary | prettyjson : [true, 3]"></pre>
+        <div class="grid grid-cols-12 gap-4 grid-nogutter">
+          <div class="col-span-6 json_display">
+            <pre [innerHTML]="itemSummary | prettyjson: [true, 3]"></pre>
           </div>
-          <div class="col-6 json_display">
-            <pre [innerHTML]="itemSummary2 | prettyjson : [true, 3]"></pre>
+          <div class="col-span-6 json_display">
+            <pre [innerHTML]="itemSummary2 | prettyjson: [true, 3]"></pre>
           </div>
         </div>
       </p-accordionTab>
 
       <p-accordionTab header="Item Descriptions">
-        <div class="grid grid-nogutter">
-          <div class="col-4">
+        <div class="grid grid-cols-12 gap-4 grid-nogutter">
+          <div class="col-span-4">
             <div class="item_label_compare" *ngIf="isEnableCompare && equipCompareItems?.length">
               <p-listbox
                 [options]="equipCompareItems"
@@ -1919,13 +1919,13 @@
               </ng-template>
             </p-listbox>
           </div>
-          <div class="col-8">
-            <div class="grid grid-nogutter ml-2" style="max-height: 700px; overflow: auto">
-              <div class="col-12 json_display">
+          <div class="col-span-8">
+            <div class="grid grid-cols-12 gap-4 grid-nogutter ml-2" style="max-height: 700px; overflow: auto">
+              <div class="col-span-12 json_display">
                 ItemID: {{ itemId }}
-                <pre [innerHTML]="itemBonus | prettyjson : [true, 3]"></pre>
+                <pre [innerHTML]="itemBonus | prettyjson: [true, 3]"></pre>
               </div>
-              <div class="col-12 px-2 py-2" style="color: #000; background-color: #fff" [innerHTML]="itemDescription"></div>
+              <div class="col-span-12 px-2 py-2" style="color: #000; background-color: #fff" [innerHTML]="itemDescription"></div>
             </div>
           </div>
         </div>
