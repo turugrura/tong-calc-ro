@@ -206,6 +206,16 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
 
   updates: { v: string; date: string; logs: string[]; }[] = [
     {
+      v: 'V3.2.3',
+      date: '04-04-2568',
+      logs: [
+        "Added Official updated items",
+        "Added ArchMage skills (All Bloom, Violent Quake) !!! calculate just 1 hit DO NOT trust DPS",
+        "Fixed Cardinal 'Fidus Animus' should affect to 'Framen', 'Arbitrium' & 'Pneumaticus Procella' only",
+        "Fixed Gray Wolf Soul Ring Enchant",
+      ],
+    },
+    {
       v: 'V3.2.2',
       date: '20-03-2568',
       logs: [
