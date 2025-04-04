@@ -365,6 +365,44 @@ export class ArchMage extends Warlock {
         return (skillLevel * 950 + totalSpl * 5) * (baseLevel / 100);
       },
     },
+    {
+      name: 'All Bloom',
+      label: '[V3] All Bloom Lv5 (1 hit)',
+      value: 'All Bloom==5',
+      acd: 0.5,
+      fct: 1.5,
+      vct: 4,
+      cd: 6,
+      isMatk: true,
+      element: ElementType.Fire,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalSpl } = status;
+        const { level: baseLevel } = model;
+        const climaxBonus = this.activeSkillLv('Climax') === 3 ? 300 : 0;
+
+        return (200 + skillLevel * 1200 + totalSpl * 5) * (baseLevel / 100) + climaxBonus;
+      },
+    },
+    {
+      name: 'Violent Quake',
+      label: '[V3] Violent Quake Lv5 (1 hit)',
+      value: 'Violent Quake==5',
+      acd: 0.5,
+      fct: 1.5,
+      vct: 4,
+      cd: 6,
+      isMatk: true,
+      element: ElementType.Earth,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalSpl } = status;
+        const { level: baseLevel } = model;
+        const climaxBonus = this.activeSkillLv('Climax') === 3 ? 200 : 0;
+
+        return (200 + skillLevel * 1200 + totalSpl * 5) * (baseLevel / 100) + climaxBonus;
+      },
+    },
     // {
     //   name: 'Astral Strike',
     //   label: '[V2] Astral Strike Lv10',
@@ -392,10 +430,14 @@ export class ArchMage extends Warlock {
     {
       name: 'Climax',
       label: 'Climax',
-      inputType: 'selectButton',
+      inputType: 'dropdown',
       dropdown: [
-        { label: 'Yes', value: 5, isUse: true },
-        { label: 'No', value: 0, isUse: false },
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 1', value: 1, isUse: true },
+        { label: 'Lv 2', value: 2, isUse: true },
+        { label: 'Lv 3', value: 3, isUse: true },
+        { label: 'Lv 4', value: 4, isUse: true },
+        { label: 'Lv 5', value: 5, isUse: true },
       ],
     },
   ];
