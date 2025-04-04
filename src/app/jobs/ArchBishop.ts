@@ -1,9 +1,9 @@
 import { ElementType } from '../constants/element-type.const';
-import { InfoForClass } from '../models/info-for-class.model';
-import { ClassName } from './_class-name';
-import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
 import { RaceType } from '../constants/race-type.const';
+import { InfoForClass } from '../models/info-for-class.model';
 import { HighPriest } from './HighPriest';
+import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
+import { ClassName } from './_class-name';
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 0, 0, 1, 0, 0],
@@ -223,26 +223,26 @@ export class ArchBishop extends HighPriest {
       ],
     },
     {
-      inputType: 'selectButton',
-      label: 'Offertorium Lv5',
+      inputType: 'dropdown',
+      label: 'Offertorium',
       name: 'Offertorium',
       dropdown: [
-        { label: 'Yes', isUse: true, value: 5 },
-        { label: 'No', isUse: false, value: 0 },
+        { label: '-', isUse: false, value: 0 },
+        { label: 'Lv 5', isUse: true, value: 5 },
       ],
     },
     {
-      inputType: 'selectButton',
-      label: 'Basilica Lv5',
+      inputType: 'dropdown',
+      label: 'Basilica',
       name: 'Basilica',
       dropdown: [
+        { label: '-', isUse: false, value: 0 },
         {
-          label: 'Yes',
+          label: 'Lv 5',
           isUse: true,
           value: 5,
           bonus: { m_my_element_holy: 15, p_element_dark: 25, p_element_undead: 25 },
         },
-        { label: 'No', isUse: false, value: 0 },
       ],
     },
   ];

@@ -263,16 +263,16 @@ export class Cardinal extends ArchBishop {
       inputType: 'dropdown',
       dropdown: [
         { label: '-', value: 0, isUse: false },
-        { label: 'Lv 1', value: 1, isUse: true, bonus: { m_my_element_holy: floor(1 * 1.5) } },
-        { label: 'Lv 2', value: 2, isUse: true, bonus: { m_my_element_holy: floor(2 * 1.5) } },
-        { label: 'Lv 3', value: 3, isUse: true, bonus: { m_my_element_holy: floor(3 * 1.5) } },
-        { label: 'Lv 4', value: 4, isUse: true, bonus: { m_my_element_holy: floor(4 * 1.5) } },
-        { label: 'Lv 5', value: 5, isUse: true, bonus: { m_my_element_holy: floor(5 * 1.5) } },
-        { label: 'Lv 6', value: 6, isUse: true, bonus: { m_my_element_holy: floor(6 * 1.5) } },
-        { label: 'Lv 7', value: 7, isUse: true, bonus: { m_my_element_holy: floor(7 * 1.5) } },
-        { label: 'Lv 8', value: 8, isUse: true, bonus: { m_my_element_holy: floor(8 * 1.5) } },
-        { label: 'Lv 9', value: 9, isUse: true, bonus: { m_my_element_holy: floor(9 * 1.5) } },
-        { label: 'Lv 10', value: 10, isUse: true, bonus: { m_my_element_holy: floor(10 * 1.5) } },
+        { label: 'Lv 1', value: 1, isUse: true },
+        { label: 'Lv 2', value: 2, isUse: true },
+        { label: 'Lv 3', value: 3, isUse: true },
+        { label: 'Lv 4', value: 4, isUse: true },
+        { label: 'Lv 5', value: 5, isUse: true },
+        { label: 'Lv 6', value: 6, isUse: true },
+        { label: 'Lv 7', value: 7, isUse: true },
+        { label: 'Lv 8', value: 8, isUse: true },
+        { label: 'Lv 9', value: 9, isUse: true },
+        { label: 'Lv 10', value: 10, isUse: true },
       ],
     },
   ];
@@ -291,7 +291,7 @@ export class Cardinal extends ArchBishop {
   override setAdditionalBonus(params: AdditionalBonusInput): EquipmentSummaryModel {
     super.setAdditionalBonus(params);
 
-    const { totalBonus, weapon } = params;
+    const { totalBonus, weapon, skillName } = params;
 
     const mAndBookLv = this.learnLv('Mace & Book Mastery');
     if (mAndBookLv > 0 && weapon.isType('mace', 'book', 'twohandMace')) {
@@ -300,6 +300,13 @@ export class Cardinal extends ArchBishop {
       addBonus(totalBonus, 'p_size_s', mAndBookLv);
       addBonus(totalBonus, 'p_size_m', mapM[mAndBookLv]);
       addBonus(totalBonus, 'p_size_l', mapL[mAndBookLv]);
+    }
+
+    const fidusLv = this.learnLv('Fidus Animus');
+    if (fidusLv > 0) {
+      if (skillName === 'Framen' || skillName === 'Arbitrium' || skillName === 'Pneumaticus Procella') {
+        addBonus(totalBonus, 'm_my_element_holy', floor(fidusLv * 1.5));
+      }
     }
 
     return totalBonus;
