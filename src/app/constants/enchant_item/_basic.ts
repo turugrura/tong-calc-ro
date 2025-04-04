@@ -64,6 +64,7 @@ export enum Critical {
   _2 = 'Critical2',
   _3 = 'Critical3',
   _4 = 'Critical4',
+  _5 = 'Critical5',
 }
 export enum SkillDelay {
   _1 = 'Skill_Delay1',
@@ -325,6 +326,7 @@ export const atkPer23 = [AtkPercent._2, AtkPercent._3];
 
 export const fs13 = [FS._1, FS._2, FS._3];
 export const fs23 = [FS._2, FS._3];
+export const fs15 = [FS._1, FS._2, FS._3, FS._4, FS._5];
 export const fs24 = [FS._2, FS._3, FS._4];
 export const fs35 = [FS._3, FS._4, FS._5];
 export const fs45 = [FS._4, FS._5];
@@ -364,9 +366,11 @@ export const ea35 = [EA._3, EA._4, EA._5];
 export const ea45 = [EA._4, EA._5];
 export const ea410 = [EA._4, EA._5, EA._6, EA._7, EA._8, EA._9, EA._10];
 
+export const ef13 = [ExpertFighter._1, ExpertFighter._2, ExpertFighter._3];
 export const ef15 = [ExpertFighter._1, ExpertFighter._2, ExpertFighter._3, ExpertFighter._4, ExpertFighter._5];
 export const ef35 = [ExpertFighter._3, ExpertFighter._4, ExpertFighter._5];
 
+export const em13 = [ExpertMagician._1, ExpertMagician._2, ExpertMagician._3];
 export const em15 = [ExpertMagician._1, ExpertMagician._2, ExpertMagician._3, ExpertMagician._4, ExpertMagician._5];
 export const em35 = [ExpertMagician._3, ExpertMagician._4, ExpertMagician._5];
 
@@ -398,6 +402,7 @@ export const fatal24 = [Fatal._2, Fatal._3, Fatal._4];
 
 export const cri510 = [Cri._5, Cri._7, Cri._10];
 
+export const critical15 = [Critical._2, Critical._3, Critical._4, Critical._5];
 export const critical23 = [Critical._2, Critical._3];
 export const critical24 = [Critical._2, Critical._3, Critical._4];
 export const critical34 = [Critical._3, Critical._4];

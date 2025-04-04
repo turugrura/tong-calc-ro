@@ -1,3 +1,5 @@
+import { aspd13, aspd15, ea13, ea15, ef13, ef15, em13, em15, fatal13, fatal14, sp13, sp15 } from "./_basic";
+
 const baseState13 = [
   'Wolf_Orb_Str_1',
   'Wolf_Orb_Str_2',
@@ -189,12 +191,22 @@ export const grayWolfAccL_slot3 = [
 ];
 export const grayWolfAccL_slot2 = [...grayWolfAccL_slot3, 'Wolf_Orb_A_Force'];
 
-// export const grayWolfAccR_slot4 = [
-//   ...baseState13,
-// ]
-// export const grayWolfAccR_slot3 = [
-
-// ]
-// export const grayWolfAccR_slot2 = [
+export const grayWolfSoulRing_slot4 = [
+  ...em13,
+  ...ef13,
+  ...ea13,
+  ...fatal13,
+  ...aspd13,
+  ...sp13,
+];
+export const grayWolfSoulRing_slot3 = [
+  ...em15,
+  ...ef15,
+  ...ea15,
+  ...fatal14,
+  ...aspd15,
+  ...sp15,
+];
+// export const grayWolfSoulRing_slot2 = [
 
 // ]

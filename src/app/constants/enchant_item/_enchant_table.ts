@@ -116,6 +116,8 @@ import {
   grayWolfGarment_slot2,
   grayWolfGarment_slot3,
   grayWolfGarment_slot4,
+  grayWolfSoulRing_slot3,
+  grayWolfSoulRing_slot4,
 } from './gray_wolf';
 import { heroBadge2, heroBootLt2, heroBootLt3, heroBootLt4 } from './hero_boots_lt';
 import { heroicHead3, heroicHead4 } from './heroic_hairband';
@@ -1045,7 +1047,7 @@ export const EnchantTable: EntTable[] = [
   { name: 'Gray_W_Ring', enchants: [null, grayWolfAccL_slot2, grayWolfAccL_slot3, grayWolfAccL_slot4] },
   { name: 'Gray_W_Earing', enchants: [null, grayWolfAccL_slot2, grayWolfAccL_slot3, grayWolfAccL_slot4] },
   { name: 'Gray_W_Necklace', enchants: [null, grayWolfAccL_slot2, grayWolfAccL_slot3, grayWolfAccL_slot4] },
-  { name: 'GreyW_S_Ring_TH', enchants: [null, grayWolfAccL_slot2, grayWolfAccL_slot3, grayWolfAccL_slot4] },
+  { name: 'GreyW_S_Ring_TH', enchants: [null, grayWolfSoulRing_slot3, grayWolfSoulRing_slot3, grayWolfSoulRing_slot4] },
 
   { name: 'Officer_Cap_LT', enchants: [null, null, null, BaseState._3] },
   { name: 'Hero_Boots_LT', enchants: [null, heroBootLt2, heroBootLt3, heroBootLt4] },
