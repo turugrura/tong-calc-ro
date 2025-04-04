@@ -397,12 +397,13 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     // let n = 0;
     const updateItemSubs = this.updateItemEvent
       .pipe(
+        filter(() => this.calculator.hasClass),
         tap((itemChange: ItemTypeEnum) => {
           this.isCalculating = true;
           // console.log('updateItemSubs ', ++n);
           itemChanges.add(itemChange);
         }),
-        debounceTime(250),
+        debounceTime(100),
       )
       .subscribe(() => {
         this.hiddenMap = {

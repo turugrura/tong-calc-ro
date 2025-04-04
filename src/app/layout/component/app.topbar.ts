@@ -3,6 +3,8 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { MenuItem } from 'primeng/api';
 import { StyleClassModule } from 'primeng/styleclass';
+import { AuthService } from 'src/app/api-services';
+import { environment } from 'src/environments/environment';
 import { LayoutService } from '../service/layout.service';
 import { AppConfiguratorComponent } from './app.configurator';
 
@@ -76,6 +78,11 @@ import { AppConfiguratorComponent } from './app.configurator';
                         <i class="pi pi-user"></i>
                         <span>Profile</span>
                     </button>
+                    <div *ngIf="!!username" class="ml-4 flex items-center">
+                    <div icon="pi pi-google" class="chip-profile" styleClass="text-xl">{{ username }}</div>
+                    </div>
+                    <a *ngIf="!username" class="font-bold p-button-secondary" icon="pi pi-google" pButton pRipple label="Login" href="{{ env.roBackendUrl + '/auth/google' }}"></a>
+
                 </div>
             </div>
         </div>
@@ -83,10 +90,22 @@ import { AppConfiguratorComponent } from './app.configurator';
 })
 export class AppTopbarComponent {
     items!: MenuItem[];
+    username: string;
+    env = environment;
 
-    constructor(public layoutService: LayoutService) { }
+    constructor(public layoutService: LayoutService, private readonly authService: AuthService) { }
 
     toggleDarkMode() {
-        this.layoutService.layoutConfig.update((state) => ({ ...state, darkTheme: !state.darkTheme }));
+        this.layoutService.layoutConfig.update((state) => {
+            localStorage.setItem('dark_theme', !state.darkTheme ? 'true' : 'false');
+
+            return { ...state, darkTheme: !state.darkTheme };
+        });
+    }
+
+    ngOnInit(): void {
+        this.authService.profileEventObs$.subscribe((profile) => {
+            this.username = profile?.name;
+        });
     }
 }

@@ -30,7 +30,7 @@ export class LayoutService {
         preset: 'Aura',
         primary: 'emerald',
         surface: null,
-        darkTheme: true,
+        darkTheme: localStorage.getItem('dark_theme') !== 'false',
         menuMode: 'overlay'
     };
 

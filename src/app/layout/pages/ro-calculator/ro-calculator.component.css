@@ -1,30 +1,5 @@
-/* :host ::ng-deep .json_display pre {
-  font-weight: 400 !important;
-}
+/* 
 
-:host ::ng-deep .json_display .number-line {
-  color: #adadaf !important;
-}
-
-:host ::ng-deep .json_display .string {
-  color: #95c602 !important;
-}
-
-:host ::ng-deep .json_display .number {
-  color: #f2b619 !important;
-}
-
-:host ::ng-deep .json_display .boolean {
-  color: #0097f1 !important;
-}
-
-:host ::ng-deep .json_display .null {
-  color: #727990 !important;
-}
-
-:host ::ng-deep .json_display .key {
-  color: #fff !important;
-}
 
 .p-inputgroup p-select {
   display: flex;
@@ -64,35 +39,8 @@
   padding-bottom: 0;
 }
 
-.loading_block {
-  position: absolute;
-  background-color: rgba(0, 0, 0, 0.4);
-  transition-duration: 0.2s;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-}
-
 :host ::ng-deep .select_skill .p-accordion-content {
   padding: 0;
-}
-
-.item_template {
-  position: relative;
-}
-
-.item_img {
-  position: absolute;
-  top: -3px;
-  left: -4px;
-  height: 25px;
-}
-
-.item_template div {
-  margin-left: 24px;
 }
 
 .text_ellips {
@@ -488,3 +436,222 @@
 .lv200 {
   color: var(--yellow-200);
 } */
+
+:host ::ng-deep .json_display pre {
+  font-weight: 400 !important;
+}
+
+:host ::ng-deep .json_display .number-line {
+  color: #adadaf !important;
+}
+
+:host ::ng-deep .json_display .string {
+  color: #95c602 !important;
+}
+
+:host ::ng-deep .json_display .number {
+  color: #f2b619 !important;
+}
+
+:host ::ng-deep .json_display .boolean {
+  color: #0097f1 !important;
+}
+
+:host ::ng-deep .json_display .null {
+  color: #727990 !important;
+}
+
+/* :host ::ng-deep .json_display .key {
+  color: #fff !important;
+} */
+
+.loading_block {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.4);
+  transition-duration: 0.2s;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.item_template {
+  position: relative;
+}
+
+.item_img {
+  position: absolute;
+  top: -3px;
+  left: -4px;
+  height: 25px;
+}
+
+.item_template div {
+  margin-left: 24px;
+}
+
+:host ::ng-deep .item-position-weaponList,
+:host ::ng-deep .item-position-weaponCardList,
+:host ::ng-deep .item_label_weapon_main .p-select-label,
+:host ::ng-deep .item_label_weapon_main .p-cascadeselect-label,
+:host ::ng-deep .item_label_weapon,
+:host ::ng-deep .item_label_weaponCard1,
+:host ::ng-deep .item_label_weaponCard2,
+:host ::ng-deep .item_label_weaponCard3,
+:host ::ng-deep .item_label_weaponCard4,
+:host ::ng-deep .item_label_ammo,
+:host ::ng-deep .item_label_weaponEnchant0,
+:host ::ng-deep .item_label_weaponEnchant1,
+:host ::ng-deep .item_label_weaponEnchant2,
+:host ::ng-deep .item_label_weaponEnchant3 {
+  color: var(--p-button-text-danger-color);
+  background-color: var(--p-button-text-danger-background);
+}
+
+:host ::ng-deep .item-position-headUpperList,
+:host ::ng-deep .item-position-headMiddleList,
+:host ::ng-deep .item-position-headLowerList,
+:host ::ng-deep .item-position-headCardList,
+:host ::ng-deep .item_label_head .p-select-label,
+:host ::ng-deep .item_label_head .p-cascadeselect-label,
+:host ::ng-deep .item_label_headUpper,
+:host ::ng-deep .item_label_headUpperCard,
+:host ::ng-deep .item_label_headUpperEnchant1,
+:host ::ng-deep .item_label_headUpperEnchant2,
+:host ::ng-deep .item_label_headUpperEnchant3,
+:host ::ng-deep .item_label_headMiddle,
+:host ::ng-deep .item_label_headMiddleCard,
+:host ::ng-deep .item_label_headMiddleEnchant1,
+:host ::ng-deep .item_label_headMiddleEnchant2,
+:host ::ng-deep .item_label_headMiddleEnchant3,
+:host ::ng-deep .item_label_headLower,
+:host ::ng-deep .item_label_headLowerEnchant1,
+:host ::ng-deep .item_label_headLowerEnchant2,
+:host ::ng-deep .item_label_headLowerEnchant3 {
+  color: var(--p-button-text-info-color);
+  background-color: var(--p-button-text-info-border-color);
+}
+
+:host ::ng-deep .item-position-armorList,
+:host ::ng-deep .item-position-armorCardList,
+:host ::ng-deep .item-position-garmentList,
+:host ::ng-deep .item-position-garmentCardList,
+:host ::ng-deep .item-position-bootList,
+:host ::ng-deep .item-position-bootCardList,
+:host ::ng-deep .item_label_def .p-select-label,
+:host ::ng-deep .item_label_def .p-cascadeselect-label,
+:host ::ng-deep .item_label_armor,
+:host ::ng-deep .item_label_armorCard,
+:host ::ng-deep .item_label_armorEnchant1,
+:host ::ng-deep .item_label_armorEnchant2,
+:host ::ng-deep .item_label_armorEnchant3,
+:host ::ng-deep .item_label_garment,
+:host ::ng-deep .item_label_garmentCard,
+:host ::ng-deep .item_label_garmentEnchant1,
+:host ::ng-deep .item_label_garmentEnchant2,
+:host ::ng-deep .item_label_garmentEnchant3,
+:host ::ng-deep .item_label_boot,
+:host ::ng-deep .item_label_bootCard,
+:host ::ng-deep .item_label_bootEnchant1,
+:host ::ng-deep .item_label_bootEnchant2,
+:host ::ng-deep .item_label_bootEnchant3 {
+  color: var(--p-button-text-warn-active-color);
+  background-color: var(--p-button-text-warn-active-background);
+}
+
+:host ::ng-deep .item-position-accList,
+:host ::ng-deep .item-position-accCardList,
+:host ::ng-deep .item_label_acc .p-select-label,
+:host ::ng-deep .item_label_acc .p-cascadeselect-label,
+.item_float_label,
+:host ::ng-deep .item_label_accLeft,
+:host ::ng-deep .item_label_accLeftCard,
+:host ::ng-deep .item_label_accLeftEnchant1,
+:host ::ng-deep .item_label_accLeftEnchant2,
+:host ::ng-deep .item_label_accLeftEnchant3,
+:host ::ng-deep .item_label_accRight,
+:host ::ng-deep .item_label_accRightCard,
+:host ::ng-deep .item_label_accRightEnchant1,
+:host ::ng-deep .item_label_accRightEnchant2,
+:host ::ng-deep .item_label_accRightEnchant3 {
+  color: var(--p-button-text-help-active-color);
+  background-color: var(--p-button-text-help-active-border-color);
+}
+
+:host ::ng-deep .item-position-petList,
+:host ::ng-deep .item_label_pet .p-select-label,
+:host ::ng-deep .item_label_pet .p-cascadeselect-label {
+  color: var(--p-button-text-help-active-backgrond);
+  background-color: var(--p-button-text-help-active-color);
+}
+
+:host ::ng-deep .item-position-costumeList,
+:host ::ng-deep .item_label_costume .p-select-label,
+:host ::ng-deep .item_label_costume .p-cascadeselect-label,
+:host ::ng-deep .item_label_costumeUpper,
+:host ::ng-deep .item_label_costumeMiddle,
+:host ::ng-deep .item_label_costumeLower,
+:host ::ng-deep .item_label_costumeGarment,
+:host ::ng-deep .item_label_costumeEnchantUpper,
+:host ::ng-deep .item_label_costumeEnchantMiddle,
+:host ::ng-deep .item_label_costumeEnchantLower,
+:host ::ng-deep .item_label_costumeEnchantGarment,
+:host ::ng-deep .item_label_costumeEnchantGarment2,
+:host ::ng-deep .item_label_costumeEnchantGarment4 {
+  color: var(--p-button-text-contrast-hover-color);
+  background-color: var(--p-button-text-contrast-hover-border-color);
+}
+
+:host ::ng-deep .item-position-shadowWeaponList,
+:host ::ng-deep .item-position-shadowArmorList,
+:host ::ng-deep .item-position-shadowShieldList,
+:host ::ng-deep .item-position-shadowBootList,
+:host ::ng-deep .item-position-shadowEarringList,
+:host ::ng-deep .item-position-shadowPendantList,
+:host ::ng-deep .item_label_shadow .p-select-label,
+:host ::ng-deep .item_label_shadow .p-cascadeselect-label,
+:host ::ng-deep .item_label_shadowWeapon,
+:host ::ng-deep .item_label_shadowArmor,
+:host ::ng-deep .item_label_shadowShield,
+:host ::ng-deep .item_label_shadowBoot,
+:host ::ng-deep .item_label_shadowEarring,
+:host ::ng-deep .item_label_shadowPendant {
+  color: var(--p-button-text-success-hover-color);
+  background-color: var(--p-button-text-success-hover-background);
+}
+
+/* 
+var(--p-button-text-primary-color)
+var(--p-button-text-secondary-color)
+var(--p-button-text-plain-color)
+var(--p-button-text-success-color)
+var(--p-button-text-info-color)
+var(--p-button-text-warn-color)
+var(--p-button-text-help-color)
+var(--p-button-text-contrast-color)
+var(--p-button-text-danger-color)
+
+var(--p-button-xxx-focus-ring-color)
+var(--p-button-xxx-focus-ring-shadow)
+var(--p-button-text-xxx-background)
+var(--p-button-text-xxx-border-color)
+var(--p-button-text-xxx-color)
+var(--p-button-text-xxx-active-background)
+var(--p-button-text-xxx-active-border-color)
+var(--p-button-text-xxx-active-color)
+var(--p-button-text-xxx-hover-background) 
+var(--p-button-text-xxx-hover-border-color) 
+var(--p-button-text-xxx-hover-color) 
+
+var(--p-button-outlined-help-active-background)
+
+*/
+ขาดภาวะผู้นำ ปล่อยให้เงินสภาวะเกี่ยงงาน และลอยตัวเหนือปัญหาไม่ยอดตัดสินใจกับปํญหาประชาชนที่เกิดขึ้นรายวัน จนต้องให้ต่างชาติมากดดันถึงจะลงมือ
+ละเว้นปฏิบัติหน้าที่
+
+ไฟฟ้าที่แก้ง call center ใช้เนี่ยมันมาจากไทย สสโรมแจ้งให้ตัดไฟนานแล้ว แต่ฝ่ายรัฐบาลโยนกันไปมาว่า ทำไม่ได้บ้างล่ะ ต้องให้ฝ่ายอื่นสั่งบ้างหละ ในขณะที่นายกเงียบกริบ...(น่าจะไม่รู้เรื่อง)
+จนสุดท้าย ประธานาธิบดีจีน(สีจิ้นผิง)ต้องนัดคุย นายกจึงสั่งตัดไฟ
+
+มีคำชมจากจีนว่าตัดสินใจเด็ดขาดมาก และดำเนินการอย่างรวดเร็ว

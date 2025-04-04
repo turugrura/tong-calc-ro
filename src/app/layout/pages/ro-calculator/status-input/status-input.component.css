@@ -1,7 +1,17 @@
-/* :host ::ng-deep .status_input .p-select-panel .p-select-header {
+:host ::ng-deep .status_input .p-select-header {
   padding: 0.5rem;
 }
 
-:host ::ng-deep .status_input .p-select-trigger {
+:host ::ng-deep .status_input .p-select-header .p-select-filter {
+  width: 100%;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+/* :host ::ng-deep .status_input .p-select-trigger {
   width: 24px;
 } */
+
+:host ::ng-deep .status_input .p-select-dropdown {
+  width: 20px;
+}

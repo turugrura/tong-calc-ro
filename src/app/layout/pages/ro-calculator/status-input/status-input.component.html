@@ -23,24 +23,43 @@
 
 </div> -->
 
-<p-inputgroup>
+<p-inputgroup class="status_input">
   <p-inputgroup-addon [style]="{ width: '32px' }">{{ label }}</p-inputgroup-addon>
   <p-select
     [disabled]="disabled"
     inputId="{{ label }}"
-    [autoDisplayFirst]="false"
     [options]="dropdownList"
     [filter]="true"
     filterBy="label"
-    scrollHeight="350px"
     [resetFilterOnHide]="true"
     [(ngModel)]="value"
     (onChange)="onBaseStatusChange()"
     emptyFilterMessage=""
-    dropdownIcon=""
   >
-    <ng-template pTemplate="filtericon"> </ng-template>
+    <ng-template #filtericon> </ng-template>
   </p-select>
   <span *ngIf="badgeSeverity === 'info'" class="_font-medium text-lg text-cyan-300 mr-1" style="min-width: 35px">+{{ extraValue }}</span>
   <span *ngIf="badgeSeverity !== 'info'" class="_font-medium text-lg text-yellow-400" style="min-width: 35px">+{{ extraValue }}</span>
 </p-inputgroup>
+
+<!-- <div class="flex items-center status_input">
+  <div class="flex justify-center" style="width: 32px">{{ label }}</div>
+  <div class="grow">
+    <p-select
+      [disabled]="disabled"
+      inputId="{{ label }}"
+      [autoDisplayFirst]="false"
+      [options]="dropdownList"
+      [filter]="true"
+      filterBy="label"
+      [resetFilterOnHide]="true"
+      [(ngModel)]="value"
+      (onChange)="onBaseStatusChange()"
+    >
+      <ng-template #filtericon> </ng-template>
+      <ng-template #emptyfilter> </ng-template>
+    </p-select>
+  </div>
+  <span *ngIf="badgeSeverity === 'info'" class="_font-medium text-lg text-cyan-300 mr-1" style="width: 35px">+{{ extraValue }}</span>
+  <span *ngIf="badgeSeverity !== 'info'" class="_font-medium text-lg text-yellow-400" style="width: 35px">+{{ extraValue }}</span>
+</div> -->

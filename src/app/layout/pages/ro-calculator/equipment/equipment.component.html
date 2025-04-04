@@ -17,13 +17,13 @@
             (onClear)="onClearItem(itemType)"
             placeholder="{{ placeholder }}"
           >
-            <ng-template let-item pTemplate="selectedItem">
-              <div class="flex gap-1 item_template" *ngIf="itemId">
+            <ng-template #selectedItem let-item>
+              <div class="flex gap-1 item_template">
                 <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
                 <div>{{ item.label }}</div>
               </div>
             </ng-template>
-            <ng-template let-item pTemplate="item">
+            <ng-template #item let-item>
               <div class="flex gap-1 {{ item.lv200ClassName }}">
                 <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
                 <div>{{ item.label }}</div>

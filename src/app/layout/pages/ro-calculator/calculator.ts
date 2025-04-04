@@ -271,6 +271,10 @@ export class Calculator {
     return this._chanceList;
   }
 
+  get hasClass() {
+    return !!this._class;
+  }
+
   setMasterItems(items: any) {
     this.items = items;
 
