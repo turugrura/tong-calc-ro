@@ -95,6 +95,7 @@ import {
   str,
   vit,
 } from './_basic';
+import { bp7_2, bp7_4 } from './bp7';
 import { cirAutumnGarment2, cirAutumnGarment3, cirAutumnGarment4, cirAutumnSummer2, cirAutumnWinter2, cirSpringGarment2, cirSpringGarment3, cirSpringGarment4, manAutumnGarment2, manAutumnGarment3, manAutumnGarment4, manAutumnSummer2, manAutumnWinter2, manSpringGarment2, manSpringGarment3, manSpringGarment4, signetAcc3, signetAcc4, stellarAcc2, stellarAcc3, stellarAcc4 } from './constellation_tower';
 import { crafted3, crafted4 } from './crafted_weapon';
 import { dimGlaArmor2, dimGlaArmor3, dimGlaArmor4, dimGlaBoot2, dimGlaBoot3, dimGlaBoot4, dimGlaGarment2, dimGlaGarment3, dimGlaGarment4, dimWeapon2, dimWeapon3, dimWeapon4 } from './dim_glacier';
@@ -998,6 +999,16 @@ export const EnchantTable: EntTable[] = [
   { name: 'Ice_Flame_Dress', enchants: [null, bp5Armor, bp5Armor, bp5Armor] },
   { name: 'Red_Serpent_Dress', enchants: [null, bp5Armor, bp5Armor, bp5Armor] },
   { name: 'Mask_of_Sin_Fate', enchants: [null, null, null, bp5Mask] },
+
+  { name: "Poenetentia_D_Crown_TH", enchants: [null, bp7_2, bp7_4, bp7_4] },
+  { name: "Poenetentia_P_Crown_TH", enchants: [null, bp7_2, bp7_4, bp7_4] },
+  { name: "Poenetentia_V_Crown_TH", enchants: [null, bp7_2, bp7_4, bp7_4] },
+  { name: "Poenetentia_H_Crown_TH", enchants: [null, bp7_2, bp7_4, bp7_4] },
+  { name: "Poenetentia_S_Crown_TH", enchants: [null, bp7_2, bp7_4, bp7_4] },
+  { name: "Poenetentia_B_Crown_TH", enchants: [null, bp7_2, bp7_4, bp7_4] },
+  { name: "Poenetentia_M_Crown_TH", enchants: [null, bp7_2, bp7_4, bp7_4] },
+  { name: "Poenetentia_A_Crown_TH", enchants: [null, bp7_2, bp7_4, bp7_4] },
+  { name: "Poenetentia_I_Crown_TH", enchants: [null, bp7_2, bp7_4, bp7_4] },
 
   { name: 'Star_Armor_Of_Pow', enchants: [null, nebular2, nebular3, nebular4] },
   { name: 'Star_Armor_Of_Sta', enchants: [null, nebular2, nebular3, nebular4] },

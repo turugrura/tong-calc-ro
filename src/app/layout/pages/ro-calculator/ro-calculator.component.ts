@@ -2063,7 +2063,8 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       return true;
     };
     const onlySuperNoviceWeapon = (a: ItemDropdownModel) => {
-      // if (this.items[+a.value]?.aegisName?.startsWith('Ep172_')) return true
+      // if (this.items[+a.value]?.aegisName?.startsWith('Poenitentia_')) return true;
+      // if (this.items[+a.value]?.aegisName?.startsWith('Poenetentia_')) return true;
       // if (a.label.includes('-AD')) return true
 
       // supper novice allow to equip weapon lv4

@@ -1,13 +1,3 @@
-import { ItemModel } from '../../../models/item.model';
-import { MonsterModel } from '../../../models/monster.model';
-import { EquipmentSummaryModel } from '../../../models/equipment-summary.model';
-import { MainModel } from '../../../models/main.model';
-import { AdditionalBonusInput } from '../../../models/info-for-class.model';
-import { HpSpCalculator } from './hp-sp-calculator';
-import { HpSpTable } from '../../../models/hp-sp-table.model';
-import { DamageCalculator } from './damage-calculator';
-import { BasicAspdModel, BasicDamageSummaryModel, MiscModel, SkillAspdModel, SkillDamageSummaryModel } from '../../../models/damage-summary.model';
-import { ChanceModel } from '../../../models/chance-model';
 import {
   AllowAmmoMapper,
   ClassAmmoMapper,
@@ -18,10 +8,20 @@ import {
   MainItemWithRelations,
   WeaponAmmoMapper,
 } from 'src/app/constants';
+import { SKILL_NAME } from 'src/app/constants/skill-name';
+import { Monster, Weapon } from 'src/app/domain';
 import { CharacterBase } from 'src/app/jobs';
 import { createRawTotalBonus, floor, isNumber, round } from 'src/app/utils';
-import { Monster, Weapon } from 'src/app/domain';
-import { SKILL_NAME } from 'src/app/constants/skill-name';
+import { ChanceModel } from '../../../models/chance-model';
+import { BasicAspdModel, BasicDamageSummaryModel, MiscModel, SkillAspdModel, SkillDamageSummaryModel } from '../../../models/damage-summary.model';
+import { EquipmentSummaryModel } from '../../../models/equipment-summary.model';
+import { HpSpTable } from '../../../models/hp-sp-table.model';
+import { AdditionalBonusInput } from '../../../models/info-for-class.model';
+import { ItemModel } from '../../../models/item.model';
+import { MainModel } from '../../../models/main.model';
+import { MonsterModel } from '../../../models/monster.model';
+import { DamageCalculator } from './damage-calculator';
+import { HpSpCalculator } from './hp-sp-calculator';
 
 // const getItem = (id: number) => items[id] as ItemModel;
 const refinableItemTypes = [
@@ -351,7 +351,7 @@ export class Calculator {
     return this;
   }
 
-  setWeapon(params: { itemId: number; refine: number; grade?: string }) {
+  setWeapon(params: { itemId: number; refine: number; grade?: string; }) {
     const { itemId, refine, grade } = params;
 
     const itemData = this.getItem(itemId);
@@ -369,7 +369,7 @@ export class Calculator {
     return this;
   }
 
-  setItem(params: { itemType: ItemTypeEnum; itemId: number; refine?: number; grade?: string }) {
+  setItem(params: { itemType: ItemTypeEnum; itemId: number; refine?: number; grade?: string; }) {
     const { itemId, itemType, refine, grade } = params;
     const itemData = this.getItem(itemId);
     this.equipItem.set(itemType, itemData);
@@ -415,7 +415,7 @@ export class Calculator {
     return this;
   }
 
-  setBuffBonus(params: { masteryAtk: Record<string, any>; equipAtk: Record<string, any> }) {
+  setBuffBonus(params: { masteryAtk: Record<string, any>; equipAtk: Record<string, any>; }) {
     const { masteryAtk, equipAtk } = params;
     this.buffEquipAtkBonus = { ...equipAtk };
     this.buffMasteryAtkBonus = { ...masteryAtk };
@@ -659,7 +659,7 @@ export class Calculator {
       A: 4,
     };
 
-    return x[grade] || 0
+    return x[grade] || 0;
   }
 
   private isValidGrade(itemGrade: string, targetGrade: string): boolean {
@@ -668,7 +668,7 @@ export class Calculator {
     return this.getGradeValue(itemGrade) >= this.getGradeValue(targetGrade);
   }
 
-  private validateCondition(params: { itemType: ItemTypeEnum; itemRefine: number; script: string }): ValidationResult {
+  private validateCondition(params: { itemType: ItemTypeEnum; itemRefine: number; script: string; }): ValidationResult {
     const { itemRefine, itemType, script } = params;
     let restCondition = script;
     const mainStatusRegex = /^(str|int|dex|agi|vit|luk|level):(\d+)&&(\d+===.+)/;
@@ -828,9 +828,19 @@ export class Calculator {
     // POS[accRight]50
     const [unusedPos, position] = restCondition.match(/POS\[(\D+?)]/) ?? [];
     if (position) {
-      if (position !== itemType) return { isValid: false, restCondition }
-
+      if (position !== itemType) return { isValid: false, restCondition };
       restCondition = restCondition.replace(unusedPos, '');
+      if (restCondition.startsWith('===')) return { isValid: true, restCondition };
+    }
+
+    // EQUIP[Poenitentia Sol]POS_SPECIFIC[weapon==Poenitentia Sol]REFINE[weapon==2]---4
+    const [unusedPos2, position2] = restCondition.match(/POS_SPECIFIC\[(\D+?)]/) ?? [];
+    if (position2) {
+      const [_position, _itemName] = position2.split('==');
+      const itName = this.equipItem.get(_position as any)?.name;
+      if (this.removeItemSlotName(itName || '') !== _itemName) return { isValid: false, restCondition };
+
+      restCondition = restCondition.replace(unusedPos2, '');
       if (restCondition.startsWith('===')) return { isValid: true, restCondition };
     }
 
@@ -935,7 +945,7 @@ export class Calculator {
     }
   }
 
-  private isAreadyCalcCombo(params: { item: ItemModel; attr: string; lineScript: string }) {
+  private isAreadyCalcCombo(params: { item: ItemModel; attr: string; lineScript: string; }) {
     const { item, attr, lineScript } = params;
     if (lineScript.startsWith('EQUIP[')) {
       const comboFix = `${item.id}-${attr}-${lineScript}`;
@@ -949,7 +959,7 @@ export class Calculator {
     return false;
   }
 
-  private calcItemStatus(params: { itemType: ItemTypeEnum; itemRefine: number; item: ItemModel }) {
+  private calcItemStatus(params: { itemType: ItemTypeEnum; itemRefine: number; item: ItemModel; }) {
     const { item, itemRefine, itemType } = params;
     const total: Record<string, number> = {};
     const chance = {} as Record<string, number>;
@@ -1292,7 +1302,7 @@ export class Calculator {
     return this;
   }
 
-  calculateHpSp(params: { isUseHpL: boolean }) {
+  calculateHpSp(params: { isUseHpL: boolean; }) {
     const { maxHp, maxSp } = this.hpSpCalculator
       .setClass(this._class)
       .setAllInfo(this.dmgCalculator.infoForClass)
@@ -1313,10 +1323,10 @@ export class Calculator {
       return this;
     }
 
-    const calc = this.dmgCalculator.setExtraBonus(c)
+    const calc = this.dmgCalculator.setExtraBonus(c);
     const { maxHp, maxSp } = this.hpSpCalculator.setAllInfo(calc.infoForClass)
       .calculate()
-      .getTotalSummary()
+      .getTotalSummary();
 
     const { basicDmg, skillDmg, basicAspd, skillAspd } = calc
       .calculateAllDamages({ skillValue, propertyAtk: this.propertyBasicAtk, maxHp, maxSp });
@@ -1340,7 +1350,7 @@ export class Calculator {
     return this;
   }
 
-  calcDmgWithExtraBonus(params: { skillValue: string; isUseHpL: boolean }): BasicDamageSummaryModel & SkillDamageSummaryModel {
+  calcDmgWithExtraBonus(params: { skillValue: string; isUseHpL: boolean; }): BasicDamageSummaryModel & SkillDamageSummaryModel {
     this.calcAllAtk();
 
     const c = this.getChanceBonus();
@@ -1432,12 +1442,12 @@ export class Calculator {
   getMonsterSummary() {
     return {
       monster: { ...this.monster.data }
-    }
+    };
   }
 
   getTotalSummary() {
     const { baseWeaponAtk = 0, refineBonus = 0 } = this.leftWeaponData?.data || {};
-    const { totalBuffAtk, totalEquipAtk, totalHideMasteryAtk, totalMasteryAtk, totalStatusAtk, totalStatusMatk } = this.dmgCalculator.atkSummaryForUI
+    const { totalBuffAtk, totalEquipAtk, totalHideMasteryAtk, totalMasteryAtk, totalStatusAtk, totalStatusMatk } = this.dmgCalculator.atkSummaryForUI;
     const leftWeaponAtk = baseWeaponAtk + refineBonus;
 
     return {
