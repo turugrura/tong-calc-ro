@@ -11981,7 +11981,7 @@
     "id": 20994,
     "dbname": "MD_BETELGEUSE",
     "name": "Betelgeuse",
-    "spawn": "",
+    "spawn": "MD_BETELGEUSE",
     "stats": {
       "attackRange": 3,
       "level": 250,

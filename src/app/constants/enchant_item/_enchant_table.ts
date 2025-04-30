@@ -95,6 +95,7 @@ import {
   str,
   vit,
 } from './_basic';
+import { angelRibbonWing3, angelRibbonWing4 } from './angel_ribbon_wing';
 import { bp7_2, bp7_4 } from './bp7';
 import { cirAutumnGarment2, cirAutumnGarment3, cirAutumnGarment4, cirAutumnSummer2, cirAutumnWinter2, cirSpringGarment2, cirSpringGarment3, cirSpringGarment4, manAutumnGarment2, manAutumnGarment3, manAutumnGarment4, manAutumnSummer2, manAutumnWinter2, manSpringGarment2, manSpringGarment3, manSpringGarment4, signetAcc3, signetAcc4, stellarAcc2, stellarAcc3, stellarAcc4 } from './constellation_tower';
 import { crafted3, crafted4 } from './crafted_weapon';
@@ -1651,6 +1652,11 @@ export const EnchantTable: EntTable[] = [
   { name: 'Royal_H_Manteau_B', enchants: [null, null, royalHGarment3, royalHGarment4] },
   { name: 'Royal_H_Boots_A', enchants: [null, null, royalHBoot3, royalHBoot4] },
   { name: 'Royal_H_Boots_B', enchants: [null, null, royalHBoot3, royalHBoot4] },
+
+  { name: "Angel_R_Wing_RD", enchants: [null, null, angelRibbonWing3, angelRibbonWing4] },
+  { name: "Angel_R_Wing_WH", enchants: [null, null, angelRibbonWing3, angelRibbonWing4] },
+  { name: "Angel_R_Wing_RD_LT", enchants: [null, null, angelRibbonWing3, angelRibbonWing4] },
+  { name: "Angel_R_Wing_WH_LT", enchants: [null, null, angelRibbonWing3, angelRibbonWing4] },
 ];
 
 Object.freeze(EnchantTable);

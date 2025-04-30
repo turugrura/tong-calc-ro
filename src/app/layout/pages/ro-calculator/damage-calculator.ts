@@ -152,6 +152,12 @@ export class DamageCalculator {
         } else {
           totalBonus[attr] = val;
         }
+
+        if (attr === 'p_final') {
+          this.finalPhyMultipliers.push(val);
+        } else if (attr === 'm_final') {
+          this.finalMagicMultipliers.push(val);
+        }
       }
     }
 

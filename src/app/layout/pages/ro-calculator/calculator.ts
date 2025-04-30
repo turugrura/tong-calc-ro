@@ -833,6 +833,18 @@ export class Calculator {
       if (restCondition.startsWith('===')) return { isValid: true, restCondition };
     }
 
+    // SPAWN[tur_d03_i||tur_d04_i]
+    const [unusedSp, rawSpawn] = restCondition.match(/SPAWN\[(.+?)]/) ?? [];
+    if (rawSpawn) {
+      const spawns = rawSpawn.split('||');
+      const monSpawns = this.monster.spawn.split(',');
+      const isPass = spawns.some((sp) => monSpawns.includes(sp));
+      // console.log({ rawSpawn, monSpawns, spawns, isPass, unusedSp });
+      if (!isPass) return { isValid: false, restCondition };
+
+      restCondition = restCondition.replace(unusedSp, '');
+    }
+
     // EQUIP[Poenitentia Sol]POS_SPECIFIC[weapon==Poenitentia Sol]REFINE[weapon==2]---4
     const [unusedPos2, position2] = restCondition.match(/POS_SPECIFIC\[(\D+?)]/) ?? [];
     if (position2) {
@@ -920,18 +932,6 @@ export class Calculator {
       return { isValid: false, restCondition };
     }
 
-    // SPAWN[tur_d03_i||tur_d04_i]
-    const [unusedSp, rawSpawn] = restCondition.match(/SPAWN\[(.+)]/) ?? [];
-    if (rawSpawn) {
-      const spawns = rawSpawn.split('||');
-      const monSpawns = this.monster.spawn.split(',');
-      const isPass = spawns.some((sp) => monSpawns.includes(sp));
-      // console.log({ rawSpawn, monSpawns, spawns });
-      if (!isPass) return { isValid: false, restCondition };
-
-      restCondition = restCondition.replace(unusedSp, '');
-    }
-
     return {
       isValid: true,
       restCondition: restCondition,
@@ -1004,6 +1004,7 @@ export class Calculator {
 
       if (attr.startsWith('chance__') && isNumber(total[attr]) && total[attr] !== 0) {
         const actualAttr = attr.replace('chance__', '');
+        // console.log({ actualAttr, t: total[attr] });
         addChance(actualAttr, total[attr]);
       }
     }
