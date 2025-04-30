@@ -546,6 +546,10 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
           this.calculator.setSelectedChances(this.selectedChances).recalcExtraBonus(this.model.selectedAtkSkill);
           this.totalSummary = this.calculator.getTotalSummary();
           this.calculateToSelectedMonsters();
+
+          if (this.isEnableCompare) {
+            this.onCompareItemChange();
+          }
         }),
         debounceTime(100),
       )

@@ -329,8 +329,8 @@
       [totalHit2]="totalSummary2?.calcSkill?.totalHits"
       [min]="totalSummary?.dmg?.effectedSkillDamageMin"
       [max]="totalSummary?.dmg?.effectedSkillDamageMax"
-      [min2]="totalSummary2?.dmg?.effectedSkillDamageMin"
-      [max2]="totalSummary2?.dmg?.effectedSkillDamageMax"
+      [min2]="totalSummary2?.dmg?.effectedSkillDamageMin || totalSummary2?.dmg?.skillMinDamage"
+      [max2]="totalSummary2?.dmg?.effectedSkillDamageMax || totalSummary2?.dmg?.skillMaxDamage"
     ></app-calc-value>
   </div>
   <div class="col-12" [hidden]="totalSummary?.dmg?.effectedSkillDamageMin <= 0 || !selectedChances?.length">
@@ -340,7 +340,7 @@
       styleClass="summary_chance_hilight"
       styleClass2="summary_compare"
       [max]="totalSummary?.dmg?.effectedSkillHitsPerSec"
-      [max2]="totalSummary2?.dmg?.effectedSkillHitsPerSec"
+      [max2]="totalSummary2?.dmg?.effectedSkillHitsPerSec || totalSummary2?.calcSkill?.totalHitPerSec"
     ></app-calc-value>
   </div>
   <div class="col-12" [hidden]="totalSummary?.dmg?.effectedSkillDamageMin <= 0 || !selectedChances?.length">
@@ -351,7 +351,7 @@
       styleClass2="summary_compare"
       [showPercentDiff]="true"
       [max]="totalSummary?.dmg?.effectedSkillDps"
-      [max2]="totalSummary2?.dmg?.effectedSkillDps"
+      [max2]="totalSummary2?.dmg?.effectedSkillDps || totalSummary2?.dmg?.skillDps"
     ></app-calc-value>
   </div>
 
@@ -444,8 +444,8 @@
           styleClass2="summary_compare"
           [min]="totalSummary?.dmg?.effectedBasicCriDamageMin"
           [max]="totalSummary?.dmg?.effectedBasicCriDamageMax"
-          [min2]="totalSummary2?.dmg?.effectedBasicCriDamageMin"
-          [max2]="totalSummary2?.dmg?.effectedBasicCriDamageMax"
+          [min2]="totalSummary2?.dmg?.effectedBasicCriDamageMin || totalSummary2?.dmg?.criMinDamage"
+          [max2]="totalSummary2?.dmg?.effectedBasicCriDamageMax || totalSummary2?.dmg?.criMaxDamage"
         ></app-calc-value>
       </div>
       <!-- <div class="col-12" [hidden]="totalSummary?.dmg?.effectedBasicDamageMin <= 0 || !selectedChances?.length">
@@ -467,7 +467,7 @@
           styleClass2="summary_compare"
           [showPercentDiff]="true"
           [max]="totalSummary?.dmg?.effectedBasicDps"
-          [max2]="totalSummary2?.dmg?.effectedBasicDps"
+          [max2]="totalSummary2?.dmg?.effectedBasicDps || totalSummary2?.dmg?.basicDps"
         ></app-calc-value>
       </div>
     </div>
