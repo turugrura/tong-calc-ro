@@ -1,5 +1,6 @@
 export const AllowedCompareItemTypes = [
   'weapon',
+  'shield',
   'headUpper',
   'headMiddle',
   'headLower',
