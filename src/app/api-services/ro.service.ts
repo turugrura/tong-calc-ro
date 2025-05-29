@@ -1,17 +1,17 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, map, shareReplay, tap } from 'rxjs';
-import { validClassNameSet } from './valid-bonuses';
-import { createRawTotalBonus } from 'src/app/utils';
 import * as yaml from 'js-yaml';
-import { OFFENSIVE_SKILL_NAMES } from '../constants/skill-name';
+import { Observable, map, shareReplay, tap } from 'rxjs';
+import { createRawTotalBonus } from 'src/app/utils';
 import { environment } from 'src/environments/environment';
+import { OFFENSIVE_SKILL_NAMES } from '../constants/skill-name';
+import { validClassNameSet } from './valid-bonuses';
 
 type baseStat = 'Str' | 'Agi' | 'Int' | 'Dex' | 'Luk' | 'Vit' | 'Pow' | 'Con' | 'Crt' | 'Spl' | 'Sta' | 'Wis';
 
 interface JobStatBody {
   Jobs: Record<string, boolean>;
-  BonusStats: ({ Level: number } & Partial<Record<baseStat, number>>)[];
+  BonusStats: ({ Level: number; } & Partial<Record<baseStat, number>>)[];
   HpFactor: number;
   SpIncrease: number;
   MaxWeight: number;
@@ -19,8 +19,8 @@ interface JobStatBody {
 
 interface HpSpTable {
   Jobs: Record<string, boolean>;
-  BaseSp: { Level: number; Sp: number }[];
-  BaseHp: { Level: number; Hp: number }[];
+  BaseSp: { Level: number; Sp: number; }[];
+  BaseHp: { Level: number; Hp: number; }[];
 }
 
 @Injectable()
@@ -81,7 +81,7 @@ export class RoService {
           // }
         }
 
-        if (invalidBonusSet.size > 0) console.error([...invalidBonusSet]);
+        if (invalidBonusSet.size > 0) console.error('invalidBonusSet', [...invalidBonusSet]);
         if (invalidClassNameSet.size > 0) console.error('invalidClassNameSet', invalidClassNameSet);
       }),
     );
@@ -108,17 +108,17 @@ export class RoService {
     const expandedJobs = [
       // 'Sky_Emperor', 'Soul_Ascetic', 'Shinkiro', 'Shiranui',
       // 'Night_Watch', 'Hyper_Novice', 'Spirit_Handler',
-    ]
+    ];
     const targetJobs = [
       'Dragon_Knight', 'Meister', 'Shadow_Cross', 'Arch_Mage', 'Cardinal', 'Windhawk', 'Imperial_Guard', 'Biolo',
-      'Abyss_Chaser', 'Elemental_Master', 'Inquisitor', 'Troubadour', 'Trouvere', ...expandedJobs]
+      'Abyss_Chaser', 'Elemental_Master', 'Inquisitor', 'Troubadour', 'Trouvere', ...expandedJobs];
 
-    this.fetchYaml<{ Body: HpSpTable[] }>('job_basepoints.yml').subscribe(({ Body: data }) => {
+    this.fetchYaml<{ Body: HpSpTable[]; }>('job_basepoints.yml').subscribe(({ Body: data }) => {
       console.log({ data });
       for (const rec of data) {
         const curJob = rec.Jobs;
         // console.log({ curJob })
-        const jobNames = Object.keys(curJob)
+        const jobNames = Object.keys(curJob);
         if (jobNames.length > 3 || !jobNames.some(n => targetJobs.includes(n))) continue;
 
         const divider = jobNames.some(n => expandedJobs.includes(n)) ? 1 : 1.25;
@@ -183,7 +183,7 @@ export class RoService {
   // 1: [0, 0, 0, 0, 0, 1],
   // 2: [1, 0, 0, 0, 0, 1],
   doX() {
-    this.fetchYaml<{ Body: JobStatBody[] }>('job_stats.yml').subscribe(({ Body }) => {
+    this.fetchYaml<{ Body: JobStatBody[]; }>('job_stats.yml').subscribe(({ Body }) => {
       console.log({ Body });
       for (const job of Body) {
         const bastStat = {} as any;

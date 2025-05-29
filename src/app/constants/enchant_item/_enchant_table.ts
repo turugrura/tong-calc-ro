@@ -96,6 +96,7 @@ import {
   vit,
 } from './_basic';
 import { angelRibbonWing3, angelRibbonWing4 } from './angel_ribbon_wing';
+import { anni5th } from './anniversary5th';
 import { bp7_2, bp7_4 } from './bp7';
 import { cirAutumnGarment2, cirAutumnGarment3, cirAutumnGarment4, cirAutumnSummer2, cirAutumnWinter2, cirSpringGarment2, cirSpringGarment3, cirSpringGarment4, manAutumnGarment2, manAutumnGarment3, manAutumnGarment4, manAutumnSummer2, manAutumnWinter2, manSpringGarment2, manSpringGarment3, manSpringGarment4, signetAcc3, signetAcc4, stellarAcc2, stellarAcc3, stellarAcc4 } from './constellation_tower';
 import { crafted3, crafted4 } from './crafted_weapon';
@@ -1657,6 +1658,10 @@ export const EnchantTable: EntTable[] = [
   { name: "Angel_R_Wing_WH", enchants: [null, null, angelRibbonWing3, angelRibbonWing4] },
   { name: "Angel_R_Wing_RD_LT", enchants: [null, null, angelRibbonWing3, angelRibbonWing4] },
   { name: "Angel_R_Wing_WH_LT", enchants: [null, null, angelRibbonWing3, angelRibbonWing4] },
+
+  { name: "5th_Mask_Melee", enchants: [null, anni5th, anni5th, anni5th] },
+  { name: "5th_Mask_Magic", enchants: [null, anni5th, anni5th, anni5th] },
+  { name: "5th_Mask_Range", enchants: [null, anni5th, anni5th, anni5th] },
 ];
 
 Object.freeze(EnchantTable);
