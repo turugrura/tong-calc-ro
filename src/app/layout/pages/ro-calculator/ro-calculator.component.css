@@ -410,7 +410,8 @@
 
 :host ::ng-deep .item-position-petList,
 :host ::ng-deep .item_label_pet .p-dropdown-label,
-:host ::ng-deep .item_label_pet .p-cascadeselect-label {
+:host ::ng-deep .item_label_pet .p-cascadeselect-label,
+:host ::ng-deep .item_label_pet {
   /* background-color: var(--surface-0); */
   background-color: #121212;
   color: var(--orange-200);
@@ -435,8 +436,8 @@
 }
 
 :host ::ng-deep .item-position-shadowWeaponList,
-:host ::ng-deep .item-position-shadowArmorList,
 :host ::ng-deep .item-position-shadowShieldList,
+:host ::ng-deep .item-position-shadowArmorList,
 :host ::ng-deep .item-position-shadowBootList,
 :host ::ng-deep .item-position-shadowEarringList,
 :host ::ng-deep .item-position-shadowPendantList,
@@ -447,7 +448,19 @@
 :host ::ng-deep .item_label_shadowShield,
 :host ::ng-deep .item_label_shadowBoot,
 :host ::ng-deep .item_label_shadowEarring,
-:host ::ng-deep .item_label_shadowPendant {
+:host ::ng-deep .item_label_shadowPendant,
+:host ::ng-deep .item_label_shadowWeaponEnchant2,
+:host ::ng-deep .item_label_shadowWeaponEnchant3,
+:host ::ng-deep .item_label_shadowShieldEnchant2,
+:host ::ng-deep .item_label_shadowShieldEnchant3,
+:host ::ng-deep .item_label_shadowArmorEnchant2,
+:host ::ng-deep .item_label_shadowArmorEnchant3,
+:host ::ng-deep .item_label_shadowBootEnchant2,
+:host ::ng-deep .item_label_shadowBootEnchant3,
+:host ::ng-deep .item_label_shadowEarringEnchant2,
+:host ::ng-deep .item_label_shadowEarringEnchant3,
+:host ::ng-deep .item_label_shadowPendantEnchant2,
+:host ::ng-deep .item_label_shadowPendantEnchant3 {
   /* background-color: var(--surface-0); */
   background-color: #121212;
   color: var(--green-200);

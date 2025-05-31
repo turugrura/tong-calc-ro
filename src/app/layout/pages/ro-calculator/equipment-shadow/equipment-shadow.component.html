@@ -1,34 +1,36 @@
 <div class="grid grid-nogutter">
   <div class="col-12 grid grid-nogutter">
-    <div class="col-6">
-      <p-dropdown
-        [autoDisplayFirst]="false"
-        [resetFilterOnHide]="true"
-        [options]="itemList"
-        [filter]="true"
-        filterBy="label"
-        scrollHeight="350px"
-        [(ngModel)]="itemId"
-        [showClear]="true"
-        (onChange)="onSelectItem('itemId', $event.value)"
-        (onClear)="onClearItem()"
-        [placeholder]="placeholder"
-      >
-        <ng-template let-item pTemplate="selectedItem">
-          <div class="flex gap-1 item_template" *ngIf="itemId">
-            <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
-            <div>{{ item.label }}</div>
-          </div>
-        </ng-template>
-        <ng-template let-item pTemplate="item">
-          <div class="flex gap-1">
-            <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
-            <div>{{ item.label }}</div>
-          </div>
-        </ng-template>
-      </p-dropdown>
+    <div class="col-3 grid grid-nogutter">
+      <div class="col-12">
+        <p-dropdown
+          [autoDisplayFirst]="false"
+          [resetFilterOnHide]="true"
+          [options]="itemList"
+          [filter]="true"
+          filterBy="label"
+          scrollHeight="350px"
+          [(ngModel)]="itemId"
+          [showClear]="true"
+          (onChange)="onSelectItem('itemId', $event.value)"
+          (onClear)="onClearItem()"
+          [placeholder]="placeholder"
+        >
+          <ng-template let-item pTemplate="selectedItem">
+            <div class="flex gap-1 item_template" *ngIf="itemId">
+              <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+          <ng-template let-item pTemplate="item">
+            <div class="flex gap-1">
+              <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
+      </div>
     </div>
-    <div class="col-2 refine-list">
+    <div class="col-1 refine-list">
       <p-dropdown [options]="refineList" [(ngModel)]="itemRefine" scrollHeight="350px" [disabled]="!itemId" (onChange)="onSelectItem('itemRefine', itemId, $event.value)">
         <ng-template let-item pTemplate="selectedItem">
           <div class="flex gap-1">
@@ -37,20 +39,82 @@
         </ng-template>
       </p-dropdown>
     </div>
-    <div class="col-4">
-      <p-cascadeSelect
-        [(ngModel)]="optionValue"
-        [disabled]="!itemId"
-        [options]="optionList"
-        optionValue="value"
-        optionGroupLabel="label"
-        optionLabel="label"
-        [optionGroupChildren]="['children', 'children']"
-        placeholder="Options"
-        [showClear]="true"
-        (onChange)="onOptionChange($event)"
-        (onClear)="onOptionChange($event)"
-      ></p-cascadeSelect>
+
+    <div class="col-8 grid grid-nogutter">
+      <div class="col-5">
+        <p-dropdown
+          inputId="baseItemEnchant2"
+          [autoDisplayFirst]="false"
+          [resetFilterOnHide]="true"
+          [options]="enchant3List"
+          [filter]="true"
+          filterBy="label"
+          scrollHeight="350px"
+          [(ngModel)]="enchant3Id"
+          [showClear]="true"
+          [disabled]="enchant3List.length === 0 || !itemId"
+          (onChange)="onSelectItem('enchant3Id', $event.value)"
+          placeholder="Enchant 3"
+        >
+          <ng-template let-item pTemplate="selectedItem">
+            <div class="flex gap-1 item_template" *ngIf="enchant3Id">
+              <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+          <ng-template let-item pTemplate="item">
+            <div class="flex gap-1">
+              <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
+      </div>
+      <div class="col-3">
+        <p-dropdown
+          inputId="baseItemEnchant3"
+          [autoDisplayFirst]="false"
+          [resetFilterOnHide]="true"
+          [options]="enchant4List"
+          [filter]="true"
+          filterBy="label"
+          scrollHeight="350px"
+          [(ngModel)]="enchant4Id"
+          [showClear]="true"
+          [disabled]="enchant4List.length === 0 || !itemId"
+          (onChange)="onSelectItem('enchant4Id', $event.value)"
+          placeholder="Enchant 4"
+        >
+          <ng-template let-item pTemplate="selectedItem">
+            <div class="flex gap-1 item_template" *ngIf="enchant4Id">
+              <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+          <ng-template let-item pTemplate="item">
+            <div class="flex gap-1">
+              <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
+              <div>{{ item.label }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
+      </div>
+
+      <div class="col-4">
+        <p-cascadeSelect
+          [(ngModel)]="optionValue"
+          [disabled]="!itemId"
+          [options]="optionList"
+          optionValue="value"
+          optionGroupLabel="label"
+          optionLabel="label"
+          [optionGroupChildren]="['children', 'children']"
+          placeholder="Options"
+          [showClear]="true"
+          (onChange)="onOptionChange($event)"
+          (onClear)="onOptionChange($event)"
+        ></p-cascadeSelect>
+      </div>
     </div>
   </div>
 </div>

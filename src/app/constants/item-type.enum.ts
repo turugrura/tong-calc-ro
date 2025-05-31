@@ -102,16 +102,28 @@ export enum ItemTypeEnum {
 
   shadowWeapon = 'shadowWeapon',
   shadowWeaponRefine = 'shadowWeaponRefine',
+  shadowWeaponEnchant2 = 'shadowWeaponEnchant2',
+  shadowWeaponEnchant3 = 'shadowWeaponEnchant3',
   shadowArmor = 'shadowArmor',
   shadowArmorRefine = 'shadowArmorRefine',
+  shadowArmorEnchant2 = 'shadowArmorEnchant2',
+  shadowArmorEnchant3 = 'shadowArmorEnchant3',
   shadowShield = 'shadowShield',
   shadowShieldRefine = 'shadowShieldRefine',
+  shadowShieldEnchant2 = 'shadowShieldEnchant2',
+  shadowShieldEnchant3 = 'shadowShieldEnchant3',
   shadowBoot = 'shadowBoot',
   shadowBootRefine = 'shadowBootRefine',
+  shadowBootEnchant2 = 'shadowBootEnchant2',
+  shadowBootEnchant3 = 'shadowBootEnchant3',
   shadowEarring = 'shadowEarring',
   shadowEarringRefine = 'shadowEarringRefine',
+  shadowEarringEnchant2 = 'shadowEarringEnchant2',
+  shadowEarringEnchant3 = 'shadowEarringEnchant3',
   shadowPendant = 'shadowPendant',
   shadowPendantRefine = 'shadowPendantRefine',
+  shadowPendantEnchant2 = 'shadowPendantEnchant2',
+  shadowPendantEnchant3 = 'shadowPendantEnchant3',
 }
 
 export const OptionableItemTypeSet = new Set([
@@ -194,12 +206,12 @@ export const MainItemWithRelations: Partial<Record<ItemTypeEnum, ItemTypeEnum[]>
   [ItemTypeEnum.costumeEnchantGarment2]: [],
   [ItemTypeEnum.costumeEnchantGarment4]: [],
 
-  [ItemTypeEnum.shadowWeapon]: [],
-  [ItemTypeEnum.shadowArmor]: [],
-  [ItemTypeEnum.shadowShield]: [],
-  [ItemTypeEnum.shadowBoot]: [],
-  [ItemTypeEnum.shadowEarring]: [],
-  [ItemTypeEnum.shadowPendant]: [],
+  [ItemTypeEnum.shadowWeapon]: [ItemTypeEnum.shadowWeaponEnchant2, ItemTypeEnum.shadowWeaponEnchant3],
+  [ItemTypeEnum.shadowShield]: [ItemTypeEnum.shadowShieldEnchant2, ItemTypeEnum.shadowShieldEnchant3],
+  [ItemTypeEnum.shadowArmor]: [ItemTypeEnum.shadowArmorEnchant2, ItemTypeEnum.shadowArmorEnchant3],
+  [ItemTypeEnum.shadowBoot]: [ItemTypeEnum.shadowBootEnchant2, ItemTypeEnum.shadowBootEnchant3],
+  [ItemTypeEnum.shadowEarring]: [ItemTypeEnum.shadowEarringEnchant2, ItemTypeEnum.shadowEarringEnchant3],
+  [ItemTypeEnum.shadowPendant]: [ItemTypeEnum.shadowPendantEnchant2, ItemTypeEnum.shadowPendantEnchant3],
 };
 
 export type EquipmentModel = Record<ItemTypeEnum, number> & {

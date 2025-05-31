@@ -170,60 +170,28 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   leftWeaponList: DropdownModel[] = [];
   weaponCardList: DropdownModel[] = [];
   weaponEnchant0List: DropdownModel[] = [];
-  weaponEnchant1List: DropdownModel[] = [];
-  weaponEnchant2List: DropdownModel[] = [];
-  weaponEnchant3List: DropdownModel[] = [];
   leftWeaponEnchant0List: DropdownModel[] = [];
-  leftWeaponEnchant1List: DropdownModel[] = [];
-  leftWeaponEnchant2List: DropdownModel[] = [];
-  leftWeaponEnchant3List: DropdownModel[] = [];
   ammoList: DropdownModel[] = [];
   headUpperList: DropdownModel[] = [];
-  headUpperEnchant1List: DropdownModel[] = [];
-  headUpperEnchant2List: DropdownModel[] = [];
-  headUpperEnchant3List: DropdownModel[] = [];
   headMiddleList: DropdownModel[] = [];
-  headMiddleEnchant1List: DropdownModel[] = [];
-  headMiddleEnchant2List: DropdownModel[] = [];
-  headMiddleEnchant3List: DropdownModel[] = [];
   headLowerList: DropdownModel[] = [];
-  headLowerEnchant1List: DropdownModel[] = [];
-  headLowerEnchant2List: DropdownModel[] = [];
-  headLowerEnchant3List: DropdownModel[] = [];
   headCardList: DropdownModel[] = [];
   armorList: DropdownModel[] = [];
   armorCardList: DropdownModel[] = [];
-  armorEnchant1List: DropdownModel[] = [];
-  armorEnchant2List: DropdownModel[] = [];
-  armorEnchant3List: DropdownModel[] = [];
   shieldList: DropdownModel[] = [];
   shieldCardList: DropdownModel[] = [];
-  shieldEnchant1List: DropdownModel[] = [];
-  shieldEnchant2List: DropdownModel[] = [];
-  shieldEnchant3List: DropdownModel[] = [];
   garmentList: DropdownModel[] = [];
   garmentCardList: DropdownModel[] = [];
-  garmentEnchant1List: DropdownModel[] = [];
-  garmentEnchant2List: DropdownModel[] = [];
-  garmentEnchant3List: DropdownModel[] = [];
   bootList: DropdownModel[] = [];
   bootCardList: DropdownModel[] = [];
-  bootEnchant1List: DropdownModel[] = [];
-  bootEnchant2List: DropdownModel[] = [];
-  bootEnchant3List: DropdownModel[] = [];
   accList: DropdownModel[] = [];
   accCardList: DropdownModel[] = [];
   accLeftList: DropdownModel[] = [];
   accLeftCardList: DropdownModel[] = [];
-  accLeftEnchant1List: DropdownModel[] = [];
-  accLeftEnchant2List: DropdownModel[] = [];
-  accLeftEnchant3List: DropdownModel[] = [];
   accRightList: DropdownModel[] = [];
   accRightCardList: DropdownModel[] = [];
-  accRightEnchant1List: DropdownModel[] = [];
-  accRightEnchant2List: DropdownModel[] = [];
-  accRightEnchant3List: DropdownModel[] = [];
   petList: DropdownModel[] = [];
+
 
   costumeUpperList: DropdownModel[] = [];
   costumeMiddleList: DropdownModel[] = [];
@@ -1520,6 +1488,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
             this.onSelectItem(itemType, itemId, refine);
             // console.log('Set Main Item', { itemType, itemId, refine });
             for (const relatedItemType of MainItemWithRelations[itemType] ?? []) {
+              // console.log({ relatedItemType, val: this.model[relatedItemType] });
               this.onSelectItem(relatedItemType, this.model[relatedItemType], refine);
             }
           }

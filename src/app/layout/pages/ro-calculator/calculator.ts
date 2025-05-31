@@ -73,6 +73,7 @@ export class Calculator {
     luk: 1,
     jobLuk: undefined,
     propertyAtk: undefined,
+
     weapon: undefined,
     weaponRefine: undefined,
     weaponCard1: undefined,
@@ -81,7 +82,9 @@ export class Calculator {
     weaponEnchant1: undefined,
     weaponEnchant2: undefined,
     weaponEnchant3: undefined,
+
     ammo: undefined,
+
     headUpper: undefined,
     headUpperRefine: undefined,
     headUpperCard: undefined,
@@ -97,6 +100,7 @@ export class Calculator {
     headLowerEnchant1: undefined,
     headLowerEnchant2: undefined,
     headLowerEnchant3: undefined,
+
     armor: undefined,
     armorRefine: undefined,
     armorCard: undefined,
@@ -121,6 +125,7 @@ export class Calculator {
     bootEnchant1: undefined,
     bootEnchant2: undefined,
     bootEnchant3: undefined,
+
     accLeft: undefined,
     accLeftRefine: undefined,
     accLeftCard: undefined,
@@ -133,6 +138,7 @@ export class Calculator {
     accRightEnchant1: undefined,
     accRightEnchant2: undefined,
     accRightEnchant3: undefined,
+
     pet: undefined,
   };
   private equipItem = new Map<ItemTypeEnum, ItemModel>();

@@ -1104,9 +1104,9 @@
       </div>
     </div>
 
-    <!-- Pet -->
-    <div class="grid grid-nogutter py-3 item_label_pet">
-      <div class="col-3">
+    <!-- Pet / Costume -->
+    <div class="grid grid-nogutter mt-3">
+      <div class="col-3 item_label_pet">
         <p-dropdown
           inputId="pet"
           [autoDisplayFirst]="false"
@@ -1134,11 +1134,10 @@
           </ng-template>
         </p-dropdown>
       </div>
-    </div>
 
-    <div class="grid grid-nogutter">
-      <div class="col-3 grid grid-nogutter item_label_costume flex flex-column">
-        <div class="col-12">
+      <!-- Upper -->
+      <div class="col-9 grid grid-nogutter item_label_costume">
+        <div class="col-4">
           <app-equipment-cos-enchant
             [itemType]="'costumeUpper'"
             [placeholder]="'Costume Upper'"
@@ -1147,38 +1146,7 @@
             (selectItemChange)="onSelectItem('costumeUpper', $event.itemId)"
           ></app-equipment-cos-enchant>
         </div>
-        <div class="col-12">
-          <app-equipment-cos-enchant
-            [itemType]="'costumeMiddle'"
-            [placeholder]="'Costume Middle'"
-            [itemList]="costumeMiddleList"
-            [(itemId)]="model.costumeMiddle"
-            (selectItemChange)="onSelectItem('costumeMiddle', $event.itemId)"
-          ></app-equipment-cos-enchant>
-        </div>
-        <div class="col-12" [hidden]="!costumeLowerList.length">
-          <app-equipment-cos-enchant
-            [itemType]="'costumeLower'"
-            [placeholder]="'Costume Lower'"
-            [itemList]="costumeLowerList"
-            [(itemId)]="model.costumeLower"
-            (selectItemChange)="onSelectItem('costumeLower', $event.itemId)"
-          ></app-equipment-cos-enchant>
-        </div>
-        <div class="col-12 mt-2">
-          <app-equipment-cos-enchant
-            [itemType]="'costumeGarment'"
-            [placeholder]="'Costume Garment'"
-            [itemList]="costumeGarmentList"
-            [(itemId)]="model.costumeGarment"
-            (selectItemChange)="onSelectItem('costumeGarment', $event.itemId)"
-          ></app-equipment-cos-enchant>
-        </div>
-      </div>
-
-      <div class="col-3 grid grid-nogutter item_label_costume flex flex-column">
-        <!-- Costume Upper -->
-        <div class="col-12">
+        <div class="col-4">
           <app-equipment-cos-enchant
             [itemType]="'costumeEnchantUpper'"
             [placeholder]="'Upper Enchant'"
@@ -1187,9 +1155,20 @@
             (selectItemChange)="onSelectItem('costumeEnchantUpper', $event.itemId)"
           ></app-equipment-cos-enchant>
         </div>
+      </div>
 
-        <!-- Costume Middle -->
-        <div class="col-12">
+      <!-- Middle -->
+      <div class="col-9 col-offset-3 grid grid-nogutter item_label_costume">
+        <div class="col-4">
+          <app-equipment-cos-enchant
+            [itemType]="'costumeMiddle'"
+            [placeholder]="'Costume Middle'"
+            [itemList]="costumeMiddleList"
+            [(itemId)]="model.costumeMiddle"
+            (selectItemChange)="onSelectItem('costumeMiddle', $event.itemId)"
+          ></app-equipment-cos-enchant>
+        </div>
+        <div class="col-4">
           <app-equipment-cos-enchant
             [itemType]="'costumeEnchantMiddle'"
             [placeholder]="'Middle Enchant'"
@@ -1198,9 +1177,20 @@
             (selectItemChange)="onSelectItem('costumeEnchantMiddle', $event.itemId)"
           ></app-equipment-cos-enchant>
         </div>
+      </div>
 
-        <!-- Costume Lower -->
-        <div class="col-12">
+      <!-- Lower -->
+      <div class="col-9 col-offset-3 grid grid-nogutter item_label_costume">
+        <div class="col-4">
+          <app-equipment-cos-enchant
+            [itemType]="'costumeLower'"
+            [placeholder]="'Costume Lower'"
+            [itemList]="costumeLowerList"
+            [(itemId)]="model.costumeLower"
+            (selectItemChange)="onSelectItem('costumeLower', $event.itemId)"
+          ></app-equipment-cos-enchant>
+        </div>
+        <div class="col-4">
           <app-equipment-cos-enchant
             [itemType]="'costumeEnchantLower'"
             [placeholder]="'Lower Enchant'"
@@ -1209,20 +1199,20 @@
             (selectItemChange)="onSelectItem('costumeEnchantLower', $event.itemId)"
           ></app-equipment-cos-enchant>
         </div>
+      </div>
 
-        <!-- Costume Garment -->
-        <div class="col-12 mt-2">
+      <!-- Garment -->
+      <div class="col-9 col-offset-3 grid grid-nogutter mt-2 item_label_costume">
+        <div class="col-4">
           <app-equipment-cos-enchant
-            [itemType]="'costumeEnchantGarment'"
-            [placeholder]="'Garment Enchant'"
-            [itemList]="costumeEnhGarmentList"
-            [(itemId)]="model.costumeEnchantGarment"
-            (selectItemChange)="onSelectItem('costumeEnchantGarment', $event.itemId)"
+            [itemType]="'costumeGarment'"
+            [placeholder]="'Costume Garment'"
+            [itemList]="costumeGarmentList"
+            [(itemId)]="model.costumeGarment"
+            (selectItemChange)="onSelectItem('costumeGarment', $event.itemId)"
           ></app-equipment-cos-enchant>
         </div>
-
-        <!-- Costume 2nd Garment -->
-        <div class="col-12">
+        <div class="col-4">
           <app-equipment-cos-enchant
             [itemType]="'costumeEnchantGarment2'"
             [placeholder]="'Garment Enchant 2'"
@@ -1231,7 +1221,7 @@
             (selectItemChange)="onSelectItem('costumeEnchantGarment2', $event.itemId)"
           ></app-equipment-cos-enchant>
         </div>
-        <div class="col-12 mb-3">
+        <div class="col-4">
           <app-equipment-cos-enchant
             [itemType]="'costumeEnchantGarment4'"
             [placeholder]="'Garment Enchant 4'"
@@ -1240,8 +1230,10 @@
             (selectItemChange)="onSelectItem('costumeEnchantGarment4', $event.itemId)"
           ></app-equipment-cos-enchant>
         </div>
+      </div>
 
-        <div class="col-12 item_label_compare" *ngIf="showCompareItemMap.costumeEnchantUpper">
+      <div class="col-9 col-offset-3 grid grid-nogutter item_label_costume flex flex-column">
+        <div class="col-4 item_label_compare" *ngIf="showCompareItemMap.costumeEnchantUpper">
           <app-equipment-cos-enchant
             [itemType]="'costumeEnchantUpper'"
             [placeholder]="'Upper Enchant'"
@@ -1250,7 +1242,7 @@
             (selectItemChange)="onCompareItemChange()"
           ></app-equipment-cos-enchant>
         </div>
-        <div class="col-12 item_label_compare" *ngIf="showCompareItemMap.costumeEnchantMiddle">
+        <div class="col-4 item_label_compare" *ngIf="showCompareItemMap.costumeEnchantMiddle">
           <app-equipment-cos-enchant
             [itemType]="'costumeEnchantMiddle'"
             [placeholder]="'Middle Enchant'"
@@ -1259,7 +1251,7 @@
             (selectItemChange)="onCompareItemChange()"
           ></app-equipment-cos-enchant>
         </div>
-        <div class="col-12 item_label_compare" *ngIf="showCompareItemMap.costumeEnchantLower">
+        <div class="col-4 item_label_compare" *ngIf="showCompareItemMap.costumeEnchantLower">
           <app-equipment-cos-enchant
             [itemType]="'costumeEnchantLower'"
             [placeholder]="'Lower Enchant'"
@@ -1268,127 +1260,163 @@
             (selectItemChange)="onCompareItemChange()"
           ></app-equipment-cos-enchant>
         </div>
-        <div class="col-12 item_label_compare" *ngIf="showCompareItemMap.costumeEnchantGarment">
-          <app-equipment-cos-enchant
-            [itemType]="'costumeEnchantGarment'"
-            [placeholder]="'Garment Enchant'"
-            [itemList]="costumeEnhGarmentList"
-            [(itemId)]="model2.costumeEnchantGarment"
-            (selectItemChange)="onCompareItemChange()"
-          ></app-equipment-cos-enchant>
-        </div>
-        <div class="col-12 item_label_compare" *ngIf="showCompareItemMap.costumeEnchantGarment2">
-          <app-equipment-cos-enchant
-            [itemType]="'costumeEnchantGarment2'"
-            [placeholder]="'Garment Enchant 2'"
-            [itemList]="costumeEnhGarment2List"
-            [(itemId)]="model2.costumeEnchantGarment2"
-            (selectItemChange)="onCompareItemChange()"
-          ></app-equipment-cos-enchant>
-        </div>
-        <div class="col-12 item_label_compare" *ngIf="showCompareItemMap.costumeEnchantGarment4">
-          <app-equipment-cos-enchant
-            [itemType]="'costumeEnchantGarment4'"
-            [placeholder]="'Garment Enchant 4'"
-            [itemList]="costumeEnhGarment4List"
-            [(itemId)]="model2.costumeEnchantGarment4"
-            (selectItemChange)="onCompareItemChange()"
-          ></app-equipment-cos-enchant>
+        <div class="col-12 grid grid-nogutter item_label_compare">
+          <div class="col-4" *ngIf="showCompareItemMap.costumeEnchantGarment">
+            <app-equipment-cos-enchant
+              [itemType]="'costumeEnchantGarment'"
+              [placeholder]="'Garment Enchant'"
+              [itemList]="costumeEnhGarmentList"
+              [(itemId)]="model2.costumeEnchantGarment"
+              (selectItemChange)="onCompareItemChange()"
+            ></app-equipment-cos-enchant>
+          </div>
+          <div class="col-4" *ngIf="showCompareItemMap.costumeEnchantGarment2">
+            <app-equipment-cos-enchant
+              [itemType]="'costumeEnchantGarment2'"
+              [placeholder]="'Garment Enchant 2'"
+              [itemList]="costumeEnhGarment2List"
+              [(itemId)]="model2.costumeEnchantGarment2"
+              (selectItemChange)="onCompareItemChange()"
+            ></app-equipment-cos-enchant>
+          </div>
+          <div class="col-4" *ngIf="showCompareItemMap.costumeEnchantGarment4">
+            <app-equipment-cos-enchant
+              [itemType]="'costumeEnchantGarment4'"
+              [placeholder]="'Garment Enchant 4'"
+              [itemList]="costumeEnhGarment4List"
+              [(itemId)]="model2.costumeEnchantGarment4"
+              (selectItemChange)="onCompareItemChange()"
+            ></app-equipment-cos-enchant>
+          </div>
         </div>
       </div>
-      <div class="col-6 grid grid-nogutter item_label_shadow align-content-start">
+    </div>
+
+    <!-- Shadow -->
+    <div class="grid grid-nogutter mt-3">
+      <div class="col-12 grid grid-nogutter align-content-start">
         <!-- Shadow Weapon -->
-        <div class="col-12">
+        <div class="col-12 item_label_shadow">
           <app-equipment-shadow
             [itemType]="'shadowWeapon'"
             [placeholder]="'Shadow Weapon'"
+            [items]="items"
+            [mapEnchant]="mapEnchant"
             [itemList]="shadowWeaponList"
             [refineList]="shadowRefineList"
             [optionList]="basicOptions"
             [(itemId)]="model.shadowWeapon"
             [(itemRefine)]="model.shadowWeaponRefine"
+            [(enchant3Id)]="model.shadowWeaponEnchant2"
+            [(enchant4Id)]="model.shadowWeaponEnchant3"
             [(optionValue)]="model.rawOptionTxts[itemOptionNumber.SD_Wp_1]"
             (selectItemChange)="onSelectItem($event.itemType, $event.itemId, $event.refine)"
-            (optionChange)="onOptionChange()"
-          ></app-equipment-shadow>
-        </div>
-
-        <!-- Shadow Armor -->
-        <div class="col-12">
-          <app-equipment-shadow
-            [itemType]="'shadowArmor'"
-            [placeholder]="'Shadow Armor'"
-            [itemList]="shadowArmorList"
-            [refineList]="shadowRefineList"
-            [optionList]="basicOptions"
-            [(itemId)]="model.shadowArmor"
-            [(itemRefine)]="model.shadowArmorRefine"
-            [(optionValue)]="model.rawOptionTxts[itemOptionNumber.SD_Ar_1]"
-            (selectItemChange)="onSelectItem($event.itemType, $event.itemId, $event.refine)"
+            (clearItemEvent)="onClearItem($event)"
             (optionChange)="onOptionChange()"
           ></app-equipment-shadow>
         </div>
 
         <!-- Shadow Shield -->
-        <div class="col-12">
+        <div class="col-12 item_label_shadow">
           <app-equipment-shadow
             [itemType]="'shadowShield'"
             [placeholder]="'Shadow Shield'"
+            [items]="items"
+            [mapEnchant]="mapEnchant"
             [itemList]="shadowShieldList"
             [refineList]="shadowRefineList"
             [optionList]="basicOptions"
             [(itemId)]="model.shadowShield"
             [(itemRefine)]="model.shadowShieldRefine"
+            [(enchant3Id)]="model.shadowShieldEnchant2"
+            [(enchant4Id)]="model.shadowShieldEnchant3"
             [(optionValue)]="model.rawOptionTxts[itemOptionNumber.SD_Sh_1]"
             (selectItemChange)="onSelectItem($event.itemType, $event.itemId, $event.refine)"
+            (clearItemEvent)="onClearItem($event)"
+            (optionChange)="onOptionChange()"
+          ></app-equipment-shadow>
+        </div>
+
+        <!-- Shadow Armor -->
+        <div class="col-12 item_label_shadow">
+          <app-equipment-shadow
+            [itemType]="'shadowArmor'"
+            [placeholder]="'Shadow Armor'"
+            [items]="items"
+            [mapEnchant]="mapEnchant"
+            [itemList]="shadowArmorList"
+            [refineList]="shadowRefineList"
+            [optionList]="basicOptions"
+            [(itemId)]="model.shadowArmor"
+            [(itemRefine)]="model.shadowArmorRefine"
+            [(enchant3Id)]="model.shadowArmorEnchant2"
+            [(enchant4Id)]="model.shadowArmorEnchant3"
+            [(optionValue)]="model.rawOptionTxts[itemOptionNumber.SD_Ar_1]"
+            (selectItemChange)="onSelectItem($event.itemType, $event.itemId, $event.refine)"
+            (clearItemEvent)="onClearItem($event)"
             (optionChange)="onOptionChange()"
           ></app-equipment-shadow>
         </div>
 
         <!-- Shadow Boot -->
-        <div class="col-12">
+        <div class="col-12 item_label_shadow">
           <app-equipment-shadow
             [itemType]="'shadowBoot'"
             [placeholder]="'Shadow Boot'"
+            [items]="items"
+            [mapEnchant]="mapEnchant"
             [itemList]="shadowBootList"
             [refineList]="shadowRefineList"
             [optionList]="basicOptions"
             [(itemId)]="model.shadowBoot"
             [(itemRefine)]="model.shadowBootRefine"
+            [(enchant3Id)]="model.shadowBootEnchant2"
+            [(enchant4Id)]="model.shadowBootEnchant3"
             [(optionValue)]="model.rawOptionTxts[itemOptionNumber.SD_B_1]"
             (selectItemChange)="onSelectItem($event.itemType, $event.itemId, $event.refine)"
+            (clearItemEvent)="onClearItem($event)"
             (optionChange)="onOptionChange()"
           ></app-equipment-shadow>
         </div>
 
         <!-- Shadow Earring -->
-        <div class="col-12">
+        <div class="col-12 item_label_shadow">
           <app-equipment-shadow
             [itemType]="'shadowEarring'"
             [placeholder]="'Shadow Earring'"
+            [items]="items"
+            [mapEnchant]="mapEnchant"
             [itemList]="shadowEarringList"
             [refineList]="shadowRefineList"
             [optionList]="basicOptions"
             [(itemId)]="model.shadowEarring"
             [(itemRefine)]="model.shadowEarringRefine"
+            [(enchant3Id)]="model.shadowEarringEnchant2"
+            [(enchant4Id)]="model.shadowEarringEnchant3"
             [(optionValue)]="model.rawOptionTxts[itemOptionNumber.SD_Ear_1]"
             (selectItemChange)="onSelectItem($event.itemType, $event.itemId, $event.refine)"
+            (clearItemEvent)="onClearItem($event)"
             (optionChange)="onOptionChange()"
           ></app-equipment-shadow>
         </div>
 
         <!-- Shadow Pendant -->
-        <div class="col-12">
+        <div class="col-12 item_label_shadow">
           <app-equipment-shadow
             [itemType]="'shadowPendant'"
             [placeholder]="'Shadow Pendant'"
+            [items]="items"
+            [mapEnchant]="mapEnchant"
             [itemList]="shadowPendantList"
             [refineList]="shadowRefineList"
             [optionList]="basicOptions"
             [(itemId)]="model.shadowPendant"
             [(itemRefine)]="model.shadowPendantRefine"
+            [(enchant3Id)]="model.shadowPendantEnchant2"
+            [(enchant4Id)]="model.shadowPendantEnchant3"
             [(optionValue)]="model.rawOptionTxts[itemOptionNumber.SD_Pan_1]"
             (selectItemChange)="onSelectItem($event.itemType, $event.itemId, $event.refine)"
+            (clearItemEvent)="onClearItem($event)"
             (optionChange)="onOptionChange()"
           ></app-equipment-shadow>
         </div>
@@ -1397,26 +1425,16 @@
           <app-equipment-shadow
             [itemType]="'shadowWeapon'"
             [placeholder]="'Shadow Weapon'"
+            [items]="items"
+            [mapEnchant]="mapEnchant"
             [itemList]="shadowWeaponList"
             [refineList]="shadowRefineList"
             [optionList]="basicOptions"
             [(itemId)]="model2.shadowWeapon"
             [(itemRefine)]="model2.shadowWeaponRefine"
+            [(enchant3Id)]="model2.shadowWeaponEnchant2"
+            [(enchant4Id)]="model2.shadowWeaponEnchant3"
             [(optionValue)]="model2.rawOptionTxts[itemOptionNumber.SD_Wp_1]"
-            (selectItemChange)="onCompareItemChange()"
-            (optionChange)="onCompareItemChange()"
-          ></app-equipment-shadow>
-        </div>
-        <div class="col-12 item_label_compare" *ngIf="showCompareItemMap.shadowArmor">
-          <app-equipment-shadow
-            [itemType]="'shadowArmor'"
-            [placeholder]="'Shadow Armor'"
-            [itemList]="shadowArmorList"
-            [refineList]="shadowRefineList"
-            [optionList]="basicOptions"
-            [(itemId)]="model2.shadowArmor"
-            [(itemRefine)]="model2.shadowArmorRefine"
-            [(optionValue)]="model2.rawOptionTxts[itemOptionNumber.SD_Ar_1]"
             (selectItemChange)="onCompareItemChange()"
             (optionChange)="onCompareItemChange()"
           ></app-equipment-shadow>
@@ -1425,12 +1443,34 @@
           <app-equipment-shadow
             [itemType]="'shadowShield'"
             [placeholder]="'Shadow Shield'"
+            [items]="items"
+            [mapEnchant]="mapEnchant"
             [itemList]="shadowShieldList"
             [refineList]="shadowRefineList"
             [optionList]="basicOptions"
             [(itemId)]="model2.shadowShield"
             [(itemRefine)]="model2.shadowShieldRefine"
+            [(enchant3Id)]="model2.shadowShieldEnchant2"
+            [(enchant4Id)]="model2.shadowShieldEnchant3"
             [(optionValue)]="model2.rawOptionTxts[itemOptionNumber.SD_Sh_1]"
+            (selectItemChange)="onCompareItemChange()"
+            (optionChange)="onCompareItemChange()"
+          ></app-equipment-shadow>
+        </div>
+        <div class="col-12 item_label_compare" *ngIf="showCompareItemMap.shadowArmor">
+          <app-equipment-shadow
+            [itemType]="'shadowArmor'"
+            [placeholder]="'Shadow Armor'"
+            [items]="items"
+            [mapEnchant]="mapEnchant"
+            [itemList]="shadowArmorList"
+            [refineList]="shadowRefineList"
+            [optionList]="basicOptions"
+            [(itemId)]="model2.shadowArmor"
+            [(itemRefine)]="model2.shadowArmorRefine"
+            [(enchant3Id)]="model2.shadowArmorEnchant2"
+            [(enchant4Id)]="model2.shadowArmorEnchant3"
+            [(optionValue)]="model2.rawOptionTxts[itemOptionNumber.SD_Ar_1]"
             (selectItemChange)="onCompareItemChange()"
             (optionChange)="onCompareItemChange()"
           ></app-equipment-shadow>
@@ -1439,11 +1479,15 @@
           <app-equipment-shadow
             [itemType]="'shadowBoot'"
             [placeholder]="'Shadow Boot'"
+            [items]="items"
+            [mapEnchant]="mapEnchant"
             [itemList]="shadowBootList"
             [refineList]="shadowRefineList"
             [optionList]="basicOptions"
             [(itemId)]="model2.shadowBoot"
             [(itemRefine)]="model2.shadowBootRefine"
+            [(enchant3Id)]="model2.shadowBootEnchant2"
+            [(enchant4Id)]="model2.shadowBootEnchant3"
             [(optionValue)]="model2.rawOptionTxts[itemOptionNumber.SD_B_1]"
             (selectItemChange)="onCompareItemChange()"
             (optionChange)="onCompareItemChange()"
@@ -1453,11 +1497,15 @@
           <app-equipment-shadow
             [itemType]="'shadowEarring'"
             [placeholder]="'Shadow Earring'"
+            [items]="items"
+            [mapEnchant]="mapEnchant"
             [itemList]="shadowEarringList"
             [refineList]="shadowRefineList"
             [optionList]="basicOptions"
             [(itemId)]="model2.shadowEarring"
             [(itemRefine)]="model2.shadowEarringRefine"
+            [(enchant3Id)]="model2.shadowEarringEnchant2"
+            [(enchant4Id)]="model2.shadowEarringEnchant3"
             [(optionValue)]="model2.rawOptionTxts[itemOptionNumber.SD_Ear_1]"
             (selectItemChange)="onCompareItemChange()"
             (optionChange)="onCompareItemChange()"
@@ -1467,11 +1515,15 @@
           <app-equipment-shadow
             [itemType]="'shadowPendant'"
             [placeholder]="'Shadow Pendant'"
+            [items]="items"
+            [mapEnchant]="mapEnchant"
             [itemList]="shadowPendantList"
             [refineList]="shadowRefineList"
             [optionList]="basicOptions"
             [(itemId)]="model2.shadowPendant"
             [(itemRefine)]="model2.shadowPendantRefine"
+            [(enchant3Id)]="model2.shadowPendantEnchant2"
+            [(enchant4Id)]="model2.shadowPendantEnchant3"
             [(optionValue)]="model2.rawOptionTxts[itemOptionNumber.SD_Pan_1]"
             (selectItemChange)="onCompareItemChange()"
             (optionChange)="onCompareItemChange()"
@@ -1861,11 +1913,11 @@
       <p-accordionTab header="Summary">
         <div class="grid grid-nogutter" style="overflow: auto">
           <div class="col-6 json_display">
-            <pre [innerHTML]="modelSummary | prettyjson : [true, 3]"></pre>
-            <pre *ngIf="isEnableCompare" [innerHTML]="model2 | prettyjson : [true, 3]"></pre>
+            <pre [innerHTML]="modelSummary | prettyjson: [true, 3]"></pre>
+            <pre *ngIf="isEnableCompare" [innerHTML]="model2 | prettyjson: [true, 3]"></pre>
           </div>
           <div class="col-6 json_display">
-            <pre [innerHTML]="totalSummary | prettyjson : [true, 3]"></pre>
+            <pre [innerHTML]="totalSummary | prettyjson: [true, 3]"></pre>
           </div>
         </div>
       </p-accordionTab>
@@ -1873,10 +1925,10 @@
       <p-accordionTab header="Equipments Summary">
         <div class="grid grid-nogutter">
           <div class="col-6 json_display">
-            <pre [innerHTML]="itemSummary | prettyjson : [true, 3]"></pre>
+            <pre [innerHTML]="itemSummary | prettyjson: [true, 3]"></pre>
           </div>
           <div class="col-6 json_display">
-            <pre [innerHTML]="itemSummary2 | prettyjson : [true, 3]"></pre>
+            <pre [innerHTML]="itemSummary2 | prettyjson: [true, 3]"></pre>
           </div>
         </div>
       </p-accordionTab>
@@ -1923,7 +1975,7 @@
             <div class="grid grid-nogutter ml-2" style="max-height: 700px; overflow: auto">
               <div class="col-12 json_display">
                 ItemID: {{ itemId }}
-                <pre [innerHTML]="itemBonus | prettyjson : [true, 3]"></pre>
+                <pre [innerHTML]="itemBonus | prettyjson: [true, 3]"></pre>
               </div>
               <div class="col-12 px-2 py-2" style="color: #000; background-color: #fff" [innerHTML]="itemDescription"></div>
             </div>

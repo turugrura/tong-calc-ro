@@ -17,7 +17,9 @@ export interface PresetModel {
   selectedAtkSkill: string;
   rawOptionTxts: any[];
   propertyAtk: string;
+
   ammo: number;
+
   weapon: number;
   weaponRefine: number;
   weaponCard1: number;
@@ -28,6 +30,7 @@ export interface PresetModel {
   weaponEnchant1: number;
   weaponEnchant2: number;
   weaponEnchant3: number;
+
   leftWeapon: number;
   leftWeaponRefine: number;
   leftWeaponCard1: number;
@@ -38,12 +41,14 @@ export interface PresetModel {
   leftWeaponEnchant1: number;
   leftWeaponEnchant2: number;
   leftWeaponEnchant3: number;
+
   shield: number;
   shieldRefine: number;
   shieldCard: number;
   shieldEnchant1: number;
   shieldEnchant2: number;
   shieldEnchant3: number;
+
   headUpper: number;
   headUpperRefine: number;
   headUpperCard: number;
@@ -59,6 +64,7 @@ export interface PresetModel {
   headLowerEnchant1: number;
   headLowerEnchant2: number;
   headLowerEnchant3: number;
+
   armor: number;
   armorRefine: number;
   armorCard: number;
@@ -89,29 +95,51 @@ export interface PresetModel {
   accRightEnchant1: number;
   accRightEnchant2: number;
   accRightEnchant3: number;
+
   pet: number;
+
   costumeEnchantUpper: number;
   costumeEnchantMiddle: number;
   costumeEnchantLower: number;
   costumeEnchantGarment: number;
   costumeEnchantGarment4: number;
+
   shadowWeapon: number;
   shadowWeaponRefine: number;
+  shadowWeaponEnchant1: number;
+  shadowWeaponEnchant2: number;
+  shadowWeaponEnchant3: number;
   shadowArmor: number;
   shadowArmorRefine: number;
+  shadowArmorEnchant1: number;
+  shadowArmorEnchant2: number;
+  shadowArmorEnchant3: number;
   shadowShield: number;
   shadowShieldRefine: number;
+  shadowShieldEnchant1: number;
+  shadowShieldEnchant2: number;
+  shadowShieldEnchant3: number;
   shadowBoot: number;
   shadowBootRefine: number;
+  shadowBootEnchant1: number;
+  shadowBootEnchant2: number;
+  shadowBootEnchant3: number;
   shadowEarring: number;
   shadowEarringRefine: number;
+  shadowEarringEnchant1: number;
+  shadowEarringEnchant2: number;
+  shadowEarringEnchant3: number;
   shadowPendant: number;
   shadowPendantRefine: number;
-  skillBuffMap: { [key: string]: number };
+  shadowPendantEnchant1: number;
+  shadowPendantEnchant2: number;
+  shadowPendantEnchant3: number;
+
+  skillBuffMap: { [key: string]: number; };
   skillBuffs: number[];
-  activeSkillMap: { [key: string]: number };
+  activeSkillMap: { [key: string]: number; };
   activeSkills: number[];
-  passiveSkillMap: { [key: string]: number };
+  passiveSkillMap: { [key: string]: number; };
   passiveSkills: number[];
   consumables: any[];
   consumables2: any[];
