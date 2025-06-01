@@ -134,6 +134,7 @@ import { royalHArmor2, royalHArmor3, royalHArmor4, royalHBoot3, royalHBoot4, roy
 import { goodEvilBoot3_ABC, goodEvilBoot3_AG, goodEvilBoot3_BO, goodEvilBoot3_CD, goodEvilBoot3_DK, goodEvilBoot3_EM, goodEvilBoot3_HN, goodEvilBoot3_IG, goodEvilBoot3_IQ, goodEvilBoot3_MT, goodEvilBoot3_NW, goodEvilBoot3_SH, goodEvilBoot3_SHC, goodEvilBoot3_SKE, goodEvilBoot3_SOA, goodEvilBoot3_SS, goodEvilBoot3_TR, goodEvilBoot3_WH, goodEvilBoot4, goodEvilHead3, goodEvilHead4, sinsFateWeapon3, sinsFateWeapon4 } from './sins_and_fate';
 import { snowFwAccL2, snowFwAccL3, snowFwAccL4, snowFwAccR2, snowFwAccR3, snowFwAccR4, snowFwArmor2, snowFwArmor3, snowFwArmor4, snowFwBoot2, snowFwBoot3, snowFwBoot4, snowFwGarment2, snowFwGarment3, snowFwGarment4 } from './snow_flower';
 import { thanosBoot3, thanosBoot4, thanosHead3, thanosHead4 } from './thanos';
+import { traitShadow3, traitShadow4 } from './trait_shadow';
 import { corruptedPoisonArmor2, corruptedPoisonArmor3, corruptedPoisonArmor4, fieryEarthArmor2, fieryEarthArmor3, fieryEarthArmor4, flameRuneArmor2, icyStromArmor2, icyStromArmor3, icyStromArmor4, soulPurifyArmor2, soulPurifyArmor3, soulPurifyArmor4, varmundt3, varmundt4, varmundtAcc3, varmundtAcc4, varmundtHiAcc2 } from './varmundt';
 import { vivatusHead3, vivatusHead4 } from './vivatus';
 import { whiteKnight2, whiteKnight34 } from './white_knigh_man';
@@ -1738,6 +1739,21 @@ export const EnchantTable: EntTable[] = [
   { name: "S_HN_Shoes", enchants: [null, null, mShadowHYPER3, mShadowAllClass4] },
   { name: "S_HN_Earring", enchants: [null, null, mShadowHYPER3, mShadowAllClass4] },
   { name: "S_HN_Pendant", enchants: [null, null, mShadowHYPER3, mShadowAllClass4] },
+
+  { name: "S_Full_Power_Armor", enchants: [null, null, traitShadow3, traitShadow4] },
+  { name: "S_Full_Power_Shoes", enchants: [null, null, traitShadow3, traitShadow4] },
+  { name: "S_Full_Rate_Armor", enchants: [null, null, traitShadow3, traitShadow4] },
+  { name: "S_Full_Rate_Shoes", enchants: [null, null, traitShadow3, traitShadow4] },
+  { name: "S_Focusing_Pendant", enchants: [null, null, traitShadow3, traitShadow4] },
+  { name: "S_Focusing_Earring", enchants: [null, null, traitShadow3, traitShadow4] },
+  { name: "S_Stout_Pendant", enchants: [null, null, traitShadow3, traitShadow4] },
+  { name: "S_Stout_Earring", enchants: [null, null, traitShadow3, traitShadow4] },
+  { name: "S_Full_Spell_Armor", enchants: [null, null, traitShadow3, traitShadow4] },
+  { name: "S_Full_Spell_Shoes", enchants: [null, null, traitShadow3, traitShadow4] },
+  { name: "S_Centering_Pendant", enchants: [null, null, traitShadow3, traitShadow4] },
+  { name: "S_Centering_Earring", enchants: [null, null, traitShadow3, traitShadow4] },
+  { name: "S_Witty_Pendant", enchants: [null, null, traitShadow3, traitShadow4] },
+  { name: "S_Witty_Earring", enchants: [null, null, traitShadow3, traitShadow4] },
 ];
 
 Object.freeze(EnchantTable);

@@ -1,0 +1,43 @@
+import { Agi, Dex, Int, Luk, Str } from "./_basic";
+
+export const traitShadow4 = [
+  Str._3,
+  Int._3,
+  Dex._3,
+  Agi._3,
+  Dex._3,
+  Luk._3,
+];
+
+export const traitShadow3 = [
+  "Shadow_ATK_1",
+  "Shadow_ATK_2",
+  "Shadow_ATK_3",
+  "Shadow_ATK_4",
+  "Shadow_ATK_5",
+  "Shadow_MATK_1",
+  "Shadow_MATK_2",
+  "Shadow_MATK_3",
+  "Shadow_MATK_4",
+  "Shadow_MATK_5",
+  "Shadow_CRI_1",
+  "Shadow_CRI_2",
+  "Shadow_CRI_3",
+  "Shadow_CRI_4",
+  "Shadow_CRI_5",
+  "Shadow_CAST_1",
+  "Shadow_CAST_2",
+  "Shadow_CAST_3",
+  "Shadow_CAST_4",
+  "Shadow_CAST_5",
+  "Shadow_HP_1",
+  "Shadow_HP_2",
+  "Shadow_HP_3",
+  "Shadow_HP_4",
+  "Shadow_HP_5",
+  "Shadow_SP_1",
+  "Shadow_SP_2",
+  "Shadow_SP_3",
+  "Shadow_SP_4",
+  "Shadow_SP_5",
+];
