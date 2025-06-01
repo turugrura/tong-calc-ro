@@ -266,6 +266,46 @@ export class HyperNovice extends SuperNovice {
         return (350 + skillLevel * (650 + skillBonusLv * 4) + totalSpl * 3) * (baseLevel / 100);
       },
     },
+    {
+      name: 'Jupitel Thunderstorm',
+      label: '[V2] Jupitel Thunderstorm Lv10',
+      value: 'Jupitel Thunderstorm==10',
+      acd: 0.5,
+      fct: 1,
+      vct: 2,
+      cd: 1.8,
+      totalHit: 10,
+      isMatk: true,
+      element: ElementType.Wind,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalSpl } = status;
+        const baseLevel = model.level;
+        const skillBonusLv = this.learnLv('Self Study Sorcery');
+
+        return (skillLevel * (1600 + skillBonusLv * 3) + totalSpl * 3) * (baseLevel / 100);
+      },
+    },
+    {
+      name: "Hell's Drive",
+      label: "[V2] Hell's Drive Lv10",
+      value: "Hell's Drive==10",
+      acd: 1,
+      fct: 1,
+      vct: 1.2,
+      cd: 0.7,
+      hit: 3,
+      isMatk: true,
+      element: ElementType.Earth,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const { totalSpl } = status;
+        const baseLevel = model.level;
+        const skillBonusLv = this.learnLv('Self Study Sorcery');
+
+        return (1500 + skillLevel * (700 + skillBonusLv * 4) + totalSpl * 3) * (baseLevel / 100);
+      },
+    },
   ];
   private readonly activeSkillList4th: ActiveSkillModel[] = [];
   private readonly passiveSkillList4th: PassiveSkillModel[] = [
