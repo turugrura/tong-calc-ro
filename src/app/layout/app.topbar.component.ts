@@ -209,7 +209,8 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
       v: 'V3.2.7',
       date: '31-05-2568',
       logs: [
-        "Added Master shadow ses",
+        "Added Master shadow sets, Trait shadow sets",
+        "Added Hyper Novice skills (Jupitel Thunderstorm, Hell's Drive)",
         'Updated Item Ranking data',
       ],
     },
