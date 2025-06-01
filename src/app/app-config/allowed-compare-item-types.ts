@@ -17,8 +17,8 @@ export const AllowedCompareItemTypes = [
   'costumeEnchantGarment4',
 
   'shadowWeapon',
-  'shadowArmor',
   'shadowShield',
+  'shadowArmor',
   'shadowBoot',
   'shadowEarring',
   'shadowPendant',
