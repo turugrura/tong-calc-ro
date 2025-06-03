@@ -839,6 +839,17 @@ export class Calculator {
       if (restCondition.startsWith('===')) return { isValid: true, restCondition };
     }
 
+    // ITEM_LV[me==2]===8
+    const [unusedItemLv, itemLvCondition] = restCondition.match(/ITEM_LV\[(.+?)]/) ?? [];
+    if (itemLvCondition) {
+      const [rawitemType, itemLv] = itemLvCondition.split('==');
+      const targetItemType = rawitemType === 'me' ? itemType.replace(/Enchant\d|Card.*/, '') : rawitemType;
+      const targetItem = this.equipItem.get(targetItemType as ItemTypeEnum);
+      if (targetItem?.itemLevel !== Number(itemLv)) return { isValid: false, restCondition };
+      restCondition = restCondition.replace(unusedItemLv, '');
+      if (restCondition.startsWith('===')) return { isValid: true, restCondition };
+    }
+
     // SPAWN[tur_d03_i||tur_d04_i]
     const [unusedSp, rawSpawn] = restCondition.match(/SPAWN\[(.+?)]/) ?? [];
     if (rawSpawn) {

@@ -1840,20 +1840,55 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
             headLowerList.push(item);
           } else {
             // if (!item.name.startsWith('Furious')) continue;
-            headUpperList.push(item);
+            if (item.itemLevel > 1) {
+              headUpperList.push({
+                ...item,
+                name: `[LV ${item.itemLevel}] ${item.name}`
+              });
+            } else {
+              headUpperList.push(item);
+            }
           }
           continue;
         case ItemSubTypeId.Shield:
-          shieldList.push(item);
+          if (item.itemLevel > 1) {
+            shieldList.push({
+              ...item,
+              name: `[LV ${item.itemLevel}] ${item.name}`
+            });
+          } else {
+            shieldList.push(item);
+          }
           continue;
         case ItemSubTypeId.Armor:
-          armorList.push(item);
+          if (item.itemLevel > 1) {
+            armorList.push({
+              ...item,
+              name: `[LV ${item.itemLevel}] ${item.name}`
+            });
+          } else {
+            armorList.push(item);
+          }
           continue;
         case ItemSubTypeId.Garment:
-          garmentList.push(item);
+          if (item.itemLevel > 1) {
+            garmentList.push({
+              ...item,
+              name: `[LV ${item.itemLevel}] ${item.name}`
+            });
+          } else {
+            garmentList.push(item);
+          }
           continue;
         case ItemSubTypeId.Boot:
-          bootList.push(item);
+          if (item.itemLevel > 1) {
+            bootList.push({
+              ...item,
+              name: `[LV ${item.itemLevel}] ${item.name}`
+            });
+          } else {
+            bootList.push(item);
+          }
           continue;
         case ItemSubTypeId.Acc_L:
           accLeftList.push(item);
