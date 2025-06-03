@@ -1819,9 +1819,24 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       switch (itemTypeId) {
         case ItemTypeId.WEAPON:
           // if (!item.name.startsWith('Furious')) continue;
-          weaponList.push(item);
+          if (item.itemLevel > 4) {
+            weaponList.push({
+              ...item,
+              name: `[LV ${item.itemLevel}] ${item.name}`
+            });
+          } else {
+            weaponList.push(item);
+          }
+
           if (itemSubTypeId === 256 || itemSubTypeId === 257) {
-            leftWeaponList.push(item);
+            if (item.itemLevel > 4) {
+              leftWeaponList.push({
+                ...item,
+                name: `[LV ${item.itemLevel}] ${item.name}`
+              });
+            } else {
+              leftWeaponList.push(item);
+            }
           }
           continue;
         case ItemTypeId.CONSUMABLE:
