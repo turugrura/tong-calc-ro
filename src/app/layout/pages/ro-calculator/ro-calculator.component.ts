@@ -1542,7 +1542,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
   private buildEquipItemList(itemMap: Map<ItemTypeEnum, number>, model: typeof this.model | typeof this.model2) {
     return [...itemMap.entries()]
-      .filter(([_itemType, id]) => this.items[id])
+      .filter(([itemType, id]) => this.items[id] && model[itemType])
       .map(([itemType, id]) => {
         const grade = model[`${itemType}Grade`];
         const prefixGrade = grade && typeof grade === 'string' ? ` [${grade}] ` : '';
