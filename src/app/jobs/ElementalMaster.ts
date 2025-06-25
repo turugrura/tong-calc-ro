@@ -360,11 +360,11 @@ export class ElementalMaster extends Sorcerer {
 
     const magicBookLv = this.learnLv('Magic Book Mastery');
     if (magicBookLv > 0 && weapon.isType('book')) {
-      addBonus(totalBonus, 'm_element_water', magicBookLv);
-      addBonus(totalBonus, 'm_element_wind', magicBookLv);
-      addBonus(totalBonus, 'm_element_earth', magicBookLv);
-      addBonus(totalBonus, 'm_element_fire', magicBookLv);
-      addBonus(totalBonus, 'm_element_poison', magicBookLv);
+      addBonus(totalBonus, 'm_my_element_water', magicBookLv);
+      addBonus(totalBonus, 'm_my_element_wind', magicBookLv);
+      addBonus(totalBonus, 'm_my_element_earth', magicBookLv);
+      addBonus(totalBonus, 'm_my_element_fire', magicBookLv);
+      addBonus(totalBonus, 'm_my_element_poison', magicBookLv);
     }
 
     this.setSpiritBonus(totalBonus);
