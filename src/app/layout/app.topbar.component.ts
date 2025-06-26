@@ -206,6 +206,17 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
 
   updates: { v: string; date: string; logs: string[]; }[] = [
     {
+      v: 'V3.2.9',
+      date: '28-06-2568',
+      logs: [
+        "Fixed combo Poenitentia Crown of Honos & Poenitentia Crystallum bonus to Framen (previously is Flamen)",
+        "Fixed Star Cluster of Power give invalid POW bonus",
+        "Fixed Magic Book Mastery bonus to elemental damage (previously is damage to monter property)",
+        "Add 5th enchantment for some middle headgear",
+        "Added Official updated items",
+      ],
+    },
+    {
       v: 'V3.2.8',
       date: '03-06-2568',
       logs: [
