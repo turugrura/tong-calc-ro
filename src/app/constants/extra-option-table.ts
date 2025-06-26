@@ -125,6 +125,8 @@ export const ExtraOptionTable = {
   Kafra_Suit: 1,
   SeeOtter_Fan: 2,
   FurSeal_Fan: 2,
+  SeeOtter_Fan_LT: 2,
+  FurSeal_Fan_LT: 2,
 
   Ear_Of_Flame_TH: 2,
   Ear_Of_Soul_TH: 2,
