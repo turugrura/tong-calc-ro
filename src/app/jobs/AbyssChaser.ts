@@ -206,8 +206,8 @@ export class AbyssChaser extends ShadowChaser {
     },
     {
       name: 'Deft Stab',
-      label: '[V3] Deft Stab Lv5',
-      value: 'Deft Stab==5',
+      label: '[V3] Deft Stab Lv10',
+      value: 'Deft Stab==10',
       acd: 0.5,
       fct: 0,
       vct: 0,

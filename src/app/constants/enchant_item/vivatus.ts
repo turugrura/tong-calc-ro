@@ -1,4 +1,4 @@
-import { Acute, Adamatine, MagicEess, MasterArc, Mettle, Tenacity, aspd13, delay13, ea13, fs35, sh13, sp13 } from "./_basic";
+import { Acute, Adamatine, AttackDelay, EA, ExpertFighter, ExpertMagician, MagicEess, MasterArc, Mettle, SkillDelay, Spell, Tenacity } from "./_basic";
 
 export const vivatusHead4 = [
   // Acute._1,
@@ -34,10 +34,16 @@ export const vivatusHead4 = [
 ];
 
 export const vivatusHead3 = [
-  ...fs35,
-  ...aspd13,
-  ...sp13,
-  ...ea13,
-  ...delay13,
-  ...sh13,
+  EA._3,
+  EA._5,
+  ExpertFighter._3,
+  ExpertFighter._5,
+  ExpertMagician._3,
+  ExpertMagician._5,
+  Spell._3,
+  Spell._5,
+  AttackDelay._2,
+  AttackDelay._4,
+  SkillDelay._1,
+  SkillDelay._3,
 ];
