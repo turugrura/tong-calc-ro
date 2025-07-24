@@ -135,6 +135,7 @@ import { goodEvilBoot3_ABC, goodEvilBoot3_AG, goodEvilBoot3_BO, goodEvilBoot3_CD
 import { snowFwAccL2, snowFwAccL3, snowFwAccL4, snowFwAccR2, snowFwAccR3, snowFwAccR4, snowFwArmor2, snowFwArmor3, snowFwArmor4, snowFwBoot2, snowFwBoot3, snowFwBoot4, snowFwGarment2, snowFwGarment3, snowFwGarment4 } from './snow_flower';
 import { thanosBoot3, thanosBoot4, thanosHead3, thanosHead4 } from './thanos';
 import { traitShadow3, traitShadow4 } from './trait_shadow';
+import { unkWatch2, unkWatch34 } from './unknown_watch';
 import { corruptedPoisonArmor2, corruptedPoisonArmor3, corruptedPoisonArmor4, fieryEarthArmor2, fieryEarthArmor3, fieryEarthArmor4, flameRuneArmor2, icyStromArmor2, icyStromArmor3, icyStromArmor4, soulPurifyArmor2, soulPurifyArmor3, soulPurifyArmor4, varmundt3, varmundt4, varmundtAcc3, varmundtAcc4, varmundtHiAcc2 } from './varmundt';
 import { vivatusHead3, vivatusHead4 } from './vivatus';
 import { whiteKnight2, whiteKnight34 } from './white_knigh_man';
@@ -1090,6 +1091,8 @@ export const EnchantTable: EntTable[] = [
   { name: "Heroic_Hairband_AG_LT", enchants: [null, null, heroicHead3, heroicHead4] },
   { name: "Heroic_Hairband_DK_LT", enchants: [null, null, heroicHead3, heroicHead4] },
   { name: "Heroic_Hairband_SKE_LT", enchants: [null, null, heroicHead3, heroicHead4] },
+  { name: "Heroic_Hairband_MT_LT", enchants: [null, null, heroicHead3, heroicHead4] },
+  { name: "Heroic_Hairband_BO_LT", enchants: [null, null, heroicHead3, heroicHead4] },
 
   { name: 'Barmund_Flame_Armor', enchants: [null, null, varmundt3, varmundt4] },
   { name: 'Barmund_Plain_Armor', enchants: [null, null, varmundt3, varmundt4] },
@@ -1332,6 +1335,10 @@ export const EnchantTable: EntTable[] = [
   { name: "Fourth_Shotgun", enchants: [null, null, crafted3, crafted4] },
   { name: "Fourth_Gatling", enchants: [null, null, crafted3, crafted4] },
   { name: "Fourth_Grenade", enchants: [null, null, crafted3, crafted4] },
+
+  { name: "Unknown_Watch_SHC", enchants: [null, unkWatch2, unkWatch34, unkWatch34] },
+  { name: "Unknown_Watch_HN", enchants: [null, unkWatch2, unkWatch34, unkWatch34] },
+  { name: "Unknown_Watch_AC", enchants: [null, unkWatch2, unkWatch34, unkWatch34] },
 
   { name: "GoodnEvil_Circlet_DK", enchants: [null, null, goodEvilHead3, goodEvilHead4] },
   { name: "GoodnEvil_Circlet_IG", enchants: [null, null, goodEvilHead3, goodEvilHead4] },
@@ -1613,6 +1620,8 @@ export const EnchantTable: EntTable[] = [
   { name: "Volcano_H_Ring_TH", enchants: [null, ['HeroAcc_AG1'], ['HeroAcc_WL1'], heroRing4] },
   { name: "Dragon_Order_TH", enchants: [null, ['HeroAcc_DK1'], ['HeroAcc_RK1'], heroRing4] },
   { name: "Foot_Stamp_TH", enchants: [null, ['HeroAcc_SKE1'], ['HeroAcc_SJ1'], heroRing4] },
+  { name: "Laser_Hero_Ring_TH", enchants: [null, ['HeroAcc_MT1'], ['HeroAcc_MC1'], heroRing4] },
+  { name: "Dragon_Plant_TH", enchants: [null, ['HeroAcc_BO1'], ['HeroAcc_GN1'], heroRing4] },
 
   { name: 'Katar_Of_Infinite', enchants: [null, null, timeGap3, timeGap4] },
   { name: 'Time_Gap_SS_Dagger1', enchants: [null, null, timeGap3, timeGap4] },

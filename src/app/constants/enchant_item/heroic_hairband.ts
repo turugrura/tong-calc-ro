@@ -31,4 +31,10 @@ export const heroicHead3 = [
   "Hero_Valor_SKE_1",
   "Hero_Valor_SKE_2",
   "Hero_Valor_SKE_3",
+  "Hero_Valor_MT_1",
+  "Hero_Valor_MT_2",
+  "Hero_Valor_MT_3",
+  "Hero_Valor_BO_1",
+  "Hero_Valor_BO_2",
+  "Hero_Valor_BO_3",
 ];
