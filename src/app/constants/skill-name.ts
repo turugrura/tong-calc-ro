@@ -293,6 +293,7 @@ export const OFFENSIVE_SKILL_NAMES = [
   'Axe Boomerang',
   'Axe Stomp',
   'Axe Tornado',
+  'Kunai - Nightmare',
   'Imperial Cross',
   'Energy Cannonade',
   'Mystery Powder',

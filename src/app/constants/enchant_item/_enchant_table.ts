@@ -1339,6 +1339,11 @@ export const EnchantTable: EntTable[] = [
   { name: "Unknown_Watch_SHC", enchants: [null, unkWatch2, unkWatch34, unkWatch34] },
   { name: "Unknown_Watch_HN", enchants: [null, unkWatch2, unkWatch34, unkWatch34] },
   { name: "Unknown_Watch_AC", enchants: [null, unkWatch2, unkWatch34, unkWatch34] },
+  { name: "Unknown_Watch_SH", enchants: [null, unkWatch2, unkWatch34, unkWatch34] },
+  { name: "Unknown_Watch_TT", enchants: [null, unkWatch2, unkWatch34, unkWatch34] },
+  { name: "Unknown_Watch_HN2", enchants: [null, unkWatch2, unkWatch34, unkWatch34] },
+  { name: "Unknown_Watch_AM", enchants: [null, unkWatch2, unkWatch34, unkWatch34] },
+  { name: "Unknown_Watch_EM", enchants: [null, unkWatch2, unkWatch34, unkWatch34] },
 
   { name: "GoodnEvil_Circlet_DK", enchants: [null, null, goodEvilHead3, goodEvilHead4] },
   { name: "GoodnEvil_Circlet_IG", enchants: [null, null, goodEvilHead3, goodEvilHead4] },

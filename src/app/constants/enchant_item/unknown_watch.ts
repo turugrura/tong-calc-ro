@@ -17,4 +17,9 @@ export const unkWatch2 = [
   'ClockAcc_GC1',
   'ClockAcc_SN1',
   'ClockAcc_SC1',
+  "ClockAcc_DR1",
+  "ClockAcc_WM1",
+  "ClockAcc_SN2",
+  "ClockAcc_WL1",
+  "ClockAcc_SOR1",
 ];
