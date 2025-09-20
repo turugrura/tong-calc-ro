@@ -225,6 +225,26 @@ export enum Luk {
   _9 = 'Luck9',
   _10 = 'Luck10',
 }
+
+export enum Pow {
+  _3 = "M_Pow3",
+}
+export enum Sta {
+  _3 = "M_Sta3",
+}
+export enum Wis {
+  _3 = "M_Wis3",
+}
+export enum Spl {
+  _3 = "M_Spl3",
+}
+export enum Con {
+  _3 = "M_Con3",
+}
+export enum Crt {
+  _3 = "M_Crt3",
+}
+
 export enum Acute {
   _1 = 'Acute1',
   _2 = 'Acute2',
