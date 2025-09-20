@@ -823,6 +823,7 @@ export const EnchantTable: EntTable[] = [
   { name: 'Twin Cannon', enchants: [null, twinCannon, twinCannon, twinCannon] },
 
   { name: 'Temporal_Ring_TW', enchants: [null, null, null, [...ea410, ...fs410, ...sp46, ...base46]] },
+  { name: 'Temporal_Ring_LT_TH', enchants: [null, null, null, [...ea410, ...fs410, ...sp46, ...base46]] },
 
   { name: 'Earring_Of_Sarah_L', enchants: [null, null, sarahAcc3, sarahAcc4] },
   { name: 'Earring_Of_Sarah_R', enchants: [null, null, sarahAcc3, sarahAcc4] },
@@ -1617,6 +1618,7 @@ export const EnchantTable: EntTable[] = [
   { name: "WK_Mantle_Melee_TH", enchants: [null, whiteKnight2, whiteKnight34, whiteKnight34] },
   { name: "WK_Mantle_Range_TH", enchants: [null, whiteKnight2, whiteKnight34, whiteKnight34] },
   { name: "WK_Mantle_Magic_TH", enchants: [null, whiteKnight2, whiteKnight34, whiteKnight34] },
+  { name: "WK_Mantle_All_TH_LT", enchants: [null, whiteKnight2, whiteKnight34, whiteKnight34] },
 
   { name: "aegis_Kankrai", enchants: [null, rockPaperScissor, rockPaperScissor, rockPaperScissor] },
   { name: "aegis_Khon", enchants: [null, rockPaperScissor, rockPaperScissor, rockPaperScissor] },
