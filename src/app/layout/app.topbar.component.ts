@@ -61,7 +61,7 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
     'Tab "Item Descriptions" คือ bonus ของไอเทมแต่ละชิ้นและคำอธิบาย (เอาไว้ตรวจสอบว่าได้ bonus ถูกไหม)',
   ];
 
-  references: { label: string; link: string; writer: string; date?: string; }[] = [
+  references: { label: string; link: string; writer: string; date?: string }[] = [
     {
       label: 'Jobs Improvement Bundle Update (20 June 2024)',
       writer: 'RO GGT',
@@ -204,7 +204,12 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
     // },
   ];
 
-  updates: { v: string; date: string; logs: string[]; }[] = [
+  updates: { v: string; date: string; logs: string[] }[] = [
+    {
+      v: 'V3.2.3',
+      date: '21-03-2568',
+      logs: ['Added compare shield'],
+    },
     {
       v: 'V3.2.14',
       date: '20-09-2568',
@@ -302,121 +307,83 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
       v: 'V3.2.2',
       date: '20-03-2568',
       logs: [
-        "Added Official updated items",
-        "Fixed cri damage percentage of StarEmperor skills",
-        "Fixed Doram skill not be the latest version (Catnip Meteor, Lunatic Carrot Beat)",
+        'Added Official updated items',
+        'Fixed cri damage percentage of StarEmperor skills',
+        'Fixed Doram skill not be the latest version (Catnip Meteor, Lunatic Carrot Beat)',
       ],
     },
     {
       v: 'V3.2.1',
       date: '06-03-2568',
-      logs: [
-        "Added Official updated items",
-      ],
+      logs: ['Added Official updated items'],
     },
     {
       v: 'V3.2.0',
       date: '02-03-2568',
-      logs: [
-        "Updated Main class skill V3",
-        "Updated Extended class skill V2",
-        "Added Official updated items",
-      ],
+      logs: ['Updated Main class skill V3', 'Updated Extended class skill V2', 'Added Official updated items'],
     },
     {
       v: 'V3.1.15',
       date: '06-02-2568',
-      logs: [
-        "Added Official updated items",
-        "Added Time Gap weapons",
-        "Added Yorscalp set",
-      ],
+      logs: ['Added Official updated items', 'Added Time Gap weapons', 'Added Yorscalp set'],
     },
     {
       v: 'V3.1.14',
       date: '24-01-2568',
-      logs: [
-        "Added Trait stat options",
-        "Added Official updated items",
-      ],
+      logs: ['Added Trait stat options', 'Added Official updated items'],
     },
     {
       v: 'V3.1.13',
       date: '16-01-2568',
-      logs: [
-        "Added Exotic-LT enchantment",
-        "Fixed Inquisitor aspd penalty for knuckle (-10 --> -1)",
-      ],
+      logs: ['Added Exotic-LT enchantment', 'Fixed Inquisitor aspd penalty for knuckle (-10 --> -1)'],
     },
     {
       v: 'V3.1.12',
       date: '09-01-2568',
-      logs: [
-        "Added Official updated items",
-      ],
+      logs: ['Added Official updated items'],
     },
     {
       v: 'V3.1.11',
       date: '12-12-2567',
-      logs: [
-        "Added Official updated items",
-      ],
+      logs: ['Added Official updated items'],
     },
     {
       v: 'V3.1.10',
       date: '07-12-2567',
-      logs: [
-        "Fixed cri rate effective of Crescive Bolt from 50% to 100%",
-        "Added skills Hawk Rush, Dancing Knife, From the Abyss, Abyss Square",
-      ],
+      logs: ['Fixed cri rate effective of Crescive Bolt from 50% to 100%', 'Added skills Hawk Rush, Dancing Knife, From the Abyss, Abyss Square'],
     },
     {
       v: 'V3.1.9',
       date: '01-12-2567',
-      logs: [
-        "Fixed cri damage effective of 4th class skills from 100% to 50%",
-        "Fixed Inquisitor aspd",
-        "Added Official updated items",
-      ],
+      logs: ['Fixed cri damage effective of 4th class skills from 100% to 50%', 'Fixed Inquisitor aspd', 'Added Official updated items'],
     },
     {
       v: 'V3.1.8',
       date: '21-11-2567',
-      logs: [
-        "Added Official updated items",
-      ],
+      logs: ['Added Official updated items'],
     },
     {
       v: 'V3.1.7',
       date: '14-11-2567',
-      logs: [
-        "Updated Booster shadows to V2",
-      ],
+      logs: ['Updated Booster shadows to V2'],
     },
     {
       v: 'V3.1.6',
       date: '07-11-2567',
-      logs: [
-        "Added Official updated items",
-        'Updated Ranking data',
-      ],
+      logs: ['Added Official updated items', 'Updated Ranking data'],
     },
     {
       v: 'V3.1.5',
       date: '31-10-2567',
-      logs: [
-        "Added Official updated items",
-        "Added Item series (Glacier weapons, Herosria accessories, Unknown boots)",
-        'Fixed reported bugs',
-      ],
+      logs: ['Added Official updated items', 'Added Item series (Glacier weapons, Herosria accessories, Unknown boots)', 'Fixed reported bugs'],
     },
     {
       v: 'V3.1.4',
       date: '20-10-2567',
       logs: [
-        "Changed monsters HP (Rudus4, Amiticia, Niffheim)",
-        "Calculate debuff as bug version [Raid + DC = melee 290%, + Quake = 440%] [Raid + Spore = Range 220%, + Oleum + Quake = 485%]",
-        "Added Adulter Fides weapons",
+        'Changed monsters HP (Rudus4, Amiticia, Niffheim)',
+        'Calculate debuff as bug version [Raid + DC = melee 290%, + Quake = 440%] [Raid + Spore = Range 220%, + Oleum + Quake = 485%]',
+        'Added Adulter Fides weapons',
         'Added requested items/monsters',
         'Fixed reported bugs',
       ],
@@ -424,19 +391,12 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
     {
       v: 'V3.1.3',
       date: '03-10-2567',
-      logs: [
-        "Added item series (Glacier armor)",
-        'Added Official updated items',
-      ],
+      logs: ['Added item series (Glacier armor)', 'Added Official updated items'],
     },
     {
       v: 'V3.1.2',
       date: '30-09-2567',
-      logs: [
-        "Added item series (Gaeblog, Muqaddas weapon, Flush Einbech weapons)",
-        'Added requested items/monsters',
-        'Fixed reported bugs',
-      ],
+      logs: ['Added item series (Gaeblog, Muqaddas weapon, Flush Einbech weapons)', 'Added requested items/monsters', 'Fixed reported bugs'],
     },
     {
       v: 'V3.1.1',
@@ -457,7 +417,7 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
         'Updated base HP/SP (ขอบคุณข้อมูลจากปู่Sigma)',
         'Added item series (OSAD, Dim Glacier, Vivatus)',
         'Added requested items',
-        'Fixed reported bugs'
+        'Fixed reported bugs',
       ],
     },
     {
@@ -466,7 +426,7 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
       logs: [
         'Supported 4th class with 2nd skill version (only main Class)',
         'Added item series (Thanos AD weapon, The Hero LT weapon, Nebula set, Gray wolf set, Varmundt set)',
-        'Added Official updated items'
+        'Added Official updated items',
       ],
     },
     {
@@ -1031,7 +991,7 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
     private readonly authService: AuthService,
     private messageService: MessageService,
     private confirmationService: ConfirmationService,
-  ) { }
+  ) {}
 
   ngOnDestroy(): void {
     for (const subscription of this.obs) {
