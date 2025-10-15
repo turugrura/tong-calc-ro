@@ -1,6 +1,7 @@
 export * from './beastbace-fn';
 export * from './circling-nature-fn';
 export * from './dance-with-wug';
+export * from './debuff-sonic-brand';
 export * from './demon-bane';
 export * from './double-attack-fn';
 export * from './double-strafe';

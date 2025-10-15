@@ -1,6 +1,6 @@
 import { JOB_4_MAX_JOB_LEVEL, JOB_4_MIN_MAX_LEVEL } from '../app-config';
 import { WeaponTypeName } from '../constants';
-import { MysticSymphonyFn, StageMannerFn } from '../constants/share-passive-skills';
+import { DebufSonicBrandFn, MysticSymphonyFn, StageMannerFn } from '../constants/share-passive-skills';
 import { EquipmentSummaryModel } from '../models/equipment-summary.model';
 import { AdditionalBonusInput } from '../models/info-for-class.model';
 import { addBonus } from '../utils';
@@ -189,8 +189,41 @@ export class Troubadour extends Minstrel {
         return (200 + skillLevel * 120 + status.totalCon * 3 * stageMannerLv) * (baseLevel / 100);
       },
     },
+    {
+      name: 'Rose Blossom',
+      label: '[V3] Rose Blossom Lv5',
+      value: 'Rose Blossom==5',
+      acd: 0.15,
+      fct: 0.5,
+      vct: 1,
+      cd: 0.7,
+      totalHit: 1,
+      verifyItemFn: ({ weapon }) => {
+        const requires: WeaponTypeName[] = ['bow', 'instrument', 'whip'];
+        if (requires.some(wType => weapon.isType(wType))) return '';
+
+        return requires.join(', ');
+      },
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status } = input;
+        const baseLevel = model.level;
+        const stageMannerLv = this.learnLv('Stage Manner');
+
+        if (this.isSkillActive('_Debuf_Sonic_Brand')) {
+          const main = ((200 + skillLevel * 2200) + (status.totalCon * 3 * stageMannerLv)) * (baseLevel / 100);
+          const second = ((250 + skillLevel * 3000) + (status.totalCon * 3 * stageMannerLv)) * (baseLevel / 100);
+
+          return main + second;
+        }
+
+        const main = ((200 + skillLevel * 2000) + (status.totalCon * 3 * stageMannerLv)) * (baseLevel / 100);
+        const second = ((250 + skillLevel * 2800) + (status.totalCon * 3 * stageMannerLv)) * (baseLevel / 100);
+
+        return main + second;
+      },
+    },
   ];
-  private readonly activeSkillList4th: ActiveSkillModel[] = [MysticSymphonyFn()];
+  private readonly activeSkillList4th: ActiveSkillModel[] = [MysticSymphonyFn(), DebufSonicBrandFn()];
   private readonly passiveSkillList4th: PassiveSkillModel[] = [StageMannerFn()];
 
   constructor() {

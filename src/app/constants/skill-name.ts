@@ -14,6 +14,7 @@ const ACTIVE_PASSIVE_SKILL_NAMES = [
   '_SoulAscetic_Blessing',
   '_SkyEmperor_Rising_Sun',
   '_SkyEmperor_Rising_Moon',
+  '_Debuf_Sonic_Brand',
   'Talisman of Five Elements',
   'Totem of Tutelary',
   '16th Night',
