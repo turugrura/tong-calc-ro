@@ -412,6 +412,8 @@ export const aspd15 = [AttackDelay._1, AttackDelay._2, AttackDelay._3, AttackDel
 export const aspd24 = [AttackDelay._2, AttackDelay._3, AttackDelay._4];
 export const aspd34 = [AttackDelay._3, AttackDelay._4];
 
+export const expert35 = [EA._3, EA._4, EA._5, ExpertFighter._3, ExpertFighter._4, ExpertFighter._5, ExpertMagician._3, ExpertMagician._4, ExpertMagician._5];
+
 // export const aspd122 = [ASPD._1, ASPD._2];
 
 export const fatal12 = [Fatal._1, Fatal._2];

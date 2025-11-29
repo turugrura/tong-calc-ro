@@ -56,6 +56,7 @@ import {
   ea45,
   ef15,
   em15,
+  expert35,
   fatal12,
   fatal13,
   fatal14,
@@ -1790,6 +1791,8 @@ export const EnchantTable: EntTable[] = [
   { name: "S_BP8_Magic_S", enchants: [null, null, nebularShadow2, nebularShadow34] },
 
   { name: "Nebula_Nec_LT_TH", enchants: [null, null, nebularPendant3, nebularPendant4] },
+
+  { name: "Snow_Fox_TH", enchants: [null, ["NY_Enchant_2026"], expert35, expert35] },
 ];
 
 Object.freeze(EnchantTable);
