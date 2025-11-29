@@ -1625,6 +1625,7 @@ export const EnchantTable: EntTable[] = [
   { name: "aegis_Kankrai", enchants: [null, rockPaperScissor, rockPaperScissor, rockPaperScissor] },
   { name: "aegis_Khon", enchants: [null, rockPaperScissor, rockPaperScissor, rockPaperScissor] },
   { name: "aegis_Kradat", enchants: [null, rockPaperScissor, rockPaperScissor, rockPaperScissor] },
+  { name: "Mob_Scarf_LT", enchants: [null, rockPaperScissor, rockPaperScissor, rockPaperScissor] },
 
   { name: "Volcano_H_Ring_TH", enchants: [null, ['HeroAcc_AG1'], ['HeroAcc_WL1'], heroRing4] },
   { name: "Dragon_Order_TH", enchants: [null, ['HeroAcc_DK1'], ['HeroAcc_RK1'], heroRing4] },
