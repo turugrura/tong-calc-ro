@@ -81,6 +81,7 @@ import {
   mhp35,
   perfectD12,
   perfectD13,
+  run1,
   sh13,
   sh14,
   sh23,
@@ -174,6 +175,7 @@ const createBaseStat = (from: number, to: number): string[] => {
 const base12 = createBaseStat(1, 2);
 const base15 = createBaseStat(1, 5);
 const base46 = createBaseStat(4, 6);
+const base35 = createBaseStat(3, 5);
 
 const BaseState = {
   _1: [Str._1, Int._1, Dex._1, Agi._1, Vit._1, Luk._1],
@@ -1793,6 +1795,8 @@ export const EnchantTable: EntTable[] = [
   { name: "Nebula_Nec_LT_TH", enchants: [null, null, nebularPendant3, nebularPendant4] },
 
   { name: "Snow_Fox_TH", enchants: [null, ["NY_Enchant_2026"], expert35, expert35] },
+
+  { name: "Astraea_Armor_LT", enchants: [null, [...nebular2], [...nebular3], [...run1, ...base35]] },
 ];
 
 Object.freeze(EnchantTable);

@@ -470,3 +470,12 @@ export const illusionDunAcc = [
   ...luk(1, 4),
   ...vit(1, 4),
 ];
+
+export const run1 = [
+  RuneStr._1,
+  RuneDex._1,
+  RuneInt._1,
+  RuneLuk._1,
+  RuneAgi._1,
+  RuneVit._1,
+];
