@@ -51,7 +51,7 @@
             <p-table [value]="sizeTable" styleClass="p-datatable-sm" [tableStyle]="{ 'min-width': '10rem' }">
               <ng-template pTemplate="header">
                 <tr>
-                  <th class="color_highlight">Size</th>
+                  <th class="color_highlight">{{ sizeTableName }}</th>
                   <th>P</th>
                   <th>M</th>
                 </tr>
@@ -81,16 +81,9 @@
                 <tr>
                   <td>{{ val.name }}</td>
                   <td>
-                    <span
-                      class="{{
-                        val.value == 0
-                          ? ''
-                          : val.name == 'Melee' || val.name == 'Range'
-                          ? 'summary_stat_atk'
-                          : 'summary_stat_matk'
-                      }}"
-                      >{{ val.value || '-' }}</span
-                    >
+                    <span class="{{ val.value == 0 ? '' : val.name == 'Melee' || val.name == 'Range' ? 'summary_stat_atk' : 'summary_stat_matk' }}">{{
+                      val.value || '-'
+                    }}</span>
                   </td>
                 </tr>
               </ng-template>
@@ -139,14 +132,10 @@
             <span class="{{ 'font-medium property_' + val.name }}">{{ val.name }}</span>
           </td>
           <td>
-            <span class="{{ val.physicalElementToMonster != 0 ? 'summary_stat_atk' : '' }}">{{
-              val.physicalElementToMonster || '-'
-            }}</span>
+            <span class="{{ val.physicalElementToMonster != 0 ? 'summary_stat_atk' : '' }}">{{ val.physicalElementToMonster || '-' }}</span>
           </td>
           <td>
-            <span class="{{ val.magicalElementToMonster != 0 ? 'summary_stat_matk' : '' }}">{{
-              val.magicalElementToMonster || '-'
-            }}</span>
+            <span class="{{ val.magicalElementToMonster != 0 ? 'summary_stat_matk' : '' }}">{{ val.magicalElementToMonster || '-' }}</span>
           </td>
           <td>
             <span class="{{ val.myElement != 0 ? 'summary_stat_matk' : '' }}">{{ val.myElement || '-' }}</span>

@@ -1916,7 +1916,14 @@
         ></app-misc-detail>
       </p-accordionTab>
       <p-accordionTab header="Penetration Summary">
-        <app-misc-detail [elementTable]="[]" [raceTable]="peneRaceTable" [sizeTable]="[]" [classTable]="peneClassTable" [skillMultiplierTable]="[]"></app-misc-detail>
+        <app-misc-detail
+          [elementTable]="[]"
+          [raceTable]="peneRaceTable"
+          [sizeTable]="ignoreResisRaceTable"
+          [sizeTableName]="'Resistance'"
+          [classTable]="peneClassTable"
+          [skillMultiplierTable]="[]"
+        ></app-misc-detail>
       </p-accordionTab>
 
       <p-accordionTab header="Summary">

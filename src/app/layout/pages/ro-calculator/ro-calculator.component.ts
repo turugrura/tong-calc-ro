@@ -257,6 +257,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   elementTable: ElementDataModel[];
   raceTable: RaceDataModel[];
   peneRaceTable: RaceDataModel[];
+  ignoreResisRaceTable: RaceDataModel[];
   sizeTable: RaceDataModel[];
   classTable: RaceDataModel[];
   atkTypeTable: any[];
@@ -902,6 +903,14 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         magical: m_pene_race_all + (this.totalSummary[`m_pene_race_${race}`] || 0),
       };
     });
+
+    this.ignoreResisRaceTable = [
+      {
+        name: 'Ignore Resistance',
+        physical: this.totalSummary['pene_res'] || 0,
+        magical: this.totalSummary['pene_mres'] || 0,
+      },
+    ];
   }
 
   private setSizeTable(): void {

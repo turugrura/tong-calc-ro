@@ -9,11 +9,12 @@ export class MiscDetailComponent {
   @Input({ required: true }) elementTable: any[];
   @Input({ required: true }) raceTable: any[];
   @Input({ required: true }) sizeTable: any[];
+  @Input() sizeTableName = 'Size';
   @Input({ required: true }) classTable: any[];
   @Input({ required: true }) skillMultiplierTable: any[];
   @Input() atkTypeTable: any[] = [];
 
-  constructor() {}
+  constructor() { }
 
   get isShowElementTable() {
     return this.elementTable?.length > 0;
