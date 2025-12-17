@@ -354,6 +354,9 @@
       [max2]="totalSummary2?.dmg?.effectedSkillDps || totalSummary2?.dmg?.skillDps"
     ></app-calc-value>
   </div>
+  <div *ngIf="totalSummary?.calcSkill?.totalHitPerSec > 5 || totalSummary2?.calcSkill?.totalHitPerSec > 5" class="hilight_danger">
+    *** calc DPS with capped 5 Hits/sec
+  </div>
 
   <div class="col-12 py-1 divider">
     <p-divider></p-divider>
