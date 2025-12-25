@@ -1795,6 +1795,7 @@ export const EnchantTable: EntTable[] = [
   { name: "Nebula_Nec_LT_TH", enchants: [null, null, nebularPendant3, nebularPendant4] },
 
   { name: "Snow_Fox_TH", enchants: [null, ["NY_Enchant_2026"], expert35, expert35] },
+  { name: "Snow_Fox_TH_LT", enchants: [null, ["NY_Enchant_2026"], expert35, expert35] },
 
   { name: "Astraea_Armor_LT", enchants: [null, [...nebular2], [...nebular3], [...run1, ...base35]] },
 ];

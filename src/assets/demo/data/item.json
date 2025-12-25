@@ -155583,6 +155583,89 @@
       ]
     }
   },
+  "400758": {
+    "id": 400758,
+    "aegisName": "Cat_FF_Hat",
+    "name": "Cat Paw Potential Hat [1]",
+    "unidName": "Hat",
+    "resName": "C_PGstone_Knit_Hat_BW",
+    "description": "ทุก ๆ การอัพเกรด 2 ขั้น ATK+15.\nทุก ๆ การอัพเกรด 3 ขั้น เมื่อกำจัดมอนสเตอร์ เพิ่ม EXP ที่ได้รับ 3%\nเมื่ออัพเกรดถึงขั้น 7, CRI+10, Perfect Hit +10%\nเมื่ออัพเกรดถึงขั้น 9, เพิ่ม Damage ทางกายภาพระยะไกล/ใกล้ 15%\nเมื่ออัพเกรดถึงขั้น 11, เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 20%\nเมื่ออัพเกรดถึงขั้น 13, ลดระยะเวลาร่ายแบบคงที่ 0.3 วินาที\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^7777770^000000\nตำแหน่ง : ^777777Upper^000000 น้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 1,
+    "location": "Upper",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "atk": [
+        "2---15"
+      ],
+      "cri": [
+        "7===10"
+      ],
+      "perfectHit": [
+        "7===10"
+      ],
+      "melee": [
+        "9===15"
+      ],
+      "range": [
+        "9===15"
+      ],
+      "p_size_all": [
+        "11===20"
+      ],
+      "fct": [
+        "13===0.3"
+      ]
+    }
+  },
+  "400759": {
+    "id": 400759,
+    "aegisName": "Cat_FF_Hat2",
+    "name": "Cat Paw Growth Hat [1]",
+    "unidName": "Hat",
+    "resName": "C_PGstone_Knit_Hat_PK",
+    "description": "ทุก ๆ การอัพเกรด 2 ขั้น MATK + 15\nทุก ๆ การอัพเกรด 3 ขั้น เมื่อกำจัดมอนสเตอร์ เพิ่ม EXP ที่ได้รับ 3%\nเมื่ออัพเกรดถึงขั้น 7, ลดระยะเวลาร่ายแบบแปรผัน 15%, ลดระยะเวลาร่ายแบบคงที่ 0.2 วินาที\nเมื่ออัพเกรดถึงขั้น 9, เพิ่ม Damage ทางเวทมนตร์ทุกธาตุ 20%\nเมื่ออัพเกรดถึงขั้น 11, เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกขนาด 20%\nเมื่ออัพเกรดถึงขั้น 13, ลดระยะเวลาร่ายแบบคงที่ลงอีก 0.3 วินาที\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^7777770^000000\nตำแหน่ง : ^777777Upper^000000 น้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 1,
+    "location": "Upper",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "matk": [
+        "2---15"
+      ],
+      "vct": [
+        "7===15"
+      ],
+      "fct": [
+        "7===0.2",
+        "13===0.3"
+      ],
+      "m_my_element_all": [
+        "9===20"
+      ],
+      "m_size_all": [
+        "11===20"
+      ]
+    }
+  },
   "400791": {
     "id": 400791,
     "aegisName": "Evil_M_Hat_TH_LT",
@@ -158445,6 +158528,42 @@
       ],
       "allTrait": [
         "EQUIP[Pharaoh Card]===10"
+      ]
+    }
+  },
+  "410561": {
+    "id": 410561,
+    "aegisName": "Snow_Fox_TH_LT",
+    "name": "Snow Fox-LT [1]",
+    "unidName": "Accessory",
+    "resName": "Snow_Fox",
+    "description": "^ff0000ไอเท็มนี้ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้^000000\nAll Trait + 5\n\nเมื่อสวมใส่ร่วมกับอาวุธ Glacier Weapon Series หรือ Dim Glacier Weapon Series,\nลด Global Cooldown 10%,\nAll Trait + 5,\nATK, MATK + 200\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^7777770^000000\nตำแหน่ง : ^777777Middle^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777200^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 0,
+    "requiredLevel": 200,
+    "location": "Middle",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "allTrait": [
+        "5",
+        "EQUIP[Glacier Sword||Glacier Basic Sword||Glacier Rogue Knife||Glacier Basic Knife||Glacier Axe||Glacier Spear||Glacier Book||Glacier Wand||Glacier Foxtail||Glacier Knuckle||Glacier Violin||Glacier Whip||Glacier Mace||Glacier Mechanic Mace||Glacier Two-handed Sword||Glacier Katar||Glacier Mechanic Axe||Glacier Lance||Glacier Staff||Glacier Huuma Shuriken||Glacier Bow||Glacier Revolver||Glacier Rifle||Glacier Shotgun||Glacier Gatling||Glacier Launcher||Dim Glacier Sword||Dim Glacier Basic Sword||Dim Glacier Rogue Knife||Dim Glacier Basic Knife||Dim Glacier Axe||Dim Glacier Spear||Dim Glacier Book||Dim Glacier Wand||Dim Glacier Foxtail||Dim Glacier Knuckle||Dim Glacier Violin||Dim Glacier Whip||Dim Glacier Mace||Dim Glacier Mechanic Mace||Dim Glacier Two-handed Sword||Dim Glacier Katar||Dim Glacier Mechanic Axe||Dim Glacier Lance||Dim Glacier Staff||Dim Glacier Huuma Shuriken||Dim Glacier Bow||Dim Glacier Revolver||Dim Glacier Rifle||Dim Glacier Shotgun||Dim Glacier Gatling Gun||Dim Glacier Grenade Launcher]===5"
+      ],
+      "acd": [
+        "EQUIP[Glacier Sword||Glacier Basic Sword||Glacier Rogue Knife||Glacier Basic Knife||Glacier Axe||Glacier Spear||Glacier Book||Glacier Wand||Glacier Foxtail||Glacier Knuckle||Glacier Violin||Glacier Whip||Glacier Mace||Glacier Mechanic Mace||Glacier Two-handed Sword||Glacier Katar||Glacier Mechanic Axe||Glacier Lance||Glacier Staff||Glacier Huuma Shuriken||Glacier Bow||Glacier Revolver||Glacier Rifle||Glacier Shotgun||Glacier Gatling||Glacier Launcher||Dim Glacier Sword||Dim Glacier Basic Sword||Dim Glacier Rogue Knife||Dim Glacier Basic Knife||Dim Glacier Axe||Dim Glacier Spear||Dim Glacier Book||Dim Glacier Wand||Dim Glacier Foxtail||Dim Glacier Knuckle||Dim Glacier Violin||Dim Glacier Whip||Dim Glacier Mace||Dim Glacier Mechanic Mace||Dim Glacier Two-handed Sword||Dim Glacier Katar||Dim Glacier Mechanic Axe||Dim Glacier Lance||Dim Glacier Staff||Dim Glacier Huuma Shuriken||Dim Glacier Bow||Dim Glacier Revolver||Dim Glacier Rifle||Dim Glacier Shotgun||Dim Glacier Gatling Gun||Dim Glacier Grenade Launcher]===10"
+      ],
+      "atk": [
+        "EQUIP[Glacier Sword||Glacier Basic Sword||Glacier Rogue Knife||Glacier Basic Knife||Glacier Axe||Glacier Spear||Glacier Book||Glacier Wand||Glacier Foxtail||Glacier Knuckle||Glacier Violin||Glacier Whip||Glacier Mace||Glacier Mechanic Mace||Glacier Two-handed Sword||Glacier Katar||Glacier Mechanic Axe||Glacier Lance||Glacier Staff||Glacier Huuma Shuriken||Glacier Bow||Glacier Revolver||Glacier Rifle||Glacier Shotgun||Glacier Gatling||Glacier Launcher||Dim Glacier Sword||Dim Glacier Basic Sword||Dim Glacier Rogue Knife||Dim Glacier Basic Knife||Dim Glacier Axe||Dim Glacier Spear||Dim Glacier Book||Dim Glacier Wand||Dim Glacier Foxtail||Dim Glacier Knuckle||Dim Glacier Violin||Dim Glacier Whip||Dim Glacier Mace||Dim Glacier Mechanic Mace||Dim Glacier Two-handed Sword||Dim Glacier Katar||Dim Glacier Mechanic Axe||Dim Glacier Lance||Dim Glacier Staff||Dim Glacier Huuma Shuriken||Dim Glacier Bow||Dim Glacier Revolver||Dim Glacier Rifle||Dim Glacier Shotgun||Dim Glacier Gatling Gun||Dim Glacier Grenade Launcher]===200"
+      ],
+      "matk": [
+        "EQUIP[Glacier Sword||Glacier Basic Sword||Glacier Rogue Knife||Glacier Basic Knife||Glacier Axe||Glacier Spear||Glacier Book||Glacier Wand||Glacier Foxtail||Glacier Knuckle||Glacier Violin||Glacier Whip||Glacier Mace||Glacier Mechanic Mace||Glacier Two-handed Sword||Glacier Katar||Glacier Mechanic Axe||Glacier Lance||Glacier Staff||Glacier Huuma Shuriken||Glacier Bow||Glacier Revolver||Glacier Rifle||Glacier Shotgun||Glacier Gatling||Glacier Launcher||Dim Glacier Sword||Dim Glacier Basic Sword||Dim Glacier Rogue Knife||Dim Glacier Basic Knife||Dim Glacier Axe||Dim Glacier Spear||Dim Glacier Book||Dim Glacier Wand||Dim Glacier Foxtail||Dim Glacier Knuckle||Dim Glacier Violin||Dim Glacier Whip||Dim Glacier Mace||Dim Glacier Mechanic Mace||Dim Glacier Two-handed Sword||Dim Glacier Katar||Dim Glacier Mechanic Axe||Dim Glacier Lance||Dim Glacier Staff||Dim Glacier Huuma Shuriken||Dim Glacier Bow||Dim Glacier Revolver||Dim Glacier Rifle||Dim Glacier Shotgun||Dim Glacier Gatling Gun||Dim Glacier Grenade Launcher]===200"
       ]
     }
   },
@@ -185661,6 +185780,38 @@
       ],
       "Spore Explosion": [
         "EQUIP[Old Midas Whisper]40"
+      ]
+    }
+  },
+  "490243": {
+    "id": 490243,
+    "aegisName": "Ring_of_SilverClaw",
+    "name": "Ring of Silver Claw [1]",
+    "unidName": "Ring",
+    "resName": "Ring_of_SilverClaw",
+    "description": "แหวนเงินที่ทำเป็นรูปนิ้วมือของเหยี่ยว เพียงสวมใส่กับร่างกายก็จะทำให้พลัง Concentration เพิ่มขึ้น\n\nCri + 50\nลด Damage ที่ได้รับจาก Player 3%\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกประเภท 10%\nเมื่อ Base Lv. เพิ่มขึ้นทุก ๆ 5 เลเวล\nเพิ่ม Damage จากการโจมตี Critical Damage 1% เพิ่มเติม\nประเภท : ^777777Accessory^000000  พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 517,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "cri": [
+        "50"
+      ],
+      "p_class_all": [
+        "10"
+      ],
+      "criDmg": [
+        "SUM[level==5]---1"
       ]
     }
   },
