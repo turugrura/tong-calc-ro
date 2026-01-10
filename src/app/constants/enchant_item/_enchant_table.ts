@@ -102,7 +102,7 @@ import { anni5th } from './anniversary5th';
 import { bp7_2, bp7_4 } from './bp7';
 import { cirAutumnGarment2, cirAutumnGarment3, cirAutumnGarment4, cirAutumnSummer2, cirAutumnWinter2, cirSpringGarment2, cirSpringGarment3, cirSpringGarment4, manAutumnGarment2, manAutumnGarment3, manAutumnGarment4, manAutumnSummer2, manAutumnWinter2, manSpringGarment2, manSpringGarment3, manSpringGarment4, signetAcc3, signetAcc4, stellarAcc2, stellarAcc3, stellarAcc4 } from './constellation_tower';
 import { crafted3, crafted4 } from './crafted_weapon';
-import { dimGlaArmor2, dimGlaArmor3, dimGlaArmor4, dimGlaBoot2, dimGlaBoot3, dimGlaBoot4, dimGlaGarment2, dimGlaGarment3, dimGlaGarment4, dimWeapon2, dimWeapon3, dimWeapon4 } from './dim_glacier';
+import { dimAcc2, dimAcc3, dimAcc4, dimGlaArmor2, dimGlaArmor3, dimGlaArmor4, dimGlaBoot2, dimGlaBoot3, dimGlaBoot4, dimGlaGarment2, dimGlaGarment3, dimGlaGarment4, dimWeapon2, dimWeapon3, dimWeapon4 } from './dim_glacier';
 import { dimensionAcc3, dimensionAcc4, dimensionHead2, dimensionHead3, dimensionHead4, dimensionWeapon3, dimensionWeapon4, timeGap3, timeGap4 } from './dimention';
 import { droopingLt3, droopingLt4, redBlueLt3, redBlueLt4 } from './drooping_thanatos_lt';
 import { furiousHeadUp3, furiousHeadUp4, furiousWeaponUp3, furiousWeaponUp4 } from './furious';
@@ -176,6 +176,7 @@ const base12 = createBaseStat(1, 2);
 const base15 = createBaseStat(1, 5);
 const base46 = createBaseStat(4, 6);
 const base35 = createBaseStat(3, 5);
+const base3 = createBaseStat(3, 3);
 
 const BaseState = {
   _1: [Str._1, Int._1, Dex._1, Agi._1, Vit._1, Luk._1],
@@ -1798,6 +1799,10 @@ export const EnchantTable: EntTable[] = [
   { name: "Snow_Fox_TH_LT", enchants: [null, ["NY_Enchant_2026"], expert35, expert35] },
 
   { name: "Astraea_Armor_LT", enchants: [null, [...nebular2], [...nebular3], [...run1, ...base35]] },
+  { name: "Auto_E_WingC_TH_LT", enchants: [null, angelRibbonWing3, expert35, [...run1, ...base3]] },
+
+  { name: "ABC_Dim_Ring_TH", enchants: [null, dimAcc2, dimAcc3, dimAcc4] },
+  { name: "IQ_Dim_Ring_TH", enchants: [null, dimAcc2, dimAcc3, dimAcc4] },
 ];
 
 Object.freeze(EnchantTable);

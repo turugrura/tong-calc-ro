@@ -334,6 +334,62 @@ export enum Caster {
   _5 = 'Caster5',
 }
 
+export enum StarOfMettle {
+  _1 = 'Star_Of_Mettle1',
+  _2 = 'Star_Of_Mettle2',
+  _3 = 'Star_Of_Mettle3',
+  _4 = 'Star_Of_Mettle4',
+  _5 = 'Star_Of_Mettle5',
+}
+
+export enum StarOfMasterArcher {
+  _1 = 'Star_Of_MasterArcher1',
+  _2 = 'Star_Of_MasterArcher2',
+  _3 = 'Star_Of_MasterArcher3',
+  _4 = 'Star_Of_MasterArcher4',
+  _5 = 'Star_Of_MasterArcher5',
+}
+
+export enum StarOfSharp {
+  _1 = 'Star_Of_Sharp1',
+  _2 = 'Star_Of_Sharp2',
+  _3 = 'Star_Of_Sharp3',
+  _4 = 'Star_Of_Sharp4',
+  _5 = 'Star_Of_Sharp5',
+}
+
+export enum StarOfSpell {
+  _1 = 'Star_Of_Spell1',
+  _2 = 'Star_Of_Spell2',
+  _3 = 'Star_Of_Spell3',
+  _4 = 'Star_Of_Spell4',
+  _5 = 'Star_Of_Spell5',
+}
+
+export enum StarOfSpeed {
+  _1 = 'Star_Of_Speed1',
+  _2 = 'Star_Of_Speed2',
+  _3 = 'Star_Of_Speed3',
+  _4 = 'Star_Of_Speed4',
+  _5 = 'Star_Of_Speed5',
+}
+
+export enum StarOfSpirit {
+  _1 = 'Star_Of_Spirit1',
+  _2 = 'Star_Of_Spirit2',
+  _3 = 'Star_Of_Spirit3',
+  _4 = 'Star_Of_Spirit4',
+  _5 = 'Star_Of_Spirit5',
+}
+
+export enum StarOfVital {
+  _1 = 'Star_Of_Vital1',
+  _2 = 'Star_Of_Vital2',
+  _3 = 'Star_Of_Vital3',
+  _4 = 'Star_Of_Vital4',
+  _5 = 'Star_Of_Vital5',
+}
+
 export const str = (from: number, to: number) => Array.from({ length: 1 + to - from }).map((_, i) => Str[`_${i + from}`]);
 export const dex = (from: number, to: number) => Array.from({ length: 1 + to - from }).map((_, i) => Dex[`_${i + from}`]);
 export const int = (from: number, to: number) => Array.from({ length: 1 + to - from }).map((_, i) => Int[`_${i + from}`]);
@@ -478,4 +534,42 @@ export const run1 = [
   RuneLuk._1,
   RuneAgi._1,
   RuneVit._1,
+];
+
+export const starOf1_5 = [
+  StarOfMettle._1,
+  StarOfMettle._2,
+  StarOfMettle._3,
+  StarOfMettle._4,
+  StarOfMettle._5,
+  StarOfMasterArcher._1,
+  StarOfMasterArcher._2,
+  StarOfMasterArcher._3,
+  StarOfMasterArcher._4,
+  StarOfMasterArcher._5,
+  StarOfSharp._1,
+  StarOfSharp._2,
+  StarOfSharp._3,
+  StarOfSharp._4,
+  StarOfSharp._5,
+  StarOfSpell._1,
+  StarOfSpell._2,
+  StarOfSpell._3,
+  StarOfSpell._4,
+  StarOfSpell._5,
+  StarOfSpeed._1,
+  StarOfSpeed._2,
+  StarOfSpeed._3,
+  StarOfSpeed._4,
+  StarOfSpeed._5,
+  StarOfSpirit._1,
+  StarOfSpirit._2,
+  StarOfSpirit._3,
+  StarOfSpirit._4,
+  StarOfSpirit._5,
+  StarOfVital._1,
+  StarOfVital._2,
+  StarOfVital._3,
+  StarOfVital._4,
+  StarOfVital._5,
 ];

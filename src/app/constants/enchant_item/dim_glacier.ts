@@ -1,3 +1,5 @@
+import { AttackDelay, EA, ExpertFighter, ExpertMagician, Spell, starOf1_5 } from "./_basic";
+
 export const dimWeapon3 = [
   'Glacier_F_Orb_81',
   'Glacier_F_Orb_82',
@@ -74,7 +76,7 @@ export const dimWeapon3 = [
   'Glacier_F_Orb_165',
   'Glacier_F_Orb_166',
   'Glacier_F_Orb_167',
-]
+];
 
 export const dimWeapon4 = [
   'Glacier_F_Orb_1',
@@ -158,7 +160,7 @@ export const dimWeapon4 = [
   'Glacier_F_Orb_79',
   'Glacier_F_Orb_80',
   ...dimWeapon3,
-]
+];
 
 export const dimWeapon2 = [
   'Physical_Grade_1',
@@ -171,7 +173,7 @@ export const dimWeapon2 = [
   'Magical_Grade_3',
   'Magical_Grade_4',
   'Magical_Grade_5',
-]
+];
 
 export const dimGlaArmor4 = [
   // 'Snake_A_Def_1',
@@ -184,7 +186,7 @@ export const dimGlaArmor4 = [
   'Snake_A_Def_8',
   'Snake_A_Def_9',
   'Snake_A_Def_10',
-]
+];
 export const dimGlaArmor3 = [
   // 'Snake_A_Atk_1',
   // 'Snake_A_Atk_2',
@@ -206,10 +208,10 @@ export const dimGlaArmor3 = [
   'Snake_A_Matk_8',
   'Snake_A_Matk_9',
   'Snake_A_Matk_10',
-]
+];
 export const dimGlaArmor2 = [
   'Snake_G_Blessing',
-]
+];
 
 export const dimGlaGarment4 = [
   // 'Snake_H_Def_1',
@@ -222,7 +224,7 @@ export const dimGlaGarment4 = [
   'Snake_H_Def_8',
   'Snake_H_Def_9',
   'Snake_H_Def_10',
-]
+];
 export const dimGlaGarment3 = [
   // 'Snake_H_Atk_1',
   // 'Snake_H_Atk_2',
@@ -244,10 +246,10 @@ export const dimGlaGarment3 = [
   'Snake_H_Matk_8',
   'Snake_H_Matk_9',
   'Snake_H_Matk_10',
-]
+];
 export const dimGlaGarment2 = [
   'Snake_G_Grace',
-]
+];
 
 export const dimGlaBoot4 = [
   // 'Snake_S_Def_1',
@@ -260,7 +262,7 @@ export const dimGlaBoot4 = [
   'Snake_S_Def_8',
   'Snake_S_Def_9',
   'Snake_S_Def_10',
-]
+];
 export const dimGlaBoot3 = [
   // 'Snake_S_Atk_1',
   // 'Snake_S_Atk_2',
@@ -282,7 +284,29 @@ export const dimGlaBoot3 = [
   'Snake_S_Matk_8',
   'Snake_S_Matk_9',
   'Snake_S_Matk_10',
-]
+];
 export const dimGlaBoot2 = [
   'Snake_G_Glory',
-]
+];
+
+export const dimAcc4 = [
+  EA._3,
+  EA._5,
+  ExpertFighter._3,
+  ExpertFighter._5,
+  ExpertMagician._3,
+  ExpertMagician._5,
+  Spell._3,
+  Spell._5,
+  AttackDelay._2,
+  AttackDelay._4,
+];
+
+export const dimAcc3 = [
+  ...starOf1_5,
+];
+
+export const dimAcc2 = [
+  'DimAcc_ABC',
+  'DimAcc_IQ',
+];

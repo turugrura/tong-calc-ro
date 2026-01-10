@@ -14998,6 +14998,59 @@
       "raceName": "Formless"
     }
   },
+  "21533": {
+    "id": 21533,
+    "dbname": "EP19_MD_JUNCEA_S",
+    "name": "Simulation Juncea",
+    "spawn": "",
+    "stats": {
+      "attackRange": 2,
+      "level": 215,
+      "health": 225503800,
+      "sp": 1,
+      "str": 159,
+      "int": 101,
+      "vit": 276,
+      "dex": 377,
+      "agi": 91,
+      "luk": 110,
+      "rechargeTime": 403,
+      "atk1": 15250,
+      "atk2": 2280,
+      "attack": {
+        "minimum": 12574,
+        "maximum": 18674
+      },
+      "magicAttack": {
+        "minimum": 1912,
+        "maximum": 3280
+      },
+      "defense": 575,
+      "baseExperience": 7798710,
+      "jobExperience": 5430080,
+      "aggroRange": 10,
+      "escapeRange": 12,
+      "movementSpeed": 150,
+      "attackSpeed": 1008,
+      "attackedSpeed": 576,
+      "element": 85,
+      "scale": 2,
+      "race": 0,
+      "magicDefense": 100,
+      "hit": 506,
+      "flee": 762,
+      "ai": "",
+      "mvp": 1,
+      "class": 1,
+      "attr": 8,
+      "res": 376,
+      "mres": 131,
+      "elementName": "Poison 4",
+      "elementShortName": "Poison",
+      "scaleName": "Large",
+      "raceName": "Formless"
+    }
+  },
   "21537": {
     "id": 21537,
     "dbname": "EP19_LIMACINA_BOSS",

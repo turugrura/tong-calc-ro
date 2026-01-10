@@ -96634,7 +96634,7 @@
     "name": "Star Cluster of Creative Lv3",
     "unidName": "Star Cluster of Creative Lv.3",
     "resName": "Star_Cluster_Of_Crt",
-    "description": "กลุ่มดาวที่เสริมพลังให้กับผู้สวมใส่\nทุก ๆ Base CRT 15 ของผู้สวมใส่ เพิ่ม Critical Damage 3%, ATK + 15\nเมื่อ Armor ที่สวมใส่มีเกรดตั้งแต่ D ขึ้นไป ทุก ๆ Base CRT 15 เพิ่ม Critical Damage ขึ้นอีก 1%, P.ATK + 1\nเมื่อ Armor ที่สวมใส่มีเกรดตั้งแต่ C ขึ้นไป ทุก ๆ Base CRT 15 เพิ่ม Critical Damage ขึ้นอีก 1%, P.ATK + 1 เพิ่มเติม\nเมื่อ Armor ที่สวมใส่มีเกรดตั้งแต่ B ขึ้นไป ทุก ๆ Base CRT 15 เพิ่ม Critical Damage ขึ้นอีก 2%, P.ATK + 3 เพิ่มเติม\nเมื่อ Armor ที่สวมใส่มีเกรดตั้งแต่ A ขึ้นไป C.Rate +1, ทุก ๆ Base CRT 15 เพิ่ม Critical Damage ขึ้นอีก 3%",
+    "description": "กลุ่มดาวที่เสริมพลังให้กับผู้สวมใส่\nทุก ๆ Base CRT 15 ของผู้สวมใส่ เพิ่ม Critical Damage 3%, ATK + 15\nเมื่อ Armor ที่สวมใส่มีเกรดตั้งแต่ D ขึ้นไป ทุก ๆ Base CRT 15 เพิ่ม Critical Damage ขึ้นอีก 1%, P.ATK + 1\nเมื่อ Armor ที่สวมใส่มีเกรดตั้งแต่ C ขึ้นไป ทุก ๆ Base CRT 15 เพิ่ม Critical Damage ขึ้นอีก 1%, P.ATK + 1 เพิ่มเติม\nเมื่อ Armor ที่สวมใส่มีเกรดตั้งแต่ B ขึ้นไป ทุก ๆ Base CRT 15 เพิ่ม Critical Damage ขึ้นอีก 2%, P.ATK + 3 เพิ่มเติม\nเมื่อ Armor ที่สวมใส่มีเกรดตั้งแต่ A ขึ้นไป ทุก ๆ Base CRT 15 เพิ่ม Critical Damage ขึ้นอีก 3%,  P.ATK + 3 เพิ่มเติม",
     "slots": 0,
     "itemTypeId": 11,
     "itemSubTypeId": 0,
@@ -96856,8 +96856,8 @@
   "310692": {
     "id": 310692,
     "aegisName": "Star_Of_Mettle1",
-    "name": "Star of Mettle Lv1",
-    "unidName": "Star of Mettle Lv1",
+    "name": "Star of Mettle Lv.1",
+    "unidName": "Star of Mettle Lv.1",
     "resName": "Star_Of_Mettle",
     "description": "ATK + 3%.\nHIT + 10.",
     "slots": 0,
@@ -96882,8 +96882,8 @@
   "310693": {
     "id": 310693,
     "aegisName": "Star_Of_Mettle2",
-    "name": "Star of Mettle Lv2",
-    "unidName": "Star of Mettle Lv2",
+    "name": "Star of Mettle Lv.2",
+    "unidName": "Star of Mettle Lv.2",
     "resName": "Star_Of_Mettle",
     "description": "ATK + 5%.\nHIT + 15.",
     "slots": 0,
@@ -96908,8 +96908,8 @@
   "310694": {
     "id": 310694,
     "aegisName": "Star_Of_Mettle3",
-    "name": "Star of Mettle Lv3",
-    "unidName": "Star of Mettle Lv3",
+    "name": "Star of Mettle Lv.3",
+    "unidName": "Star of Mettle Lv.3",
     "resName": "Star_Of_Mettle",
     "description": "ATK + 7%.\nHIT + 20.\nP.ATK + 1.",
     "slots": 0,
@@ -96937,8 +96937,8 @@
   "310695": {
     "id": 310695,
     "aegisName": "Star_Of_Mettle4",
-    "name": "Star of Mettle Lv4",
-    "unidName": "Star of Mettle Lv4",
+    "name": "Star of Mettle Lv.4",
+    "unidName": "Star of Mettle Lv.4",
     "resName": "Star_Of_Mettle",
     "description": "ATK + 10%.\nHIT + 25.\nP.ATK + 2.",
     "slots": 0,
@@ -96966,8 +96966,8 @@
   "310696": {
     "id": 310696,
     "aegisName": "Star_Of_Mettle5",
-    "name": "Star of Mettle Lv5",
-    "unidName": "Star of Mettle Lv5",
+    "name": "Star of Mettle Lv.5",
+    "unidName": "Star of Mettle Lv.5",
     "resName": "Star_Of_Mettle",
     "description": "ATK + 15%.\nHIT + 30.\nP.ATK + 4.",
     "slots": 0,
@@ -96995,10 +96995,10 @@
   "310697": {
     "id": 310697,
     "aegisName": "Star_Of_MasterArcher1",
-    "name": "Star of Master Archer Lv1",
-    "unidName": "Star of Master Archer Lv1",
+    "name": "Star of Master Archer Lv.1",
+    "unidName": "Star of Master Archer Lv.1",
     "resName": "Star_Of_MasterArcher",
-    "description": "Increases long ranged physical damage by 2%.\nIncreases bow damage by 3%.",
+    "description": "เพิ่ม Damage ทางกายภาพระยะไกล 2%\nATK + 2%.",
     "slots": 0,
     "itemTypeId": 11,
     "itemSubTypeId": 0,
@@ -97013,18 +97013,18 @@
       "range": [
         "2"
       ],
-      "bowRange": [
-        "3"
+      "atkPercent": [
+        "2"
       ]
     }
   },
   "310698": {
     "id": 310698,
     "aegisName": "Star_Of_MasterArcher2",
-    "name": "Star of Master Archer Lv2",
-    "unidName": "Star of Master Archer Lv2",
+    "name": "Star of Master Archer Lv.2",
+    "unidName": "Star of Master Archer Lv.2",
     "resName": "Star_Of_MasterArcher",
-    "description": "Increases long ranged physical damage by 3%.\nIncreases bow damage by 4%.",
+    "description": "เพิ่ม Damage ทางกายภาพระยะไกล 3%\nATK + 3%.",
     "slots": 0,
     "itemTypeId": 11,
     "itemSubTypeId": 0,
@@ -97039,18 +97039,18 @@
       "range": [
         "3"
       ],
-      "bowRange": [
-        "4"
+      "atkPercent": [
+        "3"
       ]
     }
   },
   "310699": {
     "id": 310699,
     "aegisName": "Star_Of_MasterArcher3",
-    "name": "Star of Master Archer Lv3",
-    "unidName": "Star of Master Archer Lv3",
+    "name": "Star of Master Archer Lv.3",
+    "unidName": "Star of Master Archer Lv.3",
     "resName": "Star_Of_MasterArcher",
-    "description": "Increases long ranged physical damage by 5%.\nIncreases bow damage by 5%.\nP.Atk + 1.",
+    "description": "เพิ่ม Damage ทางกายภาพระยะไกล 5%\nATK + 5%.\nP.ATK + 1.",
     "slots": 0,
     "itemTypeId": 11,
     "itemSubTypeId": 0,
@@ -97065,7 +97065,7 @@
       "range": [
         "5"
       ],
-      "bowRange": [
+      "atkPercent": [
         "5"
       ],
       "pAtk": [
@@ -97076,10 +97076,10 @@
   "310700": {
     "id": 310700,
     "aegisName": "Star_Of_MasterArcher4",
-    "name": "Star of Master Archer Lv4",
-    "unidName": "Star of Master Archer Lv4",
+    "name": "Star of Master Archer Lv.4",
+    "unidName": "Star of Master Archer Lv.4",
     "resName": "Star_Of_MasterArcher",
-    "description": "Increases long ranged physical damage by 7%.\nIncreases bow damage by 7%.\nP.Atk + 2.",
+    "description": "เพิ่ม Damage ทางกายภาพระยะไกล 7%\nATK + 6%.\nP.ATK + 2.",
     "slots": 0,
     "itemTypeId": 11,
     "itemSubTypeId": 0,
@@ -97094,8 +97094,8 @@
       "range": [
         "7"
       ],
-      "bowRange": [
-        "7"
+      "atkPercent": [
+        "6"
       ],
       "pAtk": [
         "2"
@@ -97105,10 +97105,10 @@
   "310701": {
     "id": 310701,
     "aegisName": "Star_Of_MasterArcher5",
-    "name": "Star of Master Archer Lv5",
-    "unidName": "Star of Master Archer Lv5",
+    "name": "Star of Master Archer Lv.5",
+    "unidName": "Star of Master Archer Lv.5",
     "resName": "Star_Of_MasterArcher",
-    "description": "Increases long ranged physical damage by 10%.\nIncreases bow damage by 10%.\nP.Atk + 4.",
+    "description": "เพิ่ม Damage ทางกายภาพระยะไกล 10%\nATK + 7%.\nP.ATK + 4.",
     "slots": 0,
     "itemTypeId": 11,
     "itemSubTypeId": 0,
@@ -97123,8 +97123,8 @@
       "range": [
         "10"
       ],
-      "bowRange": [
-        "10"
+      "atkPercent": [
+        "7"
       ],
       "pAtk": [
         "4"
@@ -97134,10 +97134,10 @@
   "310702": {
     "id": 310702,
     "aegisName": "Star_Of_Sharp1",
-    "name": "Star of Sharp Lv1",
-    "unidName": "Star of Sharp Lv1",
+    "name": "Star of Sharp Lv.1",
+    "unidName": "Star of Sharp Lv.1",
     "resName": "Star_Of_Sharp",
-    "description": "Cri + 2, increases critical damage by 2%.",
+    "description": "CRI + 2, เพิ่ม Critical Damage 2%",
     "slots": 0,
     "itemTypeId": 11,
     "itemSubTypeId": 0,
@@ -97160,10 +97160,10 @@
   "310703": {
     "id": 310703,
     "aegisName": "Star_Of_Sharp2",
-    "name": "Star of Sharp Lv2",
-    "unidName": "Star of Sharp Lv2",
+    "name": "Star of Sharp Lv.2",
+    "unidName": "Star of Sharp Lv.2",
     "resName": "Star_Of_Sharp",
-    "description": "Cri + 3, increases critical damage by 3%.",
+    "description": "CRI + 3, เพิ่ม Critical Damage 3%",
     "slots": 0,
     "itemTypeId": 11,
     "itemSubTypeId": 0,
@@ -97186,10 +97186,10 @@
   "310704": {
     "id": 310704,
     "aegisName": "Star_Of_Sharp3",
-    "name": "Star of Sharp Lv3",
-    "unidName": "Star of Sharp Lv3",
+    "name": "Star of Sharp Lv.3",
+    "unidName": "Star of Sharp Lv.3",
     "resName": "Star_Of_Sharp",
-    "description": "Cri + 5, increases critical damage by 5%.\nP.Atk + 2.",
+    "description": "CRI + 5, เพิ่ม Critical Damage 5%\nP.ATK + 1.",
     "slots": 0,
     "itemTypeId": 11,
     "itemSubTypeId": 0,
@@ -97208,17 +97208,17 @@
         "5"
       ],
       "pAtk": [
-        "2"
+        "1"
       ]
     }
   },
   "310705": {
     "id": 310705,
     "aegisName": "Star_Of_Sharp4",
-    "name": "Star of Sharp Lv4",
-    "unidName": "Star of Sharp Lv4",
+    "name": "Star of Sharp Lv.4",
+    "unidName": "Star of Sharp Lv.4",
     "resName": "Star_Of_Sharp",
-    "description": "Cri + 6, increases critical damage by 10%.\nP.Atk + 2.",
+    "description": "CRI + 6, เพิ่ม Critical Damage 10%\nP.ATK + 2.",
     "slots": 0,
     "itemTypeId": 11,
     "itemSubTypeId": 0,
@@ -97244,10 +97244,10 @@
   "310706": {
     "id": 310706,
     "aegisName": "Star_Of_Sharp5",
-    "name": "Star of Sharp Lv5",
-    "unidName": "Star of Sharp Lv5",
+    "name": "Star of Sharp Lv.5",
+    "unidName": "Star of Sharp Lv.5",
     "resName": "Star_Of_Sharp",
-    "description": "Cri + 8, increases critical damage by 15%.\nP.Atk + 2, C.Rate + 1.",
+    "description": "CRI + 8, เพิ่ม Critical Damage 15%\nP.ATK + 2, C.Rate + 1.",
     "slots": 0,
     "itemTypeId": 11,
     "itemSubTypeId": 0,
@@ -97276,10 +97276,10 @@
   "310707": {
     "id": 310707,
     "aegisName": "Star_Of_Spell1",
-    "name": "Star of Spell Lv1",
-    "unidName": "Star of Spell Lv1",
+    "name": "Star of Spell Lv.1",
+    "unidName": "Star of Spell Lv.1",
     "resName": "Star_Of_Spell",
-    "description": "Matk + 5, reduces variable casting time by 5%.",
+    "description": "MATK + 5, ลดระยะเวลาร่ายแบบแปรผัน 5%",
     "slots": 0,
     "itemTypeId": 11,
     "itemSubTypeId": 0,
@@ -97302,10 +97302,10 @@
   "310708": {
     "id": 310708,
     "aegisName": "Star_Of_Spell2",
-    "name": "Star of Spell Lv2",
-    "unidName": "Star of Spell Lv2",
+    "name": "Star of Spell Lv.2",
+    "unidName": "Star of Spell Lv.2",
     "resName": "Star_Of_Spell",
-    "description": "Matk + 7, reduces variable casting time by 5%.",
+    "description": "MATK + 7, ลดระยะเวลาร่ายแบบแปรผัน 5%",
     "slots": 0,
     "itemTypeId": 11,
     "itemSubTypeId": 0,
@@ -97328,10 +97328,10 @@
   "310709": {
     "id": 310709,
     "aegisName": "Star_Of_Spell3",
-    "name": "Star of Spell Lv3",
-    "unidName": "Star of Spell Lv3",
+    "name": "Star of Spell Lv.3",
+    "unidName": "Star of Spell Lv.3",
     "resName": "Star_Of_Spell",
-    "description": "Matk + 11, reduces variable casting time by 7%.\nS.Matk + 1.",
+    "description": "MATK + 11, ลดระยะเวลาร่ายแบบแปรผัน 7%\nS.MATK + 1.",
     "slots": 0,
     "itemTypeId": 11,
     "itemSubTypeId": 0,
@@ -97357,10 +97357,10 @@
   "310710": {
     "id": 310710,
     "aegisName": "Star_Of_Spell4",
-    "name": "Star of Spell Lv4",
-    "unidName": "Star of Spell Lv4",
+    "name": "Star of Spell Lv.4",
+    "unidName": "Star of Spell Lv.4",
     "resName": "Star_Of_Spell",
-    "description": "Matk + 17, reduces variable casting time by 10%.\nS.Matk + 2.",
+    "description": "MATK + 17, ลดระยะเวลาร่ายแบบแปรผัน 10%\nS.MATK + 2.",
     "slots": 0,
     "itemTypeId": 11,
     "itemSubTypeId": 0,
@@ -97386,10 +97386,10 @@
   "310711": {
     "id": 310711,
     "aegisName": "Star_Of_Spell5",
-    "name": "Star of Spell Lv5",
-    "unidName": "Star of Spell Lv5",
+    "name": "Star of Spell Lv.5",
+    "unidName": "Star of Spell Lv.5",
     "resName": "Star_Of_Spell",
-    "description": "Matk + 25, reduces variable casting time by 15%.\nS.Matk + 4.",
+    "description": "MATK + 25, ลดระยะเวลาร่ายแบบแปรผัน 15%\nS.MATK + 4.",
     "slots": 0,
     "itemTypeId": 11,
     "itemSubTypeId": 0,
@@ -97415,10 +97415,10 @@
   "310712": {
     "id": 310712,
     "aegisName": "Star_Of_Speed1",
-    "name": "Star of Speed Lv1",
-    "unidName": "Star of Speed Lv1",
+    "name": "Star of Speed Lv.1",
+    "unidName": "Star of Speed Lv.1",
     "resName": "Star_Of_Speed",
-    "description": "Flee + 5.\nIncreases attack speed (reduces delay after attack by 5%).",
+    "description": "FLEE + 5.\nASPD +5%",
     "slots": 0,
     "itemTypeId": 11,
     "itemSubTypeId": 0,
@@ -97441,10 +97441,10 @@
   "310713": {
     "id": 310713,
     "aegisName": "Star_Of_Speed2",
-    "name": "Star of Speed Lv2",
-    "unidName": "Star of Speed Lv2",
+    "name": "Star of Speed Lv.2",
+    "unidName": "Star of Speed Lv.2",
     "resName": "Star_Of_Speed",
-    "description": "Flee + 10.\nIncreases attack speed (reduces delay after attack by 7%).",
+    "description": "FLEE + 10.\nASPD +7%",
     "slots": 0,
     "itemTypeId": 11,
     "itemSubTypeId": 0,
@@ -97467,10 +97467,10 @@
   "310714": {
     "id": 310714,
     "aegisName": "Star_Of_Speed3",
-    "name": "Star of Speed Lv3",
-    "unidName": "Star of Speed Lv3",
+    "name": "Star of Speed Lv.3",
+    "unidName": "Star of Speed Lv.3",
     "resName": "Star_Of_Speed",
-    "description": "Flee + 15.\nIncreases attack speed (reduces delay after attack by 7%).",
+    "description": "FLEE + 15.\nASPD +7%",
     "slots": 0,
     "itemTypeId": 11,
     "itemSubTypeId": 0,
@@ -97493,10 +97493,10 @@
   "310715": {
     "id": 310715,
     "aegisName": "Star_Of_Speed4",
-    "name": "Star of Speed Lv4",
-    "unidName": "Star of Speed Lv4",
+    "name": "Star of Speed Lv.4",
+    "unidName": "Star of Speed Lv.4",
     "resName": "Star_Of_Speed",
-    "description": "Flee + 20.\nIncreases attack speed (reduces delay after attack by 10%).\nASPD + 1.",
+    "description": "FLEE + 20.\nASPD +10%\nASPD + 1.",
     "slots": 0,
     "itemTypeId": 11,
     "itemSubTypeId": 0,
@@ -97522,10 +97522,10 @@
   "310716": {
     "id": 310716,
     "aegisName": "Star_Of_Speed5",
-    "name": "Star of Speed Lv5",
-    "unidName": "Star of Speed Lv5",
+    "name": "Star of Speed Lv.5",
+    "unidName": "Star of Speed Lv.5",
     "resName": "Star_Of_Speed",
-    "description": "Flee + 30.\nIncreases attack speed (reduces delay after attack by 15%).\nASPD + 2.",
+    "description": "FLEE + 30.\nASPD +15%\nASPD + 2.",
     "slots": 0,
     "itemTypeId": 11,
     "itemSubTypeId": 0,
@@ -97551,10 +97551,10 @@
   "310717": {
     "id": 310717,
     "aegisName": "Star_Of_Vital1",
-    "name": "Star of Vital Lv1",
-    "unidName": "Star of Vital Lv1",
+    "name": "Star of Vital Lv.1",
+    "unidName": "Star of Vital Lv.1",
     "resName": "Star_Of_Vital",
-    "description": "MaxHP + 2%.\nRes + 1, Mres + 1.",
+    "description": "MHP + 2%.\nRES, MRES + 1.",
     "slots": 0,
     "itemTypeId": 11,
     "itemSubTypeId": 0,
@@ -97580,10 +97580,10 @@
   "310718": {
     "id": 310718,
     "aegisName": "Star_Of_Vital2",
-    "name": "Star of Vital Lv2",
-    "unidName": "Star of Vital Lv2",
+    "name": "Star of Vital Lv.2",
+    "unidName": "Star of Vital Lv.2",
     "resName": "Star_Of_Vital",
-    "description": "MaxHP + 3%.\nRes + 2, Mres + 2.",
+    "description": "MHP + 3%.\nRES, MRES + 2.",
     "slots": 0,
     "itemTypeId": 11,
     "itemSubTypeId": 0,
@@ -97609,10 +97609,10 @@
   "310719": {
     "id": 310719,
     "aegisName": "Star_Of_Vital3",
-    "name": "Star of Vital Lv3",
-    "unidName": "Star of Vital Lv3",
+    "name": "Star of Vital Lv.3",
+    "unidName": "Star of Vital Lv.3",
     "resName": "Star_Of_Vital",
-    "description": "MaxHP + 5%.\nRes + 4, Mres + 4.",
+    "description": "MHP + 5%.\nRES, MRES + 4.",
     "slots": 0,
     "itemTypeId": 11,
     "itemSubTypeId": 0,
@@ -97638,10 +97638,10 @@
   "310720": {
     "id": 310720,
     "aegisName": "Star_Of_Vital4",
-    "name": "Star of Vital Lv4",
-    "unidName": "Star of Vital Lv4",
+    "name": "Star of Vital Lv.4",
+    "unidName": "Star of Vital Lv.4",
     "resName": "Star_Of_Vital",
-    "description": "MaxHP + 7%.\nRes + 6, Mres + 6.",
+    "description": "MHP + 7%.\nRES, MRES + 6.",
     "slots": 0,
     "itemTypeId": 11,
     "itemSubTypeId": 0,
@@ -97667,10 +97667,10 @@
   "310721": {
     "id": 310721,
     "aegisName": "Star_Of_Vital5",
-    "name": "Star of Vital Lv5",
-    "unidName": "Star of Vital Lv5",
+    "name": "Star of Vital Lv.5",
+    "unidName": "Star of Vital Lv.5",
     "resName": "Star_Of_Vital",
-    "description": "MaxHP + 10%.\nRes + 10, Mres + 10.",
+    "description": "MHP + 10%.\nRES, MRES + 10.",
     "slots": 0,
     "itemTypeId": 11,
     "itemSubTypeId": 0,
@@ -97696,10 +97696,10 @@
   "310722": {
     "id": 310722,
     "aegisName": "Star_Of_Spirit1",
-    "name": "Star of Spirit Lv1",
-    "unidName": "Star of Spirit Lv1",
+    "name": "Star of Spirit Lv.1",
+    "unidName": "Star of Spirit Lv.1",
     "resName": "Star_Of_Spirit",
-    "description": "Increases heal effectiveness by 5%.\nMaxSP + 3%.\nIncreases SP recovery rate by 10%.",
+    "description": "เพิ่มปริมาณ Heal 5%\nMSP + 3%.\nเพิ่มพลังฟื้นฟู SP 10%",
     "slots": 0,
     "itemTypeId": 11,
     "itemSubTypeId": 0,
@@ -97719,10 +97719,10 @@
   "310723": {
     "id": 310723,
     "aegisName": "Star_Of_Spirit2",
-    "name": "Star of Spirit Lv2",
-    "unidName": "Star of Spirit Lv2",
+    "name": "Star of Spirit Lv.2",
+    "unidName": "Star of Spirit Lv.2",
     "resName": "Star_Of_Spirit",
-    "description": "Increases heal effectiveness by 7%.\nMaxSP + 5%.\nIncreases SP recovery rate by 15%.",
+    "description": "เพิ่มปริมาณ Heal 7%\nMSP + 5%.\nเพิ่มพลังฟื้นฟู SP 15%",
     "slots": 0,
     "itemTypeId": 11,
     "itemSubTypeId": 0,
@@ -97742,10 +97742,10 @@
   "310724": {
     "id": 310724,
     "aegisName": "Star_Of_Spirit3",
-    "name": "Star of Spirit Lv3",
-    "unidName": "Star of Spirit Lv3",
+    "name": "Star of Spirit Lv.3",
+    "unidName": "Star of Spirit Lv.3",
     "resName": "Star_Of_Spirit",
-    "description": "Increases heal effectiveness by 10%.\nMaxSP + 3%.\nH.Plus + 1.\nIncreases SP recovery rate by 15%.",
+    "description": "เพิ่มปริมาณ Heal 10%\nMSP + 5%.\nH.PLUS + 1.\nเพิ่มพลังฟื้นฟู SP 15%",
     "slots": 0,
     "itemTypeId": 11,
     "itemSubTypeId": 0,
@@ -97758,7 +97758,7 @@
     "compositionPos": 65535,
     "script": {
       "spPercent": [
-        "3"
+        "5"
       ],
       "hplus": [
         "1"
@@ -97768,10 +97768,10 @@
   "310725": {
     "id": 310725,
     "aegisName": "Star_Of_Spirit4",
-    "name": "Star of Spirit Lv4",
-    "unidName": "Star of Spirit Lv4",
+    "name": "Star of Spirit Lv.4",
+    "unidName": "Star of Spirit Lv.4",
     "resName": "Star_Of_Spirit",
-    "description": "Increases heal effectiveness by 10%.\nMaxSP + 7%.\nH.Plus + 3.\nIncreases SP recovery rate by 15%.",
+    "description": "เพิ่มปริมาณ Heal 10%\nMSP + 7%.\nH.PLUS + 3.\nเพิ่มพลังฟื้นฟู SP 15%",
     "slots": 0,
     "itemTypeId": 11,
     "itemSubTypeId": 0,
@@ -97794,10 +97794,10 @@
   "310726": {
     "id": 310726,
     "aegisName": "Star_Of_Spirit5",
-    "name": "Star of Spirit Lv5",
-    "unidName": "Star of Spirit Lv5",
+    "name": "Star of Spirit Lv.5",
+    "unidName": "Star of Spirit Lv.5",
     "resName": "Star_Of_Spirit",
-    "description": "Increases heal effectiveness by 15%.\nMaxSP + 10%.\nH.Plus + 5.\nIncreases SP recovery rate by 20%.",
+    "description": "เพิ่มปริมาณ Heal 15%\nMSP + 10%.\nH.PLUS + 5.\nเพิ่มพลังฟื้นฟู SP 20%",
     "slots": 0,
     "itemTypeId": 11,
     "itemSubTypeId": 0,
@@ -132916,7 +132916,7 @@
     "name": "Good Vigor (Hyper Novice)",
     "unidName": "Good Vigor (Hyper Novice)",
     "resName": "C_160LV_Mechanic_Gold",
-    "description": "When equipped with Good Spell,\r\nincreases Shield Chain Rush damage by 20%,\r\nincreases Spiral Pierce Max damage by 40%,\r\nincreases physical damage against all property enemies by 20%,\r\nincreases attack speed (reduces delay after attack by 5%).",
+    "description": "เมื่อสวมใส่ร่วมกับ Good Spell,\nเพิ่ม Damage สกิล Shield Chain Rush 20%, เพิ่ม Damage สกิล Spiral Pierce Max 40%, เพิ่ม Damage ทางกายภาพต่อศัตรูทุกธาตุ 20%, ASPD + 5%",
     "slots": 0,
     "itemTypeId": 11,
     "itemSubTypeId": 0,
@@ -132948,7 +132948,7 @@
     "name": "Evil Vigor (Hyper Novice)",
     "unidName": "Evil Vigor (Hyper Novice)",
     "resName": "C_160LV_Warlock_Violet",
-    "description": "When equipped with Evil Spell,\r\nincreases Napalm Vulcan Strike damage by 20%,\r\nincreases Ground Gravitation damage by 40%,\r\nincreases magical damage against all property enemies by 20%,\r\nreduces variable casting time by 5%.",
+    "description": "เมื่อสวมใส่ร่วมกับ Evil Spell,\nเพิ่ม Damage สกิล Napalm Vulcan Strike 20%, เพิ่ม Damage สกิล Ground Gravitation 40%, เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกธาตุ 20%, ลดระยะเวลาร่ายแบบแปรผัน 5%",
     "slots": 0,
     "itemTypeId": 11,
     "itemSubTypeId": 0,
@@ -145055,6 +145055,70 @@
       ],
       "The Vigilante at Night": [
         "100"
+      ]
+    }
+  },
+  "314811": {
+    "id": 314811,
+    "aegisName": "DimAcc_ABC",
+    "name": "Abyss Chaser Dim Crystal",
+    "unidName": "Abyss Chaser Dim Crystal",
+    "resName": "Sea_Sapphire",
+    "description": "เมื่อสวมใส่ร่วมกับ Dim Glacier Rogue Knife,\nเพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกธาตุ 5%,\nทุก ๆ 2 ขั้นอัพเกรดอาวุธ, เพิ่ม Damage สกิล Abyss Square, Jack Frost Nova 4%\n\nเมื่อ Dim Glacier Rogue Knife มี Grade C ขึ้นไป,\nลด Cooldown สกิล Abyss Square 1 วินาที\n\nเมื่อ Dim Glacier Rogue Knife มี Grade C ขึ้นไป และขั้นอัพเกรด 12 ขึ้นไป,\nเมื่อโจมตีทางกายภาพ มีโอกาส 15% ที่จะ Autospell สกิล Jack Frost Nova Lv.10, เพิ่ม Damage สกิล Abyss Square, Jack Frost Nova 15%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "cd__Abyss Square": [
+        "EQUIP[Dim Glacier Rogue Knife]GRADE[weapon==C]===1"
+      ],
+      "Abyss Square": [
+        "EQUIP[Dim Glacier Rogue Knife]REFINE[weapon==2]---4",
+        "EQUIP[Dim Glacier Rogue Knife]GRADE[weapon==C]REFINE[weapon==12]===15"
+      ],
+      "Jack Frost Nova": [
+        "EQUIP[Dim Glacier Rogue Knife]REFINE[weapon==2]---4",
+        "EQUIP[Dim Glacier Rogue Knife]GRADE[weapon==C]REFINE[weapon==12]===15"
+      ],
+      "m_element_all": [
+        "EQUIP[Dim Glacier Rogue Knife]===5"
+      ]
+    }
+  },
+  "314812": {
+    "id": 314812,
+    "aegisName": "DimAcc_IQ",
+    "name": "Inquisitor Dim Crystal",
+    "unidName": "Inquisitor Dim Crystal",
+    "resName": "Sea_Sapphire",
+    "description": "เมื่อสวมใส่ร่วมกับ Dim Glacier Knuckle,\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกธาตุ 5%,\nทุก ๆ 2 ขั้นอัพเกรดอาวุธ, เพิ่ม Damage สกิล Third Flame Bomb 4%\n\nเมื่อ Dim Glacier Knuckle มี Grade C ขึ้นไป,\nMaxHP + 15%\n\nเมื่อ Dim Glacier Knuckle มี Grade C ขึ้นไป และขั้นอัพเกรด 12 ขึ้นไป, \nเมื่อใช้งานสกิล First Brand จะ Autospell สกิล Second Flame Lv.1 (เมื่อเรียนรู้สกิลในเลเวลที่สูงกว่า จะร่ายในเลเวลสูงสุด),\nเมื่อใช้งานสกิล Second Flame จะ Autospell สกิล Third Flame Bomb Lv.1 (เมื่อเรียนรู้สกิลในเลเวลที่สูงกว่า จะร่ายในเลเวลสูงสุด),\nเพิ่ม Damage สกิล Third Flame Bomb 15%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "hpPercent": [
+        "EQUIP[Dim Glacier Knuckle]GRADE[weapon==C]===15"
+      ],
+      "Third Flame Bomb": [
+        "EQUIP[Dim Glacier Knuckle]REFINE[weapon==2]---4",
+        "EQUIP[Dim Glacier Knuckle]GRADE[weapon==C]REFINE[weapon==12]===15"
+      ],
+      "p_element_all": [
+        "EQUIP[Dim Glacier Knuckle]===5"
       ]
     }
   },
@@ -174063,10 +174127,10 @@
   "470226": {
     "id": 470226,
     "aegisName": "FateSin_Boots_HN",
-    "name": "Boots of Good and Evil (Hyper Novice) [1]",
+    "name": "Good & Evil Boots (Hyper Novice) [1]",
     "unidName": "Shoes",
     "resName": "FateSin_Boots_HN",
-    "description": "MaxHP + 500, MaxSP + 100.\r\nEvery 2 refine rate, MaxHP + 1%, MaxSP + 1%.\r\nIf refine rate is 7 or higher, Atk + 7%, Matk + 7%.\r\nIf refine rate is 9 or higher, increases long ranged physical damage by 10%, increases all property magical damage by 10%.\r\nIf refine rate is 11 or higher, reduces fixed casting time by 0.5 seconds.\r\n\r\n^CC3D3D[Bonus by grade]^000000\r\n[Grade D] Res + 50, Mres + 50.\r\n[Grade C] Increases physical and magical damage against all size enemies by 10%.\r\n[Grade B] P.Atk + 7, S.Matk + 7.\r\n[Grade A] Reduces fixed casting time by 0.5 seconds.\r\nClass: ^777777Shoes^000000  Defense: ^77777720^000000\r\nWeight: ^77777760^000000\r\nRequired Level: ^777777210^000000\r\nArmor Level: ^7777772^000000\r\nJobs: ^777777Hyper Novice^000000",
+    "description": "รองเท้าที่แฝงพลังของธรรมะและอธรรมอยู่\n \nMHP + 500, MSP + 100\nทุก ๆ การอัพเกรด 2 ขั้น MHP + 1%, MSP + 1%\nเมื่ออัพเกรดถึงขั้น 7, ATK, MATK + 7%\nเมื่ออัพเกรดถึงขั้น 9, เพิ่ม Damage ทางกายภาพระยะไกล 10%, เพิ่ม Damage ทางเวทมนตร์ทุกธาตุ 10%\nเมื่ออัพเกรดถึงขั้น 11, ลดระยะเวลาร่ายแบบคงที่ 0.5 วินาที\n \n^CC3D3D[Option เพิ่มเติมตาม Grade]^000000\n[Grade D] RES + 50, MRES + 50\n[Grade C] เพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูทุกขนาด 10%\n[Grade B] P.ATK + 7, S.MATK + 7\n[Grade A] ลดระยะเวลาร่ายแบบคงที่ 0.5 วินาที\nประเภท : ^777777Shoes^000000  พลังป้องกัน : ^77777720^000000\nน้ำหนัก : ^77777760^000000\nเลเวลที่ต้องการ : ^777777210^000000\nเลเวล Armor : ^7777772^000000\nอาชีพที่ใส่ได้ : ^777777Hyper Novice^000000",
     "slots": 1,
     "itemTypeId": 2,
     "itemSubTypeId": 516,
@@ -181260,6 +181324,175 @@
       ],
       "matkPercent": [
         "GRADE[me==A]===10"
+      ]
+    }
+  },
+  "480709": {
+    "id": 480709,
+    "aegisName": "Hero_Courage_TH_LT",
+    "name": "Hero Courage Cape-LT [1]",
+    "unidName": "Hero Courage Cape-LT",
+    "resName": "Hero_Favor_LT",
+    "description": "ชุดคลุมอันทรงเกียรติแด่วีรบุรุษผู้กล้าหาญ\n\nMaxHP + 8000, MaxSP + 300\nทุก ๆ Base Lv. 10, P.ATK + 1 / RES + 7 / MRES + 7\nทุก ๆ การอัพเกรด 2 ขั้น, ATK + 20\nทุก ๆ การอัพเกรด 3 ขั้น, ATK + 4%\nเมื่ออัพเกรดถึงขั้น 7, ASPD + 15%\nเมื่ออัพเกรดถึงขั้น 9, เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 15%\nเมื่ออัพเกรดถึงขั้น 11, ลด Global Cooldown 15%\nเมื่ออัพเกรดถึงขั้น 13, เพิ่ม Damage ทางกายภาพต่อศัตรูทุกเผ่า 15%\n\nเมื่อสวมใส่ร่วมกับ Ancient Hero Boots,\nลดระยะเวลาร่ายแบบคงที่ 0.2 วินาที, ATK + 60\n\nเมื่อสวมใส่ร่วมกับ Great Hero's Boots,\nลดระยะเวลาร่ายแบบคงที่ 0.2 วินาที, ATK + 80\n\nเมื่อสวมใส่ร่วมกับ Hero Boots-LT,\nลดระยะเวลาร่ายแบบคงที่ 0.2 วินาที, ATK + 180\nเมื่อ Hero Boots-LT มี Grade C ขึ้นไป, ATK + 20%\nเมื่อ Hero Boots-LT มี Grade B ขึ้นไป, P.ATK + 10\nเมื่อ Hero Boots-LT มี Grade A ขึ้นไป, เมื่อโจมตีทางกายภาพ มีโอกาส 3% ที่จะ POW + 50, CON + 50, P.ATK + 20 เป็นเวลา 10 วินาที\n\n[Option เพิ่มเติมตาม Grade]\n[Grade D] ลดระยะเวลาร่ายแบบคงที่ 0.2 วินาที\n[Grade C] เพิ่ม Damage ทางกายภาพต่อระยะใกล้/ไกล 15%\n[Grade B] เพิ่ม Damage ทางกายภาพต่อศัตรูทุกธาตุ 12%\n[Grade A] ไม่ถูก Knock-back\nประเภท : ^777777Garment^000000  พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^77777780^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 515,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 80,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "canGrade": true,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "hp": [
+        "8000"
+      ],
+      "sp": [
+        "300"
+      ],
+      "pAtk": [
+        "SUM[level==10]---1",
+        "EQUIP[Hero Boots-LT]GRADE[boot==B]===10"
+      ],
+      "res": [
+        "SUM[level==10]---7"
+      ],
+      "mres": [
+        "SUM[level==10]---7"
+      ],
+      "atk": [
+        "2---20",
+        "EQUIP[Ancient Hero Boots]===60",
+        "EQUIP[Great Hero Boots]===80",
+        "EQUIP[Hero Boots-LT]===180"
+      ],
+      "atkPercent": [
+        "3---4",
+        "EQUIP[Hero Boots-LT]GRADE[boot==C]===20"
+      ],
+      "aspdPercent": [
+        "7===15"
+      ],
+      "p_size_all": [
+        "9===15"
+      ],
+      "acd": [
+        "11===15"
+      ],
+      "p_race_all": [
+        "13===15"
+      ],
+      "fct": [
+        "GRADE[me==D]===0.2",
+        "EQUIP[Ancient Hero Boots]===0.2",
+        "EQUIP[Great Hero Boots]===0.2",
+        "EQUIP[Hero Boots-LT]===0.2"
+      ],
+      "melee": [
+        "GRADE[me==C]===15"
+      ],
+      "range": [
+        "GRADE[me==C]===15"
+      ],
+      "p_element_all": [
+        "GRADE[me==B]===12"
+      ],
+      "chance__pAtk": [
+        "EQUIP[Hero Boots-LT]GRADE[boot==A]===20"
+      ],
+      "chance__pow": [
+        "EQUIP[Hero Boots-LT]GRADE[boot==A]===50"
+      ],
+      "chance__con": [
+        "EQUIP[Hero Boots-LT]GRADE[boot==A]===50"
+      ]
+    }
+  },
+  "480710": {
+    "id": 480710,
+    "aegisName": "Hero_Favor_TH_LT",
+    "name": "Hero Favor Cape-LT [1]",
+    "unidName": "Hero Favor Cape-LT",
+    "resName": "Hero_Favor_LT",
+    "description": "ชุดคลุมอันทรงเกียรติแด่วีรบุรุษผู้สง่างาม\n\nMaxHP + 8000, MaxSP + 300\nทุก ๆ Base Lv.10, S.MATK + 1, RES + 7, MRES + 7\nทุก ๆ การอัพเกรด 2 ขั้น, MATK + 20\nทุก ๆ การอัพเกรด 3 ขั้น, MATK + 4%\n\nเมื่ออัพเกรดถึงขั้น 7, ASPD + 15%\nเมื่ออัพเกรดถึงขั้น 9, เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกขนาด 15%\nเมื่ออัพเกรดถึงขั้น 11, ลด Global Cooldown 15%\nเมื่ออัพเกรดถึงขั้น 13, เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกเผ่า 15%\n\nเมื่อสวมใส่ร่วมกับ Ancient Hero Boots,\nลดระยะเวลาร่ายแบบคงที่ 0.2 วินาที,  MATK + 60\n\nเมื่อสวมใส่ร่วมกับ Great Hero's Boots,\nลดระยะเวลาร่ายแบบคงที่ 0.2 วินาที,  MATK + 80\n\nเมื่อสวมใส่ร่วมกับ Hero Boots-LT,\nลดระยะเวลาร่ายแบบคงที่ 0.2 วินาที,  MATK + 180\nเมื่อ Hero Boots-LT มี Grade C ขึ้นไป, MATK + 20%\nเมื่อ Hero Boots-LT มี Grade B ขึ้นไป, S.MATK + 10\nเมื่อ Hero Boots-LT มี Grade A ขึ้นไป, เมื่อโจมตีทางเวทมนตร์ มีโอกาส 3% ที่จะ SPL + 50, CON + 50, S.MATK + 20 เป็นเวลา 10 วินาที\n\n[Option เพิ่มเติมตาม Grade]\n[Grade D] ลดระยะเวลาร่ายแบบคงที่ 0.3 วินาที\n[Grade C] เพิ่ม Damageทางเวทมนตร์ทุกธาตุ 15%\n[Grade B] เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกธาตุ 12%\n[Grade A] ไม่ถูก Knock-back\nประเภท : ^777777Garment^000000  พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^77777780^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 515,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 80,
+    "requiredLevel": 100,
+    "location": null,
+    "compositionPos": null,
+    "canGrade": true,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "hp": [
+        "8000"
+      ],
+      "sp": [
+        "300"
+      ],
+      "sMatk": [
+        "SUM[level==10]---1",
+        "EQUIP[Hero Boots-LT]GRADE[boot==B]===10"
+      ],
+      "res": [
+        "SUM[level==10]---7"
+      ],
+      "mres": [
+        "SUM[level==10]---7"
+      ],
+      "matk": [
+        "2---20",
+        "EQUIP[Ancient Hero Boots]===60",
+        "EQUIP[Great Hero Boots]===80",
+        "EQUIP[Hero Boots-LT]===180"
+      ],
+      "matkPercent": [
+        "3---4",
+        "EQUIP[Hero Boots-LT]GRADE[boot==C]===20"
+      ],
+      "aspdPercent": [
+        "7===15"
+      ],
+      "m_size_all": [
+        "9===15"
+      ],
+      "acd": [
+        "11===15"
+      ],
+      "m_race_all": [
+        "13===15"
+      ],
+      "fct": [
+        "GRADE[me==D]===0.3",
+        "EQUIP[Ancient Hero Boots]===0.2",
+        "EQUIP[Great Hero Boots]===0.2",
+        "EQUIP[Hero Boots-LT]===0.2"
+      ],
+      "m_my_element_all": [
+        "GRADE[me==C]===15"
+      ],
+      "m_element_all": [
+        "GRADE[me==B]===12"
+      ],
+      "chance__sMatk": [
+        "EQUIP[Hero Boots-LT]GRADE[boot==A]===20"
+      ],
+      "chance__spl": [
+        "EQUIP[Hero Boots-LT]GRADE[boot==A]===50"
+      ],
+      "chance__con": [
+        "EQUIP[Hero Boots-LT]GRADE[boot==A]===50"
       ]
     }
   },
@@ -195983,6 +196216,414 @@
       ],
       "cd__Mystery Illusion": [
         "EQUIP[Devil Wing Staff]GRADE[weapon==C]===1.5"
+      ]
+    }
+  },
+  "490882": {
+    "id": 490882,
+    "aegisName": null,
+    "name": "Ring of Evil (Soul Ascetic) [1]",
+    "unidName": "Ring of Evil (Soul Ascetic)",
+    "resName": "Scorpio_Ring_J",
+    "description": "MATK + 100\nลด Global Cooldown 10%\nSPL + 10\nลดระยะเวลาร่ายแบบคงที่ 0.5 วินาที\nเพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกประเภท 15%\n \nเมื่อสวมใส่ร่วมกับ Soul Harvest,\nเพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกขนาด 15%,\nเพิ่ม Damage สกิล Exorcism of Malicious Soul, Talisman of Soul Stealing 15%\n\nเมื่อ Soul Harvest มีขั้นอัพเกรดตั้งแต่ 10 ขึ้นไป,\nเพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกธาตุ 15%,\nเพิ่ม Damage สกิล Exorcism of Malicious Soul, Talisman of Soul Stealing 15%\n\nเมื่อ Soul Harvest มี Grade C ขึ้นไป, \nMATK + 15%,\nลด Cooldown สกิล Exorcism of Malicious Soul, Talisman of Soul Stealing 0.8 วินาที,\nเพิ่ม Damage สกิล Exorcism of Malicious Soul, Talisman of Soul Stealing 20%\n\nเมื่อสวมใส่ร่วมกับ Evil Spell,\nเมื่อใช้งานสกิล Exorcism of Malicious Soul จะ Auto Spell สกิล Soul Gathering Lv.5,\nเมื่อใช้งานสกิล Talisman of Soul Stealing มีโอกาส 30% ที่จะ Auto Spell สกิล Talisman of Soul Stealing Lv.1 (เมื่อเรียนสกิลในเลเวลที่สูงกว่า จะร่ายในเลเวลสูงสุด)\nประเภท : ^777777Accessory (Right)^000000 พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777215^000000\nอาชีพที่ใส่ได้ : ^777777Soul Ascetic^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 510,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 215,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "SoulAscetic"
+    ],
+    "script": {
+      "matk": [
+        "100"
+      ],
+      "acd": [
+        "10"
+      ],
+      "spl": [
+        "10"
+      ],
+      "fct": [
+        "0.5"
+      ],
+      "m_class_all": [
+        "15"
+      ],
+      "m_size_all": [
+        "EQUIP[Soul Harvest]===15"
+      ],
+      "m_element_all": [
+        "EQUIP[Soul Harvest]REFINE[weapon==10]===15"
+      ],
+      "Exorcism of Malicious Soul": [
+        "EQUIP[Soul Harvest]===15",
+        "EQUIP[Soul Harvest]REFINE[weapon==10]===15",
+        "EQUIP[Soul Harvest]GRADE[weapon==C]===20"
+      ],
+      "Talisman of Soul Stealing": [
+        "EQUIP[Soul Harvest]===15",
+        "EQUIP[Soul Harvest]REFINE[weapon==10]===15",
+        "EQUIP[Soul Harvest]GRADE[weapon==C]===20"
+      ],
+      "matkPercent": [
+        "EQUIP[Soul Harvest]GRADE[weapon==C]===15"
+      ],
+      "cd__Exorcism of Malicious Soul": [
+        "EQUIP[Soul Harvest]GRADE[weapon==C]===0.8"
+      ]
+    }
+  },
+  "490883": {
+    "id": 490883,
+    "aegisName": null,
+    "name": "Ring of Good (Sky Emperor) [1]",
+    "unidName": "Ring of Good (Sky Emperor)",
+    "resName": "RK은반지",
+    "description": "ATK + 100\nลด Global Cooldown 10%\nPOW + 10\nCRI + 15\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกประเภท 15%\n \nเมื่อสวมใส่ร่วมกับ Origin of Life, \nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 15%,\nเพิ่ม Damage สกิล Noon Blast, Sunset Blast 15%\n\nเมื่อ Origin of Life มีขั้นอัพเกรดตั้งแต่ 10 ขึ้นไป,\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกธาตุ 15%,\nเพิ่ม Damage สกิล Noon Blast, Sunset Blast 15%\n\nเมื่อ Origin of Life มี Grade C ขึ้นไป, \nเพิ่ม Damage ทางกายภาพระยะใกล้ 20%,\nลด Cooldown สกิล Noon Blast 0.5 วินาที,\nเพิ่ม Damage สกิล Noon Blast, Sunset Blast 20%\n\nเมื่อสวมใส่ร่วมกับ Good Spell,\nเมื่อใช้งานสกิล Noon Blast มีโอกาส 30% ที่จะ Autospell สกิล Noon Blast Lv.1 (เมื่อเรียนสกิลในเลเวลที่สูงกว่า จะร่ายในเลเวลสูงสุด)\nประเภท : ^777777Accessory (Right)^000000 พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777215^000000\nอาชีพที่ใส่ได้ : ^777777Sky Emperor^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 510,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 215,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "SkyEmperor"
+    ],
+    "script": {
+      "atk": [
+        "100"
+      ],
+      "acd": [
+        "10"
+      ],
+      "pow": [
+        "10"
+      ],
+      "cri": [
+        "15"
+      ],
+      "p_class_all": [
+        "15"
+      ],
+      "p_size_all": [
+        "EQUIP[Origin of Life]===15"
+      ],
+      "p_element_all": [
+        "EQUIP[Origin of Life]REFINE[weapon==10]===15"
+      ],
+      "Noon Blast": [
+        "EQUIP[Origin of Life]===15",
+        "EQUIP[Origin of Life]REFINE[weapon==10]===15",
+        "EQUIP[Origin of Life]GRADE[weapon==C]===20"
+      ],
+      "Sunset Blast": [
+        "EQUIP[Origin of Life]===15",
+        "EQUIP[Origin of Life]REFINE[weapon==10]===15",
+        "EQUIP[Origin of Life]GRADE[weapon==C]===20"
+      ],
+      "melee": [
+        "EQUIP[Origin of Life]GRADE[weapon==C]===20"
+      ],
+      "cd__Noon Blast": [
+        "EQUIP[Origin of Life]GRADE[weapon==C]===0.5"
+      ]
+    }
+  },
+  "490884": {
+    "id": 490884,
+    "aegisName": "ABC_Dim_Ring_TH",
+    "name": "Dim Glacier Ring of Resonance (Abyss Chaser) [1]",
+    "unidName": "Dim Glacier Ring of Resonance (Abyss Chaser)",
+    "resName": "Ring_Of_TheAbyssKing_A",
+    "description": "แหวนที่หลอมจากผลึกธารน้ำแข็งอันหม่นมัว\nเมื่อสวมใส่จะเกิดการสั่นพ้องกับพลังของ Dim Glacier ปลดปล่อยพลังแฝงที่สะท้อนความหนาวเย็นอันลึกล้ำออกมา\n\nMATK + 100\nลด Global Cooldown 10%\nSPL + 10\nMATK + 10%\nเพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกประเภท 15%\n\nเมื่อสวมใส่ร่วมกับ Dim Glacier Rogue Knife, \nเพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกขนาด 15%,\nเพิ่ม Damage สกิล Abyss Square 15%\n\nเมื่อ Dim Glacier Rogue Knife มีขั้นอัพเกรดตั้งแต่ 10 ขึ้นไป,\nเพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกธาตุ 15%,\nเพิ่ม Damage สกิล Abyss Square 15%\n\nเมื่อ Dim Glacier Rogue Knife มี Grade C ขึ้นไป,\nS.MATK + 10,\nเพิ่ม Damage สกิล Abyss Square 20%\nประเภท : ^777777Accessory (Right)^000000 พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777230^000000\nอาชีพที่ใส่ได้ : ^777777Abyss Chaser^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 510,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 230,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "AbyssChaser"
+    ],
+    "script": {
+      "matk": [
+        "100"
+      ],
+      "acd": [
+        "10"
+      ],
+      "spl": [
+        "10"
+      ],
+      "matkPercent": [
+        "10"
+      ],
+      "m_class_all": [
+        "15"
+      ],
+      "m_size_all": [
+        "EQUIP[Dim Glacier Rogue Knife]===15"
+      ],
+      "m_element_all": [
+        "EQUIP[Dim Glacier Rogue Knife]REFINE[weapon==10]===15"
+      ],
+      "Abyss Square": [
+        "EQUIP[Dim Glacier Rogue Knife]===15",
+        "EQUIP[Dim Glacier Rogue Knife]REFINE[weapon==10]===15",
+        "EQUIP[Dim Glacier Rogue Knife]GRADE[weapon==C]===20"
+      ],
+      "sMatk": [
+        "EQUIP[Dim Glacier Rogue Knife]GRADE[weapon==C]===10"
+      ]
+    }
+  },
+  "490885": {
+    "id": 490885,
+    "aegisName": "IQ_Dim_Ring_TH",
+    "name": "Dim Glacier Ring of Resonance (Inquisitor) [1]",
+    "unidName": "Dim Glacier Ring of Resonance (Inquisitor)",
+    "resName": "Ring_Of_TheAbyssKing_A",
+    "description": "แหวนที่หลอมจากผลึกธารน้ำแข็งอันหม่นมัว\nเมื่อสวมใส่จะเกิดการสั่นพ้องกับพลังของ Dim Glacier ปลดปล่อยพลังแฝงที่สะท้อนความหนาวเย็นอันลึกล้ำออกมา\n\nATK + 100\nลด Global Cooldown 10%\nPOW + 10\nMaxHP + 10%\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกประเภท 15%\n\nเมื่อสวมใส่ร่วมกับ Dim Glacier Knuckle,\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 15%,\nเพิ่ม Damage สกิล Third Flame Bomb 15%\n \nเมื่อ Dim Glacier Knuckle มีขั้นอัพเกรดตั้งแต่ 10 ขึ้นไป,\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกธาตุ 15%,\nเพิ่ม Damage สกิล Third Flame Bomb 15%\n \nเมื่อ Dim Glacier Knuckle มี Grade C ขึ้นไป,\nP.ATK + 10,\nเพิ่ม Damage สกิล Third Flame Bomb 20%\nประเภท : ^777777Accessory (Right)^000000 พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777230^000000\nอาชีพที่ใส่ได้ : ^777777Inquisitor^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 510,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 230,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Inquisitor"
+    ],
+    "script": {
+      "atk": [
+        "100"
+      ],
+      "acd": [
+        "10"
+      ],
+      "pow": [
+        "10"
+      ],
+      "hpPercent": [
+        "10"
+      ],
+      "p_class_all": [
+        "15"
+      ],
+      "p_size_all": [
+        "EQUIP[Dim Glacier Knuckle]===15"
+      ],
+      "p_element_all": [
+        "EQUIP[Dim Glacier Knuckle]REFINE[weapon==10]===15"
+      ],
+      "Third Flame Bomb": [
+        "EQUIP[Dim Glacier Knuckle]===15",
+        "EQUIP[Dim Glacier Knuckle]REFINE[weapon==10]===15",
+        "EQUIP[Dim Glacier Knuckle]GRADE[weapon==C]===20"
+      ],
+      "pAtk": [
+        "EQUIP[Dim Glacier Knuckle]GRADE[weapon==C]===10"
+      ]
+    }
+  },
+  "490886": {
+    "id": 490886,
+    "aegisName": null,
+    "name": "Ring of Evil (Hyper Novice) [1]",
+    "unidName": "Ring of Evil (Hyper Novice)",
+    "resName": "Scorpio_Ring_J",
+    "description": "MATK + 100\nลด Global Cooldown 10%\nSPL + 10\nลดระยะเวลาร่ายแบบคงที่ 0.5 วินาที\nเพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกประเภท 15%\n \nเมื่อสวมใส่ร่วมกับ Devil Cursed Sword,\nเพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกขนาด 15%,\nเพิ่ม Damage สกิล Napalm Vulcan Strike, Ground Gravitation 15%\n\nเมื่อ Devil Cursed Sword มีขั้นอัพเกรดตั้งแต่ 10 ขึ้นไป,\nเพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกธาตุ 15%,\nเพิ่ม Damage สกิล Napalm Vulcan Strike, Ground Gravitation 15%\n\nเมื่อ Devil Cursed Sword มี Grade C ขึ้นไป,\nMATK + 15%,\nเพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกเผ่า 15%,\nเพิ่ม Damage สกิล Napalm Vulcan Strike, Ground Gravitation 20%\n\nเมื่อสวมใส่ร่วมกับ Evil Spell,\nสามารถใช้งานสกิล Recognized Spell Lv.5 ได้,\nเมื่อใช้งานสกิล Napalm Vulcan Strike มีโอกาส 30% ที่จะ Auto Spell สกิล Napalm Vulcan Strike Lv.1 (เมื่อเรียนสกิลในเลเวลที่สูงกว่า จะร่ายในเลเวลสูงสุด)\nประเภท : ^777777Accessory (Right)^000000 พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777215^000000\nอาชีพที่ใส่ได้ : ^777777Hyper Novice^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 510,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 215,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "HyperNovice"
+    ],
+    "script": {
+      "matk": [
+        "100"
+      ],
+      "acd": [
+        "10"
+      ],
+      "spl": [
+        "10"
+      ],
+      "fct": [
+        "0.5"
+      ],
+      "m_class_all": [
+        "15"
+      ],
+      "m_size_all": [
+        "EQUIP[Devil Cursed Sword]===15"
+      ],
+      "m_element_all": [
+        "EQUIP[Devil Cursed Sword]REFINE[weapon==10]===15"
+      ],
+      "Napalm Vulcan Strike": [
+        "EQUIP[Devil Cursed Sword]===15",
+        "EQUIP[Devil Cursed Sword]REFINE[weapon==10]===15",
+        "EQUIP[Devil Cursed Sword]GRADE[weapon==C]===20"
+      ],
+      "Ground Gravitation": [
+        "EQUIP[Devil Cursed Sword]===15",
+        "EQUIP[Devil Cursed Sword]REFINE[weapon==10]===15",
+        "EQUIP[Devil Cursed Sword]GRADE[weapon==C]===20"
+      ],
+      "matkPercent": [
+        "EQUIP[Devil Cursed Sword]GRADE[weapon==C]===15"
+      ],
+      "m_race_all": [
+        "EQUIP[Devil Cursed Sword]GRADE[weapon==C]===15"
+      ]
+    }
+  },
+  "490887": {
+    "id": 490887,
+    "aegisName": null,
+    "name": "Ring of Good (Hyper Novice) [1]",
+    "unidName": "Ring of Good (Hyper Novice)",
+    "resName": "RK은반지",
+    "description": "ATK + 100\nลด Global Cooldown 10%\nPOW + 10\nATK + 6%\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกประเภท 15%\n\nเมื่อสวมใส่ร่วมกับ Guardian Saber,\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 15%,\nเพิ่ม Damage สกิล Shield Chain Rush, Spiral Pierce Max 15%\n\nเมื่อ Guardian Saber มีขั้นอัพเกรดตั้งแต่ 10 ขึ้นไป,\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกธาตุ 15%,\nเพิ่ม Damage สกิล Shield Chain Rush, Spiral Pierce Max 15%\n\nเมื่อ Guardian Saber มี Grade C ขึ้นไป,\nเพิ่ม Damage ทางกายภาพระยะไกล 20%,\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกเผ่า 15%,\nเพิ่ม Damage สกิล Shield Chain Rush, Spiral Pierce Max 20%\n\nเมื่อสวมใส่ร่วมกับ Good Spell,\nเมื่อใช้งานสกิล Shield Chain Rush มีโอกาส 30% ที่จะ Auto Spell สกิล Shield Chain Rush Lv.1 (เมื่อเรียนรู้สกิลในเลเวลที่สูงกว่า จะร่ายในเลเวลสูงสุด)\nสามารถใช้งานสกิล Power Lv.4 ได้\nประเภท : ^777777Accessory (Right)^000000 พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777215^000000\nอาชีพที่ใส่ได้ : ^777777Hyper Novice^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 510,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 215,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "HyperNovice"
+    ],
+    "script": {
+      "atk": [
+        "100"
+      ],
+      "acd": [
+        "10"
+      ],
+      "pow": [
+        "10"
+      ],
+      "atkPercent": [
+        "6"
+      ],
+      "p_class_all": [
+        "15"
+      ],
+      "p_size_all": [
+        "EQUIP[Guardian Saber]===15"
+      ],
+      "p_element_all": [
+        "EQUIP[Guardian Saber]REFINE[weapon==10]===15"
+      ],
+      "Shield Chain Rush": [
+        "EQUIP[Guardian Saber]===15",
+        "EQUIP[Guardian Saber]REFINE[weapon==10]===15",
+        "EQUIP[Guardian Saber]GRADE[weapon==C]===20"
+      ],
+      "Spiral Pierce Max": [
+        "EQUIP[Guardian Saber]===15",
+        "EQUIP[Guardian Saber]REFINE[weapon==10]===15",
+        "EQUIP[Guardian Saber]GRADE[weapon==C]===20"
+      ],
+      "range": [
+        "EQUIP[Guardian Saber]GRADE[weapon==C]===20"
+      ],
+      "p_race_all": [
+        "EQUIP[Guardian Saber]GRADE[weapon==C]===15"
+      ]
+    }
+  },
+  "490888": {
+    "id": 490888,
+    "aegisName": null,
+    "name": "Ring of Good (Arch Mage) [1]",
+    "unidName": "Ring of Good (Arch Mage)",
+    "resName": "RK은반지",
+    "description": "MATK + 100\nลด Global Cooldown 10%\nSPL + 10\nลดระยะเวลาร่ายแบบคงที่ 0.5 วินาที\nเพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกประเภท 15%\n \nเมื่อสวมใส่ร่วมกับ Destiny Staff,\nเพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกขนาด 15%,\nเพิ่ม Damage สกิล Frozen Slash, Rain of Crystal 15%\n\nเมื่อ Destiny Staff มีขั้นอัพเกรดตั้งแต่ 10 ขึ้นไป,\nเพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกธาตุ 15%, \nเพิ่ม Damage สกิล Frozen Slash, Rain of Crystal 15%\n\nเมื่อ Destiny Staff มี Grade C ขึ้นไป, \nMATK + 15%,\nลด Cooldown สกิล Frozen Slash 0.2 วินาที,\nลด Cooldown สกิล Rain of Crystal 2 วินาที,\nเพิ่ม Damage สกิล Frozen Slash, Rain of Crystal 20%\n\nเมื่อสวมใส่ร่วมกับ Good Spell,\nเพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกธาตุ 15%,\nเมื่อใช้สกิล Frozen Slash มีโอกาส 40% ที่จะ Auto Spell สกิล Rain of Crystal Lv.1 (เมื่อเรียนสกิลในเลเวลที่สูงกว่า จะร่ายในเลเวลสูงสุด)\n\nประเภท : ^777777Accessory (Right)^000000 พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777215^000000\nอาชีพที่ใส่ได้ : ^777777Arch Mage^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 510,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 215,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "ArchMage"
+    ],
+    "script": {
+      "matk": [
+        "100"
+      ],
+      "acd": [
+        "10"
+      ],
+      "spl": [
+        "10"
+      ],
+      "fct": [
+        "0.5"
+      ],
+      "m_class_all": [
+        "15"
+      ],
+      "m_size_all": [
+        "EQUIP[Destiny Staff]===15"
+      ],
+      "m_element_all": [
+        "EQUIP[Destiny Staff]REFINE[weapon==10]===15",
+        "EQUIP[Good Spell]===15"
+      ],
+      "Frozen Slash": [
+        "EQUIP[Destiny Staff]===15",
+        "EQUIP[Destiny Staff]REFINE[weapon==10]===15",
+        "EQUIP[Destiny Staff]GRADE[weapon==C]===20"
+      ],
+      "Rain of Crystal": [
+        "EQUIP[Destiny Staff]===15",
+        "EQUIP[Destiny Staff]REFINE[weapon==10]===15",
+        "EQUIP[Destiny Staff]GRADE[weapon==C]===20"
+      ],
+      "matkPercent": [
+        "EQUIP[Destiny Staff]GRADE[weapon==C]===15"
+      ],
+      "cd__Frozen Slash": [
+        "EQUIP[Destiny Staff]GRADE[weapon==C]===0.2"
+      ],
+      "cd__Rain of Crystal": [
+        "EQUIP[Destiny Staff]GRADE[weapon==C]===2"
       ]
     }
   },

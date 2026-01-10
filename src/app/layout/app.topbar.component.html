@@ -50,6 +50,8 @@
     ไม่เกิน175</span
   > -->
 
+  <div style="background-color: #121212; color: var(--orange-400); overflow: hidden" class="font-bold text-xl">*** อย่าลืมไปเลือกตั้ง 8 กพ 69 นะทุกคน</div>
+
   <div #topbarmenu class="layout-topbar-menu" [ngClass]="{ 'layout-topbar-menu-mobile-active': layoutService.state.profileSidebarVisible }">
     <!-- <button class="p-link layout-topbar-button">
             <i class="pi pi-calendar"></i>
@@ -79,14 +81,14 @@
         label="Request / Report"
         (click)="survey.click()"
       ></button>
-      <button
+      <!-- <button
         class="font-bold p-button-info p-button-rounded p-button-raised"
         icon="pi pi-exclamation-triangle"
         pButton
         pRipple
         label="Issues Tracking"
         (click)="tracking.click()"
-      ></button>
+      ></button> -->
       <button class="font-bold p-button-primary p-button-rounded p-button-raised" icon="pi pi-heart" pButton pRipple label="Support" (click)="showDialog()"></button>
     </div>
     <div *ngIf="!!username" class="ml-3 flex align-items-center">
