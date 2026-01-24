@@ -1803,6 +1803,13 @@ export const EnchantTable: EntTable[] = [
 
   { name: "ABC_Dim_Ring_TH", enchants: [null, dimAcc2, dimAcc3, dimAcc4] },
   { name: "IQ_Dim_Ring_TH", enchants: [null, dimAcc2, dimAcc3, dimAcc4] },
+
+  { name: "S_BP9_Melee_A", enchants: [null, null, ['BP9_Snow_Melee', 'BP9_Snow_Range', 'BP9_Snow_Magic'], nebularShadow34] },
+  { name: "S_BP9_Melee_S", enchants: [null, null, ['BP9_Snow_Melee', 'BP9_Snow_Range', 'BP9_Snow_Magic'], nebularShadow34] },
+  { name: "S_BP9_Range_A", enchants: [null, null, ['BP9_Snow_Melee', 'BP9_Snow_Range', 'BP9_Snow_Magic'], nebularShadow34] },
+  { name: "S_BP9_Range_S", enchants: [null, null, ['BP9_Snow_Melee', 'BP9_Snow_Range', 'BP9_Snow_Magic'], nebularShadow34] },
+  { name: "S_BP9_Magic_A", enchants: [null, null, ['BP9_Snow_Melee', 'BP9_Snow_Range', 'BP9_Snow_Magic'], nebularShadow34] },
+  { name: "S_BP9_Magic_S", enchants: [null, null, ['BP9_Snow_Melee', 'BP9_Snow_Range', 'BP9_Snow_Magic'], nebularShadow34] },
 ];
 
 Object.freeze(EnchantTable);

@@ -145122,6 +145122,84 @@
       ]
     }
   },
+  "314889": {
+    "id": 314889,
+    "aegisName": "BP9_Snow_Melee",
+    "name": "Snow Flower of Melee",
+    "unidName": "Snow Flower of Melee",
+    "resName": "Ice_F_Orb_Skill_8",
+    "description": "ดอกไม้น้ำแข็งสีแดงเสริมความสามารถให้กับผู้สวมใส่\n\nทุกๆ การอัพเกรด 2 ขั้น All Status + 1\nเมื่ออัพเกรดถึงขั้น 10, เพิ่ม Damage ทางกายภาพระยะใกล้ 5%, EXP + 5%, DROP + 5%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "allStatus": [
+        "2---1"
+      ],
+      "melee": [
+        "10===5"
+      ]
+    }
+  },
+  "314890": {
+    "id": 314890,
+    "aegisName": "BP9_Snow_Range",
+    "name": "Snow Flower of Range",
+    "unidName": "Snow Flower of Range",
+    "resName": "Ice_F_Orb_War",
+    "description": "ดอกไม้น้ำแข็งสีม่วงเสริมความสามารถให้กับผู้สวมใส่\n\nทุกๆ การอัพเกรด 2 ขั้น, All Status + 1\nเมื่ออัพเกรดถึงขั้น 10, เพิ่ม Damage ทางกายภาพระยะไกล 5%, EXP + 5%, DROP + 5%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "allStatus": [
+        "2---1"
+      ],
+      "range": [
+        "10===5"
+      ]
+    }
+  },
+  "314891": {
+    "id": 314891,
+    "aegisName": "BP9_Snow_Magic",
+    "name": "Snow Flower of Magic",
+    "unidName": "Snow Flower of Magic",
+    "resName": "Ice_F_Orb_Int",
+    "description": "ดอกไม้น้ำแข็งสีฟ้าเสริมความสามารถให้กับผู้สวมใส่\n\nทุกๆ การอัพเกรด 2 ขั้น, All Status + 1\nเมื่ออัพเกรดถึงขั้น 10, MATK +5%, EXP + 5%, DROP + 5%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "allStatus": [
+        "2---1"
+      ],
+      "matkPercent": [
+        "10===5"
+      ]
+    }
+  },
   "400000": {
     "id": 400000,
     "aegisName": "WhistleK",
@@ -233002,6 +233080,267 @@
       ],
       "pene_mres": [
         "EQUIP[Nebula Magic Shadow Weapon]===30"
+      ]
+    }
+  },
+  "1270188": {
+    "id": 1270188,
+    "aegisName": "S_BP9_Melee_A",
+    "name": "Snow Flower Melee Shadow Armor",
+    "unidName": "Snow Flower Melee Shadow Armor",
+    "resName": "아머쉐도우2",
+    "description": "^ff0000ไอเท็มนี้ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้^000000\nไม่สามารถอัพเกรดทั่วไปได้\nทุกๆ การอัพเกรด 2 ขั้น, P.ATK + 1\nทุกๆ การอัพเกรด 3 ขั้น, เพิ่ม Damage ทางกายภาพระยะใกล้ 2%\nเมื่ออัพเกรดถึงขั้น 7, MaxHP + 10%, RES + 30\nเมื่ออัพเกรดถึงขั้น 9, ลด Global Cooldown 10%\nเมื่ออัพเกรดถึงขั้น 10, เพิ่ม Damage ทางกายภาพต่อศัตรูทุกธาตุ +10%\nประเภท : ^777777Shadow Equipment^000000\nตำแหน่ง : ^777777Armor^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": "Armor",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "pAtk": [
+        "2---1"
+      ],
+      "melee": [
+        "3---2"
+      ],
+      "hpPercent": [
+        "7===10"
+      ],
+      "res": [
+        "7===30"
+      ],
+      "acd": [
+        "9===10"
+      ],
+      "p_element_all": [
+        "10===10"
+      ]
+    }
+  },
+  "1270189": {
+    "id": 1270189,
+    "aegisName": "S_BP9_Melee_S",
+    "name": "Snow Flower Melee Shadow Shoes",
+    "unidName": "Snow Flower Melee Shadow Shoes",
+    "resName": "슈즈쉐도우2",
+    "description": "^ff0000ไอเท็มนี้ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้^000000\nไม่สามารถอัพเกรดทั่วไปได้\nทุกๆ การอัพเกรด 2 ขั้น, P.ATK + 1\nทุกๆ การอัพเกรด 3 ขั้น, ASPD + 5%\nเมื่ออัพเกรดถึงขั้น 7, MaxSP + 10%, MRES + 30\nเมื่ออัพเกรดถึงขั้น 9, ลดระยะเวลาร่ายแบบคงที่ 0.3 วินาที\nเมื่ออัพเกรดถึงขั้น 10, เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด +10%\n\nเมื่อสวมใส่ร่วมกับ Snow Flower Melee Shadow Armor, เพิ่ม Damage ทางกายภาพระยะใกล้ 4%,\nเมื่อค่าอัพเกรดรวมกันตั้งแต่ 20 ขึ้นไป ยกเลิกการลงโทษขนาดของอาวุธ\nประเภท : ^777777Shadow Equipment^000000\nตำแหน่ง : ^777777Shoes^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 528,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": "Shoes",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "pAtk": [
+        "2---1"
+      ],
+      "aspdPercent": [
+        "3---5"
+      ],
+      "spPercent": [
+        "7===10"
+      ],
+      "mres": [
+        "7===30"
+      ],
+      "fct": [
+        "9===0.3"
+      ],
+      "p_size_all": [
+        "10===10"
+      ],
+      "melee": [
+        "EQUIP[Snow Flower Melee Shadow Armor]===4"
+      ],
+      "ignore_size_penalty": [
+        "EQUIP[Snow Flower Melee Shadow Armor]REFINE[shadowArmor,shadowBoot==20]===1"
+      ]
+    }
+  },
+  "1270190": {
+    "id": 1270190,
+    "aegisName": "S_BP9_Range_A",
+    "name": "Snow Flower Range Shadow Armor",
+    "unidName": "Snow Flower Range Shadow Armor",
+    "resName": "낡은아머쉐도우",
+    "description": "^ff0000ไอเท็มนี้ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้^000000\nไม่สามารถอัพเกรดทั่วไปได้\nทุกๆ การอัพเกรด 2 ขั้น, P.ATK + 1\nทุกๆ การอัพเกรด 3 ขั้น, เพิ่ม Damage ทางกายภาพระยะไกล 2%\nเมื่ออัพเกรดถึงขั้น 7, MaxHP + 10%, RES + 30\nเมื่ออัพเกรดถึงขั้น 9, ลด Global Cooldown 10%\nเมื่ออัพเกรดถึงขั้น 10, เพิ่ม Damage ทางกายภาพต่อศัตรูทุกธาตุ 10%\nประเภท : ^777777Shadow Equipment^000000\nตำแหน่ง : ^777777Armor^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": "Armor",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "pAtk": [
+        "2---1"
+      ],
+      "range": [
+        "3---2"
+      ],
+      "hpPercent": [
+        "7===10"
+      ],
+      "res": [
+        "7===30"
+      ],
+      "acd": [
+        "9===10"
+      ],
+      "p_element_all": [
+        "10===10"
+      ]
+    }
+  },
+  "1270191": {
+    "id": 1270191,
+    "aegisName": "S_BP9_Range_S",
+    "name": "Snow Flower Range Shadow Shoes",
+    "unidName": "Snow Flower Range Shadow Shoes",
+    "resName": "낡은슈즈쉐도우",
+    "description": "^ff0000ไอเท็มนี้ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้^000000\nไม่สามารถอัพเกรดทั่วไปได้\nทุกๆ การอัพเกรด 2 ขั้น, P.ATK + 1\nทุกๆ การอัพเกรด 3 ขั้น, ASPD + 5%\nเมื่ออัพเกรดถึงขั้น 7, MaxSP + 10%, MRES + 30\nเมื่ออัพเกรดถึงขั้น 9, ลดระยะเวลาร่ายแบบคงที่ 0.3 วินาที\nเมื่ออัพเกรดถึงขั้น 10, เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 10%\n\nเมื่อสวมใส่ร่วมกับ Snow Flower Range Shadow Armor, เพิ่ม Damage ทางกายภาพระยะไกล 4%\nเมื่อค่าอัพเกรดรวมกันตั้งแต่ 20 ขึ้นไป ยกเลิกการลงโทษขนาดของอาวุธ\nประเภท : ^777777Shadow Equipment^000000\nตำแหน่ง : ^777777Shoes^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 528,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": "Shoes",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "pAtk": [
+        "2---1"
+      ],
+      "aspdPercent": [
+        "3---5"
+      ],
+      "spPercent": [
+        "7===10"
+      ],
+      "mres": [
+        "7===30"
+      ],
+      "fct": [
+        "9===0.3"
+      ],
+      "p_size_all": [
+        "10===10"
+      ],
+      "range": [
+        "EQUIP[Snow Flower Range Shadow Armor]===4"
+      ],
+      "ignore_size_penalty": [
+        "EQUIP[Snow Flower Range Shadow Armor]REFINE[shadowArmor,shadowBoot==20]===1"
+      ]
+    }
+  },
+  "1270192": {
+    "id": 1270192,
+    "aegisName": "S_BP9_Magic_A",
+    "name": "Snow Flower Magic Shadow Armor",
+    "unidName": "Snow Flower Magic Shadow Armor",
+    "resName": "아머쉐도우3",
+    "description": "^ff0000ไอเท็มนี้ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้^000000\nไม่สามารถอัพเกรดทั่วไปได้\nทุกๆ การอัพเกรด 2 ขั้น, S.MATK + 1\nทุกๆ การอัพเกรด 3 ขั้น, เพิ่ม Damage ทางเวทมนตร์ทุกธาตุ 2%\nเมื่ออัพเกรดถึงขั้น 7, MaxHP + 10%, RES + 30\nเมื่ออัพเกรดถึงขั้น 9, ลด Global Cooldown 10%\nเมื่ออัพเกรดถึงขั้น 10, เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกธาตุ 10%\n\nประเภท : ^777777Shadow Equipment^000000\nตำแหน่ง : ^777777Armor^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 526,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": "Armor",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "sMatk": [
+        "2---1"
+      ],
+      "m_my_element_all": [
+        "3---2"
+      ],
+      "hpPercent": [
+        "7===10"
+      ],
+      "res": [
+        "7===30"
+      ],
+      "acd": [
+        "9===10"
+      ],
+      "m_element_all": [
+        "10===10"
+      ]
+    }
+  },
+  "1270193": {
+    "id": 1270193,
+    "aegisName": "S_BP9_Magic_S",
+    "name": "Snow Flower Magic Shadow Shoes",
+    "unidName": "Snow Flower Magic Shadow Shoes",
+    "resName": "슈즈쉐도우3",
+    "description": "^ff0000ไอเท็มนี้ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้^000000\nไม่สามารถอัพเกรดทั่วไปได้\nทุกๆ การอัพเกรด 2 ขั้น, S.MATK + 1\nทุกๆ การอัพเกรด 3 ขั้น, ASPD + 5%\nเมื่ออัพเกรดถึงขั้น 7, MaxSP + 10%, MRES + 30\nเมื่ออัพเกรดถึงขั้น 9, ลดระยะเวลาร่ายแบบคงที่ 0.3 วินาที\nเมื่ออัพเกรดถึงขั้น 10, เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกขนาด 10%\n\nเมื่อสวมใส่ร่วมกับ Snow Flower Magic Shadow Armor, เพิ่ม Damage ทางเวทมนตร์ทุกธาตุ 4%\nเมื่อค่าอัพเกรดรวมกันตั้งแต่ 20 ขึ้นไป ได้รับเอฟเฟกต์ [Endure] ตลอดเวลา\nประเภท : ^777777Shadow Equipment^000000\nตำแหน่ง : ^777777Shoes^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^777777100^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 0,
+    "itemTypeId": 10,
+    "itemSubTypeId": 528,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": 100,
+    "location": "Shoes",
+    "compositionPos": null,
+    "usableClass": [
+      "all"
+    ],
+    "script": {
+      "sMatk": [
+        "2---1"
+      ],
+      "aspdPercent": [
+        "3---5"
+      ],
+      "spPercent": [
+        "7===10"
+      ],
+      "mres": [
+        "7===30"
+      ],
+      "fct": [
+        "9===0.3"
+      ],
+      "m_size_all": [
+        "10===10"
+      ],
+      "m_my_element_all": [
+        "EQUIP[Snow Flower Magic Shadow Armor]===4"
       ]
     }
   },
