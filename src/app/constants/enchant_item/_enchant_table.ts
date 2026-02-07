@@ -102,7 +102,7 @@ import { anni5th } from './anniversary5th';
 import { bp7_2, bp7_4 } from './bp7';
 import { cirAutumnGarment2, cirAutumnGarment3, cirAutumnGarment4, cirAutumnSummer2, cirAutumnWinter2, cirSpringGarment2, cirSpringGarment3, cirSpringGarment4, manAutumnGarment2, manAutumnGarment3, manAutumnGarment4, manAutumnSummer2, manAutumnWinter2, manSpringGarment2, manSpringGarment3, manSpringGarment4, signetAcc3, signetAcc4, stellarAcc2, stellarAcc3, stellarAcc4 } from './constellation_tower';
 import { crafted3, crafted4 } from './crafted_weapon';
-import { dimAcc2, dimAcc3, dimAcc4, dimGlaArmor2, dimGlaArmor3, dimGlaArmor4, dimGlaBoot2, dimGlaBoot3, dimGlaBoot4, dimGlaGarment2, dimGlaGarment3, dimGlaGarment4, dimWeapon2, dimWeapon3, dimWeapon4 } from './dim_glacier';
+import { dimAcc3, dimAcc4, dimGlaArmor2, dimGlaArmor3, dimGlaArmor4, dimGlaBoot2, dimGlaBoot3, dimGlaBoot4, dimGlaGarment2, dimGlaGarment3, dimGlaGarment4, dimWeapon2, dimWeapon3, dimWeapon4 } from './dim_glacier';
 import { dimensionAcc3, dimensionAcc4, dimensionHead2, dimensionHead3, dimensionHead4, dimensionWeapon3, dimensionWeapon4, timeGap3, timeGap4 } from './dimention';
 import { droopingLt3, droopingLt4, redBlueLt3, redBlueLt4 } from './drooping_thanatos_lt';
 import { furiousHeadUp3, furiousHeadUp4, furiousWeaponUp3, furiousWeaponUp4 } from './furious';
@@ -1801,8 +1801,12 @@ export const EnchantTable: EntTable[] = [
   { name: "Astraea_Armor_LT", enchants: [null, [...nebular2], [...nebular3], [...run1, ...base35]] },
   { name: "Auto_E_WingC_TH_LT", enchants: [null, angelRibbonWing3, expert35, [...run1, ...base3]] },
 
-  { name: "ABC_Dim_Ring_TH", enchants: [null, dimAcc2, dimAcc3, dimAcc4] },
-  { name: "IQ_Dim_Ring_TH", enchants: [null, dimAcc2, dimAcc3, dimAcc4] },
+  { name: "ABC_Dim_Ring_TH", enchants: [null, ['DimAcc_ABC'], dimAcc3, dimAcc4] },
+  { name: "IQ_Dim_Ring_TH", enchants: [null, ['DimAcc_IQ'], dimAcc3, dimAcc4] },
+  { name: "WH_Dim_Ring_TH", enchants: [null, ['DimAcc_WH'], dimAcc3, dimAcc4] },
+  { name: "CD_Dim_Ring_TH", enchants: [null, ['DimAcc_CD'], dimAcc3, dimAcc4] },
+  { name: "MT_Dim_Ring_TH", enchants: [null, ['DimAcc_MT'], dimAcc3, dimAcc4] },
+  { name: "TR_Dim_Ring_TH", enchants: [null, ['DimAcc_TR'], dimAcc3, dimAcc4] },
 
   { name: "S_BP9_Melee_A", enchants: [null, null, ['BP9_Snow_Melee', 'BP9_Snow_Range', 'BP9_Snow_Magic'], nebularShadow34] },
   { name: "S_BP9_Melee_S", enchants: [null, null, ['BP9_Snow_Melee', 'BP9_Snow_Range', 'BP9_Snow_Magic'], nebularShadow34] },

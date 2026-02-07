@@ -17,3 +17,28 @@
 .youtube-link {
   background-color: black;
 }
+
+.election {
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: linear-gradient(to right, #ffffff, #ff7e53);
+  color: #1e2a38;
+
+  opacity: 0;
+  animation: fadeInOut 3s infinite;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

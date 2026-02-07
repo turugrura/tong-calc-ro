@@ -47920,7 +47920,7 @@
     "name": "Physical Power Shadow Weapon",
     "unidName": "Shadow Weapon",
     "resName": "웨폰쉐도우",
-    "description": "POW + 1 per 2 refine rate.\nIf refine rate is 7 or higher, P.Atk + 3.\nIf refine rate is 9 or higher, additional P.Atk + 3.\nWhen equipped with Physical Power Shadow Shield, P.Atk + 3.\nClass: ^777777Shadow Equipment^000000\nLocation: ^777777Weapon^000000 Weight: ^7777770^000000\nRequired Level: ^7777771^000000\nJobs: ^777777All^000000",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา\nทุก ๆ การอัพเกรด 2 ขั้น POW + 1\nเมื่ออัพเกรดถึงขั้น 7, P.ATK + 3\nเมื่ออัพเกรดถึงขั้น 9, P.ATK + 3 เพิ่มเติม\n \nเมื่อสวมใส่ร่วมกับ Physical Power Shadow Shield, P.ATK + 3\nประเภท : ^777777Shadow Equipment^000000\nตำแหน่ง : ^777777Weapon^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
     "slots": 0,
     "itemTypeId": 10,
     "itemSubTypeId": 280,
@@ -47951,7 +47951,7 @@
     "name": "Physical Power Shadow Shield",
     "unidName": "Shadow Shield",
     "resName": "쉴드쉐도우",
-    "description": "POW + 1 per 2 refine rate.\nIf refine rate is 7 or higher, P.Atk + 3.\nIf refine rate is 9 or higher, additional P.Atk + 3.\nClass: ^777777Shadow Equipment^000000\nLocation: ^777777Shield^000000 Weight: ^7777770^000000\nRequired Level: ^7777771^000000\nJobs: ^777777All^000000",
+    "description": "โล่เล็กที่สามารถสวมใส่ที่แขนได้ สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์การป้องกันของมันจะลดน้อยลง\nทุก ๆ การอัพเกรด 2 ขั้น POW + 1\nเมื่ออัพเกรดถึงขั้น 7, P.ATK + 3\nเมื่ออัพเกรดถึงขั้น 9, P.ATK + 3 เพิ่มเติม\nประเภท : ^777777Shadow Equipment^000000\nตำแหน่ง : ^777777Shield^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
     "slots": 0,
     "itemTypeId": 10,
     "itemSubTypeId": 527,
@@ -48112,7 +48112,7 @@
     "name": "Wisdom Shadow Weapon",
     "unidName": "Shadow Weapon",
     "resName": "웨폰쉐도우",
-    "description": "WIS + 1 per refine rate.\nIf refine rate is 7 or higher, Mres + 30.\nIf refine rate is 9 or higher, additional Mres + 30.\nWhen equipped with Wisdom Shadow Shield, Mres + 30.\nClass: ^777777Shadow Equipment^000000\nLocation: ^777777Weapon^000000 Weight: ^7777770^000000\nRequired Level: ^7777771^000000\nJobs: ^777777All^000000",
+    "description": "ถุงมือที่สวมใส่กับมือที่ถืออาวุธ เพื่อดึงศักยภาพของผู้สวมใส่ออกมา\nทุก ๆ การอัพเกรด 1 ขั้น WIS + 1\nเมื่ออัพเกรดถึงขั้น 7, MRES + 30\nเมื่ออัพเกรดถึงขั้น 9, MRES + 30 เพิ่มเติม\n \nเมื่อสวมใส่ร่วมกับ Wisdom Shadow Shield, MRES + 30.\nประเภท : ^777777Shadow Equipment^000000\nตำแหน่ง : ^777777Weapon^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
     "slots": 0,
     "itemTypeId": 10,
     "itemSubTypeId": 280,
@@ -48143,7 +48143,7 @@
     "name": "Wisdom Shadow Shield",
     "unidName": "Shadow Shield",
     "resName": "쉴드쉐도우",
-    "description": "WIS + 1 per refine rate.\nIf refine rate is 7 or higher, Mres + 30.\nIf refine rate is 9 or higher, additional Mres + 30.\nClass: ^777777Shadow Equipment^000000\nLocation: ^777777Shield^000000 Weight: ^7777770^000000\nRequired Level: ^7777771^000000\nJobs: ^777777All^000000",
+    "description": "โล่เล็กที่สามารถสวมใส่ที่แขนได้ สามารถใช้งานแบบชิ้นเดียวได้แต่เอฟเฟกต์การป้องกันของมันจะลดน้อยลง\nทุก ๆ การอัพเกรด 1 ขั้น WIS + 1\nเมื่ออัพเกรดถึงขั้น 7, MRES + 30\nเมื่ออัพเกรดถึงขั้น 9, MRES + 30 เพิ่มเติม\nประเภท : ^777777Shadow Equipment^000000\nตำแหน่ง : ^777777Shield^000000 น้ำหนัก : ^7777770^000000\nเลเวลที่ต้องการ : ^7777771^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
     "slots": 0,
     "itemTypeId": 10,
     "itemSubTypeId": 527,
@@ -126694,7 +126694,7 @@
     "name": "Good Vigor (Soul Ascetic)",
     "unidName": "Good Vigor (Soul Ascetic)",
     "resName": "C_160LV_Mechanic_Gold",
-    "description": "When equipped with Good Spell,\r\nincreases Talisman of Four Bearing God damage by 20%,\r\nincreases Talisman of Red Phoenix damage by 40%,\r\nincreases magical damage against all property enemies by 20%,\r\nreduces variable casting time by 5%.",
+    "description": "เมื่อใช้งานร่วมกับ Good Spell, \nเพิ่ม Damage สกิล Talisman of Four Bearing God 20%, เพิ่ม Damage สกิล Talisman of Red Phoenix 40%, เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกธาตุ 20%, ลดระยะเวลาร่ายแบบแปรผัน 5%",
     "slots": 0,
     "itemTypeId": 11,
     "itemSubTypeId": 0,
@@ -126790,7 +126790,7 @@
     "name": "Evil Vigor (Soul Ascetic)",
     "unidName": "Evil Vigor (Soul Ascetic)",
     "resName": "C_160LV_Warlock_Violet",
-    "description": "When equipped with Evil Spell,\r\nincreases Exorcism of Malicious Soul damage by 20%,\r\nincreases Talisman of Soul Stealing damage by 40%,\r\nincreases magical damage against all property enemies by 20%,\r\nreduces variable casting time by 5%.",
+    "description": "เมื่อใช้งานร่วมกับ Evil Spell, \nเพิ่ม Damage สกิล Exorcism of Malicious Soul 20%, เพิ่ม Damage สกิล Talisman of Soul Stealing 40%, เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกธาตุ 20%, ลดระยะเวลาร่ายแบบแปรผัน 5%",
     "slots": 0,
     "itemTypeId": 11,
     "itemSubTypeId": 0,
@@ -131772,7 +131772,7 @@
     "name": "Good Vigor (Sky Emperor)",
     "unidName": "Good Vigor (Sky Emperor)",
     "resName": "C_160LV_Mechanic_Gold",
-    "description": "When equipped with Good Spell,\r\nincreases Noon Blast damage by 20%,\r\nincreases Sunset Blast damage by 40%,\r\nincreases physical damage against all property enemies by 20%,\r\nCri + 5.",
+    "description": "เมื่อใช้งานร่วมกับ Good Spell, \nเพิ่ม Damage สกิล Noon Blast 20%, เพิ่ม Damage สกิล Sunset Blast 40%, เพิ่ม Damage ทางกายภาพต่อศัตรูทุกธาตุ 20%, CRI + 5",
     "slots": 0,
     "itemTypeId": 11,
     "itemSubTypeId": 0,
@@ -131874,7 +131874,7 @@
     "name": "Evil Vigor (Sky Emperor)",
     "unidName": "Evil Vigor (Sky Emperor)",
     "resName": "C_160LV_Warlock_Violet",
-    "description": "When equipped with Evil Spell,\r\nincreases Midnight Kick damage by 20%,\r\nincreases Dawn Break damage by 40%,\r\nincreases physical damage against all property enemies by 20%,\r\nreduces variable casting time by 5%.",
+    "description": "เมื่อใช้งานร่วมกับ Evil Spell, \nเพิ่ม Damage สกิล Midnight Kick 20%, เพิ่ม Damage สกิล Dawn Break 40%, เพิ่ม Damage ทางกายภาพต่อศัตรูทุกธาตุ 20%, ลดระยะเวลาร่ายแบบแปรผัน 5%",
     "slots": 0,
     "itemTypeId": 11,
     "itemSubTypeId": 0,
@@ -135728,7 +135728,7 @@
     "name": "Good Vigor (Arch Mage)",
     "unidName": "Good Vigor (Arch Mage)",
     "resName": "C_160LV_Mechanic_Gold",
-    "description": "When equipped with Good Spell,\r\nincreases Frozen Slash damage by 20%,\r\nincreases Rain of Crystal damage by 40%,\r\nincreases magical damage against all property enemies by 20%,\r\nreduces global cooldown by 5%.",
+    "description": "เมื่อใช้งานร่วมกับ Good Spell, \nเพิ่ม Damage สกิล Frozen Slash 20%, เพิ่ม Damage สกิล Rain of Crystal 40%, เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกธาตุ 20%, ลด Global Cooldown 5%",
     "slots": 0,
     "itemTypeId": 11,
     "itemSubTypeId": 0,
@@ -135760,7 +135760,7 @@
     "name": "Evil Vigor (Arch Mage)",
     "unidName": "Evil Vigor (Arch Mage)",
     "resName": "C_160LV_Warlock_Violet",
-    "description": "When equipped with Evil Spell,\r\nincreases Soul Vulcan Strike damage by 20%,\r\nincreases Mystery Illusion damage by 40%,\r\nincreases magical damage against all property enemies by 20%,\r\nreduces variable casting time by 5%.",
+    "description": "เมื่อใช้งานร่วมกับ Evil Spell, \nเพิ่ม Damage สกิล Soul Vulcan Strike 20%, เพิ่ม Damage สกิล Mystery Illusion 40%, เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกธาตุ 20%, ลดระยะเวลาร่ายแบบแปรผัน 5%",
     "slots": 0,
     "itemTypeId": 11,
     "itemSubTypeId": 0,
@@ -145122,6 +145122,37 @@
       ]
     }
   },
+  "314821": {
+    "id": 314821,
+    "aegisName": "DimAcc_WH",
+    "name": "Windhawk Dim Crystal",
+    "unidName": "Windhawk Dim Crystal",
+    "resName": "Sea_Sapphire",
+    "description": "เมื่อสวมใส่ร่วมกับ Dim Glacier Bow,\nCritical Damage + 30%,\nทุก ๆ 2 ขั้นอัพเกรดอาวุธ, เพิ่ม Damage สกิล Hawk Rush 5%, Focused Arrow Strike 20%\n\nเมื่อ Dim Glacier Bow มี Grade C ขึ้นไป,\nลด Damage ทางกายภาพ/เวทมนตร์ที่ได้รับจากศัตรูทุกประเภท 30%\n\nเมื่อ Dim Glacier Bow มี Grade C ขึ้นไป และขั้นอัพเกรด 12 ขึ้นไป,\nเมื่อใช้งานสกิล Hawk Rush มีโอกาส 40% ที่จะ Autospell สกิล Focused Arrow Strike Lv.5,\nเพิ่ม Damage สกิล Hawk Rush 20%, Focused Arrow Strike 50%\nประเภท : ^777777Card^000000\nอาชีพที่ใสได้ : ^777777All Slot (Enchant)^000000\nน้ำหนัก : ^7777770^000000",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "criDmg": [
+        "EQUIP[Dim Glacier Bow]===30"
+      ],
+      "Hawk Rush": [
+        "EQUIP[Dim Glacier Bow]REFINE[weapon==2]---5",
+        "EQUIP[Dim Glacier Bow]GRADE[weapon==C]REFINE[weapon==12]===20"
+      ],
+      "Focused Arrow Strike": [
+        "EQUIP[Dim Glacier Bow]REFINE[weapon==2]---20",
+        "EQUIP[Dim Glacier Bow]GRADE[weapon==C]REFINE[weapon==12]===50"
+      ]
+    }
+  },
   "314889": {
     "id": 314889,
     "aegisName": "BP9_Snow_Melee",
@@ -145197,6 +145228,99 @@
       ],
       "matkPercent": [
         "10===5"
+      ]
+    }
+  },
+  "314904": {
+    "id": 314904,
+    "aegisName": "DimAcc_CD",
+    "name": "Cardinal Dim Crystal",
+    "unidName": "Cardinal Dim Crystal",
+    "resName": "Sea_Sapphire",
+    "description": "เมื่อสวมใส่ร่วมกับ Dim Glacier Book หรือ Dim Glacier Mace,\nCritical Damage + 15%,\nทุก ๆ 2 ขั้นอัพเกรดอาวุธ, เพิ่ม Damage สกิล Petitio 4%\n\nเมื่อสวมใส่ร่วมกับ Dim Glacier Book หรือ Dim Glacier Mace มี Grade C ขึ้นไป,\nเพิ่ม Damage ทางกายภาพระยะใกล้/ไกล 20%\n\nเมื่อสวมใส่ร่วมกับ Dim Glacier Book หรือ Dim Glacier Mace มี Grade C ขึ้นไป และขั้นอัพเกรด 12 ขึ้นไป,\nสามารถใช้งานสกิล Charge Attack Lv.1 ได้,\nเมื่อใช้งานสกิล Petitio มีโอกาส 30% ที่จะ Autospell สกิล Petitio Lv.1 (เมื่อเรียนรู้สกิลในเลเวลที่สูงกว่า จะร่ายในเลเวลสูงสุด),\nเพิ่ม Damage สกิล Petitio 15%\nประเภท : ^777777Card^000000\nอาชีพที่ใสได้ : ^777777All Slot (Enchant)^000000\nน้ำหนัก : ^7777770^000000",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "criDmg": [
+        "EQUIP[Dim Glacier Book||Dim Glacier Mace]===15"
+      ],
+      "Petitio": [
+        "EQUIP[Dim Glacier Book||Dim Glacier Mace]REFINE[weapon==2]---4",
+        "EQUIP[Dim Glacier Book||Dim Glacier Mace]GRADE[weapon==C]REFINE[weapon==12]===15"
+      ],
+      "melee": [
+        "EQUIP[Dim Glacier Book||Dim Glacier Mace]GRADE[weapon==C]===20"
+      ],
+      "range": [
+        "EQUIP[Dim Glacier Book||Dim Glacier Mace]GRADE[weapon==C]===20"
+      ]
+    }
+  },
+  "314905": {
+    "id": 314905,
+    "aegisName": "DimAcc_MT",
+    "name": "Meister Dim Crystal",
+    "unidName": "Meister Dim Crystal",
+    "resName": "Sea_Sapphire",
+    "description": "เมื่อสวมใส่ร่วมกับ Dim Glacier Mechanic Mace,\nเพิ่ม Damage ทางกายภาพระยะไกล 15%,\nทุก ๆ 2 ขั้นอัพเกรดอาวุธ, เพิ่ม Damage สกิล Spark Blaster 4%\n\nเมื่อ Dim Glacier Mechanic Mace มี Grade C ขึ้นไป,\nลด Cooldown สกิล Spark Blaster 0.35 วินาที\n\nเมื่อ Dim Glacier Mechanic Mace มี Grade C ขึ้นไป และขั้นอัพเกรด 12 ขึ้นไป,,\nเมื่อใช้งานสกิล Spark Blaster มีโอกาส 30% ที่จะ Autospell สกิล Spark Blaster Lv.1 (เมื่อเรียนรู้สกิลในเลเวลที่สูงกว่า จะร่ายในเลเวลสูงสุด),\nเพิ่ม Damage สกิล Spark Blaster 15%,\nสามารถใช้งานสกิล Power Lv.4 ได้\nประเภท : ^777777Card^000000\nอาชีพที่ใสได้ : ^777777All Slot (Enchant)^000000\nน้ำหนัก : ^7777770^000000",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "cd__Spark Blaster": [
+        "EQUIP[Dim Glacier Mechanic Mace]GRADE[weapon==C]===0.35"
+      ],
+      "Spark Blaster": [
+        "EQUIP[Dim Glacier Mechanic Mace]REFINE[weapon==2]---4",
+        "EQUIP[Dim Glacier Mechanic Mace]GRADE[weapon==C]REFINE[weapon==12]===15"
+      ],
+      "range": [
+        "EQUIP[Dim Glacier Mechanic Mace]===15"
+      ]
+    }
+  },
+  "314906": {
+    "id": 314906,
+    "aegisName": "DimAcc_TR",
+    "name": "Troubadour & Trouvere Dim Crystal",
+    "unidName": "Troubadour & Trouvere Dim Crystal",
+    "resName": "Sea_Sapphire",
+    "description": "เมื่อสวมใส่ร่วมกับ Dim Glacier Violin หรือ Dim Glacier Whip,\nเพิ่ม Damage ทางกายภาพระยะไกล 15%,\nทุก ๆ 2 ขั้นอัพเกรดอาวุธ, เพิ่ม Damage สกิล Rhythm Shooting 4%\n\nเมื่อ Dim Glacier Violin หรือ Dim Glacier Whip มี Grade C ขึ้นไป,\nลด Cooldown สกิล Rhythm Shooting 0.15 วินาที\n\nเมื่อ Dim Glacier Violin หรือ Dim Glacier Whip  มี Grade C ขึ้นไป และขั้นอัพเกรด 12 ขึ้นไป,\nเมื่อใช้งานสกิล Rhythm Shooting มีโอกาส 30% ที่จะ Autospell สกิล Rhythm Shooting Lv.1 (เมื่อเรียนรู้สกิลในเลเวลที่สูงกว่า จะร่ายในเลเวลสูงสุด),\nเพิ่ม Damage สกิล Rhythm Shooting 15%,\nสามารถใช้งานสกิล Power Lv.4 ได้\n\nประเภท : ^777777Card^000000\nอาชีพที่ใสได้ : ^777777All Slot (Enchant)^000000\nน้ำหนัก : ^7777770^000000",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 0,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "cd__Rhythm Shooting": [
+        "EQUIP[Dim Glacier Violin||Dim Glacier Whip]GRADE[weapon==C]===0.15"
+      ],
+      "Rhythm Shooting": [
+        "EQUIP[Dim Glacier Violin||Dim Glacier Whip]REFINE[weapon==2]---4",
+        "EQUIP[Dim Glacier Violin||Dim Glacier Whip]GRADE[weapon==C]REFINE[weapon==12]===15"
+      ],
+      "range": [
+        "EQUIP[Dim Glacier Violin||Dim Glacier Whip]===15"
       ]
     }
   },
@@ -157214,6 +157338,100 @@
       ],
       "pAtk": [
         "GRADE[me==C]===2"
+      ]
+    }
+  },
+  "401237": {
+    "id": 401237,
+    "aegisName": "Glacier_Helm_LT_TH",
+    "name": "Issgard Supreme Crown-LT [1]",
+    "unidName": "Issgard Supreme Crown-LT",
+    "resName": "성자의왕관",
+    "description": "มงกุฎที่อาบไว้ด้วยพลังเวทพิเศษของดินแดน Issgard\nว่ากันว่าถูกเสริมด้วยพลังที่เหมาะสำหรับการต่อสู้ทุกรูปแบบ\n\nเพิ่ม Damage ทางกายภาพระยะใกล้/ไกล 10%,\nเพิ่ม Damage ทางเวทมนตร์ทุกธาตุ 12%\n\nทุก ๆ การอัพเกรด 2 ขั้น ATK/MATK + 3%\nทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 8%, เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกขนาด 4%\nเมื่ออัพเกรดถึงขั้น 7, ลด Global Cooldown 10%\nเมื่ออัพเกรดถึงขั้น 9, P.ATK/S.MATK + 10, เพิ่ม Damage ทางกายภาพระยะใกล้/ไกล 10%, เพิ่ม Damage ทางเวทมนตร์ทุกธาตุ 12%\n\n\nเมื่อสวมใส่ร่วมกับอาวุธซีรีส์ Glacier หรือ Dim Glacier, ATK/MATK + 8%, ATK/MATK + 100\nทุก ๆ การอัพเกรดอาวุธ 3 ขั้น, ASPD + 8%, เพิ่ม Damage ทางกายภาพระยะใกล้/ไกล 10%, เพิ่ม Damage ทางเวทมนตร์ทุกธาตุ 12%\n\n[Option เพิ่มเติมตาม Grade]\n[Grade D] P.ATK/S.MATK + 10\n[Grade C] DEF + 150, MDEF + 30\n[Grade B] POW + 10, CON + 10, SPL + 10\n[Grade A] RES + 100, MRES + 100\nประเภท : ^777777Headgear^000000 พลังป้องกัน : ^77777720^000000\nตำแหน่ง : ^777777Upper^000000 น้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777230^000000\nอาชีพที่ใส่ได้ : ^777777ทุกอาชีพ^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 512,
+    "itemLevel": 2,
+    "attack": null,
+    "defense": 20,
+    "weight": 10,
+    "requiredLevel": 230,
+    "location": "Upper",
+    "compositionPos": null,
+    "canGrade": true,
+    "usableClass": [
+      "4th"
+    ],
+    "script": {
+      "melee": [
+        "10",
+        "9===10",
+        "EQUIP[Glacier Sword||Glacier Basic Sword||Glacier Rogue Knife||Glacier Basic Knife||Glacier Axe||Glacier Spear||Glacier Book||Glacier Wand||Glacier Foxtail||Glacier Knuckle||Glacier Violin||Glacier Whip||Glacier Mace||Glacier Mechanic Mace||Glacier Two-handed Sword||Glacier Katar||Glacier Mechanic Axe||Glacier Lance||Glacier Staff||Glacier Huuma Shuriken||Glacier Bow||Glacier Revolver||Glacier Rifle||Glacier Shotgun||Glacier Gatling||Glacier Launcher||Dim Glacier Sword||Dim Glacier Basic Sword||Dim Glacier Rogue Knife||Dim Glacier Basic Knife||Dim Glacier Axe||Dim Glacier Spear||Dim Glacier Book||Dim Glacier Wand||Dim Glacier Foxtail||Dim Glacier Knuckle||Dim Glacier Violin||Dim Glacier Whip||Dim Glacier Mace||Dim Glacier Mechanic Mace||Dim Glacier Two-handed Sword||Dim Glacier Katar||Dim Glacier Mechanic Axe||Dim Glacier Lance||Dim Glacier Staff||Dim Glacier Huuma Shuriken||Dim Glacier Bow||Dim Glacier Revolver||Dim Glacier Rifle||Dim Glacier Shotgun||Dim Glacier Gatling Gun||Dim Glacier Grenade Launcher]REFINE[weapon==3]---10"
+      ],
+      "range": [
+        "10",
+        "9===10",
+        "EQUIP[Glacier Sword||Glacier Basic Sword||Glacier Rogue Knife||Glacier Basic Knife||Glacier Axe||Glacier Spear||Glacier Book||Glacier Wand||Glacier Foxtail||Glacier Knuckle||Glacier Violin||Glacier Whip||Glacier Mace||Glacier Mechanic Mace||Glacier Two-handed Sword||Glacier Katar||Glacier Mechanic Axe||Glacier Lance||Glacier Staff||Glacier Huuma Shuriken||Glacier Bow||Glacier Revolver||Glacier Rifle||Glacier Shotgun||Glacier Gatling||Glacier Launcher||Dim Glacier Sword||Dim Glacier Basic Sword||Dim Glacier Rogue Knife||Dim Glacier Basic Knife||Dim Glacier Axe||Dim Glacier Spear||Dim Glacier Book||Dim Glacier Wand||Dim Glacier Foxtail||Dim Glacier Knuckle||Dim Glacier Violin||Dim Glacier Whip||Dim Glacier Mace||Dim Glacier Mechanic Mace||Dim Glacier Two-handed Sword||Dim Glacier Katar||Dim Glacier Mechanic Axe||Dim Glacier Lance||Dim Glacier Staff||Dim Glacier Huuma Shuriken||Dim Glacier Bow||Dim Glacier Revolver||Dim Glacier Rifle||Dim Glacier Shotgun||Dim Glacier Gatling Gun||Dim Glacier Grenade Launcher]REFINE[weapon==3]---10"
+      ],
+      "m_my_element_all": [
+        "12",
+        "9===12",
+        "EQUIP[Glacier Sword||Glacier Basic Sword||Glacier Rogue Knife||Glacier Basic Knife||Glacier Axe||Glacier Spear||Glacier Book||Glacier Wand||Glacier Foxtail||Glacier Knuckle||Glacier Violin||Glacier Whip||Glacier Mace||Glacier Mechanic Mace||Glacier Two-handed Sword||Glacier Katar||Glacier Mechanic Axe||Glacier Lance||Glacier Staff||Glacier Huuma Shuriken||Glacier Bow||Glacier Revolver||Glacier Rifle||Glacier Shotgun||Glacier Gatling||Glacier Launcher||Dim Glacier Sword||Dim Glacier Basic Sword||Dim Glacier Rogue Knife||Dim Glacier Basic Knife||Dim Glacier Axe||Dim Glacier Spear||Dim Glacier Book||Dim Glacier Wand||Dim Glacier Foxtail||Dim Glacier Knuckle||Dim Glacier Violin||Dim Glacier Whip||Dim Glacier Mace||Dim Glacier Mechanic Mace||Dim Glacier Two-handed Sword||Dim Glacier Katar||Dim Glacier Mechanic Axe||Dim Glacier Lance||Dim Glacier Staff||Dim Glacier Huuma Shuriken||Dim Glacier Bow||Dim Glacier Revolver||Dim Glacier Rifle||Dim Glacier Shotgun||Dim Glacier Gatling Gun||Dim Glacier Grenade Launcher]REFINE[weapon==3]---12"
+      ],
+      "atkPercent": [
+        "2---3",
+        "EQUIP[Glacier Sword||Glacier Basic Sword||Glacier Rogue Knife||Glacier Basic Knife||Glacier Axe||Glacier Spear||Glacier Book||Glacier Wand||Glacier Foxtail||Glacier Knuckle||Glacier Violin||Glacier Whip||Glacier Mace||Glacier Mechanic Mace||Glacier Two-handed Sword||Glacier Katar||Glacier Mechanic Axe||Glacier Lance||Glacier Staff||Glacier Huuma Shuriken||Glacier Bow||Glacier Revolver||Glacier Rifle||Glacier Shotgun||Glacier Gatling||Glacier Launcher||Dim Glacier Sword||Dim Glacier Basic Sword||Dim Glacier Rogue Knife||Dim Glacier Basic Knife||Dim Glacier Axe||Dim Glacier Spear||Dim Glacier Book||Dim Glacier Wand||Dim Glacier Foxtail||Dim Glacier Knuckle||Dim Glacier Violin||Dim Glacier Whip||Dim Glacier Mace||Dim Glacier Mechanic Mace||Dim Glacier Two-handed Sword||Dim Glacier Katar||Dim Glacier Mechanic Axe||Dim Glacier Lance||Dim Glacier Staff||Dim Glacier Huuma Shuriken||Dim Glacier Bow||Dim Glacier Revolver||Dim Glacier Rifle||Dim Glacier Shotgun||Dim Glacier Gatling Gun||Dim Glacier Grenade Launcher]===8"
+      ],
+      "matkPercent": [
+        "2---3",
+        "EQUIP[Glacier Sword||Glacier Basic Sword||Glacier Rogue Knife||Glacier Basic Knife||Glacier Axe||Glacier Spear||Glacier Book||Glacier Wand||Glacier Foxtail||Glacier Knuckle||Glacier Violin||Glacier Whip||Glacier Mace||Glacier Mechanic Mace||Glacier Two-handed Sword||Glacier Katar||Glacier Mechanic Axe||Glacier Lance||Glacier Staff||Glacier Huuma Shuriken||Glacier Bow||Glacier Revolver||Glacier Rifle||Glacier Shotgun||Glacier Gatling||Glacier Launcher||Dim Glacier Sword||Dim Glacier Basic Sword||Dim Glacier Rogue Knife||Dim Glacier Basic Knife||Dim Glacier Axe||Dim Glacier Spear||Dim Glacier Book||Dim Glacier Wand||Dim Glacier Foxtail||Dim Glacier Knuckle||Dim Glacier Violin||Dim Glacier Whip||Dim Glacier Mace||Dim Glacier Mechanic Mace||Dim Glacier Two-handed Sword||Dim Glacier Katar||Dim Glacier Mechanic Axe||Dim Glacier Lance||Dim Glacier Staff||Dim Glacier Huuma Shuriken||Dim Glacier Bow||Dim Glacier Revolver||Dim Glacier Rifle||Dim Glacier Shotgun||Dim Glacier Gatling Gun||Dim Glacier Grenade Launcher]===8"
+      ],
+      "p_size_all": [
+        "3---8"
+      ],
+      "m_size_all": [
+        "3---4"
+      ],
+      "acd": [
+        "7===10"
+      ],
+      "pAtk": [
+        "9===10",
+        "GRADE[me==D]===10"
+      ],
+      "sMatk": [
+        "9===10",
+        "GRADE[me==D]===10"
+      ],
+      "atk": [
+        "EQUIP[Glacier Sword||Glacier Basic Sword||Glacier Rogue Knife||Glacier Basic Knife||Glacier Axe||Glacier Spear||Glacier Book||Glacier Wand||Glacier Foxtail||Glacier Knuckle||Glacier Violin||Glacier Whip||Glacier Mace||Glacier Mechanic Mace||Glacier Two-handed Sword||Glacier Katar||Glacier Mechanic Axe||Glacier Lance||Glacier Staff||Glacier Huuma Shuriken||Glacier Bow||Glacier Revolver||Glacier Rifle||Glacier Shotgun||Glacier Gatling||Glacier Launcher||Dim Glacier Sword||Dim Glacier Basic Sword||Dim Glacier Rogue Knife||Dim Glacier Basic Knife||Dim Glacier Axe||Dim Glacier Spear||Dim Glacier Book||Dim Glacier Wand||Dim Glacier Foxtail||Dim Glacier Knuckle||Dim Glacier Violin||Dim Glacier Whip||Dim Glacier Mace||Dim Glacier Mechanic Mace||Dim Glacier Two-handed Sword||Dim Glacier Katar||Dim Glacier Mechanic Axe||Dim Glacier Lance||Dim Glacier Staff||Dim Glacier Huuma Shuriken||Dim Glacier Bow||Dim Glacier Revolver||Dim Glacier Rifle||Dim Glacier Shotgun||Dim Glacier Gatling Gun||Dim Glacier Grenade Launcher]===100"
+      ],
+      "matk": [
+        "EQUIP[Glacier Sword||Glacier Basic Sword||Glacier Rogue Knife||Glacier Basic Knife||Glacier Axe||Glacier Spear||Glacier Book||Glacier Wand||Glacier Foxtail||Glacier Knuckle||Glacier Violin||Glacier Whip||Glacier Mace||Glacier Mechanic Mace||Glacier Two-handed Sword||Glacier Katar||Glacier Mechanic Axe||Glacier Lance||Glacier Staff||Glacier Huuma Shuriken||Glacier Bow||Glacier Revolver||Glacier Rifle||Glacier Shotgun||Glacier Gatling||Glacier Launcher||Dim Glacier Sword||Dim Glacier Basic Sword||Dim Glacier Rogue Knife||Dim Glacier Basic Knife||Dim Glacier Axe||Dim Glacier Spear||Dim Glacier Book||Dim Glacier Wand||Dim Glacier Foxtail||Dim Glacier Knuckle||Dim Glacier Violin||Dim Glacier Whip||Dim Glacier Mace||Dim Glacier Mechanic Mace||Dim Glacier Two-handed Sword||Dim Glacier Katar||Dim Glacier Mechanic Axe||Dim Glacier Lance||Dim Glacier Staff||Dim Glacier Huuma Shuriken||Dim Glacier Bow||Dim Glacier Revolver||Dim Glacier Rifle||Dim Glacier Shotgun||Dim Glacier Gatling Gun||Dim Glacier Grenade Launcher]===100"
+      ],
+      "aspdPercent": [
+        "EQUIP[Glacier Sword||Glacier Basic Sword||Glacier Rogue Knife||Glacier Basic Knife||Glacier Axe||Glacier Spear||Glacier Book||Glacier Wand||Glacier Foxtail||Glacier Knuckle||Glacier Violin||Glacier Whip||Glacier Mace||Glacier Mechanic Mace||Glacier Two-handed Sword||Glacier Katar||Glacier Mechanic Axe||Glacier Lance||Glacier Staff||Glacier Huuma Shuriken||Glacier Bow||Glacier Revolver||Glacier Rifle||Glacier Shotgun||Glacier Gatling||Glacier Launcher||Dim Glacier Sword||Dim Glacier Basic Sword||Dim Glacier Rogue Knife||Dim Glacier Basic Knife||Dim Glacier Axe||Dim Glacier Spear||Dim Glacier Book||Dim Glacier Wand||Dim Glacier Foxtail||Dim Glacier Knuckle||Dim Glacier Violin||Dim Glacier Whip||Dim Glacier Mace||Dim Glacier Mechanic Mace||Dim Glacier Two-handed Sword||Dim Glacier Katar||Dim Glacier Mechanic Axe||Dim Glacier Lance||Dim Glacier Staff||Dim Glacier Huuma Shuriken||Dim Glacier Bow||Dim Glacier Revolver||Dim Glacier Rifle||Dim Glacier Shotgun||Dim Glacier Gatling Gun||Dim Glacier Grenade Launcher]REFINE[weapon==3]---8"
+      ],
+      "def": [
+        "GRADE[me==C]===150"
+      ],
+      "mdef": [
+        "GRADE[me==C]===30"
+      ],
+      "pow": [
+        "GRADE[me==B]===10"
+      ],
+      "con": [
+        "GRADE[me==B]===10"
+      ],
+      "spl": [
+        "GRADE[me==B]===10"
+      ],
+      "res": [
+        "GRADE[me==A]===100"
+      ],
+      "mres": [
+        "GRADE[me==A]===100"
       ]
     }
   },
@@ -170889,6 +171107,210 @@
       ]
     }
   },
+  "460142": {
+    "id": 460142,
+    "aegisName": "Punish_Shield_TH",
+    "name": "Punishment Chain Shield [1]",
+    "unidName": "Shield",
+    "resName": "C_Nightmare_Chain",
+    "description": "โล่ที่สร้างขึ้นเพื่อพิพากษาผู้ที่กล้าหาญ\nหากมีใครจะยกอาวุธใส่ผู้ครอบครองมัน ทุกการโจมตีที่กระทบโล่นี้จะย้อนกลับไปเป็นบทลงโทษอันสาสม\n\nCRI + 5,\nลด Damage ทางกายภาพและเวทมนตร์ที่ได้รับจากมอนสเตอร์ทั่วไป 10%\n\nเมื่อขั้นอัพเกรดตั้งแต่ 7 ขึ้นไป, ASPD + 2\n\nเมื่อขั้นอัพเกรดตั้งแต่ 9 ขึ้นไปและไม่มีการเรียนรู้สกิล Third Flame Bomb, ลด Cooldown สกิล First Brand 1 วินาที\n\nเมื่อขั้นอัพเกรดตั้งแต่ 11 ขึ้นไป, ลด Global Cooldown 5%, Critical Damage + 10%\n\nเมื่อขั้นอัพเกรดตั้งแต่ 12 ขึ้นไป, เพิ่ม Damage สกิล Third Punishment 15%\nประเภท : ^777777Shield^000000  พลังป้องกัน : ^77777750^000000\nน้ำหนัก : ^777777160^000000\nเลเวลที่ต้องการ : ^777777200^000000\nอาชีพที่ใสได้ : ^777777Inquisitor^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 514,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 50,
+    "weight": 160,
+    "requiredLevel": 200,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Inquisitor"
+    ],
+    "script": {
+      "cri": [
+        "5"
+      ],
+      "aspd": [
+        "7===2"
+      ],
+      "cd__First Brand": [
+        "9===1"
+      ],
+      "acd": [
+        "11===5"
+      ],
+      "criDmg": [
+        "11===10"
+      ],
+      "Third Punish": [
+        "12===15"
+      ]
+    }
+  },
+  "460143": {
+    "id": 460143,
+    "aegisName": "Valkyrie_Guard_TH",
+    "name": "Valkyrie Angel Guard [1]",
+    "unidName": "Shield",
+    "resName": "Valkyrie_Curse_Shield",
+    "description": "โล่ศักดิ์สิทธิ์ที่ได้รับพรจาก Valkyrie\nปีกแห่งเทวทูตช่วยปกป้องผู้เริ่มต้นบนเส้นทางเวทมนตร์ ช่วยมอบเสถียรภาพในการร่ายเวทมนตร์\n\nASPD + 10%,\nทุก ๆ การอัพเกรด 1 ขั้น, MaxHP + 100,\nทุก ๆ การอัพเกรด 3 ขั้น, เพิ่ม Damage ทางเวทมนตร์ทุกธาตุ 4%\n\nเมื่อขั้นอัพเกรดตั้งแต่ 7 ขึ้นไป,\nASPD + 2\n\nเมื่อขั้นอัพเกรดตั้งแต่ 9 ขึ้นไป,\nลด Cooldown สกิล Jupitel Thunderstorm 0.3 วินาที\n\nเมื่อขั้นอัพเกรดตั้งแต่ 11 ขึ้นไป,\nเมื่อโจมตีทางเวทมนตร์ มีโอกาส 4% ที่ INT + 150 เป็นเวลา 10 วินาที,\nแต่จะสูญเสีย HP 100, SP 100 หน่วยต่อวินาที\n\nเมื่อขั้นอัพเกรดตั้งแต่ 12 ขึ้นไป,\nเพิ่ม Damage สกิล Jupitel Thunderstorm 15%\nประเภท : ^777777Shield^000000  พลังป้องกัน : ^77777725^000000\nน้ำหนัก : ^77777720^000000\nเลเวลที่ต้องการ : ^777777200^000000\nอาชีพที่ใสได้ : ^777777Hyper Novice^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 514,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 25,
+    "weight": 20,
+    "requiredLevel": 200,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "HyperNovice"
+    ],
+    "script": {
+      "aspdPercent": [
+        "10"
+      ],
+      "hp": [
+        "1---100"
+      ],
+      "m_my_element_all": [
+        "3---4"
+      ],
+      "aspd": [
+        "7===2"
+      ],
+      "cd__Jupitel Thunderstorm": [
+        "9===0.3"
+      ],
+      "chance__int": [
+        "11===150"
+      ],
+      "Jupitel Thunderstorm": [
+        "12===15"
+      ]
+    }
+  },
+  "460144": {
+    "id": 460144,
+    "aegisName": "Punish_Shield_LT_TH",
+    "name": "Punishment Chain Shield-LT [1]",
+    "unidName": "Shield",
+    "resName": "C_Nightmare_Chain",
+    "description": "โล่ที่สร้างขึ้นเพื่อพิพากษาผู้ที่กล้าหาญ\nหากมีใครจะยกอาวุธใส่ผู้ครอบครองมัน ทุกการโจมตีที่กระทบโล่นี้จะย้อนกลับไปเป็นบทลงโทษอันสาสม\n\nCRI + 15,\nลด Damage ทางกายภาพ/เวทมนตร์ที่ได้รับจากมอนสเตอร์ทั่วไปและบอส 15%\n\nเมื่อขั้นอัพเกรดตั้งแต่ 7 ขึ้นไป, ASPD + 2, MaxHP + 5%\n\nเมื่อขั้นอัพเกรดตั้งแต่ 9 ขึ้นไปและไม่มีการเรียนรู้สกิล Third Flame Bomb, ลด Cooldown สกิล First Brand 1.5 วินาที\n\nเมื่อขั้นอัพเกรดตั้งแต่ 11 ขึ้นไป, ลด Global Cooldown 10%, Critical Damage + 20%\n\nเมื่อขั้นอัพเกรดตั้งแต่ 12 ขึ้นไป, เพิ่ม Damage สกิล Third Punishment 20%\n\n[Option เพิ่มเติมตาม Grade]\n[Grade D] MaxHP + 10%\n[Grade C] CRI + 15, P.ATK + 4\n[Grade B] MaxHP + 5000, P.ATK + 6\n[Grade A] เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 20%, Perfect Hit + 60%\nประเภท : ^777777Shield^000000  พลังป้องกัน : ^77777750^000000\nน้ำหนัก : ^777777160^000000\nเลเวลที่ต้องการ : ^777777200^000000\nอาชีพที่ใสได้ : ^777777Inquisitor^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 514,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 50,
+    "weight": 160,
+    "requiredLevel": 200,
+    "location": null,
+    "compositionPos": null,
+    "canGrade": true,
+    "usableClass": [
+      "Inquisitor"
+    ],
+    "script": {
+      "cri": [
+        "15",
+        "GRADE[me==C]===15"
+      ],
+      "aspd": [
+        "7===2"
+      ],
+      "hpPercent": [
+        "7===5",
+        "GRADE[me==D]===10"
+      ],
+      "cd__First Brand": [
+        "9===1.5"
+      ],
+      "acd": [
+        "11===10"
+      ],
+      "criDmg": [
+        "11===20"
+      ],
+      "Third Punish": [
+        "12===20"
+      ],
+      "pAtk": [
+        "GRADE[me==C]===4",
+        "GRADE[me==B]===6"
+      ],
+      "hp": [
+        "GRADE[me==B]===5000"
+      ],
+      "p_size_all": [
+        "GRADE[me==A]===20"
+      ],
+      "perfectHit": [
+        "GRADE[me==A]===60"
+      ]
+    }
+  },
+  "460145": {
+    "id": 460145,
+    "aegisName": "Valkyrie_Shield_LT_TH",
+    "name": "Valkyrie Angel Guard-LT [1]",
+    "unidName": "Shield",
+    "resName": "Valkyrie_Curse_Shield",
+    "description": "โล่ศักดิ์สิทธิ์ที่ได้รับพรจาก Valkyrie\nปีกแห่งเทวทูตช่วยปกป้องผู้เริ่มต้นบนเส้นทางเวทมนตร์ ช่วยมอบเสถียรภาพในการร่ายเวทมนตร์\n\nASPD + 3,\nเมื่อกำจัดมอนสเตอร์ด้วยการโจมตีทางเวทมนตร์ ฟื้นฟู HP 500\nทุก ๆ การอัพเกรด 1 ขั้น, MaxHP + 500\nทุก ๆ การอัพเกรด 3 ขั้น, เพิ่ม Damage ทางเวทมนตร์ทุกธาตุ 8%\n\nเมื่อขั้นอัพเกรดตั้งแต่ 9 ขึ้นไป, ลด Cooldown สกิล Jupitel Thunderstorm 0.65 วินาที\n\nเมื่อขั้นอัพเกรดตั้งแต่ 11 ขึ้นไป, เมื่อโจมตีทางเวทมนตร์ มีโอกาส 4% ที่จะได้รับสถานะ [Valkyrie Bless] เป็นเวลา 10 วินาที\n\nเมื่อขั้นอัพเกรดตั้งแต่ 12 ขึ้นไป, เพิ่ม Damage สกิล Jupitel Thunderstorm 20%\n\nผลเอฟเฟกต์ [Valkyrie Bless]\nSPL + 50,\nS.MATK + 10,\nสูญเสีย HP 500 หน่วยต่อวินาที\n\n[Option เพิ่มเติมตาม Grade]\n[Grade D] เพิกเฉยต่อพลังป้องกันทางเวทมนตร์ของศัตรูทุกเผ่า 30% (ยกเว้น Player)\n[Grade C] ลดระยะเวลาร่ายแบบคงที่ 0.5 วินาที\n[Grade B] เพิ่มผลเอฟเฟกต์  [Valkyrie Bless] SPL + 50, S.MATK + 10 เพิ่มเติม\n[Grade A] เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกขนาด 20%, ลด Delay หลังใช้สกิล 15%\nประเภท : ^777777Shield^000000  พลังป้องกัน : ^77777725^000000\nน้ำหนัก : ^77777720^000000\nเลเวลที่ต้องการ : ^777777200^000000\nอาชีพที่ใสได้ : ^777777Hyper Novice^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 514,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 25,
+    "weight": 20,
+    "requiredLevel": 200,
+    "location": null,
+    "compositionPos": null,
+    "canGrade": true,
+    "usableClass": [
+      "HyperNovice"
+    ],
+    "script": {
+      "aspd": [
+        "3"
+      ],
+      "hp": [
+        "1---500"
+      ],
+      "m_my_element_all": [
+        "3---8"
+      ],
+      "cd__Jupitel Thunderstorm": [
+        "9===0.65"
+      ],
+      "Jupitel Thunderstorm": [
+        "12===20"
+      ],
+      "chance__spl": [
+        "11===50",
+        "GRADE[me==B]===50"
+      ],
+      "chance__sMatk": [
+        "11===10",
+        "GRADE[me==B]===10"
+      ],
+      "m_pene_race_all": [
+        "GRADE[me==D]===30"
+      ],
+      "fct": [
+        "GRADE[me==C]===0.5"
+      ],
+      "m_size_all": [
+        "GRADE[me==A]===20"
+      ],
+      "acd": [
+        "GRADE[me==A]===15"
+      ]
+    }
+  },
   "470000": {
     "id": 470000,
     "aegisName": "Atker_Greave",
@@ -173426,10 +173848,10 @@
   "470209": {
     "id": 470209,
     "aegisName": "FateSin_Boots_SOA",
-    "name": "Boots of Good and Evil (Soul Ascetic) [1]",
+    "name": "Good & Evil Boots (Soul Ascetic) [1]",
     "unidName": "Shoes",
     "resName": "FateSin_Boots_SOA",
-    "description": "MaxHP + 500, MaxSP + 100.\r\nEvery 2 refine rate, MaxHP + 1%, MaxSP + 1%.\r\nIf refine rate is 7 or higher, Matk + 7%.\r\nIf refine rate is 9 or higher, reduces variable casting time by 10%.\r\nIf refine rate is 11 or higher, reduces fixed casting time by 0.5 seconds.\r\n\r\n^CC3D3D[Bonus by grade]^000000\r\n[Grade D] Res + 50, Mres + 50.\r\n[Grade C] Increases magical damage against all size enemies by 10%.\r\n[Grade B] P.Atk + 7, S.Matk + 7.\r\n[Grade A] Reduces fixed casting time by 0.5 seconds.\r\nClass: ^777777Shoes^000000  Defense: ^77777720^000000\r\nWeight: ^77777760^000000\r\nArmor Level: ^7777772^000000\r\nRequired Level: ^777777210^000000\r\nJobs: ^777777Soul Ascetic^000000",
+    "description": "รองเท้าที่แฝงพลังของธรรมะและอธรรมอยู่\n \nMHP + 500, MSP + 100\nทุก ๆ การอัพเกรด 2 ขั้น MHP + 1%, MSP + 1%\nเมื่ออัพเกรดถึงขั้น 7, MATK + 7%\nเมื่ออัพเกรดถึงขั้น 9, ลดระยะเวลาร่ายแบบแปรผัน 10%\nเมื่ออัพเกรดถึงขั้น 11, ลดระยะเวลาร่ายแบบคงที่ 0.5 วินาที\n \n^CC3D3D[Option เพิ่มเติมตาม Grade]^000000\n[Grade D] RES + 50, MRES + 50\n[Grade C] เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกขนาด 10%\n[Grade B] P.ATK + 7, S.MATK + 7\n[Grade A] ลดระยะเวลาร่ายแบบคงที่ 0.5 วินาที\nประเภท : ^777777Shoes^000000  พลังป้องกัน : ^77777720^000000\nน้ำหนัก : ^77777760^000000\nเลเวล Armor : ^7777772^000000\nเลเวลที่ต้องการ : ^777777210^000000\nอาชีพที่ใสได้ : ^777777Soul Ascetic^000000",
     "slots": 1,
     "itemTypeId": 2,
     "itemSubTypeId": 516,
@@ -173807,10 +174229,10 @@
   "470215": {
     "id": 470215,
     "aegisName": "FateSin_Boots_SKE",
-    "name": "Boots of Good and Evil (Sky Emperor) [1]",
+    "name": "Good & Evil Boots (Sky Emperor) [1]",
     "unidName": "Shoes",
     "resName": "FateSin_Boots_SKE",
-    "description": "MaxHP + 500, MaxSP + 100.\r\nEvery 2 refine rate, MaxHP + 1%, MaxSP + 1%.\r\nIf refine rate is 7 or higher, Atk + 7%.\r\nIf refine rate is 9 or higher, increases melee physical damage by 10%.\r\nIf refine rate is 11 or higher, reduces fixed casting time by 0.5 seconds.\r\n\r\n^CC3D3D[Bonus by grade]^000000\r\n[Grade D] Res + 50, Mres + 50.\r\n[Grade C] Increases physical damage against all size enemies by 10%.\r\n[Grade B] P.Atk + 7, S.Matk + 7.\r\n[Grade A] Reduces fixed casting time by 0.5 seconds.\r\n\r\nClass: ^777777Shoes^000000  Defense: ^77777720^000000\r\nWeight: ^77777760^000000\r\nRequired Level: ^777777210^000000\r\nArmor Level: ^7777772^000000\r\nJobs: ^777777Sky Emperor^000000",
+    "description": "รองเท้าที่แฝงพลังของธรรมะและอธรรมอยู่\n \nMHP + 500, MSP + 100\nทุก ๆ การอัพเกรด 2 ขั้น MHP + 1%, MSP + 1%\nเมื่ออัพเกรดถึงขั้น 7, ATK + 7%\nเมื่ออัพเกรดถึงขั้น 9, เพิ่ม Damage ทางกายภาพระยะใกล้ 10%\nเมื่ออัพเกรดถึงขั้น 11, ลดระยะเวลาร่ายแบบคงที่ 0.5 วินาที\n \n^CC3D3D[Option เพิ่มเติมตาม Grade]^000000\n[Grade D] RES + 50, MRES + 50.\n[Grade C] เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 10%\n[Grade B] P.ATK + 7, S.MATK + 7\n[Grade A] ลดระยะเวลาร่ายแบบคงที่ 0.5 วินาที\nประเภท : ^777777Shoes^000000  พลังป้องกัน : ^77777720^000000\nน้ำหนัก : ^77777760^000000\nเลเวลที่ต้องการ : ^777777210^000000\nเลเวล Armor : ^7777772^000000\nอาชีพที่ใสได้ : ^777777Sky Emperor^000000",
     "slots": 1,
     "itemTypeId": 2,
     "itemSubTypeId": 516,
@@ -174345,10 +174767,10 @@
   "470237": {
     "id": 470237,
     "aegisName": "FateSin_Boots_AG",
-    "name": "Boots of Good and Evil (Arch Mage) [1]",
+    "name": "Good & Evil Boots (Arch Mage) [1]",
     "unidName": "Shoes",
     "resName": "FateSin_Boots_AG",
-    "description": "MaxHP + 500, MaxSP + 100.\r\nEvery 2 refine rate, MaxHP + 1%, MaxSP + 1%.\r\nIf refine rate is 7 or higher, Matk + 7%.\r\nIf refine rate is 9 or higher, increases ghost, shadow and water property magical damage by 10%.\r\nIf refine rate is 11 or higher, reduces fixed casting time by 0.5 seconds.\r\n\r\n^CC3D3D[Bonus by grade]^000000\r\n[Grade D] Res + 50, Mres + 50.\r\n[Grade C] Increases magical damage against all size enemies by 10%.\r\n[Grade B] P.Atk + 7, S.Matk + 7.\r\n[Grade A] Reduces fixed casting time by 0.5 seconds.\r\nClass: ^777777Shoes^000000  Defense: ^77777720^000000\r\nWeight: ^77777760^000000\r\nRequired Level: ^777777210^000000\r\nArmor Level: ^7777772^000000\r\nJobs: ^777777Arch Mage^000000",
+    "description": "รองเท้าที่แฝงพลังของธรรมะและอธรรมอยู่\n \nMHP + 500, MSP + 100\nทุก ๆ การอัพเกรด 2 ขั้น MHP + 1%, MSP + 1%\nเมื่ออัพเกรดถึงขั้น 7, MATK + 7%\nเมื่ออัพเกรดถึงขั้น 9, เพิ่ม Damage ทางเวทมนตร์ธาตุ Ghost, Shadow, Water 10%\nเมื่ออัพเกรดถึงขั้น 11, ลดระยะเวลาร่ายแบบคงที่ 0.5 วินาที\n \n^CC3D3D[Option เพิ่มเติมตาม Grade]^000000\n[Grade D] RES + 50, MRES + 50\n[Grade C] เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกขนาด 10%\n[Grade B] P.ATK + 7, S.MATK + 7\n[Grade A] ลดระยะเวลาร่ายแบบคงที่ 0.5 วินาที\nประเภท : ^777777Shoes^000000  พลังป้องกัน : ^77777720^000000\nน้ำหนัก : ^77777760^000000\nเลเวลที่ต้องการ : ^777777210^000000\nเลเวล Armor : ^7777772^000000\nอาชีพที่ใสได้ : ^777777Arch Mage^000000",
     "slots": 1,
     "itemTypeId": 2,
     "itemSubTypeId": 516,
@@ -196702,6 +197124,215 @@
       ],
       "cd__Rain of Crystal": [
         "EQUIP[Destiny Staff]GRADE[weapon==C]===2"
+      ]
+    }
+  },
+  "490907": {
+    "id": 490907,
+    "aegisName": "WH_Dim_Ring_TH",
+    "name": "Dim Glacier Ring of Resonance (Windhawk) [1]",
+    "unidName": "Ring",
+    "resName": "Ring_Of_TheAbyssKing_A",
+    "description": "แหวนที่หลอมจากผลึกธารน้ำแข็งอันหม่นมัว\nเมื่อสวมใส่ จะเกิดการสั่นพ้องกับพลังของ Dim Glacier ปลดปล่อยพลังแฝงที่สะท้อนความหนาวเย็นอันลึกล้ำออกมา\n\nATK + 100\nลด Global Cooldown 10%\nCON + 10\nCRI + 15\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกประเภท 15%\n\nเมื่อสวมใส่ร่วมกับ Dim Glacier Bow,\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 20%,\nเพิ่ม Damage สกิล Hawk Rush 20%\n\nเมื่อ Dim Glacier Bow มีขั้นอัพเกรดตั้งแต่ 10 ขึ้นไป,\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกธาตุ 20%,\nเพิ่ม Damage สกิล Hawk Rush 20%\n\nเมื่อ Dim Glacier Bow มี Grade C ขึ้นไป,\nP.ATK + 15,\nเพิ่ม Damage สกิล Hawk Rush 25%\nประเภท : ^777777Accessory (Right)^000000 พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777230^000000\nอาชีพที่ใสได้ : ^777777Windhawk^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 510,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 230,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Windhawk"
+    ],
+    "script": {
+      "atk": [
+        "100"
+      ],
+      "acd": [
+        "10"
+      ],
+      "con": [
+        "10"
+      ],
+      "cri": [
+        "15"
+      ],
+      "p_class_all": [
+        "15"
+      ],
+      "p_size_all": [
+        "EQUIP[Dim Glacier Bow]===20"
+      ],
+      "p_element_all": [
+        "EQUIP[Dim Glacier Bow]REFINE[weapon==10]===20"
+      ],
+      "Hawk Rush": [
+        "EQUIP[Dim Glacier Bow]===20",
+        "EQUIP[Dim Glacier Bow]REFINE[weapon==10]===20",
+        "EQUIP[Dim Glacier Bow]GRADE[weapon==C]===25"
+      ],
+      "pAtk": [
+        "EQUIP[Dim Glacier Bow]GRADE[weapon==C]===15"
+      ]
+    }
+  },
+  "490908": {
+    "id": 490908,
+    "aegisName": "CD_Dim_Ring_TH",
+    "name": "Dim Glacier Ring of Resonance (Cardinal) [1]",
+    "unidName": "Ring",
+    "resName": "Ring_Of_TheAbyssKing_A",
+    "description": "แหวนที่หลอมจากผลึกธารน้ำแข็งอันหม่นมัว\nเมื่อสวมใส่ จะเกิดการสั่นพ้องกับพลังของ Dim Glacier ปลดปล่อยพลังแฝงที่สะท้อนความหนาวเย็นอันลึกล้ำออกมา\n\nATK + 100\nลด Global Cooldown 10%\nPOW + 10\nCri + 15\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกประเภท 15%\n\nเมื่อสวมใส่ร่วมกับ Dim Glacier Book หรือ Dim Glacier Mace,\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 15%,\nเพิ่ม Damage สกิล Petitio 15%\n \nเมื่อ Dim Glacier Book หรือ Dim Glacier Mace มีขั้นอัพเกรดตั้งแต่ 10 ขึ้นไป,\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกธาตุ 15%,\nเพิ่ม Damage สกิล Petitio 15%\n \nเมื่อ Dim Glacier Book หรือ Dim Glacier Mace มี Grade C ขึ้นไป,\nP.ATK + 10,\nเพิ่ม Damage สกิล Petitio 20%\nประเภท : ^777777Accessory (Right)^000000 พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777230^000000\nอาชีพที่ใสได้ : ^777777Cardinal^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 510,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 230,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Cardinal"
+    ],
+    "script": {
+      "atk": [
+        "100"
+      ],
+      "acd": [
+        "10"
+      ],
+      "pow": [
+        "10"
+      ],
+      "cri": [
+        "15"
+      ],
+      "p_class_all": [
+        "15"
+      ],
+      "p_size_all": [
+        "EQUIP[Dim Glacier Book||Dim Glacier Mace]===15"
+      ],
+      "p_element_all": [
+        "EQUIP[Dim Glacier Book||Dim Glacier Mace]REFINE[weapon==10]===15"
+      ],
+      "Petitio": [
+        "EQUIP[Dim Glacier Book||Dim Glacier Mace]===15",
+        "EQUIP[Dim Glacier Book||Dim Glacier Mace]REFINE[weapon==10]===15",
+        "EQUIP[Dim Glacier Book||Dim Glacier Mace]GRADE[weapon==C]===20"
+      ],
+      "pAtk": [
+        "EQUIP[Dim Glacier Book||Dim Glacier Mace]GRADE[weapon==C]===10"
+      ]
+    }
+  },
+  "490909": {
+    "id": 490909,
+    "aegisName": "MT_Dim_Ring_TH",
+    "name": "Dim Glacier Ring of Resonance (Meister) [1]",
+    "unidName": "Ring",
+    "resName": "Ring_Of_TheAbyssKing_A",
+    "description": "แหวนที่หลอมจากผลึกธารน้ำแข็งอันหม่นมัว\nเมื่อสวมใส่ จะเกิดการสั่นพ้องกับพลังของ Dim Glacier ปลดปล่อยพลังแฝงที่สะท้อนความหนาวเย็นอันลึกล้ำออกมา\n\nATK + 100\nลด Global Cooldown 10%\nPOW + 10\nATK + 6%\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกประเภท 15%\n\nเมื่อสวมใส่ร่วมกับ Dim Glacier Mechanic Mace,\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 15%.\nเพิ่ม Damage สกิล Spark Blaster 15%\n \nเมื่อ Dim Glacier Mechanic Mace มีขั้นอัพเกรดตั้งแต่ 10 ขึ้นไป,\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกธาตุ 15%.\nเพิ่ม Damage สกิล Spark Blaster 15%\n \nเมื่อ Dim Glacier Mechanic Mace มี Grade C ขึ้นไป,\nP.ATK + 10,\nเพิ่ม Damage สกิล Spark Blaster 20%\nประเภท : ^777777Accessory (Right)^000000 พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777230^000000\nอาชีพที่ใสได้ : ^777777Meister^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 510,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 230,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Meister"
+    ],
+    "script": {
+      "atk": [
+        "100"
+      ],
+      "acd": [
+        "10"
+      ],
+      "pow": [
+        "10"
+      ],
+      "atkPercent": [
+        "6"
+      ],
+      "p_class_all": [
+        "15"
+      ],
+      "p_size_all": [
+        "EQUIP[Dim Glacier Mechanic Mace]===15"
+      ],
+      "p_element_all": [
+        "EQUIP[Dim Glacier Mechanic Mace]REFINE[weapon==10]===15"
+      ],
+      "Spark Blaster": [
+        "EQUIP[Dim Glacier Mechanic Mace]===15",
+        "EQUIP[Dim Glacier Mechanic Mace]REFINE[weapon==10]===15",
+        "EQUIP[Dim Glacier Mechanic Mace]GRADE[weapon==C]===20"
+      ],
+      "pAtk": [
+        "EQUIP[Dim Glacier Mechanic Mace]GRADE[weapon==C]===10"
+      ]
+    }
+  },
+  "490910": {
+    "id": 490910,
+    "aegisName": "TR_Dim_Ring_TH",
+    "name": "Dim Glacier Ring of Resonance (Troubadour & Trouvere) [1]",
+    "unidName": "Ring",
+    "resName": "Ring_Of_TheAbyssKing_A",
+    "description": "แหวนที่หลอมจากผลึกธารน้ำแข็งอันหม่นมัว\nเมื่อสวมใส่ จะเกิดการสั่นพ้องกับพลังของ Dim Glacier ปลดปล่อยพลังแฝงที่สะท้อนความหนาวเย็นอันลึกล้ำออกมา\n\nATK +100\nลด Global Cooldown 10%\nCON +10\nATK +6%\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกประเภท 15%\n\nเมื่อสวมใส่ร่วมกับ Dim Glacier Violin หรือ Dim Glacier Whip,\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 15%,\nเพิ่ม Damage สกิล Rhythm Shooting 15%\n \nเมื่อ Dim Glacier Violin หรือ Dim Glacier Whip มีขั้นอัพเกรดตั้งแต่ 10 ขึ้นไป,\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกธาตุ 15%,\nเพิ่ม Damage สกิล Rhythm Shooting 15%\n \nเมื่อ Dim Glacier Violin หรือ Dim Glacier Whip มี Grade C ขึ้นไป,\nP.ATK +10,\nเพิ่ม Damage สกิล Rhythm Shooting 20%\nประเภท : ^777777Accessory (Right)^000000 พลังป้องกัน : ^7777770^000000\nน้ำหนัก : ^77777710^000000\nเลเวลที่ต้องการ : ^777777230^000000\nอาชีพที่ใสได้ : ^777777Troubadour & Trouvere^000000",
+    "slots": 1,
+    "itemTypeId": 2,
+    "itemSubTypeId": 510,
+    "itemLevel": null,
+    "attack": null,
+    "defense": 0,
+    "weight": 10,
+    "requiredLevel": 230,
+    "location": null,
+    "compositionPos": null,
+    "usableClass": [
+      "Troubadour",
+      "Trouvere"
+    ],
+    "script": {
+      "atk": [
+        "100"
+      ],
+      "acd": [
+        "10"
+      ],
+      "con": [
+        "10"
+      ],
+      "atkPercent": [
+        "6"
+      ],
+      "p_class_all": [
+        "15"
+      ],
+      "p_size_all": [
+        "EQUIP[Dim Glacier Violin||Dim Glacier Whip]===15"
+      ],
+      "p_element_all": [
+        "EQUIP[Dim Glacier Violin||Dim Glacier Whip]REFINE[weapon==10]===15"
+      ],
+      "Rhythm Shooting": [
+        "EQUIP[Dim Glacier Violin||Dim Glacier Whip]===15",
+        "EQUIP[Dim Glacier Violin||Dim Glacier Whip]REFINE[weapon==10]===15",
+        "EQUIP[Dim Glacier Violin||Dim Glacier Whip]GRADE[weapon==C]===20"
+      ],
+      "pAtk": [
+        "EQUIP[Dim Glacier Violin||Dim Glacier Whip]GRADE[weapon==C]===10"
       ]
     }
   },
