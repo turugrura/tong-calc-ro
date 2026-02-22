@@ -163,7 +163,7 @@ export class Shinkiro extends Kagerou {
   private readonly atkSkillList4th: AtkSkillModel[] = [
     {
       name: 'Shadow Hunting',
-      label: '[V2] Shadow Hunting Lv10',
+      label: '[V3] Shadow Hunting Lv10',
       value: 'Shadow Hunting==10',
       acd: 0.15,
       fct: 0,
@@ -176,17 +176,17 @@ export class Shinkiro extends Kagerou {
         const baseLevel = model.level;
         const skillBonusLv = this.learnLv('Shadow Flash');
 
-        return (500 + skillLevel * (400 + skillBonusLv * 5) + totalPow * 3) * (baseLevel / 100);
+        return (600 + skillLevel * (900 + skillBonusLv * 5) + totalPow * 3) * (baseLevel / 100);
       },
     },
     {
       name: 'Shadow Dance',
-      label: '[V2] Shadow Dance Lv10',
+      label: '[V3] Shadow Dance Lv10',
       value: 'Shadow Dance==10',
       acd: 0.25,
       fct: 1,
       vct: 1,
-      cd: 0.5,
+      cd: 0.4,
       isMelee: true,
       hit: 5,
       formula: (input: AtkSkillFormulaInput): number => {
@@ -195,30 +195,33 @@ export class Shinkiro extends Kagerou {
         const baseLevel = model.level;
         const skillBonusLv = this.learnLv('Shadow Hunting');
 
-        return (400 + skillLevel * (550 + skillBonusLv * 50) + totalPow * 4) * (baseLevel / 100);
+        return (550 + skillLevel * (750 + skillBonusLv * 50) + totalPow * 4) * (baseLevel / 100);
       },
     },
     {
       name: 'Shadow Flash',
-      label: '[V2] Shadow Flash Lv10',
+      label: '[V3] Shadow Flash Lv10',
       value: 'Shadow Flash==10',
       acd: 0.25,
       fct: 0,
       vct: 0,
       cd: 1,
       isMelee: true,
+      canCri: true,
+      baseCriPercentage: 1,
+      criDmgPercentage: 0.5,
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
         const { totalPow } = status;
         const baseLevel = model.level;
         const skillBonusLv = this.learnLv('Shadow Dance');
 
-        return (1600 + skillLevel * (700 + skillBonusLv * 100) + totalPow * 5) * (baseLevel / 100);
+        return (1500 + skillLevel * (750 + skillBonusLv * 50) + totalPow * 5) * (baseLevel / 100);
       },
     },
     {
       name: 'Huuma Shuriken - Grasp',
-      label: '[V2] Huuma Shuriken - Grasp Lv10',
+      label: '[V3] Huuma Shuriken - Grasp Lv10',
       value: 'Huuma Shuriken - Grasp==10',
       acd: 0,
       fct: 1,
@@ -231,12 +234,12 @@ export class Shinkiro extends Kagerou {
         const baseLevel = model.level;
         const skillBonusLv = this.learnLv('Huuma Shuriken - Construct');
 
-        return (700 + skillLevel * (200 + skillBonusLv * 5) + totalPow * 3) * (baseLevel / 100);
+        return (850 + skillLevel * (350 + skillBonusLv * 5) + totalPow * 3) * (baseLevel / 100);
       },
     },
     {
       name: 'Huuma Shuriken - Construct',
-      label: '[V2] Huuma Shuriken - Construct Lv10',
+      label: '[V3] Huuma Shuriken - Construct Lv10',
       value: 'Huuma Shuriken - Construct==10',
       acd: 0,
       fct: 1,
@@ -248,15 +251,15 @@ export class Shinkiro extends Kagerou {
         const { totalPow } = status;
         const baseLevel = model.level;
         const skillBonusLv = this.learnLv('Huuma Shuriken - Grasp');
-        const primary = (600 + skillLevel * (400 + skillBonusLv * 30) + totalPow * 5) * (baseLevel / 100);
-        const secondary = (800 + skillLevel * (600 + skillBonusLv * 30) + totalPow * 5) * (baseLevel / 100);
+        const primary = (600 + skillLevel * (1200 + skillBonusLv * 30) + totalPow * 5) * (baseLevel / 100);
+        const secondary = (600 + skillLevel * (1500 + skillBonusLv * 30) + totalPow * 5) * (baseLevel / 100);
 
         return primary + secondary;
       },
     },
     {
       name: 'Kunai - Distortion',
-      label: '[V2] Kunai - Distortion Lv10',
+      label: '[V3] Kunai - Distortion Lv10',
       value: 'Kunai - Distortion==10',
       acd: 0,
       fct: 0,
@@ -274,7 +277,7 @@ export class Shinkiro extends Kagerou {
     },
     {
       name: 'Kunai - Rotation',
-      label: '[V2] Kunai - Rotation Lv5',
+      label: '[V3] Kunai - Rotation Lv5',
       value: 'Kunai - Rotation==5',
       acd: 0.5,
       fct: 0,
@@ -292,7 +295,7 @@ export class Shinkiro extends Kagerou {
     },
     {
       name: 'Kunai - Refraction',
-      label: '[V2] Kunai - Refraction Lv10',
+      label: '[V3] Kunai - Refraction Lv10',
       value: 'Kunai - Refraction==10',
       acd: 0.5,
       fct: 0.5,
@@ -310,7 +313,7 @@ export class Shinkiro extends Kagerou {
     },
     {
       name: 'Red Flame Cannon',
-      label: '[V2] Red Flame Cannon Lv10',
+      label: '[V3] Red Flame Cannon Lv10',
       value: 'Red Flame Cannon==10',
       acd: 0,
       fct: 1,
@@ -325,12 +328,12 @@ export class Shinkiro extends Kagerou {
         const baseLevel = model.level;
         const skillBonusLv = this.learnLv('Darkening Cannon');
 
-        return (850 + skillLevel * (1250 + skillBonusLv * 70) + totalSpl * 5) * (baseLevel / 100);
+        return (500 + skillLevel * (1000 + skillBonusLv * 70) + totalSpl * 5) * (baseLevel / 100);
       },
     },
     {
       name: 'Cold Blooded Cannon',
-      label: '[V2] Cold Blooded Cannon Lv10',
+      label: '[V3] Cold Blooded Cannon Lv10',
       value: 'Cold Blooded Cannon==10',
       acd: 0,
       fct: 1,
@@ -345,12 +348,12 @@ export class Shinkiro extends Kagerou {
         const baseLevel = model.level;
         const skillBonusLv = this.learnLv('Darkening Cannon');
 
-        return (250 + skillLevel * (550 + skillBonusLv * 40) + totalSpl * 5) * (baseLevel / 100);
+        return (350 + skillLevel * (850 + skillBonusLv * 40) + totalSpl * 5) * (baseLevel / 100);
       },
     },
     {
       name: 'Thundering Cannon',
-      label: '[V2] Thundering Cannon Lv10',
+      label: '[V3] Thundering Cannon Lv10',
       value: 'Thundering Cannon==10',
       acd: 0,
       fct: 1,
@@ -365,12 +368,12 @@ export class Shinkiro extends Kagerou {
         const baseLevel = model.level;
         const skillBonusLv = this.learnLv('Darkening Cannon');
 
-        return (600 + skillLevel * (1300 + skillBonusLv * 70) + totalSpl * 5) * (baseLevel / 100);
+        return (500 + skillLevel * (450 + skillBonusLv * 70) + totalSpl * 5) * (baseLevel / 100);
       },
     },
     {
       name: 'Golden Dragon Cannon',
-      label: '[V2] Golden Dragon Cannon Lv10',
+      label: '[V3] Golden Dragon Cannon Lv10',
       value: 'Golden Dragon Cannon==10',
       acd: 0,
       fct: 1,
@@ -384,12 +387,12 @@ export class Shinkiro extends Kagerou {
         const baseLevel = model.level;
         const skillBonusLv = this.learnLv('Darkening Cannon');
 
-        return (300 + skillLevel * (400 + skillBonusLv * 15) + totalSpl * 5) * (baseLevel / 100);
+        return (450 + skillLevel * (950 + skillBonusLv * 15) + totalSpl * 5) * (baseLevel / 100);
       },
     },
     {
       name: 'Darkening Cannon',
-      label: '[V2] Darkening Cannon Lv10',
+      label: '[V3] Darkening Cannon Lv10',
       value: 'Darkening Cannon==10',
       acd: 0,
       fct: 1,
