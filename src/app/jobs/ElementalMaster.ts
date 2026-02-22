@@ -174,7 +174,7 @@ export class ElementalMaster extends Sorcerer {
   private readonly atkSkillList4th: AtkSkillModel[] = [
     {
       name: 'Diamond Storm',
-      label: '[V3] Diamond Storm Lv5',
+      label: '[V4] Diamond Storm Lv5',
       value: 'Diamond Storm==5',
       acd: 0.5,
       fct: 1.5,
@@ -197,7 +197,7 @@ export class ElementalMaster extends Sorcerer {
     },
     {
       name: 'Conflagration',
-      label: '[V3] Conflagration Lv5',
+      label: '[V4] Conflagration Lv5',
       value: 'Conflagration==5',
       acd: 0.5,
       fct: 1.5,
@@ -220,7 +220,7 @@ export class ElementalMaster extends Sorcerer {
     },
     {
       name: 'Lightning Land',
-      label: '[V3] Lightning Land Lv5',
+      label: '[V4] Lightning Land Lv5',
       value: 'Lightning Land==5',
       acd: 0.5,
       fct: 1.5,
@@ -243,7 +243,7 @@ export class ElementalMaster extends Sorcerer {
     },
     {
       name: 'Terra Drive',
-      label: '[V3] Terra Drive Lv5',
+      label: '[V4] Terra Drive Lv5',
       value: 'Terra Drive==5',
       acd: 0.5,
       fct: 1.5,
@@ -266,7 +266,7 @@ export class ElementalMaster extends Sorcerer {
     },
     {
       name: 'Venom Swamp',
-      label: '[V3] Venom Swamp Lv5',
+      label: '[V4] Venom Swamp Lv5',
       value: 'Venom Swamp==5',
       acd: 0.5,
       fct: 1.5,
@@ -289,7 +289,7 @@ export class ElementalMaster extends Sorcerer {
     },
     {
       name: 'Elemental Buster',
-      label: '[V3] Elemental Buster Lv10',
+      label: '[V4] Elemental Buster Lv10',
       value: 'Elemental Buster==10',
       acd: 0.5,
       fct: 1.5,
