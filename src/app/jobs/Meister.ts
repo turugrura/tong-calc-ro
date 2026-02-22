@@ -164,7 +164,7 @@ export class Meister extends Mechanic {
   private atkSkillList4th: AtkSkillModel[] = [
     {
       name: 'Axe Stomp',
-      label: '[V3] Axe Stomp Lv5',
+      label: '[V4] Axe Stomp Lv5',
       value: 'Axe Stomp==5',
       acd: 0.25,
       fct: 0,
@@ -177,12 +177,12 @@ export class Meister extends Mechanic {
         const baseLevel = model.level;
         const { totalPow } = status;
 
-        return (350 + skillLevel * 850 + totalPow * 5) * (baseLevel / 100);
+        return (400 + skillLevel * 950 + totalPow * 5) * (baseLevel / 100);
       },
     },
     // {
     //   name: 'Rush Quake',
-    //   label: '[V3] Rush Quake Lv10',
+    //   label: '[V4] Rush Quake Lv10',
     //   value: 'Rush Quake==10',
     //   acd: 0.5,
     //   fct: 0,
@@ -200,12 +200,12 @@ export class Meister extends Mechanic {
     // },
     {
       name: 'Spark Blaster',
-      label: '[V3] Spark Blaster Lv10',
+      label: '[V4] Spark Blaster Lv10',
       value: 'Spark Blaster==10',
       acd: 0.25,
       fct: 0.5,
       vct: 1.5,
-      cd: 0.7,
+      cd: 0.5,
       totalHit: 2,
       isIgnoreDef: true,
       isIgnoreSDef: true,
@@ -214,17 +214,17 @@ export class Meister extends Mechanic {
         const baseLevel = model.level;
         const { totalPow } = status;
 
-        return (250 + skillLevel * 750 + totalPow * 7) * (baseLevel / 100);
+        return (250 + skillLevel * 900 + totalPow * 7) * (baseLevel / 100);
       },
     },
     {
       name: 'Triple Laser',
-      label: '[V3] Triple Laser Lv5',
+      label: '[V4] Triple Laser Lv5',
       value: 'Triple Laser==5',
       acd: 0.25,
       fct: 0.5,
       vct: 1.5,
-      cd: 0.7,
+      cd: 0.35,
       totalHit: 3,
       canCri: true,
       criDmgPercentage: 0.5,
@@ -234,19 +234,19 @@ export class Meister extends Mechanic {
         const baseLevel = model.level;
         const { totalPow } = status;
 
-        return (300 + skillLevel * 600 + totalPow * 10) * (baseLevel / 100);
+        return (550 + skillLevel * 900 + totalPow * 12) * (baseLevel / 100);
       },
     },
     {
       name: 'Mighty Smash',
-      label: '[V3] Mighty Smash Lv10',
+      label: '[V4] Mighty Smash Lv10',
       value: 'Mighty Smash==10',
-      acd: 0,
+      acd: 0.25,
       fct: 0,
       vct: 0,
-      cd: 0.3,
+      cd: 0.5,
       isMelee: true,
-      totalHit: () => this.isSkillActive('Axe Stomp') ? 5 : 3,
+      totalHit: () => this.isSkillActive('Axe Stomp') ? 7 : 5,
       verifyItemFn: ({ weapon }) => {
         const requires: WeaponTypeName[] = ['axe', 'twohandAxe'];
         if (requires.some(wType => weapon.isType(wType))) return '';
@@ -258,7 +258,11 @@ export class Meister extends Mechanic {
         const baseLevel = model.level;
         const { totalPow } = status;
 
-        return (100 + skillLevel * 300 + totalPow * 7) * (baseLevel / 100);
+        if (this.isSkillActive('Axe Stomp')) {
+          return (50 + skillLevel * 180 + totalPow * 10) * (baseLevel / 100);
+        }
+
+        return (25 + skillLevel * 180 + totalPow * 7) * (baseLevel / 100);
       },
     },
   ];
