@@ -86427,6 +86427,240 @@
       ]
     }
   },
+  "300754": {
+    "id": 300754,
+    "aegisName": null,
+    "name": "Upgrade Memory of Thanatos Card",
+    "unidName": "Upgrade Memory of Thanatos Card",
+    "resName": "이름없는카드",
+    "description": "ทำให้อาวุธที่สวมใส่การ์ดนี้มีผลเหมือนกับสกิล Infiltration\nเสีย SP 3 ทุกครั้งที่โจมตี\nDEF - 100, FLEE - 100\n\nเมื่อ Weapon Lv.5,\nทุก ๆ การอัพเกรด 1 ขั้น, เพิ่ม Damage ทางกายภาพต่อศัตรูทุกธาตุ 1%, เพิกเฉย RES ของมอนเตอร์ทุกเผ่า 1%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Weapon^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 0,
+    "cardPrefix": "of Enchanted Penetration",
+    "script": {
+      "p_infiltration": [
+        "1"
+      ],
+      "def": [
+        "-100"
+      ],
+      "flee": [
+        "-100"
+      ],
+      "p_element_all": [
+        "ITEM_LV[me==5]1---1"
+      ],
+      "pene_res": [
+        "ITEM_LV[me==5]1---1"
+      ]
+    }
+  },
+  "300755": {
+    "id": 300755,
+    "aegisName": null,
+    "name": "Upgrade Berzebub Card",
+    "unidName": "Upgrade Berzebub Card",
+    "resName": "이름없는카드",
+    "description": "ลดระยะเวลาร่ายแบบแปรผัน 50%,\nP.ATK, S.MATK +5,\nเพิ่มปริมาณการใช้ SP 20%\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Accessory^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 136,
+    "cardPrefix": "of Enchanted Bigmouth",
+    "script": {
+      "vct": [
+        "50"
+      ],
+      "pAtk": [
+        "5"
+      ],
+      "sMatk": [
+        "5"
+      ]
+    }
+  },
+  "300756": {
+    "id": 300756,
+    "aegisName": null,
+    "name": "Upgrade Kiel-D-01 Card",
+    "unidName": "Upgrade Kiel-D-01 Card",
+    "resName": "이름없는카드",
+    "description": "ลด Global Cooldown  35%\n\nเมื่อ Armor Lv.2,\nทุก ๆ การอัพเกรด 2 ขั้น, เพิ่ม Damage ทางกายภาพและเวทมนตร์ต่อศัตรูประเภท Boss 2%\nATK, MATK + 10\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Headgear^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 769,
+    "cardPrefix": "of Enchanted Reload",
+    "script": {
+      "acd": [
+        "35"
+      ],
+      "p_class_boss": [
+        "ITEM_LV[me==2]2---2"
+      ],
+      "m_class_boss": [
+        "ITEM_LV[me==2]2---2"
+      ],
+      "atk": [
+        "ITEM_LV[me==2]2---10"
+      ],
+      "matk": [
+        "ITEM_LV[me==2]2---10"
+      ]
+    }
+  },
+  "300757": {
+    "id": 300757,
+    "aegisName": null,
+    "name": "Upgrade Dragon Knight Card",
+    "unidName": "Upgrade Dragon Knight Card",
+    "resName": "이름없는카드",
+    "description": "ทุก ๆ การอัพเกรด Garment 3 ขั้น, เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 5%\nเมื่อ Base Lv.200 ขึ้นไป, All State + 20, All Trait + 5\nเมื่อขั้นอัพเกรด Garment ตั้งแต่ 10 ขึ้นไป, All State + 20, All Trait + 5\n\nเมื่อผู้ใช้งานเป็นอาชีพ Dragon Knight,\nเพิ่ม Damage ทางกายภาพต่อศัตรูทุกเผ่า 20%,\nMaxHP + 20%,\nATK + 100\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Garment^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 4,
+    "cardPrefix": "of Dragon Knight",
+    "script": {
+      "p_size_all": [
+        "3---5"
+      ],
+      "allStatus": [
+        "SUM[level==200]===20",
+        "10===20"
+      ],
+      "allTrait": [
+        "SUM[level==200]===5",
+        "10===5"
+      ],
+      "p_race_all": [
+        "USED[DragonKnight]===20"
+      ],
+      "hpPercent": [
+        "USED[DragonKnight]===20"
+      ],
+      "atk": [
+        "USED[DragonKnight]===100"
+      ]
+    }
+  },
+  "300758": {
+    "id": 300758,
+    "aegisName": null,
+    "name": "Upgrade Troubadour Card",
+    "unidName": "Upgrade Troubadour Card",
+    "resName": "이름없는카드",
+    "description": "ทุก ๆ การอัพเกรด Garment 3 ขั้น, เพิ่ม Damage ทางเวทมนตร์ทุกธาตุ 5%\nเมื่อ Base Lv.200 ขึ้นไป, All State + 20, All Trait + 5\nเมื่อขั้นอัพเกรด Garment ตั้งแต่ 10 ขึ้นไป, All State + 20, All Trait + 5\n\nเมื่อผู้ใช้งานเป็นอาชีพ Troubadour/Trouvere,\nเพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกเผ่า 20%, \nMaxHP + 20%,\nMATK + 100\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Garment^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 4,
+    "cardPrefix": "of Trounadour",
+    "script": {
+      "m_my_element_all": [
+        "3---5"
+      ],
+      "allStatus": [
+        "SUM[level==200]===20",
+        "10===20"
+      ],
+      "allTrait": [
+        "SUM[level==200]===5",
+        "10===5"
+      ],
+      "m_race_all": [
+        "USED[Troubadour||Trouvere]===20"
+      ],
+      "hpPercent": [
+        "USED[Troubadour||Trouvere]===20"
+      ],
+      "matk": [
+        "USED[Troubadour||Trouvere]===100"
+      ]
+    }
+  },
+  "300759": {
+    "id": 300759,
+    "aegisName": null,
+    "name": "Upgrade Imperial Guard Card",
+    "unidName": "Upgrade Imperial Guard Card",
+    "resName": "이름없는카드",
+    "description": "ทุก ๆ การอัพเกรด Garment 3 ขั้น, เพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูทุกขนาด 5%\nเมื่อ Base Lv.200 ขึ้นไป, All State + 20, All Trait + 5\nเมื่อขั้นอัพเกรด Garment ตั้งแต่ 10 ขึ้นไป, All State + 20, All Trait + 5\n\nเมื่อผู้ใช้งานเป็นอาชีพ Imperial Guard,\nเพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูทุกเผ่า 15%,\nMaxHP + 20%,\nATK, MATK +100\nประเภท : ^777777Card^000000\nใช้กับ : ^777777Garment^000000\nน้ำหนัก : ^7777771^000000",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 0,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": 1,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 4,
+    "cardPrefix": "of Imperial Guard",
+    "script": {
+      "p_size_all": [
+        "3---5"
+      ],
+      "m_size_all": [
+        "3---5"
+      ],
+      "allStatus": [
+        "SUM[level==200]===20",
+        "10===20"
+      ],
+      "allTrait": [
+        "SUM[level==200]===5",
+        "10===5"
+      ],
+      "p_race_all": [
+        "USED[ImperialGuard]===15"
+      ],
+      "m_race_all": [
+        "USED[ImperialGuard]===15"
+      ],
+      "hpPercent": [
+        "USED[ImperialGuard]===20"
+      ],
+      "atk": [
+        "USED[ImperialGuard]===100"
+      ],
+      "matk": [
+        "USED[ImperialGuard]===100"
+      ]
+    }
+  },
   "310000": {
     "id": 310000,
     "aegisName": "Ranger_Top2",
@@ -126621,6 +126855,240 @@
       "criDmg": [
         "GRADE[me==B]===14",
         "GRADE[me==A]===18"
+      ]
+    }
+  },
+  "312398": {
+    "id": 312398,
+    "aegisName": "Shinkiro_Robe",
+    "name": "Shinkiro Stone (Garment)",
+    "unidName": "Shinkiro Stone (Garment)",
+    "resName": "Kagerou_Figure",
+    "description": "เพิ่ม Damage สกิล Kunai - Distortion 5%\nเมื่อใช้งานร่วมกับ Kagerou Stone (Upper), เพิ่ม Damage สกิล Kunai - Distortion 10%\nเมื่อใช้งานร่วมกับ Kagerou Stone (Middle), เพิ่ม Damage สกิล  Huuma Shuriken - Construct 10%\nเมื่อใช้งานร่วมกับ Kagerou Stone (Lower), ทุก ๆ การเรียนรู้สกิล Infiltrate 1 เลเวล เพิ่ม Damage ทางกายภาพระยะไกล 3%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 74,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "Kunai - Distortion": [
+        "5",
+        "EQUIP[Kagerou Stone (Upper)]===10"
+      ],
+      "Huuma Shuriken - Construct": [
+        "EQUIP[Kagerou Stone (Middle)]===10"
+      ],
+      "range": [
+        "EQUIP[Kagerou Stone (Lower)]LEARN_SKILL[Infiltrate==1]---3"
+      ]
+    }
+  },
+  "312399": {
+    "id": 312399,
+    "aegisName": "Shiranui_Robe",
+    "name": "Shiranui Stone (Garment)",
+    "unidName": "Shiranui Stone (Garment)",
+    "resName": "Oboro_Figure",
+    "description": "เพิ่ม Damage สกิล Darkening Cannon 10%\nเมื่อใช้งานร่วมกับ Oboro Stone (Upper), เพิ่ม Damage สกิล Red Flame Cannon 10%\nเมื่อใช้งานร่วมกับ Oboro Stone (Middle), ทุก ๆ การเรียนรู้สกิล Melt Away 1 เลเวล ลดระยะเวลาร่ายแบบแปรผัน 3%\nเมื่อใช้งานร่วมกับ Oboro Stone (Lower), เพิ่ม Damage สกิล Thundering Cannon 10%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 74,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "Darkening Cannon": [
+        "10"
+      ],
+      "Red Flame Cannon": [
+        "EQUIP[Oboro Stone (Upper)]===10"
+      ],
+      "vct": [
+        "EQUIP[Oboro Stone (Middle)]LEARN_SKILL[Melt Away==1]---3"
+      ],
+      "Thundering Cannon": [
+        "EQUIP[Oboro Stone (Lower)]===10"
+      ]
+    }
+  },
+  "312400": {
+    "id": 312400,
+    "aegisName": "ShaCross_Robe",
+    "name": "Shadow Cross Stone (Garment)",
+    "unidName": "Shadow Cross Stone (Garment)",
+    "resName": "Assasin_Cross_Figure",
+    "description": "ทุก ๆ การเรียนรู้สกิล Shadow Sense 2 เลเวล Critical Damage + 4%\nเมื่อใช้งานร่วมกับ Guillotine Cross Stone (Upper), เพิ่ม Damage สกิล Impact Crater 10%\nเมื่อใช้งานร่วมกับ Guillotine Cross Stone (Middle), เพิ่ม Damage สกิล Eternal Slash 10%\nเมื่อใช้งานร่วมกับ Guillotine Cross Stone (Lower), ทุก ๆ การเรียนรู้สกิล Shadow Sense 1 เลเวล C.RATE + 1",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 74,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "criDmg": [
+        "LEARN_SKILL[Shadow Sense==2]---4"
+      ],
+      "Impact Crater": [
+        "EQUIP[Guillotine Cross Stone (Upper)]===10"
+      ],
+      "Eternal Slash": [
+        "EQUIP[Guillotine Cross Stone (Middle)]===10"
+      ],
+      "cRate": [
+        "EQUIP[Guillotine Cross Stone (Lower)]LEARN_SKILL[Shadow Sense==1]---1"
+      ]
+    }
+  },
+  "312401": {
+    "id": 312401,
+    "aegisName": "Cardinal_Robe",
+    "name": "Cardinal Stone (Garment)",
+    "unidName": "Cardinal Stone (Garment)",
+    "resName": "High_Priest_Figure",
+    "description": "เพิ่ม Damage สกิล Framen 5%\nเมื่อใช้งานร่วมกับ Archbishop Stone (Upper), เพิ่ม Damage สกิล Framen 10%\nเมื่อใช้งานร่วมกับ Archbishop Stone (Middle), ทุก ๆ การเรียนรู้สกิล Fidus Animus 2 เลเวล เพิ่ม Damage ทางเวทมนตร์ธาตุ Holy 3%\nเมื่อใช้งานร่วมกับ Archbishop Stone (Lower), เพิ่ม Damage สกิล Arbitrium 10%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 74,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "Framen": [
+        "5",
+        "EQUIP[Archbishop Stone (Upper)]===10"
+      ],
+      "m_my_element_holy": [
+        "EQUIP[Archbishop Stone (Middle)]LEARN_SKILL[Fidus Animus==2]---3"
+      ],
+      "Arbitrium": [
+        "EQUIP[Archbishop Stone (Lower)]===10"
+      ]
+    }
+  },
+  "312402": {
+    "id": 312402,
+    "aegisName": "SuNovice_Robe",
+    "name": "Super Novice Stone (Garment)",
+    "unidName": "Super Novice Stone (Garment)",
+    "resName": "피규어",
+    "description": "เมื่อเรียนรู้สกิล Break Through Lv.5, สามารถใช้งานสกิล Wind Cutter Lv.5 ได้\nเมื่อเรียนรู้สกิล Transcendence Lv.5, สามารถใช้งานสกิล Judex Lv.10 ได้\nเมื่อใช้งานร่วมกับ Paladin Stone (Upper), DEF + 120, MDEF + 15\nเมื่อใช้งานร่วมกับ High Wizard Stone (Middle), ทุก ๆ การเรียนรู้สกิล Transcendence 1 เลเวล เพิ่ม Damage สกิล Judex 3%\nเมื่อใช้งานร่วมกับ Stalker Stone (Lower), ทุก ๆ การเรียนรู้สกิล Break Through 1 เลเวล เพิ่ม Damage สกิล Wind Cutter 3%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 74,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "def": [
+        "EQUIP[Paladin Stone (Upper)]===120"
+      ],
+      "mdef": [
+        "EQUIP[Paladin Stone (Upper)]===15"
+      ],
+      "Judex": [
+        "EQUIP[High Wizard Stone (Middle)]LEARN_SKILL[Transcendence==1]---3"
+      ],
+      "Wind Cutter": [
+        "EQUIP[Stalker Stone (Lower)]LEARN_SKILL[Break Through==1]---3"
+      ]
+    }
+  },
+  "312403": {
+    "id": 312403,
+    "aegisName": "SuNovice_Top",
+    "name": "Super Novice Stone (Upper)",
+    "unidName": "Super Novice Stone (Upper)",
+    "resName": "피규어",
+    "description": "ทุก ๆ การเรียนรู้สกิล Transcendence 1 เลเวล ลดระยะเวลาร่ายแบบแปรผัน 3%.\nเมื่อใช้งานร่วมกับ Super Novice Stone (Garment), ทุก ๆ การเรียนรู้สกิล Transcendence 1 เลเวล เพิ่ม Damage สกิล Judex 3%",
+    "slots": 0,
+    "itemTypeId": 11,
+    "itemSubTypeId": 71,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "vct": [
+        "LEARN_SKILL[Transcendence==1]---3"
+      ],
+      "Judex": [
+        "EQUIP[Super Novice Stone (Garment)]LEARN_SKILL[Transcendence==1]---3"
+      ]
+    }
+  },
+  "312404": {
+    "id": 312404,
+    "aegisName": "SuNovice_Middle",
+    "name": "Super Novice Stone (Middle)",
+    "unidName": "Super Novice Stone (Middle)",
+    "resName": "피규어",
+    "description": "ทุก ๆ การเรียนรู้สกิล Transcendence 1 เลเวล เพิ่ม Damage ทางกายภาพระยะใกล้ 2%\nเมื่อใช้งานร่วมกับ Super Novice Stone (Garment), ทุก ๆ การเรียนรู้สกิล Break Through 1 เลเวล เพิ่ม Damage สกิล Wind Cutter 3%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 72,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "melee": [
+        "LEARN_SKILL[Transcendence==1]---2"
+      ],
+      "Wind Cutter": [
+        "EQUIP[Super Novice Stone (Garment)]LEARN_SKILL[Break Through==1]---3"
+      ]
+    }
+  },
+  "312405": {
+    "id": 312405,
+    "aegisName": "SuNovice_Bottom",
+    "name": "Super Novice Stone (Lower)",
+    "unidName": "Super Novice Stone (Lower)",
+    "resName": "피규어",
+    "description": "เมื่อใช้งานสกิล Angel, Please help us, เพิ่ม Damage ทางเวทมนตร์ทุกธาตุ 15% เป็นเวลา 300 วินาที\nเมื่อใช้งานร่วมกับ Super Novice Stone (Garment), MHP + 15%",
+    "slots": 0,
+    "itemTypeId": 6,
+    "itemSubTypeId": 73,
+    "itemLevel": null,
+    "attack": null,
+    "defense": null,
+    "weight": null,
+    "requiredLevel": null,
+    "location": null,
+    "compositionPos": 65535,
+    "script": {
+      "m_my_element_all": [
+        "15"
+      ],
+      "hpPercent": [
+        "EQUIP[Super Novice Stone (Garment)]===15"
       ]
     }
   },

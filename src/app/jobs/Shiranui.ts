@@ -463,6 +463,18 @@ export class Shiranui extends Oboro {
       inputType: 'dropdown',
       dropdown: genSkillList(10),
     },
+    {
+      name: 'Infiltrate',
+      label: 'Infiltrate',
+      inputType: 'dropdown',
+      dropdown: genSkillList(5),
+    },
+    {
+      name: 'Melt Away',
+      label: 'Melt Away',
+      inputType: 'dropdown',
+      dropdown: genSkillList(5),
+    },
   ];
 
   constructor() {

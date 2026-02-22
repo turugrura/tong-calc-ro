@@ -271,6 +271,8 @@ const ACTIVE_PASSIVE_SKILL_NAMES = [
   "Vulture's Eye",
   'Talisman Mastery',
   'Soul Mastery',
+  'Infiltrate',
+  'Melt Away',
 ] as const;
 
 export const OFFENSIVE_SKILL_NAMES = [
