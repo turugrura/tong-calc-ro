@@ -165,7 +165,7 @@ export class Cardinal extends ArchBishop {
   private readonly atkSkillList4th: AtkSkillModel[] = [
     {
       name: 'Framen',
-      label: '[V3] Framen Lv5',
+      label: '[V4] Framen Lv5',
       value: 'Framen==5',
       acd: 0.5,
       fct: 1.5,
@@ -180,20 +180,20 @@ export class Cardinal extends ArchBishop {
         const fidusLv = this.learnLv('Fidus Animus');
 
         if (monster.isRace('demon', 'undead')) {
-          return (skillLevel * (900 + fidusLv * 5) + totalSpl * 5) * (baseLevel / 100);
+          return (skillLevel * (1050 + fidusLv * 5) + totalSpl * 5) * (baseLevel / 100);
         }
 
-        return (skillLevel * (800 + fidusLv * 5) + totalSpl * 3) * (baseLevel / 100);
+        return (skillLevel * (950 + fidusLv * 5) + totalSpl * 3) * (baseLevel / 100);
       },
     },
     {
       name: 'Arbitrium',
-      label: '[V3] Arbitrium Lv10',
+      label: '[V4] Arbitrium Lv10',
       value: 'Arbitrium==10',
       acd: 0.5,
       fct: 1.5,
       vct: 4,
-      cd: 1.5,
+      cd: 1,
       isMatk: true,
       element: ElementType.Holy,
       formula: (input: AtkSkillFormulaInput): number => {
@@ -202,15 +202,15 @@ export class Cardinal extends ArchBishop {
         const baseLevel = model.level;
         const fidusLv = this.learnLv('Fidus Animus');
 
-        const primaryDmg = (skillLevel * (1250 + fidusLv * 10) + totalSpl * 7) * (baseLevel / 100);
-        const secondaryDmg = (skillLevel * (1000 + fidusLv * 10) + totalSpl * 7) * (baseLevel / 100);
+        const primaryDmg = (skillLevel * (1000 + fidusLv * 10) + totalSpl * 10) * (baseLevel / 100);
+        const secondaryDmg = (skillLevel * (1750 + fidusLv * 50) + totalSpl * 10) * (baseLevel / 100);
 
         return primaryDmg + secondaryDmg;
       },
     },
     {
       name: 'Petitio',
-      label: '[V3] Petitio Lv10',
+      label: '[V4] Petitio Lv10',
       value: 'Petitio==10',
       acd: 0.5,
       fct: 0,
@@ -233,7 +233,7 @@ export class Cardinal extends ArchBishop {
         const baseLevel = model.level;
         const mAndBookLv = this.learnLv('Mace & Book Mastery');
 
-        return (skillLevel * (1050 + mAndBookLv * 10) + totalPow * 5) * (baseLevel / 100);
+        return (skillLevel * (1050 + mAndBookLv * 50) + totalPow * 5) * (baseLevel / 100);
       },
     },
   ];
