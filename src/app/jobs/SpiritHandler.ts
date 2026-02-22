@@ -163,7 +163,7 @@ export class SpiritHandler extends Doram {
   private readonly atkSkillList4th: AtkSkillModel[] = [
     {
       name: 'Chulho Sonic Claw',
-      label: '[V2] Chulho Sonic Claw Lv7',
+      label: '[V3] Chulho Sonic Claw Lv7',
       value: 'Chulho Sonic Claw==7',
       acd: 0.5,
       fct: 0,
@@ -179,15 +179,15 @@ export class SpiritHandler extends Doram {
         const baseLevel = model.level;
         const skillBonusLv = this.learnLv('Mystical Creature Mastery');
         if (this.learnLv('Commune with Chulho')) {
-          return (500 + skillLevel * (850) + skillBonusLv * 100 + totalPow * 5) * (baseLevel / 100);
+          return (850 + skillLevel * 2050 + skillBonusLv * 100 + totalPow * 5) * (baseLevel / 100);
         }
 
-        return (400 + skillLevel * (750) + skillBonusLv * 50 + totalPow * 5) * (baseLevel / 100);
+        return (850 + skillLevel * 1650 + skillBonusLv * 50 + totalPow * 5) * (baseLevel / 100);
       },
     },
     {
       name: 'Howling of Chulho',
-      label: '[V2] Howling of Chulho Lv7',
+      label: '[V3] Howling of Chulho Lv7',
       value: 'Howling of Chulho==7',
       acd: 0,
       fct: 1,
@@ -207,7 +207,7 @@ export class SpiritHandler extends Doram {
     },
     {
       name: 'Hogogong Strike',
-      label: '[V2] Hogogong Strike Lv7',
+      label: '[V3] Hogogong Strike Lv7',
       value: 'Hogogong Strike==7',
       acd: 0,
       fct: 1,
@@ -231,7 +231,7 @@ export class SpiritHandler extends Doram {
     },
     {
       name: 'Hyunrok Breeze',
-      label: '[V2] Hyunrok Breeze Lv7',
+      label: '[V3] Hyunrok Breeze Lv7',
       value: 'Hyunrok Breeze==7',
       acd: 0.5,
       fct: 1.5,
@@ -245,15 +245,15 @@ export class SpiritHandler extends Doram {
         const baseLevel = model.level;
         const skillBonusLv = this.learnLv('Mystical Creature Mastery');
         if (this.learnLv('Commune with Hyunrok')) {
-          return (700 + skillLevel * 800 + skillBonusLv * 40 + totalSpl * 5) * (baseLevel / 100);
+          return (750 + skillLevel * 950 + skillBonusLv * 40 + totalSpl * 5) * (baseLevel / 100);
         }
 
-        return (600 + skillLevel * 600 + skillBonusLv * 20 + totalSpl * 5) * (baseLevel / 100);
+        return (650 + skillLevel * 750 + skillBonusLv * 20 + totalSpl * 5) * (baseLevel / 100);
       },
     },
     {
       name: 'Hyunrok Cannon',
-      label: '[V2] Hyunrok Cannon Lv7',
+      label: '[V3] Hyunrok Cannon Lv7',
       value: 'Hyunrok Cannon==7',
       acd: 0,
       fct: 1.5,
@@ -267,10 +267,10 @@ export class SpiritHandler extends Doram {
         const baseLevel = model.level;
         const skillBonusLv = this.learnLv('Mystical Creature Mastery');
         if (this.learnLv('Commune with Hyunrok')) {
-          return (800 + skillLevel * 1100 + skillBonusLv * 75 + totalSpl * 5) * (baseLevel / 100);
+          return (1050 + skillLevel * 1850 + skillBonusLv * 75 + totalSpl * 5) * (baseLevel / 100);
         }
 
-        return (700 + skillLevel * 950 + skillBonusLv * 50 + totalSpl * 5) * (baseLevel / 100);
+        return (1050 + skillLevel * 1550 + skillBonusLv * 50 + totalSpl * 5) * (baseLevel / 100);
       },
     },
   ];
