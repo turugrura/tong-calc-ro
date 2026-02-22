@@ -165,12 +165,12 @@ export class AbyssChaser extends ShadowChaser {
   private readonly atkSkillList4th: AtkSkillModel[] = [
     {
       name: 'Abyss Dagger',
-      label: '[V3] Abyss Dagger Lv5',
+      label: '[V4] Abyss Dagger Lv5',
       value: 'Abyss Dagger==5',
       acd: 0.5,
       fct: 0,
       vct: 0,
-      cd: 0.3,
+      cd: 0.4,
       isMelee: true,
       totalHit: 2,
       verifyItemFn: ({ weapon }) => {
@@ -184,12 +184,12 @@ export class AbyssChaser extends ShadowChaser {
         const { totalPow } = status;
         const { level: baseLevel } = model;
 
-        return (100 + skillLevel * 500 + totalPow * 5) * (baseLevel / 100);
+        return (100 + skillLevel * 900 + totalPow * 5) * (baseLevel / 100);
       },
     },
     {
       name: 'Unlucky Rush',
-      label: '[V3] Unlucky Rush Lv5',
+      label: '[V4] Unlucky Rush Lv5',
       value: 'Unlucky Rush==5',
       acd: 0.5,
       fct: 0,
@@ -206,12 +206,12 @@ export class AbyssChaser extends ShadowChaser {
     },
     {
       name: 'Deft Stab',
-      label: '[V3] Deft Stab Lv10',
+      label: '[V4] Deft Stab Lv10',
       value: 'Deft Stab==10',
       acd: 0.5,
       fct: 0,
       vct: 0,
-      cd: 0.3,
+      cd: 0.7,
       isMelee: true,
       hit: 5,
       formula: (input: AtkSkillFormulaInput): number => {
@@ -219,12 +219,12 @@ export class AbyssChaser extends ShadowChaser {
         const { totalPow } = status;
         const { level: baseLevel } = model;
 
-        return (350 + skillLevel * 550 + totalPow * 5) * (baseLevel / 100);
+        return (250 + skillLevel * 350 + totalPow * 5) * (baseLevel / 100);
       },
     },
     {
       name: 'Chain Reaction Shot',
-      label: '[V3] Chain Reaction Shot Lv5',
+      label: '[V4] Chain Reaction Shot Lv5',
       value: 'Chain Reaction Shot==5',
       acd: 0,
       fct: 1,
@@ -249,12 +249,12 @@ export class AbyssChaser extends ShadowChaser {
     },
     {
       name: 'Frenzy Shot',
-      label: '[V3] Frenzy Shot Lv10 (1 hit)',
+      label: '[V4] Frenzy Shot Lv10 (1 hit)',
       value: 'Frenzy Shot==10',
       acd: 0.5,
       fct: 0,
       vct: 0,
-      cd: 0.2,
+      cd: 0.35,
       canCri: true,
       baseCriPercentage: 1,
       criDmgPercentage: 0.5,
@@ -269,12 +269,12 @@ export class AbyssChaser extends ShadowChaser {
         const { totalCon } = status;
         const { level: baseLevel } = model;
 
-        return (skillLevel * 400 + totalCon * 5) * (baseLevel / 100);
+        return (150 + (skillLevel * 600) + totalCon * 15) * (baseLevel / 100);
       },
     },
     {
       name: 'From the Abyss',
-      label: '[V3] From the Abyss Lv5',
+      label: '[V4] From the Abyss Lv5',
       value: 'From the Abyss==5',
       acd: 0,
       fct: 0,
@@ -293,7 +293,7 @@ export class AbyssChaser extends ShadowChaser {
     },
     {
       name: 'Abyss Square',
-      label: '[V3] Abyss Square Lv5 (อยู่นอกพื้นที่สกิล)',
+      label: '[V4] Abyss Square Lv5 (อยู่นอกพื้นที่สกิล)',
       value: 'Abyss Square==5',
       acd: 0.5,
       fct: 1.5,
@@ -313,7 +313,7 @@ export class AbyssChaser extends ShadowChaser {
     },
     {
       name: 'Omega Abyss Strike',
-      label: '[V3] Omega Abyss Strike Lv10',
+      label: '[V4] Omega Abyss Strike Lv10',
       value: 'Omega Abyss Strike==10',
       acd: 0.5,
       fct: 1.5,
