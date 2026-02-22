@@ -165,7 +165,7 @@ export class ShadowCross extends GuillotineCross {
   private readonly atkSkillList4th: AtkSkillModel[] = [
     {
       name: 'Shadow Stab',
-      label: '[V3] Shadow Stab Lv5',
+      label: '[V4] Shadow Stab Lv5',
       value: 'Shadow Stab==5',
       acd: 0,
       fct: 0,
@@ -179,6 +179,7 @@ export class ShadowCross extends GuillotineCross {
         return requires.join(', ');
       },
       isIgnoreDef: true,
+      isIgnoreSDef: true,
       totalHit: () => {
         if (this.isSkillActive('Cloaking Exceed')) return 2;
 
@@ -189,12 +190,16 @@ export class ShadowCross extends GuillotineCross {
         const { totalPow } = status;
         const baseLevel = model.level;
 
+        if (this.isSkillActive('Cloaking Exceed')) {
+          return (skillLevel * 400 + totalPow * 7) * (baseLevel / 100);
+        }
+
         return (skillLevel * 300 + totalPow * 5) * (baseLevel / 100);
       },
     },
     {
       name: 'Dancing Knife',
-      label: '[V3] Dancing Knife Lv5',
+      label: '[V4] Dancing Knife Lv5',
       value: 'Dancing Knife==5',
       acd: 1,
       fct: 1,
@@ -218,7 +223,7 @@ export class ShadowCross extends GuillotineCross {
     },
     {
       name: 'Eternal Slash',
-      label: '[V3] Eternal Slash Lv5 (1 hit)',
+      label: '[V4] Eternal Slash Lv5 (1 hit)',
       value: 'Eternal Slash==5',
       acd: 0.5,
       fct: 0,
@@ -247,12 +252,12 @@ export class ShadowCross extends GuillotineCross {
     },
     {
       name: 'Savage Impact',
-      label: '[V3] Savage Impact Lv5',
+      label: '[V4] Savage Impact Lv5',
       value: 'Savage Impact==5',
       acd: 0.3,
       fct: 0,
       vct: 0,
-      cd: 1,
+      cd: 0.7,
       isMelee: true,
       canCri: true,
       baseCriPercentage: 0.5,
@@ -282,7 +287,7 @@ export class ShadowCross extends GuillotineCross {
     },
     {
       name: 'Impact Crater',
-      label: '[V3] Impact Crater Lv5',
+      label: '[V4] Impact Crater Lv5',
       value: 'Impact Crater==5',
       acd: 0.5,
       fct: 0,
@@ -311,7 +316,7 @@ export class ShadowCross extends GuillotineCross {
     },
     {
       name: 'Fatal Shadow Claw',
-      label: '[V3] Fatal Shadow Claw Lv10',
+      label: '[V4] Fatal Shadow Claw Lv10',
       value: 'Fatal Shadow Claw==10',
       acd: 0.5,
       fct: 1.5,
