@@ -273,6 +273,7 @@ const ACTIVE_PASSIVE_SKILL_NAMES = [
   'Soul Mastery',
   'Infiltrate',
   'Melt Away',
+  'Breaking Limit',
 ] as const;
 
 export const OFFENSIVE_SKILL_NAMES = [

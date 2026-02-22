@@ -163,7 +163,7 @@ export class HyperNovice extends SuperNovice {
   private readonly atkSkillList4th: AtkSkillModel[] = [
     {
       name: 'Double Bowling Bash',
-      label: '[V2] Double Bowling Bash Lv10',
+      label: '[V3] Double Bowling Bash Lv10',
       value: 'Double Bowling Bash==10',
       acd: 1,
       fct: 0,
@@ -176,18 +176,19 @@ export class HyperNovice extends SuperNovice {
         const { totalPow } = status;
         const baseLevel = model.level;
         const skillBonusLv = this.learnLv('Self Study Tactics');
+        const breakingLimitBonus = this.isSkillActive('Breaking Limit') ? 1.7 : 1;
 
-        return (150 + skillLevel * (250 + skillBonusLv * 3) + totalPow * 2) * (baseLevel / 100);
+        return (200 + skillLevel * (300 + skillBonusLv * 3) + totalPow * 2) * breakingLimitBonus * (baseLevel / 100);
       },
     },
     {
       name: 'Mega Sonic Blow',
-      label: '[V2] Mega Sonic Blow Lv10',
+      label: '[V3] Mega Sonic Blow Lv10',
       value: 'Mega Sonic Blow==10',
       acd: 0.5,
       fct: 0,
       vct: 0,
-      cd: 0.3,
+      cd: 0.35,
       hit: 8,
       isMelee: true,
       canCri: true,
@@ -198,18 +199,19 @@ export class HyperNovice extends SuperNovice {
         const { totalPow } = status;
         const baseLevel = model.level;
         const skillBonusLv = this.learnLv('Self Study Tactics');
+        const breakingLimitBonus = this.isSkillActive('Breaking Limit') ? 2 : 1;
 
-        return (850 + skillLevel * (450 + skillBonusLv * 5) + totalPow * 4) * (baseLevel / 100);
+        return (900 + skillLevel * (750 + skillBonusLv * 5) + totalPow * 4) * breakingLimitBonus * (baseLevel / 100);
       },
     },
     {
       name: 'Shield Chain Rush',
-      label: '[V2] Shield Chain Rush Lv10',
+      label: '[V3] Shield Chain Rush Lv10',
       value: 'Shield Chain Rush==10',
       acd: 0.5,
       fct: 0.3,
       vct: 1.2,
-      cd: 0.3,
+      cd: 0.35,
       hit: 5,
       verifyItemFn: ({ model }) => !model.shield ? 'Shield' : '',
       formula: (input: AtkSkillFormulaInput): number => {
@@ -217,18 +219,19 @@ export class HyperNovice extends SuperNovice {
         const { totalPow } = status;
         const baseLevel = model.level;
         const skillBonusLv = this.learnLv('Self Study Tactics');
+        const breakingLimitBonus = this.isSkillActive('Breaking Limit') ? 1.7 : 1;
 
-        return (600 + skillLevel * (450 + skillBonusLv * 3) + totalPow * 3) * (baseLevel / 100);
+        return (700 + skillLevel * (500 + skillBonusLv * 3) + totalPow * 3) * breakingLimitBonus * (baseLevel / 100);
       },
     },
     {
       name: 'Spiral Pierce Max',
-      label: '[V2] Spiral Pierce Max Lv10',
+      label: '[V3] Spiral Pierce Max Lv10',
       value: 'Spiral Pierce Max==10',
       acd: 0.5,
       fct: 0.3,
       vct: 1,
-      cd: 0.3,
+      cd: 0.35,
       hit: 5,
       verifyItemFn: ({ model }) => !model.shield ? 'Shield' : '',
       formula: (input: AtkSkillFormulaInput): number => {
@@ -242,13 +245,14 @@ export class HyperNovice extends SuperNovice {
           l: 1.2,
         };
         const sizeModifier = sizeMap[monster.size];
+        const breakingLimitBonus = this.isSkillActive('Breaking Limit') ? 2 : 1;
 
-        return (550 + skillLevel * (350 + skillBonusLv * 3) * sizeModifier + totalPow * 3) * (baseLevel / 100);
+        return (700 + skillLevel * (800 + skillBonusLv * 3) * sizeModifier + totalPow * 3) * breakingLimitBonus * (baseLevel / 100);
       },
     },
     {
       name: 'Napalm Vulcan Strike',
-      label: '[V2] Napalm Vulcan Strike Lv10',
+      label: '[V3] Napalm Vulcan Strike Lv10',
       value: 'Napalm Vulcan Strike==10',
       acd: 0.5,
       fct: 1,
@@ -268,7 +272,7 @@ export class HyperNovice extends SuperNovice {
     },
     {
       name: 'Jupitel Thunderstorm',
-      label: '[V2] Jupitel Thunderstorm Lv10',
+      label: '[V3] Jupitel Thunderstorm Lv10',
       value: 'Jupitel Thunderstorm==10',
       acd: 0.5,
       fct: 1,
@@ -288,7 +292,7 @@ export class HyperNovice extends SuperNovice {
     },
     {
       name: "Hell's Drive",
-      label: "[V2] Hell's Drive Lv10",
+      label: "[V3] Hell's Drive Lv10",
       value: "Hell's Drive==10",
       acd: 1,
       fct: 1,
@@ -307,7 +311,17 @@ export class HyperNovice extends SuperNovice {
       },
     },
   ];
-  private readonly activeSkillList4th: ActiveSkillModel[] = [];
+  private readonly activeSkillList4th: ActiveSkillModel[] = [
+    {
+      label: 'Breaking Limit',
+      name: 'Breaking Limit',
+      inputType: 'selectButton',
+      dropdown: [
+        { label: 'Yes', value: 1, isUse: true },
+        { label: 'No', value: 0, isUse: false },
+      ],
+    }
+  ];
   private readonly passiveSkillList4th: PassiveSkillModel[] = [
     {
       name: 'Self Study Tactics',
