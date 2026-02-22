@@ -175,7 +175,7 @@ export class SkyEmperor extends StarEmperor {
   private readonly atkSkillList4th: AtkSkillModel[] = [
     {
       name: 'Noon Blast',
-      label: '[V2] Noon Blast Lv5',
+      label: '[V3] Noon Blast Lv5',
       value: 'Noon Blast==5',
       acd: 0.5,
       fct: 0,
@@ -197,7 +197,7 @@ export class SkyEmperor extends StarEmperor {
     },
     {
       name: 'Sunset Blast',
-      label: '[V2] Sunset Blast Lv5',
+      label: '[V3] Sunset Blast Lv5',
       value: 'Sunset Blast==5',
       acd: 0.5,
       fct: 0,
@@ -219,7 +219,7 @@ export class SkyEmperor extends StarEmperor {
     },
     {
       name: 'Midnight Kick',
-      label: '[V2] Midnight Kick Lv5',
+      label: '[V3] Midnight Kick Lv5',
       value: 'Midnight Kick==5',
       acd: 0,
       fct: 0.5,
@@ -243,7 +243,7 @@ export class SkyEmperor extends StarEmperor {
     },
     {
       name: 'Dawn Break',
-      label: '[V2] Dawn Break Lv5',
+      label: '[V3] Dawn Break Lv5',
       value: 'Dawn Break==5',
       acd: 0,
       fct: 0.5,
@@ -267,12 +267,12 @@ export class SkyEmperor extends StarEmperor {
     },
     {
       name: 'Star Cannon',
-      label: '[V2] Star Cannon Lv5 (1 hit)',
+      label: '[V3] Star Cannon Lv5 (1 hit)',
       value: 'Star Cannon==5',
       acd: 0,
       fct: 0.5,
       vct: 1,
-      cd: 0.3,
+      cd: 3.5,
       isMelee: true,
       criDmgPercentage: 0.5,
       formula: (input: AtkSkillFormulaInput): number => {
@@ -281,7 +281,7 @@ export class SkyEmperor extends StarEmperor {
         const baseLevel = model.level;
         const skillBonusLv = this.learnLv('Sky Mastery');
 
-        return (200 + skillLevel * (500 + skillBonusLv * 5) + totalPow * 5) * (baseLevel / 100);
+        return (250 + skillLevel * (550 + skillBonusLv * 5) + totalPow * 5) * (baseLevel / 100);
       },
     },
   ];
