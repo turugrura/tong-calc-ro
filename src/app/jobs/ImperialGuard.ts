@@ -165,7 +165,7 @@ export class ImperialGuard extends RoyalGuard {
   private readonly atkSkillList4th: AtkSkillModel[] = [
     {
       name: 'Overslash',
-      label: '[V3] Overslash Lv10 (1 hit)',
+      label: '[V4] Overslash Lv10 (1 hit)',
       value: 'Overslash==10',
       acd: 0.5,
       fct: 0.5,
@@ -178,12 +178,12 @@ export class ImperialGuard extends RoyalGuard {
         const baseLevel = model.level;
         const ssMastLv = this.learnLv('Spear & Sword Mastery');
 
-        return (skillLevel * (120 + ssMastLv * 10) + totalPow * 5) * (baseLevel / 100);
+        return (skillLevel * (160 + ssMastLv * 250) + totalPow * 7) * (baseLevel / 100);
       },
     },
     {
       name: 'Shield Shooting',
-      label: '[V3] Shield Shooting Lv5',
+      label: '[V4] Shield Shooting Lv5',
       value: 'Shield Shooting==5',
       acd: 0.5,
       fct: 0.5,
@@ -198,20 +198,20 @@ export class ImperialGuard extends RoyalGuard {
         const { level: baseLevel } = model;
         const shieldMastLv = this.learnLv('Shield Mastery');
 
-        return (200 + skillLevel * (1300 + shieldMastLv * 15) + totalPow * 5 + weight + refine * 4) * (baseLevel / 100);
+        return (650 + skillLevel * (2850 + shieldMastLv * 50) + totalPow * 7 + weight + refine * 25) * (baseLevel / 100);
       },
     },
     {
       name: 'Cross Rain',
-      label: '[V3] Cross Rain Lv10',
+      label: '[V4] Cross Rain Lv10',
       value: 'Cross Rain==10',
       acd: 0.15,
       fct: 1.5,
       vct: 4,
-      cd: 4.5,
+      cd: 2.4,
       isMatk: true,
       element: ElementType.Holy,
-      totalHit: 15,
+      totalHit: 8,
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
         const { totalSpl } = status;
@@ -219,10 +219,10 @@ export class ImperialGuard extends RoyalGuard {
         const ssMastLv = this.learnLv('Spear & Sword Mastery');
 
         if (this.isSkillActive('Holy Shield')) {
-          return (skillLevel * (450 + ssMastLv * 10) + totalSpl * 5) * (baseLevel / 100);
+          return (skillLevel * (450 + ssMastLv * 15) + totalSpl * 7) * (baseLevel / 100);
         }
 
-        return (skillLevel * (320 + ssMastLv * 5) + totalSpl * 2) * (baseLevel / 100);
+        return (skillLevel * (320 + ssMastLv * 10) + totalSpl * 7) * (baseLevel / 100);
       },
     },
   ];
