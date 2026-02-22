@@ -166,12 +166,12 @@ export class Trouvere extends Wanderer {
   private readonly atkSkillList4th: AtkSkillModel[] = [
     {
       name: 'Rhythm Shooting',
-      label: '[V3] Rhythm Shooting Lv5',
+      label: '[V4] Rhythm Shooting Lv5',
       value: 'Rhythm Shooting==5',
       acd: 0,
       fct: 0,
       vct: 2,
-      cd: 0.15,
+      cd: 0.35,
       totalHit: 3,
       verifyItemFn: ({ weapon }) => {
         const requires: WeaponTypeName[] = ['bow', 'instrument', 'whip'];
@@ -180,18 +180,20 @@ export class Trouvere extends Wanderer {
         return requires.join(', ');
       },
       formula: (input: AtkSkillFormulaInput): number => {
-        const { model, skillLevel, status } = input;
+        const { model, skillLevel, status: { totalCon } } = input;
         const baseLevel = model.level;
         const stageMannerLv = this.learnLv('Stage Manner');
 
-        // if (this.isSkillActive('Sonic Brand'))
+        if (this.isSkillActive('_Debuf_Sonic_Brand')) {
+          return (800 + skillLevel * 750 + totalCon * 7 * stageMannerLv) * (baseLevel / 100);
+        }
 
-        return (200 + skillLevel * 120 + status.totalCon * 3 * stageMannerLv) * (baseLevel / 100);
+        return (450 + skillLevel * 650 + totalCon * 5 * stageMannerLv) * (baseLevel / 100);
       },
     },
     {
       name: 'Rose Blossom',
-      label: '[V3] Rose Blossom Lv5',
+      label: '[V4] Rose Blossom Lv5',
       value: 'Rose Blossom==5',
       acd: 0.15,
       fct: 0.5,
@@ -220,6 +222,33 @@ export class Trouvere extends Wanderer {
         const second = ((250 + skillLevel * 2800) + (status.totalCon * 3 * stageMannerLv)) * (baseLevel / 100);
 
         return main + second;
+      },
+    },
+    {
+      name: 'Metallic Fury',
+      label: '[V4] Metallic Fury Lv5',
+      value: 'Metallic Fury==5',
+      acd: 0.5,
+      fct: 0,
+      vct: 0,
+      cd: 0.4,
+      isMatk: true,
+      verifyItemFn: ({ weapon }) => {
+        const requires: WeaponTypeName[] = ['instrument', 'whip'];
+        if (requires.some(wType => weapon.isType(wType))) return '';
+
+        return requires.join(', ');
+      },
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { model, skillLevel, status: { totalSpl } } = input;
+        const baseLevel = model.level;
+        const stageMannerLv = this.learnLv('Stage Manner');
+
+        if (this.isSkillActive('_Debuf_Sonic_Brand')) {
+          return (skillLevel * 3600 + totalSpl * 2 * stageMannerLv) * (baseLevel / 100);
+        }
+
+        return (skillLevel * 2600 + totalSpl * 1.5 * stageMannerLv) * (baseLevel / 100);
       },
     },
   ];
