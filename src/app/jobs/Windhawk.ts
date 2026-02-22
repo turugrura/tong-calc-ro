@@ -164,12 +164,12 @@ export class Windhawk extends Ranger {
   private readonly atkSkillList4th: AtkSkillModel[] = [
     {
       name: 'Crescive Bolt',
-      label: '[V3] Crescive Bolt Lv10',
+      label: '[V4] Crescive Bolt Lv10',
       value: 'Crescive Bolt==10',
-      acd: 0.3,
+      acd: 0.7,
       fct: 1,
       vct: 1,
-      cd: 0.15,
+      cd: 0.35,
       maxStack: 3,
       canCri: true,
       criDmgPercentage: 0.5,
@@ -180,29 +180,29 @@ export class Windhawk extends Ranger {
         const totalStack = stack;
         const calaBonus = this.isSkillActive('Calamity Gale') ? 1.2 : 1;
 
-        return (skillLevel * 340 + status.totalCon * 10) * (baseLevel / 100) * (1 + 0.1 * totalStack) * calaBonus;
+        return (400 + (skillLevel * 900) + status.totalCon * 10) * (baseLevel / 100) * (1 + 0.1 * totalStack) * calaBonus;
       },
     },
     {
       name: 'Gale Storm',
-      label: '[V3] Gale Storm Lv10',
+      label: '[V4] Gale Storm Lv10',
       value: 'Gale Storm==10',
       acd: 0.15,
       fct: 0.5,
       vct: 1,
-      cd: 1.5,
+      cd: 1.2,
       hit: 5,
       canCri: () => this.isSkillActive('Calamity Gale'),
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
         const baseLevel = model.level;
 
-        return (skillLevel * 950 + status.totalCon * 5) * (baseLevel / 100);
+        return (skillLevel * 1000 + status.totalCon * 10) * (baseLevel / 100);
       },
     },
     {
       name: 'Hawk Rush',
-      label: '[V3] Hawk Rush Lv5',
+      label: '[V4] Hawk Rush Lv5',
       value: 'Hawk Rush==5',
       acd: 0,
       fct: 0,
