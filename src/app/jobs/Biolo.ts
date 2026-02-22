@@ -162,7 +162,7 @@ export class Biolo extends Genetic {
   private readonly atkSkillList4th: AtkSkillModel[] = [
     {
       name: 'Explosive Powder',
-      label: '[V3] Explosive Powder Lv5',
+      label: '[V4] Explosive Powder Lv5',
       value: 'Explosive Powder==5',
       acd: 0.25,
       fct: 0,
@@ -175,21 +175,21 @@ export class Biolo extends Genetic {
         const { totalPow } = status;
         const baseLevel = model.level;
         if (this.isSkillActive('Research Report')) {
-          return (400 + skillLevel * 550 + totalPow * 10) * (baseLevel / 100);
+          return (400 + skillLevel * 650 + totalPow * 10) * (baseLevel / 100);
         }
 
-        return (400 + skillLevel * 450 + totalPow * 7) * (baseLevel / 100);
+        return (400 + skillLevel * 550 + totalPow * 7) * (baseLevel / 100);
       },
     },
     {
       name: 'Mayhemic Thorns',
-      label: '[V3] Mayhemic Thorns Lv10',
+      label: '[V4] Mayhemic Thorns Lv10',
       value: 'Mayhemic Thorns==10',
       acd: 0.25,
       fct: 0.5,
       vct: 1.5,
       cd: 0.7,
-      totalHit: () => this.isSkillActive('Research Report') ? 5 : 3,
+      totalHit: () => this.isSkillActive('Research Report') ? 4 : 3,
       canCri: true,
       baseCriPercentage: 1,
       criDmgPercentage: 0.5,
@@ -198,10 +198,10 @@ export class Biolo extends Genetic {
         const { totalPow } = status;
         const baseLevel = model.level;
         if (this.isSkillActive('Research Report')) {
-          return (250 + skillLevel * 300 + totalPow * 10) * (baseLevel / 100);
+          return (350 + skillLevel * 350 + totalPow * 10) * (baseLevel / 100);
         }
 
-        return (200 + skillLevel * 250 + totalPow * 7) * (baseLevel / 100);
+        return (200 + skillLevel * 300 + totalPow * 7) * (baseLevel / 100);
       },
     },
   ];
