@@ -165,7 +165,7 @@ export class NightWatch extends Rebellion {
   private readonly atkSkillList4th: AtkSkillModel[] = [
     {
       name: 'The Vigilante at Night',
-      label: '[V2] The Vigilante at Night Lv5',
+      label: '[V3] The Vigilante at Night Lv5',
       value: 'The Vigilante at Night==5',
       acd: 1,
       fct: 1.5,
@@ -195,7 +195,7 @@ export class NightWatch extends Rebellion {
     },
     {
       name: 'Only One Bullet',
-      label: '[V2] Only One Bullet Lv5',
+      label: '[V3] Only One Bullet Lv5',
       value: 'Only One Bullet==5',
       acd: 0.5,
       fct: 1,
@@ -218,15 +218,15 @@ export class NightWatch extends Rebellion {
         const aimningCnt = this.activeSkillLv('_NightWatch_Aiming Count');
 
         if (weapon.isSubType('Revolver')) {
-          return (800 + skillLevel * (1500 + aimningCnt * 350) + totalCon * 3) * (baseLevel / 100);
+          return (1200 + skillLevel * (3400 + aimningCnt * 350) + totalCon * 3) * (baseLevel / 100);
         }
 
-        return (800 + skillLevel * (1350 + aimningCnt * 350) + totalCon * 3) * (baseLevel / 100);
+        return (1200 + skillLevel * (3000 + aimningCnt * 350) + totalCon * 3) * (baseLevel / 100);
       },
     },
     {
       name: 'Spiral Shooting',
-      label: '[V2] Spiral Shooting Lv5',
+      label: '[V3] Spiral Shooting Lv5',
       value: 'Spiral Shooting==5',
       acd: 1,
       fct: 1.5,
@@ -249,15 +249,15 @@ export class NightWatch extends Rebellion {
         const aimningCnt = this.activeSkillLv('_NightWatch_Aiming Count');
 
         if (weapon.isSubType('Rifle')) {
-          return (1200 + skillLevel * (1700 + aimningCnt * 150) + totalCon * 3) * (baseLevel / 100);
+          return (1400 + skillLevel * (2800 + aimningCnt * 150) + totalCon * 3) * (baseLevel / 100);
         }
 
-        return (1000 + skillLevel * (1500 + aimningCnt * 150) + totalCon * 3) * (baseLevel / 100);
+        return (1200 + skillLevel * (1700 + aimningCnt * 150) + totalCon * 3) * (baseLevel / 100);
       },
     },
     {
       name: 'Magazine for One',
-      label: '[V2] Magazine for One Lv5',
+      label: '[V3] Magazine for One Lv5',
       value: 'Magazine for One==5',
       acd: 1,
       fct: 1,
@@ -279,15 +279,15 @@ export class NightWatch extends Rebellion {
         const aimningCnt = this.activeSkillLv('_NightWatch_Aiming Count');
 
         if (weapon.isSubType('Revolver')) {
-          return (150 + skillLevel * (450 + aimningCnt * 100) + totalCon * 2) * (baseLevel / 100);
+          return (300 + skillLevel * (800 + aimningCnt * 100) + totalCon * 2) * (baseLevel / 100);
         }
 
-        return (200 + skillLevel * (350 + aimningCnt * 100) + totalCon * 2) * (baseLevel / 100);
+        return (250 + skillLevel * (500 + aimningCnt * 100) + totalCon * 2) * (baseLevel / 100);
       },
     },
     {
       name: 'Wild Fire',
-      label: '[V2] Wild Fire Lv5',
+      label: '[V3] Wild Fire Lv5',
       value: 'Wild Fire==5',
       acd: 1,
       fct: 1,
@@ -307,15 +307,15 @@ export class NightWatch extends Rebellion {
         const aimningCnt = this.activeSkillLv('_NightWatch_Aiming Count');
 
         if (weapon.isSubType('Shotgun')) {
-          return (1000 + skillLevel * (2450 + aimningCnt * 500) + totalCon * 3) * (baseLevel / 100);
+          return (1500 + skillLevel * (3200 + aimningCnt * 500) + totalCon * 3) * (baseLevel / 100);
         }
 
-        return (1000 + skillLevel * (2300 + aimningCnt * 500) + totalCon * 3) * (baseLevel / 100);
+        return (1500 + skillLevel * (3000 + aimningCnt * 500) + totalCon * 3) * (baseLevel / 100);
       },
     },
     {
       name: 'Basic Grenade',
-      label: '[V2] Basic Grenade Lv5',
+      label: '[V3] Basic Grenade Lv5',
       value: 'Basic Grenade==5',
       acd: 0,
       fct: 1,
@@ -329,12 +329,12 @@ export class NightWatch extends Rebellion {
 
         const grenadeMaster = this.learnLv('Grenade Mastery');
 
-        return (1000 + skillLevel * 950 + grenadeMaster * 50 + totalCon * 5) * (baseLevel / 100);
+        return (1500 + skillLevel * 2100 + grenadeMaster * 50 + totalCon * 5) * (baseLevel / 100);
       },
     },
     {
       name: 'Hasty Fire in the Hole',
-      label: '[V2] Hasty Fire in the Hole Lv5',
+      label: '[V3] Hasty Fire in the Hole Lv5',
       value: 'Hasty Fire in the Hole==5',
       acd: 0,
       fct: 1,
@@ -348,7 +348,7 @@ export class NightWatch extends Rebellion {
 
         const grenadeMaster = this.learnLv('Grenade Mastery');
 
-        return (1500 + skillLevel * 1050 + grenadeMaster * 20 + totalCon * 3) * (baseLevel / 100);
+        return (1500 + skillLevel * 1500 + grenadeMaster * 20 + totalCon * 3) * (baseLevel / 100);
       },
     },
     // {
