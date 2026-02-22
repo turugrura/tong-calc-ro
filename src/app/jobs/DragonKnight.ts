@@ -163,7 +163,7 @@ export class DragonKnight extends RuneKnight {
   private readonly atkSkillList4th: AtkSkillModel[] = [
     {
       name: 'Servant Weapon',
-      label: '[V3] Servant Weapon Lv5',
+      label: '[V4] Servant Weapon Lv5',
       value: 'Servant Weapon==5',
       acd: 0,
       fct: 0,
@@ -184,13 +184,16 @@ export class DragonKnight extends RuneKnight {
     },
     {
       name: 'Hack and Slasher',
-      label: '[V3] Hack and Slasher Lv10',
+      label: '[V4] Hack and Slasher Lv10',
       value: 'Hack and Slasher==10',
       acd: 0.25,
       fct: 0,
       vct: 0,
       cd: 0.7,
       totalHit: 2,
+      canCri: true,
+      baseCriPercentage: 1,
+      criDmgPercentage: 0.5,
       verifyItemFn: ({ weapon }) => {
         const requires: WeaponTypeName[] = ['twohandSword', 'twohandSpear'];
         if (requires.some(wType => weapon.isType(wType))) return '';
@@ -205,17 +208,17 @@ export class DragonKnight extends RuneKnight {
         const { totalPow } = status;
         const baseLevel = model.level;
 
-        return (300 + skillLevel * 700 + totalPow * 7) * (baseLevel / 100);
+        return (200 + skillLevel * 750 + totalPow * 7) * (baseLevel / 100);
       },
     },
     {
       name: 'Storm Slash',
-      label: '[V3] Storm Slash Lv5',
+      label: '[V4] Storm Slash Lv5',
       value: 'Storm Slash==5',
       acd: 0.5,
       fct: 0,
       vct: 0,
-      cd: 0.3,
+      cd: 0.35,
       canCri: true,
       baseCriPercentage: 1,
       criDmgPercentage: 0.5,
@@ -232,12 +235,12 @@ export class DragonKnight extends RuneKnight {
         const { totalPow } = status;
         const baseLevel = model.level;
 
-        return (100 + skillLevel * 170 + totalPow * 5) * (baseLevel / 100);
+        return (200 + skillLevel * 400 + totalPow * 5) * (baseLevel / 100);
       },
     },
     {
       name: 'Madness Crusher',
-      label: '[V3] Madness Crusher Lv5',
+      label: '[V4] Madness Crusher Lv5',
       value: 'Madness Crusher==5',
       acd: 0.5,
       fct: 0.5,
@@ -255,12 +258,12 @@ export class DragonKnight extends RuneKnight {
         const baseLevel = model.level;
         const { weight, baseWeaponLevel } = weapon.data;
 
-        return (400 + skillLevel * 600 + totalPow * 5 + weight * baseWeaponLevel) * (baseLevel / 100);
+        return (350 + skillLevel * 1600 + totalPow * 10 + weight * baseWeaponLevel) * (baseLevel / 100);
       },
     },
     {
       name: 'Dragonic Breath',
-      label: '[V3] Dragonic Breath Lv10',
+      label: '[V4] Dragonic Breath Lv10',
       value: 'Dragonic Breath==10',
       acd: 0.15,
       fct: 0.5,
