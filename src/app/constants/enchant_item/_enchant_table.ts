@@ -136,7 +136,7 @@ import { plusWeapon3, plusWeapon4 } from './plus_weapon';
 import { rockPaperScissor } from './rock_paper_scissor';
 import { royalHArmor2, royalHArmor3, royalHArmor4, royalHBoot3, royalHBoot4, royalHGarment3, royalHGarment4 } from './royal_hunting';
 import { goodEvilBoot3_ABC, goodEvilBoot3_AG, goodEvilBoot3_BO, goodEvilBoot3_CD, goodEvilBoot3_DK, goodEvilBoot3_EM, goodEvilBoot3_HN, goodEvilBoot3_IG, goodEvilBoot3_IQ, goodEvilBoot3_MT, goodEvilBoot3_NW, goodEvilBoot3_SH, goodEvilBoot3_SHC, goodEvilBoot3_SKE, goodEvilBoot3_SOA, goodEvilBoot3_SS, goodEvilBoot3_TR, goodEvilBoot3_WH, goodEvilBoot4, goodEvilHead3, goodEvilHead4, sinsFateWeapon3, sinsFateWeapon4 } from './sins_and_fate';
-import { snowFwAccL2, snowFwAccL3, snowFwAccL4, snowFwAccR2, snowFwAccR3, snowFwAccR4, snowFwArmor2, snowFwArmor3, snowFwArmor4, snowFwBoot2, snowFwBoot3, snowFwBoot4, snowFwGarment2, snowFwGarment3, snowFwGarment4 } from './snow_flower';
+import { SnowPromised_Ring_TH23, SnowPromised_Ring_TH4, snowFwAccL2, snowFwAccL3, snowFwAccL4, snowFwAccR2, snowFwAccR3, snowFwAccR4, snowFwArmor2, snowFwArmor3, snowFwArmor4, snowFwBoot2, snowFwBoot3, snowFwBoot4, snowFwGarment2, snowFwGarment3, snowFwGarment4 } from './snow_flower';
 import { thanosBoot3, thanosBoot4, thanosHead3, thanosHead4 } from './thanos';
 import { traitShadow3, traitShadow4 } from './trait_shadow';
 import { unkWatch2, unkWatch34 } from './unknown_watch';
@@ -1625,6 +1625,7 @@ export const EnchantTable: EntTable[] = [
   { name: "WK_Mantle_Range_TH", enchants: [null, whiteKnight2, whiteKnight34, whiteKnight34] },
   { name: "WK_Mantle_Magic_TH", enchants: [null, whiteKnight2, whiteKnight34, whiteKnight34] },
   { name: "WK_Mantle_All_TH_LT", enchants: [null, whiteKnight2, whiteKnight34, whiteKnight34] },
+  { name: "Fallen_Angel_Wing_LT", enchants: [null, whiteKnight2, whiteKnight34, whiteKnight34] },
 
   { name: "aegis_Kankrai", enchants: [null, rockPaperScissor, rockPaperScissor, rockPaperScissor] },
   { name: "aegis_Khon", enchants: [null, rockPaperScissor, rockPaperScissor, rockPaperScissor] },
@@ -1807,6 +1808,10 @@ export const EnchantTable: EntTable[] = [
   { name: "CD_Dim_Ring_TH", enchants: [null, ['DimAcc_CD'], dimAcc3, dimAcc4] },
   { name: "MT_Dim_Ring_TH", enchants: [null, ['DimAcc_MT'], dimAcc3, dimAcc4] },
   { name: "TR_Dim_Ring_TH", enchants: [null, ['DimAcc_TR'], dimAcc3, dimAcc4] },
+  { name: "AG_Dim_Ring_TH", enchants: [null, ['DimAcc_AG'], dimAcc3, dimAcc4] },
+  { name: "DK_Dim_Ring_TH", enchants: [null, ['DimAcc_DK'], dimAcc3, dimAcc4] },
+  { name: "SHC_Dim_Ring_TH", enchants: [null, ['DimAcc_SHC'], dimAcc3, dimAcc4] },
+  { name: "SS_Dim_Ring_TH", enchants: [null, ['DimAcc_SS'], dimAcc3, dimAcc4] },
 
   { name: "S_BP9_Melee_A", enchants: [null, null, ['BP9_Snow_Melee', 'BP9_Snow_Range', 'BP9_Snow_Magic'], nebularShadow34] },
   { name: "S_BP9_Melee_S", enchants: [null, null, ['BP9_Snow_Melee', 'BP9_Snow_Range', 'BP9_Snow_Magic'], nebularShadow34] },
@@ -1814,6 +1819,7 @@ export const EnchantTable: EntTable[] = [
   { name: "S_BP9_Range_S", enchants: [null, null, ['BP9_Snow_Melee', 'BP9_Snow_Range', 'BP9_Snow_Magic'], nebularShadow34] },
   { name: "S_BP9_Magic_A", enchants: [null, null, ['BP9_Snow_Melee', 'BP9_Snow_Range', 'BP9_Snow_Magic'], nebularShadow34] },
   { name: "S_BP9_Magic_S", enchants: [null, null, ['BP9_Snow_Melee', 'BP9_Snow_Range', 'BP9_Snow_Magic'], nebularShadow34] },
+  { name: "SnowPromised_Ring_TH", enchants: [null, SnowPromised_Ring_TH23, SnowPromised_Ring_TH23, SnowPromised_Ring_TH4] },
 ];
 
 Object.freeze(EnchantTable);

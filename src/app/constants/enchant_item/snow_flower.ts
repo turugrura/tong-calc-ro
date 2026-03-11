@@ -1,14 +1,16 @@
+import { EA, ExpertFighter, ExpertMagician } from "./_basic";
+
 export const snowFwArmor4 = [
   'Ice_F_Orb_Def',
   'Ice_F_Orb_Mdef',
-]
+];
 export const snowFwArmor3 = [
   'Ice_F_Orb_Ran',
   'Ice_F_Orb_War',
   'Ice_F_Orb_Mag',
   'Ice_F_Orb_Force',
   'Ice_F_Orb_S_Delay',
-]
+];
 export const snowFwArmor2 = [
   'Ice_F_Orb_Skill_1',
   'Ice_F_Orb_Skill_2',
@@ -64,7 +66,7 @@ export const snowFwArmor2 = [
   'Ice_F_Orb_Skill_52',
   'Ice_F_Orb_Skill_53',
   'Ice_F_Orb_Skill_54',
-]
+];
 
 export const snowFwGarment4 = [
   'Ice_F_Orb_Str',
@@ -75,16 +77,16 @@ export const snowFwGarment4 = [
   'Ice_F_Orb_luk',
   'Ice_F_Orb_Def',
   'Ice_F_Orb_Mdef',
-]
+];
 export const snowFwGarment3 = [
   'Ice_F_Orb_Speed',
   'Ice_F_Orb_Caster',
   'Ice_F_Orb_Critical',
   'Ice_F_Orb_Guide',
-]
+];
 export const snowFwGarment2 = [
   'Ice_F_Orb_P_Full',
-]
+];
 
 export const snowFwBoot4 = [
   'Ice_F_Orb_Def',
@@ -92,12 +94,12 @@ export const snowFwBoot4 = [
   'Ice_F_Orb_Hp',
   'Ice_F_Orb_Sp',
   'Ice_F_Orb_Robust',
-]
+];
 export const snowFwBoot3 = [
   'Ice_F_Orb_F_Cast',
   'Ice_F_Orb_M_F',
   'Ice_F_Orb_P_F',
-]
+];
 export const snowFwBoot2 = [
   'Ice_F_Orb_Un_Vit',
   'Ice_F_Orb_Sp_Int',
@@ -105,36 +107,51 @@ export const snowFwBoot2 = [
   'Ice_F_Orb_Ov_Str',
   'Ice_F_Orb_Fa_Agi',
   'Ice_F_Orb_Lu_Luk',
-]
+];
 
 export const snowFwAccR4 = [
   'Ice_F_Orb_Str',
   'Ice_F_Orb_Dex',
   'Ice_F_Orb_Int',
-]
+];
 export const snowFwAccR3 = [
   'Ice_F_Orb_A_Force',
-]
+];
 export const snowFwAccR2 = [
   'Ice_F_Orb_A_Delay',
   'Ice_F_Orb_E_Archer',
   'Ice_F_Orb_Fatal',
   'Ice_F_Orb_F_Spirit',
   'Ice_F_Orb_Spell',
-]
+];
 
 export const snowFwAccL4 = [
   'Ice_F_Orb_Agi',
   'Ice_F_Orb_Vit',
   'Ice_F_Orb_luk',
-]
+];
 export const snowFwAccL3 = [
   'Ice_F_Orb_A_Force',
-]
+];
 export const snowFwAccL2 = [
   'Ice_F_Orb_A_Delay',
   'Ice_F_Orb_E_Archer',
   'Ice_F_Orb_Fatal',
   'Ice_F_Orb_F_Spirit',
   'Ice_F_Orb_Spell',
-]
+];
+
+export const SnowPromised_Ring_TH4 = [
+  EA._3,
+  ExpertFighter._3,
+  ExpertMagician._3,
+  'Ice_F_Orb_A_Delay',
+  "Ice_F_Orb_E_Archer",
+  'Ice_F_Orb_Fatal',
+  'Ice_F_Orb_F_Spirit',
+  'Ice_F_Orb_Spell',
+];
+export const SnowPromised_Ring_TH23 = [
+  ...SnowPromised_Ring_TH4,
+  "Ice_F_Orb_A_Force"
+];
